@@ -1,0 +1,27 @@
+<coin-trader>
+    <div class="row">
+        <coin-selector
+                class="col-md-5"
+                coins="coins"
+                label="'Return Address'"
+                get-market-data="getMarketDataIn"
+                market-data="marketData"
+                selected-coin="coinIn"
+                coin-address="returnAddress"
+                direction="'in'">
+        </coin-selector>
+        <coin-selector
+                class="col-md-5"
+                coins="coins"
+                label="'Withdrawal Address'"
+                get-market-data="getMarketDataOut"
+                selected-coin="coinOut"
+                coin-address="withdrawalAddress"
+                amount="amount"
+                direction="'out'">
+        </coin-selector>
+    </div>
+    <coin-error ssError="ssError"></coin-error>
+    <coin-deposit-info deposit-status="DepositStatus" deposit-info="depositInfo"></coin-deposit-info>
+    <coin-shift-button shift-it="shiftIt" shift-state="ShiftState"></coin-shift-button>
+</coin-trader>

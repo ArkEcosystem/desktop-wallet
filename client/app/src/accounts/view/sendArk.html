@@ -1,0 +1,55 @@
+<md-dialog aria-label="Send Ark"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Send Ark from</span>&nbsp;{{send.data.fromAddress}}</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+         <md-input-container class="md-block">
+          <!--<md-autocomplete
+            md-selected-item="send.data.toAccount"
+            md-search-text="send.searchText"
+            md-items="account in send.querySearch(send.searchText)"
+            md-item-text="account.address"
+            md-min-length="0"
+            md-autofocus="true"
+            md-floating-label="Type an address or a name">
+            <md-item-template>
+              <span class="item-title">
+                <span> {{account.username||account.address}} </span>
+              </span>
+            </md-item-template>
+          </md-autocomplete> -->
+          <label translate>Destination Address</label>
+          <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus>
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+          <label>{{'Amount'|translate}} (ARK)</label>
+          <input ng-model="send.data.amount" type="number" step="0.00000001" ng-required="true">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+          <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
+          <input ng-model="send.data.smartbridge" type="text" ng-required="false">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label translate>Passphrase</label>
+          <input ng-model="send.data.passphrase" type="password" ng-required="true">
+        </md-input-container>
+        <md-input-container class="md-block" ng-if="send.data.secondSignature">
+          <label translate>Second Passphrase</label>
+          <input ng-model="send.data.secondpassphrase" type="password" ng-required="true">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="send.next()" translate>
+        Next
+      </md-button>
+      <md-button ng-click="send.cancel()" style="margin-right:20px;" translate>
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

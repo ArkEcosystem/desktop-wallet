@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>jClocksGMT v. 2.0</title>
+
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+        <link rel="stylesheet" href="assets/css/jClocksGMT.css">
+
+        <style>
+            * {transition: all 0.5s;user-select: none;-webkit-user-select: none; -webkit-user-select: none; }
+            body { font-family: Arial, sans-serif; margin:auto;text-align: center;overflow:hidden;}
+            body>div.jcgmt-container {
+              display: inline-block;
+              float:none;
+              margin-right:2%;
+              margin-left:2%;
+            }
+            .jcgmt-digital{
+              color:#eee;
+              text-shadow: 0px 0px 2px black;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="clock_ca"></div>
+        <div id="clock_france"></div>
+        <div id="clock_china"></div>
+        <div id="clock_hawaii"></div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+        <script src="assets/js/jClocksGMT.js"></script>
+        <script src="assets/js/jquery.rotate.js"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('#clock_ca').jClocksGMT(
+                {
+                    title: 'San Francisco',
+                    offset: '-8',
+                    timeformat: 'HH:mm',
+                    imgpath: 'assets/'
+                });
+
+                $('#clock_france').jClocksGMT(
+                {
+                    title: 'Paris',
+                    offset: '+1',
+                    timeformat: 'HH:mm',
+                    imgpath: 'assets/'
+                });
+
+                $('#clock_china').jClocksGMT(
+                {
+                    title: 'Beijing',
+                    offset: '+8',
+                    dst: false,
+                    timeformat: 'HH:mm',
+                    imgpath: 'assets/'
+                });
+
+                $('#clock_hawaii').jClocksGMT(
+                {
+                    title: 'Hawaii',
+                    offset: '-10',
+                    dst: false,
+                    timeformat: 'HH:mm',
+                    imgpath: 'assets/'
+                });
+
+
+            });
+        </script>
+
+    </body>
+</html>

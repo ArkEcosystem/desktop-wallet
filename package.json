@@ -1,0 +1,51 @@
+{
+  "name": "ArkClient",
+  "version": "1.1.0",
+  "productName": "ArkClient",
+  "description": "Ark Desktop",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "pack": "build --target dir",
+    "dist:win": "build --win",
+    "dist:osx": "build --osx",
+    "dist:linux": "build --linux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fix/ark-desktop.git"
+  },
+  "keywords": [
+    "Electron",
+    "Ark",
+    "Client"
+  ],
+  "author": {
+    "name": "Fx Thoorens",
+    "email": "fixcrypt@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fix/ark-desktop/issues"
+  },
+  "homepage": "https://github.com/fix/ark-desktop#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-angular-gettext": "^2.2.3"
+  },
+  "build": {
+    "appId": "com.arkwallet.liteclient",
+    "app-category-type": "finance",
+    "win": {
+      "iconUrl": "https://ark.io/i/mediakit/icon_1.png"
+    },
+    "linux": {
+      "synopsis": "A Lite Arl Client to securely connect to the Ark network and manage your Ark assets.",
+      "description": ""
+    }
+  }
+}

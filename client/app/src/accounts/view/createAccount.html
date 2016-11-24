@@ -1,0 +1,44 @@
+<md-dialog aria-label="Create Account" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Create Account</span></h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-card ng-if="!createAccountDialog.data.showRepassphrase" md-colors="{'background': 'red-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span>
+                <translate>Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase</translate>
+              </span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+        <div ng-if="createAccountDialog.data.showRepassphrase">
+          Please paste here the passphrase to validate the account creation.
+        </div>
+        <md-input-container class="md-block">
+          <label translate>Passphrase</label>
+          <textarea ng-model="createAccountDialog.data.passphrase" type="text" ng-required="true"></textarea>
+        </md-input-container>
+
+        <div ng-if="createAccountDialog.data.showWrongRepassphrase">
+          The passphrase does not match the original one.
+        </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-if="!createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
+        Next
+      </md-button>
+      <md-button ng-if="createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
+        Create
+      </md-button>
+      <md-button ng-click="createAccountDialog.cancel()" style="margin-right:20px;" translate>
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

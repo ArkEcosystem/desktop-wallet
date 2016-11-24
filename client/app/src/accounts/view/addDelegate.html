@@ -1,0 +1,42 @@
+<md-dialog aria-label="Add Delegate" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Add Delegate </h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-card flex="100">
+          <md-card-title>
+            <md-card-title-media>
+              <md-button md-colors="{background:'green'}" ng-click="addDelegateDialog.addSponsors()" translate>
+                Add Sponsors Delegates
+              </md-button>
+            </md-card-title-media>
+            <md-card-title-text>
+              <span translate>
+                They have funded this app so you can use it for free. <br>
+                Vote them to help the development.
+              </span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+
+        <md-input-container class="md-block">
+          <label translate>Delegate name</label>
+          <input ng-model="addDelegateDialog.data.delegatename" type="text">
+        </md-input-container>
+
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="addDelegateDialog.add()" translate>
+        Add Delegate
+      </md-button>
+      <md-button ng-click="addDelegateDialog.cancel()" style="margin-right:20px;" translate>
+        Close
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
