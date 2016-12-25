@@ -2,7 +2,7 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span translate>Create Account</span></h2>
+        <h2><span translate>新建账户</span></h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -11,33 +11,33 @@
           <md-card-title>
             <md-card-title-text>
               <span>
-                <translate>Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase</translate>
+                <translate>请安全的备份这个密码, 本客户端程序不保存你的密码所以你不能使用它来恢复密码。</translate>
               </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
         <div ng-if="createAccountDialog.data.showRepassphrase">
-          Please paste here the passphrase to validate the account creation.
+         请将创建账户时生成的密码粘贴到此处以验证其可用性。
         </div>
         <md-input-container class="md-block">
-          <label translate>Passphrase</label>
+          <label translate>密码</label>
           <textarea ng-model="createAccountDialog.data.passphrase" type="text" ng-required="true"></textarea>
         </md-input-container>
 
         <div ng-if="createAccountDialog.data.showWrongRepassphrase">
-          The passphrase does not match the original one.
+          此密码与原密码不一致。
         </div>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button ng-if="!createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
-        Next
+        下一步
       </md-button>
       <md-button ng-if="createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
-        Create
+        创建
       </md-button>
       <md-button ng-click="createAccountDialog.cancel()" style="margin-right:20px;" translate>
-        Cancel
+        取消
       </md-button>
     </md-dialog-actions>
   </form>

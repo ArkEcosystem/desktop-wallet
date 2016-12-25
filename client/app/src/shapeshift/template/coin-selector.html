@@ -19,15 +19,15 @@
                     <input type="text" ng-model="coinAddress" class="form-control">
                 </div>
                 <div ng-show="direction=='out'" class="">
-                    <label>Amount</label>
+                    <label>金额</label>
                     <input type="text" ng-model="amount" class="form-control">
                 </div>
             </div>
             <div ng-if="direction=='in'" class="">
-                <div>Deposit Limit: {{marketData.limit}}</div>
-                <div>Minimum Amount: {{marketData.minimum}}</div>
-                <div>MinerFee: {{marketData.minerFee}}</div>
-                <div>Rate: {{marketData.rate}}</div>
+                <div>充值限制: {{marketData.limit}}</div>
+                <div>最小金额: {{marketData.minimum}}</div>
+                <div>矿工费用: {{marketData.minerFee}}</div>
+                <div>比率: {{marketData.rate}}</div>
             </div>
         </div>
     </div>

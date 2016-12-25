@@ -2,7 +2,7 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 translate>Add Delegate </h2>
+        <h2 translate>增加受托人 </h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -24,7 +24,7 @@
         </md-card> -->
 
         <md-input-container class="md-block">
-          <label translate>Delegate name</label>
+          <label translate>受托人名称</label>
           <input ng-model="addDelegateDialog.data.delegatename" type="text">
         </md-input-container>
 
@@ -32,10 +32,10 @@
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button ng-click="addDelegateDialog.add()" translate>
-        Add Delegate
+        增加受托人
       </md-button>
       <md-button ng-click="addDelegateDialog.cancel()" style="margin-right:20px;" translate>
-        Close
+        关闭
       </md-button>
     </md-dialog-actions>
   </form>

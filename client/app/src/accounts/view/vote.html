@@ -2,7 +2,7 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span translate>Update vote from</span> {{voteDialog.data.fromAddress}}</h2>
+        <h2><span translate>更新投票自</span> {{voteDialog.data.fromAddress}}</h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -11,21 +11,21 @@
           <md-chip-template>{{$chip.vote}}{{$chip.username}}</md-chip-template>
         </md-chips>
         <md-input-container class="md-block">
-          <label translate>Passphrase</label>
+          <label translate>密码</label>
           <input ng-model="voteDialog.data.passphrase" type="password" ng-required="true">
         </md-input-container>
         <md-input-container class="md-block" ng-if="voteDialog.data.secondSignature">
-          <label translate>Second Passphrase</label>
+          <label translate>二级密码</label>
           <input ng-model="voteDialog.data.secondpassphrase" type="password"  ng-required="true">
         </md-input-container>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button ng-click="voteDialog.next()" translate>
-        Next
+        下一步
       </md-button>
       <md-button ng-click="voteDialog.cancel()" style="margin-right:20px;" translate>
-        Cancel
+        取消
       </md-button>
     </md-dialog-actions>
   </form>

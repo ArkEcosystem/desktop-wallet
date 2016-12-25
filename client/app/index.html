@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
   <head>
-    <title translate>Ark Client</title>
+    <title translate>Ark 客户端</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,7 @@
     <md-toolbar style="background-color: rgba(0, 0, 0, 0);">
        <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
          <img src="ark.png" alt="" height="30">
-         <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><translate>Ark Client</translate></md-button>
+         <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><translate>Ark 客户端</translate></md-button>
          <md-button ng-if="ul.selected" class="menu" hide-gt-md ng-click="ul.toggleList()" aria-label="Show Account List">
            <md-icon md-svg-icon="menu" ></md-icon>
          </md-button>
@@ -42,19 +42,20 @@
 
          <md-menu>
            <md-button aria-label="Show network">
-             <md-icon md-font-library="material-icons" ng-click="ul.openMenu($mdOpenMenu, $event)">settings</md-icon>
+             <md-icon md-font-library="material-icons" ng-click="ul.openMenu($mdOpenMenu, $event)">设置</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6">
                 <md-list>
                   <md-list-item>
-                    <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.language}}</md-button>
+                    <b translate>语言</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.language}}</md-button>
                   </md-list-item>
                   <md-list-item>
-                    <b translate>Add Address</b> <md-button class="md-secondary" aria-label="Add Address" md-prevent-menu-close ng-click="ul.addAccount()"><md-icon md-font-library="material-icons">add</md-icon></md-button>
+                    <b translate>添加地址</b> <md-button class="md-secondary" aria-label="Add Address" md-prevent-menu-close ng-click="ul.addAccount()"><md-icon md-font-library="material-icons">add</md-icon></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <b translate>Create Account</b> <md-button class="md-secondary" aria-label="Create Account" md-prevent-menu-close ng-click="ul.createAccount()"><md-icon md-font-library="material-icons">add</md-icon></md-button>
+                    <b translate>新建帐号</b> <md-button class="md-secondary" aria-label="Create Account" md-prevent-menu-close ng-click="ul.createAccount()"><md-icon md-font-library="material-icons">add</md-icon></md-button>
                   </md-list-item>
+                </md-list>
             </md-menu-content>
           </md-menu>
 
@@ -65,19 +66,19 @@
             <md-menu-content flex layout-padding width="6">
                 <md-list>
                   <md-list-item>
-                    <b translate>Peer</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
+                    <b translate>节点</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
                   </md-list-item>
                   <md-list-item>
-                    <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
+                    <b translate>高度</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
                   </md-list-item>
                   <md-list-item>
-                    <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
+                    <b translate>更新时间</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
                   </md-list-item>
                   <md-list-item md-colors="{background:'red' }" ng-if="!ul.connectedPeer.isConnected">
                     {{ul.connectedPeer.error}}
                   </md-list-item>
                   <md-list-item md-colors="{background:'green' }" ng-if="ul.connectedPeer.isConnected">
-                    <b translate>Delay</b> <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
+                    <b translate>延迟</b> <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
                   </md-list-item>
                 </md-list>
             </md-menu-content>
@@ -90,10 +91,10 @@
              <md-menu-content flex layout-padding width="6">
                  <md-list>
                    <md-list-item>
-                     <b><translate>Price</translate> ({{ul.currency.symbol}})</b> <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+                     <b><translate>价格</translate> ({{ul.currency.symbol}})</b> <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
                    </md-list-item>
                    <md-list-item>
-                     <b translate>Change 1h/7h/7d</b>
+                     <b translate>涨跌 1时/7时/7日</b>
                      <span class="md-secondary">
                        <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
                        /
@@ -103,7 +104,7 @@
                      </span>
                    </md-list-item>
                    <md-list-item>
-                     <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+                     <b translate>市场交易量.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
                    </md-list-item>
                  </md-list>
              </md-menu-content>
@@ -118,10 +119,10 @@
            <md-content style="min-width:50%; opacity:0.8; border-radius:10px;" md-whiteframe="3">
              <md-toolbar layout="row">
                <div class="md-toolbar-tools">
-                 <h2><translate>My Accounts</translate> Ѧ{{ul.myAccountsBalance()}}</h2>
+                 <h2><translate>我的账户</translate> Ѧ{{ul.myAccountsBalance()}}</h2>
                </div>
                <md-button class="share" md-no-ink ng-click="ul.selected=ul.accounts[0]" aria-label="Switch of dashboard">
-                 <md-icon md-font-library="material-icons">close</md-icon>
+                 <md-icon md-font-library="material-icons">退出</md-icon>
                </md-button>
              </md-toolbar>
              <md-list>
@@ -139,11 +140,11 @@
                </md-list-item>
                <md-list-item>
                  <md-button ng-click="ul.addAccount()">
-                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Add Address</translate>
+                   <md-icon md-font-library="material-icons">add</md-icon> <translate>添加地址</translate>
 
                  </md-button>
                  <md-button ng-click="ul.createAccount()">
-                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Create Account</translate>
+                   <md-icon md-font-library="material-icons">add</md-icon> <translate>添加账户</translate>
                  </md-button>
 
                </md-list-item>
@@ -153,10 +154,10 @@
              <md-content style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
                <md-list>
                  <md-list-item>
-                   <b><translate>Price</translate> ({{ul.currency.symbol}})</b> <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+                   <b><translate>价格</translate> ({{ul.currency.symbol}})</b> <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
                  </md-list-item>
                  <md-list-item>
-                   <b translate>Change 1h/7h/7d</b>
+                   <b translate>涨跌 1时/7时/7日</b>
                    <span class="md-secondary">
                      <span md-colors="{'color' : ul.connectedPeer.market.change1h.usd>=0?'green':'red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
                      /
@@ -166,20 +167,20 @@
                    </span>
                  </md-list-item>
                  <md-list-item>
-                   <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+                   <b translate>市场交易量.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
                  </md-list-item>
                </md-list>
              </md-content>
              <md-content style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
                <md-list flex>
                  <md-list-item>
-                   <b translate>Peer</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
+                   <b translate>节点</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
                  </md-list-item>
                  <md-list-item>
-                   <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
+                   <b translate>高度</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
                  </md-list-item>
                  <md-list-item>
-                   <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
+                   <b translate>更新时间</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
                  </md-list-item>
                </md-list>
              </md-content>
@@ -188,7 +189,7 @@
            <iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>
 
            <div class="footer">
-             <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
+             <translate> ❤ </translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark团队精心打造</a>
            </div>
       </div>
 
@@ -199,7 +200,7 @@
           <md-list>
             <md-list-item>
               <h2 translate>
-                My Accounts
+                我的账户
               </h2>
             </md-list-item>
             <md-list-item ng-repeat="it in ul.myAccounts()">
@@ -251,7 +252,7 @@
                   <small>{{ul.selected.address}}</small>
                 </span>
                 <span class="md-subhead description">
-                  <translate>Balance</translate> Ѧ{{ul.selected.balance/100000000}}
+                  <translate>余额</translate> Ѧ{{ul.selected.balance/100000000}}
                   <md-button ng-click="ul.changeCurrency()">{{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</md-button>
                 </span>
               </md-card-title-text>
@@ -266,11 +267,11 @@
                   <md-card-title>
                     <md-card-title-text>
                       <span>
-                        <translate>This account has never interacted with the network. This is either:</translate>
+                        <translate>本钱包尚未与网络同步，所以不能:</translate>
                         <ul>
-                          <li translate>a cold wallet, ie the owner of the passphrase has never used it</li>
-                          <li ng-if="ul.selected.transactions.length>0" translate>an inexistant wallet, ie nobody knows the passphrase of this wallet. The ARK are lost</li>
-                          <li ng-if="ul.selected.transactions.length==0" translate>an inexistant wallet, ie nobody knows the passphrase of this wallet.</li>
+                          <li translate>一个冷钱包, 比如说密码所有者从来没有使用过</li>
+                          <li ng-if="ul.selected.transactions.length>0" translate>一个不存在的钱包，即没人知道这个钱包的密码. 该钱包的ARK将会丢失</li>
+                          <li ng-if="ul.selected.transactions.length==0" translate>一个不存在的钱包，即没人知道这个钱包的密码.</li>
                         </ul>
                       </span>
                     </md-card-title-text>
@@ -281,12 +282,12 @@
                   <table md-table>
                     <thead md-head md-order="query.order">
                       <tr md-row>
-                        <th md-column md-numeric md-order-by="timestamp"><translate>Date</translate></th>
-                        <th md-column md-order-by="label"><translate>Type</translate></th>
-                        <th md-column md-numeric md-order-by="total" translate>Total Ѧ</th>
-                        <th md-column translate>Vendor Field</th>
-                        <th md-column md-numeric translate>From</th>
-                        <th md-column md-numeric translate>To</th>
+                        <th md-column md-numeric md-order-by="timestamp"><translate>日期</translate></th>
+                        <th md-column md-order-by="label"><translate>类型</translate></th>
+                        <th md-column md-numeric md-order-by="total" translate>总计 Ѧ</th>
+                        <th md-column translate>交易区域</th>
+                        <th md-column md-numeric translate>从</th>
+                        <th md-column md-numeric translate>到</th>
                       </tr>
                     </thead>
                     <tbody md-body>
@@ -306,10 +307,10 @@
 
           <md-tab>
             <md-tab-label>
-              <translate>Exchange</translate>
+              <translate>交易所</translate>
             </md-tab-label>
             <md-tab-body>
-              <h1>Coming Soon</h1>
+              <h1>即将呈现</h1>
               <!--
 
               <md-card flex="100">
@@ -505,7 +506,7 @@
 
           <md-tab>
             <md-tab-label>
-              <translate>Votes</translate>
+              <translate>投票</translate>
             </md-tab-label>
             <md-tab-body>
 
@@ -517,10 +518,10 @@
                     </div>
                   </md-card-title-media>
                   <md-card-title-text>
-                    <span transtranslate>
-                      If you own this account, you can enable Voting
-                    </translate><br>
-                    <md-button ng-click="ul.createFolder(ul.selected)"><translate>Enable Votes</translate></md-button>
+                    <span translate>
+                      如果你是此钱包的所有者，你可以启用投票功能
+                    </span><br>
+                    <md-button ng-click="ul.createFolder(ul.selected)"><translate>启用投票</translate></md-button>
                   </md-card-title-text>
                 </md-card-title>
               </md-card>
@@ -529,11 +530,11 @@
                 <table md-table ng-model="ul.selected.selectedVotes">
                   <thead md-head md-order="query.order">
                     <tr md-row>
-                      <th md-column md-numeric md-order-by="rate"><translate>Rank</span></th>
-                      <th md-column md-order-by="username"><translateUsername</span></th>
-                      <th md-column><translate>Address</translate></th>
-                      <th md-column md-numeric md-order-by="approval"><translate>Approval</translate></th>
-                      <th md-column md-numeric md-order-by="productivity"><translate>Productivity</translate></th>
+                      <th md-column md-numeric md-order-by="rate"><span translate>排名</span></th>
+                      <th md-column md-order-by="username"><span translate>用户名</span></th>
+                      <th md-column><translate>钱包地址</translate></th>
+                      <th md-column md-numeric md-order-by="approval"><translate>支持率</translate></th>
+                      <th md-column md-numeric md-order-by="productivity"><translate>锻造率</translate></th>
                     </tr>
                   </thead>
                   <tbody md-body>
@@ -549,17 +550,17 @@
               </md-table-container>
 
               <md-table-container  ng-if="ul.selected.virtual" flex="100">
-                <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'red'}"><translate>Vote</translate></md-button>
-                <md-button ng-click="ul.addDelegate(ul.selected)" md-colors="{background:'green'}"><translate>Add Delegate</translate></md-button>
-                <a href="#" onclick='require("electron").shell.openExternal("https://explorer.ark.io/delegateMonitor")'><translate>Open Delegate Monitor</translate></a>
+                <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'red'}"><translate>投票</translate></md-button>
+                <md-button ng-click="ul.addDelegate(ul.selected)" md-colors="{background:'green'}"><translate>添加受托人</translate></md-button>
+                <a href="#" onclick='require("electron").shell.openExternal("https://explorer.ark.io/delegateMonitor")'><translate>打开受托人监视</translate></a>
                 <table md-table md-row-select multiple ng-model="ul.selected.selectedVotes">
                   <thead md-head md-order="query.order">
                     <tr md-row>
-                      <th md-column md-numeric md-order-by="rate"><translate>Rank</translate></th>
-                      <th md-column md-order-by="username"><translate>Username</translate></th>
-                      <th md-column><translate>Address</translate></th>
-                      <th md-column md-numeric md-order-by="approval"><translate>Approval</translate></th>
-                      <th md-column md-numeric md-order-by="productivity"><translate>Productivity</translate></th>
+                      <th md-column md-numeric md-order-by="rate"><translate>排名</translate></th>
+                      <th md-column md-order-by="username"><translate>用户名</translate></th>
+                      <th md-column><translate>钱包地址</translate></th>
+                      <th md-column md-numeric md-order-by="approval"><translate>支持率</translate></th>
+                      <th md-column md-numeric md-order-by="productivity"><translate>锻造率</translate></th>
                     </tr>
                   </thead>
                   <tbody md-body>
@@ -592,10 +593,10 @@
                       </md-card-title-media>
                       <md-card-title-text>
                         <translate>
-                          If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>
-                          Moreover, this account will move under the "My Accounts" list.
+                          如果你拥有这个账户，你可以启用虚拟目录功能。虚拟目录可以简便的管理你子账户里的资金，并且不需要为这些管理行为支付真实的手续费。<br>
+                          此外, 这个账户将会被移动到“我的账户”列表中。
                         </translate>
-                        <md-button ng-click="ul.createFolder(ul.selected)"><translate>Enable Virtual Folders</translate></md-button>
+                        <md-button ng-click="ul.createFolder(ul.selected)"><translate>启用虚拟目录</translate></md-button>
                       </md-card-title-text>
                     </md-card-title>
                   </md-card>
@@ -603,7 +604,7 @@
                 </md-list-item>
 
                 <md-list-item>
-                  <h3><translate>Default</translate> {{ul.currency.symbol}} {{(ul.getDefaultValue(ul.selected)/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</h3>
+                  <h3><translate>默认</translate> {{ul.currency.symbol}} {{(ul.getDefaultValue(ul.selected)/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</h3>
                   <span class="md-secondary">
                     <md-button md-block md-colors="{'background' : ul.getDefaultValue(ul.selected)>0 ? 'green-200':'red-200' }"> {{ul.getDefaultValue(ul.selected)/100000000}}</md-button>
                   </span>
@@ -618,12 +619,12 @@
                       <md-menu-content width="1">
                         <md-menu-item>
                           <md-button ng-click="ul.deleteFolder(ul.selected,folder)">
-                            <translate>Remove</translate>
+                            <translate>删除</translate>
                           </md-button>
                         </md-menu-item>
                         <md-menu-item>
                           <md-button ng-click="ul.renameVirtuaFolder(folder)">
-                            <translate>Rename</translate>
+                            <translate>重命名</translate>
                           </md-button>
                         </md-menu-item>
                       </md-menu-content>
@@ -639,7 +640,7 @@
 
                 </md-list-item>
                 <md-list-item ng-if="ul.selected.virtual">
-                  <md-button ng-click="ul.createFolder(ul.selected)"><translate>Create a new virtual folder</translate></md-button>
+                  <md-button ng-click="ul.createFolder(ul.selected)"><translate>创建一个新的虚拟目录</translate></md-button>
                 </md-list-item>
 
               </md-list>
@@ -649,7 +650,7 @@
 
           <md-tab ng-if="ul.selected.delegate">
             <md-tab-label>
-              <translate>Delegate</translate>
+              <translate>受托人</translate>
               <md-icon md-colors="{'color' : 'red' }" ng-if="ul.selected.delegate.rate>51" md-font-library="material-icons">close</md-icon>
               <md-icon md-colors="{'color' : 'green' }" ng-if="ul.selected.delegate.rate<52" md-font-library="material-icons">check</md-icon>
             </md-tab-label>
@@ -658,13 +659,13 @@
                 <h1>{{ul.selected.delegate.username}}</h1>
               </md-list-item>
               <md-list-item>
-                <translate>Rank</translate>&nbsp;{{ul.selected.delegate.rate}}
+                <translate>排名</translate>&nbsp;{{ul.selected.delegate.rate}}
               </md-list-item>
               <md-list-item>
-                <translate>Approval</translate>&nbsp;{{ul.selected.delegate.approval}}%
+                <translate>支持率</translate>&nbsp;{{ul.selected.delegate.approval}}%
               </md-list-item>
               <md-list-item>
-                <translate>Productivity</translate>&nbsp;{{ul.selected.delegate.productivity}}% - {{ul.selected.delegate.producedblocks}}&nbsp;<translate>produced blocks</translate>&nbsp;- {{ul.selected.delegate.missedblocks}}&nbsp;<translate>missed blocks</translate>
+                <translate>锻造率</translate>&nbsp;{{ul.selected.delegate.productivity}}% - {{ul.selected.delegate.producedblocks}}&nbsp;<translate>已锻造区块数</translate>&nbsp;- {{ul.selected.delegate.missedblocks}}&nbsp;<translate>错过区块数</translate>
               </md-list-item>
             </md-list>
           </md-tab-body>

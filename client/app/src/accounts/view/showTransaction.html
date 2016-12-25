@@ -2,39 +2,39 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span translate>Transaction</span> {{validate.transaction.id}}</h2>
+        <h2><span translate>交易记录</span> {{validate.transaction.id}}</h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
         <md-list>
           <md-list-item>
-            <b translate>Type</b> <span class="md-secondary">{{validate.transaction.type}}</span>
+            <b translate>类型</b> <span class="md-secondary">{{validate.transaction.type}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>From</b> <span class="md-secondary">{{validate.transaction.senderId}}</span>
+            <b translate>从</b> <span class="md-secondary">{{validate.transaction.senderId}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.recipientId">
-            <b translate>To</b> <span class="md-secondary">{{validate.transaction.recipientId}}</span>
+            <b translate>到</b> <span class="md-secondary">{{validate.transaction.recipientId}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.username">
-            <b translate>Username</b> <span class="md-secondary">{{validate.transaction.username}}</span>
+            <b translate>用户名</b> <span class="md-secondary">{{validate.transaction.username}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.amount">
-            <b translate>Amount (Ѧ)</b> <span class="md-secondary">{{validate.transaction.amount/100000000}}</span>
+            <b translate>金额 (Ѧ)</b> <span class="md-secondary">{{validate.transaction.amount/100000000}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>Fee (Ѧ)</b> <span class="md-secondary">{{validate.transaction.fee/100000000}}</span>
+            <b translate>费用 (Ѧ)</b> <span class="md-secondary">{{validate.transaction.fee/100000000}}</span>
           </md-list-item>
         </md-list>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button  md-colors="{'background':'red' }"  ng-click="validate.send(validate.transaction)">
-        <span translate>Send</span> Ѧ{{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>now!</span>
+        <span translate>发送</span> Ѧ{{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>立即开始!</span>
       </md-button>
       <md-button ng-click="validate.cancel()" style="margin-right:20px;" translate>
-        Cancel
+        取消
       </md-button>
     </md-dialog-actions>
   </form>
