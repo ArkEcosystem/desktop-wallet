@@ -1,7 +1,7 @@
 # Multi Platform Ark Lite Client
 
 ## Download
-Install the version [0.1.0](https://github.com/ArkEcosystem/ark-desktop/releases)
+Install the version [0.2.0](https://github.com/ArkEcosystem/ark-desktop/releases)
 
 ## Features
 * Available on ***Windows***, ***Linux*** (ubuntu/debian) and ***Macosx*** (signed)
@@ -15,8 +15,9 @@ Install the version [0.1.0](https://github.com/ArkEcosystem/ark-desktop/releases
 
 If you login to your account (with your passphrase)
 * (soon) Withdraw to altcoins or USD (via changer.com) - no registration needed
-* Organise your accounts with virtual folders (for instance savings, personnal etc...) so ou don't pay any transfer fee
+* Organise your accounts with virtual folders (for instance savings, personnal etc...) so you don't pay any transfer fee
 * Update your votes.
+* (soon) easily switch to different network, or private chains
 
 Second signature supported. Multisignature accounts not yet supported.
 
@@ -28,13 +29,18 @@ Soon
 
 ## From code
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developped with this version:
+```
+sudo npm install -g n
+sudo n 6.9.2
+```
 
+Then install from source:
 ```bash
 # Clone this repository
 git clone https://github.com/ArkEcosystem/ark-desktop
 # Go into the repository
-cd Ark-Lite-Client
+cd ark-desktop
 # Install dependencies and run the app
 npm install
 cd client
