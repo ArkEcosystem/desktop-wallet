@@ -2,19 +2,19 @@
   'use strict';
 
   angular.module('arkclient')
-         .service('changerService', ['$q', '$http', '$timeout', ChangerService]);
+         .service('changerService', ['storageService', '$q', '$http', '$timeout', ChangerService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function ChangerService($q,$http,$timeout){
+  function ChangerService(storageService,$q,$http,$timeout){
 
     var url='https://www.changer.com/api/v2/';
 
     var refid=97664;
 
-    var history=JSON.parse(window.localStorage.getItem("changer-history")) || {};
+    var history=storageService.get("changer-history") || {};
 
     var ark="ark_ARK";
 
@@ -105,7 +105,7 @@
         history[exchange.exchange_id].exchange=exchange;
         history[exchange.exchange_id].status=status;
       }
-      window.localStorage.setItem("changer-history",JSON.stringify(history));
+      storageService.set("changer-history",history);
     }
 
     function makeExchange(email, amount, send, receive, receiver_id){
@@ -218,7 +218,7 @@
             if(exchange.status.status=="processing" && exchange.exchange.expiration < new Date().getTime()/1000){
               $http.get(url+"exchange/"+exchange.status.exchange_id).then(function(resp){
                 history[id].status=resp.data;
-                window.localStorage.setItem("changer-history",JSON.stringify(history));
+                storageService.set("changer-history",history);
               });
             }
             if((exchange.status.status=="expired" || exchange.status.status=="cancelled") && exchange.exchange.expiration + 24*3600 < new Date().getTime()/1000){
@@ -229,7 +229,7 @@
             delete history[id];
           }
         }
-        window.localStorage.setItem("changer-history",JSON.stringify(history));
+        storageService.set("changer-history",history);
       }
       //map to array
       console.log(history);

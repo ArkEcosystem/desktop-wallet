@@ -2,19 +2,29 @@
   'use strict';
 
   angular.module('arkclient')
-         .service('networkService', ['$q', '$http', '$timeout', NetworkService]);
+         .service('networkService', ['$q', '$http', '$timeout', 'storageService', NetworkService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService($q,$http,$timeout){
+  function NetworkService($q,$http,$timeout,storageService){
+
+    var networks={
+      mainnet:{
+
+      },
+      testnet:{
+        nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
+        peerseed:'http://node1.arknet.cloud:4000'
+      }
+    };
 
     var ark=require('arkjs');
 
     var peerseed='http://node1.arknet.cloud:4000';
 
-    var nethash='3e7aded8f2179bc5230d3bf583582b5f741ce0068813909c185f279673fb32d8'
+    var nethash='ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6'
 
     var peer={ip:peerseed, isConnected:false, height:0, lastConnection:null};
 
@@ -89,7 +99,7 @@
         headers: {
           'Content-Type': 'application/json',
           'os': 'arkwalletapp',
-          'version': '0.0.3',
+          'version': '0.5.0',
           'port': 1,
           'nethash': nethash
         }
@@ -107,14 +117,14 @@
     function pickRandomPeer(){
       getFromPeer("/api/peers?state=2").then(function(response){
         if(response.success){
-          window.localStorage.setItem("peers",JSON.stringify(response.peers));
+          storageService.set("peers",response.peers);
           findGoodPeer(response.peers,0);
         }
         else{
-          findGoodPeer(JSON.parse(window.localStorage.getItem("peers")),0);
+          findGoodPeer(storageService.get("peers"),0);
         }
       }, function(error){
-        findGoodPeer(JSON.parse(window.localStorage.getItem("peers")),0);
+        findGoodPeer(storageService.get("peers"),0);
       })
     };
 
@@ -146,7 +156,7 @@
     }
 
     listenNetworkHeight();
-    getPrice();
+    //getPrice();
     pickRandomPeer();
 
 

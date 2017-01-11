@@ -3,7 +3,7 @@
   angular
        .module('arkclient')
        .controller('AccountController', [
-          'accountService', 'networkService', 'changerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
+          'accountService', 'networkService', 'storageService', 'changerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
           AccountController
        ]).filter('accountlabel', ['accountService', function(accountService) {
            return function(address) {
@@ -15,7 +15,40 @@
              return new Date(exchangetime*1000);
            };
          }
-       ]);
+       ]).directive('copyToClipboard',  function ($window, $mdToast) {
+        var body = angular.element($window.document.body);
+        var textarea = angular.element('<textarea/>');
+        textarea.css({
+            position: 'fixed',
+            opacity: '0'
+        });
+
+        function copy(toCopy) {
+            textarea.val(toCopy);
+            body.append(textarea);
+            textarea[0].select();
+
+            try {
+                var successful = document.execCommand('copy');
+                if (!successful) throw successful;
+            } catch (err) {
+                console.log("failed to copy", toCopy);
+            }
+            $mdToast.simple()
+              .textContent('Text copied to clipboard!')
+              .hideDelay(2000);
+            textarea.remove();
+        }
+
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                element.bind('click', function (e) {
+                    copy(attrs.copyToClipboard);
+                });
+            }
+        }
+      });
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
@@ -23,11 +56,11 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController( accountService, networkService, changerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog) {
+  function AccountController( accountService, networkService, storageService, changerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog) {
 
     var self = this;
     gettextCatalog.debug = true;
-    self.language  = window.localStorage.getItem("language");
+    self.language  = storageService.get("language");
     if(!self.language) selectNextLanguage();
     else gettextCatalog.setCurrentLanguage(self.language);
 
@@ -39,6 +72,7 @@
     self.selected     = null;
     self.accounts        = [ ];
     self.selectAccount   = selectAccount;
+    self.refreshCurrentAccount   = refreshCurrentAccount;
     self.gotoAddress = gotoAddress;
     self.getAllDelegates = getAllDelegates;
     self.addAccount   = addAccount;
@@ -50,15 +84,25 @@
     self.addDelegate = addDelegate;
     self.showAccountMenu  = showAccountMenu;
     self.selectNextLanguage = selectNextLanguage;
-    self.currency = JSON.parse(window.localStorage.getItem("currency")) || {name:"btc",symbol:"Ƀ"};
+    self.currency = storageService.get("currency") || {name:"btc",symbol:"Ƀ"};
     self.marketinfo= {};
     self.exchangeHistory=changerService.getHistory();
     console.log(self.exchangeHistory);
-    self.selectedCoin=window.localStorage.getItem("selectedCoin") || "bitcoin_BTC";
-    self.exchangeEmail=window.localStorage.getItem("email") || "";
+    self.selectedCoin=storageService.get("selectedCoin") || "bitcoin_BTC";
+    self.exchangeEmail=storageService.get("email") || "";
 
     self.connectedPeer={isConnected:false};
+
+
+    //refreshing displayed account every 10s
+    setInterval(function(){
+      if(self.selected){
+        self.refreshCurrentAccount();
+      }
+    }, 20*1000);
+
     self.connection = networkService.getConnection();
+
     self.connection.then(
       function(){
 
@@ -95,7 +139,7 @@
       var languages = ["en","fr","ara","de","it","es"];
       if(self.language) self.language=languages[languages.indexOf(self.language) + 1 % languages.length];
       else self.language = "en";
-      window.localStorage.setItem("language",self.language);
+      storageService.set("language",self.language);
       gettextCatalog.setCurrentLanguage(self.language);
     }
 
@@ -112,8 +156,8 @@
     self.getMarketInfo(self.selectedCoin);
 
     self.buy=function(){
-      if(self.exchangeEmail) window.localStorage.setItem("email",self.exchangeEmail);
-      if(self.selectedCoin) window.localStorage.setItem("selectedCoin",self.selectedCoin);
+      if(self.exchangeEmail) storageService.set("email",self.exchangeEmail);
+      if(self.selectedCoin) storageService.set("selectedCoin",self.selectedCoin);
       changerService.getMarketInfo(self.selectedCoin,"ark_ARK",self.buyAmount/self.buycoin.rate).then(function(rate){
         var amount = self.buyAmount/rate.rate;
         if(self.selectedCoin.split("_")[1]=="USD"){
@@ -181,7 +225,7 @@
     }
 
     self.sell=function(){
-      if(self.exchangeEmail) window.localStorage.setItem("email",self.exchangeEmail);
+      if(self.exchangeEmail) storageService.set("email",self.exchangeEmail);
       changerService.makeExchange(self.exchangeEmail, self.sellAmount, "ark_ARK", self.selectedCoin, self.recipientAddress).then(function(resp){
         accountService.createTransaction(0,
           {
@@ -361,7 +405,7 @@
       ];
       self.currency=currencies[currencies.map(function(x) {return x.name; }).indexOf(self.currency.name)+1];
       if(self.currency==undefined) self.currency=currencies[0];
-      window.localStorage.setItem("currency",JSON.stringify(self.currency));
+      storageService.set("currency",self.currency);
     };
 
     self.pickRandomPeer=function(){
@@ -464,7 +508,7 @@
                 var temp=self.selected.transactions.sort(function(a,b){
                   return b.timestamp-a.timestamp;
                 });
-                if(temp.length==0 || temp[0].id!=transactions[0].id){
+                if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
                   self.selected.transactions = transactions;
                 }
               }
@@ -487,6 +531,39 @@
           });
       });
 
+    }
+
+
+  function refreshCurrentAccount(){
+    var myaccount=self.selected;
+    accountService
+      .refreshAccount(myaccount)
+      .then(function(account){
+        if(self.selected.address==myaccount.address){
+          self.selected.balance = account.balance;
+          if(!self.selected.virtual) self.selected.virtual = account.virtual;
+        }
+      });
+    accountService
+      .getTransactions(myaccount.address)
+      .then(function(transactions){
+        if(self.selected.address==myaccount.address){
+          if(!self.selected.transactions){
+            self.selected.transactions = transactions;
+          }
+          else{
+            transactions=transactions.sort(function(a,b){
+              return b.timestamp-a.timestamp;
+            });
+            var temp=self.selected.transactions.sort(function(a,b){
+              return b.timestamp-a.timestamp;
+            });
+            if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+              self.selected.transactions = transactions;
+            }
+          }
+        }
+      });
     }
 
     /**
@@ -525,7 +602,7 @@
               var temp=self.selected.transactions.sort(function(a,b){
                 return b.timestamp-a.timestamp;
               });
-              if(temp.length==0 || temp[0].id!=transactions[0].id){
+              if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
                 self.selected.transactions = transactions;
               }
             }
@@ -546,7 +623,6 @@
             self.selected.delegate = delegate;
           }
         });
-
     }
 
     /**
@@ -562,7 +638,7 @@
           .ok(gettextCatalog.getString('Add'))
           .cancel(gettextCatalog.getString('Cancel'));
       $mdDialog.show(confirm).then(function(address) {
-        var isAddress = /^[1-9A-Za-z]+[A]$/g;
+        var isAddress = /^[1-9A-Za-z]+$/g;
         if(isAddress.test(address)){
           accountService.fetchAccount(address).then(function(account){
             self.accounts.push(account);
@@ -586,7 +662,6 @@
 
     };
 
-
     function getAllDelegates(selectedAccount){
       function arrayUnique(array) {
         var a = array.concat();
@@ -598,7 +673,10 @@
         }
         return a;
       }
-      return arrayUnique(selectedAccount.selectedVotes.concat(selectedAccount.delegates))
+      if(selectedAccount.selectedVotes){
+        return arrayUnique(selectedAccount.selectedVotes.concat(selectedAccount.delegates))
+      }
+      else return selectedAccount.delegates;
     };
 
     function addDelegate(selectedAccount){

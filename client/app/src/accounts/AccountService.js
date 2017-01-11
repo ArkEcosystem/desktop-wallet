@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('arkclient')
-         .service('accountService', ['$q', '$http', 'networkService', 'gettextCatalog', AccountService]);
+         .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'gettextCatalog', AccountService]);
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService($q, $http, networkService, gettextCatalog){
+  function AccountService($q, $http, networkService, storageService, gettextCatalog){
 
     var ark=require('arkjs');
 
@@ -118,12 +118,11 @@
     };
 
     function getAccount(address){
-      var stringaccount=window.localStorage.getItem(address);
-      if(stringaccount){
-        var account=JSON.parse(stringaccount);
-        account.transactions=JSON.parse(window.localStorage.getItem("transactions-"+address));
-        account.username=window.localStorage.getItem("username-"+address);
-        account.delegate=JSON.parse(window.localStorage.getItem("delegate-"+address));
+      var account=storageService.get(address);
+      if(account){
+        account.transactions=storageService.get("transactions-"+address);
+        account.username=storageService.get("username-"+address);
+        account.delegate=storageService.get("delegate-"+address);
         account.virtual=getVirtual(address);
         return account;
       }
@@ -138,7 +137,7 @@
       var account=fetchAccount(address).then(function(account){
         if(account){
           account.virtual=account.virtual || {};
-          window.localStorage.setItem("virtual-"+address, JSON.stringify(account.virtual));
+          storageService.set("virtual-"+address,account.virtual);
           deferred.resolve(account);
         }
         else{
@@ -152,17 +151,14 @@
       if(!account || !account.address){
         return;
       }
-      window.localStorage.setItem(account.address,JSON.stringify(account));
-      var addresses=window.localStorage.getItem("addresses");
+      storageService.set(account.address,account);
+      var addresses=storageService.get("addresses");
       if(!addresses){
         addresses=[];
       }
-      else{
-        addresses=JSON.parse(addresses);
-      }
       if(addresses.indexOf(account.address)==-1){
         addresses.push(account.address);
-        window.localStorage.setItem("addresses",JSON.stringify(addresses));
+        storageService.set("addresses",addresses);
       }
     };
 
@@ -177,9 +173,9 @@
       window.localStorage.removeItem("username-"+account.address);
 
       //remove the address from stored addresses
-      var addresses=JSON.parse(window.localStorage.getItem("addresses"));
+      var addresses=storageService.get("addresses");
       addresses.splice(addresses.indexOf(account.address),1);
-      window.localStorage.setItem("addresses",JSON.stringify(addresses));
+      storageService.set("addresses",addresses);
       return $q.when(account);
     };
 
@@ -203,7 +199,7 @@
               transaction.total=-transaction.amount-transaction.fee;
             }
           }
-          window.localStorage.setItem("transactions-"+address,JSON.stringify(resp.transactions));
+          storageService.set("transactions-"+address,resp.transactions);
           deferred.resolve(resp.transactions);
         }
         else{
@@ -221,8 +217,8 @@
       }
       networkService.getFromPeer("/api/delegates/get/?publicKey="+publicKey).then(function (resp) {
         if(resp && resp.success && resp.delegate){
-          window.localStorage.setItem("delegate-"+resp.delegate.address,JSON.stringify(resp.delegate));
-          window.localStorage.setItem("username-"+resp.delegate.address,resp.delegate.username);
+          storageService.set("delegate-"+resp.delegate.address,resp.delegate);
+          storageService.set("username-"+resp.delegate.address,resp.delegate.username);
           deferred.resolve(resp.delegate);
         }
         else{
@@ -240,8 +236,8 @@
       }
       networkService.getFromPeer("/api/delegates/get/?username="+username).then(function (resp) {
         if(resp && resp.success && resp.delegate){
-          window.localStorage.setItem("delegate-"+resp.delegate.address,JSON.stringify(resp.delegate));
-          window.localStorage.setItem("username-"+resp.delegate.address,resp.delegate.username);
+          storageService.set("delegate-"+resp.delegate.address,resp.delegate);
+          storageService.set("username-"+resp.delegate.address,resp.delegate.username);
           deferred.resolve(resp.delegate);
         }
         else{
@@ -275,7 +271,7 @@
       var deferred = $q.defer();
       networkService.getFromPeer("/api/accounts/delegates/?address="+address).then(function(resp){
         if(resp && resp.success){
-          window.localStorage.setItem("voted-"+address,JSON.stringify(resp.delegates));
+          storageService.set("voted-"+address,resp.delegates);
           deferred.resolve(resp.delegates);
         }
         else{
@@ -288,7 +284,7 @@
     function createTransaction(type,config){
       var deferred = $q.defer();
       if(type==0){ //send ark
-        var isAddress = /^[1-9A-Za-z]+[A]$/g;
+        var isAddress = /^[1-9A-Za-z]+$/g;
         if(!isAddress.test(config.toAddress)){
           deferred.reject(gettextCatalog.getString("The destination address ")+config.toAddress+gettextCatalog.getString(" is erroneous"));
           return deferred.promise;
@@ -373,7 +369,7 @@
       }
 
       var assets = [];
-      var votedDelegates = JSON.parse(window.localStorage.getItem("voted-"+address)) || [];
+      var votedDelegates = storageService.get("voted-"+address) || [];
       votedDelegates = votedDelegates.map(function(delegate){
         return {
           username: delegate.username,
@@ -459,7 +455,7 @@
       var account=getAccount(address);
       if(account){
         account.virtual=account.virtual || {};
-        window.localStorage.setItem("virtual-"+address, JSON.stringify(account.virtual));
+        storageService.set("virtual-"+address,account.virtual);
         deferred.resolve(account.virtual);
       }
       else{
@@ -479,19 +475,19 @@
       else if(!f && amount>=0){
         virtual[folder]={amount:amount};
       }
-      window.localStorage.setItem("virtual-"+address, JSON.stringify(virtual));
+      storageService.set("virtual-"+address,virtual);
       return getVirtual(address);
     };
 
     function deleteFolder(address, folder){
-      var virtual=JSON.parse(window.localStorage.getItem("virtual-"+address));
+      var virtual=storageService.get("virtual-"+address);
       delete virtual[folder];
-      window.localStorage.setItem("virtual-"+address, JSON.stringify(virtual));
+      storageService.set("virtual-"+address,virtual);
       return getVirtual(address);
     };
 
     function getVirtual(address){
-      var virtual=JSON.parse(window.localStorage.getItem("virtual-"+address));
+      var virtual=storageService.get("virtual-"+address);
       if(virtual){
         virtual.uservalue=function(folder){
           return function(value){
@@ -526,19 +522,19 @@
 
     return {
       loadAllAccounts : function() {
-        var accounts = JSON.parse(window.localStorage.getItem("addresses"));
+        var accounts = storageService.get("addresses");
         if(!accounts){
           return [];
         }
         accounts=accounts.filter(function(address){
-          return (window.localStorage.getItem("username-"+address)!=null || window.localStorage.getItem("virtual-"+address)!=null);
+          return (storageService.get("username-"+address)!=null || storageService.get("virtual-"+address)!=null);
         });
         return accounts.map(function(address){
-          var account=JSON.parse(window.localStorage.getItem(address));
+          var account=storageService.get(address);
           if(account){
-            account.transactions=JSON.parse(window.localStorage.getItem("transactions-"+address));
-            account.delegate=JSON.parse(window.localStorage.getItem("delegate-"+address));
-            account.username=window.localStorage.getItem("username-"+address);
+            account.transactions=storageService.get("transactions-"+address);
+            account.delegate=storageService.get("delegate-"+address);
+            account.username=storageService.get("username-"+address);
             account.virtual=getVirtual(address);
             return account;
           }
@@ -553,11 +549,11 @@
       },
 
       setUsername: function(address,username){
-        window.localStorage.setItem("username-"+address,username);
+        storageService.set("username-"+address,username);
       },
 
       getUsername: function(address){
-        return window.localStorage.getItem("username-"+address) || address;
+        return storageService.get("username-"+address) || address;
       },
 
       addAccount: addAccount,

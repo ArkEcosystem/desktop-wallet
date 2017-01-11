@@ -1,6 +1,6 @@
 {
   "name": "ArkClient",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "productName": "ArkClient",
   "description": "Ark Desktop",
   "main": "main.js",
@@ -8,6 +8,7 @@
     "start": "electron main.js",
     "pack": "build --target dir",
     "dist:win": "build --win",
+    "dist:win32": "build --win --ia32",
     "dist:osx": "build --osx",
     "dist:linux": "build --linux"
   },

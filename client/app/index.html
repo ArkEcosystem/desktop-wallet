@@ -238,17 +238,16 @@
             </div>
             <md-card-title>
               <md-card-title-media>
-                <div class="md-media-sm card-media" layout layout-align="center center">
-                  <md-icon ng-if="!ul.selected.delegate&&!ul.selected.cold" md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">account_balance</md-icon>
-                  <md-icon ng-if="!ul.selected.delegate&&ul.selected.cold" md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">cloud_off</md-icon>
-                  <md-icon ng-if="ul.selected.delegate" md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">security</md-icon>
+                <div class="md-media-sm card-media" style="margin:10px; width:128px;height:128px;" layout layout-align="center center">
+                  <qrcode size="128" data='{"a":"{{ul.selected.address}}"}'></qrcode>
                 </div>
               </md-card-title-media>
               <md-card-title-text>
                 <span class="md-headline">
-                  {{ul.selected.username||'Account'}}
+                  <small>{{ul.selected.username||'Account'}}</small>
                   <br>
-                  <small>{{ul.selected.address}}</small>
+                  <md-button style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}"><md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
+
                 </span>
                 <span class="md-subhead description">
                   <translate>Balance</translate> Ѧ{{ul.selected.balance/100000000}}
@@ -257,7 +256,6 @@
               </md-card-title-text>
             </md-card-title>
           </md-card>
-
 
 
           <md-tabs md-dynamic-height>
@@ -289,12 +287,12 @@
                         <th md-column md-numeric translate>To</th>
                       </tr>
                     </thead>
-                    <tbody md-body>
+                    <tbody md-body style="white-space:nowrap;">
                       <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
                         <td md-cell>{{it.date | date: 'short'}}</td>
                         <td md-cell>{{it.label}}</td>
-                        <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExternal('https://explorer.ark.io/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{(it.total/100000000).toFixed(2)}}</md-button></td>
-                        <td ng-if="it.total<0" md-cell><md-button ng-click="ul.openExternal('https://explorer.ark.io/tx/'+it.id)" md-colors="{'background' : 'red-200' }">{{(it.total/100000000).toFixed(2)}}</md-button></td>
+                        <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExternal('http://explorer.arkio.top/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{(it.total/100000000).toFixed(2)}}</md-button></td>
+                        <td ng-if="it.total<0" md-cell><md-button ng-click="ul.openExternal('http://explorer.arkio.top/tx/'+it.id)" md-colors="{'background' : 'red-200' }">{{(it.total/100000000).toFixed(2)}}</md-button></td>
                         <td md-cell>{{it.vendorField}}</td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a></td>
@@ -610,7 +608,7 @@
                 </md-list-item>
                 <md-list-item ng-repeat="folder in ul.selected.virtual.getFolders()">
                   <div ng-repeat="v in [0]">
-                    <md-menu ng-model="">
+                    <md-menu>
                       <md-button aria-label="Open folder menu" ng-click="ul.openMenu($mdOpenMenu, $event)">
                         <md-icon>folder</md-icon>
                         {{folder}}
@@ -680,21 +678,23 @@
   </div>
 
     <script src="../dependencies.min.js"></script>
+    <script src="../node_modules/qrcode-generator/js/qrcode.js"></script>
+    <script src="../node_modules/angular-qrcode/angular-qrcode.js"></script>
 
     <script src="src/translations.js"></script>
     <script src="src/accounts/Accounts.js"></script>
+    <script src="src/storage/StorageService.js"></script>
     <script src="src/accounts/AccountService.js"></script>
     <script src="src/accounts/AccountController.js"></script>
     <script src="src/network/NetworkService.js"></script>
     <script src="src/changer/ChangerService.js"></script>
 
 
-
     <script type="text/javascript">
 
 
           angular
-              .module('arkApp', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext'])
+              .module('arkApp', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext','monospaced.qrcode'])
               .config(function($mdThemingProvider, $mdIconProvider){
                   $mdIconProvider
                       .defaultIconSet("./assets/svg/avatars.svg", 128)
