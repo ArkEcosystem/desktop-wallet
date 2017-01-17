@@ -10,30 +10,77 @@
    */
   function NetworkService($q,$http,$timeout,storageService){
 
-    var networks={
-      mainnet:{
-
-      },
-      testnet:{
-        nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
-        peerseed:'http://node1.arknet.cloud:4000'
-      }
-    };
+    var network=switchNetwork(storageService.getContext());
 
     var ark=require('arkjs');
 
-    var peerseed='http://node1.arknet.cloud:4000';
-
-    var nethash='ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6'
-
-    var peer={ip:peerseed, isConnected:false, height:0, lastConnection:null};
+    var peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
 
     var connection=$q.defer();
 
     connection.notify(peer);
 
+    function addNetwork(name,newnetwork){
+      var n = storageService.getGlobal("networks");
+      n[name]=newnetwork;
+      storageService.setGlobal("networks",n);
+    }
+
+    function removeNetwork(name){
+      var n = storageService.getGlobal("networks");
+      delete n[name];
+      storageService.setGlobal("networks",n);
+    }
+
+    function switchNetwork(newnetwork, reload){
+      if(!newnetwork){ //perform round robin
+        var n = storageService.getGlobal("networks");
+        var keys = Object.keys(n);
+        var i = keys.indexOf(storageService.getContext())+1;
+        if(i == keys.length){
+          i=0;
+        }
+        storageService.switchContext(keys[i]);
+        return window.location.reload();
+      }
+      storageService.switchContext(newnetwork);
+      var n = storageService.getGlobal("networks");
+      if(!n){
+        n = {
+          mainnet:{ //so far same as testnet
+            nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
+            peerseed:'http://node1.arknet.cloud:4000',
+            token: 'ARK',
+            symbol: 'Ѧ',
+            explorer: 'http://texplorer.ark.io',
+            exchanges: {
+              changer: "ark_ARK"
+            },
+            background:"background-image:url(assets/img/test1.jpg)"
+          },
+          testnet:{
+            nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
+            peerseed:'http://node2.arknet.cloud:4000',
+            token: 'TESTARK',
+            symbol: 'TѦ',
+            explorer: 'http://texplorer.ark.io',
+            background:"background-color:#222299"
+          }
+        };
+        storageService.setGlobal("networks",n);
+      }
+      if(reload){
+        return window.location.reload();
+      }
+      return n[newnetwork];
+    }
+
+    function getNetwork(){
+      return network;
+    }
+
     function getPrice(){
-      $http.get("http://coinmarketcap.northpole.ro/api/v5/ARK.json",{timeout: 2000}).success(function(data){
+      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000}).success(function(data){
         peer.market=data;
       });
       $timeout(function(){
@@ -101,7 +148,7 @@
           'os': 'arkwalletapp',
           'version': '0.5.0',
           'port': 1,
-          'nethash': nethash
+          'nethash': network.nethash
         }
       }).then(function(resp){
         if(resp.data.success){
@@ -130,7 +177,7 @@
 
     function findGoodPeer(peers, index){
       if(index>peers.length-1){
-        //peer.ip=peerseed;
+        //peer.ip=network.peerseed;
         return;
       }
       peer.ip="http://"+peers[index].ip+":"+peers[index].port;
@@ -161,6 +208,10 @@
 
 
     return {
+      switchNetwork: switchNetwork,
+      addNetwork: addNetwork,
+      removeNetwork: removeNetwork,
+      getNetwork: getNetwork,
       getPeer: getPeer,
       getConnection: getConnection,
       getFromPeer: getFromPeer,

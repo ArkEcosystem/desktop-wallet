@@ -21,10 +21,15 @@
     }
 
 
+    function getContext(){
+      return context;
+    }
+
     function switchContext(contextname){
       var temp = window.localStorage.getItem("storage-"+contextname);
       saveState();
       context = contextname;
+      window.localStorage.setItem("context",context);
       if(!temp){
         storage={};
       }
@@ -39,11 +44,20 @@
       return storage[key];
     }
 
+    function getGlobal(key){
+      return JSON.parse(window.localStorage.getItem("global-"+key));
+    }
+
     function set(key, value, forcesave){
       storage[key]=value;
       if(forcesave){
         saveState();
       }
+      return value;
+    }
+
+    function setGlobal(key, value){
+      window.localStorage.setItem("global-"+key,JSON.stringify(value));
       return value;
     }
 
@@ -61,8 +75,11 @@
 
     return {
       switchContext: switchContext,
+      getContext: getContext,
       get: get,
       set: set,
+      getGlobal: getGlobal,
+      setGlobal: setGlobal,
       saveState: saveState
     }
   }

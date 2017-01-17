@@ -179,11 +179,17 @@
       return $q.when(account);
     };
 
-    function getTransactions(address) {
+    function getTransactions(address, offset, limit) {
+      if(!offset){
+        offset=0;
+      }
+      if(!limit){
+        limit=100
+      }
       var deferred = $q.defer();
       var d = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0));
       var t = parseInt(d.getTime() / 1000);
-      networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&recipientId=" +address +"&senderId="+address).then(function (resp) {
+      networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=100&recipientId=" +address +"&senderId="+address).then(function (resp) {
         if(resp.success){
           for(var i=0;i<resp.transactions.length;i++){
             var transaction = resp.transactions[i];
@@ -526,6 +532,14 @@
         if(!accounts){
           return [];
         }
+        var uniqueaccounts=[];
+        for(var i in accounts){
+          if(uniqueaccounts.indexOf(accounts[i])==-1){
+            uniqueaccounts.push(accounts[i]);
+          }
+        }
+        accounts=uniqueaccounts;
+        console.log(uniqueaccounts);
         accounts=accounts.filter(function(address){
           return (storageService.get("username-"+address)!=null || storageService.get("virtual-"+address)!=null);
         });

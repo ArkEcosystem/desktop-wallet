@@ -68,6 +68,10 @@
       require('electron').shell.openExternal(url);
     }
 
+    self.openExplorer = function(api){
+      require('electron').shell.openExternal(self.network.explorer+api);
+    }
+
     self.isNetworkConnected=false;
     self.selected     = null;
     self.accounts        = [ ];
@@ -85,9 +89,10 @@
     self.showAccountMenu  = showAccountMenu;
     self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || {name:"btc",symbol:"Ƀ"};
+    self.switchNetwork = networkService.switchNetwork;
+    self.network = networkService.getNetwork();
     self.marketinfo= {};
     self.exchangeHistory=changerService.getHistory();
-    console.log(self.exchangeHistory);
     self.selectedCoin=storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail=storageService.get("email") || "";
 
