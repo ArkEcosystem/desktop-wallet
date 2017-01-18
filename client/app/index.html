@@ -50,11 +50,11 @@
                     <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.language}}</md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button translate aria-label="Add Address" ng-click="ul.addAccount()">Add Account</md-button>
-                    <md-button translate aria-label="Create Account" ng-click="ul.createAccount()">Create Account</md-button>
+                    <md-button aria-label="Add Address" ng-click="ul.addAccount()"><translate>Add Account</translate></md-button>
+                    <md-button aria-label="Create Account" ng-click="ul.createAccount()"><translate>Create Account</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button translate aria-label="Manage Networks" ng-click="ul.manageNetworks()">Manage Networks</md-button>
+                    <md-button aria-label="Manage Networks" md-prevent-menu-close ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
                   </md-list-item>
             </md-menu-content>
           </md-menu>
@@ -117,15 +117,15 @@
             <md-menu-content flex layout-padding width="6">
                 <md-list>
                   <md-list-item>
-                    <md-button aria-label="Close App" ng-click="ul.closeApp()" translate>Close</md-button>
-                    <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')" translate>Restart</md-button>
+                    <md-button aria-label="Close App" ng-click="ul.closeApp()"><translate>Close</translate></md-button>
+                    <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')"><translate>Restart</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')" translate>Minify</md-button>
-                    <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')" translate>Maximize</md-button>
+                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')"><translate>Minify</translate></md-button>
+                    <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')"><translate>Maximize</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))" translate>Full Screen</md-button>
+                    <md-button aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))"><translate>Full Screen</translate></md-button>
                   </md-list-item>
                 </md-list>
             </md-menu-content>
@@ -302,7 +302,7 @@
                       <tr md-row>
                         <th md-column md-numeric md-order-by="timestamp"><translate>Date</translate></th>
                         <th md-column md-order-by="label"><translate>Type</translate></th>
-                        <th md-column md-numeric md-order-by="total" translate>Total {{ul.network.symbol}}</th>
+                        <th md-column md-numeric md-order-by="total"><translate>Total</Translate> {{ul.network.symbol}}</th>
                         <th md-column translate>Vendor Field</th>
                         <th md-column md-numeric translate>From</th>
                         <th md-column md-numeric translate>To</th>

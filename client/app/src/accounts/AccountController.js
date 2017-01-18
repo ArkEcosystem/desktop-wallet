@@ -157,7 +157,7 @@
     );
 
     function selectNextLanguage(){
-      var languages = ["en","fr","ara","de","it","es"];
+      var languages = ["en","fr","el","ara","de","it","es"];
       if(self.language) self.language=languages[languages.indexOf(self.language) + 1 % languages.length];
       else self.language = "en";
       storageService.set("language",self.language);
