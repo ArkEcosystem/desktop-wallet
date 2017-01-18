@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2016-09-01 19:48+0000\n"
-"PO-Revision-Date: 2016-09-01 19:48+0000\n"
+"POT-Creation-Date: 2017-01-18 08:54+0000\n"
+"PO-Revision-Date: 2017-01-18 08:54+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ar\n"
@@ -11,68 +11,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
 
-msgid "Exchange"
-msgstr "تبادل"
-
-msgid "Total Ѧ"
-msgstr "مجموع  Ѧ"
-
-msgid "This account has never interacted with the network. This is either:"
-msgstr " هذا الحساب لم يتفاعل أبدا مع الشبكة. هذا هو إما:"
-
-msgid "Transactions"
-msgstr "المعاملات"
-
-msgid "a cold wallet, ie the owner of the passphrase has never used it"
-msgstr "محفظة باردة، صاحب عبارة المرور لم يستاخدمها أبدا "
-
-msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet. The ARK are lost"
-msgstr "محفظة منعدمة، أي لا أحد يعرف عبارة مرور هذه المحفظة. تم فقدان ARK"
-
-msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet."
-msgstr "محفظة منعدمة، أي لا أحد يعرف عبارة مرور هذه المحفظة."
-
-msgid "Balance"
-msgstr "الرصيد"
-
-msgid "Details"
-msgstr "تفاصيل"
-
-msgid "Language"
-msgstr "اللغة"
-
-msgid "Recipient Address"
-msgstr "عنوان المُستلم"
+msgid "Address"
+msgstr "عنوان"
 
 msgid "Account added!"
 msgstr "حساب مضاف!"
 
-msgid "Account deleted!"
-msgstr "تم حذف الحساب!"
-
-msgid "Add"
-msgstr "إضافة"
+msgid "Amount (Ѧ)"
+msgstr "مبلغ (Ѧ)"
 
 msgid "Add Account"
 msgstr "إضافة حساب"
 
-msgid "Add Account from address"
-msgstr "إضافة الحساب من عنوان"
+msgid "Account deleted!"
+msgstr "تم حذف الحساب!"
 
 msgid "Add Delegate"
 msgstr "إضافة مندوب"
 
-msgid "Add Sponsors Delegates"
-msgstr "إضافة الرعاة المندوبين"
-
-msgid "Address"
-msgstr "عنوان"
-
 msgid "Amount"
 msgstr "مبلغ"
 
-msgid "Amount (Ѧ)"
-msgstr "مبلغ (Ѧ)"
+msgid "Add"
+msgstr "إضافة"
 
 msgid "Approval"
 msgstr "موافقة"
@@ -80,29 +41,29 @@ msgstr "موافقة"
 msgid "Are you sure?"
 msgstr "هل أنت متأكد؟"
 
-msgid "Blockchain Application Registration"
-msgstr "تسجيل تطبيق سلسلة الكثل (blockchain)"
+msgid "Balance"
+msgstr "الرصيد"
 
-msgid "By using the following forms, you are accepting their"
-msgstr "باستخدامك النماذج التالية، فإنك تقبل ب"
+msgid "Ark Client"
+msgstr "عميل ark"
 
 msgid "Cancel"
 msgstr "إلغاء"
 
-msgid "Cannot find delegate:"
-msgstr "لا يمكن العثور على المندوب:"
-
 msgid "Cannot find delegates from this term:"
 msgstr "لا يمكن العثور على مندوب من هذا المصطلح:"
-
-msgid "Cannot find delegates on this peer:"
-msgstr "لا يمكن العثور على المندوبين في هذا النظير:"
 
 msgid "Cannot get sponsors"
 msgstr "لا يمكن الحصول على الرعاة"
 
+msgid "Cannot find delegate:"
+msgstr "لا يمكن العثور على المندوب:"
+
 msgid "Cannot get transactions"
 msgstr "لا يمكن الحصول على الصفقات"
+
+msgid "Cannot find delegates on this peer:"
+msgstr "لا يمكن العثور على المندوبين في هذا النظير:"
 
 msgid "Cannot get voted delegates"
 msgstr "لا يمكن الحصول على المندوبين الذي تم التصويت عليهم"
@@ -113,32 +74,29 @@ msgstr "لا يمكن معرفة هل الحساب مندوب"
 msgid "Change 1h/7h/7d"
 msgstr "التَغَيُّر1h/7h/7d"
 
-msgid "Close"
-msgstr "إغلاق"
-
 msgid "Create Virtual Folder"
 msgstr "إنشاء مُجلّد افتراضي"
 
 msgid "Create a new virtual folder"
 msgstr "إنشاء مُجلّد افتراضي جديد"
 
-msgid "Date"
-msgstr "التاريخ"
+msgid "Close"
+msgstr "إغلاق"
 
 msgid "Default"
 msgstr "افتراضياً"
 
+msgid "Date"
+msgstr "التاريخ"
+
 msgid "Delay"
 msgstr "تأخير"
 
-msgid "Delegate"
-msgstr "مندوب"
-
-msgid "Delegate Registration"
-msgstr "تسجيل المندوب"
-
 msgid "Delegate name"
 msgstr "اسم المندوب"
+
+msgid "Delegate"
+msgstr "مندوب"
 
 msgid "Delete"
 msgstr "حذف"
@@ -146,38 +104,32 @@ msgstr "حذف"
 msgid "Delete Account"
 msgstr "حذف الحساب"
 
-msgid "Delete permanently this account"
-msgstr "حذف هذا الحساب بشكل دائم"
-
-msgid "Deposit ARK"
-msgstr "إيداع ARK"
-
-msgid "Deposit and Withdraw through our partner"
-msgstr "الإيداع والسحب من خلال شريكنا"
-
 msgid "Destination Address"
 msgstr "عنوان الوجهة"
+
+msgid "Delete permanently this account"
+msgstr "حذف هذا الحساب بشكل دائم"
 
 msgid "Enable Virtual Folders"
 msgstr "تمكين المُجلّد  افتراضي"
 
-msgid "Enable Votes"
-msgstr "تمكين التصويت"
-
 msgid "Error when trying to login:"
 msgstr "خطأ عند محاولة الدخول:"
 
+msgid "Enable Votes"
+msgstr "تمكين التصويت"
+
 msgid "Error:"
 msgstr "خطأ:"
+
+msgid "Exchange"
+msgstr "تبادل"
 
 msgid "Fee (Ѧ)"
 msgstr "رسوم (Ѧ)"
 
 msgid "Folder Name"
 msgstr "اسم المُجلّد"
-
-msgid "Folders"
-msgstr "مُجلّدات"
 
 msgid "From"
 msgstr "من"
@@ -188,26 +140,17 @@ msgstr "مُبرمج ب ❤  بواسطة"
 msgid "Height"
 msgstr "ارتفاع"
 
-msgid "History"
-msgstr "تاريخ التصفح"
-
-msgid "If you own this account, you can enable Voting"
-msgstr "إذا كنت تملك هذا الحساب، يمكنك تمكين التصويت"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                        Moreover, this account will move under the \"My Accounts\" list."
-msgstr "إذ كنت تملك هذا الحساب، يمكنك إنشاء مُجلّدات افتراضية. المجلدات الافتراضية حسابات فرعية بسيطة لتحسين تنظيم أموالك، دون الحاجة إلى إرسال معاملات حقيقية ودفع رسوم. <BR> وعلاوة على ذلك، فإن هذا الحساب سيوجد تحت قائمة \"حساباتي\"."
-
 msgid "Label"
 msgstr "علامة"
 
 msgid "Label set"
 msgstr "وضع العلامات"
 
+msgid "Language"
+msgstr "اللغة"
+
 msgid "Last checked"
 msgstr "تاريخ آخر فحص"
-
-msgid "Ark Client"
-msgstr "عميل ark"
 
 msgid "List full or delegate already voted."
 msgstr "القائمة كاملة أو مندوب صُوِّت."
@@ -218,15 +161,6 @@ msgstr "تسجيل الدخول"
 msgid "Market Cap."
 msgstr "رسملة السوق."
 
-msgid "Maximum:"
-msgstr "الحدالأقصى"
-
-msgid "Minimum:"
-msgstr "الحد الأدنى:"
-
-msgid "Multisignature Creation"
-msgstr "إنشاء التوقيع المتعدد"
-
 msgid "My Accounts"
 msgstr "حساباتي"
 
@@ -236,14 +170,11 @@ msgstr "الشبكة متصلة وصحية!"
 msgid "Network disconected!"
 msgstr "انقطاع الاتصال بالشبكة!"
 
-msgid "Next"
-msgstr "التالي"
-
-msgid "Next..."
-msgstr "التالي.."
-
 msgid "No difference from original delegate list"
 msgstr "لا فرق عن قائمة المندوب الأصلية"
+
+msgid "Next"
+msgstr "التالي"
 
 msgid "No publicKey"
 msgstr "لا يوجد مفتاح عام"
@@ -260,11 +191,11 @@ msgstr "فتح مراقب المندوب"
 msgid "Other Accounts"
 msgstr "حسابات أخرى"
 
-msgid "Passphrase"
-msgstr "عبارة المرور"
-
 msgid "Passphrase does not match your address"
 msgstr "عبارة المرور لا تطابق عنوانك"
+
+msgid "Passphrase"
+msgstr "عبارة المرور"
 
 msgid "Passphrase is not corresponding to account"
 msgstr "عبارة المرور لا تتطابق مع الحساب"
@@ -281,17 +212,11 @@ msgstr "يرجى إدخال عنوان جديد."
 msgid "Please enter a short label."
 msgstr "يرجى إدخال تسمية قصيرة."
 
-msgid "Please enter this account passphrase to login."
-msgstr "الرجاء إدخال عبارة مرور هذا الحساب للدخول."
-
-msgid "Please login with your account before using this feature"
-msgstr "الرجاء الدخول بحسابك قبل استخدام هذه الميزه"
-
-msgid "Please report any issue to"
-msgstr "الرجاء الإبلاغ عن أي قضية ل"
-
 msgid "Price"
 msgstr "السعر"
+
+msgid "Please enter this account passphrase to login."
+msgstr "الرجاء إدخال عبارة مرور هذا الحساب للدخول."
 
 msgid "Productivity"
 msgstr "الإنتاج"
@@ -305,38 +230,20 @@ msgstr "الخروج من العميل Ark?"
 msgid "Rank"
 msgstr "مرتبة"
 
-msgid "Receive"
-msgstr "تسلم"
-
 msgid "Receive Ark"
 msgstr "تسلم Ark"
-
-msgid "Recepient Address"
-msgstr "عنوان المستلم"
-
-msgid "Refresh"
-msgstr "تجديد"
-
-msgid "Remove"
-msgstr "إزالة"
 
 msgid "Rename"
 msgstr "إعادة التسمية"
 
-msgid "Second Passphrase"
-msgstr "عبارة المرور الثانية"
-
-msgid "Second Signature Creation"
-msgstr "إنشاء التوقيع الثاني"
-
-msgid "Second passphrase"
-msgstr "عبارة المرور الثانية"
-
-msgid "Select a coin"
-msgstr "اختر عملة"
+msgid "Remove"
+msgstr "إزالة"
 
 msgid "Send"
 msgstr "إرسال"
+
+msgid "Second Passphrase"
+msgstr "عبارة المرور الثانية"
 
 msgid "Send Ark"
 msgstr "إرسال Ark"
@@ -347,26 +254,11 @@ msgstr "إرسال Ark من"
 msgid "Set"
 msgstr "تعيين"
 
-msgid "Sponsors Page"
-msgstr "صفحة الرعاة"
-
-msgid "Status"
-msgstr "الوَضْع"
-
-msgid "Status:"
-msgstr "الوَضْع:"
-
 msgid "Succesfully Logged In!"
 msgstr "تسجيل ناجح !"
 
-msgid "Terms and Conditions"
-msgstr "الأحكام والشروط"
-
 msgid "The destination address"
 msgstr "عنوان الوجهة"
-
-msgid "They have funded this app so you can use it for free. <br>\n                Vote them to help the development."
-msgstr "لقد مَوَّلوا هذا التطبيق حتى تتمكنوا من استخدامه مجانا. <BR>\nصَوِّتو عليهم للمساعدة في التنمية."
 
 msgid "To"
 msgstr "إلى"
@@ -374,14 +266,8 @@ msgstr "إلى"
 msgid "Transaction"
 msgstr "صفقة"
 
-msgid "Transaction id"
-msgstr "هوية الصفقة"
-
-msgid "Transfer Ark from Blockchain Application"
-msgstr "نقل Ark  من تطبيق Blockchain "
-
-msgid "Transfer Ark to Blockchain Application"
-msgstr "نقل Ark  إلى تطبيق Blockchain "
+msgid "Transactions"
+msgstr "المعاملات"
 
 msgid "Type"
 msgstr "نوع"
@@ -392,9 +278,6 @@ msgstr "تحديث التصويت من"
 msgid "Username"
 msgstr "اسم المستخدم"
 
-msgid "Valid until"
-msgstr "صالح حتى"
-
 msgid "Virtual folder added!"
 msgstr "مجلّد افتراضي مُضاف !"
 
@@ -404,20 +287,14 @@ msgstr "صوت"
 msgid "Votes"
 msgstr "أصوات"
 
-msgid "Withdraw ARK"
-msgstr "سحب ARK"
-
-msgid "Your email, used to send confirmation"
-msgstr "البريد الإلكتروني الخاص بك، يُستخدم لإرسال التأكيد"
-
 msgid "address"
 msgstr "عنوان"
 
-msgid "folder name"
-msgstr "اسم المجلّد"
-
 msgid "is erroneous"
 msgstr "خاطئ"
+
+msgid "folder name"
+msgstr "اسم المجلّد"
 
 msgid "is not recognised"
 msgstr "غير معترف بها"
@@ -437,12 +314,9 @@ msgstr "عبارة مرور"
 msgid "produced blocks"
 msgstr "الكتل المنتجة"
 
-msgid "sent with success!"
-msgstr "أرسلت بنجاح!"
-
-msgid "to"
-msgstr "إلى"
-
 msgid "you need at least 1 ARK to vote"
 msgstr "تحتاج على الأقل 1 ARK  لكي تصوت"
+
+msgid "sent with success!"
+msgstr "أرسلت بنجاح!"
 

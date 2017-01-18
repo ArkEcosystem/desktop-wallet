@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2016-09-01 19:48+0000\n"
-"PO-Revision-Date: 2016-09-01 19:48+0000\n"
+"POT-Creation-Date: 2017-01-18 08:54+0000\n"
+"PO-Revision-Date: 2017-01-18 08:54+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: bg_BG\n"
@@ -11,32 +11,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Account added!"
-msgstr "Акаунта е добавен!"
+msgid "Add Address"
+msgstr "Добави адрес"
 
-msgid "Account deleted!"
-msgstr "Акаунта е изтрит!"
-
-msgid "Add"
-msgstr "Добави"
-
-msgid "Add Account"
-msgstr "Добави акаунт"
-
-msgid "Add Account from address"
-msgstr "Добави акаунт от адрес"
-
-msgid "Add Delegate"
-msgstr "Добави делегат"
+msgid "Account successfully created:"
+msgstr "Акаунта е създаден успешно"
 
 msgid "Address"
 msgstr "Адрес"
 
-msgid "Amount"
-msgstr "Сума"
+msgid "Account added!"
+msgstr "Акаунта е добавен!"
 
 msgid "Amount (Ѧ)"
 msgstr "Сума (Ѧ)"
+
+msgid "Add Account"
+msgstr "Добави акаунт"
+
+msgid "Account deleted!"
+msgstr "Акаунта е изтрит!"
+
+msgid "Add Delegate"
+msgstr "Добави делегат"
+
+msgid "Amount"
+msgstr "Сума"
+
+msgid "Add"
+msgstr "Добави"
 
 msgid "Approval"
 msgstr "Потвърждение"
@@ -44,23 +47,41 @@ msgstr "Потвърждение"
 msgid "Are you sure?"
 msgstr "Сигурни ли сте?"
 
-msgid "Blockchain Application Registration"
-msgstr "Регистриране на блокчейн приложение"
+msgid "Balance"
+msgstr "Баланс"
 
-msgid "By using the following forms, you are accepting their"
-msgstr "Използвайки тази услуга, Вие се съгласявате с условията за ползване"
+msgid "Ark Client"
+msgstr "ARK клиент"
 
 msgid "Cancel"
 msgstr "Отказ"
 
+msgid "Cannot find delegates from this term:"
+msgstr "Делегат с това име не може да бъде открит:"
+
+msgid "Cannot get sponsors"
+msgstr "Невъзможно зареждане на спонсори"
+
 msgid "Cannot find delegate:"
 msgstr "Не може да бъде открит делегат:"
+
+msgid "Cannot get transactions"
+msgstr "Невъзможно зареждане на транзакции"
+
+msgid "Cannot find delegates on this peer:"
+msgstr "Няма намерени делегати на този пиър:"
+
+msgid "Cannot get voted delegates"
+msgstr "Невъзможно зареждане на листа с гласовете"
+
+msgid "Cannot state if account is a delegate"
+msgstr "Не може да се определи дали акаунта е делегат"
 
 msgid "Change 1h/7h/7d"
 msgstr "Промяна 1ч./7ч./7д."
 
-msgid "Close"
-msgstr "Затвори"
+msgid "Create"
+msgstr "Създай"
 
 msgid "Create Virtual Folder"
 msgstr "Създай виртуална папка"
@@ -68,23 +89,26 @@ msgstr "Създай виртуална папка"
 msgid "Create a new virtual folder"
 msgstr "Създай нова виртуална папка"
 
-msgid "Date"
-msgstr "Дата"
+msgid "Close"
+msgstr "Затвори"
+
+msgid "Create Account"
+msgstr "Създай акаунт"
 
 msgid "Default"
 msgstr "По подразбиране"
 
+msgid "Date"
+msgstr "Дата"
+
 msgid "Delay"
 msgstr "Закъснение"
 
-msgid "Delegate"
-msgstr "Делегат"
-
-msgid "Delegate Registration"
-msgstr "Регистрация на делегат"
-
 msgid "Delegate name"
 msgstr "Име на делегат"
+
+msgid "Delegate"
+msgstr "Делегат"
 
 msgid "Delete"
 msgstr "Изтрий"
@@ -92,8 +116,17 @@ msgstr "Изтрий"
 msgid "Delete Account"
 msgstr "Изтрий акаунт"
 
+msgid "Destination Address"
+msgstr "Адрес на получател"
+
+msgid "Delete permanently this account"
+msgstr "Изтрий напълно този акаунт"
+
 msgid "Enable Virtual Folders"
 msgstr "Разреши виртуални папки"
+
+msgid "Error when trying to login:"
+msgstr "Грешка при опит за влизане:"
 
 msgid "Enable Votes"
 msgstr "Разреши гласуване"
@@ -101,14 +134,17 @@ msgstr "Разреши гласуване"
 msgid "Error:"
 msgstr "Грешка:"
 
+msgid "Exchange"
+msgstr "Обмяна"
+
 msgid "Fee (Ѧ)"
 msgstr "Такса (Ѧ)"
 
 msgid "Folder Name"
 msgstr "Име на папка"
 
-msgid "Folders"
-msgstr "Папки"
+msgid "Full Screen"
+msgstr "Цял екран"
 
 msgid "From"
 msgstr "От"
@@ -116,23 +152,23 @@ msgstr "От"
 msgid "Hand crafted with ❤ by"
 msgstr "Направено с ❤ от"
 
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Ако този акаунт е ваш, можете да разрешите виртуалните папки. Те са обикновени под-акаунти за по-добра организация на средствата, без да е нужна реална транзакция и плащане на такса.  <br> С това, акаунта ще бъде преместен в списъка \"Мои акаунти\""
+
 msgid "Height"
 msgstr "Височина"
 
-msgid "History"
-msgstr "История"
-
-msgid "If you own this account, you can enable Voting"
-msgstr "Ако този акаунт е ваш, можете да разрешите гласуването"
-
 msgid "Label"
-msgstr "Етикет"
+msgstr "Етикети"
+
+msgid "Label set"
+msgstr "Етикети"
+
+msgid "Language"
+msgstr "Език"
 
 msgid "Last checked"
 msgstr "Последна проверка"
-
-msgid "Ark Client"
-msgstr "Лиск клиент"
 
 msgid "List full or delegate already voted."
 msgstr "Списъка за гласуване е пълен или вече сте гласували за този делегат"
@@ -143,14 +179,20 @@ msgstr "Вход"
 msgid "Market Cap."
 msgstr "Пазарен дял"
 
-msgid "Maximum:"
-msgstr "Максимум:"
+msgid "Manage Networks"
+msgstr "Управление на мрежа"
 
-msgid "Minimum:"
-msgstr "Минимум:"
+msgid "Maximize"
+msgstr "Максимизирай"
+
+msgid "Minify"
+msgstr "Минимизирай"
 
 msgid "My Accounts"
 msgstr "Моите Акаунти"
+
+msgid "Network"
+msgstr "Мрежа"
 
 msgid "Network connected and healthy!"
 msgstr "Сързан с мрежата"
@@ -158,29 +200,56 @@ msgstr "Сързан с мрежата"
 msgid "Network disconected!"
 msgstr "Няма връзка с мрежата"
 
-msgid "Next"
-msgstr "Следващ"
-
-msgid "Next..."
-msgstr "Следващ..."
-
 msgid "No difference from original delegate list"
 msgstr "Няма разлика с оригиналния списък с делегати"
+
+msgid "Next"
+msgstr "Следващ"
 
 msgid "No publicKey"
 msgstr "Няма публичен ключ"
 
+msgid "No search term"
+msgstr "Няма критерии за търсене"
+
+msgid "Not enough ARK on your account"
+msgstr "Нямате достатъчна наличност в акаунта си"
+
+msgid "OffChain"
+msgstr "ОфЧейн"
+
+msgid "Open Delegate Monitor"
+msgstr "Монитор на делегатите"
+
+msgid "Optional"
+msgstr "Опционално"
+
 msgid "Other Accounts"
 msgstr "Други акаунти"
-
-msgid "Passphrase"
-msgstr "Парола"
 
 msgid "Passphrase does not match your address"
 msgstr "Паролата не съвпада с въведения адрес"
 
+msgid "Passphrase"
+msgstr "Парола"
+
+msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
+msgstr "Паролите не са защитени свръх надеждно.  <br>\nИзползвайте тази опция само на надеждни компютри или за акаунти чието съдържание можете да си позволите да загубите."
+
+msgid "Passphrases saved"
+msgstr "Паролите са запазени"
+
+msgid "Passphrase is not corresponding to account"
+msgstr "Паролата не съвпада с акаунта"
+
+msgid "Passphrases deleted"
+msgstr "Паролите бяха изтрити"
+
 msgid "Peer"
 msgstr "Пиър"
+
+msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Съхранявайте паролата си на сигурно място. Този клиент НЕ съхранява пароли и няма начин те да бъдат възстановени."
 
 msgid "Please enter a folder name."
 msgstr "Въведете име на папка"
@@ -188,14 +257,14 @@ msgstr "Въведете име на папка"
 msgid "Please enter a new address."
 msgstr "Въведете нов адрес"
 
-msgid "Please login with your account before using this feature"
-msgstr "Влезте в акаунта си преди да ползвате тази функция"
-
-msgid "Please report any issue to"
-msgstr "Съобщете за проблем на"
+msgid "Please enter a short label."
+msgstr "Въведете кратко описание"
 
 msgid "Price"
 msgstr "Цена"
+
+msgid "Please enter this account passphrase to login."
+msgstr "Въведете паролата за този акаунт за да влезете"
 
 msgid "Productivity"
 msgstr "Продуктивност"
@@ -209,65 +278,68 @@ msgstr "Изход от Лиск клиента?"
 msgid "Rank"
 msgstr "Ранг"
 
-msgid "Recepient Address"
-msgstr "Адрес на получателя"
+msgid "Receive Ark"
+msgstr "Получи ARK"
 
-msgid "Refresh"
-msgstr "Обнови"
+msgid "Register Delegate"
+msgstr "Регистрация на делегат"
 
-msgid "Remove"
-msgstr "Преманни"
+msgid "Register delegate for"
+msgstr "Регистрация на делегат за"
 
 msgid "Rename"
 msgstr "Преименувай"
 
-msgid "Second Passphrase"
-msgstr "Втора парола"
+msgid "Remove"
+msgstr "Преманни"
 
-msgid "Second Signature Creation"
-msgstr "Създаване на втори подпис"
+msgid "Restart"
+msgstr "Рестарт"
 
-msgid "Second passphrase"
-msgstr "Втора парола"
+msgid "Save"
+msgstr "Запази"
 
-msgid "Select a coin"
-msgstr "Избери монета"
+msgid "Save Passphrases for"
+msgstr "Запази паролите за"
 
 msgid "Send"
 msgstr "Изпрати"
 
+msgid "Second Passphrase"
+msgstr "Втора парола"
+
 msgid "Send Ark"
-msgstr "Изпрати Лиск"
+msgstr "Изпрати ARK"
 
 msgid "Send Ark from"
-msgstr "Изпрати лиск от"
+msgstr "Изпрати ARK от"
 
-msgid "Sponsors Page"
-msgstr "Спонсори"
-
-msgid "Status"
-msgstr "Статус"
-
-msgid "Status:"
-msgstr "Статус:"
+msgid "Set"
+msgstr "ОК"
 
 msgid "Succesfully Logged In!"
-msgstr "Успешен изход"
+msgstr "Успешно влизане!"
 
-msgid "Terms and Conditions"
-msgstr "Условия за ползване"
+msgid "Smartbridge"
+msgstr "Смартбридж"
+
+msgid "The destination address"
+msgstr "Адресът на получателя"
+
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "Този адрес никога не е бил въвеждан в мрежата. Тоеа е \"студен\" портфейл"
+
+msgid "To"
+msgstr "До"
+
+msgid "Total {{ul.network.symbol}}"
+msgstr "Общо {{ul.network.symbol}}"
 
 msgid "Transaction"
 msgstr "Транзакция"
 
-msgid "Transaction id"
-msgstr "Номер на транзакция"
-
-msgid "Transfer Ark from Blockchain Application"
-msgstr "Трансфер на Лиск от Блокчейн приложение"
-
-msgid "Transfer Ark to Blockchain Application"
-msgstr "Трансфер на Лиск към Блокчейн приложение"
+msgid "Transactions"
+msgstr "Транзакции"
 
 msgid "Type"
 msgstr "Тип"
@@ -278,8 +350,8 @@ msgstr "Обнови гласовете от"
 msgid "Username"
 msgstr "Потребител"
 
-msgid "Valid until"
-msgstr "Валидност до"
+msgid "Vendor Field"
+msgstr "Идентификатор"
 
 msgid "Virtual folder added!"
 msgstr "Добавена виртуална папка!"
@@ -290,17 +362,17 @@ msgstr "Гласуване"
 msgid "Votes"
 msgstr "Гласове"
 
-msgid "Withdraw ARK"
-msgstr "Изтегли Лиск"
-
-msgid "Your email, used to send confirmation"
-msgstr "Вашият мейл, използва се за изпращане на потвърждение"
-
 msgid "address"
 msgstr "адрес"
 
+msgid "is erroneous"
+msgstr "е грешен"
+
 msgid "folder name"
 msgstr "име на папка"
+
+msgid "is not recognised"
+msgstr "не е разпознат"
 
 msgid "label"
 msgstr "етикет"
@@ -314,12 +386,15 @@ msgstr "сега!"
 msgid "passphrase"
 msgstr "парола"
 
-msgid "sent with success!"
-msgstr "успешно изпратени!"
-
-msgid "to"
-msgstr "до"
+msgid "produced blocks"
+msgstr "произведени блокове"
 
 msgid "you need at least 1 ARK to vote"
 msgstr "за да гласувате ви трябва поне 1 ARK"
+
+msgid "sent with success!"
+msgstr "успешно изпратени!"
+
+msgid "you need at least 25 ARK to register delegate"
+msgstr "за регистрация на делегат трябва да имате 25 ARK"
 
