@@ -50,6 +50,7 @@
           mainnet:{ //so far same as testnet
             nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
             peerseed:'http://node1.arknet.cloud:4000',
+            forcepeer: false,
             token: 'ARK',
             symbol: 'Ѧ',
             explorer: 'http://texplorer.ark.io',
@@ -80,8 +81,14 @@
     }
 
     function getPrice(){
-      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000}).success(function(data){
+      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
+      .then(function(data){
         peer.market=data;
+      },function(){
+        peer.market={
+          price:
+            {usd: "0.0155258", btc: "0.0000175931", eur: "0.0145368375916", cny: "0.10658539329"}
+        };
       });
       $timeout(function(){
         getPrice();
@@ -162,17 +169,19 @@
     };
 
     function pickRandomPeer(){
-      getFromPeer("/api/peers?state=2").then(function(response){
-        if(response.success){
-          storageService.set("peers",response.peers);
-          findGoodPeer(response.peers,0);
-        }
-        else{
+      if(!network.forcepeer){
+        getFromPeer("/api/peers?state=2").then(function(response){
+          if(response.success){
+            storageService.set("peers",response.peers);
+            findGoodPeer(response.peers,0);
+          }
+          else{
+            findGoodPeer(storageService.get("peers"),0);
+          }
+        }, function(error){
           findGoodPeer(storageService.get("peers"),0);
-        }
-      }, function(error){
-        findGoodPeer(storageService.get("peers"),0);
-      })
+        });
+      }
     };
 
     function findGoodPeer(peers, index){
@@ -186,6 +195,7 @@
           findGoodPeer(peers, index+1);
         }
         else {
+          peer.height=response.height;
           return;
         }
       },
@@ -203,7 +213,7 @@
     }
 
     listenNetworkHeight();
-    //getPrice();
+    getPrice();
     pickRandomPeer();
 
 

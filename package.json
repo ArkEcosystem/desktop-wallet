@@ -1,10 +1,11 @@
 {
   "name": "ArkClient",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "productName": "ArkClient",
   "description": "Ark Desktop",
   "main": "main.js",
   "scripts": {
+    "electron":"electron --version",
     "start": "electron main.js",
     "pack": "build --target dir",
     "dist:win": "build --win",
@@ -31,7 +32,7 @@
   },
   "homepage": "https://github.com/fix/ark-desktop#readme",
   "devDependencies": {
-    "electron-prebuilt": "^1.2.0",
+    "electron-prebuilt": "^1.4.13",
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",

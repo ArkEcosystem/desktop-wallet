@@ -13,7 +13,7 @@ function createWindow () {
   // Create the browser window.
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
   mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: __dirname + "/client/ark.png", resizable:true, frame:false})
-
+  mainWindow.setContentProtection(true);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
 

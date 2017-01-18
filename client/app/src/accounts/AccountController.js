@@ -64,13 +64,28 @@
     if(!self.language) selectNextLanguage();
     else gettextCatalog.setCurrentLanguage(self.language);
 
+
+    self.closeApp = function() {
+      var confirm = $mdDialog.confirm()
+          .title(gettextCatalog.getString('Quit Ark Client?'))
+          .ok(gettextCatalog.getString('Quit'))
+          .cancel(gettextCatalog.getString('Cancel'));
+      $mdDialog.show(confirm).then(function() {
+        require('electron').remote.app.quit();
+      });
+    };
+
+    self.windowApp = function(action, args) {
+      return require('electron').remote.getCurrentWindow()[action](args);
+    };
+
     self.openExternal = function(url){
       require('electron').shell.openExternal(url);
-    }
+    };
 
     self.openExplorer = function(api){
       require('electron').shell.openExternal(self.network.explorer+api);
-    }
+    };
 
     self.isNetworkConnected=false;
     self.selected     = null;
@@ -83,6 +98,7 @@
     self.createAccount = createAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
+    self.openPassphrasesDialog  = openPassphrasesDialog;
     self.createDelegate = createDelegate;
     self.vote  = vote;
     self.addDelegate = addDelegate;
@@ -385,15 +401,6 @@
       $mdOpenMenu(ev);
     };
 
-    self.closeApp = function() {
-      var confirm = $mdDialog.confirm()
-          .title(gettextCatalog.getString('Quit Ark Client?'))
-          .ok(gettextCatalog.getString('Quit'))
-          .cancel(gettextCatalog.getString('Cancel'));
-      $mdDialog.show(confirm).then(function() {
-        require('electron').remote.app.quit();
-      });
-    };
 
     self.changeCurrency=function(){
       var currencies=[
@@ -794,7 +801,8 @@
         return;
       }
       votes=votes[0];
-      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature, votes:votes};
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature, votes:votes, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
       console.log(data.votes);
       function next() {
         $mdDialog.hide();
@@ -844,7 +852,8 @@
     };
 
     function sendArk(selectedAccount){
-      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature};
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
 
       function next() {
         $mdDialog.hide();
@@ -899,9 +908,56 @@
       });
     };
 
+
+
+    function openPassphrasesDialog(selectedAccount){
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
+      console.log(data);
+      function save() {
+        $mdDialog.hide();
+        accountService.savePassphrases($scope.send.data.address,$scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(
+          function(account){
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent(gettextCatalog.getString('Passphrases saved'))
+                .hideDelay(5000)
+            );
+          },
+          function(error){
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent(gettextCatalog.getString('Error: ')+ error)
+                .hideDelay(5000)
+            );
+          }
+        );
+      };
+
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        data: data,
+        cancel: cancel,
+        save: save
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/savePassphrases.html',
+        clickOutsideToClose: true,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
     //register as delegate
     function createDelegate(selectedAccount){
-      var data={fromAddress: selectedAccount.address, username: "", secondSignature:selectedAccount.secondSignature};
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={fromAddress: selectedAccount.address, username: "", secondSignature:selectedAccount.secondSignature, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
 
       function next() {
         $mdDialog.hide();

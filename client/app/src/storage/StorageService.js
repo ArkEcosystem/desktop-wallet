@@ -49,7 +49,12 @@
     }
 
     function set(key, value, forcesave){
-      storage[key]=value;
+      if(!value){
+        delete storage[key];
+      }
+      else{
+        storage[key]=value;
+      }
       if(forcesave){
         saveState();
       }
@@ -57,7 +62,12 @@
     }
 
     function setGlobal(key, value){
-      window.localStorage.setItem("global-"+key,JSON.stringify(value));
+      if(!value){
+        window.localStorage.removeItem("global-"+key);
+      }
+      else{
+        window.localStorage.setItem("global-"+key,JSON.stringify(value));
+      }
       return value;
     }
 

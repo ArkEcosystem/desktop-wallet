@@ -147,6 +147,38 @@
       return deferred.promise;
     }
 
+    function savePassphrases(address, passphrase, secondpassphrase){
+      var deferred = $q.defer();
+      var tempaddress = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey);
+      if(passphrase){
+        var account=fetchAccount(tempaddress).then(function(account){
+          if(account.address == address){
+            account.virtual=account.virtual || {};
+            storageService.set("virtual-"+address,account.virtual);
+            storageService.set("passphrase-"+address,passphrase);
+            storageService.set("secondpassphrase-"+address,secondpassphrase);
+            deferred.resolve(account);
+          }
+          else{
+            deferred.reject(gettextCatalog.getString("Passphrase does not match your address"));
+          }
+        });
+      }
+      else{ // no passphrase, meaning remove all passphrases
+        storageService.set("virtual-"+address,null);
+        storageService.set("passphrase-"+address,null);
+        storageService.set("secondpassphrase-"+address,null);
+        deferred.reject(gettextCatalog.getString("Passphrases deleted"));
+      }
+
+      return deferred.promise;
+    }
+
+    function getPassphrases(address){
+      var passphrases = [storageService.get("passphrase-"+address),storageService.get("secondpassphrase-"+address)]
+      return passphrases;
+    }
+
     function addAccount(account){
       if(!account || !account.address){
         return;
@@ -167,10 +199,13 @@
         return $q.when(null);
       }
       //delete account data
-      window.localStorage.removeItem(account.address);
-      window.localStorage.removeItem("transactions-"+account.address);
-      window.localStorage.removeItem("voters-"+account.address);
-      window.localStorage.removeItem("username-"+account.address);
+      storageService.set(account.address,null)
+      storageService.set("transactions-"+account.address,null);
+      storageService.set("voters-"+account.address,null);
+      storageService.set("username-"+account.address,null);
+      storageService.set("virtual-"+account.address,null);
+      storageService.set("passphrase-"+account.address,null);
+      storageService.set("secondpassphrase-"+account.address,null);
 
       //remove the address from stored addresses
       var addresses=storageService.get("addresses");
@@ -189,7 +224,7 @@
       var deferred = $q.defer();
       var d = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0));
       var t = parseInt(d.getTime() / 1000);
-      networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=100&recipientId=" +address +"&senderId="+address).then(function (resp) {
+      networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit="+limit+"&recipientId=" +address +"&senderId="+address).then(function (resp) {
         if(resp.success){
           for(var i=0;i<resp.transactions.length;i++){
             var transaction = resp.transactions[i];
@@ -573,6 +608,10 @@
       addAccount: addAccount,
 
       createAccount: createAccount,
+
+      savePassphrases: savePassphrases,
+
+      getPassphrases: getPassphrases,
 
       deleteAccount: deleteAccount,
 

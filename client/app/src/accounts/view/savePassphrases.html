@@ -1,0 +1,37 @@
+<md-dialog aria-label="Save Passphrases" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Save Passphrases for</span>&nbsp;{{send.data.address}}</h2>
+      </div>
+    </md-toolbar>
+    <div class="md-dialog-content">
+      <md-card flex="100">
+        <md-card-title>
+          <md-card-title-text>
+            <span translate>
+              Passphrases are not secured with high standard. <br>
+              Use this feature only on safe computers and for accounts you can afford to lose balance.
+            </span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+      <md-input-container class="md-block">
+        <label translate>Passphrase</label>
+        <input ng-model="send.data.passphrase" type="text" md-autofocus>
+      </md-input-container>
+      <md-input-container md-no-float class="md-block">
+        <label>Second Passphrase</label>
+        <input ng-model="send.data.secondpassphrase" type="text">
+      </md-input-container>
+    </div>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="send.save()" translate>
+        Save
+      </md-button>
+      <md-button ng-click="send.cancel()" style="margin-right:20px;" translate>
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
