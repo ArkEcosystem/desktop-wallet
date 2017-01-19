@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-01-18 08:54+0000\n"
-"PO-Revision-Date: 2017-01-18 08:54+0000\n"
+"POT-Creation-Date: 2017-01-19 21:58+0000\n"
+"PO-Revision-Date: 2017-01-19 21:58+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: pl\n"
@@ -10,6 +10,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Add Address"
+msgstr "Dodaj Adres"
+
+msgid "Account successfully created:"
+msgstr "Konto utworzone pomyślnie:"
 
 msgid "Address"
 msgstr "Adres"
@@ -74,6 +80,9 @@ msgstr "Nie można stwierdzić czy konto jest delegatem"
 msgid "Change 1h/7h/7d"
 msgstr "Zmień 1h/7h/7d"
 
+msgid "Create"
+msgstr "Stwórz"
+
 msgid "Create Virtual Folder"
 msgstr "Stwórz wirtualny folder"
 
@@ -82,6 +91,9 @@ msgstr "Stwórz nowy wirtualny folder"
 
 msgid "Close"
 msgstr "Zamknij"
+
+msgid "Create Account"
+msgstr "Stwórz konto"
 
 msgid "Default"
 msgstr "Domyślnie"
@@ -125,14 +137,23 @@ msgstr "Błąd:"
 msgid "Exchange"
 msgstr "Giełda"
 
+msgid "Fee (Ѧ)"
+msgstr "Prowizja (Ѧ)"
+
 msgid "Folder Name"
 msgstr "Nazwa folderu"
+
+msgid "Full Screen"
+msgstr "Pełny ekran"
 
 msgid "From"
 msgstr "Od"
 
 msgid "Hand crafted with ❤ by"
 msgstr "Stworzone ręcznie z ❤ przez"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Jeśli jesteś właścicielem tego konta możesz uruchomić wirtualne foldery. Wirtualne foldery to proste subkonta, dla lepszej organizacji Twoich środków bez potrzeby wysyłania prawdziwych transakcji i płacenia prowizji. <br>\nPonadto, to konto będzie przeniesione pod list \"Moje konta\"."
 
 msgid "Height"
 msgstr "Wysokość"
@@ -158,8 +179,20 @@ msgstr "Login"
 msgid "Market Cap."
 msgstr "Kapitalizacja rynkowa"
 
+msgid "Manage Networks"
+msgstr "Zarządzaj sieciami"
+
+msgid "Maximize"
+msgstr "Maksymalizuj"
+
+msgid "Minify"
+msgstr "Minimalizuj"
+
 msgid "My Accounts"
 msgstr "Moje konta"
+
+msgid "Network"
+msgstr "Sieć"
 
 msgid "Network connected and healthy!"
 msgstr "Sieć zdrowa i połączona!"
@@ -179,8 +212,17 @@ msgstr "Brak publickey"
 msgid "No search term"
 msgstr "Brak frazy wyszukiwania"
 
+msgid "Not enough ARK on your account"
+msgstr "Nie wystarczająca kwota ARK na Twoim koncie"
+
+msgid "OffChain"
+msgstr "Poza łańcuchem"
+
 msgid "Open Delegate Monitor"
 msgstr "Otwórz Monitor Delegatów"
+
+msgid "Optional"
+msgstr "Opcjonalnie"
 
 msgid "Other Accounts"
 msgstr "Inne konta"
@@ -191,11 +233,23 @@ msgstr "Passphrase nie zgadza się z Twoim adresem"
 msgid "Passphrase"
 msgstr "Passhprase"
 
+msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
+msgstr "Frazy nie są zabezpieczone wysokim standardem. <br>\nKorzystaj z tej funkcji tylko na bezpiecznych komputerach i dla kont na których możesz sobie pozwolić na stratę środków."
+
+msgid "Passphrases saved"
+msgstr "Hasła dostępu (passphrase) zapisane"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "Passphrase nie jest powiązane do konta"
 
+msgid "Passphrases deleted"
+msgstr "Usunięto passphrase"
+
 msgid "Peer"
 msgstr "Peer"
+
+msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Proszę wykonać bezpieczną kopię zapasową passphrase, klient nie przechowuje tych danych i nie jest możliwe ich odzyskanie"
 
 msgid "Please enter a folder name."
 msgstr "Proszę podać nazwę folderu."
@@ -227,11 +281,26 @@ msgstr "Ranking"
 msgid "Receive Ark"
 msgstr "Otrzymaj Ark"
 
+msgid "Register Delegate"
+msgstr "Zarejestruj delegata"
+
+msgid "Register delegate for"
+msgstr "Zarejestruj delegata dla"
+
 msgid "Rename"
 msgstr "Zmień nazwe"
 
 msgid "Remove"
 msgstr "Usuń"
+
+msgid "Restart"
+msgstr "Restart"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Save Passphrases for"
+msgstr "Zapisz passphrase dla"
 
 msgid "Send"
 msgstr "Wyślij"
@@ -251,11 +320,20 @@ msgstr "Ustaw"
 msgid "Succesfully Logged In!"
 msgstr "Zalogowano pomyślnie!"
 
+msgid "Smartbridge"
+msgstr "Smartbridge"
+
 msgid "The destination address"
 msgstr "Adres przeznaczenia"
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "To konto nigdy nie występowało w sieci. Jest to zimny portfel."
+
 msgid "To"
 msgstr "Do"
+
+msgid "Total {{ul.network.symbol}}"
+msgstr "Razem {{ul.network.symbol}}"
 
 msgid "Transaction"
 msgstr "Transakcja"
@@ -271,6 +349,9 @@ msgstr "Zaktualizuj głosy z"
 
 msgid "Username"
 msgstr "Nazwa użytkownika"
+
+msgid "Vendor Field"
+msgstr "Pole SmartBridge"
 
 msgid "Virtual folder added!"
 msgstr "Wirtualny folder dodany!"
@@ -308,6 +389,12 @@ msgstr "passphrase"
 msgid "produced blocks"
 msgstr "wyprodukowane bloki"
 
+msgid "you need at least 1 ARK to vote"
+msgstr "Potrzebujesz co najmniej 1 ARK do głosowania"
+
 msgid "sent with success!"
 msgstr "wysłano pomyślnie!"
+
+msgid "you need at least 25 ARK to register delegate"
+msgstr "Potrzebujesz co najmniej 25 ARK do zarejestrowania delegata"
 

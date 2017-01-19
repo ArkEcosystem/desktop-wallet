@@ -47,14 +47,14 @@
             <md-menu-content flex layout-padding width="6">
                 <md-list>
                   <md-list-item>
-                    <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.language}}</md-button>
+                    <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
                   </md-list-item>
                   <md-list-item>
                     <md-button aria-label="Add Address" ng-click="ul.addAccount()"><translate>Add Account</translate></md-button>
                     <md-button aria-label="Create Account" ng-click="ul.createAccount()"><translate>Create Account</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Manage Networks" md-prevent-menu-close ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
+                    <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
                   </md-list-item>
             </md-menu-content>
           </md-menu>
@@ -137,7 +137,7 @@
   </md-toolbar>
 
       <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
-           <md-content style="min-width:50%; opacity:0.8; border-radius:10px;" md-whiteframe="3">
+           <md-content style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
              <md-toolbar layout="row">
                <div class="md-toolbar-tools">
                  <h2><translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}}</h2>

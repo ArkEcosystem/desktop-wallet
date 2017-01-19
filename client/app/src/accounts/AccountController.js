@@ -59,10 +59,34 @@
   function AccountController( accountService, networkService, storageService, changerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog) {
 
     var self = this;
-    gettextCatalog.debug = true;
+
+    var languages = {
+      en:gettextCatalog.getString("English"),
+      fr:gettextCatalog.getString("French"),
+      el:gettextCatalog.getString("Greek"),
+      nl:gettextCatalog.getString("Dutch"),
+      ar:gettextCatalog.getString("Arab"),
+      pl:gettextCatalog.getString("Polish"),
+      pt_BR:gettextCatalog.getString("Portuguese"),
+      bg_BG:gettextCatalog.getString("Bulgarian"),
+      hu:gettextCatalog.getString("Hungarish"),
+      sl:gettextCatalog.getString("Slovenian"),
+      ro:gettextCatalog.getString("Romanian"),
+      de:gettextCatalog.getString("German"),
+      it:gettextCatalog.getString("Italian"),
+      id:gettextCatalog.getString("Indonesian"),
+      ru:gettextCatalog.getString("Russian")
+    };
+
+
+    gettextCatalog.debug = false;
     self.language  = storageService.get("language");
     if(!self.language) selectNextLanguage();
     else gettextCatalog.setCurrentLanguage(self.language);
+
+    self.getLanguage=function(){
+      return languages[self.language];
+    };
 
 
     self.closeApp = function() {
@@ -98,6 +122,8 @@
     self.createAccount = createAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
+
+    self.manageNetworks  = manageNetworks;
     self.openPassphrasesDialog  = openPassphrasesDialog;
     self.createDelegate = createDelegate;
     self.vote  = vote;
@@ -157,8 +183,8 @@
     );
 
     function selectNextLanguage(){
-      var languages = ["en","fr","el","ara","de","it","es"];
-      if(self.language) self.language=languages[languages.indexOf(self.language) + 1 % languages.length];
+      var lkeys=Object.keys(languages);
+      if(self.language) self.language=lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
       else self.language = "en";
       storageService.set("language",self.language);
       gettextCatalog.setCurrentLanguage(self.language);
@@ -328,7 +354,7 @@
           self.exchangeSell.sentTransaction=transaction;
           $mdToast.show(
             $mdToast.simple()
-              .textContent(gettextCatalog.getString('Transaction ')+ transaction.id +gettextCatalog.getString(' sent with success!'))
+              .textContent(gettextCatalog.getString('Transaction')+ ' ' + transaction.id + ' ' +gettextCatalog.getString('sent with success!'))
               .hideDelay(5000)
           );
         },
@@ -853,7 +879,7 @@
 
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
+      var networks=self.net
 
       function next() {
         $mdDialog.hide();
@@ -905,6 +931,40 @@
         clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
+      });
+    };
+
+    function manageNetworks(){
+      var networks=networkService.getNetworks();
+
+      function save() {
+        $mdDialog.hide();
+        for(var network in $scope.send.networks){
+          console.log(network);
+          console.log($scope.send.networks[network]);
+          networkService.setNetwork(network, $scope.send.networks[network]);
+        }
+        window.location.reload();
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        networkKeys: Object.keys(networks),
+        networks: networks,
+        cancel: cancel,
+        save: save
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/manageNetwork.html',
+        clickOutsideToClose: true,
+        preserveScope: true,
+        scope: $scope,
+        fullscreen: true
       });
     };
 
@@ -1205,14 +1265,14 @@
           function(transaction){
             $mdToast.show(
               $mdToast.simple()
-                .textContent(gettextCatalog.getString('Transaction ')+ transaction.id +gettextCatalog.getString(' sent with success!'))
+                .textContent(gettextCatalog.getString('Transaction')+ ' ' +transaction.id + ' ' +gettextCatalog.getString('sent with success!'))
                 .hideDelay(5000)
             );
           },
           function(error){
             $mdToast.show(
               $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
+                .textContent(gettextCatalog.getString('Error:') +' '+ error)
                 .hideDelay(5000)
             );
           }

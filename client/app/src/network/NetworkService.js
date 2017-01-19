@@ -20,7 +20,7 @@
 
     connection.notify(peer);
 
-    function addNetwork(name,newnetwork){
+    function setNetwork(name,newnetwork){
       var n = storageService.getGlobal("networks");
       n[name]=newnetwork;
       storageService.setGlobal("networks",n);
@@ -80,6 +80,10 @@
       return network;
     }
 
+    function getNetworks(){
+      return storageService.getGlobal("networks");
+    }
+
     function getPrice(){
       $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
       .then(function(data){
@@ -87,7 +91,7 @@
       },function(){
         peer.market={
           price:
-            {usd: "0.0155258", btc: "0.0000175931", eur: "0.0145368375916", cny: "0.10658539329"}
+            {btc: "0.00003300"}
         };
       });
       $timeout(function(){
@@ -219,9 +223,10 @@
 
     return {
       switchNetwork: switchNetwork,
-      addNetwork: addNetwork,
+      setNetwork: setNetwork,
       removeNetwork: removeNetwork,
       getNetwork: getNetwork,
+      getNetworks: getNetworks,
       getPeer: getPeer,
       getConnection: getConnection,
       getFromPeer: getFromPeer,
