@@ -150,12 +150,6 @@
     self.connection = networkService.getConnection();
 
     self.connection.then(
-      function(){
-
-      },
-      function(){
-
-      },
       function(connectedPeer){
         self.connectedPeer=connectedPeer;
         if(!self.connectedPeer.isConnected && self.isNetworkConnected){
