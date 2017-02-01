@@ -915,7 +915,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/sendArk.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
