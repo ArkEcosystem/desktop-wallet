@@ -151,18 +151,17 @@
       var deferred = $q.defer();
       var tempaddress = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey);
       if(passphrase){
-        var account=fetchAccount(tempaddress).then(function(account){
-          if(account.address == address){
-            account.virtual=account.virtual || {};
-            storageService.set("virtual-"+address,account.virtual);
-            storageService.set("passphrase-"+address,passphrase);
-            storageService.set("secondpassphrase-"+address,secondpassphrase);
-            deferred.resolve(account);
-          }
-          else{
-            deferred.reject(gettextCatalog.getString("Passphrase does not match your address"));
-          }
-        });
+        var account=getAccount(tempaddress);
+        if(account && account.address == address){
+          account.virtual=account.virtual || {};
+          storageService.set("virtual-"+address,account.virtual);
+          storageService.set("passphrase-"+address,passphrase);
+          storageService.set("secondpassphrase-"+address,secondpassphrase);
+          deferred.resolve(account);
+        }
+        else{
+          deferred.reject(gettextCatalog.getString("Passphrase does not match your address"));
+        }
       }
       else{ // no passphrase, meaning remove all passphrases
         storageService.set("virtual-"+address,null);
