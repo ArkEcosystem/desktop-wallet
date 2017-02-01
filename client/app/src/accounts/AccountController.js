@@ -181,6 +181,32 @@
       }
     );
 
+    function formatErrorMessage(error) {
+      var basicMessage = '';
+      if ('string' === typeof error){
+        basicMessage = error;
+      } else if ('string' === typeof error.data){
+        basicMessage = error.data;
+      } else if ('string' === typeof error.message){
+        basicMessage = error.message;
+      }
+      var errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '');
+      console.error(errorMessage, '\n', error);
+      return errorMessage;
+    }
+
+    function formatAndToastError(error, hideDelay) {
+      if (!hideDelay) {
+        hideDelay = 5000;
+      }
+      var errorMessage = formatErrorMessage(error)
+      $mdToast.show(
+        $mdToast.simple()
+          .textContent(errorMessage)
+          .hideDelay(hideDelay)
+      );
+    }
+
     function selectNextLanguage(){
       var lkeys=Object.keys(languages);
       if(self.language) self.language=lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
@@ -243,12 +269,7 @@
           );
 
         },function(error){
-          console.log(error);
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(error.data)
-              .hideDelay(10000)
-          );
+          formatAndToastError(error, 10000);
           self.exchangeBuy=null;
         });
       });
@@ -261,12 +282,7 @@
         self.exchangeTransactionId=null;
       },
       function(error){
-        console.log(error);
-        $mdToast.show(
-          $mdToast.simple()
-            .textContent(error)
-            .hideDelay(10000)
-        );
+        formatAndToastError(error, 10000);
       });
     }
 
@@ -319,23 +335,13 @@
           );
         },
         function(error){
-          console.log(error);
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(error)
-              .hideDelay(10000)
-          );
+          formatAndToastError(error, 10000)
         });
         self.passphrase=null;
         self.secondpassphrase=null;
 
       },function(error){
-        console.log(error);
-        $mdToast.show(
-          $mdToast.simple()
-            .textContent(error.data)
-            .hideDelay(10000)
-        );
+        formatAndToastError(error, 10000)
         self.exchangeSell=null;
       });
     }
@@ -357,13 +363,7 @@
               .hideDelay(5000)
           );
         },
-        function(error){
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(gettextCatalog.getString('Error: ')+ error)
-              .hideDelay(5000)
-          );
-        }
+        formatAndToastError
       );
     }
 
@@ -742,13 +742,7 @@
               );
             }
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -783,13 +777,7 @@
               }
             }
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -813,7 +801,6 @@
         scope: $scope
       });
     };
-
 
     function vote(selectedAccount){
       var votes=accountService.createDiffVote(selectedAccount.address,selectedAccount.selectedVotes);
@@ -846,13 +833,7 @@
           function(transaction){
             validateTransaction(transaction);
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent('Error: '+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -898,13 +879,7 @@
           function(transaction){
             validateTransaction(transaction);
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -986,13 +961,7 @@
                 .hideDelay(5000)
             );
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -1034,13 +1003,7 @@
           function(transaction){
             validateTransaction(transaction);
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -1218,13 +1181,7 @@
             function(transaction){
               validateTransaction(transaction);
             },
-            function(error){
-              $mdToast.show(
-                $mdToast.simple()
-                  .textContent(gettextCatalog.getString('Error: ')+ error)
-                  .hideDelay(5000)
-              );
-            }
+            formatAndToastError
           );
         };
 
@@ -1271,13 +1228,7 @@
                 .hideDelay(5000)
             );
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error:') +' '+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
