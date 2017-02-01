@@ -858,7 +858,10 @@
     };
 
     function sendArk(selectedAccount){
-      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature};
+      var data={
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+      };
 
       function next() {
         if (!$scope.sendArkForm.$valid){
@@ -1122,7 +1125,7 @@
         }
 
         else if(action==gettextCatalog.getString("Send Ark")){
-          createArkTransaction();
+          sendArk();
         }
 
         else if(action==gettextCatalog.getString("Register Delegate")){
@@ -1162,56 +1165,6 @@
         preserveScope: true,
         scope: $scope
       });
-
-      function createArkTransaction() {
-
-        var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature};
-
-        function next() {
-          $mdDialog.hide();
-          accountService.createTransaction(0,
-            {
-              fromAddress: $scope.send.data.fromAddress,
-              toAddress: $scope.send.data.toAddress,
-              amount: parseInt($scope.send.data.amount*100000000),
-              masterpassphrase: $scope.send.data.passphrase,
-              secondpassphrase: $scope.send.data.secondpassphrase
-            }
-          ).then(
-            function(transaction){
-              validateTransaction(transaction);
-            },
-            formatAndToastError
-          );
-        };
-
-        function querySearch(text){
-          text=text.toLowerCase();
-          var filter=self.accounts.filter(function(account){
-            return (account.address.toLowerCase().indexOf(text)>-1) || (account.username && (account.username.toLowerCase().indexOf(text)>-1));
-          });
-          return filter;
-        }
-
-        function cancel() {
-          $mdDialog.hide();
-        };
-
-        $scope.send = {
-          data: data,
-          cancel: cancel,
-          next: next,
-          querySearch: querySearch
-        };
-
-        $mdDialog.show({
-          parent             : angular.element(document.getElementById('app')),
-          templateUrl        : './src/accounts/view/sendArk.html',
-          clickOutsideToClose: true,
-          preserveScope: true,
-          scope: $scope
-        });
-      };
 
     }
 
