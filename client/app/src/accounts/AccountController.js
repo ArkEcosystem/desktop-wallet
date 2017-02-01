@@ -140,7 +140,6 @@
 
     self.connectedPeer={isConnected:false};
 
-
     //refreshing displayed account every 10s
     setInterval(function(){
       if(self.selected){
@@ -881,6 +880,10 @@
       var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature};
 
       function next() {
+        if (!$scope.sendArkForm.$valid){
+          return ;
+        }
+
         $mdDialog.hide();
         accountService.createTransaction(0,
           {
