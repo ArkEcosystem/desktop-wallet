@@ -232,7 +232,6 @@
         storageService.set("changer-history",history);
       }
       //map to array
-      console.log(history);
       return Object.keys(history).map(function(key) {
         return history[key];
       });
