@@ -868,6 +868,13 @@
           return ;
         }
 
+        // remove bad characters before and after in case of bad copy/paste
+        $scope.send.data.toAddress = $scope.send.data.toAddress.trim();
+        $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
+        if ($scope.send.data.secondpassphrase){
+          $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim();
+        }
+
         $mdDialog.hide();
         accountService.createTransaction(0,
           {
