@@ -878,8 +878,7 @@
     };
 
     function sendArk(selectedAccount){
-      var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var networks=self.net
+      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature};
 
       function next() {
         $mdDialog.hide();
