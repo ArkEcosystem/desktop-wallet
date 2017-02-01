@@ -854,9 +854,13 @@
     };
 
     function sendArk(selectedAccount){
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+
       var data={
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
       };
 
       function next() {
