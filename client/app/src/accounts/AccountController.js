@@ -162,7 +162,7 @@
           self.isNetworkConnected=false;
           $mdToast.show(
             $mdToast.simple()
-              .textContent(gettextCatalog.getString('Network disconected!'))
+              .textContent(gettextCatalog.getString('Network disconnected!'))
               .hideDelay(10000)
           );
         }
