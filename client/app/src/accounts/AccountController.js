@@ -140,7 +140,6 @@
 
     self.connectedPeer={isConnected:false};
 
-
     //refreshing displayed account every 10s
     setInterval(function(){
       if(self.selected){
@@ -151,19 +150,15 @@
     self.connection = networkService.getConnection();
 
     self.connection.then(
-      function(){
-
-      },
-      function(){
-
-      },
+      function(){},
+      function(){},
       function(connectedPeer){
         self.connectedPeer=connectedPeer;
         if(!self.connectedPeer.isConnected && self.isNetworkConnected){
           self.isNetworkConnected=false;
           $mdToast.show(
             $mdToast.simple()
-              .textContent(gettextCatalog.getString('Network disconected!'))
+              .textContent(gettextCatalog.getString('Network disconnected!'))
               .hideDelay(10000)
           );
         }
@@ -181,6 +176,32 @@
         }
       }
     );
+
+    function formatErrorMessage(error) {
+      var basicMessage = '';
+      if ('string' === typeof error){
+        basicMessage = error;
+      } else if ('string' === typeof error.data){
+        basicMessage = error.data;
+      } else if ('string' === typeof error.message){
+        basicMessage = error.message;
+      }
+      var errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '');
+      console.error(errorMessage, '\n', error);
+      return errorMessage;
+    }
+
+    function formatAndToastError(error, hideDelay) {
+      if (!hideDelay) {
+        hideDelay = 5000;
+      }
+      var errorMessage = formatErrorMessage(error)
+      $mdToast.show(
+        $mdToast.simple()
+          .textContent(errorMessage)
+          .hideDelay(hideDelay)
+      );
+    }
 
     function selectNextLanguage(){
       var lkeys=Object.keys(languages);
@@ -244,12 +265,7 @@
           );
 
         },function(error){
-          console.log(error);
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(error.data)
-              .hideDelay(10000)
-          );
+          formatAndToastError(error, 10000);
           self.exchangeBuy=null;
         });
       });
@@ -262,12 +278,7 @@
         self.exchangeTransactionId=null;
       },
       function(error){
-        console.log(error);
-        $mdToast.show(
-          $mdToast.simple()
-            .textContent(error)
-            .hideDelay(10000)
-        );
+        formatAndToastError(error, 10000);
       });
     }
 
@@ -320,23 +331,13 @@
           );
         },
         function(error){
-          console.log(error);
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(error)
-              .hideDelay(10000)
-          );
+          formatAndToastError(error, 10000)
         });
         self.passphrase=null;
         self.secondpassphrase=null;
 
       },function(error){
-        console.log(error);
-        $mdToast.show(
-          $mdToast.simple()
-            .textContent(error.data)
-            .hideDelay(10000)
-        );
+        formatAndToastError(error, 10000)
         self.exchangeSell=null;
       });
     }
@@ -358,13 +359,7 @@
               .hideDelay(5000)
           );
         },
-        function(error){
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(gettextCatalog.getString('Error: ')+ error)
-              .hideDelay(5000)
-          );
-        }
+        formatAndToastError
       );
     }
 
@@ -743,13 +738,7 @@
               );
             }
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -784,13 +773,7 @@
               }
             }
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -814,7 +797,6 @@
         scope: $scope
       });
     };
-
 
     function vote(selectedAccount){
       var votes=accountService.createDiffVote(selectedAccount.address,selectedAccount.selectedVotes);
@@ -847,13 +829,7 @@
           function(transaction){
             validateTransaction(transaction);
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent('Error: '+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -879,9 +855,26 @@
 
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var networks=self.net
+
+      var data={
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      };
 
       function next() {
+        if (!$scope.sendArkForm.$valid){
+          return ;
+        }
+
+        // remove bad characters before and after in case of bad copy/paste
+        $scope.send.data.toAddress = $scope.send.data.toAddress.trim();
+        $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
+        if ($scope.send.data.secondpassphrase){
+          $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim();
+        }
+
         $mdDialog.hide();
         accountService.createTransaction(0,
           {
@@ -896,13 +889,7 @@
           function(transaction){
             validateTransaction(transaction);
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -928,7 +915,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/sendArk.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -984,13 +971,7 @@
                 .hideDelay(5000)
             );
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -1032,13 +1013,7 @@
           function(transaction){
             validateTransaction(transaction);
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error: ')+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 
@@ -1157,7 +1132,7 @@
         }
 
         else if(action==gettextCatalog.getString("Send Ark")){
-          createArkTransaction();
+          sendArk();
         }
 
         else if(action==gettextCatalog.getString("Register Delegate")){
@@ -1198,62 +1173,6 @@
         scope: $scope
       });
 
-      function createArkTransaction() {
-
-        var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature};
-
-        function next() {
-          $mdDialog.hide();
-          accountService.createTransaction(0,
-            {
-              fromAddress: $scope.send.data.fromAddress,
-              toAddress: $scope.send.data.toAddress,
-              amount: parseInt($scope.send.data.amount*100000000),
-              masterpassphrase: $scope.send.data.passphrase,
-              secondpassphrase: $scope.send.data.secondpassphrase
-            }
-          ).then(
-            function(transaction){
-              validateTransaction(transaction);
-            },
-            function(error){
-              $mdToast.show(
-                $mdToast.simple()
-                  .textContent(gettextCatalog.getString('Error: ')+ error)
-                  .hideDelay(5000)
-              );
-            }
-          );
-        };
-
-        function querySearch(text){
-          text=text.toLowerCase();
-          var filter=self.accounts.filter(function(account){
-            return (account.address.toLowerCase().indexOf(text)>-1) || (account.username && (account.username.toLowerCase().indexOf(text)>-1));
-          });
-          return filter;
-        }
-
-        function cancel() {
-          $mdDialog.hide();
-        };
-
-        $scope.send = {
-          data: data,
-          cancel: cancel,
-          next: next,
-          querySearch: querySearch
-        };
-
-        $mdDialog.show({
-          parent             : angular.element(document.getElementById('app')),
-          templateUrl        : './src/accounts/view/sendArk.html',
-          clickOutsideToClose: true,
-          preserveScope: true,
-          scope: $scope
-        });
-      };
-
     }
 
 
@@ -1269,13 +1188,7 @@
                 .hideDelay(5000)
             );
           },
-          function(error){
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Error:') +' '+ error)
-                .hideDelay(5000)
-            );
-          }
+          formatAndToastError
         );
       };
 

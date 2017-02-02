@@ -1,5 +1,5 @@
 <md-dialog aria-label="Send Ark" ng-cloak>
-  <form>
+  <form name="sendArkForm" ng-submit="send.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2><span translate>Send Ark from</span>&nbsp;{{send.data.fromAddress}}</h2>
@@ -31,7 +31,7 @@
         </md-input-container>
         <md-input-container md-no-float class="md-block">
           <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
-          <input ng-model="send.data.smartbridge" type="text" ng-required="false">
+          <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64">
         </md-input-container>
         <md-input-container class="md-block">
           <label translate>Passphrase</label>
@@ -44,7 +44,7 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="send.next()" translate>
+      <md-button type="submit" ng-disabled="sendArkForm.$invalid" translate>
         Next
       </md-button>
       <md-button ng-click="send.cancel()" style="margin-right:20px;" translate>

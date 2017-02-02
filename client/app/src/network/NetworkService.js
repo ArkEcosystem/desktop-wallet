@@ -103,7 +103,6 @@
       $http.get(peer.ip+"/api/blocks/getheight",{timeout:2000}).then(function(resp){
         peer.lastConnection=new Date();
         if(resp.data && resp.data.success){
-          console.log(resp)
           if(peer.height==resp.data.height){
             peer.isConnected=false;
             peer.error="Node is experiencing sychronisation issues";
