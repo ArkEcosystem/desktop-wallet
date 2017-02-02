@@ -77,7 +77,7 @@
             var account=resp.account;
             account.cold=!account.publicKey;
             deferred.resolve(account);
-            addAccount(account);
+            addWatchOnlyAddress(account);
           }
           else{
             account={
@@ -87,7 +87,7 @@
               cold:true
             };
             deferred.resolve(account);
-            addAccount(account);
+            addWatchOnlyAddress(account);
           }
         }
       );
@@ -179,7 +179,7 @@
       return passphrases;
     }
 
-    function addAccount(account){
+    function addWatchOnlyAddress(account){
       if(!account || !account.address){
         return;
       }
@@ -605,7 +605,7 @@
         return storageService.get("username-"+address) || address;
       },
 
-      addAccount: addAccount,
+      addWatchOnlyAddress: addWatchOnlyAddress,
 
       createAccount: createAccount,
 

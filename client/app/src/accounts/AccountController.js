@@ -118,7 +118,7 @@
     self.refreshCurrentAccount   = refreshCurrentAccount;
     self.gotoAddress = gotoAddress;
     self.getAllDelegates = getAllDelegates;
-    self.addAccount   = addAccount;
+    self.addWatchOnlyAddress   = addWatchOnlyAddress;
     self.createAccount = createAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
@@ -662,9 +662,9 @@
      * Add an account
      * @param menuId
      */
-    function addAccount() {
+    function addWatchOnlyAddress() {
       var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Add Account'))
+          .title(gettextCatalog.getString('Add Watch-Only Address'))
           .textContent(gettextCatalog.getString('Please enter a new address.'))
           .placeholder(gettextCatalog.getString('address'))
           .ariaLabel(gettextCatalog.getString('Address'))
