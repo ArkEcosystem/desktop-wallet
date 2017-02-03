@@ -120,6 +120,7 @@
     self.getAllDelegates = getAllDelegates;
     self.addWatchOnlyAddress   = addWatchOnlyAddress;
     self.createAccount = createAccount;
+    self.importAccount = importAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
 
@@ -1087,6 +1088,50 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/createAccount.html',
+        clickOutsideToClose: true,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
+    function importAccount(){
+      var data={
+        passphrase: '',
+        // TODO second passphrase
+        // secondpassphrase: ''
+      };
+
+      function save(){
+        accountService.createAccount($scope.send.data.passphrase)
+        .then(
+          function(account){
+            self.accounts.push(account);
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
+                .hideDelay(5000)
+            );
+            selectAccount(account);
+            // TODO save passphrases after we have local encrytion
+          },
+          formatAndToastError
+        );
+        $mdDialog.hide();
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        data: data,
+        cancel: cancel,
+        save: save
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/importAccount.html',
         clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope

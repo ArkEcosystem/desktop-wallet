@@ -50,6 +50,7 @@
                     <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
                   </md-list-item>
                   <md-list-item>
+                    <md-button aria-label="Import Account" ng-click="ul.importAccount()"><translate>Import Account</translate></md-button>
                     <md-button aria-label="Create Account" ng-click="ul.createAccount()"><translate>Create Account</translate></md-button>
                   </md-list-item>
                   <md-list-item>
@@ -162,11 +163,16 @@
                    </span>
 
                </md-list-item>
-               <md-list-item>
-                 <md-button ng-click="ul.addWatchOnlyAddress()">
+               <md-list-item class="main-actions">
+                 <md-button class="watch-only-address" ng-click="ul.addWatchOnlyAddress()">
                    <md-icon md-font-library="material-icons">add</md-icon> <translate>Add Watch-Only Address</translate>
 
                  </md-button>
+
+                 <md-button ng-click="ul.importAccount()">
+                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Import Account</translate>
+                 </md-button>
+
                  <md-button ng-click="ul.createAccount()">
                    <md-icon md-font-library="material-icons">add</md-icon> <translate>Create Account</translate>
                  </md-button>

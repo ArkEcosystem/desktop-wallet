@@ -1,0 +1,36 @@
+<md-dialog class="import-account-dialog" aria-label="Import Account" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Import Account</h2>
+      </div>
+    </md-toolbar>
+    <div class="md-dialog-content">
+      <md-card flex="100">
+        <md-card-title>
+          <md-card-title-text>
+            <span translate>
+              Passphrase is not saved on this computer.
+            </span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+      <md-input-container class="md-block">
+        <label translate>Passphrase</label>
+        <input ng-model="send.data.passphrase" type="text" md-autofocus>
+      </md-input-container>
+      <!--<md-input-container md-no-float class="md-block">
+        <label>Second Passphrase</label>
+        <input ng-model="send.data.secondpassphrase" type="text">
+      </md-input-container>-->
+    </div>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="send.save()" translate>
+        Import
+      </md-button>
+      <md-button ng-click="send.cancel()" style="margin-right:20px;" translate>
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
