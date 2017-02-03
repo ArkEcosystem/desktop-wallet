@@ -32,7 +32,7 @@
     <md-toolbar style="background-color: rgba(0, 0, 0, 0);">
        <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
          <img src="ark.png" alt="" height="30">
-         <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><translate>Ark Client</translate></md-button>
+         <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><translate>Ark Client</translate> - {{ul.clientVersion}}</md-button>
          <md-button ng-if="ul.selected" class="menu" hide-gt-md ng-click="ul.toggleList()" aria-label="Show Account List">
            <md-icon md-svg-icon="menu" ></md-icon>
          </md-button>

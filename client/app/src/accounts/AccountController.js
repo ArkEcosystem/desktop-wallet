@@ -111,6 +111,7 @@
       require('electron').shell.openExternal(self.network.explorer+api);
     };
 
+    self.clientVersion = require('../../package.json').version;
     self.isNetworkConnected=false;
     self.selected     = null;
     self.accounts        = [ ];
