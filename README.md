@@ -47,6 +47,14 @@ cd ..
 npm start
 ```
 
+## Necessary to package from Mac OS X
+
+```
+brew install wine --without-x11
+brew install mono
+brew install gnu-tar graphicsmagick xz
+```
+
 ## Authors
 - FX Thoorens <fx@ark.io>
 - Guillaume Verbal <doweig@ark.io>
