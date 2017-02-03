@@ -21,9 +21,6 @@ If you login to your account (with your passphrase)
 
 Second signature supported. Multisignature accounts not yet supported.
 
-## Authors
-Fixcrypt.
-
 ## Screenshot
 Soon
 
@@ -49,5 +46,9 @@ npm run bundle
 cd ..
 npm start
 ```
+
+## Authors
+- FX Thoorens <fx@ark.io>
+- Guillaume Verbal <doweig@ark.io>
 
 ### License [MIT](LICENSE.md) copyright (c) 2016 ARK, copyright (c) 2016 fx thoorens

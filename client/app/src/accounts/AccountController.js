@@ -111,6 +111,7 @@
       require('electron').shell.openExternal(self.network.explorer+api);
     };
 
+    self.clientVersion = require('../../package.json').version;
     self.isNetworkConnected=false;
     self.selected     = null;
     self.accounts        = [ ];
@@ -118,8 +119,9 @@
     self.refreshCurrentAccount   = refreshCurrentAccount;
     self.gotoAddress = gotoAddress;
     self.getAllDelegates = getAllDelegates;
-    self.addAccount   = addAccount;
+    self.addWatchOnlyAddress   = addWatchOnlyAddress;
     self.createAccount = createAccount;
+    self.importAccount = importAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
 
@@ -662,9 +664,9 @@
      * Add an account
      * @param menuId
      */
-    function addAccount() {
+    function addWatchOnlyAddress() {
       var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Add Account'))
+          .title(gettextCatalog.getString('Add Watch-Only Address'))
           .textContent(gettextCatalog.getString('Please enter a new address.'))
           .placeholder(gettextCatalog.getString('address'))
           .ariaLabel(gettextCatalog.getString('Address'))
@@ -1087,6 +1089,50 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/createAccount.html',
+        clickOutsideToClose: true,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
+    function importAccount(){
+      var data={
+        passphrase: '',
+        // TODO second passphrase
+        // secondpassphrase: ''
+      };
+
+      function save(){
+        accountService.createAccount($scope.send.data.passphrase)
+        .then(
+          function(account){
+            self.accounts.push(account);
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
+                .hideDelay(5000)
+            );
+            selectAccount(account);
+            // TODO save passphrases after we have local encrytion
+          },
+          formatAndToastError
+        );
+        $mdDialog.hide();
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        data: data,
+        cancel: cancel,
+        save: save
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/importAccount.html',
         clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
