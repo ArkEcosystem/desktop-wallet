@@ -275,10 +275,10 @@
               </md-card-title-media>
               <md-card-title-text>
                 <span class="md-headline">
-                  <md-button class="md-fab md-primary md-mini" ng-click="ul.openPassphrasesDialog(ul.selected)">
+                  <!--<md-button class="md-fab md-primary md-mini" ng-click="ul.openPassphrasesDialog(ul.selected)">
                     <md-icon md-font-library="material-icons">lock</md-icon>
-                  </md-button>
-                  <small>{{ul.selected.username||'Address'}}</small>
+                  </md-button>-->
+                  <span class="delegate-name">{{ul.selected.username||'Address'}}</span>
                   <br>
                   <md-button style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}"><md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
 
