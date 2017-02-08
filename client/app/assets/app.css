@@ -121,6 +121,10 @@ md-button.menuBtn > md-icon {
   max-width: 500px;
 }
 
+#content .md-headline .delegate-name {
+  padding: 0 15px;
+}
+
 /* Utils */
 
 .content-wrapper {
@@ -181,4 +185,16 @@ span.name {
 
 .footer, .footer a{
   color:white;
+}
+
+.main-dashboard .main-actions {
+  padding: 0;
+}
+
+.main-dashboard .main-actions .watch-only-address {
+  width: 120%;
+}
+
+.import-account-dialog {
+  min-width: 700px;
 }

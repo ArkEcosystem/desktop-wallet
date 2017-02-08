@@ -25,9 +25,6 @@ If you login to your account (with your passphrase)
 
 Second signature supported. Multisignature accounts not yet supported.
 
-## Authors
-Fixcrypt.
-
 ## Screenshot
 Soon
 
@@ -53,5 +50,17 @@ npm run bundle
 cd ..
 npm start
 ```
+
+## Necessary to package from Mac OS X
+
+```
+brew install wine --without-x11
+brew install mono
+brew install gnu-tar graphicsmagick xz
+```
+
+## Authors
+- FX Thoorens <fx@ark.io>
+- Guillaume Verbal <doweig@ark.io>
 
 ### License [MIT](LICENSE.md) copyright (c) 2016 ARK, copyright (c) 2016 fx thoorens
