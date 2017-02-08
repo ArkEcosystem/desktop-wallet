@@ -12,7 +12,7 @@
     "dist:win": "build --win --x64",
     "dist:win32": "build --win --ia32",
     "dist:macos": "build --macos",
-    "dist:linux": "build --linux"
+    "dist:linux": "build --linux deb tar.xz"
   },
   "repository": {
     "type": "git",
