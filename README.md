@@ -1,7 +1,7 @@
 # Multi Platform Ark Lite Client
 
 ## Download
-Install the version [0.2.0](https://github.com/ArkEcosystem/ark-desktop/releases)
+[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
 ## Features
 * Available on ***Windows***, ***Linux*** (ubuntu/debian) and ***Macosx*** (signed)
