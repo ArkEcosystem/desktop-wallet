@@ -1,7 +1,7 @@
 # Multi Platform Ark Lite Client
 
 ## Download
-Install the version [0.2.0](https://github.com/ArkEcosystem/ark-desktop/releases)
+[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
 ## Features
 * Available on ***Windows***, ***Linux*** (ubuntu/debian) and ***Macosx*** (signed)
@@ -12,12 +12,16 @@ Install the version [0.2.0](https://github.com/ArkEcosystem/ark-desktop/releases
 * (soon) realtime currency value (updated every 5 min) in UsD, Euro, BTC, HKD, JPY, CNY, AuD, CanD, Pound and Rubble
 * autoconnecting to a healthy ark network peer. If the peer is not good any more, automatically find a new one.
 * send ark from/to any account.
+* easily switch to different network, or private chains
+* customize background
+* isolated processes on Windows and Macosx to prevent from data sniffing or injection.
+* Translations (thanks to the Ark community). Please help contributing 
 
 If you login to your account (with your passphrase)
 * (soon) Withdraw to altcoins or USD (via changer.com) - no registration needed
 * Organise your accounts with virtual folders (for instance savings, personnal etc...) so you don't pay any transfer fee
 * Update your votes.
-* (soon) easily switch to different network, or private chains
+* Save your passphrases (unsecured so far, secured vault in the near future)
 
 Second signature supported. Multisignature accounts not yet supported.
 
@@ -45,6 +49,14 @@ npm install
 npm run bundle
 cd ..
 npm start
+```
+
+## Necessary to package from Mac OS X
+
+```
+brew install wine --without-x11
+brew install mono
+brew install gnu-tar graphicsmagick xz
 ```
 
 ## Authors

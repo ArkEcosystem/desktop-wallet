@@ -14,6 +14,8 @@
 
     var ark=require('arkjs');
 
+    var clientVersion = require('../../package.json').version;
+
     var peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
 
     var connection=$q.defer();
@@ -48,8 +50,8 @@
       if(!n){
         n = {
           mainnet:{ //so far same as testnet
-            nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
-            peerseed:'http://node1.arknet.cloud:4000',
+            nethash:'4befbd4cd1f2f10cbe69ac0b494b5ce070595ed23ee7abd386867c4edcdaf3bd',
+            peerseed:'http://5.39.9.248:4000',
             forcepeer: false,
             token: 'ARK',
             symbol: 'Ѧ',
@@ -60,8 +62,8 @@
             background:"background-image:url(assets/img/test1.jpg)"
           },
           testnet:{
-            nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
-            peerseed:'http://node2.arknet.cloud:4000',
+            nethash:'4befbd4cd1f2f10cbe69ac0b494b5ce070595ed23ee7abd386867c4edcdaf3bd',
+            peerseed:'http://5.39.9.248:4000',
             token: 'TESTARK',
             symbol: 'TѦ',
             explorer: 'http://texplorer.ark.io',
@@ -85,22 +87,25 @@
     }
 
     function getPrice(){
-      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
-      .then(function(data){
-        peer.market=data;
-      },function(){
-        peer.market={
-          price:
-            {btc: "0.00003300"}
-        };
-      });
-      $timeout(function(){
-        getPrice();
-      },5*60000);
+      peer.market={
+        price: { btc: '0' },
+      };
+      // $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
+      // .then(function(data){
+      //   peer.market=data;
+      // },function(){
+      //   peer.market={
+      //     price:
+      //       {btc: "0.00003300"}
+      //   };
+      // });
+      // $timeout(function(){
+      //   getPrice();
+      // },5*60000);
     };
 
     function listenNetworkHeight(){
-      $http.get(peer.ip+"/api/blocks/getheight",{timeout:2000}).then(function(resp){
+      $http.get(peer.ip+"/api/blocks/getheight",{timeout:5000}).then(function(resp){
         peer.lastConnection=new Date();
         if(resp.data && resp.data.success){
           if(peer.height==resp.data.height){
@@ -118,7 +123,7 @@
         }
         else{
           peer.isConnected=false;
-          peer.error=resp.statusText || "Peer Timeout after 2s";
+          peer.error=resp.statusText || "Peer Timeout after 5s";
           connection.notify(peer);
         }
       });
@@ -130,7 +135,7 @@
     function getFromPeer(api){
       var deferred = $q.defer();
       peer.lastConnection=new Date();
-      $http.get(peer.ip+api,{timeout:2000}).then(
+      $http.get(peer.ip+api,{timeout:5000}).then(
         function(resp){
           deferred.resolve(resp.data);
           peer.isConnected=true;
@@ -140,7 +145,7 @@
         function(resp){
           deferred.reject("Peer disconnected");
           peer.isConnected=false;
-          peer.error=resp.statusText || "Peer Timeout after 2s";
+          peer.error=resp.statusText || "Peer Timeout after 5s";
           connection.notify(peer);
         }
       );
@@ -155,8 +160,8 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'os': 'arkwalletapp',
-          'version': '0.5.0',
+          'os': 'ark-desktop',
+          'version': clientVersion,
           'port': 1,
           'nethash': network.nethash
         }

@@ -857,7 +857,6 @@
 
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-
       var data={
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
@@ -962,7 +961,6 @@
     function openPassphrasesDialog(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
       var data={address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
-      console.log(data);
       function save() {
         $mdDialog.hide();
         accountService.savePassphrases($scope.send.data.address,$scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(

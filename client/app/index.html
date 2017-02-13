@@ -128,8 +128,9 @@
                     <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')"><translate>Maximize</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))"><translate>Full Screen</translate></md-button>
+                    <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))"><translate>Full Screen</translate></md-button>
                   </md-list-item>
+
                 </md-list>
             </md-menu-content>
           </md-menu>
