@@ -103,7 +103,7 @@
     };
 
     function listenNetworkHeight(){
-      $http.get(peer.ip+"/api/blocks/getheight",{timeout:2000}).then(function(resp){
+      $http.get(peer.ip+"/api/blocks/getheight",{timeout:5000}).then(function(resp){
         peer.lastConnection=new Date();
         if(resp.data && resp.data.success){
           if(peer.height==resp.data.height){
@@ -121,7 +121,7 @@
         }
         else{
           peer.isConnected=false;
-          peer.error=resp.statusText || "Peer Timeout after 2s";
+          peer.error=resp.statusText || "Peer Timeout after 5s";
           connection.notify(peer);
         }
       });
@@ -133,7 +133,7 @@
     function getFromPeer(api){
       var deferred = $q.defer();
       peer.lastConnection=new Date();
-      $http.get(peer.ip+api,{timeout:2000}).then(
+      $http.get(peer.ip+api,{timeout:5000}).then(
         function(resp){
           deferred.resolve(resp.data);
           peer.isConnected=true;
@@ -143,7 +143,7 @@
         function(resp){
           deferred.reject("Peer disconnected");
           peer.isConnected=false;
-          peer.error=resp.statusText || "Peer Timeout after 2s";
+          peer.error=resp.statusText || "Peer Timeout after 5s";
           connection.notify(peer);
         }
       );
