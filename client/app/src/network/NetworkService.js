@@ -50,7 +50,7 @@
       if(!n){
         n = {
           mainnet:{ //so far same as testnet
-            nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
+            nethash:'7dc9f1ef941e55dcc741f026634a484fd4c4e6c925d1050ffd758087ff0021ea',
             peerseed:'http://node1.arknet.cloud:4000',
             forcepeer: false,
             token: 'ARK',
@@ -62,7 +62,7 @@
             background:"background-image:url(assets/img/test1.jpg)"
           },
           testnet:{
-            nethash:'ce6b3b5b28c000fe4b810b843d20b971f316d237d5a9616dbc6f7f1118307fc6',
+            nethash:'7dc9f1ef941e55dcc741f026634a484fd4c4e6c925d1050ffd758087ff0021ea',
             peerseed:'http://node2.arknet.cloud:4000',
             token: 'TESTARK',
             symbol: 'TѦ',
