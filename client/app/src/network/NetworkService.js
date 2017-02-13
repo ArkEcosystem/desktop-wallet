@@ -14,6 +14,8 @@
 
     var ark=require('arkjs');
 
+    var clientVersion = require('../../package.json').version;
+
     var peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
 
     var connection=$q.defer();
@@ -158,8 +160,8 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'os': 'arkwalletapp',
-          'version': '0.5.0',
+          'os': 'ark-desktop',
+          'version': clientVersion,
           'port': 1,
           'nethash': network.nethash
         }
