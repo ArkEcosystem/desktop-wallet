@@ -85,18 +85,21 @@
     }
 
     function getPrice(){
-      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
-      .then(function(data){
-        peer.market=data;
-      },function(){
-        peer.market={
-          price:
-            {btc: "0.00003300"}
-        };
-      });
-      $timeout(function(){
-        getPrice();
-      },5*60000);
+      peer.market={
+        price: { btc: '0' },
+      };
+      // $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
+      // .then(function(data){
+      //   peer.market=data;
+      // },function(){
+      //   peer.market={
+      //     price:
+      //       {btc: "0.00003300"}
+      //   };
+      // });
+      // $timeout(function(){
+      //   getPrice();
+      // },5*60000);
     };
 
     function listenNetworkHeight(){
