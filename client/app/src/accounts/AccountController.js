@@ -1263,7 +1263,9 @@
       $scope.validate={
         send:send,
         cancel:cancel,
-        transaction:transaction
+        transaction:transaction,
+        // to avoid small transaction to be displayed as 1e-8
+        humanAmount: accountService.numberToFixed(transaction.amount / 100000000),
       };
 
       $mdDialog.show({
