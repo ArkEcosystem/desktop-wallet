@@ -1104,10 +1104,22 @@
         accountService.createAccount($scope.send.data.passphrase)
         .then(
           function(account){
+            // Check for already imported account
+            for (var i = 0; i < self.accounts.length; i++) {
+              if (self.accounts[i].publicKey === account.publicKey) {
+                $mdToast.show(
+                  $mdToast.simple()
+                    .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
+                    .hideDelay(5000)
+                );
+                return selectAccount(account);
+              }
+            }
+
             self.accounts.push(account);
             $mdToast.show(
               $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
+                .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
                 .hideDelay(5000)
             );
             selectAccount(account);
