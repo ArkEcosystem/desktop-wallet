@@ -794,7 +794,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/addDelegate.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -849,7 +849,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/vote.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -949,7 +949,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/manageNetwork.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
         fullscreen: true
@@ -989,7 +989,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/savePassphrases.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1038,7 +1038,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/createDelegate.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1095,7 +1095,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/createAccount.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1151,7 +1151,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/importAccount.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1232,7 +1232,7 @@
       $mdBottomSheet.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/contactSheet.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1273,7 +1273,7 @@
         preserveScope      : true,
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/showTransaction.html',
-        clickOutsideToClose: true
+        clickOutsideToClose: false
       });
     };
 
