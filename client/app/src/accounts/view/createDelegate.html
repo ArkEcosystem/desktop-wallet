@@ -2,7 +2,7 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span translate>Register delegate for</span>&nbsp;{{send.data.fromAddress}}</h2>
+        <h2><span translate>Register delegate for</span>&nbsp;{{createDelegate.data.fromAddress}}</h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -15,7 +15,7 @@
           <label translate>Passphrase</label>
           <input ng-model="createDelegate.data.passphrase" type="password" ng-required="true">
         </md-input-container>
-        <md-input-container class="md-block" ng-if="send.data.secondSignature">
+        <md-input-container class="md-block" ng-if="createDelegate.data.secondSignature">
           <label translate>Second Passphrase</label>
           <input ng-model="createDelegate.data.secondpassphrase" type="password" ng-required="true">
         </md-input-container>
