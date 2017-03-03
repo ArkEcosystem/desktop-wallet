@@ -738,20 +738,49 @@
                 $qProvider.errorOnUnhandledRejections(false);
               }]);
 
-          const {remote} = require('electron');
-          const {Menu, MenuItem} = remote;
+          const electron = require('electron');
+          const remote = electron.remote;
+          const Menu = remote.Menu;
 
-          const menu = new Menu();
-          menu.append(new MenuItem({label: 'Select All', accelerator: "CmdOrCtrl+A", selector: 'selectAll:' }));
-          menu.append(new MenuItem({label: 'Copy', accelerator: "CmdOrCtrl+C", selector: "copy:" }));
-          menu.append(new MenuItem({label: 'Paste', accelerator: "CmdOrCtrl+V", selector: "paste:"}));
+          const InputMenu = Menu.buildFromTemplate([{
+                  label: 'Undo',
+                  role: 'undo',
+              }, {
+                  label: 'Redo',
+                  role: 'redo',
+              }, {
+                  type: 'separator',
+              }, {
+                  label: 'Cut',
+                  role: 'cut',
+              }, {
+                  label: 'Copy',
+                  role: 'copy',
+              }, {
+                  label: 'Paste',
+                  role: 'paste',
+              }, {
+                  type: 'separator',
+              }, {
+                  label: 'Select all',
+                  role: 'selectall',
+              },
+          ]);
 
+          document.body.addEventListener('contextmenu', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
 
+              let node = e.target;
 
-          window.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            menu.popup(remote.getCurrentWindow());
-          }, false);
+              while (node) {
+                  if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
+                      InputMenu.popup(remote.getCurrentWindow());
+                      break;
+                  }
+                  node = node.parentNode;
+              }
+          });
 
     </script>
 

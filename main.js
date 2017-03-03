@@ -21,24 +21,30 @@ function createWindow () {
   })
 
   // Create the Application's main menu
-  var template = [{
+  var template = [
+    {
       label: "Application",
       submenu: [
-          { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
-          { type: "separator" },
-          { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
-      ]}, {
+        { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
+        { type: "separator" },
+        { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+      ]
+    }, {
       label: "Edit",
       submenu: [
-          { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
-          { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
-          { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
-          { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" },
-          { type: "separator" },
-          { label: "Open Dev Tools", accelerator: "CmdOrCtrl+D", click: function() { mainWindow.webContents.openDevTools(); }},
-          { label: "Reload App", accelerator: "CmdOrCtrl+R", click: function() { mainWindow.webContents.reload(); }},
-          { label: "Print Page", accelerator: "CmdOrCtrl+P", click: function() { mainWindow.webContents.print({printBackground:true}); }}
-      ]}
+        { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+        { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+        { type: "separator" },
+        { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+        { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+        { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+        { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" },
+        { type: "separator" },
+        { label: "Open Dev Tools", accelerator: "CmdOrCtrl+D", click: function() { mainWindow.webContents.openDevTools(); }},
+        { label: "Reload App", accelerator: "CmdOrCtrl+R", click: function() { mainWindow.webContents.reload(); }},
+        { label: "Print Page", accelerator: "CmdOrCtrl+P", click: function() { mainWindow.webContents.print({printBackground:true}); }}
+      ]
+    }
   ];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
