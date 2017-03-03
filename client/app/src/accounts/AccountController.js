@@ -1002,10 +1002,18 @@
 
       function next() {
         $mdDialog.hide();
+
+        var delegateName;
+        try {
+          delegateName = accountService.sanitizeDelegateName($scope.createDelegate.data.username)
+        } catch (error) {
+          return formatAndToastError(error)
+        }
+
         accountService.createTransaction(2,
           {
             fromAddress: $scope.createDelegate.data.fromAddress,
-            username: $scope.createDelegate.data.username,
+            username: delegateName,
             masterpassphrase: $scope.createDelegate.data.passphrase,
             secondpassphrase: $scope.createDelegate.data.secondpassphrase
           }

@@ -559,6 +559,29 @@
       return virtual;
     }
 
+    var allowedDelegateNameChars = /^[a-z0-9!@$&_.]+$/g;
+    function sanitizeDelegateName(delegateName){
+      if (!delegateName) {
+        throw new Error('Delegate name is undefined');
+      }
+      if (delegateName !== delegateName.toLowerCase()) {
+        throw new Error('Delegate name must be lowercase');
+      }
+
+      var sanitizedName = String(delegateName).toLowerCase().trim();
+      if (sanitizedName === '') {
+        throw new Error('Empty delegate name');
+      }
+      if (sanitizedName.length > 20) {
+        throw new Error('Delegate name is too long, 20 characters maximum');
+      }
+      if (!allowedDelegateNameChars.test(sanitizedName)) {
+        throw new Error('Delegate name can only contain alphanumeric characters with the exception of !@$&_.');
+      }
+
+      return sanitizedName;
+    }
+
 
     return {
       loadAllAccounts : function() {
@@ -636,7 +659,9 @@
 
       setToFolder: setToFolder,
 
-      deleteFolder: deleteFolder
+      deleteFolder: deleteFolder,
+
+      sanitizeDelegateName: sanitizeDelegateName
     }
   }
 
