@@ -238,6 +238,8 @@
             if(transaction.senderId==address){
               transaction.total=-transaction.amount-transaction.fee;
             }
+            // to avoid small transaction to be displayed as 1e-8
+            transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
           }
           storageService.set("transactions-"+address,resp.transactions);
           deferred.resolve(resp.transactions);

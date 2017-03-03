@@ -321,8 +321,8 @@
                       <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
                         <td md-cell>{{it.date | date: 'short'}}</td>
                         <td md-cell>{{it.label}}</td>
-                        <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{(it.total/100000000).toFixed(2)}}</md-button></td>
-                        <td ng-if="it.total<0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'red-200' }">{{(it.total/100000000).toFixed(2)}}</md-button></td>
+                        <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{it.humanTotal}}</md-button></td>
+                        <td ng-if="it.total<0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'red-200' }">{{it.humanTotal}}</md-button></td>
                         <td md-cell>{{it.vendorField}}</td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a></td>
