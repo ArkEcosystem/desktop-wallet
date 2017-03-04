@@ -21,7 +21,7 @@
             <b translate>Username</b> <span class="md-secondary">{{validate.transaction.username}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.amount">
-            <b translate>Amount (Ѧ)</b> <span class="md-secondary">{{validate.transaction.amount/100000000}}</span>
+            <b translate>Amount (Ѧ)</b> <span class="md-secondary">{{validate.humanAmount}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>Fee (Ѧ)</b> <span class="md-secondary">{{validate.transaction.fee/100000000}}</span>

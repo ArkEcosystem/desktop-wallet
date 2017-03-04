@@ -238,6 +238,8 @@
             if(transaction.senderId==address){
               transaction.total=-transaction.amount-transaction.fee;
             }
+            // to avoid small transaction to be displayed as 1e-8
+            transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
           }
           storageService.set("transactions-"+address,resp.transactions);
           deferred.resolve(resp.transactions);
@@ -559,6 +561,47 @@
       return virtual;
     }
 
+    var allowedDelegateNameChars = /^[a-z0-9!@$&_.]+$/g;
+    function sanitizeDelegateName(delegateName){
+      if (!delegateName) {
+        throw new Error('Delegate name is undefined');
+      }
+      if (delegateName !== delegateName.toLowerCase()) {
+        throw new Error('Delegate name must be lowercase');
+      }
+
+      var sanitizedName = String(delegateName).toLowerCase().trim();
+      if (sanitizedName === '') {
+        throw new Error('Empty delegate name');
+      }
+      if (sanitizedName.length > 20) {
+        throw new Error('Delegate name is too long, 20 characters maximum');
+      }
+      if (!allowedDelegateNameChars.test(sanitizedName)) {
+        throw new Error('Delegate name can only contain alphanumeric characters with the exception of !@$&_.');
+      }
+
+      return sanitizedName;
+    }
+
+    function numberToFixed(x) {
+      if (Math.abs(x) < 1.0) {
+        var e = parseInt(x.toString().split('e-')[1]);
+        if (e) {
+            x *= Math.pow(10,e-1);
+            x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+        }
+      } else {
+        var e = parseInt(x.toString().split('+')[1]);
+        if (e > 20) {
+            e -= 20;
+            x /= Math.pow(10,e);
+            x += (new Array(e+1)).join('0');
+        }
+      }
+      return x;
+    }
+
 
     return {
       loadAllAccounts : function() {
@@ -636,7 +679,11 @@
 
       setToFolder: setToFolder,
 
-      deleteFolder: deleteFolder
+      deleteFolder: deleteFolder,
+
+      sanitizeDelegateName: sanitizeDelegateName,
+
+      numberToFixed: numberToFixed,
     }
   }
 

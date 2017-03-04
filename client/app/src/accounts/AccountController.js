@@ -794,7 +794,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/addDelegate.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -849,7 +849,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/vote.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -949,7 +949,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/manageNetwork.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
         fullscreen: true
@@ -989,7 +989,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/savePassphrases.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1002,10 +1002,18 @@
 
       function next() {
         $mdDialog.hide();
+
+        var delegateName;
+        try {
+          delegateName = accountService.sanitizeDelegateName($scope.createDelegate.data.username)
+        } catch (error) {
+          return formatAndToastError(error)
+        }
+
         accountService.createTransaction(2,
           {
             fromAddress: $scope.createDelegate.data.fromAddress,
-            username: $scope.createDelegate.data.username,
+            username: delegateName,
             masterpassphrase: $scope.createDelegate.data.passphrase,
             secondpassphrase: $scope.createDelegate.data.secondpassphrase
           }
@@ -1030,7 +1038,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/createDelegate.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1087,7 +1095,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/createAccount.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1104,10 +1112,22 @@
         accountService.createAccount($scope.send.data.passphrase)
         .then(
           function(account){
+            // Check for already imported account
+            for (var i = 0; i < self.accounts.length; i++) {
+              if (self.accounts[i].publicKey === account.publicKey) {
+                $mdToast.show(
+                  $mdToast.simple()
+                    .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
+                    .hideDelay(5000)
+                );
+                return selectAccount(account);
+              }
+            }
+
             self.accounts.push(account);
             $mdToast.show(
               $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
+                .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
                 .hideDelay(5000)
             );
             selectAccount(account);
@@ -1131,7 +1151,7 @@
       $mdDialog.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/importAccount.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1212,7 +1232,7 @@
       $mdBottomSheet.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/contactSheet.html',
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
@@ -1243,7 +1263,9 @@
       $scope.validate={
         send:send,
         cancel:cancel,
-        transaction:transaction
+        transaction:transaction,
+        // to avoid small transaction to be displayed as 1e-8
+        humanAmount: accountService.numberToFixed(transaction.amount / 100000000) + '',
       };
 
       $mdDialog.show({
@@ -1251,7 +1273,7 @@
         preserveScope      : true,
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/showTransaction.html',
-        clickOutsideToClose: true
+        clickOutsideToClose: false
       });
     };
 
