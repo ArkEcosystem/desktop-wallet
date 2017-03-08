@@ -1232,7 +1232,7 @@
       $mdBottomSheet.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/contactSheet.html',
-        clickOutsideToClose: false,
+        clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
       });
