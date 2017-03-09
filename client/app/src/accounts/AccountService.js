@@ -355,6 +355,27 @@
         deferred.resolve(transaction);
       }
 
+      else if(type==1){ // second passphrase creation
+        var account=getAccount(config.fromAddress);
+        if(account.balance<500000000){
+          deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress+", "+gettextCatalog.getString("you need at least 5 ARK to create a second passphrase"));
+          return deferred.promise;
+        }
+        try{
+          var transaction=ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase);
+        }
+        catch(e){
+          deferred.reject(e);
+          return deferred.promise;
+        }
+        if(ark.crypto.getAddress(transaction.senderPublicKey)!=config.fromAddress){
+          deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
+          return deferred.promise;
+        }
+        transaction.senderId=config.fromAddress;
+        deferred.resolve(transaction);
+      }
+
       else if(type==2){ //delegate creation
         var account=getAccount(config.fromAddress);
         if(account.balance<2500000000){

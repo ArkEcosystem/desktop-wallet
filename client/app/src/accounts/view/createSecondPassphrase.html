@@ -1,0 +1,48 @@
+<md-dialog aria-label="Create Second Passphrase" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Create Second Passphrase</span></h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-card ng-if="!createSecondPassphraseDialog.data.showRepassphrase" md-colors="{'background': 'red-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span>
+                <translate>Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it</translate>
+              </span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+        <div ng-if="createSecondPassphraseDialog.data.showRepassphrase">
+          Please paste the original and second passphrase to validate the creation.
+        </div>
+        <md-input-container ng-if="createSecondPassphraseDialog.data.showRepassphrase" class="md-block">
+          <label translate>Original Passphrase</label>
+          <textarea ng-model="createSecondPassphraseDialog.data.passphrase" type="text" ng-required="true"></textarea>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label translate>Second Passphrase</label>
+          <textarea ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true"></textarea>
+        </md-input-container>
+
+        <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase">
+          The second passphrase does not match the one you just got.
+        </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()" translate>
+        Next
+      </md-button>
+      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()" translate>
+        Create
+      </md-button>
+      <md-button ng-click="createSecondPassphraseDialog.cancel()" style="margin-right:20px;" translate>
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
