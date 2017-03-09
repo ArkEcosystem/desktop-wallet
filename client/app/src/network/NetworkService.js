@@ -170,7 +170,7 @@
           deferred.resolve(transaction);
         }
         else{
-          deferred.reject(resp.data.message);
+          deferred.reject(resp.data);
         }
       });
       return deferred.promise;
