@@ -184,6 +184,8 @@
       var basicMessage = '';
       if ('string' === typeof error){
         basicMessage = error;
+      } else if ('string' === typeof error.error){
+        basicMessage = error.error;
       } else if ('string' === typeof error.data){
         basicMessage = error.data;
       } else if ('string' === typeof error.message){
