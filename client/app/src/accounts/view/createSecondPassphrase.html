@@ -25,7 +25,8 @@
         </md-input-container>
         <md-input-container class="md-block">
           <label translate>Second Passphrase</label>
-          <textarea ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true"></textarea>
+          <input ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" readonly="readonly" md-autofocus>
+          <input ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true" md-autofocus>
         </md-input-container>
 
         <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase" translate>
