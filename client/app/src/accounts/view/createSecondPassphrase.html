@@ -21,12 +21,12 @@
         </div>
         <md-input-container ng-if="createSecondPassphraseDialog.data.showRepassphrase" class="md-block">
           <label translate>Original Passphrase</label>
-          <textarea ng-model="createSecondPassphraseDialog.data.passphrase" type="text" ng-required="true"></textarea>
+          <input ng-model="createSecondPassphraseDialog.data.passphrase" type="password" ng-required="true"/>
         </md-input-container>
         <md-input-container class="md-block">
           <label translate>Second Passphrase</label>
-          <input ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" readonly="readonly" md-autofocus>
-          <input ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true" md-autofocus>
+          <input ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" readonly="readonly" md-autofocus/>
+          <input ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true" md-autofocus/>
         </md-input-container>
 
         <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase">
