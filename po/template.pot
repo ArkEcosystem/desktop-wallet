@@ -96,9 +96,9 @@ msgstr ""
 #: client/app/src/accounts/AccountController.js:498
 #: client/app/src/accounts/AccountController.js:677
 #: client/app/src/accounts/AccountController.js:96
-#: client/app/src/accounts/view/createAccount.html:39
+#: client/app/src/accounts/view/createAccount.html:40
 #: client/app/src/accounts/view/createDelegate.html:28
-#: client/app/src/accounts/view/createSecondPassphrase.html:43
+#: client/app/src/accounts/view/createSecondPassphrase.html:44
 #: client/app/src/accounts/view/importAccount.html:31
 #: client/app/src/accounts/view/manageNetwork.html:54
 #: client/app/src/accounts/view/savePassphrases.html:32
@@ -146,8 +146,8 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: client/app/src/accounts/view/createAccount.html:36
-#: client/app/src/accounts/view/createSecondPassphrase.html:40
+#: client/app/src/accounts/view/createAccount.html:37
+#: client/app/src/accounts/view/createSecondPassphrase.html:41
 msgid "Create"
 msgstr ""
 
@@ -375,9 +375,9 @@ msgstr ""
 msgid "Network disconnected!"
 msgstr ""
 
-#: client/app/src/accounts/view/createAccount.html:33
+#: client/app/src/accounts/view/createAccount.html:34
 #: client/app/src/accounts/view/createDelegate.html:25
-#: client/app/src/accounts/view/createSecondPassphrase.html:37
+#: client/app/src/accounts/view/createSecondPassphrase.html:38
 #: client/app/src/accounts/view/sendArk.html:47
 #: client/app/src/accounts/view/vote.html:24
 msgid "Next"
@@ -486,6 +486,10 @@ msgstr ""
 
 #: client/app/src/accounts/AccountController.js:494
 msgid "Please enter this account passphrase to login."
+msgstr ""
+
+#: client/app/src/accounts/view/createSecondPassphrase.html:19
+msgid "Please paste the original and second passphrase to validate the creation."
 msgstr ""
 
 #: client/app/src/accounts/AccountController.js:69
@@ -615,6 +619,10 @@ msgstr ""
 
 #: client/app/src/accounts/AccountService.js:331
 msgid "The destination address"
+msgstr ""
+
+#: client/app/src/accounts/view/createSecondPassphrase.html:32
+msgid "The second passphrase does not match the one you just got."
 msgstr ""
 
 #: client/app/src/accounts/AccountController.js:1170
