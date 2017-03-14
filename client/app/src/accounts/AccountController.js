@@ -124,6 +124,7 @@
     self.importAccount = importAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
+    self.createSecondPassphrase  = createSecondPassphrase;
 
     self.manageNetworks  = manageNetworks;
     self.openPassphrasesDialog  = openPassphrasesDialog;
@@ -183,6 +184,8 @@
       var basicMessage = '';
       if ('string' === typeof error){
         basicMessage = error;
+      } else if ('string' === typeof error.error){
+        basicMessage = error.error;
       } else if ('string' === typeof error.data){
         basicMessage = error.data;
       } else if ('string' === typeof error.message){
@@ -1157,6 +1160,71 @@
       });
     };
 
+    // Add a second passphrase to an account
+    function createSecondPassphrase(account){
+      var bip39 = require("bip39");
+      var data = { secondPassphrase: bip39.generateMnemonic() };
+
+      if (account.secondSignature) {
+        return formatAndToastError(
+          gettextCatalog.getString('This account already has a second passphrase: ' + account.address)
+        );
+      }
+
+      function next() {
+        if(!$scope.createSecondPassphraseDialog.data.showRepassphrase){
+          $scope.createSecondPassphraseDialog.data.reSecondPassphrase = $scope.createSecondPassphraseDialog.data.secondPassphrase;
+          $scope.createSecondPassphraseDialog.data.secondPassphrase = "";
+          $scope.createSecondPassphraseDialog.data.showRepassphrase = true;
+        }
+        else if($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase){
+          $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true;
+        }
+        else{
+          accountService.createTransaction(1,
+            {
+              fromAddress: account.address,
+              masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
+              secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
+            }
+          ).then(
+            function(transaction){
+              networkService.postTransaction(transaction).then(
+                function(transaction){
+                  $mdToast.show(
+                    $mdToast.simple()
+                      .textContent(gettextCatalog.getString('Second Passphrase added successfully: ') + account.address)
+                      .hideDelay(5000)
+                  );
+                },
+                formatAndToastError
+              );
+            },
+            formatAndToastError
+          );
+          $mdDialog.hide();
+        }
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.createSecondPassphraseDialog = {
+        data: data,
+        cancel: cancel,
+        next: next
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/createSecondPassphrase.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
     /**
      * Show the Contact view in the bottom sheet
      */
@@ -1172,6 +1240,10 @@
       if(!selectedAccount.delegate){
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
         items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'local_offer'});
+      }
+
+      if(!selectedAccount.secondSignature){
+        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'local_offer'});
       }
 
       function answer(action){
@@ -1221,6 +1293,10 @@
             );
           });
         }
+
+        else if (action==gettextCatalog.getString("Second Passphrase")) {
+          createSecondPassphrase(account);
+        }
       };
 
       $scope.bs={
@@ -1232,7 +1308,7 @@
       $mdBottomSheet.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/contactSheet.html',
-        clickOutsideToClose: false,
+        clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
       });
