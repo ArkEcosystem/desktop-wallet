@@ -16,7 +16,7 @@
             </md-card-title-text>
           </md-card-title>
         </md-card>
-        <div ng-if="createSecondPassphraseDialog.data.showRepassphrase">
+        <div ng-if="createSecondPassphraseDialog.data.showRepassphrase" translate>
           Please paste the original and second passphrase to validate the creation.
         </div>
         <md-input-container ng-if="createSecondPassphraseDialog.data.showRepassphrase" class="md-block">
@@ -28,7 +28,7 @@
           <textarea ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true"></textarea>
         </md-input-container>
 
-        <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase">
+        <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase" translate>
           The second passphrase does not match the one you just got.
         </div>
       </div>
