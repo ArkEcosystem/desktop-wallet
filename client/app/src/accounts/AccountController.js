@@ -6,9 +6,13 @@
           AccountController
        ]).filter('accountlabel', ['accountService', function(accountService) {
           return function(address) {
+            if (!address)
+              return address
+
             var username = accountService.getUsername(address)
             if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
               return accountService.smallId(username)
+              
             return username
           };
         }
