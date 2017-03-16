@@ -1,13 +1,20 @@
 (function(){
-
   angular
        .module('arkclient')
        .controller('AccountController', [
           'accountService', 'networkService', 'storageService', 'changerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
           AccountController
        ]).filter('accountlabel', ['accountService', function(accountService) {
-           return function(address) {
-             return accountService.getUsername(address);
+          return function(address) {
+            var username = accountService.getUsername(address)
+            if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+              return accountService.smallId(username)
+            return username
+          };
+        }
+       ]).filter('exchangedate', [function() {
+           return function(exchangetime) {
+             return new Date(exchangetime*1000);
            };
          }
        ]).filter('exchangedate', [function() {
