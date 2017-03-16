@@ -124,7 +124,7 @@
                     <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')"><translate>Restart</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')"><translate>Minify</translate></md-button>
+                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')"><translate>Minimize</translate></md-button>
                     <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')"><translate>Maximize</translate></md-button>
                   </md-list-item>
                   <md-list-item>
@@ -239,7 +239,7 @@
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
                   <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address}}
+                  {{it.username||it.address|accountlabel}}
                 </span>
             </md-list-item>
             <md-list-item>
@@ -252,7 +252,7 @@
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
                   <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address}}
+                  {{it.username||it.address|accountlabel}}
                 </span>
             </md-list-item>
           </md-list>
