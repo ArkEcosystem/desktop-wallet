@@ -12,7 +12,7 @@
             var username = accountService.getUsername(address)
             if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
               return accountService.smallId(username)
-              
+
             return username
           };
         }
@@ -716,13 +716,13 @@
         var a = array.concat();
         for(var i=0; i<a.length; ++i) {
           for(var j=i+1; j<a.length; ++j) {
-            if(a[i].username === a[j].username)
+            if(a[i] && a[i].username === a[j].username)
               a.splice(j--, 1);
           }
         }
         return a;
       }
-      if(selectedAccount.selectedVotes){
+      if(selectedAccount.selectedVotes ){
         return arrayUnique(selectedAccount.selectedVotes.concat(selectedAccount.delegates))
       }
       else return selectedAccount.delegates;

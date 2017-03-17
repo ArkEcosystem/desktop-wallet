@@ -76,6 +76,8 @@
           if(resp.success){
             var account=resp.account;
             account.cold=!account.publicKey;
+            account.delegates = [];
+            account.selectedVotes = [];
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           }
@@ -84,7 +86,9 @@
               address:address,
               balance:0,
               secondSignature:false,
-              cold:true
+              cold:true,
+              delegates: [],
+              selectedVotes: [],
             };
             deferred.resolve(account);
             addWatchOnlyAddress(account);
@@ -313,8 +317,12 @@
       var deferred = $q.defer();
       networkService.getFromPeer("/api/accounts/delegates/?address="+address).then(function(resp){
         if(resp && resp.success){
-          storageService.set("voted-"+address,resp.delegates);
-          deferred.resolve(resp.delegates);
+          var delegates = [];
+          if (resp.delegates && resp.delegates.length && resp.delegates[0]){
+            delegates = resp.delegates
+          }
+          storageService.set("voted-"+address,delegates);
+          deferred.resolve(delegates);
         }
         else{
           deferred.reject(gettextCatalog.getString("Cannot get voted delegates"));
