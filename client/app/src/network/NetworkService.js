@@ -51,11 +51,11 @@
         n = {
           mainnet:{ //so far same as testnet
             nethash:'4befbd4cd1f2f10cbe69ac0b494b5ce070595ed23ee7abd386867c4edcdaf3bd',
-            peerseed:'http://5.39.9.248:4000',
+            peerseed:'https://node1.arknet.cloud',
             forcepeer: false,
             token: 'ARK',
             symbol: 'Ѧ',
-            explorer: 'http://texplorer.ark.io',
+            explorer: 'http://explorer.ark.io',
             exchanges: {
               changer: "ark_ARK"
             },
@@ -63,10 +63,10 @@
           },
           testnet:{
             nethash:'4befbd4cd1f2f10cbe69ac0b494b5ce070595ed23ee7abd386867c4edcdaf3bd',
-            peerseed:'http://5.39.9.248:4000',
+            peerseed:'https://node1.arknet.cloud',
             token: 'TESTARK',
             symbol: 'TѦ',
-            explorer: 'http://texplorer.ark.io',
+            explorer: 'http://explorer.ark.io',
             background:"background-color:#222299"
           }
         };
