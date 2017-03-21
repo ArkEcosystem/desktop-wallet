@@ -314,9 +314,9 @@
                         <th md-column md-numeric md-order-by="timestamp"><translate>Date</translate></th>
                         <th md-column md-order-by="label"><translate>Type</translate></th>
                         <th md-column md-numeric md-order-by="total"><translate>Total</Translate> {{ul.network.symbol}}</th>
-                        <th md-column translate>Smartbridge</th>
                         <th md-column md-numeric translate>From</th>
                         <th md-column md-numeric translate>To</th>
+                        <th md-column translate>Smartbridge</th>
                       </tr>
                     </thead>
                     <tbody md-body style="white-space:nowrap;">
@@ -327,9 +327,9 @@
                         <td md-cell>{{it.label}}</td>
                         <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{it.humanTotal}}</md-button></td>
                         <td ng-if="it.total<0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'red-200' }">{{it.humanTotal}}</md-button></td>
-                        <td md-cell>{{it.vendorField}}</td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a></td>
+                        <td md-cell>{{it.vendorField}}</td>
                       </tr>
                     </tbody>
                   </table>
