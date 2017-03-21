@@ -1137,7 +1137,7 @@
           function(account){
             // Check for already imported account
             for (var i = 0; i < self.accounts.length; i++) {
-              if (self.accounts[i].publicKey === account.publicKey) {
+              if (self.accounts[i].address === account.address) {
                 $mdToast.show(
                   $mdToast.simple()
                     .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
