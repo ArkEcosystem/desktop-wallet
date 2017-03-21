@@ -243,7 +243,7 @@
         offset=0;
       }
       if(!limit){
-        limit=100
+        limit=50
       }
       var deferred = $q.defer();
       networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit="+limit+"&recipientId=" +address +"&senderId="+address).then(function (resp) {
