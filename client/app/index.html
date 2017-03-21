@@ -141,7 +141,7 @@
   </md-toolbar>
 
       <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
-           <md-content style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
+           <md-content id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
              <md-toolbar layout="row">
                <div class="md-toolbar-tools">
                  <h2><translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}}</h2>
@@ -181,8 +181,8 @@
                </md-list-item>
              </md-list>
            </md-content>
-           <div layout="row" layout-align="space-between stretch">
-             <md-content style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+           <div id="home-box-row" layout="row" layout-align="space-between stretch">
+             <md-content id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
                <md-list>
                  <md-list-item>
                    <b><translate>Price</translate> ({{ul.currency.symbol}})</b> <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
@@ -202,7 +202,7 @@
                  </md-list-item>
                </md-list>
              </md-content>
-             <md-content style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+             <md-content  id="home-box-network" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
                <md-list flex>
                  <md-list-item>
                    <b translate>Network</b> <md-button class="md-secondary" aria-label="Switch Network" md-prevent-menu-close ng-click="ul.switchNetwork()">{{ul.connectedPeer.network}}/{{ul.connectedPeer.height}}</md-button>
@@ -216,8 +216,8 @@
                </md-list>
              </md-content>
            </div>
-           <!-- <iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe> -->
-           <iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>
+           <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
+           <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
 
            <div class="footer">
              <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
