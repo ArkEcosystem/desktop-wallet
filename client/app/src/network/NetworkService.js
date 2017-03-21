@@ -51,7 +51,7 @@
         n = {
           mainnet:{ //so far same as testnet
             nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
-            peerseed:'https://node1.arknet.cloud',
+            peerseed:'http://5.39.9.240:4001',
             forcepeer: false,
             token: 'ARK',
             symbol: 'Ѧ',
@@ -63,7 +63,7 @@
           },
           testnet:{
             nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
-            peerseed:'https://node1.arknet.cloud',
+            peerseed:'http://5.39.9.240:4001',
             token: 'TESTARK',
             symbol: 'TѦ',
             explorer: 'http://explorer.ark.io',
