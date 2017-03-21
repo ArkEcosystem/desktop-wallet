@@ -309,16 +309,20 @@
                   <table md-table>
                     <thead md-head md-order="query.order">
                       <tr md-row>
+                        <th md-column md-numeric><translate>Id</translate></th>
+                        <th md-column md-numeric><translate>Confirmations</translate></th>
                         <th md-column md-numeric md-order-by="timestamp"><translate>Date</translate></th>
                         <th md-column md-order-by="label"><translate>Type</translate></th>
                         <th md-column md-numeric md-order-by="total"><translate>Total</Translate> {{ul.network.symbol}}</th>
-                        <th md-column translate>Vendor Field</th>
+                        <th md-column translate>Smartbridge</th>
                         <th md-column md-numeric translate>From</th>
                         <th md-column md-numeric translate>To</th>
                       </tr>
                     </thead>
                     <tbody md-body style="white-space:nowrap;">
                       <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
+                        <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.id | smallId}}</a></td>
+                        <td md-cell>{{it.confirmations}}</td>
                         <td md-cell>{{it.date | date: 'short'}}</td>
                         <td md-cell>{{it.label}}</td>
                         <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{it.humanTotal}}</md-button></td>

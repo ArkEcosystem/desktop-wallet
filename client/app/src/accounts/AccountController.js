@@ -16,7 +16,11 @@
             return username
           };
         }
-       ]).filter('exchangedate', [function() {
+       ]).filter('smallId', function(accountService) {
+          return function(fullId) {
+            return accountService.smallId(fullId)
+          }
+        }).filter('exchangedate', [function() {
            return function(exchangetime) {
              return new Date(exchangetime*1000);
            };
@@ -567,7 +571,11 @@
                   return b.timestamp-a.timestamp;
                 });
                 if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+                  var previousTx = self.selected.transactions
                   self.selected.transactions = transactions;
+                  // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                  if (!previousTx[0].confirmations)
+                    self.selected.transactions.unshift(previousTx[0])
                 }
               }
             }
@@ -617,7 +625,11 @@
               return b.timestamp-a.timestamp;
             });
             if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+              var previousTx = self.selected.transactions
               self.selected.transactions = transactions;
+              // if the previous tx was unconfirmed, but it back at the top (for better UX)
+              if (!previousTx[0].confirmations)
+                self.selected.transactions.unshift(previousTx[0])
             }
           }
         }
@@ -661,7 +673,11 @@
                 return b.timestamp-a.timestamp;
               });
               if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+                var previousTx = self.selected.transactions
                 self.selected.transactions = transactions;
+                // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                if (!previousTx[0].confirmations)
+                  self.selected.transactions.unshift(previousTx[0])
               }
             }
           }
@@ -852,7 +868,7 @@
           }
         ).then(
           function(transaction){
-            validateTransaction(transaction);
+            validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
@@ -887,6 +903,16 @@
         secondpassphrase: passphrases[1] ? passphrases[1] : '',
       };
 
+      // testing goodies
+      // var data={
+      //   fromAddress: selectedAccount ? selectedAccount.address: '',
+      //   secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+      //   passphrase: 'insect core ritual alcohol clinic opera aisle dial entire dust symbol vintage',
+      //   secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
+      //   amount: 1,
+      // };
+
       function next() {
         if (!$scope.sendArkForm.$valid){
           return ;
@@ -911,7 +937,7 @@
           }
         ).then(
           function(transaction){
-            validateTransaction(transaction);
+            validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
@@ -1042,7 +1068,7 @@
           }
         ).then(
           function(transaction){
-            validateTransaction(transaction);
+            validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
@@ -1336,10 +1362,15 @@
     }
 
 
-    function validateTransaction(transaction){
+    function validateTransaction(selectedAccount, transaction){
 
       function send() {
         $mdDialog.hide();
+
+        transaction = accountService.formatTransaction(transaction, selectedAccount.address);
+        transaction.confirmations = 0;
+        selectedAccount.transactions.unshift(transaction);
+
         networkService.postTransaction(transaction).then(
           function(transaction){
             $mdToast.show(

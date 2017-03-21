@@ -217,6 +217,27 @@
       return $q.when(account);
     };
 
+    function formatTransaction(transaction, recipientAddress) {
+      var d = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0));
+      var t = parseInt(d.getTime() / 1000);
+
+      transaction.label=gettextCatalog.getString(TxTypes[transaction.type]);
+      transaction.date=new Date((transaction.timestamp + t) * 1000);
+      if(transaction.recipientId==recipientAddress){
+        transaction.total=transaction.amount;
+        if(transaction.type==0){
+          transaction.label=gettextCatalog.getString("Receive Ark");
+        }
+      }
+      if(transaction.senderId==recipientAddress){
+        transaction.total=-transaction.amount-transaction.fee;
+      }
+      // to avoid small transaction to be displayed as 1e-8
+      transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
+
+      return transaction;
+    }
+
     function getTransactions(address, offset, limit) {
       if(!offset){
         offset=0;
@@ -225,25 +246,10 @@
         limit=100
       }
       var deferred = $q.defer();
-      var d = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0));
-      var t = parseInt(d.getTime() / 1000);
       networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit="+limit+"&recipientId=" +address +"&senderId="+address).then(function (resp) {
         if(resp.success){
           for(var i=0;i<resp.transactions.length;i++){
-            var transaction = resp.transactions[i];
-            transaction.label=gettextCatalog.getString(TxTypes[transaction.type]);
-            transaction.date=new Date((transaction.timestamp + t) * 1000);
-            if(transaction.recipientId==address){
-              transaction.total=transaction.amount;
-              if(transaction.type==0){
-                transaction.label=gettextCatalog.getString("Receive Ark");
-              }
-            }
-            if(transaction.senderId==address){
-              transaction.total=-transaction.amount-transaction.fee;
-            }
-            // to avoid small transaction to be displayed as 1e-8
-            transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
+            var transaction = formatTransaction(resp.transactions[i], address)
           }
           storageService.set("transactions-"+address,resp.transactions);
           deferred.resolve(resp.transactions);
@@ -719,6 +725,8 @@
       numberToFixed: numberToFixed,
 
       smallId: smallId,
+
+      formatTransaction: formatTransaction,
     }
   }
 
