@@ -136,6 +136,7 @@
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
     self.createSecondPassphrase  = createSecondPassphrase;
+    self.copiedToClipboard  = copiedToClipboard;
 
     self.manageNetworks  = manageNetworks;
     self.openPassphrasesDialog  = openPassphrasesDialog;
@@ -216,6 +217,14 @@
         $mdToast.simple()
           .textContent(errorMessage)
           .hideDelay(hideDelay)
+      );
+    }
+
+    function copiedToClipboard(){
+      $mdToast.show(
+        $mdToast.simple()
+          .textContent(gettextCatalog.getString('Copied to clipboard'))
+          .hideDelay(5000)
       );
     }
 

@@ -281,7 +281,7 @@
                   </md-button>-->
                   <span class="delegate-name">{{ul.selected.username||'Address'}}</span>
                   <br>
-                  <md-button style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}"><md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
+                  <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}"><md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
 
                 </span>
                 <span class="md-subhead description">
