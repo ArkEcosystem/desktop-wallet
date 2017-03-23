@@ -4,53 +4,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: client/app/src/accounts/AccountController.js:686
+#: client/app/src/accounts/AccountController.js:722
 msgid "Account added!"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1263
+#: client/app/src/accounts/AccountController.js:1309
 msgid "Account deleted!"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1067
+#: client/app/src/accounts/AccountController.js:1113
 msgid "Account successfully created:"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1133
+#: client/app/src/accounts/AccountController.js:1179
 msgid "Account successfully imported:"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1123
+#: client/app/src/accounts/AccountController.js:1169
 msgid "Account was already imported:"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:480
-#: client/app/src/accounts/AccountController.js:676
+#: client/app/src/accounts/AccountController.js:504
+#: client/app/src/accounts/AccountController.js:712
 msgid "Add"
 msgstr ""
 
-#: client/app/index.html:581
+#: client/app/index.html:586
 #: client/app/src/accounts/view/addDelegate.html:35
 #: client/app/src/accounts/view/addDelegate.html:5
 msgid "Add Delegate"
 msgstr ""
 
-#: client/app/index.html:169
+#: client/app/index.html:170
 #: client/app/index.html:57
-#: client/app/src/accounts/AccountController.js:672
+#: client/app/src/accounts/AccountController.js:708
 msgid "Add Watch-Only Address"
 msgstr ""
 
-#: client/app/index.html:562
-#: client/app/index.html:588
-#: client/app/src/accounts/AccountController.js:675
-#: client/app/src/accounts/AccountController.js:694
+#: client/app/index.html:567
+#: client/app/index.html:593
+#: client/app/src/accounts/AccountController.js:711
+#: client/app/src/accounts/AccountController.js:730
 msgid "Address"
 msgstr ""
 
-#: client/app/index.html:385
-#: client/app/index.html:446
-#: client/app/index.html:662
+#: client/app/index.html:390
+#: client/app/index.html:451
+#: client/app/index.html:674
 #: client/app/src/accounts/view/sendArk.html:29
 msgid "Amount"
 msgstr ""
@@ -59,17 +59,17 @@ msgstr ""
 msgid "Amount (Ѧ)"
 msgstr ""
 
-#: client/app/index.html:563
-#: client/app/index.html:589
-#: client/app/index.html:692
+#: client/app/index.html:568
+#: client/app/index.html:594
+#: client/app/index.html:704
 msgid "Approval"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:68
+#: client/app/src/accounts/AccountController.js:83
 msgid "Arab"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1254
+#: client/app/src/accounts/AccountController.js:1300
 msgid "Are you sure?"
 msgstr ""
 
@@ -82,20 +82,20 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: client/app/index.html:288
+#: client/app/index.html:289
 msgid "Balance"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:71
+#: client/app/src/accounts/AccountController.js:86
 msgid "Bulgarian"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1256
-#: client/app/src/accounts/AccountController.js:1285
-#: client/app/src/accounts/AccountController.js:481
-#: client/app/src/accounts/AccountController.js:498
-#: client/app/src/accounts/AccountController.js:677
-#: client/app/src/accounts/AccountController.js:96
+#: client/app/src/accounts/AccountController.js:111
+#: client/app/src/accounts/AccountController.js:1302
+#: client/app/src/accounts/AccountController.js:1331
+#: client/app/src/accounts/AccountController.js:505
+#: client/app/src/accounts/AccountController.js:522
+#: client/app/src/accounts/AccountController.js:713
 #: client/app/src/accounts/view/createAccount.html:40
 #: client/app/src/accounts/view/createDelegate.html:28
 #: client/app/src/accounts/view/createSecondPassphrase.html:44
@@ -108,42 +108,50 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:286
+#: client/app/src/accounts/AccountService.js:296
 msgid "Cannot find delegate:"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:304
+#: client/app/src/accounts/AccountService.js:314
 msgid "Cannot find delegates from this term:"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:307
+#: client/app/src/accounts/AccountService.js:317
 msgid "Cannot find delegates on this peer:"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:510
+#: client/app/src/accounts/AccountService.js:524
 msgid "Cannot get sponsors"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:248
+#: client/app/src/accounts/AccountService.js:258
 msgid "Cannot get transactions"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:320
+#: client/app/src/accounts/AccountService.js:334
 msgid "Cannot get voted delegates"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:267
+#: client/app/src/accounts/AccountService.js:277
 msgid "Cannot state if account is a delegate"
 msgstr ""
 
-#: client/app/index.html:100
-#: client/app/index.html:191
+#: client/app/index.html:101
+#: client/app/index.html:192
 msgid "Change 1h/7h/7d"
 msgstr ""
 
-#: client/app/index.html:123
+#: client/app/index.html:124
 #: client/app/src/accounts/view/addDelegate.html:38
 msgid "Close"
+msgstr ""
+
+#: client/app/index.html:314
+msgid "Confirmations"
+msgstr ""
+
+#: client/app/src/accounts/AccountController.js:230
+msgid "Copied to clipboard"
 msgstr ""
 
 #: client/app/src/accounts/view/createAccount.html:37
@@ -151,7 +159,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: client/app/index.html:178
+#: client/app/index.html:179
 #: client/app/index.html:54
 #: client/app/src/accounts/view/createAccount.html:5
 msgid "Create Account"
@@ -161,19 +169,19 @@ msgstr ""
 msgid "Create Second Passphrase"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:476
+#: client/app/src/accounts/AccountController.js:500
 msgid "Create Virtual Folder"
 msgstr ""
 
-#: client/app/index.html:670
+#: client/app/index.html:682
 msgid "Create a new virtual folder"
 msgstr ""
 
-#: client/app/index.html:312
+#: client/app/index.html:315
 msgid "Date"
 msgstr ""
 
-#: client/app/index.html:634
+#: client/app/index.html:646
 msgid "Default"
 msgstr ""
 
@@ -181,7 +189,7 @@ msgstr ""
 msgid "Delay"
 msgstr ""
 
-#: client/app/index.html:680
+#: client/app/index.html:692
 msgid "Delegate"
 msgstr ""
 
@@ -189,16 +197,16 @@ msgstr ""
 msgid "Delegate name"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1237
-#: client/app/src/accounts/AccountController.js:1251
+#: client/app/src/accounts/AccountController.js:1283
+#: client/app/src/accounts/AccountController.js:1297
 msgid "Delete"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1253
+#: client/app/src/accounts/AccountController.js:1299
 msgid "Delete Account"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1255
+#: client/app/src/accounts/AccountController.js:1301
 msgid "Delete permanently this account"
 msgstr ""
 
@@ -206,31 +214,31 @@ msgstr ""
 msgid "Destination Address"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:67
+#: client/app/src/accounts/AccountController.js:82
 msgid "Dutch"
 msgstr ""
 
-#: client/app/index.html:626
+#: client/app/index.html:638
 msgid "Enable Virtual Folders"
 msgstr ""
 
-#: client/app/index.html:551
+#: client/app/index.html:556
 msgid "Enable Votes"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:64
+#: client/app/src/accounts/AccountController.js:79
 msgid "English"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:510
+#: client/app/src/accounts/AccountController.js:534
 msgid "Error when trying to login:"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:194
+#: client/app/src/accounts/AccountController.js:210
 msgid "Error:"
 msgstr ""
 
-#: client/app/index.html:337
+#: client/app/index.html:342
 msgid "Exchange"
 msgstr ""
 
@@ -242,7 +250,7 @@ msgstr ""
 msgid "Fee (Ѧ)"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:479
+#: client/app/src/accounts/AccountController.js:503
 msgid "Folder Name"
 msgstr ""
 
@@ -250,28 +258,28 @@ msgstr ""
 msgid "Force?"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:65
+#: client/app/src/accounts/AccountController.js:80
 msgid "French"
 msgstr ""
 
-#: client/app/index.html:316
+#: client/app/index.html:318
 #: client/app/src/accounts/view/showTransaction.html:15
 msgid "From"
 msgstr ""
 
-#: client/app/index.html:131
+#: client/app/index.html:132
 msgid "Full Screen"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:75
+#: client/app/src/accounts/AccountController.js:90
 msgid "German"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:66
+#: client/app/src/accounts/AccountController.js:81
 msgid "Greek"
 msgstr ""
 
-#: client/app/index.html:223
+#: client/app/index.html:224
 msgid "Hand crafted with ❤ by"
 msgstr ""
 
@@ -279,11 +287,15 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:72
+#: client/app/src/accounts/AccountController.js:87
 msgid "Hungarish"
 msgstr ""
 
-#: client/app/index.html:622
+#: client/app/index.html:313
+msgid "Id"
+msgstr ""
+
+#: client/app/index.html:634
 msgid ""
 "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n"
 "                          Moreover, this account will move under the \"My Accounts\" list."
@@ -293,28 +305,28 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: client/app/index.html:174
+#: client/app/index.html:175
 #: client/app/index.html:53
 #: client/app/src/accounts/view/importAccount.html:5
 msgid "Import Account"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:77
+#: client/app/src/accounts/AccountController.js:92
 msgid "Indonesian"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:76
+#: client/app/src/accounts/AccountController.js:91
 msgid "Italian"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1241
-#: client/app/src/accounts/AccountController.js:1278
-#: client/app/src/accounts/AccountController.js:1280
-#: client/app/src/accounts/AccountController.js:1283
+#: client/app/src/accounts/AccountController.js:1287
+#: client/app/src/accounts/AccountController.js:1324
+#: client/app/src/accounts/AccountController.js:1326
+#: client/app/src/accounts/AccountController.js:1329
 msgid "Label"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1291
+#: client/app/src/accounts/AccountController.js:1337
 msgid "Label set"
 msgstr ""
 
@@ -322,17 +334,17 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: client/app/index.html:214
+#: client/app/index.html:215
 #: client/app/index.html:78
 msgid "Last checked"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:741
+#: client/app/src/accounts/AccountController.js:777
 msgid "List full or delegate already voted."
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:493
-#: client/app/src/accounts/AccountController.js:497
+#: client/app/src/accounts/AccountController.js:517
+#: client/app/src/accounts/AccountController.js:521
 msgid "Login"
 msgstr ""
 
@@ -341,21 +353,21 @@ msgstr ""
 msgid "Manage Networks"
 msgstr ""
 
-#: client/app/index.html:110
-#: client/app/index.html:201
+#: client/app/index.html:111
+#: client/app/index.html:202
 msgid "Market Cap."
 msgstr ""
 
-#: client/app/index.html:128
+#: client/app/index.html:129
 msgid "Maximize"
 msgstr ""
 
-#: client/app/index.html:127
+#: client/app/index.html:128
 msgid "Minimize"
 msgstr ""
 
-#: client/app/index.html:147
-#: client/app/index.html:233
+#: client/app/index.html:148
+#: client/app/index.html:234
 msgid "My Accounts"
 msgstr ""
 
@@ -363,15 +375,15 @@ msgstr ""
 msgid "Nethash"
 msgstr ""
 
-#: client/app/index.html:208
+#: client/app/index.html:209
 msgid "Network"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:174
+#: client/app/src/accounts/AccountController.js:190
 msgid "Network connected and healthy!"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:164
+#: client/app/src/accounts/AccountController.js:180
 msgid "Network disconnected!"
 msgstr ""
 
@@ -383,30 +395,30 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:811
+#: client/app/src/accounts/AccountController.js:847
 msgid "No difference from original delegate list"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:257
+#: client/app/src/accounts/AccountService.js:267
 msgid "No publicKey"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:296
+#: client/app/src/accounts/AccountService.js:306
 msgid "No search term"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:337
-#: client/app/src/accounts/AccountService.js:361
-#: client/app/src/accounts/AccountService.js:382
-#: client/app/src/accounts/AccountService.js:403
+#: client/app/src/accounts/AccountService.js:351
+#: client/app/src/accounts/AccountService.js:375
+#: client/app/src/accounts/AccountService.js:396
+#: client/app/src/accounts/AccountService.js:417
 msgid "Not enough ARK on your account"
 msgstr ""
 
-#: client/app/index.html:609
+#: client/app/index.html:621
 msgid "OffChain"
 msgstr ""
 
-#: client/app/index.html:582
+#: client/app/index.html:587
 msgid "Open Delegate Monitor"
 msgstr ""
 
@@ -418,7 +430,7 @@ msgstr ""
 msgid "Original Passphrase"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:496
+#: client/app/src/accounts/AccountController.js:520
 #: client/app/src/accounts/view/createAccount.html:23
 #: client/app/src/accounts/view/createDelegate.html:15
 #: client/app/src/accounts/view/importAccount.html:19
@@ -428,16 +440,16 @@ msgstr ""
 msgid "Passphrase"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:144
-#: client/app/src/accounts/AccountService.js:163
-#: client/app/src/accounts/AccountService.js:525
+#: client/app/src/accounts/AccountService.js:148
+#: client/app/src/accounts/AccountService.js:167
+#: client/app/src/accounts/AccountService.js:539
 msgid "Passphrase does not match your address"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:350
-#: client/app/src/accounts/AccountService.js:372
-#: client/app/src/accounts/AccountService.js:393
-#: client/app/src/accounts/AccountService.js:414
+#: client/app/src/accounts/AccountService.js:364
+#: client/app/src/accounts/AccountService.js:386
+#: client/app/src/accounts/AccountService.js:407
+#: client/app/src/accounts/AccountService.js:428
 msgid "Passphrase is not corresponding to account"
 msgstr ""
 
@@ -451,15 +463,15 @@ msgid ""
 "              Use this feature only on safe computers and for accounts you can afford to lose balance."
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:170
+#: client/app/src/accounts/AccountService.js:174
 msgid "Passphrases deleted"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:973
+#: client/app/src/accounts/AccountController.js:1019
 msgid "Passphrases saved"
 msgstr ""
 
-#: client/app/index.html:211
+#: client/app/index.html:212
 #: client/app/index.html:72
 msgid "Peer"
 msgstr ""
@@ -472,19 +484,19 @@ msgstr ""
 msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:477
+#: client/app/src/accounts/AccountController.js:501
 msgid "Please enter a folder name."
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:673
+#: client/app/src/accounts/AccountController.js:709
 msgid "Please enter a new address."
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1281
+#: client/app/src/accounts/AccountController.js:1327
 msgid "Please enter a short label."
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:494
+#: client/app/src/accounts/AccountController.js:518
 msgid "Please enter this account passphrase to login."
 msgstr ""
 
@@ -492,45 +504,45 @@ msgstr ""
 msgid "Please paste the original and second passphrase to validate the creation."
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:69
+#: client/app/src/accounts/AccountController.js:84
 msgid "Polish"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:70
+#: client/app/src/accounts/AccountController.js:85
 msgid "Portuguese"
 msgstr ""
 
-#: client/app/index.html:188
-#: client/app/index.html:97
+#: client/app/index.html:189
+#: client/app/index.html:98
 msgid "Price"
 msgstr ""
 
-#: client/app/index.html:564
-#: client/app/index.html:590
-#: client/app/index.html:695
+#: client/app/index.html:569
+#: client/app/index.html:595
+#: client/app/index.html:707
 msgid "Productivity"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:95
+#: client/app/src/accounts/AccountController.js:110
 msgid "Quit"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:94
+#: client/app/src/accounts/AccountController.js:109
 msgid "Quit Ark Client?"
 msgstr ""
 
-#: client/app/index.html:560
-#: client/app/index.html:586
-#: client/app/index.html:689
+#: client/app/index.html:565
+#: client/app/index.html:591
+#: client/app/index.html:701
 msgid "Rank"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:235
+#: client/app/src/accounts/AccountService.js:229
 msgid "Receive Ark"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1242
-#: client/app/src/accounts/AccountController.js:1274
+#: client/app/src/accounts/AccountController.js:1288
+#: client/app/src/accounts/AccountController.js:1320
 msgid "Register Delegate"
 msgstr ""
 
@@ -538,23 +550,23 @@ msgstr ""
 msgid "Register delegate for"
 msgstr ""
 
-#: client/app/index.html:649
+#: client/app/index.html:661
 msgid "Remove"
 msgstr ""
 
-#: client/app/index.html:654
+#: client/app/index.html:666
 msgid "Rename"
 msgstr ""
 
-#: client/app/index.html:124
+#: client/app/index.html:125
 msgid "Restart"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:74
+#: client/app/src/accounts/AccountController.js:89
 msgid "Romanian"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:78
+#: client/app/src/accounts/AccountController.js:93
 msgid "Russian"
 msgstr ""
 
@@ -567,8 +579,8 @@ msgstr ""
 msgid "Save Passphrases for"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1246
-#: client/app/src/accounts/AccountController.js:1297
+#: client/app/src/accounts/AccountController.js:1292
+#: client/app/src/accounts/AccountController.js:1343
 #: client/app/src/accounts/view/createDelegate.html:19
 #: client/app/src/accounts/view/createSecondPassphrase.html:27
 #: client/app/src/accounts/view/sendArk.html:41
@@ -576,7 +588,7 @@ msgstr ""
 msgid "Second Passphrase"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1196
+#: client/app/src/accounts/AccountController.js:1242
 msgid "Second Passphrase added successfully:"
 msgstr ""
 
@@ -588,8 +600,8 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1236
-#: client/app/src/accounts/AccountController.js:1270
+#: client/app/src/accounts/AccountController.js:1282
+#: client/app/src/accounts/AccountController.js:1316
 msgid "Send Ark"
 msgstr ""
 
@@ -597,19 +609,20 @@ msgstr ""
 msgid "Send Ark from"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1284
+#: client/app/src/accounts/AccountController.js:1330
 msgid "Set"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:73
+#: client/app/src/accounts/AccountController.js:88
 msgid "Slovenian"
 msgstr ""
 
+#: client/app/index.html:320
 #: client/app/src/accounts/view/sendArk.html:33
 msgid "Smartbridge"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:504
+#: client/app/src/accounts/AccountController.js:528
 msgid "Succesfully Logged In!"
 msgstr ""
 
@@ -617,7 +630,7 @@ msgstr ""
 msgid "Symbol"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:331
+#: client/app/src/accounts/AccountService.js:345
 msgid "The destination address"
 msgstr ""
 
@@ -625,15 +638,15 @@ msgstr ""
 msgid "The second passphrase does not match the one you just got."
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1170
+#: client/app/src/accounts/AccountController.js:1216
 msgid "This account already has a second passphrase:"
 msgstr ""
 
-#: client/app/index.html:302
+#: client/app/index.html:303
 msgid "This account has never interacted with the network. This is a cold wallet."
 msgstr ""
 
-#: client/app/index.html:317
+#: client/app/index.html:319
 #: client/app/src/accounts/view/showTransaction.html:18
 msgid "To"
 msgstr ""
@@ -642,21 +655,21 @@ msgstr ""
 msgid "Token name"
 msgstr ""
 
-#: client/app/index.html:314
+#: client/app/index.html:317
 msgid "Total"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1327
-#: client/app/src/accounts/AccountController.js:363
+#: client/app/src/accounts/AccountController.js:1378
+#: client/app/src/accounts/AccountController.js:387
 #: client/app/src/accounts/view/showTransaction.html:5
 msgid "Transaction"
 msgstr ""
 
-#: client/app/index.html:297
+#: client/app/index.html:298
 msgid "Transactions"
 msgstr ""
 
-#: client/app/index.html:313
+#: client/app/index.html:316
 #: client/app/src/accounts/view/showTransaction.html:12
 msgid "Type"
 msgstr ""
@@ -665,53 +678,56 @@ msgstr ""
 msgid "Update vote from"
 msgstr ""
 
-#: client/app/index.html:587
+#: client/app/index.html:592
 #: client/app/src/accounts/view/createDelegate.html:11
 #: client/app/src/accounts/view/showTransaction.html:21
 msgid "Username"
 msgstr ""
 
-#: client/app/index.html:315
-msgid "Vendor Field"
-msgstr ""
-
-#: client/app/src/accounts/AccountController.js:486
+#: client/app/src/accounts/AccountController.js:510
 msgid "Virtual folder added!"
 msgstr ""
 
-#: client/app/index.html:580
+#: client/app/index.html:585
 msgid "Vote"
 msgstr ""
 
-#: client/app/index.html:536
+#: client/app/index.html:541
 msgid "Votes"
 msgstr ""
 
-#: client/app/index.html:246
+#: client/app/index.html:610
+msgid ""
+"Voting is an optional, but important mechanism that keeps the Ark network secure.\n"
+"                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n"
+"                This page can be used to cast your vote for a delegate that you support."
+msgstr ""
+
+#: client/app/index.html:247
 msgid "Watch-Only Addresses"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:674
+#: client/app/src/accounts/AccountController.js:710
 msgid "address"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:478
+#: client/app/src/accounts/AccountController.js:502
 msgid "folder name"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:331
+#: client/app/src/accounts/AccountService.js:345
 msgid "is erroneous"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:694
+#: client/app/src/accounts/AccountController.js:730
 msgid "is not recognised"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1282
+#: client/app/src/accounts/AccountController.js:1328
 msgid "label"
 msgstr ""
 
-#: client/app/index.html:695
+#: client/app/index.html:707
 msgid "missed blocks"
 msgstr ""
 
@@ -719,27 +735,27 @@ msgstr ""
 msgid "now!"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:495
+#: client/app/src/accounts/AccountController.js:519
 msgid "passphrase"
 msgstr ""
 
-#: client/app/index.html:695
+#: client/app/index.html:707
 msgid "produced blocks"
 msgstr ""
 
-#: client/app/src/accounts/AccountController.js:1327
-#: client/app/src/accounts/AccountController.js:363
+#: client/app/src/accounts/AccountController.js:1378
+#: client/app/src/accounts/AccountController.js:387
 msgid "sent with success!"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:403
+#: client/app/src/accounts/AccountService.js:417
 msgid "you need at least 1 ARK to vote"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:382
+#: client/app/src/accounts/AccountService.js:396
 msgid "you need at least 25 ARK to register delegate"
 msgstr ""
 
-#: client/app/src/accounts/AccountService.js:361
+#: client/app/src/accounts/AccountService.js:375
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr ""
