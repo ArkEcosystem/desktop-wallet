@@ -124,10 +124,7 @@
       require('electron').shell.openExternal(url);
     };
 
-    self.openExplorer = function(api){
-      require('electron').shell.openExternal(self.network.explorer+api);
-    };
-
+    self.openExplorer = openExplorer;
     self.clientVersion = require('../../package.json').version;
     self.isNetworkConnected=false;
     self.selected     = null;
@@ -197,6 +194,10 @@
         }
       }
     );
+
+    function openExplorer(uri){
+      require('electron').shell.openExternal(self.network.explorer+uri);
+    }
 
     function formatErrorMessage(error) {
       var basicMessage = '';
@@ -1281,7 +1282,8 @@
       var account = selectedAccount;
 
       var items = [
-        { name: gettextCatalog.getString('Delete'), icon: 'delete'}
+        { name: gettextCatalog.getString('Open in explorer'), icon: 'visibility'},
+        { name: gettextCatalog.getString('Delete'), icon: 'delete'},
       ];
 
       if(!selectedAccount.delegate){
@@ -1295,7 +1297,12 @@
 
       function answer(action){
         $mdBottomSheet.hide();
-        if(action==gettextCatalog.getString("Delete")){
+
+        if(action==gettextCatalog.getString('Open in explorer')){
+          openExplorer('/address/' + selectedAccount.address)
+        }
+
+        else if(action==gettextCatalog.getString("Delete")){
           var confirm = $mdDialog.confirm()
               .title(gettextCatalog.getString('Delete Account')+ ' ' +account.address)
               .textContent(gettextCatalog.getString('Are you sure?'))
