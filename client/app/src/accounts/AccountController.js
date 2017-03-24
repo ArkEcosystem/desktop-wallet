@@ -1281,7 +1281,6 @@
       var account = selectedAccount;
 
       var items = [
-        { name: gettextCatalog.getString('Send Ark'), icon: 'send'},
         { name: gettextCatalog.getString('Delete'), icon: 'delete'}
       ];
 
