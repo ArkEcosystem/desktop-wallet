@@ -124,7 +124,7 @@
                     <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')"><translate>Restart</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')"><translate>Minify</translate></md-button>
+                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')"><translate>Minimize</translate></md-button>
                     <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')"><translate>Maximize</translate></md-button>
                   </md-list-item>
                   <md-list-item>
@@ -141,7 +141,7 @@
   </md-toolbar>
 
       <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
-           <md-content style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
+           <md-content id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
              <md-toolbar layout="row">
                <div class="md-toolbar-tools">
                  <h2><translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}}</h2>
@@ -181,8 +181,8 @@
                </md-list-item>
              </md-list>
            </md-content>
-           <div layout="row" layout-align="space-between stretch">
-             <md-content style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+           <div id="home-box-row" layout="row" layout-align="space-between stretch">
+             <md-content id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
                <md-list>
                  <md-list-item>
                    <b><translate>Price</translate> ({{ul.currency.symbol}})</b> <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
@@ -202,7 +202,7 @@
                  </md-list-item>
                </md-list>
              </md-content>
-             <md-content style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+             <md-content  id="home-box-network" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
                <md-list flex>
                  <md-list-item>
                    <b translate>Network</b> <md-button class="md-secondary" aria-label="Switch Network" md-prevent-menu-close ng-click="ul.switchNetwork()">{{ul.connectedPeer.network}}/{{ul.connectedPeer.height}}</md-button>
@@ -216,8 +216,8 @@
                </md-list>
              </md-content>
            </div>
-           <!-- <iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe> -->
-           <iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>
+           <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
+           <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
 
            <div class="footer">
              <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
@@ -239,7 +239,7 @@
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
                   <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address}}
+                  {{it.username||it.address|accountlabel}}
                 </span>
             </md-list-item>
             <md-list-item>
@@ -252,7 +252,7 @@
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
                   <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address}}
+                  {{it.username||it.address|accountlabel}}
                 </span>
             </md-list-item>
           </md-list>
@@ -281,7 +281,7 @@
                   </md-button>-->
                   <span class="delegate-name">{{ul.selected.username||'Address'}}</span>
                   <br>
-                  <md-button style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}"><md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
+                  <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}"><md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
 
                 </span>
                 <span class="md-subhead description">
@@ -306,26 +306,30 @@
                 </md-card>
 
                 <md-table-container flex="100">
-                  <table md-table>
+                  <table md-table id="tx-list">
                     <thead md-head md-order="query.order">
                       <tr md-row>
+                        <th md-column md-numeric><translate>Id</translate></th>
+                        <th md-column md-numeric><translate>Confirmations</translate></th>
                         <th md-column md-numeric md-order-by="timestamp"><translate>Date</translate></th>
                         <th md-column md-order-by="label"><translate>Type</translate></th>
                         <th md-column md-numeric md-order-by="total"><translate>Total</Translate> {{ul.network.symbol}}</th>
-                        <th md-column translate>Vendor Field</th>
                         <th md-column md-numeric translate>From</th>
                         <th md-column md-numeric translate>To</th>
+                        <th md-column translate>Smartbridge</th>
                       </tr>
                     </thead>
                     <tbody md-body style="white-space:nowrap;">
                       <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
+                        <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.id | smallId}}</a></td>
+                        <td md-cell>{{it.confirmations}}</td>
                         <td md-cell>{{it.date | date: 'short'}}</td>
                         <td md-cell>{{it.label}}</td>
                         <td ng-if="it.total>=0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'green-200' }">+{{it.humanTotal}}</md-button></td>
                         <td ng-if="it.total<0" md-cell><md-button ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="{'background' : 'red-200' }">{{it.humanTotal}}</md-button></td>
-                        <td md-cell>{{it.vendorField}}</td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a></td>
+                        <td md-cell>{{it.vendorField}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -601,6 +605,13 @@
                   </tbody>
                 </table>
               </md-table-container>
+
+              <md-content id="vote-help" translate>
+                Voting is an optional, but important mechanism that keeps the Ark network secure.
+                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.
+                This page can be used to cast your vote for a delegate that you support.
+              </md-content>
+
             </md-tab-body>
           </md-tab>
 

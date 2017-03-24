@@ -1,13 +1,28 @@
 (function(){
-
   angular
        .module('arkclient')
        .controller('AccountController', [
           'accountService', 'networkService', 'storageService', 'changerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
           AccountController
        ]).filter('accountlabel', ['accountService', function(accountService) {
-           return function(address) {
-             return accountService.getUsername(address);
+          return function(address) {
+            if (!address)
+              return address
+
+            var username = accountService.getUsername(address)
+            if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+              return accountService.smallId(username)
+
+            return username
+          };
+        }
+       ]).filter('smallId', function(accountService) {
+          return function(fullId) {
+            return accountService.smallId(fullId)
+          }
+        }).filter('exchangedate', [function() {
+           return function(exchangetime) {
+             return new Date(exchangetime*1000);
            };
          }
        ]).filter('exchangedate', [function() {
@@ -124,6 +139,8 @@
     self.importAccount = importAccount;
     self.toggleList   = toggleAccountsList;
     self.sendArk  = sendArk;
+    self.createSecondPassphrase  = createSecondPassphrase;
+    self.copiedToClipboard  = copiedToClipboard;
 
     self.manageNetworks  = manageNetworks;
     self.openPassphrasesDialog  = openPassphrasesDialog;
@@ -183,6 +200,8 @@
       var basicMessage = '';
       if ('string' === typeof error){
         basicMessage = error;
+      } else if ('string' === typeof error.error){
+        basicMessage = error.error;
       } else if ('string' === typeof error.data){
         basicMessage = error.data;
       } else if ('string' === typeof error.message){
@@ -202,6 +221,14 @@
         $mdToast.simple()
           .textContent(errorMessage)
           .hideDelay(hideDelay)
+      );
+    }
+
+    function copiedToClipboard(){
+      $mdToast.show(
+        $mdToast.simple()
+          .textContent(gettextCatalog.getString('Copied to clipboard'))
+          .hideDelay(5000)
       );
     }
 
@@ -544,7 +571,11 @@
                   return b.timestamp-a.timestamp;
                 });
                 if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+                  var previousTx = self.selected.transactions
                   self.selected.transactions = transactions;
+                  // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                  if (!previousTx[0].confirmations)
+                    self.selected.transactions.unshift(previousTx[0])
                 }
               }
             }
@@ -594,7 +625,11 @@
               return b.timestamp-a.timestamp;
             });
             if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+              var previousTx = self.selected.transactions
               self.selected.transactions = transactions;
+              // if the previous tx was unconfirmed, but it back at the top (for better UX)
+              if (!previousTx[0].confirmations)
+                self.selected.transactions.unshift(previousTx[0])
             }
           }
         }
@@ -638,7 +673,11 @@
                 return b.timestamp-a.timestamp;
               });
               if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
+                var previousTx = self.selected.transactions
                 self.selected.transactions = transactions;
+                // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                if (!previousTx[0].confirmations)
+                  self.selected.transactions.unshift(previousTx[0])
               }
             }
           }
@@ -702,13 +741,13 @@
         var a = array.concat();
         for(var i=0; i<a.length; ++i) {
           for(var j=i+1; j<a.length; ++j) {
-            if(a[i].username === a[j].username)
+            if(a[i] && a[i].username === a[j].username)
               a.splice(j--, 1);
           }
         }
         return a;
       }
-      if(selectedAccount.selectedVotes){
+      if(selectedAccount.selectedVotes ){
         return arrayUnique(selectedAccount.selectedVotes.concat(selectedAccount.delegates))
       }
       else return selectedAccount.delegates;
@@ -829,7 +868,7 @@
           }
         ).then(
           function(transaction){
-            validateTransaction(transaction);
+            validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
@@ -864,6 +903,16 @@
         secondpassphrase: passphrases[1] ? passphrases[1] : '',
       };
 
+      // testing goodies
+      // var data={
+      //   fromAddress: selectedAccount ? selectedAccount.address: '',
+      //   secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+      //   passphrase: 'insect core ritual alcohol clinic opera aisle dial entire dust symbol vintage',
+      //   secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
+      //   amount: 1,
+      // };
+
       function next() {
         if (!$scope.sendArkForm.$valid){
           return ;
@@ -888,7 +937,7 @@
           }
         ).then(
           function(transaction){
-            validateTransaction(transaction);
+            validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
@@ -1019,7 +1068,7 @@
           }
         ).then(
           function(transaction){
-            validateTransaction(transaction);
+            validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
@@ -1114,7 +1163,7 @@
           function(account){
             // Check for already imported account
             for (var i = 0; i < self.accounts.length; i++) {
-              if (self.accounts[i].publicKey === account.publicKey) {
+              if (self.accounts[i].address === account.address) {
                 $mdToast.show(
                   $mdToast.simple()
                     .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
@@ -1157,6 +1206,71 @@
       });
     };
 
+    // Add a second passphrase to an account
+    function createSecondPassphrase(account){
+      var bip39 = require("bip39");
+      var data = { secondPassphrase: bip39.generateMnemonic() };
+
+      if (account.secondSignature) {
+        return formatAndToastError(
+          gettextCatalog.getString('This account already has a second passphrase: ' + account.address)
+        );
+      }
+
+      function next() {
+        if(!$scope.createSecondPassphraseDialog.data.showRepassphrase){
+          $scope.createSecondPassphraseDialog.data.reSecondPassphrase = $scope.createSecondPassphraseDialog.data.secondPassphrase;
+          $scope.createSecondPassphraseDialog.data.secondPassphrase = "";
+          $scope.createSecondPassphraseDialog.data.showRepassphrase = true;
+        }
+        else if($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase){
+          $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true;
+        }
+        else{
+          accountService.createTransaction(1,
+            {
+              fromAddress: account.address,
+              masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
+              secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
+            }
+          ).then(
+            function(transaction){
+              networkService.postTransaction(transaction).then(
+                function(transaction){
+                  $mdToast.show(
+                    $mdToast.simple()
+                      .textContent(gettextCatalog.getString('Second Passphrase added successfully: ') + account.address)
+                      .hideDelay(5000)
+                  );
+                },
+                formatAndToastError
+              );
+            },
+            formatAndToastError
+          );
+          $mdDialog.hide();
+        }
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.createSecondPassphraseDialog = {
+        data: data,
+        cancel: cancel,
+        next: next
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/createSecondPassphrase.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
     /**
      * Show the Contact view in the bottom sheet
      */
@@ -1172,6 +1286,10 @@
       if(!selectedAccount.delegate){
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
         items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'local_offer'});
+      }
+
+      if(!selectedAccount.secondSignature){
+        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'local_offer'});
       }
 
       function answer(action){
@@ -1221,6 +1339,10 @@
             );
           });
         }
+
+        else if (action==gettextCatalog.getString("Second Passphrase")) {
+          createSecondPassphrase(account);
+        }
       };
 
       $scope.bs={
@@ -1232,7 +1354,7 @@
       $mdBottomSheet.show({
         parent             : angular.element(document.getElementById('app')),
         templateUrl        : './src/accounts/view/contactSheet.html',
-        clickOutsideToClose: false,
+        clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
       });
@@ -1240,10 +1362,15 @@
     }
 
 
-    function validateTransaction(transaction){
+    function validateTransaction(selectedAccount, transaction){
 
       function send() {
         $mdDialog.hide();
+
+        transaction = accountService.formatTransaction(transaction, selectedAccount.address);
+        transaction.confirmations = 0;
+        selectedAccount.transactions.unshift(transaction);
+
         networkService.postTransaction(transaction).then(
           function(transaction){
             $mdToast.show(

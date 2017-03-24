@@ -28,6 +28,7 @@
 
     function showTimestamp(time){
       var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
+
       var t = parseInt(d.getTime() / 1000);
 
       time = new Date((time + t) * 1000);
@@ -76,6 +77,8 @@
           if(resp.success){
             var account=resp.account;
             account.cold=!account.publicKey;
+            account.delegates = [];
+            account.selectedVotes = [];
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           }
@@ -84,7 +87,9 @@
               address:address,
               balance:0,
               secondSignature:false,
-              cold:true
+              cold:true,
+              delegates: [],
+              selectedVotes: [],
             };
             deferred.resolve(account);
             addWatchOnlyAddress(account);
@@ -213,6 +218,27 @@
       return $q.when(account);
     };
 
+    function formatTransaction(transaction, recipientAddress) {
+      var d = new Date(Date.UTC(2017,2,21,13,0,0,0))
+      var t = parseInt(d.getTime() / 1000);
+
+      transaction.label=gettextCatalog.getString(TxTypes[transaction.type]);
+      transaction.date=new Date((transaction.timestamp + t) * 1000);
+      if(transaction.recipientId==recipientAddress){
+        transaction.total=transaction.amount;
+        if(transaction.type==0){
+          transaction.label=gettextCatalog.getString("Receive Ark");
+        }
+      }
+      if(transaction.senderId==recipientAddress){
+        transaction.total=-transaction.amount-transaction.fee;
+      }
+      // to avoid small transaction to be displayed as 1e-8
+      transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
+
+      return transaction;
+    }
+
     function getTransactions(address, offset, limit) {
       if(!offset){
         offset=0;
@@ -226,20 +252,7 @@
       networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit="+limit+"&recipientId=" +address +"&senderId="+address).then(function (resp) {
         if(resp.success){
           for(var i=0;i<resp.transactions.length;i++){
-            var transaction = resp.transactions[i];
-            transaction.label=gettextCatalog.getString(TxTypes[transaction.type]);
-            transaction.date=new Date((transaction.timestamp + t) * 1000);
-            if(transaction.recipientId==address){
-              transaction.total=transaction.amount;
-              if(transaction.type==0){
-                transaction.label=gettextCatalog.getString("Receive Ark");
-              }
-            }
-            if(transaction.senderId==address){
-              transaction.total=-transaction.amount-transaction.fee;
-            }
-            // to avoid small transaction to be displayed as 1e-8
-            transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
+            var transaction = formatTransaction(resp.transactions[i], address)
           }
           storageService.set("transactions-"+address,resp.transactions);
           deferred.resolve(resp.transactions);
@@ -313,8 +326,12 @@
       var deferred = $q.defer();
       networkService.getFromPeer("/api/accounts/delegates/?address="+address).then(function(resp){
         if(resp && resp.success){
-          storageService.set("voted-"+address,resp.delegates);
-          deferred.resolve(resp.delegates);
+          var delegates = [];
+          if (resp.delegates && resp.delegates.length && resp.delegates[0]){
+            delegates = resp.delegates
+          }
+          storageService.set("voted-"+address,delegates);
+          deferred.resolve(delegates);
         }
         else{
           deferred.reject(gettextCatalog.getString("Cannot get voted delegates"));
@@ -351,6 +368,27 @@
           return deferred.promise;
         }
 
+        transaction.senderId=config.fromAddress;
+        deferred.resolve(transaction);
+      }
+
+      else if(type==1){ // second passphrase creation
+        var account=getAccount(config.fromAddress);
+        if(account.balance<500000000){
+          deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress+", "+gettextCatalog.getString("you need at least 5 ARK to create a second passphrase"));
+          return deferred.promise;
+        }
+        try{
+          var transaction=ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase);
+        }
+        catch(e){
+          deferred.reject(e);
+          return deferred.promise;
+        }
+        if(ark.crypto.getAddress(transaction.senderPublicKey)!=config.fromAddress){
+          deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
+          return deferred.promise;
+        }
         transaction.senderId=config.fromAddress;
         deferred.resolve(transaction);
       }
@@ -602,6 +640,10 @@
       return x;
     }
 
+    function smallId(fullId) {
+      return fullId.slice(0, 5) + '...' + fullId.slice(-5)
+    }
+
 
     return {
       loadAllAccounts : function() {
@@ -684,6 +726,10 @@
       sanitizeDelegateName: sanitizeDelegateName,
 
       numberToFixed: numberToFixed,
+
+      smallId: smallId,
+
+      formatTransaction: formatTransaction,
     }
   }
 

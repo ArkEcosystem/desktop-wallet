@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-01-18 08:54+0000\n"
-"PO-Revision-Date: 2017-01-18 08:54+0000\n"
+"POT-Creation-Date: 2017-03-03 10:03+0000\n"
+"PO-Revision-Date: 2017-03-03 10:03+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: sl\n"
@@ -10,12 +10,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
-
-msgid "Add Watch-Only Address"
-msgstr "Dodaj naslov"
-
-msgid "Account successfully created:"
-msgstr "Račun uspešno ustvarjen:"
 
 msgid "Address"
 msgstr "Naslov"
@@ -26,7 +20,7 @@ msgstr "Račun dodan!"
 msgid "Amount (Ѧ)"
 msgstr "Znesek (Ѧ)"
 
-msgid "Add Watch-Only Address"
+msgid "Add Account"
 msgstr "Dodaj račun"
 
 msgid "Account deleted!"
@@ -80,9 +74,6 @@ msgstr "Ne morem predvideti, če je račun delegat"
 msgid "Change 1h/7h/7d"
 msgstr "Spremeni 1h/7h/7d"
 
-msgid "Create"
-msgstr "Ustvari"
-
 msgid "Create Virtual Folder"
 msgstr "Ustvari virtualno mapo"
 
@@ -91,9 +82,6 @@ msgstr "Ustvari novo virtualno mapo"
 
 msgid "Close"
 msgstr "Zapri"
-
-msgid "Create Account"
-msgstr "Ustvari račun"
 
 msgid "Default"
 msgstr "Privzeto"
@@ -143,17 +131,11 @@ msgstr "Strošek (Ѧ)"
 msgid "Folder Name"
 msgstr "Ime mape"
 
-msgid "Full Screen"
-msgstr "Celozaslonski način"
-
 msgid "From"
 msgstr "Od"
 
 msgid "Hand crafted with ❤ by"
 msgstr "Ustvaril z ❤"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
-msgstr "Če si lastnik tega računa lahko omogočiš Virtualne Mape. Virtualne Mape so preprosto podračuni za boljši organizacijo vašega računa, brez da bi bilo potrebno poslati pravo transkacijo preko omrežja. <br> Prav tako se bo ta račun pojavil pod \"Moji Računi\"."
 
 msgid "Height"
 msgstr "Višina"
@@ -179,25 +161,13 @@ msgstr "Prijava"
 msgid "Market Cap."
 msgstr "Tržna vrednost"
 
-msgid "Manage Networks"
-msgstr "Upravljanje omrežij"
-
-msgid "Maximize"
-msgstr "Povečaj"
-
-msgid "Minify"
-msgstr "Pomanjšaj"
-
 msgid "My Accounts"
 msgstr "Moji Računi"
-
-msgid "Network"
-msgstr "Omrežje"
 
 msgid "Network connected and healthy!"
 msgstr "Povezava z omrežje zdrava in vzpostavljena!"
 
-msgid "Network disconnected!"
+msgid "Network disconected!"
 msgstr "Povezava z omrežjem izgubljena!"
 
 msgid "No difference from original delegate list"
@@ -215,16 +185,10 @@ msgstr "Ni iskalnega niza"
 msgid "Not enough ARK on your account"
 msgstr "V vašem računu ni dovolj ARK-ov."
 
-msgid "OffChain"
-msgstr "Lokalna povezava"
-
 msgid "Open Delegate Monitor"
 msgstr "Odpri delegatni brskalnik"
 
-msgid "Optional"
-msgstr "Opcijsko"
-
-msgid "Watch-Only Addresses"
+msgid "Other Accounts"
 msgstr "Ostali računi"
 
 msgid "Passphrase does not match your address"
@@ -233,23 +197,11 @@ msgstr "Geslo se ne ujema s tvojim naslovom"
 msgid "Passphrase"
 msgstr "Geslo"
 
-msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
-msgstr "Gesla niso zavarovana z visokimi standardi. <br>\nUporabite to funckijo samo na računalniku ki mu zaupate."
-
-msgid "Passphrases saved"
-msgstr "Gesla shranjena"
-
 msgid "Passphrase is not corresponding to account"
 msgstr "Geslo se ne ujema s tem računom"
 
-msgid "Passphrases deleted"
-msgstr "Gesla izbrisana"
-
 msgid "Peer"
 msgstr "Klient"
-
-msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Prosimo naredite varnostno kopijo gesla, ta program NE SHRANJUJE vaših gesel in jih v primeru izgube ne more ponastaviti oziroma obnoviti"
 
 msgid "Please enter a folder name."
 msgstr "Vnesite ime mape."
@@ -281,26 +233,11 @@ msgstr "Mesto"
 msgid "Receive Ark"
 msgstr "Prejmi ARK"
 
-msgid "Register Delegate"
-msgstr "Registracija delegata"
-
-msgid "Register delegate for"
-msgstr "Registriraj delegata za"
-
 msgid "Rename"
 msgstr "Preimenuj"
 
 msgid "Remove"
 msgstr "Odstrani"
-
-msgid "Restart"
-msgstr "Ponovni zagon"
-
-msgid "Save"
-msgstr "Shrani"
-
-msgid "Save Passphrases for"
-msgstr "Shrani gesla za"
 
 msgid "Send"
 msgstr "Pošlji"
@@ -320,20 +257,11 @@ msgstr "Nastavi"
 msgid "Succesfully Logged In!"
 msgstr "Uspešna prijava!"
 
-msgid "Smartbridge"
-msgstr "SmartBridge"
-
 msgid "The destination address"
 msgstr "Ciljni naslov"
 
-msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "Ta račun še ni bil nikoli uporabljen na ARK omrežju. To je \"hladna denarnica\""
-
 msgid "To"
 msgstr "Za"
-
-msgid "Total {{ul.network.symbol}}"
-msgstr "Skupaj {{ul.network.symbol}}"
 
 msgid "Transaction"
 msgstr "Transakcija"
@@ -349,9 +277,6 @@ msgstr "Posodobi glas od"
 
 msgid "Username"
 msgstr "Uporabniško ime"
-
-msgid "Vendor Field"
-msgstr "SmartBridge"
 
 msgid "Virtual folder added!"
 msgstr "Virtualna mapa dodana!"
@@ -395,6 +320,129 @@ msgstr "Potrebuješ vsaj 1 ARK za glasovanje"
 msgid "sent with success!"
 msgstr "uspešno poslano!"
 
-msgid "you need at least 25 ARK to register delegate"
-msgstr "potrebuješ vsaj 25 ARK-ov za registracijo delegata"
+msgid "Total Ѧ"
+msgstr "Skupaj (Ѧ)"
+
+msgid "This account has never interacted with the network. This is either:"
+msgstr "Ta račun še ni bil nikoli uporabljen na omrežju. Možni razlogi:"
+
+msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet. The ARK are lost"
+msgstr "neobstoječa denarnica - nihče ne pozna gesla do tega računa."
+
+msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet."
+msgstr "neobstoječa denarnica - nihče ne pozna gesla do tega računa."
+
+msgid "a cold wallet, ie the owner of the passphrase has never used it"
+msgstr "\"hladna denarnica\" - lastnik je še ni nikoli uporabil."
+
+msgid "Details"
+msgstr "Podrobnosti"
+
+msgid "Recipient Address"
+msgstr "Naslov prejemnika"
+
+msgid "Add Account from address"
+msgstr "Dodaj račun iz naslova"
+
+msgid "Add Sponsors Delegates"
+msgstr "Dodaj sponzorske delegate"
+
+msgid "Blockchain Application Registration"
+msgstr "Registracija blockchain aplikacij"
+
+msgid "By using the following forms, you are accepting their"
+msgstr "Z uporabo naslednjih form se strinjaš z njenimi"
+
+msgid "Delegate Registration"
+msgstr "Registracija delegata"
+
+msgid "Deposit ARK"
+msgstr "Položi ARK"
+
+msgid "Deposit and Withdraw through our partner"
+msgstr "Položi in dvigni preko našega partnerja"
+
+msgid "Folders"
+msgstr "Mape"
+
+msgid "History"
+msgstr "Zgodovina"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                        Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Če si lastnik tega računa lahko omogočiš virtualne mape. Virtualne mape so preprosti podračuni za boljšo organizacijo vašega denarja (pri tem ni potrebna sprožitev prave transakcije). <br>Ta račun se bo pojavil tudi med \"Moji Računi\"."
+
+msgid "If you own this account, you can enable Voting"
+msgstr "Če si lastnik tega računa lahko omogočiš glasovanje"
+
+msgid "Maximum:"
+msgstr "Največ:"
+
+msgid "Minimum:"
+msgstr "Najmanj:"
+
+msgid "Multisignature Creation"
+msgstr "Ustvarjanje dodatnih gesel"
+
+msgid "Next..."
+msgstr "Naprej..."
+
+msgid "Please login with your account before using this feature"
+msgstr "Prosim prijavi se s svojim računom pred uporabo te funkcije"
+
+msgid "Please report any issue to"
+msgstr "Prosimo, da poročate o kakršnih koli težavah na"
+
+msgid "Receive"
+msgstr "Prejmi"
+
+msgid "Refresh"
+msgstr "Osveži"
+
+msgid "Recepient Address"
+msgstr "Naslov prejemnika"
+
+msgid "Second Signature Creation"
+msgstr "Usvaritev dodatnega gesla"
+
+msgid "Select a coin"
+msgstr "Izberi valuto"
+
+msgid "Second passphrase"
+msgstr "Drugo geslo"
+
+msgid "Status:"
+msgstr "Status:"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Sponsors Page"
+msgstr "Stran sponzorjev"
+
+msgid "Terms and Conditions"
+msgstr "Pogoji in pravila"
+
+msgid "They have funded this app so you can use it for free. <br>\n                Vote them to help the development."
+msgstr "Donirali so za razvoj te aplikacije tako, da jo lahko uporabljate brezplačno. <br>\nGlasujte za njih za pomoč pri razvoju."
+
+msgid "Transaction id"
+msgstr "ID transakcije"
+
+msgid "Transfer Ark from Blockchain Application"
+msgstr "Prenesi ARK iz blockchain aplikacije"
+
+msgid "Transfer Ark to Blockchain Application"
+msgstr "Prenesi ARK v blockchain aplikacijo"
+
+msgid "Valid until"
+msgstr "Veljavno do"
+
+msgid "Withdraw ARK"
+msgstr "Dvigni ARK"
+
+msgid "Your email, used to send confirmation"
+msgstr "Vaš email za pošiljanje potrditve"
+
+msgid "to"
+msgstr "za"
 

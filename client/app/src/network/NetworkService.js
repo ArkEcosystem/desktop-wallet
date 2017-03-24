@@ -50,23 +50,23 @@
       if(!n){
         n = {
           mainnet:{ //so far same as testnet
-            nethash:'4befbd4cd1f2f10cbe69ac0b494b5ce070595ed23ee7abd386867c4edcdaf3bd',
-            peerseed:'http://5.39.9.248:4000',
+            nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
+            peerseed:'http://5.39.9.240:4001',
             forcepeer: false,
             token: 'ARK',
             symbol: 'Ѧ',
-            explorer: 'http://texplorer.ark.io',
+            explorer: 'http://explorer.ark.io',
             exchanges: {
               changer: "ark_ARK"
             },
             background:"background-image:url(assets/img/test1.jpg)"
           },
           testnet:{
-            nethash:'4befbd4cd1f2f10cbe69ac0b494b5ce070595ed23ee7abd386867c4edcdaf3bd',
-            peerseed:'http://5.39.9.248:4000',
+            nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
+            peerseed:'http://5.39.9.240:4001',
             token: 'TESTARK',
             symbol: 'TѦ',
-            explorer: 'http://texplorer.ark.io',
+            explorer: 'http://explorer.ark.io',
             background:"background-color:#222299"
           }
         };
@@ -170,7 +170,7 @@
           deferred.resolve(transaction);
         }
         else{
-          deferred.reject(resp.data.message);
+          deferred.reject(resp.data);
         }
       });
       return deferred.promise;
