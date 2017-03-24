@@ -77,6 +77,8 @@
 
     var languages = {
       en:gettextCatalog.getString("English"),
+      zh_CN:gettextCatalog.getString("Chinese simplified"),
+      zh_TW:gettextCatalog.getString("Chinese traditional"),
       fr:gettextCatalog.getString("French"),
       el:gettextCatalog.getString("Greek"),
       nl:gettextCatalog.getString("Dutch"),
