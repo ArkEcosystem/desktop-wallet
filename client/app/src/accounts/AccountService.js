@@ -27,7 +27,7 @@
     var peer=networkService.getPeer().ip;
 
     function showTimestamp(time){
-      var d = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0));
+      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
       var t = parseInt(d.getTime() / 1000);
 
       time = new Date((time + t) * 1000);
@@ -218,10 +218,10 @@
         offset=0;
       }
       if(!limit){
-        limit=100
+        limit=50
       }
       var deferred = $q.defer();
-      var d = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0));
+      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
       var t = parseInt(d.getTime() / 1000);
       networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit="+limit+"&recipientId=" +address +"&senderId="+address).then(function (resp) {
         if(resp.success){
