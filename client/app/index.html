@@ -322,7 +322,7 @@
                     </thead>
                     <tbody md-body style="white-space:nowrap;">
                       <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
-                        <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.id | smallId}}</a></td>
+                        <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
                         <td md-cell>{{it.confirmations}}</td>
                         <td md-cell>{{it.date | date: 'short'}}</td>
                         <td md-cell>{{it.label}}</td>
