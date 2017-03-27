@@ -1,5 +1,5 @@
 <md-dialog aria-label="Create Account" ng-cloak>
-  <form>
+  <form name="createAccountForm" ng-submit="createAccountDialog.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2><span translate>Create Account</span></h2>
@@ -21,7 +21,7 @@
         </div>
         <md-input-container class="md-block">
           <label translate>Passphrase</label>
-          <input ng-if="!createAccountDialog.data.showRepassphrase" ng-model="createAccountDialog.data.passphrase" type="text" readonly="readonly" md-autofocus/>
+          <input ng-if="!createAccountDialog.data.showRepassphrase" ng-model="createAccountDialog.data.passphrase" type="text" readonly="readonly"/>
           <input ng-if="createAccountDialog.data.showRepassphrase" ng-model="createAccountDialog.data.passphrase" type="text" ng-required="true" md-autofocus/>
         </md-input-container>
 
@@ -34,7 +34,7 @@
       <md-button ng-if="!createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
         Next
       </md-button>
-      <md-button ng-if="createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
+      <md-button type="submit" ng-if="createAccountDialog.data.showRepassphrase" ng-disabled="createAccountForm.$invalid" translate>
         Create
       </md-button>
       <md-button ng-click="createAccountDialog.cancel()" style="margin-right:20px;" translate>

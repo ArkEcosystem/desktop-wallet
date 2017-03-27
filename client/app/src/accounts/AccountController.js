@@ -1108,6 +1108,11 @@
           $scope.createAccountDialog.data.showRepassphrase = true;
         }
         else{
+
+          if (!$scope.createAccountForm.$valid) {
+            return ;
+          }
+
           if($scope.createAccountDialog.data.repassphrase == $scope.createAccountDialog.data.passphrase){
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function(account){
               self.accounts.push(account);
