@@ -1311,7 +1311,14 @@
           $mdDialog.show(confirm).then(function() {
             accountService.deleteAccount(account).then(function(){
               self.accounts = accountService.loadAllAccounts();
-              if(self.accounts.length>0) selectAccount(self.accounts[0]);
+
+              if(self.accounts.length>0) {
+                selectAccount(self.accounts[0]);
+              }
+              else {
+                self.selected = null
+              }
+
               $mdToast.show(
                 $mdToast.simple()
                   .textContent(gettextCatalog.getString('Account deleted!'))
