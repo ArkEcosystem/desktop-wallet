@@ -29,7 +29,12 @@ function createWindow () {
         { type: "separator" },
         { label: "Disable screenshot protection (unsafe)", click: function() { mainWindow.setContentProtection(false) }},
         { type: "separator" },
-        { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+        { label: "Minimize", click: function() { mainWindow.minimize(); }},
+        { label: "Maximize", click: function() { mainWindow.maximize(); }},
+        { label: "Full Screen", click: function() { mainWindow.setFullScreen(!mainWindow.isFullScreen()); }},
+        { type: "separator" },
+        { label: "Restart", accelerator: "Command+R", click: function() { mainWindow.reload(); }},
+        { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }},
       ]
     }, {
       label: "Edit",
