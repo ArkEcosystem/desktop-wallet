@@ -158,12 +158,12 @@
 
     self.connectedPeer={isConnected:false};
 
-    //refreshing displayed account every 10s
+    //refreshing displayed account every 8s
     setInterval(function(){
       if(self.selected){
         self.refreshCurrentAccount();
       }
-    }, 20*1000);
+    }, 8*1000);
 
     self.connection = networkService.getConnection();
 
