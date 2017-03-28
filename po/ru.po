@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-03-24 07:59+0000\n"
-"PO-Revision-Date: 2017-03-24 07:59+0000\n"
+"POT-Creation-Date: 2017-03-24 07:16+0000\n"
+"PO-Revision-Date: 2017-03-24 07:16+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -11,41 +11,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-msgid "Address"
-msgstr "Адрес"
-
 msgid "Account added!"
 msgstr "Аккаунт добавлен!"
-
-msgid "Amount (Ѧ)"
-msgstr "Количество (Ѧ)"
-
-msgid "Add Account"
-msgstr "Добавить Аккаунт"
 
 msgid "Account deleted!"
 msgstr "Аккаунт удалён!"
 
-msgid "Add Delegate"
-msgstr "Добавить Делегата"
-
-msgid "Amount"
-msgstr "Количество"
+msgid "Account successfully created:"
+msgstr "Учетная запись успешно создана:"
 
 msgid "Add"
 msgstr "Добавить"
 
+msgid "Add Account"
+msgstr "Добавить Аккаунт"
+
+msgid "Add Address"
+msgstr "Добавить Адрес"
+
+msgid "Add Delegate"
+msgstr "Добавить Делегата"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Amount"
+msgstr "Количество"
+
+msgid "Amount (Ѧ)"
+msgstr "Количество (Ѧ)"
+
 msgid "Are you sure?"
 msgstr "Вы уверены?"
-
-msgid "Balance"
-msgstr "Баланс"
 
 msgid "Ark Client"
 msgstr "Клиент Ark"
 
+msgid "Balance"
+msgstr "Баланс"
+
 msgid "Cancel"
 msgstr "Отмена"
+
+msgid "Cannot find delegate:"
+msgstr "Не возможно найти делегата:"
 
 msgid "Cannot find delegates from this term:"
 msgstr "Не можете найти делегатов от этого термина:"
@@ -53,14 +62,20 @@ msgstr "Не можете найти делегатов от этого терм
 msgid "Cannot get sponsors"
 msgstr "Не удается получить спонсоров"
 
-msgid "Cannot find delegate:"
-msgstr "Не возможно найти делегата:"
-
 msgid "Cannot get transactions"
 msgstr "Невозможно получить транзакцию"
 
 msgid "Change 1h/7h/7d"
 msgstr "Изменение 1ч / 7ч / 7д"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Create Account"
+msgstr "Регистрация"
 
 msgid "Create Virtual Folder"
 msgstr "Создать виртуальную папку"
@@ -68,23 +83,20 @@ msgstr "Создать виртуальную папку"
 msgid "Create a new virtual folder"
 msgstr "Создать новую виртуальную папку"
 
-msgid "Close"
-msgstr "Закрыть"
+msgid "Date"
+msgstr "Дата"
 
 msgid "Default"
 msgstr "По умолчанию"
 
-msgid "Date"
-msgstr "Дата"
-
 msgid "Delay"
 msgstr "Задержка"
 
-msgid "Delegate name"
-msgstr "Имя Делегата"
-
 msgid "Delegate"
 msgstr "Делегат"
+
+msgid "Delegate name"
+msgstr "Имя Делегата"
 
 msgid "Delete"
 msgstr "Удалить"
@@ -92,11 +104,11 @@ msgstr "Удалить"
 msgid "Delete Account"
 msgstr "Удалить Аккаунт"
 
-msgid "Destination Address"
-msgstr "Адрес Назначения"
-
 msgid "Delete permanently this account"
 msgstr "Удалить навсегда эту учетную запись"
+
+msgid "Destination Address"
+msgstr "Адрес Назначения"
 
 msgid "Enable Virtual Folders"
 msgstr "Включить Виртуальные Папки"
@@ -119,11 +131,17 @@ msgstr "Имя Папки"
 msgid "From"
 msgstr "Отправитель"
 
+msgid "Full Screen"
+msgstr "Полноэкранный режим"
+
 msgid "Hand crafted with ❤ by"
 msgstr "Сделано с ❤"
 
 msgid "Height"
 msgstr "Высота"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Если вы являетесь владельцем этой учетной записи, вы можете включить виртуальные папки. Виртуальные папки представляют собой простые субсчета, чтобы лучше организовать свои деньги, без необходимости отправлять реальную транзакцию и платить комиссию. <br> \nБолее того, этот счет будет двигаться по списку \"Мои счета\"."
 
 msgid "Label"
 msgstr "Метка"
@@ -140,11 +158,23 @@ msgstr "Список полон или делегат уже выбран."
 msgid "Login"
 msgstr "Вход"
 
+msgid "Manage Networks"
+msgstr "Управление сетями"
+
 msgid "Market Cap."
 msgstr "Капитализация"
 
+msgid "Maximize"
+msgstr "Развернуть"
+
+msgid "Minify"
+msgstr "Свернуть"
+
 msgid "My Accounts"
 msgstr "Мои Аккаунты"
+
+msgid "Network"
+msgstr "Сеть"
 
 msgid "Network connected and healthy!"
 msgstr "Соединение установлено!"
@@ -152,11 +182,11 @@ msgstr "Соединение установлено!"
 msgid "Network disconected!"
 msgstr "Соединение прервано!"
 
-msgid "No difference from original delegate list"
-msgstr "Нет отличий от оригинального списка делегатов"
-
 msgid "Next"
 msgstr "Далее"
+
+msgid "No difference from original delegate list"
+msgstr "Нет отличий от оригинального списка делегатов"
 
 msgid "No publicKey"
 msgstr "Отсутствует Публичный ключ"
@@ -167,17 +197,26 @@ msgstr "Не хватает ARK на вашем счету"
 msgid "Open Delegate Monitor"
 msgstr "Открыть монитор делегатов"
 
+msgid "Optional"
+msgstr "Опционально"
+
 msgid "Other Accounts"
 msgstr "Прочие аккаунты"
-
-msgid "Passphrase does not match your address"
-msgstr "Секретная фраза не совпадает с адресом"
 
 msgid "Passphrase"
 msgstr "Секретная фраза"
 
+msgid "Passphrase does not match your address"
+msgstr "Секретная фраза не совпадает с адресом"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "Секретная фраза не соответствует счету"
+
+msgid "Passphrases deleted"
+msgstr "Секретная фраза удалена"
+
+msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Пожалуйста,  скопируйте и надежно сохраните вашу секретную фразу, этот клиент НЕ хранит её и таким образом, вы не сможет восстановить вашу секретную фразу"
 
 msgid "Please enter a folder name."
 msgstr "Введите имя папки."
@@ -188,11 +227,11 @@ msgstr "Введите новый адрес."
 msgid "Please enter a short label."
 msgstr "Введите метку."
 
-msgid "Price"
-msgstr "Цена"
-
 msgid "Please enter this account passphrase to login."
 msgstr "Пожалуйста, введите вашу секретную фразу для входа."
+
+msgid "Price"
+msgstr "Цена"
 
 msgid "Productivity"
 msgstr "Производительность"
@@ -206,17 +245,26 @@ msgstr "Завершить клиент Ark?"
 msgid "Receive Ark"
 msgstr "Получить Ark"
 
-msgid "Rename"
-msgstr "Переименовать"
-
 msgid "Remove"
 msgstr "Удалить"
 
-msgid "Send"
-msgstr "Отправить"
+msgid "Rename"
+msgstr "Переименовать"
+
+msgid "Restart"
+msgstr "Обновить"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Save Passphrases for"
+msgstr "Сохранить секретную фразу для"
 
 msgid "Second Passphrase"
 msgstr "Дополнительный пароль"
+
+msgid "Send"
+msgstr "Отправить"
 
 msgid "Send Ark"
 msgstr "Отправить Ark"
@@ -232,6 +280,12 @@ msgstr "Авторизация прошла успешно!"
 
 msgid "The destination address"
 msgstr "Адрес получателя"
+
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "Этот счет никогда не взаимодействовали с сетью. Это холодный бумажник."
+
+msgid "Total {{ul.network.symbol}}"
+msgstr "Всего {{ul.network.symbol}}"
 
 msgid "Transaction"
 msgstr "Транзакция"
@@ -257,11 +311,11 @@ msgstr "Голоса"
 msgid "address"
 msgstr "адрес"
 
-msgid "is erroneous"
-msgstr "ошибочно"
-
 msgid "folder name"
 msgstr "имя папки"
+
+msgid "is erroneous"
+msgstr "ошибочно"
 
 msgid "is not recognised"
 msgstr "не признается"
@@ -278,123 +332,12 @@ msgstr "сейчас!"
 msgid "passphrase"
 msgstr "секретная фраза"
 
-msgid "you need at least 1 ARK to vote"
-msgstr "Для голосования необходимо иметь хотя бы 1ARK"
-
 msgid "sent with success!"
 msgstr "отправлено успешно!"
 
-msgid "Total Ѧ"
-msgstr "Всего Ѧ"
+msgid "you need at least 1 ARK to vote"
+msgstr "Для голосования необходимо иметь хотя бы 1ARK"
 
-msgid "This account has never interacted with the network. This is either:"
-msgstr "Этот аккаунт никогда не взаимодействовал с сетью. Возможные варианты:"
-
-msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet. The ARK are lost"
-msgstr "несуществующий кошелек или никто не знает кодовую фразу кошелька. Арки потеряны"
-
-msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet."
-msgstr "несуществующий кошелек или никто не знает кодовую фразу кошелька."
-
-msgid "a cold wallet, ie the owner of the passphrase has never used it"
-msgstr "холодный бумажник, то есть владелец секретной фразы никогда не использовал его"
-
-msgid "Details"
-msgstr "Подробности"
-
-msgid "Recipient Address"
-msgstr "Адрес Получателя"
-
-msgid "Add Account from address"
-msgstr "Добавить учетную запись из адреса"
-
-msgid "Add Sponsors Delegates"
-msgstr "Добавить делегатов-спонсоров"
-
-msgid "Blockchain Application Registration"
-msgstr "Регистрация блокчейн-приложения"
-
-msgid "By using the following forms, you are accepting their"
-msgstr "Используя следующие формы, Вы принимаете, что"
-
-msgid "Delegate Registration"
-msgstr "Регистрация Делегата"
-
-msgid "Deposit ARK"
-msgstr "Внести ARK"
-
-msgid "Deposit and Withdraw through our partner"
-msgstr "Пополнение и снятие через нашего партнера"
-
-msgid "Folders"
-msgstr "Папки"
-
-msgid "History"
-msgstr "История"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                        Moreover, this account will move under the \"My Accounts\" list."
-msgstr "Если вы являетесь владельцем этой учетной записи, вы можете включить виртуальные папки. Виртуальные папки представляют собой простые субсчета, чтобы лучше организовать свои деньги, без необходимости отправлять реальную транзакцию и платить комиссию. <br>\nБолее того, этот счет будет двигаться по списку \"Мои счета\"."
-
-msgid "If you own this account, you can enable Voting"
-msgstr "Если этот аккаунт принадлежит вам можно включить режим голосования"
-
-msgid "Maximum:"
-msgstr "Максимум:"
-
-msgid "Minimum:"
-msgstr "Минимум:"
-
-msgid "Multisignature Creation"
-msgstr "Создание Мультиподписи"
-
-msgid "Next..."
-msgstr "Далее..."
-
-msgid "Please login with your account before using this feature"
-msgstr "Пожалуйста, войдите в свою учетной запись, прежде чем использовать эту функцию"
-
-msgid "Please report any issue to"
-msgstr "Пожалуйста, сообщайте о любых проблемах"
-
-msgid "Receive"
-msgstr "Получить"
-
-msgid "Refresh"
-msgstr "Обновить"
-
-msgid "Recepient Address"
-msgstr "Адрес получателя"
-
-msgid "Second Signature Creation"
-msgstr "Создание второй подписи"
-
-msgid "Select a coin"
-msgstr "Выберите валюту"
-
-msgid "Second passphrase"
-msgstr "Вторая кодовая фраза"
-
-msgid "Status:"
-msgstr "Статус:"
-
-msgid "Status"
-msgstr "Статус"
-
-msgid "Sponsors Page"
-msgstr "Спонсоры"
-
-msgid "Terms and Conditions"
-msgstr "Условия и положения"
-
-msgid "They have funded this app so you can use it for free. <br>\n                Vote them to help the development."
-msgstr "Они финансировали это приложение, так что вы можете использовать его бесплатно. <br>\nПроголосуйте за них, чтобы помочь развитию."
-
-msgid "Transaction id"
-msgstr "ID Транзакции"
-
-msgid "Valid until"
-msgstr "Годен до"
-
-msgid "Withdraw ARK"
-msgstr "Вывести ARK"
+msgid "you need at least 25 ARK to register delegate"
+msgstr "вам нужно как минимум 25 ARK для регистрации делегата"
 

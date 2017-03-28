@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-03-24 07:59+0000\n"
-"PO-Revision-Date: 2017-03-24 07:59+0000\n"
+"POT-Creation-Date: 2017-03-28 10:00+0000\n"
+"PO-Revision-Date: 2017-03-28 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: pl\n"
@@ -11,59 +11,134 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-msgid "Address"
-msgstr "Adres"
+msgid "Account successfully imported:"
+msgstr "Konto zaimportowane pomyślnie:"
+
+msgid "Account was already imported:"
+msgstr "Konto zostało już zaimportowane:"
+
+msgid "Add Watch-Only Address"
+msgstr "Dodaj adres tylko do podglądu"
+
+msgid "Import"
+msgstr "Importuj"
+
+msgid "Import Account"
+msgstr "Importuj konto"
+
+msgid "Network disconnected!"
+msgstr "Sieć rozłączona!"
+
+msgid "Passphrase is not saved on this computer."
+msgstr "Passphrase nie jest zapisywana na tym komputerze."
+
+msgid "Watch-Only Addresses"
+msgstr "Adres tylko do podglądu"
+
+msgid "Confirmations"
+msgstr "Potwierdzenia"
+
+msgid "Copied to clipboard"
+msgstr "Skopiowano do schowka"
+
+msgid "Create Second Passphrase"
+msgstr "Stwórz drugą passphrase"
+
+msgid "Minimize"
+msgstr "Minimalizuj"
+
+msgid "Original Passphrase"
+msgstr "Oryginalna Passphrase"
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
+msgstr "Proszę bezpiecznie zachować drugą passphrase, ten portfel NIE przechowuje jej i nie może zostać ona odzyskana"
+
+msgid "Please paste the original and second passphrase to validate the creation."
+msgstr "Proszę wkleić oryginalną i drugą passphrase aby potwierdzić stworzenie."
+
+msgid "Second Passphrase added successfully:"
+msgstr "Druga passphrase dodana pomyślnie:"
+
+msgid "The second passphrase does not match the one you just got."
+msgstr "Ta druga passphrase nie zgadza się z passphrase którą przed chwilą otrzymałeś."
+
+msgid "This account already has a second passphrase:"
+msgstr "To konto już posiada drugą passphrase:"
+
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Głosowanie to opcjonalny, ale bardzo ważny mechanizm który pozwala zachować bezpieczeństwo w sieci ARK. 51 delegatów z największą ilością głosów z sieci jest odpowiedzialnych za weryfikację i dodawanie transakcji do nowych bloków.\nTa strona może być używana do oddania głosu na delegata którego popierasz."
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "Potrzebujesz co najmniej 5 ARK aby stworzyć drugą passphrase"
 
 msgid "Account added!"
 msgstr "Konto dodane!"
 
-msgid "Amount (Ѧ)"
-msgstr "Kwota (Ѧ)"
-
-msgid "Add Account"
-msgstr "Dodaj konto"
-
 msgid "Account deleted!"
 msgstr "Konto usunięte!"
 
-msgid "Add Delegate"
-msgstr "Dodaj Delegata"
-
-msgid "Amount"
-msgstr "Kwota"
+msgid "Account successfully created:"
+msgstr "Konto utworzone pomyślnie:"
 
 msgid "Add"
 msgstr "Dodaj"
 
+msgid "Add Account"
+msgstr "Dodaj konto"
+
+msgid "Add Address"
+msgstr "Dodaj Adres"
+
+msgid "Add Delegate"
+msgstr "Dodaj Delegata"
+
+msgid "Address"
+msgstr "Adres"
+
+msgid "Amount"
+msgstr "Kwota"
+
+msgid "Amount (Ѧ)"
+msgstr "Kwota (Ѧ)"
+
 msgid "Approval"
 msgstr "Poparcie"
+
+msgid "Arab"
+msgstr "Arabski"
 
 msgid "Are you sure?"
 msgstr "Jesteś pewny?"
 
+msgid "Ark Client"
+msgstr "Klient Ark"
+
+msgid "Background"
+msgstr "Tło"
+
 msgid "Balance"
 msgstr "Bilans"
 
-msgid "Ark Client"
-msgstr "Klient Ark"
+msgid "Bulgarian"
+msgstr "Bułgarski"
 
 msgid "Cancel"
 msgstr "Anuluj"
 
+msgid "Cannot find delegate:"
+msgstr "Nie można znaleźć delegata:"
+
 msgid "Cannot find delegates from this term:"
 msgstr "Nie można znaleźć delegatów z tego zapytania:"
+
+msgid "Cannot find delegates on this peer:"
+msgstr "Nie można znaleźć delegatów na tym węźle:"
 
 msgid "Cannot get sponsors"
 msgstr "Nie można uzyskać sponsorów"
 
-msgid "Cannot find delegate:"
-msgstr "Nie można znaleźć delegata:"
-
 msgid "Cannot get transactions"
 msgstr "Nie można uzyskać transakcji"
-
-msgid "Cannot find delegates on this peer:"
-msgstr "Nie można znaleźć delegatów na tym węźle:"
 
 msgid "Cannot get voted delegates"
 msgstr "Nie można uzyskać popartych delegatów"
@@ -74,29 +149,35 @@ msgstr "Nie można stwierdzić czy konto jest delegatem"
 msgid "Change 1h/7h/7d"
 msgstr "Zmień 1h/7h/7d"
 
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Create"
+msgstr "Stwórz"
+
+msgid "Create Account"
+msgstr "Stwórz konto"
+
 msgid "Create Virtual Folder"
 msgstr "Stwórz wirtualny folder"
 
 msgid "Create a new virtual folder"
 msgstr "Stwórz nowy wirtualny folder"
 
-msgid "Close"
-msgstr "Zamknij"
+msgid "Date"
+msgstr "Data"
 
 msgid "Default"
 msgstr "Domyślnie"
 
-msgid "Date"
-msgstr "Data"
-
 msgid "Delay"
 msgstr "Opóźnienie"
 
-msgid "Delegate name"
-msgstr "Nazwa delegata"
-
 msgid "Delegate"
 msgstr "Delegat"
+
+msgid "Delegate name"
+msgstr "Nazwa delegata"
 
 msgid "Delete"
 msgstr "Usuń"
@@ -104,20 +185,26 @@ msgstr "Usuń"
 msgid "Delete Account"
 msgstr "Usuń konto"
 
+msgid "Delete permanently this account"
+msgstr "Usuń to konto permanentnie"
+
 msgid "Destination Address"
 msgstr "Adres przeznaczenia"
 
-msgid "Delete permanently this account"
-msgstr "Usuń to konto permanentnie"
+msgid "Dutch"
+msgstr "Duński"
 
 msgid "Enable Virtual Folders"
 msgstr "Uruchom wirtualne foldery"
 
-msgid "Error when trying to login:"
-msgstr "Błąd podczas próby logowania:"
-
 msgid "Enable Votes"
 msgstr "Uruchom głosy"
+
+msgid "English"
+msgstr "Angielski"
+
+msgid "Error when trying to login:"
+msgstr "Błąd podczas próby logowania:"
 
 msgid "Error:"
 msgstr "Błąd:"
@@ -125,20 +212,50 @@ msgstr "Błąd:"
 msgid "Exchange"
 msgstr "Giełda"
 
+msgid "Explorer"
+msgstr "Eksplorer "
+
 msgid "Fee (Ѧ)"
 msgstr "Prowizja (Ѧ)"
 
 msgid "Folder Name"
 msgstr "Nazwa folderu"
 
+msgid "Force?"
+msgstr "Zmusić?"
+
+msgid "French"
+msgstr "Francuski"
+
 msgid "From"
 msgstr "Od"
+
+msgid "Full Screen"
+msgstr "Pełny ekran"
+
+msgid "German"
+msgstr "Niemieckie"
+
+msgid "Greek"
+msgstr "Grecki"
 
 msgid "Hand crafted with ❤ by"
 msgstr "Stworzone ręcznie z ❤ przez"
 
 msgid "Height"
 msgstr "Wysokość"
+
+msgid "Hungarish"
+msgstr "Węgierski"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Jeśli jesteś właścicielem tego konta możesz uruchomić wirtualne foldery. Wirtualne foldery to proste subkonta, dla lepszej organizacji Twoich środków bez potrzeby wysyłania prawdziwych transakcji i płacenia prowizji. <br>\nPonadto, to konto będzie przeniesione pod list \"Moje konta\"."
+
+msgid "Indonesian"
+msgstr "Indonezyjski"
+
+msgid "Italian"
+msgstr "Włoski"
 
 msgid "Label"
 msgstr "Etykieta"
@@ -158,11 +275,26 @@ msgstr "Lista pełna lub wcześniej zagłosowano na delegata."
 msgid "Login"
 msgstr "Login"
 
+msgid "Manage Networks"
+msgstr "Zarządzaj sieciami"
+
 msgid "Market Cap."
 msgstr "Kapitalizacja rynkowa"
 
+msgid "Maximize"
+msgstr "Maksymalizuj"
+
+msgid "Minify"
+msgstr "Minimalizuj"
+
 msgid "My Accounts"
 msgstr "Moje konta"
+
+msgid "Nethash"
+msgstr "Hash sieci"
+
+msgid "Network"
+msgstr "Sieć"
 
 msgid "Network connected and healthy!"
 msgstr "Sieć zdrowa i połączona!"
@@ -170,11 +302,11 @@ msgstr "Sieć zdrowa i połączona!"
 msgid "Network disconected!"
 msgstr "Sieć rozłączona!"
 
-msgid "No difference from original delegate list"
-msgstr "Bez różnic względem oryginalnej listy delegatów"
-
 msgid "Next"
 msgstr "Następny"
+
+msgid "No difference from original delegate list"
+msgstr "Bez różnic względem oryginalnej listy delegatów"
 
 msgid "No publicKey"
 msgstr "Brak publickey"
@@ -185,23 +317,41 @@ msgstr "Brak frazy wyszukiwania"
 msgid "Not enough ARK on your account"
 msgstr "Nie wystarczająca kwota ARK na Twoim koncie"
 
+msgid "OffChain"
+msgstr "Poza łańcuchem"
+
 msgid "Open Delegate Monitor"
 msgstr "Otwórz Monitor Delegatów"
+
+msgid "Optional"
+msgstr "Opcjonalnie"
 
 msgid "Other Accounts"
 msgstr "Inne konta"
 
-msgid "Passphrase does not match your address"
-msgstr "Passphrase nie zgadza się z Twoim adresem"
-
 msgid "Passphrase"
 msgstr "Passhprase"
+
+msgid "Passphrase does not match your address"
+msgstr "Passphrase nie zgadza się z Twoim adresem"
 
 msgid "Passphrase is not corresponding to account"
 msgstr "Passphrase nie jest powiązane do konta"
 
+msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
+msgstr "Frazy nie są zabezpieczone wysokim standardem. <br>\nKorzystaj z tej funkcji tylko na bezpiecznych komputerach i dla kont na których możesz sobie pozwolić na stratę środków."
+
+msgid "Passphrases deleted"
+msgstr "Usunięto passphrase"
+
+msgid "Passphrases saved"
+msgstr "Hasła dostępu (passphrase) zapisane"
+
 msgid "Peer"
 msgstr "Peer"
+
+msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Proszę wykonać bezpieczną kopię zapasową passphrase, klient nie przechowuje tych danych i nie jest możliwe ich odzyskanie"
 
 msgid "Please enter a folder name."
 msgstr "Proszę podać nazwę folderu."
@@ -212,11 +362,17 @@ msgstr "Proszę podać nowy adres."
 msgid "Please enter a short label."
 msgstr "Proszę podać krótką etykietę."
 
-msgid "Price"
-msgstr "Cena"
-
 msgid "Please enter this account passphrase to login."
 msgstr "Aby się zalogować proszę podać passphrase tego konta"
+
+msgid "Polish"
+msgstr "Polski"
+
+msgid "Portuguese"
+msgstr "Portugalski"
+
+msgid "Price"
+msgstr "Cena"
 
 msgid "Productivity"
 msgstr "Produktywność"
@@ -233,17 +389,41 @@ msgstr "Ranking"
 msgid "Receive Ark"
 msgstr "Otrzymaj Ark"
 
-msgid "Rename"
-msgstr "Zmień nazwe"
+msgid "Register Delegate"
+msgstr "Zarejestruj delegata"
+
+msgid "Register delegate for"
+msgstr "Zarejestruj delegata dla"
 
 msgid "Remove"
 msgstr "Usuń"
 
-msgid "Send"
-msgstr "Wyślij"
+msgid "Rename"
+msgstr "Zmień nazwe"
+
+msgid "Restart"
+msgstr "Restart"
+
+msgid "Romanian"
+msgstr "Rumuński"
+
+msgid "Russian"
+msgstr "Rosyjski"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Save Passphrases for"
+msgstr "Zapisz passphrase dla"
 
 msgid "Second Passphrase"
 msgstr "Druga Passphrase"
+
+msgid "Seed Server"
+msgstr "Źródłowy Serwer"
+
+msgid "Send"
+msgstr "Wyślij"
 
 msgid "Send Ark"
 msgstr "Wyślij Ark"
@@ -254,14 +434,35 @@ msgstr "Wyślij Ark z"
 msgid "Set"
 msgstr "Ustaw"
 
+msgid "Slovenian"
+msgstr "Słoweński"
+
+msgid "Smartbridge"
+msgstr "Smartbridge"
+
 msgid "Succesfully Logged In!"
 msgstr "Zalogowano pomyślnie!"
+
+msgid "Symbol"
+msgstr "Symbol"
 
 msgid "The destination address"
 msgstr "Adres przeznaczenia"
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "To konto nigdy nie występowało w sieci. Jest to zimny portfel."
+
 msgid "To"
 msgstr "Do"
+
+msgid "Token name"
+msgstr "Nazwa tokena"
+
+msgid "Total"
+msgstr "Razem"
+
+msgid "Total {{ul.network.symbol}}"
+msgstr "Razem {{ul.network.symbol}}"
 
 msgid "Transaction"
 msgstr "Transakcja"
@@ -278,6 +479,9 @@ msgstr "Zaktualizuj głosy z"
 msgid "Username"
 msgstr "Nazwa użytkownika"
 
+msgid "Vendor Field"
+msgstr "Pole SmartBridge"
+
 msgid "Virtual folder added!"
 msgstr "Wirtualny folder dodany!"
 
@@ -290,11 +494,11 @@ msgstr "Głosy"
 msgid "address"
 msgstr "Adres"
 
-msgid "is erroneous"
-msgstr "jest błędny"
-
 msgid "folder name"
 msgstr "Nazwa folderu"
+
+msgid "is erroneous"
+msgstr "jest błędny"
 
 msgid "is not recognised"
 msgstr "jest nieropoznany"
@@ -314,135 +518,12 @@ msgstr "passphrase"
 msgid "produced blocks"
 msgstr "wyprodukowane bloki"
 
-msgid "you need at least 1 ARK to vote"
-msgstr "Potrzebujesz co najmniej 1 ARK do głosowania"
-
 msgid "sent with success!"
 msgstr "wysłano pomyślnie!"
 
-msgid "Total Ѧ"
-msgstr "Razem Ѧ"
+msgid "you need at least 1 ARK to vote"
+msgstr "Potrzebujesz co najmniej 1 ARK do głosowania"
 
-msgid "This account has never interacted with the network. This is either:"
-msgstr "To konto nigdy nie było widoczne w sieci. To oznacza:"
-
-msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet. The ARK are lost"
-msgstr "Nieistniejący portfel, np nikt nie zna passphrase do tego portfela. Te ARK są stracone"
-
-msgid "an inexistant wallet, ie nobody knows the passphrase of this wallet."
-msgstr "nieistniejący portfel, nikt nie zna jego passphrase."
-
-msgid "a cold wallet, ie the owner of the passphrase has never used it"
-msgstr "tzw. \"cold wallet\", właściciel tego passphrase jeszcze nigdy go nie użył"
-
-msgid "Details"
-msgstr "Szczegóły"
-
-msgid "Recipient Address"
-msgstr "Adres Odbiorcy"
-
-msgid "Add Account from address"
-msgstr "Dodaj konto z adresu"
-
-msgid "Add Sponsors Delegates"
-msgstr "Dodaj delegatów-sponsorów"
-
-msgid "Blockchain Application Registration"
-msgstr "Rejestracja aplikacji Blockchain"
-
-msgid "By using the following forms, you are accepting their"
-msgstr "Używając poniższego formularza akceptujesz ich"
-
-msgid "Delegate Registration"
-msgstr "Rejestracja delegata"
-
-msgid "Deposit ARK"
-msgstr "Depozyt ARK"
-
-msgid "Deposit and Withdraw through our partner"
-msgstr "Depozyty i wypłaty dzięki naszemu partnerowi"
-
-msgid "Folders"
-msgstr "Foldery"
-
-msgid "History"
-msgstr "Historia"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                        Moreover, this account will move under the \"My Accounts\" list."
-msgstr "Jeśli posiadasz to konto możesz uruchomić wirtualne foldery. Są to proste sub-konta dla lepszej organizacji Twoich pieniędzy, bez potrzeby wysyłania prawdziwej transakcji i płacenia prowizji. <br> \nPonadto, to konto będzie przeniesione do listy \"Moje konta\"."
-
-msgid "If you own this account, you can enable Voting"
-msgstr "Jeśli posiadasz to konto możesz uruchomić głosowanie"
-
-msgid "Maximum:"
-msgstr "Maksimum: "
-
-msgid "Minimum:"
-msgstr "Minimum:"
-
-msgid "Multisignature Creation"
-msgstr "Tworzenie multisygnatur"
-
-msgid "Next..."
-msgstr "Następny.."
-
-msgid "Please login with your account before using this feature"
-msgstr "Proszę się zalogować zanim użyjesz tej funkcji"
-
-msgid "Please report any issue to"
-msgstr "Proszę zgłaszać wszystkie problemy do"
-
-msgid "Receive"
-msgstr "Otrzymaj"
-
-msgid "Refresh"
-msgstr "Odśwież"
-
-msgid "Recepient Address"
-msgstr "Adres odbiorcy"
-
-msgid "Second Signature Creation"
-msgstr "Stwórz drugą Sygnature"
-
-msgid "Select a coin"
-msgstr "Wybierz monetę"
-
-msgid "Second passphrase"
-msgstr "Druga passphrase"
-
-msgid "Status:"
-msgstr "Status:"
-
-msgid "Status"
-msgstr "Status"
-
-msgid "Sponsors Page"
-msgstr "Strona sponsorów"
-
-msgid "Terms and Conditions"
-msgstr "Zasady i regulaminy"
-
-msgid "They have funded this app so you can use it for free. <br>\n                Vote them to help the development."
-msgstr "Oni ufundowali tę aplikację dlatego możesz jej używać za darmo. <br>\nOddaj na nich swój głos aby wesprzeć rozwój."
-
-msgid "Transaction id"
-msgstr "ID transakcji"
-
-msgid "Transfer Ark from Blockchain Application"
-msgstr "Transferuj ARK z Aplikacji Blockchain"
-
-msgid "Transfer Ark to Blockchain Application"
-msgstr "Transferuj ARK do Aplikacji Blockchain"
-
-msgid "Valid until"
-msgstr "Ważne do"
-
-msgid "Withdraw ARK"
-msgstr "Wypłać ARK"
-
-msgid "Your email, used to send confirmation"
-msgstr "Twój e-mail potrzebny do wysłania potwierdzenia"
-
-msgid "to"
-msgstr "do"
+msgid "you need at least 25 ARK to register delegate"
+msgstr "Potrzebujesz co najmniej 25 ARK do zarejestrowania delegata"
 
