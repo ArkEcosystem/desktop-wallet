@@ -1169,6 +1169,10 @@
       };
 
       function save(){
+        if (!$scope.importAccountForm.$valid){
+          return ;
+        }
+
         accountService.createAccount($scope.send.data.passphrase)
         .then(
           function(account){
