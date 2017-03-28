@@ -573,12 +573,13 @@
                 var temp=self.selected.transactions.sort(function(a,b){
                   return b.timestamp-a.timestamp;
                 });
-                if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
-                  var previousTx = self.selected.transactions
-                  self.selected.transactions = transactions;
-                  // if the previous tx was unconfirmed, but it back at the top (for better UX)
-                  if (!previousTx[0].confirmations)
-                    self.selected.transactions.unshift(previousTx[0])
+
+                var previousTx = self.selected.transactions
+                self.selected.transactions = transactions;
+
+                // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
+                  self.selected.transactions.unshift(previousTx[0])
                 }
               }
             }
@@ -627,12 +628,13 @@
             var temp=self.selected.transactions.sort(function(a,b){
               return b.timestamp-a.timestamp;
             });
-            if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
-              var previousTx = self.selected.transactions
-              self.selected.transactions = transactions;
-              // if the previous tx was unconfirmed, but it back at the top (for better UX)
-              if (!previousTx[0].confirmations)
-                self.selected.transactions.unshift(previousTx[0])
+
+            var previousTx = self.selected.transactions
+            self.selected.transactions = transactions;
+
+            // if the previous tx was unconfirmed, but it back at the top (for better UX)
+            if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
+              self.selected.transactions.unshift(previousTx[0])
             }
           }
         }
@@ -675,12 +677,13 @@
               var temp=self.selected.transactions.sort(function(a,b){
                 return b.timestamp-a.timestamp;
               });
-              if(temp.length==0 || (transactions[0] && temp[0].id!=transactions[0].id)){
-                var previousTx = self.selected.transactions
-                self.selected.transactions = transactions;
-                // if the previous tx was unconfirmed, but it back at the top (for better UX)
-                if (!previousTx[0].confirmations)
-                  self.selected.transactions.unshift(previousTx[0])
+
+              var previousTx = self.selected.transactions
+              self.selected.transactions = transactions;
+
+              // if the previous tx was unconfirmed, but it back at the top (for better UX)
+              if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
+                self.selected.transactions.unshift(previousTx[0])
               }
             }
           }
