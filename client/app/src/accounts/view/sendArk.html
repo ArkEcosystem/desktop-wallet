@@ -7,6 +7,10 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
+        <div>
+          <translate>Balance</translate>:&nbsp;Ѧ{{Math.max(0, (send.data.balance.minus(send.data.amount || 0)))}}
+        </div>
+        </md-card>
          <md-input-container class="md-block">
           <!--<md-autocomplete
             md-selected-item="send.data.toAccount"

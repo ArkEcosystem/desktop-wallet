@@ -902,12 +902,16 @@
 
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var big = require('big.js')
       var data={
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
         passphrase: passphrases[0] ? passphrases[0] : '',
         secondpassphrase: passphrases[1] ? passphrases[1] : '',
+        balance: selectedAccount ? new big(selectedAccount.balance / 100000000) : '',
       };
+
+      $scope.Math = window.Math;
 
       // testing goodies
       // var data={
