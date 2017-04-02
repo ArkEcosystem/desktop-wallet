@@ -15,7 +15,7 @@
 * easily switch to different network, or private chains
 * customize background
 * isolated processes on Windows and Macosx to prevent from data sniffing or injection.
-* Translations (thanks to the Ark community). Please help contributing 
+* Translations (thanks to the Ark community). Please help contributing
 
 If you login to your account (with your passphrase)
 * (soon) Withdraw to altcoins or USD (via changer.com) - no registration needed
@@ -42,13 +42,8 @@ Then install from source:
 git clone https://github.com/ArkEcosystem/ark-desktop
 # Go into the repository
 cd ark-desktop
-# Install dependencies and run the app
-npm install
-cd client
-npm install
-npm run bundle
-cd ..
-npm start
+make all
+make dev
 ```
 
 ## Necessary to package from Mac OS X
