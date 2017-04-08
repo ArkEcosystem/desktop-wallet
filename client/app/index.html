@@ -149,7 +149,7 @@
            <md-content id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
              <md-toolbar layout="row">
                <div class="md-toolbar-tools">
-                 <h2><translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}}</h2>
+                 <h2><translate>My Accounts</translate> - {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</h2>
                </div>
                <md-button class="share" md-no-ink ng-click="ul.selected=ul.accounts[0]" aria-label="Switch of dashboard">
                  <md-icon md-font-library="material-icons">close</md-icon>
