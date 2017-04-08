@@ -96,7 +96,7 @@
       },function(){
         peer.market={
           price:
-            {btc: "0.00003300"}
+            {btc: "0.0"}
         };
       });
       $timeout(function(){
