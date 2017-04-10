@@ -9,7 +9,7 @@
 * view any account from its address (transactions, delegate status and votes)
 * (soon) deposit ARK using altcoins or USD (via changer.com) - no registration needed
 * label any account
-* (soon) realtime currency value (updated every 5 min) in UsD, Euro, BTC, HKD, JPY, CNY, AuD, CanD, Pound and Rubble
+* realtime currency value (updated every 5 min) in UsD, Euro, BTC, HKD, JPY, CNY, AuD, CanD, Pound and Rubble
 * autoconnecting to a healthy ark network peer. If the peer is not good any more, automatically find a new one.
 * send ark from/to any account.
 * easily switch to different network, or private chains
