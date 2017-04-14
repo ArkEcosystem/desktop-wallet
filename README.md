@@ -15,7 +15,7 @@
 * easily switch to different network, or private chains
 * customize background
 * isolated processes on Windows and Macosx to prevent from data sniffing or injection.
-* Translations (thanks to the Ark community). Please help contributing 
+* Translations (thanks to the Ark community). Please help contributing
 
 If you login to your account (with your passphrase)
 * (soon) Withdraw to altcoins or USD (via changer.com) - no registration needed
@@ -54,9 +54,8 @@ npm start
 ## Necessary to package from Mac OS X
 
 ```
-brew install wine --without-x11
-brew install mono
-brew install gnu-tar graphicsmagick xz
+brew tap Homebrew/bundle
+brew bundle
 ```
 
 ## Authors
