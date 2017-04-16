@@ -5,6 +5,7 @@
   "description": "Ark Desktop",
   "main": "main.js",
   "scripts": {
+    "postinstall": "cd client && npm install && npm run bundle && cd ..",
     "electron": "electron --version",
     "start": "electron main.js",
     "pack": "build --target dir",
