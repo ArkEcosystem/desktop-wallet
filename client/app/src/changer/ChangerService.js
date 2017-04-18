@@ -64,7 +64,7 @@
       "moneroXMR":"monero_XMR",
       "namecoinNMC":"namecoin_NMC",
       "maidsafecoinMAID":"maidsafecoin_MAID"
-    }
+    };
 
     function request(endpoint,data){
       var deferred = $q.defer();
@@ -78,7 +78,7 @@
       });
 
       return deferred.promise;
-    };
+    }
 
     function getMarketInfo(coin1, coin2, optionalamount){
       var deferred = $q.defer();
@@ -95,7 +95,7 @@
       });
 
       return deferred.promise;
-    };
+    }
 
     function saveExchange(exchange, status){
       if(status || !history[exchange.exchange_id]){
@@ -200,11 +200,11 @@
         },10000);
       });
       return deferred.promise;
-    };
+    }
 
     function getCoins(){
       return coins;
-    };
+    }
 
     function getHistory(noupdate){
       if(!!!noupdate){
@@ -235,7 +235,7 @@
       return Object.keys(history).map(function(key) {
         return history[key];
       });
-    };
+    }
 
     return {
       getMarketInfo: getMarketInfo,
@@ -246,7 +246,7 @@
       cancelExchange: cancelExchange,
       monitorExchange: monitorExchange,
       getHistory: getHistory
-    }
+    };
   }
 
 })();

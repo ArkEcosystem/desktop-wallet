@@ -102,7 +102,7 @@
       $timeout(function(){
         getPrice();
       },5*60000);
-    };
+    }
 
     function listenNetworkHeight(){
       $http.get(peer.ip+"/api/blocks/getheight",{timeout:5000}).then(function(resp){
@@ -113,7 +113,6 @@
             peer.error="Node is experiencing sychronisation issues";
             connection.notify(peer);
             pickRandomPeer();
-            return;
           }
           else{
             peer.height=resp.data.height;
@@ -130,7 +129,7 @@
       $timeout(function(){
         listenNetworkHeight();
       },60000);
-    };
+    }
 
     function getFromPeer(api){
       var deferred = $q.defer();
@@ -174,7 +173,7 @@
         }
       });
       return deferred.promise;
-    };
+    }
 
     function pickRandomPeer(){
       if(!network.forcepeer){
@@ -190,7 +189,7 @@
           findGoodPeer(storageService.get("peers"),0);
         });
       }
-    };
+    }
 
     function findGoodPeer(peers, index){
       if(index>peers.length-1){
@@ -204,7 +203,6 @@
         }
         else {
           peer.height=response.height;
-          return;
         }
       },
       function(error){
@@ -214,7 +212,7 @@
 
     function getPeer(){
       return peer;
-    };
+    }
 
     function getConnection(){
       return connection.promise;
@@ -236,7 +234,7 @@
       getFromPeer: getFromPeer,
       postTransaction: postTransaction,
       pickRandomPeer:pickRandomPeer
-    }
+    };
   }
 
 })();
