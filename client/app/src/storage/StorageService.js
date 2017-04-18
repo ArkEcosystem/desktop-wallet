@@ -91,7 +91,7 @@
       getGlobal: getGlobal,
       setGlobal: setGlobal,
       saveState: saveState
-    }
+    };
   }
 
 })();
