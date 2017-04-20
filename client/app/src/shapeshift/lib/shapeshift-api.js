@@ -277,9 +277,9 @@ var ShapeShift = (function() {
     function CancelPendingValidate(data, ss) {
         if(typeof(data) === 'object') return data;
         if(data.address === undefined) throw new Error('no address given');
-        if(typeof(data) === 'String') {
+        if(typeof(data) === 'string') {
             var address = data;
-            data = { address : address }
+            data = { address : address };
         }
         if(ss.apiKey) data.apiKey = ss.apiPubKey;
         return data;
