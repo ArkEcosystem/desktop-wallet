@@ -25,8 +25,9 @@ If you login to your account (with your passphrase)
 
 Second signature supported. Multisignature accounts not yet supported.
 
-## Screenshot
-Soon
+## Screenshots
+![linux](http://i.imgur.com/P9TTXyY.png)
+![linux](http://i.imgur.com/CQ4ms4H.png)
 
 ## From code
 
