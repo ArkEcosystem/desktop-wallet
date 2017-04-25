@@ -2,12 +2,15 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span translate>Transaction</span> {{validate.transaction.id}}</h2>
+        <h2><span translate>Transaction</span></h2>
       </div>
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
         <md-list>
+          <md-list-item>
+            <b>ID</b> <span class="md-secondary">{{validate.transaction.id}}</span>
+          </md-list-item>
           <md-list-item>
             <b translate>Type</b> <span class="md-secondary">{{validate.transaction.type}}</span>
           </md-list-item>
