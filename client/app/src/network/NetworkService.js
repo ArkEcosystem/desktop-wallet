@@ -134,7 +134,18 @@
     function getFromPeer(api){
       var deferred = $q.defer();
       peer.lastConnection=new Date();
-      $http.get(peer.ip+api,{timeout:5000}).then(
+      $http({
+        url: peer.ip + api,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'os': 'ark-desktop',
+          'version': clientVersion,
+          'port': 1,
+          'nethash': network.nethash
+        },
+        timeout:5000
+      }).then(
         function(resp){
           deferred.resolve(resp.data);
           peer.isConnected=true;
@@ -177,9 +188,11 @@
 
     function pickRandomPeer(){
       if(!network.forcepeer){
-        getFromPeer("/api/peers?state=2").then(function(response){
+        getFromPeer("/api/peers").then(function(response){
           if(response.success){
-            storageService.set("peers",response.peers);
+            storageService.set("peers",response.peers.filter(function(peer){
+              return peer.status=="OK";
+            }));
             findGoodPeer(response.peers,0);
           }
           else{
