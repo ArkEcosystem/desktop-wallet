@@ -162,10 +162,29 @@
       return deferred.promise;
     }
 
-    function postTransaction(transaction){
+    function broadcastTransaction(transaction, max){
+      var peers = storageService.get("peers");
+      if(!peers){
+        return;
+      }
+      if(!max){
+        max=10;
+      }
+      for(var i = 0 ; i<max ; i++){
+        if(i < peers.length){
+          postTransaction(transaction, "http://"+peers[i].ip+":"+peers[i].port);
+        }
+      }
+    }
+
+    function postTransaction(transaction, ip){
       var deferred = $q.defer();
+      var peerip = ip;
+      if(!peerip){
+        peerip=peer.ip;
+      }
       $http({
-        url: peer.ip+'/peer/transactions',
+        url: peerip+'/peer/transactions',
         data: { transactions: [transaction] },
         method: 'POST',
         headers: {
@@ -177,6 +196,10 @@
         }
       }).then(function(resp){
         if(resp.data.success){
+          // we make sure that tx is well broadcasted
+          if(!ip){
+            broadcastTransaction(transaction);
+          }
           deferred.resolve(transaction);
         }
         else{
@@ -246,7 +269,8 @@
       getConnection: getConnection,
       getFromPeer: getFromPeer,
       postTransaction: postTransaction,
-      pickRandomPeer:pickRandomPeer
+      broadcastTransaction: broadcastTransaction,
+      pickRandomPeer: pickRandomPeer
     };
   }
 
