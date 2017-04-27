@@ -43,13 +43,8 @@ Then install from source:
 git clone https://github.com/ArkEcosystem/ark-desktop
 # Go into the repository
 cd ark-desktop
-# Install dependencies and run the app
-npm install
-cd client
-npm install
-npm run bundle
-cd ..
-npm start
+make all
+make dev
 ```
 
 ## Necessary to package from Mac OS X
