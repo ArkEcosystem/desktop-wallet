@@ -141,6 +141,7 @@
     self.createSecondPassphrase  = createSecondPassphrase;
     self.copiedToClipboard  = copiedToClipboard;
 
+    self.manageBackgrounds  = manageBackgrounds;
     self.manageNetworks  = manageNetworks;
     self.openPassphrasesDialog  = openPassphrasesDialog;
     self.createDelegate = createDelegate;
@@ -974,6 +975,82 @@
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
+      });
+    };
+
+
+    function manageBackgrounds(){
+      var fs = require('fs');
+      var path = require('path');
+      var context = storageService.getContext();
+      var currentNetwork = networkService.getNetwork();
+      var initialBackground = currentNetwork.background;
+
+      var backgrounds = {
+        colors: {
+          'Midnight': '#2c3e50',
+          'Asbestos': '#7f8c8d',
+          'Wisteria': '#674172',
+          'Belize Hole': '#2980b9'
+        },
+        textures: {},
+        images: {}
+      };
+
+      var imgPath = 'assets/img';
+      var assetsPath = path.resolve(__dirname, imgPath);
+
+      // find files in directory with same key
+      for (var folder in backgrounds) {
+        var fullPath = path.resolve(assetsPath, folder);
+
+        if (fs.existsSync(path.resolve(fullPath))) { // check dir exists
+          var image = {};
+          fs.readdirSync(fullPath).forEach(function (file) {
+            var stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
+
+            if (stat.isFile()) {
+              var url = path.join(imgPath, folder, file); // ex: assets/img/textures/file.png
+              var name = path.parse(file).name; // remove extension
+              image[name] = `url('${url}')`;
+            }
+          });
+          backgrounds[folder] = image;
+        }
+      };
+
+      function select(background) {
+        $scope.send.selected = background;
+        currentNetwork.background = background;
+      }
+
+      function save() {
+        $mdDialog.hide();
+        networkService.setNetwork(context, currentNetwork);
+        window.location.reload();
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+        currentNetwork.background = initialBackground;
+      };
+
+      $scope.send = {
+        cancel: cancel,
+        save: save,
+        backgroundKeys: Object.keys(backgrounds),
+        backgrounds: backgrounds,
+        select: select,
+        selected: initialBackground
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/manageBackground.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope,
+        fullscreen: true
       });
     };
 

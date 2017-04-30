@@ -234,3 +234,16 @@ md-dialog {
   width: 90%;
   max-width: 700px;
 }
+
+.background-item {
+  cursor: pointer;
+  outline: none;
+}
+
+.background-item:hover {
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.background-item.active h3 {
+  font-weight: bold
+}
