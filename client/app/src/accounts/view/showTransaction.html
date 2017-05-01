@@ -36,8 +36,8 @@
       <md-button  md-colors="{'background':'red' }"  ng-click="validate.send(validate.transaction)">
         <span translate>Send</span> Ѧ{{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>now!</span>
       </md-button>
-      <md-button ng-click="validate.cancel()" style="margin-right:20px;" translate>
-        Cancel
+      <md-button ng-click="validate.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
       </md-button>
     </md-dialog-actions>
   </form>

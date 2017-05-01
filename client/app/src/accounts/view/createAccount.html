@@ -17,7 +17,7 @@
           </md-card-title>
         </md-card>
         <div ng-if="createAccountDialog.data.showRepassphrase">
-          Please paste here the passphrase to validate the account creation.
+          <translate>Please paste here the passphrase to validate the account creation.</translate>
         </div>
         <md-input-container class="md-block">
           <label translate>Passphrase</label>
@@ -26,19 +26,19 @@
         </md-input-container>
 
         <div ng-if="createAccountDialog.data.showWrongRepassphrase">
-          The passphrase does not match the original one.
+          <translate>The passphrase does not match the original one.</translate>
         </div>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-if="!createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()" translate>
-        Next
+      <md-button ng-if="!createAccountDialog.data.showRepassphrase" ng-click="createAccountDialog.next()">
+        <translate>Next</translate>
       </md-button>
-      <md-button type="submit" ng-if="createAccountDialog.data.showRepassphrase" ng-disabled="createAccountForm.$invalid" translate>
-        Create
+      <md-button type="submit" ng-if="createAccountDialog.data.showRepassphrase" ng-disabled="createAccountForm.$invalid">
+        <translate>Create</translate>
       </md-button>
-      <md-button ng-click="createAccountDialog.cancel()" style="margin-right:20px;" translate>
-        Cancel
+      <md-button ng-click="createAccountDialog.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
       </md-button>
     </md-dialog-actions>
   </form>

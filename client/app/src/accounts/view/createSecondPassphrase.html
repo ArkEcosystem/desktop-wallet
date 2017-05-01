@@ -37,14 +37,14 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()" translate>
-        Next
+      <md-button ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()">
+        <translate>Next</translate>
       </md-button>
-      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()" translate>
-        Create
+      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()">
+        <translate>Create</translate>
       </md-button>
-      <md-button ng-click="createSecondPassphraseDialog.cancel()" style="margin-right:20px;" translate>
-        Cancel
+      <md-button ng-click="createSecondPassphraseDialog.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
       </md-button>
     </md-dialog-actions>
   </form>
