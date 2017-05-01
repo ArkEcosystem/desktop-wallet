@@ -59,7 +59,7 @@
             exchanges: {
               changer: "ark_ARK"
             },
-            background:"background-image:url(assets/img/test1.jpg)"
+            background:"url(assets/images/Ark.jpg)"
           },
           testnet:{
             nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
@@ -67,7 +67,7 @@
             token: 'TESTARK',
             symbol: 'TѦ',
             explorer: 'http://explorer.ark.io',
-            background:"background-color:#222299"
+            background:"#222299"
           }
         };
         storageService.setGlobal("networks",n);
