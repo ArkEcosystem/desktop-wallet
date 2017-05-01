@@ -92,12 +92,19 @@
       // };
       $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
       .then(function(res){
+        storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
         peer.market=res.data;
       },function(){
-        peer.market={
-          price:
-            {btc: "0.0"}
-        };
+        var lastPrice = storageService.get('lastPrice');
+
+        if (typeof lastPrice === 'undefined') {
+          peer.market = { price: { btc: "0.0"} };
+          return;
+        }
+
+        peer.market = lastPrice.market;
+        peer.market.lastUpdate = lastPrice.date;
+        peer.market.isOffline = true;
       });
       $timeout(function(){
         getPrice();

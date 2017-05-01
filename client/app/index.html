@@ -114,6 +114,10 @@
                  <md-list-item>
                    <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
                  </md-list-item>
+                 <md-list-item ng-show="ul.connectedPeer.market.isOffline">
+                  <b translate>Last checked</b> <span class="md-secondary">
+                  {{ul.connectedPeer.market.lastUpdate | date:'shortTime'}}</span>
+                 </md-list-item>
                </md-list>
            </md-menu-content>
          </md-menu>
