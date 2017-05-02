@@ -59,7 +59,7 @@
             exchanges: {
               changer: "ark_ARK"
             },
-            background:"url(assets/images/Ark.jpg)"
+            background:"url(assets/img/images/Ark.jpg)"
           },
           testnet:{
             nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
