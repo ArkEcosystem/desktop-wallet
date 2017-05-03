@@ -920,6 +920,11 @@
       //   amount: 1,
       // };
 
+      $scope.fillSendableBalance = function() {
+        var sendableBalance = selectedAccount.balance - 10000000;
+        $scope.send.data.amount = sendableBalance > 0 ? accountService.numberToFixed(sendableBalance / 100000000) : 0;
+      }
+
       function next() {
         if (!$scope.sendArkForm.$valid){
           return ;
