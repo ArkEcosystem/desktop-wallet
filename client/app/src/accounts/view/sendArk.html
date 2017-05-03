@@ -25,10 +25,17 @@
           <label translate>Destination Address</label>
           <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus>
         </md-input-container>
-        <md-input-container md-no-float class="md-block">
-          <label>{{'Amount'|translate}} (ARK)</label>
-          <input ng-model="send.data.amount" type="number" step="0.00000001" ng-required="true">
-        </md-input-container>
+        <div layout-gt-sm="row">
+          <md-input-container md-no-float class="md-block" flex-gt-sm="85">
+            <label>{{'Amount'|translate}} (ARK)</label>
+            <input ng-model="send.data.amount" type="number" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount autocomplete="off" ng-required="true">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm="15">
+            <md-button ng-click="fillSendableBalance()" class="md-primary">
+              <translate>Send All</translate>
+            </md-button>
+          </md-input-container>
+        </div>
         <md-input-container md-no-float class="md-block">
           <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
           <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64">

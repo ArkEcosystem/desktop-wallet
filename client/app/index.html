@@ -28,7 +28,7 @@
 
   </head>
 
-  <body style="background-color:#220066;{{ul.network.background}};background-position:center;background-size: cover;" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul" ng-cloak>
+  <body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul" ng-cloak>
     <md-toolbar style="background-color: rgba(0, 0, 0, 0);">
        <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
          <img src="ark.png" alt="" height="30">
@@ -62,6 +62,9 @@
                   </md-list-item>
                   <md-list-item>
                     <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-button aria-label="Background" ng-click="ul.manageBackgrounds()"><translate>Background</translate></md-button>
                   </md-list-item>
             </md-menu-content>
           </md-menu>
@@ -113,6 +116,10 @@
                  </md-list-item>
                  <md-list-item>
                    <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+                 </md-list-item>
+                 <md-list-item ng-show="ul.connectedPeer.market.isOffline">
+                  <b translate>Last checked</b> <span class="md-secondary">
+                  {{ul.connectedPeer.market.lastUpdate | date:'shortTime'}}</span>
                  </md-list-item>
                </md-list>
            </md-menu-content>
@@ -734,6 +741,7 @@
     <script src="src/accounts/AccountController.js"></script>
     <script src="src/network/NetworkService.js"></script>
     <script src="src/changer/ChangerService.js"></script>
+    <script src="src/directives.js"></script>
 
 
     <script type="text/javascript">

@@ -37,18 +37,18 @@ sudo npm install -g n
 sudo n 6.9.2
 ```
 
-Then install from source:
+Install from source:
 ```bash
 # Clone this repository
 git clone https://github.com/ArkEcosystem/ark-desktop
 # Go into the repository
 cd ark-desktop
-# Install dependencies and run the app
+# Install dependencies 
 npm install
-cd client
-npm install
-npm run bundle
-cd ..
+```
+
+Then start:
+```bash
 npm start
 ```
 
