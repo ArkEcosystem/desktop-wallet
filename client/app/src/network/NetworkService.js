@@ -59,7 +59,7 @@
             exchanges: {
               changer: "ark_ARK"
             },
-            background:"background-image:url(assets/img/test1.jpg)"
+            background:"url(assets/images/Ark.jpg)"
           },
           testnet:{
             nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
@@ -67,7 +67,7 @@
             token: 'TESTARK',
             symbol: 'TѦ',
             explorer: 'http://explorer.ark.io',
-            background:"background-color:#222299"
+            background:"#222299"
           }
         };
         storageService.setGlobal("networks",n);
@@ -134,7 +134,18 @@
     function getFromPeer(api){
       var deferred = $q.defer();
       peer.lastConnection=new Date();
-      $http.get(peer.ip+api,{timeout:5000}).then(
+      $http({
+        url: peer.ip + api,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'os': 'ark-desktop',
+          'version': clientVersion,
+          'port': 1,
+          'nethash': network.nethash
+        },
+        timeout:5000
+      }).then(
         function(resp){
           deferred.resolve(resp.data);
           peer.isConnected=true;
@@ -151,10 +162,29 @@
       return deferred.promise;
     }
 
-    function postTransaction(transaction){
+    function broadcastTransaction(transaction, max){
+      var peers = storageService.get("peers");
+      if(!peers){
+        return;
+      }
+      if(!max){
+        max=10;
+      }
+      for(var i = 0 ; i<max ; i++){
+        if(i < peers.length){
+          postTransaction(transaction, "http://"+peers[i].ip+":"+peers[i].port);
+        }
+      }
+    }
+
+    function postTransaction(transaction, ip){
       var deferred = $q.defer();
+      var peerip = ip;
+      if(!peerip){
+        peerip=peer.ip;
+      }
       $http({
-        url: peer.ip+'/peer/transactions',
+        url: peerip+'/peer/transactions',
         data: { transactions: [transaction] },
         method: 'POST',
         headers: {
@@ -166,6 +196,10 @@
         }
       }).then(function(resp){
         if(resp.data.success){
+          // we make sure that tx is well broadcasted
+          if(!ip){
+            broadcastTransaction(transaction);
+          }
           deferred.resolve(transaction);
         }
         else{
@@ -177,9 +211,11 @@
 
     function pickRandomPeer(){
       if(!network.forcepeer){
-        getFromPeer("/api/peers?state=2").then(function(response){
+        getFromPeer("/api/peers").then(function(response){
           if(response.success){
-            storageService.set("peers",response.peers);
+            storageService.set("peers",response.peers.filter(function(peer){
+              return peer.status=="OK";
+            }));
             findGoodPeer(response.peers,0);
           }
           else{
@@ -233,7 +269,8 @@
       getConnection: getConnection,
       getFromPeer: getFromPeer,
       postTransaction: postTransaction,
-      pickRandomPeer:pickRandomPeer
+      broadcastTransaction: broadcastTransaction,
+      pickRandomPeer: pickRandomPeer
     };
   }
 
