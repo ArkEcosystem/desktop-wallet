@@ -1,7 +1,8 @@
 (function(){
   'use strict';
 
-  angular.module('arkclient').directive('validAmount', [
+  angular.module('arkclient')
+  .directive('validAmount', [
     function() {
       return {
         require: 'ngModel',
@@ -12,8 +13,12 @@
               ctrl.$pristine = true;
             }
 
-            var num = Number((value * 100000000).toFixed(0)); // 1.1 = 110000000
-
+            var satoshis = 100000000;
+            var num = Number((value * satoshis).toFixed(0)); // 1.1 = 110000000
+            var totalBalance = Number(scope.send.totalBalance * satoshis)
+            var remainingBalance = ((totalBalance - num) /satoshis)
+            scope.send.remainingBalance = isNaN(remainingBalance) ? totalBalance / satoshis : remainingBalance;
+            
             if (typeof num == "number" && num > 0) {
               if (num > Number.MAX_SAFE_INTEGER) {
                 ctrl.$setValidity('validAmount', false);
