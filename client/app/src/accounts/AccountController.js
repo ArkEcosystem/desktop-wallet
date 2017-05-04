@@ -919,10 +919,15 @@
       //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
       //   amount: 1,
       // };
+      var totalBalance = function(minusFee) {
+        var fee = 10000000;
+        var balance = selectedAccount.balance;
+        return accountService.numberToFixed((minusFee ? balance - fee : balance) / 100000000);
+      };
 
-      $scope.fillSendableBalance = function() {
-        var sendableBalance = selectedAccount.balance - 10000000;
-        $scope.send.data.amount = sendableBalance > 0 ? accountService.numberToFixed(sendableBalance / 100000000) : 0;
+      function fillSendableBalance() {
+        var sendableBalance = totalBalance(true);
+        $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0;
       }
 
       function next() {
@@ -971,7 +976,10 @@
         data: data,
         cancel: cancel,
         next: next,
-        querySearch: querySearch
+        querySearch: querySearch,
+        fillSendableBalance: fillSendableBalance,
+        totalBalance: totalBalance(false),
+        remainingBalance: totalBalance(false), // <-- initial value, this will change by directive
       };
 
       $mdDialog.show({
