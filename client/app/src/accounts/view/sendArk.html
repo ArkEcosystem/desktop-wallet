@@ -31,7 +31,7 @@
             <input ng-model="send.data.amount" type="number" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount autocomplete="off" ng-required="true">
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm="15">
-            <md-button ng-click="fillSendableBalance()" class="md-primary">
+            <md-button ng-click="send.fillSendableBalance()" class="md-primary">
               <translate>Send All</translate>
             </md-button>
           </md-input-container>
@@ -50,7 +50,12 @@
         </md-input-container>
       </div>
     </md-dialog-content>
-    <md-dialog-actions layout="row">
+    <md-dialog-actions layout="row" style="padding-left: 20px">
+      <div class="remaining-balance">
+        <div class="md-caption">Remaining balance</div>
+        <div class="balance">{{ul.network.symbol}} {{ send.remainingBalance }}</div>
+      </div>
+      <span flex></span> <!-- workaround for pull first item on left -->
       <md-button type="submit" ng-disabled="sendArkForm.$invalid">
         <translate>Next</translate>
       </md-button>
