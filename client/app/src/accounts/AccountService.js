@@ -138,7 +138,7 @@
 
     function createAccount(passphrase){
       var deferred = $q.defer();
-      var address=ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey);
+      var address=ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey, networkService.getNetwork().version);
       var account=fetchAccount(address).then(function(account){
         if(account){
           account.virtual=account.virtual || {};
@@ -344,7 +344,7 @@
       var deferred = $q.defer();
       if(type==0){ //send ark
         var isAddress = /^[1-9A-Za-z]+$/g;
-        if(!isAddress.test(config.toAddress)){
+        if(!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)){
           deferred.reject(gettextCatalog.getString("The destination address ")+config.toAddress+gettextCatalog.getString(" is erroneous"));
           return deferred.promise;
         }
@@ -363,7 +363,7 @@
           return deferred.promise;
         }
 
-        if(ark.crypto.getAddress(transaction.senderPublicKey)!=config.fromAddress){
+        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -385,7 +385,7 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey)!=config.fromAddress){
+        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -406,7 +406,7 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey)!=config.fromAddress){
+        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -427,7 +427,7 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey)!=config.fromAddress){
+        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -531,7 +531,7 @@
 
     function createVirtual(passphrase){
       var deferred = $q.defer();
-      var address=ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey);
+      var address=ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey, networkService.getNetwork().version);
       var account=getAccount(address);
       if(account){
         account.virtual=account.virtual || {};

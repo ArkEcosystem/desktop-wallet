@@ -1073,8 +1073,6 @@
       function save() {
         $mdDialog.hide();
         for(var network in $scope.send.networks){
-          console.log(network);
-          console.log($scope.send.networks[network]);
           networkService.setNetwork(network, $scope.send.networks[network]);
         }
         window.location.reload();
@@ -1084,9 +1082,19 @@
         $mdDialog.hide();
       };
 
+      function createNetwork() {
+        networkService.createNetwork($scope.send.createnetwork).then(
+          function(network){
+
+          },
+          formatAndToastError
+        );
+      };
+
       $scope.send = {
         networkKeys: Object.keys(networks),
         networks: networks,
+        createNetwork: createNetwork,
         cancel: cancel,
         save: save
       };
