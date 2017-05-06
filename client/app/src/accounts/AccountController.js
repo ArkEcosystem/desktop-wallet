@@ -225,6 +225,7 @@
         $mdToast.simple()
           .textContent(errorMessage)
           .hideDelay(hideDelay)
+          .theme('error')
       );
     }
 
