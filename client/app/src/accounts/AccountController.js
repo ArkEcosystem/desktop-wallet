@@ -572,16 +572,14 @@
                 transactions=transactions.sort(function(a,b){
                   return b.timestamp-a.timestamp;
                 });
-                var temp=self.selected.transactions.sort(function(a,b){
-                  return b.timestamp-a.timestamp;
-                });
 
                 var previousTx = self.selected.transactions
                 self.selected.transactions = transactions;
 
-                // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                // if the previous tx was unconfirmed, rebroadcast and put it back at the top (for better UX)
                 if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
-                  self.selected.transactions.unshift(previousTx[0])
+                  networkService.broadcastTransaction(previousTx[0]);
+                  self.selected.transactions.unshift(previousTx[0]);
                 }
               }
             }
@@ -627,26 +625,21 @@
             transactions=transactions.sort(function(a,b){
               return b.timestamp-a.timestamp;
             });
-            var temp=self.selected.transactions.sort(function(a,b){
-              return b.timestamp-a.timestamp;
-            });
 
             var previousTx = self.selected.transactions
             self.selected.transactions = transactions;
 
-            // if the previous tx was unconfirmed, but it back at the top (for better UX)
+            // if the previous tx was unconfirmed, put it back at the top (for better UX)
             if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
-              self.selected.transactions.unshift(previousTx[0])
+              networkService.broadcastTransaction(previousTx[0]);
+              self.selected.transactions.unshift(previousTx[0]);
             }
           }
         }
       });
     }
 
-    /**
-     * Select the current avatars
-     * @param menuId
-     */
+
     function selectAccount (account) {
       var currentaddress=account.address;
       self.selected = accountService.getAccount(currentaddress);
@@ -676,16 +669,14 @@
               transactions=transactions.sort(function(a,b){
                 return b.timestamp-a.timestamp;
               });
-              var temp=self.selected.transactions.sort(function(a,b){
-                return b.timestamp-a.timestamp;
-              });
 
               var previousTx = self.selected.transactions
               self.selected.transactions = transactions;
 
               // if the previous tx was unconfirmed, but it back at the top (for better UX)
               if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
-                self.selected.transactions.unshift(previousTx[0])
+                networkService.broadcastTransaction(previousTx[0]);
+                self.selected.transactions.unshift(previousTx[0]);
               }
             }
           }
@@ -709,7 +700,6 @@
 
     /**
      * Add an account
-     * @param menuId
      */
     function addWatchOnlyAddress() {
       var confirm = $mdDialog.prompt()
