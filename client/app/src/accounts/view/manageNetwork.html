@@ -17,6 +17,10 @@
             <input ng-model="send.networks[network].symbol" type="text" ng-required="false">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
+            <label translate>Address version</label>
+            <input ng-model="send.networks[network].version" type="text" ng-required="false">
+          </md-input-container>
+          <md-input-container md-no-float class="md-block">
             <label translate>Nethash</label>
             <input ng-model="send.networks[network].nethash" type="text" ng-required="true">
           </md-input-container>
@@ -39,6 +43,29 @@
           </md-input-container>
           <!-- <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button> -->
         </div>
+      </md-tab>
+
+      <md-tab label="New">
+          <md-input-container class="md-block">
+            <label translate>Name</label>
+            <input ng-model="send.createnetwork.name" type="text" ng-required="true">
+          </md-input-container>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm="80">
+              <label translate>Seed Server</label>
+              <input ng-model="send.createnetwork.peerseed" type="text" ng-required="true">
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm="20">
+              <md-switch class="md-secondary" ng-model="send.createnetwork.forcepeer" aria-label="Force">
+                <translate>Force</translate>
+              </md-switch>
+            </md-input-container>
+          </div>
+          <md-button ng-click="send.createNetwork()" style="margin-right:20px;">
+            <translate>Create</translate>
+          </md-button>
+
       </md-tab>
     </md-tabs>
   </md-content>

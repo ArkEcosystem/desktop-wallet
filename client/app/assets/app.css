@@ -235,6 +235,11 @@ md-dialog {
   max-width: 700px;
 }
 
+md-toast.md-error-theme .md-toast-content {
+    background-color: red;
+    font-weight: bold;
+}
+
 .background-item {
   cursor: pointer;
   outline: none;
