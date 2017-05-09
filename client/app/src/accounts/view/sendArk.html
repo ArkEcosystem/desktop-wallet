@@ -7,24 +7,29 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-         <md-input-container class="md-block">
-          <!--<md-autocomplete
-            md-selected-item="send.data.toAccount"
-            md-search-text="send.searchText"
-            md-items="account in send.querySearch(send.searchText)"
-            md-item-text="account.address"
-            md-min-length="0"
-            md-autofocus="true"
-            md-floating-label="Type an address or a name">
-            <md-item-template>
-              <span class="item-title">
-                <span> {{account.username||account.address}} </span>
-              </span>
-            </md-item-template>
-          </md-autocomplete> -->
-          <label translate>Destination Address</label>
-          <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus>
-        </md-input-container>
+        <div layout-gt-sm="row">
+          <md-input-container md-no-float class="md-block" flex-gt-sm="85">
+             <!--<md-autocomplete
+               md-selected-item="send.data.toAccount"
+               md-search-text="send.searchText"
+               md-items="account in send.querySearch(send.searchText)"
+               md-item-text="account.address"
+               md-min-length="0"
+               md-autofocus="true"
+               md-floating-label="Type an address or a name">
+               <md-item-template>
+                 <span class="item-title">
+                   <span> {{account.username||account.address}} </span>
+                 </span>
+               </md-item-template>
+             </md-autocomplete> -->
+             <label translate>Destination Address</label>
+             <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus>
+           </md-input-container>
+           <md-input-container class="md-block" flex-gt-sm="15">
+             <qr-scanner class="md-button md-primary" input-callback="toAddress" ng-click="openScanner($event)"></qr-scanner>
+           </md-input-container>
+        </div>
         <div layout-gt-sm="row">
           <md-input-container md-no-float class="md-block" flex-gt-sm="85">
             <label>{{'Amount'|translate}} (ARK)</label>
