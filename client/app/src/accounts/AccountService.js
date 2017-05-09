@@ -83,7 +83,7 @@
             addWatchOnlyAddress(account);
           }
           else{
-            account={
+            var account = {
               address:address,
               balance:0,
               secondSignature:false,
@@ -94,6 +94,18 @@
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           }
+        },
+        function(error){
+          var account = {
+            address:address,
+            balance:0,
+            secondSignature:false,
+            cold:true,
+            delegates: [],
+            selectedVotes: [],
+          };
+          deferred.resolve(account);
+          addWatchOnlyAddress(account);
         }
       );
       return deferred.promise;
