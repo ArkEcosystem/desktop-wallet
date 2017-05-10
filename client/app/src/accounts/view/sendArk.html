@@ -7,31 +7,36 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-         <md-input-container class="md-block">
-          <!--<md-autocomplete
-            md-selected-item="send.data.toAccount"
-            md-search-text="send.searchText"
-            md-items="account in send.querySearch(send.searchText)"
-            md-item-text="account.address"
-            md-min-length="0"
-            md-autofocus="true"
-            md-floating-label="Type an address or a name">
-            <md-item-template>
-              <span class="item-title">
-                <span> {{account.username||account.address}} </span>
-              </span>
-            </md-item-template>
-          </md-autocomplete> -->
-          <label translate>Destination Address</label>
-          <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus>
-        </md-input-container>
+        <div layout-gt-sm="row">
+          <md-input-container md-no-float class="md-block" flex-gt-sm="85">
+             <!--<md-autocomplete
+               md-selected-item="send.data.toAccount"
+               md-search-text="send.searchText"
+               md-items="account in send.querySearch(send.searchText)"
+               md-item-text="account.address"
+               md-min-length="0"
+               md-autofocus="true"
+               md-floating-label="Type an address or a name">
+               <md-item-template>
+                 <span class="item-title">
+                   <span> {{account.username||account.address}} </span>
+                 </span>
+               </md-item-template>
+             </md-autocomplete> -->
+             <label translate>Destination Address</label>
+             <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus>
+           </md-input-container>
+           <md-input-container class="md-block" flex-gt-sm="15">
+             <qr-scanner class="md-button md-primary" input-callback="toAddress" ng-click="openScanner($event)"></qr-scanner>
+           </md-input-container>
+        </div>
         <div layout-gt-sm="row">
           <md-input-container md-no-float class="md-block" flex-gt-sm="85">
             <label>{{'Amount'|translate}} (ARK)</label>
             <input ng-model="send.data.amount" type="number" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount autocomplete="off" ng-required="true">
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm="15">
-            <md-button ng-click="fillSendableBalance()" class="md-primary">
+            <md-button ng-click="send.fillSendableBalance()" class="md-primary">
               <translate>Send All</translate>
             </md-button>
           </md-input-container>
@@ -50,7 +55,12 @@
         </md-input-container>
       </div>
     </md-dialog-content>
-    <md-dialog-actions layout="row">
+    <md-dialog-actions layout="row" style="padding-left: 20px">
+      <div class="remaining-balance">
+        <div class="md-caption">Remaining balance</div>
+        <div class="balance">{{ul.network.symbol}} {{ send.remainingBalance }}</div>
+      </div>
+      <span flex></span> <!-- workaround for pull first item on left -->
       <md-button type="submit" ng-disabled="sendArkForm.$invalid">
         <translate>Next</translate>
       </md-button>

@@ -225,6 +225,7 @@
         $mdToast.simple()
           .textContent(errorMessage)
           .hideDelay(hideDelay)
+          .theme('error')
       );
     }
 
@@ -571,16 +572,14 @@
                 transactions=transactions.sort(function(a,b){
                   return b.timestamp-a.timestamp;
                 });
-                var temp=self.selected.transactions.sort(function(a,b){
-                  return b.timestamp-a.timestamp;
-                });
 
                 var previousTx = self.selected.transactions
                 self.selected.transactions = transactions;
 
-                // if the previous tx was unconfirmed, but it back at the top (for better UX)
+                // if the previous tx was unconfirmed, rebroadcast and put it back at the top (for better UX)
                 if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
-                  self.selected.transactions.unshift(previousTx[0])
+                  networkService.broadcastTransaction(previousTx[0]);
+                  self.selected.transactions.unshift(previousTx[0]);
                 }
               }
             }
@@ -626,16 +625,14 @@
             transactions=transactions.sort(function(a,b){
               return b.timestamp-a.timestamp;
             });
-            var temp=self.selected.transactions.sort(function(a,b){
-              return b.timestamp-a.timestamp;
-            });
 
             var previousTx = self.selected.transactions
             self.selected.transactions = transactions;
 
-            // if the previous tx was unconfirmed, but it back at the top (for better UX)
+            // if the previous tx was unconfirmed, put it back at the top (for better UX)
             if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
-              self.selected.transactions.unshift(previousTx[0])
+              networkService.broadcastTransaction(previousTx[0]);
+              self.selected.transactions.unshift(previousTx[0]);
             }
           }
         }
@@ -689,16 +686,14 @@
               transactions=transactions.sort(function(a,b){
                 return b.timestamp-a.timestamp;
               });
-              var temp=self.selected.transactions.sort(function(a,b){
-                return b.timestamp-a.timestamp;
-              });
 
               var previousTx = self.selected.transactions
               self.selected.transactions = transactions;
 
               // if the previous tx was unconfirmed, but it back at the top (for better UX)
               if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
-                self.selected.transactions.unshift(previousTx[0])
+                networkService.broadcastTransaction(previousTx[0]);
+                self.selected.transactions.unshift(previousTx[0]);
               }
             }
           }
@@ -722,7 +717,6 @@
 
     /**
      * Add an account
-     * @param menuId
      */
     function addWatchOnlyAddress() {
       var confirm = $mdDialog.prompt()
@@ -933,10 +927,15 @@
       //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
       //   amount: 1,
       // };
+      var totalBalance = function(minusFee) {
+        var fee = 10000000;
+        var balance = selectedAccount.balance;
+        return accountService.numberToFixed((minusFee ? balance - fee : balance) / 100000000);
+      };
 
-      $scope.fillSendableBalance = function() {
-        var sendableBalance = selectedAccount.balance - 10000000;
-        $scope.send.data.amount = sendableBalance > 0 ? accountService.numberToFixed(sendableBalance / 100000000) : 0;
+      function fillSendableBalance() {
+        var sendableBalance = totalBalance(true);
+        $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0;
       }
 
       function next() {
@@ -985,7 +984,10 @@
         data: data,
         cancel: cancel,
         next: next,
-        querySearch: querySearch
+        querySearch: querySearch,
+        fillSendableBalance: fillSendableBalance,
+        totalBalance: totalBalance(false),
+        remainingBalance: totalBalance(false), // <-- initial value, this will change by directive
       };
 
       $mdDialog.show({
@@ -1079,8 +1081,6 @@
       function save() {
         $mdDialog.hide();
         for(var network in $scope.send.networks){
-          console.log(network);
-          console.log($scope.send.networks[network]);
           networkService.setNetwork(network, $scope.send.networks[network]);
         }
         window.location.reload();
@@ -1090,9 +1090,19 @@
         $mdDialog.hide();
       };
 
+      function createNetwork() {
+        networkService.createNetwork($scope.send.createnetwork).then(
+          function(network){
+
+          },
+          formatAndToastError
+        );
+      };
+
       $scope.send = {
         networkKeys: Object.keys(networks),
         networks: networks,
+        createNetwork: createNetwork,
         cancel: cancel,
         save: save
       };
