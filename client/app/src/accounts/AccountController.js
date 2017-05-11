@@ -1015,6 +1015,7 @@
 
             if (stat.isFile()) {
               var url = path.join(imgPath, folder, file); // ex: assets/img/textures/file.png
+              url = url.replace(/\\/g,"/");
               var name = path.parse(file).name; // remove extension
               image[name] = `url('${url}')`;
             }
