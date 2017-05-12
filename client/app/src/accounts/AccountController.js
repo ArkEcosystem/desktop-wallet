@@ -639,7 +639,24 @@
       });
     }
 
+     self.refreshAccountBalances = function(){
+      for(var i in self.accounts){
+        accountService
+        .refreshAccount(self.accounts[i])
+          .then(function(account){
+            for(var j in self.accounts){
+              if(self.accounts[j].address == account.address){
+                self.accounts[j].balance = account.balance;
+            }
+          }
+        });
+      }
+    }
 
+    /**
+     * Select the current avatars
+     * @param menuId
+     */
     function selectAccount (account) {
       var currentaddress=account.address;
       self.selected = accountService.getAccount(currentaddress);
