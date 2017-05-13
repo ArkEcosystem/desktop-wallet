@@ -80,18 +80,15 @@
     };
 
     var cancel = function() {
-      if ($window.localMediaStream && $window.localMediaStream.active) {
-        var tracks = $window.localMediaStream.getTracks();
-        for (var i = 0; i < tracks.length; i++) {
-          tracks[i].stop();
-        }
-      } else {
-        try {
-          $window.localMediaStream.stop();
-        } catch (e) {
-          $scope.onError({ error: e });
+      if ($window.localMediaStream) {
+        if ($window.localMediaStream.getVideoTracks) {
+          var tracks = $window.localMediaStream.getVideoTracks();
+          for (var i = 0; i < tracks.length; i++) {
+            tracks[i].stop();
+          }
         }
       }
+      
       if (stopScan) {
         $interval.cancel(stopScan)
       }
