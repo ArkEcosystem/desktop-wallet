@@ -1223,7 +1223,8 @@
             return ;
           }
 
-          if($scope.createAccountDialog.data.repassphrase == $scope.createAccountDialog.data.passphrase){
+          var words = $scope.createAccountDialog.data.repassphrase.split(' ');
+          if($scope.createAccountDialog.data.word3 == words[2] && $scope.createAccountDialog.data.word6 == words[5] && $scope.createAccountDialog.data.word9 == words[8]) {
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function(account){
               self.accounts.push(account);
               $mdToast.show(
