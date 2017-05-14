@@ -292,6 +292,18 @@
     function getConnection(){
       return connection.promise;
     }
+    
+    function getLatestClientVersion() {
+        var deferred = $q.defer();
+        var url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest';
+        $http.get(url, {timeout: 5000})
+            .then(function(res) {
+                deferred.resolve(res.data.tag_name);
+            }, function(e) {
+                // deferred.reject(gettextCatalog.getString("Cannot get latest version"));
+            });
+        return deferred.promise;
+    }
 
     listenNetworkHeight();
     getPrice();
