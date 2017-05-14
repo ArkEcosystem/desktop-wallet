@@ -322,7 +322,8 @@
       getFromPeer: getFromPeer,
       postTransaction: postTransaction,
       broadcastTransaction: broadcastTransaction,
-      pickRandomPeer: pickRandomPeer
+      pickRandomPeer: pickRandomPeer,
+      getLatestClientVersion: getLatestClientVersion
     };
   }
 
