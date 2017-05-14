@@ -126,6 +126,8 @@
 
     self.openExplorer = openExplorer;
     self.clientVersion = require('../../package.json').version;
+    self.latestClientVersion = self.clientVersion;
+    networkService.getLatestClientVersion().then( function(r) { self.latestClientVersion = r; } );
     self.isNetworkConnected=false;
     self.selected     = null;
     self.accounts        = [ ];
