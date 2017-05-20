@@ -30,7 +30,13 @@
              return new Date(exchangetime*1000);
            };
          }
-       ]).directive('copyToClipboard',  function ($window, $mdToast) {
+       ]).filter('amountToCurrency', [function() {
+          return function(amount, scope) {
+            if (typeof amount === 'undefined' || amount == 0) return 0;
+            var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
+            return (amount * price).toFixed(5);
+          }
+       }]).directive('copyToClipboard',  function ($window, $mdToast) {
         var body = angular.element($window.document.body);
         var textarea = angular.element('<textarea/>');
         textarea.css({
@@ -998,7 +1004,6 @@
         scope: $scope
       });
     };
-
 
     function manageBackgrounds(){
       var fs = require('fs');
