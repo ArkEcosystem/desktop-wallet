@@ -30,7 +30,7 @@
         
         <md-select-container class="md-block" ng-if="addDelegateDialog.data.registeredDelegates[0]">
           <label for="delegate-name">Select delegate: </label>
-          <select id="delegate-name" ng-model="addDelegateDialog.data.delegatename" ng-options="delegate.username as delegate.username for delegate in addDelegateDialog.data.registeredDelegates">
+          <select id="delegate-name" ng-model="addDelegateDialog.data.delegatename" ng-options="delegate.username as delegate.username for delegate in addDelegateDialog.data.registeredDelegates | orderBy:'username'">
             <option value="">---</option>
           </select>
         </md-select-container>
