@@ -23,10 +23,17 @@
           </md-card-title>
         </md-card> -->
 
-        <md-input-container class="md-block">
+        <md-input-container class="md-block" ng-if="!addDelegateDialog.data.registeredDelegates[0]">
           <label translate>Delegate name</label>
           <input ng-model="addDelegateDialog.data.delegatename" type="text">
         </md-input-container>
+        
+        <md-select-container class="md-block" ng-if="addDelegateDialog.data.registeredDelegates[0]">
+          <label for="delegate-name">Select delegate: </label>
+          <select id="delegate-name" ng-model="addDelegateDialog.data.delegatename" ng-options="delegate.username as delegate.username for delegate in addDelegateDialog.data.registeredDelegates">
+            <option value="">---</option>
+          </select>
+        </md-select-container>
 
       </div>
     </md-dialog-content>
