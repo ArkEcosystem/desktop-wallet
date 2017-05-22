@@ -7,26 +7,38 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <md-card ng-if="!createAccountDialog.data.showRepassphrase" md-colors="{'background': 'red-100'}" flex="100">
+        <md-card ng-if="!createAccountDialog.data.showRepassphrase" class="warning" flex="100">
           <md-card-title>
             <md-card-title-text>
               <span>
-                <translate>Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase</translate>
+                <translate>Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase</translate>
               </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
         <div ng-if="createAccountDialog.data.showRepassphrase">
-          <translate>Please paste here the passphrase to validate the account creation.</translate>
+          <translate>Please type word 3, 6 and 9 from your passphrase to validate the account creation.</translate>
         </div>
-        <md-input-container class="md-block">
+        <br/>
+        <md-input-container ng-if="!createAccountDialog.data.showRepassphrase" class="md-block">
           <label translate>Passphrase</label>
-          <input ng-if="!createAccountDialog.data.showRepassphrase" ng-model="createAccountDialog.data.passphrase" type="text" readonly="readonly"/>
-          <input ng-if="createAccountDialog.data.showRepassphrase" ng-model="createAccountDialog.data.passphrase" type="text" ng-required="true" md-autofocus/>
+          <input ng-model="createAccountDialog.data.passphrase" type="text" readonly="readonly"/>
         </md-input-container>
-
+        <br/>
+        <md-input-container ng-if="createAccountDialog.data.showRepassphrase" flex-gt-sm="85">
+          <label>{{'Word'|translate}} 3</label>
+          <input ng-model="createAccountDialog.data.word3" type="text" ng-required="true"/>
+        </md-input-container>
+        <md-input-container ng-if="createAccountDialog.data.showRepassphrase" flex-gt-sm="85">
+          <label>{{'Word'|translate}} 6</label>
+          <input ng-model="createAccountDialog.data.word6" type="text" ng-required="true"/>
+        </md-input-container>
+        <md-input-container ng-if="createAccountDialog.data.showRepassphrase" flex-gt-sm="85">
+          <label>{{'Word'|translate}} 9</label>
+          <input ng-model="createAccountDialog.data.word9" type="text" ng-required="true"/>
+        </md-input-container>
         <div ng-if="createAccountDialog.data.showWrongRepassphrase">
-          <translate>The passphrase does not match the original one.</translate>
+          <translate>The words does not match the original passphrase.</translate>
         </div>
       </div>
     </md-dialog-content>
