@@ -283,7 +283,7 @@
       return deferred.promise;
     };
     
-    function getAllRegisteredDelegates() {
+    function getActiveDelegates() {
       var deferred = $q.defer();
       networkService.getFromPeer("/api/delegates").then(function (resp) {
         if(resp && resp.success && resp.delegates) {
@@ -726,7 +726,7 @@
 
       getDelegate: getDelegate,
       
-      getAllRegisteredDelegates: getAllRegisteredDelegates,
+      getActiveDelegates: getActiveDelegates,
 
       getDelegateByUsername: getDelegateByUsername,
 
