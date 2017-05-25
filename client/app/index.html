@@ -65,6 +65,9 @@
                     <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
                     <md-button aria-label="Background" ng-click="ul.manageBackgrounds()"><translate>Background</translate></md-button>
                   </md-list-item>
+                  <md-list-item>
+                  <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
+                  </md-list-item>
             </md-menu-content>
           </md-menu>
 
