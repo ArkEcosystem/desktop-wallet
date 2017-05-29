@@ -1,4 +1,4 @@
-# Multi Platform Ark Lite Client
+# Multi Platform Kapu Lite Client
 
 ## Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
