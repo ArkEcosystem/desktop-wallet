@@ -40,7 +40,7 @@ sudo n 6.9.2
 Install from source:
 ```bash
 # Clone this repository
-git clone https://github.com/ArkEcosystem/ark-desktop
+git clone https://github.com/kapucoin/kapu-desktop
 # Go into the repository
 cd ark-desktop
 # Install dependencies 
