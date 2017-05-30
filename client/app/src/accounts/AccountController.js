@@ -797,7 +797,9 @@
     };
 
     function addDelegate(selectedAccount){
-      var data={fromAddress: selectedAccount.address, delegates:[]};
+      var data={fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
+      accountService.getActiveDelegates().then(function(r){data.registeredDelegates = r;});
+      
       function add() {
         function indexOfDelegates(array,item){
           for(var i in array){
