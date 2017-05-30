@@ -45,7 +45,7 @@
          </md-button>
 
          <md-menu>
-           <md-button aria-label="Show network" ng-click="ul.openMenu($mdOpenMenu, $event)">
+           <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">settings</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6">
@@ -68,7 +68,7 @@
           </md-menu>
 
          <md-menu>
-           <md-button aria-label="Show network" ng-click="ul.openMenu($mdOpenMenu, $event)">
+           <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">{{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6">
@@ -93,7 +93,7 @@
           </md-menu>
 
           <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
-            <md-button aria-label="Show market" ng-click="ul.openMenu($mdOpenMenu, $event)">
+            <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
               <md-icon md-font-library="material-icons">insert_chart</md-icon>
               <!--<md-icon md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]<0?'red-200':'green-200' }" md-font-library="material-icons">arrow_{{ul.connectedPeer.market.change7h[ul.currency.name]<0?"down":"up"}}ward</md-icon>-->
             </md-button>
@@ -124,7 +124,7 @@
          </md-menu>
 
          <md-menu>
-           <md-button aria-label="Application State" ng-click="ul.openMenu($mdOpenMenu, $event)">
+           <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">power_settings_new</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6">
@@ -654,7 +654,7 @@
                 <md-list-item ng-repeat="folder in ul.selected.virtual.getFolders()">
                   <div ng-repeat="v in [0]">
                     <md-menu>
-                      <md-button aria-label="Open folder menu" ng-click="ul.openMenu($mdOpenMenu, $event)">
+                      <md-button aria-label="Open folder menu" ng-click="ul.openMenu($mdMenu.open, $event)">
                         <md-icon>folder</md-icon>
                         {{folder}}
                       </md-button>

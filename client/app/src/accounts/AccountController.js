@@ -117,7 +117,10 @@
     };
 
     self.windowApp = function(action, args) {
-      return require('electron').remote.getCurrentWindow()[action](args);
+      var curWin = require('electron').remote.getCurrentWindow();
+      if(curWin[action])
+        return curWin[action](args);
+      else return null;
     };
 
     self.openExternal = function(url){
@@ -451,9 +454,9 @@
       });
     }
 
-    self.openMenu = function($mdOpenMenu, ev) {
+    self.openMenu = function($mdMenuOpen, ev) {
       originatorEv = ev;
-      $mdOpenMenu(ev);
+      $mdMenuOpen(ev);
     };
 
 
@@ -909,6 +912,82 @@
       });
     };
 
+    function timestamp(selectedAccount){
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      };
+
+      function next() {
+        // remove bad characters before and after in case of bad copy/paste
+        $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
+        if ($scope.send.data.secondpassphrase){
+          $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim();
+        }
+
+        $mdDialog.hide();
+        accountService.createTransaction(0,
+          {
+            fromAddress: $scope.send.data.fromAddress,
+            toAddress: $scope.send.data.fromAddress,
+            amount: 1,
+            smartbridge: $scope.send.data.smartbridge,
+            masterpassphrase: $scope.send.data.passphrase,
+            secondpassphrase: $scope.send.data.secondpassphrase
+          }
+        ).then(
+          function(transaction){
+            validateTransaction(selectedAccount, transaction);
+          },
+          formatAndToastError
+        );
+      };
+
+      function openFile(){
+        var crypto = require('crypto');
+        var fs = require('fs');
+
+        require('electron').remote.dialog.showOpenDialog(function (fileNames) {
+         if (fileNames === undefined) return;
+         var fileName = fileNames[0];
+         var algo = 'sha256';
+         var shasum = crypto.createHash(algo);
+         $scope.send.data.filename = fileName;
+         $scope.send.data.smartbridge = "Calculating signature....";
+         var s = fs.ReadStream(fileName);
+
+         s.on('data', function(d) { shasum.update(d); });
+         s.on('end', function() {
+           var d = shasum.digest('hex');
+           console.log(d);
+           $scope.send.data.smartbridge = d.toString('UTF-8');
+         });
+        });
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        data: data,
+        openFile: openFile,
+        cancel: cancel,
+        next: next
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/timestampDocument.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
       var data={
@@ -998,7 +1077,6 @@
         scope: $scope
       });
     };
-
 
     function manageBackgrounds(){
       var fs = require('fs');
@@ -1401,24 +1479,30 @@
       var account = selectedAccount;
 
       var items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'visibility'},
+        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
         { name: gettextCatalog.getString('Delete'), icon: 'delete'},
       ];
 
       if(!selectedAccount.delegate){
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
-        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'local_offer'});
+        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity'});
       }
 
+      items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user'});
+
       if(!selectedAccount.secondSignature){
-        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'local_offer'});
+        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock'});
       }
 
       function answer(action){
         $mdBottomSheet.hide();
 
         if(action==gettextCatalog.getString('Open in explorer')){
-          openExplorer('/address/' + selectedAccount.address)
+          openExplorer('/address/' + selectedAccount.address);
+        }
+
+        if(action==gettextCatalog.getString('Timestamp Document')){
+          timestamp(selectedAccount);
         }
 
         else if(action==gettextCatalog.getString("Delete")){
