@@ -124,6 +124,8 @@
       // };
       $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
       .then(function(res){
+        if(res.data.price && res.data.price.btc)
+          res.data.price.btc = Number(res.data.price.btc).toFixed(8); // store BTC price in satoshi
         storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
         peer.market=res.data;
       },function(){
