@@ -29,6 +29,13 @@ Second signature supported. Multisignature accounts not yet supported.
 ![linux](http://i.imgur.com/P9TTXyY.png)
 ![linux](http://i.imgur.com/CQ4ms4H.png)
 
+## From AUR
+For distros derived from Arch Linux the package is avaliable in AUR, just run:
+
+```
+yaourt -Sy ark-desktop
+```
+
 ## From code
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developped with this version:
