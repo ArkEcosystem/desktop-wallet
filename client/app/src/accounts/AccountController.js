@@ -802,7 +802,7 @@
     function addDelegate(selectedAccount){
       var data={fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
       accountService.getActiveDelegates().then(function(r){data.registeredDelegates = r;});
-      
+
       function add() {
         function indexOfDelegates(array,item){
           for(var i in array){
@@ -959,12 +959,14 @@
         }
 
         $mdDialog.hide();
+        var smartbridge = "timestamp:"+$scope.send.data.smartbridge;
+        console.log(smartbridge);
         accountService.createTransaction(0,
           {
             fromAddress: $scope.send.data.fromAddress,
             toAddress: $scope.send.data.fromAddress,
             amount: 1,
-            smartbridge: $scope.send.data.smartbridge,
+            smartbridge: smartbridge,
             masterpassphrase: $scope.send.data.passphrase,
             secondpassphrase: $scope.send.data.secondpassphrase
           }
@@ -991,9 +993,10 @@
 
          s.on('data', function(d) { shasum.update(d); });
          s.on('end', function() {
-           var d = shasum.digest('hex');
-           console.log(d);
-           $scope.send.data.smartbridge = d.toString('UTF-8');
+           var d = shasum.digest('utf8');
+           console.log(new Buffer(d,"utf8").toString("hex"));
+           console.log(d.toString("hex"));
+           $scope.send.data.smartbridge = d;
          });
         });
       };
