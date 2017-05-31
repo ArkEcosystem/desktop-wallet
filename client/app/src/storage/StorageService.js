@@ -25,15 +25,20 @@
     var winBounds = getGlobal('winBounds');
     var to = null;
     
-    if(typeof winBounds === 'object')
-        win.setBounds(winBounds);
+    if(typeof winBounds === 'object') {
+        try {
+            win.setBounds(winBounds);
+        } catch(e) {
+            console.log("Can't resize the window.", e);
+        }
+    }
 
     window.addEventListener('resize', function(e) {
       e.preventDefault();
       clearTimeout(to);
       to = setTimeout(function() {
           setGlobal('winBounds', win.getBounds());
-      }, 1000);
+      }, 3000);
     });
     /* [end] Window size */
 
