@@ -33,6 +33,7 @@
        <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
          <img src="ark.png" alt="" height="30">
          <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]">{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</md-button>
+         <md-button ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' md-colors="{background:'green'}" aria-label="New version available!"><translate>New version available!</translate></md-button>
          <md-button ng-if="ul.selected" class="menu" hide-gt-md ng-click="ul.toggleList()" aria-label="Show Account List">
            <md-icon md-svg-icon="menu" ></md-icon>
          </md-button>
@@ -63,6 +64,9 @@
                   <md-list-item>
                     <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
                     <md-button aria-label="Background" ng-click="ul.manageBackgrounds()"><translate>Background</translate></md-button>
+                  </md-list-item>
+                  <md-list-item>
+                  <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
                   </md-list-item>
             </md-menu-content>
           </md-menu>
@@ -203,11 +207,11 @@
                  <md-list-item>
                    <b translate>Change 1h/7h/7d</b>
                    <span class="md-secondary">
-                     <span md-colors="{'color' : ul.connectedPeer.market.change1h.usd>=0?'green':'red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
                      /
-                     <span md-colors="{'color' : ul.connectedPeer.market.change7h.usd>=0?'green':'red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span>
                      /
-                     <span md-colors="{'color' : ul.connectedPeer.market.change7d.usd>=0?'green':'red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
                    </span>
                  </md-list-item>
                  <md-list-item>

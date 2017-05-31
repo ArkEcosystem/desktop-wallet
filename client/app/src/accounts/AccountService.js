@@ -263,7 +263,7 @@
       });
       return deferred.promise;
     };
-
+    
     function getDelegate(publicKey){
       var deferred = $q.defer();
       if(!publicKey){
@@ -278,6 +278,19 @@
         }
         else{
           deferred.reject(gettextCatalog.getString("Cannot state if account is a delegate"));
+        }
+      });
+      return deferred.promise;
+    };
+    
+    function getActiveDelegates() {
+      var deferred = $q.defer();
+      networkService.getFromPeer("/api/delegates").then(function (resp) {
+        if(resp && resp.success && resp.delegates) {
+          deferred.resolve(resp.delegates);
+        }
+        else {
+          deferred.reject(gettextCatalog.getString("Cannot get registered delegates"));
         }
       });
       return deferred.promise;
@@ -712,6 +725,8 @@
       getVotedDelegates: getVotedDelegates,
 
       getDelegate: getDelegate,
+      
+      getActiveDelegates: getActiveDelegates,
 
       getDelegateByUsername: getDelegateByUsername,
 

@@ -30,7 +30,13 @@
              return new Date(exchangetime*1000);
            };
          }
-       ]).directive('copyToClipboard',  function ($window, $mdToast) {
+       ]).filter('amountToCurrency', [function() {
+          return function(amount, scope) {
+            if (typeof amount === 'undefined' || amount == 0) return 0;
+            var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
+            return (amount * price).toFixed(5);
+          }
+       }]).directive('copyToClipboard',  function ($window, $mdToast) {
         var body = angular.element($window.document.body);
         var textarea = angular.element('<textarea/>');
         textarea.css({
@@ -129,6 +135,8 @@
 
     self.openExplorer = openExplorer;
     self.clientVersion = require('../../package.json').version;
+    self.latestClientVersion = self.clientVersion;
+    networkService.getLatestClientVersion().then( function(r) { self.latestClientVersion = r; } );
     self.isNetworkConnected=false;
     self.selected     = null;
     self.accounts        = [ ];
@@ -144,6 +152,8 @@
     self.createSecondPassphrase  = createSecondPassphrase;
     self.copiedToClipboard  = copiedToClipboard;
 
+    self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
+    self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
     self.manageBackgrounds  = manageBackgrounds;
     self.manageNetworks  = manageNetworks;
     self.openPassphrasesDialog  = openPassphrasesDialog;
@@ -632,6 +642,13 @@
             var previousTx = self.selected.transactions
             self.selected.transactions = transactions;
 
+            var playSong = storageService.get('playFundsReceivedSong');
+            if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+              var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+              var audio = new Audio(wavFile);
+              audio.play();
+            }
+
             // if the previous tx was unconfirmed, put it back at the top (for better UX)
             if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
               networkService.broadcastTransaction(previousTx[0]);
@@ -654,6 +671,10 @@
           }
         });
       }
+    }
+
+    function togglePlayFundsReceivedSong(status) {
+      storageService.set('playFundsReceivedSong', self.playFundsReceivedSong, true);
     }
 
     /**
@@ -692,6 +713,13 @@
 
               var previousTx = self.selected.transactions
               self.selected.transactions = transactions;
+
+              var playSong = storageService.get('playFundsReceivedSong');
+              if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+                var audio = new Audio(wavFile);
+                audio.play();
+              }
 
               // if the previous tx was unconfirmed, but it back at the top (for better UX)
               if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
@@ -772,7 +800,9 @@
     };
 
     function addDelegate(selectedAccount){
-      var data={fromAddress: selectedAccount.address, delegates:[]};
+      var data={fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
+      accountService.getActiveDelegates().then(function(r){data.registeredDelegates = r;});
+      
       function add() {
         function indexOfDelegates(array,item){
           for(var i in array){
@@ -1301,7 +1331,8 @@
             return ;
           }
 
-          if($scope.createAccountDialog.data.repassphrase == $scope.createAccountDialog.data.passphrase){
+          var words = $scope.createAccountDialog.data.repassphrase.split(' ');
+          if($scope.createAccountDialog.data.word3 === words[2] && $scope.createAccountDialog.data.word6 === words[5] && $scope.createAccountDialog.data.word9 === words[8]) {
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function(account){
               self.accounts.push(account);
               $mdToast.show(

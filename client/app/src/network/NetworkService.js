@@ -124,6 +124,8 @@
       // };
       $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
       .then(function(res){
+        if(res.data.price && res.data.price.btc)
+          res.data.price.btc = Number(res.data.price.btc).toFixed(8); // store BTC price in satoshi
         storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
         peer.market=res.data;
       },function(){
@@ -292,6 +294,18 @@
     function getConnection(){
       return connection.promise;
     }
+    
+    function getLatestClientVersion() {
+        var deferred = $q.defer();
+        var url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest';
+        $http.get(url, {timeout: 5000})
+            .then(function(res) {
+                deferred.resolve(res.data.tag_name);
+            }, function(e) {
+                // deferred.reject(gettextCatalog.getString("Cannot get latest version"));
+            });
+        return deferred.promise;
+    }
 
     listenNetworkHeight();
     getPrice();
@@ -310,7 +324,8 @@
       getFromPeer: getFromPeer,
       postTransaction: postTransaction,
       broadcastTransaction: broadcastTransaction,
-      pickRandomPeer: pickRandomPeer
+      pickRandomPeer: pickRandomPeer,
+      getLatestClientVersion: getLatestClientVersion
     };
   }
 
