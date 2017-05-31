@@ -20,6 +20,22 @@
       switchContext(context);
     }
 
+    /* [begin] Window size */
+    var win = remote.getCurrentWindow();
+    var winBounds = getGlobal('winBounds');
+    var to = null;
+    
+    if(typeof winBounds === 'object')
+        win.setBounds(winBounds);
+
+    window.addEventListener('resize', function(e) {
+      e.preventDefault();
+      clearTimeout(to);
+      to = setTimeout(function() {
+          setGlobal('winBounds', win.getBounds());
+      }, 1000);
+    });
+    /* [end] Window size */
 
     function getContext(){
       return context;
