@@ -302,6 +302,7 @@
         deferred.reject("No Username");
         return deferred.promise;
       }
+      username = username.toLowerCase();
       networkService.getFromPeer("/api/delegates/get/?username="+username).then(function (resp) {
         if(resp && resp.success && resp.delegate){
           storageService.set("delegate-"+resp.delegate.address,resp.delegate);
