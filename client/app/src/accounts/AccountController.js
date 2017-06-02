@@ -1432,7 +1432,7 @@
 
       var items = [
         { name: gettextCatalog.getString('Open in explorer'), icon: 'visibility'},
-        { name: gettextCatalog.getString('Delete'), icon: 'delete'},
+        { name: gettextCatalog.getString('Remove'), icon: 'clear'},
       ];
 
       if(!selectedAccount.delegate){
@@ -1451,14 +1451,15 @@
           openExplorer('/address/' + selectedAccount.address)
         }
 
-        else if(action==gettextCatalog.getString("Delete")){
+        else if(action==gettextCatalog.getString("Remove")){
           var confirm = $mdDialog.confirm()
-              .title(gettextCatalog.getString('Delete Account')+ ' ' +account.address)
-              .textContent(gettextCatalog.getString('Are you sure?'))
-              .ok(gettextCatalog.getString('Delete permanently this account'))
+              .title(gettextCatalog.getString('Remove Account')+ ' ' +account.address)
+              .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
+                  'The account may be added again using the original passphrase of the account.'))
+              .ok(gettextCatalog.getString('Remove account'))
               .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
-            accountService.deleteAccount(account).then(function(){
+            accountService.removeAccount(account).then(function(){
               self.accounts = accountService.loadAllAccounts();
 
               if(self.accounts.length>0) {
@@ -1470,7 +1471,7 @@
 
               $mdToast.show(
                 $mdToast.simple()
-                  .textContent(gettextCatalog.getString('Account deleted!'))
+                  .textContent(gettextCatalog.getString('Account removed!'))
                   .hideDelay(3000)
               );
             });
