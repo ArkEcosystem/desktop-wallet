@@ -25,8 +25,6 @@ function createWindow () {
     {
       label: "Application",
       submenu: [
-        { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
-        { type: "separator" },
         { label: "Disable screenshot protection (unsafe)", click: function() { mainWindow.setContentProtection(false) }},
         { type: "separator" },
         { label: "Minimize", click: function() { mainWindow.minimize(); }},
