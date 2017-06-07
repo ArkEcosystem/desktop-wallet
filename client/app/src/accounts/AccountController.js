@@ -746,7 +746,51 @@
     /**
      * Add an account
      */
-    function addWatchOnlyAddress() {
+    function addWatchOnlyAddress(){
+      
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      function validateAddress() {
+        var isAddress = /^[1-9A-Za-z]+$/g;
+        var address = $scope.address;
+        if(isAddress.test(address)){
+          accountService.fetchAccount(address).then(function(account){
+            self.accounts.push(account);
+            selectAccount(account);
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent(gettextCatalog.getString('Account added!'))
+                .hideDelay(3000)
+            );
+          });
+          cancel();
+        }
+        else{
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent(gettextCatalog.getString('Address')+" "+address+" "+gettextCatalog.getString('is not recognised'))
+              .hideDelay(3000)
+          );
+        }
+
+      };
+
+      $scope.send = {
+        cancel: cancel,
+        validateAddress: validateAddress
+      };
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/addWatchOnlyAddress.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope,
+        fullscreen: true
+      });
+    };
+    /*function addWatchOnlyAddress() {
       var confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Add Watch-Only Address'))
           .textContent(gettextCatalog.getString('Please enter a new address.'))
@@ -777,7 +821,7 @@
 
       });
 
-    };
+    };*/
 
     function getAllDelegates(selectedAccount){
       function arrayUnique(array) {
@@ -1146,8 +1190,6 @@
         fullscreen: true
       });
     };
-
-
 
     function openPassphrasesDialog(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
