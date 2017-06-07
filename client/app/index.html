@@ -60,11 +60,15 @@
 
       <md-button ng-click="ul.selected=null">
         <md-icon md-font-library="material-icons">home</md-icon>
-        <md-tooltip md-direction="bottom"><translate>Home</translate></md-tooltip>
+        <md-tooltip md-direction="bottom">
+          <translate>Home</translate>
+        </md-tooltip>
       </md-button>
 
       <any style="pointer-events: auto">
-        <md-tooltip><translate>Settings</translate></md-tooltip>
+        <md-tooltip>
+          <translate>Settings</translate>
+        </md-tooltip>
         <md-menu>
           <md-button aria-label="Show network" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">settings</md-icon>
@@ -73,8 +77,11 @@
             <md-list>
               <md-list-item>
                 <b translate>Language</b>
-                <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close
-                  ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
+                <!--<md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>-->
+
+                <md-select class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                  <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
+                </md-select>
               </md-list-item>
               <md-list-item>
                 <md-button aria-label="Import Account" ng-click="ul.importAccount()">
@@ -106,7 +113,9 @@
       </any>
 
       <any style="pointer-events: auto">
-        <md-tooltip><translate>Network Status</translate></md-tooltip>
+        <md-tooltip>
+          <translate>Network Status</translate>
+        </md-tooltip>
         <md-menu>
           <md-button aria-label="Show network" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">{{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
@@ -115,8 +124,7 @@
             <md-list>
               <md-list-item>
                 <b translate>Peer</b>
-                <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close
-                  ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
+                <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
               </md-list-item>
               <md-list-item>
                 <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
@@ -136,7 +144,9 @@
       </any>
 
       <any style="pointer-events: auto">
-        <md-tooltip><translate>Market Statistics</translate></md-tooltip>
+        <md-tooltip>
+          <translate>Market Statistics</translate>
+        </md-tooltip>
         <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
           <md-button aria-label="Show market" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">insert_chart</md-icon>
@@ -146,8 +156,7 @@
             <md-list>
               <md-list-item>
                 <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-                <md-button class="md-secondary" aria-label="Change Currency"
-                  md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+                <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
@@ -169,40 +178,42 @@
         </md-menu>
       </any>
 
-<any style="pointer-events: auto">
-          <md-tooltip><translate>Application</translate></md-tooltip>
-      <md-menu>
-        <md-button aria-label="Application State" ng-click="ul.openMenu($mdOpenMenu, $event)">
-          <md-icon md-font-library="material-icons">power_settings_new</md-icon>
-        </md-button>
-        <md-menu-content flex layout-padding width="6">
-          <md-list>
-            <md-list-item>
-              <md-button aria-label="Close App" ng-click="ul.closeApp()">
-                <translate>Quit</translate>
-              </md-button>
-              <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')">
-                <translate>Restart</translate>
-              </md-button>
-            </md-list-item>
-            <md-list-item>
-              <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
-                <translate>Minimize</translate>
-              </md-button>
-              <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
-                <translate>Maximize</translate>
-              </md-button>
-            </md-list-item>
-            <md-list-item>
-              <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
-                <translate>Toggle Full Screen</translate>
-              </md-button>
-            </md-list-item>
+      <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Application</translate>
+        </md-tooltip>
+        <md-menu>
+          <md-button aria-label="Application State" ng-click="ul.openMenu($mdOpenMenu, $event)">
+            <md-icon md-font-library="material-icons">power_settings_new</md-icon>
+          </md-button>
+          <md-menu-content flex layout-padding width="6">
+            <md-list>
+              <md-list-item>
+                <md-button aria-label="Close App" ng-click="ul.closeApp()">
+                  <translate>Quit</translate>
+                </md-button>
+                <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')">
+                  <translate>Restart</translate>
+                </md-button>
+              </md-list-item>
+              <md-list-item>
+                <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
+                  <translate>Minimize</translate>
+                </md-button>
+                <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
+                  <translate>Maximize</translate>
+                </md-button>
+              </md-list-item>
+              <md-list-item>
+                <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
+                  <translate>Toggle Full Screen</translate>
+                </md-button>
+              </md-list-item>
 
-          </md-list>
-        </md-menu-content>
-      </md-menu>
-</any>
+            </md-list>
+          </md-menu-content>
+        </md-menu>
+      </any>
       <!-- <md-button ng-click="ul.closeApp()">
          <md-icon md-font-library="material-icons">power_settings_new</md-icon>
        </md-button> -->
@@ -263,8 +274,7 @@
         <md-list>
           <md-list-item>
             <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-            <md-button class="md-secondary" aria-label="Change Currency"
-              md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+            <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
           </md-list-item>
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>
