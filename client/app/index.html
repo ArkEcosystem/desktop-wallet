@@ -803,7 +803,25 @@
                   node = node.parentNode;
               }
           });
+      
+          /* [begin] Window size & position */
+          var win = remote.getCurrentWindow();
+          var winBounds = JSON.parse( window.localStorage.getItem('global-winBounds') );
 
+          if(typeof winBounds === 'object') {
+              try {
+                  win.setBounds(winBounds);
+              } catch(e) {
+                  console.log("Can't resize the window.", e);
+              }
+          }
+
+          window.onbeforeunload = (e) => {
+              window.localStorage.setItem('global-winBounds', JSON.stringify( win.getBounds() ));
+          };
+          /* [end] Window size & position */
+      
+      
     </script>
 
   </body>
