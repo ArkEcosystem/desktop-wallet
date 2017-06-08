@@ -1,0 +1,36 @@
+<md-dialog aria-label="Edit Contact" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Edit Contact </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="editAddressbookContact.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container md-no-float class="md-block">
+          <label translate>Name</label>
+          <input ng-model="editAddressbookContact.name" type="text" ng-disabled="true" ng-required="true">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+          <label translate>Address</label>
+          <input ng-model="editAddressbookContact.address" type="text" ng-required="true">
+        </md-input-container>
+        <md-button class="md-primary md-raised" ng-click="editAddressbookContact.remove(editAddressbookContact.name)">
+          <translate>Remove</translate>
+        </md-button>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="editAddressbookContact.save(editAddressbookContact.name, editAddressbookContact.address)">
+        <translate>Save</translate>
+      </md-button>
+      <md-button ng-click="editAddressbookContact.cancel()" style="margin-right:20px;">
+        <translate>Close</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
