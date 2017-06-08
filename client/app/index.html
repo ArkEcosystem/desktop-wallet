@@ -55,11 +55,13 @@
             </md-button>
             <md-menu-content flex layout-padding width="6">
                 <md-list>
-                  <md-list-item ng-repeat="contact in ab.contacts">
-                    <md-button class="md-button" md-prevent-menu-close ng-click="ab.editAddressbookContact(contact.name, contact.address)">{{contact.name}}</md-button>
-                  </md-list-item>
                   <md-list-item>
-                    <md-button class="md-button" md-prevent-menu-close ng-click="ab.addAddressbookContact()"><b translate>New</b></md-button>
+                    <md-button class="md-button" ng-click="ab.addAddressbookContact()">
+                      <md-icon md-font-library="material-icons">library_add</md-icon><b translate>ADD CONTACT</b>
+                      </md-button>
+                  </md-list-item>
+                  <md-list-item ng-repeat="contact in ab.contacts">
+                    <md-button class="md-button" ng-click="ab.editAddressbookContact(contact.name, contact.address)">{{contact.name}}</md-button>
                   </md-list-item>
                 </md-list>
             </md-menu-content>
