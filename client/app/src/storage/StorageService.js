@@ -20,6 +20,27 @@
       switchContext(context);
     }
 
+    /* [begin] Window size */
+    var win = remote.getCurrentWindow();
+    var winBounds = getGlobal('winBounds');
+    var to = null;
+    
+    if(typeof winBounds === 'object') {
+        try {
+            win.setBounds(winBounds);
+        } catch(e) {
+            console.log("Can't resize the window.", e);
+        }
+    }
+
+    window.addEventListener('resize', function(e) {
+      e.preventDefault();
+      clearTimeout(to);
+      to = setTimeout(function() {
+          setGlobal('winBounds', win.getBounds());
+      }, 3000);
+    });
+    /* [end] Window size */
 
     function getContext(){
       return context;
