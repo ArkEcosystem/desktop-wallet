@@ -1000,7 +1000,7 @@
 
       function querySearch(text){
         text=text.toLowerCase();
-        var contacts = storageService.getGlobal("contacts");
+        var contacts = storageService.get("contacts");
         var filter=contacts.filter(function(account){
           return (account.address.toLowerCase().indexOf(text)>-1) || (account.name && (account.name.toLowerCase().indexOf(text)>-1));
         });

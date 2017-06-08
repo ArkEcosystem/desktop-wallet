@@ -10,14 +10,14 @@
     var contacts;
 
     self.getContacts = function () {
-      self.contacts = storageService.getGlobal("contacts");
+      self.contacts = storageService.get("contacts");
       if (self.contacts == null || self.contacts == undefined) self.contacts = [];
     }
 
     self.getContacts();
 
     self.save = function () {
-      storageService.setGlobal("contacts", self.contacts);
+      storageService.set("contacts", self.contacts);
       $scope.$apply;
     }
 
