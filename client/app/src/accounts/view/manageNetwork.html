@@ -41,7 +41,7 @@
             <label translate>Explorer</label>
             <input ng-model="send.networks[network].explorer" type="text" ng-required="false">
           </md-input-container>
-          <!-- <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button> -->
+          <md-button class="md-primary md-raised" ng-click="send.removeNetwork(network)" ng-disabled="network =='mainnet' || network == 'testnet'"><translate>Remove</translate></md-button>
         </div>
       </md-tab>
 

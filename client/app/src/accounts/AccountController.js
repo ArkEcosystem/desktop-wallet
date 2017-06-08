@@ -1109,30 +1109,49 @@
       var networks=networkService.getNetworks();
 
       function save() {
-        $mdDialog.hide();
+        //these are not needed as the createNetwork now rerender automatically
+        //$mdDialog.hide();
         for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
         }
-        window.location.reload();
+        //window.location.reload();
       };
 
       function cancel() {
         $mdDialog.hide();
       };
 
+      function refreshTabs()
+      {
+          //reload networks
+          networks=networkService.getNetworks();
+          //add it back to the scope
+          $scope.send.networkKeys = Object.keys(networks);
+          $scope.send.networks = networks;
+          //tell angular that the list changed
+          $scope.$apply();
+      }
+
       function createNetwork() {
         networkService.createNetwork($scope.send.createnetwork).then(
           function(network){
-
+            refreshTabs();
           },
           formatAndToastError
         );
       };
 
+      function removeNetwork(network)
+      {
+        networkService.removeNetwork(network);
+        refreshTabs();
+      }
+
       $scope.send = {
         networkKeys: Object.keys(networks),
         networks: networks,
         createNetwork: createNetwork,
+        removeNetwork: removeNetwork,
         cancel: cancel,
         save: save
       };
