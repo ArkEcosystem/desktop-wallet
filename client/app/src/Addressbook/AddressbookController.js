@@ -21,6 +21,11 @@
       $scope.$apply;
     }
 
+    self.isAddress = function (address) {
+      var isAddress = /^[1-9A-Za-z]+$/g;
+      return isAddress.test(address)
+    }
+
     self.contactExists = function (name) {
       var i;
       for (i = 0; i < self.contacts.length; i++) {
@@ -56,6 +61,10 @@
           self.showToast('this Contact-Name is already taken, please choose another one: ', contactname);
           return;
         }
+        if(!self.isAddress(contactaddress)) {
+          self.showToast('this seems to be not a valid Address: ', contactaddress);
+          return;
+        }
         self.contacts.push(newcontact);
         self.save();
         self.showToast('Contact successfully added: ', contactname);
@@ -89,6 +98,10 @@
         self.getContacts();
         if (!self.contactExists(name)) {
           self.showToast('this Contact-Name doesnt exist: ', name);
+          return;
+        }
+        if(!self.isAddress(address)) {
+          self.showToast('this seems to be not a valid Address: ', address);
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
