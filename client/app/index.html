@@ -49,21 +49,39 @@
            <md-button aria-label="Show network" ng-click="ul.openMenu($mdOpenMenu, $event)">
              <md-icon md-font-library="material-icons">settings</md-icon>
            </md-button>
-            <md-menu-content flex layout-padding width="6">
+            <md-menu-content flex layout-padding width="6" style="min-height: 400px">
                 <md-list>
                   <md-list-item>
                     <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Import Account" ng-click="ul.importAccount()"><translate>Import Account</translate></md-button>
-                    <md-button aria-label="Create Account" ng-click="ul.createAccount()"><translate>Create Account</translate></md-button>
+                    <md-button aria-label="Import Account" ng-click="ul.importAccount()">
+                      <md-icon>file_download</md-icon>
+                      <translate>Import Account</translate></md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Add Watch-Only Address" ng-click="ul.addWatchOnlyAddress()"><translate>Add Watch-Only Address</translate></md-button>
+                    <md-button aria-label="Create Account" ng-click="ul.createAccount()">
+                      <md-icon>account_box</md-icon>
+                      <translate>Create Account</translate>
+                    </md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()"><translate>Manage Networks</translate></md-button>
-                    <md-button aria-label="Background" ng-click="ul.manageBackgrounds()"><translate>Background</translate></md-button>
+                    <md-button aria-label="Add Watch-Only Address" ng-click="ul.addWatchOnlyAddress()">
+                      <md-icon>add</md-icon>
+                      <translate>Add Watch-Only Address</translate>
+                    </md-button>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()">
+                      <md-icon>network_check</md-icon>
+                      <translate>Manage Networks</translate>
+                    </md-button>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-button aria-label="Background" ng-click="ul.manageBackgrounds()">
+                      <md-icon>landscape</md-icon>
+                      <translate>Background</translate>
+                    </md-button>
                   </md-list-item>
                   <md-list-item>
                   <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
@@ -134,15 +152,34 @@
             <md-menu-content flex layout-padding width="6">
                 <md-list>
                   <md-list-item>
-                    <md-button aria-label="Close App" ng-click="ul.closeApp()"><translate>Quit</translate></md-button>
-                    <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')"><translate>Restart</translate></md-button>
+                    <md-button aria-label="Close App" ng-click="ul.closeApp()">
+                      <md-icon>exit_to_app</md-icon>
+                      <translate>Quit</translate>
+                    </md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')"><translate>Minimize</translate></md-button>
-                    <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')"><translate>Maximize</translate></md-button>
+                    <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')">
+                      <md-icon>refresh</md-icon>
+                      <translate>Restart</translate>
+                    </md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))"><translate>Toggle Full Screen</translate></md-button>
+                    <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
+                      <md-icon>vertical_align_bottom</md-icon>
+                      <translate>Minimize</translate>
+                    </md-button>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
+                      <md-icon>open_with</md-icon>
+                      <translate>Maximize</translate>
+                    </md-button>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
+                      <md-icon>fullscreen</md-icon>
+                      <translate>Toggle Full Screen</translate>
+                    </md-button>
                   </md-list-item>
 
                 </md-list>
@@ -188,11 +225,11 @@
                  </md-button>
 
                  <md-button ng-click="ul.importAccount()">
-                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Import Account</translate>
+                   <md-icon>file_download</md-icon> <translate>Import Account</translate>
                  </md-button>
 
                  <md-button ng-click="ul.createAccount()">
-                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Create Account</translate>
+                   <md-icon>account_box</md-icon> <translate>Create Account</translate>
                  </md-button>
 
                </md-list-item>
