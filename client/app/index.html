@@ -52,9 +52,6 @@
             <md-menu-content flex layout-padding width="6">
                 <md-list>
                   <md-list-item>
-                    <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
-                  </md-list-item>
-                  <md-list-item>
                     <md-button aria-label="Import Account" ng-click="ul.importAccount()"><translate>Import Account</translate></md-button>
                     <md-button aria-label="Create Account" ng-click="ul.createAccount()"><translate>Create Account</translate></md-button>
                   </md-list-item>
@@ -126,7 +123,16 @@
                </md-list>
            </md-menu-content>
          </md-menu>
-
+         <md-menu>
+           <md-button aria-label="Language" ng-click="$mdMenu.open()">
+             <md-icon md-font-library="material-icons">language</md-icon>
+           </md-button>
+           <md-menu-content flex layout-padding width="4">
+             <md-menu-item ng-repeat="(key,item) in ul.getLanguages()">
+               <md-button ng-class="{'md-primary': key===ul.language}" ng-click="ul.selectLanguage(key)">{{item}}</md-button>
+             </md-menu-item>
+           </md-menu-content>
+         </md-menu>
          <md-menu>
            <md-button aria-label="Application State" ng-click="ul.openMenu($mdOpenMenu, $event)">
              <md-icon md-font-library="material-icons">power_settings_new</md-icon>

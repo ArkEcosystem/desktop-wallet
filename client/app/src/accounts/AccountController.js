@@ -158,7 +158,6 @@
     self.vote  = vote;
     self.addDelegate = addDelegate;
     self.showAccountMenu  = showAccountMenu;
-    self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || {name:"btc",symbol:"Ƀ"};
     self.switchNetwork = networkService.switchNetwork;
     self.network = networkService.getNetwork();
@@ -246,6 +245,18 @@
           .hideDelay(5000)
       );
     }
+
+    self.getLanguages = function() {
+      return languages;
+    };
+
+    self.selectLanguage= function(which) {
+      if (typeof(languages[which]) !== 'undefined') {
+        self.language = which;
+        storageService.set("language",self.language);
+        gettextCatalog.setCurrentLanguage(self.language);
+      }
+    };
 
     function selectNextLanguage(){
       var lkeys=Object.keys(languages);
