@@ -83,8 +83,8 @@
             nethash:'167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
             peerseed:'http://5.39.9.240:4001',
             forcepeer: false,
-            token: 'KAPU',
-            symbol: 'ʞ',
+            token: 'ARK',
+            symbol: 'TѦ',
             version: 0x17,
             explorer: 'http://45.76.86.96:6040',
             exchanges: {
@@ -93,7 +93,7 @@
             background:"url(assets/images/Ark.jpg)"
           },
           testnet:{
-            nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
+            nethash:'167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
             peerseed:'http://5.39.9.240:4001',
             token: 'TESTARK',
             symbol: 'TѦ',
