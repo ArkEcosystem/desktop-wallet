@@ -36,12 +36,22 @@
       return false;
     }
 
-    self.showToast = function (message, variable) {
-      $mdToast.show(
-        $mdToast.simple()
-          .textContent(gettextCatalog.getString(message) + variable)
-          .hideDelay(5000)
-      );
+    self.showToast = function (message, variable, error) {
+      if (error) {
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent(gettextCatalog.getString(message) + variable)
+            .hideDelay(5000)
+            .theme("error")
+        );
+      }
+      else {
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent(gettextCatalog.getString(message) + variable)
+            .hideDelay(5000)
+        );
+      }
     }
 
     self.addAddressbookContact = function () {
@@ -58,16 +68,16 @@
         self.getContacts();
         var newcontact = { name: contactname, address: contactaddress };
         if (self.contactExists(contactname)) {
-          self.showToast('this Contact-Name is already taken, please choose another one: ', contactname);
+          self.showToast('this Contact-Name is already taken, please choose another one: ', contactname, true);
           return;
         }
-        if(!self.isAddress(contactaddress)) {
-          self.showToast('this seems to be not a valid Address: ', contactaddress);
+        if (!self.isAddress(contactaddress)) {
+          self.showToast('this seems to be not a valid Address: ', contactaddress, true);
           return;
         }
         self.contacts.push(newcontact);
         self.save();
-        self.showToast('Contact successfully added: ', contactname);
+        self.showToast('Contact successfully added: ', contactname, false);
         cancel();
       };
 
@@ -97,11 +107,11 @@
       function save(name, address) {
         self.getContacts();
         if (!self.contactExists(name)) {
-          self.showToast('this Contact-Name doesnt exist: ', name);
+          self.showToast('this Contact-Name doesnt exist: ', name, true);
           return;
         }
-        if(!self.isAddress(address)) {
-          self.showToast('this seems to be not a valid Address: ', address);
+        if (!self.isAddress(address)) {
+          self.showToast('this seems to be not a valid Address: ', address, true);
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
@@ -110,14 +120,14 @@
           }
         }
         self.save();
-        self.showToast('Contact successfully saved: ', name);
+        self.showToast('Contact successfully saved: ', name, false);
         cancel();
       };
 
       function remove(name) {
         self.getContacts();
         if (!self.contactExists(name)) {
-          self.showToast('this Contact-Name doesnt exist: ', name);
+          self.showToast('this Contact-Name doesnt exist: ', name, true);
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
@@ -127,7 +137,7 @@
           }
         }
         self.save();
-        self.showToast('Contact successfully removed: ', name);
+        self.showToast('Contact successfully removed: ', name, false);
         cancel();
       };
 
