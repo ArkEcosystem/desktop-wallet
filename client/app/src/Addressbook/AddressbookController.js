@@ -8,6 +8,9 @@
 
     var self = this;
     var contacts;
+    self.trim = function (str) {
+      return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    }
 
     self.getContacts = function () {
       self.contacts = storageService.get("contacts");
@@ -66,6 +69,14 @@
 
       function add(contactname, contactaddress) {
         self.getContacts();
+        if (self.trim(contactname) == "") {
+          self.showToast('this Contact-Name is not valid', contactname, true);
+          return;
+        }
+        if (self.trim(contactaddress) == "") {
+          self.showToast('this Contact-Address is not valid', contactaddress, true);
+          return;
+        }
         var newcontact = { name: contactname, address: contactaddress };
         if (self.contactExists(contactname)) {
           self.showToast('this Contact-Name is already taken, please choose another one: ', contactname, true);
@@ -105,6 +116,14 @@
       };
 
       function save(name, address) {
+        if (self.trim(name) == "") {
+          self.showToast('this Contact-Name is not valid', name, true);
+          return;
+        }
+        if (self.trim(address) == "") {
+          self.showToast('this Contact-Address is not valid', address, true);
+          return;
+        }
         self.getContacts();
         if (!self.contactExists(name)) {
           self.showToast('this Contact-Name doesnt exist: ', name, true);
