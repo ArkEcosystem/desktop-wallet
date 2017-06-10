@@ -42,7 +42,7 @@ Install from source:
 # Clone this repository
 git clone https://github.com/kapucoin/kapu-desktop
 # Go into the repository
-cd ark-desktop
+cd kapu-desktop
 # Install dependencies 
 npm install
 ```
