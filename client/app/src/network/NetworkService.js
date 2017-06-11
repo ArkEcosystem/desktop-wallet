@@ -81,7 +81,7 @@
         n = {
           mainnet:{ //so far same as testnet
             nethash:'167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
-            peerseed:'http://5.39.9.240:4001',
+            peerseed:'http://51.15.59.104:4001',
             forcepeer: false,
             token: 'ARK',
             symbol: 'TѦ',
@@ -94,7 +94,7 @@
           },
           testnet:{
             nethash:'167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
-            peerseed:'http://5.39.9.240:4001',
+            peerseed:'http://51.15.59.104:4001',
             token: 'TESTARK',
             symbol: 'TѦ',
             version: 0x82,
