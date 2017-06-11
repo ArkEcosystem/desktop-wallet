@@ -639,10 +639,7 @@
             transactions=transactions.sort(function(a,b){
               return b.timestamp-a.timestamp;
             });
-            transactions.forEach((t) => {
-              if(t.type == 3) 
-                t.recipientId == "Delegate Vote";
-            });
+            
             var previousTx = self.selected.transactions
             self.selected.transactions = transactions;
 
