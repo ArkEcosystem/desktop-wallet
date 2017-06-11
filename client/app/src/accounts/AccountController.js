@@ -20,7 +20,7 @@
           return function(fullId) {
             return accountService.smallId(fullId)
           }
-        }).filter('recipient', function(accountService) {
+        }).filter('recipientLabel', function(accountService) {
           return function(transaction) {
             return transaction.type == 3 ? "Delegate Vote" : transaction.recipientId;
           }
