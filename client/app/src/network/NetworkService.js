@@ -97,7 +97,7 @@
             peerseed:'http://51.15.59.104:4001',
             token: 'TESTARK',
             symbol: 'TѦ',
-            version: 0x82,
+            version: 0x17,
             explorer: 'http://texplorer.ark.io',
             background:"#222299"
           }
