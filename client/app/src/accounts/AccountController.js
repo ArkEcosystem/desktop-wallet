@@ -1082,8 +1082,9 @@
 
       function querySearch(text){
         text=text.toLowerCase();
-        var filter=self.accounts.filter(function(account){
-          return (account.address.toLowerCase().indexOf(text)>-1) || (account.username && (account.username.toLowerCase().indexOf(text)>-1));
+        var contacts = storageService.get("contacts");
+        var filter=contacts.filter(function(account){
+          return (account.address.toLowerCase().indexOf(text)>-1) || (account.name && (account.name.toLowerCase().indexOf(text)>-1));
         });
         return filter;
       }
@@ -1092,10 +1093,15 @@
         $mdDialog.hide();
       };
 
+      function checkContacts(input){
+          if(input[0] != "@") return;
+      };
+
       $scope.send = {
         data: data,
         cancel: cancel,
         next: next,
+        checkContacts: checkContacts,
         querySearch: querySearch,
         fillSendableBalance: fillSendableBalance,
         totalBalance: totalBalance(false),
