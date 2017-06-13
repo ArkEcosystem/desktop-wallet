@@ -1191,30 +1191,49 @@
       var networks=networkService.getNetworks();
 
       function save() {
-        $mdDialog.hide();
+        //these are not needed as the createNetwork now rerender automatically
+        //$mdDialog.hide();
         for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
         }
-        window.location.reload();
+        //window.location.reload();
       };
 
       function cancel() {
         $mdDialog.hide();
       };
 
+      function refreshTabs()
+      {
+          //reload networks
+          networks=networkService.getNetworks();
+          //add it back to the scope
+          $scope.send.networkKeys = Object.keys(networks);
+          $scope.send.networks = networks;
+          //tell angular that the list changed
+          $scope.$apply();
+      }
+
       function createNetwork() {
         networkService.createNetwork($scope.send.createnetwork).then(
           function(network){
-
+            refreshTabs();
           },
           formatAndToastError
         );
       };
 
+      function removeNetwork(network)
+      {
+        networkService.removeNetwork(network);
+        refreshTabs();
+      }
+
       $scope.send = {
         networkKeys: Object.keys(networks),
         networks: networks,
         createNetwork: createNetwork,
+        removeNetwork: removeNetwork,
         cancel: cancel,
         save: save
       };
@@ -1514,7 +1533,7 @@
 
       var items = [
         { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
-        { name: gettextCatalog.getString('Delete'), icon: 'delete'},
+        { name: gettextCatalog.getString('Remove'), icon: 'clear'},
       ];
 
       if(!selectedAccount.delegate){
@@ -1539,14 +1558,15 @@
           timestamp(selectedAccount);
         }
 
-        else if(action==gettextCatalog.getString("Delete")){
+        else if(action==gettextCatalog.getString("Remove")){
           var confirm = $mdDialog.confirm()
-              .title(gettextCatalog.getString('Delete Account')+ ' ' +account.address)
-              .textContent(gettextCatalog.getString('Are you sure?'))
-              .ok(gettextCatalog.getString('Delete permanently this account'))
+              .title(gettextCatalog.getString('Remove Account')+ ' ' +account.address)
+              .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
+                  'The account may be added again using the original passphrase of the account.'))
+              .ok(gettextCatalog.getString('Remove account'))
               .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
-            accountService.deleteAccount(account).then(function(){
+            accountService.removeAccount(account).then(function(){
               self.accounts = accountService.loadAllAccounts();
 
               if(self.accounts.length>0) {
@@ -1558,7 +1578,7 @@
 
               $mdToast.show(
                 $mdToast.simple()
-                  .textContent(gettextCatalog.getString('Account deleted!'))
+                  .textContent(gettextCatalog.getString('Account removed!'))
                   .hideDelay(3000)
               );
             });

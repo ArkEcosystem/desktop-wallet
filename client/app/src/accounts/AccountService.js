@@ -198,7 +198,7 @@
       }
     };
 
-    function deleteAccount(account){
+    function removeAccount(account){
       if(!account || !account.address){
         return $q.when(null);
       }
@@ -711,7 +711,7 @@
 
       getPassphrases: getPassphrases,
 
-      deleteAccount: deleteAccount,
+      removeAccount: removeAccount,
 
       fetchAccount: fetchAccount,
 
