@@ -22,11 +22,17 @@
         </md-input-container>
         <md-input-container class="md-block">
           <label translate>Passphrase</label>
-          <input ng-model="createDelegate.data.passphrase" type="password" ng-required="true">
+          <input ng-model="createDelegate.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}">
+          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
+            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
+          </md-icon>
         </md-input-container>
         <md-input-container class="md-block" ng-if="createDelegate.data.secondSignature">
           <label translate>Second Passphrase</label>
-          <input ng-model="createDelegate.data.secondpassphrase" type="password" ng-required="true">
+          <input ng-model="createDelegate.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}">
+          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
+            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
+          </md-icon>
         </md-input-container>
       </div>
     </md-dialog-content>
