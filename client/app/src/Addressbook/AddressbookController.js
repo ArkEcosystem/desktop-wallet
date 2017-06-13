@@ -25,8 +25,7 @@
     }
 
     self.isAddress = function (address) {
-      var isAddress = /^[1-9A-Za-z]+$/g;
-      return isAddress.test(address)
+      return require("arkjs").crypto.validateAddress(address);
     }
 
     self.contactExists = function (name) {
