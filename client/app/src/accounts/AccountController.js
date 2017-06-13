@@ -1055,6 +1055,10 @@
           return ;
         }
 
+        // in case of data selected from contacts
+        if($scope.send.data.toAddress.address){
+          $scope.send.data.toAddress = $scope.send.data.toAddress.address;
+        }
         // remove bad characters before and after in case of bad copy/paste
         $scope.send.data.toAddress = $scope.send.data.toAddress.trim();
         $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
