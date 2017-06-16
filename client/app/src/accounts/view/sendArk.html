@@ -26,7 +26,7 @@
             <!--<label translate>Destination Address / Contact Name</label>
              <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus tabIndex="1">-->
             <md-autocomplete md-selected-item="send.data.toAddress" md-search-text="send.searchText" md-items="contact in send.querySearch(send.searchText)"
-              md-item-text="contact.address" md-min-length="0" md-autofocus="true" md-floating-label="Type an address or a name">
+              md-item-text="contact.address" md-min-length="0" md-autofocus="true" md-floating-label="Type an address or a name" tabIndex="1">
               <md-item-template>
                 <span class="item-title">
                    <span> {{contact.name || contact.address}} </span>
