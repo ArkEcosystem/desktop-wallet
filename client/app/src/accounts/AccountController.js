@@ -1080,6 +1080,16 @@
         );
       };
 
+      function searchTextChange(text) {
+        $scope.send.data.toAddress = text;
+      }
+
+      function selectedContactChange(contact) {
+        if (contact) {
+          $scope.send.data.toAddress = contact.address;
+        }
+      }
+
       function querySearch(text){
         text=text.toLowerCase();
         var contacts = storageService.get("contacts");
@@ -1102,6 +1112,8 @@
         cancel: cancel,
         next: next,
         checkContacts: checkContacts,
+        searchTextChange: searchTextChange,
+        selectedContactChange: selectedContactChange,
         querySearch: querySearch,
         fillSendableBalance: fillSendableBalance,
         totalBalance: totalBalance(false),
