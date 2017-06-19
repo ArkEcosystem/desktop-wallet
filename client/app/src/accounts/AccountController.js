@@ -249,6 +249,15 @@
           .hideDelay(5000)
       );
     }
+    self.selectAllLanguages = function () {
+      return languages;
+    }
+
+    $scope.setLanguage = function () {
+      self.language = languages.getKeyByValue(this.selectedLanguage);
+      storageService.set("language", self.language);
+      gettextCatalog.setCurrentLanguage(self.language);
+    }
 
     function selectNextLanguage(){
       var lkeys=Object.keys(languages);
