@@ -12,11 +12,17 @@
         </md-chips>
         <md-input-container class="md-block">
           <label translate>Passphrase</label>
-          <input ng-model="voteDialog.data.passphrase" type="password" ng-required="true">
+          <input ng-model="voteDialog.data.passphrase" type="password" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" ng-required="true">
+          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
+            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
+          </md-icon>
         </md-input-container>
         <md-input-container class="md-block" ng-if="voteDialog.data.secondSignature">
           <label translate>Second Passphrase</label>
-          <input ng-model="voteDialog.data.secondpassphrase" type="password"  ng-required="true">
+          <input ng-model="voteDialog.data.secondpassphrase" type="password" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" ng-required="true">
+          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
+            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
+          </md-icon>
         </md-input-container>
       </div>
     </md-dialog-content>

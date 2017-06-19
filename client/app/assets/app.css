@@ -60,6 +60,12 @@ md-list-item > button {
   width:100%;
   text-align:left !important;
 }
+md-list-item button md-icon {
+  margin-right: 16px;
+}
+.md-button.md-focused:not(:hover):focus {
+  background-color: transparent;
+}
 
   md-list .md-button.selected {
     color: #03a9f4;
@@ -237,6 +243,7 @@ body > .md-open-menu-container {
 md-dialog {
   width: 90%;
   max-width: 700px;
+  max-height: 90%;
 }
 
 md-toast.md-error-theme .md-toast-content {
@@ -292,8 +299,21 @@ md-toast.md-error-theme .md-toast-content {
   object-fit: cover;
 }
 
+md-bottom-sheet button md-icon.material-icons {
+  font-size: 36px;
+  padding: 15px;
+}
+
 .warning {
     background-color: #FFFFD9;
     color: red;
     font-weight: 400;
+}
+
+md-input-container:not(.md-input-has-value) input:not(:focus) {
+  color: inherit;
+}
+
+md-autocomplete .md-errors-spacer{
+  min-height: 0px !important;
 }

@@ -121,9 +121,11 @@
         require('electron').remote.app.quit();
       });
     };
-
-    self.windowApp = function (action, args) {
-      return require('electron').remote.getCurrentWindow()[action](args);
+    self.windowApp = function(action, args) {
+      var curWin = require('electron').remote.getCurrentWindow();
+      if(curWin[action])
+        return curWin[action](args);
+      else return null;
     };
 
     self.openExternal = function (url) {
@@ -480,9 +482,9 @@
       });
     }
 
-    self.openMenu = function ($mdOpenMenu, ev) {
+    self.openMenu = function($mdMenuOpen, ev) {
       originatorEv = ev;
-      $mdOpenMenu(ev);
+      $mdMenuOpen(ev);
     };
 
 
@@ -815,9 +817,9 @@
       else return selectedAccount.delegates;
     };
 
-    function addDelegate(selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {} };
-      accountService.getActiveDelegates().then(function (r) { data.registeredDelegates = r; });
+    function addDelegate(selectedAccount){
+      var data={fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
+      accountService.getActiveDelegates().then(function(r){data.registeredDelegates = r;});
 
       function add() {
         function indexOfDelegates(array, item) {
@@ -958,7 +960,86 @@
       });
     };
 
-    function sendArk(selectedAccount) {
+    function timestamp(selectedAccount){
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      };
+
+      function next() {
+        // remove bad characters before and after in case of bad copy/paste
+        $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
+        if ($scope.send.data.secondpassphrase){
+          $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim();
+        }
+
+        $mdDialog.hide();
+        var smartbridge = "timestamp:"+$scope.send.data.smartbridge;
+        console.log(smartbridge);
+        accountService.createTransaction(0,
+          {
+            fromAddress: $scope.send.data.fromAddress,
+            toAddress: $scope.send.data.fromAddress,
+            amount: 1,
+            smartbridge: smartbridge,
+            masterpassphrase: $scope.send.data.passphrase,
+            secondpassphrase: $scope.send.data.secondpassphrase
+          }
+        ).then(
+          function(transaction){
+            validateTransaction(selectedAccount, transaction);
+          },
+          formatAndToastError
+        );
+      };
+
+      function openFile(){
+        var crypto = require('crypto');
+        var fs = require('fs');
+
+        require('electron').remote.dialog.showOpenDialog(function (fileNames) {
+         if (fileNames === undefined) return;
+         var fileName = fileNames[0];
+         var algo = 'sha256';
+         var shasum = crypto.createHash(algo);
+         $scope.send.data.filename = fileName;
+         $scope.send.data.smartbridge = "Calculating signature....";
+         var s = fs.ReadStream(fileName);
+
+         s.on('data', function(d) { shasum.update(d); });
+         s.on('end', function() {
+           var d = shasum.digest('utf8');
+           console.log(new Buffer(d,"utf8").toString("hex"));
+           console.log(d.toString("hex"));
+           $scope.send.data.smartbridge = d;
+         });
+        });
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        data: data,
+        openFile: openFile,
+        cancel: cancel,
+        next: next
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/timestampDocument.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
+    function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
       var data = {
         fromAddress: selectedAccount ? selectedAccount.address : '',
@@ -1017,10 +1098,21 @@
           );
       };
 
-      function querySearch(text) {
-        text = text.toLowerCase();
-        var filter = self.accounts.filter(function (account) {
-          return (account.address.toLowerCase().indexOf(text) > -1) || (account.username && (account.username.toLowerCase().indexOf(text) > -1));
+      function searchTextChange(text) {
+        $scope.send.data.toAddress = text;
+      }
+
+      function selectedContactChange(contact) {
+        if (contact) {
+          $scope.send.data.toAddress = contact.address;
+        }
+      }
+
+      function querySearch(text){
+        text=text.toLowerCase();
+        var contacts = storageService.get("contacts");
+        var filter=contacts.filter(function(account){
+          return (account.address.toLowerCase().indexOf(text)>-1) || (account.name && (account.name.toLowerCase().indexOf(text)>-1));
         });
         return filter;
       }
@@ -1029,10 +1121,17 @@
         $mdDialog.hide();
       };
 
+      function checkContacts(input){
+          if(input[0] != "@") return;
+      };
+
       $scope.send = {
         data: data,
         cancel: cancel,
         next: next,
+        checkContacts: checkContacts,
+        searchTextChange: searchTextChange,
+        selectedContactChange: selectedContactChange,
         querySearch: querySearch,
         fillSendableBalance: fillSendableBalance,
         totalBalance: totalBalance(false),
@@ -1130,28 +1229,49 @@
       function save() {
         $mdDialog.hide();
         for (var network in $scope.send.networks) {
+        //these are not needed as the createNetwork now rerender automatically
+        //$mdDialog.hide();
+        for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
         }
-        window.location.reload();
+        //window.location.reload();
       };
 
       function cancel() {
         $mdDialog.hide();
       };
 
+      function refreshTabs()
+      {
+          //reload networks
+          networks=networkService.getNetworks();
+          //add it back to the scope
+          $scope.send.networkKeys = Object.keys(networks);
+          $scope.send.networks = networks;
+          //tell angular that the list changed
+          $scope.$apply();
+      }
+
       function createNetwork() {
         networkService.createNetwork($scope.send.createnetwork).then(
-          function (network) {
-
+          function(network){
+            refreshTabs();
           },
           formatAndToastError
         );
       };
 
+      function removeNetwork(network)
+      {
+        networkService.removeNetwork(network);
+        refreshTabs();
+      }
+
       $scope.send = {
         networkKeys: Object.keys(networks),
         networks: networks,
         createNetwork: createNetwork,
+        removeNetwork: removeNetwork,
         cancel: cancel,
         save: save
       };
@@ -1450,24 +1570,30 @@
       var account = selectedAccount;
 
       var items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'visibility' },
-        { name: gettextCatalog.getString('Remove'), icon: 'clear' },
+        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
+        { name: gettextCatalog.getString('Remove'), icon: 'clear'},
       ];
 
-      if (!selectedAccount.delegate) {
-        items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer' });
-        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'local_offer' });
+      if(!selectedAccount.delegate){
+        items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
+        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity'});
       }
 
-      if (!selectedAccount.secondSignature) {
-        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'local_offer' });
+      items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user'});
+
+      if(!selectedAccount.secondSignature){
+        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock'});
       }
 
       function answer(action) {
         $mdBottomSheet.hide();
 
-        if (action == gettextCatalog.getString('Open in explorer')) {
-          openExplorer('/address/' + selectedAccount.address)
+        if(action==gettextCatalog.getString('Open in explorer')){
+          openExplorer('/address/' + selectedAccount.address);
+        }
+
+        if(action==gettextCatalog.getString('Timestamp Document')){
+          timestamp(selectedAccount);
         }
 
         else if (action == gettextCatalog.getString("Remove")) {

@@ -4,6 +4,7 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 const Menu = electron.Menu
+const openAboutWindow = require('about-window').default
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,7 +26,16 @@ function createWindow () {
     {
       label: "Application",
       submenu: [
-        { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
+        {
+            label: "About ArkClient",
+            click: () => openAboutWindow({
+              icon_path: __dirname+'/client/ark.png',
+              package_json_dir: __dirname,
+              copyright: 'Copyright (c) 2017 ARK',
+              homepage: 'https://ark.io/',
+              bug_report_url: 'https://github.com/ArkEcosystem/ark-desktop/issues'
+            })
+        },
         { type: "separator" },
         { label: "Disable screenshot protection (unsafe)", click: function() { mainWindow.setContentProtection(false) }},
         { type: "separator" },
