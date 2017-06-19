@@ -172,6 +172,14 @@
 
     self.connectedPeer={isConnected:false};
 
+    Object.prototype.getKeyByValue = function (value) {
+      for (var prop in this) {
+        if (this.hasOwnProperty(prop)) {
+          if (this[prop] === value)
+            return prop;
+        }
+      }
+    }
     //refreshing displayed account every 8s
     setInterval(function(){
       if(self.selected){
