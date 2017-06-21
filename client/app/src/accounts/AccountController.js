@@ -129,6 +129,20 @@
       else return null;
     };
 
+    self.clearData = function() {
+      var confirm = $mdDialog.confirm()
+            .title('Are you sure?')
+            .textContent('All your data, including created accounts, networks and contacts will be lost and reset to default.')
+            .ariaLabel('Confirm')
+            .ok('Yes')
+            .cancel('Cancel');
+
+      $mdDialog.show(confirm).then(function() {
+        storageService.clearData();
+        self.windowApp('reload');
+      });
+    };
+
     self.openExternal = function(url){
       require('electron').shell.openExternal(url);
     };
