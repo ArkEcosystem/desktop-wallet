@@ -1,0 +1,30 @@
+<md-dialog aria-label="Add Watch-Only Address" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Add Watch-Only Address </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="send.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <label translate>Address</label>
+          <input ng-model="address" type="text">
+        </md-input-container>
+
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="send.validateAddress()">
+        <translate>Add</translate>
+      </md-button>
+      <md-button ng-click="send.cancel()" style="margin-right:20px;">
+        <translate>Close</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
