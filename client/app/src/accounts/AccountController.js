@@ -131,11 +131,11 @@
 
     self.clearData = function() {
       var confirm = $mdDialog.confirm()
-            .title('Are you sure?')
-            .textContent('All your data, including created accounts, networks and contacts will be lost and reset to default.')
-            .ariaLabel('Confirm')
-            .ok('Yes')
-            .cancel('Cancel');
+            .title(gettextCatalog.getString('Are you sure?'))
+            .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
+            .ariaLabel(gettextCatalog.getString('Confirm'))
+            .ok(gettextCatalog.getString('Yes'))
+            .cancel(gettextCatalog.getString('Cancel'));
 
       $mdDialog.show(confirm).then(function() {
         storageService.clearData();
