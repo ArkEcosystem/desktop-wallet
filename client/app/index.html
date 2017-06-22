@@ -195,7 +195,7 @@
            <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">power_settings_new</md-icon>
            </md-button>
-            <md-menu-content flex layout-padding width="6">
+            <md-menu-content flex layout-padding width="6" style="min-height: 320px">
                 <md-list>
                   <md-list-item>
                     <md-button aria-label="Close App" ng-click="ul.closeApp()">
@@ -227,7 +227,12 @@
                       <translate>Toggle Full Screen</translate>
                     </md-button>
                   </md-list-item>
-
+                  <md-list-item>
+                    <md-button aria-label="Reset Data" ng-click="ul.clearData()">
+                      <md-icon>delete_forever</md-icon>
+                      <translate>Reset Data</translate>
+                    </md-button>
+                  </md-list-item>
                 </md-list>
             </md-menu-content>
           </md-menu>
