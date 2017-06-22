@@ -790,38 +790,6 @@
         fullscreen: true
       });
     };
-    /*function addWatchOnlyAddress() {
-      var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Add Watch-Only Address'))
-          .textContent(gettextCatalog.getString('Please enter a new address.'))
-          .placeholder(gettextCatalog.getString('address'))
-          .ariaLabel(gettextCatalog.getString('Address'))
-          .ok(gettextCatalog.getString('Add'))
-          .cancel(gettextCatalog.getString('Cancel'));
-      $mdDialog.show(confirm).then(function(address) {
-        var isAddress = /^[1-9A-Za-z]+$/g;
-        if(isAddress.test(address)){
-          accountService.fetchAccount(address).then(function(account){
-            self.accounts.push(account);
-            selectAccount(account);
-            $mdToast.show(
-              $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account added!'))
-                .hideDelay(3000)
-            );
-          });
-        }
-        else{
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent(gettextCatalog.getString('Address')+" "+address+" "+gettextCatalog.getString('is not recognised'))
-              .hideDelay(3000)
-          );
-        }
-
-      });
-
-    };*/
 
     function getAllDelegates(selectedAccount){
       function arrayUnique(array) {
