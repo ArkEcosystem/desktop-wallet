@@ -42,6 +42,9 @@
          <span flex></span>
 
          <md-button ng-click="ul.selected=null">
+           <md-tooltip>
+          <translate>Home</translate>
+        </md-tooltip>
            <md-icon md-font-library="material-icons">home</md-icon>
          </md-button>
 
@@ -69,15 +72,22 @@
           </any>
 
 
+         <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Settings</translate>
+        </md-tooltip> 
          <md-menu>
            <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">settings</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6" style="min-height: 400px">
                 <md-list>
-                  <md-list-item>
-                    <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
-                  </md-list-item>
+                  <md-list-item><b translate>Language</b>
+                    <!--<md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>-->
+                    <md-select class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                      <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
+                    </md-select>
+                </md-list-item>
                   <md-list-item>
                     <md-button aria-label="Import Account" ng-click="ul.importAccount()">
                       <md-icon>file_download</md-icon>
@@ -112,7 +122,11 @@
                   </md-list-item>
             </md-menu-content>
           </md-menu>
-
+          </any>
+        <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Network</translate>
+        </md-tooltip>
          <md-menu>
            <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">{{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
@@ -137,7 +151,11 @@
                 </md-list>
             </md-menu-content>
           </md-menu>
-
+          </any>
+        <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Marketstatistics</translate>
+        </md-tooltip>
           <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
             <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
               <md-icon md-font-library="material-icons">insert_chart</md-icon>
@@ -168,7 +186,11 @@
                </md-list>
            </md-menu-content>
          </md-menu>
-
+         </any>
+        <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Application</translate>
+        </md-tooltip>
          <md-menu>
            <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">power_settings_new</md-icon>
@@ -209,6 +231,7 @@
                 </md-list>
             </md-menu-content>
           </md-menu>
+          </any>
        <!-- <md-button ng-click="ul.closeApp()">
          <md-icon md-font-library="material-icons">power_settings_new</md-icon>
        </md-button> -->
