@@ -305,3 +305,11 @@ md-bottom-sheet button md-icon.material-icons {
     color: red;
     font-weight: 400;
 }
+
+md-input-container:not(.md-input-has-value) input:not(:focus) {
+  color: inherit;
+}
+
+md-autocomplete .md-errors-spacer{
+  min-height: 0px !important;
+}
