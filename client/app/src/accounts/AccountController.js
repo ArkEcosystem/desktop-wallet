@@ -172,14 +172,7 @@
 
     self.connectedPeer={isConnected:false};
 
-    Object.prototype.getKeyByValue = function (value) {
-      for (var prop in this) {
-        if (this.hasOwnProperty(prop)) {
-          if (this[prop] === value)
-            return prop;
-        }
-      }
-    }
+
     //refreshing displayed account every 8s
     setInterval(function(){
       if(self.selected){
@@ -262,11 +255,20 @@
     }
 
     $scope.setLanguage = function () {
-      self.language = languages.getKeyByValue(this.selectedLanguage);
+      function getlanguage(value) {
+        for (var prop in languages) {
+          if (languages.hasOwnProperty(prop)) {
+            if (languages[prop] === value)
+              return prop;
+          }
+        }
+      }
+      self.language = getlanguage(this.selectedLanguage);
       storageService.set("language", self.language);
       gettextCatalog.setCurrentLanguage(self.language);
     }
 
+    //TODO: deprecated
     function selectNextLanguage(){
       var lkeys=Object.keys(languages);
       if(self.language) self.language=lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
@@ -767,7 +769,7 @@
      * Add an account
      */
     function addWatchOnlyAddress(){
-      
+
       function cancel() {
         $mdDialog.hide();
       };
