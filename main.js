@@ -3,12 +3,19 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
+
+const ledger = require('ledgerco')
+const LedgerArk = require('./LedgerArk')
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+
+let ledgercomm
 
 function createWindow () {
   // Create the browser window.
@@ -20,6 +27,58 @@ function createWindow () {
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
+
+
+  ledger.comm_node.create_async().then((comm) => {
+    ledgercomm = comm
+  }).fail((error) => {
+    console.log(error)
+  })
+
+  ipcMain.on('ledger', (event, arg) => {
+    ledger.comm_node.create_async().then((comm) => {
+      ledgercomm = comm
+    }).fail((error) => {
+      console.log(error)
+    }).then(()=>{
+      if(!ledgercomm){
+        event.returnValue = "connection not initialised"
+        return
+      }
+      ark = new LedgerArk(ledgercomm)
+      if(arg.action == "signMessage"){
+        ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
+          (result) => { event.returnValue = result }
+        ).fail(
+          (error) => { event.returnValue = error }
+        )
+      }
+      else if(arg.action == "signTransaction"){
+        ark.signTransaction_async(arg.path, arg.data).then(
+          (result) => { event.returnValue = result }
+        ).fail(
+          (error) => { event.returnValue = error }
+        )
+      }
+      else if(arg.action == "getAddress"){
+        ark.getAddress_async(arg.path, true, true).then(
+          (result) => { event.returnValue = result }
+        ).fail(
+          (error) => { event.returnValue = error }
+        )
+      }
+      else if(arg.action == "getConfiguration"){
+        ark.getAppConfiguration_async().then(
+          (result) => { event.returnValue = result }
+        ).fail(
+          (error) => { event.returnValue = error }
+        )
+      }
+    })
+
+
+});
+
 
   // Create the Application's main menu
   var template = [
