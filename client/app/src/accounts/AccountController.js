@@ -186,6 +186,14 @@
 
     self.connectedPeer={isConnected:false};
 
+    Object.prototype.getKeyByValue = function (value) {
+      for (var prop in this) {
+        if (this.hasOwnProperty(prop)) {
+          if (this[prop] === value)
+            return prop;
+        }
+      }
+    }
     //refreshing displayed account every 8s
     setInterval(function(){
       if(self.selected){
@@ -262,6 +270,15 @@
           .textContent(gettextCatalog.getString('Copied to clipboard'))
           .hideDelay(5000)
       );
+    }
+    self.selectAllLanguages = function () {
+      return languages;
+    }
+
+    $scope.setLanguage = function () {
+      self.language = languages.getKeyByValue(this.selectedLanguage);
+      storageService.set("language", self.language);
+      gettextCatalog.setCurrentLanguage(self.language);
     }
 
     function selectNextLanguage(){
@@ -763,16 +780,15 @@
     /**
      * Add an account
      */
-    function addWatchOnlyAddress() {
-      var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Add Watch-Only Address'))
-          .textContent(gettextCatalog.getString('Please enter a new address.'))
-          .placeholder(gettextCatalog.getString('address'))
-          .ariaLabel(gettextCatalog.getString('Address'))
-          .ok(gettextCatalog.getString('Add'))
-          .cancel(gettextCatalog.getString('Cancel'));
-      $mdDialog.show(confirm).then(function(address) {
+    function addWatchOnlyAddress(){
+      
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      function validateAddress() {
         var isAddress = /^[1-9A-Za-z]+$/g;
+        var address = $scope.address;
         if(isAddress.test(address)){
           accountService.fetchAccount(address).then(function(account){
             self.accounts.push(account);
@@ -783,6 +799,7 @@
                 .hideDelay(3000)
             );
           });
+          cancel();
         }
         else{
           $mdToast.show(
@@ -792,8 +809,20 @@
           );
         }
 
-      });
+      };
 
+      $scope.send = {
+        cancel: cancel,
+        validateAddress: validateAddress
+      };
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/addWatchOnlyAddress.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope,
+        fullscreen: true
+      });
     };
 
     function getAllDelegates(selectedAccount){
@@ -1279,8 +1308,6 @@
         fullscreen: true
       });
     };
-
-
 
     function openPassphrasesDialog(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);

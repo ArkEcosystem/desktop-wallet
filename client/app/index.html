@@ -33,7 +33,7 @@
        <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
          <img src="ark.png" alt="" height="30">
          <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]">{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</md-button>
-         <md-button ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' md-colors="{background:'green'}" aria-label="New version available!"><translate>New version available!</translate></md-button>
+         <md-button ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' md-colors="{background:'default-green'}" aria-label="New version available!"><translate>New version available!</translate></md-button>
          <md-button ng-if="ul.selected" class="menu" hide-gt-md ng-click="ul.toggleList()" aria-label="Show Account List">
            <md-icon md-svg-icon="menu" ></md-icon>
          </md-button>
@@ -42,6 +42,9 @@
          <span flex></span>
 
          <md-button ng-click="ul.selected=null">
+           <md-tooltip>
+          <translate>Home</translate>
+        </md-tooltip>
            <md-icon md-font-library="material-icons">home</md-icon>
          </md-button>
         
@@ -69,15 +72,22 @@
           </any>
 
 
+         <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Settings</translate>
+        </md-tooltip> 
          <md-menu>
            <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">settings</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6" style="min-height: 400px">
                 <md-list>
-                  <md-list-item>
-                    <b translate>Language</b> <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
-                  </md-list-item>
+                  <md-list-item><b translate>Language</b>
+                    <!--<md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>-->
+                    <md-select class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                      <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
+                    </md-select>
+                </md-list-item>
                   <md-list-item>
                     <md-button aria-label="Import Account" ng-click="ul.importAccount()">
                       <md-icon>file_download</md-icon>
@@ -112,7 +122,11 @@
                   </md-list-item>
             </md-menu-content>
           </md-menu>
-
+          </any>
+        <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Network</translate>
+        </md-tooltip>
          <md-menu>
            <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">{{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
@@ -128,16 +142,20 @@
                   <md-list-item>
                     <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
                   </md-list-item>
-                  <md-list-item md-colors="{background:'red' }" ng-if="!ul.connectedPeer.isConnected">
+                  <md-list-item md-colors="{background:'default-red' }" ng-if="!ul.connectedPeer.isConnected">
                     {{ul.connectedPeer.error}}
                   </md-list-item>
-                  <md-list-item md-colors="{background:'green' }" ng-if="ul.connectedPeer.isConnected">
+                  <md-list-item md-colors="{background:'default-green' }" ng-if="ul.connectedPeer.isConnected">
                     <b translate>Delay</b> <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
                   </md-list-item>
                 </md-list>
             </md-menu-content>
           </md-menu>
-
+          </any>
+        <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Marketstatistics</translate>
+        </md-tooltip>
           <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
             <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
               <md-icon md-font-library="material-icons">insert_chart</md-icon>
@@ -151,11 +169,11 @@
                  <md-list-item>
                    <b translate>Change 1h/7h/7d</b>
                    <span class="md-secondary">
-                     <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
                      /
-                     <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span>
                      /
-                     <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
                    </span>
                  </md-list-item>
                  <md-list-item>
@@ -168,7 +186,11 @@
                </md-list>
            </md-menu-content>
          </md-menu>
-
+         </any>
+        <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Application</translate>
+        </md-tooltip>
          <md-menu>
            <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">power_settings_new</md-icon>
@@ -200,7 +222,7 @@
                     </md-button>
                   </md-list-item>
                   <md-list-item>
-                    <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
+                    <md-button md-colors="{background: (ul.windowApp('isFullScreen') ? 'default-accent' : '')}" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
                       <md-icon>fullscreen</md-icon>
                       <translate>Toggle Full Screen</translate>
                     </md-button>
@@ -214,6 +236,7 @@
                 </md-list-item>
             </md-menu-content>
           </md-menu>
+          </any>
        <!-- <md-button ng-click="ul.closeApp()">
          <md-icon md-font-library="material-icons">power_settings_new</md-icon>
        </md-button> -->
@@ -273,11 +296,11 @@
                  <md-list-item>
                    <b translate>Change 1h/7h/7d</b>
                    <span class="md-secondary">
-                     <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span>
                      /
-                     <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span>
                      /
-                     <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'green':'red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
+                     <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
                    </span>
                  </md-list-item>
                  <md-list-item>
@@ -320,7 +343,7 @@
                 My Accounts
               </h2>
             </md-list-item>
-            <md-list-item  md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+            <md-list-item  md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'default-primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
                 <span  style="white-space: nowrap;">
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
@@ -333,7 +356,7 @@
                 Watch-Only Addresses
               </h2>
             </md-list-item>
-            <md-list-item md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.otherAccounts() track by $index">
+            <md-list-item md-colors="{background: (it.address === ul.selected.address ? 'default-primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.otherAccounts() track by $index">
                 <span style="white-space: nowrap;">
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
@@ -402,8 +425,8 @@
                         <td md-cell>{{it.confirmations}}</td>
                         <td md-cell>{{it.date | date: 'short'}}</td>
                         <td md-cell>{{it.label}}</td>
-                        <td ng-if="it.total>=0" md-cell><md-button disabled md-colors="{'background' : 'green-200' }">+{{it.humanTotal}}</md-button></td>
-                        <td ng-if="it.total<0" md-cell><md-button disabled md-colors="{'background' : 'red-200' }">{{it.humanTotal}}</md-button></td>
+                        <td ng-if="it.total>=0" md-cell><md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button></td>
+                        <td ng-if="it.total<0" md-cell><md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a></td>
                         <td md-cell>{{it.vendorField}}</td>
@@ -658,8 +681,8 @@
               </md-table-container>
 
               <md-table-container  ng-if="ul.selected.virtual" flex="100">
-                <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'red'}"><translate>Vote</translate></md-button>
-                <md-button ng-click="ul.addDelegate(ul.selected)" md-colors="{background:'green'}"><translate>Add Delegate</translate></md-button>
+                <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'default-red'}"><translate>Vote</translate></md-button>
+                <md-button ng-click="ul.addDelegate(ul.selected)" md-colors="{background:'default-green'}"><translate>Add Delegate</translate></md-button>
                 <a href="#" ng-click='ul.openExplorer("/delegateMonitor")'><translate>Open Delegate Monitor</translate></a>
                 <table md-table md-row-select multiple ng-model="ul.selected.selectedVotes">
                   <thead md-head md-order="query.order">
@@ -721,7 +744,7 @@
                 <md-list-item>
                   <h3><translate>Default</translate> {{ul.currency.symbol}} {{(ul.getDefaultValue(ul.selected)/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</h3>
                   <span class="md-secondary">
-                    <md-button md-block md-colors="{'background' : ul.getDefaultValue(ul.selected)>0 ? 'green-200':'red-200' }"> {{ul.getDefaultValue(ul.selected)/100000000}}</md-button>
+                    <md-button md-block md-colors="{'background' : ul.getDefaultValue(ul.selected)>0 ? 'default-green-200':'default-red-200' }"> {{ul.getDefaultValue(ul.selected)/100000000}}</md-button>
                   </span>
                 </md-list-item>
                 <md-list-item ng-repeat="folder in ul.selected.virtual.getFolders()">
@@ -766,8 +789,8 @@
           <md-tab ng-if="ul.selected.delegate">
             <md-tab-label>
               <translate>Delegate</translate>
-              <md-icon md-colors="{'color' : 'red' }" ng-if="ul.selected.delegate.rate>51" md-font-library="material-icons">close</md-icon>
-              <md-icon md-colors="{'color' : 'green' }" ng-if="ul.selected.delegate.rate<52" md-font-library="material-icons">check</md-icon>
+              <md-icon md-colors="{'color' : 'default-red' }" ng-if="ul.selected.delegate.rate>51" md-font-library="material-icons">close</md-icon>
+              <md-icon md-colors="{'color' : 'default-green' }" ng-if="ul.selected.delegate.rate<52" md-font-library="material-icons">check</md-icon>
             </md-tab-label>
             <md-tab-body>
               <md-list-item>
