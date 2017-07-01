@@ -70,7 +70,8 @@
           <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
           <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
         </md-input-container>
-        <md-input-container class="md-block">
+
+        <md-input-container ng-if="!send.data.ledger" class="md-block">
           <label translate>Passphrase</label>
           <input ng-model="send.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" tabIndex="4">
           <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
@@ -94,7 +95,8 @@
       <span flex></span>
       <!-- workaround for pull first item on left -->
       <md-button type="submit" ng-disabled="sendArkForm.$invalid" tabIndex="6">
-        <translate>Next</translate>
+        <translate ng-if="!send.data.ledger">Next</translate>
+        <translate ng-if="send.data.ledger">Sign with Ledger</translate>
       </md-button>
       <md-button ng-click="send.cancel()" style="margin-right:20px;" tabIndex="7">
         <translate>Cancel</translate>

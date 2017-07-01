@@ -92,13 +92,13 @@
             },
             background:"url(assets/images/Ark.jpg)"
           },
-          testnet:{
-            nethash:'6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
-            peerseed:'http://5.39.9.240:4001',
-            token: 'TESTARK',
-            symbol: 'TѦ',
-            version: 0x82,
-            explorer: 'http://texplorer.ark.io',
+          devnet:{
+            nethash:'578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23',
+            peerseed:'http://167.114.29.55:4002',
+            token: 'DARK',
+            symbol: 'DѦ',
+            version: 30,
+            explorer: 'http://dexplorer.ark.io',
             background:"#222299"
           }
         };
@@ -294,7 +294,7 @@
     function getConnection(){
       return connection.promise;
     }
-    
+
     function getLatestClientVersion() {
         var deferred = $q.defer();
         var url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest';

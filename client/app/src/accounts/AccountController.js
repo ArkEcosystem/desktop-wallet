@@ -188,11 +188,37 @@
 
 
     //refreshing displayed account every 8s
-    setInterval(function(){
+    $interval(function(){
       if(self.selected){
         self.refreshCurrentAccount();
       }
     }, 8*1000);
+
+    // detect Ledger
+    $interval(function(){
+      if(!self.ledgerAccounts && self.ledger && self.ledger.connected){
+        self.ledgerAccounts = ledgerService.getBip44Accounts();
+      }
+      if(ledgerService.detect().status == "Success"){
+        self.ledger = ledgerService.isAppLaunched();
+        if(!self.ledger.connected){
+          self.ledgerAccounts = null;
+        }
+      }
+      else {
+        self.ledgerAccounts = null;
+        self.ledger = {connected: false};
+      }
+    }, 2*1000);
+
+    self.selectLedgerAccount = function (account){
+      if(!account && self.ledgerAccounts){
+        account = self.ledgerAccounts[0];
+      }
+      if(account){
+        self.gotoAddress(account.address);
+      }
+    };
 
     self.connection = networkService.getConnection();
 
@@ -672,7 +698,7 @@
               return b.timestamp-a.timestamp;
             });
 
-            var previousTx = self.selected.transactions
+            var previousTx = self.selected.transactions;
             self.selected.transactions = transactions;
 
             var playSong = storageService.get('playFundsReceivedSong');
@@ -715,8 +741,9 @@
      * @param menuId
      */
     function selectAccount (account) {
-      var currentaddress=account.address;
+      var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
+      console.log(self.selected);
       if(!self.selected.selectedVotes){
         if(self.selected.delegates){
           self.selected.selectedVotes = self.selected.delegates.slice(0);
@@ -744,7 +771,7 @@
                 return b.timestamp-a.timestamp;
               });
 
-              var previousTx = self.selected.transactions
+              var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
               var playSong = storageService.get('playFundsReceivedSong');
@@ -1069,6 +1096,7 @@
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
       var data={
+        ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
         passphrase: passphrases[0] ? passphrases[0] : '',
@@ -1114,6 +1142,8 @@
         $mdDialog.hide();
         accountService.createTransaction(0,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.send.data.fromAddress,
             toAddress: $scope.send.data.toAddress,
             amount: parseInt($scope.send.data.amount*100000000),
@@ -1123,6 +1153,7 @@
           }
         ).then(
           function(transaction){
+            console.log(transaction);
             validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
@@ -1142,6 +1173,9 @@
       function querySearch(text){
         text=text.toLowerCase();
         var contacts = storageService.get("contacts");
+        if(!contacts){
+          return [];
+        }
         var filter=contacts.filter(function(account){
           return (account.address.toLowerCase().indexOf(text)>-1) || (account.name && (account.name.toLowerCase().indexOf(text)>-1));
         });
@@ -1259,7 +1293,7 @@
 
       function save() {
         //these are not needed as the createNetwork now rerender automatically
-        //$mdDialog.hide();
+        $mdDialog.hide();
         for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
         }

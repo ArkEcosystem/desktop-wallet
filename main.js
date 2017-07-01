@@ -15,7 +15,7 @@ const LedgerArk = require('./LedgerArk')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-let ledgercomm
+var ledgercomm
 
 function createWindow () {
     // Create the browser window.t
@@ -33,54 +33,80 @@ function createWindow () {
     mainWindow.show()
   })
 
-
-  ledger.comm_node.create_async().then((comm) => {
-    ledgercomm = comm
-  }).fail((error) => {
-    console.log(error)
-  })
-
-  ipcMain.on('ledger', (event, arg) => {
-    ledger.comm_node.create_async().then((comm) => {
-      ledgercomm = comm
-    }).fail((error) => {
-      console.log(error)
-    }).then(()=>{
-      if(!ledgercomm){
-        event.returnValue = "connection not initialised"
-        return
+  setInterval(()=>{
+    ledger.comm_node.list_async().then((deviceList) => {
+      if(deviceList.length > 0 && !ledgercomm){
+        ledger.comm_node.create_async().then((comm) => {
+          ledgercomm = comm
+        }).fail((error) => {
+          //console.log(error)
+        })
       }
-      ark = new LedgerArk(ledgercomm)
-      if(arg.action == "signMessage"){
-        ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
-          (result) => { event.returnValue = result }
-        ).fail(
-          (error) => { event.returnValue = error }
-        )
-      }
-      else if(arg.action == "signTransaction"){
-        ark.signTransaction_async(arg.path, arg.data).then(
-          (result) => { event.returnValue = result }
-        ).fail(
-          (error) => { event.returnValue = error }
-        )
-      }
-      else if(arg.action == "getAddress"){
-        ark.getAddress_async(arg.path, true, true).then(
-          (result) => { event.returnValue = result }
-        ).fail(
-          (error) => { event.returnValue = error }
-        )
-      }
-      else if(arg.action == "getConfiguration"){
-        ark.getAppConfiguration_async().then(
-          (result) => { event.returnValue = result }
-        ).fail(
-          (error) => { event.returnValue = error }
-        )
+      else if(deviceList.length == 0){
+        ledgercomm = null
       }
     })
+  },1000)
 
+  ipcMain.on('ledger', (event, arg) => {
+    if(arg.action == "detect"){
+      event.returnValue = {
+        status: ledgercomm?"Success":"Failure"
+      }
+    }
+    else {
+      if(!ledgercomm){
+        event.returnValue = "connection not initialised"
+      }
+      else try{
+        ark = new LedgerArk(ledgercomm)
+        if(arg.action == "signMessage"){
+          ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
+            (result) => { event.returnValue = result }
+          ).fail(
+            (error) => { event.returnValue = error }
+          )
+        }
+        else if(arg.action == "signTransaction"){
+          ark.signTransaction_async(arg.path, arg.data).then(
+            (result) => { event.sender.send('transactionSigned', result) }
+          ).fail(
+            (error) => { event.sender.send('transactionSigned', {error:error}) }
+          )
+        }
+        else if(arg.action == "getAddress"){
+          ark.getAddress_async(arg.path).then(
+            (result) => { event.returnValue = result }
+          ).fail(
+            (error) => { event.returnValue = error }
+          )
+        }
+        else if(arg.action == "getConfiguration"){
+          ark.getAppConfiguration_async().then((result) => {
+              result.connected = true
+              event.returnValue = result
+            }
+          ).fail((error) => {
+              var result = {
+                connected: false,
+                message: error
+              }
+              ledgercomm.close_async()
+              ledgercomm = null
+              event.returnValue = result
+            }
+          )
+        }
+      } catch(error){
+        ledgercomm.close_async()
+        ledgercomm = null
+        var result = {
+          connected: false,
+          message: "Cannot connect to Ark application"
+        }
+        event.returnValue = result
+      }
+    }
 
 });
 

@@ -8,12 +8,12 @@ var LedgerArk = function(comm) {
 	this.comm.setScrambleKey('w0w');
 }
 
-LedgerArk.prototype.getAddress_async = function(path, boolDisplay, boolChaincode) {
+LedgerArk.prototype.getAddress_async = function(path) {
 	var splitPath = utils.splitPath(path);
 	var buffer = new Buffer(5 + 1 + splitPath.length * 4);
 	buffer[0] = 0xe0;
 	buffer[1] = 0x02;
-	buffer[2] = 0x01;
+	buffer[2] = 0x00;
 	buffer[3] = 0x40;
 	buffer[4] = 1 + splitPath.length * 4;
 	buffer[5] = splitPath.length;
@@ -22,15 +22,12 @@ LedgerArk.prototype.getAddress_async = function(path, boolDisplay, boolChaincode
 	});
 	return this.comm.exchange(buffer.toString('hex'), [0x9000]).then(function(response) {
 		var result = {};
-    console.log(response);
+    //console.log(response);
 		var response = new Buffer(response, 'hex');
 		var publicKeyLength = response[0];
 		var addressLength = response[1 + publicKeyLength];
 		result['publicKey'] = response.slice(1, 1 + publicKeyLength).toString('hex');
 		result['address'] = response.slice(1 + publicKeyLength + 1, 1 + publicKeyLength + 1 + addressLength).toString('ascii');
-		if (boolChaincode) {
-			result['chainCode'] = response.slice(1 + publicKeyLength + 1 + addressLength, 1 + publicKeyLength + 1 + addressLength + 32).toString('hex');
-		}
 		return result;
 	});
 }
@@ -51,6 +48,10 @@ LedgerArk.prototype.signTransaction_async = function(path, rawTxHex) {
 		buffer[2] = (offset == 0 ? 0x00 : 0x80);
 		buffer[3] = 0x40;
 		buffer[4] = (offset == 0 ? 1 + splitPath.length * 4 + chunkSize : chunkSize);
+		// console.log(rawTx);
+		// console.log(buffer.toString("hex"));
+		// console.log(chunkSize);
+		// console.log(maxChunkSize);
 		if (offset == 0) {
 			buffer[5] = splitPath.length;
 			splitPath.forEach(function (element, index) {
@@ -65,18 +66,17 @@ LedgerArk.prototype.signTransaction_async = function(path, rawTxHex) {
 		offset += chunkSize;
 	}
 	return utils.foreach(apdus, function(apdu) {
-    console.log(apdu);
+    //console.log(apdu);
 		return self.comm.exchange(apdu, [0x9000]).then(function(apduResponse) {
 			response = apduResponse;
+			//console.log(apduResponse);
 		})
 	}).then(function() {
-		response = new Buffer(response, 'hex');
+		//console.log(response);
 		var result = {};
-		result['v'] = response.slice(0, 1).toString('hex');
-		result['r'] = response.slice(1, 1 + 32).toString('hex');
-		result['s'] = response.slice(1 + 32, 1 + 32 + 32).toString('hex');
+		result.signature = response.substring(0, response.length-4);
 		return result;
-	})
+	});
 }
 
 LedgerArk.prototype.getAppConfiguration_async = function() {
