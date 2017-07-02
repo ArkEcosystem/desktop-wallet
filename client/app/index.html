@@ -794,7 +794,7 @@
                   </div>
                   <span class="md-secondary">
                     <md-input-container>
-                      <label>{{'Amount'|translate}} (ARK)</label>
+                      <label>{{'Amount'|translate}} ({{ul.network.token}})</label>
                       <input ng-model-options="{ getterSetter: true }" ng-model="ul.selected.virtual.uservalue(folder)" ng-change="ul.saveFolder(ul.selected,folder)" type="number" >
                       <div class="hint"> {{ul.currency.symbol}} {{(ul.selected.virtual[folder].amount/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}} </div>
                     </md-input-container>

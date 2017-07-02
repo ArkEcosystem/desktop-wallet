@@ -690,12 +690,16 @@
 
     return {
       loadAllAccounts : function() {
-        var accounts = storageService.get("addresses").filter(function(a){
-          return !a.ledger;
-        });
+        var accounts = storageService.get("addresses");
+
         if(!accounts){
           return [];
         }
+
+        accounts = accounts.filter(function(a){
+          return !a.ledger;
+        });
+
         var uniqueaccounts=[];
         for(var i in accounts){
           if(uniqueaccounts.indexOf(accounts[i])==-1){
