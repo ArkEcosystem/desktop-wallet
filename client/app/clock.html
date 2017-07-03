@@ -30,6 +30,7 @@
         <div id="clock_france"></div>
         <div id="clock_china"></div>
         <div id="clock_hawaii"></div>
+        <div id="clock_moscow"></div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
@@ -68,6 +69,15 @@
                 {
                     title: 'Hawaii',
                     offset: '-10',
+                    dst: false,
+                    timeformat: 'HH:mm',
+                    imgpath: 'assets/'
+                });
+                
+                $('#clock_moscow').jClocksGMT(
+                {
+                    title: 'Moscow',
+                    offset: '+3',
                     dst: false,
                     timeformat: 'HH:mm',
                     imgpath: 'assets/'
