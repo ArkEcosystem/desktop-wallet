@@ -375,10 +375,10 @@
         }
 
         var account=getAccount(config.fromAddress);
-        // if(config.amount+10000000>account.balance){
-        //   deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress);
-        //   return deferred.promise;
-        // }
+        if(config.amount+10000000>account.balance){
+          deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress);
+          return deferred.promise;
+        }
 
         try{
           var transaction=ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase);
@@ -427,7 +427,23 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
+          return deferred.promise;
+        }
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -441,6 +457,7 @@
           deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress+", "+gettextCatalog.getString("you need at least 25 ARK to register delegate"));
           return deferred.promise;
         }
+        console.log(config);
         try{
           var transaction=ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase);
         }
@@ -448,7 +465,23 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
+          return deferred.promise;
+        }
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -469,7 +502,23 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
+          return deferred.promise;
+        }
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
