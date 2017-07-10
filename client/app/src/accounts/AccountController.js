@@ -750,6 +750,7 @@
         }
         else self.selected.selectedVotes=[];
       }
+      fillAllDelegates();
       accountService
         .refreshAccount(self.selected)
         .then(function(account){
@@ -853,6 +854,21 @@
         fullscreen: true
       });
     };
+
+    function fillAllDelegates()
+    {
+      accountService.getActiveDelegates().then(function(delegatelist){self.selected.allActiveDelegates = delegatelist});
+      accountService.getVotedDelegates(self.selected.address).then(function(delegatelist){self.selected.votedDelegates = delegatelist});
+      self.selected.votes = [];
+      for(var i=0; i<self.selected.votedDelegates.length; ++i) {
+        for(var j=0; j<self.selected.allActiveDelegates.length; ++i) {
+          if(self.selected.votedDelegates[i].address == self.selected.allActiveDelegates[j].address)
+          {
+            self.selected.votes.push(self.selected.allActiveDelegates[j]);
+          } 
+        }
+      }
+    }
 
     function getAllDelegates(selectedAccount){
       function arrayUnique(array) {
@@ -960,7 +976,7 @@
     };
 
     function vote(selectedAccount){
-      var votes=accountService.createDiffVote(selectedAccount.address,selectedAccount.selectedVotes);
+      var votes=accountService.createDiffVote(selectedAccount.address,selectedAccount.votes);
       if(!votes || votes.length==0){
         $mdToast.show(
           $mdToast.simple()

@@ -705,10 +705,9 @@
               </md-table-container>
 
               <md-table-container  ng-if="ul.selected.virtual" flex="100">
-                <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'default-red'}"><translate>Vote</translate></md-button>
-                <md-button ng-click="ul.addDelegate(ul.selected)" md-colors="{background:'default-green'}"><translate>Add Delegate</translate></md-button>
+                <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'default-blue'}"><translate>Save Votes</translate></md-button>
                 <a href="#" ng-click='ul.openExplorer("/delegateMonitor")'><translate>Open Delegate Monitor</translate></a>
-                <table md-table md-row-select multiple ng-model="ul.selected.selectedVotes">
+                <table md-table md-row-select multiple ng-model="ul.selected.votes">
                   <thead md-head md-order="query.order">
                     <tr md-row>
                       <th md-column md-numeric md-order-by="rate"><translate>Rank</translate></th>
@@ -719,7 +718,7 @@
                     </tr>
                   </thead>
                   <tbody md-body>
-                    <tr md-row md-select="it" md-select-id="id" md-auto-select ng-repeat="it in ul.getAllDelegates(ul.selected) | orderBy: query.order">
+                    <tr md-row md-select="it" md-select-id="address" md-auto-select ng-repeat="it in ul.selected.allActiveDelegates | orderBy: query.order">
                       <td md-cell>{{it.rate}}</td>
                       <td md-cell>{{it.username}}</td>
                       <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
