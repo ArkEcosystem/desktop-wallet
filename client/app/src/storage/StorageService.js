@@ -76,6 +76,10 @@
       window.localStorage.setItem("lastsaved", JSON.stringify(new Date()));
     }
 
+    function clearData() {
+      window.localStorage.clear();
+    }
+
     setInterval(
       function(){
         saveState();
@@ -86,6 +90,7 @@
     return {
       switchContext: switchContext,
       getContext: getContext,
+      clearData: clearData,
       get: get,
       set: set,
       getGlobal: getGlobal,

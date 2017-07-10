@@ -1,0 +1,60 @@
+<md-dialog aria-label="Timestamp Document" ng-cloak>
+  <form name="timestampDocumentForm" ng-submit="send.next()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Timestamp Document On </span>&nbsp;{{send.data.fromAddress}}</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-card md-colors="{'background': 'default-red-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span>
+                <translate>Please choose a file to be timestamped on the blockchain.</translate>
+                <br/>
+                <translate>This will save the SHA256 signature in a transaction of this account.</translate>
+                <translate>This signature can't be forged.</translate>
+                <translate>So the block timestamp that will include this transaction will be a proof of existence of the file you have timestamped.</translate>
+                <br/>
+                <translate>- This means that the owner of this account can prove that he had in hand this file at the block timestamp.</translate>
+                <br/>
+                <translate>- This also can help to prove if a file has been tampered with if the SHA256 signature does not match with the one recorded on blockchain</translate>
+              </span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+
+
+        <md-input-container md-no-float class="md-block">
+          <md-button class="md-primary md-raised" ng-click="send.openFile()">
+            <translate>Open File</translate>
+          </md-button>
+          <span><b translate>File</b> {{send.data.filename}}</span> <br>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-block">
+          <span><b translate>SHA256 Signature</b> {{send.data.smartbridge}}</span>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label translate>Passphrase</label>
+          <input ng-model="send.data.passphrase" type="password" ng-required="true">
+        </md-input-container>
+        <md-input-container class="md-block" ng-if="send.data.secondSignature">
+          <label translate>Second Passphrase</label>
+          <input ng-model="send.data.secondpassphrase" type="password" ng-required="true">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" style="padding-left: 20px">
+      <span flex></span> <!-- workaround for pull first item on left -->
+      <md-button type="submit" ng-disabled="sendArkForm.$invalid">
+        <translate>Next</translate>
+      </md-button>
+      <md-button ng-click="send.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

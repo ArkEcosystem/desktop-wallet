@@ -3,6 +3,10 @@
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2 translate>Add Delegate </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="addDelegateDialog.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -38,11 +42,11 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="addDelegateDialog.add()">
-        <translate>Add Delegate</translate>
-      </md-button>
-      <md-button ng-click="addDelegateDialog.cancel()" style="margin-right:20px;">
+      <md-button ng-click="addDelegateDialog.cancel()" >
         <translate>Close</translate>
+      </md-button>
+      <md-button class="md-primary" ng-click="addDelegateDialog.add()" style="margin-right:20px;">
+        <translate>Add Delegate</translate>
       </md-button>
     </md-dialog-actions>
   </form>

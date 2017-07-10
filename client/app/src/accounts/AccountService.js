@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('arkclient')
-         .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'gettextCatalog', AccountService]);
+         .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService]);
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService($q, $http, networkService, storageService, gettextCatalog){
+  function AccountService($q, $http, networkService, storageService, ledgerService, gettextCatalog){
 
     var ark=require('arkjs');
 
@@ -104,17 +104,29 @@
       networkService.getFromPeer('/api/accounts?address='+address).then(
         function (resp) {
           if(resp.success){
-            var account=resp.account;
-            account.cold=!account.publicKey;
+            var account = storageService.get(address);
+            if(!account){
+              account = resp.account;
+            }
+            else {
+              account.balance = resp.account.balance;
+              account.secondSignature = resp.account.secondSignature;
+            }
+            account.cold=!resp.account.publicKey;
             deferred.resolve(account);
           }
           else{
-            account={
-              address:address,
-              balance:0,
-              secondSignature:false,
-              cold:true
-            };
+            account = storageService.get(address);
+            if(!account){
+              account={
+                address:address,
+                balance:0,
+                secondSignature:false,
+                cold:true
+              };
+            } else {
+              account.username = storageService.get("username-"+address);
+            }
             deferred.resolve(account);
           }
         }
@@ -184,7 +196,7 @@
     }
 
     function addWatchOnlyAddress(account){
-      if(!account || !account.address){
+      if(!account || !account.address || storageService.get(account.address) || account.ledger){
         return;
       }
       storageService.set(account.address,account);
@@ -263,7 +275,7 @@
       });
       return deferred.promise;
     };
-    
+
     function getDelegate(publicKey){
       var deferred = $q.defer();
       if(!publicKey){
@@ -282,7 +294,7 @@
       });
       return deferred.promise;
     };
-    
+
     function getActiveDelegates() {
       var deferred = $q.defer();
       networkService.getFromPeer("/api/delegates").then(function (resp) {
@@ -357,17 +369,16 @@
     function createTransaction(type,config){
       var deferred = $q.defer();
       if(type==0){ //send ark
-        var isAddress = /^[1-9A-Za-z]+$/g;
         if(!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)){
           deferred.reject(gettextCatalog.getString("The destination address ")+config.toAddress+gettextCatalog.getString(" is erroneous"));
           return deferred.promise;
         }
 
         var account=getAccount(config.fromAddress);
-        if(config.amount+10000000>account.balance){
-          deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress);
-          return deferred.promise;
-        }
+        // if(config.amount+10000000>account.balance){
+        //   deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress);
+        //   return deferred.promise;
+        // }
 
         try{
           var transaction=ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase);
@@ -377,13 +388,30 @@
           return deferred.promise;
         }
 
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
-          deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
+        transaction.senderId=config.fromAddress;
+
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
           return deferred.promise;
         }
-
-        transaction.senderId=config.fromAddress;
-        deferred.resolve(transaction);
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+          deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
+        }
+        else {
+          deferred.resolve(transaction);
+        }
       }
 
       else if(type==1){ // second passphrase creation
@@ -448,6 +476,7 @@
         transaction.senderId=config.fromAddress;
         deferred.resolve(transaction);
       }
+
       return deferred.promise;
     };
 
@@ -662,9 +691,15 @@
     return {
       loadAllAccounts : function() {
         var accounts = storageService.get("addresses");
+
         if(!accounts){
           return [];
         }
+
+        accounts = accounts.filter(function(a){
+          return !a.ledger;
+        });
+
         var uniqueaccounts=[];
         for(var i in accounts){
           if(uniqueaccounts.indexOf(accounts[i])==-1){
@@ -726,7 +761,7 @@
       getVotedDelegates: getVotedDelegates,
 
       getDelegate: getDelegate,
-      
+
       getActiveDelegates: getActiveDelegates,
 
       getDelegateByUsername: getDelegateByUsername,

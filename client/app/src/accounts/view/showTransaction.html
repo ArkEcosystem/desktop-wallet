@@ -3,6 +3,10 @@
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2><span translate>Transaction</span></h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="validate.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -23,6 +27,9 @@
           <md-list-item ng-if="validate.transaction.username">
             <b translate>Username</b> <span class="md-secondary">{{validate.transaction.username}}</span>
           </md-list-item>
+          <md-list-item ng-if="validate.transaction.vendorField">
+            <b translate>Smartbridge</b> <span class="md-secondary">{{validate.transaction.vendorField}}</span>
+          </md-list-item>
           <md-list-item ng-if="validate.transaction.amount">
             <b translate>Amount (Ѧ)</b> <span class="md-secondary">{{validate.humanAmount}}</span>
           </md-list-item>
@@ -33,7 +40,7 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button  md-colors="{'background':'red' }"  ng-click="validate.send(validate.transaction)">
+      <md-button  md-colors="{'background':'default-red' }"  ng-click="validate.send(validate.transaction)">
         <span translate>Send</span> Ѧ{{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>now!</span>
       </md-button>
       <md-button ng-click="validate.cancel()" style="margin-right:20px;">

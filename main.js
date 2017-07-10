@@ -3,23 +3,113 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
+
+const ledger = require('ledgerco')
+const LedgerArk = require('./LedgerArk')
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+var ledgercomm
+
 function createWindow () {
-  // Create the browser window.
+    // Create the browser window.t
+  var platform = require('os').platform();
+  var iconpath = __dirname + "/client/ark.png";
+  if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
+  //if(platform == "win32") iconpath = __dirname + "/client/ark_windows.png";
+  //if(platform == "darwin") iconpath = __dirname + "/client/ark_mac.png";
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
-  mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: __dirname + "/client/ark.png", resizable:true, frame:true, show:false})
+  mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: iconpath, resizable:true, frame:true, show:false})
   mainWindow.setContentProtection(true);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
+
+  setInterval(()=>{
+    ledger.comm_node.list_async().then((deviceList) => {
+      if(deviceList.length > 0 && !ledgercomm){
+        ledger.comm_node.create_async().then((comm) => {
+          ledgercomm = comm
+        }).fail((error) => {
+          //console.log(error)
+        })
+      }
+      else if(deviceList.length == 0){
+        ledgercomm = null
+      }
+    })
+  },1000)
+
+  ipcMain.on('ledger', (event, arg) => {
+    if(arg.action == "detect"){
+      event.returnValue = {
+        status: ledgercomm?"Success":"Failure"
+      }
+    }
+    else {
+      if(!ledgercomm){
+        event.returnValue = "connection not initialised"
+      }
+      else try{
+        ark = new LedgerArk(ledgercomm)
+        if(arg.action == "signMessage"){
+          ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
+            (result) => { event.returnValue = result }
+          ).fail(
+            (error) => { event.returnValue = error }
+          )
+        }
+        else if(arg.action == "signTransaction"){
+          ark.signTransaction_async(arg.path, arg.data).then(
+            (result) => { event.sender.send('transactionSigned', result) }
+          ).fail(
+            (error) => { event.sender.send('transactionSigned', {error:error}) }
+          )
+        }
+        else if(arg.action == "getAddress"){
+          ark.getAddress_async(arg.path).then(
+            (result) => { event.returnValue = result }
+          ).fail(
+            (error) => { event.returnValue = error }
+          )
+        }
+        else if(arg.action == "getConfiguration"){
+          ark.getAppConfiguration_async().then((result) => {
+              result.connected = true
+              event.returnValue = result
+            }
+          ).fail((error) => {
+              var result = {
+                connected: false,
+                message: error
+              }
+              ledgercomm.close_async()
+              ledgercomm = null
+              event.returnValue = result
+            }
+          )
+        }
+      } catch(error){
+        ledgercomm.close_async()
+        ledgercomm = null
+        var result = {
+          connected: false,
+          message: "Cannot connect to Ark application"
+        }
+        event.returnValue = result
+      }
+    }
+
+});
+
 
   // Create the Application's main menu
   var template = [

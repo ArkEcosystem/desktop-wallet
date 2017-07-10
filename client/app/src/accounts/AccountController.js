@@ -2,7 +2,7 @@
   angular
        .module('arkclient')
        .controller('AccountController', [
-          'accountService', 'networkService', 'storageService', 'changerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
+          'accountService', 'networkService', 'storageService', 'changerService', 'ledgerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
           AccountController
        ]).filter('accountlabel', ['accountService', function(accountService) {
           return function(address) {
@@ -81,7 +81,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController( accountService, networkService, storageService, changerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog) {
+  function AccountController( accountService, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog) {
 
     var self = this;
 
@@ -127,7 +127,24 @@
     };
 
     self.windowApp = function(action, args) {
-      return require('electron').remote.getCurrentWindow()[action](args);
+      var curWin = require('electron').remote.getCurrentWindow();
+      if(curWin[action])
+        return curWin[action](args);
+      else return null;
+    };
+
+    self.clearData = function() {
+      var confirm = $mdDialog.confirm()
+            .title(gettextCatalog.getString('Are you sure?'))
+            .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
+            .ariaLabel(gettextCatalog.getString('Confirm'))
+            .ok(gettextCatalog.getString('Yes'))
+            .cancel(gettextCatalog.getString('Cancel'));
+
+      $mdDialog.show(confirm).then(function() {
+        storageService.clearData();
+        self.windowApp('reload');
+      });
     };
 
     self.openExternal = function(url){
@@ -173,12 +190,39 @@
 
     self.connectedPeer={isConnected:false};
 
+
     //refreshing displayed account every 8s
-    setInterval(function(){
+    $interval(function(){
       if(self.selected){
         self.refreshCurrentAccount();
       }
     }, 8*1000);
+
+    // detect Ledger
+    $interval(function(){
+      if(!self.ledgerAccounts && self.ledger && self.ledger.connected){
+        self.ledgerAccounts = ledgerService.getBip44Accounts();
+      }
+      if(ledgerService.detect().status == "Success"){
+        self.ledger = ledgerService.isAppLaunched();
+        if(!self.ledger.connected){
+          self.ledgerAccounts = null;
+        }
+      }
+      else {
+        self.ledgerAccounts = null;
+        self.ledger = {connected: false};
+      }
+    }, 2*1000);
+
+    self.selectLedgerAccount = function (account){
+      if(!account && self.ledgerAccounts){
+        account = self.ledgerAccounts[0];
+      }
+      if(account){
+        self.gotoAddress(account.address);
+      }
+    };
 
     self.connection = networkService.getConnection();
 
@@ -250,7 +294,25 @@
           .hideDelay(5000)
       );
     }
+    self.selectAllLanguages = function () {
+      return languages;
+    }
 
+    $scope.setLanguage = function () {
+      function getlanguage(value) {
+        for (var prop in languages) {
+          if (languages.hasOwnProperty(prop)) {
+            if (languages[prop] === value)
+              return prop;
+          }
+        }
+      }
+      self.language = getlanguage(this.selectedLanguage);
+      storageService.set("language", self.language);
+      gettextCatalog.setCurrentLanguage(self.language);
+    }
+
+    //TODO: deprecated
     function selectNextLanguage(){
       var lkeys=Object.keys(languages);
       if(self.language) self.language=lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
@@ -465,9 +527,9 @@
       });
     }
 
-    self.openMenu = function($mdOpenMenu, ev) {
+    self.openMenu = function($mdMenuOpen, ev) {
       originatorEv = ev;
-      $mdOpenMenu(ev);
+      $mdMenuOpen(ev);
     };
 
 
@@ -640,7 +702,7 @@
               return b.timestamp-a.timestamp;
             });
             
-            var previousTx = self.selected.transactions
+            var previousTx = self.selected.transactions;
             self.selected.transactions = transactions;
 
             var playSong = storageService.get('playFundsReceivedSong');
@@ -661,6 +723,7 @@
     }
 
      self.refreshAccountBalances = function(){
+       networkService.getPrice();
       for(var i in self.accounts){
         accountService
         .refreshAccount(self.accounts[i])
@@ -683,8 +746,9 @@
      * @param menuId
      */
     function selectAccount (account) {
-      var currentaddress=account.address;
+      var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
+      console.log(self.selected);
       if(!self.selected.selectedVotes){
         if(self.selected.delegates){
           self.selected.selectedVotes = self.selected.delegates.slice(0);
@@ -712,7 +776,7 @@
                 return b.timestamp-a.timestamp;
               });
 
-              var previousTx = self.selected.transactions
+              var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
               var playSong = storageService.get('playFundsReceivedSong');
@@ -750,16 +814,15 @@
     /**
      * Add an account
      */
-    function addWatchOnlyAddress() {
-      var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Add Watch-Only Address'))
-          .textContent(gettextCatalog.getString('Please enter a new address.'))
-          .placeholder(gettextCatalog.getString('address'))
-          .ariaLabel(gettextCatalog.getString('Address'))
-          .ok(gettextCatalog.getString('Add'))
-          .cancel(gettextCatalog.getString('Cancel'));
-      $mdDialog.show(confirm).then(function(address) {
+    function addWatchOnlyAddress(){
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      function validateAddress() {
         var isAddress = /^[1-9A-Za-z]+$/g;
+        var address = $scope.address;
         if(isAddress.test(address)){
           accountService.fetchAccount(address).then(function(account){
             self.accounts.push(account);
@@ -770,6 +833,7 @@
                 .hideDelay(3000)
             );
           });
+          cancel();
         }
         else{
           $mdToast.show(
@@ -779,8 +843,20 @@
           );
         }
 
-      });
+      };
 
+      $scope.send = {
+        cancel: cancel,
+        validateAddress: validateAddress
+      };
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/addWatchOnlyAddress.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope,
+        fullscreen: true
+      });
     };
 
     function getAllDelegates(selectedAccount){
@@ -803,7 +879,7 @@
     function addDelegate(selectedAccount){
       var data={fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
       accountService.getActiveDelegates().then(function(r){data.registeredDelegates = r;});
-      
+
       function add() {
         function indexOfDelegates(array,item){
           for(var i in array){
@@ -943,9 +1019,89 @@
       });
     };
 
+    function timestamp(selectedAccount){
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data={
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      };
+
+      function next() {
+        // remove bad characters before and after in case of bad copy/paste
+        $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
+        if ($scope.send.data.secondpassphrase){
+          $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim();
+        }
+
+        $mdDialog.hide();
+        var smartbridge = "timestamp:"+$scope.send.data.smartbridge;
+        console.log(smartbridge);
+        accountService.createTransaction(0,
+          {
+            fromAddress: $scope.send.data.fromAddress,
+            toAddress: $scope.send.data.fromAddress,
+            amount: 1,
+            smartbridge: smartbridge,
+            masterpassphrase: $scope.send.data.passphrase,
+            secondpassphrase: $scope.send.data.secondpassphrase
+          }
+        ).then(
+          function(transaction){
+            validateTransaction(selectedAccount, transaction);
+          },
+          formatAndToastError
+        );
+      };
+
+      function openFile(){
+        var crypto = require('crypto');
+        var fs = require('fs');
+
+        require('electron').remote.dialog.showOpenDialog(function (fileNames) {
+         if (fileNames === undefined) return;
+         var fileName = fileNames[0];
+         var algo = 'sha256';
+         var shasum = crypto.createHash(algo);
+         $scope.send.data.filename = fileName;
+         $scope.send.data.smartbridge = "Calculating signature....";
+         var s = fs.ReadStream(fileName);
+
+         s.on('data', function(d) { shasum.update(d); });
+         s.on('end', function() {
+           var d = shasum.digest('utf8');
+           console.log(new Buffer(d,"utf8").toString("hex"));
+           console.log(d.toString("hex"));
+           $scope.send.data.smartbridge = d;
+         });
+        });
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.send = {
+        data: data,
+        openFile: openFile,
+        cancel: cancel,
+        next: next
+      };
+
+      $mdDialog.show({
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/timestampDocument.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
     function sendArk(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
       var data={
+        ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
         passphrase: passphrases[0] ? passphrases[0] : '',
@@ -977,6 +1133,10 @@
           return ;
         }
 
+        // in case of data selected from contacts
+        if($scope.send.data.toAddress.address){
+          $scope.send.data.toAddress = $scope.send.data.toAddress.address;
+        }
         // remove bad characters before and after in case of bad copy/paste
         $scope.send.data.toAddress = $scope.send.data.toAddress.trim();
         $scope.send.data.passphrase = $scope.send.data.passphrase.trim();
@@ -987,6 +1147,8 @@
         $mdDialog.hide();
         accountService.createTransaction(0,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.send.data.fromAddress,
             toAddress: $scope.send.data.toAddress,
             amount: parseInt($scope.send.data.amount*100000000),
@@ -996,16 +1158,31 @@
           }
         ).then(
           function(transaction){
+            console.log(transaction);
             validateTransaction(selectedAccount, transaction);
           },
           formatAndToastError
         );
       };
 
+      function searchTextChange(text) {
+        $scope.send.data.toAddress = text;
+      }
+
+      function selectedContactChange(contact) {
+        if (contact) {
+          $scope.send.data.toAddress = contact.address;
+        }
+      }
+
       function querySearch(text){
         text=text.toLowerCase();
-        var filter=self.accounts.filter(function(account){
-          return (account.address.toLowerCase().indexOf(text)>-1) || (account.username && (account.username.toLowerCase().indexOf(text)>-1));
+        var contacts = storageService.get("contacts");
+        if(!contacts){
+          return [];
+        }
+        var filter=contacts.filter(function(account){
+          return (account.address.toLowerCase().indexOf(text)>-1) || (account.name && (account.name.toLowerCase().indexOf(text)>-1));
         });
         return filter;
       }
@@ -1014,10 +1191,17 @@
         $mdDialog.hide();
       };
 
+      function checkContacts(input){
+          if(input[0] != "@") return;
+      };
+
       $scope.send = {
         data: data,
         cancel: cancel,
         next: next,
+        checkContacts: checkContacts,
+        searchTextChange: searchTextChange,
+        selectedContactChange: selectedContactChange,
         querySearch: querySearch,
         fillSendableBalance: fillSendableBalance,
         totalBalance: totalBalance(false),
@@ -1114,7 +1298,7 @@
 
       function save() {
         //these are not needed as the createNetwork now rerender automatically
-        //$mdDialog.hide();
+        $mdDialog.hide();
         for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
         }
@@ -1169,8 +1353,6 @@
         fullscreen: true
       });
     };
-
-
 
     function openPassphrasesDialog(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
@@ -1454,24 +1636,30 @@
       var account = selectedAccount;
 
       var items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'visibility'},
+        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
         { name: gettextCatalog.getString('Remove'), icon: 'clear'},
       ];
 
       if(!selectedAccount.delegate){
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
-        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'local_offer'});
+        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity'});
       }
 
+      items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user'});
+
       if(!selectedAccount.secondSignature){
-        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'local_offer'});
+        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock'});
       }
 
       function answer(action){
         $mdBottomSheet.hide();
 
         if(action==gettextCatalog.getString('Open in explorer')){
-          openExplorer('/address/' + selectedAccount.address)
+          openExplorer('/address/' + selectedAccount.address);
+        }
+
+        if(action==gettextCatalog.getString('Timestamp Document')){
+          timestamp(selectedAccount);
         }
 
         else if(action==gettextCatalog.getString("Remove")){
