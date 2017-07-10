@@ -1552,6 +1552,7 @@
           },
           formatAndToastError
         );
+        fillAllDelegates();
         $mdDialog.hide();
       };
 
