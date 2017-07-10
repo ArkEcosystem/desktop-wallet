@@ -804,7 +804,6 @@
             self.selected.delegate = delegate;
           }
         });
-        fillAllDelegates();
     }
 
     /**
@@ -855,16 +854,16 @@
       });
     };
 
-    function fillAllDelegates()
+    self.fillAllDelegates = function(selectedAccount)
     {
-      accountService.getActiveDelegates().then(function(delegatelist){self.selected.allActiveDelegates = delegatelist});
-      accountService.getVotedDelegates(self.selected.address).then(function(delegatelist){self.selected.votedDelegates = delegatelist});
-      self.selected.votes = [];
-      for(var i=0; i<self.selected.votedDelegates.length; ++i) {
-        for(var j=0; j<self.selected.allActiveDelegates.length; ++j) {
-          if(self.selected.votedDelegates[i].address == self.selected.allActiveDelegates[j].address)
+      accountService.getActiveDelegates().then(function(delegatelist){selectedAccount.allActiveDelegates = delegatelist});
+      accountService.getVotedDelegates(selectedAccount.address).then(function(delegatelist){selectedAccount.votedDelegates = delegatelist});
+      selectedAccount.votes = [];
+      for(var i=0; i<selectedAccount.votedDelegates.length; ++i) {
+        for(var j=0; j<selectedAccount.allActiveDelegates.length; ++j) {
+          if(selectedAccount.votedDelegates[i].address == selectedAccount.allActiveDelegates[j].address)
           {
-            self.selected.votes.push(self.selected.allActiveDelegates[j]);
+            selectedAccount.votes.push(selectedAccount.allActiveDelegates[j]);
           } 
         }
       }
@@ -1552,7 +1551,6 @@
           },
           formatAndToastError
         );
-        fillAllDelegates();
         $mdDialog.hide();
       };
 
