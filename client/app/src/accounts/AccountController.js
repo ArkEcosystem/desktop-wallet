@@ -719,6 +719,7 @@
     }
 
      self.refreshAccountBalances = function(){
+       networkService.getPrice();
       for(var i in self.accounts){
         accountService
         .refreshAccount(self.accounts[i])

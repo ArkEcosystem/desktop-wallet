@@ -325,7 +325,8 @@
       postTransaction: postTransaction,
       broadcastTransaction: broadcastTransaction,
       pickRandomPeer: pickRandomPeer,
-      getLatestClientVersion: getLatestClientVersion
+      getLatestClientVersion: getLatestClientVersion,
+      getPrice: getPrice
     };
   }
 
