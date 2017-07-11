@@ -1735,14 +1735,14 @@
     }
     function loadSignedMessages()
     {
-      self.selected.signedMessages = storageService.get("signedMessages", selectedAccount.signedMessages);
+      self.selected.signedMessages = storageService.get("signed-"+self.selected.address);
     }
 
     self.deleteSignedMessage = function(selectedAccount, signedMessage)
     {
       var index = selectedAccount.signedMessages.indexOf(signedMessage);
       selectedAccount.signedMessages.splice(index, index+1);
-      storageService.set("signedMessages", selectedAccount.signedMessages);
+      storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
     }
 
     self.signMessage = function(selectedAccount){
@@ -1769,7 +1769,7 @@
           signature:arkjs.crypto.getKeys(passphrase).sign(hash).toDER().toString("hex"),
           message:message
         });
-        storageService.set("signedMessages", selectedAccount.signedMessages);
+        storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
         $mdDialog.hide();
       };
 
