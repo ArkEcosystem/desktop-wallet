@@ -855,6 +855,21 @@
       });
     };
 
+    self.fillAllDelegates = function(selectedAccount)
+    {
+      accountService.getActiveDelegates().then(function(delegatelist){selectedAccount.allActiveDelegates = delegatelist});
+      accountService.getVotedDelegates(selectedAccount.address).then(function(delegatelist){selectedAccount.votedDelegates = delegatelist});
+      selectedAccount.votes = [];
+      for(var i=0; i<selectedAccount.votedDelegates.length; ++i) {
+        for(var j=0; j<selectedAccount.allActiveDelegates.length; ++j) {
+          if(selectedAccount.votedDelegates[i].address == selectedAccount.allActiveDelegates[j].address)
+          {
+            selectedAccount.votes.push(selectedAccount.allActiveDelegates[j]);
+          } 
+        }
+      }
+    }
+
     function getAllDelegates(selectedAccount){
       function arrayUnique(array) {
         var a = array.concat();
@@ -961,7 +976,7 @@
     };
 
     function vote(selectedAccount){
-      var votes=accountService.createDiffVote(selectedAccount.address,selectedAccount.selectedVotes);
+      var votes=accountService.createDiffVote(selectedAccount.address,selectedAccount.votes);
       if(!votes || votes.length==0){
         $mdToast.show(
           $mdToast.simple()
