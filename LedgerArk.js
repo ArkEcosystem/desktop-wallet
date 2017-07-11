@@ -109,7 +109,7 @@ LedgerArk.prototype.signPersonalMessage_async = function(path, messageHex) {
 		buffer[0] = 0xe0;
 		buffer[1] = 0x08;
 		buffer[2] = (offset == 0 ? 0x00 : 0x80);
-		buffer[3] = 0x00;
+		buffer[3] = 0x40;
 		buffer[4] = (offset == 0 ? 1 + splitPath.length * 4 + 4 + chunkSize : chunkSize);
 		if (offset == 0) {
 			buffer[5] = splitPath.length;

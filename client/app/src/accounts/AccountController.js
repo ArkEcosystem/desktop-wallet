@@ -973,8 +973,14 @@
       }
       votes=votes[0];
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature, votes:votes, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
-      console.log(data.votes);
+      var data = {
+        ledger: selectedAccount.ledger,
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+        votes:votes
+      };
       function next() {
         $mdDialog.hide();
         var publicKeys=$scope.voteDialog.data.votes.map(function(delegate){
@@ -983,6 +989,8 @@
         console.log(publicKeys);
         accountService.createTransaction(3,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.voteDialog.data.fromAddress,
             publicKeys: publicKeys,
             masterpassphrase: $scope.voteDialog.data.passphrase,
@@ -1018,7 +1026,8 @@
 
     function timestamp(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={
+      var data = {
+        ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
         passphrase: passphrases[0] ? passphrases[0] : '',
@@ -1037,6 +1046,8 @@
         console.log(smartbridge);
         accountService.createTransaction(0,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.send.data.fromAddress,
             toAddress: $scope.send.data.fromAddress,
             amount: 1,
@@ -1067,9 +1078,7 @@
 
          s.on('data', function(d) { shasum.update(d); });
          s.on('end', function() {
-           var d = shasum.digest('utf8');
-           console.log(new Buffer(d,"utf8").toString("hex"));
-           console.log(d.toString("hex"));
+           var d = shasum.digest('hex');
            $scope.send.data.smartbridge = d;
          });
         });
@@ -1391,7 +1400,14 @@
     //register as delegate
     function createDelegate(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={fromAddress: selectedAccount.address, username: "", secondSignature:selectedAccount.secondSignature, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
+      var data = {
+        ledger: selectedAccount.ledger,
+        fromAddress: selectedAccount.address,
+        username: "",
+        secondSignature:selectedAccount.secondSignature,
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : ''
+      };
 
       function next() {
         $mdDialog.hide();
@@ -1405,6 +1421,8 @@
 
         accountService.createTransaction(2,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.createDelegate.data.fromAddress,
             username: delegateName,
             masterpassphrase: $scope.createDelegate.data.passphrase,
