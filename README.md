@@ -1,7 +1,7 @@
 # Multi Platform Kapu Lite Client
 
 ## Download
-[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
+[Latest Release](https://github.com/kapucoin/kapu-desktop/releases)
 
 ## Features
 * Available on ***Windows***, ***Linux*** (ubuntu/debian) and ***Macosx*** (signed)
@@ -26,8 +26,8 @@ If you login to your account (with your passphrase)
 Second signature supported. Multisignature accounts not yet supported.
 
 ## Screenshots
-![linux](http://i.imgur.com/P9TTXyY.png)
-![linux](http://i.imgur.com/CQ4ms4H.png)
+![linux](http://i.imgur.com/snJi21i.jpg)
+![linux](http://i.imgur.com/gjjqw88.jpg)
 
 ## From code
 
