@@ -758,7 +758,7 @@
         accounts=uniqueaccounts;
         console.log(uniqueaccounts);
         accounts=accounts.filter(function(address){
-          return (storageService.get("username-"+address)!=null || storageService.get("virtual-"+address)!=null);
+          return (storageService.get("username-"+address)!=null || storageService.get("virtual-"+address)!=null) && !storageService.get(address).ledger;
         });
         return accounts.map(function(address){
           var account=storageService.get(address);
