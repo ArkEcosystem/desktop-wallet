@@ -810,6 +810,65 @@
           </md-tab-body>
         </md-tab>
 
+        <md-tab>
+            <md-tab-label>
+              <translate>Sign / Verify Message</translate>
+            </md-tab-label>
+            <md-tab-body>
+
+              <md-card ng-if="!ul.selected.virtual" flex="100">
+                <md-card-title>
+                  <md-card-title-media>
+                    <div class="md-media-sm card-media" layout layout-align="center center" >
+                      <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
+                    </div>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <translate>
+                      If you own this account, you can enable Message Signing / Verifying
+                    </translate><br>
+                    <md-button ng-click="ul.createFolder(ul.selected)"><translate>Enable Signing / Verifying</translate></md-button>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+
+              <md-content ng-if="ul.selected.virtual">
+                <md-table-container flex="100">
+                  <md-button aria-label="SIGN" md-colors="{background:'default-blue'}" ng-click="ul.signMessage(ul.selected)">SIGN</md-button>
+                  <md-button aria-label="VERIFY" md-colors="{background:'default-green'}" ng-click="ul.verifyMessage()">VERIFY</md-button>
+                  <h3><translate>Signed Messages</translate></h3>
+                  <table md-table id="sign-list" style="table-layout: fixed; width: 100%">
+                    <thead md-head md-order="query.order">
+                      <tr md-row>
+                        <th md-column md-numeric><translate>Public-Key</translate></th>
+                        <th md-column md-numeric><translate>Signature</translate></th>
+                        <th md-column md-numeric><translate>Message</translate></th>
+                        <th md-column md-numeric><translate>Actions</translate></th>
+                      </tr>
+                    </thead>
+                    <tbody md-body>
+                      <tr md-disable-select ng-repeat="signedMessage in ul.selected.signedMessages | orderBy: query.order">
+                        <td md-cell style="word-wrap:break-word;">{{signedMessage.publickey}}</td>
+                        <td md-cell style="word-wrap:break-word;">{{signedMessage.signature}}</td>
+                        <td md-cell style="word-wrap:break-word;">{{signedMessage.message}}</td>
+                        <td md-cell>
+                          <md-button ng-click="ul.copiedToClipboard()" copy-to-clipboard="{{signedMessage}}" class="md-mini md-fab md-primary">
+                            <md-tooltip><translate>Copy</translate></md-tooltip>
+                            <md-icon md-font-library="material-icons">content_copy</md-icon>
+                          </md-button>
+                          <md-button ng-click="ul.deleteSignedMessage(ul.selected, signedMessage)" class="md-mini md-fab">
+                            <md-tooltip><translate>Delete</translate></md-tooltip>
+                            <md-icon md-font-library="material-icons">close</md-icon>
+                            </md-button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </md-table-container>
+              </md-content>
+            </md-tab-body>
+          </md-tab>
+
           <md-tab ng-if="ul.selected.delegate">
             <md-tab-label>
               <translate>Delegate</translate>

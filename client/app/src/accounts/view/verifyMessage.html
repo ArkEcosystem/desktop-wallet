@@ -1,0 +1,37 @@
+<md-dialog aria-label="Verify Message" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Verify Message</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="verify.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <label translate>Message</label>
+          <input ng-model="verify.message" ng-required="true" type="text">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label translate>Public Key</label>
+          <input ng-model="verify.publickey" ng-required="true" type="text">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label translate>Signature</label>
+          <input ng-model="verify.signature" ng-required="true" type="text">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="verify.verify()">
+        <translate>Verify</translate>
+      </md-button>
+      <md-button ng-click="verify.cancel()" style="margin-right:20px;">
+        <translate>Close</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
