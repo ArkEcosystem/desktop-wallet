@@ -745,6 +745,7 @@
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
       console.log(self.selected);
+      loadSignedMessages();
       if(!self.selected.selectedVotes){
         if(self.selected.delegates){
           self.selected.selectedVotes = self.selected.delegates.slice(0);
@@ -1732,7 +1733,123 @@
       });
 
     }
+    function loadSignedMessages()
+    {
+      self.selected.signedMessages = storageService.get("signedMessages", selectedAccount.signedMessages);
+    }
 
+    self.deleteSignedMessage = function(selectedAccount, signedMessage)
+    {
+      var index = selectedAccount.signedMessages.indexOf(signedMessage);
+      selectedAccount.signedMessages.splice(index, index+1);
+      storageService.set("signedMessages", selectedAccount.signedMessages);
+    }
+
+    self.signMessage = function(selectedAccount){
+
+      function sign() {
+        var address = $scope.sign.selectedAccount.address;
+        var passphrase = $scope.sign.passphrase;
+        var message = $scope.sign.message;
+        var crypto = require("crypto");
+        var arkjs = require("arkjs");
+        var hash = crypto.createHash('sha256');
+        hash = hash.update(new Buffer(message,"utf-8")).digest();
+        if(arkjs.crypto.getAddress(arkjs.crypto.getKeys(passphrase).publicKey) != address)
+        {
+          alert("Wrong Passphrase");
+          return;
+        }
+        if(!selectedAccount.signedMessages)
+        {
+          selectedAccount.signedMessages = [];
+        }
+        selectedAccount.signedMessages.push({
+          publickey:arkjs.crypto.getKeys(passphrase).publicKey,
+          signature:arkjs.crypto.getKeys(passphrase).sign(hash).toDER().toString("hex"),
+          message:message
+        });
+        storageService.set("signedMessages", selectedAccount.signedMessages);
+        $mdDialog.hide();
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.sign={
+        sign:sign,
+        cancel:cancel,
+        selectedAccount:selectedAccount
+      };
+
+      $mdDialog.show({
+        scope              : $scope,
+        preserveScope      : true,
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/signMessage.html',
+        clickOutsideToClose: false
+      });
+    };
+
+    self.verifyMessage = function(){
+
+      function verify() {
+        var message = $scope.verify.message;
+        var publickey = $scope.verify.publickey;
+        var signature = $scope.verify.signature;
+        var crypto = require("crypto");
+        var arkjs = require("arkjs");
+        var hash = crypto.createHash('sha256');
+        hash = hash.update(new Buffer(message,"utf-8")).digest();
+        signature = new Buffer(signature, "hex");
+        publickey= new Buffer(publickey, "hex");
+        var ecpair = arkjs.ECPair.fromPublicKeyBuffer(publickey);
+        var ecsignature = arkjs.ECSignature.fromDER(signature);
+        var res = ecpair.verify(hash, ecsignature);
+        $mdDialog.hide();
+        var message = "error";
+        if(res == true)
+        {
+          message = "The Message is Successfull verified";
+        }
+        else
+        {
+          message = "The Message is NOT verified";
+        }
+        showMessage(message);
+      };
+
+      function showMessage(message)
+      {
+        $mdDialog.show(
+          $mdDialog.alert()
+            .parent(angular.element(document.getElementById('app')))
+            .clickOutsideToClose(true)
+            .title('Verify Message')
+            .textContent(message)
+            .ariaLabel('Verify Message')
+            .ok('Okay!')
+        );
+      }
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.verify={
+        verify:verify,
+        cancel:cancel
+      };
+
+      $mdDialog.show({
+        scope              : $scope,
+        preserveScope      : true,
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/verifyMessage.html',
+        clickOutsideToClose: false
+      });
+    };
 
     function validateTransaction(selectedAccount, transaction){
 
