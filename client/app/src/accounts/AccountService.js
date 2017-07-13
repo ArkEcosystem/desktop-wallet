@@ -366,6 +366,38 @@
       return deferred.promise;
     };
 
+    function verifyMessage(message, publicKey, signature){
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
+      hash = hash.update(new Buffer(message,"utf-8")).digest();
+      var ecpair = ark.ECPair.fromPublicKeyBuffer(new Buffer(publicKey, "hex"));
+      var ecsignature = ark.ECSignature.fromDER(new Buffer(signature, "hex"));
+      return ecpair.verify(hash, ecsignature);
+    }
+
+    function signMessage(message, passphrase){
+      var deferred = $q.defer();
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
+      hash = hash.update(new Buffer(message,"utf-8")).digest();
+      var ecpair = ark.crypto.getKeys(passphrase);
+      deferred.resolve({signature: ecpair.sign(hash).toDER().toString("hex")});
+      return deferred.promise;
+    }
+
+    function signMessageWithLedger(message, path){
+      var deferred = $q.defer();
+      ledgerService.signMessage(path, message).then(
+        function(result){
+          deferred.resolve(result);
+        },
+        function(error){
+          deferred.reject(error);
+        }
+      );
+      return deferred.promise;
+    }
+
     function createTransaction(type,config){
       var deferred = $q.defer();
       if(type==0){ //send ark
@@ -804,6 +836,12 @@
       getTransactions: getTransactions,
 
       createTransaction: createTransaction,
+
+      verifyMessage: verifyMessage,
+
+      signMessage: signMessage,
+
+      signMessageWithLedger: signMessageWithLedger,
 
       createDiffVote: createDiffVote,
 

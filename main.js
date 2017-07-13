@@ -62,9 +62,9 @@ function createWindow () {
         ark = new LedgerArk(ledgercomm)
         if(arg.action == "signMessage"){
           ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
-            (result) => { event.returnValue = result }
+            (result) => {  event.sender.send('messageSigned', result) }
           ).fail(
-            (error) => { event.returnValue = error }
+            (error) => { event.sender.send('messageSigned', {error:error}) }
           )
         }
         else if(arg.action == "signTransaction"){

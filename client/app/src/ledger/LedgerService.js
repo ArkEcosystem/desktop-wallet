@@ -123,6 +123,27 @@
       return deferred.promise;
     }
 
+    function signMessage(path, message){
+      var deferred = $q.defer();
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
+      hash = hash.update(new Buffer(message,"utf-8")).digest();
+      ipcRenderer.once('messageSigned', function(event, result){
+        if(result.error){
+          deferred.reject(result.error)
+        }
+        else{
+          deferred.resolve(result);
+        }
+      });
+      ipcRenderer.send('ledger', {
+        action: "signMessage",
+        data: hash.toString("hex"),
+        path: path
+      });
+      return deferred.promise;
+    }
+
     function detect(){
       var result = ipcRenderer.sendSync('ledger', {
         action: "detect"
@@ -140,6 +161,7 @@
     return {
       deriveAddress: deriveAddress,
       signTransaction: signTransaction,
+      signMessage: signMessage,
       detect: detect,
       isAppLaunched: isAppLaunched,
       getBip44Accounts: getBip44Accounts,
