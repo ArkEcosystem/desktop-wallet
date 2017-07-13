@@ -1763,39 +1763,62 @@
       storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
     }
 
+    function showMessage(message)
+    {
+      $mdDialog.show(
+        $mdDialog.alert()
+          .parent(angular.element(document.getElementById('app')))
+          .clickOutsideToClose(true)
+          .title(message)
+          .ariaLabel(message)
+          .ok(gettextCatalog.getString('Ok'))
+      );
+    }
+
     self.signMessage = function(selectedAccount){
+
+      console.log(selectedAccount);
 
       function sign() {
         var address = $scope.sign.selectedAccount.address;
         var passphrase = $scope.sign.passphrase;
         var message = $scope.sign.message;
-        var crypto = require("crypto");
-        var arkjs = require("arkjs");
-        var hash = crypto.createHash('sha256');
-        hash = hash.update(new Buffer(message,"utf-8")).digest();
-        if(arkjs.crypto.getAddress(arkjs.crypto.getKeys(passphrase).publicKey) != address)
-        {
-          alert("Wrong Passphrase");
-          return;
-        }
         if(!selectedAccount.signedMessages)
         {
           selectedAccount.signedMessages = [];
         }
-        selectedAccount.signedMessages.push({
-          publickey:arkjs.crypto.getKeys(passphrase).publicKey,
-          signature:arkjs.crypto.getKeys(passphrase).sign(hash).toDER().toString("hex"),
-          message:message
-        });
-        storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
-        $mdDialog.hide();
+        var promisedSignature = null
+        if(selectedAccount.ledger){
+          promisedSignature = accountService.signMessageWithLedger(message, selectedAccount.ledger);
+        }
+        else {
+          promisedSignature = accountService.signMessage(message, passphrase);
+        }
+
+        promisedSignature.then(
+          function(result){
+            selectedAccount.signedMessages.push({
+              publickey: selectedAccount.publicKey,
+              signature: result.signature,
+              message: message
+            });
+            storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
+            $mdDialog.hide();
+          },
+          function(error){
+            showMessage(error)
+          }
+        );
       };
 
       function cancel() {
         $mdDialog.hide();
       };
 
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+
       $scope.sign={
+        passphrase: passphrases[0] ? passphrases[0] : '',
         sign:sign,
         cancel:cancel,
         selectedAccount:selectedAccount
@@ -1810,63 +1833,53 @@
       });
     };
 
-    self.verifyMessage = function(){
+    self.verifyMessage = function(signedMessage){
 
       function verify() {
+        console.log($scope.verify);
         var message = $scope.verify.message;
         var publickey = $scope.verify.publickey;
         var signature = $scope.verify.signature;
-        var crypto = require("crypto");
-        var arkjs = require("arkjs");
-        var hash = crypto.createHash('sha256');
-        hash = hash.update(new Buffer(message,"utf-8")).digest();
-        signature = new Buffer(signature, "hex");
-        publickey= new Buffer(publickey, "hex");
-        var ecpair = arkjs.ECPair.fromPublicKeyBuffer(publickey);
-        var ecsignature = arkjs.ECSignature.fromDER(signature);
-        var res = ecpair.verify(hash, ecsignature);
+        var res = accountService.verifyMessage(message, publickey, signature);
         $mdDialog.hide();
-        var message = "error";
+        var message =  gettextCatalog.getString("Error in signature processing");
         if(res == true)
         {
-          message = "The Message is Successfull verified";
+          message = gettextCatalog.getString("The message is verified successfully");
         }
         else
         {
-          message = "The Message is NOT verified";
+          message = gettextCatalog.getString("The message is NOT verified");
         }
-        showMessage(message);
+        showMessage(message, res);
       };
 
-      function showMessage(message)
-      {
-        $mdDialog.show(
-          $mdDialog.alert()
-            .parent(angular.element(document.getElementById('app')))
-            .clickOutsideToClose(true)
-            .title('Verify Message')
-            .textContent(message)
-            .ariaLabel('Verify Message')
-            .ok('Okay!')
-        );
-      }
+
 
       function cancel() {
         $mdDialog.hide();
       };
 
-      $scope.verify={
-        verify:verify,
-        cancel:cancel
-      };
+      if(signedMessage){
+        $scope.verify = signedMessage;
+        verify();
+      }
+      else {
+        $scope.verify={
+          verify:verify,
+          cancel:cancel,
+          publickey: self.selected.publicKey
+        };
 
-      $mdDialog.show({
-        scope              : $scope,
-        preserveScope      : true,
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : './src/accounts/view/verifyMessage.html',
-        clickOutsideToClose: false
-      });
+        $mdDialog.show({
+          scope              : $scope,
+          preserveScope      : true,
+          parent             : angular.element(document.getElementById('app')),
+          templateUrl        : './src/accounts/view/verifyMessage.html',
+          clickOutsideToClose: false
+        });
+      }
+
     };
 
     function validateTransaction(selectedAccount, transaction){
