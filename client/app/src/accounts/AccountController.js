@@ -132,7 +132,7 @@
     self.clearData = function() {
       var confirm = $mdDialog.confirm()
             .title(gettextCatalog.getString('Are you sure?'))
-            .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
+            .textContent(gettextCatalog.getString('You are about to disconnect your account from this device. \n Your data and settings--including created accounts, networks and contacts--will be reset to default. \n DO NOT PROCEED IF YOU HAVE NOT SAVED/WRITTEN DOWN YOUR PASSPHRASE. \n THERE IS NO "FORGOT PASSWORD"'))
             .ariaLabel(gettextCatalog.getString('Confirm'))
             .ok(gettextCatalog.getString('Yes'))
             .cancel(gettextCatalog.getString('Cancel'));
@@ -592,7 +592,7 @@
       else{
         var confirm = $mdDialog.prompt()
             .title(gettextCatalog.getString('Login'))
-            .textContent(gettextCatalog.getString('Please enter this account passphrase to login.'))
+            .textContent(gettextCatalog.getString("Please enter your accounts' passphrase."))
             .placeholder(gettextCatalog.getString('passphrase'))
             .ariaLabel(gettextCatalog.getString('Passphrase'))
             .ok(gettextCatalog.getString('Login'))
@@ -1652,11 +1652,11 @@
 
       var items = [
         { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
-        { name: gettextCatalog.getString('Remove'), icon: 'clear'},
+        { name: gettextCatalog.getString('Disconnect Account'), icon: 'clear'},
       ];
 
       if(!selectedAccount.delegate){
-        items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
+        items.push({ name: gettextCatalog.getString('Account Label'), icon: 'local_offer'});
         items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity'});
       }
 
@@ -1677,15 +1677,14 @@
           timestamp(selectedAccount);
         }
 
-        else if(action==gettextCatalog.getString("Remove")){
+        else if(action==gettextCatalog.getString("Disconnect Account")){
           var confirm = $mdDialog.confirm()
-              .title(gettextCatalog.getString('Remove Account')+ ' ' +account.address)
-              .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
-                  'The account may be added again using the original passphrase of the account.'))
-              .ok(gettextCatalog.getString('Remove account'))
+              .title(gettextCatalog.getString('Disconnect: ')+ ' ' +account.address)
+              .textContent(gettextCatalog.getString('You are about to disconnect your account from this device. \n Your data and settings -- including created accounts, networks and contacts -- will be reset to default. \n ***** DO NOT PROCEED ***** if you have not saved/written down your passphrase. \n  There is no, "FORGOT PASSWORD."'))
+              .ok(gettextCatalog.getString('Disconnect account'))
               .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
-            accountService.removeAccount(account).then(function(){
+            accountService.disconnectAccount(account).then(function(){
               self.accounts = accountService.loadAllAccounts();
 
               if(self.accounts.length>0) {
@@ -1697,7 +1696,7 @@
 
               $mdToast.show(
                 $mdToast.simple()
-                  .textContent(gettextCatalog.getString('Account removed!'))
+                  .textContent(gettextCatalog.getString('Account Disconnected!'))
                   .hideDelay(3000)
               );
             });
@@ -1712,7 +1711,7 @@
           createDelegate(selectedAccount);
         }
 
-        else if (action==gettextCatalog.getString("Label")) {
+        else if (action==gettextCatalog.getString("Account Label")) {
           var prompt = $mdDialog.prompt()
               .title(gettextCatalog.getString('Label'))
               .textContent(gettextCatalog.getString('Please enter a short label.'))
