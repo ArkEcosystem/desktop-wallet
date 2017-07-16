@@ -210,7 +210,7 @@
       }
     };
 
-    function removeAccount(account){
+    function disconnectAccount(account){
       if(!account || !account.address){
         return $q.when(null);
       }
@@ -827,7 +827,7 @@
 
       getPassphrases: getPassphrases,
 
-      removeAccount: removeAccount,
+      disconnectAccount: disconnectAccount,
 
       fetchAccount: fetchAccount,
 
