@@ -1680,7 +1680,8 @@
         else if(action==gettextCatalog.getString("Disconnect Account")){
           var confirm = $mdDialog.confirm()
               .title(gettextCatalog.getString('Disconnect: ')+ ' ' +account.address)
-              .textContent(gettextCatalog.getString("You are about to disconnect this account from your device. \n You can add it again using your accounts' original passphrase."))
+              .textContent(gettextCatalog.getString('You are about to disconnect this account from your device. ' +
+                  "You can add it again using your accounts' original passphrase."))
               .ok(gettextCatalog.getString('Disconnect account'))
               .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
