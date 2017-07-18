@@ -132,7 +132,7 @@
     self.clearData = function() {
       var confirm = $mdDialog.confirm()
             .title(gettextCatalog.getString('Are you sure?'))
-            .textContent(gettextCatalog.getString('You are about to disconnect your account from this device. \n Your data and settings--including created accounts, networks and contacts--will be reset to default. \n DO NOT PROCEED IF YOU HAVE NOT SAVED/WRITTEN DOWN YOUR PASSPHRASE. \n THERE IS NO "FORGOT PASSWORD"'))
+            .textContent(gettextCatalog.getString('All of your data and personal settings -- including created accounts, networks, and contacts -- will be removed from this device.'))
             .ariaLabel(gettextCatalog.getString('Confirm'))
             .ok(gettextCatalog.getString('Yes'))
             .cancel(gettextCatalog.getString('Cancel'));
@@ -1680,7 +1680,7 @@
         else if(action==gettextCatalog.getString("Disconnect Account")){
           var confirm = $mdDialog.confirm()
               .title(gettextCatalog.getString('Disconnect: ')+ ' ' +account.address)
-              .textContent(gettextCatalog.getString('You are about to disconnect your account from this device. \n Your data and settings -- including created accounts, networks and contacts -- will be reset to default. \n ***** DO NOT PROCEED ***** if you have not saved/written down your passphrase. \n  There is no, "FORGOT PASSWORD."'))
+              .textContent(gettextCatalog.getString("You are about to disconnect this account from your device. \n You can add it again using your accounts' original passphrase."))
               .ok(gettextCatalog.getString('Disconnect account'))
               .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
