@@ -63,8 +63,16 @@
                       <md-icon md-font-library="material-icons">library_add</md-icon><b translate>ADD CONTACT</b>
                       </md-button>
                   </md-list-item>
-                  <md-list-item ng-repeat="contact in ab.contacts">
-                    <md-button class="md-button" ng-click="ab.editAddressbookContact(contact.name, contact.address)">{{contact.name}}</md-button>
+                  <md-list-item ng-repeat="contact in ab.contacts" ng-click="ab.editAddressbookContact(contact.name, contact.address)">
+                    <p>{{contact.name}}</p>
+                      <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
+                        info_outline
+                        <md-tooltip md-direction="bottom" class="tooltip-multiline">
+                          {{'Income' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'transactions' | translate}})
+                          <br>
+                          {{'Expend' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'transactions' | translate}})
+                        </md-tooltip>
+                    </md-icon>
                   </md-list-item>
                 </md-list>
             </md-menu-content>

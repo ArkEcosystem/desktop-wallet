@@ -316,3 +316,7 @@ md-input-container:not(.md-input-has-value) input:not(:focus) {
 md-autocomplete .md-errors-spacer{
   min-height: 0px !important;
 }
+
+md-tooltip.tooltip-multiline {
+  height: auto;
+}
