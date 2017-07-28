@@ -120,6 +120,9 @@
                   <md-list-item>
                   <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
                   </md-list-item>
+                <md-list-item>
+                    <b translate>Timeformat</b> <md-button class="md-secondary" aria-label="Change Timeformat" md-prevent-menu-close ng-click="ul.changeTimeFormat()">{{ul.timeformat}}</md-button>
+                  </md-list-item>
             </md-menu-content>
           </md-menu>
           </any>
@@ -140,7 +143,7 @@
                     <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
                   </md-list-item>
                   <md-list-item>
-                    <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
+                    <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:ul.timeformat}}</span>
                   </md-list-item>
                   <md-list-item md-colors="{background:'default-red' }" ng-if="!ul.connectedPeer.isConnected">
                     {{ul.connectedPeer.error}}
@@ -181,7 +184,7 @@
                  </md-list-item>
                  <md-list-item ng-show="ul.connectedPeer.market.isOffline">
                   <b translate>Last checked</b> <span class="md-secondary">
-                  {{ul.connectedPeer.market.lastUpdate | date:'shortTime'}}</span>
+                  {{ul.connectedPeer.market.lastUpdate | date:ul.timeformat}}</span>
                  </md-list-item>
                </md-list>
            </md-menu-content>
@@ -327,7 +330,7 @@
                    <b translate>Peer</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
                  </md-list-item>
                  <md-list-item>
-                   <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
+                   <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:ul.timeformat}}</span>
                  </md-list-item>
                </md-list>
              </md-content>
@@ -447,7 +450,7 @@
                       <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
                         <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
                         <td md-cell>{{it.confirmations}}</td>
-                        <td md-cell>{{it.date | date: 'short'}}</td>
+                        <td md-cell>{{it.date | date: ul.timeformat}}</td>
                         <td md-cell>{{it.label}}</td>
                         <td ng-if="it.total>=0" md-cell><md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button></td>
                         <td ng-if="it.total<0" md-cell><md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button></td>
@@ -678,7 +681,7 @@
                       <b class="md-secondary">{{ul.exchangeBuy.receiver_id}}</b>
                     </md-list-item>
                     <md-list-item>
-                      <translate>Valid until</translate> <span class="md-secondary">{{ul.exchangeBuy.expirationDate | date:'shortTime'}}</span>
+                      <translate>Valid until</translate> <span class="md-secondary">{{ul.exchangeBuy.expirationDate | date:ul.timeformat}}</span>
                     </md-list-item>
                     <md-list-item>
                       <md-progress-linear md-mode="determinate" value="{{ul.exchangeBuy.expirationProgress}}"></md-progress-linear>
@@ -758,7 +761,7 @@
                         <b class="md-secondary">{{ul.exchangeSell.receiver_id}}</b>
                       </md-list-item>
                       <md-list-item>
-                        <translate>Valid until</translate> <span class="md-secondary">{{ul.exchangeSell.expirationDate | date:'shortTime'}}</span>
+                        <translate>Valid until</translate> <span class="md-secondary">{{ul.exchangeSell.expirationDate | date:ul.timeformat}</span>
                       </md-list-item>
                       <md-list-item>
                         <md-progress-linear md-mode="determinate" value="{{ul.exchangeSell.expirationProgress}}"></md-progress-linear>
@@ -792,7 +795,7 @@
                     </thead>
                     <tbody md-body>
                       <tr md-colors="{background:it.status.status=='processed'?'green-200':'grey-100'}" md-row ng-repeat="it in ul.exchangeHistory | orderBy : exchange.expiration : true">
-                        <td md-cell>{{(it.status.processed_time || it.status.exchange_time || it.exchange.expiration) | exchangedate | date: 'medium'}}</td>
+                        <td md-cell>{{(it.status.processed_time || it.status.exchange_time || it.exchange.expiration) | exchangedate | date: ul.timeformat}</td>
                         <td md-cell>{{it.exchange.send_amount}} {{it.exchange.pair.send}} -> {{it.status.receive_amount || it.exchange.receive_amount}} {{it.exchange.pair.receive}}</td>
                         <td md-cell>{{it.status.status}} <md-button md-colors="{background:'green'}" ng-if="it.status.status=='processing'" ng-click="ul.refreshExchange(it.exchange)"><translate>Refresh</translate></md-button></td>
                       </tr>

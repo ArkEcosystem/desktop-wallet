@@ -186,6 +186,24 @@
 
     self.connectedPeer={isConnected:false};
 
+    self.timeformat = "MM/dd/yyyy";
+    
+    
+    self.getTimeFormat = function()
+    {
+      if(storageService.get("timeformat"))
+        self.timeformat = storageService.get("timeformat");
+    }
+
+    self.changeTimeFormat = function()
+    {
+      if(self.timeformat == "dd/MM/yyyy")
+        storageService.set("timeformat", "MM/dd/yyyy");
+      else
+        storageService.set("timeformat", "dd/MM/yyyy");
+      self.timeformat = storageService.get("timeformat");
+    }
+    self.getTimeFormat();
 
     //refreshing displayed account every 8s
     $interval(function(){
