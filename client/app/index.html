@@ -40,7 +40,7 @@
 
          <!-- fill up the space between left and right area -->
          <span flex></span>
-
+         
          <any style="pointer-events: auto">
          <md-tooltip>
           <translate>Switch Network</translate>
@@ -271,8 +271,8 @@
 
                </md-list-item>
                <md-list-item class="main-actions">
-                 <md-button class="watch-only-address" ng-click="ul.addWatchOnlyAddress()">
-                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Add Watch-Only Address</translate>
+                 <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
+                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Add Contact</translate>
 
                  </md-button>
 
@@ -337,7 +337,7 @@
       <md-content flex layout="row">
 
         <md-sidenav  ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2" >
-          <md-list md-no-ink>
+          <md-list md-no-ink ng-controller="AddressbookController as ab">
             <md-list-item ng-if="ul.ledger.connected">
               <h2 translate>
                 Ledger Nano S
@@ -367,15 +367,13 @@
             </md-list-item>
             <md-list-item>
               <h2 translate>
-                Watch-Only Addresses
+                Contacts
               </h2>
             </md-list-item>
-            <md-list-item md-colors="{background: (it.address === ul.selected.address ? 'default-primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.otherAccounts() track by $index">
+            <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'default-primary' : 'default-grey-A100')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
                 <span style="white-space: nowrap;">
-                  <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-                  <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-                  <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address|accountlabel}}
+                  <md-icon md-font-library="material-icons">account_circle</md-icon>
+                  {{contact.name}}
                 </span>
             </md-list-item>
           </md-list>
