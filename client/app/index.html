@@ -73,7 +73,6 @@
                     <md-icon>flag</md-icon>
                     <label translate>Language</label>
                   </md-button>
-
                   <md-select class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
                     <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                   </md-select>

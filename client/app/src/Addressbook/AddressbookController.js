@@ -1,8 +1,7 @@
 (function () {
   angular
     .module('arkclient')
-    .controller('AddressbookController',
-    ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", AddressbookController]);
+    .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", AddressbookController]);
 
   function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog) {
 
