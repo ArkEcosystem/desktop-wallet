@@ -74,9 +74,9 @@
                     <label translate>Language</label>
                   </md-button>
 
-                    <md-select class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
-                      <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
-                    </md-select>
+                  <md-select class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                    <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
+                  </md-select>
                 </md-list-item>
                 <md-list-item>
                   <md-button aria-label="Import Account" ng-click="ul.importAccount()">
