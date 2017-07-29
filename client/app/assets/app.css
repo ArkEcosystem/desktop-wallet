@@ -55,11 +55,10 @@ md-toolbar h3 {
 
 /* Sidenav area */
 
-md-list-item > button {
-  width:100%;
+md-list.left-list md-list-item{
   text-align:left !important;
 }
-md-list-item button md-icon {
+md-list.left-list md-list-item md-icon {
   margin-right: 16px;
 }
 .md-button.md-focused:not(:hover):focus {
