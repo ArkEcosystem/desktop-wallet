@@ -24,7 +24,7 @@
           <label translate>Username</label>
           <input ng-model="createDelegate.data.username" type="text" ng-required="true" md-autofocus>
         </md-input-container>
-        <md-input-container class="md-block">
+        <md-input-container class="md-block" ng-if="!send.data.ledger">
           <label translate>Passphrase</label>
           <input ng-model="createDelegate.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}">
           <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
@@ -42,7 +42,8 @@
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button ng-click="createDelegate.next()">
-        <translate>Next</translate>
+        <translate ng-if="!send.data.ledger">Next</translate>
+        <translate ng-if="send.data.ledger">Sign with Ledger</translate>
       </md-button>
       <md-button ng-click="createDelegate.cancel()" style="margin-right:20px;">
         <translate>Cancel</translate>

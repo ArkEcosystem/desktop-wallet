@@ -51,7 +51,7 @@ function createWindow () {
   ipcMain.on('ledger', (event, arg) => {
     if(arg.action == "detect"){
       event.returnValue = {
-        status: ledgercomm?"Success":"Failure"
+        status: ledgercomm ? "Success" : "Failure"
       }
     }
     else {
@@ -62,9 +62,9 @@ function createWindow () {
         ark = new LedgerArk(ledgercomm)
         if(arg.action == "signMessage"){
           ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
-            (result) => { event.returnValue = result }
+            (result) => {  event.sender.send('messageSigned', result) }
           ).fail(
-            (error) => { event.returnValue = error }
+            (error) => { event.sender.send('messageSigned', {error:error}) }
           )
         }
         else if(arg.action == "signTransaction"){
@@ -91,7 +91,9 @@ function createWindow () {
                 connected: false,
                 message: error
               }
-              ledgercomm.close_async()
+              if(ledgercomm){
+                ledgercomm.close_async()
+              }
               ledgercomm = null
               event.returnValue = result
             }

@@ -178,14 +178,15 @@
     self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || {name:"btc",symbol:"Ƀ"};
     self.switchNetwork = networkService.switchNetwork;
-    self.network = networkService.getNetwork();
     self.marketinfo= {};
+    self.network = networkService.getNetwork();
+    self.listNetworks = networkService.getNetworks();
+    self.context = storageService.getContext();
     self.exchangeHistory=changerService.getHistory();
     self.selectedCoin=storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail=storageService.get("email") || "";
 
     self.connectedPeer={isConnected:false};
-
 
     //refreshing displayed account every 8s
     $interval(function(){
@@ -674,7 +675,7 @@
       });
 
     }
-
+  
 
   function refreshCurrentAccount(){
     var myaccount=self.selected;
@@ -745,6 +746,7 @@
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
       console.log(self.selected);
+      loadSignedMessages();
       if(!self.selected.selectedVotes){
         if(self.selected.delegates){
           self.selected.selectedVotes = self.selected.delegates.slice(0);
@@ -972,8 +974,14 @@
       }
       votes=votes[0];
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={fromAddress: selectedAccount.address, secondSignature:selectedAccount.secondSignature, votes:votes, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
-      console.log(data.votes);
+      var data = {
+        ledger: selectedAccount.ledger,
+        fromAddress: selectedAccount ? selectedAccount.address: '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+        votes:votes
+      };
       function next() {
         $mdDialog.hide();
         var publicKeys=$scope.voteDialog.data.votes.map(function(delegate){
@@ -982,6 +990,8 @@
         console.log(publicKeys);
         accountService.createTransaction(3,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.voteDialog.data.fromAddress,
             publicKeys: publicKeys,
             masterpassphrase: $scope.voteDialog.data.passphrase,
@@ -1017,7 +1027,8 @@
 
     function timestamp(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={
+      var data = {
+        ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address: '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
         passphrase: passphrases[0] ? passphrases[0] : '',
@@ -1036,6 +1047,8 @@
         console.log(smartbridge);
         accountService.createTransaction(0,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.send.data.fromAddress,
             toAddress: $scope.send.data.fromAddress,
             amount: 1,
@@ -1066,9 +1079,7 @@
 
          s.on('data', function(d) { shasum.update(d); });
          s.on('end', function() {
-           var d = shasum.digest('utf8');
-           console.log(new Buffer(d,"utf8").toString("hex"));
-           console.log(d.toString("hex"));
+           var d = shasum.digest('hex');
            $scope.send.data.smartbridge = d;
          });
         });
@@ -1390,7 +1401,14 @@
     //register as delegate
     function createDelegate(selectedAccount){
       var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data={fromAddress: selectedAccount.address, username: "", secondSignature:selectedAccount.secondSignature, passphrase: passphrases[0], secondpassphrase: passphrases[1]};
+      var data = {
+        ledger: selectedAccount.ledger,
+        fromAddress: selectedAccount.address,
+        username: "",
+        secondSignature:selectedAccount.secondSignature,
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : ''
+      };
 
       function next() {
         $mdDialog.hide();
@@ -1404,6 +1422,8 @@
 
         accountService.createTransaction(2,
           {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
             fromAddress: $scope.createDelegate.data.fromAddress,
             username: delegateName,
             masterpassphrase: $scope.createDelegate.data.passphrase,
@@ -1732,7 +1752,136 @@
       });
 
     }
+    function loadSignedMessages()
+    {
+      self.selected.signedMessages = storageService.get("signed-"+self.selected.address);
+    }
 
+    self.deleteSignedMessage = function(selectedAccount, signedMessage)
+    {
+      var index = selectedAccount.signedMessages.indexOf(signedMessage);
+      selectedAccount.signedMessages.splice(index, index+1);
+      storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
+    }
+
+    function showMessage(message)
+    {
+      $mdDialog.show(
+        $mdDialog.alert()
+          .parent(angular.element(document.getElementById('app')))
+          .clickOutsideToClose(true)
+          .title(message)
+          .ariaLabel(message)
+          .ok(gettextCatalog.getString('Ok'))
+      );
+    }
+
+    self.signMessage = function(selectedAccount){
+
+      console.log(selectedAccount);
+
+      function sign() {
+        var address = $scope.sign.selectedAccount.address;
+        var passphrase = $scope.sign.passphrase;
+        var message = $scope.sign.message;
+        if(!selectedAccount.signedMessages)
+        {
+          selectedAccount.signedMessages = [];
+        }
+        var promisedSignature = null
+        if(selectedAccount.ledger){
+          promisedSignature = accountService.signMessageWithLedger(message, selectedAccount.ledger);
+        }
+        else {
+          promisedSignature = accountService.signMessage(message, passphrase);
+        }
+
+        promisedSignature.then(
+          function(result){
+            selectedAccount.signedMessages.push({
+              publickey: selectedAccount.publicKey,
+              signature: result.signature,
+              message: message
+            });
+            storageService.set("signed-"+selectedAccount.address, selectedAccount.signedMessages);
+            $mdDialog.hide();
+          },
+          function(error){
+            showMessage(error)
+          }
+        );
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+
+      $scope.sign={
+        passphrase: passphrases[0] ? passphrases[0] : '',
+        sign:sign,
+        cancel:cancel,
+        selectedAccount:selectedAccount
+      };
+
+      $mdDialog.show({
+        scope              : $scope,
+        preserveScope      : true,
+        parent             : angular.element(document.getElementById('app')),
+        templateUrl        : './src/accounts/view/signMessage.html',
+        clickOutsideToClose: false
+      });
+    };
+
+    self.verifyMessage = function(signedMessage){
+
+      function verify() {
+        console.log($scope.verify);
+        var message = $scope.verify.message;
+        var publickey = $scope.verify.publickey;
+        var signature = $scope.verify.signature;
+        var res = accountService.verifyMessage(message, publickey, signature);
+        $mdDialog.hide();
+        var message =  gettextCatalog.getString("Error in signature processing");
+        if(res == true)
+        {
+          message = gettextCatalog.getString("The message is verified successfully");
+        }
+        else
+        {
+          message = gettextCatalog.getString("The message is NOT verified");
+        }
+        showMessage(message, res);
+      };
+
+
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      if(signedMessage){
+        $scope.verify = signedMessage;
+        verify();
+      }
+      else {
+        $scope.verify={
+          verify:verify,
+          cancel:cancel,
+          publickey: self.selected.publicKey
+        };
+
+        $mdDialog.show({
+          scope              : $scope,
+          preserveScope      : true,
+          parent             : angular.element(document.getElementById('app')),
+          templateUrl        : './src/accounts/view/verifyMessage.html',
+          clickOutsideToClose: false
+        });
+      }
+
+    };
 
     function validateTransaction(selectedAccount, transaction){
 

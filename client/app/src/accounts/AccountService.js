@@ -366,6 +366,38 @@
       return deferred.promise;
     };
 
+    function verifyMessage(message, publicKey, signature){
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
+      hash = hash.update(new Buffer(message,"utf-8")).digest();
+      var ecpair = ark.ECPair.fromPublicKeyBuffer(new Buffer(publicKey, "hex"));
+      var ecsignature = ark.ECSignature.fromDER(new Buffer(signature, "hex"));
+      return ecpair.verify(hash, ecsignature);
+    }
+
+    function signMessage(message, passphrase){
+      var deferred = $q.defer();
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
+      hash = hash.update(new Buffer(message,"utf-8")).digest();
+      var ecpair = ark.crypto.getKeys(passphrase);
+      deferred.resolve({signature: ecpair.sign(hash).toDER().toString("hex")});
+      return deferred.promise;
+    }
+
+    function signMessageWithLedger(message, path){
+      var deferred = $q.defer();
+      ledgerService.signMessage(path, message).then(
+        function(result){
+          deferred.resolve(result);
+        },
+        function(error){
+          deferred.reject(error);
+        }
+      );
+      return deferred.promise;
+    }
+
     function createTransaction(type,config){
       var deferred = $q.defer();
       if(type==0){ //send ark
@@ -375,10 +407,10 @@
         }
 
         var account=getAccount(config.fromAddress);
-        // if(config.amount+10000000>account.balance){
-        //   deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress);
-        //   return deferred.promise;
-        // }
+        if(config.amount+10000000>account.balance){
+          deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress);
+          return deferred.promise;
+        }
 
         try{
           var transaction=ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase);
@@ -427,7 +459,23 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
+          return deferred.promise;
+        }
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -441,6 +489,7 @@
           deferred.reject(gettextCatalog.getString("Not enough ARK on your account ")+config.fromAddress+", "+gettextCatalog.getString("you need at least 25 ARK to register delegate"));
           return deferred.promise;
         }
+        console.log(config);
         try{
           var transaction=ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase);
         }
@@ -448,7 +497,23 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
+          return deferred.promise;
+        }
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -469,7 +534,23 @@
           deferred.reject(e);
           return deferred.promise;
         }
-        if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
+        if(config.ledger){
+          delete transaction.signature;
+          transaction.senderPublicKey = config.publicKey;
+          ledgerService.signTransaction(config.ledger, transaction).then(
+            function(result){
+              console.log(result);
+              transaction.signature = result.signature;
+              transaction.id = ark.crypto.getId(transaction);
+              deferred.resolve(transaction);
+            },
+            function(error){
+              deferred.reject(error);
+            }
+          );
+          return deferred.promise;
+        }
+        else if(ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version)!=config.fromAddress){
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ")+config.fromAddress);
           return deferred.promise;
         }
@@ -709,7 +790,7 @@
         accounts=uniqueaccounts;
         console.log(uniqueaccounts);
         accounts=accounts.filter(function(address){
-          return (storageService.get("username-"+address)!=null || storageService.get("virtual-"+address)!=null);
+          return (storageService.get("username-"+address)!=null || storageService.get("virtual-"+address)!=null) && !storageService.get(address).ledger;
         });
         return accounts.map(function(address){
           var account=storageService.get(address);
@@ -755,6 +836,12 @@
       getTransactions: getTransactions,
 
       createTransaction: createTransaction,
+
+      verifyMessage: verifyMessage,
+
+      signMessage: signMessage,
+
+      signMessageWithLedger: signMessageWithLedger,
 
       createDiffVote: createDiffVote,
 
