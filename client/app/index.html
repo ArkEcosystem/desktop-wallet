@@ -41,11 +41,27 @@
          <!-- fill up the space between left and right area -->
          <span flex></span>
 
+         <any style="pointer-events: auto">
+         <md-tooltip>
+          <translate>Switch Network</translate>
+         </md-tooltip>
+         <md-menu>
+          <md-button aria-label="Switch network" ng-click="ul.openMenu($mdOpenMenu, $event)">
+            <md-icon md-font-library="material-icons">wifi</md-icon>
+          </md-button>
+          <md-menu-content flex width="3">
+            <md-menu-item ng-repeat="(name, prop) in ul.listNetworks">
+              <md-button ng-click="ul.switchNetwork(name, true)" md-colors="ul.context == name ? {color:'default-blue-900'} : {color:'default-black-400'}">{{ name | uppercase }} ({{ prop.token }})</md-button>
+            </md-menu-item>
+          </md-menu-content>
+         </md-menu>
+         </any>
+
          <md-button ng-click="ul.selected=null">
-           <md-tooltip>
-          <translate>Home</translate>
-        </md-tooltip>
-           <md-icon md-font-library="material-icons">home</md-icon>
+          <md-tooltip>
+            <translate>Home</translate>
+          </md-tooltip>
+          <md-icon md-font-library="material-icons">home</md-icon>
          </md-button>
 
         <any style="pointer-events: auto">
@@ -125,7 +141,7 @@
           </any>
         <any style="pointer-events: auto">
         <md-tooltip>
-          <translate>Network</translate>
+          <translate>Peer Status</translate> 
         </md-tooltip>
          <md-menu>
            <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">

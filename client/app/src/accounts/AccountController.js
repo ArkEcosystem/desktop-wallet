@@ -178,14 +178,15 @@
     self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || {name:"btc",symbol:"Ƀ"};
     self.switchNetwork = networkService.switchNetwork;
-    self.network = networkService.getNetwork();
     self.marketinfo= {};
+    self.network = networkService.getNetwork();
+    self.listNetworks = networkService.getNetworks();
+    self.context = storageService.getContext();
     self.exchangeHistory=changerService.getHistory();
     self.selectedCoin=storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail=storageService.get("email") || "";
 
     self.connectedPeer={isConnected:false};
-
 
     //refreshing displayed account every 8s
     $interval(function(){
@@ -674,7 +675,7 @@
       });
 
     }
-
+  
 
   function refreshCurrentAccount(){
     var myaccount=self.selected;
