@@ -1,37 +1,37 @@
 (function () {
   angular
-    .module('arkclient')
+    .module('arkclient.addressbook')
     .controller('AddressbookController',
     ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", AddressbookController]);
 
   function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog) {
 
-    var self = this;
-    var contacts;
+    let self = this;
+    let contacts;
     self.trim = function (str) {
       return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     }
 
     self.getContacts = function () {
       self.contacts = storageService.get("contacts");
-      if (self.contacts == null || self.contacts == undefined) self.contacts = [];
+      if (self.contacts === null || self.contacts === undefined) self.contacts = [];
     }
 
     self.getContacts();
 
     self.save = function () {
       storageService.set("contacts", self.contacts);
-      $scope.$apply;
-    }
+      $scope.$apply();
+    };
 
     self.isAddress = function (address) {
       return require("arkjs").crypto.validateAddress(address);
     }
 
     self.contactExists = function (name) {
-      var i;
+      let i;
       for (i = 0; i < self.contacts.length; i++) {
-        if (self.contacts[i].name == name) {
+        if (self.contacts[i].name === name) {
           return true;
         }
       }
@@ -68,15 +68,15 @@
 
       function add(contactname, contactaddress) {
         self.getContacts();
-        if (self.trim(contactname) == "") {
+        if (self.trim(contactname) === "") {
           self.showToast('this Contact-Name is not valid', contactname, true);
           return;
         }
-        if (self.trim(contactaddress) == "") {
+        if (self.trim(contactaddress) === "") {
           self.showToast('this Contact-Address is not valid', contactaddress, true);
           return;
         }
-        var newcontact = { name: contactname, address: contactaddress };
+        let newcontact = { name: contactname, address: contactaddress };
         if (self.contactExists(contactname)) {
           self.showToast('this Contact-Name is already taken, please choose another one: ', contactname, true);
           return;
@@ -93,7 +93,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/Addressbook/addAddressbookContact.html',
+        templateUrl: 'addressbook/viewaddAddressbookContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -115,11 +115,11 @@
       };
 
       function save(name, address) {
-        if (self.trim(name) == "") {
+        if (self.trim(name) === "") {
           self.showToast('this Contact-Name is not valid', name, true);
           return;
         }
-        if (self.trim(address) == "") {
+        if (self.trim(address) === "") {
           self.showToast('this Contact-Address is not valid', address, true);
           return;
         }
@@ -133,14 +133,14 @@
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name == name) {
+          if (self.contacts[i].name === name) {
             self.contacts[i].address = address;
           }
         }
         self.save();
         self.showToast('Contact successfully saved: ', name, false);
         cancel();
-      };
+      }
 
       function remove(name) {
         self.getContacts();
@@ -149,7 +149,7 @@
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name == name) {
+          if (self.contacts[i].name === name) {
             delete self.contacts[i];
             self.contacts.splice(i, 1);
           }
@@ -161,7 +161,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/Addressbook/editAddressbookContact.html',
+        templateUrl: 'addressbook/view/editAddressbookContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,

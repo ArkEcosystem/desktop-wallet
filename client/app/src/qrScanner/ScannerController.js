@@ -1,46 +1,46 @@
 (function(){
   'use strict';
 
-  angular.module('arkclient').controller('scannerController', ['$scope', '$interval', '$timeout', '$window', ScannerController]);
+  angular.module('arkclient.qrScanner').controller('scannerController', ['$scope', '$interval', '$timeout', '$window', ScannerController]);
 
   function ScannerController($scope, $interval, $timeout, $window) {
 
-    var jsqr = require('jsqr');
-    var video;
-    var canvas;
-    var context;
-    var stopScan;
+    let jsqr = require('jsqr');
+    let video;
+    let canvas;
+    let context;
+    let stopScan;
 
-    var setScanner = function() {
+    let setScanner = function() {
       window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
     };
 
-    var parseDecoded = function(decoded) {
-      var obj = typeof(decoded) !== 'string' ? JSON.stringify(decoded) : decoded;
-      var qr;
-      var type;
+    let parseDecoded = function(decoded) {
+      let obj = typeof(decoded) !== 'string' ? JSON.stringify(decoded) : decoded;
+      let qr;
+      let type;
 
       try {
-        var json = JSON.parse(obj);
+        let json = JSON.parse(obj);
         qr = json[Object.keys(json)[0]];
       } catch (e) {
         qr = decoded;
       };
 
       if (qr.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g)) type = 'address';
-      if (qr.split(' ').length == 12) type = 'passphrase';
+      if (qr.split(' ').length === 12) type = 'passphrase';
 
       return {type:type, qr: qr};
     };
 
-    var scan = function(evt) {
+    let scan = function(evt) {
       if ($window.localMediaStream) {
-        var size = 250;
+        let size = 250;
 
         context.drawImage(video, 0, 0, size, size);
-        var imageData = context.getImageData(0, 0, size, size);
-        var decoded = jsqr.decodeQRFromImage(imageData.data, size, size);
+        let imageData = context.getImageData(0, 0, size, size);
+        let decoded = jsqr.decodeQRFromImage(imageData.data, size, size);
 
         if (typeof(decoded) !== undefined && decoded.length > 0) {
           cancel();
@@ -49,7 +49,7 @@
       }
     };
 
-    var init = function() {
+    let init = function() {
       setScanner();
 
       $timeout(function() {
@@ -66,11 +66,11 @@
       
     }
 
-    var errorCallback = function(err) {
+    let errorCallback = function(err) {
       $scope.onVideoError({ error: err });
     }
 
-    var successCallback = function(stream) {
+    let successCallback = function(stream) {
       video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
       $window.localMediaStream = stream;
 
@@ -79,11 +79,11 @@
       stopScan = $interval(scan, 500);
     };
 
-    var cancel = function() {
+    let cancel = function() {
       if ($window.localMediaStream) {
         if ($window.localMediaStream.getVideoTracks) {
-          var tracks = $window.localMediaStream.getVideoTracks();
-          for (var i = 0; i < tracks.length; i++) {
+          let tracks = $window.localMediaStream.getVideoTracks();
+          for (let i = 0; i < tracks.length; i++) {
             tracks[i].stop();
           }
         }

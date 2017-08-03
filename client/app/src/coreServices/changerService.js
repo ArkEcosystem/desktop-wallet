@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('arkclient')
+  angular.module('arkclient.coreServices')
          .service('changerService', ['storageService', '$q', '$http', '$timeout', ChangerService]);
 
   /**
@@ -10,15 +10,15 @@
    */
   function ChangerService(storageService,$q,$http,$timeout){
 
-    var url='https://www.changer.com/api/v2/';
+    let url='https://www.changer.com/api/v2/';
 
-    var refid=97664;
+    let refid=97664;
 
-    var history=storageService.get("changer-history") || {};
+    let history=storageService.get("changer-history") || {};
 
-    var ark="ark_ARK";
+    let ark="ark_ARK";
 
-    var coins=[
+    let coins=[
       {symbol:"bitcoin_BTC", name:"BTC", image:""},
       {symbol:"ethereum_ETH", name:"ETH", image:""},
       {symbol:"litecoin_LTC", name:"LTC", image:""},
@@ -42,7 +42,7 @@
       {symbol:"maidsafecoin_MAID", name:"MAID", image:""}
     ];
 
-    var fuckedAPIoutlook={
+    let fuckedAPIoutlook={
       "bitcoinBTC":"bitcoin_BTC",
       "ethereumETH":"ethereum_ETH",
       "litecoinLTC":"litecoin_LTC",
@@ -67,7 +67,7 @@
     };
 
     function request(endpoint,data){
-      var deferred = $q.defer();
+      let deferred = $q.defer();
 
       $http({
         url:url+endpoint.path,
@@ -81,13 +81,13 @@
     }
 
     function getMarketInfo(coin1, coin2, optionalamount){
-      var deferred = $q.defer();
-      var param="";
+      let deferred = $q.defer();
+      let param="";
       if(optionalamount){
         param="?amount="+optionalamount
       }
       $http.get(url+"rates/"+coin1+"/"+coin2+param).then(function(resp){
-        var rates=resp.data;
+        let rates=resp.data;
         $http.get(url+"limits/"+coin1+"/"+coin2).then(function(resp2){
           rates.limits=resp2.data.limits;
           deferred.resolve(rates);
@@ -109,8 +109,8 @@
     }
 
     function makeExchange(email, amount, send, receive, receiver_id){
-      var deferred = $q.defer();
-      var data={
+      let deferred = $q.defer();
+      let data={
         email:email,
         refid:refid,
         send:send,
@@ -129,8 +129,8 @@
     }
 
     function sendBatch(exchange, batch){
-      var deferred = $q.defer();
-      var data={
+      let deferred = $q.defer();
+      let data={
         batch:batch
       };
       $http.post(url+"exchange/"+exchange.exchange_id,data).then(function(resp){
@@ -153,7 +153,7 @@
     }
 
     function refreshExchange(exchange){
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       $http.get(url+"exchange/"+exchange.exchange_id).then(function(resp){
         saveExchange(exchange,resp.data);
         deferred.resolve(resp.data);
@@ -167,17 +167,17 @@
       if(!deferred){
         deferred = $q.defer();
       }
-      if(exchange.status && exchange.status.status=="cancelled"){
+      if(exchange.status && exchange.status.status==="cancelled"){
         deferred.resolve(exchange);
         return deferred.promise;
       }
       $http.get(url+"exchange/"+exchange.exchange_id).then(function(resp){
         saveExchange(exchange,resp.data);
-        if(resp.data.status=="new" || resp.data.status=="processing"){
-          if(resp.data.status=="new" && exchange.expiration < new Date().getTime()/1000){
+        if(resp.data.status==="new" || resp.data.status==="processing"){
+          if(resp.data.status==="new" && exchange.expiration < new Date().getTime()/1000){
             //yes that bad!!!
-            var send=fuckedAPIoutlook[exchange.pair.send];
-            var receive=fuckedAPIoutlook[exchange.pair.receive];
+            let send=fuckedAPIoutlook[exchange.pair.send];
+            let receive=fuckedAPIoutlook[exchange.pair.receive];
             makeExchange(exchange.email, exchange.send_amount, send, receive, exchange.receiver_id).then(function(newexchange){
               deferred.notify(newexchange);
               monitorExchange(newexchange, deferred);
@@ -207,21 +207,21 @@
     }
 
     function getHistory(noupdate){
-      if(!!!noupdate){
-        for(var id in history){
+      if(!noupdate){
+        for(let id in history){
           delete history[id].$$hashKey;
-          var exchange=history[id];
+          let exchange=history[id];
           if(exchange && exchange.status){
-            if(exchange.status.status=="new" && exchange.exchange.expiration < new Date().getTime()/1000){
+            if(exchange.status.status==="new" && exchange.exchange.expiration < new Date().getTime()/1000){
               exchange.status.status="expired";
             }
-            if(exchange.status.status=="processing" && exchange.exchange.expiration < new Date().getTime()/1000){
+            if(exchange.status.status==="processing" && exchange.exchange.expiration < new Date().getTime()/1000){
               $http.get(url+"exchange/"+exchange.status.exchange_id).then(function(resp){
                 history[id].status=resp.data;
                 storageService.set("changer-history",history);
               });
             }
-            if((exchange.status.status=="expired" || exchange.status.status=="cancelled") && exchange.exchange.expiration + 24*3600 < new Date().getTime()/1000){
+            if((exchange.status.status==="expired" || exchange.status.status==="cancelled") && exchange.exchange.expiration + 24*3600 < new Date().getTime()/1000){
               delete history[id];
             }
           }

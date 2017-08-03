@@ -3,7 +3,9 @@ window.qrcode = require("qrcode-generator");
 require('angular-qrcode');
 
 angular
-    .module('arkApp', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext', 'monospaced.qrcode'])
+    .module('arkclient', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext', 'monospaced.qrcode',
+      'arkclient.accounts', 'arkclient.addressbook', 'arkclient.coreServices', 'arkclient.coreUtils', 'arkclient.qrScanner'])
+
     .config(function($mdThemingProvider, $mdIconProvider){
         $mdIconProvider
             .defaultIconSet("./assets/svg/avatars.svg", 128)

@@ -28,7 +28,7 @@
 
   </head>
 
-  <body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul" ng-cloak>
+  <body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul" ng-cloak>
     <md-toolbar style="background-color: rgba(0, 0, 0, 0);">
        <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
          <img src="ark.png" alt="" height="30">
@@ -901,18 +901,18 @@
 
     <script src="dependencies.min.js"></script>
 
-    <script src="src/translations.js"></script>
-    <script src="src/accounts/Accounts.js"></script>
+    <script src="src/translationsRun.js"></script>
+    <script src="src/accounts/accounts.js"></script>
     <script src="src/storage/StorageService.js"></script>
-    <script src="src/accounts/AccountService.js"></script>
-    <script src="src/accounts/AccountController.js"></script>
+    <script src="src/accounts/accountService.js"></script>
+    <script src="src/accounts/accountController.js"></script>
     <script src="src/network/NetworkService.js"></script>
-    <script src="src/changer/ChangerService.js"></script>
+    <script src="src/changer/changerService.js"></script>
     <script src="src/ledger/LedgerService.js"></script>
-    <script src="src/directives.js"></script>
+    <script src="src/validAmountDirective.js"></script>
     <script src="src/qrscanner/ScannerController.js"></script>
-    <script src="src/qrscanner/qrScanner.js"></script>
-    <script src="src/Addressbook/AddressbookController.js"></script>
+    <script src="src/qrscanner/qrScannerDirective.js"></script>
+    <script src="src/Addressbook/addressbookController.js"></script>
 
 
     <script src="app.js"></script>

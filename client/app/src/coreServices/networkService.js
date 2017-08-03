@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('arkclient')
+  angular.module('arkclient.coreServices')
          .service('networkService', ['$q', '$http', '$timeout', 'storageService', NetworkService]);
 
   /**
@@ -10,35 +10,35 @@
    */
   function NetworkService($q,$http,$timeout,storageService){
 
-    var network=switchNetwork(storageService.getContext());
+    let network=switchNetwork(storageService.getContext());
 
-    var ark = require('arkjs');
+    let ark = require('arkjs');
     ark.crypto.setNetworkVersion(network.version || 23);
 
-    var clientVersion = require('../../package.json').version;
+    let clientVersion = require('../../../package.json').version;
 
-    var peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
+    let peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
 
-    var connection=$q.defer();
+    let connection=$q.defer();
 
     connection.notify(peer);
 
     function setNetwork(name, newnetwork){
-      var n = storageService.getGlobal("networks");
+      let n = storageService.getGlobal("networks");
       n[name]=newnetwork;
       storageService.setGlobal("networks",n);
     }
 
     function removeNetwork(name){
-      var n = storageService.getGlobal("networks");
+      let n = storageService.getGlobal("networks");
       delete n[name];
       storageService.setGlobal("networks",n);
     }
 
     function createNetwork(data){
-      var n = storageService.getGlobal("networks");
-      var newnetwork = data
-      var deferred = $q.defer();
+      let n = storageService.getGlobal("networks");
+      let newnetwork = data;
+      let deferred = $q.defer();
       if(n[data.name]){
         deferred.reject("Network name '"+data.name+"' already taken, please choose another one");
       }
@@ -66,17 +66,17 @@
 
     function switchNetwork(newnetwork, reload){
       if(!newnetwork){ //perform round robin
-        var n = storageService.getGlobal("networks");
-        var keys = Object.keys(n);
-        var i = keys.indexOf(storageService.getContext())+1;
-        if(i == keys.length){
+        let n = storageService.getGlobal("networks");
+        let keys = Object.keys(n);
+        let i = keys.indexOf(storageService.getContext())+1;
+        if(i === keys.length){
           i=0;
         }
         storageService.switchContext(keys[i]);
         return window.location.reload();
       }
       storageService.switchContext(newnetwork);
-      var n = storageService.getGlobal("networks");
+      let n = storageService.getGlobal("networks");
       if(!n){
         n = {
           mainnet:{ //so far same as testnet
@@ -129,7 +129,7 @@
         storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
         peer.market=res.data;
       },function(){
-        var lastPrice = storageService.get('lastPrice');
+        let lastPrice = storageService.get('lastPrice');
 
         if (typeof lastPrice === 'undefined') {
           peer.market = { price: { btc: "0.0"} };
@@ -149,7 +149,7 @@
       $http.get(peer.ip+"/api/blocks/getheight",{timeout:5000}).then(function(resp){
         peer.lastConnection=new Date();
         if(resp.data && resp.data.success){
-          if(peer.height==resp.data.height){
+          if(peer.height === resp.data.height){
             peer.isConnected=false;
             peer.error="Node is experiencing sychronisation issues";
             connection.notify(peer);
@@ -173,7 +173,7 @@
     }
 
     function getFromPeer(api){
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       peer.lastConnection=new Date();
       $http({
         url: peer.ip + api,
@@ -204,14 +204,14 @@
     }
 
     function broadcastTransaction(transaction, max){
-      var peers = storageService.get("peers");
+      let peers = storageService.get("peers");
       if(!peers){
         return;
       }
       if(!max){
         max=10;
       }
-      for(var i = 0 ; i<max ; i++){
+      for(let i = 0 ; i<max ; i++){
         if(i < peers.length){
           postTransaction(transaction, "http://"+peers[i].ip+":"+peers[i].port);
         }
@@ -219,8 +219,8 @@
     }
 
     function postTransaction(transaction, ip){
-      var deferred = $q.defer();
-      var peerip = ip;
+      let deferred = $q.defer();
+      let peerip = ip;
       if(!peerip){
         peerip=peer.ip;
       }
@@ -255,7 +255,7 @@
         getFromPeer("/api/peers").then(function(response){
           if(response.success){
             storageService.set("peers",response.peers.filter(function(peer){
-              return peer.status=="OK";
+              return peer.status === "OK";
             }));
             findGoodPeer(response.peers,0);
           }
@@ -296,8 +296,8 @@
     }
 
     function getLatestClientVersion() {
-        var deferred = $q.defer();
-        var url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest';
+        let deferred = $q.defer();
+        let url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest';
         $http.get(url, {timeout: 5000})
             .then(function(res) {
                 deferred.resolve(res.data.tag_name);

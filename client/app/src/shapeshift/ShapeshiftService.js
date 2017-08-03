@@ -10,14 +10,14 @@
    */
   function ShapeshiftService($q,$http,$timeout){
 
-    var url='https://shapeshift.io/';
+    let url='https://shapeshift.io/';
 
-    var coins=[];
+    let coins=[];
     $http.get(url+"getcoins/").then(function(resp){
       coins=resp.data;
     });
 
-    var endPoints = {
+    let endPoints = {
         Rate : { path : 'rate', method : 'GET' }
         , DepositLimit : { path : 'limit', method : 'GET' }
         , MarketInfo : { path : 'marketinfo', method : 'GET' }
@@ -36,7 +36,7 @@
     };
 
     function request(endpoint,data){
-      var deferred = $q.defer();
+      let deferred = $q.defer();
 
       $http({
         url:url+endpoint.path,
@@ -50,7 +50,7 @@
     };
 
     function getMarketInfo(coin1, coin2){
-      var deferred = $q.defer();
+      let deferred = $q.defer();
 
       $http.get(url+"marketinfo/"+coin1+"_"+coin2).then(function(resp){
         deferred.resolve(resp.data);
