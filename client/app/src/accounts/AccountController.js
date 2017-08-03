@@ -1043,8 +1043,7 @@
         }
 
         $mdDialog.hide();
-        var smartbridge = "timestamp:"+$scope.send.data.smartbridge;
-        console.log(smartbridge);
+        var smartbridge = $scope.send.data.smartbridge;
         accountService.createTransaction(0,
           {
             ledger: selectedAccount.ledger,
