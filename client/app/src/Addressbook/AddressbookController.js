@@ -18,6 +18,10 @@
 
     self.getContacts();
 
+    self.getContactFromAddress = function(address){
+      return self.contacts.find(function(c){return c.address==address});
+    }
+
     self.save = function () {
       storageService.set("contacts", self.contacts);
       $scope.$apply;
@@ -41,7 +45,7 @@
       if (error) {
         $mdToast.show(
           $mdToast.simple()
-            .textContent(gettextCatalog.getString(message) + variable)
+            .textContent(gettextCatalog.getString(message) + " - " + variable)
             .hideDelay(5000)
             .theme("error")
         );
@@ -49,7 +53,7 @@
       else {
         $mdToast.show(
           $mdToast.simple()
-            .textContent(gettextCatalog.getString(message) + variable)
+            .textContent(gettextCatalog.getString(message) + " - " +  variable)
             .hideDelay(5000)
         );
       }
@@ -68,25 +72,25 @@
       function add(contactname, contactaddress) {
         self.getContacts();
         if (self.trim(contactname) == "") {
-          self.showToast('this Contact-Name is not valid', contactname, true);
+          self.showToast('this Contact Name is not valid', contactname, true);
           return;
         }
         if (self.trim(contactaddress) == "") {
-          self.showToast('this Contact-Address is not valid', contactaddress, true);
+          self.showToast('this Contact Address is not valid', contactaddress, true);
           return;
         }
         var newcontact = { name: contactname, address: contactaddress };
         if (self.contactExists(contactname)) {
-          self.showToast('this Contact-Name is already taken, please choose another one: ', contactname, true);
+          self.showToast('this Contact Name is already taken, please choose another one', contactname, true);
           return;
         }
         if (!self.isAddress(contactaddress)) {
-          self.showToast('this seems to be not a valid Address: ', contactaddress, true);
+          self.showToast('this seems to be not a valid Address', contactaddress, true);
           return;
         }
         self.contacts.push(newcontact);
         self.save();
-        self.showToast('Contact successfully added: ', contactname, false);
+        self.showToast('Contact successfully added', contactname, false);
         cancel();
       };
 
@@ -100,7 +104,14 @@
       });
     }
 
-    self.editAddressbookContact = function (name, address) {
+    self.editAddressbookContact = function (address) {
+
+      var contact = self.getContactFromAddress(address);
+      if(!contact){
+        self.showToast('This address is not a contact', address, true);
+        return;
+      }
+      var name = contact.name;
 
       $scope.editAddressbookContact = {
         cancel: cancel,
@@ -115,20 +126,20 @@
 
       function save(name, address) {
         if (self.trim(name) == "") {
-          self.showToast('this Contact-Name is not valid', name, true);
+          self.showToast('this Contact Name is not valid', name, true);
           return;
         }
         if (self.trim(address) == "") {
-          self.showToast('this Contact-Address is not valid', address, true);
+          self.showToast('this Contact Address is not valid', address, true);
           return;
         }
         self.getContacts();
         if (!self.contactExists(name)) {
-          self.showToast('this Contact-Name doesnt exist: ', name, true);
+          self.showToast('this Contact Name doesnt exist', name, true);
           return;
         }
         if (!self.isAddress(address)) {
-          self.showToast('this seems to be not a valid Address: ', address, true);
+          self.showToast('this seems to be not a valid Address', address, true);
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
@@ -137,7 +148,7 @@
           }
         }
         self.save();
-        self.showToast('Contact successfully saved: ', name, false);
+        self.showToast('Contact successfully saved', name, false);
         cancel();
       };
 
@@ -154,7 +165,7 @@
           }
         }
         self.save();
-        self.showToast('Contact successfully removed: ', name, false);
+        self.showToast('Contact successfully removed', name, false);
         cancel();
       };
 

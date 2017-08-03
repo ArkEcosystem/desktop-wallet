@@ -675,7 +675,7 @@
       });
 
     }
-  
+
 
   function refreshCurrentAccount(){
     var myaccount=self.selected;
