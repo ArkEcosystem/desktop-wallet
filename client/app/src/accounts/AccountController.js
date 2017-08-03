@@ -1309,6 +1309,7 @@
         $mdDialog.hide();
         for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
+          self.listNetworks=networkService.getNetworks();
         }
         //window.location.reload();
       };
@@ -1321,6 +1322,7 @@
       {
           //reload networks
           networks=networkService.getNetworks();
+          self.listNetworks=networks;
           //add it back to the scope
           $scope.send.networkKeys = Object.keys(networks);
           $scope.send.networks = networks;
@@ -1346,6 +1348,7 @@
               .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
             networkService.removeNetwork(network);
+            self.listNetworks=networkService.getNetworks();
             $mdToast.show(
               $mdToast.simple()
                 .textContent(gettextCatalog.getString('Network removed succesfully!'))
