@@ -748,7 +748,7 @@
 
       function cancel() {
         $mdDialog.hide();
-      };
+      }
 
       function validateAddress() {
         let isAddress = /^[1-9A-Za-z]+$/g;
@@ -773,7 +773,7 @@
           );
         }
 
-      };
+      }
 
       $scope.send = {
         cancel: cancel,
