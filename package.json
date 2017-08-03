@@ -36,6 +36,11 @@
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
+    },
+    {
+      "name": "Lucio Rubens",
+      "email": "lucio@ark.io",
+      "url": "https://github.com/luciorubeens"
     }
   ],
   "license": "MIT",
@@ -50,13 +55,12 @@
   },
   "devDependencies": {
     "electron": "^1.4.15",
-    "electron-builder": "^12.3.1",
+    "electron-builder": "^19.19.1",
     "grunt": "~0.4.5",
     "grunt-angular-gettext": "^2.2.3",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0",
-    "electron-rebuild": "^1.5.11"
+    "grunt-contrib-uglify": "~0.5.0"
   },
   "build": {
     "appId": "com.arkwallet.liteclient",
@@ -64,7 +68,7 @@
       "category": "finance"
     },
     "win": {
-      "iconUrl": "https://ark.io/i/mediakit/icon_1.png"
+      "icon": "build/icon.ico"
     },
     "linux": {
       "synopsis": "A Lite Client used to securely connect to the Ark network and manage your Ark assets.",
