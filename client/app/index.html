@@ -46,7 +46,7 @@
           <translate>Switch Network</translate>
          </md-tooltip>
          <md-menu>
-          <md-button aria-label="Switch network" ng-click="ul.openMenu($mdOpenMenu, $event)">
+          <md-button aria-label="Switch Network" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
           <md-menu-content flex width="3">
@@ -59,14 +59,14 @@
 
 
       <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Settings</translate>
-        </md-tooltip>
+         <md-tooltip>
+           <translate>Settings</translate>
+         </md-tooltip>
          <md-menu>
-           <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
+           <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">settings</md-icon>
            </md-button>
-            <md-menu-content flex layout-padding width="6" style="min-height: 400px">
+            <md-menu-content flex layout-padding width="6" style="min-height: 400px; overflow:hidden;">
               <md-list class="left-list">
                 <md-list-item layout="row">
                   <md-button ng-disabled="true">
@@ -112,39 +112,39 @@
               <md-list>
             </md-menu-content>
           </md-menu>
-          </any>
+        </any>
         <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Peer Status</translate>
-        </md-tooltip>
+         <md-tooltip>
+           <translate>Peer Status</translate>
+         </md-tooltip>
          <md-menu>
-           <md-button aria-label="Show network" ng-click="ul.openMenu($mdMenu.open, $event)">
+           <md-button aria-label="Show Network" ng-click="ul.openMenu($mdMenu.open, $event)">
              <md-icon md-font-library="material-icons">{{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
            </md-button>
             <md-menu-content flex layout-padding width="6">
-                <md-list>
-                  <md-list-item>
-                    <b translate>Peer</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
-                  </md-list-item>
-                  <md-list-item>
-                    <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
-                  </md-list-item>
-                  <md-list-item>
-                    <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
-                  </md-list-item>
-                  <md-list-item md-colors="{background:'default-red' }" ng-if="!ul.connectedPeer.isConnected">
-                    {{ul.connectedPeer.error}}
-                  </md-list-item>
-                  <md-list-item md-colors="{background:'default-green' }" ng-if="ul.connectedPeer.isConnected">
-                    <b translate>Delay</b> <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
-                  </md-list-item>
-                </md-list>
+              <md-list>
+                <md-list-item>
+                  <b translate>Peer</b> <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
+                </md-list-item>
+                <md-list-item>
+                  <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
+                </md-list-item>
+                <md-list-item>
+                  <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
+                </md-list-item>
+                <md-list-item md-colors="{background:'default-red' }" ng-if="!ul.connectedPeer.isConnected">
+                  {{ul.connectedPeer.error}}
+                </md-list-item>
+                <md-list-item md-colors="{background:'default-green' }" ng-if="ul.connectedPeer.isConnected">
+                  <b translate>Delay</b> <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
+                </md-list-item>
+              </md-list>
             </md-menu-content>
           </md-menu>
-          </any>
+        </any>
         <any style="pointer-events: auto">
         <md-tooltip>
-          <translate>Marketstatistics</translate>
+          <translate>Market</translate>
         </md-tooltip>
           <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
             <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
