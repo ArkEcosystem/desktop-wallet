@@ -10,7 +10,7 @@
     </md-toolbar>
     <md-content class="md-padding">
     <md-tabs md-dynamic-height md-selected="0" md-stretch-tabs>
-      <md-tab ng-repeat="network in send.networkKeys" label="{{network}}">
+      <md-tab ng-repeat="network in send.networkKeys" label="{{network}}" md-on-select="send.onNewTab(false)">
         <div>
           <md-input-container md-no-float class="md-block">
             <label translate>Token name</label>
@@ -49,7 +49,7 @@
         </div>
       </md-tab>
 
-      <md-tab label="New">
+      <md-tab label="New" md-on-select="send.onNewTab(true)">
           <md-input-container class="md-block">
             <label translate>Name</label>
             <input ng-model="send.createnetwork.name" type="text" ng-required="true">
@@ -75,7 +75,10 @@
   </md-content>
 
   <md-dialog-actions layout="row">
-    <md-button md-colors="{'background':'default-red' }" ng-click="send.save()">
+    <md-button ng-show="isNewTab" md-colors="{'background':'default-red' }" ng-click="send.createNetwork()">
+      <translate>Add</translate>
+    </md-button>
+    <md-button ng-show="!isNewTab" md-colors="{'background':'default-red' }" ng-click="send.save()">
       <translate>Save</translate>
     </md-button>
     <md-button ng-click="send.cancel()" style="margin-right:20px;">

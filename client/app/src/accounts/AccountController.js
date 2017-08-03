@@ -1302,6 +1302,10 @@
 
     function manageNetworks(){
       var networks=networkService.getNetworks();
+      
+      function onNewTab(status) {
+        $scope.isNewTab = status;
+      }
 
       function save() {
         //these are not needed as the createNetwork now rerender automatically
@@ -1330,6 +1334,7 @@
       function createNetwork() {
         networkService.createNetwork($scope.send.createnetwork).then(
           function(network){
+            onNewTab(false);
             refreshTabs();
           },
           formatAndToastError
@@ -1348,7 +1353,8 @@
         createNetwork: createNetwork,
         removeNetwork: removeNetwork,
         cancel: cancel,
-        save: save
+        save: save,
+        onNewTab: onNewTab
       };
 
       $mdDialog.show({
