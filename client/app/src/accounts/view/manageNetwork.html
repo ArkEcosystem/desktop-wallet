@@ -10,7 +10,7 @@
     </md-toolbar>
     <md-content class="md-padding">
     <md-tabs md-dynamic-height md-selected="0" md-stretch-tabs>
-      <md-tab ng-repeat="network in send.networkKeys" label="{{network}}" md-on-select="send.onNewTab(false)">
+      <md-tab ng-repeat="network in send.networkKeys" label="{{network}}">
         <div>
           <md-input-container md-no-float class="md-block">
             <label translate>Token name</label>
@@ -45,11 +45,22 @@
             <label translate>Explorer</label>
             <input ng-model="send.networks[network].explorer" type="text" ng-required="false">
           </md-input-container>
-          <md-button class="md-primary md-raised" ng-click="send.removeNetwork(network)" ng-disabled="network =='mainnet' || network == 'testnet'"><translate>Remove</translate></md-button>
+          
         </div>
+        <md-dialog-actions layout="row">
+          <md-button ng-click="send.removeNetwork(network)" class="md-raised md-warn" ng-disabled="network == 'mainnet'">
+            <translate>Remove</translate>
+          </md-button>
+          <md-button class="md-primary md-raised" ng-click="send.save()">
+            <translate>Save</translate>
+          </md-button>
+          <md-button ng-click="send.cancel()" style="margin-right:20px;">
+            <translate>Cancel</translate>
+          </md-button>
+        </md-dialog-actions>
       </md-tab>
 
-      <md-tab label="New" md-on-select="send.onNewTab(true)">
+      <md-tab label="New">
           <md-input-container class="md-block">
             <label translate>Name</label>
             <input ng-model="send.createnetwork.name" type="text" ng-required="true">
@@ -66,23 +77,18 @@
               </md-switch>
             </md-input-container>
           </div>
-          <md-button ng-click="send.createNetwork()" style="margin-right:20px;">
-            <translate>Create</translate>
-          </md-button>
-
+          <md-dialog-actions layout="row">
+            <md-button ng-click="send.createNetwork()" class="md-primary md-raised">
+              <translate>Create</translate>
+            </md-button>
+            <md-button ng-click="send.cancel()" style="margin-right:20px;">
+              <translate>Cancel</translate>
+            </md-button>
+          </md-dialog-actions>
+          
       </md-tab>
     </md-tabs>
   </md-content>
 
-  <md-dialog-actions layout="row">
-    <md-button ng-show="isNewTab" md-colors="{'background':'default-red' }" ng-click="send.createNetwork()">
-      <translate>Add</translate>
-    </md-button>
-    <md-button ng-show="!isNewTab" md-colors="{'background':'default-red' }" ng-click="send.save()">
-      <translate>Save</translate>
-    </md-button>
-    <md-button ng-click="send.cancel()" style="margin-right:20px;">
-      <translate>Cancel</translate>
-    </md-button>
-  </md-dialog-actions>
+  
 </md-dialog>

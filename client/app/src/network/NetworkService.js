@@ -12,6 +12,9 @@
 
     var network=switchNetwork(storageService.getContext());
 
+    if(!network){
+      network=switchNetwork();
+    }
     var ark = require('arkjs');
     ark.crypto.setNetworkVersion(network.version || 23);
 

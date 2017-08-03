@@ -1303,9 +1303,6 @@
     function manageNetworks(){
       var networks=networkService.getNetworks();
       
-      function onNewTab(status) {
-        $scope.isNewTab = status;
-      }
 
       function save() {
         //these are not needed as the createNetwork now rerender automatically
@@ -1334,7 +1331,6 @@
       function createNetwork() {
         networkService.createNetwork($scope.send.createnetwork).then(
           function(network){
-            onNewTab(false);
             refreshTabs();
           },
           formatAndToastError
@@ -1343,8 +1339,20 @@
 
       function removeNetwork(network)
       {
-        networkService.removeNetwork(network);
-        refreshTabs();
+        var confirm = $mdDialog.confirm()
+              .title(gettextCatalog.getString('Remove Network')+ ' ' +network)
+              .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
+              .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
+              .cancel(gettextCatalog.getString('Cancel'));
+          $mdDialog.show(confirm).then(function() {
+            networkService.removeNetwork(network);
+            $mdToast.show(
+              $mdToast.simple()
+                .textContent(gettextCatalog.getString('Network removed succesfully!'))
+                .hideDelay(3000)
+            );
+          });
+        
       }
 
       $scope.send = {
@@ -1353,8 +1361,7 @@
         createNetwork: createNetwork,
         removeNetwork: removeNetwork,
         cancel: cancel,
-        save: save,
-        onNewTab: onNewTab
+        save: save
       };
 
       $mdDialog.show({
