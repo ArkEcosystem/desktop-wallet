@@ -1,3 +1,14 @@
 {
-    "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "globals": {
+    "angular": true,
+    "window": true,
+    "document": true
+  },
+  "rules": {
+    "no-param-reassign": 0,
+    "new-cap": 0,
+    "no-unused-vars": 0,
+    "no-plusplus":"off"
+  }
 }

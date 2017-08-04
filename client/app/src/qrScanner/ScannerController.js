@@ -26,8 +26,7 @@
         qr = json[Object.keys(json)[0]];
       } catch (e) {
         qr = decoded;
-      };
-
+      }
       if (qr.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g)) type = 'address';
       if (qr.split(' ').length === 12) type = 'passphrase';
 
@@ -64,11 +63,11 @@
         }
       }, 500);
       
-    }
+    };
 
     let errorCallback = function(err) {
       $scope.onVideoError({ error: err });
-    }
+    };
 
     let successCallback = function(stream) {
       video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
@@ -92,7 +91,7 @@
       if (stopScan) {
         $interval.cancel(stopScan)
       }
-    }
+    };
 
     $scope.cancel = cancel;
     $scope.init = init;

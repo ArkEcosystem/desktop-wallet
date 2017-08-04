@@ -14,7 +14,7 @@
           MediaDeviceInfo.forEach(function(info) {
             if (info.kind === 'videoinput') return true;
           });
-        })
+        });
 
         return false;
       };
@@ -26,8 +26,7 @@
                   .textContent(`The ${result.type} ${result.qr} has been successfully scanned.`)
                   .hideDelay(5000)
           );
-        };
-
+        }
         $scope.$parent.send.data[$scope.inputCallback] = result.qr;
 
         $timeout(function () {

@@ -104,7 +104,7 @@ LedgerArk.prototype.signPersonalMessage_async = function(path, messageHex) {
 	var response = [];
 	var self = this;
 	while (offset !== message.length) {
-		var maxChunkSize = (offset === 0 ? (150 - 1 - splitPath.length * 4 - 4) : 150)
+		var maxChunkSize = (offset === 0 ? (150 - 1 - splitPath.length * 4 - 4) : 150);
 		var chunkSize = (offset + maxChunkSize > message.length ? message.length - offset : maxChunkSize);
 		var buffer = new Buffer(offset === 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize);
 		buffer[0] = 0xe0;

@@ -1,8 +1,3 @@
-(function(){
-  'use strict';
+// Prepare the 'core services' module for subsequent registration of controllers and delegates
+angular.module('arkclient.coreServices', []);
 
-  // Prepare the 'core servoces' module for subsequent registration of controllers and delegates
-  angular.module('arkclient.coreServices', [  ]);
-  
-
-})();
