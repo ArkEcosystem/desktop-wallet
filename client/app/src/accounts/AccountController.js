@@ -2,7 +2,22 @@
   angular
        .module('arkclient')
        .controller('AccountController', [
-          'accountService', 'networkService', 'storageService', 'changerService', 'ledgerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout', '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog',
+          'accountService',
+          'networkService',
+          'storageService',
+          'changerService',
+          'ledgerService',
+          '$mdToast',
+          '$mdSidenav',
+          '$mdBottomSheet',
+          '$timeout',
+          '$interval',
+          '$log',
+          '$mdDialog',
+          '$scope',
+          '$mdMedia',
+          'gettextCatalog',
+          '$mdTheming',
           AccountController
        ]).filter('accountlabel', ['accountService', function(accountService) {
           return function(address) {
@@ -77,8 +92,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController( accountService, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog) {
-
+  function AccountController(accountService, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming) {
     var self = this;
 
     var languages = {
@@ -188,6 +202,9 @@
 
     self.connectedPeer={isConnected:false};
 
+    if (self.network.background.indexOf('url') === -1) {
+      $mdTheming.generateTheme('default');
+    }
     //refreshing displayed account every 8s
     $interval(function(){
       if(self.selected){
@@ -1265,7 +1282,7 @@
       };
 
       function select(background) {
-        $scope.send.selected = background;
+        $scope.send.selected = background;       
         currentNetwork.background = background;
       }
 

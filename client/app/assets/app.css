@@ -315,3 +315,14 @@ md-input-container:not(.md-input-has-value) input:not(:focus) {
 md-autocomplete .md-errors-spacer{
   min-height: 0px !important;
 }
+
+.new-version-button {
+  padding: 0 1em;
+  background-color: rgba(38, 151, 200, 0.5);
+  font-weight: bold;
+  color: white;
+}
+
+.new-version-button:hover {
+  background-color: rgba(38, 151, 200, 0.8)!important;
+}
