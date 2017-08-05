@@ -23,7 +23,7 @@ function extractPalette(image, materialPalette, callback) {
     var vibrant = require('node-vibrant');
 
     // check if it's an image url
-    var regExp = /\'([^)]+)\'/;
+    var regExp = /\(([^)]+)\)/;
     var match = image.match(regExp);
 
     if (!match) {
@@ -31,7 +31,7 @@ function extractPalette(image, materialPalette, callback) {
         return;
     }
 
-    var url = path.join(__dirname, match[1]);
+    var url = path.resolve(__dirname, match[1].replace(/'/g, ''));
     vibrant.from(url).getPalette(function (err, palette) {
         if (err || !palette.Vibrant) {
             callback(response); // return default theme
