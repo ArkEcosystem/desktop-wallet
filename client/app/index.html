@@ -444,7 +444,7 @@
                         <td ng-if="it.total>=0" md-cell><md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button></td>
                         <td ng-if="it.total<0" md-cell><md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button></td>
                         <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
-                        <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a></td>
+                        <td md-cell><a href="" ng-click="ul.gotoAddress(it.recipientId)">{{it | recipientLabel}}</a></td>
                         <td md-cell>{{it.vendorField}}</td>
                       </tr>
                     </tbody>

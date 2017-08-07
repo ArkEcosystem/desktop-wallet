@@ -35,6 +35,10 @@
           return function(fullId) {
             return accountService.smallId(fullId)
           }
+        }).filter('recipientLabel', function(accountService) {
+          return function(transaction) {
+            return transaction.type == 3 ? "Delegate Vote" : transaction.recipientId;
+          }
         }).filter('exchangedate', [function() {
            return function(exchangetime) {
              return new Date(exchangetime*1000);
@@ -715,7 +719,7 @@
             transactions=transactions.sort(function(a,b){
               return b.timestamp-a.timestamp;
             });
-
+            
             var previousTx = self.selected.transactions;
             self.selected.transactions = transactions;
 
