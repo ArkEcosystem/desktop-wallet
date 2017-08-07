@@ -75,17 +75,19 @@ angular
 
         $mdThemingProvider.alwaysWatchTheme(true);
         $mdThemingProvider.generateThemesOnDemand(true);
-
-        extractPalette(network.background, palettes, function(colors) {
-            if (!colors) return;
-            
-            $mdThemingProvider.theme('default')
-                .primaryPalette(colors.primaryColor)
-                .accentPalette(colors.accentColor)
-                .warnPalette(colors.warnColor);
-            
-            $mdThemingProvider.$get().generateTheme('default');
-        });
+        if(network.background){
+            extractPalette(network.background, palettes, function(colors) {
+                if (!colors) return;
+                
+                $mdThemingProvider.theme('default')
+                    .primaryPalette(colors.primaryColor)
+                    .accentPalette(colors.accentColor)
+                    .warnPalette(colors.warnColor);
+                
+                $mdThemingProvider.$get().generateTheme('default');
+            });
+        }
+        
 
     })
     .config(['$qProvider', function ($qProvider) {

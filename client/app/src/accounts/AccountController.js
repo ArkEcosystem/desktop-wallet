@@ -202,7 +202,7 @@
 
     self.connectedPeer={isConnected:false};
 
-    if (self.network.background.indexOf('url') === -1) {
+    if (!self.network.background || self.network.background.indexOf('url') === -1) {
       $mdTheming.generateTheme('default');
     }
     //refreshing displayed account every 8s
