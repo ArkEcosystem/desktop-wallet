@@ -1,4 +1,4 @@
-(function(){
+(function() {
   'use strict';
 
   angular.module('arkclient').controller('scannerController', ['$scope', '$interval', '$timeout', '$window', ScannerController]);
@@ -31,7 +31,7 @@
       if (qr.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g)) type = 'address';
       if (qr.split(' ').length == 12) type = 'passphrase';
 
-      return {type:type, qr: qr};
+      return { type: type, qr: qr };
     };
 
     var scan = function(evt) {
@@ -60,10 +60,10 @@
         if (navigator.getUserMedia) {
           navigator.getUserMedia({ video: true }, successCallback, errorCallback);
         } else {
-          $scope.onVideoError({ error: 'Native web camera streaming not supported.'});
+          $scope.onVideoError({ error: 'Native web camera streaming not supported.' });
         }
       }, 500);
-      
+
     }
 
     var errorCallback = function(err) {
@@ -88,7 +88,7 @@
           }
         }
       }
-      
+
       if (stopScan) {
         $interval.cancel(stopScan)
       }

@@ -1,4 +1,4 @@
-<md-dialog aria-label="Verify Message" ng-cloak>
+<md-dialog aria-label="Verify Message" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -26,7 +26,7 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="verify.verify()">
+      <md-button ng-click="verify.verify()" md-colors="{background:'primary'}">
         <translate>Verify</translate>
       </md-button>
       <md-button ng-click="verify.cancel()" style="margin-right:20px;">

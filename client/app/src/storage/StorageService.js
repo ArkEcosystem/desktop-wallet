@@ -1,78 +1,74 @@
-(function(){
+(function() {
   'use strict';
 
   angular.module('arkclient')
-         .service('storageService', [ StorageService]);
+    .service('storageService', [StorageService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function StorageService(){
+  function StorageService() {
 
     var storage = {};
     var context = window.localStorage.getItem("context");
-    if(!context){
-      context="mainnet";
-      window.localStorage.setItem("context",context);
-    }
-    else{
+    if (!context) {
+      context = "mainnet";
+      window.localStorage.setItem("context", context);
+    } else {
       switchContext(context);
     }
 
 
-    function getContext(){
+    function getContext() {
       return context;
     }
 
-    function switchContext(contextname){
-      var temp = window.localStorage.getItem("storage-"+contextname);
+    function switchContext(contextname) {
+      var temp = window.localStorage.getItem("storage-" + contextname);
       saveState();
       context = contextname;
-      window.localStorage.setItem("context",context);
-      if(!temp){
-        storage={};
-      }
-      else {
+      window.localStorage.setItem("context", context);
+      if (!temp) {
+        storage = {};
+      } else {
         storage = JSON.parse(temp);
       }
       saveState();
       return context;
     }
 
-    function get(key){
+    function get(key) {
       return storage[key];
     }
 
-    function getGlobal(key){
-      return JSON.parse(window.localStorage.getItem("global-"+key));
+    function getGlobal(key) {
+      return JSON.parse(window.localStorage.getItem("global-" + key));
     }
 
-    function set(key, value, forcesave){
-      if(!value){
+    function set(key, value, forcesave) {
+      if (!value) {
         delete storage[key];
+      } else {
+        storage[key] = value;
       }
-      else{
-        storage[key]=value;
-      }
-      if(forcesave){
+      if (forcesave) {
         saveState();
       }
       return value;
     }
 
-    function setGlobal(key, value){
-      if(!value){
-        window.localStorage.removeItem("global-"+key);
-      }
-      else{
-        window.localStorage.setItem("global-"+key,JSON.stringify(value));
+    function setGlobal(key, value) {
+      if (!value) {
+        window.localStorage.removeItem("global-" + key);
+      } else {
+        window.localStorage.setItem("global-" + key, JSON.stringify(value));
       }
       return value;
     }
 
-    function saveState(){
-      window.localStorage.setItem("storage-"+context, JSON.stringify(storage));
+    function saveState() {
+      window.localStorage.setItem("storage-" + context, JSON.stringify(storage));
       window.localStorage.setItem("lastsaved", JSON.stringify(new Date()));
     }
 
@@ -81,7 +77,7 @@
     }
 
     setInterval(
-      function(){
+      function() {
         saveState();
       },
       10000
