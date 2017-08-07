@@ -1922,10 +1922,10 @@
 
         transaction = accountService.formatTransaction(transaction, selectedAccount.address);
         transaction.confirmations = 0;
-        selectedAccount.transactions.unshift(transaction);
 
         networkService.postTransaction(transaction).then(
           function(transaction){
+            selectedAccount.transactions.unshift(transaction);
             $mdToast.show(
               $mdToast.simple()
                 .textContent(gettextCatalog.getString('Transaction')+ ' ' +transaction.id + ' ' +gettextCatalog.getString('sent with success!'))
