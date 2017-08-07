@@ -1690,13 +1690,22 @@
 
       if(!selectedAccount.delegate){
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer'});
-        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity'});
       }
 
-      items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user'});
+      var myAccounts = self.myAccounts().map(function(a) {
+        return a.address;
+      });
 
-      if(!selectedAccount.secondSignature){
-        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock'});
+      if (myAccounts.indexOf(selectedAccount.address) >= 0) {
+        if(!selectedAccount.delegate){
+          items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity'});
+        }
+
+        items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user'});
+        
+        if(!selectedAccount.secondSignature){
+          items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock'});
+        }
       }
 
       function answer(action){
@@ -1771,7 +1780,7 @@
 
       $scope.bs={
         address: account.address,
-        answer: answer,
+        answer: answer, 
         items: items
       };
 
