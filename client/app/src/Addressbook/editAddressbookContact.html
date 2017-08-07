@@ -1,4 +1,4 @@
-<md-dialog aria-label="Edit Contact" ng-cloak>
+<md-dialog aria-label="Edit Contact" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -25,7 +25,7 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="editAddressbookContact.save(editAddressbookContact.name, editAddressbookContact.address)">
+      <md-button class="md-primary" ng-click="editAddressbookContact.save(editAddressbookContact.name, editAddressbookContact.address)">
         <translate>Save</translate>
       </md-button>
       <md-button ng-click="editAddressbookContact.cancel()" style="margin-right:20px;">

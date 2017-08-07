@@ -1,4 +1,4 @@
-<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak>
+<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak md-theme="ul.network.theme">
   <form name="sendArkForm" ng-submit="send.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -30,18 +30,8 @@
             <!--<label translate>Destination Address / Contact Name</label>
              <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus tabIndex="1">-->
 
-            <md-autocomplete
-              ng-model="send.data.toAddress",
-              md-selected-item="send.data.selectedAddress"
-              md-selected-item-change="send.selectedContactChange(contact)"
-              md-search-text-change="send.searchTextChange(send.searchText)"
-              md-search-text="send.searchText"
-              md-items="contact in send.querySearch(send.searchText)"
-              md-item-text="contact.address"
-              md-min-length="0"
-              md-autofocus="true"
-              md-floating-label="Type an address or a name"
-              tabIndex="1">
+            <md-autocomplete ng-model="send.data.toAddress" , md-selected-item="send.data.selectedAddress" md-selected-item-change="send.selectedContactChange(contact)" md-search-text-change="send.searchTextChange(send.searchText)" md-search-text="send.searchText"
+              md-items="contact in send.querySearch(send.searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" md-floating-label="Type an address or a name" tabIndex="1">
               <md-item-template>
                 <span class="item-title">
                    <span> {{contact.name || contact.address}} </span>
@@ -56,8 +46,7 @@
         <div layout-gt-sm="row">
           <md-input-container md-no-float class="md-block" flex-gt-sm="85">
             <label>{{'Amount'|translate}} ({{ul.network.token}})</label>
-            <input ng-model="send.data.amount" type="number" step="0.00000001" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount
-              autocomplete="off" ng-required="true" tabIndex="2">
+            <input ng-model="send.data.amount" type="number" step="0.00000001" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
             <div class="hint">
               {{ul.currency.symbol}} {{send.data.amount | amountToCurrency:this}}
             </div>

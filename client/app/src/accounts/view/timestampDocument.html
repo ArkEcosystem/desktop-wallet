@@ -1,4 +1,4 @@
-<md-dialog aria-label="Timestamp Document" ng-cloak>
+<md-dialog aria-label="Timestamp Document" ng-cloak md-theme="ul.network.theme">
   <form name="timestampDocumentForm" ng-submit="send.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -48,8 +48,9 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row" style="padding-left: 20px">
-      <span flex></span> <!-- workaround for pull first item on left -->
-      <md-button type="submit" ng-disabled="sendArkForm.$invalid">
+      <span flex></span>
+      <!-- workaround for pull first item on left -->
+      <md-button type="submit" ng-disabled="sendArkForm.$invalid" md-colors="{background:'primary'}">
         <translate ng-if="!send.data.ledger">Next</translate>
         <translate ng-if="send.data.ledger">Sign with Ledger</translate>
       </md-button>

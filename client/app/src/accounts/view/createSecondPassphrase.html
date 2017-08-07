@@ -1,4 +1,4 @@
-<md-dialog aria-label="Create Second Passphrase" ng-cloak>
+<md-dialog aria-label="Create Second Passphrase" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -27,7 +27,7 @@
         </div>
         <md-input-container ng-if="createSecondPassphraseDialog.data.showRepassphrase" class="md-block">
           <label translate>Original Passphrase</label>
-          <input ng-model="createSecondPassphraseDialog.data.passphrase" type="password" ng-required="true"/>
+          <input ng-model="createSecondPassphraseDialog.data.passphrase" type="password" ng-required="true" />
         </md-input-container>
         <md-input-container class="md-block">
           <label translate>Second Passphrase</label>
