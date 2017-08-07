@@ -436,7 +436,7 @@
                       </tr>
                     </thead>
                     <tbody md-body style="white-space:nowrap;">
-                      <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
+                      <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
                         <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
                         <td md-cell>{{it.confirmations}}</td>
                         <td md-cell>{{it.date | date: 'short'}}</td>
@@ -449,8 +449,9 @@
                       </tr>
                     </tbody>
                   </table>
+                  <md-table-pagination ng-init="query.limit=10; query.page=1" md-limit="query.limit"md-limit-options="[10, 25, 50]" md-page="query.page" md-total="{{ul.selected.transactions.length}}" md-page-select="true"></md-table-pagination>
                 </md-table-container>
-            </md-tab>
+              </md-tab>
 
 
 
