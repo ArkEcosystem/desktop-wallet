@@ -163,9 +163,6 @@
                <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
                  <md-icon md-font-library="material-icons">cached</md-icon>
                </md-button>
-               <md-button class="share" md-no-ink ng-click="ul.selected=ul.accounts[0]" aria-label="Switch off dashboard">
-                 <md-icon md-font-library="material-icons">close</md-icon>
-               </md-button>
              </md-toolbar>
              <md-list md-no-ink>
                <md-list-item ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
