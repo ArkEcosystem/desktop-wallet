@@ -15,7 +15,8 @@
     "dist:win": "build --win",
     "dist:win32": "build --win --ia32",
     "dist:macos": "build --macos",
-    "dist:linux": "build --linux"
+    "dist:linux": "build --linux",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,8 @@
     "email": "fixcrypt@gmail.com",
     "url": "https://github.com/fix"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
@@ -53,6 +55,8 @@
     "q": "^1.5.0"
   },
   "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
     "electron": "^1.5.0",
     "electron-builder": "^19.19.1",
     "electron-rebuild": "^1.6.0",
@@ -60,7 +64,9 @@
     "grunt-angular-gettext": "^2.2.3",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-uglify": "~0.5.0",
+    "mocha": "^3.5.0",
+    "spectron": "^3.7.2"
   },
   "build": {
     "appId": "com.arkwallet.liteclient",
