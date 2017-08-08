@@ -49,6 +49,10 @@ var themes = {
 angular
   .module('arkApp', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext', 'monospaced.qrcode'])
   .config(function($provide, $mdThemingProvider, $mdIconProvider) {
+    $mdIconProvider
+      .defaultIconSet("./assets/svg/avatars.svg", 128)
+      .icon("menu", "./assets/svg/menu.svg", 24)
+      .icon("ledger", "./assets/svg/ledger.svg", 24);
 
     Object.keys(themes).forEach(function(key) {
       var theme = $mdThemingProvider.theme(key)
