@@ -74,8 +74,7 @@ function StorageService() {
     () => {
       saveState();
     },
-    10000,
-  );
+    10000);
 
   return {
     switchContext,
@@ -85,7 +84,7 @@ function StorageService() {
     set,
     getGlobal,
     setGlobal,
-    saveState,
+    saveState
   };
 }
 

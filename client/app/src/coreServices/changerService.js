@@ -3,7 +3,7 @@
  * @constructor
    This is not currently in use, so I am commenting out the service.
  */
-/*
+
 function ChangerService(storageService, $q, $http, $timeout) {
   const url = 'https://www.changer.com/api/v2/';
 
@@ -238,4 +238,4 @@ function ChangerService(storageService, $q, $http, $timeout) {
 
 angular.module('arkclient.coreServices')
   .service('changerService', ['storageService', '$q', '$http', '$timeout', ChangerService]);
-*/
+

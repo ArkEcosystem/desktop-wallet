@@ -1,3 +1,5 @@
+const ark = require('arkjs');
+
 function addressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog) {
   const self = this;
   let contacts;
@@ -18,7 +20,7 @@ function addressbookController($scope, $mdDialog, $mdToast, storageService, gett
   };
 
   self.isAddress = function (address) {
-    return require('arkjs').crypto.validateAddress(address);
+    return ark.crypto.validateAddress(address);
   };
 
   self.contactExists = function (name) {
@@ -37,22 +39,16 @@ function addressbookController($scope, $mdDialog, $mdToast, storageService, gett
         $mdToast.simple()
           .textContent(gettextCatalog.getString(message) + variable)
           .hideDelay(5000)
-          .theme('error'),
-      );
+          .theme('error'));
     } else {
       $mdToast.show(
         $mdToast.simple()
           .textContent(gettextCatalog.getString(message) + variable)
-          .hideDelay(5000),
-      );
+          .hideDelay(5000));
     }
   };
 
   self.addAddressbookContact = function () {
-    $scope.addAddressbookContact = {
-      add,
-      cancel,
-    };
     function cancel() {
       $mdDialog.hide();
     }
@@ -82,80 +78,86 @@ function addressbookController($scope, $mdDialog, $mdToast, storageService, gett
       cancel();
     }
 
+    $scope.addAddressbookContact = {
+      add,
+      cancel
+    };
+
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'addressbook/viewaddAddressbookContact.html',
+      templateUrl: 'src/addressbook/view/addAddressbookContact.html',
       clickOutsideToClose: false,
       preserveScope: true,
       scope: $scope,
-      fullscreen: true,
+      fullscreen: true
     });
   };
 
   self.editAddressbookContact = function (name, address) {
-    $scope.editAddressbookContact = {
-      cancel,
-      save,
-      remove,
-      name,
-      address,
-    };
     function cancel() {
       $mdDialog.hide();
     }
 
-    function save(name, address) {
-      if (self.trim(name) === '') {
-        self.showToast('this Contact-Name is not valid', name, true);
+    function save(nameParam, addressParam) {
+      if (self.trim(nameParam) === '') {
+        self.showToast('this Contact-Name is not valid', nameParam, true);
         return;
       }
-      if (self.trim(address) === '') {
-        self.showToast('this Contact-Address is not valid', address, true);
+      if (self.trim(addressParam) === '') {
+        self.showToast('this Contact-Address is not valid', addressParam, true);
         return;
       }
       self.getContacts();
-      if (!self.contactExists(name)) {
-        self.showToast('this Contact-Name doesnt exist: ', name, true);
+      if (!self.contactExists(nameParam)) {
+        self.showToast('this Contact-Name doesnt exist: ', nameParam, true);
         return;
       }
-      if (!self.isAddress(address)) {
-        self.showToast('this seems to be not a valid Address: ', address, true);
+      if (!self.isAddress(addressParam)) {
+        self.showToast('this seems to be not a valid Address: ', addressParam, true);
         return;
       }
       for (let i = 0; i < self.contacts.length; i++) {
-        if (self.contacts[i].name === name) {
-          self.contacts[i].address = address;
+        if (self.contacts[i].name === nameParam) {
+          self.contacts[i].address = addressParam;
         }
       }
       self.save();
-      self.showToast('Contact successfully saved: ', name, false);
+      self.showToast('Contact successfully saved: ', nameParam, false);
       cancel();
     }
 
-    function remove(name) {
+    function remove(nameParam) {
       self.getContacts();
-      if (!self.contactExists(name)) {
-        self.showToast('this Contact-Name doesnt exist: ', name, true);
+      if (!self.contactExists(nameParam)) {
+        self.showToast('this Contact-Name doesnt exist: ', nameParam, true);
         return;
       }
       for (let i = 0; i < self.contacts.length; i++) {
-        if (self.contacts[i].name === name) {
+        if (self.contacts[i].name === nameParam) {
           delete self.contacts[i];
           self.contacts.splice(i, 1);
         }
       }
       self.save();
-      self.showToast('Contact successfully removed: ', name, false);
+      self.showToast('Contact successfully removed: ', nameParam, false);
       cancel();
     }
 
+    $scope.editAddressbookContact = {
+      cancel,
+      save,
+      remove,
+      name,
+      address
+    };
+
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'addressbook/view/editAddressbookContact.html',
+      templateUrl: 'src/addressbook/view/editAddressbookContact.html',
       clickOutsideToClose: false,
       preserveScope: true,
       scope: $scope,
-      fullscreen: true,
+      fullscreen: true
     });
   };
 

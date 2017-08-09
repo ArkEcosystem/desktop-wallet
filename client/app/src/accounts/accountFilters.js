@@ -41,7 +41,7 @@ function copyClipFunc($window, $mdToast) {
   const textarea = angular.element('<textarea/>');
   textarea.css({
     position: 'fixed',
-    opacity: '0',
+    opacity: '0'
   });
 
   function copy(toCopy) {
@@ -67,7 +67,7 @@ function copyClipFunc($window, $mdToast) {
       element.bind('click', (e) => {
         copy(attrs.copyToClipboard);
       });
-    },
+    }
   };
 }
 

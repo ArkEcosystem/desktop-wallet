@@ -3,12 +3,16 @@
   "globals": {
     "angular": true,
     "window": true,
-    "document": true
+    "document": true,
+    "navigator": true
   },
   "rules": {
     "no-param-reassign": 0,
     "new-cap": 0,
+    "comma-dangle": ["error", "never"],
     "no-unused-vars": 0,
-    "no-plusplus":"off"
+    "no-plusplus":"off",
+    "func-names": "off",
+    "no-console": "off"
   }
 }

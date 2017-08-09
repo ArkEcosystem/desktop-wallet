@@ -3,7 +3,7 @@
  * @constructor
  */
 const ark = require('arkjs');
-const clientVersion = require('../../../package.json').version;
+const clientVersion = require('packageJson').version;
 
 function NetworkService($q, $http, $timeout, storageService) {
   let network;
@@ -32,7 +32,7 @@ function NetworkService($q, $http, $timeout, storageService) {
       $http({
         url: `${data.peerseed}/api/loader/autoconfigure`,
         method: 'GET',
-        timeout: 5000,
+        timeout: 5000
       }).then(
         (resp) => {
           newnetwork = resp.data.network;
@@ -44,8 +44,7 @@ function NetworkService($q, $http, $timeout, storageService) {
         },
         (resp) => {
           deferred.reject('Cannot connect to peer to autoconfigure the network');
-        },
-      );
+        });
     }
     return deferred.promise;
   }
@@ -74,9 +73,9 @@ function NetworkService($q, $http, $timeout, storageService) {
           version: 0x17,
           explorer: 'https://explorer.ark.io',
           exchanges: {
-            changer: 'ark_ARK',
+            changer: 'ark_ARK'
           },
-          background: 'url(assets/images/Ark.jpg)',
+          background: 'url(assets/images/bgimg/Ark.jpg)'
         },
         devnet: {
           nethash: '578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23',
@@ -85,8 +84,8 @@ function NetworkService($q, $http, $timeout, storageService) {
           symbol: 'DѦ',
           version: 30,
           explorer: 'http://dexplorer.ark.io',
-          background: '#222299',
-        },
+          background: '#222299'
+        }
       };
       storageService.setGlobal('networks', n);
     }
@@ -144,9 +143,9 @@ function NetworkService($q, $http, $timeout, storageService) {
         os: 'ark-desktop',
         version: clientVersion,
         port: 1,
-        nethash: network.nethash,
+        nethash: network.nethash
       },
-      timeout: 5000,
+      timeout: 5000
     }).then(
       (resp) => {
         deferred.resolve(resp.data);
@@ -159,8 +158,7 @@ function NetworkService($q, $http, $timeout, storageService) {
         peer.isConnected = false;
         peer.error = resp.statusText || 'Peer Timeout after 5s';
         connection.notify(peer);
-      },
-    );
+      });
     return deferred.promise;
   }
 
@@ -253,8 +251,8 @@ function NetworkService($q, $http, $timeout, storageService) {
         os: 'ark-desktop',
         version: clientVersion,
         port: 1,
-        nethash: network.nethash,
-      },
+        nethash: network.nethash
+      }
     }).then((resp) => {
       if (resp.data.success) {
         // we make sure that tx is well broadcasted
@@ -321,7 +319,7 @@ function NetworkService($q, $http, $timeout, storageService) {
     broadcastTransaction,
     pickRandomPeer,
     getLatestClientVersion,
-    getPrice,
+    getPrice
   };
 }
 angular.module('arkclient.coreServices')

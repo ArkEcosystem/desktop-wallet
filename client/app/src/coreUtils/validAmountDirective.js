@@ -28,7 +28,7 @@ function validAmountFunc() {
       }
       ctrl.$parsers.unshift(val);
       ctrl.$formatters.unshift(val);
-    },
+    }
   };
 }
 

@@ -15,7 +15,7 @@
       link(scope, element, attrs, controllers) {
 
       },
-      templateUrl: 'shapeshift/template/coin-error.html',
+      templateUrl: 'src/shapeshift/template/coin-error.html',
     };
   }]);
 
@@ -31,7 +31,7 @@
       link(scope, element, attrs, controllers) {
         console.log(scope.ShiftState);
       },
-      templateUrl: 'shapeshift/template/coin-shift-button.html',
+      templateUrl: 'src/shapeshift/template/coin-shift-button.html',
     };
   }]);
 
@@ -47,7 +47,7 @@
       link(scope, element, attrs, controllers) {
 
       },
-      templateUrl: 'shapeshift/template/coin-deposit-info.html',
+      templateUrl: 'src/shapeshift/template/coin-deposit-info.html',
     };
   }]);
 
@@ -79,7 +79,7 @@
           coinTraderCtrl.amount(newVal);
         });
       },
-      templateUrl: 'shapeshift/template/coin-selector.html',
+      templateUrl: 'src/shapeshift/template/coin-selector.html',
     };
   }]);
 
@@ -194,7 +194,7 @@
           });
         };
       },
-      templateUrl: 'shapeshift/template/coin-trader.html',
+      templateUrl: 'src/shapeshift/template/coin-trader.html',
     };
   }]);
 
@@ -226,7 +226,7 @@
         $scope.ssError = null;
         const fixedTx = SSA.CreateFixedTx(
           $scope.amount, $scope.withdrawalAddress,
-          $scope.coinIn, $scope.coinOut,
+          $scope.coinIn, $scope.coinOut
         );
         console.log(fixedTx);
         SSA.FixedAmountTx(fixedTx, (data) => {

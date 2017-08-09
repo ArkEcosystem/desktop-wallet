@@ -2,6 +2,14 @@
  * Main Controller for the arkclient.Accounts module
  * @constructor
  */
+const electron = window.require('electron');
+const clientVersion = require('packageJson').version; //eslint-disable-line
+const crypto = require('crypto');
+
+const fs = window.require('fs');
+const pathReq = require('path');
+const bip39 = require('bip39');
+
 function AccountController(accountService, networkService, storageService, changerService,
   ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log,
   $mdDialog, $scope, $mdMedia, gettextCatalog) {
@@ -24,7 +32,7 @@ function AccountController(accountService, networkService, storageService, chang
     de: gettextCatalog.getString('German'),
     it: gettextCatalog.getString('Italian'),
     id: gettextCatalog.getString('Indonesian'),
-    ru: gettextCatalog.getString('Russian'),
+    ru: gettextCatalog.getString('Russian')
   };
 
 
@@ -44,12 +52,12 @@ function AccountController(accountService, networkService, storageService, chang
       .ok(gettextCatalog.getString('Quit'))
       .cancel(gettextCatalog.getString('Cancel'));
     $mdDialog.show(confirm).then(() => {
-      require('electron').remote.app.quit();
+      electron.remote.app.quit();
     });
   };
 
   self.windowApp = function (action, args) {
-    const curWin = require('electron').remote.getCurrentWindow();
+    const curWin = electron.remote.getCurrentWindow();
     if (curWin[action]) { return curWin[action](args); }
     return null;
   };
@@ -69,72 +77,8 @@ function AccountController(accountService, networkService, storageService, chang
   };
 
   self.openExternal = function (url) {
-    require('electron').shell.openExternal(url);
+    electron.shell.openExternal(url);
   };
-
-  self.openExplorer = openExplorer;
-  self.clientVersion = require('../../../package.json').version;
-  self.latestClientVersion = self.clientVersion;
-  networkService.getLatestClientVersion().then((r) => { self.latestClientVersion = r; });
-  self.isNetworkConnected = false;
-  self.selected = null;
-  self.accounts = [];
-  self.selectAccount = selectAccount;
-  self.refreshCurrentAccount = refreshCurrentAccount;
-  self.gotoAddress = gotoAddress;
-  self.getAllDelegates = getAllDelegates;
-  self.addWatchOnlyAddress = addWatchOnlyAddress;
-  self.createAccount = createAccount;
-  self.importAccount = importAccount;
-  self.toggleList = toggleAccountsList;
-  self.sendArk = sendArk;
-  self.createSecondPassphrase = createSecondPassphrase;
-  self.copiedToClipboard = copiedToClipboard;
-
-  self.playFundsReceivedSong = storageService.get('playFundsReceivedSong') || false;
-  self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
-  self.manageBackgrounds = manageBackgrounds;
-  self.manageNetworks = manageNetworks;
-  self.openPassphrasesDialog = openPassphrasesDialog;
-  self.createDelegate = createDelegate;
-  self.vote = vote;
-  self.addDelegate = addDelegate;
-  self.showAccountMenu = showAccountMenu;
-  self.selectNextLanguage = selectNextLanguage;
-  self.currency = storageService.get('currency') || { name: 'btc', symbol: 'Ƀ' };
-  self.switchNetwork = networkService.switchNetwork;
-  self.marketinfo = {};
-  self.network = networkService.getNetwork();
-  self.listNetworks = networkService.getNetworks();
-  self.context = storageService.getContext();
-  self.exchangeHistory = changerService.getHistory();
-  self.selectedCoin = storageService.get('selectedCoin') || 'bitcoin_BTC';
-  self.exchangeEmail = storageService.get('email') || '';
-
-  self.connectedPeer = { isConnected: false };
-
-  // refreshing displayed account every 8s
-  $interval(() => {
-    if (self.selected) {
-      self.refreshCurrentAccount();
-    }
-  }, 8 * 1000);
-
-  // detect Ledger
-  $interval(() => {
-    if (!self.ledgerAccounts && self.ledger && self.ledger.connected) {
-      self.ledgerAccounts = ledgerService.getBip44Accounts();
-    }
-    if (ledgerService.detect().status === 'Success') {
-      self.ledger = ledgerService.isAppLaunched();
-      if (!self.ledger.connected) {
-        self.ledgerAccounts = null;
-      }
-    } else {
-      self.ledgerAccounts = null;
-      self.ledger = { connected: false };
-    }
-  }, 2 * 1000);
 
   self.selectLedgerAccount = function (account) {
     if (!account && self.ledgerAccounts) {
@@ -157,8 +101,7 @@ function AccountController(accountService, networkService, storageService, chang
         $mdToast.show(
           $mdToast.simple()
             .textContent(gettextCatalog.getString('Network disconnected!'))
-            .hideDelay(10000),
-        );
+            .hideDelay(10000));
       } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
         self.isNetworkConnected = true;
         // trick to make it appear last.
@@ -166,15 +109,14 @@ function AccountController(accountService, networkService, storageService, chang
           $mdToast.show(
             $mdToast.simple()
               .textContent(gettextCatalog.getString('Network connected and healthy!'))
-              .hideDelay(10000),
-          );
+              .hideDelay(10000));
         }, 1000);
       }
-    },
+    }
   );
 
   function openExplorer(uri) {
-    require('electron').shell.openExternal(self.network.explorer + uri);
+    electron.shell.openExternal(self.network.explorer + uri);
   }
 
   function formatErrorMessage(error) {
@@ -202,7 +144,7 @@ function AccountController(accountService, networkService, storageService, chang
       $mdToast.simple()
         .textContent(errorMessage)
         .hideDelay(hideDelay)
-        .theme('error'),
+        .theme('error')
     );
   }
 
@@ -210,8 +152,7 @@ function AccountController(accountService, networkService, storageService, chang
     $mdToast.show(
       $mdToast.simple()
         .textContent(gettextCatalog.getString('Copied to clipboard'))
-        .hideDelay(5000),
-    );
+        .hideDelay(5000));
   }
   self.selectAllLanguages = function () {
     return languages;
@@ -224,6 +165,7 @@ function AccountController(accountService, networkService, storageService, chang
           if (languages[prop] === value) { return prop; }
         }
       }
+      return false;
     }
     self.language = getlanguage(this.selectedLanguage);
     storageService.set('language', self.language);
@@ -287,7 +229,7 @@ function AccountController(accountService, networkService, storageService, chang
             } else {
               self.exchangeBuy.monitor = data;
             }
-          },
+          }
         );
       }, (error) => {
         formatAndToastError(error, 10000);
@@ -315,8 +257,8 @@ function AccountController(accountService, networkService, storageService, chang
           toAddress: resp.payee,
           amount: parseInt(resp.send_amount * 100000000),
           masterpassphrase: self.passphrase,
-          secondpassphrase: self.secondpassphrase,
-        },
+          secondpassphrase: self.secondpassphrase
+        }
       ).then((transaction) => {
         console.log(transaction);
         self.exchangeTransaction = transaction;
@@ -349,7 +291,7 @@ function AccountController(accountService, networkService, storageService, chang
             } else {
               self.exchangeSell.monitor = data;
             }
-          },
+          }
         );
       },
       (error) => {
@@ -376,10 +318,9 @@ function AccountController(accountService, networkService, storageService, chang
         $mdToast.show(
           $mdToast.simple()
             .textContent(`${gettextCatalog.getString('Transaction')} ${transaction.id} ${gettextCatalog.getString('sent with success!')}`)
-            .hideDelay(5000),
-        );
+            .hideDelay(5000));
       },
-      formatAndToastError,
+      formatAndToastError
     );
   };
 
@@ -400,6 +341,72 @@ function AccountController(accountService, networkService, storageService, chang
     console.log();
     return changerService.getCoins();
   };
+
+  // start function code
+  self.openExplorer = openExplorer;
+  self.clientVersion = clientVersion;
+  self.latestClientVersion = self.clientVersion;
+  networkService.getLatestClientVersion().then((r) => { self.latestClientVersion = r; });
+  self.isNetworkConnected = false;
+  self.selected = null;
+  self.accounts = [];
+  self.selectAccount = selectAccount;
+  self.refreshCurrentAccount = refreshCurrentAccount;
+  self.gotoAddress = gotoAddress;
+  self.getAllDelegates = getAllDelegates;
+  self.addWatchOnlyAddress = addWatchOnlyAddress;
+  self.createAccount = createAccount;
+  self.importAccount = importAccount;
+  self.toggleList = toggleAccountsList;
+  self.sendArk = sendArk;
+  self.createSecondPassphrase = createSecondPassphrase;
+  self.copiedToClipboard = copiedToClipboard;
+
+  self.playFundsReceivedSong = storageService.get('playFundsReceivedSong') || false;
+  self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
+  self.manageBackgrounds = manageBackgrounds;
+  self.manageNetworks = manageNetworks;
+  self.openPassphrasesDialog = openPassphrasesDialog;
+  self.createDelegate = createDelegate;
+  self.vote = vote;
+  self.addDelegate = addDelegate;
+  self.showAccountMenu = showAccountMenu;
+  self.selectNextLanguage = selectNextLanguage;
+  self.currency = storageService.get('currency') || { name: 'btc', symbol: 'Ƀ' };
+  self.switchNetwork = networkService.switchNetwork;
+  self.marketinfo = {};
+  self.network = networkService.getNetwork();
+  self.listNetworks = networkService.getNetworks();
+  self.context = storageService.getContext();
+  self.exchangeHistory = changerService.getHistory();
+  self.selectedCoin = storageService.get('selectedCoin') || 'bitcoin_BTC';
+  self.exchangeEmail = storageService.get('email') || '';
+
+  self.connectedPeer = { isConnected: false };
+
+  // refreshing displayed account every 8s
+  $interval(() => {
+    if (self.selected) {
+      self.refreshCurrentAccount();
+    }
+  }, 8 * 1000);
+
+  // detect Ledger
+  $interval(() => {
+    if (!self.ledgerAccounts && self.ledger && self.ledger.connected) {
+      self.ledgerAccounts = ledgerService.getBip44Accounts();
+    }
+    if (ledgerService.detect().status === 'Success') {
+      self.ledger = ledgerService.isAppLaunched();
+      if (!self.ledger.connected) {
+        self.ledgerAccounts = null;
+      }
+    } else {
+      self.ledgerAccounts = null;
+      self.ledger = { connected: false };
+    }
+  }, 2 * 1000);
+
 
   // Load all registered accounts
   self.accounts = accountService.loadAllAccounts();
@@ -443,7 +450,7 @@ function AccountController(accountService, networkService, storageService, chang
       { name: 'hkd', symbol: 'HK$' },
       { name: 'jpy', symbol: 'JP¥' },
       { name: 'rub', symbol: '\u20BD' },
-      { name: 'aud', symbol: 'A$' },
+      { name: 'aud', symbol: 'A$' }
     ];
     self.currency = currencies[currencies.map(x => x.name).indexOf(self.currency.name) + 1];
     if (self.currency === undefined) self.currency = currencies[0];
@@ -488,8 +495,7 @@ function AccountController(accountService, networkService, storageService, chang
         $mdToast.show(
           $mdToast.simple()
             .textContent(gettextCatalog.getString('Virtual folder added!'))
-            .hideDelay(3000),
-        );
+            .hideDelay(3000));
       });
     } else {
       const confirm = $mdDialog.prompt()
@@ -505,14 +511,12 @@ function AccountController(accountService, networkService, storageService, chang
           $mdToast.show(
             $mdToast.simple()
               .textContent(gettextCatalog.getString('Succesfully Logged In!'))
-              .hideDelay(3000),
-          );
+              .hideDelay(3000));
         }, (err) => {
           $mdToast.show(
             $mdToast.simple()
               .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
-              .hideDelay(3000),
-          );
+              .hideDelay(3000));
         });
       });
     }
@@ -597,7 +601,7 @@ function AccountController(accountService, networkService, storageService, chang
 
             const playSong = storageService.get('playFundsReceivedSong');
             if (playSong === true && transactions.length > previousTx.length && transactions[0].type === 0 && transactions[0].recipientId === myaccount.address) {
-              const wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+              const wavFile = pathReq.resolve(electron.remote.app.getAppPath(), 'client/dist/assets/audio/power-up.wav');
               const audio = new Audio(wavFile);
               audio.play();
             }
@@ -668,7 +672,7 @@ function AccountController(accountService, networkService, storageService, chang
 
             const playSong = storageService.get('playFundsReceivedSong');
             if (playSong === true && transactions.length > previousTx.length && transactions[0].type === 0 && transactions[0].recipientId === myaccount.address) {
-              const wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+              const wavFile = pathReq.resolve(electron.remote.app.getAppPath(), 'client/dist/assets/audio/power-up.wav');
               const audio = new Audio(wavFile);
               audio.play();
             }
@@ -716,30 +720,28 @@ function AccountController(accountService, networkService, storageService, chang
           $mdToast.show(
             $mdToast.simple()
               .textContent(gettextCatalog.getString('Account added!'))
-              .hideDelay(3000),
-          );
+              .hideDelay(3000));
         });
         cancel();
       } else {
         $mdToast.show(
           $mdToast.simple()
             .textContent(`${gettextCatalog.getString('Address')} ${address} ${gettextCatalog.getString('is not recognised')}`)
-            .hideDelay(3000),
-        );
+            .hideDelay(3000));
       }
     }
 
     $scope.send = {
       cancel,
-      validateAddress,
+      validateAddress
     };
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/addWatchOnlyAddress.html',
+      templateUrl: 'src/accounts/view/addWatchOnlyAddress.html',
       clickOutsideToClose: false,
       preserveScope: true,
       scope: $scope,
-      fullscreen: true,
+      fullscreen: true
     });
   }
 
@@ -781,11 +783,10 @@ function AccountController(accountService, networkService, storageService, chang
             $mdToast.show(
               $mdToast.simple()
                 .textContent(gettextCatalog.getString('List full or delegate already voted.'))
-                .hideDelay(5000),
-            );
+                .hideDelay(5000));
           }
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function addSponsors() {
@@ -819,7 +820,7 @@ function AccountController(accountService, networkService, storageService, chang
             }
           }
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function cancel() {
@@ -829,15 +830,15 @@ function AccountController(accountService, networkService, storageService, chang
       data,
       cancel,
       add,
-      addSponsors,
+      addSponsors
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/addDelegate.html',
+      templateUrl: 'src/accounts/view/addDelegate.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   function vote(selectedAccount) {
@@ -846,8 +847,7 @@ function AccountController(accountService, networkService, storageService, chang
       $mdToast.show(
         $mdToast.simple()
           .textContent(gettextCatalog.getString('No difference from original delegate list'))
-          .hideDelay(5000),
-      );
+          .hideDelay(5000));
       return;
     }
     votes = votes[0];
@@ -858,7 +858,7 @@ function AccountController(accountService, networkService, storageService, chang
       secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
       passphrase: passphrases[0] ? passphrases[0] : '',
       secondpassphrase: passphrases[1] ? passphrases[1] : '',
-      votes,
+      votes
     };
     function next() {
       $mdDialog.hide();
@@ -871,13 +871,13 @@ function AccountController(accountService, networkService, storageService, chang
           fromAddress: $scope.voteDialog.data.fromAddress,
           publicKeys,
           masterpassphrase: $scope.voteDialog.data.passphrase,
-          secondpassphrase: $scope.voteDialog.data.secondpassphrase,
-        },
+          secondpassphrase: $scope.voteDialog.data.secondpassphrase
+        }
       ).then(
         (transaction) => {
           validateTransaction(selectedAccount, transaction);
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function cancel() {
@@ -886,15 +886,15 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.voteDialog = {
       data,
       cancel,
-      next,
+      next
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/vote.html',
+      templateUrl: 'src/accounts/view/vote.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   function timestamp(selectedAccount) {
@@ -904,7 +904,7 @@ function AccountController(accountService, networkService, storageService, chang
       fromAddress: selectedAccount ? selectedAccount.address : '',
       secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
       passphrase: passphrases[0] ? passphrases[0] : '',
-      secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      secondpassphrase: passphrases[1] ? passphrases[1] : ''
     };
 
     function next() {
@@ -926,20 +926,17 @@ function AccountController(accountService, networkService, storageService, chang
           amount: 1,
           smartbridge,
           masterpassphrase: $scope.send.data.passphrase,
-          secondpassphrase: $scope.send.data.secondpassphrase,
-        },
+          secondpassphrase: $scope.send.data.secondpassphrase
+        }
       ).then(
         (transaction) => {
           validateTransaction(selectedAccount, transaction);
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function openFile() {
-      const crypto = require('crypto');
-      const fs = require('fs');
-
-      require('electron').remote.dialog.showOpenDialog((fileNames) => {
+      electron.remote.dialog.showOpenDialog((fileNames) => {
         if (fileNames === undefined) return;
         const fileName = fileNames[0];
         const algo = 'sha256';
@@ -961,15 +958,15 @@ function AccountController(accountService, networkService, storageService, chang
       data,
       openFile,
       cancel,
-      next,
+      next
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/timestampDocument.html',
+      templateUrl: 'src/accounts/view/timestampDocument.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   function sendArk(selectedAccount) {
@@ -979,7 +976,7 @@ function AccountController(accountService, networkService, storageService, chang
       fromAddress: selectedAccount ? selectedAccount.address : '',
       secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
       passphrase: passphrases[0] ? passphrases[0] : '',
-      secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      secondpassphrase: passphrases[1] ? passphrases[1] : ''
     };
 
     // testing goodies
@@ -1028,14 +1025,14 @@ function AccountController(accountService, networkService, storageService, chang
           amount: parseInt($scope.send.data.amount * 100000000),
           smartbridge: $scope.send.data.smartbridge,
           masterpassphrase: $scope.send.data.passphrase,
-          secondpassphrase: $scope.send.data.secondpassphrase,
-        },
+          secondpassphrase: $scope.send.data.secondpassphrase
+        }
       ).then(
         (transaction) => {
           console.log(transaction);
           validateTransaction(selectedAccount, transaction);
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function searchTextChange(text) {
@@ -1074,20 +1071,18 @@ function AccountController(accountService, networkService, storageService, chang
       querySearch,
       fillSendableBalance,
       totalBalance: totalBalance(false),
-      remainingBalance: totalBalance(false), // <-- initial value, this will change by directive
+      remainingBalance: totalBalance(false) // <-- initial value, this will change by directive
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/sendArk.html',
+      templateUrl: 'src/accounts/view/sendArk.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   function manageBackgrounds() {
-    const fs = require('fs');
-    const path = require('path');
     const context = storageService.getContext();
     const currentNetwork = networkService.getNetwork();
     const initialBackground = currentNetwork.background;
@@ -1097,32 +1092,38 @@ function AccountController(accountService, networkService, storageService, chang
         Midnight: '#2c3e50',
         Asbestos: '#7f8c8d',
         Wisteria: '#674172',
-        'Belize Hole': '#2980b9',
+        'Belize Hole': '#2980b9'
       },
       textures: {},
-      images: {},
+      bgimg: {}
     };
 
-    const imgPath = 'assets/img';
-    const assetsPath = path.resolve(__dirname, imgPath);
+    const imgPath = 'client/dist/assets/images';
+    const assetsPath = pathReq.resolve(electron.remote.app.getAppPath(), imgPath);
 
     // find files in directory with same key
     for (const folder in backgrounds) {
-      const fullPath = path.resolve(assetsPath, folder);
+      if (folder !== 'colors') {
+        const fullPath = pathReq.join(assetsPath, folder);
 
-      if (fs.existsSync(path.resolve(fullPath))) { // check dir exists
-        const image = {};
-        fs.readdirSync(fullPath).forEach((file) => {
-          const stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
+        if (fs.statSync(fullPath).isDirectory()) { // check dir exists
+          const image = {};
+          fs.readdirSync(fullPath).forEach((file) => {
+            const stat = fs.statSync(pathReq.resolve(fullPath, file)); // to prevent if directory
 
-          if (stat.isFile()) {
-            let url = path.join(imgPath, folder, file); // ex: assets/img/textures/file.png
-            url = url.replace(/\\/g, '/');
-            const name = path.parse(file).name; // remove extension
-            image[name] = `url('${url}')`;
-          }
-        });
-        backgrounds[folder] = image;
+            if (stat.isFile()) {
+              console.log(file);
+              let url = pathReq.resolve(imgPath, folder, file); // ex: assets/img/textures/file.png
+              url = url.replace(/\\/g, '/');
+              url = url.replace('/client/dist/', ''); // the code executes against the main process but the css executes against the renderer process, which has a different home
+              const strPos = file.lastIndexOf('.');
+              const name = file.substring(0, strPos);// remove extension -- have changed this from path.parse as parse wasn't working on my mac
+              console.log(name);
+              image[name] = `url('${url}')`;
+            }
+          });
+          backgrounds[folder] = image;
+        }
       }
     }
     function select(background) {
@@ -1145,16 +1146,16 @@ function AccountController(accountService, networkService, storageService, chang
       backgroundKeys: Object.keys(backgrounds),
       backgrounds,
       select,
-      selected: initialBackground,
+      selected: initialBackground
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/manageBackground.html',
+      templateUrl: 'src/accounts/view/manageBackground.html',
       clickOutsideToClose: false,
       preserveScope: true,
       scope: $scope,
-      fullscreen: true,
+      fullscreen: true
     });
   }
   function manageNetworks() {
@@ -1186,7 +1187,7 @@ function AccountController(accountService, networkService, storageService, chang
         (network) => {
           refreshTabs();
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function removeNetwork(network) {
@@ -1200,16 +1201,16 @@ function AccountController(accountService, networkService, storageService, chang
       createNetwork,
       removeNetwork,
       cancel,
-      save,
+      save
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/manageNetwork.html',
+      templateUrl: 'src/accounts/view/manageNetwork.html',
       clickOutsideToClose: false,
       preserveScope: true,
       scope: $scope,
-      fullscreen: true,
+      fullscreen: true
     });
   }
   function openPassphrasesDialog(selectedAccount) {
@@ -1222,10 +1223,9 @@ function AccountController(accountService, networkService, storageService, chang
           $mdToast.show(
             $mdToast.simple()
               .textContent(gettextCatalog.getString('Passphrases saved'))
-              .hideDelay(5000),
-          );
+              .hideDelay(5000));
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function cancel() {
@@ -1234,15 +1234,15 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.send = {
       data,
       cancel,
-      save,
+      save
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/savePassphrases.html',
+      templateUrl: 'src/accounts/view/savePassphrases.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   // register as delegate
@@ -1254,7 +1254,7 @@ function AccountController(accountService, networkService, storageService, chang
       username: '',
       secondSignature: selectedAccount.secondSignature,
       passphrase: passphrases[0] ? passphrases[0] : '',
-      secondpassphrase: passphrases[1] ? passphrases[1] : '',
+      secondpassphrase: passphrases[1] ? passphrases[1] : ''
     };
 
     function next() {
@@ -1274,14 +1274,11 @@ function AccountController(accountService, networkService, storageService, chang
           fromAddress: $scope.createDelegate.data.fromAddress,
           username: delegateName,
           masterpassphrase: $scope.createDelegate.data.passphrase,
-          secondpassphrase: $scope.createDelegate.data.secondpassphrase,
-        },
-      ).then(
-        (transaction) => {
-          validateTransaction(selectedAccount, transaction);
-        },
-        formatAndToastError,
-      );
+          secondpassphrase: $scope.createDelegate.data.secondpassphrase
+        }).then((transaction) => {
+        validateTransaction(selectedAccount, transaction);
+      },
+      formatAndToastError);
     }
     function cancel() {
       $mdDialog.hide();
@@ -1289,20 +1286,19 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.createDelegate = {
       data,
       cancel,
-      next,
+      next
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/createDelegate.html',
+      templateUrl: 'src/accounts/view/createDelegate.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   // Create a new cold account
   function createAccount() {
-    const bip39 = require('bip39');
     const data = { passphrase: bip39.generateMnemonic() };
 
     function next() {
@@ -1322,8 +1318,7 @@ function AccountController(accountService, networkService, storageService, chang
             $mdToast.show(
               $mdToast.simple()
                 .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
-                .hideDelay(5000),
-            );
+                .hideDelay(5000));
             selectAccount(account);
           });
           $mdDialog.hide();
@@ -1343,20 +1338,20 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.createAccountDialog = {
       data,
       cancel,
-      next,
+      next
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/createAccount.html',
+      templateUrl: 'src/accounts/view/createAccount.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   function importAccount() {
     const data = {
-      passphrase: '',
+      passphrase: ''
       // TODO second passphrase
       // secondpassphrase: ''
     };
@@ -1375,8 +1370,7 @@ function AccountController(accountService, networkService, storageService, chang
                 $mdToast.show(
                   $mdToast.simple()
                     .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
-                    .hideDelay(5000),
-                );
+                    .hideDelay(5000));
                 return selectAccount(account);
               }
             }
@@ -1385,12 +1379,11 @@ function AccountController(accountService, networkService, storageService, chang
             $mdToast.show(
               $mdToast.simple()
                 .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
-                .hideDelay(5000),
-            );
+                .hideDelay(5000));
             selectAccount(account);
           // TODO save passphrases after we have local encrytion
           },
-          formatAndToastError,
+          formatAndToastError
         );
       $mdDialog.hide();
     }
@@ -1400,25 +1393,24 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.send = {
       data,
       cancel,
-      save,
+      save
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/importAccount.html',
+      templateUrl: 'src/accounts/view/importAccount.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   // Add a second passphrase to an account
   function createSecondPassphrase(account) {
-    const bip39 = require('bip39');
     const data = { secondPassphrase: bip39.generateMnemonic() };
 
     if (account.secondSignature) {
       return formatAndToastError(
-        gettextCatalog.getString(`This account already has a second passphrase: ${account.address}`),
+        gettextCatalog.getString(`This account already has a second passphrase: ${account.address}`)
       );
     }
 
@@ -1434,8 +1426,8 @@ function AccountController(accountService, networkService, storageService, chang
           {
             fromAddress: account.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
-            secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase,
-          },
+            secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
+          }
         ).then(
           (transaction) => {
             networkService.postTransaction(transaction).then(
@@ -1443,13 +1435,12 @@ function AccountController(accountService, networkService, storageService, chang
                 $mdToast.show(
                   $mdToast.simple()
                     .textContent(gettextCatalog.getString('Second Passphrase added successfully: ') + account.address)
-                    .hideDelay(5000),
-                );
+                    .hideDelay(5000));
               },
-              formatAndToastError,
+              formatAndToastError
             );
           },
-          formatAndToastError,
+          formatAndToastError
         );
         $mdDialog.hide();
       }
@@ -1460,15 +1451,15 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.createSecondPassphraseDialog = {
       data,
       cancel,
-      next,
+      next
     };
 
     $mdDialog.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/createSecondPassphrase.html',
+      templateUrl: 'src/accounts/view/createSecondPassphrase.html',
       clickOutsideToClose: false,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   /**
@@ -1479,7 +1470,7 @@ function AccountController(accountService, networkService, storageService, chang
 
     const items = [
       { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' },
-      { name: gettextCatalog.getString('Remove'), icon: 'clear' },
+      { name: gettextCatalog.getString('Remove'), icon: 'clear' }
     ];
 
     if (!selectedAccount.delegate) {
@@ -1522,8 +1513,7 @@ function AccountController(accountService, networkService, storageService, chang
             $mdToast.show(
               $mdToast.simple()
                 .textContent(gettextCatalog.getString('Account removed!'))
-                .hideDelay(3000),
-            );
+                .hideDelay(3000));
           });
         });
       } else if (action === gettextCatalog.getString('Send Ark')) {
@@ -1544,8 +1534,7 @@ function AccountController(accountService, networkService, storageService, chang
           $mdToast.show(
             $mdToast.simple()
               .textContent(gettextCatalog.getString('Label set'))
-              .hideDelay(3000),
-          );
+              .hideDelay(3000));
         });
       } else if (action === gettextCatalog.getString('Second Passphrase')) {
         createSecondPassphrase(account);
@@ -1554,15 +1543,15 @@ function AccountController(accountService, networkService, storageService, chang
     $scope.bs = {
       address: account.address,
       answer,
-      items,
+      items
     };
 
     $mdBottomSheet.show({
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/contactSheet.html',
+      templateUrl: 'src/accounts/view/contactSheet.html',
       clickOutsideToClose: true,
       preserveScope: true,
-      scope: $scope,
+      scope: $scope
     });
   }
   function loadSignedMessages() {
@@ -1582,8 +1571,7 @@ function AccountController(accountService, networkService, storageService, chang
         .clickOutsideToClose(true)
         .title(message)
         .ariaLabel(message)
-        .ok(gettextCatalog.getString('Ok')),
-    );
+        .ok(gettextCatalog.getString('Ok')));
   }
 
   self.signMessage = function (selectedAccount) {
@@ -1608,14 +1596,14 @@ function AccountController(accountService, networkService, storageService, chang
           selectedAccount.signedMessages.push({
             publickey: selectedAccount.publicKey,
             signature: result.signature,
-            message,
+            message
           });
           storageService.set(`signed-${selectedAccount.address}`, selectedAccount.signedMessages);
           $mdDialog.hide();
         },
         (error) => {
           showMessage(error);
-        },
+        }
       );
     }
     function cancel() {
@@ -1627,15 +1615,15 @@ function AccountController(accountService, networkService, storageService, chang
       passphrase: passphrases[0] ? passphrases[0] : '',
       sign,
       cancel,
-      selectedAccount,
+      selectedAccount
     };
 
     $mdDialog.show({
       scope: $scope,
       preserveScope: true,
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/signMessage.html',
-      clickOutsideToClose: false,
+      templateUrl: 'src/accounts/view/signMessage.html',
+      clickOutsideToClose: false
     });
   };
 
@@ -1665,15 +1653,15 @@ function AccountController(accountService, networkService, storageService, chang
       $scope.verify = {
         verify,
         cancel,
-        publickey: self.selected.publicKey,
+        publickey: self.selected.publicKey
       };
 
       $mdDialog.show({
         scope: $scope,
         preserveScope: true,
         parent: angular.element(document.getElementById('app')),
-        templateUrl: 'accounts/view/verifyMessage.html',
-        clickOutsideToClose: false,
+        templateUrl: 'src/accounts/view/verifyMessage.html',
+        clickOutsideToClose: false
       });
     }
   };
@@ -1691,10 +1679,9 @@ function AccountController(accountService, networkService, storageService, chang
           $mdToast.show(
             $mdToast.simple()
               .textContent(`${gettextCatalog.getString('Transaction')} ${transaction.id} ${gettextCatalog.getString('sent with success!')}`)
-              .hideDelay(5000),
-          );
+              .hideDelay(5000));
         },
-        formatAndToastError,
+        formatAndToastError
       );
     }
     function cancel() {
@@ -1705,15 +1692,15 @@ function AccountController(accountService, networkService, storageService, chang
       cancel,
       transaction,
       // to avoid small transaction to be displayed as 1e-8
-      humanAmount: `${accountService.numberToFixed(transaction.amount / 100000000)}`,
+      humanAmount: `${accountService.numberToFixed(transaction.amount / 100000000)}`
     };
 
     $mdDialog.show({
       scope: $scope,
       preserveScope: true,
       parent: angular.element(document.getElementById('app')),
-      templateUrl: 'accounts/view/showTransaction.html',
-      clickOutsideToClose: false,
+      templateUrl: 'src/accounts/view/showTransaction.html',
+      clickOutsideToClose: false
     });
   }
 }
@@ -1721,5 +1708,5 @@ function AccountController(accountService, networkService, storageService, chang
 angular.module('arkclient.accounts')
   .controller('AccountController', ['accountService', 'networkService', 'storageService',
     'changerService', 'ledgerService', '$mdToast', '$mdSidenav', '$mdBottomSheet', '$timeout',
-    '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog', AccountController,
+    '$interval', '$log', '$mdDialog', '$scope', '$mdMedia', 'gettextCatalog', AccountController
   ]);

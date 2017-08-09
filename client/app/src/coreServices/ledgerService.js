@@ -1,4 +1,4 @@
-const ipcRenderer = require('electron').ipcRenderer;
+const ipcRenderer = window.require('electron').ipcRenderer;
 const arkjs = require('arkjs');
 const bip39 = require('bip39');
 const crypto = require('crypto');
@@ -12,7 +12,7 @@ function LedgerService($q, $http, $timeout, storageService) {
   function deriveAddress(path) {
     return ipcRenderer.sendSync('ledger', {
       action: 'getAddress',
-      path,
+      path
     });
   }
 
@@ -27,7 +27,7 @@ function LedgerService($q, $http, $timeout, storageService) {
       const localpath = `${path + accountIndex}'/0/${addressIndex}`;
       const result = ipcRenderer.sendSync('ledger', {
         action: 'getAddress',
-        path: localpath,
+        path: localpath
       });
       if (result.address) {
         result.address = arkjs.crypto.getAddress(result.publicKey);
@@ -86,7 +86,7 @@ function LedgerService($q, $http, $timeout, storageService) {
           address,
           publicKey: keys.getPublicKeyBuffer().toString('hex'),
           ledger: localpath,
-          cold: true,
+          cold: true
         };
         storageService.set(address, result);
         accounts.push(result);
@@ -108,7 +108,7 @@ function LedgerService($q, $http, $timeout, storageService) {
     ipcRenderer.send('ledger', {
       action: 'signTransaction',
       data: arkjs.crypto.getBytes(transaction, true, true).toString('hex'),
-      path,
+      path
     });
     return deferred.promise;
   }
@@ -127,20 +127,20 @@ function LedgerService($q, $http, $timeout, storageService) {
     ipcRenderer.send('ledger', {
       action: 'signMessage',
       data: hash.toString('hex'),
-      path,
+      path
     });
     return deferred.promise;
   }
 
   function detect() {
     return ipcRenderer.sendSync('ledger', {
-      action: 'detect',
+      action: 'detect'
     });
   }
 
   function isAppLaunched() {
     return ipcRenderer.sendSync('ledger', {
-      action: 'getConfiguration',
+      action: 'getConfiguration'
     });
   }
 
@@ -151,7 +151,7 @@ function LedgerService($q, $http, $timeout, storageService) {
     detect,
     isAppLaunched,
     getBip44Accounts,
-    recoverBip44Accounts,
+    recoverBip44Accounts
   };
 }
 

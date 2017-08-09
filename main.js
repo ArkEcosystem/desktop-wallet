@@ -31,7 +31,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({ width: width - 100, height: height - 100, center: true, icon: iconpath, resizable: true, frame: true, show: false });
   mainWindow.setContentProtection(true);
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/client/app/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/client/dist/index.html`);
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
@@ -64,27 +64,27 @@ function createWindow() {
 
         if (arg.action === 'signMessage') {
           ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString('hex')).then(
-            (result) => { event.sender.send('messageSigned', result); },
+            (result) => { event.sender.send('messageSigned', result); }
           ).fail(
-            (error) => { event.sender.send('messageSigned', { error }); },
+            (error) => { event.sender.send('messageSigned', { error }); }
           );
         } else if (arg.action === 'signTransaction') {
           ark.signTransaction_async(arg.path, arg.data).then(
-            (result) => { event.sender.send('transactionSigned', result); },
+            (result) => { event.sender.send('transactionSigned', result); }
           ).fail(
-            (error) => { event.sender.send('transactionSigned', { error }); },
+            (error) => { event.sender.send('transactionSigned', { error }); }
           );
         } else if (arg.action === 'getAddress') {
           ark.getAddress_async(arg.path).then(
-            (result) => { event.returnValue = result; },
+            (result) => { event.returnValue = result; }
           ).fail(
-            (error) => { event.returnValue = error; },
+            (error) => { event.returnValue = error; }
           );
         } else if (arg.action === 'getConfiguration') {
           ark.getAppConfiguration_async().then((result) => {
             result.connected = true;
             event.returnValue = result;
-          },
+          }
           ).fail((error) => {
             const result = {
               connected: false,
@@ -96,7 +96,7 @@ function createWindow() {
             }
             ledgercomm = null;
             event.returnValue = result;
-          },
+          }
           );
         }
       } catch (error) {

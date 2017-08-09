@@ -59,6 +59,11 @@ Then start:
 npm start
 ```
 
+To run a watcher that auto recompiles on changes:
+```bash
+npm run dev
+```
+
 ## Necessary to package from Mac OS X
 
 ```

@@ -8,13 +8,14 @@
  */
 const ark = require('arkjs');
 const crypto = require('crypto');
+
 function AccountService($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
   const TxTypes = {
     0: 'Send Ark',
     1: 'Second Signature Creation',
     2: 'Delegate Registration',
     3: 'Vote',
-    4: 'Multisignature Creation',
+    4: 'Multisignature Creation'
   };
 
   const peer = networkService.getPeer().ip;
@@ -97,12 +98,12 @@ function AccountService($q, $http, networkService, storageService, ledgerService
             secondSignature: false,
             cold: true,
             delegates: [],
-            selectedVotes: [],
+            selectedVotes: []
           };
           deferred.resolve(account);
           addWatchOnlyAddress(account);
         }
-      },
+      }
     );
     return deferred.promise;
   }
@@ -128,16 +129,55 @@ function AccountService($q, $http, networkService, storageService, ledgerService
               address,
               balance: 0,
               secondSignature: false,
-              cold: true,
+              cold: true
             };
           } else {
             account.username = storageService.get(`username-${address}`);
           }
           deferred.resolve(account);
         }
-      },
-    );
+      });
     return deferred.promise;
+  }
+
+  function getVirtual(address) {
+    const virtual = storageService.get(`virtual-${address}`);
+    if (virtual) {
+      // I have messed around with this a bit, as it was
+      // essential a function call a function with an assignment inside it
+      // trying to make neater
+      virtual.uservalue = function (folder) {
+        return function (value) {
+          if (virtual[folder]) {
+            if (arguments.length === 1) {
+              if (value === null) {
+                virtual[folder].amount = null;
+                return virtual[folder].amount;
+              }
+              virtual[folder].amount = value * 100000000;
+              return virtual[folder].amount;
+            }
+            if (virtual[folder].amount !== null) {
+              virtual[folder].amount /= 100000000;
+            }
+
+            return virtual[folder].amount;
+          }
+          return false;
+        };
+      };
+
+      virtual.getFolders = function () {
+        const folders = [];
+        for (let i in virtual) { //eslint-disable-line
+          if (virtual.hasOwnProperty(i) && typeof virtual[i] !== 'function') {
+            folders.push(i);
+          }
+        }
+        return folders;
+      };
+    }
+    return virtual;
   }
 
   function getAccount(address) {
@@ -155,7 +195,8 @@ function AccountService($q, $http, networkService, storageService, ledgerService
 
   function createAccount(passphrase) {
     const deferred = $q.defer();
-    const address = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey, networkService.getNetwork().version);
+    const address = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey,
+      networkService.getNetwork().version);
     fetchAccount(address).then((account) => {
       if (account) {
         account.virtual = account.virtual || {};
@@ -166,41 +207,6 @@ function AccountService($q, $http, networkService, storageService, ledgerService
       }
     });
     return deferred.promise;
-  }
-
-  function getVirtual(address) {
-    const virtual = storageService.get(`virtual-${address}`);
-    if (virtual) {
-      // I have messed around with this a bit, as it was
-      // essential a function call a function with an assignment inside it
-      // trying to make neater
-      virtual.uservalue = function (folder) {
-        return function (value) {
-          if (virtual[folder]) {
-            if (arguments.length === 1) {
-              if (value === null) {
-                return virtual[folder].amount = null;
-              }
-
-              return virtual[folder].amount = value * 100000000;
-            }
-
-            return virtual[folder].amount === null ? '' : virtual[folder].amount / 100000000;
-          }
-        };
-      };
-
-      virtual.getFolders = function () {
-        const folders = [];
-        for (const i in virtual) {
-          if (virtual.hasOwnProperty(i) && typeof virtual[i] !== 'function') {
-            folders.push(i);
-          }
-        }
-        return folders;
-      };
-    }
-    return virtual;
   }
 
   function savePassphrases(address, passphrase, secondpassphrase) {
@@ -251,9 +257,27 @@ function AccountService($q, $http, networkService, storageService, ledgerService
     return $q.when(account);
   }
 
+  function numberToFixed(x) {
+    if (Math.abs(x) < 1.0) {
+      const e = parseInt(x.toString().split('e-')[1], 10);
+      if (e) {
+        x *= Math.pow(10, e - 1);
+        x = `0.${(new Array(e)).join('0')}${x.toString().substring(2)}`;
+      }
+    } else {
+      let e = parseInt(x.toString().split('+')[1], 10);
+      if (e > 20) {
+        e -= 20;
+        x /= Math.pow(10, e);
+        x += (new Array(e + 1)).join('0');
+      }
+    }
+    return x;
+  }
+
   function formatTransaction(transaction, recipientAddress) {
     const d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
-    const t = parseInt(d.getTime() / 1000);
+    const t = parseInt(d.getTime() / 1000, 10);
 
     transaction.label = gettextCatalog.getString(TxTypes[transaction.type]);
     transaction.date = new Date((transaction.timestamp + t) * 1000);
@@ -409,7 +433,7 @@ function AccountService($q, $http, networkService, storageService, ledgerService
       },
       (error) => {
         deferred.reject(error);
-      },
+      }
     );
     return deferred.promise;
   }
@@ -452,19 +476,16 @@ function AccountService($q, $http, networkService, storageService, ledgerService
           },
           (error) => {
             deferred.reject(error);
-          },
-        );
+          });
         return deferred.promise;
       } else if (ark.crypto.getAddress(transaction.senderPublicKey,
         networkService.getNetwork().version) !== config.fromAddress) {
-
         deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress);
       } else {
         deferred.resolve(transaction);
       }
     } else if (type === 1) { // second passphrase creation
       const account = getAccount(config.fromAddress);
-      let transaction;
       if (account.balance < 500000000) {
         deferred.reject(`${gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress}, ${gettextCatalog.getString('you need at least 5 ARK to create a second passphrase')}`);
         return deferred.promise;
@@ -488,12 +509,10 @@ function AccountService($q, $http, networkService, storageService, ledgerService
           },
           (error) => {
             deferred.reject(error);
-          },
-        );
+          });
         return deferred.promise;
       } else if (ark.crypto.getAddress(transaction.senderPublicKey,
         networkService.getNetwork().version) !== config.fromAddress) {
-
         deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress);
         return deferred.promise;
       }
@@ -525,8 +544,7 @@ function AccountService($q, $http, networkService, storageService, ledgerService
           },
           (error) => {
             deferred.reject(error);
-          },
-        );
+          });
         return deferred.promise;
       } else if (ark.crypto.getAddress(transaction.senderPublicKey,
         networkService.getNetwork().version) !== config.fromAddress) {
@@ -537,7 +555,6 @@ function AccountService($q, $http, networkService, storageService, ledgerService
       deferred.resolve(transaction);
     } else if (type === 3) { // vote
       const account = getAccount(config.fromAddress);
-      let transaction;
       if (account.balance < 100000000) {
         deferred.reject(`${gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress}, ${gettextCatalog.getString('you need at least 1 ARK to vote')}`);
         return deferred.promise;
@@ -560,8 +577,7 @@ function AccountService($q, $http, networkService, storageService, ledgerService
           },
           (error) => {
             deferred.reject(error);
-          },
-        );
+          });
         return deferred.promise;
       } else if (ark.crypto.getAddress(transaction.senderPublicKey,
         networkService.getNetwork().version) !== config.fromAddress) {
@@ -590,13 +606,13 @@ function AccountService($q, $http, networkService, storageService, ledgerService
     votedDelegates = votedDelegates.map(delegate => ({
       username: delegate.username,
       address: delegate.address,
-      publicKey: delegate.publicKey,
+      publicKey: delegate.publicKey
     }));
 
     const delegates = newdelegates.map(delegate => ({
       username: delegate.username,
       address: delegate.address,
-      publicKey: delegate.publicKey,
+      publicKey: delegate.publicKey
     }));
 
     if (delegates.length > 101) {
@@ -604,6 +620,7 @@ function AccountService($q, $http, networkService, storageService, ledgerService
     }
     let difflist = [];
     const notRemovedDelegates = [];
+
     for (const i in delegates) {
       const delegate = delegates[i];
       if (arrayObjectIndexOf(votedDelegates, delegate.publicKey, 'publicKey') === -1) {
@@ -639,8 +656,8 @@ function AccountService($q, $http, networkService, storageService, ledgerService
     const result = [];
     $http.get('https://gist.githubusercontent.com/fix/a7b1d797be38b0591e725a24e6735996/raw/sponsors.json').then((resp) => {
       let count = 0;
-      for (const i in resp.data) {
-        networkService.getFromPeer(`/api/delegates/get/?publicKey=${resp.data[i].publicKey}`).then((resp2) => {
+      const networkFun = function (respData) {
+        networkService.getFromPeer(`/api/delegates/get/?publicKey=${respData.publicKey}`).then((resp2) => {
           if (resp2.data && resp2.data.success && resp2.data.delegate) {
             result.push(resp2.data.delegate);
           }
@@ -652,6 +669,10 @@ function AccountService($q, $http, networkService, storageService, ledgerService
         (error) => {
           count++;
         });
+      };
+
+      for (const i in resp.data) {
+        networkFun(resp.data[i]);
       }
     }, (err) => {
       console.log(err);
@@ -719,24 +740,6 @@ function AccountService($q, $http, networkService, storageService, ledgerService
     return sanitizedName;
   }
 
-  function numberToFixed(x) {
-    if (Math.abs(x) < 1.0) {
-      const e = parseInt(x.toString().split('e-')[1]);
-      if (e) {
-        x *= Math.pow(10, e - 1);
-        x = `0.${(new Array(e)).join('0')}${x.toString().substring(2)}`;
-      }
-    } else {
-      let e = parseInt(x.toString().split('+')[1]);
-      if (e > 20) {
-        e -= 20;
-        x /= Math.pow(10, e);
-        x += (new Array(e + 1)).join('0');
-      }
-    }
-    return x;
-  }
-
   function smallId(fullId) {
     return `${fullId.slice(0, 5)}...${fullId.slice(-5)}`;
   }
@@ -760,7 +763,7 @@ function AccountService($q, $http, networkService, storageService, ledgerService
       }
       accounts = uniqueaccounts;
       console.log(uniqueaccounts);
-      accounts = accounts.filter(address => (storageService.get(`username-${address}`) !== null || storageService.get(`virtual-${address}`) !== null) && !storageService.get(address).ledger);
+      accounts = accounts.filter(address => (storageService.get(`username-${address}`) !== null || storageService.get(`virtual-${address}`) !== null) && !storageService.get(address).ledger);
       return accounts.map((address) => {
         const account = storageService.get(address);
         if (account) {
@@ -836,7 +839,7 @@ function AccountService($q, $http, networkService, storageService, ledgerService
 
     smallId,
 
-    formatTransaction,
+    formatTransaction
   };
 }
 

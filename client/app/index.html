@@ -10,9 +10,9 @@
 
     <link rel="stylesheet" href="assets/css/roboto.css"/>
     <link rel="stylesheet" href="assets/css/material-icons.css"/>
-    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css"/>
-    <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="assets/app.css"/>
+    <link rel="stylesheet" href="assets/css/angular-material.min.css"/>
+    <link href="assets/css/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/app.css"/>
 
     <style type="text/css">
         html, body { background-color: #000 }
@@ -271,20 +271,24 @@
                    </span>
 
                </md-list-item>
-               <md-list-item class="main-actions">
+               <md-list-item class="main-actions" layout="row" layout-align="center">
+
+                 <div flex="33">
                  <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
-                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Add Contact</translate>
+                   <md-icon md-font-library="material-icons">add</md-icon> <translate>Add Watch Only Address</translate>
 
                  </md-button>
-
+                </div>
+                <div flex="33">
                  <md-button ng-click="ul.importAccount()">
                    <md-icon>file_download</md-icon> <translate>Import Account</translate>
                  </md-button>
-
+                </div>
+                <div flex>
                  <md-button ng-click="ul.createAccount()">
                    <md-icon>account_box</md-icon> <translate>Create Account</translate>
                  </md-button>
-
+                </div>
                </md-list-item>
              </md-list>
            </md-content>
@@ -324,8 +328,8 @@
              </md-content>
            </div>
 
-           <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-           <div class="coinmarketcap-currency-widget" data-currency="ark" data-base="USD"  data-secondary="BTC"></div>
+
+           <!--<div class="coinmarketcap-currency-widget" data-currency="ark" data-base="USD"  data-secondary="BTC"></div>-->
            <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
            <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
 
@@ -899,22 +903,8 @@
     </md-content>
   </div>
 
-    <script src="dependencies.min.js"></script>
-
-    <script src="src/coreUtils/translationsRun.js"></script>
-    <script src="src/accounts/accounts.js"></script>
-    <script src="src/coreServices/storageService.js"></script>
-    <script src="src/accounts/accountService.js"></script>
-    <script src="src/accounts/accountController.js"></script>
-    <script src="src/coreServices/networkService.js"></script>
-    <script src="src/coreServices/changerService.js"></script>
-    <script src="src/coreServices/ledgerService.js"></script>
-    <script src="src/coreUtils/validAmountDirective.js"></script>
-    <script src="src/qrscanner/ScannerController.js"></script>
-    <script src="src/qrscanner/qrScannerDirective.js"></script>
-    <script src="src/Addressbook/addressbookController.js"></script>
-
-
+    <script src="vendor.js"></script>
+    <!--<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>-->
     <script src="app.js"></script>
 
   </body>
