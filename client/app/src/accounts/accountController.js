@@ -1174,7 +1174,7 @@
         images: {}
       };
 
-      let imgPath = 'assets/img';
+      let imgPath = 'assets/images';
       let assetsPath = path.resolve(__dirname, imgPath);
 
       // find files in directory with same key
