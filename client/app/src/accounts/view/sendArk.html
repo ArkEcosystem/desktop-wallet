@@ -71,7 +71,7 @@
         </md-input-container>
         <md-input-container class="md-block" ng-if="send.data.secondSignature">
           <label translate>Second Passphrase</label>
-          <input ng-model="send.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" tabIndex="5">
+          <input ng-model="send.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" tabIndex="5">
           <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
             {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
           </md-icon>
