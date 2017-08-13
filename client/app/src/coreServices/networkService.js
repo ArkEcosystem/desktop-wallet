@@ -15,7 +15,7 @@
     let ark = require('arkjs');
     ark.crypto.setNetworkVersion(network.version || 23);
 
-    let clientVersion = require('../../../package.json').version;
+    let clientVersion = require('packageJson').version;
 
     let peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
 

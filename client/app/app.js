@@ -1,9 +1,5 @@
 //hack as per https://github.com/monospaced/angular-qrcode
 window.qrcode = require("qrcode-generator");
-require('angular');
-require('angular-material');
-require('angular-material-data-table');
-require('angular-gettext');
 require('angular-qrcode');
 
 angular

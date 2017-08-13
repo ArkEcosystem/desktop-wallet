@@ -1,49 +1,12 @@
 module.exports = function(grunt) {
-  require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    babel: {
+    jshint: {
+      files: ['Gruntfile.js', 'client/app/src/**/*.js'],
       options: {
-        sourceMap: true,
-        presets: ['es2015']
-      },
-      dist: {
-        files: {
-          'client/dist/app.js': ['client/app/src/**/*.js', 'client/app/app.js']
+        globals: {
+          jQuery: true
         }
-      }
-    },
-    eslint: {
-      target: ['Gruntfile.js', 'client/app/src/**/*.js',],
-    },
-    htmllint: {
-      options: {},
-      src: [
-        'client/app/src**/*.html'
-      ],
-    },
-    uglify: {
-      options: {
-        mangle: {
-          reserved: ['jQuery']
-        }
-      },
-
-      vendor: {
-        files: {
-          'client/dist/vendor.min.js': ['client/app/assets/**/*.js']
-        }
-      }
-    },
-    watch: {
-      js: {
-        files: ['<%= eslint.target %>'],
-        tasks: ['eslint']
-      },
-      html: {
-        files: ['<%= htmllint.src %>'],
-        tasks: ['htmllint']
       }
     },
     nggettext_extract: {
@@ -56,15 +19,15 @@ module.exports = function(grunt) {
     nggettext_compile: {
       all: {
         files: {
-          'client/app/src/translations.js': ['po/*.po']
+          'client/app/src/coreUtils/translationsRun.js': ['po/*.po']
         }
       },
     }
   });
 
-  grunt.registerTask('default', ['nggettext_compile']);
-  grunt.registerTask('test', ['eslint']);
-  grunt.registerTask('bundle', ['babel:dist','uglify']);
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-angular-gettext');
 
+  grunt.registerTask('default', ['nggettext_compile']);
 
 };

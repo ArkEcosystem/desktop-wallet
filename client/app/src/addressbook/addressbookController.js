@@ -21,7 +21,6 @@
 
     self.save = function () {
       storageService.set("contacts", self.contacts);
-      $scope.$apply();
     };
 
     self.isAddress = function (address) {
@@ -93,7 +92,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: 'addressbook/viewaddAddressbookContact.html',
+        templateUrl: 'src/addressbook/view/addAddressbookContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -161,7 +160,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: 'addressbook/view/editAddressbookContact.html',
+        templateUrl: 'src/addressbook/view/editAddressbookContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
