@@ -658,6 +658,8 @@
           .then(function(account) {
             if (self.selected.address == currentaddress) {
               self.selected.balance = account.balance;
+              self.selected.secondSignature = account.secondSignature;
+              self.selected.cold = account.cold;
 
               if (!self.selected.virtual) self.selected.virtual = account.virtual;
             }
@@ -711,6 +713,8 @@
         .then(function(account) {
           if (self.selected.address == myaccount.address) {
             self.selected.balance = account.balance;
+            self.selected.secondSignature = account.secondSignature;
+            self.selected.cold = account.cold;
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
         });
@@ -783,6 +787,8 @@
         .then(function(account) {
           if (self.selected.address == currentaddress) {
             self.selected.balance = account.balance;
+            self.selected.secondSignature = account.secondSignature;
+            self.selected.cold = account.cold;
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
