@@ -427,9 +427,15 @@
                   </md-button>-->
                   <span class="delegate-name" ng-controller="AddressbookController as ab">{{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}</span>
               <br>
-              <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{ul.selected.address}}">
-                <md-icon>content_copy</md-icon> {{ul.selected.address}}</md-button>
-
+              <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}">
+                <md-icon>content_copy</md-icon> {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
+              </md-button>
+              <md-icon ng-if="ul.selected.publicKey" aria-label="teste" style="cursor: pointer;outline: none" ng-click="ul.showPublicKey = !ul.showPublicKey" md-font-library="material-icons">
+                <md-tooltip md-direction="top">
+                  <translate>{{((!ul.showPublicKey) && 'Show public key' || 'Show address')}}</translate>
+                </md-tooltip>
+                {{((!ul.showPublicKey) && 'vpn_key' || 'public')}}
+              </md-icon>
               </span>
               <span class="md-subhead description">
                   <translate>Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}

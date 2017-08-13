@@ -660,6 +660,7 @@
               self.selected.balance = account.balance;
               self.selected.secondSignature = account.secondSignature;
               self.selected.cold = account.cold;
+              self.selected.publicKey = account.publicKey;
 
               if (!self.selected.virtual) self.selected.virtual = account.virtual;
             }
@@ -715,6 +716,8 @@
             self.selected.balance = account.balance;
             self.selected.secondSignature = account.secondSignature;
             self.selected.cold = account.cold;
+            self.selected.publicKey = account.publicKey;
+
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
         });
@@ -775,7 +778,9 @@
     function selectAccount(account) {
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
-      console.log(self.selected);
+
+      self.showPublicKey = false;
+
       loadSignedMessages();
       if (!self.selected.selectedVotes) {
         if (self.selected.delegates) {
@@ -789,6 +794,7 @@
             self.selected.balance = account.balance;
             self.selected.secondSignature = account.secondSignature;
             self.selected.cold = account.cold;
+            self.selected.publicKey = account.publicKey;
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
