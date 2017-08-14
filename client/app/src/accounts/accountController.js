@@ -55,7 +55,7 @@
     };
 
     self.windowApp = function(action, args) {
-      let curWin = require('electron').remote.getCurrentWindow();
+      const curWin = require('electron').remote.getCurrentWindow();
       if(curWin[action])
         return curWin[action](args);
       else return null;
@@ -80,7 +80,7 @@
     };
 
     self.openExplorer = openExplorer;
-    self.clientVersion = require('../../package.json').version;
+    self.clientVersion = require('packageJson').version;
     self.latestClientVersion = self.clientVersion;
     networkService.getLatestClientVersion().then( function(r) { self.latestClientVersion = r; } );
     self.isNetworkConnected=false;
@@ -998,7 +998,7 @@
 
       function openFile(){
         let crypto = require('crypto');
-        let fs = require('fs');
+        const fs = require('fs');
 
         require('electron').remote.dialog.showOpenDialog(function (fileNames) {
          if (fileNames === undefined) return;
@@ -1157,8 +1157,8 @@
     };
 
     function manageBackgrounds(){
-      let fs = require('fs');
-      let path = require('path');
+      const fs = require('fs');
+      const  path = require('path');
       let context = storageService.getContext();
       let currentNetwork = networkService.getNetwork();
       let initialBackground = currentNetwork.background;
@@ -1390,7 +1390,7 @@
 
     //Create a new cold account
     function createAccount(){
-      let bip39 = require("bip39");
+      const bip39 = require("bip39");
       let data = { passphrase: bip39.generateMnemonic() };
 
       function next() {
@@ -1513,7 +1513,7 @@
 
     // Add a second passphrase to an account
     function createSecondPassphrase(account){
-      let bip39 = require("bip39");
+      const bip39 = require("bip39");
       let data = { secondPassphrase: bip39.generateMnemonic() };
 
       if (account.secondSignature) {
@@ -1775,7 +1775,7 @@
         let signature = $scope.verify.signature;
         let res = accountService.verifyMessage(message, publickey, signature);
         $mdDialog.hide();
-        let message =  gettextCatalog.getString("Error in signature processing");
+        message =  gettextCatalog.getString("Error in signature processing");
         if(res === true)
         {
           message = gettextCatalog.getString("The message is verified successfully");

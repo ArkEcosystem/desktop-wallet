@@ -31,7 +31,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: iconpath, resizable:true, frame:true, show:false});
   mainWindow.setContentProtection(true);
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/client/app/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/client/dist/index.html`);
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()

@@ -23,27 +23,6 @@ module.exports = function (grunt) {
             packageJson: './package.json'
           }
         }
-      },
-      client: {
-        src: ['client/app/app.js', 'client/app/src/accounts/accounts.js', 'client/app/src/addressbook/addressbook.js',
-          'client/app/src/coreServices/coreServices.js', 'client/app/src/coreUtils/acoreUtils.js',
-          'client/app/src/qrScanner/qrScanner.js', 'client/app/src/**/*.js'],
-        dest: 'client/dist/app.js',
-        options: {
-          browserifyOptions: {
-            ignoreMissing: true,
-            insertGlobals: true,
-            detectGlobals: true,
-            bare: true,
-            debug: false
-          },
-          transform: [
-            ['brfs']
-          ],
-          external: ['angular', 'angular-animate', 'angular-aria', 'angular-gettext', 'angular-material', 'angular-material-data-table', 'angular-messages', 'qrcode-generator', 'angular-qrcode',
-            'angular-ui-router', 'arkjs', 'jsqr', 'packageJson', 'bip39']
-
-        }
       }
     },
     clean: ['client/dist'],
@@ -80,7 +59,15 @@ module.exports = function (grunt) {
           { src: 'client/app/ark.png',
             dest: 'client/dist/ark.png' }
         ]
-      }
+      },
+      javascript: {
+        files: [
+          // this is only included temporarily to allow for running before linting
+          { expand: true, cwd: 'client/app/src', src: ['**/*.js'], dest: 'client/dist/' },
+          { src: 'client/app/app.js',
+            dest: 'client/dist/app.js' }
+        ]
+      },
     },
     eslint: {
       target: ['Gruntfile.js', 'client/app/src/**/*.js']
@@ -111,7 +98,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= eslint.target %>'],
-        tasks: ['browserify:client']
+        tasks: ['copy:javascript']
       },
       html: {
         files: ['<%= htmllint.src %>'],
