@@ -1095,7 +1095,7 @@ function AccountController(accountService, networkService, storageService, chang
         'Belize Hole': '#2980b9'
       },
       textures: {},
-      bgimg: {}
+      images: {}
     };
 
     const imgPath = 'client/dist/assets/images';
@@ -1112,13 +1112,11 @@ function AccountController(accountService, networkService, storageService, chang
             const stat = fs.statSync(pathReq.resolve(fullPath, file)); // to prevent if directory
 
             if (stat.isFile()) {
-              console.log(file);
               let url = pathReq.resolve(imgPath, folder, file); // ex: assets/img/textures/file.png
               url = url.replace(/\\/g, '/');
               url = url.replace('/client/dist/', ''); // the code executes against the main process but the css executes against the renderer process, which has a different home
               const strPos = file.lastIndexOf('.');
               const name = file.substring(0, strPos);// remove extension -- have changed this from path.parse as parse wasn't working on my mac
-              console.log(name);
               image[name] = `url('${url}')`;
             }
           });
