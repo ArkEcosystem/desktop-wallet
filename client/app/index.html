@@ -81,7 +81,7 @@
           <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">settings</md-icon>
           </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 400px; overflow:hidden;">
+          <md-menu-content flex layout-padding width="6" style="min-height: 475px; overflow:hidden;">
             <md-list class="left-list">
               <md-list-item layout="row">
                 <md-button ng-disabled="true">
@@ -124,6 +124,9 @@
               </md-list-item>
               <md-list-item>
                 <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
+              </md-list-item>
+              <md-list-item>
+                  <md-switch ng-model="ul.darkMode" class="md-primary" md-no-ink arial-label="Dark Mode" ng-change="ul.toggleDarkMode()" ng-init="ul.toggleDarkMode()">Dark Mode</md-switch>
               </md-list-item>
               <md-list>
           </md-menu-content>
@@ -356,7 +359,7 @@
               Ledger Nano S
             </h2>
           </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
+          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : '')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
             <span style="white-space: nowrap;">
                   <md-icon md-svg-icon="ledger"></md-icon>
                   {{it.address|accountlabel}}
@@ -370,7 +373,7 @@
               My Accounts
             </h2>
           </md-list-item>
-          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address? 'primary' : '')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
             <span style="white-space: nowrap;">
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
@@ -383,7 +386,7 @@
               Contacts
             </h2>
           </md-list-item>
-          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
+          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : '')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
             <span style="white-space: nowrap;">
                   <md-icon md-font-library="material-icons">account_circle</md-icon>
                   {{contact.name}}

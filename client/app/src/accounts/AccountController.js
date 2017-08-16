@@ -180,6 +180,8 @@
 
     self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
     self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
+    self.darkMode = storageService.get("darkMode") || false;
+    self.toggleDarkMode = toggleDarkMode;
     self.manageBackgrounds = manageBackgrounds;
     self.manageNetworks = manageNetworks;
     self.openPassphrasesDialog = openPassphrasesDialog;
@@ -769,6 +771,17 @@
 
     function togglePlayFundsReceivedSong(status) {
       storageService.set('playFundsReceivedSong', self.playFundsReceivedSong, true);
+    }
+
+    function toggleDarkMode(){
+      if(self.darkMode){
+        turnOnDarkMode();
+      }
+      else{
+        turnOffDarkMode();
+      }
+
+      storageService.set('darkMode', self.darkMode, true);
     }
 
     /**
