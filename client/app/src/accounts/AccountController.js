@@ -571,10 +571,7 @@
       $mdMenuOpen(ev);
     };
 
-
     self.changeCurrency = function() {
-      
-      self.currency = self.currencies[self.currencies.map(function(x) { return x.name; }).indexOf(self.currency.name) + 1];
       if (self.currency == undefined) self.currency = currencies[0];
       storageService.set("currency", self.currency);
     };
