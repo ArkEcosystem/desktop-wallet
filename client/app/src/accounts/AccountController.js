@@ -3,6 +3,7 @@
     .module('arkclient')
     .controller('AccountController', [
       'accountService',
+      'pluginLoader',
       'networkService',
       'storageService',
       'changerService',
@@ -90,7 +91,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
+  function AccountController(accountService, pluginLoader, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
     var self = this;
 
     var languages = {
@@ -112,6 +113,7 @@
       id: gettextCatalog.getString("Indonesian"),
       ru: gettextCatalog.getString("Russian")
     };
+    pluginLoader.triggerEvent("onStart");
 
 
     gettextCatalog.debug = false;
@@ -778,7 +780,7 @@
     function selectAccount(account) {
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
-
+      pluginLoader.triggerEvent("onSelectAccount", self.selected);
       self.showPublicKey = false;
 
       loadSignedMessages();
