@@ -171,8 +171,13 @@
           <md-menu-content flex layout-padding width="6">
             <md-list>
               <md-list-item>
-                <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-                <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+                <b><translate>Price</translate> 
+                  <md-select ng-model="ul.currency.symbol" ng-change="ul.changeCurrency()">
+                    <md-option ng-value="opt.symbol" ng-repeat="opt in currencies">{{ opt.symbol }}</md-option>
+                  </md-select>
+                  </b>
+                <!--<md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()"></md-button>-->
+                {{ul.connectedPeer.market.price[ul.currency.name]}}
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
