@@ -354,6 +354,12 @@
     };
 
     function verifyMessage(message, publicKey, signature) {
+      //check for hexadecimal, otherwise the signature check would may fail
+      var re = /[0-9A-Fa-f]{6}/g;
+      if(!re.test(publicKey) || !re.test(signature))
+      {
+        return;
+      }
       var crypto = require("crypto");
       var hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
