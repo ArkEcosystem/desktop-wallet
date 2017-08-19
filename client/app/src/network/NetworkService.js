@@ -2,13 +2,13 @@
   'use strict';
 
   angular.module('arkclient')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', NetworkService]);
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService($q, $http, $timeout, storageService) {
+  function NetworkService($q, $http, $timeout, storageService, timeService) {
 
     var network = switchNetwork(storageService.getContext());
 
@@ -151,23 +151,28 @@
 
     function listenNetworkHeight() {
       $http.get(peer.ip + "/api/blocks/getheight", { timeout: 5000 }).then(function(resp) {
-        peer.lastConnection = new Date();
-        if (resp.data && resp.data.success) {
-          if (peer.height == resp.data.height) {
-            peer.isConnected = false;
-            peer.error = "Node is experiencing sychronisation issues";
-            connection.notify(peer);
-            pickRandomPeer();
-          } else {
-            peer.height = resp.data.height;
-            peer.isConnected = true;
-            connection.notify(peer);
+        timeService.getTimestamp().then(
+          function(timestamp) {
+            peer.lastConnection = timestamp;
+            if (resp.data && resp.data.success) {
+              if (peer.height == resp.data.height) {
+                peer.isConnected = false;
+                peer.error = "Node is experiencing sychronisation issues";
+                connection.notify(peer);
+                pickRandomPeer();
+              } else {
+                peer.height = resp.data.height;
+                peer.isConnected = true;
+                connection.notify(peer);
+              }
+            } else {
+              peer.isConnected = false;
+              peer.error = resp.statusText || "Peer Timeout after 5s";
+              connection.notify(peer);
+            }
           }
-        } else {
-          peer.isConnected = false;
-          peer.error = resp.statusText || "Peer Timeout after 5s";
-          connection.notify(peer);
-        }
+        )
+        
       });
       $timeout(function() {
         listenNetworkHeight();
@@ -176,32 +181,42 @@
 
     function getFromPeer(api) {
       var deferred = $q.defer();
-      peer.lastConnection = new Date();
-      $http({
-        url: peer.ip + api,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'os': 'ark-desktop',
-          'version': clientVersion,
-          'port': 1,
-          'nethash': network.nethash
-        },
-        timeout: 5000
-      }).then(
-        function(resp) {
-          deferred.resolve(resp.data);
-          peer.isConnected = true;
-          peer.delay = new Date().getTime() - peer.lastConnection.getTime();
-          connection.notify(peer);
-        },
-        function(resp) {
-          deferred.reject("Peer disconnected");
-          peer.isConnected = false;
-          peer.error = resp.statusText || "Peer Timeout after 5s";
-          connection.notify(peer);
+      timeService.getTimestamp().then(
+        function(timestamp) {
+          peer.lastConnection = timestamp;
+          $http({
+            url: peer.ip + api,
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'os': 'ark-desktop',
+              'version': clientVersion,
+              'port': 1,
+              'nethash': network.nethash
+            },
+            timeout: 5000
+          }).then(
+            function(resp) {
+              timeService.getTimestamp().then(
+                function(success){
+                  deferred.resolve(resp.data);
+                  peer.isConnected = true;
+                  peer.delay = timestamp - peer.lastConnection.getTime();
+                  connection.notify(peer);
+                }
+              )
+              
+            },
+            function(resp) {
+              deferred.reject("Peer disconnected");
+              peer.isConnected = false;
+              peer.error = resp.statusText || "Peer Timeout after 5s";
+              connection.notify(peer);
+            }
+          );
         }
       );
+      
       return deferred.promise;
     }
 
