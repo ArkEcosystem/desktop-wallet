@@ -171,7 +171,7 @@
       }
       $http.get(url + "exchange/" + exchange.exchange_id).then(function(resp) {
         saveExchange(exchange, resp.data);
-        timerService.getTimestamp().then(
+        timeService.getTimestamp().then(
           function(timestamp) {
             if (resp.data.status == "new" || resp.data.status == "processing") {
               if (resp.data.status == "new" && exchange.expiration < timestamp / 1000) {
@@ -208,7 +208,7 @@
 
     function getHistory(noupdate) {
       if (!!!noupdate) {
-        timerService.getTimestamp().then(
+        timeService.getTimestamp().then(
           function(timestamp){
             for (var id in history) {
               delete history[id].$$hashKey;
