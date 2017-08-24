@@ -1,6 +1,6 @@
 {
   "name": "KapuClient",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "productName": "KapuClient",
   "description": "Kapu Desktop",
   "main": "main.js",
@@ -35,16 +35,21 @@
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
-    }
-  ],
+    },
+    {
+      "name": "Giovanni Silvestri",
+      "email": "gsit80@gmail.com",
+      "url": "https://github.com/zackkoGH"
+    }  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fix/ark-desktop/issues"
   },
   "homepage": "https://github.com/fix/ark-desktop#readme",
   "devDependencies": {
-    "electron": "^1.4.15",
-    "electron-builder": "^12.3.1",
+    "ajv": "^5.2.2",
+    "electron": "^1.7.6",
+    "electron-builder": "^19.24.1",
     "grunt": "~0.4.5",
     "grunt-angular-gettext": "^2.2.3",
     "grunt-contrib-jshint": "~0.10.0",
@@ -57,10 +62,10 @@
       "category": "finance"
     },
     "win": {
-      "iconUrl": "https://ark.io/i/mediakit/icon_1.png"
+     "icon": "build/icon.ico"
     },
     "linux": {
-      "synopsis": "A Lite Client used to securely connect to the Ark network and manage your Ark assets.",
+      "synopsis": "A Lite Client used to securely connect to the Kapu network and manage your Kapu assets.",
       "description": ""
     }
   }
