@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('arkclient')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService]);
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'timeService', 'gettextCatalog', AccountService]);
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
+  function AccountService($q, $http, networkService, storageService, ledgerService, timeService, gettextCatalog) {
 
     var ark = require('arkjs');
 
@@ -33,7 +33,7 @@
 
       time = new Date((time + t) * 1000);
 
-      var currentTime = new Date().getTime();
+      var currentTime = timeService.getTime();
       var diffTime = (currentTime - time.getTime()) / 1000;
 
       if (diffTime < 60) {

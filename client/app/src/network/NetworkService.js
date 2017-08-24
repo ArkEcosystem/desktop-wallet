@@ -2,13 +2,13 @@
   'use strict';
 
   angular.module('arkclient')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', NetworkService]);
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService($q, $http, $timeout, storageService) {
+  function NetworkService($q, $http, $timeout, storageService, timeService) {
 
     var network = switchNetwork(storageService.getContext());
 
@@ -130,7 +130,7 @@
         .then(function(res) {
           if (res.data.price && res.data.price.btc)
             res.data.price.btc = Number(res.data.price.btc).toFixed(8); // store BTC price in satoshi
-          storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
+          storageService.set('lastPrice', { market: res.data, date: timeService.getTime() }, true);
           peer.market = res.data;
         }, function() {
           var lastPrice = storageService.get('lastPrice');
@@ -151,7 +151,7 @@
 
     function listenNetworkHeight() {
       $http.get(peer.ip + "/api/blocks/getheight", { timeout: 5000 }).then(function(resp) {
-        peer.lastConnection = new Date();
+        peer.lastConnection = timeService.getTime();
         if (resp.data && resp.data.success) {
           if (peer.height == resp.data.height) {
             peer.isConnected = false;
@@ -176,7 +176,7 @@
 
     function getFromPeer(api) {
       var deferred = $q.defer();
-      peer.lastConnection = new Date();
+      peer.lastConnection = timeService.getTime();
       $http({
         url: peer.ip + api,
         method: 'GET',
