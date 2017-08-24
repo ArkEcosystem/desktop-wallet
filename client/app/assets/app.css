@@ -6,6 +6,7 @@ html, body {
   padding: 0px;
 }
 
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -48,6 +49,11 @@ html, body {
 md-toolbar h3 {
   margin: auto;
   font-weight: 500;
+}
+md-toolbar{
+	
+	    background: rgb(210, 188, 36) !important;
+	
 }
 
 /* Sidenav area */
@@ -209,15 +215,30 @@ span.name {
 }
 
 #home-box-accounts {
-  min-height: 180px;
+    min-height: 180px;
+    background: rgba(72, 72, 72, 0.55);
+    color: white;
+    border-radius: 0 !important;
+    opacity: 0.9 !important;
+    min-width: 0 !important;
+    width: 50% !important;
+    position: absolute;
+    bottom: 17em;
 }
 
 #home-box-row {
-  min-height: 180px;
+    min-height: 180px;
+    position: absolute;
+    bottom: 2em;
+
 }
 
 #home-box-price, #home-box-network {
   /*min-height: 100px;*/
+    background: rgba(72, 72, 72, 0.55);
+    color: white;
+    border-radius: 0 !important;
+    opacity: 0.9 !important;
 }
 
 table#tx-list.md-table tbody.md-body > tr.md-row > td.md-cell,
