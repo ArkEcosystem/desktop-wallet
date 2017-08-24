@@ -295,7 +295,7 @@
     
     function getLatestClientVersion() {
         var deferred = $q.defer();
-        var url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest';
+        var url = 'https://api.github.com/repos/kapucoin/kapu-desktop/releases/latest';
         $http.get(url, {timeout: 5000})
             .then(function(res) {
                 deferred.resolve(res.data.tag_name);

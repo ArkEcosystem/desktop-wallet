@@ -7,15 +7,15 @@
 * Available on ***Windows***, ***Linux*** (ubuntu/debian) and ***Macosx*** (signed)
 * No wait to sync to the network: launch and use.
 * view any account from its address (transactions, delegate status and votes)
-* (soon) deposit ARK using altcoins or USD (via changer.com) - no registration needed
+* (soon) deposit KAPU using altcoins or USD (via changer.com) - no registration needed
 * label any account
 * realtime currency value (updated every 5 min) in UsD, Euro, BTC, HKD, JPY, CNY, AuD, CanD, Pound and Rubble
-* autoconnecting to a healthy ark network peer. If the peer is not good any more, automatically find a new one.
-* send ark from/to any account.
+* autoconnecting to a healthy kapu network peer. If the peer is not good any more, automatically find a new one.
+* send kapu from/to any account.
 * easily switch to different network, or private chains
 * customize background
 * isolated processes on Windows and Macosx to prevent from data sniffing or injection.
-* Translations (thanks to the Ark community). Please help contributing
+* Translations (thanks to the kapu community). Please help contributing
 
 If you login to your account (with your passphrase)
 * (soon) Withdraw to altcoins or USD (via changer.com) - no registration needed
@@ -70,4 +70,4 @@ brew bundle
 - FX Thoorens <fx@ark.io>
 - Guillaume Verbal <doweig@ark.io>
 
-### License [MIT](LICENSE.md) copyright (c) 2016 ARK, copyright (c) 2016 fx thoorens
+### License [MIT](LICENSE.md) copyright (c) 2016 KAPU, copyright (c) 2016 fx thoorens
