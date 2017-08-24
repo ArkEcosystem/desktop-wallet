@@ -54,10 +54,10 @@ npm start
 ```
 
 ## Necessary to package from Ubuntu
-...
+```
 apt-get install icnsutils
 apt-get install imagemagick
-...
+```
 
 ## Necessary to package from Mac OS X
 
