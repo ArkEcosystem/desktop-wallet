@@ -29,6 +29,8 @@
       __getJSON('http://date.jsontest.com/').then(function(data) 
       {
         return new Date(Date.parse(data["date"]+" "+data["time"]));
+      }, function(error) {
+        return new Date();
       });
     }
   }
