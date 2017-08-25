@@ -2,36 +2,25 @@
   'use strict';
 
   angular.module('arkclient')
-    .service('timeService', [TimeService]);
+    .service('timeService', ['$http', TimeService]);
 
   /**
    * TimeService
    * @constructor
    */
-  function TimeService() {
-    function __getJSON(url) {
-      return new Promise(function(resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.responseType = 'json';
-        xhr.onload = function() {
-          var status = xhr.status;
-          if (status == 200) {
-            resolve(xhr.response);
-          } else {
-            reject(status);
-          }
-        };
-        xhr.send();
-      });
-    };
+  function TimeService($http) {
     this.getTime = function() {
-      __getJSON('http://date.jsontest.com/').then(function(data) 
-      {
-        return new Date(Date.parse(data["date"]+" "+data["time"]));
-      }, function(error) {
-        return new Date();
-      });
+      $http.get('http://date.jsontest.com/', { timeout: 2000 })
+        .then(function(resp) {
+          var date = new Date(Date.parse(resp.data["date"]+" "+resp.data["time"]));
+          //GMT-4 New York Time
+          date.setHours(date.getHours() - 4);
+          alert(date.getHours());
+          return date
+        }, function() {
+          alert("offline");
+          return new Date();
+        });
     }
   }
 })();
