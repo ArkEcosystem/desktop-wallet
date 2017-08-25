@@ -250,7 +250,7 @@
   </md-toolbar>
 
   <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
-    <md-content id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px;" md-whiteframe="3">
+    <md-content id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px; overflow:hidden; height:100%;" md-whiteframe="3">
       <md-toolbar layout="row">
         <div class="md-toolbar-tools">
           <h2>
@@ -260,7 +260,17 @@
           <md-icon md-font-library="material-icons">cached</md-icon>
         </md-button>
       </md-toolbar>
-      <md-list md-no-ink>
+      <md-button ng-click="ul.importAccount()">
+        <md-icon>file_download</md-icon>
+        <translate>Import Account</translate>
+      </md-button>
+
+      <md-button ng-click="ul.createAccount()">
+        <md-icon>account_box</md-icon>
+        <translate>Create Account</translate>
+      </md-button>
+      <md-list md-no-ink style="overflow:auto; height:80%;">
+        
         <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.ledger.connected">
           <span>
                      <md-icon md-svg-icon="ledger"></md-icon>
@@ -281,21 +291,7 @@
           </span>
           <span class="md-secondary">
                      {{ul.network.symbol}}{{it.balance/100000000}}
-                   </span>
-
-        </md-list-item>
-        <md-list-item class="main-actions">
-
-          <md-button ng-click="ul.importAccount()">
-            <md-icon>file_download</md-icon>
-            <translate>Import Account</translate>
-          </md-button>
-
-          <md-button ng-click="ul.createAccount()">
-            <md-icon>account_box</md-icon>
-            <translate>Create Account</translate>
-          </md-button>
-
+          </span>
         </md-list-item>
       </md-list>
     </md-content>
