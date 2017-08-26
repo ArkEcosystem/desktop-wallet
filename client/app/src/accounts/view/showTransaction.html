@@ -40,6 +40,9 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
+      <md-button ng-click="validate.saveFile()">
+        <span translate>Save File</span>
+      </md-button>
       <md-button md-colors="{'background':'primary' }" ng-click="validate.send(validate.transaction)">
         <span translate>Send</span> Ѧ{{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>now!</span>
       </md-button>

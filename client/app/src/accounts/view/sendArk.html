@@ -83,8 +83,11 @@
         <div class="md-caption">Remaining balance</div>
         <div class="balance">{{ul.network.symbol}} {{ send.remainingBalance }}</div>
       </div>
-      <span flex></span>
       <!-- workaround for pull first item on left -->
+      <span flex></span>
+      <md-button ng-click="send.openFile()">
+        <span translate>From File</span>
+      </md-button>
       <md-button type="submit" ng-disabled="sendArkForm.$invalid" tabIndex="6">
         <translate ng-if="!send.data.ledger">Next</translate>
         <translate ng-if="send.data.ledger">Sign with Ledger</translate>
