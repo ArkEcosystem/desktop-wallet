@@ -250,51 +250,63 @@
   </md-toolbar>
 
   <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
-    <md-content id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px; overflow:hidden; height:100%;" md-whiteframe="3">
-      <md-toolbar layout="row">
+
+    <div id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px; overflow: hidden;" md-whiteframe="3">
+      <md-toolbar layout="row" md-scroll-shrink>
         <div class="md-toolbar-tools">
           <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*ul.connectedPeer.market.price[ul.currency.name]).toFixed(2)}}</h2>
+            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*ul.connectedPeer.market.price[ul.currency.name]).toFixed(2)}}
+          </h2>
+          <span flex></span>
+          <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
+            <md-icon md-font-library="material-icons">cached</md-icon>
+          </md-button>
         </div>
-        <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
-          <md-icon md-font-library="material-icons">cached</md-icon>
-        </md-button>
       </md-toolbar>
-      <md-button ng-click="ul.importAccount()">
-        <md-icon>file_download</md-icon>
-        <translate>Import Account</translate>
-      </md-button>
+      <div style="min-height: 100px; max-height: 300px; height: auto; border-radius:0 0 10px 10px" layout="column">
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+            <md-button ng-click="ul.importAccount()">
+              <md-icon>file_download</md-icon>
+              <translate>Import Account</translate>
+            </md-button>
 
-      <md-button ng-click="ul.createAccount()">
-        <md-icon>account_box</md-icon>
-        <translate>Create Account</translate>
-      </md-button>
-      <md-list md-no-ink style="overflow:auto; height:80%;">
-        
-        <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.ledger.connected">
-          <span>
-                     <md-icon md-svg-icon="ledger"></md-icon>
-                     Ledger Nano S
-                   </span>
-          <span class="md-secondary">
-                     <md-progress-circular ng-if="!ul.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
-                     <md-chip ng-if="ul.ledgerAccounts">{{ul.ledgerAccounts.length}} <translate>Accounts</translate></md-chip>
-                   </span>
-        </md-list-item>
-        <md-list-item ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
-          <span ng-class="{'selected' : it.address === ul.selected.address }">
-                     <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-                     <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-                     <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                     {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
+            <md-button ng-click="ul.createAccount()">
+              <md-icon>account_box</md-icon>
+              <translate>Create Account</translate>
+            </md-button>
+          </div>
+        </md-toolbar>
+        <md-content flex>
+          <md-list md-no-ink>
+            <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.ledger.connected">
+              <span>
+                <md-icon md-svg-icon="ledger"></md-icon>
+                Ledger Nano S
+              </span>
+              <span class="md-secondary">
+                <md-progress-circular ng-if="!ul.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
+                <md-chip ng-if="ul.ledgerAccounts">{{ul.ledgerAccounts.length}} <translate>Accounts</translate></md-chip>
+              </span>
+            </md-list-item>
 
-          </span>
-          <span class="md-secondary">
-                     {{ul.network.symbol}}{{it.balance/100000000}}
-          </span>
-        </md-list-item>
-      </md-list>
-    </md-content>
+            <md-list-item ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+              <span ng-class="{'selected' : it.address === ul.selected.address }">
+                <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
+                <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
+                <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+                {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
+              </span>
+              <span class="md-secondary">
+                {{ul.network.symbol}}{{it.balance/100000000}}
+              </span>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </div>
+
+    </div>
+
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
       <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list>
@@ -305,7 +317,7 @@
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>
             <span class="md-secondary">
-                     <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
+              <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
             <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span> /
             <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
             </span>
