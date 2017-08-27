@@ -93,6 +93,15 @@
                 </md-select>
               </md-list-item>
               <md-list-item>
+                  <span style="margin-left: 14px;">
+                    <md-icon>attach_money</md-icon>
+                    <label translate>Currency</label>
+                  </span>
+                  <md-select class="md-secondary" ng-model="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
+                    <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol">{{ opt.symbol }}</md-option>
+                  </md-select>
+              </md-list-item>
+              <md-list-item>
                 <md-button aria-label="Import Account" ng-click="ul.importAccount()">
                   <md-icon>file_download</md-icon>
                   <translate>Import Account</translate>
@@ -171,8 +180,12 @@
           <md-menu-content flex layout-padding width="6">
             <md-list>
               <md-list-item>
-                <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-                <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+                  <div>
+                    <b><translate>Price</translate></b>
+                    ({{ul.currency.symbol}})
+                  </div>
+
+                  <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name]}}</span>    
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
@@ -311,8 +324,12 @@
       <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list>
           <md-list-item>
-            <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-            <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+            <b><translate>Price</translate></b>
+              <md-select ng-model="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
+                <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol">{{ opt.symbol }}</md-option>
+              </md-select>
+
+              <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>

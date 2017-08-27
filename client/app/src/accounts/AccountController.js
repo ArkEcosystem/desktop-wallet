@@ -113,6 +113,18 @@
       ru: gettextCatalog.getString("Russian")
     };
 
+    self.currencies = [
+      { name: "btc", symbol: "Ƀ" },
+      { name: "usd", symbol: "$" },
+      { name: "eur", symbol: "€" },
+      { name: "cny", symbol: "CN¥" },
+      { name: "cad", symbol: "Can$" },
+      { name: "gbp", symbol: "£" },
+      { name: "hkd", symbol: "HK$" },
+      { name: "jpy", symbol: "JP¥" },
+      { name: "rub", symbol: '\u20BD' },
+      { name: "aud", symbol: "A$" }
+    ];
 
     gettextCatalog.debug = false;
     self.language = storageService.get("language");
@@ -559,21 +571,7 @@
       $mdMenuOpen(ev);
     };
 
-
     self.changeCurrency = function() {
-      var currencies = [
-        { name: "btc", symbol: "Ƀ" },
-        { name: "usd", symbol: "$" },
-        { name: "eur", symbol: "€" },
-        { name: "cny", symbol: "CN¥" },
-        { name: "cad", symbol: "Can$" },
-        { name: "gbp", symbol: "£" },
-        { name: "hkd", symbol: "HK$" },
-        { name: "jpy", symbol: "JP¥" },
-        { name: "rub", symbol: '\u20BD' },
-        { name: "aud", symbol: "A$" }
-      ];
-      self.currency = currencies[currencies.map(function(x) { return x.name; }).indexOf(self.currency.name) + 1];
       if (self.currency == undefined) self.currency = currencies[0];
       storageService.set("currency", self.currency);
     };
