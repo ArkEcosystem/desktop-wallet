@@ -13,8 +13,8 @@
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
     "dist:win": "build --win --x64",
     "dist:win32": "build --win --ia32",
-    "dist:macos": "build --macos",
-    "dist:linux": "build --linux deb tar.xz"
+    "dist:linux": "build --linux deb tar.xz",
+    "dist:macos": "build --macos"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   },
   "keywords": [
     "Electron",
-    "Ark",
+    "Kapu",
     "Client"
   ],
   "author": {
@@ -36,7 +36,7 @@
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
     }
-],
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fix/ark-desktop/issues"
@@ -61,12 +61,28 @@
       "category": "finance"
     },
     "win": {
-     "icon": "build/icon.ico"
+     "icon": "build/icon.ico",
+     "target": ["nsis", "portable"]
+    },
+    "nsis": {
+     "artifactName": "${productName}-${os}Installer${arch}.${version}.${ext}",
+     "installerIcon": "build/icon.ico",
+     "uninstallerIcon": "build/icon.ico",
+     "installerHeaderIcon": "build/icon.ico",
+     "oneClick": false,
+     "allowToChangeInstallationDirectory": "true",
+     "createDesktopShortcut": "true",
+     "runAfterFinish": "true",
+     "perMachine": false
+    },
+    "portable": {
+      "artifactName": "${productName}-${os}${arch}.${version}.${ext}"
     },
     "linux": {
       "synopsis": "A Lite Client used to securely connect to the Kapu network and manage your Kapu assets.",
       "category": "finance",
-      "description": "Kapu desktop client"
+      "description": "Kapu desktop client",
+      "artifactName": "${productName}-${os}.${version}.${ext}"
     }
   }
 }
