@@ -13,6 +13,9 @@
     
     var timeServerUrl = "http://www.timeapi.org/";
     var serverLatency = 0;
+    var config = {
+      timeout: 2000
+    };
 
     /**
      * Function gets a server timestamp as to not rely on the users local clock.
@@ -25,7 +28,7 @@
 
       var startTime = new Date().getTime();
 
-      $http.get(timeServerUrl).then(
+      $http.get(timeServerUrl, config).then(
        function(success){
 
         var timestamp = success.headers().date;
@@ -42,7 +45,7 @@
         // use the system time instead on error
         var timestamp = new Date().getTime();
 
-        var computedTimestamp = timestamp;
+        var computedTimestamp = timestamp + serverLatency;
 
         deferred.resolve(computedTimestamp);
        }
