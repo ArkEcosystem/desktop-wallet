@@ -16,6 +16,7 @@
     var config = {
       timeout: 2000
     };
+    var localToServerTimeDiff = 0;
 
     /**
      * Function gets a server timestamp as to not rely on the users local clock.
@@ -39,13 +40,16 @@
 
         var computedTimestamp = processedTimestamp + serverLatency;
 
+        var currentLocalTime = new Date().getTime();
+        localToServerTimeDiff = computedTimestamp - currentLocalTime;
+
         deferred.resolve(computedTimestamp);
        },
        function(error){
         // use the system time instead on error
         var timestamp = new Date().getTime();
 
-        var computedTimestamp = timestamp + serverLatency;
+        var computedTimestamp = timestamp + localToServerTimeDiff;
 
         deferred.resolve(computedTimestamp);
        }
