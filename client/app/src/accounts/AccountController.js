@@ -188,6 +188,7 @@
     self.toggleList = toggleAccountsList;
     self.sendArk = sendArk;
     self.createSecondPassphrase = createSecondPassphrase;
+    self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
     self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
@@ -1690,6 +1691,20 @@
         scope: $scope
       });
     };
+    function exportAccount(account)
+    {
+      var eol = require('os').EOL;
+      var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
+      account.transactions.forEach(function(trns) {
+        filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
+        ","+trns.vendorField+eol;
+      });
+      var blob = new Blob([filecontent]);
+      var downloadLink = document.createElement('a');
+      downloadLink.setAttribute('download', account.address+'.csv');
+      downloadLink.setAttribute('href', window.URL.createObjectURL(blob));
+      downloadLink.click();
+    }
 
     // Add a second passphrase to an account
     function createSecondPassphrase(account) {
@@ -1774,7 +1789,6 @@
       if (!selectedAccount.secondSignature) {
         items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock' });
       }
-
       function answer(action) {
         $mdBottomSheet.hide();
 
