@@ -181,9 +181,7 @@
 
     function getFromPeer(api) {
       var deferred = $q.defer();
-      timeService.getTimestamp().then(
-        function(timestamp) {
-          peer.lastConnection = timestamp;
+          peer.lastConnection = new Date();
           $http({
             url: peer.ip + api,
             method: 'GET',
@@ -197,15 +195,10 @@
             timeout: 5000
           }).then(
             function(resp) {
-              timeService.getTimestamp().then(
-                function(success){
                   deferred.resolve(resp.data);
                   peer.isConnected = true;
-                  peer.delay = timestamp - peer.lastConnection.getTime();
+                  peer.delay = new Date().getTime() - peer.lastConnection.getTime();
                   connection.notify(peer);
-                }
-              )
-              
             },
             function(resp) {
               deferred.reject("Peer disconnected");
@@ -214,8 +207,8 @@
               connection.notify(peer);
             }
           );
-        }
-      );
+        
+      
       
       return deferred.promise;
     }

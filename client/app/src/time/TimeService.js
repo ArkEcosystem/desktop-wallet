@@ -11,7 +11,7 @@
   function TimeService($q, $http) {
 
     
-    var timeServerUrl = "http://www.timeapi.org/";
+    var timeServerUrl = "http://tycho.usno.navy.mil/cgi-bin/time.pl";
     var serverLatency = 0;
     var config = {
       timeout: 2000
