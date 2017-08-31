@@ -1934,15 +1934,9 @@
         var message = $scope.verify.message;
         var publickey = $scope.verify.publickey;
         var signature = $scope.verify.signature;
-        var res = accountService.verifyMessage(message, publickey, signature);
+        var result = accountService.verifyMessage(message, publickey, signature);
         $mdDialog.hide();
-        var message = gettextCatalog.getString("Error in signature processing");
-        if (res == true) {
-          message = gettextCatalog.getString("The message is verified successfully");
-        } else {
-          message = gettextCatalog.getString("The message is NOT verified");
-        }
-        showMessage(message, res);
+        showMessage(result);
       };
 
 
