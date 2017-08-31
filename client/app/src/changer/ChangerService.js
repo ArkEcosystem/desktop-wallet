@@ -2,13 +2,13 @@
   'use strict';
 
   angular.module('arkclient')
-    .service('changerService', ['storageService', '$q', '$http', '$timeout', ChangerService]);
+    .service('changerService', ['storageService', '$q', '$http', '$timeout', 'timeService', ChangerService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function ChangerService(storageService, $q, $http, $timeout) {
+  function ChangerService(storageService, $q, $http, $timeout, timeService) {
 
     var url = 'https://www.changer.com/api/v2/';
 
@@ -172,7 +172,7 @@
       $http.get(url + "exchange/" + exchange.exchange_id).then(function(resp) {
         saveExchange(exchange, resp.data);
         if (resp.data.status == "new" || resp.data.status == "processing") {
-          if (resp.data.status == "new" && exchange.expiration < new Date().getTime() / 1000) {
+          if (resp.data.status == "new" && exchange.expiration < timeService.getTime() / 1000) {
             //yes that bad!!!
             var send = fuckedAPIoutlook[exchange.pair.send];
             var receive = fuckedAPIoutlook[exchange.pair.receive];
@@ -208,16 +208,16 @@
           delete history[id].$$hashKey;
           var exchange = history[id];
           if (exchange && exchange.status) {
-            if (exchange.status.status == "new" && exchange.exchange.expiration < new Date().getTime() / 1000) {
+            if (exchange.status.status == "new" && exchange.exchange.expiration < timeService.getTime() / 1000) {
               exchange.status.status = "expired";
             }
-            if (exchange.status.status == "processing" && exchange.exchange.expiration < new Date().getTime() / 1000) {
+            if (exchange.status.status == "processing" && exchange.exchange.expiration < timeService.getTime() / 1000) {
               $http.get(url + "exchange/" + exchange.status.exchange_id).then(function(resp) {
                 history[id].status = resp.data;
                 storageService.set("changer-history", history);
               });
             }
-            if ((exchange.status.status == "expired" ||  exchange.status.status == "cancelled") && exchange.exchange.expiration + 24 * 3600 < new Date().getTime() / 1000) {
+            if ((exchange.status.status == "expired" ||  exchange.status.status == "cancelled") && exchange.exchange.expiration + 24 * 3600 < timeService.getTime() / 1000) {
               delete history[id];
             }
           } else {

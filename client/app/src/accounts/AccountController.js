@@ -4,6 +4,7 @@
     .controller('AccountController', [
       'accountService',
       'networkService',
+      'timeService',
       'storageService',
       'changerService',
       'ledgerService',
@@ -90,7 +91,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
+  function AccountController(accountService, networkService, timeService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
     var self = this;
 
     var languages = {
@@ -388,7 +389,7 @@
         }
         changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, "ark_ARK", self.selected.address).then(function(resp) {
           self.exchangeBuy = resp;
-          self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - new Date().getTime() / 1000;
+          self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timeService.getTime() / 1000;
           self.exchangeBuy.expirationProgress = 0;
           self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
           self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
@@ -397,7 +398,7 @@
             if (!self.exchangeBuy) {
               $interval.cancel(progressbar);
             } else {
-              self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - new Date().getTime() / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
+              self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timeService.getTime() / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
             }
           }, 200);
           changerService.monitorExchange(resp).then(
@@ -448,7 +449,7 @@
             console.log(transaction);
             self.exchangeTransaction = transaction
             self.exchangeSell = resp;
-            self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - new Date().getTime() / 1000;
+            self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timeService.getTime() / 1000;
             self.exchangeSell.expirationProgress = 0;
             self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000);
             self.exchangeSell.receiveCurrency = self.selectedCoin.split("_")[1];
@@ -457,7 +458,7 @@
               if (!self.exchangeSell) {
                 $interval.cancel(progressbar);
               } else {
-                self.exchangeSell.expirationProgress = (100 - 100 * (self.exchangeSell.expiration - new Date().getTime() / 1000) / self.exchangeSell.expirationPeriod).toFixed(0);
+                self.exchangeSell.expirationProgress = (100 - 100 * (self.exchangeSell.expiration - timeService.getTime() / 1000) / self.exchangeSell.expirationPeriod).toFixed(0);
               }
             }, 200);
 
