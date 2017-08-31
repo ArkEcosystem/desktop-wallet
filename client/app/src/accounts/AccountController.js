@@ -1142,6 +1142,31 @@
         secondpassphrase: passphrases[1] ? passphrases[1] : '',
       };
 
+      function openFile() {
+        var fs = require('fs');
+
+        require('electron').remote.dialog.showOpenDialog(function(fileNames) {
+          if (fileNames === undefined) return;
+          var fileName = fileNames[0];
+
+          fs.readFile(fileName, 'utf8', function(err, data) {
+            if (err) {
+              formatAndToastError('Unable to load file' + ': ' + err);
+            } else {
+              try {
+                var transaction = JSON.parse(data);
+
+                if (transaction.type === undefined) return formatAndToastError('Invalid transaction file');
+                validateTransaction(selectedAccount, transaction);
+
+              } catch (ex) {
+                formatAndToastError('Invalid file format');
+              }
+            }
+          });
+        });
+      };
+
       // testing goodies
       // var data={
       //   fromAddress: selectedAccount ? selectedAccount.address: '',
@@ -1228,6 +1253,7 @@
       };
 
       $scope.send = {
+        openFile: openFile,
         data: data,
         cancel: cancel,
         next: next,
@@ -1968,6 +1994,38 @@
 
     function validateTransaction(selectedAccount, transaction) {
 
+      function saveFile() {
+        var fs = require('fs');
+        var raw = JSON.stringify(transaction);
+
+        require('electron').remote.dialog.showSaveDialog({
+          defaultPath: transaction.id + '.json',
+          filters: [{
+            extensions: ['json']
+          }]
+        }, function(fileName) {
+          if (fileName === undefined) return;
+
+          fs.writeFile(fileName, raw, 'utf8', function(err) {
+            if (err) {
+              $mdToast.show(
+                $mdToast.simple()
+                .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
+                .hideDelay(5000)
+                .theme("error")
+              );
+            } else {
+              $mdToast.show(
+                $mdToast.simple()
+                .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
+                .hideDelay(5000)
+              );
+            }
+          });
+        });
+
+      }
+
       function send() {
         $mdDialog.hide();
 
@@ -1992,6 +2050,7 @@
       };
 
       $scope.validate = {
+        saveFile: saveFile,
         send: send,
         cancel: cancel,
         transaction: transaction,
