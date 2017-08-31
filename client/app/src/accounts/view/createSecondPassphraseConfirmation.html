@@ -1,0 +1,34 @@
+<md-dialog aria-label="Create Second Passphrase Confirmation" ng-cloak md-theme="ul.network.theme">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Second Passphrase Fee Alert</span></h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="createSecondPassphraseConfirmationDialog.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-card md-colors="{'background': 'red-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span>
+                <translate><center>Second passphrase fee is <b>5 Ark</b>.  If you wish to continue, click NEXT.</center></translate>
+              </span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="createSecondPassphraseConfirmationDialog.next()">
+        <translate>Next</translate>
+      </md-button>
+      <md-button ng-click="createSecondPassphraseConfirmationDialog.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

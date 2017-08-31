@@ -1752,6 +1752,31 @@
       });
     };
 
+    function createSecondPassphraseConfirmation(account) {
+
+      function next() {
+        $mdDialog.hide();
+        createSecondPassphrase(account);
+      };
+
+      function cancel() {
+        $mdDialog.hide();
+      };
+
+      $scope.createSecondPassphraseConfirmationDialog = {
+        cancel: cancel,
+        next: next
+      };
+
+      $mdDialog.show({
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './src/accounts/view/createSecondPassphraseConfirmation.html',
+        clickOutsideToClose: false,
+        preserveScope: true,
+        scope: $scope
+      });
+    };
+
     /**
      * Show the Contact view in the bottom sheet
      */
@@ -1830,7 +1855,8 @@
             );
           });
         } else if (action == gettextCatalog.getString("Second Passphrase")) {
-          createSecondPassphrase(account);
+          // capture the second passphrase process to show the confirmation dialog before we actually start the process
+          createSecondPassphraseConfirmation(account);
         }
       };
 
