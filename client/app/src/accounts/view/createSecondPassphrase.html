@@ -11,17 +11,18 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <md-card ng-if="!createSecondPassphraseDialog.data.showRepassphrase" md-colors="{'background': 'red-100'}" flex="100">
+        <md-card ng-if="!createSecondPassphraseDialog.data.showRepassphrase" class="warning" flex="100">
           <md-card-title>
             <md-card-title-text>
               <span>
-                <translate>Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it.</translate>
+                <translate>Please first BACKUP SECURELY THE SECOND PASSPHRASE, this client does NOT store it and thus cannot recover it.</translate>
                 <br/>
                 <translate>After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client.</translate>
               </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
+        <br/>
         <div ng-if="createSecondPassphraseDialog.data.showRepassphrase" translate>
           Please paste the original and second passphrase to validate the creation.
         </div>
@@ -34,8 +35,11 @@
           <input ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" readonly="readonly" md-autofocus/>
           <input ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true" md-autofocus/>
         </md-input-container>
-
-        <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase" translate>
+        <div ng-if="createSecondPassphraseDialog.data.showRepassphrase">
+          <translate>Fee</translate>: {{ul.network.symbol}}5
+        </div>
+        <br/>
+        <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase" style="color:red;" translate>
           The second passphrase does not match the one you just got.
         </div>
       </div>
