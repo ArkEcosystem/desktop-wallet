@@ -94,17 +94,6 @@
   function AccountController(accountService, networkService, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
     var self = this;
 
-    timeService.getTimestamp().then(
-      function(success){
-        console.log("Timestamp Success!");
-        console.log(success);
-      },
-      function(error){
-        console.log("Timestamp Error!");
-        console.log(error);
-      }
-    )
-
     var languages = {
       en: gettextCatalog.getString("English"),
       zh_CN: gettextCatalog.getString("Chinese simplified"),
