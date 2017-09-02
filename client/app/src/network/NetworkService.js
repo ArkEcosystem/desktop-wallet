@@ -1,6 +1,9 @@
-var fs = require('fs');
-var kapuMarketData = JSON.parse(fs.readFileSync(__dirname + '/assets/kapuMarketData.json'));
-//console.log(kapuMarketData);
+//var fs = require('fs');
+var kapuMarketData = require(__dirname + '/assets/kapuMarketData');
+var jsonfile = require('jsonfile')
+var kapuMarketDataFile = __dirname + '/assets/kapuMarketData.json';
+var numeral = require('numeral');
+//var kapuMarketData = JSON.parse(fs.readFileSync(__dirname + '/assets/kapuMarketData.json'));
 
 (function () {
   'use strict';
@@ -129,21 +132,43 @@ var kapuMarketData = JSON.parse(fs.readFileSync(__dirname + '/assets/kapuMarketD
         .then(function (res) {
           kapuMarketData.price.usd = (res.data[0].price_usd * kapuMarketData.price.btc).toFixed(5);
           kapuMarketData.price.eur = (res.data[0].price_eur * kapuMarketData.price.btc).toFixed(5);
-          var response = $http.get("http://51.15.59.104:4001/api/blocks/getheight", { timeout: 2000 }).then(function (resp) {
-//          var response = $http.get("http://explorer.kapu.one/", { timeout: 2000 }).then(function (res) {
-            console.log(resp);
+          var response = $http.get("http://51.15.59.104:4001/api/blocks/getSupply", { timeout: 2000 }).then(function (resp) {
             if(resp != null) {
               /*
-                TODO: add coin supplly value
+                Update/retrieve coin supplly value
               */
+              var supply = resp.data.supply / 100000000;
+              kapuMarketData.availableSupply = numeral(supply).format('0,0');
+              kapuMarketData.availableSupplyNumber = supply;
+              /*
+                Update BTC, USD, EUR market cap
+              */
+              kapuMarketData.marketCap.btc = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.btc).toFixed(2).toString();
+              kapuMarketData.marketCap.eur = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.eur).toFixed(2).toString();
+              kapuMarketData.marketCap.usd = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.usd).toFixed(2).toString();
+              jsonfile.writeFile(kapuMarketDataFile, kapuMarketData, function (err) {
+                if(err != null) {
+                  console.error(err)
+                }
+              })
+              peer.market = res.data;
             }
           }, function () {
             peer.market.isOffline = true;
           });
-          res.data = kapuMarketData;
-          console.log(JSON.stringify(res.data));
-          storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
-          peer.market = res.data;
+          if (res != null) {
+            /*
+              Update/retrieve Kapu exchange rates
+            */
+            res.data = kapuMarketData;
+            jsonfile.writeFile(kapuMarketDataFile, kapuMarketData, function (err) {
+              if(err != null) {
+                console.error(err)
+              }
+          })
+            storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
+            peer.market = res.data;
+          }
         }, function () {
           var lastPrice = storageService.get('lastPrice');
 
