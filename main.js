@@ -3,13 +3,15 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-
+//console.log(require.resolve('electron'));
 function createWindow () {
   // Create the browser window.
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize

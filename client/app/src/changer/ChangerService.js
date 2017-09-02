@@ -16,8 +16,9 @@
 
     var history=storageService.get("changer-history") || {};
 
-    var ark="ark_ARK";
-
+//    var ark="ark_ARK";
+    var ark="pm_USD";
+    
     var coins=[
       {symbol:"bitcoin_BTC", name:"BTC", image:""},
       {symbol:"ethereum_ETH", name:"ETH", image:""},
