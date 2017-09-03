@@ -1718,13 +1718,13 @@
     };
 
     // Add a second passphrase to an account
-    function createSecondPassphrase(account) {
+    function createSecondPassphrase(selectedAccount) {
       var bip39 = require("bip39");
       var data = { secondPassphrase: bip39.generateMnemonic() };
 
-      if (account.secondSignature) {
+      if (selectedAccount.secondSignature) {
         return formatAndToastError(
-          gettextCatalog.getString('This account already has a second passphrase: ' + account.address)
+          gettextCatalog.getString('This account already has a second passphrase: ' + selectedAccount.address)
         );
       }
 
@@ -1737,24 +1737,15 @@
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true;
         } else {
           accountService.createTransaction(1, {
-            fromAddress: account.address,
+            fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
           }).then(
             function(transaction) {
-              networkService.postTransaction(transaction).then(
-                function(transaction) {
-                  $mdToast.show(
-                    $mdToast.simple()
-                    .textContent(gettextCatalog.getString('Second Passphrase added successfully: ') + account.address)
-                    .hideDelay(5000)
-                  );
-                },
-                formatAndToastError
-              );
+              validateTransaction(selectedAccount, transaction);
             },
-            formatAndToastError
-          );
+          formatAndToastError
+        );
           $mdDialog.hide();
         }
       };
@@ -1783,8 +1774,6 @@
      */
     function showAccountMenu(selectedAccount) {
 
-      var account = selectedAccount;
-
       var items = [
         { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' },
         { name: gettextCatalog.getString('Remove'), icon: 'clear' },
@@ -1812,13 +1801,13 @@
           timestamp(selectedAccount);
         } else if (action == gettextCatalog.getString("Remove")) {
           var confirm = $mdDialog.confirm()
-            .title(gettextCatalog.getString('Remove Account') + ' ' + account.address)
+            .title(gettextCatalog.getString('Remove Account') + ' ' + selectedAccount.address)
             .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
               'The account may be added again using the original passphrase of the account.'))
             .ok(gettextCatalog.getString('Remove account'))
             .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
-            accountService.removeAccount(account).then(function() {
+            accountService.removeAccount(selectedAccount).then(function() {
               self.accounts = accountService.loadAllAccounts();
 
               if (self.accounts.length > 0) {
@@ -1856,12 +1845,12 @@
             );
           });
         } else if (action == gettextCatalog.getString("Second Passphrase")) {
-          createSecondPassphrase(account);
+          createSecondPassphrase(selectedAccount);
         }
       };
 
       $scope.bs = {
-        address: account.address,
+        address: selectedAccount.address,
         answer: answer,
         items: items
       };
