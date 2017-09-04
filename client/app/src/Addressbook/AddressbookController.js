@@ -1,9 +1,9 @@
 (function() {
   angular
     .module('arkclient')
-    .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", AddressbookController]);
+    .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", "accountService", AddressbookController]);
 
-  function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog) {
+  function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog, accountService) {
 
     var self = this;
     var contacts;
@@ -184,6 +184,56 @@
     self.openMenu = function($mdOpenMenu, ev) {
       $mdOpenMenu(ev);
     };
+
+    self.getStats = function(account, contact) {
+      let stats = {
+        income: {
+          amount: 0,
+          transactions: 0
+        },
+        expend: {
+          amount: 0,
+          transactions: 0
+        }
+      };
+
+      var transactions = storageService.get("transactions-" + account);
+
+      if (transactions) {
+        var incomeTx = transactions.filter(function(el) {
+          return el.senderId == contact;
+        });
+
+        var expendTx = transactions.filter(function(el) {
+          return el.recipientId == contact;
+        });
+
+        stats.income.transactions = incomeTx.length;
+        stats.expend.transactions = expendTx.length;
+
+        if (incomeTx.length > 0) {
+          var incomeAmount = incomeTx.map(function(tx) {
+            return tx.amount;
+          }).reduce(function(prev, el) {
+            return prev + el;
+          });
+
+          stats.income.amount = accountService.numberToFixed(incomeAmount / 100000000).toFixed(2);
+        }
+
+        if (expendTx.length > 0) {
+          var expendAmount = expendTx.map(function(tx) {
+            return tx.amount;
+          }).reduce(function(prev, el) {
+            return prev + el;
+          });
+
+          stats.expend.amount = accountService.numberToFixed(expendAmount / 100000000).toFixed(2);
+        }
+      }
+
+      return stats;
+    }
   }
 
 })();
