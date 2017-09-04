@@ -811,6 +811,7 @@
     function selectAccount(account) {
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
+      self.selected.ledger = account.ledger;
 
       self.showPublicKey = false;
 
@@ -1827,12 +1828,14 @@
 
       if (!selectedAccount.delegate) {
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer' });
+      }
+      if (!selectedAccount.delegate && !selectedAccount.ledger) {
         items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity' });
       }
 
       items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user' });
 
-      if (!selectedAccount.secondSignature) {
+      if (!selectedAccount.secondSignature && !selectedAccount.ledger ) {
         items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock' });
       }
 
