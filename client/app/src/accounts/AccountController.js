@@ -258,7 +258,8 @@
         account = self.ledgerAccounts[0];
       }
       if (account) {
-        self.gotoAddress(account.address);
+        self.selected = account;
+        self.selectAccount(account);
       }
     };
 
@@ -746,7 +747,7 @@
             self.selected.balance = account.balance;
             self.selected.secondSignature = account.secondSignature;
             self.selected.cold = account.cold;
-            self.selected.publicKey = account.publicKey;
+            if(!self.selected.publicKey) self.selected.publicKey = account.publicKey;
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
@@ -824,7 +825,7 @@
             self.selected.balance = account.balance;
             self.selected.secondSignature = account.secondSignature;
             self.selected.cold = account.cold;
-            self.selected.publicKey = account.publicKey;
+            if(!self.selected.publicKey) self.selected.publicKey = account.publicKey;
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
