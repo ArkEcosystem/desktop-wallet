@@ -172,7 +172,7 @@
         <md-tooltip>
           <translate>Market</translate>
         </md-tooltip>
-        <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
+        <md-menu ng-if="ul.connectedPeer.market.market_cap" md-offset="0 60">
           <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">insert_chart</md-icon>
             <!--<md-icon md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]<0?'red-200':'green-200' }" md-font-library="material-icons">arrow_{{ul.connectedPeer.market.change7h[ul.currency.name]<0?"down":"up"}}ward</md-icon>-->
@@ -187,23 +187,17 @@
                 <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
               </md-list-item>
               <md-list-item>
-                <b translate>Change 1h/7h/7d</b>
+                <b translate>% Change</b>
                 <span class="md-secondary">
-                  <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
-                <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span> /
-                <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
+                  <span md-colors="{'color' : ul.connectedPeer.market.change>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change}}%</span>
                 </span>
               </md-list-item>
               <md-list-item>
-                <div>
-                  <b><translate>Market Cap.</translate></b>
-                </div>
-
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+                <b translate>Position/Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.position}}º / {{ul.currency.symbol}}{{ul.connectedPeer.market.market_cap[ul.currency.name] | number:0}}</span>
               </md-list-item>
-              <md-list-item ng-show="ul.connectedPeer.market.isOffline">
-                <b translate>Last checked</b> <span class="md-secondary">
-                  {{ul.connectedPeer.market.lastUpdate | date:'shortTime'}}</span>
+              <md-list-item>
+                <b translate>Last checked</b>
+                <span class="md-secondary">{{ul.connectedPeer.market.timestamp | date:'short'}}</span>
               </md-list-item>
             </md-list>
           </md-menu-content>
@@ -324,7 +318,7 @@
     </div>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+      <md-content ng-if="ul.connectedPeer.market.market_cap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list>
           <md-list-item>
             <div>
@@ -334,15 +328,13 @@
             <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>Change 1h/7h/7d</b>
+            <b translate>% Change</b>
             <span class="md-secondary">
-              <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
-            <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span> /
-            <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
+              <span md-colors="{'color' : ul.connectedPeer.market.change>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change}}%</span>
             </span>
           </md-list-item>
           <md-list-item>
-            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+            <b translate>Position/Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.position}}º / {{ul.currency.symbol}}{{ul.connectedPeer.market.market_cap[ul.currency.name] | number:0}}</span>
           </md-list-item>
         </md-list>
       </md-content>

@@ -126,12 +126,30 @@
       // peer.market={
       //   price: { btc: '0' },
       // };
-      $http.get("http://coinmarketcap.northpole.ro/api/v5/" + network.token + ".json", { timeout: 2000 })
+      var options = {
+        timeout: 2000,
+        headers: { 'Cache-Control' : 'no-cache' }
+      };
+
+      $http.get("https://coinmarketcap-nexuist.rhcloud.com/api/" + network.token, options)
         .then(function(res) {
-          if (res.data.price && res.data.price.btc)
-            res.data.price.btc = Number(res.data.price.btc).toFixed(8); // store BTC price in satoshi
-          storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
-          peer.market = res.data;
+          var data = res.data;
+          
+          if (data.timestamp) data.timestamp = new Date(data.timestamp*1000);
+          
+          // store price in satoshi
+          var prices = data.price;
+          if (prices) {
+            Object.keys(prices).forEach(function(currency) {
+              var price = Number(prices[currency]);
+              var countDecimals = price.toString().split(".")[1].length || 0;
+              // maximum 8 digits
+              if (countDecimals > 8) prices[currency] = Number(price).toFixed(8);
+            });
+          }
+
+          storageService.set('lastPrice', { market: data }, true);
+          peer.market = data;
         }, function() {
           var lastPrice = storageService.get('lastPrice');
 
@@ -141,7 +159,6 @@
           }
 
           peer.market = lastPrice.market;
-          peer.market.lastUpdate = lastPrice.date;
           peer.market.isOffline = true;
         });
       $timeout(function() {
