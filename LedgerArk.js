@@ -34,39 +34,50 @@ LedgerArk.prototype.getAddress_async = function(path) {
 
 LedgerArk.prototype.signTransaction_async = function(path, rawTxHex) {
 	var splitPath = utils.splitPath(path);
-	var offset = 0;
 	var rawTx = new Buffer(rawTxHex, 'hex');
-	var apdus = [];
-	var response = [];
 	var self = this;
-	while (offset != rawTx.length) {
-		var maxChunkSize = (offset == 0 ? (250 - 1 - splitPath.length * 4) : 250)
-		var chunkSize = (offset + maxChunkSize > rawTx.length ? rawTx.length - offset : maxChunkSize);
-		var buffer = new Buffer(offset == 0 ? 5 + 1 + splitPath.length * 4 + chunkSize : 5 + chunkSize);
-		buffer[0] = 0xe0;
-		buffer[1] = 0x04;
-		buffer[2] = (offset == 0 ? 0x00 : 0x80);
-		buffer[3] = 0x40;
-		buffer[4] = (offset == 0 ? 1 + splitPath.length * 4 + chunkSize : chunkSize);
-		// console.log(rawTx);
-		// console.log(buffer.toString("hex"));
-		// console.log(chunkSize);
-		// console.log(maxChunkSize);
-		if (offset == 0) {
-			buffer[5] = splitPath.length;
-			splitPath.forEach(function (element, index) {
-				buffer.writeUInt32BE(element, 6 + 4 * index);
-			});
-			rawTx.copy(buffer, 6 + 4 * splitPath.length, offset, offset + chunkSize);
-		}
-		else {
-			rawTx.copy(buffer, 5, offset, offset + chunkSize);
-		}
-		apdus.push(buffer.toString('hex'));
-		offset += chunkSize;
+
+	var data1, data2;
+	var data1_headerlength = new Buffer(2);
+	var data2_headerlength = new Buffer(1);
+	var pathLength = 4 * splitPath.length + 1;
+	var apdus = [];
+	var p1;
+	var response;
+
+	path = new Buffer(pathLength-1);
+	splitPath.forEach(function (element, index) {
+		path.writeUInt32BE(element, 4 * index);
+	});
+
+	if(rawTx.length > 255 - pathLength) {
+		data1 = rawTx.slice(0, 255 - pathLength);
+		data2 = rawTx.slice(255 - pathLength);
+		p1 = "00";
 	}
+	else {
+		data1 = rawTx;
+		p1 = "80";
+	}
+
+	//console.log(data1.toString("hex"));
+
+	data1_headerlength[0] = pathLength + data1.length;
+	data1_headerlength[1] = splitPath.length;
+	if(data2){
+		data2_headerlength[0] = data2.length;
+	}
+
+	//console.log("> ",data1_headerlength.toString("hex"))
+	//console.log("> ",path.toString("hex"))
+
+	apdus.push("e004" + p1 + "40" + data1_headerlength.toString("hex") + path.toString("hex") + data1.toString("hex"));
+	if(data2){
+		apdus.push("e0048140" + data2_headerlength.toString("hex") + data2.toString("hex"));
+	}
+	//console.log(apdus);
 	return utils.foreach(apdus, function(apdu) {
-    //console.log(apdu);
+		//console.log(apdu);
 		return self.comm.exchange(apdu, [0x9000]).then(function(apduResponse) {
 			response = apduResponse;
 			//console.log(apduResponse);

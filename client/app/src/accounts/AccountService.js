@@ -440,6 +440,9 @@
           deferred.reject(e);
           return deferred.promise;
         }
+
+        transaction.senderId = config.fromAddress;
+
         if (config.ledger) {
           delete transaction.signature;
           transaction.senderPublicKey = config.publicKey;
@@ -459,7 +462,6 @@
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ") + config.fromAddress);
           return deferred.promise;
         }
-        transaction.senderId = config.fromAddress;
         deferred.resolve(transaction);
       } else if (type == 2) { //delegate creation
         var account = getAccount(config.fromAddress);
@@ -474,6 +476,9 @@
           deferred.reject(e);
           return deferred.promise;
         }
+
+        transaction.senderId = config.fromAddress;
+
         if (config.ledger) {
           delete transaction.signature;
           transaction.senderPublicKey = config.publicKey;
@@ -493,7 +498,6 @@
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ") + config.fromAddress);
           return deferred.promise;
         }
-        transaction.senderId = config.fromAddress;
         deferred.resolve(transaction);
       } else if (type == 3) { //vote
         var account = getAccount(config.fromAddress);
@@ -507,8 +511,12 @@
           deferred.reject(e);
           return deferred.promise;
         }
+
+        transaction.senderId = config.fromAddress;
+        
         if (config.ledger) {
           delete transaction.signature;
+          transaction.recipientId = config.fromAddress;
           transaction.senderPublicKey = config.publicKey;
           ledgerService.signTransaction(config.ledger, transaction).then(
             function(result) {
@@ -526,7 +534,6 @@
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ") + config.fromAddress);
           return deferred.promise;
         }
-        transaction.senderId = config.fromAddress;
         deferred.resolve(transaction);
       }
 
