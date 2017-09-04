@@ -261,7 +261,6 @@
         account = self.ledgerAccounts[0];
       }
       if (account) {
-        self.selected = account;
         self.selectAccount(account);
       }
     };
