@@ -96,25 +96,28 @@
 
     var languages = {
       en: gettextCatalog.getString("English"),
-      zh_CN: gettextCatalog.getString("Chinese simplified"),
-      zh_TW: gettextCatalog.getString("Chinese traditional"),
-      fr: gettextCatalog.getString("French"),
-      ko: gettextCatalog.getString("Korean"),
-      el: gettextCatalog.getString("Greek"),
-      nl: gettextCatalog.getString("Dutch"),
       ar: gettextCatalog.getString("Arab"),
-      pl: gettextCatalog.getString("Polish"),
-      fi: gettextCatalog.getString("Finish"),
-      sl: gettextCatalog.getString("Slovenian"),
-      pt_BR: gettextCatalog.getString("Portuguese"),
       bg_BG: gettextCatalog.getString("Bulgarian"),
-      hu: gettextCatalog.getString("Hungarish"),
-      sl: gettextCatalog.getString("Slovenian"),
-      ro: gettextCatalog.getString("Romanian"),
       de: gettextCatalog.getString("German"),
-      it: gettextCatalog.getString("Italian"),
+      el: gettextCatalog.getString("Greek"),
+      fi: gettextCatalog.getString("Finish"),
+      fr: gettextCatalog.getString("French"),
+      hu: gettextCatalog.getString("Hungarish"),
       id: gettextCatalog.getString("Indonesian"),
-      ru: gettextCatalog.getString("Russian")
+      it: gettextCatalog.getString("Italian"),
+      ja: gettextCatalog.getString("Japanese"),
+      ko: gettextCatalog.getString("Korean"),
+      nl: gettextCatalog.getString("Dutch"),
+      pl: gettextCatalog.getString("Polish"),
+      pt_BR: gettextCatalog.getString("Portuguese"),
+      ro: gettextCatalog.getString("Romanian"),
+      ru: gettextCatalog.getString("Russian"),
+      sk: gettextCatalog.getString("Slovak"),
+      sl: gettextCatalog.getString("Slovenian"),
+      sr: gettextCatalog.getString("Serbian"),
+      sv: gettextCatalog.getString("Swedish"),
+      zh_CN: gettextCatalog.getString("Chinese simplified"),
+      zh_TW: gettextCatalog.getString("Chinese traditional")
     };
 
     self.currencies = [
