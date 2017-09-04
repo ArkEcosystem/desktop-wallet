@@ -118,16 +118,22 @@
     };
 
     self.currencies = [
-      { name: "btc", symbol: "Ƀ" },
       { name: "usd", symbol: "$" },
-      { name: "eur", symbol: "€" },
-      { name: "cny", symbol: "CN¥" },
+      { name: "btc", symbol: "Ƀ" },
+      { name: "aud", symbol: "A$" },
+      { name: "brl", symbol: "R$" },
       { name: "cad", symbol: "Can$" },
+      { name: "chf", symbol: "Fr." },
+      { name: "cny", symbol: "CN¥" },
+      { name: "eur", symbol: "€" },
       { name: "gbp", symbol: "£" },
       { name: "hkd", symbol: "HK$" },
+      { name: "idr", symbol: "Rp" },
+      { name: "inr", symbol: "₹" },
       { name: "jpy", symbol: "JP¥" },
-      { name: "rub", symbol: '\u20BD' },
-      { name: "aud", symbol: "A$" }
+      { name: "krw", symbol: "₩" },
+      { name: "mxn", symbol: "Mex$" },
+      { name: "rub", symbol: '\u20BD' }
     ];
 
     gettextCatalog.debug = false;
