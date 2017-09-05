@@ -509,10 +509,16 @@
                     <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
                     <td md-cell>{{it.confirmations}}</td>
                     <td md-cell>{{it.date | date: 'short'}}</td>
-                    <td ng-if="it.total>=0" md-cell>
+                    <td ng-if="it.recipientId==it.senderId && it.type!=3" md-cell>
+                      <md-button disabled md-colors="{'background' : 'default-grey-200' }">{{it.humanTotal}}</md-button>
+                    </td>
+                    <td ng-if="it.type==3" md-cell>
+                      <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
+                    </td>
+                    <td ng-if="it.total>=0 && it.recipientId!=it.senderId" md-cell>
                       <md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button>
                     </td>
-                    <td ng-if="it.total<0" md-cell>
+                    <td ng-if="it.total<0 && it.recipientId!=it.senderId" md-cell>
                       <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
                     </td>
                     <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
