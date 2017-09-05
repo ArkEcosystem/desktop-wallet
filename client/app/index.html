@@ -20,14 +20,14 @@
     body {
       background-color: #000
     }
-    
+
     html {
       border-radius: 10px;
     }
     /**
          * Hide when Angular is not yet loaded and initialized
          */
-    
+
     [ng\:cloak],
     [ng-cloak],
     [data-ng-cloak],
@@ -271,7 +271,7 @@
       <md-toolbar layout="row" md-scroll-shrink>
         <div class="md-toolbar-tools">
           <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{ul.myAccountsCurrencyBalance()}}
           </h2>
           <span flex></span>
           <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">

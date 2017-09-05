@@ -392,7 +392,7 @@
     self.getMarketInfo(self.selectedCoin);
 
     var setExchangBuyExpirationProgress = function(timestamp){
-      
+
     }
 
     self.buy = function() {
@@ -424,7 +424,7 @@
                   self.exchangeHistory = changerService.getHistory();
                 },
                 function(data) {
-    
+
                 },
                 function(data) {
                   if (data.payee && self.exchangeBuy.payee != data.payee) {
@@ -435,14 +435,14 @@
                   }
                 }
               );
-    
+
             }, function(error) {
               formatAndToastError(error, 10000);
               self.exchangeBuy = null;
             });
             }
           )
-          
+
       });
 
     };
@@ -512,7 +512,7 @@
                 completeExchangeSell(timestamp);
               }
             )
-            
+
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -591,6 +591,14 @@
       return (self.myAccounts().reduce(function(memo, acc) {
         return memo + parseInt(acc.balance);
       }, 0) / 100000000).toFixed(2);
+    }
+
+    //(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+    self.myAccountsCurrencyBalance = function() {
+        var currencyBalance = self.myAccountsBalance()*self.connectedPeer.market.price[self.currency.name];
+        currencyBalance = currencyBalance.toFixed(2);
+        currencyBalance = Number(currencyBalance).toLocaleString('en');
+        return currencyBalance;
     }
 
     self.otherAccounts = function() {
