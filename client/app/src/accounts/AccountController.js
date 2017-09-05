@@ -593,11 +593,11 @@
       }, 0) / 100000000).toFixed(2);
     }
 
-    //(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+    // Function to return the accounts total balance in the selected currency.
     self.myAccountsCurrencyBalance = function() {
         var currencyBalance = self.myAccountsBalance()*self.connectedPeer.market.price[self.currency.name];
-        currencyBalance = currencyBalance.toFixed(2);
-        currencyBalance = Number(currencyBalance).toLocaleString('en');
+        currencyBalance = currencyBalance.toFixed(2); //fix to 2 decimal strings
+        currencyBalance = Number(currencyBalance).toLocaleString('en'); // TODO: Update for any locale?
         return currencyBalance;
     }
 
