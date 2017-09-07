@@ -417,9 +417,9 @@
               <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
                 info_outline
                 <md-tooltip md-direction="bottom" class="tooltip-multiline">
-                  {{'Income' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate}})
+                  {{'Expend' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate}})
                   <br>
-                  {{'Expend' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate}})
+                  {{'Income' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate}})
                 </md-tooltip>
               </md-icon>
             </span>
