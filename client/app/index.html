@@ -20,14 +20,14 @@
     body {
       background-color: #000
     }
-    
+
     html {
       border-radius: 10px;
     }
     /**
          * Hide when Angular is not yet loaded and initialized
          */
-    
+
     [ng\:cloak],
     [ng-cloak],
     [data-ng-cloak],
@@ -473,7 +473,7 @@
               </md-icon>
               </span>
               <span class="md-subhead description">
-                  <translate>Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
+                  <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
                   <md-button ng-click="ul.changeCurrency()">{{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</md-button>
                 </span>
             </md-card-title-text>
