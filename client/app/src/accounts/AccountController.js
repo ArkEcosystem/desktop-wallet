@@ -140,9 +140,15 @@
     ];
 
     gettextCatalog.debug = false;
-    self.language = storageService.get("language");
-    if (!self.language) selectNextLanguage();
-    else gettextCatalog.setCurrentLanguage(self.language);
+    self.language = storageService.get("language") || "en";
+    self.selectedLanguage = self.language;
+
+    if (!self.language) {
+      selectNextLanguage();
+    }
+    else {
+      gettextCatalog.setCurrentLanguage(self.language);
+    }
 
     self.getLanguage = function() {
       return languages[self.language];
@@ -226,6 +232,10 @@
     self.connectedPeer = { isConnected: false };
 
     if (!self.network.theme) self.network.theme = 'default';
+
+    function init(){
+      storageService.setCloseWindowFlushState()
+    }
 
     generateDynamicPalette(function(name) {
       if (name && self.network.theme == name) {
@@ -356,7 +366,7 @@
       return languages;
     }
 
-    $scope.setLanguage = function() {
+    self.setLanguage = function() {
       function getlanguage(value) {
         for (var prop in languages) {
           if (languages.hasOwnProperty(prop)) {
@@ -2104,6 +2114,8 @@
         clickOutsideToClose: false
       });
     };
+
+    init();
 
   }
 

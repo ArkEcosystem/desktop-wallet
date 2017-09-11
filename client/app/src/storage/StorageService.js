@@ -2,13 +2,13 @@
   'use strict';
 
   angular.module('arkclient')
-    .service('storageService', [StorageService]);
+    .service('storageService', ['$window', StorageService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function StorageService() {
+  function StorageService($window) {
 
     var storage = {};
     var context = window.localStorage.getItem("context");
@@ -67,6 +67,13 @@
       return value;
     }
 
+    function setCloseWindowFlushState(){
+      $window.onbeforeunload = function(){
+        console.log("Forcing Close Window Flush State");
+        saveState();
+      }
+    }
+
     function saveState() {
       window.localStorage.setItem("storage-" + context, JSON.stringify(storage));
       window.localStorage.setItem("lastsaved", JSON.stringify(new Date()));
@@ -91,7 +98,8 @@
       set: set,
       getGlobal: getGlobal,
       setGlobal: setGlobal,
-      saveState: saveState
+      saveState: saveState,
+      setCloseWindowFlushState: setCloseWindowFlushState
     };
   }
 
