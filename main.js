@@ -17,6 +17,11 @@ let mainWindow
 
 var ledgercomm
 
+// needed to create menu/update it.
+var menu = null;
+var enableScreenshotProtection = true;
+var template = null;
+
 function createWindow () {
     // Create the browser window.t
   var platform = require('os').platform();
@@ -112,9 +117,8 @@ function createWindow () {
 
 });
 
-
   // Create the Application's main menu
-  var template = [
+  template = [
     {
       label: "Application",
       submenu: [
@@ -129,7 +133,7 @@ function createWindow () {
             })
         },
         { type: "separator" },
-        { label: "Disable screenshot protection (unsafe)", click: function() { mainWindow.setContentProtection(false) }},
+        { label: "Disable screenshot protection (unsafe)", click: function() { updateScreenshotProtectionItem(); }},
         { type: "separator" },
         { label: "Minimize", click: function() { mainWindow.minimize(); }},
         { label: "Maximize", click: function() { mainWindow.maximize(); }},
@@ -156,7 +160,8 @@ function createWindow () {
     }
   ];
 
-  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+  menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 
 
   // Emitted when the window is closed.
@@ -193,5 +198,24 @@ app.on('activate', function () {
   }
 })
 
+// enables/disables and updates the screen shot protection item menu 
+function updateScreenshotProtectionItem() {
+    if (menu == null || template == null) {
+        return;
+    }
+
+    enableScreenshotProtection = !enableScreenshotProtection;
+    mainWindow.setContentProtection(enableScreenshotProtection);
+    if (enableScreenshotProtection) {
+        template[0].submenu[2].label = "Disable screenshot protection (unsafe)";
+    }
+
+    else {
+        template[0].submenu[2].label = "Enable screenshot protection (recommended)";
+    }
+
+    menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
+}
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
