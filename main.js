@@ -10,6 +10,8 @@ const openAboutWindow = require('about-window').default
 const ledger = require('ledgerco')
 const LedgerArk = require('./LedgerArk')
 
+const windowStateKeeper = require('electron-window-state');
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,8 +27,15 @@ function createWindow () {
   //if(platform == "win32") iconpath = __dirname + "/client/ark_windows.png";
   //if(platform == "darwin") iconpath = __dirname + "/client/ark_mac.png";
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
-  mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: iconpath, resizable:true, frame:true, show:false})
+
+  let mainWindowState = windowStateKeeper({
+    defaultWidth: width-100,
+    defaultHeight: height-100
+  });
+
+  mainWindow = new BrowserWindow({width: mainWindowState.width, height: mainWindowState.height, x: mainWindowState.x, y: mainWindowState.y, center:true, icon: iconpath, resizable:true, frame:true, show:false})
   mainWindow.setContentProtection(true);
+  mainWindowState.manage(mainWindow);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
   mainWindow.once('ready-to-show', () => {

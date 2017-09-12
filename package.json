@@ -32,7 +32,8 @@
     "email": "fixcrypt@gmail.com",
     "url": "https://github.com/fix"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
@@ -50,6 +51,7 @@
   "homepage": "https://github.com/fix/ark-desktop#readme",
   "dependencies": {
     "about-window": "~1.7.0",
+    "electron-window-state": "^4.1.1",
     "ledgerco": "github:ledgerhq/ledger-node-js-api#master",
     "q": "^1.5.0"
   },
