@@ -7,6 +7,7 @@ const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
 
+const ledger = require('ledgerco')
 const LedgerArk = require('./LedgerArk')
 const fork = require('child_process').fork;
 
@@ -34,8 +35,19 @@ function createWindow () {
   })
   
   var ledgerWorker = fork('./ledger-worker');
-  ledgerWorker.on('message', function (comm) {
-      ledgercomm = comm;
+  
+  ledgerWorker.on('message', function (connected) {
+    if(connected && !ledgercomm){
+      ledger.comm_node.create_async().then((comm) => {
+        ledgercomm = comm
+      }).fail((error) => {
+        console.log(error)
+      })
+    }
+    else if(!connected && ledgercomm){
+      ledgercomm.close_async()
+      ledgercomm = null
+    }
   });
 
   ipcMain.on('ledger', (event, arg) => {
@@ -46,6 +58,7 @@ function createWindow () {
     }
     else {
       if(!ledgercomm){
+        console.log("connection not initialised")
         event.returnValue = "connection not initialised"
       }
       else try{
@@ -73,6 +86,7 @@ function createWindow () {
         }
         else if(arg.action == "getConfiguration"){
           ark.getAppConfiguration_async().then((result) => {
+              console.log(result)
               result.connected = true
               event.returnValue = result
             }
@@ -81,7 +95,7 @@ function createWindow () {
                 connected: false,
                 message: error
               }
-              if(ledgercomm){
+              if(ledgercomm && ledgercomm.close_async){
                 ledgercomm.close_async()
               }
               ledgercomm = null
@@ -90,7 +104,9 @@ function createWindow () {
           )
         }
       } catch(error){
-        ledgercomm.close_async()
+        if(ledgercomm && ledgercomm.close_async){
+          ledgercomm.close_async()
+        }
         ledgercomm = null
         var result = {
           connected: false,
