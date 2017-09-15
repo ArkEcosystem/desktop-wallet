@@ -29,7 +29,6 @@ function createWindow () {
   mainWindow.setContentProtection(true);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
-  mainWindow.webContents.openDevTools()
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
