@@ -90,7 +90,6 @@ function createWindow () {
           )
         }
       } catch(error){
-        console.log(error)
         ledgercomm.close_async()
         ledgercomm = null
         var result = {
