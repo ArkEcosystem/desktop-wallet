@@ -1,6 +1,6 @@
 {
   "name": "KapuClient",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "productName": "KapuClient",
   "description": "Kapu Desktop",
   "main": "main.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fix/ark-desktop.git"
+    "url": "git+https://github.com/kapucoin/kapu-desktop.git"
   },
   "keywords": [
     "Electron",
@@ -39,9 +39,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fix/ark-desktop/issues"
+    "url": "https://github.com/kapucoin/kapu-desktop/issues"
   },
-  "homepage": "https://github.com/fix/ark-desktop#readme",
+  "homepage": "https://github.com/kapucoin/kapu-desktop/#readme",
   "dependencies": {
     "about-window": "~1.7.0"
   },
@@ -56,7 +56,7 @@
     "grunt-contrib-uglify": "~0.5.0"
   },
   "build": {
-    "appId": "com.arkwallet.liteclient",
+    "appId": "com.kapuwallet.liteclient",
     "mac": {
       "category": "finance"
     },

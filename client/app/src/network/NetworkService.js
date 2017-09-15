@@ -1,178 +1,221 @@
-(function(){
+//var fs = require('fs');
+var kapuMarketData = require(__dirname + '/assets/kapuMarketData');
+var jsonfile = require('jsonfile')
+var kapuMarketDataFile = __dirname + '/assets/kapuMarketData.json';
+var numeral = require('numeral');
+//var kapuMarketData = JSON.parse(fs.readFileSync(__dirname + '/assets/kapuMarketData.json'));
+
+(function () {
   'use strict';
 
   angular.module('arkclient')
-         .service('networkService', ['$q', '$http', '$timeout', 'storageService', NetworkService]);
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', NetworkService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService($q,$http,$timeout,storageService){
+  function NetworkService($q, $http, $timeout, storageService) {
 
-    var network=switchNetwork(storageService.getContext());
+    var network = switchNetwork(storageService.getContext());
 
     var ark = require('arkjs');
-    ark.crypto.setNetworkVersion(network.version || 23);
+    ark.crypto.setNetworkVersion(network.version || 23);
 
     var clientVersion = require('../../package.json').version;
 
-    var peer={ip:network.peerseed, network:storageService.getContext(), isConnected:false, height:0, lastConnection:null};
+    var peer = { ip: network.peerseed, network: storageService.getContext(), isConnected: false, height: 0, lastConnection: null };
 
-    var connection=$q.defer();
+    var connection = $q.defer();
 
     connection.notify(peer);
 
-    function setNetwork(name, newnetwork){
+    function setNetwork(name, newnetwork) {
       var n = storageService.getGlobal("networks");
-      n[name]=newnetwork;
-      storageService.setGlobal("networks",n);
+      n[name] = newnetwork;
+      storageService.setGlobal("networks", n);
     }
 
-    function removeNetwork(name){
+    function removeNetwork(name) {
       var n = storageService.getGlobal("networks");
       delete n[name];
-      storageService.setGlobal("networks",n);
+      storageService.setGlobal("networks", n);
     }
 
-    function createNetwork(data){
+    function createNetwork(data) {
       var n = storageService.getGlobal("networks");
       var newnetwork = data
       var deferred = $q.defer();
-      if(n[data.name]){
-        deferred.reject("Network name '"+data.name+"' already taken, please choose another one");
+      if (n[data.name]) {
+        deferred.reject("Network name '" + data.name + "' already taken, please choose another one");
       }
       else {
         $http({
           url: data.peerseed + "/api/loader/autoconfigure",
           method: 'GET',
-          timeout:5000
+          timeout: 5000
         }).then(
-          function(resp){
+          function (resp) {
             newnetwork = resp.data.network;
             newnetwork.forcepeer = data.forcepeer;
             newnetwork.peerseed = data.peerseed;
             n[data.name] = newnetwork;
-            storageService.setGlobal("networks",n);
+            storageService.setGlobal("networks", n);
             deferred.resolve(n[data.name]);
           },
-          function(resp){
+          function (resp) {
             deferred.reject("Cannot connect to peer to autoconfigure the network");
           }
-        );
+          );
       }
       return deferred.promise;
     }
 
-    function switchNetwork(newnetwork, reload){
-      if(!newnetwork){ //perform round robin
+    function switchNetwork(newnetwork, reload) {
+      if (!newnetwork) { //perform round robin
         var n = storageService.getGlobal("networks");
         var keys = Object.keys(n);
-        var i = keys.indexOf(storageService.getContext())+1;
-        if(i == keys.length){
-          i=0;
+        var i = keys.indexOf(storageService.getContext()) + 1;
+        if (i == keys.length) {
+          i = 0;
         }
         storageService.switchContext(keys[i]);
         return window.location.reload();
       }
       storageService.switchContext(newnetwork);
       var n = storageService.getGlobal("networks");
-      if(!n){
+      if (!n) {
         n = {
-          mainnet:{ //so far same as testnet
-            nethash:'167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
-            peerseed:'http://51.15.59.104:4001',
+          mainnet: { //so far same as testnet
+            nethash: '167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
+            peerseed: 'http://51.15.59.104:4001',
             forcepeer: false,
-            token: 'ARK',
-            symbol: 'TѦ',
+            token: 'KAPU',
+            symbol: 'K',
             version: 0x17,
             explorer: 'http://45.76.86.96:6040',
             exchanges: {
               changer: "kapu_KAPU"
             },
-            background:"url(assets/images/Ark.jpg)"
+            background: "url(assets/images/Ark.jpg)"
           },
-          testnet:{
-            nethash:'167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
-            peerseed:'http://51.15.59.104:4001',
-            token: 'TESTARK',
-            symbol: 'TѦ',
+          testnet: {
+            nethash: '167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
+            peerseed: 'http://51.15.59.104:4001',
+            token: 'TESTKAPU',
+            symbol: 'K',
             version: 0x17,
             explorer: 'http://texplorer.ark.io',
-            background:"#222299"
+            background: "#222299"
           }
         };
-        storageService.setGlobal("networks",n);
+        storageService.setGlobal("networks", n);
       }
-      if(reload){
+      if (reload) {
         return window.location.reload();
       }
       return n[newnetwork];
     }
 
-    function getNetwork(){
+    function getNetwork() {
       return network;
     }
 
-    function getNetworks(){
+    function getNetworks() {
       return storageService.getGlobal("networks");
     }
 
-    function getPrice(){
-      // peer.market={
-      //   price: { btc: '0' },
-      // };
-      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
-      .then(function(res){
-        storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
-        peer.market=res.data;
-      },function(){
-        var lastPrice = storageService.get('lastPrice');
+    function getPrice() {
 
-        if (typeof lastPrice === 'undefined') {
-          peer.market = { price: { btc: "0.0"} };
-          return;
-        }
+      //      $http.get("http://coinmarketcap.northpole.ro/api/v5/"+network.token+".json",{timeout: 2000})
+      $http.get("https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=10", { timeout: 2000 })
+        .then(function (res) {
+          kapuMarketData.price.usd = (res.data[0].price_usd * kapuMarketData.price.btc).toFixed(5);
+          kapuMarketData.price.eur = (res.data[0].price_eur * kapuMarketData.price.btc).toFixed(5);
+          var response = $http.get("http://51.15.59.104:4001/api/blocks/getSupply", { timeout: 2000 }).then(function (resp) {
+            if(resp != null) {
+              /*
+                Update/retrieve coin supplly value
+              */
+              var supply = resp.data.supply / 100000000;
+              kapuMarketData.availableSupply = numeral(supply).format('0,0');
+              kapuMarketData.availableSupplyNumber = supply;
+              /*
+                Update BTC, USD, EUR market cap
+              */
+              kapuMarketData.marketCap.btc = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.btc).toFixed(2).toString();
+              kapuMarketData.marketCap.eur = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.eur).toFixed(2).toString();
+              kapuMarketData.marketCap.usd = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.usd).toFixed(2).toString();
+              jsonfile.writeFile(kapuMarketDataFile, kapuMarketData, function (err) {
+                if(err != null) {
+                  console.error(err)
+                }
+              })
+              peer.market = res.data;
+            }
+          }, function () {
+            peer.market.isOffline = true;
+          });
+          if (res != null) {
+            /*
+              Update/retrieve Kapu exchange rates
+            */
+            res.data = kapuMarketData;
+            jsonfile.writeFile(kapuMarketDataFile, kapuMarketData, function (err) {
+              if(err != null) {
+                console.error(err)
+              }
+          })
+            storageService.set('lastPrice', { market: res.data, date: new Date() }, true);
+            peer.market = res.data;
+          }
+        }, function () {
+          var lastPrice = storageService.get('lastPrice');
 
-        peer.market = lastPrice.market;
-        peer.market.lastUpdate = lastPrice.date;
-        peer.market.isOffline = true;
-      });
-      $timeout(function(){
+          if (typeof lastPrice === 'undefined') {
+            peer.market = { price: { btc: "0.0" } };
+            return;
+          }
+
+          peer.market = lastPrice.market;
+          peer.market.lastUpdate = lastPrice.date;
+          peer.market.isOffline = true;
+        });
+      $timeout(function () {
         getPrice();
-      },5*60000);
+      }, 5 * 60000);
     }
 
-    function listenNetworkHeight(){
-      $http.get(peer.ip+"/api/blocks/getheight",{timeout:5000}).then(function(resp){
-        peer.lastConnection=new Date();
-        if(resp.data && resp.data.success){
-          if(peer.height==resp.data.height){
-            peer.isConnected=false;
-            peer.error="Node is experiencing sychronisation issues";
+    function listenNetworkHeight() {
+      $http.get(peer.ip + "/api/blocks/getheight", { timeout: 5000 }).then(function (resp) {
+        peer.lastConnection = new Date();
+        if (resp.data && resp.data.success) {
+          if (peer.height == resp.data.height) {
+            peer.isConnected = false;
+            peer.error = "Node is experiencing sychronisation issues";
             connection.notify(peer);
             pickRandomPeer();
           }
-          else{
-            peer.height=resp.data.height;
-            peer.isConnected=true;
+          else {
+            peer.height = resp.data.height;
+            peer.isConnected = true;
             connection.notify(peer);
           }
         }
-        else{
-          peer.isConnected=false;
-          peer.error=resp.statusText || "Peer Timeout after 5s";
+        else {
+          peer.isConnected = false;
+          peer.error = resp.statusText || "Peer Timeout after 5s";
           connection.notify(peer);
         }
       });
-      $timeout(function(){
+      $timeout(function () {
         listenNetworkHeight();
-      },60000);
+      }, 60000);
     }
 
-    function getFromPeer(api){
+    function getFromPeer(api) {
       var deferred = $q.defer();
-      peer.lastConnection=new Date();
+      peer.lastConnection = new Date();
       $http({
         url: peer.ip + api,
         method: 'GET',
@@ -183,47 +226,47 @@
           'port': 1,
           'nethash': network.nethash
         },
-        timeout:5000
+        timeout: 5000
       }).then(
-        function(resp){
+        function (resp) {
           deferred.resolve(resp.data);
-          peer.isConnected=true;
-          peer.delay=new Date().getTime()-peer.lastConnection.getTime();
+          peer.isConnected = true;
+          peer.delay = new Date().getTime() - peer.lastConnection.getTime();
           connection.notify(peer);
         },
-        function(resp){
+        function (resp) {
           deferred.reject("Peer disconnected");
-          peer.isConnected=false;
-          peer.error=resp.statusText || "Peer Timeout after 5s";
+          peer.isConnected = false;
+          peer.error = resp.statusText || "Peer Timeout after 5s";
           connection.notify(peer);
         }
-      );
+        );
       return deferred.promise;
     }
 
-    function broadcastTransaction(transaction, max){
+    function broadcastTransaction(transaction, max) {
       var peers = storageService.get("peers");
-      if(!peers){
+      if (!peers) {
         return;
       }
-      if(!max){
-        max=10;
+      if (!max) {
+        max = 10;
       }
-      for(var i = 0 ; i<max ; i++){
-        if(i < peers.length){
-          postTransaction(transaction, "http://"+peers[i].ip+":"+peers[i].port);
+      for (var i = 0; i < max; i++) {
+        if (i < peers.length) {
+          postTransaction(transaction, "http://" + peers[i].ip + ":" + peers[i].port);
         }
       }
     }
 
-    function postTransaction(transaction, ip){
+    function postTransaction(transaction, ip) {
       var deferred = $q.defer();
       var peerip = ip;
-      if(!peerip){
-        peerip=peer.ip;
+      if (!peerip) {
+        peerip = peer.ip;
       }
       $http({
-        url: peerip+'/peer/transactions',
+        url: peerip + '/peer/transactions',
         data: { transactions: [transaction] },
         method: 'POST',
         headers: {
@@ -233,76 +276,76 @@
           'port': 1,
           'nethash': network.nethash
         }
-      }).then(function(resp){
-        if(resp.data.success){
+      }).then(function (resp) {
+        if (resp.data.success) {
           // we make sure that tx is well broadcasted
-          if(!ip){
+          if (!ip) {
             broadcastTransaction(transaction);
           }
           deferred.resolve(transaction);
         }
-        else{
+        else {
           deferred.reject(resp.data);
         }
       });
       return deferred.promise;
     }
 
-    function pickRandomPeer(){
-      if(!network.forcepeer){
-        getFromPeer("/api/peers").then(function(response){
-          if(response.success){
-            storageService.set("peers",response.peers.filter(function(peer){
-              return peer.status=="OK";
+    function pickRandomPeer() {
+      if (!network.forcepeer) {
+        getFromPeer("/api/peers").then(function (response) {
+          if (response.success) {
+            storageService.set("peers", response.peers.filter(function (peer) {
+              return peer.status == "OK";
             }));
-            findGoodPeer(response.peers,0);
+            findGoodPeer(response.peers, 0);
           }
-          else{
-            findGoodPeer(storageService.get("peers"),0);
+          else {
+            findGoodPeer(storageService.get("peers"), 0);
           }
-        }, function(error){
-          findGoodPeer(storageService.get("peers"),0);
+        }, function (error) {
+          findGoodPeer(storageService.get("peers"), 0);
         });
       }
     }
 
-    function findGoodPeer(peers, index){
-      if(index>peers.length-1){
+    function findGoodPeer(peers, index) {
+      if (index > peers.length - 1) {
         //peer.ip=network.peerseed;
         return;
       }
-      peer.ip="http://"+peers[index].ip+":"+peers[index].port;
-      getFromPeer("/api/blocks/getheight").then(function(response){
-        if(response.success && response.height<peer.height){
-          findGoodPeer(peers, index+1);
+      peer.ip = "http://" + peers[index].ip + ":" + peers[index].port;
+      getFromPeer("/api/blocks/getheight").then(function (response) {
+        if (response.success && response.height < peer.height) {
+          findGoodPeer(peers, index + 1);
         }
         else {
-          peer.height=response.height;
+          peer.height = response.height;
         }
       },
-      function(error){
-        findGoodPeer(peers, index+1);
-      });
+        function (error) {
+          findGoodPeer(peers, index + 1);
+        });
     }
 
-    function getPeer(){
+    function getPeer() {
       return peer;
     }
 
-    function getConnection(){
+    function getConnection() {
       return connection.promise;
     }
-    
+
     function getLatestClientVersion() {
-        var deferred = $q.defer();
-        var url = 'https://api.github.com/repos/kapucoin/kapu-desktop/releases/latest';
-        $http.get(url, {timeout: 5000})
-            .then(function(res) {
-                deferred.resolve(res.data.tag_name);
-            }, function(e) {
-                // deferred.reject(gettextCatalog.getString("Cannot get latest version"));
-            });
-        return deferred.promise;
+      var deferred = $q.defer();
+      var url = 'https://api.github.com/repos/kapucoin/kapu-desktop/releases/latest';
+      $http.get(url, { timeout: 5000 })
+        .then(function (res) {
+          deferred.resolve(res.data.tag_name);
+        }, function (e) {
+          // deferred.reject(gettextCatalog.getString("Cannot get latest version"));
+        });
+      return deferred.promise;
     }
 
     listenNetworkHeight();

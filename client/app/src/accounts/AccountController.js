@@ -254,11 +254,12 @@
     }
 
     self.getMarketInfo=function(symbol){
-      changerService.getMarketInfo(symbol,"ark_ARK").then(function(answer){
+      var symbolTo = "pm_USD"; //old: ark_ARK
+      changerService.getMarketInfo(symbol,symbolTo).then(function(answer){
         self.buycoin=answer;
       });
 
-      changerService.getMarketInfo("ark_ARK",symbol).then(function(answer){
+      changerService.getMarketInfo(symbolTo,symbol).then(function(answer){
         self.sellcoin=answer;
       });
     };
@@ -268,12 +269,15 @@
     self.buy=function(){
       if(self.exchangeEmail) storageService.set("email",self.exchangeEmail);
       if(self.selectedCoin) storageService.set("selectedCoin",self.selectedCoin);
-      changerService.getMarketInfo(self.selectedCoin,"ark_ARK",self.buyAmount/self.buycoin.rate).then(function(rate){
+      console.log(selectedCoin);
+      var symbolTo = "pm_USD"; //old: ark_ARK
+      changerService.getMarketInfo(self.selectedCoin,symbolTo,self.buyAmount/self.buycoin.rate).then(function(rate){
         var amount = self.buyAmount/rate.rate;
         if(self.selectedCoin.split("_")[1]=="USD"){
           amount=parseFloat(amount.toFixed(2));
         }
-        changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, "ark_ARK", self.selected.address).then(function(resp){
+        var symbolTo = "pm_USD"; //old: ark_ARK
+        changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, symbolTo, self.selected.address).then(function(resp){
           self.exchangeBuy=resp;
           self.exchangeBuy.expirationPeriod=self.exchangeBuy.expiration-new Date().getTime()/1000;
           self.exchangeBuy.expirationProgress=0;
@@ -326,7 +330,8 @@
 
     self.sell=function(){
       if(self.exchangeEmail) storageService.set("email",self.exchangeEmail);
-      changerService.makeExchange(self.exchangeEmail, self.sellAmount, "ark_ARK", self.selectedCoin, self.recipientAddress).then(function(resp){
+      var symbolTo = "pm_USD"; //old: ark_ARK
+      changerService.makeExchange(self.exchangeEmail, self.sellAmount, symbolTo, self.selectedCoin, self.recipientAddress).then(function(resp){
         accountService.createTransaction(0,
           {
             fromAddress: self.selected.address,
@@ -469,14 +474,14 @@
       var currencies=[
         {name:"btc",symbol:"Ƀ"},
         {name:"usd",symbol:"$"},
-        {name:"eur",symbol:"€"},
+        {name:"eur",symbol:"€"}/*,
         {name:"cny",symbol:"CN¥"},
         {name:"cad",symbol:"Can$"},
         {name:"gbp",symbol:"£"},
         {name:"hkd",symbol:"HK$"},
         {name:"jpy",symbol:"JP¥"},
         {name:"rub",symbol:'\u20BD'},
-        {name:"aud",symbol:"A$"}
+        {name:"aud",symbol:"A$"}*/
       ];
       self.currency=currencies[currencies.map(function(x) {return x.name; }).indexOf(self.currency.name)+1];
       if(self.currency==undefined) self.currency=currencies[0];
