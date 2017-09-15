@@ -36,15 +36,15 @@ function createWindow () {
   
   var ledgerWorker = fork('./ledger-worker');
   
-  ledgerWorker.on('message', function (connected) {
-    if(connected && !ledgercomm){
+  ledgerWorker.on('message', function (message) {
+    if(message.connected && !ledgercomm){
       ledger.comm_node.create_async().then((comm) => {
         ledgercomm = comm
       }).fail((error) => {
         console.log(error)
       })
     }
-    else if(!connected && ledgercomm){
+    else if(!message.connected && ledgercomm){
       ledgercomm.close_async()
       ledgercomm = null
     }
