@@ -7,8 +7,8 @@ const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
 
-const ledger = require('ledgerco')
 const LedgerArk = require('./LedgerArk')
+const fork = require('child_process').fork;
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -29,24 +29,15 @@ function createWindow () {
   mainWindow.setContentProtection(true);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
+  mainWindow.webContents.openDevTools()
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
-
-  setInterval(()=>{
-    ledger.comm_node.list_async().then((deviceList) => {
-      if(deviceList.length > 0 && !ledgercomm){
-        ledger.comm_node.create_async().then((comm) => {
-          ledgercomm = comm
-        }).fail((error) => {
-          //console.log(error)
-        })
-      }
-      else if(deviceList.length == 0){
-        ledgercomm = null
-      }
-    })
-  },1000)
+  
+  var ledgerWorker = fork('./ledger-worker');
+  ledgerWorker.on('message', function (comm) {
+      ledgercomm = comm;
+  });
 
   ipcMain.on('ledger', (event, arg) => {
     if(arg.action == "detect"){
@@ -100,6 +91,7 @@ function createWindow () {
           )
         }
       } catch(error){
+        console.log(error)
         ledgercomm.close_async()
         ledgercomm = null
         var result = {
