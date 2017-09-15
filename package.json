@@ -9,7 +9,7 @@
     "electron": "electron --version",
     "start": "electron main.js",
     "pack": "build --target dir",
-    "dist": "npm run dist:win && npm run dist:macos && npm run dist:linux && npm run dist:win32",
+    "dist": "npm run dist:linux && npm run dist:win && npm run dist:win32",
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
     "dist:win": "build --win --x64",
     "dist:win32": "build --win --ia32",
