@@ -87,13 +87,13 @@ var numeral = require('numeral');
       if (!n) {
         n = {
           mainnet: { //so far same as testnet
-            nethash: '167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
-            peerseed: 'http://51.15.59.104:4001',
+            nethash: '313ea34c8eb705f79e7bc298b788417ff3f7116c9596f5c9875e769ee2f4ede1',
+            peerseed: 'http://51.15.198.173:4600',
             forcepeer: false,
             token: 'KAPU',
-            symbol: 'K',
-            version: 0x17,
-            explorer: 'http://45.76.86.96:6040',
+            symbol: 'ʞ',
+            version: 0x2D,
+            explorer: 'http://explorer.kapu.one',
             exchanges: {
               changer: "kapu_KAPU"
             },
@@ -103,9 +103,9 @@ var numeral = require('numeral');
             nethash: '167130d695be9f945878237b84e3683c50ced3bbce4e4bf850ef6f9de166535e',
             peerseed: 'http://51.15.59.104:4001',
             token: 'TESTKAPU',
-            symbol: 'K',
+            symbol: 'Tʞ',
             version: 0x17,
-            explorer: 'http://texplorer.ark.io',
+            explorer: 'http://texplorer.kapu.one',
             background: "#222299"
           }
         };
