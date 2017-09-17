@@ -114,7 +114,7 @@
 
     self.closeApp = function() {
       var confirm = $mdDialog.confirm()
-          .title(gettextCatalog.getString('Quit Kapu Client?'))
+          .title(gettextCatalog.getString('Quit Ark Client?'))
           .ok(gettextCatalog.getString('Quit'))
           .cancel(gettextCatalog.getString('Cancel'));
       $mdDialog.show(confirm).then(function() {
