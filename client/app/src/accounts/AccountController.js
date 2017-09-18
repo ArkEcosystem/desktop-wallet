@@ -2002,7 +2002,19 @@
         $mdDialog.hide();
         showMessage(result);
       };
-
+      function verifyCopied() {
+        console.log($scope.verify);
+        var list = JSON.parse($scope.verify.message);
+        var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
+        $mdDialog.hide();
+        var message = gettextCatalog.getString("Error in signature processing");
+        if (res == true) {
+          message = gettextCatalog.getString("The message is verified successfully");
+        } else {
+          message = gettextCatalog.getString("The message is NOT verified");
+        }
+        showMessage(message, res);
+      };
 
 
       function cancel() {
@@ -2015,6 +2027,7 @@
       } else {
         $scope.verify = {
           verify: verify,
+          verifyCopied: verifyCopied,
           cancel: cancel,
           publickey: self.selected.publicKey
         };
