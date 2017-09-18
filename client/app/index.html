@@ -20,362 +20,510 @@
     body {
       background-color: #000
     }
-    
+
     html {
       border-radius: 10px;
     }
+
     /**
-         * Hide when Angular is not yet loaded and initialized
-         */
-    
-    [ng\:cloak],
-    [ng-cloak],
-    [data-ng-cloak],
-    [x-ng-cloak],
-    .ng-cloak,
-    .x-ng-cloak {
-      display: none !important;
+     * Splash screen style. This style needs to be here so the splash screen does need
+     * to wait for the CSS file to load.
+     */
+    [ng\:cloak].splash,
+    [ng-cloak].splash,
+    [data-ng-cloak].splash,
+    [x-ng-cloak].splash,
+    .ng-cloak.splash,
+    .x-ng-cloak.splash {
+      background-color: #000;
+      background-image: url("assets/img/images/Space.jpg");
+      background-position: inherit;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block !important;
+      height: 100%;
+      width: 100%;
+    }
+    .splash {
+      display: none;
+    }
+    .splash__welcome {
+      position: relative;
+      text-align: center;
+      top: 50%;
+      -moz-animation: fadein 2s;
+      -o-animation: fadein 2s;
+      -webkit-animation: fadein 2s;
+      animation: fadein 2s;
+    }
+    .splash__welcome--title {
+      color: #FFF;
+      display: block;
+      font-size: 4em;
+      font-weight: bold;
+      line-height: 1.4em;
+    }
+    .splash__welcome--logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 130px;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
   </style>
 
 </head>
 
-<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul"
-  ng-cloak md-theme="ul.network.theme">
-  <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
-    <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
-      <img src="ark.png" alt="" height="30">
-      <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong></md-button>
-      <md-button class="new-version-button" ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' aria-label="New version available!">
-        <translate>New version available!</translate>
-      </md-button>
-      <md-button ng-if="ul.selected" class="menu" hide-gt-md ng-click="ul.toggleList()" aria-label="Show Account List">
-        <md-icon md-svg-icon="menu"></md-icon>
-      </md-button>
+<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul" md-theme="ul.network.theme">
 
-      <!-- fill up the space between left and right area -->
-      <span flex></span>
-
-      <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Switch Network</translate>
-        </md-tooltip>
-        <md-menu>
-          <md-button aria-label="Switch Network" ng-click="ul.openMenu($mdOpenMenu, $event)">
-            <md-icon md-font-library="material-icons">wifi</md-icon>
-          </md-button>
-          <md-menu-content flex width="3">
-            <md-menu-item ng-repeat="(name, prop) in ul.listNetworks">
-              <md-button ng-click="ul.switchNetwork(name, true)" md-colors="((ul.context == name) && {color:'primary'} || {color:'background-900'})">{{ name | uppercase }} ({{ prop.token }})</md-button>
-            </md-menu-item>
-          </md-menu-content>
-        </md-menu>
-      </any>
-
-
-      <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Settings</translate>
-        </md-tooltip>
-        <md-menu>
-          <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
-            <md-icon md-font-library="material-icons">settings</md-icon>
-          </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 430px; overflow:hidden;">
-            <md-list class="left-list">
-              <md-list-item>
-                <md-button ng-disabled="true">
-                  <md-icon>attach_money</md-icon>
-                  <label translate>Currency</label>
-                </md-button>
-                <md-select style="margin: 0;text-transform: uppercase" class="md-secondary" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
-                  <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" style="text-transform: uppercase">{{ opt.name }}</md-option>
-                </md-select>
-              </md-list-item>
-              <md-list-item>
-                <md-button ng-disabled="true">
-                  <md-icon>flag</md-icon>
-                  <label translate>Language</label>
-                </md-button>
-                <md-select style="margin: 0" class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
-                  <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
-                </md-select>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Import Account" ng-click="ul.importAccount()">
-                  <md-icon>file_download</md-icon>
-                  <translate>Import Account</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Create Account" ng-click="ul.createAccount()">
-                  <md-icon>account_box</md-icon>
-                  <translate>Create Account</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item ng-controller="AddressbookController as ab">
-                <md-button class="md-button" ng-click="ab.addAddressbookContact()">
-                  <md-icon md-font-library="material-icons">library_add</md-icon>
-                  <translate>Add Contact</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()">
-                  <md-icon>network_check</md-icon>
-                  <translate>Manage Networks</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Appearance" ng-click="ul.manageBackgrounds()">
-                  <md-icon>landscape</md-icon>
-                  <translate>Appearance</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
-              </md-list-item>
-              <md-list>
-          </md-menu-content>
-        </md-menu>
-      </any>
-      <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Peer Status</translate>
-        </md-tooltip>
-        <md-menu>
-          <md-button aria-label="Show Network" ng-click="ul.openMenu($mdMenu.open, $event)">
-            <md-icon md-font-library="material-icons">{{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
-          </md-button>
-          <md-menu-content flex layout-padding width="6">
-            <md-list>
-              <md-list-item>
-                <b translate>Peer</b>
-                <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
-              </md-list-item>
-              <md-list-item>
-                <b translate>Height</b> <span class="md-secondary">{{ul.connectedPeer.height}}</span>
-              </md-list-item>
-              <md-list-item>
-                <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
-              </md-list-item>
-              <md-list-item md-colors="{background:'default-red'}" ng-if="!ul.connectedPeer.isConnected">
-                {{ul.connectedPeer.error}}
-              </md-list-item>
-              <md-list-item md-colors="{background:'default-green'}" ng-if="ul.connectedPeer.isConnected">
-                <b translate>Delay</b> <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
-              </md-list-item>
-            </md-list>
-          </md-menu-content>
-        </md-menu>
-      </any>
-      <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Market</translate>
-        </md-tooltip>
-        <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
-          <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
-            <md-icon md-font-library="material-icons">insert_chart</md-icon>
-            <!--<md-icon md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]<0?'red-200':'green-200' }" md-font-library="material-icons">arrow_{{ul.connectedPeer.market.change7h[ul.currency.name]<0?"down":"up"}}ward</md-icon>-->
-          </md-button>
-          <md-menu-content flex layout-padding width="6">
-            <md-list>
-              <md-list-item>
-                <div>
-                  <b><translate>Price</translate></b>
-                </div>
-
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
-              </md-list-item>
-              <md-list-item>
-                <b translate>Change 1h/7h/7d</b>
-                <span class="md-secondary">
-                  <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
-                <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span> /
-                <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
-                </span>
-              </md-list-item>
-              <md-list-item>
-                <div>
-                  <b><translate>Market Cap.</translate></b>
-                </div>
-
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
-              </md-list-item>
-              <md-list-item ng-show="ul.connectedPeer.market.isOffline">
-                <b translate>Last checked</b> <span class="md-secondary">
-                  {{ul.connectedPeer.market.lastUpdate | date:'shortTime'}}</span>
-              </md-list-item>
-            </md-list>
-          </md-menu-content>
-        </md-menu>
-      </any>
-      <any style="pointer-events: auto">
-        <md-tooltip>
-          <translate>Application</translate>
-        </md-tooltip>
-        <md-menu>
-          <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
-            <md-icon md-font-library="material-icons">power_settings_new</md-icon>
-          </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 320px">
-            <md-list>
-              <md-list-item>
-                <md-button aria-label="Close App" ng-click="ul.closeApp()" id="exit-app-button">
-                  <md-icon>exit_to_app</md-icon>
-                  <translate>Quit</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')">
-                  <md-icon>refresh</md-icon>
-                  <translate>Restart</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
-                  <md-icon>vertical_align_bottom</md-icon>
-                  <translate>Minimize</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
-                  <md-icon>open_with</md-icon>
-                  <translate>Maximize</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button md-colors="((ul.windowApp('isFullScreen')) && {background: 'accent'} || '')" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
-                  <md-icon>fullscreen</md-icon>
-                  <translate>Toggle Full Screen</translate>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Reset Data" ng-click="ul.clearData()">
-                  <md-icon>delete_forever</md-icon>
-                  <translate>Reset Data</translate>
-                </md-button>
-              </md-list-item>
-            </md-list>
-          </md-menu-content>
-        </md-menu>
-      </any>
-      <!-- <md-button ng-click="ul.closeApp()">
-         <md-icon md-font-library="material-icons">power_settings_new</md-icon>
-       </md-button> -->
+  <div class="splash" ng-cloak>
+    <div class="splash__welcome">
+      <span class="splash__welcome--title">WELCOME TO THE ARK</span>
+      <img class="splash__welcome--logo" src="ark-large.ico" alt="Ark Logo">
     </div>
-  </md-toolbar>
+  </div>
 
-  <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
+  <div ng-cloak style="height: 100%" layout="column">
+    <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
+      <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
+        <img src="ark.png" alt="" height="30">
 
-    <div id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px; overflow: hidden;" md-whiteframe="3">
-      <md-toolbar layout="row" md-scroll-shrink>
-        <div class="md-toolbar-tools">
-          <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
-          </h2>
-          <span flex></span>
-          <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
-            <md-icon md-font-library="material-icons">cached</md-icon>
-          </md-button>
-        </div>
-      </md-toolbar>
-      <div style="min-height: 100px; max-height: 300px; height: auto; border-radius:0 0 10px 10px" layout="column">
-        <md-toolbar class="md-hue-2">
-          <div class="md-toolbar-tools">
-            <md-button ng-click="ul.importAccount()">
-              <md-icon>file_download</md-icon>
-              <translate>Import Account</translate>
+        <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]">
+          <strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong>
+        </md-button>
+
+        <md-button class="new-version-button" ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' aria-label="New version available!">
+          <translate>New version available!</translate>
+        </md-button>
+
+        <md-button class="menu" hide-gt-md ng-if="ul.selected" ng-click="ul.toggleList()" aria-label="Show Account List">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+
+        <!-- fill up the space between left and right area -->
+        <span flex></span>
+
+        <any style="pointer-events: auto">
+          <md-tooltip>
+            <translate>Switch Network</translate>
+          </md-tooltip>
+
+          <md-menu>
+            <md-button aria-label="Switch Network" ng-click="ul.openMenu($mdOpenMenu, $event)">
+              <md-icon md-font-library="material-icons">wifi</md-icon>
             </md-button>
 
-            <md-button ng-click="ul.createAccount()">
-              <md-icon>account_box</md-icon>
-              <translate>Create Account</translate>
+            <md-menu-content flex width="3">
+              <md-menu-item ng-repeat="(name, prop) in ul.listNetworks">
+                <md-button ng-click="ul.switchNetwork(name, true)" md-colors="((ul.context == name) && {color:'primary'} || {color:'background-900'})">
+                  {{ name | uppercase }} ({{ prop.token }})
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </any>
+
+        <any style="pointer-events: auto">
+          <md-tooltip>
+            <translate>Settings</translate>
+          </md-tooltip>
+
+          <md-menu>
+            <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
+              <md-icon md-font-library="material-icons">settings</md-icon>
+            </md-button>
+
+            <md-menu-content flex layout-padding width="6" style="min-height: 430px; overflow:hidden;">
+              <md-list class="left-list">
+                <md-list-item>
+                  <md-button ng-disabled="true">
+                    <md-icon>attach_money</md-icon>
+                    <label translate>Currency</label>
+                  </md-button>
+
+                  <md-select style="margin: 0;text-transform: uppercase" class="md-secondary" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
+                    <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" style="text-transform: uppercase">
+                      {{ opt.name }}
+                    </md-option>
+                  </md-select>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button ng-disabled="true">
+                    <md-icon>flag</md-icon>
+                    <label translate>Language</label>
+                  </md-button>
+
+                  <md-select style="margin: 0" class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                    <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">
+                      {{language}}
+                    </md-option>
+                  </md-select>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Import Account" ng-click="ul.importAccount()">
+                    <md-icon>file_download</md-icon>
+                    <translate>Import Account</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Create Account" ng-click="ul.createAccount()">
+                    <md-icon>account_box</md-icon>
+                    <translate>Create Account</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item ng-controller="AddressbookController as ab">
+                  <md-button class="md-button" ng-click="ab.addAddressbookContact()">
+                    <md-icon md-font-library="material-icons">library_add</md-icon>
+                    <translate>Add Contact</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()">
+                    <md-icon>network_check</md-icon>
+                    <translate>Manage Networks</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Appearance" ng-click="ul.manageBackgrounds()">
+                    <md-icon>landscape</md-icon>
+                    <translate>Appearance</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">
+                    Play song when receive funds?
+                  </md-switch>
+                </md-list-item>
+                <md-list>
+            </md-menu-content>
+          </md-menu>
+        </any>
+
+        <any style="pointer-events: auto">
+          <md-tooltip>
+            <translate>Peer Status</translate>
+          </md-tooltip>
+
+          <md-menu>
+            <md-button aria-label="Show Network" ng-click="ul.openMenu($mdMenu.open, $event)">
+              <md-icon md-font-library="material-icons">
+                {{ ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}
+              </md-icon>
+            </md-button>
+
+            <md-menu-content flex layout-padding width="6">
+              <md-list>
+                <md-list-item>
+                  <b translate>Peer</b>
+                  <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">
+                    {{ul.connectedPeer.ip}}
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <b translate>Height</b>
+                  <span class="md-secondary">{{ul.connectedPeer.height}}</span>
+                </md-list-item>
+
+                <md-list-item>
+                  <b translate>Last checked</b> <span class="md-secondary">
+                    {{ul.connectedPeer.lastConnection | date:'shortTime'}}
+                  </span>
+                </md-list-item>
+
+                <md-list-item md-colors="{background:'default-red'}" ng-if="!ul.connectedPeer.isConnected">
+                  {{ul.connectedPeer.error}}
+                </md-list-item>
+
+                <md-list-item md-colors="{background:'default-green'}" ng-if="ul.connectedPeer.isConnected">
+                  <b translate>Delay</b>
+                  <span class="md-secondary">{{ul.connectedPeer.delay}}ms</span>
+                </md-list-item>
+              </md-list>
+            </md-menu-content>
+          </md-menu>
+        </any>
+
+        <any style="pointer-events: auto">
+          <md-tooltip>
+            <translate>Market</translate>
+          </md-tooltip>
+
+          <md-menu ng-if="ul.connectedPeer.market.marketCap" md-offset="0 60">
+            <md-button aria-label="Show market" ng-click="ul.openMenu($mdMenu.open, $event)">
+              <md-icon md-font-library="material-icons">insert_chart</md-icon>
+            </md-button>
+
+            <md-menu-content flex layout-padding width="6">
+              <md-list>
+                <md-list-item>
+                  <div>
+                    <b><translate>Price</translate></b>
+                  </div>
+
+                  <span class="md-secondary">
+                    {{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}
+                  </span>
+                </md-list-item>
+
+                <md-list-item>
+                  <b translate>Change 1h/7h/7d</b>
+                  <span class="md-secondary">
+                    <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">
+                      {{ul.connectedPeer.market.change1h[ul.currency.name]}}%
+                    </span> /
+                    <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">
+                      {{ul.connectedPeer.market.change7h[ul.currency.name]}}%
+                    </span> /
+                    <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">
+                      {{ul.connectedPeer.market.change7d[ul.currency.name]}}%
+                    </span>
+                  </span>
+                </md-list-item>
+
+                <md-list-item>
+                  <div>
+                    <b><translate>Market Cap.</translate></b>
+                  </div>
+
+                  <span class="md-secondary">
+                    {{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}
+                  </span>
+                </md-list-item>
+
+                <md-list-item ng-show="ul.connectedPeer.market.isOffline">
+                  <b translate>Last checked</b>
+                  <span class="md-secondary">
+                    {{ul.connectedPeer.market.lastUpdate | date:'shortTime'}}
+                  </span>
+                </md-list-item>
+              </md-list>
+            </md-menu-content>
+          </md-menu>
+        </any>
+
+        <any style="pointer-events: auto">
+          <md-tooltip>
+            <translate>Application</translate>
+          </md-tooltip>
+
+          <md-menu>
+            <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
+              <md-icon md-font-library="material-icons">power_settings_new</md-icon>
+            </md-button>
+
+            <md-menu-content flex layout-padding width="6" style="min-height: 320px">
+              <md-list>
+                <md-list-item>
+                  <md-button aria-label="Close App" ng-click="ul.closeApp()" id="exit-app-button">
+                    <md-icon>exit_to_app</md-icon>
+                    <translate>Quit</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')">
+                    <md-icon>refresh</md-icon>
+                    <translate>Restart</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
+                    <md-icon>vertical_align_bottom</md-icon>
+                    <translate>Minimize</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
+                    <md-icon>open_with</md-icon>
+                    <translate>Maximize</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button md-colors="((ul.windowApp('isFullScreen')) && {background: 'accent'} || '')" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
+                    <md-icon>fullscreen</md-icon>
+                    <translate>Toggle Full Screen</translate>
+                  </md-button>
+                </md-list-item>
+
+                <md-list-item>
+                  <md-button aria-label="Reset Data" ng-click="ul.clearData()">
+                    <md-icon>delete_forever</md-icon>
+                    <translate>Reset Data</translate>
+                  </md-button>
+                </md-list-item>
+              </md-list>
+            </md-menu-content>
+          </md-menu>
+        </any>
+      </div>
+    </md-toolbar>
+
+    <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
+      <div id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px; overflow: hidden;" md-whiteframe="3">
+        <md-toolbar layout="row" md-scroll-shrink>
+          <div class="md-toolbar-tools">
+            <h2>
+              <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+            </h2>
+            <span flex></span>
+            <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
+              <md-icon md-font-library="material-icons">cached</md-icon>
             </md-button>
           </div>
         </md-toolbar>
-        <md-content style="min-height: 70px;" flex>
-          <md-list md-no-ink>
-            <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.ledger.connected">
-              <span>
-                <md-icon md-svg-icon="ledger"></md-icon>
-                Ledger Nano S
-              </span>
+
+        <div style="min-height: 100px; max-height: 300px; height: auto; border-radius:0 0 10px 10px" layout="column">
+          <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+              <md-button ng-click="ul.importAccount()">
+                <md-icon>file_download</md-icon>
+                <translate>Import Account</translate>
+              </md-button>
+
+              <md-button ng-click="ul.createAccount()">
+                <md-icon>account_box</md-icon>
+                <translate>Create Account</translate>
+              </md-button>
+            </div>
+          </md-toolbar>
+
+          <md-content style="min-height: 70px;" flex>
+            <md-list md-no-ink>
+              <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.ledger.connected">
+                <span>
+                  <md-icon md-svg-icon="ledger"></md-icon>
+                  Ledger Nano S
+                </span>
+                <span class="md-secondary">
+                  <md-progress-circular ng-if="!ul.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
+                  <md-chip ng-if="ul.ledgerAccounts">
+                    {{ul.ledgerAccounts.length}} <translate>Accounts</translate>
+                  </md-chip>
+                </span>
+              </md-list-item>
+
+              <md-list-item ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+                <span ng-class="{'selected' : it.address === ul.selected.address }">
+                  <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
+
+                  <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
+
+                  <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+                  {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
+                </span>
+
+                <span class="md-secondary">
+                  {{ul.network.symbol}}{{it.balance/100000000}}
+                </span>
+              </md-list-item>
+            </md-list>
+          </md-content>
+        </div>
+      </div>
+
+      <div id="home-box-row" layout="row" layout-align="space-between stretch">
+        <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+          <md-list>
+            <md-list-item>
+              <div>
+                <b><translate>Price</translate></b>
+              </div>
+
               <span class="md-secondary">
-                <md-progress-circular ng-if="!ul.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
-                <md-chip ng-if="ul.ledgerAccounts">{{ul.ledgerAccounts.length}} <translate>Accounts</translate></md-chip>
+                {{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}
               </span>
             </md-list-item>
 
-            <md-list-item ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
-              <span ng-class="{'selected' : it.address === ul.selected.address }">
-                <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-                <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-                <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
-              </span>
+            <md-list-item>
+              <b translate>Change 1h/7h/7d</b>
+
               <span class="md-secondary">
-                {{ul.network.symbol}}{{it.balance/100000000}}
+                <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">
+                  {{ul.connectedPeer.market.change1h[ul.currency.name]}}%
+                </span> /
+                <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">
+                  {{ul.connectedPeer.market.change7h[ul.currency.name]}}%
+                </span> /
+                <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">
+                  {{ul.connectedPeer.market.change7d[ul.currency.name]}}%
+                </span>
+              </span>
+            </md-list-item>
+
+            <md-list-item>
+              <b translate>Market Cap.</b>
+              <span class="md-secondary">
+                {{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}
+              </span>
+            </md-list-item>
+          </md-list>
+        </md-content>
+
+        <md-content id="home-box-network" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+          <md-list flex>
+            <md-list-item>
+              <b translate>Network</b>
+              <md-button class="md-secondary" aria-label="Switch Network" md-prevent-menu-close ng-click="ul.switchNetwork()">
+                {{ul.connectedPeer.network}}/{{ul.connectedPeer.height}}
+              </md-button>
+            </md-list-item>
+
+            <md-list-item>
+              <b translate>Peer</b>
+              <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">
+                {{ul.connectedPeer.ip}}
+              </md-button>
+            </md-list-item>
+
+            <md-list-item>
+              <b translate>Last checked</b>
+              <span class="md-secondary">
+                {{ul.connectedPeer.lastConnection | date:'shortTime'}}
               </span>
             </md-list-item>
           </md-list>
         </md-content>
       </div>
 
+      <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+      <div class="coinmarketcap-currency-widget" data-currency="ark" data-base="USD" data-secondary="BTC"></div>
+
+      <div class="footer">
+        <translate>Hand crafted with ❤ by</translate>
+        <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
+      </div>
     </div>
 
-    <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
-        <md-list>
-          <md-list-item>
-            <div>
-              <b><translate>Price</translate></b>
-            </div>
-
-            <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Change 1h/7h/7d</b>
-            <span class="md-secondary">
-              <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
-            <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span> /
-            <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
-            </span>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
-          </md-list-item>
-        </md-list>
-      </md-content>
-      <md-content id="home-box-network" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
-        <md-list flex>
-          <md-list-item>
-            <b translate>Network</b>
-            <md-button class="md-secondary" aria-label="Switch Network" md-prevent-menu-close ng-click="ul.switchNetwork()">{{ul.connectedPeer.network}}/{{ul.connectedPeer.height}}</md-button>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Peer</b>
-            <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
-          </md-list-item>
-        </md-list>
-      </md-content>
-    </div>
-
-    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-    <div class="coinmarketcap-currency-widget" data-currency="ark" data-base="USD" data-secondary="BTC"></div>
-    <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
-    <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
-
-    <div class="footer">
-      <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
-    </div>
-  </div>
-
-  <div class="account-view" ng-if="ul.selected" layout="column" flex>
-    <md-content flex layout="row">
-
+    <div class="account-view" ng-if="ul.selected" layout="column" flex>
       <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
         <md-list md-no-ink ng-controller="AddressbookController as ab">
           <md-list-item ng-if="ul.ledger.connected">
@@ -383,37 +531,48 @@
               Ledger Nano S
             </h2>
           </md-list-item>
+
           <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
             <span style="white-space: nowrap;">
-                  <md-icon md-svg-icon="ledger"></md-icon>
-                  {{it.address|accountlabel}}
-                </span>
+              <md-icon md-svg-icon="ledger"></md-icon>
+              {{it.address|accountlabel}}
+            </span>
           </md-list-item>
+
           <md-list-item ng-if="ul.ledger.connected&&!ul.ledgerAccounts">
             <md-progress-circular md-mode="indeterminate"></md-progress-circular>
           </md-list-item>
+
           <md-list-item>
             <h2 translate>
               My Accounts
             </h2>
           </md-list-item>
+
           <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
             <span style="white-space: nowrap;">
-                  <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-                  <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-                  <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address|accountlabel}}
-                </span>
+              <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
+
+              <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
+
+              <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+
+              {{it.username||it.address|accountlabel}}
+            </span>
           </md-list-item>
+
           <md-list-item>
             <h2 translate>
               Contacts
             </h2>
           </md-list-item>
+
           <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
             <span style="white-space: nowrap;">
               <md-icon md-font-library="material-icons">account_circle</md-icon>
+
               {{contact.name}}
+
               <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
                 info_outline
                 <md-tooltip md-direction="bottom" class="tooltip-multiline">
@@ -424,11 +583,11 @@
               </md-icon>
             </span>
           </md-list-item>
+
           <md-list-item>
             <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
               <md-icon md-font-library="material-icons">add</md-icon>
               <translate>Add Contact</translate>
-
             </md-button>
           </md-list-item>
         </md-list>
@@ -440,50 +599,62 @@
             <md-button md-no-ink ng-click="ul.sendArk(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
               <md-icon md-font-library="material-icons">send</md-icon>
             </md-button>
+
             <md-button md-no-ink ng-click="ul.showAccountMenu(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
               <md-icon md-font-library="material-icons">more_vert</md-icon>
             </md-button>
           </div>
+
           <div class="share" ng-if="!ul.selected.virtual" ng-controller="AddressbookController as ab">
             <md-button md-no-ink ng-click="ab.editAddressbookContact(ul.selected.address)" aria-label="Share with {{ ul.selected.address }}">
               <md-icon md-font-library="material-icons">edit</md-icon>
             </md-button>
           </div>
+
           <md-card-title>
             <md-card-title-media>
               <div class="md-media-sm card-media" style="margin:10px; width:128px;height:128px;" layout layout-align="center center">
                 <qrcode size="128" data='{"a":"{{ul.selected.address}}"}'></qrcode>
               </div>
             </md-card-title-media>
+
             <md-card-title-text>
               <span class="md-headline">
-                  <!--<md-button class="md-fab md-primary md-mini" ng-click="ul.openPassphrasesDialog(ul.selected)">
-                    <md-icon md-font-library="material-icons">lock</md-icon>
-                  </md-button>-->
-                  <span class="delegate-name" ng-controller="AddressbookController as ab">{{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}</span>
-              <br>
-              <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}">
-                <md-icon>content_copy</md-icon> {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
-              </md-button>
-              <md-icon ng-if="ul.selected.publicKey" aria-label="Address" style="cursor: pointer;outline: none" ng-click="ul.showPublicKey = !ul.showPublicKey" md-font-library="material-icons">
-                <md-tooltip md-direction="top">
-                  <translate>Show {{((!ul.showPublicKey) && 'public key' || 'address')}}</translate>
-                </md-tooltip>
-                {{((!ul.showPublicKey) && 'vpn_key' || 'public')}}
-              </md-icon>
+                <span class="delegate-name" ng-controller="AddressbookController as ab">
+                  {{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}
+                </span>
+
+                <br>
+
+                <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}">
+                  <md-icon>content_copy</md-icon>
+                  {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
+                </md-button>
+
+                <md-icon ng-if="ul.selected.publicKey" aria-label="Address" style="cursor: pointer;outline: none" ng-click="ul.showPublicKey = !ul.showPublicKey" md-font-library="material-icons">
+                  <md-tooltip md-direction="top">
+                    <translate>
+                      Show {{((!ul.showPublicKey) && 'public key' || 'address')}}
+                    </translate>
+                  </md-tooltip>
+
+                  {{((!ul.showPublicKey) && 'vpn_key' || 'public')}}
+                </md-icon>
               </span>
+
               <span class="md-subhead description">
                   <translate>Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
-                  <md-button ng-click="ul.changeCurrency()">{{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</md-button>
+
+                  <md-button ng-click="ul.changeCurrency()">
+                    {{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}
+                  </md-button>
                 </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
 
-
         <md-tabs md-dynamic-height>
           <md-tab label="{{'Transactions'|translate}}">
-
             <md-table-container flex="100">
               <table md-table id="tx-list">
                 <thead md-head md-order="query.order">
@@ -491,50 +662,74 @@
                     <th md-column md-numeric>
                       <translate>Id</translate>
                     </th>
+
                     <th md-column md-numeric>
                       <translate>Confirmations</translate>
                     </th>
+
                     <th md-column md-numeric md-order-by="timestamp">
                       <translate>Date</translate>
                     </th>
+
                     <th md-column md-numeric md-order-by="total">
-                      <translate>Total</Translate> {{ul.network.symbol}}</th>
+                      <translate>Total</Translate> {{ul.network.symbol}}
+                    </th>
+
                     <th md-column md-numeric translate>From</th>
+
                     <th md-column md-numeric translate>To</th>
+
                     <th md-column translate>Smartbridge</th>
                   </tr>
                 </thead>
+
                 <tbody md-body style="white-space:nowrap;">
                   <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
-                    <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
-                    <td md-cell>{{it.confirmations}}</td>
-                    <td md-cell>{{it.date | date: 'short'}}</td>
+                    <td md-cell>
+                      <a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a>
+                    </td>
+                    <td md-cell>
+                      {{it.confirmations}}
+                    </td>
+                    <td md-cell>
+                      {{it.date | date: 'short'}}
+                    </td>
                     <td ng-if="it.total>=0" md-cell>
-                      <md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button>
+                      <md-button disabled md-colors="{'background' : 'default-green-200' }">
+                        +{{it.humanTotal}}
+                      </md-button>
                     </td>
                     <td ng-if="it.total<0" md-cell>
-                      <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
+                      <md-button disabled md-colors="{'background' : 'default-red-200' }">
+                        {{it.humanTotal}}
+                      </md-button>
                     </td>
-                    <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
                     <td md-cell>
-                      <a href="" ng-if="it.type==0" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a>
+                      <a href="" ng-click="ul.gotoAddress(it.senderId)">
+                        {{it.senderId | accountlabel}}
+                      </a>
+                    </td>
+                    <td md-cell>
+                      <a href="" ng-if="it.type==0" ng-click="ul.gotoAddress(it.recipientId)">
+                        {{it.recipientId | accountlabel}}
+                      </a>
                       <span ng-if="it.type>0">{{it.label}}</span>
                     </td>
-                    <td md-cell>{{it.vendorField}}</td>
+                    <td md-cell>
+                      {{it.vendorField}}
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </md-table-container>
           </md-tab>
 
-
-
           <md-tab>
             <md-tab-label>
               <translate>Votes</translate>
             </md-tab-label>
-            <md-tab-body>
 
+            <md-tab-body>
               <md-card ng-if="!ul.selected.virtual" flex="100">
                 <md-card-title>
                   <md-card-title-media>
@@ -542,10 +737,12 @@
                       <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
                     </div>
                   </md-card-title-media>
+
                   <md-card-title-text>
                     <translate>
                       If you own this account, you can enable Voting
-                    </translate><br>
+                    </translate>
+                    <br>
                     <md-button ng-click="ul.createFolder(ul.selected)">
                       <translate>Enable Votes</translate>
                     </md-button>
@@ -574,13 +771,24 @@
                       </th>
                     </tr>
                   </thead>
+
                   <tbody md-body>
                     <tr md-row ng-repeat="it in ul.selected.delegates | orderBy: query.order">
-                      <td md-cell>{{it.rate}}</td>
-                      <td md-cell>{{it.username}}</td>
-                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
-                      <td md-cell>{{it.approval}}%</td>
-                      <td md-cell>{{it.productivity}}%</td>
+                      <td md-cell>
+                        {{it.rate}}
+                      </td>
+                      <td md-cell>
+                        {{it.username}}
+                      </td>
+                      <td md-cell>
+                        <a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a>
+                      </td>
+                      <td md-cell>
+                        {{it.approval}}%
+                      </td>
+                      <td md-cell>
+                        {{it.productivity}}%
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -590,12 +798,15 @@
                 <md-button ng-click="ul.vote(ul.selected)" md-colors="{background:'primary'}">
                   <translate>Vote</translate>
                 </md-button>
+
                 <md-button ng-click="ul.addDelegate(ul.selected)" md-colors="{background:'accent'}">
                   <translate>Add Delegate</translate>
                 </md-button>
+
                 <md-button ng-click='ul.openExplorer("/delegateMonitor")'>
                   <translate>Open Delegate Monitor</translate>
                 </md-button>
+
                 <table md-table md-row-select multiple ng-model="ul.selected.selectedVotes">
                   <thead md-head md-order="query.order">
                     <tr md-row>
@@ -616,23 +827,32 @@
                       </th>
                     </tr>
                   </thead>
+
                   <tbody md-body>
                     <tr md-row md-select="it" md-select-id="id" md-auto-select ng-repeat="it in ul.getAllDelegates(ul.selected) | orderBy: query.order">
-                      <td md-cell>{{it.rate}}</td>
-                      <td md-cell>{{it.username}}</td>
-                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
-                      <td md-cell>{{it.approval}}%</td>
-                      <td md-cell>{{it.productivity}}%</td>
+                      <td md-cell>
+                        {{it.rate}}
+                      </td>
+                      <td md-cell>
+                        {{it.username}}
+                      </td>
+                      <td md-cell>
+                          <a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a>
+                        </td>
+                      <td md-cell>
+                        {{it.approval}}%
+                      </td>
+                      <td md-cell>
+                        {{it.productivity}}%
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </md-table-container>
 
               <md-content id="vote-help" translate>
-                Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for
-                a delegate that you support.
+                Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support.
               </md-content>
-
             </md-tab-body>
           </md-tab>
 
@@ -640,8 +860,8 @@
             <md-tab-label>
               <translate>Sign / Verify Message</translate>
             </md-tab-label>
-            <md-tab-body>
 
+            <md-tab-body>
               <md-card ng-if="!ul.selected.virtual" flex="100">
                 <md-card-title>
                   <md-card-title-media>
@@ -649,10 +869,12 @@
                       <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
                     </div>
                   </md-card-title-media>
+
                   <md-card-title-text>
                     <translate>
                       If you own this account, you can enable Message Signing
-                    </translate><br>
+                    </translate>
+                    <br>
                     <md-button ng-click="ul.createFolder(ul.selected)">
                       <translate>Enable Signing</translate>
                     </md-button>
@@ -665,9 +887,11 @@
                   <md-button ng-if="ul.selected.virtual" aria-label="Sign" md-colors="{background:'primary'}" ng-click="ul.signMessage(ul.selected)">
                     <translate>Sign</translate>
                   </md-button>
+
                   <md-button aria-label="Verify" md-colors="{background:'accent'}" ng-click="ul.verifyMessage()">
                     <translate>Verify</translate>
                   </md-button>
+
                   <table md-table id="sign-list" style="table-layout: fixed; width: 100%">
                     <thead md-head md-order="query.order">
                       <tr md-row>
@@ -684,8 +908,12 @@
                     </thead>
                     <tbody md-body>
                       <tr md-disable-select ng-repeat="signedMessage in ul.selected.signedMessages | orderBy: query.order">
-                        <td md-cell style="word-wrap:break-word;">{{signedMessage.message}}</td>
-                        <td md-cell style="word-wrap:break-word;">{{signedMessage.signature}}</td>
+                        <td md-cell style="word-wrap:break-word;">
+                          {{signedMessage.message}}
+                        </td>
+                        <td md-cell style="word-wrap:break-word;">
+                          {{signedMessage.signature}}
+                        </td>
                         <td md-cell>
                           <md-button ng-click="ul.verifyMessage(signedMessage)" md-colors="{background:'green'}" class="md-mini md-fab">
                             <md-tooltip>
@@ -693,12 +921,14 @@
                             </md-tooltip>
                             <md-icon md-font-library="material-icons">check</md-icon>
                           </md-button>
+
                           <md-button ng-click="ul.copiedToClipboard()" copy-to-clipboard="{{signedMessage}}" class="md-mini md-fab md-primary">
                             <md-tooltip>
                               <translate>Copy</translate>
                             </md-tooltip>
                             <md-icon md-font-library="material-icons">content_copy</md-icon>
                           </md-button>
+
                           <md-button ng-click="ul.deleteSignedMessage(ul.selected, signedMessage)" class="md-mini md-fab md-warn">
                             <md-tooltip>
                               <translate>Delete</translate>
@@ -919,6 +1149,7 @@
             <md-tab-label>
               <translate>OffChain</translate>
             </md-tab-label>
+
             <md-tab-body>
               <md-list>
                 <md-list-item ng-if="!ul.selected.virtual">
@@ -929,11 +1160,12 @@
                           <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
                         </div>
                       </md-card-title-media>
+
                       <md-card-title-text>
                         <translate>
-                          If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under
-                          the "My Accounts" list.
+                          If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under the "My Accounts" list.
                         </translate>
+
                         <md-button ng-click="ul.createFolder(ul.selected)">
                           <translate>Enable Virtual Folders</translate>
                         </md-button>
@@ -945,11 +1177,15 @@
 
                 <md-list-item>
                   <h3>
-                    <translate>Default</translate> {{ul.currency.symbol}} {{(ul.getDefaultValue(ul.selected)/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</h3>
+                    <translate>Default</translate>
+                    {{ul.currency.symbol}} {{(ul.getDefaultValue(ul.selected)/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}
+                  </h3>
+
                   <span class="md-secondary">
                     <md-button md-block md-colors="{'background' : ul.getDefaultValue(ul.selected)>0 ? 'default-green-200':'default-red-200' }"> {{ul.getDefaultValue(ul.selected)/100000000}}</md-button>
                   </span>
                 </md-list-item>
+
                 <md-list-item ng-repeat="folder in ul.selected.virtual.getFolders()">
                   <div ng-repeat="v in [0]">
                     <md-menu>
@@ -957,12 +1193,14 @@
                         <md-icon>folder</md-icon>
                         {{folder}}
                       </md-button>
+
                       <md-menu-content width="1">
                         <md-menu-item>
                           <md-button ng-click="ul.deleteFolder(ul.selected,folder)">
                             <translate>Remove</translate>
                           </md-button>
                         </md-menu-item>
+
                         <md-menu-item>
                           <md-button ng-click="ul.renameVirtuaFolder(folder)">
                             <translate>Rename</translate>
@@ -971,27 +1209,26 @@
                       </md-menu-content>
                     </md-menu>
                   </div>
+
                   <span class="md-secondary">
                     <md-input-container>
                       <label>{{'Amount'|translate}} ({{ul.network.token}})</label>
-                      <input ng-model-options="{ getterSetter: true }" ng-model="ul.selected.virtual.uservalue(folder)" ng-change="ul.saveFolder(ul.selected,folder)" type="number" >
-                      <div class="hint"> {{ul.currency.symbol}} {{(ul.selected.virtual[folder].amount/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}} </div>
+                      <input ng-model-options="{ getterSetter: true }" ng-model="ul.selected.virtual.uservalue(folder)" ng-change="ul.saveFolder(ul.selected,folder)" type="number">
+                      <div class="hint">
+                        {{ul.currency.symbol}} {{(ul.selected.virtual[folder].amount/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}
+                      </div>
                     </md-input-container>
                   </span>
-
                 </md-list-item>
+
                 <md-list-item ng-if="ul.selected.virtual">
                   <md-button ng-click="ul.createFolder(ul.selected)">
                     <translate>Create a new virtual folder</translate>
                   </md-button>
                 </md-list-item>
-
               </md-list>
             </md-tab-body>
-            </md-tab-body>
           </md-tab>
-
-
 
           <md-tab ng-if="ul.selected.delegate">
             <md-tab-label>
@@ -999,32 +1236,32 @@
               <md-icon md-colors="{'color' : 'default-red' }" ng-if="ul.selected.delegate.rate>51" md-font-library="material-icons">close</md-icon>
               <md-icon md-colors="{'color' : 'default-green' }" ng-if="ul.selected.delegate.rate<52" md-font-library="material-icons">check</md-icon>
             </md-tab-label>
+
             <md-tab-body>
               <md-list-item>
                 <h1>{{ul.selected.delegate.username}}</h1>
               </md-list-item>
+
               <md-list-item>
                 <translate>Rank</translate>&nbsp;{{ul.selected.delegate.rate}}
               </md-list-item>
+
               <md-list-item>
                 <translate>Approval</translate>&nbsp;{{ul.selected.delegate.approval}}%
               </md-list-item>
+
               <md-list-item>
                 <translate>Productivity</translate>&nbsp;{{ul.selected.delegate.productivity}}% - {{ul.selected.delegate.producedblocks}}&nbsp;
+
                 <translate>produced blocks</translate>&nbsp;- {{ul.selected.delegate.missedblocks}}&nbsp;
+
                 <translate>missed blocks</translate>
               </md-list-item>
-              </md-list>
             </md-tab-body>
           </md-tab>
-
-
         </md-tabs>
-
-
-
-
       </md-content>
+    </div>
   </div>
 
   <script src="dependencies.min.js"></script>
@@ -1043,9 +1280,7 @@
   <script src="src/Addressbook/AddressbookController.js"></script>
   <script src="src/time/TimeService.js"></script>
 
-
   <script src="app.js"></script>
-
 </body>
 
 </html>
