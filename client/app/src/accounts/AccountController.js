@@ -2002,12 +2002,13 @@
         $mdDialog.hide();
         showMessage(result);
       };
-      function verifyCopied() {
-        console.log($scope.verify);
+
+      function verifyText() {
         var list = JSON.parse($scope.verify.message);
         var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
-        $mdDialog.hide();
         var message = gettextCatalog.getString("Error in signature processing");
+        
+        $mdDialog.hide();
         if (res == true) {
           message = gettextCatalog.getString("The message is verified successfully");
         } else {
@@ -2027,7 +2028,7 @@
       } else {
         $scope.verify = {
           verify: verify,
-          verifyCopied: verifyCopied,
+          verifyCopied: verifyText,
           cancel: cancel,
           publickey: self.selected.publicKey
         };
