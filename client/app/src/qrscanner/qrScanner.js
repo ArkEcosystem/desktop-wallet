@@ -78,7 +78,7 @@
       },
       controller: controller,
       replace: true,
-      template: '<button class="md-button" md-colors="{color:\'primary\'}" ng-click="openScanner($event)" ng-disabled="hasWebcam()">QR Code</md-button>'
+      template: '<md-icon aria-label="Scan QR Code" style="cursor: pointer;outline: none" md-svg-icon="qrcode" ng-click="openScanner($event)" ng-disabled="hasWebcam()"></md-icon>'
     }
 
   }
