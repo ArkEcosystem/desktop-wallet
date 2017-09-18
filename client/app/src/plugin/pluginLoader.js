@@ -3,7 +3,7 @@
 
   angular.module('arkclient')
     .service('pluginLoader', ['accountService', PluginLoader]);
-  
+
   /**
    * pluginLoader
    * @constructor
@@ -60,12 +60,14 @@
 
     //helper functions for os operations
     function getDirectories(dir) {
-      if (!fs.statSync(dir).isDirectory()) return [];
-
-      return fs.readdirSync(dir).filter(function (file) {
-        var stat = fs.statSync(dir + '/' + file);
-        return stat.isDirectory();
-      });
+      try {
+        return fs.readdirSync(dir).filter(function (file) {
+          var stat = fs.statSync(dir + '/' + file);
+          return stat.isDirectory();
+        });
+      } catch (e) {
+        return [];
+      }
     }
 
     function readFile(filename) {
