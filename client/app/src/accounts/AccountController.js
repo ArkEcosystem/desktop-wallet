@@ -4,6 +4,7 @@
     .controller('AccountController', [
       'accountService',
       'networkService',
+      'pluginLoader',
       'storageService',
       'changerService',
       'ledgerService',
@@ -91,7 +92,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
+  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
     var self = this;
 
     var languages = {
@@ -119,6 +120,8 @@
       zh_CN: gettextCatalog.getString("Chinese simplified"),
       zh_TW: gettextCatalog.getString("Chinese traditional")
     };
+
+    pluginLoader.triggerEvent("onStart");
 
     self.currencies = [
       { name: "usd", symbol: "$" },
@@ -813,6 +816,8 @@
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
       self.selected.ledger = account.ledger;
+
+      pluginLoader.triggerEvent("onSelectAccount", self.selected);
 
       self.showPublicKey = false;
 
