@@ -25,7 +25,9 @@
     //load all plugin configurations
     plugins.forEach(function (element) {
       var conf = JSON.parse(readFile(path.join(pluginsDirectory, element, confFilename)));
-      self.plugincontent[element] = conf;
+      if (conf.enabled == "true") {
+        self.plugincontent[element] = conf;
+      }
     }, this);
 
     //on event
@@ -47,12 +49,13 @@
       }
       //iterate over all plugins
       plugins.forEach(function (element) {
+        var plugin = self.plugincontent[element];
         //if plugin has event defined in configuration
-        if (self.plugincontent[element]["events"][eventname]) {
+        if (plugin && plugin["events"][eventname]) {
           //read its javascript file
           var js = readFile(path.join(pluginsDirectory, element, pluginFilename));
           //run the js file and call the function with the prepared parameters
-          eval(js + ";" + self.plugincontent[element]["events"][eventname] + "(" + sendargs + ")");
+          eval(js + ";" + plugin["events"][eventname] + "(" + sendargs + ")");
         }
       }, this);
 
