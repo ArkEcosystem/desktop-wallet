@@ -522,7 +522,7 @@
                     <td md-cell>{{it.confirmations}}</td>
                     <td md-cell>{{it.date | date: 'short'}}</td>
                     <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
-                      <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount/100000000)) + ' / -' + ul.numberToFixed(it.fee/100000000) }}</md-button>
+                      <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount/100000000)) + ' / -' + (it.fee/100000000) }}</md-button>
                     </td>
                     <td ng-if="it.type>0" md-cell>
                       <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{it.humanTotal}}</md-button>
