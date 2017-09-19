@@ -7,8 +7,10 @@
  */
 
 (function($) {
-    var supportedCSS,supportedCSSOrigin, styles=document.getElementsByTagName("head")[0].style,toCheck="transformProperty WebkitTransform OTransform msTransform MozTransform".split(" ");
-    for (var a = 0; a < toCheck.length; a++) if (styles[toCheck[a]] !== undefined) { supportedCSS = toCheck[a]; }
+  let supportedCSS, supportedCSSOrigin;
+  const styles = document.getElementsByTagName("head")[0].style,
+    toCheck = "transformProperty WebkitTransform OTransform msTransform MozTransform".split(" ");
+  for (var a = 0; a < toCheck.length; a++) if (styles[toCheck[a]] !== undefined) { supportedCSS = toCheck[a]; }
     if (supportedCSS) {
       supportedCSSOrigin = supportedCSS.replace(/[tT]ransform/,"TransformOrigin");
       if (supportedCSSOrigin[0] == "T") supportedCSSOrigin[0] = "t";
@@ -22,14 +24,16 @@
         {
           if (this.length===0||typeof parameters=="undefined") return;
           if (typeof parameters=="number") parameters={angle:parameters};
-          var returned=[];
-          for (var i=0,i0=this.length;i<i0;i++)
+          const returned = [];
+          let i = 0;
+          const i0 = this.length;
+          for (; i<i0; i++)
           {
-            var element=this.get(i);
+            const element = this.get(i);
             if (!element.Wilq32 || !element.Wilq32.PhotoEffect) {
 
-              var paramClone = $.extend(true, {}, parameters);
-              var newRotObject = new Wilq32.PhotoEffect(element,paramClone)._rootObj;
+              const paramClone = $.extend(true, {}, parameters);
+              const newRotObject = new Wilq32.PhotoEffect(element, paramClone)._rootObj;
 
               returned.push($(newRotObject));
             }
@@ -40,10 +44,12 @@
           return returned;
         },
         getRotateAngle: function(){
-          var ret = [];
-          for (var i=0,i0=this.length;i<i0;i++)
+          const ret = [];
+          let i = 0;
+          const i0 = this.length;
+          for (; i<i0; i++)
           {
-            var element=this.get(i);
+            const element = this.get(i);
             if (element.Wilq32 && element.Wilq32.PhotoEffect) {
               ret[i] = element.Wilq32.PhotoEffect._angle;
             }
@@ -51,9 +57,11 @@
           return ret;
         },
         stopRotate: function(){
-          for (var i=0,i0=this.length;i<i0;i++)
+          let i = 0;
+          const i0 = this.length;
+          for (; i<i0; i++)
           {
-            var element=this.get(i);
+            const element = this.get(i);
             if (element.Wilq32 && element.Wilq32.PhotoEffect) {
               clearTimeout(element.Wilq32.PhotoEffect._timer);
             }
@@ -91,7 +99,7 @@
           if (img.complete) {
             this._Loader();
           } else {
-            var self=this;
+            const self = this;
             // TODO: Remove jQuery dependency
             jQuery(this._img).bind("load", function(){ self._Loader(); });
           }
@@ -145,7 +153,7 @@
         {
           // Unbinding previous Events
           if (this._parameters.bind){
-            var oldEvents = this._parameters.bind;
+            const oldEvents = this._parameters.bind;
             for (var a in oldEvents) if (oldEvents.hasOwnProperty(a))
               // TODO: Remove jQuery dependency
               jQuery(this._eventObj).unbind(a,oldEvents[a]);
@@ -162,8 +170,8 @@
       {
         if (IE)
           return function() {
-            var width=this._img.width;
-            var height=this._img.height;
+            const width = this._img.width;
+            const height = this._img.height;
             this._imgWidth = width;
             this._imgHeight = height;
             this._img.parentNode.removeChild(this._img);
@@ -194,7 +202,7 @@
             this._rootObj.setAttribute('id',this._img.getAttribute('id'));
             this._rootObj.className=this._img.className;
             this._eventObj = this._rootObj;
-            var parameters;
+            let parameters;
             while (parameters = this._onLoadDelegate.shift()) {
               this._handleRotation(parameters, true);
             }
@@ -205,8 +213,8 @@
 
             this._imgWidth=this._img.naturalWidth;
             this._imgHeight=this._img.naturalHeight;
-            var _widthMax=Math.sqrt((this._imgHeight)*(this._imgHeight) + (this._imgWidth) * (this._imgWidth));
-            this._width = _widthMax * 3;
+          const _widthMax = Math.sqrt((this._imgHeight) * (this._imgHeight) + (this._imgWidth) * (this._imgWidth));
+          this._width = _widthMax * 3;
             this._height = _widthMax * 3;
 
             this._aspectW = this._img.offsetWidth/this._img.naturalWidth;
@@ -228,8 +236,8 @@
             this._eventObj = this._canvas;
 
             this._cnv=this._canvas.getContext('2d');
-            var parameters;
-            while (parameters = this._onLoadDelegate.shift()) {
+          let parameters;
+          while (parameters = this._onLoadDelegate.shift()) {
               this._handleRotation(parameters, true);
             }
           }
@@ -246,8 +254,8 @@
       },
       _animate:function()
       {
-        var actualTime = +new Date;
-        var checkEnd = actualTime - this._animateStartTime > this._parameters.duration;
+        const actualTime = +new Date;
+        const checkEnd = actualTime - this._animateStartTime > this._parameters.duration;
 
         // TODO: Bug for animatedGif for static rotation ? (to test)
         if (checkEnd && !this._parameters.animatedGif)
@@ -257,13 +265,13 @@
         else
         {
           if (this._canvas||this._vimage||this._img) {
-            var angle = this._parameters.easing(0, actualTime - this._animateStartTime, this._animateStartAngle, this._parameters.animateTo - this._animateStartAngle, this._parameters.duration);
+            const angle = this._parameters.easing(0, actualTime - this._animateStartTime, this._animateStartAngle, this._parameters.animateTo - this._animateStartAngle, this._parameters.duration);
             this._rotate((~~(angle*10))/10);
           }
           if (this._parameters.step) {
             this._parameters.step(this._angle);
           }
-          var self = this;
+          const self = this;
           this._timer = setTimeout(function()
           {
             self._animate.call(self);
@@ -280,7 +288,7 @@
 
       _rotate : (function()
       {
-        var rad = Math.PI/180;
+        const rad = Math.PI / 180;
         if (IE)
           return function(angle)
         {

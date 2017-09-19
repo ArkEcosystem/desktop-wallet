@@ -4,7 +4,7 @@
     .controller('AccountController', [
       'accountService',
       'networkService',
-      'pluginLoader',
+      'pluginLoaderService',
       'storageService',
       'changerService',
       'ledgerService',
@@ -27,7 +27,7 @@
         if (!address)
           return address
 
-        var username = accountService.getUsername(address)
+        const username = accountService.getUsername(address);
         if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
           return accountService.smallId(username)
 
@@ -48,13 +48,13 @@
     }]).filter('amountToCurrency', [function() {
       return function(amount, scope) {
         if (typeof amount === 'undefined' || amount == 0) return 0;
-        var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
+        const price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
         return (amount * price).toFixed(5);
       }
     }]).directive('copyToClipboard', function($window, $mdToast) {
-      var body = angular.element($window.document.body);
-      var textarea = angular.element('<textarea/>');
-      textarea.css({
+    const body = angular.element($window.document.body);
+    const textarea = angular.element('<textarea/>');
+    textarea.css({
         position: 'fixed',
         opacity: '0'
       });
@@ -65,7 +65,7 @@
         textarea[0].select();
 
         try {
-          var successful = document.execCommand('copy');
+          let successful = document.execCommand('copy');
           if (!successful) throw successful;
         } catch (err) {
           console.log("failed to copy", toCopy);
@@ -89,7 +89,7 @@
    * Main Controller for the arkclient.Accounts module
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
+  function AccountController(accountService, networkService, pluginLoaderService, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
     let self = this;
 
     let languages = {
@@ -118,7 +118,7 @@
       zh_TW: gettextCatalog.getString("Chinese traditional")
     };
 
-    pluginLoader.triggerEvent("onStart");
+    pluginLoaderService.triggerEvent("onStart");
 
     self.currencies = [
       { name: "usd", symbol: "$" },
@@ -160,14 +160,14 @@
     };
 
     self.windowApp = function(action, args) {
-      var curWin = require('electron').remote.getCurrentWindow();
+      const curWin = require('electron').remote.getCurrentWindow();
       if (curWin[action])
         return curWin[action](args);
       else return null;
     };
 
     self.clearData = function() {
-      var confirm = $mdDialog.confirm()
+      const confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Are you sure?'))
         .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
         .ariaLabel(gettextCatalog.getString('Confirm'))
@@ -296,14 +296,14 @@
     );
 
     function reloadThemes() {
-      var currentThemes = $mdTheming.$get().THEMES;
-      var mapThemes = {};
+      const currentThemes = $mdTheming.$get().THEMES;
+      const mapThemes = {};
 
       Object.keys(currentThemes).forEach(function(theme) {
-        var colors = currentThemes[theme].colors;
-        var names = [];
+        const colors = currentThemes[theme].colors;
+        const names = [];
 
-        for (var color in colors) {
+        for (let color in colors) {
           names.push('default-' + colors[color].name);
         }
 
@@ -318,7 +318,7 @@
     }
 
     function formatErrorMessage(error) {
-      var basicMessage = '';
+      let basicMessage = '';
       if ('string' === typeof error) {
         basicMessage = error;
       } else if ('string' === typeof error.error) {
@@ -373,7 +373,7 @@
 
     //TODO: deprecated
     function selectNextLanguage() {
-      var lkeys = Object.keys(languages);
+      const lkeys = Object.keys(languages);
       if (self.language) self.language = lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
       else self.language = "en";
       storageService.set("language", self.language);
@@ -392,15 +392,15 @@
 
     self.getMarketInfo(self.selectedCoin);
 
-    var setExchangBuyExpirationProgress = function(timestamp){
-      
-    }
+    const setExchangBuyExpirationProgress = function (timestamp) {
+
+    };
 
     self.buy = function() {
       if (self.exchangeEmail) storageService.set("email", self.exchangeEmail);
       if (self.selectedCoin) storageService.set("selectedCoin", self.selectedCoin);
       changerService.getMarketInfo(self.selectedCoin, "ark_ARK", self.buyAmount / self.buycoin.rate).then(function(rate) {
-        var amount = self.buyAmount / rate.rate;
+        let amount = self.buyAmount / rate.rate;
         if (self.selectedCoin.split("_")[1] == "USD") {
           amount = parseFloat(amount.toFixed(2));
         }
@@ -413,7 +413,7 @@
               self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
               self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
               self.exchangeBuy.receiveCurrency = "ARK";
-              var progressbar = $interval(function() {
+              const progressbar = $interval(function () {
                 if (!self.exchangeBuy) {
                   $interval.cancel(progressbar);
                 } else {
@@ -458,7 +458,7 @@
         });
     }
 
-    var completeExchangeSell = function(timestamp){
+    const completeExchangeSell = function (timestamp) {
       self.exchangeTransaction = transaction
       self.exchangeSell = resp;
       self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timestamp / 1000;
@@ -466,7 +466,7 @@
       self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000);
       self.exchangeSell.receiveCurrency = self.selectedCoin.split("_")[1];
       self.exchangeSell.sendCurrency = "ARK";
-      var progressbar = $interval(function() {
+      const progressbar = $interval(function () {
         if (!self.exchangeSell) {
           $interval.cancel(progressbar);
         } else {
@@ -476,13 +476,13 @@
 
       self.exchangeSellTransaction = transaction;
       changerService.monitorExchange(resp).then(
-        function(data) {
+        function (data) {
           self.exchangeHistory = changerService.getHistory();
         },
-        function(data) {
+        function (data) {
 
         },
-        function(data) {
+        function (data) {
           if (data.payee && self.exchangeSell.payee != data.payee) {
             self.exchangeSell = data;
             self.exchangeHistory = changer.getHistory();
@@ -491,7 +491,7 @@
           }
         }
       );
-    }
+    };
 
     self.sell = function() {
       if (self.exchangeEmail) storageService.set("email", self.exchangeEmail);
@@ -617,9 +617,9 @@
     };
 
     self.getDefaultValue = function(account) {
-      var amount = account.balance;
+      let amount = account.balance;
       if (account.virtual) {
-        for (var folder in account.virtual) {
+        for (let folder in account.virtual) {
           if (account.virtual[folder].amount) {
             amount = amount - account.virtual[folder].amount;
           }
@@ -638,7 +638,7 @@
 
     self.createFolder = function(account) {
       if (account.virtual) {
-        var confirm = $mdDialog.prompt()
+        let confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Create Virtual Folder'))
           .textContent(gettextCatalog.getString('Please enter a folder name.'))
           .placeholder(gettextCatalog.getString('folder name'))
@@ -654,7 +654,7 @@
           );
         });
       } else {
-        var confirm = $mdDialog.prompt()
+        let confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Login'))
           .textContent(gettextCatalog.getString('Please enter this account passphrase to login.'))
           .placeholder(gettextCatalog.getString('passphrase'))
@@ -681,7 +681,7 @@
     };
 
     function gotoAddress(address) {
-      var currentaddress = address;
+      const currentaddress = address;
       accountService.fetchAccountAndForget(currentaddress).then(function(a) {
         self.selected = a;
         if (self.selected.delegates) {
@@ -742,7 +742,7 @@
 
 
     function refreshCurrentAccount() {
-      var myaccount = self.selected;
+      const myaccount = self.selected;
       accountService
         .refreshAccount(myaccount)
         .then(function(account) {
@@ -766,13 +766,13 @@
                 return b.timestamp - a.timestamp;
               });
 
-              var previousTx = self.selected.transactions;
+              const previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
-              var playSong = storageService.get('playFundsReceivedSong');
+              const playSong = storageService.get('playFundsReceivedSong');
               if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
-                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
-                var audio = new Audio(wavFile);
+                const wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+                const audio = new Audio(wavFile);
                 audio.play();
               }
 
@@ -788,11 +788,11 @@
 
     self.refreshAccountBalances = function() {
       networkService.getPrice();
-      for (var i in self.accounts) {
+      for (let i in self.accounts) {
         accountService
           .refreshAccount(self.accounts[i])
           .then(function(account) {
-            for (var j in self.accounts) {
+            for (let j in self.accounts) {
               if (self.accounts[j].address == account.address) {
                 self.accounts[j].balance = account.balance;
               }
@@ -810,11 +810,11 @@
      * @param menuId
      */
     function selectAccount(account) {
-      var currentaddress = account.address;
+      const currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
       self.selected.ledger = account.ledger;
 
-      pluginLoader.triggerEvent("onSelectAccount", self.selected);
+      pluginLoaderService.triggerEvent("onSelectAccount", self.selected);
 
       self.showPublicKey = false;
 
@@ -892,8 +892,8 @@
       }
 
       function validateAddress() {
-        var isAddress = /^[1-9A-Za-z]+$/g;
-        var address = $scope.address;
+        const isAddress = /^[1-9A-Za-z]+$/g;
+        const address = $scope.address;
         if (isAddress.test(address)) {
           accountService.fetchAccount(address).then(function(account) {
             self.accounts.push(account);
@@ -946,12 +946,12 @@
     };
 
     function addDelegate(selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {} };
+      const data = {fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
       accountService.getActiveDelegates().then(function(r) { data.registeredDelegates = r; });
 
       function add() {
         function indexOfDelegates(array, item) {
-          for (var i in array) {
+          for (let i in array) {
             if (array[i].username == item.username) {
               console.log(array[i]);
               return i;
@@ -978,7 +978,7 @@
 
       function addSponsors() {
         function indexOfDelegates(array, item) {
-          for (var i in array) {
+          for (let i in array) {
             if (array[i].username == item.username) {
               console.log(array[i]);
               return i;
@@ -992,7 +992,7 @@
             //check if sponsors are already voted
             if (self.selected.delegates) {
               newsponsors = [];
-              for (var i = 0; i < sponsors.length; i++) {
+              for (let i = 0; i < sponsors.length; i++) {
                 console.log(sponsors[i]);
                 if (indexOfDelegates(self.selected.delegates, sponsors[i]) < 0) {
                   newsponsors.push(sponsors[i]);
@@ -1001,7 +1001,7 @@
               sponsors = newsponsors;
             }
 
-            for (var i = 0; i < sponsors.length; i++) {
+            for (let i = 0; i < sponsors.length; i++) {
               if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, sponsors[i]) < 0) {
                 selectedAccount.selectedVotes.push(sponsors[i]);
               }
@@ -1033,7 +1033,7 @@
     };
 
     function vote(selectedAccount) {
-      var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes);
+      let votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes);
       if (!votes || votes.length == 0) {
         $mdToast.show(
           $mdToast.simple()
@@ -1131,8 +1131,8 @@
       };
 
       function openFile() {
-        var crypto = require('crypto');
-        var fs = require('fs');
+        const crypto = require('crypto');
+        const fs = require('fs');
 
         require('electron').remote.dialog.showOpenDialog(function (fileNames) {
          if (fileNames === undefined) return;
@@ -1172,28 +1172,28 @@
     };
 
     function sendArk(selectedAccount) {
-      var passphrases = accountService.getPassphrases(selectedAccount.address);
-      var data = {
+      const passphrases = accountService.getPassphrases(selectedAccount.address);
+      const data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
         passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : '',
+        secondpassphrase: passphrases[1] ? passphrases[1] : ''
       };
 
       function openFile() {
-        var fs = require('fs');
+        const fs = require('fs');
 
         require('electron').remote.dialog.showOpenDialog(function(fileNames) {
           if (fileNames === undefined) return;
-          var fileName = fileNames[0];
+          const fileName = fileNames[0];
 
           fs.readFile(fileName, 'utf8', function(err, data) {
             if (err) {
               formatAndToastError('Unable to load file' + ': ' + err);
             } else {
               try {
-                var transaction = JSON.parse(data);
+                const transaction = JSON.parse(data);
 
                 if (transaction.type === undefined) return formatAndToastError('Invalid transaction file');
                 validateTransaction(selectedAccount, transaction);
@@ -1328,20 +1328,20 @@
         return;
       }
 
-      var path = require('path');
-      var vibrant = require('node-vibrant');
-      var materialPalette = $mdTheming.$get().PALETTES;
+      const path = require('path');
+      const vibrant = require('node-vibrant');
+      const materialPalette = $mdTheming.$get().PALETTES;
 
       // check if it's an image url
-      var regExp = /\(([^)]+)\)/;
-      var match = self.network.background.match(regExp);
+      const regExp = /\(([^)]+)\)/;
+      let match = self.network.background.match(regExp);
 
       if (!match) {
         callback(false);
         return;
       }
 
-      var url = path.resolve(__dirname, match[1].replace(/'/g, ''));
+      const url = path.resolve(__dirname, match[1].replace(/'/g, ''));
 
       vibrant.from(url).getPalette(function(err, palette) {
         if (err || !palette.Vibrant) {
@@ -1349,20 +1349,20 @@
           return;
         }
 
-        var vibrantRatio = {};
-        var darkVibrantRatio = {};
+        const vibrantRatio = {};
+        const darkVibrantRatio = {};
 
         Object.keys(materialPalette).forEach(function(color) {
-          var vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex());
+          const vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex());
           vibrantRatio[color] = vibrantDiff;
 
-          var darkVibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.DarkVibrant.getHex());
+          const darkVibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.DarkVibrant.getHex());
           darkVibrantRatio[color] = darkVibrantDiff;
         });
 
-        var isArkJpg = path.basename(url) === 'Ark.jpg';
-        var primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0];
-        var accentColor = sortObj(vibrantRatio)[0];
+        const isArkJpg = path.basename(url) === 'Ark.jpg';
+        let primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0];
+        let accentColor = sortObj(vibrantRatio)[0];
 
         primaryColor = primaryColor == 'grey' ? 'blue-grey' : primaryColor;
 
@@ -1370,7 +1370,7 @@
           accentColor = sortObj(vibrantRatio)[1];
         }
 
-        var theme = $mdTheming.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor);
+        const theme = $mdTheming.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor);
         $mdTheming.$get().generateTheme('dynamic');
 
         callback('dynamic');
@@ -1379,12 +1379,12 @@
     }
 
     function manageBackgrounds() {
-      var fs = require('fs');
-      var path = require('path');
-      var context = storageService.getContext();
-      var currentNetwork = networkService.getNetwork();
-      var initialBackground = currentNetwork.background;
-      var initialTheme = currentNetwork.theme;
+      const fs = require('fs');
+      const path = require('path');
+      const context = storageService.getContext();
+      const currentNetwork = networkService.getNetwork();
+      const initialBackground = currentNetwork.background;
+      const initialTheme = currentNetwork.theme;
 
       let backgrounds = {
         colors: {
@@ -1757,14 +1757,14 @@
     };
     function exportAccount(account)
     {
-      var eol = require('os').EOL;
-      var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
+      const eol = require('os').EOL;
+      let filecontent = "Account:," + account.address + eol + "Balance:," + account.balance + eol + "Transactions:" + eol + "ID,Confirmations,Date,Type,Amount,From,To,Smartbridge" + eol;
       account.transactions.forEach(function(trns) {
         filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
         ","+trns.vendorField+eol;
       });
-      var blob = new Blob([filecontent]);
-      var downloadLink = document.createElement('a');
+      const blob = new Blob([filecontent]);
+      const downloadLink = document.createElement('a');
       downloadLink.setAttribute('download', account.address+'.csv');
       downloadLink.setAttribute('href', window.URL.createObjectURL(blob));
       downloadLink.click();
@@ -1838,9 +1838,9 @@
 
       let account = selectedAccount;
 
-      var items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' },
-        { name: gettextCatalog.getString('Remove'), icon: 'clear' },
+      const items = [
+        {name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
+        {name: gettextCatalog.getString('Remove'), icon: 'clear'}
       ];
 
       if (!selectedAccount.delegate) {
@@ -1865,7 +1865,7 @@
         if (action == gettextCatalog.getString('Timestamp Document')) {
           timestamp(selectedAccount);
         } else if (action == gettextCatalog.getString("Remove")) {
-          var confirm = $mdDialog.confirm()
+          const confirm = $mdDialog.confirm()
             .title(gettextCatalog.getString('Remove Account') + ' ' + account.address)
             .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
               'The account may be added again using the original passphrase of the account.'))
@@ -1893,7 +1893,7 @@
         } else if (action == gettextCatalog.getString("Register Delegate")) {
           createDelegate(selectedAccount);
         } else if (action == gettextCatalog.getString("Label")) {
-          var prompt = $mdDialog.prompt()
+          const prompt = $mdDialog.prompt()
             .title(gettextCatalog.getString('Label'))
             .textContent(gettextCatalog.getString('Please enter a short label.'))
             .placeholder(gettextCatalog.getString('label'))
@@ -1935,7 +1935,7 @@
     }
 
     self.deleteSignedMessage = function(selectedAccount, signedMessage) {
-      var index = selectedAccount.signedMessages.indexOf(signedMessage);
+      const index = selectedAccount.signedMessages.indexOf(signedMessage);
       selectedAccount.signedMessages.splice(index, index + 1);
       storageService.set("signed-" + selectedAccount.address, selectedAccount.signedMessages);
     }
@@ -1956,13 +1956,13 @@
       console.log(selectedAccount);
 
       function sign() {
-        var address = $scope.sign.selectedAccount.address;
-        var passphrase = $scope.sign.passphrase;
-        var message = $scope.sign.message;
+        const address = $scope.sign.selectedAccount.address;
+        const passphrase = $scope.sign.passphrase;
+        const message = $scope.sign.message;
         if (!selectedAccount.signedMessages) {
           selectedAccount.signedMessages = [];
         }
-        var promisedSignature = null
+        let promisedSignature = null;
         if (selectedAccount.ledger) {
           promisedSignature = accountService.signMessageWithLedger(message, selectedAccount.ledger);
         } else {
@@ -2011,19 +2011,19 @@
 
       function verify() {
         console.log($scope.verify);
-        var message = $scope.verify.message;
-        var publickey = $scope.verify.publickey;
-        var signature = $scope.verify.signature;
-        var result = accountService.verifyMessage(message, publickey, signature);
+        const message = $scope.verify.message;
+        const publickey = $scope.verify.publickey;
+        const signature = $scope.verify.signature;
+        const result = accountService.verifyMessage(message, publickey, signature);
         $mdDialog.hide();
         showMessage(result);
       };
 
       function verifyText() {
-        var list = JSON.parse($scope.verify.message);
-        var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
-        var message = gettextCatalog.getString("Error in signature processing");
-        
+        const list = JSON.parse($scope.verify.message);
+        const res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
+        let message = gettextCatalog.getString("Error in signature processing");
+
         $mdDialog.hide();
         if (res == true) {
           message = gettextCatalog.getString("The message is verified successfully");
@@ -2063,8 +2063,8 @@
     function validateTransaction(selectedAccount, transaction) {
 
       function saveFile() {
-        var fs = require('fs');
-        var raw = JSON.stringify(transaction);
+        const fs = require('fs');
+        const raw = JSON.stringify(transaction);
 
         require('electron').remote.dialog.showSaveDialog({
           defaultPath: transaction.id + '.json',

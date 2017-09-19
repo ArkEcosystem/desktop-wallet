@@ -3,6 +3,6 @@ function onStart() {
 }
 
 function onSelectAccount(account) {
-  var localaccount = triggerEvent("getLocalAccount", account.address);
+  const localaccount = triggerEvent("getLocalAccount", account.address);
   console.log(localaccount);
 }

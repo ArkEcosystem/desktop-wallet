@@ -10,39 +10,39 @@
    */
   function ChangerService(storageService, $q, $http, $timeout, timeService) {
 
-    var url = 'https://www.changer.com/api/v2/';
+    const url = 'https://www.changer.com/api/v2/';
 
-    var refid = 97664;
+    const refid = 97664;
 
-    var history = storageService.get("changer-history") || {};
+    const history = storageService.get("changer-history") || {};
 
-    var ark = "ark_ARK";
+    const ark = "ark_ARK";
 
-    var coins = [
-      { symbol: "bitcoin_BTC", name: "BTC", image: "" },
-      { symbol: "ethereum_ETH", name: "ETH", image: "" },
-      { symbol: "litecoin_LTC", name: "LTC", image: "" },
-      { symbol: "dogecoin_DOGE", name: "DOGE", image: "" },
-      { symbol: "dash_DASH", name: "DASH", image: "" },
-      { symbol: "bytecoin_BCN", name: "BCN", image: "" },
-      { symbol: "peercoin_PPC", name: "PPC", image: "" },
-      { symbol: "nubits_NBT", name: "NBT", image: "" },
-      { symbol: "clams_CLAM", name: "CLAM", image: "" },
-      { symbol: "tether_USDT", name: "USDT", image: "" },
-      { symbol: "pm_USD", name: "USD (Perfect Money)", image: "" },
-      { symbol: "pmvoucher_USD", name: "USD (Perfect Money Voucher)", image: "" },
-      { symbol: "okpay_USD", name: "USD (OKPay)", image: "" },
-      { symbol: "payeer_USD", name: "USD (Payeer)", image: "" },
-      { symbol: "advcash_USD", name: "USD (ADVCash)", image: "" },
-      { symbol: "btce_USD", name: "USD (btce)", image: "" },
-      { symbol: "counterparty_XCP", name: "XCP", image: "" },
-      { symbol: "storjcoinx_SJCX", name: "SJCX", image: "" },
-      { symbol: "monero_XMR", name: "XMR", image: "" },
-      { symbol: "namecoin_NMC", name: "NMC", image: "" },
-      { symbol: "maidsafecoin_MAID", name: "MAID", image: "" }
+    const coins = [
+      {symbol: "bitcoin_BTC", name: "BTC", image: ""},
+      {symbol: "ethereum_ETH", name: "ETH", image: ""},
+      {symbol: "litecoin_LTC", name: "LTC", image: ""},
+      {symbol: "dogecoin_DOGE", name: "DOGE", image: ""},
+      {symbol: "dash_DASH", name: "DASH", image: ""},
+      {symbol: "bytecoin_BCN", name: "BCN", image: ""},
+      {symbol: "peercoin_PPC", name: "PPC", image: ""},
+      {symbol: "nubits_NBT", name: "NBT", image: ""},
+      {symbol: "clams_CLAM", name: "CLAM", image: ""},
+      {symbol: "tether_USDT", name: "USDT", image: ""},
+      {symbol: "pm_USD", name: "USD (Perfect Money)", image: ""},
+      {symbol: "pmvoucher_USD", name: "USD (Perfect Money Voucher)", image: ""},
+      {symbol: "okpay_USD", name: "USD (OKPay)", image: ""},
+      {symbol: "payeer_USD", name: "USD (Payeer)", image: ""},
+      {symbol: "advcash_USD", name: "USD (ADVCash)", image: ""},
+      {symbol: "btce_USD", name: "USD (btce)", image: ""},
+      {symbol: "counterparty_XCP", name: "XCP", image: ""},
+      {symbol: "storjcoinx_SJCX", name: "SJCX", image: ""},
+      {symbol: "monero_XMR", name: "XMR", image: ""},
+      {symbol: "namecoin_NMC", name: "NMC", image: ""},
+      {symbol: "maidsafecoin_MAID", name: "MAID", image: ""}
     ];
 
-    var fuckedAPIoutlook = {
+    const fuckedAPIoutlook = {
       "bitcoinBTC": "bitcoin_BTC",
       "ethereumETH": "ethereum_ETH",
       "litecoinLTC": "litecoin_LTC",
@@ -67,7 +67,7 @@
     };
 
     function request(endpoint, data) {
-      var deferred = $q.defer();
+      const deferred = $q.defer();
 
       $http({
         url: url + endpoint.path,
@@ -81,13 +81,13 @@
     }
 
     function getMarketInfo(coin1, coin2, optionalamount) {
-      var deferred = $q.defer();
-      var param = "";
+      const deferred = $q.defer();
+      let param = "";
       if (optionalamount) {
         param = "?amount=" + optionalamount
       }
       $http.get(url + "rates/" + coin1 + "/" + coin2 + param).then(function(resp) {
-        var rates = resp.data;
+        const rates = resp.data;
         $http.get(url + "limits/" + coin1 + "/" + coin2).then(function(resp2) {
           rates.limits = resp2.data.limits;
           deferred.resolve(rates);
@@ -108,8 +108,8 @@
     }
 
     function makeExchange(email, amount, send, receive, receiver_id) {
-      var deferred = $q.defer();
-      var data = {
+      const deferred = $q.defer();
+      const data = {
         email: email,
         refid: refid,
         send: send,
@@ -128,8 +128,8 @@
     }
 
     function sendBatch(exchange, batch) {
-      var deferred = $q.defer();
-      var data = {
+      const deferred = $q.defer();
+      const data = {
         batch: batch
       };
       $http.post(url + "exchange/" + exchange.exchange_id, data).then(function(resp) {
@@ -151,7 +151,7 @@
     }
 
     function refreshExchange(exchange) {
-      var deferred = $q.defer();
+      const deferred = $q.defer();
       $http.get(url + "exchange/" + exchange.exchange_id).then(function(resp) {
         saveExchange(exchange, resp.data);
         deferred.resolve(resp.data);
@@ -176,8 +176,8 @@
             if (resp.data.status == "new" || resp.data.status == "processing") {
               if (resp.data.status == "new" && exchange.expiration < timestamp / 1000) {
                 //yes that bad!!!
-                var send = fuckedAPIoutlook[exchange.pair.send];
-                var receive = fuckedAPIoutlook[exchange.pair.receive];
+                const send = fuckedAPIoutlook[exchange.pair.send];
+                const receive = fuckedAPIoutlook[exchange.pair.receive];
                 makeExchange(exchange.email, exchange.send_amount, send, receive, exchange.receiver_id).then(function(newexchange) {
                   deferred.notify(newexchange);
                   monitorExchange(newexchange, deferred);
@@ -210,9 +210,9 @@
       if (!!!noupdate) {
         timeService.getTimestamp().then(
           function(timestamp){
-            for (var id in history) {
+            for (let id in history) {
               delete history[id].$$hashKey;
-              var exchange = history[id];
+              const exchange = history[id];
               if (exchange && exchange.status) {
                 if (exchange.status.status == "new" && exchange.exchange.expiration < timestamp / 1000) {
                   exchange.status.status = "expired";

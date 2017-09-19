@@ -10,7 +10,7 @@
     "electron": "electron --version",
     "start": "electron .",
     "dev": "grunt dev",
-	"pack": "build --dir",
+    "pack": "build --dir",
     "dist": "npm run dist:win && npm run dist:macos && npm run dist:linux && npm run dist:win32",
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
     "dist:win": "build --win",
@@ -33,7 +33,8 @@
     "email": "fixcrypt@gmail.com",
     "url": "https://github.com/fix"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
@@ -51,12 +52,13 @@
   "homepage": "https://github.com/fix/ark-desktop#readme",
   "dependencies": {
     "about-window": "~1.7.0",
+    "coffeescript": "^2.0.0",
     "crypto": "0.0.3",
     "ledgerco": "github:ledgerhq/ledger-node-js-api#master",
     "q": "^1.5.0"
   },
   "devDependencies": {
-	"chai": "^4.1.1",
+    "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "brfs": "^1.4.3",
@@ -79,7 +81,7 @@
     "grunt-htmllint": "^0.2.7",
     "jsqr": "^0.2.2",
     "load-grunt-tasks": "^3.5.2",
-	"mocha": "^3.5.0",
+    "mocha": "^3.5.0",
     "spectron": "^3.7.2"
   },
   "build": {

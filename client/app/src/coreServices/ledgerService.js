@@ -38,7 +38,7 @@
           result.address = arkjs.crypto.getAddress(result.publicKey);
           account_index = account_index + 1;
 
-          var account = storageService.get(result.address);
+          const account = storageService.get(result.address);
           if (account && !account.cold) {
             account.virtual = storageService.get("virtual-" + result.address);
             if (!account.virtual) {
@@ -69,7 +69,7 @@
     }
 
     function recoverBip44Accounts(backupLedgerPassphrase) {
-      var hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
+      const hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
 
       let accounts = [];
       let account_index = 0;
@@ -78,17 +78,17 @@
       let empty = false;
 
       while (!empty) {
-        var localpath = path + account_index + "'/0/" + address_index;
-        var keys = hdnode.derivePath(localpath).keyPair;
-        var address = keys.getAddress();
+        const localpath = path + account_index + "'/0/" + address_index;
+        const keys = hdnode.derivePath(localpath).keyPair;
+        const address = keys.getAddress();
         account_index = account_index + 1;
-        var account = storageService.get(address);
+        const account = storageService.get(address);
         if (account && !account.cold) {
           account.ledger = localpath;
           storageService.set(address, account);
           accounts.push(account);
         } else {
-          var result = {
+          const result = {
             address: address,
             publicKey: keys.getPublicKeyBuffer().toString("hex"),
             ledger: localpath,
@@ -103,7 +103,7 @@
     }
 
     function signTransaction(path, transaction) {
-      var deferred = $q.defer();
+      const deferred = $q.defer();
       ipcRenderer.once('transactionSigned', function(event, result) {
         if (result.error) {
           deferred.reject(result.error)
@@ -120,9 +120,9 @@
     }
 
     function signMessage(path, message) {
-      var deferred = $q.defer();
-      var crypto = require("crypto");
-      var hash = crypto.createHash('sha256');
+      const deferred = $q.defer();
+      const crypto = require("crypto");
+      let hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
       ipcRenderer.once('messageSigned', function(event, result) {
         if (result.error) {

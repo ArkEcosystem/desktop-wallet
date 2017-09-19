@@ -2,7 +2,7 @@
 window.qrcode = require("qrcode-generator");
 require('angular-qrcode');
 
-var themes = {
+const themes = {
   'default': {
     primary: 'blue',
     accent: 'green',
@@ -12,7 +12,7 @@ var themes = {
     primary: 'teal',
     accent: 'cyan',
     warn: 'pink',
-    background: 'blue-grey',
+    background: 'blue-grey'
   },
   'evelynn': {
     primary: 'pink',
@@ -47,10 +47,10 @@ var themes = {
 };
 
 angular
-    .module('arkclient', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext', 'monospaced.qrcode',
+    .module('arkclient', ['ngMaterial', 'md.data.table', 'arkclient.time', 'gettext', 'monospaced.qrcode',
       'arkclient.accounts', 'arkclient.addressbook', 'arkclient.coreServices', 'arkclient.coreUtils', 'arkclient.qrScanner'])
 
-    .config(function($mdThemingProvider, $mdIconProvider){
+    .config(function($provide, $mdThemingProvider, $mdIconProvider){
         $mdIconProvider
             .defaultIconSet("./assets/svg/avatars.svg", 128)
             .icon("menu", "./assets/svg/menu.svg", 24)
@@ -58,7 +58,7 @@ angular
 			.icon("qrcode", "./assets/svg/qrcode.svg", 24);
 
     Object.keys(themes).forEach(function(key) {
-      var theme = $mdThemingProvider.theme(key)
+      const theme = $mdThemingProvider.theme(key)
         .primaryPalette(themes[key].primary)
         .accentPalette(themes[key].accent)
         .warnPalette(themes[key].warn);

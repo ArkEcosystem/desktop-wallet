@@ -18,7 +18,7 @@ module.exports = function (grunt) {
             ['brfs']
           ],
           require: ['angular', 'angular-animate', 'angular-aria', 'bip39', 'angular-gettext', 'angular-material', 'angular-material-data-table', 'angular-messages', 'qrcode-generator', 'angular-qrcode',
-            'angular-ui-router', 'arkjs', 'jsqr'],
+            '@uirouter/angularjs', 'arkjs', 'jsqr'],
           alias: {
             packageJson: './package.json'
           }
@@ -52,6 +52,7 @@ module.exports = function (grunt) {
         files: [
           // includes files within path
           { expand: true, cwd: 'client/app/assets/', src: ['**/*'], dest: 'client/dist/assets/' },
+          { expand: true, cwd: 'client/app/plugins/', src: ['**'], dest: 'client/dist/plugins/'},
           { src: 'client/node_modules/angular-material/angular-material.min.css',
             dest: 'client/dist/assets/css/angular-material.min.css' },
           { src: 'client/node_modules/angular-material-data-table/dist/md-data-table.min.css',
