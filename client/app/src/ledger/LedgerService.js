@@ -47,6 +47,7 @@
               storageService.set("virtual-" + result.address, account.virtual);
             }
             account.ledger = localpath;
+            account.publicKey = result.publicKey;
             storageService.set(result.address, account);
             accounts.push(account);
           } else {

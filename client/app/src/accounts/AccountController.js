@@ -4,9 +4,11 @@
     .controller('AccountController', [
       'accountService',
       'networkService',
+      'pluginLoader',
       'storageService',
       'changerService',
       'ledgerService',
+      'timeService',
       '$mdToast',
       '$mdSidenav',
       '$mdBottomSheet',
@@ -90,29 +92,55 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, storageService, changerService, ledgerService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
+  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
     var self = this;
 
     var languages = {
       en: gettextCatalog.getString("English"),
-      zh_CN: gettextCatalog.getString("Chinese simplified"),
-      zh_TW: gettextCatalog.getString("Chinese traditional"),
-      fr: gettextCatalog.getString("French"),
-      el: gettextCatalog.getString("Greek"),
-      nl: gettextCatalog.getString("Dutch"),
       ar: gettextCatalog.getString("Arab"),
+      bg_BG: gettextCatalog.getString("Bulgarian"),
+      de: gettextCatalog.getString("German"),
+      el: gettextCatalog.getString("Greek"),
+      fi: gettextCatalog.getString("Finish"),
+      fr: gettextCatalog.getString("French"),
+      hu: gettextCatalog.getString("Hungarish"),
+      id: gettextCatalog.getString("Indonesian"),
+      it: gettextCatalog.getString("Italian"),
+      ja: gettextCatalog.getString("Japanese"),
+      ko: gettextCatalog.getString("Korean"),
+      nl: gettextCatalog.getString("Dutch"),
       pl: gettextCatalog.getString("Polish"),
       pt_BR: gettextCatalog.getString("Portuguese"),
-      bg_BG: gettextCatalog.getString("Bulgarian"),
-      hu: gettextCatalog.getString("Hungarish"),
-      sl: gettextCatalog.getString("Slovenian"),
       ro: gettextCatalog.getString("Romanian"),
-      de: gettextCatalog.getString("German"),
-      it: gettextCatalog.getString("Italian"),
-      id: gettextCatalog.getString("Indonesian"),
-      ru: gettextCatalog.getString("Russian")
+      ru: gettextCatalog.getString("Russian"),
+      sk: gettextCatalog.getString("Slovak"),
+      sl: gettextCatalog.getString("Slovenian"),
+      sr: gettextCatalog.getString("Serbian"),
+      sv: gettextCatalog.getString("Swedish"),
+      zh_CN: gettextCatalog.getString("Chinese simplified"),
+      zh_TW: gettextCatalog.getString("Chinese traditional")
     };
 
+    pluginLoader.triggerEvent("onStart");
+
+    self.currencies = [
+      { name: "usd", symbol: "$" },
+      { name: "btc", symbol: "Ƀ" },
+      { name: "aud", symbol: "A$" },
+      { name: "brl", symbol: "R$" },
+      { name: "cad", symbol: "Can$" },
+      { name: "chf", symbol: "Fr." },
+      { name: "cny", symbol: "CN¥" },
+      { name: "eur", symbol: "€" },
+      { name: "gbp", symbol: "£" },
+      { name: "hkd", symbol: "HK$" },
+      { name: "idr", symbol: "Rp" },
+      { name: "inr", symbol: "₹" },
+      { name: "jpy", symbol: "JP¥" },
+      { name: "krw", symbol: "₩" },
+      { name: "mxn", symbol: "Mex$" },
+      { name: "rub", symbol: '\u20BD' }
+    ];
 
     gettextCatalog.debug = false;
     self.language = storageService.get("language");
@@ -176,6 +204,7 @@
     self.toggleList = toggleAccountsList;
     self.sendArk = sendArk;
     self.createSecondPassphrase = createSecondPassphrase;
+    self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
     self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
@@ -236,7 +265,7 @@
         account = self.ledgerAccounts[0];
       }
       if (account) {
-        self.gotoAddress(account.address);
+        self.selectAccount(account);
       }
     };
 
@@ -366,6 +395,10 @@
 
     self.getMarketInfo(self.selectedCoin);
 
+    var setExchangBuyExpirationProgress = function(timestamp){
+      
+    }
+
     self.buy = function() {
       if (self.exchangeEmail) storageService.set("email", self.exchangeEmail);
       if (self.selectedCoin) storageService.set("selectedCoin", self.selectedCoin);
@@ -375,40 +408,45 @@
           amount = parseFloat(amount.toFixed(2));
         }
         changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, "ark_ARK", self.selected.address).then(function(resp) {
-          self.exchangeBuy = resp;
-          self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - new Date().getTime() / 1000;
-          self.exchangeBuy.expirationProgress = 0;
-          self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
-          self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
-          self.exchangeBuy.receiveCurrency = "ARK";
-          var progressbar = $interval(function() {
-            if (!self.exchangeBuy) {
-              $interval.cancel(progressbar);
-            } else {
-              self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - new Date().getTime() / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
+          timeService.getTimestamp().then(
+            function(timestamp) {
+              self.exchangeBuy = resp;
+              self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000;
+              self.exchangeBuy.expirationProgress = 0;
+              self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
+              self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
+              self.exchangeBuy.receiveCurrency = "ARK";
+              var progressbar = $interval(function() {
+                if (!self.exchangeBuy) {
+                  $interval.cancel(progressbar);
+                } else {
+                  self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
+                }
+              }, 200);
+              changerService.monitorExchange(resp).then(
+                function(data) {
+                  self.exchangeHistory = changerService.getHistory();
+                },
+                function(data) {
+    
+                },
+                function(data) {
+                  if (data.payee && self.exchangeBuy.payee != data.payee) {
+                    self.exchangeBuy = data;
+                    self.exchangeHistory = changer.getHistory();
+                  } else {
+                    self.exchangeBuy.monitor = data;
+                  }
+                }
+              );
+    
+            }, function(error) {
+              formatAndToastError(error, 10000);
+              self.exchangeBuy = null;
+            });
             }
-          }, 200);
-          changerService.monitorExchange(resp).then(
-            function(data) {
-              self.exchangeHistory = changerService.getHistory();
-            },
-            function(data) {
-
-            },
-            function(data) {
-              if (data.payee && self.exchangeBuy.payee != data.payee) {
-                self.exchangeBuy = data;
-                self.exchangeHistory = changer.getHistory();
-              } else {
-                self.exchangeBuy.monitor = data;
-              }
-            }
-          );
-
-        }, function(error) {
-          formatAndToastError(error, 10000);
-          self.exchangeBuy = null;
-        });
+          )
+          
       });
 
     };
@@ -423,6 +461,41 @@
         });
     }
 
+    var completeExchangeSell = function(timestamp){
+      self.exchangeTransaction = transaction
+      self.exchangeSell = resp;
+      self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timestamp / 1000;
+      self.exchangeSell.expirationProgress = 0;
+      self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000);
+      self.exchangeSell.receiveCurrency = self.selectedCoin.split("_")[1];
+      self.exchangeSell.sendCurrency = "ARK";
+      var progressbar = $interval(function() {
+        if (!self.exchangeSell) {
+          $interval.cancel(progressbar);
+        } else {
+          self.exchangeSell.expirationProgress = (100 - 100 * (self.exchangeSell.expiration - timestamp / 1000) / self.exchangeSell.expirationPeriod).toFixed(0);
+        }
+      }, 200);
+
+      self.exchangeSellTransaction = transaction;
+      changerService.monitorExchange(resp).then(
+        function(data) {
+          self.exchangeHistory = changerService.getHistory();
+        },
+        function(data) {
+
+        },
+        function(data) {
+          if (data.payee && self.exchangeSell.payee != data.payee) {
+            self.exchangeSell = data;
+            self.exchangeHistory = changer.getHistory();
+          } else {
+            self.exchangeSell.monitor = data;
+          }
+        }
+      );
+    }
+
     self.sell = function() {
       if (self.exchangeEmail) storageService.set("email", self.exchangeEmail);
       changerService.makeExchange(self.exchangeEmail, self.sellAmount, "ark_ARK", self.selectedCoin, self.recipientAddress).then(function(resp) {
@@ -434,38 +507,16 @@
           secondpassphrase: self.secondpassphrase
         }).then(function(transaction) {
             console.log(transaction);
-            self.exchangeTransaction = transaction
-            self.exchangeSell = resp;
-            self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - new Date().getTime() / 1000;
-            self.exchangeSell.expirationProgress = 0;
-            self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000);
-            self.exchangeSell.receiveCurrency = self.selectedCoin.split("_")[1];
-            self.exchangeSell.sendCurrency = "ARK";
-            var progressbar = $interval(function() {
-              if (!self.exchangeSell) {
-                $interval.cancel(progressbar);
-              } else {
-                self.exchangeSell.expirationProgress = (100 - 100 * (self.exchangeSell.expiration - new Date().getTime() / 1000) / self.exchangeSell.expirationPeriod).toFixed(0);
-              }
-            }, 200);
 
-            self.exchangeSellTransaction = transaction;
-            changerService.monitorExchange(resp).then(
-              function(data) {
-                self.exchangeHistory = changerService.getHistory();
+            timeService.getTimestamp().then(
+              function(timestamp){
+                completeExchangeSell(timestamp);
               },
-              function(data) {
-
-              },
-              function(data) {
-                if (data.payee && self.exchangeSell.payee != data.payee) {
-                  self.exchangeSell = data;
-                  self.exchangeHistory = changer.getHistory();
-                } else {
-                  self.exchangeSell.monitor = data;
-                }
+              function(timestamp){
+                completeExchangeSell(timestamp);
               }
-            );
+            )
+            
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -559,21 +610,7 @@
       $mdMenuOpen(ev);
     };
 
-
     self.changeCurrency = function() {
-      var currencies = [
-        { name: "btc", symbol: "Ƀ" },
-        { name: "usd", symbol: "$" },
-        { name: "eur", symbol: "€" },
-        { name: "cny", symbol: "CN¥" },
-        { name: "cad", symbol: "Can$" },
-        { name: "gbp", symbol: "£" },
-        { name: "hkd", symbol: "HK$" },
-        { name: "jpy", symbol: "JP¥" },
-        { name: "rub", symbol: '\u20BD' },
-        { name: "aud", symbol: "A$" }
-      ];
-      self.currency = currencies[currencies.map(function(x) { return x.name; }).indexOf(self.currency.name) + 1];
       if (self.currency == undefined) self.currency = currencies[0];
       storageService.set("currency", self.currency);
     };
@@ -660,6 +697,7 @@
               self.selected.balance = account.balance;
               self.selected.secondSignature = account.secondSignature;
               self.selected.cold = account.cold;
+              self.selected.publicKey = account.publicKey;
 
               if (!self.selected.virtual) self.selected.virtual = account.virtual;
             }
@@ -715,6 +753,8 @@
             self.selected.balance = account.balance;
             self.selected.secondSignature = account.secondSignature;
             self.selected.cold = account.cold;
+            if(!self.selected.publicKey) self.selected.publicKey = account.publicKey;
+
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
         });
@@ -775,7 +815,12 @@
     function selectAccount(account) {
       var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
-      console.log(self.selected);
+      self.selected.ledger = account.ledger;
+
+      pluginLoader.triggerEvent("onSelectAccount", self.selected);
+
+      self.showPublicKey = false;
+
       loadSignedMessages();
       if (!self.selected.selectedVotes) {
         if (self.selected.delegates) {
@@ -789,6 +834,7 @@
             self.selected.balance = account.balance;
             self.selected.secondSignature = account.secondSignature;
             self.selected.cold = account.cold;
+            if(!self.selected.publicKey) self.selected.publicKey = account.publicKey;
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual;
           }
@@ -1138,6 +1184,31 @@
         secondpassphrase: passphrases[1] ? passphrases[1] : '',
       };
 
+      function openFile() {
+        var fs = require('fs');
+
+        require('electron').remote.dialog.showOpenDialog(function(fileNames) {
+          if (fileNames === undefined) return;
+          var fileName = fileNames[0];
+
+          fs.readFile(fileName, 'utf8', function(err, data) {
+            if (err) {
+              formatAndToastError('Unable to load file' + ': ' + err);
+            } else {
+              try {
+                var transaction = JSON.parse(data);
+
+                if (transaction.type === undefined) return formatAndToastError('Invalid transaction file');
+                validateTransaction(selectedAccount, transaction);
+
+              } catch (ex) {
+                formatAndToastError('Invalid file format');
+              }
+            }
+          });
+        });
+      };
+
       // testing goodies
       // var data={
       //   fromAddress: selectedAccount ? selectedAccount.address: '',
@@ -1224,6 +1295,7 @@
       };
 
       $scope.send = {
+        openFile: openFile,
         data: data,
         cancel: cancel,
         next: next,
@@ -1686,6 +1758,20 @@
         scope: $scope
       });
     };
+    function exportAccount(account)
+    {
+      var eol = require('os').EOL;
+      var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
+      account.transactions.forEach(function(trns) {
+        filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
+        ","+trns.vendorField+eol;
+      });
+      var blob = new Blob([filecontent]);
+      var downloadLink = document.createElement('a');
+      downloadLink.setAttribute('download', account.address+'.csv');
+      downloadLink.setAttribute('href', window.URL.createObjectURL(blob));
+      downloadLink.click();
+    }
 
     // Add a second passphrase to an account
     function createSecondPassphrase(account) {
@@ -1762,15 +1848,16 @@
 
       if (!selectedAccount.delegate) {
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer' });
+      }
+      if (!selectedAccount.delegate && !selectedAccount.ledger) {
         items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity' });
       }
 
       items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user' });
 
-      if (!selectedAccount.secondSignature) {
+      if (!selectedAccount.secondSignature && !selectedAccount.ledger ) {
         items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock' });
       }
-
       function answer(action) {
         $mdBottomSheet.hide();
 
@@ -1930,9 +2017,17 @@
         var message = $scope.verify.message;
         var publickey = $scope.verify.publickey;
         var signature = $scope.verify.signature;
-        var res = accountService.verifyMessage(message, publickey, signature);
+        var result = accountService.verifyMessage(message, publickey, signature);
         $mdDialog.hide();
+        showMessage(result);
+      };
+
+      function verifyText() {
+        var list = JSON.parse($scope.verify.message);
+        var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
         var message = gettextCatalog.getString("Error in signature processing");
+        
+        $mdDialog.hide();
         if (res == true) {
           message = gettextCatalog.getString("The message is verified successfully");
         } else {
@@ -1940,7 +2035,6 @@
         }
         showMessage(message, res);
       };
-
 
 
       function cancel() {
@@ -1953,6 +2047,7 @@
       } else {
         $scope.verify = {
           verify: verify,
+          verifyText: verifyText,
           cancel: cancel,
           publickey: self.selected.publicKey
         };
@@ -1969,6 +2064,38 @@
     };
 
     function validateTransaction(selectedAccount, transaction) {
+
+      function saveFile() {
+        var fs = require('fs');
+        var raw = JSON.stringify(transaction);
+
+        require('electron').remote.dialog.showSaveDialog({
+          defaultPath: transaction.id + '.json',
+          filters: [{
+            extensions: ['json']
+          }]
+        }, function(fileName) {
+          if (fileName === undefined) return;
+
+          fs.writeFile(fileName, raw, 'utf8', function(err) {
+            if (err) {
+              $mdToast.show(
+                $mdToast.simple()
+                .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
+                .hideDelay(5000)
+                .theme("error")
+              );
+            } else {
+              $mdToast.show(
+                $mdToast.simple()
+                .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
+                .hideDelay(5000)
+              );
+            }
+          });
+        });
+
+      }
 
       function send() {
         $mdDialog.hide();
@@ -1994,6 +2121,7 @@
       };
 
       $scope.validate = {
+        saveFile: saveFile,
         send: send,
         cancel: cancel,
         transaction: transaction,

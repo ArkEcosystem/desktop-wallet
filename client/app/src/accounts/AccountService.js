@@ -354,12 +354,29 @@
     };
 
     function verifyMessage(message, publicKey, signature) {
+      //check for hexadecimal, otherwise the signature check would may fail
+      var re = /[0-9A-Fa-f]{6}/g;
+      if(!re.test(publicKey) || !re.test(signature))
+      {
+        //return here already because the process will fail otherwise
+        return gettextCatalog.getString("Error in your Input.");;
+      }
       var crypto = require("crypto");
       var hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
       var ecpair = ark.ECPair.fromPublicKeyBuffer(new Buffer(publicKey, "hex"));
       var ecsignature = ark.ECSignature.fromDER(new Buffer(signature, "hex"));
-      return ecpair.verify(hash, ecsignature);
+      var success = ecpair.verify(hash, ecsignature);
+      var message = gettextCatalog.getString("Error in signature processing");
+      if(success)
+      {
+        message = gettextCatalog.getString("The message is verified successfully");
+      }
+      else
+      {
+        message = gettextCatalog.getString("The message is NOT verified");
+      }
+      return message;
     }
 
     function signMessage(message, passphrase) {
@@ -440,6 +457,9 @@
           deferred.reject(e);
           return deferred.promise;
         }
+
+        transaction.senderId = config.fromAddress;
+
         if (config.ledger) {
           delete transaction.signature;
           transaction.senderPublicKey = config.publicKey;
@@ -459,7 +479,6 @@
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ") + config.fromAddress);
           return deferred.promise;
         }
-        transaction.senderId = config.fromAddress;
         deferred.resolve(transaction);
       } else if (type == 2) { //delegate creation
         var account = getAccount(config.fromAddress);
@@ -474,6 +493,9 @@
           deferred.reject(e);
           return deferred.promise;
         }
+
+        transaction.senderId = config.fromAddress;
+
         if (config.ledger) {
           delete transaction.signature;
           transaction.senderPublicKey = config.publicKey;
@@ -493,7 +515,6 @@
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ") + config.fromAddress);
           return deferred.promise;
         }
-        transaction.senderId = config.fromAddress;
         deferred.resolve(transaction);
       } else if (type == 3) { //vote
         var account = getAccount(config.fromAddress);
@@ -507,8 +528,12 @@
           deferred.reject(e);
           return deferred.promise;
         }
+
+        transaction.senderId = config.fromAddress;
+        
         if (config.ledger) {
           delete transaction.signature;
+          transaction.recipientId = config.fromAddress;
           transaction.senderPublicKey = config.publicKey;
           ledgerService.signTransaction(config.ledger, transaction).then(
             function(result) {
@@ -526,7 +551,6 @@
           deferred.reject(gettextCatalog.getString("Passphrase is not corresponding to account ") + config.fromAddress);
           return deferred.promise;
         }
-        transaction.senderId = config.fromAddress;
         deferred.resolve(transaction);
       }
 

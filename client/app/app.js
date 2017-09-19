@@ -52,7 +52,8 @@ angular
     $mdIconProvider
       .defaultIconSet("./assets/svg/avatars.svg", 128)
       .icon("menu", "./assets/svg/menu.svg", 24)
-      .icon("ledger", "./assets/svg/ledger.svg", 24);
+      .icon("ledger", "./assets/svg/ledger.svg", 24)
+      .icon("qrcode", "./assets/svg/qrcode.svg", 24);
 
     Object.keys(themes).forEach(function(key) {
       var theme = $mdThemingProvider.theme(key)
