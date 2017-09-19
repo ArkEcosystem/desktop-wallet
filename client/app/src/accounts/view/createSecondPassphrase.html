@@ -1,4 +1,4 @@
-<md-dialog aria-label="Create Second Passphrase" ng-cloak>
+<md-dialog aria-label="Create Second Passphrase" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -15,7 +15,7 @@
           <md-card-title>
             <md-card-title-text>
               <span>
-                <translate>Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it.</translate>
+                <translate>Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!</translate>
                 <br/>
                 <translate>After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client.</translate>
               </span>
@@ -27,7 +27,7 @@
         </div>
         <md-input-container ng-if="createSecondPassphraseDialog.data.showRepassphrase" class="md-block">
           <label translate>Original Passphrase</label>
-          <input ng-model="createSecondPassphraseDialog.data.passphrase" type="password" ng-required="true"/>
+          <input ng-model="createSecondPassphraseDialog.data.passphrase" type="password" ng-required="true" />
         </md-input-container>
         <md-input-container class="md-block">
           <label translate>Second Passphrase</label>

@@ -1,8 +1,8 @@
-<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak>
+<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak md-theme="ul.network.theme">
   <form name="sendArkForm" ng-submit="send.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span translate>{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
+        <h2><span>{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="send.cancel()">
           <md-icon md-font-library="material-icons">clear</md-icon>
@@ -11,53 +11,23 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <div layout-gt-sm="row">
-          <md-input-container md-no-float class="md-block" flex-gt-sm="85">
-            <!--<md-autocomplete
-               md-selected-item="send.data.toAccount"
-               md-search-text="send.searchText"
-               md-items="account in send.querySearch(send.searchText)"
-               md-item-text="account.address"
-               md-min-length="0"
-               md-autofocus="true"
-               md-floating-label="Type an address or a name">
-               <md-item-template>
-                 <span class="item-title">
-                   <span> {{account.username||account.address}} </span>
-                 </span>
-               </md-item-template>
-             </md-autocomplete> -->
-            <!--<label translate>Destination Address / Contact Name</label>
-             <input ng-model="send.data.toAddress" type="text" ng-required="true" md-autofocus tabIndex="1">-->
-
-            <md-autocomplete
-              ng-model="send.data.toAddress",
-              md-selected-item="send.data.selectedAddress"
-              md-selected-item-change="send.selectedContactChange(contact)"
-              md-search-text-change="send.searchTextChange(send.searchText)"
-              md-search-text="send.searchText"
-              md-items="contact in send.querySearch(send.searchText)"
-              md-item-text="contact.address"
-              md-min-length="0"
-              md-autofocus="true"
-              md-floating-label="Type an address or a name"
-              tabIndex="1">
-              <md-item-template>
-                <span class="item-title">
-                   <span> {{contact.name || contact.address}} </span>
-                </span>
-              </md-item-template>
-            </md-autocomplete>
+        <div layout="row" flex layout-align="start start">
+          <md-input-container flex="5">
+            <qr-scanner input-callback="toAddress"></qr-scanner>
           </md-input-container>
-          <md-input-container class="md-block" flex-gt-sm="15">
-            <qr-scanner class="md-button md-primary" input-callback="toAddress" ng-click="openScanner($event)"></qr-scanner>
-          </md-input-container>
+          <md-autocomplete flex="95" ng-model="send.data.toAddress" , md-selected-item="send.data.selectedAddress" md-selected-item-change="send.selectedContactChange(contact)" md-search-text-change="send.searchTextChange(send.searchText)" md-search-text="send.searchText"
+            md-items="contact in send.querySearch(send.searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
+            <md-item-template>
+              <span class="item-title">
+                  <span> {{contact.name || contact.address}} </span>
+              </span>
+            </md-item-template>
+          </md-autocomplete>
         </div>
         <div layout-gt-sm="row">
           <md-input-container md-no-float class="md-block" flex-gt-sm="85">
             <label>{{'Amount'|translate}} ({{ul.network.token}})</label>
-            <input ng-model="send.data.amount" type="number" step="0.00000001" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount
-              autocomplete="off" ng-required="true" tabIndex="2">
+            <input ng-model="send.data.amount" type="number" step="0.00000001" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
             <div class="hint">
               {{ul.currency.symbol}} {{send.data.amount | amountToCurrency:this}}
             </div>
@@ -73,29 +43,44 @@
           <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
         </md-input-container>
 
-        <md-input-container ng-if="!send.data.ledger" class="md-block">
-          <label translate>Passphrase</label>
-          <input ng-model="send.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" tabIndex="4">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
-            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
-        <md-input-container class="md-block" ng-if="send.data.secondSignature">
-          <label translate>Second Passphrase</label>
-          <input ng-model="send.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" tabIndex="5">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
-            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
+        <div layout="row" flex layout-align="start start">
+          <md-input-container flex="5">
+            <qr-scanner input-callback="passphrase"></qr-scanner>
+          </md-input-container>
+          <md-input-container flex="95" ng-if="!send.data.ledger" class="md-block">
+            <label translate>Passphrase</label>
+            <input ng-model="send.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" tabIndex="4">
+            <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
+              {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
+            </md-icon>
+          </md-input-container>
+        </div>
+        <div layout="row" flex layout-align="start start"  ng-if="send.data.secondSignature">
+          <md-input-container flex="5">
+            <qr-scanner input-callback="secondpassphrase"></qr-scanner>
+          </md-input-container>
+          <md-input-container flex="95" class="md-block">
+            <label translate>Second Passphrase</label>
+            <input ng-model="send.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" tabIndex="5">
+            <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
+              {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
+            </md-icon>
+          </md-input-container>
+        </div>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row" style="padding-left: 20px">
       <div class="remaining-balance">
-        <div class="md-caption">Remaining balance</div>
+        <div class="md-caption">
+          <translate>Remaining balance</translate>
+        </div>
         <div class="balance">{{ul.network.symbol}} {{ send.remainingBalance }}</div>
       </div>
-      <span flex></span>
       <!-- workaround for pull first item on left -->
+      <span flex></span>
+      <md-button ng-click="send.openFile()">
+        <span translate>Load Tx From File</span>
+      </md-button>
       <md-button type="submit" ng-disabled="sendArkForm.$invalid" tabIndex="6">
         <translate ng-if="!send.data.ledger">Next</translate>
         <translate ng-if="send.data.ledger">Sign with Ledger</translate>

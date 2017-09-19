@@ -7,8 +7,9 @@ const ipcMain = electron.ipcMain;
 const Menu = electron.Menu;
 const openAboutWindow = require('about-window').default;
 
-const ledger = require('ledgerco');
-const LedgerArk = require('./LedgerArk');
+const ledger = require('ledgerco')
+const LedgerArk = require('./LedgerArk')
+const fork = require('child_process').fork;
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -35,22 +36,23 @@ function createWindow () {
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
+  })
+  
+  var ledgerWorker = fork('./ledger-worker');
+  
+  ledgerWorker.on('message', function (message) {
+    if(message.connected && !ledgercomm){
+      ledger.comm_node.create_async().then((comm) => {
+        ledgercomm = comm
+      }).fail((error) => {
+        console.log(error)
+      })
+    }
+    else if(!message.connected && ledgercomm){
+      ledgercomm.close_async()
+      ledgercomm = null
+    }
   });
-
-  setInterval(()=>{
-    ledger.comm_node.list_async().then((deviceList) => {
-      if(deviceList.length > 0 && !ledgercomm){
-        ledger.comm_node.create_async().then((comm) => {
-          ledgercomm = comm
-        }).fail((error) => {
-          //console.log(error)
-        })
-      }
-      else if(deviceList.length === 0){
-        ledgercomm = null
-      }
-    })
-  },1000);
 
   ipcMain.on('ledger', (event, arg) => {
     if(arg.action === "detect"){
@@ -60,6 +62,7 @@ function createWindow () {
     }
     else {
       if(!ledgercomm){
+        console.log("connection not initialised")
         event.returnValue = "connection not initialised"
       }
       else try{
@@ -88,16 +91,16 @@ function createWindow () {
         }
         else if(arg.action === "getConfiguration"){
           ark.getAppConfiguration_async().then((result) => {
-              result.connected = true;
+              console.log(result)
+              result.connected = true
               event.returnValue = result
             }
           ).fail((error) => {
               let result = {
                 connected: false,
                 message: error
-              };
-
-              if(ledgercomm){
+              }
+              if(ledgercomm && ledgercomm.close_async){
                 ledgercomm.close_async()
               }
               ledgercomm = null;
@@ -106,10 +109,11 @@ function createWindow () {
           )
         }
       } catch(error){
-        ledgercomm.close_async();
-        ledgercomm = null;
-
-        event.returnValue = {
+        if(ledgercomm && ledgercomm.close_async){
+          ledgercomm.close_async()
+        }
+        ledgercomm = null
+        var result = {
           connected: false,
           message: "Cannot connect to Ark application"
         };
