@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  var ipcRenderer = require('electron').ipcRenderer;
-  var arkjs = require('arkjs');
-  var bip39 = require('bip39');
+  let ipcRenderer = require('electron').ipcRenderer;
+  let arkjs = require('arkjs');
+  let bip39 = require('bip39');
 
-  angular.module('arkclient')
-    .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
+  angular.module('arkclient.coreServices')
+         .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
 
   /**
    * NetworkService
@@ -14,24 +14,23 @@
    */
   function LedgerService($q, $http, $timeout, storageService) {
 
-    function deriveAddress(path) {
-      var result = ipcRenderer.sendSync('ledger', {
+    function deriveAddress(path){
+      return ipcRenderer.sendSync('ledger', {
         action: "getAddress",
         path: path
       });
-      return result
     }
 
-    function getBip44Accounts() {
-      var accounts = [];
-      var account_index = 0;
-      var address_index = 0;
-      var path = "44'/111'/";
-      var empty = false;
+    function getBip44Accounts(){
+      let accounts = [];
+      let account_index = 0;
+      let address_index = 0;
+      let path = "44'/111'/";
+      let empty = false;
 
-      while (!empty) {
-        var localpath = path + account_index + "'/0/" + address_index;
-        var result = ipcRenderer.sendSync('ledger', {
+      while(!empty){
+        let localpath = path + account_index + "'/0/" + address_index;
+        let result = ipcRenderer.sendSync('ledger', {
           action: "getAddress",
           path: localpath
         });
@@ -72,11 +71,11 @@
     function recoverBip44Accounts(backupLedgerPassphrase) {
       var hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
 
-      var accounts = [];
-      var account_index = 0;
-      var address_index = 0;
-      var path = "44'/111'/";
-      var empty = false;
+      let accounts = [];
+      let account_index = 0;
+      let address_index = 0;
+      let path = "44'/111'/";
+      let empty = false;
 
       while (!empty) {
         var localpath = path + account_index + "'/0/" + address_index;
@@ -140,18 +139,16 @@
       return deferred.promise;
     }
 
-    function detect() {
-      var result = ipcRenderer.sendSync('ledger', {
+    function detect(){
+      return ipcRenderer.sendSync('ledger', {
         action: "detect"
       });
-      return result
     }
 
-    function isAppLaunched() {
-      var result = ipcRenderer.sendSync('ledger', {
+    function isAppLaunched(){
+      return ipcRenderer.sendSync('ledger', {
         action: "getConfiguration"
       });
-      return result;
     }
 
     return {

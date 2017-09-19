@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService]);
+  angular.module('arkclient.accounts')
+         .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService]);
 
   /**
    * Accounts DataService
@@ -14,7 +14,7 @@
    */
   function AccountService($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
 
-    var ark = require('arkjs');
+    let ark = require('arkjs');
 
     var TxTypes = {
       0: "Send Ark",
@@ -24,17 +24,17 @@
       4: "Multisignature Creation"
     };
 
-    var peer = networkService.getPeer().ip;
+    let peer=networkService.getPeer().ip;
 
-    function showTimestamp(time) {
-      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
+    function showTimestamp(time){
+      let d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
 
-      var t = parseInt(d.getTime() / 1000);
+      let t = parseInt(d.getTime() / 1000);
 
       time = new Date((time + t) * 1000);
 
-      var currentTime = new Date().getTime();
-      var diffTime = (currentTime - time.getTime()) / 1000;
+      let currentTime = new Date().getTime();
+      let diffTime = (currentTime - time.getTime()) / 1000;
 
       if (diffTime < 60) {
         return Math.floor(diffTime) + ' sec ago';
@@ -68,21 +68,21 @@
       }
 
       return Math.floor(diffTime / 60 / 60 / 24 / 30 / 12) + ' years ago';
-    };
+    }
 
     function fetchAccount(address) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       networkService.getFromPeer('/api/accounts?address=' + address).then(
         function(resp) {
           if (resp.success) {
-            var account = resp.account;
+            let account = resp.account;
             account.cold = !account.publicKey;
             account.delegates = [];
             account.selectedVotes = [];
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           } else {
-            var account = {
+            let account = {
               address: address,
               balance: 0,
               secondSignature: false,
@@ -96,14 +96,14 @@
         }
       );
       return deferred.promise;
-    };
+    }
 
     function fetchAccountAndForget(address) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       networkService.getFromPeer('/api/accounts?address=' + address).then(
         function(resp) {
           if (resp.success) {
-            var account = storageService.get(address);
+            let account = storageService.get(address);
             if (!account) {
               account = resp.account;
             } else {
@@ -129,10 +129,10 @@
         }
       );
       return deferred.promise;
-    };
+    }
 
     function getAccount(address) {
-      var account = storageService.get(address);
+      let account = storageService.get(address);
       if (account) {
         account.transactions = storageService.get("transactions-" + address);
         account.username = storageService.get("username-" + address);
@@ -145,9 +145,9 @@
     }
 
     function createAccount(passphrase) {
-      var deferred = $q.defer();
-      var address = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey, networkService.getNetwork().version);
-      var account = fetchAccount(address).then(function(account) {
+      let deferred = $q.defer();
+      let address = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey, networkService.getNetwork().version);
+      let account = fetchAccount(address).then(function(account) {
         if (account) {
           account.virtual = account.virtual || {};
           storageService.set("virtual-" + address, account.virtual);
@@ -160,10 +160,10 @@
     }
 
     function savePassphrases(address, passphrase, secondpassphrase) {
-      var deferred = $q.defer();
-      var tempaddress = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey);
+      let deferred = $q.defer();
+      let tempaddress = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey);
       if (passphrase) {
-        var account = getAccount(tempaddress);
+        let account = getAccount(tempaddress);
         if (account && account.address == address) {
           account.virtual = account.virtual || {};
           storageService.set("virtual-" + address, account.virtual);
@@ -183,25 +183,24 @@
       return deferred.promise;
     }
 
-    function getPassphrases(address) {
-      var passphrases = [storageService.get("passphrase-" + address), storageService.get("secondpassphrase-" + address)]
-      return passphrases;
+    function getPassphrases(address){
+      return [storageService.get("passphrase-"+address),storageService.get("secondpassphrase-"+address)];
     }
 
     function addWatchOnlyAddress(account) {
       if (!account || !account.address || storageService.get(account.address) || account.ledger) {
         return;
       }
-      storageService.set(account.address, account);
-      var addresses = storageService.get("addresses");
-      if (!addresses) {
-        addresses = [];
+      storageService.set(account.address,account);
+      let addresses=storageService.get("addresses");
+      if(!addresses){
+        addresses=[];
       }
-      if (addresses.indexOf(account.address) == -1) {
+      if(addresses.indexOf(account.address)===-1){
         addresses.push(account.address);
         storageService.set("addresses", addresses);
       }
-    };
+    }
 
     function removeAccount(account) {
       if (!account || !account.address) {
@@ -217,15 +216,15 @@
       storageService.set("secondpassphrase-" + account.address, null);
 
       //remove the address from stored addresses
-      var addresses = storageService.get("addresses");
-      addresses.splice(addresses.indexOf(account.address), 1);
-      storageService.set("addresses", addresses);
+      let addresses=storageService.get("addresses");
+      addresses.splice(addresses.indexOf(account.address),1);
+      storageService.set("addresses",addresses);
       return $q.when(account);
-    };
+    }
 
     function formatTransaction(transaction, recipientAddress) {
-      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-      var t = parseInt(d.getTime() / 1000);
+      let d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
+      let t = parseInt(d.getTime() / 1000);
 
       transaction.label = gettextCatalog.getString(TxTypes[transaction.type]);
       transaction.date = new Date((transaction.timestamp + t) * 1000);
@@ -251,13 +250,13 @@
       if (!limit) {
         limit = 50
       }
-      var deferred = $q.defer();
-      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
-      var t = parseInt(d.getTime() / 1000);
+      let deferred = $q.defer();
+      let d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
+      let t = parseInt(d.getTime() / 1000);
       networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=" + limit + "&recipientId=" + address + "&senderId=" + address).then(function(resp) {
         if (resp.success) {
-          for (var i = 0; i < resp.transactions.length; i++) {
-            var transaction = formatTransaction(resp.transactions[i], address)
+          for (let i = 0; i < resp.transactions.length; i++) {
+            let transaction = formatTransaction(resp.transactions[i], address)
           }
           storageService.set("transactions-" + address, resp.transactions);
           deferred.resolve(resp.transactions);
@@ -266,10 +265,10 @@
         }
       });
       return deferred.promise;
-    };
+    }
 
     function getDelegate(publicKey) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       if (!publicKey) {
         deferred.reject(gettextCatalog.getString("No publicKey"));
         return deferred.promise;
@@ -284,10 +283,10 @@
         }
       });
       return deferred.promise;
-    };
+    }
 
     function getActiveDelegates() {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       networkService.getFromPeer("/api/delegates").then(function(resp) {
         if (resp && resp.success && resp.delegates) {
           deferred.resolve(resp.delegates);
@@ -296,10 +295,10 @@
         }
       });
       return deferred.promise;
-    };
+    }
 
     function getDelegateByUsername(username) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       if (!username) {
         deferred.reject("No Username");
         return deferred.promise;
@@ -315,11 +314,11 @@
         }
       });
       return deferred.promise;
-    };
+    }
 
     //TODO: NOT working yet, waiting for 0.3.2
     function searchDelegates(term) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       if (!term) {
         deferred.reject(gettextCatalog.getString("No search term"));
         return deferred.promise;
@@ -334,13 +333,13 @@
         deferred.reject(gettextCatalog.getString("Cannot find delegates on this peer: ") + err);
       });
       return deferred.promise;
-    };
+    }
 
     function getVotedDelegates(address) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       networkService.getFromPeer("/api/accounts/delegates/?address=" + address).then(function(resp) {
         if (resp && resp.success) {
-          var delegates = [];
+          let delegates = [];
           if (resp.delegates && resp.delegates.length && resp.delegates[0]) {
             delegates = resp.delegates
           }
@@ -351,23 +350,23 @@
         }
       });
       return deferred.promise;
-    };
+    }
 
     function verifyMessage(message, publicKey, signature) {
       //check for hexadecimal, otherwise the signature check would may fail
-      var re = /[0-9A-Fa-f]{6}/g;
+      let re = /[0-9A-Fa-f]{6}/g;
       if(!re.test(publicKey) || !re.test(signature))
       {
         //return here already because the process will fail otherwise
         return gettextCatalog.getString("Error in your Input.");;
       }
-      var crypto = require("crypto");
-      var hash = crypto.createHash('sha256');
+      let crypto = require("crypto");
+      let hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
-      var ecpair = ark.ECPair.fromPublicKeyBuffer(new Buffer(publicKey, "hex"));
-      var ecsignature = ark.ECSignature.fromDER(new Buffer(signature, "hex"));
-      var success = ecpair.verify(hash, ecsignature);
-      var message = gettextCatalog.getString("Error in signature processing");
+      let ecpair = ark.ECPair.fromPublicKeyBuffer(new Buffer(publicKey, "hex"));
+      let ecsignature = ark.ECSignature.fromDER(new Buffer(signature, "hex"));
+      let success = ecpair.verify(hash, ecsignature);
+      let message = gettextCatalog.getString("Error in signature processing");
       if(success)
       {
         message = gettextCatalog.getString("The message is verified successfully");
@@ -380,17 +379,17 @@
     }
 
     function signMessage(message, passphrase) {
-      var deferred = $q.defer();
-      var crypto = require("crypto");
-      var hash = crypto.createHash('sha256');
+      let deferred = $q.defer();
+      let crypto = require("crypto");
+      let hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
-      var ecpair = ark.crypto.getKeys(passphrase);
+      let ecpair = ark.crypto.getKeys(passphrase);
       deferred.resolve({ signature: ecpair.sign(hash).toDER().toString("hex") });
       return deferred.promise;
     }
 
     function signMessageWithLedger(message, path) {
-      var deferred = $q.defer();
+      let deferred = $q.defer();
       ledgerService.signMessage(path, message).then(
         function(result) {
           deferred.resolve(result);
@@ -410,14 +409,14 @@
           return deferred.promise;
         }
 
-        var account = getAccount(config.fromAddress);
+        let account = getAccount(config.fromAddress);
         if (config.amount + 10000000 > account.balance) {
           deferred.reject(gettextCatalog.getString("Not enough ARK on your account ") + config.fromAddress);
           return deferred.promise;
         }
 
         try {
-          var transaction = ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase);
+          let transaction = ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase);
         } catch (e) {
           deferred.reject(e);
           return deferred.promise;
@@ -446,13 +445,13 @@
           deferred.resolve(transaction);
         }
       } else if (type == 1) { // second passphrase creation
-        var account = getAccount(config.fromAddress);
+        let account = getAccount(config.fromAddress);
         if (account.balance < 500000000) {
           deferred.reject(gettextCatalog.getString("Not enough ARK on your account ") + config.fromAddress + ", " + gettextCatalog.getString("you need at least 5 ARK to create a second passphrase"));
           return deferred.promise;
         }
         try {
-          var transaction = ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase);
+          let transaction = ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase);
         } catch (e) {
           deferred.reject(e);
           return deferred.promise;
@@ -481,14 +480,14 @@
         }
         deferred.resolve(transaction);
       } else if (type == 2) { //delegate creation
-        var account = getAccount(config.fromAddress);
+        let account = getAccount(config.fromAddress);
         if (account.balance < 2500000000) {
           deferred.reject(gettextCatalog.getString("Not enough ARK on your account ") + config.fromAddress + ", " + gettextCatalog.getString("you need at least 25 ARK to register delegate"));
           return deferred.promise;
         }
         console.log(config);
         try {
-          var transaction = ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase);
+          let transaction = ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase);
         } catch (e) {
           deferred.reject(e);
           return deferred.promise;
@@ -517,13 +516,13 @@
         }
         deferred.resolve(transaction);
       } else if (type == 3) { //vote
-        var account = getAccount(config.fromAddress);
+        let account = getAccount(config.fromAddress);
         if (account.balance < 100000000) {
           deferred.reject(gettextCatalog.getString("Not enough ARK on your account ") + config.fromAddress + ", " + gettextCatalog.getString("you need at least 1 ARK to vote"));
           return deferred.promise;
         }
         try {
-          var transaction = ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(","), config.secondpassphrase);
+          let transaction = ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(","), config.secondpassphrase);
         } catch (e) {
           deferred.reject(e);
           return deferred.promise;
@@ -646,7 +645,7 @@
         deferred.reject(gettextCatalog.getString("Cannot get sponsors"));
       });
       return deferred.promise;
-    };
+    }
 
     function createVirtual(passphrase) {
       var deferred = $q.defer();
@@ -661,7 +660,7 @@
       }
 
       return deferred.promise;
-    };
+    }
 
     function setToFolder(address, folder, amount) {
       var virtual = getVirtual(address);
@@ -674,14 +673,14 @@
       }
       storageService.set("virtual-" + address, virtual);
       return getVirtual(address);
-    };
+    }
 
     function deleteFolder(address, folder) {
       var virtual = storageService.get("virtual-" + address);
       delete virtual[folder];
       storageService.set("virtual-" + address, virtual);
       return getVirtual(address);
-    };
+    }
 
     function getVirtual(address) {
       var virtual = storageService.get("virtual-" + address);
@@ -724,7 +723,7 @@
         throw new Error('Delegate name must be lowercase');
       }
 
-      var sanitizedName = String(delegateName).toLowerCase().trim();
+      let sanitizedName = String(delegateName).toLowerCase().trim();
       if (sanitizedName === '') {
         throw new Error('Empty delegate name');
       }
@@ -740,13 +739,13 @@
 
     function numberToFixed(x) {
       if (Math.abs(x) < 1.0) {
-        var e = parseInt(x.toString().split('e-')[1]);
+        let e = parseInt(x.toString().split('e-')[1]);
         if (e) {
           x *= Math.pow(10, e - 1);
           x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
         }
       } else {
-        var e = parseInt(x.toString().split('+')[1]);
+        let e = parseInt(x.toString().split('+')[1]);
         if (e > 20) {
           e -= 20;
           x /= Math.pow(10, e);

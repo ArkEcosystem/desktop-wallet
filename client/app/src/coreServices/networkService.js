@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient')
+  angular.module('arkclient.coreServices')
     .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService]);
 
   /**
@@ -18,7 +18,7 @@
     var ark = require('arkjs');
     ark.crypto.setNetworkVersion(network.version ||  23);
 
-    var clientVersion = require('../../package.json').version;
+    let clientVersion = require('packageJson').version;
 
     var peer = { ip: network.peerseed, network: storageService.getContext(), isConnected: false, height: 0, lastConnection: null };
 

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient')
+  angular.module('arkclient.coreServices')
     .service('changerService', ['storageService', '$q', '$http', '$timeout', 'timeService', ChangerService]);
 
   /**

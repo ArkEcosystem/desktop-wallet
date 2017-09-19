@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('arkclient')
+    .module('arkclient.addressbook')
     .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", "accountService", AddressbookController]);
 
   function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog, accountService) {
@@ -13,7 +13,7 @@
 
     self.getContacts = function() {
       self.contacts = storageService.get("contacts");
-      if (self.contacts == null || self.contacts == undefined) self.contacts = [];
+      if (self.contacts === null || self.contacts === undefined) self.contacts = [];
     }
 
     self.getContacts();
@@ -35,7 +35,7 @@
     self.contactExists = function(name) {
       var i;
       for (i = 0; i < self.contacts.length; i++) {
-        if (self.contacts[i].name == name) {
+        if (self.contacts[i].name === name) {
           return true;
         }
       }
@@ -80,7 +80,7 @@
           self.showToast('this Contact Address is not valid', contactaddress, true);
           return;
         }
-        var newcontact = { name: contactname, address: contactaddress };
+        let newcontact = { name: contactname, address: contactaddress };
         if (self.contactExists(contactname)) {
           self.showToast('this Contact Name is already taken, please choose another one', contactname, true);
           return;
@@ -97,7 +97,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/Addressbook/addAddressbookContact.html',
+        templateUrl: 'src/addressbook/view/addAddressbookContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -145,14 +145,14 @@
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name == name) {
+          if (self.contacts[i].name === name) {
             self.contacts[i].address = address;
           }
         }
         self.save();
         self.showToast('Contact successfully saved', name, false);
         cancel();
-      };
+      }
 
       function remove(name) {
         self.getContacts();
@@ -161,7 +161,7 @@
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name == name) {
+          if (self.contacts[i].name === name) {
             delete self.contacts[i];
             self.contacts.splice(i, 1);
           }
@@ -173,7 +173,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/Addressbook/editAddressbookContact.html',
+        templateUrl: 'src/addressbook/view/editAddressbookContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,

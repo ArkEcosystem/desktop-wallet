@@ -19,7 +19,7 @@
 
 var Q = require('q');
 
-var LedgerUtils = {}
+var LedgerUtils = {};
 
 LedgerUtils.splitPath = function(path) {
 	var result = [];
@@ -29,13 +29,13 @@ LedgerUtils.splitPath = function(path) {
 		if (isNaN(number)) {
 			return;
 		}
-		if ((element.length > 1) && (element[element.length - 1] == "'")) {
+		if ((element.length > 1) && (element[element.length - 1] === "'")) {
 			number += 0x80000000;
 		}
 		result.push(number);
 	});
 	return result;
-}
+};
 
 LedgerUtils.foreach = function (arr, callback) {
 	var deferred = Q.defer();
@@ -53,7 +53,7 @@ LedgerUtils.foreach = function (arr, callback) {
 	};
 	iterate(0, arr, []);
 	return deferred.promise;
-}
+};
 
 LedgerUtils.doIf = function(condition, callback) {
 	var deferred = Q.defer();
@@ -63,7 +63,7 @@ LedgerUtils.doIf = function(condition, callback) {
 		deferred.resolve();
 	}
 	return deferred.promise;
-}
+};
 
 LedgerUtils.asyncWhile = function(condition, callback) {
 	var deferred = Q.defer();
@@ -81,7 +81,7 @@ LedgerUtils.asyncWhile = function(condition, callback) {
 	};
 	iterate([]);
 	return deferred.promise;
-}
+};
 
 
 module.exports = LedgerUtils;

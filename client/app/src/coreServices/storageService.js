@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient')
-    .service('storageService', [StorageService]);
+  angular.module('arkclient.coreServices')
+         .service('storageService', [ StorageService]);
 
   /**
    * NetworkService

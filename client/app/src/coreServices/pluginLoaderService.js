@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  angular.module('arkclient')
-    .service('pluginLoader', ['accountService', PluginLoader]);
+  angular.module('arkclient.coreServices')
+    .service('pluginLoaderService', ['accountService', PluginLoader]);
 
   /**
    * pluginLoader
@@ -10,21 +10,21 @@
    */
   function PluginLoader(accountService) {
 
-    var self = this;
-    var fs = require('fs');
-    var path = require('path');
+    const self = this;
+    const fs = require('fs');
+    const path = require('path');
 
     const confFilename = "plugin.conf";
     const pluginFilename = "plugin.js";
 
-    var pluginsDirectory = path.resolve(__dirname, "plugins");
-    var plugins = getDirectories(pluginsDirectory);
+    const pluginsDirectory = path.resolve(__dirname, "plugins");
+    const plugins = getDirectories(pluginsDirectory);
 
     self.plugincontent = {};
 
     //load all plugin configurations
     plugins.forEach(function (element) {
-      var conf = JSON.parse(readFile(path.join(pluginsDirectory, element, confFilename)));
+      const conf = JSON.parse(readFile(path.join(pluginsDirectory, element, confFilename)));
       if (conf.enabled == "true") {
         self.plugincontent[element] = conf;
       }
@@ -33,8 +33,8 @@
     //on event
     self.triggerEvent = function (eventname) {
       //parse arguments and prepare for sending
-      var sendargs = "";
-      for (var arg = 1; arg < arguments.length; ++arg) {
+      let sendargs = "";
+      for (let arg = 1; arg < arguments.length; ++arg) {
         if (sendargs != "") {
           sendargs = sendargs + "," + JSON.stringify(arguments[arg]);
         } else {
@@ -49,11 +49,11 @@
       }
       //iterate over all plugins
       plugins.forEach(function (element) {
-        var plugin = self.plugincontent[element];
+        const plugin = self.plugincontent[element];
         //if plugin has event defined in configuration
         if (plugin && plugin["events"][eventname]) {
           //read its javascript file
-          var js = readFile(path.join(pluginsDirectory, element, pluginFilename));
+          const js = readFile(path.join(pluginsDirectory, element, pluginFilename));
           //run the js file and call the function with the prepared parameters
           eval(js + ";" + plugin["events"][eventname] + "(" + sendargs + ")");
         }
@@ -65,7 +65,7 @@
     function getDirectories(dir) {
       try {
         return fs.readdirSync(dir).filter(function (file) {
-          var stat = fs.statSync(dir + '/' + file);
+          const stat = fs.statSync(dir + '/' + file);
           return stat.isDirectory();
         });
       } catch (e) {
@@ -74,7 +74,7 @@
     }
 
     function readFile(filename) {
-      var data = fs.readFileSync(filename, 'utf8');
+      const data = fs.readFileSync(filename, 'utf8');
       return data;
     }
   }

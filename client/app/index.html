@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" >
 <head>
   <title translate>Ark Client</title>
 
@@ -9,11 +8,11 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <link rel="stylesheet" href="assets/css/roboto.css" />
-  <link rel="stylesheet" href="assets/css/material-icons.css" />
-  <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
-  <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="assets/app.css" />
+  <link rel="stylesheet" href="assets/css/roboto.css"/>
+  <link rel="stylesheet" href="assets/css/material-icons.css"/>
+  <link rel="stylesheet" href="assets/css/angular-material.min.css"/>
+  <link href="assets/css/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="assets/css/app.css"/>
 
   <style type="text/css">
     html,
@@ -40,7 +39,7 @@
 
 </head>
 
-<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul"
+<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul"
   ng-cloak md-theme="ul.network.theme">
   <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
@@ -541,11 +540,11 @@
 
 
 
-          <md-tab>
-            <md-tab-label>
-              <translate>Votes</translate>
-            </md-tab-label>
-            <md-tab-body>
+        <md-tab>
+          <md-tab-label>
+            <translate>Votes</translate>
+          </md-tab-label>
+          <md-tab-body>
 
               <md-card ng-if="!ul.selected.virtual" flex="100">
                 <md-card-title>
@@ -1039,26 +1038,26 @@
       </md-content>
   </div>
 
-  <script src="dependencies.min.js"></script>
+<script src="vendor.js"></script>
+<script src="accounts/accounts.js"></script>
+<script src="accounts/accountController.js"></script>
+<script src="accounts/accountService.js"></script>
+<script src="accounts/accountFilters.js"></script>
+<script src="addressbook/addressbook.js"></script>
+<script src="addressbook/addressbookController.js"></script>
+<script src="coreServices/coreServices.js"></script>
+<script src="coreServices/storageService.js"></script>
+<script src="coreServices/networkService.js"></script>
+<script src="coreServices/changerService.js"></script>
+<script src="coreServices/ledgerService.js"></script>
+<script src="coreUtils/coreUtils.js"></script>
+<script src="coreUtils/validAmountDirective.js"></script>
+<script src="coreUtils/translationsRun.js"></script>
+<script src="qrScanner/qrScanner.js"></script>
+<script src="qrScanner/qrScannerDirective.js"></script>
+<script src="src/time/TimeService.js"></script>
 
-  <script src="src/translations.js"></script>
-  <script src="src/accounts/Accounts.js"></script>
-  <script src="src/storage/StorageService.js"></script>
-  <script src="src/accounts/AccountService.js"></script>
-  <script src="src/accounts/AccountController.js"></script>
-  <script src="src/network/NetworkService.js"></script>
-  <script src="src/plugin/pluginLoader.js"></script>
-  <script src="src/changer/ChangerService.js"></script>
-  <script src="src/ledger/LedgerService.js"></script>
-  <script src="src/directives.js"></script>
-  <script src="src/qrscanner/ScannerController.js"></script>
-  <script src="src/qrscanner/qrScanner.js"></script>
-  <script src="src/Addressbook/AddressbookController.js"></script>
-  <script src="src/time/TimeService.js"></script>
-
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 
 </body>
-
 </html>
