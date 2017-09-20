@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('arkclient.services')
+  angular.module('arkclient.addons')
     .service('pluginLoader', ['accountService', PluginLoader]);
 
   /**
