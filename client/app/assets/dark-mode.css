@@ -1,0 +1,153 @@
+body{
+  background: center center / cover rgb(44, 62, 80) !important;
+}
+
+body.md-default-theme, 
+body, 
+html.md-default-theme, 
+html
+{
+  background-color: #2C343E;
+  color: rgb(250, 250, 250);
+}
+
+md-sidenav-left.md-default-theme, 
+md-sidenav-left, 
+md-content.md-default-theme, 
+md-content, 
+md-menu-content.md-default-theme,
+md-menu-content,
+md-card-title.md-default-theme,
+md-card-title,
+md-sidenav.md-default-theme,
+md-sidenav
+{
+  background-color: #2C343E ;
+  color: rgb(250, 250, 250) ;
+}
+
+md-icon.md-default-theme, 
+md-icon,
+md-button label,
+md-button.md-default-theme label,
+md-menu-item button,
+md-menu-item.md-default-theme button,
+md-select-icon,
+md-select-icon.md-default-theme,
+th.md-column,
+md-tab-item,
+md-tab-item.md-default-theme,
+md-tabs.md-default-theme .md-tab, 
+md-tabs .md-tab,
+table.md-table th.md-column
+{
+  color: rgb(250, 250, 250);
+}
+
+*::-webkit-input-placeholder {
+  color: #616161 !important;
+}
+
+md-thumb {
+  background-color: #2C343E;
+}
+
+md-card.md-default-theme md-card-header md-card-header-text .md-subhead, md-card md-card-header md-card-header-text .md-subhead, md-card.md-default-theme md-card-title md-card-title-text:not(:only-child) .md-subhead, md-card md-card-title md-card-title-text:not(:only-child) .md-subhead
+{
+  color: rgb(250, 250, 250);
+}
+
+md-tabs.md-default-theme .md-tab.md-active, 
+md-tabs .md-tab.md-active, 
+md-tabs.md-default-theme .md-tab.md-active md-icon, 
+md-tabs .md-tab.md-active md-icon, 
+md-tabs.md-default-theme .md-tab.md-focused, 
+md-tabs .md-tab.md-focused, 
+md-tabs.md-default-theme .md-tab.md-focused md-icon, 
+md-tabs .md-tab.md-focused md-icon
+{
+  color: rgb(33,150,243);
+}
+
+md-dialog.md-default-theme, md-dialog {
+  color: rgb(250, 250, 250);
+  background-color: #2C343E;
+}
+
+.md-button {
+  color: rgb(250, 250, 250);
+}
+
+md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder, md-input-container.md-default-theme label, md-input-container label,
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, md-input-container:not(.md-input-invalid).md-input-has-value label
+{
+  color: rgb(250, 250, 250);
+}
+
+
+md-input-container.md-default-theme:not(.md-input-focused):not(.md-input-invalid) label.md-required:after, md-input-container:not(.md-input-focused):not(.md-input-invalid) label.md-required:after
+{
+  color: rgb(250, 250, 250);
+}
+
+md-input-container.md-default-theme .md-input, md-input-container .md-input {
+  color: rgb(250, 250, 250);
+  border-color: rgb(250, 250, 250);
+}
+
+md-checkbox.md-default-theme .md-ink-ripple, md-checkbox .md-ink-ripple {
+  color: rgb(250, 250, 250);
+}
+
+md-checkbox.md-default-theme[disabled]:not(.md-checked) .md-icon, md-checkbox[disabled]:not(.md-checked) .md-icon
+{
+  border-color: rgb(250, 250, 250);
+}
+
+[disabled] md-input-container.md-default-theme .md-input, [disabled] md-input-container .md-input, md-input-container.md-default-theme .md-input[disabled], md-input-container .md-input[disabled]
+{
+  color: rgb(250, 250, 250);
+  border-bottom-color: transparent;
+  background-image: linear-gradient(90deg,rgb(250,250,250) 0,rgb(250,250,250) 33%,transparent 0);
+}
+
+.md-button.md-default-theme.md-accent[disabled] md-icon, .md-button.md-accent[disabled] md-icon, .md-button.md-default-theme.md-fab[disabled] md-icon, .md-button.md-fab[disabled] md-icon, .md-button.md-default-theme.md-raised[disabled] md-icon, .md-button.md-raised[disabled] md-icon, .md-button.md-default-theme.md-warn[disabled] md-icon, .md-button.md-warn[disabled] md-icon, .md-button.md-default-theme[disabled] md-icon, .md-button[disabled] md-icon
+{
+  color: #616161;
+}
+
+md-input-container:not(.md-input-has-value) input:not(:focus) 
+{
+  color: rgb(250, 250, 250);
+}
+
+.md-button.md-default-theme.md-accent[disabled], .md-button.md-accent[disabled], .md-button.md-default-theme.md-fab[disabled], .md-button.md-fab[disabled], .md-button.md-default-theme.md-raised[disabled], .md-button.md-raised[disabled], .md-button.md-default-theme.md-warn[disabled], .md-button.md-warn[disabled], .md-button.md-default-theme[disabled], .md-button[disabled] {
+  color: #616161;
+}
+
+md-bottom-sheet.md-grid{
+  background-color: #2C343E;
+}
+
+md-select.md-default-theme .md-select-value.md-select-placeholder, md-select .md-select-value.md-select-placeholder
+{
+  color: rgb(250, 250, 250);
+}
+
+md-select.md-default-theme .md-select-value, 
+md-select .md-select-value,
+md-select.md-default-theme .md-select-icon, 
+md-select .md-select-icon
+{
+  color: rgb(250, 250, 250);
+}
+
+md-select.md-default-theme:not([disabled]):focus .md-select-value,
+md-select:not([disabled]):focus .md-select-value
+{
+  color: rgb(250, 250, 250);
+}
+
+#vote-help {
+  color: #ACACAC;
+}

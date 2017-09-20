@@ -209,6 +209,8 @@
 
     self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
     self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
+    self.darkMode = storageService.get("darkMode") || false;
+    self.toggleDarkMode = toggleDarkMode;
     self.manageBackgrounds = manageBackgrounds;
     self.manageNetworks = manageNetworks;
     self.openPassphrasesDialog = openPassphrasesDialog;
@@ -806,6 +808,43 @@
 
     function togglePlayFundsReceivedSong(status) {
       storageService.set('playFundsReceivedSong', self.playFundsReceivedSong, true);
+    }
+
+    function toggleDarkMode(){
+      var currentNetwork = networkService.getNetwork();
+
+      if(self.darkMode){
+
+        if(typeof currentNetwork !== 'undefined'){
+          storageService.set('storedTheme', currentNetwork.theme, true);
+          storageService.set('storedBackground', currentNetwork.background, true);
+
+          currentNetwork.theme = 'default';
+          currentNetwork.background = '#2C3E50';
+        }
+        
+        turnOnDarkMode();
+      }
+      else{
+        var theme = storageService.get('storedTheme');
+        var background = storageService.get('storedBackground');
+
+        if(typeof theme !== 'undefined'){
+          if(typeof currentNetwork !== 'undefined'){
+            currentNetwork.theme = theme;
+          }
+        }
+
+        if(typeof background !== 'undefined'){
+          if(typeof currentNetwork !== 'undefined'){
+            currentNetwork.background = background;
+          }
+        }
+
+        turnOffDarkMode();
+      }
+
+      storageService.set('darkMode', self.darkMode, true);
     }
 
     /**
