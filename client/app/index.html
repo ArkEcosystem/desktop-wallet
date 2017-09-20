@@ -40,8 +40,8 @@
 
 </head>
 
-<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul"
-  ng-cloak md-theme="ul.network.theme">
+<body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul"
+  ng-cloak md-theme="ul.network.theme" background-style="ul.network.background">
   <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
       <img src="ark.png" alt="" height="30">
