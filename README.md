@@ -73,6 +73,13 @@ brew tap Homebrew/bundle
 brew bundle
 ```
 
+## Development
+
+It is possible to execute a script to reload the [Electron](https://electron.atom.io/) application on changes:
+```bash
+npm run-script live-reload
+```
+
 ## Authors
 - FX Thoorens <fx@ark.io>
 - Guillaume Verbal <doweig@ark.io>
