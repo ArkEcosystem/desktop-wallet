@@ -47,7 +47,7 @@ var themes = {
 };
 
 angular
-  .module('arkApp', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext', 'monospaced.qrcode'])
+  .module('arkApp', ['ngMaterial', 'md.data.table', 'arkclient', 'gettext', 'monospaced.qrcode', 'arkclient.components'])
   .config(function($provide, $mdThemingProvider, $mdIconProvider) {
     $mdIconProvider
       .defaultIconSet("./assets/svg/avatars.svg", 128)
