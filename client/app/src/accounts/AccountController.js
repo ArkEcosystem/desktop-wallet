@@ -396,7 +396,7 @@
     self.getMarketInfo(self.selectedCoin);
 
     var setExchangBuyExpirationProgress = function(timestamp){
-      
+
     }
 
     self.buy = function() {
@@ -428,7 +428,7 @@
                   self.exchangeHistory = changerService.getHistory();
                 },
                 function(data) {
-    
+
                 },
                 function(data) {
                   if (data.payee && self.exchangeBuy.payee != data.payee) {
@@ -439,14 +439,14 @@
                   }
                 }
               );
-    
+
             }, function(error) {
               formatAndToastError(error, 10000);
               self.exchangeBuy = null;
             });
             }
           )
-          
+
       });
 
     };
@@ -516,7 +516,7 @@
                 completeExchangeSell(timestamp);
               }
             )
-            
+
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -595,6 +595,14 @@
       return (self.myAccounts().reduce(function(memo, acc) {
         return memo + parseInt(acc.balance);
       }, 0) / 100000000).toFixed(2);
+    }
+
+    // Function to return the accounts total balance in the selected currency.
+    self.myAccountsCurrencyBalance = function() {
+        var currencyBalance = self.myAccountsBalance()*self.connectedPeer.market.price[self.currency.name];
+        currencyBalance = currencyBalance.toFixed(2); //fix to 2 decimal strings
+        currencyBalance = Number(currencyBalance).toLocaleString('en'); // TODO: Update for any locale?
+        return currencyBalance;
     }
 
     self.otherAccounts = function() {
