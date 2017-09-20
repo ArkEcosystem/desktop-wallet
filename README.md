@@ -1,5 +1,10 @@
 # Multi Platform Ark Lite Client
 
+## Pinned: Help us translating
+Collaborate to our OneSky project http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
+
+Please don't submit PR
+
 ## Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
