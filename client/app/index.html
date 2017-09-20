@@ -40,7 +40,7 @@
 
 </head>
 
-<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul"
+<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul"
   ng-cloak md-theme="ul.network.theme">
   <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
@@ -1046,9 +1046,10 @@
   </div>
 
   <script src="dependencies.min.js"></script>
-
   <script src="src/translations.js"></script>
-  <script src="src/accounts/Accounts.js"></script>
+
+  <script src="src/init.js"></script>
+
   <script src="src/storage/StorageService.js"></script>
   <script src="src/accounts/AccountService.js"></script>
   <script src="src/accounts/AccountController.js"></script>
@@ -1056,15 +1057,12 @@
   <script src="src/plugin/pluginLoader.js"></script>
   <script src="src/changer/ChangerService.js"></script>
   <script src="src/ledger/LedgerService.js"></script>
-  <script src="src/directives.js"></script>
 
-  <script src="src/components/components.js"></script>
   <script src="src/components/qrScanner/qrScannerController.js"></script>
   <script src="src/components/qrScanner/qrScannerDirective.js"></script>
   <script src="src/components/addressBook/addressBookController.js"></script>
 
   <script src="src/time/TimeService.js"></script>
-
 
   <script src="app.js"></script>
 

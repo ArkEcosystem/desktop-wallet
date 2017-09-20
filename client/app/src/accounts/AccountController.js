@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('arkclient')
+    .module('arkclient.accounts')
     .controller('AccountController', [
       'accountService',
       'networkService',
