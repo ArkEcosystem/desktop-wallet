@@ -3,7 +3,7 @@
 
   /*
    * This directive establishes the body background (color or texture).
-   * If that background is a texture, it could be configured to set a CSS class too.
+   * If that background is a texture, it could be configured to use a CSS class too.
    *
    * Since some background textures have light colors, they could use it to
    * customize other elements, such as buttons that would not be distinguishable
@@ -19,10 +19,16 @@
           // This is the custom configuration of textures
           var textures = {
             'Ahoy.jpg': {
-              cssClass: 'pale-background-texture',
+              cssClass: 'too-pale-background-texture',
             },
             'Alchemy.gif': {
-              cssClass: 'pale-background-texture',
+              cssClass: 'too-pale-background-texture',
+            },
+            'Isometropolis.png': {
+              cssClass: 'too-pale-background-texture',
+            },
+            'Subway Lines.png': {
+              cssClass: 'too-pale-background-texture',
             }
           };
 

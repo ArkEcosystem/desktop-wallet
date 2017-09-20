@@ -42,7 +42,7 @@
 
 <body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul"
   ng-cloak md-theme="ul.network.theme" background-style="ul.network.background">
-  <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
+  <md-toolbar>
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
       <img src="ark.png" alt="" height="30">
       <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong></md-button>
@@ -324,7 +324,7 @@
     </div>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list>
           <md-list-item>
             <div>
@@ -346,7 +346,7 @@
           </md-list-item>
         </md-list>
       </md-content>
-      <md-content id="home-box-network" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+      <md-content id="home-box-network" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list flex>
           <md-list-item>
             <b translate>Network</b>
