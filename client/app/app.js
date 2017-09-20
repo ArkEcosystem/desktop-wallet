@@ -6,7 +6,6 @@ var modules = [
   'md.data.table',
   'gettext',
   'monospaced.qrcode',
-  'arkclient',
   'arkclient.filters',
   'arkclient.services',
   'arkclient.components',
