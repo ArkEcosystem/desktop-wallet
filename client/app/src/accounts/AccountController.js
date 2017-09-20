@@ -122,6 +122,20 @@
       });
     };
 
+    self.clearData = function() {
+      var confirm = $mdDialog.confirm()
+        .title(gettextCatalog.getString('Are you sure?'))
+        .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
+        .ariaLabel(gettextCatalog.getString('Confirm'))
+        .ok(gettextCatalog.getString('Yes'))
+        .cancel(gettextCatalog.getString('Cancel'));
+
+      $mdDialog.show(confirm).then(function() {
+        storageService.clearData();
+        self.windowApp('reload');
+      });
+    };
+
     self.windowApp = function(action, args) {
       return require('electron').remote.getCurrentWindow()[action](args);
     };
