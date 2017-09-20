@@ -9,6 +9,7 @@
     "rebuild": "electron-rebuild --force --module_dir . -w node-hid ",
     "electron": "electron --version",
     "start": "electron main.js",
+    "live-reload": "LIVE_RELOAD=true electron main.js",
     "pack": "build --dir",
     "dist": "npm run dist:win && npm run dist:macos && npm run dist:linux && npm run dist:win32",
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
@@ -32,7 +33,8 @@
     "email": "fixcrypt@gmail.com",
     "url": "https://github.com/fix"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
@@ -59,6 +61,7 @@
     "electron": "^1.7.5",
     "electron-builder": "^19.20.1",
     "electron-rebuild": "^1.6.0",
+    "elemon": "^5.0.3",
     "grunt": "~1.0.1",
     "grunt-angular-gettext": "^2.3.6",
     "grunt-contrib-jshint": "~1.1.0",
