@@ -1400,7 +1400,7 @@
         images: {}
       };
 
-      var imgPath = 'assets/img';
+      var imgPath = 'assets/images';
       var assetsPath = path.resolve(__dirname, imgPath);
 
       // find files in directory with same key
@@ -1413,7 +1413,7 @@
             var stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
 
             if (stat.isFile()) {
-              var url = path.join(imgPath, folder, file); // ex: assets/img/textures/file.png
+              var url = path.join(imgPath, folder, file); // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, "/");
               var name = path.parse(file).name; // remove extension
               image[name] = `url('${url}')`;

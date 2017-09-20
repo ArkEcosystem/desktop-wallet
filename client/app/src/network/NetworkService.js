@@ -92,7 +92,7 @@
             exchanges: {
               changer: "ark_ARK"
             },
-            background: "url(assets/img/images/Ark.jpg)",
+            background: "url(assets/images/images/Ark.jpg)",
             theme: "default"
           },
           devnet: {
