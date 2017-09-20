@@ -1823,6 +1823,21 @@
         preserveScope: true,
         scope: $scope
       });
+
+      $scope.showConfirm = function(ev) {
+        var confirm = $mdDialog.confirm()
+          .title(gettextCatalog.getString('Are you sure?'))
+          .textContent(gettextCatalog.getString('Fee (Ѧ)') + ': ' + 5)
+          .targetEvent(ev)
+          .ok(gettextCatalog.getString('Create'))
+          .cancel(gettextCatalog.getString('Cancel'));
+
+        $mdDialog.show(confirm).then(function() {
+          next();
+        }, function() {
+          cancel();
+        });
+      }
     };
 
     /**

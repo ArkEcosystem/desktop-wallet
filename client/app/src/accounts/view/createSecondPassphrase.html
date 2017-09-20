@@ -18,6 +18,9 @@
                 <translate>Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!</translate>
                 <br/>
                 <translate>After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client.</translate>
+                <br/>
+                <br/>
+                <translate>Fee (Ѧ)</translate>: 5
               </span>
             </md-card-title-text>
           </md-card-title>
@@ -44,7 +47,7 @@
       <md-button ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()">
         <translate>Next</translate>
       </md-button>
-      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()">
+      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="showConfirm($event)">
         <translate>Create</translate>
       </md-button>
       <md-button ng-click="createSecondPassphraseDialog.cancel()" style="margin-right:20px;">
