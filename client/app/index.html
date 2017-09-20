@@ -113,7 +113,7 @@
                   <translate>Create Account</translate>
                 </md-button>
               </md-list-item>
-              <md-list-item ng-controller="AddressBookController as ab">
+              <md-list-item ng-controller="AddressbookController as ab">
                 <md-button class="md-button" ng-click="ab.addAddressbookContact()">
                   <md-icon md-font-library="material-icons">library_add</md-icon>
                   <translate>Add Contact</translate>
@@ -377,7 +377,7 @@
     <md-content flex layout="row">
 
       <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
-        <md-list md-no-ink ng-controller="AddressBookController as ab">
+        <md-list md-no-ink ng-controller="AddressbookController as ab">
           <md-list-item ng-if="ul.ledger.connected">
             <h2 translate>
               Ledger Nano S
@@ -425,7 +425,7 @@
             </span>
           </md-list-item>
           <md-list-item>
-            <md-button class="watch-only-address" ng-controller="AddressBookController as ab" ng-click="ab.addAddressbookContact()">
+            <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
               <md-icon md-font-library="material-icons">add</md-icon>
               <translate>Add Contact</translate>
 
@@ -450,7 +450,7 @@
               <md-icon md-font-library="material-icons">more_vert</md-icon>
             </md-button>
           </div>
-          <div class="share" ng-if="!ul.selected.virtual" ng-controller="AddressBookController as ab">
+          <div class="share" ng-if="!ul.selected.virtual" ng-controller="AddressbookController as ab">
             <md-button md-no-ink ng-click="ul.exportAccount(ul.selected)" aria-label="Export Account">
               <md-icon md-font-library="material-icons">file_download</md-icon>
               <md-tooltip>
@@ -472,7 +472,7 @@
                   <!--<md-button class="md-fab md-primary md-mini" ng-click="ul.openPassphrasesDialog(ul.selected)">
                     <md-icon md-font-library="material-icons">lock</md-icon>
                   </md-button>-->
-                  <span class="delegate-name" ng-controller="AddressBookController as ab">{{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}</span>
+                  <span class="delegate-name" ng-controller="AddressbookController as ab">{{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}</span>
               <br>
               <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}">
                 <md-icon>content_copy</md-icon> {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
@@ -1046,7 +1046,7 @@
   </div>
 
   <script src="dependencies.min.js"></script>
-  <script src="src/translations.js"></script>
+  <script src="src/utils/translations.js"></script>
 
   <script src="src/init.js"></script>
   <script src="src/filters/filters.js"></script>
@@ -1062,12 +1062,12 @@
   <script src="src/accounts/account.service.js"></script>
   <script src="src/accounts/account.controller.js"></script>
   
-  <script src="src/directives/validAmount.js"></script>
-  <script src="src/directives/copyToClipboard.js"></script>
+  <script src="src/directives/validAmount.directive.js"></script>
+  <script src="src/directives/copyToClipboard.directive.js"></script>
 
-  <script src="src/components/qrScanner/qrScannerController.js"></script>
-  <script src="src/components/qrScanner/qrScannerDirective.js"></script>
-  <script src="src/components/addressBook/addressBookController.js"></script>
+  <script src="src/components/qrScanner/qrScanner.controller.js"></script>
+  <script src="src/components/qrScanner/qrScanner.directive.js"></script>
+  <script src="src/components/addressbook/addressbook.controller.js"></script>
 
   <script src="app.js"></script>
 
