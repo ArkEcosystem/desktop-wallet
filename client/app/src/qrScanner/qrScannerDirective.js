@@ -1,20 +1,19 @@
-(function(){
+(function() {
   'use strict';
 
   angular.module('arkclient.qrScanner').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', '$mdToast', qrScanner]);
 
   function qrScanner($rootScope, $timeout, $mdDialog, $mdToast) {
 
-    function controller ($scope) {
+    function controller($scope) {
 
-      $scope.hasWebcam = function()
-      {
+      $scope.hasWebcam = function() {
         navigator.mediaDevices.enumerateDevices()
-        .then(function(MediaDeviceInfo) {
-          MediaDeviceInfo.forEach(function(info) {
-            if (info.kind === 'videoinput') return true;
-          });
-        })
+          .then(function(MediaDeviceInfo) {
+            MediaDeviceInfo.forEach(function(info) {
+              if (info.kind == 'videoinput') return true;
+            });
+          })
 
         return false;
       };
@@ -23,14 +22,14 @@
         if (typeof(result.type) !== 'undefined') {
           $mdToast.show(
             $mdToast.simple()
-                  .textContent(`The ${result.type} ${result.qr} has been successfully scanned.`)
-                  .hideDelay(5000)
+            .textContent(`The ${result.type} ${result.qr} has been successfully scanned.`)
+            .hideDelay(5000)
           );
         };
 
         $scope.$parent.send.data[$scope.inputCallback] = result.qr;
 
-        $timeout(function () {
+        $timeout(function() {
           $mdDialog.hide();
         }, 100);
       };
@@ -38,12 +37,12 @@
       $scope.onError = function(error) {
         $mdToast.show(
           $mdToast.simple()
-            .textContent(error.error)
-            .hideDelay(5000)
-            .theme('error')
+          .textContent(error.error)
+          .hideDelay(5000)
+          .theme('error')
         );
 
-        $timeout(function () {
+        $timeout(function() {
           $mdDialog.hide();
         }, 100);
       };
@@ -52,11 +51,11 @@
         $scope.onError(error);
       };
 
-      $scope.closeDialog = function () {
+      $scope.closeDialog = function() {
         $mdDialog.hide();
       };
 
-      $scope.openScanner = function (evt) {
+      $scope.openScanner = function(evt) {
         $mdDialog.show({
           parent             : angular.element(document.getElementById('app')),
           templateUrl        : 'src/qrScanner/view/scanner.html',
@@ -79,7 +78,7 @@
       },
       controller: controller,
       replace: true,
-      template: '<button class="md-button md-primary" ng-click="openScanner($event)" ng-disabled="hasWebcam()">QR Code</md-button>'
+      template: '<md-icon aria-label="Scan QR Code" style="cursor: pointer;outline: none" md-svg-icon="qrcode" ng-click="openScanner($event)" ng-disabled="hasWebcam()"></md-icon>'
     }
 
   }

@@ -1,4 +1,4 @@
-(function(){
+(function() {
   'use strict';
 
   let ipcRenderer = require('electron').ipcRenderer;
@@ -12,7 +12,7 @@
    * NetworkService
    * @constructor
    */
-  function LedgerService($q,$http,$timeout,storageService){
+  function LedgerService($q, $http, $timeout, storageService) {
 
     function deriveAddress(path){
       return ipcRenderer.sendSync('ledger', {
@@ -21,56 +21,55 @@
       });
     }
 
-    function getBip44Accounts(){
-      let accounts = [];
-      let account_index = 0;
-      let address_index = 0;
-      let path = "44'/111'/";
-      let empty = false;
+    function getBip44Accounts() {
+      var accounts = [];
+      var account_index = 0;
+      var address_index = 0;
+      var path = "44'/111'/";
+      var empty = false;
 
-      while(!empty){
-        let localpath = path + account_index + "'/0/" + address_index;
-        let result = ipcRenderer.sendSync('ledger', {
+      while (!empty) {
+        var localpath = path + account_index + "'/0/" + address_index;
+        var result = ipcRenderer.sendSync('ledger', {
           action: "getAddress",
           path: localpath
         });
-        if(result.address){
+        if (result.address) {
           result.address = arkjs.crypto.getAddress(result.publicKey);
           account_index = account_index + 1;
 
-          let account = storageService.get(result.address);
-          if(account && !account.cold){
-            account.virtual = storageService.get("virtual-"+result.address);
-            if(!account.virtual){
+          var account = storageService.get(result.address);
+          if (account && !account.cold) {
+            account.virtual = storageService.get("virtual-" + result.address);
+            if (!account.virtual) {
               account.virtual = [];
-              storageService.set("virtual-"+result.address,account.virtual);
+              storageService.set("virtual-" + result.address, account.virtual);
             }
             account.ledger = localpath;
+            account.publicKey = result.publicKey;
             storageService.set(result.address, account);
             accounts.push(account);
-          }
-          else{
+          } else {
             result.ledger = localpath;
             result.cold = true;
-            result.virtual = storageService.get("virtual-"+result.address);
-            if(!result.virtual){
+            result.virtual = storageService.get("virtual-" + result.address);
+            if (!result.virtual) {
               result.virtual = [];
-              storageService.set("virtual-"+result.address,result.virtual);
+              storageService.set("virtual-" + result.address, result.virtual);
             }
             storageService.set(result.address, result);
             accounts.push(result);
             empty = true;
           }
-        }
-        else {
+        } else {
           empty = true;
         }
       }
       return accounts;
     }
 
-    function recoverBip44Accounts(backupLedgerPassphrase){
-      let hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
+    function recoverBip44Accounts(backupLedgerPassphrase) {
+      var hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
 
       let accounts = [];
       let account_index = 0;
@@ -78,19 +77,18 @@
       let path = "44'/111'/";
       let empty = false;
 
-      while(!empty){
-        let localpath = path + account_index + "'/0/" + address_index;
-        let keys = hdnode.derivePath(localpath).keyPair;
-        let address = keys.getAddress();
+      while (!empty) {
+        var localpath = path + account_index + "'/0/" + address_index;
+        var keys = hdnode.derivePath(localpath).keyPair;
+        var address = keys.getAddress();
         account_index = account_index + 1;
-        let account = storageService.get(address);
-        if(account && !account.cold){
+        var account = storageService.get(address);
+        if (account && !account.cold) {
           account.ledger = localpath;
           storageService.set(address, account);
           accounts.push(account);
-        }
-        else{
-          let result = {
+        } else {
+          var result = {
             address: address,
             publicKey: keys.getPublicKeyBuffer().toString("hex"),
             ledger: localpath,
@@ -104,13 +102,12 @@
       return accounts;
     }
 
-    function signTransaction(path, transaction){
-      let deferred = $q.defer();
-      ipcRenderer.once('transactionSigned', function(event, result){
-        if(result.error){
+    function signTransaction(path, transaction) {
+      var deferred = $q.defer();
+      ipcRenderer.once('transactionSigned', function(event, result) {
+        if (result.error) {
           deferred.reject(result.error)
-        }
-        else{
+        } else {
           deferred.resolve(result);
         }
       });
@@ -122,16 +119,15 @@
       return deferred.promise;
     }
 
-    function signMessage(path, message){
-      let deferred = $q.defer();
-      let crypto = require("crypto");
-      let hash = crypto.createHash('sha256');
-      hash = hash.update(new Buffer(message,"utf-8")).digest();
-      ipcRenderer.once('messageSigned', function(event, result){
-        if(result.error){
+    function signMessage(path, message) {
+      var deferred = $q.defer();
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
+      hash = hash.update(new Buffer(message, "utf-8")).digest();
+      ipcRenderer.once('messageSigned', function(event, result) {
+        if (result.error) {
           deferred.reject(result.error)
-        }
-        else{
+        } else {
           deferred.resolve(result);
         }
       });

@@ -1,4 +1,4 @@
-<md-dialog aria-label="Add Delegate" ng-cloak>
+<md-dialog aria-label="Add Delegate" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -42,11 +42,11 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="addDelegateDialog.cancel()" >
-        <translate>Close</translate>
-      </md-button>
       <md-button class="md-primary" ng-click="addDelegateDialog.add()" style="margin-right:20px;">
         <translate>Add Delegate</translate>
+      </md-button>
+      <md-button ng-click="addDelegateDialog.cancel()">
+        <translate>Close</translate>
       </md-button>
     </md-dialog-actions>
   </form>

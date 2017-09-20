@@ -1,4 +1,4 @@
-<md-dialog aria-label="Timestamp Document" ng-cloak>
+<md-dialog aria-label="Timestamp Document" ng-cloak md-theme="ul.network.theme">
   <form name="timestampDocumentForm" ng-submit="send.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -41,15 +41,16 @@
           <label translate>Passphrase</label>
           <input ng-model="send.data.passphrase" type="password" ng-required="true">
         </md-input-container>
-        <md-input-container ng-if="!send.data.ledger" class="md-block" ng-if="send.data.secondSignature">
+        <md-input-container ng-if="!send.data.ledger && send.data.secondSignature" class="md-block">
           <label translate>Second Passphrase</label>
           <input ng-model="send.data.secondpassphrase" type="password" ng-required="true">
         </md-input-container>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row" style="padding-left: 20px">
-      <span flex></span> <!-- workaround for pull first item on left -->
-      <md-button type="submit" ng-disabled="sendArkForm.$invalid">
+      <span flex></span>
+      <!-- workaround for pull first item on left -->
+      <md-button type="submit" ng-disabled="sendArkForm.$invalid" md-colors="{background:'primary'}">
         <translate ng-if="!send.data.ledger">Next</translate>
         <translate ng-if="send.data.ledger">Sign with Ledger</translate>
       </md-button>

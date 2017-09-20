@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-03-24 07:17+0000\n"
-"PO-Revision-Date: 2017-03-24 07:17+0000\n"
+"POT-Creation-Date: 2017-09-04 12:36+0000\n"
+"PO-Revision-Date: 2017-09-04 12:36+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: bg_BG\n"
@@ -10,6 +10,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "If you own this account, you can enable Voting"
+msgstr "Ако този акаунт е ваш, можете да разрешите гласуването"
+
+msgid "This account already has a second passphrase:"
+msgstr "Този профил вече има втора фраза за достъп:"
+
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Гласуването е незадължителен, но важен механизъм, който запазва сигурността на Арк мрежата.\n51-те делегати с най-много гласове от мрежата са отговорни за проверката и изковаването на транзакции в нови блокове.\nТази страница може да се използва за гласуване на делегат, който подкрепяте."
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "Трябва да имате поне 5 ARK, за да създадете втора фраза за достъп"
+
+msgid "Cannot get registered delegates"
+msgstr "Няма достъп до регистрирани делегати"
+
+msgid "Client"
+msgstr "Абонат"
+
+msgid "Coming Soon"
+msgstr "Очаквайте скоро"
+
+msgid "Confirm"
+msgstr "Потвърдете"
+
+msgid "Contacts"
+msgstr "Контакти"
+
+msgid "Copy"
+msgstr "Копирайте"
+
+msgid "Edit Contact"
+msgstr "Редактирайте контакта"
+
+msgid "Enable Signing"
+msgstr "Активирайте подписване"
+
+msgid "Error in signature processing"
+msgstr "Грешка при обработката на подписа"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Force"
+msgstr "Сила"
+
+msgid "If you own this account, you can enable Message Signing"
+msgstr "Ако притежавате този профил, можете да активирате Подпис на Съобщения"
+
+msgid "Ledger Nano S"
+msgstr "Ledger Nano S"
+
+msgid "Market"
+msgstr "Пазар"
+
+msgid "Message"
+msgstr "Съобщение"
+
+msgid "Name"
+msgstr "Име"
+
+msgid "Network removed succesfully!"
+msgstr "Мрежата бе премахната успешно!"
+
+msgid "Ok"
+msgstr "Ок"
+
+msgid "Open File"
+msgstr "Отворете файл"
+
+msgid "Peer Status"
+msgstr "Състояние на Връстника"
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Моля, изберете файла, който да бъде време-напечатан върху блока."
+
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Моля първо НАПРАВЕТЕ БЕЗОПАСНО РЕЗЕРВНО КОПИЕ НА ФРАЗАТА ЗА ДОСТЪП, този абонат НЕ я складира, затова не може да ви възвърне фразата за достъп."
 
 msgid "Account added!"
 msgstr "Акаунта е добавен!"
@@ -248,8 +326,8 @@ msgstr "Паролите са запазени"
 msgid "Peer"
 msgstr "Пиър"
 
-msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Моля първо ЗАПИШЕТЕ НА СИГУРНО МЯСТО паролата си. Този клиент НЕ съхранява пароли и няма начин те да бъдат възстановени."
+msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Съхранявайте паролата си на сигурно място. Този клиент НЕ съхранява пароли и няма начин те да бъдат възстановени."
 
 msgid "Please enter a folder name."
 msgstr "Въведете име на папка"
@@ -327,7 +405,7 @@ msgid "The destination address"
 msgstr "Адресът на получателя"
 
 msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "Този адрес никога не е бил въвеждан в мрежата. Тоеа е \"студен\" портфейл,"
+msgstr "Този адрес никога не е бил въвеждан в мрежата. Тоеа е \"студен\" портфейл"
 
 msgid "To"
 msgstr "До"
@@ -398,8 +476,3 @@ msgstr "за да гласувате ви трябва поне 1 ARK"
 msgid "you need at least 25 ARK to register delegate"
 msgstr "за регистрация на делегат трябва да имате 25 ARK"
 
-msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
-msgstr "Моля въведете дума 3, 6 и 9 от оригиналната парола за да потвърдите създаването на акаунта."
-
-msgid "The words does not match the original passphrase."
-msgstr "Думите не съвпадат с оригиналната парола."

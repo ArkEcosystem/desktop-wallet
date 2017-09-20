@@ -1,21 +1,22 @@
 {
   "name": "ArkClient",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "productName": "ArkClient",
   "description": "Ark Desktop",
   "main": "main.js",
   "scripts": {
-    "postinstall": "cd client && npm install && npm run bundle && cd .. && electron-rebuild --force",
-    "rebuild": "electron-rebuild --force",
+    "postinstall": "cd client && npm install && npm run bundle && cd .. && electron-builder install-app-deps && npm run rebuild",
+    "rebuild": "electron-rebuild --force --module_dir . -w node-hid ",
     "electron": "electron --version",
     "start": "electron main.js",
-    "pack": "build --target dir",
+    "pack": "build --dir",
     "dist": "npm run dist:win && npm run dist:macos && npm run dist:linux && npm run dist:win32",
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
-    "dist:win": "build --win --x64",
+    "dist:win": "build --win",
     "dist:win32": "build --win --ia32",
     "dist:macos": "build --macos",
-    "dist:linux": "build --linux deb tar.xz"
+    "dist:linux": "build --linux",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,11 @@
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
+    },
+    {
+      "name": "Lucio Rubens",
+      "email": "lucio@ark.io",
+      "url": "https://github.com/luciorubeens"
     }
   ],
   "license": "MIT",
@@ -44,20 +50,23 @@
   },
   "homepage": "https://github.com/fix/ark-desktop#readme",
   "dependencies": {
-    "about-window": "~1.6.1",
+    "about-window": "~1.7.0",
     "ledgerco": "github:ledgerhq/ledger-node-js-api#master",
     "q": "^1.5.0"
   },
   "devDependencies": {
-    "angular-gettext": "^2.3.10",
-    "electron": "^1.4.15",
-    "electron-builder": "^12.3.1",
-    "electron-rebuild": "^1.5.11",
-    "grunt": "~0.4.5",
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.20.1",
+    "electron-rebuild": "^1.6.0",
+    "grunt": "~1.0.1",
     "grunt-angular-gettext": "^2.3.6",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-nodeunit": "~1.0.0",
+    "grunt-contrib-uglify": "~3.0.1",
+    "mocha": "^3.5.0",
+    "spectron": "^3.7.2"
   },
   "build": {
     "appId": "com.arkwallet.liteclient",
@@ -65,11 +74,26 @@
       "category": "finance"
     },
     "win": {
-      "iconUrl": "https://ark.io/i/mediakit/icon_1.png"
+      "target": "nsis",
+      "icon": "build/icon.ico"
     },
     "linux": {
-      "synopsis": "A Lite Client used to securely connect to the Ark network and manage your Ark assets.",
-      "description": ""
+      "description": "A Lite Client used to securely connect to the Ark network and manage your Ark assets.",
+      "target": [
+        "deb",
+        "tar.xz"
+      ]
+    },
+    "deb": {
+      "synopsis": "Ark Desktop Wallet"
+    },
+    "dmg": {
+      "icon": "build/icon.icns"
+    },
+    "nsis": {
+      "perMachine": true,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
