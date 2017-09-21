@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('arkclient')
+    .module('arkclient.accounts')
     .controller('AccountController', [
       'accountService',
       'networkService',
@@ -33,58 +33,7 @@
 
         return username
       };
-    }]).filter('smallId', function(accountService) {
-      return function(fullId) {
-        return accountService.smallId(fullId)
-      }
-    }).filter('exchangedate', [function() {
-      return function(exchangetime) {
-        return new Date(exchangetime * 1000);
-      };
-    }]).filter('exchangedate', [function() {
-      return function(exchangetime) {
-        return new Date(exchangetime * 1000);
-      };
-    }]).filter('amountToCurrency', [function() {
-      return function(amount, scope) {
-        if (typeof amount === 'undefined' || amount == 0) return 0;
-        var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
-        return (amount * price).toFixed(5);
-      }
-    }]).directive('copyToClipboard', function($window, $mdToast) {
-      var body = angular.element($window.document.body);
-      var textarea = angular.element('<textarea/>');
-      textarea.css({
-        position: 'fixed',
-        opacity: '0'
-      });
-
-      function copy(toCopy) {
-        textarea.val(toCopy);
-        body.append(textarea);
-        textarea[0].select();
-
-        try {
-          var successful = document.execCommand('copy');
-          if (!successful) throw successful;
-        } catch (err) {
-          console.log("failed to copy", toCopy);
-        }
-        $mdToast.simple()
-          .textContent('Text copied to clipboard!')
-          .hideDelay(2000);
-        textarea.remove();
-      }
-
-      return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-          element.bind('click', function(e) {
-            copy(attrs.copyToClipboard);
-          });
-        }
-      }
-    });
+    }]);
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
@@ -1400,7 +1349,7 @@
         images: {}
       };
 
-      var imgPath = 'assets/img';
+      var imgPath = 'assets/images';
       var assetsPath = path.resolve(__dirname, imgPath);
 
       // find files in directory with same key
@@ -1413,7 +1362,7 @@
             var stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
 
             if (stat.isFile()) {
-              var url = path.join(imgPath, folder, file); // ex: assets/img/textures/file.png
+              var url = path.join(imgPath, folder, file); // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, "/");
               var name = path.parse(file).name; // remove extension
               image[name] = `url('${url}')`;

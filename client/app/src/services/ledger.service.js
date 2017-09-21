@@ -5,7 +5,7 @@
   var arkjs = require('arkjs');
   var bip39 = require('bip39');
 
-  angular.module('arkclient')
+  angular.module('arkclient.services')
     .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
 
   /**

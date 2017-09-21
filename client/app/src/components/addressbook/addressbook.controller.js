@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('arkclient')
+    .module('arkclient.components')
     .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", "accountService", AddressbookController]);
 
   function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog, accountService) {
@@ -97,7 +97,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/Addressbook/addAddressbookContact.html',
+        templateUrl: './src/components/addressbook/addContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -173,7 +173,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/Addressbook/editAddressbookContact.html',
+        templateUrl: './src/components/addressbook/editContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,

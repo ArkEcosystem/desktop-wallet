@@ -40,7 +40,7 @@
 
 </head>
 
-<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul"
+<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul"
   ng-cloak md-theme="ul.network.theme">
   <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
@@ -1046,22 +1046,28 @@
   </div>
 
   <script src="dependencies.min.js"></script>
+  <script src="src/utils/translations.js"></script>
 
-  <script src="src/translations.js"></script>
-  <script src="src/accounts/Accounts.js"></script>
-  <script src="src/storage/StorageService.js"></script>
-  <script src="src/accounts/AccountService.js"></script>
-  <script src="src/accounts/AccountController.js"></script>
-  <script src="src/network/NetworkService.js"></script>
-  <script src="src/plugin/pluginLoader.js"></script>
-  <script src="src/changer/ChangerService.js"></script>
-  <script src="src/ledger/LedgerService.js"></script>
-  <script src="src/directives.js"></script>
-  <script src="src/qrscanner/ScannerController.js"></script>
-  <script src="src/qrscanner/qrScanner.js"></script>
-  <script src="src/Addressbook/AddressbookController.js"></script>
-  <script src="src/time/TimeService.js"></script>
+  <script src="src/init.js"></script>
+  <script src="src/filters/filters.js"></script>
+  
+  <script src="src/addons/pluginLoader.addon.js"></script>
 
+  <script src="src/services/storage.service.js"></script>
+  <script src="src/services/network.service.js"></script>
+  <script src="src/services/changer.service.js"></script>
+  <script src="src/services/ledger.service.js"></script>
+  <script src="src/services/time.service.js"></script>
+  
+  <script src="src/accounts/account.service.js"></script>
+  <script src="src/accounts/account.controller.js"></script>
+  
+  <script src="src/directives/validAmount.directive.js"></script>
+  <script src="src/directives/copyToClipboard.directive.js"></script>
+
+  <script src="src/components/qrScanner/qrScanner.controller.js"></script>
+  <script src="src/components/qrScanner/qrScanner.directive.js"></script>
+  <script src="src/components/addressbook/addressbook.controller.js"></script>
 
   <script src="app.js"></script>
 

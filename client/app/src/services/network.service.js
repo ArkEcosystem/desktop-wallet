@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient')
+  angular.module('arkclient.services')
     .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService]);
 
   /**
@@ -92,7 +92,7 @@
             exchanges: {
               changer: "ark_ARK"
             },
-            background: "url(assets/img/images/Ark.jpg)",
+            background: "url(assets/images/images/Ark.jpg)",
             theme: "default"
           },
           devnet: {
