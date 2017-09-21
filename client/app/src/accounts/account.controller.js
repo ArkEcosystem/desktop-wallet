@@ -46,7 +46,7 @@
 
     var languages = {
       en: gettextCatalog.getString("English"),
-      ar: gettextCatalog.getString("Arab"),
+      ar: gettextCatalog.getString("Arabic"),
       bg_BG: gettextCatalog.getString("Bulgarian"),
       de: gettextCatalog.getString("German"),
       el: gettextCatalog.getString("Greek"),
@@ -59,15 +59,16 @@
       ko: gettextCatalog.getString("Korean"),
       nl: gettextCatalog.getString("Dutch"),
       pl: gettextCatalog.getString("Polish"),
-      pt_BR: gettextCatalog.getString("Portuguese"),
+      pt_BR: gettextCatalog.getString("Portuguese - Brazil"),
+      pt_PT: gettextCatalog.getString("Portuguese - Portugal"),
       ro: gettextCatalog.getString("Romanian"),
       ru: gettextCatalog.getString("Russian"),
       sk: gettextCatalog.getString("Slovak"),
       sl: gettextCatalog.getString("Slovenian"),
       sr: gettextCatalog.getString("Serbian"),
       sv: gettextCatalog.getString("Swedish"),
-      zh_CN: gettextCatalog.getString("Chinese simplified"),
-      zh_TW: gettextCatalog.getString("Chinese traditional")
+      zh_CN: gettextCatalog.getString("Chinese - China"),
+      zh_TW: gettextCatalog.getString("Chinese - Taiwan")
     };
 
     pluginLoader.triggerEvent("onStart");
@@ -544,6 +545,25 @@
       return (self.myAccounts().reduce(function(memo, acc) {
         return memo + parseInt(acc.balance);
       }, 0) / 100000000).toFixed(2);
+    }
+
+    //(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+    self.myAccountsCurrencyBalance = function() {
+      var currencyName = self.currency.name;
+      var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
+      var currencyBalance = self.myAccountsBalance() * price;
+      var languageCode = self.language.replace('_', '-');
+      var options = {
+        style: 'currency',
+        currency: currencyName,
+        currencyDisplay: 'symbol'
+      }
+
+      currencyBalance = Number(currencyBalance).toLocaleString(languageCode, options);
+      
+      if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
+
+      return currencyBalance;
     }
 
     self.otherAccounts = function() {

@@ -271,7 +271,7 @@
       <md-toolbar layout="row" md-scroll-shrink>
         <div class="md-toolbar-tools">
           <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.myAccountsCurrencyBalance()}}
           </h2>
           <span flex></span>
           <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
