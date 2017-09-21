@@ -97,7 +97,7 @@
                   <md-icon>flag</md-icon>
                   <label translate>Language</label>
                 </md-button>
-                <md-select style="margin: 0" class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                <md-select style="margin: 0" class="md-secondary" ng-model="ul.selectedLanguage" ng-init="ul.selectedLanguage = ul.getLanguage()" ng-change="ul.setLanguage()">
                   <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                 </md-select>
               </md-list-item>

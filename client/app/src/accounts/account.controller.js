@@ -94,9 +94,9 @@
     ];
 
     gettextCatalog.debug = false;
-    self.language = storageService.get("language");
-    if (!self.language) selectNextLanguage();
-    else gettextCatalog.setCurrentLanguage(self.language);
+    self.language = storageService.get("language") || "en";
+    self.selectedLanguage = self.language;
+    gettextCatalog.setCurrentLanguage(self.language);
 
     self.getLanguage = function() {
       return languages[self.language];
@@ -314,7 +314,7 @@
       return languages;
     }
 
-    $scope.setLanguage = function() {
+    self.setLanguage = function() {
       function getlanguage(value) {
         for (var prop in languages) {
           if (languages.hasOwnProperty(prop)) {
