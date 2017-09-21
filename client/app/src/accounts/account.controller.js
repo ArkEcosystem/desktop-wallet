@@ -21,6 +21,7 @@
       'gettextCatalog',
       '$mdThemingProvider',
       '$mdTheming',
+      '$window',
       AccountController
     ]).filter('accountlabel', ['accountService', function(accountService) {
       return function(address) {
@@ -41,7 +42,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
+  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window) {
     var self = this;
 
     var languages = {
@@ -101,6 +102,9 @@
       return languages[self.language];
     };
 
+    $window.onbeforeunload = function() {
+      storageService.saveState();
+    }
 
     self.closeApp = function() {
       var confirm = $mdDialog.confirm()

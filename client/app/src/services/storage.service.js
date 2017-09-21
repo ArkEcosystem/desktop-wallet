@@ -73,6 +73,7 @@
     }
 
     function clearData() {
+      storage = {};
       window.localStorage.clear();
     }
 
