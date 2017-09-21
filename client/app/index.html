@@ -176,8 +176,11 @@
           <md-menu-content flex layout-padding width="6">
             <md-list>
               <md-list-item>
-                <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-                <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+                <div>
+                  <b><translate>Price</translate></b>
+                </div>
+
+                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
@@ -307,8 +310,11 @@
         md-whiteframe="3">
         <md-list>
           <md-list-item>
-            <b><translate>Price</translate> ({{ul.currency.symbol}})</b>
-            <md-button class="md-secondary" aria-label="Change Currency" md-prevent-menu-close ng-click="ul.changeCurrency()">{{ul.connectedPeer.market.price[ul.currency.name]}}</md-button>
+            <div>
+              <b><translate>Price</translate></b>
+            </div>
+
+            <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>
