@@ -174,6 +174,7 @@
     self.currency = storageService.get("currency") || {name:"btc",symbol:"Ƀ"};
     self.switchNetwork = networkService.switchNetwork;
     self.network = networkService.getNetwork();
+    self.listNetworks = networkService.getNetworks();
     self.marketinfo= {};
     self.exchangeHistory=changerService.getHistory();
     self.selectedCoin=storageService.get("selectedCoin") || "bitcoin_BTC";
@@ -1109,6 +1110,7 @@
         $mdDialog.hide();
         for(var network in $scope.send.networks){
           networkService.setNetwork(network, $scope.send.networks[network]);
+          self.listNetworks = networkService.getNetworks();
         }
         window.location.reload();
       };
