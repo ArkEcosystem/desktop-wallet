@@ -101,6 +101,11 @@
       ru:gettextCatalog.getString("Russian")
     };
 
+    self.currencies = [
+      { name: "usd", symbol: "$" },
+      { name: "btc", symbol: "Ƀ" },
+      { name: "eur", symbol: "€" }
+    ];    
 
     gettextCatalog.debug = false;
     self.language  = storageService.get("language");
@@ -258,6 +263,24 @@
           .textContent(gettextCatalog.getString('Copied to clipboard'))
           .hideDelay(5000)
       );
+    }
+
+    self.selectAllLanguages = function() {
+      return languages;
+    }
+
+    $scope.setLanguage = function() {
+      function getlanguage(value) {
+        for (var prop in languages) {
+          if (languages.hasOwnProperty(prop)) {
+            if (languages[prop] === value)
+              return prop;
+          }
+        }
+      }
+      self.language = getlanguage(this.selectedLanguage);
+      storageService.set("language", self.language);
+      gettextCatalog.setCurrentLanguage(self.language);
     }
 
     function selectNextLanguage(){
@@ -485,23 +508,29 @@
     };
 
 
+    self.changeCurrency = function() {
+      if (self.currency == undefined) self.currency = currencies[0];
+      storageService.set("currency", self.currency);
+    };
+
+    /*
     self.changeCurrency=function(){
       var currencies=[
         {name:"btc",symbol:"Ƀ"},
         {name:"usd",symbol:"$"},
-        {name:"eur",symbol:"€"}/*,
+        {name:"eur",symbol:"€"},
         {name:"cny",symbol:"CN¥"},
         {name:"cad",symbol:"Can$"},
         {name:"gbp",symbol:"£"},
         {name:"hkd",symbol:"HK$"},
         {name:"jpy",symbol:"JP¥"},
         {name:"rub",symbol:'\u20BD'},
-        {name:"aud",symbol:"A$"}*/
+        {name:"aud",symbol:"A$"}
       ];
       self.currency=currencies[currencies.map(function(x) {return x.name; }).indexOf(self.currency.name)+1];
       if(self.currency==undefined) self.currency=currencies[0];
       storageService.set("currency",self.currency);
-    };
+    };*/
 
     self.pickRandomPeer=function(){
       networkService.pickRandomPeer();

@@ -85,8 +85,22 @@
           <md-menu-content flex layout-padding width="6" style="min-height: 380px; overflow:hidden;">
             <md-list class="left-list">
               <md-list-item>
-                <b translate>Language</b>
-                <md-button class="md-secondary" aria-label="Change Language" md-prevent-menu-close ng-click="ul.selectNextLanguage()">{{ul.getLanguage()}}</md-button>
+                <md-button ng-disabled="true">
+                  <md-icon>attach_money</md-icon>
+                  <label translate>Currency</label>
+                </md-button>
+                <md-select style="margin: 0;text-transform: uppercase" class="md-secondary" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
+                  <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" style="text-transform: uppercase">{{ opt.name }}</md-option>
+                </md-select>
+              </md-list-item>
+              <md-list-item>
+                <md-button ng-disabled="true">
+                  <md-icon>flag</md-icon>
+                  <label translate>Language</label>
+                </md-button>
+                <md-select style="margin: 0" class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                  <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
+                </md-select>
               </md-list-item>
               <md-list-item>
                 <md-button aria-label="Import Account" ng-click="ul.importAccount()">
@@ -112,8 +126,9 @@
                 </md-button>
               </md-list-item>
               <md-list-item>
-                <md-button aria-label="Background" ng-click="ul.manageBackgrounds()">
-                  <translate>Background</translate>
+                <md-button aria-label="Appearance" ng-click="ul.manageBackgrounds()">
+                  <md-icon>landscape</md-icon>
+                  <translate>Appearance</translate>
                 </md-button>
               </md-list-item>
           </md-menu-content>
