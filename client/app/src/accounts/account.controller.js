@@ -537,6 +537,15 @@
       if ($mdMedia('md') || $mdMedia('sm')) $mdSidenav('left').toggle();
     };
 
+    self.getAllAccounts = function() {
+      var accounts = self.accounts;
+      if (self.ledgerAccounts && self.ledgerAccounts.length) {
+        accounts = accounts.concat(self.ledgerAccounts);
+      }
+
+      return accounts;
+    };
+
     self.myAccounts = function() {
       return self.accounts.filter(function(account) {
         return !!account.virtual;
