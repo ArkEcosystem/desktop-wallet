@@ -93,7 +93,8 @@
               changer: "ark_ARK"
             },
             background: "url(assets/images/images/Ark.jpg)",
-            theme: "default"
+            theme: "default",
+            themeDark: false,
           },
           devnet: {
             nethash: '578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23',
@@ -103,7 +104,8 @@
             version: 30,
             explorer: 'http://dexplorer.ark.io',
             background: "#222299",
-            theme: "default"
+            theme: "default",
+            themeDark: false,
           }
         };
         storageService.setGlobal("networks", n);
