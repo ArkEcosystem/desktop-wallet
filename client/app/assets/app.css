@@ -7,6 +7,10 @@ body {
     padding: 0px;
 }
 
+body {
+    background-position: center;
+}
+
 .md-select-menu-container {
     z-index: 100;
 }
@@ -351,4 +355,13 @@ md-autocomplete .md-errors-spacer {
 
 md-tooltip.tooltip-multiline {
     height: auto;
+}
+
+/* Main toolbar is transparent in almost all cases */
+body > md-toolbar:not(.md-menu-toolbar) {
+    background-color: transparent !important;
+}
+/* Useful with light background textures to outline the main toolbar buttons */
+body.too-pale-background-texture > md-toolbar:not(.md-menu-toolbar) {
+    background-color: rgba(20, 20, 20, 0.2) !important;
 }
