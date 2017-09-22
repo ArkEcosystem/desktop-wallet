@@ -547,16 +547,16 @@
     };
 
     self.myAccounts = function() {
-      return self.accounts.filter(function(account) {
+      return self.getAllAccounts().filter(function(account) {
         return !!account.virtual;
       }).sort(function(a, b) {
-        return b.balance - a.balance;
+        return (b.balance || 0) - (a.balance || 0);
       });
     };
 
     self.myAccountsBalance = function() {
       return (self.myAccounts().reduce(function(memo, acc) {
-        return memo + parseInt(acc.balance);
+        return memo + parseInt(acc.balance || 0);
       }, 0) / 100000000).toFixed(2);
     }
 
@@ -773,13 +773,15 @@
 
     self.refreshAccountBalances = function() {
       networkService.getPrice();
-      for (var i in self.accounts) {
+      var accounts = self.getAllAccounts();
+      console.log(accounts);
+      for (var i in accounts) {
         accountService
-          .refreshAccount(self.accounts[i])
+          .refreshAccount(accounts[i])
           .then(function(account) {
-            for (var j in self.accounts) {
-              if (self.accounts[j].address == account.address) {
-                self.accounts[j].balance = account.balance;
+            for (var j in accounts) {
+              if (accounts[j].address == account.address) {
+                accounts[j].balance = account.balance;
               }
             }
           });
