@@ -550,7 +550,7 @@
       return self.accounts.filter(function(account) {
         return !!account.virtual;
       }).sort(function(a, b) {
-        return (b.balance || 0) - (a.balance || 0);
+        return b.balance - a.balance;
       });
     };
 
