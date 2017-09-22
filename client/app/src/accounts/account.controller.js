@@ -230,25 +230,25 @@
       function() {},
       function(connectedPeer) {
         self.connectedPeer = connectedPeer;
-        if (!self.connectedPeer.isConnected && self.isNetworkConnected) {
-          self.isNetworkConnected = false;
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network disconnected!'))
-            .hideDelay(10000)
-          );
-        } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
-          self.isNetworkConnected = true;
-          // trick to make it appear last.
-          $timeout(function() {
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Network connected and healthy!'))
-              .hideDelay(10000)
-            );
-          }, 1000);
 
+        function showToast(msg) {
+          var toast = $mdToast.simple()
+            .hideDelay(5000)
+            .textContent(gettextCatalog.getString(msg));
+          $mdToast.show(toast);
         }
+
+        // Wait a little to ignore the initial connection delay and short interruptions
+        $timeout(function() {
+          if (! self.connectedPeer.isConnected && self.isNetworkConnected) {
+            self.isNetworkConnected = false;
+            showToast('Network disconnected!');
+
+          } else if (self.connectedPeer.isConnected && ! self.isNetworkConnected) {
+            self.isNetworkConnected = true;
+            showToast('Network connected and healthy!');
+          }
+        }, 500);
       }
     );
 
