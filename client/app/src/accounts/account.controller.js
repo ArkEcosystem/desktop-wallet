@@ -2025,7 +2025,7 @@
 
     };
 
-    function validateTransaction(selectedAccount, transaction) {
+    function validateTransaction(selectedAccount, transaction, confirmCallback) {
 
       function saveFile() {
         var fs = require('fs');
@@ -2073,6 +2073,36 @@
               .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
               .hideDelay(5000)
             );
+            if (typeof confirmCallback === 'function') {
+              var checkTransactionTimerId = setInterval(async () => {
+                var url = '/api/transactions/get?id=' + transaction.id;
+                await networkService.getFromPeer(url).then(function(data) {
+                  if (!data.success && data.error !== 'Transaction not found') {
+                    clearInterval(checkTransactionTimerId);
+                    $mdToast.show(
+                      $mdToast.simple()
+                      .textContent(gettextCatalog.getString('Failed to confirm transaction') + ' ' + transaction.id + ': ' + gettextCatalog.getString(data.error))
+                      .hideDelay(5000)
+                      .theme('error')
+                    );
+                  } else if (data.transaction) {
+                    clearInterval(checkTransactionTimerId);
+                    confirmCallback();
+                  }
+                });
+              }, 2000);
+              $scope.confirmingTransactionTitle = 'Confirming Unvote Transaction';
+              $mdDialog.show({
+                scope: $scope,
+                preserveScope: true,
+                parent: angular.element(document.getElementById('app')),
+                templateUrl: './src/accounts/view/confirmingTransaction.html',
+                clickOutsideToClose: true,
+                onRemoving: function() {
+                  clearInterval(checkTransactionTimerId);
+                },
+              });
+            }
           },
           formatAndToastError
         );
