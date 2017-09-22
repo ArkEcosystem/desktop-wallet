@@ -70,9 +70,21 @@ md-list.left-list md-list-item {
 md-list.left-list md-list-item md-icon {
     margin-right: 16px;
 }
-md-list.left-list md-list-item md-switch > .md-container {
-    margin-right: 16px;
-    margin-left: 16px;
+/* Since icons are text, avoids using the text cursor */
+md-list.left-list md-list-item:first-child, md-list-item:nth-child(2) {
+    cursor: default;
+}
+md-list.left-list md-list-item md-select {
+    margin: 0;
+}
+md-list.left-list md-list-item md-select.currency {
+    text-transform: uppercase;
+}
+md-list.left-list md-list-item:nth-child(3):hover {
+  background-color: rgba(158, 158, 158, 0.4);
+}
+md-list.left-list md-list-item:nth-child(4) p, md-list-item:nth-child(4) ~ md-list-item p {
+    text-transform: uppercase;
 }
 
 .md-button.md-focused:not(:hover):focus {

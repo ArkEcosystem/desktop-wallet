@@ -80,60 +80,48 @@
           <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">settings</md-icon>
           </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 430px; overflow:hidden;">
+          <md-menu-content flex layout-padding width="6" style="min-height: 458px; overflow:hidden;">
             <md-list class="left-list">
               <md-list-item>
-                <md-button ng-disabled="true">
-                  <md-icon>attach_money</md-icon>
-                  <label translate>Currency</label>
-                </md-button>
-                <md-select style="margin: 0;text-transform: uppercase" class="md-secondary" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
+                <md-icon>attach_money</md-icon>
+                <p translate>Currency</p>
+                <md-select aria-label="Currency" class="currency md-secondary md-no-underline" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
                   <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" style="text-transform: uppercase">{{ opt.name }}</md-option>
                 </md-select>
               </md-list-item>
               <md-list-item>
-                <md-button ng-disabled="true">
-                  <md-icon>flag</md-icon>
-                  <label translate>Language</label>
-                </md-button>
-                <md-select style="margin: 0" class="md-secondary" ng-model="ul.selectedLanguage" ng-init="ul.selectedLanguage = ul.getLanguage()" ng-change="ul.setLanguage()">
+                <md-icon>flag</md-icon>
+                <p translate>Language</p>
+                <md-select aria-label="Language" class="md-secondary md-no-underline" ng-model="ul.selectedLanguage" ng-init="ul.selectedLanguage = ul.getLanguage()" ng-change="ul.setLanguage()">
                   <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                 </md-select>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Import Account" ng-click="ul.importAccount()">
-                  <md-icon>file_download</md-icon>
-                  <translate>Import Account</translate>
-                </md-button>
+              <md-list-item aria-label="Play song when receive funds?">
+                <md-icon>music_note</md-icon>
+                <p translate>Play song when receiving transaction?</p>
+                <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receiving transaction?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()"></md-switch>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Create Account" ng-click="ul.createAccount()">
-                  <md-icon>account_box</md-icon>
-                  <translate>Create Account</translate>
-                </md-button>
+              <md-list-item aria-label="Import Account" ng-click="ul.importAccount()">
+                <md-icon>file_download</md-icon>
+                <p translate>Import Account</p>
               </md-list-item>
-              <md-list-item ng-controller="AddressbookController as ab">
-                <md-button class="md-button" ng-click="ab.addAddressbookContact()">
-                  <md-icon md-font-library="material-icons">library_add</md-icon>
-                  <translate>Add Contact</translate>
-                </md-button>
+              <md-list-item aria-label="Create Account" ng-click="ul.createAccount()">
+                <md-icon>account_box</md-icon>
+                <p translate>Create Account</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()">
-                  <md-icon>network_check</md-icon>
-                  <translate>Manage Networks</translate>
-                </md-button>
+              <md-list-item aria-label="Add Contact" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
+                <md-icon md-font-library="material-icons">library_add</md-icon>
+                <p translate>Add Contact</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Appearance" ng-click="ul.manageBackgrounds()">
-                  <md-icon>landscape</md-icon>
-                  <translate>Appearance</translate>
-                </md-button>
+              <md-list-item aria-label="Manage Networks" ng-click="ul.manageNetworks()">
+                <md-icon>network_check</md-icon>
+                <p translate>Manage Networks</p>
               </md-list-item>
-              <md-list-item>
-                <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()"><translate>Play song when receive funds?</translate></md-switch>
+              <md-list-item aria-label="Appearance" ng-click="ul.manageBackgrounds()">
+                <md-icon>landscape</md-icon>
+                <p translate>Appearance</p>
               </md-list-item>
-              <md-list>
+            </md-list>
           </md-menu-content>
         </md-menu>
       </any>
