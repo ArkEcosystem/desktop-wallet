@@ -1074,9 +1074,13 @@
             secondpassphrase: $scope.voteDialog.data.secondpassphrase
           }).then(
             function(transaction) {
-              validateTransaction(selectedAccount, transaction, function() {
-                performVote();
-              });
+              var confirmingCallback = null;
+              if (toVote.length) {
+                confirmingCallback = function() {
+                  performVote();
+                };
+              }
+              validateTransaction(selectedAccount, transaction, confirmingCallback);
             },
             formatAndToastError
           );
