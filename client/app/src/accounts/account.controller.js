@@ -1041,7 +1041,7 @@
           }
         });
         if (toVote.length > 1) {
-          formatAndToastError('You can only vote for 1 delegate');
+          return formatAndToastError('You can only vote for 1 delegate');
         }
 
         var performVote = function() {
