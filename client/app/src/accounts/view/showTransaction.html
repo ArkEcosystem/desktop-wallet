@@ -24,17 +24,17 @@
             <b translate>Username</b> <span class="md-secondary">{{validate.transaction.username}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.amount">
-            <b translate>Amount (Ѧ)</b> <span class="md-secondary">{{validate.humanAmount}}</span>
+            <b translate>Amount (ʞ)</b> <span class="md-secondary">{{validate.humanAmount}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>Fee (Ѧ)</b> <span class="md-secondary">{{validate.transaction.fee/100000000}}</span>
+            <b translate>Fee (ʞ)</b> <span class="md-secondary">{{validate.transaction.fee/100000000}}</span>
           </md-list-item>
         </md-list>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button  md-colors="{'background':'red' }"  ng-click="validate.send(validate.transaction)">
-        <span translate>Send</span> Ѧ{{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>now!</span>
+        <translate>Send Ark</translate> {{(validate.transaction.amount+validate.transaction.fee)/100000000}} <span translate>now!</span>
       </md-button>
       <md-button ng-click="validate.cancel()" style="margin-right:20px;">
         <translate>Cancel</translate>

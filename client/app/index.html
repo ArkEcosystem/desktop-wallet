@@ -116,6 +116,7 @@
               </md-list-item>
               <md-list-item>
                 <md-button aria-label="Add Watch-Only Address" ng-click="ul.addWatchOnlyAddress()">
+                  <md-icon md-font-library="material-icons">library_add</md-icon>
                   <translate>Add Watch-Only Address</translate>
                 </md-button>
               </md-list-item>
@@ -417,8 +418,8 @@
               </span>
               <span class="md-subhead description">
                   <translate>Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
-                  <md-button ng-click="ul.changeCurrency()">{{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</md-button>
-                </span>
+                  <span>{{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</span>
+              </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
