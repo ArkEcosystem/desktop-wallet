@@ -2126,6 +2126,7 @@
                     );
                   } else if (data.transaction) {
                     clearInterval(checkTransactionTimerId);
+                    $mdDialog.hide();
                     confirmCallback();
                   }
                 });
