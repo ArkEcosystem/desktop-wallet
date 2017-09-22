@@ -1031,23 +1031,58 @@
 
       function next() {
         $mdDialog.hide();
-        var publicKeys = $scope.voteDialog.data.votes.map(function(delegate) {
-          return delegate.vote + delegate.publicKey;
-        }).join(",");
-        console.log(publicKeys);
-        accountService.createTransaction(3, {
-          ledger: selectedAccount.ledger,
-          publicKey: selectedAccount.publicKey,
-          fromAddress: $scope.voteDialog.data.fromAddress,
-          publicKeys: publicKeys,
-          masterpassphrase: $scope.voteDialog.data.passphrase,
-          secondpassphrase: $scope.voteDialog.data.secondpassphrase
-        }).then(
-          function(transaction) {
-            validateTransaction(selectedAccount, transaction);
-          },
-          formatAndToastError
-        );
+        var toRemove = null;
+        var toVote  = [];
+        $scope.voteDialog.data.votes.forEach(function(delegate) {
+          if (delegate.vote === '-') {
+            toRemove = delegate;
+          } else {
+            toVote.push(delegate);
+          }
+        });
+        if (toVote.length > 1) {
+          formatAndToastError('You can only vote for 1 delegate');
+        }
+
+        var performVote = function() {
+          if (toVote.length < 1) {
+            formatAndToastError('You are trying to submit an empty vote');
+            return;
+          }
+          accountService.createTransaction(3, {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
+            fromAddress: $scope.voteDialog.data.fromAddress,
+            publicKeys: '+' + toVote.pop().publicKey,
+            masterpassphrase: $scope.voteDialog.data.passphrase,
+            secondpassphrase: $scope.voteDialog.data.secondpassphrase
+          }).then(
+            function(transaction) {
+              validateTransaction(selectedAccount, transaction);
+            },
+            formatAndToastError
+          );
+        };
+
+        if (toRemove) {
+          accountService.createTransaction(3, {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
+            fromAddress: $scope.voteDialog.data.fromAddress,
+            publicKeys: '-' + toRemove.publicKey,
+            masterpassphrase: $scope.voteDialog.data.passphrase,
+            secondpassphrase: $scope.voteDialog.data.secondpassphrase
+          }).then(
+            function(transaction) {
+              validateTransaction(selectedAccount, transaction, function() {
+                performVote();
+              });
+            },
+            formatAndToastError
+          );
+        } else {
+          performVote();
+        }
       };
 
 
