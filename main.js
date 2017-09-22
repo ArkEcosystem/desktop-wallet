@@ -31,7 +31,7 @@ function createWindow () {
   //if(platform == "win32") iconpath = __dirname + "/client/ark_windows.png";
   //if(platform == "darwin") iconpath = __dirname + "/client/ark_mac.png";
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
-  mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: iconpath, resizable:true, frame:true, show:false})
+  mainWindow = new BrowserWindow({width: width/3, height: height/1.5, minWidth: 800, minHeight: 450, center:true, icon: iconpath, resizable:true, frame:true, show:false})
   mainWindow.setContentProtection(true);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
