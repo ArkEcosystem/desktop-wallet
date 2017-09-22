@@ -70,6 +70,10 @@ md-list.left-list md-list-item {
 md-list.left-list md-list-item md-icon {
     margin-right: 16px;
 }
+md-list.left-list md-list-item md-switch > .md-container {
+    margin-right: 16px;
+    margin-left: 16px;
+}
 
 .md-button.md-focused:not(:hover):focus {
     background-color: transparent;
