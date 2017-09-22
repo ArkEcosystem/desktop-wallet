@@ -16,7 +16,8 @@
             <md-card-title-text>
               <span>
                 <translate>Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!</translate>
-                <br/>
+              </span>
+              <span>
                 <translate>After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client.</translate>
               </span>
             </md-card-title-text>
@@ -34,7 +35,12 @@
           <input ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" readonly="readonly" md-autofocus/>
           <input ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" ng-required="true" md-autofocus/>
         </md-input-container>
-
+        <md-input-container class="md-block" ng-if="createSecondPassphraseDialog.data.showRepassphrase">
+          <md-checkbox class="checkbox-row" ng-model="createSecondPassphraseDialog.data.acknowledgeFee" ng-click="selected()">
+            <translate>I acknowledge that a 5 ARK fee is required to create my second passphrase</translate>
+          </md-checkbox>
+        </md-input-container>
+        <br>
         <div ng-if="createSecondPassphraseDialog.data.showWrongRepassphrase" translate>
           The second passphrase does not match the one you just got.
         </div>
@@ -44,7 +50,7 @@
       <md-button ng-if="!createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()">
         <translate>Next</translate>
       </md-button>
-      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()">
+      <md-button ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-click="createSecondPassphraseDialog.next()" ng-disabled="!createSecondPassphraseDialog.data.acknowledgeFee || !createSecondPassphraseDialog.data.passphrase.trim() || !createSecondPassphraseDialog.data.secondPassphrase.trim()">
         <translate>Create</translate>
       </md-button>
       <md-button ng-click="createSecondPassphraseDialog.cancel()" style="margin-right:20px;">
