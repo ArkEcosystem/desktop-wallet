@@ -17,6 +17,7 @@ const fork = require('child_process').fork;
 let mainWindow
 
 var ledgercomm
+var screenProtected = true;
 
 function createWindow () {
     // Create the browser window.t
@@ -135,7 +136,18 @@ function createWindow () {
             })
         },
         { type: "separator" },
-        { label: "Disable screenshot protection (unsafe)", click: function() { mainWindow.setContentProtection(false) }},
+        {
+          label: "Toggle screenshot protection (unsafe)",
+          click: function() {
+            screenProtected = !screenProtected;
+            var title = 'Ark Client';
+            if (!screenProtected) {
+              title += ' - SCREENSHOT PROTECTION DISABLED';
+            }
+            mainWindow.setTitle(title);
+            mainWindow.setContentProtection(screenProtected);
+          }
+        },
         { type: "separator" },
         { label: "Minimize", click: function() { mainWindow.minimize(); }},
         { label: "Maximize", click: function() { mainWindow.maximize(); }},
