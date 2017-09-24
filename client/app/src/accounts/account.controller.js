@@ -184,12 +184,22 @@
     self.connectedPeer = { isConnected: false };
 
     if (!self.network.theme) self.network.theme = 'default';
+    if (!self.network.themeDark) self.network.themeDark = false;
 
+    // will be used in view
+    self.currentTheme = self.network.theme;
+
+    // set 'dynamic' as the default theme
     generateDynamicPalette(function(name) {
       if (name && self.network.theme == name) {
         self.network.theme = name;
       }
+      // generate dark theme after load the dynamic
+      generateDarkTheme();
     });
+
+    // set dark mode
+    if (self.network.themeDark) self.currentTheme = 'dark';
 
     //refreshing displayed account every 8s
     $interval(function() {
@@ -252,6 +262,7 @@
       }
     );
 
+    // get themes colors to show in manager appearance
     function reloadThemes() {
       var currentThemes = $mdTheming.$get().THEMES;
       var mapThemes = {};
@@ -1296,6 +1307,20 @@
       });
     }
 
+    function generateDarkTheme(themeName) {
+      var theme = themeName ? themeName : self.network.theme;
+      var properties = $mdTheming.$get().THEMES[theme];
+
+      var colors = properties.colors;
+      var primary = colors.primary.name;
+      var accent = colors.accent.name;
+      var warn = colors.warn.name;
+      var background = colors.background.name;
+
+      $mdTheming.theme('dark').primaryPalette(primary).accentPalette(accent).warnPalette(warn).backgroundPalette(background).dark();
+      $mdTheming.$get().generateTheme('dark');
+    }
+
     // Compare vibrant colors from image with default material palette
     // And returns the most similar primary and accent palette
     function generateDynamicPalette(callback) {
@@ -1358,9 +1383,18 @@
       var fs = require('fs');
       var path = require('path');
       var context = storageService.getContext();
+
       var currentNetwork = networkService.getNetwork();
+
       var initialBackground = currentNetwork.background;
       var initialTheme = currentNetwork.theme;
+
+      var currentTheme = self.currentTheme;
+      var initialThemeView = currentTheme;
+      var initialDarkMode = currentNetwork.themeDark;
+
+      var themes = reloadThemes();
+      delete themes['dark'];
 
       var backgrounds = {
         colors: {
@@ -1397,8 +1431,11 @@
       };
 
       function selectTheme(theme) {
+        generateDarkTheme(theme);
         $scope.send.selectedTheme = theme;
         currentNetwork.theme = theme;
+        currentNetwork.themeDark
+        setDarkMode();
       }
 
       function selectBackground(background) {
@@ -1416,9 +1453,22 @@
         $mdDialog.hide();
         currentNetwork.background = initialBackground;
         currentNetwork.theme = initialTheme;
+        currentNetwork.themeDark = initialDarkMode;
+        currentTheme = initialThemeView;
       };
 
-      var themes = reloadThemes();
+      function toggleDark(status) {
+        currentNetwork.themeDark = status;
+        setDarkMode();
+      }
+
+      function setDarkMode() {
+        if (currentNetwork.themeDark) {
+          self.currentTheme = 'dark';
+        } else {
+          self.currentTheme = currentNetwork.theme;
+        }
+      }
 
       $scope.send = {
         cancel: cancel,
@@ -1429,7 +1479,9 @@
         selectedTheme: initialTheme,
         themes: themes,
         selectBackground: selectBackground,
-        selectedBackground: initialBackground
+        selectedBackground: initialBackground,
+        darkMode: initialDarkMode,
+        toggleDark: toggleDark,
       };
 
       $mdDialog.show({

@@ -352,3 +352,25 @@ md-autocomplete .md-errors-spacer {
 md-tooltip.tooltip-multiline {
     height: auto;
 }
+
+.md-open-menu-container.md-dark-theme md-menu-content,
+md-bottom-sheet.md-dark-theme {
+  background: #2f2f3b;
+  color: white;
+}
+
+md-bottom-sheet.md-dark-theme {
+  border-top-color: #1d1d25;
+}
+
+.md-dark-theme .md-table .md-column,
+.md-dark-theme .md-table .md-cell {
+  color: rgba(255, 255, 255, 0.8);
+}
+table.md-table.md-row-select tbody.md-body>tr.md-row:not([disabled]):hover {
+  background-color: rgba(47, 47, 59, 1)!important;
+}
+
+.md-dark-theme .md-table .md-selected {
+  background-color: rgba(47, 47, 59, 0.7)!important;
+}
