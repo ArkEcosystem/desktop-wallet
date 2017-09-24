@@ -397,7 +397,7 @@
               My Accounts
             </h2>
           </md-list-item>
-          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
             <span style="white-space: nowrap;">
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
@@ -410,7 +410,7 @@
               Contacts
             </h2>
           </md-list-item>
-          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
+          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
             <span style="white-space: nowrap;">
               <md-icon md-font-library="material-icons">account_circle</md-icon>
               {{contact.name}}
@@ -516,7 +516,7 @@
                 </thead>
                 <tbody md-body style="white-space:nowrap;">
                   <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
-                    <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
+                    <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.id | smallId}}</a></td>
                     <td md-cell>{{it.confirmations}}</td>
                     <td md-cell>{{it.date | date: 'short'}}</td>
                     <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
@@ -531,9 +531,9 @@
                     <td ng-if="it.total<0 && it.recipientId!=it.senderId && it.type==0" md-cell>
                       <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
                     </td>
-                    <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
+                    <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.senderId | accountlabel}}</a></td>
                     <td md-cell>
-                      <a href="" ng-if="it.type==0" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a>
+                      <a href="" ng-if="it.type==0" ng-click="ul.gotoAddress(it.recipientId)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.recipientId | accountlabel}}</a>
                       <span ng-if="it.type>0">{{it.label}}</span>
                     </td>
                     <td md-cell>{{it.vendorField}}</td>
@@ -594,7 +594,7 @@
                     <tr md-row ng-repeat="it in ul.selected.delegates | orderBy: query.order">
                       <td md-cell>{{it.rate}}</td>
                       <td md-cell>{{it.username}}</td>
-                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
+                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
                       <td md-cell>{{it.approval}}%</td>
                       <td md-cell>{{it.productivity}}%</td>
                     </tr>
@@ -636,7 +636,7 @@
                     <tr md-row md-select="it" md-select-id="id" md-auto-select ng-repeat="it in ul.getAllDelegates(ul.selected) | orderBy: query.order">
                       <td md-cell>{{it.rate}}</td>
                       <td md-cell>{{it.username}}</td>
-                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
+                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
                       <td md-cell>{{it.approval}}%</td>
                       <td md-cell>{{it.productivity}}%</td>
                     </tr>
