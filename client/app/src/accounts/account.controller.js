@@ -934,7 +934,14 @@
 
     function addDelegate(selectedAccount) {
       var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {} };
-      accountService.getActiveDelegates().then(function(r) { data.registeredDelegates = r; });
+
+      accountService.getActiveDelegates().then(function(r) {
+        data.registeredDelegates = r;
+      }).catch(function(err) {
+        formatAndToastError(gettextCatalog.getString(
+          'Could not fetch active delegates - please check your internet connection'
+        ));
+      });
 
       function add() {
         function indexOfDelegates(array, item) {
