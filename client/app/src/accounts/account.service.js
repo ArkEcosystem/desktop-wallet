@@ -665,7 +665,6 @@
 
     function setToFolder(address, folder, amount) {
       var virtual = getVirtual(address);
-      console.log(virtual);
       var f = virtual[folder];
       if (f && amount >= 0) {
         f.amount = amount;
@@ -780,7 +779,6 @@
           }
         }
         accounts = uniqueaccounts;
-        console.log(uniqueaccounts);
         accounts = accounts.filter(function(address) {
           return (storageService.get("username-" + address) != null ||  storageService.get("virtual-" + address) != null) && !storageService.get(address).ledger;
         });
