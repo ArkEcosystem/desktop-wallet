@@ -592,7 +592,8 @@
      * Hide or Show the 'left' sideNav area
      */
     function toggleAccountsList() {
-      if ($mdMedia('md') || $mdMedia('sm')) $mdSidenav('left').toggle();
+      self.isAccountsListOpen = ! self.isAccountsListOpen
+      $mdSidenav('left').toggle();
     };
 
     self.getAllAccounts = function() {
@@ -603,6 +604,28 @@
 
       return accounts;
     };
+
+    function getContacts() {
+      var contacts = storageService.get("contacts");
+      if (! contacts) {
+        contacts = [];
+      }
+      return contacts;
+    }
+
+    self.anyAccountOrContact = function() {
+      var myAccounts = self.accounts.filter(function(account) {
+        return !!account.virtual;
+      });
+
+      if (myAccounts.length > 0)
+        return true;
+
+      if (getContacts().length > 0)
+        return true;
+
+      return ledger.connected;
+    }
 
     self.myAccounts = function() {
       return self.accounts.filter(function(account) {
@@ -1346,11 +1369,7 @@
 
       function querySearch(text) {
         text = text.toLowerCase();
-        var contacts = storageService.get("contacts");
-        if (!contacts) {
-          return [];
-        }
-        var filter = contacts.filter(function(account) {
+        var filter = getContacts().filter(function(account) {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.name && (account.name.toLowerCase().indexOf(text) > -1));
         });
         return filter;
