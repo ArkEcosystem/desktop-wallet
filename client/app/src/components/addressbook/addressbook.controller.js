@@ -32,14 +32,16 @@
       return require("arkjs").crypto.validateAddress(address);
     }
 
+    function existsIn(haystack, needle) {
+      return haystack.indexOf(needle) !== -1
+    }
+
+    self.addressExists = function(address) {
+      return existsIn(self.contacts.map( c => c.address ), address)
+    }
+
     self.contactExists = function(name) {
-      var i;
-      for (i = 0; i < self.contacts.length; i++) {
-        if (self.contacts[i].name == name) {
-          return true;
-        }
-      }
-      return false;
+      return existsIn(self.contacts.map( c => c.name ), name)
     }
 
     self.showToast = function(message, variable, error) {
@@ -70,28 +72,45 @@
         $mdDialog.hide();
       };
 
-      function add(contactname, contactaddress) {
+      function add(name, address) {
         self.getContacts();
-        if (self.trim(contactname) == "") {
-          self.showToast('this Contact Name is not valid', contactname, true);
+        if (self.trim(name) == "") {
+          self.showToast('This Contact Name is not valid', name, true);
           return;
         }
-        if (self.trim(contactaddress) == "") {
-          self.showToast('this Contact Address is not valid', contactaddress, true);
+        if (self.trim(address) == "" || ! self.isAddress(address)) {
+          self.showToast('This Contact Address is not valid', address, true);
           return;
         }
-        var newcontact = { name: contactname, address: contactaddress };
-        if (self.contactExists(contactname)) {
-          self.showToast('this Contact Name is already taken, please choose another one', contactname, true);
+
+        var newContact = { name: name, address: address };
+        if (self.addressExists(address)) {
+          self.showToast('A Contact with this Address already exists', address, true);
           return;
         }
-        if (!self.isAddress(contactaddress)) {
-          self.showToast('this seems to be not a valid Address', contactaddress, true);
+        if (self.contactExists(name)) {
+          self.showToast('A Contact with this Name already exists', name, true);
           return;
         }
-        self.contacts.push(newcontact);
+
+        var knownAccounts = accountService.loadAllAccounts().reduce( (all, account) => {
+          if (account.virtual)
+            all.push(account);
+          return all;
+        }, []);
+
+        if (existsIn(knownAccounts.map( a => a.address ), address)) {
+          self.showToast('This Address is already taken, please add a different one', address, true);
+          return;
+        }
+        if (existsIn(knownAccounts.map( a => a.username ), name)) {
+          self.showToast('This Name is already taken, please use a different one', name, true);
+          return;
+        }
+
+        self.contacts.push(newContact);
         self.save();
-        self.showToast('Contact successfully added', contactname, false);
+        self.showToast('Contact successfully added', name, false);
         cancel();
       };
 
