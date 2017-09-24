@@ -933,7 +933,7 @@
     };
 
     function addDelegate(selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {} };
+      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] };
 
       accountService.getActiveDelegates().then(function(r) {
         data.registeredDelegates = r;
