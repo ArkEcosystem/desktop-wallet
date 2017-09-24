@@ -44,7 +44,7 @@
   ng-cloak md-theme="ul.currentTheme">
   <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
-      <img src="ark.png" alt="" height="30">
+      <img src="ark.png" alt="" height="40">
       <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong></md-button>
       <md-button class="new-version-button" ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' aria-label="New version available!">
         <translate>New version available!</translate>

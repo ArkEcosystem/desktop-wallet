@@ -29,7 +29,7 @@ function createWindow () {
     // Create the browser window.t
   var platform = require('os').platform();
   var iconpath = __dirname + "/client/ark.png";
-  if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
+  //if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
   //if(platform == "win32") iconpath = __dirname + "/client/ark_windows.png";
   //if(platform == "darwin") iconpath = __dirname + "/client/ark_mac.png";
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
