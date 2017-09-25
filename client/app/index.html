@@ -382,7 +382,7 @@
               Ledger Nano S
             </h2>
           </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
+          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
             <span style="white-space: nowrap;">
                   <md-icon md-svg-icon="ledger"></md-icon>
                   {{it.address|accountlabel}}
