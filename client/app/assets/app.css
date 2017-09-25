@@ -5,6 +5,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    background-position: center;
 }
 
 .md-select-menu-container {
@@ -373,4 +374,13 @@ table.md-table.md-row-select tbody.md-body>tr.md-row:not([disabled]):hover {
 
 .md-dark-theme .md-table .md-selected {
   background-color: rgba(47, 47, 59, 0.7)!important;
+}
+
+/* Main toolbar is transparent in almost all cases */
+body > md-toolbar:not(.md-menu-toolbar) {
+  background-color: transparent !important;
+}
+/* Useful with light background textures to outline the main toolbar buttons */
+body.too-pale-background > md-toolbar:not(.md-menu-toolbar) {
+  background-color: rgba(20, 20, 20, 0.2) !important;
 }
