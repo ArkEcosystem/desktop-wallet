@@ -48,7 +48,7 @@ function createWindow () {
     mainWindow.show()
   })
   
-  var ledgerWorker = fork('./ledger-worker');
+  var ledgerWorker = fork(`${__dirname}/ledger-worker.js`);
   
   ledgerWorker.on('message', function (message) {
     if(message.connected && !ledgercomm){
