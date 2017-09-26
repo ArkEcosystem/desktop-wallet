@@ -51,6 +51,7 @@
       bg_BG: gettextCatalog.getString("Bulgarian"),
       de: gettextCatalog.getString("German"),
       el: gettextCatalog.getString("Greek"),
+      es_419: gettextCatalog.getString("Spanish"),
       fi: gettextCatalog.getString("Finish"),
       fr: gettextCatalog.getString("French"),
       hu: gettextCatalog.getString("Hungarish"),
@@ -361,7 +362,7 @@
     self.getMarketInfo(self.selectedCoin);
 
     var setExchangBuyExpirationProgress = function(timestamp){
-      
+
     }
 
     self.buy = function() {
@@ -393,7 +394,7 @@
                   self.exchangeHistory = changerService.getHistory();
                 },
                 function(data) {
-    
+
                 },
                 function(data) {
                   if (data.payee && self.exchangeBuy.payee != data.payee) {
@@ -404,14 +405,14 @@
                   }
                 }
               );
-    
+
             }, function(error) {
               formatAndToastError(error, 10000);
               self.exchangeBuy = null;
             });
             }
           )
-          
+
       });
 
     };
@@ -481,7 +482,7 @@
                 completeExchangeSell(timestamp);
               }
             )
-            
+
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -575,7 +576,7 @@
       }
 
       currencyBalance = Number(currencyBalance).toLocaleString(languageCode, options);
-      
+
       if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
 
       return currencyBalance;
@@ -2040,7 +2041,7 @@
         var list = JSON.parse($scope.verify.message);
         var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
         var message = gettextCatalog.getString("Error in signature processing");
-        
+
         $mdDialog.hide();
         if (res == true) {
           message = gettextCatalog.getString("The message is verified successfully");
