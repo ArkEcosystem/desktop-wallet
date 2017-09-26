@@ -97,7 +97,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/components/addressbook/addContact.html',
+        templateUrl: './components/addressbook/addContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -173,7 +173,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/components/addressbook/editContact.html',
+        templateUrl: './components/addressbook/editContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,

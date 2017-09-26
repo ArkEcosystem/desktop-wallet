@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" >
 <head>
   <title translate>Ark Client</title>
 
@@ -9,11 +8,11 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <link rel="stylesheet" href="assets/css/roboto.css" />
-  <link rel="stylesheet" href="assets/css/material-icons.css" />
-  <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
-  <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="assets/app.css" />
+  <link rel="stylesheet" href="assets/css/roboto.css"/>
+  <link rel="stylesheet" href="assets/css/material-icons.css"/>
+  <link rel="stylesheet" href="assets/css/angular-material.min.css"/>
+  <link href="assets/css/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="assets/css/app.css"/>
 
   <style type="text/css">
     html,
@@ -544,11 +543,11 @@
 
 
 
-          <md-tab>
-            <md-tab-label>
-              <translate>Votes</translate>
-            </md-tab-label>
-            <md-tab-body>
+        <md-tab>
+          <md-tab-label>
+            <translate>Votes</translate>
+          </md-tab-label>
+          <md-tab-body>
 
               <md-card ng-if="!ul.selected.virtual" flex="100">
                 <md-card-title>
@@ -1003,7 +1002,6 @@
 
               </md-list>
             </md-tab-body>
-            </md-tab-body>
           </md-tab>
 
 
@@ -1015,6 +1013,7 @@
               <md-icon md-colors="{'color' : 'default-green' }" ng-if="ul.selected.delegate.rate<52" md-font-library="material-icons">check</md-icon>
             </md-tab-label>
             <md-tab-body>
+              <md-list>
               <md-list-item>
                 <h1>{{ul.selected.delegate.username}}</h1>
               </md-list-item>
@@ -1042,30 +1041,29 @@
       </md-content>
   </div>
 
-  <script src="dependencies.min.js"></script>
-  <script src="src/utils/translations.js"></script>
+  <script src="vendor.js"></script>
+  <script src="init.js"></script>
+  <script src="utils/translations.js"></script>
+  <script src="filters/filters.js"></script>
 
-  <script src="src/init.js"></script>
-  <script src="src/filters/filters.js"></script>
+  <script src="addons/pluginLoader.addon.js"></script>
 
-  <script src="src/addons/pluginLoader.addon.js"></script>
+  <script src="services/storage.service.js"></script>
+  <script src="services/network.service.js"></script>
+  <script src="services/changer.service.js"></script>
+  <script src="services/ledger.service.js"></script>
+  <script src="services/time.service.js"></script>
 
-  <script src="src/services/storage.service.js"></script>
-  <script src="src/services/network.service.js"></script>
-  <script src="src/services/changer.service.js"></script>
-  <script src="src/services/ledger.service.js"></script>
-  <script src="src/services/time.service.js"></script>
+  <script src="accounts/account.service.js"></script>
+  <script src="accounts/account.controller.js"></script>
 
-  <script src="src/accounts/account.service.js"></script>
-  <script src="src/accounts/account.controller.js"></script>
+  <script src="directives/validAmount.directive.js"></script>
+  <script src="directives/copyToClipboard.directive.js"></script>
+  <script src="directives/backgroundStyle.directive.js"></script>
 
-  <script src="src/directives/validAmount.directive.js"></script>
-  <script src="src/directives/copyToClipboard.directive.js"></script>
-  <script src="src/directives/backgroundStyle.directive.js"></script>
-
-  <script src="src/components/qrScanner/qrScanner.controller.js"></script>
-  <script src="src/components/qrScanner/qrScanner.directive.js"></script>
-  <script src="src/components/addressbook/addressbook.controller.js"></script>
+  <script src="components/qrScanner/qrScanner.controller.js"></script>
+  <script src="components/qrScanner/qrScanner.directive.js"></script>
+  <script src="components/addressbook/addressbook.controller.js"></script>
 
   <script src="app.js"></script>
 

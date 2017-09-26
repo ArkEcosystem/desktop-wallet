@@ -1,11 +1,11 @@
-const electron = require('electron')
+const electron = require('electron');
 // Module to control application life.
-const app = electron.app
+const app = electron.app;
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
-const ipcMain = electron.ipcMain
-const Menu = electron.Menu
-const openAboutWindow = require('about-window').default
+const BrowserWindow = electron.BrowserWindow;
+const ipcMain = electron.ipcMain;
+const Menu = electron.Menu;
+const openAboutWindow = require('about-window').default;
 
 const ledger = require('ledgerco')
 const LedgerArk = require('./LedgerArk')
@@ -16,9 +16,9 @@ const windowStateKeeper = require('electron-window-state');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow;
 
-var ledgercomm
+let ledgercomm;
 
 // needed to create menu/update it.
 var menu = null;
@@ -29,9 +29,7 @@ function createWindow () {
     // Create the browser window.t
   var platform = require('os').platform();
   var iconpath = __dirname + "/client/ark.png";
-  //if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
-  //if(platform == "win32") iconpath = __dirname + "/client/ark_windows.png";
-  //if(platform == "darwin") iconpath = __dirname + "/client/ark_mac.png";
+
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
 
   let mainWindowState = windowStateKeeper({
@@ -43,7 +41,8 @@ function createWindow () {
   mainWindow.setContentProtection(true);
   mainWindowState.manage(mainWindow);
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/client/dist/index.html`);
+
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
@@ -65,7 +64,7 @@ function createWindow () {
   });
 
   ipcMain.on('ledger', (event, arg) => {
-    if(arg.action == "detect"){
+    if(arg.action === "detect"){
       event.returnValue = {
         status: ledgercomm ? "Success" : "Failure"
       }
@@ -76,44 +75,45 @@ function createWindow () {
         event.returnValue = "connection not initialised"
       }
       else try{
-        ark = new LedgerArk(ledgercomm)
-        if(arg.action == "signMessage"){
+        ark = new LedgerArk(ledgercomm);
+
+        if(arg.action === "signMessage"){
           ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
             (result) => {  event.sender.send('messageSigned', result) }
           ).fail(
             (error) => { event.sender.send('messageSigned', {error:error}) }
           )
         }
-        else if(arg.action == "signTransaction"){
+        else if(arg.action === "signTransaction"){
           ark.signTransaction_async(arg.path, arg.data).then(
             (result) => { event.sender.send('transactionSigned', result) }
           ).fail(
             (error) => { event.sender.send('transactionSigned', {error:error}) }
           )
         }
-        else if(arg.action == "getAddress"){
+        else if(arg.action === "getAddress"){
           ark.getAddress_async(arg.path).then(
             (result) => { event.returnValue = result }
           ).fail(
             (error) => { event.returnValue = error }
           )
         }
-        else if(arg.action == "getConfiguration"){
+        else if(arg.action === "getConfiguration"){
           ark.getAppConfiguration_async().then((result) => {
               console.log(result)
               result.connected = true
               event.returnValue = result
             }
           ).fail((error) => {
-              var result = {
+              let result = {
                 connected: false,
                 message: error
               }
               if(ledgercomm && ledgercomm.close_async){
                 ledgercomm.close_async()
               }
-              ledgercomm = null
-              event.returnValue = result
+              ledgercomm = null;
+              event.returnValue = result;
             }
           )
         }
@@ -133,7 +133,7 @@ function createWindow () {
 });
 
   // Create the Application's main menu
-  template = [
+  let template = [
     {
       label: "Application",
       submenu: [
@@ -192,7 +192,7 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', createWindow);
 
 
 
@@ -201,9 +201,9 @@ app.on('window-all-closed', function () {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
-})
+});
 
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
@@ -211,7 +211,7 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
-})
+});
 
 // enables/disables and updates the screen shot protection item menu 
 function updateScreenshotProtectionItem() {

@@ -24,17 +24,17 @@
       '$window',
       AccountController
     ]).filter('accountlabel', ['accountService', function(accountService) {
-      return function(address) {
-        if (!address)
-          return address
+    return function(address) {
+      if (!address)
+        return address
 
-        var username = accountService.getUsername(address)
-        if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
-          return accountService.smallId(username)
+      var username = accountService.getUsername(address)
+      if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+        return accountService.smallId(username)
 
-        return username
-      };
-    }]);
+      return username
+    };
+  }]);
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
@@ -244,8 +244,8 @@
           self.isNetworkConnected = false;
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network disconnected!'))
-            .hideDelay(10000)
+              .textContent(gettextCatalog.getString('Network disconnected!'))
+              .hideDelay(10000)
           );
         } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
           self.isNetworkConnected = true;
@@ -253,8 +253,8 @@
           $timeout(function() {
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Network connected and healthy!'))
-              .hideDelay(10000)
+                .textContent(gettextCatalog.getString('Network connected and healthy!'))
+                .hideDelay(10000)
             );
           }, 1000);
 
@@ -308,17 +308,17 @@
       var errorMessage = formatErrorMessage(error)
       $mdToast.show(
         $mdToast.simple()
-        .textContent(errorMessage)
-        .hideDelay(hideDelay)
-        .theme('error')
+          .textContent(errorMessage)
+          .hideDelay(hideDelay)
+          .theme('error')
       );
     }
 
     function copiedToClipboard() {
       $mdToast.show(
         $mdToast.simple()
-        .textContent(gettextCatalog.getString('Copied to clipboard'))
-        .hideDelay(5000)
+          .textContent(gettextCatalog.getString('Copied to clipboard'))
+          .hideDelay(5000)
       );
     }
     self.selectAllLanguages = function() {
@@ -361,7 +361,7 @@
     self.getMarketInfo(self.selectedCoin);
 
     var setExchangBuyExpirationProgress = function(timestamp){
-      
+
     }
 
     self.buy = function() {
@@ -373,45 +373,45 @@
           amount = parseFloat(amount.toFixed(2));
         }
         changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, "ark_ARK", self.selected.address).then(function(resp) {
-          timeService.getTimestamp().then(
-            function(timestamp) {
-              self.exchangeBuy = resp;
-              self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000;
-              self.exchangeBuy.expirationProgress = 0;
-              self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
-              self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
-              self.exchangeBuy.receiveCurrency = "ARK";
-              var progressbar = $interval(function() {
-                if (!self.exchangeBuy) {
-                  $interval.cancel(progressbar);
-                } else {
-                  self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
-                }
-              }, 200);
-              changerService.monitorExchange(resp).then(
-                function(data) {
-                  self.exchangeHistory = changerService.getHistory();
-                },
-                function(data) {
-    
-                },
-                function(data) {
-                  if (data.payee && self.exchangeBuy.payee != data.payee) {
-                    self.exchangeBuy = data;
-                    self.exchangeHistory = changer.getHistory();
+            timeService.getTimestamp().then(
+              function(timestamp) {
+                self.exchangeBuy = resp;
+                self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000;
+                self.exchangeBuy.expirationProgress = 0;
+                self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
+                self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
+                self.exchangeBuy.receiveCurrency = "ARK";
+                var progressbar = $interval(function() {
+                  if (!self.exchangeBuy) {
+                    $interval.cancel(progressbar);
                   } else {
-                    self.exchangeBuy.monitor = data;
+                    self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
                   }
-                }
-              );
-    
-            }, function(error) {
-              formatAndToastError(error, 10000);
-              self.exchangeBuy = null;
-            });
-            }
-          )
-          
+                }, 200);
+                changerService.monitorExchange(resp).then(
+                  function(data) {
+                    self.exchangeHistory = changerService.getHistory();
+                  },
+                  function(data) {
+
+                  },
+                  function(data) {
+                    if (data.payee && self.exchangeBuy.payee != data.payee) {
+                      self.exchangeBuy = data;
+                      self.exchangeHistory = changer.getHistory();
+                    } else {
+                      self.exchangeBuy.monitor = data;
+                    }
+                  }
+                );
+
+              }, function(error) {
+                formatAndToastError(error, 10000);
+                self.exchangeBuy = null;
+              });
+          }
+        )
+
       });
 
     };
@@ -481,7 +481,7 @@
                 completeExchangeSell(timestamp);
               }
             )
-            
+
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -508,8 +508,8 @@
           self.exchangeSell.sentTransaction = transaction;
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-            .hideDelay(5000)
+              .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
+              .hideDelay(5000)
           );
         },
         formatAndToastError
@@ -575,7 +575,7 @@
       }
 
       currencyBalance = Number(currencyBalance).toLocaleString(languageCode, options);
-      
+
       if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
 
       return currencyBalance;
@@ -636,8 +636,8 @@
           account.virtual = accountService.setToFolder(account.address, foldername, 0);
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Virtual folder added!'))
-            .hideDelay(3000)
+              .textContent(gettextCatalog.getString('Virtual folder added!'))
+              .hideDelay(3000)
           );
         });
       } else {
@@ -653,14 +653,14 @@
             account.virtual = virtual;
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Succesfully Logged In!'))
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Succesfully Logged In!'))
+                .hideDelay(3000)
             );
           }, function(err) {
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
+                .hideDelay(3000)
             );
           });
         });
@@ -887,16 +887,16 @@
             selectAccount(account);
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Account added!'))
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Account added!'))
+                .hideDelay(3000)
             );
           });
           cancel();
         } else {
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'))
-            .hideDelay(3000)
+              .textContent(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'))
+              .hideDelay(3000)
           );
         }
 
@@ -908,7 +908,7 @@
       };
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/addWatchOnlyAddress.html',
+        templateUrl: './accounts/view/addWatchOnlyAddress.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -954,8 +954,8 @@
             } else {
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('List full or delegate already voted.'))
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('List full or delegate already voted.'))
+                  .hideDelay(5000)
               );
             }
           },
@@ -1012,7 +1012,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/addDelegate.html',
+        templateUrl: './accounts/view/addDelegate.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1024,8 +1024,8 @@
       if (!votes || votes.length == 0) {
         $mdToast.show(
           $mdToast.simple()
-          .textContent(gettextCatalog.getString('No difference from original delegate list'))
-          .hideDelay(5000)
+            .textContent(gettextCatalog.getString('No difference from original delegate list'))
+            .hideDelay(5000)
         );
         return;
       }
@@ -1074,7 +1074,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/vote.html',
+        templateUrl: './accounts/view/vote.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1151,7 +1151,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/timestampDocument.html',
+        templateUrl: './accounts/view/timestampDocument.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1294,7 +1294,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/sendArk.html',
+        templateUrl: './accounts/view/sendArk.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1486,7 +1486,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/manageBackground.html',
+        templateUrl: './accounts/view/manageBackground.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -1543,8 +1543,8 @@
           self.listNetworks = networkService.getNetworks();
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network removed succesfully!'))
-            .hideDelay(3000)
+              .textContent(gettextCatalog.getString('Network removed succesfully!'))
+              .hideDelay(3000)
           );
         });
 
@@ -1561,7 +1561,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/manageNetwork.html',
+        templateUrl: './accounts/view/manageNetwork.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -1579,8 +1579,8 @@
           function(account) {
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Passphrases saved'))
-              .hideDelay(5000)
+                .textContent(gettextCatalog.getString('Passphrases saved'))
+                .hideDelay(5000)
             );
           },
           formatAndToastError
@@ -1600,7 +1600,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/savePassphrases.html',
+        templateUrl: './accounts/view/savePassphrases.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1656,7 +1656,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/createDelegate.html',
+        templateUrl: './accounts/view/createDelegate.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1685,8 +1685,8 @@
               self.accounts.push(account);
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
+                  .hideDelay(5000)
               );
               selectAccount(account);
             });
@@ -1717,7 +1717,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/createAccount.html',
+        templateUrl: './accounts/view/createAccount.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1744,8 +1744,8 @@
                 if (self.accounts[i].address === account.address) {
                   $mdToast.show(
                     $mdToast.simple()
-                    .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
-                    .hideDelay(5000)
+                      .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
+                      .hideDelay(5000)
                   );
                   return selectAccount(account);
                 }
@@ -1754,8 +1754,8 @@
               self.accounts.push(account);
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
+                  .hideDelay(5000)
               );
               selectAccount(account);
               // TODO save passphrases after we have local encrytion
@@ -1777,7 +1777,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/importAccount.html',
+        templateUrl: './accounts/view/importAccount.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1789,7 +1789,7 @@
       var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
       account.transactions.forEach(function(trns) {
         filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
-        ","+trns.vendorField+eol;
+          ","+trns.vendorField+eol;
       });
       var blob = new Blob([filecontent]);
       var downloadLink = document.createElement('a');
@@ -1825,8 +1825,8 @@
             function(transaction) {
               validateTransaction(selectedAccount, transaction);
             },
-          formatAndToastError
-        );
+            formatAndToastError
+          );
           $mdDialog.hide();
         }
       };
@@ -1843,7 +1843,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/createSecondPassphrase.html',
+        templateUrl: './accounts/view/createSecondPassphrase.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1900,8 +1900,8 @@
 
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account removed!'))
-                .hideDelay(3000)
+                  .textContent(gettextCatalog.getString('Account removed!'))
+                  .hideDelay(3000)
               );
             });
           });
@@ -1922,8 +1922,8 @@
             self.accounts = accountService.loadAllAccounts();
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Label set'))
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Label set'))
+                .hideDelay(3000)
             );
           });
         } else if (action == gettextCatalog.getString("Second Passphrase")) {
@@ -1939,7 +1939,7 @@
 
       $mdBottomSheet.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/contactSheet.html',
+        templateUrl: './accounts/view/contactSheet.html',
         clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
@@ -1960,11 +1960,11 @@
     function showMessage(message) {
       $mdDialog.show(
         $mdDialog.alert()
-        .parent(angular.element(document.getElementById('app')))
-        .clickOutsideToClose(true)
-        .title(message)
-        .ariaLabel(message)
-        .ok(gettextCatalog.getString('Ok'))
+          .parent(angular.element(document.getElementById('app')))
+          .clickOutsideToClose(true)
+          .title(message)
+          .ariaLabel(message)
+          .ok(gettextCatalog.getString('Ok'))
       );
     }
 
@@ -2019,7 +2019,7 @@
         scope: $scope,
         preserveScope: true,
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/signMessage.html',
+        templateUrl: './accounts/view/signMessage.html',
         clickOutsideToClose: false
       });
     };
@@ -2040,7 +2040,7 @@
         var list = JSON.parse($scope.verify.message);
         var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
         var message = gettextCatalog.getString("Error in signature processing");
-        
+
         $mdDialog.hide();
         if (res == true) {
           message = gettextCatalog.getString("The message is verified successfully");
@@ -2070,7 +2070,7 @@
           scope: $scope,
           preserveScope: true,
           parent: angular.element(document.getElementById('app')),
-          templateUrl: './src/accounts/view/verifyMessage.html',
+          templateUrl: './accounts/view/verifyMessage.html',
           clickOutsideToClose: false
         });
       }
@@ -2095,15 +2095,15 @@
             if (err) {
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
-                .hideDelay(5000)
-                .theme("error")
+                  .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
+                  .hideDelay(5000)
+                  .theme("error")
               );
             } else {
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
+                  .hideDelay(5000)
               );
             }
           });
@@ -2122,8 +2122,8 @@
             selectedAccount.transactions.unshift(transaction);
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-              .hideDelay(5000)
+                .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
+                .hideDelay(5000)
             );
           },
           formatAndToastError
@@ -2147,7 +2147,7 @@
         scope: $scope,
         preserveScope: true,
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/showTransaction.html',
+        templateUrl: './accounts/view/showTransaction.html',
         clickOutsideToClose: false
       });
     };

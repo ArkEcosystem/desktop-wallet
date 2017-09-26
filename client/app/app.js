@@ -1,6 +1,10 @@
 'use strict';
 
-var appearanceConfig = require('./config/appearance');
+require('angular-qrcode');
+
+window.qrcode = require('qrcode-generator');
+
+var appearanceConfig = require('appearanceConfig');
 var modules = [
   'ngMaterial',
   'md.data.table',
@@ -49,28 +53,29 @@ const remote = electron.remote;
 const Menu = remote.Menu;
 
 const InputMenu = Menu.buildFromTemplate([{
-  label: 'Undo',
-  role: 'undo',
-}, {
-  label: 'Redo',
-  role: 'redo',
-}, {
-  type: 'separator',
-}, {
-  label: 'Cut',
-  role: 'cut',
-}, {
-  label: 'Copy',
-  role: 'copy',
-}, {
-  label: 'Paste',
-  role: 'paste',
-}, {
-  type: 'separator',
-}, {
-  label: 'Select all',
-  role: 'selectall',
-}, ]);
+        label: 'Undo',
+        role: 'undo',
+    }, {
+        label: 'Redo',
+        role: 'redo',
+    }, {
+        type: 'separator',
+    }, {
+        label: 'Cut',
+        role: 'cut',
+    }, {
+        label: 'Copy',
+        role: 'copy',
+    }, {
+        label: 'Paste',
+        role: 'paste',
+    }, {
+        type: 'separator',
+    }, {
+        label: 'Select all',
+        role: 'selectall',
+    },
+]);
 
 document.body.addEventListener('contextmenu', (e) => {
   e.preventDefault();

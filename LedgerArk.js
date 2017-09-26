@@ -6,7 +6,7 @@ var utils = require('./utils');
 var LedgerArk = function(comm) {
 	this.comm = comm;
 	this.comm.setScrambleKey('w0w');
-}
+};
 
 LedgerArk.prototype.getAddress_async = function(path) {
 	var splitPath = utils.splitPath(path);
@@ -20,6 +20,7 @@ LedgerArk.prototype.getAddress_async = function(path) {
 	splitPath.forEach(function (element, index) {
 		buffer.writeUInt32BE(element, 6 + 4 * index);
 	});
+
 	return this.comm.exchange(buffer.toString('hex'), [0x9000]).then(function(response) {
 		var result = {};
     //console.log(response);
@@ -30,7 +31,7 @@ LedgerArk.prototype.getAddress_async = function(path) {
 		result['address'] = response.slice(1 + publicKeyLength + 1, 1 + publicKeyLength + 1 + addressLength).toString('ascii');
 		return result;
 	});
-}
+};
 
 LedgerArk.prototype.signTransaction_async = function(path, rawTxHex) {
 	var splitPath = utils.splitPath(path);
@@ -88,7 +89,7 @@ LedgerArk.prototype.signTransaction_async = function(path, rawTxHex) {
 		result.signature = response.substring(0, response.length-4);
 		return result;
 	});
-}
+};
 
 LedgerArk.prototype.getAppConfiguration_async = function() {
 	var buffer = new Buffer(5);
@@ -104,7 +105,7 @@ LedgerArk.prototype.getAppConfiguration_async = function() {
 			result['version'] = "" + response[1] + '.' + response[2] + '.' + response[3];
 			return result;
 	});
-}
+};
 
 LedgerArk.prototype.signPersonalMessage_async = function(path, messageHex) {
 	var splitPath = utils.splitPath(path);
@@ -113,16 +114,17 @@ LedgerArk.prototype.signPersonalMessage_async = function(path, messageHex) {
 	var apdus = [];
 	var response = [];
 	var self = this;
-	while (offset != message.length) {
-		var maxChunkSize = (offset == 0 ? (150 - 1 - splitPath.length * 4 - 4) : 150)
+	while (offset !== message.length) {
+		var maxChunkSize = (offset === 0 ? (150 - 1 - splitPath.length * 4 - 4) : 150)
 		var chunkSize = (offset + maxChunkSize > message.length ? message.length - offset : maxChunkSize);
-		var buffer = new Buffer(offset == 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize);
+		var buffer = new Buffer(offset === 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize);
 		buffer[0] = 0xe0;
 		buffer[1] = 0x08;
-		buffer[2] = (offset == 0 ? 0x00 : 0x80);
+		buffer[2] = (offset === 0 ? 0x00 : 0x80);
 		buffer[3] = 0x40;
-		buffer[4] = (offset == 0 ? 1 + splitPath.length * 4 + 4 + chunkSize : chunkSize);
-		if (offset == 0) {
+		buffer[4] = (offset === 0 ? 1 + splitPath.length * 4 + 4 + chunkSize : chunkSize);
+
+		if (offset === 0) {
 			buffer[5] = splitPath.length;
 			splitPath.forEach(function (element, index) {
 				buffer.writeUInt32BE(element, 6 + 4 * index);
@@ -136,6 +138,7 @@ LedgerArk.prototype.signPersonalMessage_async = function(path, messageHex) {
 		apdus.push(buffer.toString('hex'));
 		offset += chunkSize;
 	}
+
 	return utils.foreach(apdus, function(apdu) {
 		return self.comm.exchange(apdu, [0x9000]).then(function(apduResponse) {
 			response = apduResponse;
@@ -148,6 +151,6 @@ LedgerArk.prototype.signPersonalMessage_async = function(path, messageHex) {
 		result['s'] = response.slice(1 + 32, 1 + 32 + 32).toString('hex');
 		return result;
 	})
-}
+};
 
 module.exports = LedgerArk;

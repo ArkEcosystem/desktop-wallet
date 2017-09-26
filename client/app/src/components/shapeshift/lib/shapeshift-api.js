@@ -1,11 +1,11 @@
 //TODO make sure this closure make sense
 
-var ShapeShift = (function() {
-  var JP = JSON.parse;
-  var JS = JSON.stringify;
+const ShapeShift = (function () {
+  const JP = JSON.parse;
+  const JS = JSON.stringify;
 
   function CreateXmlHttp() {
-    var xmlhttp;
+    let xmlhttp;
     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
       xmlhttp = new XMLHttpRequest();
     } else { // code for IE6, IE5
@@ -19,10 +19,10 @@ var ShapeShift = (function() {
       cb = data;
     }
 
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState == 4) {
         if (xmlhttp.status == 200) {
-          var parsedResponse = JP(xmlhttp.responseText);
+          const parsedResponse = JP(xmlhttp.responseText);
           cb.apply(null, [parsedResponse]);
         } else {
           cb.apply(null, [new Error('Request Failed')])
@@ -30,8 +30,8 @@ var ShapeShift = (function() {
       }
     };
 
-    var url = 'https://shapeshift.io/' + apiEp.path;
-    var type = apiEp.method;
+    const url = 'https://shapeshift.io/' + apiEp.path;
+    const type = apiEp.method;
 
     xmlhttp.open(apiEp.method, url, true);
     if (type.toUpperCase() === 'POST') {
@@ -42,26 +42,26 @@ var ShapeShift = (function() {
     }
   }
 
-  var endPoints = {
-    Rate: { path: 'rate', method: 'GET' },
-    DepositLimit: { path: 'limit', method: 'GET' },
-    MarketInfo: { path: 'marketinfo', method: 'GET' },
-    RecentTxList: { path: 'recenttx', method: 'GET' },
-    StatusOfDepositToAddress: { path: 'txStat', method: 'GET' },
-    TimeRemainingFixedAmountTx: { path: 'timeremaining', method: 'GET' },
-    GetCoins: { path: 'getcoins', method: 'GET' },
-    GetTxListWithKey: { path: 'txbyapikey', method: 'GET' },
-    GetTxToAddressWithKey: { path: 'txbyaddress', method: 'GET' },
-    ValidateAddress: { path: 'validateAddress', method: 'GET' },
-    NormalTx: { path: 'shift', method: 'POST' },
-    RequestEmailReceipt: { path: 'mail', method: 'POST' },
-    FixedAmountTx: { path: 'sendamount', method: 'POST' },
-    QuoteSendExactPrice: { path: 'sendamount', method: 'POST' },
-    CancelPendingTx: { path: 'cancelpending', method: 'POST' }
+  const endPoints = {
+    Rate: {path: 'rate', method: 'GET'},
+    DepositLimit: {path: 'limit', method: 'GET'},
+    MarketInfo: {path: 'marketinfo', method: 'GET'},
+    RecentTxList: {path: 'recenttx', method: 'GET'},
+    StatusOfDepositToAddress: {path: 'txStat', method: 'GET'},
+    TimeRemainingFixedAmountTx: {path: 'timeremaining', method: 'GET'},
+    GetCoins: {path: 'getcoins', method: 'GET'},
+    GetTxListWithKey: {path: 'txbyapikey', method: 'GET'},
+    GetTxToAddressWithKey: {path: 'txbyaddress', method: 'GET'},
+    ValidateAddress: {path: 'validateAddress', method: 'GET'},
+    NormalTx: {path: 'shift', method: 'POST'},
+    RequestEmailReceipt: {path: 'mail', method: 'POST'},
+    FixedAmountTx: {path: 'sendamount', method: 'POST'},
+    QuoteSendExactPrice: {path: 'sendamount', method: 'POST'},
+    CancelPendingTx: {path: 'cancelpending', method: 'POST'}
   };
 
   function coinPairer(coin1, coin2) {
-    var pair = null;
+    const pair = null;
 
     if (coin1 === undefined && coin2 === undefined) return '';
     if (typeof(coin1) === 'function') return '';
@@ -72,12 +72,12 @@ var ShapeShift = (function() {
   }
 
   function getArgsAdder(endPoint, args) {
-    var clone = {
+    const clone = {
       path: endPoint.path,
       method: endPoint.method
     };
     if (args !== undefined && args[0] !== null) {
-      for (var i = 0; i < args.length; i++) {
+      for (let i = 0; i < args.length; i++) {
         clone.path = clone.path + '/' + args[i];
       }
     }
@@ -90,89 +90,91 @@ var ShapeShift = (function() {
     if (typeof(cb) === 'function') cb(data);
   }
 
-  function ShapeShiftApi(publicApiKey) { this.apiPubKey = publicApiKey; }
+  function ShapeShiftApi(publicApiKey) {
+    this.apiPubKey = publicApiKey;
+  }
 
-  var SS = ShapeShiftApi.prototype;
+  const SS = ShapeShiftApi.prototype;
 
-  SS.GetRate = function(coin1, coin2, cb) {
-    var pair = coinPairer(coin1, coin2);
-    var apiEp = getArgsAdder(endPoints.Rate, pair);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+  SS.GetRate = function (coin1, coin2, cb) {
+    const pair = coinPairer(coin1, coin2);
+    const apiEp = getArgsAdder(endPoints.Rate, pair);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
 
-  SS.GetDepositLimit = function(coin1, coin2, cb) {
-    var pair = coinPairer(coin1, coin2);
-    var apiEp = getArgsAdder(endPoints.DepositLimit, [pair]);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+  SS.GetDepositLimit = function (coin1, coin2, cb) {
+    const pair = coinPairer(coin1, coin2);
+    const apiEp = getArgsAdder(endPoints.DepositLimit, [pair]);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
 
-  SS.GetMarketInfo = function(coin1, coin2, cb) {
-    var pair = coinPairer(coin1, coin2);
+  SS.GetMarketInfo = function (coin1, coin2, cb) {
+    const pair = coinPairer(coin1, coin2);
     if (typeof(coin1) === 'function') cb = coin1;
     if (typeof(coin2) === 'function') cb = coin2;
-    var apiEp = getArgsAdder(endPoints.MarketInfo, [pair]);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+    const apiEp = getArgsAdder(endPoints.MarketInfo, [pair]);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
 
-  SS.GetRecentTxList = function(max, cb) {
+  SS.GetRecentTxList = function (max, cb) {
     if (typeof(max) === 'function') cb = max;
-    var apiEp = getArgsAdder(endPoints.RecentTxList, [max]);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+    const apiEp = getArgsAdder(endPoints.RecentTxList, [max]);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
 
-  SS.GetStatusOfDepositToAddress = function(address, cb) {
+  SS.GetStatusOfDepositToAddress = function (address, cb) {
     if (address === undefined) throw new Error('no address provided');
-    var apiEp = getArgsAdder(endPoints.StatusOfDepositToAddress, [address]);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+    const apiEp = getArgsAdder(endPoints.StatusOfDepositToAddress, [address]);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
 
-  SS.GetTimeRemainingFxiedAmountTx = function(address, cb) {
+  SS.GetTimeRemainingFxiedAmountTx = function (address, cb) {
     if (address === undefined) throw new Error('no address provided');
-    var apiEp = getArgsAdder(endPoints.TimeRemainingFixedAmountTx, [address]);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+    const apiEp = getArgsAdder(endPoints.TimeRemainingFixedAmountTx, [address]);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
 
     });
   };
 
-  SS.GetCoins = function(cb) {
-    var apiEp = getArgsAdder(endPoints.GetCoins);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+  SS.GetCoins = function (cb) {
+    const apiEp = getArgsAdder(endPoints.GetCoins);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
 
-  SS.GetTxListWithKey = function() {
+  SS.GetTxListWithKey = function () {
     //TODO do we care about exposing private api key functions?
   };
 
-  SS.GetTxToAddressWithKey = function() {
+  SS.GetTxToAddressWithKey = function () {
     //TODO do we care about exposing private api key functions?
   };
 
-  SS.ValidateAdddress = function(address, coinSymbol, cb) {
+  SS.ValidateAdddress = function (address, coinSymbol, cb) {
     if (address === undefined) throw new Error('no address provided');
     if (coinSymbol === undefined) throw new Error('no coin symbol provided');
-    var apiEp = getArgsAdder(endPoints.ValidateAddress, [address, coinSymbol]);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, function(response) {
+    const apiEp = getArgsAdder(endPoints.ValidateAddress, [address, coinSymbol]);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, function (response) {
       cbProtector(cb, response);
     });
   };
@@ -186,18 +188,18 @@ var ShapeShift = (function() {
     return data;
   }
 
-  SS.CreateNormalTx = function(withdrawalAddress, coin1, coin2) {
-    var NormalTx = {
+  SS.CreateNormalTx = function (withdrawalAddress, coin1, coin2) {
+    const NormalTx = {
       withdrawal: withdrawalAddress,
       pair: coinPairer(coin1, coin2)
     };
     return NormalTx;
   };
-  SS.NormalTx = function(data, cb) {
+  SS.NormalTx = function (data, cb) {
     data = NormalTxValidate(data, this);
-    var apiEp = getArgsAdder(endPoints.NormalTx, []);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, data, function(response) {
+    const apiEp = getArgsAdder(endPoints.NormalTx, []);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, data, function (response) {
       cbProtector(cb, response);
     });
   };
@@ -212,12 +214,12 @@ var ShapeShift = (function() {
     return data;
   }
 
-  SS.RequestEmailReceipt = function(data, cb) {
+  SS.RequestEmailReceipt = function (data, cb) {
     //TODO validateData(data);
     data = RequestEmailValidate(data, this);
-    var apiEp = getArgsAdder(endPoints.RequestEmailReceipt);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, data, function(response) {
+    const apiEp = getArgsAdder(endPoints.RequestEmailReceipt);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, data, function (response) {
       cbProtector(cb, response);
     });
   };
@@ -233,8 +235,8 @@ var ShapeShift = (function() {
     return data;
   }
 
-  SS.CreateFixedTx = function(amount, withdrawalAddress, coin1, coin2) {
-    var NormalTx = {
+  SS.CreateFixedTx = function (amount, withdrawalAddress, coin1, coin2) {
+    const NormalTx = {
       amount: amount,
       withdrawal: withdrawalAddress,
       pair: coinPairer(coin1, coin2)
@@ -242,13 +244,13 @@ var ShapeShift = (function() {
     return NormalTx;
   };
 
-  SS.FixedAmountTx = function(data, cb) {
+  SS.FixedAmountTx = function (data, cb) {
     //TODO validateData(data);
     data = FixedAmountValidate(data, this);
-    var apiEp = getArgsAdder(endPoints.FixedAmountTx);
-    var xmlhttp = CreateXmlHttp();
+    const apiEp = getArgsAdder(endPoints.FixedAmountTx);
+    const xmlhttp = CreateXmlHttp();
     console.log(data);
-    AjaxRequest(xmlhttp, apiEp, data, function(response) {
+    AjaxRequest(xmlhttp, apiEp, data, function (response) {
       cbProtector(cb, response);
     });
   };
@@ -263,12 +265,12 @@ var ShapeShift = (function() {
     return data;
   }
 
-  SS.QuoteSendExactPrice = function(data, cb) {
+  SS.QuoteSendExactPrice = function (data, cb) {
     //TODO validateData(data);
     data = QuoteSendValidate(data, this);
-    var apiEp = getArgsAdder(endPoints.QuoteSendExactPrice);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, data, function(response) {
+    const apiEp = getArgsAdder(endPoints.QuoteSendExactPrice);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, data, function (response) {
       cbProtector(cb, response);
     });
   };
@@ -277,18 +279,18 @@ var ShapeShift = (function() {
     if (typeof(data) === 'object') return data;
     if (data.address === undefined) throw new Error('no address given');
     if (typeof(data) === 'string') {
-      var address = data;
-      data = { address: address };
+      const address = data;
+      data = {address: address};
     }
     if (ss.apiKey) data.apiKey = ss.apiPubKey;
     return data;
   }
 
-  SS.CancelPendingTx = function(data, cb) {
+  SS.CancelPendingTx = function (data, cb) {
     data = CancelPendingValidate(data, this);
-    var apiEp = getArgsAdder(endPoints.CancelPendingTx);
-    var xmlhttp = CreateXmlHttp();
-    AjaxRequest(xmlhttp, apiEp, data, function(response) {
+    const apiEp = getArgsAdder(endPoints.CancelPendingTx);
+    const xmlhttp = CreateXmlHttp();
+    AjaxRequest(xmlhttp, apiEp, data, function (response) {
       cbProtector(cb, response);
     });
   };
@@ -297,5 +299,5 @@ var ShapeShift = (function() {
     ShapeShiftApi: ShapeShiftApi
   }
 })();
-var PUBLIC_API_KEY = '08ef330fe264f674ddd4943a5156cfb1ea06f10b95d5db54781afa3d8b108100874083d53b28afa5ce58bf3e834158a3114db725bce5b49da9454ef036753599'
-var SSA = new ShapeShift.ShapeShiftApi(PUBLIC_API_KEY);
+let PUBLIC_API_KEY = '08ef330fe264f674ddd4943a5156cfb1ea06f10b95d5db54781afa3d8b108100874083d53b28afa5ce58bf3e834158a3114db725bce5b49da9454ef036753599'
+let SSA = new ShapeShift.ShapeShiftApi(PUBLIC_API_KEY);
