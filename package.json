@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fix/ark-desktop.git"
+    "url": "git+https://github.com/ArkEcosystem/ark-desktop.git"
   },
   "keywords": [
     "Electron",
@@ -32,7 +32,8 @@
     "email": "fixcrypt@gmail.com",
     "url": "https://github.com/fix"
   },
-  "contributors": [{
+  "contributors": [
+    {
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
@@ -45,11 +46,12 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fix/ark-desktop/issues"
+    "url": "https://github.com/ArkEcosystem/ark-desktop/issues"
   },
-  "homepage": "https://github.com/fix/ark-desktop#readme",
+  "homepage": "https://github.com/ArkEcosystem/ark-desktop#readme",
   "dependencies": {
     "about-window": "~1.7.0",
+    "electron-window-state": "^4.1.1",
     "ledgerco": "github:ledgerhq/ledger-node-js-api#master",
     "q": "^1.5.0"
   },

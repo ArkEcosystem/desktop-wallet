@@ -11,6 +11,8 @@ const ledger = require('ledgerco')
 const LedgerArk = require('./LedgerArk')
 const fork = require('child_process').fork;
 
+const windowStateKeeper = require('electron-window-state');
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -18,23 +20,35 @@ let mainWindow
 
 var ledgercomm
 
+// needed to create menu/update it.
+var menu = null;
+var enableScreenshotProtection = true;
+var template = null;
+
 function createWindow () {
     // Create the browser window.t
   var platform = require('os').platform();
   var iconpath = __dirname + "/client/ark.png";
-  if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
+  //if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
   //if(platform == "win32") iconpath = __dirname + "/client/ark_windows.png";
   //if(platform == "darwin") iconpath = __dirname + "/client/ark_mac.png";
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
-  mainWindow = new BrowserWindow({width: width-100, height: height-100, center:true, icon: iconpath, resizable:true, frame:true, show:false})
+
+  let mainWindowState = windowStateKeeper({
+    defaultWidth: width-100,
+    defaultHeight: height-100
+  });
+
+  mainWindow = new BrowserWindow({width: mainWindowState.width, height: mainWindowState.height, x: mainWindowState.x, y: mainWindowState.y, center:true, icon: iconpath, resizable:true, frame:true, show:false})
   mainWindow.setContentProtection(true);
+  mainWindowState.manage(mainWindow);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
   
-  var ledgerWorker = fork('./ledger-worker');
+  var ledgerWorker = fork(`${__dirname}/ledger-worker.js`);
   
   ledgerWorker.on('message', function (message) {
     if(message.connected && !ledgercomm){
@@ -118,9 +132,8 @@ function createWindow () {
 
 });
 
-
   // Create the Application's main menu
-  var template = [
+  template = [
     {
       label: "Application",
       submenu: [
@@ -135,7 +148,7 @@ function createWindow () {
             })
         },
         { type: "separator" },
-        { label: "Disable screenshot protection (unsafe)", click: function() { mainWindow.setContentProtection(false) }},
+        { label: "Disable screenshot protection (unsafe)", click: function() { updateScreenshotProtectionItem(); }},
         { type: "separator" },
         { label: "Minimize", click: function() { mainWindow.minimize(); }},
         { label: "Maximize", click: function() { mainWindow.maximize(); }},
@@ -162,7 +175,8 @@ function createWindow () {
     }
   ];
 
-  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+  menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 
 
   // Emitted when the window is closed.
@@ -199,5 +213,24 @@ app.on('activate', function () {
   }
 })
 
+// enables/disables and updates the screen shot protection item menu 
+function updateScreenshotProtectionItem() {
+    if (menu == null || template == null) {
+        return;
+    }
+
+    enableScreenshotProtection = !enableScreenshotProtection;
+    mainWindow.setContentProtection(enableScreenshotProtection);
+    if (enableScreenshotProtection) {
+        template[0].submenu[2].label = "Disable screenshot protection (unsafe)";
+    }
+
+    else {
+        template[0].submenu[2].label = "Enable screenshot protection (recommended)";
+    }
+
+    menu = Menu.buildFromTemplate(template);
+    Menu.setApplicationMenu(menu);
+}
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

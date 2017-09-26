@@ -1,4 +1,4 @@
-<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak md-theme="ul.network.theme">
+<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak md-theme="ul.currentTheme">
   <form name="sendArkForm" ng-submit="send.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -76,7 +76,6 @@
         </div>
         <div class="balance">{{ul.network.symbol}} {{ send.remainingBalance }}</div>
       </div>
-      <!-- workaround for pull first item on left -->
       <span flex></span>
       <md-button ng-click="send.openFile()">
         <span translate>Load Tx From File</span>

@@ -1,5 +1,5 @@
-<md-dialog aria-label="Appearance" ng-cloak flex="50" md-theme="ul.network.theme">
-  <md-toolbar>
+<md-dialog aria-label="Appearance" ng-cloak flex="50" md-theme="ul.currentTheme">
+  <md-toolbar md-colors="{'background':'primary'}">
     <div class="md-toolbar-tools">
       <h2><span translate>Appearance</span></h2>
       <span flex></span>
@@ -48,6 +48,10 @@
     </md-tabs>
   </md-content>
   <md-dialog-actions layout="row">
+    <md-switch ng-model="send.darkMode" ng-change="send.toggleDark(send.darkMode)" aria-label="Dark Mode">
+      {{'Dark Mode' | translate}}
+    </md-switch>
+    <span flex></span>
     <md-button md-colors="{'background':'primary'}" ng-click="send.save()">
       <translate>Save</translate>
     </md-button>
