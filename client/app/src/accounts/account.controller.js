@@ -1,10 +1,10 @@
-(function(){
+(function() {
   angular
     .module('arkclient.accounts')
     .controller('AccountController', [
       'accountService',
       'networkService',
-      'pluginLoaderService',
+      'pluginLoader',
       'storageService',
       'changerService',
       'ledgerService',
@@ -21,80 +21,33 @@
       'gettextCatalog',
       '$mdThemingProvider',
       '$mdTheming',
+      '$window',
       AccountController
     ]).filter('accountlabel', ['accountService', function(accountService) {
-      return function(address) {
-        if (!address)
-          return address
+    return function(address) {
+      if (!address)
+        return address
 
-        const username = accountService.getUsername(address);
-        if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
-          return accountService.smallId(username)
+      var username = accountService.getUsername(address)
+      if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+        return accountService.smallId(username)
 
-        return username
-      };
-    }]).filter('smallId', function(accountService) {
-      return function(fullId) {
-        return accountService.smallId(fullId)
-      }
-    }).filter('exchangedate', [function() {
-      return function(exchangetime) {
-        return new Date(exchangetime * 1000);
-      };
-    }]).filter('exchangedate', [function() {
-      return function(exchangetime) {
-        return new Date(exchangetime * 1000);
-      };
-    }]).filter('amountToCurrency', [function() {
-      return function(amount, scope) {
-        if (typeof amount === 'undefined' || amount == 0) return 0;
-        const price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
-        return (amount * price).toFixed(5);
-      }
-    }]).directive('copyToClipboard', function($window, $mdToast) {
-    const body = angular.element($window.document.body);
-    const textarea = angular.element('<textarea/>');
-    textarea.css({
-        position: 'fixed',
-        opacity: '0'
-      });
-
-      function copy(toCopy) {
-        textarea.val(toCopy);
-        body.append(textarea);
-        textarea[0].select();
-
-        try {
-          let successful = document.execCommand('copy');
-          if (!successful) throw successful;
-        } catch (err) {
-          console.log("failed to copy", toCopy);
-        }
-        $mdToast.simple()
-          .textContent('Text copied to clipboard!')
-          .hideDelay(2000);
-        textarea.remove();
-      }
-
-      return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-          element.bind('click', function(e) {
-            copy(attrs.copyToClipboard);
-          });
-        }
-      }
-    });
+      return username
+    };
+  }]);
   /**
-   * Main Controller for the arkclient.Accounts module
+   * Main Controller for the Angular Material Starter App
+   * @param $scope
+   * @param $mdSidenav
+   * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoaderService, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider) {
-    let self = this;
+  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window) {
+    var self = this;
 
-    let languages = {
+    var languages = {
       en: gettextCatalog.getString("English"),
-      ar: gettextCatalog.getString("Arab"),
+      ar: gettextCatalog.getString("Arabic"),
       bg_BG: gettextCatalog.getString("Bulgarian"),
       de: gettextCatalog.getString("German"),
       el: gettextCatalog.getString("Greek"),
@@ -107,18 +60,19 @@
       ko: gettextCatalog.getString("Korean"),
       nl: gettextCatalog.getString("Dutch"),
       pl: gettextCatalog.getString("Polish"),
-      pt_BR: gettextCatalog.getString("Portuguese"),
+      pt_BR: gettextCatalog.getString("Portuguese - Brazil"),
+      pt_PT: gettextCatalog.getString("Portuguese - Portugal"),
       ro: gettextCatalog.getString("Romanian"),
       ru: gettextCatalog.getString("Russian"),
       sk: gettextCatalog.getString("Slovak"),
       sl: gettextCatalog.getString("Slovenian"),
       sr: gettextCatalog.getString("Serbian"),
       sv: gettextCatalog.getString("Swedish"),
-      zh_CN: gettextCatalog.getString("Chinese simplified"),
-      zh_TW: gettextCatalog.getString("Chinese traditional")
+      zh_CN: gettextCatalog.getString("Chinese - China"),
+      zh_TW: gettextCatalog.getString("Chinese - Taiwan")
     };
 
-    pluginLoaderService.triggerEvent("onStart");
+    pluginLoader.triggerEvent("onStart");
 
     self.currencies = [
       { name: "usd", symbol: "$" },
@@ -140,17 +94,20 @@
     ];
 
     gettextCatalog.debug = false;
-    self.language = storageService.get("language");
-    if (!self.language) selectNextLanguage();
-    else gettextCatalog.setCurrentLanguage(self.language);
+    self.language = storageService.get("language") || "en";
+    self.selectedLanguage = self.language;
+    gettextCatalog.setCurrentLanguage(self.language);
 
     self.getLanguage = function() {
       return languages[self.language];
     };
 
+    $window.onbeforeunload = function() {
+      storageService.saveState();
+    }
 
     self.closeApp = function() {
-      let confirm = $mdDialog.confirm()
+      var confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Quit Ark Client?'))
         .ok(gettextCatalog.getString('Quit'))
         .cancel(gettextCatalog.getString('Cancel'));
@@ -160,14 +117,14 @@
     };
 
     self.windowApp = function(action, args) {
-      const curWin = require('electron').remote.getCurrentWindow();
+      var curWin = require('electron').remote.getCurrentWindow();
       if (curWin[action])
         return curWin[action](args);
       else return null;
     };
 
     self.clearData = function() {
-      const confirm = $mdDialog.confirm()
+      var confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Are you sure?'))
         .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
         .ariaLabel(gettextCatalog.getString('Confirm'))
@@ -185,7 +142,7 @@
     };
 
     self.openExplorer = openExplorer;
-    self.clientVersion = require('packageJson').version;
+    self.clientVersion = require('../../package.json').version;
     self.latestClientVersion = self.clientVersion;
     networkService.getLatestClientVersion().then(function(r) { self.latestClientVersion = r; });
     self.isNetworkConnected = false;
@@ -227,12 +184,22 @@
     self.connectedPeer = { isConnected: false };
 
     if (!self.network.theme) self.network.theme = 'default';
+    if (!self.network.themeDark) self.network.themeDark = false;
 
+    // will be used in view
+    self.currentTheme = self.network.theme;
+
+    // set 'dynamic' as the default theme
     generateDynamicPalette(function(name) {
       if (name && self.network.theme == name) {
         self.network.theme = name;
       }
+      // generate dark theme after load the dynamic
+      generateDarkTheme();
     });
+
+    // set dark mode
+    if (self.network.themeDark) self.currentTheme = 'dark';
 
     //refreshing displayed account every 8s
     $interval(function() {
@@ -277,8 +244,8 @@
           self.isNetworkConnected = false;
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network disconnected!'))
-            .hideDelay(10000)
+              .textContent(gettextCatalog.getString('Network disconnected!'))
+              .hideDelay(10000)
           );
         } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
           self.isNetworkConnected = true;
@@ -286,8 +253,8 @@
           $timeout(function() {
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Network connected and healthy!'))
-              .hideDelay(10000)
+                .textContent(gettextCatalog.getString('Network connected and healthy!'))
+                .hideDelay(10000)
             );
           }, 1000);
 
@@ -295,15 +262,16 @@
       }
     );
 
+    // get themes colors to show in manager appearance
     function reloadThemes() {
-      const currentThemes = $mdTheming.$get().THEMES;
-      const mapThemes = {};
+      var currentThemes = $mdTheming.$get().THEMES;
+      var mapThemes = {};
 
       Object.keys(currentThemes).forEach(function(theme) {
-        const colors = currentThemes[theme].colors;
-        const names = [];
+        var colors = currentThemes[theme].colors;
+        var names = [];
 
-        for (let color in colors) {
+        for (var color in colors) {
           names.push('default-' + colors[color].name);
         }
 
@@ -318,7 +286,7 @@
     }
 
     function formatErrorMessage(error) {
-      let basicMessage = '';
+      var basicMessage = '';
       if ('string' === typeof error) {
         basicMessage = error;
       } else if ('string' === typeof error.error) {
@@ -328,7 +296,7 @@
       } else if ('string' === typeof error.message) {
         basicMessage = error.message;
       }
-      let errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '');
+      var errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '');
       console.error(errorMessage, '\n', error);
       return errorMessage;
     }
@@ -337,29 +305,29 @@
       if (!hideDelay) {
         hideDelay = 5000;
       }
-      let errorMessage = formatErrorMessage(error)
+      var errorMessage = formatErrorMessage(error)
       $mdToast.show(
         $mdToast.simple()
-        .textContent(errorMessage)
-        .hideDelay(hideDelay)
-        .theme('error')
+          .textContent(errorMessage)
+          .hideDelay(hideDelay)
+          .theme('error')
       );
     }
 
     function copiedToClipboard() {
       $mdToast.show(
         $mdToast.simple()
-        .textContent(gettextCatalog.getString('Copied to clipboard'))
-        .hideDelay(5000)
+          .textContent(gettextCatalog.getString('Copied to clipboard'))
+          .hideDelay(5000)
       );
     }
     self.selectAllLanguages = function() {
       return languages;
     }
 
-    $scope.setLanguage = function() {
+    self.setLanguage = function() {
       function getlanguage(value) {
-        for (let prop in languages) {
+        for (var prop in languages) {
           if (languages.hasOwnProperty(prop)) {
             if (languages[prop] === value)
               return prop;
@@ -373,7 +341,7 @@
 
     //TODO: deprecated
     function selectNextLanguage() {
-      const lkeys = Object.keys(languages);
+      var lkeys = Object.keys(languages);
       if (self.language) self.language = lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
       else self.language = "en";
       storageService.set("language", self.language);
@@ -392,58 +360,58 @@
 
     self.getMarketInfo(self.selectedCoin);
 
-    const setExchangBuyExpirationProgress = function (timestamp) {
+    var setExchangBuyExpirationProgress = function(timestamp){
 
-    };
+    }
 
     self.buy = function() {
       if (self.exchangeEmail) storageService.set("email", self.exchangeEmail);
       if (self.selectedCoin) storageService.set("selectedCoin", self.selectedCoin);
       changerService.getMarketInfo(self.selectedCoin, "ark_ARK", self.buyAmount / self.buycoin.rate).then(function(rate) {
-        let amount = self.buyAmount / rate.rate;
+        var amount = self.buyAmount / rate.rate;
         if (self.selectedCoin.split("_")[1] == "USD") {
           amount = parseFloat(amount.toFixed(2));
         }
         changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, "ark_ARK", self.selected.address).then(function(resp) {
-          timeService.getTimestamp().then(
-            function(timestamp) {
-              self.exchangeBuy = resp;
-              self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000;
-              self.exchangeBuy.expirationProgress = 0;
-              self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
-              self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
-              self.exchangeBuy.receiveCurrency = "ARK";
-              const progressbar = $interval(function () {
-                if (!self.exchangeBuy) {
-                  $interval.cancel(progressbar);
-                } else {
-                  self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
-                }
-              }, 200);
-              changerService.monitorExchange(resp).then(
-                function(data) {
-                  self.exchangeHistory = changerService.getHistory();
-                },
-                function(data) {
-    
-                },
-                function(data) {
-                  if (data.payee && self.exchangeBuy.payee != data.payee) {
-                    self.exchangeBuy = data;
-                    self.exchangeHistory = changer.getHistory();
+            timeService.getTimestamp().then(
+              function(timestamp) {
+                self.exchangeBuy = resp;
+                self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000;
+                self.exchangeBuy.expirationProgress = 0;
+                self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000);
+                self.exchangeBuy.sendCurrency = self.selectedCoin.split("_")[1];
+                self.exchangeBuy.receiveCurrency = "ARK";
+                var progressbar = $interval(function() {
+                  if (!self.exchangeBuy) {
+                    $interval.cancel(progressbar);
                   } else {
-                    self.exchangeBuy.monitor = data;
+                    self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0);
                   }
-                }
-              );
-    
-            }, function(error) {
-              formatAndToastError(error, 10000);
-              self.exchangeBuy = null;
-            });
-            }
-          )
-          
+                }, 200);
+                changerService.monitorExchange(resp).then(
+                  function(data) {
+                    self.exchangeHistory = changerService.getHistory();
+                  },
+                  function(data) {
+
+                  },
+                  function(data) {
+                    if (data.payee && self.exchangeBuy.payee != data.payee) {
+                      self.exchangeBuy = data;
+                      self.exchangeHistory = changer.getHistory();
+                    } else {
+                      self.exchangeBuy.monitor = data;
+                    }
+                  }
+                );
+
+              }, function(error) {
+                formatAndToastError(error, 10000);
+                self.exchangeBuy = null;
+              });
+          }
+        )
+
       });
 
     };
@@ -458,7 +426,7 @@
         });
     }
 
-    const completeExchangeSell = function (timestamp) {
+    var completeExchangeSell = function(timestamp){
       self.exchangeTransaction = transaction
       self.exchangeSell = resp;
       self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timestamp / 1000;
@@ -466,7 +434,7 @@
       self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000);
       self.exchangeSell.receiveCurrency = self.selectedCoin.split("_")[1];
       self.exchangeSell.sendCurrency = "ARK";
-      const progressbar = $interval(function () {
+      var progressbar = $interval(function() {
         if (!self.exchangeSell) {
           $interval.cancel(progressbar);
         } else {
@@ -476,13 +444,13 @@
 
       self.exchangeSellTransaction = transaction;
       changerService.monitorExchange(resp).then(
-        function (data) {
+        function(data) {
           self.exchangeHistory = changerService.getHistory();
         },
-        function (data) {
+        function(data) {
 
         },
-        function (data) {
+        function(data) {
           if (data.payee && self.exchangeSell.payee != data.payee) {
             self.exchangeSell = data;
             self.exchangeHistory = changer.getHistory();
@@ -491,7 +459,7 @@
           }
         }
       );
-    };
+    }
 
     self.sell = function() {
       if (self.exchangeEmail) storageService.set("email", self.exchangeEmail);
@@ -513,7 +481,7 @@
                 completeExchangeSell(timestamp);
               }
             )
-            
+
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -540,8 +508,8 @@
           self.exchangeSell.sentTransaction = transaction;
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-            .hideDelay(5000)
+              .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
+              .hideDelay(5000)
           );
         },
         formatAndToastError
@@ -594,6 +562,25 @@
       }, 0) / 100000000).toFixed(2);
     }
 
+    //(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+    self.myAccountsCurrencyBalance = function() {
+      var currencyName = self.currency.name;
+      var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
+      var currencyBalance = self.myAccountsBalance() * price;
+      var languageCode = self.language.replace('_', '-');
+      var options = {
+        style: 'currency',
+        currency: currencyName,
+        currencyDisplay: 'symbol'
+      }
+
+      currencyBalance = Number(currencyBalance).toLocaleString(languageCode, options);
+
+      if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
+
+      return currencyBalance;
+    }
+
     self.otherAccounts = function() {
       return self.accounts.filter(function(account) {
         return !account.virtual;
@@ -617,9 +604,9 @@
     };
 
     self.getDefaultValue = function(account) {
-      let amount = account.balance;
+      var amount = account.balance;
       if (account.virtual) {
-        for (let folder in account.virtual) {
+        for (var folder in account.virtual) {
           if (account.virtual[folder].amount) {
             amount = amount - account.virtual[folder].amount;
           }
@@ -638,7 +625,7 @@
 
     self.createFolder = function(account) {
       if (account.virtual) {
-        let confirm = $mdDialog.prompt()
+        var confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Create Virtual Folder'))
           .textContent(gettextCatalog.getString('Please enter a folder name.'))
           .placeholder(gettextCatalog.getString('folder name'))
@@ -649,12 +636,12 @@
           account.virtual = accountService.setToFolder(account.address, foldername, 0);
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Virtual folder added!'))
-            .hideDelay(3000)
+              .textContent(gettextCatalog.getString('Virtual folder added!'))
+              .hideDelay(3000)
           );
         });
       } else {
-        let confirm = $mdDialog.prompt()
+        var confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Login'))
           .textContent(gettextCatalog.getString('Please enter this account passphrase to login.'))
           .placeholder(gettextCatalog.getString('passphrase'))
@@ -666,14 +653,14 @@
             account.virtual = virtual;
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Succesfully Logged In!'))
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Succesfully Logged In!'))
+                .hideDelay(3000)
             );
           }, function(err) {
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
+                .hideDelay(3000)
             );
           });
         });
@@ -681,7 +668,7 @@
     };
 
     function gotoAddress(address) {
-      const currentaddress = address;
+      var currentaddress = address;
       accountService.fetchAccountAndForget(currentaddress).then(function(a) {
         self.selected = a;
         if (self.selected.delegates) {
@@ -710,7 +697,7 @@
                   return b.timestamp - a.timestamp;
                 });
 
-                let previousTx = self.selected.transactions
+                var previousTx = self.selected.transactions
                 self.selected.transactions = transactions;
 
                 // if the previous tx was unconfirmed, rebroadcast and put it back at the top (for better UX)
@@ -742,7 +729,7 @@
 
 
     function refreshCurrentAccount() {
-      const myaccount = self.selected;
+      var myaccount = self.selected;
       accountService
         .refreshAccount(myaccount)
         .then(function(account) {
@@ -766,13 +753,13 @@
                 return b.timestamp - a.timestamp;
               });
 
-              const previousTx = self.selected.transactions;
+              var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
-              const playSong = storageService.get('playFundsReceivedSong');
+              var playSong = storageService.get('playFundsReceivedSong');
               if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
-                const wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
-                const audio = new Audio(wavFile);
+                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+                var audio = new Audio(wavFile);
                 audio.play();
               }
 
@@ -788,11 +775,11 @@
 
     self.refreshAccountBalances = function() {
       networkService.getPrice();
-      for (let i in self.accounts) {
+      for (var i in self.accounts) {
         accountService
           .refreshAccount(self.accounts[i])
           .then(function(account) {
-            for (let j in self.accounts) {
+            for (var j in self.accounts) {
               if (self.accounts[j].address == account.address) {
                 self.accounts[j].balance = account.balance;
               }
@@ -810,11 +797,11 @@
      * @param menuId
      */
     function selectAccount(account) {
-      const currentaddress = account.address;
+      var currentaddress = account.address;
       self.selected = accountService.getAccount(currentaddress);
       self.selected.ledger = account.ledger;
 
-      pluginLoaderService.triggerEvent("onSelectAccount", self.selected);
+      pluginLoader.triggerEvent("onSelectAccount", self.selected);
 
       self.showPublicKey = false;
 
@@ -847,18 +834,18 @@
                 return b.timestamp - a.timestamp;
               });
 
-              let previousTx = self.selected.transactions;
+              var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
-              let playSong = storageService.get('playFundsReceivedSong');
-              if (playSong === true && transactions.length > previousTx.length && transactions[0].type === 0 && transactions[0].recipientId === myaccount.address) {
-                let wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
-                let audio = new Audio(wavFile);
+              var playSong = storageService.get('playFundsReceivedSong');
+              if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
+                var audio = new Audio(wavFile);
                 audio.play();
               }
 
               // if the previous tx was unconfirmed, but it back at the top (for better UX)
-              if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id !== transactions[0].id) {
+              if (previousTx.length && !previousTx[0].confirmations && previousTx[0].id != transactions[0].id) {
                 networkService.broadcastTransaction(previousTx[0]);
                 self.selected.transactions.unshift(previousTx[0]);
               }
@@ -889,52 +876,52 @@
 
       function cancel() {
         $mdDialog.hide();
-      }
+      };
 
       function validateAddress() {
-        const isAddress = /^[1-9A-Za-z]+$/g;
-        const address = $scope.address;
+        var isAddress = /^[1-9A-Za-z]+$/g;
+        var address = $scope.address;
         if (isAddress.test(address)) {
           accountService.fetchAccount(address).then(function(account) {
             self.accounts.push(account);
             selectAccount(account);
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Account added!'))
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Account added!'))
+                .hideDelay(3000)
             );
           });
           cancel();
         } else {
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'))
-            .hideDelay(3000)
+              .textContent(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'))
+              .hideDelay(3000)
           );
         }
 
-      }
+      };
 
       $scope.send = {
         cancel: cancel,
         validateAddress: validateAddress
       };
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/addWatchOnlyAddress.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/addWatchOnlyAddress.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
         fullscreen: true
       });
-    }
+    };
 
     function getAllDelegates(selectedAccount) {
       function arrayUnique(array) {
-        let a = array.concat();
-        for(let i=0; i<a.length; ++i) {
-          for(let j=i+1; j<a.length; ++j) {
-            if(a[i] && a[i].username === a[j].username)
+        var a = array.concat();
+        for (var i = 0; i < a.length; ++i) {
+          for (var j = i + 1; j < a.length; ++j) {
+            if (a[i] && a[i].username === a[j].username)
               a.splice(j--, 1);
           }
         }
@@ -946,12 +933,12 @@
     };
 
     function addDelegate(selectedAccount) {
-      const data = {fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {}};
+      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {} };
       accountService.getActiveDelegates().then(function(r) { data.registeredDelegates = r; });
 
       function add() {
         function indexOfDelegates(array, item) {
-          for (let i in array) {
+          for (var i in array) {
             if (array[i].username == item.username) {
               console.log(array[i]);
               return i;
@@ -967,8 +954,8 @@
             } else {
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('List full or delegate already voted.'))
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('List full or delegate already voted.'))
+                  .hideDelay(5000)
               );
             }
           },
@@ -978,7 +965,7 @@
 
       function addSponsors() {
         function indexOfDelegates(array, item) {
-          for (let i in array) {
+          for (var i in array) {
             if (array[i].username == item.username) {
               console.log(array[i]);
               return i;
@@ -992,7 +979,7 @@
             //check if sponsors are already voted
             if (self.selected.delegates) {
               newsponsors = [];
-              for (let i = 0; i < sponsors.length; i++) {
+              for (var i = 0; i < sponsors.length; i++) {
                 console.log(sponsors[i]);
                 if (indexOfDelegates(self.selected.delegates, sponsors[i]) < 0) {
                   newsponsors.push(sponsors[i]);
@@ -1001,7 +988,7 @@
               sponsors = newsponsors;
             }
 
-            for (let i = 0; i < sponsors.length; i++) {
+            for (var i = 0; i < sponsors.length; i++) {
               if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, sponsors[i]) < 0) {
                 selectedAccount.selectedVotes.push(sponsors[i]);
               }
@@ -1024,8 +1011,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/addDelegate.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/addDelegate.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1033,21 +1020,21 @@
     };
 
     function vote(selectedAccount) {
-      let votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes);
+      var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes);
       if (!votes || votes.length == 0) {
         $mdToast.show(
           $mdToast.simple()
-          .textContent(gettextCatalog.getString('No difference from original delegate list'))
-          .hideDelay(5000)
+            .textContent(gettextCatalog.getString('No difference from original delegate list'))
+            .hideDelay(5000)
         );
         return;
       }
-      votes=votes[0];
-      let passphrases = accountService.getPassphrases(selectedAccount.address);
-      let data = {
+      votes = votes[0];
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data = {
         ledger: selectedAccount.ledger,
-        fromAddress: selectedAccount ? selectedAccount.address: '',
-        secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
+        fromAddress: selectedAccount ? selectedAccount.address : '',
+        secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
         passphrase: passphrases[0] ? passphrases[0] : '',
         secondpassphrase: passphrases[1] ? passphrases[1] : '',
         votes: votes
@@ -1055,7 +1042,7 @@
 
       function next() {
         $mdDialog.hide();
-        let publicKeys = $scope.voteDialog.data.votes.map(function(delegate) {
+        var publicKeys = $scope.voteDialog.data.votes.map(function(delegate) {
           return delegate.vote + delegate.publicKey;
         }).join(",");
         console.log(publicKeys);
@@ -1086,17 +1073,17 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/vote.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/vote.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
     };
 
-    function timestamp(selectedAccount){
-      let passphrases = accountService.getPassphrases(selectedAccount.address);
-      let data = {
+    function timestamp(selectedAccount) {
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
@@ -1112,7 +1099,7 @@
         }
 
         $mdDialog.hide();
-        let smartbridge = $scope.send.data.smartbridge;
+        var smartbridge = $scope.send.data.smartbridge;
         accountService.createTransaction(0, {
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
@@ -1131,21 +1118,21 @@
       };
 
       function openFile() {
-        const crypto = require('crypto');
-        const fs = require('fs');
+        var crypto = require('crypto');
+        var fs = require('fs');
 
-        require('electron').remote.dialog.showOpenDialog(function (fileNames) {
-         if (fileNames === undefined) return;
-         let fileName = fileNames[0];
-         let algo = 'sha256';
-         let shasum = crypto.createHash(algo);
-         $scope.send.data.filename = fileName;
-         $scope.send.data.smartbridge = "Calculating signature....";
-         let s = fs.ReadStream(fileName);
+        require('electron').remote.dialog.showOpenDialog(function(fileNames) {
+          if (fileNames === undefined) return;
+          var fileName = fileNames[0];
+          var algo = 'sha256';
+          var shasum = crypto.createHash(algo);
+          $scope.send.data.filename = fileName;
+          $scope.send.data.smartbridge = "Calculating signature....";
+          var s = fs.ReadStream(fileName);
 
           s.on('data', function(d) { shasum.update(d); });
           s.on('end', function() {
-            let d = shasum.digest('hex');
+            var d = shasum.digest('hex');
             $scope.send.data.smartbridge = d;
           });
         });
@@ -1163,8 +1150,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/timestampDocument.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/timestampDocument.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1172,28 +1159,28 @@
     };
 
     function sendArk(selectedAccount) {
-      const passphrases = accountService.getPassphrases(selectedAccount.address);
-      const data = {
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
         passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : ''
+        secondpassphrase: passphrases[1] ? passphrases[1] : '',
       };
 
       function openFile() {
-        const fs = require('fs');
+        var fs = require('fs');
 
         require('electron').remote.dialog.showOpenDialog(function(fileNames) {
           if (fileNames === undefined) return;
-          const fileName = fileNames[0];
+          var fileName = fileNames[0];
 
           fs.readFile(fileName, 'utf8', function(err, data) {
             if (err) {
               formatAndToastError('Unable to load file' + ': ' + err);
             } else {
               try {
-                const transaction = JSON.parse(data);
+                var transaction = JSON.parse(data);
 
                 if (transaction.type === undefined) return formatAndToastError('Invalid transaction file');
                 validateTransaction(selectedAccount, transaction);
@@ -1207,7 +1194,7 @@
       };
 
       // testing goodies
-      // let data={
+      // var data={
       //   fromAddress: selectedAccount ? selectedAccount.address: '',
       //   secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
       //   passphrase: 'insect core ritual alcohol clinic opera aisle dial entire dust symbol vintage',
@@ -1215,14 +1202,14 @@
       //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
       //   amount: 1,
       // };
-      let totalBalance = function(minusFee) {
-        let fee = 10000000;
-        let balance = selectedAccount.balance;
+      var totalBalance = function(minusFee) {
+        var fee = 10000000;
+        var balance = selectedAccount.balance;
         return accountService.numberToFixed((minusFee ? balance - fee : balance) / 100000000);
       };
 
       function fillSendableBalance() {
-        let sendableBalance = totalBalance(true);
+        var sendableBalance = totalBalance(true);
         $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0;
       }
 
@@ -1271,13 +1258,13 @@
         }
       }
 
-      function querySearch(text){
-        text=text.toLowerCase();
-        let contacts = storageService.get("contacts");
-        if(!contacts){
+      function querySearch(text) {
+        text = text.toLowerCase();
+        var contacts = storageService.get("contacts");
+        if (!contacts) {
           return [];
         }
-        let filter = contacts.filter(function(account) {
+        var filter = contacts.filter(function(account) {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.name && (account.name.toLowerCase().indexOf(text) > -1));
         });
         return filter;
@@ -1306,8 +1293,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/sendArk.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/sendArk.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1320,6 +1307,20 @@
       });
     }
 
+    function generateDarkTheme(themeName) {
+      var theme = themeName ? themeName : self.network.theme;
+      var properties = $mdTheming.$get().THEMES[theme];
+
+      var colors = properties.colors;
+      var primary = colors.primary.name;
+      var accent = colors.accent.name;
+      var warn = colors.warn.name;
+      var background = colors.background.name;
+
+      $mdTheming.theme('dark').primaryPalette(primary).accentPalette(accent).warnPalette(warn).backgroundPalette(background).dark();
+      $mdTheming.$get().generateTheme('dark');
+    }
+
     // Compare vibrant colors from image with default material palette
     // And returns the most similar primary and accent palette
     function generateDynamicPalette(callback) {
@@ -1328,20 +1329,20 @@
         return;
       }
 
-      const path = require('path');
-      const vibrant = require('node-vibrant');
-      const materialPalette = $mdTheming.$get().PALETTES;
+      var path = require('path');
+      var vibrant = require('node-vibrant');
+      var materialPalette = $mdTheming.$get().PALETTES;
 
       // check if it's an image url
-      const regExp = /\(([^)]+)\)/;
-      let match = self.network.background.match(regExp);
+      var regExp = /\(([^)]+)\)/;
+      var match = self.network.background.match(regExp);
 
       if (!match) {
         callback(false);
         return;
       }
 
-      const url = path.resolve(__dirname, match[1].replace(/'/g, ''));
+      var url = path.resolve(__dirname, match[1].replace(/'/g, ''));
 
       vibrant.from(url).getPalette(function(err, palette) {
         if (err || !palette.Vibrant) {
@@ -1349,20 +1350,20 @@
           return;
         }
 
-        const vibrantRatio = {};
-        const darkVibrantRatio = {};
+        var vibrantRatio = {};
+        var darkVibrantRatio = {};
 
         Object.keys(materialPalette).forEach(function(color) {
-          const vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex());
+          var vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex());
           vibrantRatio[color] = vibrantDiff;
 
-          const darkVibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.DarkVibrant.getHex());
+          var darkVibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.DarkVibrant.getHex());
           darkVibrantRatio[color] = darkVibrantDiff;
         });
 
-        const isArkJpg = path.basename(url) === 'Ark.jpg';
-        let primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0];
-        let accentColor = sortObj(vibrantRatio)[0];
+        var isArkJpg = path.basename(url) === 'Ark.jpg';
+        var primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0];
+        var accentColor = sortObj(vibrantRatio)[0];
 
         primaryColor = primaryColor == 'grey' ? 'blue-grey' : primaryColor;
 
@@ -1370,7 +1371,7 @@
           accentColor = sortObj(vibrantRatio)[1];
         }
 
-        const theme = $mdTheming.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor);
+        var theme = $mdTheming.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor);
         $mdTheming.$get().generateTheme('dynamic');
 
         callback('dynamic');
@@ -1379,14 +1380,23 @@
     }
 
     function manageBackgrounds() {
-      const fs = require('fs');
-      const path = require('path');
-      const context = storageService.getContext();
-      const currentNetwork = networkService.getNetwork();
-      const initialBackground = currentNetwork.background;
-      const initialTheme = currentNetwork.theme;
+      var fs = require('fs');
+      var path = require('path');
+      var context = storageService.getContext();
 
-      let backgrounds = {
+      var currentNetwork = networkService.getNetwork();
+
+      var initialBackground = currentNetwork.background;
+      var initialTheme = currentNetwork.theme;
+
+      var currentTheme = self.currentTheme;
+      var initialThemeView = currentTheme;
+      var initialDarkMode = currentNetwork.themeDark;
+
+      var themes = reloadThemes();
+      delete themes['dark'];
+
+      var backgrounds = {
         colors: {
           'Midnight': '#2c3e50',
           'Asbestos': '#7f8c8d',
@@ -1397,22 +1407,22 @@
         images: {}
       };
 
-      let imgPath = 'assets/images';
-      let assetsPath = path.resolve(__dirname, imgPath);
+      var imgPath = 'assets/images';
+      var assetsPath = path.resolve(__dirname, imgPath);
 
       // find files in directory with same key
-      for (let folder in backgrounds) {
-        let fullPath = path.resolve(assetsPath, folder);
+      for (var folder in backgrounds) {
+        var fullPath = path.resolve(assetsPath, folder);
 
         if (fs.existsSync(path.resolve(fullPath))) { // check dir exists
-          let image = {};
-          fs.readdirSync(fullPath).forEach(function (file) {
-            let stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
+          var image = {};
+          fs.readdirSync(fullPath).forEach(function(file) {
+            var stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
 
             if (stat.isFile()) {
-              let url = path.join(imgPath, folder, file); // ex: assets/img/textures/file.png
-              url = url.replace(/\\/g,"/");
-              let name = path.parse(file).name; // remove extension
+              var url = path.join(imgPath, folder, file); // ex: assets/images/textures/file.png
+              url = url.replace(/\\/g, "/");
+              var name = path.parse(file).name; // remove extension
               image[name] = `url('${url}')`;
             }
           });
@@ -1421,8 +1431,11 @@
       };
 
       function selectTheme(theme) {
+        generateDarkTheme(theme);
         $scope.send.selectedTheme = theme;
         currentNetwork.theme = theme;
+        currentNetwork.themeDark
+        setDarkMode();
       }
 
       function selectBackground(background) {
@@ -1440,9 +1453,22 @@
         $mdDialog.hide();
         currentNetwork.background = initialBackground;
         currentNetwork.theme = initialTheme;
+        currentNetwork.themeDark = initialDarkMode;
+        currentTheme = initialThemeView;
       };
 
-      let themes = reloadThemes();
+      function toggleDark(status) {
+        currentNetwork.themeDark = status;
+        setDarkMode();
+      }
+
+      function setDarkMode() {
+        if (currentNetwork.themeDark) {
+          self.currentTheme = 'dark';
+        } else {
+          self.currentTheme = currentNetwork.theme;
+        }
+      }
 
       $scope.send = {
         cancel: cancel,
@@ -1453,12 +1479,14 @@
         selectedTheme: initialTheme,
         themes: themes,
         selectBackground: selectBackground,
-        selectedBackground: initialBackground
+        selectedBackground: initialBackground,
+        darkMode: initialDarkMode,
+        toggleDark: toggleDark,
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/manageBackground.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/manageBackground.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -1466,14 +1494,14 @@
       });
     };
 
-    function manageNetworks(){
-      let networks=networkService.getNetworks();
+    function manageNetworks() {
+      var networks = networkService.getNetworks();
 
 
       function save() {
         //these are not needed as the createNetwork now rerender automatically
         $mdDialog.hide();
-        for(let network in $scope.send.networks){
+        for (var network in $scope.send.networks) {
           networkService.setNetwork(network, $scope.send.networks[network]);
           self.listNetworks = networkService.getNetworks();
         }
@@ -1505,7 +1533,7 @@
       };
 
       function removeNetwork(network) {
-        let confirm = $mdDialog.confirm()
+        var confirm = $mdDialog.confirm()
           .title(gettextCatalog.getString('Remove Network') + ' ' + network)
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
           .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
@@ -1515,8 +1543,8 @@
           self.listNetworks = networkService.getNetworks();
           $mdToast.show(
             $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network removed succesfully!'))
-            .hideDelay(3000)
+              .textContent(gettextCatalog.getString('Network removed succesfully!'))
+              .hideDelay(3000)
           );
         });
 
@@ -1532,8 +1560,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/manageNetwork.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/manageNetwork.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -1542,8 +1570,8 @@
     };
 
     function openPassphrasesDialog(selectedAccount) {
-      let passphrases = accountService.getPassphrases(selectedAccount.address);
-      let data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1] };
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1] };
 
       function save() {
         $mdDialog.hide();
@@ -1551,8 +1579,8 @@
           function(account) {
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Passphrases saved'))
-              .hideDelay(5000)
+                .textContent(gettextCatalog.getString('Passphrases saved'))
+                .hideDelay(5000)
             );
           },
           formatAndToastError
@@ -1571,8 +1599,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/savePassphrases.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/savePassphrases.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1580,9 +1608,9 @@
     };
 
     //register as delegate
-    function createDelegate(selectedAccount){
-      let passphrases = accountService.getPassphrases(selectedAccount.address);
-      let data = {
+    function createDelegate(selectedAccount) {
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
+      var data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount.address,
         username: "",
@@ -1594,7 +1622,7 @@
       function next() {
         $mdDialog.hide();
 
-        let delegateName;
+        var delegateName;
         try {
           delegateName = accountService.sanitizeDelegateName($scope.createDelegate.data.username)
         } catch (error) {
@@ -1627,8 +1655,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/createDelegate.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/createDelegate.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1636,9 +1664,9 @@
     };
 
     //Create a new cold account
-    function createAccount(){
-      const bip39 = require("bip39");
-      let data = { passphrase: bip39.generateMnemonic() };
+    function createAccount() {
+      var bip39 = require("bip39");
+      var data = { passphrase: bip39.generateMnemonic() };
 
       function next() {
         if (!$scope.createAccountDialog.data.showRepassphrase) {
@@ -1651,14 +1679,14 @@
             return;
           }
 
-          let words = $scope.createAccountDialog.data.repassphrase.split(' ');
+          var words = $scope.createAccountDialog.data.repassphrase.split(' ');
           if ($scope.createAccountDialog.data.word3 === words[2] && $scope.createAccountDialog.data.word6 === words[5] && $scope.createAccountDialog.data.word9 === words[8]) {
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function(account) {
               self.accounts.push(account);
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
+                  .hideDelay(5000)
               );
               selectAccount(account);
             });
@@ -1671,7 +1699,7 @@
 
       function querySearch(text) {
         text = text.toLowerCase();
-        let filter = self.accounts.filter(function(account) {
+        var filter = self.accounts.filter(function(account) {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.username && (account.username.toLowerCase().indexOf(text) > -1));
         });
         return filter;
@@ -1688,16 +1716,16 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/createAccount.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/createAccount.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
       });
     };
 
-    function importAccount(){
-      let data={
+    function importAccount() {
+      var data = {
         passphrase: '',
         // TODO second passphrase
         // secondpassphrase: ''
@@ -1709,15 +1737,15 @@
         }
 
         accountService.createAccount($scope.send.data.passphrase)
-        .then(
-          function(account){
-            // Check for already imported account
-            for (let i = 0; i < self.accounts.length; i++) {
-              if (self.accounts[i].address === account.address) {
-                $mdToast.show(
-                  $mdToast.simple()
-                    .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
-                    .hideDelay(5000)
+          .then(
+            function(account) {
+              // Check for already imported account
+              for (var i = 0; i < self.accounts.length; i++) {
+                if (self.accounts[i].address === account.address) {
+                  $mdToast.show(
+                    $mdToast.simple()
+                      .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
+                      .hideDelay(5000)
                   );
                   return selectAccount(account);
                 }
@@ -1726,8 +1754,8 @@
               self.accounts.push(account);
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
+                  .hideDelay(5000)
               );
               selectAccount(account);
               // TODO save passphrases after we have local encrytion
@@ -1748,8 +1776,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/importAccount.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/importAccount.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1757,27 +1785,27 @@
     };
     function exportAccount(account)
     {
-      const eol = require('os').EOL;
-      let filecontent = "Account:," + account.address + eol + "Balance:," + account.balance + eol + "Transactions:" + eol + "ID,Confirmations,Date,Type,Amount,From,To,Smartbridge" + eol;
+      var eol = require('os').EOL;
+      var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
       account.transactions.forEach(function(trns) {
         filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
-        ","+trns.vendorField+eol;
+          ","+trns.vendorField+eol;
       });
-      const blob = new Blob([filecontent]);
-      const downloadLink = document.createElement('a');
+      var blob = new Blob([filecontent]);
+      var downloadLink = document.createElement('a');
       downloadLink.setAttribute('download', account.address+'.csv');
       downloadLink.setAttribute('href', window.URL.createObjectURL(blob));
       downloadLink.click();
     }
 
     // Add a second passphrase to an account
-    function createSecondPassphrase(account){
-      const bip39 = require("bip39");
-      let data = { secondPassphrase: bip39.generateMnemonic() };
+    function createSecondPassphrase(selectedAccount) {
+      var bip39 = require("bip39");
+      var data = { secondPassphrase: bip39.generateMnemonic() };
 
-      if (account.secondSignature) {
+      if (selectedAccount.secondSignature) {
         return formatAndToastError(
-          gettextCatalog.getString('This account already has a second passphrase: ' + account.address)
+          gettextCatalog.getString('This account already has a second passphrase: ' + selectedAccount.address)
         );
       }
 
@@ -1790,21 +1818,12 @@
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true;
         } else {
           accountService.createTransaction(1, {
-            fromAddress: account.address,
+            fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
           }).then(
             function(transaction) {
-              networkService.postTransaction(transaction).then(
-                function(transaction) {
-                  $mdToast.show(
-                    $mdToast.simple()
-                    .textContent(gettextCatalog.getString('Second Passphrase added successfully: ') + account.address)
-                    .hideDelay(5000)
-                  );
-                },
-                formatAndToastError
-              );
+              validateTransaction(selectedAccount, transaction);
             },
             formatAndToastError
           );
@@ -1823,8 +1842,8 @@
       };
 
       $mdDialog.show({
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/createSecondPassphrase.html',
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/createSecondPassphrase.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1836,11 +1855,9 @@
      */
     function showAccountMenu(selectedAccount) {
 
-      let account = selectedAccount;
-
-      const items = [
-        {name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new'},
-        {name: gettextCatalog.getString('Remove'), icon: 'clear'}
+      var items = [
+        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' },
+        { name: gettextCatalog.getString('Remove'), icon: 'clear' },
       ];
 
       if (!selectedAccount.delegate) {
@@ -1865,14 +1882,14 @@
         if (action == gettextCatalog.getString('Timestamp Document')) {
           timestamp(selectedAccount);
         } else if (action == gettextCatalog.getString("Remove")) {
-          const confirm = $mdDialog.confirm()
-            .title(gettextCatalog.getString('Remove Account') + ' ' + account.address)
+          var confirm = $mdDialog.confirm()
+            .title(gettextCatalog.getString('Remove Account') + ' ' + selectedAccount.address)
             .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
               'The account may be added again using the original passphrase of the account.'))
             .ok(gettextCatalog.getString('Remove account'))
             .cancel(gettextCatalog.getString('Cancel'));
           $mdDialog.show(confirm).then(function() {
-            accountService.removeAccount(account).then(function() {
+            accountService.removeAccount(selectedAccount).then(function() {
               self.accounts = accountService.loadAllAccounts();
 
               if (self.accounts.length > 0) {
@@ -1883,8 +1900,8 @@
 
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account removed!'))
-                .hideDelay(3000)
+                  .textContent(gettextCatalog.getString('Account removed!'))
+                  .hideDelay(3000)
               );
             });
           });
@@ -1893,7 +1910,7 @@
         } else if (action == gettextCatalog.getString("Register Delegate")) {
           createDelegate(selectedAccount);
         } else if (action == gettextCatalog.getString("Label")) {
-          const prompt = $mdDialog.prompt()
+          var prompt = $mdDialog.prompt()
             .title(gettextCatalog.getString('Label'))
             .textContent(gettextCatalog.getString('Please enter a short label.'))
             .placeholder(gettextCatalog.getString('label'))
@@ -1905,24 +1922,24 @@
             self.accounts = accountService.loadAllAccounts();
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Label set'))
-              .hideDelay(3000)
+                .textContent(gettextCatalog.getString('Label set'))
+                .hideDelay(3000)
             );
           });
         } else if (action == gettextCatalog.getString("Second Passphrase")) {
-          createSecondPassphrase(account);
+          createSecondPassphrase(selectedAccount);
         }
       };
 
       $scope.bs = {
-        address: account.address,
+        address: selectedAccount.address,
         answer: answer,
         items: items
       };
 
       $mdBottomSheet.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/contactSheet.html',
+        templateUrl: './accounts/view/contactSheet.html',
         clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
@@ -1935,7 +1952,7 @@
     }
 
     self.deleteSignedMessage = function(selectedAccount, signedMessage) {
-      const index = selectedAccount.signedMessages.indexOf(signedMessage);
+      var index = selectedAccount.signedMessages.indexOf(signedMessage);
       selectedAccount.signedMessages.splice(index, index + 1);
       storageService.set("signed-" + selectedAccount.address, selectedAccount.signedMessages);
     }
@@ -1943,11 +1960,11 @@
     function showMessage(message) {
       $mdDialog.show(
         $mdDialog.alert()
-        .parent(angular.element(document.getElementById('app')))
-        .clickOutsideToClose(true)
-        .title(message)
-        .ariaLabel(message)
-        .ok(gettextCatalog.getString('Ok'))
+          .parent(angular.element(document.getElementById('app')))
+          .clickOutsideToClose(true)
+          .title(message)
+          .ariaLabel(message)
+          .ok(gettextCatalog.getString('Ok'))
       );
     }
 
@@ -1956,13 +1973,13 @@
       console.log(selectedAccount);
 
       function sign() {
-        const address = $scope.sign.selectedAccount.address;
-        const passphrase = $scope.sign.passphrase;
-        const message = $scope.sign.message;
+        var address = $scope.sign.selectedAccount.address;
+        var passphrase = $scope.sign.passphrase;
+        var message = $scope.sign.message;
         if (!selectedAccount.signedMessages) {
           selectedAccount.signedMessages = [];
         }
-        let promisedSignature = null;
+        var promisedSignature = null
         if (selectedAccount.ledger) {
           promisedSignature = accountService.signMessageWithLedger(message, selectedAccount.ledger);
         } else {
@@ -1989,7 +2006,7 @@
         $mdDialog.hide();
       };
 
-      let passphrases = accountService.getPassphrases(selectedAccount.address);
+      var passphrases = accountService.getPassphrases(selectedAccount.address);
 
       $scope.sign = {
         passphrase: passphrases[0] ? passphrases[0] : '',
@@ -2002,7 +2019,7 @@
         scope: $scope,
         preserveScope: true,
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/signMessage.html',
+        templateUrl: './accounts/view/signMessage.html',
         clickOutsideToClose: false
       });
     };
@@ -2011,18 +2028,18 @@
 
       function verify() {
         console.log($scope.verify);
-        const message = $scope.verify.message;
-        const publickey = $scope.verify.publickey;
-        const signature = $scope.verify.signature;
-        const result = accountService.verifyMessage(message, publickey, signature);
+        var message = $scope.verify.message;
+        var publickey = $scope.verify.publickey;
+        var signature = $scope.verify.signature;
+        var result = accountService.verifyMessage(message, publickey, signature);
         $mdDialog.hide();
         showMessage(result);
       };
 
       function verifyText() {
-        const list = JSON.parse($scope.verify.message);
-        const res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
-        let message = gettextCatalog.getString("Error in signature processing");
+        var list = JSON.parse($scope.verify.message);
+        var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
+        var message = gettextCatalog.getString("Error in signature processing");
 
         $mdDialog.hide();
         if (res == true) {
@@ -2050,10 +2067,10 @@
         };
 
         $mdDialog.show({
-          scope              : $scope,
-          preserveScope      : true,
-          parent             : angular.element(document.getElementById('app')),
-          templateUrl        : 'src/accounts/view/verifyMessage.html',
+          scope: $scope,
+          preserveScope: true,
+          parent: angular.element(document.getElementById('app')),
+          templateUrl: './accounts/view/verifyMessage.html',
           clickOutsideToClose: false
         });
       }
@@ -2063,8 +2080,8 @@
     function validateTransaction(selectedAccount, transaction) {
 
       function saveFile() {
-        const fs = require('fs');
-        const raw = JSON.stringify(transaction);
+        var fs = require('fs');
+        var raw = JSON.stringify(transaction);
 
         require('electron').remote.dialog.showSaveDialog({
           defaultPath: transaction.id + '.json',
@@ -2078,15 +2095,15 @@
             if (err) {
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
-                .hideDelay(5000)
-                .theme("error")
+                  .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
+                  .hideDelay(5000)
+                  .theme("error")
               );
             } else {
               $mdToast.show(
                 $mdToast.simple()
-                .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
-                .hideDelay(5000)
+                  .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
+                  .hideDelay(5000)
               );
             }
           });
@@ -2105,8 +2122,8 @@
             selectedAccount.transactions.unshift(transaction);
             $mdToast.show(
               $mdToast.simple()
-              .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-              .hideDelay(5000)
+                .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
+                .hideDelay(5000)
             );
           },
           formatAndToastError
@@ -2127,10 +2144,10 @@
       };
 
       $mdDialog.show({
-        scope              : $scope,
-        preserveScope      : true,
-        parent             : angular.element(document.getElementById('app')),
-        templateUrl        : 'src/accounts/view/showTransaction.html',
+        scope: $scope,
+        preserveScope: true,
+        parent: angular.element(document.getElementById('app')),
+        templateUrl: './accounts/view/showTransaction.html',
         clickOutsideToClose: false
       });
     };

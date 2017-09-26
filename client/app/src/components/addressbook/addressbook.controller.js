@@ -1,19 +1,19 @@
 (function() {
   angular
-    .module('arkclient.addressbook')
+    .module('arkclient.components')
     .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", "accountService", AddressbookController]);
 
   function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog, accountService) {
 
-    const self = this;
-    let contacts;
+    var self = this;
+    var contacts;
     self.trim = function(str) {
       return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     }
 
     self.getContacts = function() {
       self.contacts = storageService.get("contacts");
-      if (self.contacts === null || self.contacts === undefined) self.contacts = [];
+      if (self.contacts == null || self.contacts == undefined) self.contacts = [];
     }
 
     self.getContacts();
@@ -33,9 +33,9 @@
     }
 
     self.contactExists = function(name) {
-      let i;
+      var i;
       for (i = 0; i < self.contacts.length; i++) {
-        if (self.contacts[i].name === name) {
+        if (self.contacts[i].name == name) {
           return true;
         }
       }
@@ -80,7 +80,7 @@
           self.showToast('this Contact Address is not valid', contactaddress, true);
           return;
         }
-        let newcontact = { name: contactname, address: contactaddress };
+        var newcontact = { name: contactname, address: contactaddress };
         if (self.contactExists(contactname)) {
           self.showToast('this Contact Name is already taken, please choose another one', contactname, true);
           return;
@@ -97,7 +97,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: 'src/addressbook/view/addAddressbookContact.html',
+        templateUrl: './components/addressbook/addContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -107,12 +107,12 @@
 
     self.editAddressbookContact = function(address) {
 
-      let contact = self.getContactFromAddress(address);
+      var contact = self.getContactFromAddress(address);
       if (!contact) {
         self.showToast('This address is not a contact', address, true);
         return;
       }
-      const name = contact.name;
+      var name = contact.name;
 
       $scope.editAddressbookContact = {
         cancel: cancel,
@@ -145,14 +145,14 @@
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name === name) {
+          if (self.contacts[i].name == name) {
             self.contacts[i].address = address;
           }
         }
         self.save();
         self.showToast('Contact successfully saved', name, false);
         cancel();
-      }
+      };
 
       function remove(name) {
         self.getContacts();
@@ -161,7 +161,7 @@
           return;
         }
         for (i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name === name) {
+          if (self.contacts[i].name == name) {
             delete self.contacts[i];
             self.contacts.splice(i, 1);
           }
@@ -173,7 +173,7 @@
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
-        templateUrl: 'src/addressbook/view/editAddressbookContact.html',
+        templateUrl: './components/addressbook/editContact.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope,
@@ -197,14 +197,14 @@
         }
       };
 
-      const transactions = storageService.get("transactions-" + account);
+      var transactions = storageService.get("transactions-" + account);
 
       if (transactions) {
-        const incomeTx = transactions.filter(function (el) {
+        var incomeTx = transactions.filter(function(el) {
           return el.senderId == contact;
         });
 
-        const expendTx = transactions.filter(function (el) {
+        var expendTx = transactions.filter(function(el) {
           return el.recipientId == contact;
         });
 
@@ -212,9 +212,9 @@
         stats.expend.transactions = expendTx.length;
 
         if (incomeTx.length > 0) {
-          const incomeAmount = incomeTx.map(function (tx) {
+          var incomeAmount = incomeTx.map(function(tx) {
             return tx.amount;
-          }).reduce(function (prev, el) {
+          }).reduce(function(prev, el) {
             return prev + el;
           });
 
@@ -222,9 +222,9 @@
         }
 
         if (expendTx.length > 0) {
-          const expendAmount = expendTx.map(function (tx) {
+          var expendAmount = expendTx.map(function(tx) {
             return tx.amount;
-          }).reduce(function (prev, el) {
+          }).reduce(function(prev, el) {
             return prev + el;
           });
 

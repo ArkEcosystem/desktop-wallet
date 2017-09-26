@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient.qrScanner').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', '$mdToast', qrScanner]);
+  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', '$mdToast', qrScanner]);
 
   function qrScanner($rootScope, $timeout, $mdDialog, $mdToast) {
 
@@ -16,7 +16,7 @@
           })
 
         return false;
-      };
+      }
 
       $scope.onSuccess = function(result) {
         if (typeof(result.type) !== 'undefined') {
@@ -32,7 +32,7 @@
         $timeout(function() {
           $mdDialog.hide();
         }, 100);
-      };
+      }
 
       $scope.onError = function(error) {
         $mdToast.show(
@@ -49,7 +49,7 @@
 
       $scope.onVideoError = function(error) {
         $scope.onError(error);
-      };
+      }
 
       $scope.closeDialog = function() {
         $mdDialog.hide();
@@ -57,8 +57,8 @@
 
       $scope.openScanner = function(evt) {
         $mdDialog.show({
-          parent             : angular.element(document.getElementById('app')),
-          templateUrl        : 'src/qrScanner/view/scanner.html',
+          parent: angular.element(document.getElementById('app')),
+          templateUrl: './components/qrScanner/qrScanner.html',
           clickOutsideToClose: false,
           targetEvent: evt,
           multiple: true,

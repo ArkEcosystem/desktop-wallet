@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  let ipcRenderer = require('electron').ipcRenderer;
-  let arkjs = require('arkjs');
-  let bip39 = require('bip39');
+  var ipcRenderer = require('electron').ipcRenderer;
+  var arkjs = require('arkjs');
+  var bip39 = require('bip39');
 
-  angular.module('arkclient.coreServices')
-         .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
+  angular.module('arkclient.services')
+    .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
 
   /**
    * NetworkService
@@ -14,23 +14,24 @@
    */
   function LedgerService($q, $http, $timeout, storageService) {
 
-    function deriveAddress(path){
-      return ipcRenderer.sendSync('ledger', {
+    function deriveAddress(path) {
+      var result = ipcRenderer.sendSync('ledger', {
         action: "getAddress",
         path: path
       });
+      return result
     }
 
-    function getBip44Accounts(){
-      let accounts = [];
-      let account_index = 0;
-      let address_index = 0;
-      let path = "44'/111'/";
-      let empty = false;
+    function getBip44Accounts() {
+      var accounts = [];
+      var account_index = 0;
+      var address_index = 0;
+      var path = "44'/111'/";
+      var empty = false;
 
-      while(!empty){
-        let localpath = path + account_index + "'/0/" + address_index;
-        let result = ipcRenderer.sendSync('ledger', {
+      while (!empty) {
+        var localpath = path + account_index + "'/0/" + address_index;
+        var result = ipcRenderer.sendSync('ledger', {
           action: "getAddress",
           path: localpath
         });
@@ -38,7 +39,7 @@
           result.address = arkjs.crypto.getAddress(result.publicKey);
           account_index = account_index + 1;
 
-          const account = storageService.get(result.address);
+          var account = storageService.get(result.address);
           if (account && !account.cold) {
             account.virtual = storageService.get("virtual-" + result.address);
             if (!account.virtual) {
@@ -69,26 +70,26 @@
     }
 
     function recoverBip44Accounts(backupLedgerPassphrase) {
-      const hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
+      var hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
 
-      let accounts = [];
-      let account_index = 0;
-      let address_index = 0;
-      let path = "44'/111'/";
-      let empty = false;
+      var accounts = [];
+      var account_index = 0;
+      var address_index = 0;
+      var path = "44'/111'/";
+      var empty = false;
 
       while (!empty) {
-        const localpath = path + account_index + "'/0/" + address_index;
-        const keys = hdnode.derivePath(localpath).keyPair;
-        const address = keys.getAddress();
+        var localpath = path + account_index + "'/0/" + address_index;
+        var keys = hdnode.derivePath(localpath).keyPair;
+        var address = keys.getAddress();
         account_index = account_index + 1;
-        const account = storageService.get(address);
+        var account = storageService.get(address);
         if (account && !account.cold) {
           account.ledger = localpath;
           storageService.set(address, account);
           accounts.push(account);
         } else {
-          const result = {
+          var result = {
             address: address,
             publicKey: keys.getPublicKeyBuffer().toString("hex"),
             ledger: localpath,
@@ -103,7 +104,7 @@
     }
 
     function signTransaction(path, transaction) {
-      const deferred = $q.defer();
+      var deferred = $q.defer();
       ipcRenderer.once('transactionSigned', function(event, result) {
         if (result.error) {
           deferred.reject(result.error)
@@ -120,9 +121,9 @@
     }
 
     function signMessage(path, message) {
-      const deferred = $q.defer();
-      const crypto = require("crypto");
-      let hash = crypto.createHash('sha256');
+      var deferred = $q.defer();
+      var crypto = require("crypto");
+      var hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
       ipcRenderer.once('messageSigned', function(event, result) {
         if (result.error) {
@@ -139,16 +140,18 @@
       return deferred.promise;
     }
 
-    function detect(){
-      return ipcRenderer.sendSync('ledger', {
+    function detect() {
+      var result = ipcRenderer.sendSync('ledger', {
         action: "detect"
       });
+      return result
     }
 
-    function isAppLaunched(){
-      return ipcRenderer.sendSync('ledger', {
+    function isAppLaunched() {
+      var result = ipcRenderer.sendSync('ledger', {
         action: "getConfiguration"
       });
+      return result;
     }
 
     return {

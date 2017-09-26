@@ -17,3 +17,14 @@ Before pushing PR, please [jump in our slack #development](https://ark.io/slack)
 - add new features,
 - improve documentation,
 - create something new for ARK.
+
+# Dev Tips to get started
+After following the instrucions in README.md to install the Ark Desktop Client,
+the following dev commands are available;
+
+```
+npm run dev  // Start a build server on local host that will watch and update your files
+npm start // run the electron instance - this should be run in a separate window
+```
+Note: if you are using ```npm run dev```, after updating your code you will need to 
+reload the electron app for it to refresh the files (CMD + R in OSX)

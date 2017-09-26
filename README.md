@@ -1,5 +1,10 @@
 # Multi Platform Ark Lite Client
 
+## Pinned: Help us translating
+Collaborate to our OneSky project http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
+
+Please don't submit PR
+
 ## Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
@@ -53,6 +58,8 @@ cd ark-desktop
 # Install dependencies 
 npm install
 ```
+
+* In some cases, [node-hid](https://github.com/node-hid/node-hid) doesn't provide pre-built binaries, so is necessary to install the [node-hid dependencies](https://github.com/node-hid/node-hid#compiling-from-source) to build them from source before running `npm install`.
 
 Then start:
 ```bash

@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             insertGlobals: true,
             detectGlobals: true,
             debug: true,
-            paths: ['./node_modules', './client/node_modules']
+            paths: ['./node_modules']
           },
           transform: [
             ['brfs']
@@ -20,7 +20,8 @@ module.exports = function (grunt) {
           require: ['angular', 'angular-animate', 'angular-aria', 'bip39', 'angular-gettext', 'angular-material', 'angular-material-data-table', 'angular-messages', 'qrcode-generator', 'angular-qrcode',
             '@uirouter/angularjs', 'arkjs', 'jsqr'],
           alias: {
-            packageJson: './package.json'
+            packageJson: './package.json',
+            appearanceConfig: './client/app/config/appearance'
           }
         }
       }
@@ -38,7 +39,9 @@ module.exports = function (grunt) {
       html: {
         files: [
           // includes files within path
-          { expand: true, cwd: 'client/app/', src: ['**/*.html'], dest: 'client/dist/' }
+          { expand: true, cwd: 'client/app/src/', src: ['**/*.html'], dest: 'client/dist/' },
+          { src: 'client/app/index.html',
+            dest: 'client/dist/index.html' }
         ]
       },
       css: {
@@ -53,9 +56,10 @@ module.exports = function (grunt) {
           // includes files within path
           { expand: true, cwd: 'client/app/assets/', src: ['**/*'], dest: 'client/dist/assets/' },
           { expand: true, cwd: 'client/app/plugins/', src: ['**'], dest: 'client/dist/plugins/'},
-          { src: 'client/node_modules/angular-material/angular-material.min.css',
+          { expand: true, cwd: 'client/app/config/', src: ['**/*'], dest: 'client/dist/config/'},
+          { src: 'node_modules/angular-material/angular-material.min.css',
             dest: 'client/dist/assets/css/angular-material.min.css' },
-          { src: 'client/node_modules/angular-material-data-table/dist/md-data-table.min.css',
+          { src: 'node_modules/angular-material-data-table/dist/md-data-table.min.css',
             dest: 'client/dist/assets/css/md-data-table.min.css' },
           { src: 'client/app/ark.png',
             dest: 'client/dist/ark.png' }
@@ -120,7 +124,7 @@ module.exports = function (grunt) {
     nggettext_compile: {
       all: {
         files: {
-          'client/app/src/coreUtils/translationsRun.js': ['po/*.po']
+          'client/app/src/utils/translations.js': ['po/*.po']
         }
       }
     }
