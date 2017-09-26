@@ -483,7 +483,7 @@
               </span>
               <span class="md-subhead description">
                   <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
-                  {{ul.myAccountsCurrencyBalance()}}
+                  <md-button ng-click="ul.changeCurrency()">{{ul.myAccountsCurrencyBalance()}}</md-button>
                 </span>
             </md-card-title-text>
           </md-card-title>
