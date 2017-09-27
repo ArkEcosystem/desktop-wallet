@@ -548,6 +548,15 @@
       if ($mdMedia('md') || $mdMedia('sm')) $mdSidenav('left').toggle();
     };
 
+    self.getAllAccounts = function() {
+      var accounts = self.accounts;
+      if (self.ledgerAccounts && self.ledgerAccounts.length) {
+        accounts = accounts.concat(self.ledgerAccounts);
+      }
+
+      return accounts;
+    };
+
     self.myAccounts = function() {
       return self.accounts.filter(function(account) {
         return !!account.virtual;
@@ -557,8 +566,8 @@
     };
 
     self.myAccountsBalance = function() {
-      return (self.myAccounts().reduce(function(memo, acc) {
-        return memo + parseInt(acc.balance);
+      return (self.getAllAccounts().reduce(function(memo, acc) {
+        return memo + parseInt(acc.balance || 0);
       }, 0) / 100000000).toFixed(2);
     }
 
@@ -775,13 +784,14 @@
 
     self.refreshAccountBalances = function() {
       networkService.getPrice();
-      for (var i in self.accounts) {
+      var accounts = self.getAllAccounts();
+      for (var i in accounts) {
         accountService
-          .refreshAccount(self.accounts[i])
+          .refreshAccount(accounts[i])
           .then(function(account) {
-            for (var j in self.accounts) {
-              if (self.accounts[j].address == account.address) {
-                self.accounts[j].balance = account.balance;
+            for (var j in accounts) {
+              if (accounts[j].address == account.address) {
+                accounts[j].balance = account.balance;
               }
             }
           });
