@@ -96,10 +96,10 @@
                   <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                 </md-select>
               </md-list-item>
-              <md-list-item aria-label="Play song when receive funds?">
+              <md-list-item aria-label="Play sound when receiving transaction?">
                 <md-icon>music_note</md-icon>
-                <p translate>Play song when receiving transaction?</p>
-                <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receiving transaction?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()"></md-switch>
+                <p translate>Play sound when receiving transaction?</p>
+                <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play sound when receiving transaction?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()"></md-switch>
               </md-list-item>
               <md-list-item aria-label="Import Account" ng-click="ul.importAccount()">
                 <md-icon>file_download</md-icon>
