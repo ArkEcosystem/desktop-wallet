@@ -80,8 +80,12 @@ md-list.left-list md-list-item md-select {
 md-list.left-list md-list-item md-select.currency {
     text-transform: uppercase;
 }
+/* "Play sound" option */
 md-list.left-list md-list-item:nth-child(3):hover {
   background-color: rgba(158, 158, 158, 0.4);
+}
+md-list.left-list md-list-item:nth-child(3) .md-list-item-inner p {
+  margin-right: 20px
 }
 md-list.left-list md-list-item:nth-child(4) p, md-list-item:nth-child(4) ~ md-list-item p {
     text-transform: uppercase;
