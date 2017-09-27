@@ -161,8 +161,8 @@
     self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
-    self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
-    self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
+    self.playFundsReceivedSound = storageService.get("playFundsReceivedSound") || false;
+    self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound;
     self.manageBackgrounds = manageBackgrounds;
     self.manageNetworks = manageNetworks;
     self.openPassphrasesDialog = openPassphrasesDialog;
@@ -765,8 +765,8 @@
               var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
-              var playSong = storageService.get('playFundsReceivedSong');
-              if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+              var playSound = storageService.get('playFundsReceivedSound');
+              if (playSound == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
                 var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
                 var audio = new Audio(wavFile);
                 audio.play();
@@ -798,8 +798,8 @@
       }
     }
 
-    function togglePlayFundsReceivedSong(status) {
-      storageService.set('playFundsReceivedSong', self.playFundsReceivedSong, true);
+    function togglePlayFundsReceivedSound(status) {
+      storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
 
     /**
@@ -847,8 +847,8 @@
               var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
-              var playSong = storageService.get('playFundsReceivedSong');
-              if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+              var playSound = storageService.get('playFundsReceivedSound');
+              if (playSound == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
                 var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
                 var audio = new Audio(wavFile);
                 audio.play();
