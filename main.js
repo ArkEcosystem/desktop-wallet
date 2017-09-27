@@ -196,7 +196,7 @@ function configureReload() {
     app: app,
     mainFile: 'main.js',
     bws: [
-      { bw: mainWindow, res: [] }
+      { bw: mainWindow, res: ['index.html'] }
     ]
   })
 }

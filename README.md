@@ -77,7 +77,7 @@ brew bundle
 
 It is possible to execute a script to reload the [Electron](https://electron.atom.io/) application on changes:
 ```bash
-npm run-script live-reload
+npm run live-reload
 ```
 
 ## Authors
