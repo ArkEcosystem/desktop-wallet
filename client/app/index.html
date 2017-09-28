@@ -80,7 +80,7 @@
           <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">settings</md-icon>
           </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 458px; overflow:hidden;">
+          <md-menu-content flex layout-padding width="6" style="min-height: 540px; overflow:hidden;">
             <md-list class="left-list">
               <md-list-item>
                 <md-icon>attach_money</md-icon>
@@ -100,6 +100,11 @@
                 <md-icon>music_note</md-icon>
                 <p translate>Play sound when receiving transaction?</p>
                 <md-switch ng-model="ul.playFundsReceivedSound" class="md-primary" md-no-ink arial-label="Play sound when receiving transaction?" ng-change="ul.togglePlayFundsReceivedSound()" ng-init="ul.togglePlayFundsReceivedSound()"></md-switch>
+              </md-list-item>
+              <md-list-item aria-label="Refresh accounts automatically?">
+                <md-icon>autorenew</md-icon>
+                <p translate>Refresh accounts automatically?</p>
+                <md-switch ng-model="ul.refreshAccountsAutomatically" class="md-primary" md-no-ink arial-label="Refresh accounts automatically?" ng-change="ul.toggleRefreshAccountsAutomatically()" ng-init="ul.toggleRefreshAccountsAutomatically()"></md-switch>
               </md-list-item>
               <hr>
               <md-list-item aria-label="Import Account" ng-click="ul.importAccount()">
@@ -425,6 +430,13 @@
       <md-content flex layout="column" id="content">
         <md-card flex="none">
           <div class="share">
+            <md-button ng-if="!ul.refreshAccountsAutomatically" md-no-ink ng-click="ul.refreshCurrentAccount()" aria-label="Refresh Account">
+              <md-icon md-font-library="material-icons">cached</md-icon>
+              <md-tooltip>
+                <translate>Refresh Account</translate>
+              </md-tooltip>
+            </md-button>
+            
             <md-button ng-if="ul.selected.virtual" md-no-ink ng-click="ul.sendArk(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
               <md-icon md-font-library="material-icons">send</md-icon>
             </md-button>

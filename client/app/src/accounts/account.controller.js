@@ -161,6 +161,7 @@
     self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
+    self.refreshAccountsAutomatically = storageService.get("refreshAccountsAutomatically") || false;
     self.playFundsReceivedSound = storageService.get("playFundsReceivedSound") || false;
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound;
     self.manageBackgrounds = manageBackgrounds;
@@ -203,7 +204,7 @@
 
     //refreshing displayed account every 8s
     $interval(function() {
-      if (self.selected) {
+      if (self.selected && self.refreshAccountsAutomatically) {
         self.refreshCurrentAccount();
       }
     }, 8 * 1000);
@@ -800,6 +801,10 @@
             }
           });
       }
+    }
+
+    self.toggleRefreshAccountsAutomatically = function() {
+      storageService.set('refreshAccountsAutomatically', self.refreshAccountsAutomatically, true);
     }
 
     function togglePlayFundsReceivedSound(status) {
