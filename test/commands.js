@@ -10,8 +10,8 @@ module.exports = function(app) {
   app.client.addCommand('createAccount', function() {
     return this
       .click('[aria-label="Settings"] button')
-      .pause(300)
-      .click("//button[contains(text(), 'Create Account')]")
+      .pause(500)
+      .click('button[aria-label="Create Account"]')
       .pause(2000)
   })
 

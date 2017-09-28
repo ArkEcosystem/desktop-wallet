@@ -28,7 +28,7 @@ describe('ARK Client Tests', function() {
   })
 
   it('gets to darknet network', function () {
-    return this.app.client.selectNetwork("DEVNET")
+    return this.app.client.selectNetwork('TESTNET (TESTARK)')
   })
 
   it('creates account', function () {
