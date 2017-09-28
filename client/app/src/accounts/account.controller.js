@@ -706,7 +706,7 @@
                   return b.timestamp - a.timestamp;
                 });
 
-                var previousTx = self.selected.transactions
+                var previousTx = [...self.selected.transactions];
                 self.selected.transactions = transactions;
 
                 // if the previous tx was unconfirmed, rebroadcast and put it back at the top (for better UX)
@@ -714,6 +714,8 @@
                   networkService.broadcastTransaction(previousTx[0]);
                   self.selected.transactions.unshift(previousTx[0]);
                 }
+
+                previousTx = null;
               }
             }
           });
@@ -762,7 +764,7 @@
                 return b.timestamp - a.timestamp;
               });
 
-              var previousTx = self.selected.transactions;
+              var previousTx = [...self.selected.transactions];
               self.selected.transactions = transactions;
 
               var playSound = storageService.get('playFundsReceivedSound');
@@ -777,6 +779,8 @@
                 networkService.broadcastTransaction(previousTx[0]);
                 self.selected.transactions.unshift(previousTx[0]);
               }
+
+              previousTx = null;
             }
           }
         });
