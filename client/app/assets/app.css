@@ -71,7 +71,7 @@ md-list.left-list md-list-item md-icon {
     margin-right: 16px;
 }
 /* Since icons are text, avoids using the text cursor */
-md-list.left-list md-list-item:first-child, md-list-item:nth-child(2) {
+md-list.left-list md-list-item:not(.md-clickable) {
     cursor: default;
 }
 md-list.left-list md-list-item md-select {
@@ -81,15 +81,23 @@ md-list.left-list md-list-item md-select.currency {
     text-transform: uppercase;
 }
 /* "Play sound" option */
-md-list.left-list md-list-item:nth-child(3):hover {
+md-list.left-list md-list-item.md-clickable:hover {
   background-color: rgba(158, 158, 158, 0.4);
 }
-md-list.left-list md-list-item:nth-child(3) .md-list-item-inner p {
+md-list.left-list md-list-item.md-clickable .md-list-item-inner p {
   margin-right: 20px
 }
-md-list.left-list md-list-item:nth-child(4) p, md-list-item:nth-child(4) ~ md-list-item p {
-    text-transform: uppercase;
+md-list.left-list md-list-item.md-clickable:not(.md-proxy-focus) p, md-list-item.md-clickable:not(.md-proxy-focus) ~ md-list-item p {
+  text-transform: uppercase;
 }
+md-list.left-list hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+}
+/* md-list.left-list md-list-item.md-proxy-focus p {
+  text-transform: none!important;
+} */
 
 .md-button.md-focused:not(:hover):focus {
     background-color: transparent;
