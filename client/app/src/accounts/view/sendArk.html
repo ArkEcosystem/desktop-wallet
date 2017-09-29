@@ -44,7 +44,7 @@
         </md-input-container>
 
         <div layout="row" flex layout-align="start start">
-          <md-input-container flex="5">
+          <md-input-container flex="5" ng-if="!send.data.ledger">
             <qr-scanner input-callback="passphrase"></qr-scanner>
           </md-input-container>
           <md-input-container flex="95" ng-if="!send.data.ledger" class="md-block">
