@@ -16,7 +16,8 @@
     "dist:win32": "build --win --ia32",
     "dist:macos": "build --macos",
     "dist:linux": "build --linux",
-    "test": "mocha --recursive ./test"
+    "test": "mocha --recursive ./test",
+    "test-watch": "mocha --recursive --watch ./test"
   },
   "repository": {
     "type": "git",
