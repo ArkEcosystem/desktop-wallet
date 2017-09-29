@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   angular
     .module('arkclient.components')
     .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", "accountService", AddressbookController]);

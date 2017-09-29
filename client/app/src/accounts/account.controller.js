@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   angular
     .module('arkclient.accounts')
     .controller('AccountController', [
@@ -601,7 +603,7 @@
     }
 
     self.openMenu = function($mdMenuOpen, ev) {
-      originatorEv = ev;
+      // originatorEv = ev; // unused
       $mdMenuOpen(ev);
     };
 
