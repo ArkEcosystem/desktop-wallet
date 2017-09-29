@@ -223,17 +223,27 @@
       return $q.when(account);
     };
 
+    function getTransactionLabel(transaction, recipientAddress = null) {
+      var label = gettextCatalog.getString(TxTypes[transaction.type]);
+
+      if (recipientAddress && transaction.recipientId == recipientAddress && transaction.type == 0) {
+        label = gettextCatalog.getString("Receive Ark");
+      }
+
+      return label;
+    }
+
     function formatTransaction(transaction, recipientAddress) {
       var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
       var t = parseInt(d.getTime() / 1000);
 
-      transaction.label = gettextCatalog.getString(TxTypes[transaction.type]);
+      transaction.label = getTransactionLabel(transaction, recipientAddress);
       transaction.date = new Date((transaction.timestamp + t) * 1000);
       if (transaction.recipientId == recipientAddress) {
         transaction.total = transaction.amount;
-        if (transaction.type == 0) {
-          transaction.label = gettextCatalog.getString("Receive Ark");
-        }
+        // if (transaction.type == 0) {
+        //   transaction.label = gettextCatalog.getString("Receive Ark");
+        // }
       }
       if (transaction.senderId == recipientAddress) {
         transaction.total = -transaction.amount - transaction.fee;
@@ -846,6 +856,8 @@
       getDelegateByUsername: getDelegateByUsername,
 
       getSponsors: getSponsors,
+
+      getTransactionLabel: getTransactionLabel,
 
       createVirtual: createVirtual,
 
