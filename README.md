@@ -82,6 +82,9 @@ npm run live-reload
 ## Contributing
 Read [CONTRIBUTING.md](https://github.com/ArkEcosystem/ark-desktop/blob/master/CONTRIBUTING.md) to learn about how to contribute to this project.
 
+## Contributing
+Read [CONTRIBUTING.md](https://github.com/ArkEcosystem/ark-desktop/blob/master/CONTRIBUTING.md) to learn about how to contribute to this project.
+
 ## Authors
 - FX Thoorens <fx@ark.io>
 - Guillaume Verbal <doweig@ark.io>
