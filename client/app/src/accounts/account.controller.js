@@ -2161,6 +2161,7 @@
         send: send,
         cancel: cancel,
         transaction: transaction,
+        label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
         humanAmount: accountService.numberToFixed(transaction.amount / 100000000) + '',
       };
