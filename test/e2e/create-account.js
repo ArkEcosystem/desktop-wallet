@@ -10,6 +10,10 @@ xdescribe('Create account', function() {
     hooks.beforeBlock.bind(this)()
   })
 
+  after(function() {
+    return hooks.afterBlock.bind(this)()
+  })
+
   before(function() {
     this.app.client.addCommand('createAccount', function(name) {
       return this
@@ -19,7 +23,7 @@ xdescribe('Create account', function() {
     })
   })
 
-  xit('creates an account', function () {
+  it('creates an account', function () {
     return this.app.client.createAccount()
   })
 

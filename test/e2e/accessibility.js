@@ -1,6 +1,6 @@
 const hooks = require('../hooks')
 
-describe('Accessibility', function() {
+xdescribe('Accessibility', function() {
 
   hooks.createApp.bind(this)()
 
@@ -13,7 +13,7 @@ describe('Accessibility', function() {
   })
 
   // TODO fix aria 
-  xit('there are not any accessibility warnings or errors', function () {
+  it('there are not any accessibility warnings or errors', function () {
 
     // Audit rules: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules
     const options = {

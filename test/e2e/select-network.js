@@ -35,7 +35,7 @@ xdescribe('Select network', function() {
     })
 
     describe('"My Accounts" ', ()=> {
-      xit('changes the currency symbol')
+      it('changes the currency symbol')
     })
   })
 

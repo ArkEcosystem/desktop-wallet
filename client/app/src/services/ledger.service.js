@@ -1,10 +1,6 @@
 (function() {
   'use strict';
 
-  var ipcRenderer = require('electron').ipcRenderer;
-  var arkjs = require('arkjs');
-  var bip39 = require('bip39');
-
   angular.module('arkclient.services')
     .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
 
@@ -13,6 +9,10 @@
    * @constructor
    */
   function LedgerService($q, $http, $timeout, storageService) {
+
+    var ipcRenderer = require('electron').ipcRenderer;
+    var arkjs = require('arkjs');
+    var bip39 = require('bip39');
 
     function deriveAddress(path) {
       var result = ipcRenderer.sendSync('ledger', {
