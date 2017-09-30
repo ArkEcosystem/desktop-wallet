@@ -1,30 +1,44 @@
+const electron = require('electron')
+
 const path = require('path')
 const fs = require('fs')
 
 const productName = require('../package').productName
 
 module.exports = {
-  getPath: function() {
-    switch (process.platform) {
-      case 'darwin':
-        return path.join(process.env.HOME, 'Library', 'Application Support', productName)
-      case 'win32':
-        return path.join(process.env.APPDATA, productName)
-      case 'freebsd':
-      case 'linux':
-      case 'sunos':
-        return path.join(process.env.HOME, '.config', productName)
-      default:
-        throw new Error(`Unknown userDataPath path for platform ${process.platform}`)
-    }
+
+  getTestPath: function() {
+    return path.join(__dirname, 'data', 'userData')
   },
 
-  removeStoredPreferences: function() {
+  clearSettings: function() {
     try {
-      fs.unlinkSync(path.join(this.getPath(), 'Settings'))
+      fs.unlinkSync(path.join(this.getTestPath(), 'Settings'))
     } catch (error) {
       if (error.code !== 'ENOENT')
         throw error
     }
+  },
+
+  getRealPath: function() {
+    let userDataPath
+
+    switch (process.platform) {
+      case 'darwin':
+        userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
+        break
+      case 'win32':
+        userDataPath = path.join(process.env.APPDATA, productName)
+        break
+      case 'freebsd':
+      case 'linux':
+      case 'sunos':
+        userDataPath = path.join(process.env.HOME, '.config', productName)
+        break
+      default:
+        throw new Error(`Unknown userDataPath path for platform ${process.platform}`)
+    }
+
+    return userDataPath
   }
 }
