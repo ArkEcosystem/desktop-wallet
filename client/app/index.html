@@ -96,15 +96,15 @@
                   <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                 </md-select>
               </md-list-item>
-              <md-list-item aria-label="Play sound when receiving transaction?">
+              <md-list-item aria-label="Play sound when receiving transactions?">
                 <md-icon>music_note</md-icon>
-                <p translate>Play sound when receiving transaction?</p>
-                <md-switch ng-model="ul.playFundsReceivedSound" class="md-primary" md-no-ink arial-label="Play sound when receiving transaction?" ng-change="ul.togglePlayFundsReceivedSound()" ng-init="ul.togglePlayFundsReceivedSound()"></md-switch>
+                <p translate>Play sound when receiving transactions?</p>
+                <md-switch ng-model="ul.playFundsReceivedSound" class="md-primary" md-no-ink aria-label="Play sound when receiving transactions?" ng-change="ul.togglePlayFundsReceivedSound()" ng-init="ul.togglePlayFundsReceivedSound()"></md-switch>
               </md-list-item>
               <md-list-item aria-label="Refresh accounts automatically?">
                 <md-icon>autorenew</md-icon>
                 <p translate>Refresh accounts automatically?</p>
-                <md-switch ng-model="ul.refreshAccountsAutomatically" class="md-primary" md-no-ink arial-label="Refresh accounts automatically?" ng-change="ul.toggleRefreshAccountsAutomatically()" ng-init="ul.toggleRefreshAccountsAutomatically()"></md-switch>
+                <md-switch ng-model="ul.refreshAccountsAutomatically" class="md-primary" md-no-ink aria-label="Refresh accounts automatically?" ng-change="ul.toggleRefreshAccountsAutomatically()" ng-init="ul.toggleRefreshAccountsAutomatically()"></md-switch>
               </md-list-item>
               <hr>
               <md-list-item aria-label="Import Account" ng-click="ul.importAccount()">
