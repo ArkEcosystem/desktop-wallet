@@ -31,7 +31,7 @@ module.exports = function(config) {
       '../client/node_modules/angular/angular.js',
       '../client/node_modules/angular-gettext/dist/angular-gettext.js',
       '../client/node_modules/angular-material/angular-material.js',
-      '../client/node_modules/angular-mocks/angular-mocks.js',
+      '../node_modules/angular-mocks/angular-mocks.js',
 
       // Subjects under test
       '../client/app/src/init.js',
