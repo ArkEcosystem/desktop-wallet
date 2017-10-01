@@ -36,29 +36,53 @@ require('devtron').install()
 
 # Tests
 
-## Commands
+## Unit
+These tests use Karma and do not create and run an entire Electron app, so they are faster.
 
  - To run tests 1 time: `npm test`
  - To watch files and run tests on changes: `npm run test-watch`
 
-## Structure
-Currently the [test folder](https://github.com/ArkEcosystem/ark-desktop/tree/master/test) has this structure:
+These tests are in the [test folder](https://github.com/ArkEcosystem/ark-desktop/tree/master/test):
 
 ```
-├── acceptance
+├── components
+│   └── *component*
+│       └── *tests*.js
+├── directives
 │   └── *tests*.js
-├── accesibility
+├── filters
 │   └── *tests*.js
-├── unit
+├── services
 │   └── *tests*.js
+├── karma.conf.js
+...
+```
+
+## App
+These tests are slow, but could be used to check the entire behaviour of the Electron app with [Spectron](https://electron.atom.io/spectron/).
+
+ - To run tests 1 time: `npm run test-app`
+
+They are organized under [`e2e/`](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/e2e):
+
+```
+├── data
+│   └── userData
+│       └── README.md
+├── scenarios
+│   ├── accessibility.js
+│   ├── client.js
+│   ├── create-account.js
+│   ├── create-network.js
+│   ├── select-network.js
+│   └── settings-menu.js
 ├── commands.js
 ├── hooks.js
 └── user_data.js
 ```
 
- - [acceptance/](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/acceptance): acceptance tests
- - [accesibility/](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/accesibility): accesibility tests
- - [unit/](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/unit): unit tests
- - [hooks.js](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/hooks.js): includes code to prepare the context of usual tests
- - [commands.js](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/commands.js): custom client actions, somewhat like macros, to reuse common behaviours
- - [user_data.js](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/user_data.js): simple access to user data
+ - [hooks.js](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/e2e/hooks.js): includes code to prepare the context
+ - [commands.js](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/e2e/commands.js): custom client actions, somewhat like macros, to reuse common behaviours
+ - [user_data.js](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/e2e/user_data.js): simple access to user data
+ - [data/](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/e2e/data/): this folder could be used to store the app data instead of using the real path
+ - [scenarios/](https://github.com/ArkEcosystem/ark-desktop/tree/master/test/e2e/scenarios/): this folder contains the tests

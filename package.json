@@ -17,9 +17,9 @@
     "dist:win32": "build --win --ia32",
     "dist:macos": "build --macos",
     "dist:linux": "build --linux",
-    "test-unit": "karma start test/karma.conf.js --single-run",
-    "test": "mocha --recursive ./test",
-    "test-watch": "mocha --recursive --watch ./test"
+		"test": "karma start test/karma.conf.js --single-run",
+		"test-app": "mocha --recursive ./test/e2e/scenarios",
+    "test-watch": "karma start test/karma.conf.js"
   },
   "repository": {
     "type": "git",

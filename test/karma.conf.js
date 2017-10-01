@@ -33,7 +33,7 @@ module.exports = function(config) {
       '../client/node_modules/angular-material/angular-material.js',
       '../client/node_modules/angular-mocks/angular-mocks.js',
 
-      // Subject under test
+      // Subjects under test
       '../client/app/src/init.js',
       '../client/app/src/accounts/account.service.js',
       '../client/app/src/addons/pluginLoader.addon.js',

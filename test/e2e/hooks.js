@@ -27,7 +27,7 @@ const hooks = {
       this.app = new Application({
         path: electron,
         args: [
-          path.join(__dirname, '..'),
+          path.join(__dirname, '../..'),
         ],
         waitTimeout: timeout,
       })

@@ -3,7 +3,7 @@ const electron = require('electron')
 const path = require('path')
 const fs = require('fs')
 
-const productName = require('../package').productName
+const productName = require('../../package').productName
 
 module.exports = {
 
