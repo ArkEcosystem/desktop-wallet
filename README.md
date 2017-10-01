@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ArkEcosystem/ark-desktop.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop)
+
 # Multi Platform Ark Lite Client
 
 ## Pinned: Help us translating
