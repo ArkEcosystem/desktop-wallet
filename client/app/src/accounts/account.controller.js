@@ -575,11 +575,9 @@
       }, 0) / 100000000).toFixed(2);
     }
 
-    //(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
-    self.myAccountsCurrencyBalance = function() {
+    self.formatCurrencyBalance = function(balance) {
       var currencyName = self.currency.name;
       var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
-      var currencyBalance = self.myAccountsBalance() * price;
       var languageCode = self.language.replace('_', '-');
       var options = {
         style: 'currency',
@@ -587,8 +585,8 @@
         currencyDisplay: 'symbol'
       }
 
-      currencyBalance = Number(currencyBalance).toLocaleString(languageCode, options);
-
+      var currencyBalance = Number(balance * price).toLocaleString(languageCode, options);
+      
       if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
 
       return currencyBalance;
@@ -605,6 +603,17 @@
     self.openMenu = function($mdMenuOpen, ev) {
       // originatorEv = ev; // unused
       $mdMenuOpen(ev);
+    };
+
+    self.selectNextCurrency = function() {
+      var currenciesNames = self.currencies.map(function(x) {
+        return x.name;
+      });
+      var currencyIndex = currenciesNames.indexOf(self.currency.name);
+      var newIndex = currencyIndex == currenciesNames.length-1 ? 0 : currencyIndex+1;
+
+      self.currency = self.currencies[newIndex];
+      self.changeCurrency();
     };
 
     self.changeCurrency = function() {
