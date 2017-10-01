@@ -79,6 +79,8 @@ It is possible to execute a script to reload the [Electron](https://electron.ato
 ```bash
 npm run live-reload
 ```
+## Contributing
+Read [CONTRIBUTING.md](https://github.com/ArkEcosystem/ark-desktop/blob/master/CONTRIBUTING.md) to learn about how to contribute to this project.
 
 ## Authors
 - FX Thoorens <fx@ark.io>
