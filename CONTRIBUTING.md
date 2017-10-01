@@ -18,6 +18,22 @@ Before pushing PR, please [jump in our slack #development](https://ark.io/slack)
  - improve documentation,
  - create something new for ARK.
 
+# Tools
+
+## Live-reload
+It is possible to execute a script to reload the [Electron](https://electron.atom.io/) application on changes:
+```bash
+npm run live-reload
+```
+
+## Devtron
+[Devtron](https://github.com/electron/devtron) is an extension that permits inspecting, monitoring and debugging Electron apps.
+
+To use it, execute this code on the developer console:
+```js
+require('devtron').install()
+```
+
 # Tests
 
 ## Commands
