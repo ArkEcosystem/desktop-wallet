@@ -27,7 +27,7 @@
           </md-card-title>
         </md-card> -->
 
-        <md-input-container class="md-block" ng-if="addDelegateDialog.data.registeredDelegates[0]">
+        <md-input-container class="md-block">
           <label for="delegate-name" translate>Active delegates (forging)</label>
           <md-select id="delegate-name" ng-model="addDelegateDialog.data.delegatename">
             <md-option ng-value="delegate.username" ng-repeat="delegate in addDelegateDialog.data.registeredDelegates | orderBy: '-approval'">{{delegate.username}} ({{delegate.approval}}% {{'approval'|translate}}, {{delegate.productivity}}% {{'productivity'|translate}})</md-option>

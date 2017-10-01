@@ -304,6 +304,8 @@
         } else {
           deferred.reject(gettextCatalog.getString("Cannot get registered delegates"));
         }
+      }).catch(function(err) {
+        deferred.reject(gettextCatalog.getString("Cannot get registered delegates"));
       });
       return deferred.promise;
     };
