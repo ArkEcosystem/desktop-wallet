@@ -201,7 +201,7 @@
     // set dark mode
     if (self.network.themeDark) self.currentTheme = 'dark';
 
-    //refreshing displayed account every 8s
+    // refreshing displayed account every 8s
     $interval(function() {
       if (self.selected) {
         self.refreshCurrentAccount();
@@ -757,7 +757,7 @@
               self.selected.transactions = transactions;
 
               var playSong = storageService.get('playFundsReceivedSong');
-              if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+              if (playSong == true && previousTx[0].id != transactions[0].id && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
                 var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
                 var audio = new Audio(wavFile);
                 audio.play();
