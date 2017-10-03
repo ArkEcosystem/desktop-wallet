@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   angular
     .module('arkclient.accounts')
     .controller('AccountController', [
@@ -51,6 +53,7 @@
       bg_BG: gettextCatalog.getString("Bulgarian"),
       de: gettextCatalog.getString("German"),
       el: gettextCatalog.getString("Greek"),
+      es_419: gettextCatalog.getString("Spanish"),
       fi: gettextCatalog.getString("Finish"),
       fr: gettextCatalog.getString("French"),
       hu: gettextCatalog.getString("Hungarish"),
@@ -161,8 +164,9 @@
     self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
-    self.playFundsReceivedSong = storageService.get("playFundsReceivedSong") || false;
-    self.togglePlayFundsReceivedSong = togglePlayFundsReceivedSong;
+    self.refreshAccountsAutomatically = storageService.get("refreshAccountsAutomatically") || false;
+    self.playFundsReceivedSound = storageService.get("playFundsReceivedSound") || false;
+    self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound;
     self.manageBackgrounds = manageBackgrounds;
     self.manageNetworks = manageNetworks;
     self.openPassphrasesDialog = openPassphrasesDialog;
@@ -203,7 +207,7 @@
 
     // refreshing displayed account every 8s
     $interval(function() {
-      if (self.selected) {
+      if (self.selected && self.refreshAccountsAutomatically) {
         self.refreshCurrentAccount();
       }
     }, 8 * 1000);
@@ -240,25 +244,25 @@
       function() {},
       function(connectedPeer) {
         self.connectedPeer = connectedPeer;
-        if (!self.connectedPeer.isConnected && self.isNetworkConnected) {
-          self.isNetworkConnected = false;
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network disconnected!'))
-            .hideDelay(10000)
-          );
-        } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
-          self.isNetworkConnected = true;
-          // trick to make it appear last.
-          $timeout(function() {
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Network connected and healthy!'))
-              .hideDelay(10000)
-            );
-          }, 1000);
 
+        function showToast(msg) {
+          var toast = $mdToast.simple()
+            .hideDelay(5000)
+            .textContent(gettextCatalog.getString(msg));
+          $mdToast.show(toast);
         }
+
+        // Wait a little to ignore the initial connection delay and short interruptions
+        $timeout(function() {
+          if (! self.connectedPeer.isConnected && self.isNetworkConnected) {
+            self.isNetworkConnected = false;
+            showToast('Network disconnected!');
+
+          } else if (self.connectedPeer.isConnected && ! self.isNetworkConnected) {
+            self.isNetworkConnected = true;
+            showToast('Network connected and healthy!');
+          }
+        }, 500);
       }
     );
 
@@ -361,7 +365,7 @@
     self.getMarketInfo(self.selectedCoin);
 
     var setExchangBuyExpirationProgress = function(timestamp){
-      
+
     }
 
     self.buy = function() {
@@ -393,7 +397,7 @@
                   self.exchangeHistory = changerService.getHistory();
                 },
                 function(data) {
-    
+
                 },
                 function(data) {
                   if (data.payee && self.exchangeBuy.payee != data.payee) {
@@ -404,14 +408,14 @@
                   }
                 }
               );
-    
+
             }, function(error) {
               formatAndToastError(error, 10000);
               self.exchangeBuy = null;
             });
             }
           )
-          
+
       });
 
     };
@@ -481,7 +485,7 @@
                 completeExchangeSell(timestamp);
               }
             )
-            
+
           },
           function(error) {
             formatAndToastError(error, 10000)
@@ -548,6 +552,15 @@
       if ($mdMedia('md') || $mdMedia('sm')) $mdSidenav('left').toggle();
     };
 
+    self.getAllAccounts = function() {
+      var accounts = self.accounts;
+      if (self.ledgerAccounts && self.ledgerAccounts.length) {
+        accounts = accounts.concat(self.ledgerAccounts);
+      }
+
+      return accounts;
+    };
+
     self.myAccounts = function() {
       return self.accounts.filter(function(account) {
         return !!account.virtual;
@@ -557,16 +570,14 @@
     };
 
     self.myAccountsBalance = function() {
-      return (self.myAccounts().reduce(function(memo, acc) {
-        return memo + parseInt(acc.balance);
+      return (self.getAllAccounts().reduce(function(memo, acc) {
+        return memo + parseInt(acc.balance || 0);
       }, 0) / 100000000).toFixed(2);
     }
 
-    //(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
-    self.myAccountsCurrencyBalance = function() {
+    self.formatCurrencyBalance = function(balance) {
       var currencyName = self.currency.name;
       var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
-      var currencyBalance = self.myAccountsBalance() * price;
       var languageCode = self.language.replace('_', '-');
       var options = {
         style: 'currency',
@@ -574,7 +585,7 @@
         currencyDisplay: 'symbol'
       }
 
-      currencyBalance = Number(currencyBalance).toLocaleString(languageCode, options);
+      var currencyBalance = Number(balance * price).toLocaleString(languageCode, options);
       
       if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
 
@@ -590,8 +601,19 @@
     }
 
     self.openMenu = function($mdMenuOpen, ev) {
-      originatorEv = ev;
+      // originatorEv = ev; // unused
       $mdMenuOpen(ev);
+    };
+
+    self.selectNextCurrency = function() {
+      var currenciesNames = self.currencies.map(function(x) {
+        return x.name;
+      });
+      var currencyIndex = currenciesNames.indexOf(self.currency.name);
+      var newIndex = currencyIndex == currenciesNames.length-1 ? 0 : currencyIndex+1;
+
+      self.currency = self.currencies[newIndex];
+      self.changeCurrency();
     };
 
     self.changeCurrency = function() {
@@ -697,7 +719,7 @@
                   return b.timestamp - a.timestamp;
                 });
 
-                var previousTx = self.selected.transactions
+                var previousTx = [...self.selected.transactions];
                 self.selected.transactions = transactions;
 
                 // if the previous tx was unconfirmed, rebroadcast and put it back at the top (for better UX)
@@ -705,6 +727,8 @@
                   networkService.broadcastTransaction(previousTx[0]);
                   self.selected.transactions.unshift(previousTx[0]);
                 }
+
+                previousTx = null;
               }
             }
           });
@@ -753,7 +777,7 @@
                 return b.timestamp - a.timestamp;
               });
 
-              var previousTx = self.selected.transactions;
+              var previousTx = [...self.selected.transactions];
               self.selected.transactions = transactions;
 
               var playSong = storageService.get('playFundsReceivedSong');
@@ -768,6 +792,8 @@
                 networkService.broadcastTransaction(previousTx[0]);
                 self.selected.transactions.unshift(previousTx[0]);
               }
+
+              previousTx = null;
             }
           }
         });
@@ -775,21 +801,26 @@
 
     self.refreshAccountBalances = function() {
       networkService.getPrice();
-      for (var i in self.accounts) {
+      var accounts = self.getAllAccounts();
+      for (var i in accounts) {
         accountService
-          .refreshAccount(self.accounts[i])
+          .refreshAccount(accounts[i])
           .then(function(account) {
-            for (var j in self.accounts) {
-              if (self.accounts[j].address == account.address) {
-                self.accounts[j].balance = account.balance;
+            for (var j in accounts) {
+              if (accounts[j].address == account.address) {
+                accounts[j].balance = account.balance;
               }
             }
           });
       }
     }
 
-    function togglePlayFundsReceivedSong(status) {
-      storageService.set('playFundsReceivedSong', self.playFundsReceivedSong, true);
+    self.toggleRefreshAccountsAutomatically = function() {
+      storageService.set('refreshAccountsAutomatically', self.refreshAccountsAutomatically, true);
+    }
+
+    function togglePlayFundsReceivedSound(status) {
+      storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
 
     /**
@@ -837,8 +868,8 @@
               var previousTx = self.selected.transactions;
               self.selected.transactions = transactions;
 
-              var playSong = storageService.get('playFundsReceivedSong');
-              if (playSong == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+              var playSound = storageService.get('playFundsReceivedSound');
+              if (playSound == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
                 var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
                 var audio = new Audio(wavFile);
                 audio.play();
@@ -933,8 +964,15 @@
     };
 
     function addDelegate(selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: {} };
-      accountService.getActiveDelegates().then(function(r) { data.registeredDelegates = r; });
+      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] };
+
+      accountService.getActiveDelegates().then(function(r) {
+        data.registeredDelegates = r;
+      }).catch(function(err) {
+        formatAndToastError(gettextCatalog.getString(
+          'Could not fetch active delegates - please check your internet connection'
+        ));
+      });
 
       function add() {
         function indexOfDelegates(array, item) {
@@ -2040,7 +2078,7 @@
         var list = JSON.parse($scope.verify.message);
         var res = accountService.verifyMessage(list["message"], list["publickey"], list["signature"]);
         var message = gettextCatalog.getString("Error in signature processing");
-        
+
         $mdDialog.hide();
         if (res == true) {
           message = gettextCatalog.getString("The message is verified successfully");
@@ -2139,6 +2177,7 @@
         send: send,
         cancel: cancel,
         transaction: transaction,
+        label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
         humanAmount: accountService.numberToFixed(transaction.amount / 100000000) + '',
       };

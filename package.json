@@ -9,6 +9,7 @@
     "rebuild": "electron-rebuild --force --module_dir . -w node-hid ",
     "electron": "electron --version",
     "start": "electron main.js",
+    "live-reload": "cross-env LIVE_RELOAD=true electron main.js",
     "pack": "build --dir",
     "dist": "npm run dist:win && npm run dist:macos && npm run dist:linux && npm run dist:win32",
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
@@ -16,7 +17,8 @@
     "dist:win32": "build --win --ia32",
     "dist:macos": "build --macos",
     "dist:linux": "build --linux",
-    "test": "mocha"
+    "test": "mocha --recursive ./test",
+    "test-watch": "mocha --recursive --watch ./test"
   },
   "repository": {
     "type": "git",
@@ -53,11 +55,13 @@
     "about-window": "~1.7.0",
     "electron-window-state": "^4.1.1",
     "ledgerco": "github:ledgerhq/ledger-node-js-api#master",
-    "q": "^1.5.0"
+    "q": "^1.5.0",
+    "elemon": "^5.0.3"
   },
   "devDependencies": {
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.0.5",
     "electron": "^1.7.5",
     "electron-builder": "^19.20.1",
     "electron-rebuild": "^1.6.0",
