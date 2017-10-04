@@ -609,7 +609,6 @@
     self.toggleDeveloperMode = function() {
       if (self.developerMode == undefined)  self.developerMode = false;
       storageService.set('developerMode', self.developerMode);
-      console.log("Mode is: " + storageService.get('developerMode'));
     };
 
     self.selectNextCurrency = function() {
