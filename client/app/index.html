@@ -59,7 +59,7 @@
         <md-tooltip>
           <translate>Switch Network</translate>
         </md-tooltip>
-        <md-menu>
+        <md-menu ng-if="ul.advancedMode">
           <md-button aria-label="Switch Network" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
@@ -80,7 +80,7 @@
           <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">settings</md-icon>
           </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 540px; overflow:hidden;">
+          <md-menu-content flex layout-padding width="6" style="min-height: 600px; overflow:hidden;">
             <md-list class="left-list">
               <md-list-item>
                 <md-icon>attach_money</md-icon>
@@ -126,6 +126,12 @@
               <md-list-item aria-label="Appearance" ng-click="ul.manageBackgrounds()">
                 <md-icon>landscape</md-icon>
                 <p translate>Appearance</p>
+              </md-list-item>
+              <hr>
+              <md-list-item aria-label="Advanced Mode">
+                <md-icon>developer_mode</md-icon>
+                <p translate>Advanced Mode</p>
+                <md-switch ng-model="ul.advancedMode" class="md-primary" md-no-ink arial-label="Advanced Mode" ng-change="ul.toggleAdvancedMode()" ng-init="ul.toggleAdvancedMode()"></md-switch>
               </md-list-item>
             </md-list>
           </md-menu-content>

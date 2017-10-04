@@ -605,6 +605,26 @@
       $mdMenuOpen(ev);
     };
 
+    self.toggleAdvancedMode = function() {
+      if (self.advancedMode == undefined)  self.advancedMode = false;
+      storageService.set('advancedMode', self.advancedMode);
+
+      if(storageService.get('advancedMode')) {
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent(gettextCatalog.getString('Advanced Mode enabled.'))
+          .hideDelay(5000)
+        );
+      } else {
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent(gettextCatalog.getString('Advanced Mode disabled.'))
+          .hideDelay(5000)
+        );
+      }
+      
+    };
+
     self.selectNextCurrency = function() {
       var currenciesNames = self.currencies.map(function(x) {
         return x.name;
