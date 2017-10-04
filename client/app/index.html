@@ -60,7 +60,7 @@
           <translate>Switch Network</translate>
         </md-tooltip>
         <md-menu>
-          <md-button aria-label="Switch Network" ng-disabled="!ul.developerMode" ng-click="ul.openMenu($mdOpenMenu, $event)">
+          <md-button aria-label="Switch Network" ng-disabled="!ul.advancedMode" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
           <md-menu-content flex width="3">
@@ -128,10 +128,10 @@
                 <p translate>Appearance</p>
               </md-list-item>
               <hr>
-              <md-list-item aria-label="Developer Mode">
+              <md-list-item aria-label="Advanced Mode">
                 <md-icon>developer_mode</md-icon>
-                <p translate>Developer Mode</p>
-                <md-switch ng-model="ul.developerMode" class="md-primary" md-no-ink arial-label="Developer Mode" ng-change="ul.toggleDeveloperMode()" ng-init="ul.toggleDeveloperMode()"></md-switch>
+                <p translate>Advanced Mode</p>
+                <md-switch ng-model="ul.advancedMode" class="md-primary" md-no-ink arial-label="Advanced Mode" ng-change="ul.toggleAdvancedMode()" ng-init="ul.toggleAdvancedMode()"></md-switch>
               </md-list-item>
             </md-list>
           </md-menu-content>

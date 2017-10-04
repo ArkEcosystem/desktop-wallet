@@ -164,7 +164,7 @@
     self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
-    self.developerMode = storageService.get("developerMode") || false;
+    self.advancedMode = storageService.get("advancedMode") || false;
     self.refreshAccountsAutomatically = storageService.get("refreshAccountsAutomatically") || false;
     self.playFundsReceivedSound = storageService.get("playFundsReceivedSound") || false;
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound;
@@ -606,9 +606,24 @@
       $mdMenuOpen(ev);
     };
 
-    self.toggleDeveloperMode = function() {
-      if (self.developerMode == undefined)  self.developerMode = false;
-      storageService.set('developerMode', self.developerMode);
+    self.toggleAdvancedMode = function() {
+      if (self.advancedMode == undefined)  self.advancedMode = false;
+      storageService.set('advancedMode', self.advancedMode);
+
+      if(storageService.get('advancedMode')) {
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent(gettextCatalog.getString('Switch Network enabled.'))
+          .hideDelay(5000)
+        );
+      } else {
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent(gettextCatalog.getString('Switch Network disabled.'))
+          .hideDelay(5000)
+        );
+      }
+      
     };
 
     self.selectNextCurrency = function() {
