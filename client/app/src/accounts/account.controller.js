@@ -164,6 +164,7 @@
     self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
+    self.advancedMode = storageService.get("advancedMode") || false;
     self.refreshAccountsAutomatically = storageService.get("refreshAccountsAutomatically") || false;
     self.playFundsReceivedSound = storageService.get("playFundsReceivedSound") || false;
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound;
@@ -603,6 +604,26 @@
     self.openMenu = function($mdMenuOpen, ev) {
       // originatorEv = ev; // unused
       $mdMenuOpen(ev);
+    };
+
+    self.toggleAdvancedMode = function() {
+      if (self.advancedMode == undefined)  self.advancedMode = false;
+      storageService.set('advancedMode', self.advancedMode);
+
+      if(storageService.get('advancedMode')) {
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent(gettextCatalog.getString('Advanced Mode enabled.'))
+          .hideDelay(5000)
+        );
+      } else {
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent(gettextCatalog.getString('Advanced Mode disabled.'))
+          .hideDelay(5000)
+        );
+      }
+      
     };
 
     self.selectNextCurrency = function() {
