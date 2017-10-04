@@ -264,7 +264,7 @@
       <md-toolbar layout="row" md-scroll-shrink>
         <div class="md-toolbar-tools">
           <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.formatCurrencyBalance(ul.myAccountsBalance())}}
+            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.formatCurrencyVal(ul.myAccountsCurrencyBalance())}}
           </h2>
           <span flex></span>
           <md-button class="share" ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">

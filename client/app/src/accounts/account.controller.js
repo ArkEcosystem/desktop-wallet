@@ -575,23 +575,13 @@
       }, 0) / 100000000).toFixed(2);
     }
 
-    self.formatCurrencyBalance = function(balance) {
-      var currencyName = self.currency.name;
-      var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
-      var languageCode = self.language.replace('_', '-');
-      var options = {
-        style: 'currency',
-        currency: currencyName,
-        currencyDisplay: 'symbol'
-      }
-
-      var currencyBalance = Number(balance * price).toLocaleString(languageCode, options);
-
-      if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
-
-      return currencyBalance;
+    self.myAccountsCurrencyBalance = function() {
+        var balance = self.myAccountsBalance();
+        var currencyName = self.currency.name;
+        var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
+        return balance*price;
     }
-
+    
     self.formatCurrencyVal = function(val) {
         var currencyName = self.currency.name;
         var languageCode = self.language.replace('_', '-');
