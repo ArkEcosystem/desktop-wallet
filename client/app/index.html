@@ -177,7 +177,7 @@
                   <b><translate>Price</translate></b>
                 </div>
 
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
+                <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.price[ul.currency.name])}}</span>
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
@@ -192,7 +192,7 @@
                   <b><translate>Market Cap.</translate></b>
                 </div>
 
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+                <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.marketCap[ul.currency.name])}}</span>
               </md-list-item>
               <md-list-item ng-show="ul.connectedPeer.market.isOffline">
                 <b translate>Last checked</b> <span class="md-secondary">
@@ -324,7 +324,7 @@
               <b><translate>Price</translate></b>
             </div>
 
-            <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
+            <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.price[ul.currency.name])}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>
@@ -335,7 +335,7 @@
             </span>
           </md-list-item>
           <md-list-item>
-            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.marketCap[ul.currency.name])}}</span>
           </md-list-item>
         </md-list>
       </md-content>
@@ -436,7 +436,7 @@
                 <translate>Refresh Account</translate>
               </md-tooltip>
             </md-button>
-            
+
             <md-button ng-if="ul.selected.virtual" md-no-ink ng-click="ul.sendArk(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
               <md-icon md-font-library="material-icons">send</md-icon>
               <md-tooltip>
