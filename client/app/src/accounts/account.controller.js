@@ -613,13 +613,13 @@
       if(storageService.get('advancedMode')) {
         $mdToast.show(
           $mdToast.simple()
-          .textContent(gettextCatalog.getString('Switch Network enabled.'))
+          .textContent(gettextCatalog.getString('Advanced Mode enabled.'))
           .hideDelay(5000)
         );
       } else {
         $mdToast.show(
           $mdToast.simple()
-          .textContent(gettextCatalog.getString('Switch Network disabled.'))
+          .textContent(gettextCatalog.getString('Advanced Mode disabled.'))
           .hideDelay(5000)
         );
       }

@@ -59,7 +59,7 @@
         <md-tooltip>
           <translate>Switch Network</translate>
         </md-tooltip>
-        <md-menu>
+        <md-menu ng-if="ul.advancedMode">
           <md-button aria-label="Switch Network" ng-disabled="!ul.advancedMode" ng-click="ul.openMenu($mdOpenMenu, $event)">
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
