@@ -164,6 +164,7 @@
     self.exportAccount = exportAccount;
     self.copiedToClipboard = copiedToClipboard;
 
+    self.developerMode = storageService.get("developerMode") || false;
     self.refreshAccountsAutomatically = storageService.get("refreshAccountsAutomatically") || false;
     self.playFundsReceivedSound = storageService.get("playFundsReceivedSound") || false;
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound;
@@ -603,6 +604,12 @@
     self.openMenu = function($mdMenuOpen, ev) {
       // originatorEv = ev; // unused
       $mdMenuOpen(ev);
+    };
+
+    self.toggleDeveloperMode = function() {
+      if (self.developerMode == undefined)  self.developerMode = false;
+      storageService.set('developerMode', self.developerMode);
+      console.log("Mode is: " + storageService.get('developerMode'));
     };
 
     self.selectNextCurrency = function() {
