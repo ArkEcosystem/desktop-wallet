@@ -215,7 +215,7 @@
     // detect Ledger
     $interval(function() {
       if (!self.ledgerAccounts && self.ledger && self.ledger.connected) {
-        self.ledgerAccounts = ledgerService.getBip44Accounts();
+        self.ledgerAccounts = ledgerService.getBip44Accounts(self.network.slip44);
       }
       if (ledgerService.detect().status == "Success") {
         self.ledger = ledgerService.isAppLaunched();

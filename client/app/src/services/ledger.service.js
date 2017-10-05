@@ -22,11 +22,11 @@
       return result
     }
 
-    function getBip44Accounts() {
+    function getBip44Accounts(slip44) {
       var accounts = [];
       var account_index = 0;
       var address_index = 0;
-      var path = "44'/111'/";
+      var path = "44'/" + (slip44 || "111") + "'/";
       var empty = false;
 
       while (!empty) {
@@ -69,13 +69,13 @@
       return accounts;
     }
 
-    function recoverBip44Accounts(backupLedgerPassphrase) {
+    function recoverBip44Accounts(backupLedgerPassphrase, slip44) {
       var hdnode = new arkjs.HDNode.fromSeedHex(bip39.mnemonicToSeedHex(backupLedgerPassphrase));
 
       var accounts = [];
       var account_index = 0;
       var address_index = 0;
-      var path = "44'/111'/";
+      var path = "44'/" + (slip44 || "111") + "'/";
       var empty = false;
 
       while (!empty) {
