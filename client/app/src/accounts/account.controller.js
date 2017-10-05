@@ -212,10 +212,28 @@
       }
     }, 8 * 1000);
 
+    var nocall = false;
+
     // detect Ledger
     $interval(function() {
+      if(nocall){
+        return;
+      }
       if (!self.ledgerAccounts && self.ledger && self.ledger.connected) {
-        self.ledgerAccounts = ledgerService.getBip44Accounts(self.network.slip44);
+         console.log("ledgerService.getBip44Accounts");
+         nocall=true;
+         ledgerService.getBip44Accounts(self.network.slip44).then(
+          function(accounts){
+            self.ledgerAccounts = accounts;
+            self.ledger.conneted = true;
+            nocall=false;
+          },
+          function(err){
+            self.ledgerAccounts = null;
+            self.ledger = { connected: false };
+            nocall=false;
+          }
+        );
       }
       if (ledgerService.detect().status == "Success") {
         self.ledger = ledgerService.isAppLaunched();
