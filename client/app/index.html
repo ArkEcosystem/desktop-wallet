@@ -64,9 +64,9 @@
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
           <md-menu-content flex width="3">
-            <md-menu-item ng-repeat="(name, prop) in ul.listNetworks">
-              <md-button ng-click="ul.switchNetwork(name, true)" md-colors="((ul.context == name) && {color:'primary'} || {color:'background-900'})">{{ name | uppercase }} ({{ prop.token }})</md-button>
-            </md-menu-item>
+            <md-list-item ng-repeat="(name, prop) in ul.listNetworks" ng-click="ul.switchNetwork(name, true)">
+              <span md-colors="((ul.context == name) && {color:'{{ul.currentTheme}}-primary'} || {color:'{{ul.currentTheme}}-background-600'})">{{ name | uppercase }} ({{ prop.token }})</span>
+            </md-list-item>
           </md-menu-content>
         </md-menu>
       </any>
