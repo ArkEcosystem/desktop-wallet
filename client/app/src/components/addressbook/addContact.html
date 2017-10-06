@@ -1,0 +1,33 @@
+<md-dialog aria-label="Add Contact" ng-cloak md-theme="ul.currentTheme">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Add Contact </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="addAddressbookContact.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container md-no-float class="md-block">
+          <label translate>Name</label>
+          <input ng-model="name" ng-init="name=''" type="text" ng-required="true">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+          <label translate>Address</label>
+          <input ng-model="address" ng-init="address=''" type="text" ng-required="true">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-primary" ng-click="addAddressbookContact.add(name, address)">
+        <translate>Add Contact</translate>
+      </md-button>
+      <md-button ng-click="addAddressbookContact.cancel()" style="margin-right:20px;">
+        <translate>Close</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
