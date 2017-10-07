@@ -24,24 +24,48 @@
     html {
       border-radius: 10px;
     }
-    /**
-         * Hide when Angular is not yet loaded and initialized
-         */
 
-    [ng\:cloak],
-    [ng-cloak],
-    [data-ng-cloak],
-    [x-ng-cloak],
-    .ng-cloak,
-    .x-ng-cloak {
-      display: none !important;
+    .splash {
+      display: none;
+      overflow-x: hidden;
+    }
+    
+    [ng-cloak].splash {
+      background-color: #06060c;
+      background-image: url("splashscreen.png");
+      background-position: inherit;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 90vw;
+      height: 90vh;
+      margin: 0 auto;
+      text-align: center;
+      display: block !important;
+      padding: 2em;
+      -webkit-animation: fadein 2s;
+      animation: fadein 2s;
+    }
+
+    .splash__title {
+      color: #FFF;
+      display: block;
+      font-size: 1.2em;
+      font-weight: bold;
+      line-height: 1.4em;
     }
   </style>
 
 </head>
 
-<body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul" ng-cloak md-theme="ul.currentTheme" background-style="ul.network.background" class="too-pale-background">
-  <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
+<body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul" md-theme="ul.currentTheme" background-style="ul.network.background" class="too-pale-background">
+  <div class="splash" ng-cloak="">
+    <div class="splash__title">
+      <p translate>Loading...</p>
+    </div>
+  </div>
+
+  <div ng-cloak="" style="height: 100%" layout="column">
+  <md-toolbar style="background-color: rgba(0, 0, 0, 0)" >
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
       <img src="ark.png" alt="" height="40">
       <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong></md-button>
@@ -64,9 +88,9 @@
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
           <md-menu-content flex width="3">
-            <md-menu-item ng-repeat="(name, prop) in ul.listNetworks">
-              <md-button ng-click="ul.switchNetwork(name, true)" md-colors="((ul.context == name) && {color:'primary'} || {color:'background-900'})">{{ name | uppercase }} ({{ prop.token }})</md-button>
-            </md-menu-item>
+            <md-list-item ng-repeat="(name, prop) in ul.listNetworks" ng-click="ul.switchNetwork(name, true)">
+              <span md-colors="((ul.context == name) && {color:'{{ul.currentTheme}}-primary'} || {color:'{{ul.currentTheme}}-background-600'})">{{ name | uppercase }} ({{ prop.token }})</span>
+            </md-list-item>
           </md-menu-content>
         </md-menu>
       </any>
@@ -96,15 +120,15 @@
                   <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                 </md-select>
               </md-list-item>
-              <md-list-item aria-label="Play sound when receiving transaction?">
+              <md-list-item aria-label="Play sound when receiving transactions?">
                 <md-icon>music_note</md-icon>
-                <p translate>Play sound when receiving transaction?</p>
-                <md-switch ng-model="ul.playFundsReceivedSound" class="md-primary" md-no-ink arial-label="Play sound when receiving transaction?" ng-change="ul.togglePlayFundsReceivedSound()" ng-init="ul.togglePlayFundsReceivedSound()"></md-switch>
+                <p translate>Play sound when receiving transactions?</p>
+                <md-switch ng-model="ul.playFundsReceivedSound" class="md-primary" md-no-ink aria-label="Play sound when receiving transactions?" ng-change="ul.togglePlayFundsReceivedSound()" ng-init="ul.togglePlayFundsReceivedSound()"></md-switch>
               </md-list-item>
               <md-list-item aria-label="Refresh accounts automatically?">
                 <md-icon>autorenew</md-icon>
                 <p translate>Refresh accounts automatically?</p>
-                <md-switch ng-model="ul.refreshAccountsAutomatically" class="md-primary" md-no-ink arial-label="Refresh accounts automatically?" ng-change="ul.toggleRefreshAccountsAutomatically()" ng-init="ul.toggleRefreshAccountsAutomatically()"></md-switch>
+                <md-switch ng-model="ul.refreshAccountsAutomatically" class="md-primary" md-no-ink aria-label="Refresh accounts automatically?" ng-change="ul.toggleRefreshAccountsAutomatically()" ng-init="ul.toggleRefreshAccountsAutomatically()"></md-switch>
               </md-list-item>
               <hr>
               <md-list-item aria-label="Import Account" ng-click="ul.importAccount()">
@@ -1048,6 +1072,7 @@
 
 
       </md-content>
+    </div>
   </div>
 
   <script src="dependencies.min.js"></script>

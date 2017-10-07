@@ -31,7 +31,7 @@
           return address
 
         var username = accountService.getUsername(address)
-        if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+        if (username.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g))
           return accountService.smallId(username)
 
         return username
@@ -112,6 +112,7 @@
     self.closeApp = function() {
       var confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Quit Ark Client?'))
+        .theme(self.currentTheme)
         .ok(gettextCatalog.getString('Quit'))
         .cancel(gettextCatalog.getString('Cancel'));
       $mdDialog.show(confirm).then(function() {
@@ -129,6 +130,7 @@
     self.clearData = function() {
       var confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Are you sure?'))
+        .theme(self.currentTheme)
         .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
         .ariaLabel(gettextCatalog.getString('Confirm'))
         .ok(gettextCatalog.getString('Yes'))
@@ -1591,6 +1593,7 @@
       function removeNetwork(network) {
         var confirm = $mdDialog.confirm()
           .title(gettextCatalog.getString('Remove Network') + ' ' + network)
+          .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
           .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
           .cancel(gettextCatalog.getString('Cancel'));
@@ -1940,6 +1943,7 @@
         } else if (action == gettextCatalog.getString("Remove")) {
           var confirm = $mdDialog.confirm()
             .title(gettextCatalog.getString('Remove Account') + ' ' + selectedAccount.address)
+            .theme(self.currentTheme)
             .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
               'The account may be added again using the original passphrase of the account.'))
             .ok(gettextCatalog.getString('Remove account'))
@@ -2020,6 +2024,7 @@
         .clickOutsideToClose(true)
         .title(message)
         .ariaLabel(message)
+        .theme(self.currentTheme)
         .ok(gettextCatalog.getString('Ok'))
       );
     }
