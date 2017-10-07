@@ -31,7 +31,7 @@
           return address
 
         var username = accountService.getUsername(address)
-        if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+        if (username.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g))
           return accountService.smallId(username)
 
         return username
