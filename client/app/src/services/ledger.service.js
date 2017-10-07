@@ -22,22 +22,18 @@
       return result
     }
 
-    function getBip44Accounts() {
-      var accounts = [];
-      var account_index = 0;
-      var address_index = 0;
-      var path = "44'/111'/";
-      var empty = false;
-
-      while (!empty) {
-        var localpath = path + account_index + "'/0/" + address_index;
-        var result = ipcRenderer.sendSync('ledger', {
-          action: "getAddress",
-          path: localpath
-        });
+    function getBip44Account(path, accounts, deferred, account_index, address_index) {
+      var localpath = path + account_index + "'/0/" + address_index;
+      ipcRenderer.send('ledger', {action: "GET_ADDRESSES",path: localpath})
+      ipcRenderer.once("GET_ADDRESSES", (event,args) => {
+        var result = args.value
+        console.log("RESULT: " + result)
+        for(var name in result) {
+          console.log("NAME: " + name)
+        }
+        
         if (result.address) {
           result.address = arkjs.crypto.getAddress(result.publicKey);
-          account_index = account_index + 1;
 
           var account = storageService.get(result.address);
           if (account && !account.cold) {
@@ -50,6 +46,7 @@
             account.publicKey = result.publicKey;
             storageService.set(result.address, account);
             accounts.push(account);
+            getBip44Account(path, accounts, deferred, account_index + 1, address_index)
           } else {
             result.ledger = localpath;
             result.cold = true;
@@ -60,13 +57,25 @@
             }
             storageService.set(result.address, result);
             accounts.push(result);
-            empty = true;
+            deferred.resolve(accounts)
           }
         } else {
-          empty = true;
+          deferred.resolve(accounts)
         }
-      }
-      return accounts;
+      })
+    }
+    
+    
+    
+    function getBip44Accounts() {
+      var deferred = $q.defer()
+      var accounts = [];
+      var account_index = 0;
+      var address_index = 0;
+
+      getBip44Account("44'/111'/", accounts, deferred, account_index, address_index)
+      
+      return deferred.promise
     }
 
     function recoverBip44Accounts(backupLedgerPassphrase) {
@@ -105,7 +114,9 @@
 
     function signTransaction(path, transaction) {
       var deferred = $q.defer();
-      ipcRenderer.once('transactionSigned', function(event, result) {
+      // Because I'm new to these technologies didn't find an easy way to have the CONSTANTS module defined in the root 
+      // of project being caught, I always got module not found. Someone wants to give hand? :P 
+      ipcRenderer.once('SIGN_TRANSACTION', function(event, result) {
         if (result.error) {
           deferred.reject(result.error)
         } else {
@@ -113,7 +124,7 @@
         }
       });
       ipcRenderer.send('ledger', {
-        action: "signTransaction",
+        action: "SIGN_TRANSACTION",
         data: arkjs.crypto.getBytes(transaction, true, true).toString("hex"),
         path: path
       });
@@ -139,27 +150,17 @@
       });
       return deferred.promise;
     }
-
-    function detect() {
-      var result = ipcRenderer.sendSync('ledger', {
-        action: "detect"
-      });
-      return result
-    }
-
-    function isAppLaunched() {
-      var result = ipcRenderer.sendSync('ledger', {
-        action: "getConfiguration"
-      });
-      return result;
+    
+    //TODO: Should be replaced with pushing instead of polling
+    function isLedgerConnected() {
+      return ipcRenderer.sendSync('ledger', {action: "DETECT_LEDGER"}).connected
     }
 
     return {
       deriveAddress: deriveAddress,
       signTransaction: signTransaction,
       signMessage: signMessage,
-      detect: detect,
-      isAppLaunched: isAppLaunched,
+      isLedgerConnected: isLedgerConnected,
       getBip44Accounts: getBip44Accounts,
       recoverBip44Accounts: recoverBip44Accounts
     };

@@ -288,7 +288,7 @@
         </md-toolbar>
         <md-content style="min-height: 70px;" flex>
           <md-list md-no-ink>
-            <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.ledger.connected">
+            <md-list-item ng-click="ul.selectLedgerAccount()" ng-if="ul.isLedgerConnected">
               <span>
                 <md-icon md-svg-icon="ledger"></md-icon>
                 Ledger Nano S
@@ -371,18 +371,18 @@
 
       <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
         <md-list md-no-ink ng-controller="AddressbookController as ab">
-          <md-list-item ng-if="ul.ledger.connected">
+          <md-list-item ng-if="ul.isLedgerConnected">
             <h2 translate>
               Ledger Nano S
             </h2>
           </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
+          <md-list-item ng-if="ul.isLedgerConnected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
             <span style="white-space: nowrap;">
                   <md-icon md-svg-icon="ledger"></md-icon>
                   {{it.address|accountlabel}}
                 </span>
           </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected&&!ul.ledgerAccounts">
+          <md-list-item ng-if="ul.isLedgerConnected&&!ul.ledgerAccounts">
             <md-progress-circular md-mode="indeterminate"></md-progress-circular>
           </md-list-item>
           <md-list-item>
