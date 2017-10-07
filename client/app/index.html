@@ -24,24 +24,48 @@
     html {
       border-radius: 10px;
     }
-    /**
-         * Hide when Angular is not yet loaded and initialized
-         */
 
-    [ng\:cloak],
-    [ng-cloak],
-    [data-ng-cloak],
-    [x-ng-cloak],
-    .ng-cloak,
-    .x-ng-cloak {
-      display: none !important;
+    .splash {
+      display: none;
+      overflow-x: hidden;
+    }
+    
+    [ng-cloak].splash {
+      background-color: #06060c;
+      background-image: url("splashscreen.png");
+      background-position: inherit;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 90vw;
+      height: 90vh;
+      margin: 0 auto;
+      text-align: center;
+      display: block !important;
+      padding: 2em;
+      -webkit-animation: fadein 2s;
+      animation: fadein 2s;
+    }
+
+    .splash__title {
+      color: #FFF;
+      display: block;
+      font-size: 1.2em;
+      font-weight: bold;
+      line-height: 1.4em;
     }
   </style>
 
 </head>
 
-<body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul" ng-cloak md-theme="ul.currentTheme" background-style="ul.network.background" class="too-pale-background">
-  <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
+<body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul" md-theme="ul.currentTheme" background-style="ul.network.background" class="too-pale-background">
+  <div class="splash" ng-cloak="">
+    <div class="splash__title">
+      <p translate>Loading...</p>
+    </div>
+  </div>
+
+  <div ng-cloak="" style="height: 100%" layout="column">
+  <md-toolbar style="background-color: rgba(0, 0, 0, 0)" >
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
       <img src="ark.png" alt="" height="40">
       <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong></md-button>
@@ -1047,6 +1071,7 @@
 
 
       </md-content>
+    </div>
   </div>
 
   <script src="dependencies.min.js"></script>
