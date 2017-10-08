@@ -44,44 +44,34 @@
           if (result.address) {
             result.address = arkjs.crypto.getAddress(result.publicKey);
             account_index = account_index + 1;
-  
-            var account = storageService.get(result.address);
-            if (account && !account.cold) {
-              account.virtual = storageService.get("virtual-" + result.address);
-              if (!account.virtual) {
-                account.virtual = [];
-                storageService.set("virtual-" + result.address, account.virtual);
-              }
-              account.ledger = localpath;
-              account.publicKey = result.publicKey;
-              storageService.set(result.address, account);
-              accounts.push(account);
-              next();
-            } else {
-              result.ledger = localpath;
-              result.virtual = storageService.get("virtual-" + result.address);
-              result.cold = true;
-              if (!result.virtual) {
-                result.virtual = [];
-                storageService.set("virtual-" + result.address, result.virtual);
-              }
-              storageService.set(result.address, result);
-              accounts.push(result);
-              networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=1&recipientId=" + result.address + "&senderId=" + result.address).then(function(resp) {
-                if (resp.success) {
-                  empty = resp.count == 0;
-                  next();
-                } else {
+            var account = storageService.get(result.address) || result;
+            account.ledger = localpath;
+            var txs = storageService.get("transactions-" + account.address);
+            account.cold = !txs || txs.length == 0;
+            account.publicKey = result.publicKey;
+            storageService.set(account.address, account);
+            account.virtual = storageService.get("virtual-" + account.address) || [];
+            storageService.set("virtual-" + account.address, account.virtual)
+            accounts.push(account);
+            if(account.cold) {
+              networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=1&recipientId=" + account.address + "&senderId=" + account.address).then(
+                function(resp) {
+                  if (resp.success) {
+                    empty = resp.count == 0;
+                    next();
+                  } else {
+                    empty = true;
+                    next();
+                  }
+                },
+                function(err){
                   empty = true;
                   next();
                 }
-              },
-              function(err){
-                empty = true;
-                next();
-              }
-            );
-              
+              );
+            }
+            else{
+              next(); 
             }
           } else {
             empty = true;
