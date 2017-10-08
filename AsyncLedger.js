@@ -95,6 +95,20 @@
               process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, error: error})
             })
           break
+        case SIGN_MESSAGE:
+          log("info", "Received SIGN_MESSAGE request for path " + args.path + " and data " + args.data)
+          ledgerArk.instance.signPersonalMessage_async(args.path, Buffer.from(args.data).toString("hex"))
+            .then(result => {
+              log("info", "Message signed with signature " + result.signature)
+              process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, value: result})
+            })
+            .fail(error => {
+                log("error", "Failed to sign message with error " + error)
+                process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, error: error})
+                event.sender.send('messageSigned', {error: error})
+              }
+            )
+          break
         default:
           break
       }

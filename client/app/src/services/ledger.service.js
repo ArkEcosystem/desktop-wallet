@@ -136,7 +136,7 @@
       var crypto = require("crypto");
       var hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
-      ipcRenderer.once('messageSigned', function(event, result) {
+      ipcRenderer.once('SIGN_MESSAGE', function(event, result) {
         if (result.error) {
           deferred.reject(result.error)
         } else {
@@ -144,7 +144,7 @@
         }
       });
       ipcRenderer.send('ledger', {
-        action: "signMessage",
+        action: "SIGN_MESSAGE",
         data: hash.toString("hex"),
         path: path
       });

@@ -73,16 +73,7 @@ function createWindow() {
         ledgerWorker.send(({action: CONSTANTS.SIGN_TRANSACTION, id: event.sender.id, path: args.path, data: args.data}))
         break
       case CONSTANTS.SIGN_MESSAGE:
-        //TODO: Missing porting this to async
-        /*  
-                  if(arg.action == "signMessage"){
-                    ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
-                      (result) => {  event.sender.send('messageSigned', result) }
-                    ).fail(
-                      (error) => { event.sender.send('messageSigned', {error:error}) }
-                    )
-                  }
-        */
+        ledgerWorker.send({action:CONSTANTS.SIGN_MESSAGE, id: event.sender.id, path: args.path, data: args.data})
         break
       default:
         console.error('Unknown action [' + args.action + '] received from WindowBrowser with id=' + event.sender.id)
