@@ -79,8 +79,8 @@
     pluginLoader.triggerEvent("onStart");
 
     self.currencies = [
-      { name: "usd", symbol: "$" },
       { name: "btc", symbol: "Ƀ" },
+      { name: "usd", symbol: "$" },
       { name: "aud", symbol: "A$" },
       { name: "brl", symbol: "R$" },
       { name: "cad", symbol: "Can$" },
@@ -178,7 +178,7 @@
     self.addDelegate = addDelegate;
     self.showAccountMenu = showAccountMenu;
     self.selectNextLanguage = selectNextLanguage;
-    self.currency = storageService.get("currency") || { name: "btc", symbol: "Ƀ" };
+    self.currency = storageService.get("currency") || self.currencies[0];
     self.switchNetwork = networkService.switchNetwork;
     self.marketinfo = {};
     self.network = networkService.getNetwork();
