@@ -14,7 +14,7 @@
         <div>
           <md-list ng-cloak ng-repeat="category in send.backgroundKeys">
             <md-subheader class="md-no-sticky">
-              <span style="text-transform: capitalize;" translate>{{ category }}</span>
+              <span style="text-transform: capitalize;">{{ category | translate }}</span>
             </md-subheader>
             <md-grid-list md-cols="4" md-row-height="2:2" md-gutter="12px">
               <md-grid-tile ng-repeat="(key, item) in send.backgrounds[category]" style="background: {{ item }}" ng-click="send.selectBackground(item)" ng-class="send.selectedBackground == item ? 'active' : ''" class="background-item">

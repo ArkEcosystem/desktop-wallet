@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-09-04 12:36+0000\n"
-"PO-Revision-Date: 2017-09-04 12:36+0000\n"
+"POT-Creation-Date: 2017-10-09 21:49+0000\n"
+"PO-Revision-Date: 2017-10-09 21:49+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ro\n"
@@ -10,51 +10,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
-
-msgid "If you own this account, you can enable Voting"
-msgstr "Daca detii acest cont, poti activa votarea"
-
-msgid "This account already has a second passphrase:"
-msgstr "Acest cont are deja o parola de acces:"
-
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "Votul este optional dar un mecanism important care pastreaza reteaua Ark in siguranta.\nCei 51 delegati cu cele mai multe voturi din retea sunt responsabili pentru verificarea si prelucrarea tranzactiilor in blocuri noi.\nAceasta pagina poate fi folosita sa votezi un delegat pe care il sustii."
-
-msgid "you need at least 5 ARK to create a second passphrase"
-msgstr "Ai nevoie de 5 ARK sa creezi a doua parola de acces"
-
-msgid "Cannot get registered delegates"
-msgstr "Nu putem obtine delegatii inregistarti."
-
-msgid "Client"
-msgstr "Client"
-
-msgid "Coming Soon"
-msgstr "In Curand"
-
-msgid "Confirm"
-msgstr "Confirmare"
-
-msgid "Contacts"
-msgstr "Contacte"
-
-msgid "Copy"
-msgstr "Copiaza"
-
-msgid "Edit Contact"
-msgstr "Modifica Contact"
-
-msgid "Enable Signing"
-msgstr "Activeaza semnatura"
-
-msgid "Error in signature processing"
-msgstr "Eroare in procesul de semnare"
-
-msgid "File"
-msgstr "Fisier"
-
-msgid "Force"
-msgstr "Forteaza"
 
 msgid "Account added!"
 msgstr "Cont adaugat!"
@@ -98,6 +53,9 @@ msgstr "Nu se pot gasi delegati plecand de la acest termen:"
 msgid "Cannot find delegates on this peer:"
 msgstr "Nu se pot gasi delagati in aceast peer:"
 
+msgid "Cannot get registered delegates"
+msgstr "Nu putem obtine delegatii inregistarti."
+
 msgid "Cannot get sponsors"
 msgstr "Nu se pot gasi sponsori"
 
@@ -113,8 +71,23 @@ msgstr "Nu se poate stabili dacă contul este un delegat"
 msgid "Change 1h/7h/7d"
 msgstr "Schimba 1h/7h/7d"
 
+msgid "Client"
+msgstr "Client"
+
 msgid "Close"
 msgstr "Inchide"
+
+msgid "Coming Soon"
+msgstr "In Curand"
+
+msgid "Confirm"
+msgstr "Confirmare"
+
+msgid "Contacts"
+msgstr "Contacte"
+
+msgid "Copy"
+msgstr "Copiaza"
 
 msgid "Create Virtual Folder"
 msgstr "Creeaza Dosar Virtual"
@@ -149,11 +122,20 @@ msgstr "Sterge permanent acest Cont"
 msgid "Destination Address"
 msgstr "Adresa de Destinatie"
 
+msgid "Edit Contact"
+msgstr "Modifica Contact"
+
+msgid "Enable Signing"
+msgstr "Activeaza semnatura"
+
 msgid "Enable Virtual Folders"
 msgstr "Activeaza Dosarele Virtuale"
 
 msgid "Enable Votes"
 msgstr "Activeaza Voturi"
+
+msgid "Error in signature processing"
+msgstr "Eroare in procesul de semnare"
 
 msgid "Error when trying to login:"
 msgstr "Eroare la incercarea de autentificare:"
@@ -164,11 +146,17 @@ msgstr "Eroare:"
 msgid "Exchange"
 msgstr "Schimb Valutar"
 
+msgid "File"
+msgstr "Fisier"
+
 msgid "Fee (Ѧ)"
 msgstr "taxa (Ѧ)"
 
 msgid "Folder Name"
 msgstr "Nume Dosar"
+
+msgid "Force"
+msgstr "Forteaza"
 
 msgid "From"
 msgstr "De la"
@@ -181,6 +169,15 @@ msgstr "Hand crafted cu ❤ de"
 
 msgid "Height"
 msgstr "Inaltime"
+
+msgid "If you own this account, you can enable Message Signing"
+msgstr "Daca detineti acest cont, puteti activa serviciul Semnare Mesaj"
+
+msgid "If you own this account, you can enable Voting"
+msgstr "Daca detii acest cont, poti activa votarea"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
+msgstr "Daca detineti acest cont, puteti activa serviciul de fisiere virtuale. Fisierele virtuale sunt conturi care apartin contului dumneavoastra principal unde puteti sa va organizati banii mai bine, fara a avea nevoie sa faceti o tranzactie si sa platiti taxa. De asemenea, acest cont va aparea in lista \"Conturile Mele\". "
 
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Dacă dețineți acest cont, puteți activa dosarele virtuale. Dosarele virtuale sunt subconturi simple pentru a organiza mai bine banii tai, fără a fi nevoie sa trimiti o tranzactie reala și să plătesti o taxă. <br>\nMai mult decât atât, acest cont se va muta in lista \"Conturile mele\"."
@@ -197,14 +194,29 @@ msgstr "Limba"
 msgid "Last checked"
 msgstr "Ultima verificare"
 
+msgid "Ledger Nano S"
+msgstr "Ledger Nano S"
+
 msgid "List full or delegate already voted."
 msgstr "Lista plina sau delegat deja votat."
 
 msgid "Login"
 msgstr "Logare"
 
+msgid "Market"
+msgstr "Piata"
+
+msgid "Message"
+msgstr "Mesaj"
+
 msgid "My Accounts"
 msgstr "Conturile mele"
+
+msgid "Name"
+msgstr "Nume"
+
+msgid "New version available!"
+msgstr "Noua versiune disponibila."
 
 msgid "Network connected and healthy!"
 msgstr "Rețea conectată și funcțională!"
@@ -224,8 +236,14 @@ msgstr "Nici o cheie publică"
 msgid "No search term"
 msgstr "Nici un termen de cautare"
 
+msgid "Ok"
+msgstr "Ok"
+
 msgid "Open Delegate Monitor"
 msgstr "Deschide Monitorizare Delegati"
+
+msgid "Open File"
+msgstr "Deschide fisier"
 
 msgid "Other Accounts"
 msgstr "Alte Conturi"
@@ -250,6 +268,9 @@ msgstr "Vă rugăm să introduceți o scurtă denumire."
 
 msgid "Please enter this account passphrase to login."
 msgstr "Va rugam introduceti parola acestui cont pentru logare."
+
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Va rugam ca in primul rand sa SALVATI PAROLA, acest client NU o va salva si nu poate sa o recupereze."
 
 msgid "Price"
 msgstr "Pret"
@@ -289,6 +310,9 @@ msgstr "Autentificat cu succes!"
 
 msgid "The destination address"
 msgstr "Adresa de Destinatie"
+
+msgid "This account already has a second passphrase:"
+msgstr "Acest cont are deja o parola de acces:"
 
 msgid "To"
 msgstr "Catre"
@@ -352,4 +376,10 @@ msgstr "aveti nevoie de minim 1 ARK pentru a vota"
 
 msgid "you need at least 25 ARK to register delegate"
 msgstr "aveti nevoie de minim 25 ARK pentru a inregistra un delegat"
+
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Votul este optional dar un mecanism important care pastreaza reteaua Ark in siguranta.\nCei 51 delegati cu cele mai multe voturi din retea sunt responsabili pentru verificarea si prelucrarea tranzactiilor in blocuri noi.\nAceasta pagina poate fi folosita sa votezi un delegat pe care il sustii."
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "Ai nevoie de 5 ARK sa creezi a doua parola de acces"
 
