@@ -28,8 +28,9 @@
     vm.isComplete = false; // disable the request
 
     $scope.$on('account:onSelect', function(evt, account) {
+      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0;
       _reset();
-
+      
       vm.address = account.address;
       _updateTransactions(account.transactions);
     });
