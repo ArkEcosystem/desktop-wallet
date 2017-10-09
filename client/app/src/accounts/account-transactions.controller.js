@@ -85,14 +85,14 @@
     function _updateTransactions(transactions) {
       if (!transactions) return;
   
-      var allTransactions = [...transactions, ...vm.transactions];
+      var mergeTransactions = [...transactions, ...vm.transactions];
       // remove duplicates
-      var uniqueTransactions = allTransactions.filter((obj, pos, arr) => {
+      var uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
         return arr.map(obj => obj['id']).indexOf(obj['id']) == pos;
       }).sort((a, b) => b.timestamp - a.timestamp);
 
       vm.transactions = uniqueTransactions;
-      storageService.set(`transactions-${vm.address}`, vm.transactions);
+      storageService.set(`transactions-${vm.address}`, vm.transactions, true);
     }
 
   }
