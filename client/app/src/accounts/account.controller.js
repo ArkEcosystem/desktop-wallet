@@ -24,6 +24,7 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
+      '$rootScope',
       AccountController
     ]).filter('accountlabel', ['accountService', function(accountService) {
       return function(address) {
@@ -44,7 +45,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window) {
+  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window, $rootScope) {
     var self = this;
 
     var languages = {
@@ -186,6 +187,10 @@
     self.exchangeHistory = changerService.getHistory();
     self.selectedCoin = storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail = storageService.get("email") || "";
+    
+    self.getTransactionsLimit = 50;
+    self.getTransactionsOffset = 0;
+    self.loadTransactionsLimit = 10;
 
     self.connectedPeer = { isConnected: false };
 
@@ -210,8 +215,9 @@
     // refreshing displayed account every 8s
     $interval(function() {
       var selected = self.selected;
+      var transactions = selected.transactions || [];
 
-      if (selected && selected.transactions[0] && selected.transactions[0].confirmations == 0) {
+      if (selected && transactions.length > 0 && transactions[0].confirmations == 0) {
         return self.refreshCurrentAccount();
       }
 
@@ -717,14 +723,24 @@
 
     function gotoAddress(address) {
       var currentaddress = address;
+      
       accountService.fetchAccountAndForget(currentaddress).then(function(a) {
         self.selected = a;
+
+        $timeout(function(){
+          // pluginLoader.triggerEvent("onSelectAccount", self.selected);
+          $scope.$broadcast('account:onSelect', self.selected);
+        });
+
         if (self.selected.delegates) {
           self.selected.selectedVotes = self.selected.delegates.slice(0);
-        } else self.selected.selectedVotes = [];
+        } else {
+          self.selected.selectedVotes = [];
+        }
         accountService
           .refreshAccount(self.selected)
           .then(function(account) {
+
             if (self.selected.address == currentaddress) {
               self.selected.balance = account.balance;
               self.selected.secondSignature = account.secondSignature;
@@ -756,6 +772,9 @@
 
                 previousTx = null;
               }
+              $timeout(function(){
+                $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+              });
             }
           });
         accountService
@@ -820,6 +839,10 @@
               }
 
               previousTx = null;
+
+              $timeout(function(){
+                $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+              });
             }
           }
         });
@@ -849,6 +872,10 @@
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
 
+    self.loadInfiniteTransactions = function() {
+      self.loadTransactionsLimit += 10;
+    }
+
     /**
      * Select the current avatars
      * @param menuId
@@ -858,7 +885,10 @@
       self.selected = accountService.getAccount(currentaddress);
       self.selected.ledger = account.ledger;
 
-      pluginLoader.triggerEvent("onSelectAccount", self.selected);
+      $timeout(function(){
+        // pluginLoader.triggerEvent("onSelectAccount", self.selected);
+        $scope.$broadcast('account:onSelect', self.selected);
+      });
 
       self.showPublicKey = false;
 
@@ -891,7 +921,7 @@
                 return b.timestamp - a.timestamp;
               });
 
-              var previousTx = self.selected.transactions;
+              var previousTx = [...self.selected.transactions];
               self.selected.transactions = transactions;
 
               var playSound = storageService.get('playFundsReceivedSound');
@@ -906,6 +936,12 @@
                 networkService.broadcastTransaction(previousTx[0]);
                 self.selected.transactions.unshift(previousTx[0]);
               }
+
+              previousTx = null;
+
+              $timeout(function(){
+                $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+              });
             }
           }
         });
