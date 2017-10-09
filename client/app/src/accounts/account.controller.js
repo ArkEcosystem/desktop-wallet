@@ -215,13 +215,15 @@
     // refreshing displayed account every 8s
     $interval(function() {
       var selected = self.selected;
+      if (!selected) return;
+
       var transactions = selected.transactions || [];
 
-      if (selected && transactions.length > 0 && transactions[0].confirmations == 0) {
+      if (transactions.length > 0 && transactions[0].confirmations == 0) {
         return self.refreshCurrentAccount();
       }
 
-      if (selected && self.refreshAccountsAutomatically) {
+      if (self.refreshAccountsAutomatically) {
         return self.refreshCurrentAccount();
       }
     }, 8 * 1000);
