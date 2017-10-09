@@ -187,10 +187,6 @@
     self.exchangeHistory = changerService.getHistory();
     self.selectedCoin = storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail = storageService.get("email") || "";
-    
-    self.getTransactionsLimit = 50;
-    self.getTransactionsOffset = 0;
-    self.loadTransactionsLimit = 10;
 
     self.connectedPeer = { isConnected: false };
 
@@ -872,11 +868,6 @@
     function togglePlayFundsReceivedSound(status) {
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
-
-    self.loadInfiniteTransactions = function() {
-      self.loadTransactionsLimit += 10;
-    }
-
     /**
      * Select the current avatars
      * @param menuId
@@ -1884,12 +1875,16 @@
         scope: $scope
       });
     };
+
     function exportAccount(account)
     {
       var eol = require('os').EOL;
+      var transactions = storageService.get(`transactions-${account.address}`);
+      
       var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
-      account.transactions.forEach(function(trns) {
-        filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
+      transactions.forEach(function(trns) {
+        var date = new Date(trns.date);
+        filecontent = filecontent+trns.id+","+trns.confirmations+","+date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
         ","+trns.vendorField+eol;
       });
       var blob = new Blob([filecontent]);
