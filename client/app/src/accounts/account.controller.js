@@ -605,24 +605,6 @@
         return balance*price;
     }
 
-    self.formatCurrencyVal = function(val) {
-        var currencyName = self.currency.name;
-        var languageCode = self.language.replace('_', '-');
-        var options = {
-          style: 'currency',
-          currency: currencyName,
-          currencyDisplay: 'symbol'
-        }
-
-        if (currencyName == "btc") {
-            var localeVersion = "Ƀ" + val;
-            return localeVersion;
-        }
-        var localeVersion = Number(val).toLocaleString(languageCode, options);
-
-        return localeVersion;
-    }
-
     self.otherAccounts = function() {
       return self.accounts.filter(function(account) {
         return !account.virtual;
