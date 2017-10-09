@@ -839,11 +839,10 @@
               }
 
               previousTx = null;
-
-              $timeout(function(){
-                $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
-              });
             }
+            $timeout(function(){
+              $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+            });
           }
         });
     }
@@ -938,11 +937,10 @@
               }
 
               previousTx = null;
-
-              $timeout(function(){
-                $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
-              });
             }
+            $timeout(function(){
+              $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+            });
           }
         });
       accountService
