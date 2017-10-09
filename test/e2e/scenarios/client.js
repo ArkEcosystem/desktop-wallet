@@ -5,32 +5,31 @@ const electron = require('electron')
 const hooks = require('../hooks')
 const userData = require('../user_data')
 
-describe('ARK Client', function() {
-
+describe('ARK Client', function () {
   hooks.createApp.bind(this)()
 
-  after(function() {
+  after(function () {
     return hooks.afterBlock.bind(this)()
   })
 
-  describe('settings', ()=> {
-    before(function() {
+  describe('settings', () => {
+    before(function () {
       return hooks.beforeBlock.bind(this)({ useRealPath: true, ignoreDangerousWarning: true })
     })
 
     it('use the hardcoded real path for userData', function () {
       return this.app.client
-        .execute( ()=> electron.remote.app.getPath('userData') )
-        .then( result => result.value )
+        .execute(() => electron.remote.app.getPath('userData'))
+        .then(result => result.value)
         .should.eventually.equal(userData.getRealPath())
     })
   })
 
-  describe('main window', ()=> {
-    before(function() {
+  describe('main window', () => {
+    before(function () {
       return hooks.beforeBlock.bind(this)()
     })
-    
+
     it('title is "Ark Client"', function () {
       return this.app.client.getWindowCount().should.eventually.equal(1)
         .browserWindow.isMinimized().should.eventually.be.false
@@ -42,5 +41,4 @@ describe('ARK Client', function() {
         .browserWindow.getTitle().should.eventually.equal('Ark Client')
     })
   })
-
 })

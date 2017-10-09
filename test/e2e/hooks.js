@@ -3,7 +3,6 @@
 const Application = require('spectron').Application
 const electron = require('electron')
 const path = require('path')
-const fs = require('fs')
 
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
@@ -11,7 +10,7 @@ const chaiAsPromised = require('chai-as-promised')
 const userData = require('./user_data')
 const commands = require('./commands')
 
-global.before(function() {
+global.before(function () {
   chai.should()
   chai.use(chaiAsPromised)
 })
@@ -19,50 +18,48 @@ global.before(function() {
 const timeout = process.env.CI ? 20000 : 10000
 
 const hooks = {
-
-  createApp: function() {
+  createApp: function () {
     this.timeout(timeout)
 
-    before(function() {
+    before(function () {
       this.app = new Application({
         path: electron,
         args: [
-          path.join(__dirname, '../..'),
+          path.join(__dirname, '../..')
         ],
-        waitTimeout: timeout,
+        waitTimeout: timeout
       })
     })
   },
 
-  beforeBlock: function(options) {
+  beforeBlock: function (options) {
     userData.clearSettings()
 
-    return this.app.start().then( app => {
+    return this.app.start().then(app => {
       chaiAsPromised.transferPromiseness = app.transferPromiseness
 
       commands(app)
 
-      if (! options)
+      if (!options) {
         options = {}
+      }
 
       // Tests should use the fake path usually
-      if (! options.useRealPath)
+      if (!options.useRealPath) {
         app.electron.remote.app.setPath('userData', userData.getTestPath())
-
-      else if (! options.ignoreDangerousWarning)
-        console.warn("\n\tTHIS IS THE DANGEROUS PATH OF THE REAL APP!\n\tBAD THINGS COULD HAPPEN IF YOU USE IT:\n\tYOU MAY CRY AFTER LOSING YOU PRECIOUS ARKS!\n");
+      } else if (!options.ignoreDangerousWarning) {
+        console.warn('\n\tTHIS IS THE DANGEROUS PATH OF THE REAL APP!\n\tBAD THINGS COULD HAPPEN IF YOU USE IT:\n\tYOU MAY CRY AFTER LOSING YOU PRECIOUS ARKS!\n')
+      }
 
       return app.client.waitUntilWindowLoaded()
     })
   },
 
-  afterBlock: function() {
-    if (this.app && this.app.isRunning())
+  afterBlock: function () {
+    if (this.app && this.app.isRunning()) {
       return this.app.stop()
-
-    return
+    }
   }
-
 }
 
 module.exports = hooks
