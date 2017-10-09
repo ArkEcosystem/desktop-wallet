@@ -177,7 +177,7 @@
                   <b><translate>Price</translate></b>
                 </div>
 
-                <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.price[ul.currency.name])}}</span>
+                <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name] | formatCurrency:ul}}</span>
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
@@ -192,7 +192,7 @@
                   <b><translate>Market Cap.</translate></b>
                 </div>
 
-                <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.marketCap[ul.currency.name])}}</span>
+                <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | formatCurrency:ul}}</span>
               </md-list-item>
               <md-list-item ng-show="ul.connectedPeer.market.isOffline">
                 <b translate>Last checked</b> <span class="md-secondary">
@@ -264,7 +264,7 @@
       <md-toolbar layout="row" md-scroll-shrink>
         <div class="md-toolbar-tools">
           <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.formatCurrencyVal(ul.myAccountsCurrencyBalance())}}
+            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.myAccountsCurrencyBalance() | formatCurrency:ul}}
           </h2>
           <span flex></span>
           <md-button class="share" ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
@@ -324,7 +324,7 @@
               <b><translate>Price</translate></b>
             </div>
 
-            <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.price[ul.currency.name])}}</span>
+            <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name] | formatCurrency:ul}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>
@@ -335,7 +335,7 @@
             </span>
           </md-list-item>
           <md-list-item>
-            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.formatCurrencyVal(ul.connectedPeer.market.marketCap[ul.currency.name])}}</span>
+            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | formatCurrency:ul}}</span>
           </md-list-item>
         </md-list>
       </md-content>
