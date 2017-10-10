@@ -16,6 +16,7 @@
         require: '?ngModel',
         link: function(scope, elem, attrs, ctrl) {
 
+          var defaultBackground = 'url(assets/images/images/Ark.jpg)';
           // This is the custom configuration of textures
           var textures = {
             'Ahoy.jpg': {
@@ -31,8 +32,19 @@
 
           // Used to extract the image filename
           var textureRe = /url\(.+\/([^/]+).\)/;
+          // Used to extract the image path
+          var pathRe = /\((.*)\)/;
 
           scope.$watch(attrs.backgroundStyle, function(value) {
+            // Check if the background exists
+            var mathPath = value.match(pathRe);
+            if (mathPath) {
+              var fullPath = require('path').join(__dirname, mathPath[1]); 
+              if (!require('fs').existsSync(fullPath.replace(/'/g, ``))) {
+                value = defaultBackground; // if not exists
+              }
+            }
+
             var style = { background: value };
             var newClass = null;
 
@@ -43,7 +55,7 @@
             }
 
             elem.css(style);
-
+            
             var matches = value.match(textureRe);
             if (matches) {
               var filename = matches[1];
