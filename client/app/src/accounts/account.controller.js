@@ -1527,13 +1527,17 @@
       function upload() {
         var options = {
           title: "Upload Image",
+          filters: [
+            { name: 'Images', extensions: ['jpg', 'png'] }
+          ],
           properties: ["openFile"],
         };
         var userPath = 'assets/images/user/'
         var dirPath = path.resolve(__dirname, userPath);
 
-        require('electron').remote.dialog.showSaveDialog(function(fileName) {
+        require('electron').remote.dialog.showOpenDialog(options, function(fileName) {
           if (fileName === undefined) return;
+          fileName = fileName[0]
 
           var baseName = path.basename(fileName);
           var newFileName = path.join(dirPath, baseName);
