@@ -165,7 +165,7 @@
           self.showToast('this seems to be not a valid Address', address, true);
           return;
         }
-        for (i = 0; i < self.contacts.length; i++) {
+        for (var i = 0; i < self.contacts.length; i++) {
           if (self.contacts[i].name == name) {
             self.contacts[i].address = address;
           }
@@ -181,7 +181,7 @@
           self.showToast('this Contact-Name doesnt exist: ', name, true);
           return;
         }
-        for (i = 0; i < self.contacts.length; i++) {
+        for (var i = 0; i < self.contacts.length; i++) {
           if (self.contacts[i].name == name) {
             delete self.contacts[i];
             self.contacts.splice(i, 1);
