@@ -583,7 +583,7 @@
     };
 
     self.getAllAccounts = function() {
-      var accounts = self.accounts;
+      var accounts = self.myAccounts();
       if (self.ledgerAccounts && self.ledgerAccounts.length) {
         accounts = accounts.concat(self.ledgerAccounts);
       }
@@ -616,7 +616,7 @@
       }
 
       var currencyBalance = Number(balance * price).toLocaleString(languageCode, options);
-      
+
       if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
 
       return currencyBalance;
@@ -721,7 +721,7 @@
 
     function gotoAddress(address) {
       var currentaddress = address;
-      
+
       accountService.fetchAccountAndForget(currentaddress).then(function(a) {
         self.selected = a;
 
@@ -1880,7 +1880,7 @@
     {
       var eol = require('os').EOL;
       var transactions = storageService.get(`transactions-${account.address}`);
-      
+
       var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
       transactions.forEach(function(trns) {
         var date = new Date(trns.date);
