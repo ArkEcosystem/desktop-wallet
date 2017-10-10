@@ -70,7 +70,7 @@
   }
 
   var MainThreadRequestHandler = function (args) {
-    if (ledgerArk) {
+    if (ledgerArk.instance) {
       switch (args.action) {
         case CONSTANTS.GET_ADDRESSES:
           log("info", "Received GET_ADDRESSES request: " + args.path)
@@ -112,6 +112,9 @@
         default:
           break
       }
+    } else {
+      log("error", "Connection to ledger was lost while processing a request!")
+      process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, error: "Connection to ledger was lost"})
     }
   }
 

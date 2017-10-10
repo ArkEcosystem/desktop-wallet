@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var ipcRenderer = require('electron').ipcRenderer;
@@ -6,13 +6,13 @@
   var bip39 = require('bip39');
 
   angular.module('arkclient.services')
-    .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', LedgerService]);
+    .service('ledgerService', ['$q', '$http', '$timeout', 'storageService', 'networkService', LedgerService]);
 
   /**
    * NetworkService
    * @constructor
    */
-  function LedgerService($q, $http, $timeout, storageService) {
+  function LedgerService($q, $http, $timeout, storageService, networkService) {
 
     function deriveAddress(path) {
       var result = ipcRenderer.sendSync('ledger', {
@@ -21,50 +21,54 @@
       });
       return result
     }
-
+    
     function getBip44Account(path, accounts, deferred, account_index, address_index) {
       var localpath = path + account_index + "'/0/" + address_index;
-      ipcRenderer.send('ledger', {action: "GET_ADDRESSES",path: localpath})
-      ipcRenderer.once("GET_ADDRESSES", (event,args) => {
-        var result = args.value
-        console.log("RESULT: " + result)
-        for(var name in result) {
-          console.log("NAME: " + name)
-        }
-        
-        if (result.address) {
-          result.address = arkjs.crypto.getAddress(result.publicKey);
-
-          var account = storageService.get(result.address);
-          if (account && !account.cold) {
-            account.virtual = storageService.get("virtual-" + result.address);
-            if (!account.virtual) {
-              account.virtual = [];
-              storageService.set("virtual-" + result.address, account.virtual);
+      ipcRenderer.send('ledger', {action: "GET_ADDRESSES", path: localpath})
+      ipcRenderer.once("GET_ADDRESSES", (event, args) => {
+          if (args.value) {
+            var result = args.value
+            if (result.address) {
+              result.address = arkjs.crypto.getAddress(result.publicKey);
+              account_index = account_index + 1;
+              var account = storageService.get(result.address) || result;
+              account.ledger = localpath;
+              var txs = storageService.get("transactions-" + account.address);
+              account.cold = !txs || txs.length == 0;
+              account.publicKey = result.publicKey;
+              storageService.set(account.address, account);
+              account.virtual = storageService.get("virtual-" + account.address) || [];
+              storageService.set("virtual-" + account.address, account.virtual)
+              accounts.push(account);
+              if (account.cold) {
+                networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=1&recipientId=" + account.address + "&senderId=" + account.address).then(
+                  function (resp) {
+                    if (resp.success && resp.count != 0) {
+                      getBip44Account(path, accounts, deferred, account_index + 1, address_index)
+                    } else {
+                      deferred.resolve(accounts)
+                    }
+                  },
+                  function (err) {
+                    deferred.resolve(accounts)
+                  }
+                );
+              } else {
+                getBip44Account(path, accounts, deferred, account_index+1, address_index)
+              }
+            } else {
+              deferred.resolve(accounts)
             }
-            account.ledger = localpath;
-            account.publicKey = result.publicKey;
-            storageService.set(result.address, account);
-            accounts.push(account);
-            getBip44Account(path, accounts, deferred, account_index + 1, address_index)
           } else {
-            result.ledger = localpath;
-            result.cold = true;
-            result.virtual = storageService.get("virtual-" + result.address);
-            if (!result.virtual) {
-              result.virtual = [];
-              storageService.set("virtual-" + result.address, result.virtual);
-            }
-            storageService.set(result.address, result);
-            accounts.push(result);
-            deferred.resolve(accounts)
+            console.error("Error getting ledger accounts: " + args.error)
+            deferred.reject(args.error)
           }
-        } else {
-          deferred.resolve(accounts)
         }
-      })
+      );
+
+      return deferred.promise;
     }
-    
+
     function getBip44Accounts(slip44) {
       var deferred = $q.defer()
       var accounts = [];
@@ -72,7 +76,7 @@
       var address_index = 0;
 
       getBip44Account("44'/" + (slip44 || "111") + "'/", accounts, deferred, account_index, address_index)
-      
+
       return deferred.promise
     }
 
@@ -114,7 +118,7 @@
       var deferred = $q.defer();
       // Because I'm new to these technologies didn't find an easy way to have the CONSTANTS module defined in the root 
       // of project being caught, I always got module not found. Someone wants to give hand? :P 
-      ipcRenderer.once('SIGN_TRANSACTION', function(event, result) {
+      ipcRenderer.once('SIGN_TRANSACTION', function (event, result) {
         if (result.error) {
           deferred.reject(result.error)
         } else {
@@ -134,7 +138,7 @@
       var crypto = require("crypto");
       var hash = crypto.createHash('sha256');
       hash = hash.update(new Buffer(message, "utf-8")).digest();
-      ipcRenderer.once('SIGN_MESSAGE', function(event, result) {
+      ipcRenderer.once('SIGN_MESSAGE', function (event, result) {
         if (result.error) {
           deferred.reject(result.error)
         } else {
@@ -148,7 +152,7 @@
       });
       return deferred.promise;
     }
-    
+
     //TODO: Should be replaced with pushing instead of polling
     function isLedgerConnected() {
       return ipcRenderer.sendSync('ledger', {action: "DETECT_LEDGER"}).connected

@@ -68,6 +68,7 @@ function createWindow() {
         break
       case CONSTANTS.GET_ADDRESSES:
         ledgerWorker.send({action: CONSTANTS.GET_ADDRESSES, id: event.sender.id, path: args.path})
+        
         break
       case CONSTANTS.SIGN_TRANSACTION:
         ledgerWorker.send(({action: CONSTANTS.SIGN_TRANSACTION, id: event.sender.id, path: args.path, data: args.data}))
