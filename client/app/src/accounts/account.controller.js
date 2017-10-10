@@ -1490,6 +1490,7 @@
       delete themes['dark'];
 
       var backgrounds = {
+        user: {},
         colors: {
           'Midnight': '#2c3e50',
           'Asbestos': '#7f8c8d',
@@ -1534,7 +1535,26 @@
         require('electron').remote.dialog.showSaveDialog(function(fileName) {
           if (fileName === undefined) return;
 
-          console.log(fileName);
+          var baseName = path.basename(fileName);
+          var newFileName = path.join(dirPath, baseName);
+
+          var readStream = fs.createReadStream(fileName);
+          readStream.on("error", function(err) {
+            console.log("Error Reading File: " + err);
+            return;
+          });
+
+          var writeStream = fs.createWriteStream(newFileName);
+          writeStream.on("error", function(err) {
+            console.log("Error Writing File: " + err);
+            return;
+          });
+          writeStream.on("close", function(ex) {
+            manageBackgrounds();
+            return;
+          });
+
+          readStream.pipe(writeStream);
         });
       }
 
