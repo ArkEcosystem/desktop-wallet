@@ -54,6 +54,9 @@
     <md-button md-colors="{'background':'primary'}" ng-click="send.upload()">
       <translate>Upload</translate>
     </md-button>
+    <md-button ng-if="send.userSelected" md-colors="{'background':'warn'}" ng-click="send.deleteImage()">
+      <translate>Delete</translate>
+    </md-button>
     <span flex></span>
     <md-button md-colors="{'background':'primary'}" ng-click="send.save()">
       <translate>Save</translate>

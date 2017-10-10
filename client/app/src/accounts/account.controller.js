@@ -1489,6 +1489,8 @@
       var themes = reloadThemes();
       delete themes['dark'];
 
+      var userSelected = false;
+
       var backgrounds = {
         user: {},
         colors: {
@@ -1545,21 +1547,62 @@
           var readStream = fs.createReadStream(fileName);
           readStream.on("error", function(err) {
             console.log("Error Reading File: " + err);
+            $mdToast.show(
+              $mdToast.simple()
+              .textContent(gettextCatalog.getString('Error Adding Background.'))
+              .hideDelay(3000)
+            );
             return;
           });
 
           var writeStream = fs.createWriteStream(newFileName);
           writeStream.on("error", function(err) {
             console.log("Error Writing File: " + err);
+            $mdToast.show(
+              $mdToast.simple()
+              .textContent(gettextCatalog.getString('Error Adding Background.'))
+              .hideDelay(3000)
+            );
             return;
           });
           writeStream.on("close", function(ex) {
+            $mdToast.show(
+              $mdToast.simple()
+              .textContent(gettextCatalog.getString('Background Added Successfully!'))
+              .hideDelay(3000)
+            );
             manageBackgrounds();
             return;
           });
 
           readStream.pipe(writeStream);
         });
+      }
+
+      function deleteImage() {
+        var file = $scope.send.selectedBackground;
+        file = file.substring(5, file.length - 2);
+
+        var imagePath = path.resolve(__dirname, file);
+        console.log(imagePath);
+
+        fs.unlink(imagePath, function(err) {
+          if (err) {
+            console.log("Error Deleting File: " + err);
+            $mdToast.show(
+              $mdToast.simple()
+              .textContent(gettextCatalog.getString('Error Removing Background.'))
+              .hideDelay(3000)
+            );
+          } else {
+            $mdToast.show(
+              $mdToast.simple()
+              .textContent(gettextCatalog.getString('Background Removed Successfully!'))
+              .hideDelay(3000)
+            );
+          }
+        });
+        manageBackgrounds();
       }
 
       function selectTheme(theme) {
@@ -1573,6 +1616,12 @@
       function selectBackground(background) {
         $scope.send.selectedBackground = background;
         currentNetwork.background = background;
+
+        if (background.indexOf('/user/') >= 0) {
+          $scope.send.userSelected = true;
+        } else {
+          $scope.send.userSelected = false;
+        }
       }
 
       function save() {
@@ -1615,6 +1664,8 @@
         darkMode: initialDarkMode,
         toggleDark: toggleDark,
         upload: upload,
+        userSelected: userSelected,
+        deleteImage: deleteImage
       };
 
       $mdDialog.show({
