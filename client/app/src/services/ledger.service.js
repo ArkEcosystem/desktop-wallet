@@ -65,15 +65,13 @@
       })
     }
     
-    
-    
-    function getBip44Accounts() {
+    function getBip44Accounts(slip44) {
       var deferred = $q.defer()
       var accounts = [];
       var account_index = 0;
       var address_index = 0;
 
-      getBip44Account("44'/111'/", accounts, deferred, account_index, address_index)
+      getBip44Account("44'/" + (slip44 || "111") + "'/", accounts, deferred, account_index, address_index)
       
       return deferred.promise
     }

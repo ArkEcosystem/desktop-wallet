@@ -24,6 +24,7 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
+      '$rootScope',
       AccountController
     ]).filter('accountlabel', ['accountService', function(accountService) {
       return function(address) {
@@ -31,7 +32,7 @@
           return address
 
         var username = accountService.getUsername(address)
-        if (username.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g))
+        if (username.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g))
           return accountService.smallId(username)
 
         return username
@@ -44,7 +45,7 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window) {
+  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window, $rootScope) {
     var self = this;
 
     var languages = {
@@ -78,8 +79,8 @@
     pluginLoader.triggerEvent("onStart");
 
     self.currencies = [
-      { name: "usd", symbol: "$" },
       { name: "btc", symbol: "Ƀ" },
+      { name: "usd", symbol: "$" },
       { name: "aud", symbol: "A$" },
       { name: "brl", symbol: "R$" },
       { name: "cad", symbol: "Can$" },
@@ -112,6 +113,7 @@
     self.closeApp = function() {
       var confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Quit Ark Client?'))
+        .theme(self.currentTheme)
         .ok(gettextCatalog.getString('Quit'))
         .cancel(gettextCatalog.getString('Cancel'));
       $mdDialog.show(confirm).then(function() {
@@ -129,6 +131,7 @@
     self.clearData = function() {
       var confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Are you sure?'))
+        .theme(self.currentTheme)
         .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
         .ariaLabel(gettextCatalog.getString('Confirm'))
         .ok(gettextCatalog.getString('Yes'))
@@ -175,7 +178,7 @@
     self.addDelegate = addDelegate;
     self.showAccountMenu = showAccountMenu;
     self.selectNextLanguage = selectNextLanguage;
-    self.currency = storageService.get("currency") || { name: "btc", symbol: "Ƀ" };
+    self.currency = storageService.get("currency") || self.currencies[0];
     self.switchNetwork = networkService.switchNetwork;
     self.marketinfo = {};
     self.network = networkService.getNetwork();
@@ -208,10 +211,19 @@
     // set dark mode
     if (self.network.themeDark) self.currentTheme = 'dark';
 
-    //refreshing displayed account every 8s
+    // refreshing displayed account every 8s
     $interval(function() {
-      if (self.selected && self.refreshAccountsAutomatically) {
-        self.refreshCurrentAccount();
+      var selected = self.selected;
+      if (!selected) return;
+
+      var transactions = selected.transactions || [];
+
+      if (transactions.length > 0 && transactions[0].confirmations == 0) {
+        return self.refreshCurrentAccount();
+      }
+
+      if (self.refreshAccountsAutomatically) {
+        return self.refreshCurrentAccount();
       }
     }, 8 * 1000);
 
@@ -695,14 +707,24 @@
 
     function gotoAddress(address) {
       var currentaddress = address;
+      
       accountService.fetchAccountAndForget(currentaddress).then(function(a) {
         self.selected = a;
+
+        $timeout(function(){
+          // pluginLoader.triggerEvent("onSelectAccount", self.selected);
+          $scope.$broadcast('account:onSelect', self.selected);
+        });
+
         if (self.selected.delegates) {
           self.selected.selectedVotes = self.selected.delegates.slice(0);
-        } else self.selected.selectedVotes = [];
+        } else {
+          self.selected.selectedVotes = [];
+        }
         accountService
           .refreshAccount(self.selected)
           .then(function(account) {
+
             if (self.selected.address == currentaddress) {
               self.selected.balance = account.balance;
               self.selected.secondSignature = account.secondSignature;
@@ -734,6 +756,9 @@
 
                 previousTx = null;
               }
+              $timeout(function(){
+                $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+              });
             }
           });
         accountService
@@ -784,8 +809,8 @@
               var previousTx = [...self.selected.transactions];
               self.selected.transactions = transactions;
 
-              var playSound = storageService.get('playFundsReceivedSound');
-              if (playSound == true && transactions.length > previousTx.length && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
+              var playSong = storageService.get('playFundsReceivedSong');
+              if (playSong == true && previousTx[0].id != transactions[0].id && transactions[0].type == 0 && transactions[0].recipientId == myaccount.address) {
                 var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav');
                 var audio = new Audio(wavFile);
                 audio.play();
@@ -799,6 +824,9 @@
 
               previousTx = null;
             }
+            $timeout(function(){
+              $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+            });
           }
         });
     }
@@ -826,7 +854,6 @@
     function togglePlayFundsReceivedSound(status) {
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
-
     /**
      * Select the current avatars
      * @param menuId
@@ -836,7 +863,10 @@
       self.selected = accountService.getAccount(currentaddress);
       self.selected.ledger = account.ledger;
 
-      pluginLoader.triggerEvent("onSelectAccount", self.selected);
+      $timeout(function(){
+        // pluginLoader.triggerEvent("onSelectAccount", self.selected);
+        $scope.$broadcast('account:onSelect', self.selected);
+      });
 
       self.showPublicKey = false;
 
@@ -869,7 +899,7 @@
                 return b.timestamp - a.timestamp;
               });
 
-              var previousTx = self.selected.transactions;
+              var previousTx = [...self.selected.transactions];
               self.selected.transactions = transactions;
 
               var playSound = storageService.get('playFundsReceivedSound');
@@ -884,7 +914,12 @@
                 networkService.broadcastTransaction(previousTx[0]);
                 self.selected.transactions.unshift(previousTx[0]);
               }
+
+              previousTx = null;
             }
+            $timeout(function(){
+              $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions);
+            });
           }
         });
       accountService
@@ -1577,6 +1612,7 @@
       function removeNetwork(network) {
         var confirm = $mdDialog.confirm()
           .title(gettextCatalog.getString('Remove Network') + ' ' + network)
+          .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
           .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
           .cancel(gettextCatalog.getString('Cancel'));
@@ -1825,12 +1861,16 @@
         scope: $scope
       });
     };
+
     function exportAccount(account)
     {
       var eol = require('os').EOL;
+      var transactions = storageService.get(`transactions-${account.address}`);
+      
       var filecontent = "Account:,"+account.address+eol+"Balance:,"+account.balance+eol+"Transactions:"+eol+"ID,Confirmations,Date,Type,Amount,From,To,Smartbridge"+eol
-      account.transactions.forEach(function(trns) {
-        filecontent = filecontent+trns.id+","+trns.confirmations+","+trns.date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
+      transactions.forEach(function(trns) {
+        var date = new Date(trns.date);
+        filecontent = filecontent+trns.id+","+trns.confirmations+","+date.toISOString()+","+trns.label+","+trns.humanTotal+","+trns.senderId+","+trns.recipientId+
         ","+trns.vendorField+eol;
       });
       var blob = new Blob([filecontent]);
@@ -1926,6 +1966,7 @@
         } else if (action == gettextCatalog.getString("Remove")) {
           var confirm = $mdDialog.confirm()
             .title(gettextCatalog.getString('Remove Account') + ' ' + selectedAccount.address)
+            .theme(self.currentTheme)
             .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
               'The account may be added again using the original passphrase of the account.'))
             .ok(gettextCatalog.getString('Remove account'))
@@ -2006,6 +2047,7 @@
         .clickOutsideToClose(true)
         .title(message)
         .ariaLabel(message)
+        .theme(self.currentTheme)
         .ok(gettextCatalog.getString('Ok'))
       );
     }
