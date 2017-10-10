@@ -51,6 +51,9 @@
     <md-switch ng-model="send.darkMode" ng-change="send.toggleDark(send.darkMode)" aria-label="Dark Mode">
       {{'Dark Mode' | translate}}
     </md-switch>
+    <md-button md-colors="{'background':'primary'}" ng-click="send.upload()">
+      <translate>Upload</translate>
+    </md-button>
     <span flex></span>
     <md-button md-colors="{'background':'primary'}" ng-click="send.save()">
       <translate>Save</translate>

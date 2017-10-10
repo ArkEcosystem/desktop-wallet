@@ -1523,6 +1523,21 @@
         }
       };
 
+      function upload() {
+        var options = {
+          title: "Upload Image",
+          properties: ["openFile"],
+        };
+        var userPath = 'assets/images/user/'
+        var dirPath = path.resolve(__dirname, userPath);
+
+        require('electron').remote.dialog.showSaveDialog(function(fileName) {
+          if (fileName === undefined) return;
+
+          console.log(fileName);
+        });
+      }
+
       function selectTheme(theme) {
         generateDarkTheme(theme);
         $scope.send.selectedTheme = theme;
@@ -1575,6 +1590,7 @@
         selectedBackground: initialBackground,
         darkMode: initialDarkMode,
         toggleDark: toggleDark,
+        upload: upload,
       };
 
       $mdDialog.show({
