@@ -583,7 +583,7 @@
     };
 
     self.getAllAccounts = function() {
-      var accounts = self.accounts;
+      var accounts = self.myAccounts();
       if (self.ledgerAccounts && self.ledgerAccounts.length) {
         accounts = accounts.concat(self.ledgerAccounts);
       }
@@ -600,7 +600,7 @@
     };
 
     self.myAccountsBalance = function() {
-      return (self.myAccounts().reduce(function(memo, acc) {
+      return (self.getAllAccounts().reduce(function(memo, acc) {
         return memo + parseInt(acc.balance || 0);
       }, 0) / 100000000).toFixed(2);
     }
