@@ -14,6 +14,12 @@
    */
   function LedgerService($q, $http, $timeout, storageService, networkService) {
 
+    var ledgerConnected = false
+    
+    ipcRenderer.on("MAIN_RENDER_LEDGER", (event, args) => {
+      ledgerConnected = args.ledgerConnected
+    })
+    
     function deriveAddress(path) {
       var result = ipcRenderer.sendSync('ledger', {
         action: "getAddress",
@@ -153,9 +159,8 @@
       return deferred.promise;
     }
 
-    //TODO: Should be replaced with pushing instead of polling
     function isLedgerConnected() {
-      return ipcRenderer.sendSync('ledger', {action: "DETECT_LEDGER"}).connected
+      return ledgerConnected
     }
 
     return {

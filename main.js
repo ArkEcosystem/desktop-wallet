@@ -53,8 +53,8 @@ function createWindow() {
           recipient.send(args.channel, {error: args.error})
         }
         break
-      case CONSTANTS.GET_CONFIGURATION:
-        ledgerPresent = args.value
+      case CONSTANTS.LEDGER_CONNECTION:
+        mainWindow.webContents.send(CONSTANTS.MAIN_RENDER_LEDGER, {ledgerConnected: args.value})
         break
       default:
         console.error('Unknown action [' + args.action + '] received from ledger worker (pid:' + ledgerWorker.pid + ")")
@@ -63,12 +63,8 @@ function createWindow() {
 
   ipcMain.on('ledger', (event, args) => {
     switch (args.action) {
-      case CONSTANTS.DETECT_LEDGER:
-        event.returnValue = {connected: ledgerPresent}
-        break
       case CONSTANTS.GET_ADDRESSES:
         ledgerWorker.send({action: CONSTANTS.GET_ADDRESSES, id: event.sender.id, path: args.path})
-        
         break
       case CONSTANTS.SIGN_TRANSACTION:
         ledgerWorker.send(({action: CONSTANTS.SIGN_TRANSACTION, id: event.sender.id, path: args.path, data: args.data}))

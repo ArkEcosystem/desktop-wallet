@@ -33,7 +33,7 @@
     },
     setConfiguration: function (configuration) {
       this.configuration = configuration
-      process.send({action: CONSTANTS.GET_CONFIGURATION, value: configuration ? true : false})
+      process.send({action: CONSTANTS.LEDGER_CONNECTION, value: configuration ? true : false})
     },
     clear: function () {
       this.setConfiguration(null)
@@ -50,7 +50,6 @@
       });
     } else {
       LEDGER.comm_node.create_async().then(comm => {
-        log("log", "created connection")
         if (!lastHearbeatConnected) {
           log("log", "Ledger device detected")
         }
