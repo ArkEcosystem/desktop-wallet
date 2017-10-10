@@ -679,6 +679,7 @@
       if (account.virtual) {
         var confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Create Virtual Folder'))
+          .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Please enter a folder name.'))
           .placeholder(gettextCatalog.getString('folder name'))
           .ariaLabel(gettextCatalog.getString('Folder Name'))
@@ -695,6 +696,7 @@
       } else {
         var confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Login'))
+          .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Please enter this account passphrase to login.'))
           .placeholder(gettextCatalog.getString('passphrase'))
           .ariaLabel(gettextCatalog.getString('Passphrase'))
@@ -2009,6 +2011,7 @@
         } else if (action == gettextCatalog.getString("Label")) {
           var prompt = $mdDialog.prompt()
             .title(gettextCatalog.getString('Label'))
+            .theme(self.currentTheme)
             .textContent(gettextCatalog.getString('Please enter a short label.'))
             .placeholder(gettextCatalog.getString('label'))
             .ariaLabel(gettextCatalog.getString('Label'))
