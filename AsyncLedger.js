@@ -16,7 +16,7 @@
   const LEDGER = require('ledgerco')
 
   // Time in millis to wait if ledger not connected
-  const HEARTBEAT_INTERVAL = 1000
+  const HEARTBEAT_INTERVAL = 2000
 
   // Holds the last ledger connection state for logging control
   var lastHearbeatConnected = false
@@ -42,31 +42,41 @@
   }
 
   const LedgerHeartBeat = function () {
-    LEDGER.comm_node.create_async().then(comm => {
-      if (!lastHearbeatConnected) {
-        log("log", "Ledger device detected")
-      }
-      lastHearbeatConnected = true
-      ledgerArk.setInstance(new LedgerArk(comm))
-      ledgerArk.instance.getAppConfiguration_async()
-        .then(configuration => {
-          if (!ledgerArk.configuration) {
-            log("log", "Configuration successfully fetched")
-          }
-          ledgerArk.setConfiguration(configuration)
-        }).fail(error => {
-        if (ledgerArk.configuration) {
-          log("error", "Could not get ledger configuration, is the Ark app started?!?: " + error)
+    if (ledgerArk.instance) {
+      LEDGER.comm_node.list_async().then(function (result) {
+        if (result.length == 0) {
+          ledgerArk.clear()
         }
+      });
+    } else {
+      LEDGER.comm_node.create_async().then(comm => {
+        log("log", "created connection")
+        if (!lastHearbeatConnected) {
+          log("log", "Ledger device detected")
+        }
+        lastHearbeatConnected = true
+        ledgerArk.setInstance(new LedgerArk(comm))
+        ledgerArk.instance.getAppConfiguration_async()
+          .then(configuration => {
+            log("log", "got configuration")
+            if (!ledgerArk.configuration) {
+              log("log", "Configuration successfully fetched")
+            }
+            ledgerArk.setConfiguration(configuration)
+          }).fail(error => {
+          if (ledgerArk.configuration) {
+            log("error", "Could not get ledger configuration, is the Ark app started?!?: " + error)
+          }
+          ledgerArk.clear()
+        })
+      }).fail((error) => {
+        if (lastHearbeatConnected) {
+          log("log", "Ledger disconnected")
+        }
+        lastHearbeatConnected = false
         ledgerArk.clear()
       })
-    }).fail((error) => {
-      if (lastHearbeatConnected) {
-        log("log", "Ledger disconnected")
-      }
-      lastHearbeatConnected = false
-      ledgerArk.clear()
-    })
+    }
   }
 
   var MainThreadRequestHandler = function (args) {
@@ -79,9 +89,9 @@
               log("info", "Returning address " + result.address + " with public key " + result.publicKey)
               process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, value: result})
             }).fail(error => {
-              log("error", "Failed getting address with error " + error)
-              process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, error: error})
-            })
+            log("error", "Failed getting address with error " + error)
+            process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, error: error})
+          })
           break
         case CONSTANTS.SIGN_TRANSACTION:
           log("info", "Received SIGN_TRANSACTION request for path " + args.path + " and data " + args.data)
@@ -114,12 +124,18 @@
       }
     } else {
       log("error", "Connection to ledger was lost while processing a request!")
-      process.send({action: CONSTANTS.FORWARD, channel: args.action, recipient: args.id, error: "Connection to ledger was lost"})
+      process.send({
+        action: CONSTANTS.FORWARD,
+        channel: args.action,
+        recipient: args.id,
+        error: "Connection to ledger was lost"
+      })
     }
   }
 
   process.on("message", MainThreadRequestHandler);
 
   // Schedule check
+  //setTimeout(LedgerHeartBeat, HEARTBEAT_INTERVAL)
   setInterval(LedgerHeartBeat, HEARTBEAT_INTERVAL)
 })()
