@@ -1536,7 +1536,7 @@
           ],
           properties: ["openFile"],
         };
-        var userPath = 'assets/images/user/'
+        var userPath = 'assets/images/user/';
         var dirPath = path.resolve(__dirname, userPath);
 
         require('electron').remote.dialog.showOpenDialog(options, function(fileName) {
