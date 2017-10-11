@@ -1515,7 +1515,9 @@
           fs.readdirSync(fullPath).forEach(function(file) {
             var stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
 
-            if (stat.isFile()) {
+
+            if (stat.isFile() && isImage(file)) {
+              console.log(file);
               var url = path.join(imgPath, folder, file); // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, "/");
               var name = path.parse(file).name; // remove extension
@@ -1603,6 +1605,14 @@
           }
         });
         manageBackgrounds();
+      }
+
+      function isImage(file) {
+        var extension = path.extname(file);
+        if (extension == ".jpg" || extension == ".png" || extension == ".gif") {
+          return true;
+        }
+        return false;
       }
 
       function selectTheme(theme) {
