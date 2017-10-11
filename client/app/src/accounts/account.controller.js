@@ -1532,7 +1532,7 @@
         var options = {
           title: "Upload Image",
           filters: [
-            { name: 'Images', extensions: ['jpg', 'png'] }
+            { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
           ],
           properties: ["openFile"],
         };
