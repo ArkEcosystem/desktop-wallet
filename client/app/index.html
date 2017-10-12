@@ -582,7 +582,7 @@
                     <translate>
                       If you own this account, you can enable Voting
                     </translate><br>
-                    <md-button ng-click="ul.createFolder(ul.selected)">
+                    <md-button ng-click="ul.manageFolder(ul.selected)">
                       <translate>Enable Votes</translate>
                     </md-button>
                   </md-card-title-text>
@@ -689,7 +689,7 @@
                     <translate>
                       If you own this account, you can enable Message Signing
                     </translate><br>
-                    <md-button ng-click="ul.createFolder(ul.selected)">
+                    <md-button ng-click="ul.manageFolder(ul.selected)">
                       <translate>Enable Signing</translate>
                     </md-button>
                   </md-card-title-text>
@@ -970,7 +970,7 @@
                           If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under
                           the "My Accounts" list.
                         </translate>
-                        <md-button ng-click="ul.createFolder(ul.selected)">
+                        <md-button ng-click="ul.manageFolder(ul.selected)">
                           <translate>Enable Virtual Folders</translate>
                         </md-button>
                       </md-card-title-text>
@@ -1000,7 +1000,7 @@
                           </md-button>
                         </md-menu-item>
                         <md-menu-item>
-                          <md-button ng-click="ul.renameVirtuaFolder(folder)">
+                          <md-button ng-click="ul.manageFolder(ul.selected, folder)">
                             <translate>Rename</translate>
                           </md-button>
                         </md-menu-item>
@@ -1017,7 +1017,7 @@
 
                 </md-list-item>
                 <md-list-item ng-if="ul.selected.virtual">
-                  <md-button ng-click="ul.createFolder(ul.selected)">
+                  <md-button ng-click="ul.manageFolder(ul.selected)">
                     <translate>Create a new virtual folder</translate>
                   </md-button>
                 </md-list-item>
