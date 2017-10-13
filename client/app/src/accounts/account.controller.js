@@ -1534,7 +1534,7 @@
           filters: [
             { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
           ],
-          properties: ["openFile"],
+          properties: ["openFile"]
         };
         var userPath = 'assets/images/user/';
         var dirPath = path.resolve(__dirname, userPath);
