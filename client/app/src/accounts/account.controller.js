@@ -874,7 +874,7 @@
     self.dialogCheckConnected = function(scope, e) {
       if (!self.isNetworkConnected) {
         formatAndToastError(
-          gettextCatalog.getString('You cannot do that until you connect to a Network.')
+          gettextCatalog.getString('You cannot do that until you connect to a network.')
         );
         self.cancel();
       }
