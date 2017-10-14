@@ -275,22 +275,15 @@
       function(connectedPeer) {
         self.connectedPeer = connectedPeer;
 
-        function showToast(msg) {
-          var toast = $mdToast.simple()
-            .hideDelay(5000)
-            .textContent(gettextCatalog.getString(msg));
-          $mdToast.show(toast);
-        }
-
         // Wait a little to ignore the initial connection delay and short interruptions
         $timeout(function() {
           if (! self.connectedPeer.isConnected && self.isNetworkConnected) {
             self.isNetworkConnected = false;
-            showToast('Network disconnected!');
+            showToast('Network disconnected!', 5000, true);
 
           } else if (self.connectedPeer.isConnected && ! self.isNetworkConnected) {
             self.isNetworkConnected = true;
-            showToast('Network connected and healthy!');
+            showToast('Network connected and healthy!', 5000, false);
           }
         }, 500);
       }
@@ -348,13 +341,26 @@
       );
     }
 
-    function copiedToClipboard() {
-      $mdToast.show(
-        $mdToast.simple()
-        .textContent(gettextCatalog.getString('Copied to clipboard'))
-        .hideDelay(5000)
-      );
+    function showToast(msg, hideDelay, isError) {
+      if (!hideDelay) {
+        hideDelay = 5000;
+      }
+
+      var toast = $mdToast.simple()
+                  .hideDelay(hideDelay)
+                  .textContent(gettextCatalog.getString(msg))
+
+      if (isError) {
+        toast.theme('error');
+      }
+
+      $mdToast.show(toast);
     }
+
+    function copiedToClipboard() {
+      showToast('Copied to clipboard', 5000, false);
+    }
+
     self.selectAllLanguages = function() {
       return languages;
     }
@@ -540,11 +546,7 @@
       networkService.postTransaction(transaction).then(
         function(transaction) {
           self.exchangeSell.sentTransaction = transaction;
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-            .hideDelay(5000)
-          );
+          showToast(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'), 5000, false);
         },
         formatAndToastError
       );
@@ -687,11 +689,7 @@
           .cancel(gettextCatalog.getString('Cancel'));
         $mdDialog.show(confirm).then(function(foldername) {
           account.virtual = accountService.setToFolder(account.address, foldername, 0);
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Virtual folder added!'))
-            .hideDelay(3000)
-          );
+          showToast('Virtual folder added!', 3000, false);
         });
       } else {
         var confirm = $mdDialog.prompt()
@@ -705,17 +703,9 @@
         $mdDialog.show(confirm).then(function(passphrase) {
           accountService.createVirtual(passphrase).then(function(virtual) {
             account.virtual = virtual;
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Succesfully Logged In!'))
-              .hideDelay(3000)
-            );
+            showToast('Succesfully Logged In!', 3000, false);
           }, function(err) {
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
-              .hideDelay(3000)
-            );
+            showToast(gettextCatalog.getString('Error when trying to login: ') + err, 3000, true);
           });
         });
       }
@@ -971,19 +961,11 @@
           accountService.fetchAccount(address).then(function(account) {
             self.accounts.push(account);
             selectAccount(account);
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Account added!'))
-              .hideDelay(3000)
-            );
+            showToast('Account added!', 3000, false);
           });
           cancel();
         } else {
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'))
-            .hideDelay(3000)
-          );
+          showToast(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'), 3000, true);
         }
 
       };
@@ -1045,11 +1027,7 @@
             if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
               selectedAccount.selectedVotes.push(delegate);
             } else {
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('List full or delegate already voted.'))
-                .hideDelay(5000)
-              );
+              showToast('List full or delegate already voted.', 5000, true);
             }
           },
           formatAndToastError
@@ -1115,11 +1093,7 @@
     function vote(selectedAccount) {
       var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes);
       if (!votes || votes.length == 0) {
-        $mdToast.show(
-          $mdToast.simple()
-          .textContent(gettextCatalog.getString('No difference from original delegate list'))
-          .hideDelay(5000)
-        );
+        showToast('No difference from original delegate list', 5000, true);
         return;
       }
       votes = votes[0];
@@ -1517,7 +1491,6 @@
 
 
             if (stat.isFile() && isImage(file)) {
-              console.log(file);
               var url = path.join(imgPath, folder, file); // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, "/");
               var name = path.parse(file).name; // remove extension
@@ -1548,7 +1521,6 @@
 
           var readStream = fs.createReadStream(fileName);
           readStream.on("error", function(err) {
-            console.log("Error Reading File: " + err);
             $mdToast.show(
               $mdToast.simple()
               .textContent(gettextCatalog.getString('Error Adding Background.'))
@@ -1559,7 +1531,6 @@
 
           var writeStream = fs.createWriteStream(newFileName);
           writeStream.on("error", function(err) {
-            console.log("Error Writing File: " + err);
             $mdToast.show(
               $mdToast.simple()
               .textContent(gettextCatalog.getString('Error Adding Background.'))
@@ -1586,11 +1557,9 @@
         file = file.substring(5, file.length - 2);
 
         var imagePath = path.resolve(__dirname, file);
-        console.log(imagePath);
 
         fs.unlink(imagePath, function(err) {
           if (err) {
-            console.log("Error Deleting File: " + err);
             $mdToast.show(
               $mdToast.simple()
               .textContent(gettextCatalog.getString('Error Removing Background.'))
@@ -1736,13 +1705,8 @@
         $mdDialog.show(confirm).then(function() {
           networkService.removeNetwork(network);
           self.listNetworks = networkService.getNetworks();
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network removed succesfully!'))
-            .hideDelay(3000)
-          );
+          showToast('Network removed succesfully!', 3000, false);
         });
-
       }
 
       $scope.send = {
@@ -1772,11 +1736,7 @@
         $mdDialog.hide();
         accountService.savePassphrases($scope.send.data.address, $scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(
           function(account) {
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Passphrases saved'))
-              .hideDelay(5000)
-            );
+            showToast('Passphrases saved', 5000, false);
           },
           formatAndToastError
         );
@@ -1878,11 +1838,7 @@
           if ($scope.createAccountDialog.data.word3 === words[2] && $scope.createAccountDialog.data.word6 === words[5] && $scope.createAccountDialog.data.word9 === words[8]) {
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function(account) {
               self.accounts.push(account);
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
-                .hideDelay(5000)
-              );
+              showText(gettextCatalog.getString('Account successfully created: ') + account.address, 5000, false);
               selectAccount(account);
             });
             $mdDialog.hide();
@@ -1937,21 +1893,13 @@
               // Check for already imported account
               for (var i = 0; i < self.accounts.length; i++) {
                 if (self.accounts[i].address === account.address) {
-                  $mdToast.show(
-                    $mdToast.simple()
-                    .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
-                    .hideDelay(5000)
-                  );
+                  showToast(gettextCatalog.getString('Account was already imported: ') + account.address, 5000, true);
                   return selectAccount(account);
                 }
               }
 
               self.accounts.push(account);
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
-                .hideDelay(5000)
-              );
+              showToast(gettextCatalog.getString('Account successfully imported: ') + account.address, 5000, false);
               selectAccount(account);
               // TODO save passphrases after we have local encrytion
             },
@@ -2098,11 +2046,7 @@
                 self.selected = null
               }
 
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account removed!'))
-                .hideDelay(3000)
-              );
+              showToast('Account removed!', 3000, false);
             });
           });
         } else if (action == gettextCatalog.getString("Send Ark")) {
@@ -2121,11 +2065,7 @@
           $mdDialog.show(prompt).then(function(label) {
             accountService.setUsername(selectedAccount.address, label);
             self.accounts = accountService.loadAllAccounts();
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Label set'))
-              .hideDelay(3000)
-            );
+            showToast('Label set', 3000, false);
           });
         } else if (action == gettextCatalog.getString("Second Passphrase")) {
           createSecondPassphrase(selectedAccount);
@@ -2295,18 +2235,9 @@
 
           fs.writeFile(fileName, raw, 'utf8', function(err) {
             if (err) {
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
-                .hideDelay(5000)
-                .theme("error")
-              );
+              showToast(gettextCatalog.getString('Failed to save transaction file') + ': ' + err, 5000, true);
             } else {
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
-                .hideDelay(5000)
-              );
+              showToast(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName, 5000, false);
             }
           });
         });
@@ -2322,11 +2253,7 @@
         networkService.postTransaction(transaction).then(
           function(transaction) {
             selectedAccount.transactions.unshift(transaction);
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-              .hideDelay(5000)
-            );
+            showToast(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'), 5000, false);
           },
           formatAndToastError
         );
