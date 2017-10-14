@@ -85,8 +85,9 @@
       }
 
       var knownAccounts = accountService.loadAllAccounts().reduce( (all, account) => {
-        if (account.virtual)
+        if (account.virtual) {
           all.push(account);
+        }
         return all;
       }, []);
 
@@ -107,6 +108,8 @@
       if (typeof callback === 'function') {
         callback();
       }
+
+      return true;
     }
 
     self.addAddressbookContact = function() {
