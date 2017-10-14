@@ -148,6 +148,7 @@
         return;
       }
       var name = contact.name;
+      var originalName = contact.name;
 
       $scope.editAddressbookContact = {
         cancel: cancel,
@@ -171,7 +172,7 @@
           return;
         }
         self.getContacts();
-        if (!self.contactExists(name)) {
+        if (!self.contactExists(originalName)) {
           self.showToast('this Contact Name doesnt exist', name, true);
           return;
         }
@@ -179,9 +180,11 @@
           self.showToast('this seems to be not a valid Address', address, true);
           return;
         }
-        for (var i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name == name) {
-            self.contacts[i].address = address;
+        if (name === originalName) {
+          for (var i = 0; i < self.contacts.length; i++) {
+            if (self.contacts[i].name == name) {
+              self.contacts[i].address = address;
+            }
           }
         }
         self.save();
