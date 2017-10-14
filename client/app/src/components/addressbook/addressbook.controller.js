@@ -177,20 +177,29 @@
           self.showToast('this seems to be not a valid Address', address, true);
           return;
         }
+        var contactSaved = false;
         if (name === originalName) {
           for (var i = 0; i < self.contacts.length; i++) {
             if (self.contacts[i].name == name) {
               self.contacts[i].address = address;
+              contactSaved = true;
             }
           }
-          self.showToast('Contact successfully saved', name, false);
+          if (contactSaved) {
+            self.showToast('Contact successfully saved', name, false);
+          } else {
+            self.showToast('Could not find the Contact to save', name, true);
+          }
         } else {
-          self.addressBookAddContactRecord(name, address, null, true, true);
-          remove(originalName, true);
-          self.showToast('Contact successfully renamed and saved', name, false);
+          if (contactSaved = self.addressBookAddContactRecord(name, address, null, true, true)) {
+            remove(originalName, true);
+            self.showToast('Contact successfully renamed and saved', name, false);
+          }
         }
-        self.save();
-        cancel();
+        if (contactSaved) {
+          self.save();
+          cancel();
+        }
       };
 
       function remove(name, suppressNotice) {
