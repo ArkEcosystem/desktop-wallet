@@ -871,15 +871,6 @@
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
 
-    self.dialogCheckConnected = function(scope, e) {
-      if (!self.isNetworkConnected) {
-        formatAndToastError(
-          gettextCatalog.getString('You cannot do that until you connect to a network.')
-        );
-        self.cancel();
-      }
-    }
-
     /**
      * Select the current avatars
      * @param menuId
@@ -1820,7 +1811,6 @@
       };
 
       $mdDialog.show({
-        onShowing: self.dialogCheckConnected,
         parent: angular.element(document.getElementById('app')),
         templateUrl: './src/accounts/view/createAccount.html',
         clickOutsideToClose: false,
@@ -1881,7 +1871,6 @@
       };
 
       $mdDialog.show({
-        onShowing: self.dialogCheckConnected,
         parent: angular.element(document.getElementById('app')),
         templateUrl: './src/accounts/view/importAccount.html',
         clickOutsideToClose: false,
