@@ -186,13 +186,17 @@
               self.contacts[i].address = address;
             }
           }
+          self.showToast('Contact successfully saved', name, false);
+        } else {
+          self.addressBookAddContactRecord(name, address, null, true, true);
+          remove(originalName, true);
+          self.showToast('Contact successfully renamed and saved', name, false);
         }
         self.save();
-        self.showToast('Contact successfully saved', name, false);
         cancel();
       };
 
-      function remove(name) {
+      function remove(name, suppressNotice) {
         self.getContacts();
         if (!self.contactExists(name)) {
           self.showToast('this Contact-Name doesnt exist: ', name, true);
@@ -205,7 +209,9 @@
           }
         }
         self.save();
-        self.showToast('Contact successfully removed', name, false);
+        if (!suppressNotice) {
+          self.showToast('Contact successfully removed', name, false);
+        }
         cancel();
       };
 
