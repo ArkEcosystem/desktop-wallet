@@ -67,24 +67,20 @@
       self.getContacts();
       if (self.trim(name) == "") {
         self.showToast('This Contact Name is not valid', name, true);
-        console.log('This Contact Name is not valid', name, true);
         return;
       }
       if (self.trim(address) == "" || ! self.isAddress(address)) {
         self.showToast('This Contact Address is not valid', address, true);
-        console.log('This Contact Address is not valid', address, true);
         return;
       }
 
       var newContact = { name: name, address: address };
       if (!isRename && self.addressExists(address)) {
         self.showToast('A Contact with this Address already exists', address, true);
-        console.log('A Contact with this Address already exists', address, true);
         return;
       }
       if (self.contactExists(name)) {
         self.showToast('A Contact with this Name already exists', name, true);
-        console.log('A Contact with this Name already exists', name, true);
         return;
       }
 
@@ -96,12 +92,10 @@
 
       if (existsIn(knownAccounts.map( a => a.address ), address)) {
         self.showToast('This Address is already taken, please add a different one', address, true);
-        console.log('This Address is already taken, please add a different one', address, true);
         return;
       }
       if (existsIn(knownAccounts.map( a => a.username ), name)) {
         self.showToast('This Name is already taken, please use a different one', name, true);
-        console.log('This Name is already taken, please use a different one', name, true);
         return;
       }
 
