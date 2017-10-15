@@ -287,7 +287,27 @@ md-dialog {
 }
 
 md-toast.md-error-theme .md-toast-content {
-    background-color: red;
+    background-color: #FF0000;
+    font-weight: bold;
+}
+
+md-toast.md-success-theme .md-toast-content {
+    background-color: #2E8B57;
+    font-weight: bold;
+}
+
+md-toast.md-warn-theme .md-toast-content {
+    background-color: #FF8C00;
+    font-weight: bold;
+}
+
+md-toast.md-log-theme .md-toast-content {
+    background-color: #A9A9A9;
+    font-weight: bold;
+}
+
+md-toast.md-debug-theme .md-toast-content {
+    background-color: #4169E1;
     font-weight: bold;
 }
 
