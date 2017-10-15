@@ -3,9 +3,9 @@
 
   angular
     .module('arkclient.components')
-    .controller('AddressbookController', ['$scope', '$mdDialog', "$mdToast", "storageService", "gettextCatalog", "accountService", AddressbookController]);
+    .controller('AddressbookController', ['$scope', '$mdDialog', "toastService", "storageService", "gettextCatalog", "accountService", AddressbookController]);
 
-  function AddressbookController($scope, $mdDialog, $mdToast, storageService, gettextCatalog, accountService) {
+  function AddressbookController($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService) {
 
     var self = this;
     var contacts;
@@ -48,17 +48,16 @@
 
     self.showToast = function(message, variable, error) {
       if (error) {
-        $mdToast.show(
-          $mdToast.simple()
-          .textContent(gettextCatalog.getString(message) + " - " + variable)
-          .hideDelay(5000)
-          .theme("error")
+        toastService.error(
+          gettextCatalog.getString(message) + " - " + variable,
+          null,
+          true
         );
       } else {
-        $mdToast.show(
-          $mdToast.simple()
-          .textContent(gettextCatalog.getString(message) + " - " + variable)
-          .hideDelay(5000)
+        toastService.success(
+          gettextCatalog.getString(message) + " - " + variable,
+          null,
+          true
         );
       }
     }
