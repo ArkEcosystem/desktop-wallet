@@ -11,6 +11,7 @@
       'changerService',
       'ledgerService',
       'timeService',
+      'toastService',
       '$mdToast',
       '$mdSidenav',
       '$mdBottomSheet',
@@ -45,7 +46,31 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window, $rootScope) {
+  function AccountController(
+    accountService,
+    networkService,
+    pluginLoader,
+    storageService,
+    changerService,
+    ledgerService,
+    timeService,
+    toastService,
+    $mdToast,
+    $mdSidenav,
+    $mdBottomSheet,
+    $timeout,
+    $interval,
+    $log,
+    $mdDialog,
+    $scope,
+    $mdMedia,
+    gettextCatalog,
+    $mdTheming,
+    $mdThemingProvider,
+    $window,
+    $rootScope
+  ) {
+
     var self = this;
 
     var languages = {
