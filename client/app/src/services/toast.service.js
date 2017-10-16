@@ -1,14 +1,16 @@
 (function() {
   'use strict';
 
+  var fs = require('fs');
+
   angular.module('arkclient.services')
-    .service('toastService', ['$mdToast', 'gettextCatalog', ToastService]);
+    .service('toastService', ['configService', '$mdToast', 'gettextCatalog', ToastService]);
 
   /**
    * ToastService
    * @constructor
    */
-  function ToastService($mdToast, gettextCatalog) {
+  function ToastService(configService, $mdToast, gettextCatalog) {
     self.TypeEnum = {
       ERROR: 0,
       SUCCESS: 1,
@@ -25,8 +27,10 @@
       'debug'
     ]
 
-    self.loggingType = TypeEnum.SUCCESS;
-    self.hideDelay = 5000;
+    self.logFile = configService.getByGroupAndKey('notice', 'logFile');
+    self.loggingType = configService.getByGroupAndKey('notice', 'level');
+    self.hideDelay = configService.getByGroupAndKey('notice', 'defaultHideDelay');
+    self.fileStream = null;
 
     function error(message, hideDelay, stopTranslate) {
       show(message, self.TypeEnum.ERROR, hideDelay, stopTranslate);
@@ -66,11 +70,20 @@
         toast.theme(self.TypeName[type]);
       }
       $mdToast.show(toast);
-      self.log(message, typeName)
+      self.logToFile(message, typeName)
     }
 
-    self.log = function(message, typeName) {
-      console.log((typeName ? typeName.toUpperCase() + ': ' : '') + message);
+    self.logToFile = function(message, typeName) {
+      if (!self.logFile) {
+        return;
+      }
+      self.fileStream = self.fileStream || fs.createWriteStream(self.logFile, {flags: 'a+'});
+      if (!self.fileStream) {
+        return;
+      }
+      self.fileStream.write(
+        '[' + new Date().toISOString() + '] ' + (typeName ? typeName.toUpperCase() + ': ' : '') + message + '\n'
+      );
     }
 
     return {
