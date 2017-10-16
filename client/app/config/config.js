@@ -1,6 +1,6 @@
 module.exports = {
   notice: {
-    'logFile': './logs/ark-desktop.log',
+    'logFile': null,
     'level': 1,
     'defaultHideDelay': 5000
   }
