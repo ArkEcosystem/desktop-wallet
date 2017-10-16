@@ -77,7 +77,7 @@
       if (!self.logFile) {
         return;
       }
-      self.fileStream = self.fileStream || fs.createWriteStream(self.logFile, {flags: 'a+'});
+      self.fileStream = self.fileStream || fs.createWriteStream('logs/ark.log', {flags: 'a+'});
       if (!self.fileStream) {
         return;
       }
