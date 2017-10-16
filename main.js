@@ -177,6 +177,10 @@ function createWindow () {
     }
   ];
 
+  if (process.platform === "linux") {
+    template[0].submenu[2] = { label: "Screenshot Protection Not Available On Linux", enabled: false};
+  }
+
   menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
