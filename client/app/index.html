@@ -536,7 +536,11 @@
                   <tbody md-body style="white-space:nowrap;" infinite-scroll="transactionsCtrl.loadNext()" infinite-scroll-disabled='transactionsCtrl.isBusy' infinite-scroll-container='".tx-list-container"'>
                     <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in transactionsCtrl.transactions | orderBy: query.order | limitTo: transactionsCtrl.pageSize track by it.id">
                       <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.id | smallId}}</a></td>
-                      <td md-cell>{{it.confirmations}}</td>
+                      <td md-cell ng-if="it.confirmations <= 50">{{it.confirmations}}</td>
+                      <td md-cell ng-if="it.confirmations > 50">
+                        <translate>Well Confirmed</translate>
+                        <md-tooltip>{{it.confirmations | number: 0}} <translate>Confirmations</translate></md-tooltip>
+                      </td>
                       <td md-cell>{{it.date | date: 'short'}}</td>
                       <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
                         <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount/100000000)) + ' / -' + (it.fee/100000000) }}</md-button>
