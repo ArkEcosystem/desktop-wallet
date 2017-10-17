@@ -53,15 +53,16 @@
     }
 
     self.show = function(message, type, hideDelay, stopTranslate) {
-      if (type > self.loggingType) {
-        return;
-      }
       var typeName = null;
       if (typeof self.TypeName[type] !== 'undefined') {
         typeName = self.TypeName[type];
       }
       if (!stopTranslate) {
         message = gettextCatalog.getString(message);
+      }
+      if (type > self.loggingType) {
+        self.logToFile(message, typeName);
+        return;
       }
       var toast = $mdToast.simple()
         .hideDelay(hideDelay || self.hideDelay)
