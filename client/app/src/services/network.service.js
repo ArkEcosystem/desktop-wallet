@@ -286,6 +286,13 @@
         //peer.ip=network.peerseed;
         return;
       }
+      if (index === 0) {
+        peers = peers.filter(function(peer) {
+          return peer.status == "OK";
+        }).sort(function(a, b) {
+          return b.height - a.height || a.delay - b.delay;
+        });
+      }
       peer.ip = "http://" + peers[index].ip + ":" + peers[index].port;
       getFromPeer("/api/blocks/getheight").then(function(response) {
           if (response.success && response.height < peer.height) {
