@@ -82,8 +82,10 @@
       if (!self.fileStream) {
         return;
       }
+      var typeName = (typeName || '').toUpperCase();
+      var date = new Date().toISOString();
       self.fileStream.write(
-        '[' + new Date().toISOString() + '] ' + (typeName ? typeName.toUpperCase() + ': ' : '') + message + '\n'
+        `[${date}] ${typeName}: ${message}\n`
       );
     }
 
