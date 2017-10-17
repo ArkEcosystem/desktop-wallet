@@ -287,9 +287,7 @@
         return;
       }
       if (index === 0) {
-        peers = peers.filter(function(peer) {
-          return peer.status == "OK";
-        }).sort(function(a, b) {
+        peers = peers.sort(function(a, b) {
           return b.height - a.height || a.delay - b.delay;
         });
       }
