@@ -68,7 +68,7 @@
         .hideDelay(hideDelay || self.hideDelay)
         .textContent(message);
       if (typeName) {
-        toast.theme(self.TypeName[type]);
+        toast.theme(typeName);
       }
       $mdToast.show(toast);
       self.logToFile(message, typeName)
