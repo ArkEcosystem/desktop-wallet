@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('arkclient.services')
-    .service('configService', ['$mdToast', 'gettextCatalog', ConfigService]);
+    .service('configService', [ConfigService]);
 
   /**
    * ConfigService
