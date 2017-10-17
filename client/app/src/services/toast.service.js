@@ -71,7 +71,7 @@
         toast.theme(typeName);
       }
       $mdToast.show(toast);
-      self.logToFile(message, typeName)
+      self.logToFile(message, typeName);
     }
 
     self.logToFile = function(message, typeName) {
