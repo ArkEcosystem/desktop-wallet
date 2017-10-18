@@ -268,10 +268,11 @@
       if (!network.forcepeer) {
         getFromPeer("/api/peers").then(function(response) {
           if (response.success) {
-            storageService.set("peers", response.peers.filter(function(peer) {
+            let peers = response.peers.filter(function(peer) {
               return peer.status == "OK";
-            }));
-            findGoodPeer(response.peers, 0);
+            });
+            storageService.set("peers", peers);
+            findGoodPeer(peers, 0);
           } else {
             findGoodPeer(storageService.get("peers"), 0);
           }
