@@ -269,11 +269,15 @@
         getFromPeer("/api/peers").then(function(response) {
           if (response.success) {
             getFromPeer('/api/peers/version').then(function(versionResponse) {
-              let peers = response.peers.filter(function(peer) {
-                return peer.status == "OK" && peer.version === versionResponse.version;
-              });
-              storageService.set("peers", peers);
-              findGoodPeer(peers, 0);
+              if (versionResponse.success) {
+                let peers = response.peers.filter(function(peer) {
+                  return peer.status == "OK" && peer.version === versionResponse.version;
+                });
+                storageService.set("peers", peers);
+                findGoodPeer(peers, 0);
+              } else {
+                findGoodPeer(storageService.get("peers"), 0);
+              }
             });
           } else {
             findGoodPeer(storageService.get("peers"), 0);
