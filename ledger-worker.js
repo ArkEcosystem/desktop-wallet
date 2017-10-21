@@ -9,5 +9,8 @@ setInterval(()=>{
   })
 }, connected ? 5000:1000)
 
-
-
+process.on('message', function (message) {
+  if (message.quit) {
+    process.exit()
+  }
+})
