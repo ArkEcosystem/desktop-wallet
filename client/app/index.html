@@ -319,7 +319,7 @@
                 {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
               </span>
               <span class="md-secondary">
-                {{ul.network.symbol}}{{it.balance/100000000}} ({{ul.formatBitcoinBalance(it.balance/100000000)}})
+                {{ul.network.symbol}}{{it.balance/100000000}} ({{ul.formatCurrencyBalance(it.balance/100000000, 'btc')}})
               </span>
             </md-list-item>
           </md-list>
@@ -502,7 +502,7 @@
               </md-icon>
               </span>
               <span class="md-subhead description">
-                  <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}} ({{ul.formatBitcoinBalance(ul.selected.balance/100000000)}})
+                  <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}} ({{ul.formatCurrencyBalance(ul.selected.balance/100000000, 'btc')}})
                   <md-button ng-click="ul.selectNextCurrency()">{{ul.formatCurrencyBalance(ul.selected.balance/100000000)}}</md-button>
                 </span>
             </md-card-title-text>
