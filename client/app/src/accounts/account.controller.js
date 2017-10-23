@@ -635,17 +635,6 @@
       $mdMenuOpen(ev);
     };
 
-    self.selectNextCurrency = function() {
-      var currenciesNames = self.currencies.map(function(x) {
-        return x.name;
-      });
-      var currencyIndex = currenciesNames.indexOf(self.currency.name);
-      var newIndex = currencyIndex == currenciesNames.length-1 ? 0 : currencyIndex+1;
-
-      self.currency = self.currencies[newIndex];
-      self.changeCurrency();
-    };
-
     self.changeCurrency = function() {
       if (self.currency == undefined) self.currency = currencies[0];
       storageService.set("currency", self.currency);
