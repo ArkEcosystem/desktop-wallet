@@ -110,7 +110,7 @@
                 <md-icon>attach_money</md-icon>
                 <p translate>Currency</p>
                 <md-select aria-label="Currency" class="currency md-secondary md-no-underline" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
-                  <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" style="text-transform: uppercase">{{ opt.name }}</md-option>
+                  <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" ng-if="opt.name != 'btc'" style="text-transform: uppercase">{{ opt.name }}</md-option>
                 </md-select>
               </md-list-item>
               <md-list-item>
