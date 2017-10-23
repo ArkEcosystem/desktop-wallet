@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-09-04 12:36+0000\n"
-"PO-Revision-Date: 2017-09-04 12:36+0000\n"
+"POT-Creation-Date: 2017-10-09 21:49+0000\n"
+"PO-Revision-Date: 2017-10-09 21:49+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: sv\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "If you own this account, you can enable Voting"
-msgstr "Om du äger detta konto kan du aktivera röstning"
+msgid "{{ category }}"
+msgstr "{{ kategori }}"
 
 msgid "Account successfully imported:"
 msgstr "Konto importerat med lyckat resultat:"
@@ -23,47 +23,8 @@ msgstr "Konto är redan importerat:"
 msgid "Add Watch-Only Address"
 msgstr "Lägg till endast sebar adress"
 
-msgid "Import"
-msgstr "Importera"
-
-msgid "Import Account"
-msgstr "Importera konto"
-
-msgid "Network disconnected!"
-msgstr "Nätverk frånkopplat!"
-
-msgid "Passphrase is not saved on this computer."
-msgstr "Lösenordsfras sparas ej på denna dator."
-
-msgid "Watch-Only Addresses"
-msgstr "Endast sebara adresser"
-
-msgid "This account already has a second passphrase:"
-msgstr "Detta konto har redan en andra lösenordsfras:"
-
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.\n\nDe 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block.\n\nPå denna sida kan du rösta på den delegat som du vill stödja."
-
-msgid "you need at least 5 ARK to create a second passphrase"
-msgstr "du behöver minst 5 ARK för att skapa en andra lösenordsfras"
-
 msgid "After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client."
 msgstr "Har du problem med formulär (som att fält saknas) efter att du skapat en andra lösenordsfras, prova vänligen starta om klienten."
-
-msgid "Chinese simplified"
-msgstr "Kinesiska (förenklad)"
-
-msgid "Chinese traditional"
-msgstr "Kinesiska (traditionell)"
-
-msgid "Open in explorer"
-msgstr "Öppna i utforskaren"
-
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
-msgstr "Viktigt att lösenordsfrasen sparas på en säker plats, denna klient sparar den INTE och kan därför inte hämta den om förlorats."
-
-msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
-msgstr "Vänligen starta om klienten efter att delegatregistrationen skrivits till ett block för att reflektera ändringarna."
 
 msgid "Cannot get registered delegates"
 msgstr "Kan inte motta registrerade delegater"
@@ -76,6 +37,15 @@ msgstr "Kommer inom kort"
 
 msgid "Confirm"
 msgstr "Bekräfta"
+
+msgid "Network disconnected!"
+msgstr "Nätverk frånkopplat!"
+
+msgid "Passphrase is not saved on this computer."
+msgstr "Lösenordsfras sparas ej på denna dator."
+
+msgid "Watch-Only Addresses"
+msgstr "Endast sebara adresser"
 
 msgid "Contacts"
 msgstr "Kontakter"
@@ -101,8 +71,17 @@ msgstr "Tvinga"
 msgid "If you own this account, you can enable Message Signing"
 msgstr "Om du äger detta konto kan du aktivera meddelandesignering"
 
+msgid "If you own this account, you can enable Voting"
+msgstr "Om du äger detta konto kan du aktivera röstning"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
 msgstr "Om du äger detta konto kan du aktivera virtuella mappar. Virtuella mappar är enkla underkonton för att organisera dina pengar bättre, utan att skicka en verklig transaktion och betala en avgift.  <br> Därtill kommer detta konto att flyttas till \"Mina konton\"-listan."
+
+msgid "Import"
+msgstr "Importera"
+
+msgid "Import Account"
+msgstr "Importera konto"
 
 msgid "Ledger Nano S"
 msgstr "Ledger Nano S"
@@ -128,11 +107,26 @@ msgstr "OK"
 msgid "Open File"
 msgstr "Öppna fil"
 
+msgid "Chinese simplified"
+msgstr "Kinesiska (förenklad)"
+
+msgid "Chinese traditional"
+msgstr "Kinesiska (traditionell)"
+
+msgid "Open in explorer"
+msgstr "Öppna i utforskaren"
+
 msgid "Peer Status"
 msgstr "Peer-status"
 
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "Vänligen välj en fil som ska tidsstämplas i blockkedjan."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
+msgstr "Viktigt att lösenordsfrasen sparas på en säker plats, denna klient sparar den INTE och kan därför inte hämta den om förlorats."
+
+msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
+msgstr "Vänligen starta om klienten efter att delegatregistrationen skrivits till ett block för att reflektera ändringarna."
 
 msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Vänligen börja med att på ett SÄKERT SÄTT GÖRA EN BACKUP AV LÖSENORDSSFRASEN. Denna klient lagrar INTE den och kan därför inte återskapa din lösenordssfras"
@@ -170,11 +164,11 @@ msgstr "SHA256 signatur"
 msgid "Send All"
 msgstr "Skicka alla"
 
-msgid "Sign"
-msgstr "Signera"
-
 msgid "Settings"
 msgstr "Inställningar"
+
+msgid "Sign"
+msgstr "Signera"
 
 msgid "Sign / Verify Message"
 msgstr "Signera/verifiera meddelande"
@@ -208,6 +202,9 @@ msgstr "Tema"
 
 msgid "Themes"
 msgstr "Teman"
+
+msgid "This account already has a second passphrase:"
+msgstr "Detta konto har redan en andra lösenordsfras:"
 
 msgid "This signature can't be forged."
 msgstr "Denna signatur kan ej skapas."
@@ -248,6 +245,9 @@ msgstr "från"
 msgid "productivity"
 msgstr "produktivitet"
 
-msgid "{{ category }}"
-msgstr "{{ kategori }}"
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.\n\nDe 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block.\n\nPå denna sida kan du rösta på den delegat som du vill stödja."
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "du behöver minst 5 ARK för att skapa en andra lösenordsfras"
 

@@ -54,6 +54,7 @@
             newnetwork = resp.data.network;
             newnetwork.forcepeer = data.forcepeer;
             newnetwork.peerseed = data.peerseed;
+            newnetwork.slip44 = 1; //default to testnet slip44
             n[data.name] = newnetwork;
             storageService.setGlobal("networks", n);
             deferred.resolve(n[data.name]);
@@ -88,6 +89,7 @@
             token: 'ARK',
             symbol: 'Ѧ',
             version: 0x17,
+            slip44: 111,
             explorer: 'https://explorer.ark.io',
             exchanges: {
               changer: "ark_ARK"
@@ -102,6 +104,7 @@
             token: 'DARK',
             symbol: 'DѦ',
             version: 30,
+            slip44: 1, //all coin testnet
             explorer: 'http://dexplorer.ark.io',
             background: "#222299",
             theme: "default",
