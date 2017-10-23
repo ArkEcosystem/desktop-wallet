@@ -622,6 +622,18 @@
       return currencyBalance;
     }
 
+    self.formatBitcoinBalance = function(balance) {
+      var price = self.connectedPeer.market ? self.connectedPeer.market.price['btc'] : 0;
+      var languageCode = self.language.replace('_', '-');
+      var options = {
+        style: 'currency',
+        currency: 'btc',
+        currencyDisplay: 'symbol'
+      }
+
+      return Number(balance * price).toLocaleString(languageCode, options).replace("BTC", "Ƀ");
+    }
+
     self.otherAccounts = function() {
       return self.accounts.filter(function(account) {
         return !account.virtual;
