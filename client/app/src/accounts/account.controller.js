@@ -885,6 +885,7 @@
     function togglePlayFundsReceivedSound(status) {
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
+
     /**
      * Select the current avatars
      * @param menuId

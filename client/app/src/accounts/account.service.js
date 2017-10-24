@@ -80,6 +80,14 @@
 
     function fetchAccount(address) {
       var deferred = $q.defer();
+      var defaultAccount = {
+        address: address,
+        balance: 0,
+        secondSignature: false,
+        cold: true,
+        delegates: [],
+        selectedVotes: [],
+      };
       networkService.getFromPeer('/api/accounts?address=' + address).then(
         function(resp) {
           if (resp.success) {
@@ -90,17 +98,12 @@
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           } else {
-            var account = {
-              address: address,
-              balance: 0,
-              secondSignature: false,
-              cold: true,
-              delegates: [],
-              selectedVotes: [],
-            };
-            deferred.resolve(account);
-            addWatchOnlyAddress(account);
+            deferred.resolve(defaultAccount);
+            addWatchOnlyAddress(defaultAccount);
           }
+        }, function() {
+          deferred.resolve(defaultAccount);
+          addWatchOnlyAddress(defaultAccount);
         }
       );
       return deferred.promise;
