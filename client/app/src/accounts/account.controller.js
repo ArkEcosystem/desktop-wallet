@@ -680,19 +680,34 @@
       account.virtual = accountService.deleteFolder(account.address, foldername);
     }
 
-    self.createFolder = function(account) {
+    self.manageFolder = function(account, currentFolderName) {
+      var titleText = (!currentFolderName ? 'Create' : 'Rename') + ' Virtual Folder';
+      var buttonText = (!currentFolderName ? 'Add' : 'Save');
+      var confirmText = 'Virtual folder ' + (!currentFolderName ? 'added' : 'saved') + '!';
+      var currentValue = (!currentFolderName ? null : currentFolderName);
       if (account.virtual) {
         var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Create Virtual Folder'))
+          .title(gettextCatalog.getString(titleText))
           .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Please enter a folder name.'))
-          .placeholder(gettextCatalog.getString('folder name'))
+          .placeholder(gettextCatalog.getString('Folder name'))
+          .initialValue(currentValue)
           .ariaLabel(gettextCatalog.getString('Folder Name'))
-          .ok(gettextCatalog.getString('Add'))
+          .ok(gettextCatalog.getString(buttonText))
           .cancel(gettextCatalog.getString('Cancel'));
         $mdDialog.show(confirm).then(function(foldername) {
-          account.virtual = accountService.setToFolder(account.address, foldername, 0);
-          toastService.success('Virtual folder added!', 3000);
+          if (account.virtual[foldername]) {
+            formatAndToastError(gettextCatalog.getString(
+              'A folder with that name already exists.'
+            ));
+          } else {
+            if (!currentFolderName) {
+              account.virtual = accountService.setToFolder(account.address, foldername, 0);
+            } else {
+              account.virtual = accountService.renameFolder(account.address, currentFolderName, foldername);
+            }
+            toastService.success(confirmText, 3000);
+          }
         });
       } else {
         var confirm = $mdDialog.prompt()

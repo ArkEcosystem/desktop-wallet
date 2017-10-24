@@ -726,6 +726,14 @@
       return getVirtual(address);
     };
 
+    function renameFolder(address, folder, newFolder) {
+      var virtual = storageService.get("virtual-" + address);
+      virtual[newFolder] = virtual[folder];
+      delete virtual[folder];
+      storageService.set("virtual-" + address, virtual);
+      return getVirtual(address);
+    };
+
     function getVirtual(address) {
       var virtual = storageService.get("virtual-" + address);
       if (virtual) {
@@ -896,6 +904,8 @@
       setToFolder: setToFolder,
 
       deleteFolder: deleteFolder,
+
+      renameFolder: renameFolder,
 
       sanitizeDelegateName: sanitizeDelegateName,
 
