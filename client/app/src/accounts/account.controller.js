@@ -1545,7 +1545,15 @@
               .textContent(gettextCatalog.getString('Background Added Successfully!'))
               .hideDelay(3000)
             );
-            manageBackgrounds();
+
+            var userImages = backgrounds['user'];
+            var url = path.join(userPath, baseName);
+            url = url.replace(/\\/g, "/");
+            var name = path.parse(newFileName).name;
+            userImages[name] = `url('${url}')`;
+
+            backgrounds['user'] = userImages;
+
             return;
           });
 
