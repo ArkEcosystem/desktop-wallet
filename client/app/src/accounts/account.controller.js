@@ -190,6 +190,9 @@
 
     self.connectedPeer = { isConnected: false };
 
+    self.isLedgerConnected = false
+    self.onGoingAddressRequest = false
+    
     if (!self.network.theme) self.network.theme = 'default';
     if (!self.network.themeDark) self.network.themeDark = false;
 
@@ -224,37 +227,20 @@
       }
     }, 8 * 1000);
 
-    var nocall = false;
-
     // detect Ledger
-    $interval(function() {
-      if(nocall){
-        return;
-      }
-      if (!self.ledgerAccounts && self.ledger && self.ledger.connected) {
-         console.log("ledgerService.getBip44Accounts");
-         nocall=true;
-         ledgerService.getBip44Accounts(self.network.slip44).then(
-          function(accounts){
+    // TODO: Change current polling implementation with pushing from the worker
+    $interval(function () {
+      self.isLedgerConnected = ledgerService.isLedgerConnected()
+      if (self.isLedgerConnected) {
+        if (!self.ledgerAccounts && !self.onGoingAddressRequest) {
+          self.onGoingAddressRequest = true
+          ledgerService.getBip44Accounts().then(accounts => {
             self.ledgerAccounts = accounts;
-            self.ledger.conneted = true;
-            nocall=false;
-          },
-          function(err){
-            self.ledgerAccounts = null;
-            self.ledger = { connected: false };
-            nocall=false;
-          }
-        );
-      }
-      if (ledgerService.detect().status == "Success") {
-        self.ledger = ledgerService.isAppLaunched();
-        if (!self.ledger.connected) {
-          self.ledgerAccounts = null;
+            self.onGoingAddressRequest = false
+          })
         }
       } else {
         self.ledgerAccounts = null;
-        self.ledger = { connected: false };
       }
     }, 2 * 1000);
 

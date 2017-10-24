@@ -3,32 +3,25 @@ const elemon = require('elemon')
 
 // Module to control application life.
 const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
 const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
-
-const ledger = require('ledgerco')
-const LedgerArk = require('./LedgerArk')
-const fork = require('child_process').fork;
-
+const ledgerWorker = require('child_process').fork(`${__dirname}/AsyncLedger.js`);
 const windowStateKeeper = require('electron-window-state');
+const CONSTANTS = require('./LedgerAsyncConstants')
 
-
+var ledgerPresent = false
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-
-var ledgercomm
 
 // needed to create menu/update it.
 var menu = null;
 var enableScreenshotProtection = true;
 var template = null;
 
-function createWindow () {
-    // Create the browser window.t
+function createWindow() {
+  // Create the browser window.t
   var platform = require('os').platform();
   var iconpath = __dirname + "/client/ark.png";
   //if(platform == "linux" || platform == "freebsd" || platform == "sunos") iconpath = __dirname + "/client/ark_linux.png";
@@ -41,7 +34,7 @@ function createWindow () {
     defaultHeight: height-100
   });
 
-  mainWindow = new BrowserWindow({width: mainWindowState.width, height: mainWindowState.height, x: mainWindowState.x, y: mainWindowState.y, center:true, icon: iconpath, resizable:true, frame:true, show:false})
+  mainWindow = new electron.BrowserWindow({width: mainWindowState.width, height: mainWindowState.height, x: mainWindowState.x, y: mainWindowState.y, center:true, icon: iconpath, resizable:true, frame:true, show:false})
   mainWindow.setContentProtection(true);
   mainWindowState.manage(mainWindow);
   // and load the index.html of the app.
@@ -49,90 +42,40 @@ function createWindow () {
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
-  
-  var ledgerWorker = fork(`${__dirname}/ledger-worker.js`);
-  
-  ledgerWorker.on('message', function (message) {
-    if(message.connected && !ledgercomm){
-      ledger.comm_node.create_async().then((comm) => {
-        ledgercomm = comm
-      }).fail((error) => {
-        console.log(error)
-      })
-    }
-    else if(!message.connected && ledgercomm){
-      ledgercomm.close_async()
-      ledgercomm = null
-    }
-  });
 
-  ipcMain.on('ledger', (event, arg) => {
-    if(arg.action == "detect"){
-      event.returnValue = {
-        status: ledgercomm ? "Success" : "Failure"
-      }
+  ledgerWorker.on('message', args => {
+    switch (args.action) {
+      case CONSTANTS.FORWARD:
+        var recipient = electron.webContents.fromId(args.recipient)
+        if (args.value) {
+          recipient.send(args.channel, {value: args.value})
+        } else {
+          recipient.send(args.channel, {error: args.error})
+        }
+        break
+      case CONSTANTS.LEDGER_CONNECTION:
+        mainWindow.webContents.send(CONSTANTS.MAIN_RENDER_LEDGER, {ledgerConnected: args.value})
+        break
+      default:
+        console.error('Unknown action [' + args.action + '] received from ledger worker (pid:' + ledgerWorker.pid + ")")
     }
-    else {
-      if(!ledgercomm){
-        console.log("connection not initialised")
-        event.returnValue = "connection not initialised"
-      }
-      else try{
-        ark = new LedgerArk(ledgercomm)
-        if(arg.action == "signMessage"){
-          ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
-            (result) => {  event.sender.send('messageSigned', result) }
-          ).fail(
-            (error) => { event.sender.send('messageSigned', {error:error}) }
-          )
-        }
-        else if(arg.action == "signTransaction"){
-          ark.signTransaction_async(arg.path, arg.data).then(
-            (result) => { event.sender.send('transactionSigned', result) }
-          ).fail(
-            (error) => { event.sender.send('transactionSigned', {error:error}) }
-          )
-        }
-        else if(arg.action == "getAddress"){
-          ark.getAddress_async(arg.path).then(
-            (result) => { event.returnValue = result }
-          ).fail(
-            (error) => { event.returnValue = error }
-          )
-        }
-        else if(arg.action == "getConfiguration"){
-          ark.getAppConfiguration_async().then((result) => {
-              console.log(result)
-              result.connected = true
-              event.returnValue = result
-            }
-          ).fail((error) => {
-              var result = {
-                connected: false,
-                message: error
-              }
-              if(ledgercomm && ledgercomm.close_async){
-                ledgercomm.close_async()
-              }
-              ledgercomm = null
-              event.returnValue = result
-            }
-          )
-        }
-      } catch(error){
-        if(ledgercomm && ledgercomm.close_async){
-          ledgercomm.close_async()
-        }
-        ledgercomm = null
-        var result = {
-          connected: false,
-          message: "Cannot connect to Ark application"
-        }
-        event.returnValue = result
-      }
-    }
+  })
 
-});
+  ipcMain.on('ledger', (event, args) => {
+    switch (args.action) {
+      case CONSTANTS.GET_ADDRESSES:
+        ledgerWorker.send({action: CONSTANTS.GET_ADDRESSES, id: event.sender.id, path: args.path})
+        break
+      case CONSTANTS.SIGN_TRANSACTION:
+        ledgerWorker.send(({action: CONSTANTS.SIGN_TRANSACTION, id: event.sender.id, path: args.path, data: args.data}))
+        break
+      case CONSTANTS.SIGN_MESSAGE:
+        ledgerWorker.send({action:CONSTANTS.SIGN_MESSAGE, id: event.sender.id, path: args.path, data: args.data})
+        break
+      default:
+        console.error('Unknown action [' + args.action + '] received from WindowBrowser with id=' + event.sender.id)
+    }
+  })
 
   // Create the Application's main menu
   template = [

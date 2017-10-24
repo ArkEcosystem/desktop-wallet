@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService]);
+    .service('accountService', ['$mdDialog', '$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService]);
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
+  function AccountService($mdDialog,$q, $http, networkService, storageService, ledgerService, gettextCatalog) {
 
     var ark = require('arkjs');
 
@@ -469,6 +469,13 @@
           transaction.senderId = config.fromAddress;
 
           if (config.ledger) {
+            // TODO: This should not be done from the service, have to check if there is a better
+            $mdDialog.show({
+              parent: angular.element(document.getElementById('app')),
+              templateUrl: './src/components/modalWaitLedger/modalWaitLedger.html',
+              clickOutsideToClose: false,
+              escapeToClose: false
+            });
             delete transaction.signature;
             transaction.senderPublicKey = config.publicKey;
             ledgerService.signTransaction(config.ledger, transaction).then(
@@ -476,9 +483,11 @@
                 console.log(result);
                 transaction.signature = result.signature;
                 transaction.id = ark.crypto.getId(transaction);
+                $mdDialog.hide()
                 deferred.resolve(transaction);
               },
               function(error) {
+                $mdDialog.hide()
                 deferred.reject(error);
               }
             );
