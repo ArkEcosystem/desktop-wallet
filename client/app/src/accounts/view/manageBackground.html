@@ -9,7 +9,7 @@
     </div>
   </md-toolbar>
   <md-content class="md-padding">
-    <md-tabs md-dynamic-height md-selected="0" md-stretch-tabs>
+    <md-tabs md-dynamic-height md-selected="send.selectedTab" md-stretch-tabs>
       <md-tab label="{{ 'Background' | translate }}">
         <div>
           <md-list ng-cloak ng-repeat="category in send.backgroundKeys">
@@ -51,7 +51,7 @@
     <md-switch ng-model="send.darkMode" ng-change="send.toggleDark(send.darkMode)" aria-label="Dark Mode">
       {{'Dark Mode' | translate}}
     </md-switch>
-    <md-button md-colors="{'background':'primary'}" ng-click="send.upload()">
+    <md-button ng-if="send.selectedTab == 0" md-colors="{'background':'primary'}" ng-click="send.upload()">
       <translate>Upload</translate>
     </md-button>
     <md-button ng-if="send.userSelected" md-colors="{'background':'warn'}" ng-click="send.deleteImage()">

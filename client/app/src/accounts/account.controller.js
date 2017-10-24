@@ -1464,6 +1464,7 @@
       delete themes['dark'];
 
       var userSelected = false;
+      var selectedTab = 0;
 
       var backgrounds = {
         user: {},
@@ -1644,7 +1645,8 @@
         toggleDark: toggleDark,
         upload: upload,
         userSelected: userSelected,
-        deleteImage: deleteImage
+        deleteImage: deleteImage,
+        selectedTab: selectedTab
       };
 
       $mdDialog.show({
