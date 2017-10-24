@@ -1463,7 +1463,6 @@
       var themes = reloadThemes();
       delete themes['dark'];
 
-      var userSelected = false;
       var selectedTab = 0;
 
       var backgrounds = {
@@ -1561,9 +1560,8 @@
         });
       }
 
-      function deleteImage() {
-        var file = $scope.send.selectedBackground;
-        file = file.substring(5, file.length - 2);
+      function deleteImage(image) {
+        var file = image.substring(5, image.length - 2);
 
         var imagePath = path.resolve(__dirname, file);
 
@@ -1578,8 +1576,10 @@
             var name = path.parse(file).name;
             delete backgrounds['user'][name];
 
-            if ($scope.send.selectedBackground == currentNetwork.background) {
+            if (image == initialBackground) {
               selectBackground(backgrounds['images']['Ark']);
+            } else {
+              selectBackground(initialBackground);
             }
 
             $mdToast.show(
@@ -1610,12 +1610,6 @@
       function selectBackground(background) {
         $scope.send.selectedBackground = background;
         currentNetwork.background = background;
-
-        if (background.indexOf('/user/') >= 0) {
-          $scope.send.userSelected = true;
-        } else {
-          $scope.send.userSelected = false;
-        }
       }
 
       function save() {
@@ -1658,7 +1652,6 @@
         darkMode: initialDarkMode,
         toggleDark: toggleDark,
         upload: upload,
-        userSelected: userSelected,
         deleteImage: deleteImage,
         selectedTab: selectedTab
       };

@@ -17,9 +17,16 @@
               <span style="text-transform: capitalize;">{{ category | translate }}</span>
             </md-subheader>
             <md-grid-list md-cols="4" md-row-height="2:2" md-gutter="12px">
-              <md-grid-tile ng-repeat="(key, item) in send.backgrounds[category]" style="background: {{ item }}" ng-click="send.selectBackground(item)" ng-class="send.selectedBackground == item ? 'active' : ''" class="background-item">
+              <md-grid-tile ng-repeat="(key, item) in send.backgrounds[category]" style="background: {{ item }}" ng-click="send.selectBackground(item)" ng-class="send.selectedBackground == item ? 'active' : ''" class="background-item" ng-init="showDelete=false" ng-mouseenter="showDelete=!showDelete" ng-mouseleave="showDelete=!showDelete">
                 <md-grid-tile-footer>
-                  <h3>{{ key }}</h3>
+                  <div layout="row" layout-fill layout-align="center center">
+                    <h3 flex="50">{{ key }}</h3>
+                    <span flex="50">
+                      <md-button ng-click="send.deleteImage(item)" ng-if="category == 'user'" ng-show="showDelete">
+                        <md-icon md-theme="dark" md-font-library="material-icons">delete_forever</md-icon>
+                      </md-button>
+                    </span>
+                  </div>
                 </md-grid-tile-footer>
               </md-grid-tile>
             </md-grid-list>
@@ -53,9 +60,6 @@
     </md-switch>
     <md-button ng-if="send.selectedTab == 0" md-colors="{'background':'primary'}" ng-click="send.upload()">
       <translate>Upload</translate>
-    </md-button>
-    <md-button ng-if="send.userSelected" md-colors="{'background':'warn'}" ng-click="send.deleteImage()">
-      <translate>Delete</translate>
     </md-button>
     <span flex></span>
     <md-button md-colors="{'background':'primary'}" ng-click="send.save()">

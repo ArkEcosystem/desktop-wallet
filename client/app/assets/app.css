@@ -413,3 +413,8 @@ body md-toolbar.navbar {
 body.too-pale-background md-toolbar.navbar {
   background-color: rgba(20, 20, 20, 0.2) !important;
 }
+
+md-grid-tile-header figcaption,
+md-grid-tile-footer figcaption {
+  width:100%
+}
