@@ -1577,6 +1577,11 @@
           } else {
             var name = path.parse(file).name;
             delete backgrounds['user'][name];
+
+            if ($scope.send.selectedBackground == currentNetwork.background) {
+              selectBackground(backgrounds['images']['Ark']);
+            }
+
             $mdToast.show(
               $mdToast.simple()
               .textContent(gettextCatalog.getString('Background Removed Successfully!'))
