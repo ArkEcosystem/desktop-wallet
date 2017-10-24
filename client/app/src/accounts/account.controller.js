@@ -1575,6 +1575,8 @@
               .hideDelay(3000)
             );
           } else {
+            var name = path.parse(file).name;
+            delete backgrounds['user'][name];
             $mdToast.show(
               $mdToast.simple()
               .textContent(gettextCatalog.getString('Background Removed Successfully!'))
@@ -1582,7 +1584,6 @@
             );
           }
         });
-        manageBackgrounds();
       }
 
       function isImage(file) {
