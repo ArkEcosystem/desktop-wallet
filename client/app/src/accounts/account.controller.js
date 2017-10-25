@@ -177,7 +177,6 @@
     self.vote = vote;
     self.addDelegate = addDelegate;
     self.showAccountMenu = showAccountMenu;
-    self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || self.currencies[0];
     self.switchNetwork = networkService.switchNetwork;
     self.marketinfo = {};
