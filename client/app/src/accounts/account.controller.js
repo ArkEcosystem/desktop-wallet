@@ -38,28 +38,6 @@
       };
     }]);
 
-
-
-    app.filter('formatCurrency', function() {
-        return function(val, self) {
-            var currencyName = self.currency.name;
-            var languageCode = self.language.replace('_', '-');
-            var options = {
-              style: 'currency',
-              currency: currencyName,
-              currencyDisplay: 'symbol'
-            }
-
-            if (currencyName == "btc") {
-                var localeVersion = "Ƀ" + val;
-                return localeVersion;
-            }
-
-            var localeVersion = Number(val).toLocaleString(languageCode, options);
-
-            return localeVersion;
-        }
-    });
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
