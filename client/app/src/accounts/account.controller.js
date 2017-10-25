@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular
+  var app = angular
     .module('arkclient.accounts')
     .controller('AccountController', [
       'accountService',
@@ -38,6 +38,7 @@
         return username
       };
     }]);
+
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
@@ -610,21 +611,11 @@
       }, 0) / 100000000).toFixed(2);
     }
 
-    self.formatCurrencyBalance = function(balance) {
-      var currencyName = self.currency.name;
-      var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
-      var languageCode = self.language.replace('_', '-');
-      var options = {
-        style: 'currency',
-        currency: currencyName,
-        currencyDisplay: 'symbol'
-      }
-
-      var currencyBalance = Number(balance * price).toLocaleString(languageCode, options);
-
-      if (currencyName == "btc") currencyBalance = currencyBalance.replace("BTC", "Ƀ");
-
-      return currencyBalance;
+    self.myAccountsCurrencyBalance = function() {
+        var balance = self.myAccountsBalance();
+        var currencyName = self.currency.name;
+        var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
+        return balance*price;
     }
 
     self.otherAccounts = function() {
