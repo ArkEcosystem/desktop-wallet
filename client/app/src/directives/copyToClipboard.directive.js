@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('arkclient.directives')
-    .directive('copyToClipboard', function($window, $mdToast) {
+    .directive('copyToClipboard', function($window) {
       var body = angular.element($window.document.body);
       var textarea = angular.element('<textarea/>');
       textarea.css({
@@ -21,9 +21,6 @@
         } catch (err) {
           console.log("failed to copy", toCopy);
         }
-        $mdToast.simple()
-          .textContent('Text copied to clipboard!')
-          .hideDelay(2000);
         textarea.remove();
       }
 

@@ -150,7 +150,7 @@ function createWindow () {
             })
         },
         { type: "separator" },
-        { label: "Disable screenshot protection (unsafe)", click: function() { updateScreenshotProtectionItem(); }},
+        { label: getScreenshotProtectionLabel(), click: function() { updateScreenshotProtectionItem(); }, enabled: process.platform !== "linux"},
         { type: "separator" },
         { label: "Minimize", click: function() { mainWindow.minimize(); }},
         { label: "Maximize", click: function() { mainWindow.maximize(); }},
@@ -249,6 +249,16 @@ function updateScreenshotProtectionItem() {
 
     menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
+}
+
+function getScreenshotProtectionLabel() {
+  if (process.platform === "linux") {
+    return "Screenshot Protection Not Available On Linux";
+  } else if (enableScreenshotProtection) {
+    return "Disable screenshot protection (unsafe)";
+  } else {
+    return "Enable screenshot protection (recommended)";
+  }
 }
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

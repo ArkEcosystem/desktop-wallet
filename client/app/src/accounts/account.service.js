@@ -80,6 +80,14 @@
 
     function fetchAccount(address) {
       var deferred = $q.defer();
+      var defaultAccount = {
+        address: address,
+        balance: 0,
+        secondSignature: false,
+        cold: true,
+        delegates: [],
+        selectedVotes: [],
+      };
       networkService.getFromPeer('/api/accounts?address=' + address).then(
         function(resp) {
           if (resp.success) {
@@ -90,17 +98,12 @@
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           } else {
-            var account = {
-              address: address,
-              balance: 0,
-              secondSignature: false,
-              cold: true,
-              delegates: [],
-              selectedVotes: [],
-            };
-            deferred.resolve(account);
-            addWatchOnlyAddress(account);
+            deferred.resolve(defaultAccount);
+            addWatchOnlyAddress(defaultAccount);
           }
+        }, function() {
+          deferred.resolve(defaultAccount);
+          addWatchOnlyAddress(defaultAccount);
         }
       );
       return deferred.promise;
@@ -726,6 +729,14 @@
       return getVirtual(address);
     };
 
+    function renameFolder(address, folder, newFolder) {
+      var virtual = storageService.get("virtual-" + address);
+      virtual[newFolder] = virtual[folder];
+      delete virtual[folder];
+      storageService.set("virtual-" + address, virtual);
+      return getVirtual(address);
+    };
+
     function getVirtual(address) {
       var virtual = storageService.get("virtual-" + address);
       if (virtual) {
@@ -896,6 +907,8 @@
       setToFolder: setToFolder,
 
       deleteFolder: deleteFolder,
+
+      renameFolder: renameFolder,
 
       sanitizeDelegateName: sanitizeDelegateName,
 

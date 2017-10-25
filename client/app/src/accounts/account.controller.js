@@ -11,7 +11,7 @@
       'changerService',
       'ledgerService',
       'timeService',
-      '$mdToast',
+      'toastService',
       '$mdSidenav',
       '$mdBottomSheet',
       '$timeout',
@@ -45,7 +45,30 @@
    * @param avatarsService
    * @constructor
    */
-  function AccountController(accountService, networkService, pluginLoader, storageService, changerService, ledgerService, timeService, $mdToast, $mdSidenav, $mdBottomSheet, $timeout, $interval, $log, $mdDialog, $scope, $mdMedia, gettextCatalog, $mdTheming, $mdThemingProvider, $window, $rootScope) {
+  function AccountController(
+    accountService,
+    networkService,
+    pluginLoader,
+    storageService,
+    changerService,
+    ledgerService,
+    timeService,
+    toastService,
+    $mdSidenav,
+    $mdBottomSheet,
+    $timeout,
+    $interval,
+    $log,
+    $mdDialog,
+    $scope,
+    $mdMedia,
+    gettextCatalog,
+    $mdTheming,
+    $mdThemingProvider,
+    $window,
+    $rootScope
+  ) {
+
     var self = this;
 
     var languages = {
@@ -275,22 +298,14 @@
       function(connectedPeer) {
         self.connectedPeer = connectedPeer;
 
-        function showToast(msg) {
-          var toast = $mdToast.simple()
-            .hideDelay(5000)
-            .textContent(gettextCatalog.getString(msg));
-          $mdToast.show(toast);
-        }
-
         // Wait a little to ignore the initial connection delay and short interruptions
         $timeout(function() {
           if (! self.connectedPeer.isConnected && self.isNetworkConnected) {
             self.isNetworkConnected = false;
-            showToast('Network disconnected!');
-
+            toastService.error('Network disconnected!');
           } else if (self.connectedPeer.isConnected && ! self.isNetworkConnected) {
             self.isNetworkConnected = true;
-            showToast('Network connected and healthy!');
+            toastService.success('Network connected and healthy!');
           }
         }, 500);
       }
@@ -339,21 +354,11 @@
       if (!hideDelay) {
         hideDelay = 5000;
       }
-      var errorMessage = formatErrorMessage(error)
-      $mdToast.show(
-        $mdToast.simple()
-        .textContent(errorMessage)
-        .hideDelay(hideDelay)
-        .theme('error')
-      );
+      toastService.error(formatErrorMessage(error), hideDelay, true);
     }
 
     function copiedToClipboard() {
-      $mdToast.show(
-        $mdToast.simple()
-        .textContent(gettextCatalog.getString('Copied to clipboard'))
-        .hideDelay(5000)
-      );
+      toastService.success('Copied to clipboard');
     }
     self.selectAllLanguages = function() {
       return languages;
@@ -540,10 +545,10 @@
       networkService.postTransaction(transaction).then(
         function(transaction) {
           self.exchangeSell.sentTransaction = transaction;
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-            .hideDelay(5000)
+          toastService.success(
+            gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
+            null,
+            true
           );
         },
         formatAndToastError
@@ -675,23 +680,34 @@
       account.virtual = accountService.deleteFolder(account.address, foldername);
     }
 
-    self.createFolder = function(account) {
+    self.manageFolder = function(account, currentFolderName) {
+      var titleText = (!currentFolderName ? 'Create' : 'Rename') + ' Virtual Folder';
+      var buttonText = (!currentFolderName ? 'Add' : 'Save');
+      var confirmText = 'Virtual folder ' + (!currentFolderName ? 'added' : 'saved') + '!';
+      var currentValue = (!currentFolderName ? null : currentFolderName);
       if (account.virtual) {
         var confirm = $mdDialog.prompt()
-          .title(gettextCatalog.getString('Create Virtual Folder'))
+          .title(gettextCatalog.getString(titleText))
           .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Please enter a folder name.'))
-          .placeholder(gettextCatalog.getString('folder name'))
+          .placeholder(gettextCatalog.getString('Folder name'))
+          .initialValue(currentValue)
           .ariaLabel(gettextCatalog.getString('Folder Name'))
-          .ok(gettextCatalog.getString('Add'))
+          .ok(gettextCatalog.getString(buttonText))
           .cancel(gettextCatalog.getString('Cancel'));
         $mdDialog.show(confirm).then(function(foldername) {
-          account.virtual = accountService.setToFolder(account.address, foldername, 0);
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Virtual folder added!'))
-            .hideDelay(3000)
-          );
+          if (account.virtual[foldername]) {
+            formatAndToastError(gettextCatalog.getString(
+              'A folder with that name already exists.'
+            ));
+          } else {
+            if (!currentFolderName) {
+              account.virtual = accountService.setToFolder(account.address, foldername, 0);
+            } else {
+              account.virtual = accountService.renameFolder(account.address, currentFolderName, foldername);
+            }
+            toastService.success(confirmText, 3000);
+          }
         });
       } else {
         var confirm = $mdDialog.prompt()
@@ -705,17 +721,9 @@
         $mdDialog.show(confirm).then(function(passphrase) {
           accountService.createVirtual(passphrase).then(function(virtual) {
             account.virtual = virtual;
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Succesfully Logged In!'))
-              .hideDelay(3000)
-            );
+            toastService.success('Succesfully Logged In!', 3000);
           }, function(err) {
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Error when trying to login: ') + err)
-              .hideDelay(3000)
-            );
+            toastService.success(gettextCatalog.getString('Error when trying to login: ') + err, 3000, true);
           });
         });
       }
@@ -870,6 +878,7 @@
     function togglePlayFundsReceivedSound(status) {
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true);
     }
+
     /**
      * Select the current avatars
      * @param menuId
@@ -971,18 +980,14 @@
           accountService.fetchAccount(address).then(function(account) {
             self.accounts.push(account);
             selectAccount(account);
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Account added!'))
-              .hideDelay(3000)
-            );
+            toastService.success('Account added!', 3000);
           });
           cancel();
         } else {
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'))
-            .hideDelay(3000)
+          toastService.error(
+            gettextCatalog.getString('Address') + " " + address + " " + gettextCatalog.getString('is not recognised'),
+            3000,
+            true
           );
         }
 
@@ -1024,9 +1029,7 @@
       accountService.getActiveDelegates().then(function(r) {
         data.registeredDelegates = r;
       }).catch(function(err) {
-        formatAndToastError(gettextCatalog.getString(
-          'Could not fetch active delegates - please check your internet connection'
-        ));
+        formatAndToastError('Could not fetch active delegates - please check your internet connection');
       });
 
       function add() {
@@ -1045,11 +1048,7 @@
             if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
               selectedAccount.selectedVotes.push(delegate);
             } else {
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('List full or delegate already voted.'))
-                .hideDelay(5000)
-              );
+              toastService.error('List full or delegate already voted.');
             }
           },
           formatAndToastError
@@ -1115,11 +1114,7 @@
     function vote(selectedAccount) {
       var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes);
       if (!votes || votes.length == 0) {
-        $mdToast.show(
-          $mdToast.simple()
-          .textContent(gettextCatalog.getString('No difference from original delegate list'))
-          .hideDelay(5000)
-        );
+        toastService.error('No difference from original delegate list');
         return;
       }
       votes = votes[0];
@@ -1635,11 +1630,7 @@
         $mdDialog.show(confirm).then(function() {
           networkService.removeNetwork(network);
           self.listNetworks = networkService.getNetworks();
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(gettextCatalog.getString('Network removed succesfully!'))
-            .hideDelay(3000)
-          );
+          toastService.success('Network removed succesfully!', 3000);
         });
 
       }
@@ -1671,11 +1662,7 @@
         $mdDialog.hide();
         accountService.savePassphrases($scope.send.data.address, $scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(
           function(account) {
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Passphrases saved'))
-              .hideDelay(5000)
-            );
+            toastService.success('Passphrases saved');
           },
           formatAndToastError
         );
@@ -1777,10 +1764,10 @@
           if ($scope.createAccountDialog.data.word3 === words[2] && $scope.createAccountDialog.data.word6 === words[5] && $scope.createAccountDialog.data.word9 === words[8]) {
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function(account) {
               self.accounts.push(account);
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully created: ') + account.address)
-                .hideDelay(5000)
+              toastService.success(
+                gettextCatalog.getString('Account successfully created: ') + account.address,
+                null,
+                true
               );
               selectAccount(account);
             });
@@ -1836,20 +1823,20 @@
               // Check for already imported account
               for (var i = 0; i < self.accounts.length; i++) {
                 if (self.accounts[i].address === account.address) {
-                  $mdToast.show(
-                    $mdToast.simple()
-                    .textContent(gettextCatalog.getString('Account was already imported: ') + account.address)
-                    .hideDelay(5000)
+                  toastService.error(
+                    gettextCatalog.getString('Account was already imported: ') + account.address,
+                    null,
+                    true
                   );
                   return selectAccount(account);
                 }
               }
 
               self.accounts.push(account);
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account successfully imported: ') + account.address)
-                .hideDelay(5000)
+              toastService.success(
+                gettextCatalog.getString('Account successfully imported: ') + account.address,
+                null,
+                true
               );
               selectAccount(account);
               // TODO save passphrases after we have local encrytion
@@ -1997,11 +1984,7 @@
                 self.selected = null
               }
 
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Account removed!'))
-                .hideDelay(3000)
-              );
+              toastService.success('Account removed!', 3000);
             });
           });
         } else if (action == gettextCatalog.getString("Send Ark")) {
@@ -2020,11 +2003,7 @@
           $mdDialog.show(prompt).then(function(label) {
             accountService.setUsername(selectedAccount.address, label);
             self.accounts = accountService.loadAllAccounts();
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Label set'))
-              .hideDelay(3000)
-            );
+            toastService.success('Label set', 3000);
           });
         } else if (action == gettextCatalog.getString("Second Passphrase")) {
           createSecondPassphrase(selectedAccount);
@@ -2194,17 +2173,16 @@
 
           fs.writeFile(fileName, raw, 'utf8', function(err) {
             if (err) {
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Failed to save transaction file') + ': ' + err)
-                .hideDelay(5000)
-                .theme("error")
+              toastService.error(
+                gettextCatalog.getString('Failed to save transaction file') + ': ' + err,
+                null,
+                true
               );
             } else {
-              $mdToast.show(
-                $mdToast.simple()
-                .textContent(gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName)
-                .hideDelay(5000)
+              toastService.success(
+                gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName,
+                null,
+                true
               );
             }
           });
@@ -2221,10 +2199,10 @@
         networkService.postTransaction(transaction).then(
           function(transaction) {
             selectedAccount.transactions.unshift(transaction);
-            $mdToast.show(
-              $mdToast.simple()
-              .textContent(gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'))
-              .hideDelay(5000)
+            toastService.success(
+              gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
+              null,
+              true
             );
           },
           formatAndToastError
