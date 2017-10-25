@@ -80,6 +80,14 @@
 
     function fetchAccount(address) {
       var deferred = $q.defer();
+      var defaultAccount = {
+        address: address,
+        balance: 0,
+        secondSignature: false,
+        cold: true,
+        delegates: [],
+        selectedVotes: [],
+      };
       networkService.getFromPeer('/api/accounts?address=' + address).then(
         function(resp) {
           if (resp.success) {
@@ -90,17 +98,12 @@
             deferred.resolve(account);
             addWatchOnlyAddress(account);
           } else {
-            var account = {
-              address: address,
-              balance: 0,
-              secondSignature: false,
-              cold: true,
-              delegates: [],
-              selectedVotes: [],
-            };
-            deferred.resolve(account);
-            addWatchOnlyAddress(account);
+            deferred.resolve(defaultAccount);
+            addWatchOnlyAddress(defaultAccount);
           }
+        }, function() {
+          deferred.resolve(defaultAccount);
+          addWatchOnlyAddress(defaultAccount);
         }
       );
       return deferred.promise;
@@ -276,26 +279,34 @@
       return deferred.promise;
     }
 
-    function getTransactions(address, offset, limit) {
+    function getTransactions(address, offset, limit, store) {
       if (!offset) {
         offset = 0;
       }
       if (!limit) {
         limit = 50
       }
+      if (!store) {
+        store = true;
+      }
       var deferred = $q.defer();
       var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0));
       var t = parseInt(d.getTime() / 1000);
-      networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&limit=" + limit + "&recipientId=" + address + "&senderId=" + address).then(function(resp) {
+      networkService.getFromPeer("/api/transactions?orderBy=timestamp:desc&offset=" + offset + "&limit=" + limit + "&recipientId=" + address + "&senderId=" + address).then(function(resp) {
         if (resp.success) {
           for (var i = 0; i < resp.transactions.length; i++) {
-            var transaction = formatTransaction(resp.transactions[i], address)
+            formatTransaction(resp.transactions[i], address)
           }
-          storageService.set("transactions-" + address, resp.transactions);
+          if (store) storageService.set("transactions-" + address, resp.transactions);
+
           deferred.resolve(resp.transactions);
         } else {
           deferred.reject(gettextCatalog.getString("Cannot get transactions"));
         }
+      }, function() {
+        deferred.reject(gettextCatalog.getString("Cannot get transactions"));
+      }, function() {
+        deferred.notify(true);
       });
       return deferred.promise;
     };
@@ -718,6 +729,14 @@
       return getVirtual(address);
     };
 
+    function renameFolder(address, folder, newFolder) {
+      var virtual = storageService.get("virtual-" + address);
+      virtual[newFolder] = virtual[folder];
+      delete virtual[folder];
+      storageService.set("virtual-" + address, virtual);
+      return getVirtual(address);
+    };
+
     function getVirtual(address) {
       var virtual = storageService.get("virtual-" + address);
       if (virtual) {
@@ -888,6 +907,8 @@
       setToFolder: setToFolder,
 
       deleteFolder: deleteFolder,
+
+      renameFolder: renameFolder,
 
       sanitizeDelegateName: sanitizeDelegateName,
 

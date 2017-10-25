@@ -383,6 +383,7 @@ md-tooltip.tooltip-multiline {
 }
 
 .md-open-menu-container.md-dark-theme md-menu-content,
+.md-open-menu-container.md-dark-theme md-menu-content md-menu-item,
 md-bottom-sheet.md-dark-theme {
   background: #2f2f3b;
   color: white;
@@ -405,10 +406,10 @@ table.md-table.md-row-select tbody.md-body>tr.md-row:not([disabled]):hover {
 }
 
 /* Main toolbar is transparent in almost all cases */
-body > md-toolbar:not(.md-menu-toolbar) {
+body md-toolbar.navbar {
   background-color: transparent !important;
 }
 /* Useful with light background textures to outline the main toolbar buttons */
-body.too-pale-background > md-toolbar:not(.md-menu-toolbar) {
+body.too-pale-background md-toolbar.navbar {
   background-color: rgba(20, 20, 20, 0.2) !important;
 }

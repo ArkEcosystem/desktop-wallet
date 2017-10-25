@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-09-04 12:36+0000\n"
-"PO-Revision-Date: 2017-09-04 12:36+0000\n"
+"POT-Creation-Date: 2017-10-09 21:49+0000\n"
+"PO-Revision-Date: 2017-10-09 21:49+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -11,50 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "If you own this account, you can enable Voting"
-msgstr "Se você possui esta conta, você pode habilitar a votação"
-
-msgid "This account already has a second passphrase:"
-msgstr "Essa conta já possui uma segunda senha:"
-
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "A votação é um mecanismo opcional, mas importante, que mantém a rede Ark segura.\nOs 51 delegados com mais votos da rede são responsáveis ​​por verificar e forjar transações em novos blocos.\nEsta página pode ser usada para votar para um delegado que você apoia."
-
-msgid "you need at least 5 ARK to create a second passphrase"
-msgstr "Você precisa de pelo menos 5 ARK para criar uma segunda frase secreta"
-
-msgid "Client"
-msgstr "Cliente"
-
-msgid "Coming Soon"
-msgstr "Em breve"
-
-msgid "Confirm"
-msgstr "Confirmar"
-
-msgid "Contacts"
-msgstr "Contatos"
-
-msgid "Copy"
-msgstr "Copiar"
-
-msgid "Edit Contact"
-msgstr "Editar Contato"
-
-msgid "Enable Signing"
-msgstr "Ativar Assinatura"
-
-msgid "File"
-msgstr "Erro no processamento da assinatura"
-
-msgid "Force"
-msgstr "Forçar"
-
-msgid "If you own this account, you can enable Message Signing"
-msgstr "Se você possui essa conta, você pode ativar a assinatura de mensagens"
-
 msgid "Account added!"
 msgstr "Conta adicionada!"
+
+msgid "Account removed!"
+msgstr "Conta removida!"
 
 msgid "Account deleted!"
 msgstr "Conta deletada!"
@@ -62,8 +23,23 @@ msgstr "Conta deletada!"
 msgid "Account successfully created:"
 msgstr "Conta criada com sucesso"
 
+msgid "Account successfully imported:"
+msgstr "Conta importada com sucesso:"
+
+msgid "Account was already imported:"
+msgstr "A conta já havia sido importada:"
+
+msgid "Accounts"
+msgstr "Contas"
+
+msgid "Actions"
+msgstr "Ações"
+
 msgid "Add"
 msgstr "Adicionar"
+
+msgid "Add Contact"
+msgstr "Adicionar Contato"
 
 msgid "Add Account"
 msgstr "Adicionar Conta"
@@ -74,11 +50,26 @@ msgstr "Adicionar endereço"
 msgid "Add Delegate"
 msgstr "Adicionar Delegado"
 
+msgid "Add Watch-Only Address"
+msgstr "Adicionar Endereço Watch-Only"
+
 msgid "Address"
 msgstr "Endereço"
 
+msgid "Address version"
+msgstr "Versão do Endereço"
+
+msgid "After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client."
+msgstr "Após criar a segunda frase secreta, caso você tenha problemas com os formulários (segunda frase secreta não aparecendo), por favor, reinicie o client."
+
+msgid "All your data, including created accounts, networks and contacts will be removed from the app and reset to default."
+msgstr "Todos os seus dados, incluíndo contas criadas, redes e contatos serão removidos do aplicativo e resetados para o padrão."
+
 msgid "Amount"
 msgstr "Quantidade"
+
+msgid "Appearance"
+msgstr "Aparência"
 
 msgid "Amount (Ѧ)"
 msgstr "Quantidade (Ѧ)"
@@ -86,14 +77,23 @@ msgstr "Quantidade (Ѧ)"
 msgid "Approval"
 msgstr "Aprovação"
 
+msgid "Arab"
+msgstr "Árabe"
+
 msgid "Are you sure?"
 msgstr "Você tem certeza?"
 
 msgid "Ark Client"
 msgstr "Cliente Ark"
 
+msgid "Background"
+msgstr "Plano de fundo"
+
 msgid "Balance"
 msgstr "Balanço"
+
+msgid "Bulgarian"
+msgstr "Búlgaro"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -106,6 +106,9 @@ msgstr "Não é possível encontrar delegados a partir deste termo:"
 
 msgid "Cannot find delegates on this peer:"
 msgstr "Não é possível encontrar delegados nesse peer:"
+
+msgid "Cannot get registered delegates"
+msgstr "Não foi possível encontrar os delegados registrados"
 
 msgid "Cannot get sponsors"
 msgstr "Não é possível obter a lista de patrocinadores"
@@ -122,14 +125,47 @@ msgstr "Não se pode afirmar que a conta é um delegado"
 msgid "Change 1h/7h/7d"
 msgstr "Alterar 1h/7h/7d"
 
+msgid "Client"
+msgstr "Cliente"
+
 msgid "Close"
 msgstr "Fechar"
+
+msgid "Coming Soon"
+msgstr "Em breve"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Network disconnected!"
+msgstr "Rede desconectada!"
+
+msgid "Passphrase is not saved on this computer."
+msgstr "A frase secreta não está salva neste computador."
+
+msgid "Watch-Only Addresses"
+msgstr "Endereços Watch-Only"
+
+msgid "Confirmations"
+msgstr "Confirmações"
+
+msgid "Contacts"
+msgstr "Contatos"
+
+msgid "Copied to clipboard"
+msgstr "Copiado para a área de transferência"
+
+msgid "Copy"
+msgstr "Copiar"
 
 msgid "Create"
 msgstr "Criar"
 
 msgid "Create Account"
 msgstr "Criar conta"
+
+msgid "Create Second Passphrase"
+msgstr "Criar segunda frase secreta"
 
 msgid "Create Virtual Folder"
 msgstr "Criar Pasta Virtual"
@@ -164,11 +200,26 @@ msgstr "Delete permanentemente esta conta."
 msgid "Destination Address"
 msgstr "Endereço de destino"
 
+msgid "Dutch"
+msgstr "Holandês"
+
+msgid "Edit Contact"
+msgstr "Editar Contato"
+
+msgid "Enable Signing"
+msgstr "Ativar Assinatura"
+
 msgid "Enable Virtual Folders"
 msgstr "Habilitar pastas virtuais"
 
 msgid "Enable Votes"
 msgstr "Habilitar votos"
+
+msgid "English"
+msgstr "Inglês"
+
+msgid "Error in signature processing"
+msgstr "Erro no processamento da assinatura"
 
 msgid "Error when trying to login:"
 msgstr "Erro ao tentar logar:"
@@ -179,11 +230,26 @@ msgstr "Erro:"
 msgid "Exchange"
 msgstr "Troca"
 
+msgid "Explorer"
+msgstr "Explorador"
+
+msgid "File"
+msgstr "Erro no processamento da assinatura"
+
 msgid "Fee (Ѧ)"
 msgstr "Taxa (Ѧ)"
 
 msgid "Folder Name"
 msgstr "Nome da pasta"
+
+msgid "Force"
+msgstr "Forçar"
+
+msgid "Force?"
+msgstr "Forçar?"
+
+msgid "French"
+msgstr "Francês"
 
 msgid "From"
 msgstr "A partir de"
@@ -191,14 +257,41 @@ msgstr "A partir de"
 msgid "Full Screen"
 msgstr "Full Screen"
 
+msgid "German"
+msgstr "Alemão"
+
+msgid "Greek"
+msgstr "Grego"
+
 msgid "Hand crafted with ❤ by"
 msgstr "Produzida à mão com ❤ por"
 
 msgid "Height"
 msgstr "Altura"
 
+msgid "Id"
+msgstr "Id"
+
+msgid "If you own this account, you can enable Message Signing"
+msgstr "Se você possui essa conta, você pode ativar a assinatura de mensagens"
+
+msgid "If you own this account, you can enable Voting"
+msgstr "Se você possui esta conta, você pode habilitar a votação"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
+msgstr "Se você é o proprietário desta conta, é possível criar pastas virtuais. Pastas virtuais nada mais são do que subcontas para organizar melhor seu dinheiro, porém sem a necessidade de fazer uma transação e pagar taxas.    Ademais, essa conta se encontrará na lista \"My Accounts\""
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Import Account"
+msgstr "Importar Conta"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Se você possuir esta conta, pode habilitar pastas virtuais. Pastas virtuais são simples sub-contas para melhor organizar o seu dinheiro, sem ter que envia-lo numa transação e pagar uma taxa. Além disso esta conta vai estar associada na lista \"Minhas Contas\" "
+
+msgid "Italian"
+msgstr "Italiano"
 
 msgid "Label"
 msgstr "Etiqueta"
@@ -212,6 +305,9 @@ msgstr "Língua"
 msgid "Last checked"
 msgstr "Última verificação"
 
+msgid "Ledger Nano S"
+msgstr "Ledger Nano S"
+
 msgid "List full or delegate already voted."
 msgstr "Lista completa ou delegado já votado."
 
@@ -221,11 +317,20 @@ msgstr "Login"
 msgid "Manage Networks"
 msgstr "Gerenciar rede"
 
+msgid "Market"
+msgstr "Mercado"
+
 msgid "Market Cap."
 msgstr "Valor de mercado"
 
 msgid "Maximize"
 msgstr "Maximizar"
+
+msgid "Message"
+msgstr "Mensagem"
+
+msgid "Minimize"
+msgstr "Minimizar"
 
 msgid "Minify"
 msgstr "Minimizar"
@@ -233,8 +338,17 @@ msgstr "Minimizar"
 msgid "My Accounts"
 msgstr "Minhas contas"
 
+msgid "Name"
+msgstr "Nome"
+
 msgid "Network"
 msgstr "Rede"
+
+msgid "Network removed succesfully!"
+msgstr "Rede removida com sucesso!"
+
+msgid "New version available!"
+msgstr "Nossa versão disponível!"
 
 msgid "Network connected and healthy!"
 msgstr "Rede conectada e saudável!"
@@ -260,11 +374,29 @@ msgstr "Não há ARK suficiente em sua conta"
 msgid "OffChain"
 msgstr "OffChain"
 
+msgid "Ok"
+msgstr "Ok"
+
 msgid "Open Delegate Monitor"
 msgstr "Abra o Monitor de Delegado"
 
+msgid "Open File"
+msgstr "Abrir arquivo"
+
+msgid "Chinese simplified"
+msgstr "Chinês simplificado"
+
+msgid "Chinese traditional"
+msgstr "Chinês tradicional"
+
+msgid "Open in explorer"
+msgstr "Abrir no explorador"
+
 msgid "Optional"
 msgstr "Opcional"
+
+msgid "Original Passphrase"
+msgstr "Frase secreta original"
 
 msgid "Other Accounts"
 msgstr "Outras contas"
@@ -290,6 +422,12 @@ msgstr "Frases secretas salvas"
 msgid "Peer"
 msgstr "Peer"
 
+msgid "Peer Status"
+msgstr "Status do Peer"
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Por favor, escolha um arquivo para receber a timestamp na blockchain."
+
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Faça backup com segurança da frase secreta, este cliente não armazena e, portanto, não pode recuperar sua senha"
 
@@ -305,11 +443,38 @@ msgstr "Por favor, insira um rótulo curto."
 msgid "Please enter this account passphrase to login."
 msgstr "Por favor, insira a frase secreta desta conta para logar."
 
+msgid "Please paste the original and second passphrase to validate the creation."
+msgstr "Por favor cole a senha original e a segunda frase secreta para validar a criação."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
+msgstr "Por favor faça o backup da segunda frase secreta com segurança, este cliente não armazena e não conseguimos recupera-lá."
+
+msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
+msgstr "Por favor reinicie seu cliente após o registro do delegado ter sido incluso em um bloco para refletir as mudanças."
+
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Por favor, primeiramente FAÇA UM BACKUP DA FRASE SECRETA, pois ela NÃO será armazenada e não poderá ser recuperada"
+
+msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
+msgstr "Por favor, digite as palavras 3, 6 e 9 da sua frase secreta para validar a criação da conta."
+
+msgid "Polish"
+msgstr "Polonês"
+
+msgid "Portuguese"
+msgstr "Português"
+
 msgid "Price"
 msgstr "Preço"
 
 msgid "Productivity"
 msgstr "Produtividade"
+
+msgid "Public Key"
+msgstr "Chave Pública"
+
+msgid "QR Scanner"
+msgstr "Scanner de código QR"
 
 msgid "Quit"
 msgstr "Sair"
@@ -332,11 +497,38 @@ msgstr "Registrar delegado para"
 msgid "Remove"
 msgstr "Remover"
 
+msgid "Remove Account"
+msgstr "Remover Conta"
+
+msgid "Remove Network"
+msgstr "Remover Rede"
+
+msgid "Remove account"
+msgstr "Remover conta"
+
+msgid "Remove from my computer all cached data from this network"
+msgstr "Remover do meu computador todos os dados em cache desta rede"
+
+msgid "Remove this account from your wallet. The account may be added again using the original passphrase of the account."
+msgstr "Remover essa conta da sua carteira. A conta poderá ser aficionada novamente utilizando a frase secreta ortogonal da conta."
+
 msgid "Rename"
 msgstr "Renomear"
 
+msgid "Reset Data"
+msgstr "Resetar Dados"
+
 msgid "Restart"
 msgstr "Reiniciar"
+
+msgid "Romanian"
+msgstr "Romeno"
+
+msgid "Russian"
+msgstr "Russo"
+
+msgid "SHA256 Signature"
+msgstr "Assinatura SHA256"
 
 msgid "Save"
 msgstr "Salvar"
@@ -350,6 +542,9 @@ msgstr "Segunda frase secreta"
 msgid "Send"
 msgstr "Enviar"
 
+msgid "Send All"
+msgstr "Enviar Tudo"
+
 msgid "Send Ark"
 msgstr "Enviar Ark"
 
@@ -359,20 +554,77 @@ msgstr "Enviar Ark de"
 msgid "Set"
 msgstr "Conjunto"
 
+msgid "Settings"
+msgstr "Configurações"
+
+msgid "Sign"
+msgstr "Assinar"
+
+msgid "Sign / Verify Message"
+msgstr "Assinar / Verificar Mensagem"
+
+msgid "Sign Message"
+msgstr "Assinar Mensagem"
+
+msgid "Sign with Ledger"
+msgstr "Assinar com Ledger"
+
+msgid "Signature"
+msgstr "Assinatura"
+
+msgid "Slovenian"
+msgstr "Esloveno"
+
 msgid "Smartbridge"
 msgstr "Smartbridge"
 
 msgid "Succesfully Logged In!"
 msgstr "Logado com sucesso!"
 
+msgid "Switch Network"
+msgstr "Alternar Rede"
+
+msgid "Symbol"
+msgstr "Símbolo"
+
 msgid "The destination address"
 msgstr "Endereço de destino"
+
+msgid "The message is NOT verified"
+msgstr "A mensagem não foi verificada"
+
+msgid "The message is verified successfully"
+msgstr "A mensagem foi verificada com sucesso"
+
+msgid "Second Passphrase added successfully:"
+msgstr "Segunda frase secreta adicionada com sucesso:"
+
+msgid "The words does not match the original passphrase."
+msgstr "As palavras não correspondem à senha original."
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Themes"
+msgstr "Temas"
+
+msgid "This account already has a second passphrase:"
+msgstr "Essa conta já possui uma segunda senha:"
 
 msgid "This account has never interacted with the network. This is a cold wallet."
 msgstr "Esta conta nunca interagiu com a rede. Esta é uma cold wallet."
 
 msgid "To"
 msgstr "Para"
+
+msgid "Toggle Full Screen"
+msgstr "Alternar Tela Cheia"
+
+msgid "Token name"
+msgstr "Nome do token"
+
+msgid "Total"
+msgstr "Total"
 
 msgid "Total {{ul.network.symbol}}"
 msgstr "Total {{ul.network.symbol}}"
@@ -392,6 +644,12 @@ msgstr "Atualize o voto de"
 msgid "Username"
 msgstr "Username"
 
+msgid "Verify"
+msgstr "Verificar"
+
+msgid "Verify Message"
+msgstr "Verificar Mensagem"
+
 msgid "Vendor Field"
 msgstr "Campo do fornecedor"
 
@@ -404,11 +662,23 @@ msgstr "Voto"
 msgid "Votes"
 msgstr "Votos"
 
+msgid "Word"
+msgstr "Palavra"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "approval"
+msgstr "aprovação"
+
 msgid "address"
 msgstr "endereço"
 
 msgid "folder name"
 msgstr "nome da pasta"
+
+msgid "from"
+msgstr "de"
 
 msgid "is erroneous"
 msgstr "está errado"
@@ -431,6 +701,9 @@ msgstr "frase secreta"
 msgid "produced blocks"
 msgstr "blocos produzidos"
 
+msgid "productivity"
+msgstr "produtividade"
+
 msgid "sent with success!"
 msgstr "enviado com sucesso!"
 
@@ -439,4 +712,10 @@ msgstr "você precisa de pelo menos 1 ARK para votar"
 
 msgid "you need at least 25 ARK to register delegate"
 msgstr "Você necessita de pelo menos 25 ARK para registrar o delegado "
+
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "A votação é um mecanismo opcional, mas importante, que mantém a rede Ark segura.\nOs 51 delegados com mais votos da rede são responsáveis ​​por verificar e forjar transações em novos blocos.\nEsta página pode ser usada para votar para um delegado que você apoia."
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "Você precisa de pelo menos 5 ARK para criar uma segunda frase secreta"
 

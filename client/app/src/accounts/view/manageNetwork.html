@@ -28,6 +28,10 @@
             <label translate>Nethash</label>
             <input ng-model="send.networks[network].nethash" type="text" ng-required="true">
           </md-input-container>
+          <md-input-container md-no-float class="md-block">
+            <label translate>SLIP 44</label>
+            <input ng-model="send.networks[network].slip44" type="text" ng-required="true">
+          </md-input-container>
 
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm="80">
