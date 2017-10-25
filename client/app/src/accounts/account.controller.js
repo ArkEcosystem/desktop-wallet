@@ -373,15 +373,6 @@
       gettextCatalog.setCurrentLanguage(self.language);
     }
 
-    //TODO: deprecated
-    function selectNextLanguage() {
-      var lkeys = Object.keys(languages);
-      if (self.language) self.language = lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
-      else self.language = "en";
-      storageService.set("language", self.language);
-      gettextCatalog.setCurrentLanguage(self.language);
-    }
-
     self.getMarketInfo = function(symbol) {
       changerService.getMarketInfo(symbol, "ark_ARK").then(function(answer) {
         self.buycoin = answer;
