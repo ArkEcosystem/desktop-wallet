@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', '$mdToast', qrScanner]);
+  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', 'toastService', qrScanner]);
 
-  function qrScanner($rootScope, $timeout, $mdDialog, $mdToast) {
+  function qrScanner($rootScope, $timeout, $mdDialog, toastService) {
 
     function controller($scope) {
 
@@ -20,11 +20,7 @@
 
       $scope.onSuccess = function(result) {
         if (typeof(result.type) !== 'undefined') {
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(`The ${result.type} ${result.qr} has been successfully scanned.`)
-            .hideDelay(5000)
-          );
+          toastService.success(`The ${result.type} ${result.qr} has been successfully scanned.`);
         };
 
         $scope.$parent.send.data[$scope.inputCallback] = result.qr;
@@ -35,12 +31,7 @@
       }
 
       $scope.onError = function(error) {
-        $mdToast.show(
-          $mdToast.simple()
-          .textContent(error.error)
-          .hideDelay(5000)
-          .theme('error')
-        );
+        toastService.error(error.error);
 
         $timeout(function() {
           $mdDialog.hide();
