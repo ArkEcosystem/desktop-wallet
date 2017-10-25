@@ -1941,9 +1941,12 @@
     function showAccountMenu(selectedAccount) {
 
       var items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' },
-        { name: gettextCatalog.getString('Remove'), icon: 'clear' },
+        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' }
       ];
+
+      if (!selectedAccount.ledger) {
+        items.push({ name: gettextCatalog.getString('Remove'), icon: 'clear' });
+      }
 
       if (!selectedAccount.delegate) {
         items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer' });
