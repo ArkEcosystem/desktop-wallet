@@ -200,7 +200,6 @@
     self.vote = vote;
     self.addDelegate = addDelegate;
     self.showAccountMenu = showAccountMenu;
-    self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || self.currencies[0];
     self.switchNetwork = networkService.switchNetwork;
     self.marketinfo = {};
@@ -374,15 +373,6 @@
         }
       }
       self.language = getlanguage(this.selectedLanguage);
-      storageService.set("language", self.language);
-      gettextCatalog.setCurrentLanguage(self.language);
-    }
-
-    //TODO: deprecated
-    function selectNextLanguage() {
-      var lkeys = Object.keys(languages);
-      if (self.language) self.language = lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
-      else self.language = "en";
       storageService.set("language", self.language);
       gettextCatalog.setCurrentLanguage(self.language);
     }
@@ -638,17 +628,6 @@
     self.openMenu = function($mdMenuOpen, ev) {
       // originatorEv = ev; // unused
       $mdMenuOpen(ev);
-    };
-
-    self.selectNextCurrency = function() {
-      var currenciesNames = self.currencies.map(function(x) {
-        return x.name;
-      });
-      var currencyIndex = currenciesNames.indexOf(self.currency.name);
-      var newIndex = currencyIndex == currenciesNames.length-1 ? 0 : currencyIndex+1;
-
-      self.currency = self.currencies[newIndex];
-      self.changeCurrency();
     };
 
     self.changeCurrency = function() {
