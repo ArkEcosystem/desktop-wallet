@@ -9,7 +9,7 @@
     </div>
   </md-toolbar>
   <md-content class="md-padding">
-    <md-tabs md-dynamic-height md-selected="0" md-stretch-tabs>
+    <md-tabs md-dynamic-height md-selected="send.selectedTab" md-stretch-tabs>
       <md-tab label="{{ 'Background' | translate }}">
         <div>
           <md-list ng-cloak ng-repeat="category in send.backgroundKeys">
@@ -17,9 +17,12 @@
               <span style="text-transform: capitalize;">{{ category | translate }}</span>
             </md-subheader>
             <md-grid-list md-cols="4" md-row-height="2:2" md-gutter="12px">
-              <md-grid-tile ng-repeat="(key, item) in send.backgrounds[category]" style="background: {{ item }}" ng-click="send.selectBackground(item)" ng-class="send.selectedBackground == item ? 'active' : ''" class="background-item">
+              <md-grid-tile ng-repeat="(key, item) in send.backgrounds[category]" style="background: {{ item }}" ng-click="send.selectBackground(item)" ng-class="send.selectedBackground == item ? 'active' : ''" class="background-item" ng-init="showDelete=false" ng-mouseenter="showDelete=!showDelete" ng-mouseleave="showDelete=!showDelete">
+                <md-icon ng-click="send.deleteImage($event, item)" ng-if="category == 'user'" ng-show="showDelete" md-font-library="material-icons">remove_circle</md-icon>
                 <md-grid-tile-footer>
-                  <h3>{{ key }}</h3>
+                  <div layout="row" layout-fill layout-align="center center">
+                    <h3>{{ key }}</h3>
+                  </div>
                 </md-grid-tile-footer>
               </md-grid-tile>
             </md-grid-list>
@@ -51,6 +54,9 @@
     <md-switch ng-model="send.darkMode" ng-change="send.toggleDark(send.darkMode)" aria-label="Dark Mode">
       {{'Dark Mode' | translate}}
     </md-switch>
+    <md-button ng-if="send.selectedTab == 0" md-colors="{'background':'primary'}" ng-click="send.upload()">
+      <translate>Upload</translate>
+    </md-button>
     <span flex></span>
     <md-button md-colors="{'background':'primary'}" ng-click="send.save()">
       <translate>Save</translate>

@@ -358,9 +358,26 @@
       toastService.error(formatErrorMessage(error), hideDelay, true);
     }
 
+    function showToast(msg, hideDelay, isError) {
+      if (!hideDelay) {
+        hideDelay = 5000;
+      }
+
+      var toast = $mdToast.simple()
+                  .hideDelay(hideDelay)
+                  .textContent(gettextCatalog.getString(msg))
+
+      if (isError) {
+        toast.theme('error');
+      }
+
+      $mdToast.show(toast);
+    }
+
     function copiedToClipboard() {
       toastService.success('Copied to clipboard');
     }
+
     self.selectAllLanguages = function() {
       return languages;
     }
@@ -1475,7 +1492,10 @@
       var themes = reloadThemes();
       delete themes['dark'];
 
+      var selectedTab = 0;
+
       var backgrounds = {
+        user: {},
         colors: {
           'Midnight': '#2c3e50',
           'Asbestos': '#7f8c8d',
@@ -1498,7 +1518,8 @@
           fs.readdirSync(fullPath).forEach(function(file) {
             var stat = fs.statSync(path.join(fullPath, file)); // to prevent if directory
 
-            if (stat.isFile()) {
+
+            if (stat.isFile() && isImage(file)) {
               var url = path.join(imgPath, folder, file); // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, "/");
               var name = path.parse(file).name; // remove extension
@@ -1508,6 +1529,87 @@
           backgrounds[folder] = image;
         }
       };
+
+      function upload() {
+        var options = {
+          title: "Upload Image",
+          filters: [
+            { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
+          ],
+          properties: ["openFile"]
+        };
+        var userPath = 'assets/images/user/';
+        var dirPath = path.resolve(__dirname, userPath);
+
+        require('electron').remote.dialog.showOpenDialog(options, function(fileName) {
+          if (fileName === undefined) return;
+          fileName = fileName[0]
+
+          var baseName = path.basename(fileName);
+          var newFileName = path.join(dirPath, baseName);
+
+          var readStream = fs.createReadStream(fileName);
+          readStream.on("error", function(err) {
+            toastService.error('Error Adding Background.', 3000);
+            return;
+          });
+
+          var writeStream = fs.createWriteStream(newFileName);
+          writeStream.on("error", function(err) {
+            toastService.error('Error Adding Background.', 3000);
+            return;
+          });
+          writeStream.on("close", function(ex) {
+            toastService.success('Background Added Successfully!', 3000);
+
+            var userImages = backgrounds['user'];
+            var url = path.join(userPath, baseName);
+            url = url.replace(/\\/g, "/");
+            var name = path.parse(newFileName).name;
+            userImages[name] = `url('${url}')`;
+
+            backgrounds['user'] = userImages;
+
+            return;
+          });
+
+          readStream.pipe(writeStream);
+        });
+      }
+
+      function deleteImage(evt, image) {
+        evt.preventDefault();
+        evt.stopPropagation();
+
+        var file = image.substring(5, image.length - 2);
+
+        var imagePath = path.resolve(__dirname, file);
+
+        fs.unlink(imagePath, function(err) {
+          if (err) {
+            toastService.error('Error Removing Background.', 3000);
+          } else {
+            var name = path.parse(file).name;
+            delete backgrounds['user'][name];
+
+            if (image == initialBackground) {
+              selectBackground(backgrounds['images']['Ark']);
+            } else {
+              selectBackground(initialBackground);
+            }
+
+           toastService.success('Background Removed Successfully!', 3000);
+          }
+        });
+      }
+
+      function isImage(file) {
+        var extension = path.extname(file);
+        if (extension == ".jpg" || extension == ".png" || extension == ".gif") {
+          return true;
+        }
+        return false;
+      }
 
       function selectTheme(theme) {
         generateDarkTheme(theme);
@@ -1561,6 +1663,9 @@
         selectedBackground: initialBackground,
         darkMode: initialDarkMode,
         toggleDark: toggleDark,
+        upload: upload,
+        deleteImage: deleteImage,
+        selectedTab: selectedTab
       };
 
       $mdDialog.show({
@@ -1623,7 +1728,6 @@
           self.listNetworks = networkService.getNetworks();
           toastService.success('Network removed succesfully!', 3000);
         });
-
       }
 
       $scope.send = {
