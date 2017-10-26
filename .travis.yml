@@ -1,5 +1,8 @@
 language: node_js
-node_js: "6.9.2"
+node_js:
+    - "node"
+
+os: osx
 
 addons:
   apt:
@@ -8,13 +11,8 @@ addons:
       - libusb-1.0-0-dev
 
 install:
-  - export DISPLAY=':99.0'
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-
-before_script:
   - npm install
 
-  # TODO build?
 
 script:
   # export DISPLAY=:99.0
