@@ -9,45 +9,11 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <style type="text/css">
-    html,
-    body {
-      background-color: #000
-    }
-
-    html {
-      border-radius: 10px;
-    }
-
-    .splash {
-      display: none;
-      overflow-x: hidden;
-    }
-    
-    [ng-cloak].splash {
-      background-color: #06060c;
-      background-image: url("splashscreen.png");
-      background-position: inherit;
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 90vw;
-      height: 90vh;
-      margin: 0 auto;
-      text-align: center;
-      display: block !important;
-      padding: 2em;
-      -webkit-animation: fadein 2s;
-      animation: fadein 2s;
-    }
-
-    .splash__title {
-      color: #FFF;
-      display: block;
-      font-size: 1.2em;
-      font-weight: bold;
-      line-height: 1.4em;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/roboto.css" />
+  <link rel="stylesheet" href="assets/css/material-icons.css" />
+  <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
+  <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/app.css" />
 
 </head>
 
@@ -361,7 +327,7 @@
         </md-list>
       </md-content>
     </div>
-    <!-- 
+    <!--
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
     <div class="coinmarketcap-currency-widget" style="opacity:0.9; border-radius:10px; border:0; width: 360px; margin:10px; background:white;" data-currency="{{ul.network.token}}" data-base="{{ul.currency.name}}" data-secondary="BTC"></div> -->
@@ -450,7 +416,7 @@
                   <translate>Send</translate>
               </md-tooltip>
             </md-button>
-            
+
             <md-button md-no-ink ng-click="ul.exportAccount(ul.selected)" aria-label="Export Account">
               <md-icon md-font-library="material-icons">file_download</md-icon>
               <md-tooltip>
