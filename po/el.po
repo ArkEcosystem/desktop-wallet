@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-09-04 12:36+0000\n"
-"PO-Revision-Date: 2017-09-04 12:36+0000\n"
+"POT-Creation-Date: 2017-10-09 21:49+0000\n"
+"PO-Revision-Date: 2017-10-09 21:49+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: el\n"
@@ -10,9 +10,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-msgid "If you own this account, you can enable Voting"
-msgstr "Εάν σας ανήκει αυτός ο λογαριασμός, μπορείτε να ενεργοποιήσετε την ψηφοφορία"
 
 msgid "Account added!"
 msgstr "Ο λογαριασμός προστέθηκε!"
@@ -22,6 +19,9 @@ msgstr "Ο λογαριασμός διαγράφηκε!"
 
 msgid "Account successfully created:"
 msgstr "Ο λογαριασμός δημιουργήθηκε επιτυχώς:"
+
+msgid "Account successfully imported:"
+msgstr "Ο λογαριασμός που εισάγονται με επιτυχία:"
 
 msgid "Add"
 msgstr "Προσθήκη"
@@ -68,6 +68,9 @@ msgstr "Δεν μπορούν να βρεθούν delegates από αυτόν τ
 msgid "Cannot find delegates on this peer:"
 msgstr "Δεν μπορούν να βρεθούν delegates σε αυτόν τον peer:"
 
+msgid "Cannot get registered delegates"
+msgstr "Δεν είναι δυνατή η εγγραφή εγγεγραμμένων αντιπροσώπων"
+
 msgid "Cannot get sponsors"
 msgstr "Δεν μπορεί να γίνει λήψη χορηγών"
 
@@ -83,8 +86,23 @@ msgstr "Δεν μπορεί να εξακριβωθεί αν ο λογαριασ
 msgid "Change 1h/7h/7d"
 msgstr "Αλλαγή 1h/7h/7d"
 
+msgid "Client"
+msgstr "Πελάτης"
+
 msgid "Close"
 msgstr "Κλείσιμο"
+
+msgid "Coming Soon"
+msgstr "Ερχεται σύντομα"
+
+msgid "Confirm"
+msgstr "Εγκρίνω"
+
+msgid "Contacts"
+msgstr "Γνωριμία"
+
+msgid "Copy"
+msgstr "Aντιγραφή"
 
 msgid "Create"
 msgstr "Δημιουργία"
@@ -125,6 +143,12 @@ msgstr "Διαγράψτε μόνιμα αυτόν τον λογαριασμό"
 msgid "Destination Address"
 msgstr "Διεύθυνση Προορισμού"
 
+msgid "Edit Contact"
+msgstr "Επεξεργασία επαφής"
+
+msgid "Enable Signing"
+msgstr "Ενεργοποίηση Υπογραφή"
+
 msgid "Enable Virtual Folders"
 msgstr "Ενεργοποιήστε τους εικονικούς φακέλους"
 
@@ -140,11 +164,17 @@ msgstr "Σφάλμα:"
 msgid "Exchange"
 msgstr "Ανταλλακτήριο"
 
+msgid "File"
+msgstr "Αρχείο"
+
 msgid "Fee (Ѧ)"
 msgstr "Τέλη"
 
 msgid "Folder Name"
 msgstr "Όνομα φακέλου"
+
+msgid "Force"
+msgstr "Zορίζω"
 
 msgid "From"
 msgstr "Από"
@@ -157,6 +187,12 @@ msgstr "Κατασκευασμένο με ❤ από"
 
 msgid "Height"
 msgstr "Ύψος"
+
+msgid "If you own this account, you can enable Message Signing"
+msgstr "Αν είστε κύριος αυτού του λογαριασμού, μπορείτε να ενεργοποιήσετε την υπογραφή μηνυμάτων"
+
+msgid "If you own this account, you can enable Voting"
+msgstr "Εάν σας ανήκει αυτός ο λογαριασμός, μπορείτε να ενεργοποιήσετε την ψηφοφορία"
 
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Αν σας ανήκει αυτός ο λογαριασμός, μπορείτε να ενεργοποιήσετε τους εικονικούς φακέλους. Οι εικονικοί φάκελοι είναι απλοί υπολογαριασμοί με σκοπό την καλύτερη οργάνωση των χρημάτων σας, χωρίς να χρειάζεται να στείλετε μια πραγματική συναλλαγή και να πληρώσετε τέλη. <br> Επιπλέον, αυτός ο λογαριασμός θα μετακινηθεί κάτω από την λίστα \"Οι λογαριασμοί μου\"."
@@ -182,11 +218,17 @@ msgstr "Σύνδεση"
 msgid "Manage Networks"
 msgstr "Διαχείριση Δικτύων"
 
+msgid "Market"
+msgstr "Αγορά"
+
 msgid "Market Cap."
 msgstr "Κεφαλαιοποίηση"
 
 msgid "Maximize"
 msgstr "Μεγιστοποίηση"
+
+msgid "Message"
+msgstr "Μήνυμα"
 
 msgid "Minify"
 msgstr "Ελαχιστοποίηση"
@@ -194,8 +236,17 @@ msgstr "Ελαχιστοποίηση"
 msgid "My Accounts"
 msgstr "Οι λογαριασμοί μου"
 
+msgid "Name"
+msgstr "Ονομα"
+
 msgid "Network"
 msgstr "Δίκτυο"
+
+msgid "Network removed succesfully!"
+msgstr "Δίκτυο αφαιρεθεί με επιτυχία!"
+
+msgid "New version available!"
+msgstr "Νέα έκδοση διαθέσιμη!"
 
 msgid "Network connected and healthy!"
 msgstr "Δίκτυο συνδεδεμένο και υγιές!"
@@ -221,8 +272,14 @@ msgstr "Δεν υπάρχουν αρκετά ARK στον λογαριασμό"
 msgid "OffChain"
 msgstr "Εκτός αλυσίδας"
 
+msgid "Ok"
+msgstr "Εντάξει"
+
 msgid "Open Delegate Monitor"
 msgstr "Ανοίξτε το monitor των delegate"
+
+msgid "Open File"
+msgstr "Ανοιγμα αρχείου"
 
 msgid "Optional"
 msgstr "Προαιρετικό"
@@ -251,6 +308,12 @@ msgstr "Οι passphrases αποθηκεύτηκαν"
 msgid "Peer"
 msgstr "Peer"
 
+msgid "Peer Status"
+msgstr "Κατάσταση ομότιμου χρήστη"
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Επιλέξτε ένα αρχείο με χρονοσήμανση στο blockchain."
+
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Παρακαλώ αποθηκεύστε ασφαλώς την passphrase, αυτός ο client-δέκτης ΔΕΝ την αποθηκεύει και γι'αυτό δεν μπορεί να την ανακτήσει"
 
@@ -265,6 +328,9 @@ msgstr "Παρακαλώ εισάγετε μία σύντομη ετικέτα"
 
 msgid "Please enter this account passphrase to login."
 msgstr "Παρακαλώ εισάγετε την passphrase αυτού του λογαριασμού για να συνδεθείτε."
+
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Παρακαλούμε πρώτα ΕΠΑΝΑΣΚΟΛΟΥΘΗΣΤΕ ΤΟ ΠΑΘΟΣ ΑΣΦΑΛΩΣ, αυτός ο πελάτης δεν το αποθηκεύει και επομένως δεν μπορεί να ανακτήσει τη φράση πρόσβασης"
 
 msgid "Price"
 msgstr "Τιμή"
@@ -328,6 +394,9 @@ msgstr "Επιτυχής σύνδεση!"
 
 msgid "The destination address"
 msgstr "Η διεύθυνση προορισμού"
+
+msgid "This account already has a second passphrase:"
+msgstr "Αυτός ο λογαριασμός έχει ήδη μια δεύτερη φράση:"
 
 msgid "This account has never interacted with the network. This is a cold wallet."
 msgstr "Αυτός ο λογαριασμός δεν έχει αλληλεπιδράσει ποτέ με το δίκτυο. Είναι ένα αδρανές πορτοφόλι."
@@ -400,4 +469,7 @@ msgstr "Χρειάζεστε τουλάχιστον 1 ARK για να ψηφίσ
 
 msgid "you need at least 25 ARK to register delegate"
 msgstr "Χρειάζεστε τουλάχιστον 25 ARK για να κατοχυρώσετε έναν delegate"
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "χρειάζεστε τουλάχιστον 5 ARK για να δημιουργήσετε μια δεύτερη φράση πρόσβασης"
 

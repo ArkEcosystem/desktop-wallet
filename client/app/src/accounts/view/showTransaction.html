@@ -1,4 +1,4 @@
-<md-dialog aria-label="Transaction" ng-cloak md-theme="ul.network.theme">
+<md-dialog aria-label="Transaction" ng-cloak md-theme="ul.currentTheme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -16,12 +16,12 @@
             <b>ID</b> <span class="md-secondary">{{validate.transaction.id}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>Type</b> <span class="md-secondary">{{validate.transaction.type}}</span>
+            <b translate>Type</b> <span class="md-secondary">{{validate.label}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>From</b> <span class="md-secondary">{{validate.transaction.senderId}}</span>
           </md-list-item>
-          <md-list-item ng-if="validate.transaction.recipientId">
+          <md-list-item ng-if="validate.transaction.type==0">
             <b translate>To</b> <span class="md-secondary">{{validate.transaction.recipientId}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.username">

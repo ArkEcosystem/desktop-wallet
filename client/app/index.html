@@ -9,42 +9,59 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <link rel="stylesheet" href="assets/css/roboto.css" />
-  <link rel="stylesheet" href="assets/css/material-icons.css" />
-  <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
-  <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="assets/app.css" />
-
   <style type="text/css">
     html,
     body {
       background-color: #000
     }
-    
+
     html {
       border-radius: 10px;
     }
-    /**
-         * Hide when Angular is not yet loaded and initialized
-         */
+
+    .splash {
+      display: none;
+      overflow-x: hidden;
+    }
     
-    [ng\:cloak],
-    [ng-cloak],
-    [data-ng-cloak],
-    [x-ng-cloak],
-    .ng-cloak,
-    .x-ng-cloak {
-      display: none !important;
+    [ng-cloak].splash {
+      background-color: #06060c;
+      background-image: url("splashscreen.png");
+      background-position: inherit;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 90vw;
+      height: 90vh;
+      margin: 0 auto;
+      text-align: center;
+      display: block !important;
+      padding: 2em;
+      -webkit-animation: fadein 2s;
+      animation: fadein 2s;
+    }
+
+    .splash__title {
+      color: #FFF;
+      display: block;
+      font-size: 1.2em;
+      font-weight: bold;
+      line-height: 1.4em;
     }
   </style>
 
 </head>
 
-<body style="background:{{ul.network.background}};background-position:center" ng-style="ul.network.background.match('textures') ? {'background-repeat': 'repeat'} : {'background-size': 'cover'}" id="app" ng-app="arkApp" layout="column" ng-controller="AccountController as ul"
-  ng-cloak md-theme="ul.network.theme">
-  <md-toolbar style="background-color: rgba(0, 0, 0, 0)">
+<body id="app" ng-app="arkclient" layout="column" ng-controller="AccountController as ul" md-theme="ul.currentTheme" background-style="ul.network.background" class="too-pale-background">
+  <div class="splash" ng-cloak="">
+    <div class="splash__title">
+      <p translate>Loading...</p>
+    </div>
+  </div>
+
+  <div ng-cloak="" style="height: 100%" layout="column">
+  <md-toolbar class="navbar" style="background-color: rgba(0, 0, 0, 0)" >
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
-      <img src="ark.png" alt="" height="30">
+      <img src="ark.png" alt="" height="40">
       <md-button ng-click="ul.selected?ul.selected=null:ul.selected=ul.accounts[0]"><strong>{{ul.network.token}} <translate>Client</translate> - {{ul.clientVersion}}</strong></md-button>
       <md-button class="new-version-button" ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' aria-label="New version available!">
         <translate>New version available!</translate>
@@ -65,9 +82,9 @@
             <md-icon md-font-library="material-icons">wifi</md-icon>
           </md-button>
           <md-menu-content flex width="3">
-            <md-menu-item ng-repeat="(name, prop) in ul.listNetworks">
-              <md-button ng-click="ul.switchNetwork(name, true)" md-colors="((ul.context == name) && {color:'primary'} || {color:'background-900'})">{{ name | uppercase }} ({{ prop.token }})</md-button>
-            </md-menu-item>
+            <md-list-item ng-repeat="(name, prop) in ul.listNetworks" ng-click="ul.switchNetwork(name, true)">
+              <span md-colors="((ul.context == name) && {color:'{{ul.currentTheme}}-primary'})">{{ name | uppercase }} ({{ prop.token }})</span>
+            </md-list-item>
           </md-menu-content>
         </md-menu>
       </any>
@@ -81,60 +98,54 @@
           <md-button aria-label="Show Settings" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">settings</md-icon>
           </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 430px; overflow:hidden;">
+          <md-menu-content flex layout-padding width="6" style="min-height: 540px; overflow:hidden;">
             <md-list class="left-list">
               <md-list-item>
-                <md-button ng-disabled="true">
-                  <md-icon>attach_money</md-icon>
-                  <label translate>Currency</label>
-                </md-button>
-                <md-select style="margin: 0;text-transform: uppercase" class="md-secondary" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
+                <md-icon>attach_money</md-icon>
+                <p translate>Currency</p>
+                <md-select aria-label="Currency" class="currency md-secondary md-no-underline" ng-model="ul.currency" ng-init="ul.currency" id="price-list" ng-change="ul.changeCurrency()">
                   <md-option ng-value="opt" ng-repeat="opt in ul.currencies track by opt.symbol" style="text-transform: uppercase">{{ opt.name }}</md-option>
                 </md-select>
               </md-list-item>
               <md-list-item>
-                <md-button ng-disabled="true">
-                  <md-icon>flag</md-icon>
-                  <label translate>Language</label>
-                </md-button>
-                <md-select style="margin: 0" class="md-secondary" ng-model="selectedLanguage" ng-init="selectedLanguage = ul.getLanguage()" ng-change="setLanguage()">
+                <md-icon>flag</md-icon>
+                <p translate>Language</p>
+                <md-select aria-label="Language" class="md-secondary md-no-underline" ng-model="ul.selectedLanguage" ng-init="ul.selectedLanguage = ul.getLanguage()" ng-change="ul.setLanguage()">
                   <md-option ng-value="language" ng-repeat="language in ul.selectAllLanguages()">{{language}}</md-option>
                 </md-select>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Import Account" ng-click="ul.importAccount()">
-                  <md-icon>file_download</md-icon>
-                  <translate>Import Account</translate>
-                </md-button>
+              <md-list-item aria-label="Play sound when receiving transactions?">
+                <md-icon>music_note</md-icon>
+                <p translate>Play sound when receiving transactions?</p>
+                <md-switch ng-model="ul.playFundsReceivedSound" class="md-primary" md-no-ink aria-label="Play sound when receiving transactions?" ng-change="ul.togglePlayFundsReceivedSound()" ng-init="ul.togglePlayFundsReceivedSound()"></md-switch>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Create Account" ng-click="ul.createAccount()">
-                  <md-icon>account_box</md-icon>
-                  <translate>Create Account</translate>
-                </md-button>
+              <md-list-item aria-label="Refresh accounts automatically?">
+                <md-icon>autorenew</md-icon>
+                <p translate>Refresh accounts automatically?</p>
+                <md-switch ng-model="ul.refreshAccountsAutomatically" class="md-primary" md-no-ink aria-label="Refresh accounts automatically?" ng-change="ul.toggleRefreshAccountsAutomatically()" ng-init="ul.toggleRefreshAccountsAutomatically()"></md-switch>
               </md-list-item>
-              <md-list-item ng-controller="AddressbookController as ab">
-                <md-button class="md-button" ng-click="ab.addAddressbookContact()">
-                  <md-icon md-font-library="material-icons">library_add</md-icon>
-                  <translate>Add Contact</translate>
-                </md-button>
+              <hr>
+              <md-list-item aria-label="Import Account" ng-click="ul.importAccount()">
+                <md-icon>file_download</md-icon>
+                <p translate>Import Account</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Manage Networks" ng-click="ul.manageNetworks()">
-                  <md-icon>network_check</md-icon>
-                  <translate>Manage Networks</translate>
-                </md-button>
+              <md-list-item aria-label="Create Account" ng-click="ul.createAccount()">
+                <md-icon>account_box</md-icon>
+                <p translate>Create Account</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Appearance" ng-click="ul.manageBackgrounds()">
-                  <md-icon>landscape</md-icon>
-                  <translate>Appearance</translate>
-                </md-button>
+              <md-list-item aria-label="Add Contact" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
+                <md-icon md-font-library="material-icons">library_add</md-icon>
+                <p translate>Add Contact</p>
               </md-list-item>
-              <md-list-item>
-                <md-switch ng-model="ul.playFundsReceivedSong" class="md-primary" md-no-ink arial-label="Play song when receive funds?" ng-change="ul.togglePlayFundsReceivedSong()" ng-init="ul.togglePlayFundsReceivedSong()">Play song when receive funds?</md-switch>
+              <md-list-item aria-label="Manage Networks" ng-click="ul.manageNetworks()">
+                <md-icon>network_check</md-icon>
+                <p translate>Manage Networks</p>
               </md-list-item>
-              <md-list>
+              <md-list-item aria-label="Appearance" ng-click="ul.manageBackgrounds()">
+                <md-icon>landscape</md-icon>
+                <p translate>Appearance</p>
+              </md-list-item>
+            </md-list>
           </md-menu-content>
         </md-menu>
       </any>
@@ -184,7 +195,7 @@
                   <b><translate>Price</translate></b>
                 </div>
 
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
+                <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name] | formatCurrency:ul}}</span>
               </md-list-item>
               <md-list-item>
                 <b translate>Change 1h/7h/7d</b>
@@ -199,7 +210,7 @@
                   <b><translate>Market Cap.</translate></b>
                 </div>
 
-                <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+                <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | formatCurrency:ul}}</span>
               </md-list-item>
               <md-list-item ng-show="ul.connectedPeer.market.isOffline">
                 <b translate>Last checked</b> <span class="md-secondary">
@@ -217,43 +228,31 @@
           <md-button aria-label="Application State" ng-click="ul.openMenu($mdMenu.open, $event)">
             <md-icon md-font-library="material-icons">power_settings_new</md-icon>
           </md-button>
-          <md-menu-content flex layout-padding width="6" style="min-height: 320px">
-            <md-list>
-              <md-list-item>
-                <md-button aria-label="Close App" ng-click="ul.closeApp()" id="exit-app-button">
-                  <md-icon>exit_to_app</md-icon>
-                  <translate>Quit</translate>
-                </md-button>
+          <md-menu-content flex layout-padding width="6" style="min-height: 340px; overflow:hidden;">
+            <md-list class="left-list">
+              <md-list-item aria-label="Close App" ng-click="ul.closeApp()" id="exit-app-button">
+                <md-icon>exit_to_app</md-icon>
+                <p translate>Quit</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Restart App" ng-click="ul.windowApp('reload')">
-                  <md-icon>refresh</md-icon>
-                  <translate>Restart</translate>
-                </md-button>
+              <md-list-item aria-label="Restart App" ng-click="ul.windowApp('reload')">
+                <md-icon>refresh</md-icon>
+                <p translate>Restart</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
-                  <md-icon>vertical_align_bottom</md-icon>
-                  <translate>Minimize</translate>
-                </md-button>
+              <md-list-item aria-label="Minimize App" ng-click="ul.windowApp('minimize')">
+                <md-icon>vertical_align_bottom</md-icon>
+                <p translate>Minimize</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
-                  <md-icon>open_with</md-icon>
-                  <translate>Maximize</translate>
-                </md-button>
+              <md-list-item aria-label="Maximize App" ng-click="ul.windowApp('maximize')">
+                <md-icon>open_with</md-icon>
+                <p translate>Maximize</p>
               </md-list-item>
-              <md-list-item>
-                <md-button md-colors="((ul.windowApp('isFullScreen')) && {background: 'accent'} || '')" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
-                  <md-icon>fullscreen</md-icon>
-                  <translate>Toggle Full Screen</translate>
-                </md-button>
+              <md-list-item md-colors="((ul.windowApp('isFullScreen')) && {background: 'accent'} || '')" aria-label="Full Screen App" ng-click="ul.windowApp('setFullScreen', !ul.windowApp('isFullScreen'))">
+                <md-icon>fullscreen</md-icon>
+                <p translate>Toggle Full Screen</p>
               </md-list-item>
-              <md-list-item>
-                <md-button aria-label="Reset Data" ng-click="ul.clearData()">
-                  <md-icon>delete_forever</md-icon>
-                  <translate>Reset Data</translate>
-                </md-button>
+              <md-list-item aria-label="Reset Data" ng-click="ul.clearData()">
+                <md-icon>delete_forever</md-icon>
+                <p translate>Reset Data</p>
               </md-list-item>
             </md-list>
           </md-menu-content>
@@ -271,10 +270,10 @@
       <md-toolbar layout="row" md-scroll-shrink>
         <div class="md-toolbar-tools">
           <h2>
-            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.currency.symbol}}{{(ul.myAccountsBalance()*(ul.connectedPeer.market.price[ul.currency.name] || 0)).toFixed(2)}}
+            <translate>My Accounts</translate> {{ul.network.symbol}}{{ul.myAccountsBalance()}} / {{ul.myAccountsCurrencyBalance() | formatCurrency:ul}}
           </h2>
           <span flex></span>
-          <md-button class="share" md-no-ink ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
+          <md-button class="share" ng-click="ul.refreshAccountBalances()" aria-label="Refresh balances">
             <md-icon md-font-library="material-icons">cached</md-icon>
           </md-button>
         </div>
@@ -324,14 +323,14 @@
     </div>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list>
           <md-list-item>
             <div>
               <b><translate>Price</translate></b>
             </div>
 
-            <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.price[ul.currency.name]}}</span>
+            <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name] | formatCurrency:ul}}</span>
           </md-list-item>
           <md-list-item>
             <b translate>Change 1h/7h/7d</b>
@@ -342,11 +341,11 @@
             </span>
           </md-list-item>
           <md-list-item>
-            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.currency.symbol}}{{ul.connectedPeer.market.marketCap[ul.currency.name] | number:0}}</span>
+            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | formatCurrency:ul}}</span>
           </md-list-item>
         </md-list>
       </md-content>
-      <md-content id="home-box-network" style="opacity:0.8; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+      <md-content id="home-box-network" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
         <md-list flex>
           <md-list-item>
             <b translate>Network</b>
@@ -362,9 +361,10 @@
         </md-list>
       </md-content>
     </div>
-
+    <!-- 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-    <div class="coinmarketcap-currency-widget" data-currency="ark" data-base="USD" data-secondary="BTC"></div>
+    <div class="coinmarketcap-currency-widget" style="opacity:0.9; border-radius:10px; border:0; width: 360px; margin:10px; background:white;" data-currency="{{ul.network.token}}" data-base="{{ul.currency.name}}" data-secondary="BTC"></div> -->
     <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
     <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
 
@@ -373,17 +373,17 @@
     </div>
   </div>
 
-  <div class="account-view" ng-if="ul.selected" layout="column" flex>
+  <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
     <md-content flex layout="row">
 
       <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
-        <md-list md-no-ink ng-controller="AddressbookController as ab">
+        <md-list md-no-ink>
           <md-list-item ng-if="ul.ledger.connected">
             <h2 translate>
               Ledger Nano S
             </h2>
           </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
+          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
             <span style="white-space: nowrap;">
                   <md-icon md-svg-icon="ledger"></md-icon>
                   {{it.address|accountlabel}}
@@ -397,7 +397,7 @@
               My Accounts
             </h2>
           </md-list-item>
-          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
             <span style="white-space: nowrap;">
                   <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
                   <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
@@ -410,22 +410,22 @@
               Contacts
             </h2>
           </md-list-item>
-          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'default-grey-A100')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
+          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
             <span style="white-space: nowrap;">
               <md-icon md-font-library="material-icons">account_circle</md-icon>
               {{contact.name}}
               <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
                 info_outline
                 <md-tooltip md-direction="bottom" class="tooltip-multiline">
-                  {{'Income' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'transactions' | translate}})
+                  {{'Expense' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
                   <br>
-                  {{'Expend' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'transactions' | translate}})
+                  {{'Income' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
                 </md-tooltip>
               </md-icon>
             </span>
           </md-list-item>
           <md-list-item>
-            <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
+            <md-button class="watch-only-address" ng-click="ab.addAddressbookContact()">
               <md-icon md-font-library="material-icons">add</md-icon>
               <translate>Add Contact</translate>
 
@@ -434,20 +434,43 @@
         </md-list>
       </md-sidenav>
 
-      <md-content flex id="content">
-        <md-card>
-          <div class="share" ng-if="ul.selected.virtual">
-            <md-button md-no-ink ng-click="ul.sendArk(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
-              <md-icon md-font-library="material-icons">send</md-icon>
+      <md-content flex layout="column" id="content">
+        <md-card flex="none">
+          <div class="share">
+            <md-button ng-if="!ul.refreshAccountsAutomatically" md-no-ink ng-click="ul.refreshCurrentAccount()" aria-label="Refresh Account">
+              <md-icon md-font-library="material-icons">cached</md-icon>
+              <md-tooltip>
+                <translate>Refresh Account</translate>
+              </md-tooltip>
             </md-button>
-            <md-button md-no-ink ng-click="ul.showAccountMenu(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
+
+            <md-button ng-if="ul.selected.virtual" md-no-ink ng-click="ul.sendArk(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
+              <md-icon md-font-library="material-icons">send</md-icon>
+              <md-tooltip>
+                  <translate>Send</translate>
+              </md-tooltip>
+            </md-button>
+            
+            <md-button md-no-ink ng-click="ul.exportAccount(ul.selected)" aria-label="Export Account">
+              <md-icon md-font-library="material-icons">file_download</md-icon>
+              <md-tooltip>
+                <translate>Export Account</translate>
+              </md-tooltip>
+            </md-button>
+
+            <span>
+              <md-button md-no-ink ng-if="!ul.selected.virtual || ab.getContactFromAddress(ul.selected.address)" ng-click="ab.editAddressbookContact(ul.selected.address)" aria-label="Share with {{ ul.selected.address }}">
+                <md-icon md-font-library="material-icons">edit</md-icon>
+                <md-tooltip>
+                    <translate>Edit Contact</translate>
+                </md-tooltip>
+              </md-button>
+            </span>
+
+            <md-button ng-if="ul.selected.virtual" md-no-ink ng-click="ul.showAccountMenu(ul.selected)" aria-label="Share with {{ ul.selected.address }}">
               <md-icon md-font-library="material-icons">more_vert</md-icon>
             </md-button>
-          </div>
-          <div class="share" ng-if="!ul.selected.virtual" ng-controller="AddressbookController as ab">
-            <md-button md-no-ink ng-click="ab.editAddressbookContact(ul.selected.address)" aria-label="Share with {{ ul.selected.address }}">
-              <md-icon md-font-library="material-icons">edit</md-icon>
-            </md-button>
+
           </div>
           <md-card-title>
             <md-card-title-media>
@@ -460,10 +483,14 @@
                   <!--<md-button class="md-fab md-primary md-mini" ng-click="ul.openPassphrasesDialog(ul.selected)">
                     <md-icon md-font-library="material-icons">lock</md-icon>
                   </md-button>-->
-                  <span class="delegate-name" ng-controller="AddressbookController as ab">{{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}</span>
+                  <span class="delegate-name">{{ab.getContactFromAddress(ul.selected.address).name || ul.selected.username || 'Address'}} {{ul.selected.ledger}}</span>
               <br>
               <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}">
-                <md-icon>content_copy</md-icon> {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
+                <md-icon>content_copy</md-icon>
+                <md-tooltip md-direction="top">
+                  <translate>Copy {{((ul.showPublicKey) && 'public key' || 'address')}}</translate>
+                </md-tooltip>
+                {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
               </md-button>
               <md-icon ng-if="ul.selected.publicKey" aria-label="Address" style="cursor: pointer;outline: none" ng-click="ul.showPublicKey = !ul.showPublicKey" md-font-library="material-icons">
                 <md-tooltip md-direction="top">
@@ -473,58 +500,69 @@
               </md-icon>
               </span>
               <span class="md-subhead description">
-                  <translate>Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
-                  <md-button ng-click="ul.changeCurrency()">{{ul.currency.symbol}} {{(ul.selected.balance/100000000*ul.connectedPeer.market.price[ul.currency.name]).toFixed(4)}}</md-button>
+                  <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
+                  <md-button ng-click="ul.selectNextCurrency()">{{ul.myAccountsCurrencyBalance() | formatCurrency:ul}}</md-button>
                 </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
 
 
-        <md-tabs md-dynamic-height>
-          <md-tab label="{{'Transactions'|translate}}">
-
-            <md-table-container flex="100">
-              <table md-table id="tx-list">
-                <thead md-head md-order="query.order">
-                  <tr md-row>
-                    <th md-column md-numeric>
-                      <translate>Id</translate>
-                    </th>
-                    <th md-column md-numeric>
-                      <translate>Confirmations</translate>
-                    </th>
-                    <th md-column md-numeric md-order-by="timestamp">
-                      <translate>Date</translate>
-                    </th>
-                    <th md-column md-numeric md-order-by="total">
-                      <translate>Total</Translate> {{ul.network.symbol}}</th>
-                    <th md-column md-numeric translate>From</th>
-                    <th md-column md-numeric translate>To</th>
-                    <th md-column translate>Smartbridge</th>
-                  </tr>
-                </thead>
-                <tbody md-body style="white-space:nowrap;">
-                  <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in ul.selected.transactions | orderBy: query.order">
-                    <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)">{{it.id | smallId}}</a></td>
-                    <td md-cell>{{it.confirmations}}</td>
-                    <td md-cell>{{it.date | date: 'short'}}</td>
-                    <td ng-if="it.total>=0" md-cell>
-                      <md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button>
-                    </td>
-                    <td ng-if="it.total<0" md-cell>
-                      <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
-                    </td>
-                    <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)">{{it.senderId | accountlabel}}</a></td>
-                    <td md-cell>
-                      <a href="" ng-if="it.type==0" ng-click="ul.gotoAddress(it.recipientId)">{{it.recipientId | accountlabel}}</a>
-                      <span ng-if="it.type>0">{{it.label}}</span>
-                    </td>
-                    <td md-cell>{{it.vendorField}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </md-table-container>
+        <md-tabs flex="100">
+          <div ng-controller="AccountTransactionsController as transactionsCtrl">
+            <md-tab label="{{'Transactions'|translate}}">
+              <md-table-container flex="100" class="tx-list-container">
+                <table md-table id="tx-list">
+                  <thead md-head md-order="query.order">
+                    <tr md-row>
+                      <th md-column md-numeric>
+                        <translate>Id</translate>
+                      </th>
+                      <th md-column md-numeric>
+                        <translate>Confirmations</translate>
+                      </th>
+                      <th md-column md-numeric md-order-by="timestamp">
+                        <translate>Date</translate>
+                      </th>
+                      <th md-column md-numeric md-order-by="total">
+                        <translate>Total</Translate> {{ul.network.symbol}}</th>
+                      <th md-column md-numeric translate>From</th>
+                      <th md-column md-numeric translate>To</th>
+                      <th md-column translate>Smartbridge</th>
+                    </tr>
+                  </thead>
+                  <tbody md-body style="white-space:nowrap;" infinite-scroll="transactionsCtrl.loadNext()" infinite-scroll-disabled='transactionsCtrl.isBusy' infinite-scroll-container='".tx-list-container"'>
+                    <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in transactionsCtrl.transactions | orderBy: query.order | limitTo: transactionsCtrl.pageSize track by it.id">
+                      <td md-cell><a href="" ng-click="ul.openExplorer('/tx/'+it.id)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.id | smallId}}</a></td>
+                      <td md-cell ng-if="it.confirmations <= 50">{{it.confirmations}}</td>
+                      <td md-cell ng-if="it.confirmations > 50">
+                        <translate>Well Confirmed</translate>
+                        <md-tooltip>{{it.confirmations | number: 0}} <translate>Confirmations</translate></md-tooltip>
+                      </td>
+                      <td md-cell>{{it.date | date: 'short'}}</td>
+                      <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
+                        <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount/100000000)) + ' / -' + (it.fee/100000000) }}</md-button>
+                      </td>
+                      <td ng-if="it.type>0" md-cell>
+                        <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{it.humanTotal}}</md-button>
+                      </td>
+                      <td ng-if="it.total>=0 && it.recipientId!=it.senderId" md-cell>
+                        <md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button>
+                      </td>
+                      <td ng-if="it.total<0 && it.recipientId!=it.senderId && it.type==0" md-cell>
+                        <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
+                      </td>
+                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.senderId)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.senderId | accountlabel}}</a></td>
+                      <td md-cell>
+                        <a href="" ng-if="it.type==0" ng-click="ul.gotoAddress(it.recipientId)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.recipientId | accountlabel}}</a>
+                        <span ng-if="it.type>0">{{it.label}}</span>
+                      </td>
+                      <td md-cell>{{it.vendorField}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+            </div>
           </md-tab>
 
 
@@ -546,7 +584,7 @@
                     <translate>
                       If you own this account, you can enable Voting
                     </translate><br>
-                    <md-button ng-click="ul.createFolder(ul.selected)">
+                    <md-button ng-click="ul.manageFolder(ul.selected)">
                       <translate>Enable Votes</translate>
                     </md-button>
                   </md-card-title-text>
@@ -578,7 +616,7 @@
                     <tr md-row ng-repeat="it in ul.selected.delegates | orderBy: query.order">
                       <td md-cell>{{it.rate}}</td>
                       <td md-cell>{{it.username}}</td>
-                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
+                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
                       <td md-cell>{{it.approval}}%</td>
                       <td md-cell>{{it.productivity}}%</td>
                     </tr>
@@ -620,7 +658,7 @@
                     <tr md-row md-select="it" md-select-id="id" md-auto-select ng-repeat="it in ul.getAllDelegates(ul.selected) | orderBy: query.order">
                       <td md-cell>{{it.rate}}</td>
                       <td md-cell>{{it.username}}</td>
-                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)">{{it.address}}</a></td>
+                      <td md-cell><a href="" ng-click="ul.gotoAddress(it.address)" md-colors="::{color: '{{ ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
                       <td md-cell>{{it.approval}}%</td>
                       <td md-cell>{{it.productivity}}%</td>
                     </tr>
@@ -636,7 +674,7 @@
             </md-tab-body>
           </md-tab>
 
-          <md-tab>
+          <md-tab ng-if="!ul.selected.ledger">
             <md-tab-label>
               <translate>Sign / Verify Message</translate>
             </md-tab-label>
@@ -653,7 +691,7 @@
                     <translate>
                       If you own this account, you can enable Message Signing
                     </translate><br>
-                    <md-button ng-click="ul.createFolder(ul.selected)">
+                    <md-button ng-click="ul.manageFolder(ul.selected)">
                       <translate>Enable Signing</translate>
                     </md-button>
                   </md-card-title-text>
@@ -934,7 +972,7 @@
                           If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under
                           the "My Accounts" list.
                         </translate>
-                        <md-button ng-click="ul.createFolder(ul.selected)">
+                        <md-button ng-click="ul.manageFolder(ul.selected)">
                           <translate>Enable Virtual Folders</translate>
                         </md-button>
                       </md-card-title-text>
@@ -964,7 +1002,7 @@
                           </md-button>
                         </md-menu-item>
                         <md-menu-item>
-                          <md-button ng-click="ul.renameVirtuaFolder(folder)">
+                          <md-button ng-click="ul.manageFolder(ul.selected, folder)">
                             <translate>Rename</translate>
                           </md-button>
                         </md-menu-item>
@@ -981,7 +1019,7 @@
 
                 </md-list-item>
                 <md-list-item ng-if="ul.selected.virtual">
-                  <md-button ng-click="ul.createFolder(ul.selected)">
+                  <md-button ng-click="ul.manageFolder(ul.selected)">
                     <translate>Create a new virtual folder</translate>
                   </md-button>
                 </md-list-item>
@@ -1025,24 +1063,42 @@
 
 
       </md-content>
+    </div>
   </div>
+  
+  <link rel="stylesheet" href="assets/css/roboto.css" />
+  <link rel="stylesheet" href="assets/css/material-icons.css" />
+  <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
+  <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/app.css" />
 
   <script src="dependencies.min.js"></script>
+  <script src="src/utils/translations.js"></script>
 
-  <script src="src/translations.js"></script>
-  <script src="src/accounts/Accounts.js"></script>
-  <script src="src/storage/StorageService.js"></script>
-  <script src="src/accounts/AccountService.js"></script>
-  <script src="src/accounts/AccountController.js"></script>
-  <script src="src/network/NetworkService.js"></script>
-  <script src="src/changer/ChangerService.js"></script>
-  <script src="src/ledger/LedgerService.js"></script>
-  <script src="src/directives.js"></script>
-  <script src="src/qrscanner/ScannerController.js"></script>
-  <script src="src/qrscanner/qrScanner.js"></script>
-  <script src="src/Addressbook/AddressbookController.js"></script>
-  <script src="src/time/TimeService.js"></script>
+  <script src="src/init.js"></script>
+  <script src="src/filters/filters.js"></script>
 
+  <script src="src/addons/pluginLoader.addon.js"></script>
+
+  <script src="src/services/config.service.js"></script>
+  <script src="src/services/storage.service.js"></script>
+  <script src="src/services/network.service.js"></script>
+  <script src="src/services/changer.service.js"></script>
+  <script src="src/services/ledger.service.js"></script>
+  <script src="src/services/time.service.js"></script>
+  <script src="src/services/toast.service.js"></script>
+
+  <script src="src/accounts/account.service.js"></script>
+  <script src="src/accounts/account-transactions.controller.js"></script>
+  <script src="src/accounts/account.controller.js"></script>
+
+  <script src="src/directives/validAmount.directive.js"></script>
+  <script src="src/directives/copyToClipboard.directive.js"></script>
+  <script src="src/directives/backgroundStyle.directive.js"></script>
+
+  <script src="src/components/qrScanner/qrScanner.controller.js"></script>
+  <script src="src/components/qrScanner/qrScanner.directive.js"></script>
+  <script src="src/components/addressbook/addressbook.controller.js"></script>
 
   <script src="app.js"></script>
 

@@ -1,4 +1,4 @@
-<md-dialog aria-label="Create Account" ng-cloak md-theme="ul.network.theme">
+<md-dialog aria-label="Create Account" ng-cloak md-theme="ul.currentTheme">
   <form name="createAccountForm" ng-submit="createAccountDialog.next()">
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -15,7 +15,7 @@
           <md-card-title>
             <md-card-title-text>
               <span>
-                <translate>Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase</translate>
+                <translate>Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!</translate>
               </span>
             </md-card-title-text>
           </md-card-title>

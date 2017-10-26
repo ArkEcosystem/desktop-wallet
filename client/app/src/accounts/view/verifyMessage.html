@@ -1,5 +1,4 @@
-<md-dialog aria-label="Verify Message" ng-cloak md-theme="ul.network.theme">
-  <form>
+<md-dialog aria-label="Verify Message" ng-cloak md-theme="ul.currentTheme">
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2 translate>Verify Message</h2>
@@ -9,29 +8,67 @@
         </md-button>
       </div>
     </md-toolbar>
-    <md-dialog-content>
-      <div class="md-dialog-content">
-        <md-input-container class="md-block">
-          <label translate>Message</label>
-          <input ng-model="verify.message" ng-required="true" type="text">
-        </md-input-container>
-        <md-input-container class="md-block">
-          <label translate>Public Key</label>
-          <input ng-model="verify.publickey" ng-required="true" type="text">
-        </md-input-container>
-        <md-input-container class="md-block">
-          <label translate>Signature</label>
-          <input ng-model="verify.signature" ng-required="true" type="text">
-        </md-input-container>
-      </div>
-    </md-dialog-content>
-    <md-dialog-actions layout="row">
-      <md-button ng-click="verify.verify()" md-colors="{background:'primary'}">
-        <translate>Verify</translate>
-      </md-button>
-      <md-button ng-click="verify.cancel()" style="margin-right:20px;">
-        <translate>Close</translate>
-      </md-button>
-    </md-dialog-actions>
-  </form>
+    <md-tabs>
+      <md-tab>
+        <md-tab-label>
+          <translate>Verify</translate>
+        </md-tab-label>
+        <md-tab-body>
+          <form>
+            <md-dialog-content>
+              <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                  <label translate>Message</label>
+                  <input ng-model="verify.message" ng-required="true" type="text">
+                </md-input-container>
+                <md-input-container class="md-block">
+                  <label translate>Public Key</label>
+                  <input ng-model="verify.publickey" ng-required="true" type="text">
+                </md-input-container>
+                <md-input-container class="md-block">
+                  <label translate>Signature</label>
+                  <input ng-model="verify.signature" ng-required="true" type="text">
+                </md-input-container>
+              </div>
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+              <md-button ng-click="verify.verify()" md-colors="{background:'primary'}">
+                <translate>Verify</translate>
+              </md-button>
+              <md-button ng-click="verify.cancel()" style="margin-right:20px;">
+                <translate>Close</translate>
+              </md-button>
+            </md-dialog-actions>
+          </form>
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>
+          <translate>Verify Text</translate>
+        </md-tab-label>
+        <md-tab-body>
+          <form>
+            <md-dialog-content>
+              <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                  <label translate>Paste the entire signed message:</label>
+                  <input ng-model="verify.message" ng-required="true" type="text">
+                  <div class="hint">
+                    <translate>Format</translate>: 
+                    { "publicKey":"", "signature":"", "message":"" }
+                  </div>
+                </md-input-container>
+              </div>
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+              <md-button ng-click="verify.verifyText()" md-colors="{background:'primary'}">
+                <translate>Verify</translate>
+              </md-button>
+              <md-button ng-click="verify.cancel()" style="margin-right:20px;">
+                <translate>Close</translate>
+              </md-button>
+            </md-dialog-actions>
+          </form>
+        </md-tab-body>
+      </md-tab>
 </md-dialog>

@@ -1,4 +1,4 @@
-<md-dialog class="import-account-dialog" aria-label="Import Account" ng-cloak md-theme="ul.network.theme">
+<md-dialog class="import-account-dialog" aria-label="Import Account" ng-cloak md-theme="ul.currentTheme">
   <form name="importAccountForm" ng-submit="send.save()">
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -19,13 +19,13 @@
           </md-card-title-text>
         </md-card-title>
       </md-card>
-      <div layout-gt-sm="row">
-        <md-input-container class="md-block" md-no-float class="md-block" flex-gt-sm="85">
+      <div layout="row" flex layout-align="start start">
+        <md-input-container flex="5">
+          <qr-scanner input-callback="passphrase"></qr-scanner>
+        </md-input-container>
+        <md-input-container class="md-block" md-no-float class="md-block" flex="95">
           <label translate>Passphrase</label>
           <input ng-model="send.data.passphrase" ng-required="true" type="text" md-autofocus>
-        </md-input-container>
-        <md-input-container class="md-block" flex-gt-sm="15">
-          <qr-scanner input-callback="passphrase" ng-click="openScanner($event)"></qr-scanner>
         </md-input-container>
       </div>
       <!--<md-input-container md-no-float class="md-block">
