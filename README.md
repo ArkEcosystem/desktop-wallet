@@ -1,6 +1,5 @@
+![ARK-DESKTOP](https://cdn-images-1.medium.com/max/2000/1*9pWnoR9qoO6bNLo5-pa-_Q.jpeg)
 [![Build Status](https://travis-ci.org/ArkEcosystem/ark-desktop.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop)
-
-# Multi Platform Ark Lite Client
 
 ## Pinned: Help us translating
 Collaborate to our OneSky project http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
