@@ -19,8 +19,8 @@
         return (amount * price).toFixed(5);
       }
     }).filter('formatCurrency', function() {
-        return function(val, self) {
-            var currencyName = self.currency.name;
+        return function(val, self, forceCurrency) {
+            var currencyName = forceCurrency || self.currency.name;
             var languageCode = self.language.replace('_', '-');
             var options = {
               style: 'currency',

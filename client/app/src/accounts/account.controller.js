@@ -618,9 +618,12 @@
       }, 0) / 100000000).toFixed(2);
     }
 
-    self.myAccountsCurrencyBalance = function() {
+    self.myAccountsCurrencyBalance = function(forceCurrency) {
         var balance = self.myAccountsBalance();
         var currencyName = self.currency.name;
+        if (forceCurrency && self.connectedPeer.market.price[forceCurrency]) {
+          currencyName = forceCurrency;
+        }
         var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
         return balance*price;
     }
