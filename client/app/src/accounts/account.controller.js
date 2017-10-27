@@ -201,7 +201,6 @@
     self.vote = vote;
     self.addDelegate = addDelegate;
     self.showAccountMenu = showAccountMenu;
-    self.selectNextLanguage = selectNextLanguage;
     self.currency = storageService.get("currency") || self.currencies[0];
     self.switchNetwork = networkService.switchNetwork;
     self.marketinfo = {};
@@ -392,15 +391,6 @@
         }
       }
       self.language = getlanguage(this.selectedLanguage);
-      storageService.set("language", self.language);
-      gettextCatalog.setCurrentLanguage(self.language);
-    }
-
-    //TODO: deprecated
-    function selectNextLanguage() {
-      var lkeys = Object.keys(languages);
-      if (self.language) self.language = lkeys[(lkeys.indexOf(self.language) + 1) % lkeys.length];
-      else self.language = "en";
       storageService.set("language", self.language);
       gettextCatalog.setCurrentLanguage(self.language);
     }
