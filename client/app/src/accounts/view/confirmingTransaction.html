@@ -1,0 +1,30 @@
+<md-dialog aria-label="Confirming Transaction" ng-cloak md-theme="ul.network.theme">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>{{ confirmingTransactionTitle || 'Confirming Transaction' }}</span></h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="validate.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-list>
+          <md-list-item>
+            <b>ID</b> <span class="md-secondary">{{validate.transaction.id}}</span>
+          </md-list-item>
+        </md-list>
+      </div>
+      <div layout layout-margin layout-align="center center">
+        <md-progress-circular></md-progress-circular>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="validate.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

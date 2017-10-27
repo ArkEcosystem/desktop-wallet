@@ -1138,23 +1138,62 @@
 
       function next() {
         $mdDialog.hide();
-        var publicKeys = $scope.voteDialog.data.votes.map(function(delegate) {
-          return delegate.vote + delegate.publicKey;
-        }).join(",");
-        console.log(publicKeys);
-        accountService.createTransaction(3, {
-          ledger: selectedAccount.ledger,
-          publicKey: selectedAccount.publicKey,
-          fromAddress: $scope.voteDialog.data.fromAddress,
-          publicKeys: publicKeys,
-          masterpassphrase: $scope.voteDialog.data.passphrase,
-          secondpassphrase: $scope.voteDialog.data.secondpassphrase
-        }).then(
-          function(transaction) {
-            validateTransaction(selectedAccount, transaction);
-          },
-          formatAndToastError
-        );
+        var toRemove = null;
+        var toVote  = [];
+        $scope.voteDialog.data.votes.forEach(function(delegate) {
+          if (delegate.vote === '-') {
+            toRemove = delegate;
+          } else {
+            toVote.push(delegate);
+          }
+        });
+        if (toVote.length > 1) {
+          return formatAndToastError('You can only vote for 1 delegate');
+        }
+
+        var performVote = function() {
+          if (toVote.length < 1) {
+            formatAndToastError('You are trying to submit an empty vote');
+            return;
+          }
+          accountService.createTransaction(3, {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
+            fromAddress: $scope.voteDialog.data.fromAddress,
+            publicKeys: '+' + toVote.pop().publicKey,
+            masterpassphrase: $scope.voteDialog.data.passphrase,
+            secondpassphrase: $scope.voteDialog.data.secondpassphrase
+          }).then(
+            function(transaction) {
+              validateTransaction(selectedAccount, transaction);
+            },
+            formatAndToastError
+          );
+        };
+
+        if (toRemove) {
+          accountService.createTransaction(3, {
+            ledger: selectedAccount.ledger,
+            publicKey: selectedAccount.publicKey,
+            fromAddress: $scope.voteDialog.data.fromAddress,
+            publicKeys: '-' + toRemove.publicKey,
+            masterpassphrase: $scope.voteDialog.data.passphrase,
+            secondpassphrase: $scope.voteDialog.data.secondpassphrase
+          }).then(
+            function(transaction) {
+              var confirmingCallback = null;
+              if (toVote.length) {
+                confirmingCallback = function() {
+                  performVote();
+                };
+              }
+              validateTransaction(selectedAccount, transaction, confirmingCallback);
+            },
+            formatAndToastError
+          );
+        } else {
+          performVote();
+        }
       };
 
 
@@ -2255,7 +2294,7 @@
 
     };
 
-    function validateTransaction(selectedAccount, transaction) {
+    function validateTransaction(selectedAccount, transaction, confirmCallback) {
 
       function saveFile() {
         var fs = require('fs');
@@ -2302,6 +2341,37 @@
               null,
               true
             );
+            if (typeof confirmCallback === 'function') {
+              var checkTransactionTimerId = setInterval(async () => {
+                var url = '/api/transactions/get?id=' + transaction.id;
+                await networkService.getFromPeer(url).then(function(data) {
+                  if (!data.success && data.error !== 'Transaction not found') {
+                    clearInterval(checkTransactionTimerId);
+                    $mdToast.show(
+                      $mdToast.simple()
+                      .textContent(gettextCatalog.getString('Failed to confirm transaction') + ' ' + transaction.id + ': ' + gettextCatalog.getString(data.error))
+                      .hideDelay(5000)
+                      .theme('error')
+                    );
+                  } else if (data.transaction) {
+                    clearInterval(checkTransactionTimerId);
+                    $mdDialog.hide();
+                    confirmCallback();
+                  }
+                });
+              }, 2000);
+              $scope.confirmingTransactionTitle = 'Confirming Unvote Transaction';
+              $mdDialog.show({
+                scope: $scope,
+                preserveScope: true,
+                parent: angular.element(document.getElementById('app')),
+                templateUrl: './src/accounts/view/confirmingTransaction.html',
+                clickOutsideToClose: true,
+                onRemoving: function() {
+                  clearInterval(checkTransactionTimerId);
+                },
+              });
+            }
           },
           formatAndToastError
         );
