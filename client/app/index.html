@@ -488,13 +488,13 @@
               <md-button ng-click="ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}">
                 <md-icon>content_copy</md-icon>
                 <md-tooltip md-direction="top">
-                  <translate>Copy {{((ul.showPublicKey) && 'public key' || 'address')}}</translate>
+                  {{ 'Copy' | translate }} {{ ul.showPublicKey ? ('Public Key' | translate | lowercase) : ('Address' | translate | lowercase) }}</translate>
                 </md-tooltip>
                 {{((!ul.showPublicKey) && ul.selected.address || ul.selected.publicKey)}}
               </md-button>
               <md-icon ng-if="ul.selected.publicKey" aria-label="Address" style="cursor: pointer;outline: none" ng-click="ul.showPublicKey = !ul.showPublicKey" md-font-library="material-icons">
                 <md-tooltip md-direction="top">
-                  <translate>Show {{((!ul.showPublicKey) && 'public key' || 'address')}}</translate>
+                  {{ 'Show' | translate }} {{ !ul.showPublicKey ? ('Public Key' | translate | lowercase) : ('Address' | translate | lowercase) }}</translate>
                 </md-tooltip>
                 {{((!ul.showPublicKey) && 'vpn_key' || 'public')}}
               </md-icon>
