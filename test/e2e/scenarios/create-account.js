@@ -2,20 +2,19 @@
 
 const hooks = require('../hooks')
 
-xdescribe('Create account', function() {
-
+xdescribe('Create account', function () {
   hooks.createApp.bind(this)()
 
-  before(function() {
+  before(function () {
     hooks.beforeBlock.bind(this)()
   })
 
-  after(function() {
+  after(function () {
     return hooks.afterBlock.bind(this)()
   })
 
-  before(function() {
-    this.app.client.addCommand('createAccount', function(name) {
+  before(function () {
+    this.app.client.addCommand('createAccount', function (name) {
       return this
         .openSettingsMenu()
         .click('md-switch[aria-label="Play sound when receiving transactions?"]')
@@ -26,5 +25,4 @@ xdescribe('Create account', function() {
   it('creates an account', function () {
     return this.app.client.createAccount()
   })
-
 })

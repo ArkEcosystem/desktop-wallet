@@ -1,5 +1,3 @@
-const electron = require('electron')
-
 const path = require('path')
 const fs = require('fs')
 
@@ -7,20 +5,21 @@ const productName = require('../../package').productName
 
 module.exports = {
 
-  getTestPath: function() {
+  getTestPath: function () {
     return path.join(__dirname, 'data', 'userData')
   },
 
-  clearSettings: function() {
+  clearSettings: function () {
     try {
       fs.unlinkSync(path.join(this.getTestPath(), 'Settings'))
     } catch (error) {
-      if (error.code !== 'ENOENT')
+      if (error.code !== 'ENOENT') {
         throw error
+      }
     }
   },
 
-  getRealPath: function() {
+  getRealPath: function () {
     let userDataPath
 
     switch (process.platform) {

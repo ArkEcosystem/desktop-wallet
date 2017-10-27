@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -10,7 +10,7 @@ module.exports = function(config) {
     basePath: '',
 
     browsers: [
-      'PhantomJS',
+      'PhantomJS'
       // + Chrome
       // + ChromeCanary
     ],
@@ -18,7 +18,7 @@ module.exports = function(config) {
     // Options: https://github.com/karma-runner/karma-coverage
     coverageReporter: {
       reporters: [
-        { type: 'text', dir: '.coverage' },
+        { type: 'text', dir: '.coverage' }
         // Uncomment for generating HTML reports
         // { type: 'html', dir: '.coverage' },
       ]
@@ -48,7 +48,7 @@ module.exports = function(config) {
 
       // Tests
       'components/**/*.js',
-      'services/*.js',
+      'services/*.js'
     ],
 
     // testing framework to use (jasmine/mocha/qunit/...)
@@ -69,7 +69,7 @@ module.exports = function(config) {
 
     preprocessors: {
       '../client/app/src/**/*.js': ['babelSourceMap', 'coverage'],
-      './**/*.js': ['babelSourceMap'],
+      './**/*.js': ['babelSourceMap']
     },
 
     customPreprocessors: {

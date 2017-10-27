@@ -1,41 +1,40 @@
 const hooks = require('../hooks')
 
-xdescribe('Accessibility', function() {
-
+xdescribe('Accessibility', function () {
   hooks.createApp.bind(this)()
 
-  before(function() {
+  before(function () {
     return hooks.beforeBlock.bind(this)()
   })
 
-  after(function() {
+  after(function () {
     return hooks.afterBlock.bind(this)()
   })
 
-  // TODO fix aria 
+  // TODO fix aria
   it('there are not any accessibility warnings or errors', function () {
-
     // Audit rules: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules
     const options = {
       ignoreRules: ['AX_COLOR_01', 'AX_TITLE_01']
     }
 
     return this.app.client.windowByIndex(0)
-      .auditAccessibility(options).then(function(audit) {
-        if (audit.failed)
+      .auditAccessibility(options).then(function (audit) {
+        if (audit.failed) {
           throw Error('Failed accessibility audit\n' + audit.message)
+        }
       })
   })
 
   // NOTE: this code could be used to check dynamic elements
-  // beforeEach(function() {
+  // beforeEach(function () {
   //
-  //   app.client.addCommand('selectSection', function(section) {
+  //   app.client.addCommand('selectSection', function (section) {
   //     return this.click('button[data-section="' + section + '"]').pause(100)
   //       .waitForVisible('#' + section + '-section')
   //   })
   //
-  //   this.app.client.addCommand('auditSectionAccessibility', function(section, options) {
+  //   this.app.client.addCommand('auditSectionAccessibility', function (section, options) {
   //     if (! options)
   //       options = {}
   //
@@ -44,11 +43,10 @@ xdescribe('Accessibility', function() {
   //       options.ignoreRules = ['AX_COLOR_01', 'AX_TITLE_01']
   //
   //     return this.selectSection(section)
-  //       .auditAccessibility(options).then(function(audit) {
+  //       .auditAccessibility(options).then(function (audit) {
   //         if (audit.failed)
   //           throw Error(section + ' section failed accessibility audit\n' + audit.message)
   //       })
   //   })
   // })
-
 })

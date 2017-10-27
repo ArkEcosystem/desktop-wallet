@@ -34,6 +34,10 @@ To use it, execute this code on the developer console:
 require('devtron').install()
 ```
 
+## Lint
+Currently we have just started using [StandardJS](https://standardjs.com/), although there are lots of things to adapt yet.
+You can execute `npm run standard` to check the format of the entire project, or `npm run standard <path/**/*.js>` to check some files exclusively.
+
 # Tests
 
 ## Unit
