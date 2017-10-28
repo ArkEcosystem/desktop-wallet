@@ -631,8 +631,8 @@
         return balance*price;
     }
 
-    self.toggleBitcoinCurrency = function() {
-      self.bitcoinToggle = !self.bitcoinToggle;
+    self.toggleBitcoinCurrency = function(force) {
+      self.bitcoinToggle = force !== undefined ? force : !self.bitcoinToggle;
       if (self.bitcoinToggle) {
         self.toggleCurrency = self.currency;
       } else {
@@ -654,6 +654,7 @@
     };
 
     self.selectNextCurrency = function() {
+      self.toggleBitcoinCurrency(false);
       var currenciesNames = self.currencies.map(function(x) {
         return x.name;
       });
@@ -665,6 +666,7 @@
     };
 
     self.changeCurrency = function() {
+      self.toggleBitcoinCurrency(false);
       if (self.currency == undefined) self.currency = currencies[0];
       storageService.set("currency", self.currency);
     };
