@@ -210,6 +210,9 @@
     self.exchangeHistory = changerService.getHistory();
     self.selectedCoin = storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail = storageService.get("email") || "";
+    self.bitcoinCurrency = self.currencies.find(function(currency) {
+      return currency.name === 'btc';
+    });
 
     self.connectedPeer = { isConnected: false };
 
