@@ -13,9 +13,10 @@
       };
     })
     .filter('amountToCurrency', function() {
-      return function(amount, scope) {
+      return function(amount, scope, checkBitcoinToggle) {
         if (typeof amount === 'undefined' || amount == 0) return 0;
-        var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name];
+        var currencyName = checkBitcoinToggle && scope.ul.bitcoinToggle ? 'btc' : scope.ul.currency.name;
+        var price = scope.ul.connectedPeer.market.price[currencyName];
         return (amount * price).toFixed(5);
       }
     }).filter('formatCurrency', function() {
