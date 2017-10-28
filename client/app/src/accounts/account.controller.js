@@ -210,9 +210,12 @@
     self.exchangeHistory = changerService.getHistory();
     self.selectedCoin = storageService.get("selectedCoin") || "bitcoin_BTC";
     self.exchangeEmail = storageService.get("email") || "";
+    self.bitcoinToggle = false;
+
     self.bitcoinCurrency = self.currencies.find(function(currency) {
       return currency.name === 'btc';
     });
+    self.toggleCurrency = self.bitcoinCurrency;
 
     self.connectedPeer = { isConnected: false };
 
@@ -626,6 +629,15 @@
         var currencyName = self.currency.name;
         var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0;
         return balance*price;
+    }
+
+    self.toggleBitcoinCurrency = function() {
+      self.bitcoinToggle = !self.bitcoinToggle;
+      if (self.bitcoinToggle) {
+        self.toggleCurrency = self.currency;
+      } else {
+        self.toggleCurrency = self.bitcoinCurrency;
+      }
     }
 
     self.otherAccounts = function() {
