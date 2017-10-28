@@ -500,9 +500,15 @@
               </md-icon>
               </span>
               <span class="md-subhead description">
-                  <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
-                  <md-button ng-click="ul.selectNextCurrency()">{{ul.selected.balance/100000000 | amountToCurrency:this | formatCurrency:ul }}</md-button>
-                </span>
+                <translate class="balance">Balance</translate> {{ul.network.symbol}}{{ul.selected.balance/100000000}}
+                <md-button ng-click="ul.selectNextCurrency()">{{ul.selected.balance/100000000 | amountToCurrency:this | formatCurrency:ul:true }}</md-button>
+                <md-button ng-click="ul.toggleBitcoinCurrency()" ng-hide="ul.currency.name === 'btc'">
+                  <md-tooltip md-direction="top">
+                    {{ 'Toggle' | translate }} {{ul.toggleCurrency.name | uppercase}}
+                  </md-tooltip>
+                  {{ul.toggleCurrency.symbol}}
+                </md-button>
+              </span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
