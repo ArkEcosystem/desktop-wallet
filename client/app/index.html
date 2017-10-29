@@ -59,6 +59,7 @@
   </div>
 
   <div ng-cloak="" style="height: 100%" layout="column">
+
   <md-toolbar class="navbar" style="background-color: rgba(0, 0, 0, 0)" >
     <div class="md-toolbar-tools" style="-webkit-app-region: drag;">
       <img src="ark.png" alt="" height="40">
@@ -66,9 +67,15 @@
       <md-button class="new-version-button" ng-if="ul.clientVersion!=ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' aria-label="New version available!">
         <translate>New version available!</translate>
       </md-button>
-      <md-button ng-if="ul.selected" class="menu" hide-gt-md ng-click="ul.toggleList()" aria-label="Show Account List">
-        <md-icon md-svg-icon="menu"></md-icon>
-      </md-button>
+
+      <any style="pointer-events: auto">
+        <md-tooltip>
+          <translate>Show Account List</translate>
+        </md-tooltip>
+        <md-button ng-if="ul.anyAccountOrContact()" class="menu" ng-click="ul.toggleList()" aria-label="Show Account List">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+      </any>
 
       <!-- fill up the space between left and right area -->
       <span flex></span>
@@ -264,6 +271,66 @@
     </div>
   </md-toolbar>
 
+  <md-content flex layout="row" id="content">
+
+    <md-sidenav md-is-open="ul.isAccountsListOpen" md-is-locked-open="ul.isAccountsListOpen && $mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
+      <md-list md-no-ink>
+        <md-list-item ng-if="ul.ledger.connected">
+          <h2 translate>
+            Ledger Nano S
+          </h2>
+        </md-list-item>
+        <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
+          <span style="white-space: nowrap;">
+                <md-icon md-svg-icon="ledger"></md-icon>
+                {{it.address|accountlabel}}
+              </span>
+        </md-list-item>
+        <md-list-item ng-if="ul.ledger.connected&&!ul.ledgerAccounts">
+          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </md-list-item>
+        <md-list-item>
+          <h2 translate>
+            My Accounts
+          </h2>
+        </md-list-item>
+        <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
+          <span style="white-space: nowrap;">
+                <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
+                <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
+                <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+                {{it.username||it.address|accountlabel}}
+              </span>
+        </md-list-item>
+        <md-list-item>
+          <h2 translate>
+            Contacts
+          </h2>
+        </md-list-item>
+        <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
+          <span style="white-space: nowrap;">
+            <md-icon md-font-library="material-icons">account_circle</md-icon>
+            {{contact.name}}
+            <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
+              info_outline
+              <md-tooltip md-direction="bottom" class="tooltip-multiline">
+                {{'Expense' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
+                <br>
+                {{'Income' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
+              </md-tooltip>
+            </md-icon>
+          </span>
+        </md-list-item>
+        <md-list-item>
+          <md-button class="watch-only-address" ng-click="ab.addAddressbookContact()">
+            <md-icon md-font-library="material-icons">add</md-icon>
+            <translate>Add Contact</translate>
+
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+
   <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
 
     <div id="home-box-accounts" style="min-width:50%; opacity:0.9; border-radius:10px; overflow: hidden;" md-whiteframe="3">
@@ -374,67 +441,7 @@
   </div>
 
   <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
-    <md-content flex layout="row">
-
-      <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
-        <md-list md-no-ink>
-          <md-list-item ng-if="ul.ledger.connected">
-            <h2 translate>
-              Ledger Nano S
-            </h2>
-          </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
-            <span style="white-space: nowrap;">
-                  <md-icon md-svg-icon="ledger"></md-icon>
-                  {{it.address|accountlabel}}
-                </span>
-          </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected&&!ul.ledgerAccounts">
-            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-          </md-list-item>
-          <md-list-item>
-            <h2 translate>
-              My Accounts
-            </h2>
-          </md-list-item>
-          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
-            <span style="white-space: nowrap;">
-                  <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-                  <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-                  <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address|accountlabel}}
-                </span>
-          </md-list-item>
-          <md-list-item>
-            <h2 translate>
-              Contacts
-            </h2>
-          </md-list-item>
-          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
-            <span style="white-space: nowrap;">
-              <md-icon md-font-library="material-icons">account_circle</md-icon>
-              {{contact.name}}
-              <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
-                info_outline
-                <md-tooltip md-direction="bottom" class="tooltip-multiline">
-                  {{'Expense' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
-                  <br>
-                  {{'Income' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
-                </md-tooltip>
-              </md-icon>
-            </span>
-          </md-list-item>
-          <md-list-item>
-            <md-button class="watch-only-address" ng-click="ab.addAddressbookContact()">
-              <md-icon md-font-library="material-icons">add</md-icon>
-              <translate>Add Contact</translate>
-
-            </md-button>
-          </md-list-item>
-        </md-list>
-      </md-sidenav>
-
-      <md-content flex layout="column" id="content">
+      <md-content flex layout="column">
         <md-card flex="none">
           <div class="share">
             <md-button ng-if="!ul.refreshAccountsAutomatically" md-no-ink ng-click="ul.refreshCurrentAccount()" aria-label="Refresh Account">
