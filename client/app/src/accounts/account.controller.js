@@ -1347,6 +1347,14 @@
       function querySearch(text) {
         text = text.toLowerCase();
         var contacts = storageService.get("contacts");
+        var accounts = self.getAllAccounts();
+        contacts = contacts.concat(accounts).sort(function(a, b) {
+          if (a.name && b.name) return a.name < b.name;
+          else if (a.username && b.username) return a.username < b.username;
+          else if (a.username && b.name) return a.username < b.name;
+          else if (a.name && b.username) return a.name < b.username;
+        });
+
         if (!contacts) {
           return [];
         }

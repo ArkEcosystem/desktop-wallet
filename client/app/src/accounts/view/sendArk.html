@@ -19,7 +19,7 @@
             md-items="contact in send.querySearch(send.searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
             <md-item-template>
               <span class="item-title">
-                  <span> {{contact.name || contact.address}} </span>
+                  <span> {{contact.name || contact.username || contact.address}} </span>
               </span>
             </md-item-template>
           </md-autocomplete>
