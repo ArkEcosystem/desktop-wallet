@@ -62,6 +62,55 @@
       }
     }
 
+    self.addressBookAddContactRecord = function(name, address, callback, isRename, suppressNotice) {
+      self.getContacts();
+      if (self.trim(name) == "") {
+        self.showToast('This Contact Name is not valid', name, true);
+        return;
+      }
+      if (self.trim(address) == "" || ! self.isAddress(address)) {
+        self.showToast('This Contact Address is not valid', address, true);
+        return;
+      }
+
+      var newContact = { name: name, address: address };
+      if (!isRename && self.addressExists(address)) {
+        self.showToast('A Contact with this Address already exists', address, true);
+        return;
+      }
+      if (self.contactExists(name)) {
+        self.showToast('A Contact with this Name already exists', name, true);
+        return;
+      }
+
+      var knownAccounts = accountService.loadAllAccounts().reduce( (all, account) => {
+        if (account.virtual) {
+          all.push(account);
+        }
+        return all;
+      }, []);
+
+      if (existsIn(knownAccounts.map( a => a.address ), address)) {
+        self.showToast('This Address is already taken, please add a different one', address, true);
+        return;
+      }
+      if (existsIn(knownAccounts.map( a => a.username ), name)) {
+        self.showToast('This Name is already taken, please use a different one', name, true);
+        return;
+      }
+
+      self.contacts.push(newContact);
+      self.save();
+      if (!suppressNotice) {
+        self.showToast('Contact successfully added', name, false);
+      }
+      if (typeof callback === 'function') {
+        callback();
+      }
+
+      return true;
+    }
+
     self.addAddressbookContact = function() {
 
       $scope.addAddressbookContact = {
@@ -74,45 +123,7 @@
       };
 
       function add(name, address) {
-        self.getContacts();
-        if (self.trim(name) == "") {
-          self.showToast('This Contact Name is not valid', name, true);
-          return;
-        }
-        if (self.trim(address) == "" || ! self.isAddress(address)) {
-          self.showToast('This Contact Address is not valid', address, true);
-          return;
-        }
-
-        var newContact = { name: name, address: address };
-        if (self.addressExists(address)) {
-          self.showToast('A Contact with this Address already exists', address, true);
-          return;
-        }
-        if (self.contactExists(name)) {
-          self.showToast('A Contact with this Name already exists', name, true);
-          return;
-        }
-
-        var knownAccounts = accountService.loadAllAccounts().reduce( (all, account) => {
-          if (account.virtual)
-            all.push(account);
-          return all;
-        }, []);
-
-        if (existsIn(knownAccounts.map( a => a.address ), address)) {
-          self.showToast('This Address is already taken, please add a different one', address, true);
-          return;
-        }
-        if (existsIn(knownAccounts.map( a => a.username ), name)) {
-          self.showToast('This Name is already taken, please use a different one', name, true);
-          return;
-        }
-
-        self.contacts.push(newContact);
-        self.save();
-        self.showToast('Contact successfully added', name, false);
-        cancel();
+        self.addressBookAddContactRecord(name, address, cancel);
       };
 
       $mdDialog.show({
@@ -133,6 +144,7 @@
         return;
       }
       var name = contact.name;
+      var originalName = contact.name;
 
       $scope.editAddressbookContact = {
         cancel: cancel,
@@ -156,7 +168,7 @@
           return;
         }
         self.getContacts();
-        if (!self.contactExists(name)) {
+        if (!self.contactExists(originalName)) {
           self.showToast('this Contact Name doesnt exist', name, true);
           return;
         }
@@ -164,17 +176,32 @@
           self.showToast('this seems to be not a valid Address', address, true);
           return;
         }
-        for (var i = 0; i < self.contacts.length; i++) {
-          if (self.contacts[i].name == name) {
-            self.contacts[i].address = address;
+        var contactSaved = false;
+        if (name === originalName) {
+          for (var i = 0; i < self.contacts.length; i++) {
+            if (self.contacts[i].name == name) {
+              self.contacts[i].address = address;
+              contactSaved = true;
+            }
+          }
+          if (contactSaved) {
+            self.showToast('Contact successfully saved', name, false);
+          } else {
+            self.showToast('Could not find the Contact to save', name, true);
+          }
+        } else {
+          if (contactSaved = self.addressBookAddContactRecord(name, address, null, true, true)) {
+            remove(originalName, true);
+            self.showToast('Contact successfully renamed and saved', name, false);
           }
         }
-        self.save();
-        self.showToast('Contact successfully saved', name, false);
-        cancel();
+        if (contactSaved) {
+          self.save();
+          cancel();
+        }
       };
 
-      function remove(name) {
+      function remove(name, suppressNotice) {
         self.getContacts();
         if (!self.contactExists(name)) {
           self.showToast('this Contact-Name doesnt exist: ', name, true);
@@ -187,7 +214,9 @@
           }
         }
         self.save();
-        self.showToast('Contact successfully removed', name, false);
+        if (!suppressNotice) {
+          self.showToast('Contact successfully removed', name, false);
+        }
         cancel();
       };
 
