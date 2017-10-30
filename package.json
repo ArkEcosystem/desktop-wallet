@@ -120,6 +120,11 @@
     }
   },
   "standard": {
+    "globals": [
+      "angular",
+      "Audio",
+      "Blob"
+    ],
     "parser": "babel-eslint",
     "ignore": [
       "client/node_modules",

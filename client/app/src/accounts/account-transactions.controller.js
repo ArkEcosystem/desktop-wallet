@@ -1,5 +1,5 @@
-(function() {
-  'use strict';
+;(function () {
+  'use strict'
 
   angular
     .module('arkclient.accounts')
@@ -9,91 +9,90 @@
       'accountService',
       'storageService',
       AccountTransactionsController
-    ]);
-  
-  function AccountTransactionsController($scope, $timeout, accountService, storageService) {
-    const vm = this;
+    ])
 
-    vm.INCREASE_API = 50;
-    vm.INCREASE_SCROLL = 10;
+  function AccountTransactionsController ($scope, $timeout, accountService, storageService) {
+    const vm = this
 
-    vm.address = undefined;
-    vm.transactions = [];
+    vm.INCREASE_API = 50
+    vm.INCREASE_SCROLL = 10
 
-    vm.pageSize = 10;
-    vm.limit = 50;
-    vm.offset = 0;
+    vm.address = undefined
+    vm.transactions = []
 
-    vm.isBusy = false; // loading
-    vm.isComplete = false; // disable the request
+    vm.pageSize = 10
+    vm.limit = 50
+    vm.offset = 0
 
-    $scope.$on('account:onSelect', function(evt, account) {
-      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0;
-      _reset();
-      
-      vm.address = account.address;
-      _updateTransactions(account.transactions);
-    });
+    vm.isBusy = false // loading
+    vm.isComplete = false // disable the request
 
-    $scope.$on('account:onRefreshTransactions', function(evt, transactions) {
-      _updateTransactions(transactions);
-    });
+    $scope.$on('account:onSelect', function (evt, account) {
+      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
+      reset()
 
-    vm.loadNext = function() {
-      if (vm.isBusy || vm.isComplete || vm.transactions.length == 0) return;
+      vm.address = account.address
+      updateTransactions(account.transactions)
+    })
+
+    $scope.$on('account:onRefreshTransactions', function (evt, transactions) {
+      updateTransactions(transactions)
+    })
+
+    vm.loadNext = function () {
+      if (vm.isBusy || vm.isComplete || vm.transactions.length === 0) return
 
       if (vm.pageSize < vm.transactions.length) {
-        vm.pageSize += vm.INCREASE_SCROLL;
-        return;
+        vm.pageSize += vm.INCREASE_SCROLL
+        return
       }
 
       if (vm.pageSize >= vm.transactions.length) {
-        vm.isBusy = true;
-        vm.offset += vm.INCREASE_API;
+        vm.isBusy = true
+        vm.offset += vm.INCREASE_API
 
         accountService.getTransactions(vm.address, vm.offset, vm.limit, false)
           .then((transactions) => {
-            if (transactions.length == 0) {
-              vm.isComplete = vm.isBusy = true;
-              return;
+            if (transactions.length === 0) {
+              vm.isComplete = vm.isBusy = true
+              return
             }
 
-            _updateTransactions(transactions);
-            vm.pageSize += vm.INCREASE_SCROLL;
-            vm.isBusy = false;
+            updateTransactions(transactions)
+            vm.pageSize += vm.INCREASE_SCROLL
+            vm.isBusy = false
           })
-          .catch((err) => {
+          .catch(() => {
             // rollback
-            vm.offset -= vm.INCREASE_API;
+            vm.offset -= vm.INCREASE_API
             // wait 8s to try again
             $timeout(() => {
-              if (!vm.isComplete) vm.isBusy = false;
-            }, 8000);  
-          });
+              if (!vm.isComplete) vm.isBusy = false
+            }, 8000)
+          })
       }
     }
 
-    function _reset() {
-      vm.pageSize = 10;
-      vm.offset = 0;
-      vm.transactions = [];
+    function reset () {
+      vm.pageSize = 10
+      vm.offset = 0
+      vm.transactions = []
 
-      vm.isBusy = false;
-      vm.isComplete = false;
+      vm.isBusy = false
+      vm.isComplete = false
     }
 
-    function _updateTransactions(transactions) {
-      if (!transactions) return;
-  
-      var mergeTransactions = [...transactions, ...vm.transactions];
+    function updateTransactions (transactions) {
+      if (!transactions) return
+
+      var mergeTransactions = [...transactions, ...vm.transactions]
       // remove duplicates
       var uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
-        return arr.map(obj => obj['id']).indexOf(obj['id']) == pos;
-      }).sort((a, b) => b.timestamp - a.timestamp);
+        return arr.map(obj => obj['id']).indexOf(obj['id']) === pos
+      }).sort((a, b) => b.timestamp - a.timestamp)
 
-      vm.transactions = uniqueTransactions;
-      storageService.set(`transactions-${vm.address}`, vm.transactions, true);
+      vm.transactions = uniqueTransactions
+      storageService.set(`transactions-${vm.address}`, vm.transactions, true)
     }
-
   }
-})();
+})()

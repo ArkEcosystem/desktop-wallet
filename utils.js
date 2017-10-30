@@ -2,7 +2,7 @@
 *   Ledger Node JS API
 *   (c) 2016-2017 Ledger
 *
-*  Licensed under the Apache License, Version 2.0 (the "License");
+*  Licensed under the Apache License, Version 2.0 (the "License")
 *  you may not use this file except in compliance with the License.
 *  You may obtain a copy of the License at
 *
@@ -15,73 +15,72 @@
 *  limitations under the License.
 ********************************************************************************/
 
-'use strict';
+'use strict'
 
-var Q = require('q');
+var Q = require('q')
 
 var LedgerUtils = {}
 
-LedgerUtils.splitPath = function(path) {
-	var result = [];
-	var components = path.split('/');
-	components.forEach(function (element, index) {
-		var number = parseInt(element, 10);
-		if (isNaN(number)) {
-			return;
-		}
-		if ((element.length > 1) && (element[element.length - 1] == "'")) {
-			number += 0x80000000;
-		}
-		result.push(number);
-	});
-	return result;
+LedgerUtils.splitPath = function (path) {
+  var result = []
+  var components = path.split('/')
+  components.forEach(function (element, index) {
+    var number = parseInt(element, 10)
+    if (isNaN(number)) {
+      return
+    }
+    if ((element.length > 1) && (element[element.length - 1] == "'")) {
+      number += 0x80000000
+    }
+    result.push(number)
+  })
+  return result
 }
 
 LedgerUtils.foreach = function (arr, callback) {
-	var deferred = Q.defer();
-	var iterate = function (index, array, result) {
-		if (index >= array.length) {
-			deferred.resolve(result);
-			return ;
-		}
-		callback(array[index], index).then(function (res) {
-			result.push(res);
-			iterate(index + 1, array, result);
-		}).fail(function (ex) {
-			deferred.reject(ex);
-		}).done();
-	};
-	iterate(0, arr, []);
-	return deferred.promise;
+  var deferred = Q.defer()
+  var iterate = function (index, array, result) {
+    if (index >= array.length) {
+      deferred.resolve(result)
+      return
+    }
+    callback(array[index], index).then(function (res) {
+      result.push(res)
+      iterate(index + 1, array, result)
+    }).fail(function (ex) {
+      deferred.reject(ex)
+    }).done()
+  }
+  iterate(0, arr, [])
+  return deferred.promise
 }
 
-LedgerUtils.doIf = function(condition, callback) {
-	var deferred = Q.defer();
-	if (condition) {
-		deferred.resolve(callback())
-	} else {
-		deferred.resolve();
-	}
-	return deferred.promise;
+LedgerUtils.doIf = function (condition, callback) {
+  var deferred = Q.defer()
+  if (condition) {
+    deferred.resolve(callback())
+  } else {
+    deferred.resolve()
+  }
+  return deferred.promise
 }
 
-LedgerUtils.asyncWhile = function(condition, callback) {
-	var deferred = Q.defer();
-	var iterate = function (result) {
-		if (!condition()) {
-			deferred.resolve(result);
-			return ;
-		}
-		callback().then(function (res) {
-			result.push(res);
-			iterate(result);
-		}).fail(function (ex) {
-			deferred.reject(ex);
-		}).done();
-	};
-	iterate([]);
-	return deferred.promise;
+LedgerUtils.asyncWhile = function (condition, callback) {
+  var deferred = Q.defer()
+  var iterate = function (result) {
+    if (!condition()) {
+      deferred.resolve(result)
+      return
+    }
+    callback().then(function (res) {
+      result.push(res)
+      iterate(result)
+    }).fail(function (ex) {
+      deferred.reject(ex)
+    }).done()
+  }
+  iterate([])
+  return deferred.promise
 }
 
-
-module.exports = LedgerUtils;
+module.exports = LedgerUtils

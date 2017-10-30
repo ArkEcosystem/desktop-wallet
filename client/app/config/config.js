@@ -4,4 +4,4 @@ module.exports = {
     level: 1,
     defaultHideDelay: 5000
   }
-};
+}
