@@ -268,10 +268,17 @@
       if (!network.forcepeer) {
         getFromPeer("/api/peers").then(function(response) {
           if (response.success) {
-            storageService.set("peers", response.peers.filter(function(peer) {
-              return peer.status == "OK";
-            }));
-            findGoodPeer(response.peers, 0);
+            getFromPeer('/api/peers/version').then(function(versionResponse) {
+              if (versionResponse.success) {
+                let peers = response.peers.filter(function(peer) {
+                  return peer.status == "OK" && peer.version === versionResponse.version;
+                });
+                storageService.set("peers", peers);
+                findGoodPeer(peers, 0);
+              } else {
+                findGoodPeer(storageService.get("peers"), 0);
+              }
+            });
           } else {
             findGoodPeer(storageService.get("peers"), 0);
           }
@@ -285,6 +292,11 @@
       if (index > peers.length - 1) {
         //peer.ip=network.peerseed;
         return;
+      }
+      if (index === 0) {
+        peers = peers.sort(function(a, b) {
+          return b.height - a.height || a.delay - b.delay;
+        });
       }
       peer.ip = "http://" + peers[index].ip + ":" + peers[index].port;
       getFromPeer("/api/blocks/getheight").then(function(response) {
