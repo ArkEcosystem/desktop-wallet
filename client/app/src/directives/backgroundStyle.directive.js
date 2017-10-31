@@ -1,5 +1,5 @@
-(function() {
-  'use strict';
+;(function () {
+  'use strict'
 
   /*
    * This directive establishes the body background (color or texture).
@@ -10,70 +10,69 @@
    * otherwise. Others could use it for improving the general aesthetics.
    */
   angular.module('arkclient.directives')
-    .directive('backgroundStyle', [function() {
+    .directive('backgroundStyle', [function () {
       return {
         restrict: 'A',
         require: '?ngModel',
-        link: function(scope, elem, attrs, ctrl) {
-
-          var defaultBackground = 'url(assets/images/images/Ark.jpg)';
+        link: function (scope, elem, attrs, ctrl) {
+          var defaultBackground = 'url(assets/images/images/Ark.jpg)'
           // This is the custom configuration of textures
           var textures = {
             'Ahoy.jpg': {
-              cssClass: '',
+              cssClass: ''
             }
-          };
+          }
 
-          var classes = Object.values(textures).reduce(function(all, texture) {
-            if (all.indexOf(texture.cssClass) === -1)
-              all.push(texture.cssClass);
-            return all;
-          }, []);
+          var classes = Object.values(textures).reduce(function (all, texture) {
+            if (all.indexOf(texture.cssClass) === -1) {
+              all.push(texture.cssClass)
+            }
+            return all
+          }, [])
 
           // Used to extract the image filename
-          var textureRe = /url\(.+\/([^/]+).\)/;
+          var textureRe = /url\(.+\/([^/]+).\)/
           // Used to extract the image path
-          var pathRe = /\((.*)\)/;
+          var pathRe = /\((.*)\)/
 
-          scope.$watch(attrs.backgroundStyle, function(value) {
+          scope.$watch(attrs.backgroundStyle, function (value) {
             // Check if the background exists
-            var mathPath = value.match(pathRe);
+            var mathPath = value.match(pathRe)
             if (mathPath) {
-              var fullPath = require('path').join(__dirname, mathPath[1]); 
+              var fullPath = require('path').join(__dirname, mathPath[1])
               if (!require('fs').existsSync(fullPath.replace(/'/g, ``))) {
-                value = defaultBackground; // if not exists
+                value = defaultBackground // if not exists
               }
             }
 
-            var style = { background: value };
-            var newClass = null;
+            var style = { background: value }
+            var newClass = null
 
             if (value.match('textures')) {
-              style.backgroundRepeat = 'repeat';
+              style.backgroundRepeat = 'repeat'
             } else {
-              style.backgroundSize = 'cover';
+              style.backgroundSize = 'cover'
             }
 
-            elem.css(style);
-            
-            var matches = value.match(textureRe);
+            elem.css(style)
+
+            var matches = value.match(textureRe)
             if (matches) {
-              var filename = matches[1];
+              var filename = matches[1]
 
               if (textures[filename]) {
-                newClass = textures[filename].cssClass;
-                elem.addClass(newClass);
+                newClass = textures[filename].cssClass
+                elem.addClass(newClass)
               }
             }
 
-            classes.forEach(function(textureClass) {
+            classes.forEach(function (textureClass) {
               if (newClass !== textureClass) {
-                elem.removeClass(textureClass);
+                elem.removeClass(textureClass)
               }
-            });
-          });
+            })
+          })
         }
       }
-    }]);
-    
-})();
+    }])
+})()
