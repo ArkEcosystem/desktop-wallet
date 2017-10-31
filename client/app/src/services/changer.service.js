@@ -1,242 +1,241 @@
-(function() {
-  'use strict';
+;(function () {
+  'use strict'
 
   angular.module('arkclient.services')
-    .service('changerService', ['storageService', '$q', '$http', '$timeout', 'timeService', ChangerService]);
+    .service('changerService', ['storageService', '$q', '$http', '$timeout', 'timeService', ChangerService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function ChangerService(storageService, $q, $http, $timeout, timeService) {
+  function ChangerService (storageService, $q, $http, $timeout, timeService) {
+    var url = 'https://www.changer.com/api/v2/'
 
-    var url = 'https://www.changer.com/api/v2/';
+    var refid = 97664
 
-    var refid = 97664;
+    var history = storageService.get('changer-history') || {}
 
-    var history = storageService.get("changer-history") || {};
-
-    var ark = "ark_ARK";
+    // var ark = 'ark_ARK'
 
     var coins = [
-      { symbol: "bitcoin_BTC", name: "BTC", image: "" },
-      { symbol: "ethereum_ETH", name: "ETH", image: "" },
-      { symbol: "litecoin_LTC", name: "LTC", image: "" },
-      { symbol: "dogecoin_DOGE", name: "DOGE", image: "" },
-      { symbol: "dash_DASH", name: "DASH", image: "" },
-      { symbol: "bytecoin_BCN", name: "BCN", image: "" },
-      { symbol: "peercoin_PPC", name: "PPC", image: "" },
-      { symbol: "nubits_NBT", name: "NBT", image: "" },
-      { symbol: "clams_CLAM", name: "CLAM", image: "" },
-      { symbol: "tether_USDT", name: "USDT", image: "" },
-      { symbol: "pm_USD", name: "USD (Perfect Money)", image: "" },
-      { symbol: "pmvoucher_USD", name: "USD (Perfect Money Voucher)", image: "" },
-      { symbol: "okpay_USD", name: "USD (OKPay)", image: "" },
-      { symbol: "payeer_USD", name: "USD (Payeer)", image: "" },
-      { symbol: "advcash_USD", name: "USD (ADVCash)", image: "" },
-      { symbol: "btce_USD", name: "USD (btce)", image: "" },
-      { symbol: "counterparty_XCP", name: "XCP", image: "" },
-      { symbol: "storjcoinx_SJCX", name: "SJCX", image: "" },
-      { symbol: "monero_XMR", name: "XMR", image: "" },
-      { symbol: "namecoin_NMC", name: "NMC", image: "" },
-      { symbol: "maidsafecoin_MAID", name: "MAID", image: "" }
-    ];
+      { symbol: 'bitcoin_BTC', name: 'BTC', image: '' },
+      { symbol: 'ethereum_ETH', name: 'ETH', image: '' },
+      { symbol: 'litecoin_LTC', name: 'LTC', image: '' },
+      { symbol: 'dogecoin_DOGE', name: 'DOGE', image: '' },
+      { symbol: 'dash_DASH', name: 'DASH', image: '' },
+      { symbol: 'bytecoin_BCN', name: 'BCN', image: '' },
+      { symbol: 'peercoin_PPC', name: 'PPC', image: '' },
+      { symbol: 'nubits_NBT', name: 'NBT', image: '' },
+      { symbol: 'clams_CLAM', name: 'CLAM', image: '' },
+      { symbol: 'tether_USDT', name: 'USDT', image: '' },
+      { symbol: 'pm_USD', name: 'USD (Perfect Money)', image: '' },
+      { symbol: 'pmvoucher_USD', name: 'USD (Perfect Money Voucher)', image: '' },
+      { symbol: 'okpay_USD', name: 'USD (OKPay)', image: '' },
+      { symbol: 'payeer_USD', name: 'USD (Payeer)', image: '' },
+      { symbol: 'advcash_USD', name: 'USD (ADVCash)', image: '' },
+      { symbol: 'btce_USD', name: 'USD (btce)', image: '' },
+      { symbol: 'counterparty_XCP', name: 'XCP', image: '' },
+      { symbol: 'storjcoinx_SJCX', name: 'SJCX', image: '' },
+      { symbol: 'monero_XMR', name: 'XMR', image: '' },
+      { symbol: 'namecoin_NMC', name: 'NMC', image: '' },
+      { symbol: 'maidsafecoin_MAID', name: 'MAID', image: '' }
+    ]
 
     var fuckedAPIoutlook = {
-      "bitcoinBTC": "bitcoin_BTC",
-      "ethereumETH": "ethereum_ETH",
-      "litecoinLTC": "litecoin_LTC",
-      "dogecoinDOGE": "dogecoin_DOGE",
-      "dashDASH": "dash_DASH",
-      "bytecoinBCN": "bytecoin_BCN",
-      "peercoinPPC": "peercoin_PPC",
-      "nubitsNBT": "nubits_NBT",
-      "clamsCLAM": "clams_CLAM",
-      "tetherUSDT": "tether_USDT",
-      "pmUSD": "pm_USD",
-      "pmvoucherUSD": "pmvoucher_USD",
-      "okpayUSD": "okpay_USD",
-      "payeerUSD": "payeer_USD",
-      "advcashUSD": "advcash_USD",
-      "btceUSD": "btce_USD",
-      "counterpartyXCP": "counterparty_XCP",
-      "storjcoinxSJCX": "storjcoinx_SJCX",
-      "moneroXMR": "monero_XMR",
-      "namecoinNMC": "namecoin_NMC",
-      "maidsafecoinMAID": "maidsafecoin_MAID"
-    };
+      'bitcoinBTC': 'bitcoin_BTC',
+      'ethereumETH': 'ethereum_ETH',
+      'litecoinLTC': 'litecoin_LTC',
+      'dogecoinDOGE': 'dogecoin_DOGE',
+      'dashDASH': 'dash_DASH',
+      'bytecoinBCN': 'bytecoin_BCN',
+      'peercoinPPC': 'peercoin_PPC',
+      'nubitsNBT': 'nubits_NBT',
+      'clamsCLAM': 'clams_CLAM',
+      'tetherUSDT': 'tether_USDT',
+      'pmUSD': 'pm_USD',
+      'pmvoucherUSD': 'pmvoucher_USD',
+      'okpayUSD': 'okpay_USD',
+      'payeerUSD': 'payeer_USD',
+      'advcashUSD': 'advcash_USD',
+      'btceUSD': 'btce_USD',
+      'counterpartyXCP': 'counterparty_XCP',
+      'storjcoinxSJCX': 'storjcoinx_SJCX',
+      'moneroXMR': 'monero_XMR',
+      'namecoinNMC': 'namecoin_NMC',
+      'maidsafecoinMAID': 'maidsafecoin_MAID'
+    }
 
-    function request(endpoint, data) {
-      var deferred = $q.defer();
+    function request (endpoint, data) {
+      var deferred = $q.defer()
 
       $http({
         url: url + endpoint.path,
         method: endpoint.method,
         data: data
-      }).then(function(resp) {
-        deferred.resolve(resp.data);
-      });
+      }).then(function (resp) {
+        deferred.resolve(resp.data)
+      })
 
-      return deferred.promise;
+      return deferred.promise
     }
 
-    function getMarketInfo(coin1, coin2, optionalamount) {
-      var deferred = $q.defer();
-      var param = "";
+    function getMarketInfo (coin1, coin2, optionalamount) {
+      var deferred = $q.defer()
+      var param = ''
       if (optionalamount) {
-        param = "?amount=" + optionalamount
+        param = '?amount=' + optionalamount
       }
-      $http.get(url + "rates/" + coin1 + "/" + coin2 + param).then(function(resp) {
-        var rates = resp.data;
-        $http.get(url + "limits/" + coin1 + "/" + coin2).then(function(resp2) {
-          rates.limits = resp2.data.limits;
-          deferred.resolve(rates);
-        });
-      });
+      $http.get(url + 'rates/' + coin1 + '/' + coin2 + param).then(function (resp) {
+        var rates = resp.data
+        $http.get(url + 'limits/' + coin1 + '/' + coin2).then(function (resp2) {
+          rates.limits = resp2.data.limits
+          deferred.resolve(rates)
+        })
+      })
 
-      return deferred.promise;
+      return deferred.promise
     }
 
-    function saveExchange(exchange, status) {
+    function saveExchange (exchange, status) {
       if (status || !history[exchange.exchange_id]) {
-        history[exchange.exchange_id] = { exchange: exchange, status: status };
+        history[exchange.exchange_id] = { exchange: exchange, status: status }
       } else {
-        history[exchange.exchange_id].exchange = exchange;
-        history[exchange.exchange_id].status = status;
+        history[exchange.exchange_id].exchange = exchange
+        history[exchange.exchange_id].status = status
       }
-      storageService.set("changer-history", history);
+      storageService.set('changer-history', history)
     }
 
-    function makeExchange(email, amount, send, receive, receiver_id) {
-      var deferred = $q.defer();
+    function makeExchange (email, amount, send, receive, receiverId) {
+      var deferred = $q.defer()
       var data = {
         email: email,
         refid: refid,
         send: send,
         receive: receive,
         amount: amount,
-        receiver_id: receiver_id
-      };
-      $http.post(url + "exchange", data).then(function(resp) {
-        saveExchange(resp.data);
-        deferred.resolve(resp.data);
-      }, function(error) {
-        deferred.reject(error);
-      });
+        receiver_id: receiverId
+      }
+      $http.post(url + 'exchange', data).then(function (resp) {
+        saveExchange(resp.data)
+        deferred.resolve(resp.data)
+      }, function (error) {
+        deferred.reject(error)
+      })
 
-      return deferred.promise;
+      return deferred.promise
     }
 
-    function sendBatch(exchange, batch) {
-      var deferred = $q.defer();
+    function sendBatch (exchange, batch) {
+      var deferred = $q.defer()
       var data = {
         batch: batch
-      };
-      $http.post(url + "exchange/" + exchange.exchange_id, data).then(function(resp) {
+      }
+      $http.post(url + 'exchange/' + exchange.exchange_id, data).then(function (resp) {
         if (resp.data.success) {
-          deferred.resolve(resp.data);
+          deferred.resolve(resp.data)
         } else {
-          deferred.reject(resp.data);
+          deferred.reject(resp.data)
         }
-      }, function(error) {
-        deferred.reject(error);
-      });
+      }, function (error) {
+        deferred.reject(error)
+      })
 
-      return deferred.promise;
+      return deferred.promise
     }
 
-    function cancelExchange(exchange) {
-      exchange.status = { status: "cancelled" };
-      saveExchange(exchange, exchange.status);
+    function cancelExchange (exchange) {
+      exchange.status = { status: 'cancelled' }
+      saveExchange(exchange, exchange.status)
     }
 
-    function refreshExchange(exchange) {
-      var deferred = $q.defer();
-      $http.get(url + "exchange/" + exchange.exchange_id).then(function(resp) {
-        saveExchange(exchange, resp.data);
-        deferred.resolve(resp.data);
-      }, function(error) {
-        deferred.notify(error);
-      });
-      return deferred.promise;
+    function refreshExchange (exchange) {
+      var deferred = $q.defer()
+      $http.get(url + 'exchange/' + exchange.exchange_id).then(function (resp) {
+        saveExchange(exchange, resp.data)
+        deferred.resolve(resp.data)
+      }, function (error) {
+        deferred.notify(error)
+      })
+      return deferred.promise
     }
 
-    function monitorExchange(exchange, deferred) {
+    function monitorExchange (exchange, deferred) {
       if (!deferred) {
-        deferred = $q.defer();
+        deferred = $q.defer()
       }
-      if (exchange.status && exchange.status.status == "cancelled") {
-        deferred.resolve(exchange);
-        return deferred.promise;
+      if (exchange.status && exchange.status.status == 'cancelled') {
+        deferred.resolve(exchange)
+        return deferred.promise
       }
-      $http.get(url + "exchange/" + exchange.exchange_id).then(function(resp) {
-        saveExchange(exchange, resp.data);
+      $http.get(url + 'exchange/' + exchange.exchange_id).then(function (resp) {
+        saveExchange(exchange, resp.data)
         timeService.getTimestamp().then(
-          function(timestamp) {
-            if (resp.data.status == "new" || resp.data.status == "processing") {
-              if (resp.data.status == "new" && exchange.expiration < timestamp / 1000) {
-                //yes that bad!!!
-                var send = fuckedAPIoutlook[exchange.pair.send];
-                var receive = fuckedAPIoutlook[exchange.pair.receive];
-                makeExchange(exchange.email, exchange.send_amount, send, receive, exchange.receiver_id).then(function(newexchange) {
-                  deferred.notify(newexchange);
-                  monitorExchange(newexchange, deferred);
-                });
+          function (timestamp) {
+            if (resp.data.status === 'new' || resp.data.status === 'processing') {
+              if (resp.data.status === 'new' && exchange.expiration < timestamp / 1000) {
+                // yes that bad!!!
+                var send = fuckedAPIoutlook[exchange.pair.send]
+                var receive = fuckedAPIoutlook[exchange.pair.receive]
+                makeExchange(exchange.email, exchange.send_amount, send, receive, exchange.receiver_id).then(function (newexchange) {
+                  deferred.notify(newexchange)
+                  monitorExchange(newexchange, deferred)
+                })
               } else {
-                deferred.notify(resp.data);
-                $timeout(function() {
-                  monitorExchange(exchange, deferred);
-                }, 10000);
+                deferred.notify(resp.data)
+                $timeout(function () {
+                  monitorExchange(exchange, deferred)
+                }, 10000)
               }
             } else {
-              deferred.resolve(resp.data);
+              deferred.resolve(resp.data)
             }
           }
         )
-      }, function(error) {
-        deferred.notify(error);
-        $timeout(function() {
-          monitorExchange(exchange, deferred);
-        }, 10000);
-      });
-      return deferred.promise;
+      }, function (error) {
+        deferred.notify(error)
+        $timeout(function () {
+          monitorExchange(exchange, deferred)
+        }, 10000)
+      })
+      return deferred.promise
     }
 
-    function getCoins() {
-      return coins;
+    function getCoins () {
+      return coins
     }
 
-    function getHistory(noupdate) {
+    function getHistory (noupdate) {
       if (!!!noupdate) {
         timeService.getTimestamp().then(
-          function(timestamp){
+          function (timestamp) {
             for (var id in history) {
-              delete history[id].$$hashKey;
-              var exchange = history[id];
+              delete history[id].$$hashKey
+              var exchange = history[id]
               if (exchange && exchange.status) {
-                if (exchange.status.status == "new" && exchange.exchange.expiration < timestamp / 1000) {
-                  exchange.status.status = "expired";
+                if (exchange.status.status === 'new' && exchange.exchange.expiration < timestamp / 1000) {
+                  exchange.status.status = 'expired'
                 }
-                if (exchange.status.status == "processing" && exchange.exchange.expiration < timestamp / 1000) {
-                  $http.get(url + "exchange/" + exchange.status.exchange_id).then(function(resp) {
-                    history[id].status = resp.data;
-                    storageService.set("changer-history", history);
-                  });
+                if (exchange.status.status === 'processing' && exchange.exchange.expiration < timestamp / 1000) {
+                  $http.get(url + 'exchange/' + exchange.status.exchange_id).then(function (resp) {
+                    history[id].status = resp.data
+                    storageService.set('changer-history', history)
+                  })
                 }
-                if ((exchange.status.status == "expired" ||  exchange.status.status == "cancelled") && exchange.exchange.expiration + 24 * 3600 < timestamp / 1000) {
-                  delete history[id];
+                if ((exchange.status.status === 'expired' || exchange.status.status === 'cancelled') && exchange.exchange.expiration + 24 * 3600 < timestamp / 1000) {
+                  delete history[id]
                 }
               } else {
-                delete history[id];
+                delete history[id]
               }
             }
-            storageService.set("changer-history", history);
-          });
+            storageService.set('changer-history', history)
+          })
       }
-      //map to array
-      return Object.keys(history).map(function(key) {
-        return history[key];
-      });
+      // map to array
+      return Object.keys(history).map(function (key) {
+        return history[key]
+      })
     }
 
     return {
@@ -248,7 +247,6 @@
       cancelExchange: cancelExchange,
       monitorExchange: monitorExchange,
       getHistory: getHistory
-    };
+    }
   }
-
-})();
+})()
