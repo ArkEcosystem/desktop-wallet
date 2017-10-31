@@ -210,9 +210,9 @@
     self.exchangeEmail = storageService.get('email') || ''
     self.bitcoinToggle = false
 
-    self.bitcoinCurrency = self.currencies.find(function(currency) {
+    self.bitcoinCurrency = self.currencies.find(function (currency) {
       return currency.name === 'btc'
-    });
+    })
     self.toggleCurrency = self.bitcoinCurrency
 
     self.connectedPeer = { isConnected: false }
@@ -619,7 +619,7 @@
       return balance * price
     }
 
-    self.toggleBitcoinCurrency = function(force) {
+    self.toggleBitcoinCurrency = function (force) {
       self.bitcoinToggle = force !== undefined ? force : !self.bitcoinToggle
       if (self.bitcoinToggle) {
         self.toggleCurrency = self.currency
@@ -648,7 +648,6 @@
       })
       var currencyIndex = currenciesNames.indexOf(self.currency.name)
       var newIndex = currencyIndex == currenciesNames.length - 1 ? 0 : currencyIndex + 1
-
 
       self.currency = self.currencies[newIndex]
       self.changeCurrency()
