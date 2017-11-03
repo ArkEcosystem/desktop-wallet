@@ -9,7 +9,7 @@ module.exports = {
       primary: 'teal',
       accent: 'cyan',
       warn: 'pink',
-      background: 'blue-grey',
+      background: 'blue-grey'
     },
     'evelynn': {
       primary: 'pink',
@@ -43,6 +43,5 @@ module.exports = {
     }
   },
   colors: {
-    
   }
-};
+}

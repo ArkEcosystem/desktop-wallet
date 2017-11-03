@@ -41,7 +41,7 @@
 
           deferred.resolve(computedTimestamp)
         },
-        (error) => {
+        (_error) => {
           // use the system time instead on error
           var timestamp = new Date().getTime()
 

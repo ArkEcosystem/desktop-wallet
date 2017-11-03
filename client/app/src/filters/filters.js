@@ -14,7 +14,7 @@
     })
     .filter('amountToCurrency', function () {
       return function (amount, scope) {
-        if (typeof amount === 'undefined' || amount == 0) return 0
+        if (typeof amount === 'undefined' || !amount) return 0
         var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name]
         return (amount * price).toFixed(5)
       }

@@ -42,7 +42,7 @@
       }
       // make callback function available for plugin
       function triggerEvent (eventname) {
-        if (eventname == 'getLocalAccount') {
+        if (eventname === 'getLocalAccount') {
           return accountService.getAccount(arguments[1])
         }
       }
@@ -54,6 +54,7 @@
           // read its javascript file
           var js = readFile(path.join(pluginsDirectory, element, pluginFilename))
           // run the js file and call the function with the prepared parameters
+          // NOTE this is DANGEROUS!
           eval(js + ';' + plugin['events'][eventname] + '(' + sendargs + ')')
         }
       }, this)
