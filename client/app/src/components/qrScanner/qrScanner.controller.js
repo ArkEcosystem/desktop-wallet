@@ -28,7 +28,7 @@
       }
 
       if (qr.match(/^[A|a]{1}[0-9a-zA-Z]{33}$/g)) type = 'address'
-      if (qr.split(' ').length == 12) type = 'passphrase'
+      if (qr.split(' ').length === 12) type = 'passphrase'
 
       return { type: type, qr: qr }
     }

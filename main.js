@@ -81,8 +81,8 @@ function createWindow () {
               .fail((error) => event.sender.send('transactionSigned', {error: error}))
           } else if (arg.action === 'getAddress') {
             ark.getAddress_async(arg.path)
-              .then((result) => event.returnValue = result)
-              .fail((error) => event.returnValue = error)
+              .then((result) => { event.returnValue = result })
+              .fail((error) => { event.returnValue = error })
           } else if (arg.action === 'getConfiguration') {
             ark.getAppConfiguration_async()
               .then((result) => {
@@ -133,14 +133,14 @@ function createWindow () {
           })
         },
         { type: 'separator' },
-        { label: getScreenshotProtectionLabel(), click: () => { updateScreenshotProtectionItem() }, enabled: process.platform !== 'linux'},
+        { label: getScreenshotProtectionLabel(), click: () => { updateScreenshotProtectionItem() }, enabled: process.platform !== 'linux' },
         { type: 'separator' },
-        { label: 'Minimize', click: function () { mainWindow.minimize() }},
-        { label: 'Maximize', click: function () { mainWindow.maximize() }},
-        { label: 'Full Screen', click: function () { mainWindow.setFullScreen(!mainWindow.isFullScreen()) }},
+        { label: 'Minimize', click: function () { mainWindow.minimize() } },
+        { label: 'Maximize', click: function () { mainWindow.maximize() } },
+        { label: 'Full Screen', click: function () { mainWindow.setFullScreen(!mainWindow.isFullScreen()) } },
         { type: 'separator' },
-        { label: 'Restart', accelerator: 'Command+R', click: function () { mainWindow.reload() }},
-        { label: 'Quit', accelerator: 'Command+Q', click: function () { app.quit() }}
+        { label: 'Restart', accelerator: 'Command+R', click: function () { mainWindow.reload() } },
+        { label: 'Quit', accelerator: 'Command+Q', click: function () { app.quit() } }
       ]
     }, {
       label: 'Edit',
@@ -153,9 +153,9 @@ function createWindow () {
         { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
         { label: 'Select All', accelerator: 'CmdOrCtrl+A', selector: 'selectAll:' },
         { type: 'separator' },
-        { label: 'Open Dev Tools', accelerator: 'CmdOrCtrl+D', click: function () { mainWindow.webContents.openDevTools() }},
-        { label: 'Reload App', accelerator: 'CmdOrCtrl+R', click: function () { mainWindow.webContents.reload() }},
-        { label: 'Print Page', accelerator: 'CmdOrCtrl+P', click: function () { mainWindow.webContents.print({printBackground: true}) }}
+        { label: 'Open Dev Tools', accelerator: 'CmdOrCtrl+D', click: function () { mainWindow.webContents.openDevTools() } },
+        { label: 'Reload App', accelerator: 'CmdOrCtrl+R', click: function () { mainWindow.webContents.reload() } },
+        { label: 'Print Page', accelerator: 'CmdOrCtrl+P', click: function () { mainWindow.webContents.print({printBackground: true}) } }
       ]
     }
   ]

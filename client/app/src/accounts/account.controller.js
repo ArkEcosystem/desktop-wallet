@@ -172,7 +172,7 @@
     self.openExplorer = openExplorer
     self.clientVersion = require('../../package.json').version
     self.latestClientVersion = self.clientVersion
-    networkService.getLatestClientVersion().then(function (r) { self.latestClientVersion = r; })
+    networkService.getLatestClientVersion().then(function (r) { self.latestClientVersion = r })
     self.isNetworkConnected = false
     self.selected = null
     self.accounts = []
@@ -268,7 +268,7 @@
           }
         )
       }
-      if (ledgerService.detect().status == 'Success') {
+      if (ledgerService.detect().status === 'Success') {
         self.ledger = ledgerService.isAppLaunched()
         if (!self.ledger.connected) {
           self.ledgerAccounts = null
@@ -384,8 +384,9 @@
       function getlanguage (value) {
         for (var prop in languages) {
           if (languages.hasOwnProperty(prop)) {
-            if (languages[prop] === value)
+            if (languages[prop] === value) {
               return prop
+            }
           }
         }
       }
@@ -1715,7 +1716,7 @@
 
     function openPassphrasesDialog (selectedAccount) {
       var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1]}
+      var data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1] }
 
       function save () {
         $mdDialog.hide()
