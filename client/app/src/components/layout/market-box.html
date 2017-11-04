@@ -1,0 +1,22 @@
+<md-content ng-if="$ctrl.ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
+  <md-list>
+    <md-list-item>
+      <div>
+        <b><translate>Price</translate></b>
+      </div>
+
+      <span class="md-secondary">{{$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name] | formatCurrency:$ctrl.ul}}</span>
+    </md-list-item>
+    <md-list-item>
+      <b translate>Change 1h/7h/7d</b>
+      <span class="md-secondary">
+        <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.change1h[$ctrl.ul.currency.name]>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.change1h[$ctrl.ul.currency.name]}}%</span> /
+      <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]}}%</span> /
+      <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.change7d[$ctrl.ul.currency.name]>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.change7d[$ctrl.ul.currency.name]}}%</span>
+      </span>
+    </md-list-item>
+    <md-list-item>
+      <b translate>Market Cap.</b> <span class="md-secondary">{{$ctrl.ul.connectedPeer.market.marketCap[$ctrl.ul.currency.name] | formatCurrency:$ctrl.ul}}</span>
+    </md-list-item>
+  </md-list>
+</md-content>

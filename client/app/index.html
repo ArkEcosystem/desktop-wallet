@@ -67,29 +67,7 @@
     <account-box account-ctrl='ul'></account-box>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <md-content ng-if="ul.connectedPeer.market.marketCap" id="home-box-price" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
-        <md-list>
-          <md-list-item>
-            <div>
-              <b><translate>Price</translate></b>
-            </div>
-
-            <span class="md-secondary">{{ul.connectedPeer.market.price[ul.currency.name] | formatCurrency:ul}}</span>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Change 1h/7h/7d</b>
-            <span class="md-secondary">
-              <span md-colors="{'color' : ul.connectedPeer.market.change1h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change1h[ul.currency.name]}}%</span> /
-            <span md-colors="{'color' : ul.connectedPeer.market.change7h[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7h[ul.currency.name]}}%</span> /
-            <span md-colors="{'color' : ul.connectedPeer.market.change7d[ul.currency.name]>=0?'default-green':'default-red' }">{{ul.connectedPeer.market.change7d[ul.currency.name]}}%</span>
-            </span>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Market Cap.</b> <span class="md-secondary">{{ul.connectedPeer.market.marketCap[ul.currency.name] | formatCurrency:ul}}</span>
-          </md-list-item>
-        </md-list>
-      </md-content>
-
+      <market-box account-ctrl='ul'></market-box>
       <network-box account-ctrl='ul'></network-box>
     </div>
     <!-- 
@@ -829,6 +807,7 @@
 
   <script src="src/components/layout/main-navbar.controller.js"></script>
   <script src="src/components/layout/account-box.controller.js"></script>
+  <script src="src/components/layout/market-box.controller.js"></script>
   <script src="src/components/layout/network-box.controller.js"></script>
   <script src="src/components/qrScanner/qrScanner.controller.js"></script>
   <script src="src/components/qrScanner/qrScanner.directive.js"></script>
