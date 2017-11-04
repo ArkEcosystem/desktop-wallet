@@ -1,0 +1,54 @@
+<div id="home-box-accounts" md-whiteframe="3">
+  <md-toolbar layout="row" md-scroll-shrink>
+    <div class="md-toolbar-tools">
+      <h2>
+        <translate>My Accounts</translate> {{$ctrl.ul.network.symbol}}{{$ctrl.ul.myAccountsBalance()}} / {{$ctrl.ul.myAccountsCurrencyBalance() | formatCurrency:$ctrl.ul}}
+      </h2>
+      <span flex></span>
+      <md-button class="share" ng-click="$ctrl.ul.refreshAccountBalances()" aria-label="Refresh balances">
+        <md-icon md-font-library="material-icons">cached</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <div style="min-height: 100px; max-height: 300px; height: auto; border-radius:0 0 10px 10px" layout="column">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="$ctrl.ul.importAccount()">
+          <md-icon>file_download</md-icon>
+          <translate>Import Account</translate>
+        </md-button>
+
+        <md-button ng-click="$ctrl.ul.createAccount()">
+          <md-icon>account_box</md-icon>
+          <translate>Create Account</translate>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content style="min-height: 70px;" flex>
+      <md-list md-no-ink>
+        <md-list-item ng-click="$ctrl.ul.selectLedgerAccount()" ng-if="$ctrl.ul.ledger.connected">
+          <span>
+            <md-icon md-svg-icon="ledger"></md-icon>
+            Ledger Nano S
+          </span>
+          <span class="md-secondary">
+            <md-progress-circular ng-if="!$ctrl.ul.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
+            <md-chip ng-if="$ctrl.ul.ledgerAccounts">{{$ctrl.ul.ledgerAccounts.length}} <translate>Accounts</translate></md-chip>
+          </span>
+        </md-list-item>
+
+        <md-list-item ng-click="$ctrl.ul.selectAccount(it)" ng-repeat="it in $ctrl.ul.myAccounts() track by $index">
+          <span ng-class="{'selected' : it.address === $ctrl.ul.selected.address }">
+            <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
+            <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
+            <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+            {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
+          </span>
+          <span class="md-secondary">
+            {{$ctrl.ul.network.symbol}}{{it.balance/100000000}}
+          </span>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>
