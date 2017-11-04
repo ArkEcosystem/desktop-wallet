@@ -8,15 +8,15 @@
 
   angular
     .module('arkclient.components')
-    .component('marketBox', {
-      templateUrl: 'src/components/layout/market-box.html',
+    .component('networkBox', {
+      templateUrl: 'src/components/dashboard/network-box.html',
       bindings: {
         accountCtrl: '='
       },
-      controller: MarketController
+      controller: NetworkController
     })
 
-  function MarketController ($scope) {
+  function NetworkController ($scope) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
     }

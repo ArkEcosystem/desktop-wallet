@@ -8,15 +8,15 @@
 
   angular
     .module('arkclient.components')
-    .component('accountBox', {
-      templateUrl: 'src/components/layout/account-box.html',
+    .component('marketBox', {
+      templateUrl: 'src/components/dashboard/market-box.html',
       bindings: {
         accountCtrl: '='
       },
-      controller: AccountBoxController
+      controller: MarketController
     })
 
-  function AccountBoxController ($scope) {
+  function MarketController ($scope) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
     }
