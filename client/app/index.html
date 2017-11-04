@@ -89,21 +89,8 @@
           </md-list-item>
         </md-list>
       </md-content>
-      <md-content id="home-box-network" style="opacity:0.9; border-radius:10px; width: 360px; margin:10px;" md-whiteframe="3">
-        <md-list flex>
-          <md-list-item>
-            <b translate>Network</b>
-            <md-button class="md-secondary" aria-label="Switch Network" md-prevent-menu-close ng-click="ul.switchNetwork()">{{ul.connectedPeer.network}}/{{ul.connectedPeer.height}}</md-button>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Peer</b>
-            <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="ul.pickRandomPeer()">{{ul.connectedPeer.ip}}</md-button>
-          </md-list-item>
-          <md-list-item>
-            <b translate>Last checked</b> <span class="md-secondary">{{ul.connectedPeer.lastConnection | date:'shortTime'}}</span>
-          </md-list-item>
-        </md-list>
-      </md-content>
+
+      <network-box account-ctrl='ul'></network-box>
     </div>
     <!-- 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -842,6 +829,7 @@
 
   <script src="src/components/layout/main-navbar.controller.js"></script>
   <script src="src/components/layout/account-box.controller.js"></script>
+  <script src="src/components/layout/network-box.controller.js"></script>
   <script src="src/components/qrScanner/qrScanner.controller.js"></script>
   <script src="src/components/qrScanner/qrScanner.directive.js"></script>
   <script src="src/components/addressbook/addressbook.controller.js"></script>
