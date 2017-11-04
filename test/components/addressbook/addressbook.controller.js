@@ -1,30 +1,36 @@
 'use strict'
 
 describe('AddressbookController', function() {
+  const expect = chai.expect;
 
-  let app = null,
-    ctrl = null,
-    $compile = null, 
-    $rootScope = null, 
-    $scope = null;
+  let ctrl,
+    $compile, 
+    $rootScope, 
+    $scope;
+
+  let mdDialogMock,
+    mdToastMock,
+    storageServiceMock,
+    getTextCatalogMock,
+    accountServiceMock;
 
   beforeEach(() => {
     module('arkclient.components', ($provide) => {
-      let mdDialogStub = {},
-        mdToastStub = {},
-        storageServiceStub = {
-          get: (x) => 'test_contact'
-        },
-        getTextCatalogStub = {},
-        accountServiceStub = {};
+      // define mocked services and stubbed calls
+      mdDialogMock = {};
+      mdToastMock = {};
+      storageServiceMock = {
+        get: sinon.stub().returns(['test_contact'])
+      };
+      getTextCatalogMock = {};
+      accountServiceMock = {};
 
-      // provide the mock
-      // $provide.value('$scope')
-      $provide.value('$mdDialog', mdDialogStub);
-      $provide.value('$mdToast', mdToastStub);
-      $provide.value('storageService', storageServiceStub);
-      $provide.value('gettextCatalog', getTextCatalogStub);
-      $provide.value('accountService', accountServiceStub);
+      // provide mocks to angular controller
+      $provide.value('$mdDialog', mdDialogMock);
+      $provide.value('$mdToast', mdToastMock);
+      $provide.value('storageService', storageServiceMock);
+      $provide.value('gettextCatalog', getTextCatalogMock);
+      $provide.value('accountService', accountServiceMock);
     });
 
     inject( (_$compile_, _$rootScope_, _$controller_)=> {
@@ -35,10 +41,38 @@ describe('AddressbookController', function() {
     })
   });
 
-  describe('getContacts', function() {
-    it('loads the contacts', () => {
-      ctrl.getContacts();
+  describe('initialized state', () => {
+    it('retrieves contacts from storage', () => {
+      //assert
+      expect(ctrl.contacts).to.deep.equal(['test_contact']);
+      expect(storageServiceMock.get.calledOnce).to.be.true;
+      expect(storageServiceMock.get.getCall(0).args[0]).to.equal('contacts');
     });
-  })
+  });
 
-})
+  describe('getContacts', () => {
+    it('sets controller contacts to valid return value', () => {
+      //arrange
+      storageServiceMock.get = sinon.stub().returns(['valid_contact']);
+
+      //act
+      ctrl.getContacts();
+
+      //assert
+      expect(storageServiceMock.get.calledOnce).to.be.true;
+      expect(ctrl.contacts).to.deep.equal(['valid_contact']);
+    });
+
+    it('sets controller contacts to empty array on invalid return value', () => {
+      //arrange
+      storageServiceMock.get = sinon.stub().returns(null);
+
+      //act
+      ctrl.getContacts();
+
+      //assert
+      expect(storageServiceMock.get.calledOnce).to.be.true;
+      expect(ctrl.contacts).to.deep.equal([]);
+    });
+  });
+});
