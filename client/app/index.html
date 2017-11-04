@@ -60,15 +60,15 @@
 
   <div ng-cloak="" style="height: 100%" layout="column">
 
-	<main-navbar account-ctrl='ul'></main-navbar>
+	<main-navbar account-ctrl="ul"></main-navbar>
 
   <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
 
-    <account-box account-ctrl='ul'></account-box>
+    <account-box account-ctrl="ul"></account-box>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <market-box account-ctrl='ul'></market-box>
-      <network-box account-ctrl='ul'></network-box>
+      <market-box account-ctrl="ul"></market-box>
+      <network-box account-ctrl="ul"></network-box>
     </div>
     <!-- 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -85,63 +85,7 @@
   <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
     <md-content flex layout="row">
 
-      <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
-        <md-list md-no-ink>
-          <md-list-item ng-if="ul.ledger.connected">
-            <h2 translate>
-              Ledger Nano S
-            </h2>
-          </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectLedgerAccount(it)" ng-repeat="it in ul.ledgerAccounts track by $index">
-            <span style="white-space: nowrap;">
-                  <md-icon md-svg-icon="ledger"></md-icon>
-                  {{it.address|accountlabel}}
-                </span>
-          </md-list-item>
-          <md-list-item ng-if="ul.ledger.connected&&!ul.ledgerAccounts">
-            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-          </md-list-item>
-          <md-list-item>
-            <h2 translate>
-              My Accounts
-            </h2>
-          </md-list-item>
-          <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.selectAccount(it)" ng-repeat="it in ul.myAccounts() track by $index">
-            <span style="white-space: nowrap;">
-                  <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-                  <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-                  <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-                  {{it.username||it.address|accountlabel}}
-                </span>
-          </md-list-item>
-          <md-list-item>
-            <h2 translate>
-              Contacts
-            </h2>
-          </md-list-item>
-          <md-list-item md-colors="{background: (contact.address === ul.selected.address ? 'primary' : 'background')}" ng-click="ul.gotoAddress(contact.address)" ng-repeat="contact in ab.contacts">
-            <span style="white-space: nowrap;">
-              <md-icon md-font-library="material-icons">account_circle</md-icon>
-              {{contact.name}}
-              <md-icon ng-if="ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = ab.getStats(ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
-                info_outline
-                <md-tooltip md-direction="bottom" class="tooltip-multiline">
-                  {{'Expense' | translate}}: {{ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
-                  <br>
-                  {{'Income' | translate}}: {{ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
-                </md-tooltip>
-              </md-icon>
-            </span>
-          </md-list-item>
-          <md-list-item>
-            <md-button class="watch-only-address" ng-click="ab.addAddressbookContact()">
-              <md-icon md-font-library="material-icons">add</md-icon>
-              <translate>Add Contact</translate>
-
-            </md-button>
-          </md-list-item>
-        </md-list>
-      </md-sidenav>
+      <main-sidenav account-ctrl="ul" address-book-ctrl="ab"></main-sidenav>
 
       <md-content flex layout="column" id="content">
         <md-card flex="none">
@@ -809,6 +753,7 @@
   <script src="src/components/dashboard/account-box.controller.js"></script>
   <script src="src/components/dashboard/market-box.controller.js"></script>
   <script src="src/components/dashboard/network-box.controller.js"></script>
+  <script src="src/components/account/main-sidenav.controller.js"></script>
   <script src="src/components/qrScanner/qrScanner.controller.js"></script>
   <script src="src/components/qrScanner/qrScanner.directive.js"></script>
   <script src="src/components/addressbook/addressbook.controller.js"></script>
