@@ -56,7 +56,7 @@
               networkService.getFromPeer('/api/transactions?orderBy=timestamp:desc&limit=1&recipientId=' + account.address + '&senderId=' + account.address).then(
                 (resp) => {
                   if (resp.success) {
-                    empty = resp.count === 0
+                    empty = parseInt(resp.count) === 0
                     next()
                   } else {
                     empty = true

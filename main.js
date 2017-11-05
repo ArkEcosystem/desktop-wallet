@@ -86,7 +86,6 @@ function createWindow () {
           } else if (arg.action === 'getConfiguration') {
             ark.getAppConfiguration_async()
               .then((result) => {
-                console.log(result)
                 result.connected = true
                 event.returnValue = result
               })
