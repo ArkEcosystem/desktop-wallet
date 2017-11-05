@@ -64,10 +64,10 @@
 
   <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
 
-    <account-box account-ctrl="ul"></account-box>
+    <account-box account-ctrl="ul" id="home-box-accounts" md-whiteframe="3"></account-box>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <market-box account-ctrl="ul"></market-box>
+      <market-box account-ctrl="ul" ng-if="ul.connectedPeer.market.marketCap"></market-box>
       <network-box account-ctrl="ul"></network-box>
     </div>
     <!-- 
@@ -85,7 +85,9 @@
   <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
     <md-content flex layout="row">
 
-      <main-sidenav account-ctrl="ul" address-book-ctrl="ab"></main-sidenav>
+      <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
+        <main-sidenav account-ctrl="ul" address-book-ctrl="ab"></main-sidenav>
+      </md-sidenav>
 
       <md-content flex layout="column" id="content">
         <md-card flex="none">

@@ -1,56 +1,54 @@
-<md-sidenav ng-click="$ctrl.ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
-  <md-list md-no-ink>
-    <md-list-item ng-if="$ctrl.ul.ledger.connected">
-      <h2 translate>
-        Ledger Nano S
-      </h2>
-    </md-list-item>
-    <md-list-item ng-if="$ctrl.ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.selectLedgerAccount(it)" ng-repeat="it in $ctrl.ul.ledgerAccounts track by $index">
-      <span style="white-space: nowrap;">
-            <md-icon md-svg-icon="ledger"></md-icon>
-            {{it.address|accountlabel}}
-          </span>
-    </md-list-item>
-    <md-list-item ng-if="$ctrl.ul.ledger.connected&&!$ctrl.ul.ledgerAccounts">
-      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-    </md-list-item>
-    <md-list-item>
-      <h2 translate>
-        My Accounts
-      </h2>
-    </md-list-item>
-    <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.selectAccount(it)" ng-repeat="it in $ctrl.ul.myAccounts() track by $index">
-      <span style="white-space: nowrap;">
-            <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-            <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-            <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-            {{it.username||it.address|accountlabel}}
-          </span>
-    </md-list-item>
-    <md-list-item>
-      <h2 translate>
-        Contacts
-      </h2>
-    </md-list-item>
-    <md-list-item md-colors="{background: (contact.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.gotoAddress(contact.address)" ng-repeat="contact in $ctrl.ab.contacts">
-      <span style="white-space: nowrap;">
-        <md-icon md-font-library="material-icons">account_circle</md-icon>
-        {{contact.name}}
-        <md-icon ng-if="$ctrl.ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = $ctrl.ab.getStats($ctrl.ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
-          info_outline
-          <md-tooltip md-direction="bottom" class="tooltip-multiline">
-            {{'Expense' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
-            <br>
-            {{'Income' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
-          </md-tooltip>
-        </md-icon>
-      </span>
-    </md-list-item>
-    <md-list-item>
-      <md-button class="watch-only-address" ng-click="$ctrl.ab.addAddressbookContact()">
-        <md-icon md-font-library="material-icons">add</md-icon>
-        <translate>Add Contact</translate>
-      </md-button>
-    </md-list-item>
-  </md-list>
-</md-sidenav>
+<md-list md-no-ink>
+  <md-list-item ng-if="$ctrl.ul.ledger.connected">
+    <h2 translate>
+      Ledger Nano S
+    </h2>
+  </md-list-item>
+  <md-list-item ng-if="$ctrl.ul.ledger.connected" md-ink-ripple="0" md-colors="{background: (it.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.selectLedgerAccount(it)" ng-repeat="it in $ctrl.ul.ledgerAccounts track by $index">
+    <span style="white-space: nowrap;">
+          <md-icon md-svg-icon="ledger"></md-icon>
+          {{it.address|accountlabel}}
+        </span>
+  </md-list-item>
+  <md-list-item ng-if="$ctrl.ul.ledger.connected&&!$ctrl.ul.ledgerAccounts">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+  </md-list-item>
+  <md-list-item>
+    <h2 translate>
+      My Accounts
+    </h2>
+  </md-list-item>
+  <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.selectAccount(it)" ng-repeat="it in $ctrl.ul.myAccounts() track by $index">
+    <span style="white-space: nowrap;">
+          <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
+          <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
+          <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+          {{it.username||it.address|accountlabel}}
+        </span>
+  </md-list-item>
+  <md-list-item>
+    <h2 translate>
+      Contacts
+    </h2>
+  </md-list-item>
+  <md-list-item md-colors="{background: (contact.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.gotoAddress(contact.address)" ng-repeat="contact in $ctrl.ab.contacts">
+    <span style="white-space: nowrap;">
+      <md-icon md-font-library="material-icons">account_circle</md-icon>
+      {{contact.name}}
+      <md-icon ng-if="$ctrl.ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = $ctrl.ab.getStats($ctrl.ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
+        info_outline
+        <md-tooltip md-direction="bottom" class="tooltip-multiline">
+          {{'Expense' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
+          <br>
+          {{'Income' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
+        </md-tooltip>
+      </md-icon>
+    </span>
+  </md-list-item>
+  <md-list-item>
+    <md-button class="watch-only-address" ng-click="$ctrl.ab.addAddressbookContact()">
+      <md-icon md-font-library="material-icons">add</md-icon>
+      <translate>Add Contact</translate>
+    </md-button>
+  </md-list-item>
+</md-list>
