@@ -94,7 +94,7 @@
 			</md-tooltip>
 			<md-menu>
 				<md-button aria-label="Show Network" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
-					<md-icon md-font-library="material-icons">{{ $ctrl.ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
+					<md-icon md-font-library="material-icons" ng-style="$ctrl.ul.connectedPeer.isConnected ? { color:'white' } : { color:'red'}">{{ $ctrl.ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
 				</md-button>
 				<md-menu-content flex layout-padding width="6">
 					<md-list>
