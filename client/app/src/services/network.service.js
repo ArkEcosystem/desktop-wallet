@@ -14,7 +14,7 @@
     if (!network) {
       network = switchNetwork()
     }
-    var ark = require('arkjs')
+    var ark = require('../node_modules/arkjs')
     ark.crypto.setNetworkVersion(network.version || 23)
 
     var clientVersion = require('../../package.json').version

@@ -14,7 +14,7 @@
    */
   function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
     var self = this
-    var ark = require('arkjs')
+    var ark = require('../node_modules/arkjs')
 
     self.defaultFees = {
       'send': 10000000,
