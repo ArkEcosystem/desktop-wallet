@@ -1,39 +1,42 @@
-![ARK-DESKTOP](https://cdn-images-1.medium.com/max/2000/1*9pWnoR9qoO6bNLo5-pa-_Q.jpeg)
+![ARK-DESKTOP](https://i.imgur.com/eZPrrCQ.png)
+
 [![Build Status](https://travis-ci.org/ArkEcosystem/ark-desktop.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop)
 
-## Pinned: Help us translating
-Collaborate to our OneSky project http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
+## Pinned: Help us with translations
+Collaborate with other translators on our OneSky project and help us get wallet translated in other languages  http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
 
-Please don't submit PR
+Please don't submit Pull-Requests (PRs) for translations, but use the link above!
 
 ## Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
 ## Features
-* Available on ***Windows***, ***Linux*** (ubuntu/debian) and ***Macosx*** (signed)
-* No wait to sync to the network: launch and use.
-* view any account from its address (transactions, delegate status and votes)
-* (soon) deposit ARK using altcoins or USD (via changer.com) - no registration needed
-* label any account
-* realtime currency value (updated every 5 min) in UsD, Euro, BTC, HKD, JPY, CNY, AuD, CanD, Pound and Rubble
-* autoconnecting to a healthy ark network peer. If the peer is not good any more, automatically find a new one.
-* send ark from/to any account.
-* easily switch to different network, or private chains
-* customize background
-* isolated processes on Windows and Macosx to prevent from data sniffing or injection.
-* Translations (thanks to the Ark community). Please help contributing
+* Available on ***Windows***, ***Linux*** (Ubuntu/Debian) and ***MacOSX*** (signed).
+* No need to download ARK blockchain, just sync to the network: launch and use within seconds.
+* View any account from its address (transactions, delegate status and votes).
+* Label any account and add your own contacts.
+* Hardware wallet support : Ledger Nano S.
+* Real-time currency value (updated every 5 min) in USD, EUR, BTC, HKD, JPY, CNY, AUD, GBP, Rubble, ...
+* Autoconnect to a healthy ARK network peer. If the peer is not good anymore, it will automatically find a new one.
+* Send ark from / to any account.
+* Easily switch to a different network, or private chains.
+* Customized backgrounds and themes for better user experience.
+* Choose between dark or light mode.
+* Isolated processes on Windows and MacOSX to prevent from data sniffing or injection.
+* Translations (thanks to the ARK community) - help out http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
+* Organise your accounts with virtual folders (for instance savings, personnal etc...) so you don't pay any transfer fee (stored locally).
+* Change your delegate vote.
+* When new version is available, message is shown in the right upper part.
+* Easy to update - download latest version, start installation program and it will automatically remove previous version and install new one.
+* Second signature supported.
+* (soon) Deposit or withdraw ARK using altcoins or USD (via exchange) - no registration needed.
+* (soon) Multisignature accounts.
+* **SAVE YOUR PASSPHRASE(S) - if you lose it, you lose access to that particular ARK address(es). There is no forgot my password option with blockchains and no one can help you retrieve it!**
 
-If you login to your account (with your passphrase)
-* (soon) Withdraw to altcoins or USD (via changer.com) - no registration needed
-* Organise your accounts with virtual folders (for instance savings, personnal etc...) so you don't pay any transfer fee
-* Update your votes.
-* Save your passphrases (unsecured so far, secured vault in the near future)
-
-Second signature supported. Multisignature accounts not yet supported.
 
 ## Screenshots
-![linux](http://i.imgur.com/P9TTXyY.png)
-![linux](http://i.imgur.com/CQ4ms4H.png)
+![dashboard](https://i.imgur.com/AVdyM16.jpg)
+![account](https://i.imgur.com/DD8fx1O.jpg)
 
 ## From AUR
 For distros derived from Arch Linux the package is avaliable in AUR, just run:
@@ -80,5 +83,7 @@ Read [CONTRIBUTING.md](https://github.com/ArkEcosystem/ark-desktop/blob/master/C
 ## Authors
 - FX Thoorens <fx@ark.io>
 - Guillaume Verbal <doweig@ark.io>
+- Lúcio Rubens <lucio@ark.io>
+- Juan Martín <juan@ark.io>
 
-### License [MIT](LICENSE.md) copyright (c) 2016 ARK, copyright (c) 2016 fx thoorens
+### License [MIT](LICENSE.md) | Copyright (c) 2016-2017 ARK.io | Copyright (c) 2016-2017 FX Thoorens
