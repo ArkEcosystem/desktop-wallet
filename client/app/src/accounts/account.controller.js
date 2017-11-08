@@ -119,6 +119,9 @@
       { name: 'rub', symbol: '\u20BD' }
     ]
 
+    // 1 ARK has 100000000 "arkthosi"
+    const UNIT = Math.pow(10, 8)
+
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
     self.selectedLanguage = self.language
@@ -507,7 +510,7 @@
         accountService.createTransaction(0, {
           fromAddress: self.selected.address,
           toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * 100000000),
+          amount: parseInt(resp.send_amount * UNIT),
           masterpassphrase: self.passphrase,
           secondpassphrase: self.secondpassphrase
         }).then(function (transaction) {
@@ -648,7 +651,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * 100000000)
+      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * UNIT)
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -1244,7 +1247,7 @@
       var totalBalance = function (minusFee) {
         var fee = 10000000
         var balance = selectedAccount.balance
-        return accountService.numberToFixed((minusFee ? balance - fee : balance) / 100000000)
+        return accountService.numberToFixed((minusFee ? balance - fee : balance) / UNIT)
       }
 
       function fillSendableBalance () {
@@ -1274,7 +1277,7 @@
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.send.data.fromAddress,
           toAddress: $scope.send.data.toAddress,
-          amount: parseInt($scope.send.data.amount * 100000000),
+          amount: parseInt(($scope.send.data.amount * UNIT).toFixed(0)),
           smartbridge: $scope.send.data.smartbridge,
           masterpassphrase: $scope.send.data.passphrase,
           secondpassphrase: $scope.send.data.secondpassphrase
@@ -2252,7 +2255,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / 100000000) + ''
+        humanAmount: accountService.numberToFixed(transaction.amount / UNIT).toString(),
+        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / UNIT).toString()
       }
 
       $mdDialog.show({
