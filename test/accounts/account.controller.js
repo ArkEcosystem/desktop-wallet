@@ -1,6 +1,9 @@
 'use strict'
 
-// const describe = require('mocha').describe
+/*
+ * These mocks and tests would be used for splitting the AccountController into
+ * more pieces, such as components and services
+ */
 
 describe('AccountController', function () {
   const expect = chai.expect
@@ -26,22 +29,56 @@ describe('AccountController', function () {
     mdToastMock,
     getTextCatalogMock
 
+  const accounts = ['userAccount1', 'userAccount2']
+
   beforeEach(() => {
     module('arkclient.accounts', ($provide) => {
-      accountServiceMock = {}
-      networkServiceMock = {}
+      accountServiceMock = {
+        loadAllAccounts() { return accounts }
+      }
+      networkServiceMock = {
+        getLatestClientVersion() { return new Promise((resolve, _) => resolve('0.0.0')) },
+        getNetwork() {
+          return { theme: 'default', themeDark: false }
+        },
+        getNetworks() {},
+        getConnection() { return new Promise((resolve, _) => resolve()) }
+      }
       pluginLoaderMock = {
         triggerEvent: sinon.stub()
       }
       storageServiceMock = {
-        get: sinon.stub().returns(['test_contact'])
+        get: sinon.stub().returns(['test_contact']),
+        getContext() {}
       }
-      changerServiceMock = {}
+      changerServiceMock = {
+        getHistory() {},
+        getMarketInfo() { return new Promise((resolve, _) => resolve() ) }
+      }
       ledgerServiceMock = {}
       timeServiceMock = {}
       toastServiceMock = {}
 
-      mdThemingProviderMock = {}
+      const themeMock = {
+        primaryPalette() { return this },
+        accentPalette() {return this },
+        warnPalette() { return this },
+        backgroundPalette() { return this },
+        dark() { return this },
+      }
+
+      mdThemingProviderMock = {
+        theme() { return themeMock },
+        $get() {
+          return {
+            THEMES: {
+              default: { colors: { primary: {}, accent: {}, warn: {}, background: {} } }
+            },
+            generateTheme() {}
+          }
+        }
+      }
+
       mdThemingMock = {}
 
       mdDialogMock = {}
@@ -53,7 +90,7 @@ describe('AccountController', function () {
 
       // provide mocks to angular controller
       $provide.value('accountService', accountServiceMock)
-      $provide.value('networkService', accountServiceMock)
+      $provide.value('networkService', networkServiceMock)
       $provide.value('pluginLoader', pluginLoaderMock)
       $provide.value('storageService', storageServiceMock)
       $provide.value('changerService', changerServiceMock)
@@ -75,11 +112,30 @@ describe('AccountController', function () {
     })
   })
 
-  describe('initialized state', () => {
-    it('retrieves contacts from storage', () => {
-      expect(ctrl.contacts).to.deep.equal(['test_contact'])
-      expect(storageServiceMock.get.calledOnce).to.be.true
-      expect(storageServiceMock.get.getCall(0).args[0]).to.equal('contacts')
+  describe('', ()=> {
+    xit('loads all the accounts', function() {
+    })
+  })
+
+  describe('getAllAccounts()', ()=> {
+    beforeEach(function() {
+      sinon.stub(ctrl, 'myAccounts').returns(accounts)
+    })
+
+    context("when there aren't any ledger accounts", ()=> {
+      it('returns the user accounts only', function() {
+        expect(ctrl.getAllAccounts()).to.have.same.members(accounts)
+      })
+    })
+
+    context("when there are ledger accounts", ()=> {
+      beforeEach(function() {
+        ctrl.ledgerAccounts = ['ledgerAccount1', 'ledgerAccoun2']
+      })
+
+      it('returns the user and the ledger accounts', function() {
+        expect(ctrl.getAllAccounts()).to.have.members(accounts.concat(ctrl.ledgerAccounts))
+      })
     })
   })
 

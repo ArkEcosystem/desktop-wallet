@@ -63,8 +63,8 @@
     $scope,
     $mdMedia,
     gettextCatalog,
-    $mdTheming,
     $mdThemingProvider,
+    $mdTheming,
     $window,
     $rootScope
   ) {
@@ -279,6 +279,7 @@
       }
     }, 2 * 1000)
 
+    // TODO Used in dashboard navbar and accountBox
     self.selectLedgerAccount = function (account) {
       if (!account && self.ledgerAccounts) {
         account = self.ledgerAccounts[0]
@@ -601,19 +602,6 @@
       })
     }
 
-    self.myAccountsBalance = function () {
-      return (self.getAllAccounts().reduce(function (memo, acc) {
-        return memo + parseInt(acc.balance || 0)
-      }, 0) / 100000000).toFixed(2)
-    }
-
-    self.myAccountsCurrencyBalance = function () {
-      var balance = self.myAccountsBalance()
-      var currencyName = self.currency.name
-      var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0
-      return balance * price
-    }
-
     self.otherAccounts = function () {
       return self.accounts.filter(function (account) {
         return !account.virtual
@@ -841,22 +829,6 @@
         })
     }
 
-    self.refreshAccountBalances = function () {
-      networkService.getPrice()
-      var accounts = self.getAllAccounts()
-      for (var i in accounts) {
-        accountService
-          .refreshAccount(accounts[i])
-          .then(function (account) {
-            for (var j in accounts) {
-              if (accounts[j].address === account.address) {
-                accounts[j].balance = account.balance
-              }
-            }
-          })
-      }
-    }
-
     self.toggleRefreshAccountsAutomatically = function () {
       storageService.set('refreshAccountsAutomatically', self.refreshAccountsAutomatically, true)
     }
@@ -869,6 +841,7 @@
      * Select the current avatars
      * @param menuId
      */
+    // TODO Used in dashboard navbar and accountBox
     function selectAccount (account) {
       var currentaddress = account.address
       self.selected = accountService.getAccount(currentaddress)
@@ -1381,7 +1354,7 @@
 
     function generateDarkTheme (themeName) {
       var theme = themeName || self.network.theme
-      var properties = $mdTheming.$get().THEMES[theme]
+      var properties = $mdThemingProvider.$get().THEMES[theme]
 
       var colors = properties.colors
       var primary = colors.primary.name
@@ -1389,8 +1362,13 @@
       var warn = colors.warn.name
       var background = colors.background.name
 
-      $mdTheming.theme('dark').primaryPalette(primary).accentPalette(accent).warnPalette(warn).backgroundPalette(background).dark()
-      $mdTheming.$get().generateTheme('dark')
+      $mdThemingProvider.theme('dark')
+        .primaryPalette(primary)
+        .accentPalette(accent)
+        .warnPalette(warn)
+        .backgroundPalette(background)
+        .dark()
+      $mdThemingProvider.$get().generateTheme('dark')
     }
 
     // Compare vibrant colors from image with default material palette
@@ -1403,7 +1381,7 @@
 
       var path = require('path')
       var vibrant = require('node-vibrant')
-      var materialPalette = $mdTheming.$get().PALETTES
+      var materialPalette = $mdThemingProvider.$get().PALETTES
 
       // check if it's an image url
       var regExp = /\(([^)]+)\)/
@@ -1443,8 +1421,8 @@
           accentColor = sortObj(vibrantRatio)[1]
         }
 
-        $mdTheming.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor)
-        $mdTheming.$get().generateTheme('dynamic')
+        $mdThemingProvider.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor)
+        $mdThemingProvider.$get().generateTheme('dynamic')
 
         callback('dynamic')
       })
@@ -1804,6 +1782,7 @@
     }
 
     // Create a new cold account
+    // TODO Used in dashboard navbar and accountBox
     function createAccount () {
       var bip39 = require('bip39')
       var data = { passphrase: bip39.generateMnemonic() }
@@ -1863,6 +1842,7 @@
       })
     }
 
+    // TODO Used in dashboard navbar and accountBox
     function importAccount () {
       var data = {
         passphrase: ''

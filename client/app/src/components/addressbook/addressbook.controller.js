@@ -30,7 +30,7 @@
     }
 
     self.isAddress = function (address) {
-      return require('arkjs').crypto.validateAddress(address)
+      return require('../node_modules/arkjs').crypto.validateAddress(address)
     }
 
     function existsIn (haystack, needle) {
