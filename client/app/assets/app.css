@@ -44,15 +44,11 @@ body {
 /* Toolbar area */
 
 .menu {
-    background-color: transparent;
-    border: none;
-    height: 38px;
-    margin: 16px;
-    width: 36px;
+    min-width: 40px !important;
 }
 
 .selectcoin {
-    min-height: 125;
+    min-height: 125px;
 }
 
 md-toolbar h3 {
