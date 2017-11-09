@@ -37,7 +37,7 @@
 				<md-button aria-label="Show Settings" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">settings</md-icon>
 				</md-button>
-				<md-menu-content flex layout-padding width="6" style="min-height: 540px; overflow:hidden;">
+				<md-menu-content flex width="6" style="min-height: 540px; overflow:hidden;">
 					<md-list class="left-list">
 						<md-list-item>
 							<md-icon>attach_money</md-icon>
@@ -96,7 +96,7 @@
 				<md-button aria-label="Show Network" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">{{ $ctrl.ul.connectedPeer.isConnected?'cloud_done':'cloud_off' }}</md-icon>
 				</md-button>
-				<md-menu-content flex layout-padding width="6">
+				<md-menu-content flex width="6">
 					<md-list>
 						<md-list-item>
 							<b translate>Peer</b>
@@ -127,7 +127,7 @@
 					<md-icon md-font-library="material-icons">insert_chart</md-icon>
 					<!--<md-icon md-colors="{'color' : $ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]<0?'red-200':'green-200' }" md-font-library="material-icons">arrow_{{$ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]<0?"down":"up"}}ward</md-icon>-->
 				</md-button>
-				<md-menu-content flex layout-padding width="6">
+				<md-menu-content flex width="6">
 					<md-list>
 						<md-list-item>
 							<div>
@@ -167,7 +167,7 @@
 				<md-button aria-label="Application State" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">power_settings_new</md-icon>
 				</md-button>
-				<md-menu-content flex layout-padding width="6" style="min-height: 340px; overflow:hidden;">
+				<md-menu-content flex width="6" style="min-height: 340px; overflow:hidden;">
 					<md-list class="left-list">
 						<md-list-item aria-label="Close App" ng-click="$ctrl.ul.closeApp()" id="exit-app-button">
 							<md-icon>exit_to_app</md-icon>
