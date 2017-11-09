@@ -6,6 +6,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-position: center;
+    min-width: 800px;
 }
 
 .md-select-menu-container {
@@ -44,15 +45,16 @@ body {
 /* Toolbar area */
 
 .menu {
-    background-color: transparent;
-    border: none;
-    height: 38px;
-    margin: 16px;
-    width: 36px;
+    min-width: 40px !important;
+}
+
+.md-toolbar-tools {
+    min-height: 64px;
+    -webkit-app-region: drag;
 }
 
 .selectcoin {
-    min-height: 125;
+    min-height: 125px;
 }
 
 md-toolbar h3 {
