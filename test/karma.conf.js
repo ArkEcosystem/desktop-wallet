@@ -38,11 +38,7 @@ module.exports = function (config) {
       '../client/app/src/addons/pluginLoader.addon.js',
       '../client/app/src/components/**/*.js',
       '../client/app/src/filters/filters.js',
-      '../client/app/src/services/changer.service.js',
-      '../client/app/src/services/ledger.service.js',
-      '../client/app/src/services/network.service.js',
-      '../client/app/src/services/storage.service.js',
-      '../client/app/src/services/time.service.js',
+      '../client/app/src/services/**/*.js',
       '../client/app/src/utils/translations.js',
 
       // Inject the `module` function

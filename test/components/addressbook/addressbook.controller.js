@@ -21,7 +21,9 @@ describe('AddressbookController', function () {
       storageServiceMock = {
         get: sinon.stub().returns(['test_contact'])
       }
-      getTextCatalogMock = {}
+      getTextCatalogMock = {
+        setStrings() {}
+      }
       accountServiceMock = {}
       toastServiceMock = {}
 

@@ -123,6 +123,24 @@
       })
     }
 
+    this.submitTransaction = (selectedAccount, formData) => {
+      return accountService.createTransaction(0, {
+        ledger: selectedAccount.ledger,
+        publicKey: selectedAccount.publicKey,
+        fromAddress: formData.fromAddress,
+        toAddress: formData.toAddress,
+        amount: parseInt((formData.amount * UNIT).toFixed(0)),
+        smartbridge: formData.smartbridge,
+        masterpassphrase: formData.passphrase,
+        secondpassphrase: formData.secondpassphrase
+      })
+        .then( (transaction) => {
+          this.accountCtrl.showValidateTransaction(selectedAccount, transaction)
+        },
+        this.accountCtrl.formatAndToastError
+      )
+    }
+
     this.showSendTransaction = (selectedAccount) => {
       const passphrases = accountService.getPassphrases(selectedAccount.address)
 
@@ -186,34 +204,22 @@
           return
         }
 
-        // in case of data selected from contacts
+        // In case of data selected from contacts
         if ($scope.send.data.toAddress.address) {
           $scope.send.data.toAddress = $scope.send.data.toAddress.address
         }
-        // remove bad characters before and after in case of bad copy/paste
+
+        // Remove bad characters before and after in case of bad copy/paste
         $scope.send.data.toAddress = $scope.send.data.toAddress.trim()
         $scope.send.data.passphrase = $scope.send.data.passphrase.trim()
+
         if ($scope.send.data.secondpassphrase) {
           $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim()
         }
 
         $mdDialog.hide()
-        accountService.createTransaction(0, {
-          ledger: selectedAccount.ledger,
-          publicKey: selectedAccount.publicKey,
-          fromAddress: $scope.send.data.fromAddress,
-          toAddress: $scope.send.data.toAddress,
-          amount: parseInt(($scope.send.data.amount * UNIT).toFixed(0)),
-          smartbridge: $scope.send.data.smartbridge,
-          masterpassphrase: $scope.send.data.passphrase,
-          secondpassphrase: $scope.send.data.secondpassphrase
 
-        }).then( (transaction) => {
-            console.log(transaction)
-            this.accountCtrl.showValidateTransaction(selectedAccount, transaction)
-          },
-          this.accountCtrl.formatAndToastError
-        )
+        this.submitTransaction(selectedAccount, $scope.send.data)
       }
 
       function searchTextChange (text) {

@@ -30,10 +30,7 @@ describe('AccountBoxController', function () {
   }
 
   beforeEach(() => {
-    module('arkclient.services')
     module('arkclient.components')
-    module('arkclient.accounts')
-    module('gettext')
 
     inject( (_$componentController_) => {
       ctrl = _$componentController_('accountBox', null, bindings)
