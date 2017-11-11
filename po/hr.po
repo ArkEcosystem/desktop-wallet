@@ -17,17 +17,14 @@ msgstr "- Ovo može podržati dokazivanje vjerodostojnosti datoteke odnosno ukol
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
 msgstr "Ovo znači, da vlasnik računa može dokazati, da je raspolagao sa ovom datotekom u trenutku vrijemenskog žigosanja u bloku."
 
-msgid "{{ category }}"
-msgstr "{{ kategorija }}"
-
 msgid "Account added!"
 msgstr "Račun dodan!"
 
-msgid "Account removed!"
-msgstr "Račun uklonjen!"
-
 msgid "Account deleted!"
 msgstr "Račun obrisan!"
+
+msgid "Account removed!"
+msgstr "Račun uklonjen!"
 
 msgid "Account successfully created:"
 msgstr "Račun uspješno napravljen:"
@@ -50,14 +47,14 @@ msgstr "Aktivni delegati (kovači)"
 msgid "Add"
 msgstr "Dodaj"
 
-msgid "Add Contact"
-msgstr "Dodaj kontakt"
-
 msgid "Add Account"
 msgstr "Dodaj račun"
 
 msgid "Add Address"
 msgstr "Dodaj adresu"
+
+msgid "Add Contact"
+msgstr "Dodaj kontakt"
 
 msgid "Add Delegate"
 msgstr "Dodaj delegata"
@@ -80,23 +77,23 @@ msgstr "Svi vaši podaci, uključujući napravljene račune, mreže i kontake bi
 msgid "Amount"
 msgstr "Iznos"
 
+msgid "Amount (Ѧ)"
+msgstr "Iznos (Ѧ)"
+
 msgid "Appearance"
 msgstr "Izgled"
 
 msgid "Application"
 msgstr "Aplikacija"
 
-msgid "Amount (Ѧ)"
-msgstr "Iznos (Ѧ)"
-
 msgid "Approval"
 msgstr "Odobrenje"
 
-msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
-msgstr "Da li ste uvjereni, da želite otstraniti ovu mrežu i sve sa njom povezane podatke (računi i podešavanja) sa računala? Vaši računi su i dalje na sigurnom unutar blokovnog lanca."
-
 msgid "Arab"
 msgstr "Arapski"
+
+msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
+msgstr "Da li ste uvjereni, da želite otstraniti ovu mrežu i sve sa njom povezane podatke (računi i podešavanja) sa računala? Vaši računi su i dalje na sigurnom unutar blokovnog lanca."
 
 msgid "Are you sure?"
 msgstr "Jesi li siguran?"
@@ -143,6 +140,12 @@ msgstr "Ne mogu navesti ako je račun od delegata"
 msgid "Change 1h/7h/7d"
 msgstr "Promjena 1h/7h/7d"
 
+msgid "Chinese simplified"
+msgstr "Kineski pojednostavljeni"
+
+msgid "Chinese traditional"
+msgstr "Kineski tradicionalni"
+
 msgid "Client"
 msgstr "Klijent"
 
@@ -154,15 +157,6 @@ msgstr "Dolazi uskoro"
 
 msgid "Confirm"
 msgstr "Potvrdi"
-
-msgid "Network disconnected!"
-msgstr "Mreža je prekinuta!"
-
-msgid "Passphrase is not saved on this computer."
-msgstr "Lozinka nije spremljena na ovo računalo"
-
-msgid "Watch-Only Addresses"
-msgstr "Watch-only adrese"
 
 msgid "Confirmations"
 msgstr "Potvrde"
@@ -251,11 +245,11 @@ msgstr "Burza"
 msgid "Explorer"
 msgstr "Pretraživač"
 
-msgid "File"
-msgstr "Datoteka"
-
 msgid "Fee (Ѧ)"
 msgstr "Naknada (Ѧ)"
+
+msgid "File"
+msgstr "Datoteka"
 
 msgid "Folder Name"
 msgstr "Ime Mape"
@@ -350,11 +344,11 @@ msgstr "Maksimiziraj"
 msgid "Message"
 msgstr "Poruka"
 
-msgid "Minimize"
-msgstr "Minimiziraj"
-
 msgid "Minify"
 msgstr "Umanji"
+
+msgid "Minimize"
+msgstr "Minimiziraj"
 
 msgid "My Accounts"
 msgstr "Moji računi"
@@ -368,17 +362,20 @@ msgstr "Hash mreže"
 msgid "Network"
 msgstr "Mreža"
 
-msgid "Network removed succesfully!"
-msgstr "Mreža uspješno uklonjena!"
-
-msgid "New version available!"
-msgstr "Dostupna nova verzija!"
-
 msgid "Network connected and healthy!"
 msgstr "Mreža povezana i zdrava!"
 
 msgid "Network disconected!"
 msgstr "Mreža prekinuta!"
+
+msgid "Network disconnected!"
+msgstr "Mreža je prekinuta!"
+
+msgid "Network removed succesfully!"
+msgstr "Mreža uspješno uklonjena!"
+
+msgid "New version available!"
+msgstr "Dostupna nova verzija!"
 
 msgid "Next"
 msgstr "Sljedeći"
@@ -407,12 +404,6 @@ msgstr "Otvori osmatrač delegata"
 msgid "Open File"
 msgstr "Otvori Datoteku"
 
-msgid "Chinese simplified"
-msgstr "Kineski pojednostavljeni"
-
-msgid "Chinese traditional"
-msgstr "Kineski tradicionalni"
-
 msgid "Open in explorer"
 msgstr "Otvori u pregledniku"
 
@@ -434,6 +425,9 @@ msgstr "Lozinka ne odgovara vašoj adresi"
 msgid "Passphrase is not corresponding to account"
 msgstr "Lozinka ne pripada vašem računu"
 
+msgid "Passphrase is not saved on this computer."
+msgstr "Lozinka nije spremljena na ovo računalo"
+
 msgid "Passphrases deleted"
 msgstr "Lozinke izbrisane"
 
@@ -446,11 +440,17 @@ msgstr "Peer"
 msgid "Peer Status"
 msgstr "Peer Status"
 
-msgid "Please choose a file to be timestamped on the blockchain."
-msgstr "Molimo Vas, odaberite datoteku koja će biti vremenski označena na blockchain-u."
-
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Spremite lozinku na sigurno mjesto, jer je klijent NE sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
+msgstr "Spremite dodatnu lozinku na sigurno mjesto, jer je klijent NE sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
+msgstr "Sigurnosno spremite dodatnu lozinku, jer je klijent ne sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Molimo Vas, odaberite datoteku koja će biti vremenski označena na blockchain-u."
 
 msgid "Please enter a folder name."
 msgstr "Molim Vas, unesite ime mape."
@@ -464,20 +464,14 @@ msgstr "Molimo unesite kratku oznaku."
 msgid "Please enter this account passphrase to login."
 msgstr "Molimo unesite lozinku računa za upis."
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
-msgstr "Spremite dodatnu lozinku na sigurno mjesto, jer je klijent NE sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Molimo Vas, SPREMITE LOZINKU NA SIGURNO MJESTO, klijent ju NE SPREMA, te ju NIJE moguće nadoknaditi"
 
 msgid "Please paste the original and second passphrase to validate the creation."
 msgstr "Molimo vas zalijepite izvornu i dodatnu lozinku za potvrdu izrade."
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
-msgstr "Sigurnosno spremite dodatnu lozinku, jer je klijent ne sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
-
 msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
 msgstr "Nakon uvaženja registracije delegata u blokovnom lancu, molimo da ponovo potjerate klijenta kako bi promjena stupila na snagu."
-
-msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Molimo Vas, SPREMITE LOZINKU NA SIGURNO MJESTO, klijent ju NE SPREMA, te ju NIJE moguće nadoknaditi"
 
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
 msgstr "Molimo Vas, upišite riječi 3, 6 i 9 iz vaše lozinke kako bi potvrdili stvaranje računa."
@@ -563,6 +557,9 @@ msgstr "Spremi lozinku za"
 msgid "Second Passphrase"
 msgstr "Dodatna lozinka"
 
+msgid "Second Passphrase added successfully:"
+msgstr "Druga lozinka dodana uspješno"
+
 msgid "Seed Server"
 msgstr "Seed Server"
 
@@ -626,9 +623,6 @@ msgstr "Poruka NIJE potvrđena"
 msgid "The message is verified successfully"
 msgstr "Poruka nije uspješno potvrđena"
 
-msgid "Second Passphrase added successfully:"
-msgstr "Druga lozinka dodana uspješno"
-
 msgid "The second passphrase does not match the one you just got."
 msgstr "Dodatna lozinka ne odgovara onoj koju ste upravo dobili."
 
@@ -644,6 +638,9 @@ msgstr "Teme"
 msgid "This account already has a second passphrase:"
 msgstr "Ovaj račun već ima drugu lozinku:"
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "Ovaj račun nije nikada komunicirao sa mrežom. Ovo je tzv. \"hladni novčanik\"."
+
 msgid "This signature can't be forged."
 msgstr "Potpis je nemoguće krivotvoriti."
 
@@ -655,9 +652,6 @@ msgstr "Vremenska oznaka dokumenta"
 
 msgid "Timestamp Document On"
 msgstr "Vremenska oznaka dokumenta omogućena"
-
-msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "Ovaj račun nije nikada komunicirao sa mrežom. Ovo je tzv. \"hladni novčanik\"."
 
 msgid "To"
 msgstr "Za"
@@ -686,14 +680,14 @@ msgstr "Ažuriraj glas iz"
 msgid "Username"
 msgstr "Korisničko ime"
 
+msgid "Vendor Field"
+msgstr "SmartBridge"
+
 msgid "Verify"
 msgstr "Verificiraj"
 
 msgid "Verify Message"
 msgstr "Potvrdi poruku"
-
-msgid "Vendor Field"
-msgstr "SmartBridge"
 
 msgid "Virtual folder added!"
 msgstr "Virtualna mapa je dodana!"
@@ -707,17 +701,23 @@ msgstr "Glasovi"
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
 msgstr "Glasanje je opcionalno, ali je bitan mehanizam koji osigurava Ark mrežu sigurnom. 51 delegat sa najviše glasova s mreže su odgovorni za potvrđivanje i kovanje transkacija u nove blokove. Ova stranica može biti korištena u svrhu glasanja za delegata kojega podržavaš."
 
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Glasanje je opcionalno, ali je bitan mehanizam koji osigurava Ark mrežu sigurnom. \n51 delegat sa najviše glasova s mreže su odgovorni za potvrđivanje i kovanje transkacija u nove blokove. \nOva stranica može biti korištena u svrhu glasanja za delegata kojega podržavaš."
+
+msgid "Watch-Only Addresses"
+msgstr "Watch-only adrese"
+
 msgid "Word"
 msgstr "Riječ"
 
 msgid "Yes"
 msgstr "Da"
 
-msgid "approval"
-msgstr "odobrenje"
-
 msgid "address"
 msgstr "adresa"
+
+msgid "approval"
+msgstr "odobrenje"
 
 msgid "folder name"
 msgstr "ime mape"
@@ -758,9 +758,9 @@ msgstr "moraš imati barem 1 ARK za glasanje"
 msgid "you need at least 25 ARK to register delegate"
 msgstr "moraš imati barem 25 ARK-ova za registriranje delegata"
 
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "Glasanje je opcionalno, ali je bitan mehanizam koji osigurava Ark mrežu sigurnom. \n51 delegat sa najviše glasova s mreže su odgovorni za potvrđivanje i kovanje transkacija u nove blokove. \nOva stranica može biti korištena u svrhu glasanja za delegata kojega podržavaš."
-
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr "trebaš minimalno 5 ARK-ova za stvaranje dodatne lozinke"
+
+msgid "{{ category }}"
+msgstr "{{ kategorija }}"
 

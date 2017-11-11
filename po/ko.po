@@ -17,20 +17,14 @@ msgstr "이것은 또한, SHA256 서명이 블록 체인에 기록된 서명과 
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
 msgstr "이 계정의 소유자가 자신이 블록 타임스탬프에서 이 파일을 가졌다는 것을 증명할 수 있음을 의미입니다."
 
-msgid "{{ category }}"
-msgstr "{{카테고리}}"
-
-msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
-msgstr "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
-
 msgid "Account added!"
 msgstr "계정이 추가되었습니다!"
 
-msgid "Account removed!"
-msgstr "계정이 제거되었습니다!"
-
 msgid "Account deleted!"
 msgstr "계정이 삭제되었습니다!"
+
+msgid "Account removed!"
+msgstr "계정이 제거되었습니다!"
 
 msgid "Account successfully created:"
 msgstr "계정이 성공적으로 만들어졌습니다:"
@@ -53,14 +47,14 @@ msgstr "작업중인 대표자(포징)"
 msgid "Add"
 msgstr "추가하기"
 
-msgid "Add Contact"
-msgstr "연락처 추가"
-
 msgid "Add Account"
 msgstr "계정 추가하기"
 
 msgid "Add Address"
 msgstr "주소 추가하기"
+
+msgid "Add Contact"
+msgstr "연락처 추가"
 
 msgid "Add Delegate"
 msgstr "대표자 추가하기"
@@ -83,23 +77,23 @@ msgstr "생성된 계정, 네트워크 그리고 주소록을 포함한 모든 �
 msgid "Amount"
 msgstr "양"
 
+msgid "Amount (Ѧ)"
+msgstr "개(Ѧ)"
+
 msgid "Appearance"
 msgstr "모양"
 
 msgid "Application"
 msgstr "애플리케이션"
 
-msgid "Amount (Ѧ)"
-msgstr "개(Ѧ)"
-
 msgid "Approval"
 msgstr "승인"
 
-msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
-msgstr "이 네트워크 및 컴퓨터와 연결된 모든 데이터 (계정 및 설정)를 제거 하시겠습니까? 귀하의 계정은 여전히 ​​블록 체인에서 안전합니다."
-
 msgid "Arab"
 msgstr "아랍어"
+
+msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
+msgstr "이 네트워크 및 컴퓨터와 연결된 모든 데이터 (계정 및 설정)를 제거 하시겠습니까? 귀하의 계정은 여전히 ​​블록 체인에서 안전합니다."
 
 msgid "Are you sure?"
 msgstr "확실합니까?"
@@ -146,6 +140,12 @@ msgstr "계정이 대표자인 경우 표시 할 수 없습니다."
 msgid "Change 1h/7h/7d"
 msgstr "가격변동 1시간 / 7시간 / 7일"
 
+msgid "Chinese simplified"
+msgstr "중국어 (간자체)"
+
+msgid "Chinese traditional"
+msgstr "중국어 (번자체)"
+
 msgid "Client"
 msgstr "클라이언트"
 
@@ -157,15 +157,6 @@ msgstr "준비 중입니다."
 
 msgid "Confirm"
 msgstr "확인"
-
-msgid "Network disconnected!"
-msgstr "네트워크 연결이 해제되었습니다!"
-
-msgid "Passphrase is not saved on this computer."
-msgstr "이 컴퓨터에는 보안문구가 저장되어있지 않습니다."
-
-msgid "Watch-Only Addresses"
-msgstr "계정내용 보기 주소"
 
 msgid "Confirmations"
 msgstr "컨펌"
@@ -254,11 +245,11 @@ msgstr "거래소"
 msgid "Explorer"
 msgstr "탐색기"
 
-msgid "File"
-msgstr "파일"
-
 msgid "Fee (Ѧ)"
 msgstr "수수료(Ѧ)"
+
+msgid "File"
+msgstr "파일"
 
 msgid "Folder Name"
 msgstr "폴더 이름"
@@ -305,14 +296,14 @@ msgstr "만약 당신이 이 계정의 소유자라면, 투표를 할 수 있습
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
 msgstr "만약 당신이 이 계정의 소유자라면, 가상 폴더를 생성할 수 있습니다. 가상 폴더는 실제로 이 계좌로 송금하거나 비용을 지불하지 않고 좀 더 편리하게 당신의 자산을 관리할 수 있는 간편한 서브 계정입니다. <br>\n해당 가상 폴더 계좌는 \"내 계좌\" 목록에도 나타나게 됩니다."
 
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "이 계정을 소유하고 있다면 가상 폴더를 사용할 수 있습니다. 가상 폴더는 실제 거래를 보내고 수수료를 지불 할 필요없이 돈을 더 잘 관리 할 수있는 간단한 하위 계좌입니다. <br>  또한, 이 계정은 '내 계정' 목록 아래로 이동합니다."
+
 msgid "Import"
 msgstr "불러오기"
 
 msgid "Import Account"
 msgstr "계정 불러오기"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
-msgstr "이 계정을 소유하고 있다면 가상 폴더를 사용할 수 있습니다. 가상 폴더는 실제 거래를 보내고 수수료를 지불 할 필요없이 돈을 더 잘 관리 할 수있는 간단한 하위 계좌입니다. <br>  또한, 이 계정은 '내 계정' 목록 아래로 이동합니다."
 
 msgid "Indonesian"
 msgstr "인도네시아어"
@@ -356,10 +347,10 @@ msgstr "최대화"
 msgid "Message"
 msgstr "메세지"
 
-msgid "Minimize"
+msgid "Minify"
 msgstr "최소화"
 
-msgid "Minify"
+msgid "Minimize"
 msgstr "최소화"
 
 msgid "My Accounts"
@@ -374,17 +365,20 @@ msgstr "넷해쉬"
 msgid "Network"
 msgstr "네트워크"
 
-msgid "Network removed succesfully!"
-msgstr "네트워크 제거 성공!"
-
-msgid "New version available!"
-msgstr "새로운 버전이 출시되었습니다!"
-
 msgid "Network connected and healthy!"
 msgstr "네크워크가 안정적으로 연결되었습니다!"
 
 msgid "Network disconected!"
 msgstr "네트워크 연결이 끊어졌습니다!"
+
+msgid "Network disconnected!"
+msgstr "네트워크 연결이 해제되었습니다!"
+
+msgid "Network removed succesfully!"
+msgstr "네트워크 제거 성공!"
+
+msgid "New version available!"
+msgstr "새로운 버전이 출시되었습니다!"
 
 msgid "Next"
 msgstr "다음"
@@ -413,12 +407,6 @@ msgstr "대표자 정보 보기"
 msgid "Open File"
 msgstr "파일 열기"
 
-msgid "Chinese simplified"
-msgstr "중국어 (간자체)"
-
-msgid "Chinese traditional"
-msgstr "중국어 (번자체)"
-
 msgid "Open in explorer"
 msgstr "탐색기로 열기"
 
@@ -440,6 +428,9 @@ msgstr "보안문구가 당신의 주소와 일치하지 않습니다."
 msgid "Passphrase is not corresponding to account"
 msgstr "보안문구가 계정과 일치하지 않습니다."
 
+msgid "Passphrase is not saved on this computer."
+msgstr "이 컴퓨터에는 보안문구가 저장되어있지 않습니다."
+
 msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
 msgstr "보안문구가 높은 수준에서 보호되고 있지 않습니다. \n<br>\n안전한 컴퓨터와 밸런스를 잃을 수도 있는 계정에서만 이 기능을 사용하세요."
 
@@ -455,11 +446,17 @@ msgstr "피어"
 msgid "Peer Status"
 msgstr "피어 현황"
 
-msgid "Please choose a file to be timestamped on the blockchain."
-msgstr "블록체인 내에 타임스탬프를 기록할 파일을 선택하세요."
-
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "보안문구를 안전하게 백업하십시오.이 클라이언트는 보안문구를 저장하지 않으므로 보안문구를 복구 할 수 없습니다."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
+msgstr "두 번째 보안문구를 안전하게 백업하세요. 이 클라이언트는 보안문구를 저장하지 않으며, 보안 문구 분실 시 계정을 복구할 수 없습니다."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
+msgstr "2차 보안문구를 안전하게 백업해 놓으세요. 본 프로그램은 해당 보안문구를 보관하지 않으며 차후에 복구할 수 없습니다."
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "블록체인 내에 타임스탬프를 기록할 파일을 선택하세요."
 
 msgid "Please enter a folder name."
 msgstr "폴더 이름을 입력하세요."
@@ -473,20 +470,14 @@ msgstr "짧은 라벨을 입력하세요."
 msgid "Please enter this account passphrase to login."
 msgstr "로그인 하시려면 이 계정의 암호문구를 입력하세요."
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
-msgstr "두 번째 보안문구를 안전하게 백업하세요. 이 클라이언트는 보안문구를 저장하지 않으며, 보안 문구 분실 시 계정을 복구할 수 없습니다."
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "우선 이 보안문구를 안전하게 백업해 놓으세요. 본 클라이언트는 해당 보안문구를 보관하지 않으며 차후에 복구할 수 없습니다."
 
 msgid "Please paste the original and second passphrase to validate the creation."
 msgstr "생성을 유효하게 하기 위해 첫번째 보안문구 및 두 번째 보안문구를 붙여 넣으십시오."
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
-msgstr "2차 보안문구를 안전하게 백업해 놓으세요. 본 프로그램은 해당 보안문구를 보관하지 않으며 차후에 복구할 수 없습니다."
-
 msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
 msgstr "대표자 등록 변경 사항을 반영하기 위해 클라이언트를 다시 시작하십시오."
-
-msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "우선 이 보안문구를 안전하게 백업해 놓으세요. 본 클라이언트는 해당 보안문구를 보관하지 않으며 차후에 복구할 수 없습니다."
 
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
 msgstr "계좌 생성을 위해 보안문구의 3, 6, 9번째 단어를 입력해주세요."
@@ -572,6 +563,9 @@ msgstr "보안문구 저장하기"
 msgid "Second Passphrase"
 msgstr "두 번째 보안문구"
 
+msgid "Second Passphrase added successfully:"
+msgstr "두 번째 보안문구를 성공적으로 추가하였습니다."
+
 msgid "Seed Server"
 msgstr "시드 서버"
 
@@ -635,9 +629,6 @@ msgstr "메시지 검증 실패"
 msgid "The message is verified successfully"
 msgstr "메시지 검증 성공"
 
-msgid "Second Passphrase added successfully:"
-msgstr "두 번째 보안문구를 성공적으로 추가하였습니다."
-
 msgid "The second passphrase does not match the one you just got."
 msgstr "두 번째 보안문구가 당신이 방금전 얻은 보안문구와 일치하지 않습니다."
 
@@ -653,6 +644,9 @@ msgstr "테마"
 msgid "This account already has a second passphrase:"
 msgstr "이 계정은 이미 두번째 보안문구가 존재합니다."
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "이 계정은 네트워크와 연결되어 있지 않습니다. 이것은 입출금이 동결된 지갑입니다."
+
 msgid "This signature can't be forged."
 msgstr "이 시그네처는 위조될 수 없습니다."
 
@@ -664,9 +658,6 @@ msgstr "타임스탬프 도큐먼트"
 
 msgid "Timestamp Document On"
 msgstr "타임스탬프 문서 사용"
-
-msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "이 계정은 네트워크와 연결되어 있지 않습니다. 이것은 입출금이 동결된 지갑입니다."
 
 msgid "To"
 msgstr "에게"
@@ -698,14 +689,14 @@ msgstr "투표 갱신하기"
 msgid "Username"
 msgstr "사용자 이름"
 
+msgid "Vendor Field"
+msgstr "벤더 항목"
+
 msgid "Verify"
 msgstr "검증"
 
 msgid "Verify Message"
 msgstr "메시지 검증"
-
-msgid "Vendor Field"
-msgstr "벤더 항목"
 
 msgid "Virtual folder added!"
 msgstr "가상 폴더가 생성되었습니다!"
@@ -719,17 +710,23 @@ msgstr "투표"
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
 msgstr "투표를 꼭 하실 필요는 없지만 투표는 아크 네트워크의 안정화에 기여합니다. \n가장 많은 투표를 받은 51명의 대표자에게는 새로운 블록들을 검증하고 생성할 책임이 주어집니다. \n현재 페이지에서 여러분들이 지지하는 대표자에게 투표를 하실 수 있습니다."
 
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "투표는 필수사항이 아닙니다. 단, 투표는 아크 네트워크 안정화에 중요한 역할을 합니다.\n표를 가장 많이 획득한 51명이 대표로 선정되어 새로운 블럭에 대한 거래를 확인하고 구축해나가는 책임이 주어집니다.\n현재 페이지에서 여러분들이 지지하는 대표후보에게 투표하실 수 있습니다."
+
+msgid "Watch-Only Addresses"
+msgstr "계정내용 보기 주소"
+
 msgid "Word"
 msgstr "단어"
 
 msgid "Yes"
 msgstr "예"
 
-msgid "approval"
-msgstr "승인"
-
 msgid "address"
 msgstr "주소"
+
+msgid "approval"
+msgstr "승인"
 
 msgid "folder name"
 msgstr "폴더 이름"
@@ -770,9 +767,12 @@ msgstr "투표하기 위해 적어도 1아크가 필요합니다."
 msgid "you need at least 25 ARK to register delegate"
 msgstr "대표자로 등록하기 위해 적어도 25아크가 필요합니다. "
 
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "투표는 필수사항이 아닙니다. 단, 투표는 아크 네트워크 안정화에 중요한 역할을 합니다.\n표를 가장 많이 획득한 51명이 대표로 선정되어 새로운 블럭에 대한 거래를 확인하고 구축해나가는 책임이 주어집니다.\n현재 페이지에서 여러분들이 지지하는 대표후보에게 투표하실 수 있습니다."
-
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr "2차 보안문구를 생성하기 위해서는 최소 5 ARK 가 필요합니다."
+
+msgid "{{ category }}"
+msgstr "{{카테고리}}"
+
+msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
+msgstr "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
 

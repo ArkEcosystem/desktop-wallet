@@ -11,9 +11,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "{{ category }}"
-msgstr "{{ kategori }}"
-
 msgid "Account successfully imported:"
 msgstr "Konto importerat med lyckat resultat:"
 
@@ -29,6 +26,12 @@ msgstr "Har du problem med formulär (som att fält saknas) efter att du skapat 
 msgid "Cannot get registered delegates"
 msgstr "Kan inte motta registrerade delegater"
 
+msgid "Chinese simplified"
+msgstr "Kinesiska (förenklad)"
+
+msgid "Chinese traditional"
+msgstr "Kinesiska (traditionell)"
+
 msgid "Client"
 msgstr "Klient"
 
@@ -37,15 +40,6 @@ msgstr "Kommer inom kort"
 
 msgid "Confirm"
 msgstr "Bekräfta"
-
-msgid "Network disconnected!"
-msgstr "Nätverk frånkopplat!"
-
-msgid "Passphrase is not saved on this computer."
-msgstr "Lösenordsfras sparas ej på denna dator."
-
-msgid "Watch-Only Addresses"
-msgstr "Endast sebara adresser"
 
 msgid "Contacts"
 msgstr "Kontakter"
@@ -95,6 +89,9 @@ msgstr "Meddelande"
 msgid "Name"
 msgstr "Namn"
 
+msgid "Network disconnected!"
+msgstr "Nätverk frånkopplat!"
+
 msgid "Network removed succesfully!"
 msgstr "Nätverket avlägsnades framgångsrikt!"
 
@@ -107,29 +104,26 @@ msgstr "OK"
 msgid "Open File"
 msgstr "Öppna fil"
 
-msgid "Chinese simplified"
-msgstr "Kinesiska (förenklad)"
-
-msgid "Chinese traditional"
-msgstr "Kinesiska (traditionell)"
-
 msgid "Open in explorer"
 msgstr "Öppna i utforskaren"
+
+msgid "Passphrase is not saved on this computer."
+msgstr "Lösenordsfras sparas ej på denna dator."
 
 msgid "Peer Status"
 msgstr "Peer-status"
 
-msgid "Please choose a file to be timestamped on the blockchain."
-msgstr "Vänligen välj en fil som ska tidsstämplas i blockkedjan."
-
 msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
 msgstr "Viktigt att lösenordsfrasen sparas på en säker plats, denna klient sparar den INTE och kan därför inte hämta den om förlorats."
 
-msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
-msgstr "Vänligen starta om klienten efter att delegatregistrationen skrivits till ett block för att reflektera ändringarna."
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Vänligen välj en fil som ska tidsstämplas i blockkedjan."
 
 msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Vänligen börja med att på ett SÄKERT SÄTT GÖRA EN BACKUP AV LÖSENORDSSFRASEN. Denna klient lagrar INTE den och kan därför inte återskapa din lösenordssfras"
+
+msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
+msgstr "Vänligen starta om klienten efter att delegatregistrationen skrivits till ett block för att reflektera ändringarna."
 
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
 msgstr "Var god ange ord 3, 6 och 9 från din lösenordsfras för att bekräfta nytt konto."
@@ -230,6 +224,12 @@ msgstr "Verifiera meddelande"
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
 msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.  De 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block. På denna sida kan du rösta på den delegat som du vill stödja."
 
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.\n\nDe 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block.\n\nPå denna sida kan du rösta på den delegat som du vill stödja."
+
+msgid "Watch-Only Addresses"
+msgstr "Endast sebara adresser"
+
 msgid "Word"
 msgstr "Ord"
 
@@ -245,9 +245,9 @@ msgstr "från"
 msgid "productivity"
 msgstr "produktivitet"
 
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.\n\nDe 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block.\n\nPå denna sida kan du rösta på den delegat som du vill stödja."
-
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr "du behöver minst 5 ARK för att skapa en andra lösenordsfras"
+
+msgid "{{ category }}"
+msgstr "{{ kategori }}"
 
