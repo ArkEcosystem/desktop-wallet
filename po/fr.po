@@ -17,19 +17,13 @@ msgstr "Cela peut également aider à prouver si un fichier a été falsifié et
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
 msgstr "le possesseur du portefeuille peut démontrer qu'il possède le fichier présent au bloc horodaté"
 
-msgid "{{ category }}"
-msgstr "{{ categorie }}"
-
-msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
-msgstr "{{'Envoyer'|translate}} {{ul.network.token}} {{'from'|translate}}"
-
 msgid "Account added!"
 msgstr "Compte ajouté !"
 
-msgid "Account removed!"
+msgid "Account deleted!"
 msgstr "Compte supprimé !"
 
-msgid "Account deleted!"
+msgid "Account removed!"
 msgstr "Compte supprimé !"
 
 msgid "Account successfully created:"
@@ -53,14 +47,14 @@ msgstr "Délégués actifs (En cours de forge)"
 msgid "Add"
 msgstr "Ajouter"
 
-msgid "Add Contact"
-msgstr "Ajouter contact"
-
 msgid "Add Account"
 msgstr "Ajouter un compte"
 
 msgid "Add Address"
 msgstr "Ajouter une adresse"
+
+msgid "Add Contact"
+msgstr "Ajouter contact"
 
 msgid "Add Delegate"
 msgstr "Ajouter un délégué"
@@ -83,23 +77,23 @@ msgstr "Toutes vos données, y compris les comptes créés, les réseaux et les 
 msgid "Amount"
 msgstr "Montant"
 
+msgid "Amount (Ѧ)"
+msgstr "Montant (Ѧ)"
+
 msgid "Appearance"
 msgstr "Apparence"
 
 msgid "Application"
 msgstr "Application"
 
-msgid "Amount (Ѧ)"
-msgstr "Montant (Ѧ)"
-
 msgid "Approval"
 msgstr "Approbation"
 
-msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
-msgstr "Êtes-vous sûr de vouloir supprimer ce réseau et toutes les données (comptes et paramètres) associés à celui-ci depuis votre ordinateur ? Vos comptes sont toujours sécurisés sur la Blockchain."
-
 msgid "Arab"
 msgstr "Arabe"
+
+msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
+msgstr "Êtes-vous sûr de vouloir supprimer ce réseau et toutes les données (comptes et paramètres) associés à celui-ci depuis votre ordinateur ? Vos comptes sont toujours sécurisés sur la Blockchain."
 
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr ?"
@@ -146,6 +140,12 @@ msgstr "Impossible de savoir si ce compte est enregistré en tant que délégué
 msgid "Change 1h/7h/7d"
 msgstr "Variations 1h/7h/7j"
 
+msgid "Chinese simplified"
+msgstr "Chinois simplifié"
+
+msgid "Chinese traditional"
+msgstr "Chinois traditionnel"
+
 msgid "Client"
 msgstr "Client"
 
@@ -157,15 +157,6 @@ msgstr "Très prochainement "
 
 msgid "Confirm"
 msgstr "Confirmer"
-
-msgid "Network disconnected!"
-msgstr "Déconnecté du réseau !"
-
-msgid "Passphrase is not saved on this computer."
-msgstr "La phrase secrète n'est pas sauvegardé sur l'ordinateur"
-
-msgid "Watch-Only Addresses"
-msgstr "Adresses de surveillance"
 
 msgid "Confirmations"
 msgstr "Confirmations"
@@ -254,11 +245,11 @@ msgstr "Échange"
 msgid "Explorer"
 msgstr "Explorateur"
 
-msgid "File"
-msgstr "Fichier"
-
 msgid "Fee (Ѧ)"
 msgstr "Frais (Ѧ)"
+
+msgid "File"
+msgstr "Fichier"
 
 msgid "Folder Name"
 msgstr "Nom du portefeuille virtuel"
@@ -305,14 +296,14 @@ msgstr "Si vous possédez ce compte, vous pouvez voter pour un délégué"
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
 msgstr "Si vous détenez ce compte, vous pouvez activer les portefeuilles virtuels. Les protefeuilles virtuels sont de simples sous-comptes pour mieux organiser votre argent, sans avoir besoin d'envoyer une vraie transaction et payer une taxe.<br>De plus, ce compte se déplacera en dessous de la liste \"Mes comptes\""
 
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Si vous possédez ce compte, vous pouvez utiliser les portefeuilles virtuels. Ils permettent une meilleure organisation de votre argent sans avoir à payer les frais de transaction.\nCe compte s'affichera dans \"Mes portefeuilles\""
+
 msgid "Import"
 msgstr "Importer"
 
 msgid "Import Account"
 msgstr "Importer un compte"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
-msgstr "Si vous possédez ce compte, vous pouvez utiliser les portefeuilles virtuels. Ils permettent une meilleure organisation de votre argent sans avoir à payer les frais de transaction.\nCe compte s'affichera dans \"Mes portefeuilles\""
 
 msgid "Indonesian"
 msgstr "Indonésien"
@@ -356,11 +347,11 @@ msgstr "Agrandir"
 msgid "Message"
 msgstr "Message"
 
-msgid "Minimize"
-msgstr "Réduire"
-
 msgid "Minify"
 msgstr "Iconifier"
+
+msgid "Minimize"
+msgstr "Réduire"
 
 msgid "My Accounts"
 msgstr "Mes Comptes"
@@ -374,17 +365,20 @@ msgstr "Nethash"
 msgid "Network"
 msgstr "Réseau"
 
-msgid "Network removed succesfully!"
-msgstr "Réseau supprimé avec succès !"
-
-msgid "New version available!"
-msgstr "Nouvelle version disponible !"
-
 msgid "Network connected and healthy!"
 msgstr "Connecté au réseau !"
 
 msgid "Network disconected!"
 msgstr "Déconnecté du réseau !"
+
+msgid "Network disconnected!"
+msgstr "Déconnecté du réseau !"
+
+msgid "Network removed succesfully!"
+msgstr "Réseau supprimé avec succès !"
+
+msgid "New version available!"
+msgstr "Nouvelle version disponible !"
 
 msgid "Next"
 msgstr "Suivant"
@@ -413,12 +407,6 @@ msgstr "Ouvrir la page de suivi des délégués"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
 
-msgid "Chinese simplified"
-msgstr "Chinois simplifié"
-
-msgid "Chinese traditional"
-msgstr "Chinois traditionnel"
-
 msgid "Open in explorer"
 msgstr "Ouvrir dans l'explorateur de blockchain"
 
@@ -440,6 +428,9 @@ msgstr "Le mot de passe ne correspond pas à votre adresse"
 msgid "Passphrase is not corresponding to account"
 msgstr "Le mot de passe ne correspond pas au compte"
 
+msgid "Passphrase is not saved on this computer."
+msgstr "La phrase secrète n'est pas sauvegardé sur l'ordinateur"
+
 msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
 msgstr "Les mots de passe ne sont pas encryptés.<br>\nUtiliser cette option seulement sur un ordinateur sécurisé et pour des comptes où vous pouvez perdre."
 
@@ -455,11 +446,17 @@ msgstr "Nœud"
 msgid "Peer Status"
 msgstr "Peer Status"
 
-msgid "Please choose a file to be timestamped on the blockchain."
-msgstr "Veuillez choisir le fichier a horodater dans la blockchain."
-
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Sauvegarder absolument le mot de passe dans un endroit sûr car le logiciel ne l'enregistre pas. Si vous ne le sauvegardez pas, il vous sera impossible de le retrouver"
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
+msgstr "Merci de sauvegarder votre deuxième phrase secrète car le client ARK NE l'enregistre PAS. Si vous ne la notez pas, elle ne pourra pas être récupérée."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
+msgstr "Merci de sauvegarder votre deuxième phrase secrète car le client ARK NE l'enregistre PAS. Si vous ne la notez pas, elle ne pourra pas être récupérée."
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Veuillez choisir le fichier a horodater dans la blockchain."
 
 msgid "Please enter a folder name."
 msgstr "Entrer un nom de portefeuille."
@@ -473,20 +470,14 @@ msgstr "Entrer un nom court."
 msgid "Please enter this account passphrase to login."
 msgstr "Entrer la phrase secrète de ce compte pour vous connecter"
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
-msgstr "Merci de sauvegarder votre deuxième phrase secrète car le client ARK NE l'enregistre PAS. Si vous ne la notez pas, elle ne pourra pas être récupérée."
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Veuillez d'abord SAUVEGARDER SÉCURITAIREMENT LA PHRASE SECRÈTE, ce client ne la stocke PAS et ne vous permet pas de la récupérer"
 
 msgid "Please paste the original and second passphrase to validate the creation."
 msgstr "Collez votre phrase secrète originale et la seconde phrase secrète pour valider la création."
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
-msgstr "Merci de sauvegarder votre deuxième phrase secrète car le client ARK NE l'enregistre PAS. Si vous ne la notez pas, elle ne pourra pas être récupérée."
-
 msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
 msgstr "Redémarrez le client ARK après vous être enregistré en tant que délégué"
-
-msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Veuillez d'abord SAUVEGARDER SÉCURITAIREMENT LA PHRASE SECRÈTE, ce client ne la stocke PAS et ne vous permet pas de la récupérer"
 
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
 msgstr "Taper les mots 3, 6 et 9 de votre phrase secrète pour valider la création de votre compte."
@@ -572,6 +563,9 @@ msgstr "Sauver l"
 msgid "Second Passphrase"
 msgstr "Deuxième mot de passe"
 
+msgid "Second Passphrase added successfully:"
+msgstr "Seconde phrase secrète ajoutée avec succès : "
+
 msgid "Seed Server"
 msgstr "Serveur source"
 
@@ -635,9 +629,6 @@ msgstr "Le message n'est pas vérifié"
 msgid "The message is verified successfully"
 msgstr "Le message est vérifié avec succès"
 
-msgid "Second Passphrase added successfully:"
-msgstr "Seconde phrase secrète ajoutée avec succès : "
-
 msgid "The second passphrase does not match the one you just got."
 msgstr "La deuxième phrase secrète ne correspond pas à celle générée à l'instant."
 
@@ -653,6 +644,9 @@ msgstr "Thèmes"
 msgid "This account already has a second passphrase:"
 msgstr "Ce compte a déjà une deuxième phrase secrète"
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "Ce compte n'a jamais interagi avec le réseau. C'est un \"Cold Wallet\"."
+
 msgid "This signature can't be forged."
 msgstr "Cette signature ne peut pas être falsifiée."
 
@@ -664,9 +658,6 @@ msgstr "Horodatage du document"
 
 msgid "Timestamp Document On"
 msgstr "Horodatage du document sur"
-
-msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "Ce compte n'a jamais interagi avec le réseau. C'est un \"Cold Wallet\"."
 
 msgid "To"
 msgstr "À"
@@ -698,14 +689,14 @@ msgstr "Mise à jour du vote depuis"
 msgid "Username"
 msgstr "Utilisateur"
 
+msgid "Vendor Field"
+msgstr "Champ du vendeur"
+
 msgid "Verify"
 msgstr "Vérifier"
 
 msgid "Verify Message"
 msgstr "Vérifier le message"
-
-msgid "Vendor Field"
-msgstr "Champ du vendeur"
 
 msgid "Virtual folder added!"
 msgstr "Portefeuille virtuel ajouté !"
@@ -719,17 +710,23 @@ msgstr "Votes"
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
 msgstr "Le vote est facultatif mais important, il permet de sécuriser le réseau Ark. Les 51 délégués ayant le plus de votes du réseau sont chargés de vérifier et de forger les transactions dans les nouveaux blocs. Cette page peut être utilisée pour voter pour un délégué que vous soutenez."
 
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Voter n'est pas obligatoire, il permet cependant de sécuriser le fonctionnement de la crypto-monnaie Ark.\nLes 51 délégués avec le plus de votes ont pour objectif de vérifier et forger les transactions dans les blocs. \nCette page permet de voter pour un délégué de votre choix."
+
+msgid "Watch-Only Addresses"
+msgstr "Adresses de surveillance"
+
 msgid "Word"
 msgstr "Mot"
 
 msgid "Yes"
 msgstr "Oui"
 
-msgid "approval"
-msgstr "Approbation"
-
 msgid "address"
 msgstr "adresse"
+
+msgid "approval"
+msgstr "Approbation"
 
 msgid "folder name"
 msgstr "Nom du portefeuille"
@@ -770,9 +767,12 @@ msgstr "vous avez besoin d'au moins 1 ARK pour pouvoir voter"
 msgid "you need at least 25 ARK to register delegate"
 msgstr "vous devez avoir au moins 25 ARK pour devenir délégué"
 
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "Voter n'est pas obligatoire, il permet cependant de sécuriser le fonctionnement de la crypto-monnaie Ark.\nLes 51 délégués avec le plus de votes ont pour objectif de vérifier et forger les transactions dans les blocs. \nCette page permet de voter pour un délégué de votre choix."
-
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr "5 ARK sont nécessaires pour pouvoir créer une deuxième phrase secrète"
+
+msgid "{{ category }}"
+msgstr "{{ categorie }}"
+
+msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
+msgstr "{{'Envoyer'|translate}} {{ul.network.token}} {{'from'|translate}}"
 

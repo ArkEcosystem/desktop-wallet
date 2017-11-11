@@ -17,20 +17,14 @@ msgstr "- Isto também pode ajudar a prover se o ficheiro foi, de alguma forma, 
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
 msgstr "- Isto significa que o dono desta conta pode provar que ele tinha em sua mão este ficheiro na data especificada."
 
-msgid "{{ category }}"
-msgstr "{{ category }}"
-
-msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
-msgstr "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
-
 msgid "Account added!"
 msgstr "Conta adicionada!"
 
-msgid "Account removed!"
-msgstr "Conta removida!"
-
 msgid "Account deleted!"
 msgstr "Conta apagada!"
+
+msgid "Account removed!"
+msgstr "Conta removida!"
 
 msgid "Account successfully created:"
 msgstr "Conta criada com sucesso:"
@@ -53,14 +47,14 @@ msgstr "Delegados Ativos (a forjar)"
 msgid "Add"
 msgstr "Adicionar"
 
-msgid "Add Contact"
-msgstr "Adicionar Contacto"
-
 msgid "Add Account"
 msgstr "Adicionar Conta"
 
 msgid "Add Address"
 msgstr "Adicionar Endereço"
+
+msgid "Add Contact"
+msgstr "Adicionar Contacto"
 
 msgid "Add Delegate"
 msgstr "Adicionar Delegado"
@@ -83,23 +77,23 @@ msgstr "Todos os teus registos, incluindo contas criadas, redes e contactos ser�
 msgid "Amount"
 msgstr "Montante"
 
+msgid "Amount (Ѧ)"
+msgstr "Montante (Ѧ)"
+
 msgid "Appearance"
 msgstr "Aspeto"
 
 msgid "Application"
 msgstr "Aplicação"
 
-msgid "Amount (Ѧ)"
-msgstr "Montante (Ѧ)"
-
 msgid "Approval"
 msgstr "Aprovação"
 
-msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
-msgstr "Tens a certeza que desejas remover esta rede e todos os registos associados (contas e definições) deste computador. As tuas contas permanecerão seguras na cadeia de blocos."
-
 msgid "Arab"
 msgstr "Árabe"
+
+msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
+msgstr "Tens a certeza que desejas remover esta rede e todos os registos associados (contas e definições) deste computador. As tuas contas permanecerão seguras na cadeia de blocos."
 
 msgid "Are you sure?"
 msgstr "Tens a certeza?"
@@ -146,6 +140,12 @@ msgstr "Não foi possível determinar se a conta pertence a um delegado"
 msgid "Change 1h/7h/7d"
 msgstr "Alterações 1h/7h/7d"
 
+msgid "Chinese simplified"
+msgstr "Chinês simplificado"
+
+msgid "Chinese traditional"
+msgstr "Chinês tradicional"
+
 msgid "Client"
 msgstr "Cliente"
 
@@ -157,15 +157,6 @@ msgstr "Brevemente"
 
 msgid "Confirm"
 msgstr "Confirmar"
-
-msgid "Network disconnected!"
-msgstr "Rede desligada!"
-
-msgid "Passphrase is not saved on this computer."
-msgstr "A frase-chave não será gravada neste computador."
-
-msgid "Watch-Only Addresses"
-msgstr "Endereços de Supervisão"
 
 msgid "Confirmations"
 msgstr "Confirmações"
@@ -254,11 +245,11 @@ msgstr "Negociar"
 msgid "Explorer"
 msgstr "Explorador"
 
-msgid "File"
-msgstr "Ficheiro"
-
 msgid "Fee (Ѧ)"
 msgstr "Taxa (Ѧ)"
+
+msgid "File"
+msgstr "Ficheiro"
 
 msgid "Folder Name"
 msgstr "Nome da Pasta"
@@ -305,14 +296,14 @@ msgstr "Se és dono desta conta, podes activar a função de Votação"
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
 msgstr "Se és dono desta conta podes ativar a função de Pastas Virtuais. As Pastas Virtuais funcionam como subcontas para melhor organizares o teu património, sem existir a necessidade de realizar transações reais com pagamento de taxa. <br> Adicionalmente, esta conta será movida\npara a lista \"As Minhas Contas\"."
 
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Se és dono desta conta podes ativar a função de Pastas Virtuais. As Pastas Virtuais funcionam como subcontas para melhor organizares o teu património, sem existir a necessidade de realizar transações reais com pagamento de taxa. <br>\nAdicionalmente, esta conta será movida para a lista \"As Minhas Contas\"."
+
 msgid "Import"
 msgstr "Importar"
 
 msgid "Import Account"
 msgstr "Importar Conta"
-
-msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
-msgstr "Se és dono desta conta podes ativar a função de Pastas Virtuais. As Pastas Virtuais funcionam como subcontas para melhor organizares o teu património, sem existir a necessidade de realizar transações reais com pagamento de taxa. <br>\nAdicionalmente, esta conta será movida para a lista \"As Minhas Contas\"."
 
 msgid "Indonesian"
 msgstr "Indonésio"
@@ -356,10 +347,10 @@ msgstr "Maximizar"
 msgid "Message"
 msgstr "Mensagem"
 
-msgid "Minimize"
+msgid "Minify"
 msgstr "Minimizar"
 
-msgid "Minify"
+msgid "Minimize"
 msgstr "Minimizar"
 
 msgid "My Accounts"
@@ -374,17 +365,20 @@ msgstr "Nethash"
 msgid "Network"
 msgstr "Rede"
 
-msgid "Network removed succesfully!"
-msgstr "Rede removida com sucesso!"
-
-msgid "New version available!"
-msgstr "Nova versão disponível!"
-
 msgid "Network connected and healthy!"
 msgstr "Rede ligada e a funcionar em pleno!"
 
 msgid "Network disconected!"
 msgstr "Rede desligada!"
+
+msgid "Network disconnected!"
+msgstr "Rede desligada!"
+
+msgid "Network removed succesfully!"
+msgstr "Rede removida com sucesso!"
+
+msgid "New version available!"
+msgstr "Nova versão disponível!"
 
 msgid "Next"
 msgstr "Próximo"
@@ -413,12 +407,6 @@ msgstr "Abrir Monitor de Delegado"
 msgid "Open File"
 msgstr "Abrir Ficheiro"
 
-msgid "Chinese simplified"
-msgstr "Chinês simplificado"
-
-msgid "Chinese traditional"
-msgstr "Chinês tradicional"
-
 msgid "Open in explorer"
 msgstr "Abrir no explorador"
 
@@ -440,6 +428,9 @@ msgstr "A frase-chave não corresponde com o teu endereço"
 msgid "Passphrase is not corresponding to account"
 msgstr "A frase-chave não corresponde com a conta"
 
+msgid "Passphrase is not saved on this computer."
+msgstr "A frase-chave não será gravada neste computador."
+
 msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
 msgstr "As frases-chave não estão seguras com protocolos de alta-segurança. <br>\nUsa apenas esta funcionalidade a partir de computadores de confiança e para contas das quais possas assumir o custo de perda total dos fundos contidos nas mesmas."
 
@@ -455,11 +446,17 @@ msgstr "Par"
 msgid "Peer Status"
 msgstr "Estado de Paridade"
 
-msgid "Please choose a file to be timestamped on the blockchain."
-msgstr "Por favor escolhe um ficheiro para ser datado e submetido na cadeia de blocos"
-
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Por favor guarda de forma segunda a frase-chave, este cliente NÃO a armazenará e por isso será impossível recuprar a frase-chave de futuro"
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
+msgstr "Por favor guarda de forma segunda a frase-chave, este cliente NÃO a armazenará e por isso será impossível recuprar a frase-chave de futuro"
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
+msgstr "Por favor salvaguarda a segunda frase-chave pois etse cliente NÃO a armazena e por isso não será possível recuperá-la posteriormente."
+
+msgid "Please choose a file to be timestamped on the blockchain."
+msgstr "Por favor escolhe um ficheiro para ser datado e submetido na cadeia de blocos"
 
 msgid "Please enter a folder name."
 msgstr "Por favor introduz um nome para a pasta"
@@ -473,20 +470,14 @@ msgstr "Por favor introduz uma curta etiqueta"
 msgid "Please enter this account passphrase to login."
 msgstr "Por favor introduz a frase-chave desta conta para entrar"
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
-msgstr "Por favor guarda de forma segunda a frase-chave, este cliente NÃO a armazenará e por isso será impossível recuprar a frase-chave de futuro"
+msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Por favor, primeiro FAZ BACKUP DA FRASE-CHAVE, este cliente NÃO armazena a mesma e dessa forma será impossível recuperá-la se a perderes"
 
 msgid "Please paste the original and second passphrase to validate the creation."
 msgstr "Por favor cola aqui ambas frases-chave, original e secundária, para validar esta ação."
 
-msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
-msgstr "Por favor salvaguarda a segunda frase-chave pois etse cliente NÃO a armazena e por isso não será possível recuperá-la posteriormente."
-
 msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
 msgstr "Para veres a informação atualizada, por favor reinicia o teu cliente após o registo de delegados ter sido submetido num bloco."
-
-msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Por favor, primeiro FAZ BACKUP DA FRASE-CHAVE, este cliente NÃO armazena a mesma e dessa forma será impossível recuperá-la se a perderes"
 
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
 msgstr "Por favor introduz as palavras das posições 3, 6 e 9 da tua frase-chave para validares a criação da conta."
@@ -572,6 +563,9 @@ msgstr "Guardar frase-chave para"
 msgid "Second Passphrase"
 msgstr "Segunda frase-chave"
 
+msgid "Second Passphrase added successfully:"
+msgstr "Segunda frase-chave adicionada com sucesso:"
+
 msgid "Seed Server"
 msgstr "Servidor de Geração"
 
@@ -635,9 +629,6 @@ msgstr "A mensagem NÃO foi verificada"
 msgid "The message is verified successfully"
 msgstr "A mensagem foi verificada com sucesso"
 
-msgid "Second Passphrase added successfully:"
-msgstr "Segunda frase-chave adicionada com sucesso:"
-
 msgid "The second passphrase does not match the one you just got."
 msgstr "A segunda frase-chave não coincide com a que recebeste há pouco."
 
@@ -653,6 +644,9 @@ msgstr "Temas"
 msgid "This account already has a second passphrase:"
 msgstr "Esta conta já tem uma segunda frase-chave associada:"
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "Esta conta numa interagiu com a rede. Esta é uma conta fria."
+
 msgid "This signature can't be forged."
 msgstr "Esta assinatura não pode ser forjada."
 
@@ -664,9 +658,6 @@ msgstr "Submeter e Datar Documento"
 
 msgid "Timestamp Document On"
 msgstr "Submeter e Datar Em"
-
-msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "Esta conta numa interagiu com a rede. Esta é uma conta fria."
 
 msgid "To"
 msgstr "Para"
@@ -698,14 +689,14 @@ msgstr "Atualizar voto de"
 msgid "Username"
 msgstr "Utilizador"
 
+msgid "Vendor Field"
+msgstr "Campo do Fornecedor"
+
 msgid "Verify"
 msgstr "Verificar"
 
 msgid "Verify Message"
 msgstr "Verificar Mensagem"
-
-msgid "Vendor Field"
-msgstr "Campo do Fornecedor"
 
 msgid "Virtual folder added!"
 msgstr "Pasta Virtual adicionada!"
@@ -719,17 +710,23 @@ msgstr "Votos"
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
 msgstr "Votar, embora opcional, é um importante mecanismo que contribui para a manutenção da segurança da rede Ark. Os 51 delegados com mais votos na rede ficam responsáveis por verificar e forjar transações em novos blocos. Esta página pode ser usada para exerceres o teu voto\nno delegado que apoias."
 
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
+msgstr "Votar, embora opcional, é um importante mecanismo que contribui para a manutenção da segurança da rede Ark.\nOs 51 delegados com mais votos na rede ficam responsáveis por verificar e forjar transações em novos blocos.\nEsta página pode ser usada para exerceres o teu voto no delegado que apoias."
+
+msgid "Watch-Only Addresses"
+msgstr "Endereços de Supervisão"
+
 msgid "Word"
 msgstr "Palavra"
 
 msgid "Yes"
 msgstr "Sim"
 
-msgid "approval"
-msgstr "aprovação"
-
 msgid "address"
 msgstr "endereço"
+
+msgid "approval"
+msgstr "aprovação"
 
 msgid "folder name"
 msgstr "nome da pasta"
@@ -770,9 +767,12 @@ msgstr "precisas de, pelo menos, 1 ARK para votar"
 msgid "you need at least 25 ARK to register delegate"
 msgstr "precisas de, pelo menos, 25 ARK para registar novo delegado"
 
-msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "Votar, embora opcional, é um importante mecanismo que contribui para a manutenção da segurança da rede Ark.\nOs 51 delegados com mais votos na rede ficam responsáveis por verificar e forjar transações em novos blocos.\nEsta página pode ser usada para exerceres o teu voto no delegado que apoias."
-
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr "é necessário dispor de, pelo menos, 5 ARK para criar uma segunda frase-chave"
+
+msgid "{{ category }}"
+msgstr "{{ category }}"
+
+msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
+msgstr "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
 
