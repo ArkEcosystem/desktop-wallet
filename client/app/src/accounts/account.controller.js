@@ -119,6 +119,9 @@
       { name: 'rub', symbol: '\u20BD' }
     ]
 
+    // 1 ARK has 100000000 "arkthosi"
+    const UNIT = Math.pow(10, 8)
+
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
     self.selectedLanguage = self.language
@@ -169,9 +172,11 @@
       require('electron').shell.openExternal(url)
     }
 
-    self.openExplorer = openExplorer
     self.clientVersion = require('../../package.json').version
     self.latestClientVersion = self.clientVersion
+    self.openExplorer = openExplorer
+    self.timestamp = timestamp
+    self.showValidateTransaction = showValidateTransaction
     networkService.getLatestClientVersion().then(function (r) { self.latestClientVersion = r })
     self.isNetworkConnected = false
     self.selected = null
@@ -184,10 +189,10 @@
     self.createAccount = createAccount
     self.importAccount = importAccount
     self.toggleList = toggleAccountsList
-    self.sendArk = sendArk
     self.createSecondPassphrase = createSecondPassphrase
     self.exportAccount = exportAccount
     self.copiedToClipboard = copiedToClipboard
+    self.formatAndToastError = formatAndToastError
 
     self.refreshAccountsAutomatically = storageService.get('refreshAccountsAutomatically') || false
     self.playFundsReceivedSound = storageService.get('playFundsReceivedSound') || false
@@ -198,7 +203,6 @@
     self.createDelegate = createDelegate
     self.vote = vote
     self.addDelegate = addDelegate
-    self.showAccountMenu = showAccountMenu
     self.currency = storageService.get('currency') || self.currencies[0]
     self.switchNetwork = networkService.switchNetwork
     self.marketinfo = {}
@@ -507,7 +511,7 @@
         accountService.createTransaction(0, {
           fromAddress: self.selected.address,
           toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * 100000000),
+          amount: parseInt(resp.send_amount * UNIT),
           masterpassphrase: self.passphrase,
           secondpassphrase: self.secondpassphrase
         }).then(function (transaction) {
@@ -648,7 +652,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * 100000000)
+      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * UNIT)
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -1096,7 +1100,7 @@
           secondpassphrase: $scope.voteDialog.data.secondpassphrase
         }).then(
           function (transaction) {
-            validateTransaction(selectedAccount, transaction)
+            showValidateTransaction(selectedAccount, transaction)
           },
           formatAndToastError
         )
@@ -1151,7 +1155,7 @@
           secondpassphrase: $scope.send.data.secondpassphrase
         }).then(
           function (transaction) {
-            validateTransaction(selectedAccount, transaction)
+            showValidateTransaction(selectedAccount, transaction)
           },
           formatAndToastError
         )
@@ -1192,154 +1196,6 @@
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
         templateUrl: './src/accounts/view/timestampDocument.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
-    }
-
-    function sendArk (selectedAccount) {
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = {
-        ledger: selectedAccount.ledger,
-        fromAddress: selectedAccount ? selectedAccount.address : '',
-        secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : ''
-      }
-
-      function openFile () {
-        var fs = require('fs')
-
-        require('electron').remote.dialog.showOpenDialog(function (fileNames) {
-          if (fileNames === undefined) return
-          var fileName = fileNames[0]
-
-          fs.readFile(fileName, 'utf8', function (err, data) {
-            if (err) {
-              toastService.error('Unable to load file' + ': ' + err)
-            } else {
-              try {
-                var transaction = JSON.parse(data)
-
-                if (transaction.type === undefined) return toastService.error('Invalid transaction file')
-                validateTransaction(selectedAccount, transaction)
-              } catch (ex) {
-                toastService.error('Invalid file format')
-              }
-            }
-          })
-        })
-      }
-
-      // testing goodies
-      // var data={
-      //   fromAddress: selectedAccount ? selectedAccount.address: '',
-      //   secondSignature: selectedAccount ? selectedAccount.secondSignature: '',
-      //   passphrase: 'insect core ritual alcohol clinic opera aisle dial entire dust symbol vintage',
-      //   secondpassphrase: passphrases[1] ? passphrases[1] : '',
-      //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
-      //   amount: 1,
-      // }
-      var totalBalance = function (minusFee) {
-        var fee = 10000000
-        var balance = selectedAccount.balance
-        return accountService.numberToFixed((minusFee ? balance - fee : balance) / 100000000)
-      }
-
-      function fillSendableBalance () {
-        var sendableBalance = totalBalance(true)
-        $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0
-      }
-
-      function next () {
-        if (!$scope.sendArkForm.$valid) {
-          return
-        }
-
-        // in case of data selected from contacts
-        if ($scope.send.data.toAddress.address) {
-          $scope.send.data.toAddress = $scope.send.data.toAddress.address
-        }
-        // remove bad characters before and after in case of bad copy/paste
-        $scope.send.data.toAddress = $scope.send.data.toAddress.trim()
-        $scope.send.data.passphrase = $scope.send.data.passphrase.trim()
-        if ($scope.send.data.secondpassphrase) {
-          $scope.send.data.secondpassphrase = $scope.send.data.secondpassphrase.trim()
-        }
-
-        $mdDialog.hide()
-        accountService.createTransaction(0, {
-          ledger: selectedAccount.ledger,
-          publicKey: selectedAccount.publicKey,
-          fromAddress: $scope.send.data.fromAddress,
-          toAddress: $scope.send.data.toAddress,
-          amount: parseInt($scope.send.data.amount * 100000000),
-          smartbridge: $scope.send.data.smartbridge,
-          masterpassphrase: $scope.send.data.passphrase,
-          secondpassphrase: $scope.send.data.secondpassphrase
-        }).then(
-          function (transaction) {
-            console.log(transaction)
-            validateTransaction(selectedAccount, transaction)
-          },
-          formatAndToastError
-        )
-      }
-
-      function searchTextChange (text) {
-        $scope.send.data.toAddress = text
-      }
-
-      function selectedContactChange (contact) {
-        if (contact) {
-          $scope.send.data.toAddress = contact.address
-        }
-      }
-
-      function querySearch (text) {
-        text = text.toLowerCase()
-        var contacts = storageService.get('contacts') || []
-        var accounts = self.getAllAccounts()
-
-        contacts = contacts.concat(accounts).sort(function (a, b) {
-          if (a.name && b.name) return a.name < b.name
-          else if (a.username && b.username) return a.username < b.username
-          else if (a.username && b.name) return a.username < b.name
-          else if (a.name && b.username) return a.name < b.username
-        })
-
-        var filter = contacts.filter(function (account) {
-          return (account.address.toLowerCase().indexOf(text) > -1) || (account.name && (account.name.toLowerCase().indexOf(text) > -1))
-        })
-        return filter
-      }
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      function checkContacts (input) {
-        if (input[0] !== '@') return true
-      }
-
-      $scope.send = {
-        openFile: openFile,
-        data: data,
-        cancel: cancel,
-        next: next,
-        checkContacts: checkContacts,
-        searchTextChange: searchTextChange,
-        selectedContactChange: selectedContactChange,
-        querySearch: querySearch,
-        fillSendableBalance: fillSendableBalance,
-        totalBalance: totalBalance(false),
-        remainingBalance: totalBalance(false) // <-- initial value, this will change by directive
-      }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/sendArk.html',
         clickOutsideToClose: false,
         preserveScope: true,
         scope: $scope
@@ -1756,7 +1612,7 @@
           secondpassphrase: $scope.createDelegate.data.secondpassphrase
         }).then(
           function (transaction) {
-            validateTransaction(selectedAccount, transaction)
+            showValidateTransaction(selectedAccount, transaction)
           },
           formatAndToastError
         )
@@ -1945,7 +1801,7 @@
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
           }).then(
             function (transaction) {
-              validateTransaction(selectedAccount, transaction)
+              showValidateTransaction(selectedAccount, transaction)
             },
             formatAndToastError
           )
@@ -1967,98 +1823,6 @@
         parent: angular.element(document.getElementById('app')),
         templateUrl: './src/accounts/view/createSecondPassphrase.html',
         clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
-    }
-
-    /**
-     * Show the Contact view in the bottom sheet
-     */
-    function showAccountMenu (selectedAccount) {
-      var items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' }
-      ]
-
-      if (!selectedAccount.ledger) {
-        items.push({ name: gettextCatalog.getString('Remove'), icon: 'clear' })
-      }
-
-      if (!selectedAccount.delegate) {
-        items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer' })
-      }
-      if (!selectedAccount.delegate && !selectedAccount.ledger) {
-        items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity' })
-      }
-
-      items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user' })
-
-      if (!selectedAccount.secondSignature && !selectedAccount.ledger) {
-        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock' })
-      }
-      function answer (action) {
-        $mdBottomSheet.hide()
-
-        if (action === gettextCatalog.getString('Open in explorer')) {
-          openExplorer('/address/' + selectedAccount.address)
-        }
-
-        if (action === gettextCatalog.getString('Timestamp Document')) {
-          timestamp(selectedAccount)
-        } else if (action === gettextCatalog.getString('Remove')) {
-          var confirm = $mdDialog.confirm()
-            .title(gettextCatalog.getString('Remove Account') + ' ' + selectedAccount.address)
-            .theme(self.currentTheme)
-            .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
-              'The account may be added again using the original passphrase of the account.'))
-            .ok(gettextCatalog.getString('Remove account'))
-            .cancel(gettextCatalog.getString('Cancel'))
-          $mdDialog.show(confirm).then(function () {
-            accountService.removeAccount(selectedAccount).then(function () {
-              self.accounts = accountService.loadAllAccounts()
-
-              if (self.accounts.length > 0) {
-                selectAccount(self.accounts[0])
-              } else {
-                self.selected = null
-              }
-
-              toastService.success('Account removed!', 3000)
-            })
-          })
-        } else if (action === gettextCatalog.getString('Send Ark')) {
-          sendArk()
-        } else if (action === gettextCatalog.getString('Register Delegate')) {
-          createDelegate(selectedAccount)
-        } else if (action === gettextCatalog.getString('Label')) {
-          var prompt = $mdDialog.prompt()
-            .title(gettextCatalog.getString('Label'))
-            .theme(self.currentTheme)
-            .textContent(gettextCatalog.getString('Please enter a short label.'))
-            .placeholder(gettextCatalog.getString('label'))
-            .ariaLabel(gettextCatalog.getString('Label'))
-            .ok(gettextCatalog.getString('Set'))
-            .cancel(gettextCatalog.getString('Cancel'))
-          $mdDialog.show(prompt).then(function (label) {
-            accountService.setUsername(selectedAccount.address, label)
-            self.accounts = accountService.loadAllAccounts()
-            toastService.success('Label set', 3000)
-          })
-        } else if (action === gettextCatalog.getString('Second Passphrase')) {
-          createSecondPassphrase(selectedAccount)
-        }
-      }
-
-      $scope.bs = {
-        address: selectedAccount.address,
-        answer: answer,
-        items: items
-      }
-
-      $mdBottomSheet.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/contactSheet.html',
-        clickOutsideToClose: true,
         preserveScope: true,
         scope: $scope
       })
@@ -2191,7 +1955,7 @@
       }
     }
 
-    function validateTransaction (selectedAccount, transaction) {
+    function showValidateTransaction (selectedAccount, transaction) {
       function saveFile () {
         var fs = require('fs')
         var raw = JSON.stringify(transaction)
@@ -2252,14 +2016,15 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / 100000000) + ''
+        humanAmount: accountService.numberToFixed(transaction.amount / UNIT).toString(),
+        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / UNIT).toString()
       }
 
       $mdDialog.show({
         scope: $scope,
         preserveScope: true,
         parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/showTransaction.html',
+        templateUrl: './src/accounts/view/validateTransactionDialog.html',
         clickOutsideToClose: false
       })
     }

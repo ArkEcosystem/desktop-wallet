@@ -20,61 +20,57 @@ describe('AccountController', function () {
     timeServiceMock,
     toastServiceMock
 
-  let mdThemingProviderMock
-    , mdThemingMock
+  let mdThemingProviderMock,
+    mdThemingMock
 
-  let mdSidenavMock,
-    mdBottomSheetMock,
-    mdDialogMock,
+  let mdDialogMock,
     mdToastMock,
     getTextCatalogMock
 
   const accounts = ['userAccount1', 'userAccount2']
 
   beforeEach(() => {
-    module('arkclient.accounts', ($provide) => {
+    module('arkclient.accounts', $provide => {
       accountServiceMock = {
-        loadAllAccounts() { return accounts }
+        loadAllAccounts () { return accounts }
       }
       networkServiceMock = {
-        getLatestClientVersion() { return new Promise((resolve, _) => resolve('0.0.0')) },
-        getNetwork() {
-          return { theme: 'default', themeDark: false }
-        },
-        getNetworks() {},
-        getConnection() { return new Promise((resolve, _) => resolve()) }
+        getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },
+        getNetwork () { return { theme: 'default', themeDark: false } },
+        getNetworks () {},
+        getConnection () { return new Promise((resolve, reject) => resolve()) }
       }
       pluginLoaderMock = {
         triggerEvent: sinon.stub()
       }
       storageServiceMock = {
         get: sinon.stub().returns(['test_contact']),
-        getContext() {}
+        getContext () {}
       }
       changerServiceMock = {
-        getHistory() {},
-        getMarketInfo() { return new Promise((resolve, _) => resolve() ) }
+        getHistory () {},
+        getMarketInfo () { return new Promise((resolve, reject) => resolve()) }
       }
       ledgerServiceMock = {}
       timeServiceMock = {}
       toastServiceMock = {}
 
       const themeMock = {
-        primaryPalette() { return this },
-        accentPalette() {return this },
-        warnPalette() { return this },
-        backgroundPalette() { return this },
-        dark() { return this },
+        primaryPalette () { return this },
+        accentPalette () { return this },
+        warnPalette () { return this },
+        backgroundPalette () { return this },
+        dark () { return this }
       }
 
       mdThemingProviderMock = {
-        theme() { return themeMock },
-        $get() {
+        theme () { return themeMock },
+        $get () {
           return {
             THEMES: {
               default: { colors: { primary: {}, accent: {}, warn: {}, background: {} } }
             },
-            generateTheme() {}
+            generateTheme () {}
           }
         }
       }
@@ -85,7 +81,7 @@ describe('AccountController', function () {
       mdToastMock = {}
       getTextCatalogMock = {
         getString: sinon.stub(),
-        setCurrentLanguage: sinon.stub(),
+        setCurrentLanguage: sinon.stub()
       }
 
       // provide mocks to angular controller
@@ -106,37 +102,36 @@ describe('AccountController', function () {
       $provide.value('gettextCatalog', getTextCatalogMock)
     })
 
-    inject( (_$compile_, _$rootScope_, _$controller_) => {
+    inject((_$compile_, _$rootScope_, _$controller_) => {
       $scope = _$rootScope_.$new()
-      ctrl = _$controller_('AccountController', { $scope: $scope })
+      ctrl = _$controller_('AccountController', { $scope })
     })
   })
 
-  describe('', ()=> {
-    xit('loads all the accounts', function() {
+  describe('', () => {
+    xit('loads all the accounts', function () {
     })
   })
 
-  describe('getAllAccounts()', ()=> {
-    beforeEach(function() {
+  describe('getAllAccounts()', () => {
+    beforeEach(function () {
       sinon.stub(ctrl, 'myAccounts').returns(accounts)
     })
 
-    context("when there aren't any ledger accounts", ()=> {
-      it('returns the user accounts only', function() {
+    context("when there aren't any ledger accounts", () => {
+      it('returns the user accounts only', function () {
         expect(ctrl.getAllAccounts()).to.have.same.members(accounts)
       })
     })
 
-    context("when there are ledger accounts", ()=> {
-      beforeEach(function() {
+    context('when there are ledger accounts', () => {
+      beforeEach(function () {
         ctrl.ledgerAccounts = ['ledgerAccount1', 'ledgerAccoun2']
       })
 
-      it('returns the user and the ledger accounts', function() {
+      it('returns the user and the ledger accounts', function () {
         expect(ctrl.getAllAccounts()).to.have.members(accounts.concat(ctrl.ledgerAccounts))
       })
     })
   })
-
 })

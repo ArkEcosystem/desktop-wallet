@@ -15,7 +15,9 @@
     .filter('amountToCurrency', function () {
       return function (amount, scope) {
         if (typeof amount === 'undefined' || !amount) return 0
-        var price = scope.ul.connectedPeer.market.price[scope.ul.currency.name]
+        // NOTE AccountController is being renaming to `ac` in refactored templates
+        const ac = scope.ac || scope.ul
+        const price = ac.connectedPeer.market.price[ac.currency.name]
         return (amount * price).toFixed(5)
       }
     }).filter('formatCurrency', function () {

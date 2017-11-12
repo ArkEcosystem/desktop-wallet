@@ -38,11 +38,7 @@ module.exports = function (config) {
       '../client/app/src/addons/pluginLoader.addon.js',
       '../client/app/src/components/**/*.js',
       '../client/app/src/filters/filters.js',
-      '../client/app/src/services/changer.service.js',
-      '../client/app/src/services/ledger.service.js',
-      '../client/app/src/services/network.service.js',
-      '../client/app/src/services/storage.service.js',
-      '../client/app/src/services/time.service.js',
+      '../client/app/src/services/**/*.js',
       '../client/app/src/utils/translations.js',
 
       // Inject the `module` function
@@ -72,7 +68,6 @@ module.exports = function (config) {
 
     preprocessors: {
       '../client/app/**/*.js': ['electron'],
-      // '../client/app/src#<{(||)}>#*.js': ['electron'],
       '../client/app/src/**/*.js': ['electron', 'babelSourceMap', 'coverage'],
       './**/*.js': ['electron', 'babelSourceMap']
     },
@@ -100,14 +95,14 @@ module.exports = function (config) {
       __filenameOverride: __dirname + '/../client/app/index.html'
     },
 
-    // customLaunchers: {
-    //   DebugElectron: {
-    //     base: 'Electron',
-    //     flags: [
-    //       '--show',
-    //       '--enable-logging',
-    //     ]
-    //   }
-    // }
+    customLaunchers: {
+      DebugElectron: {
+        base: 'Electron',
+        flags: [
+          '--show',
+          '--enable-logging'
+        ]
+      }
+    }
   })
 }

@@ -14,14 +14,16 @@ describe('AddressbookController', function () {
     toastServiceMock
 
   beforeEach(() => {
-    module('arkclient.components', ($provide) => {
+    module('arkclient.components', $provide => {
       // define mocked services and stubbed calls
       mdDialogMock = {}
       mdToastMock = {}
       storageServiceMock = {
         get: sinon.stub().returns(['test_contact'])
       }
-      getTextCatalogMock = {}
+      getTextCatalogMock = {
+        setStrings () {}
+      }
       accountServiceMock = {}
       toastServiceMock = {}
 
@@ -34,9 +36,9 @@ describe('AddressbookController', function () {
       $provide.value('toastService', toastServiceMock)
     })
 
-    inject( (_$compile_, _$rootScope_, _$controller_) => {
+    inject((_$compile_, _$rootScope_, _$controller_) => {
       $scope = _$rootScope_.$new()
-      ctrl = _$controller_('AddressbookController', { $scope: $scope })
+      ctrl = _$controller_('AddressbookController', { $scope })
     })
   })
 
