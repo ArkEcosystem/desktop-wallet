@@ -28,8 +28,74 @@ describe('AccountCardController', function () {
     })
   })
 
-  describe('submitTransaction()', ()=> {
 
+  describe('accountMenuItems()', ()=> {
+    let items
+    
+    beforeEach(function() {
+      items = ctrl.accountMenuItems({})
+    })
+
+    it('includes an "Open in explorer" action', function() {
+      expect(items[0]).to.eql({ name: 'Open in explorer', icon: 'open_in_new' })
+    })
+
+    context("when the account doesn't use a Ledger", ()=> {
+      it('includes a "Remove" action', function() {
+        expect(items[1]).to.eql({ name: 'Remove', icon: 'clear' })
+
+        items = ctrl.accountMenuItems({ ledger: true })
+        expect(items.map( i => i.name )).to.not.include('Remove')
+      })
+    })
+
+    context("when the account isn't a delegate", ()=> {
+      it('includes a "Label" action', function() {
+        expect(items[2]).to.eql({ name: 'Label', icon: 'local_offer' })
+
+        items = ctrl.accountMenuItems({ delegate: true })
+        expect(items.map( i => i.name )).to.not.include('Label')
+      })
+    })
+
+    context("when the account doesn't use a Ledger and isn't a delegate", ()=> {
+      it('includes a "Label" action', function() {
+        expect(items[3]).to.eql({ name: 'Register Delegate', icon: 'perm_identity' })
+
+        items = ctrl.accountMenuItems({ ledger: true })
+        expect(items.map( i => i.name )).to.not.include('Register Delegate')
+        items = ctrl.accountMenuItems({ delegate: true })
+        expect(items.map( i => i.name )).to.not.include('Register Delegate')
+      })
+    })
+
+    it('shows a "Timestamp Document" action', function() {
+      it('includes a "Label" action', function() {
+        expect(items[4]).to.eql({ name: 'Timestamp Document', icon: 'verified_user' })
+      })
+    })
+
+    context("when the account doesn't have a second signagure and doesn't use a Ledger", ()=> {
+      it('includes a "Label" action', function() {
+        expect(items[5]).to.eql({ name: 'Second Passphrase', icon: 'lock' })
+
+        items = ctrl.accountMenuItems({ ledger: true })
+        expect(items.map( i => i.name )).to.not.include('Second Passphrase')
+        items = ctrl.accountMenuItems({ secondSignature: true })
+        expect(items.map( i => i.name )).to.not.include('Second Passphrase')
+      })
+    })
+  })
+
+  describe('showAccountMenu()', () => {
+    xit('shows a bottom sheet', function() {
+    })
+
+    describe('confirmRemoval()', ()=> {
+    })
+  })
+
+  describe('submitTransaction()', ()=> {
     context('when the form amount is a float', ()=> {
       it('uses the right amount to create the transaction', function() {
         accountServiceMock.createTransaction.resolves({})

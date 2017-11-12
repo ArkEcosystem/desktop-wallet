@@ -27,30 +27,37 @@
     // 1 ARK has 100000000 "arkthosi"
     const UNIT = Math.pow(10, 8)
 
-    /**
-     * Show the account menu in the bottom sheet
-     */
-    this.showAccountMenu = (selectedAccount) => {
-      const items = [
-        { name: gettextCatalog.getString('Open in explorer'), icon: 'open_in_new' }
-      ]
+    this.accountMenuItems = (account) => {
+      const items = []
+      const add = (text, icon)=> items.push({ name: gettextCatalog.getString(text), icon })
 
-      if (!selectedAccount.ledger) {
-        items.push({ name: gettextCatalog.getString('Remove'), icon: 'clear' })
+      add('Open in explorer', 'open_in_new')
+
+      if (!account.ledger) {
+        add('Remove', 'clear')
       }
-      if (!selectedAccount.delegate) {
-        items.push({ name: gettextCatalog.getString('Label'), icon: 'local_offer' })
+      if (!account.delegate) {
+        add('Label', 'local_offer')
 
-        if (!selectedAccount.ledger) {
-          items.push({ name: gettextCatalog.getString('Register Delegate'), icon: 'perm_identity' })
+        if (!account.ledger) {
+          add('Register Delegate', 'perm_identity')
         }
       }
 
-      items.push({ name: gettextCatalog.getString('Timestamp Document'), icon: 'verified_user' })
+      add('Timestamp Document', 'verified_user')
 
-      if (!selectedAccount.secondSignature && !selectedAccount.ledger) {
-        items.push({ name: gettextCatalog.getString('Second Passphrase'), icon: 'lock' })
+      if (!account.secondSignature && !account.ledger) {
+        add('Second Passphrase', 'lock')
       }
+
+      return items
+    }
+
+    /**
+     * Show the account menu on the bottom sheet
+     */
+    this.showAccountMenu = (selectedAccount) => {
+      const items = this.accountMenuItems(selectedAccount)
 
       const answer = (action) => {
         $mdBottomSheet.hide()
