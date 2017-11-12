@@ -27,9 +27,9 @@
     // 1 ARK has 100000000 "arkthosi"
     const UNIT = Math.pow(10, 8)
 
-    this.accountMenuItems = (account) => {
+    this.accountMenuItems = account => {
       const items = []
-      const add = (text, icon)=> items.push({ name: gettextCatalog.getString(text), icon })
+      const add = (text, icon) => items.push({ name: gettextCatalog.getString(text), icon })
 
       add('Open in explorer', 'open_in_new')
 
@@ -53,62 +53,76 @@
       return items
     }
 
+    this.confirmRemoval = account => {
+      const confirm = $mdDialog.confirm({
+        title: gettextCatalog.getString('Remove Account') + ' ' + account.address,
+        ariaLabel: gettextCatalog.getString('Remove Account'),
+        theme: this.accountCtrl.currentTheme,
+        textContent: gettextCatalog.getString('Remove this account from your wallet. ' +
+          'The account may be added again using the original passphrase of the account.'),
+        ok: gettextCatalog.getString('Remove account'),
+        cancel: gettextCatalog.getString('Cancel')
+      })
+
+      return $mdDialog.show(confirm).then(() => {
+        return accountService.removeAccount(account).then(() => {
+          this.accountCtrl.accounts = accountService.loadAllAccounts()
+
+          if (this.accountCtrl.accounts && this.accountCtrl.accounts.length > 0) {
+            this.accountCtrl.selectAccount(this.accountCtrl.accounts[0])
+          } else {
+            this.accountCtrl.selected = null
+          }
+
+          toastService.success('Account removed!', 3000)
+        })
+      })
+    }
+
+    this.promptLabel = account => {
+      const currentLabel = accountService.getUsername(account.address)
+
+      const prompt = $mdDialog.prompt({
+        title: gettextCatalog.getString('Label'),
+        ariaLabel: gettextCatalog.getString('Label'),
+        theme: this.accountCtrl.currentTheme,
+        textContent: gettextCatalog.getString('Please enter a short label.'),
+        placeholder: gettextCatalog.getString('Label'),
+        initialValue: currentLabel,
+        ok: gettextCatalog.getString('Set'),
+        cancel: gettextCatalog.getString('Cancel')
+      })
+
+      return $mdDialog.show(prompt).then(label => {
+        accountService.setUsername(account.address, label)
+        this.accountCtrl.accounts = accountService.loadAllAccounts()
+        toastService.success('Label set', 3000)
+      })
+    }
+
     /**
      * Show the account menu on the bottom sheet
      */
-    this.showAccountMenu = (selectedAccount) => {
+    this.showAccountMenu = selectedAccount => {
       const items = this.accountMenuItems(selectedAccount)
 
-      const answer = (action) => {
+      const answer = action => {
         $mdBottomSheet.hide()
 
         if (action === gettextCatalog.getString('Open in explorer')) {
           this.accountCtrl.openExplorer('/address/' + selectedAccount.address)
-        }
 
-        if (action === gettextCatalog.getString('Timestamp Document')) {
+        } else if (action === gettextCatalog.getString('Timestamp Document')) {
           this.accountCtrl.timestamp(selectedAccount)
 
         } else if (action === gettextCatalog.getString('Remove')) {
-          const confirm = $mdDialog.confirm()
-            .title(gettextCatalog.getString('Remove Account') + ' ' + selectedAccount.address)
-            .theme(this.accountCtrl.currentTheme)
-            .textContent(gettextCatalog.getString('Remove this account from your wallet. ' +
-              'The account may be added again using the original passphrase of the account.'))
-            .ok(gettextCatalog.getString('Remove account'))
-            .cancel(gettextCatalog.getString('Cancel'))
+          this.confirmRemoval(selectedAccount)
 
-          $mdDialog.show(confirm).then(function () {
-            accountService.removeAccount(selectedAccount).then(function () {
-              this.accountCtrl.accounts = accountService.loadAllAccounts()
-
-              if (this.accountCtrl.accounts.length > 0) {
-                selectAccount(this.accountCtrl.accounts[0])
-              } else {
-                this.accountCtrl.selected = null
-              }
-
-              toastService.success('Account removed!', 3000)
-            })
-          })
         } else if (action === gettextCatalog.getString('Register Delegate')) {
           this.accountCtrl.createDelegate(selectedAccount)
 
         } else if (action === gettextCatalog.getString('Label')) {
-          const prompt = $mdDialog.prompt()
-            .title(gettextCatalog.getString('Label'))
-            .theme(this.accountCtrl.currentTheme)
-            .textContent(gettextCatalog.getString('Please enter a short label.'))
-            .placeholder(gettextCatalog.getString('label'))
-            .ariaLabel(gettextCatalog.getString('Label'))
-            .ok(gettextCatalog.getString('Set'))
-            .cancel(gettextCatalog.getString('Cancel'))
-
-          $mdDialog.show(prompt).then(function (label) {
-            accountService.setUsername(selectedAccount.address, label)
-            this.accountCtrl.accounts = accountService.loadAllAccounts()
-            toastService.success('Label set', 3000)
-          })
+          this.promptLabel(selectedAccount)
 
         } else if (action === gettextCatalog.getString('Second Passphrase')) {
           this.accountCtrl.createSecondPassphrase(selectedAccount)
@@ -141,14 +155,17 @@
         masterpassphrase: formData.passphrase,
         secondpassphrase: formData.secondpassphrase
       })
-        .then( (transaction) => {
+        .then(transaction => {
           this.accountCtrl.showValidateTransaction(selectedAccount, transaction)
         },
         this.accountCtrl.formatAndToastError
       )
     }
 
-    this.showSendTransaction = (selectedAccount) => {
+    /**
+     * Show the send transaction dialog
+     */
+    this.showSendTransaction = selectedAccount => {
       const passphrases = accountService.getPassphrases(selectedAccount.address)
 
       let data = {
@@ -162,7 +179,7 @@
       const openFile = () => {
         var fs = require('fs')
 
-        require('electron').remote.dialog.showOpenDialog( (fileNames) => {
+        require('electron').remote.dialog.showOpenDialog(fileNames => {
           if (fileNames === undefined) return
           var fileName = fileNames[0]
 

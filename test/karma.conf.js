@@ -68,7 +68,6 @@ module.exports = function (config) {
 
     preprocessors: {
       '../client/app/**/*.js': ['electron'],
-      // '../client/app/src#<{(||)}>#*.js': ['electron'],
       '../client/app/src/**/*.js': ['electron', 'babelSourceMap', 'coverage'],
       './**/*.js': ['electron', 'babelSourceMap']
     },
@@ -96,14 +95,14 @@ module.exports = function (config) {
       __filenameOverride: __dirname + '/../client/app/index.html'
     },
 
-    // customLaunchers: {
-    //   DebugElectron: {
-    //     base: 'Electron',
-    //     flags: [
-    //       '--show',
-    //       '--enable-logging',
-    //     ]
-    //   }
-    // }
+    customLaunchers: {
+      DebugElectron: {
+        base: 'Electron',
+        flags: [
+          '--show',
+          '--enable-logging'
+        ]
+      }
+    }
   })
 }
