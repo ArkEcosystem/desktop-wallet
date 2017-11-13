@@ -74,17 +74,18 @@
       en: gettextCatalog.getString('English'),
       ar: gettextCatalog.getString('Arabic'),
       bg_BG: gettextCatalog.getString('Bulgarian'),
-      de: gettextCatalog.getString('German'),
-      el: gettextCatalog.getString('Greek'),
-      es_419: gettextCatalog.getString('Spanish'),
+      zh_CN: gettextCatalog.getString('Chinese - China'),
+      zh_TW: gettextCatalog.getString('Chinese - Taiwan'),
+      nl: gettextCatalog.getString('Dutch'),
       fi: gettextCatalog.getString('Finish'),
       fr: gettextCatalog.getString('French'),
+      de: gettextCatalog.getString('German'),
+      el: gettextCatalog.getString('Greek'),
       hu: gettextCatalog.getString('Hungarish'),
       id: gettextCatalog.getString('Indonesian'),
       it: gettextCatalog.getString('Italian'),
       ja: gettextCatalog.getString('Japanese'),
       ko: gettextCatalog.getString('Korean'),
-      nl: gettextCatalog.getString('Dutch'),
       pl: gettextCatalog.getString('Polish'),
       pt_BR: gettextCatalog.getString('Portuguese - Brazil'),
       pt_PT: gettextCatalog.getString('Portuguese - Portugal'),
@@ -93,9 +94,8 @@
       sk: gettextCatalog.getString('Slovak'),
       sl: gettextCatalog.getString('Slovenian'),
       sr: gettextCatalog.getString('Serbian'),
-      sv: gettextCatalog.getString('Swedish'),
-      zh_CN: gettextCatalog.getString('Chinese - China'),
-      zh_TW: gettextCatalog.getString('Chinese - Taiwan')
+      es_419: gettextCatalog.getString('Spanish'),
+      sv: gettextCatalog.getString('Swedish')
     }
 
     pluginLoader.triggerEvent('onStart')
