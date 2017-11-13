@@ -91,9 +91,9 @@
       pt_PT: gettextCatalog.getString('Portuguese - Portugal'),
       ro: gettextCatalog.getString('Romanian'),
       ru: gettextCatalog.getString('Russian'),
+      sr: gettextCatalog.getString('Serbian'),
       sk: gettextCatalog.getString('Slovak'),
       sl: gettextCatalog.getString('Slovenian'),
-      sr: gettextCatalog.getString('Serbian'),
       es_419: gettextCatalog.getString('Spanish'),
       sv: gettextCatalog.getString('Swedish')
     }
