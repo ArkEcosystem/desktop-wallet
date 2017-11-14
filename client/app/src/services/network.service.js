@@ -136,7 +136,6 @@
           if (res.data[0] && res.data[0].price_btc) {
             res.data[0].price_btc = Number(res.data[0].price_btc).toFixed(8) // store BTC price in satoshi
           }
-          console.log(res)
           storageService.set('lastPrice', { market: res.data[0], date: new Date() }, true)
           peer.market = res.data[0]
           peer.market.price = { btc: '' + res.data[0].price_btc, usd: '' + res.data[0].price_usd }
