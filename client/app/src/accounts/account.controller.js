@@ -102,7 +102,8 @@
 
     self.currencies = [
       { name: 'btc', symbol: 'Ƀ' },
-      { name: 'usd', symbol: '$' },
+      { name: 'usd', symbol: '$' }
+      /*
       { name: 'aud', symbol: 'A$' },
       { name: 'brl', symbol: 'R$' },
       { name: 'cad', symbol: 'Can$' },
@@ -117,6 +118,7 @@
       { name: 'krw', symbol: '₩' },
       { name: 'mxn', symbol: 'Mex$' },
       { name: 'rub', symbol: '\u20BD' }
+      */
     ]
 
     // 1 ARK has 100000000 "arkthosi"

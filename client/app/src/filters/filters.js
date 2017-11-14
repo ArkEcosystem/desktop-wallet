@@ -33,7 +33,7 @@
         var localeVersion
 
         if (currencyName === 'btc') {
-          localeVersion = 'Ƀ ' + val
+          localeVersion = 'Ƀ ' + Number(val).toFixed(5)
         } else {
           localeVersion = Number(val).toLocaleString(languageCode, options)
         }

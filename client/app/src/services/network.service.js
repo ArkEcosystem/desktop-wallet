@@ -131,13 +131,15 @@
       // peer.market={
       //   price: { btc: '0' },
       // }
-      $http.get('http://coinmarketcap.northpole.ro/api/v5/' + network.token + '.json', { timeout: 2000 })
+      $http.get('https://api.coinmarketcap.com/v1/ticker/' + network.token, { timeout: 2000 })
         .then(function (res) {
-          if (res.data.price && res.data.price.btc) {
-            res.data.price.btc = Number(res.data.price.btc).toFixed(8) // store BTC price in satoshi
+          if (res.data[0] && res.data[0].price_btc) {
+            res.data[0].price_btc = Number(res.data[0].price_btc).toFixed(8) // store BTC price in satoshi
           }
-          storageService.set('lastPrice', { market: res.data, date: new Date() }, true)
-          peer.market = res.data
+          console.log(res)
+          storageService.set('lastPrice', { market: res.data[0], date: new Date() }, true)
+          peer.market = res.data[0]
+          peer.market.price = { btc: '' + res.data[0].price_btc, usd: '' + res.data[0].price_usd }
         }, function () {
           var lastPrice = storageService.get('lastPrice')
 

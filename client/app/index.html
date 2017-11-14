@@ -23,7 +23,7 @@
       display: none;
       overflow-x: hidden;
     }
-    
+
     [ng-cloak].splash {
       background-color: #06060c;
       background-image: url("splashscreen.png");
@@ -67,10 +67,10 @@
     <account-box account-ctrl="ul" id="home-box-accounts" md-whiteframe="3"></account-box>
 
     <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <market-box account-ctrl="ul" ng-if="ul.connectedPeer.market.marketCap"></market-box>
+      <market-box account-ctrl="ul" ng-if="ul.connectedPeer.market.market_cap_usd"></market-box>
       <network-box account-ctrl="ul"></network-box>
     </div>
-    <!-- 
+    <!--
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
     <div class="coinmarketcap-currency-widget" style="opacity:0.9; border-radius:10px; border:0; width: 360px; margin:10px; background:white;" data-currency="{{ul.network.token}}" data-base="{{ul.currency.name}}" data-secondary="BTC"></div> -->
@@ -106,7 +106,7 @@
       </md-content>
     </div>
   </div>
-  
+
   <link rel="stylesheet" href="assets/css/roboto.css" />
   <link rel="stylesheet" href="assets/css/material-icons.css" />
   <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
