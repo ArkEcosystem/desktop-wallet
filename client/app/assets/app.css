@@ -454,3 +454,30 @@ body md-toolbar.navbar {
 body.too-pale-background md-toolbar.navbar {
   background-color: rgba(20, 20, 20, 0.2) !important;
 }
+
+md-toolbar.announcement .md-toolbar-tools {
+  /* TODO */
+  background-color: black;
+  color: white;
+}
+
+md-toolbar.announcement .md-toolbar-tools {
+  opacity: 0.9;
+  font-size: 0.9em;
+}
+
+md-toolbar.announcement > .md-toolbar-tools > a {
+  font-weight: bold;
+}
+
+md-toolbar.announcement > .md-toolbar-tools > span {
+  margin-right: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+md-toolbar.announcement > .md-toolbar-tools > span > span.date {
+  /* TODO */
+  /* color: rgba(20, 20, 20, 0.2); */
+  font-weight: normal;
+}

@@ -60,53 +60,56 @@
 
   <div ng-cloak="" style="height: 100%" layout="column">
 
-	<main-navbar account-ctrl="ul"></main-navbar>
+    <main-navbar account-ctrl="ul"></main-navbar>
+    <announcement></announcement>
 
-  <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
+    <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
 
-    <account-box account-ctrl="ul" id="home-box-accounts" md-whiteframe="3"></account-box>
+      <account-box account-ctrl="ul" id="home-box-accounts" md-whiteframe="3"></account-box>
 
-    <div id="home-box-row" layout="row" layout-align="space-between stretch">
-      <market-box account-ctrl="ul" ng-if="ul.connectedPeer.market.marketCap"></market-box>
-      <network-box account-ctrl="ul"></network-box>
+      <div id="home-box-row" layout="row" layout-align="space-between stretch">
+        <market-box account-ctrl="ul" ng-if="ul.connectedPeer.market.marketCap"></market-box>
+        <network-box account-ctrl="ul"></network-box>
+      </div>
+
+      <!-- 
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+      <div class="coinmarketcap-currency-widget" style="opacity:0.9; border-radius:10px; border:0; width: 360px; margin:10px; background:white;" data-currency="{{ul.network.token}}" data-base="{{ul.currency.name}}" data-secondary="BTC"></div> -->
+      <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
+      <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
+
+      <div class="footer">
+        <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
+      </div>
     </div>
-    <!-- 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-    <div class="coinmarketcap-currency-widget" style="opacity:0.9; border-radius:10px; border:0; width: 360px; margin:10px; background:white;" data-currency="{{ul.network.token}}" data-base="{{ul.currency.name}}" data-secondary="BTC"></div> -->
-    <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
-    <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
 
-    <div class="footer">
-      <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
+    <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
+      <md-content flex layout="row">
+
+        <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
+          <main-sidenav account-ctrl="ul" address-book-ctrl="ab"></main-sidenav>
+        </md-sidenav>
+
+        <md-content flex layout="column" id="content">
+          <account-card account-ctrl="ul" address-book-ctrl="ab"></account-card>
+
+          <md-tabs flex="100">
+            <div ng-controller="AccountTransactionsController as transactionsCtrl">
+              <transaction-tab account-ctrl="ul" transactions-ctrl="transactionsCtrl"></transaction-tab>
+            </div>
+            <votes-tab account-ctrl="ul"></votes-tab>
+            <signing-tab account-ctrl="ul" ng-if="!ul.selected.ledger"></signing-tab>
+            <exchange-tab account-ctrl="ul"></exchange-tab>
+            <offchain-tab account-ctrl="ul"></offchain-tab>
+            <delegate-tab account-ctrl="ul" ng-if="ul.selected.delegate"></delegate-tab>
+          </md-tabs>
+
+        </md-content>
+      </div>
     </div>
   </div>
 
-  <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
-    <md-content flex layout="row">
-
-      <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
-        <main-sidenav account-ctrl="ul" address-book-ctrl="ab"></main-sidenav>
-      </md-sidenav>
-
-      <md-content flex layout="column" id="content">
-        <account-card account-ctrl="ul" address-book-ctrl="ab"></account-card>
-
-        <md-tabs flex="100">
-          <div ng-controller="AccountTransactionsController as transactionsCtrl">
-            <transaction-tab account-ctrl="ul" transactions-ctrl="transactionsCtrl"></transaction-tab>
-          </div>
-          <votes-tab account-ctrl="ul"></votes-tab>
-          <signing-tab account-ctrl="ul" ng-if="!ul.selected.ledger"></signing-tab>
-          <exchange-tab account-ctrl="ul"></exchange-tab>
-          <offchain-tab account-ctrl="ul"></offchain-tab>
-          <delegate-tab account-ctrl="ul" ng-if="ul.selected.delegate"></delegate-tab>
-        </md-tabs>
-
-      </md-content>
-    </div>
-  </div>
-  
   <link rel="stylesheet" href="assets/css/roboto.css" />
   <link rel="stylesheet" href="assets/css/material-icons.css" />
   <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css" />
@@ -125,6 +128,7 @@
   <script src="src/services/storage.service.js"></script>
   <script src="src/services/network.service.js"></script>
   <script src="src/services/changer.service.js"></script>
+  <script src="src/services/feed.service.js"></script>
   <script src="src/services/ledger.service.js"></script>
   <script src="src/services/time.service.js"></script>
   <script src="src/services/toast.service.js"></script>
@@ -139,6 +143,7 @@
 
   <script src="src/components/layout/main-navbar.controller.js"></script>
   <script src="src/components/dashboard/account-box.controller.js"></script>
+  <script src="src/components/dashboard/announcement.controller.js"></script>
   <script src="src/components/dashboard/market-box.controller.js"></script>
   <script src="src/components/dashboard/network-box.controller.js"></script>
   <script src="src/components/account/main-sidenav.controller.js"></script>
