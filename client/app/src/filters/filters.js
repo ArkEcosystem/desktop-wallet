@@ -15,13 +15,13 @@
     .filter('amountToCurrency', function () {
       return function (amount, scope, bitcoinToggleIsActive) {
         if (typeof amount === 'undefined' || amount == 0) return 0
-        var currencyName = bitcoinToggleIsActive && scope.ul.bitcoinToggle ? 'btc' : scope.ul.currency.name
+        var currencyName = bitcoinToggleIsActive && scope.ul.btcValueActive ? 'btc' : scope.ul.currency.name
         var price = scope.ul.connectedPeer.market.price[currencyName]
         return (amount * price).toFixed(5)
       }
     }).filter('formatCurrency', function () {
       return function (val, self, bitcoinToggleIsActive) {
-        var currencyName = bitcoinToggleIsActive && self.bitcoinToggle ? 'btc' : self.currency.name
+        var currencyName = bitcoinToggleIsActive && self.btcValueActive ? 'btc' : self.currency.name
         var languageCode = self.language.replace('_', '-')
         var options = {
           style: 'currency',
