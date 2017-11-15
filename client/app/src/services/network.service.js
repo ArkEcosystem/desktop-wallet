@@ -138,7 +138,17 @@
           }
           storageService.set('lastPrice', { market: res.data[0], date: new Date() }, true)
           peer.market = res.data[0]
-          peer.market.price = { btc: '' + res.data[0].price_btc, usd: '' + res.data[0].price_usd }
+          $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
+              const USD_PRICE = Number(res.data[0].price_usd)
+              var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+              var prices = {}
+              currencies.forEach(function(currency) {
+                  prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
+              })
+              prices["btc"] = res.data[0].price_btc
+              prices["usd"] = res.data[0].price_usd
+              peer.market.price = prices
+          })
         }, function () {
           var lastPrice = storageService.get('lastPrice')
 
