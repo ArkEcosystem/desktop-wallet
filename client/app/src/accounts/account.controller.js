@@ -219,7 +219,7 @@
     if (!self.network.themeDark) self.network.themeDark = false
 
     // will be used in view
-    self.currentTheme = self.network.theme
+    self.currentTheme = 'default';//self.network.theme
 
     // set 'dynamic' as the default theme
     generateDynamicPalette(function (name) {
@@ -1279,6 +1279,8 @@
 
         $mdThemingProvider.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor)
         $mdThemingProvider.$get().generateTheme('dynamic')
+
+        self.currentTheme = self.network.theme
 
         callback('dynamic')
       })
