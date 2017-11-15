@@ -12,7 +12,7 @@
   <style type="text/css">
     html,
     body {
-      background-color: #000
+      background-color: #000;
     }
 
     html {
@@ -61,28 +61,8 @@
   <div ng-cloak="" style="height: 100%" layout="column">
 
     <main-navbar account-ctrl="ul"></main-navbar>
-    <announcement></announcement>
 
-    <div class="main-dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex>
-
-      <account-box account-ctrl="ul" id="home-box-accounts" md-whiteframe="3"></account-box>
-
-      <div id="home-box-row" layout="row" layout-align="space-between stretch">
-        <market-box account-ctrl="ul" ng-if="ul.connectedPeer.market.marketCap"></market-box>
-        <network-box account-ctrl="ul"></network-box>
-      </div>
-
-      <!-- 
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-      <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-      <div class="coinmarketcap-currency-widget" style="opacity:0.9; border-radius:10px; border:0; width: 360px; margin:10px; background:white;" data-currency="{{ul.network.token}}" data-base="{{ul.currency.name}}" data-secondary="BTC"></div> -->
-      <!--<iframe src="heartbeat.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
-      <!--<iframe src="clock.html" style="border:0;width:100%;opacity:0.8;left:50px;right:50px;"></iframe>-->
-
-      <div class="footer">
-        <translate>Hand crafted with ❤ by</translate> <a href="#" onclick='require("electron").shell.openExternal("https://ark.io")'>Ark</a>
-      </div>
-    </div>
+    <dashboard account-ctrl="ul" class="main-dashboard" layout="column" layout-align="space-around center" ng-if="! ul.selected" flex></dashboard>
 
     <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
       <md-content flex layout="row">
@@ -108,6 +88,7 @@
         </md-content>
       </div>
     </div>
+
   </div>
 
   <link rel="stylesheet" href="assets/css/roboto.css" />
@@ -142,8 +123,9 @@
   <script src="src/directives/backgroundStyle.directive.js"></script>
 
   <script src="src/components/layout/main-navbar.controller.js"></script>
-  <script src="src/components/dashboard/account-box.controller.js"></script>
+  <script src="src/components/dashboard/dashboard.controller.js"></script>
   <script src="src/components/dashboard/announcement.controller.js"></script>
+  <script src="src/components/dashboard/account-box.controller.js"></script>
   <script src="src/components/dashboard/market-box.controller.js"></script>
   <script src="src/components/dashboard/network-box.controller.js"></script>
   <script src="src/components/account/main-sidenav.controller.js"></script>

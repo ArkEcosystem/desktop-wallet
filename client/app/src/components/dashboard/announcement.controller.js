@@ -1,33 +1,26 @@
 ;(function () {
   'use strict'
 
+  /**
+   * This controller manages the content and action of the announcement toast
+   * (triggered during the dashboard initialization).
+   *
+   * NOTE: if there is a notification this announcement will be dismissed
+   */
+
   angular
     .module('arkclient.components')
-    .component('announcement', {
-      templateUrl: 'src/components/dashboard/templates/announcement.html',
-      controller: ['$scope', 'feedService', AnnouncementController]
-    })
+    .controller('AnnouncementController', ['$scope', '$mdToast', 'locals', AnnouncementController])
 
-  // TODO animation
+  function AnnouncementController ($scope, $mdToast, locals) {
+    $scope.announcement = locals.announcement
 
-  function AnnouncementController ($scope, feedService) {
-    this.$onInit = () => {
-      feedService.fetchBlogEntries().then( entries => {
-        $scope.announcement = {
-          date: entries[0].isoDate,
-          text: entries[0].title,
-          url: entries[0].link,
-        }
-      })
-      // TODO errors
+    $scope.dismiss = () => {
+      $mdToast.hide()
     }
 
     $scope.openExternal = url => {
       require('electron').shell.openExternal(url)
-    }
-
-    $scope.dismiss = () => {
-      $scope.showFeed = false
     }
   }
 

@@ -1,14 +1,17 @@
-<md-toolbar class="announcement" ng-if="announcement">
-  <div class="md-toolbar-tools" layout-align="space-between center">
-    <!-- TODO translation -->
+<md-toast class="announcement">
+  <div class="md-toast-content">
 
-    <span translate>News <span class="date">({{announcement.date | date: 'mediumDate'}})</span></span>
+    <div translate>News<span class="date">({{announcement.date | date: 'mediumDate'}})</span></div>
 
-    <a md-truncate href="#" ng-click="openExternal(announcement.url)" title="{{announcement.text}}">{{announcement.text}}</a>
+    <div>
+      <a md-truncate href="#" ng-click="openExternal(announcement.url)" title="{{announcement.text}}">{{announcement.text}}</a>
+    </div>
 
-    <md-button class="md-icon-button" title="Dismiss" aria-label="Dismiss" ng-click="dismiss()">
-      <md-icon md-font-library="material-icons">clear</md-icon>
-    </md-button>
+    <div>
+      <md-button class="md-icon-button" title="Dismiss" aria-label="Dismiss" ng-click="dismiss()">
+        <md-icon md-font-library="material-icons">clear</md-icon>
+      </md-button>
+    </div>
 
   </div>
-</md-toolbar>
+</md-toast>
