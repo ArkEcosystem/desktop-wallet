@@ -612,19 +612,6 @@
       })
     }
 
-    self.myAccountsBalance = function () {
-      return (self.getAllAccounts().reduce(function (memo, acc) {
-        return memo + parseInt(acc.balance || 0)
-      }, 0) / 100000000).toFixed(2)
-    }
-
-    self.myAccountsCurrencyBalance = function () {
-      var balance = self.myAccountsBalance()
-      var currencyName = self.currency.name
-      var price = self.connectedPeer.market ? self.connectedPeer.market.price[currencyName] : 0
-      return balance * price
-    }
-
     self.toggleBitcoinCurrency = function (force) {
       self.btcValueActive = force !== undefined ? force : !self.btcValueActive
       self.toggleCurrency = self.btcValueActive ? self.currency : self.bitcoinCurrency
