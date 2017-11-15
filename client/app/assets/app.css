@@ -238,7 +238,11 @@ span.name {
 
 .footer,
 .footer a {
-    color: white;
+  transition: color linear 0.2s;
+  color: white;
+}
+.footer > a:hover {
+  color: rgb(198, 198, 198);
 }
 
 .main-dashboard .main-actions {
