@@ -62,7 +62,7 @@
 
     <main-navbar account-ctrl="ul"></main-navbar>
 
-    <dashboard account-ctrl="ul" class="main-dashboard" layout="column" layout-align="space-around center" ng-if="! ul.selected" flex></dashboard>
+    <dashboard account-ctrl="ul" id="dashboard" layout="column" layout-align="space-around center" ng-if="! ul.selected" flex></dashboard>
 
     <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
       <md-content flex layout="row">

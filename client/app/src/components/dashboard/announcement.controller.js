@@ -3,24 +3,38 @@
 
   /**
    * This controller manages the content and action of the announcement toast
-   * (triggered during the dashboard initialization).
+   * that is shown on the dashboard.
    *
-   * NOTE: if there is a notification this announcement will be dismissed
+   * NOTE: if there is a new notification this announcement will be hidden
    */
 
   angular
     .module('arkclient.components')
-    .controller('AnnouncementController', ['$scope', '$mdToast', 'locals', AnnouncementController])
+    .controller('AnnouncementController', [
+      '$scope', '$mdToast', 'locals', 'storageService', AnnouncementController
+    ])
 
-  function AnnouncementController ($scope, $mdToast, locals) {
+  function AnnouncementController ($scope, $mdToast, locals, storageService) {
     $scope.announcement = locals.announcement
 
+    /**
+     * Close the toast and store the new last announcement that the user has
+     * read, or at least, dismissed
+     */
     $scope.dismiss = () => {
       $mdToast.hide()
+
+      storageService.setGlobal('announcements', {
+        last: {
+          guid: locals.announcement.guid,
+          isoDate: locals.announcement.date
+        }
+      })
     }
 
-    $scope.openExternal = url => {
+    $scope.openAnnouncement = url => {
       require('electron').shell.openExternal(url)
+      setTimeout(()=> $scope.dismiss(), 2000)
     }
   }
 

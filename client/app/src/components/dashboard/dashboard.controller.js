@@ -8,32 +8,48 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ['$scope', '$mdToast', 'feedService', DashboardController]
+      controller: [
+        '$scope', '$mdToast', 'toastService', 'feedService', 'storageService', DashboardController
+      ]
     })
 
-  function DashboardController ($scope, $mdToast, feedService) {
+  function DashboardController ($scope, $mdToast, toastService, feedService, storageService) {
 
     this.$onInit = () => {
-      // TODO already read + mark as read
-      // TODO when moving to account view and come back
-      // TODO translation
+      setTimeout(()=> this.showAnnouncements(), 1000)
+    }
 
-      feedService.fetchBlogEntries().then( entries => {
-        const announcement = {
-          date: entries[0].isoDate,
-          text: entries[0].title,
-          url: entries[0].link,
-        }
+    this.showAnnouncements = () => {
+      return feedService.fetchBlogEntries()
+        .then(entries => {
+          const entry = entries[0]
 
-        $mdToast.show({
-          templateUrl: 'src/components/dashboard/templates/announcement.html',
-          controller: 'AnnouncementController',
-          locals: { announcement },
-          position: 'bottom left',
-          hideDelay: false
+          const stored = storageService.getGlobal('announcements')
+          const last = stored ? stored.last : null
+
+          if (!last || last.guid !== entry.guid && last.isoDate < entry.isoDate) {
+            const announcement = {
+              guid: entry.guid,
+              date: entry.isoDate,
+              text: entry.title,
+              url: entry.link
+            }
+
+            $mdToast.show({
+              templateUrl: 'src/components/dashboard/templates/announcement.html',
+              parent: angular.element(document.getElementById('dashboard')),
+              controller: 'AnnouncementController',
+              locals: { announcement },
+              position: 'bottom left',
+              hideDelay: false
+            })
+          }
         })
-      })
-      // TODO errors
+        .catch(_ => toastService.error('Error loading the announcements.', 3000))
+    }
+
+    this.openExternal = url => {
+      require('electron').shell.openExternal(url)
     }
   }
 

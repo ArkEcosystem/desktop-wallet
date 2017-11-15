@@ -1,10 +1,10 @@
 <md-toast class="announcement">
   <div class="md-toast-content">
 
-    <div translate>News<span class="date">({{announcement.date | date: 'mediumDate'}})</span></div>
+    <div translate>News<span>({{announcement.date | date: 'mediumDate'}})</span></div>
 
     <div>
-      <a md-truncate href="#" ng-click="openExternal(announcement.url)" title="{{announcement.text}}">{{announcement.text}}</a>
+      <a md-truncate href="#" ng-click="openAnnouncement(announcement.url)" title="{{announcement.text}}">{{announcement.text}}</a>
     </div>
 
     <div>
