@@ -24,10 +24,10 @@
 
     <md-content>
       <md-table-container flex="100">
-        <md-button ng-if="$ctrl.ul.selected.virtual" aria-label="Sign" md-colors="{background:'primary'}" ng-click="$ctrl.ul.signMessage($ctrl.ul.selected)">
+        <md-button ng-if="$ctrl.ul.selected.virtual" aria-label="Sign" md-colors="{background:'primary'}" ng-click="$ctrl.signMessage($ctrl.ul.selected)">
           <translate>Sign</translate>
         </md-button>
-        <md-button aria-label="Verify" md-colors="{background:'accent'}" ng-click="$ctrl.ul.verifyMessage()">
+        <md-button aria-label="Verify" md-colors="{background:'accent'}" ng-click="$ctrl.verifyMessage()">
           <translate>Verify</translate>
         </md-button>
         <table md-table id="sign-list" style="table-layout: fixed; width: 100%">
@@ -49,7 +49,7 @@
               <td md-cell style="word-wrap:break-word;">{{signedMessage.message}}</td>
               <td md-cell style="word-wrap:break-word;">{{signedMessage.signature}}</td>
               <td md-cell>
-                <md-button ng-click="$ctrl.ul.verifyMessage(signedMessage)" md-colors="{background:'green'}" class="md-mini md-fab">
+                <md-button ng-click="$ctrl.verifyMessage(signedMessage)" md-colors="{background:'green'}" class="md-mini md-fab">
                   <md-tooltip>
                     <translate>Verify</translate>
                   </md-tooltip>
@@ -61,7 +61,7 @@
                   </md-tooltip>
                   <md-icon md-font-library="material-icons">content_copy</md-icon>
                 </md-button>
-                <md-button ng-click="$ctrl.ul.deleteSignedMessage($ctrl.ul.selected, signedMessage)" class="md-mini md-fab md-warn">
+                <md-button ng-click="$ctrl.deleteSignedMessage($ctrl.ul.selected, signedMessage)" class="md-mini md-fab md-warn">
                   <md-tooltip>
                     <translate>Delete</translate>
                   </md-tooltip>
