@@ -84,7 +84,7 @@
       if (!self.fileStream) {
         return
       }
-      
+
       typeName = (typeName || '').toUpperCase()
       var date = new Date().toISOString()
       self.fileStream.write(

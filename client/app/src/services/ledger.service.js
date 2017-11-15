@@ -10,8 +10,8 @@
    */
   function LedgerService ($q, $http, $timeout, storageService, networkService) {
     var ipcRenderer = require('electron').ipcRenderer
-    var arkjs = require('arkjs')
-    var bip39 = require('bip39')
+    var arkjs = require('../node_modules/arkjs')
+    var bip39 = require('../node_modules/bip39')
     var async = require('async')
 
     function deriveAddress (path) {
@@ -56,7 +56,7 @@
               networkService.getFromPeer('/api/transactions?orderBy=timestamp:desc&limit=1&recipientId=' + account.address + '&senderId=' + account.address).then(
                 (resp) => {
                   if (resp.success) {
-                    empty = resp.count === 0
+                    empty = parseInt(resp.count) === 0
                     next()
                   } else {
                     empty = true

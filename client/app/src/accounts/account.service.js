@@ -14,7 +14,7 @@
    */
   function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
     var self = this
-    var ark = require('arkjs')
+    var ark = require('../node_modules/arkjs')
 
     self.defaultFees = {
       'send': 10000000,
@@ -210,7 +210,7 @@
       if (!addresses) {
         addresses = []
       }
-      if (addresses.indexOf(account.address) == -1) {
+      if (addresses.indexOf(account.address) === -1) {
         addresses.push(account.address)
         storageService.set('addresses', addresses)
       }
@@ -450,20 +450,22 @@
     function createTransaction (type, config) {
       var deferred = $q.defer()
       getFees().then(function (fees) {
+        var account
+        var transaction
         if (type === 0) { // send ark
           if (!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)) {
             deferred.reject(gettextCatalog.getString('The destination address ') + config.toAddress + gettextCatalog.getString(' is erroneous'))
             return deferred.promise
           }
 
-          var account = getAccount(config.fromAddress)
+          account = getAccount(config.fromAddress)
           if (config.amount + fees.send > account.balance) {
             deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress)
             return deferred.promise
           }
 
           try {
-            var transaction = ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase)
+            transaction = ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase)
           } catch (e) {
             deferred.reject(e)
             return deferred.promise
@@ -492,13 +494,13 @@
             deferred.resolve(transaction)
           }
         } else if (type === 1) { // second passphrase creation
-          var account = getAccount(config.fromAddress)
+          account = getAccount(config.fromAddress)
           if (account.balance < fees.secondpassphrase) {
             deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 5 ARK to create a second passphrase'))
             return deferred.promise
           }
           try {
-            var transaction = ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase)
+            transaction = ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase)
           } catch (e) {
             deferred.reject(e)
             return deferred.promise
@@ -527,14 +529,14 @@
           }
           deferred.resolve(transaction)
         } else if (type === 2) { // delegate creation
-          var account = getAccount(config.fromAddress)
+          account = getAccount(config.fromAddress)
           if (account.balance < fees.delegate) {
             deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 25 ARK to register delegate'))
             return deferred.promise
           }
           console.log(config)
           try {
-            var transaction = ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase)
+            transaction = ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase)
           } catch (e) {
             deferred.reject(e)
             return deferred.promise
@@ -563,13 +565,13 @@
           }
           deferred.resolve(transaction)
         } else if (type === 3) { // vote
-          var account = getAccount(config.fromAddress)
+          account = getAccount(config.fromAddress)
           if (account.balance < fees.vote) {
             deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 1 ARK to vote'))
             return deferred.promise
           }
           try {
-            var transaction = ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase)
+            transaction = ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase)
           } catch (e) {
             deferred.reject(e)
             return deferred.promise
@@ -639,7 +641,7 @@
       var notRemovedDelegates = []
       for (var i in delegates) {
         var delegate = delegates[i]
-        if (arrayObjectIndexOf(votedDelegates, delegate.publicKey, 'publicKey') == -1) {
+        if (arrayObjectIndexOf(votedDelegates, delegate.publicKey, 'publicKey') === -1) {
           delegate.vote = '+'
           difflist.push(delegate)
         } else {
@@ -650,13 +652,13 @@
           difflist = []
         }
       }
-      for (var i in votedDelegates) {
-        var delegate = votedDelegates[i]
-        if (arrayObjectIndexOf(notRemovedDelegates, delegate.publicKey, 'publicKey') == -1) {
-          delegate.vote = '-'
+      for (var j in votedDelegates) {
+        var votedDelegate = votedDelegates[j]
+        if (arrayObjectIndexOf(notRemovedDelegates, votedDelegate.publicKey, 'publicKey') === -1) {
+          votedDelegate.vote = '-'
           difflist.push(delegate)
         }
-        if (difflist.length == 33) {
+        if (difflist.length === 33) {
           assets.push(difflist)
           difflist = []
         }
@@ -789,14 +791,15 @@
     }
 
     function numberToFixed (x) {
+      var e
       if (Math.abs(x) < 1.0) {
-        var e = parseInt(x.toString().split('e-')[1])
+        e = parseInt(x.toString().split('e-')[1])
         if (e) {
           x *= Math.pow(10, e - 1)
           x = '0.' + (new Array(e)).join('0') + x.toString().substring(2)
         }
       } else {
-        var e = parseInt(x.toString().split('+')[1])
+        e = parseInt(x.toString().split('+')[1])
         if (e > 20) {
           e -= 20
           x /= Math.pow(10, e)

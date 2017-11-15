@@ -14,7 +14,7 @@
     if (!network) {
       network = switchNetwork()
     }
-    var ark = require('arkjs')
+    var ark = require('../node_modules/arkjs')
     ark.crypto.setNetworkVersion(network.version || 23)
 
     var clientVersion = require('../../package.json').version
@@ -67,18 +67,19 @@
     }
 
     function switchNetwork (newnetwork, reload) {
+      var n
       if (!newnetwork) { // perform round robin
-        var n = storageService.getGlobal('networks')
+        n = storageService.getGlobal('networks')
         var keys = Object.keys(n)
         var i = keys.indexOf(storageService.getContext()) + 1
-        if (i == keys.length) {
+        if (i === keys.length) {
           i = 0
         }
         storageService.switchContext(keys[i])
         return window.location.reload()
       }
       storageService.switchContext(newnetwork)
-      var n = storageService.getGlobal('networks')
+      n = storageService.getGlobal('networks')
       if (!n) {
         n = {
           mainnet: { // so far same as testnet

@@ -164,7 +164,7 @@
       if (!deferred) {
         deferred = $q.defer()
       }
-      if (exchange.status && exchange.status.status == 'cancelled') {
+      if (exchange.status && exchange.status.status === 'cancelled') {
         deferred.resolve(exchange)
         return deferred.promise
       }
@@ -206,7 +206,7 @@
     }
 
     function getHistory (noupdate) {
-      if (!!!noupdate) {
+      if (!noupdate) {
         timeService.getTimestamp().then(
           function (timestamp) {
             for (var id in history) {

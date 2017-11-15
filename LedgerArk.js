@@ -9,7 +9,7 @@ var LedgerArk = function (comm) {
 
 LedgerArk.prototype.getAddress_async = function (path) {
   var splitPath = utils.splitPath(path)
-  var buffer = Buffer.from(5 + 1 + splitPath.length * 4)
+  var buffer = new Buffer(5 + 1 + splitPath.length * 4)
   buffer[0] = 0xe0
   buffer[1] = 0x02
   buffer[2] = 0x00
@@ -37,14 +37,14 @@ LedgerArk.prototype.signTransaction_async = function (path, rawTxHex) {
   var self = this
 
   var data1, data2
-  var data1HeaderLength = Buffer.from(2)
-  var data2HeaderLength = Buffer.from(1)
+  var data1HeaderLength = new Buffer(2)
+  var data2HeaderLength = new Buffer(1)
   var pathLength = 4 * splitPath.length + 1
   var apdus = []
   var p1
   var response
 
-  path = Buffer.from(pathLength - 1)
+  path = new Buffer(pathLength - 1)
   splitPath.forEach(function (element, index) {
     path.writeUInt32BE(element, 4 * index)
   })
@@ -89,7 +89,7 @@ LedgerArk.prototype.signTransaction_async = function (path, rawTxHex) {
 }
 
 LedgerArk.prototype.getAppConfiguration_async = function () {
-  var buffer = Buffer.from(5)
+  var buffer = new Buffer(5)
   buffer[0] = 0xe0
   buffer[1] = 0x06
   buffer[2] = 0x00
@@ -114,7 +114,7 @@ LedgerArk.prototype.signPersonalMessage_async = function (path, messageHex) {
   while (offset !== message.length) {
     var maxChunkSize = (offset === 0 ? (150 - 1 - splitPath.length * 4 - 4) : 150)
     var chunkSize = (offset + maxChunkSize > message.length ? message.length - offset : maxChunkSize)
-    var buffer = Buffer.from(offset == 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize)
+    var buffer = new  Buffer(offset == 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize)
     buffer[0] = 0xe0
     buffer[1] = 0x08
     buffer[2] = (offset === 0 ? 0x00 : 0x80)

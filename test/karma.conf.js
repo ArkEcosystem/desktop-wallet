@@ -9,11 +9,8 @@ module.exports = function (config) {
     // base path, that will be used to resolve files and exclude
     basePath: '',
 
-    browsers: [
-      'PhantomJS'
-      // + Chrome
-      // + ChromeCanary
-    ],
+    browsers: ['Electron'],
+    // browsers: ['DebugElectron'],
 
     // Options: https://github.com/karma-runner/karma-coverage
     coverageReporter: {
@@ -30,23 +27,25 @@ module.exports = function (config) {
     files: [
       '../client/node_modules/angular/angular.js',
       '../client/node_modules/angular-gettext/dist/angular-gettext.js',
+      '../client/node_modules/angular-animate/angular-animate.js',
+      '../client/node_modules/angular-aria/angular-aria.js',
       '../client/node_modules/angular-material/angular-material.js',
-      '../node_modules/angular-mocks/angular-mocks.js',
 
       // Subjects under test
       '../client/app/src/init.js',
       '../client/app/src/accounts/account.service.js',
+      '../client/app/src/accounts/account.controller.js',
       '../client/app/src/addons/pluginLoader.addon.js',
-      '../client/app/src/components/addressbook/addressbook.controller.js',
+      '../client/app/src/components/**/*.js',
       '../client/app/src/filters/filters.js',
-      '../client/app/src/services/changer.service.js',
-      '../client/app/src/services/ledger.service.js',
-      '../client/app/src/services/network.service.js',
-      '../client/app/src/services/storage.service.js',
-      '../client/app/src/services/time.service.js',
+      '../client/app/src/services/**/*.js',
       '../client/app/src/utils/translations.js',
 
+      // Inject the `module` function
+      '../node_modules/angular-mocks/angular-mocks.js',
+
       // Tests
+      'accounts/**/*.js',
       'components/**/*.js',
       'services/*.js'
     ],
@@ -68,8 +67,9 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
 
     preprocessors: {
-      '../client/app/src/**/*.js': ['babelSourceMap', 'coverage'],
-      './**/*.js': ['babelSourceMap']
+      '../client/app/**/*.js': ['electron'],
+      '../client/app/src/**/*.js': ['electron', 'babelSourceMap', 'coverage'],
+      './**/*.js': ['electron', 'babelSourceMap']
     },
 
     customPreprocessors: {
@@ -88,7 +88,21 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: false,
 
+    client: {
+      useIframe: false,
+      __filenameOverride: __dirname + '/../client/app/index.html'
+    },
+
+    customLaunchers: {
+      DebugElectron: {
+        base: 'Electron',
+        flags: [
+          '--show',
+          '--enable-logging'
+        ]
+      }
+    }
   })
 }

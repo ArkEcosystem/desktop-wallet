@@ -123,7 +123,7 @@
     }
 
     /**
-     * Interval to save the current app data state, every 10s. 
+     * Interval to save the current app data state, every 10s.
      */
     setInterval(
       function () {
