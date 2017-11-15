@@ -316,7 +316,7 @@
 
     // get themes colors to show in manager appearance
     function reloadThemes () {
-      var currentThemes = $mdTheming.$get().THEMES
+      var currentThemes = $mdThemingProvider.$get().THEMES
       var mapThemes = {}
 
       Object.keys(currentThemes).forEach(function (theme) {
