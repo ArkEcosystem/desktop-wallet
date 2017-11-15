@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('signingTab', {
-      templateUrl: 'src/components/account/signing-tab.html',
+      templateUrl: 'src/components/account/templates/signing-tab.html',
       bindings: {
         accountCtrl: '='
       },

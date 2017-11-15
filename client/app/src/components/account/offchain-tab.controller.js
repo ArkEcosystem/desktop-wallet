@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('offchainTab', {
-      templateUrl: 'src/components/account/offchain-tab.html',
+      templateUrl: 'src/components/account/templates/offchain-tab.html',
       bindings: {
         accountCtrl: '='
       },
