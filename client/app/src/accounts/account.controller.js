@@ -208,7 +208,7 @@
     self.exchangeHistory = changerService.getHistory()
     self.selectedCoin = storageService.get('selectedCoin') || 'bitcoin_BTC'
     self.exchangeEmail = storageService.get('email') || ''
-    self.bitcoinToggle = false
+    self.btcValueActive = false
 
     self.bitcoinCurrency = self.currencies.find(function (currency) {
       return currency.name === 'btc'
@@ -620,8 +620,8 @@
     }
 
     self.toggleBitcoinCurrency = function (force) {
-      self.bitcoinToggle = force !== undefined ? force : !self.bitcoinToggle
-      if (self.bitcoinToggle) {
+      self.btcValueActive = force !== undefined ? force : !self.btcValueActive
+      if (self.btcValueActive) {
         self.toggleCurrency = self.currency
       } else {
         self.toggleCurrency = self.bitcoinCurrency
