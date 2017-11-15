@@ -621,11 +621,7 @@
 
     self.toggleBitcoinCurrency = function (force) {
       self.btcValueActive = force !== undefined ? force : !self.btcValueActive
-      if (self.btcValueActive) {
-        self.toggleCurrency = self.currency
-      } else {
-        self.toggleCurrency = self.bitcoinCurrency
-      }
+      self.toggleCurrency = self.btcValueActive ? self.currency : self.bitcoinCurrency
     }
 
     self.otherAccounts = function () {
