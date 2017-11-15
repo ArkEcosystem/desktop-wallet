@@ -302,27 +302,27 @@ md-dialog {
     max-height: 90%;
 }
 
-md-toast.md-error-theme .md-toast-content {
+md-toast.error .md-toast-content {
     background-color: #FF0000;
     font-weight: bold;
 }
 
-md-toast.md-success-theme .md-toast-content {
+md-toast.success .md-toast-content {
     background-color: #2E8B57;
     font-weight: bold;
 }
 
-md-toast.md-warn-theme .md-toast-content {
+md-toast.warn .md-toast-content {
     background-color: #FF8C00;
     font-weight: bold;
 }
 
-md-toast.md-log-theme .md-toast-content {
+md-toast.log .md-toast-content {
     background-color: #A9A9A9;
     font-weight: bold;
 }
 
-md-toast.md-debug-theme .md-toast-content {
+md-toast.debug .md-toast-content {
     background-color: #4169E1;
     font-weight: bold;
 }
