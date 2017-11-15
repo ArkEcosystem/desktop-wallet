@@ -3,15 +3,21 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-
-
+const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
+
+const ledger = require('ledgerco')
+const LedgerArk = require('./LedgerArk')
+const fork = require('child_process').fork;
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
-//console.log(require.resolve('electron'));
+
+var ledgercomm
+
 function createWindow () {
   // Create the browser window.
   let {width,height} = electron.screen.getPrimaryDisplay().workAreaSize
@@ -22,6 +28,91 @@ function createWindow () {
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
+  
+  var ledgerWorker = fork('./ledger-worker');
+  
+  ledgerWorker.on('message', function (message) {
+    if(message.connected && !ledgercomm){
+      ledger.comm_node.create_async().then((comm) => {
+        ledgercomm = comm
+      }).fail((error) => {
+        console.log(error)
+      })
+    }
+    else if(!message.connected && ledgercomm){
+      ledgercomm.close_async()
+      ledgercomm = null
+    }
+  });
+
+  ipcMain.on('ledger', (event, arg) => {
+    if(arg.action == "detect"){
+      event.returnValue = {
+        status: ledgercomm ? "Success" : "Failure"
+      }
+    }
+    else {
+      if(!ledgercomm){
+        console.log("connection not initialised")
+        event.returnValue = "connection not initialised"
+      }
+      else try{
+        ark = new LedgerArk(ledgercomm)
+        if(arg.action == "signMessage"){
+          ark.signPersonalMessage_async(arg.path, Buffer.from(arg.data).toString("hex")).then(
+            (result) => {  event.sender.send('messageSigned', result) }
+          ).fail(
+            (error) => { event.sender.send('messageSigned', {error:error}) }
+          )
+        }
+        else if(arg.action == "signTransaction"){
+          ark.signTransaction_async(arg.path, arg.data).then(
+            (result) => { event.sender.send('transactionSigned', result) }
+          ).fail(
+            (error) => { event.sender.send('transactionSigned', {error:error}) }
+          )
+        }
+        else if(arg.action == "getAddress"){
+          ark.getAddress_async(arg.path).then(
+            (result) => { event.returnValue = result }
+          ).fail(
+            (error) => { event.returnValue = error }
+          )
+        }
+        else if(arg.action == "getConfiguration"){
+          ark.getAppConfiguration_async().then((result) => {
+              console.log(result)
+              result.connected = true
+              event.returnValue = result
+            }
+          ).fail((error) => {
+              var result = {
+                connected: false,
+                message: error
+              }
+              if(ledgercomm && ledgercomm.close_async){
+                ledgercomm.close_async()
+              }
+              ledgercomm = null
+              event.returnValue = result
+            }
+          )
+        }
+      } catch(error){
+        if(ledgercomm && ledgercomm.close_async){
+          ledgercomm.close_async()
+        }
+        ledgercomm = null
+        var result = {
+          connected: false,
+          message: "Cannot connect to Ark application"
+        }
+        event.returnValue = result
+      }
+    }
+
+});
+
 
   // Create the Application's main menu
   var template = [

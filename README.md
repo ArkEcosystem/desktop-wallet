@@ -48,6 +48,8 @@ npm install
 npm run postinstall
 ```
 
+* In some cases, [node-hid](https://github.com/node-hid/node-hid) doesn't provide pre-built binaries, so is necessary to install the [node-hid dependencies](https://github.com/node-hid/node-hid#compiling-from-source) to build them from source before running `npm install`.
+
 Then start:
 ```bash
 npm start

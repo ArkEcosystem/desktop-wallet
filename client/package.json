@@ -20,24 +20,25 @@
     "angular-animate": "^1.6.1",
     "angular-aria": "^1.6.1",
     "angular-gettext": "^2.3.6",
-    "angular-material": "^1.1.1",
+    "angular-material": "1.1.4",
     "angular-material-data-table": "git://github.com/daniel-nagy/md-data-table.git#master",
     "angular-messages": "^1.5.5",
-    "angular-qrcode": "^6.2.1",
-    "angular-ui-router": "~0.2.15",
+    "angular-qrcode": "^7.2.0",
+    "@uirouter/angularjs": "~1.0.5",
     "arkjs": "git://github.com/ArkEcosystem/ark-js#mainnet",
     "bip39": "^2.2.0",
     "jsqr": "^0.2.2",
+    "node-vibrant": "^3.0.0-alpha.2",
     "numeral": "^2.0.6",
     "jsonfile": "^3.0.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.9",
-    "browserify": "^13.1.1",
-    "uglify-js": "^2.7.4"
+    "browserify": "^14.4.0",
+    "uglify-js": "^3.0.27"
   },
   "scripts": {
     "prestart": "npm update",
-    "bundle": "browserify -r angular -r bip39 -r angular-animate -r angular-aria -r angular-gettext -r angular-material -r angular-material-data-table -r angular-messages -r qrcode-generator -r angular-qrcode -r angular-ui-router -r arkjs -r jsqr index.js | uglifyjs -c > dependencies.min.js"
+    "bundle": "browserify --dg -r angular -r bip39 -r angular-animate -r angular-aria -r angular-gettext -r angular-material -r angular-material-data-table -r angular-messages -r qrcode-generator -r angular-qrcode -r @uirouter/angularjs -r arkjs -r jsqr index.js | uglifyjs -c > dependencies.min.js"
   }
 }
