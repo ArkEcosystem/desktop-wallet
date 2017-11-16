@@ -134,7 +134,7 @@
       $http.get('https://api.coinmarketcap.com/v1/ticker/' + network.token, { timeout: 2000 })
         .then(function (res) {
           if (res.data[0] && res.data[0].price_btc) {
-            res.data[0].price_btc = Number(res.data[0].price_btc).toFixed(8) // store BTC price in satoshi
+            res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
           }
           peer.market = res.data[0]
           $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
@@ -336,6 +336,11 @@
           // deferred.reject(gettextCatalog.getString("Cannot get latest version"))
         })
       return deferred.promise
+    }
+
+    //Returns the BTC value in satoshi
+    function convertToSatoshi(val) {
+        return Number(val).toFixed(8);
     }
 
     listenNetworkHeight()
