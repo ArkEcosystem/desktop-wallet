@@ -219,7 +219,7 @@
     if (!self.network.themeDark) self.network.themeDark = false
 
     // will be used in view
-    self.currentTheme = self.network.theme
+    self.currentTheme = 'default';//self.network.theme
 
     // set 'dynamic' as the default theme
     generateDynamicPalette(function (name) {
@@ -231,7 +231,7 @@
     })
 
     // set dark mode
-    if (self.network.themeDark) self.currentTheme = 'dark'
+    // if (self.network.themeDark) {self.currentTheme = 'dark'}
 
     // refreshing displayed account every 8s
     $interval(function () {
@@ -316,7 +316,7 @@
 
     // get themes colors to show in manager appearance
     function reloadThemes () {
-      var currentThemes = $mdTheming.$get().THEMES
+      var currentThemes = $mdThemingProvider.$get().THEMES
       var mapThemes = {}
 
       Object.keys(currentThemes).forEach(function (theme) {
@@ -1211,6 +1211,7 @@
     function generateDarkTheme (themeName) {
       var theme = themeName || self.network.theme
       var properties = $mdThemingProvider.$get().THEMES[theme]
+      properties = properties || $mdThemingProvider.$get().THEMES['default']
 
       var colors = properties.colors
       var primary = colors.primary.name
@@ -1225,6 +1226,8 @@
         .backgroundPalette(background)
         .dark()
       $mdThemingProvider.$get().generateTheme('dark')
+      // set dark mode
+      if (self.network.themeDark) {self.currentTheme = 'dark'}
     }
 
     // Compare vibrant colors from image with default material palette
@@ -1279,6 +1282,8 @@
 
         $mdThemingProvider.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor)
         $mdThemingProvider.$get().generateTheme('dynamic')
+
+        self.currentTheme = self.network.theme
 
         callback('dynamic')
       })
