@@ -2,13 +2,13 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService])
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService ($q, $http, $timeout, storageService, timeService) {
+  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     var network = switchNetwork(storageService.getContext())
 
     if (!network) {
@@ -154,6 +154,7 @@
 
           if (typeof lastPrice === 'undefined') {
             peer.market = { price: { btc: '0.0' } }
+            toastService.error("Unable to get market data.")
             return
           }
 
