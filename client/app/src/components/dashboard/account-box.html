@@ -1,9 +1,16 @@
 <md-toolbar layout="row" md-scroll-shrink>
   <div class="md-toolbar-tools">
     <h2>
-      <translate>My Accounts</translate> {{$ctrl.ac.network.symbol}} {{$ctrl.myAccountsBalance()}} / {{$ctrl.myAccountsCurrencyBalance() | formatCurrency:$ctrl.ac}}
+      <translate>My Accounts</translate>
+      {{$ctrl.ac.network.symbol}} {{$ctrl.myAccountsBalance()}} / {{$ctrl.myAccountsCurrencyBalance(true) | formatCurrency:$ctrl.ac:true}}
     </h2>
     <span flex></span>
+    <md-button class="md-small" ng-click="$ctrl.ac.toggleBitcoinCurrency()" ng-hide="$ctrl.ac.currency.name === 'btc'">
+      <md-tooltip md-direction="top">
+        {{'Toggle' | translate}} {{$ctrl.ac.toggleCurrency.name | uppercase}}
+      </md-tooltip>
+      {{$ctrl.ac.toggleCurrency.symbol}}
+    </md-button>
     <md-button class="share" ng-click="$ctrl.refreshAccountBalances()" aria-label="Refresh balances">
       <md-icon md-font-library="material-icons">cached</md-icon>
     </md-button>

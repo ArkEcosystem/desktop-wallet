@@ -31,9 +31,9 @@
       return (total / UNIT).toFixed(2)
     }
 
-    this.myAccountsCurrencyBalance = () => {
+    this.myAccountsCurrencyBalance = (bitcoinToggleIsActive) => {
       const market = this.accountCtrl.connectedPeer.market
-      const currencyName = this.accountCtrl.currency.name
+      const currencyName = bitcoinToggleIsActive && this.accountCtrl.btcValueActive ? 'btc' : this.accountCtrl.currency.name
       const price = market ? market.price[currencyName] : 0
 
       return this.myAccountsBalance() * price
