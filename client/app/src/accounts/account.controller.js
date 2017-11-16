@@ -1211,6 +1211,7 @@
     function generateDarkTheme (themeName) {
       var theme = themeName || self.network.theme
       var properties = $mdThemingProvider.$get().THEMES[theme]
+      properties = properties || $mdThemingProvider.$get().THEMES['default']
 
       var colors = properties.colors
       var primary = colors.primary.name
