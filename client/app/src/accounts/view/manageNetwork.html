@@ -1,10 +1,14 @@
-<md-dialog aria-label="Manage Networks" ng-cloak flex="50">
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2><span translate>Manage Networks</span></h2>
-      </div>
-    </md-toolbar>
-    <md-content class="md-padding">
+<md-dialog aria-label="Manage Networks" ng-cloak flex="50" md-theme="ul.network.theme">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2><span translate>Manage Networks</span></h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="send.cancel()">
+        <md-icon md-font-library="material-icons">clear</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-content class="md-padding">
     <md-tabs md-dynamic-height md-selected="0" md-stretch-tabs>
       <md-tab ng-repeat="network in send.networkKeys" label="{{network}}">
         <div>
@@ -41,41 +45,51 @@
             <label translate>Explorer</label>
             <input ng-model="send.networks[network].explorer" type="text" ng-required="false">
           </md-input-container>
-          <!-- <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button> -->
+
         </div>
+        <md-dialog-actions layout="row" style="padding-left: 10px">
+          <md-button ng-click="send.removeNetwork(network)" class="md-raised md-warn" ng-disabled="network == 'mainnet'">
+            <translate>Remove</translate>
+          </md-button>
+          <span flex></span>
+          <md-button class="md-primary md-raised" ng-click="send.save()">
+            <translate>Save</translate>
+          </md-button>
+          <md-button ng-click="send.cancel()" style="margin-right:20px;">
+            <translate>Cancel</translate>
+          </md-button>
+        </md-dialog-actions>
       </md-tab>
 
       <md-tab label="New">
-          <md-input-container class="md-block">
-            <label translate>Name</label>
-            <input ng-model="send.createnetwork.name" type="text" ng-required="true">
-          </md-input-container>
+        <md-input-container class="md-block">
+          <label translate>Name</label>
+          <input ng-model="send.createnetwork.name" type="text" ng-required="true">
+        </md-input-container>
 
-          <div layout-gt-sm="row">
-            <md-input-container class="md-block" flex-gt-sm="80">
-              <label translate>Seed Server</label>
-              <input ng-model="send.createnetwork.peerseed" type="text" ng-required="true">
-            </md-input-container>
-            <md-input-container class="md-block" flex-gt-sm="20">
-              <md-switch class="md-secondary" ng-model="send.createnetwork.forcepeer" aria-label="Force">
-                <translate>Force</translate>
-              </md-switch>
-            </md-input-container>
-          </div>
-          <md-button ng-click="send.createNetwork()" style="margin-right:20px;">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm="80">
+            <label translate>Seed Server</label>
+            <input ng-model="send.createnetwork.peerseed" type="text" ng-required="true">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm="20">
+            <md-switch class="md-secondary" ng-model="send.createnetwork.forcepeer" aria-label="Force">
+              <translate>Force</translate>
+            </md-switch>
+          </md-input-container>
+        </div>
+        <md-dialog-actions layout="row">
+          <md-button ng-click="send.createNetwork()" class="md-primary md-raised">
             <translate>Create</translate>
           </md-button>
+          <md-button ng-click="send.cancel()" style="margin-right:20px;">
+            <translate>Cancel</translate>
+          </md-button>
+        </md-dialog-actions>
 
       </md-tab>
     </md-tabs>
   </md-content>
 
-  <md-dialog-actions layout="row">
-    <md-button md-colors="{'background':'red' }" ng-click="send.save()">
-      <translate>Save</translate>
-    </md-button>
-    <md-button ng-click="send.cancel()" style="margin-right:20px;">
-      <translate>Cancel</translate>
-    </md-button>
-  </md-dialog-actions>
+
 </md-dialog>

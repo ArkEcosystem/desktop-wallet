@@ -1,0 +1,38 @@
+<md-dialog aria-label="Sign Message" ng-cloak md-theme="ul.network.theme">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Sign Message</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="sign.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <label translate>Address</label>
+          <input ng-model="sign.selectedAccount.address" ng-disabled="true" ng-required="true" type="text">
+        </md-input-container>
+        <md-input-container class="md-block" ng-if="!sign.selectedAccount.ledger">
+          <label translate>Passphrase</label>
+          <input ng-model="sign.passphrase" type="password" ng-required="true" type="text">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label translate>Message</label>
+          <input ng-model="sign.message" ng-required="true" type="text">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="sign.sign()" md-colors="{background:'primary'}">
+        <translate ng-if="!sign.selectedAccount.ledger">Sign</translate>
+        <translate ng-if="sign.selectedAccount.ledger">Sign with Ledger</translate>
+      </md-button>
+      <md-button ng-click="sign.cancel()" style="margin-right:20px;">
+        <translate>Close</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

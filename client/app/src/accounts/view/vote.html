@@ -1,8 +1,12 @@
-<md-dialog aria-label="Vote" ng-cloak>
+<md-dialog aria-label="Vote" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2><span translate>Update vote from</span> {{voteDialog.data.fromAddress}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="voteDialog.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -10,19 +14,26 @@
         <md-chips ng-model="voteDialog.data.votes" readonly="true">
           <md-chip-template>{{$chip.vote}}{{$chip.username}}</md-chip-template>
         </md-chips>
-        <md-input-container class="md-block">
+        <md-input-container ng-if="!voteDialog.data.ledger" class="md-block">
           <label translate>Passphrase</label>
-          <input ng-model="voteDialog.data.passphrase" type="password" ng-required="true">
+          <input ng-model="voteDialog.data.passphrase" type="password" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" ng-required="true">
+          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
+            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
+          </md-icon>
         </md-input-container>
         <md-input-container class="md-block" ng-if="voteDialog.data.secondSignature">
           <label translate>Second Passphrase</label>
-          <input ng-model="voteDialog.data.secondpassphrase" type="password"  ng-required="true">
+          <input ng-model="voteDialog.data.secondpassphrase" type="password" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" ng-required="true">
+          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
+            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
+          </md-icon>
         </md-input-container>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button ng-click="voteDialog.next()">
-        <translate>Next</translate>
+        <translate ng-if="!voteDialog.data.ledger">Next</translate>
+        <translate ng-if="voteDialog.data.ledger">Sign with Ledger</translate>
       </md-button>
       <md-button ng-click="voteDialog.cancel()" style="margin-right:20px;">
         <translate>Cancel</translate>

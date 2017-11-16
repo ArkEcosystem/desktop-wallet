@@ -1,8 +1,12 @@
-<md-dialog aria-label="Save Passphrases" ng-cloak>
+<md-dialog aria-label="Save Passphrases" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2><span translate>Save Passphrases for</span>&nbsp;{{send.data.address}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="send.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
     <div class="md-dialog-content">

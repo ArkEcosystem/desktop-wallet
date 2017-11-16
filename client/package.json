@@ -39,6 +39,6 @@
   },
   "scripts": {
     "prestart": "npm update",
-    "bundle": "browserify --dg -r angular -r bip39 -r angular-animate -r angular-aria -r angular-gettext -r angular-material -r angular-material-data-table -r angular-messages -r qrcode-generator -r angular-qrcode -r @uirouter/angularjs -r arkjs -r jsqr index.js | uglifyjs -c > dependencies.min.js"
+    "bundle": "browserify --dg -r angular -r bip39 -r angular-animate -r angular-aria -r angular-gettext -r angular-material -r angular-material-data-table -r angular-messages -r qrcode-generator -r angular-qrcode -r @uirouter/angularjs -r arkjs -r jsqr app/index.js | uglifyjs -c > app/dependencies.min.js"
   }
 }

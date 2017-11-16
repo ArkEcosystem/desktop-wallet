@@ -1,6 +1,6 @@
 {
   "name": "KapuClient",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "productName": "KapuClient",
   "description": "Kapu Desktop",
   "main": "main.js",
@@ -14,8 +14,8 @@
     "dist-quick": "npm run dist:win && npm run dist:macos && npm run dist:linux",
     "dist:win": "build --win --x64",
     "dist:win32": "build --win --ia32",
-    "dist:linux": "build --linux deb tar.xz",
     "dist:macos": "build --macos",
+    "dist:linux": "build --linux",
     "test": "mocha"
   },
   "repository": {
@@ -32,8 +32,7 @@
     "email": "fixcrypt@gmail.com",
     "url": "https://github.com/fix"
   },
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Guillaume Verbal",
       "email": "doweig@ark.io",
       "url": "https://github.com/doweig"
@@ -58,8 +57,8 @@
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "ajv": "^5.2.2",
-    "electron": "^1.7.6",
-    "electron-builder": "^19.24.1",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.20.1",
     "electron-rebuild": "^1.6.0",
     "grunt": "~1.0.1",
     "grunt-angular-gettext": "^2.3.6",
@@ -75,8 +74,23 @@
       "category": "finance"
     },
     "win": {
-     "icon": "build/icon.ico",
-     "target": ["nsis", "portable"]
+     "target": ["nsis", "portable"],
+     "icon": "build/icon.ico"
+    },
+    "linux": {
+      "description": "A Lite Client used to securely connect to the Kapu network and manage your Kapu assets.",
+      "category": "finance",
+      "artifactName": "${productName}-${os}.${version}.${ext}",
+      "target": [
+        "deb",
+        "tar.xz"
+      ]
+    },
+    "deb": {
+      "synopsis": "Kapu Desktop Wallet"
+    },
+    "dmg": {
+      "icon": "build/icon.icns"
     },
     "nsis": {
      "artifactName": "${productName}-${os}Installer${arch}.${version}.${ext}",
@@ -91,12 +105,6 @@
     },
     "portable": {
       "artifactName": "${productName}-${os}${arch}.${version}.${ext}"
-    },
-    "linux": {
-      "synopsis": "A Lite Client used to securely connect to the Kapu network and manage your Kapu assets.",
-      "category": "finance",
-      "description": "Kapu desktop client",
-      "artifactName": "${productName}-${os}.${version}.${ext}"
     }
   }
 }

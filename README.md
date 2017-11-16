@@ -29,6 +29,13 @@ Second signature supported. Multisignature accounts not yet supported.
 ![linux](http://i.imgur.com/snJi21i.jpg)
 ![linux](http://i.imgur.com/gjjqw88.jpg)
 
+## From AUR
+For distros derived from Arch Linux the package is avaliable in AUR, just run:
+
+```
+yaourt -Sy ark-desktop
+```
+
 ## From code
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developped with this version:
@@ -45,7 +52,6 @@ git clone https://github.com/kapucoin/kapu-desktop
 cd kapu-desktop
 # Install dependencies 
 npm install
-npm run postinstall
 ```
 
 * In some cases, [node-hid](https://github.com/node-hid/node-hid) doesn't provide pre-built binaries, so is necessary to install the [node-hid dependencies](https://github.com/node-hid/node-hid#compiling-from-source) to build them from source before running `npm install`.

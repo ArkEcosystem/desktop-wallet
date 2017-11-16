@@ -1,0 +1,20 @@
+<md-dialog aria-label="QR Scanner" ng-controller="qrScannerController" ng-cloak md-theme="ul.network.theme">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2><span translate>QR Scanner</span></h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content" style="padding: 0" ng-init="init()">
+      <canvas id="qr-canvas" width="250" height="250" style="display:none"></canvas>
+      <div class="qrcode-video-container">
+        <video id="qrcode-scanner-video"></video>
+      </div>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button ng-click="cancel(); closeDialog()" style="margin-right:20px;">
+      <translate>Cancel</translate>
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

@@ -1,8 +1,12 @@
-<md-dialog aria-label="Add Delegate" ng-cloak>
+<md-dialog aria-label="Add Delegate" ng-cloak md-theme="ul.network.theme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2 translate>Add Delegate </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="addDelegateDialog.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -23,6 +27,13 @@
           </md-card-title>
         </md-card> -->
 
+        <md-input-container class="md-block" ng-if="addDelegateDialog.data.registeredDelegates[0]">
+          <label for="delegate-name" translate>Active delegates (forging)</label>
+          <md-select id="delegate-name" ng-model="addDelegateDialog.data.delegatename">
+            <md-option ng-value="delegate.username" ng-repeat="delegate in addDelegateDialog.data.registeredDelegates | orderBy: '-approval'">{{delegate.username}} ({{delegate.approval}}% {{'approval'|translate}}, {{delegate.productivity}}% {{'productivity'|translate}})</md-option>
+          </md-select>
+        </md-input-container>
+
         <md-input-container class="md-block">
           <label translate>Delegate name</label>
           <input ng-model="addDelegateDialog.data.delegatename" type="text">
@@ -31,10 +42,10 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="addDelegateDialog.add()">
+      <md-button class="md-primary" ng-click="addDelegateDialog.add()" style="margin-right:20px;">
         <translate>Add Delegate</translate>
       </md-button>
-      <md-button ng-click="addDelegateDialog.cancel()" style="margin-right:20px;">
+      <md-button ng-click="addDelegateDialog.cancel()">
         <translate>Close</translate>
       </md-button>
     </md-dialog-actions>
