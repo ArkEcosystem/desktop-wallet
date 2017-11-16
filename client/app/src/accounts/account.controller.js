@@ -231,7 +231,7 @@
     })
 
     // set dark mode
-    if (self.network.themeDark) self.currentTheme = 'dark'
+    // if (self.network.themeDark) {self.currentTheme = 'dark'}
 
     // refreshing displayed account every 8s
     $interval(function () {
@@ -1225,6 +1225,8 @@
         .backgroundPalette(background)
         .dark()
       $mdThemingProvider.$get().generateTheme('dark')
+      // set dark mode
+      if (self.network.themeDark) {self.currentTheme = 'dark'}
     }
 
     // Compare vibrant colors from image with default material palette
