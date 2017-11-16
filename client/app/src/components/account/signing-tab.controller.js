@@ -34,8 +34,6 @@
     }
 
     this.signMessage = selectedAccount => {
-      console.log(selectedAccount)
-
       function sign () {
         const address = $scope.sign.selectedAccount.address
         const passphrase = $scope.sign.passphrase

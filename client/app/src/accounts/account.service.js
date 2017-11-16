@@ -144,32 +144,31 @@
     }
 
     function getAccount (address) {
-      var account = storageService.get(address)
+      const account = storageService.get(address)
       if (account) {
         account.transactions = storageService.get('transactions-' + address)
         account.username = storageService.get('username-' + address)
         account.delegate = storageService.get('delegate-' + address)
         account.virtual = getVirtual(address)
-        return account
-      } else {
-        return null
       }
+      return account
     }
 
     function createAccount (passphrase) {
-      var deferred = $q.defer()
-      var address = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey, networkService.getNetwork().version)
+      return new Promise((resolve, reject) => {
+        const publicKey = ark.crypto.getKeys(passphrase).publicKey
+        const address = ark.crypto.getAddress(publicKey, networkService.getNetwork().version)
 
-      fetchAccount(address).then((account) => {
-        if (account) {
-          account.virtual = account.virtual || {}
-          storageService.set('virtual-' + address, account.virtual)
-          deferred.resolve(account)
-        } else {
-          deferred.reject(gettextCatalog.getString('Passphrase does not match your address'))
-        }
+        fetchAccount(address).then(account => {
+          if (account) {
+            account.virtual = account.virtual || {}
+            storageService.set('virtual-' + address, account.virtual)
+            resolve(account)
+          } else {
+            reject(gettextCatalog.getString('Passphrase does not match your address'))
+          }
+        })
       })
-      return deferred.promise
     }
 
     function savePassphrases (address, passphrase, secondpassphrase) {
