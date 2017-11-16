@@ -136,7 +136,6 @@
           if (res.data[0] && res.data[0].price_btc) {
             res.data[0].price_btc = Number(res.data[0].price_btc).toFixed(8) // store BTC price in satoshi
           }
-          storageService.set('lastPrice', { market: res.data[0], date: new Date() }, true)
           peer.market = res.data[0]
           $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
               const USD_PRICE = Number(res.data[0].price_usd)
@@ -149,6 +148,7 @@
               prices["usd"] = res.data[0].price_usd
               peer.market.price = prices
           })
+          storageService.set('lastPrice', { market: res.data[0], date: new Date() }, true)
         }, function () {
           var lastPrice = storageService.get('lastPrice')
 
