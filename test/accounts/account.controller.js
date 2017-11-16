@@ -134,4 +134,31 @@ describe('AccountController', function () {
       })
     })
   })
+
+  describe('test btc toggle', () => {
+    beforeEach(function () {
+      ctrl.btcValueActive = false
+    })
+
+    it('toggles to true', function () {
+      ctrl.toggleBitcoinCurrency()
+      expect(self.btcValueActive).to.be(true)
+    })
+
+    it('toggles to false (off -> on -> off)', function () {
+      ctrl.toggleBitcoinCurrency()
+      ctrl.toggleBitcoinCurrency()
+      expect(self.btcValueActive).to.be(false)
+    })
+
+    it('toggles to true (forced)', function () {
+      ctrl.toggleBitcoinCurrency(true)
+      expect(self.btcValueActive).to.be(true)
+    })
+
+    it('remains false (forced)', function () {
+      ctrl.toggleBitcoinCurrency(false)
+      expect(self.btcValueActive).to.be(false)
+    })
+  })
 })
