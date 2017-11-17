@@ -120,7 +120,9 @@
     ]
 
     // 1 ARK has 100000000 "arkthosi"
-    const UNIT = Math.pow(10, 8)
+    const ARKTOSHI_VAL = Math.pow(10, 8)
+
+    self.ARKTOSHI = ARKTOSHI_VAL
 
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
@@ -511,7 +513,7 @@
         accountService.createTransaction(0, {
           fromAddress: self.selected.address,
           toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * UNIT),
+          amount: parseInt(resp.send_amount * ARKTOSHI),
           masterpassphrase: self.passphrase,
           secondpassphrase: self.secondpassphrase
         }).then(function (transaction) {
@@ -652,7 +654,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * UNIT)
+      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI)
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -2016,8 +2018,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / UNIT).toString()
+        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI).toString(),
+        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI).toString()
       }
 
       $mdDialog.show({
