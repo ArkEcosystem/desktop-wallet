@@ -39,7 +39,7 @@
 				</md-button>
 				<md-menu-content flex width="6" style="min-height: 540px; overflow:hidden;">
 					<md-list class="left-list">
-						<md-list-item>
+						<md-list-item ng-show="$ctrl.ul.showExchangeRate()">
 							<md-icon>attach_money</md-icon>
 							<p translate>Currency</p>
 							<md-select aria-label="Currency" class="currency md-secondary md-no-underline" ng-model="$ctrl.ul.currency" ng-init="$ctrl.ul.currency" id="price-list" ng-change="$ctrl.ul.changeCurrency()">
@@ -122,7 +122,7 @@
 			<md-tooltip>
 				<translate>Market</translate>
 			</md-tooltip>
-			<md-menu ng-if="$ctrl.ul.connectedPeer.market.marketCap" md-offset="0 60">
+			<md-menu ng-if="$ctrl.ul.connectedPeer.market.available_supply" md-offset="0 60">
 				<md-button aria-label="Show market" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">insert_chart</md-icon>
 					<!--<md-icon md-colors="{'color' : $ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]<0?'red-200':'green-200' }" md-font-library="material-icons">arrow_{{$ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]<0?"down":"up"}}ward</md-icon>-->
@@ -137,19 +137,19 @@
 							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name] | formatCurrency: $ctrl.ul}}</span>
 						</md-list-item>
 						<md-list-item>
-							<b translate>Change 1h/7h/7d</b>
-							<span class="md-secondary">
-								<span md-colors="{'color' : $ctrl.ul.connectedPeer.market.change1h[$ctrl.ul.currency.name]>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.change1h[$ctrl.ul.currency.name]}}%</span> /
-							<span md-colors="{'color' : $ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.change7h[$ctrl.ul.currency.name]}}%</span> /
-							<span md-colors="{'color' : $ctrl.ul.connectedPeer.market.change7d[$ctrl.ul.currency.name]>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.change7d[$ctrl.ul.currency.name]}}%</span>
-							</span>
+							<b translate>Change 1h/24h/7d</b>
+					        <span class="md-secondary">
+					          <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.percent_change_1h>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.percent_change_1h}}%</span> /
+					        <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.percent_change_24h>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.percent_change_24h}}%</span> /
+					        <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.percent_change_7d>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.percent_change_7d}}%</span>
+					        </span>
 						</md-list-item>
 						<md-list-item>
 							<div>
 								<b><translate>Market Cap.</translate></b>
 							</div>
 
-							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.marketCap[$ctrl.ul.currency.name] | formatCurrency: $ctrl.ul}}</span>
+							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.available_supply*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name] | formatCurrency:$ctrl.ul}}</span>
 						</md-list-item>
 						<md-list-item ng-show="$ctrl.ul.connectedPeer.market.isOffline">
 							<b translate>Last checked</b> <span class="md-secondary">

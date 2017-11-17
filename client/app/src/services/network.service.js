@@ -2,13 +2,13 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService])
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService ($q, $http, $timeout, storageService, timeService) {
+  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     var network = switchNetwork(storageService.getContext())
 
     if (!network) {
@@ -19,7 +19,14 @@
 
     var clientVersion = require('../../package.json').version
 
-    var peer = { ip: network.peerseed, network: storageService.getContext(), isConnected: false, height: 0, lastConnection: null }
+    var peer = {
+      ip: network.peerseed,
+      network: storageService.getContext(),
+      isConnected: false,
+      height: 0,
+      lastConnection: null,
+      price: storageService.getGlobal('peerCurrencies') || { btc: '0.0' }
+    }
 
     var connection = $q.defer()
 
@@ -54,6 +61,7 @@
             newnetwork.forcepeer = data.forcepeer
             newnetwork.peerseed = data.peerseed
             newnetwork.slip44 = 1 // default to testnet slip44
+            newnetwork.cmcTicker = data.cmcTicker
             n[data.name] = newnetwork
             storageService.setGlobal('networks', n)
             deferred.resolve(n[data.name])
@@ -128,28 +136,34 @@
     }
 
     function getPrice () {
-      // peer.market={
-      //   price: { btc: '0' },
-      // }
-      $http.get('http://coinmarketcap.northpole.ro/api/v5/' + network.token + '.json', { timeout: 2000 })
-        .then(function (res) {
-          if (res.data.price && res.data.price.btc) {
-            res.data.price.btc = Number(res.data.price.btc).toFixed(8) // store BTC price in satoshi
-          }
-          storageService.set('lastPrice', { market: res.data, date: new Date() }, true)
-          peer.market = res.data
-        }, function () {
-          var lastPrice = storageService.get('lastPrice')
+      let failedTicker = () => {
+        let lastPrice = storageService.get('lastPrice')
 
-          if (typeof lastPrice === 'undefined') {
-            peer.market = { price: { btc: '0.0' } }
-            return
-          }
+        if (typeof lastPrice === 'undefined') {
+          peer.market = { price: { btc: '0.0' } }
+          return
+        }
 
-          peer.market = lastPrice.market
-          peer.market.lastUpdate = lastPrice.date
-          peer.market.isOffline = true
-        })
+        peer.market = lastPrice.market
+        peer.market.lastUpdate = lastPrice.date
+        peer.market.isOffline = true
+      }
+
+      if (!network.cmcTicker && network.token !== 'ARK') {
+        failedTicker()
+        return;
+      }
+
+      $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
+      .then(function (res) {
+        if (res.data[0] && res.data[0].price_btc) {
+          res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
+        }
+        peer.market = res.data[0]
+        peer = updatePeerWithCurrencies(peer, res)
+        storageService.set('lastPrice', { market: peer.market, date: new Date() }, true)
+      }, failedTicker)
+      .catch(failedTicker)
       $timeout(function () {
         getPrice()
       }, 5 * 60000)
@@ -324,6 +338,30 @@
           // deferred.reject(gettextCatalog.getString("Cannot get latest version"))
         })
       return deferred.promise
+    }
+
+    // Returns the BTC value in satoshi
+    function convertToSatoshi(val) {
+      return Number(val).toFixed(8);
+    }
+
+
+    // Updates peer with all currency values relative to the USD price.
+    function updatePeerWithCurrencies(peer, res) {
+      $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
+        const USD_PRICE = Number(res.data[0].price_usd)
+        var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+        var prices = {}
+        currencies.forEach(function(currency) {
+          prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
+        })
+        prices["btc"] = res.data[0].price_btc
+        prices["usd"] = res.data[0].price_usd
+        peer.market.price = prices
+        storageService.setGlobal('peerCurrencies', prices, true)
+      })
+
+      return peer
     }
 
     listenNetworkHeight()

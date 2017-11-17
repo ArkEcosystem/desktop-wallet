@@ -65,7 +65,8 @@
       </span>
       <span class="md-subhead description">
           <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance/100000000}}
-          <md-button ng-click="$ctrl.ul.selectNextCurrency()">{{$ctrl.ul.selected.balance/100000000 | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
+          {{$ctrl.ul.network.cmcTicker}}
+          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance/100000000 | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
         </span>
     </md-card-title-text>
   </md-card-title>

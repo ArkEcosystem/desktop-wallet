@@ -1,7 +1,9 @@
 <md-toolbar layout="row" md-scroll-shrink>
   <div class="md-toolbar-tools">
     <h2>
-      <translate>My Accounts</translate> {{$ctrl.ac.network.symbol}} {{$ctrl.myAccountsBalance()}} / {{$ctrl.myAccountsCurrencyBalance() | formatCurrency:$ctrl.ac}}
+      <translate>My Accounts</translate>
+      {{$ctrl.ac.network.symbol}} {{$ctrl.myAccountsBalance()}}
+      <span ng-show="$ctrl.ac.showExchangeRate()">/ {{$ctrl.myAccountsCurrencyBalance() | formatCurrency:$ctrl.ac}}</span>
     </h2>
     <span flex></span>
     <md-button class="share" ng-click="$ctrl.refreshAccountBalances()" aria-label="Refresh balances">
