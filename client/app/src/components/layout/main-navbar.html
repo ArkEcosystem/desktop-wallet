@@ -39,7 +39,7 @@
 				</md-button>
 				<md-menu-content flex width="6" style="min-height: 540px; overflow:hidden;">
 					<md-list class="left-list">
-						<md-list-item>
+						<md-list-item ng-show="$ctrl.ul.showExchangeRate()">
 							<md-icon>attach_money</md-icon>
 							<p translate>Currency</p>
 							<md-select aria-label="Currency" class="currency md-secondary md-no-underline" ng-model="$ctrl.ul.currency" ng-init="$ctrl.ul.currency" id="price-list" ng-change="$ctrl.ul.changeCurrency()">

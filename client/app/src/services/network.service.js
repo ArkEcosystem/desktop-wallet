@@ -61,6 +61,7 @@
             newnetwork.forcepeer = data.forcepeer
             newnetwork.peerseed = data.peerseed
             newnetwork.slip44 = 1 // default to testnet slip44
+            newnetwork.cmcTicker = data.cmcTicker
             n[data.name] = newnetwork
             storageService.setGlobal('networks', n)
             deferred.resolve(n[data.name])
@@ -147,7 +148,13 @@
         peer.market.lastUpdate = lastPrice.date
         peer.market.isOffline = true
       }
-      $http.get('https://api.coinmarketcap.com/v1/ticker/' + network.token, { timeout: 2000 })
+
+      if (!network.cmcTicker && network.token !== 'ARK') {
+        failedTicker()
+        return;
+      }
+
+      $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
       .then(function (res) {
         if (res.data[0] && res.data[0].price_btc) {
           res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
