@@ -161,7 +161,7 @@
         }
         peer.market = res.data[0]
         peer = updatePeerWithCurrencies(peer, res)
-        storageService.set('lastPrice', { market: peer.market, date: new Date() }, true)
+        storageService.set('lastPrice', { market: peer.market, date: new Date() })
       }, failedTicker)
       .catch(failedTicker)
       $timeout(function () {
@@ -358,7 +358,7 @@
         prices["btc"] = res.data[0].price_btc
         prices["usd"] = res.data[0].price_usd
         peer.market.price = prices
-        storageService.setGlobal('peerCurrencies', prices, true)
+        storageService.setGlobal('peerCurrencies', prices)
       })
 
       return peer
