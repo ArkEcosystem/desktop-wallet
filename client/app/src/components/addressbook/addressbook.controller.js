@@ -26,7 +26,6 @@
     self.save = function () {
       storageService.set('contacts', self.contacts)
       self.getContacts()
-      $scope.$apply()
     }
 
     self.isAddress = function (address) {
