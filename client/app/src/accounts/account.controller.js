@@ -199,6 +199,7 @@
     self.playFundsReceivedSound = storageService.get('playFundsReceivedSound') || false
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound
     self.manageBackgrounds = manageBackgrounds
+    self.showExchangeRate = showExchangeRate
     self.manageNetworks = manageNetworks
     self.openPassphrasesDialog = openPassphrasesDialog
     self.createDelegate = createDelegate
@@ -1482,6 +1483,10 @@
         scope: $scope,
         fullscreen: true
       })
+    }
+
+    function showExchangeRate () {
+      return self.network.cmcTicker || self.network.token === 'ARK'
     }
 
     function manageNetworks () {

@@ -32,7 +32,8 @@
     this.myAccountsCurrencyBalance = () => {
       const market = this.accountCtrl.connectedPeer.market
       const currencyName = this.accountCtrl.currency.name
-      const price = market ? market.price[currencyName] : 0
+      const price = market && market.price ? market.price[currencyName] : 0
+
       return this.myAccountsBalance() * price
     }
 
