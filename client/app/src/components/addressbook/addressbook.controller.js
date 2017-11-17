@@ -47,13 +47,13 @@
     self.showToast = function (message, variable, error) {
       if (error) {
         toastService.error(
-          gettextCatalog.getString(message) + ' - ' + variable,
+          gettextCatalog.getString(message) + (variable ? ' - ' + variable : ''),
           null,
           true
         )
       } else {
         toastService.success(
-          gettextCatalog.getString(message) + ' - ' + variable,
+          gettextCatalog.getString(message) + (variable ? ' - ' + variable : ''),
           null,
           true
         )
@@ -109,7 +109,7 @@
 
         self.contacts.push(newContact)
         self.save()
-        self.showToast('Contact successfully added', name, false)
+        self.showToast(`Contact '${name}' with address '${address}' added successfully`)
         cancel()
       }
 
@@ -167,7 +167,7 @@
           }
         }
         self.save()
-        self.showToast('Contact successfully saved', name, false)
+        self.showToast(`Contact '${name}' with address '${address}' saved successfully`)
         cancel()
       }
 
