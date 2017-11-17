@@ -5,11 +5,11 @@ describe('AccountBoxController', function () {
 
   let ctrl
 
-  const UNIT = 100000000
+  const ARKTOSHI_UNIT = 100000000
   const accounts = [
-    { balance: 10 * UNIT },
-    { balance: 15 * UNIT },
-    { balance: 5 * UNIT },
+    { balance: 10 * ARKTOSHI_UNIT },
+    { balance: 15 * ARKTOSHI_UNIT },
+    { balance: 5 * ARKTOSHI_UNIT },
     {}
   ]
 
@@ -30,7 +30,9 @@ describe('AccountBoxController', function () {
   }
 
   beforeEach(() => {
-    module('arkclient.components')
+      module('arkclient.components', $provide => {
+        $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
+      })
 
     inject(_$componentController_ => {
       ctrl = _$componentController_('accountBox', null, bindings)
@@ -66,10 +68,10 @@ describe('AccountBoxController', function () {
       it('updates the balance', function () {
         expect(ctrl.myAccountsBalance()).to.equal('30.00')
         sinon.stub(bindings.accountCtrl, 'getAllAccounts').returns([
-          { balance: 1 * UNIT },
-          { balance: 17 * UNIT },
-          { balance: 1 * UNIT },
-          { balance: 1 * UNIT }
+          { balance: 1 * ARKTOSHI_UNIT },
+          { balance: 17 * ARKTOSHI_UNIT },
+          { balance: 1 * ARKTOSHI_UNIT },
+          { balance: 1 * ARKTOSHI_UNIT }
         ])
         ctrl.refreshAccountBalances()
         expect(ctrl.myAccountsBalance()).to.equal('20.00')
