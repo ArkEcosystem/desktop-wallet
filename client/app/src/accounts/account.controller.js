@@ -120,7 +120,9 @@
     ]
 
     // 1 ARK has 100000000 "arkthosi"
-    const UNIT = Math.pow(10, 8)
+    const ARKTOSHI_VAL = Math.pow(10, 8)
+
+    self.ARKTOSHI = ARKTOSHI_VAL
 
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
