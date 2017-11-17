@@ -11,7 +11,8 @@ var modules = [
   'arkclient.services',
   'arkclient.components',
   'arkclient.directives',
-  'arkclient.accounts'
+  'arkclient.accounts',
+  'arkclient.constants'
 ]
 
 var app = angular.module('arkclient', modules)

@@ -12,23 +12,21 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ['$scope', 'networkService', 'accountService', AccountBoxController]
+      controller: ['$scope', 'networkService', 'accountService', 'ARKTOSHI_UNIT', AccountBoxController]
     })
 
-  function AccountBoxController ($scope, networkService, accountService) {
+  function AccountBoxController ($scope, networkService, accountService, ARKTOSHI_UNIT) {
     this.$onInit = () => {
       // Alias that is used on the template
       this.ac = this.accountCtrl
     }
-
-    const UNIT = 100000000
 
     this.myAccountsBalance = () => {
       const total = this.accountCtrl.getAllAccounts().reduce( (sum, account) => {
         return sum + parseInt(account.balance || 0)
       }, 0)
 
-      return (total / UNIT).toFixed(2)
+      return (total / ARKTOSHI_UNIT).toFixed(2)
     }
 
     this.myAccountsCurrencyBalance = () => {

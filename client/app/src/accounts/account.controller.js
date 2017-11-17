@@ -24,6 +24,7 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
+      'ARKTOSHI_UNIT',
       '$rootScope',
       AccountController
     ])
@@ -66,9 +67,12 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
+    ARKTOSHI_UNIT,
     $rootScope
   ) {
     var self = this
+
+    self.ARKTOSHI_UNIT = ARKTOSHI_UNIT
 
     var languages = {
       en: gettextCatalog.getString('English'),
@@ -118,11 +122,6 @@
       { name: 'mxn', symbol: 'Mex$' },
       { name: 'rub', symbol: '\u20BD' }
     ]
-
-    // 1 ARK has 100000000 "arktoshi"
-    const ARKTOSHI_VAL = Math.pow(10, 8)
-
-    self.ARKTOSHI_UNIT = ARKTOSHI_VAL
 
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
