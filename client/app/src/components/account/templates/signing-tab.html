@@ -22,7 +22,7 @@
       </md-card-title>
     </md-card>
 
-    <md-content>
+    <md-content ng-if="$ctrl.ul.selected.publicKey" >
       <md-table-container flex="100">
         <md-button ng-if="$ctrl.ul.selected.virtual" aria-label="Sign" md-colors="{background:'primary'}" ng-click="$ctrl.signMessage($ctrl.ul.selected)">
           <translate>Sign</translate>
@@ -73,5 +73,10 @@
         </table>
       </md-table-container>
     </md-content>
+
+    <md-content ng-if="!$ctrl.ul.selected.publicKey" class="tab-text-only-content" translate>
+      This address has not received any ARK so it is not on the ARK blockchain and can not be used for signing messages.
+    </md-content>
+
   </md-tab-body>
 </md-tab>
