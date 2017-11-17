@@ -2,13 +2,13 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', NetworkService])
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService ($q, $http, $timeout, storageService, timeService) {
+  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     var network = switchNetwork(storageService.getContext())
 
     if (!network) {
@@ -131,18 +131,20 @@
       // peer.market={
       //   price: { btc: '0' },
       // }
-      $http.get('http://coinmarketcap.northpole.ro/api/v5/' + network.token + '.json', { timeout: 2000 })
+      $http.get('https://api.coinmarketcap.com/v1/ticker/' + network.token, { timeout: 2000 })
         .then(function (res) {
-          if (res.data.price && res.data.price.btc) {
-            res.data.price.btc = Number(res.data.price.btc).toFixed(8) // store BTC price in satoshi
+          if (res.data[0] && res.data[0].price_btc) {
+            res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
           }
-          storageService.set('lastPrice', { market: res.data, date: new Date() }, true)
-          peer.market = res.data
+          peer.market = res.data[0]
+          peer = updatePeerWithCurrencies(peer, res)
+          storageService.set('lastPrice', { market: peer.market, date: new Date() }, true)
         }, function () {
           var lastPrice = storageService.get('lastPrice')
 
           if (typeof lastPrice === 'undefined') {
             peer.market = { price: { btc: '0.0' } }
+            toastService.error("Unable to get market data.")
             return
           }
 
@@ -324,6 +326,29 @@
           // deferred.reject(gettextCatalog.getString("Cannot get latest version"))
         })
       return deferred.promise
+    }
+
+    // Returns the BTC value in satoshi
+    function convertToSatoshi(val) {
+        return Number(val).toFixed(8);
+    }
+
+
+    // Updates peer with all currency values relative to the USD price.
+    function updatePeerWithCurrencies(peer, res) {
+        $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
+            const USD_PRICE = Number(res.data[0].price_usd)
+            var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+            var prices = {}
+            currencies.forEach(function(currency) {
+                prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
+            })
+            prices["btc"] = res.data[0].price_btc
+            prices["usd"] = res.data[0].price_usd
+            peer.market.price = prices
+        })
+
+        return peer
     }
 
     listenNetworkHeight()
