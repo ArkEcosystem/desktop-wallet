@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('mainSidenav', {
-      templateUrl: 'src/components/account/main-sidenav.html',
+      templateUrl: 'src/components/account/templates/main-sidenav.html',
       bindings: {
         accountCtrl: '=',
         addressBookCtrl: '='
