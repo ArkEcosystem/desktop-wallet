@@ -347,13 +347,13 @@
 
     // Updates peer with all currency values relative to the EUR price.
     function updatePeerWithCurrencies(peer, res) {
-      var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub", "usd"]
+      var currencies = ["AUD", "BRL", "CAD", "CHF", "CNY", "EUR", "GBP", "HKD", "IDR", "INR", "JPY", "KRW", "MXN", "RUB", "USD"]
       var currency_request_url = createCurrencyApiCall(currencies)
       $http.get(currency_request_url, { timeout: 2000}).then( function (result) {
         const EUR_PRICE = Number(res.data[0].price_eur)
         var prices = {}
         currencies.forEach(function(currency) {
-          prices[currency] = result.data.rates[currency.toUpperCase()] * EUR_PRICE
+          prices[currency.toLowerCase()] = result.data.rates[currency] * EUR_PRICE
         })
         prices["btc"] = Number(res.data[0].price_btc)
         prices["eur"] = Number(EUR_PRICE)
@@ -364,12 +364,10 @@
       return peer
     }
 
+    // creates the get request to fixer for each currency in currencies.
     function createCurrencyApiCall(currencies) {
         var get_request = 'https://api.fixer.io/latest?symbols='
-        currencies.forEach(function(currency) {
-            get_request += '' + currency.toUpperCase() + ','
-        })
-        get_request = get_request.substring(0, get_request.length-1)
+        get_request += currencies.toString()
         return get_request
     }
 
