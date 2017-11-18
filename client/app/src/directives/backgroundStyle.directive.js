@@ -39,8 +39,9 @@
             // Check if the background exists
             var mathPath = value.match(pathRe)
             if (mathPath) {
-              var fullPath = require('path').join(__dirname, mathPath[1])
-              if (!require('fs').existsSync(fullPath.replace(/'/g, ``))) {
+              let filePath = mathPath[1].replace(/'/g, ``)
+              var fullPath = require('path').join(__dirname, filePath)
+              if (!require('fs').existsSync(filePath) && !require('fs').existsSync(fullPath)) {
                 value = defaultBackground // if not exists
               }
             }
