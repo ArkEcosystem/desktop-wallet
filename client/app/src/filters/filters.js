@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  angular.module('arkclient.filters')
+  angular.module('arkclient.filters' )
     .filter('smallId', function () {
       return function (fullId) {
         return fullId.slice(0, 5) + '...' + fullId.slice(-5)
@@ -41,5 +41,11 @@
 
         return localeVersion
       }
-    })
+  })
+  // converts arktoshi into ark
+  .filter('convertToArkValue', ['ARKTOSHI_UNIT', function(ARKTOSHI_UNIT) {
+      return function (val) {
+          return val / ARKTOSHI_UNIT
+      }
+  }])
 })()

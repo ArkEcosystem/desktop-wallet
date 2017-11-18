@@ -72,8 +72,6 @@
   ) {
     var self = this
 
-    self.ARKTOSHI_UNIT = ARKTOSHI_UNIT
-
     var languages = {
       en: gettextCatalog.getString('English'),
       ar: gettextCatalog.getString('Arabic'),

@@ -64,9 +64,9 @@
       </md-icon>
       </span>
       <span class="md-subhead description">
-          <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance/$ctrl.ul.ARKTOSHI_UNIT}}
+          <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance | convertToArkValue}}
           {{$ctrl.ul.network.cmcTicker}}
-          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance/$ctrl.ul.ARKTOSHI_UNIT | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
+          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance | convertToArkValue | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
         </span>
     </md-card-title-text>
   </md-card-title>
