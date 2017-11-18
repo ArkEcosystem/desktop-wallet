@@ -345,7 +345,7 @@
     }
 
 
-    // Updates peer with all currency values relative to the USD price.
+    // Updates peer with all currency values relative to the EUR price.
     function updatePeerWithCurrencies(peer, res) {
       var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub", "usd"]
       var currency_request_url = createCurrencyApiCall(currencies)
