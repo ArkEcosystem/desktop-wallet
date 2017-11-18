@@ -153,8 +153,7 @@
         failedTicker()
         return;
       }
-
-      $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
+      $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK') + '/?convert=EUR', { timeout: 2000 })
       .then(function (res) {
         if (res.data[0] && res.data[0].price_btc) {
           res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
@@ -348,20 +347,30 @@
 
     // Updates peer with all currency values relative to the USD price.
     function updatePeerWithCurrencies(peer, res) {
-      $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
-        const USD_PRICE = Number(res.data[0].price_usd)
-        var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+      var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub", "usd"]
+      var currency_request_url = createCurrencyApiCall(currencies)
+      $http.get(currency_request_url, { timeout: 2000}).then( function (result) {
+        const EUR_PRICE = Number(res.data[0].price_eur)
         var prices = {}
         currencies.forEach(function(currency) {
-          prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
+          prices[currency] = result.data.rates[currency.toUpperCase()] * EUR_PRICE
         })
-        prices["btc"] = res.data[0].price_btc
-        prices["usd"] = res.data[0].price_usd
+        prices["btc"] = Number(res.data[0].price_btc)
+        prices["eur"] = Number(EUR_PRICE)
         peer.market.price = prices
         storageService.setGlobal('peerCurrencies', prices)
       })
 
       return peer
+    }
+
+    function createCurrencyApiCall(currencies) {
+        var get_request = 'https://api.fixer.io/latest?symbols='
+        currencies.forEach(function(currency) {
+            get_request += '' + currency.toUpperCase() + ','
+        })
+        get_request = get_request.substring(0, get_request.length-1)
+        return get_request
     }
 
     listenNetworkHeight()
