@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  angular.module('arkclient.filters' )
+  angular.module('arkclient.filters')
     .filter('smallId', function () {
       return function (fullId) {
         return fullId.slice(0, 5) + '...' + fullId.slice(-5)
@@ -20,7 +20,8 @@
         const price = ac.connectedPeer.market.price[ac.currency.name]
         return (amount * price).toFixed(5)
       }
-    }).filter('formatCurrency', function () {
+    })
+    .filter('formatCurrency', function () {
       return function (val, self) {
         var currencyName = self.currency.name
         var languageCode = self.language.replace('_', '-')
@@ -41,11 +42,11 @@
 
         return localeVersion
       }
-  })
+    })
   // converts arktoshi into ark
-  .filter('convertToArkValue', ['ARKTOSHI_UNIT', function(ARKTOSHI_UNIT) {
-      return function (val) {
-          return val / ARKTOSHI_UNIT
-      }
+  .filter('convertToArkValue', ['ARKTOSHI_UNIT', function (ARKTOSHI_UNIT) {
+    return function (val) {
+      return val / ARKTOSHI_UNIT
+    }
   }])
 })()
