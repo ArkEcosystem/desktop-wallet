@@ -1344,6 +1344,8 @@
         }
       }
 
+      backgrounds.user = storageService.getGlobal('userBackgrounds') || {}
+
       function upload () {
         var options = {
           title: 'Add Image',
@@ -1417,6 +1419,7 @@
       function save () {
         $mdDialog.hide()
         networkService.setNetwork(context, currentNetwork)
+        storageService.setGlobal('userBackgrounds', backgrounds['user'])
         window.location.reload()
       }
 
