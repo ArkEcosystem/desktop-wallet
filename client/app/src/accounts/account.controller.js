@@ -1346,40 +1346,32 @@
 
       function upload () {
         var options = {
-          title: 'Upload Image',
+          title: 'Add Image',
           filters: [
             { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
           ],
           properties: ['openFile']
         }
-        var userPath = 'assets/images/user/'
-        var dirPath = path.resolve(__dirname, userPath)
 
         require('electron').remote.dialog.showOpenDialog(options, function (fileName) {
           if (fileName === undefined) return
           fileName = fileName[0]
 
-          var baseName = path.basename(fileName)
-          var newFileName = path.join(dirPath, baseName)
-
           var readStream = fs.createReadStream(fileName)
-          readStream.on('error', () => toastService.error('Error Adding Background.', 3000))
-
-          var writeStream = fs.createWriteStream(newFileName)
-          writeStream.on('error', () => toastService.error('Error Adding Background.', 3000))
-          writeStream.on('close', (ex) => {
+          readStream.on('readable', () => {
             toastService.success('Background Added Successfully!', 3000)
 
             var userImages = backgrounds['user']
-            var url = path.join(userPath, baseName)
+            var url = fileName
             url = url.replace(/\\/g, '/')
-            var name = path.parse(newFileName).name
+            var name = path.parse(fileName).name
             userImages[name] = `url('${url}')`
 
             backgrounds['user'] = userImages
           })
-
-          readStream.pipe(writeStream)
+          .on('error', (error) => {
+            toastService.error(`Error Adding Background (reading): ${error}`, 3000)
+          })
         })
       }
 
@@ -1389,24 +1381,16 @@
 
         var file = image.substring(5, image.length - 2)
 
-        var imagePath = path.resolve(__dirname, file)
+        var name = path.parse(file).name
+        delete backgrounds['user'][name]
 
-        fs.unlink(imagePath, function (err) {
-          if (err) {
-            toastService.error('Error Removing Background.', 3000)
-          } else {
-            var name = path.parse(file).name
-            delete backgrounds['user'][name]
+        if (image === initialBackground) {
+          selectBackground(backgrounds['images']['Ark'])
+        } else {
+          selectBackground(initialBackground)
+        }
 
-            if (image === initialBackground) {
-              selectBackground(backgrounds['images']['Ark'])
-            } else {
-              selectBackground(initialBackground)
-            }
-
-            toastService.success('Background Removed Successfully!', 3000)
-          }
-        })
+        toastService.success('Background Removed Successfully!', 3000)
       }
 
       function isImage (file) {
