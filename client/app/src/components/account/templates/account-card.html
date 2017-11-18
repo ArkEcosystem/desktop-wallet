@@ -14,7 +14,7 @@
           <translate>Send</translate>
       </md-tooltip>
     </md-button>
-    
+
     <md-button md-no-ink ng-click="$ctrl.ul.exportAccount($ctrl.ul.selected)" aria-label="Export Account">
       <md-icon md-font-library="material-icons">file_download</md-icon>
       <md-tooltip>
@@ -64,9 +64,9 @@
       </md-icon>
       </span>
       <span class="md-subhead description">
-          <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance/100000000}}
+          <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance/$ctrl.ul.ARKTOSHI_UNIT}}
           {{$ctrl.ul.network.cmcTicker}}
-          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance/100000000 | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
+          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance/$ctrl.ul.ARKTOSHI_UNIT | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
         </span>
     </md-card-title-text>
   </md-card-title>

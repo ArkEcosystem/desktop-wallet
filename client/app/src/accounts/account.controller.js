@@ -24,6 +24,7 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
+      'ARKTOSHI_UNIT',
       '$rootScope',
       AccountController
     ])
@@ -66,9 +67,12 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
+    ARKTOSHI_UNIT,
     $rootScope
   ) {
     var self = this
+
+    self.ARKTOSHI_UNIT = ARKTOSHI_UNIT
 
     var languages = {
       en: gettextCatalog.getString('English'),
@@ -118,9 +122,6 @@
       { name: 'mxn', symbol: 'Mex$' },
       { name: 'rub', symbol: '\u20BD' }
     ]
-
-    // 1 ARK has 100000000 "arkthosi"
-    const UNIT = Math.pow(10, 8)
 
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
@@ -512,7 +513,7 @@
         accountService.createTransaction(0, {
           fromAddress: self.selected.address,
           toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * UNIT),
+          amount: parseInt(resp.send_amount * ARKTOSHI_UNIT),
           masterpassphrase: self.passphrase,
           secondpassphrase: self.secondpassphrase
         }).then(function (transaction) {
@@ -653,7 +654,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * UNIT)
+      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI_UNIT)
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -1903,8 +1904,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / UNIT).toString()
+        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI_UNIT).toString(),
+        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI_UNIT).toString()
       }
 
       $mdDialog.show({
