@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2017-11-18 16:39+0000\n"
+"PO-Revision-Date: 2017-11-18 16:39+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: nn\n"
@@ -15,7 +15,7 @@ msgid "- This also can help to prove if a file has been tampered with if the SHA
 msgstr "- Dette kan også bevise om en fil har blitt endret om SHA256 signaturen ikke matcher den som ble foreviget i blokkjeden"
 
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
-msgstr "- Dette betyr at eieren av denne kontoen kan bevise at han hadde denne filen i sitt eie ved tidspunktet for blokk tidskoden."
+msgstr "- Dette betyr at eieren av denne kontoen kan bevise at han hadde den i sitt eie ved tidspunktet for blokk-tidsstemplet."
 
 msgid "{{ category }}"
 msgstr "{{ kategori }}"
@@ -33,10 +33,10 @@ msgid "Account deleted!"
 msgstr "Konto slettet!"
 
 msgid "Account successfully created:"
-msgstr "Konto suksessfullt opprettet:"
+msgstr "Konto opprettet:"
 
 msgid "Account successfully imported:"
-msgstr "Konto suksessfullt importert:"
+msgstr "Konto importert:"
 
 msgid "Account was already imported:"
 msgstr "Konto er allerede importert"
@@ -48,7 +48,7 @@ msgid "Actions"
 msgstr "Handlinger"
 
 msgid "Active delegates (forging)"
-msgstr "Aktive delegater (mynt produsenter)"
+msgstr "Aktive delegater (produserer)"
 
 msgid "Add"
 msgstr "Legg til"
@@ -66,22 +66,25 @@ msgid "Add Delegate"
 msgstr "Legg til delegat"
 
 msgid "Add Watch-Only Address"
-msgstr "Legg til \"Watch-Only\" adresse "
+msgstr "Legg til \"Watch-Only\"-adresse"
 
 msgid "Address"
 msgstr "Adresse"
 
 msgid "Address version"
-msgstr "Adresse versjon"
+msgstr "Adresse-versjon"
 
 msgid "After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client."
-msgstr "Om du har problemer etter å ha laget et 2. passord (2. passord feltet vises ikke), vær snill og start om programmet."
+msgstr "Om du har problemer etter å ha laget et andre adgangskode (feltet andre adgangskode vises ikke), start klienten på nytt."
 
 msgid "All your data, including created accounts, networks and contacts will be removed from the app and reset to default."
-msgstr "Alle dine data, inkludert kontoer, nettverk og kontakter vil bli fjernet fra applikasjonen og resatt til default. "
+msgstr "Alle dine data, inkludert lagde kontoer, nettverk og kontakter vil bli fjernet fra applikasjonen og tilbakstilt til fabrikkverdi."
 
 msgid "Amount"
 msgstr "Beløp"
+
+msgid "Amount ({{ul.network.symbol}})"
+msgstr "Beløp ({{ul.nettverk.symbol}})"
 
 msgid "Appearance"
 msgstr "Utseende"
@@ -95,23 +98,29 @@ msgstr "Beløp (Ѧ)"
 msgid "Approval"
 msgstr "Godkjenning"
 
+msgid "Arabic"
+msgstr "Arabisk"
+
 msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
-msgstr "Er du sikker på du vil fjerne dette nettverket og alle data (kontoer og settinger) assosiert med dem? Kontoen din er enda sikkert lagret på blokkjeden. "
+msgstr "Er du sikker på du vil fjerne dette nettverket og alle data (kontoer og innstillinger) assosiert med dem? Kontoene dine er enda sikkert lagret på blokkjeden."
 
 msgid "Arab"
-msgstr "Arabisk"
+msgstr "Araber"
 
 msgid "Are you sure?"
 msgstr "Er du sikker?"
 
 msgid "Ark Client"
-msgstr "Ark klient"
+msgstr "Ark-klient"
 
 msgid "Background"
 msgstr "Bakgrunn"
 
 msgid "Balance"
 msgstr "Balanse"
+
+msgid "Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!"
+msgstr "Før du går videre, må du først <strong>TA EN SIKKER BACKUP AV ADGANGSKODEN DIN</strong>. Denne klienten lagrer ikke, og kan derfor ikke gjenopprette adgangskoden din! Om du mister den, sletter den, eller den blir stjålet - Vi KAN IKKE hjelpe deg å gjenopprette den. Det finnes ingen glemt adgangskode-alternativ!"
 
 msgid "Bulgarian"
 msgstr "Bulgarsk"
@@ -120,10 +129,10 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 msgid "Cannot find delegate:"
-msgstr "Kan ikke finne delegat"
+msgstr "Kan ikke finne delegat:"
 
 msgid "Cannot find delegates from this term:"
-msgstr "Kan ikke finne delegat ut fra "
+msgstr "Kan ikke finne delegat ut fra uttrykk:"
 
 msgid "Cannot find delegates on this peer:"
 msgstr "Kan ikke finne delegater på denne noden:"
@@ -132,7 +141,7 @@ msgid "Cannot get registered delegates"
 msgstr "Kan ikke hente registrerte delegater"
 
 msgid "Cannot get sponsors"
-msgstr "Kan ikkefinne sponsorer"
+msgstr "Kan ikke hente sponsorer"
 
 msgid "Cannot get transactions"
 msgstr "Kan ikke motta transaksjoner"
@@ -145,6 +154,12 @@ msgstr "Kan ikke finne om konto er en delegat"
 
 msgid "Change 1h/7h/7d"
 msgstr "Endring 1t/7t/7d"
+
+msgid "Chinese - China"
+msgstr "Kinesisk - Kina"
+
+msgid "Chinese - Taiwan"
+msgstr "Kinesisk - Taiwan"
 
 msgid "Client"
 msgstr "Klient"
@@ -159,13 +174,13 @@ msgid "Confirm"
 msgstr "Bekreft"
 
 msgid "Network disconnected!"
-msgstr "Nettverk er frakoplet!"
+msgstr "Nettverk er frakoblet!"
 
 msgid "Passphrase is not saved on this computer."
-msgstr "Passord er ikke lagret på denne datamaskinen"
+msgstr "Adgangskode er ikke lagret på denne datamaskinen"
 
 msgid "Watch-Only Addresses"
-msgstr "\"Bare-se\" adresse"
+msgstr "Legg til \"Bare-Se\"-adresse"
 
 msgid "Confirmations"
 msgstr "Bekreftelser"
@@ -174,10 +189,13 @@ msgid "Contacts"
 msgstr "Kontakter"
 
 msgid "Copied to clipboard"
-msgstr "Kopiert til minnet"
+msgstr "Kopiert til utklippstavlen"
 
 msgid "Copy"
 msgstr "Kopier"
+
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "Kunne ikke hente aktive delegater - Vennligst sjekk internett-tilkoblingen din"
 
 msgid "Create"
 msgstr "Opprett"
@@ -186,13 +204,19 @@ msgid "Create Account"
 msgstr "Opprett konto"
 
 msgid "Create Second Passphrase"
-msgstr "Lag et 2. passord"
+msgstr "Lag et andre adgangskode"
 
 msgid "Create Virtual Folder"
-msgstr "Lag virtuell folder"
+msgstr "Lag virtuell mappe"
 
 msgid "Create a new virtual folder"
 msgstr "Lag ny virtuell mappe"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Dark Mode"
+msgstr "Nattmodus"
 
 msgid "Date"
 msgstr "Dato"
@@ -219,7 +243,7 @@ msgid "Delete permanently this account"
 msgstr "Slett denne kontoen permanent"
 
 msgid "Destination Address"
-msgstr "Destinasjon adresse"
+msgstr "Destinasjonsadresse"
 
 msgid "Dutch"
 msgstr "Nederlandsk"
@@ -240,7 +264,10 @@ msgid "English"
 msgstr "Engelsk"
 
 msgid "Error in signature processing"
-msgstr "Feil i signatur prosessering "
+msgstr "Feil i signatur-behandling"
+
+msgid "Error in your Input."
+msgstr "Feil i din input"
 
 msgid "Error when trying to login:"
 msgstr "Feil ved innlogging:"
@@ -251,11 +278,26 @@ msgstr "Feil:"
 msgid "Exchange"
 msgstr "Børs"
 
+msgid "Expense"
+msgstr "Kostnader"
+
 msgid "Explorer"
 msgstr "Utforsker"
 
+msgid "Export Account"
+msgstr "Eksporter konto"
+
+msgid "Failed to save transaction file"
+msgstr "Kunne ikke lagre transaksjonsfil"
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Avgift ({{ul.nettverk.symbol}})"
+
 msgid "File"
 msgstr "Fil"
+
+msgid "Finish"
+msgstr "Ferdig"
 
 msgid "Fee (Ѧ)"
 msgstr "Avgift (Ѧ)"
@@ -268,6 +310,9 @@ msgstr "Tving"
 
 msgid "Force?"
 msgstr "Tvinge?"
+
+msgid "Format"
+msgstr "Format"
 
 msgid "French"
 msgstr "Fransk"
@@ -303,7 +348,7 @@ msgid "If you own this account, you can enable Voting"
 msgstr "Om du eier denne kontoen, kan du aktivere avstemming"
 
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
-msgstr "Om du eier denne kontoen, kan du aktivere virtuelle foldere. Foldere er enkle sub-kontoer for å bedre organisere pengene dine uten behov for en transaksjon og betale avgift. <br> Videre vil denne kontoen flytte til \"mine kontoer\" listen."
+msgstr "Om du eier denne kontoen, kan du aktivere virtuelle mapper. Foldere er enkle del-kontoer for å bedre organisere pengene dine, uten behov for en transaksjon og å betale avgift. <br> Videre vil denne kontoen flyttes til \"mine kontoer\" listen."
 
 msgid "Import"
 msgstr "Importer"
@@ -311,14 +356,23 @@ msgstr "Importer"
 msgid "Import Account"
 msgstr "Importer konto"
 
+msgid "Income"
+msgstr "Inntekt"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
-msgstr "Om du eier denne kontoen, kan du aktivere virtuelle mapper. Virtuelle mapper er enkle sub-kontoer for bedre å organisere pengene dine uten å sende dem og derved betale avgifter. <br> Videre vil denne kontoen bli flyttet under \"Mine kontoer\" listen."
+msgstr "Om du eier denne kontoen, kan du aktivere virtuelle mapper. Virtuelle mapper er enkle del-kontoer for bedre å organisere pengene dine, uten å måtte sende dem og derved betale avgifter. <br> Videre vil denne kontoen bli flyttet til under \"Mine kontoer\"-listen."
 
 msgid "Indonesian"
 msgstr "Indonesisk"
 
 msgid "Italian"
 msgstr "Italiensk"
+
+msgid "Japanese"
+msgstr "Japansk"
+
+msgid "Korean"
+msgstr "Koreansk"
 
 msgid "Label"
 msgstr "Merkelapp"
@@ -338,6 +392,12 @@ msgstr "Ledger Nano S"
 msgid "List full or delegate already voted."
 msgstr "Listen er full eller delegaten er allerede stemt på."
 
+msgid "Load Tx From File"
+msgstr "Last inn Tx fra fil"
+
+msgid "Loading..."
+msgstr "Laster inn..."
+
 msgid "Login"
 msgstr "Innlogging"
 
@@ -348,7 +408,7 @@ msgid "Market"
 msgstr "Marked"
 
 msgid "Market Cap."
-msgstr "Markedskapitalisering"
+msgstr "Markedsverdi"
 
 msgid "Maximize"
 msgstr "Maksimer"
@@ -360,7 +420,7 @@ msgid "Minimize"
 msgstr "Minimer"
 
 msgid "Minify"
-msgstr "Minimer"
+msgstr "Reduser"
 
 msgid "My Accounts"
 msgstr "Mine kontoer"
@@ -375,40 +435,40 @@ msgid "Network"
 msgstr "Nettverk"
 
 msgid "Network removed succesfully!"
-msgstr "Nettverk fjernet suksessfullt!"
+msgstr "Nettverk har blitt fjernet!"
 
 msgid "New version available!"
 msgstr "Ny versjon tilgjengelig!"
 
 msgid "Network connected and healthy!"
-msgstr "Nettverk funnet i orden!"
+msgstr "Nettverk koblet til og er i orden!"
 
 msgid "Network disconected!"
-msgstr "Nettverk frakoplet"
+msgstr "Nettverk frakoblet"
 
 msgid "Next"
 msgstr "Neste"
 
 msgid "No difference from original delegate list"
-msgstr "Ingen forskjell fra original delegat liste"
+msgstr "Ingen forskjell fra original delegatliste"
 
 msgid "No publicKey"
 msgstr "Ingen offentlig nøkkel"
 
 msgid "No search term"
-msgstr "Ingen søke-term"
+msgstr "Ingen søkeord"
 
 msgid "Not enough ARK on your account"
-msgstr "Ikke nok Ark på konto"
+msgstr "Ikke nok Ark på din konto"
 
 msgid "OffChain"
-msgstr "Offchain"
+msgstr "Avkjede"
 
 msgid "Ok"
 msgstr "OK"
 
 msgid "Open Delegate Monitor"
-msgstr "Åpne delegat monitor"
+msgstr "Åpne delegatmonitor"
 
 msgid "Open File"
 msgstr "Åpne fil"
@@ -426,40 +486,52 @@ msgid "Optional"
 msgstr "Valgfri"
 
 msgid "Original Passphrase"
-msgstr "Originalt passord"
+msgstr "Original adgangskode"
 
 msgid "Other Accounts"
 msgstr "Andre kontoer"
 
 msgid "Passphrase"
-msgstr "Passord"
+msgstr "Adgangskode"
 
 msgid "Passphrase does not match your address"
 msgstr "Passordet matcher ikke adressen din"
 
+msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
+msgstr "Adgangskoden <strong>skiller mellom små og store bokstaver</strong>. Enhver tegn-endring vil resultere i at en annen Ark-adresse importeres! Adgangskoder er <strong>ikke lagret</strong> på denne datamaskinen, så sørg for å alltid ha en <strong>sikker backup!</strong>"
+
 msgid "Passphrase is not corresponding to account"
-msgstr "Passord får ikke kontakt med konto"
+msgstr "Adgangskode stemmer ikke med konto"
 
 msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
-msgstr "Passord er ikke sikret med høy standard. <br> Bare bruk denne funksjonen på sikre datamaskiner og fra kontoer du har råd til å tape."
+msgstr "Adgangskoder er ikke sikret med høy standard. <br> Bare bruk denne funksjonen på sikre datamaskiner og for kontoer som du har råd til miste."
 
 msgid "Passphrases deleted"
-msgstr "Passordene er slettet"
+msgstr "Adgangskodene er slettet"
 
 msgid "Passphrases saved"
-msgstr "Passordene er lagret"
+msgstr "Adgangskodene er lagret"
+
+msgid "Paste the entire signed message:"
+msgstr "Lim inn hele den signerte beskjeden:"
 
 msgid "Peer"
 msgstr "Node"
 
 msgid "Peer Status"
-msgstr "Peer status"
+msgstr "Node-status"
+
+msgid "Play sound when receiving transactions?"
+msgstr "Spill av lyd når transaksjoner mottas?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "Vennligst ta en sikker backup av andre-adgangskode før du fortsetter. Den blir IKKE lagret av denne klienten, så du kan dermed ikke gjenopprette adgangskoden!"
 
 msgid "Please choose a file to be timestamped on the blockchain."
-msgstr "Vennligst velg en fil for \"timestamping\" på blokkjeden."
+msgstr "Vennligst velg en fil for tidsstempling på blokkjeden."
 
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Vær vennlig å ta sikker backup av passord. Denne applikasjonen lagrer det ikke og kan derfor ikke gjenopprette det."
+msgstr "Vær vennlig å ta sikker backup av adgangskoden. Denne applikasjonen lagrer den ikke, og kan derfor ikke gjenopprette det."
 
 msgid "Please enter a folder name."
 msgstr "Gi navn til mappen"
@@ -471,10 +543,10 @@ msgid "Please enter a short label."
 msgstr "Skriv en ny merkelapp"
 
 msgid "Please enter this account passphrase to login."
-msgstr "Vennligst skriv inn denne kontoens passord for å logge inn."
+msgstr "Vennligst skriv inn denne kontoens adgangskode for å logge inn."
 
 msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
-msgstr "Vær vennlig å ta sikker backup av 2. passord. Denne applikasjonen lagrer det IKKE og kan derfor ikke tilbakekalle det."
+msgstr "Vær vennlig å ta sikker backup av andre-passordet. Denne applikasjonen lagrer den IKKE, og kan derfor ikke tilbakekalle det."
 
 msgid "Please paste the original and second passphrase to validate the creation."
 msgstr "Vennligst lim inn det originale passordet og 2. passord for å validiere opprettelsen."
@@ -483,16 +555,22 @@ msgid "Please backup securely the second passphrase, this client does NOT store 
 msgstr "Vær så snill å ta backup av ditt 2. passord. Dette programmet lagrer det ikke og kan derfor ikke tilbakestille det. "
 
 msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
-msgstr "Restart applikasjonen etter at delegat registreringen er blitt registrert i blokkkjeden for å reflektere endringene."
+msgstr "Omstart applikasjonen etter at delegatregistreringen har blitt registrert i blokkkjeden, for å reflektere endringene."
 
 msgid "Please first BACKUP SECURELY THE PASSPHRASE, this client does NOT store it and thus cannot recover your passphrase"
-msgstr "Vær så snill å TA BACKUP AV PASSORDET DITT, dette programmet lagrer det IKKE og kan derfor ikke gjenskape det"
+msgstr "Vær så snill å TA SIKKER BACKUP AV ADGANGSKODEN DIN. dette programmet lagrer det IKKE og kan derfor ikke gjenopprette det"
 
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
-msgstr "Vær vennlig å skriv ord 3, 6 og 9 fra passordet ditt for å validere opprettelsen av konto"
+msgstr "Vennligst skriv ord 3, 6 og 9 fra adgangskoden ditt for å validere opprettelsen av konto"
 
 msgid "Polish"
 msgstr "Polsk"
+
+msgid "Portuguese - Brazil"
+msgstr "Portugisisk - Brasil"
+
+msgid "Portuguese - Portugal"
+msgstr "Portugisisk - Portugal"
 
 msgid "Portuguese"
 msgstr "Portugisisk"
@@ -507,25 +585,34 @@ msgid "Public Key"
 msgstr "Offentlig nøkkel"
 
 msgid "QR Scanner"
-msgstr "QR Scanner"
+msgstr "QR-scanner"
 
 msgid "Quit"
 msgstr "Avslutt"
 
 msgid "Quit Ark Client?"
-msgstr "Avslutt Ark klienten?"
+msgstr "Avslutt Ark-klienten?"
 
 msgid "Rank"
-msgstr "Posisjon"
+msgstr "Rangering"
 
 msgid "Receive Ark"
 msgstr "Motta Ark"
+
+msgid "Refresh Account"
+msgstr "Oppdater Konto"
+
+msgid "Refresh accounts automatically?"
+msgstr "Oppdater kontoer automatisk?"
 
 msgid "Register Delegate"
 msgstr "Registrer delegat"
 
 msgid "Register delegate for"
 msgstr "Registrer delegat for"
+
+msgid "Remaining balance"
+msgstr "Gjenværende balanse"
 
 msgid "Remove"
 msgstr "Fjern"
@@ -543,7 +630,7 @@ msgid "Remove from my computer all cached data from this network"
 msgstr "Fjern alle mellomlagrede data fra dette nettverket"
 
 msgid "Remove this account from your wallet. The account may be added again using the original passphrase of the account."
-msgstr "Fjern denne kontoen fra programmet. Kontoen kan bli lagt til senere ved å bruke det originale passordet til kontoen."
+msgstr "Fjern denne kontoen fra din lommebok. Kontoen kan bli lagt til senere ved å bruke den originale adgangskoden til kontoen."
 
 msgid "Rename"
 msgstr "Gi nytt navn"
@@ -561,19 +648,25 @@ msgid "Russian"
 msgstr "Russisk"
 
 msgid "SHA256 Signature"
-msgstr "SHA256 Signatur"
+msgstr "SHA256-Signatur"
+
+msgid "SLIP 44"
+msgstr "SLIP 44"
 
 msgid "Save"
 msgstr "Lagre"
 
 msgid "Save Passphrases for"
-msgstr "Lagre passord for"
+msgstr "Lagre adgangskoder for"
+
+msgid "Save Tx Offline"
+msgstr "Lagre Tx Frakoblet"
 
 msgid "Second Passphrase"
-msgstr "2. passord"
+msgstr "Andre adgangskode"
 
 msgid "Seed Server"
-msgstr "Seed Server"
+msgstr "Seedserver"
 
 msgid "Send"
 msgstr "Send"
@@ -584,6 +677,9 @@ msgstr "Send alle"
 msgid "Send Ark"
 msgstr "Send Ark"
 
+msgid "Serbian"
+msgstr "Serbisk"
+
 msgid "Send Ark from"
 msgstr "Send Ark fra"
 
@@ -592,6 +688,9 @@ msgstr "Sett"
 
 msgid "Settings"
 msgstr "Innstillinger"
+
+msgid "Show {{((!ul.showPublicKey) && 'public key' || 'address')}}"
+msgstr "Show {{((!ul.showPublicKey) && 'offentlig nøkkel' || 'adresse')}}"
 
 msgid "Sign"
 msgstr "Signer"
@@ -608,6 +707,9 @@ msgstr "Signer med Ledger"
 msgid "Signature"
 msgstr "Signatur"
 
+msgid "Slovak"
+msgstr "Slovakisk"
+
 msgid "Slovenian"
 msgstr "Slovensk"
 
@@ -615,10 +717,16 @@ msgid "Smartbridge"
 msgstr "Smartbridge"
 
 msgid "So the block timestamp that will include this transaction will be a proof of existence of the file you have timestamped."
-msgstr "Så blokk tidskoden som vil inkludere denne transaksjonen vil være bevis for eksistensen av filen du har tidskodet."
+msgstr "Sånn at blokk-tidsstemplet som vil inkludere denne transaksjonen vil være bevis for eksistensen av filen du har tidsstemplet."
+
+msgid "Spanish"
+msgstr "Spansk"
 
 msgid "Succesfully Logged In!"
-msgstr "Suksessfullt innlogget!"
+msgstr "Vellykket innlogging!"
+
+msgid "Swedish"
+msgstr "Svensk"
 
 msgid "Switch Network"
 msgstr "Bytt nettverk"
@@ -633,16 +741,16 @@ msgid "The message is NOT verified"
 msgstr "Beskjeden er IKKE verifisert"
 
 msgid "The message is verified successfully"
-msgstr "Beskjeden er verifisert suksessfullt"
+msgstr "Verifiseringen av beskjeden var vellykket"
 
 msgid "Second Passphrase added successfully:"
-msgstr "2. passord lagt til med suksess:"
+msgstr "Andre adgangskode vellykket lagt til:"
 
 msgid "The second passphrase does not match the one you just got."
-msgstr "2. passord matcher ikke det du nettopp fikk. "
+msgstr "Den andre adgangskoden stemmer ikke med den du nettopp fikk."
 
 msgid "The words does not match the original passphrase."
-msgstr "Ordene matcher ikke den originale passord koden."
+msgstr "Ordene stemmer ikke med den originale adgangskoden."
 
 msgid "Theme"
 msgstr "Tema"
@@ -651,22 +759,22 @@ msgid "Themes"
 msgstr "Temaer"
 
 msgid "This account already has a second passphrase:"
-msgstr "Denne kontoen har allerede ett 2. passord"
+msgstr "Denne kontoen har allerede en andre adgangskode:"
 
 msgid "This signature can't be forged."
-msgstr "Denne signaturen kan ikke bli forfalsket."
+msgstr "Denne signaturen kan ikke bli laget."
 
 msgid "This will save the SHA256 signature in a transaction of this account."
-msgstr "Dette vil lagre SHA256 signaturen i en transaksjon på denne kontoen."
+msgstr "Dette vil lagre SHA256-signaturen i en transaksjon på denne kontoen."
 
 msgid "Timestamp Document"
-msgstr "Tidskode dokument"
+msgstr "Tidsstempeldokument"
 
 msgid "Timestamp Document On"
-msgstr "Tidskode dokument på"
+msgstr "Tidsstempeldokument på"
 
 msgid "This account has never interacted with the network. This is a cold wallet."
-msgstr "Denne kontoen har aldri interagert med nettverket. Dette er en \"kald konto\"."
+msgstr "Denne kontoen har aldri snakket med nettverket. Dette er en ubrukt lommebok:"
 
 msgid "To"
 msgstr "Til"
@@ -675,7 +783,7 @@ msgid "Toggle Full Screen"
 msgstr "Bytt til fullskjerm"
 
 msgid "Token name"
-msgstr "Myntens navn"
+msgstr "Pollettnavn"
 
 msgid "Total"
 msgstr "Total"
@@ -686,11 +794,17 @@ msgstr "Total {{ul.network.symbol}}"
 msgid "Transaction"
 msgstr "Transaksjon"
 
+msgid "Transaction file successfully saved in"
+msgstr "Transaksjonsfil vellykket lagret i"
+
 msgid "Transactions"
 msgstr "Transaksjoner"
 
 msgid "Type"
 msgstr "Type"
+
+msgid "Type an address or a name"
+msgstr "Skriv inn en adresse eller navn"
 
 msgid "Update vote from"
 msgstr "Oppdater stemme fra"
@@ -704,8 +818,11 @@ msgstr "Verifiser"
 msgid "Verify Message"
 msgstr "Verifiser beskjed"
 
+msgid "Verify Text"
+msgstr "Verifiser tekst"
+
 msgid "Vendor Field"
-msgstr "Leverandør felt"
+msgstr "Leverandørfelt"
 
 msgid "Virtual folder added!"
 msgstr "Virtuell mappe lagt til"
@@ -732,13 +849,13 @@ msgid "address"
 msgstr "adresse"
 
 msgid "folder name"
-msgstr "mappe navn"
+msgstr "mappenavn"
 
 msgid "from"
 msgstr "fra"
 
 msgid "is erroneous"
-msgstr "er feil"
+msgstr "er feilaktig"
 
 msgid "is not recognised"
 msgstr "er ikke gjenkjent"
@@ -753,7 +870,7 @@ msgid "now!"
 msgstr "nå!"
 
 msgid "passphrase"
-msgstr "passord"
+msgstr "adgangskode"
 
 msgid "produced blocks"
 msgstr "produserte blokker"
@@ -762,7 +879,7 @@ msgid "productivity"
 msgstr "produktivitet"
 
 msgid "sent with success!"
-msgstr "sendt med suksess!"
+msgstr "sending vellykket!"
 
 msgid "you need at least 1 ARK to vote"
 msgstr "du trenger minst 1 ARK for å stemme"
@@ -774,5 +891,5 @@ msgid "Voting is an optional, but important mechanism that keeps the Ark network
 msgstr "Å stemme er en valgfri, men viktig funksjon som holder Ark-nettverket sikkert. De 51 delegatene med flest stemmer fra nettverket er ansvarlig for å verifisere og forevige transaksjoner inn i nye blokker. \nDenne siden kan brukes til å stemme på en delegat du støtter."
 
 msgid "you need at least 5 ARK to create a second passphrase"
-msgstr "Du trenger minst 5 ARK for å lage et 2. passord"
+msgstr "Du trenger minst 5 ARK for å lage en andre adgangskode"
 
