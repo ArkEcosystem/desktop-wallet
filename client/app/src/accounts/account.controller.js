@@ -1344,7 +1344,18 @@
         }
       }
 
-      backgrounds.user = storageService.getGlobal('userBackgrounds') || {}
+      backgrounds['user'] = storageService.getGlobal('userBackgrounds') || {}
+      for (let name in backgrounds['user']) {
+        var mathPath = backgrounds['user'][name].match(/\((.*)\)/)
+        if (mathPath) {
+          let filePath = mathPath[1].replace(/'/g, ``)
+          var fullPath = require('path').join(__dirname, filePath)
+          if (!fs.existsSync(filePath) && !fs.existsSync(fullPath)) {
+            delete backgrounds['user'][name]
+            storageService.setGlobal('userBackgrounds', backgrounds['user'])
+          }
+        }
+      }
 
       function upload () {
         var options = {
