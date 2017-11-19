@@ -1,7 +1,6 @@
 'use strict'
 
 describe('feedService', function () {
-
   let feedService
 
   beforeEach(() => {

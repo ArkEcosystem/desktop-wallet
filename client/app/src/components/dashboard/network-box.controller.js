@@ -21,5 +21,4 @@
       this.ul = this.accountCtrl
     }
   }
-
 })()

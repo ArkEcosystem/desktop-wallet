@@ -9,7 +9,7 @@
       /**
        * Fetches and parses the RSS of an URL
        */
-      fetchAndParse(url) {
+      fetchAndParse (url) {
         const rssParser = require('rss-parser')
 
         return new Promise((resolve, reject) => {
@@ -22,11 +22,10 @@
       /**
        * Fetches and parses the RSS of ARK.io
        */
-      fetchBlogEntries() {
+      fetchBlogEntries () {
         const rssUrl = 'https://blog.ark.io/feed'
         return this.fetchAndParse(rssUrl).then(parsed => parsed.feed.entries)
       }
     }
   }
-
 })()

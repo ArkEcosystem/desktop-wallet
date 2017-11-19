@@ -34,7 +34,7 @@
 
     self.peer = networkService.getPeer().ip
 
-    function showTimestamp (time) {
+    function showTimestamp (time) { // eslint-disable-line no-unused-vars
       var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
 
       var t = parseInt(d.getTime() / 1000)
@@ -292,8 +292,6 @@
         store = true
       }
       var deferred = $q.defer()
-      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-      var t = parseInt(d.getTime() / 1000)
       networkService.getFromPeer('/api/transactions?orderBy=timestamp:desc&offset=' + offset + '&limit=' + limit + '&recipientId=' + address + '&senderId=' + address).then(function (resp) {
         if (resp.success) {
           for (var i = 0; i < resp.transactions.length; i++) {
@@ -365,7 +363,7 @@
     }
 
     // TODO: NOT working yet, waiting for 0.3.2
-    function searchDelegates (term) {
+    function searchDelegates (term) { // eslint-disable-line no-unused-vars
       var deferred = $q.defer()
       if (!term) {
         deferred.reject(gettextCatalog.getString('No search term'))
@@ -487,7 +485,7 @@
               }
             )
             return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) != config.fromAddress) {
+          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
             deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
           } else {
             deferred.resolve(transaction)
@@ -522,7 +520,7 @@
               }
             )
             return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) != config.fromAddress) {
+          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
             deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
             return deferred.promise
           }
@@ -558,7 +556,7 @@
               }
             )
             return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) != config.fromAddress) {
+          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
             deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
             return deferred.promise
           }

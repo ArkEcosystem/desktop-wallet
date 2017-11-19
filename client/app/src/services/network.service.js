@@ -151,7 +151,7 @@
 
       if (!network.cmcTicker && network.token !== 'ARK') {
         failedTicker()
-        return;
+        return
       }
 
       $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
@@ -341,22 +341,21 @@
     }
 
     // Returns the BTC value in satoshi
-    function convertToSatoshi(val) {
-      return Number(val).toFixed(8);
+    function convertToSatoshi (val) {
+      return Number(val).toFixed(8)
     }
 
-
     // Updates peer with all currency values relative to the USD price.
-    function updatePeerWithCurrencies(peer, res) {
-      $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
+    function updatePeerWithCurrencies (peer, res) {
+      $http.get('https://api.fixer.io/latest?base=USD', {timeout: 2000}).then(function (result) {
         const USD_PRICE = Number(res.data[0].price_usd)
-        var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+        var currencies = ['aud', 'brl', 'cad', 'chf', 'cny', 'eur', 'gbp', 'hkd', 'idr', 'inr', 'jpy', 'krw', 'mxn', 'rub']
         var prices = {}
-        currencies.forEach(function(currency) {
+        currencies.forEach(function (currency) {
           prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
         })
-        prices["btc"] = res.data[0].price_btc
-        prices["usd"] = res.data[0].price_usd
+        prices['btc'] = res.data[0].price_btc
+        prices['usd'] = res.data[0].price_usd
         peer.market.price = prices
         storageService.setGlobal('peerCurrencies', prices)
       })
