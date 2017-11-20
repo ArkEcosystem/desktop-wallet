@@ -149,23 +149,23 @@ describe('AccountController', function () {
         ctrl.btcValueActive = false
       })
 
-      it('to true', () => {
+      it('is active', () => {
         ctrl.toggleBitcoinCurrency()
         expect(ctrl.btcValueActive).to.equal(true)
       })
 
-      it('to false (off -> on -> off)', () => {
+      it('is inactive (off -> on -> off)', () => {
         ctrl.toggleBitcoinCurrency()
         ctrl.toggleBitcoinCurrency()
         expect(ctrl.btcValueActive).to.equal(false)
       })
 
-      it('to true (forced)', () => {
+      it('is active (forced)', () => {
         ctrl.toggleBitcoinCurrency(true)
         expect(ctrl.btcValueActive).to.equal(true)
       })
 
-      it('false (forced)', () => {
+      it('is inactive (forced)', () => {
         ctrl.toggleBitcoinCurrency(false)
         expect(ctrl.btcValueActive).to.equal(false)
       })
