@@ -655,7 +655,7 @@
         var votedDelegate = votedDelegates[j]
         if (arrayObjectIndexOf(notRemovedDelegates, votedDelegate.publicKey, 'publicKey') === -1) {
           votedDelegate.vote = '-'
-          difflist.push(delegate)
+          difflist.push(votedDelegate)
         }
         if (difflist.length === 33) {
           assets.push(difflist)
