@@ -138,35 +138,35 @@ describe('AccountController', function () {
   describe('test btc toggle', () => {
     context('bitcoinCurrency is valid', () => {
       it('bitcoinCurrency is valid', () => {
-        expect(ctrl.bitcoinCurrency).toExist()
-        expect(ctrl.bitcoinCurrency.name).to.be('btc')
+        expect(ctrl.bitcoinCurrency).to.not.be.undefined
+        expect(ctrl.bitcoinCurrency.name).to.equal('btc')
       })
     })
 
-    context('toggle check', () => {
+    context('check', () => {
       beforeEach(() => {
         ctrl.btcValueActive = false
       })
 
-      it('toggles to true', () => {
+      it('to true', () => {
         ctrl.toggleBitcoinCurrency()
-        expect(ctrl.btcValueActive).to.be(true)
+        expect(ctrl.btcValueActive).to.equal(true)
       })
 
-      it('toggles to false (off -> on -> off)', () => {
+      it('to false (off -> on -> off)', () => {
         ctrl.toggleBitcoinCurrency()
         ctrl.toggleBitcoinCurrency()
-        expect(ctrl.btcValueActive).to.be(false)
+        expect(ctrl.btcValueActive).to.equal(false)
       })
 
-      it('toggles to true (forced)', () => {
+      it('to true (forced)', () => {
         ctrl.toggleBitcoinCurrency(true)
-        expect(ctrl.btcValueActive).to.be(true)
+        expect(ctrl.btcValueActive).to.equal(true)
       })
 
-      it('remains false (forced)', () => {
+      it('false (forced)', () => {
         ctrl.toggleBitcoinCurrency(false)
-        expect(ctrl.btcValueActive).to.be(false)
+        expect(ctrl.btcValueActive).to.equal(false)
       })
     })
   })
