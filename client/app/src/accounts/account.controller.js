@@ -835,6 +835,16 @@
         })
     }
 
+    self.refreshAccountBalances = () => {
+      networkService.getPrice()
+
+      self.getAllAccounts().forEach( account => {
+        accountService
+          .refreshAccount(account)
+          .then(updated => account.balance = updated.balance)
+      })
+    }
+
     self.toggleRefreshAccountsAutomatically = function () {
       storageService.set('refreshAccountsAutomatically', self.refreshAccountsAutomatically, true)
     }
