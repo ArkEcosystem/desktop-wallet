@@ -18,7 +18,7 @@
 
     self.defaultFees = {
       'send': 10000000,
-      'vote': 100000000,
+      'vote': ARKTOSHI_UNIT,
       'secondsignature': 500000000,
       'delegate': 2500000000,
       'multisignature': 500000000
