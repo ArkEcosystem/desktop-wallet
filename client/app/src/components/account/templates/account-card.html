@@ -14,7 +14,7 @@
           <translate>Send</translate>
       </md-tooltip>
     </md-button>
-    
+
     <md-button md-no-ink ng-click="$ctrl.ul.exportAccount($ctrl.ul.selected)" aria-label="Export Account">
       <md-icon md-font-library="material-icons">file_download</md-icon>
       <md-tooltip>
@@ -64,8 +64,8 @@
       </md-icon>
       </span>
       <span class="md-subhead description">
-        <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance/100000000}}
-        <md-button ng-click="$ctrl.ul.selectNextCurrency()">{{$ctrl.ul.selected.balance/100000000 | amountToCurrency:$ctrl:true | formatCurrency:$ctrl.ul:true }}</md-button>
+        <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance/$ctrl.ul.ARKTOSHI_UNIT}}
+        <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance/$ctrl.ul.ARKTOSHI_UNIT | amountToCurrency:$ctrl:true | formatCurrency:$ctrl.ul:true }}</md-button>
         <md-button class="md-small" ng-click="$ctrl.ul.toggleBitcoinCurrency()" ng-hide="$ctrl.ul.currency.name === 'btc'">
           <md-tooltip md-direction="top">
             {{'Toggle' | translate}} {{$ctrl.ul.toggleCurrency.name | uppercase}}

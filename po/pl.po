@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2017-11-18 16:39+0000\n"
+"PO-Revision-Date: 2017-11-18 16:39+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: pl\n"
@@ -83,6 +83,9 @@ msgstr "Wszystkie Twoje dane, razem z kontami, sieciami i kontaktami zostaną u
 msgid "Amount"
 msgstr "Kwota"
 
+msgid "Amount ({{ul.network.symbol}})"
+msgstr "Kwota ({{ul.network.symbol}})"
+
 msgid "Appearance"
 msgstr "Wygląd"
 
@@ -94,6 +97,9 @@ msgstr "Kwota (Ѧ)"
 
 msgid "Approval"
 msgstr "Poparcie"
+
+msgid "Arabic"
+msgstr "Arabski"
 
 msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
 msgstr "Czy jesteś pewny, że chcesz usunąć wszystkie powiązane dane (konta i ustawienia) z tego komputera? Twoje konta pozostaną bezpieczne w sieci blockchain"
@@ -112,6 +118,9 @@ msgstr "Tło"
 
 msgid "Balance"
 msgstr "Bilans"
+
+msgid "Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!"
+msgstr "Zanim przejdziesz dalej, po pierwsze  <strong>ZRÓB BEZPIECZNY BACKUP SWOJEJ PASSPHRASE</strong>, aplikacja nie przechowuje tych danych i nie będzie możliwe późniejsze ich odzyskanie! Jeśli je stracisz, usuniesz albo zostaną ukradzione - NIE MOŻEMY Ci pomóc w ich odzyskaniu. Portfel nie udostępnia takiej opcji."
 
 msgid "Bulgarian"
 msgstr "Bułgarski"
@@ -146,6 +155,12 @@ msgstr "Nie można stwierdzić czy konto jest delegatem"
 msgid "Change 1h/7h/7d"
 msgstr "Zmień 1h/7h/7d"
 
+msgid "Chinese - China"
+msgstr "Chiński - Chiny"
+
+msgid "Chinese - Taiwan"
+msgstr "Chiński - Tajwan"
+
 msgid "Client"
 msgstr "Klient"
 
@@ -179,6 +194,9 @@ msgstr "Skopiowano do schowka"
 msgid "Copy"
 msgstr "Kopiuj"
 
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "Nie można pobrać listy aktywnych delegatów - sprawdź swoje połączenie internetowe"
+
 msgid "Create"
 msgstr "Stwórz"
 
@@ -193,6 +211,12 @@ msgstr "Stwórz wirtualny folder"
 
 msgid "Create a new virtual folder"
 msgstr "Stwórz nowy wirtualny folder"
+
+msgid "Currency"
+msgstr "Waluta"
+
+msgid "Dark Mode"
+msgstr "Tryb nocny"
 
 msgid "Date"
 msgstr "Data"
@@ -242,6 +266,9 @@ msgstr "Angielski"
 msgid "Error in signature processing"
 msgstr "Błąd podczas tworzenia podpisu"
 
+msgid "Error in your Input."
+msgstr "Błąd w Twoim wprowadzeniu."
+
 msgid "Error when trying to login:"
 msgstr "Błąd podczas próby logowania:"
 
@@ -251,11 +278,26 @@ msgstr "Błąd:"
 msgid "Exchange"
 msgstr "Giełda"
 
+msgid "Expense"
+msgstr "Wydatek"
+
 msgid "Explorer"
 msgstr "Eksplorer "
 
+msgid "Export Account"
+msgstr "Eksportuj konto"
+
+msgid "Failed to save transaction file"
+msgstr "Niepowodzenie w zapisywaniu pliku transkacji"
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Prowizja ({{ul.network.symbol}})"
+
 msgid "File"
 msgstr "Plik"
+
+msgid "Finish"
+msgstr "Zakończ"
 
 msgid "Fee (Ѧ)"
 msgstr "Prowizja (Ѧ)"
@@ -311,6 +353,9 @@ msgstr "Importuj"
 msgid "Import Account"
 msgstr "Importuj konto"
 
+msgid "Income"
+msgstr "Przychód"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Jeśli jesteś właścicielem tego konta możesz uruchomić wirtualne foldery. Wirtualne foldery to proste subkonta, dla lepszej organizacji Twoich środków bez potrzeby wysyłania prawdziwych transakcji i płacenia prowizji. <br>\nPonadto, to konto będzie przeniesione pod list \"Moje konta\"."
 
@@ -319,6 +364,12 @@ msgstr "Indonezyjski"
 
 msgid "Italian"
 msgstr "Włoski"
+
+msgid "Japanese"
+msgstr "Japoński"
+
+msgid "Korean"
+msgstr "Koreański"
 
 msgid "Label"
 msgstr "Etykieta"
@@ -337,6 +388,12 @@ msgstr "Ledger Nano S"
 
 msgid "List full or delegate already voted."
 msgstr "Lista pełna lub wcześniej zagłosowano na delegata."
+
+msgid "Load Tx From File"
+msgstr "Załaduj transakcji z pliku"
+
+msgid "Loading..."
+msgstr "Ładowanie..."
 
 msgid "Login"
 msgstr "Login"
@@ -437,6 +494,9 @@ msgstr "Passhprase"
 msgid "Passphrase does not match your address"
 msgstr "Passphrase nie zgadza się z Twoim adresem"
 
+msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
+msgstr "W passphrase <strong>rozróżnianie są litery</strong>, każda zmiana znaku w rezultacie zaimportuje inny adres ARK! Passhprase <strong>nie jest</strong> przechowywany na tym komputerze dlatego zawsze upewnij się, że <strong>bezpiecznie go zabezpieczyłeś!</strong>"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "Passphrase nie jest powiązane do konta"
 
@@ -449,11 +509,20 @@ msgstr "Usunięto passphrase"
 msgid "Passphrases saved"
 msgstr "Hasła dostępu (passphrase) zapisane"
 
+msgid "Paste the entire signed message:"
+msgstr "Wklej cała podpisaną wiadomość:"
+
 msgid "Peer"
 msgstr "Peer"
 
 msgid "Peer Status"
 msgstr "Stan Peer"
+
+msgid "Play sound when receiving transactions?"
+msgstr "Uruchamiać dźwięk gdy otrzymasz transakcję?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "Zrób bezpieczny backup Twojej drugiej passphrase zanim przejdziesz dalej, klient jej nie przechowuje i nie ma możliwości jej odzyskania."
 
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "Proszę wybrać plik który będzie oznaczony czasem w blockchain."
@@ -494,6 +563,12 @@ msgstr "Proszę podać słowa 3, 6 i 9 z Twojej passhprase aby potwierdzić stw
 msgid "Polish"
 msgstr "Polski"
 
+msgid "Portuguese - Brazil"
+msgstr "Portugalski - Brazylia"
+
+msgid "Portuguese - Portugal"
+msgstr "Portugalski - Portugalia"
+
 msgid "Portuguese"
 msgstr "Portugalski"
 
@@ -521,11 +596,20 @@ msgstr "Ranking"
 msgid "Receive Ark"
 msgstr "Otrzymaj Ark"
 
+msgid "Refresh Account"
+msgstr "Odśwież konto"
+
+msgid "Refresh accounts automatically?"
+msgstr "Automatycznie odświeżać konta?"
+
 msgid "Register Delegate"
 msgstr "Zarejestruj delegata"
 
 msgid "Register delegate for"
 msgstr "Zarejestruj delegata dla"
+
+msgid "Remaining balance"
+msgstr "Pozostałe saldo"
 
 msgid "Remove"
 msgstr "Usuń"
@@ -569,6 +653,9 @@ msgstr "Zapisz"
 msgid "Save Passphrases for"
 msgstr "Zapisz passphrase dla"
 
+msgid "Save Tx Offline"
+msgstr "Zapisz transakcje offline"
+
 msgid "Second Passphrase"
 msgstr "Druga Passphrase"
 
@@ -584,6 +671,9 @@ msgstr "Wyślij wszystko"
 msgid "Send Ark"
 msgstr "Wyślij Ark"
 
+msgid "Serbian"
+msgstr "Serbski"
+
 msgid "Send Ark from"
 msgstr "Wyślij Ark z"
 
@@ -592,6 +682,9 @@ msgstr "Ustaw"
 
 msgid "Settings"
 msgstr "Ustawienia"
+
+msgid "Show {{((!ul.showPublicKey) && 'public key' || 'address')}}"
+msgstr "Pokaż {{((!ul.showPublicKey) && 'public key' || 'address')}}"
 
 msgid "Sign"
 msgstr "Podpisz"
@@ -608,6 +701,9 @@ msgstr "Podpisz z Ledger"
 msgid "Signature"
 msgstr "Podpis"
 
+msgid "Slovak"
+msgstr "Słowacki"
+
 msgid "Slovenian"
 msgstr "Słoweński"
 
@@ -617,8 +713,14 @@ msgstr "Smartbridge"
 msgid "So the block timestamp that will include this transaction will be a proof of existence of the file you have timestamped."
 msgstr "Także czas bloku w którym zostanie zawarta ta transakcja będzie dowodem istnienia oznaczonego pliku."
 
+msgid "Spanish"
+msgstr "Hiszpański"
+
 msgid "Succesfully Logged In!"
 msgstr "Zalogowano pomyślnie!"
+
+msgid "Swedish"
+msgstr "Szwedzki"
 
 msgid "Switch Network"
 msgstr "Zmień sieć"
@@ -686,11 +788,17 @@ msgstr "Razem {{ul.network.symbol}}"
 msgid "Transaction"
 msgstr "Transakcja"
 
+msgid "Transaction file successfully saved in"
+msgstr "Plik transakcji pomyślnie zapisany w"
+
 msgid "Transactions"
 msgstr "Transakcje"
 
 msgid "Type"
 msgstr "Typ"
+
+msgid "Type an address or a name"
+msgstr "Wprowadź adres albo nazwę"
 
 msgid "Update vote from"
 msgstr "Zaktualizuj głosy z"
@@ -703,6 +811,9 @@ msgstr "Weryfikuj"
 
 msgid "Verify Message"
 msgstr "Weryfikuj wiadomość"
+
+msgid "Verify Text"
+msgstr "Zweryfikuj tekst"
 
 msgid "Vendor Field"
 msgstr "Pole SmartBridge"

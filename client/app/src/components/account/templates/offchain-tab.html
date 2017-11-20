@@ -28,9 +28,9 @@
 
       <md-list-item>
         <h3>
-          <translate>Default</translate> {{$ctrl.ul.currency.symbol}} {{($ctrl.ul.getDefaultValue($ctrl.ul.selected)/100000000*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name]).toFixed(4)}}</h3>
+          <translate>Default</translate> {{$ctrl.ul.currency.symbol}} {{($ctrl.ul.getDefaultValue($ctrl.ul.selected)/$ctrl.ul.ARKTOSHI_UNIT*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name]).toFixed(4)}}</h3>
         <span class="md-secondary">
-          <md-button md-block md-colors="{'background' : $ctrl.ul.getDefaultValue($ctrl.ul.selected)>0 ? 'default-green-200':'default-red-200' }"> {{$ctrl.ul.getDefaultValue($ctrl.ul.selected)/100000000}}</md-button>
+          <md-button md-block md-colors="{'background' : $ctrl.ul.getDefaultValue($ctrl.ul.selected)>0 ? 'default-green-200':'default-red-200' }"> {{$ctrl.ul.getDefaultValue($ctrl.ul.selected)/$ctrl.ul.ARKTOSHI_UNIT}}</md-button>
         </span>
       </md-list-item>
       <md-list-item ng-repeat="folder in $ctrl.ul.selected.virtual.getFolders()">
@@ -58,7 +58,7 @@
           <md-input-container>
             <label>{{'Amount'|translate}} ({{$ctrl.ul.network.token}})</label>
             <input ng-model-options="{ getterSetter: true }" ng-model="$ctrl.ul.selected.virtual.uservalue(folder)" ng-change="$ctrl.ul.saveFolder($ctrl.ul.selected,folder)" type="number" >
-            <div class="hint"> {{$ctrl.ul.currency.symbol}} {{($ctrl.ul.selected.virtual[folder].amount/100000000*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name]).toFixed(4)}} </div>
+            <div class="hint"> {{$ctrl.ul.currency.symbol}} {{($ctrl.ul.selected.virtual[folder].amount/$ctrl.ul.ARKTOSHI_UNIT*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name]).toFixed(4)}} </div>
           </md-input-container>
         </span>
 

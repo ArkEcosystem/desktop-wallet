@@ -47,7 +47,7 @@ module.exports = function (config) {
       // Tests
       'accounts/**/*.js',
       'components/**/*.js',
-      'services/*.js'
+      'services/**/*.js'
     ],
 
     // testing framework to use (jasmine/mocha/qunit/...)

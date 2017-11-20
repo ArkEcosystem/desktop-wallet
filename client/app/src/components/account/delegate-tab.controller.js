@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('delegateTab', {
-      templateUrl: 'src/components/account/delegate-tab.html',
+      templateUrl: 'src/components/account/templates/delegate-tab.html',
       bindings: {
         accountCtrl: '='
       },

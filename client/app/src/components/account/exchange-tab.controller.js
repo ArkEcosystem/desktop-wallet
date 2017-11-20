@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('exchangeTab', {
-      templateUrl: 'src/components/account/exchange-tab.html',
+      templateUrl: 'src/components/account/templates/exchange-tab.html',
       bindings: {
         accountCtrl: '='
       },

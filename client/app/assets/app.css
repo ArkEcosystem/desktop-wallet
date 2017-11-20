@@ -240,14 +240,18 @@ span.name {
 
 .footer,
 .footer a {
-    color: white;
+  transition: color linear 0.2s;
+  color: white;
+}
+.footer > a:hover {
+  color: rgb(198, 198, 198);
 }
 
-.main-dashboard .main-actions {
+#dashboard .main-actions {
     padding: 0;
 }
 
-.main-dashboard .main-actions .watch-only-address {
+#dashboard .main-actions .watch-only-address {
     width: 120%;
 }
 
@@ -259,6 +263,10 @@ span.name {
     color: #555;
     padding: 20px;
     border-top: 1px solid #ccc;
+}
+
+.tab-text-only-content {
+    padding: 20px;
 }
 
 account-box {
@@ -303,27 +311,27 @@ md-dialog {
     max-height: 90%;
 }
 
-md-toast.md-error-theme .md-toast-content {
+md-toast.error .md-toast-content {
     background-color: #FF0000;
     font-weight: bold;
 }
 
-md-toast.md-success-theme .md-toast-content {
+md-toast.success .md-toast-content {
     background-color: #2E8B57;
     font-weight: bold;
 }
 
-md-toast.md-warn-theme .md-toast-content {
+md-toast.warn .md-toast-content {
     background-color: #FF8C00;
     font-weight: bold;
 }
 
-md-toast.md-log-theme .md-toast-content {
+md-toast.log .md-toast-content {
     background-color: #A9A9A9;
     font-weight: bold;
 }
 
-md-toast.md-debug-theme .md-toast-content {
+md-toast.debug .md-toast-content {
     background-color: #4169E1;
     font-weight: bold;
 }
@@ -458,4 +466,60 @@ body md-toolbar.navbar {
 /* Useful with light background textures to outline the main toolbar buttons */
 body.too-pale-background md-toolbar.navbar {
   background-color: rgba(20, 20, 20, 0.2) !important;
+}
+
+md-toast.announcement {
+  /* Announcement toast should occupy the entire width */
+  left: 0px !important;
+  right: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0% !important;
+  border: 0px !important;
+  padding: 0px !important;
+
+  background-color: rgb(11, 13, 15) !important;
+}
+
+md-toast.announcement > .md-toast-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+md-toast.announcement > .md-toast-content > div {
+  flex: 1 1 0
+}
+
+md-toast.announcement > .md-toast-content > div, a {
+  color: white;
+  font-weight: bold;
+}
+
+md-toast.announcement > .md-toast-content > div:first-child {
+  /* Compensates the margin and padding of the × button */
+  padding-left: 14px;
+}
+md-toast.announcement > .md-toast-content > div:first-child > span {
+  margin-left: 10px;
+  color: rgb(130, 133, 135);
+}
+
+md-toast.announcement > .md-toast-content > div:nth-child(2) {
+  text-align: center;
+}
+md-toast.announcement > .md-toast-content > div:nth-child(2) > a {
+  text-decoration: none;
+  transition: color linear 0.2s;
+}
+md-toast.announcement > .md-toast-content > div:nth-child(2) > a:hover {
+  color: rgb(130, 133, 135);
+}
+
+md-toast.announcement > .md-toast-content .md-button {
+  float: right;
+}
+md-toast.announcement > .md-toast-content .material-icons {
+  color: white;
 }

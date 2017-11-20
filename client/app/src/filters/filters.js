@@ -34,7 +34,8 @@
         var localeVersion
 
         if (currencyName === 'btc') {
-          localeVersion = 'Ƀ ' + val
+          let value = String(val).length > 8 ? Number(val).toFixed(8) : val
+          localeVersion = 'Ƀ ' + Number(value)
         } else {
           localeVersion = Number(val).toLocaleString(languageCode, options)
         }

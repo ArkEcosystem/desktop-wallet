@@ -24,6 +24,7 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
+      'ARKTOSHI_UNIT',
       '$rootScope',
       AccountController
     ])
@@ -66,9 +67,12 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
+    ARKTOSHI_UNIT,
     $rootScope
   ) {
     var self = this
+
+    self.ARKTOSHI_UNIT = ARKTOSHI_UNIT
 
     var languages = {
       en: gettextCatalog.getString('English'),
@@ -118,9 +122,6 @@
       { name: 'mxn', symbol: 'Mex$' },
       { name: 'rub', symbol: '\u20BD' }
     ]
-
-    // 1 ARK has 100000000 "arkthosi"
-    const UNIT = Math.pow(10, 8)
 
     gettextCatalog.debug = false
     self.language = storageService.get('language') || 'en'
@@ -198,6 +199,7 @@
     self.playFundsReceivedSound = storageService.get('playFundsReceivedSound') || false
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound
     self.manageBackgrounds = manageBackgrounds
+    self.showExchangeRate = showExchangeRate
     self.manageNetworks = manageNetworks
     self.openPassphrasesDialog = openPassphrasesDialog
     self.createDelegate = createDelegate
@@ -225,7 +227,7 @@
     if (!self.network.themeDark) self.network.themeDark = false
 
     // will be used in view
-    self.currentTheme = self.network.theme
+    self.currentTheme = 'default';//self.network.theme
 
     // set 'dynamic' as the default theme
     generateDynamicPalette(function (name) {
@@ -237,7 +239,7 @@
     })
 
     // set dark mode
-    if (self.network.themeDark) self.currentTheme = 'dark'
+    // if (self.network.themeDark) {self.currentTheme = 'dark'}
 
     // refreshing displayed account every 8s
     $interval(function () {
@@ -322,7 +324,7 @@
 
     // get themes colors to show in manager appearance
     function reloadThemes () {
-      var currentThemes = $mdTheming.$get().THEMES
+      var currentThemes = $mdThemingProvider.$get().THEMES
       var mapThemes = {}
 
       Object.keys(currentThemes).forEach(function (theme) {
@@ -517,7 +519,7 @@
         accountService.createTransaction(0, {
           fromAddress: self.selected.address,
           toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * UNIT),
+          amount: parseInt(resp.send_amount * ARKTOSHI_UNIT),
           masterpassphrase: self.passphrase,
           secondpassphrase: self.secondpassphrase
         }).then(function (transaction) {
@@ -665,7 +667,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * UNIT)
+      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI_UNIT)
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -1224,6 +1226,7 @@
     function generateDarkTheme (themeName) {
       var theme = themeName || self.network.theme
       var properties = $mdThemingProvider.$get().THEMES[theme]
+      properties = properties || $mdThemingProvider.$get().THEMES['default']
 
       var colors = properties.colors
       var primary = colors.primary.name
@@ -1238,6 +1241,8 @@
         .backgroundPalette(background)
         .dark()
       $mdThemingProvider.$get().generateTheme('dark')
+      // set dark mode
+      if (self.network.themeDark) {self.currentTheme = 'dark'}
     }
 
     // Compare vibrant colors from image with default material palette
@@ -1292,6 +1297,8 @@
 
         $mdThemingProvider.theme('dynamic').primaryPalette(primaryColor).accentPalette(accentColor)
         $mdThemingProvider.$get().generateTheme('dynamic')
+
+        self.currentTheme = self.network.theme
 
         callback('dynamic')
       })
@@ -1351,42 +1358,47 @@
         }
       }
 
+      backgrounds['user'] = storageService.getGlobal('userBackgrounds') || {}
+      for (let name in backgrounds['user']) {
+        var mathPath = backgrounds['user'][name].match(/\((.*)\)/)
+        if (mathPath) {
+          let filePath = mathPath[1].replace(/'/g, ``)
+          var fullPath = require('path').join(__dirname, filePath)
+          if (!fs.existsSync(filePath) && !fs.existsSync(fullPath)) {
+            delete backgrounds['user'][name]
+            storageService.setGlobal('userBackgrounds', backgrounds['user'])
+          }
+        }
+      }
+
       function upload () {
         var options = {
-          title: 'Upload Image',
+          title: 'Add Image',
           filters: [
             { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
           ],
           properties: ['openFile']
         }
-        var userPath = 'assets/images/user/'
-        var dirPath = path.resolve(__dirname, userPath)
 
         require('electron').remote.dialog.showOpenDialog(options, function (fileName) {
           if (fileName === undefined) return
           fileName = fileName[0]
 
-          var baseName = path.basename(fileName)
-          var newFileName = path.join(dirPath, baseName)
-
           var readStream = fs.createReadStream(fileName)
-          readStream.on('error', () => toastService.error('Error Adding Background.', 3000))
-
-          var writeStream = fs.createWriteStream(newFileName)
-          writeStream.on('error', () => toastService.error('Error Adding Background.', 3000))
-          writeStream.on('close', (ex) => {
+          readStream.on('readable', () => {
             toastService.success('Background Added Successfully!', 3000)
 
             var userImages = backgrounds['user']
-            var url = path.join(userPath, baseName)
+            var url = fileName
             url = url.replace(/\\/g, '/')
-            var name = path.parse(newFileName).name
+            var name = path.parse(fileName).name
             userImages[name] = `url('${url}')`
 
             backgrounds['user'] = userImages
           })
-
-          readStream.pipe(writeStream)
+          .on('error', (error) => {
+            toastService.error(`Error Adding Background (reading): ${error}`, 3000)
+          })
         })
       }
 
@@ -1396,24 +1408,16 @@
 
         var file = image.substring(5, image.length - 2)
 
-        var imagePath = path.resolve(__dirname, file)
+        var name = path.parse(file).name
+        delete backgrounds['user'][name]
 
-        fs.unlink(imagePath, function (err) {
-          if (err) {
-            toastService.error('Error Removing Background.', 3000)
-          } else {
-            var name = path.parse(file).name
-            delete backgrounds['user'][name]
+        if (image === initialBackground) {
+          selectBackground(backgrounds['images']['Ark'])
+        } else {
+          selectBackground(initialBackground)
+        }
 
-            if (image === initialBackground) {
-              selectBackground(backgrounds['images']['Ark'])
-            } else {
-              selectBackground(initialBackground)
-            }
-
-            toastService.success('Background Removed Successfully!', 3000)
-          }
-        })
+        toastService.success('Background Removed Successfully!', 3000)
       }
 
       function isImage (file) {
@@ -1440,6 +1444,7 @@
       function save () {
         $mdDialog.hide()
         networkService.setNetwork(context, currentNetwork)
+        storageService.setGlobal('userBackgrounds', backgrounds['user'])
         window.location.reload()
       }
 
@@ -1489,6 +1494,10 @@
         scope: $scope,
         fullscreen: true
       })
+    }
+
+    function showExchangeRate () {
+      return self.network.cmcTicker || self.network.token === 'ARK'
     }
 
     function manageNetworks () {
@@ -1845,129 +1854,6 @@
       self.selected.signedMessages = storageService.get('signed-' + self.selected.address)
     }
 
-    self.deleteSignedMessage = function (selectedAccount, signedMessage) {
-      var index = selectedAccount.signedMessages.indexOf(signedMessage)
-      selectedAccount.signedMessages.splice(index, index + 1)
-      storageService.set('signed-' + selectedAccount.address, selectedAccount.signedMessages)
-    }
-
-    function showMessage (message) {
-      $mdDialog.show(
-        $mdDialog.alert()
-          .parent(angular.element(document.getElementById('app')))
-          .clickOutsideToClose(true)
-          .title(message)
-          .ariaLabel(message)
-          .theme(self.currentTheme)
-          .ok(gettextCatalog.getString('Ok'))
-      )
-    }
-
-    self.signMessage = function (selectedAccount) {
-      console.log(selectedAccount)
-
-      function sign () {
-        var address = $scope.sign.selectedAccount.address
-        var passphrase = $scope.sign.passphrase
-        var message = $scope.sign.message
-        if (!selectedAccount.signedMessages) {
-          selectedAccount.signedMessages = []
-        }
-        var promisedSignature = null
-        if (selectedAccount.ledger) {
-          promisedSignature = accountService.signMessageWithLedger(message, selectedAccount.ledger)
-        } else {
-          promisedSignature = accountService.signMessage(message, passphrase)
-        }
-
-        promisedSignature.then(
-          function (result) {
-            selectedAccount.signedMessages.push({
-              publickey: selectedAccount.publicKey,
-              signature: result.signature,
-              message: message
-            })
-            storageService.set('signed-' + selectedAccount.address, selectedAccount.signedMessages)
-            $mdDialog.hide()
-          },
-          function (error) {
-            showMessage(error)
-          }
-        )
-      }
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-
-      $scope.sign = {
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        sign: sign,
-        cancel: cancel,
-        selectedAccount: selectedAccount
-      }
-
-      $mdDialog.show({
-        scope: $scope,
-        preserveScope: true,
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/signMessage.html',
-        clickOutsideToClose: false
-      })
-    }
-
-    self.verifyMessage = function (signedMessage) {
-      function verify () {
-        console.log($scope.verify)
-        var message = $scope.verify.message
-        var publickey = $scope.verify.publickey
-        var signature = $scope.verify.signature
-        var result = accountService.verifyMessage(message, publickey, signature)
-        $mdDialog.hide()
-        showMessage(result)
-      }
-
-      function verifyText () {
-        var list = JSON.parse($scope.verify.message)
-        var res = accountService.verifyMessage(list['message'], list['publickey'], list['signature'])
-        var message = gettextCatalog.getString('Error in signature processing')
-
-        $mdDialog.hide()
-        if (res) {
-          message = gettextCatalog.getString('The message is verified successfully')
-        } else {
-          message = gettextCatalog.getString('The message is NOT verified')
-        }
-        showMessage(message, res)
-      }
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      if (signedMessage) {
-        $scope.verify = signedMessage
-        verify()
-      } else {
-        $scope.verify = {
-          verify: verify,
-          verifyText: verifyText,
-          cancel: cancel,
-          publickey: self.selected.publicKey
-        }
-
-        $mdDialog.show({
-          scope: $scope,
-          preserveScope: true,
-          parent: angular.element(document.getElementById('app')),
-          templateUrl: './src/accounts/view/verifyMessage.html',
-          clickOutsideToClose: false
-        })
-      }
-    }
-
     function showValidateTransaction (selectedAccount, transaction) {
       function saveFile () {
         var fs = require('fs')
@@ -2029,8 +1915,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / UNIT).toString()
+        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI_UNIT).toString(),
+        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI_UNIT).toString()
       }
 
       $mdDialog.show({

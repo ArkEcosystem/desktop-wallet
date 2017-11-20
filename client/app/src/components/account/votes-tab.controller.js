@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('votesTab', {
-      templateUrl: 'src/components/account/votes-tab.html',
+      templateUrl: 'src/components/account/templates/votes-tab.html',
       bindings: {
         accountCtrl: '='
       },

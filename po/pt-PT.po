@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2017-11-18 16:39+0000\n"
+"PO-Revision-Date: 2017-11-18 16:39+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: pt_PT\n"
@@ -83,6 +83,9 @@ msgstr "Todos os teus registos, incluindo contas criadas, redes e contactos ser�
 msgid "Amount"
 msgstr "Montante"
 
+msgid "Amount ({{ul.network.symbol}})"
+msgstr "Montante ({{ul.network.symbol}})"
+
 msgid "Appearance"
 msgstr "Aspeto"
 
@@ -94,6 +97,9 @@ msgstr "Montante (Ѧ)"
 
 msgid "Approval"
 msgstr "Aprovação"
+
+msgid "Arabic"
+msgstr "Arábico"
 
 msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
 msgstr "Tens a certeza que desejas remover esta rede e todos os registos associados (contas e definições) deste computador. As tuas contas permanecerão seguras na cadeia de blocos."
@@ -112,6 +118,9 @@ msgstr "Fundo"
 
 msgid "Balance"
 msgstr "Saldo"
+
+msgid "Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!"
+msgstr "Antes de prosseguires, primeiro <strong>FAZ CÓPIA DE SEGURANÇA SEGURA DA FRASE-CHAVE</strong>, este cliente NÃO a armazena e não será possível recuperá-la futuramente! Se for perdida, apagada ou roubada - nós NÃO PODEMOS ajudar-te a recuperá-la. Não existe a opção \"Esqueci-me da frase\"!"
 
 msgid "Bulgarian"
 msgstr "Búlgaro"
@@ -146,6 +155,12 @@ msgstr "Não foi possível determinar se a conta pertence a um delegado"
 msgid "Change 1h/7h/7d"
 msgstr "Alterações 1h/7h/7d"
 
+msgid "Chinese - China"
+msgstr "Chinês - China"
+
+msgid "Chinese - Taiwan"
+msgstr "Chinês - Taiwan"
+
 msgid "Client"
 msgstr "Cliente"
 
@@ -179,6 +194,9 @@ msgstr "Copiado para a memória"
 msgid "Copy"
 msgstr "Copiar"
 
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "Não foi possível carregar a informação relativa aos delegados ativos - por favor verifica a ligação à internet"
+
 msgid "Create"
 msgstr "Criar"
 
@@ -193,6 +211,12 @@ msgstr "Criar Pasta Virtual"
 
 msgid "Create a new virtual folder"
 msgstr "Criar nova Pasta Virtual"
+
+msgid "Currency"
+msgstr "Moeda"
+
+msgid "Dark Mode"
+msgstr "Modo Noturno"
 
 msgid "Date"
 msgstr "Data"
@@ -242,6 +266,9 @@ msgstr "Inglês"
 msgid "Error in signature processing"
 msgstr "Erro ao processar a assinatura"
 
+msgid "Error in your Input."
+msgstr "Erro na introdução."
+
 msgid "Error when trying to login:"
 msgstr "Erro ao tentar entrar:"
 
@@ -251,11 +278,26 @@ msgstr "Erro:"
 msgid "Exchange"
 msgstr "Negociar"
 
+msgid "Expense"
+msgstr "Gasto"
+
 msgid "Explorer"
 msgstr "Explorador"
 
+msgid "Export Account"
+msgstr "Exportar Conta"
+
+msgid "Failed to save transaction file"
+msgstr "A operação de guardar o ficheiro de transação falhou"
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Taxa ({{ul.network.symbol}})"
+
 msgid "File"
 msgstr "Ficheiro"
+
+msgid "Finish"
+msgstr "Terminar"
 
 msgid "Fee (Ѧ)"
 msgstr "Taxa (Ѧ)"
@@ -268,6 +310,9 @@ msgstr "Forçar"
 
 msgid "Force?"
 msgstr "Forçar?"
+
+msgid "Format"
+msgstr "Formato"
 
 msgid "French"
 msgstr "Francês"
@@ -311,6 +356,9 @@ msgstr "Importar"
 msgid "Import Account"
 msgstr "Importar Conta"
 
+msgid "Income"
+msgstr "Recebimento"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Se és dono desta conta podes ativar a função de Pastas Virtuais. As Pastas Virtuais funcionam como subcontas para melhor organizares o teu património, sem existir a necessidade de realizar transações reais com pagamento de taxa. <br>\nAdicionalmente, esta conta será movida para a lista \"As Minhas Contas\"."
 
@@ -319,6 +367,12 @@ msgstr "Indonésio"
 
 msgid "Italian"
 msgstr "Italiano"
+
+msgid "Japanese"
+msgstr "Japonês"
+
+msgid "Korean"
+msgstr "Coreano"
 
 msgid "Label"
 msgstr "Etiqueta"
@@ -337,6 +391,12 @@ msgstr "Ledger Nano S"
 
 msgid "List full or delegate already voted."
 msgstr "A lista está completa ou o delegado realizou o seu voto"
+
+msgid "Load Tx From File"
+msgstr "Carregar Tx a partir de Ficheiro"
+
+msgid "Loading..."
+msgstr "Carregando..."
 
 msgid "Login"
 msgstr "Entrar"
@@ -437,6 +497,9 @@ msgstr "Frase-chave"
 msgid "Passphrase does not match your address"
 msgstr "A frase-chave não corresponde com o teu endereço"
 
+msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
+msgstr "A frase-chave é <strong>sensível às maiúsculas</strong>, cada carácter errado irá resultar em um endereço Ark diferente! As frase-chave <strong>não são gravadas</strong> neste computador pelo que tens de garantir que as tens <strong>registadas de forma segura!</strong>"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "A frase-chave não corresponde com a conta"
 
@@ -449,11 +512,20 @@ msgstr "Frase-chave eliminada"
 msgid "Passphrases saved"
 msgstr "Frase-chave gravada"
 
+msgid "Paste the entire signed message:"
+msgstr "Colar a totalidade da mensagem assinada:"
+
 msgid "Peer"
 msgstr "Par"
 
 msgid "Peer Status"
 msgstr "Estado de Paridade"
+
+msgid "Play sound when receiving transactions?"
+msgstr "Reproduzir som quando receberes uma transação?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "Por favor faz cópia de segurança da segunda frase-chave antes de continuar, este cliente NÃO a irá armazenar e por isso será impossível recuperá-la!"
 
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "Por favor escolhe um ficheiro para ser datado e submetido na cadeia de blocos"
@@ -494,6 +566,12 @@ msgstr "Por favor introduz as palavras das posições 3, 6 e 9 da tua frase-chav
 msgid "Polish"
 msgstr "Polaco"
 
+msgid "Portuguese - Brazil"
+msgstr "Português - Brasil"
+
+msgid "Portuguese - Portugal"
+msgstr "Português - Portugal"
+
 msgid "Portuguese"
 msgstr "Português"
 
@@ -521,11 +599,20 @@ msgstr "Posição"
 msgid "Receive Ark"
 msgstr "Receber Ark"
 
+msgid "Refresh Account"
+msgstr "Refrescar Conta"
+
+msgid "Refresh accounts automatically?"
+msgstr "Refrescar contas automaticamente?"
+
 msgid "Register Delegate"
 msgstr "Registar Delegado"
 
 msgid "Register delegate for"
 msgstr "Registar delegado para"
+
+msgid "Remaining balance"
+msgstr "Saldo remanescente"
 
 msgid "Remove"
 msgstr "Remover"
@@ -563,11 +650,17 @@ msgstr "Russo"
 msgid "SHA256 Signature"
 msgstr "Assinatura SHA256"
 
+msgid "SLIP 44"
+msgstr "SLIP 44"
+
 msgid "Save"
 msgstr "Guardar"
 
 msgid "Save Passphrases for"
 msgstr "Guardar frase-chave para"
+
+msgid "Save Tx Offline"
+msgstr "Guardar Tx Offline"
 
 msgid "Second Passphrase"
 msgstr "Segunda frase-chave"
@@ -584,6 +677,9 @@ msgstr "Enviar a Totalidade"
 msgid "Send Ark"
 msgstr "Enviar Ark"
 
+msgid "Serbian"
+msgstr "Sérvio"
+
 msgid "Send Ark from"
 msgstr "Enviar Ark de"
 
@@ -592,6 +688,9 @@ msgstr "Definir"
 
 msgid "Settings"
 msgstr "Definições"
+
+msgid "Show {{((!ul.showPublicKey) && 'public key' || 'address')}}"
+msgstr "Mostrar {{((!ul.showPublicKey) && 'public key' || 'address')}}"
 
 msgid "Sign"
 msgstr "Assinar"
@@ -608,6 +707,9 @@ msgstr "Assinar com Ledger"
 msgid "Signature"
 msgstr "Assinatura"
 
+msgid "Slovak"
+msgstr "Eslovaco"
+
 msgid "Slovenian"
 msgstr "Esloveno"
 
@@ -617,8 +719,14 @@ msgstr "Ligação Inteligente"
 msgid "So the block timestamp that will include this transaction will be a proof of existence of the file you have timestamped."
 msgstr "De forma que a datação do bloco que será incluída nestra transação seja a prova de existência do ficheiro que acabaste de submeter."
 
+msgid "Spanish"
+msgstr "Espanhol"
+
 msgid "Succesfully Logged In!"
 msgstr "Acesso efetuado com sucesso!"
+
+msgid "Swedish"
+msgstr "Sueco"
 
 msgid "Switch Network"
 msgstr "Trocar de Rede"
@@ -686,11 +794,17 @@ msgstr "Total {{ul.network.symbol}}"
 msgid "Transaction"
 msgstr "Transação"
 
+msgid "Transaction file successfully saved in"
+msgstr "O ficheiro da transação foi gravado corretamente"
+
 msgid "Transactions"
 msgstr "Transações"
 
 msgid "Type"
 msgstr "Tipo"
+
+msgid "Type an address or a name"
+msgstr "Introduz um endereço ou nome"
 
 msgid "Update vote from"
 msgstr "Atualizar voto de"
@@ -703,6 +817,9 @@ msgstr "Verificar"
 
 msgid "Verify Message"
 msgstr "Verificar Mensagem"
+
+msgid "Verify Text"
+msgstr "Verificar Texto"
 
 msgid "Vendor Field"
 msgstr "Campo do Fornecedor"

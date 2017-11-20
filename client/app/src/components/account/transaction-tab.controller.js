@@ -9,7 +9,7 @@
   angular
     .module('arkclient.components')
     .component('transactionTab', {
-      templateUrl: 'src/components/account/transaction-tab.html',
+      templateUrl: 'src/components/account/templates/transaction-tab.html',
       bindings: {
         accountCtrl: '=',
         transactionsCtrl: '='
