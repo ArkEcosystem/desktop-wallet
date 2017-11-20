@@ -73,7 +73,7 @@ describe('AccountBoxController', function () {
           { balance: 1 * ARKTOSHI_UNIT },
           { balance: 1 * ARKTOSHI_UNIT }
         ])
-        ctrl.refreshAccountBalances()
+        ctrl.accountCtrl.refreshAccountBalances()
         expect(ctrl.myAccountsBalance()).to.equal('20.00')
       })
     })
