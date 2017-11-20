@@ -310,6 +310,7 @@
             toastService.error('Network disconnected!')
           } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
             self.isNetworkConnected = true
+            self.refreshAccountBalances()
             toastService.success('Network connected and healthy!')
           }
         }, 500)
