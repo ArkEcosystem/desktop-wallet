@@ -149,7 +149,7 @@
 								<b><translate>Market Cap.</translate></b>
 							</div>
 
-							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.available_supply*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name] | formatCurrency:$ctrl.ul}}</span>
+							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.available_supply | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul}}</span>
 						</md-list-item>
 						<md-list-item ng-show="$ctrl.ul.connectedPeer.market.isOffline">
 							<b translate>Last checked</b> <span class="md-secondary">
