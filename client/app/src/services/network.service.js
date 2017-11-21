@@ -159,8 +159,14 @@
         if (res.data[0] && res.data[0].price_btc) {
           res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
         }
-        peer.market = res.data[0]
-        peer = updatePeerWithCurrencies(peer, res)
+        updatePeerWithCurrencies(peer, res)
+          .then((prices) => {
+            res.data[0].price = prices
+            peer.market = res.data[0]
+          })
+          .catch(() => {
+            peer.market = res.data[0]
+          })
         storageService.set('lastPrice', { market: peer.market, date: new Date() })
       }, failedTicker)
       .catch(failedTicker)
@@ -348,6 +354,7 @@
 
     // Updates peer with all currency values relative to the USD price.
     function updatePeerWithCurrencies(peer, res) {
+      let deferred = $q.defer()
       $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
         const USD_PRICE = Number(res.data[0].price_usd)
         var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
@@ -357,11 +364,13 @@
         })
         prices["btc"] = res.data[0].price_btc
         prices["usd"] = res.data[0].price_usd
-        peer.market.price = prices
         storageService.setGlobal('peerCurrencies', prices)
+        deferred.resolve(prices)
+      }, () => {
+        deferred.reject(false)
       })
 
-      return peer
+      return deferred.promise
     }
 
     listenNetworkHeight()
