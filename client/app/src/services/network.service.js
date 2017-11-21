@@ -354,9 +354,7 @@
 
     // Updates peer with all currency values relative to the USD price.
     function updatePeerWithCurrencies(peer, res) {
-      console.log("WE CALLED")
       peer = updateCurrencyConversionRates(peer)
-      console.log("WE LIVED")
       const USD_PRICE = Number(res.data[0].price_usd)
       var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
       var prices = {}
@@ -371,18 +369,15 @@
     }
 
     function updateCurrencyConversionRates (peer) {
-        console.log("WE CALLED GET CURRENCIES")
         if (storageService.getGlobal('conversionRates') !== undefined) {
-            console.log("WE HERE")
             var priceObj = storageService.getGlobal('conversionRates')
             peer.market.conversionRates = priceObj.rates
             var storedDateString = priceObj.date
             var storedDate = new Date(storedDateString)
             var storedCETDate = convertDateToCETDate (storedDate)
             var curCETDate = convertDateToCETDate (new Date())
-            console.log("WE ABOUT TO CALL IS BETWEEN")
             var updateCurrencies = isBetween4PM (storedCETDate, curCETDate)
-            if (true) {
+            if (updateCurrencies) {
                 getConversionRatesApiCall(peer)
             }
         }
@@ -399,7 +394,6 @@
           storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
           peer.market.conversionRates = result.data.rates
         })
-        console.log(peer.market.conversionRates)
         return peer
     }
     function isBetween4PM (storedCETDate, currCETDate) {
