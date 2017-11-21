@@ -1,6 +1,6 @@
 {
   "name": "KapuClient",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "productName": "KapuClient",
   "description": "Kapu Desktop",
   "main": "main.js",
@@ -50,7 +50,7 @@
   "homepage": "https://github.com/kapucoin/kapu-desktop#readme",
   "dependencies": {
     "about-window": "~1.7.0",
-    "ledgerco": "github:ledgerhq/ledger-node-js-api#master",
+    "ledgerco": "github:ledgerhq/ledger-node-js-api#6cde5978b9d0a4922f0d33520b16cc2184559ebc",
     "q": "^1.5.0"
   },
   "devDependencies": {

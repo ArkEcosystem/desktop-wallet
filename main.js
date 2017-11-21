@@ -105,7 +105,7 @@ function createWindow () {
         ledgercomm = null
         var result = {
           connected: false,
-          message: "Cannot connect to Ark application"
+          message: "Cannot connect to Kapu application"
         }
         event.returnValue = result
       }
