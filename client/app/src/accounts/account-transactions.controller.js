@@ -15,17 +15,11 @@
     const vm = this
 
     vm.INCREASE_API = 50
-    vm.INCREASE_SCROLL = 25
+    vm.INCREASE_SCROLL = 50
 
     vm.address = undefined
-    vm.transactions = []
 
-    vm.pageSize = 25
-    vm.limit = 50
-    vm.offset = 0
-
-    vm.isBusy = false // loading
-    vm.isComplete = false // disable the request
+    reset()
 
     $scope.$on('account:onSelect', function (evt, account) {
       vm.address = account.address
@@ -75,12 +69,12 @@
     }
 
     function reset () {
-      vm.pageSize = 25
-      vm.offset = 0
+      vm.pageSize = 50
+      vm.offset = 25
       vm.transactions = []
 
-      vm.isBusy = false
-      vm.isComplete = false
+      vm.isBusy = false // loading
+      vm.isComplete = false // disable the request
     }
 
     function updateTransactions (transactions) {
