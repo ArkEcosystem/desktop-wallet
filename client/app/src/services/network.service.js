@@ -354,23 +354,93 @@
 
     // Updates peer with all currency values relative to the USD price.
     function updatePeerWithCurrencies(peer, res) {
-      let deferred = $q.defer()
-      $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
-        const USD_PRICE = Number(res.data[0].price_usd)
-        var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
-        var prices = {}
-        currencies.forEach(function(currency) {
-          prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
-        })
-        prices["btc"] = res.data[0].price_btc
-        prices["usd"] = res.data[0].price_usd
-        storageService.setGlobal('peerCurrencies', prices)
-        deferred.resolve(prices)
-      }, () => {
-        deferred.reject(false)
+      console.log("WE CALLED")
+      peer = updateCurrencyConversionRates(peer)
+      console.log("WE LIVED")
+      const USD_PRICE = Number(res.data[0].price_usd)
+      var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+      var prices = {}
+      currencies.forEach(function(currency) {
+        prices[currency] = peer.market.conversionRates[currency.toUpperCase()] * USD_PRICE
       })
+      prices["btc"] = res.data[0].price_btc
+      prices["usd"] = res.data[0].price_usd
+      storageService.setGlobal('peerCurrencies', { prices: prices, date: new Date() })
 
-      return deferred.promise
+      return peer
+    }
+
+    function updateCurrencyConversionRates (peer) {
+        console.log("WE CALLED GET CURRENCIES")
+        if (storageService.getGlobal('conversionRates') !== undefined) {
+            console.log("WE HERE")
+            var priceObj = storageService.getGlobal('conversionRates')
+            peer.market.conversionRates = priceObj.rates
+            var storedDateString = priceObj.date
+            var storedDate = new Date(storedDateString)
+            var storedCETDate = convertDateToCETDate (storedDate)
+            var curCETDate = convertDateToCETDate (new Date())
+            console.log("WE ABOUT TO CALL IS BETWEEN")
+            var updateCurrencies = isBetween4PM (storedCETDate, curCETDate)
+            if (true) {
+                getConversionRatesApiCall(peer)
+            }
+        }
+
+        else {
+            getConversionRatesApiCall(peer)
+        }
+
+        return peer
+    }
+
+    function getConversionRatesApiCall (peer) {
+        $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
+          storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
+          peer.market.conversionRates = result.data.rates
+        })
+        console.log(peer.market.conversionRates)
+        return peer
+    }
+    function isBetween4PM (storedCETDate, currCETDate) {
+        var storedTime = storedCETDate.getTime()
+        var currTime = currCETDate.getTime()
+
+        const storedHour = storedCETDate.getHours()
+        const currHour = currCETDate.getHours()
+        const FOUR_PM = 16
+
+        // greater than a day we will want to update.
+        if (currTime - storedTime > 24*60*60*1000) {
+            return true
+        }
+
+        // if stored hour is before 4pm and current is after 4pm, api should be updated
+        else if (storedHour < FOUR_PM && currHour >= FOUR_PM) {
+            return true
+        }
+
+        // ex. stored  = 8pm curr = 5pm the next day. should be true
+        // ex. but if stored = 8pm and curr = 9pm (same day), it hasn't crossed 4pm so false
+        // ex. if stored = 8pm and curr = 9pm (it's been more than a day should have already been caught)
+
+        else if (storedHour >= FOUR_PM && (currHour >= FOUR_PM && currHour < storedHour)) {
+            return true
+        }
+
+        else {
+            return false
+        }
+    }
+
+    function convertDateToCETDate (beginDate) {
+        var localTime = beginDate.getTime()
+        var localOffset = beginDate.getTimezoneOffset() * 1000 * 60
+        var utcTime = localTime + localOffset
+        const CET_OFFSET = 1.0
+        var cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
+        var cetDate = new Date(cetTime)
+        return cetDate;
     }
 
     listenNetworkHeight()
