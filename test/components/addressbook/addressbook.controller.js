@@ -34,6 +34,7 @@ describe('AddressbookController', function () {
       $provide.value('gettextCatalog', getTextCatalogMock)
       $provide.value('accountService', accountServiceMock)
       $provide.value('toastService', toastServiceMock)
+      $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
     })
 
     inject((_$compile_, _$rootScope_, _$controller_) => {

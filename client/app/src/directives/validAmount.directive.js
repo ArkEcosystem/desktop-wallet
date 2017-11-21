@@ -2,8 +2,8 @@
   'use strict'
 
   angular.module('arkclient.directives')
-    .directive('validAmount', [
-      function () {
+    .directive('validAmount', ['ARKTOSHI_UNIT',
+      function (ARKTOSHI_UNIT) {
         return {
           require: 'ngModel',
           link: function (scope, elem, attrs, ctrl) {
@@ -11,12 +11,10 @@
               if (typeof value === 'undefined' || value === 0) {
                 ctrl.$pristine = true
               }
-
-              var satoshis = 100000000
-              var num = Number((value * satoshis).toFixed(0)) // 1.1 = 110000000
-              var totalBalance = Number(scope.send.totalBalance * satoshis)
-              var remainingBalance = ((totalBalance - num) / satoshis)
-              scope.send.remainingBalance = isNaN(remainingBalance) ? totalBalance / satoshis : remainingBalance
+              var num = Number((value * ARKTOSHI_UNIT).toFixed(0)) // 1.1 = 110000000
+              var totalBalance = Number(scope.send.totalBalance * ARKTOSHI_UNIT)
+              var remainingBalance = ((totalBalance - num) / ARKTOSHI_UNIT)
+              scope.send.remainingBalance = isNaN(remainingBalance) ? totalBalance / ARKTOSHI_UNIT : remainingBalance
 
               if (typeof num === 'number' && num > 0) {
                 if (num > Number.MAX_SAFE_INTEGER) {

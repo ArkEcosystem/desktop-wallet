@@ -29,7 +29,7 @@
           </td>
           <td md-cell>{{it.date | date: 'short'}}</td>
           <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
-            <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount/$ctrl.ul.ARKTOSHI_UNIT)) + ' / -' + (it.fee/$ctrl.ul.ARKTOSHI_UNIT) }}</md-button>
+            <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount | convertToArkValue)) + ' / -' + (it.fee | convertToArkValue) }}</md-button>
           </td>
           <td ng-if="it.type>0" md-cell>
             <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{it.humanTotal}}</md-button>
