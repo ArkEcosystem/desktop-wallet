@@ -36,16 +36,6 @@
 
       return this.myAccountsBalance() * price
     }
-
-    this.refreshAccountBalances = () => {
-      networkService.getPrice()
-
-      this.accountCtrl.getAllAccounts().forEach( account => {
-        accountService
-          .refreshAccount(account)
-          .then( updated => account.balance = updated.balance )
-      })
-    }
   }
 
 })()
