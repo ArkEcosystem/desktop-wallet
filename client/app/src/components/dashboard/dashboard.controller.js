@@ -46,9 +46,5 @@
         })
         .catch(_ => toastService.error('Error loading the announcements.', 3000))
     }
-
-    this.openExternal = url => {
-      require('electron').shell.openExternal(url)
-    }
   }
 })()
