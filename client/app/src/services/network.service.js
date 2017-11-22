@@ -367,7 +367,8 @@
       return peer
     }
 
-    // Updates the currency conversion rates IF
+    // Updates the currency conversion rates IF necessary
+    // Necessary if it isn't stored, or if the stored value is too old
     function updateCurrencyConversionRates (peer) {
       if (storageService.getGlobal('conversionRates') !== undefined) {
         var priceObj = storageService.getGlobal('conversionRates')
