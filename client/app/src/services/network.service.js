@@ -151,7 +151,7 @@
 
       if (!network.cmcTicker && network.token !== 'ARK') {
         failedTicker()
-        return;
+        return
       }
 
       $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
@@ -347,94 +347,84 @@
     }
 
     // Returns the BTC value in satoshi
-    function convertToSatoshi(val) {
-      return Number(val).toFixed(8);
+    function convertToSatoshi (val) {
+      return Number(val).toFixed(8)
     }
 
-
     // Updates peer with all currency values relative to the USD price.
-    function updatePeerWithCurrencies(peer, res) {
+    function updatePeerWithCurrencies (peer, res) {
       peer = updateCurrencyConversionRates(peer)
       const USD_PRICE = Number(res.data[0].price_usd)
-      var currencies = ["aud", "brl", "cad", "chf", "cny", "eur", "gbp", "hkd", "idr", "inr", "jpy", "krw", "mxn", "rub"]
+      var currencies = ['aud', 'brl', 'cad', 'chf', 'cny', 'eur', 'gbp', 'hkd', 'idr', 'inr', 'jpy', 'krw', 'mxn', 'rub']
       var prices = {}
-      currencies.forEach(function(currency) {
+      currencies.forEach(function (currency) {
         prices[currency] = peer.market.conversionRates[currency.toUpperCase()] * USD_PRICE
       })
-      prices["btc"] = res.data[0].price_btc
-      prices["usd"] = res.data[0].price_usd
+      prices['btc'] = res.data[0].price_btc
+      prices['usd'] = res.data[0].price_usd
       storageService.setGlobal('peerCurrencies', { prices: prices, date: new Date() })
 
       return peer
     }
 
+    // Updates the currency conversion rates IF
     function updateCurrencyConversionRates (peer) {
-        if (storageService.getGlobal('conversionRates') !== undefined) {
-            var priceObj = storageService.getGlobal('conversionRates')
-            peer.market.conversionRates = priceObj.rates
-            var storedDateString = priceObj.date
-            var storedDate = new Date(storedDateString)
-            var storedCETDate = convertDateToCETDate (storedDate)
-            var curCETDate = convertDateToCETDate (new Date())
-            var updateCurrencies = isBetween4PM (storedCETDate, curCETDate)
-            if (updateCurrencies) {
-                getConversionRatesApiCall(peer)
-            }
+      if (storageService.getGlobal('conversionRates') !== undefined) {
+        var priceObj = storageService.getGlobal('conversionRates')
+        peer.market.conversionRates = priceObj.rates
+        var storedDateString = priceObj.date
+        var storedDate = new Date(storedDateString)
+        var storedCETDate = convertDateToCETDate(storedDate)
+        var curCETDate = convertDateToCETDate(new Date())
+        var updateCurrencies = checkToUpdateConversionRates(storedCETDate, curCETDate)
+        if (updateCurrencies) {
+          getConversionRatesApiCall(peer)
         }
-
-        else {
-            getConversionRatesApiCall(peer)
-        }
-
-        return peer
+      } else {
+        getConversionRatesApiCall(peer)
+      }
+      return peer
     }
 
+    // api call to get the conversion rates for currencies
     function getConversionRatesApiCall (peer) {
-        $http.get('https://api.fixer.io/latest?base=USD', { timeout: 2000}).then( function (result) {
-          storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
-          peer.market.conversionRates = result.data.rates
-        })
-        return peer
+      $http.get('https://api.fixer.io/latest?base=USD', {timeout: 2000}).then(function (result) {
+        storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
+        peer.market.conversionRates = result.data.rates
+      })
+      return peer
     }
-    function isBetween4PM (storedCETDate, currCETDate) {
-        var storedTime = storedCETDate.getTime()
-        var currTime = currCETDate.getTime()
 
-        const storedHour = storedCETDate.getHours()
-        const currHour = currCETDate.getHours()
-        const FOUR_PM = 16
+    // Checks if the stored time and the current time has crossed 4pm CET time
+    function checkToUpdateConversionRates (storedCETDate, currCETDate) {
+      var storedTime = storedCETDate.getTime()
+      var currTime = currCETDate.getTime()
+
+      const storedHour = storedCETDate.getHours()
+      const currHour = currCETDate.getHours()
+      const FOUR_PM = 16
 
         // greater than a day we will want to update.
-        if (currTime - storedTime > 24*60*60*1000) {
-            return true
-        }
-
-        // if stored hour is before 4pm and current is after 4pm, api should be updated
-        else if (storedHour < FOUR_PM && currHour >= FOUR_PM) {
-            return true
-        }
-
-        // ex. stored  = 8pm curr = 5pm the next day. should be true
-        // ex. but if stored = 8pm and curr = 9pm (same day), it hasn't crossed 4pm so false
-        // ex. if stored = 8pm and curr = 9pm (it's been more than a day should have already been caught)
-
-        else if (storedHour >= FOUR_PM && (currHour >= FOUR_PM && currHour < storedHour)) {
-            return true
-        }
-
-        else {
-            return false
-        }
+      if (currTime - storedTime > 24 * 60 * 60 * 1000) {
+        return true
+      } else if (storedHour < FOUR_PM && currHour >= FOUR_PM) {
+        return true
+      } else if (storedHour >= FOUR_PM && (currHour >= FOUR_PM && currHour < storedHour)) {
+        return true
+      } else {
+        return false
+      }
     }
 
+    // Takes in a date and converts it into CET time
     function convertDateToCETDate (beginDate) {
-        var localTime = beginDate.getTime()
-        var localOffset = beginDate.getTimezoneOffset() * 1000 * 60
-        var utcTime = localTime + localOffset
-        const CET_OFFSET = 1.0
-        var cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
-        var cetDate = new Date(cetTime)
-        return cetDate;
+      var localTime = beginDate.getTime()
+      var localOffset = beginDate.getTimezoneOffset() * 1000 * 60
+      var utcTime = localTime + localOffset
+      const CET_OFFSET = 1.0
+      var cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
+      var cetDate = new Date(cetTime)
+      return cetDate
     }
 
     listenNetworkHeight()
