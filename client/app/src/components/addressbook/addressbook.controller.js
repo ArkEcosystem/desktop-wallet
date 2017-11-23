@@ -3,9 +3,9 @@
 
   angular
     .module('arkclient.components')
-    .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'accountService', AddressbookController])
+    .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'accountService', 'ARKTOSHI_UNIT', AddressbookController])
 
-  function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService) {
+  function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService, ARKTOSHI_UNIT) {
     var self = this
     // var contacts
     self.trim = function (str) {
@@ -235,7 +235,7 @@
             return prev + el
           })
 
-          stats.income.amount = accountService.numberToFixed(incomeAmount / 100000000).toFixed(2)
+          stats.income.amount = accountService.numberToFixed(incomeAmount / ARKTOSHI_UNIT).toFixed(2)
         }
 
         if (expendTx.length > 0) {
@@ -245,7 +245,7 @@
             return prev + el
           })
 
-          stats.expend.amount = accountService.numberToFixed(expendAmount / 100000000).toFixed(2)
+          stats.expend.amount = accountService.numberToFixed(expendAmount / ARKTOSHI_UNIT).toFixed(2)
         }
       }
 

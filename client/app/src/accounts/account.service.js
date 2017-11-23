@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'ARKTOSHI_UNIT', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, ARKTOSHI_UNIT) {
     var self = this
     var ark = require('../node_modules/arkjs')
 
@@ -261,7 +261,7 @@
         transaction.total = -transaction.amount - transaction.fee
       }
       // to avoid small transaction to be displayed as 1e-8
-      transaction.humanTotal = numberToFixed(transaction.total / 100000000) + ''
+      transaction.humanTotal = numberToFixed(transaction.total / ARKTOSHI_UNIT) + ''
 
       return transaction
     }
@@ -655,7 +655,7 @@
         var votedDelegate = votedDelegates[j]
         if (arrayObjectIndexOf(notRemovedDelegates, votedDelegate.publicKey, 'publicKey') === -1) {
           votedDelegate.vote = '-'
-          difflist.push(delegate)
+          difflist.push(votedDelegate)
         }
         if (difflist.length === 33) {
           assets.push(difflist)
@@ -744,10 +744,10 @@
                 if (value === null) {
                   virtual[folder].amount = null
                 } else {
-                  virtual[folder].amount = value * 100000000
+                  virtual[folder].amount = value * ARKTOSHI_UNIT
                 }
               } else {
-                return virtual[folder].amount === null ? '' : virtual[folder].amount / 100000000
+                return virtual[folder].amount === null ? '' : virtual[folder].amount / ARKTOSHI_UNIT
               }
             }
           }
