@@ -353,18 +353,19 @@
 
     // Updates peer with all currency values relative to the USD price.
     function updatePeerWithCurrencies (peer, res) {
+      let deferred = $q.defer()
       peer = updateCurrencyConversionRates(peer)
       const USD_PRICE = Number(res.data[0].price_usd)
-      var currencies = ['aud', 'brl', 'cad', 'chf', 'cny', 'eur', 'gbp', 'hkd', 'idr', 'inr', 'jpy', 'krw', 'mxn', 'rub']
+      var currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
       var prices = {}
       currencies.forEach(function (currency) {
-        prices[currency] = peer.market.conversionRates[currency.toUpperCase()] * USD_PRICE
+        prices[currency.toLowerCase()] = peer.market.conversionRates[currency] * USD_PRICE
       })
       prices['btc'] = res.data[0].price_btc
       prices['usd'] = res.data[0].price_usd
-      storageService.setGlobal('peerCurrencies', { prices: prices, date: new Date() })
-
-      return peer
+      storageService.setGlobal('peerCurrencies', prices)
+      deferred.resolve(prices)
+      return deferred.promise
     }
 
     // Updates the currency conversion rates IF necessary
@@ -389,7 +390,9 @@
 
     // api call to get the conversion rates for currencies
     function getConversionRatesApiCall (peer) {
-      $http.get('https://api.fixer.io/latest?base=USD', {timeout: 2000}).then(function (result) {
+      var currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
+      var apiCall = createCurrencyConversionApiCall(currencies)
+      $http.get(apiCall, {timeout: 2000}).then(function (result) {
         storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
         peer.market.conversionRates = result.data.rates
       })
@@ -426,6 +429,12 @@
       var cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
       var cetDate = new Date(cetTime)
       return cetDate
+    }
+
+    function createCurrencyConversionApiCall (currencies) {
+      var getRequest = 'https://api.fixer.io/latest?base=USD&symbols='
+      getRequest += currencies.toString()
+      return getRequest
     }
 
     listenNetworkHeight()
