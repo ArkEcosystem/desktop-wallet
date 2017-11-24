@@ -15,27 +15,22 @@
     const vm = this
 
     vm.INCREASE_API = 50
-    vm.INCREASE_SCROLL = 10
+    vm.INCREASE_SCROLL = 50
 
     vm.address = undefined
-    vm.transactions = []
 
-    vm.pageSize = 10
-    vm.limit = 50
-    vm.offset = 0
-
-    vm.isBusy = false // loading
-    vm.isComplete = false // disable the request
+    reset()
 
     $scope.$on('account:onSelect', function (evt, account) {
-      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
-      reset()
-
       vm.address = account.address
+      reset()
+      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
       updateTransactions(account.transactions)
     })
 
     $scope.$on('account:onRefreshTransactions', function (evt, transactions) {
+      reset()
+      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
       updateTransactions(transactions)
     })
 
@@ -74,12 +69,12 @@
     }
 
     function reset () {
-      vm.pageSize = 10
-      vm.offset = 0
+      vm.pageSize = 50
+      vm.offset = 25
       vm.transactions = []
 
-      vm.isBusy = false
-      vm.isComplete = false
+      vm.isBusy = false // loading
+      vm.isComplete = false // disable the request
     }
 
     function updateTransactions (transactions) {

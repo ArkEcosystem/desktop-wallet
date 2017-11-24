@@ -6,7 +6,7 @@
       <span ng-show="$ctrl.ac.showExchangeRate()">/ {{$ctrl.myAccountsCurrencyBalance() | formatCurrency:$ctrl.ac}}</span>
     </h2>
     <span flex></span>
-    <md-button class="share" ng-click="$ctrl.refreshAccountBalances()" aria-label="Refresh balances">
+    <md-button class="share" ng-click="$ctrl.ac.refreshAccountBalances()" aria-label="Refresh balances">
       <md-icon md-font-library="material-icons">cached</md-icon>
     </md-button>
   </div>
@@ -46,7 +46,7 @@
           {{it.username||it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
         </span>
         <span class="md-secondary">
-          {{$ctrl.ac.network.symbol}} {{it.balance/$ctrl.ac.ARKTOSHI_UNIT}}
+          {{$ctrl.ac.network.symbol}} {{it.balance | convertToArkValue}}
         </span>
       </md-list-item>
     </md-list>
