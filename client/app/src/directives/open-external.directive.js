@@ -10,7 +10,7 @@
         restrict: 'A',
         require: '?ngModel',
         link: function (scope, element, attrs, ctrl) {
-          angular.element(element).bind('click', function(event) {
+          angular.element(element).bind('click', function (event) {
             const url = scope.$eval(attrs.openExternal)
             require('electron').shell.openExternal(url)
           })

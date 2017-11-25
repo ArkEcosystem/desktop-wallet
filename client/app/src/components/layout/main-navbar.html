@@ -5,7 +5,7 @@
     </md-button>
 		<img src="ark.png" alt="" height="40">
 		<md-button ng-click="$ctrl.ul.selected?$ctrl.ul.selected=null:$ctrl.ul.selected=$ctrl.ul.accounts[0]"><strong>{{$ctrl.ul.network.token}} <translate>Client</translate> - {{$ctrl.ul.clientVersion}}</strong></md-button>
-		<md-button class="new-version-button" ng-if="$ctrl.ul.clientVersion!=$ctrl.ul.latestClientVersion" open-external="https://github.com/ArkEcosystem/ark-desktop/releases'" aria-label="New version available!">
+		<md-button class="new-version-button" ng-if="$ctrl.ul.clientVersion!=$ctrl.ul.latestClientVersion" open-external="'https://github.com/ArkEcosystem/ark-desktop/releases'" aria-label="New version available!">
 			<translate>New version available!</translate>
 		</md-button>
 
