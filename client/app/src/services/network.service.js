@@ -372,12 +372,12 @@
     // Necessary if it isn't stored, or if the stored value is too old
     function updateCurrencyConversionRates (peer) {
       if (storageService.getGlobal('conversionRates') !== undefined) {
-        var priceObj = storageService.getGlobal('conversionRates')
+        let priceObj = storageService.getGlobal('conversionRates')
         peer.market.conversionRates = priceObj.rates
-        var storedDateString = priceObj.date
-        var storedDate = new Date(storedDateString)
-        var storedCETDate = convertDateToCETDate(storedDate)
-        var curCETDate = convertDateToCETDate(new Date())
+        let storedDateString = priceObj.date
+        let storedDate = new Date(storedDateString)
+        let storedCETDate = convertDateToCETDate(storedDate)
+        let curCETDate = convertDateToCETDate(new Date())
         var updateCurrencies = checkToUpdateConversionRates(storedCETDate, curCETDate)
         if (updateCurrencies) {
           getConversionRatesApiCall(peer)
@@ -401,8 +401,8 @@
 
     // Checks if the stored time and the current time has crossed 4pm CET time
     function checkToUpdateConversionRates (storedCETDate, currCETDate) {
-      var storedTime = storedCETDate.getTime()
-      var currTime = currCETDate.getTime()
+      const storedTime = storedCETDate.getTime()
+      const currTime = currCETDate.getTime()
 
       const storedHour = storedCETDate.getHours()
       const currHour = currCETDate.getHours()
@@ -422,17 +422,17 @@
 
     // Takes in a date and converts it into CET time
     function convertDateToCETDate (beginDate) {
-      var localTime = beginDate.getTime()
-      var localOffset = beginDate.getTimezoneOffset() * 1000 * 60
-      var utcTime = localTime + localOffset
+      let localTime = beginDate.getTime()
+      let localOffset = beginDate.getTimezoneOffset() * 1000 * 60
+      let utcTime = localTime + localOffset
       const CET_OFFSET = 1.0
-      var cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
-      var cetDate = new Date(cetTime)
+      let cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
+      let cetDate = new Date(cetTime)
       return cetDate
     }
 
     function createCurrencyConversionApiCall (currencies) {
-      var getRequest = 'https://api.fixer.io/latest?base=USD&symbols='
+      let getRequest = 'https://api.fixer.io/latest?base=USD&symbols='
       getRequest += currencies.toString()
       return getRequest
     }
