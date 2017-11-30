@@ -203,7 +203,7 @@
   }])
 
   app.service('ShapeShiftApiService', function ($q) {
-    var SSA = new ShapeShift.ShapeShiftApi()
+    var SSA = new ShapeShift.ShapeShiftApi() // eslint-disable-line no-undef
     return {
       coins: function () {
         var promise = $q.defer()

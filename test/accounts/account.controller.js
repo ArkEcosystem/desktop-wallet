@@ -100,7 +100,7 @@ describe('AccountController', function () {
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('$mdToast', mdToastMock)
       $provide.value('gettextCatalog', getTextCatalogMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
+      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject((_$compile_, _$rootScope_, _$controller_) => {

@@ -219,7 +219,7 @@
     if (!self.network.themeDark) self.network.themeDark = false
 
     // will be used in view
-    self.currentTheme = 'default';//self.network.theme
+    self.currentTheme = 'default'// self.network.theme
 
     // set 'dynamic' as the default theme
     generateDynamicPalette(function (name) {
@@ -240,7 +240,7 @@
 
       var transactions = selected.transactions || []
 
-      if (transactions.length > 0 && transactions[0].confirmations == 0) {
+      if (transactions.length > 0 && transactions[0].confirmations === 0) {
         return self.refreshCurrentAccount()
       }
 
@@ -413,8 +413,6 @@
 
     self.getMarketInfo(self.selectedCoin)
 
-    var setExchangBuyExpirationProgress = function (timestamp) {}
-
     self.buy = function () {
       if (self.exchangeEmail) storageService.set('email', self.exchangeEmail)
       if (self.selectedCoin) storageService.set('selectedCoin', self.selectedCoin)
@@ -474,8 +472,6 @@
     }
 
     var completeExchangeSell = function (timestamp) {
-      self.exchangeTransaction = transaction
-      self.exchangeSell = resp
       self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timestamp / 1000
       self.exchangeSell.expirationProgress = 0
       self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000)
@@ -489,16 +485,16 @@
         }
       }, 200)
 
-      self.exchangeSellTransaction = transaction
-      changerService.monitorExchange(resp).then(
+      self.exchangeSellTransaction = transaction // eslint-disable-line no-undef
+      changerService.monitorExchange(resp).then( // eslint-disable-line no-undef
         function (data) {
           self.exchangeHistory = changerService.getHistory()
         },
         function (data) {},
         function (data) {
-          if (data.payee && self.exchangeSell.payee != data.payee) {
+          if (data.payee && self.exchangeSell.payee !== data.payee) {
             self.exchangeSell = data
-            self.exchangeHistory = changer.getHistory()
+            self.exchangeHistory = changerService.getHistory()
           } else {
             self.exchangeSell.monitor = data
           }
@@ -625,7 +621,7 @@
         return x.name
       })
       var currencyIndex = currenciesNames.indexOf(self.currency.name)
-      var newIndex = currencyIndex == currenciesNames.length - 1 ? 0 : currencyIndex + 1
+      var newIndex = currencyIndex === currenciesNames.length - 1 ? 0 : currencyIndex + 1
 
       self.currency = self.currencies[newIndex]
       self.changeCurrency()
@@ -837,10 +833,10 @@
     self.refreshAccountBalances = () => {
       networkService.getPrice()
 
-      self.getAllAccounts().forEach( account => {
+      self.getAllAccounts().forEach(account => {
         accountService
           .refreshAccount(account)
-          .then(updated => account.balance = updated.balance)
+          .then(updated => { account.balance = updated.balance })
       })
     }
 
@@ -1040,7 +1036,7 @@
             // check if sponsors are already voted
             if (self.selected.delegates) {
               let newsponsors = []
-              for (var i = 0; i < sponsors.length; i++) {
+              for (let i = 0; i < sponsors.length; i++) {
                 console.log(sponsors[i])
                 if (indexOfDelegates(self.selected.delegates, sponsors[i]) < 0) {
                   newsponsors.push(sponsors[i])
@@ -1049,7 +1045,7 @@
               sponsors = newsponsors
             }
 
-            for (var i = 0; i < sponsors.length; i++) {
+            for (let i = 0; i < sponsors.length; i++) {
               if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, sponsors[i]) < 0) {
                 selectedAccount.selectedVotes.push(sponsors[i])
               }
@@ -1238,14 +1234,14 @@
         .dark()
       $mdThemingProvider.$get().generateTheme('dark')
       // set dark mode
-      if (self.network.themeDark) {self.currentTheme = 'dark'}
+      if (self.network.themeDark) { self.currentTheme = 'dark' }
     }
 
     // Compare vibrant colors from image with default material palette
     // And returns the most similar primary and accent palette
     function generateDynamicPalette (callback) {
       if (!self.network.background) {
-        callback(false)
+        callback(false) // eslint-disable-line standard/no-callback-literal
         return
       }
 
@@ -1258,7 +1254,7 @@
       var match = self.network.background.match(regExp)
 
       if (!match) {
-        callback(false)
+        callback(false) // eslint-disable-line standard/no-callback-literal
         return
       }
 
@@ -1266,7 +1262,7 @@
 
       vibrant.from(url).getPalette(function (err, palette) {
         if (err || !palette.Vibrant) {
-          callback(false)
+          callback(false) // eslint-disable-line standard/no-callback-literal
           return
         }
 
@@ -1296,7 +1292,7 @@
 
         self.currentTheme = self.network.theme
 
-        callback('dynamic')
+        callback('dynamic') // eslint-disable-line standard/no-callback-literal
       })
     }
 
@@ -1336,7 +1332,7 @@
 
       // find files in directory with same key
       for (var folder in backgrounds) {
-        var fullPath = path.resolve(assetsPath, folder)
+        let fullPath = path.resolve(assetsPath, folder)
 
         if (fs.existsSync(path.resolve(fullPath))) { // check dir exists
           var image = {}
@@ -1359,7 +1355,7 @@
         var mathPath = backgrounds['user'][name].match(/\((.*)\)/)
         if (mathPath) {
           let filePath = mathPath[1].replace(/'/g, ``)
-          var fullPath = require('path').join(__dirname, filePath)
+          let fullPath = require('path').join(__dirname, filePath)
           if (!fs.existsSync(filePath) && !fs.existsSync(fullPath)) {
             delete backgrounds['user'][name]
             storageService.setGlobal('userBackgrounds', backgrounds['user'])
@@ -1689,7 +1685,7 @@
         }
       }
 
-      function querySearch (text) {
+      function querySearch (text) { // eslint-disable-line no-unused-vars
         text = text.toLowerCase()
         var filter = self.accounts.filter(function (account) {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.username && (account.username.toLowerCase().indexOf(text) > -1))

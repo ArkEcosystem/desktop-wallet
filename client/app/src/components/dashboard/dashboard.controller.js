@@ -14,9 +14,8 @@
     })
 
   function DashboardController ($scope, $mdToast, toastService, feedService, storageService) {
-
     this.$onInit = () => {
-      setTimeout(()=> this.showAnnouncements(), 1000)
+      setTimeout(() => this.showAnnouncements(), 1000)
     }
 
     this.showAnnouncements = () => {
@@ -27,7 +26,7 @@
           const stored = storageService.getGlobal('announcements')
           const last = stored ? stored.last : null
 
-          if (!last || last.guid !== entry.guid && last.isoDate < entry.isoDate) {
+          if (!last || (last.guid !== entry.guid && last.isoDate < entry.isoDate)) {
             const announcement = {
               guid: entry.guid,
               date: entry.isoDate,
@@ -52,5 +51,4 @@
       require('electron').shell.openExternal(url)
     }
   }
-
 })()

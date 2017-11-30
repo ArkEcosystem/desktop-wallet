@@ -23,5 +23,4 @@
       this.ab = this.addressBookCtrl
     }
   }
-
 })()

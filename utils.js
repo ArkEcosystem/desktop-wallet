@@ -29,7 +29,7 @@ LedgerUtils.splitPath = function (path) {
     if (isNaN(number)) {
       return
     }
-    if ((element.length > 1) && (element[element.length - 1] == "'")) {
+    if ((element.length > 1) && (element[element.length - 1] === "'")) {
       number += 0x80000000
     }
     result.push(number)

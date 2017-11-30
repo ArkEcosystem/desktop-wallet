@@ -1,5 +1,5 @@
 // TODO make sure this closure make sense
-
+/* eslint-disable */
 var ShapeShift = (function () {
   var JP = JSON.parse
   var JS = JSON.stringify
@@ -298,3 +298,4 @@ var ShapeShift = (function () {
 })()
 var PUBLIC_API_KEY = '08ef330fe264f674ddd4943a5156cfb1ea06f10b95d5db54781afa3d8b108100874083d53b28afa5ce58bf3e834158a3114db725bce5b49da9454ef036753599'
 var SSA = new ShapeShift.ShapeShiftApi(PUBLIC_API_KEY)
+/* eslint-enable */

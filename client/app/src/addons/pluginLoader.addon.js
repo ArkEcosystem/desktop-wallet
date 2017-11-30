@@ -34,14 +34,14 @@
       // parse arguments and prepare for sending
       var sendargs = ''
       for (var arg = 1; arg < arguments.length; ++arg) {
-        if (sendargs != '') {
+        if (sendargs !== '') {
           sendargs = sendargs + ',' + JSON.stringify(arguments[arg])
         } else {
           sendargs = JSON.stringify(arguments[arg])
         }
       }
       // make callback function available for plugin
-      function triggerEvent (eventname) {
+      function triggerEvent (eventname) { // eslint-disable-line no-unused-vars
         if (eventname === 'getLocalAccount') {
           return accountService.getAccount(arguments[1])
         }
@@ -55,7 +55,7 @@
           var js = readFile(path.join(pluginsDirectory, element, pluginFilename))
           // run the js file and call the function with the prepared parameters
           // NOTE this is DANGEROUS!
-          eval(js + ';' + plugin['events'][eventname] + '(' + sendargs + ')')
+          eval(js + ';' + plugin['events'][eventname] + '(' + sendargs + ')') // eslint-disable-line no-eval
         }
       }, this)
     }

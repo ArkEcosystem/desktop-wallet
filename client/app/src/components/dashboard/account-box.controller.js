@@ -22,7 +22,7 @@
     }
 
     this.myAccountsBalance = () => {
-      const total = this.accountCtrl.getAllAccounts().reduce( (sum, account) => {
+      const total = this.accountCtrl.getAllAccounts().reduce((sum, account) => {
         return sum + parseInt(account.balance || 0)
       }, 0)
 
@@ -36,6 +36,15 @@
 
       return this.myAccountsBalance() * price
     }
-  }
 
+    this.refreshAccountBalances = () => {
+      networkService.getPrice()
+
+      this.accountCtrl.getAllAccounts().forEach(account => {
+        accountService
+          .refreshAccount(account)
+          .then((updated) => { account.balance = updated.balance })
+      })
+    }
+  }
 })()

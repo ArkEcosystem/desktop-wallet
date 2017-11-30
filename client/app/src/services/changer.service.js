@@ -65,7 +65,7 @@
       'maidsafecoinMAID': 'maidsafecoin_MAID'
     }
 
-    function request (endpoint, data) {
+    function request (endpoint, data) { // eslint-disable-line no-unused-vars
       var deferred = $q.defer()
 
       $http({
