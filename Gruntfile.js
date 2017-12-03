@@ -1,5 +1,4 @@
-module.exports = function(grunt) {
-
+module.exports = (grunt) => {
   grunt.initConfig({
     jshint: {
       files: ['Gruntfile.js', 'client/app/src/**/*.js'],
@@ -12,22 +11,21 @@ module.exports = function(grunt) {
     nggettext_extract: {
       pot: {
         files: {
-          'po/template.pot': ['client/app/index.html','client/app/src/**/*.html','client/app/src/**/*.js']
+          'po/template.pot': ['client/app/index.html', 'client/app/src/**/*.html', 'client/app/src/**/*.js']
         }
-      },
+      }
     },
     nggettext_compile: {
       all: {
         files: {
-          'client/app/src/translations.js': ['po/*.po']
+          'client/app/src/utils/translations.js': ['po/*.po']
         }
-      },
+      }
     }
-  });
+  })
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-angular-gettext');
+  grunt.loadNpmTasks('grunt-contrib-jshint')
+  grunt.loadNpmTasks('grunt-angular-gettext')
 
-  grunt.registerTask('default', ['nggettext_compile']);
-
-};
+  grunt.registerTask('default', ['nggettext_compile'])
+}

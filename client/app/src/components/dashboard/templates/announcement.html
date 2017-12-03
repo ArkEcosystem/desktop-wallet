@@ -1,0 +1,17 @@
+<md-toast class="announcement">
+  <div class="md-toast-content">
+
+    <div translate>News<span>({{announcement.date | date: 'mediumDate'}})</span></div>
+
+    <div>
+      <a md-truncate href="#" ng-click="openAnnouncement(announcement.url)" title="{{announcement.text}}">{{announcement.text}}</a>
+    </div>
+
+    <div>
+      <md-button class="md-icon-button" title="Dismiss" aria-label="Dismiss" ng-click="dismiss()">
+        <md-icon md-font-library="material-icons">clear</md-icon>
+      </md-button>
+    </div>
+
+  </div>
+</md-toast>

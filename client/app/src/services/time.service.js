@@ -1,67 +1,61 @@
-(function() {
-  'use strict';
+;(function () {
+  'use strict'
 
   angular.module('arkclient.services')
-    .service('timeService', ['$q', '$http', '$interval', TimeService]);
+    .service('timeService', ['$q', '$http', '$interval', TimeService])
 
   /**
    * TimeService
    * @constructor
    */
-  function TimeService($q, $http) {
-
-    
-    var timeServerUrl = "http://tycho.usno.navy.mil/cgi-bin/time.pl";
-    var serverLatency = 0;
+  function TimeService ($q, $http) {
+    var timeServerUrl = 'http://tycho.usno.navy.mil/cgi-bin/time.pl'
+    var serverLatency = 0
     var config = {
       timeout: 2000
-    };
-    var localToServerTimeDiff = 0;
+    }
+    var localToServerTimeDiff = 0
 
     /**
      * Function gets a server timestamp as to not rely on the users local clock.
      * Fallback to users local clock on failure.
      * Always returns success.
      */
-    function getTimestamp() {
+    function getTimestamp () {
+      var deferred = $q.defer()
 
-      var deferred = $q.defer();
-
-      var startTime = new Date().getTime();
+      var startTime = new Date().getTime()
 
       $http.get(timeServerUrl, config).then(
-       function(success){
+        (success) => {
+          var timestamp = success.headers().date
+          var processedTimestamp = new Date(timestamp).getTime()
+          var endTime = new Date().getTime()
 
-        var timestamp = success.headers().date;
-        var processedTimestamp = new Date(timestamp).getTime();
-        var endTime = new Date().getTime();
+          serverLatency = endTime - startTime
 
-        serverLatency = endTime - startTime;
+          var computedTimestamp = processedTimestamp + serverLatency
 
-        var computedTimestamp = processedTimestamp + serverLatency;
+          var currentLocalTime = new Date().getTime()
+          localToServerTimeDiff = computedTimestamp - currentLocalTime
 
-        var currentLocalTime = new Date().getTime();
-        localToServerTimeDiff = computedTimestamp - currentLocalTime;
+          deferred.resolve(computedTimestamp)
+        },
+        (_error) => {
+          // use the system time instead on error
+          var timestamp = new Date().getTime()
 
-        deferred.resolve(computedTimestamp);
-       },
-       function(error){
-        // use the system time instead on error
-        var timestamp = new Date().getTime();
+          var computedTimestamp = timestamp + localToServerTimeDiff
 
-        var computedTimestamp = timestamp + localToServerTimeDiff;
+          deferred.resolve(computedTimestamp)
+        }
+      )
 
-        deferred.resolve(computedTimestamp);
-       }
-      );
-
-      return deferred.promise;
+      return deferred.promise
     }
 
-
     return {
-      getTimestamp: getTimestamp,
-    };
+      getTimestamp: getTimestamp
+    }
   }
-
-})();
+})()

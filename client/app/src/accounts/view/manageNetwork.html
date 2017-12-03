@@ -1,4 +1,4 @@
-<md-dialog aria-label="Manage Networks" ng-cloak flex="50" md-theme="ul.network.theme">
+<md-dialog aria-label="Manage Networks" ng-cloak flex="50" md-theme="ul.currentTheme">
   <md-toolbar>
     <div class="md-toolbar-tools">
       <h2><span translate>Manage Networks</span></h2>
@@ -28,7 +28,10 @@
             <label translate>Nethash</label>
             <input ng-model="send.networks[network].nethash" type="text" ng-required="true">
           </md-input-container>
-
+          <md-input-container md-no-float class="md-block">
+            <label translate>SLIP 44</label>
+            <input ng-model="send.networks[network].slip44" type="text" ng-required="true">
+          </md-input-container>
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm="80">
               <label translate>Seed Server</label>
@@ -40,12 +43,14 @@
               </md-switch>
             </md-input-container>
           </div>
-
           <md-input-container class="md-block">
             <label translate>Explorer</label>
             <input ng-model="send.networks[network].explorer" type="text" ng-required="false">
           </md-input-container>
-
+          <md-input-container class="md-block" ng-hide="network === 'mainnet'">
+            <label translate>Coin Market Cap Ticker</label>
+            <input ng-model="send.networks[network].cmcTicker" type="text" ng-required="false">
+          </md-input-container>
         </div>
         <md-dialog-actions layout="row" style="padding-left: 10px">
           <md-button ng-click="send.removeNetwork(network)" class="md-raised md-warn" ng-disabled="network == 'mainnet'">
@@ -78,6 +83,10 @@
             </md-switch>
           </md-input-container>
         </div>
+        <md-input-container class="md-block">
+          <label translate>Coin Market Cap Ticker</label>
+          <input ng-model="send.createnetwork.cmcTicker" type="text" ng-required="false">
+        </md-input-container>
         <md-dialog-actions layout="row">
           <md-button ng-click="send.createNetwork()" class="md-primary md-raised">
             <translate>Create</translate>

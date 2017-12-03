@@ -1,4 +1,4 @@
-<md-dialog aria-label="Sign Message" ng-cloak md-theme="ul.network.theme">
+<md-dialog aria-label="Sign Message" ng-cloak md-theme="ul.currentTheme">
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -31,7 +31,7 @@
         <translate ng-if="sign.selectedAccount.ledger">Sign with Ledger</translate>
       </md-button>
       <md-button ng-click="sign.cancel()" style="margin-right:20px;">
-        <translate>Close</translate>
+        <translate>Cancel</translate>
       </md-button>
     </md-dialog-actions>
   </form>

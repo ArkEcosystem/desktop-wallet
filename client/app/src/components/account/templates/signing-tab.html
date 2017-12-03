@@ -1,0 +1,82 @@
+<md-tab>
+  <md-tab-label>
+    <translate>Sign / Verify Message</translate>
+  </md-tab-label>
+  <md-tab-body>
+
+    <md-card ng-if="!$ctrl.ul.selected.virtual" flex="100">
+      <md-card-title>
+        <md-card-title-media>
+          <div class="md-media-sm card-media" layout layout-align="center center">
+            <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
+          </div>
+        </md-card-title-media>
+        <md-card-title-text>
+          <translate>
+            If you own this account, you can enable Message Signing
+          </translate><br>
+          <md-button ng-click="$ctrl.ul.manageFolder($ctrl.ul.selected)">
+            <translate>Enable Signing</translate>
+          </md-button>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+
+    <md-content ng-if="$ctrl.ul.selected.publicKey" >
+      <md-table-container flex="100">
+        <md-button ng-if="$ctrl.ul.selected.virtual" aria-label="Sign" md-colors="{background:'primary'}" ng-click="$ctrl.signMessage($ctrl.ul.selected)">
+          <translate>Sign</translate>
+        </md-button>
+        <md-button aria-label="Verify" md-colors="{background:'accent'}" ng-click="$ctrl.verifyMessage()">
+          <translate>Verify</translate>
+        </md-button>
+        <table md-table id="sign-list" style="table-layout: fixed; width: 100%">
+          <thead md-head md-order="query.order">
+            <tr md-row>
+              <th md-column>
+                <translate>Message</translate>
+              </th>
+              <th md-column>
+                <translate>Signature</translate>
+              </th>
+              <th md-column>
+                <translate>Actions</translate>
+              </th>
+            </tr>
+          </thead>
+          <tbody md-body>
+            <tr md-disable-select ng-repeat="signedMessage in $ctrl.ul.selected.signedMessages | orderBy: query.order">
+              <td md-cell style="word-wrap:break-word;">{{signedMessage.message}}</td>
+              <td md-cell style="word-wrap:break-word;">{{signedMessage.signature}}</td>
+              <td md-cell>
+                <md-button ng-click="$ctrl.verifyMessage(signedMessage)" md-colors="{background:'green'}" class="md-mini md-fab">
+                  <md-tooltip>
+                    <translate>Verify</translate>
+                  </md-tooltip>
+                  <md-icon md-font-library="material-icons">check</md-icon>
+                </md-button>
+                <md-button ng-click="$ctrl.ul.copiedToClipboard()" copy-to-clipboard="{{signedMessage}}" class="md-mini md-fab md-primary">
+                  <md-tooltip>
+                    <translate>Copy</translate>
+                  </md-tooltip>
+                  <md-icon md-font-library="material-icons">content_copy</md-icon>
+                </md-button>
+                <md-button ng-click="$ctrl.deleteSignedMessage($ctrl.ul.selected, signedMessage)" class="md-mini md-fab md-warn">
+                  <md-tooltip>
+                    <translate>Delete</translate>
+                  </md-tooltip>
+                  <md-icon md-font-library="material-icons">close</md-icon>
+                </md-button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </md-table-container>
+    </md-content>
+
+    <md-content ng-if="!$ctrl.ul.selected.publicKey" class="tab-text-only-content" translate>
+      This address has not received any ARK so it is not on the ARK blockchain and can not be used for signing messages.
+    </md-content>
+
+  </md-tab-body>
+</md-tab>
