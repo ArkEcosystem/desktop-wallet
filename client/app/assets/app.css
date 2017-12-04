@@ -104,7 +104,9 @@ md-list.left-list hr {
 .md-button.md-focused:not(:hover):focus {
     background-color: transparent;
 }
-
+.md-button.md-small {
+    min-width: 35px;
+}
 md-list .md-button.selected {
     color: #03a9f4;
 }
@@ -275,6 +277,9 @@ account-box {
 }
 #home-box-accounts {
     min-height: 180px;
+}
+#home-box-accounts md-toolbar .md-button {
+    font-size: 20px;
 }
 
 #home-box-row {

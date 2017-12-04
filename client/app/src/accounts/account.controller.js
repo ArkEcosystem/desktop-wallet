@@ -212,6 +212,12 @@
     self.exchangeHistory = changerService.getHistory()
     self.selectedCoin = storageService.get('selectedCoin') || 'bitcoin_BTC'
     self.exchangeEmail = storageService.get('email') || ''
+    self.btcValueActive = false
+
+    self.bitcoinCurrency = self.currencies.find(function (currency) {
+      return currency.name === 'btc'
+    })
+    self.toggleCurrency = self.bitcoinCurrency
 
     self.connectedPeer = { isConnected: false }
 
@@ -603,6 +609,11 @@
       })
     }
 
+    self.toggleBitcoinCurrency = function (force) {
+      self.btcValueActive = force !== undefined ? force : !self.btcValueActive
+      self.toggleCurrency = self.btcValueActive ? self.currency : self.bitcoinCurrency
+    }
+
     self.otherAccounts = function () {
       return self.accounts.filter(function (account) {
         return !account.virtual
@@ -617,6 +628,7 @@
     }
 
     self.selectNextCurrency = function () {
+      self.toggleBitcoinCurrency(false)
       var currenciesNames = self.currencies.map(function (x) {
         return x.name
       })
@@ -628,6 +640,7 @@
     }
 
     self.changeCurrency = function () {
+      self.toggleBitcoinCurrency(false)
       if (self.currency === 'undefined') self.currency = self.currencies[0]
       storageService.set('currency', self.currency)
     }

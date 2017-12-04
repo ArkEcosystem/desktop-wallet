@@ -135,4 +135,40 @@ describe('AccountController', function () {
       })
     })
   })
+
+  describe('test btc toggle', () => {
+    context('bitcoinCurrency is valid', () => {
+      it('bitcoinCurrency is valid', () => {
+        expect(ctrl.bitcoinCurrency).to.not.be.undefined
+        expect(ctrl.bitcoinCurrency.name).to.equal('btc')
+      })
+    })
+
+    context('check', () => {
+      beforeEach(() => {
+        ctrl.btcValueActive = false
+      })
+
+      it('is active', () => {
+        ctrl.toggleBitcoinCurrency()
+        expect(ctrl.btcValueActive).to.equal(true)
+      })
+
+      it('is inactive (off -> on -> off)', () => {
+        ctrl.toggleBitcoinCurrency()
+        ctrl.toggleBitcoinCurrency()
+        expect(ctrl.btcValueActive).to.equal(false)
+      })
+
+      it('is active (forced)', () => {
+        ctrl.toggleBitcoinCurrency(true)
+        expect(ctrl.btcValueActive).to.equal(true)
+      })
+
+      it('is inactive (forced)', () => {
+        ctrl.toggleBitcoinCurrency(false)
+        expect(ctrl.btcValueActive).to.equal(false)
+      })
+    })
+  })
 })

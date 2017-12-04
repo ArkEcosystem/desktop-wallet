@@ -13,17 +13,18 @@
       }
     })
     .filter('amountToCurrency', function () {
-      return function (amount, scope) {
+      return function (amount, scope, bitcoinToggleIsActive) {
         if (typeof amount === 'undefined' || !amount) return 0
         // NOTE AccountController is being renaming to `ac` in refactored templates
         const ac = scope.ac || scope.ul
-        const price = ac.connectedPeer.market.price[ac.currency.name]
+        const currencyName = bitcoinToggleIsActive && ac.btcValueActive ? 'btc' : ac.currency.name
+        const price = ac.connectedPeer.market.price[currencyName]
         return (amount * price).toFixed(5)
       }
     })
     .filter('formatCurrency', function () {
-      return function (val, self) {
-        var currencyName = self.currency.name
+      return function (val, self, bitcoinToggleIsActive) {
+        var currencyName = bitcoinToggleIsActive && self.btcValueActive ? 'btc' : self.currency.name
         var languageCode = self.language.replace('_', '-')
         var options = {
           style: 'currency',
