@@ -1795,6 +1795,7 @@
       var bip39 = require('bip39')
       var data = { secondPassphrase: bip39.generateMnemonic() }
 
+      warnAboutSecondPassphraseFee()
       if (selectedAccount.secondSignature) {
         return formatAndToastError(
           gettextCatalog.getString('This account already has a second passphrase: ' + selectedAccount.address)
@@ -1821,6 +1822,20 @@
           )
           $mdDialog.hide()
         }
+      }
+
+      function warnAboutSecondPassphraseFee () {
+        accountService.getFees().then(
+              function (fees) {
+                let secondPhraseArktoshiVal = fees['secondsignature']
+                let secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+                toastService.warn(
+                     gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+                      0,
+                      false
+                    )
+              }
+          )
       }
 
       function cancel () {

@@ -1,7 +1,7 @@
 module.exports = {
   notice: {
     logFile: false,
-    level: 1,
+    level: 2,
     defaultHideDelay: 5000
   }
 }
