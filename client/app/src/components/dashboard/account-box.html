@@ -12,20 +12,6 @@
   </div>
 </md-toolbar>
 <div style="min-height: 100px; max-height: 300px; height: auto; border-radius:0 0 10px 10px" layout="column">
-  <md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
-      <md-button ng-click="$ctrl.ac.importAccount()">
-        <md-icon>file_download</md-icon>
-        <translate>Import Account</translate>
-      </md-button>
-
-      <md-button ng-click="$ctrl.ac.createAccount()">
-        <md-icon>account_box</md-icon>
-        <translate>Create Account</translate>
-      </md-button>
-    </div>
-  </md-toolbar>
-  <md-content style="min-height: 70px;" flex>
     <md-list md-no-ink>
       <md-list-item ng-click="$ctrl.ac.selectLedgerAccount()" ng-if="$ctrl.ac.ledger.connected">
         <span>
@@ -49,6 +35,16 @@
           {{$ctrl.ac.network.symbol}} {{it.balance | convertToArkValue}}
         </span>
       </md-list-item>
+      <md-list-item class="main-actions">
+        <md-button ng-click="$ctrl.ac.importAccount()">
+          <md-icon>file_download</md-icon>
+          <translate>Import Account</translate>
+        </md-button>
+
+        <md-button ng-click="$ctrl.ac.createAccount()">
+          <md-icon>account_box</md-icon>
+          <translate>Create Account</translate>
+        </md-button>
+      </md-list-item>
     </md-list>
-  </md-content>
 </div>

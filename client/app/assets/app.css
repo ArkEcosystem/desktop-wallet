@@ -46,11 +46,17 @@ body {
 
 .menu {
     min-width: 40px !important;
+    background-color: transparent;
+    border: none;
+    height: 38px;
+    margin: 16px;
+    width: 36px;
 }
 
 .md-toolbar-tools {
     min-height: 64px;
     -webkit-app-region: drag;
+/*    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);*/
 }
 
 .selectcoin {
@@ -61,7 +67,11 @@ md-toolbar h3 {
     margin: auto;
     font-weight: 500;
 }
-
+md-toolbar{
+	
+	    background: rgb(210, 188, 36) !important;
+	
+}
 
 /* Sidenav area */
 
@@ -287,6 +297,9 @@ account-box {
 
 #home-box-row {
     min-height: 180px;
+    position: absolute;
+    bottom: 2em;
+
 }
 
 #home-box-price, #home-box-network {

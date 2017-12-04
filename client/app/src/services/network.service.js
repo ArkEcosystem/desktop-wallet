@@ -160,30 +160,29 @@ var numeral = require('numeral');
         failedTicker()
         return
       }
-      $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'KAPU'), { timeout: 2000 })
+      $http.get('https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=10', { timeout: 2000 })
       .then(function (res) {
-        kapuMarketData.price.usd = (res.data[0].price_usd * kapuMarketData.price.btc).toFixed(5)
-        kapuMarketData.price.eur = (res.data[0].price_eur * kapuMarketData.price.btc).toFixed(5)
+        kapuMarketData[0].price_usd = (res.data[0].price_usd * kapuMarketData[0].price_btc).toFixed(5)
+        kapuMarketData[0].price_eur = (res.data[0].price_eur * kapuMarketData[0].price_btc).toFixed(5)
         $http.get('https://walletapi.kapu.one/api/blocks/getSupply', { timeout: 2000 }).then(function (resp) {
           if (resp != null) {
              /*
               Update/retrieve coin supplly value
              */
             var supply = resp.data.supply / 100000000
-            kapuMarketData.availableSupply = numeral(supply).format('0,0')
-            kapuMarketData.availableSupplyNumber = supply
+            kapuMarketData[0].available_supply = numeral(supply).format('0.0')
+            kapuMarketData[0].total_supply = numeral(supply).format('0.0')
             /*
               Update BTC, USD, EUR market cap
             */
-            kapuMarketData.marketCap.btc = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.btc).toFixed(2).toString()
-            kapuMarketData.marketCap.eur = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.eur).toFixed(2).toString()
-            kapuMarketData.marketCap.usd = (kapuMarketData.availableSupplyNumber * kapuMarketData.price.usd).toFixed(2).toString()
+            kapuMarketData[0].market_cap_btc = (kapuMarketData[0].total_supply * kapuMarketData[0].price_btc).toFixed(2).toString()
+            kapuMarketData[0].market_cap_eur = (kapuMarketData[0].total_supply * kapuMarketData[0].price_eur).toFixed(2).toString()
+            kapuMarketData[0].market_cap_usd = (kapuMarketData[0].total_supply * kapuMarketData[0].price_usd).toFixed(2).toString()
             jsonfile.writeFile(kapuMarketDataFile, kapuMarketData, function (err) {
               if (err != null) {
                 console.error(err)
               }
             })
-            peer.market = res.data
           }
         }, function () {
           peer.market.isOffline = true
@@ -193,12 +192,10 @@ var numeral = require('numeral');
             Update/retrieve Kapu exchange rates
           */
           res.data = kapuMarketData
-          jsonfile.writeFile(kapuMarketDataFile, kapuMarketData, function (err) {
-            if (err != null) {
-              console.error(err)
-            }
-          })
-          peer.market = res.data
+          if (res.data[0] && res.data[0].price_btc) {
+            res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
+          }
+          peer.market = res.data[0]
           peer = updatePeerWithCurrencies(peer, res)
           storageService.set('lastPrice', { market: peer.market, date: new Date() })
         }
