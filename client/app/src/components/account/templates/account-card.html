@@ -1,0 +1,73 @@
+<md-card flex="none">
+
+  <div class="share">
+    <md-button ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount()" aria-label="Refresh Account">
+      <md-icon md-font-library="material-icons">cached</md-icon>
+      <md-tooltip>
+        <translate>Refresh Account</translate>
+      </md-tooltip>
+    </md-button>
+
+    <md-button ng-if="$ctrl.ul.selected.virtual" md-no-ink ng-click="$ctrl.showSendTransaction($ctrl.ul.selected)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
+      <md-icon md-font-library="material-icons">send</md-icon>
+      <md-tooltip>
+          <translate>Send</translate>
+      </md-tooltip>
+    </md-button>
+
+    <md-button md-no-ink ng-click="$ctrl.ul.exportAccount($ctrl.ul.selected)" aria-label="Export Account">
+      <md-icon md-font-library="material-icons">file_download</md-icon>
+      <md-tooltip>
+        <translate>Export Account</translate>
+      </md-tooltip>
+    </md-button>
+
+    <span>
+      <md-button md-no-ink ng-if="!$ctrl.ul.selected.virtual || $ctrl.ab.getContactFromAddress($ctrl.ul.selected.address)" ng-click="$ctrl.ab.editAddressbookContact($ctrl.ul.selected.address)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
+        <md-icon md-font-library="material-icons">edit</md-icon>
+        <md-tooltip>
+            <translate>Edit Contact</translate>
+        </md-tooltip>
+      </md-button>
+    </span>
+
+    <md-button ng-if="$ctrl.ul.selected.virtual" md-no-ink ng-click="$ctrl.showAccountMenu($ctrl.ul.selected)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
+      <md-icon md-font-library="material-icons">more_vert</md-icon>
+    </md-button>
+  </div>
+
+  <md-card-title>
+    <md-card-title-media>
+      <div class="md-media-sm card-media" style="margin:10px; width:128px;height:128px;" layout layout-align="center center">
+        <qrcode size="128" data='{"a":"{{$ctrl.ul.selected.address}}"}'></qrcode>
+      </div>
+    </md-card-title-media>
+    <md-card-title-text>
+      <span class="md-headline">
+          <!--<md-button class="md-fab md-primary md-mini" ng-click="$ctrl.ul.openPassphrasesDialog($ctrl.ul.selected)">
+            <md-icon md-font-library="material-icons">lock</md-icon>
+          </md-button>-->
+          <span class="delegate-name">{{$ctrl.ab.getContactFromAddress($ctrl.ul.selected.address).name || $ctrl.ul.selected.username || 'Address'}} {{$ctrl.ul.selected.ledger}}</span>
+      <br>
+      <md-button ng-click="$ctrl.ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}">
+        <md-icon>content_copy</md-icon>
+        <md-tooltip md-direction="top">
+          {{ 'Copy' | translate }} {{ $ctrl.ul.showPublicKey ? ('Public Key' | translate | lowercase) : ('Address' | translate | lowercase) }}</translate>
+        </md-tooltip>
+        {{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}
+      </md-button>
+      <md-icon ng-if="$ctrl.ul.selected.publicKey" aria-label="Address" style="cursor: pointer;outline: none" ng-click="$ctrl.ul.showPublicKey = !$ctrl.ul.showPublicKey" md-font-library="material-icons">
+        <md-tooltip md-direction="top">
+          {{ 'Show' | translate }} {{ !$ctrl.ul.showPublicKey ? ('Public Key' | translate | lowercase) : ('Address' | translate | lowercase) }}</translate>
+        </md-tooltip>
+        {{((!$ctrl.ul.showPublicKey) && 'vpn_key' || 'public')}}
+      </md-icon>
+      </span>
+      <span class="md-subhead description">
+          <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance | convertToArkValue}}
+          {{$ctrl.ul.network.cmcTicker}}
+          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance | convertToArkValue | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
+        </span>
+    </md-card-title-text>
+  </md-card-title>
+</md-card>

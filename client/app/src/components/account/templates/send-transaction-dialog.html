@@ -1,8 +1,8 @@
-<md-dialog aria-label="{{'Send'|translate}} {{ul.network.token}}" ng-cloak md-theme="ul.network.theme">
-  <form name="sendArkForm" ng-submit="send.next()">
+<md-dialog aria-label="{{'Send'|translate}} {{ac.network.token}}" ng-cloak md-theme="ac.currentTheme">
+  <form name="sendArkForm" ng-submit="send.submit()">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span>{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
+        <h2><span>{{'Send'|translate}} {{ac.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="send.cancel()">
           <md-icon md-font-library="material-icons">clear</md-icon>
@@ -19,17 +19,17 @@
             md-items="contact in send.querySearch(send.searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
             <md-item-template>
               <span class="item-title">
-                  <span> {{contact.name || contact.address}} </span>
+                  <span> {{contact.name || contact.username || contact.address}} </span>
               </span>
             </md-item-template>
           </md-autocomplete>
         </div>
         <div layout-gt-sm="row">
           <md-input-container md-no-float class="md-block" flex-gt-sm="85">
-            <label>{{'Amount'|translate}} ({{ul.network.token}})</label>
-            <input ng-model="send.data.amount" type="number" step="0.00000001" ng-minlength="0.00000001" ng-maxlength="10000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
+            <label>{{'Amount'|translate}} ({{ac.network.token}})</label>
+            <input ng-model="send.data.amount" type="number" step="0.00000001" min="0.00000001" max="100000000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
             <div class="hint">
-              {{ul.currency.symbol}} {{send.data.amount | amountToCurrency:this}}
+              {{ac.currency.symbol}} {{send.data.amount | amountToCurrency:this}}
             </div>
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm="15">
@@ -44,7 +44,7 @@
         </md-input-container>
 
         <div layout="row" flex layout-align="start start">
-          <md-input-container flex="5">
+          <md-input-container flex="5" ng-if="!send.data.ledger">
             <qr-scanner input-callback="passphrase"></qr-scanner>
           </md-input-container>
           <md-input-container flex="95" ng-if="!send.data.ledger" class="md-block">
@@ -74,9 +74,8 @@
         <div class="md-caption">
           <translate>Remaining balance</translate>
         </div>
-        <div class="balance">{{ul.network.symbol}} {{ send.remainingBalance }}</div>
+        <div class="balance">{{ac.network.symbol}} {{ send.remainingBalance }}</div>
       </div>
-      <!-- workaround for pull first item on left -->
       <span flex></span>
       <md-button ng-click="send.openFile()">
         <span translate>Load Tx From File</span>

@@ -1,0 +1,24 @@
+<md-tab>
+  <md-tab-label>
+    <translate>Delegate</translate>
+    <md-icon md-colors="{'color' : 'default-red' }" ng-if="$ctrl.ul.selected.delegate.rate>51" md-font-library="material-icons">close</md-icon>
+    <md-icon md-colors="{'color' : 'default-green' }" ng-if="$ctrl.ul.selected.delegate.rate<52" md-font-library="material-icons">check</md-icon>
+  </md-tab-label>
+  <md-tab-body>
+    <md-list-item>
+      <h1>{{$ctrl.ul.selected.delegate.username}}</h1>
+    </md-list-item>
+    <md-list-item>
+      <translate>Rank</translate>&nbsp;{{$ctrl.ul.selected.delegate.rate}}
+    </md-list-item>
+    <md-list-item>
+      <translate>Approval</translate>&nbsp;{{$ctrl.ul.selected.delegate.approval}}%
+    </md-list-item>
+    <md-list-item>
+      <translate>Productivity</translate>&nbsp;{{$ctrl.ul.selected.delegate.productivity}}% - {{$ctrl.ul.selected.delegate.producedblocks}}&nbsp;
+      <translate>produced blocks</translate>&nbsp;- {{$ctrl.ul.selected.delegate.missedblocks}}&nbsp;
+      <translate>missed blocks</translate>
+    </md-list-item>
+    </md-list>
+  </md-tab-body>
+</md-tab>

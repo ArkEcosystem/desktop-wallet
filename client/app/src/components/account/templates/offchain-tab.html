@@ -1,0 +1,74 @@
+<md-tab>
+  <md-tab-label>
+    <translate>OffChain</translate>
+  </md-tab-label>
+
+  <md-tab-body>
+    <md-list>
+      <md-list-item ng-if="!$ctrl.ul.selected.virtual">
+        <md-card flex="100">
+          <md-card-title>
+            <md-card-title-media>
+              <div class="md-media-sm card-media" layout layout-align="center center">
+                <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
+              </div>
+            </md-card-title-media>
+            <md-card-title-text>
+              <translate>
+                If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under
+                the "My Accounts" list.
+              </translate>
+              <md-button ng-click="$ctrl.ul.manageFolder($ctrl.ul.selected)">
+                <translate>Enable Virtual Folders</translate>
+              </md-button>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </md-list-item>
+
+      <md-list-item>
+        <h3>
+          <translate>Default</translate> {{(($ctrl.ul.getDefaultValue($ctrl.ul.selected) | convertToArkValue) | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul)}}</h3>
+        <span class="md-secondary">
+          <md-button md-block md-colors="{'background' : $ctrl.ul.getDefaultValue($ctrl.ul.selected)>0 ? 'default-green-200':'default-red-200' }"> {{$ctrl.ul.getDefaultValue($ctrl.ul.selected) | convertToArkValue}}</md-button>
+        </span>
+      </md-list-item>
+      <md-list-item ng-repeat="folder in $ctrl.ul.selected.virtual.getFolders()">
+        <div ng-repeat="v in [0]">
+          <md-menu>
+            <md-button aria-label="Open folder menu" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
+              <md-icon>folder</md-icon>
+              {{folder}}
+            </md-button>
+            <md-menu-content width="1">
+              <md-menu-item>
+                <md-button ng-click="$ctrl.ul.deleteFolder($ctrl.ul.selected,folder)">
+                  <translate>Remove</translate>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$ctrl.ul.manageFolder($ctrl.ul.selected, folder)">
+                  <translate>Rename</translate>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </div>
+        <span class="md-secondary">
+          <md-input-container>
+            <label>{{'Amount'|translate}} ({{$ctrl.ul.network.token}})</label>
+            <input ng-model-options="{ getterSetter: true }" ng-model="$ctrl.ul.selected.virtual.uservalue(folder)" ng-change="$ctrl.ul.saveFolder($ctrl.ul.selected,folder)" type="number" >
+            <div class="hint"> {{(($ctrl.ul.selected.virtual[folder].amount | convertToArkValue) | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul )}} </div>
+          </md-input-container>
+        </span>
+
+      </md-list-item>
+      <md-list-item ng-if="$ctrl.ul.selected.virtual">
+        <md-button ng-click="$ctrl.ul.manageFolder($ctrl.ul.selected)">
+          <translate>Create a new virtual folder</translate>
+        </md-button>
+      </md-list-item>
+
+    </md-list>
+  </md-tab-body>
+</md-tab>

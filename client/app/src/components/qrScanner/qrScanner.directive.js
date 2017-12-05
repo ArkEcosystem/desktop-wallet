@@ -1,61 +1,50 @@
-(function() {
-  'use strict';
+;(function () {
+  'use strict'
 
-  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', '$mdToast', qrScanner]);
+  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', 'toastService', qrScanner])
 
-  function qrScanner($rootScope, $timeout, $mdDialog, $mdToast) {
-
-    function controller($scope) {
-
-      $scope.hasWebcam = function() {
+  function qrScanner ($rootScope, $timeout, $mdDialog, toastService) {
+    function controller ($scope) {
+      $scope.hasWebcam = function () {
         navigator.mediaDevices.enumerateDevices()
-          .then(function(MediaDeviceInfo) {
-            MediaDeviceInfo.forEach(function(info) {
-              if (info.kind == 'videoinput') return true;
-            });
+          .then(function (MediaDeviceInfo) {
+            MediaDeviceInfo.forEach(function (info) {
+              if (info.kind === 'videoinput') return true
+            })
           })
 
-        return false;
+        return false
       }
 
-      $scope.onSuccess = function(result) {
-        if (typeof(result.type) !== 'undefined') {
-          $mdToast.show(
-            $mdToast.simple()
-            .textContent(`The ${result.type} ${result.qr} has been successfully scanned.`)
-            .hideDelay(5000)
-          );
-        };
+      $scope.onSuccess = function (result) {
+        if (typeof (result.type) !== 'undefined') {
+          toastService.success(`The ${result.type} ${result.qr} has been successfully scanned.`)
+        }
 
-        $scope.$parent.send.data[$scope.inputCallback] = result.qr;
+        $scope.$parent.send.data[$scope.inputCallback] = result.qr
 
-        $timeout(function() {
-          $mdDialog.hide();
-        }, 100);
+        $timeout(function () {
+          $mdDialog.hide()
+        }, 100)
       }
 
-      $scope.onError = function(error) {
-        $mdToast.show(
-          $mdToast.simple()
-          .textContent(error.error)
-          .hideDelay(5000)
-          .theme('error')
-        );
+      $scope.onError = function (error) {
+        toastService.error(error.error)
 
-        $timeout(function() {
-          $mdDialog.hide();
-        }, 100);
-      };
-
-      $scope.onVideoError = function(error) {
-        $scope.onError(error);
+        $timeout(function () {
+          $mdDialog.hide()
+        }, 100)
       }
 
-      $scope.closeDialog = function() {
-        $mdDialog.hide();
-      };
+      $scope.onVideoError = function (error) {
+        $scope.onError(error)
+      }
 
-      $scope.openScanner = function(evt) {
+      $scope.closeDialog = function () {
+        $mdDialog.hide()
+      }
+
+      $scope.openScanner = function (evt) {
         $mdDialog.show({
           parent: angular.element(document.getElementById('app')),
           templateUrl: './src/components/qrScanner/qrScanner.html',
@@ -64,23 +53,21 @@
           multiple: true,
           preserveScope: true,
           scope: $scope
-        });
+        })
       }
     }
 
     return {
       restrict: 'E',
       scope: {
-        onSuccess: "&",
-        onError: "&",
-        onVideoError: "&",
-        inputCallback: "@"
+        onSuccess: '&',
+        onError: '&',
+        onVideoError: '&',
+        inputCallback: '@'
       },
       controller: controller,
       replace: true,
       template: '<md-icon aria-label="Scan QR Code" style="cursor: pointer;outline: none" md-svg-icon="qrcode" ng-click="openScanner($event)" ng-disabled="hasWebcam()"></md-icon>'
     }
-
   }
-
-})();
+})()

@@ -1,0 +1,106 @@
+<md-tab>
+  <md-tab-label>
+    <translate>Votes</translate>
+  </md-tab-label>
+  <md-tab-body>
+
+    <md-card ng-if="!$ctrl.ul.selected.virtual" flex="100">
+      <md-card-title>
+        <md-card-title-media>
+          <div class="md-media-sm card-media" layout layout-align="center center">
+            <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
+          </div>
+        </md-card-title-media>
+        <md-card-title-text>
+          <translate>
+            If you own this account, you can enable Voting
+          </translate><br>
+          <md-button ng-click="$ctrl.ul.manageFolder($ctrl.ul.selected)">
+            <translate>Enable Votes</translate>
+          </md-button>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+
+    <md-table-container ng-if="!$ctrl.ul.selected.virtual" flex="100">
+      <table md-table ng-model="$ctrl.ul.selected.selectedVotes">
+        <thead md-head md-order="query.order">
+          <tr md-row>
+            <th md-column md-numeric md-order-by="rate">
+              <translate>Rank</translate>
+            </th>
+            <th md-column md-order-by="username">
+              <translate>Username</translate>
+            </th>
+            <th md-column>
+              <translate>Address</translate>
+            </th>
+            <th md-column md-numeric md-order-by="approval">
+              <translate>Approval</translate>
+            </th>
+            <th md-column md-numeric md-order-by="productivity">
+              <translate>Productivity</translate>
+            </th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row ng-repeat="it in $ctrl.ul.selected.delegates | orderBy: query.order">
+            <td md-cell>{{it.rate}}</td>
+            <td md-cell>{{it.username}}</td>
+            <td md-cell><a href="" ng-click="$ctrl.ul.gotoAddress(it.address)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
+            <td md-cell>{{it.approval}}%</td>
+            <td md-cell>{{it.productivity}}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-table-container ng-if="$ctrl.ul.selected.virtual" flex="100">
+      <md-button ng-click="$ctrl.ul.vote($ctrl.ul.selected)" md-colors="{background:'primary'}">
+        <translate>Vote</translate>
+      </md-button>
+      <md-button ng-click="$ctrl.ul.addDelegate($ctrl.ul.selected)" md-colors="{background:'accent'}">
+        <translate>Add Delegate</translate>
+      </md-button>
+      <md-button ng-click='$ctrl.ul.openExplorer("/delegateMonitor")'>
+        <translate>Open Delegate Monitor</translate>
+      </md-button>
+      <table md-table md-row-select multiple ng-model="$ctrl.ul.selected.selectedVotes">
+        <thead md-head md-order="query.order">
+          <tr md-row>
+            <th md-column md-numeric md-order-by="rate">
+              <translate>Rank</translate>
+            </th>
+            <th md-column md-order-by="username">
+              <translate>Username</translate>
+            </th>
+            <th md-column>
+              <translate>Address</translate>
+            </th>
+            <th md-column md-numeric md-order-by="approval">
+              <translate>Approval</translate>
+            </th>
+            <th md-column md-numeric md-order-by="productivity">
+              <translate>Productivity</translate>
+            </th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="it" md-select-id="id" md-auto-select ng-repeat="it in $ctrl.ul.getAllDelegates($ctrl.ul.selected) | orderBy: query.order">
+            <td md-cell>{{it.rate}}</td>
+            <td md-cell>{{it.username}}</td>
+            <td md-cell><a href="" ng-click="$ctrl.ul.gotoAddress(it.address)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
+            <td md-cell>{{it.approval}}%</td>
+            <td md-cell>{{it.productivity}}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-content id="vote-help" translate>
+      Voting is an optional, but important mechanism that keeps the Kapu network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for
+      a delegate that you support.
+    </md-content>
+
+  </md-tab-body>
+</md-tab>

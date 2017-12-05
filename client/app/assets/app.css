@@ -5,6 +5,8 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    background-position: center;
+    min-width: 800px;
 }
 
 .md-select-menu-container {
@@ -43,6 +45,7 @@ body {
 /* Toolbar area */
 
 .menu {
+    min-width: 40px !important;
     background-color: transparent;
     border: none;
     height: 38px;
@@ -50,10 +53,15 @@ body {
     width: 36px;
 }
 
-.selectcoin {
-    min-height: 125;
+.md-toolbar-tools {
+    min-height: 64px;
+    -webkit-app-region: drag;
+/*    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);*/
 }
 
+.selectcoin {
+    min-height: 125px;
+}
 
 md-toolbar h3 {
     margin: auto;
@@ -74,6 +82,34 @@ md-list.left-list md-list-item {
 md-list.left-list md-list-item md-icon {
     margin-right: 16px;
 }
+/* Since icons are text, avoids using the text cursor */
+md-list.left-list md-list-item:not(.md-clickable) {
+    cursor: default;
+}
+md-list.left-list md-list-item md-select {
+    margin: 0;
+}
+md-list.left-list md-list-item md-select.currency {
+    text-transform: uppercase;
+}
+/* "Play sound" option */
+md-list.left-list md-list-item.md-clickable:hover {
+  background-color: rgba(158, 158, 158, 0.4);
+}
+md-list.left-list md-list-item.md-clickable .md-list-item-inner p {
+  margin-right: 20px
+}
+md-list.left-list md-list-item.md-clickable:not(.md-proxy-focus) p, md-list-item.md-clickable:not(.md-proxy-focus) ~ md-list-item p {
+  text-transform: uppercase;
+}
+md-list.left-list hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+}
+/* md-list.left-list md-list-item.md-proxy-focus p {
+  text-transform: none!important;
+} */
 
 .md-button.md-focused:not(:hover):focus {
     background-color: transparent;
@@ -94,7 +130,6 @@ md-sidenav md-list {
     display: none;
 }
 
-
 #content {
     overflow: scroll;
 }
@@ -113,7 +148,6 @@ md-sidenav md-list {
     top: 10px;
     right: 45px;
 }
-
 
 #content md-icon.avatar {
     margin-top: 10px;
@@ -144,7 +178,7 @@ md-button.menuBtn>md-icon {
     max-width: 500px;
 }
 
-#content .md-headline .delegate-name {
+#content .md-headline .delegate-name, .md-subhead .balance {
     padding: 0 15px;
 }
 
@@ -214,14 +248,18 @@ span.name {
 
 .footer,
 .footer a {
-    color: white;
+  transition: color linear 0.2s;
+  color: white;
+}
+.footer > a:hover {
+  color: rgb(198, 198, 198);
 }
 
-.main-dashboard .main-actions {
+#dashboard .main-actions {
     padding: 0;
 }
 
-.main-dashboard .main-actions .watch-only-address {
+#dashboard .main-actions .watch-only-address {
     width: 120%;
 }
 
@@ -235,6 +273,16 @@ span.name {
     border-top: 1px solid #ccc;
 }
 
+.tab-text-only-content {
+    padding: 20px;
+}
+
+account-box {
+  min-width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.9;
+}
 #home-box-accounts {
     min-height: 180px;
     background: rgba(72, 72, 72, 0.55);
@@ -257,6 +305,7 @@ span.name {
 #home-box-price, #home-box-network {
   /*min-height: 100px;*/
     background: rgba(72, 72, 72, 0.55);
+    margin:10px;
     color: white;
     border-radius: 0 !important;
     opacity: 0.9 !important;
@@ -278,8 +327,28 @@ md-dialog {
     max-height: 90%;
 }
 
-md-toast.md-error-theme .md-toast-content {
-    background-color: red;
+md-toast.error .md-toast-content {
+    background-color: #FF0000;
+    font-weight: bold;
+}
+
+md-toast.success .md-toast-content {
+    background-color: #2E8B57;
+    font-weight: bold;
+}
+
+md-toast.warn .md-toast-content {
+    background-color: #FF8C00;
+    font-weight: bold;
+}
+
+md-toast.log .md-toast-content {
+    background-color: #A9A9A9;
+    font-weight: bold;
+}
+
+md-toast.debug .md-toast-content {
+    background-color: #4169E1;
     font-weight: bold;
 }
 
@@ -292,6 +361,15 @@ md-toast.md-error-theme .md-toast-content {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.background-item md-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  outline: none;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
 .background-item.active h3,
 .theme-item.active h3 {
     font-weight: bold
@@ -299,7 +377,7 @@ md-toast.md-error-theme .md-toast-content {
 
 .remaining-balance .md-caption {
     text-transform: uppercase;
-    color: #616161; // grey-700;
+    color: #616161;
     margin-bottom: 2px;
 }
 
@@ -372,4 +450,92 @@ md-autocomplete .md-errors-spacer {
 
 md-tooltip.tooltip-multiline {
     height: auto;
+}
+
+.md-open-menu-container.md-dark-theme md-menu-content,
+.md-open-menu-container.md-dark-theme md-menu-content md-menu-item,
+md-bottom-sheet.md-dark-theme {
+  background: #2f2f3b;
+  color: white;
+}
+
+md-bottom-sheet.md-dark-theme {
+  border-top-color: #1d1d25;
+}
+
+.md-dark-theme .md-table .md-column,
+.md-dark-theme .md-table .md-cell {
+  color: rgba(255, 255, 255, 0.8);
+}
+table.md-table.md-row-select tbody.md-body>tr.md-row:not([disabled]):hover {
+  background-color: rgba(47, 47, 59, 1)!important;
+}
+
+.md-dark-theme .md-table .md-selected {
+  background-color: rgba(47, 47, 59, 0.7)!important;
+}
+
+/* Main toolbar is transparent in almost all cases */
+body md-toolbar.navbar {
+  background-color: transparent !important;
+}
+/* Useful with light background textures to outline the main toolbar buttons */
+body.too-pale-background md-toolbar.navbar {
+  background-color: rgba(20, 20, 20, 0.2) !important;
+}
+
+md-toast.announcement {
+  /* Announcement toast should occupy the entire width */
+  left: 0px !important;
+  right: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0% !important;
+  border: 0px !important;
+  padding: 0px !important;
+
+  background-color: rgb(11, 13, 15) !important;
+}
+
+md-toast.announcement > .md-toast-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+md-toast.announcement > .md-toast-content > div {
+  flex: 1 1 0
+}
+
+md-toast.announcement > .md-toast-content > div, a {
+  color: white;
+  font-weight: bold;
+}
+
+md-toast.announcement > .md-toast-content > div:first-child {
+  /* Compensates the margin and padding of the × button */
+  padding-left: 14px;
+}
+md-toast.announcement > .md-toast-content > div:first-child > span {
+  margin-left: 10px;
+  color: rgb(130, 133, 135);
+}
+
+md-toast.announcement > .md-toast-content > div:nth-child(2) {
+  text-align: center;
+}
+md-toast.announcement > .md-toast-content > div:nth-child(2) > a {
+  text-decoration: none;
+  transition: color linear 0.2s;
+}
+md-toast.announcement > .md-toast-content > div:nth-child(2) > a:hover {
+  color: rgb(130, 133, 135);
+}
+
+md-toast.announcement > .md-toast-content .md-button {
+  float: right;
+}
+md-toast.announcement > .md-toast-content .material-icons {
+  color: white;
 }

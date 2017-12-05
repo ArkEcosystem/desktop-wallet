@@ -1,23 +1,22 @@
-(function() {
-  'use strict';
+;(function () {
+  'use strict'
 
   angular.module('arkclient.components')
-    .service('shapeshiftService', ['$q', '$http', '$timeout', ShapeshiftService]);
+    .service('shapeshiftService', ['$q', '$http', '$timeout', ShapeshiftService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function ShapeshiftService($q, $http, $timeout) {
+  function ShapeshiftService ($q, $http, $timeout) {
+    var url = 'https://shapeshift.io/'
 
-    var url = 'https://shapeshift.io/';
+    var coins = []
+    $http.get(url + 'getcoins/').then(function (resp) {
+      coins = resp.data
+    })
 
-    var coins = [];
-    $http.get(url + "getcoins/").then(function(resp) {
-      coins = resp.data;
-    });
-
-    var endPoints = {
+    var endPoints = { // eslint-disable-line no-unused-vars
       Rate: { path: 'rate', method: 'GET' },
       DepositLimit: { path: 'limit', method: 'GET' },
       MarketInfo: { path: 'marketinfo', method: 'GET' },
@@ -33,43 +32,39 @@
       FixedAmountTx: { path: 'sendamount', method: 'POST' },
       QuoteSendExactPrice: { path: 'sendamount', method: 'POST' },
       CancelPendingTx: { path: 'cancelpending', method: 'POST' }
-    };
+    }
 
-    function request(endpoint, data) {
-      var deferred = $q.defer();
+    function request (endpoint, data) { // eslint-disable-line no-unused-vars
+      var deferred = $q.defer()
 
       $http({
         url: url + endpoint.path,
         method: endpoint.method,
         data: data
-      }).then(function(resp) {
-        deferred.resolve(resp.data);
-      });
+      }).then(function (resp) {
+        deferred.resolve(resp.data)
+      })
 
-      return deferred.promise;
-    };
-
-    function getMarketInfo(coin1, coin2) {
-      var deferred = $q.defer();
-
-      $http.get(url + "marketinfo/" + coin1 + "_" + coin2).then(function(resp) {
-        deferred.resolve(resp.data);
-      });
-
-      return deferred.promise;
+      return deferred.promise
     }
 
-    function getCoins() {
-      return coins;
+    function getMarketInfo (coin1, coin2) {
+      var deferred = $q.defer()
+
+      $http.get(url + 'marketinfo/' + coin1 + '_' + coin2).then(function (resp) {
+        deferred.resolve(resp.data)
+      })
+
+      return deferred.promise
     }
 
-
-
+    function getCoins () {
+      return coins
+    }
 
     return {
       getMarketInfo: getMarketInfo,
       getCoins: getCoins
     }
   }
-
-})();
+})()
