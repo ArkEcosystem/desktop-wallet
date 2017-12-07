@@ -25,14 +25,14 @@
           </md-autocomplete>
         </div>
         <div layout-gt-sm="row">
-          <md-input-container md-no-float class="md-block" flex-gt-sm="85">
+          <md-input-container class="md-block" style="width: 100%; display: table-cell">
             <label>{{'Amount'|translate}} ({{ac.network.token}})</label>
-            <input ng-model="send.data.amount" type="number" step="0.00000001" min="0.00000001" max="100000000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
+            <input style="width: 100%" ng-model="send.data.amount" type="number" step="0.00000001" min="0.00000001" max="100000000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
             <div class="hint">
               {{ac.currency.symbol}} {{send.data.amount | amountToCurrency:this}}
             </div>
           </md-input-container>
-          <md-input-container class="md-block" flex-gt-sm="15">
+          <md-input-container class="md-block" style="display: table-cell; margin-right: -7px">
             <md-button ng-click="send.fillSendableBalance()" class="md-primary">
               <translate>Send All</translate>
             </md-button>
@@ -42,7 +42,6 @@
           <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
           <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
         </md-input-container>
-
         <div layout="row" flex layout-align="start start">
           <md-input-container flex="5" ng-if="!send.data.ledger">
             <qr-scanner input-callback="passphrase"></qr-scanner>
