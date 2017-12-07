@@ -47,7 +47,7 @@
       $scope.openScanner = function (evt) {
         $mdDialog.show({
           parent: angular.element(document.getElementById('app')),
-          templateUrl: './src/components/qrScanner/qrScanner.html',
+          templateUrl: './src/components/qr-scanner/qr-scanner.html',
           clickOutsideToClose: false,
           targetEvent: evt,
           multiple: true,

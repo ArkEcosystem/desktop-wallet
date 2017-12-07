@@ -243,6 +243,10 @@ span.name {
   transition: color linear 0.2s;
   color: white;
 }
+.footer a {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .footer > a:hover {
   color: rgb(198, 198, 198);
 }
@@ -299,6 +303,16 @@ table#tx-list.md-table tbody.md-body>tr.md-row>td.md-cell,
 table#tx-list.md-table thead.md-head>tr.md-row>th.md-column {
     padding: 5px !important;
     text-align: center;
+}
+
+table#tx-list.md-table tbody td a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#vote-list tbody td a, #vote-list-virtual tbody td a {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 body>.md-open-menu-container {
@@ -522,4 +536,9 @@ md-toast.announcement > .md-toast-content .md-button {
 }
 md-toast.announcement > .md-toast-content .material-icons {
   color: white;
+}
+
+md-toast.announcement > .md-toast-content a {
+  text-decoration: underline;
+  cursor: pointer;
 }
