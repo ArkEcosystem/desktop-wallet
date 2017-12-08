@@ -523,3 +523,26 @@ md-toast.announcement > .md-toast-content .md-button {
 md-toast.announcement > .md-toast-content .material-icons {
   color: white;
 }
+
+/* Component: Empty State */
+#content .empty-state {
+    text-align: center;
+    color: #d8d8d8;
+    padding: 40px;
+}
+#content .empty-state .es_content_contianer {
+    width: 450px;
+    display: inline-block;
+    white-space: initial;
+}
+#content .empty-state .es_img {
+    display: inline-block;
+    width: 75px;
+}
+#content .empty-state .es_header {
+    margin: 10px 0px;
+}
+#content .empty-state .es_content {
+    margin-top: 10px;
+    line-height: 22px;
+}
