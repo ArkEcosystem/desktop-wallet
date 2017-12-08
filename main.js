@@ -242,13 +242,13 @@ function getScreenshotProtectionLabel () {
 }
 
 function registerShortcuts () {
-  electron.globalShortcut.register('CommandOrControl+H', hideAppOnMac)
+  if (process.platform === 'darwin') {
+    electron.globalShortcut.register('CommandOrControl+H', hideApp)
+  }
 }
 
-function hideAppOnMac () {
-  if (process.platform === 'darwin') {
-    electron.app.hide()
-  }
+function hideApp () {
+  electron.app.hide()
 }
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
