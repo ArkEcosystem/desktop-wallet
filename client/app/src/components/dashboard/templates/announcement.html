@@ -4,7 +4,7 @@
     <div translate>News<span>({{announcement.date | date: 'mediumDate'}})</span></div>
 
     <div>
-      <a md-truncate href="#" ng-click="openAnnouncement(announcement.url)" title="{{announcement.text}}">{{announcement.text}}</a>
+      <a md-truncate open-external="announcement.url" title="{{announcement.text}}">{{announcement.text}}</a>
     </div>
 
     <div>

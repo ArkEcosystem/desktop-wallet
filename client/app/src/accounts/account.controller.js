@@ -167,10 +167,6 @@
       })
     }
 
-    self.openExternal = function (url) {
-      require('electron').shell.openExternal(url)
-    }
-
     self.clientVersion = require('../../package.json').version
     self.latestClientVersion = self.clientVersion
     self.openExplorer = openExplorer
