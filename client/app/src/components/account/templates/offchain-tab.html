@@ -71,8 +71,8 @@
 
     </md-list>
 
-    <md-content ng-if="!$ctrl.ul.selected.virtual.getFolders().length">
-        <empty-state header="You do not have any virtual folders." content="Your virtual folders for this account will appear here"></empty-state>
+    <md-content ng-if="$ctrl.ul.selected.virtual && !$ctrl.ul.selected.virtual.getFolders().length">
+        <empty-state header="This address does not have any virtual folders" content="Virtual folders for this account will appear here."></empty-state>
     </md-content>
   </md-tab-body>
 </md-tab>

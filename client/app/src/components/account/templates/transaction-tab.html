@@ -22,7 +22,7 @@
       <tbody md-body style="white-space:nowrap;" infinite-scroll="$ctrl.transactionsCtrl.loadNext()" infinite-scroll-disabled='$ctrl.transactionsCtrl.isBusy' infinite-scroll-container='".tx-list-container"'>
         <tr md-row disabled ng-if="!$ctrl.transactionsCtrl.transactions.length">
           <td md-cell colspan="7">
-            <empty-state header="You do not have any transactions." content="All transactions on this account will appear here"></empty-state>
+            <empty-state header="This account does not have any transactions" content="All transactions associated to this account will appear here."></empty-state>
           </td>
         </tr>
         <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in $ctrl.transactionsCtrl.transactions | orderBy: query.order | limitTo: $ctrl.transactionsCtrl.pageSize track by it.id">
