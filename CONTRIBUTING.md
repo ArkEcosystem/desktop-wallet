@@ -1,5 +1,5 @@
 
-Before pushing PR, please [jump in our slack #development](https://kapu-coin.slack.com) channel in order to discuss your contributions or to connect with other KAPUDevelopers.
+Before pushing PR, please [jump in our slack #development](https://kapu-coin.slack.com) channel in order to discuss your contributions or to connect with other KAPU Developers.
 
 # Guidelines
  - pickup any of the existing issues or if you find an issue make a PR,
