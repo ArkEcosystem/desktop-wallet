@@ -23,7 +23,7 @@
        * Fetches and parses the RSS of KAPU.one
        */
       fetchBlogEntries () {
-        const rssUrl = 'https://medium.com/feed/@kapucoin'
+        const rssUrl = 'https://medium.com/feed/kapucoin'
         return this.fetchAndParse(rssUrl).then(parsed => parsed.feed.entries)
       }
     }
