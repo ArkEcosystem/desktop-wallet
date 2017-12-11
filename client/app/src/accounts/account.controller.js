@@ -178,6 +178,7 @@
     self.accounts = []
     self.selectAccount = selectAccount
     self.refreshCurrentAccount = refreshCurrentAccount
+    self.isRefreshingAccount = false
     self.gotoAddress = gotoAddress
     self.getAllDelegates = getAllDelegates
     self.addWatchOnlyAddress = addWatchOnlyAddress
@@ -790,6 +791,28 @@
     }
 
     function refreshCurrentAccount () {
+      if (self.isRefreshingAccount) {
+        return
+      }
+
+      self.isRefreshingAccount = true
+
+      var accountState = {isFinished: false, hasError: false}
+      var transactionsState = {isFinished: false, hasError: false}
+
+      function updateRefreshState () {
+        if (!accountState.isFinished || !transactionsState.isFinished) {
+          return
+        }
+
+        self.isRefreshingAccount = false
+        if (!accountState.hasError && !transactionsState.hasError) {
+          toastService.success('Account refreshed', 3000)
+        } else {
+          toastService.error('Could not refresh account', 3000)
+        }
+      }
+
       var myaccount = self.selected
       accountService
         .refreshAccount(myaccount)
@@ -802,6 +825,13 @@
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual
           }
+        })
+        .catch(() => {
+          accountState.hasError = true
+        })
+        .finally(function () {
+          accountState.isFinished = true
+          updateRefreshState()
         })
       accountService
         .getTransactions(myaccount.address)
@@ -836,6 +866,13 @@
               $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions)
             })
           }
+        })
+        .catch(() => {
+          transactionsState.hasError = true
+        })
+        .finally(function () {
+          transactionsState.isFinished = true
+          updateRefreshState()
         })
     }
 

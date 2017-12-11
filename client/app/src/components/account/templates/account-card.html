@@ -1,7 +1,7 @@
 <md-card flex="none">
 
   <div class="share">
-    <md-button ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount()" aria-label="Refresh Account">
+    <md-button ng-class="{'rotate-360': $ctrl.ul.isRefreshingAccount}" ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount()" aria-label="Refresh Account">
       <md-icon md-font-library="material-icons">cached</md-icon>
       <md-tooltip>
         <translate>Refresh Account</translate>
