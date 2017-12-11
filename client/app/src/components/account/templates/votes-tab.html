@@ -93,6 +93,11 @@
             <td md-cell>{{it.approval}}%</td>
             <td md-cell>{{it.productivity}}%</td>
           </tr>
+          <tr md-row disabled ng-if="!$ctrl.ul.getAllDelegates($ctrl.ul.selected).length">
+              <td md-cell colspan="7">
+                <empty-state header="This account does not have any selected delegates" content="Once a delegate is selected for this account, it will appear here."></empty-state>
+              </td>
+            </tr>
         </tbody>
       </table>
     </md-table-container>

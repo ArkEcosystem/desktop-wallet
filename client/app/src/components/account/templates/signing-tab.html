@@ -75,7 +75,7 @@
     </md-content>
 
     <md-content ng-if="!$ctrl.ul.selected.publicKey" class="tab-text-only-content" translate>
-      This address has not received any ARK so it is not on the ARK blockchain and can not be used for signing messages.
+      <empty-state header="This address has not received any ARK" content="Until it has, it is not on the ARK blockchain and can not be used for signing messages."></empty-state>
     </md-content>
 
   </md-tab-body>

@@ -20,6 +20,11 @@
         </tr>
       </thead>
       <tbody md-body style="white-space:nowrap;" infinite-scroll="$ctrl.transactionsCtrl.loadNext()" infinite-scroll-disabled='$ctrl.transactionsCtrl.isBusy' infinite-scroll-container='".tx-list-container"'>
+        <tr md-row disabled ng-if="!$ctrl.transactionsCtrl.transactions.length">
+          <td md-cell colspan="7">
+            <empty-state header="This account does not have any transactions" content="All transactions associated to this account will appear here."></empty-state>
+          </td>
+        </tr>
         <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in $ctrl.transactionsCtrl.transactions | orderBy: query.order | limitTo: $ctrl.transactionsCtrl.pageSize track by it.id">
           <td md-cell><a ng-click="$ctrl.ul.openExplorer('/tx/'+it.id)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.id | smallId}}</a></td>
           <td md-cell ng-if="it.confirmations <= 50">{{it.confirmations}}</td>
