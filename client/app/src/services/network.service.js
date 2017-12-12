@@ -398,27 +398,6 @@
       return peer
     }
 
-    // // Checks if the stored time and the current time has crossed 4pm CET time
-    // function checkToUpdateConversionRates (storedCETDate, currCETDate) {
-    //   const storedTime = storedCETDate.getTime()
-    //   const currTime = currCETDate.getTime()
-    //
-    //   const storedHour = storedCETDate.getHours()
-    //   const currHour = currCETDate.getHours()
-    //   const FOUR_PM = 16
-    //
-    //     // greater than a day we will want to update.
-    //   if (currTime - storedTime > 24 * 60 * 60 * 1000) {
-    //     return true
-    //   } else if (storedHour < FOUR_PM && currHour >= FOUR_PM) {
-    //     return true
-    //   } else if (storedHour >= FOUR_PM && (currHour >= FOUR_PM && currHour < storedHour)) {
-    //     return true
-    //   } else {
-    //     return false
-    //   }
-    // }
-
     // Checks if the stored time and the current time has crossed 4pm CET time
     function checkToUpdateConversionRates (storedDate) {
       const Moment = require('moment-timezone');
@@ -431,17 +410,6 @@
 
       const range = moment.range(storedDate, endDate)
       return fourPMCET.within(range);
-    }
-
-    // Takes in a date and converts it into CET time
-    function convertDateToCETDate (beginDate) {
-      let localTime = beginDate.getTime()
-      let localOffset = beginDate.getTimezoneOffset() * 1000 * 60
-      let utcTime = localTime + localOffset
-      const CET_OFFSET = 1.0
-      let cetTime = utcTime + (1000 * 60 * 60 * CET_OFFSET)
-      let cetDate = new Date(cetTime)
-      return cetDate
     }
 
     function createCurrencyConversionApiCall (currencies) {
