@@ -369,7 +369,6 @@
         let storedDateString = priceObj.date
         let storedDate = new Date(storedDateString)
         var updateCurrencies = checkToUpdateConversionRates(storedDate)
-        console.log(updateCurrencies)
         if (updateCurrencies) {
           getConversionRatesApiCall(peer)
         }
@@ -397,9 +396,8 @@
       const moment = MomentRange.extendMoment(Moment);
       storedDate = moment(storedDate.getTime()).utcOffset(60)
       var endDate = moment(new Date().getTime()).utcOffset(60)
-      const FOUR_PM = 16
-      var fourPMCET = moment({ year :storedDate.year(), month :storedDate.month(), day :storedDate.date(), hour :FOUR_PM}).utcOffset(60)
-
+      const API_UPDATE_HOUR = 9
+      var fourPMCET = moment({ year :storedDate.year(), month :storedDate.month(), day : storedDate.date(), hour : API_UPDATE_HOUR}).utcOffset(60)
       const range = moment.range(storedDate, endDate)
       return fourPMCET.within(range);
     }
