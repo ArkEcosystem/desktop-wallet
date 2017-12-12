@@ -376,9 +376,8 @@
         peer.market.conversionRates = priceObj.rates
         let storedDateString = priceObj.date
         let storedDate = new Date(storedDateString)
-        let storedCETDate = convertDateToCETDate(storedDate)
-        let curCETDate = convertDateToCETDate(new Date())
-        var updateCurrencies = checkToUpdateConversionRates(storedCETDate, curCETDate)
+        var updateCurrencies = checkToUpdateConversionRates(storedDate)
+        console.log(updateCurrencies)
         if (updateCurrencies) {
           getConversionRatesApiCall(peer)
         }
@@ -399,25 +398,39 @@
       return peer
     }
 
+    // // Checks if the stored time and the current time has crossed 4pm CET time
+    // function checkToUpdateConversionRates (storedCETDate, currCETDate) {
+    //   const storedTime = storedCETDate.getTime()
+    //   const currTime = currCETDate.getTime()
+    //
+    //   const storedHour = storedCETDate.getHours()
+    //   const currHour = currCETDate.getHours()
+    //   const FOUR_PM = 16
+    //
+    //     // greater than a day we will want to update.
+    //   if (currTime - storedTime > 24 * 60 * 60 * 1000) {
+    //     return true
+    //   } else if (storedHour < FOUR_PM && currHour >= FOUR_PM) {
+    //     return true
+    //   } else if (storedHour >= FOUR_PM && (currHour >= FOUR_PM && currHour < storedHour)) {
+    //     return true
+    //   } else {
+    //     return false
+    //   }
+    // }
+
     // Checks if the stored time and the current time has crossed 4pm CET time
-    function checkToUpdateConversionRates (storedCETDate, currCETDate) {
-      const storedTime = storedCETDate.getTime()
-      const currTime = currCETDate.getTime()
-
-      const storedHour = storedCETDate.getHours()
-      const currHour = currCETDate.getHours()
+    function checkToUpdateConversionRates (storedDate) {
+      const Moment = require('moment-timezone');
+      const MomentRange = require('moment-range');
+      const moment = MomentRange.extendMoment(Moment);
+      storedDate = moment(storedDate.getTime()).utcOffset(60)
+      var endDate = moment(new Date().getTime()).utcOffset(60)
       const FOUR_PM = 16
+      var fourPMCET = moment({ year :storedDate.year(), month :storedDate.month(), day :storedDate.date(), hour :FOUR_PM}).utcOffset(60)
 
-        // greater than a day we will want to update.
-      if (currTime - storedTime > 24 * 60 * 60 * 1000) {
-        return true
-      } else if (storedHour < FOUR_PM && currHour >= FOUR_PM) {
-        return true
-      } else if (storedHour >= FOUR_PM && (currHour >= FOUR_PM && currHour < storedHour)) {
-        return true
-      } else {
-        return false
-      }
+      const range = moment.range(storedDate, endDate)
+      return fourPMCET.within(range);
     }
 
     // Takes in a date and converts it into CET time
