@@ -30,7 +30,7 @@
         <h3>
           <translate>Default</translate> {{(($ctrl.ul.getDefaultValue($ctrl.ul.selected) | convertToArkValue) | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul)}}</h3>
         <span class="md-secondary">
-          <md-button md-block md-colors="{'background' : $ctrl.ul.getDefaultValue($ctrl.ul.selected)>0 ? 'default-green-200':'default-red-200' }"> {{$ctrl.ul.getDefaultValue($ctrl.ul.selected) | convertToArkValue}}</md-button>
+          <span class="md-button selectable-text" md-block md-colors="{'background' : $ctrl.ul.getDefaultValue($ctrl.ul.selected)>0 ? 'default-green-200':'default-red-200' }">{{$ctrl.ul.getDefaultValue($ctrl.ul.selected) | convertToArkValue}}<span>
         </span>
       </md-list-item>
       <md-list-item ng-repeat="folder in $ctrl.ul.selected.virtual.getFolders()">
