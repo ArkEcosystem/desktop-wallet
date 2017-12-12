@@ -391,15 +391,15 @@
 
     // Checks if the stored time and the current time has crossed 4pm CET time
     function checkToUpdateConversionRates (storedDate) {
-      const Moment = require('moment-timezone');
-      const MomentRange = require('moment-range');
-      const moment = MomentRange.extendMoment(Moment);
+      const Moment = require('moment-timezone')
+      const MomentRange = require('moment-range')
+      const moment = MomentRange.extendMoment(Moment)
       storedDate = moment(storedDate.getTime()).utcOffset(60)
       var endDate = moment(new Date().getTime()).utcOffset(60)
       const API_UPDATE_HOUR = 9
-      var fourPMCET = moment({ year :storedDate.year(), month :storedDate.month(), day : storedDate.date(), hour : API_UPDATE_HOUR}).utcOffset(60)
+      var fourPMCET = moment({year: storedDate.year(), month: storedDate.month(), day: storedDate.date(), hour: API_UPDATE_HOUR}).utcOffset(60)
       const range = moment.range(storedDate, endDate)
-      return fourPMCET.within(range);
+      return fourPMCET.within(range)
     }
 
     function createCurrencyConversionApiCall (currencies) {
