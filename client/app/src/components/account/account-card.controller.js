@@ -18,7 +18,6 @@
     })
 
   function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService) {
-
     this.$onInit = () => {
       this.ul = this.accountCtrl
       this.ab = this.addressBookCtrl
@@ -108,19 +107,14 @@
 
         if (action === gettextCatalog.getString('Open in explorer')) {
           this.accountCtrl.openExplorer('/address/' + selectedAccount.address)
-
         } else if (action === gettextCatalog.getString('Timestamp Document')) {
           this.accountCtrl.timestamp(selectedAccount)
-
         } else if (action === gettextCatalog.getString('Remove')) {
           this.confirmRemoval(selectedAccount)
-
         } else if (action === gettextCatalog.getString('Register Delegate')) {
           this.accountCtrl.createDelegate(selectedAccount)
-
         } else if (action === gettextCatalog.getString('Label')) {
           this.promptLabel(selectedAccount)
-
         } else if (action === gettextCatalog.getString('Second Passphrase')) {
           this.accountCtrl.createSecondPassphrase(selectedAccount)
         }
@@ -304,5 +298,4 @@
       })
     }
   }
-
 })()

@@ -28,14 +28,13 @@
           .clickOutsideToClose(true)
           .title(message)
           .ariaLabel(message)
-          .theme(self.currentTheme)
+          .theme(self.currentTheme) // eslint-disable-line no-undef
           .ok(gettextCatalog.getString('Ok'))
       )
     }
 
     this.signMessage = selectedAccount => {
       function sign () {
-        const address = $scope.sign.selectedAccount.address
         const passphrase = $scope.sign.passphrase
         const message = $scope.sign.message
 
@@ -61,7 +60,7 @@
             $mdDialog.hide()
           },
           function (error) {
-            accountCtrl.showMessage(error)
+            accountCtrl.showMessage(error)  // eslint-disable-line no-undef
           }
         )
       }
@@ -94,7 +93,6 @@
     }
 
     this.verifyMessage = signedMessage => {
-
       function verify () {
         console.log($scope.verify)
         const message = $scope.verify.message
@@ -145,5 +143,4 @@
       }
     }
   }
-
 })()

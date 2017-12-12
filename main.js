@@ -124,7 +124,7 @@ function createWindow () {
         {
           label: 'About ArkClient',
           click: () => openAboutWindow({
-            icon_path: __dirname + '/client/ark.png',
+            icon_path: `${__dirname}/client/ark.png`,
             package_json_dir: __dirname,
             copyright: 'Copyright (c) 2017 ARK',
             homepage: 'https://ark.io/',

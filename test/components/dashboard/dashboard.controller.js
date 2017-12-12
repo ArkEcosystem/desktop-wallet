@@ -32,11 +32,11 @@ describe('DashboardController', function () {
   })
 
   describe('showAnnouncements()', () => {
-    context('when fetches the blog entries', ()=> {
+    context('when fetches the blog entries', () => {
       // NOTE: isoDate is a full datetime
       const entries = [ { guid: 'b', isoDate: 2017 } ]
 
-      beforeEach(() => feedServiceMock.fetchBlogEntries.resolves(entries) )
+      beforeEach(() => feedServiceMock.fetchBlogEntries.resolves(entries))
 
       context("when isn't stored any announcement", () => {
         it('shows the new one', function () {

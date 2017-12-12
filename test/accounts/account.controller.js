@@ -100,7 +100,7 @@ describe('AccountController', function () {
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('$mdToast', mdToastMock)
       $provide.value('gettextCatalog', getTextCatalogMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
+      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject((_$compile_, _$rootScope_, _$controller_) => {
@@ -132,6 +132,42 @@ describe('AccountController', function () {
 
       it('returns the user and the ledger accounts', function () {
         expect(ctrl.getAllAccounts()).to.have.members(accounts.concat(ctrl.ledgerAccounts))
+      })
+    })
+  })
+
+  describe('test btc toggle', () => {
+    context('bitcoinCurrency is valid', () => {
+      it('bitcoinCurrency is valid', () => {
+        expect(ctrl.bitcoinCurrency).to.not.be.undefined
+        expect(ctrl.bitcoinCurrency.name).to.equal('btc')
+      })
+    })
+
+    context('check', () => {
+      beforeEach(() => {
+        ctrl.btcValueActive = false
+      })
+
+      it('is active', () => {
+        ctrl.toggleBitcoinCurrency()
+        expect(ctrl.btcValueActive).to.equal(true)
+      })
+
+      it('is inactive (off -> on -> off)', () => {
+        ctrl.toggleBitcoinCurrency()
+        ctrl.toggleBitcoinCurrency()
+        expect(ctrl.btcValueActive).to.equal(false)
+      })
+
+      it('is active (forced)', () => {
+        ctrl.toggleBitcoinCurrency(true)
+        expect(ctrl.btcValueActive).to.equal(true)
+      })
+
+      it('is inactive (forced)', () => {
+        ctrl.toggleBitcoinCurrency(false)
+        expect(ctrl.btcValueActive).to.equal(false)
       })
     })
   })

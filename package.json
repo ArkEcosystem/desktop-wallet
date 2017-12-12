@@ -130,13 +130,17 @@
     "globals": [
       "angular",
       "Audio",
-      "Blob"
+      "Blob",
+      "sinon",
+      "chai",
+      "inject"
     ],
     "parser": "babel-eslint",
     "ignore": [
       "client/node_modules",
       "client/app/dependencies.min.js",
-      "client/app/src/utils/translations.js"
+      "client/app/src/utils/translations.js",
+      "test"
     ]
   }
 }

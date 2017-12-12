@@ -22,20 +22,29 @@
     }
 
     this.myAccountsBalance = () => {
-      const total = this.accountCtrl.getAllAccounts().reduce( (sum, account) => {
+      const total = this.accountCtrl.getAllAccounts().reduce((sum, account) => {
         return sum + parseInt(account.balance || 0)
       }, 0)
 
       return (total / ARKTOSHI_UNIT).toFixed(2)
     }
 
-    this.myAccountsCurrencyBalance = () => {
+    this.myAccountsCurrencyBalance = (bitcoinToggleIsActive) => {
       const market = this.accountCtrl.connectedPeer.market
-      const currencyName = this.accountCtrl.currency.name
+      const currencyName = bitcoinToggleIsActive && this.accountCtrl.btcValueActive ? 'btc' : this.accountCtrl.currency.name
       const price = market && market.price ? market.price[currencyName] : 0
 
       return this.myAccountsBalance() * price
     }
-  }
 
+    this.refreshAccountBalances = () => {
+      networkService.getPrice()
+
+      this.accountCtrl.getAllAccounts().forEach(account => {
+        accountService
+          .refreshAccount(account)
+          .then((updated) => { account.balance = updated.balance })
+      })
+    }
+  }
 })()

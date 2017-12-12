@@ -7,6 +7,7 @@ var LedgerArk = function (comm) {
   this.comm.setScrambleKey('w0w')
 }
 
+/* eslint-disable node/no-deprecated-api */
 LedgerArk.prototype.getAddress_async = function (path) {
   var splitPath = utils.splitPath(path)
   var buffer = new Buffer(5 + 1 + splitPath.length * 4)
@@ -114,7 +115,7 @@ LedgerArk.prototype.signPersonalMessage_async = function (path, messageHex) {
   while (offset !== message.length) {
     var maxChunkSize = (offset === 0 ? (150 - 1 - splitPath.length * 4 - 4) : 150)
     var chunkSize = (offset + maxChunkSize > message.length ? message.length - offset : maxChunkSize)
-    var buffer = new  Buffer(offset == 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize)
+    var buffer = new Buffer(offset === 0 ? 5 + 1 + splitPath.length * 4 + 4 + chunkSize : 5 + chunkSize)
     buffer[0] = 0xe0
     buffer[1] = 0x08
     buffer[2] = (offset === 0 ? 0x00 : 0x80)
@@ -146,5 +147,6 @@ LedgerArk.prototype.signPersonalMessage_async = function (path, messageHex) {
     return result
   })
 }
+/* eslint-enable node/no-deprecated-api */
 
 module.exports = LedgerArk

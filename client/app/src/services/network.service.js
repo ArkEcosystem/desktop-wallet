@@ -159,14 +159,8 @@
         if (res.data[0] && res.data[0].price_btc) {
           res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
         }
-        updatePeerWithCurrencies(peer, res)
-          .then((prices) => {
-            res.data[0].price = prices
-            peer.market = res.data[0]
-          })
-          .catch(() => {
-            peer.market = res.data[0]
-          })
+        peer.market = res.data[0]
+        peer = updatePeerWithCurrencies(peer, res)
         storageService.set('lastPrice', { market: peer.market, date: new Date() })
       }, failedTicker)
       .catch(failedTicker)

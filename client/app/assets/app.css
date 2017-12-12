@@ -104,7 +104,9 @@ md-list.left-list hr {
 .md-button.md-focused:not(:hover):focus {
     background-color: transparent;
 }
-
+.md-button.md-small {
+    min-width: 35px;
+}
 md-list .md-button.selected {
     color: #03a9f4;
 }
@@ -241,6 +243,10 @@ span.name {
   transition: color linear 0.2s;
   color: white;
 }
+.footer a {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .footer > a:hover {
   color: rgb(198, 198, 198);
 }
@@ -276,6 +282,9 @@ account-box {
 #home-box-accounts {
     min-height: 180px;
 }
+#home-box-accounts md-toolbar .md-button {
+    font-size: 20px;
+}
 
 #home-box-row {
     min-height: 180px;
@@ -294,6 +303,16 @@ table#tx-list.md-table tbody.md-body>tr.md-row>td.md-cell,
 table#tx-list.md-table thead.md-head>tr.md-row>th.md-column {
     padding: 5px !important;
     text-align: center;
+}
+
+table#tx-list.md-table tbody td a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#vote-list tbody td a, #vote-list-virtual tbody td a {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 body>.md-open-menu-container {
@@ -388,6 +407,12 @@ md-toast.debug .md-toast-content {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     object-fit: cover;
+}
+
+/* Add a white border around the QR code to make it easier on QR Code readers to decode on dark theme */
+.md-dark-theme qrcode canvas.qrcode {
+    border: 8px solid white;
+    margin-left: -8px;
 }
 
 md-bottom-sheet button md-icon.material-icons {
@@ -517,4 +542,31 @@ md-toast.announcement > .md-toast-content .md-button {
 }
 md-toast.announcement > .md-toast-content .material-icons {
   color: white;
+}
+md-toast.announcement > .md-toast-content a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Component: Empty State */
+#content .empty-state {
+    text-align: center;
+    color: #d8d8d8;
+    padding: 40px;
+}
+#content .empty-state .es_content_contianer {
+    width: 450px;
+    display: inline-block;
+    white-space: initial;
+}
+#content .empty-state .es_img {
+    display: inline-block;
+    width: 75px;
+}
+#content .empty-state .es_header {
+    margin: 10px 0px;
+}
+#content .empty-state .es_content {
+    margin-top: 10px;
+    line-height: 22px;
 }

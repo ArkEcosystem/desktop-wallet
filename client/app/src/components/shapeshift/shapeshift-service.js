@@ -16,7 +16,7 @@
       coins = resp.data
     })
 
-    var endPoints = {
+    var endPoints = { // eslint-disable-line no-unused-vars
       Rate: { path: 'rate', method: 'GET' },
       DepositLimit: { path: 'limit', method: 'GET' },
       MarketInfo: { path: 'marketinfo', method: 'GET' },
@@ -34,7 +34,7 @@
       CancelPendingTx: { path: 'cancelpending', method: 'POST' }
     }
 
-    function request (endpoint, data) {
+    function request (endpoint, data) { // eslint-disable-line no-unused-vars
       var deferred = $q.defer()
 
       $http({

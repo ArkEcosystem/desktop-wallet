@@ -30,9 +30,9 @@ describe('AccountBoxController', function () {
   }
 
   beforeEach(() => {
-      module('arkclient.components', $provide => {
-        $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
-      })
+    module('arkclient.components', $provide => {
+      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
+    })
 
     inject(_$componentController_ => {
       ctrl = _$componentController_('accountBox', null, bindings)

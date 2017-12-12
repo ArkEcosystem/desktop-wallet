@@ -5,7 +5,7 @@
     </md-button>
 		<img src="ark.png" alt="" height="40">
 		<md-button ng-click="$ctrl.ul.selected?$ctrl.ul.selected=null:$ctrl.ul.selected=$ctrl.ul.accounts[0]"><strong>{{$ctrl.ul.network.token}} <translate>Client</translate> - {{$ctrl.ul.clientVersion}}</strong></md-button>
-		<md-button class="new-version-button" ng-if="$ctrl.ul.clientVersion!=$ctrl.ul.latestClientVersion" onclick='require("electron").shell.openExternal("https://github.com/ArkEcosystem/ark-desktop/releases")' aria-label="New version available!">
+		<md-button class="new-version-button" ng-if="$ctrl.ul.clientVersion!=$ctrl.ul.latestClientVersion" open-external="'https://github.com/ArkEcosystem/ark-desktop/releases'" aria-label="New version available!">
 			<translate>New version available!</translate>
 		</md-button>
 
@@ -149,7 +149,7 @@
 								<b><translate>Market Cap.</translate></b>
 							</div>
 
-							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.available_supply*$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name] | formatCurrency:$ctrl.ul}}</span>
+							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.available_supply | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul}}</span>
 						</md-list-item>
 						<md-list-item ng-show="$ctrl.ul.connectedPeer.market.isOffline">
 							<b translate>Last checked</b> <span class="md-secondary">

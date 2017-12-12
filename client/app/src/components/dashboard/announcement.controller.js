@@ -34,8 +34,7 @@
 
     $scope.openAnnouncement = url => {
       require('electron').shell.openExternal(url)
-      setTimeout(()=> $scope.dismiss(), 2000)
+      setTimeout(() => $scope.dismiss(), 2000)
     }
   }
-
 })()
