@@ -790,7 +790,7 @@
       })
     }
 
-    function refreshCurrentAccount () {
+    function refreshCurrentAccount (provideFeeback) {
       if (self.isRefreshingAccount) {
         return
       }
@@ -806,6 +806,11 @@
         }
 
         self.isRefreshingAccount = false
+
+        if (!provideFeeback) {
+          return
+        }
+
         if (!accountState.hasError && !transactionsState.hasError) {
           toastService.success('Account refreshed', 3000)
         } else {
