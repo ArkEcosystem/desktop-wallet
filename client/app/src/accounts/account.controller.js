@@ -179,6 +179,7 @@
     self.selectAccount = selectAccount
     self.refreshCurrentAccount = refreshCurrentAccount
     self.isRefreshingAccount = false
+    self.isRefreshingAccounts = false
     self.gotoAddress = gotoAddress
     self.getAllDelegates = getAllDelegates
     self.addWatchOnlyAddress = addWatchOnlyAddress
@@ -790,7 +791,7 @@
       })
     }
 
-    function refreshCurrentAccount (provideFeeback) {
+    function refreshCurrentAccount (showToast) {
       if (self.isRefreshingAccount) {
         return
       }
@@ -807,7 +808,7 @@
 
         self.isRefreshingAccount = false
 
-        if (!provideFeeback) {
+        if (!showToast) {
           return
         }
 
@@ -834,7 +835,7 @@
         .catch(() => {
           accountState.hasError = true
         })
-        .finally(function () {
+        .finally(() => {
           accountState.isFinished = true
           updateRefreshState()
         })
@@ -875,19 +876,54 @@
         .catch(() => {
           transactionsState.hasError = true
         })
-        .finally(function () {
+        .finally(() => {
           transactionsState.isFinished = true
           updateRefreshState()
         })
     }
 
-    self.refreshAccountBalances = () => {
+    self.refreshAccountBalances = (showToast) => {
+      if (this.isRefreshingAccounts) {
+        return
+      }
+
+      this.isRefreshingAccounts = true
+      var states = []
+
+      function updateRefreshState () {
+        var areAllFinished = states.every(state => state.isFinished)
+        var hasAnyError = states.some(state => state.hasError)
+
+        if (!areAllFinished) {
+          return
+        }
+
+        self.isRefreshingAccounts = false
+
+        if (!showToast) {
+          return
+        }
+
+        if (!hasAnyError) {
+          toastService.success('Accounts refreshed', 3000)
+        } else {
+          toastService.error('Could not refresh accounts', 3000)
+        }
+      }
+
       networkService.getPrice()
 
       self.getAllAccounts().forEach(account => {
+        var state = {isFinished: false, hasError: false}
+        states.push(state)
         accountService
           .refreshAccount(account)
           .then(updated => { account.balance = updated.balance })
+          .catch(() => { state.hasError = true })
+          .finally(() => {
+            state.isFinished = true
+            updateRefreshState()
+          })
       })
     }
 
