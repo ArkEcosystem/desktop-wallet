@@ -1812,15 +1812,16 @@
                       0,
                       false
                     )
-                var alert = $mdDialog.alert({
+                var confirm = $mdDialog.confirm({
                       title: gettextCatalog.getString('Are you sure?'),
                       secondPhraseArkVal: secondPhraseArkVal,
                       textContent: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)') + ': ' + secondPhraseArkVal,
-                      ok: 'Close'
+                      ok: gettextCatalog.getString('Create'),
+                      cancel: gettextCatalog.getString('Cancel')
                     })
 
-                $mdDialog.show(alert)
-                      .finally(function() {
+                $mdDialog.show(confirm)
+                      .then(function() {
                         $mdDialog.show({
                           parent: angular.element(document.getElementById('app')),
                           templateUrl: './src/accounts/view/createSecondPassphrase.html',
@@ -1828,7 +1829,10 @@
                           preserveScope: true,
                           scope: $scope
                         })
-                      })
+                      }, function () {
+                        cancel()
+                      }
+                    )
               }
           )
       }
