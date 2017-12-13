@@ -21,7 +21,13 @@
           toastService.success(`The ${result.type} ${result.qr} has been successfully scanned.`)
         }
 
-        $scope.$parent.send.data[$scope.inputCallback] = result.qr
+        if ($scope.inputCallback) {
+          $scope.$parent.send.data[$scope.inputCallback] = result.qr
+        }
+
+        if ($scope.inputCallbackFuncName) {
+          $scope.$parent[$scope.inputCallbackFuncName](result.qr)
+        }
 
         $timeout(function () {
           $mdDialog.hide()
@@ -63,7 +69,8 @@
         onSuccess: '&',
         onError: '&',
         onVideoError: '&',
-        inputCallback: '@'
+        inputCallback: '@',
+        inputCallbackFuncName: '@'
       },
       controller: controller,
       replace: true,
