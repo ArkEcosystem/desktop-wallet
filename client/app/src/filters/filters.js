@@ -18,7 +18,7 @@
         // NOTE AccountController is being renaming to `ac` in refactored templates
         const ac = scope.ac || scope.ul
         const currencyName = bitcoinToggleIsActive && ac.btcValueActive ? 'btc' : ac.currency.name
-        const price = ac.connectedPeer.market.price[currencyName]
+        const price = typeof ac.connectedPeer.market.price === 'undefined' ? 0 : ac.connectedPeer.market.price[currencyName]
         return (amount * price).toFixed(5)
       }
     })
