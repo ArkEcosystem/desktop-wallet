@@ -1860,7 +1860,6 @@
         }
       }
 
-
       function cancel () {
         $mdDialog.hide()
       }
@@ -1870,7 +1869,6 @@
         cancel: cancel,
         next: next
       }
-
     }
 
     function loadSignedMessages () {
