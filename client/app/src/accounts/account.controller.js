@@ -99,6 +99,12 @@
       es_419: gettextCatalog.getString('Spanish'),
       sv: gettextCatalog.getString('Swedish')
     }
+	
+	var dateFormats = {
+		MDY: "MM/DD/YYYY",
+		DMY: "DD/MM/YYYY",
+		YMD: "YYYY/MM/DD"
+	}
 
     pluginLoader.triggerEvent('onStart')
 
@@ -125,9 +131,16 @@
     self.language = storageService.get('language') || 'en'
     self.selectedLanguage = self.language
     gettextCatalog.setCurrentLanguage(self.language)
-
-    self.getLanguage = function () {
+	
+	self.getLanguage = function () {
       return languages[self.language]
+    }
+	
+    self.dateFormat = storageService.get('dateFormat') || 'MDY'
+    self.selectedDateFormat = self.dateFormat
+
+	self.getDateFormat = function () {
+      return dateFormats[self.dateFormat]
     }
 
     $window.onbeforeunload = function () {
@@ -401,6 +414,25 @@
       self.language = getlanguage(this.selectedLanguage)
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
+    }
+		
+    self.selectAllDateFormats = function () {
+      return dateFormats
+    }
+	
+    self.setDateFormat = function () {
+      function getdateformat (value) {
+        for (var prop in dateFormats) {
+          if (dateFormats.hasOwnProperty(prop)) {
+            if (dateFormats[prop] === value) {
+              return prop
+            }
+          }
+        }
+      }
+      self.dateFormat = getdateformat(this.selectedDateFormat)
+      storageService.set('dateFormat', self.dateFormat)
+      //gettextCatalog.setCurrentLanguage(self.language)
     }
 
     self.getMarketInfo = function (symbol) {

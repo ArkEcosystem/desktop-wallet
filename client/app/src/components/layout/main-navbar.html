@@ -53,6 +53,15 @@
 								<md-option ng-value="language" ng-repeat="language in $ctrl.ul.selectAllLanguages()">{{language}}</md-option>
 							</md-select>
 						</md-list-item>
+						
+						<md-list-item>
+							<md-icon>date_range</md-icon>
+							<p translate>Date Format</p>
+							<md-select aria-label="Date Format" class="md-secondary md-no-underline" ng-model="$ctrl.ul.selectedDateFormat" ng-init="$ctrl.ul.selectedDateFormat = $ctrl.ul.getDateFormat()" ng-change="$ctrl.ul.setDateFormat()">
+								<md-option ng-value="dateFormat" ng-repeat="dateFormat in $ctrl.ul.selectAllDateFormats()">{{dateFormat}}</md-option>
+							</md-select>
+						</md-list-item>
+						
 						<md-list-item aria-label="Play sound when receiving transactions?">
 							<md-icon>music_note</md-icon>
 							<p translate>Play sound when receiving transactions?</p>
