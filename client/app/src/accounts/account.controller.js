@@ -1795,12 +1795,45 @@
       var bip39 = require('bip39')
       var data = { secondPassphrase: bip39.generateMnemonic() }
 
-      warnAboutSecondPassphraseFee()
+
       if (selectedAccount.secondSignature) {
         return formatAndToastError(
           gettextCatalog.getString('This account already has a second passphrase: ' + selectedAccount.address)
         )
       }
+
+      function warnAboutSecondPassphraseFee () {
+        accountService.getFees().then(
+              function (fees) {
+                let secondPhraseArktoshiVal = fees['secondsignature']
+                var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+                toastService.warn(
+                     gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+                      0,
+                      false
+                    )
+                var alert = $mdDialog.alert({
+                      title: gettextCatalog.getString('Are you sure?'),
+                      secondPhraseArkVal: secondPhraseArkVal,
+                      textContent: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)') + ': ' + secondPhraseArkVal,
+                      ok: 'Close'
+                    })
+
+                $mdDialog.show(alert)
+                      .finally(function() {
+                        $mdDialog.show({
+                          parent: angular.element(document.getElementById('app')),
+                          templateUrl: './src/accounts/view/createSecondPassphrase.html',
+                          clickOutsideToClose: false,
+                          preserveScope: true,
+                          scope: $scope
+                        })
+                      })
+              }
+          )
+      }
+
+      warnAboutSecondPassphraseFee()
 
       function next () {
         if (!$scope.createSecondPassphraseDialog.data.showRepassphrase) {
@@ -1824,19 +1857,6 @@
         }
       }
 
-      function warnAboutSecondPassphraseFee () {
-        accountService.getFees().then(
-              function (fees) {
-                let secondPhraseArktoshiVal = fees['secondsignature']
-                let secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
-                toastService.warn(
-                     gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
-                      0,
-                      false
-                    )
-              }
-          )
-      }
 
       function cancel () {
         $mdDialog.hide()
@@ -1848,13 +1868,6 @@
         next: next
       }
 
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/createSecondPassphrase.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
     }
 
     function loadSignedMessages () {
