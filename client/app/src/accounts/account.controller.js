@@ -1795,7 +1795,6 @@
       var bip39 = require('bip39')
       var data = { secondPassphrase: bip39.generateMnemonic() }
 
-
       if (selectedAccount.secondSignature) {
         return formatAndToastError(
           gettextCatalog.getString('This account already has a second passphrase: ' + selectedAccount.address)
@@ -1813,15 +1812,15 @@
                       false
                     )
                 var confirm = $mdDialog.confirm({
-                      title: gettextCatalog.getString('Are you sure?'),
-                      secondPhraseArkVal: secondPhraseArkVal,
-                      textContent: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)') + ': ' + secondPhraseArkVal,
-                      ok: gettextCatalog.getString('Create'),
-                      cancel: gettextCatalog.getString('Cancel')
-                    })
+                  title: gettextCatalog.getString('Are you sure?'),
+                  secondPhraseArkVal: secondPhraseArkVal,
+                  textContent: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)') + ': ' + secondPhraseArkVal,
+                  ok: gettextCatalog.getString('Create'),
+                  cancel: gettextCatalog.getString('Cancel')
+                })
 
                 $mdDialog.show(confirm)
-                      .then(function() {
+                      .then(function () {
                         $mdDialog.show({
                           parent: angular.element(document.getElementById('app')),
                           templateUrl: './src/accounts/view/createSecondPassphrase.html',
