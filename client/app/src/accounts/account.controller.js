@@ -167,6 +167,53 @@
       })
     }
 
+    self.createRefreshState = (successMessage, errorMessage) => {
+      var stateObject = {}
+
+      stateObject.states = []
+
+      stateObject.isRefreshing = false
+
+      stateObject.create = () => {
+        var state = { isFinished: false, hasError: false }
+        stateObject.states.push(state)
+        return state
+      }
+
+      stateObject.shouldRefresh = () => {
+        if (stateObject.isRefreshing) {
+          return false
+        }
+
+        stateObject.isRefreshing = true
+        return true
+      }
+
+      stateObject.updateRefreshState = (showToast) => {
+        var areAllFinished = stateObject.states.every(state => state.isFinished)
+        var hasAnyError = stateObject.states.some(state => state.hasError)
+
+        if (!areAllFinished) {
+          return
+        }
+
+        stateObject.isRefreshing = false
+        stateObject.states = []
+
+        if (!showToast) {
+          return
+        }
+
+        if (!hasAnyError) {
+          toastService.success(successMessage, 3000)
+        } else {
+          toastService.error(errorMessage, 3000)
+        }
+      }
+
+      return stateObject
+    }
+
     self.clientVersion = require('../../package.json').version
     self.latestClientVersion = self.clientVersion
     self.openExplorer = openExplorer
@@ -178,8 +225,8 @@
     self.accounts = []
     self.selectAccount = selectAccount
     self.refreshCurrentAccount = refreshCurrentAccount
-    self.isRefreshingAccount = false
-    self.isRefreshingAccounts = false
+    self.accountRefreshState = self.createRefreshState('Account refreshed', 'Could not refresh account')
+    self.accountsRefreshState = self.createRefreshState('Accounts refreshed', 'Could not refresh accounts')
     self.gotoAddress = gotoAddress
     self.getAllDelegates = getAllDelegates
     self.addWatchOnlyAddress = addWatchOnlyAddress
@@ -792,32 +839,12 @@
     }
 
     function refreshCurrentAccount (showToast) {
-      if (self.isRefreshingAccount) {
+      if (!self.accountRefreshState.shouldRefresh()) {
         return
       }
 
-      self.isRefreshingAccount = true
-
-      var accountState = {isFinished: false, hasError: false}
-      var transactionsState = {isFinished: false, hasError: false}
-
-      function updateRefreshState () {
-        if (!accountState.isFinished || !transactionsState.isFinished) {
-          return
-        }
-
-        self.isRefreshingAccount = false
-
-        if (!showToast) {
-          return
-        }
-
-        if (!accountState.hasError && !transactionsState.hasError) {
-          toastService.success('Account refreshed', 3000)
-        } else {
-          toastService.error('Could not refresh account', 3000)
-        }
-      }
+      var accountState = self.accountRefreshState.create()
+      var transactionsState = self.accountRefreshState.create()
 
       var myaccount = self.selected
       accountService
@@ -837,7 +864,7 @@
         })
         .finally(() => {
           accountState.isFinished = true
-          updateRefreshState()
+          self.accountRefreshState.updateRefreshState(showToast)
         })
       accountService
         .getTransactions(myaccount.address)
@@ -878,51 +905,26 @@
         })
         .finally(() => {
           transactionsState.isFinished = true
-          updateRefreshState()
+          self.accountRefreshState.updateRefreshState(showToast)
         })
     }
 
     self.refreshAccountBalances = (showToast) => {
-      if (this.isRefreshingAccounts) {
+      if (!self.accountsRefreshState.shouldRefresh()) {
         return
-      }
-
-      this.isRefreshingAccounts = true
-      var states = []
-
-      function updateRefreshState () {
-        var areAllFinished = states.every(state => state.isFinished)
-        var hasAnyError = states.some(state => state.hasError)
-
-        if (!areAllFinished) {
-          return
-        }
-
-        self.isRefreshingAccounts = false
-
-        if (!showToast) {
-          return
-        }
-
-        if (!hasAnyError) {
-          toastService.success('Accounts refreshed', 3000)
-        } else {
-          toastService.error('Could not refresh accounts', 3000)
-        }
       }
 
       networkService.getPrice()
 
       self.getAllAccounts().forEach(account => {
-        var state = {isFinished: false, hasError: false}
-        states.push(state)
+        var state = self.accountsRefreshState.create()
         accountService
           .refreshAccount(account)
           .then(updated => { account.balance = updated.balance })
           .catch(() => { state.hasError = true })
           .finally(() => {
             state.isFinished = true
-            updateRefreshState()
+            self.accountsRefreshState.updateRefreshState(showToast)
           })
       })
     }

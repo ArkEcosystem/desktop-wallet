@@ -191,6 +191,10 @@ md-button.menuBtn>md-icon {
     background-color: transparent !important;
 }
 
+.rotate-360 .md-ripple-container {
+    display: none;
+}
+
 @-moz-keyframes rotate-360-keyframe { 100% { -moz-transform: rotate(-360deg); } }
 @-webkit-keyframes rotate-360-keyframe { 100% { -webkit-transform: rotate(-360deg); } }
 @keyframes rotate-360-keyframe { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
