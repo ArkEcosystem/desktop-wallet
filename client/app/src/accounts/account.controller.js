@@ -1806,16 +1806,11 @@
               function (fees) {
                 let secondPhraseArktoshiVal = fees['secondsignature']
                 var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
-                toastService.warn(
-                     gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
-                      0,
-                      false
-                    )
                 var confirm = $mdDialog.confirm({
-                  title: gettextCatalog.getString('Are you sure?'),
+                  title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
                   secondPhraseArkVal: secondPhraseArkVal,
-                  textContent: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)') + ': ' + secondPhraseArkVal,
-                  ok: gettextCatalog.getString('Create'),
+                  textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+                  ok: gettextCatalog.getString('Continue'),
                   cancel: gettextCatalog.getString('Cancel')
                 })
 
