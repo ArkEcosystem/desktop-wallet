@@ -1,4 +1,4 @@
-# Multi Platform Kapu Lite Client
+![KAPU-DESKTOP](https://imgur.com/sYopmfR)
 
 ## Download
 [Latest Release](https://github.com/kapucoin/kapu-desktop/releases)
