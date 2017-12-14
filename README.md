@@ -1,4 +1,4 @@
-![KAPU-DESKTOP](https://imgur.com/sYopmfR)
+![KAPU-DESKTOP](https://i.imgur.com/sYopmfR.jpg)
 
 ## Download
 [Latest Release](https://github.com/kapucoin/kapu-desktop/releases)
