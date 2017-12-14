@@ -38,6 +38,25 @@
         return username
       }
     }])
+	.filter('formattedDate', ['storageService', '$filter', function (storageService, dateFilter) {
+      return function filter (date) {
+        // Get configured date format
+		var format = storageService.get('dateFormat') || 'MDY'
+		
+		// Set configured date format
+		if(format === 'MDY') {
+			format = 'M/d/yyyy'
+		} else if (format === 'DMY') {
+			format = 'd/M/yyyy'
+		} else if (format === 'YMD') {
+			format = 'yyyy/M/d'
+		}
+		
+		filter.$stateful = true;
+
+        return dateFilter('date')(date, format + ' h:mm a')
+      }
+    }])
 
   /**
    * Main Controller for the Angular Material Starter App
@@ -432,7 +451,8 @@
       }
       self.dateFormat = getdateformat(this.selectedDateFormat)
       storageService.set('dateFormat', self.dateFormat)
-      //gettextCatalog.setCurrentLanguage(self.language)
+	  
+	  toastService.success('Please restart the application to apply selected date format')
     }
 
     self.getMarketInfo = function (symbol) {
