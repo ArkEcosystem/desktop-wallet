@@ -167,6 +167,53 @@
       })
     }
 
+    self.createRefreshState = (successMessage, errorMessage) => {
+      var stateObject = {}
+
+      stateObject.states = []
+
+      stateObject.isRefreshing = false
+
+      stateObject.create = () => {
+        var state = { isFinished: false, hasError: false }
+        stateObject.states.push(state)
+        return state
+      }
+
+      stateObject.shouldRefresh = () => {
+        if (stateObject.isRefreshing) {
+          return false
+        }
+
+        stateObject.isRefreshing = true
+        return true
+      }
+
+      stateObject.updateRefreshState = (showToast) => {
+        var areAllFinished = stateObject.states.every(state => state.isFinished)
+        var hasAnyError = stateObject.states.some(state => state.hasError)
+
+        if (!areAllFinished) {
+          return
+        }
+
+        stateObject.isRefreshing = false
+        stateObject.states = []
+
+        if (!showToast) {
+          return
+        }
+
+        if (!hasAnyError) {
+          toastService.success(successMessage, 3000)
+        } else {
+          toastService.error(errorMessage, 3000)
+        }
+      }
+
+      return stateObject
+    }
+
     self.clientVersion = require('../../package.json').version
     self.latestClientVersion = self.clientVersion
     self.openExplorer = openExplorer
@@ -178,6 +225,8 @@
     self.accounts = []
     self.selectAccount = selectAccount
     self.refreshCurrentAccount = refreshCurrentAccount
+    self.accountRefreshState = self.createRefreshState('Account refreshed', 'Could not refresh account')
+    self.accountsRefreshState = self.createRefreshState('Accounts refreshed', 'Could not refresh accounts')
     self.gotoAddress = gotoAddress
     self.getAllDelegates = getAllDelegates
     self.addWatchOnlyAddress = addWatchOnlyAddress
@@ -789,7 +838,14 @@
       })
     }
 
-    function refreshCurrentAccount () {
+    function refreshCurrentAccount (showToast) {
+      if (!self.accountRefreshState.shouldRefresh()) {
+        return
+      }
+
+      var accountState = self.accountRefreshState.create()
+      var transactionsState = self.accountRefreshState.create()
+
       var myaccount = self.selected
       accountService
         .refreshAccount(myaccount)
@@ -802,6 +858,13 @@
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual
           }
+        })
+        .catch(() => {
+          accountState.hasError = true
+        })
+        .finally(() => {
+          accountState.isFinished = true
+          self.accountRefreshState.updateRefreshState(showToast)
         })
       accountService
         .getTransactions(myaccount.address)
@@ -837,15 +900,32 @@
             })
           }
         })
+        .catch(() => {
+          transactionsState.hasError = true
+        })
+        .finally(() => {
+          transactionsState.isFinished = true
+          self.accountRefreshState.updateRefreshState(showToast)
+        })
     }
 
-    self.refreshAccountBalances = () => {
+    self.refreshAccountBalances = (showToast) => {
+      if (!self.accountsRefreshState.shouldRefresh()) {
+        return
+      }
+
       networkService.getPrice()
 
       self.getAllAccounts().forEach(account => {
+        var state = self.accountsRefreshState.create()
         accountService
           .refreshAccount(account)
           .then(updated => { account.balance = updated.balance })
+          .catch(() => { state.hasError = true })
+          .finally(() => {
+            state.isFinished = true
+            self.accountsRefreshState.updateRefreshState(showToast)
+          })
       })
     }
 
