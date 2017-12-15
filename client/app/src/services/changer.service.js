@@ -23,22 +23,20 @@
       { symbol: 'litecoin_LTC', name: 'LTC', image: '' },
       { symbol: 'dogecoin_DOGE', name: 'DOGE', image: '' },
       { symbol: 'dash_DASH', name: 'DASH', image: '' },
-      { symbol: 'bytecoin_BCN', name: 'BCN', image: '' },
       { symbol: 'peercoin_PPC', name: 'PPC', image: '' },
-      { symbol: 'nubits_NBT', name: 'NBT', image: '' },
-      { symbol: 'clams_CLAM', name: 'CLAM', image: '' },
-      { symbol: 'tether_USDT', name: 'USDT', image: '' },
       { symbol: 'pm_USD', name: 'USD (Perfect Money)', image: '' },
       { symbol: 'pmvoucher_USD', name: 'USD (Perfect Money Voucher)', image: '' },
-      { symbol: 'okpay_USD', name: 'USD (OKPay)', image: '' },
       { symbol: 'payeer_USD', name: 'USD (Payeer)', image: '' },
       { symbol: 'advcash_USD', name: 'USD (ADVCash)', image: '' },
-      { symbol: 'btce_USD', name: 'USD (btce)', image: '' },
-      { symbol: 'counterparty_XCP', name: 'XCP', image: '' },
-      { symbol: 'storjcoinx_SJCX', name: 'SJCX', image: '' },
       { symbol: 'monero_XMR', name: 'XMR', image: '' },
-      { symbol: 'namecoin_NMC', name: 'NMC', image: '' },
-      { symbol: 'maidsafecoin_MAID', name: 'MAID', image: '' }
+      { symbol: 'augur_REP', name: 'REP', image: '' },
+      { symbol: 'bitcoincash_BCH', name: 'BC', image: '' },
+      { symbol: 'ethereumclassic_ETC', name: 'ETC', image: '' },
+      { symbol: 'gnosis_GNO', name: 'GNO', image: '' },
+      { symbol: 'golem_GNT', name: 'GNT', image: '' },
+      { symbol: 'lisk_LSK', name: 'LSK', image: '' },
+      { symbol: 'ripple_XRP', name: 'XRP', image: '' },
+      { symbol: 'zcash_ZEC', name: 'ZEC', image: '' }
     ]
 
     var fuckedAPIoutlook = {
@@ -81,6 +79,12 @@
 
     function getMarketInfo (coin1, coin2, optionalamount) {
       var deferred = $q.defer()
+
+      if (!isValidCoin(coin1) || !isValidCoin(coin2)) {
+        deferred.reject('At least one of the passed in coins is not valid!')
+        return deferred.promise
+      }
+
       var param = ''
       if (optionalamount) {
         param = '?amount=' + optionalamount
@@ -94,6 +98,10 @@
       })
 
       return deferred.promise
+    }
+
+    function isValidCoin (coin) {
+      return coins.some(c => c.symbol === coin)
     }
 
     function saveExchange (exchange, status) {
