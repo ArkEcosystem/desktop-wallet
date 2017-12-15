@@ -1,4 +1,4 @@
-;(function () {
+﻿;(function () {
   'use strict'
 
   angular
@@ -38,21 +38,21 @@
         return username
       }
     }])
-	.filter('formattedDate', ['storageService', '$filter', function (storageService, dateFilter) {
+    .filter('formattedDate', ['storageService', '$filter', function (storageService, dateFilter) {
       return function filter (date) {
         // Get configured date format
-		var format = storageService.get('dateFormat') || 'MDY'
+        var format = storageService.get('dateFormat') || 'YMD'
 		
-		// Set configured date format
-		if(format === 'MDY') {
-			format = 'M/d/yyyy'
-		} else if (format === 'DMY') {
-			format = 'd/M/yyyy'
-		} else if (format === 'YMD') {
-			format = 'yyyy/M/d'
-		}
+        // Set configured date format
+        if(format === 'MDY') {
+            format = 'M/d/yyyy'
+        } else if (format === 'DMY') {
+            format = 'd/M/yyyy'
+        } else if (format === 'YMD') {
+            format = 'yyyy/M/d'
+        }
 		
-		filter.$stateful = true;
+        filter.$stateful = true;
 
         return dateFilter('date')(date, format + ' h:mm a')
       }
