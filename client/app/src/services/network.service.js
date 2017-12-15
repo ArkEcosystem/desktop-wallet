@@ -17,6 +17,10 @@
     var ark = require('../node_modules/arkjs')
     ark.crypto.setNetworkVersion(network.version || 23)
 
+    const Moment = require('moment-timezone')
+    const MomentRange = require('moment-range')
+    const moment = MomentRange.extendMoment(Moment)
+
     var clientVersion = require('../../package.json').version
 
     var peer = {
@@ -358,6 +362,7 @@
       prices['usd'] = res.data[0].price_usd
       storageService.setGlobal('peerCurrencies', prices)
       peer.market.price = prices
+      return peer
     }
 
     // Updates the currency conversion rates IF necessary
@@ -391,9 +396,6 @@
 
     // Checks if the stored time and the current time has crossed 4pm CET time
     function checkToUpdateConversionRates (storedDate) {
-      const Moment = require('moment-timezone')
-      const MomentRange = require('moment-range')
-      const moment = MomentRange.extendMoment(Moment)
       storedDate = moment(storedDate.getTime()).utcOffset(60)
       var endDate = moment(new Date().getTime()).utcOffset(60)
       const API_UPDATE_HOUR = 9
