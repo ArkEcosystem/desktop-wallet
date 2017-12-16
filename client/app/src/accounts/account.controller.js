@@ -442,7 +442,7 @@
     }
 	
     self.setDateFormat = function () {
-      function getdateformat (value) {
+      function getDateFormat (value) {
         for (var prop in dateFormats) {
           if (dateFormats.hasOwnProperty(prop)) {
             if (dateFormats[prop] === value) {
@@ -451,10 +451,11 @@
           }
         }
       }
-      self.dateFormat = getdateformat(this.selectedDateFormat)
+
+      self.dateFormat = getDateFormat(this.selectedDateFormat)
       storageService.set('dateFormat', self.dateFormat)
 	  
-	  refreshCurrentAccountView()
+      refreshCurrentAccountView()
     }
 
     self.getMarketInfo = function (symbol) {
