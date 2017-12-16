@@ -174,6 +174,13 @@ md-button.menuBtn>md-icon {
     padding: 0 15px;
 }
 
+.selectable-text {
+    -webkit-user-select: text ;
+    -moz-user-select: text ;
+    -ms-user-select: text ;
+    user-select: text ;
+    cursor: text;
+  }
 
 /* Utils */
 
@@ -181,6 +188,23 @@ md-button.menuBtn>md-icon {
     position: relative;
 }
 
+.rotate-360 {
+    -webkit-animation: rotate-360-keyframe 4s linear infinite;
+    -moz-animation: rotate-360-keyframe 4s linear infinite;
+    animation: rotate-360-keyframe 4s linear infinite;
+}
+
+.rotate-360:hover {
+    background-color: transparent !important;
+}
+
+.rotate-360 .md-ripple-container {
+    display: none;
+}
+
+@-moz-keyframes rotate-360-keyframe { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes rotate-360-keyframe { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes rotate-360-keyframe { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
 
 /* Typography support coming in 0.8.0 */
 
@@ -407,6 +431,12 @@ md-toast.debug .md-toast-content {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     object-fit: cover;
+}
+
+/* Add a white border around the QR code to make it easier on QR Code readers to decode on dark theme */
+.md-dark-theme qrcode canvas.qrcode {
+    border: 8px solid white;
+    margin-left: -8px;
 }
 
 md-bottom-sheet button md-icon.material-icons {
