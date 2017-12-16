@@ -117,7 +117,7 @@
       sv: gettextCatalog.getString('Swedish')
     }
 	
-	var dateFormats = {
+	const DATE_FORMATS = {
 		MDY: "MM/DD/YYYY",
 		DMY: "DD/MM/YYYY",
 		YMD: "YYYY/MM/DD"
@@ -157,7 +157,7 @@
     self.selectedDateFormat = self.dateFormat
 
 	self.getDateFormat = function () {
-      return dateFormats[self.dateFormat]
+      return DATE_FORMATS[self.dateFormat]
     }
 
     $window.onbeforeunload = function () {
@@ -438,14 +438,14 @@
     }
 		
     self.selectAllDateFormats = function () {
-      return dateFormats
+      return DATE_FORMATS
     }
 	
     self.setDateFormat = function () {
       function getDateFormat (value) {
-        for (var prop in dateFormats) {
-          if (dateFormats.hasOwnProperty(prop)) {
-            if (dateFormats[prop] === value) {
+        for (var prop in DATE_FORMATS) {
+          if (DATE_FORMATS.hasOwnProperty(prop)) {
+            if (DATE_FORMATS[prop] === value) {
               return prop
             }
           }
