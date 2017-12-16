@@ -1890,6 +1890,38 @@
         )
       }
 
+      function warnAboutSecondPassphraseFee () {
+        accountService.getFees().then(
+              function (fees) {
+                let secondPhraseArktoshiVal = fees['secondsignature']
+                var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+                var confirm = $mdDialog.confirm({
+                  title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
+                  secondPhraseArkVal: secondPhraseArkVal,
+                  textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+                  ok: gettextCatalog.getString('Continue'),
+                  cancel: gettextCatalog.getString('Cancel')
+                })
+
+                $mdDialog.show(confirm)
+                      .then(function () {
+                        $mdDialog.show({
+                          parent: angular.element(document.getElementById('app')),
+                          templateUrl: './src/accounts/view/createSecondPassphrase.html',
+                          clickOutsideToClose: false,
+                          preserveScope: true,
+                          scope: $scope
+                        })
+                      }, function () {
+                        cancel()
+                      }
+                    )
+              }
+          )
+      }
+
+      warnAboutSecondPassphraseFee()
+
       function next () {
         if (!$scope.createSecondPassphraseDialog.data.showRepassphrase) {
           $scope.createSecondPassphraseDialog.data.reSecondPassphrase = $scope.createSecondPassphraseDialog.data.secondPassphrase
@@ -1921,14 +1953,6 @@
         cancel: cancel,
         next: next
       }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/createSecondPassphrase.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
     }
 
     function loadSignedMessages () {

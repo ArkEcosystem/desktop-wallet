@@ -873,6 +873,8 @@
 
       fetchAccountAndForget: fetchAccountAndForget,
 
+      getFees: getFees,
+
       getTransactions: getTransactions,
 
       createTransaction: createTransaction,
