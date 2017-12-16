@@ -51,8 +51,6 @@
         } else if (format === 'YMD') {
             format = 'yyyy/M/d'
         }
-		
-        filter.$stateful = true;
 
         return dateFilter('date')(date, format + ' h:mm a')
       }
@@ -415,6 +413,10 @@
     function copiedToClipboard () {
       toastService.success('Copied to clipboard')
     }
+	
+    function refreshCurrentAccountView() {
+      selectAccount(self.selected)	
+    }
 
     self.selectAllLanguages = function () {
       return languages
@@ -452,7 +454,7 @@
       self.dateFormat = getdateformat(this.selectedDateFormat)
       storageService.set('dateFormat', self.dateFormat)
 	  
-	  toastService.success('Please restart the application to apply selected date format')
+	  refreshCurrentAccountView()
     }
 
     self.getMarketInfo = function (symbol) {
