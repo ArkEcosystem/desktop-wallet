@@ -153,7 +153,7 @@
       return languages[self.language]
     }
 	
-    self.dateFormat = storageService.get('dateFormat') || 'MDY'
+    self.dateFormat = storageService.get('dateFormat') || 'YMD'
     self.selectedDateFormat = self.dateFormat
 
 	self.getDateFormat = function () {
