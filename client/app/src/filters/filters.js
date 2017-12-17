@@ -4,7 +4,7 @@
   angular.module('arkclient.filters')
     .filter('smallId', function () {
       return function (fullId) {
-        return fullId.slice(0, 5) + '...' + fullId.slice(-5)
+        return smallId(fullId)
       }
     })
     .filter('exchangedate', function () {
@@ -55,4 +55,18 @@
       return val / ARKTOSHI_UNIT
     }
   }])
+  .filter('accountlabel', ['accountService', function (accountService) {
+    return function (address) {
+      if (!address) return address
+
+      var username = accountService.getUsername(address)
+      if (username.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(username)
+
+      return username
+    }
+  }])
+
+  function smallId (fullId) {
+    return fullId.slice(0, 5) + '...' + fullId.slice(-5)
+  }
 })()
