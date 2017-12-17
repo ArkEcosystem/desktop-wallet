@@ -235,7 +235,6 @@
     self.toggleList = toggleAccountsList
     self.createSecondPassphrase = createSecondPassphrase
     self.exportAccount = exportAccount
-    self.copiedToClipboard = copiedToClipboard
     self.formatAndToastError = formatAndToastError
 
     self.refreshAccountsAutomatically = storageService.get('refreshAccountsAutomatically') || false
@@ -428,10 +427,6 @@
 
     //   $mdToast.show(toast)
     // }
-
-    function copiedToClipboard () {
-      toastService.success('Copied to clipboard')
-    }
 
     self.selectAllLanguages = function () {
       return languages
