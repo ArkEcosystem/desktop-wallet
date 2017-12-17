@@ -2,11 +2,6 @@
   'use strict'
 
   angular.module('arkclient.filters')
-    .filter('smallId', function () {
-      return function (fullId) {
-        return smallId(fullId)
-      }
-    })
     .filter('exchangedate', function () {
       return function (exchangetime) {
         return new Date(exchangetime * 1000)
@@ -55,14 +50,15 @@
       return val / ARKTOSHI_UNIT
     }
   }])
-  .filter('accountlabel', ['accountService', function (accountService) {
+  .filter('accountLabel', ['accountService', function (accountService) {
     return function (address) {
       if (!address) return address
 
       var username = accountService.getUsername(address)
-      if (username.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(username)
 
-      return username
+      if (username !== address) return username
+      else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)
+      else return smallId(address)
     }
   }])
 
