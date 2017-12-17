@@ -1081,7 +1081,7 @@
 
     function addDelegate (selectedAccount) {
       var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] }
-
+      $scope.controls = []
       accountService.getActiveDelegates().then((r) => {
         data.registeredDelegates = r
       }).catch(() => toastService.error('Could not fetch active delegates - please check your internet connection'))
@@ -1108,6 +1108,7 @@
           formatAndToastError
         )
       }
+      $scope.controls = [{}]
 
       function addSponsors () {
         function indexOfDelegates (array, item) {
