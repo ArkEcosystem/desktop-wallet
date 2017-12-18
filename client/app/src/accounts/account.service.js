@@ -570,6 +570,7 @@
             return deferred.promise
           }
 
+          transaction.fee = fees.send
           transaction.senderId = config.fromAddress
 
           if (config.ledger) {
@@ -605,6 +606,7 @@
             return deferred.promise
           }
 
+          transaction.fee = fees.secondpassphrase
           transaction.senderId = config.fromAddress
 
           if (config.ledger) {
@@ -641,6 +643,7 @@
             return deferred.promise
           }
 
+          transaction.fee = fees.delegate
           transaction.senderId = config.fromAddress
 
           if (config.ledger) {
@@ -676,6 +679,7 @@
             return deferred.promise
           }
 
+          transaction.fee = fees.vote
           transaction.senderId = config.fromAddress
 
           if (config.ledger) {
