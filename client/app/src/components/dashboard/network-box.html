@@ -1,10 +1,16 @@
 <md-content id="home-box-network" md-whiteframe="3">
   <md-list flex>
     <md-list-item>
+      <md-tooltip>
+        <translate>Switch Network</translate>
+      </md-tooltip>
       <b translate>Network</b>
       <md-button class="md-secondary" aria-label="Switch Network" md-prevent-menu-close ng-click="$ctrl.ul.switchNetwork()">{{$ctrl.ul.connectedPeer.network}}/{{$ctrl.ul.connectedPeer.height}}</md-button>
     </md-list-item>
     <md-list-item>
+      <md-tooltip>
+				<translate>Pick Random Peer</translate>
+			</md-tooltip>
       <b translate>Peer</b>
       <md-button class="md-secondary" aria-label="Pick Random Peer" md-prevent-menu-close ng-click="$ctrl.ul.pickRandomPeer()">{{$ctrl.ul.connectedPeer.ip}}</md-button>
     </md-list-item>
