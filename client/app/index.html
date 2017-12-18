@@ -59,8 +59,9 @@
   </div>
 
   <div ng-cloak="" style="height: 100%" layout="column">
-
-    <main-navbar account-ctrl="ul"></main-navbar>
+    <div ng-controller="AddressbookController as ab">
+      <main-navbar account-ctrl="ul" address-book-ctrl="ab"></main-navbar>
+    </div>
 
     <dashboard account-ctrl="ul" id="dashboard" layout="column" layout-align="space-around center" ng-if="! ul.selected" flex></dashboard>
 
