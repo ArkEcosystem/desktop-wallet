@@ -24,6 +24,8 @@
       'multisignature': 500000000
     }
 
+    self.cachedFees = null
+
     self.TxTypes = {
       0: 'Send Ark',
       1: 'Second Signature Creation',
@@ -266,11 +268,17 @@
       return transaction
     }
 
-    function getFees () {
+    function getFees (canUseCached) {
       var deferred = $q.defer()
+      if (canUseCached && self.cachedFees) {
+        deferred.resolve(self.cachedFees)
+        return deferred.promise
+      }
+
       networkService.getFromPeer('/api/blocks/getfees')
         .then((resp) => {
           if (resp.success) {
+            self.cachedFees = resp.fees
             deferred.resolve(resp.fees)
           } else {
             deferred.resolve(self.defaultFees)
@@ -548,7 +556,7 @@
 
     function createTransaction (type, config) {
       var deferred = $q.defer()
-      getFees().then(function (fees) {
+      getFees(false).then((fees) => {
         var account
         var transaction
         if (type === 0) { // send ark
@@ -974,6 +982,9 @@
       fetchAccount: fetchAccount,
 
       fetchAccountAndForget: fetchAccountAndForget,
+
+      // return a copy of the object, so the original can't be changed
+      defaultFees: JSON.parse(JSON.stringify(self.defaultFees)),
 
       getFees: getFees,
 

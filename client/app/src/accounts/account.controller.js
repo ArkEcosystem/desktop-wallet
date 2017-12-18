@@ -1659,7 +1659,7 @@
       }
 
       function warnAboutSecondPassphraseFee () {
-        accountService.getFees().then(
+        accountService.getFees(true).then(
               function (fees) {
                 let secondPhraseArktoshiVal = fees['secondsignature']
                 var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
