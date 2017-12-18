@@ -1098,7 +1098,7 @@
         $mdDialog.hide()
         accountService.getDelegateByUsername(data.delegatename).then(
           function (delegate) {
-          if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
+            if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
               selectedAccount.selectedVotes.push(delegate)
             } else {
               toastService.error('List full or delegate already voted.')
