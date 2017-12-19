@@ -136,7 +136,7 @@
     }
 
     this.submitTransaction = (selectedAccount, formData) => {
-      return accountService.createTransaction(0, {
+      return accountService.createSendTransaction({
         ledger: selectedAccount.ledger,
         publicKey: selectedAccount.publicKey,
         fromAddress: formData.fromAddress,

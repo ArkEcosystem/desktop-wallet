@@ -434,6 +434,7 @@
       gettextCatalog.setCurrentLanguage(self.language)
     }
 
+
     // Load all registered accounts
     self.accounts = accountService.loadAllAccounts()
 
@@ -962,7 +963,7 @@
           return delegate.vote + delegate.publicKey
         }).join(',')
         console.log(publicKeys)
-        accountService.createTransaction(3, {
+        accountService.createVoteTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.voteDialog.data.fromAddress,
@@ -1015,7 +1016,7 @@
 
         $mdDialog.hide()
         var smartbridge = $scope.send.data.smartbridge
-        accountService.createTransaction(0, {
+        accountService.createSendTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.send.data.fromAddress,
@@ -1479,7 +1480,7 @@
           return formatAndToastError(error)
         }
 
-        accountService.createTransaction(2, {
+        accountService.createDelegateCreationTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.createDelegate.data.fromAddress,
@@ -1698,7 +1699,7 @@
         } else if ($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase) {
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true
         } else {
-          accountService.createTransaction(1, {
+          accountService.createSecondPassphraseCreationTransaction({
             fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase

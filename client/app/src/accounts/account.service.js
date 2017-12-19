@@ -554,167 +554,127 @@
       return deferred.promise
     }
 
-    function createTransaction (type, config) {
-      var deferred = $q.defer()
-      getFees(false).then((fees) => {
-        var account
-        var transaction
-        if (type === 0) { // send ark
-          if (!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)) {
-            deferred.reject(gettextCatalog.getString('The destination address ') + config.toAddress + gettextCatalog.getString(' is erroneous'))
-            return deferred.promise
-          }
+    function arkToshiToArk (amount, appendTokenName) {
+      var ark = numberToFixed(amount / ARKTOSHI_UNIT)
+      if (appendTokenName) {
+        return ark + ' ' + networkService.getNetwork().token
+      }
 
-          account = getAccount(config.fromAddress)
-          if (config.amount + fees.send > account.balance) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress)
-            return deferred.promise
-          }
+      return ark
+    }
 
-          try {
-            transaction = ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
+    function createTransaction (deferred, config, fee, createTransactionFunc, setAdditionalTransactionPropsOnLedger) {
+      var transaction
 
-          transaction.fee = fees.send
-          transaction.senderId = config.fromAddress
+      try {
+        transaction = createTransactionFunc(config)
+      } catch (e) {
+        deferred.reject(e)
+        return
+      }
 
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-          } else {
-            deferred.resolve(transaction)
-          }
-        } else if (type === 1) { // second passphrase creation
-          account = getAccount(config.fromAddress)
-          if (account.balance < fees.secondpassphrase) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 5 ARK to create a second passphrase'))
-            return deferred.promise
-          }
-          try {
-            transaction = ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
+      transaction.fee = fee
+      transaction.senderId = config.fromAddress
 
-          transaction.fee = fees.secondpassphrase
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-            return deferred.promise
-          }
-          deferred.resolve(transaction)
-        } else if (type === 2) { // delegate creation
-          account = getAccount(config.fromAddress)
-          if (account.balance < fees.delegate) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 25 ARK to register delegate'))
-            return deferred.promise
-          }
-          console.log(config)
-          try {
-            transaction = ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
-
-          transaction.fee = fees.delegate
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-            return deferred.promise
-          }
-          deferred.resolve(transaction)
-        } else if (type === 3) { // vote
-          account = getAccount(config.fromAddress)
-          if (account.balance < fees.vote) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 1 ARK to vote'))
-            return deferred.promise
-          }
-          try {
-            transaction = ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
-
-          transaction.fee = fees.vote
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.recipientId = config.fromAddress
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-            return deferred.promise
-          }
-          deferred.resolve(transaction)
+      if (config.ledger) {
+        delete transaction.signature
+        transaction.senderPublicKey = config.publicKey
+        if (setAdditionalTransactionPropsOnLedger) {
+          setAdditionalTransactionPropsOnLedger(transaction)
         }
-      })
+        ledgerService.signTransaction(config.ledger, transaction).then((result) => {
+          transaction.signature = result.signature
+          transaction.id = ark.crypto.getId(transaction)
+          deferred.resolve(transaction)
+        },
+        (error) => deferred.reject(error))
+        return
+      }
 
+      if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
+        deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
+        return
+      }
+
+      deferred.resolve(transaction)
+    }
+
+    function prepareTransaction (config, prepareFunc) {
+      var deferred = $q.defer()
+      var account = getAccount(config.fromAddress)
+      getFees(false).then((fees) => {
+        prepareFunc(deferred, account, fees)
+      })
       return deferred.promise
+    }
+
+    function createSendTransaction (config) {
+      return prepareTransaction(config, (deferred, account, fees) => {
+        if (!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)) {
+          deferred.reject(gettextCatalog.getString('The destination address ') + config.toAddress + gettextCatalog.getString(' is erroneous'))
+          return
+        }
+
+        if (config.amount + fees.send > account.balance) {
+          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress)
+          return
+        }
+
+        createTransaction(deferred,
+                          config,
+                          fees.send,
+                          () => ark.transaction.createTransaction(config.toAddress,
+                                                                  config.amount,
+                                                                  config.smartbridge,
+                                                                  config.masterpassphrase,
+                                                                  config.secondpassphrase))
+      })
+    }
+
+    function createSecondPassphraseCreationTransaction (config) {
+      return prepareTransaction(config, (deferred, account, fees) => {
+        if (account.balance < fees.secondpassphrase) {
+          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
+                          ', ' + gettextCatalog.getString('you need at least ' + arkToshiToArk(fees.secondpassphrase, true) + ' to create a second passphrase'))
+          return
+        }
+
+        createTransaction(deferred,
+                          config,
+                          fees.secondpassphrase,
+                          () => ark.transaction.createSignature(config.masterpassphrase, config.secondpassphrase))
+      })
+    }
+
+    function createDelegateCreationTransaction (config) {
+      return prepareTransaction(config, (deferred, account, fees) => {
+        if (account.balance < fees.delegate) {
+          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress + ', ' +
+                          gettextCatalog.getString('you need at least ' + arkToshiToArk(fees.delegate, true) + ' to register delegate'))
+          return
+        }
+
+        createTransaction(deferred,
+                          config,
+                          fees.delegate,
+                          () => ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase))
+      })
+    }
+
+    function createVoteTransaction (config) {
+      return prepareTransaction(config, (deferred, account, fees) => {
+        if (account.balance < fees.vote) {
+          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
+                           ', ' + gettextCatalog.getString('you need at least ' + arkToshiToArk(fees.vote, true) + ' to vote'))
+          return
+        }
+
+        createTransaction(deferred,
+                          config,
+                          fees.vote,
+                          () => ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase),
+                          (transaction) => { transaction.recipientId = config.fromAddress })
+      })
     }
 
     // Given a final list of delegates, create a vote assets list to be sent
@@ -993,8 +953,11 @@
       getAllTransactions: getAllTransactions,
 
       getRangedTransactions: getRangedTransactions,
+      createSecondPassphraseCreationTransaction: createSecondPassphraseCreationTransaction,
 
-      createTransaction: createTransaction,
+      createDelegateCreationTransaction: createDelegateCreationTransaction,
+
+      createVoteTransaction: createVoteTransaction,
 
       verifyMessage: verifyMessage,
 
