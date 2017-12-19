@@ -1080,7 +1080,6 @@
         function indexOfDelegates (array, item) {
           for (var i in array) {
             if (array[i].username === item.username) {
-              console.log(array[i])
               return i
             }
           }
@@ -1099,41 +1098,6 @@
         )
       }
 
-      function addSponsors () {
-        function indexOfDelegates (array, item) {
-          for (var i in array) {
-            if (array[i].username === item.username) {
-              console.log(array[i])
-              return i
-            }
-          }
-          return -1
-        }
-        $mdDialog.hide()
-        accountService.getSponsors().then(
-          function (sponsors) {
-            // check if sponsors are already voted
-            if (self.selected.delegates) {
-              let newsponsors = []
-              for (let i = 0; i < sponsors.length; i++) {
-                console.log(sponsors[i])
-                if (indexOfDelegates(self.selected.delegates, sponsors[i]) < 0) {
-                  newsponsors.push(sponsors[i])
-                }
-              }
-              sponsors = newsponsors
-            }
-
-            for (let i = 0; i < sponsors.length; i++) {
-              if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, sponsors[i]) < 0) {
-                selectedAccount.selectedVotes.push(sponsors[i])
-              }
-            }
-          },
-          formatAndToastError
-        )
-      }
-
       function cancel () {
         $mdDialog.hide()
       }
@@ -1141,8 +1105,7 @@
       $scope.addDelegateDialog = {
         data: data,
         cancel: cancel,
-        add: add,
-        addSponsors: addSponsors
+        add: add
       }
 
       $mdDialog.show({
