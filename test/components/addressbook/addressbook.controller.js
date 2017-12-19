@@ -107,13 +107,19 @@ describe('AddressbookController', function () {
       beforeEach(function () {
         ctrl.getContacts = sinon.stub().returns([])
         ctrl.showToast = sinon.stub()
+        ctrl.isAddress = sinon.stub()
       })
       it('should fail to add due to empty name', () => {
+        let name = ''
+        let address = 'a'
         ctrl.addAddressbookContact()
+        const retVal = $scope.addAddressbookContact.add(name, address)
         sinon.assert.calledOnce(mdDialogShowStub)
-        let val = $scope.addAddressbookContact.add('', 'a')
+        sinon.assert.match(retVal, undefined)
         sinon.assert.calledOnce(ctrl.getContacts)
+        sinon.assert.match(ctrl.trim(name), '')
         sinon.assert.calledWith(ctrl.showToast, 'This Contact Name is not valid', '', true)
+        sinon.assert.notCalled(ctrl.isAddress)
       })
     })
   })
