@@ -16,16 +16,24 @@ describe('AddressbookController', function () {
   beforeEach(() => {
     module('arkclient.components', $provide => {
       // define mocked services and stubbed calls
-      mdDialogMock = {}
+      mdDialogMock = {
+        show: angular.noop,
+        hide: angular.noop
+      }
       mdToastMock = {}
       storageServiceMock = {
         get: sinon.stub().returns(['test_contact'])
       }
       getTextCatalogMock = {
-        setStrings () {}
+        getString: sinon.stub(),
+        setCurrentLanguage: sinon.stub(),
+        setStrings: sinon.stub()
       }
       accountServiceMock = {}
-      toastServiceMock = {}
+      toastServiceMock = {
+        error: sinon.stub(),
+        success: sinon.stub()
+      }
 
       // provide mocks to angular controller
       $provide.value('$mdDialog', mdDialogMock)
@@ -52,6 +60,14 @@ describe('AddressbookController', function () {
   })
 
   describe('getContacts', () => {
+    var mdDialogShowStub,
+    mdDialogHideStub
+
+    beforeEach( () => {
+      mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
+      mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
+    })
+
     context('when contacts are valid', () => {
       beforeEach(function () {
         storageServiceMock.get = sinon.stub().returns(['valid_contact'])
@@ -69,12 +85,32 @@ describe('AddressbookController', function () {
       beforeEach(function () {
         storageServiceMock.get = sinon.stub().returns(null)
       })
-
+      console.log("WE RAN HERE")
       it('sets controller contacts to empty array on invalid return value', () => {
         ctrl.getContacts()
 
         expect(storageServiceMock.get.calledOnce).to.be.true
         expect(ctrl.contacts).to.deep.equal([])
+      })
+    })
+
+    context("set up addressbook contact modal", () => {
+      console.log("WE RAN TOO")
+      it('sets up address book modal', () => {
+        ctrl.addAddressbookContact()
+        expect($scope.addAddressbookContact).to.have.all.keys(['add', 'cancel'])
+        expect(typeof $scope.addAddressbookContact.add).to.equal('function')
+        expect(typeof $scope.addAddressbookContact.cancel).to.equal('function')
+      })
+    })
+
+    context("Adding contacts", () => {
+      it('should fail to add due to empty name', () => {
+        console.log("WE HER!!!!E")
+        ctrl.addAddressbookContact()
+        let val = $scope.addAddressbookContact.add('', 'a')
+        console.log(val)
+        sinon.assert.match(true, false)
       })
     })
   })
