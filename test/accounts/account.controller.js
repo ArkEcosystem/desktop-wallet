@@ -9,7 +9,8 @@ describe('AccountController', function () {
   const expect = chai.expect
 
   let ctrl,
-    $scope
+    $scope,
+	$filter
 
   let accountServiceMock,
     networkServiceMock,
@@ -44,7 +45,9 @@ describe('AccountController', function () {
         triggerEvent: sinon.stub()
       }
       storageServiceMock = {
-        get: sinon.stub().returns(['test_contact']),
+        get: sinon.stub()
+         .onCall('dateFormat').returns('YMD')
+         .returns(['test_contact']),
         getContext () {}
       }
       changerServiceMock = {
@@ -103,9 +106,10 @@ describe('AccountController', function () {
       $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
-    inject((_$compile_, _$rootScope_, _$controller_) => {
+    inject((_$compile_, _$rootScope_, _$controller_, _$filter_) => {
       $scope = _$rootScope_.$new()
       ctrl = _$controller_('AccountController', { $scope })
+	  $filter = _$filter_
     })
   })
 
@@ -170,5 +174,26 @@ describe('AccountController', function () {
         expect(ctrl.btcValueActive).to.equal(false)
       })
     })
+  })
+  
+  describe('check formattedDate filter for valid date', () => {
+    context('get valid date format for Yead-Date-Month', () => {
+		it('testing for formatting a valid date', function () {
+          // Arrange.
+          var validDate = '2017-12-14T11:49:08.000Z';
+
+          // Act
+          result = $filter('formattedDate')(validDate)
+
+          // Assert
+          expect(result).to.equal('14/12/2017 7:49 AM');
+		})
+
+		
+		// var formattedDateText = $filter('formattedDate')('2017-12-14T11:49:08.000Z')
+		// expect(formattedDateText).to.equal('14/12/2017 7:49 AM')
+		
+		// it(''
+	})
   })
 })
