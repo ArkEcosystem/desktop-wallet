@@ -85,7 +85,6 @@ describe('AddressbookController', function () {
       beforeEach(function () {
         storageServiceMock.get = sinon.stub().returns(null)
       })
-      console.log("WE RAN HERE")
       it('sets controller contacts to empty array on invalid return value', () => {
         ctrl.getContacts()
 
@@ -95,9 +94,9 @@ describe('AddressbookController', function () {
     })
 
     context("set up addressbook contact modal", () => {
-      console.log("WE RAN TOO")
       it('sets up address book modal', () => {
         ctrl.addAddressbookContact()
+        sinon.assert.calledOnce(mdDialogShowStub)
         expect($scope.addAddressbookContact).to.have.all.keys(['add', 'cancel'])
         expect(typeof $scope.addAddressbookContact.add).to.equal('function')
         expect(typeof $scope.addAddressbookContact.cancel).to.equal('function')
@@ -105,12 +104,16 @@ describe('AddressbookController', function () {
     })
 
     context("Adding contacts", () => {
+      beforeEach(function () {
+        ctrl.getContacts = sinon.stub().returns([])
+        ctrl.showToast = sinon.stub()
+      })
       it('should fail to add due to empty name', () => {
-        console.log("WE HER!!!!E")
         ctrl.addAddressbookContact()
+        sinon.assert.calledOnce(mdDialogShowStub)
         let val = $scope.addAddressbookContact.add('', 'a')
-        console.log(val)
-        sinon.assert.match(true, false)
+        sinon.assert.calledOnce(ctrl.getContacts)
+        sinon.assert.calledWith(ctrl.showToast, 'This Contact Name is not valid', '', true)
       })
     })
   })
