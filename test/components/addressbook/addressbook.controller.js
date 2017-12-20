@@ -92,6 +92,18 @@ describe('AddressbookController', function () {
         expect(ctrl.contacts).to.deep.equal([])
       })
     })
+  })
+
+  describe('addAddressbookContact', () =>  {
+    var mdDialogShowStub,
+    mdDialogHideStub
+
+    beforeEach( () => {
+      mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
+      mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
+      ctrl.getContacts = sinon.stub().returns([])
+      ctrl.showToast = sinon.stub()
+    })
 
     context("set up addressbook contact modal", () => {
       it('sets up address book modal', () => {
@@ -103,12 +115,7 @@ describe('AddressbookController', function () {
       })
     })
 
-    context("Adding contacts", () => {
-      beforeEach(function () {
-        ctrl.getContacts = sinon.stub().returns([])
-        ctrl.showToast = sinon.stub()
-        ctrl.isAddress = sinon.stub()
-      })
+    context("Adding Contact with empty name", () => {
       it('should fail to add due to empty name', () => {
         let name = ''
         let address = 'a'
@@ -117,9 +124,22 @@ describe('AddressbookController', function () {
         sinon.assert.calledOnce(mdDialogShowStub)
         sinon.assert.match(retVal, undefined)
         sinon.assert.calledOnce(ctrl.getContacts)
-        sinon.assert.match(ctrl.trim(name), '')
-        sinon.assert.calledWith(ctrl.showToast, 'This Contact Name is not valid', '', true)
-        sinon.assert.notCalled(ctrl.isAddress)
+        sinon.assert.calledWithMatch(ctrl.showToast, '', name, true)
+      })
+    })
+
+    context("Adding Contact with invalid address", () => {
+      it('should fail to add due to empty name', () => {
+        let name = 'test name'
+        let address = 'abcd'
+        ctrl.addAddressbookContact()
+        const ADD_RETURN_VAL = $scope.addAddressbookContact.add(name, address)
+        sinon.assert.calledOnce(mdDialogShowStub)
+        sinon.assert.match(ADD_RETURN_VAL, undefined)
+        sinon.assert.calledOnce(ctrl.getContacts)
+        sinon.assert.calledWithMatch(ctrl.showToast, '', address, true)
+        const IS_FAKE_ADDRESS = ctrl.isAddress(address)
+        sinon.assert.match(IS_FAKE_ADDRESS, false)
       })
     })
   })
