@@ -22,14 +22,17 @@ describe('AddressbookController', function () {
       }
       mdToastMock = {}
       storageServiceMock = {
-        get: sinon.stub().returns(['test_contact'])
+        get: sinon.stub().returns([{name:'test_contact', address: 'test_address'}]),
+        set: sinon.stub()
       }
       getTextCatalogMock = {
         getString: sinon.stub(),
         setCurrentLanguage: sinon.stub(),
         setStrings: sinon.stub()
       }
-      accountServiceMock = {}
+      accountServiceMock = {
+        loadAllAccounts: sinon.stub().returns([])
+      }
       toastServiceMock = {
         error: sinon.stub(),
         success: sinon.stub()
@@ -53,7 +56,7 @@ describe('AddressbookController', function () {
 
   describe('initialized state', () => {
     it('retrieves contacts from storage', () => {
-      expect(ctrl.contacts).to.deep.equal(['test_contact'])
+      expect(ctrl.contacts).to.deep.equal([{name:'test_contact', address: 'test_address'}])
       expect(storageServiceMock.get.calledOnce).to.be.true
       expect(storageServiceMock.get.getCall(0).args[0]).to.equal('contacts')
     })
@@ -120,9 +123,8 @@ describe('AddressbookController', function () {
         let name = ''
         let address = 'a'
         ctrl.addAddressbookContact()
-        const retVal = $scope.addAddressbookContact.add(name, address)
+        $scope.addAddressbookContact.add(name, address)
         sinon.assert.calledOnce(mdDialogShowStub)
-        sinon.assert.match(retVal, undefined)
         sinon.assert.calledOnce(ctrl.getContacts)
         sinon.assert.calledWithMatch(ctrl.showToast, '', name, true)
       })
@@ -130,16 +132,54 @@ describe('AddressbookController', function () {
 
     context("Adding Contact with invalid address", () => {
       it('should fail to add due to empty name', () => {
-        let name = 'test name'
-        let address = 'abcd'
+        let name = 'test_contact'
+        let address = 'test_address'
         ctrl.addAddressbookContact()
-        const ADD_RETURN_VAL = $scope.addAddressbookContact.add(name, address)
+        $scope.addAddressbookContact.add(name, address)
         sinon.assert.calledOnce(mdDialogShowStub)
-        sinon.assert.match(ADD_RETURN_VAL, undefined)
         sinon.assert.calledOnce(ctrl.getContacts)
         sinon.assert.calledWithMatch(ctrl.showToast, '', address, true)
-        const IS_FAKE_ADDRESS = ctrl.isAddress(address)
-        sinon.assert.match(IS_FAKE_ADDRESS, false)
+        sinon.assert.match(ctrl.isAddress(address), false)
+      })
+    })
+
+    context("Adding contact with duplicate name", () => {
+      it('should fail to add due to duplicate name, nothing else added', () => {
+        const NAME = 'test_name'
+        let address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+
+        ctrl.addAddressbookContact()
+        sinon.assert.match(ctrl.contactExists(NAME), false)
+        $scope.addAddressbookContact.add(NAME, address)
+        const SIZE_AFTER_FIRST_ADD = Object.keys(ctrl.contacts).length
+
+        address = 'AaLCSaTzwFhrEwvHtpGEt4peVzB1faAvSc'
+        ctrl.addAddressbookContact()
+        $scope.addAddressbookContact.add(NAME, address)
+        sinon.assert.match(ctrl.contactExists(NAME), true)
+        const SIZE_AFTER_SECOND_ADD = Object.keys(ctrl.contacts).length
+
+        //should be same since we failed to add
+        sinon.assert.match(SIZE_AFTER_SECOND_ADD, SIZE_AFTER_FIRST_ADD)
+      })
+    })
+
+    context("Adding contact with duplicate address", () => {
+      it('should fail to add due to duplicate address, nothing else added', () => {
+        let name = 'test_name'
+        const ADDRESS = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+
+        ctrl.addAddressbookContact()
+        $scope.addAddressbookContact.add(name, ADDRESS)
+        const SIZE_AFTER_FIRST_ADD = Object.keys(ctrl.contacts).length
+        name = 'test_name2'
+        ctrl.addAddressbookContact()
+        $scope.addAddressbookContact.add(name, ADDRESS)
+        sinon.assert.match(ctrl.addressExists(ADDRESS), true)
+        const SIZE_AFTER_SECOND_ADD = Object.keys(ctrl.contacts).length
+
+        //should be same since we failed to add
+        sinon.assert.match(SIZE_AFTER_SECOND_ADD, SIZE_AFTER_FIRST_ADD)
       })
     })
   })
