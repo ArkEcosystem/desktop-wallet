@@ -143,6 +143,22 @@ describe('AddressbookController', function () {
       })
     })
 
+    context("Adding contact with unique name and address", () => {
+      it('should add successfully', () => {
+          const NAME = 'test_name'
+          const ADDRESS = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+          
+          ctrl.addAddressbookContact()
+          const SIZE_BEFORE_ADD = Object.keys(ctrl.contacts).length
+          $scope.addAddressbookContact.add(NAME, ADDRESS)
+          const SIZE_AFTER_ADD = Object.keys(ctrl.contacts).length
+          sinon.assert.match(SIZE_BEFORE_ADD + 1, SIZE_AFTER_ADD)
+          sinon.assert.match(ctrl.contacts[SIZE_AFTER_ADD-1], {name: NAME, address: ADDRESS})
+
+      })
+    })
+
+
     context("Adding contact with duplicate name", () => {
       it('should fail to add due to duplicate name, nothing else added', () => {
         const NAME = 'test_name'
