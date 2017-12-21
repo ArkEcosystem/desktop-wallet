@@ -78,7 +78,7 @@
             <div ng-controller="AccountTransactionsController as transactionsCtrl">
               <transaction-tab account-ctrl="ul" transactions-ctrl="transactionsCtrl"></transaction-tab>
             </div>
-            <votes-tab account-ctrl="ul"></votes-tab>
+            <votes-tab account="ul.selected"></votes-tab>
             <signing-tab account-ctrl="ul" ng-if="!ul.selected.ledger"></signing-tab>
             <exchange-tab account-ctrl="ul"></exchange-tab>
             <offchain-tab account-ctrl="ul"></offchain-tab>

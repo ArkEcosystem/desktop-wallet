@@ -4,7 +4,7 @@
       <div class="md-toolbar-tools">
         <h2 translate>Add Delegate </h2>
         <span flex></span>
-        <md-button class="md-icon-button" ng-click="addDelegateDialog.cancel()">
+        <md-button class="md-icon-button" ng-click="$dialog.cancel()">
           <md-icon md-font-library="material-icons">clear</md-icon>
         </md-button>
       </div>
@@ -13,23 +13,23 @@
      <div ng-repeat="control in controls" class="md-dialog-content">
         <md-input-container class="md-block">
           <label for="delegate-name" translate>Active delegates (forging)</label>
-          <md-select id="delegate-name" ng-model="addDelegateDialog.data.delegatename">
-            <md-option ng-value="delegate.username" ng-repeat="delegate in addDelegateDialog.data.registeredDelegates | orderBy: '-approval'">{{delegate.username}} ({{delegate.approval}}% {{'approval'|translate}}, {{delegate.productivity}}% {{'productivity'|translate}})</md-option>
+          <md-select id="delegate-name" ng-model="$dialog.delegate.name">
+            <md-option ng-value="delegate.username" ng-repeat="delegate in $dialog.activeDelegates | orderBy: '-approval'">{{delegate.username}} ({{delegate.approval}}% {{'approval'|translate}}, {{delegate.productivity}}% {{'productivity'|translate}})</md-option>
           </md-select>
         </md-input-container>
 
         <md-input-container class="md-block">
           <label translate>Delegate name</label>
-          <input ng-model="addDelegateDialog.data.delegatename" type="text">
+          <input ng-model="$dialog.delegate.name" type="text">
         </md-input-container>
 
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button class="md-primary" ng-click="addDelegateDialog.add()" style="margin-right:20px;">
+      <md-button class="md-primary" ng-click="$dialog.addDelegate($dialog.delegate)" style="margin-right:20px;">
         <translate>Add</translate>
       </md-button>
-      <md-button ng-click="addDelegateDialog.cancel()">
+      <md-button ng-click="$dialog.cancel()">
         <translate>Cancel</translate>
       </md-button>
     </md-dialog-actions>
