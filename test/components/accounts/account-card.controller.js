@@ -14,11 +14,14 @@ describe('AccountCardController', function () {
   }
 
   const accountServiceMock = {
-    createTransaction: sinon.stub(),
     getUsername: sinon.stub(),
     setUsername: sinon.stub(),
     removeAccount: sinon.stub(),
     loadAllAccounts: sinon.stub()
+  }
+
+  const transactionBuilderServiceMock = {
+    createSendTransaction: sinon.stub()
   }
 
   const mdDialogMock = {
@@ -30,6 +33,7 @@ describe('AccountCardController', function () {
   beforeEach(() => {
     module('arkclient.components', $provide => {
       $provide.value('accountService', accountServiceMock)
+      $provide.value('transactionBuilderService', transactionBuilderServiceMock)
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
@@ -144,20 +148,20 @@ describe('AccountCardController', function () {
 
   describe('submitTransaction()', () => {
     afterEach(function () {
-      accountServiceMock.createTransaction.reset()
+      transactionBuilderServiceMock.createSendTransaction.reset()
     })
 
     context('when the form amount is a float', () => {
       it('uses the right amount to create the transaction', function () {
-        accountServiceMock.createTransaction.resolves({})
-        const stub = accountServiceMock.createTransaction
+        transactionBuilderServiceMock.createSendTransaction.resolves({})
+        const stub = transactionBuilderServiceMock.createSendTransaction
 
         // @see https://github.com/ArkEcosystem/ark-desktop/issues/385
         ctrl.submitTransaction({}, { amount: 1.0440473 })
-        expect(stub.firstCall.args[1].amount).to.equal(104404730)
+        expect(stub.firstCall.args[0].amount).to.equal(104404730)
 
         ctrl.submitTransaction({}, { amount: 299.9 })
-        expect(stub.secondCall.args[1].amount).to.equal(29990000000)
+        expect(stub.secondCall.args[0].amount).to.equal(29990000000)
       })
     })
   })
