@@ -26,6 +26,7 @@
       'ARKTOSHI_UNIT',
       '$rootScope',
       'transactionBuilderService',
+      'utilityService',
       AccountController
     ])
 
@@ -58,7 +59,8 @@
     $window,
     ARKTOSHI_UNIT,
     $rootScope,
-    transactionBuilderService
+    transactionBuilderService,
+    utilityService
   ) {
     const _path = require('path')
 
@@ -435,8 +437,6 @@
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
     }
-
-
 
     // Load all registered accounts
     self.accounts = accountService.loadAllAccounts()
@@ -1792,8 +1792,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI_UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI_UNIT).toString()
+        humanAmount: utilityService.arktoshiToArk(transaction.amount).toString(),
+        totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true).toString()
       }
 
       $mdDialog.show({

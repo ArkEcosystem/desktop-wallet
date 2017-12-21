@@ -2,16 +2,10 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', TransactionBuilderService])
+    .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
 
-  /**
-   * TransactionBuilderService
-   *
-   * @returns {{loadAll: Function}}
-   * @constructor
-   */
-  function TransactionBuilderService ($q, networkService, accountService, ledgerService, gettextCatalog) {
-    var ark = require('../node_modules/arkjs')
+  function TransactionBuilderService ($q, networkService, accountService, ledgerService, gettextCatalog, utilityService) {
+    var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
     function createTransaction (deferred, config, fee, createTransactionFunc, setAdditionalTransactionPropsOnLedger) {
       var transaction
@@ -83,7 +77,7 @@
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.secondsignature) {
           deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
-                          ', ' + gettextCatalog.getString('you need at least ' + accountService.arkToshiToArk(fees.secondsignature, true) + ' to create a second passphrase'))
+                          ', ' + gettextCatalog.getString('you need at least ' + utilityService.arktoshiToArk(fees.secondsignature, false, true) + ' to create a second passphrase'))
           return
         }
 
@@ -98,7 +92,7 @@
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.delegate) {
           deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress + ', ' +
-                          gettextCatalog.getString('you need at least ' + accountService.arkToshiToArk(fees.delegate, true) + ' to register delegate'))
+                          gettextCatalog.getString('you need at least ' + utilityService.arktoshiToArk(fees.delegate, false, true) + ' to register delegate'))
           return
         }
 
@@ -113,7 +107,7 @@
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.vote) {
           deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
-                           ', ' + gettextCatalog.getString('you need at least ' + accountService.arkToshiToArk(fees.vote, true) + ' to vote'))
+                           ', ' + gettextCatalog.getString('you need at least ' + utilityService.arktoshiToArk(fees.vote, false, true) + ' to vote'))
           return
         }
 

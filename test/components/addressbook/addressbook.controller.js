@@ -11,7 +11,8 @@ describe('AddressbookController', function () {
     storageServiceMock,
     getTextCatalogMock,
     accountServiceMock,
-    toastServiceMock
+    toastServiceMock,
+    utilityService
 
   beforeEach(() => {
     module('arkclient.components', $provide => {
@@ -37,6 +38,7 @@ describe('AddressbookController', function () {
         error: sinon.stub(),
         success: sinon.stub()
       }
+      utilityService = {}
 
       // provide mocks to angular controller
       $provide.value('$mdDialog', mdDialogMock)
@@ -45,6 +47,7 @@ describe('AddressbookController', function () {
       $provide.value('gettextCatalog', getTextCatalogMock)
       $provide.value('accountService', accountServiceMock)
       $provide.value('toastService', toastServiceMock)
+      $provide.value('utilityService', utilityService)
       $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
     })
 
@@ -106,7 +109,7 @@ describe('AddressbookController', function () {
       mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
       ctrl.getContacts = sinon.stub().returns([])
       ctrl.showToast = sinon.stub()
-    })
+})
 
     context('set up addressbook contact modal', () => {
       it('sets up address book modal', () => {

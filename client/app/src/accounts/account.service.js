@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'ARKTOSHI_UNIT', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARKTOSHI_UNIT', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, ARKTOSHI_UNIT) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARKTOSHI_UNIT) {
     var self = this
     var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -263,7 +263,7 @@
         transaction.total = -transaction.amount - transaction.fee
       }
       // to avoid small transaction to be displayed as 1e-8
-      transaction.humanTotal = numberToFixed(transaction.total / ARKTOSHI_UNIT) + ''
+      transaction.humanTotal = utilityService.arktoshiToArk(transaction.total) + ''
 
       return transaction
     }
@@ -554,15 +554,6 @@
       return deferred.promise
     }
 
-    function arkToshiToArk (amount, appendTokenName) {
-      var ark = numberToFixed(amount / ARKTOSHI_UNIT)
-      if (appendTokenName) {
-        return ark + ' ' + networkService.getNetwork().token
-      }
-
-      return ark
-    }
-
     // Given a final list of delegates, create a vote assets list to be sent
     // return null if could not make it
     function createDiffVote (address, newdelegates) {
@@ -747,25 +738,6 @@
       return sanitizedName
     }
 
-    function numberToFixed (x) {
-      var e
-      if (Math.abs(x) < 1.0) {
-        e = parseInt(x.toString().split('e-')[1])
-        if (e) {
-          x *= Math.pow(10, e - 1)
-          x = '0.' + (new Array(e)).join('0') + x.toString().substring(2)
-        }
-      } else {
-        e = parseInt(x.toString().split('+')[1])
-        if (e > 20) {
-          e -= 20
-          x /= Math.pow(10, e)
-          x += (new Array(e + 1)).join('0')
-        }
-      }
-      return x
-    }
-
     return {
       loadAllAccounts: function () {
         var accounts = storageService.get('addresses')
@@ -870,12 +842,7 @@
 
       sanitizeDelegateName: sanitizeDelegateName,
 
-      numberToFixed: numberToFixed,
-
-      formatTransaction: formatTransaction,
-
-      arkToshiToArk: arkToshiToArk
-
+      formatTransaction: formatTransaction
     }
   }
 })()

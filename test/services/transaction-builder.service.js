@@ -1,10 +1,8 @@
 'use strict'
 
-var chaiAsPromised = require("chai-as-promised");
-chai.use(chaiAsPromised);
-
 describe('transactionBuilderService',() => {
 
+  const tokenName = 'test-ark'
   let transactionBuilderService, accountService
   let configServiceMock, gettextCatalogMock, networkServiceMock, ledgerServiceMock, getAccountStub
   let intervalRef
@@ -63,7 +61,7 @@ describe('transactionBuilderService',() => {
       gettextCatalogMock = {getString: sinon.stub().returnsArg(0)}
       networkServiceMock = { listenNetworkHeight: sinon.stub(),
                           getPeer: sinon.stub().returns("127.0.0.1"),
-                          getNetwork: sinon.stub.returns({ version: 0x17, token: 'test-ark' })
+                          getNetwork: sinon.stub().returns({ version: 0x17, token: tokenName })
                         }
       ledgerServiceMock = {signTransaction: sinon.stub().resolves({})}
 
@@ -205,8 +203,9 @@ describe('transactionBuilderService',() => {
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
         }, err => {
+          expect(err).to.have.string(tokenName);
           done()
-        })
+        }).catch(err => done(err))
     })
   })
 
@@ -241,8 +240,9 @@ describe('transactionBuilderService',() => {
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
         }, err => {
+          expect(err).to.have.string(tokenName);
           done()
-        })
+        }).catch(err => done(err))
     })
   })
 
@@ -276,8 +276,9 @@ describe('transactionBuilderService',() => {
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
         }, err => {
+          expect(err).to.have.string(tokenName);
           done()
-        })
+        }).catch(err => done(err))
     })
 
     it('should work with ledger (additional field recipientId is correct)', (done) => {

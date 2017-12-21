@@ -14,10 +14,10 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', 'transactionBuilderService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', 'transactionBuilderService', 'utilityService', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService, transactionBuilderService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService, transactionBuilderService, utilityService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
       this.ab = this.addressBookCtrl
@@ -205,7 +205,7 @@
       // }
       function getTotalBalance (fee) {
         var balance = selectedAccount.balance
-        return accountService.numberToFixed((fee ? balance - fee : balance) / ARKTOSHI_UNIT)
+        return utilityService.arktoshiToArk(fee ? balance - fee : balance)
       }
 
       function fillSendableBalance () {
