@@ -14,10 +14,10 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', 'transactionBuilderService', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService, transactionBuilderService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
       this.ab = this.addressBookCtrl
@@ -136,7 +136,7 @@
     }
 
     this.submitTransaction = (selectedAccount, formData) => {
-      return accountService.createSendTransaction({
+      return transactionBuilderService.createSendTransaction({
         ledger: selectedAccount.ledger,
         publicKey: selectedAccount.publicKey,
         fromAddress: formData.fromAddress,

@@ -25,6 +25,7 @@
       '$window',
       'ARKTOSHI_UNIT',
       '$rootScope',
+      'transactionBuilderService',
       AccountController
     ])
 
@@ -56,7 +57,8 @@
     $mdTheming,
     $window,
     ARKTOSHI_UNIT,
-    $rootScope
+    $rootScope,
+    transactionBuilderService
   ) {
     const _path = require('path')
 
@@ -433,6 +435,7 @@
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
     }
+
 
 
     // Load all registered accounts
@@ -963,7 +966,7 @@
           return delegate.vote + delegate.publicKey
         }).join(',')
         console.log(publicKeys)
-        accountService.createVoteTransaction({
+        transactionBuilderService.createVoteTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.voteDialog.data.fromAddress,
@@ -1016,7 +1019,7 @@
 
         $mdDialog.hide()
         var smartbridge = $scope.send.data.smartbridge
-        accountService.createSendTransaction({
+        transactionBuilderService.createSendTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.send.data.fromAddress,
@@ -1480,7 +1483,7 @@
           return formatAndToastError(error)
         }
 
-        accountService.createDelegateCreationTransaction({
+        transactionBuilderService.createDelegateCreationTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.createDelegate.data.fromAddress,
@@ -1699,7 +1702,7 @@
         } else if ($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase) {
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true
         } else {
-          accountService.createSecondPassphraseCreationTransaction({
+          transactionBuilderService.createSecondPassphraseCreationTransaction({
             fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
