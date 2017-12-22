@@ -1,17 +1,17 @@
-const path = require('path')
+const _path = require('path')
 const fs = require('fs')
 
-const productName = require('../../package').productName
+const productName = require(_path.resolve(__dirname, '../../package')).productName
 
 module.exports = {
 
   getTestPath: function () {
-    return path.join(__dirname, 'data', 'userData')
+    return _path.join(__dirname, 'data', 'userData')
   },
 
   clearSettings: function () {
     try {
-      fs.unlinkSync(path.join(this.getTestPath(), 'Settings'))
+      fs.unlinkSync(_path.join(this.getTestPath(), 'Settings'))
     } catch (error) {
       if (error.code !== 'ENOENT') {
         throw error
@@ -24,15 +24,15 @@ module.exports = {
 
     switch (process.platform) {
       case 'darwin':
-        userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
+        userDataPath = _path.join(process.env.HOME, 'Library', 'Application Support', productName)
         break
       case 'win32':
-        userDataPath = path.join(process.env.APPDATA, productName)
+        userDataPath = _path.join(process.env.APPDATA, productName)
         break
       case 'freebsd':
       case 'linux':
       case 'sunos':
-        userDataPath = path.join(process.env.HOME, '.config', productName)
+        userDataPath = _path.join(process.env.HOME, '.config', productName)
         break
       default:
         throw new Error(`Unknown userDataPath path for platform ${process.platform}`)

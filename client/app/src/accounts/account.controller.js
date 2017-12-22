@@ -60,6 +60,8 @@
     ARKTOSHI_UNIT,
     $rootScope
   ) {
+    const _path = require('path')
+
     var self = this
 
     var languages = {
@@ -204,7 +206,7 @@
       return stateObject
     }
 
-    self.clientVersion = require('../../package.json').version
+    self.clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
     self.latestClientVersion = self.clientVersion
     self.openExplorer = openExplorer
     self.timestamp = timestamp
@@ -872,7 +874,7 @@
 
               var playSong = storageService.get('playFundsReceivedSong')
               if (playSong === true && previousTx[0].id !== transactions[0].id && transactions[0].type === 0 && transactions[0].recipientId === myaccount.address) {
-                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav')
+                var wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
                 var audio = new Audio(wavFile)
                 audio.play()
               }
@@ -978,7 +980,7 @@
 
               var playSound = storageService.get('playFundsReceivedSound')
               if (playSound === true && transactions.length > previousTx.length && transactions[0].type === 0 && transactions[0].recipientId === self.selected.address) {
-                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav')
+                var wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
                 var audio = new Audio(wavFile)
                 audio.play()
               }
@@ -1287,7 +1289,6 @@
         return
       }
 
-      var path = require('path')
       var vibrant = require('node-vibrant')
       var materialPalette = $mdThemingProvider.$get().PALETTES
 
@@ -1300,7 +1301,7 @@
         return
       }
 
-      var url = path.resolve(__dirname, match[1].replace(/'/g, ''))
+      var url = _path.resolve(__dirname, match[1].replace(/'/g, ''))
 
       vibrant.from(url).getPalette(function (err, palette) {
         if (err || !palette.Vibrant) {
@@ -1319,7 +1320,7 @@
           darkVibrantRatio[color] = darkVibrantDiff
         })
 
-        var isArkJpg = path.basename(url) === 'Ark.jpg'
+        var isArkJpg = _path.basename(url) === 'Ark.jpg'
         var primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0]
         var accentColor = sortObj(vibrantRatio)[0]
 
@@ -1340,7 +1341,6 @@
 
     function manageBackgrounds () {
       var fs = require('fs')
-      var path = require('path')
       var context = storageService.getContext()
 
       var currentNetwork = networkService.getNetwork()
@@ -1370,21 +1370,21 @@
       }
 
       var imgPath = 'assets/images'
-      var assetsPath = path.resolve(__dirname, imgPath)
+      var assetsPath = _path.resolve(__dirname, imgPath)
 
       // find files in directory with same key
       for (var folder in backgrounds) {
-        let fullPath = path.resolve(assetsPath, folder)
+        let fullPath = _path.resolve(assetsPath, folder)
 
-        if (fs.existsSync(path.resolve(fullPath))) { // check dir exists
+        if (fs.existsSync(_path.resolve(fullPath))) { // check dir exists
           var image = {}
           fs.readdirSync(fullPath).forEach(function (file) {
-            var stat = fs.statSync(path.join(fullPath, file)) // to prevent if directory
+            var stat = fs.statSync(_path.join(fullPath, file)) // to prevent if directory
 
             if (stat.isFile() && isImage(file)) {
-              var url = path.join(imgPath, folder, file) // ex: assets/images/textures/file.png
+              var url = _path.join(imgPath, folder, file) // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, '/')
-              var name = path.parse(file).name // remove extension
+              var name = _path.parse(file).name // remove extension
               image[name] = `url('${url}')`
             }
           })
@@ -1397,7 +1397,7 @@
         var mathPath = backgrounds['user'][name].match(/\((.*)\)/)
         if (mathPath) {
           let filePath = mathPath[1].replace(/'/g, ``)
-          let fullPath = require('path').join(__dirname, filePath)
+          let fullPath = _path.join(__dirname, filePath)
           if (!fs.existsSync(filePath) && !fs.existsSync(fullPath)) {
             delete backgrounds['user'][name]
             storageService.setGlobal('userBackgrounds', backgrounds['user'])
@@ -1425,7 +1425,7 @@
             var userImages = backgrounds['user']
             var url = fileName
             url = url.replace(/\\/g, '/')
-            var name = path.parse(fileName).name
+            var name = _path.parse(fileName).name
             userImages[name] = `url('${url}')`
 
             backgrounds['user'] = userImages
@@ -1442,7 +1442,7 @@
 
         var file = image.substring(5, image.length - 2)
 
-        var name = path.parse(file).name
+        var name = _path.parse(file).name
         delete backgrounds['user'][name]
 
         if (image === initialBackground) {
@@ -1455,7 +1455,7 @@
       }
 
       function isImage (file) {
-        var extension = path.extname(file)
+        var extension = _path.extname(file)
         if (extension === '.jpg' || extension === '.png' || extension === '.gif') {
           return true
         }

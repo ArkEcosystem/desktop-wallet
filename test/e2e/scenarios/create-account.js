@@ -1,6 +1,6 @@
 'use strict'
 
-const hooks = require('../hooks')
+const hooks = require(require('path').resolve(__dirname, '../hooks'))
 
 xdescribe('Create account', function () {
   hooks.createApp.bind(this)()
