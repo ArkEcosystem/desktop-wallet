@@ -296,11 +296,21 @@ describe('AccountController', function () {
             // passphrases have 12 words
             sinon.assert.match(password.trim().split(" ").length, 12)
         })
-        it('should call warning', () => {
+        it('should show warning about second passphrase', () => {
            ctrl.createSecondPassphrase(ACCOUNTS[0]) 
            sinon.assert.calledOnce(accountServiceMock.getFees)
            sinon.assert.notCalled(mdDialogHideStub) 
         }) 
+    })
+    context('user going through second passphrase add', () => {
+        it('inputs wrong passwords' , () => {
+            ctrl.createSecondPassphrase(ACCOUNTS[0])
+            sinon.assert.calledOnce(accountServiceMock.getFees) 
+            $scope.createSecondPassphraseDialog.next()
+            $scope.createSecondPassphraseDialog.data.secondPassphrase = 'not right'
+            $scope.createSecondPassphraseDialog.next()
+            sinon.assert.match($scope.createSecondPassphraseDialog.data.showWrongRepassphrase, true)
+        })
     })
    afterEach( () => {
        console.log("HELLO")
