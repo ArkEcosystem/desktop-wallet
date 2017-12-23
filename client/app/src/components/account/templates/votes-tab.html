@@ -56,12 +56,12 @@
     </md-table-container>
 
     <md-table-container id="vote-list-virtual" ng-if="$ctrl.account.virtual" flex="100">
-      <md-button ng-click="$ctrl.ul.vote($ctrl.account)" md-colors="{background:'primary'}">
+      <md-button ng-click="$ctrl.vote($ctrl.account)" md-colors="{background:'primary'}">
         <translate>Vote</translate>
       </md-button>
-      <md-button ng-click="$ctrl.addDelegate($ctrl.account)" md-colors="{background:'accent'}">
+      <!-- <md-button ng-click="$ctrl.addDelegate($ctrl.account)" md-colors="{background:'accent'}">
         <translate>Add Delegate</translate>
-      </md-button>
+      </md-button> -->
       <md-button ng-click='$ctrl.openExplorer("/delegateMonitor")'>
         <translate>Open Delegate Monitor</translate>
       </md-button>
