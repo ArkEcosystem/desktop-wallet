@@ -143,7 +143,7 @@
 								<b><translate>Price</translate></b>
 							</div>
 
-							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name] | formatCurrency: $ctrl.ul}}</span>
+							<span class="md-secondary">{{($ctrl.ul.btcValueActive ? $ctrl.ul.connectedPeer.market.price[$ctrl.ul.bitcoinCurrency.name] : $ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name]) | formatCurrency:$ctrl.ul:$ctrl.ul.btcValueActive}}</span>
 						</md-list-item>
 						<md-list-item>
 							<b translate>Change 1h/24h/7d</b>
@@ -158,7 +158,7 @@
 								<b><translate>Market Cap.</translate></b>
 							</div>
 
-							<span class="md-secondary">{{$ctrl.ul.connectedPeer.market.available_supply | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul}}</span>
+							<span class="md-secondary">{{($ctrl.ul.connectedPeer.market.available_supply | amountToCurrency:$ctrl:$ctrl.ul.btcValueActive) | formatCurrency:$ctrl.ul:$ctrl.ul.btcValueActive}}</span>
 						</md-list-item>
 						<md-list-item ng-show="$ctrl.ul.connectedPeer.market.isOffline">
 							<b translate>Last checked</b> <span class="md-secondary">

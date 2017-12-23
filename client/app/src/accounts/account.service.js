@@ -806,10 +806,6 @@
       return x
     }
 
-    function smallId (fullId) {
-      return fullId.slice(0, 5) + '...' + fullId.slice(-5)
-    }
-
     return {
       loadAllAccounts: function () {
         var accounts = storageService.get('addresses')
@@ -873,6 +869,8 @@
 
       fetchAccountAndForget: fetchAccountAndForget,
 
+      getFees: getFees,
+
       getTransactions: getTransactions,
 
       createTransaction: createTransaction,
@@ -908,8 +906,6 @@
       sanitizeDelegateName: sanitizeDelegateName,
 
       numberToFixed: numberToFixed,
-
-      smallId: smallId,
 
       formatTransaction: formatTransaction
 

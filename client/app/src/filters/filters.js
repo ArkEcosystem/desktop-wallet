@@ -2,11 +2,6 @@
   'use strict'
 
   angular.module('arkclient.filters')
-    .filter('smallId', function () {
-      return function (fullId) {
-        return fullId.slice(0, 5) + '...' + fullId.slice(-5)
-      }
-    })
     .filter('exchangedate', function () {
       return function (exchangetime) {
         return new Date(exchangetime * 1000)
@@ -18,6 +13,11 @@
         // NOTE AccountController is being renaming to `ac` in refactored templates
         const ac = scope.ac || scope.ul
         const currencyName = bitcoinToggleIsActive && ac.btcValueActive ? 'btc' : ac.currency.name
+
+        if (!ac.connectedPeer.market.price) {
+          return 0
+        }
+
         const price = ac.connectedPeer.market.price[currencyName]
         return (amount * price).toFixed(5)
       }
@@ -50,4 +50,19 @@
       return val / ARKTOSHI_UNIT
     }
   }])
+  .filter('accountLabel', ['accountService', function (accountService) {
+    return function (address) {
+      if (!address) return address
+
+      var username = accountService.getUsername(address)
+
+      if (username !== address) return username
+      else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)
+      else return smallId(address)
+    }
+  }])
+
+  function smallId (fullId) {
+    return fullId.slice(0, 5) + '...' + fullId.slice(-5)
+  }
 })()
