@@ -1732,7 +1732,7 @@
       self.selected.signedMessages = storageService.get('signed-' + self.selected.address)
     }
 
-    function showValidateTransaction (selectedAccount, transaction) {
+    function showValidateTransaction (selectedAccount, transaction, cb) {
       function saveFile () {
         var fs = require('fs')
         var raw = JSON.stringify(transaction)
@@ -1777,6 +1777,10 @@
               null,
               true
             )
+
+            if (cb && typeof cb === 'function') {
+              cb(transaction)
+            }
           },
           formatAndToastError
         )

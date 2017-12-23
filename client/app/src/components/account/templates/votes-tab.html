@@ -83,6 +83,8 @@
             <th md-column md-numeric md-order-by="productivity">
               <translate>Productivity</translate>
             </th>
+            <th md-column>
+            </th>
           </tr>
         </thead>
         <tbody md-body>
@@ -92,6 +94,11 @@
             <td md-cell><a ng-click="$ctrl.ul.gotoAddress(delegate.address)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{delegate.address}}</a></td>
             <td md-cell>{{delegate.approval}}%</td>
             <td md-cell>{{delegate.productivity}}%</td>
+            <td md-cell>
+                <md-button class="md-warn" aria-label="Unvote for delegate" ng-click="$ctrl.vote($ctrl.account, delegate, 'remove')">
+                  <md-icon class="material-icons">clear</md-icon> Unvote
+                </md-button>
+            </td>
           </tr>
           <tr md-row disabled ng-if="!$ctrl.getDelegateList($ctrl.account).length">
               <td md-cell colspan="7">
