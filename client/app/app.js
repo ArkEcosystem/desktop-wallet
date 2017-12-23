@@ -1,6 +1,6 @@
 'use strict'
 
-var appearanceConfig = require('./config/appearance')
+var appearanceConfig = require(require('path').resolve(__dirname, './config/appearance'))
 var modules = [
   'ngMaterial',
   'md.data.table',

@@ -1,9 +1,10 @@
 'use strict'
 
 const electron = require('electron')
+const _path = require('path')
 
-const hooks = require('../hooks')
-const userData = require('../user_data')
+const hooks = require(_path.resolve(__dirname, '../hooks'))
+const userData = require(_path.resolve(__dirname, '../user_data'))
 
 describe('ARK Client', function () {
   hooks.createApp.bind(this)()

@@ -26,7 +26,7 @@
           </td>
         </tr>
         <tr md-row md-select="transaction" md-select-id="id" md-auto-select ng-repeat="it in $ctrl.transactionsCtrl.transactions | orderBy: query.order | limitTo: $ctrl.transactionsCtrl.pageSize track by it.id">
-          <td md-cell><a ng-click="$ctrl.ul.openExplorer('/tx/'+it.id)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.id | smallId}}</a></td>
+          <td md-cell><a ng-click="$ctrl.ul.openExplorer('/tx/'+it.id)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.id | accountLabel}}</a></td>
           <td md-cell ng-if="it.confirmations <= 50">{{it.confirmations}}</td>
           <td md-cell ng-if="it.confirmations > 50">
             <translate>Well Confirmed</translate>
@@ -34,20 +34,20 @@
           </td>
           <td md-cell>{{it.date | formattedDate}}</td>
           <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
-            <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount | convertToArkValue)) + ' / -' + (it.fee | convertToArkValue) }}</md-button>
+            <span class="md-button selectable-text" md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount | convertToArkValue)) + ' / -' + (it.fee | convertToArkValue) }}</span>
           </td>
           <td ng-if="it.type>0" md-cell>
-            <md-button disabled md-colors="{'background' : 'default-blue-grey-600' }">{{it.humanTotal}}</md-button>
+            <span class="md-button selectable-text" md-colors="{'background' : 'default-blue-grey-600' }">{{it.humanTotal}}</span>
           </td>
           <td ng-if="it.total>=0 && it.recipientId!=it.senderId" md-cell>
-            <md-button disabled md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</md-button>
+            <span class="md-button selectable-text" md-colors="{'background' : 'default-green-200' }">+{{it.humanTotal}}</span>
           </td>
           <td ng-if="it.total<0 && it.recipientId!=it.senderId && it.type==0" md-cell>
-            <md-button disabled md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</md-button>
+            <span class="md-button selectable-text" md-colors="{'background' : 'default-red-200' }">{{it.humanTotal}}</span>
           </td>
-          <td md-cell><a ng-click="$ctrl.ul.gotoAddress(it.senderId)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.senderId | accountlabel}}</a></td>
+          <td md-cell><a ng-click="$ctrl.ul.gotoAddress(it.senderId)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.senderId | accountLabel}}</a></td>
           <td md-cell>
-            <a ng-if="it.type==0" ng-click="$ctrl.ul.gotoAddress(it.recipientId)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.recipientId | accountlabel}}</a>
+            <a ng-if="it.type==0" ng-click="$ctrl.ul.gotoAddress(it.recipientId)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.recipientId | accountLabel}}</a>
             <span ng-if="it.type>0">{{it.label}}</span>
           </td>
           <td md-cell>{{it.vendorField}}</td>
