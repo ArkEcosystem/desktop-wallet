@@ -14,20 +14,8 @@
         <md-chips ng-model="voteDialog.data.votes" readonly="true">
           <md-chip-template>{{$chip.vote}}{{$chip.username}}</md-chip-template>
         </md-chips>
-        <md-input-container ng-if="!voteDialog.data.ledger" class="md-block">
-          <label translate>Passphrase</label>
-          <input ng-model="voteDialog.data.passphrase" type="password" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" ng-required="true">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
-            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
-        <md-input-container class="md-block" ng-if="voteDialog.data.secondSignature">
-          <label translate>Second Passphrase</label>
-          <input ng-model="voteDialog.data.secondpassphrase" type="password" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" ng-required="true">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
-            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
+        <passphrase-field ng-if="!voteDialog.data.ledger" ng-model="voteDialog.data.passphrase" label="Passphrase"></passphrase-field>
+        <passphrase-field ng-if="voteDialog.data.secondSignature" ng-model="voteDialog.data.secondpassphrase" label="Second Passphrase"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
