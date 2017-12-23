@@ -289,7 +289,7 @@
         remainingBalance: totalBalance(false) // <-- initial value, this will change by directive
       }
 
-      $scope.qrCodeToAddressCallback = (address) => {
+      $scope.onQrCodeForToAddressScanned = (address) => {
         // this will trigger the selectedContactChange function, which will then set the toAddress
         $scope.send.data.selectedAddress = {address: address}
       }

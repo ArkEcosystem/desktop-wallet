@@ -25,8 +25,8 @@
           $scope.$parent.send.data[$scope.inputCallback] = result.qr
         }
 
-        if ($scope.inputCallbackFuncName) {
-          $scope.$parent[$scope.inputCallbackFuncName](result.qr)
+        if ($scope.inputCallbackFunc) {
+          $scope.inputCallbackFunc({qr: result.qr})
         }
 
         $timeout(function () {
@@ -70,7 +70,7 @@
         onError: '&',
         onVideoError: '&',
         inputCallback: '@',
-        inputCallbackFuncName: '@'
+        inputCallbackFunc: '&'
       },
       controller: controller,
       replace: true,
