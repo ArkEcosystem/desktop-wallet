@@ -285,15 +285,10 @@ describe('AccountController', function () {
   
   // Adding Second passphrase test
   describe('adding second passphrase', () => {
-    let mdDialogShowStub,
-    mdDialogHideStub,
-    mdDialogConfirmStub
-
+    let mdDialogHideStub
     let requireNotMocked = require
     beforeEach( () => {
-        mdDialogShowStub = sinon.stub(mdDialogMock, 'show').resolves()
-        mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
-        mdDialogConfirmStub = sinon.stub(mdDialogMock, 'confirm')
+        mdDialogHideStub = sinon.stub()
         require = sinon.stub().returns(require('../node_modules/bip39'))
     })
     context('when the account doesnt have a second passphrase', () => {
@@ -306,8 +301,10 @@ describe('AccountController', function () {
             // passphrases have 12 words
             sinon.assert.match(password.trim().split(" ").length, 12)
         })
-        it('should pop up warning of second passphrase fee', () => {
+        it('should call warning', () => {
            ctrl.createSecondPassphrase(ACCOUNTS[0]) 
+           sinon.assert.calledOnce(accountServiceMock.getFees)
+           sinon.assert.notCalled(mdDialogHideStub) 
         }) 
     })
    afterEach( () => {
