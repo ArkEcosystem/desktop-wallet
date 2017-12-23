@@ -26,7 +26,7 @@ describe('AccountController', function () {
   let mdDialogMock,
     mdToastMock,
     getTextCatalogMock
-
+  
   const ACCOUNTS = ['userAccount1', 'userAccount2']
   const MOCK_DELEGATE = {
     address: "mockDelegateArkAddress",
@@ -278,6 +278,23 @@ describe('AccountController', function () {
         ctrl.toggleBitcoinCurrency(false)
         expect(ctrl.btcValueActive).to.equal(false)
       })
+    })
+  })
+  
+  // Adding Second passphrase test
+  describe('test adding second passphrase', () => {
+    let mdDialogShowStub,
+    mdDialogHideStub
+
+    beforeEach( () => {
+        mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
+        mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
+    })
+    context('user clicks second passphrase', () => {
+        it('it should open show dialog', () => {
+           console.log("WE MADE IT")
+           //ctrl.createSecondPassphrase(ACCOUNTS[0])
+        })
     })
   })
 })
