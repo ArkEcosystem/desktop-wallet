@@ -295,10 +295,6 @@ describe('AccountController', function () {
             // passphrases have 12 words
             sinon.assert.match(password.trim().split(" ").length, 12)
         })
-        it('should show warning about second passphrase', () => {
-           ctrl.createSecondPassphrase(ACCOUNTS[0]) 
-           sinon.assert.calledOnce(accountServiceMock.getFees)
-        }) 
     })
     context('user going through second passphrase add', () => {
         it('inputs wrong passwords' , () => {
