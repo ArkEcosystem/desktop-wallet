@@ -60,7 +60,8 @@ describe('AccountController', function () {
       accountServiceMock = {
         loadAllAccounts () { return ACCOUNTS },
         getActiveDelegates: angular.noop,
-        getDelegateByUsername: angular.noop
+        getDelegateByUsername: angular.noop,
+        getFees: sinon.stub().resolves({secondsignature: 5000})
       }
       networkServiceMock = {
         getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },
@@ -107,7 +108,8 @@ describe('AccountController', function () {
 
       mdDialogMock = {
         show: angular.noop,
-        hide: angular.noop
+        hide: angular.noop,
+        confirm: angular.noop
       }
       mdToastMock = {}
       getTextCatalogMock = {
@@ -282,21 +284,31 @@ describe('AccountController', function () {
   })
   
   // Adding Second passphrase test
-  describe('test adding second passphrase', () => {
+  describe('adding second passphrase', () => {
     let mdDialogShowStub,
-    mdDialogHideStub
+    mdDialogHideStub,
+    mdDialogConfirmStub
 
-    var requireNotMocked = require
+    let requireNotMocked = require
     beforeEach( () => {
-        mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
+        mdDialogShowStub = sinon.stub(mdDialogMock, 'show').resolves()
         mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
-        require = sinon.stub()
+        mdDialogConfirmStub = sinon.stub(mdDialogMock, 'confirm')
+        require = sinon.stub().returns(require('../node_modules/bip39'))
     })
-    context('user clicks second passphrase', () => {
-        it('it should open show dialog', () => {
-           console.log("WE MADE IT")
+    context('when the account doesnt have a second passphrase', () => {
+        it('sets up second passphrase modal', () => {
            ctrl.createSecondPassphrase(ACCOUNTS[0])
+           expect($scope.createSecondPassphraseDialog).to.have.all.keys(['data', 'cancel', 'next'])
+            expect(typeof $scope.createSecondPassphraseDialog.cancel).to.equal('function')
+            expect(typeof $scope.createSecondPassphraseDialog.next)
+            let password = $scope.createSecondPassphraseDialog.data.secondPassphrase  
+            // passphrases have 12 words
+            sinon.assert.match(password.trim().split(" ").length, 12)
         })
+        it('should pop up warning of second passphrase fee', () => {
+           ctrl.createSecondPassphrase(ACCOUNTS[0]) 
+        }) 
     })
    afterEach( () => {
        console.log("HELLO")
