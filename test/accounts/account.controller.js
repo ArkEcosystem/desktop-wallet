@@ -61,7 +61,8 @@ describe('AccountController', function () {
         loadAllAccounts () { return ACCOUNTS },
         getActiveDelegates: angular.noop,
         getDelegateByUsername: angular.noop,
-        getFees: sinon.stub().resolves({secondsignature: 5000})
+        getFees: sinon.stub().resolves(),
+        createTransaction: sinon.stub().resolves() 
       }
       networkServiceMock = {
         getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },
@@ -113,7 +114,7 @@ describe('AccountController', function () {
       }
       mdToastMock = {}
       getTextCatalogMock = {
-        getString: sinon.stub(),
+        getString: sinon.stub().returns('!'),
         setCurrentLanguage: sinon.stub()
       }
 
@@ -285,10 +286,8 @@ describe('AccountController', function () {
   
   // Adding Second passphrase test
   describe('adding second passphrase', () => {
-    let mdDialogHideStub
     let requireNotMocked = require
     beforeEach( () => {
-        mdDialogHideStub = sinon.stub()
         require = sinon.stub().returns(require('../node_modules/bip39'))
     })
     context('when the account doesnt have a second passphrase', () => {
@@ -304,21 +303,25 @@ describe('AccountController', function () {
         it('should show warning about second passphrase', () => {
            ctrl.createSecondPassphrase(ACCOUNTS[0]) 
            sinon.assert.calledOnce(accountServiceMock.getFees)
-           sinon.assert.notCalled(mdDialogHideStub) 
         }) 
     })
     context('user going through second passphrase add', () => {
         it('inputs wrong passwords' , () => {
             ctrl.createSecondPassphrase(ACCOUNTS[0])
-            sinon.assert.calledOnce(accountServiceMock.getFees) 
             $scope.createSecondPassphraseDialog.next()
             $scope.createSecondPassphraseDialog.data.secondPassphrase = 'not right'
             $scope.createSecondPassphraseDialog.next()
             sinon.assert.match($scope.createSecondPassphraseDialog.data.showWrongRepassphrase, true)
         })
+      it('inputs right passwords, should create transaction', () => {
+          ctrl.createSecondPassphrase(ACCOUNTS[0])
+          $scope.createSecondPassphraseDialog.next()
+          $scope.createSecondPassphraseDialog.data.secondPassphrase = $scope.createSecondPassphraseDialog.data.reSecondPassphrase
+          $scope.createSecondPassphraseDialog.next()
+          sinon.assert.calledOnce(accountServiceMock.createTransaction)
+      })
     })
    afterEach( () => {
-       console.log("HELLO")
        require = requireNotMocked
    })
   })
