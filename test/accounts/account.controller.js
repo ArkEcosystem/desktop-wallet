@@ -281,15 +281,21 @@ describe('AccountController', function () {
     let mdDialogShowStub,
     mdDialogHideStub
 
+    var requireNotMocked = require
     beforeEach( () => {
         mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
         mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
+        require = sinon.stub()
     })
     context('user clicks second passphrase', () => {
         it('it should open show dialog', () => {
            console.log("WE MADE IT")
-           //ctrl.createSecondPassphrase(ACCOUNTS[0])
+           ctrl.createSecondPassphrase(ACCOUNTS[0])
         })
     })
+   afterEach( () => {
+       console.log("HELLO")
+       require = requireNotMocked
+   })
   })
 })
