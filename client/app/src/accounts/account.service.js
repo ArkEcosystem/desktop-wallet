@@ -311,6 +311,40 @@
       return deferred.promise
     }
 
+    var cachedAllTransactions
+
+    function getAllTransactions (address, offset, transactionCollection, deferred) {
+      if (!transactionCollection) {
+        transactionCollection = []
+      }
+
+      if (!offset) {
+        offset = 0
+      }
+
+      if (!deferred) {
+        deferred = $q.defer()
+      }
+
+      if (cachedAllTransactions) {
+        deferred.resolve(cachedAllTransactions)
+        return deferred.promise
+      }
+
+      getTransactions(address, offset).then(transactions => {
+        if (!transactions.length) {
+          cachedAllTransactions = transactionCollection
+          deferred.resolve(transactionCollection)
+          return
+        }
+
+        transactionCollection = transactionCollection.concat(transactions)
+        getAllTransactions(address, offset + transactions.length, transactionCollection, deferred)
+      }).catch(error => deferred.reject({message: error, transactions: transactionCollection}))
+
+      return deferred.promise
+    }
+
     function getDelegate (publicKey) {
       var deferred = $q.defer()
       if (!publicKey) {
@@ -872,6 +906,8 @@
       getFees: getFees,
 
       getTransactions: getTransactions,
+
+      getAllTransactions: getAllTransactions,
 
       createTransaction: createTransaction,
 

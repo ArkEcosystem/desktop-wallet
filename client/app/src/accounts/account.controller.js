@@ -1636,10 +1636,27 @@
     }
 
     function exportAccount (account) {
-      var eol = require('os').EOL
-      var transactions = storageService.get(`transactions-${account.address}`)
+      $mdDialog.show({
+        templateUrl: './src/accounts/view/exportingAccount.html'
+      })
 
-      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + account.balance + eol + 'Transactions:' + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
+      accountService.getAllTransactions(account.address).then(transactions => {
+        downloadAccountFile(account, transactions)
+      }).catch(error => {
+        if (error.transactions.length) {
+          toastService.error('An error occured when getting all your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
+                             'The exported file contains only these!', 10000)
+          downloadAccountFile(account, error.transactions, true)
+        } else {
+          toastService.error('An error occured when getting all your transactions. Cannot export account!', 10000)
+        }
+      }).finally(() => $mdDialog.hide())
+    }
+
+    function downloadAccountFile (account, transactions, isInComplete) {
+      var eol = require('os').EOL
+
+      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + account.balance + eol + 'Transactions' + (isInComplete ? ' (INCOMPLETE):' : ':') + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
       transactions.forEach(function (trns) {
         var date = new Date(trns.date)
         filecontent = filecontent + trns.id + ',' + trns.confirmations + ',' + date.toISOString() + ',' + trns.label + ',' + trns.humanTotal + ',' + trns.senderId + ',' + trns.recipientId +
