@@ -1,7 +1,6 @@
 'use strict'
 
 describe('networkService', function () {
-
   let networkService
 
   let qMock,
@@ -26,37 +25,36 @@ describe('networkService', function () {
     themeDark: false
   }
 
-  beforeEach(() => {
-    module('arkclient.services', $provide => {
-      qMock = {}
-      httpMock = {}
-      timeoutMock = {}
-      storageServiceMock = {
-        get: sinon.stub(),
-        getContext: sinon.stub().returns(MOCK_NETWORK),
-        getGlobal: sinon.stub()
-      }
-      timeServiceMock = {}
-      toastServiceMock = {}
+  const MOCK_NETWORK_SECOND = {
+    nethash: 'second_mock_hash',
+    peerseed: 'http://5.39.9.240:4001',
+    forcepeer: false,
+    token: 'ARK-MOCK-2',
+    symbol: 'Ѧ-MOCK-2',
+    version: 1,
+    slip44: 1,
+    explorer: 'mock-explorer',
+    exchanges: {changer: 'ark_ARK'},
+    background: 'url(assets/images/images/Ark.jpg)',
+    theme: 'default',
+    themeDark: false
+  }
 
-      $provide.value('$q', qMock)
-      $provide.value('$http', httpMock)
-      $provide.value('$timeout', timeoutMock)
-      $provide.value('storageService', storageServiceMock)
-      $provide.value('timeService', timeServiceMock)
+  beforeEach(() => {
+    module('arkclient.services', function($provide) {
+      toastServiceMock = {}
+      storageServiceMock = {}
       $provide.value('toastService', toastServiceMock)
     })
-
     inject($injector => {
       networkService = $injector.get('networkService')
     })
-
   })
 
   describe('getConnection', function () {
     it('returns a promise', function () {
-      networkService.getConnection()
+      let connection = networkService.getConnection()
+      sinon.assert.match(true, typeof connection.then === 'function')
     })
   })
-
 })
