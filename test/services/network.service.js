@@ -3,26 +3,11 @@
 describe('networkService', function () {
   let networkService
 
-  let qMock,
-    httpMock,
-    timeoutMock,
-    storageServiceMock,
-    timeServiceMock,
-    toastServiceMock
+  let toastServiceMock
 
   const MOCK_NETWORK = {
-    nethash: 'mock hash',
-    peerseed: 'http://5.39.9.240:4001',
-    forcepeer: false,
-    token: 'ARK-MOCK',
-    symbol: 'Ѧ-MOCK',
-    version: 1,
-    slip44: 1,
-    explorer: 'mock-explorer',
-    exchanges: {changer: 'ark_ARK'},
-    background: 'url(assets/images/images/Ark.jpg)',
-    theme: 'default',
-    themeDark: false
+    name: 'test-network',
+    peerseed: 'fake'
   }
 
   const MOCK_MAINNET_NAME = {
@@ -32,7 +17,6 @@ describe('networkService', function () {
   beforeEach(() => {
     module('arkclient.services', function($provide) {
       toastServiceMock = {}
-      storageServiceMock = {}
       $provide.value('toastService', toastServiceMock)
     })
     inject($injector => {
