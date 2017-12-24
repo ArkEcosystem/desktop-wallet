@@ -55,7 +55,6 @@
         return dateFilter('date')(date, format + ' h:mm a')
       }
     }])
-
   /**
    * Main Controller for the Angular Material Starter App
    * @param $scope
