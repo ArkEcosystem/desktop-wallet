@@ -290,10 +290,10 @@ describe('AccountController', function () {
   
   describe('formattedDate filter', () => {
     context('get date formatted as Year-Month-Day', () => {
-		it('testing for formatting a valid date', function () {
-          var validDate = '2017-12-14T11:49:08.000Z';
+		it('testing for formatting a valid date', () => {
+          var validDate = '2017-12-14T11:49:08.000Z'
           var result = $filter('formattedDate')(validDate)
-          expect(result).to.include('2017/12/');
+          expect(result).to.include('2017/12/')
 		})
 	})
   })

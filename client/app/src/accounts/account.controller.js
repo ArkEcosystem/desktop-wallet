@@ -1,4 +1,4 @@
-﻿;(function () {
+;(function () {
   'use strict'
 
   angular
@@ -42,14 +42,14 @@
       return function filter (date) {
         // Get configured date format
         var format = storageService.get('dateFormat') || 'YMD'
-		
+
         // Set configured date format
-        if(format === 'MDY') {
-            format = 'M/d/yyyy'
+        if (format === 'MDY') {
+          format = 'M/d/yyyy'
         } else if (format === 'DMY') {
-            format = 'd/M/yyyy'
+          format = 'd/M/yyyy'
         } else if (format === 'YMD') {
-            format = 'yyyy/M/d'
+          format = 'yyyy/M/d'
         }
 
         return dateFilter('date')(date, format + ' h:mm a')
@@ -117,12 +117,12 @@
       es_419: gettextCatalog.getString('Spanish'),
       sv: gettextCatalog.getString('Swedish')
     }
-	
-	const DATE_FORMATS = {
-		MDY: "MM/DD/YYYY",
-		DMY: "DD/MM/YYYY",
-		YMD: "YYYY/MM/DD"
-	}
+
+    const DATE_FORMATS = {
+      MDY: 'MM/DD/YYYY',
+      DMY: 'DD/MM/YYYY',
+      YMD: 'YYYY/MM/DD'
+    }
 
     pluginLoader.triggerEvent('onStart')
 
@@ -149,15 +149,15 @@
     self.language = storageService.get('language') || 'en'
     self.selectedLanguage = self.language
     gettextCatalog.setCurrentLanguage(self.language)
-	
-	self.getLanguage = function () {
+
+    self.getLanguage = function () {
       return languages[self.language]
     }
-	
+
     self.dateFormat = storageService.get('dateFormat') || 'YMD'
     self.selectedDateFormat = self.dateFormat
 
-	self.getDateFormat = function () {
+    self.getDateFormat = function () {
       return DATE_FORMATS[self.dateFormat]
     }
 
@@ -463,9 +463,9 @@
     function copiedToClipboard () {
       toastService.success('Copied to clipboard')
     }
-	
-    function refreshCurrentAccountView() {
-      selectAccount(self.selected)	
+
+    function refreshCurrentAccountView () {
+      selectAccount(self.selected)
     }
 
     self.selectAllLanguages = function () {
@@ -486,11 +486,11 @@
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
     }
-		
+
     self.selectAllDateFormats = function () {
       return DATE_FORMATS
     }
-	
+
     self.setDateFormat = function () {
       function getDateFormat (value) {
         for (var prop in DATE_FORMATS) {
@@ -504,7 +504,7 @@
 
       self.dateFormat = getDateFormat(this.selectedDateFormat)
       storageService.set('dateFormat', self.dateFormat)
-	  
+
       refreshCurrentAccountView()
     }
 
