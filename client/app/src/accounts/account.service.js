@@ -311,9 +311,7 @@
       return deferred.promise
     }
 
-    var cachedAllTransactions
-
-    function getAllTransactions (address, offset, transactionCollection, deferred) {
+    function getAllTransactions (address, totalLimit, onUpdate, offset, transactionCollection, deferred) {
       if (!transactionCollection) {
         transactionCollection = []
       }
@@ -322,24 +320,33 @@
         offset = 0
       }
 
+      if (!totalLimit) {
+        totalLimit = Number.MAX_VALUE
+      }
+
       if (!deferred) {
         deferred = $q.defer()
       }
 
-      if (cachedAllTransactions) {
-        deferred.resolve(cachedAllTransactions)
-        return deferred.promise
-      }
-
       getTransactions(address, offset).then(transactions => {
-        if (!transactions.length) {
-          cachedAllTransactions = transactionCollection
+        transactionCollection = transactionCollection.concat(transactions)
+
+        const updateObj = {
+          isFinished: !transactions.length || transactionCollection.length >= totalLimit,
+          transactions: transactions
+        }
+
+        if (updateObj.isFinished) {
+          transactionCollection = transactionCollection.slice(0, totalLimit)
           deferred.resolve(transactionCollection)
           return
         }
 
-        transactionCollection = transactionCollection.concat(transactions)
-        getAllTransactions(address, offset + transactions.length, transactionCollection, deferred)
+        if (onUpdate) {
+          onUpdate(updateObj)
+        }
+
+        getAllTransactions(address, totalLimit, onUpdate, offset + transactions.length, transactionCollection, deferred)
       }).catch(error => deferred.reject({message: error, transactions: transactionCollection}))
 
       return deferred.promise

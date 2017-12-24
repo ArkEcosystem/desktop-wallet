@@ -1,0 +1,56 @@
+<md-dialog aria-label="{{'Export account'|translate}}" ng-cloak md-theme="vm.theme">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 md-truncate flex translate>
+        Export account
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <div ng-if="vm.hasStarted" style="text-align:center;">
+        <md-progress-circular style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
+        <div translate>
+          Getting your transactions! Depending on your history, this may take a while.
+        </div>
+        <div ng-if="vm.numberOfReceivedTransactions" translate>
+          Received {{vm.numberOfReceivedTransactions}} of {{vm.maxLimit ? ('maximum' | translate) + ' ' + vm.maxLimit : ('all' | translate)}} transactions...
+        </div>
+      </div>
+      <div ng-if="!vm.hasStarted">
+        <md-card flex="100">
+            <md-card-title>
+              <md-card-title-text>
+                <span>
+                  <translate>
+                    Select how many tranasctions should at maximum be included when you export your account.
+                    Note that it can take quite a while if you choose a high number of transactions!
+                  </translate>
+                </span>
+              </md-card-title-text>
+            </md-card-title>
+        </md-card>
+        <md-input-container class="md-block">
+          <md-select ng-model="vm.maxLimit">
+              <md-option ng-value="50">50</md-option>
+              <md-option ng-value="100">100</md-option>
+              <md-option ng-value="200">200</md-option>
+              <md-option ng-value="500">500</md-option>
+              <md-option ng-value="1000">1000</md-option>
+              <md-option ng-value="5000">5000</md-option>
+              <md-option ng-value="10000">10000</md-option>
+              <md-option ng-value="0"><span translate>All</span></md-option>
+          </md-select>
+        </md-input-container>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="vm.exportAccount()">
+              <span translate>Start export</span>
+            </md-button>
+            <md-button ng-click="vm.cancel()">
+                <span translate>Cancel</span>
+            </md-button>
+        </md-dialog-actions>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>
