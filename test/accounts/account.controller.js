@@ -75,7 +75,7 @@ describe('AccountController', function () {
       storageServiceMock = {
         get: function() { 
           var callback = sinon.stub()
-          callback.withArgs('dateFormat').returns('MDY?')
+          callback.withArgs('dateFormat').returns('MDY')
           callback.returns(['test_contact'])
 		},
         getContext () {}
@@ -152,7 +152,7 @@ describe('AccountController', function () {
     })
   })
 
-  // Account retreival
+  // Account retrieval
   describe('getAllAccounts()', () => {
     beforeEach(function () {
       sinon.stub(ctrl, 'myAccounts').returns(ACCOUNTS)
@@ -289,7 +289,7 @@ describe('AccountController', function () {
   })
   
   describe('formattedDate filter', () => {
-    context('get date formatted as Yead-Month-Day', () => {
+    context('get date formatted as Year-Month-Day', () => {
 		it('testing for formatting a valid date', function () {
           var validDate = '2017-12-14T11:49:08.000Z';
           var result = $filter('formattedDate')(validDate)
