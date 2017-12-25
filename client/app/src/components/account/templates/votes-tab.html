@@ -91,11 +91,11 @@
           <tr md-row ng-repeat="delegate in $ctrl.getDelegateList($ctrl.account) | orderBy: query.order">
             <td md-cell>{{delegate.rate}}</td>
             <td md-cell>{{delegate.username}}</td>
-            <td md-cell><a ng-click="$ctrl.ul.gotoAddress(delegate.address)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{delegate.address}}</a></td>
+            <td md-cell><a ng-click="$ctrl.ul.gotoAddress(delegate.address)" md-colors="::{color: '{{ $ctrl.network.themeDark ? 'background-200' : 'background-800' }}'}">{{delegate.address}}</a></td>
             <td md-cell>{{delegate.approval}}%</td>
             <td md-cell>{{delegate.productivity}}%</td>
             <td md-cell>
-                <md-button class="md-warn" aria-label="Unvote for delegate" ng-click="$ctrl.vote($ctrl.account, delegate, 'remove')">
+                <md-button class="md-warn" aria-label="Unvote for delegate" ng-click="$ctrl.vote($ctrl.account, delegate)">
                   <md-icon class="material-icons">clear</md-icon> Unvote
                 </md-button>
             </td>

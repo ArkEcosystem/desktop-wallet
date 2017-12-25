@@ -1,4 +1,4 @@
-<md-dialog aria-label="Vote" ng-cloak md-theme="ul.currentTheme">
+<md-dialog aria-label="Vote" ng-cloak md-theme="$dialog.theme">
   <form>
     <md-toolbar ng-class="{'md-warn': $dialog.delegate_to_unvote}">
       <div class="md-toolbar-tools">
@@ -21,8 +21,8 @@
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <md-button ng-click="$dialog.addDelegateVote($dialog.delegate)">
-        <translate ng-if="!$dialog.data.ledger">Next</translate>
-        <translate ng-if="$dialog.data.ledger">Sign with Ledger</translate>
+        <translate ng-if="!$dialog.account.ledger">Next</translate>
+        <translate ng-if="$dialog.account.ledger">Sign with Ledger</translate>
       </md-button>
       <md-button ng-click="$dialog.cancel()" style="margin-right:20px;">
         <translate>Cancel</translate>

@@ -31,26 +31,29 @@
       return delegate_list
     }
 
-    this.vote = (account_obj, delegate_to_unvote, remove) => {
-      $mdDialog.show({
+    this.vote = (account_obj, delegate_to_unvote) => {
+      let voteModal = $mdDialog.show({
         templateUrl: './src/accounts/view/vote.html',
         controller: 'VoteModalController',
         controllerAs: '$dialog',
         clickOutsideToClose: false,
         resolve: {
-          delegate_to_unvote: () => delegate_to_unvote,
-          selectedVotes: () => this.account.selectedVotes,
+          accountObj: () =>  account_obj,
+          delegateToUnvote: () => delegate_to_unvote,
+          passphrasesArr: () => accountService.getPassphrases(this.account.address),
           activeDelegates: () => {
             return accountService
               .getActiveDelegates()
               .then(delegates => delegates)
               .catch(err => toastService.error('Could not fetch active delegates - please check your internet connection'))
-          }
+          },
+          currentTheme: () => this.theme
         }
-      }).then(payload => {
+      })
+
+      voteModal.then(payload => {
         if (payload.new_delegate) {
-          let vote_action_char = remove ? '-' : '+'
-          let passphrases = accountService.getPassphrases(this.account.address)
+          let vote_action_char = delegate_to_unvote ? '-' : '+'
           let transaction_obj = {
             ledger: this.account.ledger,
             publicKey: this.account.publicKey,
@@ -59,17 +62,17 @@
             masterpassphrase: payload.passphrases.first,
             secondpassphrase: payload.passphrases.second
           }
-
-          console.log('create ', transaction_obj)
           accountService.createTransaction(TRANSACTION_TYPES.VOTE, transaction_obj).then((transaction) => {
-              this.ul.showValidateTransaction(this.account, transaction, (completed_transaction) => {
-                console.log('completed_transaction ', completed_transaction)
-                if (remove) {
-                  this.account.selectedVotes = []
-                } else {
-                  this.account.selectedVotes.push(payload.new_delegate)
-                }
-              })
+
+            // TODO refactor this method to a service so we don't have to pass in the entire 'ul' ctrl
+            this.ul.showValidateTransaction(this.account, transaction, (completed_transaction) => {
+              console.log('completed_transaction ', completed_transaction)
+              if (delegate_to_unvote) {
+                this.account.selectedVotes = []
+              } else {
+                this.account.selectedVotes.push(payload.new_delegate)
+              }
+            })
           }).catch(err => {
             toastService.error(err, 5000, true)
           })
@@ -82,14 +85,15 @@
     }
   }
 
-  let VoteModalController = function VoteModalController ($mdDialog, accountService, toastService, delegate_to_unvote, selectedVotes, activeDelegates) {
-    this.delegate_to_unvote = delegate_to_unvote
-    this.selectedVotes = selectedVotes
+  let VoteModalController = function VoteModalController ($mdDialog, accountService, toastService, accountObj, delegateToUnvote, passphrasesArr, activeDelegates, currentTheme) {
+    this.account = accountObj
+    this.delegate_to_unvote = delegateToUnvote
     this.activeDelegates = activeDelegates
     this.delegate = {}
+    this.theme = currentTheme
     this.passphrases = {
-      first: '',
-      second: ''
+      first: passphrasesArr[0] ? passphrasesArr[0] : '',
+      second: passphrasesArr[1] ? passphrasesArr[1] : ''
     }
 
     if (this.delegate_to_unvote && this.delegate_to_unvote.username) {
@@ -111,7 +115,7 @@
     }
     this.addDelegateVote = (selected_delegate) => {
       accountService.getDelegateByUsername(selected_delegate.name).then(delegate_obj => {
-        if (this.delegate_to_unvote || (this.selectedVotes.length < MAXIMUM_VOTE_CNT && !this.delegateExists(this.selectedVotes, delegate_obj))) {
+        if (this.delegate_to_unvote || (this.account.selectedVotes.length < MAXIMUM_VOTE_CNT && !this.delegateExists(this.account.selectedVotes, delegate_obj))) {
           $mdDialog.hide({ new_delegate: delegate_obj, passphrases: this.passphrases })
         } else {
           toastService.error('List full or delegate already voted.')
@@ -133,7 +137,8 @@
       templateUrl: 'src/components/account/templates/votes-tab.html',
       bindings: {
         account: '=',
-        accountCtrl: '=' // TODO depricate
+        accountCtrl: '=', // TODO depricate
+        theme: '<'
       },
       controller: VotesTabController
     })
