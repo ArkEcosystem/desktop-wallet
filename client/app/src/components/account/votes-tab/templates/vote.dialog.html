@@ -1,9 +1,9 @@
 <md-dialog aria-label="Vote" ng-cloak md-theme="$dialog.theme">
   <form>
-    <md-toolbar ng-class="{'md-warn': $dialog.delegate_to_unvote}">
+    <md-toolbar ng-class="{'md-warn': $dialog.delegateToUnvote}">
       <div class="md-toolbar-tools">
-        <h2 ng-if="!$dialog.delegate_to_unvote">Vote</h2>
-        <h2 ng-if="$dialog.delegate_to_unvote">Remove Vote</h2>
+        <h2 ng-if="!$dialog.delegateToUnvote">Vote</h2>
+        <h2 ng-if="$dialog.delegateToUnvote">Remove Vote</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="$dialog.cancel()">
           <md-icon md-font-library="material-icons">clear</md-icon>
@@ -12,7 +12,7 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <md-input-container class="md-block" ng-if="!$dialog.delegate_to_unvote">
+        <md-input-container class="md-block" ng-if="!$dialog.delegateToUnvote">
           <label for="delegate-name" translate>Active delegates (forging)</label>
           <md-select id="delegate-name" ng-model="$dialog.delegate.name">
             <md-option ng-value="delegate.username"
@@ -22,7 +22,7 @@
 
         <md-input-container class="md-block">
           <label translate>Delegate name</label>
-          <input ng-disabled="$dialog.delegate_to_unvote" ng-model="$dialog.delegate.name" type="text">
+          <input ng-disabled="$dialog.delegateToUnvote" ng-model="$dialog.delegate.name" type="text">
         </md-input-container>
 
         <md-input-container ng-if="!$dialog.account.ledger" class="md-block">

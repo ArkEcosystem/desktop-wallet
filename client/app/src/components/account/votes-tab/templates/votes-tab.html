@@ -57,7 +57,7 @@
 
     <md-table-container id="vote-list-virtual" ng-if="$ctrl.account.virtual" flex="100">
       <div class="d-inline-block">
-        <md-tooltip ng-if="$ctrl.getDelegateList($ctrl.account).length" md-direction="right" md-delay="300">You can only vote for 1 delegate at a time</md-tooltip>
+        <md-tooltip ng-if="$ctrl.getDelegateList($ctrl.account).length" md-direction="right" md-delay="300">You can only have 1 active delegate at a time</md-tooltip>
         <md-button ng-click="$ctrl.vote($ctrl.account)"
                    ng-disabled="$ctrl.getDelegateList($ctrl.account).length"
                    class="md-raised"

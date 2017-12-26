@@ -6,7 +6,7 @@
     'SEND_ARK': 0,
     'CREATE_SECOND_PASSPHRASE': 1,
     'CREATE_DELEGATE': 2,
-    'VOTE': 3,
+    'VOTE': 3
   }
 
   let VotesTabController = function VotesTabController ($scope, $mdDialog, accountService, networkService, toastService) {
@@ -18,33 +18,35 @@
       this.ul = this.accountCtrl // TODO depricate
     }
 
-    this.getDelegateList = (account_obj) => {
-      let delegate_list = account_obj.delegates
+    this.getDelegateList = (accountObj) => {
+      let delegateList = accountObj.delegates
 
-      if (account_obj.selectedVotes) {
-        delegate_list = account_obj.selectedVotes.filter((vote, index, arr) => {
-          return arr.indexOf(vote) == index
+      if (accountObj.selectedVotes) {
+        delegateList = accountObj.selectedVotes.filter((vote, index, arr) => {
+          return arr.indexOf(vote) === index
         })
       }
 
-      return delegate_list
+      return delegateList
     }
 
-    this.vote = (account_obj, delegate_to_unvote) => {
+    this.vote = (accountObj, delegateToUnvote) => {
       let voteModal = $mdDialog.show({
         templateUrl: './src/components/account/votes-tab/templates/vote.dialog.html',
         controller: 'VoteModalController',
         controllerAs: '$dialog',
         clickOutsideToClose: false,
         resolve: {
-          accountObj: () =>  account_obj,
-          delegateToUnvote: () => delegate_to_unvote,
+          accountObj: () => accountObj,
+          delegateToUnvote: () => delegateToUnvote,
           passphrasesArr: () => accountService.getPassphrases(this.account.address),
           activeDelegates: () => {
             return accountService
               .getActiveDelegates()
               .then(delegates => delegates)
-              .catch(err => toastService.error('Could not fetch active delegates - please check your internet connection'))
+              .catch(() => {
+                toastService.error('Could not fetch active delegates - please check your internet connection')
+              })
           },
           currentTheme: () => this.theme
         }
@@ -52,20 +54,19 @@
 
       voteModal.then(payload => {
         if (payload.new_delegate) {
-          let vote_action_char = delegate_to_unvote ? '-' : '+'
-          let transaction_obj = {
+          let voteActionChar = delegateToUnvote ? '-' : '+'
+          let transactionObj = {
             ledger: this.account.ledger,
             publicKey: this.account.publicKey,
             fromAddress: this.account.address,
-            publicKeys: `${vote_action_char}${payload.new_delegate.publicKey}`,
+            publicKeys: `${voteActionChar}${payload.new_delegate.publicKey}`,
             masterpassphrase: payload.passphrases.first,
             secondpassphrase: payload.passphrases.second
           }
-          accountService.createTransaction(TRANSACTION_TYPES.VOTE, transaction_obj).then((transaction) => {
-
+          accountService.createTransaction(TRANSACTION_TYPES.VOTE, transactionObj).then((transaction) => {
             // TODO refactor this method to a service so we don't have to pass in the entire 'ul' ctrl
-            this.ul.showValidateTransaction(this.account, transaction, (completed_transaction) => {
-              if (delegate_to_unvote) {
+            this.ul.showValidateTransaction(this.account, transaction, (completedTransaction) => {
+              if (delegateToUnvote) {
                 this.account.selectedVotes = []
               } else {
                 this.account.selectedVotes.push(payload.new_delegate)
