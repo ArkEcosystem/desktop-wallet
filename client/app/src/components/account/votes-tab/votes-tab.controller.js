@@ -8,7 +8,6 @@
     'CREATE_DELEGATE': 2,
     'VOTE': 3,
   }
-  const MAXIMUM_VOTE_CNT = 101
 
   let VotesTabController = function VotesTabController ($scope, $mdDialog, accountService, networkService, toastService) {
     this.accountAddress = ''
@@ -33,7 +32,7 @@
 
     this.vote = (account_obj, delegate_to_unvote) => {
       let voteModal = $mdDialog.show({
-        templateUrl: './src/accounts/view/vote.html',
+        templateUrl: './src/components/account/votes-tab/templates/vote.dialog.html',
         controller: 'VoteModalController',
         controllerAs: '$dialog',
         clickOutsideToClose: false,
@@ -66,7 +65,6 @@
 
             // TODO refactor this method to a service so we don't have to pass in the entire 'ul' ctrl
             this.ul.showValidateTransaction(this.account, transaction, (completed_transaction) => {
-              console.log('completed_transaction ', completed_transaction)
               if (delegate_to_unvote) {
                 this.account.selectedVotes = []
               } else {
@@ -85,56 +83,10 @@
     }
   }
 
-  let VoteModalController = function VoteModalController ($mdDialog, accountService, toastService, accountObj, delegateToUnvote, passphrasesArr, activeDelegates, currentTheme) {
-    this.account = accountObj
-    this.delegate_to_unvote = delegateToUnvote
-    this.activeDelegates = activeDelegates
-    this.delegate = {}
-    this.theme = currentTheme
-    this.passphrases = {
-      first: passphrasesArr[0] ? passphrasesArr[0] : '',
-      second: passphrasesArr[1] ? passphrasesArr[1] : ''
-    }
-
-    if (this.delegate_to_unvote && this.delegate_to_unvote.username) {
-      this.delegate.name = this.delegate_to_unvote.username
-    }
-
-    this.delegateExists = (delegate_list = [], delegate_to_add) => {
-      let found_delegate_index = delegate_list.findIndex(delegate => {
-        return delegate.username === delegate_to_add.username
-      })
-
-      return (found_delegate_index >= 0)
-    }
-
-    this.removeDelegateVote = (selected_delegate) => {
-      accountService.getDelegateByUsername(selected_delegate.name).then(delegate_obj => {
-        $mdDialog.hide({ new_delegate: delegate_obj, passphrases: this.passphrases })
-      })
-    }
-    this.addDelegateVote = (selected_delegate) => {
-      accountService.getDelegateByUsername(selected_delegate.name).then(delegate_obj => {
-        if (this.delegate_to_unvote || (this.account.selectedVotes.length < MAXIMUM_VOTE_CNT && !this.delegateExists(this.account.selectedVotes, delegate_obj))) {
-          $mdDialog.hide({ new_delegate: delegate_obj, passphrases: this.passphrases })
-        } else {
-          toastService.error('List full or delegate already voted.')
-        }
-      }).catch(err => {
-        // TODO refactor formatErrorMessage into service
-        toastService.error(err, 5000, true)
-      })
-    }
-
-    this.cancel = () => {
-      $mdDialog.hide()
-    }
-  }
-
   angular
     .module('arkclient.components')
     .component('votesTab', {
-      templateUrl: 'src/components/account/templates/votes-tab.html',
+      templateUrl: 'src/components/account/votes-tab/templates/votes-tab.html',
       bindings: {
         account: '=',
         accountCtrl: '=', // TODO depricate
@@ -142,5 +94,4 @@
       },
       controller: VotesTabController
     })
-    .controller('VoteModalController', VoteModalController)
 })()
