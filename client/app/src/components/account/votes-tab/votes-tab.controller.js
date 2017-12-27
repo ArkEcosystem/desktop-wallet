@@ -13,6 +13,8 @@
     this.accountAddress = ''
     this.delegates = []
     this.network = networkService.getNetwork()
+    this.voteModal = {}
+    this.ul = {}
 
     this.$onInit = () => {
       this.ul = this.accountCtrl // TODO depricate
@@ -31,7 +33,7 @@
     }
 
     this.vote = (accountObj, delegateToUnvote) => {
-      let voteModal = $mdDialog.show({
+      this.voteModal = $mdDialog.show({
         templateUrl: './src/components/account/votes-tab/templates/vote.dialog.html',
         controller: 'VoteModalController',
         controllerAs: '$dialog',
@@ -52,7 +54,7 @@
         }
       })
 
-      voteModal.then(payload => {
+      this.voteModal.then(payload => {
         if (payload.new_delegate) {
           let voteActionChar = delegateToUnvote ? '-' : '+'
           let transactionObj = {
@@ -63,8 +65,9 @@
             masterpassphrase: payload.passphrases.first,
             secondpassphrase: payload.passphrases.second
           }
+
           accountService.createTransaction(TRANSACTION_TYPES.VOTE, transactionObj).then((transaction) => {
-            // TODO refactor this method to a service so we don't have to pass in the entire 'ul' ctrl
+            // TODO refactor this method to a service so we don't have to pass in the entire 'ul' ctrl. Callback in the interim
             this.ul.showValidateTransaction(this.account, transaction, (completedTransaction) => {
               if (delegateToUnvote) {
                 this.account.selectedVotes = []
