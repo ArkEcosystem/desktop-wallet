@@ -17,9 +17,9 @@
     var ark = require('../node_modules/arkjs')
     ark.crypto.setNetworkVersion(network.version || 23)
 
-    const Moment = require('moment-timezone')
-    const MomentRange = require('moment-range')
-    const moment = MomentRange.extendMoment(Moment)
+    const momentTimezone = require('moment-timezone')
+    const momentRange = require('moment-range')
+    const moment = momentRange.extendMoment(momentTimezone)
 
     var clientVersion = require('../../package.json').version
 
@@ -368,8 +368,8 @@
     // Updates the currency conversion rates IF necessary
     // Necessary if it isn't stored, or if the stored value is too old
     function updateCurrencyConversionRates (peer) {
-      if (storageService.getGlobal('conversionRates') !== undefined) {
-        let priceObj = storageService.getGlobal('conversionRates')
+      var priceObj = storageService.getGlobal('conversionRates')
+      if (priceObj !== undefined) {
         peer.market.conversionRates = priceObj.rates
         let storedDateString = priceObj.date
         let storedDate = new Date(storedDateString)
