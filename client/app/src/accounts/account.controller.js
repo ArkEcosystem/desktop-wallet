@@ -8,7 +8,6 @@
       'networkService',
       'pluginLoader',
       'storageService',
-      'changerService',
       'ledgerService',
       'timeService',
       'toastService',
@@ -51,7 +50,6 @@
     networkService,
     pluginLoader,
     storageService,
-    changerService,
     ledgerService,
     timeService,
     toastService,
@@ -254,9 +252,6 @@
     self.network = networkService.getNetwork()
     self.listNetworks = networkService.getNetworks()
     self.context = storageService.getContext()
-    self.exchangeHistory = changerService.getHistory()
-    self.selectedCoin = storageService.get('selectedCoin') || 'bitcoin_BTC'
-    self.exchangeEmail = storageService.get('email') || ''
     self.btcValueActive = false
 
     self.bitcoinCurrency = self.currencies.find(function (currency) {
@@ -450,177 +445,6 @@
       self.language = getlanguage(this.selectedLanguage)
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
-    }
-
-    self.getMarketInfo = function (symbol) {
-      changerService.getMarketInfo(symbol, 'ark_ARK').then(function (answer) {
-        self.buycoin = answer
-      })
-
-      changerService.getMarketInfo('ark_ARK', symbol).then(function (answer) {
-        self.sellcoin = answer
-      })
-    }
-
-    self.getMarketInfo(self.selectedCoin)
-
-    self.buy = function () {
-      if (self.exchangeEmail) storageService.set('email', self.exchangeEmail)
-      if (self.selectedCoin) storageService.set('selectedCoin', self.selectedCoin)
-      changerService.getMarketInfo(self.selectedCoin, 'ark_ARK', self.buyAmount / self.buycoin.rate).then(function (rate) {
-        var amount = self.buyAmount / rate.rate
-        if (self.selectedCoin.split('_')[1] === 'USD') {
-          amount = parseFloat(amount.toFixed(2))
-        }
-        changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, 'ark_ARK', self.selected.address).then(function (resp) {
-          timeService.getTimestamp().then(
-            function (timestamp) {
-              self.exchangeBuy = resp
-              self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000
-              self.exchangeBuy.expirationProgress = 0
-              self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000)
-              self.exchangeBuy.sendCurrency = self.selectedCoin.split('_')[1]
-              self.exchangeBuy.receiveCurrency = 'ARK'
-              var progressbar = $interval(function () {
-                if (!self.exchangeBuy) {
-                  $interval.cancel(progressbar)
-                } else {
-                  self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0)
-                }
-              }, 200)
-              changerService.monitorExchange(resp).then(
-                function (data) {
-                  self.exchangeHistory = changerService.getHistory()
-                },
-                function (data) {},
-                function (data) {
-                  if (data.payee && self.exchangeBuy.payee !== data.payee) {
-                    self.exchangeBuy = data
-                    self.exchangeHistory = changerService.getHistory()
-                  } else {
-                    self.exchangeBuy.monitor = data
-                  }
-                }
-              )
-            },
-            (error) => {
-              formatAndToastError(error, 10000)
-              self.exchangeBuy = null
-            })
-        }
-        )
-      })
-    }
-
-    self.sendBatch = function () {
-      changerService.sendBatch(self.exchangeBuy, self.exchangeTransactionId).then(function (data) {
-        self.exchangeBuy.batch_required = false
-        self.exchangeTransactionId = null
-      },
-        function (error) {
-          formatAndToastError(error, 10000)
-        })
-    }
-
-    var completeExchangeSell = function (timestamp) {
-      self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timestamp / 1000
-      self.exchangeSell.expirationProgress = 0
-      self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000)
-      self.exchangeSell.receiveCurrency = self.selectedCoin.split('_')[1]
-      self.exchangeSell.sendCurrency = 'ARK'
-      var progressbar = $interval(function () {
-        if (!self.exchangeSell) {
-          $interval.cancel(progressbar)
-        } else {
-          self.exchangeSell.expirationProgress = (100 - 100 * (self.exchangeSell.expiration - timestamp / 1000) / self.exchangeSell.expirationPeriod).toFixed(0)
-        }
-      }, 200)
-
-      self.exchangeSellTransaction = transaction // eslint-disable-line no-undef
-      changerService.monitorExchange(resp).then( // eslint-disable-line no-undef
-        function (data) {
-          self.exchangeHistory = changerService.getHistory()
-        },
-        function (data) {},
-        function (data) {
-          if (data.payee && self.exchangeSell.payee !== data.payee) {
-            self.exchangeSell = data
-            self.exchangeHistory = changerService.getHistory()
-          } else {
-            self.exchangeSell.monitor = data
-          }
-        }
-      )
-    }
-
-    self.sell = function () {
-      if (self.exchangeEmail) storageService.set('email', self.exchangeEmail)
-      changerService.makeExchange(self.exchangeEmail, self.sellAmount, 'ark_ARK', self.selectedCoin, self.recipientAddress).then(function (resp) {
-        accountService.createTransaction(0, {
-          fromAddress: self.selected.address,
-          toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * ARKTOSHI_UNIT),
-          masterpassphrase: self.passphrase,
-          secondpassphrase: self.secondpassphrase
-        }).then(function (transaction) {
-          console.log(transaction)
-
-          timeService.getTimestamp().then(
-            function (timestamp) {
-              completeExchangeSell(timestamp)
-            },
-            function (timestamp) {
-              completeExchangeSell(timestamp)
-            }
-          )
-        },
-          function (error) {
-            formatAndToastError(error, 10000)
-          })
-        self.passphrase = null
-        self.secondpassphrase = null
-      }, function (error) {
-        formatAndToastError(error, 10000)
-        self.exchangeSell = null
-      })
-    }
-
-    self.refreshExchange = function (exchange) {
-      changerService.refreshExchange(exchange).then(function (exchange) {
-        self.exchangeHistory = changerService.getHistory()
-      })
-    }
-
-    self.exchangeArkNow = function (transaction) {
-      networkService.postTransaction(transaction).then(
-        function (transaction) {
-          self.exchangeSell.sentTransaction = transaction
-          toastService.success(
-            gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
-            null,
-            true
-          )
-        },
-        formatAndToastError
-      )
-    }
-
-    self.cancelExchange = function () {
-      if (self.exchangeBuy) {
-        changerService.cancelExchange(self.exchangeBuy)
-        self.exchangeBuy = null
-        self.exchangeTransactionId = null
-      }
-      if (self.exchangeSell) {
-        changerService.cancelExchange(self.exchangeSell)
-        self.exchangeTransaction = null
-        self.exchangeSell = null
-      }
-    }
-
-    self.getCoins = function () {
-      console.log()
-      return changerService.getCoins()
     }
 
     // Load all registered accounts

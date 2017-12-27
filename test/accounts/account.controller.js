@@ -15,7 +15,6 @@ describe('AccountController', function () {
     networkServiceMock,
     pluginLoaderMock,
     storageServiceMock,
-    changerServiceMock,
     ledgerServiceMock,
     timeServiceMock,
     toastServiceMock
@@ -47,10 +46,7 @@ describe('AccountController', function () {
         get: sinon.stub().returns(['test_contact']),
         getContext () {}
       }
-      changerServiceMock = {
-        getHistory () {},
-        getMarketInfo () { return new Promise((resolve, reject) => resolve()) }
-      }
+
       ledgerServiceMock = {}
       timeServiceMock = {}
       toastServiceMock = {}
@@ -89,7 +85,6 @@ describe('AccountController', function () {
       $provide.value('networkService', networkServiceMock)
       $provide.value('pluginLoader', pluginLoaderMock)
       $provide.value('storageService', storageServiceMock)
-      $provide.value('changerService', changerServiceMock)
       $provide.value('ledgerService', ledgerServiceMock)
       $provide.value('timeService', timeServiceMock)
       $provide.value('toastService', toastServiceMock)
