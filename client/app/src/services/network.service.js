@@ -297,7 +297,7 @@
             }
           }, () => findGoodPeer(storageService.get('peers'), 0))
       } else {
-      	peer = network.peerseed
+      	peer.ip = network.peerseed
       }
     }
 
