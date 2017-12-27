@@ -296,6 +296,8 @@
               findGoodPeer(storageService.get('peers'), 0)
             }
           }, () => findGoodPeer(storageService.get('peers'), 0))
+      } else {
+      	peer = network.peerseed
       }
     }
 
