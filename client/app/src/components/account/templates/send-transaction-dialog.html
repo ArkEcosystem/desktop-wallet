@@ -14,9 +14,9 @@
       <div class="md-dialog-content">
         <div layout="row" flex layout-align="start start">
           <md-input-container flex="5">
-            <qr-scanner input-callback="toAddress"></qr-scanner>
+            <qr-scanner input-callback-func="onQrCodeForToAddressScanned(qr)"></qr-scanner>
           </md-input-container>
-          <md-autocomplete flex="95" ng-model="send.data.toAddress" , md-selected-item="send.data.selectedAddress" md-selected-item-change="send.selectedContactChange(contact)" md-search-text-change="send.searchTextChange(send.searchText)" md-search-text="send.searchText"
+          <md-autocomplete flex="95" md-selected-item="send.data.selectedAddress" md-selected-item-change="send.selectedContactChange(contact)" md-search-text-change="send.searchTextChange(send.searchText)" md-search-text="send.searchText"
             md-items="contact in send.querySearch(send.searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
             <md-item-template>
               <span class="item-title">

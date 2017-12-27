@@ -289,6 +289,11 @@
         remainingBalance: totalBalance(false) // <-- initial value, this will change by directive
       }
 
+      $scope.onQrCodeForToAddressScanned = (address) => {
+        // this will trigger the selectedContactChange function, which will then set the toAddress
+        $scope.send.data.selectedAddress = {address: address}
+      }
+
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
         templateUrl: './src/components/account/templates/send-transaction-dialog.html',
