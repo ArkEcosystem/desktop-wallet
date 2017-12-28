@@ -369,7 +369,7 @@
     // Necessary if it isn't stored, or if the stored value is too old
     function updateCurrencyConversionRates (peer) {
       var priceObj = storageService.getGlobal('conversionRates')
-      if (priceObj !== undefined) {
+      if (priceObj !== undefined && priceObj !== null) {
         peer.market.conversionRates = priceObj.rates
         let storedDateString = priceObj.date
         let storedDate = new Date(storedDateString)
@@ -400,6 +400,9 @@
       var endDate = moment(new Date().getTime()).utcOffset(60)
       const API_UPDATE_HOUR = 9
       var fourPMCET = moment({year: storedDate.year(), month: storedDate.month(), day: storedDate.date(), hour: API_UPDATE_HOUR}).utcOffset(60)
+      if (storedDate.hour() >= 16) {
+        fourPMCET.add(1, 'day')
+      }
       const range = moment.range(storedDate, endDate)
       return fourPMCET.within(range)
     }
