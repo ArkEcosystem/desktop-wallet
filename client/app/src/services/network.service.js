@@ -233,8 +233,8 @@
     function broadcastTransaction (transaction, max) {
       var peers = storageService.get('peers')
       if (network.forcepeer) {
-      	var forcedPeer = network.peerseed.match(/([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\:?([0-9]{1,5})?/)
-      	peers = [{'ip':forcedPeer[1],'port':forcedPeer[2]}]
+        var forcedPeer = network.peerseed.match(/([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}):?([0-9]{1,5})?/)
+        peers = [{'ip': forcedPeer[1], 'port': forcedPeer[2]}]
       }
       if (!peers) {
         return
@@ -301,7 +301,7 @@
             }
           }, () => findGoodPeer(storageService.get('peers'), 0))
       } else {
-      	peer.ip = network.peerseed
+        peer.ip = network.peerseed
       }
     }
 
