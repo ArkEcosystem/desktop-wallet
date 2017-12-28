@@ -99,9 +99,6 @@
             version: 0x17,
             slip44: 111,
             explorer: 'https://explorer.ark.io',
-            exchanges: {
-              changer: 'ark_ARK'
-            },
             background: 'url(assets/images/images/Ark.jpg)',
             theme: 'default',
             themeDark: false
