@@ -2,7 +2,7 @@
   'use strict'
 
   const MAXIMUM_VOTE_CNT = 101
-  let VoteModalController = function VoteModalController ($mdDialog, accountService, toastService, accountObj, delegateToUnvote, passphrasesArr, activeDelegates, currentTheme) {
+  let VoteDialogController = function VoteDialogController ($mdDialog, accountService, toastService, accountObj, delegateToUnvote, passphrasesArr, activeDelegates, currentTheme) {
     this.account = accountObj
     this.delegateToUnvote = delegateToUnvote
     this.activeDelegates = activeDelegates
@@ -48,5 +48,5 @@
 
   angular
     .module('arkclient.components')
-    .controller('VoteModalController', VoteModalController)
+    .controller('VoteDialogController', VoteDialogController)
 })()
