@@ -1,15 +1,7 @@
 ;(function () {
   'use strict'
 
-  // TODO refactor into central config file
-  const TRANSACTION_TYPES = {
-    'SEND_ARK': 0,
-    'CREATE_SECOND_PASSPHRASE': 1,
-    'CREATE_DELEGATE': 2,
-    'VOTE': 3
-  }
-
-  let VotesTabController = function VotesTabController ($scope, $mdDialog, accountService, networkService, toastService) {
+  let VotesTabController = function VotesTabController ($scope, $mdDialog, accountService, networkService, toastService, TRANSACTION_TYPES) {
     this.accountAddress = ''
     this.delegates = []
     this.network = networkService.getNetwork()
@@ -21,11 +13,11 @@
     }
 
     this.getDelegateList = (accountObj) => {
-      let delegateList = accountObj.delegates
+      let delegateList = []
 
       if (accountObj.selectedVotes) {
-        delegateList = accountObj.selectedVotes.filter((vote, index, arr) => {
-          return arr.indexOf(vote) === index
+        delegateList = accountObj.selectedVotes.filter((item, index) => {
+          return accountObj.selectedVotes.map(mapObj => mapObj.username).indexOf(item.username) === index
         })
       }
 
@@ -35,7 +27,7 @@
     this.vote = (accountObj, delegateToUnvote) => {
       this.voteModal = $mdDialog.show({
         templateUrl: './src/components/account/votes-tab/templates/vote.dialog.html',
-        controller: 'VoteModalController',
+        controller: 'VoteDialogController',
         controllerAs: '$dialog',
         clickOutsideToClose: false,
         resolve: {

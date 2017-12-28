@@ -58,6 +58,12 @@ describe('VotesTabController', function () {
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('toastService', toastServiceMock)
       $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
+      $provide.value('TRANSACTION_TYPES', {
+        'SEND_ARK': 0,
+        'CREATE_SECOND_PASSPHRASE': 1,
+        'CREATE_DELEGATE': 2,
+        'VOTE': 3
+      })
     })
 
     inject((_$rootScope_, _$componentController_) => {
@@ -82,17 +88,9 @@ describe('VotesTabController', function () {
 
   describe('getDelegateList()', () => {
     context('when the account is a valid account object', () => {
-      it('should return a list of delegates if there are no selected votes', () => {
-        let acct_obj = angular.copy(ctrl.account)
-        acct_obj.delegates = ['foo']
-        acct_obj.selectedVotes = null
-        let delegateList = ctrl.getDelegateList(acct_obj)
-        expect(delegateList.length).to.equal(1)
-      })
       it('should return a filtered list of selected votes if they exist', () => {
         let acct_obj = angular.copy(ctrl.account)
-        acct_obj.delegates = ['foo']
-        acct_obj.selectedVotes = ['foo', 'bar', 'baz', 'baz']
+        acct_obj.selectedVotes = [{username: 'foo' }, {username:  'bar' }, {username: 'baz' }, {username: 'baz' }]
         let delegateList = ctrl.getDelegateList(acct_obj)
         expect(delegateList.length).to.equal(3)
       })
