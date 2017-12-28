@@ -9,9 +9,11 @@
    * @constructor
    */
   function LedgerService ($q, $http, $timeout, storageService, networkService) {
+    const _path = require('path')
+
     var ipcRenderer = require('electron').ipcRenderer
-    var arkjs = require('../node_modules/arkjs')
-    var bip39 = require('../node_modules/bip39')
+    var arkjs = require(_path.resolve(__dirname, '../node_modules/arkjs'))
+    var bip39 = require(_path.resolve(__dirname, '../node_modules/bip39'))
     var async = require('async')
 
     function deriveAddress (path) {

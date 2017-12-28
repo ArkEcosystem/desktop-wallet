@@ -1,6 +1,6 @@
 'use strict'
 
-var utils = require('./utils')
+var utils = require(require('path').resolve(__dirname, './utils'))
 
 var LedgerArk = function (comm) {
   this.comm = comm

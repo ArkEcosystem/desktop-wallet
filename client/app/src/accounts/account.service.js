@@ -14,7 +14,7 @@
    */
   function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, ARKTOSHI_UNIT) {
     var self = this
-    var ark = require('../node_modules/arkjs')
+    var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
     self.defaultFees = {
       'send': 10000000,

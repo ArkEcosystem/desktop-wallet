@@ -9,15 +9,17 @@
    * @constructor
    */
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
+    const _path = require('path')
+
     var network = switchNetwork(storageService.getContext())
 
     if (!network) {
       network = switchNetwork()
     }
-    var ark = require('../node_modules/arkjs')
+    var ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
     ark.crypto.setNetworkVersion(network.version || 23)
 
-    var clientVersion = require('../../package.json').version
+    var clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
 
     var peer = {
       ip: network.peerseed,
