@@ -122,7 +122,7 @@ describe('VotesTabController', function () {
           })
 
           done()
-        })
+        }).catch(done)
       })
       it('should show the valid transaction dialog and receive a callback adding the delegate to the list', (done) => {
         ctrl.account.selectedVotes = []
@@ -154,7 +154,7 @@ describe('VotesTabController', function () {
           })
 
           done()
-        })
+        }).catch(done)
       })
       it('should show the valid transaction dialog and receive a callback removing the delegate to the list', (done) => {
         ctrl.account.selectedVotes = [angular.copy(MOCK_DELEGATE)]
