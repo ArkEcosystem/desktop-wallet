@@ -45,32 +45,8 @@
           <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
           <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
         </md-input-container>
-
-        <div layout="row" flex layout-align="start start">
-          <md-input-container flex="5" ng-if="!send.data.ledger">
-            <qr-scanner input-callback="passphrase"></qr-scanner>
-          </md-input-container>
-          <md-input-container flex="95" ng-if="!send.data.ledger" class="md-block">
-            <label translate>Passphrase</label>
-            <input ng-model="send.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" tabIndex="4">
-            <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
-              {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
-            </md-icon>
-          </md-input-container>
-        </div>
-
-        <div layout="row" flex layout-align="start start"  ng-if="send.data.secondSignature">
-          <md-input-container flex="5">
-            <qr-scanner input-callback="secondpassphrase"></qr-scanner>
-          </md-input-container>
-          <md-input-container flex="95" class="md-block">
-            <label translate>Second Passphrase</label>
-            <input ng-model="send.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" tabIndex="5">
-            <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
-              {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
-            </md-icon>
-          </md-input-container>
-        </div>
+        <passphrase-field ng-if="!send.data.ledger" ng-model="send.data.passphrase" label="Passphrase" tab-index="4"></passphrase-field>
+        <passphrase-field ng-if="send.data.secondSignature"ng-model="send.data.secondpassphrase" label="Second Passphrase" tab-index="5"></passphrase-field>
       </div>
     </md-dialog-content>
 

@@ -1,0 +1,22 @@
+<div layout="row" flex layout-align="start start">
+  <md-input-container flex="5">
+    <qr-scanner input-callback-func="$pwc.onQrCodeScanned(qr)"></qr-scanner>
+  </md-input-container>
+  <md-input-container class="md-block" flex="95">
+    <label ng-if="$pwc.label" translate ng-class="{'md-required': !$pwc.isOptional}">
+      {{$pwc.label}}
+    </label>
+    <input type="password"
+           ng-model="$pwc.value"
+           ng-required="!$pwc.isOptional"
+           ng-change="$pwc.onChange()"
+           tabIndex="{{$pwc.tabIndex}}"
+           md-autofocus="$pwc.autoFocus"
+           ng-attr-type="{{ $pwc.showPassword ? 'text' : 'password' }}" />
+    <md-icon style="cursor: pointer;outline: none"
+             ng-click="$pwc.showPassword = !$pwc.showPassword"
+             md-font-library="material-icons">
+      {{ $pwc.showPassword ? 'visibility_off' : 'visibility' }}
+    </md-icon>
+  </md-input-container>
+</div>
