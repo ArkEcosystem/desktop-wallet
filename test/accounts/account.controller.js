@@ -27,6 +27,32 @@ describe('AccountController', function () {
     getTextCatalogMock
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
+  const MOCK_DELEGATE = {
+    address: "mockDelegateArkAddress",
+    approval: 89.09,
+    missedblocks: 9760,
+    producedblocks: 35226,
+    productivity: 78.3,
+    publicKey: "mockDelegatePublicKey",
+    rate: 1,
+    username: "mock_delegate",
+    vote: "11512779451283196"
+  }
+  const MOCK_DELEGATES = [MOCK_DELEGATE]
+  const MOCK_ACCOUNT_OBJ = {
+    address: 'mockArkAddress',
+    balance: '50000000000',
+    delegate: null,
+    ledger: null,
+    publicKey: 'mockPublicKey',
+    secondSignature: 0,
+    selectedVotes: [],
+    transactions: [],
+    virtual: {
+      getFolders: angular.noop,
+      uservalue: angular.noop
+    }
+  }
 
   beforeEach(() => {
     module('arkclient.accounts', $provide => {

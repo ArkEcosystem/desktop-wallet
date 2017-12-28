@@ -43,7 +43,7 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="$dialog.addDelegateVote($dialog.delegate)">
+      <md-button ng-click="$dialog.updateDelegateVote($dialog.delegate)">
         <translate ng-if="!$dialog.account.ledger">Next</translate>
         <translate ng-if="$dialog.account.ledger">Sign with Ledger</translate>
       </md-button>

@@ -25,12 +25,10 @@
       return (foundDelegateIndex >= 0)
     }
 
-    this.removeDelegateVote = (selectedDelegate) => {
-      accountService.getDelegateByUsername(selectedDelegate.name).then(delegateObj => {
-        $mdDialog.hide({ new_delegate: delegateObj, passphrases: this.passphrases })
-      })
-    }
-    this.addDelegateVote = (selectedDelegate) => {
+    this.updateDelegateVote = (selectedDelegate) => {
+      if (!angular.isArray(this.account.selectedVotes)) {
+        this.account.selectedVotes = []
+      }
       accountService.getDelegateByUsername(selectedDelegate.name).then(delegateObj => {
         if (this.delegateToUnvote || (this.account.selectedVotes.length < MAXIMUM_VOTE_CNT && !this.delegateExists(this.account.selectedVotes, delegateObj))) {
           $mdDialog.hide({ new_delegate: delegateObj, passphrases: this.passphrases })
