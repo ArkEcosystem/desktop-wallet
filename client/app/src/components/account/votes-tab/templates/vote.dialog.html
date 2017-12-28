@@ -25,21 +25,8 @@
           <input ng-disabled="$dialog.delegateToUnvote" ng-model="$dialog.delegate.name" type="text">
         </md-input-container>
 
-        <md-input-container ng-if="!$dialog.account.ledger" class="md-block">
-          <label translate>Passphrase</label>
-          <input ng-model="$dialog.passphrases.first" type="password" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" ng-required="true">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
-            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
-
-        <md-input-container class="md-block" ng-if="$dialog.account.secondSignature">
-          <label translate>Second Passphrase</label>
-          <input ng-model="$dialog.passphrases.second" type="password" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" ng-required="true">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
-            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
+        <passphrase-field ng-if="!$dialog.account.ledger" ng-model="$dialog.passphrases.first" label="Passphrase"></passphrase-field>
+        <passphrase-field ng-if="$dialog.passphrases.second" ng-model="$dialog.passphrases.second" label="Second Passphrase"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
