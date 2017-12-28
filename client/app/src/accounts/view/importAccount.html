@@ -19,15 +19,7 @@
           </md-card-title-text>
         </md-card-title>
       </md-card>
-      <div layout="row" flex layout-align="start start">
-        <md-input-container flex="5">
-          <qr-scanner input-callback="passphrase"></qr-scanner>
-        </md-input-container>
-        <md-input-container class="md-block" md-no-float class="md-block" flex="95">
-          <label translate>Passphrase</label>
-          <input ng-model="send.data.passphrase" ng-required="true" type="text" md-autofocus>
-        </md-input-container>
-      </div>
+      <passphrase-field ng-model="send.data.passphrase" label="Passphrase" auto-focus="true"></passphrase-field>
       <!--<md-input-container md-no-float class="md-block">
         <label>Second Passphrase</label>
         <input ng-model="send.data.secondpassphrase" type="text">

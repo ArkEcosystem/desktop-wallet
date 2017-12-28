@@ -1,4 +1,4 @@
-const hooks = require('../hooks')
+const hooks = require(require('path').resolve(__dirname, '../hooks'))
 
 xdescribe('Accessibility', function () {
   hooks.createApp.bind(this)()

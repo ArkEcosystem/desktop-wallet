@@ -11,7 +11,7 @@
   function ConfigService () {
     var self = this
 
-    self.config = require('./config/config.js')
+    self.config = require(require('path').resolve(__dirname, './config/config.js'))
 
     function getByGroup (group) {
       if (self.config[group]) {

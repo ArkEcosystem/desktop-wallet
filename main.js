@@ -1,5 +1,6 @@
 const electron = require('electron')
 const elemon = require('elemon')
+const _path = require('path')
 
 // Module to control application life.
 const app = electron.app
@@ -10,7 +11,7 @@ const Menu = electron.Menu
 const openAboutWindow = require('about-window').default
 
 const ledger = require('ledgerco')
-const LedgerArk = require('./LedgerArk')
+const LedgerArk = require(_path.resolve(__dirname, './LedgerArk'))
 const fork = require('child_process').fork
 
 const windowStateKeeper = require('electron-window-state')
@@ -28,7 +29,7 @@ var template = null
 
 function createWindow () {
   // Create the browser window.t
-  var iconpath = require('path').resolve(__dirname, '/client/ark.png')
+  var iconpath = _path.resolve(__dirname, '/client/ark.png')
   let {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
 
   let mainWindowState = windowStateKeeper({
@@ -189,6 +190,7 @@ function configureReload () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow()
+  registerShortcuts()
 
   if (process.env.LIVE_RELOAD) {
     configureReload()
@@ -238,6 +240,16 @@ function getScreenshotProtectionLabel () {
   } else {
     return 'Enable screenshot protection (recommended)'
   }
+}
+
+function registerShortcuts () {
+  if (process.platform === 'darwin') {
+    electron.globalShortcut.register('CommandOrControl+H', hideApp)
+  }
+}
+
+function hideApp () {
+  electron.app.hide()
 }
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

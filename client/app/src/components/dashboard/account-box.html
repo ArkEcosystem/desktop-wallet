@@ -13,7 +13,7 @@
       </md-tooltip>
       {{$ctrl.ac.toggleCurrency.symbol}}
     </md-button>
-    <md-button class="share" ng-click="$ctrl.ac.refreshAccountBalances()" aria-label="Refresh balances">
+    <md-button ng-class="{'rotate-360': $ctrl.ac.accountsRefreshState.isRefreshing}" class="share" ng-click="$ctrl.ac.refreshAccountBalances(true)" aria-label="Refresh balances">
       <md-icon md-font-library="material-icons">cached</md-icon>
     </md-button>
   </div>

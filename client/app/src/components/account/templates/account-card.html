@@ -1,7 +1,7 @@
 <md-card flex="none">
 
   <div class="share">
-    <md-button ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount()" aria-label="Refresh Account">
+    <md-button ng-class="{'rotate-360': $ctrl.ul.accountRefreshState.isRefreshing}" ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount(true)" aria-label="Refresh Account">
       <md-icon md-font-library="material-icons">cached</md-icon>
       <md-tooltip>
         <translate>Refresh Account</translate>
@@ -49,7 +49,7 @@
           </md-button>-->
           <span class="delegate-name">{{$ctrl.ab.getContactFromAddress($ctrl.ul.selected.address).name || $ctrl.ul.selected.username || 'Address'}} {{$ctrl.ul.selected.ledger}}</span>
       <br>
-      <md-button ng-click="$ctrl.ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}">
+      <md-button style="text-transform: none;" copy-to-clipboard="{{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}">
         <md-icon>content_copy</md-icon>
         <md-tooltip md-direction="top">
           {{ 'Copy' | translate }} {{ $ctrl.ul.showPublicKey ? ('Public Key' | translate | lowercase) : ('Address' | translate | lowercase) }}</translate>
