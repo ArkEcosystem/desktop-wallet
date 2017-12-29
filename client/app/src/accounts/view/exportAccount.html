@@ -9,13 +9,21 @@
   <md-dialog-content>
     <div class="md-dialog-content">
       <div ng-if="vm.hasStarted" style="text-align:center;">
-        <md-progress-circular style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
-        <div translate>
+        <md-progress-circular ng-if="!vm.isFinished" style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
+        <div ng-if="!vm.isFinished" translate>
           Getting transactions from {{vm.getStartLabel()}} - {{vm.getEndLabel()}}!
           Depending on your history, this may take a while.
         </div>
-        <div ng-if="vm.numberOfReceivedTransactions" translate>
+        <div translate>
           Received {{vm.numberOfReceivedTransactions}} transactions...
+        </div>
+        <div ng-if="vm.isFinished" style="padding-top: 10px">
+          <div translate>
+              Click on the button to download your account file!
+          </div>
+          <md-button ng-click="vm.downloadFile()">
+            <span translate>Download File</span>
+          </md-button>
         </div>
       </div>
       <div ng-if="!vm.hasStarted">

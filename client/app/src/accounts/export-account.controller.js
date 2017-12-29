@@ -22,6 +22,7 @@
     $scope.vm.theme = theme
     $scope.vm.numberOfReceivedTransactions = 0
     $scope.vm.hasStarted = false
+    $scope.vm.isFinished = false
 
     // todo: move to utililityService once merged back
     $scope.vm.minDate = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
@@ -29,6 +30,8 @@
     $scope.vm.startDate = new Date()
     $scope.vm.startDate.setMonth($scope.vm.startDate.getMonth() - 1)
     $scope.vm.endDate = new Date()
+
+    $scope.fileContent = null
 
     $scope.vm.exportAccount = () => {
       $scope.vm.hasStarted = true
@@ -42,17 +45,18 @@
       }
 
       accountService.getRangedTransactions($scope.vm.account.address, $scope.vm.startDate, $scope.vm.endDate, onUpdate).then(transactions => {
-        downloadAccountFile($scope.vm.account, transactions)
+        prepareFile($scope.vm.account, transactions)
       }).catch(error => {
         if (error.transactions.length) {
           toastService.error('An error occured when getting your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
                              'The exported file contains only these!',
                              10000)
-          downloadAccountFile($scope.vm.account, error.transactions, true)
+          prepareFile($scope.vm.account, error.transactions, true)
         } else {
           toastService.error('An error occured when getting your transactions. Cannot export account!', 10000)
+          $mdDialog.hide()
         }
-      }).finally(() => $mdDialog.hide())
+      })
     }
 
     $scope.vm.cancel = () => {
@@ -75,25 +79,38 @@
       return gettextCatalog.getString('now')
     }
 
-    function onUpdate (updateObj) {
-      $scope.vm.numberOfReceivedTransactions += updateObj.transactions.length
-    }
-
-    function downloadAccountFile (account, transactions, isInComplete) {
-      var eol = require('os').EOL
-
-      // todo: use utilityService once merged back for the ark calculation
-      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + accountService.numberToFixed(account.balance / ARKTOSHI_UNIT) + eol + 'Transactions' + (isInComplete ? ' (INCOMPLETE):' : ':') + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
-      transactions.forEach(function (trns) {
-        var date = new Date(trns.date)
-        filecontent = filecontent + trns.id + ',' + trns.confirmations + ',' + date.toISOString() + ',' + trns.label + ',' + trns.humanTotal + ',' + trns.senderId + ',' + trns.recipientId +
-          ',' + trns.vendorField + eol
-      })
-      var blob = new Blob([filecontent])
+    $scope.vm.downloadFile = () => {
+      var blob = new Blob([$scope.fileContent])
       var downloadLink = document.createElement('a')
       downloadLink.setAttribute('download', account.address + '.csv')
       downloadLink.setAttribute('href', window.URL.createObjectURL(blob))
       downloadLink.click()
+      $mdDialog.hide()
+    }
+
+    function onUpdate (updateObj) {
+      $scope.vm.numberOfReceivedTransactions += updateObj.transactions.length
+    }
+
+    function prepareFile (account, transactions, isInComplete) {
+      $scope.vm.isFinished = true
+      var eol = require('os').EOL
+
+      // todo: use utilityService once merged back for the ark calculation
+      $scope.fileContent = 'Account:,' + account.address + eol +
+                           'Balance:,' + accountService.numberToFixed(account.balance / ARKTOSHI_UNIT) + eol +
+                           'Transactions' + (isInComplete ? ' (INCOMPLETE):' : ':') + eol +
+                           'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
+      transactions.forEach(trns => {
+        $scope.fileContent += trns.id + ',' +
+                              trns.confirmations + ',' +
+                              new Date(trns.date).toISOString() + ',' +
+                              trns.label + ',' +
+                              trns.humanTotal + ',' +
+                              trns.senderId + ',' +
+                              trns.recipientId + ',' +
+                              trns.vendorField + eol
+      })
     }
   }
 })()
