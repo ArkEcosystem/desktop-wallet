@@ -5,40 +5,73 @@
     .module('arkclient.accounts')
     .controller('ExportAccountController', [
       '$scope',
+      '$filter',
       '$mdDialog',
       'accountService',
       'toastService',
+      'gettextCatalog',
       'account',
       'theme',
       ExportAccountController
     ])
 
-  function ExportAccountController ($scope, $mdDialog, accountService, toastService, account, theme) {
+  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, gettextCatalog, account, theme) {
     $scope.vm = {}
     $scope.vm.account = account
     $scope.vm.theme = theme
     $scope.vm.numberOfReceivedTransactions = 0
     $scope.vm.hasStarted = false
-    $scope.vm.maxLimit = 50
+
+    // todo: move to utililityService once merged back
+    $scope.vm.minDate = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
+
+    $scope.vm.startDate = new Date()
+    $scope.vm.startDate.setMonth($scope.vm.startDate.getMonth() - 1)
+    $scope.vm.endDate = new Date()
 
     $scope.vm.exportAccount = () => {
       $scope.vm.hasStarted = true
-      accountService.getAllTransactions($scope.vm.account.address, $scope.vm.maxLimit, onUpdate).then(transactions => {
+
+      if ($scope.vm.startDate) {
+        $scope.vm.startDate.setHours(0, 0, 0, 0)
+      }
+
+      if ($scope.vm.endDate) {
+        $scope.vm.endDate.setHours(23, 59, 59, 59)
+      }
+
+      accountService.getRangedTransactions($scope.vm.account.address, $scope.vm.startDate, $scope.vm.endDate, onUpdate).then(transactions => {
         downloadAccountFile($scope.vm.account, transactions)
       }).catch(error => {
         if (error.transactions.length) {
-          toastService.error('An error occured when getting all your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
+          toastService.error('An error occured when getting your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
                              'The exported file contains only these!',
                              10000)
           downloadAccountFile($scope.vm.account, error.transactions, true)
         } else {
-          toastService.error('An error occured when getting all your transactions. Cannot export account!', 10000)
+          toastService.error('An error occured when getting your transactions. Cannot export account!', 10000)
         }
       }).finally(() => $mdDialog.hide())
     }
 
     $scope.vm.cancel = () => {
       $mdDialog.hide()
+    }
+
+    $scope.vm.getStartLabel = () => {
+      if ($scope.vm.startDate) {
+        return $filter('date')($scope.vm.startDate, 'mediumDate')
+      }
+
+      return gettextCatalog.getString('the beginning of time')
+    }
+
+    $scope.vm.getEndLabel = () => {
+      if ($scope.vm.endDate) {
+        return $filter('date')($scope.vm.endDate, 'mediumDate')
+      }
+
+      return gettextCatalog.getString('now')
     }
 
     function onUpdate (updateObj) {
