@@ -28,15 +28,15 @@ describe('AccountController', function () {
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
   const MOCK_DELEGATE = {
-    address: "mockDelegateArkAddress",
+    address: 'mockDelegateArkAddress',
     approval: 89.09,
     missedblocks: 9760,
     producedblocks: 35226,
     productivity: 78.3,
-    publicKey: "mockDelegatePublicKey",
+    publicKey: 'mockDelegatePublicKey',
     rate: 1,
-    username: "mock_delegate",
-    vote: "11512779451283196"
+    username: 'mock_delegate',
+    vote: '11512779451283196'
   }
   const MOCK_DELEGATES = [MOCK_DELEGATE]
   const MOCK_ACCOUNT_OBJ = {
@@ -196,10 +196,10 @@ describe('AccountController', function () {
       it('should set up the delegate modal scope', () => {
         ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
 
-        expect($scope.addDelegateDialog).to.have.all.keys(['data', 'add', 'cancel']);
-        expect(typeof $scope.addDelegateDialog.add).to.equal('function');
-        expect(typeof $scope.addDelegateDialog.cancel).to.equal('function');
-        expect($scope.addDelegateDialog.data).to.have.property('fromAddress', MOCK_ACCOUNT_OBJ.address);
+        expect($scope.addDelegateDialog).to.have.all.keys(['data', 'add', 'cancel'])
+        expect($scope.addDelegateDialog.add).to.be.a('function')
+        expect($scope.addDelegateDialog.cancel).to.be.a('function')
+        expect($scope.addDelegateDialog.data).to.have.property('fromAddress', MOCK_ACCOUNT_OBJ.address)
       })
     })
 
@@ -283,21 +283,25 @@ describe('AccountController', function () {
   describe('adding second passphrase', () => {
     let requireNotMocked = require
     beforeEach( () => {
-        require = sinon.stub().returns(require('../node_modules/bip39'))
+      require = sinon.stub().returns(require('../node_modules/bip39'))
+    })
+    afterEach( () => {
+      require = requireNotMocked
     })
     context('when the account doesnt have a second passphrase', () => {
       it('sets up second passphrase modal', () => {
         ctrl.createSecondPassphrase(ACCOUNTS[0])
         expect($scope.createSecondPassphraseDialog).to.have.all.keys(['data', 'cancel', 'next'])
-        expect(typeof $scope.createSecondPassphraseDialog.cancel).to.equal('function')
-        expect(typeof $scope.createSecondPassphraseDialog.next)
-        let password = $scope.createSecondPassphraseDialog.data.secondPassphrase
-        // passphrases have 12 words
-        sinon.assert.match(password.trim().split(" ").length, 12)
+        expect($scope.createSecondPassphraseDialog.cancel).to.be.a('function')
+        expect($scope.createSecondPassphraseDialog.next).to.be.a('function')
+
+        // Passphrases have 12 words
+        const password = $scope.createSecondPassphraseDialog.data.secondPassphrase
+        expect(password.trim().split(' ')).to.have.lengthOf(12)
       })
     })
     context('user going through second passphrase add', () => {
-      it('inputs wrong passwords' , () => {
+      it('inputs wrong passwords', () => {
         ctrl.createSecondPassphrase(ACCOUNTS[0])
         $scope.createSecondPassphraseDialog.next()
         $scope.createSecondPassphraseDialog.data.secondPassphrase = 'not right'
@@ -311,9 +315,6 @@ describe('AccountController', function () {
         $scope.createSecondPassphraseDialog.next()
         sinon.assert.calledOnce(accountServiceMock.createTransaction)
       })
-    })
-    afterEach( () => {
-      require = requireNotMocked
     })
   })
 })
