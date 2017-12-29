@@ -12,10 +12,11 @@
       'gettextCatalog',
       'account',
       'theme',
+      'ARKTOSHI_UNIT',
       ExportAccountController
     ])
 
-  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, gettextCatalog, account, theme) {
+  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, gettextCatalog, account, theme, ARKTOSHI_UNIT) {
     $scope.vm = {}
     $scope.vm.account = account
     $scope.vm.theme = theme
@@ -81,7 +82,8 @@
     function downloadAccountFile (account, transactions, isInComplete) {
       var eol = require('os').EOL
 
-      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + account.balance + eol + 'Transactions' + (isInComplete ? ' (INCOMPLETE):' : ':') + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
+      // todo: use utilityService once merged back for the ark calculation
+      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + accountService.numberToFixed(account.balance / ARKTOSHI_UNIT) + eol + 'Transactions' + (isInComplete ? ' (INCOMPLETE):' : ':') + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
       transactions.forEach(function (trns) {
         var date = new Date(trns.date)
         filecontent = filecontent + trns.id + ',' + trns.confirmations + ',' + date.toISOString() + ',' + trns.label + ',' + trns.humanTotal + ',' + trns.senderId + ',' + trns.recipientId +
