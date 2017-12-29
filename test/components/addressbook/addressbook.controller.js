@@ -63,8 +63,8 @@ describe('AddressbookController', function () {
   })
 
   describe('getContacts', () => {
-    var mdDialogShowStub,
-    mdDialogHideStub
+    let mdDialogShowStub,
+      mdDialogHideStub
 
     beforeEach( () => {
       mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
@@ -98,8 +98,8 @@ describe('AddressbookController', function () {
   })
 
   describe('addAddressbookContact', () =>  {
-    var mdDialogShowStub,
-    mdDialogHideStub
+    let mdDialogShowStub,
+      mdDialogHideStub
 
     beforeEach( () => {
       mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
@@ -108,94 +108,98 @@ describe('AddressbookController', function () {
       ctrl.showToast = sinon.stub()
     })
 
-    context("set up addressbook contact modal", () => {
+    context('set up addressbook contact modal', () => {
       it('sets up address book modal', () => {
         ctrl.addAddressbookContact()
         sinon.assert.calledOnce(mdDialogShowStub)
+
         expect($scope.addAddressbookContact).to.have.all.keys(['add', 'cancel'])
-        expect(typeof $scope.addAddressbookContact.add).to.equal('function')
-        expect(typeof $scope.addAddressbookContact.cancel).to.equal('function')
+        expect($scope.addAddressbookContact.add).to.be.a('function')
+        expect($scope.addAddressbookContact.cancel).to.be.a('function')
       })
     })
 
-    context("Adding Contact with empty name", () => {
-      it('should fail to add due to empty name', () => {
-        let name = ''
-        let address = 'a'
+    context('adding contact with empty name', () => {
+      it('fails to add due to empty name', () => {
+        const name = ''
+        const address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+        ctrl.addAddressbookContact()
+
+        $scope.addAddressbookContact.add(name, address)
+        expect(mdDialogShowStub.calledOnce).to.be.true
+        expect(ctrl.getContacts.calledOnce).to.be.true
+        expect(ctrl.showToast.calledWithMatch('', name)).to.be.true
+      })
+    })
+
+    context('adding contact with invalid address', () => {
+      it('fails to add due to empty name', () => {
+        const name = 'test_contact'
+        const address = 'test_address'
         ctrl.addAddressbookContact()
         $scope.addAddressbookContact.add(name, address)
-        sinon.assert.calledOnce(mdDialogShowStub)
-        sinon.assert.calledOnce(ctrl.getContacts)
-        sinon.assert.calledWithMatch(ctrl.showToast, '', name, true)
+
+        expect(mdDialogShowStub.calledOnce).to.be.true
+        expect(ctrl.getContacts.calledOnce).to.be.true
+        expect(ctrl.showToast.calledWithMatch('', address)).to.be.true
+        expect(ctrl.isAddress(address)).to.be.false
       })
     })
 
-    context("Adding Contact with invalid address", () => {
-      it('should fail to add due to empty name', () => {
-        let name = 'test_contact'
-        let address = 'test_address'
-        ctrl.addAddressbookContact()
-        $scope.addAddressbookContact.add(name, address)
-        sinon.assert.calledOnce(mdDialogShowStub)
-        sinon.assert.calledOnce(ctrl.getContacts)
-        sinon.assert.calledWithMatch(ctrl.showToast, '', address, true)
-        sinon.assert.match(ctrl.isAddress(address), false)
-      })
-    })
-
-    context("Adding contact with unique name and address", () => {
-      it('should add successfully', () => {
-          const NAME = 'test_name'
-          const ADDRESS = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+    context('adding contact with unique name and address', () => {
+      it('is successful', () => {
+          const name = 'test_name'
+          const address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
           
           ctrl.addAddressbookContact()
-          const SIZE_BEFORE_ADD = Object.keys(ctrl.contacts).length
-          $scope.addAddressbookContact.add(NAME, ADDRESS)
-          const SIZE_AFTER_ADD = Object.keys(ctrl.contacts).length
-          sinon.assert.match(SIZE_BEFORE_ADD + 1, SIZE_AFTER_ADD)
-          sinon.assert.match(ctrl.contacts[SIZE_AFTER_ADD-1], {name: NAME, address: ADDRESS})
+          const sizeBefore = Object.keys(ctrl.contacts).length
+          $scope.addAddressbookContact.add(name, address)
+          const sizeAfter = Object.keys(ctrl.contacts).length
 
+          expect(sizeBefore).to.equal(sizeAfter - 1)
+          expect(ctrl.contacts[sizeAfter - 1]).to.eql({ name, address })
       })
     })
 
-
-    context("Adding contact with duplicate name", () => {
-      it('should fail to add due to duplicate name, nothing else added', () => {
-        const NAME = 'test_name'
-        let address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+    context('adding contact with duplicate name', () => {
+      it('fails to add due to duplicate name, nothing else added', () => {
+        const name = 'test_name'
+        const address1 = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+        const address2 = 'AaLCSaTzwFhrEwvHtpGEt4peVzB1faAvSc'
 
         ctrl.addAddressbookContact()
-        sinon.assert.match(ctrl.contactExists(NAME), false)
-        $scope.addAddressbookContact.add(NAME, address)
-        const SIZE_AFTER_FIRST_ADD = Object.keys(ctrl.contacts).length
+        expect(ctrl.contactExists(name)).to.be.false
+        $scope.addAddressbookContact.add(name, address1)
+        expect(ctrl.contactExists(name)).to.be.true
+        const sizeAfterFirst = Object.keys(ctrl.contacts).length
 
-        address = 'AaLCSaTzwFhrEwvHtpGEt4peVzB1faAvSc'
         ctrl.addAddressbookContact()
-        $scope.addAddressbookContact.add(NAME, address)
-        sinon.assert.match(ctrl.contactExists(NAME), true)
-        const SIZE_AFTER_SECOND_ADD = Object.keys(ctrl.contacts).length
+        $scope.addAddressbookContact.add(name, address2)
+        const sizeAfterSecond = Object.keys(ctrl.contacts).length
 
-        //should be same since we failed to add
-        sinon.assert.match(SIZE_AFTER_SECOND_ADD, SIZE_AFTER_FIRST_ADD)
+        // Should be same since we failed to add
+        expect(sizeAfterSecond).to.equal(sizeAfterFirst)
       })
     })
 
-    context("Adding contact with duplicate address", () => {
-      it('should fail to add due to duplicate address, nothing else added', () => {
-        let name = 'test_name'
-        const ADDRESS = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+    context('adding contact with duplicate address', () => {
+      it('fails to add due to duplicate address, nothing else added', () => {
+        const name1 = 'test_name'
+        const name2 = 'test_name2'
+        const address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
 
         ctrl.addAddressbookContact()
-        $scope.addAddressbookContact.add(name, ADDRESS)
-        const SIZE_AFTER_FIRST_ADD = Object.keys(ctrl.contacts).length
-        name = 'test_name2'
-        ctrl.addAddressbookContact()
-        $scope.addAddressbookContact.add(name, ADDRESS)
-        sinon.assert.match(ctrl.addressExists(ADDRESS), true)
-        const SIZE_AFTER_SECOND_ADD = Object.keys(ctrl.contacts).length
+        $scope.addAddressbookContact.add(name1, address)
+        const sizeAfterFirst = Object.keys(ctrl.contacts).length
 
-        //should be same since we failed to add
-        sinon.assert.match(SIZE_AFTER_SECOND_ADD, SIZE_AFTER_FIRST_ADD)
+        ctrl.addAddressbookContact()
+        $scope.addAddressbookContact.add(name2, address)
+        const sizeAfterSecond = Object.keys(ctrl.contacts).length
+
+        expect(ctrl.addressExists(address)).to.be.true
+
+        // Should be same since we failed to add
+        expect(sizeAfterSecond).to.equal(sizeAfterFirst)
       })
     })
   })
