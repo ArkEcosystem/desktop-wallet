@@ -16,6 +16,9 @@ body {
 ::-webkit-scrollbar {
     width: 12px;
 }
+::selection {
+    background: #ADD8E6;
+}
 
 /* Utilities */
 .d-inline-block {
