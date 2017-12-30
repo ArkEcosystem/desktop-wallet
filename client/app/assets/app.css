@@ -17,6 +17,9 @@ body {
     width: 12px;
 }
 
+::selection {
+    background: #ADD8E6;
+}
 
 /* Track */
 
@@ -236,6 +239,7 @@ md-toolbar h1 {
 
 md-bottom-sheet {
     padding-bottom: 130px;
+    position: fixed;
 }
 
 md-bottom-sheet md-icon {

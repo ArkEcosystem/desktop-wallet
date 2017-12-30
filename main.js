@@ -190,6 +190,7 @@ function configureReload () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow()
+  registerShortcuts()
 
   if (process.env.LIVE_RELOAD) {
     configureReload()
@@ -239,6 +240,16 @@ function getScreenshotProtectionLabel () {
   } else {
     return 'Enable screenshot protection (recommended)'
   }
+}
+
+function registerShortcuts () {
+  if (process.platform === 'darwin') {
+    electron.globalShortcut.register('CommandOrControl+H', hideApp)
+  }
+}
+
+function hideApp () {
+  electron.app.hide()
 }
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

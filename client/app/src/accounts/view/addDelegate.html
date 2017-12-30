@@ -10,8 +10,7 @@
       </div>
     </md-toolbar>
     <md-dialog-content>
-      <div class="md-dialog-content">
-
+     <div ng-repeat="control in controls" class="md-dialog-content">
         <md-input-container class="md-block">
           <label for="delegate-name" translate>Active delegates (forging)</label>
           <md-select id="delegate-name" ng-model="addDelegateDialog.data.delegatename">

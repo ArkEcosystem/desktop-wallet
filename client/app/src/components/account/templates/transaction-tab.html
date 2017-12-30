@@ -34,7 +34,7 @@
           </td>
           <td md-cell>{{it.date | formattedDate}}</td>
           <td ng-if="it.recipientId==it.senderId && it.type==0" md-cell>
-            <span class="md-button selectable-text" md-colors="{'background' : 'default-blue-grey-600' }">{{ '+' + ((it.amount | convertToArkValue)) + ' / -' + (it.fee | convertToArkValue) }}</span>
+            <span class="md-button selectable-text" md-colors="{'background' : 'default-blue-grey-600' }">-{{it.amount + it.fee | convertToArkValue}} / +{{it.amount | convertToArkValue}}</span>
           </td>
           <td ng-if="it.type>0" md-cell>
             <span class="md-button selectable-text" md-colors="{'background' : 'default-blue-grey-600' }">{{it.humanTotal}}</span>

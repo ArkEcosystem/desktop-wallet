@@ -19,6 +19,10 @@
     var ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
     ark.crypto.setNetworkVersion(network.version || 23)
 
+    const momentTimezone = require('moment-timezone')
+    const momentRange = require('moment-range')
+    const moment = momentRange.extendMoment(momentTimezone)
+
     var clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
 
     var peer = {
@@ -101,9 +105,6 @@
             version: 0x17,
             slip44: 111,
             explorer: 'https://explorer.ark.io',
-            exchanges: {
-              changer: 'ark_ARK'
-            },
             background: 'url(assets/images/images/Ark.jpg)',
             theme: 'default',
             themeDark: false
@@ -349,20 +350,66 @@
 
     // Updates peer with all currency values relative to the USD price.
     function updatePeerWithCurrencies (peer, res) {
-      $http.get('https://api.fixer.io/latest?base=USD', {timeout: 2000}).then(function (result) {
-        const USD_PRICE = Number(res.data[0].price_usd)
-        var currencies = ['aud', 'brl', 'cad', 'chf', 'cny', 'eur', 'gbp', 'hkd', 'idr', 'inr', 'jpy', 'krw', 'mxn', 'rub']
-        var prices = {}
-        currencies.forEach(function (currency) {
-          prices[currency] = result.data.rates[currency.toUpperCase()] * USD_PRICE
-        })
-        prices['btc'] = res.data[0].price_btc
-        prices['usd'] = res.data[0].price_usd
-        peer.market.price = prices
-        storageService.setGlobal('peerCurrencies', prices)
+      peer = updateCurrencyConversionRates(peer)
+      const USD_PRICE = Number(res.data[0].price_usd)
+      var currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
+      var prices = {}
+      currencies.forEach(function (currency) {
+        prices[currency.toLowerCase()] = peer.market.conversionRates[currency] * USD_PRICE
       })
-
+      prices['btc'] = res.data[0].price_btc
+      prices['usd'] = res.data[0].price_usd
+      storageService.setGlobal('peerCurrencies', prices)
+      peer.market.price = prices
       return peer
+    }
+
+    // Updates the currency conversion rates IF necessary
+    // Necessary if it isn't stored, or if the stored value is too old
+    function updateCurrencyConversionRates (peer) {
+      var priceObj = storageService.getGlobal('conversionRates')
+      if (priceObj !== undefined && priceObj !== null) {
+        peer.market.conversionRates = priceObj.rates
+        let storedDateString = priceObj.date
+        let storedDate = new Date(storedDateString)
+        var updateCurrencies = checkToUpdateConversionRates(storedDate)
+        if (updateCurrencies) {
+          getConversionRatesApiCall(peer)
+        }
+      } else {
+        getConversionRatesApiCall(peer)
+      }
+      return peer
+    }
+
+    // api call to get the conversion rates for currencies
+    function getConversionRatesApiCall (peer) {
+      var currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
+      var apiCall = createCurrencyConversionApiCall(currencies)
+      $http.get(apiCall, {timeout: 2000}).then(function (result) {
+        storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
+        peer.market.conversionRates = result.data.rates
+      })
+      return peer
+    }
+
+    // Checks if the stored time and the current time has crossed 4pm CET time
+    function checkToUpdateConversionRates (storedDate) {
+      storedDate = moment(storedDate.getTime()).utcOffset(60)
+      var endDate = moment(new Date().getTime()).utcOffset(60)
+      const API_UPDATE_HOUR = 9
+      var fourPMCET = moment({year: storedDate.year(), month: storedDate.month(), day: storedDate.date(), hour: API_UPDATE_HOUR}).utcOffset(60)
+      if (storedDate.hour() >= 16) {
+        fourPMCET.add(1, 'day')
+      }
+      const range = moment.range(storedDate, endDate)
+      return fourPMCET.within(range)
+    }
+
+    function createCurrencyConversionApiCall (currencies) {
+      let getRequest = 'https://api.fixer.io/latest?base=USD&symbols='
+      getRequest += currencies.toString()
+      return getRequest
     }
 
     listenNetworkHeight()

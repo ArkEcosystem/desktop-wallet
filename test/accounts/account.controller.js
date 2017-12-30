@@ -16,7 +16,6 @@ describe('AccountController', function () {
     networkServiceMock,
     pluginLoaderMock,
     storageServiceMock,
-    changerServiceMock,
     ledgerServiceMock,
     timeServiceMock,
     toastServiceMock
@@ -30,15 +29,15 @@ describe('AccountController', function () {
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
   const MOCK_DELEGATE = {
-    address: "mockDelegateArkAddress",
+    address: 'mockDelegateArkAddress',
     approval: 89.09,
     missedblocks: 9760,
     producedblocks: 35226,
     productivity: 78.3,
-    publicKey: "mockDelegatePublicKey",
+    publicKey: 'mockDelegatePublicKey',
     rate: 1,
-    username: "mock_delegate",
-    vote: "11512779451283196"
+    username: 'mock_delegate',
+    vote: '11512779451283196'
   }
   const MOCK_DELEGATES = [MOCK_DELEGATE]
   const MOCK_ACCOUNT_OBJ = {
@@ -61,7 +60,9 @@ describe('AccountController', function () {
       accountServiceMock = {
         loadAllAccounts () { return ACCOUNTS },
         getActiveDelegates: angular.noop,
-        getDelegateByUsername: angular.noop
+        getDelegateByUsername: angular.noop,
+        getFees: sinon.stub().resolves(),
+        createTransaction: sinon.stub().resolves()
       }
       networkServiceMock = {
         getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },
@@ -80,10 +81,7 @@ describe('AccountController', function () {
 		},
         getContext () {}
       }
-      changerServiceMock = {
-        getHistory () {},
-        getMarketInfo () { return new Promise((resolve, reject) => resolve()) }
-      }
+
       ledgerServiceMock = {}
       timeServiceMock = {}
       toastServiceMock = {}
@@ -112,11 +110,12 @@ describe('AccountController', function () {
 
       mdDialogMock = {
         show: angular.noop,
-        hide: angular.noop
+        hide: angular.noop,
+        confirm: angular.noop
       }
       mdToastMock = {}
       getTextCatalogMock = {
-        getString: sinon.stub(),
+        getString: sinon.stub().returns('!'),
         setCurrentLanguage: sinon.stub()
       }
 
@@ -125,7 +124,6 @@ describe('AccountController', function () {
       $provide.value('networkService', networkServiceMock)
       $provide.value('pluginLoader', pluginLoaderMock)
       $provide.value('storageService', storageServiceMock)
-      $provide.value('changerService', changerServiceMock)
       $provide.value('ledgerService', ledgerServiceMock)
       $provide.value('timeService', timeServiceMock)
       $provide.value('toastService', toastServiceMock)
@@ -205,10 +203,10 @@ describe('AccountController', function () {
       it('should set up the delegate modal scope', () => {
         ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
 
-        expect($scope.addDelegateDialog).to.have.all.keys(['data', 'add', 'cancel']);
-        expect(typeof $scope.addDelegateDialog.add).to.equal('function');
-        expect(typeof $scope.addDelegateDialog.cancel).to.equal('function');
-        expect($scope.addDelegateDialog.data).to.have.property('fromAddress', MOCK_ACCOUNT_OBJ.address);
+        expect($scope.addDelegateDialog).to.have.all.keys(['data', 'add', 'cancel'])
+        expect($scope.addDelegateDialog.add).to.be.a('function')
+        expect($scope.addDelegateDialog.cancel).to.be.a('function')
+        expect($scope.addDelegateDialog.data).to.have.property('fromAddress', MOCK_ACCOUNT_OBJ.address)
       })
     })
 
@@ -287,7 +285,7 @@ describe('AccountController', function () {
       })
     })
   })
-  
+
   describe('formattedDate filter', () => {
     context('get date formatted as Year-Month-Day', () => {
 		it('testing for formatting a valid date', () => {
@@ -296,5 +294,43 @@ describe('AccountController', function () {
           expect(result).to.include('2017/12/')
 		})
 	})
+
+  // Adding Second passphrase test
+  describe('adding second passphrase', () => {
+    let requireNotMocked = require
+    beforeEach( () => {
+      require = sinon.stub().returns(require('../node_modules/bip39'))
+    })
+    afterEach( () => {
+      require = requireNotMocked
+    })
+    context('when the account doesnt have a second passphrase', () => {
+      it('sets up second passphrase modal', () => {
+        ctrl.createSecondPassphrase(ACCOUNTS[0])
+        expect($scope.createSecondPassphraseDialog).to.have.all.keys(['data', 'cancel', 'next'])
+        expect($scope.createSecondPassphraseDialog.cancel).to.be.a('function')
+        expect($scope.createSecondPassphraseDialog.next).to.be.a('function')
+
+        // Passphrases have 12 words
+        const password = $scope.createSecondPassphraseDialog.data.secondPassphrase
+        expect(password.trim().split(' ')).to.have.lengthOf(12)
+      })
+    })
+    context('user going through second passphrase add', () => {
+      it('inputs wrong passwords', () => {
+        ctrl.createSecondPassphrase(ACCOUNTS[0])
+        $scope.createSecondPassphraseDialog.next()
+        $scope.createSecondPassphraseDialog.data.secondPassphrase = 'not right'
+        $scope.createSecondPassphraseDialog.next()
+        sinon.assert.match($scope.createSecondPassphraseDialog.data.showWrongRepassphrase, true)
+      })
+      it('inputs right passwords, should create transaction', () => {
+        ctrl.createSecondPassphrase(ACCOUNTS[0])
+        $scope.createSecondPassphraseDialog.next()
+        $scope.createSecondPassphraseDialog.data.secondPassphrase = $scope.createSecondPassphraseDialog.data.reSecondPassphrase
+        $scope.createSecondPassphraseDialog.next()
+        sinon.assert.calledOnce(accountServiceMock.createTransaction)
+      })
+    })
   })
 })
