@@ -9,21 +9,35 @@
   <md-dialog-content>
     <div class="md-dialog-content">
       <div ng-if="vm.hasStarted" style="text-align:center;">
-        <md-progress-circular ng-if="!vm.isFinished" style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
-        <div ng-if="!vm.isFinished" translate>
-          Getting transactions from {{vm.getStartLabel()}} - {{vm.getEndLabel()}}!
-          Depending on your history, this may take a while.
-        </div>
-        <div translate>
-          Received {{vm.numberOfReceivedTransactions}} transactions...
-        </div>
-        <div ng-if="vm.isFinished" style="padding-top: 10px">
+        <div ng-if="!vm.isFinished">
+          <md-progress-circular style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
           <div translate>
-              Click on the button to download your account file!
+            Getting transactions from {{vm.getStartLabel()}} - {{vm.getEndLabel()}}!
           </div>
-          <md-button ng-click="vm.downloadFile()">
-            <span translate>Download File</span>
-          </md-button>
+          <div translate>
+              Depending on your history, this may take a while.
+          </div>
+          <div ng-if="vm.numberOfReceivedTransactions">
+            <span translate>Received {{vm.numberOfReceivedTransactions}} transactions.</span>..
+          </div>
+        </div>
+        <div ng-if="vm.isFinished">
+          <md-icon md-font-library="material-icons"
+                   md-colors="{'color' : 'default-green' }"
+                   style="font-size: 60px; height: 60px; width: 60px; padding-bottom: 45px;">
+            check_circle
+          </md-icon>
+          <div translate style="padding-bottom: 20px" translate>
+            Received {{vm.numberOfReceivedTransactions}} transactions.
+          </div>
+          <md-dialog-actions layout="row">
+            <md-button ng-click="vm.downloadFile()">
+              <span translate>Download File</span>
+            </md-button>
+            <md-button ng-click="vm.cancel()">
+              <span translate>Cancel</span>
+            </md-button>
+          </md-dialog-actions>
         </div>
       </div>
       <div ng-if="!vm.hasStarted">
