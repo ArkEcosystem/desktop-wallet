@@ -24,43 +24,43 @@ describe('utilityService',() => {
   describe('arktoshiToArk', () => {
 
     it('undefined arktoshi is 0 Ark', () => {
-      var ark = utilityService.arktoshiToArk()
+      const ark = utilityService.arktoshiToArk()
 
       expect(ark).to.eql(0)
     })
 
     it('0 arktoshi is 0 Ark', () => {
-      var ark = utilityService.arktoshiToArk(0)
+      const ark = utilityService.arktoshiToArk(0)
 
       expect(ark).to.eql(0)
     })
 
     it('1 arktoshi is 1 Ark', () => {
-      var ark = utilityService.arktoshiToArk(arktoshiUnit)
+      const ark = utilityService.arktoshiToArk(arktoshiUnit)
 
       expect(ark).to.eql(1)
     })
 
     it('1/2 arktoshi is 0.5 Ark', () => {
-      var ark = utilityService.arktoshiToArk(arktoshiUnit / 2)
+      const ark = utilityService.arktoshiToArk(arktoshiUnit / 2)
 
       expect(ark).to.eql(0.5)
     })
 
     it('1111111 part of arktoshi is human readable amount of Ark', () => {
-      var ark = utilityService.arktoshiToArk(arktoshiUnit / 1111111)
+      const ark = utilityService.arktoshiToArk(arktoshiUnit / 1111111)
 
       expect(ark).to.eq('0.000000900000090000009')
     })
 
     it('1111111 part of arktoshi is precise amount of Ark', () => {
-      var ark = utilityService.arktoshiToArk(arktoshiUnit / 1111111, true)
+      const ark = utilityService.arktoshiToArk(arktoshiUnit / 1111111, true)
 
       expect(ark).to.be.within(9.00000090000000e-7, 9.00000090000009e-7)
     })
 
     it('1 arktoshi is 1 test-ark (include network token)', () => {
-      var ark = utilityService.arktoshiToArk(arktoshiUnit, false, true)
+      const ark = utilityService.arktoshiToArk(arktoshiUnit, false, true)
 
       expect(ark).to.eql('1 ' + tokenName)
     })

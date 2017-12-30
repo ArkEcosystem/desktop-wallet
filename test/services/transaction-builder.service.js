@@ -96,7 +96,7 @@ describe('transactionBuilderService',() => {
     afterEach(() => restoreGetAccount())
 
     it('should have correct type', (done) => {
-      var sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.type).to.eql(0)
@@ -105,7 +105,7 @@ describe('transactionBuilderService',() => {
     })
 
     it('should have correct amount', (done) => {
-      var sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.amount).to.eql(1)
@@ -114,7 +114,7 @@ describe('transactionBuilderService',() => {
     })
 
     it('should have correct fee', (done) => {
-      var sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.fee).to.eql(fees.send)
@@ -125,7 +125,7 @@ describe('transactionBuilderService',() => {
     it('should work with ledger', (done) => {
       const config = createValidConfigObject();
       config.ledger = true
-      var sendPromise = transactionBuilderService.createSendTransaction(config)
+      const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
         expect(transaction.type).to.eql(0)
@@ -138,7 +138,7 @@ describe('transactionBuilderService',() => {
     it('should fail when to address is invalid', (done) => {
       const config = createValidConfigObject();
       config.toAddress += "B"
-      var sendPromise = transactionBuilderService.createSendTransaction(config)
+      const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
@@ -150,7 +150,7 @@ describe('transactionBuilderService',() => {
     it('should fail when when passphrase is invalid', (done) => {
       const config = createValidConfigObject();
       config.masterpassphrase = "C"
-      var sendPromise = transactionBuilderService.createSendTransaction(config)
+      const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
@@ -162,7 +162,7 @@ describe('transactionBuilderService',() => {
     it('should fail when balance is too low', (done) => {
       const config = createValidConfigObject();
       config.amount = from.balance - 1
-      var sendPromise = transactionBuilderService.createSendTransaction(config)
+      const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
@@ -178,7 +178,7 @@ describe('transactionBuilderService',() => {
     afterEach(() => restoreGetAccount())
 
     it('should have correct type', (done) => {
-      var sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.type).to.eql(1)
@@ -187,7 +187,7 @@ describe('transactionBuilderService',() => {
     })
 
     it('should have correct fee', (done) => {
-      var sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.fee).to.eql(fees.secondsignature)
@@ -198,7 +198,7 @@ describe('transactionBuilderService',() => {
     it('should fail when balance is too low', (done) => {
       restoreGetAccount()
       mockGetAccount(fees.secondsignature - 1)
-      var sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
@@ -215,7 +215,7 @@ describe('transactionBuilderService',() => {
     afterEach(() => restoreGetAccount())
 
     it('should have correct type', (done) => {
-      var sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.type).to.eql(2)
@@ -224,7 +224,7 @@ describe('transactionBuilderService',() => {
     })
 
     it('should have correct fee', (done) => {
-      var sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.fee).to.eql(fees.delegate)
@@ -235,7 +235,7 @@ describe('transactionBuilderService',() => {
     it('should fail when balance is too low', (done) => {
       restoreGetAccount()
       mockGetAccount(fees.delegate - 1)
-      var sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
@@ -251,7 +251,7 @@ describe('transactionBuilderService',() => {
     afterEach(() => restoreGetAccount())
 
     it('should have correct type', (done) => {
-      var sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.type).to.eql(3)
@@ -260,7 +260,7 @@ describe('transactionBuilderService',() => {
     })
 
     it('should have correct fee', (done) => {
-      var sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
         expect(transaction.fee).to.eql(fees.vote)
@@ -271,7 +271,7 @@ describe('transactionBuilderService',() => {
     it('should fail when balance is too low', (done) => {
       restoreGetAccount()
       mockGetAccount(fees.vote - 1)
-      var sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
+      const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
           done("error: shouldn't be here!");
@@ -284,7 +284,7 @@ describe('transactionBuilderService',() => {
     it('should work with ledger (additional field recipientId is correct)', (done) => {
       const config = createValidConfigObject();
       config.ledger = true
-      var sendPromise = transactionBuilderService.createVoteTransaction(config)
+      const sendPromise = transactionBuilderService.createVoteTransaction(config)
 
       sendPromise.then(transaction => {
         expect(transaction.type).to.eql(3)

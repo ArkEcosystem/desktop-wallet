@@ -5,10 +5,10 @@
     .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
 
   function TransactionBuilderService ($q, networkService, accountService, ledgerService, gettextCatalog, utilityService) {
-    var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
+    const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
     function createTransaction (deferred, config, fee, createTransactionFunc, setAdditionalTransactionPropsOnLedger) {
-      var transaction
+      let transaction
       try {
         transaction = createTransactionFunc(config)
       } catch (e) {
@@ -42,8 +42,8 @@
     }
 
     function prepareTransaction (config, prepareFunc) {
-      var deferred = $q.defer()
-      var account = accountService.getAccount(config.fromAddress)
+      const deferred = $q.defer()
+      const account = accountService.getAccount(config.fromAddress)
       accountService.getFees(false).then((fees) => {
         prepareFunc(deferred, account, fees)
       })

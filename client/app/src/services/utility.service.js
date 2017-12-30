@@ -24,7 +24,7 @@
     }
 
     function numberToFixed (x) {
-      var e
+      let e
       if (Math.abs(x) < 1.0) {
         e = parseInt(x.toString().split('e-')[1])
         if (e) {
