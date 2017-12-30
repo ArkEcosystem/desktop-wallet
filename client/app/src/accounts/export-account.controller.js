@@ -109,7 +109,7 @@
                               trns.humanTotal + ',' +
                               trns.senderId + ',' +
                               trns.recipientId + ',' +
-                              trns.vendorField + eol
+                              (trns.vendorField ? trns.vendorField : '') + eol
       })
     }
   }
