@@ -1636,20 +1636,15 @@
     }
 
     function exportAccount (account) {
-      var eol = require('os').EOL
-      var transactions = storageService.get(`transactions-${account.address}`)
-
-      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + account.balance + eol + 'Transactions:' + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
-      transactions.forEach(function (trns) {
-        var date = new Date(trns.date)
-        filecontent = filecontent + trns.id + ',' + trns.confirmations + ',' + date.toISOString() + ',' + trns.label + ',' + trns.humanTotal + ',' + trns.senderId + ',' + trns.recipientId +
-          ',' + trns.vendorField + eol
+      $mdDialog.show({
+        templateUrl: './src/accounts/view/exportAccount.html',
+        controller: 'ExportAccountController',
+        escapeToClose: false,
+        locals: {
+          account: account,
+          theme: self.currentTheme
+        }
       })
-      var blob = new Blob([filecontent])
-      var downloadLink = document.createElement('a')
-      downloadLink.setAttribute('download', account.address + '.csv')
-      downloadLink.setAttribute('href', window.URL.createObjectURL(blob))
-      downloadLink.click()
     }
 
     // Add a second passphrase to an account

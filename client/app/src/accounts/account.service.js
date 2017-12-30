@@ -311,6 +311,108 @@
       return deferred.promise
     }
 
+    // todo: move to utilityService
+    // todo: add tests there
+    function getArkRelativeTimeStamp (date) {
+      if (!date) {
+        return null
+      }
+
+      date = new Date(date.toUTCString())
+
+      const arkStartDate = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
+      return parseInt((date.getTime() - arkStartDate.getTime()) / 1000)
+    }
+
+    // this methods only works correctly, as long as getAllTransactions returns the transactions ordered by new to old!
+    function getRangedTransactions (address, startDate, endDate, onUpdate) {
+      const startStamp = getArkRelativeTimeStamp(!startDate ? new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0)) : startDate)
+      const endStamp = getArkRelativeTimeStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
+
+      const deferred = $q.defer()
+
+      let transactions = []
+      function onRangeUpdate (updateObj) {
+        const resultObj = {
+          transactions: []
+        }
+
+        let isAnyTransactionTooOld = false
+        updateObj.transactions.forEach(t => {
+          if (t.timestamp >= startStamp && t.timestamp <= endStamp) {
+            resultObj.transactions.push(t)
+          }
+          isAnyTransactionTooOld |= t.timestamp < startStamp
+        })
+
+        transactions = transactions.concat(resultObj.transactions)
+
+        // if any transaction of the current set is already older than our start date, we are finished
+        if (isAnyTransactionTooOld) {
+          resultObj.isFinished = true
+        }
+
+        if (onUpdate) {
+          onUpdate(resultObj)
+        }
+
+        if (resultObj.isFinished || updateObj.isFinished) {
+          deferred.resolve(transactions)
+          return true
+        }
+      }
+
+      getAllTransactions(address, null, onRangeUpdate)
+        .catch(error => deferred.reject({message: error.message, transactions: transactions}))
+
+      return deferred.promise
+    }
+
+    function getAllTransactions (address, totalLimit, onUpdate, offset, transactionCollection, deferred) {
+      if (!transactionCollection) {
+        transactionCollection = []
+      }
+
+      if (!offset) {
+        offset = 0
+      }
+
+      if (!totalLimit) {
+        totalLimit = Number.MAX_VALUE
+      }
+
+      if (!deferred) {
+        deferred = $q.defer()
+      }
+
+      getTransactions(address, offset).then(transactions => {
+        const previousLength = transactionCollection.length
+        transactionCollection = transactionCollection.concat(transactions)
+        const updateObj = {
+          transactions: transactions.slice(0, totalLimit - previousLength),
+          isFinished: !transactions.length || transactionCollection.length >= totalLimit
+        }
+
+        transactionCollection = transactionCollection.slice(0, totalLimit)
+
+        if (onUpdate) {
+          if (onUpdate(updateObj)) {
+            deferred.resolve(transactionCollection)
+            return
+          }
+        }
+
+        if (updateObj.isFinished) {
+          deferred.resolve(transactionCollection)
+          return
+        }
+
+        getAllTransactions(address, totalLimit, onUpdate, offset + transactions.length, transactionCollection, deferred)
+      }).catch(error => deferred.reject({message: error, transactions: transactionCollection}))
+
+      return deferred.promise
+    }
+
     function getDelegate (publicKey) {
       var deferred = $q.defer()
       if (!publicKey) {
@@ -872,6 +974,10 @@
       getFees: getFees,
 
       getTransactions: getTransactions,
+
+      getAllTransactions: getAllTransactions,
+
+      getRangedTransactions: getRangedTransactions,
 
       createTransaction: createTransaction,
 
