@@ -2,10 +2,10 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('utilityService', ['ARKTOSHI_UNIT', UtilityService])
+    .service('utilityService', ['ARKTOSHI_UNIT', 'ARK_LAUNCH_DATE', UtilityService])
 
   // this service should not have any dependencies to other services!
-  function UtilityService (ARKTOSHI_UNIT) {
+  function UtilityService (ARKTOSHI_UNIT, ARK_LAUNCH_DATE) {
     function arktoshiToArk (amount, keepPrecise, numberOfDecimals) {
       if (!amount) {
         return 0
@@ -62,6 +62,27 @@
       return splitted[0] + '.' + newDecimals
     }
 
+    function getArkRelativeTimeStamp (date) {
+      if (!date) {
+        return null
+      }
+
+      date = new Date(date.toUTCString())
+
+      const timestamp = parseInt((date.getTime() - ARK_LAUNCH_DATE.getTime()) / 1000)
+      return timestamp < 0 ? null : timestamp
+    }
+
+    function getDate (arkRelativeTimeStamp) {
+      if (typeof arkRelativeTimeStamp !== 'number' || arkRelativeTimeStamp < 0) {
+        return null
+      }
+
+      var arkLaunchTime = parseInt(ARK_LAUNCH_DATE.getTime() / 1000)
+
+      return new Date((arkRelativeTimeStamp + arkLaunchTime) * 1000)
+    }
+
     function numberToFixed (x) {
       let e
       if (Math.abs(x) < 1.0) {
@@ -84,7 +105,10 @@
     return {
       arktoshiToArk: arktoshiToArk,
       arkToArktoshi: arkToArktoshi,
-      numberStringToFixed: numberStringToFixed
+      numberStringToFixed: numberStringToFixed,
+
+      getArkRelativeTimeStamp: getArkRelativeTimeStamp,
+      getDate: getDate
     }
   }
 })()

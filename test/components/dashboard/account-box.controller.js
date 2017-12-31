@@ -3,38 +3,40 @@
 describe('AccountBoxController', function () {
   const expect = chai.expect
 
-  let ctrl
+  let ctrl, ARKTOSHI_UNIT, accounts, bindings
 
-  const ARKTOSHI_UNIT = 100000000
-  const accounts = [
-    { balance: 10 * ARKTOSHI_UNIT },
-    { balance: 15 * ARKTOSHI_UNIT },
-    { balance: 5 * ARKTOSHI_UNIT },
-    {}
-  ]
-
-  const bindings = {
-    accountCtrl: {
-      getAllAccounts () { return accounts },
-      currency: {
-        name: 'btc'
-      },
-      connectedPeer: {
-        market: {
-          price: {
-            btc: '0.1' // Next year price? lol
-          }
-        }
-      }
-    }
-  }
+  beforeEach(module('arkclient.constants'));
 
   beforeEach(() => {
     module('arkclient.components', $provide => {
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
-    inject(_$componentController_ => {
+    inject((_$componentController_, _ARKTOSHI_UNIT_) => {
+
+      ARKTOSHI_UNIT = _ARKTOSHI_UNIT_
+      accounts = [
+        { balance: 10 * ARKTOSHI_UNIT },
+        { balance: 15 * ARKTOSHI_UNIT },
+        { balance: 5 * ARKTOSHI_UNIT },
+        {}
+      ]
+
+      bindings = {
+        accountCtrl: {
+          getAllAccounts () { return accounts },
+          currency: {
+            name: 'btc'
+          },
+          connectedPeer: {
+            market: {
+              price: {
+                btc: '0.1' // Next year price? lol
+              }
+            }
+          }
+        }
+      }
+
       ctrl = _$componentController_('accountBox', null, bindings)
     })
   })

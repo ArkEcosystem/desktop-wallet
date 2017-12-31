@@ -35,6 +35,8 @@ describe('accountService',() => {
     return arr
    }
 
+   beforeEach(module('arkclient.constants'));
+
    beforeEach(module((_$exceptionHandlerProvider_) => {
     _$exceptionHandlerProvider_.mode('log');
    }));
@@ -49,7 +51,6 @@ describe('accountService',() => {
       // inject the mock services
       $provide.value('gettextCatalog', gettextCatalogMock)
       $provide.value('networkService', networkServiceMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject(($injector, _$rootScope_) => {

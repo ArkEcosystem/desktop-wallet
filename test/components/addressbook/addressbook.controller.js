@@ -48,7 +48,6 @@ describe('AddressbookController', function () {
       $provide.value('accountService', accountServiceMock)
       $provide.value('toastService', toastServiceMock)
       $provide.value('utilityService', utilityService)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10,8))
     })
 
     inject((_$compile_, _$rootScope_, _$controller_) => {
@@ -153,7 +152,7 @@ describe('AddressbookController', function () {
       it('is successful', () => {
           const name = 'test_name'
           const address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
-          
+
           ctrl.addAddressbookContact()
           const sizeBefore = Object.keys(ctrl.contacts).length
           $scope.addAddressbookContact.add(name, address)
