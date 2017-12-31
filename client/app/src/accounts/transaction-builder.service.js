@@ -77,7 +77,7 @@
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.secondsignature) {
           deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
-                          ', ' + gettextCatalog.getString('you need at least ' + utilityService.arktoshiToArk(fees.secondsignature, false, true) + ' to create a second passphrase'))
+                          ', ' + gettextCatalog.getString('you need at least ' + arktoshiToArk(fees.secondsignature) + ' to create a second passphrase'))
           return
         }
 
@@ -92,7 +92,7 @@
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.delegate) {
           deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress + ', ' +
-                          gettextCatalog.getString('you need at least ' + utilityService.arktoshiToArk(fees.delegate, false, true) + ' to register delegate'))
+                          gettextCatalog.getString('you need at least ' + arktoshiToArk(fees.delegate) + ' to register delegate'))
           return
         }
 
@@ -107,7 +107,7 @@
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.vote) {
           deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
-                           ', ' + gettextCatalog.getString('you need at least ' + utilityService.arktoshiToArk(fees.vote, false, true) + ' to vote'))
+                           ', ' + gettextCatalog.getString('you need at least ' + arktoshiToArk(fees.vote) + ' to vote'))
           return
         }
 
@@ -117,6 +117,10 @@
                           () => ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase),
                           (transaction) => { transaction.recipientId = config.fromAddress })
       })
+    }
+
+    function arktoshiToArk (value) {
+      return utilityService.arktoshiToArk(value) + ' ' + networkService.getNetwork().token
     }
 
     return {

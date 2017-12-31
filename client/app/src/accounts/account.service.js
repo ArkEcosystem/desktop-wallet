@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARKTOSHI_UNIT', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARKTOSHI_UNIT) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService) {
     var self = this
     var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -693,10 +693,10 @@
                 if (value === null) {
                   virtual[folder].amount = null
                 } else {
-                  virtual[folder].amount = value * ARKTOSHI_UNIT
+                  virtual[folder].amount = utilityService.arkToArktoshi(value)
                 }
               } else {
-                return virtual[folder].amount === null ? '' : virtual[folder].amount / ARKTOSHI_UNIT
+                return virtual[folder].amount === null ? '' : utilityService.arktoshiToArk(virtual[folder].amount, true)
               }
             }
           }

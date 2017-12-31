@@ -23,7 +23,6 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
-      'ARKTOSHI_UNIT',
       '$rootScope',
       'transactionBuilderService',
       'utilityService',
@@ -57,7 +56,6 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
-    ARKTOSHI_UNIT,
     $rootScope,
     transactionBuilderService,
     utilityService
@@ -522,7 +520,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI_UNIT)
+      accountService.setToFolder(account.address, folder, utilityService.arkToArktoshi(account.virtual.uservalue(folder)()))
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -1666,7 +1664,7 @@
         accountService.getFees(true).then(
               function (fees) {
                 let secondPhraseArktoshiVal = fees['secondsignature']
-                var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+                var secondPhraseArkVal = utilityService.arktoshiToArk(secondPhraseArktoshiVal, true)
                 var confirm = $mdDialog.confirm({
                   title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee') + ' (' + networkService.getNetwork().symbol + ')',
                   secondPhraseArkVal: secondPhraseArkVal,

@@ -45,9 +45,9 @@
       }
     })
   // converts arktoshi into ark
-  .filter('convertToArkValue', ['ARKTOSHI_UNIT', function (ARKTOSHI_UNIT) {
+  .filter('convertToArkValue', ['utilityService', function (utilityService) {
     return function (val) {
-      return val / ARKTOSHI_UNIT
+      return utilityService.arktoshiToArk(val, true)
     }
   }])
   .filter('accountLabel', ['accountService', function (accountService) {

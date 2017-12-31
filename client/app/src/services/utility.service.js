@@ -2,10 +2,11 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('utilityService', ['networkService', 'ARKTOSHI_UNIT', UtilityService])
+    .service('utilityService', ['ARKTOSHI_UNIT', UtilityService])
 
-  function UtilityService (networkService, ARKTOSHI_UNIT) {
-    function arktoshiToArk (amount, keepPrecise, appendTokenName) {
+  // this service should not have any dependencies to other services!
+  function UtilityService (ARKTOSHI_UNIT) {
+    function arktoshiToArk (amount, keepPrecise, numberOfDecimals) {
       if (!amount) {
         return 0
       }
@@ -16,11 +17,49 @@
         ark = numberToFixed(ark)
       }
 
-      if (appendTokenName) {
-        return ark + ' ' + networkService.getNetwork().token
+      if (typeof numberOfDecimals !== 'number') {
+        return ark
       }
 
-      return ark
+      if (typeof ark === 'number') {
+        return ark.toFixed(numberOfDecimals)
+      }
+
+      // if we have a string, 'toFixed' won't work, so we use our custom implementation for that
+      return numberStringToFixed(ark, numberOfDecimals)
+    }
+
+    function arkToArktoshi (amount, numberOfDecimals) {
+      if (!amount) {
+        return 0
+      }
+
+      const ark = amount * ARKTOSHI_UNIT
+      return typeof numberOfDecimals !== 'number' ? ark : ark.toFixed(numberOfDecimals)
+    }
+
+    function numberStringToFixed (ark, numberOfDecimals) {
+      if (typeof ark !== 'string' || typeof numberOfDecimals === 'undefined') {
+        return ark
+      }
+
+      const splitted = ark.split('.')
+
+      if (numberOfDecimals === 0) {
+        return splitted[0]
+      }
+
+      const decimals = splitted[1] || []
+      let newDecimals = ''
+      for (let i = 0; i < numberOfDecimals; i++) {
+        if (i < decimals.length) {
+          newDecimals += decimals[i]
+        } else {
+          newDecimals += '0'
+        }
+      }
+
+      return splitted[0] + '.' + newDecimals
     }
 
     function numberToFixed (x) {
@@ -43,7 +82,9 @@
     }
 
     return {
-      arktoshiToArk: arktoshiToArk
+      arktoshiToArk: arktoshiToArk,
+      arkToArktoshi: arkToArktoshi,
+      numberStringToFixed: numberStringToFixed
     }
   }
 })()
