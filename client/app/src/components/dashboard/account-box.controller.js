@@ -12,10 +12,10 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ['$scope', 'networkService', 'accountService', 'ARKTOSHI_UNIT', AccountBoxController]
+      controller: ['$scope', 'networkService', 'accountService', 'utilityService', AccountBoxController]
     })
 
-  function AccountBoxController ($scope, networkService, accountService, ARKTOSHI_UNIT) {
+  function AccountBoxController ($scope, networkService, accountService, utilityService) {
     this.$onInit = () => {
       // Alias that is used on the template
       this.ac = this.accountCtrl
@@ -26,7 +26,7 @@
         return sum + parseInt(account.balance || 0)
       }, 0)
 
-      return (total / ARKTOSHI_UNIT).toFixed(2)
+      return utilityService.arktoshiToArk(total, true, 2)
     }
 
     this.myAccountsCurrencyBalance = (bitcoinToggleIsActive) => {
