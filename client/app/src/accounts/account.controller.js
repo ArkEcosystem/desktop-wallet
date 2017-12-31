@@ -25,6 +25,8 @@
       '$window',
       'ARKTOSHI_UNIT',
       '$rootScope',
+      'transactionBuilderService',
+      'utilityService',
       AccountController
     ])
 
@@ -56,7 +58,9 @@
     $mdTheming,
     $window,
     ARKTOSHI_UNIT,
-    $rootScope
+    $rootScope,
+    transactionBuilderService,
+    utilityService
   ) {
     const _path = require('path')
 
@@ -962,7 +966,7 @@
           return delegate.vote + delegate.publicKey
         }).join(',')
         console.log(publicKeys)
-        accountService.createTransaction(3, {
+        transactionBuilderService.createVoteTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.voteDialog.data.fromAddress,
@@ -1015,7 +1019,7 @@
 
         $mdDialog.hide()
         var smartbridge = $scope.send.data.smartbridge
-        accountService.createTransaction(0, {
+        transactionBuilderService.createSendTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.send.data.fromAddress,
@@ -1479,7 +1483,7 @@
           return formatAndToastError(error)
         }
 
-        accountService.createTransaction(2, {
+        transactionBuilderService.createDelegateCreationTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.createDelegate.data.fromAddress,
@@ -1659,7 +1663,7 @@
       }
 
       function warnAboutSecondPassphraseFee () {
-        accountService.getFees().then(
+        accountService.getFees(true).then(
               function (fees) {
                 let secondPhraseArktoshiVal = fees['secondsignature']
                 var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
@@ -1698,7 +1702,7 @@
         } else if ($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase) {
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true
         } else {
-          accountService.createTransaction(1, {
+          transactionBuilderService.createSecondPassphraseCreationTransaction({
             fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
@@ -1788,8 +1792,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI_UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI_UNIT).toString()
+        humanAmount: utilityService.arktoshiToArk(transaction.amount).toString(),
+        totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true).toString()
       }
 
       $mdDialog.show({

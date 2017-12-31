@@ -17,7 +17,8 @@ describe('AccountController', function () {
     storageServiceMock,
     ledgerServiceMock,
     timeServiceMock,
-    toastServiceMock
+    toastServiceMock,
+    transactionBuilderServiceMock
 
   let mdThemingProviderMock,
     mdThemingMock
@@ -60,8 +61,10 @@ describe('AccountController', function () {
         loadAllAccounts () { return ACCOUNTS },
         getActiveDelegates: angular.noop,
         getDelegateByUsername: angular.noop,
-        getFees: sinon.stub().resolves(),
-        createTransaction: sinon.stub().resolves()
+        getFees: sinon.stub().resolves()
+      }
+      transactionBuilderServiceMock = {
+        createSecondPassphraseCreationTransaction: sinon.stub().resolves()
       }
       networkServiceMock = {
         getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },
@@ -116,6 +119,7 @@ describe('AccountController', function () {
 
       // provide mocks to angular controller
       $provide.value('accountService', accountServiceMock)
+      $provide.value('transactionBuilderService', transactionBuilderServiceMock)
       $provide.value('networkService', networkServiceMock)
       $provide.value('pluginLoader', pluginLoaderMock)
       $provide.value('storageService', storageServiceMock)
@@ -283,7 +287,7 @@ describe('AccountController', function () {
   describe('adding second passphrase', () => {
     let requireNotMocked = require
     beforeEach( () => {
-      require = sinon.stub().returns(require('../node_modules/bip39'))
+      require = sinon.stub().returns(require(require('path').resolve(__dirname, '../node_modules/bip39')))
     })
     afterEach( () => {
       require = requireNotMocked
@@ -313,7 +317,7 @@ describe('AccountController', function () {
         $scope.createSecondPassphraseDialog.next()
         $scope.createSecondPassphraseDialog.data.secondPassphrase = $scope.createSecondPassphraseDialog.data.reSecondPassphrase
         $scope.createSecondPassphraseDialog.next()
-        sinon.assert.calledOnce(accountServiceMock.createTransaction)
+        sinon.assert.calledOnce(transactionBuilderServiceMock.createSecondPassphraseCreationTransaction)
       })
     })
   })

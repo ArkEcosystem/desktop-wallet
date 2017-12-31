@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'ARKTOSHI_UNIT', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARKTOSHI_UNIT', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, ARKTOSHI_UNIT) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARKTOSHI_UNIT) {
     var self = this
     var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -23,6 +23,8 @@
       'delegate': 2500000000,
       'multisignature': 500000000
     }
+
+    self.cachedFees = null
 
     self.TxTypes = {
       0: 'Send Ark',
@@ -261,16 +263,22 @@
         transaction.total = -transaction.amount - transaction.fee
       }
       // to avoid small transaction to be displayed as 1e-8
-      transaction.humanTotal = numberToFixed(transaction.total / ARKTOSHI_UNIT) + ''
+      transaction.humanTotal = utilityService.arktoshiToArk(transaction.total) + ''
 
       return transaction
     }
 
-    function getFees () {
+    function getFees (canUseCached) {
       var deferred = $q.defer()
+      if (canUseCached && self.cachedFees) {
+        deferred.resolve(self.cachedFees)
+        return deferred.promise
+      }
+
       networkService.getFromPeer('/api/blocks/getfees')
         .then((resp) => {
           if (resp.success) {
+            self.cachedFees = resp.fees
             deferred.resolve(resp.fees)
           } else {
             deferred.resolve(self.defaultFees)
@@ -546,165 +554,6 @@
       return deferred.promise
     }
 
-    function createTransaction (type, config) {
-      var deferred = $q.defer()
-      getFees().then(function (fees) {
-        var account
-        var transaction
-        if (type === 0) { // send ark
-          if (!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)) {
-            deferred.reject(gettextCatalog.getString('The destination address ') + config.toAddress + gettextCatalog.getString(' is erroneous'))
-            return deferred.promise
-          }
-
-          account = getAccount(config.fromAddress)
-          if (config.amount + fees.send > account.balance) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress)
-            return deferred.promise
-          }
-
-          try {
-            transaction = ark.transaction.createTransaction(config.toAddress, config.amount, config.smartbridge, config.masterpassphrase, config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
-
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-          } else {
-            deferred.resolve(transaction)
-          }
-        } else if (type === 1) { // second passphrase creation
-          account = getAccount(config.fromAddress)
-          if (account.balance < fees.secondpassphrase) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 5 ARK to create a second passphrase'))
-            return deferred.promise
-          }
-          try {
-            transaction = ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
-
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-            return deferred.promise
-          }
-          deferred.resolve(transaction)
-        } else if (type === 2) { // delegate creation
-          account = getAccount(config.fromAddress)
-          if (account.balance < fees.delegate) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 25 ARK to register delegate'))
-            return deferred.promise
-          }
-          console.log(config)
-          try {
-            transaction = ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
-
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-            return deferred.promise
-          }
-          deferred.resolve(transaction)
-        } else if (type === 3) { // vote
-          account = getAccount(config.fromAddress)
-          if (account.balance < fees.vote) {
-            deferred.reject(gettextCatalog.getString('Not enough ARK on your account ') + config.fromAddress + ', ' + gettextCatalog.getString('you need at least 1 ARK to vote'))
-            return deferred.promise
-          }
-          try {
-            transaction = ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase)
-          } catch (e) {
-            deferred.reject(e)
-            return deferred.promise
-          }
-
-          transaction.senderId = config.fromAddress
-
-          if (config.ledger) {
-            delete transaction.signature
-            transaction.recipientId = config.fromAddress
-            transaction.senderPublicKey = config.publicKey
-            ledgerService.signTransaction(config.ledger, transaction).then(
-              function (result) {
-                console.log(result)
-                transaction.signature = result.signature
-                transaction.id = ark.crypto.getId(transaction)
-                deferred.resolve(transaction)
-              },
-              function (error) {
-                deferred.reject(error)
-              }
-            )
-            return deferred.promise
-          } else if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-            deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
-            return deferred.promise
-          }
-          deferred.resolve(transaction)
-        }
-      })
-
-      return deferred.promise
-    }
-
     // Given a final list of delegates, create a vote assets list to be sent
     // return null if could not make it
     function createDiffVote (address, newdelegates) {
@@ -889,25 +738,6 @@
       return sanitizedName
     }
 
-    function numberToFixed (x) {
-      var e
-      if (Math.abs(x) < 1.0) {
-        e = parseInt(x.toString().split('e-')[1])
-        if (e) {
-          x *= Math.pow(10, e - 1)
-          x = '0.' + (new Array(e)).join('0') + x.toString().substring(2)
-        }
-      } else {
-        e = parseInt(x.toString().split('+')[1])
-        if (e > 20) {
-          e -= 20
-          x /= Math.pow(10, e)
-          x += (new Array(e + 1)).join('0')
-        }
-      }
-      return x
-    }
-
     return {
       loadAllAccounts: function () {
         var accounts = storageService.get('addresses')
@@ -971,6 +801,9 @@
 
       fetchAccountAndForget: fetchAccountAndForget,
 
+      // return a copy of the object, so the original can't be changed
+      defaultFees: JSON.parse(JSON.stringify(self.defaultFees)),
+
       getFees: getFees,
 
       getTransactions: getTransactions,
@@ -978,8 +811,6 @@
       getAllTransactions: getAllTransactions,
 
       getRangedTransactions: getRangedTransactions,
-
-      createTransaction: createTransaction,
 
       verifyMessage: verifyMessage,
 
@@ -1011,10 +842,7 @@
 
       sanitizeDelegateName: sanitizeDelegateName,
 
-      numberToFixed: numberToFixed,
-
       formatTransaction: formatTransaction
-
     }
   }
 })()

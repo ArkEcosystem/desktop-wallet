@@ -14,10 +14,10 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', 'transactionBuilderService', 'utilityService', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService, transactionBuilderService, utilityService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
       this.ab = this.addressBookCtrl
@@ -136,7 +136,7 @@
     }
 
     this.submitTransaction = (selectedAccount, formData) => {
-      return accountService.createTransaction(0, {
+      return transactionBuilderService.createSendTransaction({
         ledger: selectedAccount.ledger,
         publicKey: selectedAccount.publicKey,
         fromAddress: formData.fromAddress,
@@ -203,15 +203,24 @@
       //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
       //   amount: 1,
       // }
-      function totalBalance (minusFee) {
-        var fee = 10000000
+      function getTotalBalance (fee) {
         var balance = selectedAccount.balance
-        return accountService.numberToFixed((minusFee ? balance - fee : balance) / ARKTOSHI_UNIT)
+        return utilityService.arktoshiToArk(fee ? balance - fee : balance)
       }
 
       function fillSendableBalance () {
-        var sendableBalance = totalBalance(true)
-        $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0
+        function setBalance (fee) {
+          var sendableBalance = getTotalBalance(fee)
+          $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0
+        }
+        // set the balance immediately, so the user sees something
+        setBalance(accountService.defaultFees.send)
+        // now get the real fees and set it again if necessary
+        accountService.getFees(true).then((fees) => {
+          if (fees.send !== accountService.defaultFees.send) {
+            setBalance(fees.send)
+          }
+        })
       }
 
       const submit = () => {
@@ -285,8 +294,8 @@
         selectedContactChange: selectedContactChange,
         querySearch: querySearch,
         fillSendableBalance: fillSendableBalance,
-        totalBalance: totalBalance(false),
-        remainingBalance: totalBalance(false) // <-- initial value, this will change by directive
+        totalBalance: getTotalBalance(0),
+        remainingBalance: getTotalBalance(0) // <-- initial value, this will change by directive
       }
 
       $scope.onQrCodeForToAddressScanned = (address) => {
