@@ -241,7 +241,7 @@
       var label = gettextCatalog.getString(self.TxTypes[transaction.type])
 
       if (recipientAddress && transaction.recipientId === recipientAddress && transaction.type === 0) {
-        label = gettextCatalog.getString('Receive Ark')
+        label = gettextCatalog.getString('Receive') + ' ' + networkService.getNetwork().token
       }
 
       return label
