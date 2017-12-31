@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARK_LAUNCH_DATE', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARK_LAUNCH_DATE) {
     var self = this
     var ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -36,15 +36,11 @@
 
     self.peer = networkService.getPeer().ip
 
-    function showTimestamp (time) { // eslint-disable-line no-unused-vars
-      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-
-      var t = parseInt(d.getTime() / 1000)
-
-      time = new Date((time + t) * 1000)
+    function showTimestamp (timestamp) { // eslint-disable-line no-unused-vars
+      const date = utilityService.getDate(timestamp)
 
       var currentTime = new Date().getTime()
-      var diffTime = (currentTime - time.getTime()) / 1000
+      var diffTime = (currentTime - date.getTime()) / 1000
 
       if (diffTime < 60) {
         return Math.floor(diffTime) + ' sec ago'
@@ -248,11 +244,8 @@
     }
 
     function formatTransaction (transaction, recipientAddress) {
-      var d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-      var t = parseInt(d.getTime() / 1000)
-
       transaction.label = getTransactionLabel(transaction, recipientAddress)
-      transaction.date = new Date((transaction.timestamp + t) * 1000)
+      transaction.date = utilityService.getDate(transaction.timestamp)
       if (transaction.recipientId === recipientAddress) {
         transaction.total = transaction.amount
       // if (transaction.type == 0) {
@@ -319,23 +312,10 @@
       return deferred.promise
     }
 
-    // todo: move to utilityService
-    // todo: add tests there
-    function getArkRelativeTimeStamp (date) {
-      if (!date) {
-        return null
-      }
-
-      date = new Date(date.toUTCString())
-
-      const arkStartDate = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-      return parseInt((date.getTime() - arkStartDate.getTime()) / 1000)
-    }
-
     // this methods only works correctly, as long as getAllTransactions returns the transactions ordered by new to old!
     function getRangedTransactions (address, startDate, endDate, onUpdate) {
-      const startStamp = getArkRelativeTimeStamp(!startDate ? new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0)) : startDate)
-      const endStamp = getArkRelativeTimeStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
+      const startStamp = utilityService.getArkRelativeTimeStamp(!startDate ? ARK_LAUNCH_DATE : startDate)
+      const endStamp = utilityService.getArkRelativeTimeStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
 
       const deferred = $q.defer()
 

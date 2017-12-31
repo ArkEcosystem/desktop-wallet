@@ -13,10 +13,11 @@
       'gettextCatalog',
       'account',
       'theme',
+      'ARK_LAUNCH_DATE',
       ExportAccountController
     ])
 
-  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, utilityService, gettextCatalog, account, theme) {
+  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, utilityService, gettextCatalog, account, theme, ARK_LAUNCH_DATE) {
     $scope.vm = {}
     $scope.vm.account = account
     $scope.vm.theme = theme
@@ -24,8 +25,7 @@
     $scope.vm.hasStarted = false
     $scope.vm.isFinished = false
 
-    // todo: move to utililityService once merged back
-    $scope.vm.minDate = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
+    $scope.vm.minDate = ARK_LAUNCH_DATE
 
     $scope.vm.startDate = new Date()
     $scope.vm.startDate.setMonth($scope.vm.startDate.getMonth() - 1)

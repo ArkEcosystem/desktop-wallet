@@ -30,12 +30,13 @@ describe('AccountCardController', function () {
     show: sinon.stub()
   }
 
+  beforeEach(module('arkclient.constants'));
+
   beforeEach(() => {
     module('arkclient.components', $provide => {
       $provide.value('accountService', accountServiceMock)
       $provide.value('transactionBuilderService', transactionBuilderServiceMock)
       $provide.value('$mdDialog', mdDialogMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject(_$componentController_ => {
