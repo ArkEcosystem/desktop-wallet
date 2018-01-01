@@ -77,6 +77,10 @@
     this.openExplorer = (uri) => {
       require('electron').shell.openExternal(this.network.explorer + uri)
     }
+
+    this.openBlog = (uri) => {
+      require('electron').shell.openExternal(`https://blog.ark.io${uri}`)
+    }
   }
 
   angular
