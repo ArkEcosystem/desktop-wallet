@@ -62,7 +62,7 @@
       return splitted[0] + '.' + newDecimals
     }
 
-    function getArkRelativeTimeStamp (date) {
+    function dateToArkStamp (date) {
       if (!date) {
         return null
       }
@@ -73,7 +73,7 @@
       return timestamp < 0 ? null : timestamp
     }
 
-    function getDate (arkRelativeTimeStamp) {
+    function arkStampToDate (arkRelativeTimeStamp) {
       if (typeof arkRelativeTimeStamp !== 'number' || arkRelativeTimeStamp < 0) {
         return null
       }
@@ -107,8 +107,8 @@
       arkToArktoshi: arkToArktoshi,
       numberStringToFixed: numberStringToFixed,
 
-      getArkRelativeTimeStamp: getArkRelativeTimeStamp,
-      getDate: getDate
+      dateToArkStamp: dateToArkStamp,
+      arkStampToDate: arkStampToDate
     }
   }
 })()

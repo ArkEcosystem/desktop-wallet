@@ -37,7 +37,7 @@
     self.peer = networkService.getPeer().ip
 
     function showTimestamp (timestamp) { // eslint-disable-line no-unused-vars
-      const date = utilityService.getDate(timestamp)
+      const date = utilityService.arkStampToDate(timestamp)
 
       var currentTime = new Date().getTime()
       var diffTime = (currentTime - date.getTime()) / 1000
@@ -245,7 +245,7 @@
 
     function formatTransaction (transaction, recipientAddress) {
       transaction.label = getTransactionLabel(transaction, recipientAddress)
-      transaction.date = utilityService.getDate(transaction.timestamp)
+      transaction.date = utilityService.arkStampToDate(transaction.timestamp)
       if (transaction.recipientId === recipientAddress) {
         transaction.total = transaction.amount
       // if (transaction.type == 0) {
@@ -314,8 +314,8 @@
 
     // this methods only works correctly, as long as getAllTransactions returns the transactions ordered by new to old!
     function getRangedTransactions (address, startDate, endDate, onUpdate) {
-      const startStamp = utilityService.getArkRelativeTimeStamp(!startDate ? ARK_LAUNCH_DATE : startDate)
-      const endStamp = utilityService.getArkRelativeTimeStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
+      const startStamp = utilityService.dateToArkStamp(!startDate ? ARK_LAUNCH_DATE : startDate)
+      const endStamp = utilityService.dateToArkStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
 
       const deferred = $q.defer()
 

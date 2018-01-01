@@ -153,50 +153,50 @@ describe('utilityService',() => {
     })
   })
 
-  describe('getArkRelativeTimeStamp', () => {
+  describe('dateToArkStamp', () => {
     it('input ist not defined, returns null', () => {
-      expect(utilityService.getArkRelativeTimeStamp()).to.eq(null)
-      expect(utilityService.getArkRelativeTimeStamp(null)).to.eq(null)
+      expect(utilityService.dateToArkStamp()).to.eq(null)
+      expect(utilityService.dateToArkStamp(null)).to.eq(null)
     })
 
     it('input is ark launch time, returns 0', () => {
-      expect(utilityService.getArkRelativeTimeStamp(ARK_LAUNCH_DATE)).to.eq(0)
+      expect(utilityService.dateToArkStamp(ARK_LAUNCH_DATE)).to.eq(0)
     })
 
     it('input is BEFORE ark launch time, returns null', () => {
-      expect(utilityService.getArkRelativeTimeStamp(new Date(Date.UTC(2017, 2, 21, 12, 59, 59, 59)))).to.eq(null)
+      expect(utilityService.dateToArkStamp(new Date(Date.UTC(2017, 2, 21, 12, 59, 59, 59)))).to.eq(null)
     })
 
     it('input is a utc date, returns correct timestamp', () => {
-      expect(utilityService.getArkRelativeTimeStamp(new Date(Date.UTC(2017, 10, 10, 10, 0, 0, 0)))).to.eq(20206800)
+      expect(utilityService.dateToArkStamp(new Date(Date.UTC(2017, 10, 10, 10, 0, 0, 0)))).to.eq(20206800)
     })
 
     it('input is a local date, returns correct timestamp', () => {
       // since this is plus 1, this means that in UTC, it's currently 09:00, therefore the timestamphas to be 1 hour shorter than the one above
       const localDate = new Date("Fri Nov 10 2017 10:00:00 GMT+0100 (Romance Standard Time)")
       const oneHourInSeconds = 60 * 60
-      expect(utilityService.getArkRelativeTimeStamp(localDate)).to.eq(20206800 - oneHourInSeconds)
+      expect(utilityService.dateToArkStamp(localDate)).to.eq(20206800 - oneHourInSeconds)
     })
   })
 
-  describe('getDate', () => {
+  describe('arkStampToDate', () => {
     it('input ist not a number, returns null', () => {
-      expect(utilityService.getDate()).to.eq(null)
-      expect(utilityService.getDate(null)).to.eq(null)
-      expect(utilityService.getDate('abc')).to.eq(null)
-      expect(utilityService.getDate({})).to.eq(null)
+      expect(utilityService.arkStampToDate()).to.eq(null)
+      expect(utilityService.arkStampToDate(null)).to.eq(null)
+      expect(utilityService.arkStampToDate('abc')).to.eq(null)
+      expect(utilityService.arkStampToDate({})).to.eq(null)
     })
 
     it('input is 0, returns ark launch date', () => {
-      expect(utilityService.getDate(0).getTime()).to.eq(ARK_LAUNCH_DATE.getTime())
+      expect(utilityService.arkStampToDate(0).getTime()).to.eq(ARK_LAUNCH_DATE.getTime())
     })
 
     it('input is lower than 0, returns null', () => {
-      expect(utilityService.getDate(-1)).to.eq(null)
+      expect(utilityService.arkStampToDate(-1)).to.eq(null)
     })
 
     it('input is a normal timestamp, returns correct date', () => {
-      expect(utilityService.getDate(20206800).getTime()).to.eq(new Date(Date.UTC(2017, 10, 10, 10, 0, 0, 0)).getTime())
+      expect(utilityService.arkStampToDate(20206800).getTime()).to.eq(new Date(Date.UTC(2017, 10, 10, 10, 0, 0, 0)).getTime())
     })
   })
 })
