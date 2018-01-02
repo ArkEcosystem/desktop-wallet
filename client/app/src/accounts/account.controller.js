@@ -1254,9 +1254,9 @@
 
             backgrounds['user'] = userImages
           })
-          .on('error', (error) => {
-            toastService.error(`Error Adding Background (reading): ${error}`, 3000)
-          })
+            .on('error', (error) => {
+              toastService.error(`Error Adding Background (reading): ${error}`, 3000)
+            })
         })
       }
 
@@ -1616,7 +1616,7 @@
             // TODO save passphrases after we have local encrytion
             },
             formatAndToastError
-        )
+          )
         $mdDialog.hide()
       }
 
@@ -1663,33 +1663,32 @@
       }
 
       function warnAboutSecondPassphraseFee () {
-        accountService.getFees(true).then(
-              function (fees) {
-                let secondPhraseArktoshiVal = fees['secondsignature']
-                var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
-                var confirm = $mdDialog.confirm({
-                  title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
-                  secondPhraseArkVal: secondPhraseArkVal,
-                  textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
-                  ok: gettextCatalog.getString('Continue'),
-                  cancel: gettextCatalog.getString('Cancel')
-                })
+        accountService.getFees(true).then(function (fees) {
+          let secondPhraseArktoshiVal = fees['secondsignature']
+          var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+          var confirm = $mdDialog.confirm({
+            title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
+            secondPhraseArkVal: secondPhraseArkVal,
+            textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+            ok: gettextCatalog.getString('Continue'),
+            cancel: gettextCatalog.getString('Cancel')
+          })
 
-                $mdDialog.show(confirm)
-                      .then(function () {
-                        $mdDialog.show({
-                          parent: angular.element(document.getElementById('app')),
-                          templateUrl: './src/accounts/view/createSecondPassphrase.html',
-                          clickOutsideToClose: false,
-                          preserveScope: true,
-                          scope: $scope
-                        })
-                      }, function () {
-                        cancel()
-                      }
-                    )
-              }
-          )
+          $mdDialog.show(confirm)
+            .then(function () {
+              $mdDialog.show({
+                parent: angular.element(document.getElementById('app')),
+                templateUrl: './src/accounts/view/createSecondPassphrase.html',
+                clickOutsideToClose: false,
+                preserveScope: true,
+                scope: $scope
+              })
+            }, function () {
+              cancel()
+            }
+            )
+        }
+        )
       }
 
       warnAboutSecondPassphraseFee()

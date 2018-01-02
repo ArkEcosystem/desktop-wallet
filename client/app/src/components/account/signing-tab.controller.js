@@ -60,7 +60,7 @@
             $mdDialog.hide()
           },
           function (error) {
-            accountCtrl.showMessage(error)  // eslint-disable-line no-undef
+            accountCtrl.showMessage(error) // eslint-disable-line no-undef
           }
         )
       }

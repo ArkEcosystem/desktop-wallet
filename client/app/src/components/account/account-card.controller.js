@@ -149,8 +149,7 @@
         .then(transaction => {
           this.accountCtrl.showValidateTransaction(selectedAccount, transaction)
         },
-        this.accountCtrl.formatAndToastError
-      )
+        this.accountCtrl.formatAndToastError)
     }
 
     /**

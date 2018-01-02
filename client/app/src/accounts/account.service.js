@@ -284,7 +284,7 @@
             deferred.resolve(self.defaultFees)
           }
         },
-          () => deferred.resolve(self.defaultFees))
+        () => deferred.resolve(self.defaultFees))
 
       return deferred.promise
     }

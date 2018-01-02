@@ -158,15 +158,15 @@
       }
 
       $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
-      .then(function (res) {
-        if (res.data[0] && res.data[0].price_btc) {
-          res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
-        }
-        peer.market = res.data[0]
-        peer = updatePeerWithCurrencies(peer, res)
-        storageService.set('lastPrice', { market: peer.market, date: new Date() })
-      }, failedTicker)
-      .catch(failedTicker)
+        .then(function (res) {
+          if (res.data[0] && res.data[0].price_btc) {
+            res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
+          }
+          peer.market = res.data[0]
+          peer = updatePeerWithCurrencies(peer, res)
+          storageService.set('lastPrice', { market: peer.market, date: new Date() })
+        }, failedTicker)
+        .catch(failedTicker)
       $timeout(function () {
         getPrice()
       }, 5 * 60000)

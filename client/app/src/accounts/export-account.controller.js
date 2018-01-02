@@ -50,7 +50,7 @@
         if (error.transactions.length) {
           toastService.error('An error occured when getting your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
                              'The exported file contains only these!',
-                             10000)
+          10000)
           prepareFile($scope.vm.account, error.transactions, true)
         } else {
           toastService.error('An error occured when getting your transactions. Cannot export account!', 10000)

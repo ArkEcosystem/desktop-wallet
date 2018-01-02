@@ -45,22 +45,22 @@
       }
     })
   // converts arktoshi into ark
-  .filter('convertToArkValue', ['ARKTOSHI_UNIT', function (ARKTOSHI_UNIT) {
-    return function (val) {
-      return val / ARKTOSHI_UNIT
-    }
-  }])
-  .filter('accountLabel', ['accountService', function (accountService) {
-    return function (address) {
-      if (!address) return address
+    .filter('convertToArkValue', ['ARKTOSHI_UNIT', function (ARKTOSHI_UNIT) {
+      return function (val) {
+        return val / ARKTOSHI_UNIT
+      }
+    }])
+    .filter('accountLabel', ['accountService', function (accountService) {
+      return function (address) {
+        if (!address) return address
 
-      var username = accountService.getUsername(address)
+        var username = accountService.getUsername(address)
 
-      if (username !== address) return username
-      else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)
-      else return smallId(address)
-    }
-  }])
+        if (username !== address) return username
+        else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)
+        else return smallId(address)
+      }
+    }])
 
   function smallId (fullId) {
     return fullId.slice(0, 5) + '...' + fullId.slice(-5)
