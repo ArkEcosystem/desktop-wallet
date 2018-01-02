@@ -20,7 +20,7 @@
     "test": "karma start test/karma.conf.js --single-run",
     "test-app": "mocha --recursive ./test/e2e/scenarios",
     "test-watch": "karma start test/karma.conf.js",
-    "standard": "standard --env mocha"
+    "eslint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -80,6 +80,12 @@
     "electron": "^1.7.9",
     "electron-builder": "^19.35.1",
     "electron-rebuild": "^1.6.0",
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "grunt": "~1.0.1",
     "grunt-angular-gettext": "^2.3.6",
     "grunt-contrib-jshint": "~1.1.0",
@@ -95,8 +101,7 @@
     "mocha": "3.5.3",
     "sinon": "^4.1.1",
     "sinon-chai": "^2.14.0",
-    "spectron": "^3.7.2",
-    "standard": "^10.0.3"
+    "spectron": "^3.7.2"
   },
   "build": {
     "appId": "com.arkwallet.liteclient",
@@ -125,22 +130,5 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
-  },
-  "standard": {
-    "globals": [
-      "angular",
-      "Audio",
-      "Blob",
-      "sinon",
-      "chai",
-      "inject"
-    ],
-    "parser": "babel-eslint",
-    "ignore": [
-      "client/node_modules",
-      "client/app/dependencies.min.js",
-      "client/app/src/utils/translations.js",
-      "test"
-    ]
   }
 }

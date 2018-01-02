@@ -1,0 +1,14 @@
+{
+  "extends": "standard",
+  "rules": {
+    "no-var": "off"
+  },
+  "globals": {
+    "angular": false,
+    "Audio": false,
+    "Blob": false,
+    "sinon": false,
+    "chai": false,
+    "inject": false
+  }
+}
