@@ -9,7 +9,8 @@ describe('AccountController', function () {
   const expect = chai.expect
 
   let ctrl,
-    $scope
+    $scope,
+	$filter
 
   let accountServiceMock,
     networkServiceMock,
@@ -76,7 +77,11 @@ describe('AccountController', function () {
         triggerEvent: sinon.stub()
       }
       storageServiceMock = {
-        get: sinon.stub().returns(['test_contact']),
+        get: function() {
+          var callback = sinon.stub()
+          callback.withArgs('dateFormat').returns('MDY')
+          callback.returns(['test_contact'])
+		},
         getContext () {}
       }
 
@@ -134,11 +139,13 @@ describe('AccountController', function () {
       $provide.value('$mdToast', mdToastMock)
       $provide.value('gettextCatalog', getTextCatalogMock)
       $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
+
     })
 
-    inject((_$compile_, _$rootScope_, _$controller_) => {
+    inject((_$compile_, _$rootScope_, _$controller_, _$filter_) => {
       $scope = _$rootScope_.$new()
       ctrl = _$controller_('AccountController', { $scope })
+	  $filter = _$filter_
     })
   })
 
@@ -147,7 +154,7 @@ describe('AccountController', function () {
     })
   })
 
-  // Account retreival
+  // Account retrieval
   describe('getAllAccounts()', () => {
     beforeEach(function () {
       sinon.stub(ctrl, 'myAccounts').returns(ACCOUNTS)
@@ -283,6 +290,16 @@ describe('AccountController', function () {
     })
   })
 
+  describe('formattedDate filter', () => {
+    context('get date formatted as Year-Month-Day', () => {
+      it('testing for formatting a valid date', () => {
+            var validDate = '2017-12-14T11:49:08.000Z'
+            var result = $filter('formattedDate')(validDate)
+            expect(result).to.include('2017/12/')
+      })
+    })
+  })
+
   // Adding Second passphrase test
   describe('adding second passphrase', () => {
     let requireNotMocked = require
@@ -322,3 +339,5 @@ describe('AccountController', function () {
     })
   })
 })
+
+
