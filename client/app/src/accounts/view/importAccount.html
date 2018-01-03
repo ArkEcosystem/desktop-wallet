@@ -20,10 +20,7 @@
         </md-card-title>
       </md-card>
       <passphrase-field ng-model="send.data.passphrase" label="Passphrase" auto-focus="true"></passphrase-field>
-      <!--<md-input-container md-no-float class="md-block">
-        <label>Second Passphrase</label>
-        <input ng-model="send.data.secondpassphrase" type="text">
-      </md-input-container>-->
+      <md-switch ng-model="send.data.customPassphrase" aria-label="custom passphrase" class="md-primary" md-no-ink style="margin-top:-15px;">{{'custom passphrase' | translate}}</md-switch>
     </div>
     <md-dialog-actions layout="row">
       <md-button type="submit" ng-disabled="importAccountForm.$invalid">
