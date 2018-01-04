@@ -80,8 +80,8 @@
     }
 
     $scope.vm.downloadFile = () => {
-      var blob = new Blob([$scope.fileContent])
-      var downloadLink = document.createElement('a')
+      const blob = new Blob([$scope.fileContent])
+      const downloadLink = document.createElement('a')
       downloadLink.setAttribute('download', account.address + '.csv')
       downloadLink.setAttribute('href', window.URL.createObjectURL(blob))
       downloadLink.click()
@@ -94,7 +94,7 @@
 
     function prepareFile (account, transactions, isInComplete) {
       $scope.vm.isFinished = true
-      var eol = require('os').EOL
+      const eol = require('os').EOL
 
       // todo: use utilityService once merged back for the ark calculation
       $scope.fileContent = 'Account:,' + account.address + eol +

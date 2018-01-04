@@ -17,15 +17,15 @@
 
 'use strict'
 
-var Q = require('q')
+const Q = require('q')
 
-var LedgerUtils = {}
+const LedgerUtils = {}
 
 LedgerUtils.splitPath = function (path) {
-  var result = []
-  var components = path.split('/')
+  const result = []
+  const components = path.split('/')
   components.forEach(function (element, index) {
-    var number = parseInt(element, 10)
+    let number = parseInt(element, 10)
     if (isNaN(number)) {
       return
     }
@@ -38,8 +38,8 @@ LedgerUtils.splitPath = function (path) {
 }
 
 LedgerUtils.foreach = function (arr, callback) {
-  var deferred = Q.defer()
-  var iterate = function (index, array, result) {
+  const deferred = Q.defer()
+  const iterate = function (index, array, result) {
     if (index >= array.length) {
       deferred.resolve(result)
       return
@@ -56,7 +56,7 @@ LedgerUtils.foreach = function (arr, callback) {
 }
 
 LedgerUtils.doIf = function (condition, callback) {
-  var deferred = Q.defer()
+  const deferred = Q.defer()
   if (condition) {
     deferred.resolve(callback())
   } else {
@@ -66,8 +66,8 @@ LedgerUtils.doIf = function (condition, callback) {
 }
 
 LedgerUtils.asyncWhile = function (condition, callback) {
-  var deferred = Q.defer()
-  var iterate = function (result) {
+  const deferred = Q.defer()
+  const iterate = function (result) {
     if (!condition()) {
       deferred.resolve(result)
       return

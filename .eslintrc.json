@@ -1,7 +1,7 @@
 {
   "extends": "standard",
   "rules": {
-    "no-var": "off",
+    "no-var": "error",
     "indent": ["error", 2, { "CallExpression": { "arguments": "off" } }]
   },
   "globals": {

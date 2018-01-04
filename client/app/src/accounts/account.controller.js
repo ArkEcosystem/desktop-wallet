@@ -64,9 +64,9 @@
   ) {
     const _path = require('path')
 
-    var self = this
+    const self = this
 
-    var languages = {
+    const languages = {
       en: gettextCatalog.getString('English'),
       ar: gettextCatalog.getString('Arabic'),
       bg_BG: gettextCatalog.getString('Bulgarian'),
@@ -129,7 +129,7 @@
     }
 
     self.closeApp = function () {
-      var confirm = $mdDialog.confirm()
+      const confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Quit Ark Client?'))
         .theme(self.currentTheme)
         .ok(gettextCatalog.getString('Quit'))
@@ -140,14 +140,14 @@
     }
 
     self.windowApp = function (action, args) {
-      var curWin = require('electron').remote.getCurrentWindow()
+      const curWin = require('electron').remote.getCurrentWindow()
       if (curWin[action]) return curWin[action](args)
 
       return null
     }
 
     self.clearData = function () {
-      var confirm = $mdDialog.confirm()
+      const confirm = $mdDialog.confirm()
         .title(gettextCatalog.getString('Are you sure?'))
         .theme(self.currentTheme)
         .textContent(gettextCatalog.getString('All your data, including created accounts, networks and contacts will be removed from the app and reset to default.'))
@@ -162,14 +162,14 @@
     }
 
     self.createRefreshState = (successMessage, errorMessage) => {
-      var stateObject = {}
+      const stateObject = {}
 
       stateObject.states = []
 
       stateObject.isRefreshing = false
 
       stateObject.create = () => {
-        var state = { isFinished: false, hasError: false }
+        const state = { isFinished: false, hasError: false }
         stateObject.states.push(state)
         return state
       }
@@ -184,8 +184,8 @@
       }
 
       stateObject.updateRefreshState = (showToast) => {
-        var areAllFinished = stateObject.states.every(state => state.isFinished)
-        var hasAnyError = stateObject.states.some(state => state.hasError)
+        const areAllFinished = stateObject.states.every(state => state.isFinished)
+        const hasAnyError = stateObject.states.some(state => state.hasError)
 
         if (!areAllFinished) {
           return
@@ -276,10 +276,10 @@
 
     // refreshing displayed account every 8s
     $interval(function () {
-      var selected = self.selected
+      const selected = self.selected
       if (!selected) return
 
-      var transactions = selected.transactions || []
+      const transactions = selected.transactions || []
 
       if (transactions.length > 0 && transactions[0].confirmations === 0) {
         return self.refreshCurrentAccount()
@@ -290,7 +290,7 @@
       }
     }, 8 * 1000)
 
-    var nocall = false
+    let nocall = false
 
     // detect Ledger
     $interval(function () {
@@ -358,14 +358,14 @@
 
     // get themes colors to show in manager appearance
     function reloadThemes () {
-      var currentThemes = $mdThemingProvider.$get().THEMES
-      var mapThemes = {}
+      const currentThemes = $mdThemingProvider.$get().THEMES
+      const mapThemes = {}
 
       Object.keys(currentThemes).forEach(function (theme) {
-        var colors = currentThemes[theme].colors
-        var names = []
+        const colors = currentThemes[theme].colors
+        const names = []
 
-        for (var color in colors) {
+        for (const color in colors) {
           names.push('default-' + colors[color].name)
         }
 
@@ -380,7 +380,7 @@
     }
 
     function formatErrorMessage (error) {
-      var basicMessage = ''
+      let basicMessage = ''
       if (typeof error === 'string') {
         basicMessage = error
       } else if (typeof error.error === 'string') {
@@ -390,7 +390,7 @@
       } else if (typeof error.message === 'string') {
         basicMessage = error.message
       }
-      var errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '')
+      const errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '')
       console.error(errorMessage, '\n', error)
       return errorMessage
     }
@@ -425,7 +425,7 @@
 
     self.setLanguage = function () {
       function getlanguage (value) {
-        for (var prop in languages) {
+        for (const prop in languages) {
           if (languages.hasOwnProperty(prop)) {
             if (languages[prop] === value) {
               return prop
@@ -453,7 +453,7 @@
     }
 
     self.getAllAccounts = function () {
-      var accounts = self.myAccounts()
+      let accounts = self.myAccounts()
       if (self.ledgerAccounts && self.ledgerAccounts.length) {
         accounts = accounts.concat(self.ledgerAccounts)
       }
@@ -489,11 +489,11 @@
 
     self.selectNextCurrency = function () {
       self.toggleBitcoinCurrency(false)
-      var currenciesNames = self.currencies.map(function (x) {
+      const currenciesNames = self.currencies.map(function (x) {
         return x.name
       })
-      var currencyIndex = currenciesNames.indexOf(self.currency.name)
-      var newIndex = currencyIndex === currenciesNames.length - 1 ? 0 : currencyIndex + 1
+      const currencyIndex = currenciesNames.indexOf(self.currency.name)
+      const newIndex = currencyIndex === currenciesNames.length - 1 ? 0 : currencyIndex + 1
 
       self.currency = self.currencies[newIndex]
       self.changeCurrency()
@@ -510,9 +510,9 @@
     }
 
     self.getDefaultValue = function (account) {
-      var amount = account.balance
+      let amount = account.balance
       if (account.virtual) {
-        for (var folder in account.virtual) {
+        for (const folder in account.virtual) {
           if (account.virtual[folder].amount) {
             amount = amount - account.virtual[folder].amount
           }
@@ -530,10 +530,10 @@
     }
 
     self.manageFolder = function (account, currentFolderName) {
-      var titleText = (!currentFolderName ? 'Create' : 'Rename') + ' Virtual Folder'
-      var buttonText = (!currentFolderName ? 'Add' : 'Save')
-      var confirmText = 'Virtual folder ' + (!currentFolderName ? 'added' : 'saved') + '!'
-      var currentValue = (!currentFolderName ? null : currentFolderName)
+      const titleText = (!currentFolderName ? 'Create' : 'Rename') + ' Virtual Folder'
+      const buttonText = (!currentFolderName ? 'Add' : 'Save')
+      const confirmText = 'Virtual folder ' + (!currentFolderName ? 'added' : 'saved') + '!'
+      const currentValue = (!currentFolderName ? null : currentFolderName)
       let confirm
 
       if (account.virtual) {
@@ -581,7 +581,7 @@
     }
 
     function gotoAddress (address) {
-      var currentaddress = address
+      const currentaddress = address
 
       accountService.fetchAccountAndForget(currentaddress).then(function (a) {
         self.selected = a
@@ -619,7 +619,7 @@
                   return b.timestamp - a.timestamp
                 })
 
-                var previousTx = [...self.selected.transactions]
+                let previousTx = [...self.selected.transactions]
                 self.selected.transactions = transactions
 
                 // if the previous tx was unconfirmed, rebroadcast and put it back at the top (for better UX)
@@ -658,10 +658,10 @@
         return
       }
 
-      var accountState = self.accountRefreshState.create()
-      var transactionsState = self.accountRefreshState.create()
+      const accountState = self.accountRefreshState.create()
+      const transactionsState = self.accountRefreshState.create()
 
-      var myaccount = self.selected
+      const myaccount = self.selected
       accountService
         .refreshAccount(myaccount)
         .then(function (account) {
@@ -692,13 +692,13 @@
                 return b.timestamp - a.timestamp
               })
 
-              var previousTx = [...self.selected.transactions]
+              let previousTx = [...self.selected.transactions]
               self.selected.transactions = transactions
 
-              var playSong = storageService.get('playFundsReceivedSong')
+              const playSong = storageService.get('playFundsReceivedSong')
               if (playSong === true && previousTx[0].id !== transactions[0].id && transactions[0].type === 0 && transactions[0].recipientId === myaccount.address) {
-                var wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
-                var audio = new Audio(wavFile)
+                const wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
+                const audio = new Audio(wavFile)
                 audio.play()
               }
 
@@ -732,7 +732,7 @@
       networkService.getPrice()
 
       self.getAllAccounts().forEach(account => {
-        var state = self.accountsRefreshState.create()
+        const state = self.accountsRefreshState.create()
         accountService
           .refreshAccount(account)
           .then(updated => { account.balance = updated.balance })
@@ -758,7 +758,7 @@
      */
     // TODO Used in dashboard navbar and accountBox
     function selectAccount (account) {
-      var currentaddress = account.address
+      const currentaddress = account.address
       self.selected = accountService.getAccount(currentaddress)
       self.selected.ledger = account.ledger
 
@@ -798,13 +798,13 @@
                 return b.timestamp - a.timestamp
               })
 
-              var previousTx = [...self.selected.transactions]
+              let previousTx = [...self.selected.transactions]
               self.selected.transactions = transactions
 
-              var playSound = storageService.get('playFundsReceivedSound')
+              const playSound = storageService.get('playFundsReceivedSound')
               if (playSound === true && transactions.length > previousTx.length && transactions[0].type === 0 && transactions[0].recipientId === self.selected.address) {
-                var wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
-                var audio = new Audio(wavFile)
+                const wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
+                const audio = new Audio(wavFile)
                 audio.play()
               }
 
@@ -847,8 +847,8 @@
       }
 
       function validateAddress () {
-        var isAddress = /^[1-9A-Za-z]+$/g
-        var address = $scope.address
+        const isAddress = /^[1-9A-Za-z]+$/g
+        const address = $scope.address
         if (isAddress.test(address)) {
           accountService.fetchAccount(address).then(function (account) {
             self.accounts.push(account)
@@ -881,9 +881,9 @@
 
     function getAllDelegates (selectedAccount) {
       function arrayUnique (array) {
-        var a = array.concat()
-        for (var i = 0; i < a.length; ++i) {
-          for (var j = i + 1; j < a.length; ++j) {
+        const a = array.concat()
+        for (let i = 0; i < a.length; ++i) {
+          for (let j = i + 1; j < a.length; ++j) {
             if (a[i] && a[i].username === a[j].username) a.splice(j--, 1)
           }
         }
@@ -895,7 +895,7 @@
     }
 
     function addDelegate (selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] }
+      const data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] }
       $scope.controls = []
       accountService.getActiveDelegates().then((r) => {
         data.registeredDelegates = r
@@ -903,7 +903,7 @@
 
       function add () {
         function indexOfDelegates (array, item) {
-          for (var i in array) {
+          for (const i in array) {
             if (array[i].username === item.username) {
               return i
             }
@@ -944,14 +944,14 @@
     }
 
     function vote (selectedAccount) {
-      var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes)
+      let votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes)
       if (!votes || votes.length === 0) {
         toastService.error('No difference from original delegate list')
         return
       }
       votes = votes[0]
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = {
+      const passphrases = accountService.getPassphrases(selectedAccount.address)
+      const data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
@@ -962,7 +962,7 @@
 
       function next () {
         $mdDialog.hide()
-        var publicKeys = $scope.voteDialog.data.votes.map(function (delegate) {
+        const publicKeys = $scope.voteDialog.data.votes.map(function (delegate) {
           return delegate.vote + delegate.publicKey
         }).join(',')
         console.log(publicKeys)
@@ -1001,8 +1001,8 @@
     }
 
     function timestamp (selectedAccount) {
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = {
+      const passphrases = accountService.getPassphrases(selectedAccount.address)
+      const data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
@@ -1018,7 +1018,7 @@
         }
 
         $mdDialog.hide()
-        var smartbridge = $scope.send.data.smartbridge
+        const smartbridge = $scope.send.data.smartbridge
         transactionBuilderService.createSendTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
@@ -1037,21 +1037,21 @@
       }
 
       function openFile () {
-        var crypto = require('crypto')
-        var fs = require('fs')
+        const crypto = require('crypto')
+        const fs = require('fs')
 
         require('electron').remote.dialog.showOpenDialog(function (fileNames) {
           if (fileNames === undefined) return
-          var fileName = fileNames[0]
-          var algo = 'sha256'
-          var shasum = crypto.createHash(algo)
+          const fileName = fileNames[0]
+          const algo = 'sha256'
+          const shasum = crypto.createHash(algo)
           $scope.send.data.filename = fileName
           $scope.send.data.smartbridge = 'Calculating signature....'
-          var s = fs.ReadStream(fileName)
+          const s = fs.ReadStream(fileName)
 
           s.on('data', function (d) { shasum.update(d) })
           s.on('end', function () {
-            var d = shasum.digest('hex')
+            const d = shasum.digest('hex')
             $scope.send.data.smartbridge = d
           })
         })
@@ -1084,15 +1084,15 @@
     }
 
     function generateDarkTheme (themeName) {
-      var theme = themeName || self.network.theme
-      var properties = $mdThemingProvider.$get().THEMES[theme]
+      const theme = themeName || self.network.theme
+      let properties = $mdThemingProvider.$get().THEMES[theme]
       properties = properties || $mdThemingProvider.$get().THEMES['default']
 
-      var colors = properties.colors
-      var primary = colors.primary.name
-      var accent = colors.accent.name
-      var warn = colors.warn.name
-      var background = colors.background.name
+      const colors = properties.colors
+      const primary = colors.primary.name
+      const accent = colors.accent.name
+      const warn = colors.warn.name
+      const background = colors.background.name
 
       $mdThemingProvider.theme('dark')
         .primaryPalette(primary)
@@ -1113,19 +1113,19 @@
         return
       }
 
-      var vibrant = require('node-vibrant')
-      var materialPalette = $mdThemingProvider.$get().PALETTES
+      const vibrant = require('node-vibrant')
+      const materialPalette = $mdThemingProvider.$get().PALETTES
 
       // check if it's an image url
-      var regExp = /\(([^)]+)\)/
-      var match = self.network.background.match(regExp)
+      const regExp = /\(([^)]+)\)/
+      const match = self.network.background.match(regExp)
 
       if (!match) {
         callback(false) // eslint-disable-line standard/no-callback-literal
         return
       }
 
-      var url = _path.resolve(__dirname, match[1].replace(/'/g, ''))
+      const url = _path.resolve(__dirname, match[1].replace(/'/g, ''))
 
       vibrant.from(url).getPalette(function (err, palette) {
         if (err || !palette.Vibrant) {
@@ -1133,20 +1133,20 @@
           return
         }
 
-        var vibrantRatio = {}
-        var darkVibrantRatio = {}
+        const vibrantRatio = {}
+        const darkVibrantRatio = {}
 
         Object.keys(materialPalette).forEach(function (color) {
-          var vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex())
+          const vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex())
           vibrantRatio[color] = vibrantDiff
 
-          var darkVibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.DarkVibrant.getHex())
+          const darkVibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.DarkVibrant.getHex())
           darkVibrantRatio[color] = darkVibrantDiff
         })
 
-        var isArkJpg = _path.basename(url) === 'Ark.jpg'
-        var primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0]
-        var accentColor = sortObj(vibrantRatio)[0]
+        const isArkJpg = _path.basename(url) === 'Ark.jpg'
+        let primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0]
+        let accentColor = sortObj(vibrantRatio)[0]
 
         primaryColor = primaryColor === 'grey' ? 'blue-grey' : primaryColor
 
@@ -1164,24 +1164,24 @@
     }
 
     function manageBackgrounds () {
-      var fs = require('fs')
-      var context = storageService.getContext()
+      const fs = require('fs')
+      const context = storageService.getContext()
 
-      var currentNetwork = networkService.getNetwork()
+      const currentNetwork = networkService.getNetwork()
 
-      var initialBackground = currentNetwork.background
-      var initialTheme = currentNetwork.theme
+      const initialBackground = currentNetwork.background
+      const initialTheme = currentNetwork.theme
 
-      var currentTheme = self.currentTheme
-      var initialThemeView = currentTheme
-      var initialDarkMode = currentNetwork.themeDark
+      let currentTheme = self.currentTheme
+      const initialThemeView = currentTheme
+      const initialDarkMode = currentNetwork.themeDark
 
-      var themes = reloadThemes()
+      const themes = reloadThemes()
       delete themes['dark']
 
-      var selectedTab = 0
+      const selectedTab = 0
 
-      var backgrounds = {
+      const backgrounds = {
         user: {},
         colors: {
           'Midnight': '#2c3e50',
@@ -1193,22 +1193,22 @@
         images: {}
       }
 
-      var imgPath = 'assets/images'
-      var assetsPath = _path.resolve(__dirname, imgPath)
+      const imgPath = 'assets/images'
+      const assetsPath = _path.resolve(__dirname, imgPath)
 
       // find files in directory with same key
-      for (var folder in backgrounds) {
+      for (const folder in backgrounds) {
         let fullPath = _path.resolve(assetsPath, folder)
 
         if (fs.existsSync(_path.resolve(fullPath))) { // check dir exists
-          var image = {}
+          const image = {}
           fs.readdirSync(fullPath).forEach(function (file) {
-            var stat = fs.statSync(_path.join(fullPath, file)) // to prevent if directory
+            const stat = fs.statSync(_path.join(fullPath, file)) // to prevent if directory
 
             if (stat.isFile() && isImage(file)) {
-              var url = _path.join(imgPath, folder, file) // ex: assets/images/textures/file.png
+              let url = _path.join(imgPath, folder, file) // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, '/')
-              var name = _path.parse(file).name // remove extension
+              const name = _path.parse(file).name // remove extension
               image[name] = `url('${url}')`
             }
           })
@@ -1218,7 +1218,7 @@
 
       backgrounds['user'] = storageService.getGlobal('userBackgrounds') || {}
       for (let name in backgrounds['user']) {
-        var mathPath = backgrounds['user'][name].match(/\((.*)\)/)
+        const mathPath = backgrounds['user'][name].match(/\((.*)\)/)
         if (mathPath) {
           let filePath = mathPath[1].replace(/'/g, ``)
           let fullPath = _path.join(__dirname, filePath)
@@ -1230,7 +1230,7 @@
       }
 
       function upload () {
-        var options = {
+        const options = {
           title: 'Add Image',
           filters: [
             { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
@@ -1242,14 +1242,14 @@
           if (fileName === undefined) return
           fileName = fileName[0]
 
-          var readStream = fs.createReadStream(fileName)
+          const readStream = fs.createReadStream(fileName)
           readStream.on('readable', () => {
             toastService.success('Background Added Successfully!', 3000)
 
-            var userImages = backgrounds['user']
-            var url = fileName
+            const userImages = backgrounds['user']
+            let url = fileName
             url = url.replace(/\\/g, '/')
-            var name = _path.parse(fileName).name
+            const name = _path.parse(fileName).name
             userImages[name] = `url('${url}')`
 
             backgrounds['user'] = userImages
@@ -1264,9 +1264,9 @@
         evt.preventDefault()
         evt.stopPropagation()
 
-        var file = image.substring(5, image.length - 2)
+        const file = image.substring(5, image.length - 2)
 
-        var name = _path.parse(file).name
+        const name = _path.parse(file).name
         delete backgrounds['user'][name]
 
         if (image === initialBackground) {
@@ -1279,7 +1279,7 @@
       }
 
       function isImage (file) {
-        var extension = _path.extname(file)
+        const extension = _path.extname(file)
         if (extension === '.jpg' || extension === '.png' || extension === '.gif') {
           return true
         }
@@ -1359,12 +1359,12 @@
     }
 
     function manageNetworks () {
-      var networks = networkService.getNetworks()
+      let networks = networkService.getNetworks()
 
       function save () {
         // these are not needed as the createNetwork now rerender automatically
         $mdDialog.hide()
-        for (var network in $scope.send.networks) {
+        for (const network in $scope.send.networks) {
           networkService.setNetwork(network, $scope.send.networks[network])
           self.listNetworks = networkService.getNetworks()
         }
@@ -1396,7 +1396,7 @@
       }
 
       function removeNetwork (network) {
-        var confirm = $mdDialog.confirm()
+        const confirm = $mdDialog.confirm()
           .title(gettextCatalog.getString('Remove Network') + ' ' + network)
           .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
@@ -1429,8 +1429,8 @@
     }
 
     function openPassphrasesDialog (selectedAccount) {
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1] }
+      const passphrases = accountService.getPassphrases(selectedAccount.address)
+      const data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1] }
 
       function save () {
         $mdDialog.hide()
@@ -1463,8 +1463,8 @@
 
     // register as delegate
     function createDelegate (selectedAccount) {
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = {
+      const passphrases = accountService.getPassphrases(selectedAccount.address)
+      const data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount.address,
         username: '',
@@ -1476,7 +1476,7 @@
       function next () {
         $mdDialog.hide()
 
-        var delegateName
+        let delegateName
         try {
           delegateName = accountService.sanitizeDelegateName($scope.createDelegate.data.username)
         } catch (error) {
@@ -1520,8 +1520,8 @@
     // Create a new cold account
     // TODO Used in dashboard navbar and accountBox
     function createAccount () {
-      var bip39 = require('bip39')
-      var data = { passphrase: bip39.generateMnemonic() }
+      const bip39 = require('bip39')
+      const data = { passphrase: bip39.generateMnemonic() }
 
       function next () {
         if (!$scope.createAccountDialog.data.showRepassphrase) {
@@ -1533,7 +1533,7 @@
             return
           }
 
-          var words = $scope.createAccountDialog.data.repassphrase.split(' ')
+          const words = $scope.createAccountDialog.data.repassphrase.split(' ')
           if ($scope.createAccountDialog.data.word3 === words[2] && $scope.createAccountDialog.data.word6 === words[5] && $scope.createAccountDialog.data.word9 === words[8]) {
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function (account) {
               self.accounts.push(account)
@@ -1553,7 +1553,7 @@
 
       function querySearch (text) { // eslint-disable-line no-unused-vars
         text = text.toLowerCase()
-        var filter = self.accounts.filter(function (account) {
+        const filter = self.accounts.filter(function (account) {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.username && (account.username.toLowerCase().indexOf(text) > -1))
         })
         return filter
@@ -1580,7 +1580,7 @@
 
     // TODO Used in dashboard navbar and accountBox
     function importAccount () {
-      var data = {
+      const data = {
         passphrase: ''
       // TODO second passphrase
       // secondpassphrase: ''
@@ -1595,7 +1595,7 @@
           .then(
             function (account) {
               // Check for already imported account
-              for (var i = 0; i < self.accounts.length; i++) {
+              for (let i = 0; i < self.accounts.length; i++) {
                 if (self.accounts[i].address === account.address) {
                   toastService.error(
                     gettextCatalog.getString('Account was already imported: ') + account.address,
@@ -1653,8 +1653,8 @@
 
     // Add a second passphrase to an account
     function createSecondPassphrase (selectedAccount) {
-      var bip39 = require('bip39')
-      var data = { secondPassphrase: bip39.generateMnemonic() }
+      const bip39 = require('bip39')
+      const data = { secondPassphrase: bip39.generateMnemonic() }
 
       if (selectedAccount.secondSignature) {
         return formatAndToastError(
@@ -1664,9 +1664,9 @@
 
       function warnAboutSecondPassphraseFee () {
         accountService.getFees(true).then(function (fees) {
-          let secondPhraseArktoshiVal = fees['secondsignature']
-          var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
-          var confirm = $mdDialog.confirm({
+          const secondPhraseArktoshiVal = fees['secondsignature']
+          const secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+          const confirm = $mdDialog.confirm({
             title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
             secondPhraseArkVal: secondPhraseArkVal,
             textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
@@ -1732,8 +1732,8 @@
 
     function showValidateTransaction (selectedAccount, transaction) {
       function saveFile () {
-        var fs = require('fs')
-        var raw = JSON.stringify(transaction)
+        const fs = require('fs')
+        const raw = JSON.stringify(transaction)
 
         require('electron').remote.dialog.showSaveDialog({
           defaultPath: transaction.id + '.json',

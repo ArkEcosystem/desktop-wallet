@@ -9,7 +9,7 @@
    * @constructor
    */
   function ConfigService () {
-    var self = this
+    const self = this
 
     self.config = require(require('path').resolve(__dirname, './config/config.js'))
 

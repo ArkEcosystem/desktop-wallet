@@ -3,8 +3,8 @@
 
   angular.module('arkclient.directives')
     .directive('copyToClipboard', ['toastService', '$window', function (toastService, $window) {
-      var body = angular.element($window.document.body)
-      var textarea = angular.element('<textarea/>')
+      const body = angular.element($window.document.body)
+      const textarea = angular.element('<textarea/>')
       textarea.css({
         position: 'fixed',
         opacity: '0'
@@ -16,7 +16,7 @@
         textarea[0].select()
 
         try {
-          var successful = document.execCommand('copy')
+          const successful = document.execCommand('copy')
           if (!successful) throw successful
           else {
             toastService.success('Copied to clipboard', 3000)

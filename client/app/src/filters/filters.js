@@ -24,15 +24,15 @@
     })
     .filter('formatCurrency', function () {
       return function (val, self, bitcoinToggleIsActive) {
-        var currencyName = bitcoinToggleIsActive && self.btcValueActive ? 'btc' : self.currency.name
-        var languageCode = self.language.replace('_', '-')
-        var options = {
+        const currencyName = bitcoinToggleIsActive && self.btcValueActive ? 'btc' : self.currency.name
+        const languageCode = self.language.replace('_', '-')
+        const options = {
           style: 'currency',
           currency: currencyName,
           currencyDisplay: 'symbol'
         }
 
-        var localeVersion
+        let localeVersion
 
         if (currencyName === 'btc') {
           let value = String(val).length > 8 ? Number(val).toFixed(8) : val
@@ -54,7 +54,7 @@
       return function (address) {
         if (!address) return address
 
-        var username = accountService.getUsername(address)
+        const username = accountService.getUsername(address)
 
         if (username !== address) return username
         else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)

@@ -1,7 +1,7 @@
 'use strict'
 const ledger = require('ledgerco')
 
-var connected = false
+let connected = false
 setInterval(() => {
   ledger.comm_node.list_async().then((deviceList) => {
     connected = deviceList.length > 0

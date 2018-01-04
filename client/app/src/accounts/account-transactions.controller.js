@@ -79,9 +79,9 @@
     function updateTransactions (transactions) {
       if (!transactions) return
 
-      var mergeTransactions = [...transactions, ...vm.transactions]
+      const mergeTransactions = [...transactions, ...vm.transactions]
       // remove duplicates
-      var uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
+      const uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
         return arr.map(obj => obj['id']).indexOf(obj['id']) === pos
       }).sort((a, b) => b.timestamp - a.timestamp)
 

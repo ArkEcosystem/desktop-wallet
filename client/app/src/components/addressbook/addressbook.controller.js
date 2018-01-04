@@ -6,7 +6,7 @@
     .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'accountService', 'utilityService', 'ARKTOSHI_UNIT', AddressbookController])
 
   function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService, utilityService, ARKTOSHI_UNIT) {
-    var self = this
+    const self = this
     // var contacts
     self.trim = function (str) {
       return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
@@ -81,7 +81,7 @@
           return
         }
 
-        var newContact = { name: name, address: address }
+        const newContact = { name: name, address: address }
         if (self.addressExists(address)) {
           self.showToast('A Contact with this Address already exists', address, true)
           return
@@ -91,7 +91,7 @@
           return
         }
 
-        var knownAccounts = accountService.loadAllAccounts().reduce((all, account) => {
+        const knownAccounts = accountService.loadAllAccounts().reduce((all, account) => {
           if (account.virtual) {
             all.push(account)
           }
@@ -124,12 +124,12 @@
     }
 
     self.editAddressbookContact = function (address) {
-      var contact = self.getContactFromAddress(address)
+      const contact = self.getContactFromAddress(address)
       if (!contact) {
         self.showToast('This address is not a contact', address, true)
         return
       }
-      var name = contact.name
+      const name = contact.name
 
       $scope.editAddressbookContact = {
         cancel: cancel,
@@ -161,7 +161,7 @@
           self.showToast('this seems to be not a valid Address', address, true)
           return
         }
-        for (var i = 0; i < self.contacts.length; i++) {
+        for (let i = 0; i < self.contacts.length; i++) {
           if (self.contacts[i].name === name) {
             self.contacts[i].address = address
           }
@@ -177,7 +177,7 @@
           self.showToast('this Contact-Name doesnt exist: ', name, true)
           return
         }
-        for (var i = 0; i < self.contacts.length; i++) {
+        for (let i = 0; i < self.contacts.length; i++) {
           if (self.contacts[i].name === name) {
             delete self.contacts[i]
             self.contacts.splice(i, 1)
@@ -214,14 +214,14 @@
         }
       }
 
-      var transactions = storageService.get('transactions-' + account)
+      const transactions = storageService.get('transactions-' + account)
 
       if (transactions) {
-        var incomeTx = transactions.filter(function (el) {
+        const incomeTx = transactions.filter(function (el) {
           return el.senderId === contact
         })
 
-        var expendTx = transactions.filter(function (el) {
+        const expendTx = transactions.filter(function (el) {
           return el.recipientId === contact
         })
 
@@ -229,7 +229,7 @@
         stats.expend.transactions = expendTx.length
 
         if (incomeTx.length > 0) {
-          var incomeAmount = incomeTx.map(function (tx) {
+          const incomeAmount = incomeTx.map(function (tx) {
             return tx.amount
           }).reduce(function (prev, el) {
             return prev + el
@@ -239,7 +239,7 @@
         }
 
         if (expendTx.length > 0) {
-          var expendAmount = expendTx.map(function (tx) {
+          const expendAmount = expendTx.map(function (tx) {
             return tx.amount
           }).reduce(function (prev, el) {
             return prev + el

@@ -1,7 +1,7 @@
 'use strict'
 
-var appearanceConfig = require(require('path').resolve(__dirname, './config/appearance'))
-var modules = [
+const appearanceConfig = require(require('path').resolve(__dirname, './config/appearance'))
+const modules = [
   'ngMaterial',
   'md.data.table',
   'gettext',
@@ -15,7 +15,7 @@ var modules = [
   'arkclient.constants'
 ]
 
-var app = angular.module('arkclient', modules)
+const app = angular.module('arkclient', modules)
 
 app.config(function ($mdIconProvider) {
   $mdIconProvider
@@ -25,11 +25,11 @@ app.config(function ($mdIconProvider) {
 })
 
 app.config(function ($provide, $mdThemingProvider) {
-  var themes = appearanceConfig.themes
-  var themeNames = Object.keys(themes)
+  const themes = appearanceConfig.themes
+  const themeNames = Object.keys(themes)
 
   themeNames.forEach(function (key) {
-    var theme = $mdThemingProvider.theme(key)
+    const theme = $mdThemingProvider.theme(key)
       .primaryPalette(themes[key].primary)
       .accentPalette(themes[key].accent)
       .warnPalette(themes[key].warn)

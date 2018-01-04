@@ -4,24 +4,24 @@
   angular.module('arkclient.components').controller('qrScannerController', ['$scope', '$interval', '$timeout', '$window', ScannerController])
 
   function ScannerController ($scope, $interval, $timeout, $window) {
-    var jsqr = require('jsqr')
-    var video
-    var canvas
-    var context
-    var stopScan
+    const jsqr = require('jsqr')
+    let video
+    let canvas
+    let context
+    let stopScan
 
-    var setScanner = function () {
+    const setScanner = function () {
       window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia
     }
 
-    var parseDecoded = function (decoded) {
-      var obj = typeof (decoded) !== 'string' ? JSON.stringify(decoded) : decoded
-      var qr
-      var type
+    const parseDecoded = function (decoded) {
+      const obj = typeof (decoded) !== 'string' ? JSON.stringify(decoded) : decoded
+      let qr
+      let type
 
       try {
-        var json = JSON.parse(obj)
+        const json = JSON.parse(obj)
         qr = json[Object.keys(json)[0]]
       } catch (e) {
         qr = decoded
@@ -33,13 +33,13 @@
       return { type: type, qr: qr }
     }
 
-    var scan = function (evt) {
+    const scan = function (evt) {
       if ($window.localMediaStream) {
-        var size = 250
+        const size = 250
 
         context.drawImage(video, 0, 0, size, size)
-        var imageData = context.getImageData(0, 0, size, size)
-        var decoded = jsqr.decodeQRFromImage(imageData.data, size, size)
+        const imageData = context.getImageData(0, 0, size, size)
+        const decoded = jsqr.decodeQRFromImage(imageData.data, size, size)
 
         if (typeof (decoded) !== 'undefined' && decoded.length > 0) {
           cancel()
@@ -48,7 +48,7 @@
       }
     }
 
-    var init = function () {
+    const init = function () {
       setScanner()
 
       $timeout(function () {
@@ -64,11 +64,11 @@
       }, 500)
     }
 
-    var errorCallback = function (err) {
+    const errorCallback = function (err) {
       $scope.onVideoError({ error: err })
     }
 
-    var successCallback = function (stream) {
+    const successCallback = function (stream) {
       video.src = (window.URL && window.URL.createObjectURL(stream)) || stream
       $window.localMediaStream = stream
 
@@ -77,11 +77,11 @@
       stopScan = $interval(scan, 500)
     }
 
-    var cancel = function () {
+    const cancel = function () {
       if ($window.localMediaStream) {
         if ($window.localMediaStream.getVideoTracks) {
-          var tracks = $window.localMediaStream.getVideoTracks()
-          for (var i = 0; i < tracks.length; i++) {
+          const tracks = $window.localMediaStream.getVideoTracks()
+          for (let i = 0; i < tracks.length; i++) {
             tracks[i].stop()
           }
         }

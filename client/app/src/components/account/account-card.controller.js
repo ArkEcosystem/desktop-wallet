@@ -167,18 +167,18 @@
       }
 
       const openFile = () => {
-        var fs = require('fs')
+        const fs = require('fs')
 
         require('electron').remote.dialog.showOpenDialog(fileNames => {
           if (fileNames === undefined) return
-          var fileName = fileNames[0]
+          const fileName = fileNames[0]
 
           fs.readFile(fileName, 'utf8', (err, data) => {
             if (err) {
               toastService.error('Unable to load file' + ': ' + err)
             } else {
               try {
-                var transaction = JSON.parse(data)
+                const transaction = JSON.parse(data)
 
                 if (transaction.type === undefined) {
                   return toastService.error('Invalid transaction file')
@@ -203,13 +203,13 @@
       //   amount: 1,
       // }
       function getTotalBalance (fee) {
-        var balance = selectedAccount.balance
+        const balance = selectedAccount.balance
         return utilityService.arktoshiToArk(fee ? balance - fee : balance)
       }
 
       function fillSendableBalance () {
         function setBalance (fee) {
-          var sendableBalance = getTotalBalance(fee)
+          const sendableBalance = getTotalBalance(fee)
           $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0
         }
         // set the balance immediately, so the user sees something
