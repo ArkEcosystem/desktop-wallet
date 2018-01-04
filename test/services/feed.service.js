@@ -1,6 +1,6 @@
 'use strict'
 
-describe('feedService', function () {
+describe('feedService', () => {
   let feedService
 
   beforeEach(() => {
@@ -11,8 +11,8 @@ describe('feedService', function () {
     })
   })
 
-  describe('fetchBlogEntries', function () {
-    it('fetches and parses the ARK.io feed URL', function () {
+  describe('fetchBlogEntries', () => {
+    it('fetches and parses the ARK.io feed URL', () => {
       const stub = sinon.stub(feedService, 'fetchAndParse').resolves('OK')
       feedService.fetchBlogEntries()
       expect(stub.firstCall.args[0]).to.eql('https://blog.ark.io/feed')

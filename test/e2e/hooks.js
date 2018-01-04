@@ -10,7 +10,7 @@ const chaiAsPromised = require('chai-as-promised')
 const userData = require(_path.resolve(__dirname, './user_data'))
 const commands = require(_path.resolve(__dirname, './commands'))
 
-global.before(function () {
+global.before(() => {
   chai.should()
   chai.use(chaiAsPromised)
 })

@@ -1,6 +1,6 @@
 'use strict'
 
-describe('AccountBoxController', function () {
+describe('AccountBoxController', () => {
   const expect = chai.expect
 
   let ctrl
@@ -40,24 +40,24 @@ describe('AccountBoxController', function () {
   })
 
   describe('myAccountsBalance()', () => {
-    it('sums the balance (in ARK, formatted) of all accounts', function () {
+    it('sums the balance (in ARK, formatted) of all accounts', () => {
       expect(ctrl.myAccountsBalance()).to.equal('30.00')
     })
   })
 
   describe('myAccountsCurrencyBalance()', () => {
     context('when it is connected to a maket', () => {
-      it('sums the balance (in the configured currency, formatted) of all accounts', function () {
+      it('sums the balance (in the configured currency, formatted) of all accounts', () => {
         expect(ctrl.myAccountsCurrencyBalance()).to.equal(3)
       })
     })
 
     context("when it isn't connected to a maket", () => {
-      beforeEach(function () {
+      beforeEach(() => {
         ctrl.accountCtrl.connectedPeer = {}
       })
 
-      it('returns 0', function () {
+      it('returns 0', () => {
         expect(ctrl.myAccountsCurrencyBalance()).to.equal(0)
       })
     })
@@ -66,7 +66,7 @@ describe('AccountBoxController', function () {
   // TODO: Implement with accountController refreshAccountBalances method
   xdescribe('refreshAccountBalances()', () => {
     context('when the balance of an account changes', () => {
-      it('updates the balance', function () {
+      it('updates the balance', () => {
         expect(ctrl.myAccountsBalance()).to.equal('30.00')
         sinon.stub(bindings.accountCtrl, 'getAllAccounts').returns([
           { balance: 1 * ARKTOSHI_UNIT },

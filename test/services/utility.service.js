@@ -1,7 +1,6 @@
 'use strict'
 
-describe('utilityService',() => {
-
+describe('utilityService', () => {
   const tokenName = 'test-ark'
   const arktoshiUnit = Math.pow(10, 8)
   let utilityService
@@ -9,7 +8,7 @@ describe('utilityService',() => {
 
   beforeEach(() => {
     module('arkclient.services', $provide => {
-      networkServiceMock = { getNetwork: sinon.stub().returns({version: 0x17, token: tokenName }) }
+      networkServiceMock = { getNetwork: sinon.stub().returns({ version: 0x17, token: tokenName }) }
 
       // inject the mock services
       $provide.value('networkService', networkServiceMock)
@@ -22,7 +21,6 @@ describe('utilityService',() => {
   })
 
   describe('arktoshiToArk', () => {
-
     it('undefined arktoshi is 0 Ark', () => {
       const ark = utilityService.arktoshiToArk()
 

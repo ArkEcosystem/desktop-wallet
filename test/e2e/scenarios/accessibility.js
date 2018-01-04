@@ -19,7 +19,7 @@ xdescribe('Accessibility', function () {
     }
 
     return this.app.client.windowByIndex(0)
-      .auditAccessibility(options).then(function (audit) {
+      .auditAccessibility(options).then((audit) => {
         if (audit.failed) {
           throw Error('Failed accessibility audit\n' + audit.message)
         }
