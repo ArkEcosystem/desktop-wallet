@@ -1590,7 +1590,7 @@
         if (!$scope.importAccountForm.$valid) {
           return
         }
-        
+
         if (!$scope.send.data.customPassphrase && !isBIP39($scope.send.data.passphrase)) {
           toastService.error(
             gettextCatalog.getString('Not valid 12 words passphrase! Please check all words and spaces.')
@@ -1813,12 +1813,11 @@
         clickOutsideToClose: false
       })
     }
-    
-    function isBIP39(mnemonic) {
+
+    function isBIP39 (mnemonic) {
       var bip39 = require('bip39')
       let valid = bip39.validateMnemonic(mnemonic)
       return valid
     }
-    
   }
 })()
