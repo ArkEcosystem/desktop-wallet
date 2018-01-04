@@ -33,10 +33,10 @@
       let empty = false
 
       async.whilst(
-        function () {
+        () => {
           return !empty
         },
-        function (next) {
+        (next) => {
           const localpath = path + accountIndex + "'/0/" + addressIndex
           const result = ipcRenderer.sendSync('ledger', {
             action: 'getAddress',
@@ -78,7 +78,7 @@
             next()
           }
         },
-        function (err) {
+        (err) => {
           if (err) {
             deferred.reject(err)
           } else {
@@ -126,7 +126,7 @@
 
     function signTransaction (path, transaction) {
       const deferred = $q.defer()
-      ipcRenderer.once('transactionSigned', function (event, result) {
+      ipcRenderer.once('transactionSigned', (event, result) => {
         if (result.error) {
           deferred.reject(result.error)
         } else {
@@ -146,7 +146,7 @@
       const crypto = require('crypto')
       let hash = crypto.createHash('sha256')
       hash = hash.update(Buffer.from(message, 'utf-8')).digest()
-      ipcRenderer.once('messageSigned', function (event, result) {
+      ipcRenderer.once('messageSigned', (event, result) => {
         if (result.error) {
           deferred.reject(result.error)
         } else {

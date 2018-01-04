@@ -20,7 +20,7 @@
     self.getContacts()
 
     self.getContactFromAddress = function (address) {
-      return self.contacts.find(function (c) { return c.address === address })
+      return self.contacts.find((c) => { return c.address === address })
     }
 
     self.save = function () {
@@ -217,11 +217,11 @@
       const transactions = storageService.get('transactions-' + account)
 
       if (transactions) {
-        const incomeTx = transactions.filter(function (el) {
+        const incomeTx = transactions.filter((el) => {
           return el.senderId === contact
         })
 
-        const expendTx = transactions.filter(function (el) {
+        const expendTx = transactions.filter((el) => {
           return el.recipientId === contact
         })
 
@@ -229,9 +229,9 @@
         stats.expend.transactions = expendTx.length
 
         if (incomeTx.length > 0) {
-          const incomeAmount = incomeTx.map(function (tx) {
+          const incomeAmount = incomeTx.map((tx) => {
             return tx.amount
-          }).reduce(function (prev, el) {
+          }).reduce((prev, el) => {
             return prev + el
           })
 
@@ -239,9 +239,9 @@
         }
 
         if (expendTx.length > 0) {
-          const expendAmount = expendTx.map(function (tx) {
+          const expendAmount = expendTx.map((tx) => {
             return tx.amount
-          }).reduce(function (prev, el) {
+          }).reduce((prev, el) => {
             return prev + el
           })
 

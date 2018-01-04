@@ -300,7 +300,7 @@
         store = true
       }
       const deferred = $q.defer()
-      networkService.getFromPeer('/api/transactions?orderBy=timestamp:desc&offset=' + offset + '&limit=' + limit + '&recipientId=' + address + '&senderId=' + address).then(function (resp) {
+      networkService.getFromPeer('/api/transactions?orderBy=timestamp:desc&offset=' + offset + '&limit=' + limit + '&recipientId=' + address + '&senderId=' + address).then((resp) => {
         if (resp.success) {
           for (let i = 0; i < resp.transactions.length; i++) {
             formatTransaction(resp.transactions[i], address)
@@ -311,9 +311,9 @@
         } else {
           deferred.reject(gettextCatalog.getString('Cannot get transactions'))
         }
-      }, function () {
+      }, () => {
         deferred.reject(gettextCatalog.getString('Cannot get transactions'))
-      }, function () {
+      }, () => {
         deferred.notify(true)
       })
       return deferred.promise
@@ -427,7 +427,7 @@
         deferred.reject(gettextCatalog.getString('No publicKey'))
         return deferred.promise
       }
-      networkService.getFromPeer('/api/delegates/get/?publicKey=' + publicKey).then(function (resp) {
+      networkService.getFromPeer('/api/delegates/get/?publicKey=' + publicKey).then((resp) => {
         if (resp && resp.success && resp.delegate) {
           storageService.set('delegate-' + resp.delegate.address, resp.delegate)
           storageService.set('username-' + resp.delegate.address, resp.delegate.username)
@@ -441,7 +441,7 @@
 
     function getActiveDelegates () {
       const deferred = $q.defer()
-      networkService.getFromPeer('/api/delegates').then(function (resp) {
+      networkService.getFromPeer('/api/delegates').then((resp) => {
         if (resp && resp.success && resp.delegates) {
           deferred.resolve(resp.delegates)
         } else {
@@ -460,7 +460,7 @@
         return deferred.promise
       }
       username = username.toLowerCase()
-      networkService.getFromPeer('/api/delegates/get/?username=' + username).then(function (resp) {
+      networkService.getFromPeer('/api/delegates/get/?username=' + username).then((resp) => {
         if (resp && resp.success && resp.delegate) {
           storageService.set('delegate-' + resp.delegate.address, resp.delegate)
           storageService.set('username-' + resp.delegate.address, resp.delegate.username)
@@ -479,13 +479,13 @@
         deferred.reject(gettextCatalog.getString('No search term'))
         return deferred.promise
       }
-      networkService.getFromPeer('/api/delegates/search/?term=' + term).then(function (resp) {
+      networkService.getFromPeer('/api/delegates/search/?term=' + term).then((resp) => {
         if (resp && resp.success && resp.delegates) {
           deferred.resolve(resp.delegates)
         } else {
           deferred.reject(gettextCatalog.getString('Cannot find delegates from this term: ') + term)
         }
-      }, function (err) {
+      }, (err) => {
         deferred.reject(gettextCatalog.getString('Cannot find delegates on this peer: ') + err)
       })
       return deferred.promise
@@ -493,7 +493,7 @@
 
     function getVotedDelegates (address) {
       const deferred = $q.defer()
-      networkService.getFromPeer('/api/accounts/delegates/?address=' + address).then(function (resp) {
+      networkService.getFromPeer('/api/accounts/delegates/?address=' + address).then((resp) => {
         if (resp && resp.success) {
           let delegates = []
           if (resp.delegates && resp.delegates.length && resp.delegates[0]) {
@@ -544,10 +544,10 @@
     function signMessageWithLedger (message, path) {
       const deferred = $q.defer()
       ledgerService.signMessage(path, message).then(
-        function (result) {
+        (result) => {
           deferred.resolve(result)
         },
-        function (error) {
+        (error) => {
           deferred.reject(error)
         }
       )
@@ -566,7 +566,7 @@
 
       const assets = []
       let votedDelegates = storageService.get('voted-' + address) || []
-      votedDelegates = votedDelegates.map(function (delegate) {
+      votedDelegates = votedDelegates.map((delegate) => {
         return {
           username: delegate.username,
           address: delegate.address,
@@ -574,7 +574,7 @@
         }
       })
 
-      const delegates = newdelegates.map(function (delegate) {
+      const delegates = newdelegates.map((delegate) => {
         return {
           username: delegate.username,
           address: delegate.address,
@@ -621,10 +621,10 @@
     function getSponsors () {
       const deferred = $q.defer()
       const result = []
-      $http.get('https://gist.githubusercontent.com/fix/a7b1d797be38b0591e725a24e6735996/raw/sponsors.json').then(function (resp) {
+      $http.get('https://gist.githubusercontent.com/fix/a7b1d797be38b0591e725a24e6735996/raw/sponsors.json').then((resp) => {
         let count = 0
         for (const i in resp.data) {
-          networkService.getFromPeer('/api/delegates/get/?publicKey=' + resp.data[i].publicKey).then(function (resp2) {
+          networkService.getFromPeer('/api/delegates/get/?publicKey=' + resp.data[i].publicKey).then((resp2) => {
             if (resp2.data && resp2.data.success && resp2.data.delegate) {
               result.push(resp2.data.delegate)
             }
@@ -634,7 +634,7 @@
             }
           }, () => count++)
         }
-      }, function (err) {
+      }, (err) => {
         console.log(err)
         deferred.reject(gettextCatalog.getString('Cannot get sponsors'))
       })
@@ -746,7 +746,7 @@
           return []
         }
 
-        accounts = accounts.filter(function (a) {
+        accounts = accounts.filter((a) => {
           return !a.ledger
         })
 
@@ -757,10 +757,10 @@
           }
         }
         accounts = uniqueaccounts
-        accounts = accounts.filter(function (address) {
+        accounts = accounts.filter((address) => {
           return (storageService.get('username-' + address) != null || storageService.get('virtual-' + address) != null) && !storageService.get(address).ledger
         })
-        return accounts.map(function (address) {
+        return accounts.map((address) => {
           const account = storageService.get(address)
           if (account) {
             account.transactions = storageService.get('transactions-' + address)

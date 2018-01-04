@@ -125,12 +125,7 @@
     /**
      * Interval to save the current app data state, every 10s.
      */
-    setInterval(
-      function () {
-        saveState()
-      },
-      10000
-    )
+    setInterval(() => saveState(), 10000)
 
     return {
       switchContext: switchContext,

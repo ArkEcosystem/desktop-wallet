@@ -30,7 +30,7 @@
       return {
         restrict: 'A',
         link: function (scope, element, attrs) {
-          element.bind('click', function (e) {
+          element.bind('click', (e) => {
             copy(attrs.copyToClipboard)
           })
         }

@@ -134,7 +134,7 @@
         .theme(self.currentTheme)
         .ok(gettextCatalog.getString('Quit'))
         .cancel(gettextCatalog.getString('Cancel'))
-      $mdDialog.show(confirm).then(function () {
+      $mdDialog.show(confirm).then(() => {
         require('electron').remote.app.quit()
       })
     }
@@ -155,7 +155,7 @@
         .ok(gettextCatalog.getString('Yes'))
         .cancel(gettextCatalog.getString('Cancel'))
 
-      $mdDialog.show(confirm).then(function () {
+      $mdDialog.show(confirm).then(() => {
         storageService.clearData()
         self.windowApp('reload')
       })
@@ -213,7 +213,7 @@
     self.openExplorer = openExplorer
     self.timestamp = timestamp
     self.showValidateTransaction = showValidateTransaction
-    networkService.getLatestClientVersion().then(function (r) { self.latestClientVersion = r })
+    networkService.getLatestClientVersion().then((r) => { self.latestClientVersion = r })
     self.isNetworkConnected = false
     self.selected = null
     self.accounts = []
@@ -249,7 +249,7 @@
     self.context = storageService.getContext()
     self.btcValueActive = false
 
-    self.bitcoinCurrency = self.currencies.find(function (currency) {
+    self.bitcoinCurrency = self.currencies.find((currency) => {
       return currency.name === 'btc'
     })
     self.toggleCurrency = self.bitcoinCurrency
@@ -263,7 +263,7 @@
     self.currentTheme = 'default'// self.network.theme
 
     // set 'dynamic' as the default theme
-    generateDynamicPalette(function (name) {
+    generateDynamicPalette((name) => {
       if (name && self.network.theme === name) {
         self.network.theme = name
       }
@@ -275,7 +275,7 @@
     // if (self.network.themeDark) {self.currentTheme = 'dark'}
 
     // refreshing displayed account every 8s
-    $interval(function () {
+    $interval(() => {
       const selected = self.selected
       if (!selected) return
 
@@ -293,7 +293,7 @@
     let nocall = false
 
     // detect Ledger
-    $interval(function () {
+    $interval(() => {
       if (nocall) {
         return
       }
@@ -337,13 +337,13 @@
     self.connection = networkService.getConnection()
 
     self.connection.then(
-      function () {},
-      function () {},
-      function (connectedPeer) {
+      () => {},
+      () => {},
+      (connectedPeer) => {
         self.connectedPeer = connectedPeer
 
         // Wait a little to ignore the initial connection delay and short interruptions
-        $timeout(function () {
+        $timeout(() => {
           if (!self.connectedPeer.isConnected && self.isNetworkConnected) {
             self.isNetworkConnected = false
             toastService.error('Network disconnected!')
@@ -361,7 +361,7 @@
       const currentThemes = $mdThemingProvider.$get().THEMES
       const mapThemes = {}
 
-      Object.keys(currentThemes).forEach(function (theme) {
+      Object.keys(currentThemes).forEach((theme) => {
         const colors = currentThemes[theme].colors
         const names = []
 
@@ -462,9 +462,9 @@
     }
 
     self.myAccounts = function () {
-      return self.accounts.filter(function (account) {
+      return self.accounts.filter((account) => {
         return !!account.virtual
-      }).sort(function (a, b) {
+      }).sort((a, b) => {
         return b.balance - a.balance
       })
     }
@@ -475,9 +475,9 @@
     }
 
     self.otherAccounts = function () {
-      return self.accounts.filter(function (account) {
+      return self.accounts.filter((account) => {
         return !account.virtual
-      }).sort(function (a, b) {
+      }).sort((a, b) => {
         return b.balance - a.balance
       })
     }
@@ -489,7 +489,7 @@
 
     self.selectNextCurrency = function () {
       self.toggleBitcoinCurrency(false)
-      const currenciesNames = self.currencies.map(function (x) {
+      const currenciesNames = self.currencies.map((x) => {
         return x.name
       })
       const currencyIndex = currenciesNames.indexOf(self.currency.name)
@@ -546,7 +546,7 @@
           .ariaLabel(gettextCatalog.getString('Folder Name'))
           .ok(gettextCatalog.getString(buttonText))
           .cancel(gettextCatalog.getString('Cancel'))
-        $mdDialog.show(confirm).then(function (foldername) {
+        $mdDialog.show(confirm).then((foldername) => {
           if (account.virtual[foldername]) {
             formatAndToastError(gettextCatalog.getString(
               'A folder with that name already exists.'
@@ -569,11 +569,11 @@
           .ariaLabel(gettextCatalog.getString('Passphrase'))
           .ok(gettextCatalog.getString('Login'))
           .cancel(gettextCatalog.getString('Cancel'))
-        $mdDialog.show(confirm).then(function (passphrase) {
-          accountService.createVirtual(passphrase).then(function (virtual) {
+        $mdDialog.show(confirm).then((passphrase) => {
+          accountService.createVirtual(passphrase).then((virtual) => {
             account.virtual = virtual
             toastService.success('Succesfully Logged In!', 3000)
-          }, function (err) {
+          }, (err) => {
             toastService.success(gettextCatalog.getString('Error when trying to login: ') + err, 3000, true)
           })
         })
@@ -583,10 +583,10 @@
     function gotoAddress (address) {
       const currentaddress = address
 
-      accountService.fetchAccountAndForget(currentaddress).then(function (a) {
+      accountService.fetchAccountAndForget(currentaddress).then((a) => {
         self.selected = a
 
-        $timeout(function () {
+        $timeout(() => {
           // pluginLoader.triggerEvent("onSelectAccount", self.selected)
           $scope.$broadcast('account:onSelect', self.selected)
         })
@@ -598,7 +598,7 @@
         }
         accountService
           .refreshAccount(self.selected)
-          .then(function (account) {
+          .then((account) => {
             if (self.selected.address === currentaddress) {
               self.selected.balance = account.balance
               self.selected.secondSignature = account.secondSignature
@@ -610,12 +610,12 @@
           })
         accountService
           .getTransactions(currentaddress)
-          .then(function (transactions) {
+          .then((transactions) => {
             if (self.selected.address === currentaddress) {
               if (!self.selected.transactions) {
                 self.selected.transactions = transactions
               } else {
-                transactions = transactions.sort(function (a, b) {
+                transactions = transactions.sort((a, b) => {
                   return b.timestamp - a.timestamp
                 })
 
@@ -630,14 +630,14 @@
 
                 previousTx = null
               }
-              $timeout(function () {
+              $timeout(() => {
                 $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions)
               })
             }
           })
         accountService
           .getVotedDelegates(self.selected.address)
-          .then(function (delegates) {
+          .then((delegates) => {
             if (self.selected.address === currentaddress) {
               self.selected.delegates = delegates
               self.selected.selectedVotes = delegates.slice(0)
@@ -645,7 +645,7 @@
           })
         accountService
           .getDelegate(self.selected.publicKey)
-          .then(function (delegate) {
+          .then((delegate) => {
             if (self.selected.address === currentaddress) {
               self.selected.delegate = delegate
             }
@@ -664,7 +664,7 @@
       const myaccount = self.selected
       accountService
         .refreshAccount(myaccount)
-        .then(function (account) {
+        .then((account) => {
           if (self.selected.address === myaccount.address) {
             self.selected.balance = account.balance
             self.selected.secondSignature = account.secondSignature
@@ -683,12 +683,12 @@
         })
       accountService
         .getTransactions(myaccount.address)
-        .then(function (transactions) {
+        .then((transactions) => {
           if (self.selected.address === myaccount.address) {
             if (!self.selected.transactions) {
               self.selected.transactions = transactions
             } else {
-              transactions = transactions.sort(function (a, b) {
+              transactions = transactions.sort((a, b) => {
                 return b.timestamp - a.timestamp
               })
 
@@ -710,7 +710,7 @@
 
               previousTx = null
             }
-            $timeout(function () {
+            $timeout(() => {
               $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions)
             })
           }
@@ -762,7 +762,7 @@
       self.selected = accountService.getAccount(currentaddress)
       self.selected.ledger = account.ledger
 
-      $timeout(function () {
+      $timeout(() => {
         // pluginLoader.triggerEvent("onSelectAccount", self.selected)
         $scope.$broadcast('account:onSelect', self.selected)
       })
@@ -777,7 +777,7 @@
       }
       accountService
         .refreshAccount(self.selected)
-        .then(function (account) {
+        .then((account) => {
           if (self.selected.address === currentaddress) {
             self.selected.balance = account.balance
             self.selected.secondSignature = account.secondSignature
@@ -789,12 +789,12 @@
         })
       accountService
         .getTransactions(currentaddress)
-        .then(function (transactions) {
+        .then((transactions) => {
           if (self.selected.address === currentaddress) {
             if (!self.selected.transactions) {
               self.selected.transactions = transactions
             } else {
-              transactions = transactions.sort(function (a, b) {
+              transactions = transactions.sort((a, b) => {
                 return b.timestamp - a.timestamp
               })
 
@@ -816,14 +816,14 @@
 
               previousTx = null
             }
-            $timeout(function () {
+            $timeout(() => {
               $scope.$broadcast('account:onRefreshTransactions', self.selected.transactions)
             })
           }
         })
       accountService
         .getVotedDelegates(self.selected.address)
-        .then(function (delegates) {
+        .then((delegates) => {
           if (self.selected.address === currentaddress) {
             self.selected.delegates = delegates
             self.selected.selectedVotes = delegates.slice(0)
@@ -831,7 +831,7 @@
         })
       accountService
         .getDelegate(self.selected.publicKey)
-        .then(function (delegate) {
+        .then((delegate) => {
           if (self.selected.address === currentaddress) {
             self.selected.delegate = delegate
           }
@@ -850,7 +850,7 @@
         const isAddress = /^[1-9A-Za-z]+$/g
         const address = $scope.address
         if (isAddress.test(address)) {
-          accountService.fetchAccount(address).then(function (account) {
+          accountService.fetchAccount(address).then((account) => {
             self.accounts.push(account)
             selectAccount(account)
             toastService.success('Account added!', 3000)
@@ -912,7 +912,7 @@
         }
         $mdDialog.hide()
         accountService.getDelegateByUsername(data.delegatename).then(
-          function (delegate) {
+          (delegate) => {
             if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
               selectedAccount.selectedVotes.push(delegate)
             } else {
@@ -962,7 +962,7 @@
 
       function next () {
         $mdDialog.hide()
-        const publicKeys = $scope.voteDialog.data.votes.map(function (delegate) {
+        const publicKeys = $scope.voteDialog.data.votes.map((delegate) => {
           return delegate.vote + delegate.publicKey
         }).join(',')
         console.log(publicKeys)
@@ -974,7 +974,7 @@
           masterpassphrase: $scope.voteDialog.data.passphrase,
           secondpassphrase: $scope.voteDialog.data.secondpassphrase
         }).then(
-          function (transaction) {
+          (transaction) => {
             showValidateTransaction(selectedAccount, transaction)
           },
           formatAndToastError
@@ -1029,7 +1029,7 @@
           masterpassphrase: $scope.send.data.passphrase,
           secondpassphrase: $scope.send.data.secondpassphrase
         }).then(
-          function (transaction) {
+          (transaction) => {
             showValidateTransaction(selectedAccount, transaction)
           },
           formatAndToastError
@@ -1040,7 +1040,7 @@
         const crypto = require('crypto')
         const fs = require('fs')
 
-        require('electron').remote.dialog.showOpenDialog(function (fileNames) {
+        require('electron').remote.dialog.showOpenDialog((fileNames) => {
           if (fileNames === undefined) return
           const fileName = fileNames[0]
           const algo = 'sha256'
@@ -1049,8 +1049,8 @@
           $scope.send.data.smartbridge = 'Calculating signature....'
           const s = fs.ReadStream(fileName)
 
-          s.on('data', function (d) { shasum.update(d) })
-          s.on('end', function () {
+          s.on('data', (d) => { shasum.update(d) })
+          s.on('end', () => {
             const d = shasum.digest('hex')
             $scope.send.data.smartbridge = d
           })
@@ -1078,7 +1078,7 @@
     }
 
     function sortObj (obj) {
-      return Object.keys(obj).sort(function (a, b) {
+      return Object.keys(obj).sort((a, b) => {
         return obj[a] - obj[b]
       })
     }
@@ -1127,7 +1127,7 @@
 
       const url = _path.resolve(__dirname, match[1].replace(/'/g, ''))
 
-      vibrant.from(url).getPalette(function (err, palette) {
+      vibrant.from(url).getPalette((err, palette) => {
         if (err || !palette.Vibrant) {
           callback(false) // eslint-disable-line standard/no-callback-literal
           return
@@ -1136,7 +1136,7 @@
         const vibrantRatio = {}
         const darkVibrantRatio = {}
 
-        Object.keys(materialPalette).forEach(function (color) {
+        Object.keys(materialPalette).forEach((color) => {
           const vibrantDiff = vibrant.Util.hexDiff(materialPalette[color]['900']['hex'], palette.Vibrant.getHex())
           vibrantRatio[color] = vibrantDiff
 
@@ -1202,7 +1202,7 @@
 
         if (fs.existsSync(_path.resolve(fullPath))) { // check dir exists
           const image = {}
-          fs.readdirSync(fullPath).forEach(function (file) {
+          fs.readdirSync(fullPath).forEach((file) => {
             const stat = fs.statSync(_path.join(fullPath, file)) // to prevent if directory
 
             if (stat.isFile() && isImage(file)) {
@@ -1238,7 +1238,7 @@
           properties: ['openFile']
         }
 
-        require('electron').remote.dialog.showOpenDialog(options, function (fileName) {
+        require('electron').remote.dialog.showOpenDialog(options, (fileName) => {
           if (fileName === undefined) return
           fileName = fileName[0]
 
@@ -1388,7 +1388,7 @@
 
       function createNetwork () {
         networkService.createNetwork($scope.send.createnetwork).then(
-          function (network) {
+          (network) => {
             refreshTabs()
           },
           formatAndToastError
@@ -1402,7 +1402,7 @@
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
           .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
           .cancel(gettextCatalog.getString('Cancel'))
-        $mdDialog.show(confirm).then(function () {
+        $mdDialog.show(confirm).then(() => {
           networkService.removeNetwork(network)
           self.listNetworks = networkService.getNetworks()
           toastService.success('Network removed succesfully!', 3000)
@@ -1435,7 +1435,7 @@
       function save () {
         $mdDialog.hide()
         accountService.savePassphrases($scope.send.data.address, $scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(
-          function (account) {
+          (account) => {
             toastService.success('Passphrases saved')
           },
           formatAndToastError
@@ -1491,7 +1491,7 @@
           masterpassphrase: $scope.createDelegate.data.passphrase,
           secondpassphrase: $scope.createDelegate.data.secondpassphrase
         }).then(
-          function (transaction) {
+          (transaction) => {
             showValidateTransaction(selectedAccount, transaction)
           },
           formatAndToastError
@@ -1535,7 +1535,7 @@
 
           const words = $scope.createAccountDialog.data.repassphrase.split(' ')
           if ($scope.createAccountDialog.data.word3 === words[2] && $scope.createAccountDialog.data.word6 === words[5] && $scope.createAccountDialog.data.word9 === words[8]) {
-            accountService.createAccount($scope.createAccountDialog.data.repassphrase).then(function (account) {
+            accountService.createAccount($scope.createAccountDialog.data.repassphrase).then((account) => {
               self.accounts.push(account)
               toastService.success(
                 gettextCatalog.getString('Account successfully created: ') + account.address,
@@ -1553,7 +1553,7 @@
 
       function querySearch (text) { // eslint-disable-line no-unused-vars
         text = text.toLowerCase()
-        const filter = self.accounts.filter(function (account) {
+        const filter = self.accounts.filter((account) => {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.username && (account.username.toLowerCase().indexOf(text) > -1))
         })
         return filter
@@ -1593,7 +1593,7 @@
 
         accountService.createAccount($scope.send.data.passphrase)
           .then(
-            function (account) {
+            (account) => {
               // Check for already imported account
               for (let i = 0; i < self.accounts.length; i++) {
                 if (self.accounts[i].address === account.address) {
@@ -1663,7 +1663,7 @@
       }
 
       function warnAboutSecondPassphraseFee () {
-        accountService.getFees(true).then(function (fees) {
+        accountService.getFees(true).then((fees) => {
           const secondPhraseArktoshiVal = fees['secondsignature']
           const secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
           const confirm = $mdDialog.confirm({
@@ -1675,7 +1675,7 @@
           })
 
           $mdDialog.show(confirm)
-            .then(function () {
+            .then(() => {
               $mdDialog.show({
                 parent: angular.element(document.getElementById('app')),
                 templateUrl: './src/accounts/view/createSecondPassphrase.html',
@@ -1683,7 +1683,7 @@
                 preserveScope: true,
                 scope: $scope
               })
-            }, function () {
+            }, () => {
               cancel()
             }
             )
@@ -1706,7 +1706,7 @@
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
           }).then(
-            function (transaction) {
+            (transaction) => {
               showValidateTransaction(selectedAccount, transaction)
             },
             formatAndToastError
@@ -1740,10 +1740,10 @@
           filters: [{
             extensions: ['json']
           }]
-        }, function (fileName) {
+        }, (fileName) => {
           if (fileName === undefined) return
 
-          fs.writeFile(fileName, raw, 'utf8', function (err) {
+          fs.writeFile(fileName, raw, 'utf8', (err) => {
             if (err) {
               toastService.error(
                 gettextCatalog.getString('Failed to save transaction file') + ': ' + err,
@@ -1768,7 +1768,7 @@
         transaction.confirmations = 0
 
         networkService.postTransaction(transaction).then(
-          function (transaction) {
+          (transaction) => {
             selectedAccount.transactions.unshift(transaction)
             toastService.success(
               gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),

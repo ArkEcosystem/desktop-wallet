@@ -21,14 +21,14 @@
 
     reset()
 
-    $scope.$on('account:onSelect', function (evt, account) {
+    $scope.$on('account:onSelect', (evt, account) => {
       vm.address = account.address
       reset()
       angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
       updateTransactions(account.transactions)
     })
 
-    $scope.$on('account:onRefreshTransactions', function (evt, transactions) {
+    $scope.$on('account:onRefreshTransactions', (evt, transactions) => {
       reset()
       updateTransactions(transactions)
     })

@@ -12,7 +12,7 @@
     const url = 'https://shapeshift.io/'
 
     let coins = []
-    $http.get(url + 'getcoins/').then(function (resp) {
+    $http.get(url + 'getcoins/').then((resp) => {
       coins = resp.data
     })
 
@@ -41,7 +41,7 @@
         url: url + endpoint.path,
         method: endpoint.method,
         data: data
-      }).then(function (resp) {
+      }).then((resp) => {
         deferred.resolve(resp.data)
       })
 
@@ -51,7 +51,7 @@
     function getMarketInfo (coin1, coin2) {
       const deferred = $q.defer()
 
-      $http.get(url + 'marketinfo/' + coin1 + '_' + coin2).then(function (resp) {
+      $http.get(url + 'marketinfo/' + coin1 + '_' + coin2).then((resp) => {
         deferred.resolve(resp.data)
       })
 

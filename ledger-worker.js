@@ -9,7 +9,7 @@ setInterval(() => {
   })
 }, connected ? 5000 : 1000)
 
-process.on('message', function (message) {
+process.on('message', (message) => {
   if (message.quit) {
     process.exit()
   }

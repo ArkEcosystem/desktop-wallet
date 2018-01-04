@@ -17,18 +17,18 @@ const modules = [
 
 const app = angular.module('arkclient', modules)
 
-app.config(function ($mdIconProvider) {
+app.config(($mdIconProvider) => {
   $mdIconProvider
     .icon('menu', './assets/svg/menu.svg', 24)
     .icon('ledger', './assets/svg/ledger.svg', 24)
     .icon('qrcode', './assets/svg/qrcode.svg', 24)
 })
 
-app.config(function ($provide, $mdThemingProvider) {
+app.config(($provide, $mdThemingProvider) => {
   const themes = appearanceConfig.themes
   const themeNames = Object.keys(themes)
 
-  themeNames.forEach(function (key) {
+  themeNames.forEach((key) => {
     const theme = $mdThemingProvider.theme(key)
       .primaryPalette(themes[key].primary)
       .accentPalette(themes[key].accent)

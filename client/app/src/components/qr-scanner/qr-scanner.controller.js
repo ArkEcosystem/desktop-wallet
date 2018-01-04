@@ -51,7 +51,7 @@
     const init = function () {
       setScanner()
 
-      $timeout(function () {
+      $timeout(() => {
         canvas = document.getElementById('qr-canvas')
         context = canvas.getContext('2d')
         video = document.getElementById('qrcode-scanner-video')

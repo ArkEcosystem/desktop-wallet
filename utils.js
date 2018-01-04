@@ -24,7 +24,7 @@ const LedgerUtils = {}
 LedgerUtils.splitPath = function (path) {
   const result = []
   const components = path.split('/')
-  components.forEach(function (element, index) {
+  components.forEach((element, index) => {
     let number = parseInt(element, 10)
     if (isNaN(number)) {
       return
@@ -44,10 +44,10 @@ LedgerUtils.foreach = function (arr, callback) {
       deferred.resolve(result)
       return
     }
-    callback(array[index], index).then(function (res) {
+    callback(array[index], index).then((res) => {
       result.push(res)
       iterate(index + 1, array, result)
-    }).fail(function (ex) {
+    }).fail((ex) => {
       deferred.reject(ex)
     }).done()
   }
@@ -72,12 +72,11 @@ LedgerUtils.asyncWhile = function (condition, callback) {
       deferred.resolve(result)
       return
     }
-    callback().then(function (res) {
+    callback().then((res) => {
       result.push(res)
       iterate(result)
-    }).fail(function (ex) {
-      deferred.reject(ex)
-    }).done()
+    }).fail((ex) => deferred.reject(ex))
+      .done()
   }
   iterate([])
   return deferred.promise

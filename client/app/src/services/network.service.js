@@ -62,7 +62,7 @@
           method: 'GET',
           timeout: 5000
         }).then(
-          function (resp) {
+          (resp) => {
             newnetwork = resp.data.network
             newnetwork.forcepeer = data.forcepeer
             newnetwork.peerseed = data.peerseed
@@ -72,7 +72,7 @@
             storageService.setGlobal('networks', n)
             deferred.resolve(n[data.name])
           },
-          function (resp) {
+          (resp) => {
             deferred.reject('Cannot connect to peer to autoconfigure the network')
           }
         )
@@ -158,7 +158,7 @@
       }
 
       $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
-        .then(function (res) {
+        .then((res) => {
           if (res.data[0] && res.data[0].price_btc) {
             res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
           }
@@ -167,15 +167,15 @@
           storageService.set('lastPrice', { market: peer.market, date: new Date() })
         }, failedTicker)
         .catch(failedTicker)
-      $timeout(function () {
+      $timeout(() => {
         getPrice()
       }, 5 * 60000)
     }
 
     function listenNetworkHeight () {
-      $http.get(peer.ip + '/api/blocks/getheight', { timeout: 5000 }).then(function (resp) {
+      $http.get(peer.ip + '/api/blocks/getheight', { timeout: 5000 }).then((resp) => {
         timeService.getTimestamp().then(
-          function (timestamp) {
+          (timestamp) => {
             peer.lastConnection = timestamp
             if (resp.data && resp.data.success) {
               if (peer.height === resp.data.height) {
@@ -196,7 +196,7 @@
           }
         )
       })
-      $timeout(function () {
+      $timeout(() => {
         listenNetworkHeight()
       }, 60000)
     }
@@ -216,13 +216,13 @@
         },
         timeout: 5000
       }).then(
-        function (resp) {
+        (resp) => {
           deferred.resolve(resp.data)
           peer.isConnected = true
           peer.delay = new Date().getTime() - peer.lastConnection.getTime()
           connection.notify(peer)
         },
-        function (resp) {
+        (resp) => {
           deferred.reject('Peer disconnected')
           peer.isConnected = false
           peer.error = resp.statusText || 'Peer Timeout after 5s'
@@ -265,7 +265,7 @@
           'port': 1,
           'nethash': network.nethash
         }
-      }).then(function (resp) {
+      }).then((resp) => {
         if (resp.data.success) {
           // we make sure that tx is well broadcasted
           if (!ip) {
@@ -284,9 +284,9 @@
         getFromPeer('/api/peers')
           .then((response) => {
             if (response.success) {
-              getFromPeer('/api/peers/version').then(function (versionResponse) {
+              getFromPeer('/api/peers/version').then((versionResponse) => {
                 if (versionResponse.success) {
-                  let peers = response.peers.filter(function (peer) {
+                  let peers = response.peers.filter((peer) => {
                     return peer.status === 'OK' && peer.version === versionResponse.version
                   })
                   storageService.set('peers', peers)
@@ -308,7 +308,7 @@
         return
       }
       if (index === 0) {
-        peers = peers.sort(function (a, b) {
+        peers = peers.sort((a, b) => {
           return b.height - a.height || a.delay - b.delay
         })
       }
@@ -335,9 +335,9 @@
       const deferred = $q.defer()
       const url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest'
       $http.get(url, { timeout: 5000 })
-        .then(function (res) {
+        .then((res) => {
           deferred.resolve(res.data.tag_name)
-        }, function (e) {
+        }, (e) => {
           // deferred.reject(gettextCatalog.getString("Cannot get latest version"))
         })
       return deferred.promise
@@ -354,7 +354,7 @@
       const USD_PRICE = Number(res.data[0].price_usd)
       const currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
       const prices = {}
-      currencies.forEach(function (currency) {
+      currencies.forEach((currency) => {
         prices[currency.toLowerCase()] = peer.market.conversionRates[currency] * USD_PRICE
       })
       prices['btc'] = res.data[0].price_btc
@@ -386,7 +386,7 @@
     function getConversionRatesApiCall (peer) {
       const currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
       const apiCall = createCurrencyConversionApiCall(currencies)
-      $http.get(apiCall, {timeout: 2000}).then(function (result) {
+      $http.get(apiCall, {timeout: 2000}).then((result) => {
         storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
         peer.market.conversionRates = result.data.rates
       })

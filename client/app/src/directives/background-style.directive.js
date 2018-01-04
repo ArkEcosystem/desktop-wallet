@@ -23,7 +23,7 @@
             }
           }
 
-          const classes = Object.values(textures).reduce(function (all, texture) {
+          const classes = Object.values(textures).reduce((all, texture) => {
             if (all.indexOf(texture.cssClass) === -1) {
               all.push(texture.cssClass)
             }
@@ -35,7 +35,7 @@
           // Used to extract the image path
           const pathRe = /\((.*)\)/
 
-          scope.$watch(attrs.backgroundStyle, function (value) {
+          scope.$watch(attrs.backgroundStyle, (value) => {
             // Check if the background exists
             const mathPath = value.match(pathRe)
             if (mathPath) {
@@ -67,7 +67,7 @@
               }
             }
 
-            classes.forEach(function (textureClass) {
+            classes.forEach((textureClass) => {
               if (newClass !== textureClass) {
                 elem.removeClass(textureClass)
               }

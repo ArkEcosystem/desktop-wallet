@@ -261,14 +261,14 @@
         let accounts = this.accountCtrl.getAllAccounts()
         let contacts = storageService.get('contacts') || []
 
-        contacts = contacts.concat(accounts).sort(function (a, b) {
+        contacts = contacts.concat(accounts).sort((a, b) => {
           if (a.name && b.name) return a.name < b.name
           else if (a.username && b.username) return a.username < b.username
           else if (a.username && b.name) return a.username < b.name
           else if (a.name && b.username) return a.name < b.username
         })
 
-        return contacts.filter(function (account) {
+        return contacts.filter((account) => {
           return (account.address.toLowerCase().indexOf(text) > -1) || (account.name && (account.name.toLowerCase().indexOf(text) > -1))
         })
       }

@@ -2,12 +2,12 @@
   'use strict'
 
   angular.module('arkclient.filters')
-    .filter('exchangedate', function () {
+    .filter('exchangedate', () => {
       return function (exchangetime) {
         return new Date(exchangetime * 1000)
       }
     })
-    .filter('amountToCurrency', function () {
+    .filter('amountToCurrency', () => {
       return function (amount, scope, bitcoinToggleIsActive) {
         if (typeof amount === 'undefined' || !amount) return 0
         // NOTE AccountController is being renaming to `ac` in refactored templates
@@ -22,7 +22,7 @@
         return (amount * price).toFixed(5)
       }
     })
-    .filter('formatCurrency', function () {
+    .filter('formatCurrency', () => {
       return function (val, self, bitcoinToggleIsActive) {
         const currencyName = bitcoinToggleIsActive && self.btcValueActive ? 'btc' : self.currency.name
         const languageCode = self.language.replace('_', '-')

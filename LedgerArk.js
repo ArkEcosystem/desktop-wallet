@@ -17,10 +17,10 @@ LedgerArk.prototype.getAddress_async = function (path) {
   buffer[3] = 0x40
   buffer[4] = 1 + splitPath.length * 4
   buffer[5] = splitPath.length
-  splitPath.forEach(function (element, index) {
+  splitPath.forEach((element, index) => {
     buffer.writeUInt32BE(element, 6 + 4 * index)
   })
-  return this.comm.exchange(buffer.toString('hex'), [0x9000]).then(function (response) {
+  return this.comm.exchange(buffer.toString('hex'), [0x9000]).then((response) => {
     const result = {}
     // console.log(response)
     response = Buffer.from(response, 'hex')
@@ -46,7 +46,7 @@ LedgerArk.prototype.signTransaction_async = function (path, rawTxHex) {
   let response
 
   path = new Buffer(pathLength - 1)
-  splitPath.forEach(function (element, index) {
+  splitPath.forEach((element, index) => {
     path.writeUInt32BE(element, 4 * index)
   })
 
@@ -75,13 +75,13 @@ LedgerArk.prototype.signTransaction_async = function (path, rawTxHex) {
     apdus.push('e0048140' + data2HeaderLength.toString('hex') + data2.toString('hex'))
   }
   // console.log(apdus)
-  return utils.foreach(apdus, function (apdu) {
+  return utils.foreach(apdus, (apdu) => {
     // console.log(apdu)
-    return self.comm.exchange(apdu, [0x9000]).then(function (apduResponse) {
+    return self.comm.exchange(apdu, [0x9000]).then((apduResponse) => {
       response = apduResponse
     // console.log(apduResponse)
     })
-  }).then(function () {
+  }).then(() => {
     // console.log(response)
     const result = {}
     result.signature = response.substring(0, response.length - 4)
@@ -96,7 +96,7 @@ LedgerArk.prototype.getAppConfiguration_async = function () {
   buffer[2] = 0x00
   buffer[3] = 0x00
   buffer[4] = 0x00
-  return this.comm.exchange(buffer.toString('hex'), [0x9000]).then(function (response) {
+  return this.comm.exchange(buffer.toString('hex'), [0x9000]).then((response) => {
     const result = {}
     response = Buffer.from(response, 'hex')
     result['arbitraryDataEnabled'] = (response[0] & 0x01)
@@ -123,7 +123,7 @@ LedgerArk.prototype.signPersonalMessage_async = function (path, messageHex) {
     buffer[4] = (offset === 0 ? 1 + splitPath.length * 4 + 4 + chunkSize : chunkSize)
     if (offset === 0) {
       buffer[5] = splitPath.length
-      splitPath.forEach(function (element, index) {
+      splitPath.forEach((element, index) => {
         buffer.writeUInt32BE(element, 6 + 4 * index)
       })
       buffer.writeUInt32BE(message.length, 6 + 4 * splitPath.length)
@@ -134,11 +134,11 @@ LedgerArk.prototype.signPersonalMessage_async = function (path, messageHex) {
     apdus.push(buffer.toString('hex'))
     offset += chunkSize
   }
-  return utils.foreach(apdus, function (apdu) {
-    return self.comm.exchange(apdu, [0x9000]).then(function (apduResponse) {
+  return utils.foreach(apdus, (apdu) => {
+    return self.comm.exchange(apdu, [0x9000]).then((apduResponse) => {
       response = apduResponse
     })
-  }).then(function () {
+  }).then(() => {
     response = Buffer.from(response, 'hex')
     const result = {}
     result['v'] = response[0]

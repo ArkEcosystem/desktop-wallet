@@ -22,7 +22,7 @@
     self.plugincontent = {}
 
     // load all plugin configurations
-    plugins.forEach(function (element) {
+    plugins.forEach((element) => {
       const conf = JSON.parse(readFile(path.join(pluginsDirectory, element, confFilename)))
       if (conf.enabled === 'true') {
         self.plugincontent[element] = conf
@@ -47,7 +47,7 @@
         }
       }
       // iterate over all plugins
-      plugins.forEach(function (element) {
+      plugins.forEach((element) => {
         const plugin = self.plugincontent[element]
         // if plugin has event defined in configuration
         if (plugin && plugin['events'][eventname]) {
@@ -63,7 +63,7 @@
     // helper functions for os operations
     function getDirectories (dir) {
       try {
-        return fs.readdirSync(dir).filter(function (file) {
+        return fs.readdirSync(dir).filter((file) => {
           const stat = fs.statSync(dir + '/' + file)
           return stat.isDirectory()
         })

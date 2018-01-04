@@ -1,7 +1,7 @@
 (function () {
   const app = angular.module('shapeshiftwidget', ['ui.router', 'monospaced.qrcode'])
 
-  app.controller('WidgetCtrl', function ($scope, $interval) {})
+  app.controller('WidgetCtrl', ($scope, $interval) => {})
 
   app.directive('coinError', ['ShapeShiftApiService', function (ShapeShiftApiService) {
     return {
@@ -69,7 +69,7 @@
         const coinTraderCtrl = controllers[0]
         scope.class = attrs.class
         // scope.direction = attrs.direction;
-        scope.$watch('coinAddress', function (newVal) {
+        scope.$watch('coinAddress', (newVal) => {
           console.log(newVal)
           if (scope.direction === 'in') {
             coinTraderCtrl.returnAddress(newVal)
@@ -77,7 +77,7 @@
             coinTraderCtrl.withdrawalAddress(newVal)
           }
         })
-        scope.$watch('amount', function (newVal) {
+        scope.$watch('amount', (newVal) => {
           console.log(newVal)
           coinTraderCtrl.amount(newVal)
         })
@@ -120,12 +120,12 @@
           if ($scope.coinIn === undefined || $scope.coinOut === undefined) return
           ShapeShiftApiService
             .marketInfo($scope.coinIn, $scope.coinOut)
-            .then(function (marketData) {
+            .then((marketData) => {
               $scope.marketData = marketData
             })
         }
 
-        ShapeShiftApiService.coins().then(function (coins) {
+        ShapeShiftApiService.coins().then((coins) => {
           $scope.coins = coins
           $scope.coinIn = coins['BTC'].symbol
           $scope.coinOut = coins['LTC'].symbol
@@ -140,11 +140,11 @@
         $scope.shiftIt = function () {
           console.log($scope.coinOut)
           const validate = ShapeShiftApiService.ValidateAddress($scope.withdrawalAddress, $scope.coinOut)
-          validate.then(function (valid) {
+          validate.then((valid) => {
             console.log($scope.withdrawalAddress)
             console.log(valid)
             const tx = ShapeShift()
-            tx.then(function (txData) {
+            tx.then((txData) => {
               let coin
               if (txData['fixedTxData']) {
                 txData = txData.fixedTxData
@@ -188,7 +188,7 @@
 
         $scope.GetStatus = function () {
           const address = $scope.depositInfo.deposit
-          ShapeShiftApiService.GetStatusOfDepositToAddress(address).then(function (data) {
+          ShapeShiftApiService.GetStatusOfDepositToAddress(address).then((data) => {
             $scope.DepositStatus = data
             if ($scope.DepositStatus.status === 'complete') {
               $interval.cancel($scope.txInterval)
@@ -202,14 +202,14 @@
     }
   }])
 
-  app.service('ShapeShiftApiService', function ($q) {
+  app.service('ShapeShiftApiService', ($q) => {
     const SSA = new ShapeShift.ShapeShiftApi() // eslint-disable-line no-undef
     return {
       coins: function () {
         const promise = $q.defer()
         let coins = null
         if (coins === null) {
-          SSA.GetCoins(function (data) {
+          SSA.GetCoins((data) => {
             coins = data
             promise.resolve(coins)
           })
@@ -220,7 +220,7 @@
       },
       marketInfo: function (coinIn, coinOut) {
         const promise = $q.defer()
-        SSA.GetMarketInfo(coinIn, coinOut, function (data) {
+        SSA.GetMarketInfo(coinIn, coinOut, (data) => {
           promise.resolve(data)
         })
         return promise.promise
@@ -233,7 +233,7 @@
           $scope.coinIn, $scope.coinOut
         )
         console.log(fixedTx)
-        SSA.FixedAmountTx(fixedTx, function (data) {
+        SSA.FixedAmountTx(fixedTx, (data) => {
           console.log(data)
           return promise.resolve({ fixedTxData: data.success })
         })
@@ -242,7 +242,7 @@
       NormalTx: function ($scope) {
         const promise = $q.defer()
         const normalTx = SSA.CreateNormalTx($scope.withdrawalAddress, $scope.coinIn, $scope.coinOut)
-        SSA.NormalTx(normalTx, function (data) {
+        SSA.NormalTx(normalTx, (data) => {
           promise.resolve({ normalTxData: data })
         })
         return promise.promise
@@ -250,21 +250,21 @@
       CancelTx: function ($scope) {
         const promise = $q.defer()
         SSA.CancelPendingTx({ address: $scope.depositInfo.deposit },
-          function (data) {
+          (data) => {
             promise.resolve({ cancelTxData: data })
           })
         return promise.promise
       },
       GetStatusOfDepositToAddress: function (address) {
         const promise = $q.defer()
-        SSA.GetStatusOfDepositToAddress(address, function (data) {
+        SSA.GetStatusOfDepositToAddress(address, (data) => {
           promise.resolve(data)
         })
         return promise.promise
       },
       ValidateAddress: function (address, coin) {
         const promise = $q.defer()
-        SSA.ValidateAdddress(address, coin, function (data) {
+        SSA.ValidateAdddress(address, coin, (data) => {
           promise.resolve(data)
         })
         return promise.promise
