@@ -23,7 +23,6 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
-      'ARKTOSHI_UNIT',
       '$rootScope',
       'transactionBuilderService',
       'utilityService',
@@ -57,7 +56,6 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
-    ARKTOSHI_UNIT,
     $rootScope,
     transactionBuilderService,
     utilityService
@@ -522,7 +520,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI_UNIT)
+      accountService.setToFolder(account.address, folder, utilityService.arkToArktoshi(account.virtual.uservalue(folder)()))
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -1665,11 +1663,11 @@
       function warnAboutSecondPassphraseFee () {
         accountService.getFees(true).then((fees) => {
           const secondPhraseArktoshiVal = fees['secondsignature']
-          const secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+          const secondPhraseArkVal = utilityService.arktoshiToArk(secondPhraseArktoshiVal, true)
           const confirm = $mdDialog.confirm({
-            title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
+            title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee') + ' (' + networkService.getNetwork().symbol + ')',
             secondPhraseArkVal: secondPhraseArkVal,
-            textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+            textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' ' + networkService.getNetwork().token + '.'),
             ok: gettextCatalog.getString('Continue'),
             cancel: gettextCatalog.getString('Cancel')
           })

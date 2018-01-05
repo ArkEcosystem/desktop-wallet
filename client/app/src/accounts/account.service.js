@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARKTOSHI_UNIT', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARK_LAUNCH_DATE', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARKTOSHI_UNIT) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARK_LAUNCH_DATE) {
     const self = this
     const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -36,15 +36,11 @@
 
     self.peer = networkService.getPeer().ip
 
-    function showTimestamp (time) { // eslint-disable-line no-unused-vars
-      const d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-
-      const t = parseInt(d.getTime() / 1000)
-
-      time = new Date((time + t) * 1000)
+    function showTimestamp (timestamp) { // eslint-disable-line no-unused-vars
+      const date = utilityService.arkStampToDate(timestamp)
 
       const currentTime = new Date().getTime()
-      const diffTime = (currentTime - time.getTime()) / 1000
+      const diffTime = (currentTime - date.getTime()) / 1000
 
       if (diffTime < 60) {
         return Math.floor(diffTime) + ' sec ago'
@@ -241,18 +237,15 @@
       let label = gettextCatalog.getString(self.TxTypes[transaction.type])
 
       if (recipientAddress && transaction.recipientId === recipientAddress && transaction.type === 0) {
-        label = gettextCatalog.getString('Receive Ark')
+        label = gettextCatalog.getString('Receive') + ' ' + networkService.getNetwork().token
       }
 
       return label
     }
 
     function formatTransaction (transaction, recipientAddress) {
-      const d = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-      const t = parseInt(d.getTime() / 1000)
-
       transaction.label = getTransactionLabel(transaction, recipientAddress)
-      transaction.date = new Date((transaction.timestamp + t) * 1000)
+      transaction.date = utilityService.arkStampToDate(transaction.timestamp)
       if (transaction.recipientId === recipientAddress) {
         transaction.total = transaction.amount
       // if (transaction.type == 0) {
@@ -319,23 +312,10 @@
       return deferred.promise
     }
 
-    // todo: move to utilityService
-    // todo: add tests there
-    function getArkRelativeTimeStamp (date) {
-      if (!date) {
-        return null
-      }
-
-      date = new Date(date.toUTCString())
-
-      const arkStartDate = new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0))
-      return parseInt((date.getTime() - arkStartDate.getTime()) / 1000)
-    }
-
     // this methods only works correctly, as long as getAllTransactions returns the transactions ordered by new to old!
     function getRangedTransactions (address, startDate, endDate, onUpdate) {
-      const startStamp = getArkRelativeTimeStamp(!startDate ? new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0)) : startDate)
-      const endStamp = getArkRelativeTimeStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
+      const startStamp = utilityService.dateToArkStamp(!startDate ? ARK_LAUNCH_DATE : startDate)
+      const endStamp = utilityService.dateToArkStamp(!endDate ? new Date(new Date().setHours(23, 59, 59, 59)) : endDate)
 
       const deferred = $q.defer()
 
@@ -693,10 +673,10 @@
                 if (value === null) {
                   virtual[folder].amount = null
                 } else {
-                  virtual[folder].amount = value * ARKTOSHI_UNIT
+                  virtual[folder].amount = utilityService.arkToArktoshi(value)
                 }
               } else {
-                return virtual[folder].amount === null ? '' : virtual[folder].amount / ARKTOSHI_UNIT
+                return virtual[folder].amount === null ? '' : utilityService.arktoshiToArk(virtual[folder].amount, true)
               }
             }
           }

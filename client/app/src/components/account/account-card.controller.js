@@ -14,10 +14,10 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', 'transactionBuilderService', 'utilityService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'utilityService', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService, transactionBuilderService, utilityService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionBuilderService, utilityService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
       this.ab = this.addressBookCtrl
@@ -141,7 +141,7 @@
         publicKey: selectedAccount.publicKey,
         fromAddress: formData.fromAddress,
         toAddress: formData.toAddress,
-        amount: parseInt((formData.amount * ARKTOSHI_UNIT).toFixed(0)),
+        amount: parseInt(utilityService.arkToArktoshi(formData.amount, 0)),
         smartbridge: formData.smartbridge,
         masterpassphrase: formData.passphrase,
         secondpassphrase: formData.secondpassphrase

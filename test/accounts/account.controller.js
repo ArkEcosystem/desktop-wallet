@@ -55,6 +55,8 @@ describe('AccountController', () => {
     }
   }
 
+  beforeEach(module('arkclient.constants'))
+
   beforeEach(() => {
     module('arkclient.accounts', $provide => {
       accountServiceMock = {
@@ -133,7 +135,6 @@ describe('AccountController', () => {
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('$mdToast', mdToastMock)
       $provide.value('gettextCatalog', getTextCatalogMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject((_$compile_, _$rootScope_, _$controller_) => {

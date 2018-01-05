@@ -33,6 +33,7 @@ module.exports = function (config) {
 
       // Subjects under test
       '../client/app/src/init.js',
+      '../client/app/src/constants/constants.js',
       '../client/app/src/accounts/account.service.js',
       '../client/app/src/accounts/transaction-builder.service.js',
       '../client/app/src/accounts/account.controller.js',

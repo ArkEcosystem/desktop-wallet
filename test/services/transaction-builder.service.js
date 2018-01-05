@@ -50,6 +50,8 @@ describe('transactionBuilderService', () => {
     }
   }
 
+  beforeEach(module('arkclient.constants'))
+
   beforeEach(module((_$exceptionHandlerProvider_) => _$exceptionHandlerProvider_.mode('log')))
 
   beforeEach(() => {
@@ -68,7 +70,6 @@ describe('transactionBuilderService', () => {
       $provide.value('gettextCatalog', gettextCatalogMock)
       $provide.value('networkService', networkServiceMock)
       $provide.value('ledgerService', ledgerServiceMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject(($injector, _$rootScope_) => {
