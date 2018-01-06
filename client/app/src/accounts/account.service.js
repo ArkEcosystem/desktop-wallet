@@ -401,6 +401,10 @@
       return deferred.promise
     }
 
+    function isValidAddress (address) {
+      return ark.crypto.validateAddress(address, networkService.getNetwork().version)
+    }
+
     function getDelegate (publicKey) {
       var deferred = $q.defer()
       if (!publicKey) {
@@ -791,6 +795,8 @@
       getAllTransactions: getAllTransactions,
 
       getRangedTransactions: getRangedTransactions,
+
+      isValidAddress: isValidAddress,
 
       verifyMessage: verifyMessage,
 
