@@ -121,9 +121,10 @@
       }
 
       $scope.bs = {
+        label: selectedAccount.username,
         address: selectedAccount.address,
-        answer: answer,
-        items: items
+        answer,
+        items
       }
 
       $mdBottomSheet.show({
@@ -162,6 +163,7 @@
       let data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
+        fromLabel: selectedAccount ? selectedAccount.username : null,
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
         passphrase: passphrases[0] ? passphrases[0] : '',
         secondpassphrase: passphrases[1] ? passphrases[1] : ''
