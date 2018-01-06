@@ -122,8 +122,8 @@
 
       $scope.bs = {
         address: selectedAccount.address,
-        answer: answer,
-        items: items
+        answer,
+        items
       }
 
       $mdBottomSheet.show({
@@ -168,18 +168,18 @@
       }
 
       const openFile = () => {
-        var fs = require('fs')
+        const fs = require('fs')
 
         require('electron').remote.dialog.showOpenDialog(fileNames => {
           if (fileNames === undefined) return
-          var fileName = fileNames[0]
+          const fileName = fileNames[0]
 
           fs.readFile(fileName, 'utf8', (err, data) => {
             if (err) {
               toastService.error('Unable to load file' + ': ' + err)
             } else {
               try {
-                var transaction = JSON.parse(data)
+                const transaction = JSON.parse(data)
 
                 if (transaction.type === undefined) {
                   return toastService.error('Invalid transaction file')
@@ -285,15 +285,15 @@
       $scope.ac = this.accountCtrl
 
       $scope.send = {
-        openFile: openFile,
-        data: data,
-        cancel: cancel,
-        submit: submit,
-        checkContacts: checkContacts,
-        searchTextChange: searchTextChange,
-        selectedContactChange: selectedContactChange,
-        querySearch: querySearch,
-        fillSendableBalance: fillSendableBalance,
+        openFile,
+        data,
+        cancel,
+        submit,
+        checkContacts,
+        searchTextChange,
+        selectedContactChange,
+        querySearch,
+        fillSendableBalance,
         totalBalance: getTotalBalance(0),
         remainingBalance: getTotalBalance(0) // <-- initial value, this will change by directive
       }
