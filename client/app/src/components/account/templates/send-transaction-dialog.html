@@ -2,7 +2,8 @@
   <form name="sendArkForm" ng-submit="send.submit()">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2><span>{{'Send'|translate}} {{ac.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
+        <h2 ng-if="send.data.fromLabel"><span>{{'Send'|translate}} {{ac.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromLabel}} ({{send.data.fromAddress}})</h2>
+        <h2 ng-if="! send.data.fromLabel"><span>{{'Send'|translate}} {{ac.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="send.cancel()">
           <md-icon md-font-library="material-icons">clear</md-icon>
@@ -25,7 +26,10 @@
             </md-item-template>
           </md-autocomplete>
         </div>
-
+        <div layout="row" flex layout-align="start center" ng-if="receiverValidation.failType">
+          <md-icon flex="5" md-font-library="material-icons">{{receiverValidation.failType}}</md-icon>
+          <div flex="95">{{receiverValidation.message}}</div>
+        </div>
         <div layout="row" layout-align="space-between start">
           <md-input-container class="md-block" style="width: 100%">
             <label>{{'Amount'|translate}} ({{ac.network.token}})</label>
@@ -61,7 +65,7 @@
       <md-button ng-click="send.openFile()">
         <span translate>Load Tx From File</span>
       </md-button>
-      <md-button type="submit" ng-disabled="sendArkForm.$invalid" tabIndex="6">
+      <md-button type="submit" ng-disabled="sendArkForm.$invalid || receiverValidation.failType === 'error'" tabIndex="6">
         <translate ng-if="!send.data.ledger">Next</translate>
         <translate ng-if="send.data.ledger">Sign with Ledger</translate>
       </md-button>

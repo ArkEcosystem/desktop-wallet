@@ -23,8 +23,9 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
-      'ARKTOSHI_UNIT',
       '$rootScope',
+      'transactionBuilderService',
+      'utilityService',
       AccountController
     ])
 
@@ -55,8 +56,9 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
-    ARKTOSHI_UNIT,
-    $rootScope
+    $rootScope,
+    transactionBuilderService,
+    utilityService
   ) {
     const _path = require('path')
 
@@ -516,7 +518,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI_UNIT)
+      accountService.setToFolder(account.address, folder, utilityService.arkToArktoshi(account.virtual.uservalue(folder)()))
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -907,7 +909,7 @@
 
         $mdDialog.hide()
         var smartbridge = $scope.send.data.smartbridge
-        accountService.createTransaction(0, {
+        transactionBuilderService.createSendTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.send.data.fromAddress,
@@ -1371,7 +1373,7 @@
           return formatAndToastError(error)
         }
 
-        accountService.createTransaction(2, {
+        transactionBuilderService.createDelegateCreationTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.createDelegate.data.fromAddress,
@@ -1528,20 +1530,15 @@
     }
 
     function exportAccount (account) {
-      var eol = require('os').EOL
-      var transactions = storageService.get(`transactions-${account.address}`)
-
-      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + account.balance + eol + 'Transactions:' + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
-      transactions.forEach(function (trns) {
-        var date = new Date(trns.date)
-        filecontent = filecontent + trns.id + ',' + trns.confirmations + ',' + date.toISOString() + ',' + trns.label + ',' + trns.humanTotal + ',' + trns.senderId + ',' + trns.recipientId +
-          ',' + trns.vendorField + eol
+      $mdDialog.show({
+        templateUrl: './src/accounts/view/exportAccount.html',
+        controller: 'ExportAccountController',
+        escapeToClose: false,
+        locals: {
+          account: account,
+          theme: self.currentTheme
+        }
       })
-      var blob = new Blob([filecontent])
-      var downloadLink = document.createElement('a')
-      downloadLink.setAttribute('download', account.address + '.csv')
-      downloadLink.setAttribute('href', window.URL.createObjectURL(blob))
-      downloadLink.click()
     }
 
     // Add a second passphrase to an account
@@ -1556,14 +1553,14 @@
       }
 
       function warnAboutSecondPassphraseFee () {
-        accountService.getFees().then(
+        accountService.getFees(true).then(
               function (fees) {
                 let secondPhraseArktoshiVal = fees['secondsignature']
-                var secondPhraseArkVal = secondPhraseArktoshiVal / ARKTOSHI_UNIT
+                var secondPhraseArkVal = utilityService.arktoshiToArk(secondPhraseArktoshiVal, true)
                 var confirm = $mdDialog.confirm({
-                  title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee (Ѧ)'),
+                  title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee') + ' (' + networkService.getNetwork().symbol + ')',
                   secondPhraseArkVal: secondPhraseArkVal,
-                  textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' Ark.'),
+                  textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' ' + networkService.getNetwork().token + '.'),
                   ok: gettextCatalog.getString('Continue'),
                   cancel: gettextCatalog.getString('Cancel')
                 })
@@ -1595,7 +1592,7 @@
         } else if ($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase) {
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true
         } else {
-          accountService.createTransaction(1, {
+          transactionBuilderService.createSecondPassphraseCreationTransaction({
             fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
@@ -1689,8 +1686,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI_UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI_UNIT).toString()
+        humanAmount: utilityService.arktoshiToArk(transaction.amount).toString(),
+        totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true).toString()
       }
 
       $mdDialog.show({

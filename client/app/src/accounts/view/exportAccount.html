@@ -1,0 +1,79 @@
+<md-dialog aria-label="{{'Export account'|translate}}" ng-cloak md-theme="vm.theme">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 md-truncate flex translate>
+        Export account
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <div ng-if="vm.hasStarted" style="text-align:center;">
+        <div ng-if="!vm.isFinished">
+          <md-progress-circular style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
+          <div translate>
+            Getting transactions from {{vm.getStartLabel()}} - {{vm.getEndLabel()}}!
+          </div>
+          <div translate>
+              Depending on your history, this may take a while.
+          </div>
+          <div ng-if="vm.numberOfReceivedTransactions">
+            <span translate>Received {{vm.numberOfReceivedTransactions}} transactions.</span>..
+          </div>
+        </div>
+        <div ng-if="vm.isFinished">
+          <md-icon md-font-library="material-icons"
+                   md-colors="{'color' : 'default-green' }"
+                   style="font-size: 60px; height: 60px; width: 60px; padding-bottom: 45px;">
+            check_circle
+          </md-icon>
+          <div translate style="padding-bottom: 20px" translate>
+            Received {{vm.numberOfReceivedTransactions}} transactions.
+          </div>
+          <md-dialog-actions layout="row">
+            <md-button ng-click="vm.downloadFile()">
+              <span translate>Download File</span>
+            </md-button>
+            <md-button ng-click="vm.cancel()">
+              <span translate>Cancel</span>
+            </md-button>
+          </md-dialog-actions>
+        </div>
+      </div>
+      <div ng-if="!vm.hasStarted">
+        <form name="exportForm">
+          <md-card flex="100">
+              <md-card-title>
+                <md-card-title-text>
+                  <span>
+                    <translate>
+                      Select the timespan of the transactions which should be included when you export your account.
+                      Note that it can take quite a while if you choose a wide or old date range!
+                    </translate>
+                  </span>
+                </md-card-title-text>
+              </md-card-title>
+          </md-card>
+          <div layout="row" flex layout-align="start start">
+            <md-input-container class="md-block" flex="50">
+              <translate>Start date</translate>
+              <md-datepicker ng-model="vm.startDate" md-min-date="vm.minDate"></md-datepicker>
+            </md-input-container>
+            <md-input-container class="md-block" flex="50">
+                <translate>End date</translate>
+                <md-datepicker ng-model="vm.endDate" md-min-date="vm.minDate"></md-datepicker>
+              </md-input-container>
+          </div>
+          <md-dialog-actions layout="row">
+              <md-button ng-click="vm.exportAccount()" ng-disabled="exportForm.$invalid">
+                <span translate>Start export</span>
+              </md-button>
+              <md-button ng-click="vm.cancel()">
+                  <span translate>Cancel</span>
+              </md-button>
+          </md-dialog-actions>
+        </form>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>
