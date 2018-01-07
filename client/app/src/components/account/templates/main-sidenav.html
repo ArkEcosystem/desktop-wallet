@@ -38,9 +38,9 @@
       <md-icon ng-if="$ctrl.ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = $ctrl.ab.getStats($ctrl.ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
         info_outline
         <md-tooltip md-direction="bottom" class="tooltip-multiline">
-          {{'Income' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
+          {{'Income' | translate}}: {{$ctrl.ul.network.symbol}} {{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
           <br>
-          {{'Expense' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
+          {{'Expense' | translate}}: {{$ctrl.ul.network.symbol}} {{stats.expend.amount}} ({{stats.expend.transactions}} {{'Transactions' | translate | lowercase}})
         </md-tooltip>
       </md-icon>
     </span>
