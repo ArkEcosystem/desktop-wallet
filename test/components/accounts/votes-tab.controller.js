@@ -39,15 +39,18 @@ describe('VotesTabController', function () {
   let $scope,
     ctrl,
     accountServiceMock,
+    transactionBuilderServiceMock,
     mdDialogMock,
     toastServiceMock
 
   beforeEach(() => {
     accountServiceMock = {
-      createTransaction: angular.noop,
       getActiveDelegates: angular.noop,
       getDelegateByUsername: angular.noop,
       getActiveDelegates: angular.noop
+    }
+    transactionBuilderServiceMock = {
+      createVoteTransaction: angular.noop
     }
     mdDialogMock = {
       show: angular.noop,
@@ -55,9 +58,11 @@ describe('VotesTabController', function () {
     }
     module('arkclient.components', $provide => {
       $provide.value('accountService', accountServiceMock)
+      $provide.value('transactionBuilderService', transactionBuilderServiceMock)
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('toastService', toastServiceMock)
       $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
+      $provide.value('ARK_LAUNCH_DATE', new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0)))
       $provide.value('TRANSACTION_TYPES', {
         'SEND_ARK': 0,
         'CREATE_SECOND_PASSPHRASE': 1,
@@ -76,7 +81,7 @@ describe('VotesTabController', function () {
   createTransactionStub
 
   beforeEach(() => {
-    createTransactionStub = sinon.stub(accountServiceMock, 'createTransaction').resolves({})
+    createTransactionStub = sinon.stub(transactionBuilderServiceMock, 'createVoteTransaction').resolves({})
     mdDialogShowStub = sinon.stub(mdDialogMock, 'show').returns(new Promise((resolve, reject) => resolve({
       new_delegate: MOCK_DELEGATE,
       passphrases: {
@@ -110,7 +115,7 @@ describe('VotesTabController', function () {
         ctrl.vote(ctrl.account)
 
         mdDialogShowStub().then(payload => {
-          sinon.assert.calledWith(createTransactionStub, 3, {
+          sinon.assert.calledWith(createTransactionStub, {
             ledger: ctrl.account.ledger,
             publicKey: ctrl.account.publicKey,
             fromAddress: ctrl.account.address,
@@ -142,7 +147,7 @@ describe('VotesTabController', function () {
         ctrl.vote(ctrl.account, MOCK_DELEGATE)
 
         mdDialogShowStub().then(payload => {
-          sinon.assert.calledWith(createTransactionStub, 3, {
+          sinon.assert.calledWith(createTransactionStub, {
             ledger: ctrl.account.ledger,
             publicKey: ctrl.account.publicKey,
             fromAddress: ctrl.account.address,

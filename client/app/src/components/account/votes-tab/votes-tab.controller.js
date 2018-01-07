@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  let VotesTabController = function VotesTabController ($scope, $mdDialog, accountService, networkService, toastService, TRANSACTION_TYPES) {
+  let VotesTabController = function VotesTabController ($scope, $mdDialog, accountService, transactionBuilderService, networkService, toastService, TRANSACTION_TYPES) {
     this.accountAddress = ''
     this.delegates = []
     this.network = networkService.getNetwork()
@@ -58,7 +58,7 @@
             secondpassphrase: payload.passphrases.second
           }
 
-          accountService.createTransaction(TRANSACTION_TYPES.VOTE, transactionObj).then((transaction) => {
+          transactionBuilderService.createVoteTransaction(transactionObj).then((transaction) => {
             // TODO refactor this method to a service so we don't have to pass in the entire 'ul' ctrl. Callback in the interim
             this.ul.showValidateTransaction(this.account, transaction, (completedTransaction) => {
               if (delegateToUnvote) {
