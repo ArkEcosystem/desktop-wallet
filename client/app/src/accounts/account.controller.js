@@ -723,13 +723,15 @@
     }
 
     self.refreshAccountBalances = (showToast) => {
-      if (!self.accountsRefreshState.shouldRefresh()) {
+      const accounts = self.getAllAccounts()
+
+      if (!accounts.length || !self.accountsRefreshState.shouldRefresh()) {
         return
       }
 
       networkService.getPrice()
 
-      self.getAllAccounts().forEach(account => {
+      accounts.forEach(account => {
         var state = self.accountsRefreshState.create()
         accountService
           .refreshAccount(account)
