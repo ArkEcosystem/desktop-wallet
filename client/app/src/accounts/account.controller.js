@@ -237,8 +237,6 @@
     self.manageNetworks = manageNetworks
     self.openPassphrasesDialog = openPassphrasesDialog
     self.createDelegate = createDelegate
-    self.vote = vote
-    self.addDelegate = addDelegate
     self.currency = storageService.get('currency') || self.currencies[0]
     self.switchNetwork = networkService.switchNetwork
     self.marketinfo = {}
@@ -892,112 +890,6 @@
       if (selectedAccount.selectedVotes) {
         return arrayUnique(selectedAccount.selectedVotes.concat(selectedAccount.delegates))
       } else return selectedAccount.delegates
-    }
-
-    function addDelegate (selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] }
-      $scope.controls = []
-      accountService.getActiveDelegates().then((r) => {
-        data.registeredDelegates = r
-      }).catch(() => toastService.error('Could not fetch active delegates - please check your internet connection'))
-
-      function add () {
-        function indexOfDelegates (array, item) {
-          for (var i in array) {
-            if (array[i].username === item.username) {
-              return i
-            }
-          }
-          return -1
-        }
-        $mdDialog.hide()
-        accountService.getDelegateByUsername(data.delegatename).then(
-          function (delegate) {
-            if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
-              selectedAccount.selectedVotes.push(delegate)
-            } else {
-              toastService.error('List full or delegate already voted.')
-            }
-          },
-          formatAndToastError
-        )
-      }
-      $scope.controls = [{}]
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.addDelegateDialog = {
-        data: data,
-        cancel: cancel,
-        add: add
-      }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/addDelegate.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
-    }
-
-    function vote (selectedAccount) {
-      var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes)
-      if (!votes || votes.length === 0) {
-        toastService.error('No difference from original delegate list')
-        return
-      }
-      votes = votes[0]
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = {
-        ledger: selectedAccount.ledger,
-        fromAddress: selectedAccount ? selectedAccount.address : '',
-        secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : '',
-        votes: votes
-      }
-
-      function next () {
-        $mdDialog.hide()
-        var publicKeys = $scope.voteDialog.data.votes.map(function (delegate) {
-          return delegate.vote + delegate.publicKey
-        }).join(',')
-        console.log(publicKeys)
-        transactionBuilderService.createVoteTransaction({
-          ledger: selectedAccount.ledger,
-          publicKey: selectedAccount.publicKey,
-          fromAddress: $scope.voteDialog.data.fromAddress,
-          publicKeys: publicKeys,
-          masterpassphrase: $scope.voteDialog.data.passphrase,
-          secondpassphrase: $scope.voteDialog.data.secondpassphrase
-        }).then(
-          function (transaction) {
-            showValidateTransaction(selectedAccount, transaction)
-          },
-          formatAndToastError
-        )
-      }
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.voteDialog = {
-        data: data,
-        cancel: cancel,
-        next: next
-      }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/vote.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
     }
 
     function timestamp (selectedAccount) {
@@ -1740,7 +1632,7 @@
       self.selected.signedMessages = storageService.get('signed-' + self.selected.address)
     }
 
-    function showValidateTransaction (selectedAccount, transaction) {
+    function showValidateTransaction (selectedAccount, transaction, cb) {
       function saveFile () {
         var fs = require('fs')
         var raw = JSON.stringify(transaction)
@@ -1785,6 +1677,10 @@
               null,
               true
             )
+
+            if (cb && typeof cb === 'function') {
+              cb(transaction)
+            }
           },
           formatAndToastError
         )
