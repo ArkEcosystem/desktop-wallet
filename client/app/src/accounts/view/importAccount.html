@@ -20,10 +20,14 @@
         </md-card-title>
       </md-card>
       <passphrase-field ng-model="send.data.passphrase" label="Passphrase" auto-focus="true"></passphrase-field>
-      <!--<md-input-container md-no-float class="md-block">
-        <label>Second Passphrase</label>
-        <input ng-model="send.data.secondpassphrase" type="text">
-      </md-input-container>-->
+      <div layout="row" flex style="margin-top: -20px;">
+        <md-switch ng-model="send.data.customPassphrase" aria-label="Use a custom (non-BIP39) passphrase" class="md-primary" md-no-ink style="margin: 4px 0;">
+          <translate>Use a custom (non-BIP39) passphrase</translate>
+        </md-switch>
+        <md-button class="md-icon-button" open-external="'https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki'">
+          <md-icon md-font-library="material-icons">help</md-icon>
+        </md-button>
+      </div>
     </div>
     <md-dialog-actions layout="row">
       <md-button type="submit" ng-disabled="importAccountForm.$invalid">
