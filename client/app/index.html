@@ -78,7 +78,7 @@
             <div ng-controller="AccountTransactionsController as transactionsCtrl">
               <transaction-tab account-ctrl="ul" transactions-ctrl="transactionsCtrl"></transaction-tab>
             </div>
-            <votes-tab account-ctrl="ul"></votes-tab>
+            <votes-tab account="ul.selected" account-ctrl="ul" theme="ul.currentTheme"></votes-tab>
             <signing-tab account-ctrl="ul" ng-if="!ul.selected.ledger"></signing-tab>
             <exchange-tab account-ctrl="ul"></exchange-tab>
             <offchain-tab account-ctrl="ul"></offchain-tab>
@@ -88,7 +88,6 @@
         </md-content>
       </div>
     </div>
-
   </div>
 
   <link rel="stylesheet" href="assets/css/roboto.css" />
@@ -114,6 +113,7 @@
   <script src="src/services/time.service.js"></script>
   <script src="src/services/toast.service.js"></script>
   <script src="src/services/utility.service.js"></script>
+  <script src="src/services/neo-api.service.js"></script>
 
   <script src="src/accounts/account.service.js"></script>
   <script src="src/accounts/transaction-builder.service.js"></script>
@@ -135,7 +135,8 @@
   <script src="src/components/account/main-sidenav.controller.js"></script>
   <script src="src/components/account/account-card.controller.js"></script>
   <script src="src/components/account/transaction-tab.controller.js"></script>
-  <script src="src/components/account/votes-tab.controller.js"></script>
+  <script src="src/components/account/votes-tab/vote.dialog.controller.js"></script>
+  <script src="src/components/account/votes-tab/votes-tab.controller.js"></script>
   <script src="src/components/account/signing-tab.controller.js"></script>
   <script src="src/components/account/exchange-tab.controller.js"></script>
   <script src="src/components/account/offchain-tab.controller.js"></script>

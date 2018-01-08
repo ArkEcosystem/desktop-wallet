@@ -16,9 +16,13 @@ body {
 ::-webkit-scrollbar {
     width: 12px;
 }
-
 ::selection {
     background: #ADD8E6;
+}
+
+/* Utilities */
+.d-inline-block {
+    display: inline-block;
 }
 
 /* Track */
@@ -295,6 +299,9 @@ span.name {
     color: #555;
     padding: 20px;
     border-top: 1px solid #ccc;
+}
+#vote-help a {
+    color: #555;
 }
 
 .tab-text-only-content {

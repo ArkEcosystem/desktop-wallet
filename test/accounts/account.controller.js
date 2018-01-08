@@ -28,32 +28,6 @@ describe('AccountController', () => {
     getTextCatalogMock
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
-  const MOCK_DELEGATE = {
-    address: 'mockDelegateArkAddress',
-    approval: 89.09,
-    missedblocks: 9760,
-    producedblocks: 35226,
-    productivity: 78.3,
-    publicKey: 'mockDelegatePublicKey',
-    rate: 1,
-    username: 'mock_delegate',
-    vote: '11512779451283196'
-  }
-  const MOCK_DELEGATES = [MOCK_DELEGATE]
-  const MOCK_ACCOUNT_OBJ = {
-    address: 'mockArkAddress',
-    balance: '50000000000',
-    delegate: null,
-    ledger: null,
-    publicKey: 'mockPublicKey',
-    secondSignature: 0,
-    selectedVotes: [],
-    transactions: [],
-    virtual: {
-      getFolders: angular.noop,
-      uservalue: angular.noop
-    }
-  }
 
   beforeEach(module('arkclient.constants'))
 
@@ -167,81 +141,6 @@ describe('AccountController', () => {
 
       it('returns the user and the ledger accounts', () => {
         expect(ctrl.getAllAccounts()).to.have.members(ACCOUNTS.concat(ctrl.ledgerAccounts))
-      })
-    })
-  })
-
-  // Delegate
-  describe('addDelegate', () => {
-    let getDelegatesStub,
-      getDelegateStub,
-      mdDialogShowStub,
-      mdDialogHideStub
-
-    beforeEach(() => {
-      getDelegatesStub = sinon.stub(accountServiceMock, 'getActiveDelegates').resolves(MOCK_DELEGATES)
-      getDelegateStub = sinon.stub(accountServiceMock, 'getDelegateByUsername').resolves(MOCK_DELEGATE)
-
-      mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
-      mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
-
-      ctrl.selected = {
-        selectedVotes: []
-      }
-    })
-
-    context('when the selectedAccount is valid', () => {
-      it('should fetch active delegates and open the add delegates modal', () => {
-        ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
-
-        sinon.assert.calledOnce(getDelegatesStub)
-        sinon.assert.calledOnce(mdDialogShowStub)
-      })
-
-      it('should set up the delegate modal scope', () => {
-        ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
-
-        expect($scope.addDelegateDialog).to.have.all.keys(['data', 'add', 'cancel'])
-        expect($scope.addDelegateDialog.add).to.be.a('function')
-        expect($scope.addDelegateDialog.cancel).to.be.a('function')
-        expect($scope.addDelegateDialog.data).to.have.property('fromAddress', MOCK_ACCOUNT_OBJ.address)
-      })
-    })
-
-    context('when a delegate is added', () => {
-      it('should fetch the delegate to be added and close the modal', () => {
-        ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
-        $scope.addDelegateDialog.data.delegatename = 'foo'
-        $scope.addDelegateDialog.add()
-
-        sinon.assert.calledWith(getDelegateStub, $scope.addDelegateDialog.data.delegatename)
-        sinon.assert.calledOnce(mdDialogHideStub)
-      })
-
-      it('should add to the delegates list if no delegates have been added', (done) => {
-        let acctObj = angular.copy(MOCK_ACCOUNT_OBJ)
-        ctrl.addDelegate(acctObj)
-        $scope.addDelegateDialog.add()
-
-        getDelegateStub().then(res => {
-          expect(acctObj.selectedVotes.length).to.equal(1)
-          expect(acctObj.selectedVotes[0].username).to.equal(MOCK_DELEGATE.username)
-          done()
-        })
-      })
-
-      it('should not add the a duplicate delegate if that delegate is already selected', (done) => {
-        let acctObj = angular.copy(MOCK_ACCOUNT_OBJ)
-        acctObj.selectedVotes = [angular.copy(MOCK_DELEGATE)]
-
-        ctrl.addDelegate(acctObj)
-        $scope.addDelegateDialog.add(MOCK_DELEGATE.username)
-
-        getDelegateStub().then(res => {
-          // Should still only equal 1
-          expect(acctObj.selectedVotes.length).to.eql(1)
-          done()
-        })
       })
     })
   })
