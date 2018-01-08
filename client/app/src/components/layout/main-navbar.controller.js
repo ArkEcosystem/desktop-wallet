@@ -11,7 +11,8 @@
     .component('mainNavbar', {
       templateUrl: 'src/components/layout/main-navbar.html',
       bindings: {
-        accountCtrl: '='
+        accountCtrl: '=',
+        addressBookCtrl: '='
       },
       controller: MainNavbarController
     })
@@ -19,6 +20,7 @@
   function MainNavbarController ($scope) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
+      this.ab = this.addressBookCtrl
     }
   }
 })()
