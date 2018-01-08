@@ -1593,7 +1593,7 @@
 
         if (!$scope.send.data.customPassphrase && !isBIP39($scope.send.data.passphrase)) {
           toastService.error(
-            gettextCatalog.getString('Not valid 12 words passphrase! Please check all words and spaces.')
+            gettextCatalog.getString('Not valid BIP39 passphrase! Please check all words and spaces.')
             , null
             , true
           )
