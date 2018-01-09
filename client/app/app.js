@@ -22,6 +22,7 @@ app.config(($mdIconProvider) => {
     .icon('menu', './assets/svg/menu.svg', 24)
     .icon('ledger', './assets/svg/ledger.svg', 24)
     .icon('qrcode', './assets/svg/qrcode.svg', 24)
+    .icon('bitcoin_toggle', './assets/svg/bitcoin_toggle.svg', 24)
 })
 
 app.config(($provide, $mdThemingProvider) => {

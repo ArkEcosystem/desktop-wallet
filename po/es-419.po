@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-11-18 16:39+0000\n"
-"PO-Revision-Date: 2017-11-18 16:39+0000\n"
+"POT-Creation-Date: 2018-01-09 11:19+0000\n"
+"PO-Revision-Date: 2018-01-09 11:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: es_419\n"
@@ -119,6 +119,9 @@ msgstr "Fondo"
 msgid "Balance"
 msgstr "Balance"
 
+msgid "Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!"
+msgstr "Antes de proceder, primero <strong>RESPALDA TU CONTRASEÑA DE MANERA SEGURA</strong>, este cliente no lo guarda y no podra recuperar tu contraseña! Si lo pierdes, borras o lo roban - nosotros NO podremos recuperarlo. No hay la opcion de se me olvido la contraseña!"
+
 msgid "Bulgarian"
 msgstr "Búlgaro"
 
@@ -209,6 +212,9 @@ msgstr "Crear una nueva carpeta virtual"
 msgid "Currency"
 msgstr "Divisa"
 
+msgid "Dark Mode"
+msgstr "Modo oscuro"
+
 msgid "Date"
 msgstr "Fecha"
 
@@ -272,8 +278,20 @@ msgstr "Gasto"
 msgid "Explorer"
 msgstr "Explorar"
 
+msgid "Export Account"
+msgstr "Exportar cuenta"
+
+msgid "Failed to save transaction file"
+msgstr "Fallo al guardar tu archivo de transaccion."
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Comision ({{ul.network.symbol}})"
+
 msgid "File"
 msgstr "Archivo"
+
+msgid "Finish"
+msgstr "Terminar"
 
 msgid "Fee (Ѧ)"
 msgstr "Tasa (Ѧ)"
@@ -286,6 +304,9 @@ msgstr "Forzar"
 
 msgid "Force?"
 msgstr "Fuerza?"
+
+msgid "Format"
+msgstr "Formato"
 
 msgid "French"
 msgstr "Francés"
@@ -329,6 +350,9 @@ msgstr "Importar"
 msgid "Import Account"
 msgstr "Importar cuenta"
 
+msgid "Income"
+msgstr "Ingresos"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Si posee esta cuenta, puede habilitar las carpetas virtuales. Las carpetas virtuales son simples subcuentas para organizar mejor su dinero, sin necesidad de enviar una transacción real y pagar una tarifa. <br>\nAdemás, esta cuenta se moverá bajo la lista \"Mis cuentas\"."
 
@@ -361,6 +385,9 @@ msgstr "Ledger Nano S"
 
 msgid "List full or delegate already voted."
 msgstr "Lista completa o delegado ya votado."
+
+msgid "Load Tx From File"
+msgstr "Cargar Tx del archivo"
 
 msgid "Loading..."
 msgstr "Cargando..."
@@ -464,6 +491,9 @@ msgstr "Contraseña de Frase"
 msgid "Passphrase does not match your address"
 msgstr "La Contraseña de Frase no coincide con su dirección"
 
+msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
+msgstr "La contraseña <strong>distingue mayúsculas y minúsculas</strong>, cada cambio de carácter resultara importando una direccion de Ark distinta! Contraseñas <strong>no son guardadas</strong> en esta computadora así  que asegurate que siempre esten <strong>respaldadas!</strong>"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "La Contraseña de Frase no corresponde a la cuenta"
 
@@ -476,11 +506,20 @@ msgstr "Frases de contraseña eliminadas"
 msgid "Passphrases saved"
 msgstr "Frases de contraseña guardadas"
 
+msgid "Paste the entire signed message:"
+msgstr "Pega el mensaje firmado completo:"
+
 msgid "Peer"
 msgstr "Par"
 
 msgid "Peer Status"
 msgstr "Estado de pares"
+
+msgid "Play sound when receiving transactions?"
+msgstr "¿Reproducir un sonido al recibir transacciones?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "Por favor, guarde la segunda frase de contraseña de forma segura, este cliente no la almacena, por lo cual, ¡no puede recuperarla!"
 
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "Por favor elija un archivo para ser marcado en la cadena de bloques."
@@ -554,11 +593,20 @@ msgstr "Posición"
 msgid "Receive Ark"
 msgstr "Recibir Ark"
 
+msgid "Refresh Account"
+msgstr "Refrescar cuenta"
+
+msgid "Refresh accounts automatically?"
+msgstr "Refrescar cuentas automaticamente?"
+
 msgid "Register Delegate"
 msgstr "Registrar Delegado"
 
 msgid "Register delegate for"
 msgstr "Registrar delegado para"
+
+msgid "Remaining balance"
+msgstr "Balance restante"
 
 msgid "Remove"
 msgstr "Quitar"
@@ -596,11 +644,17 @@ msgstr "Ruso"
 msgid "SHA256 Signature"
 msgstr "Firma SHA256"
 
+msgid "SLIP 44"
+msgstr "SLIP 44"
+
 msgid "Save"
 msgstr "Guardar"
 
 msgid "Save Passphrases for"
 msgstr "Guardar frases de contraseña para"
+
+msgid "Save Tx Offline"
+msgstr "Guardar Tx Offline"
 
 msgid "Second Passphrase"
 msgstr "Segunda Contraseña de Frase"
@@ -731,11 +785,17 @@ msgstr "Total {{ul.network.symbol}}"
 msgid "Transaction"
 msgstr "Transacción"
 
+msgid "Transaction file successfully saved in"
+msgstr "Archivo de transaccion guardado exitosamente."
+
 msgid "Transactions"
 msgstr "Transacciones"
 
 msgid "Type"
 msgstr "Tipo"
+
+msgid "Type an address or a name"
+msgstr "Escribe una direccion o un nombre"
 
 msgid "Update vote from"
 msgstr "Votar a favor desde"
@@ -748,6 +808,9 @@ msgstr "Verificar"
 
 msgid "Verify Message"
 msgstr "Verificar Mensaje"
+
+msgid "Verify Text"
+msgstr "Verifica texto"
 
 msgid "Vendor Field"
 msgstr "Campo del Proveedor"

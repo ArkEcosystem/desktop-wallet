@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-11-18 16:39+0000\n"
-"PO-Revision-Date: 2017-11-18 16:39+0000\n"
+"POT-Creation-Date: 2018-01-09 11:19+0000\n"
+"PO-Revision-Date: 2018-01-09 11:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ko\n"
@@ -99,7 +99,7 @@ msgid "Approval"
 msgstr "승인"
 
 msgid "Arabic"
-msgstr "아라비아어"
+msgstr "아랍어"
 
 msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
 msgstr "이 네트워크 및 컴퓨터와 연결된 모든 데이터 (계정 및 설정)를 제거 하시겠습니까? 귀하의 계정은 여전히 ​​블록 체인에서 안전합니다."
@@ -156,7 +156,7 @@ msgid "Change 1h/7h/7d"
 msgstr "가격변동 1시간 / 7시간 / 7일"
 
 msgid "Chinese - China"
-msgstr "중국어"
+msgstr "중국어 - 중국"
 
 msgid "Chinese - Taiwan"
 msgstr "중국어-대만"
@@ -194,6 +194,9 @@ msgstr "클립보드에 복사되었습니다."
 msgid "Copy"
 msgstr "복사"
 
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "활성화된 대표자 리스트를 가져오지 못했습니다 - 인터넷 연결상태를 확인해보세요"
+
 msgid "Create"
 msgstr "만들기"
 
@@ -208,6 +211,12 @@ msgstr "가상폴더 만들기"
 
 msgid "Create a new virtual folder"
 msgstr "새로운 가상폴더 만들기"
+
+msgid "Currency"
+msgstr "통화"
+
+msgid "Dark Mode"
+msgstr "다크 모드"
 
 msgid "Date"
 msgstr "날짜"
@@ -257,6 +266,9 @@ msgstr "영어"
 msgid "Error in signature processing"
 msgstr "서명 처리 중 오류 발생"
 
+msgid "Error in your Input."
+msgstr "입력내용에 오류가 있습니다."
+
 msgid "Error when trying to login:"
 msgstr "로그인 시 에러:"
 
@@ -268,6 +280,12 @@ msgstr "거래소"
 
 msgid "Explorer"
 msgstr "탐색기"
+
+msgid "Export Account"
+msgstr "계정 내보내기"
+
+msgid "Failed to save transaction file"
+msgstr "트랜잭션 파일을 저장하는데 실패했습니다"
 
 msgid "File"
 msgstr "파일"
@@ -283,6 +301,9 @@ msgstr "강제로"
 
 msgid "Force?"
 msgstr "강제로 시도할까요?"
+
+msgid "Format"
+msgstr "포맷"
 
 msgid "French"
 msgstr "프랑스어"
@@ -326,6 +347,9 @@ msgstr "불러오기"
 msgid "Import Account"
 msgstr "계정 불러오기"
 
+msgid "Income"
+msgstr "수입"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "이 계정을 소유하고 있다면 가상 폴더를 사용할 수 있습니다. 가상 폴더는 실제 거래를 보내고 수수료를 지불 할 필요없이 돈을 더 잘 관리 할 수있는 간단한 하위 계좌입니다. <br>  또한, 이 계정은 '내 계정' 목록 아래로 이동합니다."
 
@@ -334,6 +358,12 @@ msgstr "인도네시아어"
 
 msgid "Italian"
 msgstr "이탈리아어"
+
+msgid "Japanese"
+msgstr "일본어"
+
+msgid "Korean"
+msgstr "한국어"
 
 msgid "Label"
 msgstr "라벨"
@@ -352,6 +382,12 @@ msgstr "레저 나노 S"
 
 msgid "List full or delegate already voted."
 msgstr "전체 명단 또는 이미 투표된 대의원"
+
+msgid "Load Tx From File"
+msgstr "파일에서 트랜잭션 불러오기"
+
+msgid "Loading..."
+msgstr "로딩중..."
 
 msgid "Login"
 msgstr "로그인"
@@ -452,6 +488,9 @@ msgstr "보안문구"
 msgid "Passphrase does not match your address"
 msgstr "보안문구가 당신의 주소와 일치하지 않습니다."
 
+msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
+msgstr "보안문구는 <strong>대소문자를 구분</strong>합니다, 문구중 한글자만 달라도 다른 아크주소를 불러올것입니다! 보안문구는 이 컴퓨터에 <strong>저장되지 않으며</strong> 별도로 <strong>안전하게 백업</strong>해야 합니다!"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "보안문구가 계정과 일치하지 않습니다."
 
@@ -469,6 +508,12 @@ msgstr "피어"
 
 msgid "Peer Status"
 msgstr "피어 현황"
+
+msgid "Play sound when receiving transactions?"
+msgstr "트랜잭션을 받았을 때 소리를 낼까요?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "계속 진행하기전에 2차보안문구를 안전하게 백업하세요, 이 클라이언트는 해당 보안문구를 따로 저장하지 않으며, 분실시 계정을 복구할 수 없습니다!"
 
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "블록체인 내에 타임스탬프를 기록할 파일을 선택하세요."
@@ -509,6 +554,12 @@ msgstr "계좌 생성을 위해 보안문구의 3, 6, 9번째 단어를 입력�
 msgid "Polish"
 msgstr "폴란드어"
 
+msgid "Portuguese - Brazil"
+msgstr "포르투칼어 - 브라질"
+
+msgid "Portuguese - Portugal"
+msgstr "포트투칼어 - 포르투칼"
+
 msgid "Portuguese"
 msgstr "포르투갈어"
 
@@ -536,11 +587,20 @@ msgstr "순위"
 msgid "Receive Ark"
 msgstr "아크 받기"
 
+msgid "Refresh Account"
+msgstr "계정 새로고침"
+
+msgid "Refresh accounts automatically?"
+msgstr "계정들을 자동으로 새로고침할까요?"
+
 msgid "Register Delegate"
 msgstr "대의원 등록하기"
 
 msgid "Register delegate for"
 msgstr "~를 위한 대표자"
+
+msgid "Remaining balance"
+msgstr "남은 잔고"
 
 msgid "Remove"
 msgstr "제거하기"
@@ -578,11 +638,17 @@ msgstr "러시아어"
 msgid "SHA256 Signature"
 msgstr "SHA256 서명"
 
+msgid "SLIP 44"
+msgstr "SLIP 44"
+
 msgid "Save"
 msgstr "저장하기"
 
 msgid "Save Passphrases for"
 msgstr "보안문구 저장하기"
+
+msgid "Save Tx Offline"
+msgstr "트랜잭션을 오프라인에 저장"
 
 msgid "Second Passphrase"
 msgstr "두 번째 보안문구"
@@ -610,6 +676,9 @@ msgstr "설정하기"
 
 msgid "Settings"
 msgstr "설정"
+
+msgid "Show {{((!ul.showPublicKey) && 'public key' || 'address')}}"
+msgstr "보이기 {{((!ul.showPublicKey) && 'public key' || 'address')}}"
 
 msgid "Sign"
 msgstr "서명"
@@ -713,11 +782,17 @@ msgstr "총 {{ul.network.symbol}}"
 msgid "Transaction"
 msgstr "전송"
 
+msgid "Transaction file successfully saved in"
+msgstr "트랜잭션 파일이 성공적으로 저장되었습니다"
+
 msgid "Transactions"
 msgstr "전송"
 
 msgid "Type"
 msgstr "타입"
+
+msgid "Type an address or a name"
+msgstr "주소나 이름을 입력하세요"
 
 msgid "Update vote from"
 msgstr "투표 갱신하기"
@@ -730,6 +805,9 @@ msgstr "검증"
 
 msgid "Verify Message"
 msgstr "메시지 검증"
+
+msgid "Verify Text"
+msgstr "텍스트 검증"
 
 msgid "Vendor Field"
 msgstr "벤더 항목"
