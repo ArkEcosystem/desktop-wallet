@@ -7,7 +7,7 @@
     </h2>
     <span flex></span>
 
-    <md-button class="md-small bitcoin-toggle" ng-click="$ctrl.ac.toggleBitcoinCurrency()" ng-hide="$ctrl.ac.currency.name === 'btc'">
+    <md-button class="md-small bitcoin-toggle" ng-click="$ctrl.ac.toggleBitcoinCurrency()" ng-hide="$ctrl.ac.currency.name === 'btc'" ng-if="$ctrl.accountCtrl.connectedPeer.market.available_supply">
       <md-tooltip md-direction="top">
         {{'Toggle' | translate}} {{$ctrl.ac.toggleCurrency.name | uppercase}}
       </md-tooltip>
