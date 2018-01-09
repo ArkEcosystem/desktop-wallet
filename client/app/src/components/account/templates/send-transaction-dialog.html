@@ -11,11 +11,11 @@
     </md-toolbar>
 
     <md-dialog-content>
-      <md-tabs>
+      <md-tabs md-dynamic-height>
 
         <md-tab>
           <md-tab-label>
-            <translate>Basic</translate>
+            <translate>Unique</translate>
           </md-tab-label>
           <md-tab-body>
             <div class="md-dialog-content">
@@ -48,33 +48,40 @@
                 </md-input-container>
               </div>
 
+              <md-input-container md-no-float class="md-block">
+                <label>{{'Message (or Smartbridge)'|translate}} ({{'Optional'|translate}})</label>
+                <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
+              </md-input-container>
+
               <passphrase-field ng-if="!send.data.ledger" ng-model="send.data.passphrase" label="Passphrase" tab-index="4"></passphrase-field>
               <passphrase-field ng-if="send.data.secondSignature"ng-model="send.data.secondpassphrase" label="Second Passphrase" tab-index="5"></passphrase-field>
 
             </div>
-
           </md-tab-body>
         </md-tab>
 
         <md-tab>
           <md-tab-label>
-            <translate>Advanced</translate>
+            <translate>Multiple</translate>
           </md-tab-label>
           <md-tab-body>
             <div class="md-dialog-content">
 
-            <md-input-container md-no-float class="md-block">
-              <!-- TODO Message (Smartbridge) -->
-              <label>{{'Smartbridge'|translate}} ({{'Optional'|translate}})</label>
-              <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
-            </md-input-container>
+              <md-card flex="100">
+                <md-card-title>
+                  <md-card-title-text>
+                    <span translate>
+                      It is possible to use a CSV file to send {{ac.network.symbol}} to a list of addresses. Each of these transactions would have its own fee until the next version of the protocol. The format is: <pre>Address,Amount,Smartbridge</pre>
+                    </span>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
 
-            <md-button ng-click="send.openFile()">
-              <span translate>Load Tx From File</span>
-            </md-button>
+              <md-button ng-click="send.openFile()">
+                <span translate>Load transactions from file</span>
+              </md-button>
 
             </div>
-
           </md-tab-body>
         </md-tab>
       </md-tabs>
