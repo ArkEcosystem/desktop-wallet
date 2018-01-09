@@ -20,7 +20,7 @@
     "test": "karma start test/karma.conf.js --single-run",
     "test-app": "mocha --recursive ./test/e2e/scenarios",
     "test-watch": "karma start test/karma.conf.js",
-    "eslint": "eslint **/*.js"
+    "eslint": "eslint \"**/*.js\""
   },
   "repository": {
     "type": "git",
