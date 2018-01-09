@@ -282,8 +282,7 @@
 
         const currentAccount = getCurrentAccount()
         if (currentAccount && currentAccount.address === address) {
-          $scope.receiverValidation.message = gettextCatalog.getString('The address is your own address.' +
-                                                                       ' Unless you know what you\'re doing this is probably wrong.')
+          $scope.receiverValidation.message = gettextCatalog.getString('This address is your own address. Are you sure you want to send to your own address?')
           $scope.receiverValidation.failType = 'warning'
           return
         }
