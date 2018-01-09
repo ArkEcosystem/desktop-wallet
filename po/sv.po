@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2018-01-09 11:19+0000\n"
+"PO-Revision-Date: 2018-01-09 11:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: sv\n"
@@ -11,8 +11,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
+msgstr "- Detta betyder att ägaren över kontot kan bevisa att han hade denna filen i handen vid block tidsstämpeln."
+
 msgid "{{ category }}"
 msgstr "{{ kategori }}"
+
+msgid "Account added!"
+msgstr "Konto skapat!"
+
+msgid "Account removed!"
+msgstr "Konto borttaget!"
+
+msgid "Account deleted!"
+msgstr "Konto raderat!"
+
+msgid "Account successfully created:"
+msgstr "Konto har skapats med lyckat resultat:"
 
 msgid "Account successfully imported:"
 msgstr "Konto importerat med lyckat resultat:"
@@ -20,17 +35,122 @@ msgstr "Konto importerat med lyckat resultat:"
 msgid "Account was already imported:"
 msgstr "Konto är redan importerat:"
 
+msgid "Accounts"
+msgstr "Konton"
+
+msgid "Actions"
+msgstr "Handlingar"
+
+msgid "Add"
+msgstr "Lägg till"
+
+msgid "Add Contact"
+msgstr "Lägg till kontakt"
+
+msgid "Add Account"
+msgstr "Lägg till konto"
+
+msgid "Add Address"
+msgstr "Lägg till adress"
+
+msgid "Add Delegate"
+msgstr "Lägg till delegat"
+
 msgid "Add Watch-Only Address"
 msgstr "Lägg till endast sebar adress"
+
+msgid "Address"
+msgstr "Adress"
+
+msgid "Address version"
+msgstr "Adress version"
 
 msgid "After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client."
 msgstr "Har du problem med formulär (som att fält saknas) efter att du skapat en andra lösenordsfras, prova vänligen starta om klienten."
 
+msgid "All your data, including created accounts, networks and contacts will be removed from the app and reset to default."
+msgstr "All din data, inklusive skapade konton, nätverk och kontakter kommer att tas bort från applikationen och återställas till standard."
+
+msgid "Amount"
+msgstr "Belopp"
+
+msgid "Amount ({{ul.network.symbol}})"
+msgstr "Belopp ({{ul.network.symbol}})"
+
+msgid "Appearance"
+msgstr "Utseende"
+
+msgid "Application"
+msgstr "Applikation"
+
+msgid "Amount (Ѧ)"
+msgstr "Belopp (Ѧ)"
+
+msgid "Approval"
+msgstr "Godkännande"
+
+msgid "Arabic"
+msgstr "Arabiska"
+
+msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
+msgstr "Är du säker på att du vill radera detta nätverk och all data(konton och inställningar) kopplade till nätverket från din dator. Dina konton är fortfarande säkra på blockchain."
+
+msgid "Arab"
+msgstr "Arabiska"
+
+msgid "Are you sure?"
+msgstr "Är du säker?"
+
+msgid "Ark Client"
+msgstr "Ark Klient"
+
+msgid "Background"
+msgstr "Bakgrund"
+
+msgid "Balance"
+msgstr "Saldo"
+
+msgid "Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!"
+msgstr "Innan du går vidare så <strong>SPARA UNDAN DIN LÖSENORDSFRAS SÄKERT</strong>, denna klient lagrar INTE det och kan därav inte återhämta din lösenordsfras.  Om du förlorar den, tar bort den, eller om den stjäls - kan vi INTE hjälper er återhämta det. Där finns inget \"jag glömde min lösenordsfras\" val."
+
+msgid "Bulgarian"
+msgstr "Bulgarisk"
+
+msgid "Cancel"
+msgstr "Avbrtyt"
+
+msgid "Cannot find delegate:"
+msgstr "Kan inte hittade delegater:"
+
+msgid "Cannot find delegates from this term:"
+msgstr "Kan inte hitta delegater från denna term:"
+
 msgid "Cannot get registered delegates"
 msgstr "Kan inte motta registrerade delegater"
 
+msgid "Cannot get sponsors"
+msgstr "Kan inte hämta sponsorer"
+
+msgid "Cannot get transactions"
+msgstr "Kan inte hämta transaktioner"
+
+msgid "Cannot get voted delegates"
+msgstr "Kan inte hämta röstade delegater"
+
+msgid "Change 1h/7h/7d"
+msgstr "Ändring 1h/7h/7d"
+
+msgid "Chinese - China"
+msgstr "Kinesiska - Kina"
+
+msgid "Chinese - Taiwan"
+msgstr "Kinesiska - Taiwan"
+
 msgid "Client"
 msgstr "Klient"
+
+msgid "Close"
+msgstr "Stäng"
 
 msgid "Coming Soon"
 msgstr "Kommer inom kort"
@@ -47,11 +167,71 @@ msgstr "Lösenordsfras sparas ej på denna dator."
 msgid "Watch-Only Addresses"
 msgstr "Endast sebara adresser"
 
+msgid "Confirmations"
+msgstr "Konfirmationer"
+
 msgid "Contacts"
 msgstr "Kontakter"
 
+msgid "Copied to clipboard"
+msgstr "Kopierat till urklippet"
+
 msgid "Copy"
 msgstr "Kopiera"
+
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "Kan inte hämta aktiva delegater - vänligen kolla din internetuppkoppling."
+
+msgid "Create"
+msgstr "Skapa"
+
+msgid "Create Account"
+msgstr "Skapa Konto"
+
+msgid "Create Second Passphrase"
+msgstr "Skapa en andra lösenordsfras"
+
+msgid "Create Virtual Folder"
+msgstr "Skapa en virtuell mapp"
+
+msgid "Create a new virtual folder"
+msgstr "Skapa en ny virtuell mapp"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Dark Mode"
+msgstr "Mörkt läge"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Delay"
+msgstr "Fördröjning"
+
+msgid "Delegate"
+msgstr "Delegat"
+
+msgid "Delegate name"
+msgstr "Delegat namn"
+
+msgid "Delete"
+msgstr "Ta bort"
+
+msgid "Delete Account"
+msgstr "Ta bort Konto"
+
+msgid "Delete permanently this account"
+msgstr "Ta bort detta konto permanent"
+
+msgid "Destination Address"
+msgstr "Mottagar adress"
+
+msgid "Dutch"
+msgstr "Holländska"
 
 msgid "Edit Contact"
 msgstr "Redigera kontakt"
@@ -59,14 +239,92 @@ msgstr "Redigera kontakt"
 msgid "Enable Signing"
 msgstr "Aktivera signering"
 
+msgid "Enable Virtual Folders"
+msgstr "Tillåt virtuella mappar"
+
+msgid "Enable Votes"
+msgstr "Tillåt röster"
+
+msgid "English"
+msgstr "Engelska"
+
 msgid "Error in signature processing"
 msgstr "Fel vid signeringsbehandling"
+
+msgid "Error in your Input."
+msgstr "Fel i din indata"
+
+msgid "Error when trying to login:"
+msgstr "Fel vid inloggningsförsök"
+
+msgid "Error:"
+msgstr "Fel:"
+
+msgid "Exchange"
+msgstr "Utväxling"
+
+msgid "Expense"
+msgstr "Utgift"
+
+msgid "Explorer"
+msgstr "Utforskare"
+
+msgid "Export Account"
+msgstr "Exportera Konto"
+
+msgid "Failed to save transaction file"
+msgstr "Misslyckades att spara transaktions fil"
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Avgift ({{ul.network.symbol}})"
 
 msgid "File"
 msgstr "Fil"
 
+msgid "Finish"
+msgstr "Avsluta"
+
+msgid "Fee (Ѧ)"
+msgstr "Avgift (Ѧ)"
+
+msgid "Folder Name"
+msgstr "Mapp namn"
+
 msgid "Force"
 msgstr "Tvinga"
+
+msgid "Force?"
+msgstr "Tvinga?"
+
+msgid "Format"
+msgstr "Foirmat"
+
+msgid "French"
+msgstr "Franska"
+
+msgid "From"
+msgstr "Från"
+
+msgid "Full Screen"
+msgstr "Fullskärm"
+
+msgid "German"
+msgstr "Tyska"
+
+msgid "Greek"
+msgstr "Grekiska"
+
+msgid "Hand crafted with ❤ by"
+msgstr "Handgjord med ❤ av"
+
+msgid "Height"
+msgstr "Höjd"
+
+msgid "Hungarish"
+msgstr "Ungerska"
+
+msgid "Id"
+msgstr "Id"
 
 msgid "If you own this account, you can enable Message Signing"
 msgstr "Om du äger detta konto kan du aktivera meddelandesignering"
@@ -83,23 +341,104 @@ msgstr "Importera"
 msgid "Import Account"
 msgstr "Importera konto"
 
+msgid "Income"
+msgstr "Inkomst"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Om du äger detta konto så kan du tillåt virtuella mappar. Virtuella mappar är enkla underkonto för att lättare organisera dina pengar, utan att behöva skicka en riktig transaktion och betala avgifter. <br>\nDessutom så kommer detta konto flyttas under \"Mina konton\" listan."
+
+msgid "Indonesian"
+msgstr "Indonesisk"
+
+msgid "Italian"
+msgstr "Italiensk"
+
+msgid "Japanese"
+msgstr "Japansk"
+
+msgid "Korean"
+msgstr "Korean"
+
+msgid "Label"
+msgstr "Etikett"
+
+msgid "Label set"
+msgstr "Etikett samling"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Last checked"
+msgstr "Sist vald"
+
 msgid "Ledger Nano S"
 msgstr "Ledger Nano S"
+
+msgid "Load Tx From File"
+msgstr "Ladda Tx från en fil"
+
+msgid "Loading..."
+msgstr "Laddar..."
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Manage Networks"
+msgstr "Hantera nätverk"
 
 msgid "Market"
 msgstr "Marknad"
 
+msgid "Market Cap."
+msgstr "Marknadsvärde."
+
+msgid "Maximize"
+msgstr "Maximera"
+
 msgid "Message"
 msgstr "Meddelande"
 
+msgid "Minimize"
+msgstr "Minimera"
+
+msgid "Minify"
+msgstr "Minimera"
+
+msgid "My Accounts"
+msgstr "Mina konton"
+
 msgid "Name"
 msgstr "Namn"
+
+msgid "Network"
+msgstr "Nätverk"
 
 msgid "Network removed succesfully!"
 msgstr "Nätverket avlägsnades framgångsrikt!"
 
 msgid "New version available!"
 msgstr "Ny version finns tillgänglig!"
+
+msgid "Network connected and healthy!"
+msgstr "Nätverket är uppkopplat och friskt!"
+
+msgid "Network disconected!"
+msgstr "Nätverk bortkopplat!"
+
+msgid "Next"
+msgstr "Nästa"
+
+msgid "No difference from original delegate list"
+msgstr "Det är ingen skillnad från den ursprungliga delegat listan."
+
+msgid "No publicKey"
+msgstr "Ingen publik nyckel"
+
+msgid "No search term"
+msgstr "Ingen sök fras"
+
+msgid "Not enough ARK on your account"
+msgstr "Inte tillräckligt med ARK på ditt konto"
 
 msgid "Ok"
 msgstr "OK"
@@ -116,11 +455,68 @@ msgstr "Kinesiska (traditionell)"
 msgid "Open in explorer"
 msgstr "Öppna i utforskaren"
 
+msgid "Optional"
+msgstr "Frivillig"
+
+msgid "Original Passphrase"
+msgstr "Ursprunglig Lösenordsfras"
+
+msgid "Other Accounts"
+msgstr "Andra Konton"
+
+msgid "Passphrase"
+msgstr "Lösenordsfras"
+
+msgid "Passphrase does not match your address"
+msgstr "Lösenordsfrasen matchar inte din adress"
+
+msgid "Passphrase is not corresponding to account"
+msgstr "Lösenordsfrasen stämmer inte överens med kontot"
+
+msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
+msgstr "Lösenordsfrasen är inte tillräckligt säker. <br>\nAnvänd bara denna funktion på säkra datorer och för konton du har råd att förlora balans på."
+
+msgid "Passphrases deleted"
+msgstr "Lösenordsfras borttagen"
+
+msgid "Passphrases saved"
+msgstr "Lösenordsfras sparad"
+
+msgid "Paste the entire signed message:"
+msgstr "Klistra in hela signerade meddelandet:"
+
 msgid "Peer Status"
 msgstr "Peer-status"
 
+msgid "Play sound when receiving transactions?"
+msgstr "Spela upp ljud när transaktioner erhålls?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "Var vänlig och spara undan den andra lösenordsfrasen innan du fortsätter, denna klient lagrar INTE det och du kan därav inte återhämta din lösenordsfras!"
+
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "Vänligen välj en fil som ska tidsstämplas i blockkedjan."
+
+msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
+msgstr "Var vänlig och spara undan din lösenordsfras, denna klient sparar INTE den och du kan därav inte återhämta din lösenordsfras"
+
+msgid "Please enter a folder name."
+msgstr "Skriv in ett namn på mappen."
+
+msgid "Please enter a new address."
+msgstr "Skriv in en ny adress."
+
+msgid "Please enter a short label."
+msgstr "Skriv in en kort etikett."
+
+msgid "Please enter this account passphrase to login."
+msgstr "Skriv in kontots lösenordsfras för att logga in."
+
+msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it"
+msgstr "Var vänlig och spara undan den andra lösenordsfrasen, denna klient sparar INTE den och du kan därav inte återhämta den"
+
+msgid "Please paste the original and second passphrase to validate the creation."
+msgstr "Klistra in den ursprungliga och den andra lösenordsfrasen för att validera skapandet."
 
 msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
 msgstr "Viktigt att lösenordsfrasen sparas på en säker plats, denna klient sparar den INTE och kan därför inte hämta den om förlorats."
@@ -134,11 +530,53 @@ msgstr "Vänligen börja med att på ett SÄKERT SÄTT GÖRA EN BACKUP AV LÖSEN
 msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
 msgstr "Var god ange ord 3, 6 och 9 från din lösenordsfras för att bekräfta nytt konto."
 
+msgid "Polish"
+msgstr "Polsk"
+
+msgid "Portuguese - Brazil"
+msgstr "Portugisiska - Brasilien"
+
+msgid "Portuguese - Portugal"
+msgstr "Portugisiska - Portugal"
+
+msgid "Portuguese"
+msgstr "Portugisiska"
+
+msgid "Price"
+msgstr "Pris"
+
+msgid "Productivity"
+msgstr "Produktivitet"
+
 msgid "Public Key"
 msgstr "Publik nyckel"
 
 msgid "QR Scanner"
 msgstr "QR Scanner"
+
+msgid "Quit"
+msgstr "Stäng av"
+
+msgid "Quit Ark Client?"
+msgstr "Stäng av Ark klienten?"
+
+msgid "Rank"
+msgstr "Rank"
+
+msgid "Receive Ark"
+msgstr "Motta Ark"
+
+msgid "Register Delegate"
+msgstr "Registrera Delegat"
+
+msgid "Register delegate for"
+msgstr "Registrera delegat för"
+
+msgid "Remaining balance"
+msgstr "Återstående balans"
+
+msgid "Remove"
+msgstr "Ta bort"
 
 msgid "Remove Account"
 msgstr "Ta bort konto"
@@ -155,14 +593,56 @@ msgstr "Ta bort lokala data som sparats från detta nätverk"
 msgid "Remove this account from your wallet. The account may be added again using the original passphrase of the account."
 msgstr "Ta bort detta konto från plånboken. Kontot kan återställas med den lösenordsfras som hör till just detta konto."
 
+msgid "Rename"
+msgstr "Ge nytt namn"
+
 msgid "Reset Data"
 msgstr "Återställ data"
+
+msgid "Restart"
+msgstr "Starta om"
+
+msgid "Romanian"
+msgstr "Rumänska"
+
+msgid "Russian"
+msgstr "Ryska"
 
 msgid "SHA256 Signature"
 msgstr "SHA256 signatur"
 
+msgid "Save"
+msgstr "Spara"
+
+msgid "Save Passphrases for"
+msgstr "Spara lösenordsfras för"
+
+msgid "Save Tx Offline"
+msgstr "Spara Tx offline"
+
+msgid "Second Passphrase"
+msgstr "Andra lösenordsfras"
+
+msgid "Seed Server"
+msgstr "Frö server"
+
+msgid "Send"
+msgstr "Skicka"
+
 msgid "Send All"
 msgstr "Skicka alla"
+
+msgid "Send Ark"
+msgstr "Skicka Ark"
+
+msgid "Serbian"
+msgstr "Serb"
+
+msgid "Send Ark from"
+msgstr "Skicka Ark från"
+
+msgid "Set"
+msgstr "Sätt"
 
 msgid "Settings"
 msgstr "Inställningar"
@@ -182,17 +662,47 @@ msgstr "Signera med Ledger"
 msgid "Signature"
 msgstr "Signatur"
 
+msgid "Slovak"
+msgstr "Slovak"
+
+msgid "Slovenian"
+msgstr "Slovenian"
+
+msgid "Smartbridge"
+msgstr "Smart brygga"
+
 msgid "So the block timestamp that will include this transaction will be a proof of existence of the file you have timestamped."
 msgstr "Tidsstämpeln i blocket inkluderar denna transaktion så att bevis om existens finns av filen som du tidsstämplat."
 
+msgid "Spanish"
+msgstr "Spanska"
+
+msgid "Succesfully Logged In!"
+msgstr "Lyckades logga in!"
+
+msgid "Swedish"
+msgstr "Svenska"
+
 msgid "Switch Network"
 msgstr "Byt nätverk"
+
+msgid "Symbol"
+msgstr "Symbol"
+
+msgid "The destination address"
+msgstr "Mottagaradressen"
 
 msgid "The message is NOT verified"
 msgstr "Meddelandet är INTE verifierat"
 
 msgid "The message is verified successfully"
 msgstr "Meddelandet verifierades utan problem"
+
+msgid "Second Passphrase added successfully:"
+msgstr "Andra lösenordsfrasen lades till:"
+
+msgid "The second passphrase does not match the one you just got."
+msgstr "Den andra lösenordsfrasen matchar inte den som du precis fick."
 
 msgid "The words does not match the original passphrase."
 msgstr "Orden matchar ej lösenordsfrasen"
@@ -218,14 +728,65 @@ msgstr "Tidsstämpel-dokument"
 msgid "Timestamp Document On"
 msgstr "Tidsstämpel-dokument På"
 
+msgid "This account has never interacted with the network. This is a cold wallet."
+msgstr "Detta kontot har aldrig integrerat med nätverket. Detta är en kall plånbok."
+
+msgid "To"
+msgstr "Till"
+
 msgid "Toggle Full Screen"
 msgstr "Växla till helskärm"
+
+msgid "Token name"
+msgstr "Tecken namn"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Total {{ul.network.symbol}}"
+msgstr "Total {{ul.network.symbol}}"
+
+msgid "Transaction"
+msgstr "Transaktion"
+
+msgid "Transaction file successfully saved in"
+msgstr "Transaktionsfil sparades"
+
+msgid "Transactions"
+msgstr "Transaktioner"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "Type an address or a name"
+msgstr "Skriv in en adress eller ett namn"
+
+msgid "Update vote from"
+msgstr "Uppdatera röster ifrån"
+
+msgid "Username"
+msgstr "Användarnamn"
 
 msgid "Verify"
 msgstr "Verifiera"
 
 msgid "Verify Message"
 msgstr "Verifiera meddelande"
+
+msgid "Verify Text"
+msgstr "Validera text"
+
+msgid "Vendor Field"
+msgstr "Säljar fält"
+
+msgid "Virtual folder added!"
+msgstr "Virtuell mapp tillagd!"
+
+msgid "Vote"
+msgstr "Rösta"
+
+msgid "Votes"
+msgstr "Röster"
 
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
 msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.  De 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block. På denna sida kan du rösta på den delegat som du vill stödja."
@@ -239,11 +800,47 @@ msgstr "Ja"
 msgid "approval"
 msgstr "godkännande"
 
+msgid "address"
+msgstr "adress"
+
+msgid "folder name"
+msgstr "mappnamn"
+
 msgid "from"
 msgstr "från"
 
+msgid "is erroneous"
+msgstr "felaktig"
+
+msgid "is not recognised"
+msgstr "känns inte igen"
+
+msgid "label"
+msgstr "etikett"
+
+msgid "missed blocks"
+msgstr "missade block"
+
+msgid "now!"
+msgstr "nu!"
+
+msgid "passphrase"
+msgstr "lösenordsfras"
+
+msgid "produced blocks"
+msgstr "producerade block"
+
 msgid "productivity"
 msgstr "produktivitet"
+
+msgid "sent with success!"
+msgstr "Lyckades skicka!"
+
+msgid "you need at least 1 ARK to vote"
+msgstr "du behöver åtminstone 1 ARK för att rösta"
+
+msgid "you need at least 25 ARK to register delegate"
+msgstr "Du behöver åtminstone 25 ARK för att registrera delegat"
 
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
 msgstr "Att rösta är frivilligt, men en viktig mekanism som säkrar Ark-nätverket.\n\nDe 51 delegater med flest röster från nätverket är ansvariga för att verifiera och skapa transaktioner i nya block.\n\nPå denna sida kan du rösta på den delegat som du vill stödja."

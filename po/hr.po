@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2018-01-09 11:19+0000\n"
+"PO-Revision-Date: 2018-01-09 11:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: hr\n"
@@ -15,10 +15,13 @@ msgid "- This also can help to prove if a file has been tampered with if the SHA
 msgstr "- Ovo može podržati dokazivanje vjerodostojnosti datoteke odnosno ukoliko je bila u međuvrijemenu promijenjena, pa se njen SHA256 potpis razlikuje od zabilježenoga na blokovnom lancu."
 
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
-msgstr "Ovo znači, da vlasnik računa može dokazati, da je raspolagao sa ovom datotekom u trenutku vrijemenskog žigosanja u bloku."
+msgstr "Ovo znači, da vlasnik računa može dokazati da je raspolagao sa ovom datotekom u trenutku vrijemenskog žigosanja u bloku."
 
 msgid "{{ category }}"
 msgstr "{{ kategorija }}"
+
+msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
+msgstr "{{'Pošalji'|prevedi}} {{ul.network.token}} {{'od'|prevedi}}"
 
 msgid "Account added!"
 msgstr "Račun dodan!"
@@ -75,10 +78,13 @@ msgid "After creating the second passphrase if you are having issues with forms 
 msgstr "Ako imate problema sa obrascem, nakon pravljenja dodatne lozinke (polje za dodatnu lozinku se ne pojavljuje), molimo Vas da ponovno pokrenete klijent."
 
 msgid "All your data, including created accounts, networks and contacts will be removed from the app and reset to default."
-msgstr "Svi vaši podaci, uključujući napravljene račune, mreže i kontake biti će uklonjeni iz aplikacije i vraćeni na početne postavke."
+msgstr "Svi vaši podaci, uključujući napravljene račune, mreže i kontakti biti će uklonjeni iz aplikacije i vraćeni na početne postavke."
 
 msgid "Amount"
 msgstr "Iznos"
+
+msgid "Amount ({{ul.network.symbol}})"
+msgstr "Iznos ({{ul.mrežni.znak}})"
 
 msgid "Appearance"
 msgstr "Izgled"
@@ -92,14 +98,17 @@ msgstr "Iznos (Ѧ)"
 msgid "Approval"
 msgstr "Odobrenje"
 
+msgid "Arabic"
+msgstr "Arapski"
+
 msgid "Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain."
-msgstr "Da li ste uvjereni, da želite otstraniti ovu mrežu i sve sa njom povezane podatke (računi i podešavanja) sa računala? Vaši računi su i dalje na sigurnom unutar blokovnog lanca."
+msgstr "Da li ste uvjereni, da želite ukloniti ovu mrežu i sve sa njom povezane podatke (računi i podešavanja) sa računala? Vaši računi su i dalje na sigurnom unutar blokchain-a."
 
 msgid "Arab"
 msgstr "Arapski"
 
 msgid "Are you sure?"
-msgstr "Jesi li siguran?"
+msgstr "Jeste li sigurni?"
 
 msgid "Ark Client"
 msgstr "Ark klijent"
@@ -109,6 +118,9 @@ msgstr "Pozadina"
 
 msgid "Balance"
 msgstr "Stanje"
+
+msgid "Before proceeding further, first <strong>BACKUP THE PASSPHRASE SECURELY</strong>, this client does NOT store it and thus cannot recover your passphrase! If you lose it, delete it, or it gets stolen - we CANNOT help you recover it. There is no forgot my passphrase option!"
+msgstr "Prije nastavka molimo, <strong>NAPRAVITE SIGURNOSNU KOPIJU LOZINKE</strong>. Ovaj klijent NE sprema lozinku, te je zbog toga nije moguće obnoviti! Ako ju izgubite, obrišete, ili ako vam bude ukradena - NE MOŽEMO vam pomoći pri obnovi. Ne postoji mogućnost jeste li zaboravili lozinku!"
 
 msgid "Bulgarian"
 msgstr "Bugarski"
@@ -143,6 +155,12 @@ msgstr "Ne mogu navesti ako je račun od delegata"
 msgid "Change 1h/7h/7d"
 msgstr "Promjena 1h/7h/7d"
 
+msgid "Chinese - China"
+msgstr "Kineski - Kina"
+
+msgid "Chinese - Taiwan"
+msgstr "Kineski - Tajvan"
+
 msgid "Client"
 msgstr "Klijent"
 
@@ -176,6 +194,9 @@ msgstr "Kopirano u međuspremnik"
 msgid "Copy"
 msgstr "Kopiraj"
 
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "Ne mogu dohvatiti aktivne delegate - molim provjerite vašu internetsku vezu"
+
 msgid "Create"
 msgstr "Napravi"
 
@@ -190,6 +211,12 @@ msgstr "Napravi virtualnu mapu"
 
 msgid "Create a new virtual folder"
 msgstr "Napravi novi virtualnu mapu"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Dark Mode"
+msgstr "Tamni način"
 
 msgid "Date"
 msgstr "Datum"
@@ -239,6 +266,9 @@ msgstr "Engleski"
 msgid "Error in signature processing"
 msgstr "Pogreška u procesiranju potpisa"
 
+msgid "Error in your Input."
+msgstr "Pogreša u tvom unosu."
+
 msgid "Error when trying to login:"
 msgstr "Greška prilikom pokušaja upisa:"
 
@@ -248,11 +278,26 @@ msgstr "Greška:"
 msgid "Exchange"
 msgstr "Burza"
 
+msgid "Expense"
+msgstr "Trošak"
+
 msgid "Explorer"
 msgstr "Pretraživač"
 
+msgid "Export Account"
+msgstr "Izvezi račun"
+
+msgid "Failed to save transaction file"
+msgstr "Neuspješno spremanje transakcijske datoteke"
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Provizija  ({{ul.network.symbol}})"
+
 msgid "File"
 msgstr "Datoteka"
+
+msgid "Finish"
+msgstr "Završi"
 
 msgid "Fee (Ѧ)"
 msgstr "Naknada (Ѧ)"
@@ -265,6 +310,9 @@ msgstr "Natjerati"
 
 msgid "Force?"
 msgstr "Natjerati?"
+
+msgid "Format"
+msgstr "Oblik"
 
 msgid "French"
 msgstr "Francuski"
@@ -294,10 +342,10 @@ msgid "Id"
 msgstr "Id"
 
 msgid "If you own this account, you can enable Message Signing"
-msgstr "Ako posjeduješ ovaj račun, mođeš omogućiti potpisivanje poruke"
+msgstr "Ako posjeduješ ovaj račun, možeš omogućiti potpisivanje poruke"
 
 msgid "If you own this account, you can enable Voting"
-msgstr "Ako posjeduješ ovaj račun, možeš omogućiti Glasanje"
+msgstr "Ako posjeduješ ovaj račun, možeš omogućiti glasanje"
 
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
 msgstr "Ako posjeduješ ovaj račun, možeš omogućiti virtualne mape. Virtualne Mape su jednostavni podračuni za bolju organizaciju vašeg novca, bez potrebe slanja prave transakcije i plaćanja naknade. <br>  Nadalje, ovaj račun će biti pomaknut pod listu \"Moji Računi\"."
@@ -308,11 +356,23 @@ msgstr "Uvezi"
 msgid "Import Account"
 msgstr "Uvezi račun"
 
+msgid "Income"
+msgstr "Prihod"
+
+msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
+msgstr "Ako posjeduješ ovaj račun, možeš omogućiti virtualne mape. Virtualne Mape su jednostavni podračuni za bolju organizaciju vašeg novca, bez potrebe slanja prave transakcije i plaćanja naknade. <br>  Nadalje, ovaj račun će biti pomaknut pod listu \"Moji Računi\"."
+
 msgid "Indonesian"
 msgstr "Indonezijski"
 
 msgid "Italian"
 msgstr "Talijanski"
+
+msgid "Japanese"
+msgstr "Japanski"
+
+msgid "Korean"
+msgstr "Korejski"
 
 msgid "Label"
 msgstr "Oznaka"
@@ -331,6 +391,12 @@ msgstr "Ledger Nano S"
 
 msgid "List full or delegate already voted."
 msgstr "Spisak pun ili već izglasan delegat."
+
+msgid "Load Tx From File"
+msgstr "Učitaj Tx iz datoteke"
+
+msgid "Loading..."
+msgstr "Učitavanje..."
 
 msgid "Login"
 msgstr "Upis"
@@ -417,7 +483,7 @@ msgid "Open in explorer"
 msgstr "Otvori u pregledniku"
 
 msgid "Optional"
-msgstr "Opcijsko"
+msgstr "Neobavezno"
 
 msgid "Original Passphrase"
 msgstr "Izvorna Lozinka"
@@ -431,8 +497,14 @@ msgstr "Lozinka"
 msgid "Passphrase does not match your address"
 msgstr "Lozinka ne odgovara vašoj adresi"
 
+msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
+msgstr "Lozinka je <strong>osjetljiva na mala i velika slova</strong> i svaka promjena znaka će za rezultat imati različitu Ark adresu! Lozinke <strong>nisu spremljene</strong> na ovo računalo, te zbog toga uvijek budite sigurni da imate njihovu <strong>sigurnosnu kopiju!</strong>"
+
 msgid "Passphrase is not corresponding to account"
 msgstr "Lozinka ne pripada vašem računu"
+
+msgid "Passphrases are not secured with high standard. <br>\n              Use this feature only on safe computers and for accounts you can afford to lose balance."
+msgstr "Lozinke nisu osiguranje visokim standardom.<br>\nKoristi ovu mogućnost samo na sigurnim računalima i za račune čiji balans možeš izgubiti."
 
 msgid "Passphrases deleted"
 msgstr "Lozinke izbrisane"
@@ -440,11 +512,20 @@ msgstr "Lozinke izbrisane"
 msgid "Passphrases saved"
 msgstr "Lozinke spremljene"
 
+msgid "Paste the entire signed message:"
+msgstr "Zalijepi cijelu potpisanu poruku:"
+
 msgid "Peer"
 msgstr "Peer"
 
 msgid "Peer Status"
 msgstr "Peer Status"
+
+msgid "Play sound when receiving transactions?"
+msgstr "Odsviraj zvuk pri primitku transakcije?"
+
+msgid "Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!"
+msgstr "Spremite lozinku na sigurno mjesto, jer je klijent NE sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
 
 msgid "Please choose a file to be timestamped on the blockchain."
 msgstr "Molimo Vas, odaberite datoteku koja će biti vremenski označena na blockchain-u."
@@ -471,7 +552,7 @@ msgid "Please paste the original and second passphrase to validate the creation.
 msgstr "Molimo vas zalijepite izvornu i dodatnu lozinku za potvrdu izrade."
 
 msgid "Please backup securely the second passphrase, this client does NOT store it and thus cannot recover your it."
-msgstr "Sigurnosno spremite dodatnu lozinku, jer je klijent ne sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
+msgstr "Sigurnosno spremite dodatnu lozinku, jer je klijent NE sprema, zato zaboravljenu lozinku nije moguće nadoknaditi."
 
 msgid "Please restart your client after the delegate registration has been put in a block to reflect the changes."
 msgstr "Nakon uvaženja registracije delegata u blokovnom lancu, molimo da ponovo potjerate klijenta kako bi promjena stupila na snagu."
@@ -484,6 +565,12 @@ msgstr "Molimo Vas, upišite riječi 3, 6 i 9 iz vaše lozinke kako bi potvrdili
 
 msgid "Polish"
 msgstr "Poljski"
+
+msgid "Portuguese - Brazil"
+msgstr "Portugalski - Brazil"
+
+msgid "Portuguese - Portugal"
+msgstr "Portugalski - Portugal"
 
 msgid "Portuguese"
 msgstr "Portugalski"
@@ -512,11 +599,20 @@ msgstr "Mjesto"
 msgid "Receive Ark"
 msgstr "Primi Ark"
 
+msgid "Refresh Account"
+msgstr "Osvježi Račun"
+
+msgid "Refresh accounts automatically?"
+msgstr "Osvježi račune automatski?"
+
 msgid "Register Delegate"
 msgstr "Registriraj delegata"
 
 msgid "Register delegate for"
 msgstr "Registriraj delegata za"
+
+msgid "Remaining balance"
+msgstr "Preostali iznos"
 
 msgid "Remove"
 msgstr "Izbriši"
@@ -554,11 +650,17 @@ msgstr "Ruski"
 msgid "SHA256 Signature"
 msgstr "SHA256 potpis"
 
+msgid "SLIP 44"
+msgstr "SLIP 44"
+
 msgid "Save"
 msgstr "Spremi"
 
 msgid "Save Passphrases for"
 msgstr "Spremi lozinku za"
+
+msgid "Save Tx Offline"
+msgstr "Spremi Tx Izvanmrežno"
 
 msgid "Second Passphrase"
 msgstr "Dodatna lozinka"
@@ -574,6 +676,9 @@ msgstr "Pošalji sve"
 
 msgid "Send Ark"
 msgstr "Pošalji Ark"
+
+msgid "Serbian"
+msgstr "Srpski"
 
 msgid "Send Ark from"
 msgstr "Pošalji Ark iz"
@@ -599,6 +704,9 @@ msgstr "Potpiši sa Ledger-om"
 msgid "Signature"
 msgstr "Potpis"
 
+msgid "Slovak"
+msgstr "Slovački"
+
 msgid "Slovenian"
 msgstr "Slovenski"
 
@@ -606,10 +714,16 @@ msgid "Smartbridge"
 msgstr "Smartbridge"
 
 msgid "So the block timestamp that will include this transaction will be a proof of existence of the file you have timestamped."
-msgstr "Sadržaj vrijemenskog žiga u bloku uključuje transakciju, koja je dokaz postojanja vrijemensko žigosane datoteke."
+msgstr "Sadržaj vremenskog žiga u bloku uključuje transakciju, koja je dokaz postojanja vremenski žigosane datoteke."
+
+msgid "Spanish"
+msgstr "Španjolski"
 
 msgid "Succesfully Logged In!"
 msgstr "Uspješno prijavljen!"
+
+msgid "Swedish"
+msgstr "Švedski"
 
 msgid "Switch Network"
 msgstr "Promjeni mrežu"
@@ -671,14 +785,23 @@ msgstr "Ime žetona"
 msgid "Total"
 msgstr "Ukupno"
 
+msgid "Total {{ul.network.symbol}}"
+msgstr "Ukupno {{ul.network.symbol}}"
+
 msgid "Transaction"
 msgstr "Transakcija"
+
+msgid "Transaction file successfully saved in"
+msgstr "Datoteka transakcije uspješno spremljena u"
 
 msgid "Transactions"
 msgstr "Transakcije"
 
 msgid "Type"
 msgstr "Upiši"
+
+msgid "Type an address or a name"
+msgstr "Upiši adresu ili ime"
 
 msgid "Update vote from"
 msgstr "Ažuriraj glas iz"
@@ -692,8 +815,11 @@ msgstr "Verificiraj"
 msgid "Verify Message"
 msgstr "Potvrdi poruku"
 
+msgid "Verify Text"
+msgstr "Potvrdi Tekst"
+
 msgid "Vendor Field"
-msgstr "SmartBridge"
+msgstr "Polje Trgovca"
 
 msgid "Virtual folder added!"
 msgstr "Virtualna mapa je dodana!"
