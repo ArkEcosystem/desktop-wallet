@@ -40,7 +40,7 @@
           Ledger Nano S
         </span>
         <span class="md-secondary">
-          <md-progress-circular ng-if="!$ctrl.ac.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
+          <md-progress-circular md-diameter="30" ng-if="!$ctrl.ac.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
           <md-chip ng-if="$ctrl.ac.ledgerAccounts">{{$ctrl.ac.ledgerAccounts.length}} <translate>Accounts</translate></md-chip>
         </span>
       </md-list-item>
