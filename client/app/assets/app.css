@@ -317,8 +317,9 @@ account-box {
 #home-box-accounts {
     min-height: 180px;
 }
-#home-box-accounts md-toolbar .md-button {
-    font-size: 20px;
+
+.bitcoin-toggle md-icon {
+  -webkit-filter: drop-shadow( 1px 2px 1px rgba(0, 0, 0, 0.5) );
 }
 
 #home-box-row {
