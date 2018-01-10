@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionSenderService', ['$mdDialog', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', TransactionSenderService])
+    .service('transactionSenderService', ['$mdDialog', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
 
   /**
    * TransactionSenderService
@@ -11,9 +11,7 @@
    * This service is used to send transactions; from displaying the dialog to
    * validating and executing them.
    */
-  function TransactionSenderService ($mdDialog, utilityService, accountService, storageService, toastService, transactionBuilderService) {
-
-    const cancel = () => $mdDialog.hide()
+  function TransactionSenderService ($mdDialog, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
 
     /**
      * Show the send transaction dialog. Reuses the controller and its $scope TODO
@@ -21,7 +19,9 @@
     const openDialogIn = ($scope, accountCtrl, selectedAccount) => {
       const passphrases = accountService.getPassphrases(selectedAccount.address)
 
-      const openDialog = (templateUrl) => {
+      // TODO dialogService ?
+      const cancel = () => $mdDialog.hide()
+      const openDialog = templateUrl => {
         $mdDialog.show({
           scope: $scope,
           templateUrl,
@@ -48,57 +48,12 @@
                 return toastService.error('Error while parsing the file')
               }
 
+              // TODO only the first n transactions
+
               callback(transactionsData)
             })
           }
         })
-      }
-
-      const showValidateMultipleTransactions = (selectedAccount, transactions) => {
-
-        function saveFile () {
-          // TODO merge with AcCtrl
-        }
-
-        function send () {
-          $mdDialog.hide()
-
-          transaction = accountService.formatTransaction(transaction, selectedAccount.address)
-          transaction.confirmations = 0
-
-          networkService.postTransaction(transaction).then(
-            function (transaction) {
-              selectedAccount.transactions.unshift(transaction)
-              toastService.success(
-                gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
-                null,
-                true
-              )
-            },
-            formatAndToastError
-          )
-        }
-
-        const amount = transactions.reduce((total, t) => total + t.amount, 0)
-        const total = transactions.reduce((total, t) => total + t.amount + t.fee, 0)
-
-        $scope.validate = {
-          saveFile,
-          send,
-          cancel,
-          query: {
-            order: 'address'
-          },
-          transactions,
-          // TODO
-          // labels: accountService.getTransactionLabel(transaction),
-          // TODO totals
-          // to avoid small transaction to be displayed as 1e-8
-          humanAmount: utilityService.arktoshiToArk(amount).toString(),
-          totalAmount: utilityService.arktoshiToArk(total).toString()
-        }
-
-        openDialog('./src/components/account/templates/validate-transactions.html')
       }
 
       const processTransactionsData = data => {
@@ -122,10 +77,13 @@
       const prepareMultipleTransactions = (selectedAccount, data) => {
         return transactionBuilderService.createMultipleSendTransactions(data)
           .then(
-            transactions => showValidateMultipleTransactions(selectedAccount, transactions),
+            transactions => transactionValidator.openDialogIn($scope, selectedAccount, transactions),
             accountCtrl.formatAndToastError
           )
       }
+
+      $scope.ac = accountCtrl
+      $scope.network = accountCtrl.network
 
       $scope.submit = tab => {
         if (!$scope[`${tab}Form`].$valid) {
@@ -163,9 +121,6 @@
           throw new Error(`Unknown tab "${tab}"`)
         }
       }
-
-      $scope.ac = accountCtrl
-      $scope.network = accountCtrl.network
 
       $scope.tab = 'unique',
       $scope.data = {

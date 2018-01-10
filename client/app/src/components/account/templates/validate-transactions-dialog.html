@@ -1,0 +1,70 @@
+<md-dialog aria-label="{{'Transactions'|translate}} {{network.token}}" ng-cloak md-theme="ac.currentTheme">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2><span translate>Transactions</span></h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="validate.cancel()">
+          <md-icon md-font-library="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+
+        <!-- TODO show fromAddres -->
+        <md-list>
+          <md-list-item>
+            <b translate>Sender address</b><span class="md-secondary">{{validate.senderAddress | accountLabel}}</span>
+          </md-list-item>
+          <md-list-item>
+            <b translate>Amount</b><span class="md-secondary">{{ac.network.symbol}} {{validate.humanAmount}}</span>
+          </md-list-item>
+          <md-list-item>
+            <b translate>Fees</b><span class="md-secondary">{{ac.network.symbol}}{{validate.totalFees}}</span>
+          </md-list-item>
+          <md-list-item>
+            <b translate>Total amount (with fees)</b><span class="md-secondary">{{ac.network.symbol}}{{validate.totalAmount}}</span>
+          </md-list-item>
+          <md-list-item>
+            <b translate>Remaining balance</b><span class="md-secondary">{{ac.network.symbol}} {{validate.remainingBalance}}</span>
+          </md-list-item>
+        </md-list>
+
+        <md-table-container flex="100" class="tx-list-container">
+          <table md-table id="tx-list">
+            <thead md-head md-order="query.order">
+              <tr md-row>
+                <th md-column translate>Id</th>
+                <th md-column translate>Address</th>
+                <th md-column md-numeric translate>Amount</th>
+                <th md-column translate>Smartbridge</th>
+              </tr>
+            </thead>
+            <tbody md-body style="white-space:nowrap;">
+              <tr md-row ng-repeat="t in validate.transactions | orderBy: validate.order | limitTo: validate.limit track by t.id">
+                <td md-cell><a ng-click="ac.openExplorer('/tx/'+t.id)" md-colors="::{color: '{{ ac.network.themeDark ? 'background-200' : 'background-800' }}'}">{{t.id | txId}}</a></td>
+                <td md-cell>{{t.recipientId | accountLabel}}</td>
+                <td md-cell>{{t.amount | convertToArkValue}}</td>
+                <td md-cell>{{t.vendorField}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </md-table-container>
+
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-primary" ng-click="validate.saveFile()">
+        <span translate>Save Tx Offline</span>
+      </md-button>
+      <span flex></span>
+      <md-button class="md-raised md-primary" ng-click="validate.send()">
+        <span translate>Send</span> {{ac.network.symbol}}{{validate.totalAmount}} <span translate>now!</span>
+      </md-button>
+      <md-button ng-click="validate.cancel()" style="margin-right:20px;">
+        <translate>Cancel</translate>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
