@@ -10,6 +10,23 @@ Please don't submit Pull-Requests (PRs) for translations, but use the link above
 ## Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
+## Installing via Package Managers
+
+#### AUR
+For distros derived from Arch Linux the package is avaliable in AUR, just run:
+
+```
+yaourt -Sy ark-desktop
+```
+
+#### Homebrew
+For Mac users the package is avaliable in [Homebrew](https://brew.sh/):
+
+```
+brew update
+brew cask install arkclient
+```
+
 ## Features
 * Available on ***Windows***, ***Linux*** (Ubuntu/Debian) and ***MacOSX*** (signed).
 * No need to download ARK blockchain, just sync to the network: launch and use within seconds.
@@ -38,14 +55,7 @@ Please don't submit Pull-Requests (PRs) for translations, but use the link above
 ![dashboard](https://i.imgur.com/AVdyM16.jpg)
 ![account](https://i.imgur.com/DD8fx1O.jpg)
 
-## From AUR
-For distros derived from Arch Linux the package is avaliable in AUR, just run:
-
-```
-yaourt -Sy ark-desktop
-```
-
-## From code
+## Build
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developped with this version:
 ```
@@ -70,7 +80,7 @@ Then start:
 npm start
 ```
 
-## Necessary to package from Mac OS X
+### Requirements to build from OS X
 
 ```
 brew tap Homebrew/bundle
@@ -78,7 +88,11 @@ brew bundle
 ```
 
 ## Contributing
-Read [CONTRIBUTING.md](https://github.com/ArkEcosystem/ark-desktop/blob/master/CONTRIBUTING.md) to learn about how to contribute to this project.
+
+* If you find any bugs, submit an [issue](../../issues) or open [pull-request](../../pulls), helping us catch and fix them.
+* Engage with other users and developers on [ARK Slack](https://ark.io/slack/).
+* Join to our [gitter](https://gitter.im/ark-developers/Lobby).
+* [Contribute bounties](./CONTRIBUTING.md).
 
 ## Authors
 - FX Thoorens <fx@ark.io>
@@ -86,4 +100,6 @@ Read [CONTRIBUTING.md](https://github.com/ArkEcosystem/ark-desktop/blob/master/C
 - Lúcio Rubens <lucio@ark.io>
 - Juan Martín <juan@ark.io>
 
-### License [MIT](LICENSE.md) | Copyright (c) 2016-2017 ARK.io | Copyright (c) 2016-2017 FX Thoorens
+## License
+
+ARK Desktop is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
