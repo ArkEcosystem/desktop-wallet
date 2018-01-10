@@ -8,7 +8,7 @@
       </md-tooltip>
     </md-button>
 
-    <md-button ng-if="$ctrl.ul.selected.virtual" md-no-ink ng-click="$ctrl.showSendTransaction($ctrl.ul.selected)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
+    <md-button ng-if="$ctrl.ul.selected.virtual" md-no-ink ng-click="$ctrl.openSendTransactionDialog($ctrl.ul.selected)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
       <md-icon md-font-library="material-icons">send</md-icon>
       <md-tooltip>
           <translate>Send</translate>
