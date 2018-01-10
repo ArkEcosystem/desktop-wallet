@@ -5,7 +5,7 @@
     .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
 
   /**
-   * NetworkService
+   * NetworkService 
    * @constructor
    */
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {

@@ -5,7 +5,7 @@ module.exports = {
     defaultHideDelay: 5000
   },
   networks : {
-		mainnet: { // so far same as testnet
+		mainnet: { // so far same as testnet 
 		  nethash: '6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
 		  peerseed: 'http://5.39.9.240:4001',
 		  forcepeer: false,
