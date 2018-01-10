@@ -54,13 +54,15 @@
     return function (address) {
       if (!address) return address
 
-      var username = accountService.getUsername(address)
-
-      if (username !== address) return username
-      else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)
-      else return smallId(address)
+      const username = accountService.getUsername(address)
+      return username !== address ? username : smallId(address)
     }
   }])
+  .filter('txId', function () {
+    return function (txId) {
+      return txId ? smallId(txId) : txId
+    }
+  })
 
   function smallId (fullId) {
     return fullId.slice(0, 5) + '...' + fullId.slice(-5)
