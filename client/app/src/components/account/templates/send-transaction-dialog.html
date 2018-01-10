@@ -1,9 +1,9 @@
-<md-dialog aria-label="{{'Send'|translate}} {{ac.network.token}}" ng-cloak md-theme="ac.currentTheme">
+<md-dialog aria-label="{{'Send'|translate}} {{network.token}}" ng-cloak md-theme="ac.currentTheme">
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2><span>{{'Send'|translate}} {{ac.network.token}} {{'from'|translate}}</span>&nbsp;{{send.data.fromAddress}}</h2>
+      <h2><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
       <span flex></span>
-      <md-button class="md-icon-button" ng-click="send.cancel()">
+      <md-button class="md-icon-button" ng-click="cancel()">
         <md-icon md-font-library="material-icons">clear</md-icon>
       </md-button>
     </div>
@@ -12,7 +12,7 @@
   <md-dialog-content>
     <md-tabs md-dynamic-height>
 
-      <md-tab md-on-select="send.selectTag('unique')">
+      <md-tab md-on-select="selectTag('unique')">
         <md-tab-label>
           <translate>Unique</translate>
         </md-tab-label>
@@ -24,8 +24,9 @@
                 <qr-scanner input-callback-func="onQrCodeForToAddressScanned(qr)"></qr-scanner>
               </md-input-container>
 
-              <md-autocomplete flex="95" md-selected-item="send.data.selectedAddress" md-selected-item-change="send.selectedContactChange(contact)" md-search-text-change="send.searchTextChange(send.searchText)" md-search-text="send.searchText"
-                md-items="contact in send.querySearch(send.searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
+              <!-- TODO show the name + the address -->
+              <md-autocomplete flex="95" md-selected-item="data.selectedAddress" md-selected-item-change="selectedContactChange(contact)" md-search-text-change="searchTextChange(searchText)" md-search-text="searchText"
+                md-items="contact in querySearch(searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
                 <md-item-template>
                   <span class="item-title">
                       <span> {{contact.name || contact.username || contact.address}} </span>
@@ -36,15 +37,15 @@
 
             <div layout="row" layout-align="space-between start">
               <md-input-container class="md-block" style="width: 100%">
-                <label>{{'Amount'|translate}} ({{ac.network.token}})</label>
-                <input style="width: 100%" ng-model="send.data.amount" type="number" step="0.00000001" min="0.00000001" max="100000000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
+                <label>{{'Amount'|translate}} ({{network.token}})</label>
+                <input style="width: 100%" ng-model="data.amount" type="number" step="0.00000001" min="0.00000001" max="100000000000000" valid-amount autocomplete="off" ng-required="true" tabIndex="2">
                 <div class="hint">
-                  {{ac.currency.symbol}} {{send.data.amount | amountToCurrency:this}}
+                  {{ac.currency.symbol}} {{data.amount | amountToCurrency:this}}
                 </div>
               </md-input-container>
 
               <md-input-container class="md-block">
-                <md-button ng-click="send.fillSendableBalance()" class="md-primary">
+                <md-button ng-click="fillSendableBalance()" class="md-primary">
                   <translate>Send All</translate>
                 </md-button>
               </md-input-container>
@@ -52,17 +53,17 @@
 
             <md-input-container md-no-float class="md-block">
               <label>{{'Message (or Smartbridge)'|translate}} ({{'Optional'|translate}})</label>
-              <input ng-model="send.data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
+              <input ng-model="data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
             </md-input-container>
 
-            <passphrase-field ng-if="!send.data.ledger" ng-model="send.data.passphrase" label="Passphrase" tab-index="4"></passphrase-field>
-            <passphrase-field ng-if="send.data.secondSignature"ng-model="send.data.secondpassphrase" label="Second Passphrase" tab-index="5"></passphrase-field>
+            <passphrase-field ng-if="!data.ledger" ng-model="data.passphrase" label="Passphrase" tab-index="4"></passphrase-field>
+            <passphrase-field ng-if="data.secondSignature"ng-model="data.secondPassphrase" label="Second Passphrase" tab-index="5"></passphrase-field>
 
           </form>
         </md-tab-body>
       </md-tab>
 
-      <md-tab md-on-select="send.selectTab('multiple')">
+      <md-tab md-on-select="selectTab('multiple')">
         <md-tab-label>
           <translate>Multiple</translate>
         </md-tab-label>
@@ -73,7 +74,7 @@
               <md-card-title>
                 <md-card-title-text>
                   <span translate>
-                    It is possible to use a CSV file to send {{ac.network.symbol}} to a list of addresses. Each of these transactions would have its own fee until the next version of the protocol. Currently is limited to {{transactionsPerFile}} transactions per file. The format is: <pre>Address,Amount,Smartbridge</pre>
+                    It is possible to use a CSV file to send {{network.symbol}} to a list of addresses. Each of these transactions would have its own fee until the next version of the protocol. Currently is limited to {{transactionsPerFile}} transactions per file. The format is: <pre>Address,Amount,Smartbridge</pre>
                   </span>
                 </md-card-title-text>
               </md-card-title>
@@ -82,13 +83,13 @@
             <md-input-container md-no-float class="md-block">
               <!-- TODO icon style -->
               <!-- TODO input style + editable or read-only-->
-              <md-icon style="cursor: pointer;outline: none" ng-click="send.selectFile()" md-font-library="material-icons">attach_file</md-icon>
+              <md-icon style="cursor: pointer;outline: none" ng-click="selectFile()" md-font-library="material-icons">attach_file</md-icon>
               <label>{{'File'|translate}}</label>
-              <input ng-model="send.data.file" ng-click="send.selectFile()" type="text" ng-required="true" maxlength="64" tabIndex="1">
+              <input ng-model="data.file" ng-click="selectFile()" type="text" ng-required="true" maxlength="64" tabIndex="1">
             </md-input-container>
 
-            <passphrase-field ng-if="!send.data.ledger" ng-model="send.data.passphrase" label="Passphrase" tab-index="2"></passphrase-field>
-            <passphrase-field ng-if="send.data.secondSignature"ng-model="send.data.secondpassphrase" label="Second Passphrase" tab-index="3"></passphrase-field>
+            <passphrase-field ng-if="!data.ledger" ng-model="data.passphrase" label="Passphrase" tab-index="2"></passphrase-field>
+            <passphrase-field ng-if="data.secondSignature"ng-model="data.secondPassphrase" label="Second Passphrase" tab-index="3"></passphrase-field>
 
           </form>
         </md-tab-body>
@@ -103,17 +104,17 @@
       <div class="md-caption">
         <translate>Remaining balance</translate>
       </div>
-      <div class="balance">{{ac.network.symbol}} {{ send.remainingBalance }}</div>
+      <div class="balance">{{network.symbol}} {{ remainingBalance }}</div>
     </div>
     <span flex></span>
 
     <!-- TODO on-enter-key -->
-    <md-button type="submit" ng-click="send.submit(send.tab)" ng-disabled="(send.tab == 'unique' && uniqueForm.$invalid) || (send.tab == 'multiple' && multipleForm.$invalid)" tabIndex="6">
-      <translate ng-if="!send.data.ledger">Next</translate>
-      <translate ng-if="send.data.ledger">Sign with Ledger</translate>
+    <md-button type="submit" ng-click="submit(tab)" ng-disabled="(tab == 'unique' && uniqueForm.$invalid) || (tab == 'multiple' && multipleForm.$invalid)" tabIndex="6">
+      <translate ng-if="!data.ledger">Next</translate>
+      <translate ng-if="data.ledger">Sign with Ledger</translate>
     </md-button>
 
-    <md-button ng-click="send.cancel()" style="margin-right:20px;" tabIndex="7">
+    <md-button ng-click="cancel()" style="margin-right:20px;" tabIndex="7">
       <translate>Cancel</translate>
     </md-button>
 

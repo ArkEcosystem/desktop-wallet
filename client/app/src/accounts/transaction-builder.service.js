@@ -1,6 +1,8 @@
 ;(function () {
   'use strict'
 
+  // TODO refactor
+
   angular.module('arkclient.accounts')
     .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
 
@@ -15,9 +17,6 @@
         deferred.reject(e)
         return
       }
-
-      transaction.fee = fee
-      transaction.senderId = config.fromAddress
 
       if (config.ledger) {
         delete transaction.signature
@@ -38,6 +37,10 @@
         deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
         return
       }
+
+      transaction.fee = fee
+      transaction.senderId = config.fromAddress
+
       deferred.resolve(transaction)
     }
 
@@ -70,6 +73,53 @@
                                                                   config.smartbridge,
                                                                   config.masterpassphrase,
                                                                   config.secondpassphrase))
+      })
+    }
+
+    /**
+     * Each transaction is expected to be ``{ address, amount, smartbridge }`,
+     * where amount is expected to be in arktoshi
+     */
+    function createMultipleSendTransactions ({ publicKey, fromAddress, transactions, masterpassphrase, secondpassphrase }) {
+      const network = networkService.getNetwork()
+      const account = accountService.getAccount(fromAddress)
+
+      return new Promise((resolve, reject) => {
+        accountService.getFees(false).then(fees => {
+
+          const invalidAddress = transactions.find(t => {
+            return !ark.crypto.validateAddress(t.address, network.version)
+          })
+
+          if (invalidAddress) {
+            // TODO use only 1 string
+            return reject(gettextCatalog.getString('The destination address ') + invalidAddress + gettextCatalog.getString(' is erroneous'))
+          }
+
+          const total = transactions.reduce((total, t) => total + t.amount + fees.send, 0)
+          if (total > account.balance) {
+            // TODO use only 1 string
+            return reject(gettextCatalog.getString('Not enough ' + network.token + ' on your account ') + fromAddress)
+          }
+
+          if (ark.crypto.getAddress(publicKey, network.version) !== fromAddress) {
+            return reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress)
+          }
+
+          // TODO throttle
+          transactions = transactions.map(({ address, amount, smartbridge }) => {
+            const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
+
+            // TODO ledger signing on each transaction
+
+            transaction.fee = fees.send
+            transaction.senderId = fromAddress
+
+            return transaction
+          })
+
+          resolve(transactions)
+        })
       })
     }
 
@@ -124,13 +174,11 @@
     }
 
     return {
-      createSendTransaction: createSendTransaction,
-
-      createSecondPassphraseCreationTransaction: createSecondPassphraseCreationTransaction,
-
-      createDelegateCreationTransaction: createDelegateCreationTransaction,
-
-      createVoteTransaction: createVoteTransaction
+      createSendTransaction,
+      createMultipleSendTransactions,
+      createSecondPassphraseCreationTransaction,
+      createDelegateCreationTransaction,
+      createVoteTransaction
     }
   }
 })()
