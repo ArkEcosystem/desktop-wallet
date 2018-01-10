@@ -13,14 +13,14 @@ Please don't submit Pull-Requests (PRs) for translations, but use the link above
 ## Installing via Package Managers
 
 #### AUR
-For distros derived from Arch Linux the package is avaliable in AUR, just run:
+For distros derived from Arch Linux the package is available in AUR, just run:
 
 ```
 yaourt -Sy ark-desktop
 ```
 
 #### Homebrew
-For Mac users the package is avaliable in [Homebrew](https://brew.sh/):
+For Mac users the package is available in [Homebrew](https://brew.sh/):
 
 ```
 brew update
