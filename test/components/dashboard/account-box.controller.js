@@ -3,7 +3,7 @@
 describe('AccountBoxController', function () {
   const expect = chai.expect
 
-  let ctrl, ARKTOSHI_UNIT, accounts, bindings
+  let ctrl, ARKTOSHI_UNIT, accounts, bindings, accountType, accountService
 
   beforeEach(module('arkclient.constants'));
 
@@ -11,7 +11,7 @@ describe('AccountBoxController', function () {
     module('arkclient.components', $provide => {
     })
 
-    inject((_$componentController_, _ARKTOSHI_UNIT_) => {
+    inject((_$componentController_, _ARKTOSHI_UNIT_, $injector) => {
 
       ARKTOSHI_UNIT = _ARKTOSHI_UNIT_
       accounts = [
@@ -38,19 +38,26 @@ describe('AccountBoxController', function () {
       }
 
       ctrl = _$componentController_('accountBox', null, bindings)
+      const utilityService = $injector.get('utilityService')
+      accountService = $injector.get('accountService')
+
+      accountType = ctrl.createAccountType('Test Accounts Type',
+                                           bindings.accountCtrl.getAllAccounts,
+                                           bindings.accountCtrl.getAllAccounts,
+                                           utilityService.createRefreshState('Contacts refreshed', 'Could not refresh contacts'))
     })
   })
 
-  describe('myAccountsBalance()', () => {
+  describe('getTotalBalance()', () => {
     it('sums the balance (in ARK, formatted) of all accounts', function () {
-      expect(ctrl.myAccountsBalance()).to.equal('30.00')
+      expect(ctrl.getTotalBalance(accountType)).to.equal('30.00')
     })
   })
 
-  describe('myAccountsCurrencyBalance()', () => {
+  describe('currencyBalance()', () => {
     context('when it is connected to a maket', () => {
       it('sums the balance (in the configured currency, formatted) of all accounts', function () {
-        expect(ctrl.myAccountsCurrencyBalance()).to.equal(3)
+        expect(ctrl.currencyBalance(accountType)).to.equal(3)
       })
     })
 
@@ -60,24 +67,32 @@ describe('AccountBoxController', function () {
       })
 
       it('returns 0', function () {
-        expect(ctrl.myAccountsCurrencyBalance()).to.equal(0)
+        expect(ctrl.currencyBalance(accountType)).to.equal(0)
       })
     })
   })
 
-  // TODO: Implement with accountController refreshAccountBalances method
-  xdescribe('refreshAccountBalances()', () => {
+  describe('refreshAccountBalances()', () => {
     context('when the balance of an account changes', () => {
       it('updates the balance', function () {
-        expect(ctrl.myAccountsBalance()).to.equal('30.00')
-        sinon.stub(bindings.accountCtrl, 'getAllAccounts').returns([
-          { balance: 1 * ARKTOSHI_UNIT },
-          { balance: 17 * ARKTOSHI_UNIT },
-          { balance: 1 * ARKTOSHI_UNIT },
-          { balance: 1 * ARKTOSHI_UNIT }
-        ])
-        ctrl.accountCtrl.refreshAccountBalances()
-        expect(ctrl.myAccountsBalance()).to.equal('20.00')
+        expect(ctrl.getTotalBalance(accountType)).to.equal('30.00')
+        accountService.refreshAccount = (account) => {
+          if (account.balance) {
+            account.balance = account.balance / 2
+          }
+          // we need to create a bluebirdpromise, because on a normal promise there is no finally
+          const bluebirdpromise = {}
+          bluebirdpromise.then = (resolve) => {
+            resolve(account)
+            return bluebirdpromise
+          }
+          bluebirdpromise.catch = () => bluebirdpromise
+          bluebirdpromise.finally = () => bluebirdpromise
+
+          return bluebirdpromise
+        }
+        ctrl.refreshAccountBalances(false, accountType.getAccountsToRefresh(), accountType.refreshState)
+        expect(ctrl.getTotalBalance(accountType)).to.equal('15.00')
       })
     })
   })
