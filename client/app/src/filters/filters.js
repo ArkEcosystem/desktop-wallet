@@ -58,7 +58,7 @@
 
       if (username !== address) return username
       else if (address.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return smallId(address)
-      else return smallId(address)
+      else return address
     }
   }])
 
