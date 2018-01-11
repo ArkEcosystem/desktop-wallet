@@ -14,8 +14,7 @@
 
     const openDialogIn = ($scope, selectedAccount, transactions) => {
 
-      // TODO merge with AcCtrl
-      // TODO test after send
+      // TODO merge with the method from AccountController
       const saveFile = () => {
         const fs = require('fs')
         const defaultPath = `${selectedAccount.address} (${new Date()}).json`
@@ -78,7 +77,7 @@
           return transactionPromise
         })
 
-        const setStatus = () => {
+        const updateStatus = () => {
           if (transactions.some(t => t.sendStatus === 'error')) {
             $scope.validate.status = 'error'
           } else if (transactions.some(t => t.sendStatus === 'cancelled' || t.sendStatus === 'error cancelling')) {
@@ -89,8 +88,8 @@
         }
 
         Promise.all(processing)
-          .then(setStatus)
-          .catch(setStatus)
+          .then(updateStatus)
+          .catch(updateStatus)
       }
 
       /**

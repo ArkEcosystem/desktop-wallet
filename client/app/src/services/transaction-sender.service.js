@@ -17,6 +17,9 @@
      * Show the send transaction dialog. Reuses the controller and its $scope TODO
      */
     const openDialogIn = ($scope, accountCtrl, selectedAccount) => {
+
+      $scope.maxTransactionsPerFile = 5
+
       const passphrases = accountService.getPassphrases(selectedAccount.address)
 
       const getTotalBalance = fee => {
@@ -31,12 +34,10 @@
             toastService.error('Unable to load file' + ': ' + err)
           } else {
             const parse = require('csv-parse')
-            parse(data, { quote: null }, (err, transactionsData) => {
+            parse(data, { quote: null, to: $scope.maxTransactionsPerFile }, (err, transactionsData) => {
               if (err) {
                 return toastService.error('Error while parsing the file')
               }
-
-              // TODO only the first n transactions
 
               callback(transactionsData)
             })
