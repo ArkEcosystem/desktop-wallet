@@ -393,10 +393,7 @@
       return errorMessage
     }
 
-    function formatAndToastError (error, hideDelay) {
-      if (!hideDelay) {
-        hideDelay = 5000
-      }
+    function formatAndToastError (error, hideDelay=5000) {
       toastService.error(formatErrorMessage(error), hideDelay, true)
     }
 
@@ -1059,12 +1056,7 @@
         $mdDialog.hide()
       }
 
-      $scope.send = {
-        data: data,
-        openFile: openFile,
-        cancel: cancel,
-        next: next
-      }
+      $scope.send = { data, openFile, cancel, next }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -1731,14 +1723,12 @@
 
     function showValidateTransaction (selectedAccount, transaction) {
       function saveFile () {
-        var fs = require('fs')
-        var raw = JSON.stringify(transaction)
+        const fs = require('fs')
+        const raw = JSON.stringify(transaction)
 
         require('electron').remote.dialog.showSaveDialog({
           defaultPath: transaction.id + '.json',
-          filters: [{
-            extensions: ['json']
-          }]
+          filters: [{ extensions: ['json'] }]
         }, function (fileName) {
           if (fileName === undefined) return
 

@@ -417,20 +417,20 @@
     pickRandomPeer()
 
     return {
-      switchNetwork: switchNetwork,
-      setNetwork: setNetwork,
-      createNetwork: createNetwork,
-      removeNetwork: removeNetwork,
-      getNetwork: getNetwork,
-      getNetworks: getNetworks,
-      getPeer: getPeer,
-      getConnection: getConnection,
-      getFromPeer: getFromPeer,
-      postTransaction: postTransaction,
-      broadcastTransaction: broadcastTransaction,
-      pickRandomPeer: pickRandomPeer,
-      getLatestClientVersion: getLatestClientVersion,
-      getPrice: getPrice
+      switchNetwork,
+      setNetwork,
+      createNetwork,
+      removeNetwork,
+      getNetwork,
+      getNetworks,
+      getPeer,
+      getConnection,
+      getFromPeer,
+      postTransaction,
+      broadcastTransaction,
+      pickRandomPeer,
+      getLatestClientVersion,
+      getPrice
     }
   }
 })()

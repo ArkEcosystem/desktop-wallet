@@ -92,12 +92,6 @@
       )
     }
 
-    return {
-      error: error,
-      success: success,
-      warn: warn,
-      log: log,
-      debug: debug
-    }
+    return { error, success, warn, log, debug }
   }
 })()
