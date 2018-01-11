@@ -12,7 +12,6 @@
     <md-dialog-content>
       <div class="md-dialog-content">
 
-        <!-- TODO show fromAddres -->
         <md-list>
           <md-list-item>
             <b translate>Sender address</b><span class="md-secondary">{{validate.senderAddress | accountLabel}}</span>
@@ -31,6 +30,22 @@
           </md-list-item>
         </md-list>
 
+        <!-- TODO test color -->
+        <md-card ng-if="validate.status" md-colors="{'background': 'green-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span translate>All transactions have succeed</span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+        <md-card ng-if="validate.status === false" md-colors="{'background': 'red-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span translate>Some transactions have failed</span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+
         <md-table-container flex="100" class="tx-list-container">
           <table md-table id="tx-list">
             <thead md-head md-order="query.order">
@@ -39,14 +54,26 @@
                 <th md-column translate>Address</th>
                 <th md-column md-numeric translate>Amount</th>
                 <th md-column translate>Smartbridge</th>
+                <th md-column translate>Status</th>
               </tr>
             </thead>
             <tbody md-body style="white-space:nowrap;">
-              <tr md-row ng-repeat="t in validate.transactions | orderBy: validate.order | limitTo: validate.limit track by t.id">
+              <tr md-row ng-repeat="t in validate.transactions | limitTo: validate.limit track by t.id">
+                <!-- TODO test colour -->
                 <td md-cell><a ng-click="ac.openExplorer('/tx/'+t.id)" md-colors="::{color: '{{ ac.network.themeDark ? 'background-200' : 'background-800' }}'}">{{t.id | txId}}</a></td>
                 <td md-cell>{{t.recipientId | accountLabel}}</td>
                 <td md-cell>{{t.amount | convertToArkValue}}</td>
                 <td md-cell>{{t.vendorField}}</td>
+                <td md-cell ng-if="!t.sendStatus" translate>Ready</td>
+                <td md-cell ng-if="t.sendStatus === 'sending'" style="display:flex; justify-content: center">
+                  <md-progress-circular md-diameter="24"></md-progress-circular>
+                </td>
+                <td md-cell ng-if="t.sendStatus === 'ok'" translate>
+                  <md-icon md-font-library="material-icons">done</md-icon>
+                </td>
+                <td md-cell ng-if="t.sendStatus === 'error'" translate>
+                  <md-icon md-font-library="material-icons">error</md-icon>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -58,13 +85,16 @@
       <md-button class="md-primary" ng-click="validate.saveFile()">
         <span translate>Save Txs Offline</span>
       </md-button>
+
       <span flex></span>
-      <md-button class="md-raised md-primary" ng-click="validate.send()">
+
+      <md-button ng-click="validate.send()" ng-if="validate.status === null" ng-disabled="validate.sent" class="md-raised md-primary">
         <span translate>Send</span> {{ac.network.symbol}}{{validate.totalAmount}} <span translate>now!</span>
       </md-button>
+
       <md-button ng-click="validate.cancel()" style="margin-right:20px;">
-        <translate>Cancel</translate>
+        <translate ng-if="validate.status === null">Cancel</translate>
+        <translate ng-if="validate.status !== null">Close</translate>
       </md-button>
-    </md-dialog-actions>
   </form>
 </md-dialog>

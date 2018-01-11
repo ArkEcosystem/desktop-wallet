@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionValidatorService', ['$mdDialog', 'gettextCatalog', 'utilityService', 'accountService', 'networkService', 'toastService', 'transactionBuilderService', TransactionValidatorService])
+    .service('transactionValidatorService', ['$timeout', '$mdDialog', 'gettextCatalog', 'utilityService', 'accountService', 'networkService', 'toastService', 'transactionBuilderService', TransactionValidatorService])
 
   /**
    * TransactionValidatorService
@@ -10,7 +10,7 @@
    *
    * This service is used to validate transactions
    */
-  function TransactionValidatorService ($mdDialog, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
+  function TransactionValidatorService ($timeout, $mdDialog, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
 
     const openDialogIn = ($scope, selectedAccount, transactions) => {
 
@@ -27,6 +27,7 @@
       }
 
       // TODO merge with AcCtrl
+      // TODO test after send
       function saveFile () {
         const fs = require('fs')
         const raw = JSON.stringify(transactions)
@@ -57,40 +58,42 @@
         })
       }
 
-      // TODO sending/loading?
       function send () {
-        $mdDialog.hide()
+        $scope.validate.sent = true
 
         const transactionDelay = 3000
 
-        transactions.map((transaction, i) => {
+        const processing = $scope.validate.transactions.map((transaction, i) => {
           return new Promise((resolve, reject) => {
+            transaction.sendStatus = 'sending'
             transaction = accountService.formatTransaction(transaction, selectedAccount.address)
             transaction.confirmations = 0
 
-            console.log(transaction, i);
-
-            setTimeout(()=> {
+            $timeout(()=> {
               networkService.postTransaction(transaction).then(
                 transaction => {
                   selectedAccount.transactions.unshift(transaction)
-                  toastService.success(
-                    gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
-                    null,
-                    true
-                  )
-                  resolve()
+                  transaction.sendStatus = 'ok'
+                  resolve(transaction)
                 },
                 error => {
-                  // TODO to toastService
-                  // formatAndToastError(error)
-                  console.log(error);
+                  transaction.sendStatus = 'error'
                   reject()
                 }
               )
             }, i * transactionDelay)
           })
         })
+
+        Promise.all(processing)
+          .then(transactions => {
+            $scope.validate.status = true
+          })
+          .catch(transactions => {
+            $scope.validate.status = false
+          })
+
+        // TODO cancel should cancel
       }
 
       const amount = transactions.reduce((total, t) => total + t.amount, 0)
@@ -99,10 +102,11 @@
       const balance = selectedAccount.balance - total
 
       $scope.validate = {
+        sent: false,
+        status: null,
         saveFile,
         send,
         cancel,
-        order: 'amount', // TODO
         limit: 25, // TODO
         senderAddress: selectedAccount.address,
         transactions,
