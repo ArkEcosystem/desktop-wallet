@@ -10,7 +10,7 @@
   </md-toolbar>
 
   <md-dialog-content>
-    <md-tabs md-dynamic-height>
+    <md-tabs md-dynamic-height ng-keyup="$event.keyCode == 13 && submit(tab)">
 
       <md-tab md-on-select="selectTag('unique')">
         <md-tab-label>
@@ -108,7 +108,6 @@
     </div>
     <span flex></span>
 
-    <!-- TODO on-enter-key -->
     <md-button type="submit" ng-click="submit(tab)" ng-disabled="(tab == 'unique' && uniqueForm.$invalid) || (tab == 'multiple' && multipleForm.$invalid)" tabIndex="6">
       <translate ng-if="!data.ledger">Next</translate>
       <translate ng-if="data.ledger">Sign with Ledger</translate>
