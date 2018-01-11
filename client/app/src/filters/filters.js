@@ -63,6 +63,6 @@
   }])
 
   function smallId (fullId) {
-    return fullId.slice(0, 5) + '...' + fullId.slice(-5)
+    return (fullId.length > 10) ? fullId.slice(0, 5) + '...' + fullId.slice(-5) : fullId
   }
 })()
