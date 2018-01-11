@@ -30,15 +30,21 @@
           </md-list-item>
         </md-list>
 
-        <!-- TODO test color -->
-        <md-card ng-if="validate.status" md-colors="{'background': 'green-100'}" flex="100">
+        <md-card ng-if="validate.status === 'ok'" md-colors="{'background': 'green-100'}" flex="100">
           <md-card-title>
             <md-card-title-text>
               <span translate>All transactions have succeed</span>
             </md-card-title-text>
           </md-card-title>
         </md-card>
-        <md-card ng-if="validate.status === false" md-colors="{'background': 'red-100'}" flex="100">
+        <md-card ng-if="validate.status === 'cancelled'" md-colors="{'background': 'yellow-100'}" flex="100">
+          <md-card-title>
+            <md-card-title-text>
+              <span translate>Some transactions have succeed, but others have been cancelled</span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+        <md-card ng-if="validate.status === 'error'" md-colors="{'background': 'red-100'}" flex="100">
           <md-card-title>
             <md-card-title-text>
               <span translate>Some transactions have failed</span>
@@ -64,14 +70,21 @@
                 <td md-cell>{{t.recipientId | accountLabel}}</td>
                 <td md-cell>{{t.amount | convertToArkValue}}</td>
                 <td md-cell>{{t.vendorField}}</td>
+
                 <td md-cell ng-if="!t.sendStatus" translate>Ready</td>
                 <td md-cell ng-if="t.sendStatus === 'sending'" style="display:flex; justify-content: center">
-                  <md-progress-circular md-diameter="24"></md-progress-circular>
+                  <md-progress-circular md-diameter="24" style="margin-top: 6px"></md-progress-circular>
                 </td>
                 <td md-cell ng-if="t.sendStatus === 'ok'" translate>
                   <md-icon md-font-library="material-icons">done</md-icon>
                 </td>
-                <td md-cell ng-if="t.sendStatus === 'error'" translate>
+                <td md-cell ng-if="t.sendStatus === 'cancelled'" translate>
+                  <md-icon md-font-library="material-icons">block</md-icon>
+                </td>
+                <td md-cell ng-if="t.sendStatus === 'error cancelling'">
+                  <md-icon md-font-library="material-icons">warning</md-icon>
+                </td>
+                <td md-cell ng-if="t.sendStatus === 'error'">
                   <md-icon md-font-library="material-icons">error</md-icon>
                 </td>
               </tr>
@@ -88,13 +101,13 @@
 
       <span flex></span>
 
-      <md-button ng-click="validate.send()" ng-if="validate.status === null" ng-disabled="validate.sent" class="md-raised md-primary">
+      <md-button ng-click="validate.send()" ng-if="validate.status === 'pristine'" ng-disabled="validate.sent" class="md-raised md-primary">
         <span translate>Send</span> {{ac.network.symbol}}{{validate.totalAmount}} <span translate>now!</span>
       </md-button>
 
       <md-button ng-click="validate.cancel()" style="margin-right:20px;">
-        <translate ng-if="validate.status === null">Cancel</translate>
-        <translate ng-if="validate.status !== null">Close</translate>
+        <translate ng-if="validate.status === 'pristine'">Cancel</translate>
+        <translate ng-if="validate.status !== 'pristine'">Close</translate>
       </md-button>
   </form>
 </md-dialog>

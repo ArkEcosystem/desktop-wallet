@@ -15,7 +15,6 @@
     const openDialogIn = ($scope, selectedAccount, transactions) => {
 
       // TODO dialogService ?
-      const cancel = () => $mdDialog.hide()
       const openDialog = templateUrl => {
         $mdDialog.show({
           scope: $scope,
@@ -28,19 +27,18 @@
 
       // TODO merge with AcCtrl
       // TODO test after send
-      function saveFile () {
+      const saveFile = () => {
         const fs = require('fs')
-        const raw = JSON.stringify(transactions)
-
         const defaultPath = `${selectedAccount.address} (${new Date()}).json`
 
         require('electron').remote.dialog.showSaveDialog({
           defaultPath,
           filters: [{ extensions: ['json'] }]
-        }, function (fileName) {
+        }, fileName => {
           if (fileName === undefined) return
 
-          fs.writeFile(fileName, raw, 'utf8', function (err) {
+          const raw = JSON.stringify(transactions)
+          fs.writeFile(fileName, raw, 'utf8', err => {
             if (err) {
               toastService.error(
                 gettextCatalog.getString('Failed to save transactions file') + ': ' + err,
@@ -58,42 +56,73 @@
         })
       }
 
-      function send () {
+      // Transactions that are being processed
+      let processing
+
+      const send = () => {
         $scope.validate.sent = true
 
-        const transactionDelay = 3000
+        const delayBetweenTransactions = 2000
 
-        const processing = $scope.validate.transactions.map((transaction, i) => {
-          return new Promise((resolve, reject) => {
+        processing = $scope.validate.transactions.map((transaction, i) => {
+          const transactionPromise = $timeout(i * delayBetweenTransactions)
+
+          // Store the transaction to update its `sendStatus` later
+          transactionPromise.$$transaction = transaction
+
+          transactionPromise.then(() => {
             transaction.sendStatus = 'sending'
+
             transaction = accountService.formatTransaction(transaction, selectedAccount.address)
             transaction.confirmations = 0
 
-            $timeout(()=> {
-              networkService.postTransaction(transaction).then(
-                transaction => {
-                  selectedAccount.transactions.unshift(transaction)
-                  transaction.sendStatus = 'ok'
-                  resolve(transaction)
-                },
-                error => {
-                  transaction.sendStatus = 'error'
-                  reject()
-                }
-              )
-            }, i * transactionDelay)
+            networkService.postTransaction(transaction).then(
+              transaction => {
+                transaction.sendStatus = 'ok'
+                selectedAccount.transactions.unshift(transaction)
+              },
+              () => transaction.sendStatus = 'error'
+            )
           })
+
+          // Return the `$timeout` promise (instead of the one returned by `then`) to keep its ID
+          return transactionPromise
         })
 
-        Promise.all(processing)
-          .then(transactions => {
-            $scope.validate.status = true
-          })
-          .catch(transactions => {
-            $scope.validate.status = false
-          })
+        const setStatus = () => {
+          if (transactions.some(t => t.sendStatus === 'error')) {
+            $scope.validate.status = 'error'
+          } else if (transactions.some(t => t.sendStatus === 'cancelled' || t.sendStatus === 'error cancelling')) {
+            $scope.validate.status = 'cancelled'
+          } else {
+            $scope.validate.status = 'ok'
+          }
+        }
 
-        // TODO cancel should cancel
+        Promise.all(processing)
+          .then(setStatus)
+          .catch(setStatus)
+      }
+
+      /**
+       * Close the dialog or stop the sending of transactions
+       */
+      const cancel = () => {
+        if (! $scope.validate.sent) {
+          $mdDialog.hide()
+
+        } else if ($scope.validate.status !== 'pristine') {
+          $mdDialog.hide()
+
+        } else {
+          processing.forEach(transactionPromise => {
+            const transaction = transactionPromise.$$transaction
+
+            if (!transaction.sendStatus || transaction.sendStatus === 'pending') {
+              transaction.sendStatus = $timeout.cancel(transactionPromise) ? 'cancelled' : 'error cancelling'
+            }
+          })
+        }
       }
 
       const amount = transactions.reduce((total, t) => total + t.amount, 0)
@@ -103,7 +132,7 @@
 
       $scope.validate = {
         sent: false,
-        status: null,
+        status: 'pristine',
         saveFile,
         send,
         cancel,
