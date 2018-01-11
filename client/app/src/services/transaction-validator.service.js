@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionValidatorService', ['$timeout', '$mdDialog', 'gettextCatalog', 'utilityService', 'accountService', 'networkService', 'toastService', 'transactionBuilderService', TransactionValidatorService])
+    .service('transactionValidatorService', ['$timeout', 'dialogService', 'gettextCatalog', 'utilityService', 'accountService', 'networkService', 'toastService', 'transactionBuilderService', TransactionValidatorService])
 
   /**
    * TransactionValidatorService
@@ -10,20 +10,9 @@
    *
    * This service is used to validate transactions
    */
-  function TransactionValidatorService ($timeout, $mdDialog, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
+  function TransactionValidatorService ($timeout, dialogService, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
 
     const openDialogIn = ($scope, selectedAccount, transactions) => {
-
-      // TODO dialogService ?
-      const openDialog = templateUrl => {
-        $mdDialog.show({
-          scope: $scope,
-          templateUrl,
-          preserveScope: true,
-          clickOutsideToClose: false,
-          parent: angular.element(document.getElementById('app'))
-        })
-      }
 
       // TODO merge with AcCtrl
       // TODO test after send
@@ -109,10 +98,10 @@
        */
       const cancel = () => {
         if (! $scope.validate.sent) {
-          $mdDialog.hide()
+          dialogService.hide()
 
         } else if ($scope.validate.status !== 'pristine') {
-          $mdDialog.hide()
+          dialogService.hide()
 
         } else {
           processing.forEach(transactionPromise => {
@@ -145,7 +134,10 @@
         remainingBalance: utilityService.arktoshiToArk(balance).toString()
       }
 
-      openDialog('./src/components/account/templates/validate-transactions-dialog.html')
+      dialogService.open({
+        scope: $scope,
+        templateUrl: './src/components/account/templates/validate-transactions-dialog.html'
+      })
     }
 
     return {

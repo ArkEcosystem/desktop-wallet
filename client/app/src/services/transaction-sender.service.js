@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionSenderService', ['$mdDialog', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
+    .service('transactionSenderService', ['dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
 
   /**
    * TransactionSenderService
@@ -11,25 +11,13 @@
    * This service is used to send transactions; from displaying the dialog to
    * validating and executing them.
    */
-  function TransactionSenderService ($mdDialog, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
+  function TransactionSenderService (dialogService, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
 
     /**
      * Show the send transaction dialog. Reuses the controller and its $scope TODO
      */
     const openDialogIn = ($scope, accountCtrl, selectedAccount) => {
       const passphrases = accountService.getPassphrases(selectedAccount.address)
-
-      // TODO dialogService ?
-      const cancel = () => $mdDialog.hide()
-      const openDialog = templateUrl => {
-        $mdDialog.show({
-          scope: $scope,
-          templateUrl,
-          preserveScope: true,
-          clickOutsideToClose: false,
-          parent: angular.element(document.getElementById('app'))
-        })
-      }
 
       const getTotalBalance = fee => {
         const balance = selectedAccount.balance
@@ -101,7 +89,7 @@
           data.secondpassphrase = $scope.data.secondPassphrase.trim()
         }
 
-        $mdDialog.hide()
+        dialogService.hide()
 
         if (tab === 'unique') {
           data.toAddress = $scope.data.toAddress.trim()
@@ -133,7 +121,7 @@
       $scope.totalBalance = getTotalBalance(0)
       $scope.remainingBalance = getTotalBalance(0) // <-- initial value, this will change by directive
 
-      $scope.cancel = cancel
+      $scope.cancel = () => dialogService.hide()
 
       $scope.selectFile = () => {
         require('electron').remote.dialog.showOpenDialog(fileNames => {
@@ -200,7 +188,10 @@
         }
       }
 
-      openDialog('./src/components/account/templates/send-transaction-dialog.html')
+      dialogService.open({
+        scope: $scope,
+        templateUrl: './src/components/account/templates/send-transaction-dialog.html'
+      })
     }
 
     return {
