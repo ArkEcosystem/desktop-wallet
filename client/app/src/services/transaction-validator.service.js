@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionValidatorService', ['$mdDialog', 'utilityService', 'accountService', 'toastService', 'transactionBuilderService', TransactionValidatorService])
+    .service('transactionValidatorService', ['$mdDialog', 'gettextCatalog', 'utilityService', 'accountService', 'networkService', 'toastService', 'transactionBuilderService', TransactionValidatorService])
 
   /**
    * TransactionValidatorService
@@ -10,7 +10,7 @@
    *
    * This service is used to validate transactions
    */
-  function TransactionValidatorService ($mdDialog, utilityService, accountService, toastService, transactionBuilderService) {
+  function TransactionValidatorService ($mdDialog, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
 
     const openDialogIn = ($scope, selectedAccount, transactions) => {
 
@@ -26,27 +26,71 @@
         })
       }
 
+      // TODO merge with AcCtrl
       function saveFile () {
-        // TODO merge with AcCtrl
+        const fs = require('fs')
+        const raw = JSON.stringify(transactions)
+
+        const defaultPath = `${selectedAccount.address} (${new Date()}).json`
+
+        require('electron').remote.dialog.showSaveDialog({
+          defaultPath,
+          filters: [{ extensions: ['json'] }]
+        }, function (fileName) {
+          if (fileName === undefined) return
+
+          fs.writeFile(fileName, raw, 'utf8', function (err) {
+            if (err) {
+              toastService.error(
+                gettextCatalog.getString('Failed to save transactions file') + ': ' + err,
+                null,
+                true
+              )
+            } else {
+              toastService.success(
+                gettextCatalog.getString('Transactions file successfully saved in') + ' ' + fileName,
+                null,
+                true
+              )
+            }
+          })
+        })
       }
 
+      // TODO sending/loading?
       function send () {
         $mdDialog.hide()
 
-        transaction = accountService.formatTransaction(transaction, selectedAccount.address)
-        transaction.confirmations = 0
+        const transactionDelay = 3000
 
-        networkService.postTransaction(transaction).then(
-          function (transaction) {
-            selectedAccount.transactions.unshift(transaction)
-            toastService.success(
-              gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
-              null,
-              true
-            )
-          },
-          formatAndToastError
-        )
+        transactions.map((transaction, i) => {
+          return new Promise((resolve, reject) => {
+            transaction = accountService.formatTransaction(transaction, selectedAccount.address)
+            transaction.confirmations = 0
+
+            console.log(transaction, i);
+
+            setTimeout(()=> {
+              networkService.postTransaction(transaction).then(
+                transaction => {
+                  selectedAccount.transactions.unshift(transaction)
+                  toastService.success(
+                    gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
+                    null,
+                    true
+                  )
+                  resolve()
+                },
+                error => {
+                  // TODO to toastService
+                  // formatAndToastError(error)
+                  console.log(error);
+                  reject()
+                }
+              )
+            }, i * transactionDelay)
+          })
+        })
       }
 
       const amount = transactions.reduce((total, t) => total + t.amount, 0)

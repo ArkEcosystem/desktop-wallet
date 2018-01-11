@@ -92,13 +92,11 @@
           })
 
           if (invalidAddress) {
-            // TODO use only 1 string
             return reject(gettextCatalog.getString('The destination address ') + invalidAddress + gettextCatalog.getString(' is erroneous'))
           }
 
           const total = transactions.reduce((total, t) => total + t.amount + fees.send, 0)
           if (total > account.balance) {
-            // TODO use only 1 string
             return reject(gettextCatalog.getString('Not enough ' + network.token + ' on your account ') + fromAddress)
           }
 
@@ -106,7 +104,6 @@
             return reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress)
           }
 
-          // TODO throttle
           transactions = transactions.map(({ address, amount, smartbridge }) => {
             const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
 
