@@ -24,12 +24,12 @@
                 <qr-scanner input-callback-func="onQrCodeForToAddressScanned(qr)"></qr-scanner>
               </md-input-container>
 
-              <!-- TODO show the name + the address -->
               <md-autocomplete flex="95" md-selected-item="data.selectedAddress" md-selected-item-change="selectedContactChange(contact)" md-search-text-change="searchTextChange(searchText)" md-search-text="searchText"
-                md-items="contact in querySearch(searchText)" md-item-text="contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
+                md-items="contact in querySearch(searchText)" md-item-text="(contact.name || contact.username) ? ((contact.name || contact.username) + ' - ' + contact.address) : contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
                 <md-item-template>
                   <span class="item-title">
-                      <span> {{contact.name || contact.username || contact.address}} </span>
+                      <span ng-if="contact.name || contact.username"> {{contact.name || contact.username}} - </span>
+                      <span> {{contact.address}} </span>
                   </span>
                 </md-item-template>
               </md-autocomplete>
@@ -81,8 +81,6 @@
             </md-card>
 
             <md-input-container md-no-float class="md-block">
-              <!-- TODO icon style -->
-              <!-- TODO input style + editable or read-only-->
               <md-icon style="cursor: pointer;outline: none" ng-click="selectFile()" md-font-library="material-icons">attach_file</md-icon>
               <label>{{'File'|translate}}</label>
               <input ng-model="data.file" ng-click="selectFile()" type="text" ng-required="true" maxlength="64" tabIndex="1">
