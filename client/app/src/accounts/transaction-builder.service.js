@@ -18,18 +18,22 @@
         return
       }
 
+      transaction.fee = fee
+      transaction.senderId = config.fromAddress
+
       if (config.ledger) {
         delete transaction.signature
         transaction.senderPublicKey = config.publicKey
         if (setAdditionalTransactionPropsOnLedger) {
           setAdditionalTransactionPropsOnLedger(transaction)
         }
-        ledgerService.signTransaction(config.ledger, transaction).then((result) => {
+        ledgerService.signTransaction(config.ledger, transaction).then(result => {
           transaction.signature = result.signature
           transaction.id = ark.crypto.getId(transaction)
           deferred.resolve(transaction)
         },
-        (error) => deferred.reject(error))
+        deferred.reject)
+
         return
       }
 
@@ -37,9 +41,6 @@
         deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
         return
       }
-
-      transaction.fee = fee
-      transaction.senderId = config.fromAddress
 
       deferred.resolve(transaction)
     }

@@ -146,24 +146,4 @@ describe('AccountCardController', function () {
       expect(mdDialogMock.prompt.firstCall.args[0].initialValue).to.eql('Old label')
     })
   })
-
-  describe('submitTransaction()', () => {
-    afterEach(function () {
-      transactionBuilderServiceMock.createSendTransaction.reset()
-    })
-
-    context('when the form amount is a float', () => {
-      it('uses the right amount to create the transaction', function () {
-        transactionBuilderServiceMock.createSendTransaction.resolves({})
-        const stub = transactionBuilderServiceMock.createSendTransaction
-
-        // @see https://github.com/ArkEcosystem/ark-desktop/issues/385
-        ctrl.submitTransaction({}, { amount: 1.0440473 })
-        expect(stub.firstCall.args[0].amount).to.equal(104404730)
-
-        ctrl.submitTransaction({}, { amount: 299.9 })
-        expect(stub.secondCall.args[0].amount).to.equal(29990000000)
-      })
-    })
-  })
 })
