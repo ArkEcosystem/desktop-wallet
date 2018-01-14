@@ -16,7 +16,14 @@ body {
 ::-webkit-scrollbar {
     width: 12px;
 }
+::selection {
+    background: #ADD8E6;
+}
 
+/* Utilities */
+.d-inline-block {
+    display: inline-block;
+}
 
 /* Track */
 
@@ -181,6 +188,13 @@ md-button.menuBtn>md-icon {
     padding: 0 15px;
 }
 
+.selectable-text {
+    -webkit-user-select: text ;
+    -moz-user-select: text ;
+    -ms-user-select: text ;
+    user-select: text ;
+    cursor: text;
+  }
 
 /* Utils */
 
@@ -188,6 +202,23 @@ md-button.menuBtn>md-icon {
     position: relative;
 }
 
+.rotate-360 {
+    -webkit-animation: rotate-360-keyframe 4s linear infinite;
+    -moz-animation: rotate-360-keyframe 4s linear infinite;
+    animation: rotate-360-keyframe 4s linear infinite;
+}
+
+.rotate-360:hover {
+    background-color: transparent !important;
+}
+
+.rotate-360 .md-ripple-container {
+    display: none;
+}
+
+@-moz-keyframes rotate-360-keyframe { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes rotate-360-keyframe { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes rotate-360-keyframe { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
 
 /* Typography support coming in 0.8.0 */
 
@@ -271,6 +302,9 @@ span.name {
     padding: 20px;
     border-top: 1px solid #ccc;
 }
+#vote-help a {
+    color: #555;
+}
 
 .tab-text-only-content {
     padding: 20px;
@@ -314,6 +348,16 @@ table#tx-list.md-table tbody.md-body>tr.md-row>td.md-cell,
 table#tx-list.md-table thead.md-head>tr.md-row>th.md-column {
     padding: 5px !important;
     text-align: center;
+}
+
+table#tx-list.md-table tbody td a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#vote-list tbody td a, #vote-list-virtual tbody td a {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 body>.md-open-menu-container {
@@ -537,4 +581,41 @@ md-toast.announcement > .md-toast-content .md-button {
 }
 md-toast.announcement > .md-toast-content .material-icons {
   color: white;
+}
+md-toast.announcement > .md-toast-content a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Component: Empty State */
+#content .empty-state {
+    text-align: center;
+    color: #d8d8d8;
+    padding: 40px;
+}
+#content .empty-state .es_content_contianer {
+    width: 450px;
+    display: inline-block;
+    white-space: initial;
+}
+#content .empty-state .es_img {
+    display: inline-block;
+    width: 75px;
+}
+#content .empty-state .es_header {
+    margin: 10px 0px;
+}
+#content .empty-state .es_content {
+    margin-top: 10px;
+    line-height: 22px;
+}
+
+/* Export Account Dialog */
+
+/*
+  Fixes a bug in datepicker which cut off the date in the top left, when window is too small
+  see: https://github.com/ArkEcosystem/ark-desktop/pull/485#issuecomment-354466571
+*/
+.md-datepicker-calendar-pane .md-datepicker-input-mask > div.md-datepicker-input-mask-opaque {
+  left: 5px !important;
 }

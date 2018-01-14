@@ -1,7 +1,7 @@
 <md-card flex="none">
 
   <div class="share">
-    <md-button ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount()" aria-label="Refresh Account">
+    <md-button ng-class="{'rotate-360': $ctrl.ul.accountRefreshState.isRefreshing}" ng-if="!$ctrl.ul.refreshAccountsAutomatically" md-no-ink ng-click="$ctrl.ul.refreshCurrentAccount(true)" aria-label="Refresh Account">
       <md-icon md-font-library="material-icons">cached</md-icon>
       <md-tooltip>
         <translate>Refresh Account</translate>
@@ -49,7 +49,7 @@
           </md-button>-->
           <span class="delegate-name">{{$ctrl.ab.getContactFromAddress($ctrl.ul.selected.address).name || $ctrl.ul.selected.username || 'Address'}} {{$ctrl.ul.selected.ledger}}</span>
       <br>
-      <md-button ng-click="$ctrl.ul.copiedToClipboard()" style="text-transform: none;" copy-to-clipboard="{{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}">
+      <md-button style="text-transform: none;" copy-to-clipboard="{{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}">
         <md-icon>content_copy</md-icon>
         <md-tooltip md-direction="top">
           {{ 'Copy' | translate }} {{ $ctrl.ul.showPublicKey ? ('Public Key' | translate | lowercase) : ('Address' | translate | lowercase) }}</translate>
@@ -64,10 +64,16 @@
       </md-icon>
       </span>
       <span class="md-subhead description">
-          <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance | convertToArkValue}}
-          {{$ctrl.ul.network.cmcTicker}}
-          <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance | convertToArkValue | amountToCurrency:$ctrl | formatCurrency:$ctrl.ul }}</md-button>
-        </span>
+        <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance | convertToArkValue}}
+        {{$ctrl.ul.network.cmcTicker}}
+        <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance | convertToArkValue | amountToCurrency:$ctrl:true | formatCurrency:$ctrl.ul:true }}</md-button>
+        <md-button class="md-small" ng-click="$ctrl.ul.toggleBitcoinCurrency()" ng-hide="$ctrl.ul.currency.name === 'btc'" ng-if="$ctrl.accountCtrl.connectedPeer.market.available_supply">
+          <md-tooltip md-direction="top">
+            {{'Toggle' | translate}} {{$ctrl.ul.toggleCurrency.name | uppercase}}
+          </md-tooltip>
+          <md-icon md-svg-icon="bitcoin_toggle"></md-icon>
+        </md-button>
+      </span>
     </md-card-title-text>
   </md-card-title>
 </md-card>

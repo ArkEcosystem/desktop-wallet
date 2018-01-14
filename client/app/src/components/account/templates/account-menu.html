@@ -1,6 +1,7 @@
 <md-bottom-sheet class="md-grid" layout="column">
   <div layout="row" layout-align="center center" ng-cloak>
-    <h2>{{bs.address}}</h2>
+    <h2 ng-if="bs.label">{{bs.label}} ({{bs.address}})</h2>
+    <h2 ng-if="! bs.label">{{bs.address}}</h2>
   </div>
   <div ng-cloak>
     <md-list flex layout="row" layout-align="center center">

@@ -1,6 +1,6 @@
 'use strict'
 
-var appearanceConfig = require('./config/appearance')
+var appearanceConfig = require(require('path').resolve(__dirname, './config/appearance'))
 var modules = [
   'ngMaterial',
   'md.data.table',
@@ -19,9 +19,10 @@ var app = angular.module('arkclient', modules)
 
 app.config(function ($mdIconProvider) {
   $mdIconProvider
-    .icon('menu', './assets/svg/menu.svg', 24)
-    .icon('ledger', './assets/svg/ledger.svg', 24)
-    .icon('qrcode', './assets/svg/qrcode.svg', 24)
+  .icon('menu', './assets/svg/menu.svg', 24)
+  .icon('ledger', './assets/svg/ledger.svg', 24)
+  .icon('qrcode', './assets/svg/qrcode.svg', 24)
+  .icon('bitcoin_toggle', './assets/svg/bitcoin_toggle.svg', 24)
 })
 
 app.config(function ($provide, $mdThemingProvider) {

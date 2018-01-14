@@ -31,7 +31,7 @@ describe('AccountCardController', function () {
     module('arkclient.components', $provide => {
       $provide.value('accountService', accountServiceMock)
       $provide.value('$mdDialog', mdDialogMock)
-      $provide.value('ARKTOSHI_UNIT', Math.pow(10, 8))
+      $provide.value('KAPUTOSHI_UNIT', Math.pow(10, 8))
     })
 
     inject(_$componentController_ => {

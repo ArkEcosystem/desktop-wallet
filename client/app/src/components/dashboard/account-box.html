@@ -3,10 +3,17 @@
     <h2>
       <translate>My Accounts</translate>
       {{$ctrl.ac.network.symbol}} {{$ctrl.myAccountsBalance()}}
-      <span ng-show="$ctrl.ac.showExchangeRate()">/ {{$ctrl.myAccountsCurrencyBalance() | formatCurrency:$ctrl.ac}}</span>
+      <span ng-show="$ctrl.ac.showExchangeRate()">/ {{$ctrl.myAccountsCurrencyBalance(true) | formatCurrency:$ctrl.ac:true}}</span>
     </h2>
     <span flex></span>
-    <md-button class="share" ng-click="$ctrl.ac.refreshAccountBalances()" aria-label="Refresh balances">
+
+    <md-button class="md-small bitcoin-toggle" ng-click="$ctrl.ac.toggleBitcoinCurrency()" ng-hide="$ctrl.ac.currency.name === 'btc'" ng-if="$ctrl.accountCtrl.connectedPeer.market.available_supply">
+      <md-tooltip md-direction="top">
+        {{'Toggle' | translate}} {{$ctrl.ac.toggleCurrency.name | uppercase}}
+      </md-tooltip>
+      <md-icon md-svg-icon="bitcoin_toggle"></md-icon>
+    </md-button>
+    <md-button ng-class="{'rotate-360': $ctrl.ac.accountsRefreshState.isRefreshing}" class="share" ng-click="$ctrl.ac.refreshAccountBalances(true)" aria-label="Refresh balances">
       <md-icon md-font-library="material-icons">cached</md-icon>
     </md-button>
   </div>

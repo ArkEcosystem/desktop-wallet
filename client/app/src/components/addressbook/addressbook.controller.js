@@ -3,9 +3,9 @@
 
   angular
     .module('arkclient.components')
-    .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'accountService', 'ARKTOSHI_UNIT', AddressbookController])
+    .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'accountService', 'utilityService', AddressbookController])
 
-  function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService, ARKTOSHI_UNIT) {
+  function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService, utilityService) {
     var self = this
     // var contacts
     self.trim = function (str) {
@@ -29,7 +29,7 @@
     }
 
     self.isAddress = function (address) {
-      return require('../node_modules/arkjs').crypto.validateAddress(address)
+      return require(require('path').resolve(__dirname, '../node_modules/arkjs')).crypto.validateAddress(address)
     }
 
     function existsIn (haystack, needle) {
@@ -235,7 +235,7 @@
             return prev + el
           })
 
-          stats.income.amount = accountService.numberToFixed(incomeAmount / ARKTOSHI_UNIT).toFixed(2)
+          stats.income.amount = utilityService.arktoshiToArk(incomeAmount, false, 2)
         }
 
         if (expendTx.length > 0) {
@@ -245,7 +245,7 @@
             return prev + el
           })
 
-          stats.expend.amount = accountService.numberToFixed(expendAmount / ARKTOSHI_UNIT).toFixed(2)
+          stats.expend.amount = utilityService.arktoshiToArk(expendAmount, false, 2)
         }
       }
 

@@ -78,7 +78,7 @@
             <div ng-controller="AccountTransactionsController as transactionsCtrl">
               <transaction-tab account-ctrl="ul" transactions-ctrl="transactionsCtrl"></transaction-tab>
             </div>
-            <votes-tab account-ctrl="ul"></votes-tab>
+            <votes-tab account="ul.selected" account-ctrl="ul" theme="ul.currentTheme"></votes-tab>
             <signing-tab account-ctrl="ul" ng-if="!ul.selected.ledger"></signing-tab>
             <exchange-tab account-ctrl="ul"></exchange-tab>
             <offchain-tab account-ctrl="ul"></offchain-tab>
@@ -88,7 +88,6 @@
         </md-content>
       </div>
     </div>
-
   </div>
 
   <link rel="stylesheet" href="assets/css/roboto.css" />
@@ -104,24 +103,28 @@
   <script src="src/filters/filters.js"></script>
   <script src="src/constants/constants.js"></script>
 
-  <script src="src/addons/pluginLoader.addon.js"></script>
+  <script src="src/addons/plugin-loader.addon.js"></script>
 
   <script src="src/services/config.service.js"></script>
   <script src="src/services/storage.service.js"></script>
   <script src="src/services/network.service.js"></script>
-  <script src="src/services/changer.service.js"></script>
   <script src="src/services/feed.service.js"></script>
   <script src="src/services/ledger.service.js"></script>
   <script src="src/services/time.service.js"></script>
   <script src="src/services/toast.service.js"></script>
+  <script src="src/services/utility.service.js"></script>
+  <script src="src/services/neo-api.service.js"></script>
 
   <script src="src/accounts/account.service.js"></script>
+  <script src="src/accounts/transaction-builder.service.js"></script>
   <script src="src/accounts/account-transactions.controller.js"></script>
   <script src="src/accounts/account.controller.js"></script>
+  <script src="src/accounts/export-account.controller.js"></script>
 
-  <script src="src/directives/validAmount.directive.js"></script>
-  <script src="src/directives/copyToClipboard.directive.js"></script>
-  <script src="src/directives/backgroundStyle.directive.js"></script>
+  <script src="src/directives/valid-amount.directive.js"></script>
+  <script src="src/directives/copy-to-clipboard.directive.js"></script>
+  <script src="src/directives/background-style.directive.js"></script>
+  <script src="src/directives/open-external.directive.js"></script>
 
   <script src="src/components/layout/main-navbar.controller.js"></script>
   <script src="src/components/dashboard/dashboard.controller.js"></script>
@@ -132,14 +135,17 @@
   <script src="src/components/account/main-sidenav.controller.js"></script>
   <script src="src/components/account/account-card.controller.js"></script>
   <script src="src/components/account/transaction-tab.controller.js"></script>
-  <script src="src/components/account/votes-tab.controller.js"></script>
+  <script src="src/components/account/votes-tab/vote.dialog.controller.js"></script>
+  <script src="src/components/account/votes-tab/votes-tab.controller.js"></script>
   <script src="src/components/account/signing-tab.controller.js"></script>
   <script src="src/components/account/exchange-tab.controller.js"></script>
   <script src="src/components/account/offchain-tab.controller.js"></script>
   <script src="src/components/account/delegate-tab.controller.js"></script>
-  <script src="src/components/qrScanner/qrScanner.controller.js"></script>
-  <script src="src/components/qrScanner/qrScanner.directive.js"></script>
+  <script src="src/components/qr-scanner/qr-scanner.controller.js"></script>
+  <script src="src/components/qr-scanner/qr-scanner.directive.js"></script>
   <script src="src/components/addressbook/addressbook.controller.js"></script>
+  <script src="src/components/emptystate/empty-state.controller.js"></script>
+  <script src="src/components/passphrase-field/passphrase-field.controller.js"></script>
 
   <script src="app.js"></script>
 

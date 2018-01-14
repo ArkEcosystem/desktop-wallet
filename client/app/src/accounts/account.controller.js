@@ -8,7 +8,6 @@
       'networkService',
       'pluginLoader',
       'storageService',
-      'changerService',
       'ledgerService',
       'timeService',
       'toastService',
@@ -24,20 +23,11 @@
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
-      'ARKTOSHI_UNIT',
       '$rootScope',
+      'transactionBuilderService',
+      'utilityService',
       AccountController
     ])
-    .filter('accountlabel', ['accountService', function (accountService) {
-      return function (address) {
-        if (!address) return address
-
-        var username = accountService.getUsername(address)
-        if (username.match(/^[AaDd]{1}[0-9a-zA-Z]{33}$/g)) return accountService.smallId(username)
-
-        return username
-      }
-    }])
 
   /**
    * Main Controller for the Angular Material Starter App
@@ -51,7 +41,6 @@
     networkService,
     pluginLoader,
     storageService,
-    changerService,
     ledgerService,
     timeService,
     toastService,
@@ -67,9 +56,12 @@
     $mdThemingProvider,
     $mdTheming,
     $window,
-    ARKTOSHI_UNIT,
-    $rootScope
+    $rootScope,
+    transactionBuilderService,
+    utilityService
   ) {
+    const _path = require('path')
+
     var self = this
 
     var languages = {
@@ -146,11 +138,54 @@
       })
     }
 
-    self.openExternal = function (url) {
-      require('electron').shell.openExternal(url)
+    self.createRefreshState = (successMessage, errorMessage) => {
+      var stateObject = {}
+
+      stateObject.states = []
+
+      stateObject.isRefreshing = false
+
+      stateObject.create = () => {
+        var state = { isFinished: false, hasError: false }
+        stateObject.states.push(state)
+        return state
+      }
+
+      stateObject.shouldRefresh = () => {
+        if (stateObject.isRefreshing) {
+          return false
+        }
+
+        stateObject.isRefreshing = true
+        return true
+      }
+
+      stateObject.updateRefreshState = (showToast) => {
+        var areAllFinished = stateObject.states.every(state => state.isFinished)
+        var hasAnyError = stateObject.states.some(state => state.hasError)
+
+        if (!areAllFinished) {
+          return
+        }
+
+        stateObject.isRefreshing = false
+        stateObject.states = []
+
+        if (!showToast) {
+          return
+        }
+
+        if (!hasAnyError) {
+          toastService.success(successMessage, 3000)
+        } else {
+          toastService.error(errorMessage, 3000)
+        }
+      }
+
+      return stateObject
     }
 
-    self.clientVersion = require('../../package.json').version
+    self.clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
     self.latestClientVersion = self.clientVersion
     self.openExplorer = openExplorer
     self.timestamp = timestamp
@@ -161,6 +196,8 @@
     self.accounts = []
     self.selectAccount = selectAccount
     self.refreshCurrentAccount = refreshCurrentAccount
+    self.accountRefreshState = self.createRefreshState('Account refreshed', 'Could not refresh account')
+    self.accountsRefreshState = self.createRefreshState('Accounts refreshed', 'Could not refresh accounts')
     self.gotoAddress = gotoAddress
     self.getAllDelegates = getAllDelegates
     self.addWatchOnlyAddress = addWatchOnlyAddress
@@ -169,7 +206,6 @@
     self.toggleList = toggleAccountsList
     self.createSecondPassphrase = createSecondPassphrase
     self.exportAccount = exportAccount
-    self.copiedToClipboard = copiedToClipboard
     self.formatAndToastError = formatAndToastError
 
     self.refreshAccountsAutomatically = storageService.get('refreshAccountsAutomatically') || false
@@ -180,17 +216,18 @@
     self.manageNetworks = manageNetworks
     self.openPassphrasesDialog = openPassphrasesDialog
     self.createDelegate = createDelegate
-    self.vote = vote
-    self.addDelegate = addDelegate
     self.currency = storageService.get('currency') || self.currencies[0]
     self.switchNetwork = networkService.switchNetwork
     self.marketinfo = {}
     self.network = networkService.getNetwork()
     self.listNetworks = networkService.getNetworks()
     self.context = storageService.getContext()
-    self.exchangeHistory = changerService.getHistory()
-    self.selectedCoin = storageService.get('selectedCoin') || 'bitcoin_BTC'
-    self.exchangeEmail = storageService.get('email') || ''
+    self.btcValueActive = false
+
+    self.bitcoinCurrency = self.currencies.find(function (currency) {
+      return currency.name === 'btc'
+    })
+    self.toggleCurrency = self.bitcoinCurrency
 
     self.connectedPeer = { isConnected: false }
 
@@ -357,10 +394,6 @@
     //   $mdToast.show(toast)
     // }
 
-    function copiedToClipboard () {
-      toastService.success('Copied to clipboard')
-    }
-
     self.selectAllLanguages = function () {
       return languages
     }
@@ -378,177 +411,6 @@
       self.language = getlanguage(this.selectedLanguage)
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
-    }
-
-    self.getMarketInfo = function (symbol) {
-      changerService.getMarketInfo(symbol, 'ark_ARK').then(function (answer) {
-        self.buycoin = answer
-      })
-
-      changerService.getMarketInfo('ark_ARK', symbol).then(function (answer) {
-        self.sellcoin = answer
-      })
-    }
-
-    self.getMarketInfo(self.selectedCoin)
-
-    self.buy = function () {
-      if (self.exchangeEmail) storageService.set('email', self.exchangeEmail)
-      if (self.selectedCoin) storageService.set('selectedCoin', self.selectedCoin)
-      changerService.getMarketInfo(self.selectedCoin, 'ark_ARK', self.buyAmount / self.buycoin.rate).then(function (rate) {
-        var amount = self.buyAmount / rate.rate
-        if (self.selectedCoin.split('_')[1] === 'USD') {
-          amount = parseFloat(amount.toFixed(2))
-        }
-        changerService.makeExchange(self.exchangeEmail, amount, self.selectedCoin, 'ark_ARK', self.selected.address).then(function (resp) {
-          timeService.getTimestamp().then(
-            function (timestamp) {
-              self.exchangeBuy = resp
-              self.exchangeBuy.expirationPeriod = self.exchangeBuy.expiration - timestamp / 1000
-              self.exchangeBuy.expirationProgress = 0
-              self.exchangeBuy.expirationDate = new Date(self.exchangeBuy.expiration * 1000)
-              self.exchangeBuy.sendCurrency = self.selectedCoin.split('_')[1]
-              self.exchangeBuy.receiveCurrency = 'ARK'
-              var progressbar = $interval(function () {
-                if (!self.exchangeBuy) {
-                  $interval.cancel(progressbar)
-                } else {
-                  self.exchangeBuy.expirationProgress = (100 - 100 * (self.exchangeBuy.expiration - timestamp / 1000) / self.exchangeBuy.expirationPeriod).toFixed(0)
-                }
-              }, 200)
-              changerService.monitorExchange(resp).then(
-                function (data) {
-                  self.exchangeHistory = changerService.getHistory()
-                },
-                function (data) {},
-                function (data) {
-                  if (data.payee && self.exchangeBuy.payee !== data.payee) {
-                    self.exchangeBuy = data
-                    self.exchangeHistory = changerService.getHistory()
-                  } else {
-                    self.exchangeBuy.monitor = data
-                  }
-                }
-              )
-            },
-            (error) => {
-              formatAndToastError(error, 10000)
-              self.exchangeBuy = null
-            })
-        }
-        )
-      })
-    }
-
-    self.sendBatch = function () {
-      changerService.sendBatch(self.exchangeBuy, self.exchangeTransactionId).then(function (data) {
-        self.exchangeBuy.batch_required = false
-        self.exchangeTransactionId = null
-      },
-        function (error) {
-          formatAndToastError(error, 10000)
-        })
-    }
-
-    var completeExchangeSell = function (timestamp) {
-      self.exchangeSell.expirationPeriod = self.exchangeSell.expiration - timestamp / 1000
-      self.exchangeSell.expirationProgress = 0
-      self.exchangeSell.expirationDate = new Date(self.exchangeSell.expiration * 1000)
-      self.exchangeSell.receiveCurrency = self.selectedCoin.split('_')[1]
-      self.exchangeSell.sendCurrency = 'ARK'
-      var progressbar = $interval(function () {
-        if (!self.exchangeSell) {
-          $interval.cancel(progressbar)
-        } else {
-          self.exchangeSell.expirationProgress = (100 - 100 * (self.exchangeSell.expiration - timestamp / 1000) / self.exchangeSell.expirationPeriod).toFixed(0)
-        }
-      }, 200)
-
-      self.exchangeSellTransaction = transaction // eslint-disable-line no-undef
-      changerService.monitorExchange(resp).then( // eslint-disable-line no-undef
-        function (data) {
-          self.exchangeHistory = changerService.getHistory()
-        },
-        function (data) {},
-        function (data) {
-          if (data.payee && self.exchangeSell.payee !== data.payee) {
-            self.exchangeSell = data
-            self.exchangeHistory = changerService.getHistory()
-          } else {
-            self.exchangeSell.monitor = data
-          }
-        }
-      )
-    }
-
-    self.sell = function () {
-      if (self.exchangeEmail) storageService.set('email', self.exchangeEmail)
-      changerService.makeExchange(self.exchangeEmail, self.sellAmount, 'ark_ARK', self.selectedCoin, self.recipientAddress).then(function (resp) {
-        accountService.createTransaction(0, {
-          fromAddress: self.selected.address,
-          toAddress: resp.payee,
-          amount: parseInt(resp.send_amount * ARKTOSHI_UNIT),
-          masterpassphrase: self.passphrase,
-          secondpassphrase: self.secondpassphrase
-        }).then(function (transaction) {
-          console.log(transaction)
-
-          timeService.getTimestamp().then(
-            function (timestamp) {
-              completeExchangeSell(timestamp)
-            },
-            function (timestamp) {
-              completeExchangeSell(timestamp)
-            }
-          )
-        },
-          function (error) {
-            formatAndToastError(error, 10000)
-          })
-        self.passphrase = null
-        self.secondpassphrase = null
-      }, function (error) {
-        formatAndToastError(error, 10000)
-        self.exchangeSell = null
-      })
-    }
-
-    self.refreshExchange = function (exchange) {
-      changerService.refreshExchange(exchange).then(function (exchange) {
-        self.exchangeHistory = changerService.getHistory()
-      })
-    }
-
-    self.exchangeArkNow = function (transaction) {
-      networkService.postTransaction(transaction).then(
-        function (transaction) {
-          self.exchangeSell.sentTransaction = transaction
-          toastService.success(
-            gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
-            null,
-            true
-          )
-        },
-        formatAndToastError
-      )
-    }
-
-    self.cancelExchange = function () {
-      if (self.exchangeBuy) {
-        changerService.cancelExchange(self.exchangeBuy)
-        self.exchangeBuy = null
-        self.exchangeTransactionId = null
-      }
-      if (self.exchangeSell) {
-        changerService.cancelExchange(self.exchangeSell)
-        self.exchangeTransaction = null
-        self.exchangeSell = null
-      }
-    }
-
-    self.getCoins = function () {
-      console.log()
-      return changerService.getCoins()
     }
 
     // Load all registered accounts
@@ -582,6 +444,11 @@
       })
     }
 
+    self.toggleBitcoinCurrency = function (force) {
+      self.btcValueActive = force !== undefined ? force : !self.btcValueActive
+      self.toggleCurrency = self.btcValueActive ? self.currency : self.bitcoinCurrency
+    }
+
     self.otherAccounts = function () {
       return self.accounts.filter(function (account) {
         return !account.virtual
@@ -596,6 +463,7 @@
     }
 
     self.selectNextCurrency = function () {
+      self.toggleBitcoinCurrency(false)
       var currenciesNames = self.currencies.map(function (x) {
         return x.name
       })
@@ -607,6 +475,7 @@
     }
 
     self.changeCurrency = function () {
+      self.toggleBitcoinCurrency(false)
       if (self.currency === 'undefined') self.currency = self.currencies[0]
       storageService.set('currency', self.currency)
     }
@@ -628,7 +497,7 @@
     }
 
     self.saveFolder = function (account, folder) {
-      accountService.setToFolder(account.address, folder, account.virtual.uservalue(folder)() * ARKTOSHI_UNIT)
+      accountService.setToFolder(account.address, folder, utilityService.arkToArktoshi(account.virtual.uservalue(folder)()))
     }
 
     self.deleteFolder = function (account, foldername) {
@@ -759,7 +628,14 @@
       })
     }
 
-    function refreshCurrentAccount () {
+    function refreshCurrentAccount (showToast) {
+      if (!self.accountRefreshState.shouldRefresh()) {
+        return
+      }
+
+      var accountState = self.accountRefreshState.create()
+      var transactionsState = self.accountRefreshState.create()
+
       var myaccount = self.selected
       accountService
         .refreshAccount(myaccount)
@@ -772,6 +648,13 @@
 
             if (!self.selected.virtual) self.selected.virtual = account.virtual
           }
+        })
+        .catch(() => {
+          accountState.hasError = true
+        })
+        .finally(() => {
+          accountState.isFinished = true
+          self.accountRefreshState.updateRefreshState(showToast)
         })
       accountService
         .getTransactions(myaccount.address)
@@ -789,7 +672,7 @@
 
               var playSong = storageService.get('playFundsReceivedSong')
               if (playSong === true && previousTx[0].id !== transactions[0].id && transactions[0].type === 0 && transactions[0].recipientId === myaccount.address) {
-                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav')
+                var wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
                 var audio = new Audio(wavFile)
                 audio.play()
               }
@@ -807,15 +690,34 @@
             })
           }
         })
+        .catch(() => {
+          transactionsState.hasError = true
+        })
+        .finally(() => {
+          transactionsState.isFinished = true
+          self.accountRefreshState.updateRefreshState(showToast)
+        })
     }
 
-    self.refreshAccountBalances = () => {
+    self.refreshAccountBalances = (showToast) => {
+      const accounts = self.getAllAccounts()
+
+      if (!accounts.length || !self.accountsRefreshState.shouldRefresh()) {
+        return
+      }
+
       networkService.getPrice()
 
-      self.getAllAccounts().forEach(account => {
+      accounts.forEach(account => {
+        var state = self.accountsRefreshState.create()
         accountService
           .refreshAccount(account)
           .then(updated => { account.balance = updated.balance })
+          .catch(() => { state.hasError = true })
+          .finally(() => {
+            state.isFinished = true
+            self.accountsRefreshState.updateRefreshState(showToast)
+          })
       })
     }
 
@@ -878,7 +780,7 @@
 
               var playSound = storageService.get('playFundsReceivedSound')
               if (playSound === true && transactions.length > previousTx.length && transactions[0].type === 0 && transactions[0].recipientId === self.selected.address) {
-                var wavFile = require('path').resolve(__dirname, 'assets/audio/power-up.wav')
+                var wavFile = _path.resolve(__dirname, 'assets/audio/power-up.wav')
                 var audio = new Audio(wavFile)
                 audio.play()
               }
@@ -969,148 +871,6 @@
       } else return selectedAccount.delegates
     }
 
-    function addDelegate (selectedAccount) {
-      var data = { fromAddress: selectedAccount.address, delegates: [], registeredDelegates: [] }
-
-      accountService.getActiveDelegates().then((r) => {
-        data.registeredDelegates = r
-      }).catch(() => toastService.error('Could not fetch active delegates - please check your internet connection'))
-
-      function add () {
-        function indexOfDelegates (array, item) {
-          for (var i in array) {
-            if (array[i].username === item.username) {
-              console.log(array[i])
-              return i
-            }
-          }
-          return -1
-        }
-        $mdDialog.hide()
-        accountService.getDelegateByUsername(data.delegatename).then(
-          function (delegate) {
-            if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, delegate) < 0) {
-              selectedAccount.selectedVotes.push(delegate)
-            } else {
-              toastService.error('List full or delegate already voted.')
-            }
-          },
-          formatAndToastError
-        )
-      }
-
-      function addSponsors () {
-        function indexOfDelegates (array, item) {
-          for (var i in array) {
-            if (array[i].username === item.username) {
-              console.log(array[i])
-              return i
-            }
-          }
-          return -1
-        }
-        $mdDialog.hide()
-        accountService.getSponsors().then(
-          function (sponsors) {
-            // check if sponsors are already voted
-            if (self.selected.delegates) {
-              let newsponsors = []
-              for (let i = 0; i < sponsors.length; i++) {
-                console.log(sponsors[i])
-                if (indexOfDelegates(self.selected.delegates, sponsors[i]) < 0) {
-                  newsponsors.push(sponsors[i])
-                }
-              }
-              sponsors = newsponsors
-            }
-
-            for (let i = 0; i < sponsors.length; i++) {
-              if (self.selected.selectedVotes.length < 101 && indexOfDelegates(selectedAccount.selectedVotes, sponsors[i]) < 0) {
-                selectedAccount.selectedVotes.push(sponsors[i])
-              }
-            }
-          },
-          formatAndToastError
-        )
-      }
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.addDelegateDialog = {
-        data: data,
-        cancel: cancel,
-        add: add,
-        addSponsors: addSponsors
-      }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/addDelegate.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
-    }
-
-    function vote (selectedAccount) {
-      var votes = accountService.createDiffVote(selectedAccount.address, selectedAccount.selectedVotes)
-      if (!votes || votes.length === 0) {
-        toastService.error('No difference from original delegate list')
-        return
-      }
-      votes = votes[0]
-      var passphrases = accountService.getPassphrases(selectedAccount.address)
-      var data = {
-        ledger: selectedAccount.ledger,
-        fromAddress: selectedAccount ? selectedAccount.address : '',
-        secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : '',
-        votes: votes
-      }
-
-      function next () {
-        $mdDialog.hide()
-        var publicKeys = $scope.voteDialog.data.votes.map(function (delegate) {
-          return delegate.vote + delegate.publicKey
-        }).join(',')
-        console.log(publicKeys)
-        accountService.createTransaction(3, {
-          ledger: selectedAccount.ledger,
-          publicKey: selectedAccount.publicKey,
-          fromAddress: $scope.voteDialog.data.fromAddress,
-          publicKeys: publicKeys,
-          masterpassphrase: $scope.voteDialog.data.passphrase,
-          secondpassphrase: $scope.voteDialog.data.secondpassphrase
-        }).then(
-          function (transaction) {
-            showValidateTransaction(selectedAccount, transaction)
-          },
-          formatAndToastError
-        )
-      }
-
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.voteDialog = {
-        data: data,
-        cancel: cancel,
-        next: next
-      }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/vote.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
-    }
-
     function timestamp (selectedAccount) {
       var passphrases = accountService.getPassphrases(selectedAccount.address)
       var data = {
@@ -1130,7 +890,7 @@
 
         $mdDialog.hide()
         var smartbridge = $scope.send.data.smartbridge
-        accountService.createTransaction(0, {
+        transactionBuilderService.createSendTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.send.data.fromAddress,
@@ -1224,7 +984,6 @@
         return
       }
 
-      var path = require('path')
       var vibrant = require('node-vibrant')
       var materialPalette = $mdThemingProvider.$get().PALETTES
 
@@ -1237,7 +996,7 @@
         return
       }
 
-      var url = path.resolve(__dirname, match[1].replace(/'/g, ''))
+      var url = _path.resolve(__dirname, match[1].replace(/'/g, ''))
 
       vibrant.from(url).getPalette(function (err, palette) {
         if (err || !palette.Vibrant) {
@@ -1256,7 +1015,7 @@
           darkVibrantRatio[color] = darkVibrantDiff
         })
 
-        var isArkJpg = path.basename(url) === 'Kapu1.jpg'
+        var isArkJpg = _path.basename(url) === 'Kapu1.jpg'
         var primaryColor = isArkJpg ? 'red' : sortObj(darkVibrantRatio)[0]
         var accentColor = sortObj(vibrantRatio)[0]
 
@@ -1277,7 +1036,6 @@
 
     function manageBackgrounds () {
       var fs = require('fs')
-      var path = require('path')
       var context = storageService.getContext()
 
       var currentNetwork = networkService.getNetwork()
@@ -1307,21 +1065,21 @@
       }
 
       var imgPath = 'assets/images'
-      var assetsPath = path.resolve(__dirname, imgPath)
+      var assetsPath = _path.resolve(__dirname, imgPath)
 
       // find files in directory with same key
       for (var folder in backgrounds) {
-        let fullPath = path.resolve(assetsPath, folder)
+        let fullPath = _path.resolve(assetsPath, folder)
 
-        if (fs.existsSync(path.resolve(fullPath))) { // check dir exists
+        if (fs.existsSync(_path.resolve(fullPath))) { // check dir exists
           var image = {}
           fs.readdirSync(fullPath).forEach(function (file) {
-            var stat = fs.statSync(path.join(fullPath, file)) // to prevent if directory
+            var stat = fs.statSync(_path.join(fullPath, file)) // to prevent if directory
 
             if (stat.isFile() && isImage(file)) {
-              var url = path.join(imgPath, folder, file) // ex: assets/images/textures/file.png
+              var url = _path.join(imgPath, folder, file) // ex: assets/images/textures/file.png
               url = url.replace(/\\/g, '/')
-              var name = path.parse(file).name // remove extension
+              var name = _path.parse(file).name // remove extension
               image[name] = `url('${url}')`
             }
           })
@@ -1334,7 +1092,7 @@
         var mathPath = backgrounds['user'][name].match(/\((.*)\)/)
         if (mathPath) {
           let filePath = mathPath[1].replace(/'/g, ``)
-          let fullPath = require('path').join(__dirname, filePath)
+          let fullPath = _path.join(__dirname, filePath)
           if (!fs.existsSync(filePath) && !fs.existsSync(fullPath)) {
             delete backgrounds['user'][name]
             storageService.setGlobal('userBackgrounds', backgrounds['user'])
@@ -1362,7 +1120,7 @@
             var userImages = backgrounds['user']
             var url = fileName
             url = url.replace(/\\/g, '/')
-            var name = path.parse(fileName).name
+            var name = _path.parse(fileName).name
             userImages[name] = `url('${url}')`
 
             backgrounds['user'] = userImages
@@ -1379,7 +1137,7 @@
 
         var file = image.substring(5, image.length - 2)
 
-        var name = path.parse(file).name
+        var name = _path.parse(file).name
         delete backgrounds['user'][name]
 
         if (image === initialBackground) {
@@ -1392,7 +1150,7 @@
       }
 
       function isImage (file) {
-        var extension = path.extname(file)
+        var extension = _path.extname(file)
         if (extension === '.jpg' || extension === '.png' || extension === '.gif') {
           return true
         }
@@ -1596,7 +1354,7 @@
           return formatAndToastError(error)
         }
 
-        accountService.createTransaction(2, {
+        transactionBuilderService.createDelegateCreationTransaction({
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           fromAddress: $scope.createDelegate.data.fromAddress,
@@ -1704,6 +1462,15 @@
           return
         }
 
+        if (!$scope.send.data.customPassphrase && !isBIP39($scope.send.data.passphrase)) {
+          toastService.error(
+            gettextCatalog.getString('Not valid BIP39 passphrase! Please check all words and spaces.')
+            , null
+            , true
+          )
+          return
+        }
+
         accountService.createAccount($scope.send.data.passphrase)
           .then(
             function (account) {
@@ -1753,20 +1520,15 @@
     }
 
     function exportAccount (account) {
-      var eol = require('os').EOL
-      var transactions = storageService.get(`transactions-${account.address}`)
-
-      var filecontent = 'Account:,' + account.address + eol + 'Balance:,' + account.balance + eol + 'Transactions:' + eol + 'ID,Confirmations,Date,Type,Amount,From,To,Smartbridge' + eol
-      transactions.forEach(function (trns) {
-        var date = new Date(trns.date)
-        filecontent = filecontent + trns.id + ',' + trns.confirmations + ',' + date.toISOString() + ',' + trns.label + ',' + trns.humanTotal + ',' + trns.senderId + ',' + trns.recipientId +
-          ',' + trns.vendorField + eol
+      $mdDialog.show({
+        templateUrl: './src/accounts/view/exportAccount.html',
+        controller: 'ExportAccountController',
+        escapeToClose: false,
+        locals: {
+          account: account,
+          theme: self.currentTheme
+        }
       })
-      var blob = new Blob([filecontent])
-      var downloadLink = document.createElement('a')
-      downloadLink.setAttribute('download', account.address + '.csv')
-      downloadLink.setAttribute('href', window.URL.createObjectURL(blob))
-      downloadLink.click()
     }
 
     // Add a second passphrase to an account
@@ -1780,6 +1542,38 @@
         )
       }
 
+      function warnAboutSecondPassphraseFee () {
+        accountService.getFees(true).then(
+              function (fees) {
+                let secondPhraseArktoshiVal = fees['secondsignature']
+                var secondPhraseArkVal = utilityService.arktoshiToArk(secondPhraseArktoshiVal, true)
+                var confirm = $mdDialog.confirm({
+                  title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee') + ' (' + networkService.getNetwork().symbol + ')',
+                  secondPhraseArkVal: secondPhraseArkVal,
+                  textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' ' + networkService.getNetwork().token + '.'),
+                  ok: gettextCatalog.getString('Continue'),
+                  cancel: gettextCatalog.getString('Cancel')
+                })
+
+                $mdDialog.show(confirm)
+                      .then(function () {
+                        $mdDialog.show({
+                          parent: angular.element(document.getElementById('app')),
+                          templateUrl: './src/accounts/view/createSecondPassphrase.html',
+                          clickOutsideToClose: false,
+                          preserveScope: true,
+                          scope: $scope
+                        })
+                      }, function () {
+                        cancel()
+                      }
+                    )
+              }
+          )
+      }
+
+      warnAboutSecondPassphraseFee()
+
       function next () {
         if (!$scope.createSecondPassphraseDialog.data.showRepassphrase) {
           $scope.createSecondPassphraseDialog.data.reSecondPassphrase = $scope.createSecondPassphraseDialog.data.secondPassphrase
@@ -1788,7 +1582,7 @@
         } else if ($scope.createSecondPassphraseDialog.data.reSecondPassphrase !== $scope.createSecondPassphraseDialog.data.secondPassphrase) {
           $scope.createSecondPassphraseDialog.data.showWrongRepassphrase = true
         } else {
-          accountService.createTransaction(1, {
+          transactionBuilderService.createSecondPassphraseCreationTransaction({
             fromAddress: selectedAccount.address,
             masterpassphrase: $scope.createSecondPassphraseDialog.data.passphrase,
             secondpassphrase: $scope.createSecondPassphraseDialog.data.reSecondPassphrase
@@ -1811,21 +1605,13 @@
         cancel: cancel,
         next: next
       }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/createSecondPassphrase.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
     }
 
     function loadSignedMessages () {
       self.selected.signedMessages = storageService.get('signed-' + self.selected.address)
     }
 
-    function showValidateTransaction (selectedAccount, transaction) {
+    function showValidateTransaction (selectedAccount, transaction, cb) {
       function saveFile () {
         var fs = require('fs')
         var raw = JSON.stringify(transaction)
@@ -1870,6 +1656,10 @@
               null,
               true
             )
+
+            if (cb && typeof cb === 'function') {
+              cb(transaction)
+            }
           },
           formatAndToastError
         )
@@ -1886,8 +1676,8 @@
         transaction: transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: accountService.numberToFixed(transaction.amount / ARKTOSHI_UNIT).toString(),
-        totalAmount: ((parseFloat(transaction.amount) + transaction.fee) / ARKTOSHI_UNIT).toString()
+        humanAmount: utilityService.arktoshiToArk(transaction.amount).toString(),
+        totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true).toString()
       }
 
       $mdDialog.show({
@@ -1897,6 +1687,12 @@
         templateUrl: './src/accounts/view/validateTransactionDialog.html',
         clickOutsideToClose: false
       })
+    }
+
+    function isBIP39 (mnemonic) {
+      var bip39 = require('bip39')
+      let valid = bip39.validateMnemonic(mnemonic)
+      return valid
     }
   }
 })()

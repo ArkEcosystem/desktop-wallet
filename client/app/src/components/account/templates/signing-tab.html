@@ -55,7 +55,7 @@
                   </md-tooltip>
                   <md-icon md-font-library="material-icons">check</md-icon>
                 </md-button>
-                <md-button ng-click="$ctrl.ul.copiedToClipboard()" copy-to-clipboard="{{signedMessage}}" class="md-mini md-fab md-primary">
+                <md-button copy-to-clipboard="{{signedMessage}}" class="md-mini md-fab md-primary">
                   <md-tooltip>
                     <translate>Copy</translate>
                   </md-tooltip>
@@ -75,7 +75,7 @@
     </md-content>
 
     <md-content ng-if="!$ctrl.ul.selected.publicKey" class="tab-text-only-content" translate>
-      This address has not received any ARK so it is not on the ARK blockchain and can not be used for signing messages.
+      <empty-state header="This address has not received any ARK" content="Until it has, it is not on the ARK blockchain and can not be used for signing messages."></empty-state>
     </md-content>
 
   </md-tab-body>

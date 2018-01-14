@@ -1,8 +1,8 @@
 {
   "name": "KapuClient",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "productName": "KapuClient",
-  "description": "Kapu Desktop",
+  "description": "Kapu Desktop Wallet",
   "main": "main.js",
   "scripts": {
     "postinstall": "cd client && npm install && npm run bundle && cd .. && electron-builder install-app-deps && npm run rebuild",
@@ -57,9 +57,11 @@
     "about-window": "~1.8.0",
     "async": "^2.5.0",
     "electron-window-state": "^4.1.1",
+    "elemon": "^5.0.3",
     "ledgerco": "github:ledgerhq/ledger-node-js-api#6cde5978b9d0a4922f0d33520b16cc2184559ebc",
-    "q": "^1.5.0",
-    "elemon": "^5.0.3"
+    "moment-range": "^3.1.0",
+    "moment-timezone": "^0.5.14",
+    "q": "^1.5.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.6",

@@ -1,0 +1,121 @@
+<md-tab>
+  <md-tab-label>
+    <translate>Votes</translate>
+  </md-tab-label>
+  <md-tab-body>
+
+    <md-card ng-if="!$ctrl.account.virtual" flex="100">
+      <md-card-title>
+        <md-card-title-media>
+          <div class="md-media-sm card-media" layout layout-align="center center">
+            <md-icon md-font-library="material-icons" ng-style="{'font-size': '48px', 'height':'48px', 'width':'48px'}">info</md-icon>
+          </div>
+        </md-card-title-media>
+        <md-card-title-text>
+          <translate>
+            If you own this account, you can enable Voting
+          </translate><br>
+          <md-button ng-click="$ctrl.ul.manageFolder($ctrl.account)">
+            <translate>Enable Votes</translate>
+          </md-button>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+
+    <md-table-container id="vote-list" ng-if="!$ctrl.account.virtual" flex="100">
+      <table md-table ng-model="$ctrl.account.selectedVotes">
+        <thead md-head md-order="query.order">
+          <tr md-row>
+            <th md-column md-numeric md-order-by="rate">
+              <translate>Rank</translate>
+            </th>
+            <th md-column md-order-by="username">
+              <translate>Username</translate>
+            </th>
+            <th md-column>
+              <translate>Address</translate>
+            </th>
+            <th md-column md-numeric md-order-by="approval">
+              <translate>Approval</translate>
+            </th>
+            <th md-column md-numeric md-order-by="productivity">
+              <translate>Productivity</translate>
+            </th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row ng-repeat="it in $ctrl.account.delegates | orderBy: query.order">
+            <td md-cell>{{it.rate}}</td>
+            <td md-cell>{{it.username}}</td>
+            <td md-cell><a ng-click="$ctrl.ul.gotoAddress(it.address)" md-colors="::{color: '{{ $ctrl.ul.network.themeDark ? 'background-200' : 'background-800' }}'}">{{it.address}}</a></td>
+            <td md-cell>{{it.approval}}%</td>
+            <td md-cell>{{it.productivity}}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-table-container id="vote-list-virtual" ng-if="$ctrl.account.virtual" flex="100">
+      <div class="d-inline-block">
+        <md-tooltip ng-if="$ctrl.getDelegateList($ctrl.account).length" md-direction="right" md-delay="300">Accounts can only have 1 active delegate at a time</md-tooltip>
+        <md-button ng-click="$ctrl.vote($ctrl.account)"
+                   ng-disabled="$ctrl.getDelegateList($ctrl.account).length"
+                   class="md-raised"
+                   ng-class="{'md-primary': !$ctrl.getDelegateList($ctrl.account).length}">
+          <translate>Vote</translate>
+        </md-button>
+      </div>
+      <md-button ng-click='$ctrl.openExplorer("/delegateMonitor")'>
+        <translate>Open Delegate Monitor</translate>
+      </md-button>
+      <table md-table>
+        <thead md-head md-order="query.order">
+          <tr md-row>
+            <th md-column md-numeric md-order-by="rate">
+              <translate>Rank</translate>
+            </th>
+            <th md-column md-order-by="username">
+              <translate>Username</translate>
+            </th>
+            <th md-column>
+              <translate>Address</translate>
+            </th>
+            <th md-column md-numeric md-order-by="approval">
+              <translate>Approval</translate>
+            </th>
+            <th md-column md-numeric md-order-by="productivity">
+              <translate>Productivity</translate>
+            </th>
+            <th md-column>
+            </th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row ng-repeat="delegate in $ctrl.getDelegateList($ctrl.account) | orderBy: query.order">
+            <td md-cell>{{delegate.rate}}</td>
+            <td md-cell>{{delegate.username}}</td>
+            <td md-cell><a ng-click="$ctrl.ul.gotoAddress(delegate.address)" md-colors="::{color: '{{ $ctrl.network.themeDark ? 'background-200' : 'background-800' }}'}">{{delegate.address}}</a></td>
+            <td md-cell>{{delegate.approval}}%</td>
+            <td md-cell>{{delegate.productivity}}%</td>
+            <td md-cell>
+                <md-button class="md-warn" aria-label="Unvote for delegate" ng-click="$ctrl.vote($ctrl.account, delegate)">
+                  <md-icon class="material-icons">clear</md-icon> Unvote
+                </md-button>
+            </td>
+          </tr>
+          <tr md-row disabled ng-if="!$ctrl.getDelegateList($ctrl.account).length">
+              <td md-cell colspan="7">
+                <empty-state header="This account does not have any selected delegates" content="Once a delegate is selected for this account, it will appear here."></empty-state>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+    <md-content id="vote-help" translate>
+      Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for
+      a delegate that you support. Learn more about voting for a delegate on the <a href="#" ng-click="$ctrl.openBlog('/how-to-vote-or-un-vote-an-ark-delegate-and-how-does-it-all-work-819c5439da68')">ARK blog</a>.
+    </md-content>
+
+  </md-tab-body>
+</md-tab>

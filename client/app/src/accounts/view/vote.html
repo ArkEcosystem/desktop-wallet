@@ -1,10 +1,11 @@
-<md-dialog aria-label="Vote" ng-cloak md-theme="ul.currentTheme">
+<md-dialog aria-label="Vote" ng-cloak md-theme="$dialog.theme">
   <form>
-    <md-toolbar>
+    <md-toolbar ng-class="{'md-warn': $dialog.delegate_to_unvote}">
       <div class="md-toolbar-tools">
-        <h2><span translate>Update vote from</span> {{voteDialog.data.fromAddress}}</h2>
+        <h2 ng-if="!$dialog.delegate_to_unvote">Vote</h2>
+        <h2 ng-if="$dialog.delegate_to_unvote">Remove Vote</h2>
         <span flex></span>
-        <md-button class="md-icon-button" ng-click="voteDialog.cancel()">
+        <md-button class="md-icon-button" ng-click="$dialog.cancel()">
           <md-icon md-font-library="material-icons">clear</md-icon>
         </md-button>
       </div>
@@ -14,28 +15,16 @@
         <md-chips ng-model="voteDialog.data.votes" readonly="true">
           <md-chip-template>{{$chip.vote}}{{$chip.username}}</md-chip-template>
         </md-chips>
-        <md-input-container ng-if="!voteDialog.data.ledger" class="md-block">
-          <label translate>Passphrase</label>
-          <input ng-model="voteDialog.data.passphrase" type="password" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}" ng-required="true">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
-            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
-        <md-input-container class="md-block" ng-if="voteDialog.data.secondSignature">
-          <label translate>Second Passphrase</label>
-          <input ng-model="voteDialog.data.secondpassphrase" type="password" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}" ng-required="true">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
-            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
+        <passphrase-field ng-if="!voteDialog.data.ledger" ng-model="voteDialog.data.passphrase" label="Passphrase"></passphrase-field>
+        <passphrase-field ng-if="voteDialog.data.secondSignature" ng-model="voteDialog.data.secondpassphrase" label="Second Passphrase"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button ng-click="voteDialog.next()">
-        <translate ng-if="!voteDialog.data.ledger">Next</translate>
-        <translate ng-if="voteDialog.data.ledger">Sign with Ledger</translate>
+      <md-button ng-click="$dialog.addDelegateVote($dialog.delegate)">
+        <translate ng-if="!$dialog.account.ledger">Next</translate>
+        <translate ng-if="$dialog.account.ledger">Sign with Ledger</translate>
       </md-button>
-      <md-button ng-click="voteDialog.cancel()" style="margin-right:20px;">
+      <md-button ng-click="$dialog.cancel()" style="margin-right:20px;">
         <translate>Cancel</translate>
       </md-button>
     </md-dialog-actions>

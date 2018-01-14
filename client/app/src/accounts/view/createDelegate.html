@@ -24,20 +24,8 @@
           <label translate>Username</label>
           <input ng-model="createDelegate.data.username" type="text" ng-required="true" md-autofocus>
         </md-input-container>
-        <md-input-container class="md-block" ng-if="!send.data.ledger">
-          <label translate>Passphrase</label>
-          <input ng-model="createDelegate.data.passphrase" type="password" ng-required="true" ng-attr-type="{{ send.showPassphrase ? 'text' : 'password' }}">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showPassphrase = !send.showPassphrase" md-font-library="material-icons">
-            {{ send.showPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
-        <md-input-container class="md-block" ng-if="createDelegate.data.secondSignature">
-          <label translate>Second Passphrase</label>
-          <input ng-model="createDelegate.data.secondpassphrase" type="password" ng-required="true" ng-attr-type="{{ send.showSecondPassphrase ? 'text' : 'password' }}">
-          <md-icon style="cursor: pointer;outline: none" ng-click="send.showSecondPassphrase = !send.showSecondPassphrase" md-font-library="material-icons">
-            {{ send.showSecondPassphrase ? 'visibility_off' : 'visibility' }}
-          </md-icon>
-        </md-input-container>
+        <passphrase-field ng-if="!send.data.ledger" ng-model="createDelegate.data.passphrase" label="Passphrase"></passphrase-field>
+        <passphrase-field ng-if="createDelegate.data.secondSignature" ng-model="createDelegate.data.secondpassphrase" label="Second Passphrase"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">

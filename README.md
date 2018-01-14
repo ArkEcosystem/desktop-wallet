@@ -30,14 +30,7 @@
 ![linux](http://i.imgur.com/snJi21i.jpg)
 ![linux](http://i.imgur.com/gjjqw88.jpg)
 
-## From AUR
-For distros derived from Arch Linux the package is avaliable in AUR, just run:
-
-```
-yaourt -Sy ark-desktop
-```
-
-## From code
+## Build
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developped with this version:
 ```
@@ -64,10 +57,7 @@ npm start
 
 ## Necessary to package from Ubuntu
 ```
-sudo apt-get install icnsutils
-sudo apt-get install imagemagick
-sudo apt-get install graphicsmagick
-sudo apt-get install wine-stable
+sudo apt-get install icnsutils imagemagick graphicsmagick wine-stable
 ```
 
 ## Necessary to package from Mac OS X
@@ -85,4 +75,6 @@ Read [CONTRIBUTING.md](https://github.com/kapucoin/kapu-desktop/blob/master/CONT
 - Guillaume Verbal <doweig@ark.io>
 - Giovanni Silvestri <gsit80@gmail.com>
 
-### License [MIT](LICENSE.md) copyright (c) 2016 KAPU, copyright (c) 2016 fx thoorens
+## License
+
+KAPU Desktop is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.

@@ -14,12 +14,17 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'ARKTOSHI_UNIT', 'toastService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'utilityService', 'neoApiService', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, ARKTOSHI_UNIT, toastService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionBuilderService, utilityService, neoApiService) {
+    let getCurrentAccount = () => null
+
     this.$onInit = () => {
       this.ul = this.accountCtrl
+      const ul = this.ul
+      // by assigning this to the function, we can ensure, that a call to the function will always return the currently active account
+      getCurrentAccount = () => ul.selected
       this.ab = this.addressBookCtrl
     }
 
@@ -121,9 +126,10 @@
       }
 
       $scope.bs = {
+        label: selectedAccount.username,
         address: selectedAccount.address,
-        answer: answer,
-        items: items
+        answer,
+        items
       }
 
       $mdBottomSheet.show({
@@ -136,12 +142,12 @@
     }
 
     this.submitTransaction = (selectedAccount, formData) => {
-      return accountService.createTransaction(0, {
+      return transactionBuilderService.createSendTransaction({
         ledger: selectedAccount.ledger,
         publicKey: selectedAccount.publicKey,
         fromAddress: formData.fromAddress,
         toAddress: formData.toAddress,
-        amount: parseInt((formData.amount * ARKTOSHI_UNIT).toFixed(0)),
+        amount: parseInt(utilityService.arkToArktoshi(formData.amount, 0)),
         smartbridge: formData.smartbridge,
         masterpassphrase: formData.passphrase,
         secondpassphrase: formData.secondpassphrase
@@ -162,6 +168,7 @@
       let data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
+        fromLabel: selectedAccount ? selectedAccount.username : null,
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
         passphrase: passphrases[0] ? passphrases[0] : '',
         secondpassphrase: passphrases[1] ? passphrases[1] : ''
@@ -203,15 +210,24 @@
       //   toAddress: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
       //   amount: 1,
       // }
-      function totalBalance (minusFee) {
-        var fee = 10000000
+      function getTotalBalance (fee) {
         var balance = selectedAccount.balance
-        return accountService.numberToFixed((minusFee ? balance - fee : balance) / ARKTOSHI_UNIT)
+        return utilityService.arktoshiToArk(fee ? balance - fee : balance)
       }
 
       function fillSendableBalance () {
-        var sendableBalance = totalBalance(true)
-        $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0
+        function setBalance (fee) {
+          var sendableBalance = getTotalBalance(fee)
+          $scope.send.data.amount = sendableBalance > 0 ? sendableBalance : 0
+        }
+        // set the balance immediately, so the user sees something
+        setBalance(accountService.defaultFees.send)
+        // now get the real fees and set it again if necessary
+        accountService.getFees(true).then((fees) => {
+          if (fees.send !== accountService.defaultFees.send) {
+            setBalance(fees.send)
+          }
+        })
       }
 
       const submit = () => {
@@ -239,12 +255,58 @@
 
       function searchTextChange (text) {
         $scope.send.data.toAddress = text
+        validateReceiverAddress(text)
       }
 
       function selectedContactChange (contact) {
         if (contact) {
           $scope.send.data.toAddress = contact.address
+          validateReceiverAddress(contact.address)
         }
+      }
+
+      let receiverValidationCycle = 0
+      function validateReceiverAddress (address) {
+        // failType specifies the "fail level", but is at the same time, also the icon name
+        $scope.receiverValidation = {failType: null, message: null}
+
+        if (!address) {
+          return
+        }
+
+        if (!accountService.isValidAddress(address)) {
+          $scope.receiverValidation.message = gettextCatalog.getString('The address is not valid!')
+          $scope.receiverValidation.failType = 'error'
+          return
+        }
+
+        const currentAccount = getCurrentAccount()
+        if (currentAccount && currentAccount.address === address) {
+          $scope.receiverValidation.message = gettextCatalog.getString('This address is your own address. Are you sure you want to send to your own address?')
+          $scope.receiverValidation.failType = 'warning'
+          return
+        }
+
+        const currentCycle = ++receiverValidationCycle
+        accountService.getTransactions(address, 0, 1).then(txs => {
+          // if this check is not true it means that the address has already been changed in the meantime and we can
+          // ignore the result, also if a failType is already set, we return, because we don't want to overwrite a warning or error
+          if (currentCycle !== receiverValidationCycle || txs.length || $scope.receiverValidation.failType) {
+            return
+          }
+
+          $scope.receiverValidation.message = gettextCatalog.getString('It appears the address doesn\'t have any transactions. Are you sure it\'s correct?')
+          $scope.receiverValidation.failType = 'info'
+        })
+
+        neoApiService.doesAddressExist(address).then(exists => {
+          if (currentCycle !== receiverValidationCycle || !exists) {
+            return
+          }
+
+          $scope.receiverValidation.message = gettextCatalog.getString('It looks like this is a \'NEO\' address. Are you sure it\'s correct?')
+          $scope.receiverValidation.failType = 'warning'
+        })
       }
 
       const querySearch = (text) => {
@@ -285,8 +347,13 @@
         selectedContactChange: selectedContactChange,
         querySearch: querySearch,
         fillSendableBalance: fillSendableBalance,
-        totalBalance: totalBalance(false),
-        remainingBalance: totalBalance(false) // <-- initial value, this will change by directive
+        totalBalance: getTotalBalance(0),
+        remainingBalance: getTotalBalance(0) // <-- initial value, this will change by directive
+      }
+
+      $scope.onQrCodeForToAddressScanned = (address) => {
+        // this will trigger the selectedContactChange function, which will then set the toAddress
+        $scope.send.data.selectedAddress = {address: address}
       }
 
       $mdDialog.show({
