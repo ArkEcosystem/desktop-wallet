@@ -10,13 +10,15 @@
    */
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     const _path = require('path')
+    const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
+    const mainNetArkJsNetworkKey = 'ark'
+    const devNetArkJsNetworkKey = 'testnet'
 
     let network = switchNetwork(storageService.getContext())
 
     if (!network) {
       network = switchNetwork()
     }
-    const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
     ark.crypto.setNetworkVersion(network.version || 23)
 
     const momentTimezone = require('moment-timezone')
@@ -94,31 +96,8 @@
       n = storageService.getGlobal('networks')
       if (!n) {
         n = {
-          mainnet: { // so far same as testnet
-            nethash: '6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
-            peerseed: 'http://5.39.9.240:4001',
-            forcepeer: false,
-            token: 'ARK',
-            symbol: 'Ѧ',
-            version: 0x17,
-            slip44: 111,
-            explorer: 'https://explorer.ark.io',
-            background: 'url(assets/images/images/Ark.jpg)',
-            theme: 'default',
-            themeDark: false
-          },
-          devnet: {
-            nethash: '578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23',
-            peerseed: 'http://167.114.29.55:4002',
-            token: 'DARK',
-            symbol: 'DѦ',
-            version: 30,
-            slip44: 1, // all coin testnet
-            explorer: 'http://dexplorer.ark.io',
-            background: '#222299',
-            theme: 'default',
-            themeDark: false
-          }
+          mainnet: createNetworkFromArkJs(mainNetArkJsNetworkKey, 0x17, 111, 'url(assets/images/images/Ark.jpg)'),
+          devnet: createNetworkFromArkJs(devNetArkJsNetworkKey, 30, 1, '#222299')
         }
         storageService.setGlobal('networks', n)
       }
@@ -126,6 +105,38 @@
         return window.location.reload()
       }
       return n[newnetwork]
+    }
+
+    function createNetworkFromArkJs (arkJsNetworkKey, version, slip44, background) {
+      const arkJsNetwork = ark.networks[arkJsNetworkKey]
+
+      return {
+        arkJsKey: arkJsNetworkKey,
+        nethash: arkJsNetwork.nethash,
+        peerseed: 'http://' + arkJsNetwork.activePeer.ip + ':' + arkJsNetwork.activePeer.port,
+        token: arkJsNetwork.token,
+        symbol: arkJsNetwork.symbol,
+        explorer: arkJsNetwork.explorer,
+        version: version,
+        slip44: slip44,
+        forcepeer: false,
+        background: background,
+        theme: 'default',
+        themeDark: false
+      }
+    }
+
+    function tryGetPeersFromArkJs () {
+      if (!network.arkJsKey) {
+        return
+      }
+
+      const arkjsNetwork = ark.networks[network.arkJsKey]
+      if (!arkjsNetwork) {
+        return
+      }
+
+      return arkjsNetwork.peers
     }
 
     function getNetwork () {
@@ -165,6 +176,7 @@
           storageService.set('lastPrice', { market: peer.market, date: new Date() })
         }, failedTicker)
         .catch(failedTicker)
+
       $timeout(() => {
         getPrice()
       }, 5 * 60000)
@@ -278,47 +290,62 @@
     }
 
     function pickRandomPeer () {
-      if (!network.forcepeer) {
-        getFromPeer('/api/peers')
-          .then((response) => {
-            if (response.success) {
-              getFromPeer('/api/peers/version').then((versionResponse) => {
-                if (versionResponse.success) {
-                  let peers = response.peers.filter((peer) => {
-                    return peer.status === 'OK' && peer.version === versionResponse.version
-                  })
-                  storageService.set('peers', peers)
-                  findGoodPeer(peers, 0)
-                } else {
-                  findGoodPeer(storageService.get('peers'), 0)
-                }
-              })
-            } else {
-              findGoodPeer(storageService.get('peers'), 0)
-            }
-          }, () => findGoodPeer(storageService.get('peers'), 0))
-      }
-    }
-
-    function findGoodPeer (peers, index) {
-      if (index > peers.length - 1) {
-        // peer.ip=network.peerseed
+      if (network.forcepeer) {
         return
       }
-      if (index === 0) {
-        peers = peers.sort((a, b) => {
-          return b.height - a.height || a.delay - b.delay
-        })
+      getFromPeer('/api/peers')
+        .then((response) => {
+          if (response.success) {
+            getFromPeer('/api/peers/version').then((versionResponse) => {
+              if (versionResponse.success) {
+                const peers = response.peers.filter((peer) => {
+                  return peer.status === 'OK' && peer.version === versionResponse.version
+                })
+                storageService.set('peers', peers)
+                findGoodPeer(peers, 0)
+              } else {
+                findGoodPeer(storageService.get('peers'), 0)
+              }
+            })
+          } else {
+            findGoodPeer(storageService.get('peers'), 0)
+          }
+        }, () => findGoodPeer(storageService.get('peers'), 0))
+    }
+
+    function findGoodPeer (peers, index, isStaticPeerList) {
+      const isPeerListValid = () => peers && index <= peers.length - 1
+
+      if (!isStaticPeerList && !isPeerListValid()) {
+        // we don't have any peers, that means the app is probably started for the first time
+        // (and therefore we do not have a peer list in our storage)
+        // and getting a peer list failed (the peerseed server may be down)
+        // in this case we try to get a peer from the hardcoded list in the arkjs config
+        peers = tryGetPeersFromArkJs()
+        isStaticPeerList = true
+      } else if (index === 0) {
+        peers = peers.sort((a, b) => b.height - a.height || a.delay - b.delay)
       }
+
+      // check again or we may have an exception in the case when we couldn't get the static peer list from arkjs
+      if (!isPeerListValid()) {
+        return
+      }
+
       peer.ip = 'http://' + peers[index].ip + ':' + peers[index].port
       getFromPeer('/api/blocks/getheight')
         .then((response) => {
           if (response.success && response.height < peer.height) {
-            findGoodPeer(peers, index + 1)
+            findGoodPeer(peers, index + 1, isStaticPeerList)
           } else {
             peer.height = response.height
+            // if we had a static peer list, we now try to get a dynamic peer list
+            // because now we know the current peer does work and we don't want to keep the hardcoded peers
+            if (isStaticPeerList) {
+              pickRandomPeer()
+            }
           }
-        }, () => findGoodPeer(peers, index + 1))
+        }, () => findGoodPeer(peers, index + 1, isStaticPeerList))
     }
 
     function getPeer () {
