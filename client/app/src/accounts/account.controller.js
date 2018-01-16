@@ -1550,6 +1550,8 @@
         })
       }
 
+      const transactionLabel = accountService.getTransactionLabel(transaction)
+
       function send () {
         $mdDialog.hide()
 
@@ -1569,8 +1571,13 @@
               cb(transaction)
             }
           },
-          formatAndToastError
-        )
+         (error) => {
+           formatAndToastError({
+             message: gettextCatalog.getString('Failed to execute your \'{{ transactionLabel }}\' transaction!',
+                                               {transactionLabel: transactionLabel}),
+             error: error
+           })
+         })
       }
 
       $scope.validate = {
@@ -1578,7 +1585,7 @@
         send,
         cancel,
         transaction,
-        label: accountService.getTransactionLabel(transaction),
+        label: transactionLabel,
         // to avoid small transaction to be displayed as 1e-8
         humanAmount: utilityService.arktoshiToArk(transaction.amount),
         totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true)
