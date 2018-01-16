@@ -275,7 +275,7 @@
         } else {
           deferred.reject(resp.data)
         }
-      })
+      }, (error) => deferred.reject(error))
       return deferred.promise
     }
 
