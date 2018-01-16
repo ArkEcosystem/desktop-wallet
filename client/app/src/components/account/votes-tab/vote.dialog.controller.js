@@ -8,6 +8,7 @@
     this.activeDelegates = activeDelegates
     this.delegate = {}
     this.theme = currentTheme
+    this.hasSecondPassphrase = this.account.secondSignature
     this.passphrases = {
       first: passphrasesArr[0] ? passphrasesArr[0] : '',
       second: passphrasesArr[1] ? passphrasesArr[1] : ''
