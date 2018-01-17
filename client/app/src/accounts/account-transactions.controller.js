@@ -24,7 +24,10 @@
     $scope.$on('account:onSelect', function (evt, account) {
       vm.address = account.address
       reset()
-      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
+      const txListContainerElement = angular.element(document.querySelector('.tx-list-container'))[0]
+      if (txListContainerElement) {
+        txListContainerElement.scrollTop = 0
+      }
       updateTransactions(account.transactions)
     })
 
