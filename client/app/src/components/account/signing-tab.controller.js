@@ -69,10 +69,8 @@
         $mdDialog.hide()
       }
 
-      const passphrases = accountService.getPassphrases(selectedAccount.address)
-
       $scope.sign = {
-        passphrase: passphrases[0] ? passphrases[0] : '',
+        passphrase: '',
         sign,
         cancel,
         selectedAccount

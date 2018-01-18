@@ -44,9 +44,6 @@
     </md-card-title-media>
     <md-card-title-text>
       <span class="md-headline">
-          <!--<md-button class="md-fab md-primary md-mini" ng-click="$ctrl.ul.openPassphrasesDialog($ctrl.ul.selected)">
-            <md-icon md-font-library="material-icons">lock</md-icon>
-          </md-button>-->
           <span class="delegate-name">{{$ctrl.ab.getContactFromAddress($ctrl.ul.selected.address).name || $ctrl.ul.selected.username || 'Address'}} {{$ctrl.ul.selected.ledger}}</span>
       <br>
       <md-button style="text-transform: none;" copy-to-clipboard="{{((!$ctrl.ul.showPublicKey) && $ctrl.ul.selected.address || $ctrl.ul.selected.publicKey)}}">

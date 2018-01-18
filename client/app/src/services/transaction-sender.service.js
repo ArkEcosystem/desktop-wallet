@@ -21,8 +21,6 @@
     const openDialogIn = ($scope, accountCtrl, selectedAccount, uriScheme) => {
       $scope.maxTransactionsPerFile = 10
 
-      const passphrases = accountService.getPassphrases(selectedAccount.address)
-
       const getTotalBalance = fee => {
         const balance = selectedAccount.balance
         return utilityService.arktoshiToArk(fee ? balance - fee : balance)
@@ -119,8 +117,8 @@
         fromAddress: selectedAccount ? selectedAccount.address : '',
         fromLabel: selectedAccount ? selectedAccount.username : null,
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        secondPassphrase: passphrases[1] ? passphrases[1] : ''
+        passphrase: '',
+        secondPassphrase: ''
       }
       $scope.totalBalance = getTotalBalance(0)
       $scope.remainingBalance = getTotalBalance(0) // <-- initial value, this will change by directive

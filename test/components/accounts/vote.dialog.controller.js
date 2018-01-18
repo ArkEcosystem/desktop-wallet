@@ -31,7 +31,6 @@ describe('VotesTabController', () => {
   const dialogResolves = {
     accountObj: MOCK_ACCOUNT_OBJ,
     delegateToUnvote: null,
-    passphrasesArr: [],
     activeDelegates: MOCK_DELEGATES,
     currentTheme: {}
   }

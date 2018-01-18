@@ -210,7 +210,6 @@
     self.manageBackgrounds = manageBackgrounds
     self.showExchangeRate = showExchangeRate
     self.manageNetworks = manageNetworks
-    self.openPassphrasesDialog = openPassphrasesDialog
     self.createDelegate = createDelegate
     self.currency = storageService.get('currency') || self.currencies[0]
     self.switchNetwork = networkService.switchNetwork
@@ -880,13 +879,12 @@
     }
 
     function timestamp (selectedAccount) {
-      const passphrases = accountService.getPassphrases(selectedAccount.address)
       const data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : ''
+        passphrase: '',
+        secondpassphrase: ''
       }
 
       function next () {
@@ -1125,10 +1123,9 @@
             backgrounds['user'] = userImages
           }).on('error', (error) => {
             toastService.error(`Error Adding Background (reading): ${error}`, 3000)
+          }).on('error', (error) => {
+            toastService.error(gettextCatalog.getString('Error adding background:') + ' ' + error, 3000)
           })
-            .on('error', (error) => {
-              toastService.error(gettextCatalog.getString('Error adding background:') + ' ' + error, 3000)
-            })
         })
       }
 
@@ -1296,41 +1293,15 @@
       })
     }
 
-    function openPassphrasesDialog (selectedAccount) {
-      const passphrases = accountService.getPassphrases(selectedAccount.address)
-      const data = { address: selectedAccount.address, passphrase: passphrases[0], secondpassphrase: passphrases[1] }
-
-      function save () {
-        $mdDialog.hide()
-        accountService.savePassphrases($scope.send.data.address, $scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(
-          (account) => {
-            toastService.success(gettext('Passphrases saved'))
-          },
-          formatAndToastError
-        )
-      }
-
-      $scope.send = { data, cancel, save }
-
-      $mdDialog.show({
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/savePassphrases.html',
-        clickOutsideToClose: false,
-        preserveScope: true,
-        scope: $scope
-      })
-    }
-
     // register as delegate
     function createDelegate (selectedAccount) {
-      const passphrases = accountService.getPassphrases(selectedAccount.address)
       const data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount.address,
         username: '',
         secondSignature: selectedAccount.secondSignature,
-        passphrase: passphrases[0] ? passphrases[0] : '',
-        secondpassphrase: passphrases[1] ? passphrases[1] : ''
+        passphrase: '',
+        secondpassphrase: ''
       }
 
       function next () {
@@ -1522,9 +1493,7 @@
                 preserveScope: true,
                 scope: $scope
               })
-            }, () => {
-              cancel()
-            })
+            }, () => cancel())
         })
       }
 

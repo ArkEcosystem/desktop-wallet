@@ -169,35 +169,6 @@
       })
     }
 
-    function savePassphrases (address, passphrase, secondpassphrase) {
-      const deferred = $q.defer()
-      const tempaddress = ark.crypto.getAddress(ark.crypto.getKeys(passphrase).publicKey)
-      if (passphrase) {
-        const account = getAccount(tempaddress)
-        if (account && account.address === address) {
-          account.virtual = account.virtual || {}
-          storageService.set('virtual-' + address, account.virtual)
-          storageService.set('passphrase-' + address, passphrase)
-          storageService.set('secondpassphrase-' + address, secondpassphrase)
-          deferred.resolve(account)
-        } else {
-          deferred.reject(gettextCatalog.getString('Passphrase does not match your address'))
-        }
-      } else { // no passphrase, meaning remove all passphrases
-        storageService.set('virtual-' + address, null)
-        storageService.set('passphrase-' + address, null)
-        storageService.set('secondpassphrase-' + address, null)
-        deferred.reject(gettextCatalog.getString('Passphrases deleted'))
-      }
-
-      return deferred.promise
-    }
-
-    function getPassphrases (address) {
-      const passphrases = [storageService.get('passphrase-' + address), storageService.get('secondpassphrase-' + address)]
-      return passphrases
-    }
-
     function addWatchOnlyAddress (account) {
       if (!account || !account.address || storageService.get(account.address) || account.ledger) {
         return
@@ -223,8 +194,6 @@
       storageService.set('voters-' + account.address, null)
       storageService.set('username-' + account.address, null)
       storageService.set('virtual-' + account.address, null)
-      storageService.set('passphrase-' + account.address, null)
-      storageService.set('secondpassphrase-' + account.address, null)
 
       // remove the address from stored addresses
       const addresses = storageService.get('addresses')
@@ -277,7 +246,7 @@
             deferred.resolve(self.defaultFees)
           }
         },
-        () => deferred.resolve(self.defaultFees))
+          () => deferred.resolve(self.defaultFees))
 
       return deferred.promise
     }
@@ -773,10 +742,6 @@
       addWatchOnlyAddress,
 
       createAccount,
-
-      savePassphrases,
-
-      getPassphrases,
 
       removeAccount,
 
