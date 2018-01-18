@@ -18,9 +18,9 @@
     </md-button>
   </div>
 </md-toolbar>
-<div style="min-height: 100px; max-height: 300px; height: auto; border-radius:0 0 10px 10px" layout="column">
-  <md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
+<div style="min-height: 100px; max-height: 304px; height: auto; border-radius:0 0 10px 10px" layout="column">
+  <md-toolbar class="md-hue-2" style="min-height: 50px;">
+    <div class="md-toolbar-tools" style="min-height: 50px; height: 50px;">
       <md-button ng-click="$ctrl.ac.importAccount()">
         <md-icon>file_download</md-icon>
         <translate>Import Account</translate>
@@ -40,7 +40,7 @@
           Ledger Nano S
         </span>
         <span class="md-secondary">
-          <md-progress-circular ng-if="!$ctrl.ac.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
+          <md-progress-circular md-diameter="30" ng-if="!$ctrl.ac.ledgerAccounts" md-mode="indeterminate"></md-progress-circular>
           <md-chip ng-if="$ctrl.ac.ledgerAccounts">{{$ctrl.ac.ledgerAccounts.length}} <translate>Accounts</translate></md-chip>
         </span>
       </md-list-item>
