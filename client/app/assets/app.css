@@ -314,6 +314,19 @@ account-box {
   overflow: hidden;
   opacity: 0.9;
 }
+
+account-box h2 .md-select-value {
+  border-bottom-width: 0;
+}
+
+account-box h2 md-select.md-default-theme:not([disabled]):focus .md-select-value, md-select:not([disabled]):focus .md-select-value {
+  color: white;
+}
+
+account-box .md-toolbar-tools .md-button  {
+  margin-bottom: 6px;
+}
+
 #home-box-accounts {
     min-height: 180px;
 }
