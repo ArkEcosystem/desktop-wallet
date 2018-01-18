@@ -58,13 +58,13 @@
     </div>
   </div>
 
-  <div ng-cloak="" style="height: 100%" layout="column">
+  <div ng-cloak="" style="height: 100%" layout="column" ng-controller="AddressbookController as ab" >
 
     <main-navbar account-ctrl="ul"></main-navbar>
 
-    <dashboard account-ctrl="ul" id="dashboard" layout="column" layout-align="space-around center" ng-if="! ul.selected" flex></dashboard>
+    <dashboard account-ctrl="ul" addressbook-ctrl="ab" id="dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex></dashboard>
 
-    <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
+    <div class="account-view" ng-if="ul.selected" layout="column" flex>
       <md-content flex layout="row">
 
         <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">

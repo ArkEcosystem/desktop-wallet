@@ -15,6 +15,7 @@
     self.getContacts = function () {
       self.contacts = storageService.get('contacts')
       if (self.contacts == null || self.contacts === undefined) self.contacts = []
+      return self.contacts
     }
 
     self.getContacts()
@@ -60,7 +61,7 @@
       }
     }
 
-    self.addAddressbookContact = function () {
+    self.addAddressbookContact = function (successCallback) {
       $scope.addAddressbookContact = {
         add: add,
         cancel: cancel
@@ -110,6 +111,9 @@
         self.contacts.push(newContact)
         self.save()
         self.showToast(`Contact '${name}' with address '${address}' added successfully`)
+        if (successCallback) {
+          successCallback()
+        }
         cancel()
       }
 

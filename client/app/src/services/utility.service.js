@@ -83,6 +83,53 @@
       return new Date((arkRelativeTimeStamp + arkLaunchTime) * 1000)
     }
 
+    function createRefreshState (successMessage, errorMessage) {
+      const stateObject = {}
+
+      stateObject.states = []
+
+      stateObject.isRefreshing = false
+
+      stateObject.create = () => {
+        const state = { isFinished: false, hasError: false }
+        stateObject.states.push(state)
+        return state
+      }
+
+      stateObject.shouldRefresh = () => {
+        if (stateObject.isRefreshing) {
+          return false
+        }
+
+        stateObject.isRefreshing = true
+        return true
+      }
+
+      stateObject.updateRefreshState = (toastService) => {
+        const areAllFinished = stateObject.states.every(state => state.isFinished)
+        const hasAnyError = stateObject.states.some(state => state.hasError)
+
+        if (!areAllFinished) {
+          return
+        }
+
+        stateObject.isRefreshing = false
+        stateObject.states = []
+
+        if (!toastService) {
+          return
+        }
+
+        if (!hasAnyError) {
+          toastService.success(successMessage, 3000)
+        } else {
+          toastService.error(errorMessage, 3000)
+        }
+      }
+
+      return stateObject
+    }
+
     function numberToFixed (x) {
       let e
       if (Math.abs(x) < 1.0) {
@@ -108,7 +155,9 @@
       numberStringToFixed: numberStringToFixed,
 
       dateToArkStamp: dateToArkStamp,
-      arkStampToDate: arkStampToDate
+      arkStampToDate: arkStampToDate,
+
+      createRefreshState: createRefreshState
     }
   }
 })()
