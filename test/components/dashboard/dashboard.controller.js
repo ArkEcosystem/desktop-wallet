@@ -1,6 +1,6 @@
 'use strict'
 
-describe('DashboardController', function () {
+describe('DashboardController', () => {
   const expect = chai.expect
 
   let ctrl
@@ -39,7 +39,7 @@ describe('DashboardController', function () {
       beforeEach(() => feedServiceMock.fetchBlogEntries.resolves(entries))
 
       context("when isn't stored any announcement", () => {
-        it('shows the new one', function () {
+        it('shows the new one', () => {
           storageServiceMock.getGlobal.returns(null)
 
           return ctrl.showAnnouncements().then(() => {
@@ -49,7 +49,7 @@ describe('DashboardController', function () {
       })
 
       context('when the last stored announcement is older', () => {
-        it('shows the new one', function () {
+        it('shows the new one', () => {
           storageServiceMock.getGlobal.returns({ last: { guid: 'a', isoDate: 2010 } })
 
           return ctrl.showAnnouncements().then(() => {
@@ -59,7 +59,7 @@ describe('DashboardController', function () {
       })
 
       context('when the last stored announcement is from the exact same date', () => {
-        it("doesn't show anything", function () {
+        it("doesn't show anything", () => {
           storageServiceMock.getGlobal.returns({ last: { guid: 'c', isoDate: 2017 } })
 
           return ctrl.showAnnouncements().then(() => {
@@ -69,7 +69,7 @@ describe('DashboardController', function () {
       })
 
       context('when the last stored announcement is the same than the new one', () => {
-        it("doesn't show anything", function () {
+        it("doesn't show anything", () => {
           storageServiceMock.getGlobal.returns({ last: { guid: 'b', isoDate: 2010 } })
 
           return ctrl.showAnnouncements().then(() => {
@@ -79,7 +79,7 @@ describe('DashboardController', function () {
       })
 
       context('when the last stored announcement is newer', () => {
-        it("doesn't show anything", function () {
+        it("doesn't show anything", () => {
           storageServiceMock.getGlobal.returns({ last: { guid: 'c', isoDate: 2018 } })
 
           return ctrl.showAnnouncements().then(() => {

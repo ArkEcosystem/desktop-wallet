@@ -14,8 +14,8 @@
    * @constructor
    */
   function StorageService () {
-    var storage = {}
-    var context = window.localStorage.getItem('context')
+    let storage = {}
+    let context = window.localStorage.getItem('context')
     if (!context) {
       context = 'mainnet'
       window.localStorage.setItem('context', context)
@@ -38,7 +38,7 @@
      * @return {string} The supplied context.
      */
     function switchContext (contextname) {
-      var temp = window.localStorage.getItem('storage-' + contextname)
+      const temp = window.localStorage.getItem('storage-' + contextname)
       saveState()
       context = contextname
       window.localStorage.setItem('context', context)
@@ -125,12 +125,7 @@
     /**
      * Interval to save the current app data state, every 10s.
      */
-    setInterval(
-      function () {
-        saveState()
-      },
-      10000
-    )
+    setInterval(() => saveState(), 10000)
 
     return {
       switchContext: switchContext,

@@ -1,6 +1,6 @@
 'use strict'
 
-describe('VotesTabController', function () {
+describe('VotesTabController', () => {
   const MOCK_DELEGATE = {
     address: 'mockDelegateArkAddress',
     approval: 89.09,
@@ -35,7 +35,7 @@ describe('VotesTabController', function () {
     activeDelegates: MOCK_DELEGATES,
     currentTheme: {}
   }
- 
+
   let $scope,
     ctrl,
     accountServiceMock,
@@ -46,8 +46,7 @@ describe('VotesTabController', function () {
     accountServiceMock = {
       createTransaction: angular.noop,
       getActiveDelegates: angular.noop,
-      getDelegateByUsername: angular.noop,
-      getActiveDelegates: angular.noop
+      getDelegateByUsername: angular.noop
     }
     mdDialogMock = {
       show: angular.noop,
@@ -69,8 +68,8 @@ describe('VotesTabController', function () {
   })
 
   let getDelegateStub,
-      mdDialogHideStub,
-      toastServiceErrStub
+    mdDialogHideStub,
+    toastServiceErrStub
   beforeEach(() => {
     getDelegateStub = sinon.stub(accountServiceMock, 'getDelegateByUsername').resolves(MOCK_DELEGATE)
     mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')

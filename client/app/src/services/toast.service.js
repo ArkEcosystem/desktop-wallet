@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  var fs = require('fs')
+  const fs = require('fs')
 
   angular.module('arkclient.services')
     .service('toastService', ['configService', '$mdToast', 'gettextCatalog', ToastService])
@@ -11,7 +11,7 @@
    * @constructor
    */
   function ToastService (configService, $mdToast, gettextCatalog) {
-    var self = this
+    const self = this
 
     self.TypeEnum = {
       ERROR: 0,
@@ -55,7 +55,7 @@
     }
 
     self.show = function (message, type, hideDelay, stopTranslate) {
-      var typeName = null
+      let typeName = null
       if (typeof self.TypeName[type] !== 'undefined') {
         typeName = self.TypeName[type]
       }
@@ -66,7 +66,7 @@
         self.logToFile(message, typeName)
         return
       }
-      var toast = $mdToast.simple()
+      const toast = $mdToast.simple()
         .hideDelay(hideDelay || self.hideDelay)
         .textContent(message)
       if (typeName) {
@@ -86,7 +86,7 @@
       }
 
       typeName = (typeName || '').toUpperCase()
-      var date = new Date().toISOString()
+      const date = new Date().toISOString()
       self.fileStream.write(
         `[${date}] ${typeName}: ${message}\n`
       )

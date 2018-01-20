@@ -1,6 +1,6 @@
 'use strict'
 
-describe('AddressbookController', function () {
+describe('AddressbookController', () => {
   const expect = chai.expect
 
   let ctrl,
@@ -23,7 +23,7 @@ describe('AddressbookController', function () {
       }
       mdToastMock = {}
       storageServiceMock = {
-        get: sinon.stub().returns([{name:'test_contact', address: 'test_address'}]),
+        get: sinon.stub().returns([{name: 'test_contact', address: 'test_address'}]),
         set: sinon.stub()
       }
       getTextCatalogMock = {
@@ -58,23 +58,20 @@ describe('AddressbookController', function () {
 
   describe('initialized state', () => {
     it('retrieves contacts from storage', () => {
-      expect(ctrl.contacts).to.deep.equal([{name:'test_contact', address: 'test_address'}])
+      expect(ctrl.contacts).to.deep.equal([{name: 'test_contact', address: 'test_address'}])
       expect(storageServiceMock.get.calledOnce).to.be.true
       expect(storageServiceMock.get.getCall(0).args[0]).to.equal('contacts')
     })
   })
 
   describe('getContacts', () => {
-    let mdDialogShowStub,
-      mdDialogHideStub
-
-    beforeEach( () => {
-      mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
-      mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
+    beforeEach(() => {
+      sinon.stub(mdDialogMock, 'show')
+      sinon.stub(mdDialogMock, 'hide')
     })
 
     context('when contacts are valid', () => {
-      beforeEach(function () {
+      beforeEach(() => {
         storageServiceMock.get = sinon.stub().returns(['valid_contact'])
       })
 
@@ -87,7 +84,7 @@ describe('AddressbookController', function () {
     })
 
     context("when contacts aren't valid", () => {
-      beforeEach(function () {
+      beforeEach(() => {
         storageServiceMock.get = sinon.stub().returns(null)
       })
       it('sets controller contacts to empty array on invalid return value', () => {
@@ -99,16 +96,15 @@ describe('AddressbookController', function () {
     })
   })
 
-  describe('addAddressbookContact', () =>  {
-    let mdDialogShowStub,
-      mdDialogHideStub
+  describe('addAddressbookContact', () => {
+    let mdDialogShowStub
 
-    beforeEach( () => {
+    beforeEach(() => {
       mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
-      mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
+      sinon.stub(mdDialogMock, 'hide')
       ctrl.getContacts = sinon.stub().returns([])
       ctrl.showToast = sinon.stub()
-})
+    })
 
     context('set up addressbook contact modal', () => {
       it('sets up address book modal', () => {
@@ -150,16 +146,16 @@ describe('AddressbookController', function () {
 
     context('adding contact with unique name and address', () => {
       it('is successful', () => {
-          const name = 'test_name'
-          const address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
+        const name = 'test_name'
+        const address = 'AThTtim37wR11D3hxGVtruS3UQTbsjsW3t'
 
-          ctrl.addAddressbookContact()
-          const sizeBefore = Object.keys(ctrl.contacts).length
-          $scope.addAddressbookContact.add(name, address)
-          const sizeAfter = Object.keys(ctrl.contacts).length
+        ctrl.addAddressbookContact()
+        const sizeBefore = Object.keys(ctrl.contacts).length
+        $scope.addAddressbookContact.add(name, address)
+        const sizeAfter = Object.keys(ctrl.contacts).length
 
-          expect(sizeBefore).to.equal(sizeAfter - 1)
-          expect(ctrl.contacts[sizeAfter - 1]).to.eql({ name, address })
+        expect(sizeBefore).to.equal(sizeAfter - 1)
+        expect(ctrl.contacts[sizeAfter - 1]).to.eql({ name, address })
       })
     })
 

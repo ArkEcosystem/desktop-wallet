@@ -1,6 +1,6 @@
 'use strict'
 
-describe('VotesTabController', function () {
+describe('VotesTabController', () => {
   const MOCK_DELEGATE = {
     address: 'mockDelegateArkAddress',
     approval: 89.09,
@@ -12,7 +12,6 @@ describe('VotesTabController', function () {
     username: 'mock_delegate',
     vote: '11512779451283196'
   }
-  const MOCK_DELEGATES = [MOCK_DELEGATE]
   const MOCK_ACCOUNT_OBJ = {
     address: 'mockArkAddress',
     balance: '50000000000',
@@ -35,9 +34,8 @@ describe('VotesTabController', function () {
     },
     theme: {}
   }
- 
-  let $scope,
-    ctrl,
+
+  let ctrl,
     accountServiceMock,
     transactionBuilderServiceMock,
     mdDialogMock,
@@ -46,8 +44,7 @@ describe('VotesTabController', function () {
   beforeEach(() => {
     accountServiceMock = {
       getActiveDelegates: angular.noop,
-      getDelegateByUsername: angular.noop,
-      getActiveDelegates: angular.noop
+      getDelegateByUsername: angular.noop
     }
     transactionBuilderServiceMock = {
       createVoteTransaction: angular.noop
@@ -72,13 +69,12 @@ describe('VotesTabController', function () {
     })
 
     inject((_$rootScope_, _$componentController_) => {
-      $scope = _$rootScope_.$new()
       ctrl = _$componentController_('votesTab', null, bindings)
     })
   })
 
   let mdDialogShowStub,
-  createTransactionStub
+    createTransactionStub
 
   beforeEach(() => {
     createTransactionStub = sinon.stub(transactionBuilderServiceMock, 'createVoteTransaction').resolves({})
@@ -94,9 +90,9 @@ describe('VotesTabController', function () {
   describe('getDelegateList()', () => {
     context('when the account is a valid account object', () => {
       it('should return a filtered list of selected votes if they exist', () => {
-        let acct_obj = angular.copy(ctrl.account)
-        acct_obj.selectedVotes = [{username: 'foo' }, {username:  'bar' }, {username: 'baz' }, {username: 'baz' }]
-        let delegateList = ctrl.getDelegateList(acct_obj)
+        let acctObj = angular.copy(ctrl.account)
+        acctObj.selectedVotes = [{username: 'foo'}, {username: 'bar'}, {username: 'baz'}, {username: 'baz'}]
+        let delegateList = ctrl.getDelegateList(acctObj)
         expect(delegateList.length).to.equal(3)
       })
     })
@@ -130,7 +126,8 @@ describe('VotesTabController', function () {
       it('should show the valid transaction dialog and receive a callback adding the delegate to the list', (done) => {
         ctrl.account.selectedVotes = []
         ctrl.ul.showValidateTransaction = (acct, trans, cb) => {
-          cb({})
+          const callbackObj = {}
+          cb(callbackObj)
           expect(ctrl.account.selectedVotes.length).to.equal(1)
           done()
         }
@@ -162,11 +159,12 @@ describe('VotesTabController', function () {
       it('should show the valid transaction dialog and receive a callback removing the delegate to the list', (done) => {
         ctrl.account.selectedVotes = [angular.copy(MOCK_DELEGATE)]
         ctrl.ul.showValidateTransaction = (acct, trans, cb) => {
-          cb({})
+          const callbackObj = {}
+          cb(callbackObj)
           expect(ctrl.account.selectedVotes.length).to.equal(0)
           done()
         }
-        ctrl.vote(ctrl.account, MOCK_DELEGATE)  
+        ctrl.vote(ctrl.account, MOCK_DELEGATE)
       })
     })
   })

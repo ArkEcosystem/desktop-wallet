@@ -12,6 +12,6 @@
     })
 
   angular.module('arkclient.constants')
-     // all ark timestamps start at 2017/3/21 13:00
+  // all ark timestamps start at 2017/3/21 13:00
     .constant('ARK_LAUNCH_DATE', new Date(Date.UTC(2017, 2, 21, 13, 0, 0, 0)))
 })()

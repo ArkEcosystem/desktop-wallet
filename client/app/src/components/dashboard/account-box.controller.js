@@ -91,7 +91,7 @@
       networkService.getPrice()
 
       accounts.forEach(account => {
-        var state = refreshState.create()
+        const state = refreshState.create()
         accountService
           .refreshAccount(account)
           .then(updated => { account.balance = updated.balance })

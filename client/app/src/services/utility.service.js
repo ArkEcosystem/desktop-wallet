@@ -78,20 +78,20 @@
         return null
       }
 
-      var arkLaunchTime = parseInt(ARK_LAUNCH_DATE.getTime() / 1000)
+      const arkLaunchTime = parseInt(ARK_LAUNCH_DATE.getTime() / 1000)
 
       return new Date((arkRelativeTimeStamp + arkLaunchTime) * 1000)
     }
 
     function createRefreshState (successMessage, errorMessage) {
-      var stateObject = {}
+      const stateObject = {}
 
       stateObject.states = []
 
       stateObject.isRefreshing = false
 
       stateObject.create = () => {
-        var state = { isFinished: false, hasError: false }
+        const state = { isFinished: false, hasError: false }
         stateObject.states.push(state)
         return state
       }
@@ -106,8 +106,8 @@
       }
 
       stateObject.updateRefreshState = (toastService) => {
-        var areAllFinished = stateObject.states.every(state => state.isFinished)
-        var hasAnyError = stateObject.states.some(state => state.hasError)
+        const areAllFinished = stateObject.states.every(state => state.isFinished)
+        const hasAnyError = stateObject.states.some(state => state.hasError)
 
         if (!areAllFinished) {
           return

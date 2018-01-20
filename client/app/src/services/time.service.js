@@ -9,12 +9,12 @@
    * @constructor
    */
   function TimeService ($q, $http) {
-    var timeServerUrl = 'http://tycho.usno.navy.mil/cgi-bin/time.pl'
-    var serverLatency = 0
-    var config = {
+    const timeServerUrl = 'http://tycho.usno.navy.mil/cgi-bin/time.pl'
+    let serverLatency = 0
+    let config = {
       timeout: 2000
     }
-    var localToServerTimeDiff = 0
+    let localToServerTimeDiff = 0
 
     /**
      * Function gets a server timestamp as to not rely on the users local clock.
@@ -22,30 +22,30 @@
      * Always returns success.
      */
     function getTimestamp () {
-      var deferred = $q.defer()
+      const deferred = $q.defer()
 
-      var startTime = new Date().getTime()
+      const startTime = new Date().getTime()
 
       $http.get(timeServerUrl, config).then(
         (success) => {
-          var timestamp = success.headers().date
-          var processedTimestamp = new Date(timestamp).getTime()
-          var endTime = new Date().getTime()
+          const timestamp = success.headers().date
+          const processedTimestamp = new Date(timestamp).getTime()
+          const endTime = new Date().getTime()
 
           serverLatency = endTime - startTime
 
-          var computedTimestamp = processedTimestamp + serverLatency
+          const computedTimestamp = processedTimestamp + serverLatency
 
-          var currentLocalTime = new Date().getTime()
+          const currentLocalTime = new Date().getTime()
           localToServerTimeDiff = computedTimestamp - currentLocalTime
 
           deferred.resolve(computedTimestamp)
         },
         (_error) => {
           // use the system time instead on error
-          var timestamp = new Date().getTime()
+          const timestamp = new Date().getTime()
 
-          var computedTimestamp = timestamp + localToServerTimeDiff
+          const computedTimestamp = timestamp + localToServerTimeDiff
 
           deferred.resolve(computedTimestamp)
         }

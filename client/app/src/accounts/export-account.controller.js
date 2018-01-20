@@ -50,7 +50,7 @@
         if (error.transactions.length) {
           toastService.error('An error occured when getting your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
                              'The exported file contains only these!',
-                             10000)
+          10000)
           prepareFile($scope.vm.account, error.transactions, true)
         } else {
           toastService.error('An error occured when getting your transactions. Cannot export account!', 10000)
@@ -80,8 +80,8 @@
     }
 
     $scope.vm.downloadFile = () => {
-      var blob = new Blob([$scope.fileContent])
-      var downloadLink = document.createElement('a')
+      const blob = new Blob([$scope.fileContent])
+      const downloadLink = document.createElement('a')
       downloadLink.setAttribute('download', account.address + '.csv')
       downloadLink.setAttribute('href', window.URL.createObjectURL(blob))
       downloadLink.click()
@@ -94,7 +94,7 @@
 
     function prepareFile (account, transactions, isInComplete) {
       $scope.vm.isFinished = true
-      var eol = require('os').EOL
+      const eol = require('os').EOL
 
       $scope.fileContent = 'Account:,' + account.address + eol +
                            'Balance:,' + utilityService.arktoshiToArk(account.balance) + eol +

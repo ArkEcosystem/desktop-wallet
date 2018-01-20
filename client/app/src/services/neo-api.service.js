@@ -14,8 +14,8 @@
     function getUnClaimed (address) {
       const deferred = $q.defer()
       $http.get(baseUrl + '/get_unclaimed/' + address)
-           .then(r => r.status === 200 && r.data ? deferred.resolve(r.data) : deferred.reject('Error'))
-           .catch(err => deferred.reject(err))
+        .then(r => r.status === 200 && r.data ? deferred.resolve(r.data) : deferred.reject('Error'))
+        .catch(err => deferred.reject(err))
       return deferred.promise
     }
 
@@ -23,8 +23,8 @@
       // we use the getunclaimed call, because it's fast, if the address exists (i.e. has any transactions), the address is returned
       // we check if it's a real address (and not "not found") and return the result
       return getUnClaimed(address)
-               .then(r => isValidAddress(r.address))
-               .catch(() => false)
+        .then(r => isValidAddress(r.address))
+        .catch(() => false)
     }
 
     function isValidAddress (address) {

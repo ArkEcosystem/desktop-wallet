@@ -17,15 +17,15 @@
 
 'use strict'
 
-var Q = require('q')
+const Q = require('q')
 
-var LedgerUtils = {}
+const LedgerUtils = {}
 
 LedgerUtils.splitPath = function (path) {
-  var result = []
-  var components = path.split('/')
-  components.forEach(function (element, index) {
-    var number = parseInt(element, 10)
+  const result = []
+  const components = path.split('/')
+  components.forEach((element, index) => {
+    let number = parseInt(element, 10)
     if (isNaN(number)) {
       return
     }
@@ -38,16 +38,16 @@ LedgerUtils.splitPath = function (path) {
 }
 
 LedgerUtils.foreach = function (arr, callback) {
-  var deferred = Q.defer()
-  var iterate = function (index, array, result) {
+  const deferred = Q.defer()
+  const iterate = function (index, array, result) {
     if (index >= array.length) {
       deferred.resolve(result)
       return
     }
-    callback(array[index], index).then(function (res) {
+    callback(array[index], index).then((res) => {
       result.push(res)
       iterate(index + 1, array, result)
-    }).fail(function (ex) {
+    }).fail((ex) => {
       deferred.reject(ex)
     }).done()
   }
@@ -56,7 +56,7 @@ LedgerUtils.foreach = function (arr, callback) {
 }
 
 LedgerUtils.doIf = function (condition, callback) {
-  var deferred = Q.defer()
+  const deferred = Q.defer()
   if (condition) {
     deferred.resolve(callback())
   } else {
@@ -66,18 +66,17 @@ LedgerUtils.doIf = function (condition, callback) {
 }
 
 LedgerUtils.asyncWhile = function (condition, callback) {
-  var deferred = Q.defer()
-  var iterate = function (result) {
+  const deferred = Q.defer()
+  const iterate = function (result) {
     if (!condition()) {
       deferred.resolve(result)
       return
     }
-    callback().then(function (res) {
+    callback().then((res) => {
       result.push(res)
       iterate(result)
-    }).fail(function (ex) {
-      deferred.reject(ex)
-    }).done()
+    }).fail((ex) => deferred.reject(ex))
+      .done()
   }
   iterate([])
   return deferred.promise

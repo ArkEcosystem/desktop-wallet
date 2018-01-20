@@ -5,7 +5,7 @@
  * more pieces, such as components and services
  */
 
-describe('AccountController', function () {
+describe('AccountController', () => {
   const expect = chai.expect
 
   let ctrl,
@@ -29,7 +29,7 @@ describe('AccountController', function () {
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
 
-  beforeEach(module('arkclient.constants'));
+  beforeEach(module('arkclient.constants'))
 
   beforeEach(() => {
     module('arkclient.accounts', $provide => {
@@ -118,28 +118,28 @@ describe('AccountController', function () {
   })
 
   describe('', () => {
-    xit('loads all the accounts', function () {
+    xit('loads all the accounts', () => {
     })
   })
 
   // Account retreival
   describe('getAllAccounts()', () => {
-    beforeEach(function () {
+    beforeEach(() => {
       sinon.stub(ctrl, 'myAccounts').returns(ACCOUNTS)
     })
 
     context("when there aren't any ledger accounts", () => {
-      it('returns the user accounts only', function () {
+      it('returns the user accounts only', () => {
         expect(ctrl.getAllAccounts()).to.have.same.members(ACCOUNTS)
       })
     })
 
     context('when there are ledger accounts', () => {
-      beforeEach(function () {
+      beforeEach(() => {
         ctrl.ledgerAccounts = ['ledgerAccount1', 'ledgerAccoun2']
       })
 
-      it('returns the user and the ledger accounts', function () {
+      it('returns the user and the ledger accounts', () => {
         expect(ctrl.getAllAccounts()).to.have.members(ACCOUNTS.concat(ctrl.ledgerAccounts))
       })
     })
@@ -185,10 +185,10 @@ describe('AccountController', function () {
   // Adding Second passphrase test
   describe('adding second passphrase', () => {
     let requireNotMocked = require
-    beforeEach( () => {
+    beforeEach(() => {
       require = sinon.stub().returns(require(require('path').resolve(__dirname, '../node_modules/bip39')))
     })
-    afterEach( () => {
+    afterEach(() => {
       require = requireNotMocked
     })
     context('when the account doesnt have a second passphrase', () => {
