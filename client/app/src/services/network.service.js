@@ -5,12 +5,14 @@
     .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
 
   /**
-   * NetworkService
+   * NetworkService 
    * @constructor
    */
   function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     const _path = require('path')
 
+    checkForUpdate()
+    
     var network = switchNetwork(storageService.getContext())
 
     if (!network) {
@@ -70,6 +72,7 @@
             newnetwork.cmcTicker = data.cmcTicker
             n[data.name] = newnetwork
             storageService.setGlobal('networks', n)
+			storageService.setGlobal('networkscount', Object.keys(n).length)
             deferred.resolve(n[data.name])
           },
           function (resp) {
@@ -79,11 +82,36 @@
       }
       return deferred.promise
     }
+    
+    function checkForUpdate(){
+      var found = false
+      var networkList = require(require('path').resolve(__dirname, './config/config')).networks
+      var networksCount = storageService.getGlobal('networksCount')
+      
+      // Check if there is more networks in config
+      if(!networksCount || networksCount!=Object.keys(networkList).length){
+        var networkListUser = storageService.getGlobal('networks')
+        for (var networkGlobal in networkList) {
+          for (var networkUser in networkListUser) {
+            if(networkListUser[networkUser].peerseed==networkList[networkGlobal].peerseed){
+              found = true;
+              break;
+            }
+          }
+          if(!found){
+            networkListUser[networkGlobal]=networkList[networkGlobal]
+          }
+          found = false
+        }
+        storageService.setGlobal('networksCount',Object.keys(networkList).length)
+        storageService.setGlobal('networks', networkListUser)
+      }
+    }
 
     function switchNetwork (newnetwork, reload) {
-      var n
+      var networkList
       if (!newnetwork) { // perform round robin
-        n = storageService.getGlobal('networks')
+        networkList = storageService.getGlobal('networks')
         var keys = Object.keys(n)
         var i = keys.indexOf(storageService.getContext()) + 1
         if (i === keys.length) {
@@ -93,41 +121,16 @@
         return window.location.reload()
       }
       storageService.switchContext(newnetwork)
-      n = storageService.getGlobal('networks')
-      if (!n) {
-        n = {
-          mainnet: { // so far same as testnet
-            nethash: '6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988',
-            peerseed: 'http://5.39.9.240:4001',
-            forcepeer: false,
-            token: 'ARK',
-            symbol: 'Ѧ',
-            version: 0x17,
-            slip44: 111,
-            explorer: 'https://explorer.ark.io',
-            background: 'url(assets/images/images/Ark.jpg)',
-            theme: 'default',
-            themeDark: false
-          },
-          devnet: {
-            nethash: '578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23',
-            peerseed: 'http://167.114.29.55:4002',
-            token: 'DARK',
-            symbol: 'DѦ',
-            version: 30,
-            slip44: 1, // all coin testnet
-            explorer: 'http://dexplorer.ark.io',
-            background: '#222299',
-            theme: 'default',
-            themeDark: false
-          }
-        }
-        storageService.setGlobal('networks', n)
+      networkList = storageService.getGlobal('networks')
+      if (!networkList) {
+        var globalConfig = require(require('path').resolve(__dirname, './config/config'))
+        networkList = globalConfig.networks
+        storageService.setGlobal('networks', networkList)
       }
       if (reload) {
         return window.location.reload()
       }
-      return n[newnetwork]
+      return networkList[newnetwork]
     }
 
     function getNetwork () {
