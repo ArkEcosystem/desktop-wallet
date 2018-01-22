@@ -14,11 +14,15 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'utilityService', 'neoApiService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'utilityService', 'neoApiService', '$timeout', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionBuilderService, utilityService, neoApiService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionBuilderService, utilityService, neoApiService, $timeout) {
     let getCurrentAccount = () => null
+
+    $scope.$on('app:onURI', (event, scheme) => {
+      this.showSendTransaction(getCurrentAccount(), scheme)
+    })
 
     this.$onInit = () => {
       this.ul = this.accountCtrl
@@ -161,7 +165,7 @@
     /**
      * Show the send transaction dialog
      */
-    this.showSendTransaction = selectedAccount => {
+    this.showSendTransaction = (selectedAccount, uriScheme) => {
       const passphrases = accountService.getPassphrases(selectedAccount.address)
 
       let data = {
@@ -171,6 +175,11 @@
         secondSignature: selectedAccount ? selectedAccount.secondSignature : '',
         passphrase: passphrases[0] ? passphrases[0] : '',
         secondpassphrase: passphrases[1] ? passphrases[1] : ''
+      }
+
+      if (uriScheme) {
+        data.amount = uriScheme.amount
+        data.smartbridge = uriScheme.vendorField
       }
 
       const openFile = () => {
@@ -348,6 +357,12 @@
         fillSendableBalance: fillSendableBalance,
         totalBalance: getTotalBalance(0),
         remainingBalance: getTotalBalance(0) // <-- initial value, this will change by directive
+      }
+
+      if (uriScheme) {
+        $timeout(() => {
+          $scope.send.data.selectedAddress = {address: uriScheme.address}
+        }, 0)
       }
 
       $scope.onQrCodeForToAddressScanned = (address) => {

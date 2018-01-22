@@ -61,6 +61,7 @@
     utilityService
   ) {
     const _path = require('path')
+    const electron = require('electron')
 
     const self = this
 
@@ -97,6 +98,17 @@
     }
 
     pluginLoader.triggerEvent('onStart')
+
+    electron.ipcRenderer.on('uri', (event, uri) => {
+      $timeout(() => {
+        const qrcodeElement = document.querySelector('ark-qrcode')
+        const scheme = qrcodeElement.deserializeURI(uri)
+
+        if (!scheme) return toastService.error('Invalid URI')
+        if (scheme && !self.selected) return toastService.error('Select an account and open the URI again')
+        if (scheme && self.selected) return $scope.$broadcast('app:onURI', scheme)
+      }, 0)
+    })
 
     self.currencies = [
       { name: 'btc', symbol: 'Ƀ' },

@@ -104,6 +104,13 @@
   },
   "build": {
     "appId": "com.arkwallet.liteclient",
+    "protocols": {
+      "name": "Ark URI scheme",
+      "schemes": [
+        "ark"
+      ],
+      "role": "Viewer"
+    },
     "mac": {
       "category": "finance"
     },
