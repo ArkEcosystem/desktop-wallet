@@ -32,7 +32,7 @@ const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
 
   // argv: An array of the second instance’s (command line / deep linked) arguments
   if (process.platform !== 'darwin') {
-    deeplinkingUrl = argv.slice(1)
+    deeplinkingUrl = argv[2]
     broadcastURI(deeplinkingUrl)
   }
 
@@ -286,5 +286,7 @@ function hideApp () {
 }
 
 function broadcastURI (uri) {
+  if (!uri || typeof uri !== 'string') return
+
   if (mainWindow && mainWindow.webContents) mainWindow.webContents.send('uri', uri)
 }
