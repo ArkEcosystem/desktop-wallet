@@ -76,7 +76,7 @@
     "chai-as-promised": "^7.1.1",
     "cross-env": "^5.0.5",
     "devtron": "^1.4.0",
-    "electron": "^1.7.9",
+    "electron": "^1.7.11",
     "electron-builder": "^19.35.1",
     "electron-rebuild": "^1.6.0",
     "eslint": "^4.14.0",
@@ -104,6 +104,13 @@
   },
   "build": {
     "appId": "com.arkwallet.liteclient",
+    "protocols": {
+      "name": "Ark URI scheme",
+      "schemes": [
+        "ark"
+      ],
+      "role": "Viewer"
+    },
     "mac": {
       "category": "finance"
     },
@@ -116,7 +123,11 @@
       "target": [
         "deb",
         "tar.xz"
-      ]
+      ],
+      "desktop": {
+        "MimeType": "x-scheme-handler/ark;"
+      },
+      "category": "Network"
     },
     "deb": {
       "synopsis": "Ark Desktop Wallet"

@@ -1,20 +1,18 @@
-const electron = require('electron')
+const electron = require('electron') // {app, electron, protocol, BrowserWindow, ipcMain, Menu, globalShortcut}
 const elemon = require('elemon')
+const openAboutWindow = require('about-window').default
+const windowStateKeeper = require('electron-window-state')
 const _path = require('path')
 
-// Module to control application life.
 const app = electron.app
-// Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 const ipcMain = electron.ipcMain
 const Menu = electron.Menu
-const openAboutWindow = require('about-window').default
+const globalShortcut = electron.globalShortcut
 
 const ledger = require('ledgerco')
 const LedgerArk = require(_path.resolve(__dirname, './LedgerArk'))
 const fork = require('child_process').fork
-
-const windowStateKeeper = require('electron-window-state')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -26,6 +24,27 @@ let ledgercomm
 let menu = null
 let enableScreenshotProtection = true
 let template = null
+let deeplinkingUrl = null
+
+// Force Single Instance Application
+const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
+  // Someone tried to run a second instance, we should focus our window.
+
+  // argv: An array of the second instance’s (command line / deep linked) arguments
+  if (process.platform !== 'darwin') {
+    deeplinkingUrl = argv[2]
+    broadcastURI(deeplinkingUrl)
+  }
+
+  if (mainWindow) {
+    if (mainWindow.isMinimized()) mainWindow.restore()
+    mainWindow.focus()
+  }
+})
+
+if (shouldQuit) {
+  app.exit()
+}
 
 function createWindow () {
   // Create the browser window.t
@@ -44,6 +63,10 @@ function createWindow () {
   mainWindow.loadURL(`file://${__dirname}/client/app/index.html`)
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
+  })
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    if (deeplinkingUrl) broadcastURI(deeplinkingUrl)
   })
 
   const ledgerWorker = fork(`${__dirname}/ledger-worker.js`)
@@ -185,6 +208,8 @@ function configureReload () {
   })
 }
 
+app.setAsDefaultProtocolClient('ark', process.execPath, ['--'])
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -212,6 +237,14 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+app.on('open-url', (event, url) => {
+  // Protocol handler for osx
+  event.preventDefault()
+  deeplinkingUrl = url
+
+  broadcastURI(deeplinkingUrl)
 })
 
 // enables/disables and updates the screen shot protection item menu
@@ -244,12 +277,16 @@ function getScreenshotProtectionLabel () {
 
 function registerShortcuts () {
   if (process.platform === 'darwin') {
-    electron.globalShortcut.register('CommandOrControl+H', hideApp)
+    globalShortcut.register('CommandOrControl+H', hideApp)
   }
 }
 
 function hideApp () {
-  electron.app.hide()
+  app.hide()
 }
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+
+function broadcastURI (uri) {
+  if (!uri || typeof uri !== 'string') return
+
+  if (mainWindow && mainWindow.webContents) mainWindow.webContents.send('uri', uri)
+}
