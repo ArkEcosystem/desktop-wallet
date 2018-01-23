@@ -4,10 +4,7 @@ const openAboutWindow = require('about-window').default
 const windowStateKeeper = require('electron-window-state')
 const _path = require('path')
 
-const PROTOCOL_PREFIX = 'ark'
-
 const app = electron.app
-const protocol = electron.protocol
 const BrowserWindow = electron.BrowserWindow
 const ipcMain = electron.ipcMain
 const Menu = electron.Menu
@@ -33,11 +30,10 @@ let deeplinkingUrl = null
 const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
   // Someone tried to run a second instance, we should focus our window.
 
-  // Protocol handler for win32
   // argv: An array of the second instance’s (command line / deep linked) arguments
-  if (process.platform === 'win32') {
-    // Keep only command line / deep linked arguments
+  if (process.platform !== 'darwin') {
     deeplinkingUrl = argv.slice(1)
+    broadcastURI(deeplinkingUrl)
   }
 
   if (mainWindow) {
@@ -47,7 +43,7 @@ const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
 })
 
 if (shouldQuit) {
-  app.quit()
+  app.exit()
 }
 
 function createWindow () {
@@ -212,13 +208,14 @@ function configureReload () {
   })
 }
 
+app.setAsDefaultProtocolClient('ark', process.execPath, ['--'])
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow()
   registerShortcuts()
-  registerProtocol()
 
   if (process.env.LIVE_RELOAD) {
     configureReload()
@@ -276,15 +273,6 @@ function getScreenshotProtectionLabel () {
   } else {
     return 'Enable screenshot protection (recommended)'
   }
-}
-
-function registerProtocol () {
-  protocol.registerHttpProtocol(PROTOCOL_PREFIX, (req, cb) => {
-    deeplinkingUrl = req.url
-    broadcastURI(deeplinkingUrl)
-  }, (err) => {
-    if (err) throw new Error('Failed to register protocol')
-  })
 }
 
 function registerShortcuts () {
