@@ -79,7 +79,7 @@
      * Each transaction is expected to be ``{ address, amount, smartbridge }`,
      * where amount is expected to be in arktoshi
      */
-    function createMultipleSendTransactions ({ publicKey, fromAddress, transactions, masterpassphrase, secondpassphrase }) {
+    function createMultipleSendTransactions ({ publicKey, fromAddress, transactions, masterpassphrase, secondpassphrase, ledger }) {
       const network = networkService.getNetwork()
       const account = accountService.getAccount(fromAddress)
 
@@ -103,18 +103,37 @@
             return reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress)
           }
 
-          transactions = transactions.map(({ address, amount, smartbridge }) => {
-            const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
+          const processed = Promise.all(
+            transactions.map(({ address, amount, smartbridge }) => {
+              return new Promise((resolve, reject) => {
+                const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
 
-            // TODO ledger signing on each transaction
+                transaction.fee = fees.send
+                transaction.senderId = fromAddress
 
-            transaction.fee = fees.send
-            transaction.senderId = fromAddress
+                if (ledger) {
+                  delete transaction.signature
+                  transaction.senderPublicKey = publicKey
 
-            return transaction
-          })
+                  // Wait a little just in case
+                  setTimeout(()=> {
+                    ledgerService.signTransaction(ledger, transaction).then(result => {
+                      transaction.signature = result.signature
+                      transaction.id = ark.crypto.getId(transaction)
+                      resolve(transaction)
+                    }, reject)
+                  }, 500)
 
-          resolve(transactions)
+                } else {
+                  resolve(transaction)
+                }
+              })
+            })
+          )
+
+          processed
+            .then(resolve)
+            .catch(reject)
         })
       })
     }

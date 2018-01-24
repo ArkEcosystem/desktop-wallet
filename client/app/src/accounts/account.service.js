@@ -27,7 +27,7 @@
     self.cachedFees = null
 
     self.TxTypes = {
-      0: 'Send Ark',
+      0: 'Send Ark', // TODO change to 'Send ARK', with translations
       1: 'Second Signature Creation',
       2: 'Delegate Registration',
       3: 'Vote',
