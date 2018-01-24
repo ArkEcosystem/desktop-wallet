@@ -54,7 +54,7 @@
 
     function createSendTransaction (config) {
       return prepareTransaction(config, (deferred, account, fees) => {
-        if (!ark.crypto.validateAddress(config.toAddress, networkService.getNetwork().version)) {
+        if (!accountService.isValidAddress(config.toAddress)) {
           deferred.reject(gettextCatalog.getString('The destination address ') + config.toAddress + gettextCatalog.getString(' is erroneous'))
           return
         }

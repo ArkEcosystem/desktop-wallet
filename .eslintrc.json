@@ -1,0 +1,13 @@
+{
+  "extends": "standard",
+  "rules": {
+    "no-var": "error",
+    "prefer-arrow-callback": "error",
+    "indent": ["error", 2, { "CallExpression": { "arguments": "off" }, "FunctionExpression": { "parameters": "off" }, "FunctionDeclaration": { "parameters": "off" } }]
+  },
+  "globals": {
+    "angular": false,
+    "Audio": false,
+    "Blob": false
+  }
+}

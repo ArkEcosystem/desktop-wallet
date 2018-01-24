@@ -16,9 +16,13 @@ body {
 ::-webkit-scrollbar {
     width: 12px;
 }
-
 ::selection {
     background: #ADD8E6;
+}
+
+/* Utilities */
+.d-inline-block {
+    display: inline-block;
 }
 
 /* Track */
@@ -296,6 +300,9 @@ span.name {
     padding: 20px;
     border-top: 1px solid #ccc;
 }
+#vote-help a {
+    color: #555;
+}
 
 .tab-text-only-content {
     padding: 20px;
@@ -307,11 +314,25 @@ account-box {
   overflow: hidden;
   opacity: 0.9;
 }
+
+account-box h2 .md-select-value {
+  border-bottom-width: 0;
+}
+
+account-box h2 md-select.md-default-theme:not([disabled]):focus .md-select-value, md-select:not([disabled]):focus .md-select-value {
+  color: white;
+}
+
+account-box .md-toolbar-tools .md-button  {
+  margin-bottom: 6px;
+}
+
 #home-box-accounts {
     min-height: 180px;
 }
-#home-box-accounts md-toolbar .md-button {
-    font-size: 20px;
+
+.bitcoin-toggle md-icon {
+  -webkit-filter: drop-shadow( 1px 2px 1px rgba(0, 0, 0, 0.5) );
 }
 
 #home-box-row {

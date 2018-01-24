@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionSenderService', ['dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
+    .service('transactionSenderService', ['$timeout', 'dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
 
   /**
    * TransactionSenderService
@@ -11,13 +11,13 @@
    * This service is used to send transactions; from displaying the dialog to
    * validating and executing them.
    */
-  function TransactionSenderService (dialogService, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
+  function TransactionSenderService ($timeout, dialogService, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
 
     /**
      * Show the send transaction dialog. Reuses the controller and its $scope
      * TODO because currently it depends on the original implementation of AccountController too
      */
-    const openDialogIn = ($scope, accountCtrl, selectedAccount) => {
+    const openDialogIn = ($scope, accountCtrl, selectedAccount, uriScheme) => {
 
       $scope.maxTransactionsPerFile = 5
 
@@ -87,6 +87,11 @@
           fromAddress: $scope.data.fromAddress,
         }
 
+        if (uriScheme) {
+          data.amount = uriScheme.amount
+          data.smartbridge = uriScheme.vendorField
+        }
+
         if ($scope.data.secondPassphrase) {
           data.secondpassphrase = $scope.data.secondPassphrase.trim()
         }
@@ -123,6 +128,12 @@
       $scope.totalBalance = getTotalBalance(0)
       $scope.remainingBalance = getTotalBalance(0) // <-- initial value, this will change by directive
 
+      if (uriScheme) {
+        $timeout(() => {
+          $scope.data.selectedAddress = {address: uriScheme.address}
+        }, 0)
+      }
+
       $scope.cancel = () => dialogService.hide()
 
       $scope.selectFile = () => {
@@ -144,7 +155,7 @@
         }
         // Set the balance with the default fees while updating it with the real fees
         setBalance(accountService.defaultFees.send)
-        accountService.getFees(true).then((fees) => {
+        accountService.getFees(true).then(fees => {
           if (fees.send !== accountService.defaultFees.send) {
             setBalance(fees.send)
           }
@@ -157,6 +168,50 @@
       }
 
       /* Auto-complete */
+
+      let receiverValidationCycle = 0
+      function validateReceiverAddress (address) {
+        // failType specifies the "fail level", but is at the same time, also the icon name
+        $scope.receiverValidation = {failType: null, message: null}
+
+        if (!address) {
+          return
+        }
+
+        if (!accountService.isValidAddress(address)) {
+          $scope.receiverValidation.message = gettextCatalog.getString('The address is not valid!')
+          $scope.receiverValidation.failType = 'error'
+          return
+        }
+
+        const currentAccount = getCurrentAccount()
+        if (currentAccount && currentAccount.address === address) {
+          $scope.receiverValidation.message = gettextCatalog.getString('This address is your own address. Are you sure you want to send to your own address?')
+          $scope.receiverValidation.failType = 'warning'
+          return
+        }
+
+        const currentCycle = ++receiverValidationCycle
+        accountService.getTransactions(address, 0, 1).then(txs => {
+          // if this check is not true it means that the address has already been changed in the meantime and we can
+          // ignore the result, also if a failType is already set, we return, because we don't want to overwrite a warning or error
+          if (currentCycle !== receiverValidationCycle || txs.length || $scope.receiverValidation.failType) {
+            return
+          }
+
+          $scope.receiverValidation.message = gettextCatalog.getString('It appears the address doesn\'t have any transactions. Are you sure it\'s correct?')
+          $scope.receiverValidation.failType = 'info'
+        })
+
+        neoApiService.doesAddressExist(address).then(exists => {
+          if (currentCycle !== receiverValidationCycle || !exists) {
+            return
+          }
+
+          $scope.receiverValidation.message = gettextCatalog.getString('It looks like this is a \'NEO\' address. Are you sure it\'s correct?')
+          $scope.receiverValidation.failType = 'warning'
+        })
+      }
 
       $scope.querySearch = text => {
         text = text.toLowerCase()
@@ -182,11 +237,13 @@
 
       $scope.searchTextChange = text => {
         $scope.data.toAddress = { address: text }
+        validateReceiverAddress(text)
       }
 
       $scope.selectedContactChange = contact => {
         if (contact) {
           $scope.data.toAddress = contact.address
+          validateReceiverAddress(text)
         }
       }
 

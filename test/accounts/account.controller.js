@@ -5,7 +5,7 @@
  * more pieces, such as components and services
  */
 
-describe('AccountController', function () {
+describe('AccountController', () => {
   const expect = chai.expect
 
   let ctrl,
@@ -28,34 +28,8 @@ describe('AccountController', function () {
     getTextCatalogMock
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
-  const MOCK_DELEGATE = {
-    address: 'mockDelegateArkAddress',
-    approval: 89.09,
-    missedblocks: 9760,
-    producedblocks: 35226,
-    productivity: 78.3,
-    publicKey: 'mockDelegatePublicKey',
-    rate: 1,
-    username: 'mock_delegate',
-    vote: '11512779451283196'
-  }
-  const MOCK_DELEGATES = [MOCK_DELEGATE]
-  const MOCK_ACCOUNT_OBJ = {
-    address: 'mockArkAddress',
-    balance: '50000000000',
-    delegate: null,
-    ledger: null,
-    publicKey: 'mockPublicKey',
-    secondSignature: 0,
-    selectedVotes: [],
-    transactions: [],
-    virtual: {
-      getFolders: angular.noop,
-      uservalue: angular.noop
-    }
-  }
 
-  beforeEach(module('arkclient.constants'));
+  beforeEach(module('arkclient.constants'))
 
   beforeEach(() => {
     module('arkclient.accounts', $provide => {
@@ -144,105 +118,29 @@ describe('AccountController', function () {
   })
 
   describe('', () => {
-    xit('loads all the accounts', function () {
+    xit('loads all the accounts', () => {
     })
   })
 
   // Account retreival
   describe('getAllAccounts()', () => {
-    beforeEach(function () {
+    beforeEach(() => {
       sinon.stub(ctrl, 'myAccounts').returns(ACCOUNTS)
     })
 
     context("when there aren't any ledger accounts", () => {
-      it('returns the user accounts only', function () {
+      it('returns the user accounts only', () => {
         expect(ctrl.getAllAccounts()).to.have.same.members(ACCOUNTS)
       })
     })
 
     context('when there are ledger accounts', () => {
-      beforeEach(function () {
+      beforeEach(() => {
         ctrl.ledgerAccounts = ['ledgerAccount1', 'ledgerAccoun2']
       })
 
-      it('returns the user and the ledger accounts', function () {
+      it('returns the user and the ledger accounts', () => {
         expect(ctrl.getAllAccounts()).to.have.members(ACCOUNTS.concat(ctrl.ledgerAccounts))
-      })
-    })
-  })
-
-  // Delegate
-  describe('addDelegate', () => {
-    let getDelegatesStub,
-    getDelegateStub,
-    mdDialogShowStub,
-    mdDialogHideStub
-
-    beforeEach( () => {
-      getDelegatesStub = sinon.stub(accountServiceMock, 'getActiveDelegates').resolves(MOCK_DELEGATES)
-      getDelegateStub = sinon.stub(accountServiceMock, 'getDelegateByUsername').resolves(MOCK_DELEGATE)
-
-      mdDialogShowStub = sinon.stub(mdDialogMock, 'show')
-      mdDialogHideStub = sinon.stub(mdDialogMock, 'hide')
-
-      ctrl.selected = {
-        selectedVotes: []
-      }
-    })
-
-    context('when the selectedAccount is valid', () => {
-      it('should fetch active delegates and open the add delegates modal', () => {
-        ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
-
-        sinon.assert.calledOnce(getDelegatesStub)
-        sinon.assert.calledOnce(mdDialogShowStub)
-      })
-
-      it('should set up the delegate modal scope', () => {
-        ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
-
-        expect($scope.addDelegateDialog).to.have.all.keys(['data', 'add', 'cancel'])
-        expect($scope.addDelegateDialog.add).to.be.a('function')
-        expect($scope.addDelegateDialog.cancel).to.be.a('function')
-        expect($scope.addDelegateDialog.data).to.have.property('fromAddress', MOCK_ACCOUNT_OBJ.address)
-      })
-    })
-
-    context('when a delegate is added', () => {
-      it('should fetch the delegate to be added and close the modal', () => {
-        ctrl.addDelegate(MOCK_ACCOUNT_OBJ)
-        $scope.addDelegateDialog.data.delegatename = 'foo'
-        $scope.addDelegateDialog.add()
-
-        sinon.assert.calledWith(getDelegateStub, $scope.addDelegateDialog.data.delegatename)
-        sinon.assert.calledOnce(mdDialogHideStub)
-      })
-
-      it('should add to the delegates list if no delegates have been added', (done) => {
-        let acct_obj = angular.copy(MOCK_ACCOUNT_OBJ)
-        ctrl.addDelegate(acct_obj)
-        $scope.addDelegateDialog.add()
-
-        getDelegateStub().then(res => {
-          expect(acct_obj.selectedVotes.length).to.equal(1)
-          expect(acct_obj.selectedVotes[0].username).to.equal(MOCK_DELEGATE.username)
-          done()
-        })
-      })
-
-      it('should not add the a duplicate delegate if that delegate is already selected', () => {
-        let acct_obj = angular.copy(MOCK_ACCOUNT_OBJ)
-        acct_obj.selectedVotes = [angular.copy(MOCK_DELEGATE)]
-
-        ctrl.addDelegate(acct_obj)
-        $scope.addDelegateDialog.add(MOCK_DELEGATE.username)
-
-        getDelegateStub().then(res => {
-
-          // Should still only equal 1
-          expect(acct_obj.selectedVotes.length).to.eql(1)
-          done()
-        })
       })
     })
   })
@@ -287,10 +185,10 @@ describe('AccountController', function () {
   // Adding Second passphrase test
   describe('adding second passphrase', () => {
     let requireNotMocked = require
-    beforeEach( () => {
+    beforeEach(() => {
       require = sinon.stub().returns(require(require('path').resolve(__dirname, '../node_modules/bip39')))
     })
-    afterEach( () => {
+    afterEach(() => {
       require = requireNotMocked
     })
     context('when the account doesnt have a second passphrase', () => {

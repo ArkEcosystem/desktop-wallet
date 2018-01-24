@@ -1,7 +1,6 @@
 'use strict'
 
-describe('transactionBuilderService',() => {
-
+describe('transactionBuilderService', () => {
   const tokenName = 'test-ark'
   let transactionBuilderService, accountService
   let configServiceMock, gettextCatalogMock, networkServiceMock, ledgerServiceMock, getAccountStub
@@ -16,19 +15,19 @@ describe('transactionBuilderService',() => {
   }
 
   const from = {
-    username: "Luke Skywalker",
-    address: "AVjcAoo282db5Xgm7oaps1AEbKoC26eTyB",
-    masterpassphrase: "agent cube glass fade lonely salon border notable weekend expect image grunt",
-    secondpassphrase: "agent cube glass fade lonely salon border notable weekend expect image grunt",
+    username: 'Luke Skywalker',
+    address: 'AVjcAoo282db5Xgm7oaps1AEbKoC26eTyB',
+    masterpassphrase: 'agent cube glass fade lonely salon border notable weekend expect image grunt',
+    secondpassphrase: 'agent cube glass fade lonely salon border notable weekend expect image grunt',
     balance: 600000000
   }
 
   const to = {
-    address: "AYxKh6vwACWicSGJATGE3rBreFK7whc7YA",
-    publicKey: "02dcb94d73fb54e775f734762d26975d57f18980314f3b67bc52beb393893bc705"
+    address: 'AYxKh6vwACWicSGJATGE3rBreFK7whc7YA',
+    publicKey: '02dcb94d73fb54e775f734762d26975d57f18980314f3b67bc52beb393893bc705'
   }
 
-  function createValidConfigObject() {
+  function createValidConfigObject () {
     return {
       amount: 1,
       username: from.username,
@@ -41,30 +40,29 @@ describe('transactionBuilderService',() => {
     }
   }
 
-  function mockGetAccount(balance) {
+  function mockGetAccount (balance) {
     getAccountStub = sinon.stub(accountService, 'getAccount').returns({balance: balance})
   }
 
-  function restoreGetAccount() {
+  function restoreGetAccount () {
     if (getAccountStub) {
       getAccountStub.restore()
     }
   }
 
-  beforeEach(module('arkclient.constants'));
+  beforeEach(module('arkclient.constants'))
 
-  beforeEach(module((_$exceptionHandlerProvider_) => {
-    _$exceptionHandlerProvider_.mode('log');
-   }));
+  beforeEach(module((_$exceptionHandlerProvider_) => _$exceptionHandlerProvider_.mode('log')))
 
   beforeEach(() => {
-    module("arkclient.accounts", $provide => {
+    module('arkclient.accounts', $provide => {
       configServiceMock = { notice: sinon.stub(), getByGroupAndKey: sinon.stub() }
       gettextCatalogMock = {getString: sinon.stub().returnsArg(0)}
-      networkServiceMock = { listenNetworkHeight: sinon.stub(),
-                          getPeer: sinon.stub().returns("127.0.0.1"),
-                          getNetwork: sinon.stub().returns({ version: 0x17, token: tokenName })
-                        }
+      networkServiceMock = {
+        listenNetworkHeight: sinon.stub(),
+        getPeer: sinon.stub().returns('127.0.0.1'),
+        getNetwork: sinon.stub().returns({ version: 0x17, token: tokenName })
+      }
       ledgerServiceMock = {signTransaction: sinon.stub().resolves({})}
 
       // inject the mock services
@@ -77,7 +75,7 @@ describe('transactionBuilderService',() => {
     inject(($injector, _$rootScope_) => {
       transactionBuilderService = $injector.get('transactionBuilderService')
 
-      accountService =  $injector.get('accountService')
+      accountService = $injector.get('accountService')
       sinon.stub(accountService, 'getFees').resolves(fees)
 
       // because the transactionBuilderService creates a deferred-promise via '$q.defer()' we have to apply the scope "all the time"
@@ -85,14 +83,13 @@ describe('transactionBuilderService',() => {
       // but also $scope.apply() has to be called AFTER the other methods, however since this resolve is called async, we cannot know when
       // to call $scope.apply, therefore we just call it "all the time"
       // see: https://github.com/angular/angular.js/issues/9954
-      intervalRef = setInterval(()=>  _$rootScope_.$apply(), 1)
+      intervalRef = setInterval(() => _$rootScope_.$apply(), 1)
     })
   })
 
   afterEach(() => clearInterval(intervalRef))
 
   describe('createSendTransaction', () => {
-
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
@@ -124,7 +121,7 @@ describe('transactionBuilderService',() => {
     })
 
     it('should work with ledger', done => {
-      const config = createValidConfigObject();
+      const config = createValidConfigObject()
       config.ledger = true
       const sendPromise = transactionBuilderService.createSendTransaction(config)
 
@@ -137,44 +134,37 @@ describe('transactionBuilderService',() => {
     })
 
     it('should fail when to address is invalid', done => {
-      const config = createValidConfigObject();
-      config.toAddress += "B"
+      const config = createValidConfigObject()
+      config.toAddress += 'B'
       const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
-          done("error: shouldn't be here!");
-        }, err => {
-          done()
-        })
+        done("error: shouldn't be here!")
+      }, () => done())
     })
 
     it('should fail when when passphrase is invalid', done => {
-      const config = createValidConfigObject();
-      config.masterpassphrase = "C"
+      const config = createValidConfigObject()
+      config.masterpassphrase = 'C'
       const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
-          done("error: shouldn't be here!");
-        }, err => {
-          done()
-        })
+        done("error: shouldn't be here!")
+      }, () => done())
     })
 
     it('should fail when balance is too low', done => {
-      const config = createValidConfigObject();
+      const config = createValidConfigObject()
       config.amount = from.balance - 1
       const sendPromise = transactionBuilderService.createSendTransaction(config)
 
       sendPromise.then(transaction => {
-          done("error: shouldn't be here!");
-        }, err => {
-          done()
-        })
+        done("error: shouldn't be here!")
+      }, () => done())
     })
   })
 
   describe('createSecondPassphraseCreationTransaction', () => {
-
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
@@ -202,16 +192,15 @@ describe('transactionBuilderService',() => {
       const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
-          done("error: shouldn't be here!");
-        }, err => {
-          expect(err).to.have.string(tokenName);
-          done()
-        }).catch(err => done(err))
+        done("error: shouldn't be here!")
+      }, err => {
+        expect(err).to.have.string(tokenName)
+        done()
+      }).catch(err => done(err))
     })
   })
 
   describe('createDelegateCreationTransaction', () => {
-
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
@@ -239,11 +228,11 @@ describe('transactionBuilderService',() => {
       const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
-          done("error: shouldn't be here!");
-        }, err => {
-          expect(err).to.have.string(tokenName);
-          done()
-        }).catch(err => done(err))
+        done("error: shouldn't be here!")
+      }, err => {
+        expect(err).to.have.string(tokenName)
+        done()
+      }).catch(err => done(err))
     })
   })
 
@@ -275,15 +264,15 @@ describe('transactionBuilderService',() => {
       const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
-          done("error: shouldn't be here!");
-        }, err => {
-          expect(err).to.have.string(tokenName);
-          done()
-        }).catch(err => done(err))
+        done("error: shouldn't be here!")
+      }, err => {
+        expect(err).to.have.string(tokenName)
+        done()
+      }).catch(err => done(err))
     })
 
     it('should work with ledger (additional field recipientId is correct)', done => {
-      const config = createValidConfigObject();
+      const config = createValidConfigObject()
       config.ledger = true
       const sendPromise = transactionBuilderService.createVoteTransaction(config)
 

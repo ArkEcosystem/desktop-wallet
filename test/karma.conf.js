@@ -86,7 +86,7 @@ module.exports = function (config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
@@ -94,6 +94,8 @@ module.exports = function (config) {
 
     client: {
       useIframe: false,
+      // note: if we use path.join here, the tests somehow fail on windows!
+      // eslint-disable-next-line no-path-concat
       __filenameOverride: __dirname + '/../client/app/index.html'
     },
 

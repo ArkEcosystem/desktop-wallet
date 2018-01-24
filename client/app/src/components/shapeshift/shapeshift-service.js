@@ -9,14 +9,14 @@
    * @constructor
    */
   function ShapeshiftService ($q, $http, $timeout) {
-    var url = 'https://shapeshift.io/'
+    const url = 'https://shapeshift.io/'
 
-    var coins = []
-    $http.get(url + 'getcoins/').then(function (resp) {
+    let coins = []
+    $http.get(url + 'getcoins/').then((resp) => {
       coins = resp.data
     })
 
-    var endPoints = { // eslint-disable-line no-unused-vars
+    const endPoints = { // eslint-disable-line no-unused-vars
       Rate: { path: 'rate', method: 'GET' },
       DepositLimit: { path: 'limit', method: 'GET' },
       MarketInfo: { path: 'marketinfo', method: 'GET' },
@@ -35,13 +35,13 @@
     }
 
     function request (endpoint, data) { // eslint-disable-line no-unused-vars
-      var deferred = $q.defer()
+      const deferred = $q.defer()
 
       $http({
         url: url + endpoint.path,
         method: endpoint.method,
         data: data
-      }).then(function (resp) {
+      }).then((resp) => {
         deferred.resolve(resp.data)
       })
 
@@ -49,9 +49,9 @@
     }
 
     function getMarketInfo (coin1, coin2) {
-      var deferred = $q.defer()
+      const deferred = $q.defer()
 
-      $http.get(url + 'marketinfo/' + coin1 + '_' + coin2).then(function (resp) {
+      $http.get(url + 'marketinfo/' + coin1 + '_' + coin2).then((resp) => {
         deferred.resolve(resp.data)
       })
 

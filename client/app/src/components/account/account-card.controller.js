@@ -14,12 +14,21 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'toastService', 'transactionSenderService', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'utilityService', 'neoApiService', '$timeout', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, toastService, transactionSenderService) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionBuilderService, utilityService, neoApiService, $timeout) {
+    let getCurrentAccount = () => null
+
+    $scope.$on('app:onURI', (event, scheme) => {
+      transactionSenderService.openDialogIn($scope, this.accountCtrl, getCurrentAccount(), scheme)
+    })
+
     this.$onInit = () => {
       this.ul = this.accountCtrl
+      const ul = this.ul
+      // by assigning this to the function, we can ensure, that a call to the function will always return the currently active account
+      getCurrentAccount = () => ul.selected
       this.ab = this.addressBookCtrl
     }
 
@@ -122,6 +131,7 @@
       }
 
       $scope.bs = {
+        label: selectedAccount.username,
         address: selectedAccount.address,
         answer,
         items

@@ -1,10 +1,9 @@
 'use strict'
 
-describe('utilityService',() => {
-
+describe('utilityService', () => {
   let utilityService, ARK_LAUNCH_DATE, ARKTOSHI_UNIT
 
-  beforeEach(module('arkclient.constants'));
+  beforeEach(module('arkclient.constants'))
 
   beforeEach(() => {
     module('arkclient.services')
@@ -17,7 +16,6 @@ describe('utilityService',() => {
   })
 
   describe('arktoshiToArk', () => {
-
     it('undefined arktoshi is 0 Ark', () => {
       const ark = utilityService.arktoshiToArk()
 
@@ -173,7 +171,7 @@ describe('utilityService',() => {
 
     it('input is a local date, returns correct timestamp', () => {
       // since this is plus 1, this means that in UTC, it's currently 09:00, therefore the timestamphas to be 1 hour shorter than the one above
-      const localDate = new Date("Fri Nov 10 2017 10:00:00 GMT+0100 (Romance Standard Time)")
+      const localDate = new Date('Fri Nov 10 2017 10:00:00 GMT+0100 (Romance Standard Time)')
       const oneHourInSeconds = 60 * 60
       expect(utilityService.dateToArkStamp(localDate)).to.eq(20206800 - oneHourInSeconds)
     })

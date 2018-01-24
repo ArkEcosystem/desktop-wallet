@@ -6,7 +6,8 @@
     .component('dashboard', {
       templateUrl: 'src/components/dashboard/templates/dashboard.html',
       bindings: {
-        accountCtrl: '='
+        accountCtrl: '=',
+        addressbookCtrl: '='
       },
       controller: [
         '$scope', '$mdToast', 'toastService', 'feedService', 'storageService', DashboardController

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2018-01-09 11:19+0000\n"
+"PO-Revision-Date: 2018-01-09 11:19+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -11,8 +11,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
+msgstr "- Это означает, что владелец этой учетной записи может доказать, что у него в руках имеется этот файл на временной отметке блока."
+
+msgid "{{ category }}"
+msgstr "категория"
+
 msgid "Account added!"
 msgstr "Аккаунт добавлен!"
+
+msgid "Account removed!"
+msgstr "Ваша учётная запись удалена!"
 
 msgid "Account deleted!"
 msgstr "Аккаунт удалён!"
@@ -20,8 +29,20 @@ msgstr "Аккаунт удалён!"
 msgid "Account successfully created:"
 msgstr "Учетная запись успешно создана:"
 
+msgid "Account successfully imported:"
+msgstr "Аккаунт успешно импортирован."
+
+msgid "Accounts"
+msgstr "Учётные записи"
+
+msgid "Actions"
+msgstr "Действия"
+
 msgid "Add"
 msgstr "Добавить"
+
+msgid "Add Contact"
+msgstr "Добавить контакт"
 
 msgid "Add Account"
 msgstr "Добавить Аккаунт"
@@ -35,11 +56,23 @@ msgstr "Добавить Делегата"
 msgid "Address"
 msgstr "Адрес"
 
+msgid "Address version"
+msgstr "Адрес версии"
+
 msgid "Amount"
 msgstr "Количество"
 
+msgid "Application"
+msgstr "Приложение"
+
 msgid "Amount (Ѧ)"
 msgstr "Количество (Ѧ)"
+
+msgid "Arabic"
+msgstr "Арабский"
+
+msgid "Arab"
+msgstr "Араб"
 
 msgid "Are you sure?"
 msgstr "Вы уверены?"
@@ -50,6 +83,9 @@ msgstr "Клиент Ark"
 msgid "Balance"
 msgstr "Баланс"
 
+msgid "Bulgarian"
+msgstr "Болгарский"
+
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -58,6 +94,12 @@ msgstr "Не возможно найти делегата:"
 
 msgid "Cannot find delegates from this term:"
 msgstr "Не можете найти делегатов от этого термина:"
+
+msgid "Cannot find delegates on this peer:"
+msgstr "Не удаётся найти делегата для этого соединения"
+
+msgid "Cannot get registered delegates"
+msgstr "Не удаётся получить список зарегистрированных делегатов."
 
 msgid "Cannot get sponsors"
 msgstr "Не удается получить спонсоров"
@@ -68,8 +110,41 @@ msgstr "Невозможно получить транзакцию"
 msgid "Change 1h/7h/7d"
 msgstr "Изменение 1ч / 7ч / 7д"
 
+msgid "Chinese - China"
+msgstr "Китайский - Китай"
+
+msgid "Chinese - Taiwan"
+msgstr "Китайский - Тайвань"
+
+msgid "Client"
+msgstr "Клиент"
+
 msgid "Close"
 msgstr "Закрыть"
+
+msgid "Coming Soon"
+msgstr "Скоро выйдет."
+
+msgid "Confirm"
+msgstr "Подтвердить"
+
+msgid "Network disconnected!"
+msgstr "Сетевое соединение разорвано!"
+
+msgid "Watch-Only Addresses"
+msgstr "Смотреть только адреса"
+
+msgid "Confirmations"
+msgstr "Подтверждения"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+msgid "Copied to clipboard"
+msgstr "Копировать в буфер обмена"
+
+msgid "Copy"
+msgstr "Копировать"
 
 msgid "Create"
 msgstr "Создать"
@@ -82,6 +157,12 @@ msgstr "Создать виртуальную папку"
 
 msgid "Create a new virtual folder"
 msgstr "Создать новую виртуальную папку"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Dark Mode"
+msgstr "Тёмная тема"
 
 msgid "Date"
 msgstr "Дата"
@@ -110,8 +191,29 @@ msgstr "Удалить навсегда эту учетную запись"
 msgid "Destination Address"
 msgstr "Адрес Назначения"
 
+msgid "Dutch"
+msgstr "Датский"
+
+msgid "Edit Contact"
+msgstr "Редактировать контакт"
+
+msgid "Enable Signing"
+msgstr "Включить отправку"
+
 msgid "Enable Virtual Folders"
 msgstr "Включить Виртуальные Папки"
+
+msgid "Enable Votes"
+msgstr "Включить голосование"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "Error in signature processing"
+msgstr "Возникла ошибка в процессе подтверждения подписи"
+
+msgid "Error in your Input."
+msgstr "Ошибка ввода"
 
 msgid "Error when trying to login:"
 msgstr "Ошибка при попытке авторизации:"
@@ -122,11 +224,26 @@ msgstr "Ошибка:"
 msgid "Exchange"
 msgstr "Обмен"
 
+msgid "Explorer"
+msgstr "Обозреватель"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Finish"
+msgstr "Конец"
+
 msgid "Fee (Ѧ)"
 msgstr "Комиссия (Ѧ)\n"
 
 msgid "Folder Name"
 msgstr "Имя Папки"
+
+msgid "Format"
+msgstr "Формат"
+
+msgid "French"
+msgstr "Французский"
 
 msgid "From"
 msgstr "Отправитель"
@@ -134,11 +251,20 @@ msgstr "Отправитель"
 msgid "Full Screen"
 msgstr "Полноэкранный режим"
 
+msgid "German"
+msgstr "Немецкий"
+
+msgid "Greek"
+msgstr "Греческий"
+
 msgid "Hand crafted with ❤ by"
 msgstr "Сделано с ❤"
 
 msgid "Height"
 msgstr "Высота"
+
+msgid "Hungarish"
+msgstr "Венгерский"
 
 msgid "If you own this account, you can enable Voting"
 msgstr "Если этот аккаунт принадлежит вам можно включить режим голосования"

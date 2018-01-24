@@ -1,10 +1,10 @@
 'use strict'
 
-describe('networkService', function () {
+describe('networkService', () => {
   beforeEach(module('arkclient.services'))
 
-  describe('getConnection', function () {
-    xit('returns a promise', function () {
+  describe('getConnection', () => {
+    xit('returns a promise', () => {
     })
   })
 })

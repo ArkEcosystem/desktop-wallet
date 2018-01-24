@@ -35,8 +35,10 @@ require('devtron').install()
 ```
 
 ## Lint
-Currently we have just started using [StandardJS](https://standardjs.com/), although there are lots of things to adapt yet.
-You can execute `npm run standard` to check the format of the entire project, or `npm run standard <path/**/*.js>` to check some files exclusively.
+We use [ESLint](https://eslint.org/) with a rule set which is extended from [StandardJS](https://standardjs.com/).
+You can execute `npm run eslint` to check the code-style of the entire project. You should do this before pushing your contributions. Otherwise it's possible that [Travis](https://travis-ci.org) will fail, since for each commit the whole project is linted automatically.
+
+It's recommended to install an [ESLint plugin](https://eslint.org/docs/user-guide/integrations) for your favorite code editor!
 
 # Tests
 

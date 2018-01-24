@@ -21,14 +21,17 @@
 
     reset()
 
-    $scope.$on('account:onSelect', function (evt, account) {
+    $scope.$on('account:onSelect', (evt, account) => {
       vm.address = account.address
       reset()
-      angular.element(document.querySelector('.tx-list-container'))[0].scrollTop = 0
+      const txListContainerElement = angular.element(document.querySelector('.tx-list-container'))[0]
+      if (txListContainerElement) {
+        txListContainerElement.scrollTop = 0
+      }
       updateTransactions(account.transactions)
     })
 
-    $scope.$on('account:onRefreshTransactions', function (evt, transactions) {
+    $scope.$on('account:onRefreshTransactions', (evt, transactions) => {
       reset()
       updateTransactions(transactions)
     })
@@ -79,9 +82,9 @@
     function updateTransactions (transactions) {
       if (!transactions) return
 
-      var mergeTransactions = [...transactions, ...vm.transactions]
+      const mergeTransactions = [...transactions, ...vm.transactions]
       // remove duplicates
-      var uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
+      const uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
         return arr.map(obj => obj['id']).indexOf(obj['id']) === pos
       }).sort((a, b) => b.timestamp - a.timestamp)
 

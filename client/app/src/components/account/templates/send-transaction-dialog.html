@@ -1,11 +1,14 @@
 <md-dialog aria-label="{{'Send'|translate}} {{network.token}}" ng-cloak md-theme="ac.currentTheme">
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
-      <span flex></span>
-      <md-button class="md-icon-button" ng-click="cancel()">
-        <md-icon md-font-library="material-icons">clear</md-icon>
-      </md-button>
+			<h2 ng-if="send.data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromLabel}} ({{data.fromAddress}})</h2>
+			<h2 ng-if="! send.data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
+
+			<span flex></span>
+
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon md-font-library="material-icons">clear</md-icon>
+			</md-button>
     </div>
   </md-toolbar>
 
@@ -34,6 +37,11 @@
                 </md-item-template>
               </md-autocomplete>
             </div>
+
+						<div layout="row" flex layout-align="start center" ng-if="receiverValidation.failType">
+							<md-icon flex="5" md-font-library="material-icons">{{receiverValidation.failType}}</md-icon>
+							<div flex="95">{{receiverValidation.message}}</div>
+						</div>
 
             <div layout="row" layout-align="space-between start">
               <md-input-container class="md-block" style="width: 100%">
@@ -106,7 +114,7 @@
     </div>
     <span flex></span>
 
-    <md-button type="submit" ng-click="submit(tab)" ng-disabled="(tab == 'unique' && uniqueForm.$invalid) || (tab == 'multiple' && multipleForm.$invalid)" tabIndex="6">
+    <md-button type="submit" ng-click="submit(tab)" ng-disabled="(tab == 'unique' && uniqueForm.$invalid || receiverValidation.failType === 'error') || (tab == 'multiple' && multipleForm.$invalid)" tabIndex="6">
       <translate ng-if="!data.ledger">Next</translate>
       <translate ng-if="data.ledger">Sign with Ledger</translate>
     </md-button>

@@ -58,13 +58,15 @@
     </div>
   </div>
 
-  <div ng-cloak="" style="height: 100%" layout="column">
+  <ark-qrcode style="display: none"></ark-qrcode>
+
+  <div ng-cloak="" style="height: 100%" layout="column" ng-controller="AddressbookController as ab" >
 
     <main-navbar account-ctrl="ul"></main-navbar>
 
-    <dashboard account-ctrl="ul" id="dashboard" layout="column" layout-align="space-around center" ng-if="! ul.selected" flex></dashboard>
+    <dashboard account-ctrl="ul" addressbook-ctrl="ab" id="dashboard" layout="column" layout-align="space-around center" ng-if="!ul.selected" flex></dashboard>
 
-    <div class="account-view" ng-if="ul.selected" ng-controller="AddressbookController as ab" layout="column" flex>
+    <div class="account-view" ng-if="ul.selected" layout="column" flex>
       <md-content flex layout="row">
 
         <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2">
@@ -78,7 +80,7 @@
             <div ng-controller="AccountTransactionsController as transactionsCtrl">
               <transaction-tab account-ctrl="ul" transactions-ctrl="transactionsCtrl"></transaction-tab>
             </div>
-            <votes-tab account-ctrl="ul"></votes-tab>
+            <votes-tab account="ul.selected" account-ctrl="ul" theme="ul.currentTheme"></votes-tab>
             <signing-tab account-ctrl="ul" ng-if="!ul.selected.ledger"></signing-tab>
             <exchange-tab account-ctrl="ul"></exchange-tab>
             <offchain-tab account-ctrl="ul"></offchain-tab>
@@ -88,7 +90,6 @@
         </md-content>
       </div>
     </div>
-
   </div>
 
   <link rel="stylesheet" href="assets/css/roboto.css" />
@@ -97,6 +98,7 @@
   <link href="../node_modules/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="assets/app.css" />
 
+  <script src='../node_modules/ark-qrcode/dist/arkqrcode.js'></script>
   <script src="dependencies.min.js"></script>
   <script src="src/utils/translations.js"></script>
 
@@ -117,6 +119,7 @@
   <script src="src/services/transaction-sender.service.js"></script>
   <script src="src/services/transaction-validator.service.js"></script>
   <script src="src/services/utility.service.js"></script>
+  <script src="src/services/neo-api.service.js"></script>
 
   <script src="src/accounts/account.service.js"></script>
   <script src="src/accounts/transaction-builder.service.js"></script>
@@ -138,7 +141,8 @@
   <script src="src/components/account/main-sidenav.controller.js"></script>
   <script src="src/components/account/account-card.controller.js"></script>
   <script src="src/components/account/transaction-tab.controller.js"></script>
-  <script src="src/components/account/votes-tab.controller.js"></script>
+  <script src="src/components/account/votes-tab/vote.dialog.controller.js"></script>
+  <script src="src/components/account/votes-tab/votes-tab.controller.js"></script>
   <script src="src/components/account/signing-tab.controller.js"></script>
   <script src="src/components/account/exchange-tab.controller.js"></script>
   <script src="src/components/account/offchain-tab.controller.js"></script>

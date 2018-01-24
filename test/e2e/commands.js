@@ -13,7 +13,7 @@ module.exports = function (app) {
       .pause(500)
   })
 
-  app.client.addCommand('createNetwork', function (network) {
+  app.client.addCommand('createNetwork', (network) => {
     // Manage Networks
     // New
     // Name + Seed Server
