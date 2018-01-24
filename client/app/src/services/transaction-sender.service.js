@@ -49,7 +49,7 @@
         return data.map(d => {
           return {
             address: d[0],
-            amount: Number(utilityService.arkToArktoshi(parseFloat(d[1]))), // TODO test parsing
+            amount: Number(utilityService.arkToArktoshi(parseFloat(d[1]), 0)),
             smartbridge: d[2],
           }
         })
@@ -94,7 +94,7 @@
 
         if (tab === 'unique') {
           data.toAddress = $scope.data.toAddress.trim()
-          data.amount = Number(utilityService.arkToArktoshi(parseFloat($scope.data.amount))),
+          data.amount = Number(utilityService.arkToArktoshi(parseFloat($scope.data.amount), 0)),
           data.smartbridge = $scope.data.smartbridge
 
           prepareTransaction(selectedAccount, data)
