@@ -94,7 +94,7 @@
 
         if (tab === 'unique') {
           data.toAddress = $scope.data.toAddress.trim()
-          data.amount = $scope.data.amount
+          data.amount = Number(utilityService.arkToArktoshi(parseFloat($scope.data.amount))),
           data.smartbridge = $scope.data.smartbridge
 
           prepareTransaction(selectedAccount, data)

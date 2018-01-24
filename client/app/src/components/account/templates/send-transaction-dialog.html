@@ -12,7 +12,7 @@
   <md-dialog-content>
     <md-tabs md-dynamic-height ng-keyup="$event.keyCode == 13 && submit(tab)">
 
-      <md-tab md-on-select="selectTag('unique')">
+      <md-tab md-on-select="selectTab('unique')">
         <md-tab-label>
           <translate>Unique</translate>
         </md-tab-label>
@@ -52,7 +52,7 @@
             </div>
 
             <md-input-container md-no-float class="md-block">
-              <label>{{'Message (or Smartbridge)'|translate}} ({{'Optional'|translate}})</label>
+              <label>{{'Smartbridge or message'|translate}} ({{'Optional'|translate}})</label>
               <input ng-model="data.smartbridge" type="text" ng-required="false" maxlength="64" tabIndex="3">
             </md-input-container>
 
