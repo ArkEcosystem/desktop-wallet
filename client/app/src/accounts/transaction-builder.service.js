@@ -1,8 +1,6 @@
 ;(function () {
   'use strict'
 
-  // TODO refactor
-
   angular.module('arkclient.accounts')
     .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
 

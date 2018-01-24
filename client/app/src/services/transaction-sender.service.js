@@ -14,7 +14,8 @@
   function TransactionSenderService (dialogService, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
 
     /**
-     * Show the send transaction dialog. Reuses the controller and its $scope TODO
+     * Show the send transaction dialog. Reuses the controller and its $scope
+     * TODO because currently it depends on the original implementation of AccountController too
      */
     const openDialogIn = ($scope, accountCtrl, selectedAccount) => {
 

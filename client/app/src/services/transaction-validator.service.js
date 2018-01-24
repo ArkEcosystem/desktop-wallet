@@ -124,7 +124,6 @@
         saveFile,
         send,
         cancel,
-        limit: 25, // TODO
         senderAddress: selectedAccount.address,
         transactions,
         humanAmount: utilityService.arktoshiToArk(amount).toString(),
