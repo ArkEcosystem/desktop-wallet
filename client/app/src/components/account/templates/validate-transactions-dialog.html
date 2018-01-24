@@ -64,8 +64,7 @@
               </tr>
             </thead>
             <tbody md-body style="white-space:nowrap;">
-              <tr md-row ng-repeat="t in validate.transactions | limitTo: validate.limit track by t.id">
-                <!-- TODO test colour -->
+              <tr md-row ng-repeat="t in validate.transactions track by t.id">
                 <td md-cell><a ng-click="ac.openExplorer('/tx/'+t.id)" md-colors="::{color: '{{ ac.network.themeDark ? 'background-200' : 'background-800' }}'}">{{t.id | txId}}</a></td>
                 <td md-cell>{{t.recipientId | accountLabel}}</td>
                 <td md-cell>{{t.amount | convertToArkValue}}</td>
@@ -75,10 +74,10 @@
                 <td md-cell ng-if="t.sendStatus === 'sending'" style="display:flex; justify-content: center">
                   <md-progress-circular md-diameter="24" style="margin-top: 6px"></md-progress-circular>
                 </td>
-                <td md-cell ng-if="t.sendStatus === 'ok'" translate>
+                <td md-cell ng-if="t.sendStatus === 'ok'">
                   <md-icon md-font-library="material-icons">done</md-icon>
                 </td>
-                <td md-cell ng-if="t.sendStatus === 'cancelled'" translate>
+                <td md-cell ng-if="t.sendStatus === 'cancelled'">
                   <md-icon md-font-library="material-icons">block</md-icon>
                 </td>
                 <td md-cell ng-if="t.sendStatus === 'error cancelling'">

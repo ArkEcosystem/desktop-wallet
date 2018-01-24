@@ -13,28 +13,28 @@
       <div class="md-dialog-content">
         <md-list>
           <md-list-item>
-            <b>ID</b> <span class="md-secondary">{{validate.transaction.id}}</span>
+            <b>ID</b><span class="md-secondary">{{validate.transaction.id}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>Type</b> <span class="md-secondary">{{validate.label}}</span>
+            <b translate>Type</b><span class="md-secondary">{{validate.label}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>From</b> <span class="md-secondary">{{validate.transaction.senderId}}</span>
+            <b translate>From</b><span class="md-secondary">{{validate.transaction.senderId}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.type==0">
-            <b translate>To</b> <span class="md-secondary">{{validate.transaction.recipientId}}</span>
+            <b translate>To</b><span class="md-secondary">{{validate.transaction.recipientId}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.username">
-            <b translate>Username</b> <span class="md-secondary">{{validate.transaction.username}}</span>
+            <b translate>Username</b><span class="md-secondary">{{validate.transaction.username}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.vendorField">
-            <b translate>Smartbridge</b> <span class="md-secondary">{{validate.transaction.vendorField}}</span>
+            <b translate>Smartbridge</b><span class="md-secondary">{{validate.transaction.vendorField}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.amount">
-            <b translate>Amount ({{ul.network.symbol}})</b> <span class="md-secondary">{{validate.humanAmount}}</span>
+            <b translate>Amount ({{ul.network.symbol}})</b><span class="md-secondary">{{validate.humanAmount}}</span>
           </md-list-item>
           <md-list-item>
-            <b translate>Fee ({{ul.network.symbol}})</b> <span class="md-secondary">{{validate.transaction.fee | convertToArkValue}}</span>
+            <b translate>Fee ({{ul.network.symbol}})</b><span class="md-secondary">{{validate.transaction.fee | convertToArkValue}}</span>
           </md-list-item>
         </md-list>
       </div>

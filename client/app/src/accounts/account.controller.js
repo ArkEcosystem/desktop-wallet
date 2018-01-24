@@ -17,6 +17,7 @@
       '$interval',
       '$log',
       '$mdDialog',
+      'dialogService',
       '$scope',
       '$mdMedia',
       'gettextCatalog',
@@ -50,6 +51,7 @@
     $interval,
     $log,
     $mdDialog,
+    dialogService,
     $scope,
     $mdMedia,
     gettextCatalog,
@@ -114,6 +116,9 @@
     ]
 
     gettextCatalog.debug = false
+
+    const cancel = () => dialogService.hide()
+
     self.language = storageService.get('language') || 'en'
     self.selectedLanguage = self.language
     gettextCatalog.setCurrentLanguage(self.language)
@@ -837,10 +842,6 @@
      * Add an account
      */
     function addWatchOnlyAddress () {
-      function cancel () {
-        $mdDialog.hide()
-      }
-
       function validateAddress () {
         var isAddress = /^[1-9A-Za-z]+$/g
         var address = $scope.address
@@ -860,10 +861,8 @@
         }
       }
 
-      $scope.send = {
-        cancel: cancel,
-        validateAddress: validateAddress
-      }
+      $scope.send = { cancel, validateAddress }
+
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
         templateUrl: './src/accounts/view/addWatchOnlyAddress.html',
@@ -919,15 +918,7 @@
       }
       $scope.controls = [{}]
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.addDelegateDialog = {
-        data: data,
-        cancel: cancel,
-        add: add
-      }
+      $scope.addDelegateDialog = { data, cancel, add }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -976,15 +967,7 @@
         )
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.voteDialog = {
-        data: data,
-        cancel: cancel,
-        next: next
-      }
+      $scope.voteDialog = { data, cancel, next }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -1050,10 +1033,6 @@
             $scope.send.data.smartbridge = d
           })
         })
-      }
-
-      function cancel () {
-        $mdDialog.hide()
       }
 
       $scope.send = { data, openFile, cancel, next }
@@ -1318,20 +1297,20 @@
       }
 
       $scope.send = {
-        cancel: cancel,
-        save: save,
+        cancel,
+        save,
         backgroundKeys: Object.keys(backgrounds),
-        backgrounds: backgrounds,
-        selectTheme: selectTheme,
+        backgrounds,
+        selectTheme,
         selectedTheme: initialTheme,
-        themes: themes,
-        selectBackground: selectBackground,
+        themes,
+        selectBackground,
         selectedBackground: initialBackground,
         darkMode: initialDarkMode,
-        toggleDark: toggleDark,
-        upload: upload,
-        deleteImage: deleteImage,
-        selectedTab: selectedTab
+        toggleDark,
+        upload,
+        deleteImage,
+        selectedTab
       }
 
       $mdDialog.show({
@@ -1359,10 +1338,6 @@
           self.listNetworks = networkService.getNetworks()
         }
       // window.location.reload()
-      }
-
-      function cancel () {
-        $mdDialog.hide()
       }
 
       function refreshTabs () {
@@ -1401,11 +1376,11 @@
 
       $scope.send = {
         networkKeys: Object.keys(networks),
-        networks: networks,
-        createNetwork: createNetwork,
-        removeNetwork: removeNetwork,
-        cancel: cancel,
-        save: save
+        networks,
+        createNetwork,
+        removeNetwork,
+        cancel,
+        save
       }
 
       $mdDialog.show({
@@ -1432,15 +1407,7 @@
         )
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.send = {
-        data: data,
-        cancel: cancel,
-        save: save
-      }
+      $scope.send = { data, cancel, save }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -1488,15 +1455,7 @@
         )
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.createDelegate = {
-        data: data,
-        cancel: cancel,
-        next: next
-      }
+      $scope.createDelegate = { data, cancel, next }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -1549,15 +1508,7 @@
         return filter
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.createAccountDialog = {
-        data: data,
-        cancel: cancel,
-        next: next
-      }
+      $scope.createAccountDialog = { data, cancel, next }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -1610,15 +1561,7 @@
         $mdDialog.hide()
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.send = {
-        data: data,
-        cancel: cancel,
-        save: save
-      }
+      $scope.send = { data, cancel, save }
 
       $mdDialog.show({
         parent: angular.element(document.getElementById('app')),
@@ -1706,15 +1649,7 @@
         }
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
-      $scope.createSecondPassphraseDialog = {
-        data: data,
-        cancel: cancel,
-        next: next
-      }
+      $scope.createSecondPassphraseDialog = { data, cancel, next }
     }
 
     function loadSignedMessages () {
@@ -1769,27 +1704,20 @@
         )
       }
 
-      function cancel () {
-        $mdDialog.hide()
-      }
-
       $scope.validate = {
-        saveFile: saveFile,
-        send: send,
-        cancel: cancel,
-        transaction: transaction,
+        saveFile,
+        send,
+        cancel,
+        transaction,
         label: accountService.getTransactionLabel(transaction),
         // to avoid small transaction to be displayed as 1e-8
-        humanAmount: utilityService.arktoshiToArk(transaction.amount).toString(),
-        totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true).toString()
+        humanAmount: utilityService.arktoshiToArk(transaction.amount),
+        totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true)
       }
 
-      $mdDialog.show({
+      dialogService.open({
         scope: $scope,
-        preserveScope: true,
-        parent: angular.element(document.getElementById('app')),
-        templateUrl: './src/accounts/view/validateTransactionDialog.html',
-        clickOutsideToClose: false
+        templateUrl: './src/accounts/view/validateTransactionDialog.html'
       })
     }
   }
