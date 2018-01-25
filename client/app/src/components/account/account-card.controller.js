@@ -14,14 +14,14 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'utilityService', 'neoApiService', '$timeout', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionSenderService', 'utilityService', 'neoApiService', '$timeout', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionBuilderService, utilityService, neoApiService, $timeout) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionSender, utilityService, neoApiService, $timeout) {
     let getCurrentAccount = () => null
 
     $scope.$on('app:onURI', (event, scheme) => {
-      transactionSenderService.openDialogIn($scope, this.accountCtrl, getCurrentAccount(), scheme)
+      transactionSender.openDialogIn($scope, this.accountCtrl, getCurrentAccount(), scheme)
     })
 
     this.$onInit = () => {
@@ -147,7 +147,7 @@
     }
 
     this.openSendTransactionDialog = selectedAccount => {
-      transactionSenderService.openDialogIn($scope, this.accountCtrl, selectedAccount)
+      transactionSender.openDialogIn($scope, this.accountCtrl, selectedAccount)
     }
   }
 })()

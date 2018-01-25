@@ -1,8 +1,8 @@
 <md-dialog aria-label="{{'Send'|translate}} {{network.token}}" ng-cloak md-theme="ac.currentTheme">
   <md-toolbar>
     <div class="md-toolbar-tools">
-			<h2 ng-if="send.data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromLabel}} ({{data.fromAddress}})</h2>
-			<h2 ng-if="! send.data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
+			<h2 ng-if="data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromLabel}} ({{data.fromAddress}})</h2>
+			<h2 ng-if="! data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
 
 			<span flex></span>
 
