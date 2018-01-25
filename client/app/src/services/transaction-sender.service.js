@@ -244,7 +244,7 @@
       $scope.selectedContactChange = contact => {
         if (contact) {
           $scope.data.toAddress = contact.address
-          validateReceiverAddress(text)
+          validateReceiverAddress(contact.address)
         }
       }
 

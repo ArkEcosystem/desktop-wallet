@@ -23,7 +23,7 @@
           <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
           <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
           <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
-          {{it.username||it.address|accountLabel}}
+          {{it.address|accountLabel}}
         </span>
   </md-list-item>
   <md-list-item>
