@@ -11,7 +11,6 @@
    * A very simple service the
    */
   function DialogService ($mdDialog) {
-
     const open = ({ scope, templateUrl }) => {
       $mdDialog.show({
         scope,

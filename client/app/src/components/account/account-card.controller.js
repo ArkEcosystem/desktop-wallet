@@ -14,10 +14,10 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'storageService', 'toastService', 'transactionSenderService', 'utilityService', 'neoApiService', '$timeout', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'toastService', 'transactionSenderService', 'utilityService', '$timeout', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, storageService, toastService, transactionSender, utilityService, neoApiService, $timeout) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, toastService, transactionSender, utilityService, $timeout) {
     let getCurrentAccount = () => null
 
     $scope.$on('app:onURI', (event, scheme) => {

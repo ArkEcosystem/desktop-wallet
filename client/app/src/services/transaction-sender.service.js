@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionSenderService', ['$timeout', 'dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
+    .service('transactionSenderService', ['$timeout', 'gettextCatalog', 'dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'neoApiService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
 
   /**
    * TransactionSenderService
@@ -10,15 +10,15 @@
    *
    * This service is used to send transactions; from displaying the dialog to
    * validating and executing them.
+   *
+   * TODO check the passphrase before moving to the next step
    */
-  function TransactionSenderService ($timeout, dialogService, utilityService, accountService, storageService, toastService, transactionBuilderService, transactionValidator) {
-
+  function TransactionSenderService ($timeout, gettextCatalog, dialogService, utilityService, accountService, storageService, toastService, neoApiService, transactionBuilderService, transactionValidator) {
     /**
      * Show the send transaction dialog. Reuses the controller and its $scope
      * TODO because currently it depends on the original implementation of AccountController too
      */
     const openDialogIn = ($scope, accountCtrl, selectedAccount, uriScheme) => {
-
       $scope.maxTransactionsPerFile = 5
 
       const passphrases = accountService.getPassphrases(selectedAccount.address)
@@ -51,7 +51,7 @@
           return {
             address: d[0],
             amount: Number(utilityService.arkToArktoshi(parseFloat(d[1]), 0)),
-            smartbridge: d[2],
+            smartbridge: d[2]
           }
         })
       }
@@ -66,10 +66,8 @@
 
       const prepareMultipleTransactions = (selectedAccount, data) => {
         return transactionBuilderService.createMultipleSendTransactions(data)
-          .then(
-            transactions => transactionValidator.openDialogIn($scope, selectedAccount, transactions),
-            accountCtrl.formatAndToastError
-          )
+          .then(transactions => transactionValidator.openDialogIn($scope, selectedAccount, transactions))
+          .catch(accountCtrl.formatAndToastError)
       }
 
       $scope.ac = accountCtrl
@@ -84,7 +82,7 @@
           ledger: selectedAccount.ledger,
           publicKey: selectedAccount.publicKey,
           masterpassphrase: $scope.data.passphrase.trim(),
-          fromAddress: $scope.data.fromAddress,
+          fromAddress: $scope.data.fromAddress
         }
 
         if (uriScheme) {
@@ -100,24 +98,22 @@
 
         if (tab === 'unique') {
           data.toAddress = $scope.data.toAddress.trim()
-          data.amount = Number(utilityService.arkToArktoshi(parseFloat($scope.data.amount), 0)),
+          data.amount = Number(utilityService.arkToArktoshi(parseFloat($scope.data.amount), 0))
           data.smartbridge = $scope.data.smartbridge
 
           prepareTransaction(selectedAccount, data)
-
         } else if (tab === 'multiple') {
           parseTransactionsFile($scope.data.file, transactionsData => {
             data.transactions = processTransactionsData(transactionsData)
 
             prepareMultipleTransactions(selectedAccount, data)
           })
-
         } else {
           throw new Error(`Unknown tab "${tab}"`)
         }
       }
 
-      $scope.tab = 'unique',
+      $scope.tab = 'unique'
       $scope.data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',
@@ -149,7 +145,7 @@
         $scope.tab = tab
       }
 
-      $scope.fillSendableBalance  = () => {
+      $scope.fillSendableBalance = () => {
         function setBalance (fee) {
           const sendableBalance = getTotalBalance(fee)
           $scope.data.amount = sendableBalance > 0 ? sendableBalance : 0
@@ -185,7 +181,7 @@
           return
         }
 
-        const currentAccount = getCurrentAccount()
+        const currentAccount = accountCtrl.selected
         if (currentAccount && currentAccount.address === address) {
           $scope.receiverValidation.message = gettextCatalog.getString('This address is your own address. Are you sure you want to send to your own address?')
           $scope.receiverValidation.failType = 'warning'
@@ -255,8 +251,7 @@
     }
 
     return {
-      openDialogIn,
+      openDialogIn
     }
   }
-
 })()

@@ -11,9 +11,7 @@
    * This service is used to validate multiple transactions
    */
   function TransactionValidatorService ($timeout, dialogService, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
-
     const openDialogIn = ($scope, selectedAccount, transactions) => {
-
       // TODO merge with the method from AccountController
       const saveFile = () => {
         const fs = require('fs')
@@ -69,7 +67,9 @@
                 transaction.sendStatus = 'ok'
                 selectedAccount.transactions.unshift(transaction)
               },
-              () => transaction.sendStatus = 'error'
+              () => {
+                transaction.sendStatus = 'error'
+              }
             )
           })
 
@@ -96,12 +96,10 @@
        * Close the dialog or stop the sending of transactions
        */
       const cancel = () => {
-        if (! $scope.validate.sent) {
+        if (!$scope.validate.sent) {
           dialogService.hide()
-
         } else if ($scope.validate.status !== 'pristine') {
           dialogService.hide()
-
         } else {
           processing.forEach(transactionPromise => {
             const transaction = transactionPromise.$$transaction
@@ -139,8 +137,7 @@
     }
 
     return {
-      openDialogIn,
+      openDialogIn
     }
   }
-
 })()

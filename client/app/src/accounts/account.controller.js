@@ -363,7 +363,7 @@
       return errorMessage
     }
 
-    function formatAndToastError (error, hideDelay=5000) {
+    function formatAndToastError (error, hideDelay = 5000) {
       toastService.error(formatErrorMessage(error), hideDelay, true)
     }
 

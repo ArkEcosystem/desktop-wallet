@@ -5,7 +5,7 @@
     .directive('validAmount', ['utilityService', utilityService => {
       return {
         require: 'ngModel',
-        link(scope, elem, attrs, ctrl) {
+        link (scope, elem, attrs, ctrl) {
           const val = value => {
             if (typeof value === 'undefined' || value === 0) {
               ctrl.$pristine = true
@@ -42,5 +42,5 @@
         }
       }
     }
-  ])
+    ])
 })()

@@ -1,9 +1,7 @@
 'use strict'
 
-describe('transactionSenderService',() => {
-
+describe('transactionSenderService', () => {
   describe('openDialogIn()', () => {
-
     let transactionSenderService
 
     let accountCtrl,
@@ -30,7 +28,7 @@ describe('transactionSenderService',() => {
 
     const ACCOUNTS = ['userAccount1', 'userAccount2']
 
-    beforeEach(module('arkclient.constants'));
+    beforeEach(module('arkclient.constants'))
 
     beforeEach(() => {
       module('arkclient.accounts', $provide => {
@@ -124,11 +122,11 @@ describe('transactionSenderService',() => {
       transactionBuilderServiceMock.createSendTransaction.reset()
     })
 
-    context('unique transaction', ()=> {
+    context('unique transaction', () => {
       const tab = 'unique'
 
       const fillValidForm = ({ amount }) => {
-        $scope[`${tab}Form`]= { $valid: true }
+        $scope[`${tab}Form`] = { $valid: true }
         $scope.data = {
           toAddress: 'A0123',
           passphrase: 'pass1',
@@ -138,7 +136,7 @@ describe('transactionSenderService',() => {
       }
 
       context('when the form amount is a float', () => {
-        it('uses the right amount to build it', function () {
+        it('uses the right amount to build it', () => {
           transactionBuilderServiceMock.createSendTransaction.resolves({})
           const spy = transactionBuilderServiceMock.createSendTransaction
           const selectedAccount = {}
@@ -157,5 +155,4 @@ describe('transactionSenderService',() => {
       })
     })
   })
-
 })

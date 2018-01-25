@@ -85,22 +85,17 @@
 
       return new Promise((resolve, reject) => {
         accountService.getFees(false).then(fees => {
-
           const invalidAddress = transactions.find(t => {
             return !ark.crypto.validateAddress(t.address, network.version)
           })
 
           if (invalidAddress) {
-            return reject(gettextCatalog.getString('The destination address ') + invalidAddress + gettextCatalog.getString(' is erroneous'))
+            return reject(new Error(gettextCatalog.getString('The destination address ') + invalidAddress + gettextCatalog.getString(' is erroneous')))
           }
 
           const total = transactions.reduce((total, t) => total + t.amount + fees.send, 0)
           if (total > account.balance) {
-            return reject(gettextCatalog.getString('Not enough ' + network.token + ' on your account ') + fromAddress)
-          }
-
-          if (ark.crypto.getAddress(publicKey, network.version) !== fromAddress) {
-            return reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress)
+            return reject(new Error(gettextCatalog.getString('Not enough ' + network.token + ' on your account ') + fromAddress))
           }
 
           const processed = Promise.all(
@@ -116,15 +111,18 @@
                   transaction.senderPublicKey = publicKey
 
                   // Wait a little just in case
-                  setTimeout(()=> {
+                  setTimeout(() => {
                     ledgerService.signTransaction(ledger, transaction).then(result => {
                       transaction.signature = result.signature
                       transaction.id = ark.crypto.getId(transaction)
                       resolve(transaction)
                     }, reject)
                   }, 500)
-
                 } else {
+                  if (ark.crypto.getAddress(transaction.senderPublicKey, network.version) !== fromAddress) {
+                    return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress))
+                  }
+
                   resolve(transaction)
                 }
               })
