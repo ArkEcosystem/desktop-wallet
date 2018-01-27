@@ -323,8 +323,8 @@ account-box h2 md-select.md-default-theme:not([disabled]):focus .md-select-value
   color: white;
 }
 
-account-box .md-toolbar-tools .md-button  {
-  margin-bottom: 6px;
+account-box md-toolbar h2 {
+  max-height: 68px;
 }
 
 #home-box-accounts {
