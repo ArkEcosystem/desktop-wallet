@@ -35,7 +35,7 @@
     <span style="white-space: nowrap;">
       <md-icon md-font-library="material-icons">account_circle</md-icon>
       {{contact.name}}
-      <md-icon ng-if="$ctrl.ul.selected" style="pointer-events: auto" ng-click="" ng-mouseover="stats = $ctrl.ab.getStats($ctrl.ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
+      <md-icon ng-if="$ctrl.ul.selected && contact.address !== $ctrl.ul.selected.address" style="pointer-events: auto" ng-click="" ng-mouseover="stats = $ctrl.ab.getStats($ctrl.ul.selected.address, contact.address)" aria-label="Stats" class="md-secondary" md-menu-align-target>
         info_outline
         <md-tooltip md-direction="bottom" class="tooltip-multiline">
           {{'Income' | translate}}: {{$ctrl.ul.network.symbol}}{{stats.income.amount}} ({{stats.income.transactions}} {{'Transactions' | translate | lowercase}})
