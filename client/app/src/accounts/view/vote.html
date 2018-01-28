@@ -15,8 +15,8 @@
         <md-chips ng-model="voteDialog.data.votes" readonly="true">
           <md-chip-template>{{$chip.vote}}{{$chip.username}}</md-chip-template>
         </md-chips>
-        <passphrase-field ng-if="!voteDialog.data.ledger" ng-model="voteDialog.data.passphrase" label="Passphrase"></passphrase-field>
-        <passphrase-field ng-if="voteDialog.data.secondSignature" ng-model="voteDialog.data.secondpassphrase" label="Second Passphrase"></passphrase-field>
+        <passphrase-field ng-if="!voteDialog.data.ledger" ng-model="voteDialog.data.passphrase" label="{{'Passphrase' | translate}}"></passphrase-field>
+        <passphrase-field ng-if="voteDialog.data.secondSignature" ng-model="voteDialog.data.secondpassphrase" label="{{'Second Passphrase' | translate}}"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">

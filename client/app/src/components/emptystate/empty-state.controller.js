@@ -10,14 +10,14 @@
         header: '@?',
         content: '@?'
       },
-      controller: EmptyStateController,
+      controller: ['gettextCatalog', EmptyStateController],
       controllerAs: '$es'
     })
 
-  function EmptyStateController ($scope) {
+  function EmptyStateController ($scope, gettextCatalog) {
     this.$onInit = () => {
       this.imgSrc = this.imgSrc || 'assets/images/logo/white.png'
-      this.header = this.header || 'No data found'
+      this.header = this.header || gettextCatalog.getString('No data found')
     }
   }
 })()

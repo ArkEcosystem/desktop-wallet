@@ -3,7 +3,7 @@
 describe('transactionBuilderService', () => {
   const tokenName = 'test-ark'
   let transactionBuilderService, accountService
-  let configServiceMock, gettextCatalogMock, networkServiceMock, ledgerServiceMock, getAccountStub
+  let configServiceMock, gettextCatalogMock, gettextMock, networkServiceMock, ledgerServiceMock, getAccountStub
   let intervalRef
 
   const fees = {
@@ -57,7 +57,9 @@ describe('transactionBuilderService', () => {
   beforeEach(() => {
     module('arkclient.accounts', $provide => {
       configServiceMock = { notice: sinon.stub(), getByGroupAndKey: sinon.stub() }
-      gettextCatalogMock = {getString: sinon.stub().returnsArg(0)}
+      // return options / params, we don't care about the string
+      gettextCatalogMock = {getString: sinon.stub().returnsArg(1)}
+      gettextMock = sinon.stub().returnsArg(0)
       networkServiceMock = {
         listenNetworkHeight: sinon.stub(),
         getPeer: sinon.stub().returns('127.0.0.1'),
@@ -68,6 +70,7 @@ describe('transactionBuilderService', () => {
       // inject the mock services
       $provide.value('configService', configServiceMock)
       $provide.value('gettextCatalog', gettextCatalogMock)
+      $provide.value('gettext', gettextMock)
       $provide.value('networkService', networkServiceMock)
       $provide.value('ledgerService', ledgerServiceMock)
     })
@@ -194,7 +197,7 @@ describe('transactionBuilderService', () => {
       sendPromise.then(transaction => {
         done("error: shouldn't be here!")
       }, err => {
-        expect(err).to.have.string(tokenName)
+        expect(err['currency']).to.have.string(tokenName)
         done()
       }).catch(err => done(err))
     })
@@ -230,7 +233,7 @@ describe('transactionBuilderService', () => {
       sendPromise.then(transaction => {
         done("error: shouldn't be here!")
       }, err => {
-        expect(err).to.have.string(tokenName)
+        expect(err['currency']).to.have.string(tokenName)
         done()
       }).catch(err => done(err))
     })
@@ -266,7 +269,7 @@ describe('transactionBuilderService', () => {
       sendPromise.then(transaction => {
         done("error: shouldn't be here!")
       }, err => {
-        expect(err).to.have.string(tokenName)
+        expect(err['currency']).to.have.string(tokenName)
         done()
       }).catch(err => done(err))
     })

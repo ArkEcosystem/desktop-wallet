@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.directives')
-    .directive('copyToClipboard', ['toastService', '$window', function (toastService, $window) {
+    .directive('copyToClipboard', ['toastService', 'gettext', '$window', function (toastService, gettext, $window) {
       const body = angular.element($window.document.body)
       const textarea = angular.element('<textarea/>')
       textarea.css({
@@ -19,10 +19,10 @@
           const successful = document.execCommand('copy')
           if (!successful) throw successful
           else {
-            toastService.success('Copied to clipboard', 3000)
+            toastService.success(gettext('Copied to clipboard'), 3000)
           }
         } catch (err) {
-          toastService.error('Failed to copy', 3000)
+          toastService.error(gettext('Failed to copy'), 3000)
         }
         textarea.remove()
       }

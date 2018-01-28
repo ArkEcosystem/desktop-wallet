@@ -13,29 +13,29 @@
         accountCtrl: '=',
         addressbookCtrl: '='
       },
-      controller: ['$scope', 'networkService', 'accountService', 'utilityService', 'gettextCatalog', 'toastService', '$timeout', AccountBoxController]
+      controller: ['$scope', 'networkService', 'accountService', 'utilityService', 'gettextCatalog', 'gettext', 'toastService', '$timeout', AccountBoxController]
     })
 
-  function AccountBoxController ($scope, networkService, accountService, utilityService, gettextCatalog, toastService, $timeout) {
+  function AccountBoxController ($scope, networkService, accountService, utilityService, gettextCatalog, gettext, toastService, $timeout) {
     this.$onInit = () => {
       // Alias that is used on the template
       this.ac = this.accountCtrl
 
-      this.myAccountsType = this.createAccountType('My Accounts',
+      this.myAccountsType = this.createAccountType(gettext('My Accounts'),
                                                    this.ac.myAccounts,
                                                    this.ac.getAllAccounts,
-                                                   utilityService.createRefreshState('Accounts refreshed', 'Could not refresh accounts'),
+                                                   utilityService.createRefreshState(gettext('Accounts refreshed'), gettext('Could not refresh accounts')),
                                                    this.ac.createAccount,
-                                                   'Create Account',
+                                                   gettext('Create Account'),
                                                    this.ac.importAccount,
-                                                   'Import Account')
+                                                   gettext('Import Account'))
 
-      this.contactsType = this.createAccountType('Contacts',
+      this.contactsType = this.createAccountType(gettext('Contacts'),
                                                  this.addressbookCtrl.getContacts,
                                                  this.addressbookCtrl.getContacts,
-                                                 utilityService.createRefreshState('Contacts refreshed', 'Could not refresh contacts'),
+                                                 utilityService.createRefreshState(gettext('Contacts refreshed'), gettext('Could not refresh contacts')),
                                                  () => this.addressbookCtrl.addAddressbookContact(() => this.refreshAccounts()),
-                                                 'Add Contact')
+                                                 gettext('Add Contact'))
 
       if (this.myAccountsType.getAccountsToRefresh().length || !this.contactsType.getAccountsToRefresh().length) {
         this.selectedAccountType = this.myAccountsType

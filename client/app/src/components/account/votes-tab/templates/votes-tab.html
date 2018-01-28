@@ -105,16 +105,21 @@
           </tr>
           <tr md-row disabled ng-if="!$ctrl.getDelegateList($ctrl.account).length">
               <td md-cell colspan="7">
-                <empty-state header="This account does not have any selected delegates" content="Once a delegate is selected for this account, it will appear here."></empty-state>
+                <empty-state header="{{'This account does not have any selected delegates' | translate}}"
+                             content="{{'Once a delegate is selected for this account, it will appear here.' | translate}}">
+                </empty-state>
               </td>
             </tr>
         </tbody>
       </table>
     </md-table-container>
 
-    <md-content id="vote-help" translate>
-      Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for
-      a delegate that you support. Learn more about voting for a delegate on the <a href="#" ng-click="$ctrl.openBlog('/how-to-vote-or-un-vote-an-ark-delegate-and-how-does-it-all-work-819c5439da68')">ARK blog</a>.
+    <md-content id="vote-help">
+      <translate>
+        Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for
+        a delegate that you support. Learn more about voting for a delegate by clicking on the following link.
+      </translate>
+      <a href="#" ng-click="$ctrl.openBlog('/how-to-vote-or-un-vote-an-ark-delegate-and-how-does-it-all-work-819c5439da68')" translate>ARK blog</a>.
     </md-content>
 
   </md-tab-body>

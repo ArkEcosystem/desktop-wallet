@@ -108,8 +108,8 @@
         const qrcodeElement = document.querySelector('ark-qrcode')
         const scheme = qrcodeElement.deserializeURI(uri)
 
-        if (!scheme) return toastService.error('Invalid URI')
-        if (scheme && !self.selected) return toastService.error('Select an account and open the URI again')
+        if (!scheme) return toastService.error(gettext('Invalid URI'))
+        if (scheme && !self.selected) return toastService.error(gettext('Select an account and open the URI again'))
         if (scheme && self.selected) return $scope.$broadcast('app:onURI', scheme)
       }, 0)
     })
@@ -193,7 +193,7 @@
     self.accounts = []
     self.selectAccount = selectAccount
     self.refreshCurrentAccount = refreshCurrentAccount
-    self.accountRefreshState = utilityService.createRefreshState('Account refreshed', 'Could not refresh account')
+    self.accountRefreshState = utilityService.createRefreshState(gettext('Account refreshed'), gettext('Could not refresh account'))
     self.gotoAddress = gotoAddress
     self.getAllDelegates = getAllDelegates
     self.addWatchOnlyAddress = addWatchOnlyAddress
@@ -317,10 +317,10 @@
         $timeout(() => {
           if (!self.connectedPeer.isConnected && self.isNetworkConnected) {
             self.isNetworkConnected = false
-            toastService.error('Network disconnected!')
+            toastService.error(gettext('Network disconnected!'))
           } else if (self.connectedPeer.isConnected && !self.isNetworkConnected) {
             self.isNetworkConnected = true
-            toastService.success('Network connected and healthy!')
+            toastService.success(gettext('Network connected and healthy!'))
           }
         }, 500)
       }
@@ -372,7 +372,7 @@
       } else if (typeof error.message === 'string') {
         basicMessage = error.message
       }
-      const errorMessage = gettextCatalog.getString('Error: ') + basicMessage.replace('Error: ', '')
+      const errorMessage = gettextCatalog.getString('Error:') + ' ' + basicMessage.replace('Error: ', '')
       console.error(errorMessage, '\n', error)
       return errorMessage
     }
@@ -380,23 +380,6 @@
     function formatAndToastError (error, hideDelay = 5000) {
       toastService.error(formatErrorMessage(error), hideDelay, true)
     }
-
-    // TODO: deprecated
-    // function showToast (msg, hideDelay, isError) {
-    //   if (!hideDelay) {
-    //     hideDelay = 5000
-    //   }
-
-    //   var toast = $mdToast.simple()
-    //     .hideDelay(hideDelay)
-    //     .textContent(gettextCatalog.getString(msg))
-
-    //   if (isError) {
-    //     toast.theme('error')
-    //   }
-
-    //   $mdToast.show(toast)
-    // }
 
     self.selectAllLanguages = function () {
       return languages
@@ -512,9 +495,9 @@
     }
 
     self.manageFolder = function (account, currentFolderName) {
-      const titleText = (!currentFolderName ? 'Create' : 'Rename') + ' Virtual Folder'
-      const buttonText = (!currentFolderName ? 'Add' : 'Save')
-      const confirmText = 'Virtual folder ' + (!currentFolderName ? 'added' : 'saved') + '!'
+      const titleText = !currentFolderName ? gettext('Create Virtual Folder') : gettext('Rename Virtual Folder')
+      const buttonText = !currentFolderName ? gettext('Add') : gettext('Save')
+      const confirmText = !currentFolderName ? gettext('Virtual folder added!') : gettext('Virtual folder saved!')
       const currentValue = (!currentFolderName ? null : currentFolderName)
       let confirm
 
@@ -525,7 +508,7 @@
           .textContent(gettextCatalog.getString('Please enter a folder name.'))
           .placeholder(gettextCatalog.getString('Folder name'))
           .initialValue(currentValue)
-          .ariaLabel(gettextCatalog.getString('Folder Name'))
+          .ariaLabel(gettextCatalog.getString('Folder name'))
           .ok(gettextCatalog.getString(buttonText))
           .cancel(gettextCatalog.getString('Cancel'))
         $mdDialog.show(confirm).then((foldername) => {
@@ -546,7 +529,7 @@
         confirm = $mdDialog.prompt()
           .title(gettextCatalog.getString('Login'))
           .theme(self.currentTheme)
-          .textContent(gettextCatalog.getString('Please enter this account passphrase to login.'))
+          .textContent(gettextCatalog.getString('Please enter the passphrase of this account to proceed.'))
           .placeholder(gettextCatalog.getString('passphrase'))
           .ariaLabel(gettextCatalog.getString('Passphrase'))
           .ok(gettextCatalog.getString('Login'))
@@ -554,9 +537,9 @@
         $mdDialog.show(confirm).then((passphrase) => {
           accountService.createVirtual(passphrase).then((virtual) => {
             account.virtual = virtual
-            toastService.success('Succesfully Logged In!', 3000)
+            toastService.success(gettext('Successfully logged in!'), 3000)
           }, (err) => {
-            toastService.success(gettextCatalog.getString('Error when trying to login: ') + err, 3000, true)
+            toastService.success(gettextCatalog.getString('Error when trying to login:') + ' ' + err, 3000, true)
           })
         })
       }
@@ -850,12 +833,12 @@
           accountService.fetchAccount(address).then((account) => {
             self.accounts.push(account)
             selectAccount(account)
-            toastService.success('Account added!', 3000)
+            toastService.success(gettext('Account added!'), 3000)
           })
           cancel()
         } else {
           toastService.error(
-            gettextCatalog.getString('Address') + ' ' + address + ' ' + gettextCatalog.getString('is not recognised'),
+            gettextCatalog.getString('Address \'{{ address }}\' is not recognized', {address: address}),
             3000,
             true
           )
@@ -1124,7 +1107,7 @@
 
           const readStream = fs.createReadStream(fileName)
           readStream.on('readable', () => {
-            toastService.success('Background Added Successfully!', 3000)
+            toastService.success(gettext('Background added successfully!'), 3000)
 
             const userImages = backgrounds['user']
             let url = fileName
@@ -1136,6 +1119,9 @@
           }).on('error', (error) => {
             toastService.error(`Error Adding Background (reading): ${error}`, 3000)
           })
+            .on('error', (error) => {
+              toastService.error(gettextCatalog.getString('Error adding background:') + ' ' + error, 3000)
+            })
         })
       }
 
@@ -1154,7 +1140,7 @@
           selectBackground(initialBackground)
         }
 
-        toastService.success('Background Removed Successfully!', 3000)
+        toastService.success(gettext('Background removed successfully!'), 3000)
       }
 
       function isImage (file) {
@@ -1272,7 +1258,7 @@
 
       function removeNetwork (network) {
         const confirm = $mdDialog.confirm()
-          .title(gettextCatalog.getString('Remove Network') + ' ' + network)
+          .title(gettextCatalog.getString('Remove network \'{{ network }}\'', {network: network}))
           .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
           .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
@@ -1280,7 +1266,7 @@
         $mdDialog.show(confirm).then(() => {
           networkService.removeNetwork(network)
           self.listNetworks = networkService.getNetworks()
-          toastService.success('Network removed succesfully!', 3000)
+          toastService.success(gettext('Network removed succesfully!'), 3000)
         })
       }
 
@@ -1311,7 +1297,7 @@
         $mdDialog.hide()
         accountService.savePassphrases($scope.send.data.address, $scope.send.data.passphrase, $scope.send.data.secondpassphrase).then(
           (account) => {
-            toastService.success('Passphrases saved')
+            toastService.success(gettext('Passphrases saved'))
           },
           formatAndToastError
         )
@@ -1397,7 +1383,7 @@
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then((account) => {
               self.accounts.push(account)
               toastService.success(
-                gettextCatalog.getString('Account successfully created: ') + account.address,
+                gettextCatalog.getString('Account \'{{ address }}\' successfully created!', {address: account.address}),
                 null,
                 true
               )
@@ -1436,7 +1422,7 @@
 
         if (!$scope.send.data.customPassphrase && !isBIP39($scope.send.data.passphrase)) {
           toastService.error(
-            gettextCatalog.getString('Not valid BIP39 passphrase! Please check all words and spaces.')
+            gettextCatalog.getString('Not a valid BIP39 passphrase! Please check all words and spaces.')
             , null
             , true
           )
@@ -1450,7 +1436,8 @@
               for (let i = 0; i < self.accounts.length; i++) {
                 if (self.accounts[i].address === account.address) {
                   toastService.error(
-                    gettextCatalog.getString('Account was already imported: ') + account.address,
+                    gettextCatalog.getString('Account \'{{ address }}\' has already been imported!',
+                                             {address: account.address}),
                     null,
                     true
                   )
@@ -1460,7 +1447,8 @@
 
               self.accounts.push(account)
               toastService.success(
-                gettextCatalog.getString('Account successfully imported: ') + account.address,
+                gettextCatalog.getString('Account \'{{ address }}\' successfully imported!',
+                                         {address: account.address}),
                 null,
                 true
               )
@@ -1501,7 +1489,7 @@
 
       if (selectedAccount.secondSignature) {
         return formatAndToastError(
-          gettextCatalog.getString('This account already has a second passphrase: ' + selectedAccount.address)
+          gettextCatalog.getString('The account \'{{ address }}\' already has a second passphrase!', {address: selectedAccount.address})
         )
       }
 
@@ -1510,9 +1498,10 @@
           const secondPhraseArktoshiVal = fees['secondsignature']
           const secondPhraseArkVal = utilityService.arktoshiToArk(secondPhraseArktoshiVal, true)
           const confirm = $mdDialog.confirm({
-            title: gettextCatalog.getString('Second Passphrase') + ' ' + gettextCatalog.getString('Fee') + ' (' + networkService.getNetwork().symbol + ')',
+            title: gettextCatalog.getString('Second Passphrase fee ({{ currency }})', {currency: networkService.getNetwork().symbol}),
             secondPhraseArkVal: secondPhraseArkVal,
-            textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs ' + secondPhraseArkVal + ' ' + networkService.getNetwork().token + '.'),
+            textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs {{ cost }} {{ currency }}',
+                                                  {cost: secondPhraseArkVal, currency: networkService.getNetwork().token}),
             ok: gettextCatalog.getString('Continue'),
             cancel: gettextCatalog.getString('Cancel')
           })
@@ -1585,7 +1574,7 @@
               )
             } else {
               toastService.success(
-                gettextCatalog.getString('Transaction file successfully saved in') + ' ' + fileName,
+                gettextCatalog.getString('Transaction file successfully saved in \'{{ fileName }}\'.', {fileName: fileName}),
                 null,
                 true
               )
@@ -1604,7 +1593,7 @@
           (transaction) => {
             selectedAccount.transactions.unshift(transaction)
             toastService.success(
-              gettextCatalog.getString('Transaction') + ' ' + transaction.id + ' ' + gettextCatalog.getString('sent with success!'),
+              gettextCatalog.getString('Transaction \'{{ transactionId }}\' sent with success!', {transactionId: transaction.id}),
               null,
               true
             )

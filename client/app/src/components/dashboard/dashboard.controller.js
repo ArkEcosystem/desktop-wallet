@@ -10,11 +10,11 @@
         addressbookCtrl: '='
       },
       controller: [
-        '$scope', '$mdToast', 'toastService', 'feedService', 'storageService', DashboardController
+        '$scope', '$mdToast', 'toastService', 'gettext', 'feedService', 'storageService', DashboardController
       ]
     })
 
-  function DashboardController ($scope, $mdToast, toastService, feedService, storageService) {
+  function DashboardController ($scope, $mdToast, toastService, gettext, feedService, storageService) {
     this.$onInit = () => {
       setTimeout(() => this.showAnnouncements(), 1000)
     }
@@ -45,7 +45,7 @@
             })
           }
         })
-        .catch(_ => toastService.error('Error loading the announcements.', 3000))
+        .catch(_ => toastService.error(gettext('Error loading the announcements.'), 3000))
     }
   }
 })()

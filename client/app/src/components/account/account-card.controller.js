@@ -14,10 +14,10 @@
         accountCtrl: '=',
         addressBookCtrl: '='
       },
-      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'accountService', 'toastService', 'transactionSenderService', 'utilityService', '$timeout', AccountCardController]
+      controller: ['$scope', '$mdDialog', '$mdBottomSheet', 'gettextCatalog', 'gettext', 'accountService', 'toastService', 'transactionSenderService', 'utilityService', '$timeout', AccountCardController]
     })
 
-  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, accountService, toastService, transactionSender, utilityService, $timeout) {
+  function AccountCardController ($scope, $mdDialog, $mdBottomSheet, gettextCatalog, gettext, accountService, toastService, transactionSender, utilityService, $timeout) {
     let getCurrentAccount = () => null
 
     $scope.$on('app:onURI', (event, scheme) => {
@@ -36,23 +36,23 @@
       const items = []
       const add = (text, icon) => items.push({ name: gettextCatalog.getString(text), icon })
 
-      add('Open in explorer', 'open_in_new')
+      add(gettext('Open in explorer'), 'open_in_new')
 
       if (!account.ledger) {
-        add('Remove', 'clear')
+        add(gettext('Remove'), 'clear')
       }
       if (!account.delegate) {
-        add('Label', 'local_offer')
+        add(gettext('Label'), 'local_offer')
 
         if (!account.ledger) {
-          add('Register Delegate', 'perm_identity')
+          add(gettext('Register Delegate'), 'perm_identity')
         }
       }
 
-      add('Timestamp Document', 'verified_user')
+      add(gettext('Timestamp Document'), 'verified_user')
 
       if (!account.secondSignature && !account.ledger) {
-        add('Second Passphrase', 'lock')
+        add(gettext('Second Passphrase'), 'lock')
       }
 
       return items
@@ -60,7 +60,7 @@
 
     this.confirmRemoval = account => {
       const confirm = $mdDialog.confirm({
-        title: gettextCatalog.getString('Remove Account') + ' ' + account.address,
+        title: gettextCatalog.getString('Remove Account \'{{ address }}\'', {address: account.address}),
         ariaLabel: gettextCatalog.getString('Remove Account'),
         theme: this.accountCtrl.currentTheme,
         textContent: gettextCatalog.getString('Remove this account from your wallet. ' +
@@ -79,7 +79,7 @@
             this.accountCtrl.selected = null
           }
 
-          toastService.success('Account removed!', 3000)
+          toastService.success(gettext('Account removed!'), 3000)
         })
       })
     }
@@ -102,7 +102,7 @@
       return $mdDialog.show(prompt).then(label => {
         accountService.setUsername(account.address, label)
         this.accountCtrl.accounts = accountService.loadAllAccounts()
-        toastService.success('Label set', 3000)
+        toastService.success(gettext('Label set'), 3000)
       })
     }
 

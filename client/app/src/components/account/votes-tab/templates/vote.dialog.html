@@ -25,8 +25,8 @@
           <input ng-disabled="$dialog.delegateToUnvote" ng-model="$dialog.delegate.name" type="text">
         </md-input-container>
 
-        <passphrase-field ng-if="!$dialog.account.ledger" ng-model="$dialog.passphrases.first" label="Passphrase"></passphrase-field>
-        <passphrase-field ng-if="$dialog.passphrases.second || $dialog.hasSecondPassphrase" ng-model="$dialog.passphrases.second" label="Second Passphrase"></passphrase-field>
+        <passphrase-field ng-if="!$dialog.account.ledger" ng-model="$dialog.passphrases.first" label="{{'Passphrase' | translate}}"></passphrase-field>
+        <passphrase-field ng-if="$dialog.passphrases.second || $dialog.hasSecondPassphrase" ng-model="$dialog.passphrases.second" label="{{'Second Passphrase' | translate}}"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">

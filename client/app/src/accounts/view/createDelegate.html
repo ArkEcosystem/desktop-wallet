@@ -24,8 +24,8 @@
           <label translate>Username</label>
           <input ng-model="createDelegate.data.username" type="text" ng-required="true" md-autofocus>
         </md-input-container>
-        <passphrase-field ng-if="!send.data.ledger" ng-model="createDelegate.data.passphrase" label="Passphrase"></passphrase-field>
-        <passphrase-field ng-if="createDelegate.data.secondSignature" ng-model="createDelegate.data.secondpassphrase" label="Second Passphrase"></passphrase-field>
+        <passphrase-field ng-if="!send.data.ledger" ng-model="createDelegate.data.passphrase" label="{{'Passphrase' | translate}}"></passphrase-field>
+        <passphrase-field ng-if="createDelegate.data.secondSignature" ng-model="createDelegate.data.secondpassphrase" label="{{'Second Passphrase' | translate}}"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">

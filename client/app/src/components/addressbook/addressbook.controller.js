@@ -3,9 +3,9 @@
 
   angular
     .module('arkclient.components')
-    .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'accountService', 'utilityService', AddressbookController])
+    .controller('AddressbookController', ['$scope', '$mdDialog', 'toastService', 'storageService', 'gettextCatalog', 'gettext', 'accountService', 'utilityService', AddressbookController])
 
-  function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, accountService, utilityService) {
+  function AddressbookController ($scope, $mdDialog, toastService, storageService, gettextCatalog, gettext, accountService, utilityService) {
     const self = this
     // var contacts
     self.trim = function (str) {
@@ -45,16 +45,16 @@
       return existsIn(self.contacts.map(c => c.name), name)
     }
 
-    self.showToast = function (message, variable, error) {
+    self.showToast = function (message, variable, error, stringParams) {
       if (error) {
         toastService.error(
-          gettextCatalog.getString(message) + (variable ? ' - ' + variable : ''),
+          gettextCatalog.getString(message, stringParams) + (variable ? ' - ' + variable : ''),
           null,
           true
         )
       } else {
         toastService.success(
-          gettextCatalog.getString(message) + (variable ? ' - ' + variable : ''),
+          gettextCatalog.getString(message, stringParams) + (variable ? ' - ' + variable : ''),
           null,
           true
         )
@@ -74,21 +74,21 @@
       function add (name, address) {
         self.getContacts()
         if (self.trim(name) === '') {
-          self.showToast('This Contact Name is not valid', name, true)
+          self.showToast(gettext('This contact name is not valid'), name, true)
           return
         }
         if (self.trim(address) === '' || !self.isAddress(address)) {
-          self.showToast('This Contact Address is not valid', address, true)
+          self.showToast(gettext('The address of this contact is not valid'), address, true)
           return
         }
 
         const newContact = { name: name, address: address }
         if (self.addressExists(address)) {
-          self.showToast('A Contact with this Address already exists', address, true)
+          self.showToast(gettext('A contact with this address already exists'), address, true)
           return
         }
         if (self.contactExists(name)) {
-          self.showToast('A Contact with this Name already exists', name, true)
+          self.showToast(gettext('A contact with this name already exists'), name, true)
           return
         }
 
@@ -100,17 +100,17 @@
         }, [])
 
         if (existsIn(knownAccounts.map(a => a.address), address)) {
-          self.showToast('This Address is already taken, please add a different one', address, true)
+          self.showToast(gettext('This address is already used by another contact or account'), address, true)
           return
         }
         if (existsIn(knownAccounts.map(a => a.username), name)) {
-          self.showToast('This Name is already taken, please use a different one', name, true)
+          self.showToast(gettext('This name is already used by another contact or account'), name, true)
           return
         }
 
         self.contacts.push(newContact)
         self.save()
-        self.showToast(`Contact '${name}' with address '${address}' added successfully`)
+        self.showToast(gettext('Contact \'{{ name }}\' with address \'{{ address }}\' added successfully'), null, false, {name: name, address: address})
         if (successCallback) {
           successCallback()
         }
@@ -130,7 +130,7 @@
     self.editAddressbookContact = function (address) {
       const contact = self.getContactFromAddress(address)
       if (!contact) {
-        self.showToast('This address is not a contact', address, true)
+        self.showToast(gettext('This address is not a contact'), address, true)
         return
       }
       const name = contact.name
@@ -149,20 +149,20 @@
 
       function save (name, address) {
         if (self.trim(name) === '') {
-          self.showToast('this Contact Name is not valid', name, true)
+          self.showToast(gettext('This contact name is not valid'), name, true)
           return
         }
         if (self.trim(address) === '') {
-          self.showToast('this Contact Address is not valid', address, true)
+          self.showToast(gettext('The address of this contact is not valid'), address, true)
           return
         }
         self.getContacts()
         if (!self.contactExists(name)) {
-          self.showToast('this Contact Name doesnt exist', name, true)
+          self.showToast(gettext('A contact with this name doesn\'t exist'), name, true)
           return
         }
         if (!self.isAddress(address)) {
-          self.showToast('this seems to be not a valid Address', address, true)
+          self.showToast(gettext('The address of this contact is not valid'), address, true)
           return
         }
         for (let i = 0; i < self.contacts.length; i++) {
@@ -171,14 +171,14 @@
           }
         }
         self.save()
-        self.showToast(`Contact '${name}' with address '${address}' saved successfully`)
+        self.showToast(gettext('Contact \'{{ name }}\' with address \'{{ address }}\' saved successfully'), null, false, {name: name, address: address})
         cancel()
       }
 
       function remove (name) {
         self.getContacts()
         if (!self.contactExists(name)) {
-          self.showToast('this Contact-Name doesnt exist: ', name, true)
+          self.showToast(gettext('A contact with this name doesn\'t exist'), name, true)
           return
         }
         for (let i = 0; i < self.contacts.length; i++) {
@@ -188,7 +188,7 @@
           }
         }
         self.save()
-        self.showToast('Contact successfully removed', name, false)
+        self.showToast(gettext('Contact successfully removed'), name, false)
         cancel()
       }
 

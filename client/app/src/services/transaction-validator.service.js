@@ -33,7 +33,7 @@
               )
             } else {
               toastService.success(
-                gettextCatalog.getString('Transactions file successfully saved in') + ' ' + fileName,
+                gettextCatalog.getString('Transactions file successfully saved in \'{{ fileName }}\'.', {fileName: fileName}),
                 null,
                 true
               )
