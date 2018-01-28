@@ -8,7 +8,7 @@
     "postinstall": "cd client && npm install && npm run bundle && cd .. && electron-builder install-app-deps && npm run rebuild",
     "rebuild": "electron-rebuild --force --module_dir . -w node-hid ",
     "electron": "electron --version",
-    "start": "electron main.js",
+    "start": "electron main.js -- --disableScreenshotProtection",
     "live-reload": "cross-env LIVE_RELOAD=true electron main.js",
     "pack": "build --dir",
     "dist": "npm run dist:win && npm run dist:macos && npm run dist:linux && npm run dist:win32",
