@@ -19,7 +19,7 @@
     function deriveAddress (path) {
       const result = ipcRenderer.sendSync('ledger', {
         action: 'getAddress',
-        path: path
+        path
       })
       return result
     }
@@ -29,7 +29,7 @@
       const accounts = []
       let accountIndex = 0
       const addressIndex = 0
-      const path = "44'/" + (slip44 || '111') + "'/"
+      const path = `44'/${slip44 || '111'}'/`
       let empty = false
 
       async.whilst(
@@ -37,7 +37,7 @@
           return !empty
         },
         (next) => {
-          const localpath = path + accountIndex + "'/0/" + addressIndex
+          const localpath = `${path}${accountIndex}'/0/${addressIndex}`
           const result = ipcRenderer.sendSync('ledger', {
             action: 'getAddress',
             path: localpath
@@ -96,22 +96,23 @@
       const accounts = []
       let accountIndex = 0
       const addressIndex = 0
-      const path = "44'/" + (slip44 || '111') + "'/"
+      const path = `44'/${slip44 || '111'}'/`
       let empty = false
 
       while (!empty) {
-        const localpath = path + accountIndex + "'/0/" + addressIndex
+        const localpath = `${path}${accountIndex}'/0/{addressIndex}`
         const keys = hdnode.derivePath(localpath).keyPair
         const address = keys.getAddress()
         accountIndex = accountIndex + 1
         const account = storageService.get(address)
+
         if (account && !account.cold) {
           account.ledger = localpath
           storageService.set(address, account)
           accounts.push(account)
         } else {
           const result = {
-            address: address,
+            address,
             publicKey: keys.getPublicKeyBuffer().toString('hex'),
             ledger: localpath,
             cold: true
@@ -125,40 +126,34 @@
     }
 
     function signTransaction (path, transaction) {
-      const deferred = $q.defer()
-      ipcRenderer.once('transactionSigned', (event, result) => {
-        if (result.error) {
-          deferred.reject(result.error)
-        } else {
-          deferred.resolve(result)
-        }
+      return new Promise((resolve, reject) => {
+        ipcRenderer.once('transactionSigned', (event, result) => {
+          result.error ? reject(result.error) : resolve(result)
+        })
+
+        ipcRenderer.send('ledger', {
+          action: 'signTransaction',
+          data: arkjs.crypto.getBytes(transaction, true, true).toString('hex'),
+          path
+        })
       })
-      ipcRenderer.send('ledger', {
-        action: 'signTransaction',
-        data: arkjs.crypto.getBytes(transaction, true, true).toString('hex'),
-        path: path
-      })
-      return deferred.promise
     }
 
     function signMessage (path, message) {
-      const deferred = $q.defer()
-      const crypto = require('crypto')
-      let hash = crypto.createHash('sha256')
-      hash = hash.update(Buffer.from(message, 'utf-8')).digest()
-      ipcRenderer.once('messageSigned', (event, result) => {
-        if (result.error) {
-          deferred.reject(result.error)
-        } else {
-          deferred.resolve(result)
-        }
+      return new Promise((resolve, reject) => {
+        let hash = require('crypto').createHash('sha256')
+        hash = hash.update(Buffer.from(message, 'utf-8')).digest()
+
+        ipcRenderer.once('messageSigned', (event, result) => {
+          result.error ? reject(result.error) : resolve(result)
+        })
+
+        ipcRenderer.send('ledger', {
+          action: 'signMessage',
+          data: hash.toString('hex'),
+          path
+        })
       })
-      ipcRenderer.send('ledger', {
-        action: 'signMessage',
-        data: hash.toString('hex'),
-        path: path
-      })
-      return deferred.promise
     }
 
     function detect () {
@@ -176,13 +171,13 @@
     }
 
     return {
-      deriveAddress: deriveAddress,
-      signTransaction: signTransaction,
-      signMessage: signMessage,
-      detect: detect,
-      isAppLaunched: isAppLaunched,
-      getBip44Accounts: getBip44Accounts,
-      recoverBip44Accounts: recoverBip44Accounts
+      deriveAddress,
+      signTransaction,
+      signMessage,
+      detect,
+      isAppLaunched,
+      getBip44Accounts,
+      recoverBip44Accounts
     }
   }
 })()
