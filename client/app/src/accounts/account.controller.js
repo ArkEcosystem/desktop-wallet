@@ -21,6 +21,7 @@
       '$scope',
       '$mdMedia',
       'gettextCatalog',
+      'gettext',
       '$mdThemingProvider',
       '$mdTheming',
       '$window',
@@ -55,6 +56,7 @@
     $scope,
     $mdMedia,
     gettextCatalog,
+    gettext,
     $mdThemingProvider,
     $mdTheming,
     $window,
@@ -697,6 +699,45 @@
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true)
     }
 
+    self.searchContactOrAccount = (text, exactMatch) => {
+      text = (text || '').toLowerCase()
+
+      const accounts = self.getAllAccounts()
+        .map(acc => {
+          return {name: acc.username, address: acc.address, type: gettext('Account'), icon: 'account_balance_wallet'}
+        })
+      let contacts = (storageService.get('contacts') || [])
+        .map(c => {
+          return {name: c.name, address: c.address, type: gettext('Contact'), icon: 'account_circle'}
+        })
+
+      contacts = contacts.concat(accounts).sort((a, b) => {
+        if (a.type === 'Contact' && b.type !== 'Contact') {
+          return -1
+        }
+
+        if (a.type !== 'Contact' && b.type === 'Contact') {
+          return 1
+        }
+
+        if (a.name && b.name) {
+          return a.name > b.name
+        }
+
+        if (b.name) {
+          return 1
+        }
+
+        return -1
+      })
+
+      const compareFunc = exactMatch
+        ? (compare) => compare && compare.toLowerCase() === text
+        : (compare) => compare && compare.toLowerCase().indexOf(text) > -1
+
+      return contacts.filter(contact => compareFunc(contact.address) || compareFunc(contact.name))
+    }
+
     /**
      * Select the current avatars
      * @param menuId
@@ -1077,10 +1118,9 @@
             userImages[name] = `url('${url}')`
 
             backgrounds['user'] = userImages
+          }).on('error', (error) => {
+            toastService.error(`Error Adding Background (reading): ${error}`, 3000)
           })
-            .on('error', (error) => {
-              toastService.error(`Error Adding Background (reading): ${error}`, 3000)
-            })
         })
       }
 
@@ -1355,14 +1395,6 @@
         }
       }
 
-      function querySearch (text) { // eslint-disable-line no-unused-vars
-        text = text.toLowerCase()
-        const filter = self.accounts.filter((account) => {
-          return (account.address.toLowerCase().indexOf(text) > -1) || (account.username && (account.username.toLowerCase().indexOf(text) > -1))
-        })
-        return filter
-      }
-
       $scope.createAccountDialog = { data, cancel, next }
 
       $mdDialog.show({
@@ -1420,8 +1452,7 @@
               selectAccount(account)
             // TODO save passphrases after we have local encrytion
             },
-            formatAndToastError
-          )
+            formatAndToastError)
         $mdDialog.hide()
       }
 
@@ -1482,10 +1513,8 @@
               })
             }, () => {
               cancel()
-            }
-            )
-        }
-        )
+            })
+        })
       }
 
       warnAboutSecondPassphraseFee()
@@ -1582,6 +1611,11 @@
         // to avoid small transaction to be displayed as 1e-8
         humanAmount: utilityService.arktoshiToArk(transaction.amount),
         totalAmount: utilityService.arktoshiToArk(parseFloat(transaction.amount) + transaction.fee, true)
+      }
+
+      const contacts = self.searchContactOrAccount(transaction.recipientId, true)
+      if (contacts && contacts.length === 1) {
+        $scope.validate.resolvedAccount = contacts[0]
       }
 
       dialogService.open({

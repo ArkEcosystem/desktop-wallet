@@ -25,7 +25,8 @@ describe('AccountController', () => {
 
   let mdDialogMock,
     mdToastMock,
-    getTextCatalogMock
+    getTextCatalogMock,
+    gettextMock
 
   const ACCOUNTS = ['userAccount1', 'userAccount2']
 
@@ -92,6 +93,7 @@ describe('AccountController', () => {
         getString: sinon.stub().returns('!'),
         setCurrentLanguage: sinon.stub()
       }
+      gettextMock = sinon.stub().returnsArg(0)
 
       // provide mocks to angular controller
       $provide.value('accountService', accountServiceMock)
@@ -109,6 +111,7 @@ describe('AccountController', () => {
       $provide.value('$mdDialog', mdDialogMock)
       $provide.value('$mdToast', mdToastMock)
       $provide.value('gettextCatalog', getTextCatalogMock)
+      $provide.value('gettext', gettextMock)
     })
 
     inject((_$compile_, _$rootScope_, _$controller_) => {

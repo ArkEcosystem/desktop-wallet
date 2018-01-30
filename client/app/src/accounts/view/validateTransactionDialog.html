@@ -22,7 +22,18 @@
             <b translate>From</b><span class="md-secondary">{{validate.transaction.senderId}}</span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.type==0">
-            <b translate>To</b><span class="md-secondary">{{validate.transaction.recipientId}}</span>
+            <b translate>To</b>
+            <span class="md-secondary">
+              <span style="vertical-align: middle;">
+              {{validate.transaction.recipientId}}
+              </span>
+              <md-icon md-font-library="material-icons" ng-if="validate.resolvedAccount && validate.resolvedAccount.name">
+                {{validate.resolvedAccount.icon}}
+                <md-tooltip>
+                    <b>{{validate.resolvedAccount.type | translate}}</b>: {{validate.resolvedAccount.name}}
+                </md-tooltip>
+              </md-icon>
+              </span>
           </md-list-item>
           <md-list-item ng-if="validate.transaction.username">
             <b translate>Username</b><span class="md-secondary">{{validate.transaction.username}}</span>

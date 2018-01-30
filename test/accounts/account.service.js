@@ -2,7 +2,7 @@
 
 describe('accountService', () => {
   let accountService
-  let gettextCatalogMock, networkServiceMock
+  let gettextCatalogMock, gettextMock, networkServiceMock
   let intervalRef
 
   function mockGetFromPeer (transactionsArray) {
@@ -41,12 +41,14 @@ describe('accountService', () => {
   beforeEach(() => {
     module('arkclient.accounts', $provide => {
       gettextCatalogMock = {getString: sinon.stub().returnsArg(0)}
+      gettextMock = sinon.stub().returnsArg(0)
       networkServiceMock = { listenNetworkHeight: sinon.stub(),
         getPeer: sinon.stub().returns('127.0.0.1'),
         getNetwork: sinon.stub().returns({ version: 0x17 }) }
 
       // inject the mock services
       $provide.value('gettextCatalog', gettextCatalogMock)
+      $provide.value('gettext', gettextMock)
       $provide.value('networkService', networkServiceMock)
     })
 
