@@ -19,7 +19,6 @@
      * TODO because currently it depends on the original implementation of AccountController too
      */
     const openDialogIn = ($scope, accountCtrl, selectedAccount, uriScheme) => {
-
       $scope.maxTransactionsPerFile = 10
 
       const passphrases = accountService.getPassphrases(selectedAccount.address)
@@ -103,7 +102,6 @@
           data.smartbridge = $scope.data.smartbridge
 
           prepareTransaction(selectedAccount, data)
-
         } else if (tab === 'multiple') {
           parseTransactionsFile($scope.data.file, transactionsData => {
             data.transactions = processTransactionsData(transactionsData)

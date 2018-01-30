@@ -32,7 +32,7 @@
             deferred.resolve(transaction)
           })
           .catch(error => {
-            console.error(error);
+            console.error(error)
             deferred.reject(error)
           })
 
@@ -115,7 +115,7 @@
                     delete transaction.signature
                     transaction.senderPublicKey = publicKey
 
-                  // Wait a little just in case
+                    // Wait a little just in case
                     ledgerService.signTransaction(ledger, transaction)
                       .then(({ signature }) => {
                         transaction.signature = signature
@@ -123,11 +123,10 @@
                         resolve(transaction)
                       })
                       .catch(error => {
-                        console.error(error);
+                        console.error(error)
                         reject(error)
                       })
                   }, 2000 * i, true, transaction)
-
                 } else {
                   if (ark.crypto.getAddress(transaction.senderPublicKey, network.version) !== fromAddress) {
                     return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress))

@@ -11,7 +11,6 @@
    * This service is used to validate multiple transactions
    */
   function TransactionValidatorService ($timeout, dialogService, gettextCatalog, utilityService, accountService, networkService, toastService, transactionBuilderService) {
-
     const openDialogIn = ($scope, selectedAccount, transactions) => {
       // TODO merge with the method from AccountController
       const saveFile = () => {
