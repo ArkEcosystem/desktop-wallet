@@ -27,7 +27,7 @@
     self.cachedFees = null
 
     self.TxTypes = {
-      0: 'Send Ark',
+      0: 'Send Ark', // TODO change to 'Send ARK', with translations
       1: 'Second Signature Creation',
       2: 'Delegate Registration',
       3: 'Vote',
@@ -753,11 +753,11 @@
             account.virtual = getVirtual(address)
             return account
           }
-          return { address: address }
+          return { address }
         })
       },
 
-      getAccount: getAccount,
+      getAccount,
 
       refreshAccount: function (account) {
         return fetchAccount(account.address)
@@ -771,64 +771,64 @@
         return storageService.get('username-' + address) || address
       },
 
-      addWatchOnlyAddress: addWatchOnlyAddress,
+      addWatchOnlyAddress,
 
-      createAccount: createAccount,
+      createAccount,
 
-      savePassphrases: savePassphrases,
+      savePassphrases,
 
-      getPassphrases: getPassphrases,
+      getPassphrases,
 
-      removeAccount: removeAccount,
+      removeAccount,
 
-      fetchAccount: fetchAccount,
+      fetchAccount,
 
-      fetchAccountAndForget: fetchAccountAndForget,
+      fetchAccountAndForget,
 
       // return a copy of the object, so the original can't be changed
       defaultFees: JSON.parse(JSON.stringify(self.defaultFees)),
 
-      getFees: getFees,
+      getFees,
 
-      getTransactions: getTransactions,
+      getTransactions,
 
-      getAllTransactions: getAllTransactions,
+      getAllTransactions,
 
-      getRangedTransactions: getRangedTransactions,
+      getRangedTransactions,
 
-      isValidAddress: isValidAddress,
+      isValidAddress,
 
-      verifyMessage: verifyMessage,
+      verifyMessage,
 
-      signMessage: signMessage,
+      signMessage,
 
-      signMessageWithLedger: signMessageWithLedger,
+      signMessageWithLedger,
 
-      createDiffVote: createDiffVote,
+      createDiffVote,
 
-      getVotedDelegates: getVotedDelegates,
+      getVotedDelegates,
 
-      getDelegate: getDelegate,
+      getDelegate,
 
-      getActiveDelegates: getActiveDelegates,
+      getActiveDelegates,
 
-      getDelegateByUsername: getDelegateByUsername,
+      getDelegateByUsername,
 
-      getSponsors: getSponsors,
+      getSponsors,
 
-      getTransactionLabel: getTransactionLabel,
+      getTransactionLabel,
 
-      createVirtual: createVirtual,
+      createVirtual,
 
-      setToFolder: setToFolder,
+      setToFolder,
 
-      deleteFolder: deleteFolder,
+      deleteFolder,
 
-      renameFolder: renameFolder,
+      renameFolder,
 
-      sanitizeDelegateName: sanitizeDelegateName,
+      sanitizeDelegateName,
 
-      formatTransaction: formatTransaction
+      formatTransaction
     }
   }
 })()

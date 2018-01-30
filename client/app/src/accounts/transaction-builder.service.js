@@ -2,9 +2,9 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
+    .service('transactionBuilderService', ['$timeout', '$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
 
-  function TransactionBuilderService ($q, networkService, accountService, ledgerService, gettextCatalog, utilityService) {
+  function TransactionBuilderService ($timeout, $q, networkService, accountService, ledgerService, gettextCatalog, utilityService) {
     const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
     function createTransaction (deferred, config, fee, createTransactionFunc, setAdditionalTransactionPropsOnLedger) {
@@ -25,12 +25,17 @@
         if (setAdditionalTransactionPropsOnLedger) {
           setAdditionalTransactionPropsOnLedger(transaction)
         }
-        ledgerService.signTransaction(config.ledger, transaction).then((result) => {
-          transaction.signature = result.signature
-          transaction.id = ark.crypto.getId(transaction)
-          deferred.resolve(transaction)
-        },
-        (error) => deferred.reject(error))
+        ledgerService.signTransaction(config.ledger, transaction)
+          .then(({ signature }) => {
+            transaction.signature = signature
+            transaction.id = ark.crypto.getId(transaction)
+            deferred.resolve(transaction)
+          })
+          .catch(error => {
+            console.error(error)
+            deferred.reject(error)
+          })
+
         return
       }
 
@@ -38,6 +43,7 @@
         deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
         return
       }
+
       deferred.resolve(transaction)
     }
 
@@ -70,6 +76,72 @@
                                                                   config.smartbridge,
                                                                   config.masterpassphrase,
                                                                   config.secondpassphrase))
+      })
+    }
+
+    /**
+     * Each transaction is expected to be `{ address, amount, smartbridge }`,
+     * where amount is expected to be in arktoshi
+     */
+    function createMultipleSendTransactions ({ publicKey, fromAddress, transactions, masterpassphrase, secondpassphrase, ledger }) {
+      const network = networkService.getNetwork()
+      const account = accountService.getAccount(fromAddress)
+
+      return new Promise((resolve, reject) => {
+        accountService.getFees(false).then(fees => {
+          const invalidAddress = transactions.find(t => {
+            return !ark.crypto.validateAddress(t.address, network.version)
+          })
+
+          if (invalidAddress) {
+            return reject(new Error(gettextCatalog.getString('The destination address ') + invalidAddress + gettextCatalog.getString(' is erroneous')))
+          }
+
+          const total = transactions.reduce((total, t) => total + t.amount + fees.send, 0)
+          if (total > account.balance) {
+            return reject(new Error(gettextCatalog.getString('Not enough ' + network.token + ' on your account ') + fromAddress))
+          }
+
+          const processed = Promise.all(
+            transactions.map(({ address, amount, smartbridge }, i) => {
+              return new Promise((resolve, reject) => {
+                const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
+
+                transaction.fee = fees.send
+                transaction.senderId = fromAddress
+
+                if (ledger) {
+                  $timeout(transaction => {
+                    delete transaction.signature
+                    transaction.senderPublicKey = publicKey
+
+                    // Wait a little just in case
+                    ledgerService.signTransaction(ledger, transaction)
+                      .then(({ signature }) => {
+                        transaction.signature = signature
+                        transaction.id = ark.crypto.getId(transaction)
+                        resolve(transaction)
+                      })
+                      .catch(error => {
+                        console.error(error)
+                        reject(error)
+                      })
+                  }, 2000 * i, true, transaction)
+                } else {
+                  if (ark.crypto.getAddress(transaction.senderPublicKey, network.version) !== fromAddress) {
+                    return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress))
+                  }
+
+                  resolve(transaction)
+                }
+              })
+            })
+          )
+
+          processed
+            .then(resolve)
+            .catch(reject)
+        })
       })
     }
 
@@ -124,13 +196,11 @@
     }
 
     return {
-      createSendTransaction: createSendTransaction,
-
-      createSecondPassphraseCreationTransaction: createSecondPassphraseCreationTransaction,
-
-      createDelegateCreationTransaction: createDelegateCreationTransaction,
-
-      createVoteTransaction: createVoteTransaction
+      createSendTransaction,
+      createMultipleSendTransactions,
+      createSecondPassphraseCreationTransaction,
+      createDelegateCreationTransaction,
+      createVoteTransaction
     }
   }
 })()

@@ -93,7 +93,7 @@ describe('transactionBuilderService', () => {
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
-    it('should have correct type', (done) => {
+    it('should have correct type', done => {
       const sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -102,7 +102,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should have correct amount', (done) => {
+    it('should have correct amount', done => {
       const sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -111,7 +111,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should have correct fee', (done) => {
+    it('should have correct fee', done => {
       const sendPromise = transactionBuilderService.createSendTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -120,7 +120,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should work with ledger', (done) => {
+    it('should work with ledger', done => {
       const config = createValidConfigObject()
       config.ledger = true
       const sendPromise = transactionBuilderService.createSendTransaction(config)
@@ -133,7 +133,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should fail when to address is invalid', (done) => {
+    it('should fail when to address is invalid', done => {
       const config = createValidConfigObject()
       config.toAddress += 'B'
       const sendPromise = transactionBuilderService.createSendTransaction(config)
@@ -143,7 +143,7 @@ describe('transactionBuilderService', () => {
       }, () => done())
     })
 
-    it('should fail when when passphrase is invalid', (done) => {
+    it('should fail when when passphrase is invalid', done => {
       const config = createValidConfigObject()
       config.masterpassphrase = 'C'
       const sendPromise = transactionBuilderService.createSendTransaction(config)
@@ -153,7 +153,7 @@ describe('transactionBuilderService', () => {
       }, () => done())
     })
 
-    it('should fail when balance is too low', (done) => {
+    it('should fail when balance is too low', done => {
       const config = createValidConfigObject()
       config.amount = from.balance - 1
       const sendPromise = transactionBuilderService.createSendTransaction(config)
@@ -168,7 +168,7 @@ describe('transactionBuilderService', () => {
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
-    it('should have correct type', (done) => {
+    it('should have correct type', done => {
       const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -177,7 +177,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should have correct fee', (done) => {
+    it('should have correct fee', done => {
       const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -186,7 +186,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should fail when balance is too low', (done) => {
+    it('should fail when balance is too low', done => {
       restoreGetAccount()
       mockGetAccount(fees.secondsignature - 1)
       const sendPromise = transactionBuilderService.createSecondPassphraseCreationTransaction(createValidConfigObject())
@@ -204,7 +204,7 @@ describe('transactionBuilderService', () => {
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
-    it('should have correct type', (done) => {
+    it('should have correct type', done => {
       const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -213,7 +213,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should have correct fee', (done) => {
+    it('should have correct fee', done => {
       const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -222,7 +222,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should fail when balance is too low', (done) => {
+    it('should fail when balance is too low', done => {
       restoreGetAccount()
       mockGetAccount(fees.delegate - 1)
       const sendPromise = transactionBuilderService.createDelegateCreationTransaction(createValidConfigObject())
@@ -240,7 +240,7 @@ describe('transactionBuilderService', () => {
     beforeEach(() => mockGetAccount(from.balance))
     afterEach(() => restoreGetAccount())
 
-    it('should have correct type', (done) => {
+    it('should have correct type', done => {
       const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -249,7 +249,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should have correct fee', (done) => {
+    it('should have correct fee', done => {
       const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
 
       sendPromise.then(transaction => {
@@ -258,7 +258,7 @@ describe('transactionBuilderService', () => {
       }, err => done(err)).catch(err => done(err))
     })
 
-    it('should fail when balance is too low', (done) => {
+    it('should fail when balance is too low', done => {
       restoreGetAccount()
       mockGetAccount(fees.vote - 1)
       const sendPromise = transactionBuilderService.createVoteTransaction(createValidConfigObject())
@@ -271,7 +271,7 @@ describe('transactionBuilderService', () => {
       }).catch(err => done(err))
     })
 
-    it('should work with ledger (additional field recipientId is correct)', (done) => {
+    it('should work with ledger (additional field recipientId is correct)', done => {
       const config = createValidConfigObject()
       config.ledger = true
       const sendPromise = transactionBuilderService.createVoteTransaction(config)
