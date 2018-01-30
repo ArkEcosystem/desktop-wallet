@@ -84,6 +84,7 @@
                   <span translate>
                     It is possible to use a CSV file to send {{network.symbol}} to a list of addresses. Each of these transactions would have its own fee until the next version of the protocol. Currently is limited to {{maxTransactionsPerFile}} transactions per file. The format is: <pre>Address,Amount,Smartbridge</pre>
                   </span>
+                  <span translate ng-if="data.ledger">Remember to confirm each transaction on your Ledger.</span>
                 </md-card-title-text>
               </md-card-title>
             </md-card>
