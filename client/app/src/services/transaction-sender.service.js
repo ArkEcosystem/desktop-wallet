@@ -19,7 +19,8 @@
      * TODO because currently it depends on the original implementation of AccountController too
      */
     const openDialogIn = ($scope, accountCtrl, selectedAccount, uriScheme) => {
-      $scope.maxTransactionsPerFile = 5
+
+      $scope.maxTransactionsPerFile = 10
 
       const passphrases = accountService.getPassphrases(selectedAccount.address)
 
@@ -32,7 +33,7 @@
         const fs = require('fs')
         fs.readFile(filePath, 'utf8', (err, data) => {
           if (err) {
-            toastService.error('Unable to load file' + ': ' + err)
+            toastService.error(`Unable to load file: ${err}`)
           } else {
             const parse = require('csv-parse')
             parse(data, { quote: null, to: $scope.maxTransactionsPerFile }, (err, transactionsData) => {
@@ -102,6 +103,7 @@
           data.smartbridge = $scope.data.smartbridge
 
           prepareTransaction(selectedAccount, data)
+
         } else if (tab === 'multiple') {
           parseTransactionsFile($scope.data.file, transactionsData => {
             data.transactions = processTransactionsData(transactionsData)

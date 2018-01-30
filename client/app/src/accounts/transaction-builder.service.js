@@ -2,9 +2,9 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('transactionBuilderService', ['$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
+    .service('transactionBuilderService', ['$timeout', '$q', 'networkService', 'accountService', 'ledgerService', 'gettextCatalog', 'utilityService', TransactionBuilderService])
 
-  function TransactionBuilderService ($q, networkService, accountService, ledgerService, gettextCatalog, utilityService) {
+  function TransactionBuilderService ($timeout, $q, networkService, accountService, ledgerService, gettextCatalog, utilityService) {
     const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
     function createTransaction (deferred, config, fee, createTransactionFunc, setAdditionalTransactionPropsOnLedger) {
@@ -25,12 +25,16 @@
         if (setAdditionalTransactionPropsOnLedger) {
           setAdditionalTransactionPropsOnLedger(transaction)
         }
-        ledgerService.signTransaction(config.ledger, transaction).then(result => {
-          transaction.signature = result.signature
-          transaction.id = ark.crypto.getId(transaction)
-          deferred.resolve(transaction)
-        },
-        deferred.reject)
+        ledgerService.signTransaction(config.ledger, transaction)
+          .then(({ signature }) => {
+            transaction.signature = signature
+            transaction.id = ark.crypto.getId(transaction)
+            deferred.resolve(transaction)
+          })
+          .catch(error => {
+            console.error(error);
+            deferred.reject(error)
+          })
 
         return
       }
@@ -76,7 +80,7 @@
     }
 
     /**
-     * Each transaction is expected to be ``{ address, amount, smartbridge }`,
+     * Each transaction is expected to be `{ address, amount, smartbridge }`,
      * where amount is expected to be in arktoshi
      */
     function createMultipleSendTransactions ({ publicKey, fromAddress, transactions, masterpassphrase, secondpassphrase, ledger }) {
@@ -99,7 +103,7 @@
           }
 
           const processed = Promise.all(
-            transactions.map(({ address, amount, smartbridge }) => {
+            transactions.map(({ address, amount, smartbridge }, i) => {
               return new Promise((resolve, reject) => {
                 const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
 
@@ -107,17 +111,23 @@
                 transaction.senderId = fromAddress
 
                 if (ledger) {
-                  delete transaction.signature
-                  transaction.senderPublicKey = publicKey
+                  $timeout(transaction => {
+                    delete transaction.signature
+                    transaction.senderPublicKey = publicKey
 
                   // Wait a little just in case
-                  setTimeout(() => {
-                    ledgerService.signTransaction(ledger, transaction).then(result => {
-                      transaction.signature = result.signature
-                      transaction.id = ark.crypto.getId(transaction)
-                      resolve(transaction)
-                    }, reject)
-                  }, 500)
+                    ledgerService.signTransaction(ledger, transaction)
+                      .then(({ signature }) => {
+                        transaction.signature = signature
+                        transaction.id = ark.crypto.getId(transaction)
+                        resolve(transaction)
+                      })
+                      .catch(error => {
+                        console.error(error);
+                        reject(error)
+                      })
+                  }, 2000 * i, true, transaction)
+
                 } else {
                   if (ark.crypto.getAddress(transaction.senderPublicKey, network.version) !== fromAddress) {
                     return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress))
