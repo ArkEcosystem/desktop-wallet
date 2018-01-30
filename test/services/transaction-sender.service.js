@@ -20,7 +20,8 @@ describe('transactionSenderService', () => {
 
     let mdDialogMock,
       mdToastMock,
-      getTextCatalogMock
+      getTextCatalogMock,
+      gettextMock
 
     const transactionBuilderServiceMock = {
       createSendTransaction: sinon.stub()
@@ -89,6 +90,7 @@ describe('transactionSenderService', () => {
           getString: sinon.stub().returns('!'),
           setCurrentLanguage: sinon.stub()
         }
+        gettextMock = sinon.stub().returnsArg(0)
 
         // provide mocks to angular controller
         $provide.value('accountService', accountServiceMock)
@@ -105,6 +107,7 @@ describe('transactionSenderService', () => {
         $provide.value('$mdDialog', mdDialogMock)
         $provide.value('$mdToast', mdToastMock)
         $provide.value('gettextCatalog', getTextCatalogMock)
+        $provide.value('gettext', gettextMock)
       })
 
       module('arkclient.services', $provide => {

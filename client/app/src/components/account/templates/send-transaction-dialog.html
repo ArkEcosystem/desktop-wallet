@@ -1,14 +1,14 @@
 <md-dialog aria-label="{{'Send'|translate}} {{network.token}}" ng-cloak md-theme="ac.currentTheme">
   <md-toolbar>
     <div class="md-toolbar-tools">
-			<h2 ng-if="data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromLabel}} ({{data.fromAddress}})</h2>
-			<h2 ng-if="! data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
+      <h2 ng-if="data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromLabel}} ({{data.fromAddress}})</h2>
+      <h2 ng-if="! data.fromLabel"><span>{{'Send'|translate}} {{network.token}} {{'from'|translate}}</span>&nbsp;{{data.fromAddress}}</h2>
 
-			<span flex></span>
+      <span flex></span>
 
-			<md-button class="md-icon-button" ng-click="cancel()">
-				<md-icon md-font-library="material-icons">clear</md-icon>
-			</md-button>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-font-library="material-icons">clear</md-icon>
+      </md-button>
     </div>
   </md-toolbar>
 
@@ -23,25 +23,43 @@
           <form name="uniqueForm" class="md-dialog-content">
 
             <div layout="row" flex layout-align="start start">
-              <md-input-container flex="5">
+              <md-input-container flex="5" ng-if="!receiverValidation.resolvedAccount || !receiverValidation.resolvedAccount.icon">
                 <qr-scanner input-callback-func="onQrCodeForToAddressScanned(qr)"></qr-scanner>
               </md-input-container>
 
-              <md-autocomplete flex="95" md-selected-item="data.selectedAddress" md-selected-item-change="selectedContactChange(contact)" md-search-text-change="searchTextChange(searchText)" md-search-text="searchText"
-                md-items="contact in querySearch(searchText)" md-item-text="(contact.name || contact.username) ? ((contact.name || contact.username) + ' - ' + contact.address) : contact.address" md-min-length="0" md-autofocus="true" ng-attr-md-floating-label="{{'Type an address or a name'|translate}}" tabIndex="1">
+              <md-icon flex="5" md-font-library="material-icons" ng-if="receiverValidation.resolvedAccount && receiverValidation.resolvedAccount.icon">
+                {{receiverValidation.resolvedAccount.icon}}
+                <md-tooltip>
+                    {{receiverValidation.resolvedAccount.type | translate}}
+                </md-tooltip>
+              </md-icon>
+
+              <md-autocomplete flex="95"
+                               tabIndex="1"
+                               md-selected-item="data.selectedAddress"
+                               md-selected-item-change="selectedContactChange(contact)"
+                               md-search-text-change="searchTextChange(searchText)"
+                               md-search-text="searchText"
+                               md-items="contact in searchContactOrAccount(searchText)"
+                               md-item-text="contact.name ? (contact.name + ' - ' + contact.address) : contact.address"
+                               md-min-length="0"
+                               md-autofocus="true"
+                               ng-attr-md-floating-label="{{'Type an address or a name'|translate}}"
+                               ng-blur="onAddressFieldBlur()">
                 <md-item-template>
                   <span class="item-title">
-                      <span ng-if="contact.name || contact.username"> {{contact.name || contact.username}} - </span>
-                      <span> {{contact.address}} </span>
+                      <md-icon md-font-library="material-icons">{{contact.icon}}</md-icon>
+                      <span ng-if="contact.name"> {{contact.name}} -</span>
+                      <span>{{contact.address}}</span>
                   </span>
                 </md-item-template>
               </md-autocomplete>
             </div>
 
-						<div layout="row" flex layout-align="start center" ng-if="receiverValidation.failType">
-							<md-icon flex="5" md-font-library="material-icons">{{receiverValidation.failType}}</md-icon>
-							<div flex="95">{{receiverValidation.message}}</div>
-						</div>
+            <div layout="row" flex layout-align="start center" ng-if="receiverValidation.failType">
+              <md-icon flex="5" md-font-library="material-icons">{{receiverValidation.failType}}</md-icon>
+              <div flex="95">{{receiverValidation.message}}</div>
+            </div>
 
             <div layout="row" layout-align="space-between start">
               <md-input-container class="md-block" style="width: 100%">
@@ -115,7 +133,10 @@
     </div>
     <span flex></span>
 
-    <md-button type="submit" ng-click="submit(tab)" ng-disabled="(tab == 'unique' && uniqueForm.$invalid || receiverValidation.failType === 'error') || (tab == 'multiple' && multipleForm.$invalid)" tabIndex="6">
+    <md-button type="submit"
+               ng-click="submit(tab)"
+               ng-disabled="(tab == 'unique' && uniqueForm.$invalid || receiverValidation.failType === 'error' || !data.toAddress) || (tab == 'multiple' && multipleForm.$invalid)"
+               tabIndex="6">
       <translate ng-if="!data.ledger">Next</translate>
       <translate ng-if="data.ledger">Sign with Ledger</translate>
     </md-button>

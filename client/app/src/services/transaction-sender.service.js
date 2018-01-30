@@ -167,29 +167,47 @@
       /* Auto-complete */
 
       let receiverValidationCycle = 0
-      function validateReceiverAddress (address) {
+      function validateReceiverAddress (input, exactMatch) {
         // failType specifies the "fail level", but is at the same time, also the icon name
         $scope.receiverValidation = {failType: null, message: null}
+        $scope.receiverValidation.resolvedAccount = null
 
-        if (!address) {
+        if (!input) {
           return
         }
 
-        if (!accountService.isValidAddress(address)) {
+        const contacts = $scope.searchContactOrAccount(input, exactMatch)
+
+        if (!accountService.isValidAddress(input)) {
+          if (!exactMatch && contacts.length) { // don't show an error if the input is a potential contact
+            return
+          } else if (exactMatch && contacts.length === 1) { // return the contact if we got an exact match
+            return contacts[0]
+          } else if (exactMatch && contacts.length > 1) {
+            $scope.receiverValidation.message = gettextCatalog.getString('Ambiguous input! Your name matches multiple contacts or wallets!')
+            $scope.receiverValidation.failType = 'error'
+            return
+          }
+
           $scope.receiverValidation.message = gettextCatalog.getString('The address is not valid!')
           $scope.receiverValidation.failType = 'error'
           return
         }
 
-        const currentAccount = accountCtrl.selected
-        if (currentAccount && currentAccount.address === address) {
+        // if we are here, it means we have a real address and not a contact name anymore
+        // we set the resolved account so we can display an appropriate icon, so the users knows what type of address this is
+        if (contacts.length === 1) {
+          $scope.receiverValidation.resolvedAccount = contacts[0]
+        }
+
+        if (selectedAccount && selectedAccount.address === input) {
           $scope.receiverValidation.message = gettextCatalog.getString('This address is your own address. Are you sure you want to send to your own address?')
           $scope.receiverValidation.failType = 'warning'
           return
         }
 
         const currentCycle = ++receiverValidationCycle
-        accountService.getTransactions(address, 0, 1).then(txs => {
+        accountService.getTransactions(input, 0, 1).then(txs => {
           // if this check is not true it means that the address has already been changed in the meantime and we can
           // ignore the result, also if a failType is already set, we return, because we don't want to overwrite a warning or error
           if (currentCycle !== receiverValidationCycle || txs.length || $scope.receiverValidation.failType) {
@@ -200,31 +218,13 @@
           $scope.receiverValidation.failType = 'info'
         })
 
-        neoApiService.doesAddressExist(address).then(exists => {
+        neoApiService.doesAddressExist(input).then(exists => {
           if (currentCycle !== receiverValidationCycle || !exists) {
             return
           }
 
           $scope.receiverValidation.message = gettextCatalog.getString('It looks like this is a \'NEO\' address. Are you sure it\'s correct?')
           $scope.receiverValidation.failType = 'warning'
-        })
-      }
-
-      $scope.querySearch = text => {
-        text = text.toLowerCase()
-
-        const accounts = accountCtrl.getAllAccounts()
-        let contacts = storageService.get('contacts') || []
-
-        contacts = contacts.concat(accounts).sort((a, b) => {
-          if (a.name && b.name) return a.name < b.name
-          else if (a.username && b.username) return a.username < b.username
-          else if (a.username && b.name) return a.username < b.name
-          else if (a.name && b.username) return a.name < b.username
-        })
-
-        return contacts.filter(account => {
-          return (account.address.toLowerCase().indexOf(text) > -1) || (account.name && (account.name.toLowerCase().indexOf(text) > -1))
         })
       }
 
@@ -242,6 +242,40 @@
           $scope.data.toAddress = contact.address
           validateReceiverAddress(contact.address)
         }
+      }
+
+      $scope.onAddressFieldBlur = () => {
+        const address = $scope.data.toAddress && $scope.data.toAddress.hasOwnProperty('address')
+          ? $scope.data.toAddress.address
+          : $scope.data.toAddress
+
+        if (!address) {
+          return
+        }
+
+        // we check if the input is a valid address or a non-ambiguous contact name
+        // if it's a contact name, we resolve it to an address
+        const contact = validateReceiverAddress(address, true)
+        if (contact && contact.address) {
+          // setting the selectedAddress will trigger 'selectedContactChange'
+          // which will then do a new validation again
+          $scope.data.selectedAddress = contact
+        }
+      }
+
+      $scope.searchContactOrAccount = (text, exactMatch) => {
+        let contacts = accountCtrl.searchContactOrAccount(text, exactMatch)
+        if (!contacts.length && !exactMatch) {
+          // in case we didn't get a result we check if the inputed text is in the format "<name> - <address>"
+          // if that's the case we split the input and if it's a valid address we search again
+          // we do this because resolved / clicked contacts are in this format in the textbox
+          const nameAndAddress = (text || '').split('-').map(t => t.trim())
+          const address = nameAndAddress[nameAndAddress.length - 1]
+          if (accountService.isValidAddress(address)) {
+            contacts = accountCtrl.searchContactOrAccount(address, true)
+          }
+        }
+        return contacts
       }
 
       dialogService.open({
