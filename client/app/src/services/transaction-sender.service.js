@@ -96,7 +96,7 @@
 
         dialogService.hide()
 
-        if (tab === 'unique') {
+        if (tab === 'single') {
           data.toAddress = $scope.data.toAddress.trim()
           data.amount = Number(utilityService.arkToArktoshi(parseFloat($scope.data.amount), 0))
           data.smartbridge = $scope.data.smartbridge
@@ -113,7 +113,7 @@
         }
       }
 
-      $scope.tab = 'unique'
+      $scope.tab = 'single'
       $scope.data = {
         ledger: selectedAccount.ledger,
         fromAddress: selectedAccount ? selectedAccount.address : '',

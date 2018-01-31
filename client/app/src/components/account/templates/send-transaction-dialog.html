@@ -15,12 +15,12 @@
   <md-dialog-content>
     <md-tabs md-dynamic-height ng-keyup="$event.keyCode == 13 && submit(tab)">
 
-      <md-tab md-on-select="selectTab('unique')">
+      <md-tab md-on-select="selectTab('single')">
         <md-tab-label>
-          <translate>Unique</translate>
+          <translate>Single</translate>
         </md-tab-label>
         <md-tab-body>
-          <form name="uniqueForm" class="md-dialog-content">
+          <form name="singleForm" class="md-dialog-content">
 
             <div layout="row" flex layout-align="start start">
               <md-input-container flex="5" ng-if="!receiverValidation.resolvedAccount || !receiverValidation.resolvedAccount.icon">
@@ -140,7 +140,7 @@
 
     <md-button type="submit"
                ng-click="submit(tab)"
-               ng-disabled="(tab == 'unique' && uniqueForm.$invalid || receiverValidation.failType === 'error' || !data.toAddress) || (tab == 'multiple' && multipleForm.$invalid)"
+               ng-disabled="(tab == 'single' && singleForm.$invalid || receiverValidation.failType === 'error' || !data.toAddress) || (tab == 'multiple' && multipleForm.$invalid)"
                tabIndex="6">
       <translate ng-if="!data.ledger">Next</translate>
       <translate ng-if="data.ledger">Sign with Ledger</translate>
