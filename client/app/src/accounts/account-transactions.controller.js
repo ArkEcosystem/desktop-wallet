@@ -84,11 +84,11 @@
 
       const mergeTransactions = [...transactions, ...vm.transactions]
       // remove duplicates
-      const uniqueTransactions = mergeTransactions.filter((obj, pos, arr) => {
+      const singleTransactions = mergeTransactions.filter((obj, pos, arr) => {
         return arr.map(obj => obj['id']).indexOf(obj['id']) === pos
       }).sort((a, b) => b.timestamp - a.timestamp)
 
-      vm.transactions = uniqueTransactions
+      vm.transactions = singleTransactions
       storageService.set(`transactions-${vm.address}`, vm.transactions, true)
     }
   }

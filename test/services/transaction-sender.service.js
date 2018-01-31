@@ -125,8 +125,8 @@ describe('transactionSenderService', () => {
       transactionBuilderServiceMock.createSendTransaction.reset()
     })
 
-    context('unique transaction', () => {
-      const tab = 'unique'
+    context('single transaction', () => {
+      const tab = 'single'
 
       const fillValidForm = ({ amount }) => {
         $scope[`${tab}Form`] = { $valid: true }
