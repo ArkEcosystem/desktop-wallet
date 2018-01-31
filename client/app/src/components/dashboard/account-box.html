@@ -46,7 +46,7 @@
 
   <md-content style="min-height: 70px;" flex>
     <md-list md-no-ink>
-      <md-list-item ng-click="$ctrl.ac.selectLedgerAccount()" ng-if="$ctrl.ac.ledger.connected" ng-if="$ctrl.selectedAccountType === $ctrl.myAccountsType">
+      <md-list-item ng-click="$ctrl.ac.selectLedgerAccount()" ng-if="$ctrl.ac.ledger.connected && ctrl.selectedAccountType === $ctrl.myAccountsType">
         <span>
           <md-icon md-svg-icon="ledger"></md-icon>
           Ledger Nano S
@@ -61,9 +61,7 @@
                     ng-repeat="it in $ctrl.selectedAccountType.getDisplayAccounts() track by $index"
                     ng-if="$ctrl.selectedAccountType === $ctrl.myAccountsType">
         <span ng-class="{'selected' : it.address === $ctrl.ac.selected.address }">
-          <md-icon ng-if="!it.delegate&&!it.cold" md-font-library="material-icons">account_balance</md-icon>
-          <md-icon ng-if="!it.delegate&&it.cold" md-font-library="material-icons">cloud_off</md-icon>
-          <md-icon ng-if="it.delegate" md-font-library="material-icons">security</md-icon>
+          <md-icon md-font-library="material-icons">{{ $ctrl.ac.getAccountIcon(it) }}</md-icon>
           {{it.username || it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
         </span>
         <span class="md-secondary">

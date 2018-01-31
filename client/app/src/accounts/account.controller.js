@@ -326,6 +326,18 @@
       }
     )
 
+    self.getAccountIcon = (account) => {
+      if (account.delegate) {
+        return 'security'
+      }
+
+      if (!account.cold) {
+        return 'account_balance'
+      }
+
+      return 'cloud_off'
+    }
+
     // get themes colors to show in manager appearance
     function reloadThemes () {
       const currentThemes = $mdThemingProvider.$get().THEMES
@@ -704,7 +716,7 @@
 
       const accounts = self.getAllAccounts()
         .map(acc => {
-          return {name: acc.username, address: acc.address, type: gettext('Account'), icon: 'account_balance_wallet'}
+          return {name: acc.username, address: acc.address, type: gettext('Account'), icon: self.getAccountIcon(acc)}
         })
       let contacts = (storageService.get('contacts') || [])
         .map(c => {
