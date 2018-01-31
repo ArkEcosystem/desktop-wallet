@@ -61,7 +61,7 @@
                     ng-repeat="it in $ctrl.selectedAccountType.getDisplayAccounts() track by $index"
                     ng-if="$ctrl.selectedAccountType === $ctrl.myAccountsType">
         <span ng-class="{'selected' : it.address === $ctrl.ac.selected.address }">
-          <md-icon md-font-library="material-icons">{{ $ctrl.ac.getAccountIcon(it) }}</md-icon>
+          <md-icon md-font-library="material-icons">{{ it.icon }}</md-icon>
           {{it.username || it.address}}  <span ng-if="it.delegate">({{it.delegate.rate}})</span>
         </span>
         <span class="md-secondary">

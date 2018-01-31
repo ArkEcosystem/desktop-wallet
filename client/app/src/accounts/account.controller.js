@@ -326,7 +326,7 @@
       }
     )
 
-    self.getAccountIcon = (account) => {
+    function getAccountIcon (account) {
       if (account.delegate) {
         return 'security'
       }
@@ -445,6 +445,9 @@
         return !!account.virtual
       }).sort((a, b) => {
         return b.balance - a.balance
+      }).map(account => {
+        account.icon = getAccountIcon(account)
+        return account
       })
     }
 
@@ -716,7 +719,7 @@
 
       const accounts = self.getAllAccounts()
         .map(acc => {
-          return {name: acc.username, address: acc.address, type: gettext('Account'), icon: self.getAccountIcon(acc)}
+          return {name: acc.username, address: acc.address, type: gettext('Account'), icon: acc.icon}
         })
       let contacts = (storageService.get('contacts') || [])
         .map(c => {
