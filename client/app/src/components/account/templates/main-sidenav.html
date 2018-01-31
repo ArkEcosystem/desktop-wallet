@@ -20,7 +20,7 @@
   </md-list-item>
   <md-list-item md-ink-ripple="0" md-colors="{background: (it.address === $ctrl.ul.selected.address ? 'primary' : 'background')}" ng-click="$ctrl.ul.selectAccount(it)" ng-repeat="it in $ctrl.ul.myAccounts() track by $index">
     <span style="white-space: nowrap;">
-          <md-icon md-font-library="material-icons">{{ $ctrl.ul.getAccountIcon(it) }}</md-icon>
+          <md-icon md-font-library="material-icons">{{ it.icon }}</md-icon>
           {{it.address|accountLabel}}
         </span>
   </md-list-item>
