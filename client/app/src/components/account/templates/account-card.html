@@ -66,7 +66,7 @@
       <span class="md-subhead description">
         <translate class="balance">Balance</translate> {{$ctrl.ul.network.symbol}} {{$ctrl.ul.selected.balance | convertToArkValue}}
         {{$ctrl.ul.network.cmcTicker}}
-        <md-button ng-click="$ctrl.ul.selectNextCurrency()" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance | convertToArkValue | amountToCurrency:$ctrl:true | formatCurrency:$ctrl.ul:true }}</md-button>
+        <md-button ng-click="$ctrl.ul.selectCurrency($event)" ng-show="$ctrl.ul.showExchangeRate()">{{$ctrl.ul.selected.balance | convertToArkValue | amountToCurrency:$ctrl:true | formatCurrency:$ctrl.ul:true }}</md-button>
         <md-button class="md-small" ng-click="$ctrl.ul.toggleBitcoinCurrency()" ng-hide="$ctrl.ul.currency.name === 'btc'" ng-if="$ctrl.accountCtrl.connectedPeer.market.available_supply">
           <md-tooltip md-direction="top">
             {{'Toggle' | translate}} {{$ctrl.ul.toggleCurrency.name | uppercase}}

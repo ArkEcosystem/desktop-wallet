@@ -54,7 +54,8 @@ describe('AccountController', () => {
       }
       storageServiceMock = {
         get: sinon.stub().returns(['test_contact']),
-        getContext () {}
+        getContext () {},
+        set () {}
       }
 
       ledgerServiceMock = {}
@@ -181,6 +182,48 @@ describe('AccountController', () => {
       it('is inactive (forced)', () => {
         ctrl.toggleBitcoinCurrency(false)
         expect(ctrl.btcValueActive).to.equal(false)
+      })
+    })
+  })
+
+  // Select Currency
+  describe('test select currency', () => {
+    context('currency is valid', () => {
+      it('currency is valid', () => {
+        expect(ctrl.currency).to.not.be.undefined
+        expect(ctrl.currencies).to.not.be.undefined
+      })
+    })
+
+    context('click', () => {
+      beforeEach(() => {
+        ctrl.currency = ctrl.currencies[0]
+      })
+
+      it('no shift', () => {
+        ctrl.selectCurrency({shiftKey: false})
+        expect(ctrl.currency).to.equal(ctrl.currencies[1])
+      })
+
+      it('shift', () => {
+        ctrl.selectCurrency({shiftKey: true})
+        expect(ctrl.currency).to.equal(ctrl.currencies[ctrl.currencies.length - 1])
+      })
+
+      it('no shift then shift', () => {
+        let startCurrency = ctrl.currency
+        ctrl.selectCurrency({shiftKey: false})
+        expect(ctrl.currency).to.not.equal(startCurrency)
+        ctrl.selectCurrency({shiftKey: true})
+        expect(ctrl.currency).to.equal(startCurrency)
+      })
+
+      it('shift then no shift', () => {
+        let startCurrency = ctrl.currency
+        ctrl.selectCurrency({shiftKey: true})
+        expect(ctrl.currency).to.not.equal(startCurrency)
+        ctrl.selectCurrency({shiftKey: false})
+        expect(ctrl.currency).to.equal(startCurrency)
       })
     })
   })
