@@ -10,50 +10,50 @@
   </md-toolbar>
   <md-content class="md-padding">
     <md-tabs md-dynamic-height md-selected="0" md-stretch-tabs>
-      <md-tab ng-repeat="network in send.networkKeys" label="{{network}}">
+      <md-tab ng-repeat="networkName in send.networkKeys" label="{{networkName}}">
         <div>
           <md-input-container md-no-float class="md-block">
             <label translate>Token name</label>
-            <input ng-model="send.networks[network].token" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].token" type="text" ng-required="false">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>Symbol</label>
-            <input ng-model="send.networks[network].symbol" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].symbol" type="text" ng-required="false">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>Address version</label>
-            <input ng-model="send.networks[network].version" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].version" type="text" ng-required="false">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>Nethash</label>
-            <input ng-model="send.networks[network].nethash" type="text" ng-required="true">
+            <input ng-model="send.networks[networkName].nethash" type="text" ng-required="true">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>SLIP 44</label>
-            <input ng-model="send.networks[network].slip44" type="text" ng-required="true">
+            <input ng-model="send.networks[networkName].slip44" type="text" ng-required="true">
           </md-input-container>
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm="80">
               <label translate>Seed Server</label>
-              <input ng-model="send.networks[network].peerseed" type="text" ng-required="true">
+              <input ng-model="send.networks[networkName].peerseed" type="text" ng-required="true">
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm="20">
-              <md-switch class="md-secondary" ng-model="send.networks[network].forcepeer" aria-label="Force">
+              <md-switch class="md-secondary" ng-model="send.networks[networkName].forcepeer" aria-label="Force">
                 <translate>Force?</translate>
               </md-switch>
             </md-input-container>
           </div>
           <md-input-container class="md-block">
             <label translate>Explorer</label>
-            <input ng-model="send.networks[network].explorer" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].explorer" type="text" ng-required="false">
           </md-input-container>
-          <md-input-container class="md-block" ng-hide="network === 'mainnet'">
+          <md-input-container class="md-block" ng-hide="networkName === 'mainnet'">
             <label translate>Coin Market Cap Ticker</label>
-            <input ng-model="send.networks[network].cmcTicker" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].cmcTicker" type="text" ng-required="false">
           </md-input-container>
         </div>
         <md-dialog-actions layout="row" style="padding-left: 10px">
-          <md-button ng-click="send.removeNetwork(network)" class="md-raised md-warn" ng-disabled="network == 'mainnet'">
+          <md-button ng-if="!send.networks[networkName].isUnsaved" ng-click="send.removeNetwork(networkName)" class="md-raised md-warn" ng-disabled="networkName == 'mainnet'">
             <translate>Remove</translate>
           </md-button>
           <span flex></span>
@@ -89,7 +89,7 @@
         </md-input-container>
         <md-dialog-actions layout="row">
           <md-button ng-click="send.createNetwork()" class="md-primary md-raised">
-            <translate>Create</translate>
+            <translate>Next</translate>
           </md-button>
           <md-button ng-click="send.cancel()" style="margin-right:20px;">
             <translate>Cancel</translate>
