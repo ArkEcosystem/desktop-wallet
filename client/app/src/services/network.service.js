@@ -51,10 +51,9 @@
     }
 
     function createNetwork (data) {
-      const n = storageService.getGlobal('networks')
-      let newnetwork = data
+      const networks = storageService.getGlobal('networks')
       const deferred = $q.defer()
-      if (n[data.name]) {
+      if (networks[data.name]) {
         deferred.reject("Network name '" + data.name + "' already taken, please choose another one")
       } else {
         $http({
@@ -63,14 +62,13 @@
           timeout: 5000
         }).then(
           (resp) => {
-            newnetwork = resp.data.network
-            newnetwork.forcepeer = data.forcepeer
-            newnetwork.peerseed = data.peerseed
-            newnetwork.slip44 = 1 // default to testnet slip44
-            newnetwork.cmcTicker = data.cmcTicker
-            n[data.name] = newnetwork
-            storageService.setGlobal('networks', n)
-            deferred.resolve(n[data.name])
+            let newNetwork = resp.data.network
+            newNetwork.isUnsaved = true
+            newNetwork.forcepeer = data.forcepeer
+            newNetwork.peerseed = data.peerseed
+            newNetwork.slip44 = 1 // default to testnet slip44
+            newNetwork.cmcTicker = data.cmcTicker
+            deferred.resolve({name: data.name, network: newNetwork})
           },
           (resp) => {
             deferred.reject('Cannot connect to peer to autoconfigure the network')
