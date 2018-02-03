@@ -1230,16 +1230,13 @@
     function manageNetworks () {
       let networks = networkService.getNetworks()
 
-      function save () {
-        // these are not needed as the createNetwork now rerender automatically
+      function save (networkName) {
         $mdDialog.hide()
-        for (const networkName in $scope.send.networks) {
-          const network = $scope.send.networks[networkName]
-          delete network.isUnsaved
-          networkService.setNetwork(networkName, network)
-          self.listNetworks = networkService.getNetworks()
-        }
-      // window.location.reload()
+
+        const network = $scope.send.networks[networkName]
+        delete network.isUnsaved
+        networkService.setNetwork(networkName, network)
+        self.listNetworks = networkService.getNetworks()
       }
 
       function refreshTabs (newNetwork) {
