@@ -231,7 +231,7 @@
       }
 
       $scope.searchTextChange = text => {
-        $scope.data.toAddress = { address: text }
+        $scope.data.toAddress = text
         validateReceiverAddress(text)
       }
 
@@ -243,17 +243,13 @@
       }
 
       $scope.onAddressFieldBlur = () => {
-        const address = $scope.data.toAddress && $scope.data.toAddress.hasOwnProperty('address')
-          ? $scope.data.toAddress.address
-          : $scope.data.toAddress
-
-        if (!address) {
+        if (!$scope.data.toAddress) {
           return
         }
 
         // we check if the input is a valid address or a non-ambiguous contact name
         // if it's a contact name, we resolve it to an address
-        const contact = validateReceiverAddress(address, true)
+        const contact = validateReceiverAddress($scope.data.toAddress, true)
         if (contact && contact.address) {
           // setting the selectedAddress will trigger 'selectedContactChange'
           // which will then do a new validation again
