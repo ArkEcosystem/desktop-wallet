@@ -1,6 +1,9 @@
 ![ARK-DESKTOP](https://i.imgur.com/eZPrrCQ.png)
 
-[![Build Status](https://travis-ci.org/ArkEcosystem/ark-desktop.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop)
+[![Build Status](https://travis-ci.org/ArkEcosystem/ark-desktop.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop?logo=travis)
+![Github Latest Release](https://img.shields.io/github/release/ArkEcosystem/ark-desktop.svg)
+![Github Downloads](https://img.shields.io/github/downloads/ArkEcosystem/ark-desktop/latest/total.svg?logo=github)
+![Gitter Room](https://img.shields.io/gitter/room/ark-developers/Lobby.svg?logo=gitter-white&colorB=e53467)
 
 ## Pinned: Help us with translations
 Collaborate with other translators on our OneSky project and help us get wallet translated in other languages  http://osjc1wl.oneskyapp.com/collaboration/project?id=95031
