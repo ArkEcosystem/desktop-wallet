@@ -469,13 +469,20 @@
       $mdMenuOpen(ev)
     }
 
-    self.selectNextCurrency = function () {
+    self.selectCurrency = function ($event) {
       self.toggleBitcoinCurrency(false)
       const currenciesNames = self.currencies.map((x) => {
         return x.name
       })
       const currencyIndex = currenciesNames.indexOf(self.currency.name)
-      const newIndex = currencyIndex === currenciesNames.length - 1 ? 0 : currencyIndex + 1
+      let newIndex
+      if ($event.shiftKey) {
+        // Select the previous currency
+        newIndex = currencyIndex === 0 ? currenciesNames.length - 1 : currencyIndex - 1
+      } else {
+        // Select the next currency
+        newIndex = currencyIndex === currenciesNames.length - 1 ? 0 : currencyIndex + 1
+      }
 
       self.currency = self.currencies[newIndex]
       self.changeCurrency()
