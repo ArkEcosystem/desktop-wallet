@@ -15,9 +15,9 @@
           <md-card-title>
             <md-card-title-text>
               <span>
-                <translate>Please backup securely the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!</translate>
+                <translate>Please securely backup the second passphrase before continuing, this client does NOT store it and thus cannot recover your passphrase!</translate>
                 <br/>
-                <translate>After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client.</translate>
+                <translate>If you are having issues with forms (second passphrase field not showing up) after creating the second passphrase, please restart your client.</translate>
               </span>
             </md-card-title-text>
           </md-card-title>
@@ -25,8 +25,8 @@
         <div ng-if="createSecondPassphraseDialog.data.showRepassphrase" translate>
           Please paste the original and second passphrase to validate the creation.
         </div>
-        <passphrase-field ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.passphrase" label="Original Passphrase"></passphrase-field>
-        <passphrase-field ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" label="Second Passphrase"></passphrase-field>
+        <passphrase-field ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.passphrase" label="{{'Original Passphrase' | translate}}"></passphrase-field>
+        <passphrase-field ng-if="createSecondPassphraseDialog.data.showRepassphrase" ng-model="createSecondPassphraseDialog.data.secondPassphrase" label="{{'Second Passphrase' | translate}}"></passphrase-field>
         <md-input-container class="md-block" ng-if="!createSecondPassphraseDialog.data.showRepassphrase">
             <label translate>Second Passphrase</label>
             <input ng-model="createSecondPassphraseDialog.data.secondPassphrase" type="text" readonly="readonly" md-autofocus />

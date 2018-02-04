@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('transactionSenderService', ['$timeout', 'gettextCatalog', 'dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'neoApiService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
+    .service('transactionSenderService', ['$timeout', 'gettextCatalog', 'gettext', 'dialogService', 'utilityService', 'accountService', 'storageService', 'toastService', 'neoApiService', 'transactionBuilderService', 'transactionValidatorService', TransactionSenderService])
 
   /**
    * TransactionSenderService
@@ -13,7 +13,7 @@
    *
    * TODO check the passphrase before moving to the next step
    */
-  function TransactionSenderService ($timeout, gettextCatalog, dialogService, utilityService, accountService, storageService, toastService, neoApiService, transactionBuilderService, transactionValidator) {
+  function TransactionSenderService ($timeout, gettextCatalog, gettext, dialogService, utilityService, accountService, storageService, toastService, neoApiService, transactionBuilderService, transactionValidator) {
     /**
      * Show the send transaction dialog. Reuses the controller and its $scope
      * TODO because currently it depends on the original implementation of AccountController too
@@ -32,12 +32,12 @@
         const fs = require('fs')
         fs.readFile(filePath, 'utf8', (err, data) => {
           if (err) {
-            toastService.error(`Unable to load file: ${err}`)
+            toastService.error(gettextCatalog.getString('Unable to load file') + ': ' + err)
           } else {
             const parse = require('csv-parse')
             parse(data, { quote: null, to: $scope.maxTransactionsPerFile }, (err, transactionsData) => {
               if (err) {
-                return toastService.error('Error while parsing the file')
+                return toastService.error(gettext('Error while parsing the file'))
               }
 
               callback(transactionsData)

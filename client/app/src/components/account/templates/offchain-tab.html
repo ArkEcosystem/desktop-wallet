@@ -15,7 +15,7 @@
             </md-card-title-media>
             <md-card-title-text>
               <translate>
-                If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under
+                If you own this account, you can enable virtual folders. Virtual folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under
                 the "My Accounts" list.
               </translate>
               <md-button ng-click="$ctrl.ul.manageFolder($ctrl.ul.selected)">
@@ -72,7 +72,9 @@
     </md-list>
 
     <md-content ng-if="$ctrl.ul.selected.virtual && !$ctrl.ul.selected.virtual.getFolders().length">
-        <empty-state header="This address does not have any virtual folders" content="Virtual folders for this account will appear here."></empty-state>
+        <empty-state header="{{'This address does not have any virtual folders' | translate}}"
+                     content="{{'Virtual folders for this account will appear here.' | translate}}'">
+        </empty-state>
     </md-content>
   </md-tab-body>
 </md-tab>

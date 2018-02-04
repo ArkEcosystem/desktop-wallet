@@ -36,8 +36,8 @@
         <md-input-container md-no-float class="md-block">
           <span><b translate>SHA256 Signature</b> {{send.data.smartbridge}}</span>
         </md-input-container>
-        <passphrase-field ng-if="!send.data.ledger" ng-model="send.data.passphrase" label="Passphrase"></passphrase-field>
-        <passphrase-field ng-if="!send.data.ledger && send.data.secondSignature" ng-model="send.data.secondpassphrase" label="Second Passphrase"></passphrase-field>
+        <passphrase-field ng-if="!send.data.ledger" ng-model="send.data.passphrase" label="{{'Passphrase' | translate}}"></passphrase-field>
+        <passphrase-field ng-if="!send.data.ledger && send.data.secondSignature" ng-model="send.data.secondpassphrase" label="{{'Second Passphrase' | translate}}"></passphrase-field>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row" style="padding-left: 20px">

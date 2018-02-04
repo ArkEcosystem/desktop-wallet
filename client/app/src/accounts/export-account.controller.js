@@ -11,13 +11,14 @@
       'toastService',
       'utilityService',
       'gettextCatalog',
+      'gettext',
       'account',
       'theme',
       'ARK_LAUNCH_DATE',
       ExportAccountController
     ])
 
-  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, utilityService, gettextCatalog, account, theme, ARK_LAUNCH_DATE) {
+  function ExportAccountController ($scope, $filter, $mdDialog, accountService, toastService, utilityService, gettextCatalog, gettext, account, theme, ARK_LAUNCH_DATE) {
     $scope.vm = {}
     $scope.vm.account = account
     $scope.vm.theme = theme
@@ -48,12 +49,12 @@
         prepareFile($scope.vm.account, transactions)
       }).catch(error => {
         if (error.transactions.length) {
-          toastService.error('An error occured when getting your transactions. However we still got ' + error.transactions.length + ' transactions! ' +
-                             'The exported file contains only these!',
+          toastService.error(gettextCatalog.getString('An error occured when getting your transactions. However we still got {{ count }} transactions! The exported file contains only these!',
+                                                      {count: error.transactions.length}),
           10000)
           prepareFile($scope.vm.account, error.transactions, true)
         } else {
-          toastService.error('An error occured when getting your transactions. Cannot export account!', 10000)
+          toastService.error(gettext('An error occured when getting your transactions. Cannot export account!'), 10000)
           $mdDialog.hide()
         }
       })

@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'utilityService', 'ARK_LAUNCH_DATE', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'gettext', 'utilityService', 'ARK_LAUNCH_DATE', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, utilityService, ARK_LAUNCH_DATE) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, gettext, utilityService, ARK_LAUNCH_DATE) {
     const self = this
     const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -27,11 +27,11 @@
     self.cachedFees = null
 
     self.TxTypes = {
-      0: 'Send Ark', // TODO change to 'Send ARK', with translations
-      1: 'Second Signature Creation',
-      2: 'Delegate Registration',
-      3: 'Vote',
-      4: 'Multisignature Creation'
+      0: gettext('Send {{ currency }}'),
+      1: gettext('Second Signature Creation'),
+      2: gettext('Delegate Registration'),
+      3: gettext('Vote'),
+      4: gettext('Multisignature Creation')
     }
 
     self.peer = networkService.getPeer().ip
@@ -234,10 +234,10 @@
     }
 
     function getTransactionLabel (transaction, recipientAddress = null) {
-      let label = gettextCatalog.getString(self.TxTypes[transaction.type])
+      let label = gettextCatalog.getString(self.TxTypes[transaction.type], { currency: networkService.getNetwork().token })
 
       if (recipientAddress && transaction.recipientId === recipientAddress && transaction.type === 0) {
-        label = gettextCatalog.getString('Receive') + ' ' + networkService.getNetwork().token
+        label = gettextCatalog.getString('Receive {{ currency }}', { currency: networkService.getNetwork().token })
       }
 
       return label
@@ -450,7 +450,7 @@
           storageService.set('username-' + resp.delegate.address, resp.delegate.username)
           deferred.resolve(resp.delegate)
         } else {
-          deferred.reject(gettextCatalog.getString('Cannot find delegate: ') + username)
+          deferred.reject(gettextCatalog.getString('Cannot find delegate: {{ delegateName }}', {delegateName: username}))
         }
       })
       return deferred.promise
@@ -467,10 +467,10 @@
         if (resp && resp.success && resp.delegates) {
           deferred.resolve(resp.delegates)
         } else {
-          deferred.reject(gettextCatalog.getString('Cannot find delegates from this term: ') + term)
+          deferred.reject(gettextCatalog.getString('Cannot find any delegate using the search term \'{{ searchTerm }}\'!', {searchTerm: term}))
         }
       }, (err) => {
-        deferred.reject(gettextCatalog.getString('Cannot find delegates on this peer: ') + err)
+        deferred.reject(gettextCatalog.getString('An error occurred when searching for delegates:') + err)
       })
       return deferred.promise
     }
@@ -497,7 +497,7 @@
       const re = /[0-9A-Fa-f]{6}/g
       if (!re.test(publicKey) || !re.test(signature)) {
         // return here already because the process will fail otherwise
-        return gettextCatalog.getString('Error in your Input.')
+        return gettextCatalog.getString('Error in your input.')
       }
       const crypto = require('crypto')
       let hash = crypto.createHash('sha256')
@@ -506,7 +506,6 @@
       const ecsignature = ark.ECSignature.fromDER(Buffer.from(signature, 'hex'))
       const success = ecpair.verify(hash, ecsignature)
 
-      message = gettextCatalog.getString('Error in signature processing')
       if (success) {
         message = gettextCatalog.getString('The message is verified successfully')
       } else {

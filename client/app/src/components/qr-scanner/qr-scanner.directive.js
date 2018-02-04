@@ -1,9 +1,9 @@
 ;(function () {
   'use strict'
 
-  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', 'toastService', qrScanner])
+  angular.module('arkclient.components').directive('qrScanner', ['$rootScope', '$timeout', '$mdDialog', 'toastService', 'gettextCatalog', qrScanner])
 
-  function qrScanner ($rootScope, $timeout, $mdDialog, toastService) {
+  function qrScanner ($rootScope, $timeout, $mdDialog, toastService, gettextCatalog) {
     function controller ($scope) {
       $scope.hasWebcam = function () {
         navigator.mediaDevices.enumerateDevices()
@@ -18,7 +18,8 @@
 
       $scope.onSuccess = function (result) {
         if (typeof (result.type) !== 'undefined') {
-          toastService.success(`The ${result.type} ${result.qr} has been successfully scanned.`)
+          toastService.success(gettextCatalog.getString('The {{ qrCodeType }} {{ qrCode }} has been successfully scanned.',
+                                                        {qrCodeType: result.type, qrCode: result.qr}))
         }
 
         if ($scope.inputCallback) {

@@ -3,7 +3,7 @@
     <qr-scanner input-callback-func="$pwc.onQrCodeScanned(qr)"></qr-scanner>
   </md-input-container>
   <md-input-container class="md-block" flex="95">
-    <label ng-if="$pwc.label" translate ng-class="{'md-required': !$pwc.isOptional}">
+    <label ng-if="$pwc.label" ng-class="{'md-required': !$pwc.isOptional}">
       {{$pwc.label}}
     </label>
     <input type="password"

@@ -40,7 +40,7 @@
       }
 
       if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-        deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account ') + config.fromAddress)
+        deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account \'{{ address }}\'', {address: config.fromAddress}))
         return
       }
 
@@ -59,12 +59,12 @@
     function createSendTransaction (config) {
       return prepareTransaction(config, (deferred, account, fees) => {
         if (!accountService.isValidAddress(config.toAddress)) {
-          deferred.reject(gettextCatalog.getString('The destination address ') + config.toAddress + gettextCatalog.getString(' is erroneous'))
+          deferred.reject(gettextCatalog.getString('The destination address \'{{ address }}\' is erroneous', {address: config.toAddress}))
           return
         }
 
         if (config.amount + fees.send > account.balance) {
-          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress)
+          deferred.reject(gettextCatalog.getString('Not enough {{ currency }} on your account \'{{ address }}\'!', {currency: networkService.getNetwork().token, address: config.fromAddress}))
           return
         }
 
@@ -94,12 +94,18 @@
           })
 
           if (invalidAddress) {
-            return reject(new Error(gettextCatalog.getString('The destination address ') + invalidAddress + gettextCatalog.getString(' is erroneous')))
+            return reject(new Error(gettextCatalog.getString('The destination address \'{{ address }}\' is erroneous', {address: invalidAddress})))
           }
 
           const total = transactions.reduce((total, t) => total + t.amount + fees.send, 0)
           if (total > account.balance) {
-            return reject(new Error(gettextCatalog.getString('Not enough ' + network.token + ' on your account ') + fromAddress))
+            return reject(new Error(gettextCatalog.getString(
+              'Not enough {{ currency }} on your account \'{{ address }}\' you need at least {{ amount }} to send your transactions!',
+            {
+              currency: network.token,
+              address: fromAddress,
+              amount: total
+            })))
           }
 
           const processed = Promise.all(
@@ -129,7 +135,7 @@
                   }, 2000 * i, true, transaction)
                 } else {
                   if (ark.crypto.getAddress(transaction.senderPublicKey, network.version) !== fromAddress) {
-                    return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account ') + fromAddress))
+                    return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account \'{{ address }}\'', {address: fromAddress})))
                   }
 
                   resolve(transaction)
@@ -148,8 +154,14 @@
     function createSecondPassphraseCreationTransaction (config) {
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.secondsignature) {
-          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
-                          ', ' + gettextCatalog.getString('you need at least ' + arktoshiToArk(fees.secondsignature) + ' to create a second passphrase'))
+          deferred.reject(gettextCatalog.getString(
+              'Not enough {{ currency }} on your account \'{{ address }}\' you need at least {{ amount }} to create a second passphrase!',
+              {
+                currency: networkService.getNetwork().token,
+                address: config.fromAddress,
+                amount: arktoshiToArk(fees.secondsignature)
+              }
+          ))
           return
         }
 
@@ -163,8 +175,14 @@
     function createDelegateCreationTransaction (config) {
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.delegate) {
-          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress + ', ' +
-                          gettextCatalog.getString('you need at least ' + arktoshiToArk(fees.delegate) + ' to register delegate'))
+          deferred.reject(gettextCatalog.getString(
+            'Not enough {{ currency }} on your account \'{{ address }}\' you need at least {{ amount }} to register delegate!',
+            {
+              currency: networkService.getNetwork().token,
+              address: config.fromAddress,
+              amount: arktoshiToArk(fees.delegate)
+            }
+          ))
           return
         }
 
@@ -178,8 +196,14 @@
     function createVoteTransaction (config) {
       return prepareTransaction(config, (deferred, account, fees) => {
         if (account.balance < fees.vote) {
-          deferred.reject(gettextCatalog.getString('Not enough ' + networkService.getNetwork().token + ' on your account ') + config.fromAddress +
-                           ', ' + gettextCatalog.getString('you need at least ' + arktoshiToArk(fees.vote) + ' to vote'))
+          deferred.reject(gettextCatalog.getString(
+            'Not enough {{ currency }} on your account \'{{ address }}\' you need at least {{ amount }} to vote!',
+            {
+              currency: networkService.getNetwork().token,
+              address: config.fromAddress,
+              amount: arktoshiToArk(fees.vote)
+            }
+          ))
           return
         }
 
