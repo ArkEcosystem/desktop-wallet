@@ -37,8 +37,7 @@ describe('transactionSenderService', () => {
           loadAllAccounts () { return ACCOUNTS },
           getActiveDelegates: angular.noop,
           getDelegateByUsername: angular.noop,
-          getFees: sinon.stub().resolves(),
-          getPassphrases () { return ['pass1'] }
+          getFees: sinon.stub().resolves()
         }
         networkServiceMock = {
           getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },

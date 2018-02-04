@@ -33,7 +33,6 @@
         resolve: {
           accountObj: () => accountObj,
           delegateToUnvote: () => delegateToUnvote,
-          passphrasesArr: () => accountService.getPassphrases(this.account.address),
           activeDelegates: () => {
             return accountService
               .getActiveDelegates()

@@ -9,7 +9,7 @@
       const ac = scope.ac || scope.ul
       const currencyName = bitcoinToggleIsActive && ac.btcValueActive ? 'btc' : ac.currency.name
 
-      if (!ac.connectedPeer.market.price) {
+      if (!ac.connectedPeer.market || !ac.connectedPeer.market.price) {
         return 0
       }
 
