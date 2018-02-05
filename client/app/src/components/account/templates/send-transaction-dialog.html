@@ -22,6 +22,12 @@
         <md-tab-body>
           <form name="singleForm" class="md-dialog-content">
 
+            <md-card ng-if="data.ledger" md-colors="{'background': 'red-100'}">
+              <md-card-title>
+                <span translate>Remember to always review and confirm the transaction on your Ledger.</span>
+              </md-card-title>
+            </md-card>
+
             <div layout="row" flex layout-align="start start">
               <md-input-container flex="5" ng-if="!receiverValidation.resolvedAccount || !receiverValidation.resolvedAccount.icon">
                 <qr-scanner input-callback-func="onQrCodeForToAddressScanned(qr)"></qr-scanner>
@@ -107,8 +113,13 @@
                   <span translate>
                     It is possible to use a CSV file to send {{network.symbol}} to a list of addresses. Each of these transactions would have its own fee until the next version of the protocol. Currently is limited to {{maxTransactionsPerFile}} transactions per file. The format is: <pre>Address,Amount,Smartbridge</pre>
                   </span>
-                  <span translate ng-if="data.ledger">Remember to confirm each transaction on your Ledger.</span>
                 </md-card-title-text>
+              </md-card-title>
+            </md-card>
+
+            <md-card ng-if="data.ledger" md-colors="{'background': 'red-100'}">
+              <md-card-title>
+                <span translate>Remember to always review and confirm each transaction on your Ledger.</span>
               </md-card-title>
             </md-card>
 
