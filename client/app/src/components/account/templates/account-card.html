@@ -23,13 +23,22 @@
     </md-button>
 
     <span>
-      <md-button md-no-ink ng-if="!$ctrl.ul.selected.virtual || $ctrl.ab.getContactFromAddress($ctrl.ul.selected.address)" ng-click="$ctrl.ab.editAddressbookContact($ctrl.ul.selected.address)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
-        <md-icon md-font-library="material-icons">edit</md-icon>
-        <md-tooltip>
-            <translate>Edit Contact</translate>
-        </md-tooltip>
-      </md-button>
-    </span>
+        <md-button md-no-ink ng-if="!$ctrl.ul.selected.virtual && !$ctrl.ab.getContactFromAddress($ctrl.ul.selected.address)" ng-click="$ctrl.ab.addAddressbookContact()" aria-label="Share with {{ $ctrl.ul.selected.address }}">
+          <md-icon md-font-library="material-icons">add</md-icon>
+          <md-tooltip>
+              <translate>Add Contact</translate>
+          </md-tooltip>
+        </md-button>
+      </span>
+
+      <span>
+        <md-button md-no-ink ng-if="!$ctrl.ul.selected.virtual && $ctrl.ab.getContactFromAddress($ctrl.ul.selected.address)" ng-click="$ctrl.ab.editAddressbookContact($ctrl.ul.selected.address)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
+          <md-icon md-font-library="material-icons">edit</md-icon>
+          <md-tooltip>
+              <translate>Edit Contact</translate>
+          </md-tooltip>
+        </md-button>
+      </span>
 
     <md-button ng-if="$ctrl.ul.selected.virtual" md-no-ink ng-click="$ctrl.showAccountMenu($ctrl.ul.selected)" aria-label="Share with {{ $ctrl.ul.selected.address }}">
       <md-icon md-font-library="material-icons">more_vert</md-icon>

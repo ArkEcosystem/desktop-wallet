@@ -44,7 +44,7 @@
     </span>
   </md-list-item>
   <md-list-item>
-    <md-button class="watch-only-address" ng-click="$ctrl.ab.addAddressbookContact()">
+    <md-button class="watch-only-address" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
       <md-icon md-font-library="material-icons">add</md-icon>
       <translate>Add Contact</translate>
     </md-button>

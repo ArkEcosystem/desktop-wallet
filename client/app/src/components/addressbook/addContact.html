@@ -13,11 +13,11 @@
       <div class="md-dialog-content">
         <md-input-container md-no-float class="md-block">
           <label translate>Name</label>
-          <input ng-model="name" ng-init="name=''" type="text" ng-required="true">
+          <input ng-model="name" ng-init="name=ul.selected.username" type="text" ng-required="true">
         </md-input-container>
         <md-input-container md-no-float class="md-block">
           <label translate>Address</label>
-          <input ng-model="address" ng-init="address=''" type="text" ng-required="true">
+          <input ng-model="address" ng-init="address=ul.selected.address" type="text" ng-required="true">
         </md-input-container>
       </div>
     </md-dialog-content>
