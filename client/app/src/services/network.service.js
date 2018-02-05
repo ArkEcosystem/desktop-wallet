@@ -62,7 +62,7 @@
           timeout: 5000
         }).then(
           (resp) => {
-            let newNetwork = resp.data.network
+            const newNetwork = resp.data.network
             newNetwork.isUnsaved = true
             newNetwork.forcepeer = data.forcepeer
             newNetwork.peerseed = data.peerseed
