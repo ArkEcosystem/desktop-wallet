@@ -208,6 +208,10 @@ function configureReload () {
   })
 }
 
+function shouldDisableScreenshotProtection (arugments) {
+  return arugments && arugments.some(v => v && typeof v === 'string' && v.toLowerCase() === '--disablescreenshotprotection')
+}
+
 app.setAsDefaultProtocolClient('ark', process.execPath, ['--'])
 
 // This method will be called when Electron has finished
@@ -219,6 +223,10 @@ app.on('ready', () => {
 
   if (process.env.LIVE_RELOAD) {
     configureReload()
+  }
+
+  if (shouldDisableScreenshotProtection(process.argv)) {
+    updateScreenshotProtectionItem()
   }
 })
 
