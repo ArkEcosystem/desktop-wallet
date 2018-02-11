@@ -212,7 +212,14 @@
     self.manageNetworks = manageNetworks
     self.createDelegate = createDelegate
     self.currency = storageService.get('currency') || self.currencies[0]
-    self.switchNetwork = networkService.switchNetwork
+    self.switchNetwork = (newNetwork, reload) => {
+      if (reload) {
+        dialogService.openLoadingDialog(self.currentTheme,
+                                        gettext('Switching network'),
+                                        gettext('Please wait while the the switching is in progress'))
+      }
+      networkService.switchNetwork(newNetwork, reload)
+    }
     self.marketinfo = {}
     self.network = networkService.getNetwork()
     self.listNetworks = networkService.getNetworks()

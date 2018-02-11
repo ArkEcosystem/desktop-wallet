@@ -1,0 +1,19 @@
+<md-dialog aria-label="{{title | translate}}" ng-cloak md-theme="{{theme}}">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 md-truncate flex>
+        {{title | translate}}...
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <div style="text-align:center;">
+        <md-progress-circular style="margin:0 auto; padding-bottom: 50px;"></md-progress-circular>
+        <span ng-if="text">
+          {{text | translate}}...
+        </span>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>
