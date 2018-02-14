@@ -132,6 +132,10 @@
       return network
     }
 
+    function getNetworkName () {
+      return storageService.getContext()
+    }
+
     function getNetworks () {
       return storageService.getGlobal('networks')
     }
@@ -420,6 +424,7 @@
       createNetwork,
       removeNetwork,
       getNetwork,
+      getNetworkName,
       getNetworks,
       getPeer,
       getConnection,

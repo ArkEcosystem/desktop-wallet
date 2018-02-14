@@ -1267,6 +1267,7 @@
       }
 
       function removeNetwork (network) {
+        const isActive = network === networkService.getNetworkName()
         const confirm = $mdDialog.confirm()
           .title(gettextCatalog.getString('Remove network \'{{ network }}\'', {network: network}))
           .theme(self.currentTheme)
@@ -1275,8 +1276,15 @@
           .cancel(gettextCatalog.getString('Cancel'))
         $mdDialog.show(confirm).then(() => {
           networkService.removeNetwork(network)
-          self.listNetworks = networkService.getNetworks()
-          toastService.success(gettext('Network removed succesfully!'), 3000)
+          if (isActive) {
+            dialogService.openLoadingDialog(self.currentTheme,
+                                            gettext('Network removed succesfully'),
+                                            gettext('Network removed succesfully - will now switch the network'))
+            setTimeout(() => networkService.switchNetwork(null, true), 4000)
+          } else {
+            self.listNetworks = networkService.getNetworks()
+            toastService.success(gettext('Network removed succesfully!'), 3000)
+          }
         })
       }
 
