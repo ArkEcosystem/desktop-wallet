@@ -324,7 +324,7 @@
         peers = tryGetPeersFromArkJs()
         isStaticPeerList = true
       } else if (index === 0) {
-        peers = peers.sort((a, b) => b.height - a.height || a.delay - b.delay)
+        peers = peers.sort((a, b) => b.height - a.height || a.delay - b.delay).filter(p => p.ip !== '127.0.0.1')
       }
 
       // check again or we may have an exception in the case when we couldn't get the static peer list from arkjs
