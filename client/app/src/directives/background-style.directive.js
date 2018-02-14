@@ -36,14 +36,18 @@
           const pathRe = /\((.*)\)/
 
           scope.$watch(attrs.backgroundStyle, (value) => {
-            // Check if the background exists
-            const mathPath = value.match(pathRe)
-            if (mathPath) {
-              const filePath = mathPath[1].replace(/'/g, ``)
-              const fullPath = require('path').join(__dirname, filePath)
-              if (!require('fs').existsSync(filePath) && !require('fs').existsSync(fullPath)) {
-                value = defaultBackground // if not exists
+            if (value) {
+              // Check if the background exists
+              const mathPath = value.match(pathRe)
+              if (mathPath) {
+                const filePath = mathPath[1].replace(/'/g, ``)
+                const fullPath = require('path').join(__dirname, filePath)
+                if (!require('fs').existsSync(filePath) && !require('fs').existsSync(fullPath)) {
+                  value = defaultBackground // if not exists
+                }
               }
+            } else {
+              value = defaultBackground
             }
 
             const style = { background: value }
