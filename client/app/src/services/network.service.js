@@ -48,6 +48,7 @@
       const n = storageService.getGlobal('networks')
       delete n[name]
       storageService.setGlobal('networks', n)
+      storageService.deleteState()
     }
 
     function createNetwork (data) {
