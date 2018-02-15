@@ -1288,9 +1288,19 @@
         })
       }
 
+      let activeNetworkIndex = 0
+      const activeNetworkName = networkService.getNetworkName()
+      const networkKeys = Object.keys(networks).map((networkName, index) => {
+        if (networkName === activeNetworkName) {
+          activeNetworkIndex = index
+        }
+        return networkName
+      })
+
       $scope.send = {
-        networkKeys: Object.keys(networks),
+        networkKeys,
         networks,
+        activeNetworkIndex,
         createNetwork,
         removeNetwork,
         cancel,
