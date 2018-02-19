@@ -114,6 +114,11 @@
       window.localStorage.setItem('lastsaved', JSON.stringify(new Date()))
     }
 
+    function deleteState () {
+      storage = {}
+      window.localStorage.removeItem('storage-' + context)
+    }
+
     /**
      * Will empty all keys/values from storage
      */
@@ -128,14 +133,15 @@
     setInterval(() => saveState(), 10000)
 
     return {
-      switchContext: switchContext,
-      getContext: getContext,
-      clearData: clearData,
-      get: get,
-      set: set,
-      getGlobal: getGlobal,
-      setGlobal: setGlobal,
-      saveState: saveState
+      switchContext,
+      getContext,
+      clearData,
+      get,
+      set,
+      getGlobal,
+      setGlobal,
+      saveState,
+      deleteState
     }
   }
 })()
