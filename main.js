@@ -8,7 +8,6 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const ipcMain = electron.ipcMain
 const Menu = electron.Menu
-const globalShortcut = electron.globalShortcut
 
 const ledger = require('ledgerco')
 const LedgerArk = require(_path.resolve(__dirname, './LedgerArk'))
@@ -146,7 +145,7 @@ function createWindow () {
       label: 'Application',
       submenu: [
         {
-          label: 'About ArkClient',
+          role: 'about',
           click: () => openAboutWindow({
             icon_path: `${__dirname}/client/ark.png`,
             package_json_dir: __dirname,
@@ -156,32 +155,62 @@ function createWindow () {
           })
         },
         { type: 'separator' },
-        { label: getScreenshotProtectionLabel(), click: () => { updateScreenshotProtectionItem() }, enabled: process.platform !== 'linux' },
-        { type: 'separator' },
-        { label: 'Minimize', click: function () { mainWindow.minimize() } },
-        { label: 'Maximize', click: function () { mainWindow.maximize() } },
-        { label: 'Full Screen', click: function () { mainWindow.setFullScreen(!mainWindow.isFullScreen()) } },
-        { type: 'separator' },
-        { label: 'Restart', accelerator: 'Command+R', click: function () { mainWindow.reload() } },
-        { label: 'Quit', accelerator: 'Command+Q', click: function () { app.quit() } }
+        { label: getScreenshotProtectionLabel(), click: () => { updateScreenshotProtectionItem() }, enabled: process.platform !== 'linux' }
       ]
     }, {
       label: 'Edit',
       submenu: [
-        { label: 'Undo', accelerator: 'CmdOrCtrl+Z', selector: 'undo:' },
-        { label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', selector: 'redo:' },
+        { role: 'undo' },
+        { role: 'redo' },
         { type: 'separator' },
-        { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
-        { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
-        { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
-        { label: 'Select All', accelerator: 'CmdOrCtrl+A', selector: 'selectAll:' },
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+        { role: 'selectall' },
         { type: 'separator' },
-        { label: 'Open Dev Tools', accelerator: 'CmdOrCtrl+D', click: function () { mainWindow.webContents.openDevTools() } },
-        { label: 'Reload App', accelerator: 'CmdOrCtrl+R', click: function () { mainWindow.webContents.reload() } },
         { label: 'Print Page', accelerator: 'CmdOrCtrl+P', click: function () { mainWindow.webContents.print({printBackground: true}) } }
+      ]
+    }, {
+      role: 'window',
+      submenu: [
+        { role: 'minimize' },
+        { role: 'close' }
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Learn More',
+          click () { require('electron').shell.openExternal('https://ark.io') }
+        },
+        { label: 'Reload App', accelerator: 'Command+R', click: function () { mainWindow.reload() } },
+        { label: 'Open Dev Tools', accelerator: 'CmdOrCtrl+D', click: function () { mainWindow.webContents.openDevTools() } }
       ]
     }
   ]
+
+  if (process.platform === 'darwin') {
+    template[0] = {
+      label: app.getName(),
+      submenu: [
+        ...template[0].submenu,
+        { type: 'separator' },
+        { role: 'services', submenu: [] },
+        { type: 'separator' },
+        { role: 'hide' },
+        { role: 'hideothers' },
+        { role: 'unhide' },
+        { type: 'separator' },
+        { role: 'quit' }
+      ]
+    }
+    template[2].submenu = [
+      { role: 'minimize' },
+      { role: 'zoom' },
+      { role: 'togglefullscreen' }
+    ]
+  }
 
   menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
@@ -219,7 +248,6 @@ app.setAsDefaultProtocolClient('ark', process.execPath, ['--'])
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow()
-  registerShortcuts()
 
   if (process.env.LIVE_RELOAD) {
     configureReload()
@@ -281,16 +309,6 @@ function getScreenshotProtectionLabel () {
   } else {
     return 'Enable screenshot protection (recommended)'
   }
-}
-
-function registerShortcuts () {
-  if (process.platform === 'darwin') {
-    globalShortcut.register('CommandOrControl+H', hideApp)
-  }
-}
-
-function hideApp () {
-  app.hide()
 }
 
 function broadcastURI (uri) {
