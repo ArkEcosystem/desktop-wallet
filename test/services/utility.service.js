@@ -197,4 +197,37 @@ describe('utilityService', () => {
       expect(utilityService.arkStampToDate(20206800).getTime()).to.eq(new Date(Date.UTC(2017, 10, 10, 10, 0, 0, 0)).getTime())
     })
   })
+
+  describe('isValidUrl', () => {
+    it('null, empty or undefined are inValid', () => {
+      expect(utilityService.isValidUrl()).to.eq(false)
+      expect(utilityService.isValidUrl('')).to.eq(false)
+      expect(utilityService.isValidUrl(undefined)).to.eq(false)
+      expect(utilityService.isValidUrl(null)).to.eq(false)
+    })
+
+    it('random string is invalid', () => expect(utilityService.isValidUrl('abc')).to.eq(false))
+
+    it('ftp prefixed url is invalid', () => expect(utilityService.isValidUrl('ftp://5.39.9.240')).to.eq(false))
+
+    it('http url is valid', () => expect(utilityService.isValidUrl('http://foo.ch')).to.eq(true))
+
+    it('http url wihtout domain is valid', () => expect(utilityService.isValidUrl('http://foo')).to.eq(true))
+
+    it('http url with port is valid', () => expect(utilityService.isValidUrl('http://foo:4001')).to.eq(true))
+
+    it('http ip url is valid', () => expect(utilityService.isValidUrl('http://5.39.9.240')).to.eq(true))
+
+    it('http ip url with port is valid', () => expect(utilityService.isValidUrl('http://5.39.9.240:4001')).to.eq(true))
+
+    it('https url is valid', () => expect(utilityService.isValidUrl('https://foo.ch')).to.eq(true))
+
+    it('https url wihtout domain is valid', () => expect(utilityService.isValidUrl('https://foo')).to.eq(true))
+
+    it('https url with port is valid', () => expect(utilityService.isValidUrl('https://foo:4001')).to.eq(true))
+
+    it('https ip url is valid', () => expect(utilityService.isValidUrl('https://5.39.9.240')).to.eq(true))
+
+    it('https ip url with port is valid', () => expect(utilityService.isValidUrl('https://5.39.9.240:4001')).to.eq(true))
+  })
 })

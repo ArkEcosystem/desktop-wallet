@@ -6,6 +6,8 @@
 
   // this service should not have any dependencies to other services!
   function UtilityService (ARKTOSHI_UNIT, ARK_LAUNCH_DATE) {
+    const validUrl = require('valid-url')
+
     function arktoshiToArk (amount, keepPrecise, numberOfDecimals) {
       if (!amount) {
         return 0
@@ -149,15 +151,25 @@
       return x
     }
 
+    function isValidUrl (url) {
+      if (!url) {
+        return false
+      }
+
+      return !!validUrl.isWebUri(url)
+    }
+
     return {
-      arktoshiToArk: arktoshiToArk,
-      arkToArktoshi: arkToArktoshi,
-      numberStringToFixed: numberStringToFixed,
+      arktoshiToArk,
+      arkToArktoshi,
+      numberStringToFixed,
 
-      dateToArkStamp: dateToArkStamp,
-      arkStampToDate: arkStampToDate,
+      dateToArkStamp,
+      arkStampToDate,
 
-      createRefreshState: createRefreshState
+      createRefreshState,
+
+      isValidUrl
     }
   }
 })()
