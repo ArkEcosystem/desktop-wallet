@@ -1278,12 +1278,12 @@
           networkService.removeNetwork(network)
           if (isActive) {
             dialogService.openLoadingDialog(self.currentTheme,
-                                            gettext('Network removed succesfully'),
-                                            gettext('Network removed succesfully - will now switch the network'))
-            setTimeout(() => networkService.switchNetwork(null, true), 4000)
+                                            gettext('Network removed successfully'),
+                                            gettext('Network removed successfully - will now switch the network'))
+            setTimeout(() => networkService.switchNetwork(null, true), 3000)
           } else {
             self.listNetworks = networkService.getNetworks()
-            toastService.success(gettext('Network removed succesfully!'), 3000)
+            toastService.success(gettext('Network removed successfully!'), 3000)
           }
         })
       }
