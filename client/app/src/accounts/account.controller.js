@@ -69,37 +69,37 @@
 
     const self = this
 
-    const languages = {
-      en: gettextCatalog.getString('English'),
-      ar: gettextCatalog.getString('Arabic'),
-      bg_BG: gettextCatalog.getString('Bulgarian'),
-      zh_CN: gettextCatalog.getString('Chinese - China'),
-      zh_TW: gettextCatalog.getString('Chinese - Taiwan'),
-      hr: gettextCatalog.getString('Croatian'),
-      cs: gettextCatalog.getString('Czech'),
-      nl: gettextCatalog.getString('Dutch'),
-      fi: gettextCatalog.getString('Finish'),
-      fr: gettextCatalog.getString('French'),
-      de: gettextCatalog.getString('German'),
-      el: gettextCatalog.getString('Greek'),
-      hu: gettextCatalog.getString('Hungarish'),
-      id: gettextCatalog.getString('Indonesian'),
-      it: gettextCatalog.getString('Italian'),
-      ja: gettextCatalog.getString('Japanese'),
-      ko: gettextCatalog.getString('Korean'),
-      nn: gettextCatalog.getString('Norwegian Nynorsk'),
-      fa_IR: gettextCatalog.getString('Persian - Iran'),
-      pl: gettextCatalog.getString('Polish'),
-      pt_BR: gettextCatalog.getString('Portuguese - Brazil'),
-      pt_PT: gettextCatalog.getString('Portuguese - Portugal'),
-      ro: gettextCatalog.getString('Romanian'),
-      ru: gettextCatalog.getString('Russian'),
-      sr: gettextCatalog.getString('Serbian'),
-      sk: gettextCatalog.getString('Slovak'),
-      sl: gettextCatalog.getString('Slovenian'),
-      es_419: gettextCatalog.getString('Spanish'),
-      sv: gettextCatalog.getString('Swedish')
-    }
+    self.languages = [
+      { name: 'English', code: 'en' },
+      { name: 'Arabic', code: 'ar' },
+      { name: 'Bulgarian', code: 'bg_BG' },
+      { name: 'Czech', code: 'cs' },
+      { name: 'German', code: 'de' },
+      { name: 'Greek', code: 'el' },
+      { name: 'Spanish', code: 'es_419' },
+      { name: 'Persian - Iran', code: 'fa_IR' },
+      { name: 'Finish', code: 'fi' },
+      { name: 'French', code: 'fr' },
+      { name: 'Croatian', code: 'hr' },
+      { name: 'Hungarish', code: 'hu' },
+      { name: 'Indonesian', code: 'id' },
+      { name: 'Italian', code: 'it' },
+      { name: 'Japanese', code: 'ja' },
+      { name: 'Korean', code: 'ko' },
+      { name: 'Dutch', code: 'nl' },
+      { name: 'Norwegian Nynorsk', code: 'nn' },
+      { name: 'Polish', code: 'pl' },
+      { name: 'Portuguese - Brazil', code: 'pt_BR' },
+      { name: 'Portuguese - Portugal', code: 'pt_PT' },
+      { name: 'Romanian', code: 'ro' },
+      { name: 'Russian', code: 'ru' },
+      { name: 'Slovak', code: 'sk' },
+      { name: 'Slovenian', code: 'sl' },
+      { name: 'Serbian', code: 'sr' },
+      { name: 'Swedish', code: 'sv' },
+      { name: 'Chinese - China', code: 'zh_CN' },
+      { name: 'Chinese - Taiwan', code: 'zh_TW' }
+    ]
 
     pluginLoader.triggerEvent('onStart')
 
@@ -137,13 +137,12 @@
 
     const cancel = () => dialogService.hide()
 
-    self.language = storageService.get('language') || 'en'
-    self.selectedLanguage = self.language
-    gettextCatalog.setCurrentLanguage(self.language)
-
     self.getLanguage = function () {
-      return languages[self.language]
+      return storageService.get('language') || 'en'
     }
+
+    self.language = self.getLanguage()
+    gettextCatalog.setCurrentLanguage(self.language)
 
     $window.onbeforeunload = function () {
       storageService.saveState()
@@ -387,21 +386,7 @@
       toastService.error(formatErrorMessage(error), hideDelay, true)
     }
 
-    self.selectAllLanguages = function () {
-      return languages
-    }
-
     self.setLanguage = function () {
-      function getlanguage (value) {
-        for (const prop in languages) {
-          if (languages.hasOwnProperty(prop)) {
-            if (languages[prop] === value) {
-              return prop
-            }
-          }
-        }
-      }
-      self.language = getlanguage(this.selectedLanguage)
       storageService.set('language', self.language)
       gettextCatalog.setCurrentLanguage(self.language)
     }
