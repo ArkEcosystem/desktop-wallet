@@ -75,7 +75,9 @@
                                                                   config.amount,
                                                                   config.smartbridge,
                                                                   config.masterpassphrase,
-                                                                  config.secondpassphrase))
+                                                                  config.secondpassphrase,
+                                                                  undefined,
+                                                                  fees.send))
       })
     }
 
@@ -111,7 +113,7 @@
           const processed = Promise.all(
             transactions.map(({ address, amount, smartbridge }, i) => {
               return new Promise((resolve, reject) => {
-                const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase)
+                const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase, undefined, fees.send)
 
                 transaction.fee = fees.send
                 transaction.senderId = fromAddress
@@ -168,7 +170,7 @@
         createTransaction(deferred,
                           config,
                           fees.secondsignature,
-                          () => ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase))
+                          () => ark.signature.createSignature(config.masterpassphrase, config.secondpassphrase, fees.secondsignature))
       })
     }
 
@@ -189,7 +191,7 @@
         createTransaction(deferred,
                           config,
                           fees.delegate,
-                          () => ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase))
+                          () => ark.delegate.createDelegate(config.masterpassphrase, config.username, config.secondpassphrase, fees.delegate))
       })
     }
 
@@ -210,7 +212,7 @@
         createTransaction(deferred,
                           config,
                           fees.vote,
-                          () => ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase),
+                          () => ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase, fees.vote),
                           (transaction) => { transaction.recipientId = config.fromAddress })
       })
     }
