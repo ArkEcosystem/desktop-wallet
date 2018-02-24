@@ -1,0 +1,24 @@
+<md-dialog aria-label="{{'Network removed successfully' | translate}}" ng-cloak md-theme="{{theme}}">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 md-truncate flex translate>
+        Network removed successfully
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <div style="text-align:center;">
+        <translate>
+          The network was removed successfully.
+          Because this was your active network, you now have to switch to another network.
+        </translate>
+        <md-dialog-actions layout="row">
+          <md-button class="md-primary md-raised" ng-click="switchNetwork()">
+            <translate>Switch network</translate>
+          </md-button>
+        </md-dialog-actions>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>

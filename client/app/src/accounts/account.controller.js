@@ -1277,10 +1277,21 @@
         $mdDialog.show(confirm).then(() => {
           networkService.removeNetwork(network)
           if (isActive) {
-            dialogService.openLoadingDialog(self.currentTheme,
-                                            gettext('Network removed successfully'),
-                                            gettext('Network removed successfully - will now switch the network'))
-            setTimeout(() => networkService.switchNetwork(null, true), 3000)
+            $mdDialog.show({
+              parent: angular.element(document.getElementById('app')),
+              templateUrl: './src/accounts/view/switchNetworkDialog.html',
+              clickOutsideToClose: false,
+              escapeToClose: false,
+              fullscreen: true,
+              locals: {
+                theme: self.currentTheme,
+                switchNetwork: () => networkService.switchNetwork(null, true)
+              },
+              controller: ['$scope', 'switchNetwork', 'theme', ($scope, switchNetwork, theme) => {
+                $scope.switchNetwork = switchNetwork
+                $scope.theme = theme
+              }]
+            })
           } else {
             self.listNetworks = networkService.getNetworks()
             toastService.success(gettext('Network removed successfully!'), 3000)
