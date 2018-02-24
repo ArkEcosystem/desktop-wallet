@@ -1284,10 +1284,12 @@
               escapeToClose: false,
               fullscreen: true,
               locals: {
-                theme: self.currentTheme,
-                switchNetwork: () => networkService.switchNetwork(null, true)
+                networkName: network,
+                switchNetwork: () => networkService.switchNetwork(null, true),
+                theme: self.currentTheme
               },
-              controller: ['$scope', 'switchNetwork', 'theme', ($scope, switchNetwork, theme) => {
+              controller: ['$scope', 'networkName', 'switchNetwork', 'theme', ($scope, networkName, switchNetwork, theme) => {
+                $scope.networkName = networkName
                 $scope.switchNetwork = switchNetwork
                 $scope.theme = theme
               }]
