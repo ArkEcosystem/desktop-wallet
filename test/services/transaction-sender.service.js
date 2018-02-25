@@ -50,6 +50,7 @@ describe('transactionSenderService', () => {
         }
         storageServiceMock = {
           get: sinon.stub().returns(['test_contact']),
+          set: sinon.stub(),
           getContext () {}
         }
 
