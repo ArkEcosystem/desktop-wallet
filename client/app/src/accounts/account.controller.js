@@ -69,37 +69,54 @@
 
     const self = this
 
-    self.languages = [
-      { name: 'English', code: 'en' },
-      { name: 'Arabic', code: 'ar' },
-      { name: 'Bulgarian', code: 'bg_BG' },
-      { name: 'Czech', code: 'cs' },
-      { name: 'German', code: 'de' },
-      { name: 'Greek', code: 'el' },
-      { name: 'Spanish', code: 'es_419' },
-      { name: 'Persian - Iran', code: 'fa_IR' },
-      { name: 'Finish', code: 'fi' },
-      { name: 'French', code: 'fr' },
-      { name: 'Croatian', code: 'hr' },
-      { name: 'Hungarish', code: 'hu' },
-      { name: 'Indonesian', code: 'id' },
-      { name: 'Italian', code: 'it' },
-      { name: 'Japanese', code: 'ja' },
-      { name: 'Korean', code: 'ko' },
-      { name: 'Dutch', code: 'nl' },
-      { name: 'Norwegian Nynorsk', code: 'nn' },
-      { name: 'Polish', code: 'pl' },
-      { name: 'Portuguese - Brazil', code: 'pt_BR' },
-      { name: 'Portuguese - Portugal', code: 'pt_PT' },
-      { name: 'Romanian', code: 'ro' },
-      { name: 'Russian', code: 'ru' },
-      { name: 'Slovak', code: 'sk' },
-      { name: 'Slovenian', code: 'sl' },
-      { name: 'Serbian', code: 'sr' },
-      { name: 'Swedish', code: 'sv' },
-      { name: 'Chinese - China', code: 'zh_CN' },
-      { name: 'Chinese - Taiwan', code: 'zh_TW' }
-    ]
+    self.getLanguage = function () {
+      return storageService.get('language') || 'en'
+    }
+
+    /**
+     * Set the language of the application and refresh languages array
+     */
+    self.setLanguage = function () {
+      storageService.set('language', self.language)
+      gettextCatalog.setCurrentLanguage(self.language)
+
+      self.languages = [
+        { name: gettextCatalog.getString('Arabic'), code: 'ar' },
+        { name: gettextCatalog.getString('Bulgarian'), code: 'bg_BG' },
+        { name: gettextCatalog.getString('Czech'), code: 'cs' },
+        { name: gettextCatalog.getString('German'), code: 'de' },
+        { name: gettextCatalog.getString('Greek'), code: 'el' },
+        { name: gettextCatalog.getString('English'), code: 'en' },
+        { name: gettextCatalog.getString('Spanish'), code: 'es_419' },
+        { name: gettextCatalog.getString('Persian - Iran'), code: 'fa_IR' },
+        { name: gettextCatalog.getString('Finish'), code: 'fi' },
+        { name: gettextCatalog.getString('French'), code: 'fr' },
+        { name: gettextCatalog.getString('Croatian'), code: 'hr' },
+        { name: gettextCatalog.getString('Hungarish'), code: 'hu' },
+        { name: gettextCatalog.getString('Indonesian'), code: 'id' },
+        { name: gettextCatalog.getString('Italian'), code: 'it' },
+        { name: gettextCatalog.getString('Japanese'), code: 'ja' },
+        { name: gettextCatalog.getString('Korean'), code: 'ko' },
+        { name: gettextCatalog.getString('Dutch'), code: 'nl' },
+        { name: gettextCatalog.getString('Norwegian Nynorsk'), code: 'nn' },
+        { name: gettextCatalog.getString('Polish'), code: 'pl' },
+        { name: gettextCatalog.getString('Portuguese - Brazil'), code: 'pt_BR' },
+        { name: gettextCatalog.getString('Portuguese - Portugal'), code: 'pt_PT' },
+        { name: gettextCatalog.getString('Romanian'), code: 'ro' },
+        { name: gettextCatalog.getString('Russian'), code: 'ru' },
+        { name: gettextCatalog.getString('Slovak'), code: 'sk' },
+        { name: gettextCatalog.getString('Slovenian'), code: 'sl' },
+        { name: gettextCatalog.getString('Serbian'), code: 'sr' },
+        { name: gettextCatalog.getString('Swedish'), code: 'sv' },
+        { name: gettextCatalog.getString('Chinese - China'), code: 'zh_CN' },
+        { name: gettextCatalog.getString('Chinese - Taiwan'), code: 'zh_TW' }
+      ].sort((a, b) => a.name.localeCompare(b.name))
+    }
+
+    self.language = self.getLanguage()
+    self.languages = []
+
+    self.setLanguage()
 
     pluginLoader.triggerEvent('onStart')
 
@@ -136,13 +153,6 @@
     gettextCatalog.debug = false
 
     const cancel = () => dialogService.hide()
-
-    self.getLanguage = function () {
-      return storageService.get('language') || 'en'
-    }
-
-    self.language = self.getLanguage()
-    gettextCatalog.setCurrentLanguage(self.language)
 
     $window.onbeforeunload = function () {
       storageService.saveState()
@@ -384,11 +394,6 @@
 
     function formatAndToastError (error, hideDelay = 5000) {
       toastService.error(formatErrorMessage(error), hideDelay, true)
-    }
-
-    self.setLanguage = function () {
-      storageService.set('language', self.language)
-      gettextCatalog.setCurrentLanguage(self.language)
     }
 
     // Load all registered accounts
