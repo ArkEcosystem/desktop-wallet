@@ -49,8 +49,8 @@
 						<md-list-item>
 							<md-icon>flag</md-icon>
 							<p translate>Language</p>
-							<md-select aria-label="Language" class="md-secondary md-no-underline" ng-model="$ctrl.ul.selectedLanguage" ng-init="$ctrl.ul.selectedLanguage = $ctrl.ul.getLanguage()" ng-change="$ctrl.ul.setLanguage()">
-								<md-option ng-value="language" ng-repeat="language in $ctrl.ul.selectAllLanguages()">{{language}}</md-option>
+							<md-select aria-label="Language" class="md-secondary md-no-underline" ng-model="$ctrl.ul.language" ng-change="$ctrl.ul.setLanguage()">
+								<md-option ng-value="language.code" ng-repeat="language in $ctrl.ul.languages">{{ language.name }}</md-option>
 							</md-select>
 						</md-list-item>
 						<md-list-item aria-label="Play sound when receiving transactions?">
