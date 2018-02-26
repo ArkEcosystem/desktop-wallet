@@ -1267,6 +1267,7 @@
       }
 
       function removeNetwork (network) {
+        const isActive = network === networkService.getNetworkName()
         const confirm = $mdDialog.confirm()
           .title(gettextCatalog.getString('Remove network \'{{ network }}\'', {network: network}))
           .theme(self.currentTheme)
@@ -1275,14 +1276,44 @@
           .cancel(gettextCatalog.getString('Cancel'))
         $mdDialog.show(confirm).then(() => {
           networkService.removeNetwork(network)
-          self.listNetworks = networkService.getNetworks()
-          toastService.success(gettext('Network removed succesfully!'), 3000)
+          if (isActive) {
+            $mdDialog.show({
+              parent: angular.element(document.getElementById('app')),
+              templateUrl: './src/accounts/view/switchNetworkDialog.html',
+              clickOutsideToClose: false,
+              escapeToClose: false,
+              fullscreen: true,
+              locals: {
+                networkName: network,
+                switchNetwork: () => networkService.switchNetwork(null, true),
+                theme: self.currentTheme
+              },
+              controller: ['$scope', 'networkName', 'switchNetwork', 'theme', ($scope, networkName, switchNetwork, theme) => {
+                $scope.networkName = networkName
+                $scope.switchNetwork = switchNetwork
+                $scope.theme = theme
+              }]
+            })
+          } else {
+            self.listNetworks = networkService.getNetworks()
+            toastService.success(gettext('Network removed successfully!'), 3000)
+          }
         })
       }
 
+      let activeNetworkIndex = 0
+      const activeNetworkName = networkService.getNetworkName()
+      const networkKeys = Object.keys(networks).map((networkName, index) => {
+        if (networkName === activeNetworkName) {
+          activeNetworkIndex = index
+        }
+        return networkName
+      })
+
       $scope.send = {
-        networkKeys: Object.keys(networks),
+        networkKeys,
         networks,
+        activeNetworkIndex,
         createNetwork,
         removeNetwork,
         cancel,
