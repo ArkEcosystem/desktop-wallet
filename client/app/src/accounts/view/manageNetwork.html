@@ -35,7 +35,7 @@
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm="80">
               <label translate>Seed Server</label>
-              <input ng-model="send.networks[networkName].peerseed" type="text" ng-required="true" placeholder="http://x.x.x.x:4001">
+              <input ng-model="send.networks[networkName].peerseed" type="url" pattern="https?://.*" ng-required="true" placeholder="http://x.x.x.x:4001">
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm="20">
               <md-switch class="md-secondary" ng-model="send.networks[networkName].forcepeer" aria-label="Force">
@@ -75,7 +75,7 @@
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm="80">
             <label translate>Seed Server</label>
-            <input ng-model="send.createnetwork.peerseed" type="text" ng-required="true" placeholder="http://x.x.x.x:4001">
+            <input ng-model="send.createnetwork.peerseed" type="url" pattern="https?://.*" ng-required="true" placeholder="http://x.x.x.x:4001">
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm="20">
             <md-switch class="md-secondary" ng-model="send.createnetwork.forcepeer" aria-label="Force">

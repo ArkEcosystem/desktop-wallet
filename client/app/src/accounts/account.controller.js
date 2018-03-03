@@ -1289,7 +1289,7 @@
               }]
             })
           } else {
-          self.listNetworks = networkService.getNetworks()
+            self.listNetworks = networkService.getNetworks()
             toastService.success(gettext('Network removed successfully!'), 3000)
           }
         })
