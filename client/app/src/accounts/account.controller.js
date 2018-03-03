@@ -1228,23 +1228,13 @@
       return self.network.cmcTicker || self.network.token === 'ARK'
     }
 
-    function createInvalidPeerServerToast (peerServer) {
-      toastService.error(gettextCatalog.getString('The Seed Server \'{{ url }}\' is not valid! You must enter a valid http or https URL!',
-                                                  {url: peerServer}))
-    }
-
     function manageNetworks () {
       let networks = networkService.getNetworks()
 
       function save (networkName) {
-        const network = $scope.send.networks[networkName]
-
-        if (!utilityService.isValidUrl(network.peerseed)) {
-          createInvalidPeerServerToast(network.peerseed)
-          return
-        }
-
         $mdDialog.hide()
+
+        const network = $scope.send.networks[networkName]
         delete network.isUnsaved
         networkService.setNetwork(networkName, network)
         self.listNetworks = networkService.getNetworks()
@@ -1262,11 +1252,6 @@
       }
 
       function createNetwork () {
-        if (!utilityService.isValidUrl($scope.send.createnetwork.peerseed)) {
-          createInvalidPeerServerToast($scope.send.createnetwork.peerseed)
-          return
-        }
-
         networkService.createNetwork($scope.send.createnetwork).then(
           (newNetwork) => {
             refreshTabs(newNetwork)
@@ -1304,7 +1289,7 @@
               }]
             })
           } else {
-            self.listNetworks = networkService.getNetworks()
+          self.listNetworks = networkService.getNetworks()
             toastService.success(gettext('Network removed successfully!'), 3000)
           }
         })
