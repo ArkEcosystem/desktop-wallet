@@ -105,16 +105,9 @@
       function verifyText () {
         const list = JSON.parse($scope.verify.message)
         const res = accountService.verifyMessage(list['message'], list['publickey'], list['signature'])
-
-        let message = gettextCatalog.getString('Error in signature processing')
-
+        
         $mdDialog.hide()
-        if (res) {
-          message = gettextCatalog.getString('The message is verified successfully')
-        } else {
-          message = gettextCatalog.getString('The message is NOT verified')
-        }
-        this.accountCtrl.showMessage(message, res)
+        showMessage(res)
       }
 
       function cancel () {
