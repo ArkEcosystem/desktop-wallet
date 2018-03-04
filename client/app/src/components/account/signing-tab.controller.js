@@ -105,7 +105,6 @@
       function verifyText () {
         const list = JSON.parse($scope.verify.message)
         const res = accountService.verifyMessage(list['message'], list['publickey'], list['signature'])
-        
         $mdDialog.hide()
         showMessage(res)
       }
