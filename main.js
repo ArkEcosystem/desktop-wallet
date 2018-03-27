@@ -184,7 +184,7 @@ function createWindow () {
           label: 'Learn More',
           click () { require('electron').shell.openExternal('https://ark.io') }
         },
-        { label: 'Reload App', accelerator: 'Command+R', click: function () { mainWindow.reload() } },
+        { label: 'Reload App', accelerator: 'CmdOrCtrl+R', click: function () { mainWindow.reload() } },
         { label: 'Open Dev Tools', accelerator: 'CmdOrCtrl+D', click: function () { mainWindow.webContents.openDevTools() } }
       ]
     }
