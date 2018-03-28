@@ -373,6 +373,10 @@
     }
 
     function openExplorer (uri) {
+      if (!self.network.explorer) {
+        return
+      }
+
       require('electron').shell.openExternal(self.network.explorer + uri)
     }
 
@@ -1291,6 +1295,14 @@
         })
       }
 
+      function canCreateNetwork (network) {
+        return network && network.name && network.peerseed
+      }
+
+      function canUpdateNetwork (network) {
+        return network && network.token && network.symbol && network.version && network.nethash && network.slip44 && network.peerseed
+      }
+
       let activeNetworkIndex = 0
       const activeNetworkName = networkService.getNetworkName()
       const networkKeys = Object.keys(networks).map((networkName, index) => {
@@ -1307,7 +1319,9 @@
         createNetwork,
         removeNetwork,
         cancel,
-        save
+        save,
+        canUpdateNetwork,
+        canCreateNetwork
       }
 
       $mdDialog.show({
