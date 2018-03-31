@@ -140,22 +140,29 @@ function createWindow () {
   })
 
   // Create the Application's main menu
+  const about = {
+    role: 'about',
+    click: () => openAboutWindow({
+      icon_path: `${__dirname}/client/ark.png`,
+      package_json_dir: __dirname,
+      copyright: 'Copyright (c) 2017 ARK',
+      homepage: 'https://ark.io/',
+      bug_report_url: 'https://github.com/ArkEcosystem/ark-desktop/issues'
+    })
+  }
+
+  const screenshotProtection = {
+    label: getScreenshotProtectionLabel(),
+    click: () => { updateScreenshotProtectionItem() }
+  }
+
   template = [
     {
-      label: 'Application',
+      label: 'File',
       submenu: [
-        {
-          role: 'about',
-          click: () => openAboutWindow({
-            icon_path: `${__dirname}/client/ark.png`,
-            package_json_dir: __dirname,
-            copyright: 'Copyright (c) 2017 ARK',
-            homepage: 'https://ark.io/',
-            bug_report_url: 'https://github.com/ArkEcosystem/ark-desktop/issues'
-          })
-        },
+        screenshotProtection,
         { type: 'separator' },
-        { label: getScreenshotProtectionLabel(), click: () => { updateScreenshotProtectionItem() }, enabled: process.platform !== 'linux' }
+        { role: 'quit' }
       ]
     }, {
       label: 'Edit',
@@ -194,7 +201,9 @@ function createWindow () {
     template[0] = {
       label: app.getName(),
       submenu: [
-        ...template[0].submenu,
+        about,
+        { type: 'separator' },
+        screenshotProtection,
         { type: 'separator' },
         { role: 'services', submenu: [] },
         { type: 'separator' },
@@ -210,6 +219,16 @@ function createWindow () {
       { role: 'zoom' },
       { role: 'togglefullscreen' }
     ]
+  } else if (process.platform === 'linux') {
+    template[0] = {
+      label: 'File',
+      submenu: [
+        { role: 'quit' }
+      ]
+    }
+    template[3].submenu.unshift(about, { type: 'separator' })
+  } else {
+    template[3].submenu.unshift(about, { type: 'separator' })
   }
 
   menu = Menu.buildFromTemplate(template)
@@ -291,11 +310,9 @@ function updateScreenshotProtectionItem () {
 
   enableScreenshotProtection = !enableScreenshotProtection
   mainWindow.setContentProtection(enableScreenshotProtection)
-  if (enableScreenshotProtection) {
-    template[0].submenu[2].label = 'Disable screenshot protection (unsafe)'
-  } else {
-    template[0].submenu[2].label = 'Enable screenshot protection (recommended)'
-  }
+
+  let index = process.platform === 'darwin' ? 2 : 0
+  template[0].submenu[index].label = getScreenshotProtectionLabel()
 
   menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
