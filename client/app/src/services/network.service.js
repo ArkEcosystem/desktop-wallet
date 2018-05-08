@@ -188,7 +188,7 @@
     }
 
     function listenNetworkHeight () {
-      $http.get(peer.ip + '/api/blocks/getheight', { timeout: 5000 }).then((resp) => {
+      $http.get(peer.ip + '/api/blocks/getHeight', { timeout: 5000 }).then((resp) => {
         timeService.getTimestamp().then(
           (timestamp) => {
             peer.lastConnection = timestamp
@@ -270,7 +270,7 @@
         peerip = peer.ip
       }
       $http({
-        url: peerip + '/peer/transactions',
+        url: peerip + '/api/transactions',
         data: { transactions: [transaction] },
         method: 'POST',
         headers: {
@@ -338,7 +338,7 @@
       }
 
       peer.ip = 'http://' + peers[index].ip + ':' + peers[index].port
-      getFromPeer('/api/blocks/getheight')
+      getFromPeer('/api/blocks/getHeight')
         .then((response) => {
           if (response.success && response.height < peer.height) {
             findGoodPeer(peers, index + 1, isStaticPeerList)

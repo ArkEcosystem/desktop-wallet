@@ -237,7 +237,7 @@
         return deferred.promise
       }
 
-      networkService.getFromPeer('/api/blocks/getfees')
+      networkService.getFromPeer('/api/blocks/getFees')
         .then((resp) => {
           if (resp.success) {
             self.cachedFees = resp.fees
