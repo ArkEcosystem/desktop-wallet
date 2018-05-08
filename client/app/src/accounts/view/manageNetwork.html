@@ -14,15 +14,15 @@
         <div>
           <md-input-container md-no-float class="md-block">
             <label translate>Token name</label>
-            <input ng-model="send.networks[networkName].token" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].token" type="text" ng-required="true">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>Symbol</label>
-            <input ng-model="send.networks[networkName].symbol" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].symbol" type="text" ng-required="true">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>Address version</label>
-            <input ng-model="send.networks[networkName].version" type="text" ng-required="false">
+            <input ng-model="send.networks[networkName].version" type="text" ng-required="true">
           </md-input-container>
           <md-input-container md-no-float class="md-block">
             <label translate>Nethash</label>
@@ -35,7 +35,7 @@
           <div layout-gt-sm="row">
             <md-input-container class="md-block" flex-gt-sm="80">
               <label translate>Seed Server</label>
-              <input ng-model="send.networks[networkName].peerseed" type="text" ng-required="true">
+              <input ng-model="send.networks[networkName].peerseed" type="url" pattern="https?://.*" ng-required="true" placeholder="http://x.x.x.x:4001">
             </md-input-container>
             <md-input-container class="md-block" flex-gt-sm="20">
               <md-switch class="md-secondary" ng-model="send.networks[networkName].forcepeer" aria-label="Force">
@@ -57,7 +57,7 @@
             <translate>Remove</translate>
           </md-button>
           <span flex></span>
-          <md-button class="md-primary md-raised" ng-click="send.save(networkName)">
+          <md-button ng-disabled="!send.canUpdateNetwork(send.networks[networkName])" class="md-primary md-raised" ng-click="send.save(networkName)">
             <translate>Save</translate>
           </md-button>
           <md-button ng-click="send.cancel()" style="margin-right:20px;">
@@ -75,7 +75,7 @@
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm="80">
             <label translate>Seed Server</label>
-            <input ng-model="send.createnetwork.peerseed" type="text" ng-required="true">
+            <input ng-model="send.createnetwork.peerseed" type="url" pattern="https?://.*" ng-required="true" placeholder="http://x.x.x.x:4001">
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm="20">
             <md-switch class="md-secondary" ng-model="send.createnetwork.forcepeer" aria-label="Force">
@@ -88,7 +88,7 @@
           <input ng-model="send.createnetwork.cmcTicker" type="text" ng-required="false">
         </md-input-container>
         <md-dialog-actions layout="row">
-          <md-button ng-click="send.createNetwork()" class="md-primary md-raised">
+          <md-button ng-disabled="!send.canCreateNetwork(send.createnetwork)" ng-click="send.createNetwork()" class="md-primary md-raised">
             <translate>Next</translate>
           </md-button>
           <md-button ng-click="send.cancel()" style="margin-right:20px;">

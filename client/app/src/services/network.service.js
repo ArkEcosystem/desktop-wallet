@@ -41,6 +41,8 @@
     connection.notify(peer)
 
     function setNetwork (name, newnetwork) {
+      ensureValidPeerSeed(newnetwork)
+
       const n = storageService.getGlobal('networks')
       n[name] = newnetwork
       storageService.setGlobal('networks', n)
@@ -54,6 +56,7 @@
     }
 
     function createNetwork (data) {
+      ensureValidPeerSeed(data)
       const networks = storageService.getGlobal('networks')
       const deferred = $q.defer()
       if (networks[data.name]) {
@@ -79,6 +82,14 @@
         )
       }
       return deferred.promise
+    }
+
+    function ensureValidPeerSeed (network) {
+      if (!network || !network.peerseed) {
+        return
+      }
+
+      network.peerseed = network.peerseed.replace(/\/$/, '')
     }
 
     function switchNetwork (newnetwork, reload) {

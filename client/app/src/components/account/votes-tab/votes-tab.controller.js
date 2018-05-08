@@ -74,6 +74,10 @@
     }
 
     this.openExplorer = (uri) => {
+      if (!this.network.explorer) {
+        return
+      }
+
       require('electron').shell.openExternal(this.network.explorer + uri)
     }
 

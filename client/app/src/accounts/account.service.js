@@ -666,7 +666,7 @@
       return virtual
     }
 
-    const allowedDelegateNameChars = /^[a-z0-9!@$&_.]+$/g
+    const allowedDelegateNameChars = /^[a-z0-9!@$&_.]+$/
 
     function sanitizeDelegateName (delegateName) {
       if (!delegateName) {
