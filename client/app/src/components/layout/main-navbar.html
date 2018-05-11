@@ -53,6 +53,13 @@
 								<md-option ng-value="language.code" ng-repeat="language in $ctrl.ul.languages">{{ language.name }}</md-option>
 							</md-select>
 						</md-list-item>
+						<md-list-item>
+							<md-icon>import_contacts</md-icon>
+							<p translate>Wordlist Language</p>
+							<md-select aria-label="Wordlist Language" class="md-secondary md-no-underline" ng-model="$ctrl.ul.wordlistLanguage" ng-change="$ctrl.ul.setWordlistLanguage()">
+								<md-option ng-value="langCode" ng-repeat="(langCode, langDesc) in $ctrl.ul.wordlistLanguages">{{ langDesc }}</md-option>
+							</md-select>
+						</md-list-item>
 						<md-list-item aria-label="Play sound when receiving transactions?">
 							<md-icon>music_note</md-icon>
 							<p translate>Play sound when receiving transactions?</p>
