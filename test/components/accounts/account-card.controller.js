@@ -57,7 +57,7 @@ describe('AccountCardController', () => {
 
     context("when the account doesn't use a Ledger", () => {
       it('includes a "Remove" action', () => {
-        expect(items[1]).to.eql({ name: 'Remove', icon: 'clear' })
+        expect(items[1]).to.eql({ name: 'Remove', icon: 'delete' })
 
         items = ctrl.accountMenuItems({ ledger: true })
         expect(items.map(i => i.name)).to.not.include('Remove')

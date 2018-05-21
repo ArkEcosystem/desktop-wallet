@@ -39,7 +39,7 @@
       add(gettext('Open in explorer'), 'open_in_new')
 
       if (!account.ledger) {
-        add(gettext('Remove'), 'clear')
+        add(gettext('Remove'), 'delete')
       }
       if (!account.delegate) {
         add(gettext('Label'), 'local_offer')
