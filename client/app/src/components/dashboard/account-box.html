@@ -46,7 +46,7 @@
 
   <md-content style="min-height: 70px;" flex>
     <md-list md-no-ink>
-      <md-list-item ng-click="$ctrl.ac.selectLedgerAccount()" ng-if="$ctrl.ac.ledger.connected && ctrl.selectedAccountType === $ctrl.myAccountsType">
+      <md-list-item ng-click="$ctrl.ac.selectLedgerAccount()" ng-if="$ctrl.ac.ledger.connected && $ctrl.selectedAccountType === $ctrl.myAccountsType">
         <span>
           <md-icon md-svg-icon="ledger"></md-icon>
           Ledger Nano S
