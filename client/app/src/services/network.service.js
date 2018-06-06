@@ -281,7 +281,7 @@
         peerip = peer.ip
       }
       $http({
-        url: peerip + '/api/transactions',
+        url: peerip + '/api/peer/transactions',
         data: { transactions: [transaction] },
         method: 'POST',
         headers: {
