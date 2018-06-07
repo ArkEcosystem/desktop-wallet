@@ -20,11 +20,11 @@
     this.$onInit = () => {
       this.ul = this.accountCtrl
 
-      const merchantId = '7e77643463d3'
-      const refId = '7e77643463d3'
-      const from = 'BTC'
+      const merchantId = 'bab9de3731aa'
+      const refId = merchantId
+      const from = 'USD'
       const to = 'ARK'
-      const amount = 1
+      const amount = 100
       const address = this.ul.selected.address
       // Ark logo colour: #ED2A2D rgb(237,42,45)
       const colour = 'ED2A2D'
