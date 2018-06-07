@@ -65,10 +65,10 @@ brew cask install arkclient
 
 ## Build
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 6.9.2, because this is currently developed with this version:
+To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. Optionally switch to node 8.11.2, because this is currently developed with this version:
 ```
-sudo npm install -g n
-sudo n 6.9.2
+nvm install 8.11.2
+nvm use
 ```
 
 Install from source:
@@ -77,7 +77,7 @@ Install from source:
 git clone https://github.com/ArkEcosystem/ark-desktop
 # Go into the repository
 cd ark-desktop
-# Install dependencies 
+# Install dependencies
 npm install
 ```
 
