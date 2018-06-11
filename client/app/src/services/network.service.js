@@ -2,13 +2,13 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', 'marketService', NetworkService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
+  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService, marketService) {
     const _path = require('path')
     const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
     const mainNetArkJsNetworkKey = 'ark'
@@ -163,6 +163,7 @@
       return storageService.getGlobal('networks')
     }
 
+    // TODO: Use marketService
     function getPrice () {
       let failedTicker = () => {
         let lastPrice = storageService.get('lastPrice')
