@@ -1,8 +1,8 @@
 ![ARK-DESKTOP](https://i.imgur.com/eZPrrCQ.png)
 
-[![Build Status](https://travis-ci.org/ArkEcosystem/ark-desktop.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop)
-[![Github Latest Release](https://img.shields.io/github/release/ArkEcosystem/ark-desktop.svg)](https://github.com/ArkEcosystem/ark-desktop/releases/latest)
-[![Github Downloads](https://img.shields.io/github/downloads/ArkEcosystem/ark-desktop/latest/total.svg?logo=github)](https://github.com/ArkEcosystem/ark-desktop/releases/latest)
+[![Build Status](https://travis-ci.org/ArkEcosystem/desktop-wallet.svg?branch=master)](https://travis-ci.org/ArkEcosystem/ark-desktop)
+[![Github Latest Release](https://img.shields.io/github/release/ArkEcosystem/desktop-wallet.svg)](https://github.com/ArkEcosystem/desktop-wallet/releases/latest)
+[![Github Downloads](https://img.shields.io/github/downloads/ArkEcosystem/desktop-wallet/latest/total.svg?logo=github)](https://github.com/ArkEcosystem/desktop-wallet/releases/latest)
 [![Gitter Room](https://img.shields.io/gitter/room/ark-developers/Lobby.svg?logo=gitter-white&colorB=e53467)](https://gitter.im/ark-developers/Lobby)
 
 # Pinned: Critical bugs only!
