@@ -3,7 +3,7 @@
 
   angular.module('arkclient.filters')
     .filter('exchangedate', () => exchangetime => new Date(exchangetime * 1000))
-    .filter('amountToCurrency', ['marketService', () => (marketService, amount, scope, bitcoinToggleIsActive) => {
+    .filter('amountToCurrency', ['marketService', (marketService) => (amount, scope, bitcoinToggleIsActive) => {
       if (typeof amount === 'undefined' || !amount) return 0
       // NOTE AccountController is being renaming to `ac` in refactored templates
       const ac = scope.ac || scope.ul
