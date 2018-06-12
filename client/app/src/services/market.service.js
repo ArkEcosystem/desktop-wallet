@@ -2,27 +2,66 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('marketService', ['$q', '$http', MarketService])
+    .service('marketService', ['$q', '$http', '$timeout', 'storageService', 'networkService', MarketService])
 
-  function MarketService ($q, $http, networkService) {
+  function MarketService ($q, $http, $timeout, storageService, networkService) {
     const baseUrl = 'https://min-api.cryptocompare.com'
     const tickerEndpoint = 'data/pricemultifull'
     const currencies = ['BTC', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
+    const storageKey = 'marketTicker'
+    const network = networkService.getNetwork()
+    const symbol = network.cmcTicker || 'ARK'
 
-    const fetchTicker = (symbol) => {
+    const init = () => {
+      $timeout(() => updateTicker(), 5 * 6000)
+    }
+
+    const saveTicker = (ticker) => {
+      const symbol = ticker.symbol
+      const currentMarket = getMarketTicker()
+
+      currentMarket[symbol] = ticker
+
+      storageService.set(storageKey, currentMarket)
+
+      return currentMarket
+    }
+
+    const getMarketTicker = () => {
+      return storageService.get(storageKey) || {}
+    }
+
+    const getPrice = (currency = 'BTC') => {
+      if (!network.cmcTicker && network.token !== 'ARK') getEmptyMarket()
+
+      const storage = storageService.get(storageKey)
+      const market = storage[symbol]
+
+      if (!market) return getEmptyMarket()
+
+      return market[currency]
+    }
+
+    const fetchTicker = () => {
       const deferred = $q.defer()
       const uri = `${baseUrl}/${tickerEndpoint}?fsyms=${symbol}&tsyms=${currencies.join(',')}`
       $http.get(uri)
-        .then((response) => {
-          const json = response['RAW'][symbol] || response['RAW'][symbol.toUpperCase()]
-          if (!json) deferred.reject('Error')
+        .then(({ data }) => {
+          const json = data['RAW'][symbol] || data['RAW'][symbol.toUpperCase()]
+          if (!json) deferred.reject('Failed to find market price.')
 
           const currencies = generateRates(json)
-          const result = { symbol, currencies }
+          const timestamp = Date.now()
+          const result = { symbol, currencies, timestamp }
           deferred.resolve(result)
         })
         .catch(err => deferred.reject(err))
       return deferred.promise
+    }
+
+    const updateTicker = async () => {
+      const ticker = await fetchTicker(symbol)
+      return saveTicker(ticker)
     }
 
     const generateRates = (response) => {
@@ -39,7 +78,7 @@
           market.change24h = response[currency].CHANGEPCT24HOUR || null
         }
 
-        rates.push({ [currency]: market })
+        rates[currency] = market
       }
 
       return rates
@@ -56,7 +95,11 @@
     }
 
     return {
-      fetchTicker
+      init,
+      getPrice,
+      getMarketTicker,
+      fetchTicker,
+      updateTicker
     }
   }
 })()

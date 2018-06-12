@@ -2,13 +2,13 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', 'marketService', NetworkService])
+    .service('networkService', ['$q', '$http', '$timeout', 'storageService', 'timeService', 'toastService', NetworkService])
 
   /**
    * NetworkService
    * @constructor
    */
-  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService, marketService) {
+  function NetworkService ($q, $http, $timeout, storageService, timeService, toastService) {
     const _path = require('path')
     const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
     const mainNetArkJsNetworkKey = 'ark'
@@ -23,7 +23,7 @@
 
     const momentTimezone = require('moment-timezone')
     const momentRange = require('moment-range')
-    const moment = momentRange.extendMoment(momentTimezone)
+    momentRange.extendMoment(momentTimezone)
 
     const clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
 
@@ -161,42 +161,6 @@
 
     function getNetworks () {
       return storageService.getGlobal('networks')
-    }
-
-    // TODO: Use marketService
-    function getPrice () {
-      let failedTicker = () => {
-        let lastPrice = storageService.get('lastPrice')
-
-        if (typeof lastPrice === 'undefined') {
-          peer.market = { price: { btc: '0.0' } }
-          return
-        }
-
-        peer.market = lastPrice.market
-        peer.market.lastUpdate = lastPrice.date
-        peer.market.isOffline = true
-      }
-
-      if (!network.cmcTicker && network.token !== 'ARK') {
-        failedTicker()
-        return
-      }
-
-      $http.get('https://api.coinmarketcap.com/v1/ticker/' + (network.cmcTicker || 'ARK'), { timeout: 2000 })
-        .then((res) => {
-          if (res.data[0] && res.data[0].price_btc) {
-            res.data[0].price_btc = convertToSatoshi(res.data[0].price_btc) // store BTC price in satoshi
-          }
-          peer.market = res.data[0]
-          peer = updatePeerWithCurrencies(peer, res)
-          storageService.set('lastPrice', { market: peer.market, date: new Date() })
-        }, failedTicker)
-        .catch(failedTicker)
-
-      $timeout(() => {
-        getPrice()
-      }, 5 * 60000)
     }
 
     function listenNetworkHeight () {
@@ -385,77 +349,7 @@
       return deferred.promise
     }
 
-    // Returns the BTC value in satoshi
-    function convertToSatoshi (val) {
-      return Number(val).toFixed(8)
-    }
-
-    // Updates peer with all currency values relative to the USD price.
-    function updatePeerWithCurrencies (peer, res) {
-      peer = updateCurrencyConversionRates(peer)
-      const USD_PRICE = Number(res.data[0].price_usd)
-      const currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
-      const prices = {}
-      currencies.forEach((currency) => {
-        prices[currency.toLowerCase()] = peer.market.conversionRates[currency] * USD_PRICE
-      })
-      prices['btc'] = res.data[0].price_btc
-      prices['usd'] = res.data[0].price_usd
-      storageService.setGlobal('peerCurrencies', prices)
-      peer.market.price = prices
-      return peer
-    }
-
-    // Updates the currency conversion rates IF necessary
-    // Necessary if it isn't stored, or if the stored value is too old
-    function updateCurrencyConversionRates (peer) {
-      const priceObj = storageService.getGlobal('conversionRates')
-      if (priceObj !== undefined && priceObj !== null) {
-        peer.market.conversionRates = priceObj.rates
-        let storedDateString = priceObj.date
-        let storedDate = new Date(storedDateString)
-        const updateCurrencies = checkToUpdateConversionRates(storedDate)
-        if (updateCurrencies) {
-          getConversionRatesApiCall(peer)
-        }
-      } else {
-        getConversionRatesApiCall(peer)
-      }
-      return peer
-    }
-
-    // api call to get the conversion rates for currencies
-    function getConversionRatesApiCall (peer) {
-      const currencies = ['AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
-      const apiCall = createCurrencyConversionApiCall(currencies)
-      $http.get(apiCall, {timeout: 2000}).then((result) => {
-        storageService.setGlobal('conversionRates', { rates: result.data.rates, date: new Date() })
-        peer.market.conversionRates = result.data.rates
-      })
-      return peer
-    }
-
-    // Checks if the stored time and the current time has crossed 4pm CET time
-    function checkToUpdateConversionRates (storedDate) {
-      storedDate = moment(storedDate.getTime()).utcOffset(60)
-      const endDate = moment(new Date().getTime()).utcOffset(60)
-      const API_UPDATE_HOUR = 9
-      const fourPMCET = moment({year: storedDate.year(), month: storedDate.month(), day: storedDate.date(), hour: API_UPDATE_HOUR}).utcOffset(60)
-      if (storedDate.hour() >= 16) {
-        fourPMCET.add(1, 'day')
-      }
-      const range = moment.range(storedDate, endDate)
-      return fourPMCET.within(range)
-    }
-
-    function createCurrencyConversionApiCall (currencies) {
-      let getRequest = 'https://api.fixer.io/latest?base=USD&symbols='
-      getRequest += currencies.toString()
-      return getRequest
-    }
-
     listenNetworkHeight()
-    getPrice()
     pickRandomPeer()
 
     return {
@@ -472,8 +366,7 @@
       postTransaction,
       broadcastTransaction,
       pickRandomPeer,
-      getLatestClientVersion,
-      getPrice
+      getLatestClientVersion
     }
   }
 })()

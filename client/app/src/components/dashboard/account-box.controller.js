@@ -13,10 +13,10 @@
         accountCtrl: '=',
         addressbookCtrl: '='
       },
-      controller: ['$scope', 'networkService', 'accountService', 'utilityService', 'gettextCatalog', 'gettext', 'toastService', '$timeout', AccountBoxController]
+      controller: ['$scope', 'networkService', 'accountService', 'utilityService', 'gettextCatalog', 'gettext', 'toastService', '$timeout', 'marketService', AccountBoxController]
     })
 
-  function AccountBoxController ($scope, networkService, accountService, utilityService, gettextCatalog, gettext, toastService, $timeout) {
+  function AccountBoxController ($scope, networkService, accountService, utilityService, gettextCatalog, gettext, toastService, $timeout, marketService) {
     this.$onInit = () => {
       // Alias that is used on the template
       this.ac = this.accountCtrl
@@ -88,7 +88,7 @@
         return
       }
 
-      networkService.getPrice()
+      marketService.updateTicker()
 
       accounts.forEach(account => {
         const state = refreshState.create()
