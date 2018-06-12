@@ -28,6 +28,7 @@
       '$rootScope',
       'transactionBuilderService',
       'utilityService',
+      'marketService',
       AccountController
     ])
 
@@ -62,7 +63,8 @@
     $window,
     $rootScope,
     transactionBuilderService,
-    utilityService
+    utilityService,
+    marketService
   ) {
     const _path = require('path')
     const electron = require('electron')
@@ -330,6 +332,24 @@
         self.ledger = { connected: false }
       }
     }, 2 * 1000)
+
+    function updateTicker () {
+      const update = () => {
+        const currencyName = self.btcValueActive ? 'btc' : self.currency.name
+        self.market = marketService.getPrice(currencyName)
+      }
+
+      const refresh = async () => {
+        await marketService.updateTicker()
+        update()
+      }
+
+      refresh()
+      $scope.$watch(() => self.currency, update)
+      $interval(async () => refresh(), 6 * 10000)
+    }
+
+    updateTicker()
 
     // TODO Used in dashboard navbar and accountBox
     self.selectLedgerAccount = function (account) {

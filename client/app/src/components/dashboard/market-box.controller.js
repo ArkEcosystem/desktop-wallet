@@ -18,13 +18,6 @@
 
   function MarketController (marketService, $scope) {
     this.$onInit = () => {
-      const updateMarket = () => {
-        const currencyName = this.accountCtrl.btcValueActive ? 'btc' : this.accountCtrl.currency.name
-        this.market = marketService.getPrice(currencyName)
-      }
-
-      $scope.$watch(() => this.accountCtrl.currency, updateMarket)
-
       this.ul = this.accountCtrl
     }
   }

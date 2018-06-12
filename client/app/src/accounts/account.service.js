@@ -2,7 +2,7 @@
   'use strict'
 
   angular.module('arkclient.accounts')
-    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'gettext', 'utilityService', 'ARK_LAUNCH_DATE', 'marketService', AccountService])
+    .service('accountService', ['$q', '$http', 'networkService', 'storageService', 'ledgerService', 'gettextCatalog', 'gettext', 'utilityService', 'ARK_LAUNCH_DATE', AccountService])
 
   /**
    * Accounts DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, gettext, utilityService, ARK_LAUNCH_DATE, marketService) {
+  function AccountService ($q, $http, networkService, storageService, ledgerService, gettextCatalog, gettext, utilityService, ARK_LAUNCH_DATE) {
     const self = this
     const ark = require(require('path').resolve(__dirname, '../node_modules/arkjs'))
 
@@ -689,8 +689,6 @@
 
       return sanitizedName
     }
-
-    marketService.init()
 
     return {
       loadAllAccounts: function () {
