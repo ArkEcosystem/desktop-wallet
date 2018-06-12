@@ -2,9 +2,9 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('marketService', ['$q', '$http', '$timeout', 'storageService', 'networkService', MarketService])
+    .service('marketService', ['$q', '$http', '$interval', 'storageService', 'networkService', MarketService])
 
-  function MarketService ($q, $http, $timeout, storageService, networkService) {
+  function MarketService ($q, $http, $interval, storageService, networkService) {
     const baseUrl = 'https://min-api.cryptocompare.com'
     const tickerEndpoint = 'data/pricemultifull'
     const currencies = ['BTC', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
@@ -13,7 +13,7 @@
     const symbol = network.cmcTicker || 'ARK'
 
     const init = () => {
-      $timeout(() => updateTicker(), 6 * 10000)
+      $interval(() => updateTicker(), 6 * 10000)
     }
 
     const saveTicker = (ticker) => {
@@ -98,8 +98,6 @@
     return {
       init,
       getPrice,
-      getMarketTicker,
-      fetchTicker,
       updateTicker
     }
   }
