@@ -277,17 +277,11 @@
       getFromPeer('/api/peers')
         .then((response) => {
           if (response.success) {
-            getFromPeer('/api/peers/version').then((versionResponse) => {
-              if (versionResponse.success) {
-                const peers = response.peers.filter((peer) => {
-                  return peer.status === 'OK' && peer.version === versionResponse.version
-                })
-                storageService.set('peers', peers)
-                findGoodPeer(peers, 0)
-              } else {
-                findGoodPeer(storageService.get('peers'), 0)
-              }
+            const peers = response.peers.filter((peer) => {
+              return peer.status === 'OK'
             })
+            storageService.set('peers', peers)
+            findGoodPeer(peers, 0)
           } else {
             findGoodPeer(storageService.get('peers'), 0)
           }
