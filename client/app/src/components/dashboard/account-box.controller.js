@@ -112,11 +112,10 @@
     }
 
     this.currencyBalance = (accountType) => {
-      const market = this.accountCtrl.connectedPeer.market
       const currencyName = this.accountCtrl.btcValueActive ? 'btc' : this.accountCtrl.currency.name
-      const price = market && market.price ? market.price[currencyName] : 0
+      const market = marketService.getPrice(currencyName)
 
-      return this.getTotalBalance(accountType) * price
+      return this.getTotalBalance(accountType) * market.price
     }
   }
 })()

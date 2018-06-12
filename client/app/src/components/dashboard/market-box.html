@@ -4,18 +4,16 @@
       <div>
         <b><translate>Price</translate></b>
       </div>
-      <span class="md-secondary">{{($ctrl.ul.btcValueActive ? $ctrl.ul.connectedPeer.market.price[$ctrl.ul.bitcoinCurrency.name] : $ctrl.ul.connectedPeer.market.price[$ctrl.ul.currency.name]) | formatCurrency:$ctrl.ul:$ctrl.ul.btcValueActive}}</span>
+      <span class="md-secondary">{{($ctrl.market.price | formatCurrency:$ctrl.ul:$ctrl.ul.btcValueActive)}}</span>
     </md-list-item>
     <md-list-item>
-      <b translate>Change 1h/24h/7d</b>
+      <b translate>Change 24h</b>
       <span class="md-secondary">
-        <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.percent_change_1h>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.percent_change_1h}}%</span> /
-      <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.percent_change_24h>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.percent_change_24h}}%</span> /
-      <span md-colors="{'color' : $ctrl.ul.connectedPeer.market.percent_change_7d>=0?'default-green':'default-red' }">{{$ctrl.ul.connectedPeer.market.percent_change_7d}}%</span>
+      <span md-colors="{'color' : $ctrl.market.change24h>=0?'default-green':'default-red' }">{{$ctrl.market.change24h | number: 3}}%</span>
       </span>
     </md-list-item>
     <md-list-item>
-      <b translate>Market Cap.</b> <span class="md-secondary">{{($ctrl.ul.connectedPeer.market.available_supply | amountToCurrency:$ctrl:$ctrl.ul.btcValueActive) | formatCurrency:$ctrl.ul:$ctrl.ul.btcValueActive}}</span>
+      <b translate>Market Cap.</b> <span class="md-secondary">{{($ctrl.market.marketCap | formatCurrency:$ctrl.ul:$ctrl.ul.btcValueActive)}}</span>
     </md-list-item>
   </md-list>
 </md-content>

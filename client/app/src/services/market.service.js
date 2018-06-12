@@ -13,7 +13,7 @@
     const symbol = network.cmcTicker || 'ARK'
 
     const init = () => {
-      $timeout(() => updateTicker(), 5 * 6000)
+      $timeout(() => updateTicker(), 6 * 10000)
     }
 
     const saveTicker = (ticker) => {
@@ -38,8 +38,9 @@
       const market = storage[symbol]
 
       if (!market) return getEmptyMarket()
+      const currencies = market.currencies
 
-      return market[currency]
+      return currencies[currency.toUpperCase()]
     }
 
     const fetchTicker = () => {
