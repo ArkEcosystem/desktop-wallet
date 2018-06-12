@@ -46,7 +46,7 @@
     const fetchTicker = () => {
       const deferred = $q.defer()
       const uri = `${baseUrl}/${tickerEndpoint}?fsyms=${symbol}&tsyms=${currencies.join(',')}`
-      $http.get(uri)
+      $http.get(uri, {headers: {'Cache-Control': 'no-cache'}})
         .then(({ data }) => {
           const json = data['RAW'][symbol] || data['RAW'][symbol.toUpperCase()]
           if (!json) deferred.reject('Failed to find market price.')
