@@ -16,7 +16,7 @@
       controller: MarketController
     })
 
-  function MarketController ($scope) {
+  function MarketController (marketService, $scope) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
     }
