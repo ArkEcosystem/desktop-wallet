@@ -339,14 +339,13 @@
         self.market = marketService.getPrice(currencyName)
       }
 
-      const refresh = async () => {
-        await marketService.updateTicker()
-        update()
+      const refresh = () => {
+        marketService.updateTicker().then(update)
       }
 
       refresh()
       $scope.$watch(() => self.currency, update)
-      $interval(async () => refresh(), 6 * 10000)
+      $interval(refresh, 6 * 10000)
     }
 
     updateTicker()
