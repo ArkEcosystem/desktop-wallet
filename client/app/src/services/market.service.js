@@ -57,7 +57,7 @@
     }
 
     const updateTicker = async () => {
-      const ticker = await fetchTicker(symbol)
+      const ticker = await fetchTicker()
       return saveTicker(ticker)
     }
 

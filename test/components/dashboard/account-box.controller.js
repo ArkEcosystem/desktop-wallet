@@ -26,12 +26,8 @@ describe('AccountBoxController', () => {
           currency: {
             name: 'btc'
           },
-          connectedPeer: {
-            market: {
-              price: {
-                btc: '0.1' // Next year price? lol
-              }
-            }
+          market: {
+            price: '0.1' // Next year price? lol
           }
         }
       }
@@ -62,7 +58,7 @@ describe('AccountBoxController', () => {
 
     context("when it isn't connected to a maket", () => {
       beforeEach(() => {
-        ctrl.accountCtrl.connectedPeer = {}
+        ctrl.accountCtrl.market = {}
       })
 
       it('returns 0', () => {
