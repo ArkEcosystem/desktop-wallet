@@ -28,14 +28,18 @@
     }
 
     const getPrice = (currency = 'BTC') => {
-      if (!network.cmcTicker && network.token !== 'ARK') getEmptyMarket()
+      let market = getEmptyMarket()
 
       const storage = storageService.get(storageKey)
-      const market = storage[symbol]
+      if (!storage) {
+        storageService.set(storageKey, market)
+      } else {
+        market = storage[symbol]
+      }
 
-      if (!market) return getEmptyMarket()
+      if (!market || !market.currencies) return getEmptyMarket()
+
       const currencies = market.currencies
-
       return currencies[currency.toUpperCase()]
     }
 
