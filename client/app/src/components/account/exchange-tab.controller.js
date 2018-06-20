@@ -13,25 +13,24 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ExchangeTabController
+      controller: ['$scope', '$sce', 'marketService', ExchangeTabController]
     })
 
-  function ExchangeTabController ($scope, $sce) {
+  function ExchangeTabController ($scope, $sce, marketService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
 
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
+      const arkAmount = 100
+      let marketPrices = marketService.getPrice('btc')
 
-      let from
+      let from = 'BTC'
       let to = 'ARK'
       let address = ''
-      let amount
+      let amount = 0.1
 
-      if (this.ul.network.token === 'DARK') {
-        from = 'btc'
-        amount = 0.1
-      } else {
+      if (this.ul.network.token !== 'DARK') {
         to = this.ul.network.token
 
         // Use the current address to receive the ARKs
