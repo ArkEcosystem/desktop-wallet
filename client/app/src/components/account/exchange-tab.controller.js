@@ -13,17 +13,15 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ['$scope', '$sce', 'marketService', ExchangeTabController]
+      controller: ['$scope', '$sce', ExchangeTabController]
     })
 
-  function ExchangeTabController ($scope, $sce, marketService) {
+  function ExchangeTabController ($scope, $sce) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
 
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
-      const arkAmount = 100
-      let marketPrices = marketService.getPrice('btc')
 
       let from = 'BTC'
       let to = 'ARK'
@@ -38,30 +36,15 @@
           address = this.ul.selected.address
         }
 
-        let pseudo = 500 * Math.random()
-        pseudo = pseudo < 100 ? 100 : pseudo
-
-        let price
-
-        if (this.ul.btcValueActive) {
-          from = this.ul.bitcoinCurrency.name
-          price = this.ul.connectedPeer.market.price[from]
-          amount = pseudo * price
-        } else {
+        if (!this.ul.btcValueActive) {
           from = this.ul.currency.name
 
           // If it's not 1 of these currencies, BTC would be used
           if (['eur', 'usd'].indexOf(from) !== -1) {
-            price = (this.ul.connectedPeer.market.price[from] || 1)
-            amount = pseudo / price
-          } else {
-            price = this.ul.connectedPeer.market.price.btc
-            amount = pseudo * price
+            amount = 300
           }
         }
       }
-
-      amount = amount.toFixed(2)
 
       // Ark logo colour: #ED2A2D rgb(237,42,45)
       const colour = 'ED2A2D'
