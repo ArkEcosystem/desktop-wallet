@@ -28,14 +28,9 @@
     }
 
     const getPrice = (currency = 'BTC') => {
-      let market = getEmptyMarket()
-
       const storage = storageService.get(storageKey)
-      if (!storage) {
-        storageService.set(storageKey, market)
-      } else {
-        market = storage[symbol]
-      }
+      const isValid = typeof storage === 'object' && Object.keys(storage).length > 0
+      const market = isValid ? storage[symbol] : getEmptyMarket()
 
       if (!market || !market.currencies) return getEmptyMarket()
 
