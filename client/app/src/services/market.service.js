@@ -7,7 +7,7 @@
   function MarketService ($q, $http, storageService, networkService) {
     const baseUrl = 'https://min-api.cryptocompare.com'
     const tickerEndpoint = 'data/pricemultifull'
-    const currencies = ['BTC', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB']
+    const currencies = ['BTC', 'AUD', 'BRL', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'IDR', 'INR', 'JPY', 'KRW', 'MXN', 'RUB', 'USD']
     const storageKey = 'marketTicker'
     const network = networkService.getNetwork()
     const symbol = network.cmcTicker || 'ARK'
@@ -28,14 +28,18 @@
     }
 
     const getPrice = (currency = 'BTC') => {
-      if (!network.cmcTicker && network.token !== 'ARK') getEmptyMarket()
+      let market = getEmptyMarket()
 
       const storage = storageService.get(storageKey)
-      const market = storage[symbol]
+      if (!storage) {
+        storageService.set(storageKey, market)
+      } else {
+        market = storage[symbol]
+      }
 
-      if (!market) return getEmptyMarket()
+      if (!market || !market.currencies) return getEmptyMarket()
+
       const currencies = market.currencies
-
       return currencies[currency.toUpperCase()]
     }
 

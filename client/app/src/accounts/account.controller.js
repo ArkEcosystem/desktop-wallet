@@ -264,7 +264,7 @@
     self.toggleCurrency = self.bitcoinCurrency
 
     self.connectedPeer = { isConnected: false }
-    self.market = marketService.getPrice(self.currency)
+    self.market = marketService.getPrice(self.currencyName)
 
     if (!self.network.theme) self.network.theme = 'default'
     if (!self.network.themeDark) self.network.themeDark = false
