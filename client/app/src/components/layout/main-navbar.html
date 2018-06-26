@@ -37,7 +37,7 @@
 				<md-button aria-label="Show Settings" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">settings</md-icon>
 				</md-button>
-				<md-menu-content flex width="6" style="min-height: 480px; overflow:hidden;">
+				<md-menu-content flex width="6" ng-style="$ctrl.ul.showExchangeRate() && {'min-height': '480px'} || {'min-height': '430px'}" style="overflow:hidden;">
 					<md-list class="left-list">
 						<md-list-item ng-if="$ctrl.ul.showExchangeRate()">
 							<md-icon>attach_money</md-icon>

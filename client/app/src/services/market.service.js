@@ -28,6 +28,8 @@
     }
 
     const getPrice = (currency = 'BTC') => {
+      if (!network.cmcTicker && network.token !== 'ARK') return
+
       const storage = storageService.get(storageKey)
       const isValid = typeof storage === 'object' && Object.keys(storage).length > 0
       const market = isValid ? storage[symbol] : getEmptyMarket()

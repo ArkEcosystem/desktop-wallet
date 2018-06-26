@@ -421,6 +421,8 @@
       require('electron').shell.openExternal(self.network.explorer + uri)
     }
 
+    console.log(self.market)
+
     function formatErrorMessage (error) {
       let basicMessage = ''
       if (typeof error === 'string') {
