@@ -37,7 +37,7 @@
 				<md-button aria-label="Show Settings" ng-click="$ctrl.ul.openMenu($mdMenu.open, $event)">
 					<md-icon md-font-library="material-icons">settings</md-icon>
 				</md-button>
-				<md-menu-content flex width="6" ng-style="$ctrl.ul.showExchangeRate() && {'min-height': '480px'} || {'min-height': '430px'}" style="overflow:hidden;">
+				<md-menu-content flex width="6" ng-style="$ctrl.ul.showExchangeRate() && {'min-height': '530px'} || {'min-height': '480px'}" style="overflow:hidden;">
 					<md-list class="left-list">
 						<md-list-item ng-if="$ctrl.ul.showExchangeRate()">
 							<md-icon>attach_money</md-icon>
@@ -70,7 +70,11 @@
 							<p translate>Refresh accounts automatically?</p>
 							<md-switch ng-model="$ctrl.ul.refreshAccountsAutomatically" class="md-primary" md-no-ink aria-label="Refresh accounts automatically?" ng-change="$ctrl.ul.toggleRefreshAccountsAutomatically()" ng-init="$ctrl.ul.toggleRefreshAccountsAutomatically()"></md-switch>
 						</md-list-item>
-						<hr>
+            <hr>
+            <md-list-item aria-label="Import Account" ng-click="$ctrl.ul.importAccount()">
+              <md-icon>file_download</md-icon>
+              <p translate>Import Account</p>
+            </md-list-item>
 						<md-list-item aria-label="Add Contact" ng-controller="AddressbookController as ab" ng-click="ab.addAddressbookContact()">
 							<md-icon md-font-library="material-icons">library_add</md-icon>
 							<p translate>Add Contact</p>
