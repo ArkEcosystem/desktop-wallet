@@ -126,7 +126,7 @@
             <md-input-container md-no-float class="md-block">
               <md-icon style="cursor: pointer;outline: none" ng-click="selectFile()" md-font-library="material-icons">attach_file</md-icon>
               <label>{{'File'|translate}}</label>
-              <input ng-model="data.file" ng-click="selectFile()" type="text" ng-required="true" maxlength="64" tabIndex="1">
+              <input ng-model="data.file" ng-click="selectFile()" type="text" ng-required="true" maxlength="64" tabIndex="1" name="file">
             </md-input-container>
 
             <passphrase-field ng-if="!data.ledger" ng-model="data.passphrase" label="{{'Passphrase' | translate}}" tab-index="2"></passphrase-field>
@@ -151,7 +151,7 @@
 
     <md-button type="submit"
                ng-click="submit(tab)"
-               ng-disabled="(tab == 'single' && singleForm.$invalid || receiverValidation.failType === 'error' || !data.toAddress) || (tab == 'multiple' && multipleForm.$invalid)"
+               ng-disabled="((tab === 'single' && (singleForm.$invalid || receiverValidation.failType === 'error' || !data.toAddress)) || (tab === 'multiple' && multipleForm.$invalid === true))"
                tabIndex="6">
       <translate ng-if="!data.ledger">Next</translate>
       <translate ng-if="data.ledger">Sign with Ledger</translate>

@@ -7,6 +7,8 @@
       if (typeof amount === 'undefined' || !amount) return 0
       // NOTE AccountController is being renaming to `ac` in refactored templates
       const ac = scope.ac || scope.ul
+      if (!ac.market) return
+
       const currencyName = bitcoinToggleIsActive && ac.btcValueActive ? 'btc' : ac.currency.name
       const market = marketService.getPrice(currencyName)
 
