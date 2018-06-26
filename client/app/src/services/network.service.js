@@ -277,8 +277,9 @@
       getFromPeer('/api/peers')
         .then((response) => {
           if (response.success) {
+            const regex127 = RegExp(/^(?!127\.).*/) // does not start with '127.'
             const peers = response.peers.filter((peer) => {
-              return peer.status === 'OK'
+              return peer.status === 'OK' && regex127.test(peer.ip)
             })
             storageService.set('peers', peers)
             findGoodPeer(peers, 0)
