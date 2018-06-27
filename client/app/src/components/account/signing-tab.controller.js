@@ -92,7 +92,6 @@
 
     this.verifyMessage = signedMessage => {
       function verify () {
-        console.log($scope.verify)
         const message = $scope.verify.message
         const publickey = $scope.verify.publickey
         const signature = $scope.verify.signature
