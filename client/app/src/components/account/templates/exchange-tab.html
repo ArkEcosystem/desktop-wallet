@@ -6,8 +6,12 @@
     <div layout="row" layout-align="space-between center" layout-margin>
 
       <div flex style="text-align: center">
-        <iframe ng-src="{{ $ctrl.changellySrc }}" width="600" height="500" class="changelly" scrolling="no" style="overflow-y: hidden; border: none" > Can't load widget </iframe>
+        <p translate>Show Changelly</p>
+        <md-switch ng-model="$ctrl.showChangelly" class="md-primary" md-no-ink aria-label="Show Changelly" ng-change="$ctrl.toggleChangelly()" ng-init="$ctrl.showChangelly"></md-switch>
+      <div>
 
+      <div ng-show="$ctrl.showChangelly" flex style="text-align: center">
+        <iframe ng-src="{{ $ctrl.changellySrc }}" width="600" height="500" class="changelly" scrolling="no" style="overflow-y: hidden; border: none" > Can't load widget </iframe>
       </div>
     </div>
 
