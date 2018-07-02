@@ -2,18 +2,24 @@
   'use strict'
 
   angular.module('arkclient.services')
-    .service('timeService', ['$q', '$http', '$interval', TimeService])
+    .service('timeService', ['$http', '$interval', TimeService])
 
   /**
    * TimeService
    * @constructor
    */
   function TimeService ($q, $http) {
-    const timeServerUrl = 'http://tycho.usno.navy.mil/cgi-bin/time.pl'
-    let serverLatency = 0
-    let config = {
+    const { getNetworkTime } = require('@destinationstransfers/ntp')
+
+    const config = {
+      servers: [
+        'pool.ntp.org',
+        'time.google.com'
+      ],
       timeout: 2000
     }
+
+    // This value could be used to estimate the timestamp when the NPT servers fail
     let localToServerTimeDiff = 0
 
     /**
@@ -22,40 +28,40 @@
      * Always returns success.
      */
     function getTimestamp () {
-      const deferred = $q.defer()
+      return new Promise((resolve, reject) => {
+        const startTime = new Date().getTime()
 
-      const startTime = new Date().getTime()
+        const request = config.servers.map(server => {
+          return getNetworkTime({ timeout: config.timeout, server })
+        })
 
-      $http.get(timeServerUrl, config).then(
-        (success) => {
-          const timestamp = success.headers().date
-          const processedTimestamp = new Date(timestamp).getTime()
-          const endTime = new Date().getTime()
+        Promise.race(request).then(
+          date => {
+            const processedTimestamp = date.getTime()
+            const endTime = new Date().getTime()
+            const serverLatency = endTime - startTime
 
-          serverLatency = endTime - startTime
+            const computedTimestamp = processedTimestamp + serverLatency
 
-          const computedTimestamp = processedTimestamp + serverLatency
+            const currentLocalTime = new Date().getTime()
+            localToServerTimeDiff = computedTimestamp - currentLocalTime
 
-          const currentLocalTime = new Date().getTime()
-          localToServerTimeDiff = computedTimestamp - currentLocalTime
+            resolve(computedTimestamp)
+          },
+          _error => {
+            // Use the system time instead on error
+            const timestamp = new Date().getTime()
 
-          deferred.resolve(computedTimestamp)
-        },
-        (_error) => {
-          // use the system time instead on error
-          const timestamp = new Date().getTime()
+            const computedTimestamp = timestamp + localToServerTimeDiff
 
-          const computedTimestamp = timestamp + localToServerTimeDiff
-
-          deferred.resolve(computedTimestamp)
-        }
-      )
-
-      return deferred.promise
+            resolve(computedTimestamp)
+          }
+        )
+      })
     }
 
     return {
-      getTimestamp: getTimestamp
+      getTimestamp
     }
   }
 })()
