@@ -70,6 +70,11 @@
 							<p translate>Refresh accounts automatically?</p>
 							<md-switch ng-model="$ctrl.ul.refreshAccountsAutomatically" class="md-primary" md-no-ink aria-label="Refresh accounts automatically?" ng-change="$ctrl.ul.toggleRefreshAccountsAutomatically()" ng-init="$ctrl.ul.toggleRefreshAccountsAutomatically()"></md-switch>
 						</md-list-item>
+            <md-list-item aria-label="Enable purchasing ARK on third party widget?">
+              <md-icon>shopping_cart</md-icon>
+              <p translate>Enable purchasing ARK on third party widget?</p>
+              <md-switch ng-model="$ctrl.changellyEnabled" class="md-primary" md-no-ink aria-label="Enable purchasing ARK on third party widget?" ng-change="$ctrl.ul.toggleEnableChangelly()" ng-init="$ctrl.ul.toggleEnableChangelly()"></md-switch>
+            </md-list-item>
             <hr>
             <md-list-item aria-label="Import Account" ng-click="$ctrl.ul.importAccount()">
               <md-icon>file_download</md-icon>

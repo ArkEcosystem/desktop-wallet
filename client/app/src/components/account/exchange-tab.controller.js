@@ -18,7 +18,10 @@
 
   function ExchangeTabController ($scope, $sce) {
 
-    const loadChangelly = () => {
+
+    this.$onInit = () => {
+      this.ul = this.accountCtrl
+
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
 
@@ -49,18 +52,6 @@
       const colour = 'ED2A2D'
 
       this.changellySrc = $sce.trustAsResourceUrl(`https://changelly.com/widget/v1?auth=email&from=${from}&to=${to}&merchant_id=${merchantId}&address=${address}&amount=${amount}&ref_id=${refId}&color=${colour}`)
-    }
-
-    this.$onInit = () => {
-      this.ul = this.accountCtrl
-
-      this.showChangelly = false
-      this.toggleChangelly = () => {
-
-        if (this.showChangelly) {
-          loadChangelly()
-        }
-      }
     }
   }
 })()
