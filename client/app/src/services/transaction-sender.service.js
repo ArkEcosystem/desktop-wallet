@@ -205,6 +205,7 @@
         }
 
         const currentCycle = ++receiverValidationCycle
+
         accountService.getTransactions(input, 0, 1).then(txs => {
           // if this check is not true it means that the address has already been changed in the meantime and we can
           // ignore the result, also if a failType is already set, we return, because we don't want to overwrite a warning or error
