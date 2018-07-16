@@ -238,7 +238,6 @@
 
     self.refreshAccountsAutomatically = storageService.get('refreshAccountsAutomatically') || false
     self.playFundsReceivedSound = storageService.get('playFundsReceivedSound') || false
-    self.changellyEnabled = storageService.get('changellyEnabled') || false
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound
     self.manageBackgrounds = manageBackgrounds
     self.showExchangeRate = showExchangeRate
@@ -745,11 +744,6 @@
 
     function togglePlayFundsReceivedSound () {
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true)
-    }
-
-    self.toggleEnableChangelly = function () {
-      console.log(self.changellyEnabled)
-      storageService.set('changellyEnabled', !self.changellyEnabled, true)
     }
 
     self.searchContactOrAccount = (text, exactMatch) => {
@@ -1277,7 +1271,7 @@
     }
 
     function showExchangeTab () {
-      return self.changellyEnabled && showExchangeRate()
+      return showExchangeRate()
     }
 
     function manageNetworks () {

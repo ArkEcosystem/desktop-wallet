@@ -13,12 +13,10 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ['$scope', '$sce', ExchangeTabController]
+      controller: ['$scope', '$sce', 'storageService', ExchangeTabController]
     })
 
-  function ExchangeTabController ($scope, $sce) {
-
-
+  function ExchangeTabController ($scope, $sce, storageService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
 
@@ -26,6 +24,11 @@
         this.changellyLogo = 'assets/images/images/changelly-logo-dark.png'
       } else {
         this.changellyLogo = 'assets/images/images/changelly-logo.png'
+      }
+
+      this.changellyEnabled = storageService.get('changellyEnabled') || false
+      this.toggleEnableChangelly = () => {
+        storageService.set('changellyEnabled', !this.changellyEnabled, true)
       }
 
       const merchantId = 'bab9de3731aa'

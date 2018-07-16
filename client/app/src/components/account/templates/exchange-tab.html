@@ -5,7 +5,7 @@
   <md-tab-body>
     <div class="exchange-tab" layout="row" layout-align="space-between center" layout-margin>
 
-      <div flex style="text-align: center" layout-align="space-between center" layout-margin>
+      <div  ng-if="! $ctrl.changellyEnabled" flex style="text-align: center" layout-align="space-between center" layout-margin>
         <div class="changelly-logo">
           <a open-external="'https://changelly.com'" title="Changelly">
             <img ng-src="{{ $ctrl.changellyLogo }}" title="Changelly" alt="Changelly"/>
@@ -17,11 +17,14 @@
           Changelly lets you exchange other cryptocurrencies into ARK and has an option<br/>
           to buy ARK directly with your credit or debit cards.
           <br/><br/>
-          <md-checkbox ng-model="$ctrl.ul.changellyEnabled" aria-label="I accept Changelly terms, conditions and private policy" md-theme="$ctrl.ul.currentTheme">
+          <md-checkbox ng-model="$ctrl.changellyEnabled" ng-change="$ctrl.toggleEnableChangelly()" aria-label="I accept Changelly terms, conditions and private policy" md-theme="$ctrl.ul.currentTheme">
           </md-checkbox>
           I have read an I agree with the <a open-external="'https://changelly.com/terms-of-use'" title="Terms of use">terms of use</a> and the <a open-external="'https://changelly.com/privacy-policy'" title="Privacy policy">privacy policy</a> from Changelly
         </translate>
-        <!-- <iframe ng&#45;src="{{ $ctrl.changellySrc }}" width="600" height="500" class="changelly" scrolling="no" style="overflow&#45;y: hidden; border: none" > Can't load widget </iframe> -->
+      </div>
+
+      <div ng-if="$ctrl.changellyEnabled" flex style="text-align: center" layout-align="space-between center" layout-margin>
+        <iframe ng-src="{{ $ctrl.changellySrc }}" width="600" height="500" class="changelly" scrolling="no" style="overflow-y: hidden; border: none" > Can't load widget </iframe>
       </div>
     </div>
 
