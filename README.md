@@ -95,6 +95,10 @@ brew tap Homebrew/bundle
 brew bundle
 ```
 
+## Security
+
+If you discover a security vulnerability within this application, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
+
 ## Contributing
 
 * If you find any bugs, submit an [issue](../../issues) or open [pull-request](../../pulls), helping us catch and fix them.
