@@ -22,6 +22,12 @@
     this.$onInit = () => {
       this.ul = this.accountCtrl
 
+      if (this.ul.currentTheme === 'dark') {
+        this.changellyLogo = 'assets/images/images/changelly-logo-dark.png'
+      } else {
+        this.changellyLogo = 'assets/images/images/changelly-logo.png'
+      }
+
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
 

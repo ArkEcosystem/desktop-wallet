@@ -561,7 +561,7 @@ md-toast.announcement > .md-toast-content > div {
   flex: 1 1 0
 }
 
-md-toast.announcement > .md-toast-content > div, a {
+md-toast.announcement > .md-toast-content > div, md-toast.announcement > .md-toast-content > a {
   color: white;
   font-weight: bold;
 }
@@ -628,4 +628,16 @@ md-toast.announcement > .md-toast-content a {
 */
 .md-datepicker-calendar-pane .md-datepicker-input-mask > div.md-datepicker-input-mask-opaque {
   left: 5px !important;
+}
+
+.exchange-tab a[open-external] {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.changelly-logo img {
+  width: 191px !important;
+  height: 44px !important;
+
+  margin: 40px auto 60px auto;
 }
