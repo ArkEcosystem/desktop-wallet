@@ -5,16 +5,16 @@
 
   function qrScanner ($rootScope, $timeout, $mdDialog, toastService, gettextCatalog) {
     function controller ($scope) {
-      $scope.hasWebcam = function () {
+      const checkWebcam = () => {
         navigator.mediaDevices.enumerateDevices()
           .then((MediaDeviceInfo) => {
-            MediaDeviceInfo.forEach((info) => {
-              if (info.kind === 'videoinput') return true
-            })
+            return MediaDeviceInfo.some(info => info.kind === 'videoinput')
           })
 
         return false
       }
+
+      $scope.hasWebcam = checkWebcam()
 
       $scope.onSuccess = function (result) {
         if (typeof (result.type) !== 'undefined') {
@@ -75,7 +75,7 @@
       },
       controller: controller,
       replace: true,
-      template: '<md-icon aria-label="Scan QR Code" style="cursor: pointer;outline: none" md-svg-icon="qrcode" ng-click="openScanner($event)" ng-disabled="hasWebcam()"></md-icon>'
+      template: '<md-icon aria-label="Scan QR Code" style="cursor: pointer;outline: none" md-svg-icon="qrcode" ng-click="openScanner($event)" ng-disabled="hasWebcam"></md-icon>'
     }
   }
 })()
