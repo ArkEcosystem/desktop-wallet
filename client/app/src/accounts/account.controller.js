@@ -309,7 +309,6 @@
         return
       }
       if (!self.ledgerAccounts && self.ledger && self.ledger.connected) {
-        console.log('ledgerService.getBip44Accounts')
         nocall = true
         ledgerService.getBip44Accounts(self.network.slip44).then(
           (accounts) => {

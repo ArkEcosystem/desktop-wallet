@@ -16,6 +16,15 @@
         return
       }
 
+      if (!transaction) {
+        transaction = {
+          type: 0,
+          amount: config.amount,
+          recipientId: config.toAddress,
+          timestamp: ark.slots.getTime()
+        }
+      }
+
       transaction.fee = fee
       transaction.senderId = config.fromAddress
 
