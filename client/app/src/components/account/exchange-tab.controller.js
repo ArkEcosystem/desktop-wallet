@@ -26,10 +26,8 @@
         this.changellyLogo = 'assets/images/images/changelly-logo.png'
       }
 
-      this.changellyEnabled = storageService.get('changellyEnabled') || false
-      this.toggleEnableChangelly = () => {
-        storageService.set('changellyEnabled', !this.changellyEnabled, true)
-      }
+      // Changelly should be accepted every time that the user loads the app or switches networks
+      this.changellyEnabled = false
 
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
