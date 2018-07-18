@@ -241,6 +241,7 @@
     self.togglePlayFundsReceivedSound = togglePlayFundsReceivedSound
     self.manageBackgrounds = manageBackgrounds
     self.showExchangeRate = showExchangeRate
+    self.showExchangeTab = showExchangeTab
     self.manageNetworks = manageNetworks
     self.createDelegate = createDelegate
     self.currency = storageService.get('currency') || self.currencies[0]
@@ -741,7 +742,7 @@
       storageService.set('refreshAccountsAutomatically', self.refreshAccountsAutomatically, true)
     }
 
-    function togglePlayFundsReceivedSound (status) {
+    function togglePlayFundsReceivedSound () {
       storageService.set('playFundsReceivedSound', self.playFundsReceivedSound, true)
     }
 
@@ -1267,6 +1268,10 @@
 
     function showExchangeRate () {
       return self.network.cmcTicker || self.network.token === 'ARK'
+    }
+
+    function showExchangeTab () {
+      return showExchangeRate()
     }
 
     function manageNetworks () {

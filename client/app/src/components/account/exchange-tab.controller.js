@@ -13,12 +13,21 @@
       bindings: {
         accountCtrl: '='
       },
-      controller: ['$scope', '$sce', ExchangeTabController]
+      controller: ['$scope', '$sce', 'storageService', ExchangeTabController]
     })
 
-  function ExchangeTabController ($scope, $sce) {
+  function ExchangeTabController ($scope, $sce, storageService) {
     this.$onInit = () => {
       this.ul = this.accountCtrl
+
+      if (this.ul.currentTheme === 'dark') {
+        this.changellyLogo = 'assets/images/images/changelly-logo-dark.png'
+      } else {
+        this.changellyLogo = 'assets/images/images/changelly-logo.png'
+      }
+
+      // Changelly should be accepted every time that the user loads the app or switches networks
+      this.changellyEnabled = false
 
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
