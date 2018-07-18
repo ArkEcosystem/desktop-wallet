@@ -50,7 +50,7 @@
     function prepareTransaction (config, prepareFunc) {
       const deferred = $q.defer()
       const account = accountService.getAccount(config.fromAddress)
-      accountService.getFees(false).then((fees) => {
+      accountService.getFees(false).then(fees => {
         prepareFunc(deferred, account, fees)
       })
       return deferred.promise

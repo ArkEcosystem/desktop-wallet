@@ -164,7 +164,7 @@
     }
 
     function listenNetworkHeight () {
-      $http.get(peer.ip + '/api/blocks/getHeight', { timeout: 5000 }).then((resp) => {
+      $http.get(peer.ip + '/api/blocks/getHeight', { timeout: 5000 }).then(resp => {
         timeService.getTimestamp().then(
           (timestamp) => {
             peer.lastConnection = timestamp
@@ -187,9 +187,7 @@
           }
         )
       })
-      $timeout(() => {
-        listenNetworkHeight()
-      }, 60000)
+      $timeout(() => listenNetworkHeight(), 60000)
     }
 
     function getFromPeer (api) {
@@ -200,10 +198,10 @@
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'os': 'ark-desktop',
-          'version': clientVersion,
-          'port': 1,
-          'nethash': network.nethash
+          os: 'ark-desktop',
+          version: clientVersion,
+          port: 1,
+          nethash: network.nethash
         },
         timeout: 5000
       }).then(
@@ -241,20 +239,23 @@
 
     function postTransaction (transaction, ip) {
       const deferred = $q.defer()
-      let peerip = ip
-      if (!peerip) {
-        peerip = peer.ip
+      let peerIp = ip
+      if (!peerIp) {
+        peerIp = peer.ip
       }
+
+      const endpoint = 'peer/transactions'
+
       $http({
-        url: peerip + '/peer/transactions',
+        url: `${peerIp}/${endpoint}`,
         data: { transactions: [transaction] },
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'os': 'ark-desktop',
-          'version': clientVersion,
-          'port': 1,
-          'nethash': network.nethash
+          os: 'ark-desktop',
+          version: clientVersion,
+          port: 1,
+          nethash: network.nethash
         }
       }).then((resp) => {
         if (resp.data.success) {

@@ -1663,11 +1663,8 @@
             }
           },
          (error) => {
-           formatAndToastError({
-             message: gettextCatalog.getString('Failed to execute your \'{{ transactionLabel }}\' transaction!',
-                                               {transactionLabel: transactionLabel}),
-             error: error
-           })
+           const message = gettextCatalog.getString('Failed to execute your \'{{ transactionLabel }}\' transaction!', { transactionLabel })
+           formatAndToastError({ message, error })
          })
       }
 
