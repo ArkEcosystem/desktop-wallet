@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2018-01-09 11:19+0000\n"
-"PO-Revision-Date: 2018-01-09 11:19+0000\n"
+"POT-Creation-Date: 2018-07-19 17:30+0000\n"
+"PO-Revision-Date: 2018-07-19 17:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgid "- This means that the owner of this account can prove that he had in hand
 msgstr "이 계정의 소유자가 자신이 블록 타임스탬프에서 이 파일을 가졌다는 것을 증명할 수 있음을 의미입니다."
 
 msgid "{{ category }}"
-msgstr "{{카테고리}}"
+msgstr "{{ category }}"
 
 msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
 msgstr "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
@@ -84,7 +84,7 @@ msgid "Amount"
 msgstr "양"
 
 msgid "Amount ({{ul.network.symbol}})"
-msgstr "수량"
+msgstr "수량 ({{ul.network.symbol}})"
 
 msgid "Appearance"
 msgstr "모양"
@@ -111,7 +111,7 @@ msgid "Are you sure?"
 msgstr "확실합니까?"
 
 msgid "Ark Client"
-msgstr "아크 클라이언트"
+msgstr "ARK 클라이언트"
 
 msgid "Background"
 msgstr "배경"
@@ -165,13 +165,13 @@ msgid "Client"
 msgstr "클라이언트"
 
 msgid "Close"
-msgstr "닫음"
+msgstr "닫기"
 
 msgid "Coming Soon"
 msgstr "준비 중입니다."
 
 msgid "Confirm"
-msgstr "확인"
+msgstr "승인"
 
 msgid "Network disconnected!"
 msgstr "네트워크 연결이 해제되었습니다!"
@@ -183,7 +183,7 @@ msgid "Watch-Only Addresses"
 msgstr "계정내용 보기 주소"
 
 msgid "Confirmations"
-msgstr "컨펌"
+msgstr "승인"
 
 msgid "Contacts"
 msgstr "연락처"
@@ -198,10 +198,10 @@ msgid "Could not fetch active delegates - please check your internet connection"
 msgstr "활성화된 대표자 리스트를 가져오지 못했습니다 - 인터넷 연결상태를 확인해보세요"
 
 msgid "Create"
-msgstr "만들기"
+msgstr "생성"
 
 msgid "Create Account"
-msgstr "계정 만들기"
+msgstr "계정 생성"
 
 msgid "Create Second Passphrase"
 msgstr "2차 보안문구 생성"
@@ -278,6 +278,9 @@ msgstr "에러:"
 msgid "Exchange"
 msgstr "거래소"
 
+msgid "Expense"
+msgstr "비용"
+
 msgid "Explorer"
 msgstr "탐색기"
 
@@ -287,8 +290,14 @@ msgstr "계정 내보내기"
 msgid "Failed to save transaction file"
 msgstr "트랜잭션 파일을 저장하는데 실패했습니다"
 
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "수수료 ({{ul.network.symbol}})"
+
 msgid "File"
 msgstr "파일"
+
+msgid "Finish"
+msgstr "완료"
 
 msgid "Fee (Ѧ)"
 msgstr "수수료(Ѧ)"
@@ -321,7 +330,7 @@ msgid "Greek"
 msgstr "그리스어"
 
 msgid "Hand crafted with ❤ by"
-msgstr "Hand crafted with ❤ by"
+msgstr "정성으로 ❤ 을 담아."
 
 msgid "Height"
 msgstr "높이"
@@ -330,7 +339,7 @@ msgid "Hungarish"
 msgstr "헝가리어"
 
 msgid "Id"
-msgstr "Id"
+msgstr "아이디"
 
 msgid "If you own this account, you can enable Message Signing"
 msgstr "당신이 이 계좌를 소유하고 있다면, 메세지 인증이 가능합니다."
@@ -339,7 +348,7 @@ msgid "If you own this account, you can enable Voting"
 msgstr "만약 당신이 이 계정의 소유자라면, 투표를 할 수 있습니다."
 
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br> Moreover, this account will move under\n                          the \"My Accounts\" list."
-msgstr "만약 당신이 이 계정의 소유자라면, 가상 폴더를 생성할 수 있습니다. 가상 폴더는 실제로 이 계좌로 송금하거나 비용을 지불하지 않고 좀 더 편리하게 당신의 자산을 관리할 수 있는 간편한 서브 계정입니다. <br>\n해당 가상 폴더 계좌는 \"내 계좌\" 목록에도 나타나게 됩니다."
+msgstr "만약 당신이 이 계정의 소유자라면, 가상 폴더를 생성할 수 있습니다. 가상 폴더는 실제로 이 계좌로 송금하거나 비용을 지불하지 않고 좀 더 편리하게 당신의 자산을 관리할 수 있는 간편한 하위 계정입니다. <br>\n해당 가상 폴더 계좌는 \"내 계좌\" 목록에도 나타나게 됩니다."
 
 msgid "Import"
 msgstr "불러오기"
@@ -381,7 +390,7 @@ msgid "Ledger Nano S"
 msgstr "레저 나노 S"
 
 msgid "List full or delegate already voted."
-msgstr "전체 명단 또는 이미 투표된 대의원"
+msgstr "전체 명단 또는 이미 투표된 대표자"
 
 msgid "Load Tx From File"
 msgstr "파일에서 트랜잭션 불러오기"
@@ -450,13 +459,13 @@ msgid "No search term"
 msgstr "검색어가 없습니다."
 
 msgid "Not enough ARK on your account"
-msgstr "당신의 계정에 충분한 아크가 없습니다."
+msgstr "당신의 계정에 충분한 ARK가 없습니다."
 
 msgid "OffChain"
 msgstr "오프체인"
 
 msgid "Ok"
-msgstr "Ok"
+msgstr "확인"
 
 msgid "Open Delegate Monitor"
 msgstr "대표자 정보 보기"
@@ -489,7 +498,7 @@ msgid "Passphrase does not match your address"
 msgstr "보안문구가 당신의 주소와 일치하지 않습니다."
 
 msgid "Passphrase is <strong>case sensitive</strong>, each character change will result in importing a different Ark address! Passphrases are <strong>not saved</strong> on this computer so always make sure you have them <strong>backed up safely!</strong>"
-msgstr "보안문구는 <strong>대소문자를 구분</strong>합니다, 문구중 한글자만 달라도 다른 아크주소를 불러올것입니다! 보안문구는 이 컴퓨터에 <strong>저장되지 않으며</strong> 별도로 <strong>안전하게 백업</strong>해야 합니다!"
+msgstr "보안문구는 <strong>대소문자를 구분</strong>합니다, 문구중 한글자만 달라도 다른 ARK주소를 불러올것입니다! 보안문구는 이 컴퓨터에 <strong>저장되지 않으며</strong> 별도로 <strong>안전하게 백업</strong>해야 합니다!"
 
 msgid "Passphrase is not corresponding to account"
 msgstr "보안문구가 계정과 일치하지 않습니다."
@@ -502,6 +511,9 @@ msgstr "보안문구가 삭제되었습니다."
 
 msgid "Passphrases saved"
 msgstr "보안문구가 저장되었습니다."
+
+msgid "Paste the entire signed message:"
+msgstr "사인된 전체 메세지를 붙여 넣으세요."
 
 msgid "Peer"
 msgstr "피어"
@@ -579,13 +591,13 @@ msgid "Quit"
 msgstr "끝내기"
 
 msgid "Quit Ark Client?"
-msgstr "아크 클라이언트를 종료할까요?"
+msgstr "ARK 클라이언트를 종료할까요?"
 
 msgid "Rank"
 msgstr "순위"
 
 msgid "Receive Ark"
-msgstr "아크 받기"
+msgstr "ARK 받기"
 
 msgid "Refresh Account"
 msgstr "계정 새로고침"
@@ -594,7 +606,7 @@ msgid "Refresh accounts automatically?"
 msgstr "계정들을 자동으로 새로고침할까요?"
 
 msgid "Register Delegate"
-msgstr "대의원 등록하기"
+msgstr "대표자 등록하기"
 
 msgid "Register delegate for"
 msgstr "~를 위한 대표자"
@@ -618,7 +630,7 @@ msgid "Remove from my computer all cached data from this network"
 msgstr "내 컴퓨터로부터 이 네트워크의 모든 캐시 제거"
 
 msgid "Remove this account from your wallet. The account may be added again using the original passphrase of the account."
-msgstr "월렛에서 계정 제거. 해당 계정의 보안문구를 사용하여 다시 등록할 수 있습니다."
+msgstr "지갑에서 계정 제거. 해당 계정의 보안문구를 사용하여 다시 등록할 수 있습니다."
 
 msgid "Rename"
 msgstr "이름 바꾸기"
@@ -660,16 +672,16 @@ msgid "Send"
 msgstr "보내기"
 
 msgid "Send All"
-msgstr "모두에게 보내기"
+msgstr "전액 보내기"
 
 msgid "Send Ark"
-msgstr "아크 보내기"
+msgstr "ARK 보내기"
 
 msgid "Serbian"
 msgstr "세르비아어"
 
 msgid "Send Ark from"
-msgstr "~으로부터 아크 보내기"
+msgstr "~으로부터 ARK 보내기"
 
 msgid "Set"
 msgstr "설정하기"
@@ -750,10 +762,10 @@ msgid "This account already has a second passphrase:"
 msgstr "이 계정은 이미 두번째 보안문구가 존재합니다."
 
 msgid "This signature can't be forged."
-msgstr "이 시그네처는 위조될 수 없습니다."
+msgstr "이 서명은 위조될 수 없습니다."
 
 msgid "This will save the SHA256 signature in a transaction of this account."
-msgstr "이것은 이 계정의 거래에 SHA256 시그네처를 저장할 것입니다."
+msgstr "이것은 이 계정의 거래에 SHA256 서명을 저장할 것입니다."
 
 msgid "Timestamp Document"
 msgstr "타임스탬프 도큐먼트"
@@ -822,7 +834,7 @@ msgid "Votes"
 msgstr "투표"
 
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
-msgstr "투표를 꼭 하실 필요는 없지만 투표는 아크 네트워크의 안정화에 기여합니다. \n가장 많은 투표를 받은 51명의 대표자에게는 새로운 블록들을 검증하고 생성할 책임이 주어집니다. \n현재 페이지에서 여러분들이 지지하는 대표자에게 투표를 하실 수 있습니다."
+msgstr "투표를 꼭 하실 필요는 없지만 투표는 ARK 네트워크의 안정화에 기여합니다. \n가장 많은 투표를 받은 51명의 대표자에게는 새로운 블록들을 검증하고 생성할 책임이 주어집니다. \n현재 페이지에서 여러분들이 지지하는 대표자에게 투표를 하실 수 있습니다."
 
 msgid "Word"
 msgstr "단어"
@@ -870,13 +882,13 @@ msgid "sent with success!"
 msgstr "성공적으로 보내졌습니다."
 
 msgid "you need at least 1 ARK to vote"
-msgstr "투표하기 위해 적어도 1아크가 필요합니다."
+msgstr "투표하기 위해 적어도 1 ARK가 필요합니다."
 
 msgid "you need at least 25 ARK to register delegate"
-msgstr "대표자로 등록하기 위해 적어도 25아크가 필요합니다. "
+msgstr "대표자로 등록하기 위해 적어도 25 ARK가 필요합니다. "
 
 msgid "Voting is an optional, but important mechanism that keeps the Ark network secure.\n                The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks.\n                This page can be used to cast your vote for a delegate that you support."
-msgstr "투표는 필수사항이 아닙니다. 단, 투표는 아크 네트워크 안정화에 중요한 역할을 합니다.\n표를 가장 많이 획득한 51명이 대표로 선정되어 새로운 블럭에 대한 거래를 확인하고 구축해나가는 책임이 주어집니다.\n현재 페이지에서 여러분들이 지지하는 대표후보에게 투표하실 수 있습니다."
+msgstr "투표는 필수사항이 아닙니다. 단, 투표는 ARK 네트워크 안정화에 중요한 역할을 합니다.\n표를 가장 많이 획득한 51명이 대표로 선정되어 새로운 블럭에 대한 거래를 확인하고 구축해나가는 책임이 주어집니다.\n현재 페이지에서 여러분들이 지지하는 대표후보에게 투표하실 수 있습니다."
 
 msgid "you need at least 5 ARK to create a second passphrase"
 msgstr "2차 보안문구를 생성하기 위해서는 최소 5 ARK 가 필요합니다."

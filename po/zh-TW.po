@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-10-09 21:49+0000\n"
-"PO-Revision-Date: 2017-10-09 21:49+0000\n"
+"POT-Creation-Date: 2018-07-19 17:30+0000\n"
+"PO-Revision-Date: 2018-07-19 17:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: zh_TW\n"
@@ -11,8 +11,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "- This also can help to prove if a file has been tampered with if the SHA256 signature does not match with the one recorded on blockchain"
+msgstr "如果檔案的SHA256簽署不符合區塊鏈上的紀錄，這也可協助證實檔案被竄改。"
+
+msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
+msgstr "－ 這代表此帳號的擁有者可證實他在區塊時間戳記上擁有此檔案。"
+
 msgid "Account added!"
 msgstr "帳戶已添加！"
+
+msgid "Account removed!"
+msgstr "帳戶已移除!"
 
 msgid "Account deleted!"
 msgstr "帳戶已刪除！"
@@ -20,8 +29,26 @@ msgstr "帳戶已刪除！"
 msgid "Account successfully created:"
 msgstr "成功建立帳戶："
 
+msgid "Account successfully imported:"
+msgstr "帳戶已成功匯入："
+
+msgid "Account was already imported:"
+msgstr "帳戶已被匯入："
+
+msgid "Accounts"
+msgstr "帳戶"
+
+msgid "Actions"
+msgstr "動作"
+
+msgid "Active delegates (forging)"
+msgstr "活躍的受託人 (冶煉中)"
+
 msgid "Add"
 msgstr "添加"
+
+msgid "Add Contact"
+msgstr "加入通訊錄"
 
 msgid "Add Account"
 msgstr "添加帳戶"
@@ -32,8 +59,14 @@ msgstr "添加地址"
 msgid "Add Delegate"
 msgstr "添加受託人"
 
+msgid "Add Watch-Only Address"
+msgstr "加入唯讀地址"
+
 msgid "Address"
 msgstr "地址"
+
+msgid "Address version"
+msgstr "地址版本"
 
 msgid "Amount"
 msgstr "合計"
@@ -80,8 +113,47 @@ msgstr "無法帳戶是否為受託人"
 msgid "Change 1h/7h/7d"
 msgstr "漲幅 1h/7h/7d"
 
+msgid "Chinese - China"
+msgstr "簡體中文 - 中國"
+
+msgid "Chinese - Taiwan"
+msgstr "繁體中文 - 台灣"
+
+msgid "Client"
+msgstr "用戶端"
+
 msgid "Close"
 msgstr "關閉"
+
+msgid "Coming Soon"
+msgstr "即將完成"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Network disconnected!"
+msgstr "網路斷線！"
+
+msgid "Passphrase is not saved on this computer."
+msgstr "密碼短語並未儲存在此電腦上"
+
+msgid "Watch-Only Addresses"
+msgstr "唯讀地址"
+
+msgid "Confirmations"
+msgstr "確認"
+
+msgid "Contacts"
+msgstr "通訊錄"
+
+msgid "Copied to clipboard"
+msgstr "複製到剪貼簿"
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "無法取得活躍受託者列表，請檢查您的網路連線。"
 
 msgid "Create"
 msgstr "創建"
@@ -89,11 +161,20 @@ msgstr "創建"
 msgid "Create Account"
 msgstr "創建賬戶"
 
+msgid "Create Second Passphrase"
+msgstr "創造第二密碼短語"
+
 msgid "Create Virtual Folder"
 msgstr "創建虛擬文件夾"
 
 msgid "Create a new virtual folder"
 msgstr "創建一个虛擬文件夾"
+
+msgid "Currency"
+msgstr "貨幣"
+
+msgid "Dark Mode"
+msgstr "黑夜模式"
 
 msgid "Date"
 msgstr "日期"
@@ -122,11 +203,23 @@ msgstr "永久刪除此帳戶"
 msgid "Destination Address"
 msgstr "目標地址"
 
+msgid "Dutch"
+msgstr "德文"
+
+msgid "Edit Contact"
+msgstr "修改通訊錄"
+
 msgid "Enable Virtual Folders"
 msgstr "啟用虛擬文件夾"
 
 msgid "Enable Votes"
 msgstr "啟用投票"
+
+msgid "English"
+msgstr "英文"
+
+msgid "Error in your Input."
+msgstr "您的輸入有誤"
 
 msgid "Error when trying to login:"
 msgstr "嘗試登錄時出錯："
@@ -136,6 +229,21 @@ msgstr "錯誤"
 
 msgid "Exchange"
 msgstr "交換"
+
+msgid "Explorer"
+msgstr "探索者"
+
+msgid "Export Account"
+msgstr "匯出帳戶"
+
+msgid "Failed to save transaction file"
+msgstr "儲存交易檔案時失敗"
+
+msgid "File"
+msgstr "檔案"
+
+msgid "Finish"
+msgstr "完成"
 
 msgid "Fee (Ѧ)"
 msgstr "費用（Ѧ）"
