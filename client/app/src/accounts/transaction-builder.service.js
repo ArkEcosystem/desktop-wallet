@@ -68,13 +68,17 @@
           return
         }
 
+        // If the Ledger is being used the passphrase is irrelevant, but ark-js
+        // requires a non-undefined one to build the transactions
+        const secret = config.masterpassphrase || config.ledger
+
         createTransaction(deferred,
                           config,
                           fees.send,
                           () => ark.transaction.createTransaction(config.toAddress,
                                                                   config.amount,
                                                                   config.smartbridge,
-                                                                  config.masterpassphrase,
+                                                                  secret,
                                                                   config.secondpassphrase,
                                                                   undefined,
                                                                   fees.send))
@@ -113,7 +117,11 @@
           const processed = Promise.all(
             transactions.map(({ address, amount, smartbridge }, i) => {
               return new Promise((resolve, reject) => {
-                const transaction = ark.transaction.createTransaction(address, amount, smartbridge, masterpassphrase, secondpassphrase, undefined, fees.send)
+                // If the Ledger is being used the passphrase is irrelevant, but ark-js
+                // requires a non-undefined one to build the transactions
+                const secret = masterpassphrase || ledger
+
+                const transaction = ark.transaction.createTransaction(address, amount, smartbridge, secret, secondpassphrase, undefined, fees.send)
 
                 transaction.fee = fees.send
                 transaction.senderId = fromAddress
@@ -209,10 +217,14 @@
           return
         }
 
+        // If the Ledger is being used the passphrase is irrelevant, but ark-js
+        // requires a non-undefined one to build the transactions
+        const secret = config.masterpassphrase || config.ledger
+
         createTransaction(deferred,
                           config,
                           fees.vote,
-                          () => ark.vote.createVote(config.masterpassphrase, config.publicKeys.split(','), config.secondpassphrase, fees.vote),
+                          () => ark.vote.createVote(secret, config.publicKeys.split(','), config.secondpassphrase, fees.vote),
                           (transaction) => { transaction.recipientId = config.fromAddress })
       })
     }
