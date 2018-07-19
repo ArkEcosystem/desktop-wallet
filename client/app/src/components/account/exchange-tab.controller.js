@@ -28,6 +28,7 @@
 
       // Changelly should be accepted every time that the user loads the app or switches networks
       this.changellyEnabled = false
+      this.enabledConfirmed = false
 
       const merchantId = 'bab9de3731aa'
       const refId = merchantId
