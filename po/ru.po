@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2018-01-09 11:19+0000\n"
-"PO-Revision-Date: 2018-01-09 11:19+0000\n"
+"POT-Creation-Date: 2018-07-19 17:30+0000\n"
+"PO-Revision-Date: 2018-07-19 17:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -11,17 +11,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+msgid "- This also can help to prove if a file has been tampered with if the SHA256 signature does not match with the one recorded on blockchain"
+msgstr "- Это также поможет доказать, что файл был изменён, если сигнатура SHA256 не совпадает с записанной в блокчейне"
+
 msgid "- This means that the owner of this account can prove that he had in hand this file at the block timestamp."
 msgstr "- Это означает, что владелец этой учетной записи может доказать, что у него в руках имеется этот файл на временной отметке блока."
 
 msgid "{{ category }}"
-msgstr "категория"
+msgstr "{{ category }}"
+
+msgid "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
+msgstr "{{'Send'|translate}} {{ul.network.token}} {{'from'|translate}}"
 
 msgid "Account added!"
 msgstr "Аккаунт добавлен!"
 
 msgid "Account removed!"
-msgstr "Ваша учётная запись удалена!"
+msgstr "Учётная запись удалена!"
 
 msgid "Account deleted!"
 msgstr "Аккаунт удалён!"
@@ -31,6 +37,9 @@ msgstr "Учетная запись успешно создана:"
 
 msgid "Account successfully imported:"
 msgstr "Аккаунт успешно импортирован."
+
+msgid "Account was already imported:"
+msgstr "Аккаунт уже импортирован:"
 
 msgid "Accounts"
 msgstr "Учётные записи"
@@ -57,16 +66,31 @@ msgid "Address"
 msgstr "Адрес"
 
 msgid "Address version"
-msgstr "Адрес версии"
+msgstr "Версия адреса"
+
+msgid "After creating the second passphrase if you are having issues with forms (second passphrase field not showing up) please restart your client."
+msgstr "Если после добавления второй кодовой фразы, при заполнении форм возникают проблемы (поле ввода второй фразы не отображается) перезапустите ваш клиент."
+
+msgid "All your data, including created accounts, networks and contacts will be removed from the app and reset to default."
+msgstr "Все ваши данные, включая созданные аккаунты, сети и контакты будут удалены из приложения."
 
 msgid "Amount"
 msgstr "Количество"
+
+msgid "Amount ({{ul.network.symbol}})"
+msgstr "Сумма ({{ul.network.symbol}})"
+
+msgid "Appearance"
+msgstr "Отображение"
 
 msgid "Application"
 msgstr "Приложение"
 
 msgid "Amount (Ѧ)"
 msgstr "Количество (Ѧ)"
+
+msgid "Approval"
+msgstr "Подтверждение"
 
 msgid "Arabic"
 msgstr "Арабский"
@@ -79,6 +103,9 @@ msgstr "Вы уверены?"
 
 msgid "Ark Client"
 msgstr "Клиент Ark"
+
+msgid "Background"
+msgstr "Фон"
 
 msgid "Balance"
 msgstr "Баланс"
@@ -131,8 +158,11 @@ msgstr "Подтвердить"
 msgid "Network disconnected!"
 msgstr "Сетевое соединение разорвано!"
 
+msgid "Passphrase is not saved on this computer."
+msgstr "Кодовая фраза не сохраняется на этом компьютере"
+
 msgid "Watch-Only Addresses"
-msgstr "Смотреть только адреса"
+msgstr "Адреса только для наблюдения"
 
 msgid "Confirmations"
 msgstr "Подтверждения"
@@ -141,16 +171,22 @@ msgid "Contacts"
 msgstr "Контакты"
 
 msgid "Copied to clipboard"
-msgstr "Копировать в буфер обмена"
+msgstr "Скопировано в буфер обмена"
 
 msgid "Copy"
 msgstr "Копировать"
+
+msgid "Could not fetch active delegates - please check your internet connection"
+msgstr "Не могу загрузить список активных делегатов - проверьте соединение с Интернетом"
 
 msgid "Create"
 msgstr "Создать"
 
 msgid "Create Account"
 msgstr "Регистрация"
+
+msgid "Create Second Passphrase"
+msgstr "Создать дополнительную кодовую фразу"
 
 msgid "Create Virtual Folder"
 msgstr "Создать виртуальную папку"
@@ -192,13 +228,13 @@ msgid "Destination Address"
 msgstr "Адрес Назначения"
 
 msgid "Dutch"
-msgstr "Датский"
+msgstr "Голландский"
 
 msgid "Edit Contact"
 msgstr "Редактировать контакт"
 
 msgid "Enable Signing"
-msgstr "Включить отправку"
+msgstr "Включить подписывание"
 
 msgid "Enable Virtual Folders"
 msgstr "Включить Виртуальные Папки"
@@ -227,6 +263,12 @@ msgstr "Обмен"
 msgid "Explorer"
 msgstr "Обозреватель"
 
+msgid "Failed to save transaction file"
+msgstr "Не удалось сохранить файл транзакции"
+
+msgid "Fee ({{ul.network.symbol}})"
+msgstr "Сбор ({{ul.network.symbol}})"
+
 msgid "File"
 msgstr "Файл"
 
@@ -238,6 +280,12 @@ msgstr "Комиссия (Ѧ)\n"
 
 msgid "Folder Name"
 msgstr "Имя Папки"
+
+msgid "Force"
+msgstr "Форсировать"
+
+msgid "Force?"
+msgstr "Форсировать?"
 
 msgid "Format"
 msgstr "Формат"
@@ -269,8 +317,26 @@ msgstr "Венгерский"
 msgid "If you own this account, you can enable Voting"
 msgstr "Если этот аккаунт принадлежит вам можно включить режим голосования"
 
+msgid "Import"
+msgstr "Импортировать"
+
+msgid "Import Account"
+msgstr "Импортировать аккаунт"
+
+msgid "Income"
+msgstr "Доход"
+
 msgid "If you own this account, you can enable virtual folders. Virtual Folders are simple subaccounts to better organise your money, without needing to send a real transaction and pay a fee. <br>\n                          Moreover, this account will move under the \"My Accounts\" list."
 msgstr "Если вы являетесь владельцем этой учетной записи, вы можете включить виртуальные папки. Виртуальные папки представляют собой простые субсчета, чтобы лучше организовать свои деньги, без необходимости отправлять реальную транзакцию и платить комиссию. <br> \nБолее того, этот счет будет двигаться по списку \"Мои счета\"."
+
+msgid "Indonesian"
+msgstr "Индонезийский"
+
+msgid "Italian"
+msgstr "Итальянский"
+
+msgid "Japanese"
+msgstr "Японский"
 
 msgid "Label"
 msgstr "Метка"
@@ -284,6 +350,9 @@ msgstr "Последняя проверка"
 msgid "List full or delegate already voted."
 msgstr "Список полон или делегат уже выбран."
 
+msgid "Loading..."
+msgstr "Идёт загрузка..."
+
 msgid "Login"
 msgstr "Вход"
 
@@ -296,14 +365,26 @@ msgstr "Капитализация"
 msgid "Maximize"
 msgstr "Развернуть"
 
+msgid "Message"
+msgstr "Сообщение"
+
 msgid "Minify"
 msgstr "Свернуть"
 
 msgid "My Accounts"
 msgstr "Мои Аккаунты"
 
+msgid "Name"
+msgstr "Имя"
+
 msgid "Network"
 msgstr "Сеть"
+
+msgid "Network removed succesfully!"
+msgstr "Сеть успешно удалена!"
+
+msgid "New version available!"
+msgstr "Доступна новая версия!"
 
 msgid "Network connected and healthy!"
 msgstr "Соединение установлено!"
@@ -326,6 +407,18 @@ msgstr "Не хватает ARK на вашем счету"
 msgid "Open Delegate Monitor"
 msgstr "Открыть монитор делегатов"
 
+msgid "Open File"
+msgstr "Открыть файл"
+
+msgid "Chinese simplified"
+msgstr "Китайский упрощенный"
+
+msgid "Chinese traditional"
+msgstr "Китайский традиционный"
+
+msgid "Open in explorer"
+msgstr "Открыть в эксплорере"
+
 msgid "Optional"
 msgstr "Опционально"
 
@@ -344,6 +437,15 @@ msgstr "Секретная фраза не соответствует счету
 msgid "Passphrases deleted"
 msgstr "Секретная фраза удалена"
 
+msgid "Peer"
+msgstr "Узел"
+
+msgid "Peer Status"
+msgstr "Статус узла"
+
+msgid "Play sound when receiving transactions?"
+msgstr "Воспроизвести звук при получении транзакции?"
+
 msgid "Please backup securely the passphrase, this client does NOT store it and thus cannot recover your passphrase"
 msgstr "Пожалуйста,  скопируйте и надежно сохраните вашу секретную фразу, этот клиент НЕ хранит её и таким образом, вы не сможет восстановить вашу секретную фразу"
 
@@ -359,11 +461,32 @@ msgstr "Введите метку."
 msgid "Please enter this account passphrase to login."
 msgstr "Пожалуйста, введите вашу секретную фразу для входа."
 
+msgid "Please type word 3, 6 and 9 from your passphrase to validate the account creation."
+msgstr "Введите 3, 6 и 9 слова из кодовой фразы, чтобы подтвердить создание аккаунта"
+
+msgid "Polish"
+msgstr "Польский"
+
+msgid "Portuguese - Brazil"
+msgstr "Португальский - Бразилия"
+
+msgid "Portuguese - Portugal"
+msgstr "Португальский - Португалия"
+
+msgid "Portuguese"
+msgstr "Португальский"
+
 msgid "Price"
 msgstr "Цена"
 
 msgid "Productivity"
 msgstr "Производительность"
+
+msgid "Public Key"
+msgstr "Публичный ключ"
+
+msgid "QR Scanner"
+msgstr "Сканер QR кодов"
 
 msgid "Quit"
 msgstr "Выход"
@@ -374,14 +497,44 @@ msgstr "Завершить клиент Ark?"
 msgid "Receive Ark"
 msgstr "Получить Ark"
 
+msgid "Register Delegate"
+msgstr "Зарегистрировать делегата"
+
+msgid "Remaining balance"
+msgstr "Остаток баланса"
+
 msgid "Remove"
 msgstr "Удалить"
+
+msgid "Remove Account"
+msgstr "Удалить аккаунт"
+
+msgid "Remove Network"
+msgstr "Удалить сеть"
+
+msgid "Remove account"
+msgstr "Удалить аккаунт"
+
+msgid "Remove this account from your wallet. The account may be added again using the original passphrase of the account."
+msgstr "Удалить этот аккаунт из вашего кошелька. Аккаунт можно будет добавить снова, с помощью соответствующей кодовой фразы."
 
 msgid "Rename"
 msgstr "Переименовать"
 
 msgid "Restart"
 msgstr "Обновить"
+
+msgid "Romanian"
+msgstr "Румынский"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "SHA256 Signature"
+msgstr "Сигнатура SHA256"
+
+msgid "SLIP 44"
+msgstr "SLIP 44"
 
 msgid "Save"
 msgstr "Сохранить"
@@ -404,14 +557,71 @@ msgstr "Отправить Ark из"
 msgid "Set"
 msgstr "Установить"
 
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Show {{((!ul.showPublicKey) && 'public key' || 'address')}}"
+msgstr "Показать {{((!ul.showPublicKey) && 'public key' || 'address')}}"
+
+msgid "Sign"
+msgstr "Подписать"
+
+msgid "Sign / Verify Message"
+msgstr "Подписать / Проверить сообщение"
+
+msgid "Sign Message"
+msgstr "Подписать сообщение"
+
+msgid "Signature"
+msgstr "Подпись"
+
+msgid "Slovak"
+msgstr "Словацкий"
+
+msgid "Slovenian"
+msgstr "Словенский"
+
+msgid "Spanish"
+msgstr "Испанский"
+
 msgid "Succesfully Logged In!"
 msgstr "Авторизация прошла успешно!"
+
+msgid "Swedish"
+msgstr "Шведский"
+
+msgid "Switch Network"
+msgstr "Сменить сеть"
+
+msgid "Symbol"
+msgstr "Символ"
 
 msgid "The destination address"
 msgstr "Адрес получателя"
 
+msgid "The message is NOT verified"
+msgstr "Сообщение НЕ верифицировано"
+
+msgid "The message is verified successfully"
+msgstr "Сообщение успешно верифицировано"
+
+msgid "Second Passphrase added successfully:"
+msgstr "Вторая кодовая фраза успешно добавлена:"
+
+msgid "Theme"
+msgstr "Тема"
+
 msgid "This account has never interacted with the network. This is a cold wallet."
 msgstr "Этот счет никогда не взаимодействовали с сетью. Это холодный бумажник."
+
+msgid "Toggle Full Screen"
+msgstr "Переключить полноэкранный режим"
+
+msgid "Token name"
+msgstr "Название токена"
+
+msgid "Total"
+msgstr "Всего"
 
 msgid "Total {{ul.network.symbol}}"
 msgstr "Всего {{ul.network.symbol}}"
@@ -419,14 +629,26 @@ msgstr "Всего {{ul.network.symbol}}"
 msgid "Transaction"
 msgstr "Транзакция"
 
+msgid "Transaction file successfully saved in"
+msgstr "Файл транзакции успешно сохранён в"
+
 msgid "Transactions"
 msgstr "Транзакции"
 
 msgid "Type"
 msgstr "Тип"
 
+msgid "Type an address or a name"
+msgstr "Напишите адрес или имя"
+
 msgid "Username"
 msgstr "Имя пользователя"
+
+msgid "Verify Message"
+msgstr "Верифицировать сообщение"
+
+msgid "Verify Text"
+msgstr "Верифицировать текст"
 
 msgid "Virtual folder added!"
 msgstr "Виртуальная папка добавлена!"
@@ -436,6 +658,18 @@ msgstr "Голос"
 
 msgid "Votes"
 msgstr "Голоса"
+
+msgid "Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for\n                a delegate that you support."
+msgstr "Голосование это необязательный, но важный механизм, поддерживающий безопасность\nсети Арк. Делегаты, в количестве 51, набравшие максимум голосов сети отвечают за верификацию и сборку транзакций в новые блоки. На этой странице вы можете отдать голос за делегата, которого вы поддерживаете."
+
+msgid "Word"
+msgstr "Слово"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "approval"
+msgstr "подтверждение"
 
 msgid "address"
 msgstr "адрес"
@@ -461,6 +695,9 @@ msgstr "сейчас!"
 msgid "passphrase"
 msgstr "секретная фраза"
 
+msgid "productivity"
+msgstr "производительность"
+
 msgid "sent with success!"
 msgstr "отправлено успешно!"
 
@@ -469,4 +706,7 @@ msgstr "Для голосования необходимо иметь хотя �
 
 msgid "you need at least 25 ARK to register delegate"
 msgstr "вам нужно как минимум 25 ARK для регистрации делегата"
+
+msgid "you need at least 5 ARK to create a second passphrase"
+msgstr "необходимо иметь минимум 5 Арк, чтобы создать вторую кодовую фразу"
 
