@@ -44,42 +44,37 @@
       storageService.setGlobal('networks', n)
     }
 
-    function removeNetwork (name) {
-      const n = storageService.getGlobal('networks')
-      delete n[name]
-      storageService.setGlobal('networks', n)
-      storageService.deleteState()
-    }
-
     function createNetwork (data) {
       ensureValidPeerSeed(data)
       const networks = storageService.getGlobal('networks')
-      const deferred = $q.defer()
-      if (networks[data.name]) {
-        deferred.reject("Network name '" + data.name + "' already taken, please choose another one")
-      } else {
-        $http({
-          url: data.peerseed + '/api/loader/autoconfigure',
-          method: 'GET',
-          timeout: 5000
-        }).then(
-          (resp) => {
-            const newNetwork = resp.data.network
-            newNetwork.isUnsaved = true
-            newNetwork.forcepeer = data.forcepeer
-            newNetwork.peerseed = data.peerseed
-            newNetwork.slip44 = 1 // default to testnet slip44
-            newNetwork.cmcTicker = data.cmcTicker
-            deferred.resolve({name: data.name, network: newNetwork})
-          },
-          (resp) => {
-            deferred.reject('Cannot connect to peer to autoconfigure the network')
-          }
-        )
-      }
-      return deferred.promise
+
+      return new Promise((resolve, reject) => {
+        if (networks[data.name]) {
+          reject(`Network name "${data.name}" already taken, please choose another one`)
+        } else {
+          $http({
+            url: data.peerseed + '/api/loader/autoconfigure',
+            method: 'GET',
+            timeout: 5000
+          }).then(
+            (resp) => {
+              const newNetwork = resp.data.network
+              newNetwork.isUnsaved = true
+              newNetwork.forcepeer = data.forcepeer
+              newNetwork.peerseed = data.peerseed
+              newNetwork.slip44 = 1 // default to testnet slip44
+              newNetwork.cmcTicker = data.cmcTicker
+              resolve({ name: data.name, network: newNetwork })
+            },
+            (resp) => {
+              reject('Cannot connect to peer to autoconfigure the network')
+            }
+          )
+        }
+      })
     }
 
+    // TODO utils ?
     function ensureValidPeerSeed (network) {
       if (!network || !network.peerseed) {
         return
@@ -149,14 +144,6 @@
 
     function getNetwork () {
       return network
-    }
-
-    function getNetworkName () {
-      return storageService.getContext()
-    }
-
-    function getNetworks () {
-      return storageService.getGlobal('networks')
     }
 
     function listenNetworkHeight () {
@@ -329,18 +316,6 @@
       return connection.promise
     }
 
-    function getLatestClientVersion () {
-      const deferred = $q.defer()
-      const url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest'
-      $http.get(url, { timeout: 5000 })
-        .then((res) => {
-          deferred.resolve(res.data.tag_name)
-        }, (e) => {
-          // deferred.reject(gettextCatalog.getString("Cannot get latest version"))
-        })
-      return deferred.promise
-    }
-
     listenNetworkHeight()
     pickRandomPeer()
 
@@ -348,17 +323,13 @@
       switchNetwork,
       setNetwork,
       createNetwork,
-      removeNetwork,
       getNetwork,
-      getNetworkName,
-      getNetworks,
       getPeer,
       getConnection,
       getFromPeer,
       postTransaction,
       broadcastTransaction,
-      pickRandomPeer,
-      getLatestClientVersion
+      pickRandomPeer
     }
   }
 })()
