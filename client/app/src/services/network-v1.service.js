@@ -21,10 +21,6 @@
     }
     ark.crypto.setNetworkVersion(network.version || 23)
 
-    const momentTimezone = require('moment-timezone')
-    const momentRange = require('moment-range')
-    momentRange.extendMoment(momentTimezone)
-
     const clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
 
     let peer = {
