@@ -33,15 +33,6 @@
       storageService.deleteState()
     }
 
-    const getLatestClientVersion = () => {
-      return new Promise((resolve, reject) => {
-        const url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest'
-        $http.get(url, { timeout: 5000 })
-          .then(
-            res => resolve(res.data.tag_name),
-            _error => {}// reject(gettextCatalog.getString("Cannot get latest version"))
-          )
-      })
     }
 
     return {
@@ -57,8 +48,7 @@
       getFromPeer,
       postTransaction,
       broadcastTransaction,
-      pickRandomPeer,
-      getLatestClientVersion
+      pickRandomPeer
     }
   }
 })()
