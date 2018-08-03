@@ -124,7 +124,7 @@
         } else {
 
           const success = response => {
-            const newNetwork = response.data.network
+            const newNetwork = (response.data.network || response.data.data)
             newNetwork.isUnsaved = true
             newNetwork.forcepeer = data.forcepeer
             newNetwork.peerseed = data.peerseed
