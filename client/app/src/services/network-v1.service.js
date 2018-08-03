@@ -9,127 +9,13 @@
    * @constructor
    */
   function NetworkV1Service ($q, $http, $timeout, storageService, timeService, toastService) {
-    const _path = require('path')
-    const ark = require(_path.resolve(__dirname, '../node_modules/arkjs'))
-    const mainNetArkJsNetworkKey = 'ark'
-    const devNetArkJsNetworkKey = 'testnet'
+    const path = require('path')
+    const packageJson = require(path.resolve(__dirname, '../../package.json'))
+    const clientVersion = packageJson.version
 
-    let network = switchNetwork(storageService.getContext())
+    const ark = require(path.resolve(__dirname, '../node_modules/arkjs'))
 
-    if (!network) {
-      network = switchNetwork()
-    }
-    ark.crypto.setNetworkVersion(network.version || 23)
-
-    const clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
-
-    let peer = {
-      ip: network.peerseed,
-      network: storageService.getContext(),
-      isConnected: false,
-      height: 0,
-      lastConnection: null,
-      price: storageService.getGlobal('peerCurrencies') || { btc: '0.0' }
-    }
-
-    const connection = $q.defer()
-
-    connection.notify(peer)
-
-    function setNetwork (name, newnetwork) {
-      ensureValidPeerSeed(newnetwork)
-
-      const n = storageService.getGlobal('networks')
-      n[name] = newnetwork
-      storageService.setGlobal('networks', n)
-    }
-
-    function createNetwork (data) {
-      ensureValidPeerSeed(data)
-      const networks = storageService.getGlobal('networks')
-
-      return new Promise((resolve, reject) => {
-        if (networks[data.name]) {
-          reject(`Network name "${data.name}" already taken, please choose another one`)
-        } else {
-          $http({
-            url: data.peerseed + '/api/loader/autoconfigure',
-            method: 'GET',
-            timeout: 5000
-          }).then(
-            (resp) => {
-              const newNetwork = resp.data.network
-              newNetwork.isUnsaved = true
-              newNetwork.forcepeer = data.forcepeer
-              newNetwork.peerseed = data.peerseed
-              newNetwork.slip44 = 1 // default to testnet slip44
-              newNetwork.cmcTicker = data.cmcTicker
-              resolve({ name: data.name, network: newNetwork })
-            },
-            (resp) => {
-              reject('Cannot connect to peer to autoconfigure the network')
-            }
-          )
-        }
-      })
-    }
-
-    // TODO utils ?
-    function ensureValidPeerSeed (network) {
-      if (!network || !network.peerseed) {
-        return
-      }
-
-      network.peerseed = network.peerseed.replace(/\/$/, '')
-    }
-
-    function switchNetwork (newnetwork, reload) {
-      let n
-      if (!newnetwork) { // perform round robin
-        n = storageService.getGlobal('networks')
-        const keys = Object.keys(n)
-        let i = keys.indexOf(storageService.getContext()) + 1
-        if (i === keys.length) {
-          i = 0
-        }
-        storageService.switchContext(keys[i])
-        return window.location.reload()
-      }
-      storageService.switchContext(newnetwork)
-      n = storageService.getGlobal('networks')
-      if (!n) {
-        n = {
-          mainnet: createNetworkFromArkJs(mainNetArkJsNetworkKey, 0x17, 111, 'url(assets/images/images/Ark.jpg)'),
-          devnet: createNetworkFromArkJs(devNetArkJsNetworkKey, 30, 1, '#222299')
-        }
-        storageService.setGlobal('networks', n)
-      }
-      if (reload) {
-        return window.location.reload()
-      }
-      return n[newnetwork]
-    }
-
-    function createNetworkFromArkJs (arkJsNetworkKey, version, slip44, background) {
-      const arkJsNetwork = ark.networks[arkJsNetworkKey]
-
-      return {
-        arkJsKey: arkJsNetworkKey,
-        nethash: arkJsNetwork.nethash,
-        peerseed: 'http://' + arkJsNetwork.activePeer.ip + ':' + arkJsNetwork.activePeer.port,
-        token: arkJsNetwork.token,
-        symbol: arkJsNetwork.symbol,
-        explorer: arkJsNetwork.explorer,
-        version: version,
-        slip44: slip44,
-        forcepeer: false,
-        background: background,
-        theme: 'default',
-        themeDark: false
-      }
-    }
-
-    function tryGetPeersFromArkJs () {
+    function tryGetPeersFromArkJs (network) {
       if (!network.arkJsKey) {
         return
       }
@@ -142,138 +28,85 @@
       return arkjsNetwork.peers
     }
 
-    function getNetwork () {
-      return network
-    }
-
-    function listenNetworkHeight () {
-      $http.get(peer.ip + '/api/blocks/getHeight', { timeout: 5000 }).then(resp => {
+    function listenNetworkHeight (connection, network, currentPeer) {
+      $http.get(`${currentPeer.ip}/api/blocks/getHeight`, { timeout: 5000 }).then(resp => {
         timeService.getTimestamp().then(
-          (timestamp) => {
-            peer.lastConnection = timestamp
+          timestamp => {
+            currentPeer.lastConnection = timestamp
             if (resp.data && resp.data.success) {
-              if (peer.height === resp.data.height) {
-                peer.isConnected = false
-                peer.error = 'Node is experiencing sychronisation issues'
-                connection.notify(peer)
-                pickRandomPeer()
+              if (currentPeer.height === resp.data.height) {
+                currentPeer.isConnected = false
+                currentPeer.error = 'Node is experiencing sychronisation issues'
+                connection.notify(currentPeer)
+                pickRandomPeer(connection, network, currentPeer)
               } else {
-                peer.height = resp.data.height
-                peer.isConnected = true
-                connection.notify(peer)
+                currentPeer.height = resp.data.height
+                currentPeer.isConnected = true
+                connection.notify(currentPeer)
               }
             } else {
-              peer.isConnected = false
-              peer.error = resp.statusText || 'Peer Timeout after 5s'
-              connection.notify(peer)
+              currentPeer.isConnected = false
+              currentPeer.error = resp.statusText || 'Peer Timeout after 5s'
+              connection.notify(currentPeer)
             }
           }
         )
       })
-      $timeout(() => listenNetworkHeight(), 60000)
+      $timeout(() => listenNetworkHeight(connection, network, currentPeer), 60000)
     }
 
-    function getFromPeer (api) {
-      const deferred = $q.defer()
-      peer.lastConnection = new Date()
-      $http({
-        url: peer.ip + api,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          os: 'ark-desktop',
-          version: clientVersion,
-          port: 1,
-          nethash: network.nethash
-        },
-        timeout: 5000
-      }).then(
-        (resp) => {
-          deferred.resolve(resp.data)
-          peer.isConnected = true
-          peer.delay = new Date().getTime() - peer.lastConnection.getTime()
-          connection.notify(peer)
-        },
-        (resp) => {
-          deferred.reject('Peer disconnected')
-          peer.isConnected = false
-          peer.error = resp.statusText || 'Peer Timeout after 5s'
-          connection.notify(peer)
-        }
-      )
+    function getFromPeer (connection, network, currentPeer, api) {
+      currentPeer.lastConnection = new Date()
 
-      return deferred.promise
-    }
-
-    function broadcastTransaction (transaction, max) {
-      const peers = storageService.get('peers')
-      if (!peers) {
-        return
-      }
-      if (!max) {
-        max = 10
-      }
-      for (let i = 0; i < max; i++) {
-        if (i < peers.length) {
-          postTransaction(transaction, 'http://' + peers[i].ip + ':' + peers[i].port)
-        }
-      }
-    }
-
-    function postTransaction (transaction, ip) {
-      const deferred = $q.defer()
-      let peerIp = ip
-      if (!peerIp) {
-        peerIp = peer.ip
-      }
-
-      const endpoint = 'peer/transactions'
-
-      $http({
-        url: `${peerIp}/${endpoint}`,
-        data: { transactions: [transaction] },
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          os: 'ark-desktop',
-          version: clientVersion,
-          port: 1,
-          nethash: network.nethash
-        }
-      }).then((resp) => {
-        if (resp.data.success) {
-          // we make sure that tx is well broadcasted
-          if (!ip) {
-            broadcastTransaction(transaction)
+      return new Promise((resolve, reject) => {
+        $http({
+          url: currentPeer.ip + api,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            os: 'ark-desktop',
+            version: clientVersion,
+            port: 1,
+            nethash: network.nethash
+          },
+          timeout: 5000
+        }).then(
+          resp => {
+            resolve(resp.data)
+            currentPeer.isConnected = true
+            currentPeer.delay = new Date().getTime() - currentPeer.lastConnection.getTime()
+            connection.notify(currentPeer)
+          },
+          _ => {
+            reject('Peer disconnected')
+            currentPeer.isConnected = false
+            currentPeer.error = resp.statusText || 'Peer Timeout after 5s'
+            connection.notify(currentPeer)
           }
-          deferred.resolve(transaction)
-        } else {
-          deferred.reject(resp.data)
-        }
-      }, (error) => deferred.reject(error))
-      return deferred.promise
+        )
+      })
     }
 
-    function pickRandomPeer () {
+    function pickRandomPeer (connection, network, currentPeer) {
       if (network.forcepeer) {
         return
       }
-      getFromPeer('/api/peers')
+      getFromPeer(connection, network, currentPeer, '/api/peers')
         .then((response) => {
           if (response.success) {
             const regex127 = RegExp(/^(?!127\.).*/) // does not start with '127.'
-            const peers = response.peers.filter((peer) => {
+            const peers = response.peers.filter(peer => {
               return peer.status === 'OK' && regex127.test(peer.ip)
             })
             storageService.set('peers', peers)
-            findGoodPeer(peers, 0)
+            findGoodPeer(connection, network, currentPeer, peers, 0)
           } else {
-            findGoodPeer(storageService.get('peers'), 0)
+            findGoodPeer(connection, network, currentPeer, storageService.get('peers'), 0)
           }
-        }, () => findGoodPeer(storageService.get('peers'), 0))
+        }, () => findGoodPeer(connection, network, currentPeer, storageService.get('peers'), 0))
     }
 
-    function findGoodPeer (peers, index, isStaticPeerList) {
+    function findGoodPeer (connection, network, currentPeer, peers, index, isStaticPeerList) {
       const isPeerListValid = () => peers && index <= peers.length - 1
 
       if (!isStaticPeerList && !isPeerListValid()) {
@@ -281,7 +114,7 @@
         // (and therefore we do not have a peer list in our storage)
         // and getting a peer list failed (the peerseed server may be down)
         // in this case we try to get a peer from the hardcoded list in the arkjs config
-        peers = tryGetPeersFromArkJs()
+        peers = tryGetPeersFromArkJs(network)
         isStaticPeerList = true
       } else if (index === 0) {
         peers = peers.sort((a, b) => b.height - a.height || a.delay - b.delay).filter(p => p.ip !== '127.0.0.1')
@@ -292,43 +125,25 @@
         return
       }
 
-      peer.ip = 'http://' + peers[index].ip + ':' + peers[index].port
-      getFromPeer('/api/blocks/getHeight')
+      currentPeer.ip = 'http://' + peers[index].ip + ':' + peers[index].port
+      getFromPeer(connection, network, currentPeer, '/api/blocks/getHeight')
         .then((response) => {
-          if (response.success && response.height < peer.height) {
-            findGoodPeer(peers, index + 1, isStaticPeerList)
+          if (response.success && response.height < currentPeer.height) {
+            findGoodPeer(connection, network, currentPeer, peers, index + 1, isStaticPeerList)
           } else {
-            peer.height = response.height
+            currentPeer.height = response.height
             // if we had a static peer list, we now try to get a dynamic peer list
             // because now we know the current peer does work and we don't want to keep the hardcoded peers
             if (isStaticPeerList) {
-              pickRandomPeer()
+              pickRandomPeer(connection, network, currentPeer)
             }
           }
-        }, () => findGoodPeer(peers, index + 1, isStaticPeerList))
+        }, () => findGoodPeer(connection, network, currentPeer, peers, index + 1, isStaticPeerList))
     }
-
-    function getPeer () {
-      return peer
-    }
-
-    function getConnection () {
-      return connection.promise
-    }
-
-    listenNetworkHeight()
-    pickRandomPeer()
 
     return {
-      switchNetwork,
-      setNetwork,
-      createNetwork,
-      getNetwork,
-      getPeer,
-      getConnection,
       getFromPeer,
-      postTransaction,
-      broadcastTransaction,
+      listenNetworkHeight,
       pickRandomPeer
     }
   }
