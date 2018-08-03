@@ -50,11 +50,11 @@
 
     const httpHeaders = (override = {}) => {
       const headers = {
-        // 'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
         os: 'ark-desktop',
         version: clientVersion,
-        // port: 1,
-        // nethash: network.nethash
+        port: 1,
+        nethash: network.nethash
       }
 
       if (!isV1()) {
@@ -260,15 +260,7 @@
       currentPeer.lastConnection = new Date()
 
       return new Promise((resolve, reject) => {
-        let ip
-        if (isV1()) {
-          ip  = currentPeer.ip
-        } else {
-          // core-api: 4003, core-p2p: 4002
-          ip  = currentPeer.ip.replace('4002', '4003')
-        }
-
-        httpGet(ip + api, httpHeaders()).then(
+        httpGet(currentPeer.ip + api, httpHeaders()).then(
           resp => {
             resolve(resp.data)
             currentPeer.isConnected = true
@@ -331,6 +323,9 @@
         endpoint = '/api/blocks/getHeight'
       } else {
         endpoint = '/api/node/status'
+
+        // Default ports: core-api: 4003, core-p2p: 4002
+        currentPeer.ip = currentPeer.ip.replace(':4002', ':4003')
       }
 
       getFromPeer(endpoint)
@@ -371,7 +366,7 @@
         peerUrl = currentPeer.ip
       }
 
-      const endpoint = 'peer/transactions'
+      const endpoint = isV1() ? 'peer/transactions' : 'api/transactions'
 
       return new Promise((resolve, reject) => {
         $http({
