@@ -33,11 +33,19 @@
       version: network && network.ports && network.ports['@arkecosystem/core-api'] ? '2' : '1'
     }
 
+    const defaultHeaders = () => ({
+      'Content-Type': 'application/json',
+      os: 'ark-desktop',
+      version: clientVersion,
+      port: 1,
+      nethash: network.nethash
+    })
+
     const isV1 = () => currentPeer.version.startsWith('1')
 
     const httpGet = (url, headers) => {
       if (!headers) {
-        headers = httpHeaders()
+        headers = defaultHeaders()
       }
 
       return $http({
@@ -48,28 +56,12 @@
       })
     }
 
-    const httpHeaders = (override = {}) => {
-      const headers = {
-        'Content-Type': 'application/json',
-        os: 'ark-desktop',
-        version: clientVersion,
-        port: 1,
-        nethash: network.nethash
-      }
-
-      if (!isV1()) {
-        headers['API-version'] = 2
-      }
-
-      return Object.assign({}, headers, override)
-    }
-
     /*
      * Connect to the initial peer to ensure if it's from V1 or V2
      */
     const ensurePeerVersion = () => {
       // Try V2 first and V1 as fallback
-      httpGet(`${currentPeer.ip}/api/node/configuration`).then(
+      httpGet(`${currentPeer.ip}/api/v2/node/configuration`).then(
         _ => currentPeer.version = '2',
         _error => {
           httpGet(`${currentPeer.ip}/api/loader/autoconfigure`).then(
@@ -134,7 +126,7 @@
           }
 
           // Try V2 first and V1 as fallback
-          httpGet(`${data.peerseed}/api/node/configuration`, httpHeaders({ 'API-version': 2 })).then(
+          httpGet(`${data.peerseed}/api/v2/node/configuration`).then(
             success,
             _error => {
               httpGet(`${data.peerseed}/api/loader/autoconfigure`).then(
@@ -225,10 +217,10 @@
       if (isV1()) {
         endpoint = '/api/blocks/getHeight'
       } else {
-        endpoint = '/api/node/status'
+        endpoint = '/api/v2/node/status'
       }
 
-      httpGet(`${currentPeer.ip}${endpoint}`, httpHeaders()).then(resp => {
+      httpGet(`${currentPeer.ip}${endpoint}`).then(resp => {
         timeService.getTimestamp().then(timestamp => {
           currentPeer.lastConnection = timestamp
 
@@ -260,7 +252,7 @@
       currentPeer.lastConnection = new Date()
 
       return new Promise((resolve, reject) => {
-        httpGet(currentPeer.ip + api, httpHeaders()).then(
+        httpGet(currentPeer.ip + api).then(
           resp => {
             resolve(resp.data)
             currentPeer.isConnected = true
@@ -297,6 +289,9 @@
         }, () => findGoodPeer(storageService.get('peers'), 0))
     }
 
+    // Default ports: core-api: 4003, core-p2p: 4002
+    const fixV2Peer = ip => ip.replace(':4000', ':4003').replace(':4002', ':4003')
+
     const findGoodPeer = (peers, index, isStaticPeerList) => {
       const isPeerListValid = () => peers && index <= peers.length - 1
 
@@ -322,10 +317,9 @@
       if (isV1()) {
         endpoint = '/api/blocks/getHeight'
       } else {
-        endpoint = '/api/node/status'
+        endpoint = '/api/v2/node/status'
 
-        // Default ports: core-api: 4003, core-p2p: 4002
-        currentPeer.ip = currentPeer.ip.replace(':4002', ':4003')
+        currentPeer.ip = fixV2Peer(currentPeer.ip)
       }
 
       getFromPeer(endpoint)
@@ -355,7 +349,11 @@
       }
       for (let i = 0; i < max; i++) {
         if (i < peers.length) {
-          postTransaction(transaction, `http://${peers[i].ip}:${peers[i].port}`)
+          const url = `http://${peers[i].ip}:${peers[i].port}`
+          if (!isV1()) {
+            url = fixV2Peer(url)
+          }
+          postTransaction(transaction, url)
         }
       }
     }
@@ -366,16 +364,16 @@
         peerUrl = currentPeer.ip
       }
 
-      const endpoint = isV1() ? 'peer/transactions' : 'api/transactions'
+      const endpoint = isV1() ? 'peer/transactions' : 'api/v2/transactions'
 
       return new Promise((resolve, reject) => {
         $http({
           url: `${peerUrl}/${endpoint}`,
           data: { transactions: [transaction] },
           method: 'POST',
-          headers: httpHeaders()
+          headers: defaultHeaders()
         }).then(response => {
-          if (response.data.success) {
+          if (response.data.success || response.data.data.accept.length) {
             // we make sure that tx is well broadcasted
             if (!url) {
               broadcastTransaction(transaction)
