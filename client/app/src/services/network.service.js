@@ -138,7 +138,7 @@
       })
     }
 
-    const createNetworkFromArkJs = (arkJsNetworkKey, version, slip44, background) => {
+    function createNetworkFromArkJs (arkJsNetworkKey, version, slip44, background) {
       const arkJsNetwork = ark.networks[arkJsNetworkKey]
 
       return {
