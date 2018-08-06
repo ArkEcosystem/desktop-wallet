@@ -349,7 +349,7 @@
       }
       for (let i = 0; i < max; i++) {
         if (i < peers.length) {
-          const url = `http://${peers[i].ip}:${peers[i].port}`
+          let url = `http://${peers[i].ip}:${peers[i].port}`
           if (!isV1()) {
             url = fixV2Peer(url)
           }
@@ -372,15 +372,15 @@
           data: { transactions: [transaction] },
           method: 'POST',
           headers: defaultHeaders()
-        }).then(response => {
-          if (response.data.success || response.data.data.accept.length) {
+        }).then(({ data }) => {
+          if (data.success || data.data.accept.length) {
             // we make sure that tx is well broadcasted
             if (!url) {
               broadcastTransaction(transaction)
             }
             resolve(transaction)
           } else {
-            reject(resp.data)
+            reject(data)
           }
         }, reject)
       })
