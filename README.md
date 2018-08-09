@@ -12,6 +12,22 @@
 ...
 ```
 
+## Development
+
+``` bash
+# Install dependencies
+npm install
+
+# Serve with hot reload at localhost:9080
+npm run dev
+
+# Build electron application for production
+npm run build
+
+# Lint all JS/Vue component files in `src/`
+npm run lint
+```
+
 ## Security
 
 If you discover a security vulnerability within this project, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
