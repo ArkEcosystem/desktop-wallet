@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import '@/styles/style.css'
+  
   export default {
     name: 'desktop-wallet'
   }
