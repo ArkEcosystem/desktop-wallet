@@ -21,6 +21,9 @@ npm install
 # Serve with hot reload at localhost:9080
 npm run dev
 
+# check that all dependencies are used
+yarn run depcheck
+
 # Build electron application for production
 npm run build
 

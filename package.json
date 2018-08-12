@@ -10,6 +10,7 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
+    "depcheck": "depcheck ./ --ignores babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-html,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer",
     "dev": "node .electron-vue/dev-runner.js",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src __tests__",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src __tests__",
@@ -74,6 +75,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "del": "^3.0.0",
+    "depcheck": "^0.6.9",
     "devtron": "^1.4.0",
     "electron": "^1.7.5",
     "electron-builder": "^19.19.1",
@@ -114,7 +116,9 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,vue}": ["npm run lint:fix"]
+      "*.{js,vue}": [
+        "npm run lint:fix"
+      ]
     }
   }
 }
