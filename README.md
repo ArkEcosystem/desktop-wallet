@@ -2,7 +2,7 @@
 
 > Ark desktop wallet
 
-[![Build Status](https://badgen.now.sh/travis/ArkEcosystem/new-desktop-wallet/master.svg?style=flat-square)](https://travis-ci.org/ArkEcosystem/new-desktop-wallet)
+[![Build Status](https://badgen.now.sh/travis/ArkEcosystem/new-desktop-wallet/master.svg?style=flat-square)](https://travis-ci.com/ArkEcosystem/new-desktop-wallet)
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/new-desktop-wallet.svg?style=flat-square)](https://github.com/ArkEcosystem/new-desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
