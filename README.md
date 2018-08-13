@@ -18,32 +18,35 @@
 # Install dependencies
 yarn install
 
-# Serve with hot reload at localhost:9080
-yarn run dev
+# Serve the application with hot reload at localhost:9080
+yarn dev
 
-# check that all dependencies are used
-yarn run depcheck
+# Check that all dependencies are used
+yarn depcheck
 
 # Build electron application for production
-yarn run build
+yarn build
 
-# Lint all JS/Vue component files in `src/`
-yarn run lint
+# Lint all JS/Vue files in the `src` and `__tests__`
+yarn lint
 
-# run unit tests
+# Lint, and fix, all JS/Vue files in `src` and `__tests__`
+yarn lint:fix
+
+# Run unit and end-to-end tests
+yarn test
+
+# Run unit tests
 yarn test:unit
 
-# run unit tests and watch for changes to re-run the tests
+# Run unit tests and watch for changes to re-run the tests
 yarn test:unit:watch
 
-# run unit tests and generate and display the coverage report
+# Run unit tests and generate and display the coverage report
 yarn test:unit:coverage
 
-# run end-to-end tests (packs the app)
+# Run end-to-end tests
 yarn test:e2e
-
-# run unit and end-to-end tests (packs the app)
-yarn test
 ```
 
 ## Security
