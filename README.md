@@ -16,19 +16,34 @@
 
 ``` bash
 # Install dependencies
-npm install
+yarn install
 
 # Serve with hot reload at localhost:9080
-npm run dev
+yarn run dev
 
 # check that all dependencies are used
 yarn run depcheck
 
 # Build electron application for production
-npm run build
+yarn run build
 
 # Lint all JS/Vue component files in `src/`
-npm run lint
+yarn run lint
+
+# run unit tests
+yarn test:unit
+
+# run unit tests and watch for changes to re-run the tests
+yarn test:unit:watch
+
+# run unit tests and generate and display the coverage report
+yarn test:unit:coverage
+
+# run end-to-end tests (packs the app)
+yarn test:e2e
+
+# run unit and end-to-end tests (packs the app)
+yarn test
 ```
 
 ## Security
