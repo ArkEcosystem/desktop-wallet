@@ -16,6 +16,7 @@
       '$timeout',
       '$interval',
       '$log',
+      '$http',
       '$mdDialog',
       'dialogService',
       '$scope',
@@ -52,6 +53,7 @@
     $timeout,
     $interval,
     $log,
+    $http,
     $mdDialog,
     dialogService,
     $scope,
@@ -214,12 +216,24 @@
       })
     }
 
+    const getLatestClientVersion = () => {
+      return new Promise((resolve, reject) => {
+        const url = 'https://api.github.com/repos/ArkEcosystem/ark-desktop/releases/latest'
+        $http.get(url, { timeout: 5000 })
+          .then(
+            res => resolve(res.data.tag_name),
+            _error => {}// reject(gettextCatalog.getString("Cannot get latest version"))
+          )
+      })
+    }
+
+    getLatestClientVersion().then(r => (self.latestClientVersion = r))
+
     self.clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
     self.latestClientVersion = self.clientVersion
     self.openExplorer = openExplorer
     self.timestamp = timestamp
     self.showValidateTransaction = showValidateTransaction
-    networkService.getLatestClientVersion().then((r) => { self.latestClientVersion = r })
     self.isNetworkConnected = false
     self.selected = null
     self.accounts = []

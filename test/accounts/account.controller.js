@@ -44,7 +44,6 @@ describe('AccountController', () => {
         createSecondPassphraseCreationTransaction: sinon.stub().resolves()
       }
       networkServiceMock = {
-        getLatestClientVersion () { return new Promise((resolve, reject) => resolve('0.0.0')) },
         getNetwork () { return { theme: 'default', themeDark: false } },
         getNetworks () {},
         getConnection () { return new Promise((resolve, reject) => resolve()) }
