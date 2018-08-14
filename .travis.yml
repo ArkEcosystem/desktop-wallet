@@ -24,14 +24,17 @@ before_script:
   - npm install node-hid --build-from-source
   - npm install
 
-  # TODO build?
-
 script:
-  # export DISPLAY=:99.0
-  # sh -e /etc/init.d/xvfb start
-  # sleep 3
-  - npm run eslint
   - npm test
+
+stages:
+  - lint
+  - test
+
+jobs:
+  include:
+    - stage: lint
+      script: npm run eslint
 
 cache:
   directories:
