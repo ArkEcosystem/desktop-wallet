@@ -1,0 +1,52 @@
+/**
+ * Buttons
+ */
+
+button:disabled {
+  cursor: default;
+  color: #838a9b !important;
+}
+
+.hover-button-blue-shadow-definition {
+  box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
+}
+
+.hover-button-green-shadow-definition {
+  box-shadow: 0 5px 15px rgba(45, 183, 97, 0.34);
+}
+
+.default-button {
+	@apply .mx-auto .semibold .py-4 .px-8 .border-transparent .rounded .transition
+}
+
+.blue-button {
+	@apply default-button .bg-theme-button .text-theme-button-text
+}
+
+.blue-button:enabled:hover {
+	@apply .bg-blue .text-white .hover-button-blue-shadow-definition
+}
+
+.green-button {
+	@apply default-button .bg-theme-action-button .text-grey-dark
+}
+
+.green-button:enabled:hover {
+	@apply .bg-green .text-white .hover-button-green-shadow-definition
+}
+
+.action-button {
+	@apply default-button .bg-theme-action-button .text-theme-action-button-text .py-2 .px-4
+}
+
+.action-button:enabled:hover {
+	@apply .bg-theme-button .text-theme-action-button-text-hover
+}
+
+.option-button {
+	@apply default-button .bg-theme-option-button .text-theme-option-button-text .py-2 .px-4
+}
+
+.option-button:enabled:hover {
+	@apply .bg-theme-option-button-hover .text-white
+}

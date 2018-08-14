@@ -44,6 +44,16 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
+  // Custom color variables
+  'theme-button': 'var(--theme-button)',
+  'theme-button-text': 'var(--theme-button-text)',
+  'theme-action-button': 'var(--theme-action-button)',
+  'theme-action-button-text': 'var(--theme-action-button-text)',
+  'theme-action-button-text-hover': 'var(--theme-action-button-text-hover)',
+  'theme-option-button': 'var(--theme-option-button)',
+  'theme-option-button-hover': 'var(--theme-option-button-hover)',
+  'theme-option-button-text': 'var(--theme-option-button-text)',
+
   'transparent': 'transparent',
 
   'black': '#22292f',
@@ -83,7 +93,7 @@ let colors = {
   'green-darkest': '#0f2f21',
   'green-darker': '#1a4731',
   'green-dark': '#1f9d55',
-  'green': '#38c172',
+  'green': '#2db761', // UPDATED
   'green-light': '#51d88a',
   'green-lighter': '#a2f5bf',
   'green-lightest': '#e3fcec',
@@ -96,13 +106,13 @@ let colors = {
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
 
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
+  'blue-darkest': '#202126', // UPDATED
+  'blue-darker': '#282a38', // UPDATED
   'blue-dark': '#2779bd',
-  'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
+  'blue': '#037CFF', // UPDATED
+  'blue-light': '#6f77a4', // UPDATED
+  'blue-lighter': '#e8eeff', // UPDATED
+  'blue-lightest': '#e0f0fd', // UPDATED
 
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',
