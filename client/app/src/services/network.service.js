@@ -62,11 +62,11 @@
     const ensurePeerVersion = () => {
       // Try V2 first and V1 as fallback
       httpGet(`${currentPeer.ip}/api/v2/node/configuration`).then(
-        _ => currentPeer.version = '2',
+        _ => (currentPeer.version = '2'),
         _error => {
           httpGet(`${currentPeer.ip}/api/loader/autoconfigure`).then(
-            _ => currentPeer.version = '1',
-            _error => reject('Cannot connect to peer')
+            _ => (currentPeer.version = '1'),
+            _error => { throw new Error('Cannot connect to peer') }
           )
         })
     }
@@ -105,16 +105,14 @@
       storageService.setGlobal('networks', network)
     }
 
-
     const createNetwork = data => {
       ensureValidPeerSeed(data)
       const networks = storageService.getGlobal('networks')
 
       return new Promise((resolve, reject) => {
         if (networks[data.name]) {
-          reject(`Network name "${data.name}" already taken, please choose another one`)
+          reject(new Error(`Network name "${data.name}" already taken, please choose another one`))
         } else {
-
           const success = response => {
             const newNetwork = (response.data.network || response.data.data)
             newNetwork.isUnsaved = true
@@ -131,7 +129,7 @@
             _error => {
               httpGet(`${data.peerseed}/api/loader/autoconfigure`).then(
                 success,
-                _ => reject('Cannot connect to peer to autoconfigure the network')
+                _ => reject(new Error('Cannot connect to peer to autoconfigure the network'))
               )
             })
         }
@@ -253,16 +251,16 @@
 
       return new Promise((resolve, reject) => {
         httpGet(currentPeer.ip + api).then(
-          resp => {
-            resolve(resp.data)
+          response => {
+            resolve(response.data)
             currentPeer.isConnected = true
             currentPeer.delay = new Date().getTime() - currentPeer.lastConnection.getTime()
             connection.notify(currentPeer)
           },
-          _ => {
-            reject('Peer disconnected')
+          response => {
+            reject(new Error('Peer disconnected'))
             currentPeer.isConnected = false
-            currentPeer.error = resp.statusText || 'Peer Timeout after 5s'
+            currentPeer.error = response.statusText || 'Peer Timeout after 5s'
             connection.notify(currentPeer)
           }
         )
@@ -275,7 +273,6 @@
       }
       getFromPeer('/api/peers')
         .then(response => {
-
           if (response.success) {
             const regex127 = RegExp(/^(?!127\.).*/) // does not start with '127.'
             const peers = response.peers.filter(peer => {

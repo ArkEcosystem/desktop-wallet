@@ -227,7 +227,7 @@
       })
     }
 
-    getLatestClientVersion().then(r => self.latestClientVersion = r)
+    getLatestClientVersion().then(r => (self.latestClientVersion = r))
 
     self.clientVersion = require(_path.resolve(__dirname, '../../package.json')).version
     self.latestClientVersion = self.clientVersion
