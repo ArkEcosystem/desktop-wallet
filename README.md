@@ -15,21 +15,27 @@ Collaborate with other translators on our OneSky project and help us get wallet 
 
 Please do not submit Pull-Requests (PRs) for translations, but use the link above!
 
-## Download
+## Installation
+
+### Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
-## Installing via Package Managers
+### Ubuntu requirements
+Some Ubuntu-based distros may require additional packages to be able to install the `.deb` file:
+```
+sudo apt-get install gconf2 libappindicator1 libdbusmenu-gtk4 libindicator7
+```
+
+### Installing via Package Managers
 
 #### AUR
 For distros derived from Arch Linux the package is available in AUR, just run:
-
 ```
 yaourt -Sy ark-desktop
 ```
 
 #### Homebrew
 For Mac users the package is available in [Homebrew](https://brew.sh/):
-
 ```
 brew update
 brew cask install arkclient
