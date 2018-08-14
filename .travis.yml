@@ -5,13 +5,23 @@ addons:
   apt:
     packages:
       - xvfb
+      - build-essential
+      - git
+      - gcc-4.8
+      - g++-4.8
+      - libusb-1.0-0
       - libusb-1.0-0-dev
+      - libudev1
+      - libudev-dev
 
 install:
+  - export CXX=g++-4.8
   - export DISPLAY=':99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 
 before_script:
+  - npm install -g node-gyp
+  - npm install node-hid --build-from-source
   - npm install
 
   # TODO build?
