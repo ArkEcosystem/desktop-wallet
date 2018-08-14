@@ -286,7 +286,7 @@
         }, () => findGoodPeer(storageService.get('peers'), 0))
     }
 
-    // Default ports: core-api: 4003, core-p2p: 4002
+    // Default ports: core-api: 4003, core-p2p: 4002 (devnet), 4001 (mainnet)
     const fixV2Peer = ip => ip.replace(':4000', ':4003').replace(':4002', ':4003')
 
     const findGoodPeer = (peers, index, isStaticPeerList) => {
