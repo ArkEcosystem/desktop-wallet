@@ -371,8 +371,8 @@
           headers: defaultHeaders()
         }).then(({ data }) => {
           if (data.success || data.data.accept.length) {
-            // we make sure that tx is well broadcasted
-            if (!url) {
+            // We make sure that the tx is well broadcasted, but only on V1
+            if (isV1() && !url) {
               broadcastTransaction(transaction)
             }
             resolve(transaction)
