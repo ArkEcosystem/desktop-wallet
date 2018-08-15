@@ -19,7 +19,8 @@ module.exports = {
   testPathIgnorePatterns: [
     '<rootDir>/__tests__/e2e',
     '<rootDir>/__tests__/unit.jest.conf.js',
-    '<rootDir>/__tests__/unit/.coverage'
+    '<rootDir>/__tests__/unit/.coverage',
+    '<rootDir>/__tests__/unit/__mocks__'
   ],
   snapshotSerializers: ['jest-serializer-vue'],
   coverageDirectory: '<rootDir>/__tests__/unit/.coverage',
