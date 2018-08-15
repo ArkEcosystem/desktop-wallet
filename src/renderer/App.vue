@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view/>
   </div>
 </template>
 
 <script>
-  import '@/styles/style.css'
-  
-  export default {
-    name: 'desktop-wallet'
-  }
+import '@/styles/style.css'
+
+export default {
+  name: 'DesktopWallet'
+}
 </script>
 
 <style>
