@@ -87,7 +87,7 @@ let colors = {
   'yellow-dark': '#f2d024',
   'yellow': '#ffed4a',
   'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
+  'yellow-lighter': '#ffeaa5', // UPDATED
   'yellow-lightest': '#fcfbeb',
 
   'green-darkest': '#0f2f21',
@@ -204,6 +204,7 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'Proxima Nova',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',

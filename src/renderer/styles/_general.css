@@ -5,3 +5,42 @@
 .transition {
   transition: all .1s ease-in
 }
+
+h1 {
+  @apply .font-bold;
+  color: #4a5466
+}
+
+h2 {
+  @apply .font-bold;
+  color: #3b4559
+}
+
+h3 {
+  @apply .font-bold;
+  color: #3b4559
+}
+
+h4 {
+  @apply .font-bold;
+  color: #2b3748
+}
+
+a {
+  @apply .no-underline .text-blue .transition
+}
+
+a:hover {
+  @apply .text-blue-dark .underline
+}
+
+a:active {
+  color: #8690bd
+}
+
+a:focus,
+button:focus,
+textarea:focus,
+input:focus {
+  @apply .outline-none
+}
