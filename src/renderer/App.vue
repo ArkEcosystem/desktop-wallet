@@ -21,6 +21,7 @@
 import '@/styles/style.css'
 import AppFooter from '@/components/layout/app-footer'
 import Sidemenu from '@/components/layout/sidemenu'
+import config from '@config'
 
 export default {
   name: 'DesktopWallet',
@@ -32,6 +33,10 @@ export default {
 
   data: () => ({
     darkTheme: false
-  })
+  }),
+
+  async created () {
+    this.$store.dispatch('network/setDefaults', config.NETWORKS)
+  }
 }
 </script>

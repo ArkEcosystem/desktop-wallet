@@ -10,6 +10,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@package.json$': '<rootDir>/package.json',
+    '^@config': '<rootDir>/config/index.js',
     '^@/(.*)$': '<rootDir>/src/renderer/$1'
   },
   transform: {
