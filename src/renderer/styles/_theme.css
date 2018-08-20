@@ -2,12 +2,16 @@
  * Theme colors
  */
 .theme-light {
-  --theme-page-background-color: #edf4f5;
+  --theme-page: #edf4f5;
 
-  --theme-sidemenu-background-color: white;
-  --theme-sidemenu-item-active-color: #e28188;
-  --theme-sidemenu-item-hover-color: #e5b0b4;
-  --theme-sidemenu-item-indicator-color: #F03643;
+  --theme-feature: white;
+  --theme-feature-item-text: #c0cddf;
+  --theme-feature-item-hover: #fef4f5;
+  --theme-feature-item-hover-alternative: #f0f2f9;
+  --theme-feature-item-hover-text: #e6b1b5;
+  --theme-feature-item-selected: #fef4f5;
+  --theme-feature-item-selected-text: #e28087;
+  --theme-feature-item-indicator: #f03643;
 
   --theme-button: #e0f0fd;
   --theme-button-text: #037cff;
@@ -20,6 +24,15 @@
 }
 
 .theme-dark {
+  --theme-feature: #343956;
+  --theme-featur-text: #a6add5;
+  --theme-feature-item-hover: #3a4060;
+  --theme-feature-item-hover-alternative: #3a4060;
+  --theme-feature-item-hover-text: #a6add5;
+  --theme-feature-item-selected: #3a4060; /* TODO: same as hover */
+  --theme-feature-item-selected-text: #a6add5;
+  --theme-feature-item-indicator: #343956;
+
 	--theme-button: #383c4d;
   --theme-button-text: #919eca;
   --theme-action-button: #333644;

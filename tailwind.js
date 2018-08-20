@@ -43,12 +43,16 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   // Custom color variables
-  'theme-page-background-color': 'var(--theme-page-background-color)',
+  'theme-page': 'var(--theme-page)',
 
-  'theme-sidemenu-background-color': 'var(--theme-sidemenu-background-color)',
-  'theme-sidemenu-item-active-color': 'var(--theme-sidemenu-item-active-color)',
-  'theme-sidemenu-item-hover-color': 'var(--theme-sidemenu-item-hover-color)',
-  'theme-sidemenu-item-indicator-color': 'var(--theme-sidemenu-item-indicator-color)',
+  'theme-feature': 'var(--theme-feature)',
+  'theme-feature-item-text': 'var(--theme-feature-item-text)',
+  'theme-feature-item-hover': 'var(--theme-feature-item-hover)',
+  'theme-feature-item-hover-alternative': 'var(--theme-feature-item-hover-alternative)',
+  'theme-feature-item-hover-text': 'var(--theme-feature-item-hover-text)',
+  'theme-feature-item-selected': 'var(--theme-feature-item-selected)',
+  'theme-feature-item-selected-text': 'var(--theme-feature-item-selected-text)',
+  'theme-feature-item-indicator': 'var(--theme-feature-item-indicator)',
 
   'theme-button': 'var(--theme-button)',
   'theme-button-text': 'var(--theme-button-text)',

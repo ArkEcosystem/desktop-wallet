@@ -14,6 +14,7 @@ export default {
     text: 'Made with ♥ ARK',
     url: 'https://ark.io'
   }),
+
   methods: {
     openExternal (url) {
       require('electron').shell.openExternal(url)

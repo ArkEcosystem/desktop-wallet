@@ -12,8 +12,8 @@
           @click.stop="void 0">
 
           <button
-            @click="$emit('close')"
-            class="absolute pin-t pin-r p-4">
+            class="absolute pin-t pin-r p-4"
+            @click="$emit('close')">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
