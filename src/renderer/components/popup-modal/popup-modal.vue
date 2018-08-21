@@ -29,7 +29,7 @@
             <header
               v-if="$slots['header'] || title">
               <slot name="header">
-                <h1>{{ title }}</h1>
+                <h2>{{ title }}</h2>
               </slot>
             </header>
 
