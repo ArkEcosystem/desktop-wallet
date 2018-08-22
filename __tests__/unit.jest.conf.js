@@ -11,7 +11,8 @@ module.exports = {
   moduleNameMapper: {
     '^@package.json$': '<rootDir>/package.json',
     '^@config': '<rootDir>/config/index.js',
-    '^@/(.*)$': '<rootDir>/src/renderer/$1'
+    '^@/(.*)$': '<rootDir>/src/renderer/$1',
+    '^@tests/(.*)$': '<rootDir>/__tests__/$1'
   },
   transform: {
     '^.+\\.js$': 'babel-jest',
@@ -21,8 +22,9 @@ module.exports = {
     '<rootDir>/__tests__/e2e',
     '<rootDir>/__tests__/unit.jest.conf.js',
     '<rootDir>/__tests__/unit/.coverage',
-    '<rootDir>/__tests__/unit/__utils__',
-    '<rootDir>/__tests__/unit/__mocks__'
+    '<rootDir>/__tests__/unit/__fixtures__',
+    '<rootDir>/__tests__/unit/__mocks__',
+    '<rootDir>/__tests__/unit/__utils__'
   ],
   setupFiles: [
     '<rootDir>/__tests__/unit/__utils__/setup.js'
@@ -32,5 +34,6 @@ module.exports = {
   collectCoverageFrom: [
     'src/renderer/**/*.{js,vue}'
   ],
+  setupTestFrameworkScriptFile: 'jest-extended',
   watchman: false
 }

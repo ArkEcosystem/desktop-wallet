@@ -4,18 +4,17 @@ import feedService from '@/services/feed'
 import RssParser from 'rss-parser' // eslint-disable-line
 import { parseURLMock } from 'rss-parser' // eslint-disable-line
 
-// https://github.com/facebook/jest/issues/3601
-const errorCapturer = fn => fn.then(res => () => res).catch(err => () => { throw err })
-
-const feed = {
-  feedUrl: 'http://exampl.net/feed.rss',
-  items: [
-    { title: 'example 1' },
-    { title: 'example 2' }
-  ]
-}
+import errorCapturer from '../__utils__/error-capturer'
 
 describe('Services > Feed', () => {
+  const feed = {
+    feedUrl: 'http://exampl.net/feed.rss',
+    items: [
+      { title: 'example 1' },
+      { title: 'example 2' }
+    ]
+  }
+
   describe('fetchAndParse', () => {
     it('should retrieve the feed and parse it', async () => {
       parseURLMock.mockImplementation(url => url === feed.feedUrl ? feed : null)

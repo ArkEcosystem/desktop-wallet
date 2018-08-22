@@ -110,6 +110,7 @@ let webConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       '@package.json': path.join(__dirname, '../package.json'),
       '@config': path.join(__dirname, '../config/index.js'),
+      '@tests': path.join(__dirname, '../__tests__'),
       'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['.js', '.vue', '.json', '.css']

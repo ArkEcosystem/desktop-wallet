@@ -18,5 +18,6 @@ module.exports = {
     '<rootDir>/__tests__/e2e/__utils__',
     '<rootDir>/__tests__/unit'
   ],
+  setupTestFrameworkScriptFile: 'jest-extended',
   watchman: false
 }
