@@ -1,5 +1,5 @@
 <template>
-  <ul class="options-menu theme-dark list-reset flex flex-col theme-dark bg-theme-feature rounded py-5">
+  <ul class="options-menu list-reset flex flex-col rounded py-5">
     <slot />
   </ul>
 </template>
@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style scoped>
+.options-menu {
+  background-color: #343956;
+}
+
 .list-reset >>> .options-menu-item:last-child .options-menu-item-container {
   border: none
 }

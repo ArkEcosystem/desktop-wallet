@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex justify-center mt-1 mb-3">
+  <footer class="flex justify-center mt-1">
     <a
       :title="text"
       class="cursor-pointer text-blue-lighter"

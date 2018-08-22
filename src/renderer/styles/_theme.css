@@ -3,6 +3,10 @@
  */
 .theme-light {
   --theme-page: #edf4f5;
+  --theme-page-text: #3b4559;
+  --theme-page-text-light: #9ea7bc;
+
+  --theme-header-text: #2b3748;
 
   --theme-feature: white;
   --theme-feature-item-text: #c0cddf;
@@ -24,14 +28,20 @@
 }
 
 .theme-dark {
-  --theme-feature: #343956;
-  --theme-featur-text: #a6add5;
-  --theme-feature-item-hover: #3a4060;
-  --theme-feature-item-hover-alternative: #3a4060;
-  --theme-feature-item-hover-text: #a6add5;
-  --theme-feature-item-selected: #3a4060; /* TODO: same as hover */
-  --theme-feature-item-selected-text: #a6add5;
-  --theme-feature-item-indicator: #343956;
+  --theme-page: #23252c;
+  --theme-page-text: #787fa3;
+  --theme-page-text-light: #404457;
+
+  --theme-header-text: #787fa3;
+
+  --theme-feature: #2d2f38;
+  --theme-feature-item-text: #5a5e7a;
+  --theme-feature-item-hover: #403645;
+  --theme-feature-item-hover-alternative: #403645;
+  --theme-feature-item-hover-text: #d890af;
+  --theme-feature-item-selected: #403645; /* TODO: same as hover */
+  --theme-feature-item-selected-text: #c6799a;
+  --theme-feature-item-indicator: #f03643;
 
 	--theme-button: #383c4d;
   --theme-button-text: #919eca;

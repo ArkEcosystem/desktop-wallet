@@ -3,12 +3,11 @@
     id="app"
     :class="[
       darkTheme ? 'theme-dark' : 'theme-light',
-      'bg-theme-page font-sans'
+      'bg-theme-page text-theme-page-text font-sans flex flex-col px-4 py-6 w-screen h-screen'
     ]"
-    class="flex flex-col px-4 w-screen h-screen"
   >
 
-    <div class="flex-1 flex my-6">
+    <div class="flex-1 flex">
       <sidemenu />
       <router-view class="flex-1" />
     </div>

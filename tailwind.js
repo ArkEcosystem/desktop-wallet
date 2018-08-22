@@ -44,6 +44,8 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   // Custom color variables
   'theme-page': 'var(--theme-page)',
+  'theme-page-text': 'var(--theme-page-text)',
+  'theme-page-text-light': 'var(--theme-page-text-light)',
 
   'theme-feature': 'var(--theme-feature)',
   'theme-feature-item-text': 'var(--theme-feature-item-text)',

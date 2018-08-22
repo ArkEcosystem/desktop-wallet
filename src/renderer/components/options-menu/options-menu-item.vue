@@ -1,6 +1,6 @@
 <template>
   <li
-    class="options-menu-item cursor-pointer text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text">
+    class="options-menu-item cursor-pointer">
     <div
       :class="[
         $slots['controls'] ? 'border-dashed' : 'border-solid',
@@ -33,6 +33,13 @@ export default {
 </script>
 
 <style scoped>
+.options-menu-item {
+  color: #a6add5
+}
+.options-menu-item:hover {
+  background-color: #3a4060;
+  color: #b3bbe8
+}
 .options-menu-item-container {
   border-color: #474d71
 }
