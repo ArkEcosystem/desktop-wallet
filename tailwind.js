@@ -629,7 +629,8 @@ module.exports = {
 
   maxHeight: {
     'full': '100%',
-    'screen': '100vh'
+    'screen': '100vh',
+    '48': '12rem'
   },
 
   /*
@@ -864,7 +865,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: [],
-    borderColors: ['responsive', 'hover', 'focus'],
+    borderColors: ['responsive', 'hover', 'focus', 'group-hover'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidths: ['responsive'],

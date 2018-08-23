@@ -1,10 +1,11 @@
 <template>
   <li
-    class="options-menu-item cursor-pointer">
+    class="options-menu-item cursor-pointer"
+    @click="$emit('click')">
     <div
       :class="[
         $slots['controls'] ? 'border-dashed' : 'border-solid',
-        'options-menu-item-container transition flex items-center justify-between mx-10 py-5 border-b']">
+        'options-menu-item-container transition flex items-center justify-between mx-10 py-5 border-b border-transparent']">
       <div>
         <slot name="title">
           <span
@@ -12,7 +13,7 @@
         </slot>
       </div>
 
-      <div class="text-">
+      <div>
         <slot name="controls" />
       </div>
     </div>
@@ -40,10 +41,10 @@ export default {
   background-color: #3a4060;
   color: #b3bbe8
 }
-.options-menu-item-container {
-  border-color: #474d71
-}
 .options-menu-item:hover > .options-menu-item-container {
   border-color: transparent
+}
+.options-menu-item-container {
+  border-color: #474d71
 }
 </style>
