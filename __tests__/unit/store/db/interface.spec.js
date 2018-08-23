@@ -3,7 +3,7 @@ import DbInterface from '@/store/db/interface'
 import Model from '@/models/model'
 
 import PouchDB from 'pouchdb-browser' // eslint-disable-line
-import { createIndexMock, getMock, infoMock, putMock, putIfNotExistsMock, removeMock } from 'pouchdb-browser' // eslint-disable-line
+import { allDocsMock, createIndexMock, getMock, infoMock, putMock, putIfNotExistsMock, removeMock } from 'pouchdb-browser' // eslint-disable-line
 import TestModel from '@tests/unit/__fixtures__/models/test-model'
 import errorCapturer from '@tests/unit/__utils__/error-capturer'
 import mockConsole from '@tests/unit/__utils__/mock-console'
@@ -14,14 +14,24 @@ const ignoreCreateIndex = () => {
 
 describe('Store > Db > DbInterface', () => {
   let db
-
-  const model = new TestModel({ example: 'model-id' })
-  const doc = { example: model.example, __modelType: model.__modelType, _id: model.id }
+  let model
+  let doc
 
   beforeEach(() => {
-    Model.modelType.path = '@tests/unit/__fixtures__/models'
+    Object.defineProperty(Model, 'modelType', {
+      enumerable: true,
+      get () {
+        return {
+          requireContext: require.context('../../__fixtures__/models', true, /\.js$/),
+          separator: '~'
+        }
+      }
+    })
 
     ignoreCreateIndex()
+
+    model = new TestModel({ example: 'model-id' })
+    doc = { example: model.example, modelType: model.modelType, _id: model.id }
 
     db = new DbInterface('test')
 
@@ -44,8 +54,8 @@ describe('Store > Db > DbInterface', () => {
       expect(PouchDB).toHaveBeenCalledWith(name)
     })
 
-    it('should create the `__modelType` index', () => {
-      const name = '__modelType'
+    it('should create the `modelType` index', () => {
+      const name = 'modelType'
       const fields = [name]
 
       db = DbInterface.create()
@@ -107,6 +117,36 @@ describe('Store > Db > DbInterface', () => {
     })
   })
 
+  describe('find', () => {
+    it('should return a Model instance', async () => {
+      getMock.mockImplementationOnce(id => id === model.id ? doc : null)
+
+      const result = await db.find(model.id)
+      expect(result).toBeInstanceOf(TestModel)
+      expect(result).toEqual(model)
+      expect(getMock).toHaveBeenCalledWith(model.id)
+    })
+
+    describe('when the Model does not exist', () => {
+      it('should return `null`', async () => {
+        const model = new TestModel({ example: 'not-save-doc' })
+        expect(await db.find(model)).toBeNull()
+      })
+    })
+
+    describe('when there is an error', () => {
+      beforeEach(() => {
+        getMock.mockImplementationOnce(_ => {
+          throw new Error('fake')
+        })
+      })
+
+      it('should return `null`', async () => {
+        expect(await db.find('bad')).toBeNull()
+      })
+    })
+  })
+
   describe('get', () => {
     it('should return a Model instance', async () => {
       getMock.mockImplementationOnce(id => id === model.id ? doc : null)
@@ -140,6 +180,60 @@ describe('Store > Db > DbInterface', () => {
         expect(await errorCapturer(db.get())).toThrow(error)
       })
     })
+  })
+
+  describe('getAll', () => {
+    it('should return an Array of instances of the same Model subclass', async () => {
+      const modelType = 'test-model'
+      const models = [
+        new TestModel({ example: 'example-1' }),
+        new TestModel({ example: 'example-2' }),
+        new TestModel({ example: 'example-3' })
+      ]
+      const rows = [
+        { doc: models[0].doc },
+        { doc: models[1].doc },
+        { doc: models[2].doc }
+      ]
+
+      allDocsMock.mockImplementationOnce(options => {
+        if (options.include_docs && options.startkey === modelType) {
+          return { rows }
+        }
+      })
+
+      const result = await db.getAll(modelType)
+      expect(result).toBeArray()
+      expect(result).toHaveLength(models.length)
+      expect(result).toEqual(models)
+    })
+
+    describe('when there is an error', () => {
+      mockConsole('error')
+
+      let error
+
+      beforeEach(() => {
+        error = new Error('fake')
+
+        allDocsMock.mockImplementationOnce(_ => {
+          throw error
+        })
+      })
+
+      it('should log the error', async () => {
+        await errorCapturer(db.getAll('wrongType'))
+
+        expect(console.error).toHaveBeenCalledWith(expect.stringMatching(/get.*all.*wrongType/i), error)
+      })
+
+      it('should throw the error', async () => {
+        expect(await errorCapturer(db.getAll())).toThrow(error)
+      })
+    })
+  })
+
+  describe('query', () => {
   })
 
   describe('create', () => {
@@ -269,11 +363,15 @@ describe('Store > Db > DbInterface', () => {
 
   describe('update', () => {
     describe('when the document of the Model already exists', () => {
-      it('should update it and return the updated version', async () => {
+      it('should update the last revision and return the updated version', async () => {
         const updatedModel = new TestModel(Object.assign(model.doc, { _rev: 'new-rev' }))
 
-        db.get = jest.fn(() => true)
-        db.store = jest.fn(() => updatedModel)
+        db.get = jest.fn(() => updatedModel)
+        db.store = jest.fn(modelToStore => {
+          if (_.isEqual(modelToStore, updatedModel)) {
+            return updatedModel
+          }
+        })
 
         expect(await db.update(model)).toEqual(updatedModel)
       })
@@ -282,13 +380,27 @@ describe('Store > Db > DbInterface', () => {
     describe('when the document of the Model does not exist', () => {
       mockConsole('error')
 
+      beforeEach(() => {
+        getMock.mockImplementationOnce(id => {
+          return null
+        })
+      })
+
+      it('should log the error', async () => {
+        await errorCapturer(db.update(model))
+
+        expect(console.error).toHaveBeenCalledWith(
+          expect.stringMatching(/updat.*inexistent.*id/i),
+          expect.any(Error)
+        )
+      })
+
       it('should throw an Error', async () => {
-        db.get = jest.fn(() => null)
         expect(await errorCapturer(db.update(model))).toThrow(/id.*not.*exist/i)
       })
     })
 
-    describe('when there is an error', () => {
+    describe('when there is an Error', () => {
       mockConsole('error')
 
       let error
@@ -296,7 +408,7 @@ describe('Store > Db > DbInterface', () => {
       beforeEach(() => {
         error = new Error('fake')
 
-        db.get = jest.fn(() => true)
+        db.get = jest.fn(() => model)
         db.store = jest.fn(() => {
           throw error
         })

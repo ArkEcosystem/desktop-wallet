@@ -1,64 +1,81 @@
 import _ from 'lodash'
-import db from '../db'
+import db from '@/store/db/instance'
 
 /**
- * Base module
+ * This module wraps db operations with actions and automatically performs the
+ * mutations.
  */
 class DbModule {
-  constructor (type) {
-    const TYPE = type.toUpperCase()
-
-    const types = {}
-    ;['CREATE', 'STORE', 'UPDATE', 'DELETE'].forEach(action => {
-      const mutation = `${TYPE}_${action}`
-      types[mutation] = mutation
-    })
-
-    return {
+  constructor (type, config) {
+    const defaultConfig = {
       namespaced: true,
-      state: {},
+      state: {
+        /**
+         * This Array contains all the Models of this Vuex module.
+         */
+        all: []
+      },
       mutations: {
-        [`${TYPE}_CREATE`] (state, { [type]: model }) {
-          if (_.has(state, model.id)) {
+        CREATE (state, model) {
+          if (_.includes(state.all, model)) {
             throw new Error(`Cannot create \`${model.id}\`. It already exists on the state`)
           }
-          state[model.id] = model
+          state.all.push(model)
         },
-        [`${TYPE}_STORE`] (state, { [type]: model }) {
-          state[model.id] = model
+        STORE (state, model) {
+          state.all = _.union(state.all, [model])
         },
-        [`${TYPE}_UPDATE`] (state, { [type]: model }) {
-          if (!_.has(state, model.id)) {
+        UPDATE (state, model) {
+          if (!_.includes(state.all, model)) {
             throw new Error(`Cannot update \`${model.id}\`. It does not exist on the state`)
           }
-          state[model.id] = model
+          state.all = _.union(state.all, [model])
         },
-        [`${TYPE}_DELETE`] (state, { [type]: model }) {
-          if (!_.has(state, model.id)) {
+        DELETE (state, model) {
+          const index = state.all.indexOf(model.id)
+          if (index === -1) {
             throw new Error(`Cannot delete \`${model.id}\`. It does not exist on the state`)
           }
-          delete state[model.id]
+          state.all.splice(index, 1)
         }
       },
+      getters: {
+        /**
+         * Returns all the Models of this type
+         * @return {Array}
+         */
+        all: state => state.all
+      },
       actions: {
+        /**
+         * Loads all the announcements from the db.
+         */
+        async load ({ commit }) {
+          const models = await db.getAll(type)
+          models.forEach(model => {
+            commit('STORE', model)
+          })
+        },
         async create ({ commit }, model) {
           await db.create(model)
-          commit({ type: `${TYPE}_CREATE`, model })
+          commit('CREATE', model)
         },
         async store ({ commit }, model) {
           await db.store(model)
-          commit({ type: `${TYPE}_STORE`, model })
+          commit('STORE', model)
         },
         async update ({ commit }, model) {
           await db.update(model)
-          commit({ type: `${TYPE}_UPDATE`, model })
+          commit('UPDATE', model)
         },
         async delete ({ commit }, model) {
           await db.delete(model)
-          commit({ type: `${TYPE}_DELETE`, model })
+          commit('DELETE', model)
         }
       }
     }
+
+    return _.merge({}, defaultConfig, config)
   }
 }
 

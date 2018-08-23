@@ -17,10 +17,22 @@ import { validate } from 'jsonschema'
  *
  * About the nomenclature:
  *  - Properties that start with 1 underscore ("_") are reserved by PouchDB.
+ *  - PouchDB does not accept any property that starts with underscore ("_").
  *  - Properties that start with 2 underscore ("__") are part of the private interface
  * of this class.
  */
 class Model {
+  /**
+   * Configuration of the models
+   * @return {Object}
+   */
+  static get modelType () {
+    return {
+      requireContext: require.context('@/models', true, /\.js$/),
+      separator: '~'
+    }
+  }
+
   /**
    * This method uses the `modelType` property to instantiate and return
    * a new Model subclass
@@ -28,7 +40,12 @@ class Model {
    * @return {Model}
    */
   static fromDoc (doc) {
-    const ModelType = require(`${Model.modelType.path}/${doc.__modelType}`).default
+    if (!doc.modelType) {
+      throw new Error('To create a Model from a document is necessary a `modelType`')
+    }
+
+    const context = Model.modelType.requireContext
+    const ModelType = context(`./${doc.modelType}.js`).default
     return new ModelType(doc)
   }
 
@@ -62,8 +79,8 @@ class Model {
     }
 
     // This property cannot change by any reason
-    this.__modelType = _.kebabCase(this.constructor.name)
-    Object.freeze(this.__modelType)
+    this.modelType = _.kebabCase(this.constructor.name)
+    Object.freeze(this.modelType)
 
     this.__data = {}
 
@@ -75,11 +92,21 @@ class Model {
         enumerable: true,
         get () {
           return this.__data[propertyName]
-        },
-        set () {
+        }
+      }
+
+      // Detect if there is a setter on the class, to use it, or throw the Error TODO update tests
+      const proto = Object.getPrototypeOf(this)
+      const descriptor = Object.getOwnPropertyDescriptor(proto, propertyName)
+
+      all[propertyName].set = function (newValue) {
+        if (descriptor && descriptor.set) {
+          descriptor.set.call(this, newValue)
+        } else {
           throw new Error(`The property \`${propertyName}\` is read-only. To change that, override this setter on the model`)
         }
       }
+
       return all
     }, {})
 
@@ -119,7 +146,7 @@ class Model {
 
   /**
    * The `doc` property returns the data that would be stored on the db. That
-   * includes the `_id`, `_rev` and `__modelType` properties.
+   * includes the `_id`, `_rev` and `modelType` properties.
    * Some kind of properties, such as `Date` objects are converted to Strings to
    * keep a consistent behaviour (https://pouchdb.com/errors.html#could_not_be_cloned).
    * It validates the data before to ensure that the data adheres to the schema.
@@ -142,7 +169,7 @@ class Model {
     }, {})
 
     return Object.assign(data, {
-      __modelType: this.__modelType,
+      modelType: this.modelType,
       _rev: this._rev,
       _id: this._id
     })
@@ -163,14 +190,6 @@ class Model {
   validate () {
     return validate(this.data, this.schema)
   }
-}
-
-/**
- * Configuration of the models
- */
-Model.modelType = {
-  path: '.',
-  separator: '~'
 }
 
 export default Model

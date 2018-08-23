@@ -10,7 +10,14 @@ describe('Models > Model', () => {
   let testModel
 
   beforeEach(() => {
-    Model.modelType.path = '@tests/unit/__fixtures__/models'
+    Object.defineProperty(Model, 'modelType', {
+      get () {
+        return {
+          requireContext: require.context('../__fixtures__/models', true, /\.js$/),
+          separator: '~'
+        }
+      }
+    })
 
     emptyModel = new Empty()
     testModel = new TestModel()
@@ -18,11 +25,11 @@ describe('Models > Model', () => {
 
   describe('static fromDoc', () => {
     it('should return a new instance of a children class of Model based on the `modelType` property', () => {
-      const emptyDoc = { __modelType: 'empty' }
+      const emptyDoc = { modelType: 'empty' }
       const emptyModel = Model.fromDoc(emptyDoc)
       expect(emptyModel).toBeInstanceOf(Empty)
 
-      const testDoc = { __modelType: 'test-model', example: 'example-value' }
+      const testDoc = { modelType: 'test-model', example: 'example-value' }
       const testModel = Model.fromDoc(testDoc)
       expect(testModel).toBeInstanceOf(TestModel)
       expect(testModel.example).toEqual('example-value')
@@ -57,17 +64,17 @@ describe('Models > Model', () => {
         expect(testModel._rev).toBeFrozen()
       })
 
-      it('should establish the `__modelType` property', () => {
-        expect(emptyModel.__modelType).toEqual('empty')
-        expect(testModel.__modelType).toEqual('test-model')
+      it('should establish the `modelType` property', () => {
+        expect(emptyModel.modelType).toEqual('empty')
+        expect(testModel.modelType).toEqual('test-model')
       })
 
-      it('should freeze the `__modelType` property of the instace', () => {
-        expect(testModel.__modelType).toBeFrozen()
+      it('should freeze the `modelType` property of the instace', () => {
+        expect(testModel.modelType).toBeFrozen()
       })
 
       it('should seal the `__data` property of the instance', () => {
-        expect(testModel.__modelType).toBeSealed()
+        expect(testModel.modelType).toBeSealed()
       })
 
       it('should define getters that returns the data', () => {
@@ -129,7 +136,7 @@ describe('Models > Model', () => {
       const example = 'one example'
       const model = new TestModel({ example })
       expect(model.doc).toEqual({
-        __modelType: 'test-model',
+        modelType: 'test-model',
         _id: 'test-model~one example',
         _rev: undefined,
         example
@@ -140,7 +147,7 @@ describe('Models > Model', () => {
       const date = new Date('2018-09-24')
       const model = new Rigid({ integer: 1, date })
       expect(model.doc).toEqual({
-        __modelType: 'rigid',
+        modelType: 'rigid',
         _id: 'rigid~1',
         _rev: undefined,
         integer: 1,

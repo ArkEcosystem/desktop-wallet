@@ -1,9 +1,12 @@
 import PouchDB from 'pouchdb-browser'
+import PouchDebug from 'pouchdb-debug'
 import PouchUpsert from 'pouchdb-upsert'
 import PouchFind from 'pouchdb-find'
 import PouchLiveFind from 'pouchdb-live-find'
 
 import Model from '@/models/model'
+
+PouchDB.plugin(PouchDebug)
 
 if (!process.env.IS_WEB) {
   PouchDB.debug.enable('*')
@@ -25,10 +28,10 @@ class DbInterface {
    * @param {String} name
    * @return {DbInterface}
    */
-  static async create (name) {
+  static create (name) {
     const db = new DbInterface(name)
 
-    await db.createIndex('__modelType', ['__modelType'])
+    db.createIndex('modelType', ['modelType'])
 
     return db
   }
@@ -58,7 +61,23 @@ class DbInterface {
   }
 
   /**
-   * Finds a document by the id, and returns the associated Model.
+   * Finds a document by the id, and returns the associated Model. If the document
+   * does not exist, it return `null`
+   * @param {String} id
+   * @return {(Model|null)}
+   */
+  async find (id) {
+    try {
+      const doc = await this.__db.get(id)
+      return Model.fromDoc(doc)
+    } catch (error) {
+      return null
+    }
+  }
+
+  /**
+   * Gets a document by the id, and returns the associated Model. If the document
+   * does not exist, it throws an Error.
    * @param {String} id
    * @return {Model}
    */
@@ -68,6 +87,48 @@ class DbInterface {
       return Model.fromDoc(doc)
     } catch (error) {
       console.error(`Error getting \`${id}\``, error)
+      throw error
+    }
+  }
+
+  /**
+   * Returns all the documents of a specific type.
+   *
+   * Under the hood uses `pouch.allDocs`, which is the recommended way to get several
+   * documents.
+   * @see {@link https://pouchdb.com/guides/queries.html#avoiding-map-reduce}
+   *
+   * @param {String} modelType
+   * @return {Object}
+   */
+  async getAll (modelType) {
+    try {
+      const { rows } = await this.__db.allDocs({ startkey: modelType, include_docs: true })
+      return rows.map(row => Model.fromDoc(row.doc))
+    } catch (error) {
+      console.error(`Error getting all documents of \`${modelType}\` type `, error)
+      throw error
+    }
+  }
+
+  /**
+   * Perform a query on the db.
+   *
+   * Currently uses `pouch.allDocs`, although `find` would admit more complex queries.
+   * The usage of this method is discouraged. Usually `getAll` is enough.
+   * @see {@link https://pouchdb.com/api.html#batch_fetch}
+   *
+   * @param {Object} query
+   * @param {Boolean} query.models - by default this method would return models
+   * @return {Object}
+   */
+  async query (query) {
+    try {
+      const options = Object.assign({ include_docs: true }, query)
+      const result = await this.__db.allDocs(options)
+      return result.rows.map(row => Model.fromDoc(row.doc))
+    } catch (error) {
+      console.error(`Error quering the db with \`${query}\``, error)
       throw error
     }
   }
@@ -94,11 +155,13 @@ class DbInterface {
 
   /**
    * This method replaces a document on the db if it exists or creates a new one.
+   * It does not check the revision, so it could add a new revision.
    * @param {Model} model
    * @return {Model} the updated model (with the revision)
    */
   async store (model) {
     try {
+      // Store the document, even creating a new revision
       const { ok, rev } = await this.__db.put(model.doc)
 
       if (ok) {
@@ -114,19 +177,27 @@ class DbInterface {
 
   /**
    * This method updates a document on the db.
+   * It ensures that replacing the document with the last revision.
    * @param {Model} model
    * @return {Model} the updated model (with the revision)
    */
   async update (model) {
     try {
-      if (this.get(model.id)) {
-        return this.store(model)
-      }
+      // Get the last revision to replace that document
+      const { _id, _rev } = await this.get(model.id)
 
-      throw new Error(`The document \`${model.id}\` does not exist`)
+      if (_id) {
+        const updatedModel = Model.fromDoc(Object.assign(model.doc, { _rev }))
+        return this.store(updatedModel)
+      }
     } catch (error) {
-      console.error(`Error updating \`${model.id}\``, error)
-      throw error
+      if (error.name === 'TypeError') {
+        console.error(`Error updating inexistent \`${model.id}\``, error)
+        throw new Error(`The document \`${model.id}\` does not exist`)
+      } else {
+        console.error(`Error updating \`${model.id}\``, error)
+        throw error
+      }
     }
   }
 

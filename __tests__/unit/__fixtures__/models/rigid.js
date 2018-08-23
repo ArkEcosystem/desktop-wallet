@@ -2,7 +2,7 @@ import Model from '@/models/model'
 
 export default class Rigid extends Model {
   get id () {
-    return [this.__modelType, this.integer].join(Model.modelType.separator)
+    return [this.modelType, this.integer].join(Model.modelType.separator)
   }
 
   get schema () {
