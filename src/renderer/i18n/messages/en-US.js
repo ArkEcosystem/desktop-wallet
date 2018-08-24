@@ -1,3 +1,7 @@
 export default {
-  Contacts: 'Contacts'
+  common: {
+    Back: 'Back',
+    Done: 'Done',
+    Next: 'Next'
+  }
 }

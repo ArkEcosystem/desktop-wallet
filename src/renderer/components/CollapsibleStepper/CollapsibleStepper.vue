@@ -5,51 +5,49 @@
 </template>
 
 <script>
-import { last, first } from 'lodash'
+import { last } from 'lodash'
 
 export default {
   name: 'CollapsibleStepper',
 
   props: {
-    value: {
+    step: {
       type: [String, Number],
-      required: false,
-      default: null
+      required: true
     }
   },
 
   data: () => ({
-    inputValue: null,
-    steps: []
+    items: []
   }),
 
   watch: {
-    inputValue (val) {
-      this.steps.forEach(step => step.toggle(val))
-    },
-
-    value () {
-      this.$nextTick(() => (this.inputValue = this.value))
+    step () {
+      this.switchToStep(this.step)
     }
   },
 
   mounted () {
-    this.setSteps()
-    const firstStep = first(this.steps)
-    const lastStep = last(this.steps)
+    this.collectItems()
 
+    // The last item has a different style and text on the default footer
+    const lastStep = last(this.items)
     if (lastStep) {
       lastStep.isLastItem = true
     }
 
-    const step = firstStep ? firstStep.step : 1
-
-    this.inputValue = this.value || step
+    this.switchToStep(this.step)
   },
 
   methods: {
-    setSteps () {
-      this.steps = this.$children.filter(child => child.$options.name === 'StepperItem')
+    collectItems () {
+      this.items = this.$children.filter(child => {
+        return child.$options.name === 'CollapsibleStepperItem'
+      })
+    },
+
+    switchToStep (newStep) {
+      this.items.forEach(item => item.toggle(item.step === newStep))
     }
   }
 }

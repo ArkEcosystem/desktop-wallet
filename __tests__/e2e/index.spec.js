@@ -1,6 +1,6 @@
 import setup from '@setup'
 
-describe('Landing', () => {
+describe('Dashboard', () => {
   const scope = {}
 
   beforeEach(async () => setup.startApp(scope), 10000)

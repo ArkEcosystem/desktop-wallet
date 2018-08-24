@@ -1,10 +1,13 @@
 <template>
   <section
     :class="{ 'border-b': !isLastItem }"
-    class="CollapsibleStepperItem py-3">
+    class="CollapsibleStepperItem py-3"
+  >
     <header
       :class="isActive ? 'text-xl font-bold' : 'text-theme-page-text-light'"
-      class="CollapsibleStepperItem__header pointer-events-none capitalize py-2">
+      class="CollapsibleStepperItem__header pointer-events-none capitalize py-2"
+    >
+      <!-- Default header -->
       <slot name="header">
         {{ title }}
       </slot>
@@ -13,31 +16,40 @@
     <transition
       :duration="{ enter: '100ms', leave: '200ms' }"
       name="CollapsibleStepperItem__transition"
-      mode="out-in">
+      mode="out-in"
+    >
       <article
         v-if="isActive"
-        class="CollapsibleStepperItem__content my-2 flex flex-col">
+        class="CollapsibleStepperItem__content my-2 flex flex-col"
+      >
+
+        <!-- Content of the stepper -->
         <div class="max-h-xs overflow-y-auto my-2">
           <slot />
         </div>
 
-        <footer class=".CollapsibleStepperItem__footer my-4">
+        <footer class="CollapsibleStepperItem__footer my-4">
+
+          <!-- Default footer -->
           <slot name="footer">
             <button
               v-if="isBackVisible"
               class="CollapsibleStepperItem__footer__back-button blue-button"
-              @click="emitBack">
-              Back
+              @click="emitBack"
+            >
+              {{ $t('common.Back') }}
             </button>
 
             <button
               v-if="isNextVisible || isNextEnabled"
               :disabled="!isNextEnabled"
               class="CollapsibleStepperItem__footer__next-button blue-button"
-              @click="emitNext">
-              {{ isLastItem ? 'Done' : 'Next' }}
+              @click="emitNext"
+            >
+              {{ isLastItem ? $t('common.Done') : $t('common.Next') }}
             </button>
           </slot>
+
         </footer>
       </article>
     </transition>
@@ -75,12 +87,6 @@ export default {
       type: Boolean,
       required: false,
       default: false
-    },
-
-    isComplete: {
-      type: Boolean,
-      required: false,
-      default: false
     }
   },
 
@@ -90,8 +96,8 @@ export default {
   }),
 
   methods: {
-    toggle (step) {
-      this.isActive = step.toString() === this.step.toString()
+    toggle (isActive) {
+      this.isActive = isActive
     },
 
     emitBack () {
