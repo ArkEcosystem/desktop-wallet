@@ -2,6 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 
 import App from './App'
+import i18n from './i18n'
 import router from './router'
 import store from './store'
 
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   components: { App },
+  i18n,
   router,
   store,
   template: '<App/>'

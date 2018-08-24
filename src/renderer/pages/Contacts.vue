@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
     <main>
-      Contacts
+      {{ $t('Contacts') }}
     </main>
   </div>
 </template>
