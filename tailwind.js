@@ -630,7 +630,8 @@ module.exports = {
   maxHeight: {
     'full': '100%',
     'screen': '100vh',
-    '48': '12rem'
+    '2xs': '12rem',
+    'xs': '20rem'
   },
 
   /*
@@ -943,6 +944,9 @@ module.exports = {
     prefix: '',
     important: false,
     separator: ':'
-  }
+  },
 
+  experiments: {
+    shadowLookup: true
+  }
 }

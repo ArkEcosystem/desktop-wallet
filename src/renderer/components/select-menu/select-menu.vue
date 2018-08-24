@@ -18,7 +18,7 @@
       class="absolute z-10">
       <ul
         :style="{ transform: `translate(${ position.join(',') })` }"
-        class="select-menu pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-48">
+        class="select-menu pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs">
         <slot>
           <select-menu-item
             v-for="item in items"

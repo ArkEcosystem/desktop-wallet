@@ -3,9 +3,8 @@
     class="options-menu-item cursor-pointer"
     @click="$emit('click')">
     <div
-      :class="[
-        $slots['controls'] ? 'border-dashed' : 'border-solid',
-        'options-menu-item-container transition flex items-center justify-between mx-10 py-5 border-b border-transparent']">
+      :class="$slots['controls'] ? 'border-dashed' : 'border-solid'"
+      class="options-menu-item-container transition flex items-center justify-between mx-10 py-5 border-b">
       <div>
         <slot name="title">
           <span

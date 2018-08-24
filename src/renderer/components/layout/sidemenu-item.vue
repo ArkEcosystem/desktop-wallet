@@ -1,8 +1,7 @@
 <template>
   <div
-    :class="[
-      { active: isActive },
-      'sidemenu-item h-18 w-18 cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text']"
+    :class="{ active: isActive }"
+    class="sidemenu-item h-18 w-18 cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
     @click="$emit('click', name)"
   >
     <div class="h-4 w-18 flex items-center justify-center overflow-visible">
