@@ -81,7 +81,7 @@ let colors = {
   'red-darker': '#621b18',
   'red-dark': '#cc1f1a',
   'red': '#e51317', // ARK logo
-  'red-light': '#F03643', // Sidemenu hover and se#EDF4F5lected border
+  'red-light': '#F03643', // Sidemenu hover and selected border
   'red-lighter': '#f9acaa',
   'red-lightest': '#fef4f5', // Sidemenu hover background
 

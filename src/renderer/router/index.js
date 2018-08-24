@@ -11,6 +11,11 @@ export default new Router({
       component: require('@/pages/Dashboard').default
     },
     {
+      path: '/announcements',
+      name: 'announcements',
+      component: require('@/pages/Announcements').default
+    },
+    {
       path: '/contacts',
       name: 'contacts',
       component: require('@/pages/Contacts').default

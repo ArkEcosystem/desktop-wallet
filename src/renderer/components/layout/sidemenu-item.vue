@@ -12,6 +12,10 @@
       >
         <path :d="iconPathD"/>
       </svg>
+      <div
+        v-if="showBadge"
+        class="badge rounded-full animated bounce"
+      />
     </div>
   </div>
 </template>
@@ -21,11 +25,6 @@ export default {
   name: 'SidemenuItem',
 
   props: {
-    isActive: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
 
     name: {
       type: String,
@@ -37,6 +36,17 @@ export default {
       required: true
     },
 
+    isActive: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    showBadge: {
+      type: Boolean,
+      default: false
+    },
+
     viewBox: {
       type: String,
       required: true
@@ -46,6 +56,17 @@ export default {
 </script>
 
 <style scoped>
+.sidemenu-item .badge {
+  position: absolute;
+  float: right;
+  right: 1.25rem;
+  margin-top: -0.7rem;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-width: 0.25rem;
+  border-color: var(--theme-feature-item-indicator);
+  background-color: var(--theme-feature-item-indicator);
+}
 .sidemenu-item {
   transition: background-color 0.5s;
 }

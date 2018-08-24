@@ -11,7 +11,7 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-    "depcheck": "depcheck ./ --ignores babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-vue,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer,@vue/test-utils,babel-jest,jest-serializer-vue,jest-vue-preprocessor,jest-extended,@tests/unit",
+    "depcheck": "depcheck ./ --ignores babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-vue,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer,@vue/test-utils,babel-jest,jest-serializer-vue,jest-vue-preprocessor,jest-extended,@tests/unit,animate.css",
     "dev": "node .electron-vue/dev-runner.js",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src __tests__",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src __tests__",
@@ -60,6 +60,7 @@
     }
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "axios": "^0.16.1",
     "jsonschema": "^1.2.4",
     "lodash": "^4.17.10",
@@ -69,6 +70,7 @@
     "pouchdb-find": "^7.0.0",
     "pouchdb-live-find": "^0.4.0",
     "pouchdb-upsert": "^2.2.0",
+    "trunc-html": "^1.1.2",
     "vue": "^2.3.3",
     "vue-electron": "^1.0.6",
     "vue-i18n": "^8.0.0",

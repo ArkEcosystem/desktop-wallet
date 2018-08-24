@@ -1,18 +1,20 @@
 import Model from './model'
 
+/**
+ * This Model will be used to perform migrations
+ */
 export default class Meta extends Model {
-  constructor (data) {
-    super(data)
-
-    // TODO force schema
-
-    this.version = data.version
+  get id () {
+    return [this.modelType, this.version].join(Model.modelType.separator)
   }
 
   get schema () {
-  }
-
-  get id () {
-    return `${this.modelType}~${this.version}`
+    return {
+      properties: {
+        version: {
+          type: 'string'
+        }
+      }
+    }
   }
 }

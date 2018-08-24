@@ -1,5 +1,6 @@
 <template>
   <nav class="bg-theme-feature flex flex-col w-18 mx-6 rounded-lg justify-between relative">
+
     <div>
       <!-- ARK logo -->
       <router-link
@@ -26,6 +27,18 @@
         name="contacts"
         view-box="0 0 19 24"
         icon-path-d="M14,23V21H12a1,1,0,1,1,0-2h2V17a1,1,0,1,1,2,0v2h2a1,1,0,1,1,0,2H16v2a1,1,0,1,1-2,0ZM2.522,21c-1.459,0-2.4-1.105-2.4-2.816.029-.211.062-.419.1-.623a11.055,11.055,0,0,1,4.115-6.589A6.4,6.4,0,0,1,2.393,6.345,6.236,6.236,0,0,1,8.5,0a6.236,6.236,0,0,1,6.106,6.344,6.394,6.394,0,0,1-1.941,4.626l.024.021c.426.382.956.857,1.467,1.4.042.045.076.085.112.13a2.557,2.557,0,0,0,.212.23.341.341,0,0,1,.034.394,2.223,2.223,0,0,1-1.227.982.074.074,0,0,1-.062-.023c-.121-.152-.175-.213-.246-.291l-.055-.061a18.141,18.141,0,0,0-1.452-1.4l-.074-.066-.067-.06a7.162,7.162,0,0,1-2.826.615,7.093,7.093,0,0,1-2.84-.615c-.047.041-.094.083-.14.126A8.76,8.76,0,0,0,2.221,17.4a2.687,2.687,0,0,1-.093.388c-.086.3-.175.6,0,.832.19.254.691.377,1.531.377h3.4a.168.168,0,0,1,.154.091.488.488,0,0,1,.049.239c0,.556-.513,1.669-1.187,1.669ZM4.01,6.35A4.412,4.412,0,0,0,8.5,10.67a4.412,4.412,0,0,0,4.49-4.32A4.412,4.412,0,0,0,8.5,2.03,4.412,4.412,0,0,0,4.01,6.35Z"
+        @click="redirect($event)"
+      />
+    </div>
+
+    <div>
+      <!-- Announcements -->
+      <sidemenu-item
+        :is-active="isActive('announcements')"
+        :show-badge="showUnread"
+        name="announcements"
+        view-box="0 0 23 23"
+        icon-path-d="M4,21a4,4,0,0,1-4-4V1A1,1,0,0,1,1,0H15a1,1,0,0,1,1,1V12h3a1,1,0,0,1,1,1v4c0,2.209-.791,4-3,4Zm12-4c0,1.1-.1,2,1,2s1-.9,1-2V14H16ZM2,17a2,2,0,0,0,2,2H14.537a3.836,3.836,0,0,1-.21-.422c0-.009-.014-.018-.014-.028a4.044,4.044,0,0,1-.206-.663c-.013-.056-.023-.112-.033-.168A3.85,3.85,0,0,1,14,17V2H2Zm3-1a1,1,0,1,1,0-2h6a1,1,0,1,1,0,2Zm0-4a1,1,0,1,1,0-2h6a1,1,0,0,1,0,2ZM7,6A1,1,0,1,1,8,7,1,1,0,0,1,7,6Z"
         @click="redirect($event)"
       />
     </div>
@@ -68,6 +81,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import SidemenuItem from '@/components/layout/sidemenu-item'
 import SidemenuOptionsSettings from '@/components/layout/sidemenu-options-settings'
 
@@ -81,6 +95,17 @@ export default {
     isSettingsVisible: false,
     activeItem: null
   }),
+
+  computed: {
+    ...mapGetters({ unreadAnnouncements: 'announcements/unread' }),
+    showUnread () {
+      return this.unreadAnnouncements.length > 0
+    }
+  },
+
+  created () {
+    this.$store.dispatch('announcements/sync')
+  },
 
   methods: {
     redirect (name) {
