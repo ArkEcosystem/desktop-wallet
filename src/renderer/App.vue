@@ -6,26 +6,25 @@
   >
 
     <div class="flex-1 flex mt-6 mb-4 mr-6">
-      <sidemenu />
+      <AppSidemenu />
       <router-view class="flex-1" />
     </div>
 
-    <app-footer />
-
+    <AppFooter />
   </div>
 </template>
 
 <script>
 import '@/styles/style.css'
-import AppFooter from '@/components/layout/app-footer'
-import Sidemenu from '@/components/layout/sidemenu'
+import AppFooter from '@/components/AppFooter'
+import AppSidemenu from '@/components/AppSidemenu'
 import config from '@config'
 
 export default {
   name: 'DesktopWallet',
   components: {
     AppFooter,
-    Sidemenu
+    AppSidemenu
   },
 
   data: () => ({
