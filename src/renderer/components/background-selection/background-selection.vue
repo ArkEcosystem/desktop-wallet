@@ -48,7 +48,7 @@ export default {
   methods: {
     select (url) {
       this.selected = url
-      this.$emit('select', this.loadAssetImage(url))
+      this.$emit('select', this.assets_loadImage(url))
     }
   }
 }

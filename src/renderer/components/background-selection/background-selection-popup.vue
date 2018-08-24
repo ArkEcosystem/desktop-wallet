@@ -24,7 +24,7 @@
         <button
           :disabled="!selected"
           class="blue-button"
-          @click="$emit('done', loadAssetImage(selected))">
+          @click="$emit('done', assets_loadImage(selected))">
           Done
         </button>
       </div>

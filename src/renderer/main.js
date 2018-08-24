@@ -6,11 +6,15 @@ import i18n from './i18n'
 import router from './router'
 import store from './store'
 
-require('./mixins')
+import assets from '@/mixins/assets'
+import electron from '@/mixins/electron'
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
+
+Vue.mixin(assets)
+Vue.mixin(electron)
 
 /* eslint-disable no-new */
 new Vue({

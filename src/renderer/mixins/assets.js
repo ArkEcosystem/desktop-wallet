@@ -1,14 +1,9 @@
-import Vue from 'vue'
 import imagesManager from '@/services/images-manager'
 
-const options = {
+export default {
   methods: {
-    loadAssetImage (filename) {
+    assets_loadImage (filename) {
       return imagesManager.loadImage(filename)
     }
   }
 }
-
-Vue.mixin(options)
-
-export default options

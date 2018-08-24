@@ -32,7 +32,7 @@
     <a
       :title="title"
       class="block mt-4 cursor-pointer"
-      @click="openExternal(url)"
+      @click="openInBrowser(url)"
     >
       Read more &#8594;
     </a>
@@ -40,8 +40,6 @@
 </template>
 
 <script>
-import electron from 'electron'
-
 export default {
   props: {
     title: {
@@ -65,8 +63,8 @@ export default {
     dismiss () {
       this.$emit('read', this.announcement)
     },
-    openExternal (url) {
-      electron.shell.openExternal(url)
+    openInBrowser (url) {
+      this.electron_openExternal(url)
       setTimeout(() => this.dismiss(), 2000)
     }
   }
