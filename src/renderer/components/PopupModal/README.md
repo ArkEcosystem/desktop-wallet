@@ -6,7 +6,7 @@ This component lets the user to display a popup modal with a optional header and
 
 ## Usage
 
-`<popup-modal>` supports the following custom component attributes:
+`<PopupModal>` supports the following custom component attributes:
 
 | attribute | type | description
 | --- | --- | ---
@@ -27,33 +27,33 @@ And also supports some slots beyond the default:
 > With optional attributes
 
 ```html
-<popup-modal
+<PopupModal
   v-if="showPopup"
   title="My Popup"
   message="This will be attached to the footer"
   @close="showPopup = false">
   <p class="p-2">My awesome component.</p>
-</popup-modal>
+</PopupModal>
 ```
 
 > With slots
 
 ```html
-<popup-modal
+<PopupModal
   v-if="showPopup"
   @close="showPopup = false">
   <h1 slot="header">My Popup</h1>
   <p class="p-2">My awesome component.</p>
   <h3 slot="footer">This will be attached to the footer</h3>
-</popup-modal>
+</PopupModal>
 ```
 
 > Only with the default slot
 
 ```html
-<popup-modal
+<PopupModal
   v-if="showPopup"
   @close="showPopup = false">
   <p class="p-2">My awesome component.</p>
-</popup-modal>
+</PopupModal>
 ```

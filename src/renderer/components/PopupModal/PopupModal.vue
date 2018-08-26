@@ -1,31 +1,34 @@
 <template>
   <transition
-    name="PopupModal">
+    name="PopupModal"
+  >
     <div
       class="PopupModal__mask fixed z-50 pin-t pin-l table w-full h-full"
-      @click="emitClose">
+      @click="emitClose"
+    >
       <div class="flex items-center justify-center absolute pin">
         <div
           class="PopupModal__container flex flex-col shadow mx-auto rounded overflow-hidden relative transition bg-white text-theme-text-content"
-          @click.stop="void 0">
+          @click.stop="void 0"
+        >
 
           <button
             class="absolute pin-t pin-r p-4"
-            @click="emitClose">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              class="fill-current text-grey h-4 w-4">
+            @click="emitClose"
+          >
+            <svg class="fill-current text-grey h-4 w-4">
               <path
                 fill-rule="evenodd"
-                d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"/>
+                d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"
+              />
             </svg>
           </button>
 
           <section class="px-10 py-8">
 
             <header
-              v-if="$slots['header'] || title">
+              v-if="$slots['header'] || title"
+            >
               <slot name="header">
                 <h2>{{ title }}</h2>
               </slot>
@@ -39,7 +42,8 @@
 
           <footer
             v-if="$slots['footer'] || message"
-            class="px-10 py-8 bg-yellow-lighter text-grey-darkest">
+            class="px-10 py-8 bg-yellow-lighter text-grey-darkest"
+          >
             <slot name="footer">
               <p v-html="message" />
             </slot>

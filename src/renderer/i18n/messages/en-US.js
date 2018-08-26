@@ -1,7 +1,18 @@
 export default {
+
   common: {
-    Back: 'Back',
-    Done: 'Done',
-    Next: 'Next'
+    done: 'Done'
+  },
+
+  BackgroundSelection: {
+    popupHeader: 'Select background',
+    textures: 'Textures',
+    wallpapers: 'Wallpapers'
+  },
+
+  GridInput: {
+    more: 'Show more',
+    popupHeader: 'Select'
   }
+
 }

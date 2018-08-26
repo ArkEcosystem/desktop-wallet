@@ -1,54 +1,70 @@
 <template>
-  <ul class="BackgroundSelection list-reset flex flex-wrap -m-2">
-    <BackgroundSelectionImage
-      v-for="background in backgrounds"
-      :key="background"
-      :url="background"
-      :is-active="background === selected"
-      @click="select($event)"
+  <div class="BackgroundSelection">
+    <GridInput
+      :items="backgrounds"
+      :max-visible-items="maxVisibleItems"
+      :popup-header-text="$t('BackgroundSelection.popupHeader')"
+      item-key="imagePath"
+      @input="select"
     />
-  </ul>
+  </div>
 </template>
 
 <script>
+import path from 'path'
 import imagesManager from '@/services/images-manager'
-import BackgroundSelectionImage from './BackgroundSelectionImage'
+import GridInput from '@/components/GridInput'
 
 export default {
   name: 'BackgroundSelection',
-  categories: ['textures', 'wallpapers'],
 
   components: {
-    BackgroundSelectionImage
+    GridInput
   },
 
   props: {
-    limit: {
+    categories: {
+      type: Array,
+      require: false,
+      default: () => ['textures', 'wallpapers']
+    },
+    maxVisibleItems: {
       type: Number,
       required: false,
-      default: null
+      default: 10
     }
   },
 
-  data: () => ({
-    backgrounds: [],
-    selected: null
-  }),
+  computed: {
+    /**
+     * Background images grouped by category.
+     * Instead of using the image path only, each image Object is composed by
+     * the image path and its filename as title.
+     */
+    backgrounds () {
+      const groups = imagesManager.tree
 
-  created () {
-    let images = imagesManager.inline(this.$options.categories) || []
+      return this.categories.reduce((all, category) => {
+        if (groups[category]) {
+          const translatedCategory = this.$i18n.t(`BackgroundSelection.${category}`)
 
-    if (this.limit && images.length > 0) {
-      images = images.slice(0, this.limit)
+          all[translatedCategory] = groups[category].map(imagePath => {
+            const { name } = path.parse(imagePath)
+            return {
+              title: name,
+              imagePath
+            }
+          })
+        }
+
+        return all
+      }, {})
     }
-
-    this.backgrounds = images
   },
 
   methods: {
-    select (url) {
-      this.selected = url
-      this.$emit('select', this.assets_loadImage(url))
+    select ({ imagePath }) {
+      this.$emit('select', imagePath)
     }
   }
 }
