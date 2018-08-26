@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ active: isActive }"
+    :class="{ 'AppSideMenuItem--active': isActive }"
     class="AppSidemenuItem h-18 w-18 cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
     @click="emitClick"
   >
@@ -68,10 +68,10 @@ export default {
 .AppSidemenuItem > div {
   transition: height 0.5s, color 0.5s;
 }
-.AppSidemenuItem.active {
+.AppSidemenuItem--active {
   background-color: var(--theme-feature-item-selected);
 }
-.AppSidemenuItem.active > div {
+.AppSidemenuItem--active > div {
   color: var(--theme-feature-item-selected-text);
   height: 2.5rem;
   box-shadow: inset 0.15rem 0px 0px 0px var(--theme-feature-item-indicator);
@@ -80,7 +80,7 @@ export default {
   height: 1rem;
   box-shadow: inset 0.15rem 0px 0px 0px var(--theme-feature-item-indicator);
 }
-.AppSideMenuItem__badge {
+.AppSidemenuItem__badge {
   position: absolute;
   float: right;
   right: 1.25rem;
