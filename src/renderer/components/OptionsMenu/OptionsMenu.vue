@@ -16,6 +16,6 @@ export default {
 }
 
 .OptionsMenu >>> .OptionsMenuItem:last-child .OptionsMenuItem__container {
-  border: none
+  border: none;
 }
 </style>

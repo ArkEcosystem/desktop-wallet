@@ -1,14 +1,15 @@
 <template>
   <li
     class="OptionsMenuItem cursor-pointer"
-    @click="emitClick">
+    @click="emitClick"
+  >
     <div
       :class="$slots['controls'] ? 'border-dashed' : 'border-solid'"
-      class="OptionsMenuItem__container transition flex items-center justify-between mx-10 py-5 border-b">
+      class="OptionsMenuItem__container transition flex items-center justify-between mx-10 py-5 border-b"
+    >
       <div>
         <slot name="title">
-          <span
-            :class="$slots['controls'] ? 'text-grey-light' : ''">{{ title }}</span>
+          <span :class="$slots['controls'] ? 'text-grey-light' : ''" >{{ title }}</span>
         </slot>
       </div>
 
@@ -40,16 +41,16 @@ export default {
 
 <style scoped>
 .OptionsMenuItem {
-  color: #a6add5
+  color: #a6add5;
 }
 .OptionsMenuItem:hover {
   background-color: #3a4060;
-  color: #b3bbe8
+  color: #b3bbe8;
 }
 .OptionsMenuItem:hover > .OptionsMenuItem__container {
-  border-color: transparent
+  border-color: transparent;
 }
 .OptionsMenuItem__container {
-  border-color: #474d71
+  border-color: #474d71;
 }
 </style>
