@@ -1,26 +1,29 @@
 <template>
   <div
     :class="[{ open: isOpen }, 'relative']">
-    <div
+    <button
       v-if="!hasDefaultSlot"
-      @click="toggle">
+      :disabled="isDisabled"
+      class="appearance-none text-inherit w-full"
+      @click="toggle"
+    >
       <slot
         :value="activeItem"
         name="handler">
-        <select-menu-handler
+        <SelectMenuHandler
           :value="activeItem"
           :placeholder="placeholder" />
       </slot>
-    </div>
+    </button>
 
     <div
       v-if="isOpen"
-      class="absolute z-10">
+      class="absolute min-w-full z-20">
       <ul
         :style="{ transform: `translate(${ position.join(',') })` }"
         class="SelectMenu pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs">
         <slot>
-          <select-menu-item
+          <SelectMenuItem
             v-for="item in items"
             :key="item"
             :value="item"
@@ -68,12 +71,18 @@ export default {
       type: Array,
       required: false,
       default: () => ['0%', '0%']
+    },
+
+    isDisabled: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
-  data: () => ({
+  data: vm => ({
     isOpen: true,
-    activeItem: null
+    activeItem: vm.value
   }),
 
   computed: {
@@ -82,8 +91,10 @@ export default {
     }
   },
 
-  created () {
-    this.activeItem = this.value
+  watch: {
+    value (val) {
+      this.activeItem = val
+    }
   },
 
   mounted () {

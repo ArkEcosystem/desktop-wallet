@@ -2,15 +2,15 @@
   <div
     :class="[
       value ? '' : 'text-theme-page-text-light hover:text-theme-page-text',
-      'SelectMenuHandler cursor-pointer transition flex items-center']"
+      'SelectMenuHandler cursor-pointer transition flex justify-between items-center']"
     @click="emitClick">
-    <span class="w-5/6">
+    <span>
       <slot>
-        <span class="font-semibold">{{ value || placeholder }}</span>
+        <span>{{ value || placeholder }}</span>
       </slot>
     </span>
 
-    <span class="w-1/6">
+    <span class="pl-2 pr-1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"

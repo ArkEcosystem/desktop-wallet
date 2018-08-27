@@ -66,6 +66,7 @@ let colors = {
   'theme-option-button-text': 'var(--theme-option-button-text)',
 
   'transparent': 'transparent',
+  'inherit': 'inherit',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',
