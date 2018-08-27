@@ -1,20 +1,20 @@
 import { mount } from '@vue/test-utils'
-import TextField from '@/components/TextField'
+import InputText from '@/components/InputText'
 
-describe('TextField', () => {
+describe('InputText', () => {
   it('should render', () => {
-    const wrapper = mount(TextField, {
+    const wrapper = mount(InputText, {
       propsData: {
         name: 'test',
         label: 'test'
       }
     })
-    expect(wrapper.contains('.TextField')).toBeTruthy()
+    expect(wrapper.contains('.InputText')).toBeTruthy()
   })
 
   it('should render with v-model', () => {
     const value = 'testing'
-    const wrapper = mount(TextField, {
+    const wrapper = mount(InputText, {
       propsData: {
         name: 'test',
         label: 'test',
@@ -22,24 +22,24 @@ describe('TextField', () => {
       }
     })
     expect(wrapper.vm.value).toBe(value)
-    const input = wrapper.find('.TextField__input')
+    const input = wrapper.find('.InputText__input')
     expect(input.element.value).toBe(value)
   })
 
   it('should be disabled', () => {
-    const wrapper = mount(TextField, {
+    const wrapper = mount(InputText, {
       propsData: {
         name: 'test',
         label: 'test',
         isDisabled: true
       }
     })
-    const input = wrapper.find('.TextField__input')
+    const input = wrapper.find('.InputText__input')
     expect(input.attributes().disabled).toBe('disabled')
   })
 
   it('should be dirty', () => {
-    const wrapper = mount(TextField, {
+    const wrapper = mount(InputText, {
       propsData: {
         name: 'test',
         label: 'test',
@@ -51,19 +51,19 @@ describe('TextField', () => {
 
   it('should show a helper text', () => {
     const helperText = 'testing'
-    const wrapper = mount(TextField, {
+    const wrapper = mount(InputText, {
       propsData: {
         name: 'test',
         label: 'test',
         helperText
       }
     })
-    const helper = wrapper.find('.TextField__helper')
+    const helper = wrapper.find('.InputField__helper')
     expect(helper.text()).toBe(helperText)
   })
 
   it('should focus the input', () => {
-    const wrapper = mount(TextField, {
+    const wrapper = mount(InputText, {
       propsData: {
         name: 'test',
         label: 'test'
