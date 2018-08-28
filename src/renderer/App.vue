@@ -19,6 +19,8 @@ import '@/styles/style.css'
 import AppFooter from '@/components/AppFooter'
 import AppSidemenu from '@/components/AppSidemenu'
 import config from '@config'
+import timerService from '@/services/timer-service'
+import MarketDataService from '@/services/market-data-service'
 
 export default {
   name: 'DesktopWallet',
@@ -31,8 +33,16 @@ export default {
     darkTheme: false
   }),
 
-  created () {
+  async created () {
     this.$store.dispatch('network/setDefaults', config.NETWORKS)
+    await this.$store.dispatch('marketData/load')
+    timerService.start(MarketDataService.timerName, () => {
+      this.$store.dispatch('marketData/sync')
+    }, 60000)
+  },
+
+  beforeDestroy () {
+    timerService.stop(MarketDataService.timerName)
   }
 }
 </script>

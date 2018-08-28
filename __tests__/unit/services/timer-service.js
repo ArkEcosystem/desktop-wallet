@@ -1,5 +1,7 @@
 import timerService from '@/services/timer-service'
 
+jest.useFakeTimers()
+
 beforeEach(() => {
   timerService.clear()
 })
@@ -21,7 +23,6 @@ describe('TimerService', () => {
   })
 
   it('should run a timer method', () => {
-    jest.useFakeTimers()
     const testRun = jest.fn()
     timerService.start('testTimer', testRun, 1)
     expect(testRun).toBeCalled()

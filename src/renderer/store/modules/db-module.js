@@ -1,6 +1,8 @@
 import _ from 'lodash'
 import db from '@/store/db/instance'
 
+const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
+
 /**
  * This module wraps db operations with actions and automatically performs the
  * mutations.
@@ -17,7 +19,7 @@ class DbModule {
       },
       mutations: {
         CREATE (state, model) {
-          if (_.includes(state.all, model)) {
+          if (includes(state.all, model)) {
             throw new Error(`Cannot create \`${model.id}\`. It already exists on the state`)
           }
           state.all.push(model)
@@ -26,7 +28,7 @@ class DbModule {
           state.all = _.union(state.all, [model])
         },
         UPDATE (state, model) {
-          if (!_.includes(state.all, model)) {
+          if (!includes(state.all, model)) {
             throw new Error(`Cannot update \`${model.id}\`. It does not exist on the state`)
           }
           state.all = _.union(state.all, [model])
