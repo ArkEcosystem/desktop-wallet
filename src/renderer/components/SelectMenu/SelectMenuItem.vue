@@ -1,7 +1,7 @@
 <template>
   <li
     :class="[
-      isActive ? 'SelectMenuItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text' : 'text-grey-dark hover:bg-theme-feature-item-hover-alternative border-grey-light'
+      isActive ? 'SelectMenuItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text' : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
       ,'SelectMenuItem cursor-pointer bt-theme-feature']"
     @click.stop="emitClick">
     <div
