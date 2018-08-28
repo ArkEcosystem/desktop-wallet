@@ -11,7 +11,7 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-    "depcheck": "depcheck ./ --ignores babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-vue,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer,@vue/test-utils,babel-jest,jest-serializer-vue,jest-vue-preprocessor,jest-extended,@tests/unit,animate.css",
+    "depcheck": "depcheck ./ --ignores babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-vue,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer,@vue/test-utils,babel-jest,jest-serializer-vue,jest-vue-preprocessor,jest-extended,@tests/unit,animate.css,lint-staged,purgecss",
     "dev": "node .electron-vue/dev-runner.js",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src __tests__",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src __tests__",

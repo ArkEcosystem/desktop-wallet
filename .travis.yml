@@ -19,15 +19,12 @@ install: yarn
 stages:
   - lint
   - depcheck
-  - test
-  - e2e
+  - unit-test
+  - e2e-test
 
 before_script:
   - 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi'
   - 'if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; sleep 3; fi'
-
-script:
-  - yarn test:unit:coverage --ci --maxWorkers 4
 
 jobs:
   include:
@@ -37,7 +34,10 @@ jobs:
     - stage: depcheck
       script: yarn run depcheck
 
-    - stage: e2e
+    - stage: unit-test
+      script: yarn test:unit:coverage --ci --maxWorkers 4
+
+    - stage: e2e-test
       script: yarn run test:e2e
 
 cache:
