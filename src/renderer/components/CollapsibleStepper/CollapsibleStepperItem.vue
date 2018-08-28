@@ -1,11 +1,15 @@
 <template>
   <section
-    :class="{ 'border-b': !isLastItem }"
-    class="CollapsibleStepperItem py-3"
+    :class="{
+      'flex-1': isActive,
+      'pt-2': !isFirstItem,
+      'pb-2 border-b': !isLastItem
+    }"
+    class="CollapsibleStepperItem"
   >
     <header
       :class="isActive ? 'text-xl font-bold' : 'text-theme-page-text-light'"
-      class="CollapsibleStepperItem__header pointer-events-none capitalize py-2"
+      class="CollapsibleStepperItem__header pointer-events-none capitalize py-2 flex-no-shrink"
     >
       <!-- Default header -->
       <slot name="header">
@@ -18,26 +22,27 @@
       name="CollapsibleStepperItem__transition"
       mode="out-in"
     >
-      <article
+      <div
         v-if="isActive"
-        class="CollapsibleStepperItem__content my-2 flex flex-col"
+        class="CollapsibleStepperItem__content flex flex-col justify-between h-full"
       >
 
         <!-- Content of the stepper -->
-        <div class="max-h-xs overflow-y-auto my-2">
+        <!-- FIXME: overflow-visible instead of overflow-y-auto to display the dropdowns, how to show scrollbars when necessary -->
+        <article class="max-h-xs overflow-y-auto flex flex-grow">
           <slot />
-        </div>
+        </article>
 
-        <footer class="CollapsibleStepperItem__footer my-4">
-
+        <!-- FIXME position -->
+        <footer class="CollapsibleStepperItem__footer my-4 flex flex-no-shrink self-start">
           <!-- Default footer -->
           <slot name="footer">
             <button
-              v-if="isBackVisible"
+              v-if="!isFirstItem && isBackVisible"
               class="CollapsibleStepperItem__footer__back-button blue-button"
               @click="emitBack"
             >
-              {{ $t('common.Back') }}
+              {{ $t('common.back') }}
             </button>
 
             <button
@@ -46,12 +51,12 @@
               class="CollapsibleStepperItem__footer__next-button blue-button"
               @click="emitNext"
             >
-              {{ isLastItem ? $t('common.Done') : $t('common.Next') }}
+              {{ isLastItem ? $t('common.done') : $t('common.next') }}
             </button>
           </slot>
-
         </footer>
-      </article>
+
+      </div>
     </transition>
   </section>
 </template>
@@ -92,6 +97,7 @@ export default {
 
   data: () => ({
     isActive: null,
+    isFirstItem: false,
     isLastItem: false
   }),
 
@@ -126,5 +132,9 @@ export default {
 .CollapsibleStepperItem__transition-enter,
 .CollapsibleStepperItem__transition-leave-to {
   max-height: 0;
+}
+/* Add the margin to separate back and next/done only when they exist together */
+.CollapsibleStepperItem__footer__back-button ~ .CollapsibleStepperItem__footer__next-button  {
+  margin-left: 0.5rem;
 }
 </style>

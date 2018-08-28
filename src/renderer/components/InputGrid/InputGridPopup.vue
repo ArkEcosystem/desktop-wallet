@@ -3,16 +3,16 @@
     :title="popupHeaderText"
     @close="emitClose"
   >
-    <section class="GridInputPopup flex flex-col">
-      <div class="GridInputPopup__container overflow-y-auto">
+    <section class="InputGridPopup flex flex-col">
+      <div class="InputGridPopup__container overflow-y-auto">
         <div
           v-for="(categoryItems, category) in items"
           :key="category"
-          class="GridInputPopup__container__category"
+          class="InputGridPopup__container__category"
         >
           <h4 class="w-full mt-5 mb-2">{{ category }}</h4>
 
-          <div class="GridInput__container__category__items">
+          <div class="InputGrid__container__category__items">
             <div
               v-for="item in categoryItems"
               :key="item[itemKey]"
@@ -20,11 +20,11 @@
             >
 
               <!--
-                Here we could reuse the `item` scope of the `GridInput` component
-                or provide a new slot, but currently is not necessary at all
+                Here we could reuse the `item` scope of the `InputGrid` component
+                or provide a new slot, but currently is not necessary at all.
               -->
 
-              <GridInputItem
+              <InputGridItem
                 :image-path="item.imagePath"
                 :is-selected="clicked === item"
                 :title="item.title"
@@ -50,17 +50,17 @@
 
 <script>
 import PopupModal from '@/components/PopupModal'
-import GridInputItem from './GridInputItem'
+import InputGridItem from './InputGridItem'
 
 /**
  * This component only emits the `selected` event when the background has been
  * confirmed.
  */
 export default {
-  name: 'GridInputPopup',
+  name: 'InputGridPopup',
 
   components: {
-    GridInputItem,
+    InputGridItem,
     PopupModal
   },
 
@@ -82,7 +82,7 @@ export default {
       type: String,
       required: false,
       default () {
-        return this.$i18n.t('GridInput.popupHeader')
+        return this.$i18n.t('InputGrid.popupHeader')
       }
     }
   },
@@ -111,14 +111,14 @@ export default {
 </script>
 
 <style scoped>
-.GridInputPopup__container {
-  width: 36rem; /* 5 * 6rem (columns) + 4 * 1rem (gaps) + 2rem (gap from scrollbar) */
+.InputGridPopup__container {
+  width: 28.5rem; /* 5 * 4.5rem (columns) + 4 * 1rem (gaps) + 2rem (gap from scrollbar) */
   height: 50vh;
 }
-.GridInput__container__category__items {
+.InputGrid__container__category__items {
   display: grid;
   /* Maximum 5 columns */
-  grid-template-columns: repeat(5, 6rem);
+  grid-template-columns: repeat(5, 4.5rem);
   grid-gap: 1rem;
 }
 </style>

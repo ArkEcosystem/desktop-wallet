@@ -1,19 +1,20 @@
 import { shallowMount } from '@vue/test-utils'
-import { GridInput, GridInputItem, GridInputPopup } from '@/components/GridInput'
+import { InputGrid, InputGridItem, InputGridPopup } from '@/components/InputGrid'
 
-describe('GridInput', () => {
+describe('InputGrid', () => {
   const mocks = () => {
     return {
       $t: jest.fn(() => 'translation'),
       $i18n: {
         t: jest.fn(() => 'translation')
-      }
+      },
+      assets_loadImage: jest.fn()
     }
   }
 
-  describe('GridInput', () => {
+  describe('InputGrid', () => {
     it('should render the component', () => {
-      const wrapper = shallowMount(GridInput, {
+      const wrapper = shallowMount(InputGrid, {
         mocks: mocks(),
         propsData: {
           items: [],
@@ -21,13 +22,13 @@ describe('GridInput', () => {
         }
       })
 
-      expect(wrapper.contains('.GridInput')).toBeTruthy()
+      expect(wrapper.contains('.InputGrid')).toBeTruthy()
     })
   })
 
-  describe('GridInputItem', () => {
+  describe('InputGridItem', () => {
     it('should render the component', () => {
-      const wrapper = shallowMount(GridInputItem, {
+      const wrapper = shallowMount(InputGridItem, {
         mocks: mocks(),
         propsData: {
           isSelected: false,
@@ -35,13 +36,13 @@ describe('GridInput', () => {
         }
       })
 
-      expect(wrapper.contains('.GridInputItem')).toBeTruthy()
+      expect(wrapper.contains('.InputGridItem')).toBeTruthy()
     })
   })
 
-  describe('GridInputPopup', () => {
+  describe('InputGridPopup', () => {
     it('should render the component', () => {
-      const wrapper = shallowMount(GridInputPopup, {
+      const wrapper = shallowMount(InputGridPopup, {
         mocks: mocks(),
         propsData: {
           items: [],
@@ -49,7 +50,7 @@ describe('GridInput', () => {
         }
       })
 
-      expect(wrapper.contains('.GridInputPopup')).toBeTruthy()
+      expect(wrapper.contains('.InputGridPopup')).toBeTruthy()
     })
   })
 })

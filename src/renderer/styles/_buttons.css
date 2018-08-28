@@ -50,3 +50,19 @@ button:disabled {
 .option-button:enabled:hover {
 	@apply .bg-theme-option-button-hover .text-white
 }
+
+.svg-button {
+  @apply .cursor-pointer border-2 .border-transparent .transition .fill-current .text-theme-option-button-text;
+}
+
+.svg-button:hover {
+  @apply .shadow;
+}
+
+.svg-button--selected {
+  @apply .bg-green .border-green .text-white !important;
+}
+
+.svg-button--selected:hover {
+  box-shadow: 0 0 4px 2px rgba(45, 183, 97, 0.34);
+}

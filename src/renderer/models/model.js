@@ -21,7 +21,7 @@ import { validate } from 'jsonschema'
  *  - Properties that start with 2 underscore ("__") are part of the private interface
  * of this class.
  */
-class Model {
+export default class Model {
   /**
    * Configuration of the models
    * @return {Object}
@@ -69,6 +69,7 @@ class Model {
     Object.freeze(this._rev)
     delete internalData._rev
 
+    // TODO as static ?
     const schema = _.cloneDeep(this.schema)
     delete schema.required
     const validation = validate(internalData, schema)
@@ -191,5 +192,3 @@ class Model {
     return validate(this.data, this.schema)
   }
 }
-
-export default Model

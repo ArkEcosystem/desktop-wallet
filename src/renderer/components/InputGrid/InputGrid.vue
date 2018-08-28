@@ -1,8 +1,8 @@
 <template>
-  <div class="GridInput">
+  <div class="InputGrid">
     <slot>
 
-      <div class="GridInput__container">
+      <div class="InputGrid__container">
 
         <div
           v-for="item in visibleItems"
@@ -15,9 +15,10 @@
               name="item"
             >
 
-              <GridInputItem
+              <InputGridItem
                 :image-path="item.imagePath"
                 :is-selected="selectedItem === item && !isPopupOpen"
+                :text-content="item.textContent"
                 :title="item.title"
               />
 
@@ -27,17 +28,20 @@
 
         <slot name="more">
 
-          <div @click="openPopup">
-            <GridInputItem
+          <div
+            v-if="popupHeaderText"
+            @click="openPopup"
+          >
+            <InputGridItem
               :image-path="isSelectedFromPopup ? selectedItem.imagePath : false"
               :is-selected="isSelectedFromPopup"
-              :title="isSelectedFromPopup ? selectedItem.title : $t('GridInput.more')"
-              class="text-5xl text-center p-2 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text"
+              :title="isSelectedFromPopup ? selectedItem.title : $t('InputGrid.more')"
+              class="text-4xl text-center p-1 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text"
               text-content="..."
             />
           </div>
 
-          <GridInputPopup
+          <InputGridPopup
             v-if="isPopupOpen"
             :items="items"
             :item-key="itemKey"
@@ -56,19 +60,19 @@
 
 <script>
 import { flatten } from 'lodash'
-import GridInputItem from './GridInputItem'
-import GridInputPopup from './GridInputPopup'
+import InputGridItem from './InputGridItem'
+import InputGridPopup from './InputGridPopup'
 
 /**
- * The GridInput displays a grid of items. One of those items could be selected
+ * The InputGrid displays a grid of items. One of those items could be selected
  * by clicking on it.
  */
 export default {
-  name: 'GridInput',
+  name: 'InputGrid',
 
   components: {
-    GridInputItem,
-    GridInputPopup
+    InputGridItem,
+    InputGridPopup
   },
 
   props: {
@@ -157,10 +161,10 @@ export default {
 </script>
 
 <style scoped>
-.GridInput__container {
+.InputGrid__container {
   display: grid;
   /* Maximum 3 columns */
-  grid-template-columns: repeat(3, 6rem);
+  grid-template-columns: repeat(3, 4.5rem);
   grid-gap: 1rem;
 }
 </style>

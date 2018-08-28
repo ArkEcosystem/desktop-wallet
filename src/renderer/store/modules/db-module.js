@@ -8,7 +8,11 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  * mutations.
  */
 class DbModule {
-  constructor (type, config) {
+  /**
+   * @param {String} type
+   * @param {Object} config
+   */
+  constructor (type, config = {}) {
     const defaultConfig = {
       namespaced: true,
       state: {

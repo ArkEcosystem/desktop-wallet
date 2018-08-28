@@ -1,9 +1,10 @@
 <template>
-  <div class="BackgroundSelection">
-    <GridInput
-      :items="backgrounds"
+  <div class="SelectionBackground">
+    <InputGrid
+      :items="images"
       :max-visible-items="maxVisibleItems"
-      :popup-header-text="$t('BackgroundSelection.popupHeader')"
+      :popup-header-text="$t('SelectionBackground.popupHeader')"
+      :selected="selectedItem"
       item-key="imagePath"
       @input="select"
     />
@@ -12,26 +13,20 @@
 
 <script>
 import path from 'path'
-import imagesManager from '@/services/images-manager'
-import GridInput from '@/components/GridInput'
+import imageManager from '@/services/image-manager'
+import selectionMixin from './mixin-selection'
+import selectionImageMixin from './mixin-selection-image'
 
 export default {
-  name: 'BackgroundSelection',
+  name: 'SelectionBackground',
 
-  components: {
-    GridInput
-  },
+  mixins: [selectionMixin, selectionImageMixin],
 
   props: {
     categories: {
       type: Array,
-      require: false,
-      default: () => ['textures', 'wallpapers']
-    },
-    maxVisibleItems: {
-      type: Number,
       required: false,
-      default: 10
+      default: () => ['textures', 'wallpapers']
     }
   },
 
@@ -41,12 +36,12 @@ export default {
      * Instead of using the image path only, each image Object is composed by
      * the image path and its filename as title.
      */
-    backgrounds () {
-      const groups = imagesManager.tree
+    images () {
+      const groups = imageManager.tree
 
       return this.categories.reduce((all, category) => {
         if (groups[category]) {
-          const translatedCategory = this.$i18n.t(`BackgroundSelection.${category}`)
+          const translatedCategory = this.$i18n.t(`SelectionBackground.${category}`)
 
           all[translatedCategory] = groups[category].map(imagePath => {
             const { name } = path.parse(imagePath)
@@ -59,12 +54,6 @@ export default {
 
         return all
       }, {})
-    }
-  },
-
-  methods: {
-    select ({ imagePath }) {
-      this.$emit('select', imagePath)
     }
   }
 }

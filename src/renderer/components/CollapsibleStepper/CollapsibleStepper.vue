@@ -1,11 +1,11 @@
 <template>
-  <div class="CollapsibleStepper">
+  <div class="CollapsibleStepper flex flex-col h-full w-full">
     <slot />
   </div>
 </template>
 
 <script>
-import { last } from 'lodash'
+import { first, last } from 'lodash'
 
 export default {
   name: 'CollapsibleStepper',
@@ -30,7 +30,12 @@ export default {
   mounted () {
     this.collectItems()
 
-    // The last item has a different style and text on the default footer
+    // The first and last items has a different style and text on the default footer
+    const firstStep = first(this.items)
+    if (firstStep) {
+      firstStep.isFirstItem = true
+    }
+
     const lastStep = last(this.items)
     if (lastStep) {
       lastStep.isLastItem = true

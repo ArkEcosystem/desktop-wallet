@@ -26,6 +26,11 @@ export default new Router({
       component: require('@/pages/Networks').default
     },
     {
+      path: '/profile/new',
+      name: 'profile-new',
+      component: require('@/pages/Profile/ProfileNew').default
+    },
+    {
       path: '/profile',
       name: 'profile',
       component: require('@/pages/Profile').default

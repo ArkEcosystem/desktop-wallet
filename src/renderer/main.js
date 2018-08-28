@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import VueVuelidateJsonschema from 'vue-vuelidate-jsonschema'
+import Vuelidate from 'vuelidate'
 import VTooltip from 'v-tooltip'
 import axios from 'axios'
 
@@ -13,9 +15,12 @@ import electron from '@/mixins/electron'
 if (!process.env.IS_WEB) {
   Vue.use(require('vue-electron'))
 }
+
 Vue.config.productionTip = false
 Vue.http = Vue.prototype.$http = axios
 
+Vue.use(VueVuelidateJsonschema)
+Vue.use(Vuelidate)
 Vue.use(VTooltip, {
   defaultHtml: false,
   defaultContainer: '#app'

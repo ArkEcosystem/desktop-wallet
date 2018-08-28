@@ -493,6 +493,7 @@ module.exports = {
     '16': '4rem',
     '18': '4.5rem', // Added
     '24': '6rem',
+    '30': '7rem', // Added
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
@@ -541,6 +542,7 @@ module.exports = {
     '16': '4rem',
     '18': '4.5rem', // Added
     '24': '6rem',
+    '30': '7rem', // Added
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',

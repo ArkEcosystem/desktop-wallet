@@ -10,9 +10,12 @@
       <slot
         :value="activeItem"
         name="handler">
+
         <SelectMenuHandler
           :value="activeItem"
-          :placeholder="placeholder" />
+          :placeholder="placeholder"
+        />
+
       </slot>
     </button>
 
@@ -20,8 +23,9 @@
       v-if="isOpen"
       class="absolute min-w-full z-20">
       <ul
-        :style="{ transform: `translate(${ position.join(',') })` }"
-        class="SelectMenu pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs">
+        :style="{ transform: `translate(${position.join(',')})` }"
+        class="SelectMenu pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
+      >
         <slot>
           <SelectMenuItem
             v-for="item in items"
@@ -117,6 +121,6 @@ export default {
 
 <style scoped>
 .SelectMenu >>> .SelectMenuItem:last-child .SelectMenuItem__container {
-  border: none
+  border: none;
 }
 </style>

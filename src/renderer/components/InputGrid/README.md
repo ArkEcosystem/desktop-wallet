@@ -7,7 +7,7 @@ Optionally, it can display an item that, on click, opens a popup with all the it
 
 ## Usage
 
-`<GridInput>` supports the following properties:
+`<InputGrid>` supports the following properties:
 
 | attribute | type | description
 | --- | --- | ---
@@ -26,7 +26,7 @@ Supports these slots:
 > Without popup
 
 ```html
-<GridInput
+<InputGrid
   :items="images"
   :max-visible-items="3"
   item-key="src"
@@ -37,7 +37,7 @@ Supports these slots:
 > With popup
 
 ```html
-<GridInput
+<InputGrid
   :items="images"
   :max-visible-items="3"
   item-key="src"
@@ -49,7 +49,7 @@ Supports these slots:
 > With slots
 
 ```html
-<GridInput
+<InputGrid
   :items="images"
   :max-visible-items="3"
   item-key="src"
@@ -63,5 +63,5 @@ Supports these slots:
   <template slot="more">
     <a href="https://my-images.com/">More images</a>
   </template>
-</GridInput>
+</InputGrid>
 ```

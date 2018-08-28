@@ -3,7 +3,8 @@
     :class="[
       isActive ? 'SelectMenuItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text' : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
       ,'SelectMenuItem cursor-pointer bt-theme-feature']"
-    @click.stop="emitClick">
+    @click.stop="emitClick"
+  >
     <div
       class="SelectMenuItem__container mx-8 py-4 px-5 border-b text-center transition">
       <slot>
@@ -41,6 +42,6 @@ export default {
 <style scoped>
 .SelectMenuItem:hover > .SelectMenuItem__container,
 .SelectMenuItem--active .SelectMenuItem__container {
-  border-color: transparent
+  border-color: transparent;
 }
 </style>

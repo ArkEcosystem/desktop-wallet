@@ -1,43 +1,39 @@
 <template>
+  <!-- FIXME close when click outside, or after a while outside the area -->
   <OptionsMenu
-    class="AppSidemenuOptionsSettings absolute">
+    class="AppSidemenuOptionsSettings z-10 absolute"
+  >
     <OptionsMenuItem
       title="Currency"
-      @click="toggleSelect('currency-menu')">
+      @click="toggleSelect('currency-menu')"
+    >
       <div
         slot="controls"
-        class="pointer-events-none">
+        class="pointer-events-none"
+      >
         <SelectMenu
           ref="currency-menu"
-          :items="['ETH', 'EUR', 'USD']"
+          :items="currencies"
           :position="['-40%', '5%']"
-          value="USD" />
+          :value="defaultCurrency"
+        />
       </div>
     </OptionsMenuItem>
 
-    <OptionsMenuItem title="Language">
-      // TODO: waiting for the switch component to implement dark mode
+    <OptionsMenuItem title="Dark mode">
+      <!-- TODO: waiting for the switch component to implement dark mode -->
       <div
         slot="controls"
-        class="flex itens-center">
-        <span class="font-semibold mr-1">English</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          viewBox="0 0 512 512"
-          class="fill-current w-4 h-4">
-          <g>
-            <polygon points="128,192 256,320 384,192" />
-          </g>
-        </svg>
+        class="flex itens-center"
+      >
+        SWITCH HERE
       </div>
     </OptionsMenuItem>
   </OptionsMenu>
 </template>
 
 <script>
+import { MARKET } from '@config'
 import { OptionsMenu, OptionsMenuItem } from '@/components/OptionsMenu'
 import SelectMenu from '@/components/SelectMenu'
 
@@ -48,6 +44,15 @@ export default {
     OptionsMenu,
     OptionsMenuItem,
     SelectMenu
+  },
+
+  computed: {
+    defaultCurrency () {
+      return this.currencies[0]
+    },
+    currencies () {
+      return MARKET.currencies
+    }
   },
 
   methods: {
@@ -61,6 +66,6 @@ export default {
 <style scoped>
 .AppSidemenuOptionsSettings {
   width: 300px;
-  left: 5.5rem
+  left: 5.5rem;
 }
 </style>

@@ -1,9 +1,9 @@
-import imagesManager from '@/services/images-manager'
+import imageManager from '@/services/image-manager'
 
 export default {
   methods: {
-    assets_loadImage (filename) {
-      return imagesManager.loadImage(filename)
+    assets_loadImage (source) {
+      return imageManager.loadImage(source)
     }
   }
 }
