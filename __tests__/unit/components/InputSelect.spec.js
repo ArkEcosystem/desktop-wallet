@@ -26,18 +26,38 @@ describe('InputSelect', () => {
     expect(input.text()).toBe(label)
   })
 
-  it('should render with default value', () => {
-    const value = '1'
-    const wrapper = mount(InputSelect, {
-      propsData: {
-        name: 'test',
-        items: ['1', '2', '3'],
-        label: 'testing',
-        value
-      }
+  describe('when receiving an Array as the `items` prop', () => {
+    it('should select the `value` and display it as the text of the option', () => {
+      const value = '1'
+      const wrapper = mount(InputSelect, {
+        propsData: {
+          name: 'test',
+          items: ['1', '2', '3'],
+          label: 'testing',
+          value
+        }
+      })
+      const input = wrapper.find('.InputSelect__input')
+      expect(input.text()).toBe(value)
     })
-    const input = wrapper.find('.InputSelect__input')
-    expect(input.text()).toBe(value)
+  })
+
+  describe('when receiving an Object as the `items` prop', () => {
+    it('should select the `value` key, but display its value as the text of the option', () => {
+      const items = { a: 'label A', b: 'label B', c: 'label C' }
+      const value = 'b'
+
+      const wrapper = mount(InputSelect, {
+        propsData: {
+          name: 'test',
+          items,
+          label: 'testing',
+          value
+        }
+      })
+      const input = wrapper.find('.InputSelect__input')
+      expect(input.text()).toBe(items[value])
+    })
   })
 
   it('should be disabled', () => {
