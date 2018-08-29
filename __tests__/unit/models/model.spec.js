@@ -13,7 +13,7 @@ describe('Models > Model', () => {
     Object.defineProperty(Model, 'modelType', {
       get () {
         return {
-          requireContext: require.context('../__fixtures__/models', true, /\.js$/),
+          requireContext: '@tests/unit/__fixtures__/models',
           separator: '~'
         }
       }

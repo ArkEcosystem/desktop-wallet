@@ -35,6 +35,8 @@ export default {
 
   async created () {
     this.$store.dispatch('network/setDefaults', config.NETWORKS)
+    await this.$store.dispatch('session/load')
+    await this.$store.dispatch('session/ensure')
     await this.$store.dispatch('marketData/load')
     timerService.start(MarketDataService.timerName, () => {
       this.$store.dispatch('marketData/sync')

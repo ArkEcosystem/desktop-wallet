@@ -22,7 +22,7 @@ describe('Store > Db > DbInterface', () => {
       enumerable: true,
       get () {
         return {
-          requireContext: require.context('../../__fixtures__/models', true, /\.js$/),
+          requireContext: '@tests/unit/__fixtures__/models',
           separator: '~'
         }
       }

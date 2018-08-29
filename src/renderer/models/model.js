@@ -28,7 +28,7 @@ export default class Model {
    */
   static get modelType () {
     return {
-      requireContext: require.context('@/models', true, /\.js$/),
+      requireContext: '@/models',
       separator: '~'
     }
   }
@@ -45,7 +45,7 @@ export default class Model {
     }
 
     const context = Model.modelType.requireContext
-    const ModelType = context(`./${doc.modelType}.js`).default
+    const ModelType = require(`${context}/${doc.modelType}.js`).default
     return new ModelType(doc)
   }
 

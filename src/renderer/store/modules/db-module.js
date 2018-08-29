@@ -35,10 +35,10 @@ class DbModule {
           if (!includes(state.all, model)) {
             throw new Error(`Cannot update \`${model.id}\`. It does not exist on the state`)
           }
-          state.all = _.union(state.all, [model])
+          state.all = _.unionBy([model, ...state.all], 'id')
         },
         DELETE (state, model) {
-          const index = state.all.indexOf(model.id)
+          const index = _.findIndex(state.all, 'id', model.id)
           if (index === -1) {
             throw new Error(`Cannot delete \`${model.id}\`. It does not exist on the state`)
           }

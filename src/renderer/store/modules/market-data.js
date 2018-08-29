@@ -17,13 +17,11 @@ export default new DbModule('market-data', {
         })
       }
     },
-    async saveAndCache (token, value) {
+    async saveAndCache (state, value) {
       try {
         for (const item of Object.values(value.data)) {
           const marketData = MarketData.fromObject(value.token, item)
-          console.log('marketData', marketData)
           const found = await db.find(marketData.id)
-          console.log('found', found)
 
           if (found) {
             await this.dispatch('marketData/update', marketData)
