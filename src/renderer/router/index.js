@@ -57,7 +57,7 @@ const router = new Router({
 })
 
 router.beforeEach(async (to, from, next) => {
-  const profiles = await db.getAll('profile')
+  const profiles = await db.getAllByType('profile')
 
   if (to.name === 'profile-new' || profiles.length) {
     next()

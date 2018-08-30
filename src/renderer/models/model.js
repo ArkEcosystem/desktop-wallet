@@ -28,7 +28,7 @@ export default class Model {
    */
   static get modelType () {
     return {
-      requireContext: '@/models',
+      requireContext: '.',
       separator: '~'
     }
   }
