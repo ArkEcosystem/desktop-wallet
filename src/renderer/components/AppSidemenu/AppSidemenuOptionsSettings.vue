@@ -1,7 +1,7 @@
 <template>
   <!-- FIXME close when click outside, or after a while outside the area -->
   <OptionsMenu
-    class="AppSidemenuOptionsSettings z-10 absolute"
+    class="AppSidemenuOptionsSettings absolute z-10"
   >
     <OptionsMenuItem
       title="Currency"
@@ -20,13 +20,18 @@
       </div>
     </OptionsMenuItem>
 
-    <OptionsMenuItem title="Dark mode">
-      <!-- TODO: waiting for the switch component to implement dark mode -->
+    <OptionsMenuItem
+      title="Dark mode"
+      @click="toggleSelect('dark-switch')">
       <div
         slot="controls"
-        class="flex itens-center"
+        class="pointer-events-none"
       >
-        SWITCH HERE
+        <InputSwitch
+          ref="dark-switch"
+          class="theme-dark"
+          background-color="#414767"
+        />
       </div>
     </OptionsMenuItem>
   </OptionsMenu>
@@ -36,6 +41,7 @@
 import { MARKET } from '@config'
 import { OptionsMenu, OptionsMenuItem } from '@/components/OptionsMenu'
 import SelectMenu from '@/components/SelectMenu'
+import { InputSwitch } from '@/components/InputSwitch'
 
 export default {
   name: 'AppSidemenuOptionsSettings',
@@ -43,7 +49,8 @@ export default {
   components: {
     OptionsMenu,
     OptionsMenuItem,
-    SelectMenu
+    SelectMenu,
+    InputSwitch
   },
 
   computed: {

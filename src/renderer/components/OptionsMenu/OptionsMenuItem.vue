@@ -7,7 +7,7 @@
       :class="$slots['controls'] ? 'border-dashed' : 'border-solid'"
       class="OptionsMenuItem__container transition flex items-center justify-between mx-10 py-5 border-b"
     >
-      <div>
+      <div class="select-none">
         <slot name="title">
           <span :class="$slots['controls'] ? 'text-grey-light' : ''" >{{ title }}</span>
         </slot>
