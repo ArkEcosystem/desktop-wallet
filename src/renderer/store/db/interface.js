@@ -8,7 +8,7 @@ import Model from '@/models/model'
 
 PouchDB.plugin(PouchDebug)
 
-if (!process.env.IS_WEB) {
+if (process.env.DEBUG_POUCHDB) {
   PouchDB.debug.enable('*')
 } else {
   PouchDB.debug.disable()
