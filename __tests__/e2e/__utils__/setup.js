@@ -1,7 +1,7 @@
 import electron from 'electron'
 import { Application } from 'spectron'
 
-const shortcuts = ['element', 'getAttribute', 'getText']
+const shortcuts = ['element', 'getAttribute', 'getText', 'isExisting']
 
 export default {
   stopApp (scope) {

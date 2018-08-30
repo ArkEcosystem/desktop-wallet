@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import db from '@/store/db/instance'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -28,7 +29,10 @@ export default new Router({
     {
       path: '/profile/new',
       name: 'profile-new',
-      component: require('@/pages/Profile/ProfileNew').default
+      component: require('@/pages/Profile/ProfileNew').default,
+      props: {
+        showSidemenuBar: true
+      }
     },
     {
       path: '/profile',
@@ -51,3 +55,15 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach(async (to, from, next) => {
+  const profiles = await db.getAll('profile')
+
+  if (to.name === 'profile-new' || profiles.length) {
+    next()
+  } else {
+    next({ name: 'profile-new' })
+  }
+})
+
+export default router

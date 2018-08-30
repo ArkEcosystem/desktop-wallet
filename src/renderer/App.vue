@@ -5,8 +5,11 @@
     class="bg-theme-page text-theme-page-text font-sans flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
   >
 
-    <div class="flex-1 flex mt-6 mb-4 mr-6">
-      <AppSidemenu />
+    <div
+      :class="{ 'ml-6': !hasAnyProfile }"
+      class="flex-1 flex mt-6 mb-4 mr-6"
+    >
+      <AppSidemenu v-if="hasAnyProfile" />
       <router-view class="flex-1" />
     </div>
 
@@ -24,6 +27,7 @@ import MarketDataService from '@/services/market-data-service'
 
 export default {
   name: 'DesktopWallet',
+
   components: {
     AppFooter,
     AppSidemenu
@@ -32,6 +36,12 @@ export default {
   data: () => ({
     darkTheme: false
   }),
+
+  computed: {
+    hasAnyProfile () {
+      return !!this.$store.getters['profiles/all'].length
+    }
+  },
 
   async created () {
     this.$store.dispatch('network/setDefaults', config.NETWORKS)
