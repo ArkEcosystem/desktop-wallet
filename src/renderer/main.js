@@ -11,6 +11,7 @@ import store from './store'
 
 import assets from '@/mixins/assets'
 import electron from '@/mixins/electron'
+import collections from '@/mixins/collections'
 
 if (!process.env.IS_WEB) {
   Vue.use(require('vue-electron'))
@@ -28,6 +29,7 @@ Vue.use(VTooltip, {
 
 Vue.mixin(assets)
 Vue.mixin(electron)
+Vue.mixin(collections)
 
 /* eslint-disable no-new */
 new Vue({
