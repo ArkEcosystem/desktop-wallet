@@ -1,15 +1,7 @@
 import Model from './model'
 
 export default class MarketData extends Model {
-  static fromObject (token, data) {
-    return new MarketData({token, ...data})
-  }
-
-  get id () {
-    return [this.modelType, this.token, this.currency].join(Model.modelType.separator)
-  }
-
-  get schema () {
+  static get schema () {
     return {
       required: ['token', 'price', 'marketCap', 'volume', 'date', 'change24h'],
       properties: {
@@ -36,5 +28,17 @@ export default class MarketData extends Model {
         }
       }
     }
+  }
+
+  static fromObject (token, data) {
+    return new MarketData({token, ...data})
+  }
+
+  constructor (data) {
+    super(Object.assign(data, { modelType: 'market-data' }))
+  }
+
+  get id () {
+    return [this.modelType, this.token, this.currency].join(Model.modelType.separator)
   }
 }

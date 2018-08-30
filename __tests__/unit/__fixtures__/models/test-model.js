@@ -1,11 +1,7 @@
 import Model from '@/models/model'
 
 export default class TestModel extends Model {
-  get id () {
-    return [this.modelType, this.example].join(Model.modelType.separator)
-  }
-
-  get schema () {
+  static get schema () {
     return {
       type: 'object',
       properties: {
@@ -14,5 +10,13 @@ export default class TestModel extends Model {
         }
       }
     }
+  }
+
+  constructor (data = {}) {
+    super(Object.assign({}, data, { modelType: 'test-model' }))
+  }
+
+  get id () {
+    return [this.modelType, this.example].join(Model.modelType.separator)
   }
 }

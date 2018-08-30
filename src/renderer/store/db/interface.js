@@ -101,12 +101,16 @@ class DbInterface {
    * @param {String} modelType
    * @return {Object}
    */
-  async getAll (modelType) {
+  async getAllByType (modelType) {
     try {
-      const { rows } = await this.__db.allDocs({ startkey: modelType, include_docs: true })
+      const { rows } = await this.__db.allDocs({
+        include_docs: true,
+        startkey: modelType,
+        endkey: `${modelType}\ufff0`
+      })
       return rows.map(row => Model.fromDoc(row.doc))
     } catch (error) {
-      console.error(`Error getting all documents of \`${modelType}\` type `, error)
+      console.error(`Error getting all documents of type ${modelType}`, error)
       throw error
     }
   }

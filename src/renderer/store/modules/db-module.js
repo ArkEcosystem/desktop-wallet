@@ -9,10 +9,18 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  */
 class DbModule {
   /**
-   * @param {String} type
+   * @param {(String|Object)} options - name of the module or { name, modelType }
    * @param {Object} config
    */
-  constructor (type, config = {}) {
+  constructor (name, config = {}) {
+    let modelType
+
+    if (_.isString(name)) {
+      modelType = name
+    } else {
+      ({ name, modelType } = name)
+    }
+
     const defaultConfig = {
       namespaced: true,
       state: {
@@ -57,7 +65,7 @@ class DbModule {
          * Loads all the announcements from the db.
          */
         async load ({ commit }) {
-          const models = await db.getAll(type)
+          const models = await db.getAllByType(modelType)
           models.forEach(model => {
             commit('STORE', model)
           })

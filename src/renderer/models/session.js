@@ -10,15 +10,7 @@ export default class Session extends Model {
     return new Session(data)
   }
 
-  static get id () {
-    return 'session'
-  }
-
-  get id () {
-    return Session.id
-  }
-
-  get schema () {
+  static get schema () {
     return {
       required: ['current-profile'],
       properties: {
@@ -27,5 +19,17 @@ export default class Session extends Model {
         }
       }
     }
+  }
+
+  static get id () {
+    return 'session'
+  }
+
+  constructor (data) {
+    super(Object.assign(data, { modelType: 'session' }))
+  }
+
+  get id () {
+    return Session.id
   }
 }

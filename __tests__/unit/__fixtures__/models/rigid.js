@@ -1,11 +1,7 @@
 import Model from '@/models/model'
 
 export default class Rigid extends Model {
-  get id () {
-    return [this.modelType, this.integer].join(Model.modelType.separator)
-  }
-
-  get schema () {
+  static get schema () {
     return {
       type: 'object',
       properties: {
@@ -18,5 +14,13 @@ export default class Rigid extends Model {
       },
       required: ['integer', 'date']
     }
+  }
+
+  constructor (data = {}) {
+    super(Object.assign({}, data, { modelType: 'rigid' }))
+  }
+
+  get id () {
+    return [this.modelType, this.integer].join(Model.modelType.separator)
   }
 }

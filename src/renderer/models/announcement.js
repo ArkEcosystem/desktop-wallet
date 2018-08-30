@@ -2,6 +2,32 @@ import truncHtml from 'trunc-html'
 import Model from './model'
 
 export default class Announcement extends Model {
+  static get schema () {
+    return {
+      required: ['guid', 'date', 'title', 'summary', 'url', 'isRead'],
+      properties: {
+        guid: {
+          type: 'string'
+        },
+        date: {
+          type: 'date-time'
+        },
+        title: {
+          type: 'string'
+        },
+        summary: {
+          type: 'string'
+        },
+        url: {
+          type: 'uri'
+        },
+        isRead: {
+          type: 'boolean'
+        }
+      }
+    }
+  }
+
   /**
    * The configuration of the summaries that are generated from the feed
    * @return {Array}
@@ -31,34 +57,12 @@ export default class Announcement extends Model {
     })
   }
 
-  get id () {
-    return [this.modelType, this.guid].join(Model.modelType.separator)
+  constructor (data) {
+    super(Object.assign(data, { modelType: 'announcement' }))
   }
 
-  get schema () {
-    return {
-      required: ['guid', 'date', 'title', 'summary', 'url', 'isRead'],
-      properties: {
-        guid: {
-          type: 'string'
-        },
-        date: {
-          type: 'date-time'
-        },
-        title: {
-          type: 'string'
-        },
-        summary: {
-          type: 'string'
-        },
-        url: {
-          type: 'uri'
-        },
-        isRead: {
-          type: 'boolean'
-        }
-      }
-    }
+  get id () {
+    return [this.modelType, this.guid].join(Model.modelType.separator)
   }
 
   set isRead (newValue) {

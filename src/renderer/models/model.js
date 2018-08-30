@@ -50,6 +50,14 @@ export default class Model {
   }
 
   /**
+   * @see https://json-schema.org
+   * @return {Object}
+   */
+  static get schema () {
+    throw new Error('The schema is not implemented')
+  }
+
+  /**
    * This constructor performs all the required steps to set up the instances of
    * the Model subclasses:
    *  - Establish the `_rev` of the internal document. This is the only way to set it.
@@ -69,24 +77,25 @@ export default class Model {
     Object.freeze(this._rev)
     delete internalData._rev
 
-    // TODO as static ?
-    const schema = _.cloneDeep(this.schema)
+    // This property cannot change by any reason
+    this.modelType = internalData.modelType
+    Object.freeze(this.modelType)
+    delete internalData.modelType
+
+    // Validate the data without the
+    const schema = _.cloneDeep(this.constructor.schema)
     delete schema.required
     const validation = validate(internalData, schema)
 
     if (!validation.valid) {
       const errors = validation.errors.map(error => error.stack).join(', ')
-      throw new Error(`\`${this.constructor.name}\` cannot be instantiated due errors: ${errors}`)
+      throw new Error(`\`${this.modelType}\` cannot be instantiated due errors: ${errors}`)
     }
-
-    // This property cannot change by any reason
-    this.modelType = _.kebabCase(this.constructor.name)
-    Object.freeze(this.modelType)
 
     this.__data = {}
 
     // All possible properties could be accessed, although they might return `undefined`
-    const properties = Object.keys(this.schema.properties).reduce((all, propertyName) => {
+    const properties = Object.keys(this.constructor.schema.properties).reduce((all, propertyName) => {
       this.__data[propertyName] = internalData[propertyName]
 
       all[propertyName] = {
@@ -177,18 +186,10 @@ export default class Model {
   }
 
   /**
-   * @see https://json-schema.org
-   * @return {Object}
-   */
-  get schema () {
-    throw new Error('THE `schema` PROPERTY SHOULD BE IMPLEMENTED')
-  }
-
-  /**
    * Validate the current instance
    * @return {ValidatorResult}
    */
   validate () {
-    return validate(this.data, this.schema)
+    return validate(this.data, this.constructor.schema)
   }
 }

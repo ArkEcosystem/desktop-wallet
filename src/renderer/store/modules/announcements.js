@@ -4,7 +4,7 @@ import feedService from '@/services/feed'
 import Announcement from '@/models/announcement'
 import { ANNOUNCEMENTS } from '@config'
 
-export default new DbModule('announcements', {
+export default new DbModule({ name: 'announcements', modelType: 'announcement' }, {
   getters: {
     /**
      * Read announcements

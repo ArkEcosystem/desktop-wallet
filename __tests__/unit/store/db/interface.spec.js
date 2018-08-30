@@ -182,7 +182,7 @@ describe('Store > Db > DbInterface', () => {
     })
   })
 
-  describe('getAll', () => {
+  describe('getAllByType', () => {
     it('should return an Array of instances of the same Model subclass', async () => {
       const modelType = 'test-model'
       const models = [
@@ -197,12 +197,13 @@ describe('Store > Db > DbInterface', () => {
       ]
 
       allDocsMock.mockImplementationOnce(options => {
-        if (options.include_docs && options.startkey === modelType) {
+        const endkey = `${modelType}\ufff0`
+        if (options.include_docs && options.startkey === modelType && options.endkey === endkey) {
           return { rows }
         }
       })
 
-      const result = await db.getAll(modelType)
+      const result = await db.getAllByType(modelType)
       expect(result).toBeArray()
       expect(result).toHaveLength(models.length)
       expect(result).toEqual(models)
@@ -222,13 +223,13 @@ describe('Store > Db > DbInterface', () => {
       })
 
       it('should log the error', async () => {
-        await errorCapturer(db.getAll('wrongType'))
+        await errorCapturer(db.getAllByType('wrongType'))
 
         expect(console.error).toHaveBeenCalledWith(expect.stringMatching(/get.*all.*wrongType/i), error)
       })
 
       it('should throw the error', async () => {
-        expect(await errorCapturer(db.getAll())).toThrow(error)
+        expect(await errorCapturer(db.getAllByType())).toThrow(error)
       })
     })
   })

@@ -23,6 +23,12 @@ describe('Models > Model', () => {
     testModel = new TestModel()
   })
 
+  describe('static get modelType', () => {
+    it('should use "~" as the default separator', () => {
+      expect(Model.modelType.separator).toEqual('~')
+    })
+  })
+
   describe('static fromDoc', () => {
     it('should return a new instance of a children class of Model based on the `modelType` property', () => {
       const emptyDoc = { modelType: 'empty' }
@@ -33,6 +39,14 @@ describe('Models > Model', () => {
       const testModel = Model.fromDoc(testDoc)
       expect(testModel).toBeInstanceOf(TestModel)
       expect(testModel.example).toEqual('example-value')
+    })
+  })
+
+  describe('static get schema', () => {
+    describe('when it is not overridden', () => {
+      it('should not allow instantiating a Model', () => {
+        expect(() => new Model()).toThrow(/schema.*implemented/i)
+      })
     })
   })
 
@@ -156,24 +170,10 @@ describe('Models > Model', () => {
     })
   })
 
-  describe('get schema', () => {
-    describe('when it is not overridden', () => {
-      it('should not allow instantiating a Model', () => {
-        expect(() => new Model()).toThrow(/schema.*implemented/i)
-      })
-    })
-  })
-
   describe('validate', () => {
     it('should validate that the instance adheres to the `schema` property', () => {
       const model = new Rigid({ integer: 1 })
       expect(model.validate()).toBeInstanceOf(ValidatorResult)
-    })
-  })
-
-  describe('Model.modelType', () => {
-    it('should use "~" as the default separator', () => {
-      expect(Model.modelType.separator).toEqual('~')
     })
   })
 })

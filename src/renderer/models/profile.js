@@ -41,11 +41,11 @@ export default class Profile extends Model {
     }
   }
 
-  get id () {
-    return [this.modelType, this.name].join(Model.modelType.separator)
+  constructor (data) {
+    super(Object.assign(data, { modelType: 'profile' }))
   }
 
-  get schema () {
-    return Profile.schema
+  get id () {
+    return [this.modelType, this.name].join(Model.modelType.separator)
   }
 }
