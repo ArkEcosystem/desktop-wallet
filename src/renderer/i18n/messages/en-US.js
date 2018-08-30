@@ -34,6 +34,11 @@ export default {
     popupHeader: 'Select'
   },
 
+  QRCode: {
+    popupTitle: 'QR Code',
+    popupSubtitle: 'Scan for Address'
+  },
+
   pages: {
     'profile-new': {
       step1: {
