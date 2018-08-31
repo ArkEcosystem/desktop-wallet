@@ -1,5 +1,7 @@
 import store from '@/store'
 import { getMock, putMock, putIfNotExistsMock, removeMock } from 'pouchdb-browser'
+import Session from '@/models/session'
+import { findMock } from '@/store/db/instance'
 
 let doc
 getMock.mockImplementation(() => {
@@ -13,6 +15,9 @@ putIfNotExistsMock.mockImplementation(docToCreate => {
 })
 removeMock.mockImplementation(() => {
   return { ok: true }
+})
+findMock.mockImplementation(() => {
+  return Session.fromObject(doc)
 })
 
 beforeAll(async () => {

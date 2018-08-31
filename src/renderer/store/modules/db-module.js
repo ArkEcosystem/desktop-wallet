@@ -37,7 +37,7 @@ class DbModule {
           state.all.push(model)
         },
         STORE (state, model) {
-          state.all = _.union(state.all, [model])
+          state.all = _.unionBy([model, ...state.all], 'id')
         },
         UPDATE (state, model) {
           if (!includes(state.all, model)) {
@@ -46,7 +46,7 @@ class DbModule {
           state.all = _.unionBy([model, ...state.all], 'id')
         },
         DELETE (state, model) {
-          const index = _.findIndex(state.all, 'id', model.id)
+          const index = _.findIndex(state.all, { id: model.id })
           if (index === -1) {
             throw new Error(`Cannot delete \`${model.id}\`. It does not exist on the state`)
           }
@@ -58,7 +58,13 @@ class DbModule {
          * Returns all the Models of this type
          * @return {Array}
          */
-        all: state => state.all
+        all: state => state.all,
+        /**
+         * Returns a specific Model by its id
+         * @param {String} id
+         * @return {Model}
+         */
+        byId: state => id => state.all.find(model => model.id === id)
       },
       actions: {
         /**
