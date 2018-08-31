@@ -47,6 +47,8 @@ let colors = {
   'theme-page-text': 'var(--theme-page-text)',
   'theme-page-text-light': 'var(--theme-page-text-light)',
 
+  'theme-line-separator': 'var(--theme-line-separator)',
+
   'theme-feature': 'var(--theme-feature)',
   'theme-feature-item-text': 'var(--theme-feature-item-text)',
   'theme-feature-item-hover': 'var(--theme-feature-item-hover)',
