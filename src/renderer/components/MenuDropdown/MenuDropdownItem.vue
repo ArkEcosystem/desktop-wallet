@@ -1,12 +1,12 @@
 <template>
   <li
     :class="[
-      isActive ? 'SelectMenuItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text' : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
-      ,'SelectMenuItem cursor-pointer bt-theme-feature']"
+      isActive ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text' : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
+      ,'MenuDropdownItem cursor-pointer bt-theme-feature']"
     @click.stop="emitClick"
   >
     <div
-      class="SelectMenuItem__container mx-8 py-4 px-5 border-b text-center transition">
+      class="MenuDropdownItem__container mx-8 py-4 px-5 border-b text-center transition">
       <slot>
         <span class="font-semibold">{{ value }}</span>
       </slot>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'SelectMenuItem',
+  name: 'MenuDropdownItem',
 
   props: {
     value: {
@@ -40,8 +40,8 @@ export default {
 </script>
 
 <style scoped>
-.SelectMenuItem:hover > .SelectMenuItem__container,
-.SelectMenuItem--active .SelectMenuItem__container {
+.MenuDropdownItem:hover > .MenuDropdownItem__container,
+.MenuDropdownItem--active .MenuDropdownItem__container {
   border-color: transparent;
 }
 </style>

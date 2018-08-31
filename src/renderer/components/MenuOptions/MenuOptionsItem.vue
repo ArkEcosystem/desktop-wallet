@@ -1,11 +1,11 @@
 <template>
   <li
-    class="OptionsMenuItem cursor-pointer"
+    class="MenuOptionsItem cursor-pointer"
     @click="emitClick"
   >
     <div
       :class="$slots['controls'] ? 'border-dashed' : 'border-solid'"
-      class="OptionsMenuItem__container transition flex items-center justify-between mx-10 py-5 border-b"
+      class="MenuOptionsItem__container transition flex items-center justify-between mx-10 py-5 border-b"
     >
       <div class="select-none">
         <slot name="title">
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'OptionsMenuItem',
+  name: 'MenuOptionsItem',
 
   props: {
     title: {
@@ -40,17 +40,17 @@ export default {
 </script>
 
 <style scoped>
-.OptionsMenuItem {
+.MenuOptionsItem {
   color: #a6add5;
 }
-.OptionsMenuItem:hover {
+.MenuOptionsItem:hover {
   background-color: #3a4060;
   color: #b3bbe8;
 }
-.OptionsMenuItem:hover > .OptionsMenuItem__container {
+.MenuOptionsItem:hover > .MenuOptionsItem__container {
   border-color: transparent;
 }
-.OptionsMenuItem__container {
+.MenuOptionsItem__container {
   border-color: #474d71;
 }
 </style>

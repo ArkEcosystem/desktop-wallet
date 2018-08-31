@@ -1,5 +1,5 @@
 <template>
-  <SelectMenu
+  <MenuDropdown
     :items="options"
     :is-disabled="isDisabled"
     :value="optionText"
@@ -17,7 +17,7 @@
       :is-focused="isFocused"
       :is-invalid="isInvalid"
     >
-      <SelectMenuHandler
+      <MenuDropdownHandler
         slot-scope="{ inputClass }"
         :value="scopeHandler.value"
         :placeholder="label"
@@ -26,20 +26,20 @@
         @click="onHandlerClick"
       />
     </InputField>
-  </SelectMenu>
+  </MenuDropdown>
 </template>
 
 <script>
 import InputField from '@/components/InputField'
-import { SelectMenu, SelectMenuHandler } from '@/components/SelectMenu'
+import { MenuDropdown, MenuDropdownHandler } from '@/components/MenuDropdown'
 
 export default {
   name: 'InputSelect',
 
   components: {
     InputField,
-    SelectMenu,
-    SelectMenuHandler
+    MenuDropdown,
+    MenuDropdownHandler
   },
 
   model: {

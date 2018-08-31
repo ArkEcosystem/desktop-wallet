@@ -1,24 +1,24 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import { OptionsMenu, OptionsMenuItem } from '@/components/OptionsMenu'
+import { MenuOptions, MenuOptionsItem } from '@/components/MenuOptions'
 
-describe('OptionsMenu', () => {
+describe('MenuOptions', () => {
   describe('render', () => {
     it('should render menu', () => {
-      const wrapper = mount(OptionsMenu)
-      expect(wrapper.contains('.OptionsMenu')).toBe(true)
+      const wrapper = mount(MenuOptions)
+      expect(wrapper.contains('.MenuOptions')).toBe(true)
     })
 
     it('should render item', () => {
-      const wrapper = mount(OptionsMenuItem, {
+      const wrapper = mount(MenuOptionsItem, {
         propsData: {
           title: 'Testing component'
         }
       })
-      expect(wrapper.contains('.OptionsMenuItem')).toBe(true)
+      expect(wrapper.contains('.MenuOptionsItem')).toBe(true)
     })
 
     it('should render item with controls', () => {
-      const wrapper = mount(OptionsMenuItem, {
+      const wrapper = mount(MenuOptionsItem, {
         propsData: {
           title: 'Testing component'
         },
@@ -26,23 +26,23 @@ describe('OptionsMenu', () => {
           controls: '<strong>My component</strong>'
         }
       })
-      expect(wrapper.contains('.OptionsMenuItem')).toBe(true)
+      expect(wrapper.contains('.MenuOptionsItem')).toBe(true)
     })
 
     it('should render menu with child', () => {
-      const item = shallowMount(OptionsMenuItem, {
+      const item = shallowMount(MenuOptionsItem, {
         propsData: {
           title: 'Testing component'
         }
       })
 
-      const wrapper = shallowMount(OptionsMenu, {
+      const wrapper = shallowMount(MenuOptions, {
         slots: {
           default: item.html()
         }
       })
 
-      expect(wrapper.contains('.OptionsMenuItem')).toBe(true)
+      expect(wrapper.contains('.MenuOptionsItem')).toBe(true)
     })
   })
 })

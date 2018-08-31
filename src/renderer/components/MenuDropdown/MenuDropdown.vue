@@ -11,7 +11,7 @@
         :value="activeItem"
         name="handler">
 
-        <SelectMenuHandler
+        <MenuDropdownHandler
           :value="activeItem"
           :placeholder="placeholder"
         />
@@ -24,10 +24,10 @@
       class="absolute min-w-full z-20">
       <ul
         :style="{ transform: `translate(${position.join(',')})` }"
-        class="SelectMenu pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
+        class="MenuDropdown pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
       >
         <slot>
-          <SelectMenuItem
+          <MenuDropdownItem
             v-for="item in items"
             :key="item"
             :value="item"
@@ -41,15 +41,15 @@
 </template>
 
 <script>
-import SelectMenuItem from './SelectMenuItem'
-import SelectMenuHandler from './SelectMenuHandler'
+import MenuDropdownItem from './MenuDropdownItem'
+import MenuDropdownHandler from './MenuDropdownHandler'
 
 export default {
-  name: 'SelectMenu',
+  name: 'MenuDropdown',
 
   components: {
-    SelectMenuItem,
-    SelectMenuHandler
+    MenuDropdownItem,
+    MenuDropdownHandler
   },
 
   props: {
@@ -120,7 +120,7 @@ export default {
 </script>
 
 <style scoped>
-.SelectMenu >>> .SelectMenuItem:last-child .SelectMenuItem__container {
+.MenuDropdown >>> .MenuDropdownItem:last-child .MenuDropdownItem__container {
   border: none;
 }
 </style>

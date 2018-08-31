@@ -2,7 +2,7 @@
   <div
     :class="[
       value ? '' : 'text-theme-page-text-light hover:text-theme-page-text',
-      'SelectMenuHandler cursor-pointer transition flex justify-between items-center']"
+      'MenuDropdownHandler cursor-pointer transition flex justify-between items-center']"
     @click="emitClick">
     <span>
       <slot>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'SelectMenuHandler',
+  name: 'MenuDropdownHandler',
 
   props: {
     value: {

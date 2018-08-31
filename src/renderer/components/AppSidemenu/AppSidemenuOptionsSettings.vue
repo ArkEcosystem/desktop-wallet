@@ -1,9 +1,9 @@
 <template>
   <!-- FIXME close when click outside, or after a while outside the area -->
-  <OptionsMenu
+  <MenuOptions
     class="AppSidemenuOptionsSettings absolute z-10"
   >
-    <OptionsMenuItem
+    <MenuOptionsItem
       title="Currency"
       @click="toggleSelect('currency-menu')"
     >
@@ -11,16 +11,16 @@
         slot="controls"
         class="pointer-events-none"
       >
-        <SelectMenu
+        <MenuDropdown
           ref="currency-menu"
           :items="currencies"
           :position="['-40%', '5%']"
           :value="defaultCurrency"
         />
       </div>
-    </OptionsMenuItem>
+    </MenuOptionsItem>
 
-    <OptionsMenuItem
+    <MenuOptionsItem
       title="Dark mode"
       @click="toggleSelect('dark-switch')">
       <div
@@ -33,23 +33,23 @@
           background-color="#414767"
         />
       </div>
-    </OptionsMenuItem>
-  </OptionsMenu>
+    </MenuOptionsItem>
+  </MenuOptions>
 </template>
 
 <script>
 import { MARKET } from '@config'
-import { OptionsMenu, OptionsMenuItem } from '@/components/OptionsMenu'
-import SelectMenu from '@/components/SelectMenu'
+import { MenuOptions, MenuOptionsItem } from '@/components/MenuOptions'
+import MenuDropdown from '@/components/MenuDropdown'
 import { InputSwitch } from '@/components/InputSwitch'
 
 export default {
   name: 'AppSidemenuOptionsSettings',
 
   components: {
-    OptionsMenu,
-    OptionsMenuItem,
-    SelectMenu,
+    MenuOptions,
+    MenuOptionsItem,
+    MenuDropdown,
     InputSwitch
   },
 

@@ -1,34 +1,34 @@
 import { mount } from '@vue/test-utils'
-import { SelectMenu, SelectMenuItem, SelectMenuHandler } from '@/components/SelectMenu'
+import { MenuDropdown, MenuDropdownItem, MenuDropdownHandler } from '@/components/MenuDropdown'
 
-describe('SelectMenu', () => {
+describe('MenuDropdown', () => {
   describe('Item', () => {
     it('should render component', () => {
-      const wrapper = mount(SelectMenuItem, {
+      const wrapper = mount(MenuDropdownItem, {
         propsData: {
           value: 'Test'
         }
       })
-      expect(wrapper.contains('.SelectMenuItem')).toBeTruthy()
+      expect(wrapper.contains('.MenuDropdownItem')).toBeTruthy()
     })
 
     it('should render with active prop', () => {
-      const wrapper = mount(SelectMenuItem, {
+      const wrapper = mount(MenuDropdownItem, {
         propsData: {
           value: 'Test',
           isActive: true
         }
       })
-      expect(wrapper.contains('.SelectMenuItem--active')).toBeTruthy()
+      expect(wrapper.contains('.MenuDropdownItem--active')).toBeTruthy()
     })
 
     it('should emit click event', () => {
-      const wrapper = mount(SelectMenuItem, {
+      const wrapper = mount(MenuDropdownItem, {
         propsData: {
           value: 'Test'
         }
       })
-      const element = wrapper.find('.SelectMenuItem')
+      const element = wrapper.find('.MenuDropdownItem')
       element.trigger('click')
       expect(wrapper.emitted('click')).toBeTruthy()
     })
@@ -36,37 +36,37 @@ describe('SelectMenu', () => {
 
   describe('Handler', () => {
     it('should render component', () => {
-      const wrapper = mount(SelectMenuHandler)
-      expect(wrapper.contains('.SelectMenuHandler')).toBeTruthy()
+      const wrapper = mount(MenuDropdownHandler)
+      expect(wrapper.contains('.MenuDropdownHandler')).toBeTruthy()
     })
 
     it('should render component with props', () => {
-      const wrapper = mount(SelectMenuHandler, {
+      const wrapper = mount(MenuDropdownHandler, {
         propsData: {
           value: 'Value',
           placeholder: 'Placeholder'
         }
       })
-      const handler = wrapper.find('.SelectMenuHandler')
+      const handler = wrapper.find('.MenuDropdownHandler')
       expect(handler.text()).toBe('Value')
     })
 
     it('should render component with slots', () => {
-      const wrapper = mount(SelectMenuHandler, {
+      const wrapper = mount(MenuDropdownHandler, {
         slots: {
           default: '<strong>Value</strong>'
         }
       })
-      expect(wrapper.contains('.SelectMenuHandler')).toBeTruthy()
+      expect(wrapper.contains('.MenuDropdownHandler')).toBeTruthy()
     })
 
     it('should emit click event', () => {
-      const wrapper = mount(SelectMenuHandler, {
+      const wrapper = mount(MenuDropdownHandler, {
         propsData: {
           value: 'Value'
         }
       })
-      const handler = wrapper.find('.SelectMenuHandler')
+      const handler = wrapper.find('.MenuDropdownHandler')
       handler.trigger('click')
       expect(wrapper.emitted('click')).toBeTruthy()
     })
@@ -74,57 +74,57 @@ describe('SelectMenu', () => {
 
   describe('Menu', () => {
     it('should render component', () => {
-      const wrapper = mount(SelectMenu)
-      expect(wrapper.contains('.SelectMenu')).toBeTruthy()
+      const wrapper = mount(MenuDropdown)
+      expect(wrapper.contains('.MenuDropdown')).toBeTruthy()
     })
 
     it('should render component with items', () => {
-      const wrapper = mount(SelectMenu, {
+      const wrapper = mount(MenuDropdown, {
         propsData: {
           items: ['first', 'second']
         }
       })
-      expect(wrapper.findAll('.SelectMenuItem').length).toBe(2)
+      expect(wrapper.findAll('.MenuDropdownItem').length).toBe(2)
     })
 
     it('should emit select event', () => {
-      const wrapper = mount(SelectMenu, {
+      const wrapper = mount(MenuDropdown, {
         propsData: {
           items: ['first', 'second']
         }
       })
-      const handler = wrapper.find('.SelectMenuHandler')
+      const handler = wrapper.find('.MenuDropdownHandler')
       handler.trigger('click')
-      const item = wrapper.find('.SelectMenuItem')
+      const item = wrapper.find('.MenuDropdownItem')
       item.trigger('click')
       expect(wrapper.emitted('select')).toBeTruthy()
     })
 
     it('should render component with items and activeItem', () => {
-      const wrapper = mount(SelectMenu, {
+      const wrapper = mount(MenuDropdown, {
         propsData: {
           items: ['first', 'second'],
           value: 'second'
         }
       })
-      const handler = wrapper.find('.SelectMenuHandler')
+      const handler = wrapper.find('.MenuDropdownHandler')
       handler.trigger('click')
-      const active = wrapper.find('.SelectMenuItem--active')
+      const active = wrapper.find('.MenuDropdownItem--active')
       expect(active.text()).toBe('second')
     })
 
     it('should render component with slots', () => {
-      const item = mount(SelectMenuItem, {
+      const item = mount(MenuDropdownItem, {
         propsData: {
           value: 'Test'
         }
       })
-      const wrapper = mount(SelectMenu, {
+      const wrapper = mount(MenuDropdown, {
         slots: {
           default: item.html()
         }
       })
-      expect(wrapper.contains('.SelectMenuItem')).toBeTruthy()
+      expect(wrapper.contains('.MenuDropdownItem')).toBeTruthy()
     })
   })
 })
