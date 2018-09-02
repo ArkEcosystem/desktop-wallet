@@ -1,10 +1,10 @@
 export default {
 
-  common: {
-    done: 'Hecho'
+  COMMON: {
+    DONE: 'Hecho'
   },
 
-  languages: {
+  LANGUAGES: {
     'en-US': 'Inglés',
     'es-ES': 'Español',
     'pt-BR': 'Portugués - Brasil'
@@ -29,6 +29,30 @@ export default {
   InputGrid: {
     more: 'Ver más',
     popupHeader: 'Seleccionar'
+  },
+
+  PAGES: {
+    PROFILE_NEW: {
+      STEP1: {
+        INSTRUCTIONS: {
+          HEADER: 'Crear perfil',
+          TEXT: 'Introduce tu nombre o nick y selecciona tu idioma y moneda por defecto.'
+        },
+        NAME: 'Nombre del perfil'
+      },
+      STEP2: {
+        INSTRUCTIONS: {
+          HEADER: 'Selección de red',
+          TEXT: 'Elige la red a la que se conectará ester perfil'
+        }
+      },
+      STEP3: {
+        INSTRUCTIONS: {
+          HEADER: 'Apariencia',
+          TEXT: 'Personaliza esta aplicación seleccionando uno de nuestro temas y fondos.'
+        }
+      }
+    }
   }
 
 }

@@ -42,7 +42,7 @@
               class="CollapsibleStepperItem__footer__back-button blue-button"
               @click="emitBack"
             >
-              {{ $t('common.back') }}
+              {{ $t('COMMON.BACK') }}
             </button>
 
             <button
@@ -51,7 +51,7 @@
               class="CollapsibleStepperItem__footer__next-button blue-button"
               @click="emitNext"
             >
-              {{ isLastItem ? $t('common.done') : $t('common.next') }}
+              {{ isLastItem ? $t('COMMON.DONE') : $t('COMMON.NEXT') }}
             </button>
           </slot>
         </footer>

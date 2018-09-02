@@ -1,25 +1,51 @@
 import _ from 'lodash'
-import db from '@/store/db/instance'
 import DbModule from './db-module'
 import Session from '@/models/session'
+import Profile from '@/models/profile'
+
+const getters = {
+  /**
+   * Current session
+   * @return {Session}
+   */
+  current: state => {
+    return state.all[0]
+  },
+  /**
+   * Return the profile that is being used in this session
+   * @return {Profile}
+   */
+  currentProfile (state, getters, rootState, rootGetters) {
+    if (getters.current.profileId) {
+      return rootGetters['profiles/byId'](getters.current.profileId)
+    }
+    return null
+  }
+}
+
+// Session has all the properties of Profile, except `name``
+const profileProperties = _.pull(Object.keys(Profile.schema.properties), ['name'])
+
+// Add getters for all the properties of the session and fallback to profile
+profileProperties.forEach(property => {
+  getters[property] = (state, { current, currentProfile }) => {
+    return current[property] || (currentProfile ? currentProfile[property] : null)
+  }
+})
 
 export default new DbModule('session', {
-  getters: {
-    get: state => (key) => {
-      return _.first(state.all)[key]
-    }
-  },
+  getters,
   actions: {
     /**
-     * Ensure there is a session in place.
-     * @param  {State} state The current session state
+     * Ensure there is a session in place
+     * @param  {State} state - The current session state
      * @return {void}
      */
     async ensure (state) {
       try {
         if (!state.getters.all.length) {
           await this.dispatch('session/create', Session.fromObject({
-            'current-profile': null
+            profileId: null
           }))
         }
       } catch (error) {
@@ -27,12 +53,18 @@ export default new DbModule('session', {
         console.error('Error ensuring default session: ', error)
       }
     },
+    /**
+     * Generic setter
+     * @param {Object} state
+     * @param {Object} data - The properties to modify using { key: value }
+     * @return {void}
+     */
     async set (state, data) {
       try {
-        const found = await db.find(Session.id)
+        const current = this.getters['session/current']
 
-        if (found) {
-          await this.dispatch('session/update', Session.fromObject({...found.data, ...data}))
+        if (current) {
+          await this.dispatch('session/update', Session.fromObject({ ...current.data, ...data }))
         } else {
           await this.dispatch('session/create', Session.fromObject(data))
         }
@@ -41,12 +73,17 @@ export default new DbModule('session', {
         console.error('Error saving the session: ', error)
       }
     },
+    /**
+     * Resets all the data, except the `profileId` associated with the session
+     */
     async reset (state) {
+      const current = this.getters['session/current']
+
       try {
-        if (_.first(state.getters.all)) {
-          await this.dispatch('session/delete', _.first(state.getters.all))
+        if (current) {
+          const resetSession = Session.fromObject({ profileId: current.profileId })
+          await this.dispatch('session/update', resetSession)
         }
-        await this.dispatch('session/ensure')
       } catch (error) {
         // TODO alert/toast component
         console.error('Error resetting session: ', error)

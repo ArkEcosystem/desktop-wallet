@@ -15,7 +15,8 @@
           ref="currency-menu"
           :items="currencies"
           :position="['-40%', '5%']"
-          :value="defaultCurrency"
+          :value="sessionCurrency"
+          @select="setCurrency"
         />
       </div>
     </MenuOptionsItem>
@@ -29,8 +30,10 @@
       >
         <InputSwitch
           ref="dark-switch"
+          :is-active="isDarkTheme"
           class="theme-dark"
           background-color="#414767"
+          @change="setTheme"
         />
       </div>
     </MenuOptionsItem>
@@ -54,15 +57,37 @@ export default {
   },
 
   computed: {
-    defaultCurrency () {
-      return this.currencies[0]
-    },
     currencies () {
       return MARKET.currencies
+    },
+    isDarkTheme () {
+      return this.sessionTheme === 'dark'
+    },
+    sessionCurrency: {
+      get () {
+        return this.$store.getters['session/currency']
+      },
+      set (currency) {
+        this.$store.dispatch('session/set', { currency })
+      }
+    },
+    sessionTheme: {
+      get () {
+        return this.$store.getters['session/theme']
+      },
+      set (theme) {
+        this.$store.dispatch('session/set', { theme })
+      }
     }
   },
 
   methods: {
+    setCurrency (newCurrency) {
+      this.sessionCurrency = newCurrency
+    },
+    setTheme (newTheme) {
+      this.sessionTheme = newTheme ? 'dark' : 'light'
+    },
     toggleSelect (name) {
       this.$refs[name].toggle()
     }

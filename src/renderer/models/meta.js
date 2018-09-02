@@ -14,8 +14,8 @@ export default class Meta extends Model {
     }
   }
 
-  constructor (data) {
-    super(Object.assign(data, { modelType: 'meta' }))
+  constructor (data = {}) {
+    super(Object.assign({}, data, { modelType: 'meta' }))
   }
 
   get id () {

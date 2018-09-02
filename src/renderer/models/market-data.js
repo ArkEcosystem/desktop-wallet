@@ -34,8 +34,8 @@ export default class MarketData extends Model {
     return new MarketData({token, ...data})
   }
 
-  constructor (data) {
-    super(Object.assign(data, { modelType: 'market-data' }))
+  constructor (data = {}) {
+    super(Object.assign({}, data, { modelType: 'market-data' }))
   }
 
   get id () {

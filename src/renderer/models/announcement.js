@@ -57,8 +57,8 @@ export default class Announcement extends Model {
     })
   }
 
-  constructor (data) {
-    super(Object.assign(data, { modelType: 'announcement' }))
+  constructor (data = {}) {
+    super(Object.assign({}, data, { modelType: 'announcement' }))
   }
 
   get id () {

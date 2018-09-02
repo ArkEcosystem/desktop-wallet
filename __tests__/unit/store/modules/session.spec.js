@@ -1,55 +1,103 @@
 import store from '@/store'
-import { getMock, putMock, putIfNotExistsMock, removeMock } from 'pouchdb-browser'
+import Profile from '@/models/profile'
 import Session from '@/models/session'
-import { findMock } from '@/store/db/instance'
+import sessionStore from '@/store/modules/session'
 
-let doc
-getMock.mockImplementation(() => {
-  return doc
-})
-putMock.mockImplementation(() => {
-  return { ok: true, rev: 'revision-1' }
-})
-putIfNotExistsMock.mockImplementation(docToCreate => {
-  return { updated: true, rev: 'revision-1' }
-})
-removeMock.mockImplementation(() => {
-  return { ok: true }
-})
-findMock.mockImplementation(() => {
-  return Session.fromObject(doc)
-})
+describe('Store > Modules > Session', () => {
+  describe('getters . current', () => {
+    it('should return the current session', () => {
+      const current = new Session()
+      const state = {
+        all: [current]
+      }
 
-beforeAll(async () => {
-  await store.dispatch('session/ensure')
-})
-beforeEach(async () => {
-  doc = {
-    'current-profile': null,
-    modelType: 'session',
-    _id: 'session'
-  }
-  await store.dispatch('session/reset')
-})
-
-describe('session store modules', () => {
-  it('should set the correct value in the store', async () => {
-    expect(store.getters['session/get']('current-profile')).toEqual(null)
-
-    await store.dispatch('session/set', {
-      'current-profile': 'TEST'
+      expect(sessionStore.getters.current(state)).toEqual(current)
     })
-
-    expect(store.getters['session/get']('current-profile')).toEqual('TEST')
   })
 
-  it('should not set an invalid value in the store', async () => {
-    expect(store.getters['session/get']('current-profile')).toEqual(null)
+  describe('getters . currentProfile', () => {
+    it('should return the current profile', () => {
+      const currentProfile = new Profile({ name: 'myProfile' })
+      const current = new Session({ profileId: currentProfile.id })
 
-    await store.dispatch('session/set', {
-      'current-profile': false
+      const state = {
+        all: [current]
+      }
+      const { getters } = sessionStore
+      getters.current = current
+      const rootGetters = {
+        'profiles/byId': jest.fn(id => currentProfile)
+      }
+
+      expect(getters.currentProfile(state, getters, null, rootGetters)).toEqual(currentProfile)
+      expect(rootGetters['profiles/byId']).toHaveBeenCalledWith(currentProfile.id)
+    })
+  })
+
+  describe.each([
+    ['avatar', 'avatar.png'],
+    ['background', 'background.png'],
+    ['currency', 'EUR'],
+    ['language', 'en-US'],
+    ['network', 'ark.mainnet'],
+    ['theme', 'light']
+  ])(
+    'getters . %s', (property, value) => {
+      describe(`when the ${property} has value on the session`, () => {
+        it('should return the property value', () => {
+          const current = new Session({ [property]: value })
+          const state = { all: [current] }
+          const getters = { current, currentProfile: {} }
+
+          expect(sessionStore.getters[property](state, getters)).toEqual(value)
+        })
+      })
+
+      describe(`when the ${property} does not have value on the session`, () => {
+        it('should return the value from the current profile', () => {
+          const currentProfile = new Profile({ [property]: value })
+          const current = new Session()
+          const state = { all: [current] }
+          const getters = { current, currentProfile }
+
+          expect(sessionStore.getters[property](state, getters)).toEqual(value)
+        })
+      })
     })
 
-    expect(store.getters['session/get']('current-profile')).toEqual(null)
+  describe('actions . ensure', () => {
+  })
+
+  describe('actions . set', () => {
+    describe('when the session exists', () => {
+      xit('should update it', () => {
+      })
+    })
+
+    describe('when the session does not exist', () => {
+      xit('should create it', () => {
+      })
+    })
+  })
+
+  describe('actions . reset', () => {
+    describe('when there is a session', () => {
+      it('should delete everything but the `profileId`', async () => {
+        const currentProfile = new Profile({ name: 'first' })
+        const current = new Session({ profileId: currentProfile.id, language: 'es-ES' })
+        const resetSession = Session.fromObject({ profileId: current.profileId })
+
+        const spy = jest.spyOn(store, 'dispatch')
+
+        await store.dispatch('session/create', current)
+        await store.dispatch('session/reset')
+
+        expect(spy).toHaveBeenLastCalledWith('session/update', resetSession)
+      })
+    })
+    describe('when there is not any session', () => {
+      xit('shoud create one', () => {
+      })
+    })
   })
 })

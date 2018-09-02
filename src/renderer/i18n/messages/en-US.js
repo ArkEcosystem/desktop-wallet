@@ -1,13 +1,14 @@
 export default {
 
-  common: {
-    back: 'Back',
-    done: 'Done',
-    language: 'Language',
-    next: 'Next'
+  COMMON: {
+    BACK: 'Back',
+    DONE: 'Done',
+    CURRENCY: 'Currency',
+    LANGUAGE: 'Language',
+    NEXT: 'Next'
   },
 
-  languages: {
+  LANGUAGES: {
     'en-US': 'English',
     'es-ES': 'Spanish',
     'pt-BR': 'Portugues - Brazil'
@@ -39,28 +40,28 @@ export default {
     popupSubtitle: 'Scan for Address'
   },
 
-  pages: {
-    'profile-new': {
-      step1: {
-        instructions: {
-          header: 'Create a profile',
-          text: 'Enter your name or nickname and select your preferred language and default currency.'
+  PAGES: {
+    PROFILE_NEW: {
+      STEP1: {
+        INSTRUCTIONS: {
+          HEADER: 'Create a profile',
+          TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
-        name: 'Profile name'
+        NAME: 'Profile name'
       },
-      step2: {
-        instructions: {
-          header: 'Network selection',
-          text: 'Choose the network of this profile.'
+      STEP2: {
+        INSTRUCTIONS: {
+          HEADER: 'Network selection',
+          TEXT: 'Choose the network of this profile.'
         },
-        name: 'Profile name'
+        NAME: 'Profile name'
       },
-      step3: {
-        instructions: {
-          header: 'Appearance',
-          text: 'Customize this application selecting one of our themes and backgrounds.'
+      STEP3: {
+        INSTRUCTIONS: {
+          HEADER: 'Appearance',
+          TEXT: 'Customize this application selecting one of our themes and backgrounds.'
         },
-        name: 'Profile name'
+        NAME: 'Profile name'
       }
     }
   }

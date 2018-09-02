@@ -7,9 +7,9 @@
         class="ProfileNew__instructions flex-grow background-image"
       >
         <div class="mt-16 mx-16">
-          <h3 class="mb-2">{{ $t(`pages.profile-new.step${step}.instructions.header`) }}</h3>
+          <h3 class="mb-2">{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
           <p>
-            {{ $t(`pages.profile-new.step${step}.instructions.text`) }}
+            {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>
         </div>
       </div>
@@ -32,7 +32,7 @@
               <!-- TODO check duplicate here -->
               <InputText
                 v-model="schema.name"
-                :label="$t('pages.profile-new.step1.name')"
+                :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
                 :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
                 name="name"
               />
@@ -40,11 +40,11 @@
               <div class="flex flex-row">
                 <InputSelect
                   :items="languages"
-                  :value="schema.language"
+                  :value="language"
                   name="language"
                   label="Language"
                   class="mr-2"
-                  @select="selectLanguage"
+                  @input="selectLanguage"
                 />
 
                 <InputSelect
@@ -53,7 +53,7 @@
                   name="currency"
                   label="Currency"
                   class="ml-2"
-                  @select="selectCurrency"
+                  @input="selectCurrency"
                 />
               </div>
 
@@ -104,7 +104,7 @@
 
               <SelectionTheme
                 :max-visible-items="2"
-                :selected="schema.theme"
+                :selected="theme"
                 @select="selectTheme"
               />
 
@@ -112,7 +112,7 @@
 
               <SelectionBackground
                 :max-visible-items="2"
-                :selected="schema.background"
+                :selected="background"
                 @select="selectBackground"
               />
             </div>
@@ -154,26 +154,49 @@ export default {
   }),
 
   computed: {
+    background: {
+      get () {
+        return this.$store.getters['session/background']
+      },
+      set (background) {
+        this.selectBackground(background)
+      }
+    },
+    language: {
+      get () {
+        return this.$store.getters['session/language']
+      },
+      set (language) {
+        this.selectLanguage(language)
+      }
+    },
+    theme: {
+      get () {
+        return this.$store.getters['session/theme']
+      },
+      set (theme) {
+        this.selectTheme(theme)
+      }
+    },
     currencies () {
       return MARKET.currencies
     },
     languages () {
-      return I18N.enabledLocales.map(locale => this.$i18n.t(`languages.${locale}`))
+      return I18N.enabledLocales.reduce((all, locale) => {
+        all[locale] = this.$i18n.t(`LANGUAGES.${locale}`)
+        return all
+      }, {})
     },
     networks () {
       return NETWORKS.map(network => network.id)
     }
   },
 
-  // TODO remove when InputSelect is available
-  mounted () {
-    this.selectCurrency('EUR')
-    this.selectLanguage('es-ES')
-  },
-
   methods: {
     async create () {
-      await this.$store.dispatch('profiles/create', new Profile(this.schema))
+      const profile = new Profile(this.schema)
+      await this.$store.dispatch('profiles/create', profile)
+      await this.$store.dispatch('session/set', { profileId: profile.id })
       this.$router.push({ name: 'dashboard' })
     },
 
@@ -185,31 +208,36 @@ export default {
       this.schema.avatar = avatar
     },
 
-    selectBackground (background) {
+    async selectBackground (background) {
       this.schema.background = background
+      // TODO the background should be restored when cancelling the profile creation
+      await this.$store.dispatch('session/set', { background })
     },
 
     selectCurrency (currency) {
       this.schema.currency = currency
     },
 
-    selectLanguage (language) {
+    async selectLanguage (language) {
       this.schema.language = language
+      this.$i18n.locale = language
+      // TODO the languge should be restored when cancelling the profile creation
+      await this.$store.dispatch('session/set', { language })
     },
 
     selectNetwork (network) {
       this.schema.network = network
     },
 
-    selectTheme (theme) {
+    async selectTheme (theme) {
       this.schema.theme = theme
+      // TODO the theme should be restored when cancelling the profile creation
+      await this.$store.dispatch('session/set', { theme })
     }
   },
 
   validations: {
-    // TODO enable currency and language
-    // step1: ['schema.avatar', 'schema.currency', 'schema.language', 'schema.name'],
-    step1: ['schema.avatar', 'schema.name'],
+    step1: ['schema.avatar', 'schema.currency', 'schema.language', 'schema.name'],
     step2: ['schema.network']
   }
 }

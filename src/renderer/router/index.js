@@ -56,6 +56,7 @@ const router = new Router({
   ]
 })
 
+// Redirect to the profile creation page unless there is at least 1 profile
 router.beforeEach(async (to, from, next) => {
   const profiles = await db.getAllByType('profile')
 

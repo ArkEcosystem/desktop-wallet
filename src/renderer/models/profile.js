@@ -13,11 +13,6 @@ export default class Profile extends Model {
         background: {
           type: 'string'
         },
-        // Visual theme
-        theme: {
-          type: 'string',
-          enum: THEMES.map(theme => theme.id)
-        },
         currency: {
           type: 'string',
           minLength: 3,
@@ -36,13 +31,18 @@ export default class Profile extends Model {
         network: {
           type: 'string',
           enum: NETWORKS.map(network => network.id)
+        },
+        // Visual theme
+        theme: {
+          type: 'string',
+          enum: THEMES.map(theme => theme.id)
         }
       }
     }
   }
 
-  constructor (data) {
-    super(Object.assign(data, { modelType: 'profile' }))
+  constructor (data = {}) {
+    super(Object.assign({}, data, { modelType: 'profile' }))
   }
 
   get id () {
