@@ -12,22 +12,24 @@
       />
     </button>
 
-    <transition
-      :duration="{ enter: 100, leave: 200 }"
-      name="Collapse__transition"
-      mode="out-in"
-      @enter="enter"
-      @afterEnter="afterEnter"
-      @leave="leave"
-    >
-      <div
-        v-show="inputIsOpen"
-        :style="{ height }"
-        class="Collapse__content"
+    <keep-alive>
+      <transition
+        :duration="{ enter: 100, leave: 200 }"
+        name="Collapse__transition"
+        mode="out-in"
+        @enter="enter"
+        @afterEnter="afterEnter"
+        @leave="leave"
       >
-        <slot/>
-      </div>
-    </transition>
+        <div
+          v-show="inputIsOpen"
+          :style="{ height }"
+          class="Collapse__content"
+        >
+          <slot/>
+        </div>
+      </transition>
+    </keep-alive>
   </div>
 </template>
 
@@ -36,7 +38,7 @@ export default {
   name: 'Collapse',
 
   inject: {
-    toggleCollapse: {
+    collapseClick: {
       default: null // avoid throw when using this component alone
     }
   },
@@ -68,14 +70,18 @@ export default {
   watch: {
     isOpen (val) {
       this.inputIsOpen = val
+    },
+
+    inputIsOpen () {
+      this.$emit(this.inputIsOpen ? 'open' : 'close')
     }
   },
 
   methods: {
-    // Verify that the `toggleAll` method was injected by the parent
+    // Verify that the `collapseClick` method was injected by the parent
     clickHandler () {
-      if (this.toggleCollapse) {
-        this.toggleCollapse(this.id)
+      if (this.collapseClick) {
+        this.collapseClick(this.id)
       } else {
         this.toggle()
       }
@@ -83,9 +89,9 @@ export default {
 
     // This method is called by the parent
     collapse (id) {
-      if (!id || !this.id || this.isDisabled) return
+      if (!id || !this.id) return
 
-      if (this.id === id) {
+      if (this.id === id && !this.isDisabled) {
         this.inputIsOpen = !this.inputIsOpen
         return this.inputIsOpen // Return this to the parent identify the active item
       } else {
@@ -97,7 +103,6 @@ export default {
       if (this.isDisabled) return
 
       this.inputIsOpen = !this.inputIsOpen
-      this.$emit(this.inputIsOpen ? 'open' : 'close')
     },
 
     // Animate content by moving from height 0 to real size
@@ -121,8 +126,10 @@ export default {
 
 <style scoped>
 .Collapse__content,
-.Collapse__handler {
-  transition: height .3s cubic-bezier(0.25, 0.8, 0.5, 1);
+.Collapse__handler > * {
+  transition-property: height, color, font-size;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
 .Collapse__transition-enter-active,

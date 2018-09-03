@@ -4,7 +4,7 @@
 
       <div
         :style="`background-image: url('${assets_loadImage('pages/background-1920.png')}')`"
-        class="ProfileNew__instructions flex-grow background-image"
+        class="ProfileNew__instructions w-2/3 background-image"
       >
         <div class="mt-16 mx-16">
           <h3 class="mb-2">{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
@@ -14,12 +14,12 @@
         </div>
       </div>
 
-      <div class="flex-no-grow p-10">
-        <CollapsibleStepper
-          :step="step"
+      <div class="w-1/3 p-10">
+        <MenuStep
+          v-model="step"
         >
 
-          <CollapsibleStepperItem
+          <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
             title="Profile"
@@ -27,23 +27,24 @@
           >
 
             <!-- NOTE wraps the content, but doesn't modify the stepper -->
-            <div class="flex flex-col justify-around">
+            <div class="flex flex-col">
 
               <!-- TODO check duplicate here -->
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
                 :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
+                class="mb-5"
                 name="name"
               />
 
-              <div class="flex flex-row">
+              <div class="flex mb-5">
                 <InputSelect
                   :items="languages"
                   :value="language"
                   name="language"
                   label="Language"
-                  class="mr-2"
+                  class="flex-1 mr-2"
                   @input="selectLanguage"
                 />
 
@@ -52,13 +53,13 @@
                   :value="schema.currency"
                   name="currency"
                   label="Currency"
-                  class="ml-2"
+                  class="flex-1"
                   @input="selectCurrency"
                 />
               </div>
 
               <div>
-                <h5>Avatar</h5>
+                <h5 class="mb-2">Avatar</h5>
 
                 <SelectionAvatar
                   :max-visible-items="2"
@@ -69,18 +70,19 @@
 
             </div>
 
-          </CollapsibleStepperItem>
+          </MenuStepItem>
 
-          <CollapsibleStepperItem
+          <MenuStepItem
             :step="2"
             :is-back-visible="true"
             :is-next-enabled="!$v.step2.$invalid"
+            :is-disabled="step < 2"
             title="Network"
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
 
-            <div class="flex flex-col h-full w-full justify-around">
+            <div class="flex flex-col h-full w-full justify-around py-2">
               <SelectionNetwork
                 :max-visible-items="2"
                 :selected="schema.network"
@@ -88,27 +90,29 @@
               />
             </div>
 
-          </CollapsibleStepperItem>
+          </MenuStepItem>
 
-          <CollapsibleStepperItem
+          <MenuStepItem
             :step="3"
             :is-back-visible="true"
             :is-next-enabled="!$v.schema.$invalid"
+            :is-disabled="step < 3"
             title="Appearance"
             @back="moveTo(2)"
             @next="create"
           >
 
             <div class="flex flex-col h-full w-full justify-around">
-              <h5>Select wallet theme:</h5>
+              <h5 class="mb-2">Select wallet theme:</h5>
 
               <SelectionTheme
                 :max-visible-items="2"
                 :selected="theme"
+                class="mb-5"
                 @select="selectTheme"
               />
 
-              <h5>Select background:</h5>
+              <h5 class="mb-2">Select background:</h5>
 
               <SelectionBackground
                 :max-visible-items="2"
@@ -117,9 +121,9 @@
               />
             </div>
 
-          </CollapsibleStepperItem>
+          </MenuStepItem>
 
-        </CollapsibleStepper>
+        </MenuStep>
       </div>
     </main>
   </div>
@@ -128,7 +132,7 @@
 <script>
 import { I18N, NETWORKS, MARKET } from '@config'
 import Profile from '@/models/profile'
-import { CollapsibleStepper, CollapsibleStepperItem } from '@/components/CollapsibleStepper'
+import { MenuStep, MenuStepItem } from '@/components/MenuStep'
 import InputSelect from '@/components/InputSelect'
 import InputText from '@/components/InputText'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
@@ -141,8 +145,8 @@ export default {
     SelectionBackground,
     SelectionNetwork,
     SelectionTheme,
-    CollapsibleStepper,
-    CollapsibleStepperItem,
+    MenuStep,
+    MenuStepItem,
     InputSelect,
     InputText
   },
@@ -150,7 +154,7 @@ export default {
   schema: Profile.schema,
 
   data: () => ({
-    step: 1
+    step: 2
   }),
 
   computed: {

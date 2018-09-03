@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { isEmpty } from 'lodash'
+
 export default {
   name: 'CollapseAccordion',
 
@@ -15,7 +17,7 @@ export default {
 
   provide () {
     return {
-      toggleCollapse: this.toggleCollapse
+      collapseClick: this.collapseClick
     }
   },
 
@@ -24,40 +26,48 @@ export default {
       type: [String, Number],
       required: false,
       default: null
+    },
+    items: {
+      type: Array,
+      required: false,
+      default: () => this.collections_filterChilds('Collapse') || []
     }
   },
 
   data: vm => ({
-    inputId: vm.id,
-    items: []
+    inputId: vm.id
   }),
 
   watch: {
     id (val) {
-      this.inputId = val
+      this.$nextTick(() => (this.inputId = val))
+    },
+
+    inputId (val) {
+      this.toggleCollapse()
+    },
+
+    items () {
+      this.toggleCollapse()
     }
   },
 
   mounted () {
-    this.items = this.collections_filterChilds('Collapse') || []
-    this.toggleCollapse(this.inputId)
+    if (isEmpty(this.items)) return
+
+    this.toggleCollapse()
   },
 
   methods: {
     // Called by the child
-    toggleCollapse (id) {
-      let isOpen
+    collapseClick (id) {
+      this.$nextTick(() => (this.inputId = id))
+    },
 
+    toggleCollapse () {
       this.items.forEach(item => {
-        // Return a boolean when the id matches
-        // To check if the item was opened or closed
-        const result = item.collapse(id)
-        if (result) {
-          isOpen = result
-        }
+        item.collapse(this.inputId)
       })
-
-      this.inputId = isOpen ? id : null
       this.$emit('input', this.inputId)
     }
   }

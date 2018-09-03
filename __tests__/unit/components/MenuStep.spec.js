@@ -1,13 +1,12 @@
 import { createLocalVue, mount } from '@vue/test-utils'
+import { MenuStep, MenuStepItem } from '@/components/MenuStep'
 
-import { CollapsibleStepper, CollapsibleStepperItem } from '@/components/CollapsibleStepper'
-
-describe('CollapsibleStepper', () => {
+describe('MenuStep', () => {
   describe('Item', () => {
     const mountItem = propsData => {
       const localVue = createLocalVue()
 
-      return mount(CollapsibleStepperItem, {
+      return mount(MenuStepItem, {
         mocks: {
           $t () {}
         },
@@ -22,18 +21,18 @@ describe('CollapsibleStepper', () => {
         step: 1
       })
 
-      expect(wrapper.contains('.CollapsibleStepperItem')).toBeTruthy()
+      expect(wrapper.contains('.MenuStepItem')).toBeTruthy()
+      expect(wrapper.vm.$refs.collapse).toBeTruthy()
     })
 
-    it('should toggle visibility', () => {
+    it('should trigger the handler', () => {
       const wrapper = mountItem({
         title: 'Test',
         step: 1
       })
-
-      wrapper.vm.toggle(true)
-
-      expect(wrapper.vm.isActive).toBe(true)
+      const handler = wrapper.find('.MenuStepItem__header')
+      handler.trigger('click')
+      expect(wrapper.emitted('open')).toBeTruthy()
     })
 
     it('should emit back event', async () => {
@@ -42,8 +41,8 @@ describe('CollapsibleStepper', () => {
         step: 1
       })
 
-      wrapper.vm.toggle(true)
-      const back = wrapper.find('.CollapsibleStepperItem__footer__back-button')
+      wrapper.vm.$refs.collapse.toggle()
+      const back = wrapper.find('.MenuStepItem__footer__back-button')
       back.trigger('click')
 
       expect(wrapper.emitted('back')).toBeTruthy()
@@ -56,22 +55,25 @@ describe('CollapsibleStepper', () => {
         isNextEnabled: true
       })
 
-      wrapper.vm.toggle(true)
-      const next = wrapper.find('.CollapsibleStepperItem__footer__next-button')
+      wrapper.vm.$refs.collapse.toggle()
+      const next = wrapper.find('.MenuStepItem__footer__next-button')
       next.trigger('click')
 
       expect(wrapper.emitted('next')).toBeTruthy()
     })
   })
 
-  describe('Root', () => {
+  describe('Menu', () => {
     it('should render', () => {
-      const wrapper = mount(CollapsibleStepper, {
+      const wrapper = mount(MenuStep, {
         propsData: {
           step: 1
+        },
+        mocks: {
+          collections_filterChilds: jest.fn()
         }
       })
-      expect(wrapper.contains('.CollapsibleStepper')).toBeTruthy()
+      expect(wrapper.contains('.MenuStep')).toBeTruthy()
     })
   })
 })

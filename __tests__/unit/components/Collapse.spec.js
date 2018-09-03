@@ -1,13 +1,7 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { Collapse, CollapseAccordion } from '@/components/Collapse'
 
 describe('Collapse', () => {
-  const mocks = () => {
-    return {
-      collections_filterChilds: jest.fn()
-    }
-  }
-
   it('should render collapse', () => {
     const wrapper = mount(Collapse)
     expect(wrapper.isVueInstance()).toBeTrue()
@@ -59,8 +53,10 @@ describe('Collapse', () => {
   })
 
   it('should render accordion', () => {
-    const wrapper = mount(CollapseAccordion, {
-      mocks: mocks()
+    const wrapper = shallowMount(CollapseAccordion, {
+      propsData: {
+        items: []
+      }
     })
     expect(wrapper.isVueInstance()).toBeTrue()
   })
