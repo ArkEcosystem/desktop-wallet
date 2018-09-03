@@ -27,7 +27,7 @@ const router = new Router({
       component: require('@/pages/Networks').default
     },
     {
-      path: '/profile/new',
+      path: '/profiles/new',
       name: 'profile-new',
       component: require('@/pages/Profile/ProfileNew').default,
       props: {
@@ -35,9 +35,14 @@ const router = new Router({
       }
     },
     {
-      path: '/profile',
-      name: 'profile',
-      component: require('@/pages/Profile').default
+      path: '/profiles/:id',
+      name: 'profile-edition',
+      component: require('@/pages/Profile/ProfileEdition').default
+    },
+    {
+      path: '/profiles',
+      name: 'profiles',
+      component: require('@/pages/Profile/ProfileAll').default
     },
     {
       path: '/settings',

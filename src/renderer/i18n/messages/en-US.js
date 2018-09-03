@@ -63,6 +63,10 @@ export default {
         },
         NAME: 'Profile name'
       }
+    },
+    PROFILE_ALL: {
+      HEADER: 'My profiles',
+      ADD_PROFILE: 'Add profile'
     }
   }
 

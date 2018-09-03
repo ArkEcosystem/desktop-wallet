@@ -1,0 +1,9 @@
+:root {
+  --profile-avatar-xl: 100px;
+}
+
+.profile-avatar-xl {
+  height: var(--profile-avatar-xl);
+  width: var(--profile-avatar-xl);
+  @apply .bg-no-repeat
+}

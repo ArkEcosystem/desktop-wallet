@@ -16,7 +16,7 @@ class ImageManager {
   }
 
   constructor () {
-    this.context = require.context('../assets/images', true, /\.(png|jpg)$/)
+    this.context = require.context('../assets/images', true, /\.(png|jpe?g|svg)$/)
   }
 
   get images () {
