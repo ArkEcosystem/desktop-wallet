@@ -4,16 +4,20 @@
     :helper-text="helperText"
     :is-dirty="isDirty"
     :is-disabled="isDisabled"
-    :is-invalid="isInvalid"
     :is-focused="isFocused"
+    :is-invalid="isInvalid"
+    :is-read-only="isReadOnly"
     class="InputText"
   >
     <input
       ref="input"
       slot-scope="{ inputClass }"
-      :class="inputClass"
+      :class="[
+        inputClass,
+        { 'InputText__input--read-only': isReadOnly }
+      ]"
       :name="name"
-      :disabled="isDisabled"
+      :disabled="isDisabled || isReadOnly"
       :type="type"
       :value="value"
       v-model="model"
@@ -68,6 +72,11 @@ export default {
       required: false,
       default: false
     },
+    isReadOnly: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     value: {
       type: String,
       required: false,
@@ -104,6 +113,7 @@ export default {
   methods: {
     onFocus () {
       this.isFocused = true
+      this.$emit('focus')
     },
 
     onBlur () {
@@ -128,5 +138,9 @@ export default {
 <style lang="postcss" scoped>
 .InputText__input::placeholder {
   @apply .text-transparent
+}
+
+.InputText__input--read-only {
+  cursor: text;
 }
 </style>

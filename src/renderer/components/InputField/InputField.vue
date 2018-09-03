@@ -73,8 +73,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.InputField--disabled,
-.InputField--readonly {
+.InputField--disabled {
   pointer-events: none;
 }
 

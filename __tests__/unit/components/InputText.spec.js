@@ -62,14 +62,27 @@ describe('InputText', () => {
     expect(helper.text()).toBe(helperText)
   })
 
-  it('should focus the input', () => {
-    const wrapper = mount(InputText, {
-      propsData: {
-        name: 'test',
-        label: 'test'
-      }
+  describe('when focus', () => {
+    it('should focus the input', () => {
+      const wrapper = mount(InputText, {
+        propsData: {
+          name: 'test',
+          label: 'test'
+        }
+      })
+      wrapper.vm.focus()
+      expect(wrapper.vm.isFocused).toBeTrue()
     })
-    wrapper.vm.focus()
-    expect(wrapper.vm.isFocused).toBeTrue()
+
+    it('should emit the `focus` event', () => {
+      const wrapper = mount(InputText, {
+        propsData: {
+          name: 'test',
+          label: 'test'
+        }
+      })
+      wrapper.vm.focus()
+      expect(wrapper.emitted('focus')).toBeTruthy()
+    })
   })
 })
