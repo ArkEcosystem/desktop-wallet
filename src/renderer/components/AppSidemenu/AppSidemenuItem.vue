@@ -5,12 +5,10 @@
     @click="emitClick"
   >
     <div class="h-2 w-18 flex items-center justify-center overflow-visible">
-      <svg
-        :viewBox="viewBox"
-        class="fill-current h-6 w-6"
-      >
-        <path :d="iconPathD"/>
-      </svg>
+      <SvgIcon
+        :name="icon"
+        :view-box="viewBox"
+      />
       <div
         v-if="showBadge"
         class="AppSidemenuItem__badge rounded-full animated bounce"
@@ -20,15 +18,21 @@
 </template>
 
 <script>
+import SvgIcon from '@/components/SvgIcon'
+
 export default {
   name: 'AppSidemenuItem',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     name: {
       type: String,
       required: true
     },
-    iconPathD: {
+    icon: {
       type: String,
       required: true
     },
@@ -43,7 +47,8 @@ export default {
     },
     viewBox: {
       type: String,
-      required: true
+      required: false,
+      default: '0 0 23 23'
     }
   },
 

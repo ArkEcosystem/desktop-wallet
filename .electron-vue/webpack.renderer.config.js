@@ -12,6 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PurgecssPlugin = require("purgecss-webpack-plugin")
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 /**
  * List of node_modules to include in webpack bundle
@@ -80,7 +81,7 @@ let rendererConfig = {
         }
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         use: {
           loader: 'url-loader',
           query: {
@@ -106,6 +107,26 @@ let rendererConfig = {
             name: 'fonts/[name]--[folder].[ext]'
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: [
+          'svg-sprite-loader',
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [
+                { convertColors: { currentColor: true } },
+                { inlineStyles: { onlyMatchedOnce: false } },
+                { removeXMLNS: true },
+                { cleanupIDs: true },
+                { removeUnknownsAndDefaults: true },
+                { collapseGroups: true },
+              ]
+            }
+          }
+        ]
       }
     ]
   },
@@ -115,6 +136,7 @@ let rendererConfig = {
   },
   plugins: [
     new ExtractTextPlugin('styles.css'),
+    new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),

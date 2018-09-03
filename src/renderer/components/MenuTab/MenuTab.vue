@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import VNodes from './VNodes'
+import VNodes from '@/components/utils/VNodes'
 
 export default {
   name: 'MenuTab',

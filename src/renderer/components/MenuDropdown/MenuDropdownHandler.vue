@@ -11,19 +11,22 @@
     </span>
 
     <span class="pl-2 pr-1">
-      <svg
-        viewBox="0 0 512 512"
-        class="fill-current w-4 h-4 align-middle"
-      >
-        <polygon points="128,192 256,320 384,192" />
-      </svg>
+      <SvgIcon
+        name="arrow-dropdown"
+        view-box="0 0 20 20" />
     </span>
   </div>
 </template>
 
 <script>
+import SvgIcon from '@/components/SvgIcon'
+
 export default {
   name: 'MenuDropdownHandler',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     value: {

@@ -63,4 +63,10 @@ class ImageManager {
   }
 }
 
+if (process.env.NODE_ENV !== 'test') {
+  // Load all svgs to be injected into the browser
+  const svgs = require.context('../assets/svg', true, /\.(svg)$/)
+  svgs.keys().forEach(svgs)
+}
+
 export default new ImageManager()
