@@ -1,16 +1,10 @@
-import { createLocalVue, mount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { MenuStep, MenuStepItem } from '@/components/MenuStep'
 
 describe('MenuStep', () => {
   describe('Item', () => {
     const mountItem = propsData => {
-      const localVue = createLocalVue()
-
       return mount(MenuStepItem, {
-        mocks: {
-          $t () {}
-        },
-        localVue,
         propsData
       })
     }
