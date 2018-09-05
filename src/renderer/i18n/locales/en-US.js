@@ -20,14 +20,15 @@ export default {
     'not-supported': 'Copying to clipboard is not unavailable'
   },
 
-  SelectionAvatar: {
-    popupHeader: 'Select avatar'
+  SELECTION_AVATAR: {
+    AVATARS: 'Avatars',
+    POPUP_HEADER: 'Select avatar'
   },
 
-  SelectionBackground: {
-    popupHeader: 'Select background',
-    textures: 'Textures',
-    wallpapers: 'Wallpapers'
+  SELECTION_BACKGROUND: {
+    POPUP_HEADER: 'Select background',
+    TEXTURES: 'Textures',
+    WALLPAPERS: 'Wallpapers'
   },
 
   InputGrid: {

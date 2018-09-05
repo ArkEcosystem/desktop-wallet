@@ -33,7 +33,7 @@
           class="MenuStepItem__footer__back-button blue-button mr-1"
           @click="emitBack"
         >
-          {{ $t('common.back') }}
+          {{ $t('COMMON.BACK') }}
         </button>
 
         <button
@@ -42,7 +42,7 @@
           class="MenuStepItem__footer__next-button blue-button"
           @click="emitNext"
         >
-          {{ isLastItem ? $t('common.done') : $t('common.next') }}
+          {{ isLastItem ? $t('COMMON.DONE') : $t('COMMON.NEXT') }}
         </button>
       </footer>
     </section>

@@ -41,7 +41,7 @@
           class="blue-button"
           @click="emitSelect"
         >
-          {{ $t('common.done') }}
+          {{ $t('COMMON.DONE') }}
         </button>
       </div>
     </section>
@@ -118,7 +118,7 @@ export default {
 .InputGrid__container__category__items {
   display: grid;
   /* Maximum 5 columns */
-  grid-template-columns: repeat(5, 4.5rem);
+  grid-template-columns: repeat(auto-fill, 4.5rem);
   grid-gap: 1rem;
 }
 </style>

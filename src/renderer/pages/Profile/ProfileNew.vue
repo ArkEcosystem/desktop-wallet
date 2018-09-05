@@ -154,7 +154,7 @@ export default {
   schema: Profile.schema,
 
   data: () => ({
-    step: 2
+    step: 1
   }),
 
   computed: {
@@ -194,6 +194,11 @@ export default {
     networks () {
       return NETWORKS.map(network => network.id)
     }
+  },
+
+  created () {
+    // Use the default language TODO waiting to store
+    // this.selectLanguage(this.language)
   },
 
   methods: {

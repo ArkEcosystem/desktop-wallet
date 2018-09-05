@@ -81,7 +81,7 @@ let rendererConfig = {
         }
       },
       {
-        test: /\.(png|jpe?g|gif)(\?.*)?$/,
+        test: /images\/.+\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: {
           loader: 'url-loader',
           query: {
@@ -109,7 +109,7 @@ let rendererConfig = {
         }
       },
       {
-        test: /\.svg$/,
+        test: /svg\/.+\.svg$/,
         exclude: /node_modules/,
         use: [
           'svg-sprite-loader',

@@ -23,6 +23,7 @@
         :to="{ name: 'profile-edition', params: { id: profile.id } }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
+        <!-- TODO highlight current profile -->
         <div
           :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
           :title="profile.name"
@@ -45,7 +46,7 @@ export default {
   computed: {
     ...mapGetters({ profiles: 'profiles/all' }),
     addProfileImagePath () {
-      return 'avatars/human-new.svg'
+      return 'pages/new-profile-avatar.svg'
     }
   }
 }
@@ -54,12 +55,15 @@ export default {
 <style scope>
 .ProfileAll__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, calc(var(--profile-avatar-xl) * 2 + 5px));
   grid-gap: 1rem;
 }
 .ProfileAll__grid__profile:hover .profile-avatar-xl {
   transition: 0.5s;
   opacity: 0.5;
+}
+.ProfileAll__grid__profile > .profile-avatar-xl {
+  width: var(--profile-avatar-xl);
 }
 .ProfileAll__grid__profile__name {
   width: var(--profile-avatar-xl);

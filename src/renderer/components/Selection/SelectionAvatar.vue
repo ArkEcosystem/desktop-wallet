@@ -1,17 +1,17 @@
 <template>
-  <InputGrid
-    :items="images"
-    :max-visible-items="maxVisibleItems"
-    :popup-header-text="$t('SelectionAvatar.popupHeader')"
-    :selected="selectedItem"
-    item-key="imagePath"
-    @input="select"
-  />
+  <div class="SelectionAvatar">
+    <InputGrid
+      :items="images"
+      :max-visible-items="maxVisibleItems"
+      :popup-header-text="$t('SELECTION_AVATAR.POPUP_HEADER')"
+      :selected="selectedItem"
+      item-key="imagePath"
+      @input="select"
+    />
+  </div>
 </template>
 
 <script>
-import path from 'path'
-import imageManager from '@/services/image-manager'
 import selectionMixin from './mixin-selection'
 import selectionImageMixin from './mixin-selection-image'
 
@@ -24,34 +24,31 @@ export default {
     categories: {
       type: Array,
       required: false,
-      // TODO replace it with 'avatars'
-      default: () => ['wallpapers']
-    }
-  },
-
-  computed: {
-    /**
-     * Avatar images
-     */
-    images () {
-      const groups = imageManager.tree
-
-      return this.categories.reduce((all, category) => {
-        if (groups[category]) {
-          const translatedCategory = this.$i18n.t(`SelectionAvatar.${category}`)
-
-          all[translatedCategory] = groups[category].map(imagePath => {
-            const { name } = path.parse(imagePath)
-            return {
-              title: name,
-              imagePath
-            }
-          })
-        }
-
-        return all
-      }, {})
+      default: () => ['avatars']
     }
   }
 }
 </script>
+
+<style>
+/* It should not be scoped to affect the default style of the items of InputGrid */
+.SelectionAvatar .InputGridItem {
+  background-repeat: no-repeat;
+}
+
+ .SelectionAvatar .InputGridPopup__container {
+  width: calc((var(--profile-avatar-xl)) * 3 + 2 * 10px) !important;
+}
+.SelectionAvatar .InputGridPopup .InputGrid__container__category__items {
+  display: grid;
+  /* Maximum 5 columns */
+  grid-template-columns: repeat(auto-fill, var(--profile-avatar-xl));
+  grid-gap: 10px;
+}
+
+.SelectionAvatar .InputGridPopup .InputGrid__container__category__items .InputGridItem {
+  height: var(--profile-avatar-xl);
+  width: var(--profile-avatar-xl);
+  background-size: contain;
+}
+</style>

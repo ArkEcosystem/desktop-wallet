@@ -1,9 +1,5 @@
 <template>
   <div id="wrapper">
-    <img
-      id="logo"
-      src="~@/assets/logo.png"
-      alt="electron-vue">
     <main>
       <div class="left-side">
         <span class="title">
@@ -65,12 +61,6 @@ export default {
     height: 100vh;
     padding: 60px 80px;
     width: 100vw;
-  }
-
-  #logo {
-    height: auto;
-    margin-bottom: 20px;
-    width: 420px;
   }
 
   main {

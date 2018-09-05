@@ -63,12 +63,9 @@
       <div class="cursor-pointer mt-2 mb-4 px-3 align-self-end">
         <router-link
           :to="{ name: 'profiles' }"
-          class="h-12 w-12 flex items-center justify-center">
-          <img
-            src="@/assets/images/profile-menu.png"
-            class="max-w-49px max-h-50px"
-          >
-        </router-link>
+          :style="profileAvatar ? `backgroundImage: url('${assets_loadImage(profileAvatar)}')` : ''"
+          class="AppSidemenu__avatar flex background-image h-18 w-18"
+        />
       </div>
     </div>
 
@@ -97,6 +94,9 @@ export default {
     ...mapGetters({ unreadAnnouncements: 'announcements/unread' }),
     showUnread () {
       return this.unreadAnnouncements.length > 0
+    },
+    profileAvatar () {
+      return this.$store.getters['session/avatar']
     }
   },
 
@@ -122,3 +122,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.AppSidemenu__avatar {
+  transition: opacity 0.5s;
+  background-repeat: no-repeat;
+  border: none;
+}
+.AppSidemenu__avatar:hover {
+  opacity: 0.5;
+}
+</style>
