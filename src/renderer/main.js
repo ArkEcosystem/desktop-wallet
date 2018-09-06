@@ -2,16 +2,14 @@ import Vue from 'vue'
 import VueVuelidateJsonschema from 'vue-vuelidate-jsonschema'
 import Vuelidate from 'vuelidate'
 import VTooltip from 'v-tooltip'
+import VueGoodTablePlugin from 'vue-good-table'
 import axios from 'axios'
 
 import App from './App'
 import i18n from './i18n'
 import router from './router'
 import store from './store'
-
-import assets from '@/mixins/assets'
-import electron from '@/mixins/electron'
-import collections from '@/mixins/collections'
+import mixins from '@/mixins'
 
 import { client } from '@/plugins/api-client'
 
@@ -25,14 +23,13 @@ Vue.prototype.$client = client
 
 Vue.use(VueVuelidateJsonschema)
 Vue.use(Vuelidate)
+Vue.use(VueGoodTablePlugin)
 Vue.use(VTooltip, {
   defaultHtml: false,
   defaultContainer: '#app'
 })
 
-Vue.mixin(assets)
-Vue.mixin(electron)
-Vue.mixin(collections)
+Vue.mixin(mixins)
 
 /* eslint-disable no-new */
 new Vue({
