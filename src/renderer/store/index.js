@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import apiClient from '@/plugins/api-client'
+
 import AnnouncementsModule from '@/store/modules/announcements'
 import MarketDataModule from '@/store/modules/market-data'
 import NetworkModule from '@/store/modules/network'
@@ -17,5 +19,6 @@ export default new Vuex.Store({
     profiles: ProfilesModule,
     session: SessionModule
   },
+  plugins: [apiClient],
   strict: process.env.NODE_ENV !== 'production'
 })

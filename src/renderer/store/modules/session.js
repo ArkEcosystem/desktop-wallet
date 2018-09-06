@@ -16,7 +16,7 @@ const getters = {
    * @return {Profile}
    */
   currentProfile (state, getters, rootState, rootGetters) {
-    if (getters.current.profileId) {
+    if (getters.current && getters.current.profileId) {
       return rootGetters['profiles/byId'](getters.current.profileId)
     }
     return null

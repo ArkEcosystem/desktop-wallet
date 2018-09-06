@@ -13,12 +13,15 @@ import assets from '@/mixins/assets'
 import electron from '@/mixins/electron'
 import collections from '@/mixins/collections'
 
+import { client } from '@/plugins/api-client'
+
 if (!process.env.IS_WEB) {
   Vue.use(require('vue-electron'))
 }
 
 Vue.config.productionTip = false
 Vue.http = Vue.prototype.$http = axios
+Vue.prototype.$client = client
 
 Vue.use(VueVuelidateJsonschema)
 Vue.use(Vuelidate)

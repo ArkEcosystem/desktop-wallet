@@ -20,6 +20,7 @@ export default {
   },
 
   getters: {
-    defaults: state => state.defaults
+    defaults: state => state.defaults,
+    byId: state => id => state.defaults.find(network => network.id === id)
   }
 }

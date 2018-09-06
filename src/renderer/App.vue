@@ -84,6 +84,7 @@ export default {
      */
     async loadEssential () {
       await this.$store.dispatch('profiles/load')
+      await this.$store.dispatch('network/setDefaults', config.NETWORKS)
       await this.$store.dispatch('session/load')
       await this.$store.dispatch('session/ensure')
       // Reset the session now: the async nature of IndexedDB means that maybe
@@ -97,7 +98,6 @@ export default {
      * @return {void}
      */
     loadNotEssential () {
-      this.$store.dispatch('network/setDefaults', config.NETWORKS)
     },
 
     startTimers () {
