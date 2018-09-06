@@ -41,6 +41,10 @@ export default {
     popupSubtitle: 'Scan for Address'
   },
 
+  PASSPHRASE_VERIFICATION: {
+    WORD_LABEL: 'The {position}th word'
+  },
+
   PAGES: {
     PROFILE_NEW: {
       STEP1: {
