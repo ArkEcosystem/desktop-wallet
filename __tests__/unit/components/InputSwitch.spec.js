@@ -8,25 +8,21 @@ describe('InputSwitch', () => {
     expect(wrapper.contains('.InputSwitch')).toBeTruthy()
   })
 
-  it('should toggle when user clicks', () => {
-    const wrapper = mount(InputSwitch)
-    wrapper.trigger('click')
-    expect(wrapper.emitted('change')).toBeTruthy()
-  })
-
-  it('should toggle by method', () => {
-    const wrapper = mount(InputSwitch)
-    wrapper.vm.toggle()
-    expect(wrapper.emitted('change')).toBeTruthy()
-  })
-
-  it('should be active', () => {
-    const wrapper = mount(InputSwitch, {
-      propsData: {
-        isActive: true
-      }
+  describe('inner SwitchButton', () => {
+    it('should toggle when user clicks', () => {
+      const wrapper = mount(InputSwitch)
+      wrapper.find('.SwitchButton').trigger('click')
+      expect(wrapper.emitted('change')).toBeTruthy()
     })
-    expect(wrapper.contains('.InputSwitch--active')).toBeTruthy()
+
+    it('should be active', () => {
+      const wrapper = mount(InputSwitch, {
+        propsData: {
+          isActive: true
+        }
+      })
+      expect(wrapper.contains('.SwitchButton--active')).toBeTruthy()
+    })
   })
 
   it('should be disabled', () => {
@@ -37,5 +33,21 @@ describe('InputSwitch', () => {
     })
     wrapper.trigger('click')
     expect(wrapper.emitted('change')).toBeFalsy()
+  })
+
+  it('should display the `label` prop', () => {
+    const label = 'example label'
+    const wrapper = mount(InputSwitch, {
+      propsData: { label }
+    })
+    expect(wrapper.text()).toContain(label)
+  })
+
+  it('should display the `text` prop', () => {
+    const text = 'example text'
+    const wrapper = mount(InputSwitch, {
+      propsData: { text }
+    })
+    expect(wrapper.text()).toContain(text)
   })
 })

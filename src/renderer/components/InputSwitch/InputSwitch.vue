@@ -1,31 +1,38 @@
 <template>
-  <button
-    :class="{
-      'InputSwitch--active': inputisActive
-    }"
-    :style="{
-      'background-color': backgroundColor
-    }"
-    :disabled="isDisabled"
-    class="InputSwitch appearance-none rounded-full flex items-center relative cursor-pointer w-12 h-6 bg-theme-button"
-    @click="toggle"
+  <!-- NOTE: `is-dirty` is set to true, so the label is positioned like any other input -->
+  <InputField
+    :label="label"
+    :helper-text="helperText"
+    :is-disabled="isDisabled"
+    :is-dirty="true"
+    class="InputSwitch"
   >
-    <span
-      :class="{
-        'bg-theme-option-button-text': !inputisActive,
-        'bg-blue': inputisActive
-      }"
-      :style="{
-        'border-color': backgroundColor
-      }"
-      class="InputSwitch__circle transition rounded-full w-6 h-full absolute border-2 border-theme-button"
-    />
-  </button>
+    <div
+      slot-scope="{ inputClass }"
+      class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex flex-row justify-flex-start"
+    >
+      <div class="mr-3 mt-1 text-lg">{{ text }}</div>
+      <SwitchButton
+        :background-color="backgroundColor"
+        :is-active="isActive"
+        :is-disabled="isDisabled"
+        @change="emitChange"
+      />
+    </div>
+  </InputField>
 </template>
 
 <script>
+import InputField from '@/components/InputField'
+import SwitchButton from '@/components/SwitchButton'
+
 export default {
   name: 'InputSwitch',
+
+  components: {
+    InputField,
+    SwitchButton
+  },
 
   model: {
     prop: 'isActive',
@@ -33,6 +40,16 @@ export default {
   },
 
   props: {
+    backgroundColor: {
+      type: String,
+      required: false,
+      default: null
+    },
+    helperText: {
+      type: String,
+      required: false,
+      default: null
+    },
     isActive: {
       type: Boolean,
       required: false,
@@ -43,40 +60,22 @@ export default {
       required: false,
       default: false
     },
-    backgroundColor: {
+    label: {
+      type: String,
+      required: false,
+      default: null
+    },
+    text: {
       type: String,
       required: false,
       default: null
     }
   },
 
-  data: vm => ({
-    inputisActive: vm.isActive
-  }),
-
-  watch: {
-    isActive (val) {
-      this.inputisActive = val
-    }
-  },
-
   methods: {
-    toggle () {
-      if (this.isDisabled) return
-
-      this.inputisActive = !this.inputisActive
-      this.$emit('change', this.inputisActive)
+    emitChange (isActive) {
+      this.$emit('change', isActive)
     }
   }
 }
 </script>
-
-<style scoped>
-.InputSwitch__circle {
-  transform: translateX(0%)
-}
-
-.InputSwitch--active .InputSwitch__circle {
-  transform: translateX(100%)
-}
-</style>

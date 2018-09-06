@@ -28,7 +28,7 @@
         slot="controls"
         class="pointer-events-none"
       >
-        <InputSwitch
+        <SwitchButton
           ref="dark-switch"
           :is-active="isDarkTheme"
           class="theme-dark"
@@ -44,7 +44,7 @@
 import { MARKET } from '@config'
 import { MenuOptions, MenuOptionsItem } from '@/components/MenuOptions'
 import MenuDropdown from '@/components/MenuDropdown'
-import { InputSwitch } from '@/components/InputSwitch'
+import { SwitchButton } from '@/components/SwitchButton'
 
 export default {
   name: 'AppSidemenuOptionsSettings',
@@ -53,7 +53,7 @@ export default {
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
-    InputSwitch
+    SwitchButton
   },
 
   computed: {
