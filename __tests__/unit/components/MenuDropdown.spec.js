@@ -78,26 +78,64 @@ describe('MenuDropdown', () => {
       expect(wrapper.contains('.MenuDropdown')).toBeTruthy()
     })
 
-    it('should render component with items', () => {
-      const wrapper = mount(MenuDropdown, {
-        propsData: {
-          items: ['first', 'second']
-        }
+    describe('when the `items` are an Array', () => {
+      it('should render component with `items`', () => {
+        const wrapper = mount(MenuDropdown, {
+          propsData: {
+            items: ['first', 'second']
+          }
+        })
+        expect(wrapper.findAll('.MenuDropdownItem').length).toBe(2)
       })
-      expect(wrapper.findAll('.MenuDropdownItem').length).toBe(2)
+
+      it('should emit the selected item on the `select` event', () => {
+        const wrapper = mount(MenuDropdown, {
+          propsData: {
+            items: ['first', 'second'],
+            value: 'second'
+          }
+        })
+
+        const handler = wrapper.find('.MenuDropdownHandler')
+        handler.trigger('click')
+        const item = wrapper.find('.MenuDropdownItem')
+        item.trigger('click')
+
+        expect(wrapper.emitted().select[0]).toEqual(['first'])
+      })
     })
 
-    it('should emit select event', () => {
-      const wrapper = mount(MenuDropdown, {
-        propsData: {
-          items: ['first', 'second']
-        }
+    describe('when the `items` are an Object', () => {
+      it('should render component with `items`', () => {
+        const wrapper = mount(MenuDropdown, {
+          propsData: {
+            items: {
+              first: 'first label',
+              second: 'seconf label'
+            }
+          }
+        })
+        expect(wrapper.findAll('.MenuDropdownItem').length).toBe(2)
       })
-      const handler = wrapper.find('.MenuDropdownHandler')
-      handler.trigger('click')
-      const item = wrapper.find('.MenuDropdownItem')
-      item.trigger('click')
-      expect(wrapper.emitted('select')).toBeTruthy()
+
+      it('should emit the key of selected item on the `select` event', () => {
+        const wrapper = mount(MenuDropdown, {
+          propsData: {
+            items: {
+              first: 'first label',
+              second: 'second label'
+            },
+            value: 'second'
+          }
+        })
+
+        const handler = wrapper.find('.MenuDropdownHandler')
+        handler.trigger('click')
+        const item = wrapper.find('.MenuDropdownItem')
+        item.trigger('click')
+
+        expect(wrapper.emitted().select[0]).toEqual(['first'])
+      })
     })
 
     it('should render component with items and activeItem', () => {

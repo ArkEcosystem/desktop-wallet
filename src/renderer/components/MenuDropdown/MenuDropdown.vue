@@ -8,11 +8,11 @@
       @click="toggle"
     >
       <slot
-        :value="activeItem"
+        :value="entries[activeKey]"
         name="handler">
 
         <MenuDropdownHandler
-          :value="activeItem"
+          :value="entries[activeKey]"
           :placeholder="placeholder"
         />
 
@@ -28,11 +28,11 @@
       >
         <slot>
           <MenuDropdownItem
-            v-for="item in items"
-            :key="item"
-            :value="item"
-            :is-active="item === activeItem"
-            @click="select($event)"
+            v-for="(value, key) in entries"
+            :key="key"
+            :value="value"
+            :is-active="key === activeKey"
+            @click="select(key)"
           />
         </slot>
       </ul>
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { zipObject } from 'lodash'
 import MenuDropdownItem from './MenuDropdownItem'
 import MenuDropdownHandler from './MenuDropdownHandler'
 
@@ -60,7 +61,7 @@ export default {
     },
 
     items: {
-      type: Array,
+      type: [Array, Object],
       required: false,
       default: () => []
     },
@@ -86,10 +87,13 @@ export default {
 
   data: vm => ({
     isOpen: true,
-    activeItem: vm.value
+    activeKey: vm.value
   }),
 
   computed: {
+    entries () {
+      return Array.isArray(this.items) ? zipObject(this.items, this.items) : this.items
+    },
     hasDefaultSlot () {
       return !!this.$slots.default
     }
@@ -97,7 +101,7 @@ export default {
 
   watch: {
     value (val) {
-      this.activeItem = val
+      this.activeKey = val
     }
   },
 
@@ -107,8 +111,9 @@ export default {
 
   methods: {
     select (item) {
-      this.activeItem = item
+      this.activeKey = item
       this.isOpen = false
+
       this.$emit('select', item)
     },
 

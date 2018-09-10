@@ -1,8 +1,11 @@
 <template>
   <li
-    :class="[
-      isActive ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text' : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
-      ,'MenuDropdownItem cursor-pointer bt-theme-feature']"
+    :class="
+      isActive
+        ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text'
+        : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
+    "
+    class="MenuDropdownItem cursor-pointer bt-theme-feature"
     @click.stop="emitClick"
   >
     <div
