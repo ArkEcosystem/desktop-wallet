@@ -8,10 +8,10 @@ describe('InputSwitch', () => {
     expect(wrapper.contains('.InputSwitch')).toBeTruthy()
   })
 
-  describe('inner SwitchButton', () => {
+  describe('inner ButtonSwitch', () => {
     it('should toggle when user clicks', () => {
       const wrapper = mount(InputSwitch)
-      wrapper.find('.SwitchButton').trigger('click')
+      wrapper.find('.ButtonSwitch').trigger('click')
       expect(wrapper.emitted('change')).toBeTruthy()
     })
 
@@ -21,7 +21,7 @@ describe('InputSwitch', () => {
           isActive: true
         }
       })
-      expect(wrapper.contains('.SwitchButton--active')).toBeTruthy()
+      expect(wrapper.contains('.ButtonSwitch--active')).toBeTruthy()
     })
   })
 

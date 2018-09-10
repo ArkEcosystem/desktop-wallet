@@ -12,7 +12,7 @@
       class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex flex-row justify-flex-start"
     >
       <div class="mr-3 mt-1 text-lg">{{ text }}</div>
-      <SwitchButton
+      <ButtonSwitch
         :background-color="backgroundColor"
         :is-active="isActive"
         :is-disabled="isDisabled"
@@ -24,14 +24,14 @@
 
 <script>
 import InputField from '@/components/InputField'
-import SwitchButton from '@/components/SwitchButton'
+import { ButtonSwitch } from '@/components/Button'
 
 export default {
   name: 'InputSwitch',
 
   components: {
     InputField,
-    SwitchButton
+    ButtonSwitch
   },
 
   model: {

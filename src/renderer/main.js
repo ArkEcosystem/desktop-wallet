@@ -11,6 +11,8 @@ import router from './router'
 import store from './store'
 import mixins from '@/mixins'
 
+import { AlertPlugin } from '@/components/AlertMessage'
+
 import { client } from '@/plugins/api-client'
 
 if (!process.env.IS_WEB) {
@@ -28,6 +30,7 @@ Vue.use(VTooltip, {
   defaultHtml: false,
   defaultContainer: '#app'
 })
+Vue.use(AlertPlugin)
 
 Vue.mixin(mixins)
 

@@ -1,13 +1,13 @@
 <template>
   <button
     :class="{
-      'SwitchButton--active': inputIsActive
+      'ButtonSwitch--active': inputIsActive
     }"
     :style="{
       'background-color': backgroundColor
     }"
     :disabled="isDisabled"
-    class="SwitchButton appearance-none rounded-full flex items-center relative cursor-pointer w-12 h-6 bg-theme-button"
+    class="ButtonSwitch appearance-none rounded-full flex items-center relative cursor-pointer w-12 h-6 bg-theme-button"
     @click="toggle"
   >
     <span
@@ -18,14 +18,14 @@
       :style="{
         'border-color': backgroundColor
       }"
-      class="SwitchButton__circle transition rounded-full w-6 h-full absolute border-2 border-theme-button"
+      class="ButtonSwitch__circle transition rounded-full w-6 h-full absolute border-2 border-theme-button"
     />
   </button>
 </template>
 
 <script>
 export default {
-  name: 'SwitchButton',
+  name: 'ButtonSwitch',
 
   model: {
     prop: 'isActive',
@@ -72,11 +72,11 @@ export default {
 </script>
 
 <style scoped>
-.SwitchButton__circle {
+.ButtonSwitch__circle {
   transform: translateX(0%)
 }
 
-.SwitchButton--active .SwitchButton__circle {
+.ButtonSwitch--active .ButtonSwitch__circle {
   transform: translateX(100%)
 }
 </style>

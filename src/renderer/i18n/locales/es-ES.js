@@ -10,7 +10,7 @@ export default {
     'pt-BR': 'Portugués - Brasil'
   },
 
-  ClipboardButton: {
+  ButtonClipboard: {
     done: '¡Copiado!',
     'copy-to-clipboard': 'Copiar al portapapeles',
     'not-supported': 'Copiar al portapapeles no disponible'

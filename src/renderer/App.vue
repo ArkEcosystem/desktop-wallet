@@ -20,6 +20,7 @@
     </div>
 
     <AppFooter />
+    <AlertMessage />
   </div>
 </template>
 
@@ -27,6 +28,7 @@
 import '@/styles/style.css'
 import AppFooter from '@/components/AppFooter'
 import AppSidemenu from '@/components/AppSidemenu'
+import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
 import timerService from '@/services/timer-service'
 import MarketDataService from '@/services/market-data-service'
@@ -36,7 +38,8 @@ export default {
 
   components: {
     AppFooter,
-    AppSidemenu
+    AppSidemenu,
+    AlertMessage
   },
 
   data: () => ({

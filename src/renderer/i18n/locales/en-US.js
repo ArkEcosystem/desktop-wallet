@@ -14,10 +14,10 @@ export default {
     'pt-BR': 'Portugues - Brazil'
   },
 
-  ClipboardButton: {
-    done: 'Copied!',
-    'copy-to-clipboard': 'Copy to clipboard',
-    'not-supported': 'Copying to clipboard is not unavailable'
+  BUTTON_CLIPBOARD: {
+    DONE: 'Copied!',
+    COPY_TO_CLIPBOARD: 'Copy to clipboard',
+    NOT_SUPPORTED: 'Copying to clipboard is not unavailable'
   },
 
   SELECTION_AVATAR: {

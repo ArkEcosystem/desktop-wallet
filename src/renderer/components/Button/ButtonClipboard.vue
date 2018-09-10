@@ -2,7 +2,7 @@
   <button
     v-tooltip="{ show: isSmallScreen, content: tooltipContent, trigger:'hover' }"
     :disabled="!isCopySupported"
-    class="ClipboardButton"
+    class="ButtonClipboard"
     @click="copy"
   >
     <div
@@ -40,12 +40,12 @@ export default {
       let translationKey
 
       if (!this.isCopySupported) {
-        translationKey = 'not-supported'
+        translationKey = 'NOT_SUPPORTED'
       } else {
-        translationKey = this.isCopying ? 'done' : 'copy-to-clipboard'
+        translationKey = this.isCopying ? 'DONE' : 'COPY_TO_CLIPBOARD'
       }
 
-      return this.$i18n.t(`ClipboardButton.${translationKey}`)
+      return this.$i18n.t(`BUTTON_CLIPBOARD.${translationKey}`)
     }
   },
 
