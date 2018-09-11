@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
+import localforage from 'localforage'
 
 import apiClient from '@/plugins/api-client'
 
@@ -11,6 +13,12 @@ import SessionModule from '@/store/modules/session'
 
 Vue.use(Vuex)
 
+const vuexPersist = new VuexPersistence({
+  strictMode: process.env.NODE_ENV !== 'production',
+  asyncStorage: true,
+  storage: localforage
+})
+
 export default new Vuex.Store({
   modules: {
     announcements: AnnouncementsModule,
@@ -19,6 +27,9 @@ export default new Vuex.Store({
     profiles: ProfilesModule,
     session: SessionModule
   },
-  plugins: [apiClient],
-  strict: process.env.NODE_ENV !== 'production'
+  strict: process.env.NODE_ENV !== 'production',
+  mutations: {
+    RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION
+  },
+  plugins: [vuexPersist.plugin, apiClient]
 })

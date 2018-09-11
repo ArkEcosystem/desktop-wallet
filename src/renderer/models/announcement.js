@@ -1,71 +1,40 @@
-import truncHtml from 'trunc-html'
-import Model from './model'
+import trunc from 'trunc-html'
+export default class Announcement {
+  static create (data) {
+    const announcement = new Announcement()
 
-export default class Announcement extends Model {
-  static get schema () {
+    Object.defineProperties(announcement, Announcement.marshalDataToProperties(data))
+
+    return announcement
+  }
+
+  static marshalDataToProperties (data) {
     return {
-      required: ['guid', 'date', 'title', 'summary', 'url', 'isRead'],
-      properties: {
-        guid: {
-          type: 'string'
-        },
-        date: {
-          type: 'date-time'
-        },
-        title: {
-          type: 'string'
-        },
-        summary: {
-          type: 'string'
-        },
-        url: {
-          type: 'uri'
-        },
-        isRead: {
-          type: 'boolean'
-        }
+      guid: {
+        enumerable: true,
+        value: data.guid
+      },
+      date: {
+        enumerable: true,
+        value: data.isoDate
+      },
+      title: {
+        enumerable: true,
+        value: data.title
+      },
+      summary: {
+        enumerable: true,
+        value: trunc(data['content:encoded'], 300).text
+      },
+      url: {
+        enumerable: true,
+        value: data.link
+      },
+      isRead: {
+        enumerable: true,
+        writable: true,
+        value: false
       }
     }
-  }
-
-  /**
-   * The configuration of the summaries that are generated from the feed
-   * @return {Array}
-   */
-  static get feedSummaryConfig () {
-    return [
-      300, // Maximum number of character
-      {
-        // Use the default configuration of `trunc-html` and the serializer `insane`
-      }
-    ]
-  }
-
-  static fromFeedItem (item) {
-    const content = item['content:encoded']
-
-    // Get the text only. It is not perfect, but it is safer than HTML
-    const summary = truncHtml(content, ...Announcement.feedSummaryConfig).text
-
-    return new Announcement({
-      guid: item.guid,
-      date: item.isoDate,
-      title: item.title,
-      summary,
-      url: item.link,
-      isRead: false
-    })
-  }
-
-  constructor (data = {}) {
-    super(Object.assign({}, data, { modelType: 'announcement' }))
-  }
-
-  get id () {
-    return [this.modelType, this.guid].join(Model.modelType.separator)
-  }
-
-  set isRead (newValue) {
-    this.__data.isRead = newValue
   }
 }

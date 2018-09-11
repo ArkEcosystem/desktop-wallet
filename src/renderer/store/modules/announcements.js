@@ -1,54 +1,51 @@
-import db from '@/store/db/instance'
-import DbModule from './db-module'
-import feedService from '@/services/feed'
+import { SAVE_ANNOUNCEMENTS, MARK_ANNOUNCEMENT_AS_READ } from '../mutation-types'
 import Announcement from '@/models/announcement'
+import feedService from '@/services/feed'
 import { ANNOUNCEMENTS } from '@config'
+import { unionBy } from 'lodash'
 
-export default new DbModule({ name: 'announcements', modelType: 'announcement' }, {
+export default {
+  namespaced: true,
+
+  state: {
+    announcements: []
+  },
+
   getters: {
-    /**
-     * Read announcements
-     * @return {Array}
-     */
-    read: state => state.all.filter(announcement => announcement.isRead),
+    browse: ({ announcements }) => announcements,
 
-    /**
-     * Unread announcements
-     * @return {Array}
-     */
-    unread: state => state.all.filter(announcement => !announcement.isRead)
+    read: ({ announcements }, announcement) => {
+      return announcements.find(storedAnnouncement => storedAnnouncement.guid === announcement.guid)
+    },
+
+    unreadAnnouncements: ({ announcements }) => announcements.filter(announcement => !announcement.isRead),
+
+    readAnnouncements: ({ announcements }) => announcements.filter(announcement => announcement.isRead)
+  },
+
+  mutations: {
+    [SAVE_ANNOUNCEMENTS] (state, items) {
+      const announcementsFromFeedItems = items.map(item => Announcement.create(item))
+
+      state.announcements = unionBy(state.announcements, announcementsFromFeedItems, 'guid')
+    },
+
+    [MARK_ANNOUNCEMENT_AS_READ] (state, readAnnouncement) {
+      let readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
+
+      state.announcements[readAnnouncementIndex].isRead = true
+    }
   },
 
   actions: {
-    /**
-     * Fetches the latest feed and creates the new items on the db.
-     */
-    async fetch () {
-      try {
-        const items = await feedService.fetchItems(ANNOUNCEMENTS.rssUrl)
-
-        if (items) {
-          items.forEach(async item => {
-            const announcement = Announcement.fromFeedItem(item)
-            const found = await db.find(announcement.id)
-
-            if (!found) {
-              await this.dispatch('announcements/create', announcement)
-            }
-          })
-        }
-      } catch (errror) {
-        // TODO alert/toast component
-        console.error('Error loading the announcements.')
-      }
+    markAsRead ({ commit }, announcement) {
+      commit(MARK_ANNOUNCEMENT_AS_READ, announcement)
     },
-    /**
-     * Synchronizes the data, fetching the latest items of the feed first and
-     * then loading the older from the db.
-     */
-    async sync () {
-      await this.dispatch('announcements/fetch')
-      await this.dispatch('announcements/load')
+
+    async syncAnnouncements ({ commit }) {
+      let items = await feedService.fetchItems(ANNOUNCEMENTS.rssUrl) // TODO: can move URL into FeedService
+
+      commit(SAVE_ANNOUNCEMENTS, items)
     }
   }
-})
+}

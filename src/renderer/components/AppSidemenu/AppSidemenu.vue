@@ -91,17 +91,13 @@ export default {
   }),
 
   computed: {
-    ...mapGetters({ unreadAnnouncements: 'announcements/unread' }),
+    ...mapGetters({ unreadAnnouncements: 'announcements/unreadAnnouncements' }),
     showUnread () {
       return this.unreadAnnouncements.length > 0
     },
     profileAvatar () {
       return this.$store.getters['session/avatar']
     }
-  },
-
-  created () {
-    this.$store.dispatch('announcements/sync')
   },
 
   methods: {

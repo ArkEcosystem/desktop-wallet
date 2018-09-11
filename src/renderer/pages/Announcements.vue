@@ -11,7 +11,7 @@
       >
         <div
           v-for="(announcement, index) in announcements"
-          :key="announcement.id"
+          :key="announcement.guid"
           class="mb-6"
         >
           <AnnouncementsPost
@@ -42,8 +42,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      readAnnouncements: 'announcements/read',
-      unreadAnnouncements: 'announcements/unread'
+      readAnnouncements: 'announcements/readAnnouncements',
+      unreadAnnouncements: 'announcements/unreadAnnouncements'
     }),
     announcements () {
       const readSorted = sortBy(this.readAnnouncements, 'date').reverse()
@@ -53,8 +53,7 @@ export default {
   },
   methods: {
     read (announcement) {
-      announcement.isRead = true
-      this.$store.dispatch('announcements/update', announcement)
+      this.$store.dispatch('announcements/markAsRead', announcement)
     }
   }
 }

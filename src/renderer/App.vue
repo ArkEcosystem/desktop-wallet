@@ -68,7 +68,7 @@ export default {
 
     this.isReady = true
 
-    this.loadNotEssential()
+    await this.loadNotEssential()
     this.startTimers()
   },
 
