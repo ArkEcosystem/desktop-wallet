@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { MenuTab, MenuTabItem } from '@/components/MenuTab'
+import { MenuTab, MenuTabItem } from '@/components/Menu'
 
 describe('MenuTab', () => {
   it('should render', () => {

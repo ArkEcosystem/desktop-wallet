@@ -132,9 +132,8 @@
 <script>
 import { I18N, NETWORKS, MARKET } from '@config'
 import Profile from '@/models/profile'
-import { MenuStep, MenuStepItem } from '@/components/MenuStep'
-import InputSelect from '@/components/InputSelect'
-import InputText from '@/components/InputText'
+import { MenuStep, MenuStepItem } from '@/components/Menu'
+import { InputSelect, InputText } from '@/components/Input'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
 export default {

@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { InputGrid, InputGridItem, InputGridPopup } from '@/components/InputGrid'
+import { InputGrid, InputGridItem, InputGridPopup } from '@/components/Input/InputGrid'
 
 describe('InputGrid', () => {
   describe('InputGrid', () => {

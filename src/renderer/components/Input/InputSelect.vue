@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import InputField from '@/components/InputField'
-import { MenuDropdown, MenuDropdownHandler } from '@/components/MenuDropdown'
+import InputField from './InputField'
+import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
 
 export default {
   name: 'InputSelect',

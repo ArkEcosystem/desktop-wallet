@@ -37,5 +37,7 @@
       ]
     }
   },
-  "plugins": ["transform-runtime"]
+  "plugins": [
+    ["transform-runtime", { "polyfill": false }]
+  ]
 }

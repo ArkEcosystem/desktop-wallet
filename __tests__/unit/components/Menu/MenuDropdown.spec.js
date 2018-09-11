@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { MenuDropdown, MenuDropdownItem, MenuDropdownHandler } from '@/components/MenuDropdown'
+import { MenuDropdown, MenuDropdownItem, MenuDropdownHandler } from '@/components/Menu'
 
 describe('MenuDropdown', () => {
   describe('Item', () => {

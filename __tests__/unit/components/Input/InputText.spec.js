@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import InputText from '@/components/InputText'
+import { InputText } from '@/components/Input'
 
 describe('InputText', () => {
   it('should render', () => {

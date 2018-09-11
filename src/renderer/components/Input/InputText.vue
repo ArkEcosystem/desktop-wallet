@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import InputField from '@/components/InputField'
+import InputField from './InputField'
 
 export default {
   name: 'InputText',

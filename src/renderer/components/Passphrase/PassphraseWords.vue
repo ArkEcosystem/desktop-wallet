@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import InputText from '@/components/InputText'
+import { InputText } from '@/components/Input'
 
 export default {
   name: 'PassphraseWords',

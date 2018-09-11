@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import InputField from '@/components/InputField'
+import InputField from './InputField'
 import { ButtonSwitch } from '@/components/Button'
 
 export default {

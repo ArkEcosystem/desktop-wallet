@@ -26,8 +26,7 @@
 
 <script>
 import '@/styles/style.css'
-import AppFooter from '@/components/AppFooter'
-import AppSidemenu from '@/components/AppSidemenu'
+import { AppSidemenu, AppFooter } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
 import timerService from '@/services/timer-service'

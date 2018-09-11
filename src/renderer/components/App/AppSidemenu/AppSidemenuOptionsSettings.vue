@@ -42,8 +42,7 @@
 
 <script>
 import { MARKET } from '@config'
-import { MenuOptions, MenuOptionsItem } from '@/components/MenuOptions'
-import MenuDropdown from '@/components/MenuDropdown'
+import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 
 export default {
