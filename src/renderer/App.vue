@@ -16,7 +16,7 @@
       class="flex-1 flex mt-6 mb-4 mr-6"
     >
       <AppSidemenu v-if="hasAnyProfile" />
-      <router-view class="flex-1" />
+      <router-view class="flex-1 overflow-y-auto" />
     </div>
 
     <AppFooter />

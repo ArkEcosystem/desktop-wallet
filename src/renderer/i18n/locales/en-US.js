@@ -5,7 +5,8 @@ export default {
     DONE: 'Done',
     CURRENCY: 'Currency',
     LANGUAGE: 'Language',
-    NEXT: 'Next'
+    NEXT: 'Next',
+    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".'
   },
 
   LANGUAGES: {
@@ -39,6 +40,13 @@ export default {
   QRCode: {
     popupTitle: 'QR Code',
     popupSubtitle: 'Scan for Address'
+  },
+
+  DELEGATES_TABLE: {
+    RATE: 'Rate',
+    USERNAME: 'Username',
+    PRODUCTIVITY: 'Productivity',
+    APPROVAL: 'Approval'
   },
 
   PASSPHRASE_VERIFICATION: {

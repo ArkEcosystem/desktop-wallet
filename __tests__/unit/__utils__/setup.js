@@ -4,5 +4,14 @@ require('babel-plugin-require-context-hook/register')()
 
 VueTestUtils.config.mocks.$i18n = { t: jest.fn(msg => msg) }
 VueTestUtils.config.mocks.$t = jest.fn(msg => msg)
+VueTestUtils.config.mocks.$client = {
+  resource: () => ({
+    all: () => ({
+      data: {
+        delegates: {}
+      }
+    })
+  })
+}
 
 VueTestUtils.config.mocks.assets_loadImage = jest.fn()
