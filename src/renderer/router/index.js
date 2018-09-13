@@ -32,7 +32,7 @@ const router = new Router({
       component: require('@/pages/Profile/ProfileNew').default
     },
     {
-      path: '/profiles/:id',
+      path: '/profiles/:profile-id',
       name: 'profile-edition',
       component: require('@/pages/Profile/ProfileEdition').default
     },

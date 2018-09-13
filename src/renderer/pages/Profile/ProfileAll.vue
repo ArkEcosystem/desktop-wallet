@@ -17,22 +17,38 @@
         </div>
       </router-link>
 
-      <router-link
+      <div
         v-for="profile in profiles"
         :key="profile.id"
-        :to="{ name: 'profile-edition', params: { id: profile.id } }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
         <!-- TODO highlight current profile -->
-        <div
-          :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-          :title="profile.name"
-          class="profile-avatar-xl background-image flex"
-        />
-        <div class="ProfileAll__grid__profile__name font-semibold flex text-xs">
-          {{ profile.name }}
+        <!-- TODO select instead of edit -->
+        <router-link
+          :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
+        >
+          <div
+            :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
+            :title="profile.name"
+            class="profile-avatar-xl background-image flex"
+          />
+        </router-link>
+
+        <div class="flex flex-col pl-2">
+          <div class="ProfileAll__grid__profile__name font-semibold flex text-lg my-8">
+            {{ profile.name }}
+          </div>
+          <div class="ProfileAll__grid__profile__select font-semibold flex text-xs mb-2">
+            {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
+          </div>
+          <router-link
+            :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
+            class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs"
+          >
+            {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
+          </router-link>
         </div>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +83,5 @@ export default {
 }
 .ProfileAll__grid__profile__name {
   width: var(--profile-avatar-xl);
-  margin-top: 30px;
 }
 </style>

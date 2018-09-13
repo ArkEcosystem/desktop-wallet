@@ -3,7 +3,7 @@
     <InputGrid
       :items="images"
       :max-visible-items="maxVisibleItems"
-      :popup-header-text="$t('SELECTION_AVATAR.POPUP_HEADER')"
+      :popup-header-text="popupHeaderText"
       :selected="selectedItem"
       item-key="imagePath"
       @input="select"
@@ -25,6 +25,19 @@ export default {
       type: Array,
       required: false,
       default: () => ['avatars']
+    },
+    enablePopup: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  },
+
+  computed: {
+    popupHeaderText () {
+      return this.enablePopup
+        ? this.$i18n.t('SELECTION_AVATAR.POPUP_HEADER')
+        : null
     }
   }
 }
@@ -41,7 +54,6 @@ export default {
 }
 .SelectionAvatar .InputGridPopup .InputGrid__container__category__items {
   display: grid;
-  /* Maximum 5 columns */
   grid-template-columns: repeat(auto-fill, var(--profile-avatar-xl));
   grid-gap: 10px;
 }

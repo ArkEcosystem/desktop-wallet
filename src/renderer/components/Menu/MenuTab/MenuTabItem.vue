@@ -1,10 +1,12 @@
 <template>
   <keep-alive>
     <transition
-      name="MenuTabItem__transition">
+      name="MenuTabItem__transition"
+    >
       <div
         v-show="isActive"
-        class="MenuTabItem">
+        class="MenuTabItem"
+      >
         <slot/>
       </div>
     </transition>

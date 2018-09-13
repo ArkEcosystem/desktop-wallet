@@ -1,5 +1,5 @@
 <template>
-  <div class="ProfileNew relative bg-theme-feature rounded-lg m-r-4">
+  <div class="ProfileNew relative bg-theme-feature rounded-lg">
     <main class="flex flex-row h-full">
 
       <div
@@ -103,7 +103,7 @@
           >
 
             <div class="flex flex-col h-full w-full justify-around">
-              <h5 class="mb-2">Select wallet theme:</h5>
+              <h5 class="mb-2">{{ $t('COMMON.SELECT_THEME') }}</h5>
 
               <SelectionTheme
                 :max-visible-items="2"
@@ -112,7 +112,7 @@
                 @select="selectTheme"
               />
 
-              <h5 class="mb-2">Select background:</h5>
+              <h5 class="mb-2">{{ $t('COMMON.SELECT_BACKGROUND') }}</h5>
 
               <SelectionBackground
                 :max-visible-items="2"

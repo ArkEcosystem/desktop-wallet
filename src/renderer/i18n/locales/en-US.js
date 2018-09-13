@@ -1,11 +1,17 @@
 export default {
 
   COMMON: {
+    AVATAR: 'Avatar',
     BACK: 'Back',
     DONE: 'Done',
     CURRENCY: 'Currency',
     LANGUAGE: 'Language',
+    NETWORK: 'Network',
     NEXT: 'Next',
+    PROFILE_NAME: 'Profile name',
+    SAVE: 'Save',
+    SELECT_BACKGROUND: 'Select background',
+    SELECT_THEME: 'Select wallet theme',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".'
   },
 
@@ -56,7 +62,9 @@ export default {
   PAGES: {
     PROFILE_ALL: {
       HEADER: 'My profiles',
-      ADD_PROFILE: 'Add profile'
+      ADD_PROFILE: 'Add profile',
+      EDIT_PROFILE: 'Edit profile',
+      SELECT_PROFILE: 'Use this profile'
     },
     PROFILE_NEW: {
       STEP1: {
@@ -79,6 +87,22 @@ export default {
           TEXT: 'Customize this application selecting one of our themes and backgrounds.'
         },
         NAME: 'Profile name'
+      }
+    },
+    PROFILE_EDITION: {
+      TAB_PROFILE: {
+        INSTRUCTIONS: {
+          HEADER: 'Edit this profile',
+          TEXT: 'Here you can modify your name or nickname, select your preferred language and default currency, the network and avatar.'
+        },
+        TITLE: 'Profile'
+      },
+      TAB_DESIGN: {
+        INSTRUCTIONS: {
+          HEADER: 'Customize this wallet',
+          TEXT: 'Here you can choose the default theme (light or dark) and the bakground.'
+        },
+        TITLE: 'Wallet design'
       }
     },
     WALLET_NEW: {

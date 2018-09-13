@@ -128,8 +128,8 @@ export default {
       this.$refs.input.blur()
     },
 
-    emitInput (e) {
-      this.$emit('input', e.target.value)
+    emitInput (event) {
+      this.$emit('input', event.target.value)
     }
   }
 }

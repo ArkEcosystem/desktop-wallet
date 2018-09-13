@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO do not show last separator line -->
   <ul
     class="ListDivided list-reset w-full"
   >
