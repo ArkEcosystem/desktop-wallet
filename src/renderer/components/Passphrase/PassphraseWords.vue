@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .PassphraseWords {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 5.5rem);
+  grid-template-columns: repeat(4, 4.5rem);
   grid-gap: 1rem;
 }
 </style>

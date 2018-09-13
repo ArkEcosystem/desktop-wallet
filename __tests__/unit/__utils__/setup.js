@@ -15,3 +15,4 @@ VueTestUtils.config.mocks.$client = {
 }
 
 VueTestUtils.config.mocks.assets_loadImage = jest.fn()
+VueTestUtils.config.mocks.collections_filterChilds = jest.fn()

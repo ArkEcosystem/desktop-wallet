@@ -136,19 +136,21 @@ export default {
   methods: {
     acceptWord (word) {
       if (isEqual(word, this.words[this.currentPosition])) {
-        this.acceptedWords[this.currentPosition] = word
+        this.$set(this.acceptedWords, this.currentPosition, word)
       } else {
         throw new Error(`The word "${word}" should not be accepted`)
       }
 
-      setTimeout(() => {
-        if (this.allVerified) {
-          this.hideSuggestions()
-          this.$emit('verified')
-        } else {
-          this.toNextWord()
-        }
-      }, 600)
+      this.$nextTick(() => {
+        setTimeout(() => {
+          if (this.allVerified) {
+            this.hideSuggestions()
+            this.$emit('verified')
+          } else {
+            this.toNextWord()
+          }
+        }, 600)
+      })
     },
     /**
      * @param {String} position
@@ -169,8 +171,8 @@ export default {
 
       this.wordPositions.forEach(wordPosition => {
         const position = wordPosition.toString()
-        data.acceptedWords[position] = null
-        data.inputs[position] = ''
+        this.$set(data.acceptedWords, position, null)
+        this.$set(data.inputs, position, '')
       })
 
       return data
@@ -188,22 +190,34 @@ export default {
     },
 
     toNextWord () {
-      const index = this.positions.indexOf(this.currentPosition)
+      if (!this.allVerified) {
+        let index = this.positions.indexOf(this.currentPosition)
 
-      let nextPosition = this.positions[index + 1]
-      if (!nextPosition) {
-        nextPosition = this.positions[0]
+        let nextEmptyPosition = null
+        while (!nextEmptyPosition) {
+          // After reaching the last position, move to the first
+          if (!this.positions[++index]) {
+            index = 0
+          }
+
+          // Ignore already accepted words
+          const nextPosition = this.positions[index]
+          if (!this.acceptedWords[nextPosition]) {
+            nextEmptyPosition = nextPosition
+            break
+          }
+        }
+
+        this.showSuggestions(nextEmptyPosition)
+
+        const textInput = this.$refs[`input-${nextEmptyPosition}`][0]
+        textInput.focus()
       }
-
-      this.showSuggestions(nextPosition)
-
-      const textInput = this.$refs[`input-${nextPosition}`][0]
-      textInput.focus()
     },
 
     updateCurrentWord (text) {
       this.currentWord = text
-      this.$set(this.inputs, this.currentPosition, this.currentWord)
+      this.$set(this.inputs, this.currentPosition.toString(), this.currentWord)
 
       const expected = this.words[this.currentPosition]
       if (this.currentWord === expected) {

@@ -1,0 +1,13 @@
+.transition {
+  transition: all .1s ease-in
+}
+
+.rotate-360 {
+  animation: rotate-360-keyframe 2s linear infinite;
+}
+
+@keyframes rotate-360-keyframe {
+  100% {
+    transform:rotate(-360deg);
+  }
+}

@@ -29,10 +29,7 @@ const router = new Router({
     {
       path: '/profiles/new',
       name: 'profile-new',
-      component: require('@/pages/Profile/ProfileNew').default,
-      props: {
-        showSidemenuBar: true
-      }
+      component: require('@/pages/Profile/ProfileNew').default
     },
     {
       path: '/profiles/:id',
@@ -53,6 +50,11 @@ const router = new Router({
       path: '/wallets',
       name: 'wallets',
       component: require('@/pages/Wallets').default
+    },
+    {
+      path: '/wallets/new',
+      name: 'wallet-new',
+      component: require('@/pages/Wallet/WalletNew').default
     },
     {
       path: '*',

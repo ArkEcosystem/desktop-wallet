@@ -54,6 +54,10 @@ export default {
   },
 
   PAGES: {
+    PROFILE_ALL: {
+      HEADER: 'My profiles',
+      ADD_PROFILE: 'Add profile'
+    },
     PROFILE_NEW: {
       STEP1: {
         INSTRUCTIONS: {
@@ -77,9 +81,44 @@ export default {
         NAME: 'Profile name'
       }
     },
-    PROFILE_ALL: {
-      HEADER: 'My profiles',
-      ADD_PROFILE: 'Add profile'
+    WALLET_NEW: {
+      STEP1: {
+        INSTRUCTIONS: {
+          HEADER: 'New wallet',
+          TEXT_BEFORE_BUTTON: 'Select one of these freshly generated wallets. If you do not like them, click on the',
+          TEXT_AFTER_BUTTON: 'button to generate others.'
+        },
+        TITLE: '1. Choose wallet'
+      },
+      STEP2: {
+        INSTRUCTIONS: {
+          HEADER: 'Your personal key',
+          TEXT: 'Be sure to save your passphrase securely. Do not show this passphrase to anyone.'
+        },
+        TITLE: '2. Backup'
+      },
+      STEP3: {
+        INSTRUCTIONS: {
+          HEADER: 'Passphrase confirmation',
+          TEXT: 'Type {words} from your passphrase to verify the new account.',
+          ALL_WORDS: 'all the words',
+          WORDS: 'the words {words}'
+        },
+        TITLE: '3. Verification',
+        CHECK_ENTIRE_PASSPHRASE: 'Check the entire passphrase',
+        VERIFY_ALL_WORDS: 'Verify each passphrase word'
+      },
+      STEP4: {
+        INSTRUCTIONS: {
+          HEADER: 'Wallet configuration',
+          TEXT: 'Choose a name for you wallet and decide which operations could perform and you are done.'
+        },
+        TITLE: '4. Confirmation',
+        ADDRESS: 'Wallet address',
+        NAME: 'Wallet name',
+        OPERATIONS: 'Wallet operations',
+        SENDING_ENABLED: 'Sending transactions enabled'
+      }
     }
   }
 

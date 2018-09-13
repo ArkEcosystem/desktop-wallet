@@ -214,5 +214,49 @@ describe('PassphraseVerification', () => {
 
       expect(textInput.focus).toHaveBeenCalled()
     })
+
+    describe('when the next position is already accepted', () => {
+      it('should move to the subsequent position', () => {
+        jest.spyOn(wrapper.vm, 'showSuggestions')
+
+        let subsequentPosition = '7'
+        wrapper.setProps({
+          wordPositions: [1, 3, 5, 7, 9, 11]
+        })
+        wrapper.setData({
+          currentPosition: '3',
+          acceptedWords: {
+            '1': 'former',
+            '3': '',
+            '5': 'other',
+            '7': '',
+            '9': 'example',
+            '11': 'random'
+          }
+        })
+        wrapper.vm.toNextWord()
+
+        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition)
+
+        subsequentPosition = '2'
+        wrapper.setProps({
+          wordPositions: [1, 2, 3, 4, 5, 6]
+        })
+        wrapper.setData({
+          currentPosition: '3',
+          acceptedWords: {
+            '1': 'former',
+            '2': '',
+            '3': '',
+            '4': 'random',
+            '5': 'other',
+            '6': 'example'
+          }
+        })
+        wrapper.vm.toNextWord()
+
+        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition)
+      })
+    })
   })
 })
