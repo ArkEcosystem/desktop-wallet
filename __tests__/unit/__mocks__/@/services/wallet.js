@@ -5,5 +5,7 @@ export default {
       passphrase: 'passphrase'
     }
   }),
-  validateAddress: jest.fn(() => true)
+  validateAddress: jest.fn(() => true),
+  validatePassphrase: jest.fn(() => true),
+  verifyPassphrase: jest.fn(() => true)
 }

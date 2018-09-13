@@ -24,4 +24,28 @@ export default class WalletService {
   static validateAddress (address, pubKeyHash) {
     return crypto.validateAddress(address, pubKeyHash)
   }
+
+  /**
+   * Check that a passphrase is valid.
+   * @param {String} passhrase
+   * @param {Number} pubKeyHash - also known as address or network version
+   * @return {Boolean}
+   */
+  static validatePassphrase (passphrase, pubKeyHash) {
+    const publicKey = crypto.getKeys(passphrase).publicKey
+    return crypto.validatePublicKey(publicKey, pubKeyHash)
+  }
+
+  /**
+   * Check that a password match an address
+   * @param {String} address
+   * @param {String} passhrase
+   * @param {Number} pubKeyHash - also known as address or network version
+   * @return {Boolean}
+   */
+  static verifyPassphrase (address, passphrase, pubKeyHash) {
+    const publicKey = crypto.getKeys(passphrase).publicKey
+    const generatedAddress = crypto.getAddress(publicKey, pubKeyHash)
+    return generatedAddress === address
+  }
 }

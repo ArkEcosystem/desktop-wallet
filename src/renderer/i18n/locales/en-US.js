@@ -27,6 +27,13 @@ export default {
     NOT_SUPPORTED: 'Copying to clipboard is not unavailable'
   },
 
+  DELEGATES_TABLE: {
+    RATE: 'Rate',
+    USERNAME: 'Username',
+    PRODUCTIVITY: 'Productivity',
+    APPROVAL: 'Approval'
+  },
+
   INPUT_ADDRESS: {
     LABEL: 'Address',
     ERROR: {
@@ -56,11 +63,13 @@ export default {
     popupSubtitle: 'Scan for Address'
   },
 
-  DELEGATES_TABLE: {
-    RATE: 'Rate',
-    USERNAME: 'Username',
-    PRODUCTIVITY: 'Productivity',
-    APPROVAL: 'Approval'
+  PASSPHRASE_INPUT: {
+    LABEL: 'Passphrase',
+    ERROR: {
+      NOT_MATCH: 'The passphrase does not match the address',
+      NOT_VALID: 'The passphrase is not valid',
+      REQUIRED: 'The passphrase is required'
+    }
   },
 
   PASSPHRASE_VERIFICATION: {
