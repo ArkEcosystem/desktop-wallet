@@ -18,7 +18,7 @@
     "pack": "npm run pack:main && npm run pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
-    "postinstall": "npm run lint:fix",
+    "postinstall": "npm run lint:fix && electron-builder install-app-deps",
     "test": "npm run test:unit && npm run test:e2e",
     "test:e2e": "npm run pack && jest --config __tests__/e2e.jest.conf.js",
     "test:unit": "jest --config __tests__/unit.jest.conf.js",
@@ -62,6 +62,8 @@
   "dependencies": {
     "@arkecosystem/client": "^0.1.2",
     "@arkecosystem/crypto": "^0.1.2",
+    "@arkecosystem/ledger-transport": "^0.1.0",
+    "@ledgerhq/hw-transport-node-hid": "^4.22.0",
     "@xkeshi/vue-qrcode": "^1.0.0",
     "animate.css": "^3.7.0",
     "axios": "^0.16.1",
