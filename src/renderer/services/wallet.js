@@ -3,8 +3,10 @@ import { crypto } from '@arkecosystem/crypto'
 
 export default class WalletService {
   /*
-   * Generates a wallet.
+   * Generate a wallet.
    * It does not check if the wallet is new (no transactions on the blockchain)
+   * @param {Number} pubKeyHash - also known as address or network version
+   * @return {Object}
    */
   static generate (pubKeyHash) {
     const passphrase = bip39.generateMnemonic()
@@ -13,5 +15,13 @@ export default class WalletService {
       address: crypto.getAddress(publicKey, pubKeyHash),
       passphrase
     }
+  }
+  /**
+   * Check that an address is valid.
+   * @param {Number} pubKeyHash - also known as address or network version
+   * @return {Boolean}
+   */
+  static validateAddress (address, pubKeyHash) {
+    return crypto.validateAddress(address, pubKeyHash)
   }
 }

@@ -27,6 +27,14 @@ export default {
     NOT_SUPPORTED: 'Copying to clipboard is not unavailable'
   },
 
+  INPUT_ADDRESS: {
+    LABEL: 'Address',
+    ERROR: {
+      NOT_VALID: 'The address is not valid',
+      REQUIRED: 'The address is required'
+    }
+  },
+
   SELECTION_AVATAR: {
     AVATARS: 'Avatars',
     POPUP_HEADER: 'Select avatar'

@@ -4,5 +4,6 @@ export default {
       address: 'Address',
       passphrase: 'passphrase'
     }
-  })
+  }),
+  validateAddress: jest.fn(() => true)
 }
