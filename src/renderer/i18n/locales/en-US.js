@@ -73,7 +73,18 @@ export default {
   },
 
   PASSPHRASE_VERIFICATION: {
-    WORD_LABEL: 'The {position}th word'
+    WORD_LABEL_1: 'The 1st word',
+    WORD_LABEL_2: 'The 2nd word',
+    WORD_LABEL_3: 'The 3rd word',
+    WORD_LABEL_4: 'The 4th word',
+    WORD_LABEL_5: 'The 5th word',
+    WORD_LABEL_6: 'The 6th word',
+    WORD_LABEL_7: 'The 7th word',
+    WORD_LABEL_8: 'The 8th word',
+    WORD_LABEL_9: 'The 9th word',
+    WORD_LABEL_10: 'The 10th word',
+    WORD_LABEL_11: 'The 11th word',
+    WORD_LABEL_12: 'The 12th word'
   },
 
   PAGES: {
