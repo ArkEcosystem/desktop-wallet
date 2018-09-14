@@ -100,6 +100,10 @@ export default {
     }
   },
 
+  created () {
+    this.$store.dispatch('announcements/fetch')
+  },
+
   methods: {
     redirect (name) {
       this.isSettingsVisible = false

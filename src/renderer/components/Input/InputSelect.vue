@@ -83,12 +83,10 @@ export default {
     }
   },
 
-  data () {
-    return {
-      isFocused: false,
-      optionValue: this.value
-    }
-  },
+  data: vm => ({
+    isFocused: false,
+    optionValue: vm.value
+  }),
 
   computed: {
     // When the text of the option is empty the label/placeholder is shown instead by the MenuHandler
@@ -122,6 +120,13 @@ export default {
       }
 
       return ''
+    }
+  },
+
+  watch: {
+    value (val) {
+      this.optionValue = val
+      this.emitInput()
     }
   },
 

@@ -40,21 +40,19 @@
 
               <div class="flex mb-5">
                 <InputSelect
+                  v-model="language"
                   :items="languages"
-                  :value="language"
                   name="language"
                   label="Language"
                   class="flex-1 mr-2"
-                  @input="selectLanguage"
                 />
 
                 <InputSelect
+                  v-model="currency"
                   :items="currencies"
-                  :value="schema.currency"
                   name="currency"
                   label="Currency"
                   class="flex-1"
-                  @input="selectCurrency"
                 />
               </div>
 
@@ -130,7 +128,7 @@
 </template>
 
 <script>
-import { I18N, NETWORKS, MARKET } from '@config'
+import { I18N, MARKET } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
@@ -173,6 +171,14 @@ export default {
         this.selectLanguage(language)
       }
     },
+    currency: {
+      get () {
+        return this.$store.getters['session/currency']
+      },
+      set (currency) {
+        this.selectCurrency(currency)
+      }
+    },
     theme: {
       get () {
         return this.$store.getters['session/theme']
@@ -191,20 +197,23 @@ export default {
       }, {})
     },
     networks () {
-      return NETWORKS.map(network => network.id)
+      return this.$store.getters['network/all']
     }
   },
 
+  // Reuse the settings of the current profile
+  // Or get defaults
   created () {
-    // Use the default language TODO waiting to store
-    // this.selectLanguage(this.language)
+    this.schema.background = this.background
+    this.schema.language = this.language
+    this.schema.currency = this.currency
+    this.schema.theme = this.theme
   },
 
   methods: {
     async create () {
-      const profile = new Profile(this.schema)
-      await this.$store.dispatch('profiles/create', profile)
-      await this.$store.dispatch('session/set', { profileId: profile.id })
+      const { id } = await this.$store.dispatch('profile/create', this.schema)
+      await this.$store.dispatch('session/setProfileId', id)
       this.$router.push({ name: 'dashboard' })
     },
 
@@ -218,19 +227,17 @@ export default {
 
     async selectBackground (background) {
       this.schema.background = background
-      // TODO the background should be restored when cancelling the profile creation
-      await this.$store.dispatch('session/set', { background })
+      await this.$store.dispatch('session/setBackground', background)
     },
 
     selectCurrency (currency) {
       this.schema.currency = currency
     },
 
-    async selectLanguage (language) {
+    selectLanguage (language) {
       this.schema.language = language
       this.$i18n.locale = language
-      // TODO the languge should be restored when cancelling the profile creation
-      await this.$store.dispatch('session/set', { language })
+      this.$store.dispatch('session/setLanguage', language)
     },
 
     selectNetwork (network) {
@@ -239,8 +246,7 @@ export default {
 
     async selectTheme (theme) {
       this.schema.theme = theme
-      // TODO the theme should be restored when cancelling the profile creation
-      await this.$store.dispatch('session/set', { theme })
+      await this.$store.dispatch('session/setTheme', theme)
     }
   },
 

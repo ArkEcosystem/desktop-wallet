@@ -1,26 +1,44 @@
-import * as types from '../mutation-types'
+import BaseModule from '../base'
+import { isEmpty } from 'lodash'
+import { NETWORKS } from '@config'
+import NetworkModel from '@/models/network'
+import { client } from '@/plugins/api-client'
+import alertEvents from '@/plugins/alert-events'
+import i18n from '@/i18n'
 
-export default {
-  namespaced: true,
-
-  state: {
-    defaults: []
-  },
-
+export default new BaseModule(NetworkModel, {
   mutations: {
-    [types.SET_NETWORK_DEFAULTS] (state, value) {
-      state.defaults = value
+    SET_ALL (state, value) {
+      state.all = value
     }
   },
 
   actions: {
-    setDefaults ({ commit }, value) {
-      commit(types.SET_NETWORK_DEFAULTS, value)
-    }
-  },
+    load ({ commit, getters }) {
+      if (!isEmpty(getters.all)) return
 
-  getters: {
-    defaults: state => state.defaults,
-    byId: state => id => state.defaults.find(network => network.id === id)
+      commit('SET_ALL', NETWORKS)
+    },
+
+    async updateCurrentNetworkConfig ({ dispatch, rootGetters }) {
+      const api = client.resource('loader')
+      const currentNetwork = rootGetters['session/currentNetwork']
+
+      try {
+        const response = await api.status()
+        const data = response.data.network || response.data
+
+        dispatch('update', {
+          ...currentNetwork,
+          ...data
+        })
+      } catch (error) {
+        console.error(error)
+        alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
+          name: 'configuration',
+          msg: error.message
+        }))
+      }
+    }
   }
-}
+})

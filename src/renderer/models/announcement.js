@@ -1,40 +1,22 @@
 import trunc from 'trunc-html'
-export default class Announcement {
-  static create (data) {
-    const announcement = new Announcement()
+import BaseModel from './base'
 
-    Object.defineProperties(announcement, Announcement.marshalDataToProperties(data))
-
-    return announcement
-  }
-
-  static marshalDataToProperties (data) {
-    return {
-      guid: {
-        enumerable: true,
-        value: data.guid
-      },
-      date: {
-        enumerable: true,
-        value: data.isoDate
-      },
-      title: {
-        enumerable: true,
-        value: data.title
-      },
-      summary: {
-        enumerable: true,
-        value: trunc(data['content:encoded'], 300).text
-      },
-      url: {
-        enumerable: true,
-        value: data.link
-      },
-      isRead: {
-        enumerable: true,
-        writable: true,
-        value: false
-      }
+export default new BaseModel({
+  type: 'object',
+  properties: {
+    guid: {},
+    date: {
+      format: (data) => data.isoDate
+    },
+    title: {},
+    summary: {
+      format: (data) => trunc(data['content:encoded'], 300).text
+    },
+    url: {
+      format: (data) => data.link
+    },
+    isRead: {
+      format: () => false
     }
   }
-}
+})

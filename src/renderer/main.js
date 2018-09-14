@@ -11,17 +11,13 @@ import router from './router'
 import store from './store'
 import mixins from '@/mixins'
 
-import { AlertPlugin } from '@/components/AlertMessage'
-
-import { client } from '@/plugins/api-client'
-
-if (!process.env.IS_WEB) {
-  Vue.use(require('vue-electron'))
-}
+import apiClient from '@/plugins/api-client'
+import alertEvents from '@/plugins/alert-events'
+import eventBus from '@/plugins/event-bus'
 
 Vue.config.productionTip = false
 Vue.http = Vue.prototype.$http = axios
-Vue.prototype.$client = client
+Vue.prototype.$eventBus = eventBus
 
 Vue.use(VueVuelidateJsonschema)
 Vue.use(Vuelidate)
@@ -30,7 +26,8 @@ Vue.use(VTooltip, {
   defaultHtml: false,
   defaultContainer: '#app'
 })
-Vue.use(AlertPlugin)
+Vue.use(alertEvents)
+Vue.use(apiClient)
 
 Vue.mixin(mixins)
 

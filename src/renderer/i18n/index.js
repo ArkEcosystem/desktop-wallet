@@ -6,7 +6,7 @@ Vue.use(VueI18n)
 
 const messages = {}
 
-const messagesContext = require.context('@/i18n/locales', true, /\.js$/)
+const messagesContext = require.context('./locales', true, /\.js$/)
 
 I18N.enabledLocales.forEach(locale => {
   messages[locale] = messagesContext(`./${locale}.js`).default
@@ -15,7 +15,7 @@ I18N.enabledLocales.forEach(locale => {
 export default new VueI18n({
   locale: I18N.defaultLocale,
   fallbackLocale: I18N.defaultLocale,
-  dateTimeFormats: require('@/i18n/date-time-formats').default,
-  numberFormats: require('@/i18n/number-formats').default,
+  dateTimeFormats: require('./date-time-formats').default,
+  numberFormats: require('./number-formats').default,
   messages
 })

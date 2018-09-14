@@ -1,7 +1,7 @@
 <template>
   <button
     class="ButtonClose float-right leading-none -m-2 ml-4 rounded-lg"
-    @click="onClick"
+    @click="emitClick"
   >
     <SvgIcon
       class="ButtonClose__cross fill-current text-white"
@@ -20,22 +20,22 @@ export default {
     SvgIcon
   },
 
-  props: {
-    onClick: {
-      type: Function,
-      required: true
+  methods: {
+    emitClick () {
+      this.$emit('click')
     }
   }
 }
 </script>
 
 <style scoped>
-  .ButtonClose {
-    width: 35px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .ButtonClose:hover {
-    background: rgba(0, 0, 0, 0.1);
-  }
+.ButtonClose {
+  width: 35px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ButtonClose:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
 </style>

@@ -2,34 +2,44 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-
-import apiClient from '@/plugins/api-client'
+import { pullAll, keys } from 'lodash'
 
 import AnnouncementsModule from '@/store/modules/announcements'
-import MarketDataModule from '@/store/modules/market-data'
+import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
-import ProfilesModule from '@/store/modules/profiles'
+import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
+import TimerModule from '@/store/modules/timer'
 
 Vue.use(Vuex)
+
+const modules = {
+  market: MarketModule,
+  announcements: AnnouncementsModule,
+  network: NetworkModule,
+  profile: ProfileModule,
+  session: SessionModule,
+  timer: TimerModule
+}
+
+const ignoreModules = [
+  'timer'
+]
 
 const vuexPersist = new VuexPersistence({
   strictMode: process.env.NODE_ENV !== 'production',
   asyncStorage: true,
-  storage: localforage
+  storage: localforage,
+  modules: pullAll(keys(modules), ignoreModules)
 })
 
 export default new Vuex.Store({
-  modules: {
-    announcements: AnnouncementsModule,
-    marketData: MarketDataModule,
-    network: NetworkModule,
-    profiles: ProfilesModule,
-    session: SessionModule
-  },
+  modules,
   strict: process.env.NODE_ENV !== 'production',
   mutations: {
     RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION
   },
-  plugins: [vuexPersist.plugin, apiClient]
+  plugins: [
+    vuexPersist.plugin
+  ]
 })

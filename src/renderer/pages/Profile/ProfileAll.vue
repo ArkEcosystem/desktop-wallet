@@ -60,7 +60,7 @@ export default {
   name: 'ProfileAll',
 
   computed: {
-    ...mapGetters({ profiles: 'profiles/all' }),
+    ...mapGetters({ profiles: 'profile/all' }),
     addProfileImagePath () {
       return 'pages/new-profile-avatar.svg'
     }

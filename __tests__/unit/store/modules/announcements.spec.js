@@ -1,5 +1,4 @@
 import announcementStore from '@/store/modules/announcements'
-import Announcement from '@/models/announcement'
 
 describe('the announcementStore mutations', () => {
   it('saves announcements to state', () => {
@@ -18,7 +17,6 @@ describe('the announcementStore mutations', () => {
     const firstAnnouncement = state.announcements[0]
     const firstAnnouncementFromFeed = announcementsFromFeed[0]
 
-    expect(firstAnnouncement).toBeInstanceOf(Announcement)
     expect(firstAnnouncement.date).toEqual(firstAnnouncementFromFeed.isoDate)
     expect(firstAnnouncement.guid).toEqual(firstAnnouncementFromFeed.guid)
     expect(firstAnnouncement.title).toEqual(firstAnnouncementFromFeed.title)

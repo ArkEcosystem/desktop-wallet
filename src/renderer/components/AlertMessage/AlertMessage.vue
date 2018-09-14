@@ -4,36 +4,40 @@
     class="AlertMessage absolute z-10 max-w-1/2 min-w-1/4 rounded-lg inline pin-b pin-l m-4 p-4 text-white">
     <div class="message font-bold">
       <ButtonClose
-        :on-click="showNext"
-        aclass="dismiss float-right p-10px ml-4 cursor-pointer select-none">x</ButtonClose>
+        class="dismiss float-right p-10px ml-4 cursor-pointer select-none"
+        @click="showNext" />
       {{ alert ? alert.message : '&nbsp;' }}
     </div>
   </div>
 </template>
 
 <script>
-import { AlertEvents } from '@/components/AlertMessage'
 import { ButtonClose } from '@/components/Button'
 
 export default {
   name: 'AlertMessage',
+
   components: {
     ButtonClose
   },
+
   props: {
     duration: {
       type: Number,
       default: 4000
     }
   },
+
   data: () => ({
     queue: [],
     timer: null,
     alert: null
   }),
+
   mounted () {
-    AlertEvents.$on('alert', this.queueAlert)
+    this.$eventBus.$on('alert', this.queueAlert)
   },
+
   methods: {
     queueAlert (alert) {
       this.queue.push(alert)
@@ -42,6 +46,7 @@ export default {
         this.showNext()
       }
     },
+
     showNext () {
       clearTimeout(this.timer)
 

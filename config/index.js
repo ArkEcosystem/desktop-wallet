@@ -16,10 +16,17 @@ exports.I18N = {
   ]
 }
 
+exports.INTERVALS = {
+  'short': 30000, // 30 seconds
+  'medium': 60000, // 1 minute
+  'long': 180000 // 3 minute
+}
+
 exports.MARKET = {
   source: {
     baseUrl: 'https://min-api.cryptocompare.com'
   },
+  defaultCurrency: 'USD',
   currencies: [
     'BTC',
     'AUD',

@@ -238,9 +238,7 @@ export default {
   computed: {
     // TODO pending until having the new model/db system
     network () {
-      return {
-        pubKeyHash: 23
-      }
+      return this.$store.getters['session/currentNetwork']
     },
     /**
      * Mixes words from the passphrases of all the generated wallets
@@ -313,7 +311,7 @@ export default {
       // Delay the generation to play an animation
       setTimeout(() => {
         for (let i = 0; i < 4; i++) {
-          const { address, passphrase } = WalletService.generate(this.network.pubKeyHash)
+          const { address, passphrase } = WalletService.generate(this.network.version)
           this.$set(this.wallets, address, passphrase)
         }
 

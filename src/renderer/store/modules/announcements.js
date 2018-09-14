@@ -1,7 +1,6 @@
-import { SAVE_ANNOUNCEMENTS, MARK_ANNOUNCEMENT_AS_READ } from '../mutation-types'
 import Announcement from '@/models/announcement'
 import feedService from '@/services/feed'
-import { ANNOUNCEMENTS } from '@config'
+import { ANNOUNCEMENTS as source } from '@config'
 import { unionBy } from 'lodash'
 
 export default {
@@ -24,13 +23,13 @@ export default {
   },
 
   mutations: {
-    [SAVE_ANNOUNCEMENTS] (state, items) {
-      const announcementsFromFeedItems = items.map(item => Announcement.create(item))
+    SAVE_ANNOUNCEMENTS (state, items) {
+      const announcementsFromFeedItems = items.map(item => Announcement.deserialize(item))
 
       state.announcements = unionBy(state.announcements, announcementsFromFeedItems, 'guid')
     },
 
-    [MARK_ANNOUNCEMENT_AS_READ] (state, readAnnouncement) {
+    MARK_ANNOUNCEMENT_AS_READ (state, readAnnouncement) {
       let readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
 
       state.announcements[readAnnouncementIndex].isRead = true
@@ -39,13 +38,13 @@ export default {
 
   actions: {
     markAsRead ({ commit }, announcement) {
-      commit(MARK_ANNOUNCEMENT_AS_READ, announcement)
+      commit('MARK_ANNOUNCEMENT_AS_READ', announcement)
     },
 
-    async syncAnnouncements ({ commit }) {
-      let items = await feedService.fetchItems(ANNOUNCEMENTS.rssUrl) // TODO: can move URL into FeedService
+    async fetch ({ commit }) {
+      let items = await feedService.fetchItems(source.rssUrl) // TODO: can move URL into FeedService
 
-      commit(SAVE_ANNOUNCEMENTS, items)
+      commit('SAVE_ANNOUNCEMENTS', items)
     }
   }
 }

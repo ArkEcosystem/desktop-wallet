@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Vue from 'vue'
-import { AlertMessage, AlertPlugin, AlertEvents } from '@/components/AlertMessage'
+import AlertMessage from '@/components/AlertMessage'
 
 describe('AlertMessage', () => {
   let wrapper
@@ -63,45 +62,5 @@ describe('AlertMessage', () => {
     expect(duration).toBeObject()
     expect(duration.type).toBe(Number)
     expect(duration.default).toBe(4000)
-  })
-})
-
-describe('AlertPlugin', () => {
-  it('should has an install property', () => {
-    expect(AlertPlugin).toHaveProperty('install')
-  })
-
-  it('should register all methods', () => {
-    Vue.use(AlertPlugin)
-
-    expect(Vue.error).toBeFunction()
-    expect(Vue.success).toBeFunction()
-    expect(Vue.info).toBeFunction()
-    expect(Vue.warn).toBeFunction()
-    expect(Vue.prototype.$error).toBeFunction()
-    expect(Vue.prototype.$success).toBeFunction()
-    expect(Vue.prototype.$info).toBeFunction()
-    expect(Vue.prototype.$warn).toBeFunction()
-  })
-})
-
-describe('AlertEvents', () => {
-  it('should trigger an event', done => {
-    Vue.use(AlertPlugin)
-
-    const vue = new Vue()
-
-    AlertEvents.$on('alert', async alert => {
-      expect(alert).toBeObject()
-      expect(alert.message).toBe('TEST ALERT')
-      expect(alert.type).toBe('error')
-      expect(alert.duration).toBe(6000)
-      done()
-    })
-
-    vue.$error('TEST ALERT', 6000)
-    AlertEvents.$emit = jest.fn()
-    vue.$error('TEST ALERT', 6000)
-    expect(AlertEvents.$emit).toHaveBeenCalledTimes(1)
   })
 })

@@ -4,8 +4,8 @@
     id="app"
     :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
     :class="{
-      'theme-dark': useDarkTheme,
-      'theme-light': !useDarkTheme,
+      'theme-dark': hasDarkTheme,
+      'theme-light': !hasDarkTheme,
       'background-image': background
     }"
     class="bg-theme-page text-theme-page-text font-sans flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
@@ -29,8 +29,6 @@ import '@/styles/style.css'
 import { AppSidemenu, AppFooter } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
-import timerService from '@/services/timer-service'
-import MarketDataService from '@/services/market-data-service'
 
 export default {
   name: 'DesktopWallet',
@@ -49,11 +47,11 @@ export default {
     background () {
       return this.$store.getters['session/background']
     },
-    useDarkTheme () {
-      return this.$store.getters['session/theme'] === 'dark'
+    hasDarkTheme () {
+      return this.$store.getters['session/hasDarkTheme']
     },
     hasAnyProfile () {
-      return !!this.$store.getters['profiles/all'].length
+      return !!this.$store.getters['profile/all'].length
     }
   },
 
@@ -68,15 +66,6 @@ export default {
     this.isReady = true
 
     await this.loadNotEssential()
-    this.startTimers()
-  },
-
-  async beforeDestroy () {
-    timerService.stop(MarketDataService.timerName)
-  },
-
-  async destroyed () {
-    await this.$store.dispatch('session/reset')
   },
 
   methods: {
@@ -85,12 +74,7 @@ export default {
      * @return {void}
      */
     async loadEssential () {
-      await this.$store.dispatch('profiles/load')
-      await this.$store.dispatch('network/setDefaults', config.NETWORKS)
-      await this.$store.dispatch('session/load')
-      await this.$store.dispatch('session/ensure')
-      // Reset the session now: the async nature of IndexedDB means that maybe
-      // it wasn't reset during the `destroyed` hook
+      await this.$store.dispatch('network/load', config.NETWORKS)
       await this.$store.dispatch('session/reset')
     },
 
@@ -99,15 +83,9 @@ export default {
      * delay the application
      * @return {void}
      */
-    loadNotEssential () {
-    },
-
-    startTimers () {
-      this.$store.dispatch('marketData/load')
-
-      timerService.start(MarketDataService.timerName, () => {
-        this.$store.dispatch('marketData/sync')
-      }, 60000)
+    async loadNotEssential () {
+      await this.$store.dispatch('timer/start')
+      await this.$store.dispatch('market/load')
     }
   }
 }

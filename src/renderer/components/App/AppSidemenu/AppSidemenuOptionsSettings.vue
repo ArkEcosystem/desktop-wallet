@@ -30,7 +30,7 @@
       >
         <ButtonSwitch
           ref="dark-switch"
-          :is-active="isDarkTheme"
+          :is-active="hasDarkTheme"
           class="theme-dark"
           background-color="#414767"
           @change="setTheme"
@@ -59,15 +59,15 @@ export default {
     currencies () {
       return MARKET.currencies
     },
-    isDarkTheme () {
-      return this.sessionTheme === 'dark'
+    hasDarkTheme () {
+      return this.$store.getters['session/hasDarkTheme']
     },
     sessionCurrency: {
       get () {
         return this.$store.getters['session/currency']
       },
       set (currency) {
-        this.$store.dispatch('session/set', { currency })
+        this.$store.dispatch('session/setCurrency', currency)
       }
     },
     sessionTheme: {
@@ -75,7 +75,7 @@ export default {
         return this.$store.getters['session/theme']
       },
       set (theme) {
-        this.$store.dispatch('session/set', { theme })
+        this.$store.dispatch('session/setTheme', theme)
       }
     }
   },
