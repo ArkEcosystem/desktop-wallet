@@ -5,6 +5,7 @@ import localforage from 'localforage'
 import { pullAll, keys } from 'lodash'
 
 import AnnouncementsModule from '@/store/modules/announcements'
+import AppModule from '@/store/modules/app'
 import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
 import ProfileModule from '@/store/modules/profile'
@@ -14,8 +15,9 @@ import TimerModule from '@/store/modules/timer'
 Vue.use(Vuex)
 
 const modules = {
-  market: MarketModule,
   announcements: AnnouncementsModule,
+  app: AppModule,
+  market: MarketModule,
   network: NetworkModule,
   profile: ProfileModule,
   session: SessionModule,
