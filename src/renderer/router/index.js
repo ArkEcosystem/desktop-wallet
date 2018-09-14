@@ -52,6 +52,11 @@ const router = new Router({
       component: require('@/pages/Wallets').default
     },
     {
+      path: '/wallets/import',
+      name: 'wallet-import',
+      component: require('@/pages/Wallet/WalletImport').default
+    },
+    {
       path: '/wallets/new',
       name: 'wallet-new',
       component: require('@/pages/Wallet/WalletNew').default

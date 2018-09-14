@@ -88,6 +88,11 @@ export default {
   },
 
   PAGES: {
+    DASHBOARD: {
+      ALL_WALLETS: 'All wallets',
+      CREATE_WALLET: 'Create wallet',
+      IMPORT_WALLET: 'Import wallet'
+    },
     PROFILE_ALL: {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
