@@ -53,7 +53,7 @@ export default {
 
       try {
         const { data } = await api.all()
-        const { delegates } = await data
+        const delegates = data.delegates || data
         this.delegates = delegates
       } catch (error) {
         this.$error(this.$t('COMMON.FAILED_FETCH', {

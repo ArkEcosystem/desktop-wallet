@@ -108,12 +108,11 @@ export default {
       dispatch('setLanguage', profile.language)
       dispatch('setCurrency', profile.currency)
 
-      const { server } = rootGetters['network/byId'](profile.network)
+      const { server, apiVersion } = rootGetters['network/byId'](profile.network)
 
-      // TODO: client bug
-      // client.setVersion(apiVersion)
-      client.setVersion(1)
+      client.setVersion(apiVersion)
       client.setConnection(server)
+      client.http.headers['API-Version'] = apiVersion
     },
 
     reset ({ commit }) {

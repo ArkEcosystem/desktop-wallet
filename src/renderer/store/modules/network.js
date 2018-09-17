@@ -21,11 +21,13 @@ export default new BaseModule(NetworkModel, {
     },
 
     async updateCurrentNetworkConfig ({ dispatch, rootGetters }) {
-      const api = client.resource('loader')
+      const resource = client.version === 1 ? 'loader' : 'node'
+      const api = client.resource(resource)
       const currentNetwork = rootGetters['session/currentNetwork']
 
       try {
-        const response = await api.status()
+        const endpoint = client.version === 1 ? 'status' : 'configuration'
+        const response = await api[endpoint]()
         const data = response.data.network || response.data
 
         dispatch('update', {
