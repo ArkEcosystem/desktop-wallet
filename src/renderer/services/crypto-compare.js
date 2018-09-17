@@ -3,6 +3,7 @@ import { MARKET } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
 import dayjs from 'dayjs'
+import { capitalize } from 'lodash'
 
 class CryptoCompare {
   /**
@@ -78,6 +79,18 @@ class CryptoCompare {
    */
   async historicPerYear (token, currency) {
     return this.__fetchHistoricalData(token, currency, 365)
+  }
+
+  /**
+   * Returns the price according to the type
+   * @param {String} type
+   * @param {String} token
+   * @param {String} currency
+   * @return {(Object|null)} Return API response data or null on failure
+   */
+  async historicByType (type, token, currency) {
+    const method = `historicPer${capitalize(type)}`
+    return this[method](token, currency)
   }
 
   /**

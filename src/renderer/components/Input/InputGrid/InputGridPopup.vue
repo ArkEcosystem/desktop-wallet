@@ -82,7 +82,7 @@ export default {
       type: String,
       required: false,
       default () {
-        return this.$i18n.t('InputGrid.popupHeader')
+        return this.$t('InputGrid.popupHeader')
       }
     }
   },

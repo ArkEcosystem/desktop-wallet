@@ -87,7 +87,7 @@ export default {
       type: String,
       required: false,
       default () {
-        return this.$i18n.t('PASSPHRASE_INPUT.LABEL')
+        return this.$t('PASSPHRASE_INPUT.LABEL')
       }
     },
     name: {
@@ -117,11 +117,11 @@ export default {
 
       if (this.$v.model.$dirty) {
         if (!this.$v.model.required) {
-          error = this.$i18n.t('PASSPHRASE_INPUT.ERROR.REQUIRED')
+          error = this.$t('PASSPHRASE_INPUT.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
-          error = this.$i18n.t('PASSPHRASE_INPUT.ERROR.NOT_VALID')
+          error = this.$t('PASSPHRASE_INPUT.ERROR.NOT_VALID')
         } else if (!this.$v.model.matchAddress) {
-          error = this.$i18n.t('PASSPHRASE_INPUT.ERROR.NOT_MATCH')
+          error = this.$t('PASSPHRASE_INPUT.ERROR.NOT_MATCH')
         }
       }
 

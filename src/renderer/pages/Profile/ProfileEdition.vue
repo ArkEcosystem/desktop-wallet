@@ -214,7 +214,7 @@ export default {
     },
     languages () {
       return I18N.enabledLocales.reduce((all, locale) => {
-        all[locale] = this.$i18n.t(`LANGUAGES.${locale}`)
+        all[locale] = this.$t(`LANGUAGES.${locale}`)
         return all
       }, {})
     },

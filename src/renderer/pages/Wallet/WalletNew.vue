@@ -261,8 +261,8 @@ export default {
     },
     wordPositionLabel () {
       return this.ensureEntirePassphrase
-        ? this.$i18n.t('PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.ALL_WORDS')
-        : this.$i18n.t('PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS', { words: this.wordPositions.join(', ') })
+        ? this.$t('PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.ALL_WORDS')
+        : this.$t('PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS', { words: this.wordPositions.join(', ') })
     }
   },
 

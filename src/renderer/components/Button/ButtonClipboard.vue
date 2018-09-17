@@ -45,7 +45,7 @@ export default {
         translationKey = this.isCopying ? 'DONE' : 'COPY_TO_CLIPBOARD'
       }
 
-      return this.$i18n.t(`BUTTON_CLIPBOARD.${translationKey}`)
+      return this.$t(`BUTTON_CLIPBOARD.${translationKey}`)
     }
   },
 

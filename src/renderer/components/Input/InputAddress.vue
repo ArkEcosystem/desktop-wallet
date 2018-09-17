@@ -65,7 +65,7 @@ export default {
       type: String,
       required: false,
       default () {
-        return this.$i18n.t('INPUT_ADDRESS.LABEL')
+        return this.$t('INPUT_ADDRESS.LABEL')
       }
     },
     name: {
@@ -94,9 +94,9 @@ export default {
 
       if (this.$v.model.$dirty) {
         if (!this.$v.model.required) {
-          error = this.$i18n.t('INPUT_ADDRESS.ERROR.REQUIRED')
+          error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
-          error = this.$i18n.t('INPUT_ADDRESS.ERROR.NOT_VALID')
+          error = this.$t('INPUT_ADDRESS.ERROR.NOT_VALID')
         }
       }
 

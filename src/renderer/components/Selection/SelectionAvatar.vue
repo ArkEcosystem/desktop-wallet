@@ -36,7 +36,7 @@ export default {
   computed: {
     popupHeaderText () {
       return this.enablePopup
-        ? this.$i18n.t('SELECTION_AVATAR.POPUP_HEADER')
+        ? this.$t('SELECTION_AVATAR.POPUP_HEADER')
         : null
     }
   }
