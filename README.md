@@ -6,6 +6,13 @@
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/new-desktop-wallet.svg?style=flat-square)](https://github.com/ArkEcosystem/new-desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
+## Requirements
+
+In Ubuntu the development files of `libudev` are necessary:
+```
+sudo apt-get install libudev-dev
+```
+
 ## Installation
 
 ```bash
