@@ -1,5 +1,4 @@
 export default {
-
   COMMON: {
     AVATAR: 'Avatar',
     BACK: 'Back',
@@ -19,6 +18,11 @@ export default {
     'en-US': 'English',
     'es-ES': 'Spanish',
     'pt-BR': 'Portugues - Brazil'
+  },
+
+  MARKET: {
+    MARKET: 'Market',
+    HISTORICAL_DATA: 'Historical data'
   },
 
   BUTTON_CLIPBOARD: {
@@ -178,5 +182,4 @@ export default {
       }
     }
   }
-
 }
