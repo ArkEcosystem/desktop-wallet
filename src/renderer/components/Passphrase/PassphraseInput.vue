@@ -25,17 +25,18 @@
       >
 
       <button
+        :title="$t(passphraseIsVisible ? 'PASSPHRASE_INPUT.HIDE' : 'PASSPHRASE_INPUT.SHOW')"
         class="PassphraseInput__visibility-button flex flex-no-shrink text-grey-dark hover:text-blue mr-2"
         @click="toggleVisible"
       >
-        <!-- TODO replace the icons when available -->
         <SvgIcon
-          :name="passphraseIsVisible ? 'update' : 'settings'"
+          :name="passphraseIsVisible ? 'passphrase-hide' : 'passphrase-show'"
           view-box="0 0 20 20"
         />
       </button>
 
       <button
+        :title="$t('PASSPHRASE_INPUT.QR')"
         class="PassphraseInput__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
         @click="openQR"
       >

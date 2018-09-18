@@ -42,11 +42,12 @@ export default {
   },
 
   INPUT_ADDRESS: {
-    LABEL: 'Address',
     ERROR: {
       NOT_VALID: 'The address is not valid',
       REQUIRED: 'The address is required'
-    }
+    },
+    LABEL: 'Address',
+    QR: 'Scan the QR code'
   },
 
   SELECTION_AVATAR: {
@@ -71,12 +72,15 @@ export default {
   },
 
   PASSPHRASE_INPUT: {
-    LABEL: 'Passphrase',
     ERROR: {
       NOT_MATCH: 'The passphrase does not match the address',
       NOT_VALID: 'The passphrase is not valid',
       REQUIRED: 'The passphrase is required'
-    }
+    },
+    HIDE: 'Hide the passphrase',
+    LABEL: 'Passphrase',
+    QR: 'Scan the QR code',
+    SHOW: 'Show the passphrase'
   },
 
   PASSPHRASE_VERIFICATION: {

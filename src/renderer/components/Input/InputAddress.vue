@@ -24,6 +24,7 @@
         @focus="onFocus"
       >
       <button
+        :title="$t('INPUT_ADDRESS.QR')"
         class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
         @click="openQR"
       >
