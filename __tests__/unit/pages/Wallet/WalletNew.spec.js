@@ -6,11 +6,12 @@ describe('pages > WalletNew', () => {
   const mountPage = () => {
     return mount(WalletNew, {
       mocks: {
+        schema: {},
         $v: {
           step1: {},
           step3: {},
           step4: {},
-          wallet: {
+          schema: {
             name: {},
             isSendingEnabled: {}
           }

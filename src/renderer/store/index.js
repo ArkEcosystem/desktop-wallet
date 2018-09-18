@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
+import { vuexClient } from '@/plugins/api-client'
 import { pullAll, keys } from 'lodash'
 
 import AnnouncementsModule from '@/store/modules/announcements'
@@ -10,6 +11,7 @@ import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
 import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
+import WalletModule from '@/store/modules/wallet'
 import TimerModule from '@/store/modules/timer'
 
 Vue.use(Vuex)
@@ -21,6 +23,7 @@ const modules = {
   network: NetworkModule,
   profile: ProfileModule,
   session: SessionModule,
+  wallet: WalletModule,
   timer: TimerModule
 }
 
@@ -42,6 +45,7 @@ export default new Vuex.Store({
     RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION
   },
   plugins: [
-    vuexPersist.plugin
+    vuexPersist.plugin,
+    vuexClient
   ]
 })

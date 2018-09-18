@@ -1,5 +1,4 @@
 import { I18N, MARKET } from '@config'
-import { client } from '@/plugins/api-client'
 
 export default {
   namespaced: true,
@@ -99,7 +98,7 @@ export default {
       commit('SET_AVATAR', value)
     },
 
-    load ({ getters, rootGetters, dispatch }) {
+    load ({ getters, dispatch }) {
       const profile = getters['currentProfile']
       if (!profile) return
 
@@ -107,12 +106,6 @@ export default {
       dispatch('setTheme', profile.theme)
       dispatch('setLanguage', profile.language)
       dispatch('setCurrency', profile.currency)
-
-      const { server, apiVersion } = rootGetters['network/byId'](profile.network)
-
-      client.setVersion(apiVersion)
-      client.setConnection(server)
-      client.http.headers['API-Version'] = apiVersion
     },
 
     reset ({ commit }) {

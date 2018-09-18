@@ -79,7 +79,7 @@
                 class="py-4 w-full border-b border-dashed border-theme-line-separator"
               >
                 <a
-                  :class="{ 'WalletNew__wallets--selected': wallet.address === address }"
+                  :class="{ 'WalletNew__wallets--selected': schema.address === address }"
                   class="cursor-pointer text-theme-page-text"
                   @click="selectWallet(address, passphrase)"
                 >
@@ -112,7 +112,7 @@
                 class="py-2 px-4 rounded bg-grey-lighter"
               >
                 <ButtonClipboard
-                  :value="wallet.passphrase"
+                  :value="schema.passphrase"
                   class="text-grey-dark"
                 />
               </div>
@@ -133,11 +133,10 @@
 
             <div class="flex flex-col h-full w-full justify-around">
               <InputSwitch
+                v-model="ensureEntirePassphrase"
                 :label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
                 :text="$t('PAGES.WALLET_NEW.STEP3.VERIFY_ALL_WORDS')"
-                :is-active="wallet.ensureEntirePassphrase"
                 class="my-3"
-                @change="setEnsureEntirePassphrase"
               />
 
               <PassphraseVerification
@@ -163,15 +162,15 @@
 
               <!-- TODO check duplicate here when db store is available -->
               <InputText
-                v-model="wallet.name"
+                v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP4.NAME')"
-                :is-invalid="$v.wallet.name.$dirty && $v.wallet.name.$invalid"
+                :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
                 class="my-3"
                 name="name"
               />
 
               <InputText
-                v-model="wallet.address"
+                v-model="schema.address"
                 :label="$t('PAGES.WALLET_NEW.STEP4.ADDRESS')"
                 :is-read-only="true"
                 class="my-3"
@@ -179,11 +178,10 @@
               />
 
               <InputSwitch
+                v-model="schema.isSendingEnabled"
                 :label="$t('PAGES.WALLET_NEW.STEP4.OPERATIONS')"
                 :text="$t('PAGES.WALLET_NEW.STEP4.SENDING_ENABLED')"
-                :is-active="wallet.isSendingEnabled"
                 class="my-3"
-                @change="setSendingEnabled"
               />
             </div>
 
@@ -205,6 +203,7 @@ import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
+import Wallet from '@/models/wallet'
 
 export default {
   name: 'WalletNew',
@@ -221,24 +220,23 @@ export default {
     SvgIcon
   },
 
+  schema: Wallet.schema,
+
   data: () => ({
     isRefreshing: false,
     isPasspharaseVerified: false,
     ensureEntirePassphrase: false,
     step: 1,
-    wallets: {},
-    wallet: {
-      address: null,
-      passphrase: null,
-      name: '',
-      isSendingEnabled: true
-    }
+    wallets: {}
   }),
 
   computed: {
-    // TODO pending until having the new model/db system
     network () {
       return this.$store.getters['session/currentNetwork']
+    },
+
+    profileId () {
+      return this.$store.getters['session/profileId']
     },
     /**
      * Mixes words from the passphrases of all the generated wallets
@@ -250,9 +248,9 @@ export default {
       return flatten(passphrases.map(passphrase => passphrase.split(' ')))
     },
     passphraseWords () {
-      const passphrase = this.wallet.passphrase
+      const passphrase = this.schema.passphrase
       if (passphrase) {
-        return this.wallet.passphrase.split(' ')
+        return this.schema.passphrase.split(' ')
       }
       return []
     },
@@ -272,8 +270,11 @@ export default {
 
   methods: {
     async create () {
-      // TODO pending until having the new model/db system
-      // this.$router.push({ name: 'wallet' })
+      await this.$store.dispatch('wallet/create', {
+        ...this.schema,
+        profileId: this.profileId
+      })
+      this.$router.push({ name: 'wallets' })
     },
 
     moveTo (step) {
@@ -285,23 +286,15 @@ export default {
     },
 
     selectWallet (address, passphrase) {
-      this.wallet.address = address
-      this.wallet.passphrase = passphrase
-    },
-
-    setEnsureEntirePassphrase (ensureEntirePassphrase) {
-      this.ensureEntirePassphrase = ensureEntirePassphrase
-    },
-
-    setSendingEnabled (isSendingEnabled) {
-      this.wallet.isSendingEnabled = isSendingEnabled
+      this.schema.address = address
+      this.schema.passphrase = passphrase
     },
 
     refreshAddresses () {
       this.isRefreshing = true
 
-      this.wallet.address = null
-      this.wallet.passphrase = null
+      this.schema.address = null
+      this.schema.passphrase = null
       this.isPasspharaseVerified = false
 
       for (const [address] of Object.entries(this.wallets)) {
@@ -321,21 +314,12 @@ export default {
   },
 
   validations: {
-    step1: ['wallet.address'],
+    step1: ['schema.address'],
     step3: ['isPasspharaseVerified'],
-    step4: ['wallet.name'],
+    step4: ['schema.name'],
     isPasspharaseVerified: {
       required,
       isVerified: value => value
-    },
-    // TODO some restrictions may depend on model schema / constraints
-    wallet: {
-      address: {
-        required
-      },
-      name: {
-        required
-      }
     }
   }
 }
