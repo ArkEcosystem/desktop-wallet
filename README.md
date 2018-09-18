@@ -62,8 +62,11 @@ If you discover a security vulnerability within this project, please send an e-m
 
 ## Credits
 
-- [Juan A. Martín](https://github.com/j-a-m-l)
-- [All Contributors](../../../../contributors)
+ - [Juan A. Martín](https://github.com/j-a-m-l)
+ - [Lúcio Rubens](https://github.com/luciorubeens)
+ - [Alex Barnsley](https://github.com/alexbarnsley)
+ - [Mario Vega](https://github.com/mvega3)
+ - [All Contributors](../../contributors)
 
 ## License
 
