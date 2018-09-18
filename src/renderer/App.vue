@@ -86,7 +86,7 @@ export default {
     async loadNotEssential () {
       await this.$store.dispatch('timer/start')
       await this.$store.dispatch('market/load')
-      await this.$store.dispatch('announcements/sync')
+      await this.$store.dispatch('announcements/fetch')
     }
   }
 }

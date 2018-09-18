@@ -91,7 +91,7 @@ export default {
   }),
 
   computed: {
-    ...mapGetters({ unreadAnnouncements: 'announcements/unreadAnnouncements' }),
+    ...mapGetters({ unreadAnnouncements: 'announcements/unread' }),
     showUnread () {
       return this.unreadAnnouncements.length > 0
     },
