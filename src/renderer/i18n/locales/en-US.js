@@ -145,6 +145,11 @@ export default {
         TITLE: 'Wallet design'
       }
     },
+    WALLET: {
+      TRANSACTIONS: 'Transactions',
+      DELEGATES: 'Delegates',
+      STATISTICS: 'Statistics'
+    },
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {

@@ -2,33 +2,41 @@
   <div id="wrapper">
     <main class="h-full rounded-lg">
       <WalletHeading :wallet="wallet"/>
-      <WalletNavigation
-        v-model="currentTab"
-        :tabs="tabs"
-      />
-      <component
-        :is="currentTab"
-        :wallet="wallet"
-      />
+      <MenuTab v-model="currentTab">
+        <MenuTabItem
+          v-for="tab in tabs"
+          :key="tab.component"
+          :label="tab.text"
+          :tab="tab.component"
+        >
+          <component
+            :is="tab.component"
+            :wallet="wallet" />
+        </MenuTabItem>
+      </MenuTab>
     </main>
   </div>
 </template>
 
 <script>
 import WalletHeading from '@/components/Wallet/WalletHeading/WalletHeading.vue'
-import WalletNavigation from '@/components/Wallet/WalletNavigation/WalletNavigation.vue'
 import WalletTransactions from '@/components/Wallet/WalletTransactions/WalletTransactions.vue'
 import WalletDelegates from '@/components/Wallet/WalletDelegates/WalletDelegates.vue'
 import WalletStatistics from '@/components/Wallet/WalletStatistics/WalletStatistics.vue'
+import { MenuTab, MenuTabItem } from '@/components/Menu'
 
 export default {
+  name: 'Wallets',
+
   components: {
     WalletHeading,
-    WalletNavigation,
     WalletTransactions,
     WalletDelegates,
-    WalletStatistics
+    WalletStatistics,
+    MenuTab,
+    MenuTabItem
   },
+
   data () {
     return {
       currentTab: 'WalletTransactions',
@@ -78,21 +86,35 @@ export default {
             amount: '80.00'
           }
         ]
-      },
-      tabs: [
+      }
+    }
+  },
+
+  computed: {
+    network () {
+      return this.$store.getters['session/currentNetwork']
+    },
+
+    tabs () {
+      const tabs = [
         {
           component: 'WalletTransactions',
-          text: 'Transactions'
+          text: this.$t('PAGES.WALLET.TRANSACTIONS')
         },
         {
           component: 'WalletDelegates',
-          text: 'Delegates'
-        },
-        {
-          component: 'WalletStatistics',
-          text: 'Statistics'
+          text: this.$t('PAGES.WALLET.DELEGATES')
         }
       ]
+
+      if (this.network.market && this.network.market.enabled) {
+        tabs.push({
+          component: 'WalletStatistics',
+          text: this.$t('PAGES.WALLET.STATISTICS')
+        })
+      }
+
+      return tabs
     }
   }
 }
