@@ -22,7 +22,10 @@ export default {
 
   MARKET: {
     MARKET: 'Market',
-    HISTORICAL_DATA: 'Historical data'
+    HISTORICAL_DATA: 'Historical data',
+    DAY: 'Day',
+    WEEK: 'Week',
+    MONTH: 'Month'
   },
 
   BUTTON_CLIPBOARD: {

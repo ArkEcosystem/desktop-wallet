@@ -1,5 +1,6 @@
 <template>
   <section class="MarketChart w-full">
+    <slot />
     <LineChart
       :chart-data="chartData"
       :options="options"
@@ -13,6 +14,13 @@ import cryptoCompare from '@/services/crypto-compare'
 
 export default {
   name: 'MarketChart',
+
+  provide () {
+    return {
+      changePeriod: this.changePeriod,
+      getPeriod: this.getPeriod
+    }
+  },
 
   components: {
     LineChart
@@ -84,6 +92,10 @@ export default {
       this.period = period
 
       this.renderChart()
+    },
+
+    getPeriod () {
+      return this.period
     }
   }
 }

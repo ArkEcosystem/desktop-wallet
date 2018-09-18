@@ -1,9 +1,20 @@
 <template>
-  <div>
-    Statistics
+  <div class="bg-white rounded-b-lg p-5">
+    <MarketChart>
+      <MarketChartButtons class="mb-5 text-right" />
+    </MarketChart>
   </div>
 </template>
 
 <script>
-export default {}
+import { MarketChart, MarketChartButtons } from '@/components/MarketChart'
+
+export default {
+  name: 'WalletStatistics',
+
+  components: {
+    MarketChart,
+    MarketChartButtons
+  }
+}
 </script>
