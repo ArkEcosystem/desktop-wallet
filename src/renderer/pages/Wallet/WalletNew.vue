@@ -198,7 +198,6 @@ import { flatten } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonClipboard } from '@/components/Button'
 import { InputSwitch, InputText } from '@/components/Input'
-import ListDivided from '@/components/ListDivided'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import SvgIcon from '@/components/SvgIcon'
@@ -212,7 +211,6 @@ export default {
     ButtonClipboard,
     InputSwitch,
     InputText,
-    ListDivided,
     MenuStep,
     MenuStepItem,
     PassphraseVerification,

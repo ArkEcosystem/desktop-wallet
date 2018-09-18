@@ -31,8 +31,25 @@
         <div
           v-for="wallet in wallets"
           :key="wallet.address"
+          class="py-8 w-full border-b border-dashed border-theme-line-separator"
         >
-          {{ wallet.address }}
+          <router-link
+            :to="{ name: 'wallet-show', params: { address: wallet.address } }"
+            class="font-semibold text-theme-header hover:no-underline flex flex-col pl-20"
+          >
+            <!-- TODO when the identicons are available -->
+
+            <span class="text-xl mb-1">
+              {{ wallet.name }}
+            </span>
+
+            <span class="text-2xl">
+              <!-- TODO balance -->
+              45
+              {{ wallet.balance }}
+              <!-- TODO display a +/- n ARK on recent transactions -->
+            </span>
+          </router-link>
         </div>
       </div>
     </div>
@@ -47,8 +64,11 @@ export default {
   },
 
   computed: {
+    profileId () {
+      return this.$store.getters['session/profileId']
+    },
     wallets () {
-      return this.$store.getters['wallet/all']
+      return this.$store.getters['wallet/byProfileId'](this.profileId)
     }
   },
 
@@ -82,5 +102,8 @@ export default {
 
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
+}
+.Dashboard__wallets__list span {
+  color: var(--theme-header-text);
 }
 </style>
