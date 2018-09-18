@@ -77,7 +77,7 @@ describe('the announcementStore getters', () => {
         ]
     }
 
-    const fetchedAnnouncements = announcementStore.getters.browse(state)
+    const fetchedAnnouncements = announcementStore.getters.all(state)
 
     fetchedAnnouncements.forEach((announcement) => {
       expect(state.announcements).toContainEqual(announcement)
@@ -115,7 +115,7 @@ describe('the announcementStore getters', () => {
         ]
     }
 
-    const response = announcementStore.getters.read(state, { guid: 'LDKJASD' }) // guid from sample state
+    const response = announcementStore.getters.findById(state, { guid: 'LDKJASD' }) // guid from sample state
 
     expect(state.announcements).toContainEqual(response)
   })
@@ -142,8 +142,8 @@ describe('the announcementStore getters', () => {
       ]
     }
 
-    const readAnnouncements = announcementStore.getters.readAnnouncements(state)
-    const unreadAnnouncements = announcementStore.getters.unreadAnnouncements(state)
+    const readAnnouncements = announcementStore.getters.read(state)
+    const unreadAnnouncements = announcementStore.getters.unread(state)
 
     readAnnouncements.forEach(readAnnouncement => {
       expect(readAnnouncement.isRead).toBe(true)

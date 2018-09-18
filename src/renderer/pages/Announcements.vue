@@ -42,8 +42,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      readAnnouncements: 'announcements/readAnnouncements',
-      unreadAnnouncements: 'announcements/unreadAnnouncements'
+      readAnnouncements: 'announcements/read',
+      unreadAnnouncements: 'announcements/unread'
     }),
     announcements () {
       const readSorted = sortBy(this.readAnnouncements, 'date').reverse()

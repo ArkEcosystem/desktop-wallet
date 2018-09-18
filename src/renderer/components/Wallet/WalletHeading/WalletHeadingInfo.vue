@@ -3,10 +3,10 @@
     <img
       :src="identicon"
       alt="identicon"
-      class="WalletHeading__identicon w-32 h-32">
-    <div class="flex flex-col justify-center text-white antialiased pl-2 text-lg">
-      <p class="WalletHeading__address pb-3">{{ address }}</p>
-      <p class="WalletHeading__arkBalance">{{ arkBalance.toLocaleString('en') }}</p>
+      class="WalletHeading__identicon w-24 h-24 rounded-full">
+    <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
+      <p class="WalletHeading__address font-sans font-semibold tracking-extrawide  pb-3">{{ address }}</p>
+      <p class="WalletHeading__arkBalance font-sans font-semibold tracking-extrawide ">{{ arkBalance.toLocaleString('en') }}</p>
     </div>
   </div>
 </template>

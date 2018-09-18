@@ -67,7 +67,9 @@ let colors = {
   'theme-option-button': 'var(--theme-option-button)',
   'theme-option-button-hover': 'var(--theme-option-button-hover)',
   'theme-option-button-text': 'var(--theme-option-button-text)',
-
+  'theme-heading-background': '#343956',
+  'theme-heading-button': '#464E79',
+  'theme-heading-button-text': '#97A1D9',
   'transparent': 'transparent',
   'inherit': 'inherit',
 
@@ -344,7 +346,9 @@ module.exports = {
   tracking: {
     'tight': '-0.05em',
     'normal': '0',
-    'wide': '0.05em'
+    'semiwide': '0.025em',
+    'wide': '0.05em',
+    'extrawide': '0.075em'
   },
 
   /*

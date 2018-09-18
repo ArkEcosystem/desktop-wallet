@@ -1,5 +1,5 @@
 <template>
-  <div class="flex px-12 py-8 justify-between w-full bg-theme-button rounded-t-lg">
+  <div class="flex px-12 py-8 justify-between w-full bg-theme-heading-background rounded-t-lg">
     <WalletHeadingInfo v-bind="wallet" />
     <WalletHeadingActions v-bind="wallet" />
   </div>

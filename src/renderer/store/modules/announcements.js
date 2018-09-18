@@ -11,15 +11,15 @@ export default {
   },
 
   getters: {
-    browse: ({ announcements }) => announcements,
+    all: ({ announcements }) => announcements,
 
-    read: ({ announcements }, announcement) => {
+    findById: ({ announcements }, announcement) => {
       return announcements.find(storedAnnouncement => storedAnnouncement.guid === announcement.guid)
     },
 
-    unreadAnnouncements: ({ announcements }) => announcements.filter(announcement => !announcement.isRead),
+    unread: ({ announcements }) => announcements.filter(announcement => !announcement.isRead),
 
-    readAnnouncements: ({ announcements }) => announcements.filter(announcement => announcement.isRead)
+    read: ({ announcements }) => announcements.filter(announcement => announcement.isRead)
   },
 
   mutations: {

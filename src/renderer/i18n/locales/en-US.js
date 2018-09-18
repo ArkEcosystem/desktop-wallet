@@ -181,5 +181,15 @@ export default {
         SENDING_ENABLED: 'Sending transactions enabled'
       }
     }
+  },
+
+  WALLET_HEADING: {
+    ACTIONS: {
+      SEND: 'Send',
+      WALLET_NAME: 'Wallet name',
+      REGISTER_DELEGATE: 'Register delegate',
+      SECOND_PASSPHRASE: '2nd passphrase',
+      DELETE_WALLET: 'Delete wallet'
+    }
   }
 }
