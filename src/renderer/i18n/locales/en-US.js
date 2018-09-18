@@ -142,6 +142,27 @@ export default {
         TITLE: 'Wallet design'
       }
     },
+    WALLET_IMPORT: {
+      STEP1: {
+        INSTRUCTIONS: {
+          HEADER: 'Wallet recovery',
+          TEXT: 'Introduce the passphrase of your wallet. You can introduce the wallet address first to ensure that your both match.'
+        },
+        TITLE: '1. Introduce wallet',
+        ONLY_PASSPHRASE: 'Use the passhrase only'
+      },
+      STEP2: {
+        INSTRUCTIONS: {
+          HEADER: 'Wallet configuration',
+          TEXT: 'Choose a name for you wallet and decide which operations could perform and you are done.'
+        },
+        TITLE: '2. Confirmation',
+        ADDRESS: 'Wallet address',
+        NAME: 'Wallet name',
+        OPERATIONS: 'Wallet operations',
+        SENDING_ENABLED: 'Sending transactions enabled'
+      }
+    },
     WALLET_NEW: {
       STEP1: {
         INSTRUCTIONS: {

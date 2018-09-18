@@ -1,14 +1,6 @@
 <template>
   <div id="wrapper">
     <main class="h-full rounded-lg">
-      Wallets
-      <p>
-        <router-link
-          :to="{ name: 'wallet-new' }"
-        >
-          New wallet
-        </router-link>
-      </p>
       <WalletHeading :wallet="wallet"/>
       <WalletNavigation
         v-model="currentTab"

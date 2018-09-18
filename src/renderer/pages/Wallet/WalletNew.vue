@@ -234,7 +234,6 @@ export default {
     network () {
       return this.$store.getters['session/currentNetwork']
     },
-
     profileId () {
       return this.$store.getters['session/profileId']
     },
@@ -270,11 +269,11 @@ export default {
 
   methods: {
     async create () {
-      await this.$store.dispatch('wallet/create', {
+      const { address } = await this.$store.dispatch('wallet/create', {
         ...this.schema,
         profileId: this.profileId
       })
-      this.$router.push({ name: 'wallets' })
+      this.$router.push({ name: 'wallet-show', params: { address } })
     },
 
     moveTo (step) {

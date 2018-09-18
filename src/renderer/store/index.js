@@ -11,8 +11,8 @@ import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
 import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
-import WalletModule from '@/store/modules/wallet'
 import TimerModule from '@/store/modules/timer'
+import WalletModule from '@/store/modules/wallet'
 
 Vue.use(Vuex)
 
@@ -23,8 +23,8 @@ const modules = {
   network: NetworkModule,
   profile: ProfileModule,
   session: SessionModule,
-  wallet: WalletModule,
-  timer: TimerModule
+  timer: TimerModule,
+  wallet: WalletModule
 }
 
 const ignoreModules = [

@@ -21,7 +21,9 @@ export default new BaseModel({
     token: {},
     symbol: {},
     nethash: {},
-    version: {},
+    version: {
+      type: 'number'
+    },
     ports: {
       type: 'object'
     },

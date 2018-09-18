@@ -27,6 +27,13 @@
 
       <div class="Dashboard__wallets__list py-6 mx-8">
         <h3>{{ $t('PAGES.DASHBOARD.ALL_WALLETS') }}</h3>
+
+        <div
+          v-for="wallet in wallets"
+          :key="wallet.address"
+        >
+          {{ wallet.address }}
+        </div>
       </div>
     </div>
   </div>
@@ -37,6 +44,12 @@ export default {
   name: 'Dashboard',
 
   components: {
+  },
+
+  computed: {
+    wallets () {
+      return this.$store.getters['wallet/all']
+    }
   },
 
   methods: {

@@ -62,6 +62,11 @@ const router = new Router({
       component: require('@/pages/Wallet/WalletNew').default
     },
     {
+      path: '/wallets/:address',
+      name: 'wallet-show',
+      component: require('@/pages/Wallet/WalletShow').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
