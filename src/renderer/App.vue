@@ -21,6 +21,8 @@
 
     <AppFooter />
     <AlertMessage />
+
+    <portal-target name="modal"/>
   </div>
 </template>
 

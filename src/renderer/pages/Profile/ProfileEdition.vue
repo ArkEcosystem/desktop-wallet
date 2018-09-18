@@ -233,7 +233,7 @@ export default {
     profile () {
       // TODO when store changes are finished
       // const profileId = this.$route.params.profileId
-      return this.$store.getters['profiles/all'][0]
+      return this.$store.getters['profile/all'][0]
     },
     theme () {
       return this.modified.theme || this.profile.theme

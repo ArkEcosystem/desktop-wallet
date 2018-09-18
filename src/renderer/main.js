@@ -3,6 +3,7 @@ import VueVuelidateJsonschema from 'vue-vuelidate-jsonschema'
 import Vuelidate from 'vuelidate'
 import VTooltip from 'v-tooltip'
 import VueGoodTablePlugin from 'vue-good-table'
+import PortalVue from 'portal-vue'
 import axios from 'axios'
 
 import App from './App'
@@ -28,6 +29,7 @@ Vue.use(VTooltip, {
 })
 Vue.use(alertEvents)
 Vue.use(apiClient)
+Vue.use(PortalVue)
 
 Vue.mixin(mixins)
 
