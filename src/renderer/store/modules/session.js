@@ -1,4 +1,5 @@
 import { I18N, MARKET } from '@config'
+import { client } from '@/plugins/api-client'
 
 export default {
   namespaced: true,
@@ -25,8 +26,8 @@ export default {
         return
       }
 
-      const { network } = getters['currentProfile']
-      return rootGetters['network/byId'](network)
+      const { networkId } = getters['currentProfile']
+      return rootGetters['network/byId'](networkId)
     },
     profileId: state => state.profileId,
     background: state => state.background,
@@ -74,8 +75,8 @@ export default {
   actions: {
     async setProfileId ({ commit, dispatch }, value) {
       commit('SET_PROFILE_ID', value)
-      dispatch('load')
-      await dispatch('network/updateCurrentNetworkConfig', null, { root: true })
+      const profile = await dispatch('load', value)
+      await dispatch('network/updateNetworkConfig', profile.networkId, { root: true })
     },
 
     setBackground ({ commit }, value) {
@@ -98,8 +99,8 @@ export default {
       commit('SET_AVATAR', value)
     },
 
-    load ({ getters, dispatch }) {
-      const profile = getters['currentProfile']
+    load ({ rootGetters, dispatch }, profileId) {
+      const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
 
       dispatch('setAvatar', profile.avatar)
@@ -107,6 +108,15 @@ export default {
       dispatch('setCurrency', profile.currency)
       dispatch('setLanguage', profile.language)
       dispatch('setTheme', profile.theme)
+
+      return profile
+    },
+
+    setClient ({ rootGetters }, networkId) {
+      const { server, apiVersion } = rootGetters['network/byId'](networkId)
+      client.setVersion(apiVersion)
+      client.setConnection(server)
+      client.http.headers['API-Version'] = apiVersion
     },
 
     reset ({ commit }) {

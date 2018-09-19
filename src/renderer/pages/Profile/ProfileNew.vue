@@ -83,7 +83,7 @@
             <div class="flex flex-col h-full w-full justify-around py-2">
               <SelectionNetwork
                 :max-visible-items="2"
-                :selected="schema.network"
+                :selected="schema.networkId"
                 @select="selectNetwork"
               />
             </div>
@@ -240,8 +240,8 @@ export default {
       this.$store.dispatch('session/setLanguage', language)
     },
 
-    selectNetwork (network) {
-      this.schema.network = network
+    selectNetwork (networkId) {
+      this.schema.networkId = networkId
     },
 
     async selectTheme (theme) {
@@ -252,7 +252,7 @@ export default {
 
   validations: {
     step1: ['schema.avatar', 'schema.currency', 'schema.language', 'schema.name'],
-    step2: ['schema.network']
+    step2: ['schema.networkId']
   }
 }
 </script>

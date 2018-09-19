@@ -82,10 +82,10 @@
               <ListDividedItem :label="$t('COMMON.NETWORK')">
                 <MenuDropdown
                   :class="{
-                    'ProfileEdition__field--modified': modified.network && modified.network !== profile.network
+                    'ProfileEdition__field--modified': modified.networkId && modified.networkId !== profile.networkId
                   }"
                   :items="networks"
-                  :value="network"
+                  :value="networkId"
                   @select="selectNetwork"
                 />
               </ListDividedItem>
@@ -239,8 +239,8 @@ export default {
     name () {
       return this.modified.name || this.profile.name
     },
-    network () {
-      return this.modified.network || this.profile.network
+    networkId () {
+      return this.modified.networkId || this.profile.networkId
     },
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {

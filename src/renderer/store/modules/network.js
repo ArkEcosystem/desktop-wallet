@@ -2,7 +2,7 @@ import BaseModule from '../base'
 import { isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
 import NetworkModel from '@/models/network'
-import { client } from '@/plugins/api-client'
+import Client from '@arkecosystem/client'
 import alertEvents from '@/plugins/alert-events'
 import i18n from '@/i18n'
 
@@ -20,20 +20,29 @@ export default new BaseModule(NetworkModel, {
       commit('SET_ALL', NETWORKS)
     },
 
-    async updateCurrentNetworkConfig ({ dispatch, rootGetters }) {
-      const resource = client.version === 1 ? 'loader' : 'node'
+    async updateNetworkConfig ({ dispatch, getters }, networkId) {
+      const network = getters['byId'](networkId)
+      const response = await dispatch('fetchNetworkConfig', network)
+
+      if (response) {
+        dispatch('update', {
+          ...network,
+          ...response
+        })
+      }
+    },
+
+    async fetchNetworkConfig (_, { server, apiVersion }) {
+      const client = new Client(server, apiVersion)
+      const resource = apiVersion === 1 ? 'loader' : 'node'
       const api = client.resource(resource)
-      const currentNetwork = rootGetters['session/currentNetwork']
 
       try {
-        const endpoint = client.version === 1 ? 'status' : 'configuration'
+        const endpoint = apiVersion === 1 ? 'status' : 'configuration'
         const response = await api[endpoint]()
         const data = response.data.network || response.data
 
-        dispatch('update', {
-          ...currentNetwork,
-          ...data
-        })
+        return data
       } catch (error) {
         console.error(error)
         alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {

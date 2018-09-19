@@ -27,11 +27,10 @@ export default new BaseModel({
       minLength: 1,
       maxLength: 120
     },
-    // TODO rename to networkId
-    network: {},
+    networkId: {},
     theme: {
       type: 'string'
     }
   },
-  required: ['avatar', 'background', 'currency', 'language', 'name', 'network', 'theme']
+  required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']
 })
