@@ -12,7 +12,7 @@
           title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
           class="profile-avatar-xl background-image flex"
         />
-        <div class="ProfileAll__grid__profile__name font-semibold flex">
+        <div class="ProfileAll__grid__profile__name font-semibold flex mt-12">
           {{ $t('PAGES.PROFILE_ALL.ADD_PROFILE') }}
         </div>
       </router-link>
@@ -20,33 +20,37 @@
       <div
         v-for="profile in profiles"
         :key="profile.id"
+        :class="{
+          'ProfileAll__grid__profile--selected': profile.id === currentProfileId
+        }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
-        <!-- TODO highlight current profile -->
-        <!-- TODO select instead of edit -->
-        <router-link
-          :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-        >
-          <div
-            :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-            :title="profile.name"
-            class="profile-avatar-xl background-image flex"
-          />
-        </router-link>
+        <div
+          :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
+          :title="profile.name"
+          class="profile-avatar-xl background-image flex cursor-pointer"
+          @click="selectProfile(profile.id)"
+        />
 
-        <div class="flex flex-col pl-2">
-          <div class="ProfileAll__grid__profile__name font-semibold flex text-lg my-8">
+        <div class="flex flex-col">
+          <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4 mt-8">
             {{ profile.name }}
           </div>
-          <div class="ProfileAll__grid__profile__select font-semibold flex text-xs mb-2">
-            {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
-          </div>
+
           <router-link
             :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-            class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs"
+            class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-6"
           >
             {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
           </router-link>
+
+          <div
+            v-show="profile.id !== currentProfileId"
+            class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline"
+            @click="selectProfile(profile.id)"
+          >
+            {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
+          </div>
         </div>
       </div>
     </div>
@@ -63,16 +67,28 @@ export default {
     ...mapGetters({ profiles: 'profile/all' }),
     addProfileImagePath () {
       return 'pages/new-profile-avatar.svg'
+    },
+    currentProfileId () {
+      return this.$store.getters['session/profileId']
+    }
+  },
+
+  methods: {
+    selectProfile (profileId) {
+      this.$store.dispatch('session/setProfileId', profileId)
     }
   }
 }
 </script>
 
-<style scope>
+<style lang="postcss" scope>
 .ProfileAll__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, calc(var(--profile-avatar-xl) * 2 + 5px));
   grid-gap: 1rem;
+}
+.ProfileAll__grid__profile {
+  @apply .p-4
 }
 .ProfileAll__grid__profile:hover .profile-avatar-xl {
   transition: 0.5s;
@@ -80,6 +96,9 @@ export default {
 }
 .ProfileAll__grid__profile > .profile-avatar-xl {
   width: var(--profile-avatar-xl);
+}
+.ProfileAll__grid__profile--selected {
+  @apply .border-green .border-2 .rounded-lg;
 }
 .ProfileAll__grid__profile__name {
   width: var(--profile-avatar-xl);

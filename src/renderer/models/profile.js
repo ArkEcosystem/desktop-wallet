@@ -19,6 +19,7 @@ export default new BaseModel({
       minLength: 1,
       maxLength: 120
     },
+    // TODO rename to networkId
     network: {},
     theme: {}
   },
