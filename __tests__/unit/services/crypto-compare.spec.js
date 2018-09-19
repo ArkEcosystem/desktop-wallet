@@ -1,6 +1,7 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import { MARKET } from '@config'
+import { keys } from 'lodash'
 import cryptoCompare from '@/services/crypto-compare'
 
 describe('CryptoCompare', () => {
@@ -24,7 +25,7 @@ describe('CryptoCompare', () => {
     const response = await cryptoCompare.fetchMarketData(token)
     const entries = Object.keys(response)
     expect(entries).not.toBeEmpty()
-    expect(entries).toIncludeAllMembers(MARKET.currencies)
+    expect(entries).toIncludeAllMembers(keys(MARKET.currencies))
   })
 
   it('should return historic day values', async () => {

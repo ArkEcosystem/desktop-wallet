@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div class="WalletShow">
     <main class="h-full rounded-lg">
       <WalletHeading :wallet="wallet"/>
       <MenuTab v-model="currentTab">
@@ -10,8 +10,10 @@
           :tab="tab.component"
         >
           <component
+            slot-scope="{ isActive }"
             :is="tab.component"
             :wallet="wallet"
+            :is-active="isActive"
           />
         </MenuTabItem>
       </MenuTab>
@@ -121,5 +123,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.WalletShow >>> .MenuTab {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 </style>

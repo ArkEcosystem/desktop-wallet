@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-b-lg p-5">
-    <MarketChart>
+    <MarketChart :is-active="isActive">
       <MarketChartButtons class="mb-5 text-right" />
     </MarketChart>
   </div>
@@ -15,6 +15,14 @@ export default {
   components: {
     MarketChart,
     MarketChartButtons
+  },
+
+  props: {
+    isActive: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
   }
 }
 </script>

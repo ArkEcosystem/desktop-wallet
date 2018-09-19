@@ -128,7 +128,7 @@
 </template>
 
 <script>
-import { I18N, MARKET } from '@config'
+import { I18N } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
@@ -188,7 +188,7 @@ export default {
       }
     },
     currencies () {
-      return MARKET.currencies
+      return this.$store.getters['market/currencies']
     },
     languages () {
       return I18N.enabledLocales.reduce((all, locale) => {

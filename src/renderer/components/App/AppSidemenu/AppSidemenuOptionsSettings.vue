@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import { MARKET } from '@config'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 
@@ -57,7 +56,7 @@ export default {
 
   computed: {
     currencies () {
-      return MARKET.currencies
+      return this.$store.getters['market/currencies']
     },
     hasDarkTheme () {
       return this.$store.getters['session/hasDarkTheme']

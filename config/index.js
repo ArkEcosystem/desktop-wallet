@@ -27,24 +27,31 @@ exports.MARKET = {
     baseUrl: 'https://min-api.cryptocompare.com'
   },
   defaultCurrency: 'USD',
-  currencies: [
+  crypto: [
     'BTC',
-    'AUD',
-    'BRL',
-    'CAD',
-    'CHF',
-    'CNY',
-    'EUR',
-    'GBP',
-    'HKD',
-    'IDR',
-    'INR',
-    'JPY',
-    'KRW',
-    'MXN',
-    'RUB',
-    'USD'
-  ]
+    'ETH',
+    'LTC'
+  ],
+  currencies: {
+    'BTC': 'Ƀ',
+    'ETH': 'Ξ',
+    'LTC': 'Ł',
+    'AUD': 'A$',
+    'BRL': 'R$',
+    'CAD': 'C$',
+    'CHF': 'CHF',
+    'CNY': '¥',
+    'EUR': '€',
+    'GBP': '£',
+    'HKD': '£',
+    'IDR': 'IDR',
+    'INR': '₹',
+    'JPY': '¥',
+    'KRW': '₩',
+    'MXN': 'MX$',
+    'RUB': '₽',
+    'USD': '$'
+  }
 }
 
 exports.THEMES = [

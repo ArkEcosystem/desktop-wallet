@@ -3,7 +3,7 @@ import { MARKET } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
 import dayjs from 'dayjs'
-import { capitalize } from 'lodash'
+import { capitalize, keys, min, max } from 'lodash'
 
 class CryptoCompare {
   /**
@@ -14,7 +14,7 @@ class CryptoCompare {
   async fetchMarketData (token) {
     const params = {
       fsyms: token,
-      tsyms: MARKET.currencies.join(',')
+      tsyms: keys(MARKET.currencies).join(',')
     }
 
     try {
@@ -152,13 +152,14 @@ class CryptoCompare {
    * @return {Object}
    */
   __transformHistoricalResponse (response, dateFormat) {
+    const labels = response.map(value => dayjs(value.time * 1000).format(dateFormat))
+    const datasets = response.map(value => value.close)
+
     return {
-      labels: response.map(value => {
-        return dayjs(value.time).format(dateFormat)
-      }),
-      datasets: response.map(value => {
-        return value.close
-      })
+      labels,
+      datasets,
+      min: min(datasets),
+      max: max(datasets)
     }
   }
 }

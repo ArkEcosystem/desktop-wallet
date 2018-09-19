@@ -1,6 +1,7 @@
 import { MarketTicker } from '@/models/market'
-import { find, forEach } from 'lodash'
+import { find, forEach, keys, isFunction, includes } from 'lodash'
 import cryptoCompare from '@/services/crypto-compare'
+import { MARKET } from '@config'
 
 export default {
   namespaced: true,
@@ -10,7 +11,27 @@ export default {
   }),
 
   getters: {
-    tickerByCurrency: state => (currency) => find(state.tickers, { currency })
+    formatPrice: (_, __, ___, rootGetters) => ({ value, format }) => {
+      const network = rootGetters['session/currentNetwork']
+      const token = network.token
+
+      const currency = rootGetters['session/currency']
+      const symbol = MARKET.currencies[currency]
+
+      if (includes(MARKET.crypto, currency)) {
+        value = Number(value).toFixed(8)
+      } else {
+        value = Number(value).toFixed(2)
+      }
+
+      if (isFunction(format)) {
+        return format({ token, currency, symbol, value })
+      }
+
+      return value
+    },
+    tickerByCurrency: state => (currency) => find(state.tickers, { currency }),
+    currencies: () => keys(MARKET.currencies)
   },
 
   mutations: {

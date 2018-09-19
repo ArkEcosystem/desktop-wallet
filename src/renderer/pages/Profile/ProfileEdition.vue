@@ -155,7 +155,7 @@
 
 <script>
 import { capitalize } from 'lodash'
-import { I18N, NETWORKS, MARKET } from '@config'
+import { I18N, NETWORKS } from '@config'
 import { InputText, InputSelect } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
@@ -191,7 +191,7 @@ export default {
 
   computed: {
     currencies () {
-      return MARKET.currencies
+      return this.$store.getters['market/currencies']
     },
     languages () {
       return I18N.enabledLocales.reduce((all, locale) => {

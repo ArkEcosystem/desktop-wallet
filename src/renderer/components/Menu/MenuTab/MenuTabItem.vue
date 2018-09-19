@@ -7,7 +7,7 @@
         v-show="isActive"
         class="MenuTabItem"
       >
-        <slot/>
+        <slot :is-active="isActive" />
       </div>
     </transition>
   </keep-alive>
