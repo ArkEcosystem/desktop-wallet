@@ -4,16 +4,24 @@ export default new BaseModel({
   type: 'object',
   properties: {
     id: {
-      format: (data) => data.name
+      type: 'string',
+      minLength: 16,
+      maxLength: 16
     },
-    avatar: {},
-    background: {},
+    avatar: {
+      type: 'string'
+    },
+    background: {
+      type: 'string'
+    },
     currency: {
       type: 'string',
       minLength: 3,
       maxLength: 3
     },
-    language: {},
+    language: {
+      type: 'string'
+    },
     name: {
       type: 'string',
       minLength: 1,
@@ -21,7 +29,9 @@ export default new BaseModel({
     },
     // TODO rename to networkId
     network: {},
-    theme: {}
+    theme: {
+      type: 'string'
+    }
   },
   required: ['avatar', 'background', 'currency', 'language', 'name', 'network', 'theme']
 })

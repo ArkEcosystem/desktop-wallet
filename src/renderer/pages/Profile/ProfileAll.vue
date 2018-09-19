@@ -84,7 +84,7 @@ export default {
 <style lang="postcss" scope>
 .ProfileAll__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(var(--profile-avatar-xl) * 2 + 5px));
+  grid-template-columns: repeat(auto-fill, calc(var(--profile-avatar-xl) * 2));
   grid-gap: 1rem;
 }
 .ProfileAll__grid__profile {
@@ -93,9 +93,6 @@ export default {
 .ProfileAll__grid__profile:hover .profile-avatar-xl {
   transition: 0.5s;
   opacity: 0.5;
-}
-.ProfileAll__grid__profile > .profile-avatar-xl {
-  width: var(--profile-avatar-xl);
 }
 .ProfileAll__grid__profile--selected {
   @apply .border-green .border-2 .rounded-lg;

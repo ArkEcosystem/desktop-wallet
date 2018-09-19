@@ -8,7 +8,7 @@ export default class BaseModel {
 
   deserialize (input) {
     if (!isObject(input)) {
-      throw new Error('Invalid input type.')
+      throw new Error(`Invalid model input type: \`${input}\``)
     }
 
     const model = {}

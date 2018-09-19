@@ -5,11 +5,11 @@ export default {
 
   state: () => ({
     profileId: null,
+    avatar: null,
     background: null,
-    theme: null,
-    language: null,
     currency: null,
-    avatar: null
+    language: null,
+    theme: null
   }),
 
   getters: {
@@ -63,11 +63,11 @@ export default {
     },
 
     RESET (state) {
+      state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
+      state.currency = MARKET.defaultCurrency
       state.language = I18N.defaultLocale
       state.theme = 'light'
-      state.currency = MARKET.defaultCurrency
-      state.avatar = 'pages/new-profile-avatar.svg'
     }
   },
 
@@ -102,10 +102,11 @@ export default {
       const profile = getters['currentProfile']
       if (!profile) return
 
+      dispatch('setAvatar', profile.avatar)
       dispatch('setBackground', profile.background)
-      dispatch('setTheme', profile.theme)
-      dispatch('setLanguage', profile.language)
       dispatch('setCurrency', profile.currency)
+      dispatch('setLanguage', profile.language)
+      dispatch('setTheme', profile.theme)
     },
 
     reset ({ commit }) {

@@ -154,6 +154,7 @@
 </template>
 
 <script>
+import { capitalize } from 'lodash'
 import { I18N, NETWORKS, MARKET } from '@config'
 import { InputText, InputSelect } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -189,18 +190,22 @@ export default {
   }),
 
   computed: {
-    avatar () {
-      return this.modified.avatar || this.profile.avatar
-    },
-    background () {
-      return this.modified.background || this.profile.background
-    },
-    currency () {
-      return this.modified.currency || this.profile.currency
-    },
     currencies () {
       return MARKET.currencies
     },
+    languages () {
+      return I18N.enabledLocales.reduce((all, locale) => {
+        all[locale] = this.$t(`LANGUAGES.${locale}`)
+        return all
+      }, {})
+    },
+    networks () {
+      return NETWORKS.reduce((acc, network) => {
+        acc[network.id] = network.name
+        return acc
+      }, {})
+    },
+
     isModified () {
       return Object.keys(this.modified).some(property => {
         if (this.modified[property]) {
@@ -209,14 +214,27 @@ export default {
         return false
       })
     },
+
+    profile () {
+      const profileId = this.$route.params.profileId
+      return this.$store.getters['profile/byId'](profileId)
+    },
+    isCurrentProfile () {
+      return this.$store.getters['session/profileId'] === this.profile.id
+    },
+
+    avatar () {
+      return this.modified.avatar || this.profile.avatar
+    },
+    background () {
+      return this.modified.background || this.profile.background
+    },
+    // TODO update it when modified, but it's changed on the sidemenu
+    currency () {
+      return this.modified.currency || this.profile.currency
+    },
     language () {
       return this.modified.language || this.profile.language
-    },
-    languages () {
-      return I18N.enabledLocales.reduce((all, locale) => {
-        all[locale] = this.$t(`LANGUAGES.${locale}`)
-        return all
-      }, {})
     },
     name () {
       return this.modified.name || this.profile.name
@@ -224,20 +242,14 @@ export default {
     network () {
       return this.modified.network || this.profile.network
     },
-    networks () {
-      return NETWORKS.reduce((acc, network) => {
-        acc[network.id] = network.name
-        return acc
-      }, {})
-    },
-    profile () {
-      // TODO when store changes are finished
-      // const profileId = this.$route.params.profileId
-      return this.$store.getters['profile/all'][0]
-    },
+    // TODO update it when modified, but it's changed on the sidemenu
     theme () {
       return this.modified.theme || this.profile.theme
     }
+  },
+
+  beforeDestroy () {
+    this.$store.dispatch('session/load')
   },
 
   methods: {
@@ -249,47 +261,52 @@ export default {
     },
 
     async save () {
-      // TODO when store changes are finished
-      // const profile = new Profile(this.schema)
-      this.$router.push({ name: 'profile-all' })
+      await this.$store.dispatch('profile/update', {
+        ...this.profile,
+        ...this.modified
+      })
+
+      this.$router.push({ name: 'profiles' })
     },
 
     selectAvatar (avatar) {
-      this.$set(this.modified, 'avatar', avatar)
+      this.__updateSession('avatar', avatar)
     },
 
     async selectBackground (background) {
-      this.$set(this.modified, 'background', background)
-
-      // TODO the background should be restored when cancelling the profile creation
-      // await this.$store.dispatch('session/set', { background })
+      this.__updateSession('background', background)
     },
 
     selectCurrency (currency) {
-      this.$set(this.modified, 'currency', currency)
+      this.__updateSession('currency', currency)
     },
 
     async selectLanguage (language) {
-      this.$set(this.modified, 'language', language)
-
       this.$i18n.locale = language
-      // TODO the languge should be restored when cancelling the profile edition
-      // await this.$store.dispatch('session/set', { language })
+
+      this.__updateSession('language', language)
     },
 
+    // TODO when API client works flawlessly
     selectNetwork (network) {
-      this.$set(this.modified, 'network', network)
+      this.__updateSession('network', network)
     },
 
     async selectTheme (theme) {
-      this.$set(this.modified, 'theme', theme)
-
-      // TODO the theme should be restored when cancelling the profile creation
-      // await this.$store.dispatch('session/set', { theme })
+      this.__updateSession('theme', theme)
     },
 
     setName (event) {
-      this.$set(this.modified, 'name', event.target.value)
+      this.__updateSession('name', event.target.value)
+    },
+
+    async __updateSession (propertyName, value) {
+      this.$set(this.modified, propertyName, value)
+
+      if (this.isCurrentProfile) {
+        const action = `session/set${capitalize(propertyName)}`
+        await this.$store.dispatch(action, value)
+      }
     }
   }
 }
