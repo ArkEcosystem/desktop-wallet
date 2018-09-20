@@ -1,13 +1,13 @@
 <template>
   <aside
-    class="flex flex-col items-center"
+    class="flex flex-col items-center bg-theme-feature"
   >
     <article
       v-for="wallet in wallets"
       :key="wallet.address"
-      @click="selectWallet(wallet)"
+      @click="emitSelect(wallet)"
     >
-      {{ shortenAddress(wallet.address) }}
+      <span class="font-semibold">{{ wallet.address | truncateMiddle(6) }}</span>
     </article>
   </aside>
 </template>
@@ -15,18 +15,17 @@
 <script>
 export default {
   name: 'MinifiedWalletSidebar',
+
   props: {
     wallets: {
       type: Array,
       required: true
     }
   },
+
   methods: {
-    selectWallet (wallet) {
-      this.$emit('selectWallet', wallet)
-    },
-    shortenAddress (address) {
-      return address.slice(0, 3) + '...' + address.slice(-3)
+    emitSelect (wallet) {
+      this.$emit('select', wallet)
     }
   }
 }

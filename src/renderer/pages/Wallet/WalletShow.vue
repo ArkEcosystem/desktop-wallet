@@ -1,14 +1,12 @@
 <template>
-  <div
-    id="wrapper"
-    class="flex"
-  >
+  <div class="WalletShow relative flex h-full">
     <WalletDetails
       :wallet="selectedWallet"
+      class="h-full flex-1"
     />
     <MinifiedWalletSidebar
       :wallets="selectableWallets"
-      class="w-1/5"
+      class="sticky pin min-h-full w-1/6 border-l border-theme-line-separator"
       @selectWallet="onSelectWallet"
     />
   </div>
@@ -55,10 +53,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.WalletShow >>> .MenuTab {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-</style>

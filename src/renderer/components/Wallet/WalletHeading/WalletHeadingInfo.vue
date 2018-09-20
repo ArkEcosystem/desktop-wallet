@@ -6,7 +6,7 @@
       class="WalletHeading__identicon w-24 h-24 rounded-full">
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
       <p class="WalletHeading__address font-sans font-semibold tracking-extrawide  pb-3">{{ address }}</p>
-      <p class="WalletHeading__arkBalance font-sans font-semibold tracking-extrawide ">{{ arkBalance.toLocaleString('en') }}</p>
+      <p class="WalletHeading__balance font-sans font-semibold tracking-extrawide ">{{ balance.toLocaleString('en') }}</p>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       required: false,
       default: 'Loading address...'
     },
-    arkBalance: {
+    balance: {
       type: Number,
       default: 0
     }

@@ -10,7 +10,8 @@ import App from './App'
 import i18n from './i18n'
 import router from './router'
 import store from './store'
-import mixins from '@/mixins'
+import mixins from './mixins'
+import filters from './filters'
 
 import apiClient from '@/plugins/api-client'
 import alertEvents from '@/plugins/alert-events'
@@ -20,6 +21,7 @@ Vue.config.productionTip = false
 Vue.http = Vue.prototype.$http = axios
 Vue.prototype.$eventBus = eventBus
 
+Vue.use(filters)
 Vue.use(VueVuelidateJsonschema)
 Vue.use(Vuelidate)
 Vue.use(VueGoodTablePlugin)

@@ -20,7 +20,9 @@ export default {
         {
           label: this.$t('DELEGATES_TABLE.RATE'),
           field: 'rate',
-          type: 'Number'
+          type: 'number',
+          thClass: 'text-center',
+          tdClass: 'text-center'
         },
         {
           label: this.$t('DELEGATES_TABLE.USERNAME'),

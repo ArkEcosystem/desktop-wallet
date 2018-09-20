@@ -5,7 +5,7 @@ import WalletHeading from '@/components/Wallet/WalletHeading/WalletHeading'
 const sampleWalletData = {
   identicon: 'https://api.adorable.io/avatars/285/arkwallet.png',
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
-  arkBalance: 7978921
+  balance: 7978921
 }
 
 let heading
@@ -32,10 +32,10 @@ describe('the WalletHeading component', () => {
   })
 
   it("displays the wallet's ARK balance", () => {
-    const arkBalance = heading.find('.WalletHeading__arkBalance')
+    const balance = heading.find('.WalletHeading__balance')
 
-    const formattedBalance = arkBalance.text().split(',').join('')
+    const formattedBalance = balance.text().split(',').join('')
 
-    expect(formattedBalance).toContain(sampleWalletData.arkBalance.toString())
+    expect(formattedBalance).toContain(sampleWalletData.balance.toString())
   })
 })

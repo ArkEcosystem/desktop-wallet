@@ -1,7 +1,12 @@
 <template>
-  <main class="h-full rounded-lg w-4/5">
-    <WalletHeading :wallet="wallet"/>
-    <MenuTab v-model="currentTab">
+  <main class="WalletDetails flex flex-col">
+    <WalletHeading
+      :wallet="wallet"
+      class="sticky pin-t z-10"
+    />
+    <MenuTab
+      v-model="currentTab"
+      class="flex-1 overflow-y-auto">
       <MenuTabItem
         v-for="tab in tabs"
         :key="tab.component"
@@ -9,7 +14,9 @@
         :tab="tab.component"
       >
         <component
+          slot-scope="{ isActive }"
           :is="tab.component"
+          :is-active="isActive"
           :wallet="wallet"
         />
       </MenuTabItem>
@@ -80,3 +87,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.WalletDetails >>> .MenuTab {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.WalletDetails >>> .MenuTab > .MenuTab__nav {
+  @apply .sticky .pin-t .z-10;
+}
+</style>

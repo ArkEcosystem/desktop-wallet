@@ -59,7 +59,7 @@
 }
 
 .vgt-table th.sorting-asc:after {
-  @apply .inline-block .ml-1 .absolute;
+  @apply .inline-block .ml-1;
   background: url('../assets/images/arrows/sort-asc.svg') no-repeat;
   width: 12px;
   height: 12px;
@@ -67,7 +67,7 @@
 }
 
 .vgt-table th.sorting-desc:after {
-  @apply .inline-block .ml-1 .absolute;
+  @apply .inline-block .ml-1;
   background: url('../assets/images/arrows/sort-desc.svg') no-repeat;
   width: 12px;
   height: 12px;
