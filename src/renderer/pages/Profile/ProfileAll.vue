@@ -81,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scope>
+<style scoped>
 .ProfileAll__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, calc(var(--profile-avatar-xl) * 2));

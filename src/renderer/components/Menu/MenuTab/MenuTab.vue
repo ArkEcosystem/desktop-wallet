@@ -84,7 +84,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .MenuTab__nav__item--active {
   @apply .bg-theme-feature .text-theme-page-text
 }

@@ -157,7 +157,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .InputAddress__input::placeholder {
   @apply .text-transparent
 }

@@ -135,7 +135,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .InputText__input::placeholder {
   @apply .text-transparent
 }

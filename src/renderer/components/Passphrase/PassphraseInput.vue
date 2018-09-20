@@ -195,7 +195,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .PassphraseInput__input::placeholder {
   @apply .text-transparent
 }

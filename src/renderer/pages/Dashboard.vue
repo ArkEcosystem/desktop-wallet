@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .Dashboard__wallets__create,
 .Dashboard__wallets__import {
   @apply .w-1/2 .appearance-none .font-semibold .pt-12 .pb-4 .flex .justify-center .items-center
