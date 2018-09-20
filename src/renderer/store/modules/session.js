@@ -114,9 +114,9 @@ export default {
 
     setClient ({ rootGetters }, networkId) {
       const { server, apiVersion } = rootGetters['network/byId'](networkId)
-      client.setVersion(apiVersion)
-      client.setConnection(server)
-      client.http.headers['API-Version'] = apiVersion
+
+      client.host = server
+      client.version = apiVersion
     },
 
     reset ({ commit }) {

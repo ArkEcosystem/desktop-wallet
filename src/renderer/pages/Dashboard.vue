@@ -44,9 +44,8 @@
             </span>
 
             <span class="text-2xl">
-              <!-- TODO balance -->
-              45
-              {{ wallet.balance }}
+              <!-- FIXME localize + currency + filter -->
+              {{ $n(wallet.balance, 'currency') }}
               <!-- TODO display a +/- n ARK on recent transactions -->
             </span>
           </router-link>
@@ -57,6 +56,8 @@
 </template>
 
 <script>
+import { merge } from 'lodash'
+
 export default {
   name: 'Dashboard',
 
@@ -72,7 +73,31 @@ export default {
     }
   },
 
-  methods: {
+  created () {
+    const refreshWallet = async wallet => {
+      try {
+        const walletData = await this.$client.fetchWallet(wallet.address)
+        if (walletData) {
+          const updatedWallet = merge({}, wallet, walletData)
+          this.$store.dispatch('wallet/update', updatedWallet)
+        }
+      } catch (error) {
+        console.error(error)
+        // TODO the error could mean that the wallet isn't on the blockchain yet
+        // this.$error(this.$t('COMMON.FAILED_FETCH', {
+        //   name: 'wallet data',
+        //   msg: error.message
+        // }))
+      }
+    }
+
+    this.$store.dispatch('timer/listen', {
+      callback: () => {
+        this.wallets.forEach(refreshWallet)
+      },
+      interval: 'long',
+      immediate: true
+    })
   }
 }
 </script>

@@ -14,6 +14,7 @@
 <script>
 export default {
   name: 'WalletHeadingInfo',
+
   props: {
     identicon: {
       type: String,
@@ -23,6 +24,7 @@ export default {
     address: {
       type: String,
       required: false,
+      // TODO i18n
       default: 'Loading address...'
     },
     balance: {

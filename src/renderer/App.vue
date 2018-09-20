@@ -60,7 +60,7 @@ export default {
   /**
    * Vue hooks ignore the `async` modifier.
    * The `isReady` property is used here to delay the application while is
-   * retrieving the essential data (profile and session) from the database
+   * retrieving the essential data (session and network) from the database
    */
   async created () {
     await this.loadEssential()

@@ -26,29 +26,31 @@ export default {
 
   data () {
     return {
-      selectedWallet: {}
+      selectedWallet: {},
+      updatedWallet: {}
     }
   },
 
   computed: {
+    ...mapGetters({
+      curentProfileId: 'session/profileId',
+      profileWallets: 'wallet/byProfileId'
+    }),
+
     selectableWallets () {
-      return this.profileWallets()(this.profileId())
+      return this.profileWallets(this.currentProfileId)
     }
   },
 
-  mounted () {
-    this.selectedWallet = this.selectableWallets[0]
+  created () {
+    const address = this.$route.params.address
+    this.selectedWallet = this.$store.getters['wallet/byAddress'](address)
   },
 
   methods: {
     onSelectWallet (wallet) {
       this.selectedWallet = wallet
-    },
-
-    ...mapGetters({
-      profileWallets: 'wallet/byProfileId',
-      profileId: 'session/profileId'
-    })
+    }
   }
 }
 </script>

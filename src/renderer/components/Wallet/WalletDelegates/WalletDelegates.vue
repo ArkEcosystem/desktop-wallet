@@ -49,13 +49,10 @@ export default {
 
   methods: {
     async fetchDelegates () {
-      const api = this.$client.resource('delegates')
-
       try {
-        const { data } = await api.all()
-        const delegates = data.delegates || data
-        this.delegates = delegates
+        this.delegates = await this.$client.fetchDelegates()
       } catch (error) {
+        console.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'delegates',
           msg: error.message

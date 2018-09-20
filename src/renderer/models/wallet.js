@@ -9,6 +9,11 @@ export default new BaseModel({
     address: {
       type: 'string'
     },
+    balance: {
+      type: 'integer',
+      minimum: 0,
+      default: 0
+    },
     isSendingEnabled: {
       type: 'boolean',
       default: false
@@ -19,10 +24,13 @@ export default new BaseModel({
       maxLength: 120
     },
     passphrase: {
-      type: 'string',
+      type: ['string', 'null'],
       format: () => null
     },
-    profileId: {}
+    profileId: {},
+    publicKey: {
+      type: 'string'
+    }
   },
-  required: ['address', 'isSendingEnabled', 'name', 'passphrase', 'profileId']
+  required: ['address', 'isSendingEnabled', 'name', 'profileId']
 })

@@ -17,6 +17,20 @@ describe('WalletModule', () => {
     })
   })
 
+  describe('getters byAddress', () => {
+    describe('when the wallet address param does not exist', () => {
+      it('should find and return the wallet', () => {
+        expect(store.getters['wallet/byAddress']('AunKno0n')).toBeUndefined()
+      })
+    })
+
+    describe('when the wallet address param exists', () => {
+      it('should find and return the wallet', () => {
+        expect(store.getters['wallet/byAddress']('A2')).toEqual(models[1])
+      })
+    })
+  })
+
   describe('getters byProfileId', () => {
     describe('when the profile does not have any wallet', () => {
       it('should return all wallets of a profile', () => {

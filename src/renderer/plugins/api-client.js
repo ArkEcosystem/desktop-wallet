@@ -1,6 +1,6 @@
-import Client from '@arkecosystem/client'
+import Client from '@/services/client'
 
-export const client = new Client('http://') // Initial state
+export const client = new Client()
 
 export const vuexClient = (store) => {
   store.watch(
