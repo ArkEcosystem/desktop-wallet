@@ -1,5 +1,8 @@
 <template>
-  <nav class="AppSidemenu bg-theme-feature flex flex-col w-18 mx-6 rounded-lg justify-between relative">
+  <MenuNavigation
+    v-model="activeItem"
+    class="AppSidemenu w-18 mx-6 rounded-lg justify-between relative"
+  >
 
     <div>
       <!-- ARK logo -->
@@ -13,49 +16,49 @@
       </router-link>
 
       <!-- Wallets -->
-      <AppSidemenuItem
-        :is-active="activeItem === 'wallets'"
-        name="wallets"
+      <MenuNavigationItem
+        id="wallets"
         icon="wallet"
+        class="h-16"
         @click="redirect($event)"
       />
 
       <!-- Add contact -->
-      <AppSidemenuItem
-        :is-active="activeItem === 'contacts'"
-        name="contacts"
+      <MenuNavigationItem
+        id="contacts"
         icon="contact-add"
+        class="h-16"
         @click="redirect($event)"
       />
     </div>
 
     <div>
       <!-- Announcements -->
-      <AppSidemenuItem
-        :is-active="activeItem === 'announcements'"
+      <MenuNavigationItem
+        id="announcements"
         :show-badge="showUnread"
-        name="announcements"
         icon="whitepaper"
+        class="h-16"
         @click="redirect($event)"
       />
     </div>
 
     <div>
-      <AppSidemenuOptionsSettings v-show="isSettingsVisible" />
+      <AppSidemenuSettings v-show="isSettingsVisible" />
 
       <!-- Settings -->
-      <AppSidemenuItem
-        :is-active="activeItem === 'settings'"
-        name="settings"
+      <MenuNavigationItem
+        id="settings"
         icon="settings"
+        class="h-16"
         @click="toggleShowSettings"
       />
 
       <!-- Networks -->
-      <AppSidemenuItem
-        :is-active="activeItem === 'networks'"
-        name="networks"
+      <MenuNavigationItem
+        id="networks"
         icon="cloud"
+        class="h-16"
         @click="redirect($event)"
       />
 
@@ -69,20 +72,21 @@
       </div>
     </div>
 
-  </nav>
+  </MenuNavigation>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import AppSidemenuItem from './AppSidemenuItem'
-import AppSidemenuOptionsSettings from './AppSidemenuOptionsSettings'
+import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
+import AppSidemenuSettings from './AppSidemenuSettings'
 
 export default {
   name: 'AppSidemenu',
 
   components: {
-    AppSidemenuItem,
-    AppSidemenuOptionsSettings
+    MenuNavigation,
+    MenuNavigationItem,
+    AppSidemenuSettings
   },
 
   data: vm => ({

@@ -25,10 +25,7 @@
 </template>
 
 <script>
-import WalletHeading from '@/components/Wallet/WalletHeading/WalletHeading.vue'
-import WalletTransactions from '@/components/Wallet/WalletTransactions/WalletTransactions.vue'
-import WalletDelegates from '@/components/Wallet/WalletDelegates/WalletDelegates.vue'
-import WalletStatistics from '@/components/Wallet/WalletStatistics/WalletStatistics.vue'
+import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '@/components/Wallet'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 
 export default {

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 
-import WalletHeading from '@/components/Wallet/WalletHeading/WalletHeading'
+import { WalletHeading } from '@/components/Wallet'
 
 const sampleWalletData = {
   identicon: 'https://api.adorable.io/avatars/285/arkwallet.png',
