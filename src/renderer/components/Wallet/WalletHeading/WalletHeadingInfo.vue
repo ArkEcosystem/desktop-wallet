@@ -17,11 +17,13 @@ export default {
   props: {
     identicon: {
       type: String,
-      required: true // default identicon could be supplied here
+      required: false,
+      default: 'https://api.adorable.io/avatars/285/abott@adorable.png'
     },
     address: {
       type: String,
-      required: true
+      required: false,
+      default: 'Loading address...'
     },
     arkBalance: {
       type: Number,
