@@ -50,12 +50,12 @@ export default {
 </script>
 
 <style scoped>
-  .action-slide-enter-active, .action-slide-leave-active {
-    transition: all .5s linear;
-  }
+.action-slide-enter-active, .action-slide-leave-active {
+  transition: all .5s linear;
+}
 
-  .action-slide-enter, .action-slide-leave-to {
-    transform: translateX(100%);
-    opacity: 0%;
-  }
+.action-slide-enter, .action-slide-leave-to {
+  transform: translateX(100%);
+  opacity: 0%;
+}
 </style>

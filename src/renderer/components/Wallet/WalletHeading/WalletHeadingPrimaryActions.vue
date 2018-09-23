@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import QRCodeModal from '@/components/QRCode/QRCodeModal.vue'
+import QRCodeModal from '@/components/QRCode'
 
 export default {
   components: {

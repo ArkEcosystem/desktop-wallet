@@ -51,10 +51,7 @@ let rendererConfig = {
           process.env.NODE_ENV !== 'production'
             ? 'vue-style-loader'
             : MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 1 }
-          },
+          'css-loader',
           'postcss-loader'
         ]
       },
@@ -72,16 +69,18 @@ let rendererConfig = {
         use: 'node-loader'
       },
       {
+        test: /\.postcss$/,
+        use: [
+          'vue-style-loader',
+          'postcss-loader'
+        ]
+      },
+      {
         test: /\.vue$/,
         use: {
           loader: 'vue-loader',
           options: {
-            extractCSS: true,
-            loaders: {
-              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
-              scss: 'vue-style-loader!css-loader!sass-loader',
-              less: 'vue-style-loader!css-loader!less-loader'
-            }
+            extractCSS: true
           }
         }
       },

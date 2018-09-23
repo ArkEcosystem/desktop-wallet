@@ -335,7 +335,7 @@ export default {
 }
 </style>
 
-<style scoped>
+<style lang="postcss" scoped>
 /* To display the images scaled to the size of the button */
 .WalletNew__instructions {
   background-size: cover;

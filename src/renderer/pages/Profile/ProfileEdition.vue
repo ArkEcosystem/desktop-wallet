@@ -320,7 +320,7 @@ export default {
 }
 </style>
 
-<style>
+<style lang="postcss">
 .ProfileEdition .MenuTab .MenuTab__nav__item {
   @apply .px-10 .py-6
 }

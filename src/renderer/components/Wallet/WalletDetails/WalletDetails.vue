@@ -85,7 +85,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .WalletDetails >>> .MenuTab {
   border-top-left-radius: 0;
   border-top-right-radius: 0;

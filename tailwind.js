@@ -957,9 +957,5 @@ module.exports = {
     prefix: '',
     important: false,
     separator: ':'
-  },
-
-  experiments: {
-    shadowLookup: true
   }
 }
