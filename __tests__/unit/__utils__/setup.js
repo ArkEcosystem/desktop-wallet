@@ -8,13 +8,7 @@ VueTestUtils.config.mocks.i18n = { t: jest.fn(msg => msg) }
 VueTestUtils.config.mocks.$t = jest.fn(msg => msg)
 VueTestUtils.config.mocks.$eventBus = new Vue()
 VueTestUtils.config.mocks.$client = {
-  resource: () => ({
-    all: () => ({
-      data: {
-        delegates: {}
-      }
-    })
-  })
+  fetchDelegates: jest.fn()
 }
 
 VueTestUtils.config.mocks.assets_loadImage = jest.fn()

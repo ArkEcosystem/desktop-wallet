@@ -5,6 +5,7 @@
       class="h-full flex-1"
     />
     <WalletSidebar
+      :wallet-id="selectedWallet.id"
       :wallets="selectableWallets"
       class="sticky pin min-h-full w-1/7 border-l border-theme-line-separator"
       @select="onSelectWallet"
@@ -13,7 +14,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import { WalletSidebar, WalletDetails } from '@/components/Wallet'
 
 export default {
@@ -32,13 +32,12 @@ export default {
   },
 
   computed: {
-    ...mapGetters({
-      curentProfileId: 'session/profileId',
-      profileWallets: 'wallet/byProfileId'
-    }),
+    profileId () {
+      return this.$store.getters['session/profileId']
+    },
 
     selectableWallets () {
-      return this.profileWallets(this.currentProfileId)
+      return this.$store.getters['wallet/byProfileId'](this.profileId)
     }
   },
 

@@ -1,12 +1,13 @@
 <template>
   <MenuNavigation
+    :id="walletId"
     class="WalletSidebar py-10 rounded-r-lg justify-start"
     @input="emitSelect"
   >
     <MenuNavigationItem
       v-for="wallet in wallets"
-      :id="wallet.address"
-      :key="wallet.address"
+      :id="wallet.id"
+      :key="wallet.id"
       class="h-32"
     >
       <div
@@ -44,6 +45,11 @@ export default {
   },
 
   props: {
+    walletId: {
+      type: String,
+      required: false,
+      default: null
+    },
     wallets: {
       type: Array,
       required: true

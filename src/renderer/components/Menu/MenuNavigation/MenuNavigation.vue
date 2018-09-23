@@ -40,6 +40,10 @@ export default {
 
   mounted () {
     this.items = this.collectItems()
+
+    if (this.activeId) {
+      this.switchToId(this.activeId)
+    }
   },
 
   methods: {
