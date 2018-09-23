@@ -1,33 +1,44 @@
 <template>
   <MenuNavigation
     :id="walletId"
-    class="WalletSidebar py-10 rounded-r-lg justify-start"
+    :class="{
+      'WalletSidebar--basic': isBasic,
+      'WalletSidebar--full': !isBasic
+    }"
+    class="WalletSidebar justify-start"
     @input="emitSelect"
   >
     <MenuNavigationItem
       v-for="wallet in wallets"
       :id="wallet.id"
       :key="wallet.id"
-      class="h-32"
+      class="WalletSidebar__wallet"
     >
       <div
         slot-scope="{ isActive }"
-        class="flex flex-col items-center justify-center text-inherit"
+        class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6"
       >
         <img
           :src="assets_loadImage('pages/new-profile-avatar.svg')"
           width="50"
-          class="mb-2"
         >
-        <span
+        <div
           :class="{
             'text-theme-page-text': isActive,
             'text-theme-page-text-light': !isActive
           }"
-          class="font-semibold"
+          class="WalletSidebar__wallet__info flex flex-col font-semibold"
         >
-          {{ wallet.address | truncateMiddle(6) }}
-        </span>
+          <span>{{ wallet.address | truncateMiddle(addressLength) }}</span>
+          <span
+            v-if="!isBasic"
+            class="font-bold mt-2 text-xl"
+          >
+            <!-- FIXME localize + currency + filter -->
+            {{ $n(wallet.balance, 'currency') }}
+            <!-- TODO display a +/- n ARK on recent transactions -->
+          </span>
+        </div>
       </div>
     </MenuNavigationItem>
   </MenuNavigation>
@@ -53,6 +64,17 @@ export default {
     wallets: {
       type: Array,
       required: true
+    },
+    isBasic: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  },
+
+  computed: {
+    addressLength () {
+      return this.isBasic ? 6 : 12
     }
   },
 
@@ -63,3 +85,22 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.WalletSidebar--full .WalletSidebar__wallet >>> .MenuNavigationItem__border {
+  @apply .hidden
+}
+.WalletSidebar--full .WalletSidebar__wallet__wrapper {
+  @apply .border-b .border-theme-feature-item-alternative
+}
+.WalletSidebar--full .WalletSidebar__wallet img {
+  @apply .mr-3
+}
+
+.WalletSidebar--basic .WalletSidebar__wallet__wrapper {
+  @apply .flex-col .justify-center
+}
+.WalletSidebar--basic .WalletSidebar__wallet img {
+  @apply .mb-3
+}
+</style>

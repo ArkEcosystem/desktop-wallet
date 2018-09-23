@@ -7,7 +7,7 @@
     <WalletSidebar
       :wallet-id="selectedWallet.id"
       :wallets="selectableWallets"
-      class="sticky pin min-h-full w-1/7 border-l border-theme-line-separator"
+      class="sticky pin min-h-full w-1/7 border-l border-theme-line-separator py-10 rounded-r-lg"
       @select="onSelectWallet"
     />
   </div>

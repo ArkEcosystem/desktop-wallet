@@ -1,11 +1,11 @@
 <template>
   <div class="Dashboard relative flex flex-row h-full w-full">
-    <main class="bg-theme-feature rounded-lg mr-4 w-2/3">
+    <main class="bg-theme-feature rounded-lg mr-4 flex-1">
       Chart
     </main>
 
-    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/3 flex flex-col">
-      <nav class="flex flex-row text-theme-feature-item-alternative-text">
+    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 flex flex-col">
+      <div class="flex flex-row text-theme-feature-item-alternative-text">
         <router-link
           :to="{ name: 'wallet-new' }"
           class="Dashboard__wallets__create hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tl-lg"
@@ -23,51 +23,34 @@
             {{ $t('PAGES.DASHBOARD.IMPORT_WALLET') }}
           </span>
         </router-link>
-      </nav>
-
-      <div class="Dashboard__wallets__list py-6 mx-8">
-        <h3>{{ $t('PAGES.DASHBOARD.ALL_WALLETS') }}</h3>
-
-        <div
-          v-for="wallet in wallets"
-          :key="wallet.address"
-          class="py-8 w-full border-b border-dashed border-theme-line-separator"
-        >
-          <router-link
-            :to="{ name: 'wallet-show', params: { address: wallet.address } }"
-            class="font-semibold text-theme-header hover:no-underline flex flex-col pl-20"
-          >
-            <!-- TODO when the identicons are available -->
-
-            <span class="text-xl mb-1">
-              {{ wallet.name }}
-            </span>
-
-            <span class="text-2xl">
-              <!-- FIXME localize + currency + filter -->
-              {{ $n(wallet.balance, 'currency') }}
-              <!-- TODO display a +/- n ARK on recent transactions -->
-            </span>
-          </router-link>
-        </div>
       </div>
+
+      <WalletSidebar
+        :wallets="wallets"
+        :is-basic="false"
+        class="Dashboard__wallets__list"
+        @select="redirect"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { merge } from 'lodash'
+import { WalletSidebar } from '@/components/Wallet'
 
 export default {
   name: 'Dashboard',
 
   components: {
+    WalletSidebar
   },
 
   computed: {
     profileId () {
       return this.$store.getters['session/profileId']
     },
+
     wallets () {
       return this.$store.getters['wallet/byProfileId'](this.profileId)
     }
@@ -98,6 +81,12 @@ export default {
       interval: 'long',
       immediate: true
     })
+  },
+
+  methods: {
+    redirect (wallet) {
+      this.$router.push({ name: 'wallet-show', params: { address: wallet.address } })
+    }
   }
 }
 </script>
@@ -128,7 +117,7 @@ export default {
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }
-.Dashboard__wallets__list span {
-  color: var(--theme-header-text);
+.Dashboard__wallets__list >>> .WalletSidebar__wallet__info {
+  @apply .text-theme-page-text
 }
 </style>
