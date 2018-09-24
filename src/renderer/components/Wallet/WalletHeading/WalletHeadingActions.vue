@@ -4,8 +4,8 @@
       name="action-slide"
       mode="out-in"
     >
-      <WalletHeadingPrimaryActions v-if="!showSecondaryActions"/>
-      <WalletHeadingSecondaryActions v-else/>
+      <WalletHeadingPrimaryActions v-show="!showSecondaryActions" />
+      <WalletHeadingSecondaryActions v-show="showSecondaryActions" />
     </transition>
     <button
       class="bg-theme-heading-button text-theme-heading-button-text ml-2 p-2 rounded-lg"
@@ -22,15 +22,18 @@ import WalletHeadingSecondaryActions from './WalletHeadingSecondaryActions'
 
 export default {
   name: 'WalletHeadingActions',
+
   components: {
     WalletHeadingPrimaryActions,
     WalletHeadingSecondaryActions
   },
+
   data () {
     return {
       showSecondaryActions: false
     }
   },
+
   computed: {
     slideDuration () {
       const primaryToSecondaryDurations = {

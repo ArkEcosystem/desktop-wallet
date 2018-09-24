@@ -1,41 +1,66 @@
-import { mount } from '@vue/test-utils'
-
-import { WalletHeading } from '@/components/Wallet'
+import { shallowMount } from '@vue/test-utils'
+import WalletHeading from '@/components/Wallet/WalletHeading/WalletHeading'
+import WalletHeadingInfo from '@/components/Wallet/WalletHeading/WalletHeadingInfo'
+import WalletHeadingActions from '@/components/Wallet/WalletHeading/WalletHeadingActions'
+import WalletHeadingPrimaryActions from '@/components/Wallet/WalletHeading/WalletHeadingPrimaryActions'
+import WalletHeadingSecondaryActions from '@/components/Wallet/WalletHeading/WalletHeadingSecondaryActions'
 
 const sampleWalletData = {
-  identicon: 'https://api.adorable.io/avatars/285/arkwallet.png',
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
   balance: 7978921
 }
 
-let heading
+describe('WalletHeading', () => {
+  it('should be instatiated', () => {
+    const wrapper = shallowMount(WalletHeading)
+    expect(wrapper.isVueInstance()).toBeTrue()
+  })
+})
 
-describe('the WalletHeading component', () => {
+describe('WalletHeadingInfo', () => {
+  let wrapper
+
   beforeEach(() => {
-    heading = mount(WalletHeading, {
-      propsData: {
-        wallet: sampleWalletData
+    wrapper = shallowMount(WalletHeadingInfo, {
+      mocks: {
+        wallet_fromRoute: sampleWalletData
       }
     })
   })
 
-  it("displays the wallet's identicon", () => {
-    const identicon = heading.find('.WalletHeading__identicon')
-
-    expect(identicon.attributes().src).toBe(sampleWalletData.identicon)
+  it('should be instatiated', () => {
+    expect(wrapper.isVueInstance()).toBeTrue()
   })
 
-  it("displays the wallet's address", () => {
-    const address = heading.find('.WalletHeading__address')
+  it('should display the identicon', () => {
+    const identicon = wrapper.find('.WalletHeading__identicon')
+    expect(identicon.isVisible()).toBeTrue()
+  })
 
+  it('should display the address', () => {
+    const address = wrapper.find('.WalletHeading__address')
+    expect(address.isVisible()).toBeTrue()
     expect(address.text()).toBe(sampleWalletData.address)
   })
+})
 
-  it("displays the wallet's ARK balance", () => {
-    const balance = heading.find('.WalletHeading__balance')
+describe('WalletHeadingActions', () => {
+  it('should be instatiated', () => {
+    const wrapper = shallowMount(WalletHeadingActions)
+    expect(wrapper.isVueInstance()).toBeTrue()
+  })
+})
 
-    const formattedBalance = balance.text().split(',').join('')
+describe('WalletHeadingPrimaryActions', () => {
+  it('should be instatiated', () => {
+    const wrapper = shallowMount(WalletHeadingPrimaryActions)
+    expect(wrapper.isVueInstance()).toBeTrue()
+  })
+})
 
-    expect(formattedBalance).toContain(sampleWalletData.balance.toString())
+describe('WalletHeadingSecondaryActions', () => {
+  it('should be instatiated', () => {
+    const wrapper = shallowMount(WalletHeadingSecondaryActions)
+    expect(wrapper.isVueInstance()).toBeTrue()
   })
 })

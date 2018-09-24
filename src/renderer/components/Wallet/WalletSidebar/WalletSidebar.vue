@@ -1,12 +1,12 @@
 <template>
   <MenuNavigation
-    :id="walletId"
+    :id="activeWallet.address"
     :class="{
       'WalletSidebar--basic': isBasic,
       'WalletSidebar--full': !isBasic
     }"
     class="WalletSidebar justify-start"
-    @input="emitSelect"
+    @input="onSelect"
   >
     <MenuNavigationItem
       v-for="wallet in wallets"
@@ -56,15 +56,6 @@ export default {
   },
 
   props: {
-    walletId: {
-      type: String,
-      required: false,
-      default: null
-    },
-    wallets: {
-      type: Array,
-      required: true
-    },
     isBasic: {
       type: Boolean,
       required: false,
@@ -75,18 +66,58 @@ export default {
   computed: {
     addressLength () {
       return this.isBasic ? 6 : 12
+    },
+
+    profileId () {
+      return this.$store.getters['session/profileId']
+    },
+
+    wallets () {
+      return this.$store.getters['wallet/byProfileId'](this.profileId)
+    },
+
+    activeWallet () {
+      return this.wallet_fromRoute || {}
     }
   },
 
+  created () {
+    const refreshWallet = async wallet => {
+      try {
+        const walletData = await this.$client.fetchWallet(wallet.address)
+        if (walletData) {
+          const updatedWallet = { ...wallet, ...walletData }
+          this.$store.dispatch('wallet/update', updatedWallet)
+        }
+      } catch (error) {
+        console.error(error)
+        // TODO the error could mean that the wallet isn't on the blockchain yet
+        // this.$error(this.$t('COMMON.FAILED_FETCH', {
+        //   name: 'wallet data',
+        //   msg: error.message
+        // }))
+      }
+    }
+
+    this.$store.dispatch('timer/listen', {
+      callback: () => {
+        this.wallets.forEach(refreshWallet)
+      },
+      interval: 'long',
+      immediate: true
+    })
+  },
+
   methods: {
-    emitSelect (address) {
-      this.$emit('select', this.wallets.find(w => w.address === address))
+    onSelect (address) {
+      this.$emit('select', address)
+      this.$router.push({ name: 'wallet-show', params: { address } })
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .WalletSidebar--full .WalletSidebar__wallet >>> .MenuNavigationItem__border {
   @apply .hidden
 }

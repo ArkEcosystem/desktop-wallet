@@ -6,11 +6,6 @@
 
 <script>
 export default {
-  props: {
-    wallet: {
-      type: Object,
-      required: true
-    }
-  }
+  name: 'WalletTransactions'
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <div class="flex px-12 py-8 justify-between w-full bg-theme-heading-background rounded-tl-lg">
-    <WalletHeadingInfo v-bind="wallet" />
-    <WalletHeadingActions v-bind="wallet" />
+  <div class="WalletHeading flex px-10 py-8 justify-between w-full bg-theme-heading-background rounded-tl-lg">
+    <WalletHeadingInfo />
+    <WalletHeadingActions />
   </div>
 </template>
 
@@ -11,15 +11,10 @@ import WalletHeadingActions from './WalletHeadingActions.vue'
 
 export default {
   name: 'WalletHeading',
+
   components: {
     WalletHeadingInfo,
     WalletHeadingActions
-  },
-  props: {
-    wallet: {
-      type: Object,
-      required: true
-    }
   }
 }
 </script>

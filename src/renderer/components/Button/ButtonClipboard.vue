@@ -22,6 +22,8 @@
 
 <script>
 export default {
+  name: 'ButtonClipboard',
+
   props: {
     value: {
       type: String,

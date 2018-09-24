@@ -1,9 +1,6 @@
 <template>
   <main class="WalletDetails flex flex-col">
-    <WalletHeading
-      :wallet="wallet"
-      class="sticky pin-t z-10"
-    />
+    <WalletHeading class="sticky pin-t z-10" />
     <MenuTab
       v-model="currentTab"
       class="flex-1 overflow-y-auto">
@@ -17,7 +14,6 @@
           slot-scope="{ isActive }"
           :is="tab.component"
           :is-active="isActive"
-          :wallet="wallet"
         />
       </MenuTabItem>
     </MenuTab>
@@ -36,13 +32,6 @@ export default {
     WalletStatistics,
     MenuTab,
     MenuTabItem
-  },
-
-  props: {
-    wallet: {
-      type: Object,
-      required: true
-    }
   },
 
   data () {

@@ -29,14 +29,12 @@
         :wallets="wallets"
         :is-basic="false"
         class="Dashboard__wallets__list"
-        @select="redirect"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { merge } from 'lodash'
 import { WalletSidebar } from '@/components/Wallet'
 
 export default {
@@ -44,52 +42,15 @@ export default {
 
   components: {
     WalletSidebar
-  },
-
-  computed: {
-    profileId () {
-      return this.$store.getters['session/profileId']
-    },
-
-    wallets () {
-      return this.$store.getters['wallet/byProfileId'](this.profileId)
-    }
-  },
-
-  created () {
-    const refreshWallet = async wallet => {
-      try {
-        const walletData = await this.$client.fetchWallet(wallet.address)
-        if (walletData) {
-          const updatedWallet = merge({}, wallet, walletData)
-          this.$store.dispatch('wallet/update', updatedWallet)
-        }
-      } catch (error) {
-        console.error(error)
-        // TODO the error could mean that the wallet isn't on the blockchain yet
-        // this.$error(this.$t('COMMON.FAILED_FETCH', {
-        //   name: 'wallet data',
-        //   msg: error.message
-        // }))
-      }
-    }
-
-    this.$store.dispatch('timer/listen', {
-      callback: () => {
-        this.wallets.forEach(refreshWallet)
-      },
-      interval: 'long',
-      immediate: true
-    })
-  },
-
-  methods: {
-    redirect (wallet) {
-      this.$router.push({ name: 'wallet-show', params: { address: wallet.address } })
-    }
   }
 }
 </script>
+
+<style lang="postcss">
+.Dashboard__wallets__list .WalletSidebar__wallet__info {
+  @apply .text-theme-page-text
+}
+</style>
 
 <style lang="postcss" scoped>
 .Dashboard__wallets__create,
@@ -116,8 +77,5 @@ export default {
 
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
-}
-.Dashboard__wallets__list >>> .WalletSidebar__wallet__info {
-  @apply .text-theme-page-text
 }
 </style>
