@@ -19,7 +19,7 @@
         class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6"
       >
         <img
-          :src="assets_loadImage('pages/new-profile-avatar.svg')"
+          src="https://api.adorable.io/avatars/285/abott@adorable.png"
           width="50"
         >
         <div
@@ -29,7 +29,7 @@
           }"
           class="WalletSidebar__wallet__info flex flex-col font-semibold"
         >
-          <span>{{ wallet.address | truncateMiddle(addressLength) }}</span>
+          <span>{{ wallet.name }}</span>
           <span
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
@@ -64,10 +64,6 @@ export default {
   },
 
   computed: {
-    addressLength () {
-      return this.isBasic ? 6 : 12
-    },
-
     profileId () {
       return this.$store.getters['session/profileId']
     },
