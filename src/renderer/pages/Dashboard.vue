@@ -26,7 +26,6 @@
       </div>
 
       <WalletSidebar
-        :wallets="wallets"
         :is-basic="false"
         class="Dashboard__wallets__list"
       />
