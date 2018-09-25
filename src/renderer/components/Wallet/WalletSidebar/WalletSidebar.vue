@@ -34,8 +34,7 @@
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
           >
-            <!-- FIXME localize + currency + filter -->
-            {{ $n(wallet.balance, 'currency') }}
+            {{ currency_format(currency_subToUnit(wallet.balance), { currencyFrom: 'network' }) }}
             <!-- TODO display a +/- n ARK on recent transactions -->
           </span>
         </div>

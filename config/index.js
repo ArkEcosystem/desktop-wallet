@@ -33,24 +33,24 @@ exports.MARKET = {
     'LTC'
   ],
   currencies: {
-    'BTC': 'Ƀ',
-    'ETH': 'Ξ',
-    'LTC': 'Ł',
-    'AUD': 'A$',
-    'BRL': 'R$',
-    'CAD': 'C$',
-    'CHF': 'CHF',
-    'CNY': '¥',
-    'EUR': '€',
-    'GBP': '£',
-    'HKD': '£',
-    'IDR': 'IDR',
-    'INR': '₹',
-    'JPY': '¥',
-    'KRW': '₩',
-    'MXN': 'MX$',
-    'RUB': '₽',
-    'USD': '$'
+    BTC: { symbol: 'Ƀ', fractionDigits: 8 },
+    ETH: { symbol: 'Ξ', fractionDigits: 8 },
+    LTC: { symbol: 'Ł', fractionDigits: 8 },
+    AUD: { symbol: 'A$', fractionDigits: 2 },
+    BRL: { symbol: 'R$', fractionDigits: 2 },
+    CAD: { symbol: 'C$', fractionDigits: 2 },
+    CHF: { symbol: 'CHF', fractionDigits: 2 },
+    CNY: { symbol: '¥', fractionDigits: 2 },
+    EUR: { symbol: '€', fractionDigits: 2 },
+    GBP: { symbol: '£', fractionDigits: 2 },
+    HKD: { symbol: '£', fractionDigits: 2 },
+    IDR: { symbol: 'IDR', fractionDigits: 2 },
+    INR: { symbol: '₹', fractionDigits: 2 },
+    JPY: { symbol: '¥', fractionDigits: 0 },
+    KRW: { symbol: '₩', fractionDigits: 0 },
+    MXN: { symbol: 'MX$', fractionDigits: 2 },
+    RUB: { symbol: '₽', fractionDigits: 2 },
+    USD: { symbol: '$', fractionDigits: 2 }
   }
 }
 

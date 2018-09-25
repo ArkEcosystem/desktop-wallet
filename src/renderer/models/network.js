@@ -20,6 +20,9 @@ export default new BaseModel({
     explorer: {},
     token: {},
     symbol: {},
+    fractionDigits: {
+      type: 'integer'
+    },
     nethash: {},
     version: {
       type: 'number'

@@ -7,14 +7,14 @@
 
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
       <p class="WalletHeading__address tracking-wide mb-3">
-        {{ wallet_fromRoute.address }}
+        {{ address }}
         <ButtonClipboard
-          :value="wallet_fromRoute.address"
+          :value="address"
           class="text-inherit opacity-50"
         />
       </p>
 
-      <p class="WalletHeading__balance font-semibold tracking-extrawide">{{ wallet_fromRoute.balance.toLocaleString('en') }}</p>
+      <p class="WalletHeading__balance font-semibold tracking-extrawide ">{{ balance }}</p>
     </div>
   </div>
 </template>
@@ -27,6 +27,16 @@ export default {
 
   components: {
     ButtonClipboard
+  },
+
+  computed: {
+    address () {
+      return this.wallet_fromRoute.address
+    },
+    balance () {
+      const balance = this.wallet_fromRoute.balance
+      return this.currency_format(this.currency_subToUnit(balance), { currencyFrom: 'network' })
+    }
   }
 }
 </script>
