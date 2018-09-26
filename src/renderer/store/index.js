@@ -34,6 +34,7 @@ const ignoreModules = [
 const vuexPersist = new VuexPersistence({
   strictMode: process.env.NODE_ENV !== 'production',
   asyncStorage: true,
+  key: 'ark-desktop',
   storage: localforage,
   modules: pullAll(keys(modules), ignoreModules)
 })
