@@ -24,9 +24,25 @@ export default class ClientService {
   }
 
   async fetchDelegates () {
+    let delegates = []
     const { data } = await this.client.resource('delegates').all()
-    // FIXME v2
-    return data.delegates || data
+
+    if (this.__version === 2) {
+      delegates = data.data
+    } else if (data.success) {
+      delegates = data.delegates.map(delegate => {
+        return {
+          production: {
+            approval: delegate.approval,
+            productivity: delegate.productivity
+          },
+          rank: delegate.rate,
+          username: delegate.username
+        }
+      })
+    }
+
+    return delegates
   }
 
   /**
@@ -44,7 +60,11 @@ export default class ClientService {
   async fetchWallet (address) {
     let walletData = null
 
-    if (this.__version === 1) {
+    if (this.__version === 2) {
+      const { data } = await this.client.resource('wallets').get(address)
+      walletData = data.data
+      delete walletData.isDelegate
+    } else {
       const { data } = await this.client.resource('accounts').get(address)
       if (data.success) {
         const { account } = data
@@ -55,10 +75,6 @@ export default class ClientService {
         delete walletData.multisignatures
         delete walletData.u_multisignatures
       }
-    } else {
-      const { data } = await this.client.resource('wallets').get(address)
-      walletData = data.data
-      delete walletData.isDelegate
     }
 
     return walletData

@@ -19,7 +19,7 @@ export default {
       return [
         {
           label: this.$t('DELEGATES_TABLE.RATE'),
-          field: 'rate',
+          field: 'rank',
           type: 'number',
           thClass: 'text-center',
           tdClass: 'text-center'
@@ -31,13 +31,13 @@ export default {
         },
         {
           label: this.$t('DELEGATES_TABLE.PRODUCTIVITY'),
-          field: 'productivity',
+          field: 'production.productivity',
           type: 'percentage',
           formatFn: this.formatPercentage
         },
         {
           label: this.$t('DELEGATES_TABLE.APPROVAL'),
-          field: 'approval',
+          field: 'production.approval',
           type: 'percentage',
           formatFn: this.formatPercentage
         }
