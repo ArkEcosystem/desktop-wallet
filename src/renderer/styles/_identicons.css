@@ -1,0 +1,12 @@
+:root {
+  /* --wallet-identicon-xs: 150px; */
+  /* --wallet-identicon-sm: 150px; */
+  /* --wallet-identicon-lg: 150px; */
+  --wallet-identicon-xl: 150px;
+}
+
+.wallet-identicon-xl {
+  height: var(--wallet-identicon-xl);
+  width: var(--wallet-identicon-xl);
+  @apply .bg-no-repeat
+}

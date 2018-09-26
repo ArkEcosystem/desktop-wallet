@@ -47,9 +47,9 @@ const router = new Router({
       component: require('@/pages/Settings').default
     },
     {
-      path: '/wallets',
+      path: '/wallet/all',
       name: 'wallets',
-      component: require('@/pages/Wallets').default
+      component: require('@/pages/Wallet/WalletAll').default
     },
     {
       path: '/wallets/import',

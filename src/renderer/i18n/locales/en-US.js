@@ -154,6 +154,13 @@ export default {
       DELEGATES: 'Delegates',
       STATISTICS: 'Statistics'
     },
+    WALLET_ALL: {
+      CREATE_WALLET: 'Create wallet',
+      IMPORT_WALLET: 'Import wallet',
+      DELETE_WALLET: 'Delete this wallet',
+      HEADER: 'My wallets',
+      SHOW_WALLET: 'Show wallet'
+    },
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
