@@ -1,5 +1,16 @@
 import ClientService from '@/services/client'
 
+jest.mock('@/store', () => ({
+  getters: {
+    'session/currentNetwork': {
+      constants: {
+        epoch: '2017-03-21T13:00:00.000Z'
+      }
+    }
+  },
+  watch: jest.fn()
+}))
+
 describe('Services > Client', () => {
   let client
 
@@ -169,6 +180,88 @@ describe('Services > Client', () => {
           expect(delegate).toHaveProperty('username', data[i].username)
           expect(delegate).toHaveProperty('production.approval', data[i].approval)
           expect(delegate).toHaveProperty('production.productivity', data[i].productivity)
+        })
+      })
+    })
+  })
+
+  describe('fetchTransactions', () => {
+    let data = [
+      { id: 1, amount: 100000, fee: 10000000, timestamp: { epoch: 47848091, human: '2018-09-26T08:08:11.000Z' }, sender: 'address1', recipient: 'address2' },
+      { id: 2, amount: 200000, fee: 10000000, timestamp: { epoch: 47809625, human: '2018-09-25T21:27:05.000Z' }, sender: 'address2', recipient: 'address3' },
+      { id: 3, amount: 300000, fee: 10000000, timestamp: { epoch: 47796863, human: '2018-09-25T17:54:23.000Z' }, sender: 'address3', recipient: 'address3' }
+    ]
+
+    describe('when version in v1', () => {
+      const transactions = [
+        { id: data[0].id, amount: data[0].amount, fee: data[0].fee, timestamp: data[0].timestamp.epoch, senderId: data[0].sender, recipientId: data[0].recipient },
+        { id: data[1].id, amount: data[1].amount, fee: data[1].fee, timestamp: data[1].timestamp.epoch, senderId: data[1].sender, recipientId: data[1].recipient },
+        { id: data[2].id, amount: data[2].amount, fee: data[2].fee, timestamp: data[2].timestamp.epoch, senderId: data[2].sender, recipientId: data[2].recipient }
+      ]
+
+      beforeEach(() => {
+        client.version = 1
+
+        const resource = resource => {
+          if (resource === 'transactions') {
+            return {
+              all: () => ({ data: { transactions, success: true } })
+            }
+          }
+        }
+
+        client.client.resource = resource
+      })
+
+      it('should return only some properties for each transaction', async () => {
+        const response = await client.fetchTransactions('address')
+
+        expect(response).toHaveLength(data.length)
+        response.forEach((transaction, i) => {
+          expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
+          expect(transaction).toHaveProperty('timestamp')
+          expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
+          expect(transaction).toHaveProperty('isSender')
+          expect(transaction).toHaveProperty('isReceiver')
+          expect(transaction).not.toHaveProperty('senderId')
+          expect(transaction).not.toHaveProperty('recipientId')
+        })
+      })
+    })
+
+    describe('when version in v2', () => {
+      const transactions = [
+        { id: data[0].id, amount: data[0].amount, fee: data[0].fee, timestamp: data[0].timestamp, sender: data[0].sender, recipient: data[0].recipient },
+        { id: data[1].id, amount: data[1].amount, fee: data[1].fee, timestamp: data[1].timestamp, sender: data[1].sender, recipient: data[1].recipient },
+        { id: data[2].id, amount: data[2].amount, fee: data[2].fee, timestamp: data[2].timestamp, sender: data[2].sender, recipient: data[2].recipient }
+      ]
+
+      beforeEach(() => {
+        client.version = 2
+
+        const resource = resource => {
+          if (resource === 'transactions') {
+            return {
+              search: () => ({ data: { data: transactions } })
+            }
+          }
+        }
+
+        client.client.resource = resource
+      })
+
+      it('should return only some properties for each transaction', async () => {
+        const response = await client.fetchTransactions('address')
+
+        expect(response).toHaveLength(data.length)
+        response.forEach((transaction, i) => {
+          expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
+          expect(transaction).toHaveProperty('timestamp')
+          expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
+          expect(transaction).toHaveProperty('isSender')
+          expect(transaction).toHaveProperty('isReceiver')
+          expect(transaction).not.toHaveProperty('senderId')
+          expect(transaction).not.toHaveProperty('recipientId')
         })
       })
     })

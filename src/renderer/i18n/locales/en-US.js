@@ -11,7 +11,8 @@ export default {
     SAVE: 'Save',
     SELECT_BACKGROUND: 'Select background',
     SELECT_THEME: 'Select wallet theme',
-    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".'
+    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
+    DATE: 'Date'
   },
 
   LANGUAGES: {
@@ -32,13 +33,6 @@ export default {
     DONE: 'Copied!',
     COPY_TO_CLIPBOARD: 'Copy to clipboard',
     NOT_SUPPORTED: 'Copying to clipboard is not unavailable'
-  },
-
-  DELEGATES_TABLE: {
-    RATE: 'Rate',
-    USERNAME: 'Username',
-    PRODUCTIVITY: 'Productivity',
-    APPROVAL: 'Approval'
   },
 
   INPUT_ADDRESS: {
@@ -231,5 +225,19 @@ export default {
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet'
     }
+  },
+
+  WALLET_DELEGATES: {
+    RATE: 'Rate',
+    USERNAME: 'Username',
+    PRODUCTIVITY: 'Productivity',
+    APPROVAL: 'Approval'
+  },
+
+  WALLET_TRANSACTIONS: {
+    TRANSACTION_ID: 'Transaction ID',
+    RECIPIENT: 'Recipient',
+    SENDER: 'Sender',
+    AMOUNT: 'Amount'
   }
 }

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-import { vuexClient } from '@/plugins/api-client'
 import { pullAll, keys } from 'lodash'
 
 import AnnouncementsModule from '@/store/modules/announcements'
@@ -46,7 +45,6 @@ export default new Vuex.Store({
     RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION
   },
   plugins: [
-    vuexPersist.plugin,
-    vuexClient
+    vuexPersist.plugin
   ]
 })

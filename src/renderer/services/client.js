@@ -1,15 +1,21 @@
 import ApiClient from '@arkecosystem/client'
+import { unionBy } from 'lodash'
+import dayjs from 'dayjs'
+import store from '@/store'
 
 export default class ClientService {
   constructor () {
     this.__host = null
     this.__version = null
     this.client = new ApiClient('http://')
+
+    this.__watchProfile()
   }
 
   get host () {
     return this.__host
   }
+
   set host (host) {
     this.__host = host
     this.client.setConnection(host)
@@ -18,6 +24,7 @@ export default class ClientService {
   get version () {
     return this.__version
   }
+
   set version (apiVersion) {
     this.__version = apiVersion
     this.client.setVersion(apiVersion)
@@ -43,6 +50,67 @@ export default class ClientService {
     }
 
     return delegates
+  }
+
+  /**
+   * Request the transactions according to the current network version
+   *
+   * V1:
+   *   - The timestamp returned from the api is relative to the mainnet release date.
+   *   - Map keys to match the v2 response structure.
+   *
+   * V2:
+   *   - Api requires that the received and sent transactions be captured separately.
+   *   - The timestamp field is an object that already returns converted date.
+   *
+   * @param {String} address
+   * @return {Object[]}
+   */
+  async fetchTransactions (address) {
+    let transactions = []
+
+    if (this.__version === 1) {
+      const network = store.getters['session/currentNetwork']
+      const { data } = await this.client.resource('transactions').all({
+        recipientId: address,
+        senderId: address
+      })
+      if (data.success) {
+        transactions = data.transactions.map(tx => {
+          tx.timestamp = dayjs(network.constants.epoch).add(tx.timestamp * 1000).toDate()
+          tx.recipient = tx.recipientId
+          tx.sender = tx.senderId
+
+          delete tx.recipientId
+          delete tx.senderId
+
+          return tx
+        })
+      }
+    } else {
+      const responses = await Promise.all([
+        this.client.resource('transactions').search({ senderId: address }),
+        this.client.resource('transactions').search({ recipientId: address })
+      ])
+
+      const result = unionBy(responses[0].data.data, responses[1].data.data, 'id')
+
+      transactions = result.map(tx => {
+        tx.timestamp = dayjs(tx.timestamp.human).toDate()
+        return tx
+      })
+    }
+
+    // Add some utilities for each transactions
+    const result = transactions.map(tx => {
+      tx.isSender = tx.sender === address
+      tx.isReceiver = tx.recipient === address
+      tx.totalAmount = tx.amount + tx.fee
+
+      return tx
+    })
+
+    return result
   }
 
   /**
@@ -78,5 +146,20 @@ export default class ClientService {
     }
 
     return walletData
+  }
+
+  __watchProfile () {
+    store.watch(
+      (_, getters) => getters['session/currentProfile'],
+      (profile) => {
+        if (!profile) return
+
+        const { server, apiVersion } = store.getters['network/byId'](profile.networkId)
+
+        this.host = server
+        this.version = apiVersion
+      },
+      { immediate: true }
+    )
   }
 }

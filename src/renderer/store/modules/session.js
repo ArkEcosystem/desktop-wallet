@@ -1,5 +1,4 @@
 import { I18N, MARKET } from '@config'
-import { client } from '@/plugins/api-client'
 
 export default {
   namespaced: true,
@@ -110,13 +109,6 @@ export default {
       dispatch('setTheme', profile.theme)
 
       return profile
-    },
-
-    setClient ({ rootGetters }, networkId) {
-      const { server, apiVersion } = rootGetters['network/byId'](networkId)
-
-      client.host = server
-      client.version = apiVersion
     },
 
     reset ({ commit }) {

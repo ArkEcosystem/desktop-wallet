@@ -18,25 +18,25 @@ export default {
     columns () {
       return [
         {
-          label: this.$t('DELEGATES_TABLE.RATE'),
+          label: this.$t('WALLET_DELEGATES.RATE'),
           field: 'rank',
           type: 'number',
           thClass: 'text-center',
           tdClass: 'text-center'
         },
         {
-          label: this.$t('DELEGATES_TABLE.USERNAME'),
+          label: this.$t('WALLET_DELEGATES.USERNAME'),
           field: 'username',
           tdClass: 'w-2/3'
         },
         {
-          label: this.$t('DELEGATES_TABLE.PRODUCTIVITY'),
+          label: this.$t('WALLET_DELEGATES.PRODUCTIVITY'),
           field: 'production.productivity',
           type: 'percentage',
           formatFn: this.formatPercentage
         },
         {
-          label: this.$t('DELEGATES_TABLE.APPROVAL'),
+          label: this.$t('WALLET_DELEGATES.APPROVAL'),
           field: 'production.approval',
           type: 'percentage',
           formatFn: this.formatPercentage

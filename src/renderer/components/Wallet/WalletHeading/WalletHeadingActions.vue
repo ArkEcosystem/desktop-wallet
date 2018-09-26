@@ -4,8 +4,8 @@
       name="action-slide"
       mode="out-in"
     >
-      <WalletHeadingPrimaryActions v-show="!showSecondaryActions" />
-      <WalletHeadingSecondaryActions v-show="showSecondaryActions" />
+      <WalletHeadingPrimaryActions v-if="!showSecondaryActions" />
+      <WalletHeadingSecondaryActions v-else />
     </transition>
     <button
       class="bg-theme-heading-button text-theme-heading-button-text ml-2 p-2 rounded-lg"
