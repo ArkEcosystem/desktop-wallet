@@ -42,19 +42,36 @@
 
           <div
             class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline"
-            @click="selectWallet(wallet.id)"
+            @click="openConfirmation"
           >
             {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
           </div>
         </div>
+
+        <WalletRemovePopup
+          v-if="isConfirmationOpen"
+          :wallet="wallet"
+          @cancel="hideConfirmation"
+          @continue="deleteWallet(wallet)"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { WalletRemovePopup } from '@/components/Wallet'
+
 export default {
   name: 'WalletAll',
+
+  components: {
+    WalletRemovePopup
+  },
+
+  data: () => ({
+    isConfirmationOpen: false
+  }),
 
   computed: {
     profileId () {
@@ -63,6 +80,21 @@ export default {
 
     wallets () {
       return this.$store.getters['wallet/byProfileId'](this.profileId)
+    }
+  },
+
+  methods: {
+    deleteWallet (wallet) {
+      this.$store.dispatch('wallet/delete', wallet)
+      this.hideConfirmation()
+    },
+
+    hideConfirmation () {
+      this.isConfirmationOpen = false
+    },
+
+    openConfirmation () {
+      this.isConfirmationOpen = true
     }
   }
 }

@@ -1,3 +1,7 @@
+import WalletRemovePopup from './WalletRemovePopup'
+export {
+  WalletRemovePopup
+}
 export * from './WalletDelegates'
 export * from './WalletHeading'
 export * from './WalletStatistics'

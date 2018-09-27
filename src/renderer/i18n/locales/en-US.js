@@ -239,5 +239,13 @@ export default {
     RECIPIENT: 'Recipient',
     SENDER: 'Sender',
     AMOUNT: 'Amount'
+  },
+
+  WALLET_REMOVE_POPUP: {
+    HEADER: 'Confirmation',
+    NO: 'No, cancel',
+    NOTE: ' It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
+    QUESTION: 'Are you sure you want to remove this wallet?',
+    YES: 'Yes, I am sure'
   }
 }
