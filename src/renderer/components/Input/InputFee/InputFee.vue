@@ -21,8 +21,6 @@
 import { InputToggle } from '@/components/Input'
 import InputFeeSlider from './InputFeeSlider'
 
-console.log(InputToggle)
-
 export default {
   components: {
     InputToggle,

@@ -43,7 +43,7 @@ export default {
 
   actions: {
     load ({ dispatch }) {
-      dispatch('timer/listen', {
+      dispatch('timer/subscribe', {
         interval: 'medium',
         callback: () => dispatch('refreshTicker'),
         immediate: true

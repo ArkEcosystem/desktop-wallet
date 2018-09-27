@@ -62,6 +62,10 @@ export default {
     }
   },
 
+  data: () => ({
+    timerId: null
+  }),
+
   computed: {
     profileId () {
       return this.$store.getters['session/profileId']
@@ -76,7 +80,7 @@ export default {
     }
   },
 
-  created () {
+  async created () {
     const refreshWallet = async wallet => {
       try {
         const walletData = await this.$client.fetchWallet(wallet.address)
@@ -94,13 +98,17 @@ export default {
       }
     }
 
-    this.$store.dispatch('timer/listen', {
+    this.timerId = await this.$store.dispatch('timer/subscribe', {
       callback: () => {
         this.wallets.forEach(refreshWallet)
       },
       interval: 'long',
       immediate: true
     })
+  },
+
+  beforeDestroy () {
+    this.$store.dispatch('timer/unsubscribe', this.timerId)
   },
 
   methods: {

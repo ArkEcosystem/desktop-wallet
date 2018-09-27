@@ -21,8 +21,7 @@
 <script>
 import CreateSingleTransfer from './CreateSingleTransfer'
 import ConfirmSingleTransfer from './ConfirmSingleTransfer'
-import InputText from '@/components/Input/InputText'
-import InputFee from '@/components/Input/InputFee/InputFee'
+import { InputText, InputFee } from '@/components/Input'
 
 export default {
   components: {

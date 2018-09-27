@@ -1,7 +1,7 @@
 import store from '@/store'
 import { INTERVALS } from '@config'
 
-describe('network store modules', () => {
+describe('TimerModule', () => {
   it('should start intervals', () => {
     store.dispatch('timer/start')
 
@@ -9,20 +9,32 @@ describe('network store modules', () => {
     expect(store.state.timer.timers.length).toBe(Object.keys(INTERVALS).length)
   })
 
-  it('should listen with a callback', () => {
+  describe('subscribe/unsubscribe', () => {
+    let id
     const callback = jest.fn()
 
-    store.dispatch('timer/listen', {
-      interval: 'short',
-      immediate: true,
-      callback
+    beforeAll(async () => {
+      id = await store.dispatch('timer/subscribe', {
+        interval: 'short',
+        immediate: true,
+        callback
+      })
     })
 
-    expect(callback).toHaveBeenCalled()
+    it('should subscribe', () => {
+      expect(callback).toHaveBeenCalled()
+      expect(id).toBeTruthy()
+      expect(store.state.timer.observers).toContainKey(id)
+    })
+
+    it('should unsubscribe', async () => {
+      await store.dispatch('timer/unsubscribe', id)
+      expect(store.state.timer.observers).toBeEmpty()
+    })
   })
 
   it('should fail without a callback', () => {
-    expect(() => store.dispatch('timer/listen', {
+    expect(() => store.dispatch('timer/subscribe', {
       interval: 'short',
       immediate: true
     })).toThrow()
