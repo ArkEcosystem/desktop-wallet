@@ -69,6 +69,7 @@ export default {
     emitCancel () {
       this.$emit('cancel')
     },
+
     emitContinue () {
       this.$emit('continue')
     }
