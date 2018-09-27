@@ -1,6 +1,6 @@
-import MenuDropdown from './MenuDropdown.vue'
-import MenuDropdownHandler from './MenuDropdownHandler.vue'
-import MenuDropdownItem from './MenuDropdownItem.vue'
+import MenuDropdown from './MenuDropdown'
+import MenuDropdownHandler from './MenuDropdownHandler'
+import MenuDropdownItem from './MenuDropdownItem'
 
 export default MenuDropdown
 export {

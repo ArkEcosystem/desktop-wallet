@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import WalletHeadingPrimaryActions from './WalletHeadingPrimaryActions.vue'
+import WalletHeadingPrimaryActions from './WalletHeadingPrimaryActions'
 import WalletHeadingSecondaryActions from './WalletHeadingSecondaryActions'
 
 export default {

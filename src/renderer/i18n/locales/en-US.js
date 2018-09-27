@@ -3,6 +3,7 @@ export default {
     AVATAR: 'Avatar',
     BACK: 'Back',
     DONE: 'Done',
+    CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
     LANGUAGE: 'Language',
     NETWORK: 'Network',
@@ -162,7 +163,7 @@ export default {
           TEXT: 'Introduce the passphrase of your wallet. You can introduce the wallet address first to ensure that your both match.'
         },
         TITLE: '1. Introduce wallet',
-        ONLY_PASSPHRASE: 'Use the passhrase only'
+        ONLY_PASSPHRASE: 'Use the passphrase only'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -225,6 +226,15 @@ export default {
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet'
     }
+  },
+
+  TRANSACTIONS: {
+    CREATE_TRANSFER: 'Create Transfer',
+    RECIPIENT_ID: 'Recipient ID',
+    AMOUNT: 'Amount',
+    VENDOR_FIELD: 'Vendor Field',
+    PASSPHRASE: 'Passphrase',
+    FEE: 'Fee'
   },
 
   WALLET_DELEGATES: {

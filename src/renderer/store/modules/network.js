@@ -2,11 +2,27 @@ import BaseModule from '../base'
 import { isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
 import NetworkModel from '@/models/network'
-import Client from '@arkecosystem/client'
-import alertEvents from '@/plugins/alert-events'
-import i18n from '@/i18n'
+import Client from '@/services/client'
 
 export default new BaseModule(NetworkModel, {
+  getters: {
+    feeStatisticsByType: (_, __, ___, rootGetters) => type => {
+      const currentNetwork = rootGetters['session/currentNetwork']
+
+      if (!currentNetwork) {
+        throw new Error('[network/feeStatisticsByType] No active network.')
+      }
+
+      if (currentNetwork.apiVersion === 1) {
+        throw new Error('[network/feeStatisticsByType] Supported only by v2 networks.')
+      }
+
+      const { feeStatistics } = currentNetwork
+      const data = feeStatistics.find(transactionType => transactionType.type === type)
+      return data ? data.fees : []
+    }
+  },
+
   mutations: {
     SET_ALL (state, value) {
       state.all = value
@@ -22,33 +38,15 @@ export default new BaseModule(NetworkModel, {
 
     async updateNetworkConfig ({ dispatch, getters }, networkId) {
       const network = getters['byId'](networkId)
-      const response = await dispatch('fetchNetworkConfig', network)
+      const response = await Client.fetchNetworkConfig(network.server, network.apiVersion)
 
       if (response) {
-        dispatch('update', {
+        const result = dispatch('update', {
           ...network,
           ...response
         })
-      }
-    },
 
-    async fetchNetworkConfig (_, { server, apiVersion }) {
-      const client = new Client(server, apiVersion)
-      const resource = apiVersion === 1 ? 'loader' : 'node'
-      const api = client.resource(resource)
-
-      try {
-        const endpoint = apiVersion === 1 ? 'status' : 'configuration'
-        const response = await api[endpoint]()
-        const data = response.data.network || response.data
-
-        return data
-      } catch (error) {
-        console.error(error)
-        alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
-          name: 'configuration',
-          msg: error.message
-        }))
+        return result
       }
     }
   }

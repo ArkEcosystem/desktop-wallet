@@ -1,5 +1,5 @@
-import MenuTab from './MenuTab.vue'
-import MenuTabItem from './MenuTabItem.vue'
+import MenuTab from './MenuTab'
+import MenuTabItem from './MenuTabItem'
 
 export default MenuTab
 export {

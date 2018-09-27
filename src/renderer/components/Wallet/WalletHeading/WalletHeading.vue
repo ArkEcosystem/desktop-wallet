@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import WalletHeadingInfo from './WalletHeadingInfo.vue'
-import WalletHeadingActions from './WalletHeadingActions.vue'
+import WalletHeadingInfo from './WalletHeadingInfo'
+import WalletHeadingActions from './WalletHeadingActions'
 
 export default {
   name: 'WalletHeading',

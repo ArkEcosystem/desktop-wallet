@@ -1,4 +1,5 @@
 import ApiClient from '@arkecosystem/client'
+import { transactionBuilder } from '@arkecosystem/crypto'
 import { unionBy } from 'lodash'
 import dayjs from 'dayjs'
 import store from '@/store'
@@ -10,6 +11,28 @@ export default class ClientService {
     this.client = new ApiClient('http://')
 
     this.__watchProfile()
+  }
+
+  /**
+   * Fetch the network configuration according to the version.
+   * Create a new client to isolate the main client.
+   *
+   * @param {String} server
+   * @param {Number} apiVersion
+   * @eturns {Object}
+   */
+  static async fetchNetworkConfig (server, apiVersion) {
+    const client = new ApiClient(server, apiVersion)
+
+    if (apiVersion === 1) {
+      const { data } = await client.resource('loader').status()
+
+      return data.network
+    } else {
+      const { data } = await client.resource('node').configuration()
+
+      return data.data
+    }
   }
 
   get host () {
@@ -146,6 +169,26 @@ export default class ClientService {
     }
 
     return walletData
+  }
+
+  async sendTransfer ({ amount, recipientId, senderPublicKey, vendorField, passphrase }) {
+    const potentialTransfer = transactionBuilder
+      .transfer()
+      .amount(amount)
+      .recipientId(recipientId)
+      .senderPublicKey(senderPublicKey)
+      .vendorField(vendorField)
+      .sign(passphrase)
+      .getStruct()
+
+    let transfer = await this
+      .client
+      .resource('transactions')
+      .create({
+        transactions: [potentialTransfer]
+      })
+
+    return transfer
   }
 
   __watchProfile () {
