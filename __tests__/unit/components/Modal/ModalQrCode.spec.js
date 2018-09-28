@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils'
-import QRCodeModal from '@/components/QRCode'
+import { ModalQrCode } from '@/components/Modal'
 
-describe('QRCode', () => {
+describe('ModalQrCode', () => {
   it('should render modal', () => {
-    const wrapper = shallowMount(QRCodeModal, {
+    const wrapper = shallowMount(ModalQrCode, {
       propsData: {
         value: 'teste'
       }

@@ -17,7 +17,7 @@
 
               <InputGridItem
                 :image-path="item.imagePath"
-                :is-selected="selectedItem === item && !isPopupOpen"
+                :is-selected="selectedItem === item && !isModalOpen"
                 :text-content="item.textContent"
                 :title="item.title"
               />
@@ -29,25 +29,25 @@
         <slot name="more">
 
           <div
-            v-if="popupHeaderText"
-            @click="openPopup"
+            v-if="modalHeaderText"
+            @click="openModal"
           >
             <InputGridItem
-              :image-path="isSelectedFromPopup ? selectedItem.imagePath : false"
-              :is-selected="isSelectedFromPopup"
-              :title="isSelectedFromPopup ? selectedItem.title : $t('InputGrid.more')"
+              :image-path="isSelectedFromModal ? selectedItem.imagePath : false"
+              :is-selected="isSelectedFromModal"
+              :title="isSelectedFromModal ? selectedItem.title : $t('INPUT_GRID.MORE')"
               class="text-4xl text-center p-1 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text"
               text-content="..."
             />
           </div>
 
-          <InputGridPopup
-            v-if="isPopupOpen"
+          <InputGridModal
+            v-if="isModalOpen"
             :items="items"
             :item-key="itemKey"
             :selected="selectedItem"
-            :popup-header-text="popupHeaderText"
-            @close="closePopup"
+            :modal-header-text="modalHeaderText"
+            @close="closeModal"
             @select="select"
           />
         </slot>
@@ -61,7 +61,7 @@
 <script>
 import { flatten } from 'lodash'
 import InputGridItem from './InputGridItem'
-import InputGridPopup from './InputGridPopup'
+import InputGridModal from './InputGridModal'
 
 /**
  * The InputGrid displays a grid of items. One of those items could be selected
@@ -72,7 +72,7 @@ export default {
 
   components: {
     InputGridItem,
-    InputGridPopup
+    InputGridModal
   },
 
   props: {
@@ -95,7 +95,7 @@ export default {
       required: false,
       default: null
     },
-    popupHeaderText: {
+    modalHeaderText: {
       type: String,
       required: false,
       default: null
@@ -109,7 +109,7 @@ export default {
 
   data () {
     return {
-      isPopupOpen: null,
+      isModalOpen: null,
       selectedItem: this.selected
     }
   },
@@ -127,7 +127,7 @@ export default {
     visibleItems () {
       return this.allItems.slice(0, this.maxVisibleItems)
     },
-    isSelectedFromPopup () {
+    isSelectedFromModal () {
       return !!this.selectedItem && this.visibleItems.indexOf(this.selectedItem) === -1
     }
   },
@@ -145,11 +145,11 @@ export default {
       }, {})
     },
 
-    openPopup () {
-      this.isPopupOpen = true
+    openModal () {
+      this.isModalOpen = true
     },
-    closePopup () {
-      this.isPopupOpen = false
+    closeModal () {
+      this.isModalOpen = false
     },
 
     select (item) {

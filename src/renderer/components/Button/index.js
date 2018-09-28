@@ -1,11 +1,11 @@
 import ButtonClipboard from './ButtonClipboard'
 import ButtonClose from './ButtonClose'
 import ButtonSwitch from './ButtonSwitch'
-import ButtonPopup from './ButtonPopup'
+import ButtonModal from './ButtonModal'
 
 export {
   ButtonClipboard,
   ButtonClose,
   ButtonSwitch,
-  ButtonPopup
+  ButtonModal
 }

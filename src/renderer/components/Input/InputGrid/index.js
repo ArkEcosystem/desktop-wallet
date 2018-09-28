@@ -1,10 +1,10 @@
 import InputGrid from './InputGrid'
-import InputGridPopup from './InputGridPopup'
+import InputGridModal from './InputGridModal'
 import InputGridItem from './InputGridItem'
 
 export default InputGrid
 export {
   InputGrid,
   InputGridItem,
-  InputGridPopup
+  InputGridModal
 }

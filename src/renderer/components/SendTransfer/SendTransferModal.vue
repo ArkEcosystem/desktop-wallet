@@ -1,5 +1,5 @@
 <template>
-  <PopupModal
+  <ModalWindow
     :title="$t('WALLET_HEADING.ACTIONS.SEND')"
     @close="$emit('close')"
   >
@@ -14,19 +14,19 @@
     <MultipleTransferForm
       v-else
     />
-  </PopupModal>
+  </ModalWindow>
 </template>
 
 <script>
 import { InputToggle } from '@/components/Input'
-import PopupModal from '@/components/PopupModal'
+import ModalWindow from '@/components/Modal'
 import SingleTransferForm from './SingleTransfer/SingleTransferForm'
 import MultipleTransferForm from './MultipleTransfer/MultipleTransferForm'
 
 export default {
   components: {
     InputToggle,
-    PopupModal,
+    ModalWindow,
     SingleTransferForm,
     MultipleTransferForm
   },

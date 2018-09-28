@@ -1,14 +1,14 @@
 <template>
-  <PopupModal
-    :title="popupHeaderText"
+  <ModalWindow
+    :title="modalHeaderText"
     @close="emitClose"
   >
-    <section class="InputGridPopup flex flex-col">
-      <div class="InputGridPopup__container overflow-y-auto">
+    <section class="InputGridModal flex flex-col">
+      <div class="InputGridModal__container overflow-y-auto">
         <div
           v-for="(categoryItems, category) in items"
           :key="category"
-          class="InputGridPopup__container__category"
+          class="InputGridModal__container__category"
         >
           <h4 class="w-full mt-5 mb-2">{{ category }}</h4>
 
@@ -45,11 +45,11 @@
         </button>
       </div>
     </section>
-  </PopupModal>
+  </ModalWindow>
 </template>
 
 <script>
-import PopupModal from '@/components/PopupModal'
+import ModalWindow from '@/components/Modal'
 import InputGridItem from './InputGridItem'
 
 /**
@@ -57,11 +57,11 @@ import InputGridItem from './InputGridItem'
  * confirmed.
  */
 export default {
-  name: 'InputGridPopup',
+  name: 'InputGridModal',
 
   components: {
     InputGridItem,
-    PopupModal
+    ModalWindow
   },
 
   props: {
@@ -78,11 +78,11 @@ export default {
       required: false,
       default: null
     },
-    popupHeaderText: {
+    modalHeaderText: {
       type: String,
       required: false,
       default () {
-        return this.$t('InputGrid.popupHeader')
+        return this.$t('INPUT_GRID_MODAL.TITLE')
       }
     }
   },
@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style scoped>
-.InputGridPopup__container {
+.InputGridModal__container {
   width: 28.5rem; /* 5 * 4.5rem (columns) + 4 * 1rem (gaps) + 2rem (gap from scrollbar) */
   height: 50vh;
 }

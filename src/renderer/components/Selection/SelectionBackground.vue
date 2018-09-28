@@ -3,7 +3,7 @@
     <InputGrid
       :items="images"
       :max-visible-items="maxVisibleItems"
-      :popup-header-text="$t('SELECTION_BACKGROUND.POPUP_HEADER')"
+      :modal-header-text="$t('SELECTION_BACKGROUND.MODAL_HEADER')"
       :selected="selectedItem"
       item-key="imagePath"
       @input="select"

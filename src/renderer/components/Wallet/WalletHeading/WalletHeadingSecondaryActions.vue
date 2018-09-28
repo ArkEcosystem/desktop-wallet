@@ -12,30 +12,30 @@
     <button class="bg-theme-heading-button text-theme-heading-button-text p-2 rounded-lg">
       {{ $t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE') }}
     </button>
-    <ButtonPopup
+    <ButtonModal
       :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
       class="bg-theme-heading-button text-theme-heading-button-text"
     >
-      <WalletRemovePopup
+      <ModalConfirmation
         slot-scope="{ toggle }"
         :wallet="currentWallet"
         @cancel="toggle"
         @continue="deleteWallet(toggle)"
       />
-    </ButtonPopup>
+    </ButtonModal>
   </div>
 </template>
 
 <script>
-import { ButtonPopup } from '@/components/Button'
-import { WalletRemovePopup } from '@/components/Wallet'
+import { ButtonModal } from '@/components/Button'
+import { ModalConfirmation } from '@/components/Modal'
 
 export default {
   name: 'WalletHeadingSecondaryActions',
 
   components: {
-    ButtonPopup,
-    WalletRemovePopup
+    ButtonModal,
+    ModalConfirmation
   },
 
   computed: {

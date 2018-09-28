@@ -3,20 +3,20 @@
     key="PrimaryActions"
     class="WalletHeading__PrimaryActions flex"
   >
-    <ButtonPopup
+    <ButtonModal
       :class="buttonStyle"
       icon="qr"
       label="QR"
       view-box="0 0 18 18"
     >
-      <QRCodeModal
+      <ModalQrCode
         slot-scope="{ toggle }"
         :value="currentWallet.address"
         @close="toggle"
       />
-    </ButtonPopup>
+    </ButtonModal>
 
-    <ButtonPopup
+    <ButtonModal
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.SEND')"
       icon="send"
@@ -26,21 +26,21 @@
         slot-scope="{ toggle }"
         @close="toggle"
       />
-    </ButtonPopup>
+    </ButtonModal>
   </div>
 </template>
 
 <script>
-import { ButtonPopup } from '@/components/Button'
-import { QRCodeModal } from '@/components/QRCode'
+import { ButtonModal } from '@/components/Button'
+import { ModalQrCode } from '@/components/Modal'
 import SendTransferModal from '@/components/SendTransfer/SendTransferModal'
 
 export default {
   name: 'WalletHeadingPrimaryActions',
 
   components: {
-    ButtonPopup,
-    QRCodeModal,
+    ButtonModal,
+    ModalQrCode,
     SendTransferModal
   },
 

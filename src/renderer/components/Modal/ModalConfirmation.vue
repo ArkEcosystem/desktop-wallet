@@ -1,8 +1,8 @@
 <template>
-  <PopupModal
+  <ModalWindow
     @close="emitCancel"
   >
-    <section class="WalletRemovePopup__container m-6 flex flex-col">
+    <section class="ModalConfirmation__container m-6 flex flex-col">
       <div class="mb-6 text-xl">
         <h2 class="mb-5 text-3xl">{{ $t('WALLET_REMOVE_POPUP.HEADER') }}</h2>
 
@@ -15,7 +15,7 @@
         <img
           :title="wallet.name"
           :src="assets_loadImage('arrows/arrow-confirmation.svg')"
-          class="WalletRemovePopup__container__arrow"
+          class="ModalConfirmation__container__arrow"
         >
         <div
           :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
@@ -25,7 +25,7 @@
         <img
           :title="wallet.name"
           :src="assets_loadImage('arrows/arrow-confirmation.svg')"
-          class="WalletRemovePopup__container__arrow WalletRemovePopup__container__arrow--reverse"
+          class="ModalConfirmation__container__arrow ModalConfirmation__container__arrow--reverse"
         >
       </div>
 
@@ -45,17 +45,17 @@
         </button>
       </div>
     </section>
-  </PopupModal>
+  </ModalWindow>
 </template>
 
 <script>
-import PopupModal from '@/components/PopupModal'
+import ModalWindow from './ModalWindow'
 
 export default {
-  name: 'WalletRemovePopup',
+  name: 'ModalConfirmation',
 
   components: {
-    PopupModal
+    ModalWindow
   },
 
   props: {
@@ -78,16 +78,16 @@ export default {
 </script>
 
 <style scoped>
-.WalletRemovePopup__container {
+.ModalConfirmation__container {
   min-width: calc(var(--wallet-identicon-xl) + 74px * 2);
   max-width: calc(var(--wallet-identicon-xl) + 74px * 2 + 50px)
 }
-.WalletRemovePopup__container__arrow {
+.ModalConfirmation__container__arrow {
   width: 74px;
   height: 75px;
   margin-top: calc(var(--wallet-identicon-xl) - 75px + 2rem)
 }
-.WalletRemovePopup__container__arrow--reverse {
+.ModalConfirmation__container__arrow--reverse {
   transform: scaleX(-1)
 }
 </style>

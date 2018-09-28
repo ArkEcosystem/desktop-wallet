@@ -1,14 +1,14 @@
 <template>
   <transition
-    name="PopupModal"
+    name="ModalWindow"
   >
     <div
-      class="PopupModal__mask fixed z-50 pin-t pin-l table w-full h-full"
+      class="ModalWindow__mask fixed z-50 pin-t pin-l table w-full h-full"
       @click="emitClose"
     >
       <div class="flex items-center justify-center absolute pin">
         <div
-          class="PopupModal__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-white text-theme-text-content"
+          class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-white text-theme-text-content"
           @click.stop="void 0"
         >
 
@@ -57,7 +57,7 @@
 
 <script>
 export default {
-  name: 'PopupModal',
+  name: 'ModalWindow',
 
   props: {
     title: {
@@ -82,13 +82,13 @@ export default {
 </script>
 
 <style scoped>
-.PopupModal__mask {
+.ModalWindow__mask {
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
 }
 
-.PopupModal-enter,
-.PopupModal-leave-active {
+.ModalWindow-enter,
+.ModalWindow-leave-active {
   opacity: 0;
   transform: scale(1.1);
 }

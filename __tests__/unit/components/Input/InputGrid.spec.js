@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { InputGrid, InputGridItem, InputGridPopup } from '@/components/Input/InputGrid'
+import { InputGrid, InputGridItem, InputGridModal } from '@/components/Input/InputGrid'
 
 describe('InputGrid', () => {
   describe('InputGrid', () => {
@@ -28,16 +28,16 @@ describe('InputGrid', () => {
     })
   })
 
-  describe('InputGridPopup', () => {
+  describe('InputGridModal', () => {
     it('should render the component', () => {
-      const wrapper = shallowMount(InputGridPopup, {
+      const wrapper = shallowMount(InputGridModal, {
         propsData: {
           items: [],
           itemKey: 'src'
         }
       })
 
-      expect(wrapper.contains('.InputGridPopup')).toBeTruthy()
+      expect(wrapper.contains('.InputGridModal')).toBeTruthy()
     })
   })
 })

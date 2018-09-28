@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <WalletRemovePopup
+        <ModalConfirmation
           v-if="isConfirmationOpen"
           :wallet="wallet"
           @cancel="hideConfirmation"
@@ -60,13 +60,13 @@
 </template>
 
 <script>
-import { WalletRemovePopup } from '@/components/Wallet'
+import { ModalConfirmation } from '@/components/Modal'
 
 export default {
   name: 'WalletAll',
 
   components: {
-    WalletRemovePopup
+    ModalConfirmation
   },
 
   data: () => ({

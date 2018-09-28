@@ -45,25 +45,17 @@ export default {
     QR: 'Scan the QR code'
   },
 
-  SELECTION_AVATAR: {
-    AVATARS: 'Avatars',
-    POPUP_HEADER: 'Select avatar'
+  INPUT_GRID: {
+    MORE: 'Show more'
   },
 
-  SELECTION_BACKGROUND: {
-    POPUP_HEADER: 'Select background',
-    TEXTURES: 'Textures',
-    WALLPAPERS: 'Wallpapers'
+  INPUT_GRID_MODAL: {
+    TITLE: 'Select'
   },
 
-  InputGrid: {
-    more: 'Show more',
-    popupHeader: 'Select'
-  },
-
-  QRCode: {
-    popupTitle: 'QR Code',
-    popupSubtitle: 'Scan for Address'
+  MODAL_QR_CODE: {
+    TITLE: 'QR Code',
+    SUBTITLE: 'Scan for Address'
   },
 
   PASSPHRASE_INPUT: {
@@ -218,14 +210,15 @@ export default {
     }
   },
 
-  WALLET_HEADING: {
-    ACTIONS: {
-      SEND: 'Send',
-      WALLET_NAME: 'Wallet name',
-      REGISTER_DELEGATE: 'Register delegate',
-      SECOND_PASSPHRASE: '2nd passphrase',
-      DELETE_WALLET: 'Delete wallet'
-    }
+  SELECTION_AVATAR: {
+    AVATARS: 'Avatars',
+    MODAL_HEADER: 'Select avatar'
+  },
+
+  SELECTION_BACKGROUND: {
+    MODAL_HEADER: 'Select background',
+    TEXTURES: 'Textures',
+    WALLPAPERS: 'Wallpapers'
   },
 
   TRANSACTIONS: {
@@ -235,6 +228,16 @@ export default {
     VENDOR_FIELD: 'Vendor Field',
     PASSPHRASE: 'Passphrase',
     FEE: 'Fee'
+  },
+
+  WALLET_HEADING: {
+    ACTIONS: {
+      SEND: 'Send',
+      WALLET_NAME: 'Wallet name',
+      REGISTER_DELEGATE: 'Register delegate',
+      SECOND_PASSPHRASE: '2nd passphrase',
+      DELETE_WALLET: 'Delete wallet'
+    }
   },
 
   WALLET_DELEGATES: {

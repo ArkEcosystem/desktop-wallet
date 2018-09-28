@@ -11,7 +11,7 @@
     />
     <span class="font-semibold">{{ label }}</span>
     <portal
-      v-if="showPopup"
+      v-if="showModal"
       to="modal"
     >
       <slot :toggle="toggle" />
@@ -23,7 +23,7 @@
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
-  name: 'ButtonPopup',
+  name: 'ButtonModal',
 
   components: {
     SvgIcon
@@ -47,12 +47,12 @@ export default {
   },
 
   data: () => ({
-    showPopup: false
+    showModal: false
   }),
 
   methods: {
     toggle () {
-      this.showPopup = !this.showPopup
+      this.showModal = !this.showModal
     }
   }
 }

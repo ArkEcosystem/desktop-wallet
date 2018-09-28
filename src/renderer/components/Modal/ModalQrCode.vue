@@ -1,24 +1,24 @@
 <template>
-  <PopupModal
+  <ModalWindow
     @close="emitClose"
   >
     <section class="flex flex-col items-center p-5">
-      <h2 class="mb-1">{{ $t('QRCode.popupTitle') }}</h2>
-      <p class="mb-5">{{ $t('QRCode.popupSubtitle') }}</p>
+      <h2 class="mb-1">{{ $t('MODAL_QR_CODE.TITLE') }}</h2>
+      <p class="mb-5">{{ $t('MODAL_QR_CODE.SUBTITLE') }}</p>
       <VueQrcode v-bind="$props" />
     </section>
-  </PopupModal>
+  </ModalWindow>
 </template>
 
 <script>
-import PopupModal from '@/components/PopupModal'
+import ModalWindow from './ModalWindow'
 import VueQrcode from '@xkeshi/vue-qrcode'
 
 export default {
-  name: 'QRCode',
+  name: 'ModalQrCode',
 
   components: {
-    PopupModal,
+    ModalWindow,
     VueQrcode
   },
 

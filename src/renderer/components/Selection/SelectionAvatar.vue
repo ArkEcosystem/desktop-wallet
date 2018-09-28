@@ -3,7 +3,7 @@
     <InputGrid
       :items="images"
       :max-visible-items="maxVisibleItems"
-      :popup-header-text="popupHeaderText"
+      :modal-header-text="modalHeaderText"
       :selected="selectedItem"
       item-key="imagePath"
       @input="select"
@@ -26,7 +26,7 @@ export default {
       required: false,
       default: () => ['avatars']
     },
-    enablePopup: {
+    enableModal: {
       type: Boolean,
       required: false,
       default: true
@@ -34,9 +34,9 @@ export default {
   },
 
   computed: {
-    popupHeaderText () {
-      return this.enablePopup
-        ? this.$t('SELECTION_AVATAR.POPUP_HEADER')
+    modalHeaderText () {
+      return this.enableModal
+        ? this.$t('SELECTION_AVATAR.MODAL_HEADER')
         : null
     }
   }
@@ -49,16 +49,16 @@ export default {
   background-repeat: no-repeat;
 }
 
- .SelectionAvatar .InputGridPopup__container {
+ .SelectionAvatar .InputGridModal__container {
   width: calc((var(--profile-avatar-xl)) * 3 + 2 * 10px) !important;
 }
-.SelectionAvatar .InputGridPopup .InputGrid__container__category__items {
+.SelectionAvatar .InputGridModal .InputGrid__container__category__items {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--profile-avatar-xl));
   grid-gap: 10px;
 }
 
-.SelectionAvatar .InputGridPopup .InputGrid__container__category__items .InputGridItem {
+.SelectionAvatar .InputGridModal .InputGrid__container__category__items .InputGridItem {
   height: var(--profile-avatar-xl);
   width: var(--profile-avatar-xl);
   background-size: contain;
