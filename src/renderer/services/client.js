@@ -1,6 +1,5 @@
 import ApiClient from '@arkecosystem/client'
 import { transactionBuilder } from '@arkecosystem/crypto'
-import { unionBy } from 'lodash'
 import dayjs from 'dayjs'
 import store from '@/store'
 
@@ -83,7 +82,6 @@ export default class ClientService {
    *   - Map keys to match the v2 response structure.
    *
    * V2:
-   *   - Api requires that the received and sent transactions be captured separately.
    *   - The timestamp field is an object that already returns converted date.
    *
    * @param {String} address
@@ -98,6 +96,7 @@ export default class ClientService {
         recipientId: address,
         senderId: address
       })
+
       if (data.success) {
         transactions = data.transactions.map(tx => {
           tx.timestamp = dayjs(network.constants.epoch).add(tx.timestamp * 1000).toDate()
@@ -111,14 +110,9 @@ export default class ClientService {
         })
       }
     } else {
-      const responses = await Promise.all([
-        this.client.resource('transactions').search({ senderId: address }),
-        this.client.resource('transactions').search({ recipientId: address })
-      ])
+      const { data } = await this.client.resource('wallets').transactions(address)
 
-      const result = unionBy(responses[0].data.data, responses[1].data.data, 'id')
-
-      transactions = result.map(tx => {
+      transactions = data.data.map(tx => {
         tx.timestamp = dayjs(tx.timestamp.human).toDate()
         return tx
       })

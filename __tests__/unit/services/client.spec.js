@@ -240,9 +240,9 @@ describe('Services > Client', () => {
         client.version = 2
 
         const resource = resource => {
-          if (resource === 'transactions') {
+          if (resource === 'wallets') {
             return {
-              search: () => ({ data: { data: transactions } })
+              transactions: () => ({ data: { data: transactions } })
             }
           }
         }
