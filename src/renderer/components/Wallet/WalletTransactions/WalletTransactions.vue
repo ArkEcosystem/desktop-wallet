@@ -1,68 +1,85 @@
 <template>
-  <vue-good-table
-    :columns="columns"
-    :rows="transactions"
-    :sort-options="{
-      enabled: true,
-      initialSortBy: {field: 'timestamp', type: 'desc'}
-    }"
-    class="WalletTransactions"
-  >
-    <template
-      slot="table-row"
-      slot-scope="table"
+  <div>
+    <vue-good-table
+      :columns="columns"
+      :rows="transactions"
+      :sort-options="{
+        enabled: true,
+        initialSortBy: {field: 'timestamp', type: 'desc'}
+      }"
+      class="WalletTransactions"
+      @on-row-click="onRowClick"
     >
-      <a
-        v-if="table.column.field === 'id'"
-        href="#"
-        @click.prevent="openInExplorer(table.row.id)"
+      <template
+        slot="table-row"
+        slot-scope="table"
       >
-        {{ table.formattedRow['id'] }}
-      </a>
-
-      <div
-        v-else-if="table.column.field === 'totalAmount'"
-        class="flex items-center justify-end"
-      >
-        <span class="font-bold mr-2">
-          {{ table.row.isSender ? '-' : '+' }}
-          {{ table.formattedRow['totalAmount'] }}
-        </span>
-        <span
-          :class="{
-            'text-red bg-red-lightest': table.row.isSender,
-            'text-green bg-green-lightest': !table.row.isSender
-          }"
-          class="rounded-full h-6 w-6 flex items-center justify-center"
+        <a
+          v-if="table.column.field === 'id'"
+          href="#"
+          @click.prevent="openInExplorer(table.row.id)"
         >
-          <SvgIcon
-            :name="table.row.isSender ? 'arrow-sent' : 'arrow-received'"
-            class="text-center"
-            view-box="0 0 8 8"
-          />
-        </span>
-      </div>
+          {{ table.formattedRow['id'] }}
+        </a>
 
-      <span v-else>
-        {{ table.formattedRow[table.column.field] }}
-      </span>
-    </template>
-  </vue-good-table>
+        <div
+          v-else-if="table.column.field === 'totalAmount'"
+          class="flex items-center justify-end"
+        >
+          <span class="font-bold mr-2">
+            {{ table.row.isSender ? '-' : '+' }}
+            {{ table.formattedRow['totalAmount'] }}
+          </span>
+          <span
+            :class="{
+              'text-red bg-red-lightest': table.row.isSender,
+              'text-green bg-green-lightest': !table.row.isSender
+            }"
+            class="rounded-full h-6 w-6 flex items-center justify-center"
+          >
+            <SvgIcon
+              :name="table.row.isSender ? 'arrow-sent' : 'arrow-received'"
+              class="text-center"
+              view-box="0 0 8 8"
+            />
+          </span>
+        </div>
+
+        <span v-else>
+          {{ table.formattedRow[table.column.field] }}
+        </span>
+      </template>
+    </vue-good-table>
+
+    <portal
+      v-if="selected"
+      to="modal"
+    >
+      <TransactionShow
+        :transaction="selected"
+        @close="onCloseModal"
+      />
+    </portal>
+  </div>
 </template>
 
 <script>
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
+import { TransactionShow } from '@/components/Transaction'
 
 export default {
   name: 'WalletTransactions',
 
   components: {
-    SvgIcon
+    SvgIcon,
+    TransactionShow
   },
 
   data: () => ({
-    transactions: []
+    transactions: [],
+    showModal: false,
+    selected: null
   }),
 
   computed: {
@@ -73,7 +90,7 @@ export default {
     columns () {
       return [
         {
-          label: this.$t('WALLET_TRANSACTIONS.TRANSACTION_ID'),
+          label: this.$t('TRANSACTION.ID'),
           field: 'id',
           formatFn: this.formatLongString
         },
@@ -86,17 +103,17 @@ export default {
           thClass: 'text-center'
         },
         {
-          label: this.$t('WALLET_TRANSACTIONS.SENDER'),
+          label: this.$t('TRANSACTION.SENDER'),
           field: 'sender',
           formatFn: this.formatLongString
         },
         {
-          label: this.$t('WALLET_TRANSACTIONS.RECIPIENT'),
+          label: this.$t('TRANSACTION.RECIPIENT'),
           field: 'recipient',
           formatFn: this.formatLongString
         },
         {
-          label: this.$t('WALLET_TRANSACTIONS.AMOUNT'),
+          label: this.$t('TRANSACTION.AMOUNT'),
           type: 'number',
           field: 'totalAmount',
           formatFn: this.formatAmount,
@@ -138,9 +155,16 @@ export default {
       return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network' })
     },
 
-    openInExplorer (id) {
-      const url = `${this.currentNetwork.explorer}/transaction/${id}`
-      this.electron_openExternal(url)
+    openTransactions (id) {
+      this.network_openExplorer('transaction', id)
+    },
+
+    onRowClick ({ row }) {
+      this.selected = row
+    },
+
+    onCloseModal () {
+      this.selected = null
     }
   }
 }

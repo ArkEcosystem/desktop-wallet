@@ -229,9 +229,14 @@ export default {
     WALLPAPERS: 'Wallpapers'
   },
 
-  TRANSACTIONS: {
+  TRANSACTION: {
+    CONFIRMATIONS: 'Confirmations',
+    ID: 'ID',
+    TRANSACTION: 'Transaction',
+    TIMESTAMP: 'Timestamp',
     CREATE_TRANSFER: 'Create Transfer',
-    RECIPIENT_ID: 'Recipient ID',
+    RECIPIENT: 'Recipient',
+    SENDER: 'Sender',
     AMOUNT: 'Amount',
     VENDOR_FIELD: 'Vendor Field',
     PASSPHRASE: 'Passphrase',
@@ -253,13 +258,6 @@ export default {
     USERNAME: 'Username',
     PRODUCTIVITY: 'Productivity',
     APPROVAL: 'Approval'
-  },
-
-  WALLET_TRANSACTIONS: {
-    TRANSACTION_ID: 'Transaction ID',
-    RECIPIENT: 'Recipient',
-    SENDER: 'Sender',
-    AMOUNT: 'Amount'
   },
 
   WALLET_REMOVE_POPUP: {

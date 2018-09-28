@@ -15,16 +15,14 @@
     </span>
 
     <div class="ListDividedItem__value">
-      <span
-        v-if="value"
-        class="text-theme-page-text"
-      >
-        {{ value }}
-      </span>
-
-      <template v-else>
-        <slot />
-      </template>
+      <slot>
+        <span
+          v-if="value"
+          class="text-theme-page-text"
+        >
+          {{ value }}
+        </span>
+      </slot>
     </div>
   </li>
 </template>

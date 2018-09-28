@@ -78,6 +78,14 @@
   @apply .py-4 .text-theme-page-text .border-b .border-dashed .border-theme-line-separator
 }
 
+.vgt-table tr.clickable {
+  cursor: pointer;
+}
+
+.vgt-table tr.clickable:hover {
+  @apply .bg-grey-lightest;
+}
+
 .vgt-table tr > td:not(:last-child),
 .vgt-table tr > th:not(:last-child) {
   @apply .pr-5
