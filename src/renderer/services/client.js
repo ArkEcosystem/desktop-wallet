@@ -1,5 +1,6 @@
 import ApiClient from '@arkecosystem/client'
 import { transactionBuilder } from '@arkecosystem/crypto'
+import { castArray } from 'lodash'
 import dayjs from 'dayjs'
 import store from '@/store'
 
@@ -165,8 +166,35 @@ export default class ClientService {
     return walletData
   }
 
+  /**
+   * Build and send a delegate registration transaction
+   * @param {String} username
+   * @param {String} passphrase
+   * @returns {Object}
+   */
+  async sendDelegateRegistration ({ username, passphrase }) {
+    const delegateRegistration = transactionBuilder
+      .delegateRegistration()
+      .usernameAsset(username)
+      .sign(passphrase)
+      .getStruct()
+
+    return this.broadcastTransaction(delegateRegistration)
+  }
+
+  /**
+   * Build and broadcast a transfer transaction.
+   * TODO: senderPublickKey -> senderId, add a method in the crypto package or in the wallet service to get the pubkey by the passphrase.
+   *
+   * @param {Number} amount
+   * @param {String} recipientId
+   * @param {String} senderPublicKey
+   * @param {String} vendorField
+   * @param {String} passphrase
+   * @returns {Object}
+   */
   async sendTransfer ({ amount, recipientId, senderPublicKey, vendorField, passphrase }) {
-    const potentialTransfer = transactionBuilder
+    const transfer = transactionBuilder
       .transfer()
       .amount(amount)
       .recipientId(recipientId)
@@ -175,14 +203,24 @@ export default class ClientService {
       .sign(passphrase)
       .getStruct()
 
-    let transfer = await this
+    return this.broadcastTransaction(transfer)
+  }
+
+  /**
+   * Broadcast transactions to the current peer.
+   *
+   * @param {Array|Object} transactions
+   * @returns {Object}
+   */
+  async broadcastTransaction (transactions) {
+    const transaction = await this
       .client
       .resource('transactions')
       .create({
-        transactions: [potentialTransfer]
+        transactions: castArray(transactions)
       })
 
-    return transfer
+    return transaction
   }
 
   __watchProfile () {

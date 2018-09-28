@@ -118,11 +118,11 @@ export default {
 
       if (this.$v.model.$dirty) {
         if (!this.$v.model.required) {
-          error = this.$t('PASSPHRASE_INPUT.ERROR.REQUIRED')
+          error = this.$t('VALIDATION.REQUIRED', [this.label])
         } else if (!this.$v.model.isValid) {
-          error = this.$t('PASSPHRASE_INPUT.ERROR.NOT_VALID')
+          error = this.$t('VALIDATION.NOT_VALID', [this.label])
         } else if (!this.$v.model.matchAddress) {
-          error = this.$t('PASSPHRASE_INPUT.ERROR.NOT_MATCH')
+          error = this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
         }
       }
 

@@ -1,5 +1,5 @@
 import bip39 from 'bip39'
-import { crypto } from '@arkecosystem/crypto'
+import { crypto, validator } from '@arkecosystem/crypto'
 
 export default class WalletService {
   /*
@@ -44,6 +44,18 @@ export default class WalletService {
   static validatePassphrase (passphrase, pubKeyHash) {
     const publicKey = crypto.getKeys(passphrase).publicKey
     return crypto.validatePublicKey(publicKey, pubKeyHash)
+  }
+
+  /**
+   * Check that a username is valid
+   *
+   * @param {String} username
+   * @return {Object} { data: String, errors: Array, passes: Boolean, fails: Error }
+   */
+  static validateUsername (username) {
+    if (!username) return
+
+    return validator.rules.username(username)
   }
 
   /**

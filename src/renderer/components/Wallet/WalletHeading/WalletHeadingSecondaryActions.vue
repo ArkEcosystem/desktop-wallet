@@ -6,9 +6,15 @@
     <button class="bg-theme-heading-button text-theme-heading-button-text p-2 rounded-lg">
       {{ $t('WALLET_HEADING.ACTIONS.WALLET_NAME') }}
     </button>
-    <button class="bg-theme-heading-button text-theme-heading-button-text p-2 rounded-lg">
-      {{ $t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE') }}
-    </button>
+    <ButtonModal
+      :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
+      class="bg-theme-heading-button text-theme-heading-button-text"
+    >
+      <WalletRegisterDelegateModal
+        slot-scope="{ toggle }"
+        @cancel="toggle"
+      />
+    </ButtonModal>
     <button class="bg-theme-heading-button text-theme-heading-button-text p-2 rounded-lg">
       {{ $t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE') }}
     </button>
@@ -29,13 +35,15 @@
 <script>
 import { ButtonModal } from '@/components/Button'
 import { ModalConfirmation } from '@/components/Modal'
+import { WalletRegisterDelegateModal } from '@/components/Wallet'
 
 export default {
   name: 'WalletHeadingSecondaryActions',
 
   components: {
     ButtonModal,
-    ModalConfirmation
+    ModalConfirmation,
+    WalletRegisterDelegateModal
   },
 
   computed: {

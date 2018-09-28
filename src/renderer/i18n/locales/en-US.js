@@ -16,6 +16,12 @@ export default {
     DATE: 'Date'
   },
 
+  VALIDATION: {
+    NOT_MATCH: 'The {0} does not match the {1}',
+    NOT_VALID: 'The {0} is not valid',
+    REQUIRED: 'The {0} is required'
+  },
+
   LANGUAGES: {
     'en-US': 'English',
     'es-ES': 'Spanish',
@@ -59,11 +65,6 @@ export default {
   },
 
   PASSPHRASE_INPUT: {
-    ERROR: {
-      NOT_MATCH: 'The passphrase does not match the address',
-      NOT_VALID: 'The passphrase is not valid',
-      REQUIRED: 'The passphrase is required'
-    },
     HIDE: 'Hide the passphrase',
     LABEL: 'Passphrase',
     QR: 'Scan the QR code',
@@ -91,12 +92,14 @@ export default {
       CREATE_WALLET: 'Create wallet',
       IMPORT_WALLET: 'Import wallet'
     },
+
     PROFILE_ALL: {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
       EDIT_PROFILE: 'Edit profile',
       SELECT_PROFILE: 'Use this profile'
     },
+
     PROFILE_NEW: {
       STEP1: {
         INSTRUCTIONS: {
@@ -120,6 +123,7 @@ export default {
         NAME: 'Profile name'
       }
     },
+
     PROFILE_EDITION: {
       TAB_PROFILE: {
         INSTRUCTIONS: {
@@ -136,11 +140,13 @@ export default {
         TITLE: 'Wallet design'
       }
     },
+
     WALLET: {
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
       STATISTICS: 'Statistics'
     },
+
     WALLET_ALL: {
       CREATE_WALLET: 'Create wallet',
       IMPORT_WALLET: 'Import wallet',
@@ -148,6 +154,7 @@ export default {
       HEADER: 'My wallets',
       SHOW_WALLET: 'Show wallet'
     },
+
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
@@ -169,6 +176,7 @@ export default {
         SENDING_ENABLED: 'Sending transactions enabled'
       }
     },
+
     WALLET_NEW: {
       STEP1: {
         INSTRUCTIONS: {
