@@ -41,18 +41,18 @@
           </router-link>
 
           <div
-            class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline"
-            @click="openConfirmation"
+            class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
+            @click="openRemovalConfirmation"
           >
             {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
           </div>
         </div>
 
-        <ModalConfirmation
-          v-if="isConfirmationOpen"
+        <WalletRemovalConfirmation
+          v-if="isRemovalConfirmationOpen"
           :wallet="wallet"
-          @cancel="hideConfirmation"
-          @continue="deleteWallet(wallet)"
+          @cancel="hideRemovalConfirmation"
+          @removed="hideRemovalConfirmation"
         />
       </div>
     </div>
@@ -60,41 +60,35 @@
 </template>
 
 <script>
-import { ModalConfirmation } from '@/components/Modal'
+import { WalletRemovalConfirmation } from '@/components/Wallet'
 
 export default {
   name: 'WalletAll',
 
   components: {
-    ModalConfirmation
+    WalletRemovalConfirmation
   },
 
   data: () => ({
-    isConfirmationOpen: false
+    isRemovalConfirmationOpen: false
   }),
 
   computed: {
     profileId () {
       return this.$store.getters['session/profileId']
     },
-
     wallets () {
       return this.$store.getters['wallet/byProfileId'](this.profileId)
     }
   },
 
   methods: {
-    deleteWallet (wallet) {
-      this.$store.dispatch('wallet/delete', wallet)
-      this.hideConfirmation()
+    hideRemovalConfirmation () {
+      this.isRemovalConfirmationOpen = false
     },
 
-    hideConfirmation () {
-      this.isConfirmationOpen = false
-    },
-
-    openConfirmation () {
-      this.isConfirmationOpen = true
+    openRemovalConfirmation () {
+      this.isRemovalConfirmationOpen = true
     }
   }
 }

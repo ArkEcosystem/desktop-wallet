@@ -59,6 +59,12 @@ export default {
     TITLE: 'Select'
   },
 
+  MODAL_CONFIRMATION: {
+    CANCEL: 'No, cancel',
+    CONTINUE: 'Yes, I am sure',
+    TITLE: 'Confirmation'
+  },
+
   MODAL_QR_CODE: {
     TITLE: 'QR Code',
     SUBTITLE: 'Scan for Address'
@@ -97,6 +103,7 @@ export default {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
       EDIT_PROFILE: 'Edit profile',
+      REMOVE_PROFILE: 'Remove this profile',
       SELECT_PROFILE: 'Use this profile'
     },
 
@@ -218,6 +225,11 @@ export default {
     }
   },
 
+  PROFILE_REMOVAL_CONFIRMATION: {
+    NOTE: 'Although it would remove your wallets, it does not delete any data on the blockchain. You could recover the wallets as long as you have their passphrases',
+    QUESTION: 'Are you sure you want to remove this profile?'
+  },
+
   SELECTION_AVATAR: {
     AVATARS: 'Avatars',
     MODAL_HEADER: 'Select avatar'
@@ -260,11 +272,15 @@ export default {
     APPROVAL: 'Approval'
   },
 
-  WALLET_REMOVE_POPUP: {
-    HEADER: 'Confirmation',
-    NO: 'No, cancel',
-    NOTE: ' It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
-    QUESTION: 'Are you sure you want to remove this wallet?',
-    YES: 'Yes, I am sure'
+  WALLET_REMOVAL_CONFIRMATION: {
+    NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
+    QUESTION: 'Are you sure you want to remove this wallet?'
+  },
+
+  WALLET_TRANSACTIONS: {
+    TRANSACTION_ID: 'Transaction ID',
+    RECIPIENT: 'Recipient',
+    SENDER: 'Sender',
+    AMOUNT: 'Amount'
   }
 }

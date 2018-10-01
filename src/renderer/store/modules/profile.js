@@ -14,6 +14,16 @@ export default new BaseModule(ProfileModel, {
 
       commit('CREATE', data)
       return data
+    },
+    /**
+     * This default action is overridden to remove the wallets of this profile first
+     */
+    delete ({ commit, dispatch, rootGetters }, { id }) {
+      const wallets = rootGetters['wallet/byProfileId'](id)
+      wallets.forEach(async wallet => {
+        await dispatch('wallet/delete', wallet, { root: true })
+      })
+      commit('DELETE', id)
     }
   }
 })

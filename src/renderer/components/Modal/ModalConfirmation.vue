@@ -4,44 +4,33 @@
   >
     <section class="ModalConfirmation__container m-6 flex flex-col">
       <div class="mb-6 text-xl">
-        <h2 class="mb-5 text-3xl">{{ $t('WALLET_REMOVE_POPUP.HEADER') }}</h2>
+        <h2 class="mb-5 text-3xl">{{ title }}</h2>
 
-        {{ $t('WALLET_REMOVE_POPUP.QUESTION') }}
+        {{ question }}
 
-        <div class="mt-3 text-grey-darker text-lg">{{ $t('WALLET_REMOVE_POPUP.NOTE') }}</div>
-      </div>
-
-      <div class="flex flex-row justify-center">
-        <img
-          :title="wallet.name"
-          :src="assets_loadImage('arrows/arrow-confirmation.svg')"
-          class="ModalConfirmation__container__arrow"
-        >
         <div
-          :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
-          :title="wallet.name"
-          class="wallet-identicon-xl background-image"
-        />
-        <img
-          :title="wallet.name"
-          :src="assets_loadImage('arrows/arrow-confirmation.svg')"
-          class="ModalConfirmation__container__arrow ModalConfirmation__container__arrow--reverse"
+          v-if="note"
+          class="mt-3 text-grey-darker text-lg"
         >
+          {{ note }}
+        </div>
       </div>
+
+      <slot/>
 
       <div class="mt-4 flex flex-row">
         <button
           class="blue-button"
           @click="emitCancel"
         >
-          {{ $t('WALLET_REMOVE_POPUP.NO') }}
+          {{ cancelButton }}
         </button>
 
         <button
           class="blue-button"
           @click="emitContinue"
         >
-          {{ $t('WALLET_REMOVE_POPUP.YES') }}
+          {{ continueButton }}
         </button>
       </div>
     </section>
@@ -59,9 +48,37 @@ export default {
   },
 
   props: {
-    wallet: {
-      type: Object,
+    cancelButton: {
+      type: String,
+      required: false,
+      default () {
+        return this.$t('MODAL_CONFIRMATION.CANCEL')
+      }
+    },
+    continueButton: {
+      type: String,
+      required: false,
+      default () {
+        return this.$t('MODAL_CONFIRMATION.CONTINUE')
+      }
+    },
+    note: {
+      type: [String, null],
+      required: false,
+      default () {
+        return null
+      }
+    },
+    question: {
+      type: String,
       required: true
+    },
+    title: {
+      type: String,
+      required: false,
+      default () {
+        return this.$t('MODAL_CONFIRMATION.TITLE')
+      }
     }
   },
 
@@ -76,18 +93,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.ModalConfirmation__container {
-  min-width: calc(var(--wallet-identicon-xl) + 74px * 2);
-  max-width: calc(var(--wallet-identicon-xl) + 74px * 2 + 50px)
-}
-.ModalConfirmation__container__arrow {
-  width: 74px;
-  height: 75px;
-  margin-top: calc(var(--wallet-identicon-xl) - 75px + 2rem)
-}
-.ModalConfirmation__container__arrow--reverse {
-  transform: scaleX(-1)
-}
-</style>

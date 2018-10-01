@@ -1,4 +1,5 @@
 import WalletRegisterDelegateModal from './WalletRegisterDelegateModal'
+import WalletRemovalConfirmation from './WalletRemovalConfirmation'
 
 export * from './WalletDelegates'
 export * from './WalletHeading'
@@ -8,5 +9,6 @@ export * from './WalletDetails'
 export * from './WalletSidebar'
 
 export {
-  WalletRegisterDelegateModal
+  WalletRegisterDelegateModal,
+  WalletRemovalConfirmation
 }

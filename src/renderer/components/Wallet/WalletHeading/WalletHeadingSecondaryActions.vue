@@ -22,11 +22,11 @@
       :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
       class="bg-theme-heading-button text-theme-heading-button-text"
     >
-      <ModalConfirmation
+      <WalletRemovalConfirmation
         slot-scope="{ toggle }"
         :wallet="currentWallet"
         @cancel="toggle"
-        @continue="deleteWallet(toggle)"
+        @removed="onRemoval"
       />
     </ButtonModal>
   </div>
@@ -34,16 +34,15 @@
 
 <script>
 import { ButtonModal } from '@/components/Button'
-import { ModalConfirmation } from '@/components/Modal'
-import { WalletRegisterDelegateModal } from '@/components/Wallet'
+import { WalletRegisterDelegateModal, WalletRemovalConfirmation } from '@/components/Wallet'
 
 export default {
   name: 'WalletHeadingSecondaryActions',
 
   components: {
     ButtonModal,
-    ModalConfirmation,
-    WalletRegisterDelegateModal
+    WalletRegisterDelegateModal,
+    WalletRemovalConfirmation
   },
 
   computed: {
@@ -53,8 +52,7 @@ export default {
   },
 
   methods: {
-    async deleteWallet (toggle) {
-      await this.$store.dispatch('wallet/delete', this.currentWallet)
+    async onRemoval (toggle) {
       this.$router.push({ name: 'wallets' })
       toggle()
     }

@@ -39,19 +39,33 @@
 
           <router-link
             :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-            class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-6"
+            class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
           >
             {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
           </router-link>
 
           <div
+            class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
+            @click="openRemovalConfirmation"
+          >
+            {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
+          </div>
+
+          <a
             v-show="profile.id !== currentProfileId"
-            class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline"
+            class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline mt-4"
             @click="selectProfile(profile.id)"
           >
             {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
-          </div>
+          </a>
         </div>
+
+        <ProfileRemovalConfirmation
+          v-if="isRemovalConfirmationOpen"
+          :profile="profile"
+          @cancel="hideRemovalConfirmation"
+          @removed="onRemoval"
+        />
       </div>
     </div>
   </div>
@@ -59,9 +73,18 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { ProfileRemovalConfirmation } from '@/components/Profile'
 
 export default {
   name: 'ProfileAll',
+
+  components: {
+    ProfileRemovalConfirmation
+  },
+
+  data: () => ({
+    isRemovalConfirmationOpen: false
+  }),
 
   computed: {
     ...mapGetters({ profiles: 'profile/all' }),
@@ -74,6 +97,25 @@ export default {
   },
 
   methods: {
+    hideRemovalConfirmation () {
+      this.isRemovalConfirmationOpen = false
+    },
+
+    onRemoval () {
+      this.hideRemovalConfirmation()
+
+      if (this.profiles.length) {
+        this.$store.dispatch('session/setProfileId', this.profiles[0].id)
+      } else {
+        this.$store.dispatch('session/reset')
+        this.$router.push({ name: 'profile-new' })
+      }
+    },
+
+    openRemovalConfirmation () {
+      this.isRemovalConfirmationOpen = true
+    },
+
     selectProfile (profileId) {
       this.$store.dispatch('session/setProfileId', profileId)
     }
