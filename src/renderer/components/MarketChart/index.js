@@ -1,8 +1,8 @@
 import MarketChart from './MarketChart'
-import MarketChartButtons from './MarketChartButtons'
+import MarketChartHeader from './MarketChartHeader'
 
 export default MarketChart
 export {
   MarketChart,
-  MarketChartButtons
+  MarketChartHeader
 }

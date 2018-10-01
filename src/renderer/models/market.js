@@ -4,7 +4,7 @@ export const MarketTicker = new BaseModel({
   type: 'object',
   properties: {
     id: {
-      format: (data) => `${data.token}~${data.currency}`
+      format: (data) => `${data.token}/${data.currency}`
     },
     token: {},
     currency: {},

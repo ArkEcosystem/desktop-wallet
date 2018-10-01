@@ -1,28 +1,17 @@
 <template>
   <div class="bg-white rounded-b-lg p-5">
-    <MarketChart :is-active="isActive">
-      <MarketChartButtons class="mb-5 text-right" />
-    </MarketChart>
+    TODO
   </div>
 </template>
 
 <script>
-import { MarketChart, MarketChartButtons } from '@/components/MarketChart'
-
 export default {
   name: 'WalletStatistics',
 
   components: {
-    MarketChart,
-    MarketChartButtons
   },
 
   props: {
-    isActive: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
   }
 }
 </script>

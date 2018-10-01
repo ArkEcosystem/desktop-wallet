@@ -48,7 +48,7 @@ class CryptoCompare {
    * @return {(Object|null)} Return API response data or null on failure
    */
   async historicPerWeek (token, currency) {
-    return this.__fetchHistoricalData(token, currency, 7)
+    return this.__fetchHistoricalData(token, currency, 7, 'day', 'ddd')
   }
 
   /**
@@ -58,7 +58,7 @@ class CryptoCompare {
    * @return {(Object|null)} Return API response data or null on failure
    */
   async historicPerMonth (token, currency) {
-    return this.__fetchHistoricalData(token, currency, 30)
+    return this.__fetchHistoricalData(token, currency, 30, 'day', 'DD')
   }
 
   /**
@@ -146,7 +146,7 @@ class CryptoCompare {
   }
 
   /**
-   * Prepare the historical data reponse to be used in charts
+   * Prepare the historical data response to be used in charts
    * @param {Object} response
    * @param {String} dateFormat
    * @return {Object}

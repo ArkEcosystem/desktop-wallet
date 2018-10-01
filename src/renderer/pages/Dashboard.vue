@@ -1,7 +1,13 @@
 <template>
   <div class="Dashboard relative flex flex-row h-full w-full">
-    <main class="bg-theme-feature rounded-lg mr-4 flex-1">
-      Chart
+    <main class="bg-theme-feature rounded-lg mr-4 flex-1 w-3/4">
+      <MarketChart
+        v-if="isMarketEnabled"
+        :is-active="isMarketEnabled"
+        class="bg-grey-lightest pt-10 px-10 pb-4 rounded-t-lg"
+      >
+        <MarketChartHeader class="mb-5" />
+      </MarketChart>
     </main>
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 flex flex-col">
@@ -34,13 +40,22 @@
 </template>
 
 <script>
+import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
 import { WalletSidebar } from '@/components/Wallet'
 
 export default {
   name: 'Dashboard',
 
   components: {
+    MarketChart,
+    MarketChartHeader,
     WalletSidebar
+  },
+
+  computed: {
+    isMarketEnabled () {
+      return this.$store.getters['session/currentNetwork'].market.enabled
+    }
   }
 }
 </script>

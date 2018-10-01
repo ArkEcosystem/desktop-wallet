@@ -36,6 +36,34 @@ export default {
     MONTH: 'Month'
   },
 
+  MARKET_CHART: {
+    TODAY: 'Today',
+    WEEK: {
+      LONG: {
+        FRI: 'Friday',
+        MON: 'Monday',
+        SAT: 'Saturday',
+        SUN: 'Sunday',
+        TUE: 'Tuesday',
+        THU: 'Thursday',
+        WED: 'Wednesday'
+      },
+      SHORT: {
+        FRI: 'FRI',
+        MON: 'MON',
+        SAT: 'SAT',
+        SUN: 'SUN',
+        TUE: 'TUE',
+        THU: 'THU',
+        WED: 'WED'
+      }
+    }
+  },
+
+  MARKET_CHART_HEADER: {
+    PRICE: 'Price'
+  },
+
   BUTTON_CLIPBOARD: {
     DONE: 'Copied!',
     COPY_TO_CLIPBOARD: 'Copy to clipboard',

@@ -12,7 +12,6 @@
 <script>
 import LineChart from '@/components/utils/LineChart'
 import cryptoCompare from '@/services/crypto-compare'
-import store from '@/store'
 
 export default {
   name: 'MarketChart',
@@ -67,14 +66,14 @@ export default {
     },
 
     isActive (val) {
-      if (!val) return // Render the chart when open the tab
+      if (!val) return // Render the chart when open the component
 
       this.renderChart()
     }
   },
 
   mounted () {
-    // avoid creating the gradient when the element is not built
+    // Avoid creating the gradient when the element is not built
     if (this.isActive) {
       this.renderChart()
     }
@@ -87,13 +86,21 @@ export default {
 
       const response = await cryptoCompare.historicByType(this.period, this.token, this.currency)
 
+      // Since BTC price could be very low :(, the linear scale could produce
+      // imprecise values, such as converting 0.00001078 to 0, provoking that
+      // the chart isn't displayed correctly
+      const scaleCorrection = 1000
+      const data = response.datasets.map(datum => datum * scaleCorrection)
+
       this.options = {
         showScale: true,
         responsive: true,
         maintainAspectRatio: false,
         elements: {
           line: {
-            tension: 0
+            cubicInterpolationMode: 'monotone'
+            // NOTE: to improve rendering time
+            // tension: 0
           }
         },
         legend: {
@@ -118,13 +125,10 @@ export default {
               ticks: {
                 padding: 15,
                 fontStyle: 600,
-                callback: (value, index, values) => {
+                callback: (value, index) => {
                   if (index % 2 === 0) return
 
-                  return store.getters['market/formatPrice']({
-                    value,
-                    format: ({ symbol, value }) => `${symbol}${value}`
-                  })
+                  return this.currency_format(value / scaleCorrection, { currency: this.currency })
                 }
               }
             }
@@ -136,7 +140,22 @@ export default {
                 display: false
               },
               ticks: {
-                padding: 10
+                padding: 10,
+                callback: (value, index, values) => {
+                  if (this.period !== 'day' && index === values.length - 1) {
+                    return this.$t('MARKET_CHART.TODAY')
+                  } else if (this.period === 'week') {
+                    const width = this.$el.clientWidth
+                    console.log(width)
+                    if (width > 1200) {
+                      return this.$t(`MARKET_CHART.WEEK.LONG.${value.toUpperCase()}`)
+                    } else {
+                      return this.$t(`MARKET_CHART.WEEK.SHORT.${value.toUpperCase()}`)
+                    }
+                  }
+
+                  return value
+                }
               }
             }
           ]
@@ -151,7 +170,7 @@ export default {
           type: 'line',
           fill: false,
           borderColor: this.gradient || '#666',
-          data: response.datasets
+          data
         }]
       }
     },

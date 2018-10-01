@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import { MarketChart, MarketChartButtons } from '@/components/MarketChart'
+import { MarketChartHeader } from '@/components/MarketChart'
 
 const mocks = {
   $store: {
@@ -10,39 +10,31 @@ const mocks = {
   }
 }
 
-xdescribe('MarketChart', () => {
+describe('MarketChartHeader', () => {
   it('should be instantiated', () => {
-    const wrapper = shallowMount(MarketChart, {
-      mocks
-    })
-
-    expect(wrapper.isVueInstance()).toBeTrue()
-  })
-})
-
-describe('MarketChartButtons', () => {
-  it('should be instantiated', () => {
-    const wrapper = shallowMount(MarketChartButtons, {
+    const wrapper = shallowMount(MarketChartHeader, {
       provide: {
         changePeriod: jest.fn(),
         getPeriod: () => 'day'
-      }
+      },
+      mocks
     })
     expect(wrapper.isVueInstance()).toBeTrue()
-    expect(wrapper.contains('.MarketChartButtons__button'))
+    expect(wrapper.contains('.MarketChartHeader__button'))
   })
 
   it('should trigger change', done => {
-    const wrapper = shallowMount(MarketChartButtons, {
+    const wrapper = shallowMount(MarketChartHeader, {
       provide: {
         changePeriod: (period) => {
           expect(period).toBeTruthy()
           done()
         },
         getPeriod: () => 'day'
-      }
+      },
+      mocks
     })
-    const find = wrapper.find('.MarketChartButtons__button')
+    const find = wrapper.find('.MarketChartHeader__button')
     find.trigger('click')
   })
 })
