@@ -3,10 +3,10 @@
     class="flex flex-col"
     @submit.prevent="onSubmit"
   >
-    <InputText
+    <InputAddress
       v-model="$v.form.recipientId.$model"
-      :is-invalid="$v.form.recipientId.$dirty && $v.form.recipientId.$invalid"
       :label="$t('TRANSACTION.RECIPIENT')"
+      :pub-key-hash="currentNetwork.version"
       name="recipientId"
       class="mb-5"
     />
@@ -47,9 +47,12 @@
     <PassphraseInput
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
+      :address="$v.form.recipientId.$model"
       :pub-key-hash="currentNetwork.version"
       class="mb-10"
     />
+
+    <!-- TODO second passphrase -->
 
     <div class="self-start">
       <button
@@ -66,7 +69,7 @@
 <script>
 import { required, maxLength, numeric } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
-import { InputText, InputFee } from '@/components/Input'
+import { InputAddress, InputText, InputFee } from '@/components/Input'
 import { PassphraseInput } from '@/components/Passphrase'
 
 export default {
@@ -102,6 +105,7 @@ export default {
   },
 
   components: {
+    InputAddress,
     InputText,
     InputFee,
     PassphraseInput
