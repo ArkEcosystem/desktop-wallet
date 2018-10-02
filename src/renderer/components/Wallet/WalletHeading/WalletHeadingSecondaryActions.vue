@@ -10,8 +10,9 @@
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
       class="bg-theme-heading-button text-theme-heading-button-text"
     >
-      <WalletRegisterDelegateModal
+      <TransactionModal
         slot-scope="{ toggle }"
+        :type="2"
         @cancel="toggle"
       />
     </ButtonModal>
@@ -34,15 +35,16 @@
 
 <script>
 import { ButtonModal } from '@/components/Button'
-import { WalletRegisterDelegateModal, WalletRemovalConfirmation } from '@/components/Wallet'
+import { WalletRemovalConfirmation } from '@/components/Wallet'
+import { TransactionModal } from '@/components/Transaction'
 
 export default {
   name: 'WalletHeadingSecondaryActions',
 
   components: {
     ButtonModal,
-    WalletRegisterDelegateModal,
-    WalletRemovalConfirmation
+    WalletRemovalConfirmation,
+    TransactionModal
   },
 
   computed: {

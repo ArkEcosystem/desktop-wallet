@@ -270,6 +270,19 @@ export default {
   },
 
   TRANSACTION: {
+    TYPE: {
+      TRANSFER: 'Transfer',
+      SECOND_SIGNATURE: 'Second Signature',
+      DELEGATE_REGISTRATION: 'Delegate Registration',
+      VOTE: 'Vote',
+      MULTI_SIGNATURE: 'Multi Signature',
+      IPFS: 'IPFS',
+      TIMELOCK_TRANSFER: 'Timelock Transfer',
+      MULTI_PAYMENT: 'Multi Payment',
+      DELEGATE_RESIGNATION: 'Delegate Resignation'
+    },
+    SEND: 'Send',
+    SEND_ALL: 'Send All',
     CONFIRMATIONS: 'Confirmations',
     ID: 'ID',
     TRANSACTION: 'Transaction',
@@ -285,7 +298,6 @@ export default {
 
   WALLET_HEADING: {
     ACTIONS: {
-      SEND: 'Send',
       WALLET_NAME: 'Wallet name',
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',

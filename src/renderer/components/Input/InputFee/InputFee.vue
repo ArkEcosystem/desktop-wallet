@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-theme-page-text-light">{{ $t('TRANSACTIONS.FEE') }}: {{ fee }}</h1>
+    <h1 class="text-theme-page-text-light">{{ $t('TRANSACTION.FEE') }}: {{ fee }}</h1>
     <InputToggle
       v-model="feeChoice"
       :choices="feeChoices"
@@ -28,7 +28,8 @@ export default {
   },
 
   model: {
-    prop: 'fee'
+    prop: 'fee',
+    event: 'input'
   },
 
   props: {

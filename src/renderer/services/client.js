@@ -172,20 +172,19 @@ export default class ClientService {
    * @param {String} passphrase
    * @returns {Object}
    */
-  async sendDelegateRegistration ({ username, passphrase }) {
+  async buildDelegateRegistration ({ username, passphrase }) {
     const delegateRegistration = transactionBuilder
       .delegateRegistration()
       .usernameAsset(username)
       .sign(passphrase)
       .getStruct()
 
-    return this.broadcastTransaction(delegateRegistration)
+    return delegateRegistration
   }
 
   /**
    * Build and broadcast a transfer transaction.
-   * TODO: senderPublickKey -> senderId, add a method in the crypto package or in the wallet service to get the pubkey by the passphrase.
-   *
+   * TODO: amount -> convert to arktoshi
    * @param {Number} amount
    * @param {String} recipientId
    * @param {String} senderPublicKey
@@ -193,17 +192,16 @@ export default class ClientService {
    * @param {String} passphrase
    * @returns {Object}
    */
-  async sendTransfer ({ amount, recipientId, senderPublicKey, vendorField, passphrase }) {
+  async buildTransfer ({ amount, recipientId, vendorField, passphrase }) {
     const transfer = transactionBuilder
       .transfer()
       .amount(amount)
       .recipientId(recipientId)
-      .senderPublicKey(senderPublicKey)
       .vendorField(vendorField)
       .sign(passphrase)
       .getStruct()
 
-    return this.broadcastTransaction(transfer)
+    return transfer
   }
 
   /**

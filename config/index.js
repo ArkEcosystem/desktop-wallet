@@ -16,6 +16,18 @@ exports.I18N = {
   ]
 }
 
+exports.TRANSACTION_TYPES = {
+  TRANSFER: 0,
+  SECOND_SIGNATURE: 1,
+  DELEGATE_REGISTRATION: 2,
+  VOTE: 3,
+  MULTI_SIGNATURE: 4,
+  IPFS: 5,
+  TIMELOCK_TRANSFER: 6,
+  MULTI_PAYMENT: 7,
+  DELEGATE_RESIGNATION: 8
+}
+
 exports.INTERVALS = {
   'short': 30000, // 30 seconds
   'medium': 60000, // 1 minute

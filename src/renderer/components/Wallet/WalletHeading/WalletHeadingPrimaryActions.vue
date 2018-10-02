@@ -18,13 +18,14 @@
 
     <ButtonModal
       :class="buttonStyle"
-      :label="$t('WALLET_HEADING.ACTIONS.SEND')"
+      :label="$t('TRANSACTION.SEND')"
       icon="send"
       view-box="0 0 12 12"
     >
-      <SendTransferModal
+      <TransactionModal
         slot-scope="{ toggle }"
-        @close="toggle"
+        :type="0"
+        @cancel="toggle"
       />
     </ButtonModal>
   </div>
@@ -33,7 +34,7 @@
 <script>
 import { ButtonModal } from '@/components/Button'
 import { ModalQrCode } from '@/components/Modal'
-import SendTransferModal from '@/components/SendTransfer/SendTransferModal'
+import { TransactionModal } from '@/components/Transaction'
 
 export default {
   name: 'WalletHeadingPrimaryActions',
@@ -41,7 +42,7 @@ export default {
   components: {
     ButtonModal,
     ModalQrCode,
-    SendTransferModal
+    TransactionModal
   },
 
   computed: {
