@@ -1,10 +1,11 @@
 <template>
   <div>
+    <!-- TODO style / replace with input -->
     <h1 class="text-theme-page-text-light">{{ $t('TRANSACTION.FEE') }}: {{ fee }}</h1>
     <InputToggle
       v-model="feeChoice"
       :choices="feeChoices"
-      @choice-select="onChoiceSelect"
+      @select="onChoiceSelect"
     />
     <InputFeeSlider
       v-if="showFeeSlider"
@@ -12,16 +13,18 @@
       :avg="avg"
       :min="min"
       :max="max"
-      @fee-select="onFeeSelect"
+      @select="onFeeSelect"
     />
   </div>
 </template>
 
 <script>
-import { InputToggle } from '@/components/Input'
+import { InputToggle } from '../InputToggle'
 import InputFeeSlider from './InputFeeSlider'
 
 export default {
+  name: 'InputFee',
+
   components: {
     InputToggle,
     InputFeeSlider

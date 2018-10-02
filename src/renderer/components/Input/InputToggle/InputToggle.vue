@@ -7,7 +7,7 @@
       :key="index"
       :index="index"
       :length="choices.length"
-      @choice-select="$emit('choice-select', choice)"
+      @select="emitSelect(choice)"
     />
   </span>
 </template>
@@ -16,6 +16,8 @@
 import InputToggleChoice from './InputToggleChoice'
 
 export default {
+  name: 'InputToggle',
+
   components: {
     InputToggleChoice
   },
@@ -34,6 +36,12 @@ export default {
     selectedChoice: {
       type: String,
       required: true
+    }
+  },
+
+  methods: {
+    emitSelect (choice) {
+      this.$emit('select', choice)
     }
   }
 }

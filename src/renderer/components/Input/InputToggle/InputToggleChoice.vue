@@ -7,7 +7,8 @@
       'bg-blue text-white font-semibold shadow-lg': isSelected,
       'bg-grey-lighter text-grey-darker': !isSelected
     }"
-    @click="$emit('choice-select', choice)"
+    type="button"
+    @click="emitSelect(choice)"
   >
     {{ choice }}
   </button>
@@ -46,6 +47,12 @@ export default {
 
     isLast () {
       return this.index === this.length - 1
+    }
+  },
+
+  methods: {
+    emitSelect (choice) {
+      this.$emit('select', choice)
     }
   }
 }

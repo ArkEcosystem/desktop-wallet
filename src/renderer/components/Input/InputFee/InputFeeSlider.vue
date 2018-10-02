@@ -4,6 +4,7 @@
       :style="gradientWidthStyle"
       class="gradient-background absolute h-full w-full"
     />
+    <!-- FIXME do not show 1e-8 -->
     <p
       class="absolute"
       style="left: 0%; top: -50%;"
@@ -17,13 +18,13 @@
       type="range"
       class="w-full m-0 py-2"
       name="fee"
-      @input="$emit('fee-select', $event.target.value)"
+      @input="emitSelect($event.target.value)"
     >
     <p
       class="absolute"
       style="right: 0%; top: -50%;"
     >
-      <span @click="$emit('fee-select', min)">Min</span> | <span @click="$emit('fee-select', avg)">Average</span> | <span @click="$emit('fee-select', max)">Max</span>
+      <span @click="emitSelect(min)">Min</span> | <span @click="emitSelect(avg)">Average</span> | <span @click="emitSelect(max)">Max</span>
     </p>
   </div>
 </template>
@@ -73,6 +74,12 @@ export default {
       return {
         width: `${percent}%`
       }
+    }
+  },
+
+  methods: {
+    emitSelect (choice) {
+      this.$emit('select', choice)
     }
   }
 }

@@ -21,6 +21,7 @@
       />
 
       <button
+        type="button"
         class="action-button"
         @click="onSendAll"
       >
@@ -38,8 +39,9 @@
 
     <InputFee
       v-if="currentNetwork.apiVersion === 2"
-      v-model="transfer.fee"
+      v-model="$v.form.fee.$model"
       :transaction-type="$options.transactionType"
+      @input="onFee"
     />
 
     <PassphraseInput
@@ -53,6 +55,7 @@
       <button
         :disabled="$v.form.$invalid"
         class="blue-button"
+        type="button"
       >
         {{ $t('COMMON.NEXT') }}
       </button>
@@ -77,6 +80,10 @@ export default {
         required
       },
       amount: {
+        required,
+        numeric
+      },
+      fee: {
         required,
         numeric
       },
@@ -121,6 +128,19 @@ export default {
   },
 
   methods: {
+    emitNext (transaction) {
+      this.$emit('next', transaction)
+    },
+
+    onFee (fee) {
+      this.form.fee = fee
+    },
+
+    onSendAll () {
+      // TODO balance - fee?
+      this.form.amount = this.currentWallet.balance
+    },
+
     async onSubmit () {
       const transaction = await this.$client.buildTransfer({
         amount: this.form.amount,
@@ -131,14 +151,6 @@ export default {
       })
 
       this.emitNext(transaction)
-    },
-
-    onSendAll () {
-      this.form.amount = this.currentWallet.balance
-    },
-
-    emitNext (transaction) {
-      this.$emit('next', transaction)
     }
   }
 }
