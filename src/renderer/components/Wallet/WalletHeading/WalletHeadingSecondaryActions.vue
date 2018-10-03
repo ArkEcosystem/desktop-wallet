@@ -3,12 +3,12 @@
     key="SecondaryActions"
     class="WalletHeading__SecondaryActions flex"
   >
-    <button class="bg-theme-heading-button text-theme-heading-button-text p-2 rounded-lg">
+    <button class="option-button p-2 mr-2 rounded-lg">
       {{ $t('WALLET_HEADING.ACTIONS.WALLET_NAME') }}
     </button>
     <ButtonModal
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
-      class="bg-theme-heading-button text-theme-heading-button-text"
+      class="option-button"
     >
       <TransactionModal
         slot-scope="{ toggle }"
@@ -16,12 +16,12 @@
         @cancel="toggle"
       />
     </ButtonModal>
-    <button class="bg-theme-heading-button text-theme-heading-button-text p-2 rounded-lg">
+    <button class="option-button p-2 mr-2 rounded-lg">
       {{ $t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE') }}
     </button>
     <ButtonModal
       :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
-      class="bg-theme-heading-button text-theme-heading-button-text"
+      class="option-button"
     >
       <WalletRemovalConfirmation
         slot-scope="{ toggle }"

@@ -83,7 +83,7 @@
 }
 
 .vgt-table tr.clickable:hover {
-  @apply .bg-grey-lightest;
+  @apply .bg-theme-table-row-hover;
 }
 
 .vgt-table tr > td:not(:last-child),

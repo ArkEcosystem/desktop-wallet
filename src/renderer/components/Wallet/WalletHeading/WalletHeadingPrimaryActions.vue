@@ -47,7 +47,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'bg-theme-heading-button text-theme-heading-button-text'
+      return 'option-button'
     },
 
     currentWallet () {

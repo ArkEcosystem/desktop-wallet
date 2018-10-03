@@ -49,6 +49,8 @@ let colors = {
 
   'theme-line-separator': 'var(--theme-line-separator)',
 
+  'theme-table-row-hover': 'var(--theme-table-row-hover)',
+
   'theme-feature': 'var(--theme-feature)',
   'theme-feature-item-text': 'var(--theme-feature-item-text)',
   'theme-feature-item-hover': 'var(--theme-feature-item-hover)',
@@ -67,9 +69,7 @@ let colors = {
   'theme-option-button': 'var(--theme-option-button)',
   'theme-option-button-hover': 'var(--theme-option-button-hover)',
   'theme-option-button-text': 'var(--theme-option-button-text)',
-  'theme-heading-background': '#343956',
-  'theme-heading-button': '#464E79',
-  'theme-heading-button-text': '#97A1D9',
+  'theme-heading-background': 'var(--theme-heading-background)',
   'transparent': 'transparent',
   'inherit': 'inherit',
 

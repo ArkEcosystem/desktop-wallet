@@ -8,7 +8,7 @@
       <WalletHeadingSecondaryActions v-else />
     </transition>
     <button
-      class="bg-theme-heading-button text-theme-heading-button-text ml-2 p-2 rounded-lg"
+      class="option-button ml-2 p-2 rounded-lg"
       @click="showSecondaryActions = !showSecondaryActions"
     >
       &vellip;

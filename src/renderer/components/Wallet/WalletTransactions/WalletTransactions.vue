@@ -17,7 +17,7 @@
         <a
           v-if="table.column.field === 'id'"
           href="#"
-          @click.prevent="openInExplorer(table.row.id)"
+          @click.stop="network_openExplorer('transaction', table.row.id)"
         >
           {{ table.formattedRow['id'] }}
         </a>
