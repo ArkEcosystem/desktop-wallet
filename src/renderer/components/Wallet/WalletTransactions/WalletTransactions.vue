@@ -120,6 +120,12 @@ export default {
     }
   },
 
+  watch: {
+    wallet_fromRoute () {
+      this.fetchTransactions()
+    }
+  },
+
   mounted () {
     this.fetchTransactions()
   },
