@@ -95,8 +95,8 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
-                  :enable-modal="false"
-                  :max-visible-items="4"
+                  :enable-modal="true"
+                  :max-visible-items="3"
                   :selected="avatar"
                   @select="selectAvatar"
                 />

@@ -36,6 +36,10 @@ export default {
     MONTH: 'Month'
   },
 
+  APP_SIDEMENU: {
+    CURRENT_PROFILE: 'Your current profile is "{profileName}"'
+  },
+
   MARKET_CHART: {
     TODAY: 'Today',
     WEEK: {

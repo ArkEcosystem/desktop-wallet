@@ -4,11 +4,12 @@ export default {
   namespaced: true,
 
   state: () => ({
-    profileId: null,
     avatar: null,
     background: null,
     currency: null,
     language: null,
+    name: null,
+    profileId: null,
     theme: null
   }),
 
@@ -28,37 +29,42 @@ export default {
       const { networkId } = getters['profile']
       return rootGetters['network/byId'](networkId)
     },
+    avatar: state => state.avatar,
     background: state => state.background,
+    currency: state => state.currency,
     theme: state => state.theme,
     language: state => state.language,
-    currency: state => state.currency,
-    avatar: state => state.avatar,
+    name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark'
   },
 
   mutations: {
-    SET_PROFILE_ID (state, profileId) {
-      state.profileId = profileId
+    SET_AVATAR (state, avatar) {
+      state.avatar = avatar
     },
 
     SET_BACKGROUND (state, background) {
       state.background = background
     },
 
-    SET_THEME (state, theme) {
-      state.theme = theme
+    SET_CURRENCY (state, currency) {
+      state.currency = currency
     },
 
     SET_LANGUAGE (state, language) {
       state.language = language
     },
 
-    SET_CURRENCY (state, currency) {
-      state.currency = currency
+    SET_NAME (state, name) {
+      state.name = name
     },
 
-    SET_AVATAR (state, avatar) {
-      state.avatar = avatar
+    SET_PROFILE_ID (state, profileId) {
+      state.profileId = profileId
+    },
+
+    SET_THEME (state, theme) {
+      state.theme = theme
     },
 
     RESET (state) {
@@ -66,37 +72,12 @@ export default {
       state.background = null
       state.currency = MARKET.defaultCurrency
       state.language = I18N.defaultLocale
+      state.name = null
       state.theme = 'light'
     }
   },
 
   actions: {
-    async setProfileId ({ commit, dispatch }, value) {
-      commit('SET_PROFILE_ID', value)
-      const profile = await dispatch('load', value)
-      await dispatch('network/updateNetworkConfig', profile.networkId, { root: true })
-    },
-
-    setBackground ({ commit }, value) {
-      commit('SET_BACKGROUND', value)
-    },
-
-    setTheme ({ commit }, value) {
-      commit('SET_THEME', value)
-    },
-
-    setLanguage ({ commit }, value) {
-      commit('SET_LANGUAGE', value)
-    },
-
-    setCurrency ({ commit }, value) {
-      commit('SET_CURRENCY', value)
-    },
-
-    setAvatar ({ commit }, value) {
-      commit('SET_AVATAR', value)
-    },
-
     load ({ rootGetters, dispatch }, profileId) {
       const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
@@ -104,6 +85,7 @@ export default {
       dispatch('setAvatar', profile.avatar)
       dispatch('setBackground', profile.background)
       dispatch('setCurrency', profile.currency)
+      dispatch('setName', profile.name)
       dispatch('setLanguage', profile.language)
       dispatch('setTheme', profile.theme)
 
@@ -112,6 +94,36 @@ export default {
 
     reset ({ commit }) {
       commit('RESET')
+    },
+
+    setAvatar ({ commit }, value) {
+      commit('SET_AVATAR', value)
+    },
+
+    setBackground ({ commit }, value) {
+      commit('SET_BACKGROUND', value)
+    },
+
+    setCurrency ({ commit }, value) {
+      commit('SET_CURRENCY', value)
+    },
+
+    setLanguage ({ commit }, value) {
+      commit('SET_LANGUAGE', value)
+    },
+
+    setName ({ commit }, value) {
+      commit('SET_NAME', value)
+    },
+
+    async setProfileId ({ commit, dispatch }, value) {
+      commit('SET_PROFILE_ID', value)
+      const profile = await dispatch('load', value)
+      await dispatch('network/updateNetworkConfig', profile.networkId, { root: true })
+    },
+
+    setTheme ({ commit }, value) {
+      commit('SET_THEME', value)
     }
   }
 }

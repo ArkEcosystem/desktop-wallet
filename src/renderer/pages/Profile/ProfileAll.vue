@@ -9,7 +9,7 @@
       >
         <div
           :style="`backgroundImage: url('${assets_loadImage(addProfileImagePath)}')`"
-          title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
+          :title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
           class="profile-avatar-xl background-image flex"
         />
         <div class="ProfileAll__grid__profile__name font-semibold flex mt-12">

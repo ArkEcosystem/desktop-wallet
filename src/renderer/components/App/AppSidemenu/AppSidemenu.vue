@@ -65,8 +65,9 @@
       <!-- Profile settings -->
       <div class="cursor-pointer mt-2 mb-4 px-3 align-self-end">
         <router-link
+          :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
+          :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
           :to="{ name: 'profiles' }"
-          :style="profileAvatar ? `backgroundImage: url('${assets_loadImage(profileAvatar)}')` : ''"
           class="AppSidemenu__avatar flex background-image h-18 w-18"
         />
       </div>
@@ -98,9 +99,6 @@ export default {
     ...mapGetters({ unreadAnnouncements: 'announcements/unread' }),
     showUnread () {
       return this.unreadAnnouncements.length > 0
-    },
-    profileAvatar () {
-      return this.$store.getters['session/avatar']
     }
   },
 
