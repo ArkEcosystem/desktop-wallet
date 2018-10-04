@@ -42,6 +42,7 @@
 <script>
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
 import { WalletSidebar } from '@/components/Wallet'
+import store from '@/store'
 
 export default {
   name: 'Dashboard',
@@ -54,7 +55,18 @@ export default {
 
   computed: {
     isMarketEnabled () {
-      return this.session_network.market && this.session_network.market.enabled
+      return this.session_network && this.session_network.market && this.session_network.market.enabled
+    }
+  },
+
+  // Redirect to the profile creation page unless there is at least 1 profile
+  async beforeRouteEnter (to, from, next) {
+    const profiles = await store.getters['profile/all']
+
+    if (profiles.length > 0 || to.name === 'profile-new') {
+      next()
+    } else {
+      next({ name: 'profile-new' })
     }
   }
 }
