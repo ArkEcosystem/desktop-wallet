@@ -1,24 +1,45 @@
 <template>
-  <vue-good-table
-    :columns="columns"
-    :rows="delegates"
-    class="WalletDelegates"
-  />
+  <div class="WalletDelegates">
+    <vue-good-table
+      :columns="columns"
+      :rows="delegates"
+      class="WalletDelegates"
+      @on-row-click="onRowClick"
+    />
+    <portal
+      v-if="selected"
+      to="modal"
+    >
+      <TransactionModal
+        :title="selected.username"
+        :type="3"
+        :delegate="selected"
+        @cancel="onCancel"
+      />
+    </portal>
+  </div>
 </template>
 
 <script>
+import { TransactionModal } from '@/components/Transaction'
+
 export default {
   name: 'WalletDelegates',
 
+  components: {
+    TransactionModal
+  },
+
   data: () => ({
-    delegates: []
+    delegates: [],
+    selected: null
   }),
 
   computed: {
     columns () {
       return [
         {
-          label: this.$t('WALLET_DELEGATES.RATE'),
+          label: this.$t('WALLET_DELEGATES.RANK'),
           field: 'rank',
           type: 'number',
           thClass: 'text-center',
@@ -64,6 +85,14 @@ export default {
 
     formatPercentage (value) {
       return `${value}%`
+    },
+
+    onRowClick ({ row }) {
+      this.selected = row
+    },
+
+    onCancel () {
+      this.selected = null
     }
   }
 }

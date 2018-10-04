@@ -9,7 +9,7 @@
       :class="{
         'font-semibold text-xs mb-1': isFloatingLabel
       }"
-      class="ListDividedItem__label text-theme-page-text-light"
+      class="ListDividedItem__label text-theme-page-text-light mr-5"
     >
       {{ label }}
     </span>
@@ -43,7 +43,7 @@ export default {
       required: true
     },
     value: {
-      type: String,
+      type: [String, Number],
       required: false,
       default: null
     }

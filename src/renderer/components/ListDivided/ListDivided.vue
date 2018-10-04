@@ -47,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.ListDivided > .ListDividedItem:last-child {
+  border-bottom-color: transparent
+}
+</style>

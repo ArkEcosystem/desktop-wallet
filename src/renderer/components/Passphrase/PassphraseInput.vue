@@ -154,7 +154,8 @@ export default {
     blur () {
       this.$refs.input.blur()
     },
-    focus () {
+    async focus () {
+      await this.$nextTick()
       this.$refs.input.focus()
     },
     onBlur () {
@@ -164,7 +165,9 @@ export default {
       this.isFocused = true
       this.$emit('focus')
     },
-
+    reset () {
+      this.$v.$reset()
+    },
     openQR () {
       // TODO when the QR reader is available
       console.error('QR reader is not available yet')

@@ -1,11 +1,12 @@
 <template>
   <ModalWindow
-    :title="title"
+    :title="title || typeName"
     @close="emitCancel"
   >
     <keep-alive>
       <TransactionForm
         v-if="!transaction"
+        v-bind="$attrs"
         :type="type"
         @built="onBuilt"
       />
@@ -41,6 +42,11 @@ export default {
       type: Number,
       required: true,
       validator: value => includes(TRANSACTION_TYPES, value)
+    },
+    title: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
@@ -49,7 +55,7 @@ export default {
   }),
 
   computed: {
-    title () {
+    typeName () {
       const key = this.transactionKeyByType(this.type)
       return this.$t(`TRANSACTION.TYPE.${key}`)
     }

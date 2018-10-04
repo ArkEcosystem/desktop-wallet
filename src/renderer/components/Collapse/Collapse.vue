@@ -62,9 +62,9 @@ export default {
     }
   },
 
-  data: vm => ({
+  data: () => ({
     height: 0,
-    inputIsOpen: vm.isOpen
+    inputIsOpen: null
   }),
 
   watch: {
@@ -75,6 +75,10 @@ export default {
     inputIsOpen () {
       this.$emit(this.inputIsOpen ? 'open' : 'close')
     }
+  },
+
+  mounted () {
+    this.inputIsOpen = this.isOpen
   },
 
   methods: {

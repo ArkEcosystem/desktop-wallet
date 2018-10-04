@@ -73,15 +73,15 @@ describe('PassphraseInput', () => {
   })
 
   describe('when focus', () => {
-    it('should focus the input', () => {
+    it('should focus the input', async () => {
       const wrapper = mountComponent()
-      wrapper.vm.focus()
+      await wrapper.vm.focus()
       expect(wrapper.vm.isFocused).toBeTrue()
     })
 
-    it('should emit the `focus` event', () => {
+    it('should emit the `focus` event', async () => {
       const wrapper = mountComponent()
-      wrapper.vm.focus()
+      await wrapper.vm.focus()
       expect(wrapper.emitted('focus')).toBeTruthy()
     })
   })

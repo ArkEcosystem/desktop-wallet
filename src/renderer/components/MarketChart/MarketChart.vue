@@ -146,7 +146,6 @@ export default {
                     return this.$t('MARKET_CHART.TODAY')
                   } else if (this.period === 'week') {
                     const width = this.$el.clientWidth
-                    console.log(width)
                     if (width > 1200) {
                       return this.$t(`MARKET_CHART.WEEK.LONG.${value.toUpperCase()}`)
                     } else {

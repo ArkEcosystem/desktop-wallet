@@ -306,10 +306,14 @@ export default {
   },
 
   WALLET_DELEGATES: {
-    RATE: 'Rate',
+    RANK: 'Rank',
     USERNAME: 'Username',
     PRODUCTIVITY: 'Productivity',
-    APPROVAL: 'Approval'
+    APPROVAL: 'Approval',
+    FORGED: 'Forged',
+    BLOCKS: 'Blocks',
+    VOTERS: 'Voters',
+    VOTE: 'Vote'
   },
 
   WALLET_REMOVAL_CONFIRMATION: {

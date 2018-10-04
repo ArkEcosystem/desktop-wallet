@@ -62,12 +62,16 @@ export default class ClientService {
     } else if (data.success) {
       delegates = data.delegates.map(delegate => {
         return {
+          ...delegate,
           production: {
             approval: delegate.approval,
             productivity: delegate.productivity
           },
-          rank: delegate.rate,
-          username: delegate.username
+          blocks: {
+            produced: delegate.producedblocks,
+            missed: delegate.missedblocks
+          },
+          rank: delegate.rate
         }
       })
     }
@@ -167,7 +171,22 @@ export default class ClientService {
   }
 
   /**
-   * Build and send a delegate registration transaction
+   * Build a vote transaction
+   * @param {Array} votes
+   * @returns {Object}
+   */
+  async buildVote ({ votes, passphrase }) {
+    const vote = transactionBuilder
+      .vote()
+      .votesAsset(votes)
+      .sign(passphrase)
+      .getStruct()
+
+    return vote
+  }
+
+  /**
+   * Build a delegate registration transaction
    * @param {String} username
    * @param {String} passphrase
    * @returns {Object}
@@ -183,7 +202,7 @@ export default class ClientService {
   }
 
   /**
-   * Build and broadcast a transfer transaction.
+   * Build a transfer transaction.
    * TODO: amount -> convert to arktoshi
    * @param {Number} amount
    * @param {String} recipientId

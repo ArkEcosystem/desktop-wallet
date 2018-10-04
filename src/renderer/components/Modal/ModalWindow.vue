@@ -42,7 +42,7 @@
 
           <footer
             v-if="$slots['footer'] || message"
-            class="px-10 py-8 bg-yellow-lighter text-grey-darkest"
+            class="ModalWindow__container__footer px-10 py-8 bg-yellow-lighter text-grey-darkest"
           >
             <slot name="footer">
               <p v-html="message" />
