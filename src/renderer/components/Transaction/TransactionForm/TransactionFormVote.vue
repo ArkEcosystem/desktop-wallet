@@ -54,7 +54,7 @@
       <PassphraseInput
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
-        :pub-key-hash="currentNetwork.version"
+        :pub-key-hash="session_network.version"
         class="mt-5"
       />
 
@@ -114,12 +114,6 @@ export default {
       passphrase: ''
     }
   }),
-
-  computed: {
-    currentNetwork () {
-      return this.$store.getters['session/currentNetwork']
-    }
-  },
 
   watch: {
     isPassphraseStep () {

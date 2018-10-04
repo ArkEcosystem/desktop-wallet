@@ -2,7 +2,7 @@ import ClientService from '@/services/client'
 
 jest.mock('@/store', () => ({
   getters: {
-    'session/currentNetwork': {
+    'session/network': {
       constants: {
         epoch: '2017-03-21T13:00:00.000Z'
       }

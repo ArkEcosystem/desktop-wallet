@@ -220,7 +220,7 @@ export default {
       return this.$store.getters['profile/byId'](profileId)
     },
     isCurrentProfile () {
-      return this.$store.getters['session/profileId'] === this.profile.id
+      return this.session_profile.id === this.profile.id
     },
 
     avatar () {

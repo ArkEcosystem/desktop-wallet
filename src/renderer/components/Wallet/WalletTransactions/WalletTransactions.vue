@@ -83,10 +83,6 @@ export default {
   }),
 
   computed: {
-    currentNetwork () {
-      return this.$store.getters['session/currentNetwork']
-    },
-
     columns () {
       return [
         {

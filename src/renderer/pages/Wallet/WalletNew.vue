@@ -229,12 +229,6 @@ export default {
   }),
 
   computed: {
-    network () {
-      return this.$store.getters['session/currentNetwork']
-    },
-    profileId () {
-      return this.$store.getters['session/profileId']
-    },
     /**
      * Mixes words from the passphrases of all the generated wallets
      * @return {Array}
@@ -269,7 +263,7 @@ export default {
     async create () {
       const { address } = await this.$store.dispatch('wallet/create', {
         ...this.schema,
-        profileId: this.profileId
+        profileId: this.session_profile.id
       })
       this.$router.push({ name: 'wallet-show', params: { address } })
     },
@@ -301,7 +295,7 @@ export default {
       // Delay the generation to play an animation
       setTimeout(() => {
         for (let i = 0; i < 4; i++) {
-          const { address, passphrase } = WalletService.generate(this.network.version)
+          const { address, passphrase } = WalletService.generate(this.session_network.version)
           this.$set(this.wallets, address, passphrase)
         }
 

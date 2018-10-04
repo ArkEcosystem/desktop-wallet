@@ -47,9 +47,9 @@ describe('Mixins > Currency', () => {
       i18n,
       mixins: [CurrencyMixin],
       mocks: {
+        session_network: network,
         $store: {
           getters: {
-            'session/currentNetwork': network,
             'session/currency': 'BTC'
           }
         }

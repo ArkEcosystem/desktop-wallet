@@ -14,7 +14,7 @@
     <PassphraseInput
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
-      :pub-key-hash="currentNetwork.version"
+      :pub-key-hash="session_network.version"
       class="mb-10"
     />
 
@@ -72,9 +72,6 @@ export default {
   }),
 
   computed: {
-    currentNetwork () {
-      return this.$store.getters['session/currentNetwork']
-    },
     currentWallet () {
       return this.wallet_fromRoute
     }

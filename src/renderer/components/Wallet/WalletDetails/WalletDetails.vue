@@ -41,10 +41,6 @@ export default {
   },
 
   computed: {
-    network () {
-      return this.$store.getters['session/currentNetwork']
-    },
-
     tabs () {
       let tabs = [
         {
@@ -57,7 +53,7 @@ export default {
         }
       ]
 
-      if (this.network.market && this.network.market.enabled) {
+      if (this.session_network.market && this.session_network.market.enabled) {
         tabs.push({
           component: 'WalletStatistics',
           text: this.$t('PAGES.WALLET.STATISTICS')

@@ -96,7 +96,7 @@ export default class ClientService {
     let transactions = []
 
     if (this.__version === 1) {
-      const network = store.getters['session/currentNetwork']
+      const network = store.getters['session/network']
       const { data } = await this.client.resource('transactions').all({
         recipientId: address,
         senderId: address
@@ -242,7 +242,7 @@ export default class ClientService {
 
   __watchProfile () {
     store.watch(
-      (_, getters) => getters['session/currentProfile'],
+      (_, getters) => getters['session/profile'],
       (profile) => {
         if (!profile) return
 

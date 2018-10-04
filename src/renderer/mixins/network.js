@@ -7,7 +7,7 @@ export default {
      * @param {String} param
      */
     network_openExplorer (path, param) {
-      const network = this.$store.getters['session/currentNetwork']
+      const network = this.session_network
 
       if (!network) {
         throw new Error('[network_openExplorer] No active network.')

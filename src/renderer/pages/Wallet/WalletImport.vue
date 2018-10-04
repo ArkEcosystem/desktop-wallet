@@ -33,7 +33,7 @@
               <InputAddress
                 v-show="!useOnlyPassphrase"
                 v-model="schema.address"
-                :pub-key-hash="network.version"
+                :pub-key-hash="session_network.version"
                 class="my-3"
               />
 
@@ -49,7 +49,7 @@
                 ref="passphrase"
                 v-model="schema.passphrase"
                 :address="useOnlyPassphrase ? null : schema.address"
-                :pub-key-hash="network.version"
+                :pub-key-hash="session_network.version"
                 class="my-3"
               />
 
@@ -131,22 +131,13 @@ export default {
     useOnlyPassphrase: false
   }),
 
-  computed: {
-    network () {
-      return this.$store.getters['session/currentNetwork']
-    },
-    profileId () {
-      return this.$store.getters['session/profileId']
-    }
-  },
-
   watch: {
     /**
      * Generate always the address when moving to the step 2
      */
     step () {
       if (this.step === 2) {
-        this.schema.address = WalletService.getAddress(this.schema.passphrase, this.network.version)
+        this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
       }
     }
   },
@@ -155,7 +146,7 @@ export default {
     async importWallet () {
       const { address } = await this.$store.dispatch('wallet/create', {
         ...this.schema,
-        profileId: this.profileId
+        profileId: this.session_profile.id
       })
       this.$router.push({ name: 'wallet-show', params: { address } })
     },

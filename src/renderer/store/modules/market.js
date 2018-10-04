@@ -16,7 +16,7 @@ export default {
       return getters['lastTicker'].price
     },
     lastTicker: (state, getters, _, rootGetters) => {
-      const token = rootGetters['session/currentNetwork'].token
+      const token = rootGetters['session/network'].token
       const currency = rootGetters['session/currency']
       const market = `${token}/${currency}`
 
@@ -41,7 +41,7 @@ export default {
     },
 
     async refreshTicker ({ commit, rootGetters }) {
-      const network = rootGetters['session/currentNetwork']
+      const network = rootGetters['session/network']
       if (!network || !network.market || !network.market.enabled) {
         return
       }

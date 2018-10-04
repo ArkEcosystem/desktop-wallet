@@ -48,7 +48,7 @@ export default {
       let cryptoCurrency = null
 
       if (config.currencyFrom === 'network') {
-        const network = this.$store.getters['session/currentNetwork']
+        const network = this.session_network
         cryptoCurrency = config.currencyDisplay === 'symbol' ? network.symbol : network.token
 
         config.maximumFractionDigits = network.fractionDigits
@@ -67,7 +67,7 @@ export default {
     },
 
     currency_subToUnit (value) {
-      const { fractionDigits } = this.$store.getters['session/currentNetwork']
+      const { fractionDigits } = this.session_network
       return new BigNumber(value.toString()).dividedBy(Math.pow(10, fractionDigits)).toString()
     }
   }

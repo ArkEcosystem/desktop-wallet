@@ -7,7 +7,7 @@ import Client from '@/services/client'
 export default new BaseModule(NetworkModel, {
   getters: {
     feeStatisticsByType: (_, __, ___, rootGetters) => type => {
-      const currentNetwork = rootGetters['session/currentNetwork']
+      const currentNetwork = rootGetters['session/session']
 
       if (!currentNetwork) {
         throw new Error('[network/feeStatisticsByType] No active network.')

@@ -6,7 +6,7 @@
     <InputAddress
       v-model="$v.form.recipientId.$model"
       :label="$t('TRANSACTION.RECIPIENT')"
-      :pub-key-hash="currentNetwork.version"
+      :pub-key-hash="session_network.version"
       name="recipientId"
       class="mb-5"
     />
@@ -38,7 +38,7 @@
     />
 
     <InputFee
-      v-if="currentNetwork.apiVersion === 2"
+      v-if="session_network.apiVersion === 2"
       v-model="$v.form.fee.$model"
       :transaction-type="$options.transactionType"
       @input="onFee"
@@ -48,7 +48,7 @@
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
       :address="$v.form.recipientId.$model"
-      :pub-key-hash="currentNetwork.version"
+      :pub-key-hash="session_network.version"
       class="mb-10"
     />
 
@@ -122,10 +122,6 @@ export default {
   }),
 
   computed: {
-    currentNetwork () {
-      return this.$store.getters['session/currentNetwork']
-    },
-
     currentWallet () {
       return this.wallet_fromRoute
     }

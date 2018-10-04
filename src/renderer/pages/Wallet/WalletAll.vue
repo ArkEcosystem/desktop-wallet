@@ -74,11 +74,8 @@ export default {
   }),
 
   computed: {
-    profileId () {
-      return this.$store.getters['session/profileId']
-    },
     wallets () {
-      return this.$store.getters['wallet/byProfileId'](this.profileId)
+      return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     }
   },
 

@@ -54,7 +54,7 @@ export default {
 
   computed: {
     isMarketEnabled () {
-      return this.$store.getters['session/currentNetwork'].market.enabled
+      return this.session_network.market && this.session_network.market.enabled
     }
   }
 }

@@ -13,22 +13,21 @@ export default {
   }),
 
   getters: {
-    currentProfile (state, _, __, rootGetters) {
+    profile (state, _, __, rootGetters) {
       if (!state.profileId) {
         return
       }
 
       return rootGetters['profile/byId'](state.profileId)
     },
-    currentNetwork (state, getters, __, rootGetters) {
+    network (state, getters, __, rootGetters) {
       if (!state.profileId) {
         return
       }
 
-      const { networkId } = getters['currentProfile']
+      const { networkId } = getters['profile']
       return rootGetters['network/byId'](networkId)
     },
-    profileId: state => state.profileId,
     background: state => state.background,
     theme: state => state.theme,
     language: state => state.language,

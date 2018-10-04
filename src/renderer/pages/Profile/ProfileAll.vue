@@ -21,7 +21,7 @@
         v-for="profile in profiles"
         :key="profile.id"
         :class="{
-          'ProfileAll__grid__profile--selected': profile.id === currentProfileId
+          'ProfileAll__grid__profile--selected': profile.id === session_profile.id
         }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
@@ -52,7 +52,7 @@
           </div>
 
           <a
-            v-show="profile.id !== currentProfileId"
+            v-show="profile.id !== session_profile.id"
             class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline mt-4"
             @click="selectProfile(profile.id)"
           >
@@ -90,9 +90,6 @@ export default {
     ...mapGetters({ profiles: 'profile/all' }),
     addProfileImagePath () {
       return 'pages/new-profile-avatar.svg'
-    },
-    currentProfileId () {
-      return this.$store.getters['session/profileId']
     }
   },
 

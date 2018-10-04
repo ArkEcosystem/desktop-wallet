@@ -48,7 +48,7 @@ export default {
     },
 
     token () {
-      return this.$store.getters['session/currentNetwork'].token
+      return this.session_network.token
     }
   },
 
