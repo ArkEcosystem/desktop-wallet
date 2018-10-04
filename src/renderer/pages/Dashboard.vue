@@ -1,13 +1,21 @@
 <template>
   <div class="Dashboard relative flex flex-row h-full w-full">
-    <main class="bg-theme-feature rounded-lg mr-4 flex-1 w-3/4">
-      <MarketChart
+    <main class="bg-theme-feature rounded-lg mr-4 flex-1 w-3/4 flex-col overflow-y-auto">
+      <div
         v-if="isMarketEnabled"
-        :is-active="isMarketEnabled"
         class="bg-grey-lightest pt-10 px-10 pb-4 rounded-t-lg"
       >
-        <MarketChartHeader class="mb-5" />
-      </MarketChart>
+        <MarketChart :is-active="isMarketEnabled" >
+          <MarketChartHeader class="mb-5" />
+        </MarketChart>
+      </div>
+
+      <div class="p-10" >
+        <div class="text-lg font-semibold mb-4">
+          {{ $t('PAGES.DASHBOARD.LAST_TRANSACTIONS') }}
+        </div>
+        <DashboardTransactions />
+      </div>
     </main>
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 flex flex-col">
@@ -40,6 +48,7 @@
 </template>
 
 <script>
+import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
 import { WalletSidebar } from '@/components/Wallet'
 import store from '@/store'
@@ -48,6 +57,7 @@ export default {
   name: 'Dashboard',
 
   components: {
+    DashboardTransactions,
     MarketChart,
     MarketChartHeader,
     WalletSidebar

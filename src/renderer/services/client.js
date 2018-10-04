@@ -105,11 +105,11 @@ export default class ClientService {
       if (data.success) {
         transactions = data.transactions.map(tx => {
           tx.timestamp = dayjs(network.constants.epoch).add(tx.timestamp * 1000).toDate()
-          tx.recipient = tx.recipientId
           tx.sender = tx.senderId
+          tx.recipient = tx.recipientId
 
-          delete tx.recipientId
           delete tx.senderId
+          delete tx.recipientId
 
           return tx
         })
@@ -166,6 +166,8 @@ export default class ClientService {
         delete walletData.u_multisignatures
       }
     }
+
+    walletData.balance = parseInt(walletData.balance)
 
     return walletData
   }

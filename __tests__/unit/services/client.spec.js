@@ -32,7 +32,7 @@ describe('Services > Client', () => {
   describe('fetchWallet', () => {
     const data = {
       address: 'address',
-      balance: 'balance',
+      balance: '1202',
       publicKey: 'public key'
     }
     let wallet = {
@@ -81,7 +81,7 @@ describe('Services > Client', () => {
       it('should return only some properties from the account endpoint', async () => {
         const wallet = await client.fetchWallet('address')
         expect(wallet).toHaveProperty('address', data.address)
-        expect(wallet).toHaveProperty('balance', data.balance)
+        expect(wallet).toHaveProperty('balance', parseInt(data.balance))
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
         expect(wallet).not.toHaveProperty('unconfirmedBalance')
         expect(wallet).not.toHaveProperty('unconfirmedSignature')
@@ -99,7 +99,7 @@ describe('Services > Client', () => {
       it('should return almost all properties from the wallet endpoint', async () => {
         const wallet = await client.fetchWallet('address')
         expect(wallet).toHaveProperty('address', data.address)
-        expect(wallet).toHaveProperty('balance', data.balance)
+        expect(wallet).toHaveProperty('balance', parseInt(data.balance))
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
         expect(wallet).not.toHaveProperty('isDelegate')
       })
@@ -220,6 +220,8 @@ describe('Services > Client', () => {
           expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isReceiver')
+          expect(transaction).toHaveProperty('sender')
+          expect(transaction).toHaveProperty('recipient')
           expect(transaction).not.toHaveProperty('senderId')
           expect(transaction).not.toHaveProperty('recipientId')
         })
@@ -257,6 +259,8 @@ describe('Services > Client', () => {
           expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isReceiver')
+          expect(transaction).toHaveProperty('sender')
+          expect(transaction).toHaveProperty('recipient')
           expect(transaction).not.toHaveProperty('senderId')
           expect(transaction).not.toHaveProperty('recipientId')
         })

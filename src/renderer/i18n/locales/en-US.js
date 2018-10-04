@@ -128,7 +128,8 @@ export default {
     DASHBOARD: {
       ALL_WALLETS: 'All wallets',
       CREATE_WALLET: 'Create wallet',
-      IMPORT_WALLET: 'Import wallet'
+      IMPORT_WALLET: 'Import wallet',
+      LAST_TRANSACTIONS: 'Last transactions'
     },
 
     PROFILE_ALL: {
