@@ -1,5 +1,6 @@
 <template>
   <MenuNavigation
+    ref="MenuNavigation"
     :id="activeWallet.address"
     :class="{
       'WalletSidebar--basic': isBasic,
@@ -9,7 +10,7 @@
     @input="onSelect"
   >
     <MenuNavigationItem
-      v-for="wallet in wallets"
+      v-for="wallet in selectableWallets"
       :id="wallet.id"
       :key="wallet.id"
       class="WalletSidebar__wallet"
@@ -63,7 +64,8 @@ export default {
   },
 
   data: () => ({
-    timerId: null
+    timerId: null,
+    selectableWallets: []
   }),
 
   computed: {
@@ -77,6 +79,14 @@ export default {
   },
 
   async created () {
+    this.selectableWallets = this.wallets
+
+    if (this.$store.getters['ledger/isConnected']) {
+      this.refreshLedgerWallets()
+    }
+    this.$eventBus.$on('ledger:wallets-updated', this.refreshLedgerWallets)
+    this.$eventBus.$on('ledger:disconnected', this.ledgerDisconnected)
+
     const refreshWallet = async wallet => {
       try {
         const walletData = await this.$client.fetchWallet(wallet.address)
@@ -105,12 +115,28 @@ export default {
 
   beforeDestroy () {
     this.$store.dispatch('timer/unsubscribe', this.timerId)
+    this.$eventBus.$off('ledgerWalletsUpdated', this.refreshLedgerWallets)
+    this.$eventBus.$off('ledgerDisconnected', this.ledgerDisconnected)
   },
 
   methods: {
     onSelect (address) {
       this.$emit('select', address)
       this.$router.push({ name: 'wallet-show', params: { address } })
+    },
+
+    refreshLedgerWallets () {
+      const ledgerWallets = this.$store.getters['ledger/wallets']
+      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+    },
+
+    ledgerDisconnected () {
+      if (!this.activeWallet || !this.activeWallet.address || this.activeWallet.isLedger) {
+        if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
+          this.$refs.MenuNavigation.switchToId(this.wallets[0].address)
+        }
+      }
+      this.selectableWallets = this.wallets
     }
   }
 }

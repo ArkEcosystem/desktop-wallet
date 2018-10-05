@@ -46,7 +46,7 @@ describe('WalletHeadingInfo component', () => {
       mocks: {
         $store: {
           getters: {
-            'session/currentNetwork': network
+            'session/network': network
           }
         },
         wallet_fromRoute: sampleWalletData,

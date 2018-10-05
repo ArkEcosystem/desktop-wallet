@@ -6,6 +6,7 @@ import { pullAll, keys } from 'lodash'
 
 import AnnouncementsModule from '@/store/modules/announcements'
 import AppModule from '@/store/modules/app'
+import LedgerModule from '@/store/modules/ledger'
 import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
 import ProfileModule from '@/store/modules/profile'
@@ -18,6 +19,7 @@ Vue.use(Vuex)
 const modules = {
   announcements: AnnouncementsModule,
   app: AppModule,
+  ledger: LedgerModule,
   market: MarketModule,
   network: NetworkModule,
   profile: ProfileModule,
@@ -27,6 +29,7 @@ const modules = {
 }
 
 const ignoreModules = [
+  'ledger',
   'timer'
 ]
 

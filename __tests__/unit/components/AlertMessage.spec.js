@@ -6,7 +6,7 @@ describe('AlertMessage', () => {
   beforeEach(() => {
     wrapper = mount(AlertMessage, {
       propsData: {
-        duration: 4000
+        duration: 5000
       }
     })
   })
@@ -61,6 +61,6 @@ describe('AlertMessage', () => {
     const duration = wrapper.vm.$options.props.duration
     expect(duration).toBeObject()
     expect(duration.type).toBe(Number)
-    expect(duration.default).toBe(4000)
+    expect(duration.default).toBe(5000)
   })
 })

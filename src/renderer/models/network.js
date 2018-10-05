@@ -11,6 +11,9 @@ export default new BaseModel({
     server: {},
     description: {},
     imagePath: {},
+    slip44: {
+      type: 'number'
+    },
     apiVersion: {
       type: 'number'
     },

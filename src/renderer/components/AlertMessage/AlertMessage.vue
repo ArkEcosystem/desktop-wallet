@@ -24,7 +24,7 @@ export default {
   props: {
     duration: {
       type: Number,
-      default: 4000
+      default: 5000
     }
   },
 

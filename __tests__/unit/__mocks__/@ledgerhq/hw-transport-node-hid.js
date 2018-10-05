@@ -1,5 +1,7 @@
 export default {
-  create: async () => {
-    return jest.fn()
-  }
+  create: jest.fn(() => {
+    return {
+      close: jest.fn()
+    }
+  })
 }

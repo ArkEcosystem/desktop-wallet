@@ -16,7 +16,7 @@
       </div>
 
       <div
-        v-for="wallet in wallets"
+        v-for="wallet in selectableWallets"
         :key="wallet.id"
         class="WalletAll__grid__wallet flex flex-row w-full"
       >
@@ -41,6 +41,7 @@
           </router-link>
 
           <div
+            v-if="!wallet.isLedger"
             class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
             @click="openRemovalConfirmation(wallet)"
           >
@@ -71,6 +72,7 @@ export default {
   },
 
   data: () => ({
+    selectableWallets: [],
     walletToRemove: null
   }),
 
@@ -80,9 +82,28 @@ export default {
     }
   },
 
+  async created () {
+    this.selectableWallets = this.wallets
+
+    if (this.$store.getters['ledger/isConnected']) {
+      this.refreshLedgerWallets()
+    }
+    this.$eventBus.$on('ledger:wallets-updated', this.refreshLedgerWallets)
+    this.$eventBus.$on('ledger:disconnected', this.ledgerDisconnected)
+  },
+
   methods: {
     hideRemovalConfirmation () {
       this.walletToRemove = null
+    },
+
+    refreshLedgerWallets () {
+      const ledgerWallets = this.$store.getters['ledger/wallets']
+      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+    },
+
+    ledgerDisconnected () {
+      this.selectableWallets = this.wallets
     },
 
     openRemovalConfirmation (wallet) {

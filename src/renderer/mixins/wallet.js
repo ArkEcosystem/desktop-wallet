@@ -4,10 +4,21 @@ export default {
   computed: {
     wallet_fromRoute () {
       const params = this.$route.params
-      if (!params || !params.address) return
+      if (!params || !params.address) {
+        return
+      }
 
       const address = params.address
-      return this.$store.getters['wallet/byAddress'](address)
+      let wallet = this.$store.getters['wallet/byAddress'](address)
+
+      if (this.$store.getters['ledger/isConnected'] && !wallet) {
+        const ledgerWallet = this.$store.getters['ledger/wallet'](address)
+        if (ledgerWallet) {
+          wallet = ledgerWallet
+        }
+      }
+
+      return wallet
     }
   },
 

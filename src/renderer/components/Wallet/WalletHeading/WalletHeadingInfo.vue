@@ -31,10 +31,12 @@ export default {
 
   computed: {
     address () {
-      return this.wallet_fromRoute.address
+      const wallet = this.wallet_fromRoute
+      return wallet ? wallet.address : ''
     },
     balance () {
-      const balance = this.wallet_fromRoute.balance
+      const wallet = this.wallet_fromRoute
+      const balance = wallet ? wallet.balance : 0
       return this.currency_format(this.currency_subToUnit(balance), { currencyFrom: 'network' })
     }
   }

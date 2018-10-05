@@ -3,6 +3,7 @@ import { transactionBuilder } from '@arkecosystem/crypto'
 import { castArray } from 'lodash'
 import dayjs from 'dayjs'
 import store from '@/store'
+import eventBus from '@/plugins/event-bus'
 
 export default class ClientService {
   constructor () {
@@ -167,7 +168,9 @@ export default class ClientService {
       }
     }
 
-    walletData.balance = parseInt(walletData.balance)
+    if (walletData) {
+      walletData.balance = parseInt(walletData.balance)
+    }
 
     return walletData
   }
@@ -252,6 +255,8 @@ export default class ClientService {
 
         this.host = server
         this.version = apiVersion
+
+        eventBus.$emit('client:changed')
       },
       { immediate: true }
     )

@@ -7,17 +7,17 @@ import Client from '@/services/client'
 export default new BaseModule(NetworkModel, {
   getters: {
     feeStatisticsByType: (_, __, ___, rootGetters) => type => {
-      const currentNetwork = rootGetters['session/network']
+      const network = rootGetters['session/network']
 
-      if (!currentNetwork) {
+      if (!network) {
         throw new Error('[network/feeStatisticsByType] No active network.')
       }
 
-      if (currentNetwork.apiVersion === 1) {
+      if (network.apiVersion === 1) {
         throw new Error('[network/feeStatisticsByType] Supported only by v2 networks.')
       }
 
-      const { feeStatistics } = currentNetwork
+      const { feeStatistics } = network
       const data = feeStatistics.find(transactionType => transactionType.type === type)
       return data ? data.fees : []
     }
