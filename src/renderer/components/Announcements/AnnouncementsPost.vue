@@ -16,7 +16,7 @@
     </button>
 
     <h2
-      :class="isRead ? 'text-grey-dark' : 'text-black'"
+      :class="isRead ? 'text-theme-caption-read' : 'text-theme-caption-text'"
       class="text-2xl pr-8"
     >
       {{ title }}

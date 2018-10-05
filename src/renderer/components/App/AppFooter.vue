@@ -13,7 +13,7 @@ export default {
   name: 'AppFooter',
 
   data: () => ({
-    text: 'Made with ♥ ARK',
+    text: 'Made with ♥ by Ark',
     url: 'https://ark.io'
   })
 }

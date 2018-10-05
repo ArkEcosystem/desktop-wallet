@@ -19,7 +19,7 @@
         :disabled="isDisabled"
         v-model="model"
         :type="passphraseIsVisible ? 'text' : 'password'"
-        class="PassphraseInput__input flex flex-grow"
+        class="PassphraseInput__input flex flex-grow bg-transparent"
         @blur="onBlur"
         @focus="onFocus"
       >

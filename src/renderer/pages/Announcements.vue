@@ -71,16 +71,16 @@ export default {
 .Announcements--gradient-top {
   background: linear-gradient(
     to top,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0.95) 100%
+    var(--theme-announcements-gradient-1),
+    var(--theme-announcements-gradient-2) 100%
   );
   z-index: 1;
 }
 .Announcements--gradient-bottom {
   background: linear-gradient(
     to bottom,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0.95) 100%
+    var(--theme-announcements-gradient-1),
+    var(--theme-announcements-gradient-2) 100%
   );
   z-index: 1;
 }
