@@ -35,6 +35,10 @@ export default new BaseModel({
     },
     constants: {
       type: 'object'
+    },
+    knownWallets: {
+      type: 'object',
+      default: {}
     }
   },
   required: ['name']

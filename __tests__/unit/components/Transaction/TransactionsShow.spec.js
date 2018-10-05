@@ -21,16 +21,17 @@ describe('TransactionShow', () => {
         transaction
       },
       mocks: {
-        $d: jest.fn()
+        $d: jest.fn(),
+        wallet_formatAddress: address => address
       }
     })
   })
 
-  it('should be instatiated', () => {
+  it('should be instantiated', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 
-  it('should contain all itens', () => {
+  it('should contain all items', () => {
     const findValues = wrapper.findAll('.ListDividedItem__label')
     expect(findValues).toHaveLength(Object.keys(transaction).length)
   })

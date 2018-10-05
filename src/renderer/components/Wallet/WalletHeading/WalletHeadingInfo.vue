@@ -7,7 +7,7 @@
 
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
       <p class="WalletHeading__address tracking-wide mb-3">
-        {{ address }}
+        {{ wallet_formatAddress(address) }}
         <ButtonClipboard
           :value="address"
           class="text-inherit opacity-50"

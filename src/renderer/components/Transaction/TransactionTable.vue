@@ -106,12 +106,12 @@ export default {
         {
           label: this.$t('TRANSACTION.SENDER'),
           field: 'sender',
-          formatFn: this.formatLongString
+          formatFn: this.formatAddress
         },
         {
           label: this.$t('TRANSACTION.RECIPIENT'),
           field: 'recipient',
-          formatFn: this.formatLongString
+          formatFn: this.formatAddress
         },
         {
           label: this.$t('TRANSACTION.AMOUNT'),
@@ -128,6 +128,10 @@ export default {
   methods: {
     formatDate (value) {
       return this.$d(value, 'short')
+    },
+
+    formatAddress (value) {
+      return this.wallet_formatAddress(value, 10)
     },
 
     formatLongString (value) {

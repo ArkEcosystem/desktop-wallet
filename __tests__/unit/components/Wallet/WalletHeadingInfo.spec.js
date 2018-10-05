@@ -49,7 +49,8 @@ describe('WalletHeadingInfo component', () => {
             'session/currentNetwork': network
           }
         },
-        wallet_fromRoute: sampleWalletData
+        wallet_fromRoute: sampleWalletData,
+        wallet_formatAddress: address => address
       }
     })
   })

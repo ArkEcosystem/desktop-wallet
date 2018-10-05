@@ -27,7 +27,7 @@
           href="#"
           @click.stop="openAddress(transaction.sender)"
         >
-          {{ transaction.sender }}
+          {{ wallet_formatAddress(transaction.sender) }}
         </a>
       </ListDividedItem>
 
@@ -39,7 +39,7 @@
           href="#"
           @click.stop="openAddress(transaction.recipient)"
         >
-          {{ transaction.recipient }}
+          {{ wallet_formatAddress(transaction.recipient) }}
         </a>
       </ListDividedItem>
 
