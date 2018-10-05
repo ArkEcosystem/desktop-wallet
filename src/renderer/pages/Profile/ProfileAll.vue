@@ -46,7 +46,7 @@
 
           <div
             class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
-            @click="openRemovalConfirmation"
+            @click="openRemovalConfirmation(profile)"
           >
             {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
           </div>
@@ -59,15 +59,15 @@
             {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
           </a>
         </div>
-
-        <ProfileRemovalConfirmation
-          v-if="isRemovalConfirmationOpen"
-          :profile="profile"
-          @cancel="hideRemovalConfirmation"
-          @removed="onRemoval"
-        />
       </div>
     </div>
+
+    <ProfileRemovalConfirmation
+      v-if="profileToRemove"
+      :profile="profileToRemove"
+      @cancel="hideRemovalConfirmation"
+      @removed="onRemoval"
+    />
   </div>
 </template>
 
@@ -83,7 +83,7 @@ export default {
   },
 
   data: () => ({
-    isRemovalConfirmationOpen: false
+    profileToRemove: null
   }),
 
   computed: {
@@ -95,7 +95,7 @@ export default {
 
   methods: {
     hideRemovalConfirmation () {
-      this.isRemovalConfirmationOpen = false
+      this.profileToRemove = null
     },
 
     onRemoval () {
@@ -109,8 +109,8 @@ export default {
       }
     },
 
-    openRemovalConfirmation () {
-      this.isRemovalConfirmationOpen = true
+    openRemovalConfirmation (profile) {
+      this.profileToRemove = profile
     },
 
     selectProfile (profileId) {

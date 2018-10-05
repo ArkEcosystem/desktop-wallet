@@ -42,20 +42,21 @@
 
           <div
             class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
-            @click="openRemovalConfirmation"
+            @click="openRemovalConfirmation(wallet)"
           >
             {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
           </div>
         </div>
 
-        <WalletRemovalConfirmation
-          v-if="isRemovalConfirmationOpen"
-          :wallet="wallet"
-          @cancel="hideRemovalConfirmation"
-          @removed="hideRemovalConfirmation"
-        />
       </div>
     </div>
+
+    <WalletRemovalConfirmation
+      v-if="walletToRemove"
+      :wallet="walletToRemove"
+      @cancel="hideRemovalConfirmation"
+      @removed="hideRemovalConfirmation"
+    />
   </div>
 </template>
 
@@ -70,7 +71,7 @@ export default {
   },
 
   data: () => ({
-    isRemovalConfirmationOpen: false
+    walletToRemove: null
   }),
 
   computed: {
@@ -81,11 +82,11 @@ export default {
 
   methods: {
     hideRemovalConfirmation () {
-      this.isRemovalConfirmationOpen = false
+      this.walletToRemove = null
     },
 
-    openRemovalConfirmation () {
-      this.isRemovalConfirmationOpen = true
+    openRemovalConfirmation (wallet) {
+      this.walletToRemove = wallet
     }
   }
 }
