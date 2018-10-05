@@ -22,12 +22,15 @@
         </a>
 
         <div
-          v-else-if="table.column.field === 'totalAmount'"
+          v-else-if="table.column.field === 'amount'"
           class="flex items-center justify-end"
         >
-          <span class="font-bold mr-2">
+          <span
+            v-tooltip="{ content: `${$t('TRANSACTION.AMOUNT')}: ${table.formattedRow['amount']} \n ${$t('TRANSACTION.FEE')}: ${formatAmount(table.row.fee)}`, trigger:'hover' }"
+            class="font-bold mr-2"
+          >
             {{ table.row.isSender ? '-' : '+' }}
-            {{ table.formattedRow['totalAmount'] }}
+            {{ table.formattedRow['amount'] }}
           </span>
           <span
             :class="{
@@ -116,7 +119,7 @@ export default {
         {
           label: this.$t('TRANSACTION.AMOUNT'),
           type: 'number',
-          field: 'totalAmount',
+          field: 'amount',
           formatFn: this.formatAmount,
           tdClass: 'text-right',
           thClass: 'text-right'
