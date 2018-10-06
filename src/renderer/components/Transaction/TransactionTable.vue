@@ -55,6 +55,7 @@
           <WalletAddress
             :address="table.row.recipient"
             :type="table.row.type"
+            :asset="table.row.asset"
           />
         </div>
 

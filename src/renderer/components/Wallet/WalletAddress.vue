@@ -2,7 +2,7 @@
 <template>
   <span>
     <span v-if="!type">
-      <span>{{ wallet_formatAddress(address, 10) }}</span>
+      <span v-tooltip="address">{{ wallet_formatAddress(address, 10) }}</span>
     </span>
     <span v-else-if="type === 1">{{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}</span>
     <span v-else-if="type === 2">{{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}</span>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import truncateMiddle from '@/filters/truncate-middle'
 
 export default {
   name: 'WalletAddress',
@@ -48,12 +47,6 @@ export default {
         return vote.charAt(0) === '-'
       }
       return false
-    }
-  },
-
-  methods: {
-    truncate (address) {
-      return truncateMiddle(address, 10)
     }
   }
 }
