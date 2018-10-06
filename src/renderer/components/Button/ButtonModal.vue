@@ -1,6 +1,6 @@
 <template>
   <button
-    class="mr-2 p-2 rounded-lg flex items-center justify-center"
+    class="mr-2 p-2 rounded-md flex items-center justify-center"
     @click="toggle"
   >
     <SvgIcon
