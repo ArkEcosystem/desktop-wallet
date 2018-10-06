@@ -47,6 +47,17 @@
           </span>
         </div>
 
+        <div v-else-if="table.column.field === 'sender'">
+          <WalletAddress :address="table.row.recipient"/>
+        </div>
+
+        <div v-else-if="table.column.field === 'recipient'">
+          <WalletAddress
+            :address="table.row.recipient"
+            :type="table.row.type"
+          />
+        </div>
+
         <span v-else>
           {{ table.formattedRow[table.column.field] }}
         </span>
@@ -69,13 +80,15 @@
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import { TransactionShow } from '@/components/Transaction'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 
 export default {
   name: 'TransactionTable',
 
   components: {
     SvgIcon,
-    TransactionShow
+    TransactionShow,
+    WalletAddress
   },
 
   props: {
@@ -108,13 +121,11 @@ export default {
         },
         {
           label: this.$t('TRANSACTION.SENDER'),
-          field: 'sender',
-          formatFn: this.formatAddress
+          field: 'sender'
         },
         {
           label: this.$t('TRANSACTION.RECIPIENT'),
-          field: 'recipient',
-          formatFn: this.formatAddress
+          field: 'recipient'
         },
         {
           label: this.$t('TRANSACTION.AMOUNT'),

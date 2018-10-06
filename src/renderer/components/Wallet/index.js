@@ -1,3 +1,4 @@
+import WalletAddress from './WalletAddress'
 import WalletRemovalConfirmation from './WalletRemovalConfirmation'
 
 export * from './WalletDelegates'
@@ -8,5 +9,6 @@ export * from './WalletDetails'
 export * from './WalletSidebar'
 
 export {
+  WalletAddress,
   WalletRemovalConfirmation
 }

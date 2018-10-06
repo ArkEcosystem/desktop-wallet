@@ -280,6 +280,7 @@ export default {
       SECOND_SIGNATURE: 'Second Signature',
       DELEGATE_REGISTRATION: 'Delegate Registration',
       VOTE: 'Vote',
+      UNVOTE: 'Unvote',
       MULTI_SIGNATURE: 'Multi Signature',
       IPFS: 'IPFS',
       TIMELOCK_TRANSFER: 'Timelock Transfer',
