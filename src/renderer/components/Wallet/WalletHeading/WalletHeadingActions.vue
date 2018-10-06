@@ -8,10 +8,18 @@
       <WalletHeadingSecondaryActions v-else />
     </transition>
     <button
-      class="option-button ml-2 p-2 rounded-lg"
+      class="option-button ml-2 p-2 rounded-md items-center"
       @click="showSecondaryActions = !showSecondaryActions"
     >
-      &vellip;
+      <SvgIcon
+        v-if="!showSecondaryActions"
+        class="rotate-90"
+        name="point"
+        view-box="0 0 16 16" />
+      <SvgIcon
+        v-else
+        name="step-back"
+        view-box="0 0 16 16" />
     </button>
   </div>
 </template>
@@ -19,13 +27,15 @@
 <script>
 import WalletHeadingPrimaryActions from './WalletHeadingPrimaryActions'
 import WalletHeadingSecondaryActions from './WalletHeadingSecondaryActions'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletHeadingActions',
 
   components: {
     WalletHeadingPrimaryActions,
-    WalletHeadingSecondaryActions
+    WalletHeadingSecondaryActions,
+    SvgIcon
   },
 
   data () {

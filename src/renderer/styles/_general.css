@@ -28,3 +28,7 @@ textarea:focus,
 input:focus {
   @apply .outline-none
 }
+
+.rotate-90 {
+	transform: rotate(90deg);
+}
