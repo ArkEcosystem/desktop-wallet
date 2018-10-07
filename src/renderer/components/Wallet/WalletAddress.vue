@@ -26,7 +26,8 @@ export default {
   props: {
     address: {
       type: String,
-      required: true
+      required: false,
+      default: () => ''
     },
     asset: {
       type: Object,
