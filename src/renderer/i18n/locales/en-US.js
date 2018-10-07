@@ -319,7 +319,8 @@ export default {
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
     VOTERS: 'Voters',
-    VOTE: 'Vote'
+    VOTE: 'Vote',
+    USERNAME_ERROR: 'No special characters or uppercase allowed'
   },
 
   WALLET_REMOVAL_CONFIRMATION: {

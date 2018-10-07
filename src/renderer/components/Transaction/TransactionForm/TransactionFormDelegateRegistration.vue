@@ -5,6 +5,7 @@
   >
     <InputText
       v-model="$v.form.username.$model"
+      :helper-text="error"
       :label="$t('WALLET_DELEGATES.USERNAME')"
       :is-invalid="$v.form.username.$dirty && $v.form.username.$invalid"
       class="mb-5"
@@ -45,7 +46,13 @@ export default {
         required,
         isValid (value) {
           const validation = WalletService.validateUsername(value)
-          return validation ? validation.passes : false
+          if (validation && validation.passes) {
+            this.error = null
+            return validation.passes
+          }
+
+          this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+          return false
         }
       },
       passphrase: {
@@ -68,7 +75,8 @@ export default {
     form: {
       username: '',
       passphrase: ''
-    }
+    },
+    error: null
   }),
 
   computed: {
