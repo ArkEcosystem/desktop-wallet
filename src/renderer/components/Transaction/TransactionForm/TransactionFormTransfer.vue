@@ -47,7 +47,7 @@
     <PassphraseInput
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
-      :address="$v.form.recipientId.$model"
+      :address="currentWallet.address"
       :pub-key-hash="session_network.version"
       class="mb-10"
     />
