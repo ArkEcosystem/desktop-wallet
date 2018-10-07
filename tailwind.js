@@ -556,6 +556,7 @@ module.exports = {
     '24': '6rem',
     '30': '7rem', // Added
     '32': '8rem',
+    '40': '10rem', // Added
     '48': '12rem',
     '64': '16rem',
     'full': '100%',

@@ -1,7 +1,7 @@
 <template>
   <div
     key="SecondaryActions"
-    class="WalletHeading__SecondaryActions flex"
+    class="WalletHeading__SecondaryActions flex content-end"
   >
     <button class="option-button px-2 mr-2 rounded-md whitespace-no-wrap flex items-center justify-center">
       <SvgIcon

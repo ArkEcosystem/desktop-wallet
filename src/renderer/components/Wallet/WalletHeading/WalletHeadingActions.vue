@@ -1,18 +1,13 @@
 <template>
   <div class="flex items-center relative overflow-hidden font-sans">
-    <transition
-      name="action-slide"
-      mode="out-in"
-    >
-      <WalletHeadingPrimaryActions v-if="!showSecondaryActions" />
-      <WalletHeadingSecondaryActions v-else />
-    </transition>
+    <WalletHeadingPrimaryActions v-if="!secondaryButtonsVisible" />
+    <WalletHeadingSecondaryActions v-else />
     <button
-      class="option-button ml-2 p-2 rounded-md items-center"
-      @click="showSecondaryActions = !showSecondaryActions"
+      class="option-button ml-2 p-2 rounded-lg"
+      @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
     >
       <SvgIcon
-        v-if="!showSecondaryActions"
+        v-if="!secondaryButtonsVisible"
         class="rotate-90"
         name="point"
         view-box="0 0 16 16" />
@@ -28,6 +23,7 @@
 import WalletHeadingPrimaryActions from './WalletHeadingPrimaryActions'
 import WalletHeadingSecondaryActions from './WalletHeadingSecondaryActions'
 import SvgIcon from '@/components/SvgIcon'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'WalletHeadingActions',
@@ -38,37 +34,8 @@ export default {
     SvgIcon
   },
 
-  data () {
-    return {
-      showSecondaryActions: false
-    }
-  },
-
   computed: {
-    slideDuration () {
-      const primaryToSecondaryDurations = {
-        leave: 300,
-        enter: 600
-      }
-
-      const secondaryToPrimaryDurations = {
-        leave: 600,
-        enter: 300
-      }
-
-      return this.showSecondaryActions ? primaryToSecondaryDurations : secondaryToPrimaryDurations
-    }
+    ...mapGetters('wallet', ['secondaryButtonsVisible'])
   }
 }
 </script>
-
-<style scoped>
-.action-slide-enter-active, .action-slide-leave-active {
-  transition: all .5s linear;
-}
-
-.action-slide-enter, .action-slide-leave-to {
-  transform: translateX(100%);
-  opacity: 0%;
-}
-</style>
