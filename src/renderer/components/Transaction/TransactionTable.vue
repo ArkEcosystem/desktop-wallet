@@ -48,7 +48,7 @@
         </div>
 
         <div v-else-if="table.column.field === 'sender'">
-          <WalletAddress :address="table.row.recipient"/>
+          <WalletAddress :address="table.row.sender"/>
         </div>
 
         <div v-else-if="table.column.field === 'recipient'">
