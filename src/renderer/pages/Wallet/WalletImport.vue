@@ -32,6 +32,7 @@
               <!-- TODO check duplicate here when db store is available -->
               <InputAddress
                 v-show="!useOnlyPassphrase"
+                ref="addressInput"
                 v-model="schema.address"
                 :pub-key-hash="session_network.version"
                 class="my-3"
@@ -45,7 +46,16 @@
                 @change="setOnlyPassphrase"
               />
 
+              <InputSwitch
+                :label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
+                :text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
+                :is-active="useOnlyAddress"
+                class="my-3"
+                @change="setOnlyAddress"
+              />
+
               <PassphraseInput
+                v-show="!useOnlyAddress"
                 ref="passphrase"
                 v-model="schema.passphrase"
                 :address="useOnlyPassphrase ? null : schema.address"
@@ -87,6 +97,7 @@
               />
 
               <InputSwitch
+                v-show="!useOnlyAddress"
                 :label="$t('PAGES.WALLET_IMPORT.STEP2.OPERATIONS')"
                 :text="$t('PAGES.WALLET_IMPORT.STEP2.SENDING_ENABLED')"
                 :is-active="schema.isSendingEnabled"
@@ -128,6 +139,7 @@ export default {
   data: () => ({
     ensureEntirePassphrase: false,
     step: 1,
+    useOnlyAddress: false,
     useOnlyPassphrase: false
   }),
 
@@ -136,7 +148,7 @@ export default {
      * Generate always the address when moving to the step 2
      */
     step () {
-      if (this.step === 2) {
+      if (this.step === 2 && !this.useOnlyAddress) {
         this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
       }
     }
@@ -159,7 +171,13 @@ export default {
       this.schema.isSendingEnabled = isSendingEnabled
     },
 
+    setOnlyAddress (useOnlyAddress) {
+      this.useOnlyPassphrase = false
+      this.useOnlyAddress = useOnlyAddress
+    },
+
     setOnlyPassphrase (useOnlyPassphrase) {
+      this.useOnlyAddress = false
       this.useOnlyPassphrase = useOnlyPassphrase
     }
   },
@@ -171,13 +189,32 @@ export default {
       address: {
         isRequired (value) {
           return this.useOnlyPassphrase || required(value)
+        },
+        isValid (value) {
+          if (this.useOnlyPassphrase) {
+            return true
+          }
+
+          if (this.$refs.addressInput) {
+            return !this.$refs.addressInput.$v.$invalid
+          }
+
+          return false
         }
       },
       passphrase: {
+        isRequired (value) {
+          return this.useOnlyAddress || required(value)
+        },
         isValid (value) {
+          if (this.useOnlyAddress) {
+            return true
+          }
+
           if (this.$refs.passphrase) {
             return !this.$refs.passphrase.$v.$invalid
           }
+
           return false
         }
       }

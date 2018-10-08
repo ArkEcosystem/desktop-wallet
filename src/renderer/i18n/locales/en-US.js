@@ -202,6 +202,7 @@ export default {
           TEXT: 'Introduce the passphrase of your wallet. You can introduce the wallet address first to ensure that your both match.'
         },
         TITLE: '1. Introduce wallet',
+        ONLY_ADDRESS: 'Use the address only',
         ONLY_PASSPHRASE: 'Use the passphrase only'
       },
       STEP2: {
