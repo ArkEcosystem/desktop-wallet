@@ -6,11 +6,18 @@
       class="WalletHeading__identicon w-24 h-24 rounded-full">
 
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
-      <p class="WalletHeading__address tracking-wide mb-3">
+      <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
         {{ wallet_formatAddress(address) }}
+        <SvgIcon
+          v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"
+          v-if="currentWallet.secondPublicKey"
+          name="2nd-passphrase"
+          view-box="0 0 16 16"
+          class="ml-1"
+        />
         <ButtonClipboard
           :value="address"
-          class="text-inherit opacity-50"
+          class="text-inherit opacity-50 ml-1"
         />
       </p>
 
@@ -21,12 +28,14 @@
 
 <script>
 import { ButtonClipboard } from '@/components/Button'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletHeadingInfo',
 
   components: {
-    ButtonClipboard
+    ButtonClipboard,
+    SvgIcon
   },
 
   computed: {
@@ -38,6 +47,9 @@ export default {
       const wallet = this.wallet_fromRoute
       const balance = wallet ? wallet.balance : 0
       return this.currency_format(this.currency_subToUnit(balance), { currencyFrom: 'network' })
+    },
+    currentWallet () {
+      return this.wallet_fromRoute
     }
   }
 }

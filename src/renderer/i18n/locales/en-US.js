@@ -310,7 +310,8 @@ export default {
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet'
-    }
+    },
+    SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
   },
 
   WALLET_SECOND_SIGNATURE: {
