@@ -299,6 +299,7 @@ export default {
     AMOUNT: 'Amount',
     VENDOR_FIELD: 'Vendor Field',
     PASSPHRASE: 'Passphrase',
+    SECOND_PASSPHRASE: 'Second Passphrase',
     FEE: 'Fee'
   },
 
@@ -309,6 +310,11 @@ export default {
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet'
     }
+  },
+
+  WALLET_SECOND_SIGNATURE: {
+    NEW: 'New passphrase',
+    ALREADY_REGISTERED: 'There is already a second passphrase registered for this address'
   },
 
   WALLET_DELEGATES: {

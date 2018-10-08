@@ -222,7 +222,7 @@ export default {
 
   data: () => ({
     isRefreshing: false,
-    isPasspharaseVerified: false,
+    isPassphraseVerified: false,
     ensureEntirePassphrase: false,
     step: 1,
     wallets: {}
@@ -273,7 +273,7 @@ export default {
     },
 
     onVerification () {
-      this.isPasspharaseVerified = true
+      this.isPassphraseVerified = true
     },
 
     selectWallet (address, passphrase) {
@@ -286,7 +286,7 @@ export default {
 
       this.schema.address = null
       this.schema.passphrase = null
-      this.isPasspharaseVerified = false
+      this.isPassphraseVerified = false
 
       for (const [address] of Object.entries(this.wallets)) {
         this.$delete(this.wallets, address)
@@ -306,9 +306,9 @@ export default {
 
   validations: {
     step1: ['schema.address'],
-    step3: ['isPasspharaseVerified'],
+    step3: ['isPassphraseVerified'],
     step4: ['schema.name'],
-    isPasspharaseVerified: {
+    isPassphraseVerified: {
       required,
       isVerified: value => value
     }

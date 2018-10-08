@@ -29,7 +29,10 @@ export default new BaseModel({
     },
     profileId: {},
     publicKey: {
-      type: 'string'
+      type: ['string', 'null']
+    },
+    secondPublicKey: {
+      type: ['string', 'null']
     }
   },
   required: ['address', 'isSendingEnabled', 'name', 'profileId']

@@ -15,13 +15,22 @@
     <PassphraseInput
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
+      :address="currentWallet.address"
       :pub-key-hash="session_network.version"
-      class="mb-10"
+    />
+
+    <PassphraseInput
+      v-if="currentWallet.secondPublicKey"
+      ref="secondPassphrase"
+      v-model="$v.form.secondPassphrase.$model"
+      :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
+      :pub-key-hash="session_network.version"
+      class="mt-5"
     />
 
     <button
       :disabled="$v.form.$invalid"
-      class="blue-button w-full"
+      class="blue-button w-full mt-10"
     >
       {{ $t('COMMON.NEXT') }}
     </button>
@@ -62,6 +71,14 @@ export default {
           }
           return false
         }
+      },
+      secondPassphrase: {
+        isValid (value) {
+          if (this.$refs.secondPassphrase) {
+            return !this.$refs.secondPassphrase.$v.$invalid
+          }
+          return false
+        }
       }
     }
   },
@@ -87,11 +104,16 @@ export default {
 
   methods: {
     async onSubmit () {
-      const transaction = await this.$client.buildDelegateRegistration({
+      let transactionData = {
         username: this.form.username,
         passphrase: this.form.passphrase
-      })
+      }
 
+      if (this.currentWallet.secondPublicKey) {
+        transactionData['secondPassphrase'] = this.form.secondPassphrase
+      }
+
+      const transaction = await this.$client.buildDelegateRegistration(transactionData)
       this.emitNext(transaction)
     },
 

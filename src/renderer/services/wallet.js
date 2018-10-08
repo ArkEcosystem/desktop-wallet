@@ -16,6 +16,14 @@ export default class WalletService {
       passphrase
     }
   }
+
+  /**
+   * Generates a new passphrase to be used for a second passphrase
+   */
+  static generateSecondPassphrase () {
+    return bip39.generateMnemonic()
+  }
+
   /**
    * Returns the address that correspond to a passphrase
    * @param {String} passhrase

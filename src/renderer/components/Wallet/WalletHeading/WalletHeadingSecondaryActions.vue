@@ -21,13 +21,17 @@
         @cancel="toggle"
       />
     </ButtonModal>
-    <button class="option-button px-2 mr-2 rounded-md whitespace-no-wrap flex items-center justify-center">
-      <SvgIcon
-        class="mr-1"
-        name="2nd-passphrase"
-        view-box="0 0 20 20" />
-      {{ $t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE') }}
-    </button>
+    <ButtonModal
+      :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
+      icon="2nd-passphrase"
+      class="option-button whitespace-no-wrap"
+    >
+      <TransactionModal
+        slot-scope="{ toggle }"
+        :type="1"
+        @cancel="toggle"
+      />
+    </ButtonModal>
     <ButtonModal
       :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
       icon="delete-wallet"

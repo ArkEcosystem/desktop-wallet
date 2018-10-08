@@ -24,6 +24,7 @@
 
 <script>
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
+import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
 import { find } from 'lodash'
@@ -39,6 +40,7 @@ export default {
 
   components: {
     TransactionConfirmDelegateRegistration,
+    TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote
   },

@@ -54,6 +54,16 @@
       <PassphraseInput
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
+        :address="currentWallet.address"
+        :pub-key-hash="session_network.version"
+        class="mt-5"
+      />
+
+      <PassphraseInput
+        v-if="currentWallet.secondPublicKey"
+        ref="secondPassphrase"
+        v-model="$v.form.secondPassphrase.$model"
+        :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="session_network.version"
         class="mt-5"
       />
@@ -90,6 +100,14 @@ export default {
           }
           return false
         }
+      },
+      secondPassphrase: {
+        isValid (value) {
+          if (this.$refs.secondPassphrase) {
+            return !this.$refs.secondPassphrase.$v.$invalid
+          }
+          return false
+        }
       }
     }
   },
@@ -114,6 +132,12 @@ export default {
       passphrase: ''
     }
   }),
+
+  computed: {
+    currentWallet () {
+      return this.wallet_fromRoute
+    }
+  },
 
   watch: {
     isPassphraseStep () {
@@ -140,11 +164,16 @@ export default {
       const votes = [
         `+${publicKey}`
       ]
-      const transaction = await this.$client.buildVote({
+      let transactionData = {
         passphrase: this.form.passphrase,
         votes
-      })
+      }
 
+      if (this.currentWallet.secondPublicKey) {
+        transactionData['secondPassphrase'] = this.form.secondPassphrase
+      }
+
+      const transaction = await this.$client.buildVote(transactionData)
       this.emitNext(transaction)
       this.reset()
     },

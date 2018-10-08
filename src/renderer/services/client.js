@@ -180,14 +180,17 @@ export default class ClientService {
    * @param {Array} votes
    * @returns {Object}
    */
-  async buildVote ({ votes, passphrase }) {
-    const vote = transactionBuilder
+  async buildVote ({ votes, passphrase, secondPassphrase }) {
+    let vote = transactionBuilder
       .vote()
       .votesAsset(votes)
       .sign(passphrase)
-      .getStruct()
 
-    return vote
+    if (secondPassphrase) {
+      vote = vote.secondSign(secondPassphrase)
+    }
+
+    return vote.getStruct()
   }
 
   /**
@@ -196,14 +199,17 @@ export default class ClientService {
    * @param {String} passphrase
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, passphrase }) {
-    const delegateRegistration = transactionBuilder
+  async buildDelegateRegistration ({ username, passphrase, secondPassphrase }) {
+    let delegateRegistration = transactionBuilder
       .delegateRegistration()
       .usernameAsset(username)
       .sign(passphrase)
-      .getStruct()
 
-    return delegateRegistration
+    if (secondPassphrase) {
+      delegateRegistration = delegateRegistration.secondSign(secondPassphrase)
+    }
+
+    return delegateRegistration.getStruct()
   }
 
   /**
@@ -216,16 +222,36 @@ export default class ClientService {
    * @param {String} passphrase
    * @returns {Object}
    */
-  async buildTransfer ({ amount, recipientId, vendorField, passphrase }) {
-    const transfer = transactionBuilder
+  async buildTransfer ({ amount, recipientId, vendorField, passphrase, secondPassphrase }) {
+    let transfer = transactionBuilder
       .transfer()
       .amount(amount)
       .recipientId(recipientId)
       .vendorField(vendorField)
       .sign(passphrase)
+
+    if (secondPassphrase) {
+      transfer = transfer.secondSign(secondPassphrase)
+    }
+
+    return transfer.getStruct()
+  }
+
+  /**
+   * Build a second signature registration transaction.
+   * @param {String} passphrase
+   * @param {String} secondPassphrase
+   * @returns {Object}
+   */
+  async buildSecondSignatureRegistration ({ passphrase, secondPassphrase }) {
+    console.log(passphrase, secondPassphrase)
+    const registration = transactionBuilder
+      .secondSignature()
+      .signatureAsset(secondPassphrase)
+      .sign(passphrase)
       .getStruct()
 
-    return transfer
+    return registration
   }
 
   /**

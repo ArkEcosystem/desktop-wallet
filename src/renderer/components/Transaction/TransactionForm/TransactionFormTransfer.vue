@@ -49,15 +49,21 @@
       v-model="$v.form.passphrase.$model"
       :address="currentWallet.address"
       :pub-key-hash="session_network.version"
-      class="mb-10"
     />
 
-    <!-- TODO second passphrase -->
+    <PassphraseInput
+      v-if="currentWallet.secondPublicKey"
+      ref="secondPassphrase"
+      v-model="$v.form.secondPassphrase.$model"
+      :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
+      :pub-key-hash="session_network.version"
+      class="mt-5"
+    />
 
     <div class="self-start">
       <button
         :disabled="$v.form.$invalid"
-        class="blue-button"
+        class="blue-button mt-10"
         type="button"
       >
         {{ $t('COMMON.NEXT') }}
@@ -97,6 +103,14 @@ export default {
         isValid (value) {
           if (this.$refs.passphrase) {
             return !this.$refs.passphrase.$v.$invalid
+          }
+          return false
+        }
+      },
+      secondPassphrase: {
+        isValid (value) {
+          if (this.$refs.secondPassphrase) {
+            return !this.$refs.secondPassphrase.$v.$invalid
           }
           return false
         }
@@ -142,14 +156,18 @@ export default {
     },
 
     async onSubmit () {
-      const transaction = await this.$client.buildTransfer({
+      let transactionData = {
         amount: this.form.amount,
         recipientId: this.form.recipientId,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
         fee: this.form.fee
-      })
+      }
+      if (this.currentWallet.secondPublicKey) {
+        transactionData['secondPassphrase'] = this.form.secondPassphrase
+      }
 
+      const transaction = await this.$client.buildTransfer(transactionData)
       this.emitNext(transaction)
     }
   }

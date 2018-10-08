@@ -10,6 +10,7 @@
 import TransactionFormDelegateRegistration from './TransactionFormDelegateRegistration'
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'
+import TransactionFormSecondSignature from './TransactionFormSecondSignature'
 import { find } from 'lodash'
 
 export default {
@@ -18,7 +19,8 @@ export default {
   components: {
     TransactionFormDelegateRegistration,
     TransactionFormTransfer,
-    TransactionFormVote
+    TransactionFormVote,
+    TransactionFormSecondSignature
   },
 
   props: {
