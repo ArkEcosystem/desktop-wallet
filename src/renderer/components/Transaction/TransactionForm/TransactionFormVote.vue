@@ -103,6 +103,10 @@ export default {
       },
       secondPassphrase: {
         isValid (value) {
+          if (!this.currentWallet.secondPublicKey) {
+            return true
+          }
+
           if (this.$refs.secondPassphrase) {
             return !this.$refs.secondPassphrase.$v.$invalid
           }
