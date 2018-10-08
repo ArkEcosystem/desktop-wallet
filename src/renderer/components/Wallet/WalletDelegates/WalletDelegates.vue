@@ -84,7 +84,7 @@ export default {
     },
 
     formatPercentage (value) {
-      return `${value}%`
+      return `${this.$n(value, { minimumFractionDigits: 2 })}%`
     },
 
     onRowClick ({ row }) {

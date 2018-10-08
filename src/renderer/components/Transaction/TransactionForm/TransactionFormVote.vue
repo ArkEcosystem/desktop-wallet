@@ -13,7 +13,7 @@
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
-          :value="delegate.production.productivity"
+          :value="formatPercentage(delegate.production.productivity)"
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.RANK')"
@@ -21,7 +21,7 @@
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.APPROVAL')"
-          :value="delegate.production.approval"
+          :value="formatPercentage(delegate.production.approval)"
         />
         <!-- TODO: get forged -->
         <ListDividedItem
@@ -34,8 +34,8 @@
         />
         <ListDividedItem
           v-if="delegate.votes"
-          :label="$t('WALLET_DELEGATES.VOTERS')"
-          :value="delegate.votes"
+          :label="$t('WALLET_DELEGATES.VOTES')"
+          :value="formatVotes(delegate.votes)"
         />
       </ListDivided>
 
@@ -124,6 +124,14 @@ export default {
   methods: {
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
+    },
+
+    formatPercentage (productivity) {
+      return `${this.$n(productivity, { minimumFractionDigits: 2 })}%`
+    },
+
+    formatVotes (votes) {
+      return this.$n(parseFloat(this.currency_subToUnit(votes)), { maximumFractionDigits: 2 })
     },
 
     async onSubmit () {
