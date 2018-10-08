@@ -326,6 +326,7 @@ export default {
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
     VOTERS: 'Voters',
+    UNVOTE: 'Unvote',
     VOTES: 'Votes',
     VOTE: 'Vote',
     USERNAME_ERROR: 'No special characters or uppercase allowed'

@@ -106,6 +106,62 @@ describe('Services > Client', () => {
     })
   })
 
+  describe('fetchWalletVote', () => {
+    const publicKey = 'public key'
+
+    describe('when version is 1', () => {
+      const delegates = [{
+        publicKey
+      }]
+
+      beforeEach(() => {
+        client.version = 1
+
+        const resource = resource => {
+          if (resource === 'accounts') {
+            return {
+              delegates: () => ({ data: { delegates, success: true } })
+            }
+          }
+        }
+
+        client.client.resource = resource
+      })
+
+      it('should return delegate public key', async () => {
+        const response = await client.fetchWalletVote()
+        expect(response).toBe(publicKey)
+      })
+    })
+
+    describe('when version is 2', () => {
+      const transactions = [{
+        asset: {
+          votes: ['+' + publicKey]
+        }
+      }]
+
+      beforeEach(() => {
+        client.version = 2
+
+        const resource = resource => {
+          if (resource === 'wallets') {
+            return {
+              votes: () => ({ data: { data: transactions } })
+            }
+          }
+        }
+
+        client.client.resource = resource
+      })
+
+      it('should return delegate public key', async () => {
+        const response = await client.fetchWalletVote()
+        expect(response).toBe(publicKey)
+      })
+    })
+  })
+
   describe('fetchDelegates', () => {
     const data = [
       { rank: 1, username: 'first', approval: '1', productivity: '99' },

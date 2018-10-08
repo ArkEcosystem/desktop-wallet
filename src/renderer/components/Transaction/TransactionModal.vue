@@ -74,8 +74,13 @@ export default {
       this.transaction = null
     },
 
-    onConfirm () {
-      this.$client.broadcastTransaction(this.transaction)
+    async onConfirm () {
+      const response = await this.$client.broadcastTransaction(this.transaction)
+      this.emitSent(response)
+    },
+
+    emitSent (response) {
+      this.$emit('sent', response)
     },
 
     emitCancel () {

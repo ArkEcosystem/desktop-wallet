@@ -1,7 +1,6 @@
 <template>
-  <form
+  <div
     class="TransactionFormVote"
-    @submit.prevent="void 0"
   >
     <Collapse
       :is-open="!isPassphraseStep"
@@ -44,7 +43,7 @@
         class="blue-button mt-5"
         @click="toggleStep"
       >
-        {{ $t('WALLET_DELEGATES.VOTE') }}
+        {{ isVoter ? $t('WALLET_DELEGATES.UNVOTE') : $t('WALLET_DELEGATES.VOTE') }}
       </button>
     </Collapse>
 
@@ -77,7 +76,7 @@
         {{ $t('COMMON.NEXT') }}
       </button>
     </Collapse>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -127,6 +126,11 @@ export default {
     delegate: {
       type: Object,
       required: true
+    },
+    isVoter: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -164,9 +168,10 @@ export default {
 
     async onSubmit () {
       const { publicKey } = this.delegate
-      // TODO: Handle unvote
+      const prefix = this.isVoter ? '-' : '+'
+
       const votes = [
-        `+${publicKey}`
+        `${prefix}${publicKey}`
       ]
       let transactionData = {
         passphrase: this.form.passphrase,
@@ -184,7 +189,7 @@ export default {
 
     reset () {
       this.isPassphraseStep = false
-      this.form.passphrase = ''
+      this.$set(this.form, 'passphrase', '')
       this.$refs.passphrase.reset()
       this.$v.$reset()
     },

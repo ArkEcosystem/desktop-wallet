@@ -20,7 +20,7 @@ export default class ClientService {
    *
    * @param {String} server
    * @param {Number} apiVersion
-   * @eturns {Object}
+   * @returns {Object}
    */
   static async fetchNetworkConfig (server, apiVersion) {
     const client = new ApiClient(server, apiVersion)
@@ -176,6 +176,32 @@ export default class ClientService {
   }
 
   /**
+   * Request the vote of a wallet.
+   * Returns the delegate's public key if this wallet has voted.
+   * @param {String} address
+   * @returns {String|null}
+   */
+  async fetchWalletVote (address) {
+    let delegatePublicKey = null
+
+    if (this.version === 2) {
+      const { data } = await this.client.resource('wallets').votes(address)
+      const response = data.data
+
+      if (response.length) {
+        delegatePublicKey = response[0].asset.votes[0].substring(1)
+      }
+    } else {
+      const { data } = await this.client.resource('accounts').delegates(address)
+      if (data.success && data.delegates.length) {
+        delegatePublicKey = data.delegates[0].publicKey
+      }
+    }
+
+    return delegatePublicKey
+  }
+
+  /**
    * Build a vote transaction
    * @param {Array} votes
    * @returns {Object}
@@ -244,7 +270,6 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ passphrase, secondPassphrase }) {
-    console.log(passphrase, secondPassphrase)
     const registration = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)

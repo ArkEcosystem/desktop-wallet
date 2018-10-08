@@ -5,7 +5,30 @@
       :rows="delegates"
       class="WalletDelegates"
       @on-row-click="onRowClick"
-    />
+    >
+      <template
+        slot="table-row"
+        slot-scope="table"
+      >
+        <div
+          v-if="table.column.field === 'username'"
+        >
+          <div class="flex items-center">
+            <span>{{ table.formattedRow['username'] }}</span>
+            <span
+              v-if="table.row.publicKey === votePublicKey"
+              class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs rounded pointer-events-none ml-3"
+            >
+              {{ $t('WALLET_DELEGATES.VOTE') }}
+            </span>
+          </div>
+        </div>
+
+        <span v-else>
+          {{ table.formattedRow[table.column.field] }}
+        </span>
+      </template>
+    </vue-good-table>
     <portal
       v-if="selected"
       to="modal"
@@ -14,7 +37,9 @@
         :title="selected.username"
         :type="3"
         :delegate="selected"
+        :is-voter="selected.publicKey === votePublicKey"
         @cancel="onCancel"
+        @sent="onSent"
       />
     </portal>
   </div>
@@ -32,6 +57,7 @@ export default {
 
   data: () => ({
     delegates: [],
+    votePublicKey: null,
     selected: null
   }),
 
@@ -68,6 +94,7 @@ export default {
 
   mounted () {
     this.fetchDelegates()
+    this.fetchWalletVote()
   },
 
   methods: {
@@ -83,6 +110,18 @@ export default {
       }
     },
 
+    async fetchWalletVote () {
+      try {
+        this.votePublicKey = await this.$client.fetchWalletVote(this.wallet_fromRoute.address)
+      } catch (error) {
+        console.error(error)
+        this.$error(this.$t('COMMON.FAILED_FETCH', {
+          name: 'fetch vote',
+          msg: error.message
+        }))
+      }
+    },
+
     formatPercentage (value) {
       return `${this.$n(value, { minimumFractionDigits: 2 })}%`
     },
@@ -91,9 +130,19 @@ export default {
       this.selected = row
     },
 
+    onSent () {
+      this.votePublicKey = null
+    },
+
     onCancel () {
       this.selected = null
     }
   }
 }
 </script>
+
+<style scoped>
+.WalletDelegates__vote-badge {
+  opacity: 0.85
+}
+</style>
