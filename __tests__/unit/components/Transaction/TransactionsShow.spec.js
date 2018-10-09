@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { TransactionShow } from '@/components/Transaction'
+import FormatterMixin from '@/mixins/formatter'
 
 describe('TransactionShow', () => {
   let transaction
@@ -20,6 +21,7 @@ describe('TransactionShow', () => {
       propsData: {
         transaction
       },
+      mixins: [FormatterMixin],
       mocks: {
         $d: jest.fn(),
         wallet_formatAddress: address => address

@@ -5,6 +5,7 @@ const mixins = [
   require('./collections').default,
   require('./currency').default,
   require('./electron').default,
+  require('./formatter').default,
   require('./network').default,
   require('./session').default,
   require('./wallet').default

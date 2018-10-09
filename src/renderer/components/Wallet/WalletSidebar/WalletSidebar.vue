@@ -35,7 +35,7 @@
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
           >
-            {{ currency_format(currency_subToUnit(wallet.balance), { currencyFrom: 'network' }) }}
+            {{ formatter_networkCurrency(wallet.balance) }}
             <!-- TODO display a +/- n ARK on recent transactions -->
           </span>
         </div>

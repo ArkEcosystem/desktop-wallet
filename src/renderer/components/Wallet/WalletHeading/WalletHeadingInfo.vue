@@ -46,7 +46,7 @@ export default {
     balance () {
       const wallet = this.wallet_fromRoute
       const balance = wallet ? wallet.balance : 0
-      return this.currency_format(this.currency_subToUnit(balance), { currencyFrom: 'network' })
+      return this.formatter_networkCurrency(balance)
     },
     currentWallet () {
       return this.wallet_fromRoute

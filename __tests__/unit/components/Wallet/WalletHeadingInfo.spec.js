@@ -1,6 +1,7 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import VueI18n from 'vue-i18n'
 import CurrencyMixin from '@/mixins/currency'
+import FormatterMixin from '@/mixins/formatter'
 import { WalletHeadingInfo } from '@/components/Wallet'
 
 const locale = 'en-US'
@@ -41,7 +42,7 @@ describe('WalletHeadingInfo component', () => {
     wrapper = mount(WalletHeadingInfo, {
       localVue,
       i18n,
-      mixins: [CurrencyMixin],
+      mixins: [CurrencyMixin, FormatterMixin],
       propsData: sampleWalletData,
       mocks: {
         $store: {

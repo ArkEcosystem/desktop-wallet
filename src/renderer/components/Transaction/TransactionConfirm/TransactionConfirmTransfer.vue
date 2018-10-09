@@ -2,7 +2,7 @@
   <ListDivided :is-floating-label="true">
     <!-- TODO: Add header + identicons + amount -->
     <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
-      {{ formatCurrency(transaction.amount) }}
+      {{ formatter_networkCurrency(transaction.amount) }}
     </ListDividedItem>
 
     <ListDividedItem :label="$t('TRANSACTION.RECIPIENT')">
@@ -14,7 +14,7 @@
     </ListDividedItem>
 
     <ListDividedItem :label="$t('TRANSACTION.FEE')">
-      {{ formatCurrency(transaction.fee) }}
+      {{ formatter_networkCurrency(transaction.fee) }}
     </ListDividedItem>
   </ListDivided>
 </template>
@@ -33,12 +33,6 @@ export default {
   components: {
     ListDivided,
     ListDividedItem
-  },
-
-  methods: {
-    formatCurrency (value) {
-      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network' })
-    }
   }
 }
 </script>

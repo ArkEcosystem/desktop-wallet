@@ -62,7 +62,7 @@
 
       <ListDividedItem
         :label="$t('TRANSACTION.FEE')"
-        :value="formatUnit(transaction.fee)"
+        :value="formatter_networkCurrency(transaction.fee)"
       />
 
       <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
@@ -111,9 +111,6 @@ export default {
   },
 
   methods: {
-    formatUnit (value) {
-      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network' })
-    },
 
     openTransaction () {
       this.network_openExplorer('transaction', this.transaction.id)

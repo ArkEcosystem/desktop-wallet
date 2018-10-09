@@ -164,7 +164,7 @@ export default {
     },
 
     formatAmount (value) {
-      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network' })
+      return this.formatter_networkCurrency(value)
     },
 
     openTransactions (id) {
