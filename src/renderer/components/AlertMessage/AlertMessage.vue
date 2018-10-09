@@ -4,9 +4,11 @@
     class="AlertMessage absolute z-10 max-w-1/2 min-w-1/4 rounded-lg inline pin-b pin-l m-4 p-4 text-white">
     <div class="message font-bold">
       <ButtonClose
-        class="dismiss float-right p-10px ml-4 cursor-pointer select-none"
+        class="dismiss float-right p-10px cursor-pointer select-none"
         @click="showNext" />
-      {{ alert ? alert.message : '&nbsp;' }}
+      <span class="mr-4">
+        {{ alert ? alert.message : '&nbsp;' }}
+      </span>
     </div>
   </div>
 </template>

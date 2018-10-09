@@ -107,15 +107,11 @@
             >
               <div class="">{{ title }}</div>
 
-              <div
+              <ButtonClipboard
                 v-if="step === 2"
-                class="py-2 px-4 rounded bg-grey-lighter"
-              >
-                <ButtonClipboard
-                  :value="schema.passphrase"
-                  class="text-grey-dark"
-                />
-              </div>
+                :value="schema.passphrase"
+                class="text-grey-dark py-2 px-4 rounded bg-grey-lighter"
+              />
             </div>
 
             <PassphraseWords :passphrase-words="passphraseWords" />
