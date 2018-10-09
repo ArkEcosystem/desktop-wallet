@@ -8,7 +8,7 @@
     >
       <div class="flex items-center justify-center absolute pin">
         <div
-          class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-white text-theme-text-content"
+          class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
           @click.stop="void 0"
         >
 

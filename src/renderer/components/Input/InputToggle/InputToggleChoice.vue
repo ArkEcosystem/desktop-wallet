@@ -5,7 +5,7 @@
       'rounded-l': isFirst,
       'rounded-r': isLast,
       'bg-blue text-white font-semibold shadow-lg': isSelected,
-      'bg-grey-lighter text-grey-darker': !isSelected
+      'bg-theme-input-toggle-choice text-theme-input-toggle-choice-text': !isSelected
     }"
     type="button"
     @click="emitSelect(choice)"
