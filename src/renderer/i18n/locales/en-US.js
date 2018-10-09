@@ -301,7 +301,8 @@ export default {
     VENDOR_FIELD: 'Vendor Field',
     PASSPHRASE: 'Passphrase',
     SECOND_PASSPHRASE: 'Second Passphrase',
-    FEE: 'Fee'
+    FEE: 'Fee',
+    OPEN_IN_EXPLORER: 'Open in Explorer'
   },
 
   WALLET_HEADING: {

@@ -1,8 +1,8 @@
 <template>
   <span
     :class="{
-      'text-red': transaction.sender === currentWallet.address,
-      'text-green': transaction.recipient === currentWallet.address && isTransfer,
+      'text-red': transaction.isSender,
+      'text-green': transaction.isReceiver && isTransfer,
   }">{{ formatUnit(transaction.amount) }}</span>
 </template>
 
@@ -19,9 +19,6 @@ export default {
   },
 
   computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
-    },
     isTransfer () {
       if (this.transaction.type !== undefined) {
         // 0 = transfer, 6 = timelock transfer, 7 = multipayment

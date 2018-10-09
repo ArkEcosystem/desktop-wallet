@@ -6,12 +6,25 @@
   >
     <ListDivided>
       <ListDividedItem :label="$t('TRANSACTION.ID')">
-        <span>{{ transaction.id | truncateMiddle }}</span>
+        <span
+          v-tooltip="{
+            content: transaction.id,
+            trigger: 'hover',
+            classes: 'text-xs'
+          }"
+          class="cursor-default"
+        >
+          {{ transaction.id | truncateMiddle }}
+        </span>
         <ButtonClipboard
           :value="transaction.id"
           class="text-theme-page-text-light mx-1"
         />
         <button
+          v-tooltip="{
+            content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
+            trigger: 'hover'
+          }"
           @click="openTransaction"
         >
           <SvgIcon

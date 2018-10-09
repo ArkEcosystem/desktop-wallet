@@ -14,6 +14,11 @@
         slot-scope="table"
       >
         <a
+          v-tooltip="{
+            content: table.row.id,
+            classes: 'text-xs',
+            trigger: 'hover'
+          }"
           v-if="table.column.field === 'id'"
           href="#"
           @click.stop="network_openExplorer('transaction', table.row.id)"
@@ -26,7 +31,12 @@
           class="flex items-center justify-end"
         >
           <span
-            v-tooltip="{ content: `${$t('TRANSACTION.AMOUNT')}: ${table.formattedRow['amount']} \n ${$t('TRANSACTION.FEE')}: ${formatAmount(table.row.fee)}`, trigger:'hover' }"
+            v-tooltip="{
+              content: `${$t('TRANSACTION.AMOUNT')}: ${table.formattedRow['amount']}<br>${$t('TRANSACTION.FEE')}: ${formatAmount(table.row.fee)}`,
+              html: true,
+              classes: 'leading-loose',
+              trigger: 'hover'
+            }"
             class="font-bold mr-2"
           >
             {{ table.row.isSender ? '-' : '+' }}
