@@ -44,8 +44,7 @@
       </ListDividedItem>
 
       <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
-        <!-- TODO: Color green/red -->
-        <span>{{ formatUnit(transaction.amount) }}</span>
+        <TransactionAmount :transaction="transaction" />
       </ListDividedItem>
 
       <ListDividedItem
@@ -77,6 +76,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
+import { TransactionAmount } from '@/components/Transaction'
 
 export default {
   name: 'TransactionShow',
@@ -86,7 +86,8 @@ export default {
     ListDividedItem,
     ModalWindow,
     ButtonClipboard,
-    SvgIcon
+    SvgIcon,
+    TransactionAmount
   },
 
   props: {

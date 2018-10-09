@@ -23,6 +23,9 @@ describe('TransactionShow', () => {
       mocks: {
         $d: jest.fn(),
         wallet_formatAddress: address => address
+      },
+      stubs: {
+        'TransactionAmount': true
       }
     })
   })
