@@ -38,6 +38,7 @@
       </ListDivided>
 
       <button
+        v-show="currentWallet.isSendingEnabled"
         type="button"
         class="blue-button mt-5"
         @click="toggleStep"

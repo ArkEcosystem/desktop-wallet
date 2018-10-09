@@ -11,6 +11,7 @@
       {{ $t('WALLET_HEADING.ACTIONS.WALLET_NAME') }}
     </button>
     <ButtonModal
+      v-show="currentWallet.isSendingEnabled"
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
       icon="register-delegate"
       class="option-button whitespace-no-wrap"
@@ -22,6 +23,7 @@
       />
     </ButtonModal>
     <ButtonModal
+      v-show="currentWallet.isSendingEnabled"
       :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
       icon="2nd-passphrase"
       class="option-button whitespace-no-wrap"

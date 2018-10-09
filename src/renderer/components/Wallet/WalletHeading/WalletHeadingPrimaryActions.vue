@@ -17,6 +17,7 @@
     </ButtonModal>
 
     <ButtonModal
+      v-show="currentWallet.isSendingEnabled"
       :class="buttonStyle"
       :label="$t('TRANSACTION.SEND')"
       icon="send"
