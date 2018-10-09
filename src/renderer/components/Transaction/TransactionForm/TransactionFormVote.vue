@@ -22,10 +22,9 @@
           :label="$t('WALLET_DELEGATES.APPROVAL')"
           :value="formatPercentage(delegate.production.approval)"
         />
-        <!-- TODO: get forged -->
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.FORGED')"
-          :value="delegate.blocks.produced"
+          :value="forged"
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.BLOCKS')"
@@ -138,7 +137,8 @@ export default {
     isPassphraseStep: false,
     form: {
       passphrase: ''
-    }
+    },
+    forged: 0
   }),
 
   computed: {
@@ -153,6 +153,10 @@ export default {
     }
   },
 
+  mounted () {
+    this.fetchForged()
+  },
+
   methods: {
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
@@ -164,6 +168,11 @@ export default {
 
     formatVotes (votes) {
       return this.$n(parseFloat(this.currency_subToUnit(votes)), { maximumFractionDigits: 2 })
+    },
+
+    async fetchForged () {
+      const forged = await this.$client.fetchDelegateForged(this.delegate)
+      this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
     },
 
     async onSubmit () {

@@ -80,6 +80,17 @@ export default class ClientService {
     return delegates
   }
 
+  async fetchDelegateForged (delegate) {
+    if (delegate.forged) {
+      return delegate.forged.total
+    }
+    const { data } = await this.client.resource('delegates').forged(delegate.publicKey)
+    if (data.success) {
+      return data.forged
+    }
+    return 0
+  }
+
   /**
    * Request the transactions according to the current network version
    *

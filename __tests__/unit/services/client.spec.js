@@ -238,6 +238,53 @@ describe('Services > Client', () => {
     })
   })
 
+  describe('fetchDelegateForged', () => {
+    const delegateV1 = {
+      publicKey: 'dummyKey'
+    }
+
+    const delegateV2 = {
+      publicKey: 'dummyKey',
+      forged: {
+        total: 100
+      }
+    }
+
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'delegates') {
+          return {
+            forged: () => ({ data: { forged: 200, success: true } })
+          }
+        }
+      }
+
+      client.client.resource = resource
+    })
+
+    describe('when version is 1', () => {
+      beforeEach(() => {
+        client.version = 1
+      })
+
+      it('should perform a request to retrieve the forged amount', async () => {
+        const forged = await client.fetchDelegateForged(delegateV1)
+        expect(forged).toEqual(200)
+      })
+    })
+
+    describe('when version is 2', () => {
+      beforeEach(() => {
+        client.version = 2
+      })
+
+      it('should return the forged property from the given delegate', async () => {
+        const forged = await client.fetchDelegateForged(delegateV2)
+        expect(forged).toEqual(100)
+      })
+    })
+  })
+
   describe('fetchTransactions', () => {
     let data = [
       { id: 1, amount: 100000, fee: 10000000, timestamp: { epoch: 47848091, human: '2018-09-26T08:08:11.000Z' }, sender: 'address1', recipient: 'address2' },
