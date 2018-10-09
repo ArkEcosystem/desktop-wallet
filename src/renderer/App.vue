@@ -2,32 +2,43 @@
   <div
     v-if="isReady"
     id="app"
-    :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
     :class="{
       'theme-dark': hasDarkTheme,
       'theme-light': !hasDarkTheme,
       'background-image': background
     }"
-    class="bg-theme-page text-theme-page-text font-sans flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
+    class="App bg-theme-page text-theme-page-text font-sans"
   >
 
-    <div
-      :class="{ 'ml-6': !hasAnyProfile }"
-      class="flex-1 flex mt-6 mb-4 mr-6"
+    <section
+      :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
+      :class="{
+        'blur': isModalOpen
+      }"
+      class="App__main flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
     >
-      <AppSidemenu v-if="hasAnyProfile" />
-      <router-view class="flex-1 overflow-y-auto" />
-    </div>
+      <div
+        :class="{ 'ml-6': !hasAnyProfile }"
+        class="flex-1 flex mt-6 mb-4 mr-6"
+      >
+        <AppSidemenu v-if="hasAnyProfile" />
+        <router-view class="flex-1 overflow-y-auto" />
+      </div>
 
-    <AppFooter />
+      <AppFooter/>
+    </section>
     <AlertMessage />
 
-    <portal-target name="modal"/>
+    <portal-target
+      name="modal"
+      @change="onPortalChange"
+    />
   </div>
 </template>
 
 <script>
 import '@/styles/style.css'
+import { isEmpty } from 'lodash'
 import { AppSidemenu, AppFooter } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
@@ -42,7 +53,8 @@ export default {
   },
 
   data: () => ({
-    isReady: false
+    isReady: false,
+    isModalOpen: false
   }),
 
   computed: {
@@ -104,7 +116,21 @@ export default {
       this.$eventBus.$on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
+    },
+
+    onPortalChange (options) {
+      this.isModalOpen = !isEmpty(options)
     }
   }
 }
 </script>
+
+<style scoped>
+.blur {
+  filter: blur(4px)
+}
+
+.App__main {
+  transition: .1s filter linear;
+}
+</style>
