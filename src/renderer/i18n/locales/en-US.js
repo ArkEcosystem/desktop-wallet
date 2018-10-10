@@ -83,6 +83,16 @@ export default {
     QR: 'Scan the QR code'
   },
 
+  INPUT_CURRENCY: {
+    ERROR: {
+      LESS_THAN_MINIMUM: 'The minimum amount is {amount} {unit}',
+      NOT_ENOUGH_AMOUNT: 'The maximum amount is {amount} {unit}',
+      NOT_VALID: 'The amount is not valid',
+      REQUIRED: 'The amount is required'
+    },
+    LABEL: 'Amount'
+  },
+
   INPUT_GRID: {
     MORE: 'Show more'
   },

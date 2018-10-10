@@ -50,6 +50,7 @@ describe('WalletHeadingInfo component', () => {
             'session/network': network
           }
         },
+        session_network: network,
         wallet_fromRoute: sampleWalletData,
         wallet_formatAddress: address => address
       }

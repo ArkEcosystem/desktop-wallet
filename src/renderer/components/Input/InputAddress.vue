@@ -26,6 +26,7 @@
       <button
         :title="$t('INPUT_ADDRESS.QR')"
         class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
+        type="button"
         @click="openQR"
       >
         <SvgIcon
@@ -111,17 +112,15 @@ export default {
         return this.inputValue
       },
       set (value) {
-        this.inputValue = value
-        // Inform Vuelidate that the value changed
-        this.$v.model.$touch()
+        this.updateInputValue(value)
         this.$emit('input', value)
       }
     }
   },
 
   watch: {
-    value (val) {
-      this.inputValue = val
+    value (value) {
+      this.updateInputValue(value)
     }
   },
 
@@ -143,6 +142,12 @@ export default {
     openQR () {
       // TODO when the QR reader is available
       console.error('QR reader is not available yet')
+    },
+
+    updateInputValue (value) {
+      // Inform Vuelidate that the value changed
+      this.$v.model.$touch()
+      this.inputValue = value
     }
   },
 

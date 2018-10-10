@@ -8,9 +8,6 @@ export default {
      * Returns the value formatted for a specific locale. It works with crypto
      * and fiat currencies.
      *
-     * `vue-i18n` uses `NumberFormat` internally, so it doesn't admit nonexistent
-     * currencies. For that reasond
-     *
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat | NumberFormat}
      * @see {@link https://www.currency-iso.org/en/home/tables/table-a1.html | List of currencies}
      *
@@ -41,24 +38,27 @@ export default {
 
       const config = merge({}, defaultOptions, options, mandatoryOptions)
 
-      // `vue-i18n` uses `NumberFormat` internally, so it doesn't admit nonexistent
+      // `vue-i18n` uses `Intl.NumberFormat` internally, so it doesn't admit nonexistent
       // currencies. For that reason, we use the "no-currency" code instead and
       // replace it later with the cryptocurrency code or symbol
       const cryptoPlaceholder = 'XXX'
       let cryptoCurrency = null
 
-      if (config.currencyFrom === 'network') {
-        const network = this.session_network
+      const network = this.session_network
+
+      if (config.currencyFrom === 'network' || config.currency === network.token) {
         cryptoCurrency = config.currencyDisplay === 'symbol' ? network.symbol : network.token
 
         config.maximumFractionDigits = network.fractionDigits
-        config.currency = cryptoPlaceholder
       } else if (MARKET.crypto.indexOf(config.currency) !== -1) {
         cryptoCurrency = config.currencyDisplay === 'symbol'
           ? MARKET.currencies[config.currency].symbol
           : config.currency
 
         config.maximumFractionDigits = MARKET.currencies[config.currency].fractionDigits
+      }
+
+      if (cryptoCurrency) {
         config.currency = cryptoPlaceholder
       }
 

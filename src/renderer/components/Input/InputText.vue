@@ -126,10 +126,6 @@ export default {
 
     blur () {
       this.$refs.input.blur()
-    },
-
-    emitInput (event) {
-      this.$emit('input', event.target.value)
     }
   }
 }

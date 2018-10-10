@@ -110,6 +110,20 @@ describe('Mixins > Currency', () => {
         expect(format(amount, { currency: 'BTC' })).toEqual('Ƀ100,000.00001')
         expect(format(amount, { currency: 'EUR' })).toEqual('€100,000.00')
       })
+
+      describe('when the symbol is not configured', () => {
+        it('should throw an Error', () => {
+          const amount = Math.pow(10, 5) + Math.pow(10, -5)
+
+          expect(() => format(amount, { currency: 'NO' })).toThrow()
+        })
+
+        it('should admit it is the current network currency', () => {
+          const amount = Math.pow(10, 5) + Math.pow(10, -5)
+
+          expect(format(amount, { currency: 'NET' })).toEqual('×100,000.00001')
+        })
+      })
     })
 
     describe('when a `currencyDisplay` option is provided', () => {

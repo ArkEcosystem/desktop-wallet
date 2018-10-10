@@ -1,4 +1,5 @@
 import InputAddress from './InputAddress'
+import InputCurrency from './InputCurrency'
 import InputField from './InputField'
 import InputSelect from './InputSelect'
 import InputSwitch from './InputSwitch'
@@ -10,6 +11,7 @@ export * from './InputToggle'
 
 export {
   InputAddress,
+  InputCurrency,
   InputField,
   InputSelect,
   InputSwitch,
