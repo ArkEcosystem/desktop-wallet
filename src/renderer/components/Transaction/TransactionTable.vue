@@ -24,6 +24,12 @@
           @click.stop="network_openExplorer('transaction', table.row.id)"
         >
           {{ table.formattedRow['id'] }}
+
+          <SvgIcon
+            name="open-external"
+            view-box="0 0 12 12"
+            class="text-theme-page-text-light"
+          />
         </a>
 
         <div
