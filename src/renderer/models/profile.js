@@ -9,10 +9,12 @@ export default new BaseModel({
       maxLength: 16
     },
     avatar: {
-      type: 'string'
+      type: 'string',
+      minLength: 1
     },
     background: {
-      type: 'string'
+      type: 'string',
+      minLength: 1
     },
     currency: {
       type: 'string',
@@ -20,7 +22,8 @@ export default new BaseModel({
       maxLength: 3
     },
     language: {
-      type: 'string'
+      type: 'string',
+      minLength: 1
     },
     name: {
       type: 'string',
@@ -29,7 +32,8 @@ export default new BaseModel({
     },
     networkId: {},
     theme: {
-      type: 'string'
+      type: 'string',
+      minLength: 1
     }
   },
   required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']
