@@ -79,7 +79,10 @@
                 />
               </ListDividedItem>
 
-              <ListDividedItem :label="$t('COMMON.NETWORK')">
+              <ListDividedItem
+                v-if="!hasWallets"
+                :label="$t('COMMON.NETWORK')"
+              >
                 <MenuDropdown
                   :class="{
                     'ProfileEdition__field--modified': modified.networkId && modified.networkId !== profile.networkId
@@ -154,7 +157,7 @@
 </template>
 
 <script>
-import { capitalize } from 'lodash'
+import { capitalize, isEmpty } from 'lodash'
 import { I18N, NETWORKS } from '@config'
 import { InputText, InputSelect } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -204,6 +207,11 @@ export default {
         acc[network.id] = network.name
         return acc
       }, {})
+    },
+
+    hasWallets () {
+      const wallets = this.$store.getters['wallet/byProfileId'](this.profile.id)
+      return !isEmpty(wallets)
     },
 
     isModified () {
@@ -287,9 +295,8 @@ export default {
       this.__updateSession('language', language)
     },
 
-    // TODO when API client works flawlessly
     selectNetwork (network) {
-      this.__updateSession('network', network)
+      this.$set(this.modified, 'networkId', network)
     },
 
     async selectTheme (theme) {
