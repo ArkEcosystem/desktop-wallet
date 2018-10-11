@@ -1,3 +1,7 @@
+exports.APP = {
+  website: 'https://ark.io'
+}
+
 exports.NETWORKS = [
   require('./networks/mainnet.json'),
   require('./networks/devnet.json')
