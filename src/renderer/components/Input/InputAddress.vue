@@ -19,7 +19,7 @@
         :disabled="isDisabled"
         v-model="model"
         type="text"
-        class="InputAddress__input flex flex-grow bg-transparent"
+        class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
         @blur="onBlur"
         @focus="onFocus"
       >
