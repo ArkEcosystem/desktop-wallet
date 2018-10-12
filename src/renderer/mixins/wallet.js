@@ -35,6 +35,12 @@ export default {
         return profileWallet.name
       }
 
+      const contactWallets = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      const contactWallet = contactWallets.find(contact => contact.address === address)
+      if (contactWallet) {
+        return contactWallet.name
+      }
+
       return Number.isFinite(truncateAmount) ? truncateMiddle(address, truncateAmount) : address
     }
   }
