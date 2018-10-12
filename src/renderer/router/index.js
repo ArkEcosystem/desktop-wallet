@@ -16,9 +16,14 @@ const router = new Router({
       component: require('@/pages/Announcements').default
     },
     {
-      path: '/contacts',
+      path: '/contacts/all',
       name: 'contacts',
-      component: require('@/pages/Contacts').default
+      component: require('@/pages/Contact/ContactAll').default
+    },
+    {
+      path: '/contacts/new',
+      name: 'contact-new',
+      component: require('@/pages/Contact/ContactNew').default
     },
     {
       path: '/networks',

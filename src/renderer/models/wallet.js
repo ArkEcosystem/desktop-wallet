@@ -33,6 +33,10 @@ export default new BaseModel({
     },
     secondPublicKey: {
       type: ['string', 'null']
+    },
+    isContact: {
+      type: ['boolean'],
+      default: false
     }
   },
   required: ['address', 'isSendingEnabled', 'name', 'profileId']

@@ -3,10 +3,17 @@
   /* --wallet-identicon-sm: 150px; */
   /* --wallet-identicon-lg: 150px; */
   --wallet-identicon-xl: 150px;
+  --contact-identicon-xl: 150px;
 }
 
 .wallet-identicon-xl {
   height: var(--wallet-identicon-xl);
   width: var(--wallet-identicon-xl);
+  @apply .bg-no-repeat
+}
+
+.contact-identicon-xl {
+  height: var(--contact-identicon-xl);
+  width: var(--contact-identicon-xl);
   @apply .bg-no-repeat
 }

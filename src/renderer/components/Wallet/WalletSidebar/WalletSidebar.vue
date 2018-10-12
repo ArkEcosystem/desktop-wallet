@@ -31,6 +31,7 @@
           class="WalletSidebar__wallet__info flex flex-col font-semibold"
         >
           <span>{{ wallet.name }}</span>
+          <span v-if="wallet.isContact">({{ $t('COMMON.CONTACT') }})</span>
           <span
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
@@ -70,7 +71,9 @@ export default {
 
   computed: {
     wallets () {
-      return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      return [...wallets, ...contacts]
     },
 
     activeWallet () {

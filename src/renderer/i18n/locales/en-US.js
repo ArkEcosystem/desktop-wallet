@@ -4,6 +4,7 @@ export default {
     BACK: 'Back',
     DONE: 'Done',
     CONFIRM: 'Confirm',
+    CONTACT: 'Contact',
     CURRENCY: 'Currency',
     LANGUAGE: 'Language',
     NETWORK: 'Network',
@@ -14,6 +15,10 @@ export default {
     SELECT_THEME: 'Select wallet theme',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     DATE: 'Date'
+  },
+
+  CONTACT_REMOVAL_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to remove this contact?'
   },
 
   VALIDATION: {
@@ -135,6 +140,33 @@ export default {
   },
 
   PAGES: {
+    CONTACT_ALL: {
+      CREATE_CONTACT: 'Create contact',
+      IMPORT_CONTACT: 'Import contact',
+      DELETE_CONTACT: 'Delete this contact',
+      HEADER: 'My contacts',
+      SHOW_CONTACT: 'Show contact'
+    },
+
+    CONTACT_NEW: {
+      STEP1: {
+        INSTRUCTIONS: {
+          HEADER: 'New contact - Address',
+          TEXT: 'Enter the address of your contact.'
+        },
+        TITLE: '1. Enter address',
+        ADDRESS: 'Contact address'
+      },
+      STEP2: {
+        INSTRUCTIONS: {
+          HEADER: 'New contact - Name',
+          TEXT: 'Choose a name for you contact and you are done.'
+        },
+        TITLE: '2. Confirmation',
+        NAME: 'Contact name'
+      }
+    },
+
     DASHBOARD: {
       ALL_WALLETS: 'All wallets',
       CREATE_WALLET: 'Create wallet',
