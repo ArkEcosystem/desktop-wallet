@@ -40,6 +40,7 @@ export default {
           name: 'transactions',
           msg: error.message
         }))
+        this.transactions = []
       }
     }
   }
