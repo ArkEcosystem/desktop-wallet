@@ -2,7 +2,7 @@
   <ModalWindow
     @close="emitCancel"
   >
-    <section class="ModalConfirmation__container m-6 flex flex-col">
+    <section class="ModalConfirmation__container flex flex-col">
       <div class="mb-6 text-xl">
         <h2 class="mb-5 text-3xl">{{ title }}</h2>
 

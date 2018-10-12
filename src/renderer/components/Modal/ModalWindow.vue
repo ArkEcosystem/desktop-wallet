@@ -13,7 +13,7 @@
         >
 
           <button
-            class="absolute pin-t pin-r p-4"
+            class="absolute pin-t pin-r p-6"
             @click="emitClose"
           >
             <svg class="fill-current text-grey h-4 w-4">
@@ -24,7 +24,7 @@
             </svg>
           </button>
 
-          <section class="px-10 py-8">
+          <section class="px-16 py-16">
 
             <header
               v-if="$slots['header'] || title"
