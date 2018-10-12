@@ -54,7 +54,7 @@
 
               <div
                 v-if="step === 1"
-                class="WalletNew__refresh-button cursor-pointer py-2 px-4 rounded bg-grey-lighter"
+                class="WalletNew__refresh-button cursor-pointer py-2 px-4 rounded bg-theme-button-light text-theme-button-light-text"
                 @click="refreshAddresses"
               >
                 <SvgIcon
@@ -110,7 +110,7 @@
               <ButtonClipboard
                 v-if="step === 2"
                 :value="schema.passphrase"
-                class="text-grey-dark py-2 px-4 rounded bg-grey-lighter"
+                class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light"
               />
             </div>
 

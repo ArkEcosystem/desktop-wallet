@@ -67,6 +67,8 @@ let colors = {
 
   'theme-button': 'var(--theme-button)',
   'theme-button-text': 'var(--theme-button-text)',
+  'theme-button-light': 'var(--theme-button-light)',
+  'theme-button-light-text': 'var(--theme-button-light-text)',
   'theme-action-button': 'var(--theme-action-button)',
   'theme-action-button-text': 'var(--theme-action-button-text)',
   'theme-action-button-text-hover': 'var(--theme-action-button-text-hover)',
