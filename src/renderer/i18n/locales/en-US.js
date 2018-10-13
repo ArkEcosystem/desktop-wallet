@@ -254,7 +254,7 @@ export default {
         },
         TITLE: '2. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name',
+        NAME: 'Wallet name (optional)',
         OPERATIONS: 'Wallet operations',
         SENDING_ENABLED: 'Sending transactions enabled'
       }
@@ -294,7 +294,7 @@ export default {
         },
         TITLE: '4. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name',
+        NAME: 'Wallet name (optional)',
         OPERATIONS: 'Wallet operations',
         SENDING_ENABLED: 'Sending transactions enabled'
       }

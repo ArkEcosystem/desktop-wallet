@@ -162,7 +162,6 @@
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP4.NAME')"
-                :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
                 class="my-3"
                 name="name"
               />
@@ -278,6 +277,9 @@ export default {
 
   methods: {
     async create () {
+      if (this.schema.name === '') {
+        this.schema.name = this.schema.address
+      }
       const { address } = await this.$store.dispatch('wallet/create', {
         ...this.schema,
         profileId: this.session_profile.id
@@ -324,7 +326,7 @@ export default {
   validations: {
     step1: ['schema.address'],
     step3: ['isPassphraseVerified'],
-    step4: ['schema.name'],
+    step4: [],
     isPassphraseVerified: {
       required,
       isVerified: value => value
