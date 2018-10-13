@@ -42,7 +42,11 @@ export default {
   },
 
   APP_SIDEMENU: {
-    CURRENT_PROFILE: 'Your current profile is "{profileName}"'
+    CURRENT_PROFILE: 'Your current profile is "{profileName}"',
+    SETTINGS: {
+      CURRENCY: 'Currency',
+      DARK_MODE: 'Dark mode'
+    }
   },
 
   MARKET_CHART: {

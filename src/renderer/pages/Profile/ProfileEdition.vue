@@ -31,7 +31,7 @@
                   v-if="isNameEditable"
                   :value="modified.name"
                   type="text"
-                  class=""
+                  class="bg-transparent text-theme-page-text border-b"
                   @input="setName"
                   @keyup.enter="toggleIsNameEditable"
                   @keyup.esc="toggleIsNameEditable"
@@ -41,7 +41,7 @@
                   :class="{
                     'ProfileEdition__field--modified': modified.name && modified.name !== profile.name
                   }"
-                  class="flex leading-tight"
+                  class="flex leading-tight border-b border-transparent"
                 >
                   {{ name }}
                 </span>

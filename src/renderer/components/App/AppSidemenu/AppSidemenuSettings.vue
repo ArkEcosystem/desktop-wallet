@@ -4,7 +4,7 @@
     class="AppSidemenuOptionsSettings absolute z-10"
   >
     <MenuOptionsItem
-      title="Currency"
+      :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
       @click="toggleSelect('currency-menu')"
     >
       <div
@@ -22,7 +22,7 @@
     </MenuOptionsItem>
 
     <MenuOptionsItem
-      title="Dark mode"
+      :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
       @click="toggleSelect('dark-switch')">
       <div
         slot="controls"
