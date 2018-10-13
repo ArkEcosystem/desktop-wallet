@@ -383,7 +383,8 @@ export default {
 
   WALLET_SECOND_SIGNATURE: {
     NEW: 'New passphrase',
-    ALREADY_REGISTERED: 'There is already a second passphrase registered for this address'
+    ALREADY_REGISTERED: 'There is already a second passphrase registered for this address',
+    INSTRUCTIONS: 'This is your second passphrase. Make sure to make a backup and keep it somewhere safe!'
   },
 
   WALLET_DELEGATES: {

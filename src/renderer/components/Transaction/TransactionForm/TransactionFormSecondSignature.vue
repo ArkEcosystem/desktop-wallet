@@ -7,6 +7,15 @@
       <Collapse
         :is-open="!isPassphraseStep"
       >
+        <div class="flex flex-row justify-between items-center mb-5">
+          <div class="w-80">{{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}</div>
+
+          <ButtonClipboard
+            :value="secondPassphrase"
+            class="py-2 px-4 rounded bg-theme-button-light text-theme-button-light-text"
+          />
+        </div>
+
         <PassphraseWords :passphrase-words="secondPassphrase.split(' ')" />
 
         <button
@@ -60,6 +69,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
+import { ButtonClipboard } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { Collapse } from '@/components/Collapse'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
@@ -84,6 +94,7 @@ export default {
   },
 
   components: {
+    ButtonClipboard,
     ListDivided,
     ListDividedItem,
     Collapse,
@@ -115,7 +126,6 @@ export default {
 
   mounted () {
     this.secondPassphrase = WalletService.generateSecondPassphrase()
-    console.log(this.secondPassphrase)
   },
 
   methods: {
