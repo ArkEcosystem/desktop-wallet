@@ -1,5 +1,5 @@
 <template>
-  <nav class="MenuNavigation bg-theme-feature flex flex-col">
+  <nav class="MenuNavigation bg-theme-feature">
     <slot />
   </nav>
 </template>

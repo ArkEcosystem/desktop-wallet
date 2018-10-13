@@ -9,7 +9,11 @@
     }"
     class="App bg-theme-page text-theme-page-text font-sans"
   >
-
+    <AppSidemenu
+      v-if="hasAnyProfile"
+      :horizontal="true"
+      class="flex md:hidden"
+    />
     <section
       :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
       :class="{
@@ -21,7 +25,10 @@
         :class="{ 'ml-6': !hasAnyProfile }"
         class="flex-1 flex mt-6 mb-4 mr-6"
       >
-        <AppSidemenu v-if="hasAnyProfile" />
+        <AppSidemenu
+          v-if="hasAnyProfile"
+          class="hidden md:flex"
+        />
         <router-view class="flex-1 overflow-y-auto" />
       </div>
 

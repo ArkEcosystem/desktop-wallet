@@ -1,16 +1,20 @@
 <template>
   <div
-    :class="{ 'MenuNavigationItem--active': isActive }"
-    class="MenuNavigationItem w-full relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
+    :class="{ 'MenuNavigationItem--active': isActive, 'w-full' : !horizontal }"
+    class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
     @click="onClick"
   >
-    <div class="MenuNavigationItem__border w-full absolute" />
+    <div
+      v-if="!horizontal"
+      class="MenuNavigationItem__border absolute w-full"
+    />
     <slot
       :is-active="isActive"
     >
       <div
         v-if="icon"
-        class="w-full flex items-center justify-center"
+        :class="{ 'w-full' : !horizontal }"
+        class="flex items-center justify-center"
       >
         <SvgIcon
           :name="icon"
@@ -22,6 +26,10 @@
         />
       </div>
     </slot>
+    <div
+      v-if="horizontal"
+      class="MenuNavigationItemHorizontal__border absolute h-full"
+    />
   </div>
 </template>
 
@@ -56,6 +64,11 @@ export default {
       type: String,
       required: false,
       default: '0 0 23 23'
+    },
+    horizontal: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -83,6 +96,7 @@ export default {
 .MenuNavigationItem:hover {
   background-color: var(--theme-feature-item-selected);
 }
+/* Vertical sidebar */
 .MenuNavigationItem > .MenuNavigationItem__border {
   height: 40%;
   transition: height 0.5s, color 0.5s;
@@ -94,6 +108,20 @@ export default {
 .MenuNavigationItem--active > .MenuNavigationItem__border {
   height: 80%;
   box-shadow: inset 0.15rem 0px 0px 0px var(--theme-feature-item-indicator);
+  color: var(--theme-feature-item-selected-text);
+}
+/* Horizontal toolbar */
+.MenuNavigationItem > .MenuNavigationItemHorizontal__border {
+  width: 40%;
+  transition: width 0.5s, color 0.5s;
+}
+.MenuNavigationItem:hover > .MenuNavigationItemHorizontal__border {
+  width: 60%;
+  box-shadow: inset 0px -0.15rem 0px 0px var(--theme-feature-item-indicator);
+}
+.MenuNavigationItem--active > .MenuNavigationItemHorizontal__border {
+  width: 80%;
+  box-shadow: inset 0px -0.15rem 0px 0px var(--theme-feature-item-indicator);
   color: var(--theme-feature-item-selected-text);
 }
 .MenuNavigationItem__badge {

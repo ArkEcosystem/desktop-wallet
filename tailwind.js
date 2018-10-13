@@ -508,9 +508,11 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '18': '4.5rem', // Added
+    '22': '5.5rem', // Added
     '24': '6rem',
     '30': '7rem', // Added
     '32': '8rem',
+    '36': '9rem', // Added
     '48': '12rem',
     '64': '16rem',
     '80': '20rem', // Added
