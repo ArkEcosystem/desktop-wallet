@@ -1,6 +1,6 @@
 <template>
-  <!-- FIXME close when click outside, or after a while outside the area -->
   <MenuOptions
+    v-click-outside="close"
     class="AppSidemenuOptionsSettings absolute z-10"
   >
     <MenuOptionsItem
@@ -54,6 +54,14 @@ export default {
     ButtonSwitch
   },
 
+  props: {
+    outsideClick: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+
   computed: {
     currencies () {
       return this.$store.getters['market/currencies']
@@ -88,6 +96,11 @@ export default {
     },
     toggleSelect (name) {
       this.$refs[name].toggle()
+    },
+    close () {
+      if (this.outsideClick) {
+        this.$emit('close')
+      }
     }
   }
 }

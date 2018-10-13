@@ -20,6 +20,7 @@
     </button>
 
     <div
+      v-click-outside="close"
       v-if="isOpen"
       class="absolute min-w-full z-20">
       <ul
@@ -119,6 +120,10 @@ export default {
 
     toggle () {
       this.isOpen = !this.isOpen
+    },
+
+    close () {
+      this.isOpen = false
     }
   }
 }

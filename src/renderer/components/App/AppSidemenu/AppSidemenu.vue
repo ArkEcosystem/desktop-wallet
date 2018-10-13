@@ -44,7 +44,11 @@
     </div>
 
     <div>
-      <AppSidemenuSettings v-show="isSettingsVisible" />
+      <AppSidemenuSettings
+        v-show="isSettingsVisible"
+        :outside-click="isSettingsVisible"
+        @close="closeShowSettings"
+      />
 
       <!-- Settings -->
       <MenuNavigationItem
@@ -120,6 +124,13 @@ export default {
     toggleShowSettings () {
       this.isSettingsVisible = !this.isSettingsVisible
       this.setActive(this.isSettingsVisible ? 'settings' : null)
+    },
+
+    closeShowSettings () {
+      if (this.isSettingsVisible) {
+        this.isSettingsVisible = false
+        this.setActive(null)
+      }
     }
   }
 }
