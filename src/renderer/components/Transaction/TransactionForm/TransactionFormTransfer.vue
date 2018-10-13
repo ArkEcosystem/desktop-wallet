@@ -65,6 +65,7 @@
         :disabled="$v.form.$invalid"
         class="blue-button mt-10"
         type="button"
+        @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
       </button>

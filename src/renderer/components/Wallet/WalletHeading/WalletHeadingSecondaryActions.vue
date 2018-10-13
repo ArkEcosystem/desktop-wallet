@@ -20,6 +20,7 @@
         slot-scope="{ toggle }"
         :type="2"
         @cancel="toggle"
+        @sent="toggle"
       />
     </ButtonModal>
     <ButtonModal
@@ -32,6 +33,7 @@
         slot-scope="{ toggle }"
         :type="1"
         @cancel="toggle"
+        @sent="toggle"
       />
     </ButtonModal>
     <ButtonModal
