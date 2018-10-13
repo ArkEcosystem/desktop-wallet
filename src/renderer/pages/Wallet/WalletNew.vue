@@ -52,6 +52,7 @@
             >
               <div class="">{{ title }}</div>
 
+              <!-- Hide it when the step is collapse -->
               <div
                 v-if="step === 1"
                 class="WalletNew__refresh-button cursor-pointer py-2 px-4 rounded bg-theme-button-light text-theme-button-light-text"
@@ -107,6 +108,7 @@
             >
               <div class="">{{ title }}</div>
 
+              <!-- Hide it when the step is collapse -->
               <ButtonClipboard
                 v-if="step === 2"
                 :value="schema.passphrase"
@@ -165,13 +167,31 @@
                 name="name"
               />
 
-              <InputText
-                v-model="schema.address"
+              <InputField
+                v-if="schema.address"
                 :label="$t('PAGES.WALLET_NEW.STEP4.ADDRESS')"
+                :is-dirty="true"
                 :is-read-only="true"
-                class="my-3"
-                name="address"
-              />
+                class="InputText my-3"
+              >
+                <div
+                  slot-scope="{ inputClass }"
+                  :class="inputClass"
+                  class="flex flex-row"
+                >
+                  <input
+                    v-model="schema.address"
+                    :disabled="true"
+                    name="address"
+                    type="text"
+                    class="flex flex-grow bg-transparent text-theme-page-text cursor-text"
+                  >
+                  <ButtonClipboard
+                    :value="schema.address"
+                    class="text-theme-button-light-text flex flex-no-shrink text-grey-dark hover:text-blue"
+                  />
+                </div>
+              </InputField>
 
               <InputSwitch
                 v-model="schema.isSendingEnabled"
@@ -193,7 +213,7 @@
 import { flatten } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonClipboard } from '@/components/Button'
-import { InputSwitch, InputText } from '@/components/Input'
+import { InputField, InputSwitch, InputText } from '@/components/Input'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import SvgIcon from '@/components/SvgIcon'
@@ -205,6 +225,7 @@ export default {
 
   components: {
     ButtonClipboard,
+    InputField,
     InputSwitch,
     InputText,
     MenuStep,
