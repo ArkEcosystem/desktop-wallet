@@ -400,6 +400,13 @@ export default {
     USERNAME_ERROR: 'No special characters or uppercase allowed'
   },
 
+  WALLET_RENAME: {
+    TITLE: 'Rename Wallet',
+    NEW: 'New wallet name',
+    RENAME: 'Rename wallet',
+    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}'
+  },
+
   WALLET_REMOVAL_CONFIRMATION: {
     NOTE: 'It does not delete any data on the blockchain. You could recover the wallet as long as you have the passphrase',
     QUESTION: 'Are you sure you want to remove this wallet?'

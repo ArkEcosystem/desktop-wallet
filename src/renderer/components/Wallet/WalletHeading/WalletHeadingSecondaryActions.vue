@@ -3,13 +3,18 @@
     key="SecondaryActions"
     class="WalletHeading__SecondaryActions flex content-end"
   >
-    <button class="option-button px-2 mr-2 rounded-md whitespace-no-wrap flex items-center justify-center">
-      <SvgIcon
-        class="mr-1"
-        name="name"
-        view-box="0 0 20 20" />
-      {{ $t('WALLET_HEADING.ACTIONS.WALLET_NAME') }}
-    </button>
+    <ButtonModal
+      :label="$t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
+      icon="name"
+      class="option-button whitespace-no-wrap"
+    >
+      <WalletRenameModal
+        slot-scope="{ toggle }"
+        :wallet="currentWallet"
+        @cancel="toggle"
+        @renamed="toggle"
+      />
+    </ButtonModal>
     <ButtonModal
       v-show="currentWallet.isSendingEnabled"
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
@@ -53,7 +58,7 @@
 
 <script>
 import { ButtonModal } from '@/components/Button'
-import { WalletRemovalConfirmation } from '@/components/Wallet'
+import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
 import SvgIcon from '@/components/SvgIcon'
 import { TransactionModal } from '@/components/Transaction'
 
@@ -62,6 +67,7 @@ export default {
 
   components: {
     ButtonModal,
+    WalletRenameModal,
     WalletRemovalConfirmation,
     SvgIcon,
     TransactionModal

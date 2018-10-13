@@ -1,4 +1,5 @@
 import WalletAddress from './WalletAddress'
+import WalletRenameModal from './WalletRenameModal'
 import WalletRemovalConfirmation from './WalletRemovalConfirmation'
 
 export * from './WalletDelegates'
@@ -10,5 +11,6 @@ export * from './WalletSidebar'
 
 export {
   WalletAddress,
+  WalletRenameModal,
   WalletRemovalConfirmation
 }
