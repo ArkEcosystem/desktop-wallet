@@ -76,6 +76,12 @@ export default {
 
     async onConfirm () {
       const response = await this.$client.broadcastTransaction(this.transaction)
+      const key = this.transactionKeyByType(this.type)
+
+      this.successfulResponse(response)
+        ? this.$success(this.$t(`TRANSACTION.SUCCESS.${key}`))
+        : this.$error(this.$t(`TRANSACTION.ERROR.${key}`))
+
       this.emitSent(response)
     },
 
@@ -85,6 +91,19 @@ export default {
 
     emitCancel () {
       this.$emit('cancel')
+    },
+
+    successfulResponse (response) {
+      console.log(response)
+      if (response.status !== 200) {
+        return false
+      }
+
+      if (this.$client.__version === 1) {
+        return response.data.success
+      } else {
+        return response.data.data && response.data.data.invalid.length === 0
+      }
     }
   }
 }

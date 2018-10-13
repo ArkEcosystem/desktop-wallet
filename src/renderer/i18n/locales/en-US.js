@@ -330,6 +330,30 @@ export default {
       MULTI_PAYMENT: 'Multi Payment',
       DELEGATE_RESIGNATION: 'Delegate Resignation'
     },
+    ERROR: {
+      TRANSFER: 'Your transaction could not be sent',
+      SECOND_SIGNATURE: 'Second signature could not be registered',
+      DELEGATE_REGISTRATION: 'Could not register as delegate',
+      VOTE: 'Vote could not be registered',
+      UNVOTE: 'Unvote could not be registered',
+      MULTI_SIGNATURE: 'Multi signature could not be created',
+      IPFS: 'IPFS',
+      TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
+      MULTI_PAYMENT: 'Multi payment could not be created',
+      DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful'
+    },
+    SUCCESS: {
+      TRANSFER: 'Your transaction was sent successfully',
+      SECOND_SIGNATURE: 'Second signature successfully registered',
+      DELEGATE_REGISTRATION: 'Successfully registered as delegate',
+      VOTE: 'Voted successfully',
+      UNVOTE: 'Unvoted successfully',
+      MULTI_SIGNATURE: 'Multi signature created successfully',
+      IPFS: 'IPFS',
+      TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
+      MULTI_PAYMENT: 'Multi payment created successfully',
+      DELEGATE_RESIGNATION: 'Delegate resignation was successful'
+    },
     SEND: 'Send',
     SEND_ALL: 'Send All',
     CONFIRMATIONS: 'Confirmations',
