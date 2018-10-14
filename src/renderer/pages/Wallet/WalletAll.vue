@@ -1,9 +1,9 @@
 <template>
-  <div class="WalletAll relative bg-theme-feature rounded-lg m-r-4 p-10">
+  <div class="WalletAll relative lg:bg-theme-feature rounded-lg m-r-4 p-10">
     <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
     <div class="WalletAll__grid mt-10 justify-center">
-      <div class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden">
+      <div class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg">
         <!-- TODO default identicon -->
         <div
           :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png');`"
@@ -23,7 +23,7 @@
       <div
         v-for="wallet in selectableWallets"
         :key="wallet.id"
-        class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden"
+        class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg"
       >
         <router-link
           :to="{ name: 'wallet-show', params: { address: wallet.id } }"
@@ -124,10 +124,15 @@ export default {
   grid-gap: 1rem;
 }
 .WalletAll__grid__wallet {
-  @apply .p-4
+  @apply .p-6
 }
 .WalletAll__grid__wallet:hover .wallet-identicon-lg {
   transition: 0.5s;
   opacity: 0.5;
+}
+@screen lg {
+  .ContactAll__grid__contact {
+    @apply .p-4
+  }
 }
 </style>

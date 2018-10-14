@@ -18,7 +18,7 @@
       </div>
     </main>
 
-    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 overflow-y-auto hidden md:block">
+    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text">
         <router-link
           :to="{ name: 'wallet-new' }"

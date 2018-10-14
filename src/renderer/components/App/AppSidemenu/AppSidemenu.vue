@@ -1,7 +1,7 @@
 <template>
   <MenuNavigation
     v-model="activeItem"
-    :class="[horizontal ? 'h-18 mb-3 flex-row' : 'w-18 mx-6 rounded-lg flex-col']"
+    :class="[horizontal ? 'h-18 flex-row' : 'w-18 mx-6 rounded-lg flex-col']"
     class="AppSidemenu justify-between relative"
   >
 

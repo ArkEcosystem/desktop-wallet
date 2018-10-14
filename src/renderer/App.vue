@@ -12,7 +12,7 @@
     <AppSidemenu
       v-if="hasAnyProfile"
       :horizontal="true"
-      class="flex md:hidden"
+      class="flex lg:hidden"
     />
     <section
       :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
@@ -27,7 +27,7 @@
       >
         <AppSidemenu
           v-if="hasAnyProfile"
-          class="hidden md:flex"
+          class="hidden lg:flex"
         />
         <router-view class="flex-1 overflow-y-auto" />
       </div>

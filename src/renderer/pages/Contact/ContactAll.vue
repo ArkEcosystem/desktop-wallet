@@ -1,9 +1,9 @@
 <template>
-  <div class="ContactAll relative bg-theme-feature rounded-lg m-r-4 p-10">
+  <div class="ContactAll relative lg:bg-theme-feature rounded-lg m-r-4 p-10">
     <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
 
     <div class="ContactAll__grid mt-10 justify-center">
-      <div class="ContactAll__grid__contact flex flex-row w-full overflow-hidden">
+      <div class="ContactAll__grid__contact flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg">
         <router-link :to="{ name: 'contact-new' }" >
           <!-- TODO default identicon -->
           <div
@@ -25,7 +25,7 @@
       <div
         v-for="contact in contacts"
         :key="contact.id"
-        class="ContactAll__grid__contact flex flex-row w-full overflow-hidden"
+        class="ContactAll__grid__contact flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg"
       >
         <router-link
           :to="{ name: 'wallet-show', params: { address: contact.id } }"
@@ -119,10 +119,15 @@ export default {
   grid-gap: 1rem;
 }
 .ContactAll__grid__contact {
-  @apply .p-4
+  @apply .p-6
 }
 .ContactAll__grid__contact:hover .contact-identicon-lg {
   transition: 0.5s;
   opacity: 0.5;
+}
+@screen lg {
+  .ContactAll__grid__contact {
+    @apply .p-4
+  }
 }
 </style>
