@@ -18,7 +18,7 @@
       </div>
     </main>
 
-    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 flex flex-col">
+    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 overflow-y-auto hidden md:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text">
         <router-link
           :to="{ name: 'wallet-new' }"
@@ -41,7 +41,7 @@
 
       <WalletSidebar
         :is-basic="false"
-        class="Dashboard__wallets__list"
+        class="Dashboard__wallets__list flex flex-col"
       />
     </div>
   </div>
@@ -91,7 +91,7 @@ export default {
 <style lang="postcss" scoped>
 .Dashboard__wallets__create,
 .Dashboard__wallets__import {
-  @apply .w-1/2 .appearance-none .font-semibold .pt-12 .pb-4 .flex .justify-center .items-center
+  @apply .w-1/2 .appearance-none .font-semibold .pt-8 .pb-4 .flex .justify-center .items-center
 }
 .Dashboard__wallets__create > span,
 .Dashboard__wallets__import > span {

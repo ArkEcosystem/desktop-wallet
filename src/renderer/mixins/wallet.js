@@ -42,6 +42,10 @@ export default {
       }
 
       return Number.isFinite(truncateAmount) ? truncateMiddle(address, truncateAmount) : address
+    },
+
+    wallet_truncateAddress (address, truncateAmount = 10) {
+      return truncateMiddle(address, truncateAmount)
     }
   }
 }

@@ -17,8 +17,9 @@
     >
       <div
         slot-scope="{ isActive }"
-        class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6"
+        class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6 overflow-hidden"
       >
+        <!-- TODO: use identicon of the wallet -->
         <img
           src="https://api.adorable.io/avatars/285/abott@adorable.png"
           width="50"
@@ -28,15 +29,15 @@
             'text-theme-page-text': isActive,
             'text-theme-page-text-light': !isActive
           }"
-          class="WalletSidebar__wallet__info flex flex-col font-semibold"
+          class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
         >
-          <span>{{ wallet.name }}</span>
+          <span class="truncate block">{{ trimName(wallet.name) }}</span>
           <span v-if="wallet.isContact">({{ $t('COMMON.CONTACT') }})</span>
           <span
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
           >
-            {{ formatter_networkCurrency(wallet.balance) }}
+            {{ formatter_networkCurrency(wallet.balance, 2) }}
             <!-- TODO display a +/- n ARK on recent transactions -->
           </span>
         </div>
@@ -47,6 +48,7 @@
 
 <script>
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
+import WalletService from '@/services/wallet'
 
 export default {
   name: 'WalletSidebar',
@@ -140,6 +142,20 @@ export default {
         }
       }
       this.selectableWallets = this.wallets
+    },
+
+    isAddress (value) {
+      return WalletService.validateAddress(value, this.session_network.version)
+    },
+
+    trimName (name) {
+      // If it's an address, use truncate middle
+      if (this.isAddress(name)) {
+        return this.wallet_truncateAddress(name)
+      }
+
+      // Else it's a name, simply use ellipses at the end (is handled by a class)
+      return name
     }
   }
 }

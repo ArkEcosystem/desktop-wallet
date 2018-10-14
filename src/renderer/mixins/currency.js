@@ -17,6 +17,7 @@ export default {
      * @param {String} options.currencyFrom - To obtain the currency from the "session" or "network"
      * @param {String} [options.currencyDisplay = 'symbol']
      * @param {String} [options.locale = current locale]
+     * @param {String} [options.digits] - Amount of digits
      */
     currency_format (value, options = {}) {
       if (!options.currency && !options.currencyFrom) {
@@ -49,13 +50,13 @@ export default {
       if (config.currencyFrom === 'network' || config.currency === network.token) {
         cryptoCurrency = config.currencyDisplay === 'symbol' ? network.symbol : network.token
 
-        config.maximumFractionDigits = network.fractionDigits
+        config.maximumFractionDigits = options.digits || network.fractionDigits
       } else if (MARKET.crypto.indexOf(config.currency) !== -1) {
         cryptoCurrency = config.currencyDisplay === 'symbol'
           ? MARKET.currencies[config.currency].symbol
           : config.currency
 
-        config.maximumFractionDigits = MARKET.currencies[config.currency].fractionDigits
+        config.maximumFractionDigits = options.digits || MARKET.currencies[config.currency].fractionDigits
       }
 
       if (cryptoCurrency) {

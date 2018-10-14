@@ -5,8 +5,8 @@ export default {
       return `${this.$n(value, { minimumFractionDigits: 2 })}%`
     },
 
-    formatter_networkCurrency (value) {
-      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network' })
+    formatter_networkCurrency (value, digits) {
+      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network', digits: digits })
     },
 
     formatter_votes (value) {
