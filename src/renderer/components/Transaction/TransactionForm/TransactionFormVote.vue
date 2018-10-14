@@ -28,7 +28,7 @@
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.BLOCKS')"
-          :value="delegate.blocks.produced"
+          :value="blocksProduced()"
         />
         <ListDividedItem
           v-if="delegate.votes"
@@ -161,6 +161,16 @@ export default {
   methods: {
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
+    },
+
+    blocksProduced () {
+      const blocks = this.delegate.blocks.produced
+      const missed = this.delegate.blocks.missed
+
+      if (missed > 0) {
+        return `${blocks} (${missed} ${this.$t('WALLET_DELEGATES.MISSED')})`
+      }
+      return blocks
     },
 
     async fetchForged () {

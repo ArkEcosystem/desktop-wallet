@@ -132,6 +132,7 @@ export default {
 
     onSent () {
       this.votePublicKey = null
+      this.selected = null
     },
 
     onCancel () {

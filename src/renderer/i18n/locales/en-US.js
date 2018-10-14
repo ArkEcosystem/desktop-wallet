@@ -398,6 +398,7 @@ export default {
     APPROVAL: 'Approval',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
+    MISSED: 'missed',
     VOTERS: 'Voters',
     UNVOTE: 'Unvote',
     VOTES: 'Votes',
