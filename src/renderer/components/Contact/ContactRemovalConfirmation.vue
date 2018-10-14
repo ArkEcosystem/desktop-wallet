@@ -14,7 +14,7 @@
       <div
         :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
         :title="contact.name"
-        class="contact-identicon-xl background-image"
+        class="contact-identicon-xl background-image bg-contain"
       />
       <img
         :title="contact.name"

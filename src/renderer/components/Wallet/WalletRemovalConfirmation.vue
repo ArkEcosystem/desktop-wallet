@@ -15,7 +15,7 @@
       <div
         :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
         :title="wallet.name"
-        class="wallet-identicon-xl background-image"
+        class="wallet-identicon-xl background-image bg-contain"
       />
       <img
         :title="wallet.name"

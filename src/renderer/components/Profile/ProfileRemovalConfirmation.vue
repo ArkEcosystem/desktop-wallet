@@ -15,7 +15,7 @@
       <div
         :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
         :title="profile.name"
-        class="profile-avatar-xl background-image"
+        class="profile-avatar-xl background-image bg-contain"
       />
       <img
         :title="profile.name"

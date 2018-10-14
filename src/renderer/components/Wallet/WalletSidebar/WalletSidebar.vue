@@ -6,7 +6,7 @@
       'WalletSidebar--basic': isBasic,
       'WalletSidebar--full': !isBasic
     }"
-    class="WalletSidebar justify-start"
+    class="WalletSidebar justify-start overflow-y-auto"
     @input="onSelect"
   >
     <MenuNavigationItem

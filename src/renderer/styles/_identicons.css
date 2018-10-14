@@ -1,7 +1,8 @@
 :root {
   /* --wallet-identicon-xs: 150px; */
   /* --wallet-identicon-sm: 150px; */
-  /* --wallet-identicon-lg: 150px; */
+  --wallet-identicon-lg: 100px;
+  --contact-identicon-lg: 100px;
   --wallet-identicon-xl: 150px;
   --contact-identicon-xl: 150px;
 }
@@ -15,5 +16,17 @@
 .contact-identicon-xl {
   height: var(--contact-identicon-xl);
   width: var(--contact-identicon-xl);
+  @apply .bg-no-repeat
+}
+
+.wallet-identicon-lg {
+  height: var(--wallet-identicon-lg);
+  width: var(--wallet-identicon-lg);
+  @apply .bg-no-repeat
+}
+
+.contact-identicon-lg {
+  height: var(--contact-identicon-lg);
+  width: var(--contact-identicon-lg);
   @apply .bg-no-repeat
 }

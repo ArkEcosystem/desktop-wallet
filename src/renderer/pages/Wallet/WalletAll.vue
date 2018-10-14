@@ -2,13 +2,18 @@
   <div class="WalletAll relative bg-theme-feature rounded-lg m-r-4 p-10">
     <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
-    <div class="WalletAll__grid mt-10">
-      <div class="WalletAll__grid__wallet flex flex-row w-full">
-        <div class="w-full font-semibold flex flex-col text-xl justify-around items-center" >
+    <div class="WalletAll__grid mt-10 justify-center">
+      <div class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden">
+        <!-- TODO default identicon -->
+        <div
+          :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png');`"
+          :title="$t('PAGES.CONTACT_ALL.CREATE_WALLET')"
+          class="contact-identicon-lg background-image flex cursor-pointer bg-contain opacity-50"
+        />
+        <div class="flex flex-col justify-center overflow-hidden pl-4">
           <router-link :to="{ name: 'wallet-new' }" >
             {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
           </router-link>
-
           <router-link :to="{ name: 'wallet-import' }" >
             {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
           </router-link>
@@ -18,31 +23,30 @@
       <div
         v-for="wallet in selectableWallets"
         :key="wallet.id"
-        class="WalletAll__grid__wallet flex flex-row w-full"
+        class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden"
       >
-        <router-link :to="{ name: 'wallet-show', params: { address: wallet.id } }">
+        <router-link
+          :to="{ name: 'wallet-show', params: { address: wallet.id } }"
+          class="flex flex-row"
+        >
+          <!-- TODO wallet identicon -->
           <div
             :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
             :title="wallet.name"
-            class="wallet-identicon-xl background-image flex cursor-pointer"
+            class="wallet-identicon-lg background-image flex cursor-pointer bg-contain"
           />
         </router-link>
 
-        <div class="flex flex-col">
-          <div class="WalletAll__grid__wallet__name font-semibold flex text-lg pl-4 mt-8">
+        <div class="flex flex-col justify-center overflow-hidden pl-4">
+          <div class="WalletAll__grid__wallet__name font-semibold text-lg truncate block">
             {{ wallet.name }}
           </div>
-
-          <router-link
-            :to="{ name: 'wallet-show', params: { address: wallet.id } }"
-            class="WalletAll__grid__wallet__edition-link font-semibold flex text-xs pl-4 mt-2 mb-6"
-          >
-            {{ $t('PAGES.WALLET_ALL.SHOW_WALLET') }}
-          </router-link>
-
+          <span class="font-bold mt-2">
+            {{ formatter_networkCurrency(wallet.balance, 2) }}
+          </span>
           <div
             v-if="!wallet.isLedger"
-            class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
+            class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
             @click="openRemovalConfirmation(wallet)"
           >
             {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
@@ -116,17 +120,14 @@ export default {
 <style lang="postcss" scoped>
 .WalletAll__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(var(--wallet-identicon-xl) * 2));
+  grid-template-columns: repeat(auto-fill, calc(var(--wallet-identicon-lg) * 3));
   grid-gap: 1rem;
 }
 .WalletAll__grid__wallet {
   @apply .p-4
 }
-.WalletAll__grid__wallet:hover .wallet-identicon-xl {
+.WalletAll__grid__wallet:hover .wallet-identicon-lg {
   transition: 0.5s;
   opacity: 0.5;
-}
-.WalletAll__grid__wallet__name {
-  width: var(--wallet-identicon-xl);
 }
 </style>
