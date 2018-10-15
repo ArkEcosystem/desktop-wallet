@@ -98,6 +98,7 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.checkAmount('19')).toBeTrue()
       expect(wrapper.vm.checkAmount('19.9999999999')).toBeTrue()
       expect(wrapper.vm.checkAmount('766619.9999999999')).toBeTrue()
+      expect(wrapper.vm.checkAmount('19,9')).toBeTrue()
     })
 
     it('should return `false` on Strings that does not look like numbers', () => {
@@ -105,7 +106,6 @@ describe('InputCurrency', () => {
 
       expect(wrapper.vm.checkAmount('')).toBeFalse()
       expect(wrapper.vm.checkAmount('.9')).toBeFalse()
-      expect(wrapper.vm.checkAmount('19,9')).toBeFalse()
       expect(wrapper.vm.checkAmount('19a.99')).toBeFalse()
       expect(wrapper.vm.checkAmount('766..999')).toBeFalse()
       expect(wrapper.vm.checkAmount('as97')).toBeFalse()

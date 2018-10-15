@@ -19,7 +19,7 @@
         :name="name"
         v-model.trim="model"
         autocomplete="off"
-        class="InputCurrency__input flex flex-grow"
+        class="InputCurrency__input flex flex-grow bg-transparent text-theme-page-text"
         type="text"
         @blur="onBlur"
         @focus="onFocus"
@@ -52,6 +52,7 @@ const currencyValidator = currency => {
   const currentNetwork = store.getters['session/network']
   const currencies = [
     currentNetwork.token,
+    currentNetwork.subunit,
     currentNetwork.symbol,
     ...Object.keys(MARKET.currencies),
     ...Object.values(MARKET.currencies).map(currency => currency.symbol)
@@ -105,15 +106,30 @@ export default {
       required: false,
       default: 'amount'
     },
-    maxAmount: {
+    maximumAmount: {
       type: Number,
       required: false,
-      default: Math.pow(10, 15)
+      default: Math.pow(10, 7)
     },
-    minAmount: {
+    maximumError: {
+      type: String,
+      required: false,
+      default: null
+    },
+    minimumAmount: {
       type: Number,
       required: false,
       default: Math.pow(10, -8)
+    },
+    minimumError: {
+      type: String,
+      required: false,
+      default: null
+    },
+    required: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     value: {
       type: [Number, String],
@@ -137,14 +153,24 @@ export default {
       let error = null
 
       if (this.$v.model.$dirty) {
-        if (!this.$v.model.required) {
+        if (this.required && !this.$v.model.isRequired) {
           error = this.$t('INPUT_CURRENCY.ERROR.REQUIRED')
         } else if (!this.$v.model.isNumber) {
           error = this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
-        } else if (this.$v.model < this.minAmount) {
-          error = this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount: this.minAmount, unit: this.currency })
-        } else if (this.$v.model > this.maxAmount) {
-          error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount: this.maxAmount, unit: this.currency })
+        } else if (this.inputValue > this.maximumAmount) {
+          if (this.maximumError) {
+            error = this.maximumError
+          } else {
+            const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
+            error = this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
+          }
+        } else if (this.inputValue < this.minimumAmount) {
+          if (this.minimumError) {
+            error = this.minimumError || error
+          } else {
+            const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
+            error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
+          }
         }
       }
 
@@ -194,7 +220,7 @@ export default {
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+\.?[0-9]*$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+[,.]?[0-9]*$/)))
     },
     emitInput (value) {
       this.$emit('input', value)
@@ -209,10 +235,10 @@ export default {
       this.$emit('focus')
     },
     updateInputValue (value) {
-      if (this.checkAmount(value)) {
+      if (!value || this.checkAmount(value)) {
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
-        this.inputValue = value
+        this.inputValue = value.replace(',', '.')
         return true
       }
       return false
@@ -221,9 +247,14 @@ export default {
 
   validations: {
     model: {
-      required,
       isNumber (value) {
-        return this.checkAmount(this.inputValue)
+        return this.inputValue && this.checkAmount(this.inputValue)
+      },
+      isRequired (value) {
+        if (this.required) {
+          return required(value)
+        }
+        return true
       }
     }
   }

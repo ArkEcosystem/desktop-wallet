@@ -12,14 +12,21 @@
     />
 
     <div class="flex items-baseline mb-5">
-      <InputText
+      <InputCurrency
+        ref="amount"
         v-model="$v.form.amount.$model"
+        :alternative-currency="alternativeCurrency"
+        :currency="session_network.token"
         :is-invalid="$v.form.amount.$dirty && $v.form.amount.$invalid"
         :label="$t('TRANSACTION.AMOUNT')"
-        name="amount"
+        :minimum-error="amountTooLowError"
+        :maximum-amount="parseFloat(currency_subToUnit(senderWallet.balance))"
+        :maximum-error="notEnoughBalanceError"
+        :required="true"
         class="flex-1 mr-3"
       />
 
+      <!-- TODO This button could be activated to change the amount dynamically when the fee changes -->
       <button
         type="button"
         class="action-button"
@@ -47,12 +54,12 @@
     <PassphraseInput
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
-      :address="currentWallet.address"
+      :address="senderWallet.address"
       :pub-key-hash="session_network.version"
     />
 
     <PassphraseInput
-      v-if="currentWallet.secondPublicKey"
+      v-if="senderWallet.secondPublicKey"
       ref="secondPassphrase"
       v-model="$v.form.secondPassphrase.$model"
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
@@ -64,8 +71,7 @@
       <button
         :disabled="$v.form.$invalid"
         class="blue-button mt-10"
-        type="button"
-        @click="onSubmit"
+        type="submit"
       >
         {{ $t('COMMON.NEXT') }}
       </button>
@@ -76,13 +82,81 @@
 <script>
 import { required, maxLength, numeric } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
-import { InputAddress, InputText, InputFee } from '@/components/Input'
+import { InputAddress, InputCurrency, InputText, InputFee } from '@/components/Input'
 import { PassphraseInput } from '@/components/Passphrase'
 
 export default {
   name: 'TransactionFormTransfer',
 
   transactionType: TRANSACTION_TYPES.TRANSFER,
+
+  components: {
+    InputAddress,
+    InputCurrency,
+    InputText,
+    InputFee,
+    PassphraseInput
+  },
+
+  data: () => ({
+    form: {
+      recipientId: '',
+      amount: '',
+      vendorField: '',
+      passphrase: '',
+      fee: 0
+    }
+  }),
+
+  computed: {
+    alternativeCurrency () {
+      return this.$store.getters['session/currency']
+    },
+    // Customize the message to display the minimum amount as subunit
+    amountTooLowError () {
+      const { fractionDigits, token } = this.session_network
+      const minimumAmount = Math.pow(10, -fractionDigits)
+      const amount = this.currency_format(minimumAmount, { currency: token, currencyDisplay: 'code', subunit: true })
+      return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
+    },
+    notEnoughBalanceError () {
+      const balance = this.formatter_networkCurrency(this.senderWallet.balance)
+      return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
+    },
+    senderWallet () {
+      return this.wallet_fromRoute
+    }
+  },
+
+  methods: {
+    emitNext (transaction) {
+      this.$emit('next', transaction)
+    },
+
+    onFee (fee) {
+      this.$set(this.form, 'fee', fee)
+    },
+
+    onSendAll () {
+      this.$set(this.form, 'amount', this.currency_subToUnit(this.senderWallet.balance - this.form.fee))
+    },
+
+    async onSubmit () {
+      let transactionData = {
+        amount: this.currency_unitToSub(this.form.amount),
+        recipientId: this.form.recipientId,
+        vendorField: this.form.vendorField,
+        passphrase: this.form.passphrase,
+        fee: this.form.fee
+      }
+      if (this.senderWallet.secondPublicKey) {
+        transactionData.secondPassphrase = this.form.secondPassphrase
+      }
+
+      const transaction = await this.$client.buildTransfer(transactionData)
+      this.emitNext(transaction)
+    }
+  },
 
   validations: {
     form: {
@@ -91,8 +165,14 @@ export default {
       },
       amount: {
         required,
-        numeric
+        isValid (value) {
+          if (this.$refs.amount) {
+            return !this.$refs.amount.$v.$invalid
+          }
+          return false
+        }
       },
+      // TODO check that amount + fee <= balance
       fee: {
         required,
         numeric
@@ -110,7 +190,7 @@ export default {
       },
       secondPassphrase: {
         isValid (value) {
-          if (!this.currentWallet.secondPublicKey) {
+          if (!this.senderWallet.secondPublicKey) {
             return true
           }
 
@@ -120,60 +200,6 @@ export default {
           return false
         }
       }
-    }
-  },
-
-  components: {
-    InputAddress,
-    InputText,
-    InputFee,
-    PassphraseInput
-  },
-
-  data: () => ({
-    form: {
-      recipientId: '',
-      amount: '',
-      vendorField: '',
-      passphrase: '',
-      fee: 0
-    }
-  }),
-
-  computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
-    }
-  },
-
-  methods: {
-    emitNext (transaction) {
-      this.$emit('next', transaction)
-    },
-
-    onFee (fee) {
-      this.form.fee = fee
-    },
-
-    onSendAll () {
-      // TODO balance - fee?
-      this.form.amount = this.currentWallet.balance
-    },
-
-    async onSubmit () {
-      let transactionData = {
-        amount: this.form.amount,
-        recipientId: this.form.recipientId,
-        vendorField: this.form.vendorField,
-        passphrase: this.form.passphrase,
-        fee: this.form.fee
-      }
-      if (this.currentWallet.secondPublicKey) {
-        transactionData['secondPassphrase'] = this.form.secondPassphrase
-      }
-
-      const transaction = await this.$client.buildTransfer(transactionData)
-      this.emitNext(transaction)
     }
   }
 }

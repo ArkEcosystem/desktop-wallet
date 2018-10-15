@@ -94,8 +94,8 @@ export default {
 
   INPUT_CURRENCY: {
     ERROR: {
-      LESS_THAN_MINIMUM: 'The minimum amount is {amount} {unit}',
-      NOT_ENOUGH_AMOUNT: 'The maximum amount is {amount} {unit}',
+      LESS_THAN_MINIMUM: 'The minimum amount is {amount}',
+      NOT_ENOUGH_AMOUNT: 'The maximum amount is {amount}',
       NOT_VALID: 'The amount is not valid',
       REQUIRED: 'The amount is required'
     },
@@ -373,6 +373,12 @@ export default {
     SECOND_PASSPHRASE: 'Second Passphrase',
     FEE: 'Fee',
     OPEN_IN_EXPLORER: 'Open in Explorer'
+  },
+
+  TRANSACTION_FORM: {
+    ERROR: {
+      NOT_ENOUGH_BALANCE: 'The balance is too low ({balance})'
+    }
   },
 
   WALLET_HEADING: {

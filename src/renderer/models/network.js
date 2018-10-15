@@ -21,8 +21,15 @@ export default new BaseModel({
       type: 'object'
     },
     explorer: {},
-    token: {},
-    symbol: {},
+    token: {
+      type: 'string'
+    },
+    subunit: {
+      type: 'string'
+    },
+    symbol: {
+      type: 'string'
+    },
     fractionDigits: {
       type: 'integer'
     },

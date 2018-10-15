@@ -6,7 +6,7 @@ export default {
     },
 
     formatter_networkCurrency (value, digits) {
-      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network', digits: digits })
+      return this.currency_format(this.currency_subToUnit(value), { currencyFrom: 'network', maximumFractionDigits: digits })
     },
 
     formatter_votes (value) {

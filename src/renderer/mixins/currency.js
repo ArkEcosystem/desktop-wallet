@@ -17,7 +17,8 @@ export default {
      * @param {String} options.currencyFrom - To obtain the currency from the "session" or "network"
      * @param {String} [options.currencyDisplay = 'symbol']
      * @param {String} [options.locale = current locale]
-     * @param {String} [options.digits] - Amount of digits
+     * @param {String} [options.maximumFractionDigits] - Maximum number of fraction digits
+     * @param {Boolean} [options.subunit = false] - To use the subunit (arktoshi) instead of the unit (ARK)
      */
     currency_format (value, options = {}) {
       if (!options.currency && !options.currencyFrom) {
@@ -48,28 +49,46 @@ export default {
       const network = this.session_network
 
       if (config.currencyFrom === 'network' || config.currency === network.token) {
-        cryptoCurrency = config.currencyDisplay === 'symbol' ? network.symbol : network.token
+        if (options.subunit) {
+          cryptoCurrency = network.subunit
+          value *= Math.pow(10, network.fractionDigits)
+          // Subunits should not have decimals, although Intl.NumberFormat requires 2 at least
+          // TODO workaround this limitation for any language
+          config.maximumFractionDigits = 2
+        } else {
+          cryptoCurrency = config.currencyDisplay === 'symbol' ? network.symbol : network.token
+          config.maximumFractionDigits || (config.maximumFractionDigits = network.fractionDigits)
+        }
+      } else {
+        if (options.subunit) {
+          throw new Error('The `subunit` option is only supported for the network currencies')
+        }
 
-        config.maximumFractionDigits = options.digits || network.fractionDigits
-      } else if (MARKET.crypto.indexOf(config.currency) !== -1) {
-        cryptoCurrency = config.currencyDisplay === 'symbol'
-          ? MARKET.currencies[config.currency].symbol
-          : config.currency
+        if (MARKET.crypto.indexOf(config.currency) !== -1) {
+          cryptoCurrency = config.currencyDisplay === 'symbol'
+            ? MARKET.currencies[config.currency].symbol
+            : config.currency
 
-        config.maximumFractionDigits = options.digits || MARKET.currencies[config.currency].fractionDigits
+          config.maximumFractionDigits || (config.maximumFractionDigits = MARKET.currencies[config.currency].fractionDigits)
+        }
       }
 
       if (cryptoCurrency) {
         config.currency = cryptoPlaceholder
       }
 
-      const formattedValue = this.$n(value.toString(), config)
-      return formattedValue.replace(cryptoPlaceholder, cryptoCurrency)
+      return this.$n(value.toString(), config)
+        .replace(cryptoPlaceholder, cryptoCurrency)
     },
 
     currency_subToUnit (value) {
       const { fractionDigits } = this.session_network
       return new BigNumber(value.toString()).dividedBy(Math.pow(10, fractionDigits)).toString()
+    },
+
+    currency_unitToSub (value) {
+      const { fractionDigits } = this.session_network
+      return new BigNumber(value.toString()).multipliedBy(Math.pow(10, fractionDigits)).toString()
     }
   }
 }

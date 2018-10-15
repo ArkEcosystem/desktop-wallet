@@ -6,6 +6,7 @@ describe('Mixins > Currency', () => {
   const defaultLocale = 'en-US'
   const network = {
     token: 'NET',
+    subunit: 'netoshi',
     symbol: '×',
     fractionDigits: 8
   }
@@ -70,7 +71,7 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    describe('when a `currencyFrom` option with value "session" is provided', () => {
+    describe('when the `currencyFrom` option with value "session" is provided', () => {
       it('should display the symbol currency of the current network', () => {
         const amount = 1.00035
 
@@ -89,7 +90,7 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    describe('when a `currencyFrom` option with value "session" is provided', () => {
+    describe('when the `currencyFrom` option with value "session" is provided', () => {
       it('should use the currency of the current session', () => {
         const amount = Math.pow(10, 4) + Math.pow(10, -5)
 
@@ -103,7 +104,7 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    describe('when a `currency` option is provided', () => {
+    describe('when the `currency` option is provided', () => {
       it('should use the symbol of that currency', () => {
         const amount = Math.pow(10, 5) + Math.pow(10, -5)
 
@@ -126,12 +127,29 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    describe('when a `currencyDisplay` option is provided', () => {
+    describe('when the `currencyDisplay` option is provided', () => {
       it('should use it to display the currency', () => {
         const amount = 9835.387653
 
         expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })).toEqual('NET9,835.387653')
         expect(format(amount, { currency: 'EUR', currencyDisplay: 'symbol' })).toEqual('€9,835.39')
+      })
+    })
+
+    describe('when the `subunit` option is provided', () => {
+      describe('when the curreny is not the network currency', () => {
+        it('should throw an Error', () => {
+          expect(() => format(10, { currency: 'EUR', subunit: true })).toThrow(/subunit/)
+        })
+      })
+
+      describe('when the curreny is not the network currency', () => {
+        it('should use it to display the currency, indepently of the `currencyDisplay` option', () => {
+          const amount = 9835.387653
+
+          expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code', subunit: true })).toEqual('netoshi983,538,765,300.00')
+          expect(format(amount, { currency: 'NET', currencyDisplay: 'symbol', subunit: true })).toEqual('netoshi983,538,765,300.00')
+        })
       })
     })
 
