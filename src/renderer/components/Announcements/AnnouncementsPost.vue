@@ -65,7 +65,7 @@ export default {
     },
     openInBrowser (url) {
       this.electron_openExternal(url)
-      setTimeout(() => this.dismiss(), 2000)
+      setTimeout(() => this.emitRead(), 2000)
     }
   }
 }
