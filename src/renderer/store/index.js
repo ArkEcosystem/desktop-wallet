@@ -9,6 +9,7 @@ import AppModule from '@/store/modules/app'
 import LedgerModule from '@/store/modules/ledger'
 import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
+import PeerModule from '@/store/modules/peer'
 import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
 import TimerModule from '@/store/modules/timer'
@@ -22,6 +23,7 @@ const modules = {
   ledger: LedgerModule,
   market: MarketModule,
   network: NetworkModule,
+  peer: PeerModule,
   profile: ProfileModule,
   session: SessionModule,
   timer: TimerModule,

@@ -40,7 +40,7 @@ describe('ledger store module', () => {
     expect(response).toBe(false)
   })
 
-  it('should fail when calling getAddress and not connected', async () => {
+  it('should fail when calling getPublicKey and not connected', async () => {
     store.commit('ledger/SET_CONNECTED', false)
     const response = await store.dispatch('ledger/getPublicKey', 1)
 
@@ -48,7 +48,7 @@ describe('ledger store module', () => {
     expect(response).toBe(false)
   })
 
-  it('should fail when calling getAddress and not connected', async () => {
+  it('should fail when calling signTransaction and not connected', async () => {
     store.commit('ledger/SET_CONNECTED', false)
     const response = await store.dispatch('ledger/signTransaction', 1, 'abc')
 

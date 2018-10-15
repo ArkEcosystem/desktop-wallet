@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .MenuOptions {
-  background-color: #343956;
+  background-color: var(--theme-settings-background);
 }
 
 .MenuOptions >>> .MenuOptionsItem:last-child .MenuOptionsItem__container {

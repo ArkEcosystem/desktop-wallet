@@ -64,13 +64,18 @@
         @click="toggleShowSettings"
       />
 
+      <AppSidemenuNetworkStatus
+        v-show="isNetworkStatusVisible"
+        :outside-click="isNetworkStatusVisible"
+        @close="closeShowNetworkStatus"
+      />
       <!-- Networks -->
       <MenuNavigationItem
         id="networks"
         :class="[horizontal ? 'w-16' : 'h-16']"
         :horizontal="horizontal"
         icon="cloud"
-        @click="redirect($event)"
+        @click="toggleShowNetworkStatus"
       />
 
       <!-- Profile settings -->
@@ -94,6 +99,7 @@
 import { mapGetters } from 'vuex'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import AppSidemenuSettings from './AppSidemenuSettings'
+import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 
 export default {
   name: 'AppSidemenu',
@@ -101,7 +107,8 @@ export default {
   components: {
     MenuNavigation,
     MenuNavigationItem,
-    AppSidemenuSettings
+    AppSidemenuSettings,
+    AppSidemenuNetworkStatus
   },
 
   props: {
@@ -114,6 +121,7 @@ export default {
 
   data: vm => ({
     isSettingsVisible: false,
+    isNetworkStatusVisible: false,
     activeItem: vm.$route.name
   }),
 
@@ -140,13 +148,27 @@ export default {
     },
 
     toggleShowSettings () {
+      this.isNetworkStatusVisible = false
       this.isSettingsVisible = !this.isSettingsVisible
       this.setActive(this.isSettingsVisible ? 'settings' : null)
+    },
+
+    toggleShowNetworkStatus () {
+      this.isSettingsVisible = false
+      this.isNetworkStatusVisible = !this.isNetworkStatusVisible
+      this.setActive(this.isNetworkStatusVisible ? 'network-status' : null)
     },
 
     closeShowSettings () {
       if (this.isSettingsVisible) {
         this.isSettingsVisible = false
+        this.setActive(null)
+      }
+    },
+
+    closeShowNetworkStatus () {
+      if (this.isNetworkStatusVisible) {
+        this.isNetworkStatusVisible = false
         this.setActive(null)
       }
     }

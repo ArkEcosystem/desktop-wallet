@@ -108,14 +108,16 @@ export default {
       await this.$store.dispatch('timer/start')
       await this.$store.dispatch('market/load')
       await this.$store.dispatch('announcements/fetch')
+      await this.$store.dispatch('peer/refresh')
+      this.$store.dispatch('peer/connectToBest')
 
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
       }
 
       this.$eventBus.$on('client:changed', () => {
-        const network = this.session_network
-        this.$store.dispatch('ledger/init', network.slip44)
+        this.$store.dispatch('ledger/init', this.session_network.slip44)
+        this.$store.dispatch('peer/connectToBest')
       })
       this.$eventBus.$on('ledger:connected', async () => {
         this.$success('Ledger Connected!')

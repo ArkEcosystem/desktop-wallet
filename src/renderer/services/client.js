@@ -213,6 +213,41 @@ export default class ClientService {
   }
 
   /**
+   * Request peer list.
+   * @param {String} network
+   * @param {Object[]} [peers=[]]
+   * @returns {Object[]}
+   */
+  async fetchPeers (network, peers = []) {
+    if (network) {
+      peers = null
+    } else if (!network && !peers.length) {
+      peers = [this.__parseCurrentPeer()]
+    }
+
+    return ApiClient.findPeers(network, this.client.version, peers)
+  }
+
+  /**
+   * Parse peer from current client host.
+   * @return {Object}
+   */
+  __parseCurrentPeer () {
+    const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.client.http.host)
+    const scheme = matches[1]
+    const ip = matches[2]
+    let port = scheme === 'https://' ? 443 : 80
+    if (matches[3]) {
+      port = matches[3]
+    }
+
+    return {
+      ip,
+      port
+    }
+  }
+
+  /**
    * Build a vote transaction
    * @param {Array} votes
    * @returns {Object}
@@ -314,9 +349,15 @@ export default class ClientService {
         if (!profile) return
 
         const { server, apiVersion } = store.getters['network/byId'](profile.networkId)
+        const currentPeer = store.getters['peer/current']()
 
-        this.host = server
-        this.version = apiVersion
+        if (currentPeer && Object.keys(currentPeer).length > 0) {
+          this.host = `http://${currentPeer.ip}:${currentPeer.port}`
+          this.version = currentPeer.version.match(/^2\./) ? 2 : 1
+        } else {
+          this.host = server
+          this.version = apiVersion
+        }
 
         eventBus.$emit('client:changed')
       },
