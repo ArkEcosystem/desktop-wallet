@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  test-node-9:
+    working_directory: ~/new-desktop-wallet
+    docker:
+      - image: circleci/node:9.11-browsers
+    steps:
+      - checkout
+      - run:
+          name: Install required packages
+          command: |
+            sudo apt-get update
+            sudo apt-get -t jessie-backports install libudev-dev libusb-1.0-0-dev
+      - run:
+          name: Install yarn 
+          command: 'curl -o- -L https://yarnpkg.com/install.sh | bash && export PATH="$HOME/.yarn/bin:$PATH" && yarn config set cache-folder $HOME/.cache/yarn'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install packages
+          command: yarn global add node-gyp && yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Unit tests
+          command: yarn test:unit --ci --maxWorkers 4
+      - run:
+          name: e2e tests
+          command: yarn test:e2e
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Depcheck
+          command: yarn depcheck
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test-node-9
