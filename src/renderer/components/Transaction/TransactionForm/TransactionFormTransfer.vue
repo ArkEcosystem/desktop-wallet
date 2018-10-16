@@ -20,20 +20,18 @@
         :is-invalid="$v.form.amount.$dirty && $v.form.amount.$invalid"
         :label="$t('TRANSACTION.AMOUNT')"
         :minimum-error="amountTooLowError"
-        :maximum-amount="parseFloat(currency_subToUnit(senderWallet.balance))"
+        :maximum-amount="maximumAvailableAmount"
         :maximum-error="notEnoughBalanceError"
         :required="true"
         class="flex-1 mr-3"
+        @blur="ensureAvailableAmount"
       />
 
-      <!-- TODO This button could be activated to change the amount dynamically when the fee changes -->
-      <button
-        type="button"
-        class="action-button"
-        @click="onSendAll"
-      >
-        {{ $t('TRANSACTION.SEND_ALL') }}
-      </button>
+      <InputSwitch
+        :text="$t('TRANSACTION.SEND_ALL')"
+        :is-active="isSendAllActive"
+        @change="onSendAll"
+      />
     </div>
 
     <InputText
@@ -82,7 +80,7 @@
 <script>
 import { required, maxLength, numeric } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
-import { InputAddress, InputCurrency, InputText, InputFee } from '@/components/Input'
+import { InputAddress, InputCurrency, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { PassphraseInput } from '@/components/Passphrase'
 
 export default {
@@ -93,6 +91,7 @@ export default {
   components: {
     InputAddress,
     InputCurrency,
+    InputSwitch,
     InputText,
     InputFee,
     PassphraseInput
@@ -100,12 +99,13 @@ export default {
 
   data: () => ({
     form: {
-      recipientId: '',
       amount: '',
-      vendorField: '',
+      fee: 0,
       passphrase: '',
-      fee: 0
-    }
+      recipientId: '',
+      vendorField: ''
+    },
+    isSendAllActive: false
   }),
 
   computed: {
@@ -123,6 +123,9 @@ export default {
       const balance = this.formatter_networkCurrency(this.senderWallet.balance)
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
     },
+    maximumAvailableAmount () {
+      return parseFloat(this.currency_subToUnit(this.senderWallet.balance - this.form.fee))
+    },
     senderWallet () {
       return this.wallet_fromRoute
     }
@@ -135,10 +138,18 @@ export default {
 
     onFee (fee) {
       this.$set(this.form, 'fee', fee)
+      this.ensureAvailableAmount()
     },
 
-    onSendAll () {
-      this.$set(this.form, 'amount', this.currency_subToUnit(this.senderWallet.balance - this.form.fee))
+    onSendAll (isActive) {
+      this.isSendAllActive = isActive
+      this.ensureAvailableAmount()
+    },
+
+    ensureAvailableAmount () {
+      if (this.isSendAllActive) {
+        this.$set(this.form, 'amount', this.maximumAvailableAmount)
+      }
     },
 
     async onSubmit () {
@@ -172,7 +183,6 @@ export default {
           return false
         }
       },
-      // TODO check that amount + fee <= balance
       fee: {
         required,
         numeric

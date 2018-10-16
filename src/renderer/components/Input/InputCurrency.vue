@@ -238,7 +238,7 @@ export default {
       if (!value || this.checkAmount(value)) {
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
-        this.inputValue = value.replace(',', '.')
+        this.inputValue = value.toString().replace(',', '.')
         return true
       }
       return false
