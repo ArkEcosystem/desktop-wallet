@@ -49,6 +49,7 @@
 <script>
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import WalletService from '@/services/wallet'
+import { sortByProp } from '@/components/utils/Sorting'
 
 export default {
   name: 'WalletSidebar',
@@ -73,8 +74,9 @@ export default {
 
   computed: {
     wallets () {
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      const prop = 'name'
+      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
+      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
       return [...wallets, ...contacts]
     },
 

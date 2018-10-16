@@ -66,6 +66,7 @@
 
 <script>
 import { ContactRemovalConfirmation } from '@/components/Contact'
+import { sortByProp } from '@/components/utils/Sorting'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -81,8 +82,9 @@ export default {
 
   computed: {
     contacts () {
-      console.log(this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id))
-      return this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      const prop = 'name'
+      return contacts.slice().sort(sortByProp(prop))
     }
   },
 

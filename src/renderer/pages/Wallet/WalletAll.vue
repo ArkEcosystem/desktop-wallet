@@ -7,7 +7,7 @@
         <!-- TODO default identicon -->
         <div
           :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png');`"
-          :title="$t('PAGES.CONTACT_ALL.CREATE_WALLET')"
+          :title="$t('PAGES.WALLET_ALL.CREATE_WALLET')"
           class="contact-identicon-lg background-image flex cursor-pointer bg-contain opacity-50"
         />
         <div class="flex flex-col justify-center overflow-hidden pl-4">
@@ -67,6 +67,7 @@
 
 <script>
 import { WalletRemovalConfirmation } from '@/components/Wallet'
+import { sortByProp } from '@/components/utils/Sorting'
 
 export default {
   name: 'WalletAll',
@@ -82,7 +83,9 @@ export default {
 
   computed: {
     wallets () {
-      return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      const prop = 'name'
+      return wallets.slice().sort(sortByProp(prop))
     }
   },
 
@@ -131,7 +134,7 @@ export default {
   opacity: 0.5;
 }
 @screen lg {
-  .ContactAll__grid__contact {
+  .WalletAll__grid__wallet {
     @apply .p-4
   }
 }
