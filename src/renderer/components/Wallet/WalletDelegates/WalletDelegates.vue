@@ -102,7 +102,7 @@ export default {
       try {
         this.delegates = await this.$client.fetchDelegates()
       } catch (error) {
-        console.error(error)
+        this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'delegates',
           msg: error.message
@@ -114,7 +114,7 @@ export default {
       try {
         this.votePublicKey = await this.$client.fetchWalletVote(this.wallet_fromRoute.address)
       } catch (error) {
-        console.error(error)
+        this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'fetch vote',
           msg: error.message

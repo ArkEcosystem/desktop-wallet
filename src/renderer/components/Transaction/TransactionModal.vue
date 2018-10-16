@@ -94,8 +94,8 @@ export default {
     },
 
     successfulResponse (response) {
-      console.log(response)
       if (response.status !== 200) {
+        this.$logger.error(response)
         return false
       }
 

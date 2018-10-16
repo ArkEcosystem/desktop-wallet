@@ -4,6 +4,7 @@ import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
 import dayjs from 'dayjs'
 import { capitalize, keys, min, max } from 'lodash'
+import logger from 'electron-log'
 
 class CryptoCompare {
   /**
@@ -24,6 +25,7 @@ class CryptoCompare {
 
       return this.__transformMarketResponse(data)
     } catch (error) {
+      logger.error(error)
       alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
         name: i18n.t('MARKET.MARKET'),
         msg: error.message
@@ -116,6 +118,7 @@ class CryptoCompare {
       const response = await axios.get(uri, { params })
       return this.__transformHistoricalResponse(response.data.Data, dateFormat)
     } catch (error) {
+      logger.error(error)
       alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
         name: i18n.t('MARKET.HISTORICAL_DATA'),
         msg: error.message

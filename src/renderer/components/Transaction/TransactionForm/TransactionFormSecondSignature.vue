@@ -135,7 +135,6 @@ export default {
 
     generateNewPassphrase () {
       this.secondPassphrase = WalletService.generateSecondPassphrase()
-      console.log(this.secondPassphrase)
     },
 
     async onSubmit () {

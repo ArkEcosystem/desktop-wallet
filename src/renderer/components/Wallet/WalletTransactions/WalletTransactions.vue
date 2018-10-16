@@ -35,7 +35,7 @@ export default {
       try {
         this.transactions = await this.$client.fetchTransactions(this.wallet_fromRoute.address)
       } catch (error) {
-        console.error(error)
+        this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'transactions',
           msg: error.message

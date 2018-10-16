@@ -173,7 +173,7 @@ export default {
     },
     openQR () {
       // TODO when the QR reader is available
-      console.error('QR reader is not available yet')
+      this.$logger.error('QR reader is not available yet')
     },
 
     toggleVisible () {

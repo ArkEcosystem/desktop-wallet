@@ -74,7 +74,7 @@ export default {
         document.execCommand('copy')
       } catch (err) {
         this.isCopySupported = false
-        console.error('Clipboard not supported!')
+        this.$logger.error('Clipboard not supported!')
       }
 
       document.body.removeChild(textArea)

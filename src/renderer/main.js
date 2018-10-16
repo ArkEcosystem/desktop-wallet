@@ -5,6 +5,7 @@ import VTooltip from 'v-tooltip'
 import VueGoodTablePlugin from 'vue-good-table'
 import PortalVue from 'portal-vue'
 import axios from 'axios'
+import logger from 'electron-log'
 
 import App from './App'
 import i18n from './i18n'
@@ -19,6 +20,7 @@ import eventBus from '@/plugins/event-bus'
 
 Vue.config.productionTip = false
 Vue.http = Vue.prototype.$http = axios
+Vue.logger = Vue.prototype.$logger = logger
 Vue.prototype.$eventBus = eventBus
 
 Vue.use(filters)

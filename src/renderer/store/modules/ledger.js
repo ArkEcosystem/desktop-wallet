@@ -1,6 +1,7 @@
 import ledgerService from '@/services/ledger-service'
 import eventBus from '@/plugins/event-bus'
 import { crypto } from '@arkecosystem/crypto'
+import logger from 'electron-log'
 
 export default {
   namespaced: true,
@@ -146,6 +147,7 @@ export default {
           try {
             wallet = await this._vm.$client.fetchWallet(ledgerAddress)
           } catch (error) {
+            logger.error(error)
             const message = error.response ? error.response.data.message : error.message
             if (message !== 'Wallet not found') {
               throw error
@@ -177,7 +179,7 @@ export default {
           }
         }
       } catch (error) {
-        //
+        logger.error(error)
       }
       commit('SET_WALLETS', [])
       eventBus.$emit('ledger:wallets-updated', [])
@@ -197,7 +199,7 @@ export default {
           accountIndex
         })
       } catch (error) {
-        //
+        logger.error(error)
       }
 
       return false
@@ -215,7 +217,7 @@ export default {
           accountIndex
         })
       } catch (error) {
-        //
+        logger.error(error)
       }
 
       return false
@@ -236,7 +238,7 @@ export default {
           data: transactionHex
         })
       } catch (error) {
-        //
+        logger.error(error)
       }
 
       return false

@@ -102,7 +102,7 @@ export default {
           this.$store.dispatch('wallet/update', updatedWallet)
         }
       } catch (error) {
-        console.error(error)
+        this.$logger.error(error)
         // TODO the error could mean that the wallet isn't on the blockchain yet
         // this.$error(this.$t('COMMON.FAILED_FETCH', {
         //   name: 'wallet data',

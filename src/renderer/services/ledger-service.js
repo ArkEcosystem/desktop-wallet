@@ -1,6 +1,7 @@
 import LedgerTransport from '@ledgerhq/hw-transport-node-hid'
 import ArkLedger from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
+import logger from 'electron-log'
 
 class LedgerService {
   /**
@@ -31,7 +32,7 @@ class LedgerService {
 
       return this.isConnected()
     } catch (error) {
-      //
+      logger.log(error)
     }
 
     return false
@@ -46,7 +47,7 @@ class LedgerService {
     try {
       await this.transport.close()
     } catch (error) {
-      //
+      logger.error(error)
     }
   }
 
@@ -61,7 +62,7 @@ class LedgerService {
 
       return true
     } catch (error) {
-      //
+      logger.error(error)
     }
 
     return false
