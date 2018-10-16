@@ -305,7 +305,7 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'transactions') {
             return {
-              all: () => ({ data: { transactions, success: true } })
+              all: () => ({ data: { transactions, success: true, count: 3 } })
             }
           }
         }
@@ -315,9 +315,13 @@ describe('Services > Client', () => {
 
       it('should return only some properties for each transaction', async () => {
         const response = await client.fetchTransactions('address')
+        expect(response).toHaveProperty('transactions')
+        expect(response).toHaveProperty('totalCount')
 
-        expect(response).toHaveLength(data.length)
-        response.forEach((transaction, i) => {
+        const transactions = response.transactions
+        expect(transactions).toHaveLength(data.length)
+
+        transactions.forEach((transaction, i) => {
           expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
           expect(transaction).toHaveProperty('timestamp')
           expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
@@ -344,7 +348,7 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'wallets') {
             return {
-              transactions: () => ({ data: { data: transactions } })
+              transactions: () => ({ data: { data: transactions, meta: { totalCount: 3 } } })
             }
           }
         }
@@ -354,9 +358,13 @@ describe('Services > Client', () => {
 
       it('should return only some properties for each transaction', async () => {
         const response = await client.fetchTransactions('address')
+        expect(response).toHaveProperty('transactions')
+        expect(response).toHaveProperty('totalCount')
 
-        expect(response).toHaveLength(data.length)
-        response.forEach((transaction, i) => {
+        const transactions = response.transactions
+        expect(transactions).toHaveLength(data.length)
+
+        transactions.forEach((transaction, i) => {
           expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
           expect(transaction).toHaveProperty('timestamp')
           expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)

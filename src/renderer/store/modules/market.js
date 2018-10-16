@@ -12,8 +12,9 @@ export default {
 
   getters: {
     currencies: () => keys(MARKET.currencies),
-    lastPrice: (state, getters) => {
-      return getters['lastTicker'].price
+    lastPrice: (_, getters) => {
+      const lastTicker = getters['lastTicker']
+      return lastTicker ? lastTicker.price : null
     },
     lastTicker: (state, getters, _, rootGetters) => {
       const token = rootGetters['session/network'].token

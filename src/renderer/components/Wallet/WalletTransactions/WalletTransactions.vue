@@ -1,11 +1,20 @@
 <template>
   <TransactionTable
     :transactions="transactions"
+    :total-rows="totalCount"
+    :is-loading="isLoading"
+    :is-remote="true"
+    :has-pagination="true"
+    :sort-options="queryParams.sort"
+    @on-per-page-change="onPerPageChange"
+    @on-page-change="onPageChange"
+    @on-sort-change="onSortChange"
   />
 </template>
 
 <script>
 import { TransactionTable } from '@/components/Transaction'
+import { orderBy } from 'lodash'
 
 export default {
   name: 'WalletTransactions',
@@ -15,7 +24,17 @@ export default {
   },
 
   data: () => ({
-    transactions: []
+    isLoading: false,
+    transactions: [],
+    totalCount: 0,
+    queryParams: {
+      page: 1,
+      limit: 10,
+      sort: {
+        field: 'timestamp',
+        type: 'desc'
+      }
+    }
   }),
 
   watch: {
@@ -33,7 +52,14 @@ export default {
       if (!this.wallet_fromRoute) return
 
       try {
-        this.transactions = await this.$client.fetchTransactions(this.wallet_fromRoute.address)
+        this.isLoading = true
+        const { transactions, totalCount } = await this.$client.fetchTransactions(this.wallet_fromRoute.address, {
+          page: this.queryParams.page,
+          limit: this.queryParams.limit,
+          orderBy: `${this.queryParams.sort.field}:${this.queryParams.sort.type}`
+        })
+        this.transactions = this.__sortTransactions(transactions)
+        this.totalCount = totalCount
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -41,7 +67,39 @@ export default {
           msg: error.message
         }))
         this.transactions = []
+      } finally {
+        this.isLoading = false
       }
+    },
+
+    onPageChange ({ currentPage }) {
+      this.__updateParams({ page: currentPage })
+      this.fetchTransactions()
+    },
+
+    onPerPageChange ({ currentPerPage }) {
+      this.__updateParams({ limit: currentPerPage, page: 1 })
+      this.fetchTransactions()
+    },
+
+    onSortChange ({ columnName, sortType }) {
+      this.__updateParams({
+        sort: {
+          type: sortType,
+          field: columnName
+        },
+        page: 1
+      })
+      this.fetchTransactions()
+    },
+
+    // TODO: Sort remotely
+    __sortTransactions (transactions = this.transactions) {
+      return orderBy(transactions, [this.queryParams.sort.field], [this.queryParams.sort.type])
+    },
+
+    __updateParams (newProps) {
+      this.queryParams = Object.assign({}, this.queryParams, newProps)
     }
   }
 }

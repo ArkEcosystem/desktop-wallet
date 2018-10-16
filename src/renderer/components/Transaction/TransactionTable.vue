@@ -1,14 +1,37 @@
 <template>
   <div class="TransactionTable w-full">
     <vue-good-table
+      :is-loading="isLoading"
+      :mode="isRemote ? 'remote' : 'local'"
       :columns="columns"
       :rows="transactions"
       :sort-options="{
         enabled: true,
-        initialSortBy: {field: 'timestamp', type: 'desc'}
+        initialSortBy: sortOptions
       }"
+      :pagination-options="{
+        enabled: hasPagination,
+        dropdownAllowAll: false,
+        nextLabel: $t('COMMON.NEXT'),
+        prevLabel: $t('COMMON.PREV'),
+        rowsPerPageLabel: $t('TABLE.ROWS_PER_PAGE'),
+        ofLabel: $t('COMMON.OF'),
+        pageLabel: $t('TABLE.PAGE'),
+        allLabel: $t('COMMON.ALL')
+      }"
+      :total-rows="totalRows"
       @on-row-click="onRowClick"
+      @on-page-change="onPageChange"
+      @on-sort-change="onSortChange"
+      @on-per-page-change="onPerPageChange"
     >
+      <div
+        slot="loadingContent"
+        class="flex justify-center p-5"
+      >
+        <Loader />
+      </div>
+
       <template
         slot="table-row"
         slot-scope="table"
@@ -94,6 +117,7 @@
 </template>
 
 <script>
+import Loader from '@/components/utils/Loader'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import { TransactionShow } from '@/components/Transaction'
@@ -103,6 +127,7 @@ export default {
   name: 'TransactionTable',
 
   components: {
+    Loader,
     SvgIcon,
     TransactionShow,
     WalletAddress
@@ -112,6 +137,35 @@ export default {
     transactions: {
       type: Array,
       required: true
+    },
+    hasPagination: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    isLoading: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    isRemote: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    // required if is remote
+    totalRows: {
+      type: Number,
+      required: false,
+      default: 0
+    },
+    sortOptions: {
+      type: Object,
+      required: false,
+      default: () => ({
+        field: 'timestamp',
+        type: 'desc'
+      })
     }
   },
 
@@ -179,6 +233,19 @@ export default {
 
     onRowClick ({ row }) {
       this.selected = row
+    },
+
+    onPageChange (options) {
+      this.$emit('on-page-change', options)
+    },
+
+    onSortChange ({ columnIndex, sortType }) {
+      const columnName = this.columns[columnIndex].field
+      this.$emit('on-sort-change', { columnName, sortType })
+    },
+
+    onPerPageChange (options) {
+      this.$emit('on-per-page-change', options)
     },
 
     onCloseModal () {

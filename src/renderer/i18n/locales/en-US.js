@@ -1,6 +1,7 @@
 export default {
   COMMON: {
     AVATAR: 'Avatar',
+    ALL: 'All',
     BACK: 'Back',
     DONE: 'Done',
     CONFIRM: 'Confirm',
@@ -8,7 +9,9 @@ export default {
     CURRENCY: 'Currency',
     LANGUAGE: 'Language',
     NETWORK: 'Network',
+    PREV: 'Prev',
     NEXT: 'Next',
+    OF: 'of',
     PROFILE_NAME: 'Profile name',
     SAVE: 'Save',
     SELECT_BACKGROUND: 'Select background',
@@ -39,6 +42,11 @@ export default {
     DAY: 'Day',
     WEEK: 'Week',
     MONTH: 'Month'
+  },
+
+  TABLE: {
+    PAGE: 'Page',
+    ROWS_PER_PAGE: 'Rows per page'
   },
 
   APP_SIDEMENU: {

@@ -102,16 +102,23 @@ export default class ClientService {
    *   - The timestamp field is an object that already returns converted date.
    *
    * @param {String} address
+   * @param {Object} [query]
+   * @param {Number} [query.page=0]
+   * @param {Number} [query.limit=50]
    * @return {Object[]}
    */
-  async fetchTransactions (address) {
+  async fetchTransactions (address, { page, limit, orderBy } = { page: 0, limit: 50, orderBy: 'timestamp:desc' }) {
+    let totalCount = 0
     let transactions = []
 
     if (this.__version === 1) {
       const network = store.getters['session/network']
       const { data } = await this.client.resource('transactions').all({
         recipientId: address,
-        senderId: address
+        senderId: address,
+        orderBy,
+        offset: (page - 1) * limit,
+        limit
       })
 
       if (data.success) {
@@ -125,14 +132,20 @@ export default class ClientService {
 
           return tx
         })
+        totalCount = data.count
       }
     } else {
-      const { data } = await this.client.resource('wallets').transactions(address)
+      // TODO: Add orderBy field in the v2 query params
+      const { data } = await this.client.resource('wallets').transactions(address, {
+        limit,
+        page
+      })
 
       transactions = data.data.map(tx => {
         tx.timestamp = dayjs(tx.timestamp.human).toDate()
         return tx
       })
+      totalCount = data.meta.totalCount
     }
 
     // Add some utilities for each transactions
@@ -144,7 +157,10 @@ export default class ClientService {
       return tx
     })
 
-    return result
+    return {
+      transactions: result,
+      totalCount
+    }
   }
 
   /**
