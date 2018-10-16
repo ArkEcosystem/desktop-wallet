@@ -83,11 +83,6 @@
           fromAddress: $scope.data.fromAddress
         }
 
-        if (uriScheme) {
-          data.amount = uriScheme.amount
-          data.smartbridge = uriScheme.vendorField
-        }
-
         if ($scope.data.secondPassphrase) {
           data.secondpassphrase = $scope.data.secondPassphrase.trim()
         }
@@ -126,6 +121,8 @@
       if (uriScheme) {
         $timeout(() => {
           $scope.data.selectedAddress = {address: uriScheme.address}
+          $scope.data.amount = uriScheme.amount
+          $scope.data.smartbridge = uriScheme.vendorField
         }, 0)
       }
 
