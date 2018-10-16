@@ -1,8 +1,12 @@
 <template>
   <form
-    class="flex flex-col"
+    class="TransactionFormDelegateRegistration flex flex-col"
     @submit.prevent="onSubmit"
   >
+    <div>
+      {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
+    </div>
+
     <InputText
       v-model="$v.form.username.$model"
       :helper-text="error"
@@ -30,7 +34,7 @@
 
     <button
       :disabled="$v.form.$invalid"
-      class="blue-button w-full mt-10"
+      class="blue-button mt-10 ml-0"
       @click="onSubmit"
     >
       {{ $t('COMMON.NEXT') }}

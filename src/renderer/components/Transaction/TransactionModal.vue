@@ -1,6 +1,7 @@
 <template>
   <ModalWindow
     :title="title || typeName"
+    :message="footer || footerText"
     @close="emitCancel"
   >
     <keep-alive>
@@ -47,6 +48,11 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    footer: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
@@ -55,17 +61,19 @@ export default {
   }),
 
   computed: {
+    transactionKey () {
+      return findKey(TRANSACTION_TYPES, type => this.type === type)
+    },
     typeName () {
-      const key = this.transactionKeyByType(this.type)
-      return this.$t(`TRANSACTION.TYPE.${key}`)
+      return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)
+    },
+    footerText () {
+      const key = `TRANSACTION.FOOTER_TEXT.${this.transactionKey}`
+      return this.$te(key) ? this.$t(key) : null
     }
   },
 
   methods: {
-    transactionKeyByType (value) {
-      return findKey(TRANSACTION_TYPES, type => value === type)
-    },
-
     onBuilt (transaction) {
       this.transaction = transaction
     },
@@ -76,11 +84,10 @@ export default {
 
     async onConfirm () {
       const response = await this.$client.broadcastTransaction(this.transaction)
-      const key = this.transactionKeyByType(this.type)
 
       this.successfulResponse(response)
-        ? this.$success(this.$t(`TRANSACTION.SUCCESS.${key}`))
-        : this.$error(this.$t(`TRANSACTION.ERROR.${key}`))
+        ? this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
+        : this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
 
       this.emitSent(response)
     },

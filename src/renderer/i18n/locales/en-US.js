@@ -346,6 +346,14 @@ export default {
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful'
     },
+    FOOTER_TEXT: {
+      DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
+    },
+    FORM: {
+      DELEGATE_REGISTRATION: {
+        INSTRUCTIONS: 'for {address}.'
+      }
+    },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
       SECOND_SIGNATURE: 'Second signature successfully registered',
