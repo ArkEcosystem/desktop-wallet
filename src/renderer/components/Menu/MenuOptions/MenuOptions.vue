@@ -1,5 +1,5 @@
 <template>
-  <ul class="MenuOptions list-reset flex flex-col rounded py-5">
+  <ul class="MenuOptions bg-theme-settings list-reset flex flex-col rounded py-5">
     <slot />
   </ul>
 </template>
@@ -10,12 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.MenuOptions {
-  background-color: var(--theme-settings-background);
-}
-
-.MenuOptions >>> .MenuOptionsItem:last-child .MenuOptionsItem__container {
+<style>
+.MenuOptions .MenuOptionsItem:last-child .MenuOptionsItem__container {
   border: none;
 }
 </style>

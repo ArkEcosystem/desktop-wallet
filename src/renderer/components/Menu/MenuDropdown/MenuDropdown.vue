@@ -9,13 +9,14 @@
     >
       <slot
         :value="entries[activeKey]"
-        name="handler">
-
+        :is-open="isOpen"
+        :placeholder="placeholder"
+        name="handler"
+      >
         <MenuDropdownHandler
           :value="entries[activeKey]"
           :placeholder="placeholder"
         />
-
       </slot>
     </button>
 

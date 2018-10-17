@@ -1,17 +1,44 @@
 <template>
-  <section class="flex relative w-full h-full overflow-none bg-theme-feature rounded-lg p-10">
-    <SearchInput />
-  </section>
+  <div class="Search flex relative w-full h-full overflow-none bg-theme-feature rounded-lg p-10">
+    <header class="Search__header flex relative items-baseline w-full">
+      <SearchInput class="mr-5" />
+      <SearchFilterButton
+        @click="toggleFilter"
+      >
+        <SearchFilter
+          v-if="showFilter"
+          class="-mt-1 mr-5"
+          @close="hideFilter"
+        />
+      </SearchFilterButton>
+    </header>
+  </div>
 </template>
 
 <script>
-import { SearchInput } from '@/components/Search'
+import { SearchInput, SearchFilter, SearchFilterButton } from '@/components/Search'
 
 export default {
   name: 'SearchPage',
 
   components: {
-    SearchInput
+    SearchInput,
+    SearchFilter,
+    SearchFilterButton
+  },
+
+  data: () => ({
+    showFilter: false
+  }),
+
+  methods: {
+    toggleFilter () {
+      this.showFilter = !this.showFilter
+    },
+
+    hideFilter () {
+      this.showFilter = false
+    }
   }
 }
 </script>

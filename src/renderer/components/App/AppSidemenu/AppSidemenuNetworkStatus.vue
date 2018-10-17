@@ -1,16 +1,16 @@
 <template>
   <MenuOptions
-    v-click-outside="close"
+    v-click-outside="emitClose"
     class="AppSidemenuNetworkStatus absolute z-10"
   >
-    <div class="AppSidemenuNetworkStatus--peer inline-block mx-8 rounded-l text-white relative">
+    <div class="AppSidemenuNetworkStatus--peer bg-theme-settings-sub inline-block mx-8 rounded-l text-white relative">
       <div class="p-3 inline-block select-none">
         Peer:
         <span v-if="peer">http://{{ peer.ip }}:{{ peer.port }}</span>
         <span v-else>None</span>
       </div>
       <div
-        class="AppSidemenuNetworkStatus__refresh-button absolute pin-t pin-r pin-b cursor-pointer pt-3 pb-2 px-2 rounded bg-grey-lighter"
+        class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b cursor-pointer pt-3 pb-2 px-2 rounded"
         @click="refreshPeer"
       >
         <SvgIcon
@@ -97,7 +97,8 @@ export default {
       await this.$store.dispatch('peer/connectToBest', true)
       this.isRefreshing = false
     },
-    close () {
+
+    emitClose () {
       if (this.outsideClick) {
         this.$emit('close')
       }
@@ -106,21 +107,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .AppSidemenuNetworkStatus {
   width: 380px;
   left: 5.5rem;
 }
-.AppSidemenuNetworkStatus--peer {
-  background-color: var(--theme-settings-sub-background);
-}
-.AppSidemenuNetworkStatus__refresh-button {
-  background-color: var(--theme-settings-button-background);
-}
 .AppSidemenuNetworkStatus--status__height,
 .AppSidemenuNetworkStatus--status__last-checked,
 .AppSidemenuNetworkStatus--status__delay {
-  color: var(--theme-settings-heading-color);
-  border-color: var(--theme-settings-border-color);
+  @apply .text-theme-settings-heading .border-theme-settings-border
 }
 </style>

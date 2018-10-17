@@ -1,6 +1,6 @@
 <template>
   <MenuOptions
-    v-click-outside="close"
+    v-click-outside="emitClose"
     class="AppSidemenuOptionsSettings absolute z-10"
   >
     <MenuOptionsItem
@@ -91,13 +91,16 @@ export default {
     setCurrency (newCurrency) {
       this.sessionCurrency = newCurrency
     },
+
     setTheme (newTheme) {
       this.sessionTheme = newTheme ? 'dark' : 'light'
     },
+
     toggleSelect (name) {
       this.$refs[name].toggle()
     },
-    close () {
+
+    emitClose () {
       if (this.outsideClick) {
         this.$emit('close')
       }

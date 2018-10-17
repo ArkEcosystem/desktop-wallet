@@ -1,11 +1,11 @@
 <template>
   <li
-    class="MenuOptionsItem cursor-pointer"
+    class="MenuOptionsItem text-theme-settings-text cursor-pointer"
     @click="emitClick"
   >
     <div
       :class="$slots['controls'] ? 'border-dashed' : 'border-solid'"
-      class="MenuOptionsItem__container transition flex items-center justify-between mx-10 py-5 border-b"
+      class="MenuOptionsItem__container transition flex items-center justify-between mx-10 py-5 border-b border-theme-settings-border"
     >
       <div class="select-none">
         <slot name="title">
@@ -40,17 +40,11 @@ export default {
 </script>
 
 <style scoped>
-.MenuOptionsItem {
-  color: #a6add5;
-}
 .MenuOptionsItem:hover {
   background-color: #3a4060;
   color: #b3bbe8;
 }
 .MenuOptionsItem:hover > .MenuOptionsItem__container {
   border-color: transparent;
-}
-.MenuOptionsItem__container {
-  border-color: #474d71;
 }
 </style>

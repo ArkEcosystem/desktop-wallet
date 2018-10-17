@@ -79,6 +79,14 @@ let colors = {
   'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
   'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
   'theme-caption-text': 'var(--theme-caption-text)',
+
+  'theme-settings': '#343956',
+  'theme-settings-sub': '#3f4565',
+  'theme-settings-button': '#4e5477',
+  'theme-settings-heading': '#a8acbe',
+  'theme-settings-border': '#444a6d',
+  'theme-settings-text': '#a6add5',
+
   'transparent': 'transparent',
   'inherit': 'inherit',
 

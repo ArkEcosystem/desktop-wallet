@@ -21,7 +21,10 @@ export default {
   },
 
   SEARCH: {
-    DEFAULT_PLACEHOLDER: 'Find transaction, address or delegate'
+    DEFAULT_PLACEHOLDER: 'Find transaction, address or delegate',
+    FILTER: 'Filter',
+    SEARCH_BY: 'Search by',
+    SELECT_OPTION: 'Select an option'
   },
 
   CONTACT_REMOVAL_CONFIRMATION: {
