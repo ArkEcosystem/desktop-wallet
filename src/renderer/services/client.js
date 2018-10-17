@@ -132,7 +132,7 @@ export default class ClientService {
 
           return tx
         })
-        totalCount = data.count
+        totalCount = parseInt(data.count)
       }
     } else {
       // TODO: Add orderBy field in the v2 query params

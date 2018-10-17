@@ -286,6 +286,9 @@ describe('Services > Client', () => {
   })
 
   describe('fetchTransactions', () => {
+    let meta = {
+      count: 3
+    }
     let data = [
       { id: 1, amount: 100000, fee: 10000000, timestamp: { epoch: 47848091, human: '2018-09-26T08:08:11.000Z' }, sender: 'address1', recipient: 'address2' },
       { id: 2, amount: 200000, fee: 10000000, timestamp: { epoch: 47809625, human: '2018-09-25T21:27:05.000Z' }, sender: 'address2', recipient: 'address3' },
@@ -305,7 +308,7 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'transactions') {
             return {
-              all: () => ({ data: { transactions, success: true, count: 3 } })
+              all: () => ({ data: { transactions, success: true, count: meta.count.toString() } })
             }
           }
         }
@@ -316,7 +319,7 @@ describe('Services > Client', () => {
       it('should return only some properties for each transaction', async () => {
         const response = await client.fetchTransactions('address')
         expect(response).toHaveProperty('transactions')
-        expect(response).toHaveProperty('totalCount')
+        expect(response).toHaveProperty('totalCount', meta.count)
 
         const transactions = response.transactions
         expect(transactions).toHaveLength(data.length)
@@ -348,7 +351,7 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'wallets') {
             return {
-              transactions: () => ({ data: { data: transactions, meta: { totalCount: 3 } } })
+              transactions: () => ({ data: { data: transactions, meta: { totalCount: meta.count } } })
             }
           }
         }
@@ -359,7 +362,7 @@ describe('Services > Client', () => {
       it('should return only some properties for each transaction', async () => {
         const response = await client.fetchTransactions('address')
         expect(response).toHaveProperty('transactions')
-        expect(response).toHaveProperty('totalCount')
+        expect(response).toHaveProperty('totalCount', meta.count)
 
         const transactions = response.transactions
         expect(transactions).toHaveLength(data.length)
