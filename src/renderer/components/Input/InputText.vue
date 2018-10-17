@@ -144,6 +144,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.InputText__input {
+  @apply bg-transparent text-theme-page-text
+}
+
 .InputText__input::placeholder {
   @apply .text-transparent
 }
