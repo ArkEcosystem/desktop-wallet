@@ -20,6 +20,10 @@ export default {
     DATE: 'Date'
   },
 
+  SEARCH: {
+    DEFAULT_PLACEHOLDER: 'Find transaction, address or delegate'
+  },
+
   CONTACT_REMOVAL_CONFIRMATION: {
     QUESTION: 'Are you sure you want to remove this contact?'
   },

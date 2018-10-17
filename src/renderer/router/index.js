@@ -16,6 +16,11 @@ const router = new Router({
       component: require('@/pages/Announcements').default
     },
     {
+      path: '/search',
+      name: 'search',
+      component: require('@/pages/Search').default
+    },
+    {
       path: '/contacts/all',
       name: 'contacts',
       component: require('@/pages/Contact/ContactAll').default

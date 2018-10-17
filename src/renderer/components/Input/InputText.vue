@@ -9,22 +9,29 @@
     :is-read-only="isReadOnly"
     class="InputText"
   >
-    <input
-      ref="input"
+    <div
       slot-scope="{ inputClass }"
-      :class="[
-        inputClass,
-        { 'InputText__input--read-only': isReadOnly }
-      ]"
-      :name="name"
-      :disabled="isDisabled || isReadOnly"
-      :type="type"
-      :value="value"
-      v-model="model"
-      class="InputText__input"
-      @focus="onFocus"
-      @blur="onBlur"
+      :class="inputClass"
+      class="flex items-baseline"
     >
+      <slot name="left" />
+      <input
+        ref="input"
+        :class="[{
+          'InputText__input--read-only': isReadOnly,
+          'InputText__input--large': isLarge
+        }]"
+        :name="name"
+        :disabled="isDisabled || isReadOnly"
+        :type="type"
+        :value="value"
+        v-model="model"
+        class="InputText__input flex-1"
+        @focus="onFocus"
+        @blur="onBlur"
+      >
+      <slot name="right" />
+    </div>
   </InputField>
 </template>
 
@@ -61,6 +68,11 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    isLarge: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     isDisabled: {
       type: Boolean,
@@ -134,6 +146,10 @@ export default {
 <style lang="postcss" scoped>
 .InputText__input::placeholder {
   @apply .text-transparent
+}
+
+.InputText__input--large {
+  @apply .text-xl
 }
 
 .InputText__input--read-only {
