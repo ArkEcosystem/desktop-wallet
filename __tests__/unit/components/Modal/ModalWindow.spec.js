@@ -47,7 +47,7 @@ describe('ModalWindow', () => {
     it('should render with a header passed by slot', () => {
       const wrapper = mount(ModalWindow, {
         slots: {
-          footer: '<span>Testing popup component</span>'
+          footer: '<footer>Testing popup component</footer>'
         }
       })
       expect(wrapper.contains('footer')).toBe(true)

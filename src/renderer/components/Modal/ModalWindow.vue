@@ -1,13 +1,12 @@
 <template>
-  <transition
-    name="ModalWindow"
-  >
+  <transition name="ModalWindow">
     <div
       class="ModalWindow__mask fixed z-50 pin-t pin-l table w-full h-full"
       @click="emitClose"
     >
       <div class="flex items-center justify-center absolute pin">
         <div
+          :class="containerClasses"
           class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
           @click.stop="void 0"
         >
@@ -27,7 +26,7 @@
           <section class="px-16 py-16">
 
             <header
-              v-if="$slots['header'] || title"
+              v-if="$slots.header || title"
             >
               <slot name="header">
                 <h2>{{ title }}</h2>
@@ -40,14 +39,14 @@
 
           </section>
 
-          <footer
-            v-if="$slots['footer'] || message"
-            class="ModalWindow__container__footer px-10 py-8 bg-yellow-lighter text-grey-darkest"
-          >
-            <slot name="footer">
+          <slot name="footer">
+            <footer
+              v-if="message"
+              class="ModalWindow__container__footer--warning"
+            >
               <p v-html="message" />
-            </slot>
-          </footer>
+            </footer>
+          </slot>
 
         </div>
       </div>
@@ -60,6 +59,12 @@ export default {
   name: 'ModalWindow',
 
   props: {
+    containerClasses: {
+      type: String,
+      required: false,
+      default: ''
+    },
+
     title: {
       type: String,
       required: false,
@@ -91,5 +96,11 @@ export default {
 .ModalWindow-leave-active {
   opacity: 0;
   transform: scale(1.1);
+}
+</style>
+
+<style>
+.ModalWindow__container__footer--warning {
+  @apply .px-10 .py-8 .bg-yellow-lighter .text-grey-darkest
 }
 </style>

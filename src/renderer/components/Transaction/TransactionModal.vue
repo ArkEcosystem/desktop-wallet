@@ -1,7 +1,7 @@
 <template>
   <ModalWindow
     :title="title || typeName"
-    :message="footer || footerText"
+    container-classes="TransactionModal"
     @close="emitCancel"
   >
     <keep-alive>
@@ -19,7 +19,13 @@
       @back="onBack"
       @confirm="onConfirm"
     />
+
+    <portal-target
+      slot="footer"
+      name="transaction-footer"
+    />
   </ModalWindow>
+
 </template>
 
 <script>
@@ -48,11 +54,6 @@ export default {
       type: String,
       required: false,
       default: null
-    },
-    footer: {
-      type: String,
-      required: false,
-      default: null
     }
   },
 
@@ -66,10 +67,6 @@ export default {
     },
     typeName () {
       return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)
-    },
-    footerText () {
-      const key = `TRANSACTION.FOOTER_TEXT.${this.transactionKey}`
-      return this.$te(key) ? this.$t(key) : null
     }
   },
 
@@ -106,7 +103,7 @@ export default {
         return false
       }
 
-      if (this.$client.__version === 1) {
+      if (this.$client.version === 1) {
         return response.data.success
       } else {
         return response.data.data && response.data.data.invalid.length === 0
@@ -115,3 +112,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.TransactionModal {
+  max-width: 45rem
+}
+</style>

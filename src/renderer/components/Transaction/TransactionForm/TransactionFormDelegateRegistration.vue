@@ -39,6 +39,12 @@
     >
       {{ $t('COMMON.NEXT') }}
     </button>
+
+    <portal to="transaction-footer">
+      <footer class="ModalWindow__container__footer--warning">
+        {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
+      </footer>
+    </portal>
   </form>
 </template>
 
