@@ -19,17 +19,16 @@
         slot-scope="{ isActive }"
         class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6 overflow-hidden"
       >
-        <!-- TODO: use identicon of the wallet -->
-        <img
-          src="https://api.adorable.io/avatars/285/abott@adorable.png"
-          width="50"
-        >
+        <Identicon
+          :size="50"
+          :value="wallet.address"
+        />
         <div
           :class="{
             'text-theme-page-text': isActive,
             'text-theme-page-text-light': !isActive
           }"
-          class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
+          class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden pt-2"
         >
           <span class="truncate block">{{ trimName(wallet.name) }}</span>
           <span v-if="wallet.isContact">({{ $t('COMMON.CONTACT') }})</span>
@@ -50,11 +49,13 @@
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import WalletService from '@/services/wallet'
 import { sortByProp } from '@/components/utils/Sorting'
+import { Identicon } from '@/components/Profile'
 
 export default {
   name: 'WalletSidebar',
 
   components: {
+    Identicon,
     MenuNavigation,
     MenuNavigationItem
   },

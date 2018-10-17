@@ -4,11 +4,10 @@
 
     <div class="WalletAll__grid mt-10 justify-center">
       <div class="WalletAll__grid__wallet flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg">
-        <!-- TODO default identicon -->
-        <div
-          :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png');`"
-          :title="$t('PAGES.WALLET_ALL.CREATE_WALLET')"
-          class="contact-identicon-lg background-image flex cursor-pointer bg-contain opacity-50"
+        <Identicon
+          :size="100"
+          value="default"
+          class="identicon cursor-pointer opacity-50"
         />
         <div class="flex flex-col justify-center overflow-hidden pl-4">
           <router-link :to="{ name: 'wallet-new' }" >
@@ -29,11 +28,10 @@
           :to="{ name: 'wallet-show', params: { address: wallet.id } }"
           class="flex flex-row"
         >
-          <!-- TODO wallet identicon -->
-          <div
-            :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
-            :title="wallet.name"
-            class="wallet-identicon-lg background-image flex cursor-pointer bg-contain"
+          <Identicon
+            :value="wallet.address"
+            :size="100"
+            class="identicon cursor-pointer"
           />
         </router-link>
 
@@ -68,11 +66,13 @@
 <script>
 import { WalletRemovalConfirmation } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
+import { Identicon } from '@/components/Profile'
 
 export default {
   name: 'WalletAll',
 
   components: {
+    Identicon,
     WalletRemovalConfirmation
   },
 
@@ -129,7 +129,7 @@ export default {
 .WalletAll__grid__wallet {
   @apply .p-6
 }
-.WalletAll__grid__wallet:hover .wallet-identicon-lg {
+.WalletAll__grid__wallet:hover .identicon {
   transition: 0.5s;
   opacity: 0.5;
 }

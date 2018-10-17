@@ -11,10 +11,10 @@
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ContactRemovalConfirmation__container__arrow"
       >
-      <div
-        :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
-        :title="contact.name"
-        class="contact-identicon-xl background-image bg-contain"
+      <Identicon
+        :value="contact.address"
+        :size="150"
+        class="identicon cursor-pointer"
       />
       <img
         :title="contact.name"
@@ -27,11 +27,13 @@
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
+import { Identicon } from '@/components/Profile'
 
 export default {
   name: 'ContactRemovalConfirmation',
 
   components: {
+    Identicon,
     ModalConfirmation
   },
 

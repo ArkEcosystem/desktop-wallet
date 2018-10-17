@@ -1,10 +1,10 @@
 <template>
   <div class="flex">
-    <img
-      src="https://api.adorable.io/avatars/285/abott@adorable.png"
-      alt="identicon"
-      class="WalletHeading__identicon w-24 h-24 rounded-full">
-
+    <Identicon
+      :value="address"
+      :size="100"
+      class="WalletHeading__identicon"
+    />
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
         {{ wallet_formatAddress(address) }}
@@ -29,12 +29,14 @@
 <script>
 import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
+import { Identicon } from '@/components/Profile'
 
 export default {
   name: 'WalletHeadingInfo',
 
   components: {
     ButtonClipboard,
+    Identicon,
     SvgIcon
   },
 

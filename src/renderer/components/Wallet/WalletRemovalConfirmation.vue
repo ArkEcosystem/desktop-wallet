@@ -12,10 +12,10 @@
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="WalletRemovalConfirmation__container__arrow"
       >
-      <div
-        :style="`backgroundImage: url('https://api.adorable.io/avatars/285/abott@adorable.png')`"
-        :title="wallet.name"
-        class="wallet-identicon-xl background-image bg-contain"
+      <Identicon
+        :value="wallet.address"
+        :size="150"
+        class="WalletHeading__identicon"
       />
       <img
         :title="wallet.name"
@@ -28,11 +28,13 @@
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
+import { Identicon } from '@/components/Profile'
 
 export default {
   name: 'WalletRemovalConfirmation',
 
   components: {
+    Identicon,
     ModalConfirmation
   },
 
