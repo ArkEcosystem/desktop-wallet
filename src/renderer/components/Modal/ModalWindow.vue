@@ -78,9 +78,23 @@ export default {
     }
   },
 
+  mounted () {
+    document.addEventListener('keyup', this.onEscKey, { once: true })
+  },
+
+  destroyed () {
+    document.removeEventListener('keyup', this.onEscKey)
+  },
+
   methods: {
     emitClose () {
       this.$emit('close')
+    },
+
+    onEscKey (event) {
+      if (event.keyCode === 27) {
+        this.emitClose()
+      }
     }
   }
 }
