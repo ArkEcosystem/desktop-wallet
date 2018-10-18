@@ -31,11 +31,6 @@ const router = new Router({
       component: require('@/pages/Contact/ContactNew').default
     },
     {
-      path: '/networks',
-      name: 'networks',
-      component: require('@/pages/Networks').default
-    },
-    {
       path: '/profiles/new',
       name: 'profile-new',
       component: require('@/pages/Profile/ProfileNew').default
@@ -49,11 +44,6 @@ const router = new Router({
       path: '/profiles',
       name: 'profiles',
       component: require('@/pages/Profile/ProfileAll').default
-    },
-    {
-      path: '/settings',
-      name: 'settings',
-      component: require('@/pages/Settings').default
     },
     {
       path: '/wallet/all',

@@ -271,6 +271,13 @@ export default {
     }
   },
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus()
+      vm.$synchronizer.pause('market')
+    })
+  },
+
   created () {
     this.refreshAddresses()
   },

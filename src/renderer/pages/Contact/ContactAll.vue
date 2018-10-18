@@ -88,6 +88,12 @@ export default {
     }
   },
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus('contacts')
+    })
+  },
+
   methods: {
     hideRemovalConfirmation () {
       this.contactToRemove = null

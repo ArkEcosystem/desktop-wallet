@@ -4,7 +4,6 @@ import Vuelidate from 'vuelidate'
 import VTooltip from 'v-tooltip'
 import VueGoodTablePlugin from 'vue-good-table'
 import PortalVue from 'portal-vue'
-import axios from 'axios'
 import logger from 'electron-log'
 
 import App from './App'
@@ -17,10 +16,10 @@ import directives from './directives'
 
 import apiClient from '@/plugins/api-client'
 import alertEvents from '@/plugins/alert-events'
+import synchronizer from '@/plugins/synchronizer'
 import eventBus from '@/plugins/event-bus'
 
 Vue.config.productionTip = false
-Vue.http = Vue.prototype.$http = axios
 Vue.logger = Vue.prototype.$logger = logger
 Vue.prototype.$eventBus = eventBus
 
@@ -35,6 +34,7 @@ Vue.use(VTooltip, {
 })
 Vue.use(alertEvents)
 Vue.use(apiClient)
+Vue.use(synchronizer)
 Vue.use(PortalVue)
 
 Vue.mixin(mixins)

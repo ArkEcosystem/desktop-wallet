@@ -54,14 +54,28 @@ export default {
         }
       ]
 
-      if (this.session_network.market && this.session_network.market.enabled) {
-        tabs.push({
-          component: 'WalletStatistics',
-          text: this.$t('PAGES.WALLET.STATISTICS')
-        })
-      }
+      // TODO enable when there is something to show
+      // if (this.session_network.market && this.session_network.market.enabled) {
+      //   tabs.push({
+      //     component: 'WalletStatistics',
+      //     text: this.$t('PAGES.WALLET.STATISTICS')
+      //   })
+      // }
 
       return tabs
+    }
+  },
+
+  watch: {
+    currentTab () {
+      switch (this.currentTab) {
+        case 'WalletTransactions':
+          this.$synchronizer.focus('wallets', 'contacts')
+          break
+        case 'WalletDelegates':
+          this.$synchronizer.focus('wallets', 'contacts', 'delegates')
+          break
+      }
     }
   },
 

@@ -31,6 +31,13 @@ export default {
     showFilter: false
   }),
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus()
+      vm.$synchronizer.pause('market')
+    })
+  },
+
   methods: {
     toggleFilter () {
       this.showFilter = !this.showFilter

@@ -73,8 +73,12 @@ export default {
   async beforeRouteEnter (to, from, next) {
     const profiles = await store.getters['profile/all']
 
-    if (profiles.length > 0 || to.name === 'profile-new') {
+    if (to.name === 'profile-new') {
       next()
+    } else if (profiles.length > 0) {
+      next(vm => {
+        vm.$synchronizer.focus('wallets', 'contacts', 'market')
+      })
     } else {
       next({ name: 'profile-new' })
     }

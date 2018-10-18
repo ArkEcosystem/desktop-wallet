@@ -90,6 +90,12 @@ export default {
     step: 1
   }),
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus()
+    })
+  },
+
   methods: {
     async create () {
       const { address } = await this.$store.dispatch('wallet/create', {

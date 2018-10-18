@@ -82,23 +82,18 @@ export default {
    * retrieving the essential data (session and network) from the database
    */
   async created () {
-    await this.loadEssential()
+    await this.$store.dispatch('network/load', config.NETWORKS)
+    await this.$store.dispatch('session/reset')
 
     this.isReady = true
+
+    this.$synchronizer.defineAll()
+    this.$synchronizer.ready()
 
     await this.loadNotEssential()
   },
 
   methods: {
-    /**
-     * Loads the profiles and session
-     * @return {void}
-     */
-    async loadEssential () {
-      await this.$store.dispatch('network/load', config.NETWORKS)
-      await this.$store.dispatch('session/reset')
-    },
-
     /**
      * These data are used in different parts, but loading them should not
      * delay the application
@@ -106,8 +101,6 @@ export default {
      */
     async loadNotEssential () {
       await this.$store.dispatch('timer/start')
-      await this.$store.dispatch('market/load')
-      await this.$store.dispatch('announcements/fetch')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest')
 

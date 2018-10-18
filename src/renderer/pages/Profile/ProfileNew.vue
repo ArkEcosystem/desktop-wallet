@@ -210,6 +210,13 @@ export default {
     this.schema.theme = this.theme
   },
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus()
+      vm.$synchronizer.pause('market')
+    })
+  },
+
   methods: {
     async create () {
       const { id } = await this.$store.dispatch('profile/create', this.schema)

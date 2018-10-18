@@ -89,6 +89,12 @@ export default {
     }
   },
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus('wallets')
+    })
+  },
+
   async created () {
     this.selectableWallets = this.wallets
 

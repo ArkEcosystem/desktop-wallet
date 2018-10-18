@@ -42,7 +42,7 @@ export default {
     },
 
     async fetch ({ commit }) {
-      let items = await feedService.fetchItems(source.rssUrl) // TODO: can move URL into FeedService
+      const items = await feedService.fetchItems(source.rssUrl)
 
       commit('SAVE_ANNOUNCEMENTS', items)
     }

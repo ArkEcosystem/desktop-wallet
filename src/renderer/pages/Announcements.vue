@@ -37,9 +37,12 @@ import { mapGetters } from 'vuex'
 import { AnnouncementsPost } from '@/components/Announcements'
 
 export default {
+  name: 'Announcements',
+
   components: {
     AnnouncementsPost
   },
+
   computed: {
     ...mapGetters({
       readAnnouncements: 'announcements/read',
@@ -51,6 +54,14 @@ export default {
       return unreadSorted.concat(readSorted)
     }
   },
+
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus('announcements')
+      vm.$synchronizer.pause('market')
+    })
+  },
+
   methods: {
     read (announcement) {
       this.$store.dispatch('announcements/markAsRead', announcement)

@@ -256,6 +256,13 @@ export default {
     }
   },
 
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.$synchronizer.focus()
+      vm.$synchronizer.pause('market')
+    })
+  },
+
   beforeDestroy () {
     this.$store.dispatch('session/load')
   },
