@@ -1,5 +1,6 @@
 <template>
   <TransactionTable
+    :current-page="currentPage"
     :transactions="transactions"
     :total-rows="totalCount"
     :is-loading="isLoading"
@@ -24,6 +25,7 @@ export default {
   },
 
   data: () => ({
+    currentPage: 1,
     isLoading: false,
     transactions: [],
     totalCount: 0,
@@ -39,6 +41,7 @@ export default {
 
   watch: {
     wallet_fromRoute () {
+      this.reset()
       this.fetchTransactions()
     }
   },
@@ -73,6 +76,7 @@ export default {
     },
 
     onPageChange ({ currentPage }) {
+      this.currentPage = currentPage
       this.__updateParams({ page: currentPage })
       this.fetchTransactions()
     },
@@ -91,6 +95,13 @@ export default {
         page: 1
       })
       this.fetchTransactions()
+    },
+
+    reset () {
+      this.currentPage = 1
+      this.queryParams.page = 1
+      this.totalCount = 0
+      this.transactions = []
     },
 
     // TODO: Sort remotely

@@ -12,6 +12,7 @@
       :pagination-options="{
         enabled: hasPagination,
         dropdownAllowAll: false,
+        setCurrentPage: currentPage,
         nextLabel: $t('COMMON.NEXT'),
         prevLabel: $t('COMMON.PREV'),
         rowsPerPageLabel: $t('TABLE.ROWS_PER_PAGE'),
@@ -134,6 +135,11 @@ export default {
   },
 
   props: {
+    currentPage: {
+      type: Number,
+      required: false,
+      default: 1
+    },
     transactions: {
       type: Array,
       required: true
