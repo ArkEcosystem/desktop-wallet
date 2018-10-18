@@ -65,6 +65,9 @@ let colors = {
   'theme-feature-item-selected-text': 'var(--theme-feature-item-selected-text)',
   'theme-feature-item-indicator': 'var(--theme-feature-item-indicator)',
 
+  'theme-caption-text': 'var(--theme-caption-text)',
+  'theme-heading-background': 'var(--theme-heading-background)',
+
   'theme-button': 'var(--theme-button)',
   'theme-button-text': 'var(--theme-button-text)',
   'theme-button-light': 'var(--theme-button-light)',
@@ -75,10 +78,10 @@ let colors = {
   'theme-option-button': 'var(--theme-option-button)',
   'theme-option-button-hover': 'var(--theme-option-button-hover)',
   'theme-option-button-text': 'var(--theme-option-button-text)',
-  'theme-heading-background': 'var(--theme-heading-background)',
   'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
   'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
-  'theme-caption-text': 'var(--theme-caption-text)',
+  'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
+  'theme-modal-footer-button-text': 'var(--theme-modal-footer-button-text)',
 
   'theme-settings': '#343956',
   'theme-settings-sub': '#3f4565',

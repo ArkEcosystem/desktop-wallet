@@ -7,15 +7,6 @@
       <Collapse
         :is-open="!isPassphraseStep"
       >
-        <div class="flex flex-row justify-between items-center mb-5">
-          <div class="w-80">{{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}</div>
-
-          <ButtonClipboard
-            :value="secondPassphrase"
-            class="py-2 px-4 rounded bg-theme-button-light text-theme-button-light-text"
-          />
-        </div>
-
         <PassphraseWords :passphrase-words="secondPassphrase.split(' ')" />
 
         <button
@@ -24,13 +15,6 @@
           @click="toggleStep"
         >
           {{ $t('COMMON.NEXT') }}
-        </button>
-        <button
-          type="button"
-          class="blue-button mt-5"
-          @click="generateNewPassphrase"
-        >
-          {{ $t('WALLET_SECOND_SIGNATURE.NEW') }}
         </button>
       </Collapse>
 
@@ -60,6 +44,39 @@
           {{ $t('COMMON.NEXT') }}
         </button>
       </Collapse>
+
+      <portal
+        v-if="!isPassphraseStep"
+        to="transaction-footer"
+      >
+        <footer class="ModalWindow__container__footer--warning flex flex-row">
+
+          <div class="flex w-80">{{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}</div>
+          <div class="flex flex-row justify-around ml-8">
+
+            <div
+              :title="$t('WALLET_SECOND_SIGNATURE.NEW')"
+              class="flex cursor-pointer py-2 px-4 rounded bg-theme-modal-footer-button mr-2"
+              @click="generateNewPassphrase"
+            >
+              <SvgIcon
+                :class="{
+                  'rotate-360': isGenerating
+                }"
+                class="text-theme-modal-footer-button-text mt-1"
+                name="update"
+                view-box="0 0 16 14"
+              />
+            </div>
+
+            <ButtonClipboard
+              :value="secondPassphrase"
+              class="flex py-2 px-4 rounded bg-theme-modal-footer-button text-theme-modal-footer-button-text"
+            />
+          </div>
+
+        </footer>
+      </portal>
     </template>
     <template v-else>
       {{ $t('WALLET_SECOND_SIGNATURE.ALREADY_REGISTERED') }}
@@ -73,6 +90,7 @@ import { ButtonClipboard } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { Collapse } from '@/components/Collapse'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
+import { SvgIcon } from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -100,10 +118,12 @@ export default {
     Collapse,
     PassphraseInput,
     PassphraseVerification,
-    PassphraseWords
+    PassphraseWords,
+    SvgIcon
   },
 
   data: () => ({
+    isGenerating: false,
     isPassphraseStep: false,
     isPassphraseVerified: false,
     secondPassphrase: '',
@@ -134,7 +154,11 @@ export default {
     },
 
     generateNewPassphrase () {
-      this.secondPassphrase = WalletService.generateSecondPassphrase()
+      this.isGenerating = true
+      setTimeout(() => {
+        this.secondPassphrase = WalletService.generateSecondPassphrase()
+        this.isGenerating = false
+      }, 300)
     },
 
     async onSubmit () {
