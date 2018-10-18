@@ -36,24 +36,40 @@
       </ListDividedItem>
 
       <ListDividedItem :label="$t('TRANSACTION.SENDER')">
-        <a
-          href="#"
-          @click.stop="openAddress(transaction.sender)"
+        {{ wallet_formatAddress(transaction.sender) }}
+        <button
+          v-tooltip="{
+            content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
+            trigger: 'hover'
+          }"
+          @click="openAddress(transaction.recipient)"
         >
-          {{ wallet_formatAddress(transaction.sender) }}
-        </a>
+          <SvgIcon
+            name="open-external"
+            view-box="0 0 12 12"
+            class="text-theme-page-text-light"
+          />
+        </button>
       </ListDividedItem>
 
       <ListDividedItem
         v-if="transaction.recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
       >
-        <a
-          href="#"
-          @click.stop="openAddress(transaction.recipient)"
+        {{ wallet_formatAddress(transaction.recipient) }}
+        <button
+          v-tooltip="{
+            content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
+            trigger: 'hover'
+          }"
+          @click="openAddress(transaction.recipient)"
         >
-          {{ wallet_formatAddress(transaction.recipient) }}
-        </a>
+          <SvgIcon
+            name="open-external"
+            view-box="0 0 12 12"
+            class="text-theme-page-text-light"
+          />
+        </button>
       </ListDividedItem>
 
       <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
