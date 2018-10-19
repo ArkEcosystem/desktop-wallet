@@ -3,33 +3,27 @@
     v-click-outside="emitClose"
     class="SearchFilter absolute pin-r text-theme-settings-text"
   >
-    <ul class="SearchFilter__list list-reset flex items-center py-3 px-5">
-      <li>
-        <span class="text-grey-dark text-sm display-block">{{ $t('SEARCH.SEARCH_BY') }}</span>
+    <ul class="SearchFilter__list list-reset flex items-start py-3 px-5">
+      <SearchFilterItem :label="$t('SEARCH.SEARCH_BY')">
         <MenuDropdown
-          :items="['Transaction', 'Delegate']"
+          v-model="currentFilter"
+          :items="filterComponents"
           :placeholder="$t('SEARCH.SELECT_OPTION')"
         >
-          <button
+          <template
             slot="handler"
             slot-scope="handlerProps"
-            class="flex items-center text-theme-settings-text mt-2"
           >
-            <span class="rounded border border-theme-settings-border mr-2">
-              <SvgIcon
-                :class="{
-                  'rotate-vertical': handlerProps.isOpen
-                }"
-                name="arrow-dropdown"
-                view-box="0 0 18 18"
-                class="transition align-middle"
-              />
-            </span>
-            <span class="font-semibold">{{ handlerProps.value || handlerProps.placeholder }}</span>
-          </button>
+            <MenuDropdownAlternativeHandler
+              v-bind="handlerProps"
+              class="text-theme-settings-text"
+            />
+          </template>
         </MenuDropdown>
-      </li>
-      <li>
+      </SearchFilterItem>
+
+      <!-- Placeholder -->
+      <SearchFilterItem v-if="!currentFilter">
         <span class="block py-2">
           <SvgIcon
             name="placeholder"
@@ -37,14 +31,22 @@
             class="text-theme-settings-button"
           />
         </span>
-      </li>
+      </SearchFilterItem>
+
+      <component
+        v-else
+        :is="currentFilter"
+      />
     </ul>
   </MenuOptions>
 </template>
 
 <script>
-import { MenuOptions, MenuDropdown } from '@/components/Menu'
+import { MenuOptions, MenuDropdown, MenuDropdownAlternativeHandler } from '@/components/Menu'
+import SearchFilterItem from './SearchFilterItem'
 import SvgIcon from '@/components/SvgIcon'
+import SearchFilterTransaction from './SearchFilterTransaction'
+import SearchFilterDelegate from './SearchFilterDelegate'
 
 export default {
   name: 'SearchFilter',
@@ -52,26 +54,46 @@ export default {
   components: {
     MenuOptions,
     MenuDropdown,
+    MenuDropdownAlternativeHandler,
+    SearchFilterItem,
+    SearchFilterTransaction,
+    SearchFilterDelegate,
     SvgIcon
+  },
+
+  props: {
+    outsideClick: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+
+  data: () => ({
+    currentFilter: null
+  }),
+
+  computed: {
+    filterComponents () {
+      return {
+        'SearchFilterTransaction': this.$t('TRANSACTION.TRANSACTION'),
+        'SearchFilterDelegate': this.$t('SEARCH.DELEGATE')
+      }
+    }
   },
 
   methods: {
     emitClose () {
-      this.$emit('close')
+      if (this.outsideClick) {
+        this.$emit('close')
+      }
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
-.rotate-vertical {
-  transform: rotate(-180deg);
-}
-
-.SearchFilter__list > li {
-  @apply .px-5 .border-l .border-theme-settings-border
-}
-.SearchFilter__list > li:first-child {
+.SearchFilter__list > .SearchFilterItem:first-child {
   @apply .border-none
 }
 </style>

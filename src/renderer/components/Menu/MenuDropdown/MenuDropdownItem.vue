@@ -26,7 +26,6 @@ export default {
       type: String,
       required: true
     },
-
     isActive: {
       type: Boolean,
       required: false,

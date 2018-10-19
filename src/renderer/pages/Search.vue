@@ -6,7 +6,8 @@
         @click="toggleFilter"
       >
         <SearchFilter
-          v-if="showFilter"
+          v-show="showFilter"
+          :outside-click="showFilter"
           class="-mt-1 mr-5"
           @close="hideFilter"
         />

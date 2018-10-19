@@ -55,31 +55,32 @@ export default {
     MenuDropdownHandler
   },
 
+  model: {
+    prop: 'value',
+    event: 'select'
+  },
+
   props: {
     placeholder: {
       type: String,
       required: false,
       default: null
     },
-
     items: {
       type: [Array, Object],
       required: false,
       default: () => []
     },
-
     value: {
       type: String,
       required: false,
       default: null
     },
-
     position: {
       type: Array,
       required: false,
       default: () => ['0%', '0%']
     },
-
     isDisabled: {
       type: Boolean,
       required: false,
