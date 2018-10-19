@@ -65,7 +65,8 @@
               content: `${$t('TRANSACTION.AMOUNT')}: ${table.formattedRow['amount']}<br>${$t('TRANSACTION.FEE')}: ${formatAmount(table.row.fee)}`,
               html: true,
               classes: 'leading-loose',
-              trigger: 'hover'
+              trigger: 'hover',
+              placement: 'left'
             }"
             class="font-bold mr-2"
           >
