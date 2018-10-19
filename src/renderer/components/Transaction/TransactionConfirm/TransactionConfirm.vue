@@ -17,6 +17,9 @@
         @click="emitConfirm"
       >
         {{ $t('TRANSACTION.SEND') }}
+        <span class="px-2 py-1 bg-theme-button-inner-box rounded">
+          {{ formatter_networkCurrency(totalAmount) }}
+        </span>
       </button>
     </footer>
   </section>
@@ -57,6 +60,12 @@ export default {
     activeComponent: null
   }),
 
+  computed: {
+    totalAmount () {
+      return parseInt(this.transaction.amount) + this.transaction.fee
+    }
+  },
+
   mounted () {
     const component = find(this.$options.components, item => item.transactionType === this.transaction.type)
 
@@ -78,3 +87,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .TransactionConfirm__send-button:hover > span {
+  @apply .bg-blue
+}
+</style>
