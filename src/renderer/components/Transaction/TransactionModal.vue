@@ -21,6 +21,7 @@
     />
 
     <portal-target
+      v-if="step === 0"
       slot="footer"
       name="transaction-footer"
     />
@@ -58,6 +59,7 @@ export default {
   },
 
   data: () => ({
+    step: 0,
     transaction: null
   }),
 
@@ -72,10 +74,12 @@ export default {
 
   methods: {
     onBuilt (transaction) {
+      this.step = 1
       this.transaction = transaction
     },
 
     onBack () {
+      this.step = 0
       this.transaction = null
     },
 
