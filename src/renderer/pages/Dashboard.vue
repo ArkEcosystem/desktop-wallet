@@ -69,19 +69,27 @@ export default {
     }
   },
 
-  // Redirect to the profile creation page unless there is at least 1 profile
-  async beforeRouteEnter (to, from, next) {
-    const profiles = await store.getters['profile/all']
+  /**
+   * Redirect to the profile creation page unless there is at least 1 profile
+   */
+  beforeRouteEnter (to, from, next) {
+    const chooseNext = async () => {
+      const profiles = await store.getters['profile/all']
 
-    if (to.name === 'profile-new') {
-      next()
-    } else if (profiles.length > 0) {
-      next(vm => {
-        vm.$synchronizer.focus('wallets', 'contacts', 'market')
-      })
-    } else {
-      next({ name: 'profile-new' })
+      if (to.name === 'profile-new') {
+        next()
+      } else if (profiles.length > 0) {
+        next(async vm => {
+          vm.$synchronizer.focus('wallets', 'contacts', 'market')
+        })
+      } else {
+        next({ name: 'profile-new' })
+      }
     }
+
+    store._IS_READY
+      ? chooseNext()
+      : store._vm.$root.$on('vuex-persist:ready', chooseNext)
   }
 }
 </script>

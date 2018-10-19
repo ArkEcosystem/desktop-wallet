@@ -4,6 +4,7 @@ import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
 import { pullAll, keys } from 'lodash'
 
+import vuexPersistReady from '@/store/plugins/vuex-persist-ready'
 import AnnouncementsModule from '@/store/modules/announcements'
 import AppModule from '@/store/modules/app'
 import LedgerModule from '@/store/modules/ledger'
@@ -36,7 +37,8 @@ const ignoreModules = [
 ]
 
 const vuexPersist = new VuexPersistence({
-  strictMode: process.env.NODE_ENV !== 'production',
+  // It is necessary to enable the strict mode to watch to mutations, such as `RESTORE_MUTATION`
+  strictMode: true,
   asyncStorage: true,
   key: 'ark-desktop',
   storage: localforage,
@@ -50,6 +52,7 @@ export default new Vuex.Store({
     RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION
   },
   plugins: [
-    vuexPersist.plugin
+    vuexPersist.plugin,
+    vuexPersistReady
   ]
 })
