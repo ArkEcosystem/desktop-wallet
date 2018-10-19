@@ -7,7 +7,7 @@
     />
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
-        {{ wallet_formatAddress(address) }}
+        <span v-tooltip="address">{{ wallet_formatAddress(address) }}</span>
         <SvgIcon
           v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"
           v-if="currentWallet.secondPublicKey"
