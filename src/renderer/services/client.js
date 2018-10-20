@@ -266,13 +266,21 @@ export default class ClientService {
   /**
    * Build a vote transaction
    * @param {Array} votes
+   * @param {String} passphrase
+   * @param {String} secondPassphrase
+   * @param {String} wif
    * @returns {Object}
    */
-  async buildVote ({ votes, passphrase, secondPassphrase }) {
+  async buildVote ({ votes, passphrase, secondPassphrase, wif }) {
     let vote = transactionBuilder
       .vote()
       .votesAsset(votes)
-      .sign(passphrase)
+
+    if (passphrase) {
+      vote = vote.sign(passphrase)
+    } else if (wif) {
+      vote = vote.signWithWif(wif)
+    }
 
     if (secondPassphrase) {
       vote = vote.secondSign(secondPassphrase)
@@ -285,13 +293,20 @@ export default class ClientService {
    * Build a delegate registration transaction
    * @param {String} username
    * @param {String} passphrase
+   * @param {String} secondPassphrase
+   * @param {String} wif
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, passphrase, secondPassphrase }) {
+  async buildDelegateRegistration ({ username, passphrase, secondPassphrase, wif }) {
     let delegateRegistration = transactionBuilder
       .delegateRegistration()
       .usernameAsset(username)
-      .sign(passphrase)
+
+    if (passphrase) {
+      delegateRegistration = delegateRegistration.sign(passphrase)
+    } else if (wif) {
+      delegateRegistration = delegateRegistration.signWithWif(wif)
+    }
 
     if (secondPassphrase) {
       delegateRegistration = delegateRegistration.secondSign(secondPassphrase)
@@ -305,18 +320,24 @@ export default class ClientService {
    * TODO: amount -> convert to arktoshi
    * @param {Number} amount
    * @param {String} recipientId
-   * @param {String} senderPublicKey
    * @param {String} vendorField
    * @param {String} passphrase
+   * @param {String} secondPassphrase
+   * @param {String} wif
    * @returns {Object}
    */
-  async buildTransfer ({ amount, recipientId, vendorField, passphrase, secondPassphrase }) {
+  async buildTransfer ({ amount, recipientId, vendorField, passphrase, secondPassphrase, wif }) {
     let transfer = transactionBuilder
       .transfer()
       .amount(amount)
       .recipientId(recipientId)
       .vendorField(vendorField)
-      .sign(passphrase)
+
+    if (passphrase) {
+      transfer = transfer.sign(passphrase)
+    } else if (wif) {
+      transfer = transfer.signWithWif(wif)
+    }
 
     if (secondPassphrase) {
       transfer = transfer.secondSign(secondPassphrase)
@@ -329,16 +350,21 @@ export default class ClientService {
    * Build a second signature registration transaction.
    * @param {String} passphrase
    * @param {String} secondPassphrase
+   * @param {String} wif
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ passphrase, secondPassphrase }) {
-    const registration = transactionBuilder
+  async buildSecondSignatureRegistration ({ passphrase, secondPassphrase, wif }) {
+    let registration = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)
-      .sign(passphrase)
-      .getStruct()
 
-    return registration
+    if (passphrase) {
+      registration = registration.sign(passphrase)
+    } else if (wif) {
+      registration = registration.signWithWif(wif)
+    }
+
+    return registration.getStruct()
   }
 
   /**

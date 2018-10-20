@@ -12,6 +12,7 @@
         >
 
           <button
+            v-if="allowClose"
             class="absolute pin-t pin-r p-6"
             @click="emitClose"
           >
@@ -75,6 +76,12 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+
+    allowClose: {
+      type: Boolean,
+      requred: false,
+      default: true
     }
   },
 
@@ -88,7 +95,9 @@ export default {
 
   methods: {
     emitClose () {
-      this.$emit('close')
+      if (this.allowClose) {
+        this.$emit('close')
+      }
     },
 
     onEscKey (event) {

@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@arkecosystem/client": "^0.1.9",
-    "@arkecosystem/crypto": "^0.2.0",
+    "@arkecosystem/crypto": "^0.2.1",
     "@arkecosystem/ledger-transport": "^0.1.0",
     "@babel/runtime": "^7.0.0",
     "@ledgerhq/hw-transport-node-hid": "^4.22.0",
@@ -76,6 +76,7 @@
     "async": "^2.6.1",
     "axios": "^0.18.0",
     "bignumber.js": "^7.2.1",
+    "bip38": "^2.0.2",
     "bip39": "^2.5.0",
     "chart.js": "^2.7.2",
     "color": "^3.1.0",
@@ -98,7 +99,8 @@
     "vue-vuelidate-jsonschema": "^0.13.4",
     "vuelidate": "^0.7.4",
     "vuex": "^3.0.1",
-    "vuex-persist": "^1.5.3"
+    "vuex-persist": "^1.5.3",
+    "wif": "^2.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",

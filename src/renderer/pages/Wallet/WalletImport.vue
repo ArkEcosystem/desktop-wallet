@@ -73,6 +73,33 @@
             :is-next-enabled="!$v.step2.$invalid"
             :title="$t('PAGES.WALLET_IMPORT.STEP2.TITLE')"
             @back="moveTo(1)"
+            @next="moveTo(3)"
+          >
+
+            <div class="flex flex-col h-full w-full justify-around">
+
+              <!-- TODO: Warning of storing passphrases even encrypted -->
+              <InputPassword
+                ref="password"
+                v-model="walletPassword"
+                :label="$t('PAGES.WALLET_IMPORT.STEP2.PASSWORD')"
+                :is-required="false"
+                :min-length="8"
+                :is-create="true"
+                class="my-3"
+                name="wallet-password"
+              />
+
+            </div>
+
+          </MenuStepItem>
+
+          <MenuStepItem
+            :step="3"
+            :is-back-visible="true"
+            :is-next-enabled="!$v.step3.$invalid"
+            :title="$t('PAGES.WALLET_IMPORT.STEP3.TITLE')"
+            @back="moveTo(1)"
             @next="importWallet"
           >
 
@@ -81,7 +108,7 @@
               <!-- TODO check duplicate here when db store is available -->
               <InputText
                 v-model="schema.name"
-                :label="$t('PAGES.WALLET_IMPORT.STEP2.NAME')"
+                :label="$t('PAGES.WALLET_IMPORT.STEP3.NAME')"
                 class="my-3"
                 name="name"
               />
@@ -89,7 +116,7 @@
               <!-- TODO check duplicate here when db store is available -->
               <InputText
                 v-model="schema.address"
-                :label="$t('PAGES.WALLET_IMPORT.STEP2.ADDRESS')"
+                :label="$t('PAGES.WALLET_IMPORT.STEP3.ADDRESS')"
                 :is-read-only="true"
                 class="my-3"
                 name="address-placeholder"
@@ -97,8 +124,8 @@
 
               <InputSwitch
                 v-show="!useOnlyAddress"
-                :label="$t('PAGES.WALLET_IMPORT.STEP2.OPERATIONS')"
-                :text="$t('PAGES.WALLET_IMPORT.STEP2.SENDING_ENABLED')"
+                :label="$t('PAGES.WALLET_IMPORT.STEP3.OPERATIONS')"
+                :text="$t('PAGES.WALLET_IMPORT.STEP3.SENDING_ENABLED')"
                 :is-active="schema.isSendingEnabled"
                 class="my-3"
                 @change="setSendingEnabled"
@@ -109,14 +136,20 @@
 
         </MenuStep>
       </div>
+
+      <ModalLoader
+        :message="$t('ENCRYPTION.ENCRYPTING')"
+        :visible="showEncryptLoader"
+      />
     </main>
   </div>
 </template>
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { InputAddress, InputSwitch, InputText } from '@/components/Input'
+import { InputAddress, InputPassword, InputSwitch, InputText } from '@/components/Input'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
+import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
@@ -126,10 +159,12 @@ export default {
 
   components: {
     InputAddress,
+    InputPassword,
     InputSwitch,
     InputText,
     MenuStep,
     MenuStepItem,
+    ModalLoader,
     PassphraseInput
   },
 
@@ -139,7 +174,11 @@ export default {
     ensureEntirePassphrase: false,
     step: 1,
     useOnlyAddress: false,
-    useOnlyPassphrase: false
+    useOnlyPassphrase: false,
+    wallet: {},
+    walletPassword: null,
+    showEncryptLoader: false,
+    bip38Worker: null
   }),
 
   watch: {
@@ -151,6 +190,24 @@ export default {
         this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
       }
     }
+  },
+
+  beforeDestroy () {
+    this.bip38Worker.send('quit')
+  },
+
+  mounted () {
+    if (this.bip38Worker) {
+      this.bip38Worker.send('quit')
+    }
+    this.bip38Worker = this.$bgWorker.bip38()
+    this.bip38Worker.on('message', message => {
+      if (message.bip38key) {
+        this.showEncryptLoader = false
+        this.wallet.passphrase = message.bip38key
+        this.finishCreate()
+      }
+    })
   },
 
   beforeRouteEnter (to, from, next) {
@@ -165,10 +222,28 @@ export default {
       if (this.schema.name === '') {
         this.schema.name = this.schema.address
       }
-      const { address } = await this.$store.dispatch('wallet/create', {
+
+      this.wallet = {
         ...this.schema,
         profileId: this.session_profile.id
-      })
+      }
+
+      if (this.walletPassword && this.walletPassword.length) {
+        this.showEncryptLoader = true
+        this.bip38Worker.send({
+          passphrase: this.wallet.passphrase,
+          password: this.walletPassword,
+          wif: this.session_network.wif
+        })
+      } else {
+        this.wallet.passphrase = null
+
+        this.finishCreate()
+      }
+    },
+
+    async finishCreate () {
+      const { address } = await this.$store.dispatch('wallet/create', this.wallet)
       this.$router.push({ name: 'wallet-show', params: { address } })
     },
 
@@ -193,7 +268,21 @@ export default {
 
   validations: {
     step1: ['schema.address', 'schema.passphrase'],
-    step2: [],
+    step2: ['walletPassword'],
+    step3: [],
+    walletPassword: {
+      isValid (value) {
+        if (!this.walletPassword || !this.walletPassword.length) {
+          return true
+        }
+
+        if (this.$refs.password) {
+          return !this.$refs.password.$v.$invalid
+        }
+
+        return false
+      }
+    },
     schema: {
       address: {
         isRequired (value) {

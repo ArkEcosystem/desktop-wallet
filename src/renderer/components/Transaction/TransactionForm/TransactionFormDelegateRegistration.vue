@@ -1,7 +1,7 @@
 <template>
   <form
     class="TransactionFormDelegateRegistration flex flex-col"
-    @submit.prevent="onSubmit"
+    @submit.prevent
   >
     <div>
       {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
@@ -17,10 +17,18 @@
     />
 
     <PassphraseInput
+      v-if="!currentWallet.passphrase"
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
       :address="currentWallet.address"
       :pub-key-hash="session_network.version"
+    />
+    <InputPassword
+      v-else
+      ref="password"
+      v-model="$v.form.walletPassword.$model"
+      :label="$t('TRANSACTION.PASSWORD')"
+      :is-required="true"
     />
 
     <PassphraseInput
@@ -40,6 +48,12 @@
       {{ $t('COMMON.NEXT') }}
     </button>
 
+    <ModalLoader
+      ref="modalLoader"
+      :message="$t('ENCRYPTION.DECRYPTING')"
+      :visible="showEncryptLoader"
+    />
+
     <portal to="transaction-footer">
       <footer class="ModalWindow__container__footer--warning">
         {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
@@ -49,9 +63,10 @@
 </template>
 
 <script>
-import { TRANSACTION_TYPES } from '@config'
 import { required } from 'vuelidate/lib/validators'
-import { InputText } from '@/components/Input'
+import { TRANSACTION_TYPES } from '@config'
+import { InputPassword, InputText } from '@/components/Input'
+import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletService from '@/services/wallet'
 
@@ -59,6 +74,86 @@ export default {
   name: 'TransactionFormDelegateRegistration',
 
   transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
+
+  components: {
+    InputPassword,
+    InputText,
+    ModalLoader,
+    PassphraseInput
+  },
+
+  data: () => ({
+    form: {
+      username: '',
+      passphrase: '',
+      walletPassword: null
+    },
+    error: null,
+    showEncryptLoader: false,
+    bip38Worker: null
+  }),
+
+  computed: {
+    currentWallet () {
+      return this.wallet_fromRoute
+    }
+  },
+
+  beforeDestroy () {
+    this.bip38Worker.send('quit')
+  },
+
+  mounted () {
+    if (this.bip38Worker) {
+      this.bip38Worker.send('quit')
+    }
+    this.bip38Worker = this.$bgWorker.bip38()
+    this.bip38Worker.on('message', message => {
+      if (message.decodedWif === null) {
+        this.$error('Failed to decrypt passphrase')
+        // this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        this.showEncryptLoader = false
+      } else if (message.decodedWif) {
+        this.form.passphrase = null
+        this.form.wif = message.decodedWif
+        this.showEncryptLoader = false
+        this.submit()
+      }
+    })
+  },
+
+  methods: {
+    onSubmit () {
+      if (this.form.walletPassword && this.form.walletPassword.length) {
+        this.showEncryptLoader = true
+        this.bip38Worker.send({
+          bip38key: this.currentWallet.passphrase,
+          password: this.form.walletPassword,
+          wif: this.session_network.wif
+        })
+      } else {
+        this.submit()
+      }
+    },
+
+    async submit () {
+      let transactionData = {
+        username: this.form.username,
+        passphrase: this.form.passphrase,
+        wif: this.form.wif
+      }
+      if (this.currentWallet.secondPublicKey) {
+        transactionData.secondPassphrase = this.form.secondPassphrase
+      }
+
+      const transaction = await this.$client.buildDelegateRegistration(transactionData)
+      this.emitNext(transaction)
+    },
+
+    emitNext (transaction) {
+      this.$emit('next', transaction)
+    }
+  },
 
   validations: {
     form: {
@@ -77,9 +172,26 @@ export default {
       },
       passphrase: {
         isValid (value) {
+          if (this.currentWallet.passphrase) {
+            return true
+          }
+
           if (this.$refs.passphrase) {
             return !this.$refs.passphrase.$v.$invalid
           }
+          return false
+        }
+      },
+      walletPassword: {
+        isValid (value) {
+          if (!this.form.walletPassword || !this.form.walletPassword.length) {
+            return false
+          }
+
+          if (this.$refs.password) {
+            return !this.$refs.password.$v.$invalid
+          }
+
           return false
         }
       },
@@ -95,45 +207,6 @@ export default {
           return false
         }
       }
-    }
-  },
-
-  components: {
-    InputText,
-    PassphraseInput
-  },
-
-  data: () => ({
-    form: {
-      username: '',
-      passphrase: ''
-    },
-    error: null
-  }),
-
-  computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
-    }
-  },
-
-  methods: {
-    async onSubmit () {
-      let transactionData = {
-        username: this.form.username,
-        passphrase: this.form.passphrase
-      }
-
-      if (this.currentWallet.secondPublicKey) {
-        transactionData['secondPassphrase'] = this.form.secondPassphrase
-      }
-
-      const transaction = await this.$client.buildDelegateRegistration(transactionData)
-      this.emitNext(transaction)
-    },
-
-    emitNext (transaction) {
-      this.$emit('next', transaction)
     }
   }
 }

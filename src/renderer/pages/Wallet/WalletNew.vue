@@ -153,6 +153,33 @@
             :is-next-enabled="!$v.step4.$invalid"
             :title="$t('PAGES.WALLET_NEW.STEP4.TITLE')"
             @back="moveTo(3)"
+            @next="moveTo(5)"
+          >
+
+            <div class="flex flex-col h-full w-full justify-around">
+
+              <!-- TODO: Warning of storing passphrases even encrypted -->
+              <InputPassword
+                ref="password"
+                v-model="walletPassword"
+                :label="$t('PAGES.WALLET_NEW.STEP4.PASSWORD')"
+                :is-required="false"
+                :min-length="8"
+                :is-create="true"
+                class="my-3"
+                name="wallet-password"
+              />
+
+            </div>
+
+          </MenuStepItem>
+
+          <MenuStepItem
+            :step="5"
+            :is-back-visible="true"
+            :is-next-enabled="!$v.step5.$invalid"
+            :title="$t('PAGES.WALLET_NEW.STEP5.TITLE')"
+            @back="moveTo(4)"
             @next="create"
           >
 
@@ -161,14 +188,14 @@
               <!-- TODO check duplicate here when db store is available -->
               <InputText
                 v-model="schema.name"
-                :label="$t('PAGES.WALLET_NEW.STEP4.NAME')"
+                :label="$t('PAGES.WALLET_NEW.STEP5.NAME')"
                 class="my-3"
                 name="name"
               />
 
               <InputField
                 v-if="schema.address"
-                :label="$t('PAGES.WALLET_NEW.STEP4.ADDRESS')"
+                :label="$t('PAGES.WALLET_NEW.STEP5.ADDRESS')"
                 :is-dirty="true"
                 :is-read-only="true"
                 class="InputText my-3"
@@ -194,8 +221,8 @@
 
               <InputSwitch
                 v-model="schema.isSendingEnabled"
-                :label="$t('PAGES.WALLET_NEW.STEP4.OPERATIONS')"
-                :text="$t('PAGES.WALLET_NEW.STEP4.SENDING_ENABLED')"
+                :label="$t('PAGES.WALLET_NEW.STEP5.OPERATIONS')"
+                :text="$t('PAGES.WALLET_NEW.STEP5.SENDING_ENABLED')"
                 class="my-3"
               />
             </div>
@@ -204,6 +231,11 @@
 
         </MenuStep>
       </div>
+
+      <ModalLoader
+        :message="$t('ENCRYPTION.ENCRYPTING')"
+        :visible="showEncryptLoader"
+      />
     </main>
   </div>
 </template>
@@ -212,8 +244,9 @@
 import { flatten } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonClipboard } from '@/components/Button'
-import { InputField, InputSwitch, InputText } from '@/components/Input'
+import { InputField, InputPassword, InputSwitch, InputText } from '@/components/Input'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
+import { ModalLoader } from '@/components/Modal'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
@@ -225,10 +258,12 @@ export default {
   components: {
     ButtonClipboard,
     InputField,
+    InputPassword,
     InputSwitch,
     InputText,
     MenuStep,
     MenuStepItem,
+    ModalLoader,
     PassphraseVerification,
     PassphraseWords,
     SvgIcon
@@ -241,7 +276,10 @@ export default {
     isPassphraseVerified: false,
     ensureEntirePassphrase: false,
     step: 1,
-    wallets: {}
+    wallets: {},
+    walletPassword: null,
+    showEncryptLoader: false,
+    bip38Worker: null
   }),
 
   computed: {
@@ -282,15 +320,51 @@ export default {
     this.refreshAddresses()
   },
 
+  beforeDestroy () {
+    this.bip38Worker.send('quit')
+  },
+
+  mounted () {
+    if (this.bip38Worker) {
+      this.bip38Worker.send('quit')
+    }
+    this.bip38Worker = this.$bgWorker.bip38()
+    this.bip38Worker.on('message', message => {
+      if (message.bip38key) {
+        this.showEncryptLoader = false
+        this.wallet.passphrase = message.bip38key
+        this.finishCreate()
+      }
+    })
+  },
+
   methods: {
-    async create () {
+    create () {
       if (this.schema.name === '') {
         this.schema.name = this.schema.address
       }
-      const { address } = await this.$store.dispatch('wallet/create', {
+
+      this.wallet = {
         ...this.schema,
         profileId: this.session_profile.id
-      })
+      }
+
+      if (this.walletPassword && this.walletPassword.length) {
+        this.showEncryptLoader = true
+        this.bip38Worker.send({
+          passphrase: this.wallet.passphrase,
+          password: this.walletPassword,
+          wif: this.session_network.wif
+        })
+      } else {
+        this.wallet.passphrase = null
+
+        this.finishCreate()
+      }
+    },
+
+    async finishCreate () {
+      const { address } = await this.$store.dispatch('wallet/create', this.wallet)
       this.$router.push({ name: 'wallet-show', params: { address } })
     },
 
@@ -333,10 +407,24 @@ export default {
   validations: {
     step1: ['schema.address'],
     step3: ['isPassphraseVerified'],
-    step4: [],
+    step4: ['walletPassword'],
+    step5: [],
     isPassphraseVerified: {
       required,
       isVerified: value => value
+    },
+    walletPassword: {
+      isValid (value) {
+        if (!this.walletPassword || !this.walletPassword.length) {
+          return true
+        }
+
+        if (this.$refs.password) {
+          return !this.$refs.password.$v.$invalid
+        }
+
+        return false
+      }
     }
   }
 }

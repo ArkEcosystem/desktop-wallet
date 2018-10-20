@@ -37,6 +37,9 @@ export default new BaseModel({
     version: {
       type: 'number'
     },
+    wif: {
+      type: 'number'
+    },
     ports: {
       type: 'object'
     },

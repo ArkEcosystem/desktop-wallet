@@ -34,10 +34,21 @@ export default {
     QUESTION: 'Are you sure you want to remove this contact?'
   },
 
+  ENCRYPTION: {
+    DECRYPTING: 'Decrypting wallet with password...',
+    ENCRYPTING: 'Encrypting wallet with password...',
+    FAILED_DECRYPT: 'Failed to decrypt passphrase'
+  },
+
   VALIDATION: {
     NOT_MATCH: 'The {0} does not match the {1}',
     NOT_VALID: 'The {0} is not valid',
-    REQUIRED: 'The {0} is required'
+    REQUIRED: 'The {0} is required',
+    PASSWORD: {
+      TOO_SHORT: 'Your password must be at least {0} characters long',
+      NUMBERS: 'Your password must contain at least 1 number',
+      SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character'
+    }
   },
 
   LANGUAGES: {
@@ -146,6 +157,12 @@ export default {
     LABEL: 'Passphrase',
     QR: 'Scan the QR code',
     SHOW: 'Show the passphrase'
+  },
+
+  PASSWORD_INPUT: {
+    HIDE: 'Hide the password',
+    LABEL: 'Password',
+    SHOW: 'Show the password'
   },
 
   PASSPHRASE_VERIFICATION: {
@@ -273,10 +290,18 @@ export default {
       },
       STEP2: {
         INSTRUCTIONS: {
+          HEADER: 'Wallet encryption',
+          TEXT: 'Enter a password you would like to use in order to encrypt your passphrase.'
+        },
+        TITLE: '2. Encryption',
+        PASSWORD: 'Wallet password (optional)'
+      },
+      STEP3: {
+        INSTRUCTIONS: {
           HEADER: 'Wallet configuration',
           TEXT: 'Choose a name for you wallet and decide which operations could perform and you are done.'
         },
-        TITLE: '2. Confirmation',
+        TITLE: '3. Confirmation',
         ADDRESS: 'Wallet address',
         NAME: 'Wallet name (optional)',
         OPERATIONS: 'Wallet operations',
@@ -313,10 +338,18 @@ export default {
       },
       STEP4: {
         INSTRUCTIONS: {
+          HEADER: 'Wallet encryption',
+          TEXT: 'Enter a password you would like to use in order to encrypt your passphrase.'
+        },
+        TITLE: '4. Encryption',
+        PASSWORD: 'Wallet password (optional)'
+      },
+      STEP5: {
+        INSTRUCTIONS: {
           HEADER: 'Wallet configuration',
           TEXT: 'Choose a name for you wallet and decide which operations could perform and you are done.'
         },
-        TITLE: '4. Confirmation',
+        TITLE: '5. Confirmation',
         ADDRESS: 'Wallet address',
         NAME: 'Wallet name (optional)',
         OPERATIONS: 'Wallet operations',
@@ -399,6 +432,7 @@ export default {
     VENDOR_FIELD: 'Vendor Field',
     PASSPHRASE: 'Passphrase',
     SECOND_PASSPHRASE: 'Second Passphrase',
+    PASSWORD: 'Encryption Password',
     FEE: 'Fee',
     OPEN_IN_EXPLORER: 'Open in Explorer'
   },

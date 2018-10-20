@@ -1,26 +1,33 @@
-import { mount } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
+import backgroundWorker from '@/plugins/background-worker'
 import WalletNew from '@/pages/Wallet/WalletNew'
 import WalletService from '@/services/wallet'
+
+const localVue = createLocalVue()
+localVue.use(backgroundWorker)
 
 describe('pages > WalletNew', () => {
   const mountPage = () => {
     return mount(WalletNew, {
+      localVue,
       mocks: {
         schema: {},
         $v: {
           step1: {},
           step3: {},
           step4: {},
+          step5: {},
           schema: {
             name: {},
             isSendingEnabled: {}
-          }
+          },
+          model: {}
         }
       }
     })
   }
 
-  it('shoul have the right name', () => {
+  it('should have the right name', () => {
     const wrapper = mountPage()
     expect(wrapper.name()).toEqual('WalletNew')
   })

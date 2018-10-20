@@ -24,8 +24,7 @@ export default new BaseModel({
       maxLength: 120
     },
     passphrase: {
-      type: ['string', 'null'],
-      format: () => null
+      type: ['string', 'null']
     },
     profileId: {},
     publicKey: {

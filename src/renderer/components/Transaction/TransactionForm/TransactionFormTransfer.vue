@@ -1,7 +1,7 @@
 <template>
   <form
     class="flex flex-col"
-    @submit.prevent="onSubmit"
+    @submit.prevent
   >
     <InputAddress
       v-model="$v.form.recipientId.$model"
@@ -50,14 +50,22 @@
     />
 
     <PassphraseInput
+      v-if="!currentWallet.passphrase"
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
-      :address="senderWallet.address"
+      :address="currentWallet.address"
       :pub-key-hash="session_network.version"
+    />
+    <InputPassword
+      v-else
+      ref="password"
+      v-model="$v.form.walletPassword.$model"
+      :label="$t('TRANSACTION.PASSWORD')"
+      :is-required="true"
     />
 
     <PassphraseInput
-      v-if="senderWallet.secondPublicKey"
+      v-if="currentWallet.secondPublicKey"
       ref="secondPassphrase"
       v-model="$v.form.secondPassphrase.$model"
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
@@ -69,18 +77,24 @@
       <button
         :disabled="$v.form.$invalid"
         class="blue-button mt-10"
-        type="submit"
+        @click="onSubmit"
       >
         {{ $t('COMMON.NEXT') }}
       </button>
     </div>
+
+    <ModalLoader
+      :message="$t('ENCRYPTION.DECRYPTING')"
+      :visible="showEncryptLoader"
+    />
   </form>
 </template>
 
 <script>
 import { required, maxLength, numeric } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
-import { InputAddress, InputCurrency, InputSwitch, InputText, InputFee } from '@/components/Input'
+import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
+import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 
 export default {
@@ -91,9 +105,11 @@ export default {
   components: {
     InputAddress,
     InputCurrency,
+    InputPassword,
     InputSwitch,
     InputText,
     InputFee,
+    ModalLoader,
     PassphraseInput
   },
 
@@ -102,10 +118,13 @@ export default {
       amount: '',
       fee: 0,
       passphrase: '',
+      walletPassword: null,
       recipientId: '',
       vendorField: ''
     },
-    isSendAllActive: false
+    isSendAllActive: false,
+    showEncryptLoader: false,
+    bip38Worker: null
   }),
 
   computed: {
@@ -120,15 +139,38 @@ export default {
       return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
     },
     notEnoughBalanceError () {
-      const balance = this.formatter_networkCurrency(this.senderWallet.balance)
+      const balance = this.formatter_networkCurrency(this.currentWallet.balance)
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
     },
     maximumAvailableAmount () {
-      return parseFloat(this.currency_subToUnit(this.senderWallet.balance - this.form.fee))
+      return parseFloat(this.currency_subToUnit(this.currentWallet.balance - this.form.fee))
     },
-    senderWallet () {
+    currentWallet () {
       return this.wallet_fromRoute
     }
+  },
+
+  beforeDestroy () {
+    this.bip38Worker.send('quit')
+  },
+
+  mounted () {
+    if (this.bip38Worker) {
+      this.bip38Worker.send('quit')
+    }
+    this.bip38Worker = this.$bgWorker.bip38()
+    this.bip38Worker.on('message', message => {
+      if (message.decodedWif === null) {
+        this.$error('Failed to decrypt passphrase')
+        // this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        this.showEncryptLoader = false
+      } else if (message.decodedWif) {
+        this.form.passphrase = null
+        this.form.wif = message.decodedWif
+        this.showEncryptLoader = false
+        this.submit()
+      }
+    })
   },
 
   methods: {
@@ -152,15 +194,29 @@ export default {
       }
     },
 
-    async onSubmit () {
+    onSubmit () {
+      if (this.form.walletPassword && this.form.walletPassword.length) {
+        this.showEncryptLoader = true
+        this.bip38Worker.send({
+          bip38key: this.currentWallet.passphrase,
+          password: this.form.walletPassword,
+          wif: this.session_network.wif
+        })
+      } else {
+        this.submit()
+      }
+    },
+
+    async submit () {
       let transactionData = {
         amount: this.currency_unitToSub(this.form.amount),
         recipientId: this.form.recipientId,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
-        fee: this.form.fee
+        fee: this.form.fee,
+        wif: this.form.wif
       }
-      if (this.senderWallet.secondPublicKey) {
+      if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
 
@@ -192,15 +248,33 @@ export default {
       },
       passphrase: {
         isValid (value) {
+          if (this.currentWallet.passphrase) {
+            return true
+          }
+
           if (this.$refs.passphrase) {
             return !this.$refs.passphrase.$v.$invalid
           }
+
+          return false
+        }
+      },
+      walletPassword: {
+        isValid (value) {
+          if (!this.form.walletPassword || !this.form.walletPassword.length) {
+            return false
+          }
+
+          if (this.$refs.password) {
+            return !this.$refs.password.$v.$invalid
+          }
+
           return false
         }
       },
       secondPassphrase: {
         isValid (value) {
-          if (!this.senderWallet.secondPublicKey) {
+          if (!this.currentWallet.secondPublicKey) {
             return true
           }
 

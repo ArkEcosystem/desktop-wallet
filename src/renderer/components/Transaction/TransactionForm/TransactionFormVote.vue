@@ -51,11 +51,19 @@
       :is-open="isPassphraseStep"
     >
       <PassphraseInput
+        v-if="!currentWallet.passphrase"
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
         :pub-key-hash="session_network.version"
         class="mt-5"
+      />
+      <InputPassword
+        v-else
+        ref="password"
+        v-model="$v.form.walletPassword.$model"
+        :label="$t('TRANSACTION.PASSWORD')"
+        :is-required="true"
       />
 
       <PassphraseInput
@@ -76,13 +84,21 @@
         {{ $t('COMMON.NEXT') }}
       </button>
     </Collapse>
+
+    <ModalLoader
+      ref="modalLoader"
+      :message="$t('ENCRYPTION.DECRYPTING')"
+      :visible="showEncryptLoader"
+    />
   </div>
 </template>
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { Collapse } from '@/components/Collapse'
+import { InputPassword } from '@/components/Input'
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
+import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 
 export default {
@@ -90,35 +106,12 @@ export default {
 
   transactionType: TRANSACTION_TYPES.VOTE,
 
-  validations: {
-    form: {
-      passphrase: {
-        isValid (value) {
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-          return false
-        }
-      },
-      secondPassphrase: {
-        isValid (value) {
-          if (!this.currentWallet.secondPublicKey) {
-            return true
-          }
-
-          if (this.$refs.secondPassphrase) {
-            return !this.$refs.secondPassphrase.$v.$invalid
-          }
-          return false
-        }
-      }
-    }
-  },
-
   components: {
+    Collapse,
+    InputPassword,
     ListDivided,
     ListDividedItem,
-    Collapse,
+    ModalLoader,
     PassphraseInput
   },
 
@@ -137,9 +130,12 @@ export default {
   data: () => ({
     isPassphraseStep: false,
     form: {
-      passphrase: ''
+      passphrase: '',
+      walletPassword: null
     },
-    forged: 0
+    forged: 0,
+    showEncryptLoader: false,
+    bip38Worker: null
   }),
 
   computed: {
@@ -150,12 +146,36 @@ export default {
 
   watch: {
     isPassphraseStep () {
-      this.$refs.passphrase.focus()
+      if (!this.currentWallet.passphrase) {
+        this.$refs.passphrase.focus()
+      } else {
+        this.$refs.password.focus()
+      }
     }
+  },
+
+  beforeDestroy () {
+    this.bip38Worker.send('quit')
   },
 
   mounted () {
     this.fetchForged()
+    if (this.bip38Worker) {
+      this.bip38Worker.send('quit')
+    }
+    this.bip38Worker = this.$bgWorker.bip38()
+    this.bip38Worker.on('message', message => {
+      if (message.decodedWif === null) {
+        this.$error('Failed to decrypt passphrase')
+        // this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        this.showEncryptLoader = false
+      } else if (message.decodedWif) {
+        this.form.passphrase = null
+        this.form.wif = message.decodedWif
+        this.showEncryptLoader = false
+        this.submit()
+      }
+    })
   },
 
   methods: {
@@ -178,7 +198,20 @@ export default {
       this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
     },
 
-    async onSubmit () {
+    onSubmit () {
+      if (this.form.walletPassword && this.form.walletPassword.length) {
+        this.showEncryptLoader = true
+        this.bip38Worker.send({
+          bip38key: this.currentWallet.passphrase,
+          password: this.form.walletPassword,
+          wif: this.session_network.wif
+        })
+      } else {
+        this.submit()
+      }
+    },
+
+    async submit () {
       const { publicKey } = this.delegate
       const prefix = this.isVoter ? '-' : '+'
 
@@ -187,11 +220,11 @@ export default {
       ]
       let transactionData = {
         passphrase: this.form.passphrase,
-        votes
+        votes,
+        wif: this.form.wif
       }
-
       if (this.currentWallet.secondPublicKey) {
-        transactionData['secondPassphrase'] = this.form.secondPassphrase
+        transactionData.secondPassphrase = this.form.secondPassphrase
       }
 
       const transaction = await this.$client.buildVote(transactionData)
@@ -201,13 +234,60 @@ export default {
 
     reset () {
       this.isPassphraseStep = false
-      this.$set(this.form, 'passphrase', '')
-      this.$refs.passphrase.reset()
+      if (!this.currentWallet.passphrase) {
+        this.$set(this.form, 'passphrase', '')
+        this.$refs.passphrase.reset()
+      } else {
+        this.$set(this.form, 'walletPassword', '')
+        this.$refs.password.reset()
+      }
       this.$v.$reset()
     },
 
     emitNext (transaction) {
       this.$emit('next', transaction)
+    }
+  },
+
+  validations: {
+    form: {
+      passphrase: {
+        isValid (value) {
+          if (this.currentWallet.passphrase) {
+            return true
+          }
+
+          if (this.$refs.passphrase) {
+            return !this.$refs.passphrase.$v.$invalid
+          }
+          return false
+        }
+      },
+      walletPassword: {
+        isValid (value) {
+          if (!this.form.walletPassword || !this.form.walletPassword.length) {
+            return false
+          }
+
+          if (this.$refs.password) {
+            return !this.$refs.password.$v.$invalid
+          }
+
+          return false
+        }
+      },
+      secondPassphrase: {
+        isValid (value) {
+          if (!this.currentWallet.secondPublicKey) {
+            return true
+          }
+
+          if (this.$refs.secondPassphrase) {
+            return !this.$refs.secondPassphrase.$v.$invalid
+          }
+          return false
+        }
+      }
     }
   }
 }

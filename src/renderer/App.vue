@@ -34,12 +34,17 @@
 
       <AppFooter/>
     </section>
-    <AlertMessage />
 
     <portal-target
       name="modal"
       @change="onPortalChange"
     />
+    <portal-target
+      name="loading"
+      @change="onPortalChange"
+    />
+
+    <AlertMessage />
   </div>
 </template>
 
