@@ -94,35 +94,9 @@ export default {
     }
     this.$eventBus.$on('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.$on('ledger:disconnected', this.ledgerDisconnected)
-
-    const refreshWallet = async wallet => {
-      try {
-        const walletData = await this.$client.fetchWallet(wallet.address)
-        if (walletData) {
-          const updatedWallet = { ...wallet, ...walletData }
-          this.$store.dispatch('wallet/update', updatedWallet)
-        }
-      } catch (error) {
-        this.$logger.error(error)
-        // TODO the error could mean that the wallet isn't on the blockchain yet
-        // this.$error(this.$t('COMMON.FAILED_FETCH', {
-        //   name: 'wallet data',
-        //   msg: error.message
-        // }))
-      }
-    }
-
-    this.timerId = await this.$store.dispatch('timer/subscribe', {
-      callback: () => {
-        this.wallets.forEach(refreshWallet)
-      },
-      interval: 'long',
-      immediate: true
-    })
   },
 
   beforeDestroy () {
-    this.$store.dispatch('timer/unsubscribe', this.timerId)
     this.$eventBus.$off('ledgerWalletsUpdated', this.refreshLedgerWallets)
     this.$eventBus.$off('ledgerDisconnected', this.ledgerDisconnected)
   },

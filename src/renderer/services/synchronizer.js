@@ -125,7 +125,6 @@ export default class Synchronizer {
       focus: { interval: medium }
     }
     this.define('announcements', announcements, () => {
-      // console.log('defined ANNOUNCEMENTS')
       this.$store.dispatch('announcements/fetch')
     })
 
@@ -134,7 +133,6 @@ export default class Synchronizer {
       focus: { interval: block }
     }
     this.define('market', market, () => {
-      // console.log('defined MARKET')
       this.$store.dispatch('market/refreshTicker')
     })
 
@@ -142,9 +140,31 @@ export default class Synchronizer {
       default: { interval: shorter },
       focus: { interval: block }
     }
-    // TODO with transactions
+    // TODO refresh transactions if the balance changes, if not, load them
+    // every n milliseconds, or create new action for transaction
     this.define('wallets', wallets, () => {
-      // console.log('defined WALLETS')
+      const profile = this.scope.session_profile
+      if (profile) {
+        const refresh = async wallet => {
+          try {
+            const walletData = await this.$client.fetchWallet(wallet.address)
+            if (walletData) {
+              const updatedWallet = { ...wallet, ...walletData }
+              this.$store.dispatch('wallet/update', updatedWallet)
+            }
+          } catch (error) {
+            this.$logger.error(error)
+            // TODO the error could mean that the wallet isn't on the blockchain yet
+            // this.$error(this.$t('COMMON.FAILED_FETCH', {
+            //   name: 'wallet data',
+            //   msg: error.message
+            // }))
+          }
+        }
+
+        const wallets = this.$store.getters['wallet/byProfileId'](profile.id)
+        wallets.forEach(refresh)
+      }
     })
 
     const contacts = wallets
