@@ -69,6 +69,7 @@ export default {
 
   MARKET_CHART: {
     TODAY: 'Today',
+    TODAY_AT: 'Today at {hour}',
     WEEK: {
       LONG: {
         FRI: 'Friday',
@@ -88,7 +89,8 @@ export default {
         THU: 'THU',
         WED: 'WED'
       }
-    }
+    },
+    YESTERDAY_AT: 'Yesterday at {hour}'
   },
 
   MARKET_CHART_HEADER: {

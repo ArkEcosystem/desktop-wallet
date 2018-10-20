@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
 import cryptoCompare from '@/services/crypto-compare'
 
@@ -158,12 +159,45 @@ export default {
               }
             }
           ]
+        },
+        tooltips: {
+          displayColors: false,
+          callbacks: {
+            label: (item, data) => {
+              return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
+            },
+            title: (items, data) => {
+              const { index } = items[0]
+              const values = data.datasets[0].data
+              let title = items[0].xLabel
+
+              if (this.period === 'day') {
+                const midnight = data.labels.indexOf('00:00')
+                if (index < midnight) {
+                  return this.$t('MARKET_CHART.YESTERDAY_AT', { hour: title })
+                }
+                return this.$t('MARKET_CHART.TODAY_AT', { hour: title })
+              } else if (index === values.length - 1) {
+                return this.$t('MARKET_CHART.TODAY')
+              } else if (this.period === 'week') {
+                return this.$t(`MARKET_CHART.WEEK.LONG.${title.toUpperCase()}`)
+              } else {
+                const days = values.length
+                const today = dayjs()
+                today.date(values[days - 1])
+                title = today.subtract(days - index - 1, 'day')
+                return this.$d(title)
+              }
+            }
+          }
         }
       }
 
       this.chartData = {
         labels: response.labels,
         datasets: [{
+          // Do not show the points, but enable a big target for the tooltip
+          pointHitRadius: 12,
           pointRadius: 0,
           borderWidth: 3,
           type: 'line',
