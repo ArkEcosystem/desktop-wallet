@@ -40,7 +40,7 @@ export default {
   }),
 
   watch: {
-    wallet_fromRoute () {
+    'wallet_fromRoute.id' () {
       this.reset()
       this.fetchTransactions()
     }
