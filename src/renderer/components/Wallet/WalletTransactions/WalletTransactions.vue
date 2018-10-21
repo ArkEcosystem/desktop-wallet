@@ -53,6 +53,7 @@ export default {
   methods: {
     async fetchTransactions () {
       if (!this.wallet_fromRoute) return
+      if (this.isLoading) return // If we're already fetching, it's unneccessary to fetch again
 
       try {
         this.isLoading = true
