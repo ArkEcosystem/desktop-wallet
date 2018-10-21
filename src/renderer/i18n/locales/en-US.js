@@ -471,7 +471,8 @@ export default {
     UNVOTE: 'Unvote',
     VOTES: 'Votes',
     VOTE: 'Vote',
-    USERNAME_ERROR: 'No special characters or uppercase allowed'
+    USERNAME_ERROR: 'No special characters or uppercase allowed',
+    ALREADY_REGISTERED: 'This wallet is already registered as a delegate'
   },
 
   WALLET_RENAME: {

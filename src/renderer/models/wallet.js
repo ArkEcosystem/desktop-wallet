@@ -36,6 +36,10 @@ export default new BaseModel({
     isContact: {
       type: ['boolean'],
       default: false
+    },
+    isDelegate: {
+      type: 'boolean',
+      default: false
     }
   },
   required: ['address', 'isSendingEnabled', 'name', 'profileId']

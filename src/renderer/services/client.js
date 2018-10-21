@@ -181,12 +181,12 @@ export default class ClientService {
     if (this.__version === 2) {
       const { data } = await this.client.resource('wallets').get(address)
       walletData = data.data
-      delete walletData.isDelegate
     } else {
       const { data } = await this.client.resource('accounts').get(address)
       if (data.success) {
         const { account } = data
         walletData = account
+        walletData.isDelegate = walletData.username !== null
         delete walletData.unconfirmedBalance
         delete walletData.unconfirmedSignature
         delete walletData.secondSignature

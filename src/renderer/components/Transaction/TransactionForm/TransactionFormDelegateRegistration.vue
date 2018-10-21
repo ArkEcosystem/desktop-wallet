@@ -3,62 +3,67 @@
     class="TransactionFormDelegateRegistration flex flex-col"
     @submit.prevent
   >
-    <div>
-      {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
-    </div>
+    <template v-if="!currentWallet.isDelegate">
+      <div>
+        {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
+      </div>
 
-    <InputText
-      v-model="$v.form.username.$model"
-      :helper-text="error"
-      :label="$t('WALLET_DELEGATES.USERNAME')"
-      :is-invalid="$v.form.username.$dirty && $v.form.username.$invalid"
-      class="mb-5"
-      name="username"
-    />
+      <InputText
+        v-model="$v.form.username.$model"
+        :helper-text="error"
+        :label="$t('WALLET_DELEGATES.USERNAME')"
+        :is-invalid="$v.form.username.$dirty && $v.form.username.$invalid"
+        class="mb-5"
+        name="username"
+      />
 
-    <PassphraseInput
-      v-if="!currentWallet.passphrase"
-      ref="passphrase"
-      v-model="$v.form.passphrase.$model"
-      :address="currentWallet.address"
-      :pub-key-hash="session_network.version"
-    />
-    <InputPassword
-      v-else
-      ref="password"
-      v-model="$v.form.walletPassword.$model"
-      :label="$t('TRANSACTION.PASSWORD')"
-      :is-required="true"
-    />
+      <PassphraseInput
+        v-if="!currentWallet.passphrase"
+        ref="passphrase"
+        v-model="$v.form.passphrase.$model"
+        :address="currentWallet.address"
+        :pub-key-hash="session_network.version"
+      />
+      <InputPassword
+        v-else
+        ref="password"
+        v-model="$v.form.walletPassword.$model"
+        :label="$t('TRANSACTION.PASSWORD')"
+        :is-required="true"
+      />
 
-    <PassphraseInput
-      v-if="currentWallet.secondPublicKey"
-      ref="secondPassphrase"
-      v-model="$v.form.secondPassphrase.$model"
-      :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-      :pub-key-hash="session_network.version"
-      class="mt-5"
-    />
+      <PassphraseInput
+        v-if="currentWallet.secondPublicKey"
+        ref="secondPassphrase"
+        v-model="$v.form.secondPassphrase.$model"
+        :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
+        :pub-key-hash="session_network.version"
+        class="mt-5"
+      />
 
-    <button
-      :disabled="$v.form.$invalid"
-      class="blue-button mt-10 ml-0"
-      @click="onSubmit"
-    >
-      {{ $t('COMMON.NEXT') }}
-    </button>
+      <button
+        :disabled="$v.form.$invalid"
+        class="blue-button mt-10 ml-0"
+        @click="onSubmit"
+      >
+        {{ $t('COMMON.NEXT') }}
+      </button>
 
-    <ModalLoader
-      ref="modalLoader"
-      :message="$t('ENCRYPTION.DECRYPTING')"
-      :visible="showEncryptLoader"
-    />
+      <ModalLoader
+        ref="modalLoader"
+        :message="$t('ENCRYPTION.DECRYPTING')"
+        :visible="showEncryptLoader"
+      />
 
-    <portal to="transaction-footer">
-      <footer class="ModalWindow__container__footer--warning">
-        {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
-      </footer>
-    </portal>
+      <portal to="transaction-footer">
+        <footer class="ModalWindow__container__footer--warning">
+          {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
+        </footer>
+      </portal>
+    </template>
+    <template v-else>
+      {{ $t('WALLET_DELEGATES.ALREADY_REGISTERED') }}
+    </template>
   </form>
 </template>
 

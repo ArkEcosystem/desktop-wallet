@@ -39,7 +39,8 @@ describe('Services > Client', () => {
       data: {
         data: {
           ...data,
-          isDelegate: 'NO'
+          isDelegate: true,
+          username: 'test'
         }
       }
     }
@@ -83,6 +84,7 @@ describe('Services > Client', () => {
         expect(wallet).toHaveProperty('address', data.address)
         expect(wallet).toHaveProperty('balance', parseInt(data.balance))
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
+        expect(wallet).toHaveProperty('isDelegate', true)
         expect(wallet).not.toHaveProperty('unconfirmedBalance')
         expect(wallet).not.toHaveProperty('unconfirmedSignature')
         expect(wallet).not.toHaveProperty('secondSignature')
@@ -101,7 +103,7 @@ describe('Services > Client', () => {
         expect(wallet).toHaveProperty('address', data.address)
         expect(wallet).toHaveProperty('balance', parseInt(data.balance))
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
-        expect(wallet).not.toHaveProperty('isDelegate')
+        expect(wallet).toHaveProperty('isDelegate', true)
       })
     })
   })
