@@ -265,6 +265,10 @@ export default {
       },
       walletPassword: {
         isValid (value) {
+          if (!this.currentWallet.passphrase) {
+            return true
+          }
+
           if (!this.form.walletPassword || !this.form.walletPassword.length) {
             return false
           }
