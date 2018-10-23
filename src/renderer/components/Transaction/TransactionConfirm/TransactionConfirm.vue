@@ -89,7 +89,11 @@ export default {
 </script>
 
 <style scoped>
-  .TransactionConfirm__send-button:hover > span {
+.TransactionConfirm__send-button:hover > span {
   @apply .bg-blue
+}
+.TransactionConfirm__send-button,
+.TransactionConfirm__send-button > span {
+  transition: background-color 0.5s;
 }
 </style>
