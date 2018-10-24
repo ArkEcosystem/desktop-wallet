@@ -22,6 +22,7 @@
         <Identicon
           :size="50"
           :value="wallet.address"
+          class="WalletSidebar__wallet__identicon"
         />
         <div
           :class="{
@@ -145,14 +146,14 @@ export default {
 .WalletSidebar--full .WalletSidebar__wallet__wrapper {
   @apply .border-b .border-theme-feature-item-alternative
 }
-.WalletSidebar--full .WalletSidebar__wallet img {
-  @apply .mr-3
+.WalletSidebar--full .WalletSidebar__wallet__identicon {
+  @apply .mr-2
 }
 
 .WalletSidebar--basic .WalletSidebar__wallet__wrapper {
   @apply .flex-col .justify-center
 }
-.WalletSidebar--basic .WalletSidebar__wallet img {
-  @apply .mb-3
+.WalletSidebar--basic .WalletSidebar__wallet__identicon {
+  @apply .mb-2
 }
 </style>
