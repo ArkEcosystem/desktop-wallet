@@ -75,8 +75,8 @@
           </span>
           <span
             :class="{
-              'text-red bg-red-lightest': table.row.isSender,
-              'text-green bg-green-lightest': !table.row.isSender
+              'text-theme-transaction-sent-arrow bg-theme-transaction-sent': table.row.isSender,
+              'text-theme-transaction-received-arrow bg-theme-transaction-received': !table.row.isSender
             }"
             class="rounded-full h-6 w-6 flex items-center justify-center"
           >

@@ -54,6 +54,10 @@ let colors = {
   'theme-line-separator': 'var(--theme-line-separator)',
 
   'theme-table-row-hover': 'var(--theme-table-row-hover)',
+  'theme-transaction-sent': 'var(--theme-transaction-sent)',
+  'theme-transaction-sent-arrow': 'var(--theme-transaction-sent-arrow)',
+  'theme-transaction-received': 'var(--theme-transaction-received)',
+  'theme-transaction-received-arrow': 'var(--theme-transaction-received-arrow)',
 
   'theme-feature': 'var(--theme-feature)',
   'theme-feature-item-text': 'var(--theme-feature-item-text)',
