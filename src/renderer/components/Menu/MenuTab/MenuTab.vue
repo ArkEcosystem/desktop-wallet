@@ -1,5 +1,5 @@
 <template>
-  <div class="MenuTab bg-theme-feature rounded-b-lg overflow-hidden">
+  <div class="MenuTab bg-theme-feature overflow-hidden">
     <nav class="MenuTab__nav bg-theme-feature-item-alternative text-theme-feature-item-alternative-text">
       <div class="inline-flex justify-start items-center">
         <button

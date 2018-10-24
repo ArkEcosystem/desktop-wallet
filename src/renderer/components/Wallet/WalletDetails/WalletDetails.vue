@@ -3,7 +3,7 @@
     <WalletHeading class="sticky pin-t z-10" />
     <MenuTab
       v-model="currentTab"
-      class="flex-1 overflow-y-auto"
+      class="flex-1 overflow-y-auto rounded-bl-lg"
     >
       <MenuTabItem
         v-for="tab in tabs"
