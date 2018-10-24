@@ -23,6 +23,7 @@
 
 <script>
 import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '@/components/Wallet'
+import WalletSignVerify from '@/components/Wallet/WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 
 export default {
@@ -30,6 +31,7 @@ export default {
     WalletHeading,
     WalletTransactions,
     WalletDelegates,
+    WalletSignVerify,
     WalletStatistics,
     MenuTab,
     MenuTabItem
@@ -51,6 +53,10 @@ export default {
         {
           component: 'WalletDelegates',
           text: this.$t('PAGES.WALLET.DELEGATES')
+        },
+        {
+          component: 'WalletSignVerify',
+          text: this.$t('PAGES.WALLET.SIGN_VERIFY')
         }
       ]
 
@@ -74,6 +80,9 @@ export default {
           break
         case 'WalletDelegates':
           this.$synchronizer.focus('wallets', 'contacts', 'delegates')
+          break
+        case 'WalletSignVerify':
+          // TODO
           break
       }
     }

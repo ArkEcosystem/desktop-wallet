@@ -1,0 +1,132 @@
+<template>
+  <div class="mx-4 overflow-hidden">
+    <div class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator">
+      <Identicon
+        :value="currentWallet.address"
+        :size="75"
+      />
+      <div class="flex flex-col justify-center ml-2">
+        <span class="font-bold">{{ $t('SIGN_VERIFY.VERIFY_WALLET') }}</span>
+        <span>{{ $t('SIGN_VERIFY.VERIFY_BY_SIGNING') }}</span>
+      </div>
+      <div class="flex flex-col justify-center ml-4">
+        <ButtonModal
+          :label="$t('SIGN_VERIFY.SIGN')"
+          class="blue-button px-4"
+        >
+          <WalletSignModal
+            slot-scope="{ toggle }"
+            :wallet="currentWallet"
+            @cancel="toggle"
+            @signed="toggle"
+          />
+        </ButtonModal>
+      </div>
+      <div class="flex flex-col justify-center">
+        <ButtonModal
+          :label="$t('SIGN_VERIFY.VERIFY')"
+          class="blue-button px-4"
+        >
+          <WalletVerifyModal
+            slot-scope="{ toggle }"
+            :wallet="currentWallet"
+            @cancel="toggle"
+          />
+        </ButtonModal>
+      </div>
+    </div>
+    <div
+      v-for="message in signedMessages"
+      :key="message.timestamp"
+      class="WalletSignVerify__message flex flex-row justify-between py-5 border-b border-dashed border-theme-line-separator"
+      @mouseover="showTimestamp = message.timestamp"
+      @mouseout="showTimestamp = null"
+    >
+      <div class="flex flex-row">
+        <div class="font-semibold text-theme-page-text-light mr-6">
+          <div>{{ $t('SIGN_VERIFY.MESSAGE') }}:</div>
+          <div>{{ $t('SIGN_VERIFY.SIGNATURE') }}:</div>
+        </div>
+        <div>
+          <div>{{ message.message }}</div>
+          <div>{{ truncate(message.signature, 50) }}</div>
+        </div>
+      </div>
+      <div v-show="showTimestamp === message.timestamp">
+        <ButtonClipboard
+          :value="copyMessage(message)"
+          class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
+        />
+        <button
+          v-tooltip="{ content: $t('SIGN_VERIFY.DELETE'), trigger:'hover' }"
+          class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
+          @click="deleteMessage(message)"
+        >
+          <SvgIcon
+            name="delete-wallet"
+            view-box="0 0 13 13"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { ButtonClipboard, ButtonModal } from '@/components/Button'
+import { Identicon } from '@/components/Profile'
+import { WalletSignModal, WalletVerifyModal } from '@/components/Wallet'
+import SvgIcon from '@/components/SvgIcon'
+import { clone } from 'lodash'
+
+export default {
+  name: 'WalletSignVerify',
+
+  components: {
+    ButtonClipboard,
+    ButtonModal,
+    Identicon,
+    SvgIcon,
+    WalletSignModal,
+    WalletVerifyModal
+  },
+
+  props: {
+  },
+
+  data: () => ({
+    showTimestamp: null
+  }),
+
+  computed: {
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
+    signedMessages () {
+      return this.$store.getters['wallet/signedMessages'](this.currentWallet.address)
+    }
+  },
+
+  methods: {
+    truncate (value, length) {
+      return `${value.slice(0, length)}...`
+    },
+    copyMessage (value) {
+      var message = clone(value, false)
+      delete message['timestamp']
+      delete message['address']
+      return JSON.stringify(message)
+    },
+    deleteMessage (value) {
+      var message = clone(value, false)
+      this.$store.dispatch('wallet/deleteSignedMessage', message)
+    }
+  }
+}
+</script>
+
+<style>
+.WalletSignVerify__message:hover {
+  @apply bg-theme-table-row-hover
+}
+</style>

@@ -267,7 +267,8 @@ export default {
     WALLET: {
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
-      STATISTICS: 'Statistics'
+      STATISTICS: 'Statistics',
+      SIGN_VERIFY: 'Sign'
     },
 
     WALLET_ALL: {
@@ -435,6 +436,25 @@ export default {
     PASSWORD: 'Encryption Password',
     FEE: 'Fee',
     OPEN_IN_EXPLORER: 'Open in Explorer'
+  },
+
+  SIGN_VERIFY: {
+    VERIFY_WALLET: 'Verify your wallet',
+    VERIFY_BY_SIGNING: 'Sign a message to verify you own the wallet',
+    SIGN: 'Sign',
+    VERIFY: 'Verify',
+    TITLE_SIGN: 'Sign a message',
+    TITLE_VERIFY: 'Verify a message',
+    MESSAGE: 'Message',
+    ADDRESS: 'Address',
+    PUBLIC_KEY: 'Public key',
+    SIGNATURE: 'Signature',
+    JSON_MESSAGE: 'Signed message content',
+    FORMAT_FOOTER: 'Format (JSON): { "publickey": "...", "signature": "...", "message": "..." }',
+    VERIFIED: 'The message is verified successfully',
+    NOT_VERIFIED: 'The message is NOT verified',
+    CONFIRMATION: 'Confirmation',
+    DELETE: 'Delete message'
   },
 
   TRANSACTION_FORM: {

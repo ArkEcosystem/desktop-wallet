@@ -1,5 +1,5 @@
 import bip39 from 'bip39'
-import { crypto, validator } from '@arkecosystem/crypto'
+import { crypto, Message, validator } from '@arkecosystem/crypto'
 
 export default class WalletService {
   /*
@@ -26,7 +26,7 @@ export default class WalletService {
 
   /**
    * Returns the address that correspond to a passphrase
-   * @param {String} passhrase
+   * @param {String} passphrase
    * @param {Number} pubKeyHash - also known as address or network version
    * @return {String}
    */
@@ -34,6 +34,25 @@ export default class WalletService {
     const publicKey = crypto.getKeys(passphrase).publicKey
     return crypto.getAddress(publicKey, pubKeyHash)
   }
+
+  static getAddressFromPublicKey (publicKey, pubKeyHash) {
+    return crypto.getAddress(publicKey, pubKeyHash)
+  }
+
+  /**
+   * Signs a message by using the given passphrase
+   */
+  static signMessage (message, passphrase) {
+    return Message.sign(message, passphrase)
+  }
+
+  /**
+   * Verify a given message based on the given public key and signature
+   */
+  static verifyMessage (message, publicKey, signature) {
+    return Message.verify({ message, publicKey, signature })
+  }
+
   /**
    * Check that an address is valid.
    * @param {Number} pubKeyHash - also known as address or network version
