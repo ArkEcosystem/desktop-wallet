@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style scoped>
-.ContactRemovalConfirmation >>> .ModalConfirmation__container {
+.ContactRemovalConfirmation /deep/ .ModalConfirmation__container {
   min-width: calc(var(--contact-identicon-xl) + 74px * 2);
   max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
 }

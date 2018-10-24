@@ -140,7 +140,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.WalletSidebar--full .WalletSidebar__wallet >>> .MenuNavigationItem__border {
+.WalletSidebar--full .WalletSidebar__wallet /deep/ .MenuNavigationItem__border {
   @apply .hidden
 }
 .WalletSidebar--full .WalletSidebar__wallet__wrapper {

@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style scoped>
-.ProfileRemovalConfirmation >>> .ModalConfirmation__container {
+.ProfileRemovalConfirmation /deep/ .ModalConfirmation__container {
   min-width: calc(var(--profile-avatar-xl) + 74px * 2);
   max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 50px)
 }

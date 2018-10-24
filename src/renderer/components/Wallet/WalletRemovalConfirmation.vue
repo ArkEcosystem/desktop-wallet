@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style scoped>
-.WalletRemovalConfirmation >>> .ModalConfirmation__container {
+.WalletRemovalConfirmation /deep/ .ModalConfirmation__container {
   min-width: calc(var(--wallet-identicon-xl) + 74px * 2);
   max-width: calc(var(--wallet-identicon-xl) + 74px * 2 + 50px)
 }

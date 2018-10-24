@@ -95,13 +95,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.WalletDetails >>> .MenuTab {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.WalletDetails >>> .MenuTab > .MenuTab__nav {
+.WalletDetails /deep/ .MenuTab > .MenuTab__nav {
   @apply .sticky .pin-t .z-10;
 }
 </style>

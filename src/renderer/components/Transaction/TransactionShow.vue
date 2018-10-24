@@ -144,7 +144,7 @@ export default {
 </script>
 
 <style scoped>
-.TransactionShow >>> .ModalWindow__container {
+.TransactionShow /deep/ .ModalWindow__container {
   min-width: 35rem
 }
 </style>

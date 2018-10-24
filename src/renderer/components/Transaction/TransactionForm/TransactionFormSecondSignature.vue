@@ -281,7 +281,7 @@ export default {
   min-width: 25em;
 }
 
-.TransactionFormSecondSignature >>> .Collapse__handler {
+.TransactionFormSecondSignature /deep/ .Collapse__handler {
   display: none
 }
 </style>

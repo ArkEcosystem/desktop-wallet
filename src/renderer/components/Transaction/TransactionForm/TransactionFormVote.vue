@@ -302,7 +302,7 @@ export default {
   min-width: 25em;
 }
 
-.TransactionFormVote >>> .Collapse__handler {
+.TransactionFormVote /deep/ .Collapse__handler {
   display: none
 }
 </style>

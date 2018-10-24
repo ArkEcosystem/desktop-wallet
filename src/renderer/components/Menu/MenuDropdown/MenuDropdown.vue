@@ -132,7 +132,7 @@ export default {
 </script>
 
 <style scoped>
-.MenuDropdown >>> .MenuDropdownItem:last-child .MenuDropdownItem__container {
+.MenuDropdown /deep/ .MenuDropdownItem:last-child .MenuDropdownItem__container {
   border: none;
 }
 </style>

@@ -30,14 +30,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .PassphraseWords {
   display: grid;
   grid-template-columns: repeat(4, 4.5rem);
   grid-gap: 1rem;
 }
 
-.PassphraseWords >>> .InputText__input[disabled] {
+.PassphraseWords /deep/ .InputText__input[disabled] {
   @apply .bg-transparent
 }
 </style>
