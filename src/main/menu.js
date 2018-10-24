@@ -16,7 +16,10 @@ const template = [
       { type: 'separator' },
       { role: 'cut' },
       { role: 'copy' },
-      { role: 'paste' }
+      { role: 'paste' },
+      { role: 'pasteandmatchstyle' },
+      { role: 'delete' },
+      { role: 'selectall' }
     ]
   },
   {
