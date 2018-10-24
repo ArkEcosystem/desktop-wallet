@@ -1,31 +1,41 @@
-import { flatten, includes, isFunction, pullAll, throttle } from 'lodash'
+import { flatten, includes, isFunction, pullAll } from 'lodash'
 
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
  *
  * Each mode has an interval configuration that establishes the delay until the
- * next update.
+ * next update:
+ *  - `focus` should be used on sections that display that kind of data to users
+ *  - `default` should be used to check if new data is available
+ *
+ * There is also a way to pause and unpause the synchronization that is useful
+ * for not executing actions when the users do not need fresh data.
  */
 export default class Synchronizer {
   get intervals () {
-    const intervals = {
-      longest: 20 * 60 * 1000,
-      longer: 6 * 60 * 1000,
-      medium: 2 * 60 * 1000,
-      shorter: 30 * 1000,
-      block: 8 * 1000, // ARK block production time
-      shortest: 1000 // Not used yet
-    }
+    // ARK block production time
+    const block = 8000
 
-    // Number of milliseconds to wait to evaluate which actions should be run
-    intervals.loop = intervals.shortest
+    const intervals = {
+      longest: block * 300,
+      longer: block * 100,
+      medium: block * 25,
+      shorter: block * 4,
+      block,
+      // Number of milliseconds to wait to evaluate which actions should be run
+      loop: block
+    }
 
     return intervals
   }
 
   get $client () {
     return this.scope.$client
+  }
+
+  get $logger () {
+    return this.scope.$logger
   }
 
   get $store () {
@@ -53,22 +63,19 @@ export default class Synchronizer {
     if (!isFunction(actionFn)) {
       throw new Error('[$synchronizer] action is not a function')
     }
-
-    this.actions[actionId] = {
-      config,
-      action: actionFn,
-      dispatchers: {}
-    }
-
     ;['default', 'focus'].forEach(mode => {
       const { interval } = config[mode]
-
       if (!interval) {
-        throw new Error('[$synchronizer] `interval` should be a number bigger than 0')
+        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a number bigger than 0`)
       }
-
-      this.actions[actionId].dispatchers[mode] = throttle(this.actions[actionId].action, interval, { leading: true })
     })
+
+    this.actions[actionId] = {
+      calledAt: 0,
+      isCalling: false,
+      fn: actionFn,
+      ...config
+    }
   }
 
   /**
@@ -104,50 +111,106 @@ export default class Synchronizer {
    * Starts to dispatch the actions periodically
    */
   ready () {
-    const run = () => {
+    /**
+     * Invoke the action and update the last time it has been called, when
+     * it has finished its sync or async execution
+     * @param {Object} action
+     */
+    const call = async action => {
+      action.isCalling = true
+      await action.fn()
+      action.calledAt = (new Date()).getTime()
+      action.isCalling = false
+    }
+
+    /**
+     * Run all the actions
+     */
+    const run = (options = {}) => {
       Object.keys(this.actions).forEach(actionId => {
         if (!includes(this.paused, actionId)) {
-          const mode = includes(this.focused, actionId) ? 'focus' : 'default'
-          this.actions[actionId].dispatchers[mode]()
+          const action = this.actions[actionId]
+
+          if (!action.isCalling) {
+            if (options.immediate) {
+              call(action)
+            } else {
+              const mode = includes(this.focused, actionId) ? 'focus' : 'default'
+              const { interval } = action[mode]
+              const nextCall = action.calledAt + interval
+              const now = (new Date()).getTime()
+
+              if (nextCall <= now) {
+                call(action)
+              }
+            }
+          }
         }
       })
     }
 
-    run()
-    setInterval(run, this.intervals.loop)
+    const runLoop = () => {
+      // Using `setTimeout` instead of `setInterval` allows waiting to the
+      // completion of async functions
+      setTimeout(() => {
+        run()
+        runLoop()
+      }, this.intervals.loop)
+    }
+
+    // Run the first time
+    run({ immediate: true })
+    runLoop()
   }
 
   defineAll () {
     const { block, shorter, medium, longer, longest } = this.intervals
 
-    const announcements = {
-      default: { interval: longest },
-      focus: { interval: medium }
+    const config = {
+      announcements: {
+        default: { interval: longest },
+        focus: { interval: medium }
+      },
+      market: {
+        default: { interval: shorter },
+        focus: { interval: block }
+      },
+      wallets: {
+        default: { interval: shorter },
+        focus: { interval: block }
+      },
+      delegates: {
+        default: { interval: longer },
+        focus: { interval: block }
+      }
     }
-    this.define('announcements', announcements, () => {
-      this.$store.dispatch('announcements/fetch')
+    config.contacts = config.wallets
+
+    this.define('announcements', config.announcements, async () => {
+      return this.$store.dispatch('announcements/fetch')
     })
 
-    const market = {
-      default: { interval: shorter },
-      focus: { interval: block }
-    }
-    this.define('market', market, () => {
-      this.$store.dispatch('market/refreshTicker')
+    this.define('market', config.market, async () => {
+      return this.$store.dispatch('market/refreshTicker')
     })
 
-    const wallets = {
-      default: { interval: shorter },
-      focus: { interval: block }
-    }
-    // TODO refresh transactions if the balance changes, if not, load them
-    // every n milliseconds, or create new action for transaction
-    this.define('wallets', wallets, () => {
+    // Since some users may have dozens of wallets:
+    // TODO loads blocks and use them to:
+    // - compute wallets balance
+    // - check new transactions
+    // TODO only the first time, then use blocks
+    // TODO load the entire wallet if is new
+    // TODO load everything periodically just in case the network has failed?
+    this.define('wallets', config.wallets, async () => {
       const profile = this.scope.session_profile
+
       if (profile) {
-        const refresh = async wallet => {
+        const wallets = this.$store.getters['wallet/byProfileId'](profile.id)
+
+        return Promise.all(wallets.map(async wallet => {
           try {
             const walletData = await this.$client.fetchWallet(wallet.address)
+
             if (walletData) {
               const updatedWallet = { ...wallet, ...walletData }
               this.$store.dispatch('wallet/update', updatedWallet)
@@ -160,23 +223,15 @@ export default class Synchronizer {
             //   msg: error.message
             // }))
           }
-        }
-
-        const wallets = this.$store.getters['wallet/byProfileId'](profile.id)
-        wallets.forEach(refresh)
+        }))
       }
     })
 
-    const contacts = wallets
-    this.define('contacts', contacts, () => {
+    this.define('contacts', config.contacts, async () => {
       // console.log('defined CONTACTS')
     })
 
-    const delegates = {
-      default: { interval: longer },
-      focus: { interval: block }
-    }
-    this.define('delegates', delegates, () => {
+    this.define('delegates', config.delegates, async () => {
       // console.log('defined DELEGATES')
     })
   }

@@ -7,6 +7,43 @@ describe('Services > Synchronizer', () => {
     synchronizer = new SynchronizerService({})
   })
 
+  describe('define', () => {
+    const actionId = 'example'
+    const actionFn = jest.fn()
+
+    it('requires the `default` mode configuration', () => {
+      const config = {
+        focus: { interval: 1000 }
+      }
+
+      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(/default.*mode/)
+    })
+
+    it('requires the `focus` mode configuration', () => {
+      const config = {
+        default: { interval: 10000 }
+      }
+
+      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(/focus.*mode/)
+    })
+
+    it('stores the action by ID', () => {
+      const config = {
+        default: { interval: 10000 },
+        focus: { interval: 1000 }
+      }
+
+      synchronizer.define(actionId, config, actionFn)
+
+      expect(synchronizer).toHaveProperty(`actions.${actionId}`, {
+        calledAt: 0,
+        isCalling: false,
+        fn: actionFn,
+        ...config
+      })
+    })
+  })
+
   describe('focus', () => {
     it('should add the actions to the `focused` Array', () => {
       synchronizer.focused = []
