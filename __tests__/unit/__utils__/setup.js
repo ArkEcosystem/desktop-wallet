@@ -1,5 +1,5 @@
 import VueTestUtils from '@vue/test-utils'
-import Vue from 'vue'
+import eventBus from '@/plugins/event-bus'
 
 require('babel-plugin-require-context-hook/register')()
 
@@ -8,7 +8,7 @@ require('babel-plugin-require-context-hook/register')()
 VueTestUtils.config.mocks.$i18n = { t: jest.fn(msg => msg) }
 VueTestUtils.config.mocks.i18n = { t: jest.fn(msg => msg) }
 VueTestUtils.config.mocks.$t = jest.fn(msg => msg)
-VueTestUtils.config.mocks.$eventBus = new Vue()
+VueTestUtils.config.mocks.$eventBus = eventBus
 VueTestUtils.config.mocks.$client = {
   fetchDelegates: jest.fn()
 }

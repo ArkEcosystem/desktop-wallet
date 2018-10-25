@@ -419,7 +419,7 @@ export default class ClientService {
           this.version = apiVersion
         }
 
-        eventBus.$emit('client:changed')
+        eventBus.emit('client:changed')
       },
       { immediate: true }
     )

@@ -16,6 +16,14 @@
       />
     </ButtonModal>
 
+    <ButtonReload
+      :color-class="buttonStyle"
+      :is-refreshing="isRefreshing"
+      class="WalletNew__refresh-button mr-2"
+      text-class="hover:text-white"
+      @click="refreshWallet"
+    />
+
     <ButtonModal
       v-show="currentWallet.isSendingEnabled"
       :class="buttonStyle"
@@ -34,7 +42,7 @@
 </template>
 
 <script>
-import { ButtonModal } from '@/components/Button'
+import { ButtonModal, ButtonReload } from '@/components/Button'
 import { ModalQrCode } from '@/components/Modal'
 import { TransactionModal } from '@/components/Transaction'
 
@@ -43,8 +51,15 @@ export default {
 
   components: {
     ButtonModal,
+    ButtonReload,
     ModalQrCode,
     TransactionModal
+  },
+
+  data () {
+    return {
+      isRefreshing: false
+    }
   },
 
   computed: {
@@ -54,6 +69,14 @@ export default {
 
     currentWallet () {
       return this.wallet_fromRoute
+    }
+  },
+
+  methods: {
+    async refreshWallet () {
+      this.isRefreshing = true
+      await this.$eventBus.emit('wallet:fetchTransactions')
+      this.isRefreshing = false
     }
   }
 }

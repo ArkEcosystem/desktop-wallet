@@ -37,7 +37,7 @@ export default {
   }),
 
   mounted () {
-    this.$eventBus.$on('alert', this.queueAlert)
+    this.$eventBus.on('alert', this.queueAlert)
   },
 
   methods: {

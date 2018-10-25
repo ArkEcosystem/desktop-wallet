@@ -101,8 +101,8 @@ export default {
     if (this.$store.getters['ledger/isConnected']) {
       this.refreshLedgerWallets()
     }
-    this.$eventBus.$on('ledger:wallets-updated', this.refreshLedgerWallets)
-    this.$eventBus.$on('ledger:disconnected', this.ledgerDisconnected)
+    this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
+    this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
   },
 
   methods: {

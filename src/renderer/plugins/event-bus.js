@@ -1,3 +1,3 @@
-import Vue from 'vue'
+import Emittery from 'emittery'
 
-export default new Vue()
+export default new Emittery()

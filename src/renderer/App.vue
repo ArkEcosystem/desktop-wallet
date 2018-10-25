@@ -133,14 +133,14 @@ export default {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
       }
 
-      this.$eventBus.$on('client:changed', () => {
+      this.$eventBus.on('client:changed', () => {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
       })
-      this.$eventBus.$on('ledger:connected', async () => {
+      this.$eventBus.on('ledger:connected', async () => {
         this.$success('Ledger Connected!')
       })
-      this.$eventBus.$on('ledger:disconnected', async () => {
+      this.$eventBus.on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
     },

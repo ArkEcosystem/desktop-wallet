@@ -25,19 +25,11 @@
             />
           </div>
         </div>
-        <div
-          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b pt-3 pb-2 px-2 rounded"
+        <ButtonReload
+          :is-refreshing="isRefreshing"
+          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b pt-3 pb-2 px-2"
           @click="refreshPeer"
-        >
-          <SvgIcon
-            :class="{
-              'rotate-360': isRefreshing
-            }"
-            class="text-grey-dark"
-            name="update"
-            view-box="0 0 28 16"
-          />
-        </div>
+        />
       </div>
       <div class="AppSidemenuNetworkStatus--status flex flex-wrap mt-6 mx-auto select-none">
         <div class="AppSidemenuNetworkStatus--status__height inline-block pr-6 border-r">
@@ -90,7 +82,7 @@
 <script>
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
 import { ModalPeer } from '@/components/Modal'
-import { ButtonSwitch } from '@/components/Button'
+import { ButtonReload, ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -98,6 +90,7 @@ export default {
   name: 'AppSidemenuNetworkStatus',
 
   components: {
+    ButtonReload,
     ButtonSwitch,
     InputText,
     MenuDropdown,

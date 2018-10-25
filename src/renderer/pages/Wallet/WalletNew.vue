@@ -12,19 +12,12 @@
           <p v-if="step === 1">
             {{ $t('PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_BEFORE_BUTTON') }}
 
-            <span
-              class="WalletNew__refresh-button cursor-pointer"
+            <ButtonReload
+              :is-refreshing="isRefreshing"
+              :without-background="true"
+              class="WalletNew__refresh-button inline"
               @click="refreshAddresses"
-            >
-              <SvgIcon
-                :class="{
-                  'rotate-360': isRefreshing
-                }"
-                class="text-grey-dark mx-1"
-                name="update"
-                view-box="0 0 16 14"
-              />
-            </span>
+            />
 
             {{ $t('PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_AFTER_BUTTON') }}
           </p>
@@ -53,20 +46,12 @@
               <div class="">{{ title }}</div>
 
               <!-- Hide it when the step is collapse -->
-              <div
+              <ButtonReload
                 v-if="step === 1"
-                class="WalletNew__refresh-button cursor-pointer py-2 px-4 rounded bg-theme-button-light text-theme-button-light-text"
+                :is-refreshing="isRefreshing"
+                class="WalletNew__refresh-button"
                 @click="refreshAddresses"
-              >
-                <SvgIcon
-                  :class="{
-                    'rotate-360': isRefreshing
-                  }"
-                  class="text-grey-dark"
-                  name="update"
-                  view-box="0 0 16 14"
-                />
-              </div>
+              />
             </div>
 
             <transition-group
@@ -243,7 +228,7 @@
 <script>
 import { flatten } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
-import { ButtonClipboard } from '@/components/Button'
+import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { InputField, InputPassword, InputSwitch, InputText } from '@/components/Input'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
@@ -257,6 +242,7 @@ export default {
 
   components: {
     ButtonClipboard,
+    ButtonReload,
     InputField,
     InputPassword,
     InputSwitch,

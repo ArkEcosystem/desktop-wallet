@@ -48,6 +48,7 @@ export default {
 
   created () {
     this.fetchTransactions()
+    this.$eventBus.on('wallet:fetchTransactions', this.fetchTransactions)
   },
 
   methods: {

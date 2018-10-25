@@ -34,7 +34,7 @@ export default {
     start ({ state, commit }) {
       forEach(state.intervals, (value, key) => {
         const timer = setInterval(() => {
-          eventBus.$emit(`timer:${key}`)
+          eventBus.emit(`timer:${key}`)
         }, value)
         commit('ADD_TIMER', timer)
       })
@@ -55,7 +55,7 @@ export default {
 
       if (immediate) callback()
 
-      eventBus.$on(`timer:${interval}`, callback)
+      eventBus.on(`timer:${interval}`, callback)
 
       return uniqueId
     },
@@ -68,7 +68,7 @@ export default {
       }
 
       const { interval, callback } = observer
-      eventBus.$off(`timer:${interval}`, callback)
+      eventBus.off(`timer:${interval}`, callback)
 
       commit('REMOVE_OBSERVER', id)
     },

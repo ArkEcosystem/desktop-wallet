@@ -68,20 +68,13 @@
           <div class="flex w-80">{{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}</div>
           <div class="flex flex-row justify-around ml-8">
 
-            <div
+            <ButtonReload
+              :is-refreshing="isGenerating"
               :title="$t('WALLET_SECOND_SIGNATURE.NEW')"
-              class="flex cursor-pointer py-2 px-4 rounded bg-theme-modal-footer-button mr-2"
+              class="bg-theme-modal-footer-button mr-2"
+              text-class="text-theme-modal-footer-button-text mt-1"
               @click="generateNewPassphrase"
-            >
-              <SvgIcon
-                :class="{
-                  'rotate-360': isGenerating
-                }"
-                class="text-theme-modal-footer-button-text mt-1"
-                name="update"
-                view-box="0 0 16 14"
-              />
-            </div>
+            />
 
             <ButtonClipboard
               :value="secondPassphrase"
@@ -100,7 +93,7 @@
 
 <script>
 import { TRANSACTION_TYPES } from '@config'
-import { ButtonClipboard } from '@/components/Button'
+import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
 import { InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -116,6 +109,7 @@ export default {
 
   components: {
     ButtonClipboard,
+    ButtonReload,
     Collapse,
     InputPassword,
     ListDivided,

@@ -64,7 +64,7 @@ export default {
       }
 
       commit('SET_CONNECTED', true)
-      eventBus.$emit('ledger:connected')
+      eventBus.emit('ledger:connected')
       await dispatch('reloadWallets')
 
       return true
@@ -77,7 +77,7 @@ export default {
     async disconnect ({ commit, dispatch }) {
       commit('SET_CONNECTED', false)
       await ledgerService.disconnect()
-      eventBus.$emit('ledger:disconnected')
+      eventBus.emit('ledger:disconnected')
       dispatch('ensureConnection')
     },
 
@@ -173,7 +173,7 @@ export default {
 
           if (isColdWallet) {
             commit('SET_WALLETS', wallets)
-            eventBus.$emit('ledger:wallets-updated', wallets)
+            eventBus.emit('ledger:wallets-updated', wallets)
 
             return wallets
           }
@@ -182,7 +182,7 @@ export default {
         logger.error(error)
       }
       commit('SET_WALLETS', [])
-      eventBus.$emit('ledger:wallets-updated', [])
+      eventBus.emit('ledger:wallets-updated', [])
 
       return []
     },
