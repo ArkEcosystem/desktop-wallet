@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, screen } from 'electron'
+import WinState from 'win-state'
 
 /**
  * Set `__static` path to static files in production
@@ -16,16 +17,18 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 function createWindow () {
-  /**
-   * Initial window options
-   */
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize
+
+  const windowState = new WinState()
   mainWindow = new BrowserWindow({
-    height: 563,
-    useContentSize: true,
-    width: 1000
+    window: width - 100,
+    height: height - 100,
+    show: false
   })
 
-  mainWindow.loadURL(winURL)
+  windowState.manage(mainWindow, {
+    load: winURL
+  })
 
   mainWindow.on('closed', () => {
     mainWindow = null
