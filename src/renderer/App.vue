@@ -55,6 +55,8 @@ import { AppSidemenu, AppFooter } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
 
+var { remote } = require('electron')
+
 export default {
   name: 'DesktopWallet',
 
@@ -78,6 +80,15 @@ export default {
     },
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length
+    },
+    hasProtection () {
+      return this.$store.getters['session/contentProtection']
+    }
+  },
+
+  watch: {
+    hasProtection (value) {
+      remote.getCurrentWindow().setContentProtection(value)
     }
   },
 
@@ -96,6 +107,8 @@ export default {
     this.$synchronizer.ready()
 
     await this.loadNotEssential()
+
+    remote.getCurrentWindow().setContentProtection(this.hasProtection)
   },
 
   methods: {

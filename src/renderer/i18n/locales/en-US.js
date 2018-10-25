@@ -74,7 +74,8 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     SETTINGS: {
       CURRENCY: 'Currency',
-      DARK_MODE: 'Dark mode'
+      DARK_MODE: 'Dark mode',
+      SCREENSHOT_PROTECTION: 'Screenshot protection'
     }
   },
 

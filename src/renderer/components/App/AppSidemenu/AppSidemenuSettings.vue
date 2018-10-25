@@ -37,6 +37,23 @@
         />
       </div>
     </MenuOptionsItem>
+
+    <MenuOptionsItem
+      :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
+      @click="toggleSelect('protection-switch')">
+      <div
+        slot="controls"
+        class="pointer-events-none"
+      >
+        <ButtonSwitch
+          ref="protection-switch"
+          :is-active="contentProtection"
+          class="theme-dark"
+          background-color="#414767"
+          @change="setProtection"
+        />
+      </div>
+    </MenuOptionsItem>
   </MenuOptions>
 </template>
 
@@ -69,6 +86,9 @@ export default {
     hasDarkTheme () {
       return this.$store.getters['session/hasDarkTheme']
     },
+    contentProtection () {
+      return this.$store.getters['session/contentProtection']
+    },
     sessionCurrency: {
       get () {
         return this.$store.getters['session/currency']
@@ -84,6 +104,14 @@ export default {
       set (theme) {
         this.$store.dispatch('session/setTheme', theme)
       }
+    },
+    sessionProtection: {
+      get () {
+        return this.$store.getters['session/contentProtection']
+      },
+      set (protection) {
+        this.$store.dispatch('session/setContentProtection', protection)
+      }
     }
   },
 
@@ -94,6 +122,10 @@ export default {
 
     setTheme (newTheme) {
       this.sessionTheme = newTheme ? 'dark' : 'light'
+    },
+
+    setProtection (protection) {
+      this.sessionProtection = protection
     },
 
     toggleSelect (name) {

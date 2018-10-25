@@ -10,7 +10,8 @@ export default {
     language: null,
     name: null,
     profileId: null,
-    theme: null
+    theme: null,
+    contentProtection: true
   }),
 
   getters: {
@@ -35,7 +36,8 @@ export default {
     theme: state => state.theme,
     language: state => state.language,
     name: state => state.name,
-    hasDarkTheme: state => state.theme === 'dark'
+    hasDarkTheme: state => state.theme === 'dark',
+    contentProtection: state => state.contentProtection
   },
 
   mutations: {
@@ -67,6 +69,10 @@ export default {
       state.theme = theme
     },
 
+    SET_CONTENT_PROTECTION (state, protection) {
+      state.contentProtection = protection
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -74,6 +80,7 @@ export default {
       state.language = I18N.defaultLocale
       state.name = null
       state.theme = 'light'
+      state.contentProtection = true
     }
   },
 
@@ -114,6 +121,10 @@ export default {
 
     setName ({ commit }, value) {
       commit('SET_NAME', value)
+    },
+
+    setContentProtection ({ commit }, value) {
+      commit('SET_CONTENT_PROTECTION', value)
     },
 
     async setProfileId ({ commit, dispatch }, value) {
