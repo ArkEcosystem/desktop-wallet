@@ -17,7 +17,7 @@
     <section
       :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
       :class="{
-        'blur': isModalOpen
+        'blur': hasBlurFilter
       }"
       class="App__main flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
     >
@@ -41,6 +41,10 @@
     />
     <portal-target
       name="loading"
+      @change="onPortalChange"
+    />
+    <portal-target
+      name="important-notification"
       @change="onPortalChange"
     />
 
@@ -68,7 +72,7 @@ export default {
 
   data: () => ({
     isReady: false,
-    isModalOpen: false
+    hasBlurFilter: false
   }),
 
   computed: {
@@ -143,10 +147,16 @@ export default {
       this.$eventBus.on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
+
+      try {
+        await this.$store.dispatch('app/checkNewVersion')
+      } catch (error) {
+        this.$error(this.$t('APP.RELEASE.REQUEST_ERROR'))
+      }
     },
 
     onPortalChange (options) {
-      this.isModalOpen = !isEmpty(options)
+      this.hasBlurFilter = !isEmpty(options)
     }
   }
 }

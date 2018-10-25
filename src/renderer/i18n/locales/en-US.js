@@ -86,6 +86,12 @@ export default {
     ROWS_PER_PAGE: 'Rows per page'
   },
 
+  APP: {
+    RELEASE: {
+      REQUEST_ERROR: 'Cannot check latest version'
+    }
+  },
+
   APP_SIDEMENU: {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     SETTINGS: {
@@ -93,6 +99,11 @@ export default {
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection'
     }
+  },
+
+  APP_SIDEMENU_NOTIFICATION: {
+    NOTIFICATION: 'A new version ({version}) has been released. Upgrade now!',
+    TOOLTIP: 'New version ({version}) has been released!'
   },
 
   MARKET_CHART: {

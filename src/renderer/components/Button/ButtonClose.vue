@@ -4,7 +4,7 @@
     @click="emitClick"
   >
     <SvgIcon
-      class="ButtonClose__cross fill-current text-white"
+      class="ButtonClose__cross fill-current text-theme-feature"
       name="cross"
       view-box="0 0 11 10" />
   </button>
@@ -30,6 +30,7 @@ export default {
 
 <style scoped>
 .ButtonClose {
+  height: 35px;
   width: 35px;
   padding: 10px;
   background: rgba(255, 255, 255, 0.2);

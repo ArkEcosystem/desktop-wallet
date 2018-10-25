@@ -1,11 +1,13 @@
 <template>
   <div
     :class="alert ? `AlertMessage--${alert.type}` : 'opacity-0 hidden'"
-    class="AlertMessage absolute z-50 max-w-1/2 min-w-1/4 rounded-lg inline pin-b pin-l m-4 p-4 text-white">
+    class="AlertMessage absolute z-50 max-w-1/2 min-w-1/4 rounded-lg inline pin-b pin-l m-4 p-4 text-white"
+  >
     <div class="message font-bold">
       <ButtonClose
         class="dismiss float-right p-10px cursor-pointer select-none"
-        @click="showNext" />
+        @click="showNext"
+      />
       <span class="mr-4">
         {{ alert ? alert.message : '&nbsp;' }}
       </span>
