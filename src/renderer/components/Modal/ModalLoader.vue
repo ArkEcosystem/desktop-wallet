@@ -4,16 +4,24 @@
     to="loading"
   >
     <ModalWindow
-      :allow-close="false"
+      :allow-close="showClose"
+      container-classes="w-1/2"
       @close="toggle"
     >
-      <div>
+      <h2>
         {{ message }}
-      </div>
+      </h2>
       <div
         class="flex justify-center p-5"
       >
         <Loader />
+      </div>
+
+      <div
+        v-if="showClose"
+        class="text-center text-theme-warn-text border-theme-warn border-t-2 p-2"
+      >
+        {{ $t('MODAL_LOADER.CLOSE_WARNING') }}
       </div>
     </ModalWindow>
   </portal>
@@ -40,12 +48,53 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    allowClose: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    closeWarningDelay: {
+      type: Number,
+      required: false,
+      default: 15000
     }
+  },
+
+  data () {
+    return {
+      showClose: false,
+      showCloseTimeout: null
+    }
+  },
+
+  watch: {
+    visible: function (value) {
+      if (value) {
+        this.triggerShowClose()
+      }
+    }
+  },
+
+  mounted () {
+    this.triggerShowClose()
   },
 
   methods: {
     toggle () {
       this.visible = !this.visible
+    },
+
+    triggerShowClose () {
+      if (this.allowClose) {
+        if (this.showCloseTimeout || this.showClose) {
+          clearInterval(this.showCloseTimeout)
+          this.showClose = false
+        }
+        this.showCloseTimeout = setTimeout(() => {
+          this.showClose = true
+        }, this.closeWarningDelay)
+      }
     }
   }
 }

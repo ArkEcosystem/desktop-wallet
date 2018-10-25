@@ -16,6 +16,7 @@
         <MenuDropdownHandler
           :value="entries[activeKey]"
           :placeholder="placeholder"
+          :prefix="prefix"
         />
       </slot>
     </button>
@@ -23,6 +24,7 @@
     <div
       v-click-outside="close"
       v-if="isOpen"
+      :class="{ 'pin-above': pinAbove }"
       class="absolute min-w-full z-20">
       <ul
         :style="{ transform: `translate(${position.join(',')})` }"
@@ -81,6 +83,16 @@ export default {
       required: false,
       default: () => ['0%', '0%']
     },
+    pinAbove: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    prefix: {
+      type: String,
+      required: false,
+      default: ''
+    },
     isDisabled: {
       type: Boolean,
       required: false,
@@ -134,5 +146,9 @@ export default {
 <style scoped>
 .MenuDropdown /deep/ .MenuDropdownItem:last-child .MenuDropdownItem__container {
   border: none;
+}
+
+.pin-above {
+  @apply pin-b pb-10;
 }
 </style>

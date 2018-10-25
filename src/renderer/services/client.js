@@ -6,12 +6,14 @@ import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
 export default class ClientService {
-  constructor () {
+  constructor (watchProfile = true) {
     this.__host = null
     this.__version = null
     this.client = new ApiClient('http://')
 
-    this.__watchProfile()
+    if (watchProfile) {
+      this.__watchProfile()
+    }
   }
 
   /**
@@ -20,10 +22,14 @@ export default class ClientService {
    *
    * @param {String} server
    * @param {Number} apiVersion
+   * @param {Number} timeout
    * @returns {Object}
    */
-  static async fetchNetworkConfig (server, apiVersion) {
+  static async fetchNetworkConfig (server, apiVersion, timeout) {
     const client = new ApiClient(server, apiVersion)
+    if (timeout) {
+      client.http.timeout = timeout
+    }
 
     if (apiVersion === 1) {
       const { data } = await client.resource('loader').status()
@@ -52,6 +58,18 @@ export default class ClientService {
   set version (apiVersion) {
     this.__version = apiVersion
     this.client.setVersion(apiVersion)
+  }
+
+  /**
+   * Fetch the peer status.
+   * @returns {Object}
+   */
+  async fetchPeerStatus () {
+    if (this.__version === 1) {
+      return (await this.client.resource('loader').configuration()).data
+    } else {
+      return (await this.client.resource('node').syncing()).data.data
+    }
   }
 
   async fetchDelegates () {

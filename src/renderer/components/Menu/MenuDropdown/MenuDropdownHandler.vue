@@ -6,6 +6,7 @@
     @click="emitClick">
     <span>
       <slot>
+        <span v-if="prefix.length">{{ prefix }}</span>
         <span>{{ value || placeholder }}</span>
       </slot>
     </span>
@@ -39,6 +40,12 @@ export default {
       type: String,
       required: false,
       default: 'Select'
+    },
+
+    prefix: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
 

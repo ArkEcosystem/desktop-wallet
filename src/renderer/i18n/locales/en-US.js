@@ -40,9 +40,25 @@ export default {
     FAILED_DECRYPT: 'Failed to decrypt passphrase'
   },
 
+  PEER: {
+    CONNECTED: 'Connected to peer',
+    CONNECT_CUSTOM: 'Connect your peer',
+    CONNECT_FAILED: 'Failed to connect to peer',
+    DELAY: 'Delay',
+    FAILED_REFRESH: 'Failed to refresh peers',
+    HEIGHT: 'Height',
+    LAST_CHECKED: 'Last checked',
+    NONE: 'None',
+    NO_CONNECT: 'Could not connect',
+    PEER: 'Peer:',
+    STATUS_CHECK_FAILED: 'Status check failed',
+    WRONG_NETWORK: 'Wrong network'
+  },
+
   VALIDATION: {
     NOT_MATCH: 'The {0} does not match the {1}',
     NOT_VALID: 'The {0} is not valid',
+    NOT_NUMERIC: 'The {0} is not numeric',
     REQUIRED: 'The {0} is required',
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
@@ -151,6 +167,19 @@ export default {
   MODAL_QR_CODE: {
     TITLE: 'QR Code',
     SUBTITLE: 'Scan for Address'
+  },
+
+  MODAL_LOADER: {
+    CLOSE_WARNING: 'It looks like something went wrong. You may close the window but this could cause adverse effects.'
+  },
+
+  MODAL_PEER: {
+    CANCEL: 'Cancel',
+    CONNECT: 'Connect',
+    HOST: 'IP / Host',
+    PORT: 'Port',
+    TITLE: 'Connect to custom peer',
+    VALIDATING: 'Validating peer details...'
   },
 
   PASSPHRASE_INPUT: {

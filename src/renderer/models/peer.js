@@ -23,7 +23,13 @@ export default new BaseModel({
     },
     delay: {
       type: 'integer'
+    },
+    isCustom: {
+      type: 'boolean'
+    },
+    lastUpdated: {
+      type: 'date'
     }
   },
-  required: ['ip', 'port', 'version', 'height', 'status', 'os', 'delay']
+  required: ['ip', 'port', 'version', 'height', 'status', 'delay']
 })

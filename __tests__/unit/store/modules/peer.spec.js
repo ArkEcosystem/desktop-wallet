@@ -22,7 +22,8 @@ const store = new Vuex.Store({
         },
         network () {
           return {
-            id: 'abc'
+            id: 'abc',
+            nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
           }
         }
       }
@@ -66,12 +67,6 @@ describe('peer store module', () => {
     expect(store.getters['peer/current']()).toEqual(false)
   })
 
-  it('should return false if no current peer', () => {
-    store.dispatch('peer/setCurrentPeer', goodPeer1)
-    store.dispatch('peer/set', [])
-    expect(store.getters['peer/current']()).toEqual(false)
-  })
-
   it('should get a last updated date', () => {
     expect(store.getters['peer/lastUpdated']).toBeTruthy()
   })
@@ -82,7 +77,7 @@ describe('peer store module', () => {
   })
 
   it('should connect to best peer', async () => {
-    const bestPeer = await store.dispatch('peer/connectToBest')
+    const bestPeer = await store.dispatch('peer/connectToBest', {})
     expect(bestPeer).toEqual(store.getters['peer/current']())
     expect(bestPeer).toBeOneOf(peers)
     expect(bestPeer).not.toEqual(badPeer1)
@@ -132,5 +127,135 @@ describe('peer store module', () => {
     goodV2Peer.delay = goodV2Peer.latency
     delete goodV2Peer.latency
     expect(store.getters['peer/all']()).toEqual([goodV2Peer])
+  })
+
+  it('should update peer status on the fly', async () => {
+    client.version = 2
+    client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
+
+    axiosMock
+      .onGet(`${client.host}/api/node/syncing`)
+      .reply(200, {
+        data: {
+          'height': 10000
+        }
+      })
+
+    const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodPeer1)
+
+    expect(updatedPeer.height).toBe(10000)
+    expect(updatedPeer.delay).not.toBe(123)
+    expect(updatedPeer.lastUpdated).toBeTruthy()
+  })
+
+  it('should update current peer status', async () => {
+    store.dispatch('peer/setCurrentPeer', goodPeer1)
+
+    client.version = 2
+    client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
+
+    axiosMock
+      .onGet(`${client.host}/api/node/syncing`)
+      .reply(200, {
+        data: {
+          'height': 10000
+        }
+      })
+
+    await store.dispatch('peer/updateCurrentPeerStatus')
+    const currentPeer = store.getters['peer/current']()
+
+    expect(currentPeer.height).toBe(10000)
+    expect(currentPeer.delay).not.toBe(123)
+    expect(currentPeer.lastUpdated).toBeTruthy()
+  })
+
+  it('should validate a v1 peer successfully', async () => {
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .reply(200, {
+        data: {
+          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        }
+      })
+
+    axiosMock
+      .onGet(`${client.host}/api/loader/status/sync`)
+      .reply(200, {
+        data: {
+          'height': 10000
+        }
+      })
+
+    await store.dispatch('peer/validatePeer', goodPeer1)
+    const currentPeer = store.getters['peer/current']()
+
+    expect(currentPeer.height).toBe(10000)
+    expect(currentPeer.delay).not.toBe(123)
+    expect(currentPeer.lastUpdated).toBeTruthy()
+  })
+
+  it('should validate a v2 peer successfully', async () => {
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+      .reply(200, {
+        data: {
+          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        }
+      })
+
+    axiosMock
+      .onGet(`${client.host}/api/node/syncing`)
+      .reply(200, {
+        data: {
+          'height': 10000
+        }
+      })
+
+    await store.dispatch('peer/validatePeer', goodPeer1)
+    const currentPeer = store.getters['peer/current']()
+
+    expect(currentPeer.height).toBe(10000)
+    expect(currentPeer.delay).not.toBe(123)
+    expect(currentPeer.lastUpdated).toBeTruthy()
+  })
+
+  it('should fail validating a peer due to bad network url', async () => {
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+      .reply(400)
+
+    const response = await store.dispatch('peer/validatePeer', goodPeer1)
+    expect(response).toEqual(expect.stringMatching(/^Could not connect$/))
+  })
+
+  it('should fail validating a peer due to bad sync status url', async () => {
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+      .reply(200, {
+        data: {
+          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        }
+      })
+
+    axiosMock
+      .onGet(`${client.host}/api/node/syncing`)
+      .reply(400)
+
+    const response = await store.dispatch('peer/validatePeer', goodPeer1)
+    expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
+  })
+
+  it('should fail validating a peer because of wrong nethash', async () => {
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+      .reply(200, {
+        data: {
+          nethash: 'wrong nethash'
+        }
+      })
+
+    const response = await store.dispatch('peer/validatePeer', goodPeer1)
+    expect(response).toEqual(expect.stringMatching(/^Wrong network$/))
   })
 })

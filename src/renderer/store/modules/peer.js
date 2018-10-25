@@ -1,4 +1,6 @@
 import random from 'lodash/random'
+import ClientService from '@/services/client'
+import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 
 export default {
@@ -23,7 +25,7 @@ export default {
       }
 
       if (ignoreCurrent) {
-        const currentPeer = getters['current']
+        const currentPeer = getters['current']()
         if (currentPeer) {
           peers = peers.filter(peer => {
             return peer.ip !== currentPeer.ip
@@ -49,14 +51,26 @@ export default {
      * @return {(Object|null)}
      */
     best: (_, getters) => (ignoreCurrent = true) => {
-      const peers = getters['all'](ignoreCurrent)
+      const peers = getters['bestPeers'](undefined, ignoreCurrent)
+      if (!peers || !peers.length) {
+        return null
+      }
 
+      return Object.values(peers)[random(peers.length - 1)]
+    },
+
+    /**
+     * Determine best peer for current network (random from top 10).
+     * @param  {Boolean} [ignoreCurrent=true]
+     * @return {(Object|null)}
+     */
+    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
+      const peers = getters['all'](ignoreCurrent)
       if (!peers.length) {
         return null
       }
 
       const highestHeight = peers[0].height
-      let maxRandom = 10
       for (let i = 1; i < maxRandom; i++) {
         if (!peers[i]) {
           break
@@ -66,7 +80,7 @@ export default {
         }
       }
 
-      return peers[random(Math.min(maxRandom, peers.length))]
+      return peers.slice(0, Math.min(maxRandom, peers.length))
     },
 
     /**
@@ -75,12 +89,6 @@ export default {
      */
     current: (state, getters, __, rootGetters) => () => {
       let currentPeer = state.current[rootGetters['session/profile'].networkId]
-      if (!currentPeer) {
-        return false
-      }
-
-      currentPeer = getters['get'](currentPeer.ip)
-
       if (!currentPeer) {
         return false
       }
@@ -172,30 +180,129 @@ export default {
         }
         dispatch('set', peers)
       } else {
-        this._vm.$error('Failed to refresh peers')
+        this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
     },
 
     /**
      * Get best peer for current network.
      * @param  {Boolean} [refresh=true]
+     * @param  {Boolean} [skipIfCustom=true]
      * @return {(Object|null)}
      */
-    async connectToBest ({ dispatch, getters }, refresh = true) {
+    async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
+      if (skipIfCustom) {
+        const currentPeer = getters['current']()
+        if (currentPeer && currentPeer.isCustom) {
+          return null
+        }
+      }
+
       if (refresh) {
         try {
           await dispatch('refresh')
         } catch (error) {
-          //
+          this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
         }
       }
+
       const peer = getters['best']()
       if (!peer) {
         return null
       }
+
+      await dispatch('updateCurrentPeerStatus', peer)
       dispatch('setCurrentPeer', peer)
 
       return peer
+    },
+
+    /**
+     * Update peer status.
+     * @param  {Object} [port]
+     * @return {(Object|void)}
+     */
+    async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
+      let updateCurrentPeer = false
+      if (!currentPeer) {
+        currentPeer = { ...getters['current']() }
+        updateCurrentPeer = true
+      }
+      if (!currentPeer) {
+        return
+      }
+
+      try {
+        const delayStart = performance.now()
+        const peerStatus = await this._vm.$client.fetchPeerStatus()
+        const delay = (performance.now() - delayStart).toFixed(0)
+        currentPeer = {
+          ...currentPeer,
+          delay: +delay,
+          height: +peerStatus.height,
+          lastUpdated: new Date()
+        }
+        if (updateCurrentPeer) {
+          dispatch('setCurrentPeer', currentPeer)
+        } else {
+          return currentPeer
+        }
+      } catch (error) {
+        //
+      }
+    },
+
+    /**
+     * Validate custom peer, used to check it's acceptable to connect.
+     * @param  {String} ip
+     * @param  {Number} port
+     * @return {(Object|String)}
+     */
+    async validatePeer ({ rootGetters }, { ip, port }) {
+      let networkConfig
+      let version = 1
+      const host = `http://${ip}:${port}`
+      try {
+        networkConfig = await ClientService.fetchNetworkConfig(host, version, 3000)
+      } catch (errorV1) {
+        try {
+          version = 2
+          networkConfig = await ClientService.fetchNetworkConfig(host, version, 3000)
+        } catch (errorV2) {
+          //
+        }
+      }
+
+      if (!networkConfig) {
+        return i18n.t('PEER.NO_CONNECT')
+      } else if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
+        return i18n.t('PEER.WRONG_NETWORK')
+      }
+
+      const client = new ClientService(false)
+      client.host = host
+      client.version = version
+      client.client.http.timeout = 3000
+
+      let peerStatus
+      try {
+        peerStatus = await client.fetchPeerStatus()
+      } catch (error) {
+        //
+      }
+      if (!peerStatus) {
+        return i18n.t('PEER.STATUS_CHECK_FAILED')
+      }
+
+      return {
+        ip,
+        port: +port,
+        height: peerStatus.height,
+        version: `${version}.0.0`,
+        status: 'OK',
+        delay: 0,
+        isCustom: true
+      }
     }
   }
 }

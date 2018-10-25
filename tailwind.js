@@ -95,6 +95,16 @@ let colors = {
   'theme-settings-border': '#444a6d',
   'theme-settings-text': '#a6add5',
 
+  'theme-error': 'var(--theme-error)',
+  'theme-error-shadow': 'var(--theme-error-shadow)',
+  'theme-success': 'var(--theme-success)',
+  'theme-success-shadow': 'var(--theme-success-shadow)',
+  'theme-info': 'var(--theme-info)',
+  'theme-info-shadow': 'var(--theme-info-shadow)',
+  'theme-warn': 'var(--theme-warn)',
+  'theme-warn-shadow': 'var(--theme-warn-shadow)',
+  'theme-warn-text': 'var(--theme-warn-text)',
+
   'transparent': 'transparent',
   'inherit': 'inherit',
 

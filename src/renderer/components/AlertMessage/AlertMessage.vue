@@ -76,20 +76,19 @@ export default {
   transition: opacity, hidden .2s ease-in, background-color .1s ease-in;
 }
 .AlertMessage--error {
-  background-color: var(--theme-error);
+  @apply bg-theme-error;
   box-shadow: 0px 0px 15px var(--theme-error-shadow);
 }
 .AlertMessage--success {
-  background-color: var(--theme-success);
+  @apply bg-theme-success;
   box-shadow: 0px 0px 15px var(--theme-success-shadow);
 }
 .AlertMessage--info {
-  background-color: var(--theme-info);
+  @apply bg-theme-info;
   box-shadow: 0px 0px 15px var(--theme-info-shadow);
 }
 .AlertMessage--warn {
-  background-color: var(--theme-warn);
+  @apply bg-theme-warn text-theme-warn-text;
   box-shadow: 0px 0px 15px var(--theme-warn-shadow);
-  color: var(--theme-warn-text);
 }
 </style>

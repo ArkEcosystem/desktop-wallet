@@ -99,14 +99,16 @@ export default {
    */
   async created () {
     await this.$store.dispatch('network/load', config.NETWORKS)
-    await this.$store.dispatch('session/reset')
+    this.$store._vm.$on('vuex-persist:ready', async () => {
+      await this.$store.dispatch('session/reset')
 
-    this.isReady = true
+      this.isReady = true
 
-    this.$synchronizer.defineAll()
-    this.$synchronizer.ready()
+      this.$synchronizer.defineAll()
+      this.$synchronizer.ready()
 
-    await this.loadNotEssential()
+      await this.loadNotEssential()
+    })
 
     remote.getCurrentWindow().setContentProtection(this.hasProtection)
   },
@@ -120,7 +122,12 @@ export default {
     async loadNotEssential () {
       await this.$store.dispatch('timer/start')
       await this.$store.dispatch('peer/refresh')
-      this.$store.dispatch('peer/connectToBest')
+      this.$store.dispatch('peer/connectToBest', {})
+      this.$store.dispatch('timer/subscribe', {
+        interval: 'medium',
+        callback: async () => this.$store.dispatch('peer/updateCurrentPeerStatus'),
+        immediate: true
+      })
 
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
@@ -128,7 +135,7 @@ export default {
 
       this.$eventBus.$on('client:changed', () => {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
-        this.$store.dispatch('peer/connectToBest')
+        this.$store.dispatch('peer/connectToBest', {})
       })
       this.$eventBus.$on('ledger:connected', async () => {
         this.$success('Ledger Connected!')
