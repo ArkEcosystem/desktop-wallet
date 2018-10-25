@@ -1,6 +1,6 @@
 import SearchInput from './SearchInput'
 
-export * from './SearchFIlter'
+export * from './SearchFilter'
 export {
   SearchInput
 }
