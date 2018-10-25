@@ -13,7 +13,6 @@ import NetworkModule from '@/store/modules/network'
 import PeerModule from '@/store/modules/peer'
 import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
-import TimerModule from '@/store/modules/timer'
 import WalletModule from '@/store/modules/wallet'
 
 Vue.use(Vuex)
@@ -27,13 +26,11 @@ const modules = {
   peer: PeerModule,
   profile: ProfileModule,
   session: SessionModule,
-  timer: TimerModule,
   wallet: WalletModule
 }
 
 const ignoreModules = [
-  'ledger',
-  'timer'
+  'ledger'
 ]
 
 const vuexPersist = new VuexPersistence({

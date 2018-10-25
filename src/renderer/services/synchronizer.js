@@ -182,6 +182,10 @@ export default class Synchronizer {
       delegates: {
         default: { interval: longer },
         focus: { interval: block }
+      },
+      peer: {
+        default: { interval: medium },
+        focus: { interval: shorter }
       }
     }
     config.contacts = config.wallets
@@ -233,6 +237,10 @@ export default class Synchronizer {
 
     this.define('delegates', config.delegates, async () => {
       // console.log('defined DELEGATES')
+    })
+
+    this.define('peer', config.peer, async () => {
+      return this.$store.dispatch('peer/updateCurrentPeerStatus')
     })
   }
 }

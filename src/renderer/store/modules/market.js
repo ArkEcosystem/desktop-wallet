@@ -33,14 +33,6 @@ export default {
   },
 
   actions: {
-    load ({ dispatch }) {
-      dispatch('timer/subscribe', {
-        interval: 'medium',
-        callback: () => dispatch('refreshTicker'),
-        immediate: true
-      }, { root: true })
-    },
-
     async refreshTicker ({ commit, rootGetters }) {
       const network = rootGetters['session/network']
       if (!network || !network.market || !network.market.enabled) {

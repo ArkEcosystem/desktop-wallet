@@ -124,14 +124,8 @@ export default {
      * @return {void}
      */
     async loadNotEssential () {
-      await this.$store.dispatch('timer/start')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
-      this.$store.dispatch('timer/subscribe', {
-        interval: 'medium',
-        callback: async () => this.$store.dispatch('peer/updateCurrentPeerStatus'),
-        immediate: true
-      })
 
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)

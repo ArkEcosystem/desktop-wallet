@@ -70,7 +70,6 @@ export default {
   },
 
   data: () => ({
-    timerId: null,
     selectableWallets: []
   }),
 
