@@ -2,6 +2,8 @@ import BigNumber from 'bignumber.js'
 import { MARKET } from '@config'
 import { merge } from 'lodash'
 
+BigNumber.config({ DECIMAL_PLACES: 8 })
+
 export default {
   methods: {
     /**
