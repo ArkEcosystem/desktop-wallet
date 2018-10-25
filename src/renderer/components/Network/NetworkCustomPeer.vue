@@ -52,8 +52,7 @@
 
 <script>
 import { ipAddress, numeric, required } from 'vuelidate/lib/validators'
-import ModalLoader from './ModalLoader'
-import ModalWindow from './ModalWindow'
+import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { ButtonGeneric } from '@/components/Button'
 import { InputText } from '@/components/Input'
 
@@ -87,7 +86,6 @@ export default {
           error = this.$t('VALIDATION.NOT_VALID', [this.$refs['input-host'].label])
         }
       }
-
       return error
     },
 
@@ -102,7 +100,6 @@ export default {
           error = this.$t('VALIDATION.NOT_VALID', [this.$refs['input-port'].label])
         }
       }
-
       return error
     }
   },

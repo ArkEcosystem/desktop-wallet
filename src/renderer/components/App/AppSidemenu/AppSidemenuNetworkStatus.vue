@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <ModalPeer
+    <NetworkCustomPeer
       v-if="showCustomPeerModal"
       @close="toggleCustomPeerModal"
     />
@@ -81,7 +81,7 @@
 
 <script>
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
-import { ModalPeer } from '@/components/Modal'
+import { NetworkCustomPeer } from '@/components/Network'
 import { ButtonReload, ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import SvgIcon from '@/components/SvgIcon'
@@ -95,7 +95,7 @@ export default {
     InputText,
     MenuDropdown,
     MenuOptions,
-    ModalPeer,
+    NetworkCustomPeer,
     SvgIcon
   },
 

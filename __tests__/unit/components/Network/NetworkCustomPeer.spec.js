@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
-import { ModalPeer } from '@/components/Modal'
+import { NetworkCustomPeer } from '@/components/Network'
 
 const mocks = {
   $store: {
@@ -13,9 +13,9 @@ const mocks = {
 
 Vue.use(Vuelidate)
 
-describe('ModalPeer', () => {
+describe('NetworkCustomPeer', () => {
   it('should render modal', () => {
-    const wrapper = shallowMount(ModalPeer, {
+    const wrapper = shallowMount(NetworkCustomPeer, {
       mocks
     })
     expect(wrapper.isVueInstance()).toBeTrue()
