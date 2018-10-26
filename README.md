@@ -62,6 +62,7 @@ If you discover a security vulnerability within this project, please send an e-m
 
 ## Credits
 
+ - [ItsANameToo](https://github.com/ItsANameToo)
  - [Juan A. Martín](https://github.com/j-a-m-l)
  - [Lúcio Rubens](https://github.com/luciorubeens)
  - [Alex Barnsley](https://github.com/alexbarnsley)
