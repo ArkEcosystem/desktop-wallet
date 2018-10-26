@@ -103,8 +103,8 @@ export default {
 
   methods: {
     onSelect (address) {
-      this.$emit('select', address)
       this.$router.push({ name: 'wallet-show', params: { address } })
+      this.$emit('select', address)
     },
 
     refreshLedgerWallets () {

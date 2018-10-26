@@ -37,7 +37,10 @@ describe('WalletHeadingPrimaryActions', () => {
   it('should be instatiated', () => {
     const wrapper = shallowMount(WalletHeadingPrimaryActions, {
       mocks: {
-        wallet_fromRoute: sampleWalletData
+        wallet_fromRoute: sampleWalletData,
+        walletVote: {
+          publicKey: null
+        }
       }
     })
     expect(wrapper.isVueInstance()).toBeTrue()

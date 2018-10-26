@@ -16,7 +16,7 @@
           <div class="flex items-center">
             <span>{{ table.formattedRow['username'] }}</span>
             <span
-              v-if="table.row.publicKey === votePublicKey"
+              v-if="table.row.publicKey === walletVote.publicKey"
               class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs rounded pointer-events-none ml-3"
             >
               {{ $t('WALLET_DELEGATES.VOTE') }}
@@ -37,7 +37,7 @@
         :title="selected.username"
         :type="3"
         :delegate="selected"
-        :is-voter="selected.publicKey === votePublicKey"
+        :is-voter="selected.publicKey === walletVote.publicKey"
         @cancel="onCancel"
         @sent="onSent"
       />
@@ -51,13 +51,14 @@ import { TransactionModal } from '@/components/Transaction'
 export default {
   name: 'WalletDelegates',
 
+  inject: ['walletVote'],
+
   components: {
     TransactionModal
   },
 
   data: () => ({
     delegates: [],
-    votePublicKey: null,
     selected: null
   }),
 
@@ -94,7 +95,6 @@ export default {
 
   mounted () {
     this.fetchDelegates()
-    this.fetchWalletVote()
   },
 
   methods: {
@@ -110,18 +110,6 @@ export default {
       }
     },
 
-    async fetchWalletVote () {
-      try {
-        this.votePublicKey = await this.$client.fetchWalletVote(this.wallet_fromRoute.address)
-      } catch (error) {
-        this.$logger.error(error)
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'fetch vote',
-          msg: error.message
-        }))
-      }
-    },
-
     formatPercentage (value) {
       return this.formatter_percentage(value)
     },
@@ -131,7 +119,7 @@ export default {
     },
 
     onSent () {
-      this.votePublicKey = null
+      this.walletVote.publicKey = null
       this.selected = null
     },
 

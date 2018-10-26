@@ -398,6 +398,10 @@ export default {
         OPERATIONS: 'Wallet operations',
         SENDING_ENABLED: 'Sending transactions enabled'
       }
+    },
+
+    WALLET_SHOW: {
+      NO_VOTE: 'Wallet hasn\'t voted'
     }
   },
 

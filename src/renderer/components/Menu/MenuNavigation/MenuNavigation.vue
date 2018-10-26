@@ -53,8 +53,11 @@ export default {
 
     switchToId (id) {
       this.items.forEach(item => item.toggle(item.id === id))
-      this.activeId = id
-      this.$emit('input', this.activeId)
+
+      if (this.activeId !== id) {
+        this.activeId = id
+        this.$emit('input', this.activeId)
+      }
     }
   }
 }

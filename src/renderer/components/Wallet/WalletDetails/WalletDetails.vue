@@ -37,9 +37,18 @@ export default {
     MenuTabItem
   },
 
+  provide () {
+    return {
+      walletVote: this.walletVote
+    }
+  },
+
   data () {
     return {
-      currentTab: ''
+      currentTab: '',
+      walletVote: {
+        publicKey: null
+      }
     }
   },
 
@@ -88,8 +97,26 @@ export default {
     }
   },
 
+  async created () {
+    await this.fetchWalletVote()
+  },
+
   mounted () {
     this.currentTab = this.tabs[0].component
+  },
+
+  methods: {
+    async fetchWalletVote () {
+      try {
+        this.walletVote.publicKey = await this.$client.fetchWalletVote(this.wallet_fromRoute.address)
+      } catch (error) {
+        this.$logger.error(error)
+        this.$error(this.$t('COMMON.FAILED_FETCH', {
+          name: 'fetch vote',
+          msg: error.message
+        }))
+      }
+    }
   }
 }
 </script>

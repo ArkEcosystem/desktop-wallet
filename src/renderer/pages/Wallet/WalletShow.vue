@@ -1,7 +1,13 @@
 <template>
   <div class="WalletShow relative flex h-full">
-    <WalletDetails class="h-full flex-1" />
-    <WalletSidebar class="sticky pin min-h-full w-32 border-l border-theme-line-separator py-10 rounded-r-lg" />
+    <WalletDetails
+      ref="WalletDetails"
+      class="h-full flex-1"
+    />
+    <WalletSidebar
+      class="sticky pin min-h-full w-32 border-l border-theme-line-separator py-10 rounded-r-lg"
+      @select="loadWalletData"
+    />
   </div>
 </template>
 
@@ -14,6 +20,12 @@ export default {
   components: {
     WalletSidebar,
     WalletDetails
+  },
+
+  methods: {
+    loadWalletData () {
+      this.$refs.WalletDetails.fetchWalletVote()
+    }
   }
 }
 </script>
