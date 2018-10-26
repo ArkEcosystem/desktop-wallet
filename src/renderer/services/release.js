@@ -1,5 +1,6 @@
 import axios from 'axios'
-import packageJson from '@package.json'
+// NOTE: uses a relative path because it is used on the `main` process too
+import packageJson from '../../../package.json'
 
 export default {
   get currentVersion () {

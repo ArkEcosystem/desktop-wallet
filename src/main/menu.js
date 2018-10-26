@@ -1,5 +1,7 @@
-const { APP } = require('../../config')
 const { app, Menu, shell } = require('electron')
+const packageJson = require('../../package.json')
+const { APP } = require('../../config')
+const releaseService = require('../renderer/services/release').default
 
 const template = [
   {
@@ -50,6 +52,12 @@ const template = [
         label: 'Learn More',
         click () {
           shell.openExternal(APP.website)
+        }
+      },
+      {
+        label: `Version ${packageJson.version}`,
+        click () {
+          shell.openExternal(releaseService.latestReleaseUrl)
         }
       }
     ]
