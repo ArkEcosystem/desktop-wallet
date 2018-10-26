@@ -1,5 +1,12 @@
 <template>
   <section class="TransactionConfirm">
+    <TransactionDetail
+      :amount="formatter_networkCurrency(totalAmount)"
+      :recipient-address="transaction.recipientId"
+      :sender-address="address"
+      :type="transaction.type"
+      class="mb-3"
+    />
     <component
       :is="activeComponent"
     />
@@ -30,6 +37,7 @@ import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegate
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
+import { TransactionDetail } from '@/components/Transaction'
 import { find } from 'lodash'
 
 export default {
@@ -45,7 +53,8 @@ export default {
     TransactionConfirmDelegateRegistration,
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
-    TransactionConfirmVote
+    TransactionConfirmVote,
+    TransactionDetail
   },
 
   props: {
@@ -63,6 +72,9 @@ export default {
   computed: {
     totalAmount () {
       return parseInt(this.transaction.amount) + this.transaction.fee
+    },
+    address () {
+      return this.wallet_fromRoute.address
     }
   },
 

@@ -509,6 +509,10 @@ export default {
     }
   },
 
+  TRANSACTION_DETAIL: {
+    SEND_AMOUNT: 'Send {token}'
+  },
+
   WALLET_HEADING: {
     ACTIONS: {
       WALLET_NAME: 'Wallet name',
