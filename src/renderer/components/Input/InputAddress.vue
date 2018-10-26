@@ -1,7 +1,7 @@
 <template>
   <InputField
     :label="label"
-    :helper-text="helperText || error"
+    :helper-text="helperText || neoAddressText || error"
     :is-dirty="$v.model.$dirty"
     :is-disabled="isDisabled"
     :is-focused="isFocused"
@@ -43,6 +43,7 @@ import { required } from 'vuelidate/lib/validators'
 import InputField from './InputField'
 import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
+import axios from 'axios'
 
 export default {
   name: 'InputAddress',
@@ -87,7 +88,8 @@ export default {
 
   data: vm => ({
     inputValue: vm.value,
-    isFocused: false
+    isFocused: false,
+    neoAddressText: null
   }),
 
   computed: {
@@ -144,10 +146,27 @@ export default {
       this.$logger.error('QR reader is not available yet')
     },
 
-    updateInputValue (value) {
+    async updateInputValue (value) {
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()
       this.inputValue = value
+
+      if (await this.isNeoAddress(this.inputValue)) {
+        this.neoAddressText = this.$t('INPUT_ADDRESS.ERROR.NEO_ADDRESS')
+      } else {
+        this.neoAddressText = null
+      }
+    },
+
+    async isNeoAddress (address) {
+      // First check if it could be a valid neo address (use 0x17 for mainnet)
+      if (WalletService.validateAddress(address, 0x17)) {
+        // Then make a call to see if there are any transactions for the given address
+        const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
+        const response = await axios.get(neoUrl + address)
+        return response.status === 200 && response.data && response.data.length > 0
+      }
+      return false
     }
   },
 

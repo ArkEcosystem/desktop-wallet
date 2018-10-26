@@ -145,7 +145,8 @@ export default {
   INPUT_ADDRESS: {
     ERROR: {
       NOT_VALID: 'The address is not valid',
-      REQUIRED: 'The address is required'
+      REQUIRED: 'The address is required',
+      NEO_ADDRESS: 'This looks like a NEO address'
     },
     LABEL: 'Address',
     QR: 'Scan the QR code'
