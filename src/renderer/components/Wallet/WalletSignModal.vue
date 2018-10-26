@@ -13,10 +13,19 @@
       />
 
       <PassphraseInput
+        v-if="!wallet.passphrase"
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="wallet.address"
         :pub-key-hash="session_network.version"
+        class="my-3"
+      />
+      <InputPassword
+        v-else
+        ref="password"
+        v-model="$v.form.walletPassword.$model"
+        :label="$t('TRANSACTION.PASSWORD')"
+        :is-required="true"
         class="my-3"
       />
 
@@ -30,18 +39,23 @@
         :disabled="$v.form.$invalid"
         class="blue-button mt-5"
         type="button"
-        @click="signMessage"
+        @click="onSignMessage"
       >
         {{ $t('SIGN_VERIFY.SIGN') }}
       </button>
     </div>
+
+    <ModalLoader
+      :message="$t('ENCRYPTION.DECRYPTING')"
+      :visible="showEncryptLoader"
+    />
   </ModalWindow>
 </template>
 
 <script>
 import { required, minLength } from 'vuelidate/lib/validators'
-import { InputText } from '@/components/Input'
-import { ModalWindow } from '@/components/Modal'
+import { InputPassword, InputText } from '@/components/Input'
+import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletService from '@/services/wallet'
 
@@ -49,7 +63,9 @@ export default {
   name: 'WalletSignModal',
 
   components: {
+    InputPassword,
     InputText,
+    ModalLoader,
     ModalWindow,
     PassphraseInput
   },
@@ -64,17 +80,53 @@ export default {
   data: () => ({
     form: {
       message: '',
-      passphrase: ''
-    }
+      passphrase: '',
+      walletPassword: null
+    },
+    showEncryptLoader: false,
+    bip38Worker: null
   }),
 
   mounted () {
+    if (this.bip38Worker) {
+      this.bip38Worker.send('quit')
+    }
+    this.bip38Worker = this.$bgWorker.bip38()
+    this.bip38Worker.on('message', message => {
+      if (message.decodedWif === null) {
+        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        this.showEncryptLoader = false
+      } else if (message.decodedWif) {
+        this.form.passphrase = null
+        this.form.wif = message.decodedWif
+        this.showEncryptLoader = false
+        this.signMessage()
+      }
+    })
   },
 
   methods: {
+    onSignMessage () {
+      if (this.form.walletPassword && this.form.walletPassword.length) {
+        this.showEncryptLoader = true
+        this.bip38Worker.send({
+          bip38key: this.wallet.passphrase,
+          password: this.form.walletPassword,
+          wif: this.session_network.wif
+        })
+      } else {
+        this.signMessage()
+      }
+    },
+
     signMessage () {
       // TODO: Use try catch for the sign function?
-      var message = WalletService.signMessage(this.form.message, this.form.passphrase)
+      let message
+      if (this.form.wif) {
+        message = WalletService.signMessageWithWif(this.form.message, this.form.wif)
+      } else {
+        message = WalletService.signMessage(this.form.message, this.form.passphrase)
+      }
       message['timestamp'] = new Date().getTime()
       message['address'] = this.wallet.address
       this.$store.dispatch('wallet/addSignedMessage', message)
@@ -105,6 +157,23 @@ export default {
 
           if (this.$refs.passphrase) {
             return !this.$refs.passphrase.$v.$invalid
+          }
+
+          return false
+        }
+      },
+      walletPassword: {
+        isValid (value) {
+          if (!this.wallet.passphrase) {
+            return true
+          }
+
+          if (!this.form.walletPassword || !this.form.walletPassword.length) {
+            return false
+          }
+
+          if (this.$refs.password) {
+            return !this.$refs.password.$v.$invalid
           }
 
           return false

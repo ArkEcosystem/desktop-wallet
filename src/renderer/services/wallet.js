@@ -40,14 +40,32 @@ export default class WalletService {
   }
 
   /**
-   * Signs a message by using the given passphrase
+   * Signs a message by using the given passphrase.
+   * @param {String} message
+   * @param {String} passphrase
+   * @return {String}
    */
   static signMessage (message, passphrase) {
     return Message.sign(message, passphrase)
   }
 
   /**
-   * Verify a given message based on the given public key and signature
+   * Signs a message by using the given wif.
+   * @param {String} message
+   * @param {Number} wif
+   * @param {Object} [network]
+   * @return {String}
+   */
+  static signMessageWithWif (message, wif, network) {
+    return Message.signWithWif(message, wif, network)
+  }
+
+  /**
+   * Verify a given message based on the given public key and signature.
+   * @param {String} message
+   * @param {String} publicKey
+   * @param {String} signature
+   * @return {String}
    */
   static verifyMessage (message, publicKey, signature) {
     return Message.verify({ message, publicKey, signature })

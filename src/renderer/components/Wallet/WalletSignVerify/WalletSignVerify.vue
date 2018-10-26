@@ -18,7 +18,7 @@
             slot-scope="{ toggle }"
             :wallet="currentWallet"
             @cancel="toggle"
-            @signed="toggle"
+            @signed="toggle() && updateSignedMessages()"
           />
         </ButtonModal>
       </div>
@@ -95,16 +95,18 @@ export default {
   },
 
   data: () => ({
+    signedMessages: [],
     showTimestamp: null
   }),
 
   computed: {
     currentWallet () {
       return this.wallet_fromRoute
-    },
-    signedMessages () {
-      return this.$store.getters['wallet/signedMessages'](this.currentWallet.address)
     }
+  },
+
+  mounted () {
+    this.updateSignedMessages()
   },
 
   methods: {
@@ -120,6 +122,9 @@ export default {
     deleteMessage (value) {
       var message = clone(value, false)
       this.$store.dispatch('wallet/deleteSignedMessage', message)
+    },
+    updateSignedMessages () {
+      this.signedMessages = this.$store.getters['wallet/signedMessages'](this.currentWallet.address)
     }
   }
 }

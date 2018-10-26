@@ -21,10 +21,10 @@
     lodash.orderby "^4.6.0"
     lodash.shuffle "^4.2.0"
 
-"@arkecosystem/crypto@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-0.2.2.tgz#cbca17ebd7f2302a590b3415c49fd8d8988164e5"
-  integrity sha512-hDwWG9nI+xUKQq0Y+bjyKxag8MF5z26VLPOOXZnHL1YK0XfTuPdhOZddIKGCYchcZa5M9GI5gwWPAz9SpycEow==
+"@arkecosystem/crypto@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-0.2.3.tgz#1bbe72d97c8f6591bbbd75f299ec8f426dfca8d8"
+  integrity sha512-HO0CBnxJ3Dzi6PRV8ZFVTY8h6YM+/UNXFm8RuUctCH88u8s/sxDxopwAW/p08Bet7DJlzQ5pLX3XIHzcF316ng==
   dependencies:
     bignumber.js "^7.2.1"
     bip32 "^1.0.2"
@@ -34,7 +34,7 @@
     bytebuffer "^5.0.1"
     create-hash "^1.2.0"
     deepmerge "^2.1.0"
-    joi "^13.3.0"
+    joi "^14.0.1"
     lodash "^4.17.10"
     moment "^2.22.1"
     node-forge "^0.7.5"
@@ -6486,10 +6486,10 @@ jest@^23.6.0:
     import-local "^1.0.0"
     jest-cli "^23.6.0"
 
-joi@^13.3.0:
-  version "13.7.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-13.7.0.tgz#cfd85ebfe67e8a1900432400b4d03bbd93fb879f"
-  integrity sha512-xuY5VkHfeOYK3Hdi91ulocfuFopwgbSORmIwzcwHKESQhC7w1kD5jaVSPnqDxS2I8t3RZ9omCKAxNwXN5zG1/Q==
+joi@^14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-14.0.1.tgz#5bc53e8fff6e6da19d6cd8c76e2afe5c0815a2d3"
+  integrity sha512-M8yD7j1G/9UfJ40h97ophm/flC0zDXUn1RrK3GEm2IsyxOOJAnjQiYLLFS5p75gDGtaKwAPMB4JNLLr5yvCadw==
   dependencies:
     hoek "5.x.x"
     isemail "3.x.x"

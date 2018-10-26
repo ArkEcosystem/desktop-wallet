@@ -161,8 +161,7 @@ export default {
     this.bip38Worker = this.$bgWorker.bip38()
     this.bip38Worker.on('message', message => {
       if (message.decodedWif === null) {
-        this.$error('Failed to decrypt passphrase')
-        // this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
         this.showEncryptLoader = false
       } else if (message.decodedWif) {
         this.form.passphrase = null
