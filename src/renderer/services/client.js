@@ -32,7 +32,7 @@ export default class ClientService {
     }
 
     if (apiVersion === 1) {
-      const { data } = await client.resource('loader').status()
+      const { data } = await client.resource('loader').configuration()
 
       return data.network
     } else {
@@ -66,7 +66,7 @@ export default class ClientService {
    */
   async fetchPeerStatus () {
     if (this.__version === 1) {
-      return (await this.client.resource('loader').configuration()).data
+      return (await this.client.resource('loader').syncing()).data
     } else {
       return (await this.client.resource('node').syncing()).data.data
     }

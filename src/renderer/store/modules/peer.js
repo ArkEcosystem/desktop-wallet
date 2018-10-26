@@ -256,18 +256,19 @@ export default {
      * Validate custom peer, used to check it's acceptable to connect.
      * @param  {String} ip
      * @param  {Number} port
+     * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { ip, port }) {
+    async validatePeer ({ rootGetters }, { ip, port, timeout = 3000 }) {
       let networkConfig
       let version = 1
       const host = `http://${ip}:${port}`
       try {
-        networkConfig = await ClientService.fetchNetworkConfig(host, version, 3000)
+        networkConfig = await ClientService.fetchNetworkConfig(host, version, timeout)
       } catch (errorV1) {
         try {
           version = 2
-          networkConfig = await ClientService.fetchNetworkConfig(host, version, 3000)
+          networkConfig = await ClientService.fetchNetworkConfig(host, version, timeout)
         } catch (errorV2) {
           //
         }
@@ -282,7 +283,7 @@ export default {
       const client = new ClientService(false)
       client.host = host
       client.version = version
-      client.client.http.timeout = 3000
+      client.client.http.timeout = timeout
 
       let peerStatus
       try {
