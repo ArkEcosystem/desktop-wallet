@@ -1,7 +1,8 @@
 <template>
   <div
     v-click-outside="emitClose"
-    class="AppSidemenuNetworkStatus absolute z-10"
+    :class="[isHorizontal ? 'AppSidemenuNetworkStatus__horizontal' : 'AppSidemenuNetworkStatus']"
+    class="absolute z-10"
   >
 
     <MenuOptions class="AppSidemenuNetworkStatus--peer">
@@ -104,6 +105,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isHorizontal: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -192,6 +198,12 @@ export default {
 .AppSidemenuNetworkStatus {
   width: 380px;
   left: 5.5rem;
+}
+
+.AppSidemenuNetworkStatus__horizontal {
+  width: 380px;
+  right: 4.5rem;
+  top: 4.5rem;
 }
 
 .AppSidemenuNetworkStatus--status__height,

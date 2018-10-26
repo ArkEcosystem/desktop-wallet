@@ -1,6 +1,6 @@
 <template>
   <div class="Dashboard relative flex flex-row h-full w-full">
-    <main class="bg-theme-feature rounded-lg mr-4 flex-1 w-3/4 flex-col overflow-y-auto">
+    <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-3/4 flex-col overflow-y-auto">
       <div
         v-if="isMarketEnabled"
         class="bg-grey-lightest pt-10 px-10 pb-4 rounded-t-lg"

@@ -1,18 +1,18 @@
 <template>
   <MenuNavigation
     v-model="activeItem"
-    :class="horizontal ? 'h-18 flex-row' : 'w-18 mx-6 rounded-lg flex-col'"
+    :class="isHorizontal ? 'h-18 flex-row' : 'w-18 mx-6 rounded-lg flex-col'"
     class="AppSidemenu justify-between relative"
   >
 
-    <div :class="{'flex flex-row h-18' : horizontal}">
+    <div :class="{'flex flex-row h-18' : isHorizontal}">
       <!-- ARK logo -->
       <router-link
         :to="{ name: 'dashboard' }"
-        :class="horizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
+        :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
         class="bg-red flex justify-center items-center">
         <img
-          :class="horizontal ? 'h-12' : 'w-18'"
+          :class="isHorizontal ? 'h-12' : 'w-18'"
           src="@/assets/images/ark-logo.png"
         >
       </router-link>
@@ -20,8 +20,8 @@
       <!-- Wallets -->
       <MenuNavigationItem
         id="wallets"
-        :class="horizontal ? 'w-16' : 'h-16'"
-        :horizontal="horizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
         icon="wallet"
         @click="redirect($event)"
       />
@@ -29,29 +29,29 @@
       <!-- Add contact -->
       <MenuNavigationItem
         id="contacts"
-        :class="horizontal ? 'w-16' : 'h-16'"
-        :horizontal="horizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
         icon="contact-add"
         @click="redirect($event)"
       />
     </div>
 
-    <div :class="{'flex flex-row h-18' : horizontal}">
+    <div :class="{'flex flex-row h-18' : isHorizontal}">
       <!-- Important notification / new releases -->
       <AppSidemenuImportantNotification
         v-if="isImportantNotificationVisible && hasNewRelease"
-        :horizontal="horizontal"
-        :class="horizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
         @close="hideImportantNotification"
       />
     </div>
 
-    <div :class="{'flex flex-row h-18' : horizontal}">
+    <div :class="{'flex flex-row h-18' : isHorizontal}">
       <!-- Announcements -->
       <MenuNavigationItem
         id="announcements"
-        :class="horizontal ? 'w-16' : 'h-16'"
-        :horizontal="horizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
         :show-badge="showUnread"
         icon="whitepaper"
         @click="redirect($event)"
@@ -60,50 +60,52 @@
       <!-- Search -->
       <!-- <MenuNavigationItem
         id="search"
-        :class="horizontal ? 'w-16' : 'h-16'"
-        :horizontal="horizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
         view-box="0 0 20 20"
         icon="search"
         @click="redirect($event)"
       /> -->
     </div>
 
-    <div :class="{'flex flex-row h-18' : horizontal}">
+    <div :class="{'flex flex-row h-18' : isHorizontal}">
       <AppSidemenuSettings
         v-show="isSettingsVisible"
         :outside-click="isSettingsVisible"
+        :is-horizontal="isHorizontal"
         @close="closeShowSettings"
       />
 
       <!-- Settings -->
       <MenuNavigationItem
         id="settings"
-        :class="horizontal ? 'w-16' : 'h-16'"
-        :horizontal="horizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
         icon="settings"
         @click="toggleShowSettings"
       />
 
       <AppSidemenuNetworkStatus
         v-show="isNetworkStatusVisible"
+        :is-horizontal="isHorizontal"
         :outside-click="isNetworkStatusVisible"
         @close="closeShowNetworkStatus"
       />
       <!-- Networks -->
       <MenuNavigationItem
         id="networks"
-        :class="horizontal ? 'w-16' : 'h-16'"
-        :horizontal="horizontal"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
         icon="cloud"
         @click="toggleShowNetworkStatus"
       />
 
       <!-- Profile settings -->
       <div
-        :class="horizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
+        :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
         class="cursor-pointer align-self-end">
         <router-link
-          :class="horizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
+          :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
           :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
           :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
           :to="{ name: 'profiles' }"
@@ -135,7 +137,7 @@ export default {
   },
 
   props: {
-    horizontal: {
+    isHorizontal: {
       type: Boolean,
       required: false,
       default: false

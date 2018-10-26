@@ -11,7 +11,7 @@
   >
     <AppSidemenu
       v-if="hasAnyProfile"
-      :horizontal="true"
+      :is-horizontal="true"
       class="flex lg:hidden"
     />
     <section
@@ -23,7 +23,7 @@
     >
       <div
         :class="{ 'ml-6': !hasAnyProfile }"
-        class="flex-1 flex mt-6 mb-4 mr-6"
+        class="flex-1 flex mt-6 mb-4 lg:mr-6"
       >
         <AppSidemenu
           v-if="hasAnyProfile"

@@ -2,7 +2,7 @@
   <div
     v-tooltip="{
       content: tooltipText,
-      placement: horizontal ? 'bottom' : 'right'
+      placement: isHorizontal ? 'bottom' : 'right'
     }"
     class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center"
     @click="openNotification"
@@ -74,7 +74,7 @@ export default {
   },
 
   props: {
-    horizontal: {
+    isHorizontal: {
       type: Boolean,
       required: false,
       default: false

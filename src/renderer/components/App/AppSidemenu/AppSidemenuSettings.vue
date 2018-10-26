@@ -1,7 +1,8 @@
 <template>
   <MenuOptions
     v-click-outside="emitClose"
-    class="AppSidemenuOptionsSettings absolute z-10"
+    :class="[isHorizontal ? 'AppSidemenuOptionsSettings__horizontal' : 'AppSidemenuOptionsSettings']"
+    class="absolute z-10"
   >
     <MenuOptionsItem
       :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
@@ -76,6 +77,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isHorizontal: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -145,5 +151,10 @@ export default {
 .AppSidemenuOptionsSettings {
   width: 300px;
   left: 5.5rem;
+}
+.AppSidemenuOptionsSettings__horizontal {
+  width: 300px;
+  right: 5.5rem;
+  top: 4.5rem;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div
-    :class="{ 'MenuNavigationItem--active': isActive, 'w-full' : !horizontal }"
+    :class="{ 'MenuNavigationItem--active': isActive, 'w-full' : !isHorizontal }"
     class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
     @click="onClick"
   >
     <div
-      v-if="!horizontal"
+      v-if="!isHorizontal"
       class="MenuNavigationItem__border absolute w-full"
     />
     <slot
@@ -13,7 +13,7 @@
     >
       <div
         v-if="icon"
-        :class="{ 'w-full' : !horizontal }"
+        :class="{ 'w-full' : !isHorizontal }"
         class="flex items-center justify-center"
       >
         <SvgIcon
@@ -27,7 +27,7 @@
       </div>
     </slot>
     <div
-      v-if="horizontal"
+      v-if="isHorizontal"
       class="MenuNavigationItemHorizontal__border absolute h-full"
     />
   </div>
@@ -65,7 +65,7 @@ export default {
       required: false,
       default: '0 0 23 23'
     },
-    horizontal: {
+    isHorizontal: {
       type: Boolean,
       required: false,
       default: false
