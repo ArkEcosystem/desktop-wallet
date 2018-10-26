@@ -58,14 +58,14 @@
       />
 
       <!-- Search -->
-      <MenuNavigationItem
+      <!-- <MenuNavigationItem
         id="search"
         :class="horizontal ? 'w-16' : 'h-16'"
         :horizontal="horizontal"
         view-box="0 0 20 20"
         icon="search"
         @click="redirect($event)"
-      />
+      /> -->
     </div>
 
     <div :class="{'flex flex-row h-18' : horizontal}">
