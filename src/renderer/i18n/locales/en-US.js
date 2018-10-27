@@ -476,7 +476,7 @@ export default {
     RECIPIENT: 'Recipient',
     SENDER: 'Sender',
     AMOUNT: 'Amount',
-    VENDOR_FIELD: 'Vendor Field',
+    VENDOR_FIELD: 'Smartbridge',
     PASSPHRASE: 'Passphrase',
     SECOND_PASSPHRASE: 'Second Passphrase',
     PASSWORD: 'Encryption Password',

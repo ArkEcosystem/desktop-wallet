@@ -68,7 +68,7 @@
               trigger: 'hover',
               placement: 'left'
             }"
-            class="font-bold mr-2"
+            class="font-bold mr-2 whitespace-no-wrap"
           >
             {{ table.row.isSender ? '-' : '+' }}
             {{ table.formattedRow['amount'] }}
@@ -88,11 +88,17 @@
           </span>
         </div>
 
-        <div v-else-if="table.column.field === 'sender'">
+        <div
+          v-else-if="table.column.field === 'sender'"
+          class="overflow-hidden truncate max-w-xxs"
+        >
           <WalletAddress :address="table.row.sender"/>
         </div>
 
-        <div v-else-if="table.column.field === 'recipient'">
+        <div
+          v-else-if="table.column.field === 'recipient'"
+          class="overflow-hidden truncate max-w-xxs"
+        >
           <WalletAddress
             :address="table.row.recipient"
             :type="table.row.type"
@@ -206,6 +212,13 @@ export default {
           field: 'recipient'
         },
         {
+          label: this.$t('TRANSACTION.VENDOR_FIELD'),
+          field: 'vendorField',
+          formatFn: this.formatSmartbridge,
+          tdClass: 'hidden xl:table-cell',
+          thClass: 'hidden xl:table-cell'
+        },
+        {
           label: this.$t('TRANSACTION.AMOUNT'),
           type: 'number',
           field: 'amount',
@@ -232,6 +245,13 @@ export default {
 
     formatAmount (value) {
       return this.formatter_networkCurrency(value)
+    },
+
+    formatSmartbridge (value) {
+      if (value.length > 43) {
+        return `${value.slice(0, 40)}...`
+      }
+      return value
     },
 
     openTransactions (id) {
