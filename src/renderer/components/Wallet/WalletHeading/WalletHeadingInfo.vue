@@ -21,7 +21,15 @@
         />
       </p>
 
-      <p class="WalletHeading__balance font-semibold tracking-extrawide ">{{ balance }}</p>
+      <p class="WalletHeading__balance font-semibold tracking-extrawide">
+        {{ balance }}
+        <span
+          v-if="isMarketEnabled"
+          class="WalletHeading__balance__alternative text-xs text-theme-feature-item-text"
+        >
+          {{ alternativeBalance }}
+        </span>
+      </p>
     </div>
   </div>
 </template>
@@ -45,6 +53,14 @@ export default {
       const wallet = this.wallet_fromRoute
       return wallet ? wallet.address : ''
     },
+    alternativeBalance () {
+      const wallet = this.wallet_fromRoute
+      const balance = wallet ? this.currency_subToUnit(wallet.balance) : 0
+      return this.currency_format(balance * this.price, { currency: this.alternativeCurrency })
+    },
+    alternativeCurrency () {
+      return this.$store.getters['session/currency']
+    },
     balance () {
       const wallet = this.wallet_fromRoute
       const balance = wallet ? wallet.balance : 0
@@ -52,6 +68,12 @@ export default {
     },
     currentWallet () {
       return this.wallet_fromRoute
+    },
+    isMarketEnabled () {
+      return this.session_network.market.enabled
+    },
+    price () {
+      return this.$store.getters['market/lastPrice']
     }
   }
 }

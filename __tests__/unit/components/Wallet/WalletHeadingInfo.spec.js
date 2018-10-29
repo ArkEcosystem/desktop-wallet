@@ -9,7 +9,10 @@ const locale = 'en-US'
 const network = {
   token: 'NET',
   symbol: '×',
-  fractionDigits: 8
+  fractionDigits: 8,
+  market: {
+    enabled: false
+  }
 }
 
 const sampleWalletData = {
@@ -17,6 +20,9 @@ const sampleWalletData = {
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
   balance: 797.8921
 }
+
+const alternativeCurrency = 'EUR'
+const price = 12
 
 let wrapper
 
@@ -47,7 +53,9 @@ describe('WalletHeadingInfo component', () => {
       mocks: {
         $store: {
           getters: {
-            'session/network': network
+            'market/lastPrice': price,
+            'session/network': network,
+            'session/currency': alternativeCurrency
           }
         },
         session_network: network,
@@ -73,12 +81,27 @@ describe('WalletHeadingInfo component', () => {
     expect(address.text()).toBe(sampleWalletData.address)
   })
 
-  it('should display the balance', () => {
+  it('should display the balance in the currency network', () => {
     const balance = wrapper.find('.WalletHeading__balance')
 
     const arkBalance = wrapper.vm.currency_subToUnit(sampleWalletData.balance)
     const formattedBalance = wrapper.vm.currency_format(arkBalance, { currencyFrom: 'network' })
 
     expect(balance.text()).toContain(formattedBalance)
+  })
+
+  describe('when the network has market enabled', () => {
+    beforeEach(() => {
+      network.market.enabled = true
+    })
+
+    it('should display the balance in the alternative currency too', () => {
+      const balance = wrapper.find('.WalletHeading__balance__alternative')
+
+      const arkBalance = wrapper.vm.currency_subToUnit(sampleWalletData.balance)
+      const formattedBalance = wrapper.vm.currency_format(arkBalance * price, { currency: alternativeCurrency })
+
+      expect(balance.text()).toContain(formattedBalance)
+    })
   })
 })
