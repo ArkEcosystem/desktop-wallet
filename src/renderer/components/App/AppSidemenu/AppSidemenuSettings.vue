@@ -40,6 +40,7 @@
     </MenuOptionsItem>
 
     <MenuOptionsItem
+      v-if="!isLinux"
       :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
       @click="toggleSelect('protection-switch')">
       <div
@@ -61,6 +62,7 @@
 <script>
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
+const os = require('os')
 
 export default {
   name: 'AppSidemenuOptionsSettings',
@@ -86,6 +88,10 @@ export default {
   },
 
   computed: {
+    isLinux () {
+      // You can find the possible options here: https://nodejs.org/api/os.html#os_os_platform
+      return os.platform() !== 'darwin' && os.platform() !== 'win32'
+    },
     currencies () {
       return this.$store.getters['market/currencies']
     },
