@@ -39,6 +39,7 @@ export default {
 
   provide () {
     return {
+      switchToTab: this.switchToTab,
       walletVote: this.walletVote
     }
   },
@@ -106,6 +107,9 @@ export default {
   },
 
   methods: {
+    switchToTab (component) {
+      this.currentTab = component
+    },
     async fetchWalletVote () {
       try {
         this.walletVote.publicKey = await this.$client.fetchWalletVote(this.wallet_fromRoute.address)

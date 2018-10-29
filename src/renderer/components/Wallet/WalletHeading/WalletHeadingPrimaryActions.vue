@@ -6,7 +6,8 @@
     <div
       v-tooltip="{ content: $t('PAGES.WALLET_SHOW.NO_VOTE'), trigger:'hover' }"
       v-if="!walletVote.publicKey"
-      class="bg-orange rounded-full w-2 h-2 m-3"
+      class="bg-orange cursor-pointer rounded-full w-2 h-2 m-3"
+      @click="goToDelegates"
     />
     <ButtonModal
       :class="buttonStyle"
@@ -54,7 +55,7 @@ import { TransactionModal } from '@/components/Transaction'
 export default {
   name: 'WalletHeadingPrimaryActions',
 
-  inject: ['walletVote'],
+  inject: ['switchToTab', 'walletVote'],
 
   components: {
     ButtonModal,
@@ -80,6 +81,9 @@ export default {
   },
 
   methods: {
+    goToDelegates () {
+      this.switchToTab('WalletDelegates')
+    },
     async refreshWallet () {
       this.isRefreshing = true
       await this.$eventBus.emit('wallet:fetchTransactions')
