@@ -1,5 +1,5 @@
 <template>
-  <div class="PassphraseWords h-full w-full">
+  <div class="PassphraseWords h-full w-full flex flex-wrap">
     <InputText
       v-for="(word, index) in passphraseWords"
       :is-read-only="true"
@@ -30,14 +30,13 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
-.PassphraseWords {
-  display: grid;
-  grid-template-columns: repeat(4, 4.5rem);
-  grid-gap: 1rem;
+<style lang="postcss">
+.PassphraseWords .InputText {
+  width: calc(config('width.1/4') - config('margin.2'));
+  @apply mr-2
 }
 
-.PassphraseWords /deep/ .InputText__input[disabled] {
+.PassphraseWords .InputText__input[disabled] {
   @apply .bg-transparent
 }
 </style>

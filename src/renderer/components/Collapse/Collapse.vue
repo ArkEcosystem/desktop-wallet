@@ -14,7 +14,7 @@
 
     <keep-alive>
       <transition
-        :duration="{ enter: 100, leave: 200 }"
+        :duration="animationDuration"
         name="Collapse__transition"
         mode="out-in"
         @enter="enter"
@@ -59,6 +59,11 @@ export default {
       type: [String, Number],
       required: false,
       default: null
+    },
+    animationDuration: {
+      type: Object,
+      required: false,
+      default: () => ({ enter: 100, leave: 200 })
     }
   },
 

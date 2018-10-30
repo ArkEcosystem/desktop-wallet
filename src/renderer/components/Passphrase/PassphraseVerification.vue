@@ -10,6 +10,7 @@
         :ref="`input-${position}`"
         :title="$t(`PASSPHRASE_VERIFICATION.WORD_LABEL_${position}`)"
         :value="input"
+        class="PassphraseVerification__inputs__input"
         @focus="showSuggestions(position)"
         @input="updateCurrentWord($event)"
       />
@@ -24,7 +25,7 @@
           : 'hover:text-theme-button-text'
         "
         :title="suggestion"
-        class="cursor-pointer py-2 px-4 text-center"
+        class="PassphraseVerification__suggestions__input cursor-pointer py-2 px-1 text-center"
         @click="updateCurrentWord(suggestion)"
       >
         {{ suggestion }}
@@ -226,15 +227,25 @@ export default {
 
         this.acceptWord(this.currentWord)
       }
+    },
+
+    async focusFirst () {
+      await this.$nextTick
+      const first = this.wordPositions[0]
+      // NOTE: v-for refs do not guarantee the same order as the source Array.
+      this.$el.querySelector(`[name=input-${first}]`).focus()
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .PassphraseVerification__inputs, .PassphraseVerification__suggestions {
-  display: grid;
-  grid-template-columns: repeat(3, 7rem);
-  grid-gap: 0.5rem;
+  @apply flex flex-wrap
+},
+
+.PassphraseVerification__inputs__input, .PassphraseVerification__suggestions__input {
+  width: calc(config('width.1/3') - config('margin.2'));
+  @apply mr-2
 }
 </style>

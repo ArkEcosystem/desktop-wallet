@@ -6,6 +6,7 @@
     <template v-if="!currentWallet.secondPublicKey">
       <Collapse
         :is-open="!isPassphraseStep"
+        :animation-duration="{ enter: 0, leave: 0 }"
       >
         <PassphraseWords :passphrase-words="secondPassphrase.split(' ')" />
 
@@ -22,6 +23,7 @@
         :is-open="isPassphraseStep"
       >
         <PassphraseVerification
+          ref="passphraseVerification"
           :passphrase="secondPassphrase.split(' ')"
           :word-positions="[3, 6, 9]"
           @verified="onVerification"
@@ -35,6 +37,7 @@
           :pub-key-hash="session_network.version"
           class="mt-5"
         />
+
         <InputPassword
           v-else
           ref="password"
@@ -142,11 +145,7 @@ export default {
 
   watch: {
     isPassphraseStep () {
-      if (!this.currentWallet.passphrase) {
-        this.$refs.passphrase.focus()
-      } else {
-        this.$refs.password.focus()
-      }
+      this.$refs.passphraseVerification.focusFirst()
     }
   },
 
