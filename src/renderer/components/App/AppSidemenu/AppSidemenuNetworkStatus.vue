@@ -18,7 +18,7 @@
               ref="peers-menu"
               :items="peerIps"
               :value="currentPeerId"
-              :placeholder="peer ? `http://${peer.ip}:${peer.port}` : $t('PEER.NONE')"
+              :placeholder="peer ? `${peer.ip}` : $t('PEER.NONE')"
               :pin-above="true"
               :prefix="$t('PEER.PEER')"
               class="inline-block text-white fill-white width-inherit"
@@ -134,7 +134,7 @@ export default {
       }
 
       return bestPeers.reduce((map, peer, index) => {
-        map[index] = `http://${peer.ip}:${peer.port}`
+        map[index] = peer.ip
 
         return map
       }, {})
@@ -168,12 +168,12 @@ export default {
       this.isRefreshing = false
     },
 
-    setPeer (peerId) {
+    async setPeer (peerId) {
       const peer = this.bestPeers[peerId]
       if (!peer) {
         this.$error('Could not find peer')
       } else {
-        this.$store.dispatch('peer/setCurrentPeer', peer)
+        await this.$store.dispatch('peer/setCurrentPeer', peer)
       }
     },
 

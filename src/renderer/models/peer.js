@@ -7,7 +7,11 @@ export default new BaseModel({
       type: 'string'
     },
     port: {
-      type: 'integer'
+      type: ['integer', 'null']
+    },
+    p2pPort: {
+      type: ['integer', 'null'],
+      format: (value) => value.p2pPort || null
     },
     version: {
       type: 'string'
@@ -25,10 +29,12 @@ export default new BaseModel({
       type: 'integer'
     },
     isCustom: {
-      type: 'boolean'
+      type: 'boolean',
+      format: (value) => value.isCustom || false
     },
     lastUpdated: {
-      type: 'date'
+      type: ['date', 'null'],
+      format: (value) => value.lastUpdated || null
     }
   },
   required: ['ip', 'port', 'version', 'height', 'status', 'delay']

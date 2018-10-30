@@ -1,7 +1,33 @@
 import random from 'lodash/random'
+import apiClient from '@arkecosystem/client'
 import ClientService from '@/services/client'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
+
+/**
+ * Get API port if version 2 peer.
+ * @param  {Object} peer
+ * @return {void}
+ */
+const getApiPort = async (peer) => {
+  if (peer.port) {
+    return
+  }
+
+  if (/^2\./.test(peer.version) && peer.p2pPort) {
+    try {
+      const config = await apiClient.fetchPeerConfig(`http://${peer.ip}:${peer.p2pPort}`)
+      if (config && config.plugins && config.plugins['@arkecosystem/core-api']) {
+        if (config.plugins['@arkecosystem/core-api'].enabled) {
+          peer.port = config.plugins['@arkecosystem/core-api'].port
+        }
+      }
+    } catch (error) {
+      const message = error.response ? error.response.data.message : error.message
+      throw new Error('Could not determine peer API port: ', message)
+    }
+  }
+}
 
 export default {
   namespaced: true,
@@ -149,7 +175,8 @@ export default {
      * @param  {Object} peer
      * @return {void}
      */
-    setCurrentPeer ({ commit, rootGetters }, peer) {
+    async setCurrentPeer ({ commit, rootGetters }, peer) {
+      await getApiPort(peer)
       this._vm.$client.host = `http://${peer.ip}:${peer.port}`
       commit('SET_CURRENT_PEER', {
         peer,
@@ -167,7 +194,7 @@ export default {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
       }
-      const peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
+      let peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
       if (peers.length) {
         for (const peer of peers) {
           peer.height = +peer.height
@@ -175,6 +202,8 @@ export default {
         if (this._vm.$client.version === 2) {
           for (const peer of peers) {
             peer.delay = peer.latency
+            peer.p2pPort = peer.port
+            peer.port = null
             delete peer.latency
           }
         }
@@ -206,13 +235,21 @@ export default {
         }
       }
 
-      const peer = getters['best']()
+      let peer = getters['best']()
       if (!peer) {
         return null
       }
 
-      await dispatch('updateCurrentPeerStatus', peer)
-      dispatch('setCurrentPeer', peer)
+      try {
+        await getApiPort(peer)
+      } catch (error) {
+        await dispatch('connectToBest', {
+          refresh: true
+        })
+      }
+
+      peer = await dispatch('updateCurrentPeerStatus', peer)
+      await dispatch('setCurrentPeer', peer)
 
       return peer
     },
@@ -234,8 +271,18 @@ export default {
 
       try {
         const delayStart = performance.now()
-        const peerStatus = await this._vm.$client.fetchPeerStatus()
+        let peerStatus
+        if (updateCurrentPeer) {
+          peerStatus = await this._vm.$client.fetchPeerStatus()
+        } else {
+          const client = new ClientService(false)
+          client.host = `http://${currentPeer.ip}:${currentPeer.port}`
+          client.version = /^2\./.test(currentPeer.version) ? 2 : 1
+          client.client.http.timeout = 3000
+          peerStatus = await client.fetchPeerStatus()
+        }
         const delay = (performance.now() - delayStart).toFixed(0)
+
         currentPeer = {
           ...currentPeer,
           delay: +delay,
@@ -243,7 +290,7 @@ export default {
           lastUpdated: new Date()
         }
         if (updateCurrentPeer) {
-          dispatch('setCurrentPeer', currentPeer)
+          await dispatch('setCurrentPeer', currentPeer)
         } else {
           return currentPeer
         }
@@ -261,15 +308,15 @@ export default {
      */
     async validatePeer ({ rootGetters }, { ip, port, timeout = 3000 }) {
       let networkConfig
-      let version = 1
+      let version = 2
       const host = `http://${ip}:${port}`
       try {
         networkConfig = await ClientService.fetchNetworkConfig(host, version, timeout)
-      } catch (errorV1) {
+      } catch (errorV2) {
         try {
-          version = 2
+          version = 1
           networkConfig = await ClientService.fetchNetworkConfig(host, version, timeout)
-        } catch (errorV2) {
+        } catch (errorV1) {
           //
         }
       }
@@ -301,8 +348,7 @@ export default {
         height: peerStatus.height,
         version: `${version}.0.0`,
         status: 'OK',
-        delay: 0,
-        isCustom: true
+        delay: 0
       }
     }
   }

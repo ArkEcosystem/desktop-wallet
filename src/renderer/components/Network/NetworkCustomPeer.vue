@@ -124,6 +124,7 @@ export default {
       } else if (typeof response === 'string') {
         this.$error(`${this.$t('PEER.CONNECT_FAILED')}: ${response}`)
       } else {
+        response.isCustom = true
         await this.$store.dispatch('peer/setCurrentPeer', response)
         await this.$store.dispatch('peer/updateCurrentPeerStatus')
         this.$success(`${this.$t('PEER.CONNECTED')}: http://${this.form.host}:${this.form.port}`)

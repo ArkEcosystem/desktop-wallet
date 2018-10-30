@@ -1,38 +1,50 @@
 const goodPeer1 = {
-  'ip': '1.1.1.1',
-  'port': 4001,
-  'version': '1.3.1',
-  'height': 6030358,
-  'status': 'OK',
-  'os': 'linux',
-  'delay': 123
+  ip: '1.1.1.1',
+  port: 4001,
+  p2pPort: null,
+  version: '1.3.1',
+  height: 6030358,
+  status: 'OK',
+  os: 'linux',
+  delay: 123,
+  isCustom: false,
+  lastUpdated: null
 }
 const goodPeer2 = {
-  'ip': '2.2.2.2',
-  'port': 4001,
-  'version': '1.3.1',
-  'height': 6030358,
-  'status': 'OK',
-  'os': 'linux',
-  'delay': 234
+  ip: '2.2.2.2',
+  port: 4001,
+  p2pPort: null,
+  version: '1.3.1',
+  height: 6030358,
+  status: 'OK',
+  os: 'linux',
+  delay: 234,
+  isCustom: false,
+  lastUpdated: null
 }
 const goodPeer3 = {
-  'ip': '3.3.3.3',
-  'port': 4001,
-  'version': '1.3.1',
-  'height': 6030358,
-  'status': 'OK',
-  'os': 'linux',
-  'delay': 345
+  ip: '3.3.3.3',
+  port: 4001,
+  p2pPort: null,
+  version: '1.3.1',
+  height: 6030358,
+  status: 'OK',
+  os: 'linux',
+  delay: 345,
+  isCustom: false,
+  lastUpdated: null
 }
 const badPeer1 = {
-  'ip': '4.4.4.4',
-  'port': 4001,
-  'version': '1.3.1',
-  'height': 5000,
-  'status': 'OK',
-  'os': 'linux',
-  'delay': 456
+  ip: '4.4.4.4',
+  port: 4001,
+  p2pPort: null,
+  version: '1.3.1',
+  height: 5000,
+  status: 'OK',
+  os: 'linux',
+  delay: 456,
+  isCustom: false,
+  lastUpdated: null
 }
 
 export default [
