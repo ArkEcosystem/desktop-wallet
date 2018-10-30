@@ -1,7 +1,8 @@
 <template>
   <MenuOptions
     v-click-outside="emitClose"
-    :class="[isHorizontal ? 'AppSidemenuOptionsSettings__horizontal' : 'AppSidemenuOptionsSettings']"
+    :is-horizontal="isHorizontal"
+    :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
     class="absolute z-10"
   >
     <MenuOptionsItem
@@ -158,9 +159,10 @@ export default {
   width: 300px;
   left: 5.5rem;
 }
-.AppSidemenuOptionsSettings__horizontal {
+
+.AppSidemenuOptionsSettings--horizontal {
   width: 300px;
-  right: 5.5rem;
+  right: 8.5rem;
   top: 4.5rem;
 }
 </style>

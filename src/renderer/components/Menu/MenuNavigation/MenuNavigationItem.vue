@@ -69,6 +69,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    canActivate: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
@@ -78,7 +83,10 @@ export default {
 
   methods: {
     onClick () {
-      this.switchToId(this.id)
+      if (this.canActivate) {
+        this.switchToId(this.id)
+      }
+
       this.$emit('click', this.id)
     },
 

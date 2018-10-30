@@ -74,8 +74,8 @@
 
     <div :class="{'flex flex-row h-18' : isHorizontal}">
       <AppSidemenuSettings
-        v-show="isSettingsVisible"
-        :outside-click="isSettingsVisible"
+        v-if="isSettingsVisible"
+        :outside-click="true"
         :is-horizontal="isHorizontal"
         @close="closeShowSettings"
       />
@@ -86,14 +86,15 @@
         :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
+        :can-activate="false"
         icon="settings"
         @click="toggleShowSettings"
       />
 
       <AppSidemenuNetworkStatus
-        v-show="isNetworkStatusVisible"
+        v-if="isNetworkStatusVisible"
         :is-horizontal="isHorizontal"
-        :outside-click="isNetworkStatusVisible"
+        :outside-click="true"
         @close="closeShowNetworkStatus"
       />
       <!-- Networks -->
@@ -102,6 +103,7 @@
         :title="$t('APP_SIDEMENU.NETWORK')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
+        :can-activate="false"
         icon="cloud"
         @click="toggleShowNetworkStatus"
       />
@@ -186,29 +188,19 @@ export default {
     },
 
     toggleShowSettings () {
-      this.isNetworkStatusVisible = false
       this.isSettingsVisible = !this.isSettingsVisible
-      this.setActive(this.isSettingsVisible ? 'settings' : null)
     },
 
     toggleShowNetworkStatus () {
-      this.isSettingsVisible = false
       this.isNetworkStatusVisible = !this.isNetworkStatusVisible
-      this.setActive(this.isNetworkStatusVisible ? 'network-status' : null)
     },
 
     closeShowSettings () {
-      if (this.isSettingsVisible) {
-        this.isSettingsVisible = false
-        this.setActive(null)
-      }
+      this.isSettingsVisible = false
     },
 
     closeShowNetworkStatus () {
-      if (this.isNetworkStatusVisible) {
-        this.isNetworkStatusVisible = false
-        this.setActive(null)
-      }
+      this.isNetworkStatusVisible = false
     }
   }
 }

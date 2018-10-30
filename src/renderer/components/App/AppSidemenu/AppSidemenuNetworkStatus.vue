@@ -1,11 +1,14 @@
 <template>
   <div
     v-click-outside="emitClose"
-    :class="[isHorizontal ? 'AppSidemenuNetworkStatus__horizontal' : 'AppSidemenuNetworkStatus']"
+    :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
     class="absolute z-10"
   >
 
-    <MenuOptions class="AppSidemenuNetworkStatus__peer">
+    <MenuOptions
+      :is-horizontal="isHorizontal"
+      class="AppSidemenuNetworkStatus__peer"
+    >
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <div
           @click="toggleSelect('peers-menu')"
@@ -201,7 +204,7 @@ export default {
   left: 5.5rem;
 }
 
-.AppSidemenuNetworkStatus__horizontal {
+.AppSidemenuNetworkStatus--horizontal {
   width: 380px;
   right: 4.5rem;
   top: 4.5rem;
