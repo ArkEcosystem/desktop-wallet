@@ -1,4 +1,5 @@
 import truncateMiddle from '@/filters/truncate-middle'
+import WalletService from '@/services/wallet'
 
 export default {
   computed: {
@@ -32,13 +33,17 @@ export default {
       const profileWallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
       const profileWallet = profileWallets.find(wallet => wallet.address === address)
       if (profileWallet) {
-        return profileWallet.name
+        return WalletService.validateAddress(profileWallet.name, this.session_network.version)
+          ? truncateMiddle(profileWallet.name, truncateAmount)
+          : profileWallet.name
       }
 
       const contactWallets = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
       const contactWallet = contactWallets.find(contact => contact.address === address)
       if (contactWallet) {
-        return contactWallet.name
+        return WalletService.validateAddress(contactWallet.name, this.session_network.version)
+          ? truncateMiddle(contactWallet.name, truncateAmount)
+          : contactWallet.name
       }
 
       return Number.isFinite(truncateAmount) ? truncateMiddle(address, truncateAmount) : address
