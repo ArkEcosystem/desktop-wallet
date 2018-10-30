@@ -32,7 +32,6 @@
           class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden pt-2"
         >
           <span class="truncate block">{{ trimName(wallet.name) }}</span>
-          <span v-if="wallet.isContact">({{ $t('COMMON.CONTACT') }})</span>
           <span
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
@@ -76,9 +75,7 @@ export default {
   computed: {
     wallets () {
       const prop = 'name'
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
-      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
-      return [...wallets, ...contacts]
+      return this.$store.getters['wallet/byProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
     },
 
     activeWallet () {
