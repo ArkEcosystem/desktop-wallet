@@ -24,7 +24,11 @@ export default {
   },
 
   methods: {
-    wallet_formatAddress (address, truncateAmount) {
+    /**
+     * @param {String} address
+     * @param {Number} truncateLength
+     */
+    wallet_formatAddress (address, truncateLength) {
       const networkWallet = this.session_network.knownWallets[address]
       if (networkWallet) {
         return networkWallet
@@ -34,7 +38,7 @@ export default {
       const profileWallet = profileWallets.find(wallet => wallet.address === address)
       if (profileWallet) {
         return WalletService.validateAddress(profileWallet.name, this.session_network.version)
-          ? truncateMiddle(profileWallet.name, truncateAmount)
+          ? truncateMiddle(profileWallet.name, truncateLength)
           : profileWallet.name
       }
 
@@ -42,15 +46,19 @@ export default {
       const contactWallet = contactWallets.find(contact => contact.address === address)
       if (contactWallet) {
         return WalletService.validateAddress(contactWallet.name, this.session_network.version)
-          ? truncateMiddle(contactWallet.name, truncateAmount)
+          ? truncateMiddle(contactWallet.name, truncateLength)
           : contactWallet.name
       }
 
-      return Number.isFinite(truncateAmount) ? truncateMiddle(address, truncateAmount) : address
+      return Number.isFinite(truncateLength) ? truncateMiddle(address, truncateLength) : address
     },
 
-    wallet_truncateAddress (address, truncateAmount = 10) {
-      return truncateMiddle(address, truncateAmount)
+    /**
+     * @param {String} address
+     * @param {Number} truncateLength
+     */
+    wallet_truncateAddress (address, truncateLength = 10) {
+      return truncateMiddle(address, truncateLength)
     }
   }
 }
