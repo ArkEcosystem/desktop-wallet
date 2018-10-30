@@ -5,7 +5,6 @@ export default {
     BACK: 'Back',
     DONE: 'Done',
     CONFIRM: 'Confirm',
-    CONTACT: 'Contact',
     CURRENCY: 'Currency',
     LANGUAGE: 'Language',
     NETWORK: 'Network',
