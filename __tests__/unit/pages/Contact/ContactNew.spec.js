@@ -1,9 +1,13 @@
 import { mount } from '@vue/test-utils'
+import { useI18nGlobally } from '../../__utils__/i18n'
 import ContactNew from '@/pages/Contact/ContactNew'
+
+const i18n = useI18nGlobally()
 
 describe('pages > ContactNew', () => {
   const mountPage = () => {
     return mount(ContactNew, {
+      i18n,
       mocks: {
         schema: {
           address: '',

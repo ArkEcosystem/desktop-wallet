@@ -1,15 +1,18 @@
 import { createLocalVue, mount } from '@vue/test-utils'
+import { useI18n } from '../../__utils__/i18n'
 import backgroundWorker from '@/plugins/background-worker'
 import WalletNew from '@/pages/Wallet/WalletNew'
 import WalletService from '@/services/wallet'
 
 const localVue = createLocalVue()
 localVue.use(backgroundWorker)
+const i18n = useI18n(localVue)
 
 describe('pages > WalletNew', () => {
   const mountPage = () => {
     return mount(WalletNew, {
       localVue,
+      i18n,
       mocks: {
         schema: {},
         $v: {

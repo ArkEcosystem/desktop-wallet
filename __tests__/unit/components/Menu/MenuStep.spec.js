@@ -1,10 +1,14 @@
 import { mount } from '@vue/test-utils'
+import { useI18nGlobally } from '../../__utils__/i18n'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
+
+const i18n = useI18nGlobally()
 
 describe('MenuStep', () => {
   describe('Item', () => {
     const mountItem = propsData => {
       return mount(MenuStepItem, {
+        i18n,
         propsData
       })
     }

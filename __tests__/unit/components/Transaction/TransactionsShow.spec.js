@@ -1,6 +1,9 @@
 import { mount } from '@vue/test-utils'
+import { useI18nGlobally } from '../../__utils__/i18n'
 import { TransactionShow } from '@/components/Transaction'
 import FormatterMixin from '@/mixins/formatter'
+
+const i18n = useI18nGlobally()
 
 describe('TransactionShow', () => {
   let transaction
@@ -18,6 +21,7 @@ describe('TransactionShow', () => {
     }
 
     wrapper = mount(TransactionShow, {
+      i18n,
       propsData: {
         transaction
       },

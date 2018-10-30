@@ -1,5 +1,8 @@
 import { shallowMount } from '@vue/test-utils'
+import { useI18nGlobally } from '../../__utils__/i18n'
 import { MarketChartHeader } from '@/components/MarketChart'
+
+const i18n = useI18nGlobally()
 
 const mocks = {
   $store: {
@@ -13,6 +16,7 @@ const mocks = {
 describe('MarketChartHeader', () => {
   it('should be instantiated', () => {
     const wrapper = shallowMount(MarketChartHeader, {
+      i18n,
       provide: {
         changePeriod: jest.fn(),
         getPeriod: () => 'day'
@@ -25,6 +29,7 @@ describe('MarketChartHeader', () => {
 
   it('should trigger change', done => {
     const wrapper = shallowMount(MarketChartHeader, {
+      i18n,
       provide: {
         changePeriod: (period) => {
           expect(period).toBeTruthy()

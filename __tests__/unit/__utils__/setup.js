@@ -1,13 +1,17 @@
+import Vue from 'vue'
 import VueTestUtils from '@vue/test-utils'
+import VTooltip from 'v-tooltip'
 import eventBus from '@/plugins/event-bus'
+import directives from '@/directives'
 
 require('babel-plugin-require-context-hook/register')()
 
-// TODO remove this and use a local Vue, like the tests of i18n mixin, to avoid
-// the warning when it is done that way
-VueTestUtils.config.mocks.$i18n = { t: jest.fn(msg => msg) }
-VueTestUtils.config.mocks.i18n = { t: jest.fn(msg => msg) }
-VueTestUtils.config.mocks.$t = jest.fn(msg => msg)
+Vue.use(VTooltip, {
+  defaultHtml: false,
+  defaultContainer: '#app'
+})
+Vue.use(directives)
+
 VueTestUtils.config.mocks.$eventBus = eventBus
 VueTestUtils.config.mocks.$client = {
   fetchDelegates: jest.fn()

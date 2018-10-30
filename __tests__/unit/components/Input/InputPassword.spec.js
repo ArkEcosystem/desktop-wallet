@@ -1,10 +1,13 @@
 import { mount } from '@vue/test-utils'
+import { useI18nGlobally } from '../../__utils__/i18n'
 import { InputPassword } from '@/components/Input'
 
+const i18n = useI18nGlobally()
 let mountData
 
 beforeEach(() => {
   mountData = {
+    i18n,
     propsData: {
       name: 'test',
       label: 'test'

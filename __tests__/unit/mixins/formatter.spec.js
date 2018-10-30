@@ -1,10 +1,9 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
-import VueI18n from 'vue-i18n'
+import useI18n from '../__utils__/i18n'
 import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
 
 describe('Mixins > Formatter', () => {
-  const defaultLocale = 'en-US'
   const network = {
     token: 'NET',
     symbol: '×',
@@ -15,21 +14,7 @@ describe('Mixins > Formatter', () => {
 
   beforeEach(() => {
     const localVue = createLocalVue()
-
-    localVue.use(VueI18n)
-
-    const i18n = new VueI18n({
-      locale: defaultLocale,
-      numberFormats: {
-        'en-US': {
-          currency: {
-            style: 'currency',
-            currency: 'USD',
-            currencyDisplay: 'symbol'
-          }
-        }
-      }
-    })
+    const i18n = useI18n(localVue)
 
     const TestComponent = {
       name: 'TestComponent',

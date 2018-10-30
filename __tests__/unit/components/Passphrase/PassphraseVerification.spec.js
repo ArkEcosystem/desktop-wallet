@@ -1,6 +1,9 @@
 import { pull } from 'lodash'
 import { mount } from '@vue/test-utils'
+import { useI18nGlobally } from '../../__utils__/i18n'
 import { PassphraseVerification } from '@/components/Passphrase'
+
+const i18n = useI18nGlobally()
 
 describe('PassphraseVerification', () => {
   const passphrase = 'one two three four five six seven eight nine ten eleven twelve'
@@ -14,6 +17,7 @@ describe('PassphraseVerification', () => {
 
   beforeEach(() => {
     wrapper = mount(PassphraseVerification, {
+      i18n,
       propsData: {
         passphrase
       }
@@ -169,6 +173,7 @@ describe('PassphraseVerification', () => {
     describe('when all words have been verified', () => {
       it('emits the `verified` event', async () => {
         wrapper = mount(PassphraseVerification, {
+          i18n,
           propsData: {
             passphrase
           },

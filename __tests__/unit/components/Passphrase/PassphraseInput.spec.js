@@ -2,14 +2,17 @@ import { merge } from 'lodash'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import { mount } from '@vue/test-utils'
+import { useI18n } from '../../__utils__/i18n'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletService from '@/services/wallet'
 
 Vue.use(Vuelidate)
+const i18n = useI18n(Vue)
 
 describe('PassphraseInput', () => {
   const mountComponent = config => {
     return mount(PassphraseInput, merge({
+      i18n,
       propsData: {
         value: '',
         pubKeyHash: 23

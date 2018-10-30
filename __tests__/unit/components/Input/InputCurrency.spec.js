@@ -2,6 +2,7 @@ import { merge } from 'lodash'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import { mount } from '@vue/test-utils'
+import { useI18n } from '../../__utils__/i18n'
 import { InputCurrency } from '@/components/Input'
 import store from '@/store'
 
@@ -14,6 +15,7 @@ jest.mock('@/store', () => {
 })
 
 Vue.use(Vuelidate)
+const i18n = useI18n(Vue)
 
 describe('InputCurrency', () => {
   let mockNetwork
@@ -32,6 +34,7 @@ describe('InputCurrency', () => {
 
   const mountComponent = config => {
     return mount(InputCurrency, merge({
+      i18n,
       propsData: {
         currency: mockNetwork.token,
         value: ''

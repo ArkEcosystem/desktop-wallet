@@ -1,10 +1,8 @@
 import { createLocalVue, mount } from '@vue/test-utils'
-import VueI18n from 'vue-i18n'
+import useI18n from '../../__utils__/i18n'
 import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
 import { WalletHeadingInfo } from '@/components/Wallet'
-
-const locale = 'en-US'
 
 const network = {
   token: 'NET',
@@ -29,21 +27,7 @@ let wrapper
 describe('WalletHeadingInfo component', () => {
   beforeEach(() => {
     const localVue = createLocalVue()
-
-    localVue.use(VueI18n)
-
-    const i18n = new VueI18n({
-      locale,
-      numberFormats: {
-        [locale]: {
-          currency: {
-            style: 'currency',
-            currency: 'USD',
-            currencyDisplay: 'symbol'
-          }
-        }
-      }
-    })
+    const i18n = useI18n(localVue)
 
     wrapper = mount(WalletHeadingInfo, {
       localVue,
