@@ -92,12 +92,18 @@ export default {
   },
 
   APP_SIDEMENU: {
+    ANNOUNCEMENTS: 'Announcements',
+    CONTACTS: 'My contacts',
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
+    DASHBOARD: 'Dashboard',
+    NETWORK: 'Network',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
-      SCREENSHOT_PROTECTION: 'Screenshot protection'
-    }
+      SCREENSHOT_PROTECTION: 'Screenshot protection',
+      TITLE: 'Current settings'
+    },
+    WALLETS: 'My wallets'
   },
 
   APP_SIDEMENU_NOTIFICATION: {

@@ -8,6 +8,7 @@
     <div :class="{'flex flex-row h-18' : isHorizontal}">
       <!-- ARK logo -->
       <router-link
+        :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
         :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
         class="bg-red flex justify-center items-center">
@@ -20,6 +21,7 @@
       <!-- Wallets -->
       <MenuNavigationItem
         id="wallets"
+        :title="$t('APP_SIDEMENU.WALLETS')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
         icon="wallet"
@@ -29,6 +31,7 @@
       <!-- Add contact -->
       <MenuNavigationItem
         id="contacts"
+        :title="$t('APP_SIDEMENU.CONTACTS')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
         icon="contact-add"
@@ -50,6 +53,7 @@
       <!-- Announcements -->
       <MenuNavigationItem
         id="announcements"
+        :title="$t('APP_SIDEMENU.ANNOUNCEMENTS')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
         :show-badge="showUnread"
@@ -79,6 +83,7 @@
       <!-- Settings -->
       <MenuNavigationItem
         id="settings"
+        :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
         icon="settings"
@@ -94,6 +99,7 @@
       <!-- Networks -->
       <MenuNavigationItem
         id="networks"
+        :title="$t('APP_SIDEMENU.NETWORK')"
         :class="isHorizontal ? 'w-16' : 'h-16'"
         :is-horizontal="isHorizontal"
         icon="cloud"
