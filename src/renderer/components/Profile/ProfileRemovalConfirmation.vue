@@ -2,7 +2,7 @@
   <ModalConfirmation
     :question="$t('PROFILE_REMOVAL_CONFIRMATION.QUESTION')"
     :note="$t('PROFILE_REMOVAL_CONFIRMATION.NOTE')"
-    class="ProfileRemovalConfirmation"
+    container-classes="ProfileRemovalConfirmation"
     @cancel="emitCancel"
     @continue="removeProfile"
   >
@@ -60,8 +60,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.ProfileRemovalConfirmation /deep/ .ModalConfirmation__container {
+<style>
+.ProfileRemovalConfirmation .ModalConfirmation__container {
   min-width: calc(var(--profile-avatar-xl) + 74px * 2);
   max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 50px)
 }

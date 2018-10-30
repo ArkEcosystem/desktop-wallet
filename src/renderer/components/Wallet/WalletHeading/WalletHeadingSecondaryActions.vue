@@ -4,54 +4,65 @@
     class="WalletHeading__SecondaryActions flex content-end"
   >
     <ButtonModal
+      :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
       icon="name"
-      class="option-button whitespace-no-wrap"
     >
-      <WalletRenameModal
-        slot-scope="{ toggle }"
-        :wallet="currentWallet"
-        @cancel="toggle"
-        @renamed="toggle"
-      />
+      <template slot-scope="{ toggle, isOpen }">
+        <WalletRenameModal
+          v-if="isOpen"
+          :wallet="currentWallet"
+          @cancel="toggle"
+          @renamed="toggle"
+        />
+      </template>
     </ButtonModal>
+
     <ButtonModal
       v-show="currentWallet.isSendingEnabled"
+      :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
       icon="register-delegate"
-      class="option-button whitespace-no-wrap"
     >
-      <TransactionModal
-        slot-scope="{ toggle }"
-        :type="2"
-        @cancel="toggle"
-        @sent="toggle"
-      />
+      <template slot-scope="{ toggle, isOpen }">
+        <TransactionModal
+          v-if="isOpen"
+          :type="2"
+          @cancel="toggle"
+          @sent="toggle"
+        />
+      </template>
     </ButtonModal>
+
     <ButtonModal
       v-show="currentWallet.isSendingEnabled"
+      :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
       icon="2nd-passphrase"
-      class="option-button whitespace-no-wrap"
     >
-      <TransactionModal
-        slot-scope="{ toggle }"
-        :type="1"
-        @cancel="toggle"
-        @sent="toggle"
-      />
+      <template slot-scope="{ toggle, isOpen }">
+        <TransactionModal
+          v-if="isOpen"
+          :type="1"
+          @cancel="toggle"
+          @sent="toggle"
+        />
+      </template>
     </ButtonModal>
+
     <ButtonModal
+      :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
       icon="delete-wallet"
-      class="option-button whitespace-no-wrap"
     >
-      <WalletRemovalConfirmation
-        slot-scope="{ toggle }"
-        :wallet="currentWallet"
-        @cancel="toggle"
-        @removed="onRemoval"
-      />
+      <template slot-scope="{ toggle, isOpen }">
+        <WalletRemovalConfirmation
+          v-if="isOpen"
+          :wallet="currentWallet"
+          @cancel="toggle"
+          @removed="onRemoval"
+        />
+      </template>
     </ButtonModal>
   </div>
 </template>
@@ -74,6 +85,10 @@ export default {
   },
 
   computed: {
+    buttonStyle () {
+      return 'option-button whitespace-no-wrap mr-2 p-2 rounded-md'
+    },
+
     currentWallet () {
       return this.wallet_fromRoute
     }

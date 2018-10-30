@@ -2,7 +2,7 @@
   <ModalConfirmation
     :question="$t('WALLET_REMOVAL_CONFIRMATION.QUESTION')"
     :note="$t('WALLET_REMOVAL_CONFIRMATION.NOTE')"
-    class="WalletRemovalConfirmation"
+    container-classes="WalletRemovalConfirmation"
     @cancel="emitCancel"
     @continue="removeWallet"
   >
@@ -62,8 +62,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.WalletRemovalConfirmation /deep/ .ModalConfirmation__container {
+<style>
+.WalletRemovalConfirmation .ModalConfirmation__container {
   min-width: calc(var(--wallet-identicon-xl) + 74px * 2);
   max-width: calc(var(--wallet-identicon-xl) + 74px * 2 + 50px)
 }

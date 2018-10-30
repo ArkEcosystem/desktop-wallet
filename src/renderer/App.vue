@@ -37,14 +37,12 @@
 
     <portal-target
       name="modal"
+      multiple
       @change="onPortalChange"
     />
+
     <portal-target
       name="loading"
-      @change="onPortalChange"
-    />
-    <portal-target
-      name="important-notification"
       @change="onPortalChange"
     />
 

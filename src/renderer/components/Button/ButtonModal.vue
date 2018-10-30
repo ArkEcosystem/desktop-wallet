@@ -1,6 +1,6 @@
 <template>
   <button
-    class="mr-2 p-2 rounded-md flex items-center justify-center"
+    class="flex items-center justify-center"
     @click="toggle"
   >
     <SvgIcon
@@ -10,12 +10,10 @@
       class="mr-1"
     />
     <span class="font-semibold">{{ label }}</span>
-    <portal
-      v-if="showModal"
-      to="modal"
-    >
-      <slot :toggle="toggle" />
-    </portal>
+    <slot
+      :toggle="toggle"
+      :is-open="isOpen"
+    />
   </button>
 </template>
 
@@ -47,12 +45,12 @@ export default {
   },
 
   data: () => ({
-    showModal: false
+    isOpen: false
   }),
 
   methods: {
     toggle () {
-      this.showModal = !this.showModal
+      this.isOpen = !this.isOpen
     }
   }
 }

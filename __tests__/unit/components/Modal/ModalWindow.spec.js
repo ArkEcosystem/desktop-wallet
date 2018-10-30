@@ -5,7 +5,7 @@ describe('ModalWindow', () => {
   describe('render popup', () => {
     it('should render the popup', () => {
       const wrapper = mount(ModalWindow)
-      expect(wrapper.contains('.ModalWindow__mask')).toBe(true)
+      expect(wrapper.contains('.modal-backdrop')).toBe(true)
     })
 
     it('should render with content', () => {
@@ -64,7 +64,7 @@ describe('ModalWindow', () => {
 
     it('should emit a close event when clicks the mask', () => {
       const wrapper = mount(ModalWindow)
-      const mask = wrapper.find('.ModalWindow__mask')
+      const mask = wrapper.find('.modal-backdrop')
       mask.trigger('click')
       expect(wrapper.emitted('close')).toBeTruthy()
     })

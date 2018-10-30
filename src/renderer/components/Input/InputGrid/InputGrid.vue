@@ -1,15 +1,12 @@
 <template>
   <div class="InputGrid">
     <slot>
-
       <div class="InputGrid__container">
-
         <div
           v-for="item in visibleItems"
           :key="item[itemKey]"
         >
           <div @click="select(item)">
-
             <slot
               v-bind="itemSlotAttrs(item)"
               name="item"
@@ -21,13 +18,11 @@
                 :text-content="item.textContent"
                 :title="item.title"
               />
-
             </slot>
           </div>
         </div>
 
         <slot name="more">
-
           <div
             v-if="modalHeaderText"
             @click="openModal"
@@ -43,6 +38,7 @@
 
           <InputGridModal
             v-if="isModalOpen"
+            :container-classes="modalContainerClasses"
             :items="items"
             :item-key="itemKey"
             :selected="selectedItem"
@@ -51,9 +47,7 @@
             @select="select"
           />
         </slot>
-
       </div>
-
     </slot>
   </div>
 </template>
@@ -92,6 +86,11 @@ export default {
     },
     selected: {
       type: Object,
+      required: false,
+      default: null
+    },
+    modalContainerClasses: {
+      type: String,
       required: false,
       default: null
     },

@@ -1,14 +1,13 @@
 <template>
-  <div class="SelectionAvatar">
-    <InputGrid
-      :items="images"
-      :max-visible-items="maxVisibleItems"
-      :modal-header-text="modalHeaderText"
-      :selected="selectedItem"
-      item-key="imagePath"
-      @input="select"
-    />
-  </div>
+  <InputGrid
+    :items="images"
+    :max-visible-items="maxVisibleItems"
+    :modal-header-text="modalHeaderText"
+    :selected="selectedItem"
+    modal-container-classes="SelectionAvatar"
+    item-key="imagePath"
+    @input="select"
+  />
 </template>
 
 <script>

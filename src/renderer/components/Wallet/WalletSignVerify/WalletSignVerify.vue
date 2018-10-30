@@ -5,36 +5,42 @@
         :value="currentWallet.address"
         :size="75"
       />
+
       <div class="flex flex-col justify-center ml-2">
         <span class="font-bold">{{ $t('SIGN_VERIFY.VERIFY_WALLET') }}</span>
         <span>{{ $t('SIGN_VERIFY.VERIFY_BY_SIGNING') }}</span>
       </div>
-      <div class="flex flex-col justify-center ml-4">
+
+      <div class="flex items-center ml-4">
         <ButtonModal
           :label="$t('SIGN_VERIFY.SIGN')"
-          class="blue-button px-4"
+          class="blue-button mr-2"
         >
-          <WalletSignModal
-            slot-scope="{ toggle }"
-            :wallet="currentWallet"
-            @cancel="toggle"
-            @signed="toggle() && updateSignedMessages()"
-          />
+          <template slot-scope="{ toggle, isOpen }">
+            <WalletSignModal
+              v-if="isOpen"
+              :wallet="currentWallet"
+              @cancel="toggle"
+              @signed="toggle() && updateSignedMessages()"
+            />
+          </template>
         </ButtonModal>
-      </div>
-      <div class="flex flex-col justify-center">
+
         <ButtonModal
           :label="$t('SIGN_VERIFY.VERIFY')"
-          class="blue-button px-4"
+          class="blue-button"
         >
-          <WalletVerifyModal
-            slot-scope="{ toggle }"
-            :wallet="currentWallet"
-            @cancel="toggle"
-          />
+          <template slot-scope="{ toggle, isOpen }">
+            <WalletVerifyModal
+              v-if="isOpen"
+              :wallet="currentWallet"
+              @cancel="toggle"
+            />
+          </template>
         </ButtonModal>
       </div>
     </div>
+
     <div
       v-for="message in signedMessages"
       :key="message.timestamp"
@@ -52,6 +58,7 @@
           <div>{{ truncate(message.signature, 50) }}</div>
         </div>
       </div>
+
       <div v-show="showTimestamp === message.timestamp">
         <ButtonClipboard
           :value="copyMessage(message)"
@@ -69,6 +76,7 @@
         </button>
       </div>
     </div>
+
   </div>
 </template>
 

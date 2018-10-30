@@ -1,5 +1,6 @@
 <template>
   <ModalWindow
+    :container-classes="containerClasses"
     @close="emitCancel"
   >
     <section class="ModalConfirmation__container flex flex-col">
@@ -54,6 +55,11 @@ export default {
       default () {
         return this.$t('MODAL_CONFIRMATION.CANCEL')
       }
+    },
+    containerClasses: {
+      type: String,
+      required: false,
+      default: 'ModalConfirmation'
     },
     continueButton: {
       type: String,

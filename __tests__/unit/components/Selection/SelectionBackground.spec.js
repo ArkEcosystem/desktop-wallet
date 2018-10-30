@@ -6,7 +6,7 @@ describe('SelectionBackground', () => {
     it('should render the component', () => {
       const wrapper = shallowMount(SelectionBackground)
 
-      expect(wrapper.contains('.SelectionBackground')).toBeTruthy()
+      expect(wrapper.contains('.SelectionBackgroundGrid')).toBeTruthy()
     })
   })
 })

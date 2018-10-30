@@ -5,7 +5,7 @@
     class="absolute z-10"
   >
 
-    <MenuOptions class="AppSidemenuNetworkStatus--peer">
+    <MenuOptions class="AppSidemenuNetworkStatus__peer">
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <div
           @click="toggleSelect('peers-menu')"
@@ -32,16 +32,16 @@
           @click="refreshPeer"
         />
       </div>
-      <div class="AppSidemenuNetworkStatus--status flex flex-wrap mt-6 mx-auto select-none">
-        <div class="AppSidemenuNetworkStatus--status__height inline-block pr-6 border-r">
+      <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
+        <div class="AppSidemenuNetworkStatus__status__height inline-block pr-6 border-r">
           <div class="text-xs mb-2">{{ $t('PEER.HEIGHT') }}</div>
           <div class="text-md text-white">{{ peer ? peer.height : '-' }}</div>
         </div>
-        <div class="AppSidemenuNetworkStatus--status__last-checked inline-block ml-6 pr-6 border-r">
+        <div class="AppSidemenuNetworkStatus__status__last-checked inline-block ml-6 pr-6 border-r">
           <div class="text-xs mb-2">{{ $t('PEER.LAST_CHECKED') }}</div>
           <div class="text-md text-white">{{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}</div>
         </div>
-        <div class="AppSidemenuNetworkStatus--status__delay ml-6 inline-block">
+        <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
           <div class="text-xs mb-2">{{ $t('PEER.DELAY') }}</div>
           <div
             v-if="peer.delay"
@@ -61,29 +61,29 @@
     </MenuOptions>
 
     <div
-      class="AppSidemenuNetworkStatus--custom_peer bg-theme-settings mt-2 rounded"
-      @click="toggleCustomPeerModal">
-      <div class="cursor-pointer py-5 px-10 text-grey-dark hover:text-white">
-        <SvgIcon
-          name="connect"
-          view-box="0 0 30 15"
-        />
-        {{ $t('PEER.CONNECT_CUSTOM') }}
-      </div>
+      class="AppSidemenuNetworkStatus__custom-peer bg-theme-settings mt-2 rounded"
+    >
+      <ButtonModal
+        :label="$t('PEER.CONNECT_CUSTOM')"
+        icon="connect"
+        view-box="0 0 30 15"
+        class="cursor-pointer py-5 px-10 text-grey-dark hover:text-white"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <NetworkCustomPeer
+            v-if="isOpen"
+            @close="toggle"
+          />
+        </template>
+      </ButtonModal>
     </div>
-
-    <NetworkCustomPeer
-      v-if="showCustomPeerModal"
-      @close="toggleCustomPeerModal"
-    />
-
   </div>
 </template>
 
 <script>
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
 import { NetworkCustomPeer } from '@/components/Network'
-import { ButtonReload, ButtonSwitch } from '@/components/Button'
+import { ButtonModal, ButtonReload, ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -91,6 +91,7 @@ export default {
   name: 'AppSidemenuNetworkStatus',
 
   components: {
+    ButtonModal,
     ButtonReload,
     ButtonSwitch,
     InputText,
@@ -206,13 +207,13 @@ export default {
   top: 4.5rem;
 }
 
-.AppSidemenuNetworkStatus--status__height,
-.AppSidemenuNetworkStatus--status__last-checked,
-.AppSidemenuNetworkStatus--status__delay {
+.AppSidemenuNetworkStatus__status__height,
+.AppSidemenuNetworkStatus__status__last-checked,
+.AppSidemenuNetworkStatus__status__delay {
   @apply .text-theme-settings-heading .border-theme-settings-border
 }
 
-.AppSidemenuNetworkStatus--peer .MenuDropdownHandler.text-theme-page-text-light {
+.AppSidemenuNetworkStatus__peer .MenuDropdownHandler.text-theme-page-text-light {
   @apply .text-white;
 }
 </style>

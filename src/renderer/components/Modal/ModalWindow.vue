@@ -1,58 +1,60 @@
 <template>
-  <transition name="ModalWindow">
+  <portal :to="portalTarget">
     <div
-      class="ModalWindow__mask fixed z-50 pin-t pin-l table w-full h-full"
+      class="modal-backdrop"
       @click="emitClose"
     >
-      <div class="flex items-center justify-center absolute pin">
-        <div
-          :class="containerClasses"
-          class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
-          @click.stop="void 0"
-        >
-
-          <button
-            v-if="allowClose"
-            class="absolute pin-t pin-r p-6"
-            @click="emitClose"
+      <transition name="ModalWindow">
+        <div class="flex items-center justify-center absolute pin">
+          <div
+            :class="containerClasses"
+            class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
+            @click.stop="void 0"
           >
-            <svg class="fill-current text-grey h-4 w-4">
-              <path
-                fill-rule="evenodd"
-                d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"
-              />
-            </svg>
-          </button>
 
-          <section class="px-16 py-16">
-
-            <header
-              v-if="$slots.header || title"
+            <button
+              v-if="allowClose"
+              class="absolute pin-t pin-r p-6"
+              @click="emitClose"
             >
-              <slot name="header">
-                <h2>{{ title }}</h2>
-              </slot>
-            </header>
+              <svg class="fill-current text-grey h-4 w-4">
+                <path
+                  fill-rule="evenodd"
+                  d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"
+                />
+              </svg>
+            </button>
 
-            <article class="content flex-1 mt-3">
-              <slot />
-            </article>
+            <section class="px-16 py-16">
 
-          </section>
+              <header
+                v-if="$slots.header || title"
+              >
+                <slot name="header">
+                  <h2>{{ title }}</h2>
+                </slot>
+              </header>
 
-          <slot name="footer">
-            <footer
-              v-if="message"
-              class="ModalWindow__container__footer--warning"
-            >
-              <p v-html="message" />
-            </footer>
-          </slot>
+              <article class="content flex-1 mt-3">
+                <slot />
+              </article>
 
+            </section>
+
+            <slot name="footer">
+              <footer
+                v-if="message"
+                class="ModalWindow__container__footer--warning"
+              >
+                <p v-html="message" />
+              </footer>
+            </slot>
+
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
-  </transition>
+  </portal>
 </template>
 
 <script>
@@ -65,23 +67,25 @@ export default {
       required: false,
       default: ''
     },
-
     title: {
       type: String,
       required: false,
       default: ''
     },
-
     message: {
       type: String,
       required: false,
       default: ''
     },
-
     allowClose: {
       type: Boolean,
       requred: false,
       default: true
+    },
+    portalTarget: {
+      type: String,
+      required: false,
+      default: 'modal'
     }
   },
 
@@ -110,11 +114,6 @@ export default {
 </script>
 
 <style scoped>
-.ModalWindow__mask {
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
-}
-
 .ModalWindow-enter,
 .ModalWindow-leave-active {
   opacity: 0;

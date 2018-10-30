@@ -15,11 +15,13 @@
       label="QR"
       view-box="0 0 18 18"
     >
-      <ModalQrCode
-        slot-scope="{ toggle }"
-        :value="currentWallet.address"
-        @close="toggle"
-      />
+      <template slot-scope="{ toggle, isOpen }">
+        <ModalQrCode
+          v-if="isOpen"
+          :value="currentWallet.address"
+          @close="toggle"
+        />
+      </template>
     </ButtonModal>
 
     <ButtonReload
@@ -37,12 +39,14 @@
       icon="send"
       view-box="0 0 12 12"
     >
-      <TransactionModal
-        slot-scope="{ toggle }"
-        :type="0"
-        @cancel="toggle"
-        @sent="toggle"
-      />
+      <template slot-scope="{ toggle, isOpen }">
+        <TransactionModal
+          v-if="isOpen"
+          :type="0"
+          @cancel="toggle"
+          @sent="toggle"
+        />
+      </template>
     </ButtonModal>
   </div>
 </template>
@@ -72,7 +76,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'option-button'
+      return 'mr-2 p-2 rounded-md option-button'
     },
 
     currentWallet () {

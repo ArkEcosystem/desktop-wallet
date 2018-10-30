@@ -32,3 +32,9 @@ input:focus {
 .rotate-90 {
 	transform: rotate(90deg);
 }
+
+.modal-backdrop {
+  @apply .fixed .z-50 .pin-t .pin-l .table .w-full .h-full;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}

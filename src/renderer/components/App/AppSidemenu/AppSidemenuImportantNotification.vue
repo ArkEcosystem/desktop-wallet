@@ -16,39 +16,41 @@
 
     <portal
       v-if="isNotificationVisible"
-      to="important-notification"
+      to="modal"
     >
-      <div class="AppSidemenuImportantNotification__notification absolute z-50 pin flex justify-center items-center">
-        <div class="max-w-2/3 min-w-1/4 rounded-lg inline p-4 bg-theme-button-text text-theme-feature hover-button-blue-shadow-definition">
-          <!-- The real viewBox of `notification` and `download` is 0 0 15 15, but it is adjusted -->
-          <SvgIcon
-            class="fill-current text-theme-feature mr-1"
-            name="notification"
-            view-box="0 0 12 12"
-          />
-
-          <span
-            class="mr-2 cursor-pointer hover:text-theme-feature-item-alternative"
-            @click="download"
-          >
-            {{ notificationText }}
-          </span>
-
-          <button
-            class="AppSidemenuImportantNotification__notification__download rounded-lg -my-2 mr-2"
-            @click="download"
-          >
+      <div class="modal-backdrop">
+        <div class="AppSidemenuImportantNotification__notification absolute pin flex justify-center items-center">
+          <div class="max-w-2/3 min-w-1/4 rounded-lg inline p-4 bg-theme-button-text text-theme-feature hover-button-blue-shadow-definition">
+            <!-- The real viewBox of `notification` and `download` is 0 0 15 15, but it is adjusted -->
             <SvgIcon
-              class="fill-current text-theme-feature"
-              name="download"
-              view-box="0 0 13 13"
+              class="fill-current text-theme-feature mr-1"
+              name="notification"
+              view-box="0 0 12 12"
             />
-          </button>
 
-          <ButtonClose
-            class="dismiss cursor-pointer select-none float-right -my-2 ml-10 text-theme-feature"
-            @click="closeNotification"
-          />
+            <span
+              class="mr-2 cursor-pointer hover:text-theme-feature-item-alternative"
+              @click="download"
+            >
+              {{ notificationText }}
+            </span>
+
+            <button
+              class="AppSidemenuImportantNotification__notification__download rounded-lg -my-2 mr-2"
+              @click="download"
+            >
+              <SvgIcon
+                class="fill-current text-theme-feature"
+                name="download"
+                view-box="0 0 13 13"
+              />
+            </button>
+
+            <ButtonClose
+              class="dismiss cursor-pointer select-none float-right -my-2 ml-10 text-theme-feature"
+              @click="closeNotification"
+            />
+          </div>
         </div>
       </div>
     </portal>

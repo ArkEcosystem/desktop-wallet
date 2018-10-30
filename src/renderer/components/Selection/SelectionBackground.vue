@@ -1,14 +1,14 @@
 <template>
-  <div class="SelectionBackground">
-    <InputGrid
-      :items="images"
-      :max-visible-items="maxVisibleItems"
-      :modal-header-text="$t('SELECTION_BACKGROUND.MODAL_HEADER')"
-      :selected="selectedItem"
-      item-key="imagePath"
-      @input="select"
-    />
-  </div>
+  <InputGrid
+    :items="images"
+    :max-visible-items="maxVisibleItems"
+    :modal-header-text="$t('SELECTION_BACKGROUND.MODAL_HEADER')"
+    :selected="selectedItem"
+    container-classes="SelectionBackground"
+    class="SelectionBackgroundGrid"
+    item-key="imagePath"
+    @input="select"
+  />
 </template>
 
 <script>

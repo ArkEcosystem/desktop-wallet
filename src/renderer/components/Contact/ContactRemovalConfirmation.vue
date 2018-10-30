@@ -1,7 +1,7 @@
 <template>
   <ModalConfirmation
     :question="$t('CONTACT_REMOVAL_CONFIRMATION.QUESTION')"
-    class="ContactRemovalConfirmation"
+    container-classes="ContactRemovalConfirmation"
     @cancel="emitCancel"
     @continue="removeContact"
   >
@@ -61,8 +61,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.ContactRemovalConfirmation /deep/ .ModalConfirmation__container {
+<style>
+.ContactRemovalConfirmation .ModalConfirmation__container {
   min-width: calc(var(--contact-identicon-xl) + 74px * 2);
   max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
 }

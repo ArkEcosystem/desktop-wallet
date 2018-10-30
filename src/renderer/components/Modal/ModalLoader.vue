@@ -1,30 +1,27 @@
 <template>
-  <portal
+  <ModalWindow
     v-if="visible"
-    to="loading"
+    :allow-close="showClose"
+    container-classes="w-1/2"
+    portal-target="loading"
+    @close="toggle"
   >
-    <ModalWindow
-      :allow-close="showClose"
-      container-classes="w-1/2"
-      @close="toggle"
+    <h2>
+      {{ message }}
+    </h2>
+    <div
+      class="flex justify-center p-5"
     >
-      <h2>
-        {{ message }}
-      </h2>
-      <div
-        class="flex justify-center p-5"
-      >
-        <Loader />
-      </div>
+      <Loader />
+    </div>
 
-      <div
-        v-if="showClose"
-        class="text-center text-theme-warn-text border-theme-warn border-t-2 p-2"
-      >
-        {{ $t('MODAL_LOADER.CLOSE_WARNING') }}
-      </div>
-    </ModalWindow>
-  </portal>
+    <div
+      v-if="showClose"
+      class="text-center text-theme-warn-text border-theme-warn border-t-2 p-2"
+    >
+      {{ $t('MODAL_LOADER.CLOSE_WARNING') }}
+    </div>
+  </ModalWindow>
 </template>
 
 <script>

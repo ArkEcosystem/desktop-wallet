@@ -1,6 +1,7 @@
 <template>
   <ModalWindow
     :title="modalHeaderText"
+    :container-classes="containerClasses"
     @close="emitClose"
   >
     <section class="InputGridModal flex flex-col">
@@ -65,6 +66,11 @@ export default {
   },
 
   props: {
+    containerClasses: {
+      type: String,
+      required: false,
+      default: 'InputGridModal'
+    },
     items: {
       type: [Array, Object],
       required: true
