@@ -24,18 +24,17 @@
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
             :title="$t('PAGES.WALLET_IMPORT.STEP1.TITLE')"
-            @next="moveTo(2)"
+            @next="!useOnlyAddress ? moveTo(2) : moveTo(3)"
           >
 
             <div class="flex flex-col h-full w-full justify-around">
 
-              <!-- TODO check duplicate here when db store is available -->
-              <InputAddress
-                v-show="!useOnlyPassphrase"
-                ref="addressInput"
-                v-model="schema.address"
-                :pub-key-hash="session_network.version"
+              <InputSwitch
+                :label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
+                :text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
+                :is-active="useOnlyAddress"
                 class="my-3"
+                @change="setOnlyAddress"
               />
 
               <InputSwitch
@@ -46,12 +45,13 @@
                 @change="setOnlyPassphrase"
               />
 
-              <InputSwitch
-                :label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
-                :text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
-                :is-active="useOnlyAddress"
+              <!-- TODO check duplicate here when db store is available -->
+              <InputAddress
+                v-show="!useOnlyPassphrase"
+                ref="addressInput"
+                v-model="schema.address"
+                :pub-key-hash="session_network.version"
                 class="my-3"
-                @change="setOnlyAddress"
               />
 
               <PassphraseInput
@@ -99,7 +99,7 @@
             :is-back-visible="true"
             :is-next-enabled="!$v.step3.$invalid"
             :title="$t('PAGES.WALLET_IMPORT.STEP3.TITLE')"
-            @back="moveTo(1)"
+            @back="!useOnlyAddress ? moveTo(2) : moveTo(1)"
             @next="importWallet"
           >
 
@@ -228,7 +228,7 @@ export default {
         profileId: this.session_profile.id
       }
 
-      if (this.walletPassword && this.walletPassword.length) {
+      if (!this.useOnlyAddress && this.walletPassword && this.walletPassword.length) {
         this.showEncryptLoader = true
         this.bip38Worker.send({
           passphrase: this.wallet.passphrase,
@@ -322,7 +322,7 @@ export default {
 </script>
 
 <style>
-.WalletImport Collapse.MenuStepItem .Collapse__handler {
+.WalletImport .Collapse.MenuStepItem .Collapse__handler {
   width: 100%;
   text-align: left;
   vertical-align: middle;
