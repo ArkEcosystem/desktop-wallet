@@ -58,29 +58,20 @@
     </div>
     <div
       v-else-if="isVerified"
-      class="flex w-80"
     >
-      <Identicon
-        :value="getAddress()"
-        :size="75"
+      <WalletVerifyDetail
+        :address="getAddress()"
+        :is-verified="true"
       />
-      <div class="flex flex-col justify-center ml-2">
-        <span class="font-semibold">{{ $t('SIGN_VERIFY.CONFIRMATION') }}</span>
-        <span>{{ $t('SIGN_VERIFY.VERIFIED') }}</span>
-      </div>
     </div>
     <div
       v-else
       class="flex"
     >
-      <Identicon
-        :value="getAddress()"
-        :size="75"
+      <WalletVerifyDetail
+        :address="getAddress()"
+        :is-verified="false"
       />
-      <div class="flex flex-col justify-center ml-2">
-        <span class="font-semibold">{{ $t('SIGN_VERIFY.CONFIRMATION') }}</span>
-        <span>{{ $t('SIGN_VERIFY.NOT_VERIFIED') }}</span>
-      </div>
     </div>
     <template
       v-if="!isVerified && !isNotVerified && verifyChoice !== 'Verify'"
@@ -97,6 +88,7 @@
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalWindow } from '@/components/Modal'
 import { Identicon } from '@/components/Profile'
+import { WalletVerifyDetail } from '@/components/Wallet'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -106,7 +98,8 @@ export default {
     Identicon,
     InputText,
     InputToggle,
-    ModalWindow
+    ModalWindow,
+    WalletVerifyDetail
   },
 
   props: {

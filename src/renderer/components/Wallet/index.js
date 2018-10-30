@@ -2,6 +2,7 @@ import WalletAddress from './WalletAddress'
 import WalletRenameModal from './WalletRenameModal'
 import WalletRemovalConfirmation from './WalletRemovalConfirmation'
 import WalletSignModal from './WalletSignModal'
+import WalletVerifyDetail from './WalletVerifyDetail'
 import WalletVerifyModal from './WalletVerifyModal'
 
 export * from './WalletDelegates'
@@ -17,5 +18,6 @@ export {
   WalletRenameModal,
   WalletRemovalConfirmation,
   WalletSignModal,
+  WalletVerifyDetail,
   WalletVerifyModal
 }
