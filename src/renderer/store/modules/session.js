@@ -15,6 +15,9 @@ export default {
   }),
 
   getters: {
+    profileId (state) {
+      return state.profileId
+    },
     profile (state, _, __, rootGetters) {
       if (!state.profileId) {
         return

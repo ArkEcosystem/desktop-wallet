@@ -1,21 +1,79 @@
-import BaseModule from '../base'
+import { findIndex, unionBy } from 'lodash'
 import WalletModel from '@/models/wallet'
 
-export default new BaseModule(WalletModel, {
+const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
+
+export default {
+  namespaced: true,
+
   state: {
+    wallets: {},
     secondaryButtonsVisible: false,
     signedMessages: {}
   },
 
   getters: {
-    byAddress: state => address => state.all.find(wallet => wallet.address === address),
-    byProfileId: state => profileId => state.all.filter(wallet => !wallet.isContact && wallet.profileId === profileId),
-    contactsByProfileId: state => profileId => state.all.filter(wallet => wallet.isContact && wallet.profileId === profileId),
+    byAddress: (state, _, __, rootGetters) => address => {
+      const profileId = rootGetters['session/profileId']
+      if (!profileId || !state.wallets[profileId]) {
+        return []
+      }
+
+      return state.wallets[profileId].find(wallet => wallet.address === address)
+    },
+
+    byProfileId: (state, _, __, rootGetters) => profileId => {
+      if (!state.wallets[profileId]) {
+        return []
+      }
+
+      return state.wallets[profileId].filter(wallet => !wallet.isContact)
+    },
+
+    contactsByProfileId: (state, _, __, rootGetters) => profileId => {
+      if (!state.wallets[profileId]) {
+        return []
+      }
+
+      return state.wallets[profileId].filter(wallet => wallet.isContact)
+    },
+
     secondaryButtonsVisible: state => state.secondaryButtonsVisible,
+
     signedMessages: state => address => state.signedMessages[address]
   },
 
   mutations: {
+    CREATE (state, wallet) {
+      if (!state.wallets[wallet.profileId]) {
+        state.wallets[wallet.profileId] = []
+      }
+
+      if (includes(state.wallets[wallet.profileId], wallet)) {
+        throw new Error(`Cannot create wallet '${wallet.id}' - it already exists`)
+      }
+
+      state.wallets[wallet.profileId].push(wallet)
+    },
+    STORE (state, wallet) {
+      if (!state.wallets[wallet.profileId]) {
+        state.wallets[wallet.profileId] = []
+      }
+      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+    },
+    UPDATE (state, wallet) {
+      if (!includes(state.wallets[wallet.profileId], wallet)) {
+        throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
+      }
+      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+    },
+    DELETE (state, wallet) {
+      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
+      if (index === -1) {
+        throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
+      }
+      state.wallets[wallet.profileId].splice(index, 1)
+    },
     SET_SECONDARY_BUTTON (state, visibility) {
       state.secondaryButtonsVisible = visibility
     },
@@ -35,6 +93,24 @@ export default new BaseModule(WalletModel, {
   },
 
   actions: {
+    create ({ commit }, wallet) {
+      const data = WalletModel.deserialize(wallet)
+      commit('CREATE', data)
+
+      return data
+    },
+    store ({ commit }, wallets) {
+      commit('STORE', wallets)
+    },
+    update ({ commit }, wallet) {
+      const data = WalletModel.deserialize(wallet)
+      commit('UPDATE', data)
+
+      return data
+    },
+    delete ({ commit }, wallet) {
+      commit('DELETE', wallet)
+    },
     setSecondaryButtonsVisible ({ commit }, visibility) {
       commit('SET_SECONDARY_BUTTON', visibility)
     },
@@ -45,4 +121,4 @@ export default new BaseModule(WalletModel, {
       commit('DELETE_SIGNED_MESSAGE', message)
     }
   }
-})
+}

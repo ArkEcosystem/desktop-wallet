@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { TransactionTable } from '@/components/Transaction'
+import TransactionTable from '@/components/Transaction/TransactionTable'
 import { orderBy } from 'lodash'
 
 export default {
