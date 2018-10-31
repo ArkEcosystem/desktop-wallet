@@ -37,6 +37,10 @@
 
       <ListDividedItem :label="$t('TRANSACTION.SENDER')">
         {{ wallet_formatAddress(transaction.sender) }}
+        <ButtonClipboard
+          :value="transaction.sender"
+          class="text-theme-page-text-light mx-1"
+        />
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
@@ -57,6 +61,10 @@
         :label="$t('TRANSACTION.RECIPIENT')"
       >
         {{ wallet_formatAddress(transaction.recipient) }}
+        <ButtonClipboard
+          :value="transaction.recipient"
+          class="text-theme-page-text-light mx-1"
+        />
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
