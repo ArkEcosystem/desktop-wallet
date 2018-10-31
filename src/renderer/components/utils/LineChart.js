@@ -22,12 +22,27 @@ export default {
   },
 
   mounted () {
-    this.renderChart(this.chartData, this.options)
+    this.render()
+  },
+
+  watch: {
+    options (newOptions) {
+      this.destroy()
+      this.render()
+    }
   },
 
   methods: {
     getCanvas () {
       return this.$refs.canvas
+    },
+
+    destroy () {
+      this.$data._chart.destroy()
+    },
+
+    render () {
+      this.renderChart(this.chartData, this.options)
     },
 
     update () {

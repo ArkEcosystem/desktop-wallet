@@ -81,6 +81,9 @@ let colors = {
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
 
+  'theme-chart-background': 'var(--theme-chart-background)',
+  'theme-chart-price': 'var(--theme-chart-price)',
+
   'theme-button': 'var(--theme-button)',
   'theme-button-text': 'var(--theme-button-text)',
   'theme-button-light': 'var(--theme-button-light)',
@@ -215,7 +218,7 @@ module.exports = {
   |
   */
 
-  colors: colors,
+  colors,
 
   /*
   |-----------------------------------------------------------------------------

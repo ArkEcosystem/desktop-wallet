@@ -44,8 +44,26 @@ export default {
   }),
 
   computed: {
+    colours () {
+      return {
+        gradient: ['#666', '#528fe3', '#9c6dd8', '#e15362'],
+        dark: {
+          lines: '#787fa3',
+          ticks: '#787fa3'
+        },
+        light: {
+          lines: '#9ea7bc',
+          ticks: '#9ea7bc'
+        }
+      }
+    },
+
     currency () {
       return this.$store.getters['session/currency']
+    },
+
+    theme () {
+      return this.$store.getters['session/theme']
     },
 
     token () {
@@ -55,6 +73,10 @@ export default {
 
   watch: {
     currency () {
+      this.renderChart()
+    },
+
+    theme () {
       this.renderChart()
     },
 
@@ -93,6 +115,15 @@ export default {
       const scaleCorrection = 1000
       const data = response.datasets.map(datum => datum * scaleCorrection)
 
+      const themeGridLines = this.colours[this.theme].lines
+      const themeTicks = this.colours[this.theme].ticks
+
+      const fontConfig = {
+        fontColor: themeTicks,
+        fontSize: 14,
+        fontStyle: 600
+      }
+
       this.options = {
         showScale: true,
         responsive: true,
@@ -120,12 +151,13 @@ export default {
             {
               gridLines: {
                 borderDash: [5, 5],
+                color: themeGridLines,
                 display: true,
                 drawBorder: false
               },
               ticks: {
                 padding: 15,
-                fontStyle: 600,
+                ...fontConfig,
                 callback: (value, index) => {
                   if (index % 2 === 0) return
 
@@ -142,6 +174,7 @@ export default {
               },
               ticks: {
                 padding: 10,
+                ...fontConfig,
                 callback: (value, index, values) => {
                   if (this.period !== 'day' && index === values.length - 1) {
                     return this.$t('MARKET_CHART.TODAY')
@@ -202,7 +235,7 @@ export default {
           borderWidth: 3,
           type: 'line',
           fill: false,
-          borderColor: this.gradient || '#666',
+          borderColor: this.gradient || this.colours.gradient[0],
           data
         }]
       }
@@ -219,9 +252,9 @@ export default {
       if (width === 0) return
 
       this.gradient = canvas.getContext('2d').createLinearGradient(0, 0, width, 0)
-      this.gradient.addColorStop(0, '#528fe3')
-      this.gradient.addColorStop(0.5, '#9c6dd8')
-      this.gradient.addColorStop(1, '#e15362')
+      this.gradient.addColorStop(0, this.colours.gradient[1])
+      this.gradient.addColorStop(0.5, this.colours.gradient[2])
+      this.gradient.addColorStop(1, this.colours.gradient[3])
     },
 
     changePeriod (period) {

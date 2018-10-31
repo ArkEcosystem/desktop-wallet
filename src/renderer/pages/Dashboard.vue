@@ -3,7 +3,7 @@
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-3/4 flex-col overflow-y-auto">
       <div
         v-if="isMarketEnabled"
-        class="bg-grey-lightest pt-10 px-10 pb-4 rounded-t-lg"
+        class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
       >
         <MarketChart :is-active="isMarketEnabled" >
           <MarketChartHeader class="mb-5" />
