@@ -221,6 +221,35 @@ describe('peer store module', () => {
     ])
   })
 
+  it('should validate a v1 https peer successfully', async () => {
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .reply(200, {
+        network: {
+          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        }
+      })
+
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
+      .reply(200, {
+        height: 10001
+      })
+
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      host: `https://${goodPeer1.ip}`,
+      timeout: 100
+    })
+
+    expect(response).toBeObject()
+    expect(response).toContainEntries([
+      ['height', 10001],
+      ['delay', 0],
+      ['version', '1.0.0']
+    ])
+  })
+
   it('should validate a v2 peer successfully', async () => {
     // Mock v1 endpoints also since they are available on core v2
     axiosMock
@@ -257,6 +286,55 @@ describe('peer store module', () => {
       })
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+
+    expect(response).toBeObject()
+    expect(response).toContainEntries([
+      ['height', 10002],
+      ['delay', 0],
+      ['version', '2.0.0']
+    ])
+  })
+
+  it('should validate a v2 https peer successfully', async () => {
+    // Mock v1 endpoints also since they are available on core v2
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .reply(200, {
+        network: {
+          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        }
+      })
+
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
+      .reply(200, {
+        data: {
+          height: 10002
+        }
+      })
+
+    // Mock v2 endpoints
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+      .reply(200, {
+        data: {
+          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+        }
+      })
+
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/syncing`)
+      .reply(200, {
+        data: {
+          height: 10002
+        }
+      })
+
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      host: `https://${goodPeer1.ip}`,
+      timeout: 100
+    })
 
     expect(response).toBeObject()
     expect(response).toContainEntries([

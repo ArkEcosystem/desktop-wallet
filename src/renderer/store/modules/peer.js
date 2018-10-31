@@ -16,7 +16,7 @@ const getApiPort = async (peer) => {
 
   if (/^2\./.test(peer.version) && peer.p2pPort) {
     try {
-      const config = await apiClient.fetchPeerConfig(`http://${peer.ip}:${peer.p2pPort}`)
+      const config = await apiClient.fetchPeerConfig(getBaseUrl(peer, true))
       if (config && config.plugins && config.plugins['@arkecosystem/core-api']) {
         if (config.plugins['@arkecosystem/core-api'].enabled) {
           peer.port = config.plugins['@arkecosystem/core-api'].port
@@ -27,6 +27,12 @@ const getApiPort = async (peer) => {
       throw new Error('Could not determine peer API port: ', message)
     }
   }
+}
+
+const getBaseUrl = (peer, p2pPort = false) => {
+  const scheme = peer.isHttps ? 'https://' : 'http://'
+
+  return `${scheme}${peer.ip}:${p2pPort ? peer.p2pPort : peer.port}`
 }
 
 export default {
@@ -177,7 +183,7 @@ export default {
      */
     async setCurrentPeer ({ commit, rootGetters }, peer) {
       await getApiPort(peer)
-      this._vm.$client.host = `http://${peer.ip}:${peer.port}`
+      this._vm.$client.host = getBaseUrl(peer)
       commit('SET_CURRENT_PEER', {
         peer,
         networkId: rootGetters['session/profile'].networkId
@@ -276,7 +282,7 @@ export default {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
           const client = new ClientService(false)
-          client.host = `http://${currentPeer.ip}:${currentPeer.port}`
+          client.host = getBaseUrl(currentPeer)
           client.version = /^2\./.test(currentPeer.version) ? 2 : 1
           client.client.http.timeout = 3000
           peerStatus = await client.fetchPeerStatus()
@@ -306,16 +312,23 @@ export default {
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { ip, port, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { host, ip, port, timeout = 3000 }) {
       let networkConfig
       let version = 2
-      const host = `http://${ip}:${port}`
+      if (!host && ip) {
+        host = ip
+      }
+      let baseUrl = `${host}:${port}`
+      let schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
+      if (!schemeUrl) {
+        baseUrl = `http://${baseUrl}`
+      }
       try {
-        networkConfig = await ClientService.fetchNetworkConfig(host, version, timeout)
+        networkConfig = await ClientService.fetchNetworkConfig(baseUrl, version, timeout)
       } catch (errorV2) {
         try {
           version = 1
-          networkConfig = await ClientService.fetchNetworkConfig(host, version, timeout)
+          networkConfig = await ClientService.fetchNetworkConfig(baseUrl, version, timeout)
         } catch (errorV1) {
           //
         }
@@ -328,7 +341,7 @@ export default {
       }
 
       const client = new ClientService(false)
-      client.host = host
+      client.host = baseUrl
       client.version = version
       client.client.http.timeout = timeout
 
@@ -343,12 +356,14 @@ export default {
       }
 
       return {
-        ip,
+        ip: schemeUrl ? schemeUrl[2] : host,
+        host: baseUrl,
         port: +port,
         height: peerStatus.height,
         version: `${version}.0.0`,
         status: 'OK',
-        delay: 0
+        delay: 0,
+        isHttps: schemeUrl && schemeUrl[1] === 'https://'
       }
     }
   }

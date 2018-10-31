@@ -58,6 +58,7 @@ export default {
     NOT_MATCH: 'The {0} does not match the {1}',
     NOT_VALID: 'The {0} is not valid',
     NOT_NUMERIC: 'The {0} is not numeric',
+    NO_SCHEME: 'The {0} does not have \'http://\' or \'https://\'',
     REQUIRED: 'The {0} is required',
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
@@ -196,7 +197,11 @@ export default {
     HOST: 'IP / Host',
     PORT: 'Port',
     TITLE: 'Connect to custom peer',
-    VALIDATING: 'Validating peer details...'
+    VALIDATING: 'Validating peer details...',
+    PLACEHOLDER: {
+      HOST: 'http://1.2.3.4',
+      PORT: '4003'
+    }
   },
 
   PASSPHRASE_INPUT: {

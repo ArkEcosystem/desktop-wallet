@@ -410,7 +410,8 @@ export default class ClientService {
 
         const currentPeer = store.getters['peer/current']()
         if (currentPeer && Object.keys(currentPeer).length > 0) {
-          this.host = `http://${currentPeer.ip}:${currentPeer.port}`
+          const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+          this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           this.version = currentPeer.version.match(/^2\./) ? 2 : 1
         } else {
           const { server, apiVersion } = store.getters['network/byId'](profile.networkId)

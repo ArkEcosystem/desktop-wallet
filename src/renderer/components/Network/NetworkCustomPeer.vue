@@ -14,6 +14,7 @@
         :is-invalid="$v.form.host.$dirty && $v.form.host.$invalid"
         :label="$t('MODAL_PEER.HOST')"
         :title="$t('MODAL_PEER.HOST')"
+        :placeholder="$t('MODAL_PEER.PLACEHOLDER.HOST')"
         name="host"
       />
 
@@ -25,6 +26,7 @@
         :is-invalid="$v.form.port.$dirty && $v.form.port.$invalid"
         :label="$t('MODAL_PEER.PORT')"
         :title="$t('MODAL_PEER.PORT')"
+        :placeholder="$t('MODAL_PEER.PLACEHOLDER.PORT')"
         name="port"
       />
 
@@ -51,7 +53,7 @@
 </template>
 
 <script>
-import { ipAddress, numeric, required } from 'vuelidate/lib/validators'
+import { numeric, required } from 'vuelidate/lib/validators'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { ButtonGeneric } from '@/components/Button'
 import { InputText } from '@/components/Input'
@@ -82,6 +84,8 @@ export default {
       if (this.$v.form.host.$dirty) {
         if (!this.$v.form.host.required) {
           error = this.$t('VALIDATION.REQUIRED', [this.$refs['input-host'].label])
+        } else if (!this.$v.form.host.hasScheme) {
+          error = this.$t('VALIDATION.NO_SCHEME', [this.$refs['input-host'].label])
         } else if (!this.$v.form.host.isValid) {
           error = this.$t('VALIDATION.NOT_VALID', [this.$refs['input-host'].label])
         }
@@ -107,7 +111,8 @@ export default {
   mounted () {
     const currentPeer = this.$store.getters['peer/current']()
     if (currentPeer && currentPeer.isCustom) {
-      this.form.host = currentPeer.ip
+      const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+      this.form.host = `${scheme}${currentPeer.ip}`
       this.form.port = currentPeer.port
     }
   },
@@ -116,7 +121,7 @@ export default {
     async validate () {
       this.showLoadingModal = true
       const response = await this.$store.dispatch('peer/validatePeer', {
-        ip: this.form.host,
+        host: this.form.host,
         port: this.form.port
       })
       if (response === false) {
@@ -127,7 +132,7 @@ export default {
         response.isCustom = true
         await this.$store.dispatch('peer/setCurrentPeer', response)
         await this.$store.dispatch('peer/updateCurrentPeerStatus')
-        this.$success(`${this.$t('PEER.CONNECTED')}: http://${this.form.host}:${this.form.port}`)
+        this.$success(`${this.$t('PEER.CONNECTED')}: ${this.form.host}:${this.form.port}`)
         this.emitClose(true)
       }
       this.showLoadingModal = false
@@ -148,7 +153,10 @@ export default {
       host: {
         required,
         isValid (value) {
-          return ipAddress(value) || /^[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+        },
+        hasScheme (value) {
+          return /^https?:\/\//.test(value)
         }
       },
       port: {

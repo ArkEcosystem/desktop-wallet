@@ -25,6 +25,7 @@
         :disabled="isDisabled || isReadOnly"
         :type="type"
         :value="value"
+        :placeholder="placeholder"
         v-model="model"
         class="InputText__input flex-1"
         @focus="onFocus"
@@ -54,6 +55,11 @@ export default {
     label: {
       type: String,
       required: true
+    },
+    placeholder: {
+      type: String,
+      required: false,
+      default: ''
     },
     name: {
       type: String,
@@ -149,7 +155,13 @@ export default {
 }
 
 .InputText__input::placeholder {
-  @apply .text-transparent
+  @apply .text-transparent;
+  transition: color 0s;
+}
+
+.InputField--focused .InputText__input::placeholder {
+  @apply .text-black;
+  transition: color 0.1s;
 }
 
 .InputText__input--large {

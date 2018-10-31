@@ -21,7 +21,7 @@
               ref="peers-menu"
               :items="peerIps"
               :value="currentPeerId"
-              :placeholder="peer ? `${peer.ip}` : $t('PEER.NONE')"
+              :placeholder="peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')"
               :pin-above="true"
               :prefix="$t('PEER.PEER')"
               class="inline-block text-white fill-white width-inherit"
@@ -70,7 +70,7 @@
         :label="$t('PEER.CONNECT_CUSTOM')"
         icon="connect"
         view-box="0 0 30 15"
-        class="cursor-pointer py-5 px-10 text-grey-dark hover:text-white"
+        class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:text-white"
       >
         <template slot-scope="{ toggle, isOpen }">
           <NetworkCustomPeer
@@ -138,7 +138,7 @@ export default {
       }
 
       return bestPeers.reduce((map, peer, index) => {
-        map[index] = peer.ip
+        map[index] = `http://${peer.ip}`
 
         return map
       }, {})
@@ -218,5 +218,9 @@ export default {
 
 .AppSidemenuNetworkStatus__peer .MenuDropdownHandler.text-theme-page-text-light {
   @apply .text-white;
+}
+
+.AppSidemenuNetworkStatus__ButtonModal {
+  @apply block;
 }
 </style>
