@@ -8,7 +8,7 @@
         :is-open="!isPassphraseStep"
         :animation-duration="{ enter: 0, leave: 0 }"
       >
-        <PassphraseWords :passphrase-words="secondPassphrase.split(' ')" />
+        <PassphraseWords :passphrase-words="passphraseWords" />
 
         <button
           type="button"
@@ -24,8 +24,8 @@
       >
         <PassphraseVerification
           ref="passphraseVerification"
-          :passphrase="secondPassphrase.split(' ')"
-          :word-positions="[3, 6, 9]"
+          :passphrase="passphraseWords"
+          :word-positions="wordPositions"
           @verified="onVerification"
         />
 
@@ -138,6 +138,14 @@ export default {
   }),
 
   computed: {
+    wordPositions () {
+      return [3, 6, 9]
+    },
+
+    passphraseWords () {
+      return this.secondPassphrase.split(' ')
+    },
+
     currentWallet () {
       return this.wallet_fromRoute
     }
@@ -149,12 +157,15 @@ export default {
     }
   },
 
+  created () {
+    this.secondPassphrase = WalletService.generateSecondPassphrase()
+  },
+
   beforeDestroy () {
     this.bip38Worker.send('quit')
   },
 
   mounted () {
-    this.secondPassphrase = WalletService.generateSecondPassphrase()
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
     }
