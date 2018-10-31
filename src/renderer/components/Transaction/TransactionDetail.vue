@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { WalletIdenticon } from '@/components/Wallet'
+import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
