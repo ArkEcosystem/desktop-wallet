@@ -121,11 +121,11 @@ export default class ClientService {
    *
    * @param {String} address
    * @param {Object} [query]
-   * @param {Number} [query.page=0]
+   * @param {Number} [query.page=1]
    * @param {Number} [query.limit=50]
    * @return {Object[]}
    */
-  async fetchTransactions (address, { page, limit, orderBy } = { page: 0, limit: 50, orderBy: 'timestamp:desc' }) {
+  async fetchTransactions (address, { page, limit, orderBy } = { page: 1, limit: 50, orderBy: 'timestamp:desc' }) {
     let totalCount = 0
     let transactions = []
 
