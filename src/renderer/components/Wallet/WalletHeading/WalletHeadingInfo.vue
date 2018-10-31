@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <Identicon
+    <WalletIdenticon
       :value="address"
       :size="100"
       class="WalletHeading__identicon"
@@ -37,33 +37,30 @@
 <script>
 import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
-import { Identicon } from '@/components/Profile'
+import { WalletIdenticon } from '../'
 
 export default {
   name: 'WalletHeadingInfo',
 
   components: {
     ButtonClipboard,
-    Identicon,
+    WalletIdenticon,
     SvgIcon
   },
 
   computed: {
     address () {
-      const wallet = this.wallet_fromRoute
-      return wallet ? wallet.address : ''
+      return this.currentWallet ? this.currentWallet.address : ''
     },
     alternativeBalance () {
-      const wallet = this.wallet_fromRoute
-      const balance = wallet ? this.currency_subToUnit(wallet.balance) : 0
+      const balance = this.currentWallet ? this.currency_subToUnit(this.currentWallet.balance) : 0
       return this.currency_format(balance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
-      const wallet = this.wallet_fromRoute
-      const balance = wallet ? wallet.balance : 0
+      const balance = this.currentWallet ? this.currentWallet.balance : 0
       return this.formatter_networkCurrency(balance)
     },
     currentWallet () {

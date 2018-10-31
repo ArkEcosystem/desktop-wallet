@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row justify-between rounded-lg px-5 py-6 bg-theme-heading-background TransactionDetail">
     <div class="flex flex-row">
-      <Identicon
+      <WalletIdenticon
         :value="senderAddress"
         :size="75"
       />
@@ -24,7 +24,7 @@
         />
       </span>
     </div>
-    <Identicon
+    <WalletIdenticon
       v-if="type === 0"
       :value="recipientAddress"
       :size="75"
@@ -43,14 +43,14 @@
 </template>
 
 <script>
-import { Identicon } from '@/components/Profile'
+import { WalletIdenticon } from '@/components/Wallet'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'TransactionDetail',
 
   components: {
-    Identicon,
+    WalletIdenticon,
     SvgIcon
   },
 

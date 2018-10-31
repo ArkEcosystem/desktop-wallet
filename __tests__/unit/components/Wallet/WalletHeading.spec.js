@@ -15,7 +15,6 @@ const store = new Vuex.Store({
 })
 
 const sampleWalletData = {
-  identicon: 'https://api.adorable.io/avatars/285/abott@adorable.png',
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
   balance: 797.8921
 }

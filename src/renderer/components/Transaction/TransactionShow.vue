@@ -105,7 +105,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
-import { TransactionAmount } from '@/components/Transaction'
+import TransactionAmount from './TransactionAmount'
 
 export default {
   name: 'TransactionShow',

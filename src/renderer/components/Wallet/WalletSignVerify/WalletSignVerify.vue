@@ -1,7 +1,7 @@
 <template>
   <div class="mx-4 overflow-hidden">
     <div class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator">
-      <Identicon
+      <WalletIdenticon
         :value="currentWallet.address"
         :size="75"
       />
@@ -82,8 +82,7 @@
 
 <script>
 import { ButtonClipboard, ButtonModal } from '@/components/Button'
-import { Identicon } from '@/components/Profile'
-import { WalletSignModal, WalletVerifyModal } from '@/components/Wallet'
+import { WalletIdenticon, WalletSignModal, WalletVerifyModal } from '../'
 import SvgIcon from '@/components/SvgIcon'
 import { clone } from 'lodash'
 
@@ -93,7 +92,7 @@ export default {
   components: {
     ButtonClipboard,
     ButtonModal,
-    Identicon,
+    WalletIdenticon,
     SvgIcon,
     WalletSignModal,
     WalletVerifyModal

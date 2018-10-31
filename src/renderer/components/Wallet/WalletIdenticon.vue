@@ -1,7 +1,7 @@
 <template>
   <div
     :style="{ background: backgroundColor, height: `${size}px`, width: `${size}px` }"
-    class="Identicon"
+    class="WalletIdenticon"
   >
     <svg
       :width="size"
@@ -30,7 +30,7 @@ const colors = require('@/components/utils/IdenticonColors')
 const crypto = require('crypto')
 
 export default {
-  name: 'Identicon',
+  name: 'WalletIdenticon',
 
   props: {
     value: {
@@ -53,20 +53,33 @@ export default {
     backgroundColor: ''
   }),
 
-  created () {
-    // Change string to a hash
-    const hash = crypto.createHash('sha1').update(Buffer.from(this.value, 'utf8')).digest('binary')
-    // Change hash into a 32 bit int for our seed
-    const seed = (hash.charCodeAt(0) << 24) | (hash.charCodeAt(1) << 16) | (hash.charCodeAt(2) << 8) | hash.charCodeAt(3)
-    const generator = new MersenneTwister(seed)
-    const remainingColors = this.hueShift(colors.slice(), generator)
-    this.backgroundColor = this.genColor(remainingColors, generator)
-    for (var i = 0; i < this.shapeCount; i++) {
-      this.rectangles.push(this.genShape(generator, remainingColors, this.size, i, this.shapeCount))
+  watch: {
+    value () {
+      this.generate(this.value)
     }
   },
 
+  created () {
+    this.generate(this.value)
+  },
+
   methods: {
+    generate (value) {
+      this.rectangles = []
+
+      // Change string to a hash
+      const hash = crypto.createHash('sha1').update(Buffer.from(value, 'utf8')).digest('binary')
+      // Change hash into a 32 bit int for our seed
+      const seed = (hash.charCodeAt(0) << 24) | (hash.charCodeAt(1) << 16) | (hash.charCodeAt(2) << 8) | hash.charCodeAt(3)
+      const generator = new MersenneTwister(seed)
+      const remainingColors = this.hueShift(colors.slice(), generator)
+      this.backgroundColor = this.genColor(remainingColors, generator)
+
+      for (var i = 0; i < this.shapeCount; i++) {
+        this.rectangles.push(this.genShape(generator, remainingColors, this.size, i, this.shapeCount))
+      }
+    },
+
     genShape (generator, remainingColors, diameter, i, total) {
       const center = diameter / 2
       const width = diameter
@@ -119,7 +132,7 @@ export default {
 </script>
 
 <style>
-.Identicon {
+.WalletIdenticon {
   border-radius: 100%;
   overflow: hidden;
   padding: 0px;

@@ -14,7 +14,7 @@ const network = {
 }
 
 const sampleWalletData = {
-  identicon: '<div class="Identicon WalletHeading__identicon" style="background: rgb(198, 40, 81); height: 100px; width: 100px;"><svg width="100" height="100" x="0" y="0"><rect width="100" height="100" transform="translate(-4.949028905440344 -5.6348829242521274) rotate(313.3 50 50)" fill="#6C295B" x="0" y="0"></rect><rect width="100" height="100" transform="translate(38.61589480562664 36.605112514646756) rotate(175.3 50 50)" fill="#833B69" x="0" y="0"></rect><rect width="100" height="100" transform="translate(81.8625347893115 14.543059153493719) rotate(114.1 50 50)" fill="#76102C" x="0" y="0"></rect></svg></div>',
+  identicon: '<div class="WalletIdenticon WalletHeading__identicon" style="background: rgb(198, 40, 81); height: 100px; width: 100px;"><svg width="100" height="100" x="0" y="0"><rect width="100" height="100" transform="translate(-4.949028905440344 -5.6348829242521274) rotate(313.3 50 50)" fill="#6C295B" x="0" y="0"></rect><rect width="100" height="100" transform="translate(38.61589480562664 36.605112514646756) rotate(175.3 50 50)" fill="#833B69" x="0" y="0"></rect><rect width="100" height="100" transform="translate(81.8625347893115 14.543059153493719) rotate(114.1 50 50)" fill="#76102C" x="0" y="0"></rect></svg></div>',
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
   balance: 797.8921
 }

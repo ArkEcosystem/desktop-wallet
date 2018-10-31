@@ -5,7 +5,7 @@
     <div class="ContactAll__grid mt-10 justify-center">
       <div class="ContactAll__grid__contact flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg">
         <router-link :to="{ name: 'contact-new' }" >
-          <Identicon
+          <WalletIdenticon
             :size="100"
             value="default"
             class="identicon cursor-pointer opacity-50"
@@ -30,7 +30,7 @@
           :to="{ name: 'wallet-show', params: { address: contact.id } }"
           class="flex flex-row"
         >
-          <Identicon
+          <WalletIdenticon
             :value="contact.address"
             :size="100"
             class="identicon cursor-pointer"
@@ -65,7 +65,7 @@
 <script>
 import { ContactRemovalConfirmation } from '@/components/Contact'
 import { sortByProp } from '@/components/utils/Sorting'
-import { Identicon } from '@/components/Profile'
+import { WalletIdenticon } from '@/components/Wallet'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -73,7 +73,7 @@ export default {
 
   components: {
     ContactRemovalConfirmation,
-    Identicon
+    WalletIdenticon
   },
 
   data: () => ({

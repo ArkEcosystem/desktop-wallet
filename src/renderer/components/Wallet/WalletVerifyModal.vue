@@ -87,15 +87,14 @@
 <script>
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalWindow } from '@/components/Modal'
-import { Identicon } from '@/components/Profile'
-import { WalletVerifyDetail } from '@/components/Wallet'
+import { WalletIdenticon, WalletVerifyDetail } from './'
 import WalletService from '@/services/wallet'
 
 export default {
   name: 'WalletVerifyModal',
 
   components: {
-    Identicon,
+    WalletIdenticon,
     InputText,
     InputToggle,
     ModalWindow,

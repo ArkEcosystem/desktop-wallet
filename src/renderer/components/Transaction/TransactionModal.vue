@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import { ModalWindow } from '@/components/Modal'
-import { TRANSACTION_TYPES } from '@config'
 import { includes, findKey } from 'lodash'
+import { TRANSACTION_TYPES } from '@config'
+import { ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
 

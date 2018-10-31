@@ -3,7 +3,7 @@
     :class="[isVerified ? 'WalletVerifyDetail__verified' : 'WalletVerifyDetail__notVerified']"
     class="flex flex-row justify-between rounded-lg px-5 py-6 bg-theme-heading-background">
     <div class="flex flex-row">
-      <Identicon
+      <WalletIdenticon
         :value="address"
         :size="75"
       />
@@ -16,14 +16,14 @@
 </template>
 
 <script>
-import { Identicon } from '@/components/Profile'
+import { WalletIdenticon } from './'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletVerifyDetail',
 
   components: {
-    Identicon,
+    WalletIdenticon,
     SvgIcon
   },
 
@@ -48,5 +48,4 @@ export default {
 .WalletVerifyDetail__notVerified {
   background-image: -webkit-linear-gradient(30deg, #493c56 20%, var(--theme-transaction-detail-gradient2) 20%);
 }
-
 </style>

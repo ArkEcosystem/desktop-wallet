@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '@/components/Wallet'
-import WalletSignVerify from '@/components/Wallet/WalletSignVerify'
+import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
+import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 
 export default {

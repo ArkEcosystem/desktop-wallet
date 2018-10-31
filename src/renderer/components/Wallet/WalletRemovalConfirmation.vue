@@ -12,7 +12,7 @@
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="WalletRemovalConfirmation__container__arrow"
       >
-      <Identicon
+      <WalletIdenticon
         :value="wallet.address"
         :size="150"
         class="WalletHeading__identicon"
@@ -28,13 +28,13 @@
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
-import { Identicon } from '@/components/Profile'
+import { WalletIdenticon } from './'
 
 export default {
   name: 'WalletRemovalConfirmation',
 
   components: {
-    Identicon,
+    WalletIdenticon,
     ModalConfirmation
   },
 

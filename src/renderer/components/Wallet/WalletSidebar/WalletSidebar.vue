@@ -19,7 +19,7 @@
         slot-scope="{ isActive }"
         class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6 overflow-hidden"
       >
-        <Identicon
+        <WalletIdenticon
           :size="50"
           :value="wallet.address"
           class="WalletSidebar__wallet__identicon"
@@ -49,13 +49,13 @@
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import WalletService from '@/services/wallet'
 import { sortByProp } from '@/components/utils/Sorting'
-import { Identicon } from '@/components/Profile'
+import { WalletIdenticon } from '../'
 
 export default {
   name: 'WalletSidebar',
 
   components: {
-    Identicon,
+    WalletIdenticon,
     MenuNavigation,
     MenuNavigationItem
   },

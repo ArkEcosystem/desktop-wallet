@@ -33,12 +33,12 @@
 </template>
 
 <script>
+import { find } from 'lodash'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
-import { TransactionDetail } from '@/components/Transaction'
-import { find } from 'lodash'
+import TransactionDetail from '../TransactionDetail'
 
 export default {
   name: 'TransactionConfirm',
