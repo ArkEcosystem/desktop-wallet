@@ -42,6 +42,7 @@ export default {
 /* To display the images scaled to the size of the button */
 .InputGridItem {
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 </style>
