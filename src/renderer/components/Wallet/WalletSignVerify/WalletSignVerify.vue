@@ -21,7 +21,7 @@
               v-if="isOpen"
               :wallet="currentWallet"
               @cancel="toggle"
-              @signed="toggle() && updateSignedMessages()"
+              @signed="onSigned(toggle)"
             />
           </template>
         </ButtonModal>
@@ -132,6 +132,10 @@ export default {
     },
     updateSignedMessages () {
       this.signedMessages = this.$store.getters['wallet/signedMessages'](this.currentWallet.address)
+    },
+    onSigned (toggle) {
+      toggle()
+      this.updateSignedMessages()
     }
   }
 }

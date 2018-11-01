@@ -160,7 +160,7 @@ export default {
 }
 
 .InputField--focused .InputText__input::placeholder {
-  @apply .text-black;
+  @apply .text-theme-page-text-light;
   transition: color 0.1s;
 }
 

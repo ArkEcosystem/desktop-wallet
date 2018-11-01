@@ -2,6 +2,7 @@ import { findIndex, unionBy } from 'lodash'
 import WalletModel from '@/models/wallet'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
+const includesMessage = (objects, find) => objects.map(a => a.timestamp).includes(find.timestamp)
 
 export default {
   namespaced: true,
@@ -40,7 +41,13 @@ export default {
 
     secondaryButtonsVisible: state => state.secondaryButtonsVisible,
 
-    signedMessages: state => address => state.signedMessages[address]
+    signedMessages: state => address => {
+      if (!state.signedMessages[address]) {
+        return []
+      }
+
+      return state.signedMessages[address]
+    }
   },
 
   mutations: {
@@ -79,15 +86,16 @@ export default {
     },
     ADD_SIGNED_MESSAGE (state, message) {
       if (!state.signedMessages[message.address]) {
-        state.signedMessages[message.address] = {}
+        state.signedMessages[message.address] = []
       }
-      if (!state.signedMessages[message.address][message.timestamp]) {
-        state.signedMessages[message.address][message.timestamp] = message
+      if (!includesMessage(state.signedMessages[message.address], message)) {
+        state.signedMessages[message.address].push(message)
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      if (state.signedMessages[message.address] && state.signedMessages[message.address][message.address]) {
-        delete state.signedMessages[message.address][message.timestamp]
+      const index = findIndex(state.signedMessages[message.address], { timestamp: message.timestamp })
+      if (index !== -1) {
+        state.signedMessages[message.address].splice(index, 1)
       }
     }
   },

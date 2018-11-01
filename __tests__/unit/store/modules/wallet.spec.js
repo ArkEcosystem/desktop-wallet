@@ -10,10 +10,16 @@ describe('WalletModule', () => {
     { id: 6, address: 'A5', profileId: 'exampleId', isContact: true }
   ]
 
+  const messages = [
+    { message: 'hello 1', timestamp: (new Date()).getTime() },
+    { message: 'hello 2', timestamp: (new Date()).getTime() + 10 }
+  ]
+
   store.commit('session/SET_PROFILE_ID', 'exampleId')
 
   beforeEach(() => {
     models.forEach(model => store.commit('wallet/STORE', model))
+    messages.forEach(message => store.commit('wallet/DELETE_SIGNED_MESSAGE', message))
   })
 
   describe('getters byAddress', () => {
@@ -74,6 +80,20 @@ describe('WalletModule', () => {
         expect(store.getters['wallet/contactsByProfileId']('exampleId')).toIncludeSameMembers(contactWalletsOfExampleId)
         expect(store.getters['wallet/contactsByProfileId']('exampleId')).not.toIncludeSameMembers(walletsOfExampleId)
       })
+    })
+  })
+
+  describe('Signed Messages', () => {
+    it('should add a signed message', () => {
+      store.dispatch('wallet/addSignedMessage', messages[0])
+      expect(store.getters['wallet/signedMessages']()).toIncludeSameMembers([messages[0]])
+    })
+
+    it('should delete a signed message', () => {
+      store.dispatch('wallet/addSignedMessage', messages[0])
+      store.dispatch('wallet/addSignedMessage', messages[1])
+      store.dispatch('wallet/deleteSignedMessage', messages[0])
+      expect(store.getters['wallet/signedMessages']()).toEqual([messages[1]])
     })
   })
 

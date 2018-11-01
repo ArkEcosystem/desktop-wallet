@@ -63,12 +63,15 @@ export default {
         {
           component: 'WalletDelegates',
           text: this.$t('PAGES.WALLET.DELEGATES')
-        },
-        {
-          component: 'WalletSignVerify',
-          text: this.$t('PAGES.WALLET.SIGN_VERIFY')
         }
       ]
+
+      if (this.currentWallet && !this.currentWallet.isContact) {
+        tabs.push({
+          component: 'WalletSignVerify',
+          text: this.$t('PAGES.WALLET.SIGN_VERIFY')
+        })
+      }
 
       // TODO enable when there is something to show
       // if (this.session_network.market && this.session_network.market.enabled) {
@@ -79,6 +82,9 @@ export default {
       // }
 
       return tabs
+    },
+    currentWallet () {
+      return this.wallet_fromRoute
     }
   },
 
@@ -112,7 +118,7 @@ export default {
     },
     async fetchWalletVote () {
       try {
-        this.walletVote.publicKey = await this.$client.fetchWalletVote(this.wallet_fromRoute.address)
+        this.walletVote.publicKey = await this.$client.fetchWalletVote(this.currentWallet.address)
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
