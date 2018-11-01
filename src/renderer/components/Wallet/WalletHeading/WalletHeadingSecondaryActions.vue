@@ -95,9 +95,8 @@ export default {
   },
 
   methods: {
-    async onRemoval (toggle) {
+    async onRemoval () {
       this.$router.push({ name: 'wallets' })
-      toggle()
     }
   }
 }

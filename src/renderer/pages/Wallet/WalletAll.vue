@@ -58,12 +58,13 @@
       v-if="walletToRemove"
       :wallet="walletToRemove"
       @cancel="hideRemovalConfirmation"
-      @removed="hideRemovalConfirmation"
+      @removed="removeWallet(walletToRemove)"
     />
   </div>
 </template>
 
 <script>
+import { without } from 'lodash'
 import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 
@@ -120,6 +121,11 @@ export default {
 
     openRemovalConfirmation (wallet) {
       this.walletToRemove = wallet
+    },
+
+    removeWallet (wallet) {
+      this.hideRemovalConfirmation()
+      this.selectableWallets = without(this.selectableWallets, wallet)
     }
   }
 }
