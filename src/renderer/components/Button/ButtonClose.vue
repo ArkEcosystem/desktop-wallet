@@ -4,9 +4,11 @@
     @click="emitClick"
   >
     <SvgIcon
+      :class="iconClass"
       class="ButtonClose__cross fill-current text-theme-feature"
       name="cross"
-      view-box="0 0 11 10" />
+      view-box="0 0 15 15"
+    />
   </button>
 </template>
 
@@ -18,6 +20,14 @@ export default {
 
   components: {
     SvgIcon
+  },
+
+  props: {
+    iconClass: {
+      type: String,
+      required: false,
+      default: ''
+    }
   },
 
   methods: {
@@ -35,7 +45,6 @@ export default {
   padding: 10px;
   background: rgba(255, 255, 255, 0.2);
 }
-
 .ButtonClose:hover {
   background: rgba(0, 0, 0, 0.1);
 }

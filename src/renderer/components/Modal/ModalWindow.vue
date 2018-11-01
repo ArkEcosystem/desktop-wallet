@@ -12,18 +12,14 @@
             @click.stop="void 0"
           >
 
-            <button
-              v-if="allowClose"
-              class="absolute pin-t pin-r p-6"
-              @click="emitClose"
-            >
-              <svg class="fill-current text-grey h-4 w-4">
-                <path
-                  fill-rule="evenodd"
-                  d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"
-                />
-              </svg>
-            </button>
+            <div class="absolute pin-t pin-r mt-6 mr-6">
+              <ButtonClose
+                v-if="allowClose"
+                icon-class="text-grey"
+                class="p-6"
+                @click="emitClose"
+              />
+            </div>
 
             <section class="px-16 py-16">
 
@@ -58,8 +54,14 @@
 </template>
 
 <script>
+import { ButtonClose } from '@/components/Button'
+
 export default {
   name: 'ModalWindow',
+
+  components: {
+    ButtonClose
+  },
 
   props: {
     containerClasses: {
