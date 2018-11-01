@@ -100,6 +100,9 @@ let colors = {
   'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
   'theme-modal-footer-button-text': 'var(--theme-modal-footer-button-text)',
 
+  'theme-explanation-background': 'var(--theme-explanation-background)',
+  'theme-explanation-text': 'var(--theme-explanation-text)',
+
   'theme-settings': '#343956',
   'theme-settings-sub': '#3f4565',
   'theme-settings-button': '#4e5477',

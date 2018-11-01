@@ -4,13 +4,15 @@ export default {
   namespaced: true,
 
   state: {
-    pinCode: null
+    pinCode: null,
+    showVotingExplanation: true
   },
 
   getters: {
     latestReleaseVersion: state => state.latestReleaseVersion,
     pinCodeEnabled: state => !!state.pinCode,
-    pinCode: state => state.pinCode
+    pinCode: state => state.pinCode,
+    showVotingExplanation: state => state.showVotingExplanation
   },
 
   mutations: {
@@ -19,6 +21,9 @@ export default {
     },
     SET_PIN_CODE (state, pinCode) {
       state.pinCode = pinCode
+    },
+    SET_SHOW_VOTING_EXPLANATION (state, showVotingExplanation) {
+      state.showVotingExplanation = showVotingExplanation
     }
   },
 
@@ -30,6 +35,9 @@ export default {
     },
     setPinCode ({ commit }, value) {
       commit('SET_PIN_CODE', value)
+    },
+    setVotingExplanation ({ commit }, value) {
+      commit('SET_SHOW_VOTING_EXPLANATION', value)
     }
   }
 }
