@@ -5,6 +5,7 @@ export default {
 
   state: {
     pinCode: null,
+    hasSeenIntroduction: false,
     showVotingExplanation: true
   },
 
@@ -12,6 +13,7 @@ export default {
     latestReleaseVersion: state => state.latestReleaseVersion,
     pinCodeEnabled: state => !!state.pinCode,
     pinCode: state => state.pinCode,
+    hasSeenIntroduction: state => state.hasSeenIntroduction,
     showVotingExplanation: state => state.showVotingExplanation
   },
 
@@ -21,6 +23,9 @@ export default {
     },
     SET_PIN_CODE (state, pinCode) {
       state.pinCode = pinCode
+    },
+    SET_HAS_SEEN_INTRODUCTION (state, seen) {
+      state.hasSeenIntroduction = seen
     },
     SET_SHOW_VOTING_EXPLANATION (state, showVotingExplanation) {
       state.showVotingExplanation = showVotingExplanation
@@ -35,6 +40,9 @@ export default {
     },
     setPinCode ({ commit }, value) {
       commit('SET_PIN_CODE', value)
+    },
+    setHasSeenIntroduction ({ commit }, value) {
+      commit('SET_HAS_SEEN_INTRODUCTION', value)
     },
     setVotingExplanation ({ commit }, value) {
       commit('SET_SHOW_VOTING_EXPLANATION', value)

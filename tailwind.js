@@ -608,6 +608,7 @@ module.exports = {
     '40': '10rem', // Added
     '48': '12rem',
     '64': '16rem',
+    '120': '30rem', // Added
     'full': '100%',
     'screen': '100vh'
   },

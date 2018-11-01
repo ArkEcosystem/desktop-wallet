@@ -9,51 +9,58 @@
     }"
     class="App bg-theme-page text-theme-page-text font-sans"
   >
-    <AppSidemenu
-      v-if="hasAnyProfile"
-      :is-horizontal="true"
-      class="flex lg:hidden"
+    <AppWelcome
+      v-if="!hasSeenIntroduction"
+      @done="setIntroDone"
     />
-    <section
-      :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
-      :class="{
-        'blur': hasBlurFilter
-      }"
-      class="App__main flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
-    >
-      <div
-        :class="{ 'ml-6': !hasAnyProfile }"
-        class="flex-1 flex mt-6 mb-4 lg:mr-6"
+
+    <div v-else>
+      <AppSidemenu
+        v-if="hasAnyProfile"
+        :is-horizontal="true"
+        class="flex lg:hidden"
+      />
+      <section
+        :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
+        :class="{
+          'blur': hasBlurFilter
+        }"
+        class="App__main flex flex-col px-4 py-6 w-screen h-screen overflow-hidden"
       >
-        <AppSidemenu
-          v-if="hasAnyProfile"
-          class="hidden lg:flex"
-        />
-        <router-view class="flex-1 overflow-y-auto" />
-      </div>
+        <div
+          :class="{ 'ml-6': !hasAnyProfile }"
+          class="flex-1 flex mt-6 mb-4 lg:mr-6"
+        >
+          <AppSidemenu
+            v-if="hasAnyProfile"
+            class="hidden lg:flex"
+          />
+          <router-view class="flex-1 overflow-y-auto" />
+        </div>
 
-      <AppFooter/>
-    </section>
+        <AppFooter/>
+      </section>
 
-    <portal-target
-      name="modal"
-      multiple
-      @change="onPortalChange"
-    />
+      <portal-target
+        name="modal"
+        multiple
+        @change="onPortalChange"
+      />
 
-    <portal-target
-      name="loading"
-      @change="onPortalChange"
-    />
+      <portal-target
+        name="loading"
+        @change="onPortalChange"
+      />
 
-    <AlertMessage />
+      <AlertMessage />
+    </div>
   </div>
 </template>
 
 <script>
 import '@/styles/style.css'
 import { isEmpty } from 'lodash'
-import { AppSidemenu, AppFooter } from '@/components/App'
+import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
 
@@ -65,6 +72,7 @@ export default {
   components: {
     AppFooter,
     AppSidemenu,
+    AppWelcome,
     AlertMessage
   },
 
@@ -85,6 +93,9 @@ export default {
     },
     hasProtection () {
       return this.$store.getters['session/contentProtection']
+    },
+    hasSeenIntroduction () {
+      return this.$store.getters['app/hasSeenIntroduction']
     }
   },
 
@@ -149,6 +160,10 @@ export default {
 
     onPortalChange (options) {
       this.hasBlurFilter = !isEmpty(options)
+    },
+
+    setIntroDone () {
+      this.$store.dispatch('app/setHasSeenIntroduction', true)
     }
   }
 }
