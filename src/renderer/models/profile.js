@@ -25,6 +25,10 @@ export default new BaseModel({
       type: 'string',
       minLength: 1
     },
+    bip39Language: {
+      type: ['string', 'null'],
+      format: (data) => data.bip39Language || null
+    },
     name: {
       type: 'string',
       minLength: 1,

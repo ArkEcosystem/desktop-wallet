@@ -158,7 +158,7 @@ export default {
   },
 
   created () {
-    this.secondPassphrase = WalletService.generateSecondPassphrase()
+    this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)
   },
 
   beforeDestroy () {
@@ -191,7 +191,7 @@ export default {
     generateNewPassphrase () {
       this.isGenerating = true
       setTimeout(() => {
-        this.secondPassphrase = WalletService.generateSecondPassphrase()
+        this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)
         this.isGenerating = false
       }, 300)
     },

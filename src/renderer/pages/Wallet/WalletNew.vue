@@ -381,7 +381,10 @@ export default {
       // Delay the generation to play an animation
       setTimeout(() => {
         for (let i = 0; i < 4; i++) {
-          const { address, passphrase } = WalletService.generate(this.session_network.version)
+          const { address, passphrase } = WalletService.generate(
+            this.session_network.version,
+            this.session_profile.bip39Language
+          )
           this.$set(this.wallets, address, passphrase)
         }
 

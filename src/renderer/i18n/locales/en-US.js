@@ -1,8 +1,10 @@
 export default {
   COMMON: {
-    AVATAR: 'Avatar',
     ALL: 'All',
+    APPEARANCE: 'Appearance',
+    AVATAR: 'Avatar',
     BACK: 'Back',
+    BIP39_LANGUAGE: 'BIP39 Language',
     DONE: 'Done',
     FINISH: 'Finish',
     CONFIRM: 'Confirm',
@@ -100,6 +102,17 @@ export default {
     'en-US': 'English',
     'es-ES': 'Spanish',
     'pt-BR': 'Portugues - Brazil'
+  },
+
+  BIP39_LANGUAGES: {
+    chinese_simplified: 'Chinese Simplified',
+    chinese_traditional: 'Chinese Traditional',
+    english: 'English',
+    french: 'French',
+    italian: 'Italian',
+    japanese: 'Japanese',
+    korean: 'Korean',
+    spanish: 'Spanish'
   },
 
   MARKET: {

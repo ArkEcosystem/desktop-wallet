@@ -42,22 +42,32 @@
                 <InputSelect
                   v-model="language"
                   :items="languages"
+                  :label="$t('COMMON.LANGUAGE')"
                   name="language"
-                  label="Language"
                   class="flex-1 mr-2"
                 />
 
                 <InputSelect
                   v-model="currency"
                   :items="currencies"
+                  :label="$t('COMMON.CURRENCY')"
                   name="currency"
-                  label="Currency"
                   class="flex-1"
                 />
               </div>
 
+              <div class="flex mb-5">
+                <InputSelect
+                  v-model="bip39Language"
+                  :items="bip39Languages"
+                  :label="$t('COMMON.BIP39_LANGUAGE')"
+                  name="bip39-language"
+                  class="flex-1 mr-2"
+                />
+              </div>
+
               <div>
-                <h5 class="mb-2">Avatar</h5>
+                <h5 class="mb-2">{{ $t('COMMON.AVATAR') }}</h5>
 
                 <SelectionAvatar
                   :max-visible-items="2"
@@ -75,7 +85,7 @@
             :is-back-visible="true"
             :is-next-enabled="!$v.step2.$invalid"
             :is-disabled="step < 2"
-            title="Network"
+            :title="$t('COMMON.NETWORK')"
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
@@ -95,7 +105,7 @@
             :is-back-visible="true"
             :is-next-enabled="!$v.schema.$invalid"
             :is-disabled="step < 3"
-            title="Appearance"
+            :title="$t('COMMON.APPEARANCE')"
             @back="moveTo(2)"
             @next="create"
           >
@@ -128,7 +138,7 @@
 </template>
 
 <script>
-import { I18N } from '@config'
+import { BIP39, I18N } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
@@ -171,6 +181,14 @@ export default {
         this.selectLanguage(language)
       }
     },
+    bip39Language: {
+      get () {
+        return this.$store.getters['session/bip39Language'] || 'english'
+      },
+      set (bip39language) {
+        this.selectBip39Language(bip39language)
+      }
+    },
     currency: {
       get () {
         return this.$store.getters['session/currency']
@@ -193,6 +211,13 @@ export default {
     languages () {
       return I18N.enabledLocales.reduce((all, locale) => {
         all[locale] = this.$t(`LANGUAGES.${locale}`)
+        return all
+      }, {})
+    },
+    bip39Languages () {
+      return BIP39.languages.reduce((all, language) => {
+        all[language] = this.$t(`BIP39_LANGUAGES.${language}`)
+
         return all
       }, {})
     },
@@ -245,6 +270,11 @@ export default {
       this.schema.language = language
       this.$i18n.locale = language
       this.$store.dispatch('session/setLanguage', language)
+    },
+
+    selectBip39Language (bip39Language) {
+      this.schema.bip39Language = bip39Language
+      this.$store.dispatch('session/setBip39Language', bip39Language)
     },
 
     selectNetwork (networkId) {

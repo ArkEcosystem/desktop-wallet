@@ -20,6 +20,19 @@ exports.I18N = {
   ]
 }
 
+exports.BIP39 = {
+  languages: [
+    'chinese_simplified',
+    'chinese_traditional',
+    'english',
+    'french',
+    'italian',
+    'japanese',
+    'korean',
+    'spanish'
+  ]
+}
+
 exports.TRANSACTION_TYPES = {
   TRANSFER: 0,
   SECOND_SIGNATURE: 1,

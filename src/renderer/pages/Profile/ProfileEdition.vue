@@ -64,7 +64,20 @@
                   }"
                   :items="languages"
                   :value="language"
+                  :position="['-50%', '0%']"
                   @select="selectLanguage"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem :label="$t('COMMON.BIP39_LANGUAGE')">
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.bip39Language && modified.bip39Language !== profile.bip39Language
+                  }"
+                  :items="bip39Languages"
+                  :value="bip39Language"
+                  :position="['-50%', '0%']"
+                  @select="selectBip39Language"
                 />
               </ListDividedItem>
 
@@ -75,6 +88,7 @@
                   }"
                   :items="currencies"
                   :value="currency"
+                  :position="['-50%', '0%']"
                   @select="selectCurrency"
                 />
               </ListDividedItem>
@@ -158,7 +172,7 @@
 
 <script>
 import { capitalize, isEmpty } from 'lodash'
-import { I18N, NETWORKS } from '@config'
+import { BIP39, I18N, NETWORKS } from '@config'
 import { InputText, InputSelect } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
@@ -199,6 +213,13 @@ export default {
     languages () {
       return I18N.enabledLocales.reduce((all, locale) => {
         all[locale] = this.$t(`LANGUAGES.${locale}`)
+        return all
+      }, {})
+    },
+    bip39Languages () {
+      return BIP39.languages.reduce((all, language) => {
+        all[language] = this.$t(`BIP39_LANGUAGES.${language}`)
+
         return all
       }, {})
     },
@@ -243,6 +264,9 @@ export default {
     },
     language () {
       return this.modified.language || this.profile.language
+    },
+    bip39Language () {
+      return this.modified.bip39Language || this.profile.bip39Language || 'english'
     },
     name () {
       return this.modified.name || this.profile.name
@@ -300,6 +324,10 @@ export default {
       this.$i18n.locale = language
 
       this.__updateSession('language', language)
+    },
+
+    selectBip39Language (bip39Language) {
+      this.__updateSession('bip39Language', bip39Language)
     },
 
     selectNetwork (network) {

@@ -38,6 +38,7 @@ export default {
     currency: state => state.currency,
     theme: state => state.theme,
     language: state => state.language,
+    bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
     contentProtection: state => state.contentProtection
@@ -58,6 +59,10 @@ export default {
 
     SET_LANGUAGE (state, language) {
       state.language = language
+    },
+
+    SET_BIP39_LANGUAGE (state, bip39Language) {
+      state.bip39Language = bip39Language
     },
 
     SET_NAME (state, name) {
@@ -81,6 +86,7 @@ export default {
       state.background = null
       state.currency = MARKET.defaultCurrency
       state.language = I18N.defaultLocale
+      state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
       state.contentProtection = true
@@ -97,6 +103,7 @@ export default {
       dispatch('setCurrency', profile.currency)
       dispatch('setName', profile.name)
       dispatch('setLanguage', profile.language)
+      dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
 
       return profile
@@ -120,6 +127,10 @@ export default {
 
     setLanguage ({ commit }, value) {
       commit('SET_LANGUAGE', value)
+    },
+
+    setBip39Language ({ commit }, value) {
+      commit('SET_BIP39_LANGUAGE', value)
     },
 
     setName ({ commit }, value) {

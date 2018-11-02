@@ -8,8 +8,8 @@ export default class WalletService {
    * @param {Number} pubKeyHash - also known as address or network version
    * @return {Object}
    */
-  static generate (pubKeyHash) {
-    const passphrase = bip39.generateMnemonic()
+  static generate (pubKeyHash, language) {
+    const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language])
     const publicKey = crypto.getKeys(passphrase).publicKey
     return {
       address: crypto.getAddress(publicKey, pubKeyHash),
@@ -20,8 +20,8 @@ export default class WalletService {
   /**
    * Generates a new passphrase to be used for a second passphrase
    */
-  static generateSecondPassphrase () {
-    return bip39.generateMnemonic()
+  static generateSecondPassphrase (language) {
+    return bip39.generateMnemonic(null, null, bip39.wordlists[language])
   }
 
   /**
