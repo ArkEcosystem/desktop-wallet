@@ -11,7 +11,9 @@ if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
 
-let mainWindow
+let mainWindow = null
+let deeplinkingUrl = null
+
 const winURL = process.env.NODE_ENV === 'development'
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`
@@ -34,7 +36,37 @@ function createWindow () {
     mainWindow = null
   })
 
+  mainWindow.webContents.on('did-finish-load', () => {
+    if (deeplinkingUrl) broadcastURL(deeplinkingUrl)
+  })
+
   require('./menu')
+}
+
+function broadcastURL (url) {
+  if (!url || typeof url !== 'string') return
+  if (mainWindow && mainWindow.webContents) mainWindow.webContents.send('process-url', url)
+}
+
+// Force Single Instance Application
+const gotTheLock = app.requestSingleInstanceLock()
+
+if (!gotTheLock) {
+  app.exit()
+} else {
+  app.on('second-instance', (_, argv) => {
+    // Someone tried to run a second instance, we should focus our window.
+    // argv: An array of the second instance’s (command line / deep linked) arguments
+    if (process.platform !== 'darwin') {
+      deeplinkingUrl = argv[2]
+      broadcastURL(deeplinkingUrl)
+    }
+
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
 }
 
 app.on('ready', createWindow)
@@ -50,6 +82,15 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+app.on('open-url', (event, url) => {
+  // Protocol handler for osx
+  event.preventDefault()
+  deeplinkingUrl = url
+  broadcastURL(deeplinkingUrl)
+})
+
+app.setAsDefaultProtocolClient('ark', process.execPath, ['--'])
 
 /**
  * Auto Updater

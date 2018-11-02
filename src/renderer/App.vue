@@ -63,8 +63,9 @@ import { isEmpty } from 'lodash'
 import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
+import URIHandler from '@/services/uri-handler'
 
-var { remote } = require('electron')
+var { remote, ipcRenderer } = require('electron')
 
 export default {
   name: 'DesktopWallet',
@@ -126,6 +127,10 @@ export default {
     remote.getCurrentWindow().setContentProtection(this.hasProtection)
   },
 
+  mounted () {
+    this.__watchProcessURL()
+  },
+
   methods: {
     /**
      * These data are used in different parts, but loading them should not
@@ -160,6 +165,25 @@ export default {
 
     onPortalChange (options) {
       this.hasBlurFilter = !isEmpty(options)
+    },
+
+    __watchProcessURL () {
+      ipcRenderer.on('process-url', (_, url) => {
+        const currentWallet = this.wallet_fromRoute
+        const isWalletActive = !!currentWallet
+        const isSendingEnabled = currentWallet && currentWallet.isSendingEnabled
+        const uri = new URIHandler(url)
+
+        if (!uri.validate()) {
+          this.$error(this.$t('VALIDATION.INVALID_URI'))
+        } else if (!isWalletActive) {
+          this.$error(this.$t('VALIDATION.WALLET_NOT_ACTIVE'))
+        } else if (!isSendingEnabled) {
+          this.$error(this.$t('VALIDATION.SEND_NOT_ENABLED'))
+        } else {
+          this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
+        }
+      })
     },
 
     setIntroDone () {

@@ -113,14 +113,22 @@ export default {
     PassphraseInput
   },
 
-  data: () => ({
+  props: {
+    schema: {
+      type: Object,
+      required: false,
+      default: () => {}
+    }
+  },
+
+  data: vm => ({
     form: {
-      amount: '',
+      amount: vm.schema.amount || '',
       fee: 0,
       passphrase: '',
       walletPassword: null,
-      recipientId: '',
-      vendorField: ''
+      recipientId: vm.schema.address || '',
+      vendorField: vm.schema.vendorField || ''
     },
     isSendAllActive: false,
     showEncryptLoader: false,

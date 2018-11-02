@@ -95,7 +95,10 @@ export default {
       TOO_SHORT: 'Your password must be at least {0} characters long',
       NUMBERS: 'Your password must contain at least 1 number',
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character'
-    }
+    },
+    INVALID_URI: 'Invalid URI',
+    WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
+    SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet'
   },
 
   LANGUAGES: {
