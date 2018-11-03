@@ -2,10 +2,13 @@
   <section class="MarketChart w-full">
     <slot />
     <LineChart
+      v-show="isReady"
       ref="chart"
       :chart-data="chartData"
       :options="options"
-      :height="315" />
+      :height="315"
+      @ready="show"
+    />
   </section>
 </template>
 
@@ -37,6 +40,7 @@ export default {
   },
 
   data: () => ({
+    isReady: false,
     period: 'day',
     chartData: {},
     options: {},
@@ -103,6 +107,9 @@ export default {
   },
 
   methods: {
+    show () {
+      this.isReady = true
+    },
     async renderChart () {
       // TODO: Add loading
       await this.renderGradient()

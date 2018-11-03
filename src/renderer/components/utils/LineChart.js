@@ -22,6 +22,9 @@ export default {
   },
 
   mounted () {
+    this.$on('chart:render', () => {
+      this.$emit('ready')
+    })
     this.render()
   },
 
