@@ -81,6 +81,8 @@ let colors = {
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
 
+  'theme-button-special-choice': 'var(--theme-button-special-choice)',
+
   'theme-chart-background': 'var(--theme-chart-background)',
   'theme-chart-price': 'var(--theme-chart-price)',
 

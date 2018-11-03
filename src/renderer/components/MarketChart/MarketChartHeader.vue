@@ -11,7 +11,7 @@
         v-for="(translation, period) in $options.periods"
         :key="period"
         :class="{
-          'bg-orange-dark text-white': activePeriod === period
+          'bg-theme-button-special-choice text-white': activePeriod === period
         }"
         class="MarketChartHeader__button mr-2 font-semibold px-3 py-1 text-theme-page-text rounded"
         @click="changePeriod(period)"
