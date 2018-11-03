@@ -542,7 +542,10 @@ export default {
     SECOND_PASSPHRASE: 'Second Passphrase',
     PASSWORD: 'Encryption Password',
     FEE: 'Fee',
-    OPEN_IN_EXPLORER: 'Open in Explorer'
+    OPEN_IN_EXPLORER: 'Open in Explorer',
+    LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
+    LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
+    LEDGER_USER_DECLINED: 'User declined'
   },
 
   SIGN_VERIFY: {

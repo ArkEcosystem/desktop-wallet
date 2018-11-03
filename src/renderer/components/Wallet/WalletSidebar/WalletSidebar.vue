@@ -94,8 +94,8 @@ export default {
   },
 
   beforeDestroy () {
-    this.$eventBus.off('ledgerWalletsUpdated', this.refreshLedgerWallets)
-    this.$eventBus.off('ledgerDisconnected', this.ledgerDisconnected)
+    this.$eventBus.off('ledger:wallets-updated', this.refreshLedgerWallets)
+    this.$eventBus.off('ledger:disconnected', this.ledgerDisconnected)
   },
 
   methods: {

@@ -49,19 +49,25 @@
       @input="onFee"
     />
 
-    <PassphraseInput
-      v-if="!currentWallet.passphrase"
-      ref="passphrase"
-      v-model="$v.form.passphrase.$model"
-      :address="currentWallet.address"
-      :pub-key-hash="session_network.version"
-    />
+    <div
+      v-if="currentWallet.isLedger"
+      class="mt-10"
+    >
+      {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+    </div>
     <InputPassword
-      v-else
+      v-else-if="currentWallet.passphrase"
       ref="password"
       v-model="$v.form.walletPassword.$model"
       :label="$t('TRANSACTION.PASSWORD')"
       :is-required="true"
+    />
+    <PassphraseInput
+      v-else
+      ref="passphrase"
+      v-model="$v.form.passphrase.$model"
+      :address="currentWallet.address"
+      :pub-key-hash="session_network.version"
     />
 
     <PassphraseInput
@@ -96,6 +102,7 @@ import { TRANSACTION_TYPES } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'TransactionFormTransfer',
@@ -227,8 +234,24 @@ export default {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
 
-      const transaction = await this.$client.buildTransfer(transactionData)
-      this.emitNext(transaction)
+      let success = true
+      let transaction
+      if (!this.currentWallet.isLedger) {
+        transaction = await this.$client.buildTransfer(transactionData)
+      } else {
+        success = false
+        try {
+          const transactionObject = await this.$client.buildTransfer(transactionData, true)
+          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          success = true
+        } catch (error) {
+          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
+        }
+      }
+
+      if (success) {
+        this.emitNext(transaction)
+      }
     }
   },
 
@@ -255,7 +278,7 @@ export default {
       },
       passphrase: {
         isValid (value) {
-          if (this.currentWallet.passphrase) {
+          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
             return true
           }
 
@@ -268,7 +291,7 @@ export default {
       },
       walletPassword: {
         isValid (value) {
-          if (!this.currentWallet.passphrase) {
+          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
             return true
           }
 

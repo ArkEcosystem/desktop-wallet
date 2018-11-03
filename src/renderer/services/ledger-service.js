@@ -13,7 +13,15 @@ class LedgerService {
     this.ledger = null
     this.actions = []
     this.actionsQueue = queue(async (actionObject, callback) => {
-      actionObject.resolve(await actionObject.action())
+      try {
+        actionObject.resolve(await actionObject.action())
+      } catch (error) {
+        if (error.statusText && error.statusText === 'CONDITIONS_OF_USE_NOT_SATISFIED') {
+          actionObject.resolve(false)
+        } else {
+          actionObject.reject(new Error(error.message))
+        }
+      }
       callback()
     })
   }
@@ -58,7 +66,9 @@ class LedgerService {
   async isConnected () {
     try {
       // Make a request to the ledger device to determine if it's accessible
-      await this.ledger.getAddress(`44'/1'/0'/0/0`)
+      await this.__performAction(async () => {
+        return this.ledger.getAddress(`44'/1'/0'/0/0`)
+      }, 'getAddress')
 
       return true
     } catch (error) {
@@ -108,10 +118,11 @@ class LedgerService {
    * @return {Promise}
    */
   __performAction (action) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       this.actionsQueue.push({
         action,
-        resolve
+        resolve,
+        reject
       })
     })
   }

@@ -179,6 +179,10 @@ export default class Synchronizer {
         default: { interval: shorter },
         focus: { interval: block }
       },
+      ledgerWallets: {
+        default: { interval: shorter },
+        focus: { interval: block }
+      },
       delegates: {
         default: { interval: longer },
         focus: { interval: block }
@@ -209,7 +213,7 @@ export default class Synchronizer {
       const profile = this.scope.session_profile
 
       if (profile) {
-        const wallets = this.$store.getters['wallet/byProfileId'](profile.id)
+        let wallets = this.$store.getters['wallet/byProfileId'](profile.id)
 
         return Promise.all(wallets.map(async wallet => {
           try {
@@ -241,6 +245,10 @@ export default class Synchronizer {
 
     this.define('peer', config.peer, async () => {
       return this.$store.dispatch('peer/updateCurrentPeerStatus')
+    })
+
+    this.define('wallets:ledger', config.ledgerWallets, async () => {
+      return this.$store.dispatch('ledger/reloadWallets')
     })
   }
 }

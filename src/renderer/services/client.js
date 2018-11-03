@@ -286,12 +286,14 @@ export default class ClientService {
    * @param {Array} votes
    * @param {String} passphrase
    * @param {String} secondPassphrase
+   * @param {String} recipientId
    * @param {String} wif
    * @returns {Object}
    */
-  async buildVote ({ votes, passphrase, secondPassphrase, wif }) {
+  async buildVote ({ votes, recipientId, passphrase, secondPassphrase, wif }, returnObject = false) {
     let vote = transactionBuilder
       .vote()
+      .recipientId(recipientId)
       .votesAsset(votes)
 
     if (passphrase) {
@@ -302,6 +304,10 @@ export default class ClientService {
 
     if (secondPassphrase) {
       vote = vote.secondSign(secondPassphrase)
+    }
+
+    if (returnObject) {
+      return vote
     }
 
     return vote.getStruct()
@@ -315,7 +321,7 @@ export default class ClientService {
    * @param {String} wif
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, passphrase, secondPassphrase, wif }) {
+  async buildDelegateRegistration ({ username, passphrase, secondPassphrase, wif }, returnObject = false) {
     let delegateRegistration = transactionBuilder
       .delegateRegistration()
       .usernameAsset(username)
@@ -328,6 +334,10 @@ export default class ClientService {
 
     if (secondPassphrase) {
       delegateRegistration = delegateRegistration.secondSign(secondPassphrase)
+    }
+
+    if (returnObject) {
+      return delegateRegistration
     }
 
     return delegateRegistration.getStruct()
@@ -344,7 +354,7 @@ export default class ClientService {
    * @param {String} wif
    * @returns {Object}
    */
-  async buildTransfer ({ amount, recipientId, vendorField, passphrase, secondPassphrase, wif }) {
+  async buildTransfer ({ amount, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
     let transfer = transactionBuilder
       .transfer()
       .amount(amount)
@@ -361,6 +371,10 @@ export default class ClientService {
       transfer = transfer.secondSign(secondPassphrase)
     }
 
+    if (returnObject) {
+      return transfer
+    }
+
     return transfer.getStruct()
   }
 
@@ -371,7 +385,7 @@ export default class ClientService {
    * @param {String} wif
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ passphrase, secondPassphrase, wif }) {
+  async buildSecondSignatureRegistration ({ passphrase, secondPassphrase, wif }, returnObject = false) {
     let registration = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)
@@ -380,6 +394,10 @@ export default class ClientService {
       registration = registration.sign(passphrase)
     } else if (wif) {
       registration = registration.signWithWif(wif)
+    }
+
+    if (returnObject) {
+      return registration
     }
 
     return registration.getStruct()

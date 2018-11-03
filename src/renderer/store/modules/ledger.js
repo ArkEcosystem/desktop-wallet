@@ -137,12 +137,16 @@ export default {
      * Reload wallets into store.
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch }) {
+    async reloadWallets ({ commit, dispatch, getters }) {
+      if (!getters['isConnected']) {
+        return []
+      }
+
       try {
         const wallets = []
-        for (let i = 0; ; i++) {
+        for (let ledgerIndex = 0; ; ledgerIndex++) {
           let isColdWallet = false
-          const ledgerAddress = await dispatch('getAddress', i)
+          const ledgerAddress = await dispatch('getAddress', ledgerIndex)
           let wallet
           try {
             wallet = await this._vm.$client.fetchWallet(ledgerAddress)
@@ -163,12 +167,13 @@ export default {
 
           wallets[ledgerAddress] = Object.assign(wallet, {
             isLedger: true,
+            ledgerIndex,
             isSendingEnabled: true,
-            name: `Ledger ${i + 1}`,
+            name: `Ledger ${ledgerIndex + 1}`,
             passphrase: null,
             profileId: null,
             id: ledgerAddress,
-            publicKey: await dispatch('getPublicKey', i)
+            publicKey: await dispatch('getPublicKey', ledgerIndex)
           })
 
           if (isColdWallet) {

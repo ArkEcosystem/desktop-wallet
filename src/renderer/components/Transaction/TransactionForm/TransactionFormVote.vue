@@ -50,20 +50,26 @@
     <Collapse
       :is-open="isPassphraseStep"
     >
+      <div
+        v-if="currentWallet.isLedger"
+        class="mt-10"
+      >
+        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+      </div>
+      <InputPassword
+        v-else-if="!currentWallet.passphrase"
+        ref="password"
+        v-model="$v.form.walletPassword.$model"
+        :label="$t('TRANSACTION.PASSWORD')"
+        :is-required="true"
+      />
       <PassphraseInput
-        v-if="!currentWallet.passphrase"
+        v-else
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
         :pub-key-hash="session_network.version"
         class="mt-5"
-      />
-      <InputPassword
-        v-else
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
       />
 
       <PassphraseInput
@@ -100,6 +106,7 @@ import { InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'TransactionFormVote',
@@ -220,15 +227,35 @@ export default {
       let transactionData = {
         passphrase: this.form.passphrase,
         votes,
+        recipientId: this.currentWallet.address,
         wif: this.form.wif
       }
+
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
 
-      const transaction = await this.$client.buildVote(transactionData)
-      this.emitNext(transaction)
-      this.reset()
+      let success = true
+      let transaction
+      if (!this.currentWallet.isLedger) {
+        transaction = await this.$client.buildVote(transactionData)
+      } else {
+        success = false
+        try {
+          const transactionObject = await this.$client.buildVote(transactionData, true)
+          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          success = true
+        } catch (error) {
+          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
+        }
+      }
+
+      console.log(transaction)
+
+      if (success) {
+        this.emitNext(transaction)
+        this.reset()
+      }
     },
 
     reset () {
@@ -252,7 +279,7 @@ export default {
     form: {
       passphrase: {
         isValid (value) {
-          if (this.currentWallet.passphrase) {
+          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
             return true
           }
 
@@ -264,7 +291,7 @@ export default {
       },
       walletPassword: {
         isValid (value) {
-          if (!this.currentWallet.passphrase) {
+          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
             return true
           }
 
