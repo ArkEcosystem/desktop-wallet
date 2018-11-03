@@ -582,7 +582,9 @@ export default {
       WALLET_NAME: 'Wallet name',
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',
-      DELETE_WALLET: 'Delete wallet'
+      DELETE_WALLET: 'Delete wallet',
+      SHOW_PUBLIC_KEY: 'Show public key',
+      SHOW_ADDRESS: 'Show address'
     },
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
   },

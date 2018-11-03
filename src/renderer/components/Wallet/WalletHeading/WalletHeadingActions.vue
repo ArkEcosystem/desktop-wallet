@@ -1,20 +1,26 @@
 <template>
   <div class="flex items-center relative overflow-hidden font-sans">
-    <WalletHeadingPrimaryActions v-if="!secondaryButtonsVisible" />
-    <WalletHeadingSecondaryActions v-else />
+    <WalletHeadingPrimaryActions
+      v-if="!secondaryButtonsVisible"
+      class="-mr-2"
+    />
+    <WalletHeadingSecondaryActions
+      v-else
+      class="-mr-2"
+    />
     <button
-      class="option-button ml-2 p-2 rounded-lg"
+      class="option-button ml-2 p-2 rounded-md"
       @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
     >
       <SvgIcon
         v-if="!secondaryButtonsVisible"
         class="rotate-90"
         name="point"
-        view-box="0 0 16 16" />
+        view-box="0 0 14 14" />
       <SvgIcon
         v-else
         name="step-back"
-        view-box="0 0 16 16" />
+        view-box="0 0 14 14" />
     </button>
   </div>
 </template>

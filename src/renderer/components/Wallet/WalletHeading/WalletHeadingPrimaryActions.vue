@@ -9,6 +9,15 @@
       class="bg-orange cursor-pointer rounded-full w-2 h-2 m-3"
       @click="goToDelegates"
     />
+
+    <ButtonReload
+      :color-class="buttonStyle"
+      :is-refreshing="isRefreshing"
+      class="WalletNew__refresh-button mr-2"
+      text-class="hover:text-white"
+      @click="refreshWallet"
+    />
+
     <ButtonModal
       :class="buttonStyle"
       icon="qr"
@@ -23,14 +32,6 @@
         />
       </template>
     </ButtonModal>
-
-    <ButtonReload
-      :color-class="buttonStyle"
-      :is-refreshing="isRefreshing"
-      class="WalletNew__refresh-button mr-2"
-      text-class="hover:text-white"
-      @click="refreshWallet"
-    />
 
     <ButtonModal
       v-show="!currentWallet.isContact"
@@ -79,7 +80,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'mr-2 p-2 rounded-md option-button'
+      return 'mr-2 px-3 py-2 rounded-md option-button'
     },
 
     currentWallet () {

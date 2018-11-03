@@ -9,25 +9,33 @@
       :class="{ 'animated wobble': isCopying }"
       class="fill-current"
     >
-      <svg
-        viewBox="0 0 16 19"
-        width="12px"
-        height="13px"
-      >
-        <path d="M11.000,-0.000 L1.999,-0.000 C0.899,-0.000 -0.000,0.941 -0.000,2.091 L-0.000,13.000 L1.999,13.000 L1.999,2.000 L11.000,2.000 L11.000,-0.000 ZM14.000,3.994 L5.999,3.994 C4.900,3.994 3.999,4.944 3.999,6.106 L3.999,16.888 C3.999,18.049 4.900,19.000 5.999,19.000 L14.000,19.000 C15.099,19.000 16.000,18.049 16.000,16.888 L16.000,6.106 C16.000,4.944 15.099,3.994 14.000,3.994 ZM14.000,17.000 L5.999,17.000 L5.999,6.000 L14.000,6.000 L14.000,17.000 Z"/>
-      </svg>
+      <SvgIcon
+        :view-box="viewBox"
+        name="copy"
+      />
     </div>
   </button>
 </template>
 
 <script>
+import SvgIcon from '@/components/SvgIcon'
+
 export default {
   name: 'ButtonClipboard',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     value: {
       type: String,
       required: true
+    },
+    viewBox: {
+      type: String,
+      required: false,
+      default: '0 0 12 16'
     }
   },
 
