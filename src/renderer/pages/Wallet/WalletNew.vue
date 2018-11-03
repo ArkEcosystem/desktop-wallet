@@ -203,13 +203,6 @@
                   />
                 </div>
               </InputField>
-
-              <InputSwitch
-                v-model="schema.isSendingEnabled"
-                :label="$t('PAGES.WALLET_NEW.STEP5.OPERATIONS')"
-                :text="$t('PAGES.WALLET_NEW.STEP5.SENDING_ENABLED')"
-                class="my-3"
-              />
             </div>
 
           </MenuStepItem>

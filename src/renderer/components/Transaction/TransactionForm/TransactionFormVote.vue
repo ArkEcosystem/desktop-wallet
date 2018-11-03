@@ -38,7 +38,7 @@
       </ListDivided>
 
       <button
-        v-show="currentWallet.isSendingEnabled"
+        v-show="!currentWallet.isContact"
         type="button"
         class="blue-button mt-5"
         @click="toggleStep"

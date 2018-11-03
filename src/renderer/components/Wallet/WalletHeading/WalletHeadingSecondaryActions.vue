@@ -19,7 +19,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="currentWallet.isSendingEnabled"
+      v-show="!currentWallet.isContact"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
       icon="register-delegate"
@@ -35,7 +35,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="currentWallet.isSendingEnabled"
+      v-show="!currentWallet.isContact"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
       icon="2nd-passphrase"

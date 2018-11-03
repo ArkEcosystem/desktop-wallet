@@ -14,10 +14,6 @@ export default new BaseModel({
       minimum: 0,
       default: 0
     },
-    isSendingEnabled: {
-      type: 'boolean',
-      default: false
-    },
     name: {
       type: 'string',
       minLength: 1,
@@ -42,5 +38,5 @@ export default new BaseModel({
       default: false
     }
   },
-  required: ['address', 'isSendingEnabled', 'name', 'profileId']
+  required: ['address', 'name', 'profileId']
 })

@@ -33,7 +33,7 @@
     />
 
     <ButtonModal
-      v-show="currentWallet.isSendingEnabled"
+      v-show="!currentWallet.isContact"
       ref="button-send"
       :class="buttonStyle"
       :label="$t('TRANSACTION.SEND')"

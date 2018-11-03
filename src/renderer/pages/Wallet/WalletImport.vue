@@ -121,15 +121,6 @@
                 class="my-3"
                 name="address-placeholder"
               />
-
-              <InputSwitch
-                v-show="!useOnlyAddress"
-                :label="$t('PAGES.WALLET_IMPORT.STEP3.OPERATIONS')"
-                :text="$t('PAGES.WALLET_IMPORT.STEP3.SENDING_ENABLED')"
-                :is-active="schema.isSendingEnabled"
-                class="my-3"
-                @change="setSendingEnabled"
-              />
             </div>
 
           </MenuStepItem>
@@ -253,10 +244,6 @@ export default {
 
     moveTo (step) {
       this.step = step
-    },
-
-    setSendingEnabled (isSendingEnabled) {
-      this.schema.isSendingEnabled = isSendingEnabled
     },
 
     setOnlyAddress (useOnlyAddress) {

@@ -102,8 +102,7 @@ export default {
         const { address } = await this.$store.dispatch('wallet/create', {
           ...this.schema,
           profileId: this.session_profile.id,
-          isContact: true,
-          isSendingEnabled: false
+          isContact: true
         })
         this.$router.push({ name: 'wallet-show', params: { address } })
       } catch (error) {
