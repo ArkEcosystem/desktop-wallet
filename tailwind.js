@@ -120,6 +120,8 @@ let colors = {
   'theme-warn-shadow': 'var(--theme-warn-shadow)',
   'theme-warn-text': 'var(--theme-warn-text)',
 
+  'theme-footer-text': '#a4acb8',
+
   'transparent': 'transparent',
   'inherit': 'inherit',
 

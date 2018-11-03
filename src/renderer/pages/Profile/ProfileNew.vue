@@ -6,7 +6,7 @@
         :style="`background-image: url('${assets_loadImage('pages/background-1920.png')}')`"
         class="ProfileNew__instructions w-2/3 background-image"
       >
-        <div class="mt-16 mx-16">
+        <div class="mt-16 mx-16 w-1/2">
           <h3 class="mb-2">{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
           <p>
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}

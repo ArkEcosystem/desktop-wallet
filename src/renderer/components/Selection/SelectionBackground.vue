@@ -24,7 +24,7 @@ export default {
     categories: {
       type: Array,
       required: false,
-      default: () => ['textures', 'wallpapers']
+      default: () => ['wallpapers', 'textures']
     }
   }
 }

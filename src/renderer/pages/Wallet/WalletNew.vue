@@ -6,7 +6,7 @@
         :style="`background-image: url('${assets_loadImage('pages/background-1920.png')}')`"
         class="WalletNew__instructions flex-grow background-image w-3/5"
       >
-        <div class="mt-16 mx-16">
+        <div class="mt-16 mx-16 w-1/2">
           <h3 class="mb-2">{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
 
           <p v-if="step === 1">

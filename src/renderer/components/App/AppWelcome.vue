@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-light-grey px-20 py-16 w-screen h-screen">
+  <div
+    :style="`backgroundImage: url('${assets_loadImage(defaultBackground)}')`"
+    class="px-20 py-16 w-screen h-screen"
+  >
     <div
       :style="getBackgroundImage()"
       class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative">
@@ -84,6 +87,12 @@ export default {
   data: () => ({
     step: 1
   }),
+
+  computed: {
+    defaultBackground () {
+      return 'wallpapers/1Default.png'
+    }
+  },
 
   methods: {
     start () {

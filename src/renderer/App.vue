@@ -84,7 +84,7 @@ export default {
 
   computed: {
     background () {
-      return this.$store.getters['session/background']
+      return this.$store.getters['session/background'] || 'wallpapers/1Default.png'
     },
     hasDarkTheme () {
       return this.$store.getters['session/hasDarkTheme']
