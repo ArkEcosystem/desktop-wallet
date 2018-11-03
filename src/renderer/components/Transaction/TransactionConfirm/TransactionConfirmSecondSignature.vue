@@ -1,5 +1,5 @@
 <template>
-  <span>Second Signature</span>
+  <span/>
 </template>
 
 <script>

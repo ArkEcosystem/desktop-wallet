@@ -1,6 +1,5 @@
 <template>
   <ListDivided :is-floating-label="true">
-    <!-- TODO: Add header + identicons + amount -->
     <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
       {{ formatter_networkCurrency(transaction.amount) }}
     </ListDividedItem>

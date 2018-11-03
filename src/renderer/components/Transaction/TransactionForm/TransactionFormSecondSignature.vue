@@ -47,6 +47,14 @@
         />
 
         <button
+          type="button"
+          class="blue-button mt-5 mr-4"
+          @click="toggleStep"
+        >
+          {{ $t('COMMON.BACK') }}
+        </button>
+
+        <button
           :disabled="$v.form.$invalid || !isPassphraseVerified"
           type="button"
           class="blue-button mt-5"

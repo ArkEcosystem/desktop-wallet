@@ -1,5 +1,5 @@
 <template>
-  <span>Vote</span>
+  <span/>
 </template>
 
 <script>

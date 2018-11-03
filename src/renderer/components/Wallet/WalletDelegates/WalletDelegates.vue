@@ -66,7 +66,7 @@
       to="modal"
     >
       <TransactionModal
-        :title="selected.username"
+        :title="getVoteTitle()"
         :type="3"
         :delegate="selected"
         :is-voter="selected.publicKey === walletVote.publicKey"
@@ -142,6 +142,13 @@ export default {
   methods: {
     dismissExplanation () {
       this.$store.dispatch('app/setVotingExplanation', false)
+    },
+
+    getVoteTitle () {
+      if (this.selected.publicKey === this.walletVote.publicKey) {
+        return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.selected.username })
+      }
+      return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selected.username })
     },
 
     async fetchDelegates () {
