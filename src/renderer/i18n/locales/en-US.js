@@ -302,7 +302,8 @@ export default {
         },
         TITLE: '2. Confirmation',
         NAME: 'Contact name'
-      }
+      },
+      FAILED: 'Failed to create contact'
     },
 
     DASHBOARD: {
@@ -404,7 +405,8 @@ export default {
         NAME: 'Wallet name (optional)',
         OPERATIONS: 'Wallet operations',
         SENDING_ENABLED: 'Sending transactions enabled'
-      }
+      },
+      FAILED: 'Failed to import wallet'
     },
 
     WALLET_NEW: {

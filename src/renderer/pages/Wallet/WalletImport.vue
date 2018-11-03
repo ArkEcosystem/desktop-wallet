@@ -243,8 +243,12 @@ export default {
     },
 
     async finishCreate () {
-      const { address } = await this.$store.dispatch('wallet/create', this.wallet)
-      this.$router.push({ name: 'wallet-show', params: { address } })
+      try {
+        const { address } = await this.$store.dispatch('wallet/create', this.wallet)
+        this.$router.push({ name: 'wallet-show', params: { address } })
+      } catch (error) {
+        this.$error(`${this.$t('PAGES.WALLET_IMPORT.FAILED')}: ${error.message}`)
+      }
     },
 
     moveTo (step) {
