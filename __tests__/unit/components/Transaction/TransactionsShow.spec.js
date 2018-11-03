@@ -31,7 +31,8 @@ describe('TransactionShow', () => {
         wallet_formatAddress: address => address
       },
       stubs: {
-        'TransactionAmount': true
+        'TransactionAmount': true,
+        'ModalWindow': true
       }
     })
   })

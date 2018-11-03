@@ -32,23 +32,32 @@
       </div>
     </div>
 
-    <vue-good-table
+    <Table
       :columns="columns"
+      :has-pagination="true"
+      :is-loading="isLoading"
+      :is-remote="true"
       :rows="delegates"
-      class="WalletDelegates"
+      :sort-query="queryParams.sort"
+      :total-rows="totalCount"
+      :per-page="queryParams.limit"
+      :per-page-dropdown="[25, 51]"
+      class="WalletDelegates__table"
       @on-row-click="onRowClick"
+      @on-per-page-change="onPerPageChange"
+      @on-page-change="onPageChange"
+      @on-sort-change="onSortChange"
     >
       <template
-        slot="table-row"
-        slot-scope="table"
+        slot-scope="data"
       >
         <div
-          v-if="table.column.field === 'username'"
+          v-if="data.column.field === 'username'"
         >
           <div class="flex items-center">
-            <span>{{ table.formattedRow['username'] }}</span>
+            <span>{{ data.formattedRow['username'] }}</span>
             <span
-              v-if="table.row.publicKey === walletVote.publicKey"
+              v-if="data.row.publicKey === walletVote.publicKey"
               class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs rounded pointer-events-none ml-3"
             >
               {{ $t('WALLET_DELEGATES.VOTE') }}
@@ -57,10 +66,11 @@
         </div>
 
         <span v-else>
-          {{ table.formattedRow[table.column.field] }}
+          {{ data.formattedRow[data.column.field] }}
         </span>
       </template>
-    </vue-good-table>
+    </Table>
+
     <portal
       v-if="selected"
       to="modal"
@@ -81,6 +91,8 @@
 <script>
 import { ButtonClose } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
+import Table from '@/components/utils/Table'
+import { orderBy } from 'lodash'
 
 export default {
   name: 'WalletDelegates',
@@ -89,13 +101,25 @@ export default {
 
   components: {
     ButtonClose,
+    Table,
     TransactionModal
   },
 
   data: () => ({
+    currentPage: 1,
     delegates: [],
     isExplanationTruncated: true,
-    selected: null
+    isLoading: false,
+    selected: null,
+    totalCount: 0,
+    queryParams: {
+      page: 1,
+      limit: 51,
+      sort: {
+        field: 'rank',
+        type: 'asc'
+      }
+    }
   }),
 
   computed: {
@@ -152,14 +176,25 @@ export default {
     },
 
     async fetchDelegates () {
+      if (this.isLoading) return
+
       try {
-        this.delegates = await this.$client.fetchDelegates()
+        this.isLoading = true
+        const { delegates, totalCount } = await this.$client.fetchDelegates({
+          page: this.queryParams.page,
+          limit: this.queryParams.limit
+        })
+        this.delegates = this.__sortDelegates(delegates)
+        this.totalCount = totalCount
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'delegates',
           msg: error.message
         }))
+        this.delegates = []
+      } finally {
+        this.isLoading = false
       }
     },
 
@@ -182,6 +217,44 @@ export default {
 
     readMore () {
       this.isExplanationTruncated = false
+    },
+
+    onPageChange ({ currentPage }) {
+      this.currentPage = currentPage
+      this.__updateParams({ page: currentPage })
+      this.fetchDelegates()
+    },
+
+    onPerPageChange ({ currentPerPage }) {
+      this.__updateParams({ limit: currentPerPage, page: 1 })
+      this.fetchDelegates()
+    },
+
+    onSortChange ({ columnIndex, sortType }) {
+      const columnName = this.columns[columnIndex].field
+      this.__updateParams({
+        sort: {
+          type: sortType,
+          field: columnName
+        },
+        page: 1
+      })
+      this.fetchDelegates()
+    },
+
+    reset () {
+      this.currentPage = 1
+      this.queryParams.page = 1
+      this.totalCount = 0
+      this.delegates = []
+    },
+
+    __sortDelegates (delegates = this.delegates) {
+      return orderBy(delegates, [this.queryParams.sort.field], [this.queryParams.sort.type])
+    },
+
+    __updateParams (newProps) {
+      this.queryParams = Object.assign({}, this.queryParams, newProps)
     }
   }
 }

@@ -72,13 +72,23 @@ export default class ClientService {
     }
   }
 
-  async fetchDelegates () {
+  /** Request the delegates according to the current network version
+   *
+   * @param {Object} [query]
+   * @param {Number} [query.page=1]
+   * @param {Number} [query.limit=51]
+   * @return {Object[]}
+   */
+  async fetchDelegates ({ page, limit } = { page: 1, limit: 51 }) {
+    let totalCount = 0
     let delegates = []
-    const { data } = await this.client.resource('delegates').all()
 
-    if (this.__version === 2) {
-      delegates = data.data
-    } else if (data.success) {
+    if (this.__version === 1) {
+      const { data } = await this.client.resource('delegates').all({
+        offset: (page - 1) * limit,
+        limit
+      })
+
       delegates = data.delegates.map(delegate => {
         return {
           ...delegate,
@@ -93,9 +103,15 @@ export default class ClientService {
           rank: delegate.rate
         }
       })
+
+      totalCount = parseInt(data.totalCount)
+    } else {
+      const { data } = await this.client.resource('delegates').all({ page, limit })
+      delegates = data.data
+      totalCount = data.meta.totalCount
     }
 
-    return delegates
+    return { delegates, totalCount }
   }
 
   async fetchDelegateForged (delegate) {

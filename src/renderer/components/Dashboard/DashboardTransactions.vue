@@ -1,5 +1,5 @@
 <template>
-  <TransactionTable :transactions="lastTransactions" />
+  <TransactionTable :rows="lastTransactions" />
 </template>
 
 <script>

@@ -22,7 +22,7 @@ describe('WalletDelegates', () => {
         }
       },
       stubs: {
-        'vue-good-table': true
+        'Table': true
       }
     })
   }

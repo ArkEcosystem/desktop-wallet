@@ -5,7 +5,11 @@ describe('ButtonGeneric', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(ButtonGeneric)
+    wrapper = mount(ButtonGeneric, {
+      propsData: {
+        'label': 'Test'
+      }
+    })
   })
 
   it('should render', () => {

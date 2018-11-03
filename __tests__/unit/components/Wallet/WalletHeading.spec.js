@@ -37,6 +37,10 @@ describe('WalletHeadingPrimaryActions', () => {
   it('should be instatiated', () => {
     const wrapper = shallowMount(WalletHeadingPrimaryActions, {
       i18n,
+      provide: {
+        'walletVote': {},
+        'switchToTab': jest.fn()
+      },
       mocks: {
         wallet_fromRoute: sampleWalletData,
         walletVote: {

@@ -165,6 +165,9 @@ describe('Services > Client', () => {
   })
 
   describe('fetchDelegates', () => {
+    let meta = {
+      totalCount: 3
+    }
     const data = [
       { rank: 1, username: 'first', approval: '1', productivity: '99' },
       { rank: 2, username: 'second', approval: '2', productivity: '98' },
@@ -184,7 +187,7 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'delegates') {
             return {
-              all: () => ({ data: { delegates, success: true } })
+              all: () => ({ data: { delegates, success: true, totalCount: meta.totalCount } })
             }
           }
         }
@@ -193,8 +196,11 @@ describe('Services > Client', () => {
       })
 
       it('should return only some properties for each delegate', async () => {
-        const delegates = await client.fetchDelegates()
+        const response = await client.fetchDelegates()
+        expect(response).toHaveProperty('delegates')
+        expect(response).toHaveProperty('totalCount', meta.totalCount)
 
+        const delegates = response.delegates
         expect(delegates).toHaveLength(data.length)
         delegates.forEach((delegate, i) => {
           expect(delegate).toHaveProperty('rank', data[i].rank)
@@ -218,7 +224,7 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'delegates') {
             return {
-              all: () => ({ data: { data: delegates } })
+              all: () => ({ data: { data: delegates, meta } })
             }
           }
         }
@@ -227,8 +233,11 @@ describe('Services > Client', () => {
       })
 
       it('should return all properties for each delegate', async () => {
-        const delegates = await client.fetchDelegates()
+        const response = await client.fetchDelegates()
+        expect(response).toHaveProperty('delegates')
+        expect(response).toHaveProperty('totalCount', meta.totalCount)
 
+        const delegates = response.delegates
         expect(delegates).toHaveLength(data.length)
         delegates.forEach((delegate, i) => {
           expect(delegate).toHaveProperty('rank', data[i].rank)

@@ -1,12 +1,12 @@
 <template>
   <TransactionTable
     :current-page="currentPage"
-    :transactions="transactions"
+    :rows="transactions"
     :total-rows="totalCount"
     :is-loading="isLoading"
     :is-remote="true"
     :has-pagination="true"
-    :sort-options="queryParams.sort"
+    :sort-query="queryParams.sort"
     @on-per-page-change="onPerPageChange"
     @on-page-change="onPageChange"
     @on-sort-change="onSortChange"

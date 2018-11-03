@@ -5,7 +5,7 @@ describe('WalletTransactions', () => {
   it('should render', () => {
     const wrapper = shallowMount(WalletTransactions, {
       stubs: {
-        'vue-good-table': true
+        'Table': true
       }
     })
     expect(wrapper.isVueInstance()).toBeTrue()
