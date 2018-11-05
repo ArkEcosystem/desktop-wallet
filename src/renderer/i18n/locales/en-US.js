@@ -232,6 +232,21 @@ export default {
     SUBTITLE: 'Scan for Address'
   },
 
+  MODAL_QR_SCANNER: {
+    ERROR: {
+      NOT_ALLOWED: 'We need access to the camera to scan a QR code',
+      NOT_FOUND: 'We were unable to find a camera',
+      NOT_SUPPORTED: 'The page is not served over a secure connection (https)',
+      NOT_READABLE: 'We are inable to read the camera stream, maybe it is already in use?',
+      OVERCONSTRAINED: 'It seems that we were unable to find a correct camera. This might be an issue with the constraints we expect.',
+      STREAM: 'It seems that you are using an unsupported browser. That is very curious..'
+    },
+    LOADING: 'Loading camera',
+    INSTRUCTION: 'Please hold a QR code in front of the camera',
+    TITLE: 'QR Scanner',
+    DECODE_FAILED: 'Failed to decode data: {data}'
+  },
+
   MODAL_LOADER: {
     CLOSE_WARNING: 'It looks like something went wrong. You may close the window but this could cause adverse effects.'
   },

@@ -23,23 +23,30 @@
         @blur="onBlur"
         @focus="onFocus"
       >
-      <button
-        :title="$t('INPUT_ADDRESS.QR')"
+      <ButtonModal
+        ref="button-qr"
+        :label="''"
         class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
-        type="button"
-        @click="openQR"
+        icon="qr"
+        view-box="0 0 20 20"
       >
-        <SvgIcon
-          name="qr"
-          view-box="0 0 20 20"
-        />
-      </button>
+        <template slot-scope="{ toggle, isOpen }">
+          <ModalQrCodeScanner
+            v-if="isOpen"
+            :toggle="toggle"
+            @close="toggle"
+            @decoded="onDecode"
+          />
+        </template>
+      </ButtonModal>
     </div>
   </InputField>
 </template>
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import { ButtonModal } from '@/components/Button'
+import { ModalQrCodeScanner } from '@/components/Modal'
 import InputField from './InputField'
 import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
@@ -49,7 +56,9 @@ export default {
   name: 'InputAddress',
 
   components: {
+    ButtonModal,
     InputField,
+    ModalQrCodeScanner,
     SvgIcon
   },
 
@@ -140,10 +149,14 @@ export default {
       this.isFocused = true
       this.$emit('focus')
     },
-
-    openQR () {
-      // TODO when the QR reader is available
-      this.$logger.error('QR reader is not available yet')
+    onDecode (value, toggle) {
+      this.$v.model.$touch()
+      this.inputValue = this.qr_getAddress(value)
+      // Check if we were unable to retrieve an address from the qr
+      if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
+        this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
+      }
+      toggle()
     },
 
     async updateInputValue (value) {

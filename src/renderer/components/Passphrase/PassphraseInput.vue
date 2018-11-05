@@ -36,23 +36,30 @@
         />
       </button>
 
-      <button
-        :title="$t('PASSPHRASE_INPUT.QR')"
+      <ButtonModal
+        ref="button-qr"
+        :label="''"
         class="PassphraseInput__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
-        type="button"
-        @click="openQR"
+        icon="qr"
+        view-box="0 0 20 20"
       >
-        <SvgIcon
-          name="qr"
-          view-box="0 0 20 20"
-        />
-      </button>
+        <template slot-scope="{ toggle, isOpen }">
+          <ModalQrCodeScanner
+            v-if="isOpen"
+            :toggle="toggle"
+            @close="toggle"
+            @decoded="onDecode"
+          />
+        </template>
+      </ButtonModal>
     </div>
   </InputField>
 </template>
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import { ButtonModal } from '@/components/Button'
+import { ModalQrCodeScanner } from '@/components/Modal'
 import { InputField } from '@/components/Input'
 import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
@@ -61,7 +68,9 @@ export default {
   name: 'PassphraseInput',
 
   components: {
+    ButtonModal,
     InputField,
+    ModalQrCodeScanner,
     SvgIcon
   },
 
@@ -171,9 +180,14 @@ export default {
     reset () {
       this.$v.$reset()
     },
-    openQR () {
-      // TODO when the QR reader is available
-      this.$logger.error('QR reader is not available yet')
+    onDecode (value, toggle) {
+      this.$v.model.$touch()
+      this.inputValue = this.qr_getPassphrase(value)
+      // Check if we were unable to retrieve a passphrase from the qr
+      if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
+        this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
+      }
+      toggle()
     },
 
     toggleVisible () {

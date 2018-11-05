@@ -52,6 +52,11 @@
         @change="onPortalChange"
       />
 
+      <portal-target
+        name="qr-scan"
+        @change="onPortalChange"
+      />
+
       <AlertMessage />
     </div>
   </div>

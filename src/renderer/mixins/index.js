@@ -7,6 +7,7 @@ const mixins = [
   require('./electron').default,
   require('./formatter').default,
   require('./network').default,
+  require('./qr').default,
   require('./session').default,
   require('./wallet').default
 ]
