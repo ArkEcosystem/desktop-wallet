@@ -11,23 +11,40 @@
       :is="activeComponent"
     />
 
-    <footer class="mt-10">
-      <button
-        class="TransactionConfirm__back-button blue-button mr-2"
-        @click="emitBack"
-      >
-        {{ $t('COMMON.BACK') }}
-      </button>
+    <footer class="mt-10 flex justify-between items-baseline">
+      <div>
+        <button
+          class="TransactionConfirm__back-button blue-button mr-2 px-5"
+          @click="emitBack"
+        >
+          {{ $t('COMMON.BACK') }}
+        </button>
 
-      <button
-        class="TransactionConfirm__send-button blue-button"
-        @click="emitConfirm"
-      >
-        {{ $t('TRANSACTION.SEND') }}
-        <span class="px-2 py-1 bg-theme-button-inner-box rounded">
-          {{ formatter_networkCurrency(totalAmount) }}
-        </span>
-      </button>
+        <button
+          class="TransactionConfirm__send-button blue-button px-2"
+          @click="emitConfirm"
+        >
+          {{ $t('TRANSACTION.SEND') }}
+          <span class="px-2 py-1 bg-theme-button-inner-box rounded">
+            {{ formatter_networkCurrency(totalAmount) }}
+          </span>
+        </button>
+      </div>
+
+      <div>
+        <button
+          v-tooltip="{ content: $t('TRANSACTION.SAVE_OFFLINE'), toggle: 'hover' }"
+          class="TransactionConfirm__save-tx action-button pull-right flex items-center"
+          @click="saveTransaction"
+        >
+          <SvgIcon
+            name="save"
+            view-box="0 0 15 15"
+            class="mr-1"
+          />
+          {{ $t('COMMON.SAVE') }}
+        </button>
+      </div>
     </footer>
   </section>
 </template>
@@ -39,6 +56,7 @@ import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignatu
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
 import TransactionDetail from '../TransactionDetail'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'TransactionConfirm',
@@ -54,7 +72,8 @@ export default {
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote,
-    TransactionDetail
+    TransactionDetail,
+    SvgIcon
   },
 
   props: {
@@ -95,6 +114,18 @@ export default {
 
     emitConfirm () {
       this.$emit('confirm')
+    },
+
+    async saveTransaction () {
+      const raw = JSON.stringify(this.transaction)
+      const defaultPath = `${this.transaction.id}.json`
+
+      try {
+        const path = await this.electron_writeFile(raw, defaultPath)
+        this.$success(this.$t('TRANSACTION.SUCCESS.SAVE_OFFLINE', { path }))
+      } catch (e) {
+        this.$error(this.$t('TRANSACTION.ERROR.SAVE_OFFLINE'))
+      }
     }
   }
 }

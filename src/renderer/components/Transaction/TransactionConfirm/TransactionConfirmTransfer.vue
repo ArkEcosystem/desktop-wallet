@@ -8,7 +8,10 @@
       {{ transaction.recipientId }}
     </ListDividedItem>
 
-    <ListDividedItem :label="$t('TRANSACTION.VENDOR_FIELD')">
+    <ListDividedItem
+      v-if="transaction.vendorField"
+      :label="$t('TRANSACTION.VENDOR_FIELD')"
+    >
       {{ transaction.vendorField }}
     </ListDividedItem>
 

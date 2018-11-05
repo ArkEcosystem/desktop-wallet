@@ -516,7 +516,8 @@ export default {
       IPFS: 'IPFS',
       TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
-      DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful'
+      DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
+      SAVE_OFFLINE: 'Failed to save your transaction file'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
@@ -536,12 +537,16 @@ export default {
       IPFS: 'IPFS',
       TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
-      DELEGATE_RESIGNATION: 'Delegate resignation was successful'
+      DELEGATE_RESIGNATION: 'Delegate resignation was successful',
+      SAVE_OFFLINE: 'The transaction file saved successfully in: {path}'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
+    SINGLE: 'Single',
+    MULTIPLE: 'Multiple',
+    SAVE_OFFLINE: 'Save transaction offline',
     SEND: 'Send',
     SEND_ALL: 'Send All',
     CONFIRMATIONS: 'Confirmations',
