@@ -321,8 +321,6 @@ export default {
     },
 
     async selectLanguage (language) {
-      this.$i18n.locale = language
-
       this.__updateSession('language', language)
     },
 

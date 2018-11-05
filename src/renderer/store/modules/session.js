@@ -1,4 +1,5 @@
 import { I18N, MARKET } from '@config'
+import i18n from '@/i18n'
 
 export default {
   namespaced: true,
@@ -127,6 +128,7 @@ export default {
 
     setLanguage ({ commit }, value) {
       commit('SET_LANGUAGE', value)
+      i18n.locale = value
     },
 
     setBip39Language ({ commit }, value) {

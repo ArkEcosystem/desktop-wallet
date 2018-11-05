@@ -114,7 +114,9 @@ export default {
   async created () {
     await this.$store.dispatch('network/load', config.NETWORKS)
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
+      await this.$store.dispatch('session/load', currentProfileId)
 
       this.isReady = true
 
