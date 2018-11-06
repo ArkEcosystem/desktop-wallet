@@ -54,11 +54,11 @@ export default {
     },
 
     /**
-     * @param {String} address
+     * @param {String} value
      * @param {Number} truncateLength
      */
-    wallet_truncateAddress (address, truncateLength = 10) {
-      return truncateMiddle(address, truncateLength)
+    wallet_truncate (value, truncateLength = 10) {
+      return truncateMiddle(value, truncateLength)
     }
   }
 }
