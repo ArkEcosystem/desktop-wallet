@@ -126,6 +126,11 @@ export default {
       required: false,
       default: null
     },
+    notValidError: {
+      type: String,
+      required: false,
+      default: null
+    },
     required: {
       type: Boolean,
       required: false,
@@ -156,20 +161,24 @@ export default {
         if (this.required && !this.$v.model.isRequired) {
           error = this.$t('INPUT_CURRENCY.ERROR.REQUIRED')
         } else if (!this.$v.model.isNumber) {
-          error = this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
+          if (this.notValidError) {
+            error = this.notValidError
+          } else {
+            error = this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
+          }
         } else if (this.inputValue > this.maximumAmount) {
           if (this.maximumError) {
             error = this.maximumError
           } else {
             const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
-            error = this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
+            error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
           }
         } else if (this.inputValue < this.minimumAmount) {
           if (this.minimumError) {
             error = this.minimumError || error
           } else {
             const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
-            error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
+            error = this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
           }
         }
       }
@@ -225,6 +234,9 @@ export default {
     emitInput (value) {
       this.$emit('input', value)
     },
+    focus () {
+      this.$refs.input.focus()
+    },
     onBlur () {
       this.isFocused = false
       this.$emit('blur')
@@ -235,10 +247,11 @@ export default {
       this.$emit('focus')
     },
     updateInputValue (value) {
-      if (!value || this.checkAmount(value)) {
+      // Ignore empty and not valid values
+      if (value && this.checkAmount(value)) {
+        this.inputValue = value.toString().replace(',', '.')
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
-        this.inputValue = value.toString().replace(',', '.')
         return true
       }
       return false

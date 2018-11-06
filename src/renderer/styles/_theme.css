@@ -75,6 +75,14 @@
   --theme-warn: rgb(229, 167, 33);
   --theme-warn-shadow: rgba(229, 167, 33, 0.5);
   --theme-warn-text: rgb(176, 59, 18);
+
+  --theme-fee-gradient-start: var(--theme-modal);
+  --theme-fee-gradient-end: rgba(0,124,255,0.20);
+  --theme-fee-handler-outside: var(--theme-button-text);
+  --theme-fee-handler-inside: var(--theme-modal);
+  --theme-fee-range-track: var(--theme-page-text-light);
+  --theme-fee-range-track-active: var(--theme-button-text);
+	--theme-fee-range-shadow: rgba(9, 100, 228, 0.34);
 }
 
 .theme-dark {
@@ -149,4 +157,11 @@
   --theme-warn: rgb(229, 167, 33);
   --theme-warn-shadow: rgba(229, 167, 33, 0.5);
   --theme-warn-text: rgb(176, 59, 18);
+
+  --theme-fee-gradient-start: var(--theme-modal);
+  --theme-fee-gradient-end: rgba(0,124,255,0.20);
+  --theme-fee-handler-outside: var(--theme-button-text);
+  --theme-fee-handler-inside: var(--theme-modal);
+  --theme-fee-range-track: var(--theme-page-text-light);
+  --theme-fee-range-track-active: var(--theme-button-text);
 }

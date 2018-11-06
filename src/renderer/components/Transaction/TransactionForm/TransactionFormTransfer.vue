@@ -48,6 +48,7 @@
     <InputFee
       v-if="session_network.apiVersion === 2"
       v-model="$v.form.fee.$model"
+      :currency="session_network.token"
       :transaction-type="$options.transactionType"
       @input="onFee"
     />

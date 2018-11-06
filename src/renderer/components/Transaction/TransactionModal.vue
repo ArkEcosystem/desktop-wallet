@@ -1,7 +1,7 @@
 <template>
   <ModalWindow
     :title="title || typeName"
-    container-classes="TransactionModal"
+    :container-classes="`TransactionModal ${typeClass}`"
     @close="emitCancel"
   >
     <keep-alive>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { includes, findKey } from 'lodash'
+import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
 import { ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
@@ -66,6 +66,10 @@ export default {
   computed: {
     transactionKey () {
       return findKey(TRANSACTION_TYPES, type => this.type === type)
+    },
+    typeClass () {
+      const type = findKey(TRANSACTION_TYPES, type => this.type === type)
+      return `TransactionModal${upperFirst(camelCase(type))}`
     },
     typeName () {
       return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)
@@ -120,5 +124,9 @@ export default {
 <style>
 .TransactionModal {
   max-width: 45rem
+}
+.TransactionModalTransfer {
+  /* To allow more space on the fee slider */
+  min-width: 35rem;
 }
 </style>

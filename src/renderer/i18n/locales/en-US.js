@@ -217,6 +217,18 @@ export default {
     LABEL: 'Amount'
   },
 
+  INPUT_FEE: {
+    MINIMUM: 'Minimum',
+    AVERAGE: 'Average',
+    MAXIMUM: 'Maximum',
+    CUSTOM: 'Custom',
+    ERROR: {
+      NOT_VALID: 'The fee is not valid',
+      LESS_THAN_MINIMUM: 'The minimum fee is {fee}',
+      MORE_THAN_MAXIMUM: 'The maximum fee is {fee}'
+    }
+  },
+
   INPUT_GRID: {
     MORE: 'Show more'
   },
@@ -565,7 +577,7 @@ export default {
     PASSPHRASE: 'Passphrase',
     SECOND_PASSPHRASE: 'Second Passphrase',
     PASSWORD: 'Encryption Password',
-    FEE: 'Fee',
+    FEE: 'Transaction fee',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
     LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
