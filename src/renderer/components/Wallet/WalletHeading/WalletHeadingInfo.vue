@@ -7,7 +7,18 @@
     />
     <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
-        <span v-tooltip="label">{{ showPublicKey ? wallet_truncate(label, 40) : label }}</span>
+        <span
+          v-tooltip="label"
+          class="block xl:hidden"
+        >
+          {{ wallet_truncate(label, 10) }}
+        </span>
+        <span
+          v-tooltip="label"
+          class="hidden xl:block"
+        >
+          {{ showPublicKey ? wallet_truncate(label, 40) : label }}
+        </span>
         <SvgIcon
           v-if="currentWallet.secondPublicKey"
           v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"

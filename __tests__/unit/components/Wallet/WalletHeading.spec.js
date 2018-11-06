@@ -21,14 +21,28 @@ const sampleWalletData = {
 
 describe('WalletHeading', () => {
   it('should be instatiated', () => {
-    const wrapper = shallowMount(WalletHeading, { store, localVue, i18n })
+    const wrapper = shallowMount(WalletHeading, {
+      store,
+      localVue,
+      i18n,
+      mocks: {
+        wallet_truncate: value => value
+      }
+    })
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 })
 
 describe('WalletHeadingActions', () => {
   it('should be instatiated', () => {
-    const wrapper = shallowMount(WalletHeadingActions, { store, localVue, i18n })
+    const wrapper = shallowMount(WalletHeadingActions, {
+      store,
+      localVue,
+      i18n,
+      mocks: {
+        wallet_truncate: value => value
+      }
+    })
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 })
@@ -43,6 +57,7 @@ describe('WalletHeadingPrimaryActions', () => {
       },
       mocks: {
         wallet_fromRoute: sampleWalletData,
+        wallet_truncate: value => value,
         walletVote: {
           publicKey: null
         }
@@ -57,7 +72,8 @@ describe('WalletHeadingSecondaryActions', () => {
     const wrapper = shallowMount(WalletHeadingSecondaryActions, {
       i18n,
       mocks: {
-        wallet_fromRoute: sampleWalletData
+        wallet_fromRoute: sampleWalletData,
+        wallet_truncate: value => value
       }
     })
     expect(wrapper.isVueInstance()).toBeTrue()

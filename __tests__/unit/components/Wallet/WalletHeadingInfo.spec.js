@@ -44,7 +44,8 @@ describe('WalletHeadingInfo component', () => {
         },
         session_network: network,
         wallet_fromRoute: sampleWalletData,
-        wallet_formatAddress: address => address
+        wallet_formatAddress: address => address,
+        wallet_truncate: value => value
       }
     })
   })
@@ -62,7 +63,7 @@ describe('WalletHeadingInfo component', () => {
   it('should display the address', () => {
     const address = wrapper.find('.WalletHeading__address')
 
-    expect(address.text()).toBe(sampleWalletData.address)
+    expect(address.text()).toContain(sampleWalletData.address)
   })
 
   it('should display the balance in the currency network', () => {
