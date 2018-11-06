@@ -4,7 +4,8 @@
       'InputField--dirty': isDirty,
       'InputField--disabled': isDisabled,
       'InputField--focused': isFocused,
-      'InputField--invalid': isInvalid
+      'InputField--invalid': isInvalid,
+      'InputField--warning': !isInvalid && !!warningText
     }]"
     class="InputField"
   >
@@ -18,10 +19,10 @@
       </label>
     </div>
     <p
-      v-show="helperText"
+      v-show="helperText || warningText"
       class="InputField__helper text-theme-page-text-light text-xs mt-1">
       <slot name="helper">
-        {{ helperText }}
+        {{ helperText || warningText }}
       </slot>
     </p>
   </section>
@@ -61,6 +62,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    warningText: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
@@ -104,5 +110,13 @@ export default {
 }
 .InputField--invalid .InputField__input {
   @apply .border-red-dark
+}
+
+.InputField--warning .InputField__label,
+.InputField--warning .InputField__helper {
+  @apply .text-orange-dark
+}
+.InputField--warning .InputField__input {
+  @apply .border-orange-dark
 }
 </style>

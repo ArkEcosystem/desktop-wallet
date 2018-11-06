@@ -86,19 +86,23 @@ export default {
   },
 
   VALIDATION: {
-    NOT_MATCH: 'The {0} does not match the {1}',
-    NOT_VALID: 'The {0} is not valid',
-    NOT_NUMERIC: 'The {0} is not numeric',
-    NO_SCHEME: 'The {0} does not have \'http://\' or \'https://\'',
-    REQUIRED: 'The {0} is required',
+    TOO_LONG: 'The \'{0}\' is too long',
+    INVALID_URI: 'Invalid URI',
+    MAX_LENGTH: 'Max {0}',
+    NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
+    NOT_VALID: 'The \'{0}\' is not valid',
+    NOT_NUMERIC: 'The \'{0}\' is not numeric',
+    NO_SCHEME: 'The \'{0}\' does not have \'http://\' or \'https://\'',
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
       NUMBERS: 'Your password must contain at least 1 number',
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character'
     },
-    INVALID_URI: 'Invalid URI',
+    REQUIRED: 'The \'{0}\' is required',
+    SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
-    SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet'
+    WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',
+    WARNING_NOT_BIP39: 'The \'{0}\' is not a BIP39 Passphrase'
   },
 
   LANGUAGES: {

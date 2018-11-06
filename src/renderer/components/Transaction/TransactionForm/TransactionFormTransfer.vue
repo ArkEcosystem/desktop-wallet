@@ -35,9 +35,12 @@
     </div>
 
     <InputText
+      ref="vendorField"
       v-model="$v.form.vendorField.$model"
-      :is-invalid="$v.form.vendorField.$dirty && $v.form.vendorField.$invalid"
-      :label="$t('TRANSACTION.VENDOR_FIELD')"
+      :helper-text="vendorFieldError"
+      :is-invalid="vendorFieldIsInvalid"
+      :label="vendorFieldLabel"
+      :bip39-warning="true"
       name="vendorField"
       class="mb-5"
     />
@@ -162,6 +165,19 @@ export default {
     },
     currentWallet () {
       return this.wallet_fromRoute
+    },
+    vendorFieldLabel () {
+      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
+    },
+    vendorFieldError () {
+      if (this.vendorFieldIsInvalid) {
+        return this.$t('VALIDATION.TOO_LONG', [this.$refs.vendorField.label])
+      }
+
+      return null
+    },
+    vendorFieldIsInvalid () {
+      return this.$v.form.vendorField.$dirty && this.$v.form.vendorField.$invalid
     }
   },
 

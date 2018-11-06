@@ -6,6 +6,7 @@
     :is-disabled="isDisabled"
     :is-focused="isFocused"
     :is-invalid="isInvalid"
+    :warning-text="warning"
     class="PassphraseInput"
   >
     <div
@@ -95,6 +96,11 @@ export default {
       required: false,
       default: false
     },
+    notBip39Warning: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     label: {
       type: String,
       required: false,
@@ -126,22 +132,32 @@ export default {
 
   computed: {
     error () {
-      let error = null
-
       if (this.$v.model.$dirty) {
         if (!this.$v.model.required) {
-          error = this.$t('VALIDATION.REQUIRED', [this.label])
+          return this.$t('VALIDATION.REQUIRED', [this.label])
         } else if (!this.$v.model.isValid) {
-          error = this.$t('VALIDATION.NOT_VALID', [this.label])
+          return this.$t('VALIDATION.NOT_VALID', [this.label])
         } else if (!this.$v.model.matchAddress) {
-          error = this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
+          return this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
         }
       }
 
-      return error
+      return null
+    },
+    warning () {
+      if (this.$v.model.$dirty) {
+        if (this.notBip39Warning && !this.isBip39) {
+          return this.$t('VALIDATION.WARNING_NOT_BIP39', [this.label])
+        }
+      }
+
+      return null
     },
     isInvalid () {
       return this.$v.model.$dirty && !!this.error
+    },
+    isBip39 () {
+      return this.notBip39Warning && WalletService.isBip39Passphrase(this.inputValue, this.session_profile.bip39Language)
     },
     model: {
       get () {
@@ -195,9 +211,6 @@ export default {
     }
   },
 
-  // More improvements:
-  // TODO (prop) check that the spaces are correct => warn about it
-  // TODO (prop) check that the it looks like bip39 => warn about it
   validations: {
     model: {
       required,

@@ -92,6 +92,16 @@ export default class WalletService {
   }
 
   /**
+   * Check that a passphrase is valid bip39 passphrase.
+   * @param {String} passhrase
+   * @param {Number} language - bip39 wordlist language
+   * @return {Boolean}
+   */
+  static isBip39Passphrase (passphrase, language) {
+    return bip39.validateMnemonic(passphrase, bip39.wordlists[language])
+  }
+
+  /**
    * Check that a username is valid
    *
    * @param {String} username

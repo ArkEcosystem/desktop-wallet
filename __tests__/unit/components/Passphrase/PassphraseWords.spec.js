@@ -1,5 +1,9 @@
 import { mount } from '@vue/test-utils'
+import Vue from 'vue'
+import Vuelidate from 'vuelidate'
 import { PassphraseWords } from '@/components/Passphrase'
+
+Vue.use(Vuelidate)
 
 describe('PassphraseWords', () => {
   const passphraseWords = ['test', 'check', 'verify', 'true', 'false', 'validate', 'ignore', 'shoulder']

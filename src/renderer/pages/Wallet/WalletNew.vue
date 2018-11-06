@@ -174,6 +174,7 @@
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP5.NAME')"
+                :bip39-warning="true"
                 class="my-3"
                 name="name"
               />

@@ -60,6 +60,7 @@
                 v-model="schema.passphrase"
                 :address="useOnlyPassphrase ? null : schema.address"
                 :pub-key-hash="session_network.version"
+                :not-bip39-warning="true"
                 class="my-3"
               />
 
@@ -109,6 +110,7 @@
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_IMPORT.STEP3.NAME')"
+                :bip39-warning="true"
                 class="my-3"
                 name="name"
               />

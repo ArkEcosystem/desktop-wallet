@@ -6,6 +6,7 @@
     :is-disabled="isDisabled"
     :is-focused="isFocused"
     :is-invalid="isInvalid"
+    :warning-text="warning"
     :is-read-only="isReadOnly"
     class="InputText"
   >
@@ -38,6 +39,7 @@
 
 <script>
 import InputField from './InputField'
+import WalletService from '@/services/wallet'
 
 export default {
   name: 'InputText',
@@ -95,6 +97,11 @@ export default {
       required: false,
       default: false
     },
+    bip39Warning: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     value: {
       type: String,
       required: false,
@@ -114,11 +121,25 @@ export default {
       },
       set (value) {
         this.inputValue = value
+        // Inform Vuelidate that the value changed
+        this.$v.model.$touch()
         this.$emit('input', value)
       }
     },
     isDirty () {
       return !!this.inputValue
+    },
+    isWarning () {
+      return !!this.isDirty && !!this.warning
+    },
+    warning () {
+      if (this.$v.model.$dirty) {
+        if (this.$v.model.isBip39) {
+          return this.$t('VALIDATION.WARNING_BIP39', [this.label])
+        }
+      }
+
+      return null
     }
   },
 
@@ -144,6 +165,18 @@ export default {
 
     blur () {
       this.$refs.input.blur()
+    }
+  },
+
+  validations: {
+    model: {
+      isBip39 (value) {
+        if (!this.bip39Warning) {
+          return false
+        }
+
+        return WalletService.isBip39Passphrase(value, this.session_profile.bip39Language)
+      }
     }
   }
 }
