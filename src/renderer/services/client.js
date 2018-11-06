@@ -370,10 +370,11 @@ export default class ClientService {
    * @param {String} wif
    * @returns {Object}
    */
-  async buildTransfer ({ amount, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
+  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
     let transfer = transactionBuilder
       .transfer()
       .amount(amount)
+      .fee(fee)
       .recipientId(recipientId)
       .vendorField(vendorField)
 
