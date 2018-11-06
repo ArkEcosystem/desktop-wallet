@@ -1,7 +1,7 @@
 <template>
   <Collapse
-    ref="collapse"
     :id="step"
+    ref="collapse"
     :is-disabled="isDisabled"
     :class="{
       'pt-2': !isFirstItem,
@@ -13,7 +13,7 @@
   >
     <header
       slot="handler"
-      slot-scope="{ isOpen, isDisabled }"
+      slot-scope="{ isOpen }"
       :class="{
         'text-xl font-bold text-theme-caption-text': isOpen,
         'text-theme-page-text-light': !isOpen

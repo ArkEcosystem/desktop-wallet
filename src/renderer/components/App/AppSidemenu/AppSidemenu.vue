@@ -11,7 +11,8 @@
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
         :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
-        class="bg-red flex justify-center items-center">
+        class="bg-red flex justify-center items-center"
+      >
         <img
           :class="isHorizontal ? 'h-12' : 'w-18'"
           src="@/assets/images/ark-logo.png"
@@ -111,7 +112,8 @@
       <!-- Profile settings -->
       <div
         :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-        class="cursor-pointer align-self-end">
+        class="cursor-pointer align-self-end"
+      >
         <router-link
           :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
           :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"

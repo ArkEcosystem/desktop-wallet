@@ -34,14 +34,15 @@
       </SearchFilterItem>
 
       <component
-        v-else
         :is="currentFilter"
+        v-else
       />
     </ul>
   </MenuOptions>
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import { MenuOptions, MenuDropdown, MenuDropdownAlternativeHandler } from '@/components/Menu'
 import SearchFilterItem from './SearchFilterItem'
 import SvgIcon from '@/components/SvgIcon'

@@ -2,9 +2,9 @@
   <span class="InputToggle">
     <InputToggleChoice
       v-for="(choice, index) in choices"
+      :key="index"
       :choice="choice"
       :selected-choice="selectedChoice"
-      :key="index"
       :index="index"
       :length="choices.length"
       @select="emitSelect(choice)"

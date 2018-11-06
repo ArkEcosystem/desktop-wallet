@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <slot/>
+      <slot />
 
       <div class="mt-4 flex flex-row">
         <button
@@ -69,11 +69,9 @@ export default {
       }
     },
     note: {
-      type: [String, null],
+      type: String,
       required: false,
-      default () {
-        return null
-      }
+      default: null
     },
     question: {
       type: String,

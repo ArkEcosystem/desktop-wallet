@@ -11,6 +11,7 @@
       slot="item"
       slot-scope="{ id, title, svg }"
     >
+      <!-- eslint-disable vue/no-v-html -->
       <div
         :title="title"
         :class="{ 'svg-button--selected': selectedItem && selectedItem.id === id }"

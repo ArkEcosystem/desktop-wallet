@@ -227,7 +227,6 @@ import { InputField, InputPassword, InputSwitch, InputText } from '@/components/
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
-import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
 
@@ -245,8 +244,7 @@ export default {
     MenuStepItem,
     ModalLoader,
     PassphraseVerification,
-    PassphraseWords,
-    SvgIcon
+    PassphraseWords
   },
 
   schema: Wallet.schema,

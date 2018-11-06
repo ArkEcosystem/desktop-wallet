@@ -16,11 +16,13 @@
         v-if="!secondaryButtonsVisible"
         class="rotate-90"
         name="point"
-        view-box="0 0 14 14" />
+        view-box="0 0 14 14"
+      />
       <SvgIcon
         v-else
         name="step-back"
-        view-box="0 0 14 14" />
+        view-box="0 0 14 14"
+      />
     </button>
   </div>
 </template>

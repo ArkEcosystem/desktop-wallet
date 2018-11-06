@@ -1,5 +1,6 @@
 export default {
   COMMON: {
+    APP_NAME: 'Ark Desktop Wallet',
     ALL: 'All',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
@@ -14,6 +15,8 @@ export default {
     PREV: 'Prev',
     NEXT: 'Next',
     OF: 'of',
+    NOT: 'not',
+    WILL: 'will',
     PROFILE_NAME: 'Profile name',
     SAVE: 'Save',
     SELECT_BACKGROUND: 'Select background',
@@ -24,27 +27,31 @@ export default {
   },
 
   INTRODUCTION: {
+    PAGE_TITLE: 'Your {page}',
     WELCOME: {
-      TITLE: 'Welcome to the <b>Ark Desktop Wallet</b>',
+      TITLE: 'Welcome to the {app}',
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
       FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay attention to these warnings'
     },
     POWER: {
-      TITLE: 'Your <b>Power</b>',
+      TITLE: 'Power',
       FINANCE: 'The most important thing for users to know about cryptocurrencies is that they completely reverse the commonly-accepted model of how finance works',
       BANKS: 'In traditional finance, you give up direct control of your money to a bank. Because banks have control over your money, they can take actions on your behalf, such as refunding transactions and resetting your login info.',
       CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your private key, you can control exactly when, where and how your money is kept and spent.',
       RESPONSIBILITY: 'However, in the words of Uncle Ben Parker, with great power comes great responsibility.'
     },
     RESPONSIBILITY: {
-      TITLE: 'Your <b>Responsibility<b>',
+      TITLE: 'Responsibility',
       STORAGE: 'Maintaining control of your key and passphrase is absolutely vital. Although you can use this wallet to create a new wallet with a unique passphrase, at no point does ARK ever store, access, or recover your passphrase.',
-      WARNING: 'This last point bears repeating: <b>at no point does ARK ever store, access or recover your passphrase. Additionally, ARK does not have the power to refund transactions or suspend accounts for any reason whatsoever.</b>',
-      PASSPHRASE: 'Your passphrase is <b>not</b> kept on this wallet, and without your own copy of your passphrase you <b>will</b> lose access to your funds.',
+      WARNING: {
+        INFO: 'This last point bears repeating: {warn}',
+        WARN: 'at no point does ARK ever store, access or recover your passphrase. Additionally, ARK does not have the power to refund transactions or suspend accounts for any reason whatsoever.'
+      },
+      PASSPHRASE: 'Your passphrase is {not} kept on this wallet, and without your own copy of your passphrase you {will} lose access to your funds.',
       BACKUP: 'This means that you are responsible for keeping this information safe and secure. Back up your passphrase and keep it in a safe place. If you lose it, there is nobody who can recover it for you. Your funds will be lost.'
     },
     TURN: {
-      TITLE: 'Your <b>Turn</b>',
+      TITLE: 'Turn',
       WALLET: 'Armed with knowledge about the importance of keeping your passphrase safe, you\'re ready to claim your financial autonomy with ARK Desktop Wallet.',
       HARDWARE_WALLET: 'Alternatively, for an extra layer of security and convenience, consider a hardware wallet. These dedicated storage products manage your private keys within the device. Additionally, the Ledger Nano S hardware wallet integrates directly with ARK Desktop Wallet, meaning you can plug your Ledger Nano into your computer and access the ARK blockchain without needing to enter your passphrase.'
     }

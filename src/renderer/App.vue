@@ -38,7 +38,7 @@
           <router-view class="flex-1 overflow-y-auto" />
         </div>
 
-        <AppFooter/>
+        <AppFooter />
       </section>
 
       <portal-target

@@ -86,9 +86,7 @@
 <script>
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
 import { NetworkCustomPeer } from '@/components/Network'
-import { ButtonModal, ButtonReload, ButtonSwitch } from '@/components/Button'
-import { InputText } from '@/components/Input'
-import SvgIcon from '@/components/SvgIcon'
+import { ButtonModal, ButtonReload } from '@/components/Button'
 
 export default {
   name: 'AppSidemenuNetworkStatus',
@@ -96,12 +94,9 @@ export default {
   components: {
     ButtonModal,
     ButtonReload,
-    ButtonSwitch,
-    InputText,
     MenuDropdown,
     MenuOptions,
-    NetworkCustomPeer,
-    SvgIcon
+    NetworkCustomPeer
   },
 
   props: {

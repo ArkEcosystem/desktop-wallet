@@ -3,7 +3,8 @@
     :class="{
       'text-red': transaction.isSender,
       'text-green': transaction.isReceiver && isTransfer,
-  }">{{ formatter_networkCurrency(transaction.amount) }}</span>
+    }"
+  >{{ formatter_networkCurrency(transaction.amount) }}</span>
 </template>
 
 <script>

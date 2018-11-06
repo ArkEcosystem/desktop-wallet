@@ -18,6 +18,7 @@
       <slot name="left" />
       <input
         ref="input"
+        v-model="model"
         :class="[{
           'InputText__input--read-only': isReadOnly,
           'InputText__input--large': isLarge
@@ -27,7 +28,6 @@
         :type="type"
         :value="value"
         :placeholder="placeholder"
-        v-model="model"
         class="InputText__input flex-1"
         @focus="onFocus"
         @blur="onBlur"

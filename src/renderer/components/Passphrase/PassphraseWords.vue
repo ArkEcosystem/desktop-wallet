@@ -2,8 +2,8 @@
   <div class="PassphraseWords h-full w-full flex flex-wrap">
     <InputText
       v-for="(word, index) in passphraseWords"
-      :is-read-only="true"
       :key="index"
+      :is-read-only="true"
       :label="(index + 1).toString()"
       :name="`word-${index}`"
       :value="word"

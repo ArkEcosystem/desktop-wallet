@@ -12,8 +12,8 @@
         :tab="tab.component"
       >
         <component
-          slot-scope="{ isActive }"
           :is="tab.component"
+          slot-scope="{ isActive }"
           :is-active="isActive"
         />
       </MenuTabItem>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
 import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'

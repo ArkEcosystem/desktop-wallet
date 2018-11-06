@@ -10,17 +10,20 @@
     class="InputField"
   >
     <div
-      class="InputField__wrapper relative appearance-none mb-1 inline-flex items-end w-full h-12">
+      class="InputField__wrapper relative appearance-none mb-1 inline-flex items-end w-full h-12"
+    >
       <slot :inputClass="inputClass" />
       <label
         v-show="label"
-        class="InputField__label absolute pointer-events-none text-theme-page-text-light">
+        class="InputField__label absolute pointer-events-none text-theme-page-text-light"
+      >
         {{ label }}
       </label>
     </div>
     <p
       v-show="helperText || warningText"
-      class="InputField__helper text-theme-page-text-light text-xs mt-1">
+      class="InputField__helper text-theme-page-text-light text-xs mt-1"
+    >
       <slot name="helper">
         {{ helperText || warningText }}
       </slot>

@@ -173,7 +173,6 @@
 <script>
 import { capitalize, isEmpty } from 'lodash'
 import { BIP39, I18N, NETWORKS } from '@config'
-import { InputText, InputSelect } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
@@ -187,8 +186,6 @@ export default {
   name: 'ProfileEdition',
 
   components: {
-    InputSelect,
-    InputText,
     ListDivided,
     ListDividedItem,
     MenuTab,

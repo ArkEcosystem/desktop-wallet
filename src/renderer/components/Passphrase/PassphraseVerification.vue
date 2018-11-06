@@ -3,11 +3,11 @@
     <div class="PassphraseVerification__inputs">
       <InputText
         v-for="(input, position) in inputs"
-        :is-disabled="isAccepted(position, input)"
         :key="position"
+        :ref="`input-${position}`"
+        :is-disabled="isAccepted(position, input)"
         :label="$t(`PASSPHRASE_VERIFICATION.WORD_LABEL_${position}`)"
         :name="`input-${position}`"
-        :ref="`input-${position}`"
         :title="$t(`PASSPHRASE_VERIFICATION.WORD_LABEL_${position}`)"
         :value="input"
         class="PassphraseVerification__inputs__input"

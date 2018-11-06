@@ -25,7 +25,8 @@
 
     <MenuOptionsItem
       :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
-      @click="toggleSelect('dark-switch')">
+      @click="toggleSelect('dark-switch')"
+    >
       <div
         slot="controls"
         class="pointer-events-none"
@@ -43,7 +44,8 @@
     <MenuOptionsItem
       v-if="!isLinux"
       :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
-      @click="toggleSelect('protection-switch')">
+      @click="toggleSelect('protection-switch')"
+    >
       <div
         slot="controls"
         class="pointer-events-none"

@@ -8,7 +8,6 @@
     class="InputSwitch"
   >
     <div
-      slot-scope="{ inputClass }"
       class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex flex-row justify-flex-start"
     >
       <div class="mr-3 mt-1 text-lg">{{ text }}</div>

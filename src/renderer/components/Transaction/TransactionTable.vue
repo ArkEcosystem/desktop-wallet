@@ -1,6 +1,6 @@
 <template>
   <div class="TransactionTable w-full">
-    <Table
+    <TableWrapper
       v-bind="$attrs"
       :columns="columns"
       v-on="$listeners"
@@ -11,12 +11,12 @@
         slot-scope="data"
       >
         <a
+          v-if="data.column.field === 'id'"
           v-tooltip="{
             content: data.row.id,
             classes: 'text-xs',
             trigger: 'hover'
           }"
-          v-if="data.column.field === 'id'"
           href="#"
           @click.stop="network_openExplorer('transaction', data.row.id)"
         >
@@ -65,7 +65,7 @@
           v-else-if="data.column.field === 'sender'"
           class="overflow-hidden truncate max-w-xxs"
         >
-          <WalletAddress :address="data.row.sender"/>
+          <WalletAddress :address="data.row.sender" />
         </div>
 
         <div
@@ -83,7 +83,7 @@
           {{ data.formattedRow[data.column.field] }}
         </span>
       </template>
-    </Table>
+    </TableWrapper>
 
     <portal
       v-if="selected"
@@ -98,20 +98,18 @@
 </template>
 
 <script>
-import Loader from '@/components/utils/Loader'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import { TransactionShow } from '@/components/Transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
-import Table from '@/components/utils/Table'
+import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {
   name: 'TransactionTable',
 
   components: {
-    Loader,
     SvgIcon,
-    Table,
+    TableWrapper,
     TransactionShow,
     WalletAddress
   },

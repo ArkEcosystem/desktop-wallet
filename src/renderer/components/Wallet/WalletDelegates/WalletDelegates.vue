@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <Table
+    <TableWrapper
       :columns="columns"
       :has-pagination="true"
       :is-loading="isLoading"
@@ -69,7 +69,7 @@
           {{ data.formattedRow[data.column.field] }}
         </span>
       </template>
-    </Table>
+    </TableWrapper>
 
     <portal
       v-if="selected"
@@ -91,7 +91,7 @@
 <script>
 import { ButtonClose } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
-import Table from '@/components/utils/Table'
+import TableWrapper from '@/components/utils/TableWrapper'
 import { orderBy } from 'lodash'
 
 export default {
@@ -101,7 +101,7 @@ export default {
 
   components: {
     ButtonClose,
-    Table,
+    TableWrapper,
     TransactionModal
   },
 

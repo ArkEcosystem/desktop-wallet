@@ -7,6 +7,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import TransactionFormDelegateRegistration from './TransactionFormDelegateRegistration'
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'

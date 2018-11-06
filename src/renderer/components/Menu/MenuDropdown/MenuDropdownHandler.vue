@@ -3,7 +3,8 @@
     :class="[
       value ? '' : 'text-theme-page-text-light hover:text-theme-page-text',
       'MenuDropdownHandler cursor-pointer transition flex justify-between items-center']"
-    @click="emitClick">
+    @click="emitClick"
+  >
     <span>
       <slot>
         <span v-if="prefix.length">{{ prefix }}</span>
@@ -14,7 +15,8 @@
     <span class="pl-2 pr-1">
       <SvgIcon
         name="arrow-dropdown"
-        view-box="0 0 20 20" />
+        view-box="0 0 20 20"
+      />
     </span>
   </div>
 </template>

@@ -7,10 +7,9 @@
       >
     </div>
     <div class="flex flex-col w-1/2 justify-center">
-      <span
-        class="text-5xl"
-        v-html="title"
-      />
+      <div class="text-5xl">
+        <slot name="title" />
+      </div>
 
       <div
         v-if="selection === 1"
@@ -27,14 +26,21 @@
         class="w-3/4"
       >
         <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}</div>
-        <div
+        <i18n
+          tag="div"
           class="mt-2"
-          v-html="$t('INTRODUCTION.RESPONSIBILITY.WARNING')"
-        />
-        <div
+          path="INTRODUCTION.RESPONSIBILITY.WARNING.INFO"
+        >
+          <strong place="warn">{{ $t('INTRODUCTION.RESPONSIBILITY.WARNING.WARN') }}</strong>
+        </i18n>
+        <i18n
+          tag="div"
           class="mt-2"
-          v-html="$t('INTRODUCTION.RESPONSIBILITY.PASSPHRASE')"
-        />
+          path="INTRODUCTION.RESPONSIBILITY.PASSPHRASE"
+        >
+          <strong place="not">{{ $t('COMMON.NOT') }}</strong>
+          <strong place="will">{{ $t('COMMON.WILL') }}</strong>
+        </i18n>
         <div class="mt-2">{{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}</div>
       </div>
 
@@ -54,7 +60,7 @@
               :key="index"
               :class="{ 'current' : index === selection }"
             >
-              <span/>
+              <span />
             </li>
           </ul>
         </div>
@@ -98,10 +104,6 @@ export default {
       type: Number,
       required: false,
       default: 3
-    },
-    title: {
-      type: String,
-      required: true
     }
   },
 
@@ -127,8 +129,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="postcss" scoped>
 .AppIntroScreen__image {
   background-size: contain;
   background-position: center center;
@@ -155,5 +156,4 @@ export default {
   box-shadow: inset 0 0 0 3px #037cff;
   @apply .bg-transparent
 }
-
 </style>

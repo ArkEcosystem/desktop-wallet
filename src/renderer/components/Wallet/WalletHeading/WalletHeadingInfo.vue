@@ -9,8 +9,8 @@
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
         <span v-tooltip="label">{{ showPublicKey ? wallet_truncate(label, 40) : label }}</span>
         <SvgIcon
-          v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"
           v-if="currentWallet.secondPublicKey"
+          v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"
           name="2nd-passphrase"
           view-box="0 0 18 18"
           class="ml-1"
@@ -23,11 +23,11 @@
         />
 
         <button
+          v-if="currentWallet.publicKey"
           v-tooltip="{
             content: labelTooltip,
             trigger:'hover'
           }"
-          v-if="currentWallet.publicKey"
           class="text-inherit opacity-50"
           @click="togglePublicKey"
         >

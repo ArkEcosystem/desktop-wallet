@@ -4,8 +4,8 @@
     class="WalletHeading__PrimaryActions flex"
   >
     <div
-      v-tooltip="{ content: $t('PAGES.WALLET_SHOW.NO_VOTE'), trigger:'hover' }"
       v-if="!walletVote.publicKey"
+      v-tooltip="{ content: $t('PAGES.WALLET_SHOW.NO_VOTE'), trigger:'hover' }"
       class="bg-theme-button-special-choice cursor-pointer rounded-full w-2 h-2 m-3"
       @click="goToDelegates"
     />

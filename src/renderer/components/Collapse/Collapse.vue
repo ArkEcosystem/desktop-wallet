@@ -26,7 +26,7 @@
           :style="{ height }"
           class="Collapse__content"
         >
-          <slot/>
+          <slot />
         </div>
       </transition>
     </keep-alive>

@@ -10,10 +10,10 @@
           class="identicon cursor-pointer opacity-50"
         />
         <div class="flex flex-col justify-center overflow-hidden pl-4">
-          <router-link :to="{ name: 'wallet-new' }" >
+          <router-link :to="{ name: 'wallet-new' }">
             {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
           </router-link>
-          <router-link :to="{ name: 'wallet-import' }" >
+          <router-link :to="{ name: 'wallet-import' }">
             {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
           </router-link>
         </div>

@@ -5,13 +5,16 @@
     <button
       v-if="!isRead"
       class="AnnouncementsPost__close transition absolute pin-t pin-r mr-4 cursor-pointer"
-      @click="emitRead">
+      @click="emitRead"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="fill-current text-grey hover:text-red h-4 w-4">
+        class="fill-current text-grey hover:text-red h-4 w-4"
+      >
         <path
           fill-rule="evenodd"
-          d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"/>
+          d="M15.000,1.500 L13.500,-0.000 L7.500,5.999 L1.500,-0.000 L-0.000,1.500 L6.000,7.499 L-0.000,13.500 L1.500,15.000 L7.500,9.000 L13.500,15.000 L15.000,13.500 L9.000,7.499 L15.000,1.500 Z"
+        />
       </svg>
     </button>
 

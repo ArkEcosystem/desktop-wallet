@@ -1,7 +1,8 @@
 <template>
   <div
     :class="[isVerified ? 'WalletVerifyDetail__verified' : 'WalletVerifyDetail__notVerified']"
-    class="flex flex-row justify-between rounded-lg px-5 py-6 bg-theme-heading-background">
+    class="flex flex-row justify-between rounded-lg px-5 py-6 bg-theme-heading-background"
+  >
     <div class="flex flex-row">
       <WalletIdenticon
         :value="address"
@@ -17,14 +18,12 @@
 
 <script>
 import { WalletIdenticon } from './'
-import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletVerifyDetail',
 
   components: {
-    WalletIdenticon,
-    SvgIcon
+    WalletIdenticon
   },
 
   props: {

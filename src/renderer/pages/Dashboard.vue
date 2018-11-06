@@ -5,12 +5,12 @@
         v-if="isMarketEnabled"
         class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
       >
-        <MarketChart :is-active="isMarketEnabled" >
+        <MarketChart :is-active="isMarketEnabled">
           <MarketChartHeader class="mb-5" />
         </MarketChart>
       </div>
 
-      <div class="p-10" >
+      <div class="p-10">
         <div class="text-lg font-semibold mb-4">
           {{ $t('PAGES.DASHBOARD.LAST_TRANSACTIONS') }}
         </div>

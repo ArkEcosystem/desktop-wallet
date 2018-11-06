@@ -50,6 +50,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import { find } from 'lodash'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'

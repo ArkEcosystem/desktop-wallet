@@ -2,7 +2,7 @@ import { VueGoodTable } from 'vue-good-table'
 import Loader from './Loader'
 
 export default {
-  name: 'Table',
+  name: 'TableWrapper',
 
   props: {
     currentPage: {

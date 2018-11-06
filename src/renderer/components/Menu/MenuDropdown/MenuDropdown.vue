@@ -1,6 +1,7 @@
 <template>
   <div
-    :class="[{ open: isOpen }, 'relative']">
+    :class="[{ open: isOpen }, 'relative']"
+  >
     <button
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
@@ -22,19 +23,20 @@
     </button>
 
     <div
-      v-click-outside="close"
       v-if="isOpen"
+      v-click-outside="close"
       :class="{ 'pin-above': pinAbove }"
-      class="absolute min-w-full z-20">
+      class="absolute min-w-full z-20"
+    >
       <ul
         :style="{ transform: `translate(${position.join(',')})` }"
         class="MenuDropdown pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
       >
         <slot>
           <MenuDropdownItem
-            v-for="(value, key) in entries"
+            v-for="(item, key) in entries"
             :key="key"
-            :value="value"
+            :value="item"
             :is-active="key === activeKey"
             @click="select(key)"
           />

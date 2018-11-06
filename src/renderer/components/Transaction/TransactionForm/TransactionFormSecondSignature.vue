@@ -112,10 +112,8 @@ import { TRANSACTION_TYPES } from '@config'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
 import { InputPassword } from '@/components/Input'
-import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
-import { SvgIcon } from '@/components/SvgIcon'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
 
@@ -129,13 +127,10 @@ export default {
     ButtonReload,
     Collapse,
     InputPassword,
-    ListDivided,
-    ListDividedItem,
     ModalLoader,
     PassphraseInput,
     PassphraseVerification,
-    PassphraseWords,
-    SvgIcon
+    PassphraseWords
   },
 
   data: () => ({

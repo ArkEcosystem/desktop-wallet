@@ -37,6 +37,7 @@
 
             </section>
 
+            <!-- eslint-disable vue/no-v-html -->
             <slot name="footer">
               <footer
                 v-if="message"

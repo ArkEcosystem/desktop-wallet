@@ -15,10 +15,7 @@ module.exports = {
   globals: {
     __static: true
   },
-  plugins: [
-    'vue'
-  ],
-  'rules': {
+  rules: {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

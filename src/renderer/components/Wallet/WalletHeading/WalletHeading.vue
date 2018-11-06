@@ -3,7 +3,7 @@
     :class="justifyClass"
     class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-tl-lg h-40"
   >
-    <WalletHeadingInfo v-if="!secondaryButtonsVisible"/>
+    <WalletHeadingInfo v-if="!secondaryButtonsVisible" />
     <WalletHeadingActions />
   </div>
 </template>

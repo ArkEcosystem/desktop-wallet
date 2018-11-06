@@ -9,7 +9,7 @@
     >
       <div class="select-none">
         <slot name="title">
-          <span :class="$slots['controls'] ? 'text-grey-light' : ''" >{{ title }}</span>
+          <span :class="$slots['controls'] ? 'text-grey-light' : ''">{{ title }}</span>
         </slot>
       </div>
 

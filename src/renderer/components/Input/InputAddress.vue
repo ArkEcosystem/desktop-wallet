@@ -15,9 +15,9 @@
     >
       <input
         ref="input"
+        v-model="model"
         :name="name"
         :disabled="isDisabled"
-        v-model="model"
         type="text"
         class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
         @blur="onBlur"
@@ -48,7 +48,6 @@ import { required } from 'vuelidate/lib/validators'
 import { ButtonModal } from '@/components/Button'
 import { ModalQrCodeScanner } from '@/components/Modal'
 import InputField from './InputField'
-import SvgIcon from '@/components/SvgIcon'
 import WalletService from '@/services/wallet'
 import axios from 'axios'
 
@@ -58,8 +57,7 @@ export default {
   components: {
     ButtonModal,
     InputField,
-    ModalQrCodeScanner,
-    SvgIcon
+    ModalQrCodeScanner
   },
 
   props: {

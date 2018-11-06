@@ -70,7 +70,6 @@
 <script>
 import { ButtonModal } from '@/components/Button'
 import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
-import SvgIcon from '@/components/SvgIcon'
 import { TransactionModal } from '@/components/Transaction'
 
 export default {
@@ -80,7 +79,6 @@ export default {
     ButtonModal,
     WalletRenameModal,
     WalletRemovalConfirmation,
-    SvgIcon,
     TransactionModal
   },
 

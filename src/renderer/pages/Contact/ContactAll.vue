@@ -4,7 +4,7 @@
 
     <div class="ContactAll__grid mt-10 justify-center">
       <div class="ContactAll__grid__contact flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg">
-        <router-link :to="{ name: 'contact-new' }" >
+        <router-link :to="{ name: 'contact-new' }">
           <WalletIdenticon
             :size="100"
             value="default"
@@ -12,7 +12,7 @@
           />
         </router-link>
         <div class="flex flex-col justify-center overflow-hidden pl-4">
-          <router-link :to="{ name: 'contact-new' }" >
+          <router-link :to="{ name: 'contact-new' }">
             {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
           </router-link>
           <span class="font-bold mt-2 opacity-50">

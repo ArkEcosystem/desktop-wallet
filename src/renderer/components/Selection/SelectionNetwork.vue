@@ -21,6 +21,7 @@
           }"
           class="svg-button w-30 h-30 text-center text-grey"
         >
+          <!-- eslint-disable vue/no-v-html -->
           <div
             class="w-14 h-14 mx-6 mt-4"
             v-html="assets_loadImage(svg)"

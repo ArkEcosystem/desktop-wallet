@@ -15,9 +15,9 @@
     >
       <input
         ref="input"
+        v-model.trim="model"
         :disabled="isDisabled"
         :name="name"
-        v-model.trim="model"
         autocomplete="off"
         class="InputCurrency__input flex flex-grow bg-transparent text-theme-page-text"
         type="text"

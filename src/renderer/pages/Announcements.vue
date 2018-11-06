@@ -1,6 +1,6 @@
 <template>
   <div class="Announcements relative overflow-y-auto bg-theme-feature rounded-lg">
-    <div class="Announcements--gradient-top sticky pin-t h-12"/>
+    <div class="Announcements--gradient-top sticky pin-t h-12" />
 
     <main class="flex-col px-12">
       <h1 class="text-lg mb-5">Latest news</h1>
@@ -27,7 +27,7 @@
       </transition-group>
     </main>
 
-    <div class="Announcements--gradient-bottom sticky pin-b h-12"/>
+    <div class="Announcements--gradient-bottom sticky pin-b h-12" />
   </div>
 </template>
 

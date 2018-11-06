@@ -1,7 +1,7 @@
 <template>
   <MenuNavigation
-    ref="MenuNavigation"
     :id="activeWallet.address"
+    ref="MenuNavigation"
     :class="{
       'WalletSidebar--basic': isBasic,
       'WalletSidebar--full': !isBasic

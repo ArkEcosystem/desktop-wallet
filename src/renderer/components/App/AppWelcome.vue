@@ -5,20 +5,25 @@
   >
     <div
       :style="getBackgroundImage()"
-      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative">
+      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative"
+    >
       <div
         v-if="step == 1"
         :key="1"
-        class="text-center m-8">
+        class="text-center m-8"
+      >
         <div class="flex justify-center items-center mb-8">
           <div class="AppWelcome__Logo">
             <img :src="assets_loadImage('ark-logo.png')">
           </div>
         </div>
-        <span
+        <i18n
+          path="INTRODUCTION.WELCOME.TITLE"
+          tag="span"
           class="text-5xl"
-          v-html="$t('INTRODUCTION.WELCOME.TITLE')"
-        />
+        >
+          <strong place="app">{{ $t('COMMON.APP_NAME') }}</strong>
+        </i18n>
         <div class="mt-3">{{ $t('INTRODUCTION.WELCOME.SAFETY_MESSAGE') }}</div>
         <div class="mt-2">{{ $t('INTRODUCTION.WELCOME.FUNDS_WARNING') }}</div>
         <button
@@ -44,24 +49,45 @@
         <AppIntroScreen
           v-if="step == 2"
           :selection="1"
-          :title="$t('INTRODUCTION.POWER.TITLE')"
           @next="next(3)"
-        />
+        >
+          <i18n
+            slot="title"
+            path="INTRODUCTION.PAGE_TITLE"
+            tag="span"
+          >
+            <strong place="page">{{ $t('INTRODUCTION.POWER.TITLE') }}</strong>
+          </i18n>
+        </AppIntroScreen>
 
         <AppIntroScreen
           v-if="step == 3"
           :selection="2"
-          :title="$t('INTRODUCTION.RESPONSIBILITY.TITLE')"
           @next="next(4)"
-        />
+        >
+          <i18n
+            slot="title"
+            path="INTRODUCTION.PAGE_TITLE"
+            tag="span"
+          >
+            <strong place="page">{{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}</strong>
+          </i18n>
+        </AppIntroScreen>
 
         <AppIntroScreen
           v-if="step == 4"
           :is-last="true"
           :selection="3"
-          :title="$t('INTRODUCTION.TURN.TITLE')"
           @done="done"
-        />
+        >
+          <i18n
+            slot="title"
+            path="INTRODUCTION.PAGE_TITLE"
+            tag="span"
+          >
+            <strong place="page">{{ $t('INTRODUCTION.TURN.TITLE') }}</strong>
+          </i18n>
+        </AppIntroScreen>
       </div>
     </div>
     <AppFooter
@@ -116,8 +142,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="postcss" scoped>
 .AppWelcome__Logo {
   box-shadow: 0 10px 15px rgba(228, 9, 90, 0.34);
   @apply .bg-red .w-24 .p-4 .rounded-lg
@@ -131,5 +156,4 @@ export default {
 .AppWelcome__Logo__corner {
   @apply .bg-red .w-18 .px-3 .py-4 .rounded-tl-lg .rounded-br-lg
 }
-
 </style>

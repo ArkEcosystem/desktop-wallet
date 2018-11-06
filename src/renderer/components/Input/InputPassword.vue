@@ -15,9 +15,9 @@
     >
       <input
         ref="input"
+        v-model="model"
         :name="name"
         :disabled="isDisabled"
-        v-model="model"
         :type="passwordIsVisible ? 'text' : 'password'"
         class="InputPassword__input flex flex-grow bg-transparent text-theme-page-text"
         @blur="onBlur"
