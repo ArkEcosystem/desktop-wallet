@@ -93,7 +93,7 @@ export default {
 
   computed: {
     totalAmount () {
-      return parseInt(this.transaction.amount) + parseInt(this.transaction.fee)
+      return this.transaction.amount + this.transaction.fee
     },
     address () {
       return this.wallet_fromRoute.address

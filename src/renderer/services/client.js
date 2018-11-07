@@ -299,125 +299,124 @@ export default class ClientService {
 
   /**
    * Build a vote transaction
-   * @param {Array} votes
-   * @param {String} passphrase
-   * @param {String} secondPassphrase
-   * @param {String} recipientId
-   * @param {String} wif
+   * @param {Object} data
+   * @param {Array} data.votes
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.recipientId
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
   async buildVote ({ votes, recipientId, passphrase, secondPassphrase, wif }, returnObject = false) {
-    let vote = transactionBuilder
+    const transaction = transactionBuilder
       .vote()
       .recipientId(recipientId)
       .votesAsset(votes)
 
-    if (passphrase) {
-      vote = vote.sign(passphrase)
-    } else if (wif) {
-      vote = vote.signWithWif(wif)
-    }
-
-    if (secondPassphrase) {
-      vote = vote.secondSign(secondPassphrase)
-    }
-
-    if (returnObject) {
-      return vote
-    }
-
-    return vote.getStruct()
+    return this.__signTransaction({
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif
+    }, returnObject)
   }
 
   /**
    * Build a delegate registration transaction
-   * @param {String} username
-   * @param {String} passphrase
-   * @param {String} secondPassphrase
-   * @param {String} wif
+   * @param {Object} data
+   * @param {String} data.username
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
   async buildDelegateRegistration ({ username, passphrase, secondPassphrase, wif }, returnObject = false) {
-    let delegateRegistration = transactionBuilder
+    const transaction = transactionBuilder
       .delegateRegistration()
       .usernameAsset(username)
 
-    if (passphrase) {
-      delegateRegistration = delegateRegistration.sign(passphrase)
-    } else if (wif) {
-      delegateRegistration = delegateRegistration.signWithWif(wif)
-    }
-
-    if (secondPassphrase) {
-      delegateRegistration = delegateRegistration.secondSign(secondPassphrase)
-    }
-
-    if (returnObject) {
-      return delegateRegistration
-    }
-
-    return delegateRegistration.getStruct()
+    return this.__signTransaction({
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif
+    }, returnObject)
   }
 
   /**
    * Build a transfer transaction.
-   * TODO: amount -> convert to arktoshi
-   * @param {Number} amount
-   * @param {String} recipientId
-   * @param {String} vendorField
-   * @param {String} passphrase
-   * @param {String} secondPassphrase
-   * @param {String} wif
+   * @param {Object} data
+   * @param {Number} data.amount - amount to send, as arktoshi
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.recipientId
+   * @param {String} data.vendorField
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
-    let transfer = transactionBuilder
+    const transaction = transactionBuilder
       .transfer()
       .amount(amount)
       .fee(fee)
       .recipientId(recipientId)
       .vendorField(vendorField)
 
-    if (passphrase) {
-      transfer = transfer.sign(passphrase)
-    } else if (wif) {
-      transfer = transfer.signWithWif(wif)
-    }
-
-    if (secondPassphrase) {
-      transfer = transfer.secondSign(secondPassphrase)
-    }
-
-    if (returnObject) {
-      return transfer
-    }
-
-    return transfer.getStruct()
+    return this.__signTransaction({
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif
+    }, returnObject)
   }
 
   /**
    * Build a second signature registration transaction.
-   * @param {String} passphrase
-   * @param {String} secondPassphrase
-   * @param {String} wif
+   * @param {Object} data
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ passphrase, secondPassphrase, wif }, returnObject = false) {
-    let registration = transactionBuilder
+    const transaction = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)
 
+    return this.__signTransaction({
+      transaction,
+      passphrase,
+      wif
+    }, returnObject)
+  }
+
+  /**
+   * Signs a transaction
+   * @param {Object} data
+   * @param {Object} data.transaction
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
     if (passphrase) {
-      registration = registration.sign(passphrase)
+      transaction = transaction.sign(passphrase)
     } else if (wif) {
-      registration = registration.signWithWif(wif)
+      transaction = transaction.signWithWif(wif)
     }
 
-    if (returnObject) {
-      return registration
+    if (secondPassphrase) {
+      transaction = transaction.secondSign(secondPassphrase)
     }
 
-    return registration.getStruct()
+    return returnObject ? transaction : transaction.getStruct()
   }
 
   /**

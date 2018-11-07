@@ -239,12 +239,17 @@ export default {
     },
 
     async submit () {
+      // Ensure that fee has value, even when the user has not interacted
+      if (!this.form.fee) {
+        this.form.fee = this.$refs.fee.fee
+      }
+
       const transactionData = {
-        amount: this.currency_unitToSub(this.form.amount),
+        amount: parseInt(this.currency_unitToSub(this.form.amount)),
         recipientId: this.form.recipientId,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
-        fee: this.currency_unitToSub(this.form.fee),
+        fee: parseInt(this.currency_unitToSub(this.form.fee)),
         wif: this.form.wif
       }
       if (this.currentWallet.secondPublicKey) {
