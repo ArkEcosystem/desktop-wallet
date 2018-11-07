@@ -41,12 +41,16 @@ describe('InputFee', () => {
       i18n,
       propsData: {
         currency: mockNetwork.token,
-        value: '',
         transactionType: 0
       },
       mocks: {
         session_network: mockNetwork,
-        $store: store
+        $store: store,
+        $v: {
+          fee: {
+            $touch: jest.fn()
+          }
+        }
       }
     }, config))
   }
@@ -62,15 +66,15 @@ describe('InputFee', () => {
   })
 
   describe('setFee', () => {
-    it('should establish the fee, as Number', () => {
+    it('should establish the fee, as String', () => {
       const wrapper = mountComponent()
 
       wrapper.vm.setFee(97)
-      expect(wrapper.vm.fee).toEqual(97)
+      expect(wrapper.vm.fee).toEqual('97')
       wrapper.vm.setFee('97')
-      expect(wrapper.vm.fee).toEqual(97)
+      expect(wrapper.vm.fee).toEqual('97')
       wrapper.vm.setFee(Math.pow(10, -5))
-      expect(wrapper.vm.fee).toEqual(0.00001)
+      expect(wrapper.vm.fee).toEqual('0.00001')
     })
 
     describe('when the value cannot be represented accurately', () => {
@@ -85,11 +89,13 @@ describe('InputFee', () => {
         expect(wrapper.vm.fee).toEqual('0.00000001')
       })
     })
+  })
 
-    it('should emit the fee value', () => {
+  describe('emitFee', () => {
+    it('should emit the fee value, as Number', () => {
       const wrapper = mountComponent()
 
-      wrapper.vm.setFee(97)
+      wrapper.vm.emitFee('97')
       expect(wrapper.emitted('input')[0][0]).toEqual(97)
     })
   })

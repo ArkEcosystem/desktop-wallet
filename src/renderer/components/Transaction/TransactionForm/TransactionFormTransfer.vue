@@ -47,7 +47,7 @@
 
     <InputFee
       v-if="session_network.apiVersion === 2"
-      v-model="$v.form.fee.$model"
+      ref="fee"
       :currency="session_network.token"
       :transaction-type="$options.transactionType"
       @input="onFee"
@@ -101,7 +101,7 @@
 </template>
 
 <script>
-import { required, maxLength, numeric } from 'vuelidate/lib/validators'
+import { maxLength, required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalLoader } from '@/components/Modal'
@@ -162,7 +162,7 @@ export default {
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
     },
     maximumAvailableAmount () {
-      return parseFloat(this.currency_subToUnit(this.currentWallet.balance - this.form.fee))
+      return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
     },
     currentWallet () {
       return this.wallet_fromRoute
@@ -239,12 +239,12 @@ export default {
     },
 
     async submit () {
-      let transactionData = {
+      const transactionData = {
         amount: this.currency_unitToSub(this.form.amount),
         recipientId: this.form.recipientId,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
-        fee: this.form.fee,
+        fee: this.currency_unitToSub(this.form.fee),
         wif: this.form.wif
       }
       if (this.currentWallet.secondPublicKey) {
@@ -288,7 +288,12 @@ export default {
       },
       fee: {
         required,
-        numeric
+        isValid () {
+          if (this.$refs.fee) {
+            return !this.$refs.fee.$v.$invalid
+          }
+          return false
+        }
       },
       vendorField: {
         maxLength: maxLength(64)

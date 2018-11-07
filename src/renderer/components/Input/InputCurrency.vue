@@ -60,6 +60,12 @@ const currencyValidator = currency => {
   return includes(currencies, currency)
 }
 
+/**
+ * This component uses a String value internally to avoid several problems, such
+ * as showing the exponential notation, although it emits a Number always.
+ * It also support a `raw` event, that can be used by other components to receive
+ * the internal String value.
+ */
 export default {
   name: 'InputCurrency',
 
@@ -166,14 +172,14 @@ export default {
           } else {
             error = this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
           }
-        } else if (this.inputValue > this.maximumAmount) {
+        } else if (!this.$v.model.isMoreThanMaximum) {
           if (this.maximumError) {
             error = this.maximumError
           } else {
             const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
             error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
           }
-        } else if (this.inputValue < this.minimumAmount) {
+        } else if (!this.$v.model.isLessThanMinimum) {
           if (this.minimumError) {
             error = this.minimumError || error
           } else {
@@ -217,8 +223,8 @@ export default {
   },
 
   watch: {
-    value (value) {
-      this.updateInputValue(value)
+    value (newValue) {
+      this.updateInputValue(newValue)
     }
   },
 
@@ -229,10 +235,14 @@ export default {
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+[,.]?[0-9]*$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+([,.][0-9]+)?$/)))
     },
+    /**
+     * Emits the raw input value, as String, and the Number value
+     */
     emitInput (value) {
-      this.$emit('input', value)
+      this.$emit('raw', value)
+      this.$emit('input', parseFloat(value) || 0)
     },
     focus () {
       this.$refs.input.focus()
@@ -246,6 +256,10 @@ export default {
       this.$v.model.$touch()
       this.$emit('focus')
     },
+    /*
+     * Establishes the "internal" value (`inputValue`) of the component
+     * @param {(String|Number)} value
+     */
     updateInputValue (value) {
       // Ignore empty and not valid values
       if (value && this.checkAmount(value)) {
@@ -262,6 +276,12 @@ export default {
     model: {
       isNumber (value) {
         return this.inputValue && this.checkAmount(this.inputValue)
+      },
+      isLessThanMinimum (value) {
+        return parseFloat(this.inputValue) >= this.minimumAmount
+      },
+      isMoreThanMaximum (value) {
+        return parseFloat(this.inputValue) <= this.maximumAmount
       },
       isRequired (value) {
         if (this.required) {

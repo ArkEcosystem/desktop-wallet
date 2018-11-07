@@ -81,7 +81,14 @@ describe('InputCurrency', () => {
       const wrapper = mountComponent()
       wrapper.find('.InputCurrency input').setValue(99)
 
-      expect(wrapper.emitted('input')[0][0]).toEqual('99')
+      expect(wrapper.emitted('input')[0][0]).toEqual(99)
+    })
+
+    it('should emit the `raw` event', () => {
+      const wrapper = mountComponent()
+      wrapper.find('.InputCurrency input').setValue(99)
+
+      expect(wrapper.emitted('raw')[0][0]).toEqual('99')
     })
   })
 

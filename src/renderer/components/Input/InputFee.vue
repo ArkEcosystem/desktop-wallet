@@ -24,7 +24,7 @@
         :minimum-amount="feeChoices.MINIMUM"
         :minimum-error="minimumError"
         class="w-full InputField--dirty"
-        @input="onInput"
+        @raw="onRawInput"
       />
     </div>
 
@@ -55,6 +55,11 @@
 <script>
 import InputCurrency from './InputCurrency'
 
+/**
+ * This component, like \`InputCurrency\`, uses a String value internally to
+ * avoid several problems, such as showing the exponential notation, although
+ * it emits a Number always
+ */
 export default {
   name: 'InputFee',
 
@@ -62,19 +67,9 @@ export default {
     InputCurrency
   },
 
-  model: {
-    prop: 'value',
-    event: 'input'
-  },
-
   props: {
     currency: {
       type: String,
-      required: true
-    },
-
-    value: {
-      type: [Number, String],
       required: true
     },
 
@@ -129,12 +124,6 @@ export default {
     }
   },
 
-  watch: {
-    value () {
-      this.fee = this.value
-    }
-  },
-
   created () {
     this.prepareFeeStatistics()
   },
@@ -147,7 +136,7 @@ export default {
       this.feeChoices.MAXIMUM = maxFee * Math.pow(10, -8)
       this.feeChoices.MINIMUM = minFee * Math.pow(10, -8)
       this.feeChoices.CUSTOM = this.feeChoices.AVERAGE
-      this.fee = this.feeChoices.AVERAGE
+      this.setFee(this.feeChoices.AVERAGE)
     },
     focusInput () {
       this.$refs.input.focus()
@@ -159,29 +148,63 @@ export default {
       }
 
       const fee = this.feeChoices[choice]
-      this.setFee(fee)
+      this.emitFee(fee)
     },
-    onInput (fee) {
+    /**
+     * Receives the `InputCurrency` value as String
+     * @param {String} fee
+     */
+    onRawInput (fee) {
       this.feeChoice = 'CUSTOM'
+
+      fee = fee.toString()
       this.feeChoices.CUSTOM = fee
-      this.setFee(parseFloat(fee))
+      this.emitFee(fee)
     },
+    /**
+     * The native slider uses Strings
+     * @param {String} fee
+     */
     onSlider (fee) {
       this.feeChoice = 'CUSTOM'
       this.feeChoices.CUSTOM = fee
-      this.setFee(parseFloat(fee))
+      this.emitFee(fee)
     },
+    /**
+     * Establishes the fee as String to avoid the exponential notation
+     * @param {(String|Number)} fee
+     */
     setFee (fee) {
-      fee = parseFloat(fee)
+      fee = fee.toString()
 
       // Convert the fee to String to not use the exponential notation
-      const parts = fee.toString().split('e-')
+      const parts = fee.split('e-')
       if (parts.length > 1) {
-        fee = fee.toFixed(parts[1])
+        fee = parseFloat(fee).toFixed(parts[1])
       }
 
       this.fee = fee
-      this.$emit('input', this.fee)
+      this.$v.fee.$touch()
+    },
+    /**
+     * Establishes the fee as String to avoid the exponential notation, although
+     * it emits the value as a Number
+     * @param {String} fee
+     */
+    emitFee (fee) {
+      this.setFee(fee)
+      this.$emit('input', parseFloat(this.fee))
+    }
+  },
+
+  validations: {
+    fee: {
+      isValid (value) {
+        if (this.$refs.input) {
+          return !this.$refs.input.$v.$invalid
+        }
+        return false
+      }
     }
   }
 }
