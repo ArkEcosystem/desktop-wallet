@@ -3,7 +3,7 @@
     v-click-outside="emitClose"
     :is-horizontal="isHorizontal"
     :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
-    class="absolute z-10"
+    class="absolute z-20"
   >
     <MenuOptionsItem
       :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
