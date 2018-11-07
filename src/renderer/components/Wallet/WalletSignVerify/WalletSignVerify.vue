@@ -54,7 +54,7 @@
           <div>{{ $t('SIGN_VERIFY.SIGNATURE') }}:</div>
         </div>
         <div>
-          <div>{{ message.message }}</div>
+          <div>{{ truncate(message.message, 50) }}</div>
           <div>{{ truncate(message.signature, 50) }}</div>
         </div>
       </div>
@@ -118,7 +118,10 @@ export default {
 
   methods: {
     truncate (value, length) {
-      return `${value.slice(0, length)}...`
+      if (value.length > (length + 3)) {
+        return `${value.slice(0, length)}...`
+      }
+      return value
     },
     copyMessage (value) {
       var message = clone(value, false)
