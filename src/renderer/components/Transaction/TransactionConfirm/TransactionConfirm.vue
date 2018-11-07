@@ -22,6 +22,7 @@
 
         <button
           class="TransactionConfirm__send-button blue-button px-2"
+          :disabled="wasClicked"
           @click="emitConfirm"
         >
           {{ $t('TRANSACTION.SEND') }}
@@ -86,7 +87,8 @@ export default {
   },
 
   data: () => ({
-    activeComponent: null
+    activeComponent: null,
+    wasClicked: false
   }),
 
   computed: {
@@ -114,7 +116,11 @@ export default {
     },
 
     emitConfirm () {
-      this.$emit('confirm')
+      if (!this.wasClicked) {
+        this.wasClicked = true
+
+        this.$emit('confirm')
+      }
     },
 
     async saveTransaction () {
