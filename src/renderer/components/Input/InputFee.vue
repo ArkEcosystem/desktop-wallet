@@ -39,13 +39,15 @@
       @input="onSlider($event.target.value)"
     >
     <p class="InputFee__choices absolute z-30">
-      <span
+      <button
         v-for="choice in Object.keys(feeChoices)"
         :key="choice"
         :class="{ 'InputFee__choice--active': choice === feeChoice }"
         class="InputFee__choice cursor-pointer font-semibold text-xs"
         @click="onChoice(choice)"
-      >{{ $t(`INPUT_FEE.${choice}`) }}</span>
+      >
+        {{ $t(`INPUT_FEE.${choice}`) }}
+      </button>
     </p>
   </div>
 </template>

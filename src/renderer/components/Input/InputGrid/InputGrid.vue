@@ -6,7 +6,7 @@
           v-for="item in visibleItems"
           :key="item[itemKey]"
         >
-          <div @click="select(item)">
+          <button @click="select(item)">
             <slot
               v-bind="itemSlotAttrs(item)"
               name="item"
@@ -19,11 +19,11 @@
                 :title="item.title"
               />
             </slot>
-          </div>
+          </button>
         </div>
 
         <slot name="more">
-          <div
+          <button
             v-if="modalHeaderText"
             @click="openModal"
           >
@@ -34,7 +34,7 @@
               class="text-4xl text-center p-1 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text"
               text-content="..."
             />
-          </div>
+          </button>
 
           <InputGridModal
             v-if="isModalOpen"

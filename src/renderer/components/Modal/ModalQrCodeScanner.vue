@@ -109,6 +109,6 @@ export default {
 }
 
 .qrcode-stream__inner-wrapper video {
-  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 </style>

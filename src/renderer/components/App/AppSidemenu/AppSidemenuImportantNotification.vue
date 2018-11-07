@@ -1,19 +1,20 @@
 <template>
-  <div
-    v-tooltip="{
-      content: tooltipText,
-      placement: isHorizontal ? 'bottom' : 'right'
-    }"
-    class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center"
-    @click="openNotification"
-  >
-    <div class="AppSidemenuImportantNotification__circle flex items-center justify-center h-12 w-12 rounded-full text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature">
-      <SvgIcon
-        name="notification"
-        view-box="0 0 15 15"
-      />
-    </div>
-
+  <div>
+    <button
+      v-tooltip="{
+        content: tooltipText,
+        placement: isHorizontal ? 'bottom' : 'right'
+      }"
+      class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center w-full"
+      @click="openNotification"
+    >
+      <div class="AppSidemenuImportantNotification__circle flex items-center justify-center h-12 w-12 rounded-full text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature">
+        <SvgIcon
+          name="notification"
+          view-box="0 0 15 15"
+        />
+      </div>
+    </button>
     <portal
       v-if="isNotificationVisible"
       to="modal"

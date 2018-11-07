@@ -10,7 +10,7 @@
       class="AppSidemenuNetworkStatus__peer"
     >
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
-        <div
+        <button
           @click="toggleSelect('peers-menu')"
         >
           <div
@@ -28,7 +28,7 @@
               @select="setPeer"
             />
           </div>
-        </div>
+        </button>
         <ButtonReload
           :is-refreshing="isRefreshing"
           class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b pt-3 pb-2 px-2"

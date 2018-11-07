@@ -1,5 +1,5 @@
 <template>
-  <div
+  <button
     :class="alert ? `AlertMessage--${alert.type}` : 'opacity-0 hidden'"
     class="AlertMessage absolute z-50 max-w-1/2 min-w-1/4 rounded-lg inline pin-b pin-l m-4 p-4 text-white"
   >
@@ -12,7 +12,7 @@
         {{ alert ? alert.message : '&nbsp;' }}
       </span>
     </div>
-  </div>
+  </button>
 </template>
 
 <script>

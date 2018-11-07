@@ -46,7 +46,7 @@
                   {{ name }}
                 </span>
 
-                <div
+                <button
                   class="ml-2 cursor-pointer text-grey hover:text-blue"
                   @click="toggleIsNameEditable"
                 >
@@ -54,7 +54,7 @@
                     name="edit"
                     view-box="0 0 11 14"
                   />
-                </div>
+                </button>
               </ListDividedItem>
 
               <ListDividedItem :label="$t('COMMON.LANGUAGE')">

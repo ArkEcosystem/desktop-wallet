@@ -17,7 +17,7 @@
     </div>
 
     <div class="PassphraseVerification__suggestions">
-      <span
+      <button
         v-for="suggestion in suggestions"
         :key="suggestion"
         :class="acceptedWords[currentPosition] === suggestion
@@ -29,7 +29,7 @@
         @click="updateCurrentWord(suggestion)"
       >
         {{ suggestion }}
-      </span>
+      </button>
     </div>
   </div>
 </template>

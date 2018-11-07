@@ -25,7 +25,7 @@
         }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
-        <div
+        <button
           :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
           :title="profile.name"
           class="profile-avatar-xl background-image flex cursor-pointer"
@@ -44,12 +44,12 @@
             {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
           </router-link>
 
-          <div
+          <button
             class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
             @click="openRemovalConfirmation(profile)"
           >
             {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
-          </div>
+          </button>
 
           <a
             v-show="profile.id !== session_profile.id"

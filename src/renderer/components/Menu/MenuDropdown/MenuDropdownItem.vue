@@ -1,20 +1,22 @@
 <template>
-  <li
-    :class="
-      isActive
-        ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text'
-        : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
-    "
-    class="MenuDropdownItem cursor-pointer bt-theme-feature"
-    @click.stop="emitClick"
-  >
-    <div
-      class="MenuDropdownItem__container mx-8 py-4 px-5 border-b text-center transition"
+  <li class="MenuDropdownItem">
+    <button
+      :class="
+        isActive
+          ? 'MenuDropdownItem--active bg-theme-feature-item-hover text-theme-feature-item-selected-text'
+          : 'text-grey-dark hover:bg-theme-feature-item-alternative border-grey-light'
+      "
+      class="MenuDropdownItem__button cursor-pointer bt-theme-feature w-full"
+      @click.stop="emitClick"
     >
-      <slot>
-        <span class="font-semibold">{{ value }}</span>
-      </slot>
-    </div>
+      <div
+        class="MenuDropdownItem__container mx-8 py-4 px-5 border-b text-center transition"
+      >
+        <slot>
+          <span class="font-semibold">{{ value }}</span>
+        </slot>
+      </div>
+    </button>
   </li>
 </template>
 

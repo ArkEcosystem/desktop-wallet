@@ -5,9 +5,9 @@
       v-if="!walletVote.publicKey && isExplanationDisplayed"
       class="WalletDelegates__explanation relative rounded-lg mt-4 mb-8 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
     >
-      <div
+      <button
         :class="{ 'WalletDelegates__explanation__text--truncated': isExplanationTruncated }"
-        class="WalletDelegates__explanation__text flex text-lg cursor-pointer"
+        class="WalletDelegates__explanation__text flex text-lg cursor-pointer text-left text-inherit"
         @click="readMore"
       >
         <div class="pt-6 pb-6 pl-6">
@@ -22,7 +22,7 @@
             </a>
           </span>
         </div>
-      </div>
+      </button>
 
       <div class="flex p-6 z-10">
         <ButtonClose

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <button
     :class="{ 'MenuNavigationItem--active': isActive, 'w-full' : !isHorizontal }"
     class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
     @click="onClick"
@@ -30,7 +30,7 @@
       v-if="isHorizontal"
       class="MenuNavigationItemHorizontal__border absolute h-full"
     />
-  </div>
+  </button>
 </template>
 
 <script>

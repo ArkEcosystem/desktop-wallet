@@ -43,12 +43,12 @@
           <span class="font-bold mt-2">
             {{ formatter_networkCurrency(contact.balance, 2) }}
           </span>
-          <div
+          <button
             class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
             @click="openRemovalConfirmation(contact)"
           >
             {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
-          </div>
+          </button>
         </div>
       </div>
     </div>

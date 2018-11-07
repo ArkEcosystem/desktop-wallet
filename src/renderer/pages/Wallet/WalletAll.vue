@@ -42,13 +42,13 @@
           <span class="font-bold mt-2">
             {{ formatter_networkCurrency(wallet.balance, 2) }}
           </span>
-          <div
+          <button
             v-if="!wallet.isLedger"
             class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
             @click="openRemovalConfirmation(wallet)"
           >
             {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
-          </div>
+          </button>
         </div>
 
       </div>

@@ -1,8 +1,8 @@
 <template>
-  <div
+  <button
     :class="[
       value ? '' : 'text-theme-page-text-light hover:text-theme-page-text',
-      'MenuDropdownHandler cursor-pointer transition flex justify-between items-center']"
+      'MenuDropdownHandler cursor-pointer transition flex justify-between items-center text-inherit']"
     @click="emitClick"
   >
     <span>
@@ -18,7 +18,7 @@
         view-box="0 0 20 20"
       />
     </span>
-  </div>
+  </button>
 </template>
 
 <script>

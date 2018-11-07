@@ -28,7 +28,7 @@ describe('MenuDropdown', () => {
           value: 'Test'
         }
       })
-      const element = wrapper.find('.MenuDropdownItem')
+      const element = wrapper.find('.MenuDropdownItem__button')
       element.trigger('click')
       expect(wrapper.emitted('click')).toBeTruthy()
     })
@@ -98,7 +98,7 @@ describe('MenuDropdown', () => {
 
         const handler = wrapper.find('.MenuDropdownHandler')
         handler.trigger('click')
-        const item = wrapper.find('.MenuDropdownItem')
+        const item = wrapper.find('.MenuDropdownItem__button')
         item.trigger('click')
 
         expect(wrapper.emitted().select[0]).toEqual(['first'])
@@ -131,7 +131,7 @@ describe('MenuDropdown', () => {
 
         const handler = wrapper.find('.MenuDropdownHandler')
         handler.trigger('click')
-        const item = wrapper.find('.MenuDropdownItem')
+        const item = wrapper.find('.MenuDropdownItem__button')
         item.trigger('click')
 
         expect(wrapper.emitted().select[0]).toEqual(['first'])

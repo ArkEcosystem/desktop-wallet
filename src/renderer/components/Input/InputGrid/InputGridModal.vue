@@ -14,7 +14,7 @@
           <h4 class="w-full mt-5 mb-2">{{ category }}</h4>
 
           <div class="InputGrid__container__category__items">
-            <div
+            <button
               v-for="item in categoryItems"
               :key="item[itemKey]"
               @click="click(item)"
@@ -30,7 +30,7 @@
                 :is-selected="clicked === item"
                 :title="item.title"
               />
-            </div>
+            </button>
 
           </div>
         </div>

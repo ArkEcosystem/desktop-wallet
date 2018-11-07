@@ -140,7 +140,7 @@ export default {
   @apply .hidden
 }
 .WalletSidebar--full .WalletSidebar__wallet__wrapper {
-  @apply .border-b .border-theme-feature-item-alternative
+  @apply .border-b .border-theme-feature-item-alternative .text-left
 }
 .WalletSidebar--full .WalletSidebar__wallet__identicon {
   @apply .mr-2
