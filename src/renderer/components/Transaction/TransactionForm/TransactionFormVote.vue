@@ -57,7 +57,7 @@
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
       <InputPassword
-        v-else-if="!currentWallet.passphrase"
+        v-else-if="currentWallet.passphrase"
         ref="password"
         v-model="$v.form.walletPassword.$model"
         :label="$t('TRANSACTION.PASSWORD')"
