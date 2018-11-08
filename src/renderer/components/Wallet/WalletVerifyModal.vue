@@ -129,7 +129,6 @@ export default {
 
   methods: {
     verifyMessage () {
-      // TODO: use try catch for the verify functions?
       try {
         let verified
         if (this.verifyChoice === 'Verify') {

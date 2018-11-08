@@ -23,7 +23,8 @@ export default {
     SELECT_THEME: 'Select wallet theme',
     START: 'Start',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
-    DATE: 'Date'
+    DATE: 'Date',
+    WARNING: 'Warning'
   },
 
   INTRODUCTION: {
@@ -431,7 +432,8 @@ export default {
           TEXT: 'Enter a password you would like to use in order to encrypt your passphrase.'
         },
         TITLE: '2. Encryption',
-        PASSWORD: 'Wallet password (optional)'
+        PASSWORD: 'Wallet password (optional)',
+        PASSWORD_WARNING: 'Storing your passphrase can bring risks.'
       },
       STEP3: {
         INSTRUCTIONS: {
@@ -480,7 +482,8 @@ export default {
           TEXT: 'Enter a password you would like to use in order to encrypt your passphrase.'
         },
         TITLE: '4. Encryption',
-        PASSWORD: 'Wallet password (optional)'
+        PASSWORD: 'Wallet password (optional)',
+        PASSWORD_WARNING: 'Storing your passphrase can bring risks.'
       },
       STEP5: {
         INSTRUCTIONS: {

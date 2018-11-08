@@ -79,7 +79,6 @@
 
             <div class="flex flex-col h-full w-full justify-around">
 
-              <!-- TODO: Warning of storing passphrases even encrypted -->
               <InputPassword
                 ref="password"
                 v-model="walletPassword"
@@ -90,6 +89,11 @@
                 class="my-3"
                 name="wallet-password"
               />
+
+              <span class="text-orange-dark">
+                <span class="font-bold">{{ $t('COMMON.WARNING') }}:</span>
+                <span>{{ $t('PAGES.WALLET_IMPORT.STEP2.PASSWORD_WARNING') }}</span>
+              </span>
 
             </div>
 
