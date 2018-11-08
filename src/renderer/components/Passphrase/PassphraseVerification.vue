@@ -25,7 +25,7 @@
           : 'hover:text-theme-button-text'
         "
         :title="suggestion"
-        class="PassphraseVerification__suggestions__input cursor-pointer py-2 px-1 text-center"
+        class="PassphraseVerification__suggestions__input cursor-pointer py-2 px-1 text-center text-theme-page-text"
         @click="updateCurrentWord(suggestion)"
       >
         {{ suggestion }}
