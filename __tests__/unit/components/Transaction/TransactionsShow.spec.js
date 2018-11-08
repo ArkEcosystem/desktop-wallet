@@ -28,6 +28,11 @@ describe('TransactionShow', () => {
       mixins: [FormatterMixin],
       mocks: {
         $d: jest.fn(),
+        session_network: {
+          constants: {
+            activeDelegates: 51
+          }
+        },
         wallet_formatAddress: address => address
       },
       stubs: {

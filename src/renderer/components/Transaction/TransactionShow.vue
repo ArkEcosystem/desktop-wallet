@@ -90,8 +90,15 @@
       />
 
       <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
-        <span>{{ transaction.confirmations }}</span>
-        <!-- TODO: Well confirmed -->
+        <span v-if="!isWellConfirmed">{{ transaction.confirmations }}</span>
+        <span
+          v-else
+          v-tooltip="{
+            content: $t('TRANSACTION.CONFIRMATION_COUNT', [transaction.confirmations]),
+            trigger: 'hover',
+            classes: 'text-xs'
+          }"
+        >{{ $t('TRANSACTION.WELL_CONFIRMED') }}</span>
       </ListDividedItem>
 
       <ListDividedItem
@@ -134,8 +141,13 @@ export default {
     }
   },
 
-  methods: {
+  computed: {
+    isWellConfirmed () {
+      return this.transaction.confirmations >= (this.session_network.constants.activeDelegates || 51)
+    }
+  },
 
+  methods: {
     openTransaction () {
       this.network_openExplorer('transaction', this.transaction.id)
     },
