@@ -45,7 +45,7 @@
           </router-link>
 
           <button
-            class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 hover:underline hover:text-red"
+            class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"
             @click="openRemovalConfirmation(profile)"
           >
             {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
