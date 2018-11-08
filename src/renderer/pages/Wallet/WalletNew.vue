@@ -6,8 +6,8 @@
         :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
         class="WalletNew__instructions flex-grow background-image w-3/5"
       >
-        <div class="mt-16 mx-16 w-1/2">
-          <h3 class="mb-2">{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+        <div class="instructions-text">
+          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
 
           <p v-if="step === 1">
             {{ $t('PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_BEFORE_BUTTON') }}
@@ -16,6 +16,7 @@
               :is-refreshing="isRefreshing"
               :without-background="true"
               class="WalletNew__refresh-button inline"
+              text-class="text-theme-page-instructions-text"
               @click="refreshAddresses"
             />
 

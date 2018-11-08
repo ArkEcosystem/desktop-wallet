@@ -46,6 +46,8 @@ let colors = {
   'theme-page': 'var(--theme-page)',
   'theme-page-text': 'var(--theme-page-text)',
   'theme-page-text-light': 'var(--theme-page-text-light)',
+  'theme-page-instructions-text': 'var(--theme-page-instructions-text)',
+  'theme-page-instructions-background': 'var(--theme-page-instructions-background)',
   'theme-modal': 'var(--theme-modal)',
 
   'theme-announcements-gradient-1': 'var(--theme-announcements-gradient-1)',

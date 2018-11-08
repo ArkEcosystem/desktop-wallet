@@ -38,3 +38,7 @@ input:focus {
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
 }
+
+.instructions-text {
+  @apply .mt-16 .mx-16 .w-1/2 .p-4 .rounded-lg .text-theme-page-instructions-text .bg-theme-page-instructions-background
+}

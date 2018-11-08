@@ -6,8 +6,8 @@
         :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
         class="ProfileNew__instructions w-2/3 background-image"
       >
-        <div class="mt-16 mx-16 w-1/2">
-          <h3 class="mb-2">{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+        <div class="instructions-text">
+          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
           <p>
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>

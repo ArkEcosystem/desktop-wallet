@@ -6,8 +6,8 @@
         :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
         class="ContactNew__instructions flex-grow background-image w-3/5"
       >
-        <div class="mt-16 mx-16 w-1/2">
-          <h3 class="mb-2">{{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+        <div class="instructions-text">
+          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
 
           <p>
             {{ $t('PAGES.CONTACT_NEW.STEP1.INSTRUCTIONS.TEXT') }}
