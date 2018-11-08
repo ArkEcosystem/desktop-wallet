@@ -609,7 +609,9 @@ export default {
     VERIFIED: 'The message is verified successfully',
     NOT_VERIFIED: 'The message is NOT verified',
     CONFIRMATION: 'Confirmation',
-    DELETE: 'Delete message'
+    DELETE: 'Delete message',
+    FAILED_SIGN: 'Could not sign message',
+    FAILED_VERIFY: 'Could not verify message'
   },
 
   TRANSACTION_FORM: {

@@ -130,18 +130,22 @@ export default {
   methods: {
     verifyMessage () {
       // TODO: use try catch for the verify functions?
-      let verified
-      if (this.verifyChoice === 'Verify') {
-        verified = WalletService.verifyMessage(this.form.message, this.form.publicKey, this.form.signature)
-      } else {
-        const json = JSON.parse(this.form.json)
-        verified = WalletService.verifyMessage(json['message'], json['publicKey'], json['signature'])
-      }
+      try {
+        let verified
+        if (this.verifyChoice === 'Verify') {
+          verified = WalletService.verifyMessage(this.form.message, this.form.publicKey, this.form.signature)
+        } else {
+          const json = JSON.parse(this.form.json)
+          verified = WalletService.verifyMessage(json['message'], json['publicKey'], json['signature'])
+        }
 
-      if (verified) {
-        this.isVerified = true
-      } else {
-        this.isNotVerified = true
+        if (verified) {
+          this.isVerified = true
+        } else {
+          this.isNotVerified = true
+        }
+      } catch (error) {
+        this.$error(this.$t('SIGN_VERIFY.FAILED_VERIFY'))
       }
     },
 

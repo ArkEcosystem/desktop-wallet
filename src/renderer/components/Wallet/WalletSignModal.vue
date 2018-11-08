@@ -120,18 +120,21 @@ export default {
     },
 
     signMessage () {
-      // TODO: Use try catch for the sign function?
-      let message
-      if (this.form.wif) {
-        message = WalletService.signMessageWithWif(this.form.message, this.form.wif)
-      } else {
-        message = WalletService.signMessage(this.form.message, this.form.passphrase)
-      }
-      message['timestamp'] = new Date().getTime()
-      message['address'] = this.wallet.address
-      this.$store.dispatch('wallet/addSignedMessage', message)
+      try {
+        let message
+        if (this.form.wif) {
+          message = WalletService.signMessageWithWif(this.form.message, this.form.wif)
+        } else {
+          message = WalletService.signMessage(this.form.message, this.form.passphrase)
+        }
+        message['timestamp'] = new Date().getTime()
+        message['address'] = this.wallet.address
+        this.$store.dispatch('wallet/addSignedMessage', message)
 
-      this.emitSigned()
+        this.emitSigned()
+      } catch (error) {
+        this.$error(this.$t('SIGN_VERIFY.FAILED_SIGN'))
+      }
     },
 
     emitCancel () {
