@@ -3,7 +3,7 @@
     <main class="flex flex-row h-full">
 
       <div
-        :style="`background-image: url('${assets_loadImage('pages/background-1920.png')}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
         class="ProfileNew__instructions w-2/3 background-image"
       >
         <div class="mt-16 mx-16 w-1/2">
@@ -161,7 +161,19 @@ export default {
   schema: Profile.schema,
 
   data: () => ({
-    step: 1
+    step: 1,
+    backgroundImages: {
+      true: {
+        1: 'pages/profile-new/background-step-1-dark.png',
+        2: 'pages/profile-new/background-step-2-dark.png',
+        3: 'pages/profile-new/background-step-3-dark.png'
+      },
+      false: {
+        1: 'pages/profile-new/background-step-1.png',
+        2: 'pages/profile-new/background-step-2.png',
+        3: 'pages/profile-new/background-step-3.png'
+      }
+    }
   }),
 
   computed: {
@@ -223,6 +235,9 @@ export default {
     },
     networks () {
       return this.$store.getters['network/all']
+    },
+    isDarkMode () {
+      return this.$store.getters['session/hasDarkTheme']
     }
   },
 

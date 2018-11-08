@@ -3,7 +3,7 @@
     <main class="flex flex-row h-full">
 
       <div
-        :style="`background-image: url('${assets_loadImage('pages/background-1920.png')}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
         class="ContactNew__instructions flex-grow background-image w-3/5"
       >
         <div class="mt-16 mx-16 w-1/2">
@@ -87,8 +87,24 @@ export default {
   schema: Wallet.schema,
 
   data: () => ({
-    step: 1
+    step: 1,
+    backgroundImages: {
+      true: {
+        1: 'pages/wallet-new/background-step-1-dark.png',
+        2: 'pages/wallet-new/background-step-5-dark.png'
+      },
+      false: {
+        1: 'pages/wallet-new/background-step-1.png',
+        2: 'pages/wallet-new/background-step-5.png'
+      }
+    }
   }),
+
+  computed: {
+    isDarkMode () {
+      return this.$store.getters['session/hasDarkTheme']
+    }
+  },
 
   beforeRouteEnter (to, from, next) {
     next(vm => {

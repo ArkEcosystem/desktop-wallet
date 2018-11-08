@@ -3,7 +3,7 @@
     <main class="flex flex-row h-full">
 
       <div
-        :style="`background-image: url('${assets_loadImage('pages/background-1920.png')}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
         class="ProfileEdition__instructions w-3/5 background-image"
       >
         <div class="mt-16 mx-16 w-1/2">
@@ -274,6 +274,11 @@ export default {
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
       return this.modified.theme || this.profile.theme
+    },
+    backgroundImage () {
+      const hasDarkMode = this.$store.getters['session/hasDarkTheme']
+
+      return `pages/profile-new/background-step-3${hasDarkMode ? '-dark' : ''}.png`
     }
   },
 

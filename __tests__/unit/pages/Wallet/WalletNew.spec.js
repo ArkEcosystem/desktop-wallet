@@ -15,6 +15,11 @@ describe('pages > WalletNew', () => {
       i18n,
       mocks: {
         schema: {},
+        $store: {
+          getters: {
+            'session/hasDarkTheme': false
+          }
+        },
         $v: {
           step1: {},
           step3: {},
