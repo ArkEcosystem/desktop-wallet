@@ -176,7 +176,7 @@ export default {
         return ''
       }
 
-      if (this.minLength && this.model.length <= this.minLength) {
+      if (this.minLength && this.model.length < this.minLength) {
         return this.$t('VALIDATION.PASSWORD.TOO_SHORT', [this.minLength])
       } else if (!this.model.match(/[0-9]+/)) {
         return this.$t('VALIDATION.PASSWORD.NUMBERS')
@@ -204,7 +204,7 @@ export default {
           return true
         }
 
-        if (this.minLength && this.model.length <= this.minLength) {
+        if (this.minLength && this.model.length < this.minLength) {
           return false
         } else if (!this.model.match(/[0-9]+/)) {
           return false

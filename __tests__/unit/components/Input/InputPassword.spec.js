@@ -63,4 +63,46 @@ describe('InputPassword', () => {
       expect(wrapper.emitted('focus')).toBeTruthy()
     })
   })
+
+  describe('when the password is shorter than the minimum', () => {
+    it('should provide feedback about it', () => {
+      const value = 'aaaa0000'
+      mountData.propsData.value = value
+      mountData.propsData.minLength = value.length + 1
+      const wrapper = mount(InputPassword, mountData)
+
+      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.TOO_SHORT')
+    })
+  })
+
+  describe('when the password does not include a number', () => {
+    it('should provide feedback about it', () => {
+      mountData.propsData.value = 'aaaabbbb'
+      mountData.propsData.minLength = 2
+      const wrapper = mount(InputPassword, mountData)
+
+      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.NUMBERS')
+    })
+  })
+
+  describe('when the password does not include a special character', () => {
+    it('should provide feedback about it', () => {
+      mountData.propsData.value = 'aaaa0000'
+      mountData.propsData.minLength = 2
+      const wrapper = mount(InputPassword, mountData)
+
+      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.SPECIAL_CHARACTERS')
+    })
+  })
+
+  describe('when the password follows all the constraints', () => {
+    it('should not provide feedback', () => {
+      const value = 'aaaa000+'
+      mountData.propsData.value = value
+      mountData.propsData.minLength = value.length
+      const wrapper = mount(InputPassword, mountData)
+
+      expect(wrapper.vm.passwordFeedback()).toEqual('')
+    })
+  })
 })
