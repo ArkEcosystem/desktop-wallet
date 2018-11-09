@@ -3,6 +3,9 @@
 import { app, BrowserWindow, screen } from 'electron'
 import WinState from 'win-state'
 
+// It is necessary to require `electron-log` here to use it on the renderer process
+require('electron-log')
+
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
