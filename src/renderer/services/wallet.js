@@ -1,5 +1,7 @@
 import bip39 from 'bip39'
 import { crypto, Message, validator } from '@arkecosystem/crypto'
+import { version as mainnetVersion } from '@config/networks/mainnet'
+import axios from 'axios'
 
 export default class WalletService {
   /*
@@ -37,6 +39,21 @@ export default class WalletService {
 
   static getAddressFromPublicKey (publicKey, pubKeyHash) {
     return crypto.getAddress(publicKey, pubKeyHash)
+  }
+
+  /**
+   * Check if a specific address contain data in the NEO Blockchain
+   * @param {String} address
+   * @returns {Boolean}
+   */
+  static async isNeoAddress (address) {
+    if (!WalletService.validateAddress(address, mainnetVersion)) {
+      return false
+    }
+
+    const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
+    const response = await axios.get(neoUrl + address)
+    return response.status === 200 && response.data && response.data.length > 0
   }
 
   /**

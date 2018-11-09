@@ -23,9 +23,9 @@
     </button>
 
     <div
-      v-if="isOpen"
+      v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside="close"
-      :class="{ 'pin-above': pinAbove }"
+      :class="{ 'MenuDropdown--pin-above': pinAbove }"
       class="absolute min-w-full z-20"
     >
       <ul
@@ -38,7 +38,7 @@
             :key="key"
             :value="item"
             :is-active="key === activeKey"
-            @click="select(key)"
+            @click.self="select(key)"
           />
         </slot>
       </ul>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { zipObject } from 'lodash'
+import { zipObject, isEmpty } from 'lodash'
 import MenuDropdownItem from './MenuDropdownItem'
 import MenuDropdownHandler from './MenuDropdownHandler'
 
@@ -113,6 +113,9 @@ export default {
     },
     hasDefaultSlot () {
       return !!this.$slots.default
+    },
+    hasItems () {
+      return !isEmpty(this.items)
     }
   },
 
@@ -138,6 +141,10 @@ export default {
       this.isOpen = !this.isOpen
     },
 
+    open () {
+      this.isOpen = true
+    },
+
     close () {
       this.isOpen = false
     }
@@ -145,12 +152,12 @@ export default {
 }
 </script>
 
-<style scoped>
-.MenuDropdown /deep/ .MenuDropdownItem:last-child .MenuDropdownItem__container {
+<style lang="postcss">
+.MenuDropdown .MenuDropdownItem:last-child .MenuDropdownItem__container {
   border: none;
 }
 
-.pin-above {
+.MenuDropdown--pin-above {
   @apply pin-b pb-10;
 }
 </style>

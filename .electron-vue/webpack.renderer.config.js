@@ -167,7 +167,7 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       '@tailwind': path.join(__dirname, '../tailwind.js'),
       '@package.json': path.join(__dirname, '../package.json'),
-      '@config': path.join(__dirname, '../config/index.js'),
+      '@config': path.join(__dirname, '../config'),
       '@tests': path.join(__dirname, '../__tests__'),
       'vue$': 'vue/dist/vue.esm.js'
     },

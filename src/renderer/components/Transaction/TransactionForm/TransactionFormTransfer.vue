@@ -7,6 +7,7 @@
       v-model="$v.form.recipientId.$model"
       :label="$t('TRANSACTION.RECIPIENT')"
       :pub-key-hash="session_network.version"
+      :show-suggestions="true"
       name="recipientId"
       class="mb-5"
     />

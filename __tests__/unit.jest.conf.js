@@ -12,6 +12,7 @@ module.exports = {
     '^@tailwind': '<rootDir>/tailwind.js',
     '^@package.json$': '<rootDir>/package.json',
     '^@config': '<rootDir>/config/index.js',
+    '^@config/(.*)$': '<rootDir>/config/$1',
     '^@/(.*)$': '<rootDir>/src/renderer/$1',
     '^@tests/(.*)$': '<rootDir>/__tests__/$1'
   },

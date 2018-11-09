@@ -74,7 +74,11 @@ describe('MenuDropdown', () => {
 
   describe('Menu', () => {
     it('should render component', () => {
-      const wrapper = mount(MenuDropdown)
+      const wrapper = mount(MenuDropdown, {
+        propsData: {
+          items: [1, 2, 3]
+        }
+      })
       expect(wrapper.contains('.MenuDropdown')).toBeTruthy()
     })
 

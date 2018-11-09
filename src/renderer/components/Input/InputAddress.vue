@@ -1,55 +1,70 @@
 <template>
-  <InputField
-    :label="label"
-    :helper-text="helperText || neoAddressText || error"
-    :is-dirty="$v.model.$dirty"
-    :is-disabled="isDisabled"
-    :is-focused="isFocused"
-    :is-invalid="isInvalid"
-    class="InputAddress"
+  <MenuDropdown
+    ref="dropdown"
+    :items="suggestions"
+    :value="dropdownValue"
+    @select="onDropdownSelect"
   >
-    <div
-      slot-scope="{ inputClass }"
-      :class="inputClass"
-      class="flex flex-row"
+    <InputField
+      slot="handler"
+      :label="label"
+      :helper-text="helperText || error"
+      :is-dirty="$v.model.$dirty"
+      :is-disabled="isDisabled"
+      :is-focused="isFocused"
+      :is-invalid="isInvalid"
+      class="InputAddress text-left"
     >
-      <input
-        ref="input"
-        v-model="model"
-        :name="name"
-        :disabled="isDisabled"
-        type="text"
-        class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
-        @blur="onBlur"
-        @focus="onFocus"
+      <div
+        slot-scope="{ inputClass }"
+        :class="inputClass"
+        class="flex flex-row"
       >
-      <ButtonModal
-        ref="button-qr"
-        :label="''"
-        class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
-        icon="qr"
-        view-box="0 0 20 20"
-      >
-        <template slot-scope="{ toggle, isOpen }">
-          <ModalQrCodeScanner
-            v-if="isOpen"
-            :toggle="toggle"
-            @close="toggle"
-            @decoded="onDecode"
-          />
-        </template>
-      </ButtonModal>
-    </div>
-  </InputField>
+        <input
+          ref="input"
+          v-model="model"
+          :name="name"
+          :disabled="isDisabled"
+          type="text"
+          class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
+          @blur="onBlur"
+          @focus="onFocus"
+          @click.self.stop
+          @keyup.up="onKeyUp"
+          @keyup.down="onKeyDown"
+          @keyup.esc="onEsc"
+          @keyup.enter="onEnter"
+        >
+        <ButtonModal
+          ref="button-qr"
+          :label="''"
+          class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
+          icon="qr"
+          view-box="0 0 20 20"
+        >
+          <template slot-scope="{ toggle, isOpen }">
+            <ModalQrCodeScanner
+              v-if="isOpen"
+              :toggle="toggle"
+              @close="toggle"
+              @decoded="onDecodeQR"
+            />
+          </template>
+        </ButtonModal>
+      </div>
+    </InputField>
+  </MenuDropdown>
 </template>
 
 <script>
 import { required } from 'vuelidate/lib/validators'
 import { ButtonModal } from '@/components/Button'
 import { ModalQrCodeScanner } from '@/components/Modal'
+import { MenuDropdown } from '@/components/Menu'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
-import axios from 'axios'
+import _ from 'lodash'
+import Cycled from 'cycled'
 
 export default {
   name: 'InputAddress',
@@ -57,7 +72,8 @@ export default {
   components: {
     ButtonModal,
     InputField,
-    ModalQrCodeScanner
+    ModalQrCodeScanner,
+    MenuDropdown
   },
 
   props: {
@@ -87,6 +103,11 @@ export default {
       type: Number,
       required: true
     },
+    showSuggestions: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     value: {
       type: String,
       required: true
@@ -95,41 +116,79 @@ export default {
 
   data: vm => ({
     inputValue: vm.value,
-    isFocused: false,
-    neoAddressText: null
+    dropdownValue: null,
+    isFocused: false
   }),
 
   computed: {
+    currentProfile () {
+      return this.session_profile
+    },
+
     error () {
       let error = null
 
-      if (this.$v.model.$dirty) {
+      if (this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
         if (!this.$v.model.required) {
           error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
           error = this.$t('INPUT_ADDRESS.ERROR.NOT_VALID')
+        } else if (!this.$v.model.isNotNeoAddress && !this.$v.model.$pending) {
+          error = this.$t('INPUT_ADDRESS.ERROR.NEO_ADDRESS')
         }
       }
 
       return error
     },
+
+    hasSuggestions () {
+      return !_.isEmpty(this.suggestions)
+    },
+
     isInvalid () {
       return this.$v.model.$dirty && !!this.error
     },
+
     model: {
       get () {
-        return this.inputValue
+        return this.dropdownValue || this.inputValue
       },
       set (value) {
         this.updateInputValue(value)
         this.$emit('input', value)
       }
+    },
+
+    suggestions () {
+      if (!this.currentProfile || !this.showSuggestions) return []
+
+      const wallets = this.$store.getters['wallet/byProfileId'](this.currentProfile.id)
+      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
+
+      const source = _.unionBy(wallets, contacts, 'address')
+      const addresses = _.map(source, 'address')
+      const results = _.filter(addresses, _.method('includes', this.inputValue))
+
+      return new Cycled(results.sort())
     }
   },
 
   watch: {
     value (value) {
       this.updateInputValue(value)
+    },
+
+    isFocused () {
+      if (this.isFocused && this.hasSuggestions) {
+        this.openDropdown()
+      }
+    },
+
+    inputValue () {
+      this.dropdownValue = null
+      if (this.isFocused && this.hasSuggestions) {
+        this.openDropdown()
+      }
     }
   },
 
@@ -137,19 +196,69 @@ export default {
     blur () {
       this.$refs.input.blur()
     },
+
     focus () {
       this.$refs.input.focus()
     },
-    onBlur () {
-      this.isFocused = false
+
+    onBlur (evt) {
+      // Verifies that the element that generated the blur was a dropdown item
+      if (evt.relatedTarget) {
+        const classList = evt.relatedTarget.classList || []
+        const isDropdownItem = _.includes(classList, 'MenuDropdownItem__button')
+
+        if (!isDropdownItem) {
+          this.closeDropdown()
+        }
+
+        this.isFocused = isDropdownItem
+      } else {
+        this.isFocused = false
+      }
+
+      // If the user selects a suggestion and leaves the input
+      if (this.dropdownValue) {
+        this.onEnter()
+      }
     },
+
+    onDropdownSelect (value) {
+      this.updateInputValue(value)
+      this.$nextTick(() => this.closeDropdown())
+    },
+
     onFocus () {
       this.isFocused = true
       this.$emit('focus')
     },
-    onDecode (value, toggle) {
-      this.$v.model.$touch()
-      this.inputValue = this.qr_getAddress(value)
+
+    onEnter () {
+      if (!this.dropdownValue) return
+      this.updateInputValue(this.dropdownValue)
+
+      this.$nextTick(() => {
+        this.closeDropdown()
+        this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length)
+      })
+    },
+
+    onEsc () {
+      this.dropdownValue = null
+      this.closeDropdown()
+    },
+
+    onKeyUp () {
+      const next = this.dropdownValue ? this.suggestions.previous() : this.suggestions.current()
+      this.__setSuggestion(next)
+    },
+
+    onKeyDown () {
+      const next = this.dropdownValue ? this.suggestions.next() : this.suggestions.current()
+      this.__setSuggestion(next)
+    },
+
+    onDecodeQR (value, toggle) {
+      this.updateInputValue(this.qr_getAddress(value))
       // Check if we were unable to retrieve an address from the qr
       if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
@@ -157,27 +266,27 @@ export default {
       toggle()
     },
 
-    async updateInputValue (value) {
-      // Inform Vuelidate that the value changed
-      this.$v.model.$touch()
-      this.inputValue = value
-
-      if (await this.isNeoAddress(this.inputValue)) {
-        this.neoAddressText = this.$t('INPUT_ADDRESS.ERROR.NEO_ADDRESS')
-      } else {
-        this.neoAddressText = null
-      }
+    closeDropdown () {
+      this.$refs.dropdown.close()
     },
 
-    async isNeoAddress (address) {
-      // First check if it could be a valid neo address (use 0x17 for mainnet)
-      if (WalletService.validateAddress(address, 0x17)) {
-        // Then make a call to see if there are any transactions for the given address
-        const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
-        const response = await axios.get(neoUrl + address)
-        return response.status === 200 && response.data && response.data.length > 0
-      }
-      return false
+    openDropdown () {
+      this.$refs.dropdown.open()
+    },
+
+    async updateInputValue (value) {
+      this.inputValue = value
+      // Inform Vuelidate that the value changed
+      this.$v.model.$touch()
+    },
+
+    __setSuggestion (value) {
+      if (!this.hasSuggestions) return
+
+      this.dropdownValue = value
+      this.$nextTick(() => {
+        this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length)
+      })
     }
   },
 
@@ -186,6 +295,10 @@ export default {
       required,
       isValid (value) {
         return WalletService.validateAddress(value, this.pubKeyHash)
+      },
+      async isNotNeoAddress (value) {
+        const result = await WalletService.isNeoAddress(value)
+        return !result
       }
     }
   }
