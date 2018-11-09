@@ -35,7 +35,7 @@ export default {
   border-width: 10px;
   position: absolute;
   content: "";
-  top: 20px;
+  top: 50px;
   left: -20px;
   width: 20px;
   height: 0;

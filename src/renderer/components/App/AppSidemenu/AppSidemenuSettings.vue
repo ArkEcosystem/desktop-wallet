@@ -59,10 +59,26 @@
         />
       </div>
     </MenuOptionsItem>
+
+    <MenuOptionsItem
+      :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
+      class="text-grey-light"
+      @click="toggleResetDataModal"
+    />
+
+    <ModalConfirmation
+      v-if="isResetDataModalOpen"
+      :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
+      :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
+      container-classes="max-w-md"
+      @cancel="toggleResetDataModal"
+      @continue="onResetData"
+    />
   </MenuOptions>
 </template>
 
 <script>
+import { ModalConfirmation } from '@/components/Modal'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 const os = require('os')
@@ -71,6 +87,7 @@ export default {
   name: 'AppSidemenuOptionsSettings',
 
   components: {
+    ModalConfirmation,
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
@@ -89,6 +106,10 @@ export default {
       default: false
     }
   },
+
+  data: () => ({
+    isResetDataModalOpen: false
+  }),
 
   computed: {
     isLinux () {
@@ -147,6 +168,15 @@ export default {
       this.$refs[name].toggle()
     },
 
+    toggleResetDataModal () {
+      this.isResetDataModalOpen = !this.isResetDataModalOpen
+    },
+
+    async onResetData () {
+      await this.$store.dispatch('resetData')
+      this.electron_reload()
+    },
+
     emitClose () {
       if (this.outsideClick) {
         this.$emit('close')
@@ -160,6 +190,7 @@ export default {
 .AppSidemenuOptionsSettings {
   width: 300px;
   left: 5.5rem;
+  transform: translateY(-10%)
 }
 
 .AppSidemenuOptionsSettings--horizontal {

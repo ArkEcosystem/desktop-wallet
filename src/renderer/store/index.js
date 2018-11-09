@@ -48,6 +48,11 @@ export default new Vuex.Store({
   mutations: {
     RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION
   },
+  actions: {
+    resetData () {
+      return localforage.clear()
+    }
+  },
   plugins: [
     vuexPersist.plugin,
     vuexPersistReady

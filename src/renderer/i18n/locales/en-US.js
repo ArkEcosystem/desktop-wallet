@@ -159,7 +159,12 @@ export default {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
-      TITLE: 'Current settings'
+      TITLE: 'Current settings',
+      RESET_DATA: {
+        TITLE: 'Reset Data',
+        QUESTION: 'Are you sure you want to wipe your data?',
+        NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
+      }
     },
     WALLETS: 'My wallets'
   },

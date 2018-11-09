@@ -1,13 +1,17 @@
 <template>
   <ModalWindow
     :container-classes="containerClasses"
+    :title="title"
     @close="emitCancel"
   >
     <section class="ModalConfirmation__container flex flex-col">
-      <div class="mb-6 text-xl">
-        <h2 class="mb-5 text-3xl">{{ title }}</h2>
-
-        {{ question }}
+      <div class="mb-6">
+        <h3
+          v-if="question"
+          class="font-semibold"
+        >
+          {{ question }}
+        </h3>
 
         <div
           v-if="note"
@@ -28,7 +32,7 @@
         </button>
 
         <button
-          class="blue-button"
+          class="action-button px-8"
           @click="emitContinue"
         >
           {{ continueButton }}
@@ -75,7 +79,8 @@ export default {
     },
     question: {
       type: String,
-      required: true
+      required: false,
+      default: null
     },
     title: {
       type: String,
