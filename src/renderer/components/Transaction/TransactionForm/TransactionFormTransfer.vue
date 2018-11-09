@@ -239,6 +239,11 @@ export default {
     },
 
     async submit () {
+      // v1 compatibility
+      // TODO: Get static fee from the network, or allow better UI
+      if (this.session_network.apiVersion === 1) {
+        this.form.fee = 0.1
+      }
       // Ensure that fee has value, even when the user has not interacted
       if (!this.form.fee) {
         this.form.fee = this.$refs.fee.fee
@@ -297,7 +302,7 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return false
+          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
       vendorField: {

@@ -1,5 +1,6 @@
 import ApiClient from '@arkecosystem/client'
 import { transactionBuilder } from '@arkecosystem/crypto'
+import axios from 'axios'
 import { castArray } from 'lodash'
 import dayjs from 'dayjs'
 import store from '@/store'
@@ -426,14 +427,34 @@ export default class ClientService {
    * @returns {Object}
    */
   async broadcastTransaction (transactions) {
-    const transaction = await this
-      .client
-      .resource('transactions')
-      .create({
-        transactions: castArray(transactions)
+    // Use p2p for v1
+    if (this.__version === 1) {
+      const currentPeer = store.getters['peer/current']()
+      const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+      const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
+      const network = store.getters['session/network']
+      const response = await axios({
+        url: host,
+        data: { transactions: castArray(transactions) },
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          version: '1.6.1',
+          port: 1,
+          nethash: network.nethash
+        }
       })
+      return response
+    } else {
+      const transaction = await this
+        .client
+        .resource('transactions')
+        .create({
+          transactions: castArray(transactions)
+        })
 
-    return transaction
+      return transaction
+    }
   }
 
   __watchProfile () {
