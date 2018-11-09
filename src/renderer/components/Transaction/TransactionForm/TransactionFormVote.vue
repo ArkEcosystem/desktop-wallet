@@ -227,7 +227,6 @@ export default {
       let transactionData = {
         passphrase: this.form.passphrase,
         votes,
-        recipientId: this.currentWallet.address,
         wif: this.form.wif
       }
 

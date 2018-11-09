@@ -304,15 +304,13 @@ export default class ClientService {
    * @param {Array} data.votes
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
-   * @param {String} data.recipientId
    * @param {String} data.wif
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildVote ({ votes, recipientId, passphrase, secondPassphrase, wif }, returnObject = false) {
+  async buildVote ({ votes, passphrase, secondPassphrase, wif }, returnObject = false) {
     const transaction = transactionBuilder
       .vote()
-      .recipientId(recipientId)
       .votesAsset(votes)
 
     return this.__signTransaction({
@@ -407,6 +405,10 @@ export default class ClientService {
    * @returns {Object}
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
+    transaction = transaction.network({
+      pubKeyHash: store.getters['session/network'].version
+    })
+
     if (passphrase) {
       transaction = transaction.sign(passphrase)
     } else if (wif) {
