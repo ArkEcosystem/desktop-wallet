@@ -3,6 +3,15 @@ import BaseModule from '../base'
 import ProfileModel from '@/models/profile'
 
 export default new BaseModule(ProfileModel, {
+  getters: {
+    doesExist: state => checkName => {
+      const normalize = (name) => name.toLowerCase().replace(/^\s+|\s+$/g, '')
+      checkName = normalize(checkName)
+
+      return state.all.find(profile => normalize(profile.name) === checkName)
+    }
+  },
+
   actions: {
     /**
      * This default action is overridden to generate a random unique ID

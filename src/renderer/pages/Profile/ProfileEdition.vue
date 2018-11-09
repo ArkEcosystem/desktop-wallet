@@ -27,27 +27,31 @@
                 :label="$t('COMMON.PROFILE_NAME')"
                 class="ProfileEdition__name"
               >
-                <input
+                <InputText
                   v-if="isNameEditable"
-                  :value="modified.name"
-                  type="text"
-                  class="bg-transparent text-theme-page-text border-b"
+                  v-model="$v.modified.name.$model"
+                  label=""
+                  :is-invalid="$v.modified.name.$dirty && $v.modified.name.$invalid"
+                  :helper-text="nameError"
+                  class="bg-transparent text-theme-page-text flex-1"
+                  name="name"
                   @input="setName"
                   @keyup.enter="toggleIsNameEditable"
                   @keyup.esc="toggleIsNameEditable"
-                >
-                <span
+                />
+                <div
                   v-else
                   :class="{
                     'ProfileEdition__field--modified': modified.name && modified.name !== profile.name
                   }"
-                  class="flex leading-tight border-b border-transparent"
+                  class="leading-tight border-b border-transparent flex-1"
                 >
                   {{ name }}
-                </span>
+                </div>
 
                 <button
-                  class="ml-2 cursor-pointer text-grey hover:text-blue"
+                  :disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
+                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue inline-flex"
                   @click="toggleIsNameEditable"
                 >
                   <SvgIcon
@@ -158,7 +162,7 @@
         <!-- TODO at the bottom ? -->
         <footer class="ProfileEdition__footer mt-3 p-10">
           <button
-            :disabled="!isModified"
+            :disabled="!isModified || isNameEditable"
             class="blue-button"
             @click="save"
           >
@@ -173,6 +177,7 @@
 <script>
 import { capitalize, isEmpty } from 'lodash'
 import { BIP39, I18N, NETWORKS } from '@config'
+import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
@@ -186,6 +191,7 @@ export default {
   name: 'ProfileEdition',
 
   components: {
+    InputText,
     ListDivided,
     ListDividedItem,
     MenuTab,
@@ -199,7 +205,12 @@ export default {
 
   data: () => ({
     isNameEditable: false,
-    modified: {},
+    modified: {
+      name: '',
+      language: '',
+      bip39Language: '',
+      currency: ''
+    },
     tab: 'profile'
   }),
 
@@ -279,6 +290,17 @@ export default {
       const hasDarkMode = this.$store.getters['session/hasDarkTheme']
 
       return `pages/profile-new/background-step-3${hasDarkMode ? '-dark' : ''}.png`
+    },
+    nameError () {
+      if (this.$v.modified.name.$dirty) {
+        if (!this.$v.modified.name.doesNotExists) {
+          const existingProfile = this.$store.getters['profile/doesExist'](this.modified.name).name
+
+          return this.$t('VALIDATION.PROFILE.DUPLICATE_NAME', [existingProfile])
+        }
+      }
+
+      return null
     }
   },
 
@@ -291,6 +313,13 @@ export default {
 
   beforeDestroy () {
     this.$store.dispatch('session/load')
+  },
+
+  mounted () {
+    this.modified.name = this.profile.name
+    this.modified.language = this.profile.language
+    this.modified.bip39Language = this.profile.bip39Language
+    this.modified.currency = this.profile.currency
   },
 
   methods: {
@@ -339,7 +368,8 @@ export default {
     },
 
     setName (event) {
-      this.__updateSession('name', event.target.value)
+      this.__updateSession('name', this.modified.name)
+      this.$v.modified.name.$touch()
     },
 
     async __updateSession (propertyName, value) {
@@ -348,6 +378,17 @@ export default {
       if (this.isCurrentProfile) {
         const action = `session/set${capitalize(propertyName)}`
         await this.$store.dispatch(action, value)
+      }
+    }
+  },
+
+  validations: {
+    modified: {
+      name: {
+        doesNotExists (value) {
+          const otherProfile = this.$store.getters['profile/doesExist'](value)
+          return !otherProfile || otherProfile.id === this.profile.id
+        }
       }
     }
   }
@@ -376,10 +417,16 @@ export default {
   @apply .flex-no-shrink
 }
 .ProfileEdition__name .ListDividedItem__value {
-  @apply .flex .flex-row
+  @apply .flex w-full text-right
 }
-.ProfileEdition__name .ListDividedItem__value input {
+.ProfileEdition__name .ListDividedItem__value .InputText {
   @apply .w-full .ml-4
+}
+.ProfileEdition__name__toggle {
+  height: 21px
+}
+.ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
+  height: 0
 }
 
 .ProfileEdition__avatar.ListDividedItem,

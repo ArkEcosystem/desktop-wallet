@@ -106,6 +106,9 @@ export default {
       NUMBERS: 'Your password must contain at least 1 number',
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character'
     },
+    PROFILE: {
+      DUPLICATE_NAME: 'The profile name \'{0}\' already exists'
+    },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',

@@ -29,11 +29,11 @@
             <!-- NOTE wraps the content, but doesn't modify the stepper -->
             <div class="flex flex-col">
 
-              <!-- TODO check duplicate here -->
               <InputText
-                v-model="schema.name"
+                v-model="$v.schema.name.$model"
                 :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
                 :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
+                :helper-text="nameError"
                 class="mb-5"
                 name="name"
               />
@@ -238,6 +238,17 @@ export default {
     },
     isDarkMode () {
       return this.$store.getters['session/hasDarkTheme']
+    },
+    nameError () {
+      if (this.$v.schema.name.$dirty) {
+        if (!this.$v.schema.name.doesNotExists) {
+          const existingProfile = this.$store.getters['profile/doesExist'](this.schema.name).name
+
+          return this.$t('VALIDATION.PROFILE.DUPLICATE_NAME', [existingProfile])
+        }
+      }
+
+      return null
     }
   },
 
@@ -307,7 +318,14 @@ export default {
 
   validations: {
     step1: ['schema.avatar', 'schema.currency', 'schema.language', 'schema.name'],
-    step2: ['schema.networkId']
+    step2: ['schema.networkId'],
+    schema: {
+      name: {
+        doesNotExists (value) {
+          return !this.$store.getters['profile/doesExist'](value)
+        }
+      }
+    }
   }
 }
 </script>
