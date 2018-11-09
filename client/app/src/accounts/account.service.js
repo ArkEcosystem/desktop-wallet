@@ -320,7 +320,7 @@
       }
 
       getAllTransactions(address, null, onRangeUpdate)
-        .catch(error => deferred.reject({message: error.message, transactions: transactions}))
+        .catch(error => deferred.reject({ message: error.message, transactions: transactions }))
 
       return deferred.promise
     }
@@ -365,7 +365,7 @@
         }
 
         getAllTransactions(address, totalLimit, onUpdate, offset + transactions.length, transactionCollection, deferred)
-      }).catch(error => deferred.reject({message: error, transactions: transactionCollection}))
+      }).catch(error => deferred.reject({ message: error, transactions: transactionCollection }))
 
       return deferred.promise
     }
@@ -419,7 +419,7 @@
           storageService.set('username-' + resp.delegate.address, resp.delegate.username)
           deferred.resolve(resp.delegate)
         } else {
-          deferred.reject(gettextCatalog.getString('Cannot find delegate: {{ delegateName }}', {delegateName: username}))
+          deferred.reject(gettextCatalog.getString('Cannot find delegate: {{ delegateName }}', { delegateName: username }))
         }
       })
       return deferred.promise
@@ -436,7 +436,7 @@
         if (resp && resp.success && resp.delegates) {
           deferred.resolve(resp.delegates)
         } else {
-          deferred.reject(gettextCatalog.getString('Cannot find any delegate using the search term \'{{ searchTerm }}\'!', {searchTerm: term}))
+          deferred.reject(gettextCatalog.getString('Cannot find any delegate using the search term \'{{ searchTerm }}\'!', { searchTerm: term }))
         }
       }, (err) => {
         deferred.reject(gettextCatalog.getString('An error occurred when searching for delegates:') + err)

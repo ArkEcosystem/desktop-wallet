@@ -19,7 +19,7 @@
       $scope.onSuccess = function (result) {
         if (typeof (result.type) !== 'undefined') {
           toastService.success(gettextCatalog.getString('The {{ qrCodeType }} {{ qrCode }} has been successfully scanned.',
-                                                        {qrCodeType: result.type, qrCode: result.qr}))
+                                                        { qrCodeType: result.type, qrCode: result.qr }))
         }
 
         if ($scope.inputCallback) {
@@ -27,7 +27,7 @@
         }
 
         if ($scope.inputCallbackFunc) {
-          $scope.inputCallbackFunc({qr: result.qr})
+          $scope.inputCallbackFunc({ qr: result.qr })
         }
 
         $timeout(() => {

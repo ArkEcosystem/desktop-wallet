@@ -91,7 +91,7 @@ describe('VotesTabController', () => {
         expect(foundDelegate).to.be.ok
       })
       it('should return a falsy value if the delegate is not in the list', () => {
-        let foundDelegate = ctrl.delegateExists(MOCK_DELEGATES, {username: 'foo'})
+        let foundDelegate = ctrl.delegateExists(MOCK_DELEGATES, { username: 'foo' })
         expect(foundDelegate).to.not.be.ok
       })
     })
@@ -105,7 +105,7 @@ describe('VotesTabController', () => {
           first: 'pass1',
           second: 'pass2'
         }
-        ctrl.updateDelegateVote({name: MOCK_DELEGATE.delegatename})
+        ctrl.updateDelegateVote({ name: MOCK_DELEGATE.delegatename })
 
         getDelegateStub().then(() => {
           sinon.assert.calledWith(getDelegateStub, MOCK_DELEGATE.delegatename)
@@ -120,7 +120,7 @@ describe('VotesTabController', () => {
     })
     context('delegateToUnvote does not exist', () => {
       it('should fetch the delegate to be added', (done) => {
-        ctrl.updateDelegateVote({name: MOCK_DELEGATE.delegatename})
+        ctrl.updateDelegateVote({ name: MOCK_DELEGATE.delegatename })
 
         getDelegateStub().then(() => {
           sinon.assert.calledWith(getDelegateStub, MOCK_DELEGATE.delegatename)
@@ -129,7 +129,7 @@ describe('VotesTabController', () => {
       })
 
       it('should close the dialog with the delegate information and passphrases', (done) => {
-        ctrl.updateDelegateVote({name: MOCK_DELEGATE.delegatename})
+        ctrl.updateDelegateVote({ name: MOCK_DELEGATE.delegatename })
 
         getDelegateStub().then(() => {
           sinon.assert.calledWith(mdDialogHideStub, sinon.match({
@@ -142,7 +142,7 @@ describe('VotesTabController', () => {
 
       it('should show a toast message if the selected delegate is already active', (done) => {
         ctrl.account.selectedVotes = [MOCK_DELEGATE]
-        ctrl.updateDelegateVote({name: MOCK_DELEGATE.delegatename})
+        ctrl.updateDelegateVote({ name: MOCK_DELEGATE.delegatename })
 
         getDelegateStub().then(() => {
           sinon.assert.calledOnce(toastServiceErrStub)
@@ -153,7 +153,7 @@ describe('VotesTabController', () => {
 
       it('should show a toast message if too many votes exist', (done) => {
         ctrl.account.selectedVotes = new Array(102)
-        ctrl.updateDelegateVote({name: MOCK_DELEGATE.delegatename})
+        ctrl.updateDelegateVote({ name: MOCK_DELEGATE.delegatename })
 
         getDelegateStub().then(() => {
           sinon.assert.calledOnce(toastServiceErrStub)

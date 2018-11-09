@@ -110,7 +110,7 @@
 
         self.contacts.push(newContact)
         self.save()
-        self.showToast(gettext('Contact \'{{ name }}\' with address \'{{ address }}\' added successfully'), null, false, {name: name, address: address})
+        self.showToast(gettext('Contact \'{{ name }}\' with address \'{{ address }}\' added successfully'), null, false, { name: name, address: address })
         if (successCallback) {
           successCallback()
         }
@@ -171,7 +171,7 @@
           }
         }
         self.save()
-        self.showToast(gettext('Contact \'{{ name }}\' with address \'{{ address }}\' saved successfully'), null, false, {name: name, address: address})
+        self.showToast(gettext('Contact \'{{ name }}\' with address \'{{ address }}\' saved successfully'), null, false, { name: name, address: address })
         cancel()
       }
 

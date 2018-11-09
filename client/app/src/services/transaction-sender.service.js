@@ -120,7 +120,7 @@
 
       if (uriScheme) {
         $timeout(() => {
-          $scope.data.selectedAddress = {address: uriScheme.address}
+          $scope.data.selectedAddress = { address: uriScheme.address }
           $scope.data.amount = uriScheme.amount
           $scope.data.smartbridge = uriScheme.vendorField
         }, 0)
@@ -164,7 +164,7 @@
       let receiverValidationCycle = 0
       function validateReceiverAddress (input, exactMatch) {
         // failType specifies the "fail level", but is at the same time, also the icon name
-        $scope.receiverValidation = {failType: null, message: null}
+        $scope.receiverValidation = { failType: null, message: null }
         $scope.receiverValidation.resolvedAccount = null
 
         if (!input) {

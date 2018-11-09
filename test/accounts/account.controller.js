@@ -200,28 +200,28 @@ describe('AccountController', () => {
       })
 
       it('no shift', () => {
-        ctrl.selectCurrency({shiftKey: false})
+        ctrl.selectCurrency({ shiftKey: false })
         expect(ctrl.currency).to.equal(ctrl.currencies[1])
       })
 
       it('shift', () => {
-        ctrl.selectCurrency({shiftKey: true})
+        ctrl.selectCurrency({ shiftKey: true })
         expect(ctrl.currency).to.equal(ctrl.currencies[ctrl.currencies.length - 1])
       })
 
       it('no shift then shift', () => {
         let startCurrency = ctrl.currency
-        ctrl.selectCurrency({shiftKey: false})
+        ctrl.selectCurrency({ shiftKey: false })
         expect(ctrl.currency).to.not.equal(startCurrency)
-        ctrl.selectCurrency({shiftKey: true})
+        ctrl.selectCurrency({ shiftKey: true })
         expect(ctrl.currency).to.equal(startCurrency)
       })
 
       it('shift then no shift', () => {
         let startCurrency = ctrl.currency
-        ctrl.selectCurrency({shiftKey: true})
+        ctrl.selectCurrency({ shiftKey: true })
         expect(ctrl.currency).to.not.equal(startCurrency)
-        ctrl.selectCurrency({shiftKey: false})
+        ctrl.selectCurrency({ shiftKey: false })
         expect(ctrl.currency).to.equal(startCurrency)
       })
     })
