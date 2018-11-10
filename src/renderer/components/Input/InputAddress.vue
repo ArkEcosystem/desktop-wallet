@@ -223,7 +223,8 @@ export default {
     },
 
     onDropdownSelect (value) {
-      this.updateInputValue(value)
+      console.log('select detected')
+      this.model = value
       this.$nextTick(() => this.closeDropdown())
     },
 
@@ -234,7 +235,7 @@ export default {
 
     onEnter () {
       if (!this.dropdownValue) return
-      this.updateInputValue(this.dropdownValue)
+      this.model = this.dropdownValue
 
       this.$nextTick(() => {
         this.closeDropdown()
@@ -258,7 +259,8 @@ export default {
     },
 
     onDecodeQR (value, toggle) {
-      this.updateInputValue(this.qr_getAddress(value))
+      this.model = this.qr_getAddress(value)
+
       // Check if we were unable to retrieve an address from the qr
       if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))

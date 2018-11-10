@@ -4,6 +4,7 @@
     @submit.prevent
   >
     <InputAddress
+      ref="recipient"
       v-model="$v.form.recipientId.$model"
       :label="$t('TRANSACTION.RECIPIENT')"
       :pub-key-hash="session_network.version"
@@ -286,7 +287,13 @@ export default {
   validations: {
     form: {
       recipientId: {
-        required
+        required,
+        isValid (value) {
+          if (this.$refs.recipient) {
+            return !this.$refs.recipient.$v.$invalid
+          }
+          return false
+        }
       },
       amount: {
         required,
