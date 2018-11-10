@@ -35,6 +35,26 @@
         </button>
       </ListDividedItem>
 
+      <ListDividedItem
+        v-if="transaction.blockId"
+        :label="$t('TRANSACTION.BLOCK_ID')"
+      >
+        {{ transaction.blockId }}
+        <button
+          v-tooltip="{
+            content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
+            trigger: 'hover'
+          }"
+          @click="openBlock"
+        >
+          <SvgIcon
+            name="open-external"
+            view-box="0 0 12 12"
+            class="text-theme-page-text-light"
+          />
+        </button>
+      </ListDividedItem>
+
       <ListDividedItem :label="$t('TRANSACTION.SENDER')">
         {{ wallet_formatAddress(transaction.sender) }}
         <ButtonClipboard
@@ -154,6 +174,10 @@ export default {
 
     openAddress (address) {
       this.network_openExplorer('address', address)
+    },
+
+    openBlock (address) {
+      this.network_openExplorer('block', this.transaction.blockId)
     },
 
     emitClose () {

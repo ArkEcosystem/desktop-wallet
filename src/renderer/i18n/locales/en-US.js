@@ -579,6 +579,7 @@ export default {
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
     AMOUNT: 'Amount',
+    BLOCK_ID: 'Block ID',
     CONFIRMATION_COUNT: '{0} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
