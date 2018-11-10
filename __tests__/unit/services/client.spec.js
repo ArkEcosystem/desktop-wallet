@@ -1,3 +1,5 @@
+import { cloneDeep } from 'lodash'
+import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
 
 jest.mock('@/store', () => ({
@@ -165,21 +167,10 @@ describe('Services > Client', () => {
   })
 
   describe('fetchDelegates', () => {
-    let meta = {
-      totalCount: 3
-    }
-    const data = [
-      { rank: 1, username: 'first', approval: '1', productivity: '99' },
-      { rank: 2, username: 'second', approval: '2', productivity: '98' },
-      { rank: 3, username: 'third', approval: '3', productivity: '97' }
-    ]
+    const { data, meta } = fixtures.delegates
 
     describe('when version is 1', () => {
-      const delegates = [
-        { rate: data[0].rank, username: data[0].username, approval: data[0].approval, productivity: data[0].productivity },
-        { rate: data[1].rank, username: data[1].username, approval: data[1].approval, productivity: data[1].productivity },
-        { rate: data[2].rank, username: data[2].username, approval: data[2].approval, productivity: data[2].productivity }
-      ]
+      const delegates = fixtures.delegates.v1
 
       beforeEach(() => {
         client.version = 1
@@ -212,11 +203,7 @@ describe('Services > Client', () => {
     })
 
     describe('when version is 2', () => {
-      const delegates = [
-        { rank: data[0].rank, username: data[0].username, production: { approval: data[0].approval, productivity: data[0].productivity } },
-        { rank: data[1].rank, username: data[1].username, production: { approval: data[1].approval, productivity: data[1].productivity } },
-        { rank: data[2].rank, username: data[2].username, production: { approval: data[2].approval, productivity: data[2].productivity } }
-      ]
+      const delegates = fixtures.delegates.v2
 
       beforeEach(() => {
         client.version = 2
@@ -297,25 +284,53 @@ describe('Services > Client', () => {
   })
 
   describe('fetchTransactions', () => {
-    let meta = {
-      count: 3
-    }
-    let data = [
-      { id: 1, amount: 100000, fee: 10000000, timestamp: { epoch: 47848091, human: '2018-09-26T08:08:11.000Z' }, sender: 'address1', recipient: 'address2' },
-      { id: 2, amount: 200000, fee: 10000000, timestamp: { epoch: 47809625, human: '2018-09-25T21:27:05.000Z' }, sender: 'address2', recipient: 'address3' },
-      { id: 3, amount: 300000, fee: 10000000, timestamp: { epoch: 47796863, human: '2018-09-25T17:54:23.000Z' }, sender: 'address3', recipient: 'address3' }
-    ]
+    const { data, meta } = fixtures.transactions
+
+    beforeEach(() => {
+      client.version = 2
+
+      const transactions = cloneDeep(fixtures.transactions.v2)
+      const resource = resource => {
+        if (resource === 'transactions') {
+          return {
+            all: () => ({ data: { data: transactions, meta: { totalCount: meta.count } } })
+          }
+        }
+      }
+
+      client.client.resource = resource
+    })
+
+    it('should return only some properties for each transaction', async () => {
+      const response = await client.fetchTransactions()
+      expect(response).toHaveProperty('transactions')
+      expect(response).toHaveProperty('totalCount', meta.count)
+
+      const transactions = response.transactions
+      expect(transactions).toHaveLength(data.length)
+
+      transactions.forEach((transaction, i) => {
+        expect(transaction).toHaveProperty('timestamp')
+        expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
+        expect(transaction).toHaveProperty('sender')
+        expect(transaction).toHaveProperty('recipient')
+        expect(transaction).not.toHaveProperty('totalAmount')
+        expect(transaction).not.toHaveProperty('senderId')
+        expect(transaction).not.toHaveProperty('recipientId')
+        expect(transaction).not.toHaveProperty('isSender')
+        expect(transaction).not.toHaveProperty('isReceiver')
+      })
+    })
+  })
+
+  describe('fetchWalletTransactions', () => {
+    const { data, meta } = fixtures.transactions
 
     describe('when version in v1', () => {
-      const transactions = [
-        { id: data[0].id, amount: data[0].amount, fee: data[0].fee, timestamp: data[0].timestamp.epoch, senderId: data[0].sender, recipientId: data[0].recipient },
-        { id: data[1].id, amount: data[1].amount, fee: data[1].fee, timestamp: data[1].timestamp.epoch, senderId: data[1].sender, recipientId: data[1].recipient },
-        { id: data[2].id, amount: data[2].amount, fee: data[2].fee, timestamp: data[2].timestamp.epoch, senderId: data[2].sender, recipientId: data[2].recipient }
-      ]
-
       beforeEach(() => {
         client.version = 1
 
+        const transactions = cloneDeep(fixtures.transactions.v1)
         const resource = resource => {
           if (resource === 'transactions') {
             return {
@@ -328,7 +343,7 @@ describe('Services > Client', () => {
       })
 
       it('should return only some properties for each transaction', async () => {
-        const response = await client.fetchTransactions('address')
+        const response = await client.fetchWalletTransactions('address')
         expect(response).toHaveProperty('transactions')
         expect(response).toHaveProperty('totalCount', meta.count)
 
@@ -350,15 +365,10 @@ describe('Services > Client', () => {
     })
 
     describe('when version in v2', () => {
-      const transactions = [
-        { id: data[0].id, amount: data[0].amount, fee: data[0].fee, timestamp: data[0].timestamp, sender: data[0].sender, recipient: data[0].recipient },
-        { id: data[1].id, amount: data[1].amount, fee: data[1].fee, timestamp: data[1].timestamp, sender: data[1].sender, recipient: data[1].recipient },
-        { id: data[2].id, amount: data[2].amount, fee: data[2].fee, timestamp: data[2].timestamp, sender: data[2].sender, recipient: data[2].recipient }
-      ]
-
       beforeEach(() => {
         client.version = 2
 
+        const transactions = cloneDeep(fixtures.transactions.v2)
         const resource = resource => {
           if (resource === 'wallets') {
             return {
@@ -371,7 +381,7 @@ describe('Services > Client', () => {
       })
 
       it('should return only some properties for each transaction', async () => {
-        const response = await client.fetchTransactions('address')
+        const response = await client.fetchWalletTransactions('address')
         expect(response).toHaveProperty('transactions')
         expect(response).toHaveProperty('totalCount', meta.count)
 

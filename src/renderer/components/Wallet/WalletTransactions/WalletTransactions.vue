@@ -58,7 +58,7 @@ export default {
 
       try {
         this.isLoading = true
-        const { transactions, totalCount } = await this.$client.fetchTransactions(this.wallet_fromRoute.address, {
+        const { transactions, totalCount } = await this.$client.fetchWalletTransactions(this.wallet_fromRoute.address, {
           page: this.queryParams.page,
           limit: this.queryParams.limit,
           orderBy: `${this.queryParams.sort.field}:${this.queryParams.sort.type}`

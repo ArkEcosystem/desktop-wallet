@@ -7,16 +7,6 @@ import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
 export default class ClientService {
-  constructor (watchProfile = true) {
-    this.__host = null
-    this.__version = null
-    this.client = new ApiClient('http://')
-
-    if (watchProfile) {
-      this.__watchProfile()
-    }
-  }
-
   /**
    * Fetch the network configuration according to the version.
    * Create a new client to isolate the main client.
@@ -40,6 +30,16 @@ export default class ClientService {
       const { data } = await client.resource('node').configuration()
 
       return data.data
+    }
+  }
+
+  constructor (watchProfile = true) {
+    this.__host = null
+    this.__version = null
+    this.client = new ApiClient('http://')
+
+    if (watchProfile) {
+      this.__watchProfile()
     }
   }
 
@@ -80,7 +80,10 @@ export default class ClientService {
    * @param {Number} [query.limit=51]
    * @return {Object[]}
    */
-  async fetchDelegates ({ page, limit } = { page: 1, limit: 51 }) {
+  async fetchDelegates ({ page, limit } = {}) {
+    page || (page = 1)
+    limit || (limit = 51)
+
     let totalCount = 0
     let delegates = []
 
@@ -127,6 +130,40 @@ export default class ClientService {
   }
 
   /**
+   * Fetch the latest transactions
+   *
+   * NOTE: only v2
+   *
+   * @param {Object} [query]
+   * @param {Number} [query.page=1]
+   * @param {Number} [query.limit=100]
+   * @return {Array}
+   */
+  async fetchTransactions ({ page, limit } = {}) {
+    page || (page = 1)
+    limit || (limit = 100)
+
+    let totalCount = 0
+    let transactions = []
+
+    const { data } = await this.client.resource('transactions').all({
+      limit,
+      page
+    })
+
+    transactions = data.data.map(tx => {
+      tx.timestamp = dayjs(tx.timestamp.human).toDate()
+      return tx
+    })
+    totalCount = data.meta.totalCount
+
+    return {
+      transactions,
+      totalCount
+    }
+  }
+
+  /**
    * Request the transactions according to the current network version
    *
    * V1:
@@ -142,11 +179,15 @@ export default class ClientService {
    * @param {Number} [query.limit=50]
    * @return {Object[]}
    */
-  async fetchTransactions (address, { page, limit, orderBy } = { page: 1, limit: 50, orderBy: 'timestamp:desc' }) {
+  async fetchWalletTransactions (address, { page, limit, orderBy } = {}) {
+    page || (page = 1)
+    limit || (limit = 50)
+    orderBy || (orderBy = 'timestamp:desc')
+
     let totalCount = 0
     let transactions = []
 
-    if (this.__version === 1) {
+    if (this.version === 1) {
       const network = store.getters['session/network']
       const { data } = await this.client.resource('transactions').all({
         recipientId: address,
@@ -213,7 +254,7 @@ export default class ClientService {
   async fetchWallet (address) {
     let walletData = null
 
-    if (this.__version === 2) {
+    if (this.version === 2) {
       const { data } = await this.client.resource('wallets').get(address)
       walletData = data.data
     } else {

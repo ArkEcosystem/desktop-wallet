@@ -14,6 +14,19 @@ export default new BaseModel({
       minimum: 0,
       default: 0
     },
+    transactions: {
+      type: 'object',
+      default: {
+        checkedAt: 0
+      },
+      properties: {
+        checkedAt: {
+          type: 'integer',
+          minimum: 0,
+          default: 0
+        }
+      }
+    },
     name: {
       type: 'string',
       minLength: 1,

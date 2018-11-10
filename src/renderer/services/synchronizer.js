@@ -1,5 +1,5 @@
 import { flatten, includes, isFunction, pullAll } from 'lodash'
-
+import { announcements, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
@@ -32,10 +32,6 @@ export default class Synchronizer {
 
   get $client () {
     return this.scope.$client
-  }
-
-  get $logger () {
-    return this.scope.$logger
   }
 
   get $store () {
@@ -195,60 +191,32 @@ export default class Synchronizer {
     config.contacts = config.wallets
 
     this.define('announcements', config.announcements, async () => {
-      return this.$store.dispatch('announcements/fetch')
+      await announcements(this)
     })
+
+    // this.define('contacts', config.contacts, async () => {
+    //   console.log('defined CONTACTS')
+    // })
+
+    // this.define('delegates', config.delegates, async () => {
+    //   console.log('defined DELEGATES')
+    // })
 
     this.define('market', config.market, async () => {
-      return this.$store.dispatch('market/refreshTicker')
-    })
-
-    // Since some users may have dozens of wallets:
-    // TODO loads blocks and use them to:
-    // - compute wallets balance
-    // - check new transactions
-    // TODO only the first time, then use blocks
-    // TODO load the entire wallet if is new
-    // TODO load everything periodically just in case the network has failed?
-    this.define('wallets', config.wallets, async () => {
-      const profile = this.scope.session_profile
-
-      if (profile) {
-        let wallets = this.$store.getters['wallet/byProfileId'](profile.id)
-
-        return Promise.all(wallets.map(async wallet => {
-          try {
-            const walletData = await this.$client.fetchWallet(wallet.address)
-
-            if (walletData) {
-              const updatedWallet = { ...wallet, ...walletData }
-              this.$store.dispatch('wallet/update', updatedWallet)
-            }
-          } catch (error) {
-            this.$logger.error(error)
-            // TODO the error could mean that the wallet isn't on the blockchain yet
-            // this.$error(this.$t('COMMON.FAILED_FETCH', {
-            //   name: 'wallet data',
-            //   msg: error.message
-            // }))
-          }
-        }))
-      }
-    })
-
-    this.define('contacts', config.contacts, async () => {
-      // console.log('defined CONTACTS')
-    })
-
-    this.define('delegates', config.delegates, async () => {
-      // console.log('defined DELEGATES')
+      await market(this)
     })
 
     this.define('peer', config.peer, async () => {
-      return this.$store.dispatch('peer/updateCurrentPeerStatus')
+      await peer(this)
+    })
+
+    // TODO allow focusing on 1 wallet alone
+    this.define('wallets', config.wallets, async () => {
+      await wallets(this)
     })
 
     this.define('wallets:ledger', config.ledgerWallets, async () => {
-      return this.$store.dispatch('ledger/reloadWallets')
+      await ledger(this)
     })
   }
 }

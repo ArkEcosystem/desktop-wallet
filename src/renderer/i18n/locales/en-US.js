@@ -626,6 +626,10 @@ export default {
     FAILED_VERIFY: 'Could not verify message'
   },
 
+  SYNCHRONIZER: {
+    NEW_TRANSACION: 'New transaction: {transactionId}'
+  },
+
   TRANSACTION_FORM: {
     ERROR: {
       NOT_ENOUGH_BALANCE: 'The balance is too low ({balance})'
