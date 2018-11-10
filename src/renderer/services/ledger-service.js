@@ -40,7 +40,7 @@ class LedgerService {
 
       return this.isConnected()
     } catch (error) {
-      logger.log(error)
+      logger.debug(error.message)
     }
 
     return false
