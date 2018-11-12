@@ -19,14 +19,14 @@
             'rounded-l-lg': first.id === id,
             'rounded-r-lg': last.id === id,
           }"
-          class="svg-button w-30 h-30 text-center text-grey"
+          class="svg-button w-30 h-30 text-center text-theme-page-text"
         >
           <!-- eslint-disable vue/no-v-html -->
           <div
             class="w-14 h-14 mx-6 mt-4"
             v-html="assets_loadImage(svg)"
           />
-          <span class="text-black font-semibold">{{ textContent }}</span>
+          <span class="text-theme-page-text font-semibold">{{ textContent }}</span>
         </div>
       </template>
     </InputGrid>
