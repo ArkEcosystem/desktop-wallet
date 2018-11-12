@@ -211,8 +211,8 @@ export default class ClientService {
         totalCount = parseInt(data.count)
       }
     } else {
-      // TODO: Add orderBy field in the v2 query params
       const { data } = await this.client.resource('wallets').transactions(address, {
+        orderBy,
         limit,
         page
       })

@@ -15,7 +15,6 @@
 
 <script>
 import TransactionTable from '@/components/Transaction/TransactionTable'
-import { orderBy } from 'lodash'
 
 export default {
   name: 'WalletTransactions',
@@ -63,7 +62,7 @@ export default {
           limit: this.queryParams.limit,
           orderBy: `${this.queryParams.sort.field}:${this.queryParams.sort.type}`
         })
-        this.transactions = this.__sortTransactions(transactions)
+        this.transactions = transactions
         this.totalCount = totalCount
       } catch (error) {
         this.$logger.error(error)
@@ -104,11 +103,6 @@ export default {
       this.queryParams.page = 1
       this.totalCount = 0
       this.transactions = []
-    },
-
-    // TODO: Sort remotely
-    __sortTransactions (transactions = this.transactions) {
-      return orderBy(transactions, [this.queryParams.sort.field], [this.queryParams.sort.type])
     },
 
     __updateParams (newProps) {
