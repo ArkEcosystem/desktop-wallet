@@ -6,7 +6,7 @@
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
       class="appearance-none text-inherit w-full"
-      @click="toggle"
+      @click="buttonClick"
     >
       <slot
         :value="entries[activeKey]"
@@ -26,7 +26,7 @@
       v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside="close"
       :class="{ 'MenuDropdown--pin-above': pinAbove }"
-      class="absolute min-w-full z-20"
+      class="MenuDropdown__container absolute min-w-full z-20"
     >
       <ul
         :style="{ transform: `translate(${position.join(',')})` }"
@@ -135,6 +135,11 @@ export default {
       this.isOpen = false
 
       this.$emit('select', item)
+    },
+
+    buttonClick () {
+      this.toggle()
+      this.$emit('click')
     },
 
     toggle () {

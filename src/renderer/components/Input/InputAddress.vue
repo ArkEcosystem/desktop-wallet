@@ -3,8 +3,11 @@
     ref="dropdown"
     :items="suggestions"
     :value="dropdownValue"
+    class="InputAddress__MenuDropdown"
     @select="onDropdownSelect"
+    @click="focus"
   >
+    <!-- TODO: add filter to reduce dropdown items -->
     <InputField
       slot="handler"
       :label="label"
@@ -64,7 +67,6 @@ import { MenuDropdown } from '@/components/Menu'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import _ from 'lodash'
-import Cycled from 'cycled'
 
 export default {
   name: 'InputAddress',
@@ -166,10 +168,28 @@ export default {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
 
       const source = _.unionBy(wallets, contacts, 'address')
-      const addresses = _.map(source, 'address')
-      const results = _.filter(addresses, _.method('includes', this.inputValue))
 
-      return new Cycled(results.sort())
+      const addresses = _.map(source, (wallet) => {
+        const address = {
+          name: null,
+          address: wallet.address
+        }
+        if (wallet.name && wallet.name !== wallet.address) {
+          address.name = `${wallet.name} (${this.wallet_truncate(wallet.address)})`
+        }
+
+        return address
+      })
+
+      const results = _.orderBy(addresses, (object) => {
+        return object.name || object.address.toLowerCase()
+      })
+
+      return results.reduce((map, wallet, index) => {
+        map[wallet.address] = wallet.name || wallet.address
+
+        return map
+      }, {})
     }
   },
 
@@ -210,11 +230,11 @@ export default {
         if (!isDropdownItem) {
           this.closeDropdown()
         }
-
-        this.isFocused = isDropdownItem
-      } else {
-        this.isFocused = false
+      } else if (this.$refs.dropdown.isOpen) {
+        this.closeDropdown()
       }
+
+      this.isFocused = false
 
       // If the user selects a suggestion and leaves the input
       if (this.dropdownValue) {
@@ -223,7 +243,6 @@ export default {
     },
 
     onDropdownSelect (value) {
-      console.log('select detected')
       this.model = value
       this.$nextTick(() => this.closeDropdown())
     },
@@ -308,6 +327,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.InputAddress__MenuDropdown .MenuDropdown__container {
+  @apply .z-30
+}
+.InputAddress__MenuDropdown .MenuDropdownItem__container {
+  @apply .text-left
+}
 .InputAddress__input::placeholder {
   @apply .text-transparent
 }
