@@ -134,7 +134,7 @@ export default {
   grid-gap: 1rem;
 }
 .ProfileAll__grid__profile {
-  @apply .p-4
+  @apply .p-4 .border-transparent .border-2 .rounded-lg;
 }
 .ProfileAll__grid__profile:hover .profile-avatar-xl {
   transition: 0.5s;
