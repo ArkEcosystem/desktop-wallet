@@ -191,6 +191,7 @@ if (process.env.NODE_ENV !== 'production') {
  * Adjust rendererConfig for production settings
  */
 if (process.env.NODE_ENV === 'production') {
+  const sourcePath = rendererConfig.resolve.alias['@']
   rendererConfig.devtool = ''
 
   rendererConfig.plugins.push(
@@ -198,6 +199,11 @@ if (process.env.NODE_ENV === 'production') {
     new CopyWebpackPlugin([
       {
         from: path.join(__dirname, '../static'),
+        to: path.join(__dirname, '../dist/electron/static'),
+        ignore: ['.*']
+      },
+      {
+        from: path.join(__dirname, '../build/icons'),
         to: path.join(__dirname, '../dist/electron/static'),
         ignore: ['.*']
       }
@@ -209,7 +215,7 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     }),
     new PurgecssPlugin({
-      paths: glob.sync([path.join(__dirname, '../src/renderer/main.js')])
+      paths: glob.sync(`${sourcePath}/**/*`, { nodir: true })
     }),
   )
 }

@@ -1,7 +1,22 @@
 const { app, Menu, shell } = require('electron')
-const packageJson = require('../../package.json')
 const { APP } = require('../../config')
+const aboutWindow = require('about-window').default
+const path = require('path')
+const packageJson = require('../../package.json')
 const releaseService = require('../renderer/services/release').default
+
+const isProduction = process.env.NODE_ENV === 'production'
+
+const about = {
+  label: 'About',
+  click: () => aboutWindow({
+    icon_path: isProduction
+      ? path.resolve(__dirname, './static/128x128.png')
+      : path.resolve(__dirname, '../../build/icons/128x128.png'),
+    package_json_dir: path.resolve(__dirname, '../../'),
+    css_path: isProduction ? path.resolve(__dirname, 'styles.css') : null
+  })
+}
 
 const template = [
   {
@@ -69,7 +84,7 @@ if (process.platform === 'darwin') {
   template[0] = {
     label: app.getName(),
     submenu: [
-      { role: 'about' },
+      about,
       { type: 'separator' },
       { role: 'services', submenu: [] },
       { type: 'separator' },
@@ -101,6 +116,8 @@ if (process.platform === 'darwin') {
     { type: 'separator' },
     { role: 'front' }
   ]
+} else {
+  template[4].submenu.unshift(about, { type: 'separator' })
 }
 
 const menu = Menu.buildFromTemplate(template)

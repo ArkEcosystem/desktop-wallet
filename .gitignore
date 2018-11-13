@@ -6,7 +6,8 @@ thumbs.db
 dist/electron/*
 dist/web/*
 
-build/icons
+!build/background.png
+!build/icons
 build/target/*
 !build/target/.gitkeep
 

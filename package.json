@@ -15,6 +15,10 @@
   ],
   "description": "Ark Ecosystem Desktop Wallet",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
+  },
+  "homepage": "https://github.com/ArkEcosystem/desktop-wallet#readme",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -35,54 +39,6 @@
     "test:unit:coverage": "jest --config __tests__/unit.jest.conf.js --coverage",
     "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch"
   },
-  "build": {
-    "productName": "Ark Desktop Wallet",
-    "appId": "io.ark.desktop-wallet",
-    "compression": "maximum",
-    "directories": {
-      "output": "build/target"
-    },
-    "files": [
-      "dist/electron/**/*"
-    ],
-    "mac": {
-      "category": "public.app-category.finance",
-      "icon": "build/icons/icon.icns"
-    },
-    "win": {
-      "icon": "build/icons/icon.ico"
-    },
-    "linux": {
-	  "category": "Utility",
-	  "executableName": "ark-desktop-wallet",
-      "icon": "build/icons",
-      "target": [
-	    "AppImage",
-	    "deb",
-        "tar.gz"
-      ]
-    },
-    "deb": {
-      "depends": [
-		"gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3", "libudev-dev"
-	  ]
-	},
-	"dmg": {
-	  "contents": [
-		{
-		  "x": 410,
-		  "y": 150,
-		  "type": "link",
-		  "path": "/Applications"
-		},
-		{
-		  "x": 130,
-		  "y": 150,
-		  "type": "file"
-		}
-	  ]
-	}
-  },
   "dependencies": {
     "@arkecosystem/client": "^0.1.10",
     "@arkecosystem/crypto": "^0.2.4",
@@ -90,6 +46,7 @@
     "@babel/runtime": "^7.1.2",
     "@ledgerhq/hw-transport-node-hid": "^4.24.0",
     "@xkeshi/vue-qrcode": "^1.0.0",
+    "about-window": "^1.12.1",
     "animate.css": "^3.7.0",
     "async": "^2.6.1",
     "axios": "^0.18.0",
@@ -188,6 +145,58 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-hot-middleware": "^2.24.3"
+  },
+  "build": {
+	"productName": "Ark Desktop Wallet",
+	"appId": "io.ark.desktop-wallet",
+	"compression": "maximum",
+    "protocols": {
+      "name": "Ark URI scheme",
+      "schemes": [
+        "ark"
+      ],
+      "role": "Viewer"
+    },
+    "directories": {
+      "output": "build/target"
+    },
+    "files": [
+      "dist/electron/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.finance",
+      "icon": "build/icons/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icons/icon.ico"
+    },
+    "linux": {
+      "category": "Utility",
+      "executableName": "ark-desktop-wallet",
+      "icon": "build/icons",
+      "target": [
+        "AppImage",
+        "deb",
+        "tar.gz"
+      ],
+      "desktop": {
+        "MimeType": "x-scheme-handler/ark;"
+      }
+    },
+	"deb": {
+	  "depends": [
+		"gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3", "libudev-dev"
+	  ]
+	},
+    "dmg": {
+      "icon": "build/icons/icon.icns"
+    },
+    "nsis": {
+      "perMachine": true,
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "husky": {
     "hooks": {
