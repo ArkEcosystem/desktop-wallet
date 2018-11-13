@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex justify-center">
     <button
       v-tooltip="{
         content: tooltipText,
