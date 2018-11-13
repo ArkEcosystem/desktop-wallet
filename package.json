@@ -1,5 +1,6 @@
 {
-  "name": "@arkecosystem/desktop-wallet",
+  "private": true,
+  "name": "ark-desktop-wallet",
   "version": "1.9.9",
   "repository": {
     "type": "git",
@@ -14,7 +15,6 @@
   ],
   "description": "Ark Ecosystem Desktop Wallet",
   "license": "MIT",
-  "private": true,
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -36,38 +36,52 @@
     "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch"
   },
   "build": {
-    "productName": "desktop-wallet",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "Ark Desktop Wallet",
+    "appId": "io.ark.desktop-wallet",
+    "compression": "maximum",
     "directories": {
-      "output": "build"
+      "output": "build/target"
     },
     "files": [
       "dist/electron/**/*"
     ],
-    "dmg": {
-      "contents": [
-        {
-          "x": 410,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 130,
-          "y": 150,
-          "type": "file"
-        }
-      ]
-    },
     "mac": {
+      "category": "public.app-category.finance",
       "icon": "build/icons/icon.icns"
     },
     "win": {
       "icon": "build/icons/icon.ico"
     },
     "linux": {
-      "icon": "build/icons"
-    }
+	  "category": "Utility",
+	  "executableName": "ark-desktop-wallet",
+      "icon": "build/icons",
+      "target": [
+	    "AppImage",
+	    "deb",
+        "tar.gz"
+      ]
+    },
+    "deb": {
+      "depends": [
+		"gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3", "libudev-dev"
+	  ]
+	},
+	"dmg": {
+	  "contents": [
+		{
+		  "x": 410,
+		  "y": 150,
+		  "type": "link",
+		  "path": "/Applications"
+		},
+		{
+		  "x": 130,
+		  "y": 150,
+		  "type": "file"
+		}
+	  ]
+	}
   },
   "dependencies": {
     "@arkecosystem/client": "^0.1.10",

@@ -6,8 +6,9 @@ thumbs.db
 dist/electron/*
 dist/web/*
 
-build/*
-!build/icons
+build/icons
+build/target/*
+!build/target/.gitkeep
 
 node_modules/
 
