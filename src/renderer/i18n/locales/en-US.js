@@ -210,7 +210,7 @@ export default {
   BUTTON_CLIPBOARD: {
     DONE: 'Copied!',
     COPY_TO_CLIPBOARD: 'Copy to clipboard',
-    NOT_SUPPORTED: 'Copying to clipboard is not unavailable'
+    NOT_SUPPORTED: 'Copying to clipboard is not supported'
   },
 
   INPUT_ADDRESS: {
@@ -269,7 +269,7 @@ export default {
       NOT_ALLOWED: 'We need access to the camera to scan a QR code',
       NOT_FOUND: 'We were unable to find a camera',
       NOT_SUPPORTED: 'The page is not served over a secure connection (https)',
-      NOT_READABLE: 'We are inable to read the camera stream, maybe it is already in use?',
+      NOT_READABLE: 'We are unable to read the camera stream, maybe it is already in use?',
       OVERCONSTRAINED: 'It seems that we were unable to find a correct camera. This might be an issue with the constraints we expect.',
       STREAM: 'It seems that you are using an unsupported browser. That is very curious..'
     },
@@ -403,7 +403,7 @@ export default {
       TAB_DESIGN: {
         INSTRUCTIONS: {
           HEADER: 'Customize this wallet',
-          TEXT: 'Here you can choose the default theme (light or dark) and the bakground.'
+          TEXT: 'Here you can choose the default theme (light or dark) and the background.'
         },
         TITLE: 'Wallet design'
       }
@@ -428,9 +428,9 @@ export default {
       STEP1: {
         INSTRUCTIONS: {
           HEADER: 'Wallet recovery',
-          TEXT: 'Introduce the passphrase of your wallet. You can introduce the wallet address first to ensure that your both match.'
+          TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
-        TITLE: '1. Introduce wallet',
+        TITLE: '1. Import wallet',
         ONLY_ADDRESS: 'Use the address only',
         ONLY_PASSPHRASE: 'Use the passphrase only'
       },
@@ -446,13 +446,11 @@ export default {
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Wallet configuration',
-          TEXT: 'Choose a name for you wallet and decide which operations could perform and you are done.'
+          TEXT: 'Optionally, choose a name for you wallet and you are done.'
         },
         TITLE: '3. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name (optional)',
-        OPERATIONS: 'Wallet operations',
-        SENDING_ENABLED: 'Sending transactions enabled'
+        NAME: 'Wallet name (optional)'
       },
       FAILED: 'Failed to import wallet'
     },
@@ -496,13 +494,11 @@ export default {
       STEP5: {
         INSTRUCTIONS: {
           HEADER: 'Wallet configuration',
-          TEXT: 'Choose a name for you wallet and decide which operations could perform and you are done.'
+          TEXT: 'Optionally, choose a name for you wallet and you are done.'
         },
         TITLE: '5. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name (optional)',
-        OPERATIONS: 'Wallet operations',
-        SENDING_ENABLED: 'Sending transactions enabled'
+        NAME: 'Wallet name (optional)'
       }
     },
 
