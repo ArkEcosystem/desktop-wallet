@@ -37,7 +37,9 @@
 
         <div class="flex flex-col justify-center overflow-hidden pl-4">
           <div class="WalletAll__grid__wallet__name font-semibold text-lg truncate block">
-            {{ wallet.name }}
+            <router-link :to="{ name: 'wallet-show', params: { address: wallet.id } }">
+              {{ formatWalletName(wallet.name) }}
+            </router-link>
           </div>
           <span class="font-bold mt-2">
             {{ formatter_networkCurrency(wallet.balance, 2) }}
@@ -67,6 +69,8 @@
 import { without } from 'lodash'
 import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
+import WalletService from '@/services/wallet'
+import truncateMiddle from '@/filters/truncate-middle'
 
 export default {
   name: 'WalletAll',
@@ -126,6 +130,10 @@ export default {
     removeWallet (wallet) {
       this.hideRemovalConfirmation()
       this.selectableWallets = without(this.selectableWallets, wallet)
+    },
+
+    formatWalletName (name) {
+      return WalletService.validateAddress(name, this.session_network.version) ? truncateMiddle(name, 10) : name
     }
   }
 }
