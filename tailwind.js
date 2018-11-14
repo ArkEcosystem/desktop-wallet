@@ -70,6 +70,9 @@ let colors = {
   'theme-transaction-detail-gradient2': 'var(--theme-transaction-detail-gradient2)',
   'theme-transaction-detail-arrow': 'var(--theme-transaction-detail-arrow)',
 
+  'theme-wallet-new-selected': 'var(--theme-wallet-new-selected)',
+  'theme-wallet-new-unselected': 'var(--theme-wallet-new-unselected)',
+
   'theme-feature': 'var(--theme-feature)',
   'theme-feature-item-text': 'var(--theme-feature-item-text)',
   'theme-feature-item-hover': 'var(--theme-feature-item-hover)',

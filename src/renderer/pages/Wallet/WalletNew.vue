@@ -55,26 +55,27 @@
               />
             </div>
 
-            <transition-group
-              class="list-reset flex flex-col justify-around"
-              name="WalletNew__wallets"
-              tag="ul"
-            >
+            <ul class="list-reset">
               <li
                 v-for="(passphrase, address) in wallets"
                 :key="address"
-                class="py-4 w-full border-b border-dashed border-theme-line-separator"
+                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
               >
+                <WalletIdenticon
+                  :value="address"
+                  :size="35"
+                  class="flex-no-shrink"
+                />
                 <a
                   :class="{ 'WalletNew__wallets--selected': schema.address === address }"
-                  class="cursor-pointer text-theme-page-text"
+                  class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 cursor-pointer flex-no-shrink"
                   @click="selectWallet(address, passphrase)"
                 >
 
-                  {{ address }}
+                  <span class="font-semibold text-sm">{{ address }}</span>
                 </a>
               </li>
-            </transition-group>
+            </ul>
 
           </MenuStepItem>
 
@@ -232,6 +233,7 @@ import { InputField, InputPassword, InputSwitch, InputText } from '@/components/
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
+import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
 
@@ -249,7 +251,8 @@ export default {
     MenuStepItem,
     ModalLoader,
     PassphraseVerification,
-    PassphraseWords
+    PassphraseWords,
+    WalletIdenticon
   },
 
   schema: Wallet.schema,
@@ -396,7 +399,7 @@ export default {
 
       // Delay the generation to play an animation
       setTimeout(() => {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 3; i++) {
           const { address, passphrase } = WalletService.generate(
             this.session_network.version,
             this.session_profile.bip39Language
@@ -455,17 +458,15 @@ export default {
   background-position: center center;
 }
 .WalletNew__wallets--selected {
-  @apply .font-bold
+  @apply .text-theme-wallet-new-selected .font-bold
 }
 
-.WalletNew__wallets-leave-active {
-  transition: all 0.2s;
+.WalletNew__wallets--address {
+  transition: all 0.5s;
 }
-.WalletNew__wallets-enter-active {
-  transition: all 1s;
-}
-.WalletNew__wallets-enter,
-.WalletNew__wallets-leave-to {
-  opacity: 0;
+
+.WalletNew__wallets--address:hover {
+  transition: all 0.5s;
+  @apply .text-theme-wallet-new-selected .no-underline
 }
 </style>
