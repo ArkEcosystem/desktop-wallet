@@ -48,9 +48,7 @@ let rendererConfig = {
       {
         test: /\.css$/,
         use: [
-          process.env.NODE_ENV !== 'production'
-            ? 'vue-style-loader'
-            : MiniCssExtractPlugin.loader,
+          'vue-style-loader',
           'css-loader',
           'postcss-loader'
         ]
