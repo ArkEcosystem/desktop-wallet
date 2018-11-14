@@ -32,7 +32,7 @@ export default {
     WELCOME: {
       TITLE: 'Welcome to the {app}',
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
-      FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay attention to these warnings'
+      FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay attention to these warnings.'
     },
     POWER: {
       TITLE: 'Power',
