@@ -100,7 +100,7 @@
 <script>
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
-import { TransactionShow } from '@/components/Transaction'
+import TransactionShow from './TransactionShow'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
 

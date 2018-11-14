@@ -1,7 +1,7 @@
 <template>
   <ModalWindow
     :title="$t('TRANSACTION.TRANSACTION')"
-    class="TransactionShow"
+    container-classes="TransactionShow"
     @close="emitClose"
   >
     <ListDivided>
@@ -187,8 +187,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.TransactionShow /deep/ .ModalWindow__container {
+<style>
+.TransactionShow {
   min-width: 35rem
 }
 </style>
