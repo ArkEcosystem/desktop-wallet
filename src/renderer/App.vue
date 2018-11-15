@@ -25,11 +25,11 @@
         :class="{
           'blur': hasBlurFilter
         }"
-        class="App__main flex flex-col px-4 lg:py-6 w-screen h-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-4 lg:py-6 w-screen h-screen overflow-hidden"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
-          class="flex-1 flex mt-6 mb-4 lg:mr-6"
+          class="App__container w-full flex-1 flex mt-6 mb-4 lg:mr-6"
         >
           <AppSidemenu
             v-if="hasAnyProfile"
@@ -207,5 +207,8 @@ export default {
 
 .App__main {
   transition: .1s filter linear;
+}
+.App__container {
+  max-width: 1400px;
 }
 </style>
