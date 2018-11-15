@@ -130,10 +130,12 @@ export default {
 
   methods: {
     prepareFeeStatistics () {
-      const { avgFee, maxFee, minFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
+      let { avgFee, maxFee, minFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
 
       this.feeChoices.AVERAGE = avgFee * Math.pow(10, -8)
-      this.feeChoices.MAXIMUM = maxFee * Math.pow(10, -8)
+      // Even if the network provides a higher maximum, it should not be higher than V1
+      maxFee = maxFee * Math.pow(10, -8)
+      this.feeChoices.MAXIMUM = maxFee < 0.1 ? maxFee : 0.1
       this.feeChoices.MINIMUM = minFee * Math.pow(10, -8)
       this.feeChoices.CUSTOM = this.feeChoices.AVERAGE
       this.setFee(this.feeChoices.AVERAGE)

@@ -1,4 +1,5 @@
 import { cloneDeep } from 'lodash'
+import errorCapturer from '../__utils__/error-capturer'
 import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
 
@@ -399,6 +400,21 @@ describe('Services > Client', () => {
           expect(transaction).not.toHaveProperty('senderId')
           expect(transaction).not.toHaveProperty('recipientId')
         })
+      })
+    })
+  })
+
+  describe('buildTransfer', () => {
+    describe('when the fee is bigger than 0.1', () => {
+      it('should throw an Error', async () => {
+        expect(await errorCapturer(client.buildTransfer({ fee: 0.2 * Math.pow(10, 8) }))).toThrow(/fee/)
+      })
+    })
+
+    describe('when the fee is smaller or equal to 0.1', () => {
+      it('should not throw an Error', async () => {
+        expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * Math.pow(10, 8) }))).not.toThrow(/fee/)
       })
     })
   })

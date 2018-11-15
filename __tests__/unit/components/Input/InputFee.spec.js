@@ -30,9 +30,9 @@ describe('InputFee', () => {
 
     store.getters['session/network'] = mockNetwork
     store.getters['network/feeStatisticsByType'] = type => ({
-      avgFee: 0.0048,
-      maxFee: 0.012,
-      minFee: 0.0006
+      avgFee: 0.0048 * Math.pow(10, 8),
+      maxFee: 0.012 * Math.pow(10, 8),
+      minFee: 0.0006 * Math.pow(10, 8)
     })
   })
 
@@ -97,6 +97,40 @@ describe('InputFee', () => {
 
       wrapper.vm.emitFee('97')
       expect(wrapper.emitted('input')[0][0]).toEqual(97)
+    })
+  })
+
+  describe('prepareFeeStatistics', () => {
+    describe('when the maximum fee of the network is more than 0.1', () => {
+      beforeEach(() => {
+        store.getters['network/feeStatisticsByType'] = type => ({
+          avgFee: 0.0048 * Math.pow(10, 8),
+          maxFee: 1000 * Math.pow(10, 8),
+          minFee: 0.0006 * Math.pow(10, 8)
+        })
+      })
+
+      it('should use 0.1 as maximum always', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.MAXIMUM).toEqual(0.1)
+      })
+    })
+
+    describe('when the maximum fee of the network is less than 0.1', () => {
+      beforeEach(() => {
+        store.getters['network/feeStatisticsByType'] = type => ({
+          avgFee: 0.0048 * Math.pow(10, 8),
+          maxFee: 0.03 * Math.pow(10, 8),
+          minFee: 0.0006 * Math.pow(10, 8)
+        })
+      })
+
+      it('should use 0.1 as maximum always', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.MAXIMUM).toBeWithin(0.03, 0.03000001)
+      })
     })
   })
 })

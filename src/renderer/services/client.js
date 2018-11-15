@@ -399,6 +399,11 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
+    // To ensure that transfers cannot be build with a bigger fee than V1
+    if (fee > 0.1 * Math.pow(10, 8)) {
+      throw new Error('Transfer fee should be smaller than 0.1')
+    }
+
     const transaction = transactionBuilder
       .transfer()
       .amount(amount)
