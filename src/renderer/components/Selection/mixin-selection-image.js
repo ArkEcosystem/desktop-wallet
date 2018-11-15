@@ -1,5 +1,5 @@
 import path from 'path'
-import { flatten, upperCase } from 'lodash'
+import { flatten, upperCase, sortBy } from 'lodash'
 import imageManager from '@/services/image-manager'
 
 export default {
@@ -20,13 +20,14 @@ export default {
         if (groups[category]) {
           const translatedCategory = this.$t(`${componentName}.${category.toUpperCase()}`)
 
-          all[translatedCategory] = groups[category].map(imagePath => {
+          const images = groups[category].map(imagePath => {
             const { name } = path.parse(imagePath)
             return {
               title: name,
               imagePath
             }
           })
+          all[translatedCategory] = sortBy(images, 'title')
         }
 
         return all

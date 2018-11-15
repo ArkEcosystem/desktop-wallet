@@ -4,6 +4,7 @@
     :max-visible-items="maxVisibleItems"
     :modal-header-text="modalHeaderText"
     :selected="selectedItem"
+    class="SelectionAvatar"
     modal-container-classes="SelectionAvatar"
     item-key="imagePath"
     @input="select"
@@ -46,6 +47,7 @@ export default {
 /* It should not be scoped to affect the default style of the items of InputGrid */
 .SelectionAvatar .InputGridItem {
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
  .SelectionAvatar .InputGridModal__container {
