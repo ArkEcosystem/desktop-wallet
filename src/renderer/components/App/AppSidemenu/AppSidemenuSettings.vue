@@ -189,13 +189,13 @@ export default {
 <style scoped>
 .AppSidemenuOptionsSettings {
   width: 300px;
-  left: 5.5rem;
+  left: 6.5rem;
   transform: translateY(-10%)
 }
 
 .AppSidemenuOptionsSettings--horizontal {
   width: 300px;
   right: 8.5rem;
-  top: 4.5rem;
+  top: 5.5rem;
 }
 </style>

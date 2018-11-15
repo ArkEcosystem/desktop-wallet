@@ -196,13 +196,13 @@ export default {
 <style lang="postcss" scoped>
 .AppSidemenuNetworkStatus {
   width: 380px;
-  left: 5.5rem;
+  left: 6.5rem;
 }
 
 .AppSidemenuNetworkStatus--horizontal {
   width: 380px;
   right: 4.5rem;
-  top: 4.5rem;
+  top: 5.5rem;
 }
 
 .AppSidemenuNetworkStatus__status__height,

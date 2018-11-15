@@ -1,7 +1,7 @@
 <template>
   <MenuNavigation
     v-model="activeItem"
-    :class="isHorizontal ? 'h-18 flex-row' : 'w-18 mx-6 rounded-lg flex-col'"
+    :class="isHorizontal ? 'h-18 flex-row' : 'w-22 mx-6 rounded-lg flex-col'"
     class="AppSidemenu justify-between relative"
   >
 
@@ -38,6 +38,17 @@
         icon="contact-add"
         @click="redirect($event)"
       />
+
+      <!-- Announcements -->
+      <MenuNavigationItem
+        id="announcements"
+        :title="$t('APP_SIDEMENU.ANNOUNCEMENTS')"
+        :class="isHorizontal ? 'w-16' : 'h-16'"
+        :is-horizontal="isHorizontal"
+        :show-badge="showUnread"
+        icon="whitepaper"
+        @click="redirect($event)"
+      />
     </div>
 
     <div :class="{'flex flex-row h-18' : isHorizontal}">
@@ -51,17 +62,6 @@
     </div>
 
     <div :class="{'flex flex-row h-18' : isHorizontal}">
-      <!-- Announcements -->
-      <MenuNavigationItem
-        id="announcements"
-        :title="$t('APP_SIDEMENU.ANNOUNCEMENTS')"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        :show-badge="showUnread"
-        icon="whitepaper"
-        @click="redirect($event)"
-      />
-
       <!-- Search -->
       <!-- <MenuNavigationItem
         id="search"
@@ -112,7 +112,7 @@
       <!-- Profile settings -->
       <div
         :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-        class="cursor-pointer align-self-end"
+        class="cursor-pointer flex items-center"
       >
         <router-link
           :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
@@ -215,6 +215,7 @@ export default {
 .AppSidemenu__avatar {
   transition: opacity 0.5s;
   background-repeat: no-repeat;
+  background-position: center;
   border: none;
 }
 .AppSidemenu__avatar:hover {
