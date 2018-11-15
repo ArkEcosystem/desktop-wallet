@@ -55,7 +55,11 @@
               />
             </div>
 
-            <ul class="list-reset">
+            <transition-group
+              class="list-reset"
+              name="WalletNew__wallets"
+              tag="ul"
+            >
               <li
                 v-for="(passphrase, address) in wallets"
                 :key="address"
@@ -75,7 +79,7 @@
                   <span class="font-semibold text-sm">{{ address }}</span>
                 </a>
               </li>
-            </ul>
+            </transition-group>
 
           </MenuStepItem>
 
@@ -408,7 +412,7 @@ export default {
         }
 
         this.isRefreshing = false
-      }, 200)
+      }, 300)
     }
   },
 
@@ -457,6 +461,19 @@ export default {
   background-size: cover;
   background-position: center center;
 }
+
+.WalletNew__wallets-enter-active {
+  transition: opacity 1s
+}
+.WalletNew__wallets-leave-active {
+  transition: opacity 0.2s
+}
+
+.WalletNew__wallets-enter,
+.WalletNew__wallets-leave-to {
+  opacity: 0
+}
+
 .WalletNew__wallets--selected {
   @apply .text-theme-wallet-new-selected .font-bold
 }
@@ -464,7 +481,6 @@ export default {
 .WalletNew__wallets--address {
   transition: all 0.5s;
 }
-
 .WalletNew__wallets--address:hover {
   transition: all 0.5s;
   @apply .text-theme-wallet-new-selected .no-underline
