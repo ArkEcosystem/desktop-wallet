@@ -64,33 +64,45 @@
             </li>
           </ul>
         </div>
-        <button
+        <ButtonGeneric
+          :disabled="isFirst"
+          :label="$t('COMMON.BACK')"
+          class="ml-4 mr-0"
+          @click="emitBack"
+        />
+        <ButtonGeneric
           v-if="!isLast"
-          class="blue-button ml-4"
+          :label="$t('COMMON.NEXT')"
+          class="ml-4"
           @click="emitNext"
-        >
-          {{ $t('COMMON.NEXT') }}
-        </button>
-        <button
+        />
+        <ButtonGeneric
           v-else
-          class="blue-button ml-4"
+          :label="$t('COMMON.FINISH')"
+          class="ml-4"
           @click="emitDone"
-        >
-          {{ $t('COMMON.FINISH') }}
-        </button>
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ButtonGeneric } from '@/components/Button'
+
 export default {
   name: 'AppIntroScreen',
 
   components: {
+    ButtonGeneric
   },
 
   props: {
+    isFirst: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     isLast: {
       type: Boolean,
       required: false,
@@ -108,6 +120,10 @@ export default {
   },
 
   methods: {
+    emitBack () {
+      this.$emit('back')
+    },
+
     emitNext () {
       this.$emit('next')
     },

@@ -48,8 +48,10 @@
 
         <AppIntroScreen
           v-if="step == 2"
+          :is-first="true"
           :selection="1"
-          @next="next(3)"
+          @back="moveTo(1)"
+          @next="moveTo(3)"
         >
           <i18n
             slot="title"
@@ -63,7 +65,8 @@
         <AppIntroScreen
           v-if="step == 3"
           :selection="2"
-          @next="next(4)"
+          @back="moveTo(2)"
+          @next="moveTo(4)"
         >
           <i18n
             slot="title"
@@ -78,6 +81,7 @@
           v-if="step == 4"
           :is-last="true"
           :selection="3"
+          @back="moveTo(3)"
           @done="done"
         >
           <i18n
@@ -125,7 +129,7 @@ export default {
       this.step = 2
     },
 
-    next (step) {
+    moveTo (step) {
       this.step = step
     },
 
