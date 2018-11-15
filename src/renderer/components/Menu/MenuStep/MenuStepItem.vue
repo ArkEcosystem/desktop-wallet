@@ -43,9 +43,9 @@
 
         <button
           v-if="isNextVisible || isNextEnabled"
-          :disabled="!isNextEnabled"
+          :disabled="!isNextEnabled || isLastItemClicked"
           class="MenuStepItem__footer__next-button blue-button"
-          @click="emitNext"
+          @click="emitNext(isLastItem)"
         >
           {{ isLastItem ? $t('COMMON.DONE') : $t('COMMON.NEXT') }}
         </button>
@@ -97,7 +97,8 @@ export default {
 
   data: () => ({
     isFirstItem: false,
-    isLastItem: false
+    isLastItem: false,
+    isLastItemClicked: false
   }),
 
   methods: {
@@ -105,8 +106,13 @@ export default {
       this.$emit('back')
     },
 
-    emitNext () {
-      this.$emit('next')
+    emitNext (isLastItem) {
+      if (!this.lastItemClicked) {
+        this.$emit('next')
+      }
+      if (isLastItem) {
+        this.isLastItemClicked = true
+      }
     },
 
     emitOpen () {
