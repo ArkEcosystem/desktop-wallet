@@ -11,7 +11,7 @@
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
         :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
-        class="bg-red flex justify-center items-center"
+        class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
       >
         <img
           :class="isHorizontal ? 'h-12' : 'w-18'"
@@ -209,6 +209,9 @@ export default {
 </script>
 
 <style scoped>
+.AppSidemenu__logo {
+  transition: opacity 0.5s;
+}
 .AppSidemenu__avatar {
   transition: opacity 0.5s;
   background-repeat: no-repeat;
