@@ -50,7 +50,12 @@ export default {
      * @return {Object[]}
      */
     all: (state, getters, _, rootGetters) => (ignoreCurrent = false) => {
-      const networkPeers = state.all[rootGetters['session/profile'].networkId]
+      const profile = rootGetters['session/profile']
+      if (!profile || !profile.networkId) {
+        return []
+      }
+
+      const networkPeers = state.all[profile.networkId]
       let peers = []
       if (networkPeers) {
         peers = Object.values(networkPeers.peers)
@@ -120,7 +125,12 @@ export default {
      * @return {(Object|boolean)} - false if no current peer
      */
     current: (state, getters, __, rootGetters) => () => {
-      let currentPeer = state.current[rootGetters['session/profile'].networkId]
+      const profile = rootGetters['session/profile']
+      if (!profile || !profile.networkId) {
+        return false
+      }
+
+      let currentPeer = state.current[profile.networkId]
       if (!currentPeer) {
         return false
       }
@@ -133,7 +143,12 @@ export default {
      * @return {(Date|null)}
      */
     lastUpdated: (state, _, __, rootGetters) => () => {
-      const networkPeers = state.all[rootGetters['session/profile'].networkId]
+      const profile = rootGetters['session/profile']
+      if (!profile || !profile.networkId) {
+        return false
+      }
+
+      const networkPeers = state.all[profile.networkId]
 
       if (networkPeers) {
         return networkPeers.lastUpdated
@@ -162,6 +177,11 @@ export default {
      * @return {void}
      */
     set ({ commit, rootGetters }, peers) {
+      const profile = rootGetters['session/profile']
+      if (!profile || !profile.networkId) {
+        return
+      }
+
       commit('SET_PEERS', {
         peers: peers.map(peer => {
           try {
@@ -172,7 +192,7 @@ export default {
 
           return null
         }).filter(peer => peer !== null),
-        networkId: rootGetters['session/profile'].networkId
+        networkId: profile.networkId
       })
     },
 
@@ -182,11 +202,16 @@ export default {
      * @return {void}
      */
     async setCurrentPeer ({ commit, rootGetters }, peer) {
+      const profile = rootGetters['session/profile']
+      if (!profile || !profile.networkId) {
+        return
+      }
+
       await getApiPort(peer)
       this._vm.$client.host = getBaseUrl(peer)
       commit('SET_CURRENT_PEER', {
         peer,
-        networkId: rootGetters['session/profile'].networkId
+        networkId: profile.networkId
       })
     },
 
@@ -196,6 +221,10 @@ export default {
      */
     async refresh ({ dispatch, getters, rootGetters }) {
       const network = rootGetters['session/network']
+      if (!network) {
+        return
+      }
+
       const networkLookup = {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
