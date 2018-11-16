@@ -90,7 +90,7 @@ export default {
     async onConfirm () {
       const response = await this.$client.broadcastTransaction(this.transaction)
 
-      this.successfulResponse(response)
+      this.isSuccessfulResponse(response)
         ? this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
         : this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
 
@@ -105,7 +105,13 @@ export default {
       this.$emit('cancel')
     },
 
-    successfulResponse (response) {
+    /**
+     * Checks if the response is successful: in case the transaction is rejected
+     * due a low fee, it is broadcasted too, so it cannot be declared as invalid yet
+     * @param {Object} response
+     * @return {Boolean}
+     */
+    isSuccessfulResponse (response) {
       if (response.status !== 200) {
         this.$logger.error(response)
         return false
@@ -114,7 +120,13 @@ export default {
       if (this.$client.version === 1) {
         return response.data.success
       } else {
-        return response.data.data && response.data.data.invalid.length === 0
+        const { data, errors } = response.data
+        if (data && data.invalid.length === 0) {
+          return true
+        } else {
+          const keys = Object.keys(errors)
+          return errors[keys[0]][0].type === 'ERR_LOW_FEE'
+        }
       }
     }
   }
