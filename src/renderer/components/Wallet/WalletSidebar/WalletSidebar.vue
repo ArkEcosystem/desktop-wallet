@@ -17,7 +17,7 @@
     >
       <div
         slot-scope="{ isActive }"
-        class="WalletSidebar__wallet__wrapper transition flex items-center w-full mx-6 py-6 overflow-hidden"
+        class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticon
           :size="50"
@@ -29,9 +29,9 @@
             'text-theme-page-text': isActive,
             'text-theme-page-text-light': !isActive
           }"
-          class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden pt-2"
+          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2"
         >
-          <span class="truncate block">{{ trimName(wallet.name) }}</span>
+          <span class="block truncate">{{ trimName(wallet.name) }}</span>
           <span
             v-if="!isBasic"
             class="font-bold mt-2 text-xl"
@@ -125,7 +125,7 @@ export default {
     trimName (name) {
       // If it's an address, use truncate middle
       if (this.isAddress(name)) {
-        return this.wallet_truncate(name)
+        return this.wallet_truncate(name, 6)
       }
 
       // Else it's a name, simply use ellipses at the end (is handled by a class)
