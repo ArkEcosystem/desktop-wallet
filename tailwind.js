@@ -54,6 +54,7 @@ let colors = {
   'theme-announcements-gradient-2': 'var(--theme-announcements-gradient-2)',
 
   'theme-line-separator': 'var(--theme-line-separator)',
+  'theme-wallet-overview-border': 'var(--theme-wallet-overview-border)',
 
   'theme-table-row-hover': 'var(--theme-table-row-hover)',
   'theme-transaction-sent': 'var(--theme-transaction-sent)',

@@ -3,7 +3,7 @@
     <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
     <div class="WalletAll__grid mt-10 justify-center">
-      <div class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-b border-r">
+      <div class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r">
         <div class="flex flex-row items-center">
           <WalletIdenticon
             :size="60"
@@ -24,7 +24,7 @@
       <div
         v-for="wallet in selectableWallets"
         :key="wallet.id"
-        class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-b border-r"
+        class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
       >
         <div class="flex flex-row items-center">
           <router-link
