@@ -31,6 +31,8 @@
   --theme-transaction-detail-gradient1: #46466b;
   --theme-transaction-detail-gradient2: #343a53;
   --theme-transaction-detail-arrow: #4d536c;
+  --theme-transaction-confirmed: var(--theme-transaction-received-arrow);
+  --theme-transaction-unconfirmed: var(--theme-transaction-sent-arrow);
 
   --theme-wallet-new-selected: #282a2b;
   --theme-wallet-new-unselected: #9ea7bc;

@@ -10,24 +10,43 @@
       <template
         slot-scope="data"
       >
-        <a
-          v-if="data.column.field === 'id'"
-          v-tooltip="{
-            content: data.row.id,
-            classes: 'text-xs',
-            trigger: 'hover'
-          }"
-          href="#"
-          @click.stop="network_openExplorer('transaction', data.row.id)"
-        >
-          {{ data.formattedRow['id'] }}
+        <div v-if="data.column.field === 'id'">
+          <span
+            v-tooltip="{
+              content: $t('TRANSACTION.CONFIRMATION_COUNT', [data.row.confirmations]),
+              classes: 'text-xs',
+              trigger: 'hover'
+            }"
+            :class="{
+              'TransactionTable__row__confirmations--confirmed': data.row.confirmations >= 51,
+              'TransactionTable__row__confirmations--unconfirmed': data.row.confirmations < 51
+            }"
+            class="mr-1"
+          >
+            <SvgIcon
+              name="time"
+              view-box="0 0 12 13"
+            />
+          </span>
 
-          <SvgIcon
-            name="open-external"
-            view-box="0 0 12 12"
-            class="text-theme-page-text-light"
-          />
-        </a>
+          <a
+            v-tooltip="{
+              content: data.row.id,
+              classes: 'text-xs',
+              trigger: 'hover'
+            }"
+            href="#"
+            @click.stop="network_openExplorer('transaction', data.row.id)"
+          >
+            {{ data.formattedRow['id'] }}
+
+            <SvgIcon
+              name="open-external"
+              view-box="0 0 12 12"
+              class="text-theme-page-text-light"
+            />
+          </a>
+        </div>
 
         <div
           v-else-if="data.column.field === 'amount'"
@@ -205,3 +224,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.TransactionTable__row__confirmations--confirmed {
+  color: var(--theme-transaction-confirmed)
+}
+.TransactionTable__row__confirmations--unconfirmed {
+  color: var(--theme-transaction-unconfirmed)
+}
+</style>
