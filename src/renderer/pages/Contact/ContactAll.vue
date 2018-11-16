@@ -3,46 +3,54 @@
     <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
 
     <div class="ContactAll__grid mt-10 justify-center">
-      <div class="ContactAll__grid__contact flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg">
-        <router-link :to="{ name: 'contact-new' }">
-          <WalletIdenticon
-            :size="100"
-            value="default"
-            class="identicon cursor-pointer opacity-50"
-          />
-        </router-link>
-        <div class="flex flex-col justify-center overflow-hidden pl-4">
+      <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-b border-r">
+        <div class="flex flex-row items-center">
           <router-link :to="{ name: 'contact-new' }">
-            {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
+            <WalletIdenticon
+              :size="60"
+              value="default"
+              class="identicon cursor-pointer opacity-50"
+            />
           </router-link>
-          <span class="font-bold mt-2 opacity-50">
-            {{ formatter_networkCurrency(0, 2) }}
-          </span>
+          <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
+            <router-link :to="{ name: 'contact-new' }">
+              {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
+            </router-link>
+            <span class="font-bold mt-2 opacity-50 text-lg">
+              {{ formatter_networkCurrency(0, 2) }}
+            </span>
+          </div>
         </div>
       </div>
 
       <div
         v-for="contact in contacts"
         :key="contact.id"
-        class="ContactAll__grid__contact flex flex-row w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg"
+        class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-b border-r"
       >
-        <router-link
-          :to="{ name: 'wallet-show', params: { address: contact.id } }"
-          class="flex flex-row"
-        >
-          <WalletIdenticon
-            :value="contact.address"
-            :size="100"
-            class="identicon cursor-pointer"
-          />
-        </router-link>
-        <div class="flex flex-col justify-center overflow-hidden pl-4">
-          <div class="ContactAll__grid__contact__name font-semibold text-lg truncate block">
-            {{ trimName(contact.name) }}
+        <div class="flex flex-row items-center">
+          <router-link
+            :to="{ name: 'wallet-show', params: { address: contact.id } }"
+            class="flex flex-row"
+          >
+            <WalletIdenticon
+              :value="contact.address"
+              :size="60"
+              class="identicon cursor-pointer"
+            />
+          </router-link>
+          <div class="flex flex-col justify-center overflow-hidden pl-4">
+            <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
+              <router-link :to="{ name: 'wallet-show', params: { address: contact.id } }">
+                {{ trimName(contact.name) }}
+              </router-link>
+            </div>
+            <span class="font-bold mt-2 text-lg">
+              {{ formatter_networkCurrency(contact.balance, 2) }}
+            </span>
           </div>
-          <span class="font-bold mt-2">
-            {{ formatter_networkCurrency(contact.balance, 2) }}
-          </span>
+        </div>
+        <div class="flex flex-row w-full justify-end">
           <button
             class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
             @click="openRemovalConfirmation(contact)"
