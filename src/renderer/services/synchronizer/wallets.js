@@ -96,8 +96,6 @@ class Action {
         this.$dispatch('wallet/update', refreshedWallet)
 
         await this.fetchWalletTransactions(refreshedWallet)
-      } else {
-        throw new Error('exam')
       }
     } catch (error) {
       this.$logger.error(error.message)
@@ -129,8 +127,6 @@ class Action {
 
           this.displayNewTransaction(latest)
         }
-      } else {
-        throw new Error('exam')
       }
     } catch (error) {
       this.$logger.error(error)

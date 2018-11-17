@@ -1,7 +1,7 @@
 <template>
   <TransactionTable
     :current-page="currentPage"
-    :rows="transactions"
+    :rows="fetchedTransactions"
     :total-rows="totalCount"
     :is-loading="isLoading"
     :is-remote="true"
@@ -25,8 +25,9 @@ export default {
 
   data: () => ({
     currentPage: 1,
+    isFetching: false,
     isLoading: false,
-    transactions: [],
+    fetchedTransactions: [],
     totalCount: 0,
     queryParams: {
       page: 1,
@@ -39,30 +40,38 @@ export default {
   }),
 
   watch: {
-    'wallet_fromRoute.id' () {
-      this.reset()
-      this.fetchTransactions()
+    // This watcher would invoke the `fetch` after the `Synchronizer`
+    wallet_fromRoute (newValue, oldValue) {
+      if (newValue.address !== oldValue.address) {
+        this.reset()
+        this.loadTransactions()
+      } else {
+        this.fetchTransactions()
+      }
     }
   },
 
   created () {
-    this.fetchTransactions()
-    this.$eventBus.on('wallet:fetchTransactions', this.fetchTransactions)
+    this.loadTransactions()
+    this.$eventBus.on('wallet:fetchTransactions', this.loadTransactions)
   },
 
   methods: {
     async fetchTransactions () {
-      if (!this.wallet_fromRoute) return
-      if (this.isLoading) return // If we're already fetching, it's unneccessary to fetch again
+      // If we're already fetching, it's unneccessary to fetch again
+      if (this.isFetching) return
+
+      this.isFetching = true
 
       try {
-        this.isLoading = true
+        const { limit, page, sort } = this.queryParams
         const { transactions, totalCount } = await this.$client.fetchWalletTransactions(this.wallet_fromRoute.address, {
-          page: this.queryParams.page,
-          limit: this.queryParams.limit,
-          orderBy: `${this.queryParams.sort.field}:${this.queryParams.sort.type}`
+          page,
+          limit,
+          orderBy: `${sort.field}:${sort.type}`
         })
-        this.transactions = transactions
+
+        this.$set(this, 'fetchedTransactions', transactions)
         this.totalCount = totalCount
       } catch (error) {
         this.$logger.error(error)
@@ -70,21 +79,34 @@ export default {
           name: 'transactions',
           msg: error.message
         }))
-        this.transactions = []
+        this.fetchedTransactions = []
       } finally {
+        this.isFetching = false
         this.isLoading = false
       }
+    },
+
+    /**
+     * Fetch the transaction and show the loading animation while the response
+     * is received
+     */
+    async loadTransactions () {
+      if (!this.wallet_fromRoute) return
+      if (this.isFetching) return // If we're already fetching, it's unneccessary to fetch again
+
+      this.isLoading = true
+      this.fetchTransactions()
     },
 
     onPageChange ({ currentPage }) {
       this.currentPage = currentPage
       this.__updateParams({ page: currentPage })
-      this.fetchTransactions()
+      this.loadTransactions()
     },
 
     onPerPageChange ({ currentPerPage }) {
       this.__updateParams({ limit: currentPerPage, page: 1 })
-      this.fetchTransactions()
+      this.loadTransactions()
     },
 
     onSortChange ({ columnName, sortType }) {
@@ -95,14 +117,14 @@ export default {
         },
         page: 1
       })
-      this.fetchTransactions()
+      this.loadTransactions()
     },
 
     reset () {
       this.currentPage = 1
       this.queryParams.page = 1
       this.totalCount = 0
-      this.transactions = []
+      this.fetchedTransactions = []
     },
 
     __updateParams (newProps) {

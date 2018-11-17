@@ -22,12 +22,12 @@ export default {
   },
 
   data: () => ({
-    transactions: []
+    fetchedTransactions: []
   }),
 
   computed: {
     lastTransactions () {
-      return sortBy(this.transactions, 'timestamp').reverse().slice(0, this.numberOfTransactions)
+      return sortBy(this.fetchedTransactions, 'timestamp').reverse().slice(0, this.numberOfTransactions)
     },
     wallets () {
       return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
@@ -35,6 +35,7 @@ export default {
   },
 
   watch: {
+    // This watcher would invoke the `fetch` after the `Synchronizer`
     wallets () {
       this.fetchTransactions()
     }
@@ -53,11 +54,15 @@ export default {
         this.wallets.map(async wallet => {
           const { transactions } = await this.$client.fetchWalletTransactions(wallet.address)
 
-          // Update the transactions when they are received
-          this.transactions = uniqBy([
-            ...this.transactions,
-            ...transactions
-          ], 'id')
+          // Update the transactions of each wallet when they are received
+          this.$set(this, 'fetchedTransactions', uniqBy([
+            /*
+             * NOTE: The order of this 2 lines is VERY important:
+             * recent transactions should override older to have the up-to-date number of confirmations
+             */
+            ...transactions,
+            ...this.fetchedTransactions
+          ], 'id'))
         })
       } catch (error) {
         this.$logger.error(error)
