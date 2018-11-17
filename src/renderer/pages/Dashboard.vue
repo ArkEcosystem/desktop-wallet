@@ -1,6 +1,6 @@
 <template>
   <div class="Dashboard relative flex flex-row h-full w-full">
-    <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-3/4 flex-col overflow-y-auto">
+    <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
         v-if="isMarketEnabled"
         class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
@@ -18,7 +18,7 @@
       </div>
     </main>
 
-    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-1/4 overflow-y-auto hidden lg:block">
+    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text">
         <router-link
           :to="{ name: 'wallet-new' }"
@@ -107,7 +107,7 @@ export default {
 }
 .Dashboard__wallets__create > span,
 .Dashboard__wallets__import > span {
-  @apply .py-2 .w-full .text-center
+  @apply .pt-3 .pb-2 .w-full .text-center
 }
 
 .Dashboard__wallets__create > span {

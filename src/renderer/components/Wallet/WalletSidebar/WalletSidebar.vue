@@ -9,6 +9,40 @@
     class="WalletSidebar justify-start overflow-y-auto"
     @input="onSelect"
   >
+    <!-- Placeholder wallet -->
+    <MenuNavigationItems
+      v-if="selectableWallets.length == 0 && !isBasic"
+      class="WalletSidebar__wallet opacity-37.5"
+    >
+      <div
+        :class="{ 'flex flex-row': !isBasic }"
+        class="WalletSidebar__wallet__wrapper transition items-center mx-6 py-6 truncate"
+      >
+        <WalletIdenticon
+          :size="50"
+          value="Default"
+          class="WalletSidebar__wallet__identicon flex-no-shrink"
+        />
+        <div
+          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 text-theme-page-text-light"
+        >
+          <span class="block truncate">{{ $t('PAGES.DASHBOARD.ADD_WALLET') }}</span>
+          <span
+            v-if="!isBasic"
+            class="font-bold mt-2 text-xl"
+          >
+            {{ formatter_networkCurrency(0, 2) }}
+          </span>
+        </div>
+        <img
+          title="arrow"
+          :src="assets_loadImage('arrows/arrow-confirmation.svg')"
+          class="WalletIdenticon__placeholder__arrow ml-4"
+        >
+      </div>
+    </MenuNavigationItems>
+
+    <!-- List of actual wallets -->
     <MenuNavigationItem
       v-for="wallet in selectableWallets"
       :id="wallet.id"
@@ -17,12 +51,13 @@
     >
       <div
         slot-scope="{ isActive }"
+        :class="{ 'flex flex-row': !isBasic }"
         class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticon
           :size="50"
           :value="wallet.address"
-          class="WalletSidebar__wallet__identicon"
+          class="WalletSidebar__wallet__identicon flex-no-shrink"
         />
         <div
           :class="{
@@ -152,4 +187,14 @@ export default {
 .WalletSidebar--basic .WalletSidebar__wallet__identicon {
   @apply .mb-2
 }
+
+.WalletIdenticon__placeholder {
+  filter: opacity(20%)
+}
+.WalletIdenticon__placeholder__arrow {
+  width: 40px;
+  height: 40px;
+  transform: scaleY(-1) scaleX(-1)
+}
+
 </style>
