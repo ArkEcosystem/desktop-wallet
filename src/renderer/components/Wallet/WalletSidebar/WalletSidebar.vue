@@ -160,7 +160,8 @@ export default {
     trimName (name) {
       // If it's an address, use truncate middle
       if (this.isAddress(name)) {
-        return this.wallet_truncate(name, 6)
+        const truncateLength = this.isBasic ? 6 : 10
+        return this.wallet_truncate(name, truncateLength)
       }
 
       // Else it's a name, simply use ellipses at the end (is handled by a class)
