@@ -111,6 +111,13 @@ let colors = {
   'theme-explanation-background': 'var(--theme-explanation-background)',
   'theme-explanation-text': 'var(--theme-explanation-text)',
 
+  'theme-voting-banner-background': 'var(--theme-voting-banner-background)',
+  'theme-voting-banner-text': 'var(--theme-voting-banner-text)',
+  'theme-voting-banner-button': 'var(--theme-voting-banner-button)',
+  'theme-voting-banner-button-hover': 'var(--theme-voting-banner-button-hover)',
+  'theme-voting-banner-button-text': 'var(--theme-voting-banner-text)',
+  'theme-voting-banner-button-text-hover': 'var(--theme-voting-banner-text-hover)',
+
   'theme-settings': '#343956',
   'theme-settings-sub': '#3f4565',
   'theme-settings-button': '#4e5477',

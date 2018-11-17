@@ -658,6 +658,7 @@ export default {
     RANK: 'Rank',
     USERNAME: 'Username',
     PRODUCTIVITY: 'Productivity',
+    PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Approval',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
@@ -671,7 +672,8 @@ export default {
     BLOG: 'Official Ark.io blog',
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
-    UNVOTE_DELEGATE: 'Unvote Delegate {delegate}'
+    UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
+    VOTED_FOR: 'You voted for delegate {delegate}'
   },
 
   WALLET_RENAME: {

@@ -118,6 +118,15 @@ export default class ClientService {
     return { delegates, totalCount }
   }
 
+  /**
+   * Fetches a delegate based on the given id
+   * id can be public key, username (or wallet address if v2)
+   */
+  async fetchDelegate (id) {
+    const { data } = await this.client.resource('delegates').get(id)
+    return this.__version === 2 ? data.data : data
+  }
+
   async fetchDelegateForged (delegate) {
     if (delegate.forged) {
       return delegate.forged.total

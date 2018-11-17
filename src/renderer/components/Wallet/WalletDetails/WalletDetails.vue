@@ -3,7 +3,8 @@
     <WalletHeading class="sticky pin-t z-10" />
     <MenuTab
       v-model="currentTab"
-      class="flex-1 overflow-y-auto rounded-bl-lg"
+      :class="{ 'rounded-bl-lg' : !isDelegatesTab() }"
+      class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
         v-for="tab in tabs"
@@ -18,17 +19,67 @@
         />
       </MenuTabItem>
     </MenuTab>
+    <div
+      v-if="isDelegatesTab() && votedDelegate"
+      class="bg-theme-feature px-5 flex flex-row"
+    >
+      <div
+        class="mt-4 mb-4 p-4 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+      >
+        <div class="flex flex-row">
+          <i18n
+            tag="span"
+            class="font-semibold pr-6 border-r border-theme-line-separator"
+            path="WALLET_DELEGATES.VOTED_FOR"
+          >
+            <strong place="delegate">{{ votedDelegate.username }}</strong>
+          </i18n>
+          <i18n
+            tag="span"
+            class="font-semibold pl-6"
+            path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
+          >
+            <strong place="productivity">{{ getProductivity() }}</strong>
+          </i18n>
+        </div>
+      </div>
+      <div
+        class="WalletDetails__unvote"
+        @click="openUnvote"
+      >
+        {{ $t('WALLET_DELEGATES.UNVOTE') }}
+      </div>
+
+      <!-- Unvote modal -->
+      <portal
+        v-if="isSelected"
+        to="modal"
+      >
+        <TransactionModal
+          :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
+          :type="3"
+          :delegate="votedDelegate"
+          :is-voter="true"
+          @cancel="onCancel"
+          @sent="onSent"
+        />
+      </portal>
+    </div>
   </main>
 </template>
 
 <script>
 /* eslint-disable vue/no-unused-components */
+import { ButtonGeneric } from '@/components/Button'
+import { TransactionModal } from '@/components/Transaction'
 import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
 import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 
 export default {
   components: {
+    ButtonGeneric,
+    TransactionModal,
     WalletHeading,
     WalletTransactions,
     WalletDelegates,
@@ -50,7 +101,9 @@ export default {
       currentTab: '',
       walletVote: {
         publicKey: null
-      }
+      },
+      isSelected: false,
+      votedDelegate: null
     }
   },
 
@@ -120,6 +173,7 @@ export default {
     async fetchWalletVote () {
       try {
         this.walletVote.publicKey = await this.$client.fetchWalletVote(this.currentWallet.address)
+        this.votedDelegate = await this.$client.fetchDelegate(this.walletVote.publicKey)
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -127,6 +181,27 @@ export default {
           msg: error.message
         }))
       }
+    },
+    isDelegatesTab () {
+      return this.currentTab === 'WalletDelegates'
+    },
+    getProductivity () {
+      const productivity = this.votedDelegate.productivity || this.votedDelegate.production.productivity
+      return this.formatter_percentage(productivity)
+    },
+
+    openUnvote () {
+      this.isSelected = true
+    },
+
+    onCancel () {
+      this.isSelected = false
+    },
+
+    onSent () {
+      this.walletVote.publicKey = null
+      this.isSelected = false
+      this.votedDelegate = null
     }
   }
 }
@@ -135,5 +210,14 @@ export default {
 <style lang="postcss" scoped>
 .WalletDetails /deep/ .MenuTab > .MenuTab__nav {
   @apply .sticky .pin-t .z-10;
+}
+.WalletDetails__unvote {
+  transition: 0.5s;
+  cursor: pointer;
+  @apply .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .mt-4 .mb-4 .p-4 .rounded-r .font-semibold .w-22
+}
+.WalletDetails__unvote:hover {
+  transition: 0.5s;
+  @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
 }
 </style>
