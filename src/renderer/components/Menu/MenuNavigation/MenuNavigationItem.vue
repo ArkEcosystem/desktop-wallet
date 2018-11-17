@@ -1,6 +1,10 @@
 <template>
   <button
-    :class="{ 'MenuNavigationItem--active': isActive, 'w-full' : !isHorizontal }"
+    :class="{
+      'MenuNavigationItem--active': isActive,
+      'w-full' : !isHorizontal
+    }"
+    :disabled="isDisabled"
     class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
     @click="onClick"
   >
@@ -64,6 +68,11 @@ export default {
       type: String,
       required: false,
       default: '0 0 23 23'
+    },
+    isDisabled: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     isHorizontal: {
       type: Boolean,

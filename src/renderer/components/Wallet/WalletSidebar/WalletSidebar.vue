@@ -10,13 +10,15 @@
     @input="onSelect"
   >
     <!-- Placeholder wallet -->
-    <MenuNavigationItems
-      v-if="selectableWallets.length == 0 && !isBasic"
-      class="WalletSidebar__wallet opacity-37.5"
+    <MenuNavigationItem
+      v-if="selectableWallets.length === 0 && !isBasic"
+      id="placeholder"
+      :is-disabled="true"
+      class="WalletSidebar__wallet opacity-37.5 select-none"
     >
       <div
         :class="{ 'flex flex-row': !isBasic }"
-        class="WalletSidebar__wallet__wrapper transition items-center mx-6 py-6 truncate"
+        class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticon
           :size="50"
@@ -40,7 +42,7 @@
           class="WalletIdenticon__placeholder__arrow ml-4"
         >
       </div>
-    </MenuNavigationItems>
+    </MenuNavigationItem>
 
     <!-- List of actual wallets -->
     <MenuNavigationItem
