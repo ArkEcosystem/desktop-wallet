@@ -88,17 +88,21 @@ export default {
     },
 
     async onConfirm () {
+      // Produce the messages before closing the modal to avoid `$t` scope errors
+      const success = this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`)
+      const error = this.$t(`TRANSACTION.ERROR.${this.transactionKey}`)
+
+      this.emitSent()
+
       const response = await this.$client.broadcastTransaction(this.transaction)
 
       this.isSuccessfulResponse(response)
-        ? this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
-        : this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
-
-      this.emitSent(response)
+        ? this.$success(success)
+        : this.$error(error)
     },
 
-    emitSent (response) {
-      this.$emit('sent', response)
+    emitSent () {
+      this.$emit('sent')
     },
 
     emitCancel () {
