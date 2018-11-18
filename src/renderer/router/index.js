@@ -36,7 +36,7 @@ const router = new Router({
       component: require('@/pages/Profile/ProfileNew').default
     },
     {
-      path: '/profiles/:profile-id',
+      path: '/profiles/:profileId',
       name: 'profile-edition',
       component: require('@/pages/Profile/ProfileEdition').default
     },
