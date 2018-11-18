@@ -170,10 +170,15 @@ export default {
     switchToTab (component) {
       this.currentTab = component
     },
+
     async fetchWalletVote () {
       try {
-        this.walletVote.publicKey = await this.$client.fetchWalletVote(this.currentWallet.address)
-        this.votedDelegate = await this.$client.fetchDelegate(this.walletVote.publicKey)
+        const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
+
+        if (walletVote) {
+          this.votedDelegate = await this.$client.fetchDelegate(walletVote)
+          this.walletVote.publicKey = walletVote
+        }
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -182,9 +187,11 @@ export default {
         }))
       }
     },
+
     isDelegatesTab () {
       return this.currentTab === 'WalletDelegates'
     },
+
     getProductivity () {
       const productivity = this.votedDelegate.productivity || this.votedDelegate.production.productivity
       return this.formatter_percentage(productivity)
@@ -207,8 +214,8 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
-.WalletDetails /deep/ .MenuTab > .MenuTab__nav {
+<style lang="postcss">
+.WalletDetails .MenuTab > .MenuTab__nav {
   @apply .sticky .pin-t .z-10;
 }
 .WalletDetails__unvote {
