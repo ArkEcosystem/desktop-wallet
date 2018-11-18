@@ -143,7 +143,9 @@ export default {
 
   TABLE: {
     PAGE: 'Page',
-    ROWS_PER_PAGE: 'Rows per page'
+    ROWS_PER_PAGE: 'Rows per page',
+    NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
+    NO_DELEGATES: 'No delegates to be shown.'
   },
 
   APP: {

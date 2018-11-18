@@ -40,6 +40,7 @@
       :rows="delegates"
       :sort-query="queryParams.sort"
       :total-rows="totalCount"
+      :no-data-message="$t('TABLE.NO_DELEGATES')"
       :per-page="queryParams.limit"
       :per-page-dropdown="[25, 51]"
       class="WalletDelegates__table"

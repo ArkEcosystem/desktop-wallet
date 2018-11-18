@@ -5,7 +5,7 @@
     :total-rows="totalCount"
     :is-loading="isLoading"
     :is-remote="true"
-    :has-pagination="true"
+    :has-pagination="totalCount > 0"
     :sort-query="queryParams.sort"
     @on-per-page-change="onPerPageChange"
     @on-page-change="onPageChange"

@@ -1,5 +1,6 @@
 import { VueGoodTable } from 'vue-good-table'
 import Loader from './Loader'
+import i18n from '@/i18n'
 
 export default {
   name: 'TableWrapper',
@@ -34,6 +35,11 @@ export default {
       type: Object,
       required: false,
       default: () => ({})
+    },
+    noDataMessage: {
+      type: String,
+      required: false,
+      default: i18n.t('TABLE.NO_TRANSACTIONS')
     }
   },
 
@@ -64,6 +70,15 @@ export default {
       },
       on: this.$listeners
     }, [
+      h('div', {
+        slot: 'emptystate',
+        class: 'flex justify-center font-semibold'
+      }, [
+        h('span', {
+          class: 'text-theme-page-text-light'
+        },
+        this.noDataMessage)
+      ]),
       h('div', {
         slot: 'loadingContent',
         class: 'flex justify-center p-5'
