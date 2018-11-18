@@ -3,14 +3,14 @@
 
     <div
       v-if="!walletVote.publicKey && isExplanationDisplayed"
-      class="WalletDelegates__explanation relative rounded-lg mt-4 mb-8 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
+      class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
     >
       <button
         :class="{ 'WalletDelegates__explanation__text--truncated': isExplanationTruncated }"
         class="WalletDelegates__explanation__text flex text-lg cursor-pointer text-left text-inherit"
         @click="readMore"
       >
-        <div class="pt-6 pb-6 pl-6">
+        <div class="py-4 pl-6">
           <span>
             {{ $t('WALLET_DELEGATES.EXPLANATION') }}
             <a
@@ -24,7 +24,7 @@
         </div>
       </button>
 
-      <div class="flex p-6 z-10">
+      <div class="flex py-4 px-6 z-10">
         <ButtonClose
           class="cursor-pointer select-none"
           @click="dismissExplanation"
@@ -58,7 +58,7 @@
             <span>{{ data.formattedRow['username'] }}</span>
             <span
               v-if="data.row.publicKey === walletVote.publicKey"
-              class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs rounded pointer-events-none ml-3"
+              class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none ml-3"
             >
               {{ $t('WALLET_DELEGATES.VOTE') }}
             </span>
