@@ -70,6 +70,8 @@ let colors = {
   'theme-transaction-detail-gradient1': 'var(--theme-transaction-detail-gradient1)',
   'theme-transaction-detail-gradient2': 'var(--theme-transaction-detail-gradient2)',
   'theme-transaction-detail-arrow': 'var(--theme-transaction-detail-arrow)',
+  'theme-transaction-confirmations-received': 'var(--theme-transaction-confirmations-received)',
+  'theme-transaction-confirmations-sent': 'var(--theme-transaction-confirmations-sent)',
 
   'theme-wallet-new-selected': 'var(--theme-wallet-new-selected)',
   'theme-wallet-new-unselected': 'var(--theme-wallet-new-unselected)',

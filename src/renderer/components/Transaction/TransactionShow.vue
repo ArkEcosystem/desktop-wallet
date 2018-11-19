@@ -111,14 +111,20 @@
 
       <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
         <span v-if="!isWellConfirmed">{{ transaction.confirmations }}</span>
+        <span v-else>{{ $t('TRANSACTION.WELL_CONFIRMED') }}</span>
+
         <span
-          v-else
           v-tooltip="{
             content: $t('TRANSACTION.CONFIRMATION_COUNT', [transaction.confirmations]),
-            trigger: 'hover',
-            classes: 'text-xs'
+            trigger: 'hover'
           }"
-        >{{ $t('TRANSACTION.WELL_CONFIRMED') }}</span>
+          class="ml-1"
+        >
+          <SvgIcon
+            name="time"
+            view-box="0 0 12 13"
+          />
+        </span>
       </ListDividedItem>
 
       <ListDividedItem
@@ -136,6 +142,7 @@
 </template>
 
 <script>
+import { at } from 'lodash'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard } from '@/components/Button'
@@ -163,7 +170,10 @@ export default {
 
   computed: {
     isWellConfirmed () {
-      return this.transaction.confirmations >= (this.session_network.constants.activeDelegates || 51)
+      return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51)
+    },
+    numberOfActiveDelegates () {
+      return at(this, 'session_network.constants.activeDelegates') || 51
     }
   },
 

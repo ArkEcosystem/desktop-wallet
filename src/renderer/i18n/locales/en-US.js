@@ -601,7 +601,8 @@ export default {
     TIMESTAMP: 'Timestamp',
     TRANSACTION: 'Transaction',
     VENDOR_FIELD: 'Smartbridge',
-    WELL_CONFIRMED: 'Well Confirmed'
+    WELL_CONFIRMED: 'Well Confirmed',
+    WELL_CONFIRMED_COUNT: 'Well Confirmed ({confirmations} confirmations)'
   },
 
   SIGN_VERIFY: {

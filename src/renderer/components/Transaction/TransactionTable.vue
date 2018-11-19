@@ -11,24 +11,6 @@
         slot-scope="data"
       >
         <div v-if="data.column.field === 'id'">
-          <span
-            v-tooltip="{
-              content: $t('TRANSACTION.CONFIRMATION_COUNT', [data.row.confirmations]),
-              classes: 'text-xs',
-              trigger: 'hover'
-            }"
-            :class="{
-              'TransactionTable__row__confirmations--confirmed': data.row.confirmations >= 51,
-              'TransactionTable__row__confirmations--unconfirmed': data.row.confirmations < 51
-            }"
-            class="mr-1"
-          >
-            <SvgIcon
-              name="time"
-              view-box="0 0 12 13"
-            />
-          </span>
-
           <a
             v-tooltip="{
               content: data.row.id,
@@ -66,6 +48,30 @@
             {{ data.formattedRow['amount'] }}
           </span>
           <span
+            v-if="!isWellConfirmed(data.row.confirmations)"
+            v-tooltip="{
+              content: $t('TRANSACTION.CONFIRMATION_COUNT', [data.row.confirmations]),
+              classes: 'text-xs',
+              trigger: 'hover'
+            }"
+            :class="{
+              'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender,
+              'text-theme-transaction-confirmations-received bg-theme-transaction-received': !data.row.isSender
+            }"
+            class="rounded-full h-6 w-6 flex items-center justify-center"
+          >
+            <SvgIcon
+              name="time"
+              view-box="0 0 12 13"
+            />
+          </span>
+          <span
+            v-else
+            v-tooltip="{
+              content: $t('TRANSACTION.WELL_CONFIRMED_COUNT', { confirmations: data.row.confirmations }),
+              classes: 'text-xs',
+              trigger: 'hover'
+            }"
             :class="{
               'text-theme-transaction-sent-arrow bg-theme-transaction-sent': data.row.isSender,
               'text-theme-transaction-received-arrow bg-theme-transaction-received': !data.row.isSender
@@ -117,6 +123,7 @@
 </template>
 
 <script>
+import { at } from 'lodash'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionShow from './TransactionShow'
@@ -178,6 +185,9 @@ export default {
           thClass: 'text-right'
         }
       ]
+    },
+    numberOfActiveDelegates () {
+      return at(this, 'session_network.constants.activeDelegates') || 51
     }
   },
 
@@ -205,6 +215,10 @@ export default {
       return value
     },
 
+    isWellConfirmed (confirmations) {
+      return confirmations >= this.numberOfActiveDelegates
+    },
+
     openTransactions (id) {
       this.network_openExplorer('transaction', id)
     },
@@ -224,12 +238,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.TransactionTable__row__confirmations--confirmed {
-  color: var(--theme-transaction-confirmed)
-}
-.TransactionTable__row__confirmations--unconfirmed {
-  color: var(--theme-transaction-unconfirmed)
-}
-</style>
