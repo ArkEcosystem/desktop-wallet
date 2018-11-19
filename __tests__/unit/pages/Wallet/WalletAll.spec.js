@@ -33,6 +33,9 @@ describe('pages > WalletAll', () => {
             'wallet/byProfileId': id => wallets
           }
         },
+        session_network: {
+          symbol: 'Ѧ'
+        },
         formatter_networkCurrency: jest.fn()
       }
     })
