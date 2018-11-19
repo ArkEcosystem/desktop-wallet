@@ -72,19 +72,15 @@
       </template>
     </TableWrapper>
 
-    <portal
-      v-if="selected"
-      to="modal"
-    >
-      <TransactionModal
-        :title="getVoteTitle()"
-        :type="3"
-        :delegate="selected"
-        :is-voter="selected.publicKey === walletVote.publicKey"
-        @cancel="onCancel"
-        @sent="onSent"
-      />
-    </portal>
+    <TransactionModal
+      v-if="!!selected"
+      :title="getVoteTitle()"
+      :type="3"
+      :delegate="selected"
+      :is-voter="selected.publicKey === walletVote.publicKey"
+      @cancel="onCancel"
+      @sent="onSent"
+    />
 
   </div>
 </template>
