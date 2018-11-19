@@ -1,11 +1,11 @@
 <template>
-  <div class="flex">
+  <div class="flex items-center">
     <WalletIdenticon
       :value="address"
-      :size="100"
+      :size="75"
       class="WalletHeading__identicon"
     />
-    <div class="flex flex-col justify-center text-white antialiased pl-4 text-lg">
+    <div class="flex flex-col justify-center text-white antialiased pl-4">
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
         <span
           v-tooltip="label"
@@ -50,7 +50,7 @@
       </p>
 
       <p class="WalletHeading__balance font-semibold tracking-extrawide">
-        {{ balance }}
+        <span class="text-xl">{{ balance }}</span>
         <span
           v-if="isMarketEnabled"
           class="WalletHeading__balance__alternative text-xs text-theme-feature-item-text"
