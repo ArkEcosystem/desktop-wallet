@@ -7,7 +7,6 @@
     @select="onDropdownSelect"
     @click="focus"
   >
-    <!-- TODO: add filter to reduce dropdown items -->
     <InputField
       slot="handler"
       :label="label"
@@ -64,6 +63,7 @@ import { required } from 'vuelidate/lib/validators'
 import { ButtonModal } from '@/components/Button'
 import { ModalQrCodeScanner } from '@/components/Modal'
 import { MenuDropdown } from '@/components/Menu'
+import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import _ from 'lodash'
@@ -186,10 +186,18 @@ export default {
       })
 
       return results.reduce((map, wallet, index) => {
-        map[wallet.address] = wallet.name || wallet.address
+        const value = wallet.name || wallet.address
+
+        if (_.includes(value, this.inputValue)) {
+          map[wallet.address] = value
+        }
 
         return map
       }, {})
+    },
+
+    suggestionsKeys () {
+      return new Cycled(Object.keys(this.suggestions))
     }
   },
 
@@ -268,12 +276,12 @@ export default {
     },
 
     onKeyUp () {
-      const next = this.dropdownValue ? this.suggestions.previous() : this.suggestions.current()
+      const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current()
       this.__setSuggestion(next)
     },
 
     onKeyDown () {
-      const next = this.dropdownValue ? this.suggestions.next() : this.suggestions.current()
+      const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current()
       this.__setSuggestion(next)
     },
 
