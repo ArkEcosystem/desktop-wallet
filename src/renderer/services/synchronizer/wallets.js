@@ -118,14 +118,18 @@ class Action {
       if (transactions && transactions.length) {
         const latest = this.findLatestTransaction(transactions)
         const latestAt = latest.timestamp.getTime()
+        const checkedAt = wallet.transactions.checkedAt
 
-        if (latestAt > wallet.transactions.checkedAt) {
+        if (latestAt > checkedAt) {
           this.$dispatch('wallet/update', {
             ...wallet,
             transactions: { checkedAt: latestAt }
           })
 
-          this.displayNewTransaction(latest)
+          // Disable notification on first check
+          if (checkedAt > 0) {
+            this.displayNewTransaction(latest)
+          }
         }
       }
     } catch (error) {
