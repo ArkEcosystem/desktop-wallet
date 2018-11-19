@@ -301,6 +301,11 @@ export default class ClientService {
       const response = data.data
 
       if (response.length) {
+        const lastVote = response[0].asset.votes[0]
+
+        // If the last vote was a unvote leave the pubkey null
+        if (lastVote.charAt(0) === '-') return
+
         delegatePublicKey = response[0].asset.votes[0].substring(1)
       }
     } else {
