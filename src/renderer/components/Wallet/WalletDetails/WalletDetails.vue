@@ -24,7 +24,7 @@
       class="bg-theme-feature px-5 flex flex-row"
     >
       <div
-        class="mt-4 mb-4 py-4 px-6 rounded-lg text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+        class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div class="flex flex-row">
           <i18n
