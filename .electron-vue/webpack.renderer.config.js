@@ -204,6 +204,11 @@ if (process.env.NODE_ENV === 'production') {
         from: path.join(__dirname, '../build/icons'),
         to: path.join(__dirname, '../dist/electron/static'),
         ignore: ['.*']
+      },
+      {
+        from: path.join(__dirname, '../src/renderer/workers'),
+        to: path.join(__dirname, '../dist/electron/workers'),
+        ignore: ['.*']
       }
     ]),
     new webpack.DefinePlugin({
