@@ -1,5 +1,5 @@
 import { flatten, includes, isFunction, pullAll } from 'lodash'
-import { announcements, ledger, market, peer, wallets } from './synchronizer/'
+import { announcements, delegates, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
@@ -181,7 +181,7 @@ export default class Synchronizer {
       },
       delegates: {
         default: { interval: longer },
-        focus: { interval: block }
+        focus: { interval: longer }
       },
       peer: {
         default: { interval: medium },
@@ -198,9 +198,9 @@ export default class Synchronizer {
     //   console.log('defined CONTACTS')
     // })
 
-    // this.define('delegates', config.delegates, async () => {
-    //   console.log('defined DELEGATES')
-    // })
+    this.define('delegates', config.delegates, async () => {
+      await delegates(this)
+    })
 
     this.define('market', config.market, async () => {
       await market(this)

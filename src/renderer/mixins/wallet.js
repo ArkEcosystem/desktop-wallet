@@ -50,6 +50,11 @@ export default {
           : contactWallet.name
       }
 
+      const delegate = this.$store.getters['delegate/byAddress'](address)
+      if (delegate) {
+        return delegate.username
+      }
+
       return Number.isFinite(truncateLength) ? truncateMiddle(address, truncateLength) : address
     },
 

@@ -271,12 +271,18 @@ export default class ClientService {
       if (data.success) {
         const { account } = data
         walletData = account
-        walletData.isDelegate = walletData.username !== null
         delete walletData.unconfirmedBalance
         delete walletData.unconfirmedSignature
         delete walletData.secondSignature
         delete walletData.multisignatures
         delete walletData.u_multisignatures
+
+        const delegate = await store.getters['delegate/byAddress'](walletData.address)
+        walletData.isDelegate = false
+        if (delegate) {
+          walletData.isDelegate = true
+          walletData.username = delegate.username
+        }
       }
     }
 

@@ -7,6 +7,7 @@ import { pullAll, keys } from 'lodash'
 import vuexPersistReady from '@/store/plugins/vuex-persist-ready'
 import AnnouncementsModule from '@/store/modules/announcements'
 import AppModule from '@/store/modules/app'
+import DelegateModule from '@/store/modules/delegate'
 import LedgerModule from '@/store/modules/ledger'
 import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
@@ -20,6 +21,7 @@ Vue.use(Vuex)
 const modules = {
   announcements: AnnouncementsModule,
   app: AppModule,
+  delegate: DelegateModule,
   ledger: LedgerModule,
   market: MarketModule,
   network: NetworkModule,

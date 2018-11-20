@@ -9,6 +9,15 @@ jest.mock('@/store', () => ({
       constants: {
         epoch: '2017-03-21T13:00:00.000Z'
       }
+    },
+    'delegate/byAddress': (address) => {
+      if (address === 'DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh') {
+        return {
+          username: 'test',
+          address,
+          publicKey: '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
+        }
+      }
     }
   },
   watch: jest.fn()
@@ -87,7 +96,7 @@ describe('Services > Client', () => {
         expect(wallet).toHaveProperty('address', data.address)
         expect(wallet).toHaveProperty('balance', parseInt(data.balance))
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
-        expect(wallet).toHaveProperty('isDelegate', true)
+        expect(wallet).toHaveProperty('isDelegate', false)
         expect(wallet).not.toHaveProperty('unconfirmedBalance')
         expect(wallet).not.toHaveProperty('unconfirmedSignature')
         expect(wallet).not.toHaveProperty('secondSignature')
