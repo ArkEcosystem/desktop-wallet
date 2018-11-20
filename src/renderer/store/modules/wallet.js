@@ -4,6 +4,9 @@ import WalletModel from '@/models/wallet'
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 const includesMessage = (objects, find) => objects.map(a => a.timestamp).includes(find.timestamp)
 
+/**
+ * Internally the wallets are stored aggregated by `profileId``
+ */
 export default {
   namespaced: true,
 

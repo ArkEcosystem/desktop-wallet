@@ -32,6 +32,7 @@
 <script>
 import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
+import WalletService from '@/services/wallet'
 import { ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
@@ -96,9 +97,12 @@ export default {
 
       const response = await this.$client.broadcastTransaction(this.transaction)
 
-      this.isSuccessfulResponse(response)
-        ? this.$success(success)
-        : this.$error(error)
+      if (this.isSuccessfulResponse(response)) {
+        this.storeTransaction(this.transaction)
+        this.$success(success)
+      } else {
+        this.$error(error)
+      }
     },
 
     emitSent () {
@@ -132,6 +136,27 @@ export default {
           return errors[keys[0]][0].type === 'ERR_LOW_FEE'
         }
       }
+    },
+
+    storeTransaction (transaction) {
+      const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
+
+      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.session_network.version)
+      const epoch = new Date(this.session_network.constants.epoch)
+      const timestamp = epoch.getTime() + transaction.timestamp * 1000
+
+      this.$store.dispatch('transaction/create', {
+        id,
+        type,
+        amount,
+        fee,
+        sender,
+        timestamp,
+        vendorField,
+        confirmations: 0,
+        recipient: transaction.recipientId,
+        profileId: this.session_profile.id
+      })
     }
   }
 }

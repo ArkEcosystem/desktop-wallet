@@ -1,7 +1,7 @@
 <template>
   <TransactionTable
     :current-page="currentPage"
-    :rows="fetchedTransactions"
+    :rows="transactions"
     :total-rows="totalCount"
     :is-loading="isLoading"
     :is-remote="true"
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
 export default {
@@ -38,6 +39,15 @@ export default {
       }
     }
   }),
+
+  computed: {
+    storedTransactions () {
+      return this.$store.getters['transaction/byAddress'](this.wallet_fromRoute.address)
+    },
+    transactions () {
+      return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
+    }
+  },
 
   watch: {
     // This watcher would invoke the `fetch` after the `Synchronizer`

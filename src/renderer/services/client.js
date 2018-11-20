@@ -170,7 +170,7 @@ export default class ClientService {
     })
 
     transactions = data.data.map(tx => {
-      tx.timestamp = dayjs(tx.timestamp.human).toDate()
+      tx.timestamp = tx.timestamp.unix * 1000 // to milliseconds
       return tx
     })
     totalCount = data.meta.totalCount
@@ -217,7 +217,7 @@ export default class ClientService {
 
       if (data.success) {
         transactions = data.transactions.map(tx => {
-          tx.timestamp = dayjs(network.constants.epoch).add(tx.timestamp * 1000).toDate()
+          tx.timestamp = dayjs(network.constants.epoch).add(tx.timestamp * 1000).valueOf()
           tx.sender = tx.senderId
           tx.recipient = tx.recipientId
 
@@ -236,7 +236,7 @@ export default class ClientService {
       })
 
       transactions = data.data.map(tx => {
-        tx.timestamp = dayjs(tx.timestamp.human).toDate()
+        tx.timestamp = tx.timestamp.unix * 1000 // to milliseconds
         return tx
       })
       totalCount = data.meta.totalCount

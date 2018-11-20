@@ -117,7 +117,7 @@ class Action {
 
       if (transactions && transactions.length) {
         const latest = this.findLatestTransaction(transactions)
-        const latestAt = latest.timestamp.getTime()
+        const latestAt = latest.timestamp
         const checkedAt = wallet.transactions.checkedAt
 
         if (latestAt > checkedAt) {

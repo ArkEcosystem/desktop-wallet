@@ -5,7 +5,14 @@ describe('WalletTransactions', () => {
   it('should render', () => {
     const wrapper = shallowMount(WalletTransactions, {
       stubs: {
-        'Table': true
+        'TransactionTable': true
+      },
+      mocks: {
+        $store: {
+          getters: {
+            'transaction/byAddress': jest.fn(() => [])
+          }
+        }
       }
     })
     expect(wrapper.isVueInstance()).toBeTrue()

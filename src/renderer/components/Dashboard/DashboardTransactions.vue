@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import { sortBy, uniqBy } from 'lodash'
+import { uniqBy } from 'lodash'
+import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
 
 export default {
@@ -27,7 +28,10 @@ export default {
 
   computed: {
     lastTransactions () {
-      return sortBy(this.fetchedTransactions, 'timestamp').reverse().slice(0, this.numberOfTransactions)
+      return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
+    },
+    storedTransactions () {
+      return this.$store.getters['transaction/byProfileId'](this.session_profile.id)
     },
     wallets () {
       return this.$store.getters['wallet/byProfileId'](this.session_profile.id)

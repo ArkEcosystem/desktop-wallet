@@ -181,10 +181,10 @@ describe('Services > Synchronizer > Wallets', () => {
   describe('fetchWalletTransactions', () => {
     let wallet
     const transactions = [
-      { id: 'tx1', timestamp: new Date(300) },
-      { id: 'tx2', timestamp: new Date(400) },
-      { id: 'tx3', timestamp: new Date(200) },
-      { id: 'tx4', timestamp: new Date(110) }
+      { id: 'tx1', timestamp: 300 * 1000 },
+      { id: 'tx2', timestamp: 400 * 1000 },
+      { id: 'tx3', timestamp: 200 * 1000 },
+      { id: 'tx4', timestamp: 110 * 1000 }
     ]
 
     beforeEach(() => {
@@ -225,7 +225,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
       describe('when all of them are old', () => {
         beforeEach(() => {
-          wallet.transactions.checkedAt = new Date(50000)
+          wallet.transactions.checkedAt = 50000 * 1000
         })
 
         it('should not dispatch the `update/wallet` Vuex action', async () => {
@@ -244,7 +244,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
         beforeEach(() => {
           latestTransaction = transactions[1]
-          wallet.transactions.checkedAt = latestTransaction.timestamp.getTime() - 10
+          wallet.transactions.checkedAt = latestTransaction.timestamp - 10
         })
 
         it('should dispatch the `update/wallet` Vuex action with the new `transactions.checkedAt` numeric timestamp', async () => {
@@ -252,7 +252,7 @@ describe('Services > Synchronizer > Wallets', () => {
           expect(action.$dispatch).toHaveBeenCalledWith('wallet/update', {
             ...wallet,
             transactions: {
-              checkedAt: latestTransaction.timestamp.getTime()
+              checkedAt: latestTransaction.timestamp
             }
           })
         })
@@ -276,10 +276,10 @@ describe('Services > Synchronizer > Wallets', () => {
   describe('findLatestTransaction', () => {
     it('returns the transaction with bigger `timestamp`', () => {
       const transactions = [
-        { id: 'tx1', timestamp: new Date(300) },
-        { id: 'tx2', timestamp: new Date(400) },
-        { id: 'tx3', timestamp: new Date(200) },
-        { id: 'tx4', timestamp: new Date(110) }
+        { id: 'tx1', timestamp: 300 * 1000 },
+        { id: 'tx2', timestamp: 400 * 1000 },
+        { id: 'tx3', timestamp: 200 * 1000 },
+        { id: 'tx4', timestamp: 110 * 1000 }
       ]
 
       expect(action.findLatestTransaction(transactions)).toBe(transactions[1])

@@ -320,8 +320,7 @@ describe('Services > Client', () => {
       expect(transactions).toHaveLength(data.length)
 
       transactions.forEach((transaction, i) => {
-        expect(transaction).toHaveProperty('timestamp')
-        expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
+        expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
         expect(transaction).toHaveProperty('sender')
         expect(transaction).toHaveProperty('recipient')
         expect(transaction).not.toHaveProperty('totalAmount')
@@ -362,8 +361,7 @@ describe('Services > Client', () => {
 
         transactions.forEach((transaction, i) => {
           expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
-          expect(transaction).toHaveProperty('timestamp')
-          expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
+          expect(transaction).toHaveProperty('timestamp', new Date(data[i].timestamp.human).getTime())
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isReceiver')
           expect(transaction).toHaveProperty('sender')
@@ -400,8 +398,7 @@ describe('Services > Client', () => {
 
         transactions.forEach((transaction, i) => {
           expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
-          expect(transaction).toHaveProperty('timestamp')
-          expect(transaction.timestamp.toJSON()).toBe(data[i].timestamp.human)
+          expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isReceiver')
           expect(transaction).toHaveProperty('sender')

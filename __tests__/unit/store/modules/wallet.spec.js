@@ -44,7 +44,7 @@ describe('WalletModule', () => {
 
   describe('getters byProfileId', () => {
     describe('when the profile does not have any wallet', () => {
-      it('should return all wallets of a profile', () => {
+      it('should return an empty `Array`', () => {
         expect(store.getters['wallet/byProfileId']('unknownId')).toBeEmpty()
       })
     })
@@ -68,7 +68,7 @@ describe('WalletModule', () => {
 
   describe('getters contactsByProfileId', () => {
     describe('when the profile does not have any wallet', () => {
-      it('should return all wallets of a profile', () => {
+      it('should return an empty `Array`', () => {
         expect(store.getters['wallet/contactsByProfileId']('unknownId')).toBeEmpty()
       })
     })

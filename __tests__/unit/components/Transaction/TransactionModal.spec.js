@@ -5,18 +5,30 @@ import TransactionModal from '@/components/Transaction/TransactionModal'
 const i18n = useI18nGlobally()
 
 describe('TransactionModal', () => {
+  const profileId = 'exampleId'
   let wrapper
+  let $store
 
   beforeEach(() => {
+    $store = { dispatch: jest.fn() }
+
     wrapper = shallowMount(TransactionModal, {
       i18n,
       propsData: {
         type: 0
       },
       mocks: {
+        session_profile: { id: profileId },
+        session_network: {
+          version: 12,
+          constants: {
+            epoch: '2017-03-21T13:00:00.000Z'
+          }
+        },
         $logger: {
           error: jest.fn()
-        }
+        },
+        $store
       }
     })
   })
@@ -77,6 +89,39 @@ describe('TransactionModal', () => {
           })
         })
       })
+    })
+  })
+
+  describe('storeTransaction', () => {
+    it('should dispatch `transaction/create` using the transaction, but replacing some attributes, and the current profile', () => {
+      const transaction = {
+        id: 'tx1',
+        type: 0,
+        amount: 10000,
+        fee: 1000,
+        timestamp: 120,
+        recipientId: 'Arecipient',
+        senderPublicKey: 'Asender',
+        vendorField: 'smartbridge'
+      }
+      wrapper.vm.storeTransaction(transaction)
+
+      const { id, type, amount, fee, vendorField } = transaction
+      const timestamp = (new Date(wrapper.vm.session_network.constants.epoch)).getTime() + transaction.timestamp * 1000
+
+      const expected = {
+        profileId,
+        id,
+        type,
+        amount,
+        fee,
+        vendorField,
+        confirmations: 0,
+        timestamp,
+        sender: 'public key of Asender',
+        recipient: transaction.recipientId
+      }
+      expect($store.dispatch).toHaveBeenCalledWith('transaction/create', expected)
     })
   })
 })

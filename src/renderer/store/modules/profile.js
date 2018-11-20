@@ -1,3 +1,4 @@
+import { map } from 'lodash'
 import crypto from 'crypto'
 import BaseModule from '../base'
 import ProfileModel from '@/models/profile'
@@ -27,11 +28,19 @@ export default new BaseModule(ProfileModel, {
     /**
      * This default action is overridden to remove the wallets of this profile first
      */
-    delete ({ commit, dispatch, rootGetters }, { id }) {
-      const wallets = rootGetters['wallet/byProfileId'](id)
-      wallets.forEach(async wallet => {
-        await dispatch('wallet/delete', wallet, { root: true })
-      })
+    async delete ({ commit, dispatch, rootGetters }, { id }) {
+      // This getter returns a reference that is modified on each deletion
+      const transactionIds = map(rootGetters['transaction/byProfileId'](id), 'id')
+      for (const transactionId of transactionIds) {
+        await dispatch('transaction/delete', { id: transactionId, profileId: id }, { root: true })
+      }
+
+      // This getter returns a reference that is modified on each deletion
+      const walletIds = map(rootGetters['wallet/byProfileId'](id), 'id')
+      for (const walletId of walletIds) {
+        await dispatch('wallet/delete', { id: walletId, profileId: id }, { root: true })
+      }
+
       commit('DELETE', id)
     }
   }
