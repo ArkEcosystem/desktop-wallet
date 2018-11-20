@@ -129,14 +129,21 @@ export default {
   },
 
   methods: {
+    /**
+     * Even if the network provides a fees higher than V1, it will be corrected
+     */
     prepareFeeStatistics () {
       let { avgFee, maxFee, minFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
 
-      this.feeChoices.AVERAGE = avgFee * Math.pow(10, -8)
-      // Even if the network provides a higher maximum, it should not be higher than V1
+      avgFee = avgFee * Math.pow(10, -8)
+      this.feeChoices.AVERAGE = avgFee < 0.1 ? avgFee : 0.1
+
       maxFee = maxFee * Math.pow(10, -8)
       this.feeChoices.MAXIMUM = maxFee < 0.1 ? maxFee : 0.1
-      this.feeChoices.MINIMUM = minFee * Math.pow(10, -8)
+
+      minFee = minFee * Math.pow(10, -8)
+      this.feeChoices.MINIMUM = minFee < 0.1 ? minFee : 0.1
+
       this.feeChoices.CUSTOM = this.feeChoices.AVERAGE
       this.setFee(this.feeChoices.AVERAGE)
     },

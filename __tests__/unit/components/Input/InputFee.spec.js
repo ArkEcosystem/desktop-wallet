@@ -101,6 +101,70 @@ describe('InputFee', () => {
   })
 
   describe('prepareFeeStatistics', () => {
+    describe('when the minimum fee of the network is more than 0.1', () => {
+      beforeEach(() => {
+        store.getters['network/feeStatisticsByType'] = type => ({
+          avgFee: 0.0048 * Math.pow(10, 8),
+          maxFee: 0.7 * Math.pow(10, 8),
+          minFee: 1000 * Math.pow(10, 8)
+        })
+      })
+
+      it('should use 0.1 as minimum always', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.MINIMUM).toEqual(0.1)
+      })
+    })
+
+    describe('when the minimum fee of the network is less than 0.1', () => {
+      beforeEach(() => {
+        store.getters['network/feeStatisticsByType'] = type => ({
+          avgFee: 0.0048 * Math.pow(10, 8),
+          maxFee: 0.03 * Math.pow(10, 8),
+          minFee: 0.0006 * Math.pow(10, 8)
+        })
+      })
+
+      it('should use it as minimum', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.MINIMUM).toBeWithin(0.0006, 0.0006000001)
+      })
+    })
+
+    describe('when the average fee of the network is more than 0.1', () => {
+      beforeEach(() => {
+        store.getters['network/feeStatisticsByType'] = type => ({
+          avgFee: 1000 * Math.pow(10, 8),
+          maxFee: 0.03 * Math.pow(10, 8),
+          minFee: 0.0006 * Math.pow(10, 8)
+        })
+      })
+
+      it('should use 0.1 as average always', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.AVERAGE).toEqual(0.1)
+      })
+    })
+
+    describe('when the average fee of the network is less than 0.1', () => {
+      beforeEach(() => {
+        store.getters['network/feeStatisticsByType'] = type => ({
+          avgFee: 0.0048 * Math.pow(10, 8),
+          maxFee: 0.03 * Math.pow(10, 8),
+          minFee: 0.0006 * Math.pow(10, 8)
+        })
+      })
+
+      it('should use it as average', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.AVERAGE).toBeWithin(0.0048, 0.0048000001)
+      })
+    })
+
     describe('when the maximum fee of the network is more than 0.1', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
@@ -126,7 +190,7 @@ describe('InputFee', () => {
         })
       })
 
-      it('should use 0.1 as maximum always', () => {
+      it('should use it as maximum', () => {
         const wrapper = mountComponent()
 
         expect(wrapper.vm.feeChoices.MAXIMUM).toBeWithin(0.03, 0.03000001)
