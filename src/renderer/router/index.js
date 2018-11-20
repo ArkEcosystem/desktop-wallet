@@ -31,6 +31,11 @@ const router = new Router({
       component: require('@/pages/Contact/ContactNew').default
     },
     {
+      path: '/networks/all',
+      name: 'networks',
+      component: require('@/pages/NetworkOverview').default
+    },
+    {
       path: '/profiles/new',
       name: 'profile-new',
       component: require('@/pages/Profile/ProfileNew').default

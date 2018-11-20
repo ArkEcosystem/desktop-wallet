@@ -24,6 +24,8 @@ export default class ClientService {
 
     if (apiVersion === 1) {
       const { data } = await client.resource('loader').configuration()
+      const epochData = await client.resource('blocks').epoch()
+      data.network.epoch = epochData.data.epoch // TODO: data.network.constants.epoch?
 
       return data.network
     } else {
@@ -81,8 +83,9 @@ export default class ClientService {
    * @return {Object[]}
    */
   async fetchDelegates ({ page, limit } = {}) {
+    const network = store.getters['session/network']
     page || (page = 1)
-    limit || (limit = 51)
+    limit || (limit = network.constants.activeDelegates)
 
     let totalCount = 0
     let delegates = []
@@ -121,10 +124,16 @@ export default class ClientService {
   /**
    * Fetches a delegate based on the given id
    * id can be public key, username (or wallet address if v2)
+   *
+   * @return {Object|null} Delegate object if one is found, otherwise null
    */
   async fetchDelegate (id) {
     const { data } = await this.client.resource('delegates').get(id)
-    return this.__version === 2 ? data.data : data
+
+    if (this.__version === 1 && data.success) {
+      return data
+    }
+    return data.data ? data.data : null
   }
 
   async fetchDelegateForged (delegate) {

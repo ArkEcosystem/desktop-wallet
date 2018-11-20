@@ -90,12 +90,52 @@
             @next="moveTo(3)"
           >
 
-            <div class="flex flex-col h-full w-full justify-around py-2">
-              <SelectionNetwork
-                :max-visible-items="2"
-                :selected="schema.networkId"
-                @select="selectNetwork"
-              />
+            <div class="flex flex-row h-full w-full py-2">
+              <!-- Show the two default networks, and a button to load more -->
+              <div
+                v-for="network in defaultNetworks"
+                :key="network.id"
+              >
+                <div
+                  :title="network.title"
+                  :class="{
+                    'svg-button--selected': selectedNetwork && selectedNetwork.id === network.id,
+                    'rounded-l-lg': first.id === network.id,
+                    'rounded-r-lg': last.id === network.id,
+                  }"
+                  class="svg-button w-30 h-30 text-center text-theme-page-text"
+                  @click="selectNetwork(network)"
+                >
+                  <div
+                    class="flex items-center justify-center"
+                  >
+                    <img
+                      class="w-22 h-22"
+                      :src="`${assets_loadImage(network.svg)}`"
+                    >
+                  </div>
+                  <span class="text-theme-page-text font-semibold">{{ network.textContent }}</span>
+                </div>
+              </div>
+              <div
+                v-if="networks.length > defaultNetworks.length"
+                class="flex items-center ml-3"
+              >
+                <ButtonModal
+                  class="rounded-lg w-18 h-18 border-2 cursor-pointer rounded-lg hover:shadow transition text-center text-4xl text-center p-1 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text border-transparent"
+                  icon="point"
+                  label=""
+                >
+                  <template slot-scope="{ toggle, isOpen }">
+                    <NetworkSelectionModal
+                      v-if="isOpen"
+                      :toggle="toggle"
+                      @cancel="toggle"
+                      @selected="selectNetworkFromModal"
+                    />
+                  </template>
+                </ButtonModal>
+              </div>
             </div>
 
           </MenuStepItem>
@@ -138,19 +178,22 @@
 </template>
 
 <script>
-import { BIP39, I18N } from '@config'
+import { BIP39, I18N, NETWORKS } from '@config'
 import Profile from '@/models/profile'
+import { ButtonModal } from '@/components/Button'
+import { NetworkSelectionModal } from '@/components/Network'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
-import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
+import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 
 export default {
   name: 'ProfileNew',
 
   components: {
+    ButtonModal,
+    NetworkSelectionModal,
     SelectionAvatar,
     SelectionBackground,
-    SelectionNetwork,
     SelectionTheme,
     MenuStep,
     MenuStepItem,
@@ -173,7 +216,8 @@ export default {
         2: 'pages/profile-new/background-step-2.png',
         3: 'pages/profile-new/background-step-3.png'
       }
-    }
+    },
+    selectedNetwork: null
   }),
 
   computed: {
@@ -235,6 +279,22 @@ export default {
     },
     networks () {
       return this.$store.getters['network/all']
+    },
+    defaultNetworks () {
+      return NETWORKS.map(network => {
+        return {
+          id: network.id,
+          title: network.description,
+          textContent: network.title,
+          svg: `networks/${network.id}.svg`
+        }
+      })
+    },
+    first () {
+      return this.defaultNetworks[0]
+    },
+    last () {
+      return this.defaultNetworks[this.defaultNetworks.length - 1]
     },
     isDarkMode () {
       return this.$store.getters['session/hasDarkTheme']
@@ -306,8 +366,15 @@ export default {
       this.$store.dispatch('session/setBip39Language', bip39Language)
     },
 
-    selectNetwork (networkId) {
-      this.schema.networkId = networkId
+    selectNetwork (network) {
+      this.schema.networkId = network.id
+      this.selectedNetwork = network
+    },
+
+    selectNetworkFromModal (network, toggle) {
+      this.schema.networkId = network.id
+      this.selectedNetwork = network
+      toggle()
     },
 
     async selectTheme (theme) {
@@ -335,5 +402,8 @@ export default {
 .ProfileNew__instructions {
   background-size: cover;
   background-position: center center;
+}
+.ProfileNew .svg-button--selected > span, .svg-button--selected > img {
+  color: #fff;
 }
 </style>

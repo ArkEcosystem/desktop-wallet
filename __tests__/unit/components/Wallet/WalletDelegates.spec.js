@@ -15,6 +15,11 @@ describe('WalletDelegates', () => {
         walletVote
       },
       mocks: {
+        session_network: {
+          constants: {
+            activeDelegates: 51
+          }
+        },
         $store: {
           getters: {
             'app/showVotingExplanation': showExplanation

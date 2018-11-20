@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul
-      :class="isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical'"
+      :class="classes"
       class="MenuOptions relative bg-theme-settings list-reset flex flex-col rounded py-5"
     >
       <slot />
@@ -18,6 +18,22 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isSettings: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+
+  computed: {
+    classes () {
+      var classes = this.isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical'
+      if (!this.isHorizontal) {
+        classes += ' '
+        classes += this.isSettings ? 'MenuOptions__settings--vertical' : 'MenuOptions__default--vertical'
+      }
+      return classes
     }
   }
 }
@@ -28,6 +44,14 @@ export default {
   border: none;
 }
 
+.MenuOptions__default--vertical:after {
+  top: 20px;
+}
+
+.MenuOptions__settings--vertical:after {
+  top: 110px;
+}
+
 .MenuOptions--vertical:after {
   border-color: transparent;
   border-style: solid;
@@ -35,7 +59,6 @@ export default {
   border-width: 10px;
   position: absolute;
   content: "";
-  top: 50px;
   left: -20px;
   width: 20px;
   height: 0;

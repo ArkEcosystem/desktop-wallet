@@ -211,6 +211,12 @@ describe('peer store module', () => {
         height: 10001
       })
 
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: 'dummyEpoch'
+      })
+
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
 
     expect(response).toBeObject()
@@ -234,6 +240,12 @@ describe('peer store module', () => {
       .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
       .reply(200, {
         height: 10001
+      })
+
+    axiosMock
+      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: 'dummyEpoch'
       })
 
     const response = await store.dispatch('peer/validatePeer', {
@@ -266,6 +278,12 @@ describe('peer store module', () => {
         data: {
           height: 10002
         }
+      })
+
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: 'dummyEpoch'
       })
 
     // Mock v2 endpoints
@@ -372,6 +390,12 @@ describe('peer store module', () => {
       })
 
     axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: 'dummyEpoch'
+      })
+
+    axiosMock
       .onGet(`${client.host}/api/loader/syncing`)
       .reply(400)
 
@@ -405,6 +429,12 @@ describe('peer store module', () => {
         }
       })
 
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: 'dummyEpoch'
+      })
+
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Wrong network$/))
   })
@@ -416,6 +446,12 @@ describe('peer store module', () => {
         data: {
           nethash: 'wrong nethash'
         }
+      })
+
+    axiosMock
+      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: 'dummyEpoch'
       })
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })

@@ -111,7 +111,7 @@ export default {
     totalCount: 0,
     queryParams: {
       page: 1,
-      limit: 51,
+      limit: 1,
       sort: {
         field: 'rank',
         type: 'asc'
@@ -157,6 +157,7 @@ export default {
   },
 
   mounted () {
+    this.queryParams.limit = this.session_network.constants.activeDelegates || 51 // Set default limit to amount of active delegates
     this.fetchDelegates()
   },
 

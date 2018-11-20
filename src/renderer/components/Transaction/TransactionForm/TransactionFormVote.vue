@@ -249,8 +249,6 @@ export default {
         }
       }
 
-      console.log(transaction)
-
       if (success) {
         this.emitNext(transaction)
         this.reset()

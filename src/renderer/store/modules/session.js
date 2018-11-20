@@ -32,7 +32,12 @@ export default {
       }
 
       const { networkId } = getters['profile']
-      return rootGetters['network/byId'](networkId)
+      var network = rootGetters['network/byId'](networkId)
+
+      if (!network) {
+        network = rootGetters['network/customNetworkById'](networkId)
+      }
+      return network
     },
     avatar: state => state.avatar,
     background: state => state.background,

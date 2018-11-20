@@ -24,7 +24,10 @@ export default {
     START: 'Start',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     DATE: 'Date',
-    WARNING: 'Warning'
+    WARNING: 'Warning',
+    FETCH: 'Fetch',
+    REMOVE: 'Remove',
+    OTHER: 'Other'
   },
 
   INTRODUCTION: {
@@ -160,6 +163,7 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
+    NETWORK_OVERVIEW: 'Network Overview',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -285,6 +289,34 @@ export default {
     CLOSE_WARNING: 'It looks like something went wrong. You may close the window but this could cause adverse effects.'
   },
 
+  MODAL_NETWORK: {
+    NAME: 'Name',
+    DESCRIPTION: 'Description',
+    SEED_SERVER: 'Seed Server',
+    NETHASH: 'Nethash',
+    TOKEN: 'Token',
+    SYMBOL: 'Symbol',
+    VERSION: 'Version',
+    EXPLORER: 'Explorer',
+    EPOCH: 'Epoch',
+    WIF: 'WIF',
+    SLIP44: 'Slip44',
+    ACTIVE_DELEGATES: 'Active Delegates',
+    MARKET_TICKER: 'Market Ticker (Optional)',
+    FAILED_FETCH: 'Failed to fetch network information',
+    NETWORK_IN_USE: 'This network is in use by one or more profiles and cannot be removed',
+    DEFAULT_NETWORK_NO_DELETE: 'This is a default network and cannot be deleted',
+    PLACEHOLDER: {
+      EXPLORER: 'http://explorer.io',
+      SEED_SERVER: 'http://1.1.1.1:4002',
+      EPOCH: '2017-03-21T13:00:00.000Z'
+    }
+  },
+
+  MODAL_NETWORK_SELECTION: {
+    TITLE: 'Networks'
+  },
+
   MODAL_PEER: {
     CANCEL: 'Cancel',
     CONNECT: 'Connect',
@@ -361,6 +393,15 @@ export default {
       CREATE_WALLET: 'Create wallet',
       IMPORT_WALLET: 'Import wallet',
       LAST_TRANSACTIONS: 'Last transactions'
+    },
+
+    NETWORK_OVERVIEW: {
+      INSTRUCTIONS: {
+        HEADER: 'Network Selection',
+        TEXT: 'Select and edit any of the available networks, or add new ones.'
+      },
+      CREATE_NEW: 'Add a new network',
+      NEW_NETWORK: 'New network'
     },
 
     PROFILE_ALL: {
@@ -524,6 +565,10 @@ export default {
     MODAL_HEADER: 'Select background',
     TEXTURES: 'Textures',
     WALLPAPERS: 'Wallpapers'
+  },
+
+  SELECTION_NETWORK: {
+    MODAL_HEADER: 'Networks'
   },
 
   TRANSACTION: {

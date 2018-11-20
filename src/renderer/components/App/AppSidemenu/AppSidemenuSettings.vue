@@ -1,86 +1,110 @@
 <template>
-  <MenuOptions
+  <div
     v-click-outside="emitClose"
-    :is-horizontal="isHorizontal"
     :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
     class="absolute z-20"
   >
-    <MenuOptionsItem
-      :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
-      @click="toggleSelect('currency-menu')"
+    <MenuOptions
+      :is-horizontal="isHorizontal"
+      :is-settings="true"
     >
-      <div
-        slot="controls"
-        class="pointer-events-none"
+      <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
+        @click="toggleSelect('currency-menu')"
       >
-        <MenuDropdown
-          ref="currency-menu"
-          :items="currencies"
-          :position="['-40%', '5%']"
-          :value="sessionCurrency"
-          @select="setCurrency"
-        />
-      </div>
-    </MenuOptionsItem>
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <MenuDropdown
+            ref="currency-menu"
+            :items="currencies"
+            :position="['-40%', '5%']"
+            :value="sessionCurrency"
+            @select="setCurrency"
+          />
+        </div>
+      </MenuOptionsItem>
 
-    <MenuOptionsItem
-      :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
-      @click="toggleSelect('dark-switch')"
+      <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
+        @click="toggleSelect('dark-switch')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="dark-switch"
+            :is-active="hasDarkTheme"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setTheme"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
+        v-if="!isLinux"
+        :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
+        @click="toggleSelect('protection-switch')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="protection-switch"
+            :is-active="contentProtection"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setProtection"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
+        class="text-grey-light"
+        @click="toggleResetDataModal"
+      />
+
+      <ModalConfirmation
+        v-if="isResetDataModalOpen"
+        :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
+        :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
+        container-classes="max-w-md"
+        @cancel="toggleResetDataModal"
+        @continue="onResetData"
+      />
+    </MenuOptions>
+
+    <div
+      class="bg-theme-settings mt-2 rounded"
     >
-      <div
-        slot="controls"
-        class="pointer-events-none"
+      <router-link
+        :title="$t('APP_SIDEMENU.NETWORK_OVERVIEW')"
+        :to="{ name: 'networks' }"
+        :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
+        class="flex items-center cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:no-underline hover:text-white"
+        @click.native="goToNetworkOverview()"
       >
-        <ButtonSwitch
-          ref="dark-switch"
-          :is-active="hasDarkTheme"
-          class="theme-dark"
-          background-color="#414767"
-          @change="setTheme"
+        <SvgIcon
+          name="network-management"
+          view-box="0 0 20 20"
+          class="mr-4"
         />
-      </div>
-    </MenuOptionsItem>
-
-    <MenuOptionsItem
-      v-if="!isLinux"
-      :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
-      @click="toggleSelect('protection-switch')"
-    >
-      <div
-        slot="controls"
-        class="pointer-events-none"
-      >
-        <ButtonSwitch
-          ref="protection-switch"
-          :is-active="contentProtection"
-          class="theme-dark"
-          background-color="#414767"
-          @change="setProtection"
-        />
-      </div>
-    </MenuOptionsItem>
-
-    <MenuOptionsItem
-      :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
-      class="text-grey-light"
-      @click="toggleResetDataModal"
-    />
-
-    <ModalConfirmation
-      v-if="isResetDataModalOpen"
-      :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
-      :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
-      container-classes="max-w-md"
-      @cancel="toggleResetDataModal"
-      @continue="onResetData"
-    />
-  </MenuOptions>
+        {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
+import SvgIcon from '@/components/SvgIcon'
 const os = require('os')
 
 export default {
@@ -91,7 +115,8 @@ export default {
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
-    ButtonSwitch
+    ButtonSwitch,
+    SvgIcon
   },
 
   props: {
@@ -177,6 +202,11 @@ export default {
       this.electron_reload()
     },
 
+    goToNetworkOverview () {
+      this.$emit('close')
+      this.$router.push({ name: 'networks' })
+    },
+
     emitClose () {
       if (this.outsideClick) {
         this.$emit('close')
@@ -190,6 +220,7 @@ export default {
 .AppSidemenuOptionsSettings {
   width: 300px;
   left: 6.5rem;
+  bottom: -5rem;
   transform: translateY(-10%)
 }
 

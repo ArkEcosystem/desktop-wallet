@@ -64,7 +64,7 @@
     </MenuOptions>
 
     <div
-      class="AppSidemenuNetworkStatus__custom-peer bg-theme-settings mt-2 rounded"
+      class="bg-theme-settings mt-2 rounded"
     >
       <ButtonModal
         :label="$t('PEER.CONNECT_CUSTOM')"
