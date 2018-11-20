@@ -103,22 +103,23 @@ export default class Synchronizer {
     pullAll(this.paused, flatten(actions))
   }
 
+  /**
+   * Invoke the action and update the last time it has been called, when
+   * it has finished its sync or async execution
+   * @param {String} actionId
+   */
+  async call (actionId) {
+    const action = this.actions[actionId]
+    action.isCalling = true
+    await action.fn()
+    action.calledAt = (new Date()).getTime()
+    action.isCalling = false
+  }
+
   /*
    * Starts to dispatch the actions periodically
    */
   ready () {
-    /**
-     * Invoke the action and update the last time it has been called, when
-     * it has finished its sync or async execution
-     * @param {Object} action
-     */
-    const call = async action => {
-      action.isCalling = true
-      await action.fn()
-      action.calledAt = (new Date()).getTime()
-      action.isCalling = false
-    }
-
     /**
      * Run all the actions
      */
@@ -129,7 +130,7 @@ export default class Synchronizer {
 
           if (!action.isCalling) {
             if (options.immediate) {
-              call(action)
+              this.call(actionId)
             } else {
               const mode = includes(this.focused, actionId) ? 'focus' : 'default'
               const { interval } = action[mode]
@@ -137,7 +138,7 @@ export default class Synchronizer {
               const now = (new Date()).getTime()
 
               if (nextCall <= now) {
-                call(action)
+                this.call(actionId)
               }
             }
           }

@@ -159,6 +159,7 @@ export default {
   },
 
   async created () {
+    await this.$synchronizer.call('wallets')
     await this.fetchWalletVote()
   },
 
