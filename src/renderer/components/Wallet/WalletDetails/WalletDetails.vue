@@ -178,8 +178,13 @@ export default {
         if (walletVote) {
           this.votedDelegate = await this.$client.fetchDelegate(walletVote)
           this.walletVote.publicKey = walletVote
+        } else {
+          this.votedDelegate = null
+          this.walletVote.publicKey = null
         }
       } catch (error) {
+        this.votedDelegate = null
+        this.walletVote.publicKey = null
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'fetch vote',
