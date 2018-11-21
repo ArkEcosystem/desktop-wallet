@@ -179,15 +179,12 @@ export default {
       ipcRenderer.on('process-url', (_, url) => {
         const currentWallet = this.wallet_fromRoute
         const isWalletActive = !!currentWallet
-        const isSendingEnabled = currentWallet && currentWallet.isSendingEnabled
         const uri = new URIHandler(url)
 
         if (!uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else if (!isWalletActive) {
           this.$error(this.$t('VALIDATION.WALLET_NOT_ACTIVE'))
-        } else if (!isSendingEnabled) {
-          this.$error(this.$t('VALIDATION.SEND_NOT_ENABLED'))
         } else {
           this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
         }

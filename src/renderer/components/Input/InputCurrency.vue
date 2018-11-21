@@ -223,8 +223,11 @@ export default {
   },
 
   watch: {
-    value (newValue) {
-      this.updateInputValue(newValue)
+    value: {
+      handler (val) {
+        this.updateInputValue(val)
+      },
+      immediate: true
     }
   },
 

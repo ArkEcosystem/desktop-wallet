@@ -202,8 +202,8 @@ export default {
   },
 
   watch: {
-    value (value) {
-      this.updateInputValue(value)
+    value (val) {
+      this.updateInputValue(val)
     },
 
     isFocused () {
@@ -217,6 +217,12 @@ export default {
       if (this.isFocused && this.hasSuggestions) {
         this.openDropdown()
       }
+    }
+  },
+
+  mounted () {
+    if (this.value) {
+      this.updateInputValue(this.value)
     }
   },
 
