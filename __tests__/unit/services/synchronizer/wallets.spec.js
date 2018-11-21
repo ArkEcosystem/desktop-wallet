@@ -259,7 +259,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
         it('should display the new transaction', async () => {
           await action.fetchWalletTransactions(wallet)
-          expect(action.displayNewTransaction).toHaveBeenCalledWith(latestTransaction)
+          expect(action.displayNewTransaction).toHaveBeenCalledWith(latestTransaction, wallet)
         })
       })
     })

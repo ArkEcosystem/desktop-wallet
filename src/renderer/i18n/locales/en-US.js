@@ -672,7 +672,13 @@ export default {
   },
 
   SYNCHRONIZER: {
-    NEW_TRANSACTION: 'New transaction: {transactionId}'
+    VOTE: 'voted for',
+    UNVOTE: 'unvoted',
+    NEW_SECOND_SIGNATURE: 'New second signature: {address}',
+    NEW_DELEGATE_REGISTRATION: 'New delegate: {address} registered as {username}',
+    NEW_VOTE: 'New vote: {address} {voteUnvote} {publicKey}',
+    NEW_TRANSFER_SENT: 'New transfer: {amount} sent from {sender} to {recipient}',
+    NEW_TRANSFER_RECEIVED: 'New transfer: {amount} received from {sender} to {recipient}'
   },
 
   TRANSACTION_FORM: {

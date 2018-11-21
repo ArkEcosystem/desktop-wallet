@@ -1,4 +1,6 @@
 import { difference, last, sortBy } from 'lodash'
+import config from '@config'
+import truncateMiddle from '@/filters/truncate-middle'
 
 class Action {
   constructor (synchronizer) {
@@ -128,7 +130,7 @@ class Action {
 
           // Disable notification on first check
           if (checkedAt > 0) {
-            this.displayNewTransaction(latest)
+            this.displayNewTransaction(latest, wallet)
           }
         }
       }
@@ -141,8 +143,56 @@ class Action {
     return last(sortBy(transactions, 'timestamp'))
   }
 
-  displayNewTransaction (transaction) {
-    this.$success(this.$t('SYNCHRONIZER.NEW_TRANSACTION', { transactionId: transaction.id }))
+  displayNewTransaction (transaction, wallet) {
+    let message = {}
+    switch (transaction.type) {
+      case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
+        message = {
+          translation: 'SYNCHRONIZER.NEW_SECOND_SIGNATURE',
+          options: {
+            address: truncateMiddle(wallet.address)
+          }
+        }
+        break
+      }
+      case config.TRANSACTION_TYPES.DELEGATE_REGISTRATION: {
+        message = {
+          translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
+          options: {
+            address: truncateMiddle(wallet.address),
+            username: transaction.assets.delegate.username
+          }
+        }
+        break
+      }
+      case config.TRANSACTION_TYPES.VOTE: {
+        const type = transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
+        const voteUnvote = this.$t(`SYNCHRONIZER.${type}`)
+        message = {
+          translation: 'SYNCHRONIZER.NEW_VOTE',
+          options: {
+            address: truncateMiddle(wallet.address),
+            voteUnvote,
+            publicKey: truncateMiddle(transaction.asset.votes[0].substring(1))
+          }
+        }
+        break
+      }
+      default: {
+        const type = transaction.sender === wallet.address ? 'SENT' : 'RECEIVED'
+        message = {
+          translation: `SYNCHRONIZER.NEW_TRANSFER_${type}`,
+          options: {
+            address: truncateMiddle(wallet.address),
+            amount: `${this.$getters['session/network'].symbol}${(transaction.amount / 1e8)}`,
+            sender: truncateMiddle(transaction.sender),
+            recipient: truncateMiddle(transaction.recipient)
+          }
+        }
+        break
+      }
+    }
+    this.$success(this.$t(message.translation, message.options))
   }
 }
 
