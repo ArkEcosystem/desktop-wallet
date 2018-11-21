@@ -19,6 +19,11 @@ In Ubuntu the development files of `libudev` are necessary:
 sudo apt-get install libudev-dev
 ```
 
+#### Node 9
+There are certain packages (such as the ledger HID packages) which do not work on Node 10.
+
+To download Node 9, head over to [here](https://nodejs.org/en/blog/release/v9.11.1/)
+
 ### Commands
 
 ``` bash
@@ -40,8 +45,17 @@ yarn depcheck
 # Collect the code and produce a compressed file
 yarn pack
 
-# Build electron application for production
+# Build electron application for production (Current OS)
 yarn build
+
+# Build electron application for production (Windows)
+yarn build:win
+
+# Build electron application for production (Mac)
+yarn build:mac
+
+# Build electron application for production (Linux)
+yarn build:linux
 
 # Run unit and end-to-end tests
 yarn test
