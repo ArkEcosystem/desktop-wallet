@@ -26,7 +26,7 @@ function createWindow () {
 
   const windowState = new WinState()
   mainWindow = new BrowserWindow({
-    window: width - 100,
+    width: width - 100,
     height: height - 100,
     show: false
   })
