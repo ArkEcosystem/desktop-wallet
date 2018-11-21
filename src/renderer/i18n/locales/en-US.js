@@ -672,7 +672,7 @@ export default {
   },
 
   SYNCHRONIZER: {
-    NEW_TRANSACION: 'New transaction: {transactionId}'
+    NEW_TRANSACTION: 'New transaction: {transactionId}'
   },
 
   TRANSACTION_FORM: {
@@ -741,6 +741,7 @@ export default {
     TRANSACTION_ID: 'Transaction ID',
     RECIPIENT: 'Recipient',
     SENDER: 'Sender',
-    AMOUNT: 'Amount'
+    AMOUNT: 'Amount',
+    NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}'
   }
 }

@@ -1,4 +1,5 @@
 import { findIndex, unionBy } from 'lodash'
+import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
@@ -74,6 +75,8 @@ export default {
     create ({ commit }, transaction) {
       const data = TransactionModel.deserialize(transaction)
       commit('CREATE', data)
+
+      eventBus.emit(`wallet:${transaction.sender}:transaction:new`)
 
       return data
     },

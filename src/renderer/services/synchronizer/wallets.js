@@ -142,7 +142,7 @@ class Action {
   }
 
   displayNewTransaction (transaction) {
-    this.$success(this.$t('SYNCHRONIZER.NEW_TRANSACION', { transactionId: transaction.id }))
+    this.$success(this.$t('SYNCHRONIZER.NEW_TRANSACTION', { transactionId: transaction.id }))
   }
 }
 

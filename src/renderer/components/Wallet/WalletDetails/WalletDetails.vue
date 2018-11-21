@@ -1,9 +1,10 @@
 <template>
   <main class="WalletDetails flex flex-col">
     <WalletHeading class="sticky pin-t z-10" />
+
     <MenuTab
       v-model="currentTab"
-      :class="{ 'rounded-bl-lg' : !isDelegatesTab() }"
+      :class="{ 'rounded-bl-lg' : !isDelegatesTab }"
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
@@ -20,7 +21,7 @@
       </MenuTabItem>
     </MenuTab>
     <div
-      v-if="isDelegatesTab() && votedDelegate"
+      v-if="isDelegatesTab && votedDelegate"
       class="bg-theme-feature px-5 flex flex-row"
     >
       <div
@@ -137,8 +138,13 @@ export default {
 
       return tabs
     },
+
     currentWallet () {
       return this.wallet_fromRoute
+    },
+
+    isDelegatesTab () {
+      return this.currentTab === 'WalletDelegates'
     }
   },
 
@@ -192,10 +198,6 @@ export default {
           msg: error.message
         }))
       }
-    },
-
-    isDelegatesTab () {
-      return this.currentTab === 'WalletDelegates'
     },
 
     getProductivity () {
