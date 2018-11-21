@@ -95,16 +95,19 @@ export default {
       // If we're already fetching, it's unneccessary to fetch again
       if (this.isFetching) return
 
+      const address = this.wallet_fromRoute.address.slice()
       this.isFetching = true
 
       try {
         const response = await this.getTransactions()
 
-        const storedTransactions = this.$store.getters['transaction/byAddress'](this.wallet_fromRoute.address)
+        const storedTransactions = this.$store.getters['transaction/byAddress'](address)
         const transactions = mergeTableTransactions(response.transactions, storedTransactions)
 
-        this.$set(this, 'fetchedTransactions', transactions)
-        this.totalCount = response.totalCount
+        if (address === this.wallet_fromRoute.address) {
+          this.$set(this, 'fetchedTransactions', transactions)
+          this.totalCount = response.totalCount
+        }
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -137,10 +140,12 @@ export default {
     },
 
     async refreshStatus () {
+      const address = this.wallet_fromRoute.address.slice()
+
       try {
         let newTransactions = 0
         const response = await this.getTransactions()
-        const storedTransactions = this.$store.getters['transaction/byAddress'](this.wallet_fromRoute.address)
+        const storedTransactions = this.$store.getters['transaction/byAddress'](address)
         const transactions = mergeTableTransactions(response.transactions, storedTransactions)
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {
@@ -164,7 +169,7 @@ export default {
           }
         }
 
-        if (newTransactions > 0) {
+        if (address === this.wallet_fromRoute.address && newTransactions > 0) {
           this.newTransactionsNotice = this.$t('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
             count: newTransactions,
             plural: newTransactions > 1 ? 's' : ''
