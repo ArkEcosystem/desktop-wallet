@@ -145,7 +145,7 @@ export default {
       this.feeChoices.MINIMUM = minFee < 0.1 ? minFee : 0.1
 
       this.feeChoices.CUSTOM = this.feeChoices.AVERAGE
-      this.setFee(this.feeChoices.AVERAGE)
+      this.emitFee(this.feeChoices.AVERAGE)
     },
     focusInput () {
       this.$refs.input.focus()

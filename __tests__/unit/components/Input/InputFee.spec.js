@@ -96,7 +96,7 @@ describe('InputFee', () => {
       const wrapper = mountComponent()
 
       wrapper.vm.emitFee('97')
-      expect(wrapper.emitted('input')[0][0]).toEqual(97)
+      expect(wrapper.emitted('input')[0][0]).toBeNumber()
     })
   })
 
