@@ -1,6 +1,6 @@
 # Ark Desktop Wallet
 
-![ARK-DESKTOP](https://i.imgur.com/eZPrrCQ.png)
+![Ark Desktop Wallet](./banner.png)
 
 [![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/desktop-wallet)](https://circleci.com/gh/ArkEcosystem/desktop-wallet)
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet.svg)](https://github.com/ArkEcosystem/desktop-wallet/releases)
