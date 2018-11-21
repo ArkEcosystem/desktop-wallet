@@ -13,10 +13,9 @@ describe('Mixins > Wallet', () => {
     version: 11
   }
 
-  const walletsByProfile = []
-  const contactsByProfile = []
-
   let wrapper
+  let walletsByProfile
+  let contactsByProfile
 
   beforeEach(() => {
     const localVue = createLocalVue()
@@ -26,6 +25,9 @@ describe('Mixins > Wallet', () => {
       name: 'TestComponent',
       template: '<div/>'
     }
+
+    walletsByProfile = []
+    contactsByProfile = []
 
     wrapper = shallowMount(TestComponent, {
       localVue,
@@ -49,6 +51,42 @@ describe('Mixins > Wallet', () => {
           }
         }
       }
+    })
+  })
+
+  describe('wallet_nameOnContact', () => {
+    describe('when the contacts includes the wallet address', () => {
+      it('should return the its name', () => {
+        const address = 'AeXAmpleWiThLongName'
+        contactsByProfile = [
+          { address, name: 'example' }
+        ]
+        expect(wrapper.vm.wallet_nameOnContact(address)).toEqual(contactsByProfile[0].name)
+      })
+    })
+
+    describe('when the profile does not include the wallet address', () => {
+      it('should return `undefined`', () => {
+        expect(wrapper.vm.wallet_nameOnContact('AeXAmpleWiThLongName', 5)).toBeNull()
+      })
+    })
+  })
+
+  describe('wallet_nameOnProfile', () => {
+    describe('when the profile includes the wallet address', () => {
+      it('should return the its name', () => {
+        const address = 'AeXAmpleWiThLongName'
+        walletsByProfile = [
+          { address, name: 'example' }
+        ]
+        expect(wrapper.vm.wallet_nameOnProfile(address)).toEqual(walletsByProfile[0].name)
+      })
+    })
+
+    describe('when the profile does not include the wallet address', () => {
+      it('should return `undefined`', () => {
+        expect(wrapper.vm.wallet_nameOnContact('AeXAmpleWiThLongName', 5)).toBeNull()
+      })
     })
   })
 

@@ -40,7 +40,7 @@
       </div>
 
       <WalletSidebar
-        :is-basic="false"
+        :is-slim="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>

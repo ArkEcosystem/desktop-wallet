@@ -24,6 +24,37 @@ export default {
   },
 
   methods: {
+    wallet_nameOnContact (address) {
+      const contactWallets = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      const contact = contactWallets.find(contact => contact.address === address)
+      return contact ? contact.name : null
+    },
+
+    wallet_nameOnProfile (address) {
+      const profileWallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      const profileWallet = profileWallets.find(wallet => wallet.address === address)
+      return profileWallet ? profileWallet.name : null
+    },
+
+    wallet_name (address) {
+      const profileWallet = this.wallet_nameOnProfile(address)
+      if (profileWallet) {
+        return profileWallet
+      }
+
+      const contactWallet = this.wallet_nameOnContact(address)
+      if (contactWallet) {
+        return contactWallet
+      }
+
+      const networkWallet = this.session_network.knownWallets[address]
+      if (networkWallet) {
+        return networkWallet
+      }
+
+      return null
+    },
+
     /**
      * @param {String} address
      * @param {Number} truncateLength
@@ -34,20 +65,18 @@ export default {
         return networkWallet
       }
 
-      const profileWallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      const profileWallet = profileWallets.find(wallet => wallet.address === address)
+      const profileWallet = this.wallet_nameOnProfile(address)
       if (profileWallet) {
-        return WalletService.validateAddress(profileWallet.name, this.session_network.version)
-          ? truncateMiddle(profileWallet.name, truncateLength)
-          : profileWallet.name
+        return WalletService.validateAddress(profileWallet, this.session_network.version)
+          ? truncateMiddle(profileWallet, truncateLength)
+          : profileWallet
       }
 
-      const contactWallets = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      const contactWallet = contactWallets.find(contact => contact.address === address)
+      const contactWallet = this.wallet_nameOnContact(address)
       if (contactWallet) {
-        return WalletService.validateAddress(contactWallet.name, this.session_network.version)
-          ? truncateMiddle(contactWallet.name, truncateLength)
-          : contactWallet.name
+        return WalletService.validateAddress(contactWallet, this.session_network.version)
+          ? truncateMiddle(contactWallet, truncateLength)
+          : contactWallet
       }
 
       const delegate = this.$store.getters['delegate/byAddress'](address)

@@ -3,21 +3,21 @@
     :id="activeWallet.address"
     ref="MenuNavigation"
     :class="{
-      'WalletSidebar--basic': isBasic,
-      'WalletSidebar--full': !isBasic
+      'WalletSidebar--slim': isSlim,
+      'WalletSidebar--full': !isSlim
     }"
     class="WalletSidebar justify-start overflow-y-auto"
     @input="onSelect"
   >
     <!-- Placeholder wallet -->
     <MenuNavigationItem
-      v-if="selectableWallets.length === 0 && !isBasic"
+      v-if="selectableWallets.length === 0 && !isSlim"
       id="placeholder"
       :is-disabled="true"
       class="WalletSidebar__wallet opacity-37.5 select-none"
     >
       <div
-        :class="{ 'flex flex-row': !isBasic }"
+        :class="{ 'flex flex-row': !isSlim }"
         class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticon
@@ -30,7 +30,7 @@
         >
           <span class="block truncate">{{ $t('PAGES.DASHBOARD.ADD_WALLET') }}</span>
           <span
-            v-if="!isBasic"
+            v-if="!isSlim"
             class="font-bold mt-2 text-xl"
           >
             {{ formatter_networkCurrency(0, 2) }}
@@ -53,7 +53,7 @@
     >
       <div
         slot-scope="{ isActive }"
-        :class="{ 'flex flex-row': !isBasic }"
+        :class="{ 'flex flex-row': !isSlim }"
         class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticon
@@ -68,9 +68,9 @@
           }"
           class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2"
         >
-          <span class="block truncate">{{ trimName(wallet.name) }}</span>
+          <span class="block truncate">{{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}</span>
           <span
-            v-if="!isBasic"
+            v-if="!isSlim"
             class="font-bold mt-2 text-xl"
           >
             {{ formatter_networkCurrency(wallet.balance, 2) }}
@@ -84,7 +84,6 @@
 
 <script>
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
-import WalletService from '@/services/wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon } from '../'
 
@@ -98,7 +97,7 @@ export default {
   },
 
   props: {
-    isBasic: {
+    isSlim: {
       type: Boolean,
       required: false,
       default: true
@@ -153,30 +152,18 @@ export default {
         }
       }
       this.selectableWallets = this.wallets
-    },
-
-    isAddress (value) {
-      return WalletService.validateAddress(value, this.session_network.version)
-    },
-
-    trimName (name) {
-      // If it's an address, use truncate middle
-      if (this.isAddress(name)) {
-        const truncateLength = this.isBasic ? 6 : 10
-        return this.wallet_truncate(name, truncateLength)
-      }
-
-      // Else it's a name, simply use ellipses at the end (is handled by a class)
-      return name
     }
   }
 }
 </script>
 
-<style lang="postcss" scoped>
-.WalletSidebar--full .WalletSidebar__wallet /deep/ .MenuNavigationItem__border {
+<style lang="postcss">
+.WalletSidebar--full .WalletSidebar__wallet .MenuNavigationItem__border {
   @apply .hidden
 }
+</style>
+
+<style lang="postcss" scoped>
 .WalletSidebar--full .WalletSidebar__wallet__wrapper {
   @apply .border-b .border-theme-feature-item-alternative .text-left
 }
@@ -184,10 +171,10 @@ export default {
   @apply .mr-2
 }
 
-.WalletSidebar--basic .WalletSidebar__wallet__wrapper {
+.WalletSidebar--slim .WalletSidebar__wallet__wrapper {
   @apply .flex-col .justify-center
 }
-.WalletSidebar--basic .WalletSidebar__wallet__identicon {
+.WalletSidebar--slim .WalletSidebar__wallet__identicon {
   @apply .mb-2
 }
 

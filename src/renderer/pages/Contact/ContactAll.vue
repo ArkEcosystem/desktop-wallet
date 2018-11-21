@@ -42,7 +42,7 @@
           <div class="flex flex-col justify-center overflow-hidden pl-4">
             <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
               <router-link :to="{ name: 'wallet-show', params: { address: contact.id } }">
-                {{ trimName(contact.name) }}
+                {{ wallet_nameOnContact(contact.address) || wallet_truncate(contact.address) }}
               </router-link>
             </div>
             <span class="font-bold mt-2 text-lg">
@@ -74,7 +74,6 @@
 import { ContactRemovalConfirmation } from '@/components/Contact'
 import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon } from '@/components/Wallet'
-import WalletService from '@/services/wallet'
 
 export default {
   name: 'ContactAll',
@@ -109,20 +108,6 @@ export default {
 
     openRemovalConfirmation (contact) {
       this.contactToRemove = contact
-    },
-
-    isAddress (value) {
-      return WalletService.validateAddress(value, this.session_network.version)
-    },
-
-    trimName (name) {
-      // If it's an address, use truncate middle
-      if (this.isAddress(name)) {
-        return this.wallet_truncate(name)
-      }
-
-      // Else it's a name, simply use ellipses at the end (is handled by a class)
-      return name
     }
   }
 }

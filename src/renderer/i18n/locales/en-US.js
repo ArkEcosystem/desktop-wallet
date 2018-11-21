@@ -379,10 +379,11 @@ export default {
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'New contact - Name',
-          TEXT: 'Choose a name for you contact and you are done.'
+          TEXT: 'Optionally, choose a name for you contact and you are done.'
         },
         TITLE: '2. Confirmation',
-        NAME: 'Contact name'
+        NAME: 'Contact name (optional)',
+        ERROR_NAME_MAX_LENGTH: 'The name should be less than 120 characters.'
       },
       FAILED: 'Failed to create contact'
     },
@@ -494,7 +495,8 @@ export default {
         },
         TITLE: '3. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name (optional)'
+        NAME: 'Wallet name (optional)',
+        ERROR_NAME_MAX_LENGTH: 'The name should be less than 120 characters.'
       },
       FAILED: 'Failed to import wallet'
     },
@@ -542,7 +544,8 @@ export default {
         },
         TITLE: '5. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name (optional)'
+        NAME: 'Wallet name (optional)',
+        ERROR_NAME_MAX_LENGTH: 'The name should be less than 120 characters.'
       }
     },
 

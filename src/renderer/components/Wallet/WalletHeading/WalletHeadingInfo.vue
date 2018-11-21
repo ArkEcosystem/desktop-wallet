@@ -6,12 +6,24 @@
       class="WalletHeading__identicon"
     />
     <div class="flex flex-col justify-center text-white antialiased pl-4">
-      <p class="WalletHeading__address tracking-wide mb-3 flex items-center">
+      <div
+        v-if="name"
+        class="flex flex-row text-lg font-semibold text-theme-feature-item-text"
+      >
+        <span class="block xl:hidden">
+          {{ name | truncate(12) }}
+        </span>
+        <span class="hidden xl:block">
+          {{ name | truncate(30) }}
+        </span>
+      </div>
+
+      <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
         <span
           v-tooltip="label"
           class="block xl:hidden"
         >
-          {{ wallet_truncate(label, 10) }}
+          {{ wallet_truncate(label, 12) }}
         </span>
         <span
           v-tooltip="label"
@@ -19,6 +31,7 @@
         >
           {{ showPublicKey ? wallet_truncate(label, 40) : label }}
         </span>
+
         <SvgIcon
           v-if="currentWallet.secondPublicKey"
           v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"
@@ -49,8 +62,8 @@
         </button>
       </p>
 
-      <p class="WalletHeading__balance font-semibold tracking-extrawide">
-        <span class="text-xl">{{ balance }}</span>
+      <p class="WalletHeading__balance font-semibold tracking-extrawide text-xg">
+        {{ balance }}
         <span
           v-if="isMarketEnabled"
           class="WalletHeading__balance__alternative text-xs text-theme-feature-item-text"
@@ -97,6 +110,9 @@ export default {
     balance () {
       const balance = this.currentWallet ? this.currentWallet.balance : 0
       return this.formatter_networkCurrency(balance)
+    },
+    name () {
+      return this.wallet_name(this.currentWallet.address)
     },
     currentWallet () {
       return this.wallet_fromRoute

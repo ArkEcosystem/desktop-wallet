@@ -29,7 +29,7 @@ export default new BaseModel({
     },
     name: {
       type: 'string',
-      minLength: 1,
+      minLength: 0,
       maxLength: 120
     },
     passphrase: {

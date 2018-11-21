@@ -44,6 +44,9 @@ describe('WalletHeadingInfo component', () => {
         session_network: network,
         wallet_fromRoute: sampleWalletData,
         wallet_formatAddress: address => address,
+        wallet_name: value => value,
+        wallet_nameOnContact: value => value,
+        wallet_nameOnProfile: value => value,
         wallet_truncate: value => value
       }
     })

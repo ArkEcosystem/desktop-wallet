@@ -10,7 +10,7 @@
           <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
 
           <p>
-            {{ $t('PAGES.CONTACT_NEW.STEP1.INSTRUCTIONS.TEXT') }}
+            {{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>
         </div>
       </div>
@@ -55,6 +55,7 @@
                 v-model="schema.name"
                 :label="$t('PAGES.CONTACT_NEW.STEP2.NAME')"
                 :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
+                :helper-text="nameError"
                 class="my-3"
                 name="name"
               />
@@ -103,6 +104,12 @@ export default {
   computed: {
     isDarkMode () {
       return this.$store.getters['session/hasDarkTheme']
+    },
+    nameError () {
+      if (this.$v.schema.name.$invalid) {
+        return this.$t('PAGES.CONTACT_NEW.STEP2.ERROR_NAME_MAX_LENGTH')
+      }
+      return null
     }
   },
 

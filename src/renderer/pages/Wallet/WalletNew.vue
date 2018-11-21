@@ -185,6 +185,8 @@
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP5.NAME')"
                 :bip39-warning="true"
+                :is-invalid="!$v.schema.name.isValid"
+                :helper-text="nameError"
                 class="my-3"
                 name="name"
               />
@@ -315,6 +317,12 @@ export default {
     },
     isDarkMode () {
       return this.$store.getters['session/hasDarkTheme']
+    },
+    nameError () {
+      if (!this.$v.schema.name.isValid) {
+        return this.$t('PAGES.WALLET_NEW.STEP5.ERROR_NAME_MAX_LENGTH')
+      }
+      return null
     }
   },
 
@@ -349,10 +357,6 @@ export default {
 
   methods: {
     create () {
-      if (this.schema.name === '') {
-        this.schema.name = this.schema.address
-      }
-
       this.wallet = {
         ...this.schema,
         profileId: this.session_profile.id
@@ -420,7 +424,7 @@ export default {
     step1: ['schema.address'],
     step3: ['isPassphraseVerified'],
     step4: ['walletPassword'],
-    step5: [],
+    step5: ['schema.name'],
     isPassphraseVerified: {
       required,
       isVerified: value => value
@@ -436,6 +440,13 @@ export default {
         }
 
         return false
+      }
+    },
+    schema: {
+      name: {
+        isValid (value) {
+          return value.length <= 120
+        }
       }
     }
   }
