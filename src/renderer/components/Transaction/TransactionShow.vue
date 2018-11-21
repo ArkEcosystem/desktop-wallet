@@ -56,7 +56,7 @@
       </ListDividedItem>
 
       <ListDividedItem :label="$t('TRANSACTION.SENDER')">
-        {{ wallet_formatAddress(transaction.sender) }}
+        {{ wallet_formatAddress(transaction.sender, 10) }}
         <ButtonClipboard
           :value="transaction.sender"
           class="text-theme-page-text-light mx-1"
@@ -80,7 +80,7 @@
         v-if="transaction.recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
       >
-        {{ wallet_formatAddress(transaction.recipient) }}
+        {{ wallet_formatAddress(transaction.recipient, 10) }}
         <ButtonClipboard
           :value="transaction.recipient"
           class="text-theme-page-text-light mx-1"
