@@ -43,6 +43,7 @@ export default {
     fetchedTransactions: [],
     totalCount: 0,
     newTransactionsNotice: null,
+    lastStatusRefresh: null,
     queryParams: {
       page: 1,
       limit: 10,
@@ -56,11 +57,14 @@ export default {
   watch: {
     // This watcher would invoke the `fetch` after the `Synchronizer`
     wallet_fromRoute (newValue, oldValue) {
+      const currentTimestamp = Math.round((new Date()).getTime() / 1000)
       if (newValue.address !== oldValue.address) {
+        this.lastStatusRefresh = null
         this.newTransactionsNotice = null
         this.reset()
         this.loadTransactions()
-      } else {
+      } else if (this.lastStatusRefresh < currentTimestamp - 1) {
+        this.lastStatusRefresh = currentTimestamp
         this.refreshStatus()
       }
     }
