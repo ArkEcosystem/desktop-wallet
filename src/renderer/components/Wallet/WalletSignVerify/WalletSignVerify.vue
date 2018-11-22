@@ -14,7 +14,7 @@
       <div class="flex items-center ml-4">
         <ButtonModal
           :label="$t('SIGN_VERIFY.SIGN')"
-          class="blue-button mr-2"
+          class="blue-button mr-2 py-2 px-4"
         >
           <template slot-scope="{ toggle, isOpen }">
             <WalletSignModal
@@ -28,7 +28,7 @@
 
         <ButtonModal
           :label="$t('SIGN_VERIFY.VERIFY')"
-          class="blue-button"
+          class="blue-button py-2 px-4"
         >
           <template slot-scope="{ toggle, isOpen }">
             <WalletVerifyModal
@@ -49,12 +49,12 @@
       @mouseout="showTimestamp = null"
     >
       <div class="flex flex-row">
-        <div class="font-semibold text-theme-page-text-light mr-6">
+        <div class="font-semibold text-theme-wallet-sign-verify-message-text mr-6 pl-2">
           <div>{{ $t('SIGN_VERIFY.MESSAGE') }}:</div>
           <div>{{ $t('SIGN_VERIFY.SIGNATURE') }}:</div>
         </div>
         <div>
-          <div>{{ truncate(message.message, 50) }}</div>
+          <div class="font-semibold">{{ truncate(message.message, 50) }}</div>
           <div>{{ truncate(message.signature, 50) }}</div>
         </div>
       </div>
