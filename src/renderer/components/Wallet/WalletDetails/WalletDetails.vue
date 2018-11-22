@@ -179,6 +179,10 @@ export default {
     },
 
     async fetchWalletVote () {
+      if (!this.currentWallet) {
+        return
+      }
+
       try {
         const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
 

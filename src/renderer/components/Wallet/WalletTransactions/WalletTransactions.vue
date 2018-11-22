@@ -63,6 +63,9 @@ export default {
         this.newTransactionsNotice = null
         this.reset()
         this.loadTransactions()
+
+        this.disableNewTransactionEvent(oldValue.address)
+        this.enableNewTransactionEvent(newValue.address)
       } else if (this.lastStatusRefresh < currentTimestamp - 1) {
         this.lastStatusRefresh = currentTimestamp
         this.refreshStatus()
@@ -73,15 +76,46 @@ export default {
   created () {
     this.loadTransactions()
     this.$eventBus.on('wallet:fetchTransactions', this.loadTransactions)
-    this.$eventBus.on(`wallet:${this.wallet_fromRoute.address}:transaction:new`, this.refreshStatusEvent)
+    this.enableNewTransactionEvent(this.wallet_fromRoute.address)
   },
 
   beforeDestroy () {
     this.$eventBus.off('wallet:fetchTransactions', this.loadTransactions)
-    this.$eventBus.off(`wallet:${this.wallet_fromRoute.address}:transaction:new`, this.refreshStatusEvent)
+    if (this.wallet_fromRoute) {
+      this.disableNewTransactionEvent(this.wallet_fromRoute.address)
+    }
   },
 
   methods: {
+    enableNewTransactionEvent (address) {
+      if (!address) {
+        return
+      }
+
+      this.disableNewTransactionEvent(address)
+      this.$eventBus.on(`wallet:${address}:transaction:new`, this.refreshStatusEvent)
+    },
+
+    disableNewTransactionEvent (address) {
+      if (!address) {
+        return
+      }
+
+      try {
+        this.$eventBus.off(`wallet:${address}:transaction:new`, this.refreshStatusEvent)
+      } catch (error) {
+        //
+      }
+    },
+
+    getStoredTranasctions (address) {
+      if (!address) {
+        return []
+      }
+
+      return this.$store.getters['transaction/byAddress'](address)
+    },
+
     async getTransactions () {
       const { limit, page, sort } = this.queryParams
       return this.$client.fetchWalletTransactions(this.wallet_fromRoute.address, {
@@ -93,18 +127,22 @@ export default {
 
     async fetchTransactions () {
       // If we're already fetching, it's unneccessary to fetch again
-      if (this.isFetching) return
+      if (this.isFetching) {
+        return
+      }
 
-      const address = this.wallet_fromRoute.address.slice()
+      let address
+      if (this.wallet_fromRoute) {
+        address = this.wallet_fromRoute.address.slice()
+      }
+
       this.isFetching = true
 
       try {
         const response = await this.getTransactions()
+        const transactions = mergeTableTransactions(response.transactions, this.getStoredTranasctions(address))
 
-        const storedTransactions = this.$store.getters['transaction/byAddress'](address)
-        const transactions = mergeTableTransactions(response.transactions, storedTransactions)
-
-        if (address === this.wallet_fromRoute.address) {
+        if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
           this.totalCount = response.totalCount
         }
@@ -140,13 +178,15 @@ export default {
     },
 
     async refreshStatus () {
-      const address = this.wallet_fromRoute.address.slice()
+      let address
+      if (this.wallet_fromRoute) {
+        address = this.wallet_fromRoute.address.slice()
+      }
 
       try {
         let newTransactions = 0
         const response = await this.getTransactions()
-        const storedTransactions = this.$store.getters['transaction/byAddress'](address)
-        const transactions = mergeTableTransactions(response.transactions, storedTransactions)
+        const transactions = mergeTableTransactions(response.transactions, this.getStoredTranasctions(address))
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {
             if (existingTransaction.id === transaction.id) {
@@ -167,6 +207,10 @@ export default {
           if (!matched) {
             newTransactions++
           }
+        }
+
+        if (!address || !this.wallet_fromRoute) {
+          return
         }
 
         if (address === this.wallet_fromRoute.address && newTransactions > 0) {
