@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { at } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -147,11 +148,16 @@ export default {
           this.totalCount = response.totalCount
         }
       } catch (error) {
-        this.$logger.error(error)
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'transactions',
-          msg: error.message
-        }))
+        // Ignore the 404 error of wallets that are not on the blockchain
+        const messages = at(error, 'response.data.message')
+        if (messages[0] !== 'Wallet not found') {
+          this.$logger.error(error)
+
+          this.$error(this.$t('COMMON.FAILED_FETCH', {
+            name: 'transactions',
+            msg: error.message
+          }))
+        }
         this.fetchedTransactions = []
       } finally {
         this.isFetching = false

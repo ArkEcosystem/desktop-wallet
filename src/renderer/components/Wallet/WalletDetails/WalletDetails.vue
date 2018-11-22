@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import { at } from 'lodash'
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
@@ -196,11 +197,15 @@ export default {
       } catch (error) {
         this.votedDelegate = null
         this.walletVote.publicKey = null
-        this.$logger.error(error)
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'fetch vote',
-          msg: error.message
-        }))
+
+        const messages = at(error, 'response.data.message')
+        if (messages[0] !== 'Wallet not found') {
+          this.$logger.error(error)
+          this.$error(this.$t('COMMON.FAILED_FETCH', {
+            name: 'fetch vote',
+            msg: error.message
+          }))
+        }
       }
     },
 
