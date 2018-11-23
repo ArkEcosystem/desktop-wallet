@@ -1,6 +1,7 @@
 import { findIndex, unionBy } from 'lodash'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
+import Vue from 'vue'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 
@@ -41,7 +42,7 @@ export default {
   mutations: {
     CREATE (state, transaction) {
       if (!state.transactions[transaction.profileId]) {
-        state.transactions[transaction.profileId] = []
+        Vue.set(state.transactions, transaction.profileId, [])
       }
 
       if (includes(state.transactions[transaction.profileId], transaction)) {
@@ -52,7 +53,7 @@ export default {
     },
     STORE (state, transaction) {
       if (!state.transactions[transaction.profileId]) {
-        state.transactions[transaction.profileId] = []
+        Vue.set(state.transactions, transaction.profileId, [])
       }
       state.transactions[transaction.profileId] = unionBy([transaction, ...state.transactions[transaction.profileId]], 'id')
     },

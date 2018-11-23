@@ -2,6 +2,7 @@ import Announcement from '@/models/announcement'
 import feedService from '@/services/feed'
 import { ANNOUNCEMENTS as source } from '@config'
 import { unionBy } from 'lodash'
+import Vue from 'vue'
 
 export default {
   namespaced: true,
@@ -31,8 +32,7 @@ export default {
 
     MARK_ANNOUNCEMENT_AS_READ (state, readAnnouncement) {
       let readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
-
-      state.announcements[readAnnouncementIndex].isRead = true
+      Vue.set(state.announcements[readAnnouncementIndex], 'isRead', true)
     }
   },
 

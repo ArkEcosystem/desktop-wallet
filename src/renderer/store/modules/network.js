@@ -3,6 +3,7 @@ import { isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
 import NetworkModel from '@/models/network'
 import Client from '@/services/client'
+import Vue from 'vue'
 
 export default new BaseModule(NetworkModel, {
 
@@ -39,15 +40,15 @@ export default new BaseModule(NetworkModel, {
       state.all = value
     },
     ADD_CUSTOM_NETWORK (state, value) {
-      state.customNetworks[value.id] = value
+      Vue.set(state.customNetworks, value.id, value)
     },
     UPDATE_CUSTOM_NETWORK (state, value) {
       if (state.customNetworks[value.id]) {
-        state.customNetworks[value.id] = value
+        Vue.set(state.customNetworks, value.id, value)
       }
     },
     REMOVE_CUSTOM_NETWORK (state, value) {
-      delete state.customNetworks[value]
+      Vue.delete(state.customNetworks, value)
     }
   },
 

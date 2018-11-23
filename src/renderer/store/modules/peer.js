@@ -3,6 +3,7 @@ import apiClient from '@arkecosystem/client'
 import ClientService from '@/services/client'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
+import Vue from 'vue'
 
 /**
  * Get API port if version 2 peer.
@@ -164,13 +165,13 @@ export default {
 
   mutations: {
     SET_PEERS (state, { peers, networkId }) {
-      state.all[networkId] = {
+      Vue.set(state.all, networkId, {
         peers,
         lastUpdated: new Date()
-      }
+      })
     },
     SET_CURRENT_PEER (state, { peer, networkId }) {
-      state.current[networkId] = peer
+      Vue.set(state.current, networkId, peer)
     }
   },
 

@@ -1,4 +1,5 @@
 import DelegateModel from '@/models/delegate'
+import Vue from 'vue'
 
 export default {
   namespaced: true,
@@ -29,14 +30,16 @@ export default {
 
   mutations: {
     SET_DELEGATES (state, { delegates, networkId }) {
-      state.delegates[networkId] = delegates.reduce((map, delegate, index) => {
-        map[delegate.address] = delegate
+      const result = delegates.reduce((acc, delegate) => {
+        acc[delegate.address] = delegate
 
-        return map
+        return acc
       }, {})
+
+      Vue.set(state.delegates, networkId, result)
     },
     ADD_DELEGATE (state, { delegate, networkId }) {
-      state.delegates[networkId][delegate.address] = delegate
+      Vue.set(state.delegates, networkId, { [delegate.address]: delegate })
     }
   },
 

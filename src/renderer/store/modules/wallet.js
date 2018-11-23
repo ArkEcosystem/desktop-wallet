@@ -1,5 +1,6 @@
 import { findIndex, unionBy } from 'lodash'
 import WalletModel from '@/models/wallet'
+import Vue from 'vue'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 const includesMessage = (objects, find) => objects.map(a => a.timestamp).includes(find.timestamp)
@@ -56,7 +57,7 @@ export default {
   mutations: {
     CREATE (state, wallet) {
       if (!state.wallets[wallet.profileId]) {
-        state.wallets[wallet.profileId] = []
+        Vue.set(state.wallets, wallet.profileId, [])
       }
 
       if (includes(state.wallets[wallet.profileId], wallet)) {
@@ -67,7 +68,7 @@ export default {
     },
     STORE (state, wallet) {
       if (!state.wallets[wallet.profileId]) {
-        state.wallets[wallet.profileId] = []
+        Vue.set(state.wallets, wallet.profileId, [])
       }
       state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
     },
