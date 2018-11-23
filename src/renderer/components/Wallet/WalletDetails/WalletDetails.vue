@@ -4,7 +4,7 @@
 
     <MenuTab
       v-model="currentTab"
-      :class="{ 'rounded-bl-lg' : !isDelegatesTab }"
+      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !votedDelegate }"
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
