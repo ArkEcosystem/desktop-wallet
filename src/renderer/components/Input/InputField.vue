@@ -75,7 +75,7 @@ export default {
 
   computed: {
     inputClass () {
-      return 'InputField__input w-full pt-3 pin-l bg-transparent transition border-b border-theme-page-text-light text-theme-page-text hover:border-theme-page-text focus:border-blue h-10'
+      return 'InputField__input w-full pt-3 pin-l bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10'
     }
   }
 }
