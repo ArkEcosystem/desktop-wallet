@@ -458,4 +458,20 @@ describe('Services > Client', () => {
       })
     })
   })
+
+  describe('buildVote', () => {
+    describe('when the fee is bigger than V1 fee', () => {
+      it('should throw an Error', async () => {
+        const fee = V1.fees[3] + 0.0000001
+        expect(await errorCapturer(client.buildVote({ fee }))).toThrow(/fee/)
+      })
+    })
+
+    describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
+      it('should not throw an Error', async () => {
+        expect(await errorCapturer(client.buildVote({ fee: 1 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: 0.9 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+      })
+    })
+  })
 })

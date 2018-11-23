@@ -373,16 +373,22 @@ export default class ClientService {
    * Build a vote transaction
    * @param {Object} data
    * @param {Array} data.votes
+   * @param {Number} data.fee - dynamic fee, as arktoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildVote ({ votes, passphrase, secondPassphrase, wif }, returnObject = false) {
+  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, returnObject = false) {
+    if (fee > V1.fees[3]) {
+      throw new Error(`Vote fee should be smaller than ${V1.fees[3]}`)
+    }
+
     const transaction = transactionBuilder
       .vote()
       .votesAsset(votes)
+      .fee(fee)
 
     return this.__signTransaction({
       transaction,

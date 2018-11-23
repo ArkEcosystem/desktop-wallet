@@ -50,6 +50,17 @@
     <Collapse
       :is-open="isPassphraseStep"
     >
+
+      <div class="mt-12">
+        <InputFee
+          v-if="session_network.apiVersion === 2"
+          ref="fee"
+          :currency="session_network.token"
+          :transaction-type="$options.transactionType"
+          @input="onFee"
+        />
+      </div>
+
       <div
         v-if="currentWallet.isLedger"
         class="mt-10"
@@ -100,9 +111,10 @@
 </template>
 
 <script>
-import { TRANSACTION_TYPES } from '@config'
+import { required } from 'vuelidate/lib/validators'
+import { TRANSACTION_TYPES, V1 } from '@config'
 import { Collapse } from '@/components/Collapse'
-import { InputPassword } from '@/components/Input'
+import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -115,6 +127,7 @@ export default {
 
   components: {
     Collapse,
+    InputFee,
     InputPassword,
     ListDivided,
     ListDividedItem,
@@ -203,6 +216,10 @@ export default {
       this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
     },
 
+    onFee (fee) {
+      this.$set(this.form, 'fee', fee)
+    },
+
     onSubmit () {
       if (this.form.walletPassword && this.form.walletPassword.length) {
         this.showEncryptLoader = true
@@ -217,15 +234,25 @@ export default {
     },
 
     async submit () {
+      // v1 compatibility
+      if (this.session_network.apiVersion === 1) {
+        this.form.fee = V1.fees[this.$options.transactionType]
+      }
+      // Ensure that fee has value, even when the user has not interacted
+      if (!this.form.fee) {
+        this.form.fee = this.$refs.fee.fee
+      }
+
       const { publicKey } = this.delegate
       const prefix = this.isVoter ? '-' : '+'
 
       const votes = [
         `${prefix}${publicKey}`
       ]
-      let transactionData = {
+      const transactionData = {
         passphrase: this.form.passphrase,
         votes,
+        fee: parseInt(this.currency_unitToSub(this.form.fee)),
         wif: this.form.wif
       }
 
@@ -273,6 +300,15 @@ export default {
 
   validations: {
     form: {
+      fee: {
+        required,
+        isValid () {
+          if (this.$refs.fee) {
+            return !this.$refs.fee.$v.$invalid
+          }
+          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+        }
+      },
       passphrase: {
         isValid (value) {
           if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
