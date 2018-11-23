@@ -28,7 +28,7 @@
         />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.BLOCKS')"
-          :value="blocksProduced()"
+          :value="blocksProduced"
         />
         <ListDividedItem
           v-if="delegate.votes"
@@ -148,6 +148,15 @@ export default {
   computed: {
     currentWallet () {
       return this.wallet_fromRoute
+    },
+
+    blocksProduced () {
+      const { produced, missed } = this.delegate.blocks
+
+      if (missed > 0) {
+        return `${produced} (${missed} ${this.$t('WALLET_DELEGATES.MISSED')})`
+      }
+      return produced || '0'
     }
   },
 
@@ -187,16 +196,6 @@ export default {
   methods: {
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
-    },
-
-    blocksProduced () {
-      const blocks = this.delegate.blocks.produced
-      const missed = this.delegate.blocks.missed
-
-      if (missed > 0) {
-        return `${blocks} (${missed} ${this.$t('WALLET_DELEGATES.MISSED')})`
-      }
-      return blocks
     },
 
     async fetchForged () {
