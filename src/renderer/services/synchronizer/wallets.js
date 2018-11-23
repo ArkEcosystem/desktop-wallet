@@ -118,6 +118,10 @@ class Action {
       const { transactions } = await this.$client.fetchWalletTransactions(wallet.address)
 
       if (transactions && transactions.length) {
+        this.$dispatch('transaction/deleteBulk', {
+          transactions,
+          profileId: wallet.profileId
+        })
         const latest = this.findLatestTransaction(transactions)
         const latestAt = latest.timestamp
         const checkedAt = wallet.transactions.checkedAt

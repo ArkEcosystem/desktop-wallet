@@ -92,6 +92,16 @@ export default {
     },
     delete ({ commit }, transaction) {
       commit('DELETE', transaction)
+    },
+    deleteBulk ({ commit }, { transactions = [], profileId = null }) {
+      for (const transaction of transactions) {
+        transaction.profileId = profileId
+        try {
+          commit('DELETE', transaction)
+        } catch (error) {
+          //
+        }
+      }
     }
   }
 }

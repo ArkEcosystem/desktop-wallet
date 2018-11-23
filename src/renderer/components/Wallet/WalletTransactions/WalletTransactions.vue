@@ -141,6 +141,12 @@ export default {
 
       try {
         const response = await this.getTransactions()
+
+        this.$store.dispatch('transaction/deleteBulk', {
+          transactions: response.transactions,
+          profileId: this.session_profile.profileId
+        })
+
         const transactions = mergeTableTransactions(response.transactions, this.getStoredTranasctions(address))
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {

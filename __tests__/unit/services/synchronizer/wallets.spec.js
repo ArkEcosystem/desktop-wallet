@@ -3,8 +3,12 @@ import { Action } from '@/services/synchronizer/wallets'
 describe('Services > Synchronizer > Wallets', () => {
   let action
   let wallets
+  let walletUpdate
+  let transactionDeleteBulk
 
   beforeEach(() => {
+    walletUpdate = jest.fn()
+    transactionDeleteBulk = jest.fn()
     const synchronizer = {
       $client: {},
       scope: {
@@ -18,7 +22,13 @@ describe('Services > Synchronizer > Wallets', () => {
         getters: {
           'wallet/byProfileId': jest.fn()
         },
-        dispatch: jest.fn()
+        dispatch: (action, data) => {
+          if (action === 'wallet/update') {
+            return walletUpdate(action, data)
+          } else if (action === 'transaction/deleteBulk') {
+            return transactionDeleteBulk(action, data)
+          }
+        }
       }
     }
 
@@ -135,7 +145,12 @@ describe('Services > Synchronizer > Wallets', () => {
 
       it('should not dispatch the `wallet/update` Vuex action with the updated wallet', async () => {
         await action.refreshWallet(wallet)
-        expect(action.$dispatch).not.toHaveBeenCalled()
+        expect(walletUpdate).not.toHaveBeenCalled()
+      })
+
+      it('should not dispatch the `transaction/deleteBulk` Vuex action', async () => {
+        await action.fetchWalletTransactions(wallet)
+        expect(transactionDeleteBulk).not.toHaveBeenCalled()
       })
     })
 
@@ -154,7 +169,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
       it('should dispatch the `wallet/update` Vuex action with the updated wallet', async () => {
         await action.refreshWallet(wallet)
-        expect(action.$dispatch).toHaveBeenCalledWith('wallet/update', {
+        expect(walletUpdate).toHaveBeenCalledWith('wallet/update', {
           ...wallet,
           ...newData
         })
@@ -210,7 +225,12 @@ describe('Services > Synchronizer > Wallets', () => {
 
       it('should not dispatch the `update/wallet` Vuex action', async () => {
         await action.fetchWalletTransactions(wallet)
-        expect(action.$dispatch).not.toHaveBeenCalled()
+        expect(walletUpdate).not.toHaveBeenCalled()
+      })
+
+      it('should not dispatch the `transaction/deleteBulk` Vuex action', async () => {
+        await action.fetchWalletTransactions(wallet)
+        expect(transactionDeleteBulk).not.toHaveBeenCalled()
       })
     })
 
@@ -230,7 +250,12 @@ describe('Services > Synchronizer > Wallets', () => {
 
         it('should not dispatch the `update/wallet` Vuex action', async () => {
           await action.fetchWalletTransactions(wallet)
-          expect(action.$dispatch).not.toHaveBeenCalled()
+          expect(walletUpdate).not.toHaveBeenCalled()
+        })
+
+        it('should dispatch the `transaction/deleteBulk` Vuex action', async () => {
+          await action.fetchWalletTransactions(wallet)
+          expect(transactionDeleteBulk).toHaveBeenCalled()
         })
 
         it('should not display the new transaction', async () => {
@@ -249,7 +274,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
         it('should dispatch the `update/wallet` Vuex action with the new `transactions.checkedAt` numeric timestamp', async () => {
           await action.fetchWalletTransactions(wallet)
-          expect(action.$dispatch).toHaveBeenCalledWith('wallet/update', {
+          expect(walletUpdate).toHaveBeenCalledWith('wallet/update', {
             ...wallet,
             transactions: {
               checkedAt: latestTransaction.timestamp
