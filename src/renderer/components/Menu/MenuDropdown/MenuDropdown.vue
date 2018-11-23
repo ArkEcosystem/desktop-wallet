@@ -18,6 +18,7 @@
           :value="entries[activeKey]"
           :placeholder="placeholder"
           :prefix="prefix"
+          :icon-disabled="isOnlySelectedItem"
         />
       </slot>
     </button>
@@ -116,6 +117,16 @@ export default {
     },
     hasItems () {
       return !isEmpty(this.items)
+    },
+    isOnlySelectedItem () {
+      if (Object.keys(this.entries).length > 1) {
+        return false
+      }
+      if (Object.keys(this.entries).length === 1 && this.entries[this.activeKey] !== Object.values(this.entries)[0]) {
+        return false
+      }
+
+      return true
     }
   },
 

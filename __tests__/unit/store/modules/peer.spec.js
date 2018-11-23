@@ -9,6 +9,7 @@ import peers, { goodPeer1, goodPeer2, badPeer1 } from '../../__fixtures__/store/
 Vue.use(Vuex)
 Vue.use(apiClient)
 
+const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 const store = new Vuex.Store({
   modules: {
     peer: PeerModule,
@@ -23,7 +24,7 @@ const store = new Vuex.Store({
         network () {
           return {
             id: 'abc',
-            nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+            nethash
           }
         }
       }
@@ -82,6 +83,20 @@ describe('peer store module', () => {
         .onGet(`http://${peer.ip}:${peer.port}/api/loader/status/sync`)
         .reply(200, {
           height: 20000
+        })
+
+      axiosMock
+        .onGet(`http://${peer.ip}:${peer.port}/api/loader/autoconfigure`)
+        .reply(200, {
+          network: {
+            nethash
+          }
+        })
+
+      axiosMock
+        .onGet(`http://${peer.ip}:${peer.port}/api/blocks/getEpoch`)
+        .reply(200, {
+          epoch: new Date()
         })
     }
 
@@ -147,6 +162,20 @@ describe('peer store module', () => {
         height: 11000
       })
 
+    axiosMock
+      .onGet(`${client.host}/api/loader/autoconfigure`)
+      .reply(200, {
+        network: {
+          nethash
+        }
+      })
+
+    axiosMock
+      .onGet(`${client.host}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: new Date()
+      })
+
     const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodPeer1)
 
     expect(updatedPeer.height).toBe(11000)
@@ -167,6 +196,14 @@ describe('peer store module', () => {
         }
       })
 
+    axiosMock
+      .onGet(`${client.host}/api/node/configuration`)
+      .reply(200, {
+        data: {
+          nethash
+        }
+      })
+
     const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodV2Peer)
 
     expect(updatedPeer.height).toBe(21000)
@@ -177,15 +214,27 @@ describe('peer store module', () => {
   it('should update current peer status', async () => {
     await store.dispatch('peer/setCurrentPeer', goodPeer1)
 
-    client.version = 2
+    client.version = 1
     client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
 
     axiosMock
-      .onGet(`${client.host}/api/node/syncing`)
+      .onGet(`${client.host}/api/loader/status/sync`)
       .reply(200, {
-        data: {
-          'height': 10000
+        height: 10000
+      })
+
+    axiosMock
+      .onGet(`${client.host}/api/loader/autoconfigure`)
+      .reply(200, {
+        network: {
+          nethash
         }
+      })
+
+    axiosMock
+      .onGet(`${client.host}/api/blocks/getEpoch`)
+      .reply(200, {
+        epoch: new Date()
       })
 
     await store.dispatch('peer/updateCurrentPeerStatus')
@@ -201,7 +250,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -232,7 +281,7 @@ describe('peer store module', () => {
       .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -268,7 +317,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -291,7 +340,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -319,7 +368,7 @@ describe('peer store module', () => {
       .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -336,7 +385,7 @@ describe('peer store module', () => {
       .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -385,7 +434,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 
@@ -408,7 +457,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
-          nethash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+          nethash
         }
       })
 

@@ -14,7 +14,7 @@ const getApiPort = async (peer) => {
     return
   }
 
-  if (/^2\./.test(peer.version) && peer.p2pPort) {
+  if (getVersion(peer) === 2 && peer.p2pPort) {
     try {
       const config = await apiClient.fetchPeerConfig(getBaseUrl(peer, true))
       if (config && config.plugins && config.plugins['@arkecosystem/core-api']) {
@@ -33,6 +33,10 @@ const getBaseUrl = (peer, p2pPort = false) => {
   const scheme = peer.isHttps ? 'https://' : 'http://'
 
   return `${scheme}${peer.ip}:${p2pPort ? peer.p2pPort : peer.port}`
+}
+
+const getVersion = (peer) => {
+  return /^2\./.test(peer.version) ? 2 : 1
 }
 
 export default {
@@ -207,8 +211,10 @@ export default {
         return
       }
 
-      await getApiPort(peer)
-      this._vm.$client.host = getBaseUrl(peer)
+      if (peer) {
+        await getApiPort(peer)
+        this._vm.$client.host = getBaseUrl(peer)
+      }
       commit('SET_CURRENT_PEER', {
         peer,
         networkId: profile.networkId
@@ -278,15 +284,38 @@ export default {
       try {
         await getApiPort(peer)
       } catch (error) {
-        await dispatch('connectToBest', {
+        return dispatch('connectToBest', {
           refresh: true
         })
       }
 
       peer = await dispatch('updateCurrentPeerStatus', peer)
+      if (!peer) {
+        return dispatch('connectToBest', {
+          refresh: true
+        })
+      }
+
       await dispatch('setCurrentPeer', peer)
 
       return peer
+    },
+
+    async ensureStillValid ({ rootGetters }, peer) {
+      if (!peer) {
+        throw new Error('Not connected to peer')
+      }
+
+      let networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer), getVersion(peer))
+      if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
+        throw new Error('Wrong network')
+      }
+    },
+
+    async fallbackToSeedPeer ({ dispatch }) {
+      dispatch('set', [])
+      dispatch('setCurrentPeer', null)
+      await dispatch('connectToBest', { skipIfCustom: false })
     },
 
     /**
@@ -301,10 +330,15 @@ export default {
         updateCurrentPeer = true
       }
       if (!currentPeer) {
+        await dispatch('fallbackToSeedPeer')
+
         return
       }
 
       try {
+        if (updateCurrentPeer) {
+          await dispatch('ensureStillValid', currentPeer)
+        }
         const delayStart = performance.now()
         let peerStatus
         if (updateCurrentPeer) {
@@ -312,7 +346,7 @@ export default {
         } else {
           const client = new ClientService(false)
           client.host = getBaseUrl(currentPeer)
-          client.version = /^2\./.test(currentPeer.version) ? 2 : 1
+          client.version = getVersion(currentPeer)
           client.client.http.timeout = 3000
           peerStatus = await client.fetchPeerStatus()
         }
@@ -330,7 +364,9 @@ export default {
           return currentPeer
         }
       } catch (error) {
-        //
+        if (updateCurrentPeer) {
+          await dispatch('fallbackToSeedPeer')
+        }
       }
     },
 

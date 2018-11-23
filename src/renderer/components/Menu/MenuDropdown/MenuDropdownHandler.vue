@@ -14,6 +14,7 @@
 
     <span class="pl-2 pr-1">
       <SvgIcon
+        :class="{ 'opacity-25': iconDisabled }"
         name="arrow-dropdown"
         view-box="0 0 20 20"
       />
@@ -42,6 +43,12 @@ export default {
       type: String,
       required: false,
       default: 'Select'
+    },
+
+    iconDisabled: {
+      type: Boolean,
+      required: false,
+      default: false
     },
 
     prefix: {
