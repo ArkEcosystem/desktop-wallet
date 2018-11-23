@@ -49,6 +49,13 @@
         {{ $t(`INPUT_FEE.${choice}`) }}
       </button>
     </p>
+
+    <div
+      v-if="uniqueFee"
+      class="my-4"
+    >
+      {{ $t(`INPUT_FEE.UNIQUE`, { fee }) }}
+    </div>
   </div>
 </template>
 
@@ -124,6 +131,9 @@ export default {
       const max = this.feeChoices.MAXIMUM
       const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
+    },
+    uniqueFee () {
+      return this.feeChoices.MINIMUM === this.feeChoices.AVERAGE && this.feeChoices.AVERAGE === this.feeChoices.MAXIMUM
     }
   },
 

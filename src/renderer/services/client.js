@@ -458,13 +458,18 @@ export default class ClientService {
   /**
    * Build a second signature registration transaction.
    * @param {Object} data
+   * @param {Number} data.fee - dynamic fee, as arktoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ passphrase, secondPassphrase, wif }, returnObject = false) {
+  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, returnObject = false) {
+    if (fee > V1.fees[1]) {
+      throw new Error(`Second signature fee should be smaller than ${V1.fees[1]}`)
+    }
+
     const transaction = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)

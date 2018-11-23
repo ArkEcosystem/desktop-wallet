@@ -79,6 +79,28 @@ describe('InputFee', () => {
     })
   })
 
+  describe('uniqueFee', () => {
+    it('should be `true` if the minimum, average and maximum fee are the same', () => {
+      let wrapper = mountComponent()
+
+      wrapper.vm.feeChoices.MINIMUM = 1
+      wrapper.vm.feeChoices.AVERAGE = 1
+      wrapper.vm.feeChoices.MAXIMUM = 1
+      expect(wrapper.vm.uniqueFee).toBeTrue()
+
+      wrapper.vm.feeChoices.AVERAGE = 2
+      expect(wrapper.vm.uniqueFee).toBeFalse()
+
+      wrapper.vm.feeChoices.MINIMUM = 2
+      wrapper.vm.feeChoices.AVERAGE = 1
+      expect(wrapper.vm.uniqueFee).toBeFalse()
+
+      wrapper.vm.feeChoices.MINIMUM = 1
+      wrapper.vm.feeChoices.MAXIMUM = 2
+      expect(wrapper.vm.uniqueFee).toBeFalse()
+    })
+  })
+
   describe('setFee', () => {
     it('should establish the fee, as String', () => {
       const wrapper = mountComponent()

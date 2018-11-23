@@ -4,6 +4,10 @@
     @submit.prevent
   >
     <template v-if="!currentWallet.secondPublicKey">
+      <div class="mb-5">
+        {{ $t('TRANSACTION.FORM.SECOND_SIGNATURE.INSTRUCTIONS', { address: currentWallet.address }) }}
+      </div>
+
       <Collapse
         :is-open="!isPassphraseStep"
         :animation-duration="{ enter: 0, leave: 0 }"
@@ -26,7 +30,16 @@
           ref="passphraseVerification"
           :passphrase="passphraseWords"
           :word-positions="wordPositions"
+          class="mb-20"
           @verified="onVerification"
+        />
+
+        <InputFee
+          v-if="session_network.apiVersion === 2"
+          ref="fee"
+          :currency="session_network.token"
+          :transaction-type="$options.transactionType"
+          @input="onFee"
         />
 
         <div
@@ -108,10 +121,11 @@
 </template>
 
 <script>
-import { TRANSACTION_TYPES } from '@config'
+import { required } from 'vuelidate/lib/validators'
+import { TRANSACTION_TYPES, V1 } from '@config'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
-import { InputPassword } from '@/components/Input'
+import { InputFee, InputPassword } from '@/components/Input'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
@@ -126,6 +140,7 @@ export default {
     ButtonClipboard,
     ButtonReload,
     Collapse,
+    InputFee,
     InputPassword,
     ModalLoader,
     PassphraseInput,
@@ -139,6 +154,7 @@ export default {
     isPassphraseVerified: false,
     secondPassphrase: '',
     form: {
+      fee: 0,
       passphrase: '',
       walletPassword: null
     },
@@ -205,6 +221,10 @@ export default {
       }, 300)
     },
 
+    onFee (fee) {
+      this.$set(this.form, 'fee', fee)
+    },
+
     onSubmit () {
       if (this.form.walletPassword && this.form.walletPassword.length) {
         this.showEncryptLoader = true
@@ -219,9 +239,19 @@ export default {
     },
 
     async submit () {
+      // v1 compatibility
+      if (this.session_network.apiVersion === 1) {
+        this.form.fee = V1.fees[this.$options.transactionType]
+      }
+      // Ensure that fee has value, even when the user has not interacted
+      if (!this.form.fee) {
+        this.form.fee = this.$refs.fee.fee
+      }
+
       const transactionData = {
         passphrase: this.form.passphrase,
         secondPassphrase: this.secondPassphrase,
+        fee: parseInt(this.currency_unitToSub(this.form.fee)),
         wif: this.form.wif
       }
 
@@ -270,6 +300,15 @@ export default {
 
   validations: {
     form: {
+      fee: {
+        required,
+        isValid () {
+          if (this.$refs.fee) {
+            return !this.$refs.fee.$v.$invalid
+          }
+          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+        }
+      },
       passphrase: {
         isValid (value) {
           if (this.currentWallet.isLedger || this.currentWallet.passphrase) {

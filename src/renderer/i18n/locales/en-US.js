@@ -244,6 +244,7 @@ export default {
     AVERAGE: 'Average',
     MAXIMUM: 'Maximum',
     CUSTOM: 'Custom',
+    UNIQUE: 'The network fee has been set to the static value of {fee}',
     ERROR: {
       NOT_VALID: 'The fee is not valid',
       LESS_THAN_MINIMUM: 'The minimum fee is {fee}',
@@ -605,6 +606,9 @@ export default {
     },
     FORM: {
       DELEGATE_REGISTRATION: {
+        INSTRUCTIONS: 'for {address}.'
+      },
+      SECOND_SIGNATURE: {
         INSTRUCTIONS: 'for {address}.'
       }
     },
