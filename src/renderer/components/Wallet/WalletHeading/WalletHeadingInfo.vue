@@ -1,5 +1,25 @@
 <template>
   <div class="flex items-center">
+    <div class="absolute pin-t pin-l h-40 w-48">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        :width="160"
+        :height="160"
+        :viewBox="`0 0 100 100`"
+      >
+        <rect
+          width="130"
+          height="70"
+          rx="35"
+          ry="40"
+          transform="translate(0) rotate(240 37.5 37.5)"
+          fill="#4c5082"
+          fill-opacity="0.45"
+          x="-20"
+          y="0"
+        />
+      </svg>
+    </div>
     <WalletIdenticon
       :value="address"
       :size="75"
