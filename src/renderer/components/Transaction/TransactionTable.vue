@@ -140,6 +140,14 @@ export default {
     WalletAddress
   },
 
+  props: {
+    hasShortId: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
+
   data: () => ({
     showModal: false,
     selected: null
@@ -151,7 +159,7 @@ export default {
         {
           label: this.$t('TRANSACTION.ID'),
           field: 'id',
-          formatFn: this.formatLongString
+          formatFn: this.formatTransactionId
         },
         {
           label: this.$t('COMMON.DATE'),
@@ -173,8 +181,8 @@ export default {
           label: this.$t('TRANSACTION.VENDOR_FIELD'),
           field: 'vendorField',
           formatFn: this.formatSmartbridge,
-          tdClass: 'hidden xl:table-cell',
-          thClass: 'hidden xl:table-cell'
+          tdClass: this.hasShortId ? 'hidden xxl:table-cell' : 'hidden xl:table-cell',
+          thClass: this.hasShortId ? 'hidden xxl:table-cell' : 'hidden xl:table-cell'
         },
         {
           label: this.$t('TRANSACTION.AMOUNT'),
@@ -200,8 +208,8 @@ export default {
       return this.wallet_formatAddress(value, 10)
     },
 
-    formatLongString (value) {
-      return truncateMiddle(value, 10)
+    formatTransactionId (value) {
+      return this.hasShortId ? truncateMiddle(value, 6) : truncateMiddle(value, 10)
     },
 
     formatAmount (value) {

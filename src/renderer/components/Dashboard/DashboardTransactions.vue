@@ -1,5 +1,8 @@
 <template>
-  <TransactionTable :rows="lastTransactions" />
+  <TransactionTable
+    :has-short-id="true"
+    :rows="lastTransactions"
+  />
 </template>
 
 <script>
