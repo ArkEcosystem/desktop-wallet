@@ -17,6 +17,7 @@
               classes: 'text-xs',
               trigger: 'hover'
             }"
+            class="whitespace-no-wrap"
             href="#"
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
