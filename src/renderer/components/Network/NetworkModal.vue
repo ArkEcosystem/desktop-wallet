@@ -1,10 +1,11 @@
 <template>
   <ModalWindow
     :title="title"
+    container-classes="NetworkModal"
     @close="emitCancel"
   >
     <div
-      class="w-80"
+      class="w-100"
     >
       <InputToggle
         v-if="showFull"
@@ -428,3 +429,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.NetworkModal {
+  min-width: 35rem
+}
+</style>
