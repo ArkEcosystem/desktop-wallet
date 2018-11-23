@@ -29,6 +29,24 @@ input:focus {
   @apply .outline-none
 }
 
+::-webkit-scrollbar {
+  @apply .w-2 .rounded-full;
+  background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0.05)
+}
+::-webkit-scrollbar-thumb {
+  @apply .rounded-full;
+  background-color: rgba(0, 0, 0, 0.3)
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4)
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
 .rotate-90 {
 	transform: rotate(90deg);
 }
