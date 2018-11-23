@@ -4,7 +4,7 @@
     @submit.prevent
   >
     <template v-if="!currentWallet.isDelegate">
-      <div>
+      <div class="mb-5">
         {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
       </div>
 
@@ -15,6 +15,14 @@
         :is-invalid="$v.form.username.$dirty && $v.form.username.$invalid"
         class="mb-5"
         name="username"
+      />
+
+      <InputFee
+        v-if="session_network.apiVersion === 2"
+        ref="fee"
+        :currency="session_network.token"
+        :transaction-type="$options.transactionType"
+        @input="onFee"
       />
 
       <div
@@ -75,8 +83,8 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES } from '@config'
-import { InputPassword, InputText } from '@/components/Input'
+import { TRANSACTION_TYPES, V1 } from '@config'
+import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
@@ -88,6 +96,7 @@ export default {
   transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
 
   components: {
+    InputFee,
     InputPassword,
     InputText,
     ModalLoader,
@@ -134,6 +143,10 @@ export default {
   },
 
   methods: {
+    onFee (fee) {
+      this.$set(this.form, 'fee', fee)
+    },
+
     onSubmit () {
       if (this.form.walletPassword && this.form.walletPassword.length) {
         this.showEncryptLoader = true
@@ -148,9 +161,19 @@ export default {
     },
 
     async submit () {
-      let transactionData = {
+      // v1 compatibility
+      if (this.session_network.apiVersion === 1) {
+        this.$set(this.form, 'fee', V1.fees[this.$options.transactionType])
+      }
+      // Ensure that fee has value, even when the user has not interacted
+      if (!this.form.fee) {
+        this.$set(this.form, 'fee', this.$refs.fee.fee)
+      }
+
+      const transactionData = {
         username: this.form.username,
         passphrase: this.form.passphrase,
+        fee: parseInt(this.currency_unitToSub(this.form.fee)),
         wif: this.form.wif
       }
       if (this.currentWallet.secondPublicKey) {
@@ -184,6 +207,15 @@ export default {
 
   validations: {
     form: {
+      fee: {
+        required,
+        isValid () {
+          if (this.$refs.fee) {
+            return !this.$refs.fee.$v.$invalid
+          }
+          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+        }
+      },
       username: {
         required,
         isValid (value) {

@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { V1 } from '@config'
 import InputCurrency from './InputCurrency'
 
 /**
@@ -80,14 +81,16 @@ export default {
   },
 
   data () {
+    const maxV1fee = V1.fees[this.transactionType] * Math.pow(10, -8)
     const data = {
       feeChoices: {
         MINIMUM: Math.pow(10, -8),
-        AVERAGE: 0.05,
-        MAXIMUM: 0.1,
-        CUSTOM: 0.05
+        AVERAGE: maxV1fee / 2,
+        MAXIMUM: maxV1fee,
+        CUSTOM: maxV1fee / 2
       },
       feeChoice: 'AVERAGE',
+      maxV1fee,
       step: Math.pow(10, -8)
     }
     data.fee = data.feeChoices[data.feeChoice]
@@ -136,13 +139,13 @@ export default {
       let { avgFee, maxFee, minFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
 
       avgFee = avgFee * Math.pow(10, -8)
-      this.feeChoices.AVERAGE = avgFee < 0.1 ? avgFee : 0.1
+      this.feeChoices.AVERAGE = avgFee < this.maxV1fee ? avgFee : this.maxV1fee
 
       maxFee = maxFee * Math.pow(10, -8)
-      this.feeChoices.MAXIMUM = maxFee < 0.1 ? maxFee : 0.1
+      this.feeChoices.MAXIMUM = maxFee < this.maxV1fee ? maxFee : this.maxV1fee
 
       minFee = minFee * Math.pow(10, -8)
-      this.feeChoices.MINIMUM = minFee < 0.1 ? minFee : 0.1
+      this.feeChoices.MINIMUM = minFee < this.maxV1fee ? minFee : this.maxV1fee
 
       this.feeChoices.CUSTOM = this.feeChoices.AVERAGE
       this.emitFee(this.feeChoices.AVERAGE)

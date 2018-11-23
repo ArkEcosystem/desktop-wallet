@@ -1,5 +1,6 @@
 import { cloneDeep } from 'lodash'
 import errorCapturer from '../__utils__/error-capturer'
+import { V1 } from '@config'
 import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
 
@@ -410,14 +411,31 @@ describe('Services > Client', () => {
     })
   })
 
-  describe('buildTransfer', () => {
-    describe('when the fee is bigger than 0.1', () => {
+  describe('buildDelegateRegistration', () => {
+    describe('when the fee is bigger than V1 fee', () => {
       it('should throw an Error', async () => {
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.2 * Math.pow(10, 8) }))).toThrow(/fee/)
+        const fee = V1.fees[2] + 0.1
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to 0.1', () => {
+    describe('when the fee is smaller or equal to V1 fee (25)', () => {
+      it('should not throw an Error', async () => {
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 25 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 12.09 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+      })
+    })
+  })
+
+  describe('buildTransfer', () => {
+    describe('when the fee is bigger than V1 fee', () => {
+      it('should throw an Error', async () => {
+        const fee = V1.fees[0] + 0.00001
+        expect(await errorCapturer(client.buildTransfer({ fee }))).toThrow(/fee/)
+      })
+    })
+
+    describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
       it('should not throw an Error', async () => {
         expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * Math.pow(10, 8) }))).not.toThrow(/fee/)
         expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * Math.pow(10, 8) }))).not.toThrow(/fee/)

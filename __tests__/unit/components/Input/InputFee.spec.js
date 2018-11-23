@@ -1,6 +1,7 @@
 import { merge } from 'lodash'
 import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
+import { V1 } from '@config'
 import { useI18n } from '../../__utils__/i18n'
 import { InputFee } from '@/components/Input'
 import store from '@/store'
@@ -65,6 +66,19 @@ describe('InputFee', () => {
     expect(wrapper.contains('.InputFee')).toBeTruthy()
   })
 
+  describe('maxV1fee', () => {
+    it('should uses V1 configuration', () => {
+      let wrapper = mountComponent()
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0] * Math.pow(10, -8))
+      expect(wrapper.vm.maxV1fee).toEqual(0.1)
+
+      wrapper = mountComponent({
+        propsData: { transactionType: 3 }
+      })
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[3] * Math.pow(10, -8))
+    })
+  })
+
   describe('setFee', () => {
     it('should establish the fee, as String', () => {
       const wrapper = mountComponent()
@@ -101,7 +115,7 @@ describe('InputFee', () => {
   })
 
   describe('prepareFeeStatistics', () => {
-    describe('when the minimum fee of the network is more than 0.1', () => {
+    describe('when the minimum fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
           avgFee: 0.0048 * Math.pow(10, 8),
@@ -110,14 +124,14 @@ describe('InputFee', () => {
         })
       })
 
-      it('should use 0.1 as minimum always', () => {
+      it('should use the V1 fee as minimum always', () => {
         const wrapper = mountComponent()
 
         expect(wrapper.vm.feeChoices.MINIMUM).toEqual(0.1)
       })
     })
 
-    describe('when the minimum fee of the network is less than 0.1', () => {
+    describe('when the minimum fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
           avgFee: 0.0048 * Math.pow(10, 8),
@@ -133,7 +147,7 @@ describe('InputFee', () => {
       })
     })
 
-    describe('when the average fee of the network is more than 0.1', () => {
+    describe('when the average fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
           avgFee: 1000 * Math.pow(10, 8),
@@ -142,14 +156,14 @@ describe('InputFee', () => {
         })
       })
 
-      it('should use 0.1 as average always', () => {
+      it('should use the V1 fee as average always', () => {
         const wrapper = mountComponent()
 
         expect(wrapper.vm.feeChoices.AVERAGE).toEqual(0.1)
       })
     })
 
-    describe('when the average fee of the network is less than 0.1', () => {
+    describe('when the average fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
           avgFee: 0.0048 * Math.pow(10, 8),
@@ -165,7 +179,7 @@ describe('InputFee', () => {
       })
     })
 
-    describe('when the maximum fee of the network is more than 0.1', () => {
+    describe('when the maximum fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
           avgFee: 0.0048 * Math.pow(10, 8),
@@ -174,14 +188,14 @@ describe('InputFee', () => {
         })
       })
 
-      it('should use 0.1 as maximum always', () => {
+      it('should use the V1 fee as maximum always', () => {
         const wrapper = mountComponent()
 
         expect(wrapper.vm.feeChoices.MAXIMUM).toEqual(0.1)
       })
     })
 
-    describe('when the maximum fee of the network is less than 0.1', () => {
+    describe('when the maximum fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
           avgFee: 0.0048 * Math.pow(10, 8),

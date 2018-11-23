@@ -3,6 +3,7 @@ import { transactionBuilder } from '@arkecosystem/crypto'
 import axios from 'axios'
 import { castArray } from 'lodash'
 import dayjs from 'dayjs'
+import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
@@ -395,16 +396,22 @@ export default class ClientService {
    * Build a delegate registration transaction
    * @param {Object} data
    * @param {String} data.username
+   * @param {Number} data.fee - dynamic fee, as arktoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, passphrase, secondPassphrase, wif }, returnObject = false) {
+  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, returnObject = false) {
+    if (fee > V1.fees[2]) {
+      throw new Error(`Delegate registration fee should be smaller than ${V1.fees[2]}`)
+    }
+
     const transaction = transactionBuilder
       .delegateRegistration()
       .usernameAsset(username)
+      .fee(fee)
 
     return this.__signTransaction({
       transaction,
@@ -429,8 +436,8 @@ export default class ClientService {
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
     // To ensure that transfers cannot be build with a bigger fee than V1
-    if (fee > 0.1 * Math.pow(10, 8)) {
-      throw new Error('Transfer fee should be smaller than 0.1')
+    if (fee > V1.fees[0]) {
+      throw new Error(`Transfer fee should be smaller than ${V1.fees[0]}`)
     }
 
     const transaction = transactionBuilder

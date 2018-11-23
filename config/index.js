@@ -93,3 +93,17 @@ exports.THEMES = [
     title: 'Dark theme' // TODO translate
   }
 ]
+
+exports.V1 = {
+  fees: [
+    0.1 * Math.pow(10, 8), // Transfer
+    5 * Math.pow(10, 8), // Second signautre
+    25 * Math.pow(10, 8), // Delegate registration
+    1 * Math.pow(10, 8), // Vote
+    5 * Math.pow(10, 8), // Multisignature
+    0 * Math.pow(10, 8), // IPFS (not supported yet)
+    0 * Math.pow(10, 8), // Timelock transfer (not supported yet)
+    0 * Math.pow(10, 8), // Multu-payment (not supported yet)
+    0 * Math.pow(10, 8) // Delegate resignation (not supported yet)
+  ]
+}
