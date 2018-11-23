@@ -12,7 +12,7 @@
           :title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
           class="profile-avatar-xl background-image flex"
         />
-        <div class="ProfileAll__grid__profile__name font-semibold flex mt-12">
+        <div class="ProfileAll__grid__profile__name font-semibold flex items-center">
           {{ $t('PAGES.PROFILE_ALL.ADD_PROFILE') }}
         </div>
       </router-link>
@@ -32,8 +32,8 @@
           @click="selectProfile(profile.id)"
         />
 
-        <div class="flex flex-col">
-          <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4 mt-8">
+        <div class="flex flex-col justify-center">
+          <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
             {{ profile.name }}
           </div>
 
