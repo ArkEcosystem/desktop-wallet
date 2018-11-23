@@ -3,8 +3,8 @@
     v-if="isReady"
     id="app"
     :class="{
-      'theme-dark': hasDarkTheme,
-      'theme-light': !hasDarkTheme,
+      'theme-dark': session_hasDarkTheme,
+      'theme-light': !session_hasDarkTheme,
       'background-image': background
     }"
     class="App bg-theme-page text-theme-page-text font-sans"
@@ -90,9 +90,6 @@ export default {
   computed: {
     background () {
       return this.$store.getters['session/background'] || 'wallpapers/1Default.png'
-    },
-    hasDarkTheme () {
-      return this.$store.getters['session/hasDarkTheme']
     },
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length

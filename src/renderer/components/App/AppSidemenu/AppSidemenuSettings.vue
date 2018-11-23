@@ -36,7 +36,7 @@
         >
           <ButtonSwitch
             ref="dark-switch"
-            :is-active="hasDarkTheme"
+            :is-active="session_hasDarkTheme"
             class="theme-dark"
             background-color="#414767"
             @change="setTheme"
@@ -105,6 +105,7 @@ import { ModalConfirmation } from '@/components/Modal'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
+import { clone } from 'lodash'
 const os = require('os')
 
 export default {
@@ -144,9 +145,6 @@ export default {
     currencies () {
       return this.$store.getters['market/currencies']
     },
-    hasDarkTheme () {
-      return this.$store.getters['session/hasDarkTheme']
-    },
     contentProtection () {
       return this.$store.getters['session/contentProtection']
     },
@@ -164,6 +162,9 @@ export default {
       },
       set (theme) {
         this.$store.dispatch('session/setTheme', theme)
+        var profile = clone(this.session_profile)
+        profile.theme = theme
+        this.$store.dispatch('profile/update', profile)
       }
     },
     sessionProtection: {

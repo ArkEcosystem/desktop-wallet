@@ -287,9 +287,7 @@ export default {
       return this.modified.theme || this.profile.theme
     },
     backgroundImage () {
-      const hasDarkMode = this.$store.getters['session/hasDarkTheme']
-
-      return `pages/profile-new/background-step-3${hasDarkMode ? '-dark' : ''}.png`
+      return `pages/profile-new/background-step-3${this.session_hasDarkTheme ? '-dark' : ''}.png`
     },
     nameError () {
       if (this.$v.modified.name.$dirty) {

@@ -3,7 +3,7 @@
     <main class="flex flex-row h-full">
 
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="ContactNew__instructions flex-grow background-image w-3/5"
       >
         <div class="instructions-text">
@@ -102,9 +102,6 @@ export default {
   }),
 
   computed: {
-    isDarkMode () {
-      return this.$store.getters['session/hasDarkTheme']
-    },
     nameError () {
       if (this.$v.schema.name.$invalid) {
         return this.$t('PAGES.CONTACT_NEW.STEP2.ERROR_NAME_MAX_LENGTH')

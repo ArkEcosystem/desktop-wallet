@@ -5,6 +5,9 @@ export default {
     },
     session_profile () {
       return this.$store.getters['session/profile']
+    },
+    session_hasDarkTheme () {
+      return this.$store.getters['session/hasDarkTheme']
     }
   }
 }

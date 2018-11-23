@@ -3,7 +3,7 @@
     <main class="flex flex-row h-full">
 
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="WalletImport__instructions flex-grow background-image w-3/5"
       >
         <div class="instructions-text">
@@ -193,9 +193,6 @@ export default {
   }),
 
   computed: {
-    isDarkMode () {
-      return this.$store.getters['session/hasDarkTheme']
-    },
     nameError () {
       if (!this.$v.schema.name.isValid) {
         return this.$t('PAGES.WALLET_IMPORT.STEP3.ERROR_NAME_MAX_LENGTH')

@@ -3,7 +3,7 @@
     <main class="flex flex-row h-full">
 
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[isDarkMode][step])}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="ProfileNew__instructions w-2/3 background-image"
       >
         <div class="instructions-text">
@@ -295,9 +295,6 @@ export default {
     },
     last () {
       return this.defaultNetworks[this.defaultNetworks.length - 1]
-    },
-    isDarkMode () {
-      return this.$store.getters['session/hasDarkTheme']
     },
     nameError () {
       if (this.$v.schema.name.$dirty) {
