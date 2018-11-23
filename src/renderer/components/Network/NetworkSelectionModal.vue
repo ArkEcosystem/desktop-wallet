@@ -6,9 +6,7 @@
     <div
       class="w-80 flex flex-col justify-center "
     >
-      <!-- TODO: grid of networks -->
       <div class="NetworkSelectionModal__grid">
-
         <div
           v-for="network in getCustomNetworks()"
           :key="network.id"
@@ -18,10 +16,10 @@
             class="NetworkSelectionModal__network text-theme-page-text"
             @click="selectNetwork(network)"
           >
-            <!-- TODO: image -->
+            <!-- TODO: make network.svg override the default placeholder when users can set their own icons -->
             <img
-              class="w-18 h-18"
-              :src="`${assets_loadImage(network.svg)}`"
+              class="w-18 h-18 p-2"
+              :src="assets_loadImage('networks/default.svg')"
             >
             <div>{{ network.name }}</div>
           </button>

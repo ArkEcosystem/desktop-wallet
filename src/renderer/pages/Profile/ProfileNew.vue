@@ -110,7 +110,7 @@
                     class="flex items-center justify-center"
                   >
                     <img
-                      class="w-22 h-22"
+                      class="w-22 h-22 p-4"
                       :src="`${assets_loadImage(network.svg)}`"
                     >
                   </div>
