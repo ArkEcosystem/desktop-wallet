@@ -2,6 +2,7 @@ import { MarketTicker } from '@/models/market'
 import { forEach, keys } from 'lodash'
 import cryptoCompare from '@/services/crypto-compare'
 import { MARKET } from '@config'
+import Vue from 'vue'
 
 export default {
   namespaced: true,
@@ -17,7 +18,11 @@ export default {
       return lastTicker ? lastTicker.price : null
     },
     lastTicker: (state, getters, _, rootGetters) => {
-      const token = rootGetters['session/network'].token
+      const network = rootGetters['session/network']
+      if (!network) {
+        return
+      }
+      const token = network.token
       const currency = rootGetters['session/currency']
       const market = `${token}/${currency}`
 
@@ -28,7 +33,7 @@ export default {
   mutations: {
     UPDATE_TICKER (state, ticker) {
       const marketTicker = MarketTicker.deserialize(ticker)
-      state.tickers[marketTicker.id] = marketTicker
+      Vue.set(state.tickers, marketTicker.id, marketTicker)
     }
   },
 
