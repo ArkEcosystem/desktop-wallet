@@ -190,6 +190,7 @@ export default {
 
     setIntroDone () {
       this.$store.dispatch('app/setHasSeenIntroduction', true)
+      this.$router.push({ name: 'profile-new' })
     }
   }
 }
