@@ -79,6 +79,44 @@ describe('InputFee', () => {
     })
   })
 
+  describe('rangePercentage', () => {
+    it('should calculate the current fee percentage related to the minimum and maximum', () => {
+      const wrapper = mountComponent()
+
+      wrapper.vm.feeChoices.MINIMUM = 1
+      wrapper.vm.feeChoices.MAXIMUM = 11
+      wrapper.vm.fee = 6
+      expect(wrapper.vm.rangePercentage).toEqual(50)
+
+      wrapper.vm.feeChoices.MINIMUM = 0.00000001
+      wrapper.vm.feeChoices.MAXIMUM = 25
+      wrapper.vm.fee = 12.5
+      expect(wrapper.vm.rangePercentage).toEqual(49.99999998)
+    })
+
+    describe('when the fee is smaller than the minimum', () => {
+      it('should return 0%', () => {
+        const wrapper = mountComponent()
+
+        wrapper.vm.feeChoices.MINIMUM = 1
+        wrapper.vm.feeChoices.MAXIMUM = 10
+        wrapper.vm.fee = 0.3
+        expect(wrapper.vm.rangePercentage).toEqual(0)
+      })
+    })
+
+    describe('when the fee is bigger than the maximum', () => {
+      it('should return 100%', () => {
+        const wrapper = mountComponent()
+
+        wrapper.vm.feeChoices.MINIMUM = 0.1
+        wrapper.vm.feeChoices.MAXIMUM = 1
+        wrapper.vm.fee = 2
+        expect(wrapper.vm.rangePercentage).toEqual(100)
+      })
+    })
+  })
+
   describe('uniqueFee', () => {
     it('should be `true` if the minimum, average and maximum fee are the same', () => {
       let wrapper = mountComponent()

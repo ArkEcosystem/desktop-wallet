@@ -116,8 +116,8 @@ export default {
       }
     },
     rangePercentage () {
-      const percent = this.fee / this.feeChoices.MAXIMUM * 100
-      return percent > 100 ? 100 : percent
+      const percent = (this.fee - this.feeChoices.MINIMUM) / (this.feeChoices.MAXIMUM - this.feeChoices.MINIMUM) * 100
+      return percent > 100 ? 100 : (percent < 0 ? 0 : percent)
     },
     notValidError () {
       return this.$t('INPUT_FEE.ERROR.NOT_VALID')
@@ -149,15 +149,15 @@ export default {
       let { avgFee, maxFee, minFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
 
       avgFee = avgFee * Math.pow(10, -8)
-      this.feeChoices.AVERAGE = avgFee < this.maxV1fee ? avgFee : this.maxV1fee
+      this.$set(this.feeChoices, 'AVERAGE', avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
 
       maxFee = maxFee * Math.pow(10, -8)
-      this.feeChoices.MAXIMUM = maxFee < this.maxV1fee ? maxFee : this.maxV1fee
+      this.$set(this.feeChoices, 'MAXIMUM', maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
       minFee = minFee * Math.pow(10, -8)
-      this.feeChoices.MINIMUM = minFee < this.maxV1fee ? minFee : this.maxV1fee
+      this.$set(this.feeChoices, 'MINIMUM', minFee < this.maxV1fee ? minFee : this.maxV1fee)
 
-      this.feeChoices.CUSTOM = this.feeChoices.AVERAGE
+      this.$set(this.feeChoices, 'CUSTOM', this.feeChoices.AVERAGE)
       this.emitFee(this.feeChoices.AVERAGE)
     },
     focusInput () {
@@ -180,7 +180,7 @@ export default {
       this.feeChoice = 'CUSTOM'
 
       fee = fee.toString()
-      this.feeChoices.CUSTOM = fee
+      this.$set(this.feeChoices, 'CUSTOM', fee)
       this.emitFee(fee)
     },
     /**
@@ -189,7 +189,7 @@ export default {
      */
     onSlider (fee) {
       this.feeChoice = 'CUSTOM'
-      this.feeChoices.CUSTOM = fee
+      this.$set(this.feeChoices, 'CUSTOM', fee)
       this.emitFee(fee)
     },
     /**
