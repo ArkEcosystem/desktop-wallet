@@ -73,15 +73,30 @@
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
           >
-            <strong place="page">{{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}</strong>
+            <strong place="page">{{ $t('INTRODUCTION.DUTY.TITLE') }}</strong>
           </i18n>
         </AppIntroScreen>
 
         <AppIntroScreen
           v-if="step == 4"
-          :is-last="true"
           :selection="3"
           @back="moveTo(3)"
+          @next="moveTo(5)"
+        >
+          <i18n
+            slot="title"
+            path="INTRODUCTION.PAGE_TITLE"
+            tag="span"
+          >
+            <strong place="page">{{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}</strong>
+          </i18n>
+        </AppIntroScreen>
+
+        <AppIntroScreen
+          v-if="step == 5"
+          :is-last="true"
+          :selection="4"
+          @back="moveTo(4)"
           @done="done"
         >
           <i18n

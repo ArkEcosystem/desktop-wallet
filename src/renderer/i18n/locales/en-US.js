@@ -49,15 +49,21 @@ export default {
       CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your private key, you can control exactly when, where and how your money is kept and spent.',
       RESPONSIBILITY: 'However, in the words of Uncle Ben Parker, with great power comes great responsibility.'
     },
+    DUTY: {
+      TITLE: 'Duty',
+      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time.',
+      OWNER: 'It also brings greater responsibility for you, the account owner.',
+      WARNING: {
+        INFO: 'Unlike your traditional bank account, {warn}',
+        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the ARK team, the Delegates or anyone else.'
+      },
+      SECURITY: 'The security of your account is solely up to you.'
+    },
     RESPONSIBILITY: {
       TITLE: 'Responsibility',
-      STORAGE: 'Maintaining control of your key and passphrase is absolutely vital. Although you can use this wallet to create a new wallet with a unique passphrase, at no point does ARK ever store, access, or recover your passphrase.',
-      WARNING: {
-        INFO: 'This last point bears repeating: {warn}',
-        WARN: 'at no point does ARK ever store, access or recover your passphrase. Additionally, ARK does not have the power to refund transactions or suspend accounts for any reason whatsoever.'
-      },
-      PASSPHRASE: 'Your passphrase is {not} kept on this wallet, and without your own copy of your passphrase you {will} lose access to your funds.',
-      BACKUP: 'This means that you are responsible for keeping this information safe and secure. Back up your passphrase and keep it in a safe place. If you lose it, there is nobody who can recover it for you. Your funds will be lost.'
+      STORAGE: 'You have the option of storing an encrypted copy of your passphrase locally. Please remember, your passphrase IS your account. If you choose this option and your computer dies, your account is lost forever.',
+      BACKUP: 'Always backup your passphrase and keep it in a safe place. The best practice is to write it down on thick paper and store it in a fireproof safe or save it on an encrypted flash drive.',
+      PASSPHRASE: 'Remember, anyone who has your passphrase can access your money. Never share your account with anyone and avoid storing it in accounts that are susceptible to hacking, such as cloud services.'
     },
     TURN: {
       TITLE: 'Turn',

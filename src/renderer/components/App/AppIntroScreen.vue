@@ -25,23 +25,30 @@
         v-else-if="selection === 2"
         class="w-3/4"
       >
+        <div class="mt-3">{{ $t('INTRODUCTION.DUTY.INTRO') }}</div>
+        <div class="mt-3">{{ $t('INTRODUCTION.DUTY.OWNER') }}</div>
+        <i18n
+          tag="div"
+          class="mt-2"
+          path="INTRODUCTION.DUTY.WARNING.INFO"
+        >
+          <div
+            class="inline underline"
+            place="warn"
+          >
+            {{ $t('INTRODUCTION.DUTY.WARNING.WARN') }}
+          </div>
+        </i18n>
+        <div class="font-bold mt-3">{{ $t('INTRODUCTION.DUTY.SECURITY') }}</div>
+      </div>
+
+      <div
+        v-else-if="selection === 3"
+        class="w-3/4"
+      >
         <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}</div>
-        <i18n
-          tag="div"
-          class="mt-2"
-          path="INTRODUCTION.RESPONSIBILITY.WARNING.INFO"
-        >
-          <strong place="warn">{{ $t('INTRODUCTION.RESPONSIBILITY.WARNING.WARN') }}</strong>
-        </i18n>
-        <i18n
-          tag="div"
-          class="mt-2"
-          path="INTRODUCTION.RESPONSIBILITY.PASSPHRASE"
-        >
-          <strong place="not">{{ $t('COMMON.NOT') }}</strong>
-          <strong place="will">{{ $t('COMMON.WILL') }}</strong>
-        </i18n>
-        <div class="mt-2">{{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}</div>
+        <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}</div>
+        <div class="mt-2">{{ $t('INTRODUCTION.RESPONSIBILITY.PASSPHRASE') }}</div>
       </div>
 
       <div
@@ -115,7 +122,18 @@ export default {
     totalScreens: {
       type: Number,
       required: false,
-      default: 3
+      default: 4
+    }
+  },
+
+  data () {
+    return {
+      stepImages: {
+        1: 'pages/intro/power.png',
+        2: 'pages/intro/duty.png',
+        3: 'pages/intro/responsibility.png',
+        4: 'pages/intro/turn.png'
+      }
     }
   },
 
@@ -133,13 +151,10 @@ export default {
     },
 
     getStepImage () {
-      if (this.selection === 1) {
-        return this.assets_loadImage('pages/power-intro.png')
-      }
-      if (this.selection === 2) {
-        return this.assets_loadImage('pages/responsibility-intro.png')
-      }
-      return this.assets_loadImage('pages/turn-intro.png')
+      const stepImage = this.stepImages[this.selection]
+      console.log('stepImage', stepImage)
+
+      return this.assets_loadImage(stepImage)
     }
   }
 }
