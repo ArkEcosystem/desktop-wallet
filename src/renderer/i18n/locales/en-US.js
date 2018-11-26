@@ -30,6 +30,11 @@ export default {
     OTHER: 'Other'
   },
 
+  ANNOUNCEMENTS: {
+    LATEST_NEWS: 'Latest News',
+    READ_MORE: 'Read more'
+  },
+
   INTRODUCTION: {
     PAGE_TITLE: 'Your {page}',
     WELCOME: {

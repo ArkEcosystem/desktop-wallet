@@ -3,7 +3,7 @@
     <div class="Announcements--gradient-top sticky pin-t h-12" />
 
     <main class="flex-col px-12">
-      <h1 class="text-lg mb-5">Latest news</h1>
+      <h1 class="text-lg mb-5">{{ $t('ANNOUNCEMENTS.LATEST_NEWS') }}</h1>
 
       <transition-group
         tag="div"

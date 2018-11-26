@@ -12,15 +12,12 @@ export default {
   },
 
   getters: {
-    all: ({ announcements }) => announcements,
-
-    findById: ({ announcements }, announcement) => {
-      return announcements.find(storedAnnouncement => storedAnnouncement.guid === announcement.guid)
+    all: state => state.announcements,
+    findById: (state, announcement) => {
+      return state.announcements.find(storedAnnouncement => storedAnnouncement.guid === announcement.guid)
     },
-
-    unread: ({ announcements }) => announcements.filter(announcement => !announcement.isRead),
-
-    read: ({ announcements }) => announcements.filter(announcement => announcement.isRead)
+    unread: state => state.announcements.filter(announcement => !announcement.isRead),
+    read: state => state.announcements.filter(announcement => announcement.isRead)
   },
 
   mutations: {
@@ -32,7 +29,10 @@ export default {
 
     MARK_ANNOUNCEMENT_AS_READ (state, readAnnouncement) {
       let readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
-      Vue.set(state.announcements[readAnnouncementIndex], 'isRead', true)
+      Vue.set(state.announcements, readAnnouncementIndex, {
+        ...readAnnouncement,
+        isRead: true
+      })
     }
   },
 

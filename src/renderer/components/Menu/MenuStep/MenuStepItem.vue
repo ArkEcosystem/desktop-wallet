@@ -15,7 +15,7 @@
       slot="handler"
       slot-scope="{ isOpen }"
       :class="{
-        'text-xl font-bold text-theme-caption-text': isOpen,
+        'text-xl font-bold text-theme-page-text': isOpen,
         'text-sm font-semibold text-theme-page-text-light': !isOpen
       }"
       class="MenuStepItem__header capitalize py-2 flex-no-shrink"
