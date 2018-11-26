@@ -78,6 +78,7 @@
       :type="3"
       :delegate="selected"
       :is-voter="selected.publicKey === walletVote.publicKey"
+      :has-voted="!!walletVote.publicKey"
       @cancel="onCancel"
       @sent="onSent"
     />

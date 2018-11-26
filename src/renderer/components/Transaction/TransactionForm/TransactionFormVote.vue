@@ -38,7 +38,7 @@
       </ListDivided>
 
       <button
-        v-show="!currentWallet.isContact"
+        v-show="showVoteUnvoteButton"
         type="button"
         class="blue-button mt-5"
         @click="toggleStep"
@@ -144,6 +144,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    hasVoted: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -170,6 +175,14 @@ export default {
         return `${produced} (${missed} ${this.$t('WALLET_DELEGATES.MISSED')})`
       }
       return produced || '0'
+    },
+
+    showVoteUnvoteButton () {
+      if (this.currentWallet.isContact || (this.hasVoted && !this.isVoter)) {
+        return false
+      }
+
+      return !this.hasVoted || (this.hasVoted && this.isVoter)
     }
   },
 
