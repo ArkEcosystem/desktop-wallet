@@ -5,7 +5,10 @@
     :class="{
       'theme-dark': session_hasDarkTheme,
       'theme-light': !session_hasDarkTheme,
-      'background-image': background
+      'background-image': background,
+      windows: isWindows,
+      mac: isMac,
+      linux: isLinux
     }"
     class="App bg-theme-page text-theme-page-text font-sans"
   >
@@ -99,6 +102,15 @@ export default {
     },
     hasSeenIntroduction () {
       return this.$store.getters['app/hasSeenIntroduction']
+    },
+    isWindows () {
+      return process.platform === 'win32'
+    },
+    isMac () {
+      return process.platform === 'darwin'
+    },
+    isLinux () {
+      return ['freebsd', 'linux', 'sunos'].includes(process.platform)
     }
   },
 
