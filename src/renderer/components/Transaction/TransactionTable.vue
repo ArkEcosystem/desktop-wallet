@@ -3,6 +3,7 @@
     <TableWrapper
       v-bind="$attrs"
       :columns="columns"
+      :row-style-class="formatRow"
       v-on="$listeners"
       @on-row-click="onRowClick"
       @on-sort-change="onSortChange"
@@ -10,7 +11,7 @@
       <template
         slot-scope="data"
       >
-        <div v-if="data.column.field === 'id'">
+        <div v-if="data.column.field === 'id' && data.row.confirmations > 0">
           <a
             v-tooltip="{
               content: data.row.id,
@@ -59,7 +60,7 @@
               'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender,
               'text-theme-transaction-confirmations-received bg-theme-transaction-received': !data.row.isSender
             }"
-            class="rounded-full h-6 w-6 flex items-center justify-center"
+            class="Transaction__confirmations rounded-full h-6 w-6 flex items-center justify-center"
           >
             <SvgIcon
               name="time"
@@ -224,6 +225,10 @@ export default {
       return value
     },
 
+    formatRow (row) {
+      return row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
+    },
+
     isWellConfirmed (confirmations) {
       return confirmations >= this.numberOfActiveDelegates
     },
@@ -247,3 +252,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.TransactionTable tr.unconfirmed {
+  @apply opacity-50 text-theme-page-text;
+}
+.TransactionTable tr.unconfirmed .Transaction__confirmations {
+  @apply text-theme-page-text bg-theme-page-instructions-background;
+}
+</style>

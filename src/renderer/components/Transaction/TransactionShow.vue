@@ -21,6 +21,7 @@
           class="text-theme-page-text-light mx-1"
         />
         <button
+          v-if="transaction.confirmations > 0"
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
