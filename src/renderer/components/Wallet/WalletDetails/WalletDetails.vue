@@ -168,6 +168,11 @@ export default {
   async created () {
     await this.$synchronizer.call('wallets')
     await this.fetchWalletVote()
+    this.$eventBus.on('wallet:reload', this.fetchWalletVote)
+  },
+
+  beforeDestroy () {
+    this.$eventBus.off('wallet:reload', this.fetchWalletVote)
   },
 
   mounted () {

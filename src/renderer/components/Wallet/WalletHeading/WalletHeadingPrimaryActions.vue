@@ -102,7 +102,7 @@ export default {
 
     async refreshWallet () {
       this.isRefreshing = true
-      await this.$eventBus.emit('wallet:fetchTransactions')
+      await this.$eventBus.emit('wallet:reload')
       this.isRefreshing = false
     }
   }

@@ -76,12 +76,12 @@ export default {
 
   created () {
     this.loadTransactions()
-    this.$eventBus.on('wallet:fetchTransactions', this.loadTransactions)
+    this.$eventBus.on('wallet:reload', this.loadTransactions)
     this.enableNewTransactionEvent(this.wallet_fromRoute.address)
   },
 
   beforeDestroy () {
-    this.$eventBus.off('wallet:fetchTransactions', this.loadTransactions)
+    this.$eventBus.off('wallet:reload', this.loadTransactions)
     if (this.wallet_fromRoute) {
       this.disableNewTransactionEvent(this.wallet_fromRoute.address)
     }
