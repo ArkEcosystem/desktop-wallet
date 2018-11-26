@@ -760,6 +760,6 @@ export default {
     RECIPIENT: 'Recipient',
     SENDER: 'Sender',
     AMOUNT: 'Amount',
-    NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}'
+    NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
   }
 }
