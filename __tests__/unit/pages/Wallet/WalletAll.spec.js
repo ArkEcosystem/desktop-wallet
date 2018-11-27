@@ -37,7 +37,7 @@ describe('pages > WalletAll', () => {
           symbol: 'Ѧ'
         },
         formatter_networkCurrency: jest.fn(),
-        wallet_nameOnProfile: value => value
+        wallet_name: value => value
       }
     })
   }

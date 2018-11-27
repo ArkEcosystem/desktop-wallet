@@ -122,7 +122,7 @@ export default {
         }
       ]
 
-      if (this.currentWallet && !this.currentWallet.isContact) {
+      if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
         tabs.push({
           component: 'WalletSignVerify',
           text: this.$t('PAGES.WALLET.SIGN_VERIFY')
