@@ -232,7 +232,17 @@ export default {
             return validation.passes
           }
 
-          this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+          if (validation.errors && validation.errors.length) {
+            const { type } = validation.errors[0]
+            if (type === 'string.max') {
+              this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
+            } else {
+              this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+            }
+          } else {
+            this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+          }
+
           return false
         }
       },

@@ -126,7 +126,6 @@ export default class WalletService {
    */
   static validateUsername (username) {
     if (!username) return
-
     return validator.rules.username(username)
   }
 
