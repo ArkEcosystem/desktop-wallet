@@ -153,7 +153,7 @@ export default {
       return this.$store.getters['app/showVotingExplanation']
     },
     votingUrl () {
-      return 'https://blog.ark.io/how-to-vote-or-un-vote-an-ark-delegate-and-how-does-it-all-work-819c5439da68'
+      return 'https://docs.ark.io/cookbook/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
     }
   },
 
