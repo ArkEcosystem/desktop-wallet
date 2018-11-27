@@ -5,10 +5,10 @@
     <div class="WalletAll__grid mt-10 justify-center">
       <div class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r">
         <div class="flex flex-row items-center">
-          <WalletIdenticon
+          <WalletIdenticonPlaceholder
             :size="60"
             value="default"
-            class="identicon cursor-pointer opacity-50"
+            class="identicon opacity-50"
           />
           <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
             <router-link :to="{ name: 'wallet-new' }">
@@ -72,7 +72,7 @@
 
 <script>
 import { without } from 'lodash'
-import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
+import { WalletIdenticon, WalletIdenticonPlaceholder, WalletRemovalConfirmation } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 
 export default {
@@ -80,6 +80,7 @@ export default {
 
   components: {
     WalletIdenticon,
+    WalletIdenticonPlaceholder,
     WalletRemovalConfirmation
   },
 

@@ -6,10 +6,9 @@
       <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r">
         <div class="flex flex-row items-center">
           <router-link :to="{ name: 'contact-new' }">
-            <WalletIdenticon
+            <WalletIdenticonPlaceholder
               :size="60"
-              value="default"
-              class="identicon cursor-pointer opacity-50"
+              class="identicon opacity-50"
             />
           </router-link>
           <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
@@ -73,14 +72,15 @@
 <script>
 import { ContactRemovalConfirmation } from '@/components/Contact'
 import { sortByProp } from '@/components/utils/Sorting'
-import { WalletIdenticon } from '@/components/Wallet'
+import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 
 export default {
   name: 'ContactAll',
 
   components: {
     ContactRemovalConfirmation,
-    WalletIdenticon
+    WalletIdenticon,
+    WalletIdenticonPlaceholder
   },
 
   data: () => ({

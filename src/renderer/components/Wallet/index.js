@@ -1,5 +1,6 @@
-import WalletIdenticon from './WalletIdenticon'
 import WalletAddress from './WalletAddress'
+import WalletIdenticon from './WalletIdenticon'
+import WalletIdenticonPlaceholder from './WalletIdenticonPlaceholder'
 import WalletRenameModal from './WalletRenameModal'
 import WalletRemovalConfirmation from './WalletRemovalConfirmation'
 import WalletSignModal from './WalletSignModal'
@@ -15,8 +16,9 @@ export * from './WalletSignVerify'
 export * from './WalletSidebar'
 
 export {
-  WalletIdenticon,
   WalletAddress,
+  WalletIdenticon,
+  WalletIdenticonPlaceholder,
   WalletRenameModal,
   WalletRemovalConfirmation,
   WalletSignModal,

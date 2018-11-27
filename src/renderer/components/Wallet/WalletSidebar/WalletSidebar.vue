@@ -20,9 +20,8 @@
         :class="{ 'flex flex-row': !isSlim }"
         class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
-        <WalletIdenticon
+        <WalletIdenticonPlaceholder
           :size="50"
-          value="Default"
           class="WalletSidebar__wallet__identicon flex-no-shrink"
         />
         <div
@@ -85,15 +84,16 @@
 <script>
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
-import { WalletIdenticon } from '../'
+import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
 
 export default {
   name: 'WalletSidebar',
 
   components: {
-    WalletIdenticon,
     MenuNavigation,
-    MenuNavigationItem
+    MenuNavigationItem,
+    WalletIdenticon,
+    WalletIdenticonPlaceholder
   },
 
   props: {
