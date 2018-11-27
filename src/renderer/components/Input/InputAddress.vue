@@ -164,7 +164,11 @@ export default {
     suggestions () {
       if (!this.currentProfile || !this.showSuggestions) return []
 
-      const wallets = this.$store.getters['wallet/byProfileId'](this.currentProfile.id)
+      const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+      const wallets = [
+        ...this.$store.getters['wallet/byProfileId'](this.currentProfile.id),
+        ...ledgerWallets
+      ]
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
 
       const source = _.unionBy(wallets, contacts, 'address')

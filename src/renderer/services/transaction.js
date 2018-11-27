@@ -1,3 +1,4 @@
+import { TRANSACTION_TYPES } from '@config'
 import { crypto } from '@arkecosystem/crypto'
 
 export default class TransactionService {
@@ -29,6 +30,10 @@ export default class TransactionService {
   static async ledgerSign (wallet, transactionObject, vm) {
     transactionObject.senderPublicKey(wallet.publicKey)
     const transaction = transactionObject.getStruct()
+
+    if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
+      transaction.recipientId = wallet.address
+    }
 
     const transactionBytes = this.getBytes(transaction)
     transaction.signature = await vm.$store.dispatch('ledger/signTransaction', {

@@ -87,6 +87,10 @@
         :message="$t('ENCRYPTION.DECRYPTING')"
         :visible="showEncryptLoader"
       />
+      <ModalLoader
+        :message="$t('TRANSACTION.LEDGER_SIGN_WAIT')"
+        :visible="showLedgerLoader"
+      />
 
       <portal
         v-if="!isPassphraseStep"
@@ -159,6 +163,7 @@ export default {
       walletPassword: null
     },
     showEncryptLoader: false,
+    showLedgerLoader: false,
     bip38Worker: null
   }),
 
@@ -261,6 +266,7 @@ export default {
         transaction = await this.$client.buildSecondSignatureRegistration(transactionData)
       } else {
         success = false
+        this.showLedgerLoader = true
         try {
           const transactionObject = await this.$client.buildSecondSignatureRegistration(transactionData, true)
           transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
@@ -268,6 +274,7 @@ export default {
         } catch (error) {
           this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
         }
+        this.showLedgerLoader = false
       }
 
       if (success) {
@@ -283,10 +290,10 @@ export default {
     reset () {
       this.isPassphraseStep = false
       this.isPassphraseVerified = false
-      if (!this.currentWallet.passphrase) {
+      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
         this.$set(this.form, 'passphrase', '')
         this.$refs.passphrase.reset()
-      } else {
+      } else if (!this.currentWallet.isLedger) {
         this.$set(this.form, 'walletPassword', '')
         this.$refs.password.reset()
       }

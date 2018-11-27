@@ -107,6 +107,10 @@
       :message="$t('ENCRYPTION.DECRYPTING')"
       :visible="showEncryptLoader"
     />
+    <ModalLoader
+      :message="$t('TRANSACTION.LEDGER_SIGN_WAIT')"
+      :visible="showLedgerLoader"
+    />
   </div>
 </template>
 
@@ -160,6 +164,7 @@ export default {
     },
     forged: 0,
     showEncryptLoader: false,
+    showLedgerLoader: false,
     bip38Worker: null
   }),
 
@@ -279,6 +284,7 @@ export default {
         transaction = await this.$client.buildVote(transactionData)
       } else {
         success = false
+        this.showLedgerLoader = true
         try {
           const transactionObject = await this.$client.buildVote(transactionData, true)
           transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
@@ -286,6 +292,7 @@ export default {
         } catch (error) {
           this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
         }
+        this.showLedgerLoader = false
       }
 
       if (success) {
@@ -296,10 +303,10 @@ export default {
 
     reset () {
       this.isPassphraseStep = false
-      if (!this.currentWallet.passphrase) {
+      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
         this.$set(this.form, 'passphrase', '')
         this.$refs.passphrase.reset()
-      } else {
+      } else if (!this.currentWallet.isLedger) {
         this.$set(this.form, 'walletPassword', '')
         this.$refs.password.reset()
       }

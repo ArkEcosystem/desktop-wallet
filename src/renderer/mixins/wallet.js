@@ -24,6 +24,15 @@ export default {
   },
 
   methods: {
+    wallet_nameOnLedger (address) {
+      if (!this.$store.getters['ledger/isConnected']) {
+        return null
+      }
+      const ledgerWallet = this.$store.getters['ledger/wallet'](address)
+
+      return ledgerWallet ? ledgerWallet.name : null
+    },
+
     wallet_nameOnContact (address) {
       const contactWallets = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
       const contact = contactWallets.find(contact => contact.address === address)
@@ -37,6 +46,11 @@ export default {
     },
 
     wallet_name (address) {
+      const ledgerWallet = this.wallet_nameOnLedger(address)
+      if (ledgerWallet) {
+        return ledgerWallet
+      }
+
       const profileWallet = this.wallet_nameOnProfile(address)
       if (profileWallet) {
         return profileWallet
@@ -52,6 +66,11 @@ export default {
         return networkWallet
       }
 
+      const delegateWallet = this.$store.getters['delegate/byAddress'](address)
+      if (delegateWallet) {
+        return delegateWallet.username
+      }
+
       return null
     },
 
@@ -60,9 +79,11 @@ export default {
      * @param {Number} truncateLength
      */
     wallet_formatAddress (address, truncateLength) {
-      const networkWallet = this.session_network.knownWallets[address]
-      if (networkWallet) {
-        return networkWallet
+      const ledgerWallet = this.wallet_nameOnLedger(address)
+      if (ledgerWallet) {
+        return WalletService.validateAddress(ledgerWallet, this.session_network.version)
+          ? truncateMiddle(ledgerWallet, truncateLength)
+          : ledgerWallet
       }
 
       const profileWallet = this.wallet_nameOnProfile(address)
@@ -77,6 +98,11 @@ export default {
         return WalletService.validateAddress(contactWallet, this.session_network.version)
           ? truncateMiddle(contactWallet, truncateLength)
           : contactWallet
+      }
+
+      const networkWallet = this.session_network.knownWallets[address]
+      if (networkWallet) {
+        return networkWallet
       }
 
       const delegate = this.$store.getters['delegate/byAddress'](address)
