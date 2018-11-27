@@ -743,7 +743,7 @@ export default {
     VOTE: 'Vote',
     USERNAME_ERROR: 'No special characters or uppercase allowed',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',
-    BLOG: 'Official Ark.io blog',
+    BLOG: 'Voting Guide',
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
