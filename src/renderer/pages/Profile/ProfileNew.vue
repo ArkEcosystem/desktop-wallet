@@ -297,11 +297,13 @@ export default {
       return this.defaultNetworks[this.defaultNetworks.length - 1]
     },
     nameError () {
-      if (this.$v.schema.name.$dirty) {
+      if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
         if (!this.$v.schema.name.doesNotExists) {
-          const existingProfile = this.$store.getters['profile/doesExist'](this.schema.name).name
-
-          return this.$t('VALIDATION.PROFILE.DUPLICATE_NAME', [existingProfile])
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        } else if (!this.$v.schema.name.schemaMaxLength) {
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
+        } else if (!this.$v.schema.name.schemaMinLength) {
+          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Profile.schema.properties.name.minLength)
         }
       }
 

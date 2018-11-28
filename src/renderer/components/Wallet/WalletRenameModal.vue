@@ -7,7 +7,8 @@
       <p>{{ $t('WALLET_RENAME.ADDRESS_INFO', { wallet: wallet.address }) }}</p>
       <InputText
         v-model="schema.name"
-        :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
+        :is-invalid="$v.schema.name.$invalid"
+        :helper-text="nameError"
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
@@ -47,6 +48,22 @@ export default {
     }
   },
 
+  computed: {
+    nameError () {
+      if (this.$v.schema.name.$invalid) {
+        if (!this.$v.schema.name.doesNotExists) {
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        } else if (!this.$v.schema.name.schemaMaxLength) {
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
+        // NOTE: not used, unless the minimum length is changed
+        } else if (!this.$v.schema.name.schemaMinLength) {
+          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Wallet.schema.properties.name.minLength)
+        }
+      }
+      return null
+    }
+  },
+
   mounted () {
     this.schema.name = this.wallet.name
   },
@@ -64,6 +81,18 @@ export default {
 
     emitRenamed () {
       this.$emit('renamed')
+    }
+  },
+
+  validations: {
+    step1: ['schema.address'],
+    step3: ['isPassphraseVerified'],
+    schema: {
+      name: {
+        doesNotExists (value) {
+          return value === this.wallet.name || !this.$store.getters['wallet/byName'](value)
+        }
+      }
     }
   }
 }

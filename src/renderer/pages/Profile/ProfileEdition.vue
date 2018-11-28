@@ -182,6 +182,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
+import Profile from '@/models/profile'
 
 /**
  * This component uses the data property `modified` to hold the changes done during
@@ -290,11 +291,13 @@ export default {
       return `pages/profile-new/background-step-3${this.session_hasDarkTheme ? '-dark' : ''}.png`
     },
     nameError () {
-      if (this.$v.modified.name.$dirty) {
+      if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
         if (!this.$v.modified.name.doesNotExists) {
-          const existingProfile = this.$store.getters['profile/doesExist'](this.modified.name).name
-
-          return this.$t('VALIDATION.PROFILE.DUPLICATE_NAME', [existingProfile])
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.modified.name])
+        } else if (!this.$v.modified.name.maxLength) {
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
+        } else if (!this.$v.modified.name.minLength) {
+          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Profile.schema.properties.name.minLength)
         }
       }
 
@@ -386,6 +389,12 @@ export default {
         doesNotExists (value) {
           const otherProfile = this.$store.getters['profile/doesExist'](value)
           return !otherProfile || otherProfile.id === this.profile.id
+        },
+        maxLength (value) {
+          return value.length <= Profile.schema.properties.name.maxLength
+        },
+        minLength (value) {
+          return value.length >= Profile.schema.properties.name.minLength
         }
       }
     }

@@ -180,12 +180,11 @@
 
             <div class="flex flex-col h-full w-full justify-around">
 
-              <!-- TODO check duplicate here when db store is available -->
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP5.NAME')"
                 :bip39-warning="true"
-                :is-invalid="!$v.schema.name.isValid"
+                :is-invalid="$v.schema.name.$invalid"
                 :helper-text="nameError"
                 class="my-3"
                 name="name"
@@ -316,8 +315,15 @@ export default {
         : this.$t('PAGES.WALLET_NEW.STEP3.INSTRUCTIONS.WORDS', { words: this.wordPositions.join(', ') })
     },
     nameError () {
-      if (!this.$v.schema.name.isValid) {
-        return this.$t('PAGES.WALLET_NEW.STEP5.ERROR_NAME_MAX_LENGTH')
+      if (this.$v.schema.name.$invalid) {
+        if (!this.$v.schema.name.doesNotExists) {
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        } else if (!this.$v.schema.name.schemaMaxLength) {
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
+        // NOTE: not used, unless the minimum length is changed
+        } else if (!this.$v.schema.name.schemaMinLength) {
+          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Wallet.schema.properties.name.minLength)
+        }
       }
       return null
     }
@@ -422,6 +428,13 @@ export default {
     step3: ['isPassphraseVerified'],
     step4: ['walletPassword'],
     step5: ['schema.name'],
+    schema: {
+      name: {
+        doesNotExists (value) {
+          return !this.$store.getters['wallet/byName'](value)
+        }
+      }
+    },
     isPassphraseVerified: {
       required,
       isVerified: value => value
@@ -437,13 +450,6 @@ export default {
         }
 
         return false
-      }
-    },
-    schema: {
-      name: {
-        isValid (value) {
-          return value.length <= 120
-        }
       }
     }
   }

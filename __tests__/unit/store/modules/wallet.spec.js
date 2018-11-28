@@ -2,12 +2,12 @@ import store from '@/store'
 
 describe('WalletModule', () => {
   const models = [
-    { id: 1, address: 'A1', profileId: 'exampleId' },
-    { id: 2, address: 'A2', profileId: 'otherId' },
-    { id: 3, address: 'A3', profileId: 'otherId' },
-    { id: 4, address: 'A3', profileId: 'exampleId' },
-    { id: 5, address: 'A4', profileId: 'exampleId', isContact: true },
-    { id: 6, address: 'A5', profileId: 'exampleId', isContact: true }
+    { id: 1, address: 'A1', profileId: 'exampleId', name: 'name1' },
+    { id: 2, address: 'A2', profileId: 'otherId', name: 'name2' },
+    { id: 3, address: 'A3', profileId: 'otherId', name: 'name3' },
+    { id: 4, address: 'A3', profileId: 'exampleId', name: 'name4' },
+    { id: 5, address: 'A4', profileId: 'exampleId', name: 'name5', isContact: true },
+    { id: 6, address: 'A5', profileId: 'exampleId', name: 'name6', isContact: true }
   ]
 
   const messages = [
@@ -24,7 +24,7 @@ describe('WalletModule', () => {
 
   describe('getters byAddress', () => {
     describe('when the wallet address param does not exist', () => {
-      it('should find and return the wallet', () => {
+      it('should return `undefined`', () => {
         expect(store.getters['wallet/byAddress']('AunKno0n')).toBeUndefined()
       })
     })
@@ -38,6 +38,26 @@ describe('WalletModule', () => {
     describe('when the wallet is a contact', () => {
       it('should find and return the wallet', () => {
         expect(store.getters['wallet/byAddress']('A4')).toEqual(models[4])
+      })
+    })
+  })
+
+  describe('getters byName', () => {
+    describe('when the wallet name param does not exist', () => {
+      it('should return `undefined`', () => {
+        expect(store.getters['wallet/byName']('not a name')).toBeUndefined()
+      })
+    })
+
+    describe('when the wallet name param exists', () => {
+      it('should find and return the wallet', () => {
+        expect(store.getters['wallet/byName']('name1')).toEqual(models[0])
+      })
+    })
+
+    describe('when the wallet is a contact', () => {
+      it('should find and return the wallet', () => {
+        expect(store.getters['wallet/byName']('name5')).toEqual(models[4])
       })
     })
   })

@@ -27,6 +27,15 @@ export default {
       return state.wallets[profileId].find(wallet => wallet.address === address)
     },
 
+    byName: (state, _, __, rootGetters) => name => {
+      const profileId = rootGetters['session/profileId']
+      if (!profileId || !state.wallets[profileId]) {
+        return []
+      }
+
+      return state.wallets[profileId].find(wallet => wallet.name === name)
+    },
+
     byProfileId: (state, _, __, rootGetters) => profileId => {
       if (!state.wallets[profileId]) {
         return []

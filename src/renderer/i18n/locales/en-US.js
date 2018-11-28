@@ -115,13 +115,15 @@ export default {
     NOT_VALID: 'The \'{0}\' is not valid',
     NOT_NUMERIC: 'The \'{0}\' is not numeric',
     NO_SCHEME: 'The \'{0}\' does not have \'http://\' or \'https://\'',
+    NAME: {
+      DUPLICATED: 'The name \'{0}\' already exists',
+      MAX_LENGTH: 'The name should have less than {0} characters.',
+      MIN_LENGTH: 'The name should have at least 1 character | The name should have at least {n} characters.'
+    },
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
       NUMBERS: 'Your password must contain at least 1 number',
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character'
-    },
-    PROFILE: {
-      DUPLICATE_NAME: 'The profile name \'{0}\' already exists'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -396,8 +398,7 @@ export default {
           TEXT: 'Optionally, choose a name for you contact and you are done.'
         },
         TITLE: '2. Confirmation',
-        NAME: 'Contact name (optional)',
-        ERROR_NAME_MAX_LENGTH: 'The name should be less than 120 characters.'
+        NAME: 'Contact name (optional)'
       },
       FAILED: 'Failed to create contact'
     },
@@ -509,8 +510,7 @@ export default {
         },
         TITLE: '3. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name (optional)',
-        ERROR_NAME_MAX_LENGTH: 'The name should be less than 120 characters.'
+        NAME: 'Wallet name (optional)'
       },
       FAILED: 'Failed to import wallet'
     },
@@ -558,8 +558,7 @@ export default {
         },
         TITLE: '5. Confirmation',
         ADDRESS: 'Wallet address',
-        NAME: 'Wallet name (optional)',
-        ERROR_NAME_MAX_LENGTH: 'The name should be less than 120 characters.'
+        NAME: 'Wallet name (optional)'
       }
     },
 

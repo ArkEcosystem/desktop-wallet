@@ -110,12 +110,11 @@
 
             <div class="flex flex-col h-full w-full justify-around">
 
-              <!-- TODO check duplicate here when db store is available -->
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_IMPORT.STEP3.NAME')"
                 :bip39-warning="true"
-                :is-invalid="!$v.schema.name.isValid"
+                :is-invalid="$v.schema.name.$invalid"
                 :helper-text="nameError"
                 class="my-3"
                 name="name"
@@ -194,8 +193,15 @@ export default {
 
   computed: {
     nameError () {
-      if (!this.$v.schema.name.isValid) {
-        return this.$t('PAGES.WALLET_IMPORT.STEP3.ERROR_NAME_MAX_LENGTH')
+      if (this.$v.schema.name.$invalid) {
+        if (!this.$v.schema.name.doesNotExists) {
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        } else if (!this.$v.schema.name.schemaMaxLength) {
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
+        // NOTE: not used, unless the minimum length is changed
+        } else if (!this.$v.schema.name.schemaMinLength) {
+          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Wallet.schema.properties.name.minLength)
+        }
       }
       return null
     }
@@ -316,6 +322,11 @@ export default {
           return false
         }
       },
+      name: {
+        doesNotExists (value) {
+          return !this.$store.getters['wallet/byName'](value)
+        }
+      },
       passphrase: {
         isRequired (value) {
           return this.useOnlyAddress || required(value)
@@ -330,11 +341,6 @@ export default {
           }
 
           return false
-        }
-      },
-      name: {
-        isValid (value) {
-          return value.length <= 120
         }
       }
     }
