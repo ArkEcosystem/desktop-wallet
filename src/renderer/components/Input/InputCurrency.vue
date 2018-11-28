@@ -6,6 +6,7 @@
     :is-disabled="isDisabled"
     :is-focused="isFocused"
     :is-invalid="isInvalid"
+    :warning-text="warningText"
     class="InputCurrency"
   >
     <div
@@ -132,6 +133,11 @@ export default {
       required: false,
       default: null
     },
+    warningText: {
+      type: String,
+      required: false,
+      default: null
+    },
     notValidError: {
       type: String,
       required: false,
@@ -172,14 +178,14 @@ export default {
           } else {
             error = this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
           }
-        } else if (!this.$v.model.isMoreThanMaximum) {
+        } else if (!this.$v.model.isLessThanMaximum) {
           if (this.maximumError) {
             error = this.maximumError
           } else {
             const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
             error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
           }
-        } else if (!this.$v.model.isLessThanMinimum) {
+        } else if (!this.$v.model.isMoreThanMinimum) {
           if (this.minimumError) {
             error = this.minimumError || error
           } else {
@@ -280,10 +286,10 @@ export default {
       isNumber (value) {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
-      isLessThanMinimum (value) {
+      isMoreThanMinimum (value) {
         return parseFloat(this.inputValue) >= this.minimumAmount
       },
-      isMoreThanMaximum (value) {
+      isLessThanMaximum (value) {
         return parseFloat(this.inputValue) <= this.maximumAmount
       },
       isRequired (value) {

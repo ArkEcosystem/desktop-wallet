@@ -254,7 +254,9 @@ export default {
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
     MAXIMUM: 'Maximum',
-    CUSTOM: 'Custom',
+    INPUT: 'Input',
+    ADVANCED: 'Advanced',
+    ADVANCED_NOTICE: 'Be careful what fee you choose as it will cost more than necessary if too high',
     UNIQUE: 'The network fee has been set to the static value of {fee}',
     ERROR: {
       NOT_VALID: 'The fee is not valid',

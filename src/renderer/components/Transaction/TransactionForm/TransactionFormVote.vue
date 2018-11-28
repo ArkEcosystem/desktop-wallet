@@ -281,12 +281,12 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildVote(transactionData)
+        transaction = await this.$client.buildVote(transactionData, this.$refs.fee.isAdvancedFee)
       } else {
         success = false
         this.showLedgerLoader = true
         try {
-          const transactionObject = await this.$client.buildVote(transactionData, true)
+          const transactionObject = await this.$client.buildVote(transactionData, this.$refs.fee.isAdvancedFee, true)
           transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
           success = true
         } catch (error) {

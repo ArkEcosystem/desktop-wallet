@@ -117,25 +117,25 @@ describe('InputFee', () => {
     })
   })
 
-  describe('uniqueFee', () => {
-    it('should be `true` if the minimum, average and maximum fee are the same', () => {
+  describe('isStaticFee', () => {
+    it('should be `true` if the current fee matches, average and maximum fee are the same', () => {
       let wrapper = mountComponent()
 
-      wrapper.vm.feeChoices.MINIMUM = 1
+      wrapper.vm.fee = 1
       wrapper.vm.feeChoices.AVERAGE = 1
       wrapper.vm.feeChoices.MAXIMUM = 1
-      expect(wrapper.vm.uniqueFee).toBeTrue()
+      expect(wrapper.vm.isStaticFee).toBeTrue()
 
       wrapper.vm.feeChoices.AVERAGE = 2
-      expect(wrapper.vm.uniqueFee).toBeFalse()
+      expect(wrapper.vm.isStaticFee).toBeFalse()
 
-      wrapper.vm.feeChoices.MINIMUM = 2
+      wrapper.vm.fee = 2
       wrapper.vm.feeChoices.AVERAGE = 1
-      expect(wrapper.vm.uniqueFee).toBeFalse()
+      expect(wrapper.vm.isStaticFee).toBeFalse()
 
       wrapper.vm.feeChoices.MINIMUM = 1
       wrapper.vm.feeChoices.MAXIMUM = 2
-      expect(wrapper.vm.uniqueFee).toBeFalse()
+      expect(wrapper.vm.isStaticFee).toBeFalse()
     })
   })
 
@@ -175,38 +175,6 @@ describe('InputFee', () => {
   })
 
   describe('prepareFeeStatistics', () => {
-    describe('when the minimum fee of the network is more than the V1 fee', () => {
-      beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * Math.pow(10, 8),
-          maxFee: 0.7 * Math.pow(10, 8),
-          minFee: 1000 * Math.pow(10, 8)
-        })
-      })
-
-      it('should use the V1 fee as minimum always', () => {
-        const wrapper = mountComponent()
-
-        expect(wrapper.vm.feeChoices.MINIMUM).toEqual(0.1)
-      })
-    })
-
-    describe('when the minimum fee of the network is less than the V1 fee', () => {
-      beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * Math.pow(10, 8),
-          maxFee: 0.03 * Math.pow(10, 8),
-          minFee: 0.0006 * Math.pow(10, 8)
-        })
-      })
-
-      it('should use it as minimum', () => {
-        const wrapper = mountComponent()
-
-        expect(wrapper.vm.feeChoices.MINIMUM).toBeWithin(0.0006, 0.0006000001)
-      })
-    })
-
     describe('when the average fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({

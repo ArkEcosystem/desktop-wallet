@@ -380,8 +380,8 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, returnObject = false) {
-    if (fee > V1.fees[3]) {
+  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+    if (!isAdvancedFee && fee > V1.fees[3]) {
       throw new Error(`Vote fee should be smaller than ${V1.fees[3]}`)
     }
 
@@ -409,8 +409,8 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, returnObject = false) {
-    if (fee > V1.fees[2]) {
+  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+    if (!isAdvancedFee && fee > V1.fees[2]) {
       throw new Error(`Delegate registration fee should be smaller than ${V1.fees[2]}`)
     }
 
@@ -440,9 +440,9 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, returnObject = false) {
+  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
     // To ensure that transfers cannot be build with a bigger fee than V1
-    if (fee > V1.fees[0]) {
+    if (!isAdvancedFee && fee > V1.fees[0]) {
       throw new Error(`Transfer fee should be smaller than ${V1.fees[0]}`)
     }
 
@@ -471,8 +471,8 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, returnObject = false) {
-    if (fee > V1.fees[1]) {
+  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+    if (!isAdvancedFee && fee > V1.fees[1]) {
       throw new Error(`Second signature fee should be smaller than ${V1.fees[1]}`)
     }
 
