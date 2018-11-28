@@ -5,26 +5,20 @@
       v-if="!walletVote.publicKey && isExplanationDisplayed"
       class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
     >
-      <button
-        :class="{ 'WalletDelegates__explanation__text--truncated': isExplanationTruncated }"
-        class="WalletDelegates__explanation__text flex text-lg cursor-pointer text-left text-inherit"
-        @click="readMore"
-      >
-        <div class="py-4 pl-6">
-          <span>
-            {{ $t('WALLET_DELEGATES.EXPLANATION') }}
-            <a
-              :title="$t('WALLET_DELEGATES.BLOG')"
-              class="cursor-pointer inline"
-              @click="electron_openExternal(votingUrl)"
-            >
-              {{ $t('WALLET_DELEGATES.BLOG') }}
-            </a>
-          </span>
-        </div>
-      </button>
+      <div class="WalletDelegates__explanation__text flex text-left text-inherit py-4 pl-6">
+        <span>
+          {{ $t('WALLET_DELEGATES.EXPLANATION') }}
+          <a
+            :title="$t('WALLET_DELEGATES.BLOG')"
+            class="cursor-pointer inline"
+            @click="electron_openExternal(votingUrl)"
+          >
+            {{ $t('WALLET_DELEGATES.BLOG') }}
+          </a>
+        </span>
+      </div>
 
-      <div class="flex py-4 px-6 z-10">
+      <div class="WalletDelegates__explanation__close flex py-4 px-6 z-10">
         <ButtonClose
           class="cursor-pointer select-none"
           @click="dismissExplanation"
@@ -214,10 +208,6 @@ export default {
       this.selected = null
     },
 
-    readMore () {
-      this.isExplanationTruncated = false
-    },
-
     onPageChange ({ currentPage }) {
       this.currentPage = currentPage
       this.__updateParams({ page: currentPage })
@@ -260,16 +250,10 @@ export default {
 </script>
 
 <style scoped>
-.WalletDelegates__explanation__text--truncated > div {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding-right: 3rem;
+.WalletDelegates__explanation__close {
+  top: 0;
+  margin-bottom: auto;
+  margin-top: 5px;
 }
 .WalletDelegates__vote-badge {
   opacity: 0.85
