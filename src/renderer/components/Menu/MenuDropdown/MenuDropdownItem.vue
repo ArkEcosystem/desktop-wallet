@@ -10,7 +10,7 @@
       @click.stop="emitClick"
     >
       <div
-        class="MenuDropdownItem__container mx-8 py-4 px-5 border-b text-center transition"
+        class="MenuDropdownItem__container mx-8 py-4 px-5 border-b text-center transition break-words"
       >
         <slot>
           <span class="font-semibold">{{ value }}</span>

@@ -3,6 +3,7 @@
     ref="dropdown"
     :items="suggestions"
     :value="dropdownValue"
+    :pin-to-input-width="true"
     class="InputAddress__MenuDropdown"
     @select="onDropdownSelect"
     @click="focus"
@@ -66,6 +67,7 @@ import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
+import truncate from '@/filters/truncate'
 import _ from 'lodash'
 
 export default {
@@ -179,7 +181,7 @@ export default {
           address: wallet.address
         }
         if (wallet.name && wallet.name !== wallet.address) {
-          address.name = `${wallet.name} (${this.wallet_truncate(wallet.address)})`
+          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(wallet.address)})`
         }
 
         return address

@@ -26,7 +26,10 @@
     <div
       v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside="close"
-      :class="{ 'MenuDropdown--pin-above': pinAbove }"
+      :class="{
+        'MenuDropdown--pin-above': pinAbove,
+        'pin-x': pinToInputWidth
+      }"
       class="MenuDropdown__container absolute min-w-full z-20"
     >
       <ul
@@ -87,6 +90,11 @@ export default {
       default: () => ['0%', '0%']
     },
     pinAbove: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    pinToInputWidth: {
       type: Boolean,
       required: false,
       default: false
