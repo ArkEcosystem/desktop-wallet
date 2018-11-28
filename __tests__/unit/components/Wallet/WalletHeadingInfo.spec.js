@@ -2,6 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils'
 import useI18n from '../../__utils__/i18n'
 import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
+import truncate from '@/filters/truncate'
 import { WalletHeadingInfo } from '@/components/Wallet'
 
 const network = {
@@ -27,6 +28,8 @@ describe('WalletHeadingInfo component', () => {
   beforeEach(() => {
     const localVue = createLocalVue()
     const i18n = useI18n(localVue)
+
+    localVue.filter('truncate', truncate)
 
     wrapper = mount(WalletHeadingInfo, {
       localVue,

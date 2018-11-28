@@ -40,7 +40,7 @@
           <MenuDropdownItem
             v-for="(item, key) in entries"
             :key="key"
-            :value="item"
+            :value="item.toString()"
             :is-active="key === activeKey"
             @click.self="select(key)"
           />

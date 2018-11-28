@@ -6,6 +6,8 @@ import directives from '@/directives'
 
 require('babel-plugin-require-context-hook/register')()
 
+HTMLCanvasElement.prototype.getContext = jest.fn()
+
 Vue.use(VTooltip, {
   defaultHtml: false,
   defaultContainer: '#app'

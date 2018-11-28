@@ -11,7 +11,7 @@ describe('TransactionShow', () => {
 
   beforeEach(() => {
     transaction = {
-      id: 1,
+      id: 'tx1',
       amount: 1000,
       fee: 1000,
       sender: 'abc',
