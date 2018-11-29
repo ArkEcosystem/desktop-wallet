@@ -1,13 +1,13 @@
 <template>
   <button
-    v-tooltip="{ show: isSmallScreen, content: tooltipContent, trigger:'hover' }"
+    v-tooltip="getTooltip()"
     :disabled="!isCopySupported"
     class="ButtonClipboard"
     @click="copy"
   >
     <div
       :class="{ 'animated wobble': isCopying }"
-      class="fill-current"
+      class="fill-current block"
     >
       <SvgIcon
         :view-box="viewBox"
@@ -42,21 +42,11 @@ export default {
   data: () => ({
     isCopying: false,
     isCopySupported: true,
-    isSmallScreen: false
+    copyText: ''
   }),
 
-  computed: {
-    tooltipContent () {
-      let translationKey
-
-      if (!this.isCopySupported) {
-        translationKey = 'NOT_SUPPORTED'
-      } else {
-        translationKey = this.isCopying ? 'DONE' : 'COPY_TO_CLIPBOARD'
-      }
-
-      return this.$t(`BUTTON_CLIPBOARD.${translationKey}`)
-    }
+  mounted () {
+    this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')
   },
 
   methods: {
@@ -68,17 +58,11 @@ export default {
       document.body.appendChild(textArea)
       textArea.select()
 
+      this.isCopying = true
+      setTimeout(() => (this.isCopying = false), 1000)
+      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')), 1500)
+
       try {
-        this.isCopying = true
-
-        setTimeout(() => (this.isCopying = false), 500)
-
-        if (window.innerWidth < 768) {
-          this.isSmallScreen = true
-          // If set to 500, it will briefly show 'Copy to clipboard' before closing tooltip
-          setTimeout(() => (this.isSmallScreen = false), 400)
-        }
-
         document.execCommand('copy')
       } catch (err) {
         this.isCopySupported = false
@@ -86,6 +70,20 @@ export default {
       }
 
       document.body.removeChild(textArea)
+    },
+
+    getTooltip () {
+      const tooltip = {
+        content: this.copyText,
+        trigger: 'hover',
+        show: this.isCopying,
+        hideOnTargetClick: this.isCopying
+      }
+
+      if (this.isCopying) {
+        this.isCopySupported ? this.copyText = this.$t('BUTTON_CLIPBOARD.DONE') : this.copyText = this.$t('BUTTON_CLIPBOARD.NOT_SUPPORTED')
+      }
+      return tooltip
     }
   }
 }
