@@ -21,7 +21,7 @@ export default {
     byAddress: (state, _, __, rootGetters) => address => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.wallets[profileId]) {
-        return []
+        return null
       }
 
       return state.wallets[profileId].find(wallet => wallet.address === address)
@@ -30,7 +30,7 @@ export default {
     byName: (state, _, __, rootGetters) => name => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.wallets[profileId]) {
-        return []
+        return null
       }
 
       return state.wallets[profileId].find(wallet => wallet.name === name)

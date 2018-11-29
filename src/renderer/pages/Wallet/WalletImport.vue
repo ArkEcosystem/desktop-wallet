@@ -324,7 +324,7 @@ export default {
       },
       name: {
         doesNotExists (value) {
-          return !this.$store.getters['wallet/byName'](value)
+          return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       },
       passphrase: {

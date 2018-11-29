@@ -431,7 +431,7 @@ export default {
     schema: {
       name: {
         doesNotExists (value) {
-          return !this.$store.getters['wallet/byName'](value)
+          return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       }
     },
