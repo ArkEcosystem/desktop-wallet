@@ -117,9 +117,14 @@ export default {
       return this.$store.getters['transaction/byAddress'](address)
     },
 
-    async getTransactions () {
+    async getTransactions (address) {
+      if (!address) {
+        return []
+      }
+
       const { limit, page, sort } = this.queryParams
-      return this.$client.fetchWalletTransactions(this.wallet_fromRoute.address, {
+
+      return this.$client.fetchWalletTransactions(address, {
         page,
         limit,
         orderBy: `${sort.field}:${sort.type}`
@@ -140,7 +145,7 @@ export default {
       this.isFetching = true
 
       try {
-        const response = await this.getTransactions()
+        const response = await this.getTransactions(address)
 
         this.$store.dispatch('transaction/deleteBulk', {
           transactions: response.transactions,
@@ -197,7 +202,7 @@ export default {
 
       try {
         let newTransactions = 0
-        const response = await this.getTransactions()
+        const response = await this.getTransactions(address)
         const transactions = mergeTableTransactions(response.transactions, this.getStoredTranasctions(address))
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {
