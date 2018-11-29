@@ -1,6 +1,6 @@
 <template>
   <div class="WalletAll relative lg:bg-theme-feature rounded-lg m-r-4 p-10">
-    <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
+    <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }} ({{ formatter_networkCurrency(totalBalance, 2) }})</h3>
 
     <div class="WalletAll__grid mt-10 justify-center">
       <div class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r">
@@ -100,6 +100,9 @@ export default {
   }),
 
   computed: {
+    totalBalance () {
+      return this.$store.getters['profile/balance'](this.session_profile.id)
+    },
     wallets () {
       const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
       const prop = 'name'

@@ -1,6 +1,6 @@
 <template>
   <div class="ProfileAll relative bg-theme-feature rounded-lg m-r-4 p-10">
-    <h3>{{ $t('PAGES.PROFILE_ALL.HEADER') }}</h3>
+    <h3>{{ $t('PAGES.PROFILE_ALL.HEADER') }} ({{ totalBalances.join(', ') }})</h3>
 
     <div class="ProfileAll__grid mt-10">
       <router-link
@@ -37,6 +37,10 @@
             {{ profile.name }}
           </div>
 
+          <span class="font-bold my-2 text-lg pl-4">
+            {{ profileBalance(profile) }}
+          </span>
+
           <router-link
             :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
             class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
@@ -72,6 +76,7 @@
 </template>
 
 <script>
+import { mapValues, uniqBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { ProfileRemovalConfirmation } from '@/components/Profile'
 
@@ -90,6 +95,38 @@ export default {
     ...mapGetters({ profiles: 'profile/all' }),
     addProfileImagePath () {
       return 'pages/new-profile-avatar.svg'
+    },
+    /**
+     * Returns the sum of balances of all profile of each network
+     * @return {Object}
+     */
+    aggregatedBalances () {
+      const walletsByNetwork = this.profiles.reduce((all, profile) => {
+        const wallets = this.$store.getters['wallet/byProfileId'](profile.id)
+        return {
+          ...all,
+          [profile.networkId]: (all[profile.networkId] || []).concat(wallets)
+        }
+      }, {})
+
+      return mapValues(walletsByNetwork, wallets => {
+        return uniqBy(wallets, 'address').reduce((total, wallet) => total + wallet.balance, 0)
+      })
+    },
+    /**
+     * Returns the balances of each network, as a String
+     * TODO: when new design is applied, sort by amount in session currency/fiat
+     * @return {String}
+     */
+    totalBalances () {
+      const balances = []
+      for (const networkId in this.aggregatedBalances) {
+        const network = this.$store.getters['network/byId'](networkId)
+        const amount = this.currency_subToUnit(this.aggregatedBalances[networkId], network)
+        const balance = this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: 2 })
+        balances.push(balance)
+      }
+      return balances
     }
   },
 
@@ -118,6 +155,13 @@ export default {
 
     openRemovalConfirmation (profile) {
       this.profileToRemove = profile
+    },
+
+    profileBalance (profile) {
+      const balance = this.$store.getters['profile/balance'](profile.id)
+      const network = this.$store.getters['network/byId'](profile.networkId)
+      const amount = this.currency_subToUnit(balance, network)
+      return this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: 2 })
     },
 
     selectProfile (profileId) {

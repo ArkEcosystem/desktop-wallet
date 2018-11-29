@@ -11,8 +11,33 @@ describe('ProfileModule', () => {
     ).toThrow()
   })
 
+  describe('getters > balance', () => {
+    const profileId = 'balanceId'
+    const profile = { id: profileId }
+    const wallets = [
+      { id: 'A1', profileId, balance: 1000 },
+      { id: 'A2', profileId, balance: 173 },
+      { id: 'A3', profileId, balance: 97 },
+      { id: 'A4', profileId: 'other', balance: 50000 }
+    ]
+
+    beforeEach(() => {
+      store.commit('profile/CREATE', profile)
+      wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
+    })
+
+    afterEach(() => {
+      wallets.forEach(wallet => store.commit('wallet/DELETE', wallet))
+      store.commit('profile/DELETE', profile.id)
+    })
+
+    it('should return the balance of the profile wallets', () => {
+      expect(store.getters['profile/balance'](profileId)).toEqual(1270)
+    })
+  })
+
   describe('actions > delete', () => {
-    const profileId = 'testProfileId'
+    const profileId = 'deleteId'
     const profile = { id: profileId }
     const wallets = [
       { id: 'A1', profileId },

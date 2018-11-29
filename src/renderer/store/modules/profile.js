@@ -10,6 +10,12 @@ export default new BaseModule(ProfileModel, {
       checkName = normalize(checkName)
 
       return state.all.find(profile => normalize(profile.name) === checkName)
+    },
+    balance: (state, _, __, rootGetters) => id => {
+      const wallets = rootGetters['wallet/byProfileId'](id)
+      return wallets.reduce((total, wallet) => {
+        return total + wallet.balance
+      }, 0)
     }
   },
 

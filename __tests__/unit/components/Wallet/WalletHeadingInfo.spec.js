@@ -40,6 +40,8 @@ describe('WalletHeadingInfo component', () => {
         $store: {
           getters: {
             'market/lastPrice': price,
+            'network/byToken': jest.fn(),
+            'network/bySymbol': jest.fn(),
             'session/network': network,
             'session/currency': alternativeCurrency
           }

@@ -9,6 +9,15 @@ describe('Mixins > Currency', () => {
     symbol: '×',
     fractionDigits: 8
   }
+  const networks = [
+    network,
+    {
+      token: 'TOK',
+      subunit: 'tokoshi',
+      symbol: 't',
+      fractionDigits: 8
+    }
+  ]
 
   let wrapper
 
@@ -21,6 +30,8 @@ describe('Mixins > Currency', () => {
       template: '<div/>'
     }
 
+    const networkBy = (attr, value) => networks.find(network => network[attr] === value)
+
     wrapper = shallowMount(TestComponent, {
       localVue,
       i18n,
@@ -29,6 +40,8 @@ describe('Mixins > Currency', () => {
         session_network: network,
         $store: {
           getters: {
+            'network/bySymbol': symbol => networkBy('symbol', symbol),
+            'network/byToken': token => networkBy('token', token),
             'session/currency': 'BTC'
           }
         }
@@ -49,7 +62,7 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    describe('when the `currencyFrom` option with value "session" is provided', () => {
+    describe('when the `currencyFrom` option with value "network" is provided', () => {
       it('should display the symbol currency of the current network', () => {
         const amount = 1.00035
 
@@ -102,6 +115,12 @@ describe('Mixins > Currency', () => {
 
           expect(format(amount, { currency: 'NET' })).toEqual('×100,000.00001')
         })
+
+        it('should admit it is from any known network', () => {
+          const amount = Math.pow(10, 5) + Math.pow(10, -5)
+
+          expect(format(amount, { currency: 'TOK' })).toEqual('t100,000.00001')
+        })
       })
     })
 
@@ -148,14 +167,29 @@ describe('Mixins > Currency', () => {
       subToUnit = wrapper.vm.currency_subToUnit.bind(wrapper.vm)
     })
 
-    it('should convert an amount from arktoshi to ARK', () => {
-      let amount = Math.pow(10, 9)
+    describe('when not receiving a network', () => {
+      it('should use the session network to convert an amount from arktoshi to ARK', () => {
+        let amount = Math.pow(10, 9)
 
-      expect(subToUnit(amount)).toEqual('10')
+        expect(subToUnit(amount)).toEqual('10')
 
-      amount = Math.pow(10, 12) + 9800 + 1
+        amount = Math.pow(10, 12) + 9800 + 1
 
-      expect(subToUnit(amount)).toEqual('10000.00009801')
+        expect(subToUnit(amount)).toEqual('10000.00009801')
+      })
+    })
+
+    describe('when receiving a network', () => {
+      it('should use it to convert an amount from its subunit to its unit', () => {
+        const network = { fractionDigits: 3 }
+        let amount = Math.pow(10, 3)
+
+        expect(subToUnit(amount, network)).toEqual('1')
+
+        amount = Math.pow(10, 9) + 9800 + 1
+
+        expect(subToUnit(amount, network)).toEqual('1000009.801')
+      })
     })
   })
 })

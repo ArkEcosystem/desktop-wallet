@@ -8,10 +8,18 @@ import Vue from 'vue'
 export default new BaseModule(NetworkModel, {
 
   state: () => ({
+    all: [],
     customNetworks: {}
   }),
 
   getters: {
+    bySymbol: state => symbol => {
+      return state.all.find(network => network.symbol === symbol)
+    },
+    byToken: state => token => {
+      return state.all.find(network => network.token === token)
+    },
+
     feeStatisticsByType: (_, __, ___, rootGetters) => type => {
       const network = rootGetters['session/network']
 

@@ -48,9 +48,16 @@ export default {
       const cryptoPlaceholder = 'XXX'
       let cryptoCurrency = null
 
-      const network = this.session_network
+      const findNetworkByCurrency = currency => {
+        return this.$store.getters['network/byToken'](currency) || this.$store.getters['network/bySymbol'](currency)
+      }
 
-      if (config.currencyFrom === 'network' || config.currency === network.token) {
+      // Network of the token/symbol
+      const network = config.currencyFrom === 'network'
+        ? this.session_network
+        : findNetworkByCurrency(config.currency)
+
+      if (network) {
         if (options.subunit) {
           cryptoCurrency = network.subunit
           value *= Math.pow(10, network.fractionDigits)
@@ -83,13 +90,13 @@ export default {
         .replace(cryptoPlaceholder, cryptoCurrency)
     },
 
-    currency_subToUnit (value) {
-      const { fractionDigits } = this.session_network
+    currency_subToUnit (value, network) {
+      const { fractionDigits } = network || this.session_network
       return new BigNumber(value.toString()).dividedBy(Math.pow(10, fractionDigits)).toString()
     },
 
-    currency_unitToSub (value) {
-      const { fractionDigits } = this.session_network
+    currency_unitToSub (value, network) {
+      const { fractionDigits } = network || this.session_network
       return new BigNumber(value.toString()).multipliedBy(Math.pow(10, fractionDigits)).toString()
     }
   }
