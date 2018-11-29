@@ -43,6 +43,23 @@
       </div>
     </MenuNavigationItem>
 
+    <!-- Placeholder Loading Ledger Widget -->
+    <MenuNavigationItem
+      v-if="isLoadingLedger"
+      id="isLoadingLedger"
+      :is-disabled="true"
+      class="WalletSidebar__wallet__ledger-loader select-none"
+    >
+      <div
+        class="WalletSidebar__wallet__wrapper transition text-sm w-full mx-2 py-6 truncate"
+      >
+        <Loader />
+        <div class="font-semibold text-theme-page-text">
+          {{ $t('WALLET_SIDEBAR.LOADING_LEDGER') }}
+        </div>
+      </div>
+    </MenuNavigationItem>
+
     <!-- List of actual wallets -->
     <MenuNavigationItem
       v-for="wallet in selectableWallets"
@@ -82,6 +99,7 @@
 </template>
 
 <script>
+import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -90,6 +108,7 @@ export default {
   name: 'WalletSidebar',
 
   components: {
+    Loader,
     MenuNavigation,
     MenuNavigationItem,
     WalletIdenticon,
@@ -116,6 +135,10 @@ export default {
 
     activeWallet () {
       return this.wallet_fromRoute || {}
+    },
+
+    isLoadingLedger () {
+      return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
     }
   },
 

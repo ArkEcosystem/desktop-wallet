@@ -478,9 +478,10 @@ export default {
 
     WALLET_ALL: {
       CREATE_WALLET: 'Create wallet',
-      IMPORT_WALLET: 'Import wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
+      LOADING_LEDGER: 'Loading Ledger Wallets...',
+      IMPORT_WALLET: 'Import wallet',
       SHOW_WALLET: 'Show wallet'
     },
 
@@ -727,6 +728,10 @@ export default {
     NEW: 'Generate new second passphrase',
     ALREADY_REGISTERED: 'There is already a second passphrase registered for this address',
     INSTRUCTIONS: 'This is your second passphrase. Make sure to make a backup and keep it somewhere safe!'
+  },
+
+  WALLET_SIDEBAR: {
+    LOADING_LEDGER: 'Loading Ledger...'
   },
 
   WALLET_DELEGATES: {

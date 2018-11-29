@@ -8,13 +8,15 @@ export default {
 
   state: {
     slip44: null,
-    connected: false,
+    isLoading: false,
+    isConnected: false,
     connectionTimer: null,
     wallets: []
   },
 
   getters: {
-    isConnected: state => state.connected,
+    isLoading: state => state.isLoading,
+    isConnected: state => state.isConnected,
     wallets: state => Object.values(state.wallets),
     wallet: state => (address) => {
       if (!state.wallets[address]) {
@@ -33,11 +35,14 @@ export default {
 
       state.slip44 = slip44
     },
+    SET_LOADING (state, isLoading) {
+      state.isLoading = isLoading
+    },
+    SET_CONNECTED (state, isConnected) {
+      state.isConnected = isConnected
+    },
     SET_CONNECTION_TIMER (state, connectionTimer) {
       state.connectionTimer = connectionTimer
-    },
-    SET_CONNECTED (state, connected) {
-      state.connected = connected
     },
     SET_WALLETS (state, wallets) {
       state.wallets = wallets
@@ -78,6 +83,7 @@ export default {
       commit('SET_CONNECTED', false)
       await ledgerService.disconnect()
       eventBus.emit('ledger:disconnected')
+      commit('SET_WALLETS', [])
       dispatch('ensureConnection')
     },
 
@@ -89,7 +95,7 @@ export default {
      * @return {void}
      */
     async ensureConnection ({ commit, state, dispatch }, { isTimer, delay } = { isTimer: false, delay: 2000 }) {
-      if (state.connected && !await dispatch('checkConnected')) {
+      if (state.isConnected && !await dispatch('checkConnected')) {
         await dispatch('disconnect')
         delay = 2000
       }
@@ -98,7 +104,7 @@ export default {
         return
       }
 
-      if (!state.connected) {
+      if (!state.isConnected) {
         if (await dispatch('connect')) {
           delay = 5000
         }
@@ -117,7 +123,7 @@ export default {
      * @return {Boolean}
      */
     async checkConnected ({ state }) {
-      if (!state.connected) {
+      if (!state.isConnected) {
         return false
       }
 
@@ -142,8 +148,9 @@ export default {
         return []
       }
 
+      commit('SET_LOADING', true)
+      let wallets = []
       try {
-        const wallets = []
         for (let ledgerIndex = 0; ; ledgerIndex++) {
           let isColdWallet = false
           const ledgerAddress = await dispatch('getAddress', ledgerIndex)
@@ -177,19 +184,17 @@ export default {
           })
 
           if (isColdWallet) {
-            commit('SET_WALLETS', wallets)
-            eventBus.emit('ledger:wallets-updated', wallets)
-
-            return wallets
+            break
           }
         }
       } catch (error) {
         logger.error(error)
       }
-      commit('SET_WALLETS', [])
-      eventBus.emit('ledger:wallets-updated', [])
+      commit('SET_WALLETS', wallets)
+      eventBus.emit('ledger:wallets-updated', wallets)
+      commit('SET_LOADING', false)
 
-      return []
+      return wallets
     },
 
     /**
@@ -262,9 +267,9 @@ export default {
         throw new Error('accountIndex must be a Number')
       }
 
-      if (!state.connected) {
+      if (!state.isConnected) {
         await dispatch('ensureConnection')
-        if (!state.connected) {
+        if (!state.isConnected) {
           throw new Error('Ledger not connected')
         }
       }

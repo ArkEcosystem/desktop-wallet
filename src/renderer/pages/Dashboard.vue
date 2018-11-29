@@ -126,4 +126,10 @@ export default {
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }
+.Dashboard__wallets__list .WalletSidebar__wallet__ledger-loader .WalletSidebar__wallet__wrapper {
+  @apply mx-6 text-base text-center;
+}
+.Dashboard__wallets__list .WalletSidebar__wallet__ledger-loader .v-spinner {
+  @apply mr-3;
+}
 </style>

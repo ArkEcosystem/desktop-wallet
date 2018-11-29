@@ -22,6 +22,14 @@
       </div>
 
       <div
+        v-show="isLedgerLoading"
+        class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
+      >
+        <Loader />
+        <div class="text-center mt-4">{{ $t('PAGES.WALLET_ALL.LOADING_LEDGER') }}</div>
+      </div>
+
+      <div
         v-for="wallet in selectableWallets"
         :key="wallet.id"
         class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
@@ -72,6 +80,7 @@
 
 <script>
 import { without } from 'lodash'
+import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletIdenticonPlaceholder, WalletRemovalConfirmation } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 
@@ -79,6 +88,7 @@ export default {
   name: 'WalletAll',
 
   components: {
+    Loader,
     WalletIdenticon,
     WalletIdenticonPlaceholder,
     WalletRemovalConfirmation
@@ -94,6 +104,10 @@ export default {
       const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
       const prop = 'name'
       return wallets.slice().sort(sortByProp(prop))
+    },
+
+    isLedgerLoading () {
+      return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
     }
   },
 
