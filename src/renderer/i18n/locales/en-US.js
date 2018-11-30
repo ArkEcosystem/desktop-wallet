@@ -123,7 +123,8 @@ export default {
     PASSWORD: {
       TOO_SHORT: 'Your password must be at least {0} characters long',
       NUMBERS: 'Your password must contain at least 1 number',
-      SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character'
+      SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character',
+      NO_MATCH: 'Your passwords do not match'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -502,6 +503,7 @@ export default {
         },
         TITLE: '2. Encryption',
         PASSWORD: 'Wallet password (optional)',
+        PASSWORD_CONFIRM: 'Confirm password',
         PASSWORD_WARNING: 'Storing your passphrase can bring risks.'
       },
       STEP3: {
@@ -550,6 +552,7 @@ export default {
         },
         TITLE: '4. Encryption',
         PASSWORD: 'Wallet password (optional)',
+        PASSWORD_CONFIRM: 'Confirm password',
         PASSWORD_WARNING: 'Storing your passphrase can bring risks.'
       },
       STEP5: {

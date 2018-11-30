@@ -90,6 +90,19 @@
                 name="wallet-password"
               />
 
+              <InputPassword
+                v-show="walletPassword && !!walletPassword.length"
+                ref="confirmPassword"
+                v-model="walletConfirmPassword"
+                :label="$t('PAGES.WALLET_IMPORT.STEP2.PASSWORD_CONFIRM')"
+                :is-required="walletPassword && !!walletPassword.length"
+                :min-length="0"
+                :give-feedback="false"
+                :confirm="walletPassword"
+                class="my-3"
+                name="wallet-confirm-password"
+              />
+
               <span class="text-orange-dark">
                 <span class="font-bold">{{ $t('COMMON.WARNING') }}:</span>
                 <span>{{ $t('PAGES.WALLET_IMPORT.STEP2.PASSWORD_WARNING') }}</span>
@@ -175,6 +188,7 @@ export default {
     useOnlyPassphrase: false,
     wallet: {},
     walletPassword: null,
+    walletConfirmPassword: null,
     showEncryptLoader: false,
     bip38Worker: null,
     backgroundImages: {
@@ -290,7 +304,7 @@ export default {
 
   validations: {
     step1: ['schema.address', 'schema.passphrase'],
-    step2: ['walletPassword'],
+    step2: ['walletPassword', 'walletConfirmPassword'],
     step3: ['schema.name'],
     walletPassword: {
       isValid (value) {
@@ -300,6 +314,19 @@ export default {
 
         if (this.$refs.password) {
           return !this.$refs.password.$v.$invalid
+        }
+
+        return false
+      }
+    },
+    walletConfirmPassword: {
+      isValid (value) {
+        if (!this.walletPassword || !this.walletPassword.length) {
+          return true
+        }
+
+        if (this.$refs.confirmPassword) {
+          return !this.$refs.confirmPassword.$v.$invalid
         }
 
         return false

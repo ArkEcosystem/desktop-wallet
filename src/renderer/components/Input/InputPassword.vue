@@ -99,6 +99,16 @@ export default {
       default () {
         return this.$t('PASSWORD_INPUT.LABEL')
       }
+    },
+    giveFeedback: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    confirm: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
@@ -117,6 +127,8 @@ export default {
           error = this.$t('VALIDATION.REQUIRED', [this.label])
         } else if (!this.$v.model.isValid) {
           error = this.passwordFeedback()
+        } else if (!this.$v.model.isConfirmed) {
+          error = this.$t('VALIDATION.PASSWORD.NO_MATCH')
         }
       }
 
@@ -172,7 +184,7 @@ export default {
     },
 
     passwordFeedback () {
-      if (!this.isRequired && !this.model.length) {
+      if (!this.giveFeedback || (!this.isRequired && !this.model.length)) {
         return ''
       }
 
@@ -190,6 +202,9 @@ export default {
 
   validations: {
     model: {
+      isConfirmed (value) {
+        return !this.confirm || value === this.confirm
+      },
       required (value) {
         if (this.isRequired) {
           return required(value)
