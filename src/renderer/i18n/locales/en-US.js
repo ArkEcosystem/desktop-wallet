@@ -1,6 +1,6 @@
 export default {
   COMMON: {
-    APP_NAME: 'Ark Desktop Wallet',
+    APP_NAME: 'ARK Desktop Wallet',
     ALL: 'All',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
