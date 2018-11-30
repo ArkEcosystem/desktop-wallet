@@ -160,7 +160,7 @@ export default {
     form: {
       fee: 0,
       passphrase: '',
-      walletPassword: null
+      walletPassword: ''
     },
     showEncryptLoader: false,
     showLedgerLoader: false,

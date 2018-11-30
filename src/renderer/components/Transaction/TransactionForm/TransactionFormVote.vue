@@ -160,7 +160,7 @@ export default {
     isPassphraseStep: false,
     form: {
       passphrase: '',
-      walletPassword: null
+      walletPassword: ''
     },
     forged: 0,
     showEncryptLoader: false,
@@ -193,6 +193,10 @@ export default {
 
   watch: {
     isPassphraseStep () {
+      if (!this.currentWallet.isLedger) {
+        return
+      }
+
       if (!this.currentWallet.passphrase) {
         this.$refs.passphrase.focus()
       } else {

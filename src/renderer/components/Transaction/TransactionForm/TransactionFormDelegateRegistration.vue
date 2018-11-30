@@ -111,7 +111,7 @@ export default {
     form: {
       username: '',
       passphrase: '',
-      walletPassword: null
+      walletPassword: ''
     },
     error: null,
     showEncryptLoader: false,

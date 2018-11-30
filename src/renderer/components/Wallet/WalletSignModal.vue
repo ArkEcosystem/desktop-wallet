@@ -81,7 +81,7 @@ export default {
     form: {
       message: '',
       passphrase: '',
-      walletPassword: null
+      walletPassword: ''
     },
     showEncryptLoader: false,
     bip38Worker: null

@@ -143,7 +143,7 @@ export default {
       amount: vm.schema.amount || '',
       fee: 0,
       passphrase: '',
-      walletPassword: null,
+      walletPassword: '',
       recipientId: vm.schema.address || '',
       vendorField: vm.schema.vendorField || ''
     },
