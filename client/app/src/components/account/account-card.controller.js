@@ -60,7 +60,7 @@
 
     this.confirmRemoval = account => {
       const confirm = $mdDialog.confirm({
-        title: gettextCatalog.getString('Remove Account \'{{ address }}\'', {address: account.address}),
+        title: gettextCatalog.getString('Remove Account \'{{ address }}\'', { address: account.address }),
         ariaLabel: gettextCatalog.getString('Remove Account'),
         theme: this.accountCtrl.currentTheme,
         textContent: gettextCatalog.getString('Remove this account from your wallet. ' +

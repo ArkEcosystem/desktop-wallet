@@ -50,7 +50,7 @@
       }).catch(error => {
         if (error.transactions.length) {
           toastService.error(gettextCatalog.getString('An error occured when getting your transactions. However we still got {{ count }} transactions! The exported file contains only these!',
-                                                      {count: error.transactions.length}),
+                                                      { count: error.transactions.length }),
           10000)
           prepareFile($scope.vm.account, error.transactions, true)
         } else {

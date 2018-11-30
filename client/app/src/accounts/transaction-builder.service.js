@@ -40,7 +40,7 @@
       }
 
       if (ark.crypto.getAddress(transaction.senderPublicKey, networkService.getNetwork().version) !== config.fromAddress) {
-        deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account \'{{ address }}\'', {address: config.fromAddress}))
+        deferred.reject(gettextCatalog.getString('Passphrase is not corresponding to account \'{{ address }}\'', { address: config.fromAddress }))
         return
       }
 
@@ -59,12 +59,12 @@
     function createSendTransaction (config) {
       return prepareTransaction(config, (deferred, account, fees) => {
         if (!accountService.isValidAddress(config.toAddress)) {
-          deferred.reject(gettextCatalog.getString('The destination address \'{{ address }}\' is erroneous', {address: config.toAddress}))
+          deferred.reject(gettextCatalog.getString('The destination address \'{{ address }}\' is erroneous', { address: config.toAddress }))
           return
         }
 
         if (config.amount + fees.send > account.balance) {
-          deferred.reject(gettextCatalog.getString('Not enough {{ currency }} on your account \'{{ address }}\'!', {currency: networkService.getNetwork().token, address: config.fromAddress}))
+          deferred.reject(gettextCatalog.getString('Not enough {{ currency }} on your account \'{{ address }}\'!', { currency: networkService.getNetwork().token, address: config.fromAddress }))
           return
         }
 
@@ -100,7 +100,7 @@
           })
 
           if (invalidAddress) {
-            return reject(new Error(gettextCatalog.getString('The destination address \'{{ address }}\' is erroneous', {address: invalidAddress})))
+            return reject(new Error(gettextCatalog.getString('The destination address \'{{ address }}\' is erroneous', { address: invalidAddress })))
           }
 
           const total = transactions.reduce((total, t) => total + t.amount + fees.send, 0)
@@ -145,7 +145,7 @@
                   }, 2000 * i, true, transaction)
                 } else {
                   if (ark.crypto.getAddress(transaction.senderPublicKey, network.version) !== fromAddress) {
-                    return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account \'{{ address }}\'', {address: fromAddress})))
+                    return reject(new Error(gettextCatalog.getString('Passphrase is not corresponding to account \'{{ address }}\'', { address: fromAddress })))
                   }
 
                   resolve(transaction)

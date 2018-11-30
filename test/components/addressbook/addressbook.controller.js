@@ -23,7 +23,7 @@ describe('AddressbookController', () => {
       }
       mdToastMock = {}
       storageServiceMock = {
-        get: sinon.stub().returns([{name: 'test_contact', address: 'test_address'}]),
+        get: sinon.stub().returns([{ name: 'test_contact', address: 'test_address' }]),
         set: sinon.stub()
       }
       getTextCatalogMock = {
@@ -58,7 +58,7 @@ describe('AddressbookController', () => {
 
   describe('initialized state', () => {
     it('retrieves contacts from storage', () => {
-      expect(ctrl.contacts).to.deep.equal([{name: 'test_contact', address: 'test_address'}])
+      expect(ctrl.contacts).to.deep.equal([{ name: 'test_contact', address: 'test_address' }])
       expect(storageServiceMock.get.calledOnce).to.be.true
       expect(storageServiceMock.get.getCall(0).args[0]).to.equal('contacts')
     })

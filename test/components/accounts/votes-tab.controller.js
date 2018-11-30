@@ -91,7 +91,7 @@ describe('VotesTabController', () => {
     context('when the account is a valid account object', () => {
       it('should return a filtered list of selected votes if they exist', () => {
         let acctObj = angular.copy(ctrl.account)
-        acctObj.selectedVotes = [{username: 'foo'}, {username: 'bar'}, {username: 'baz'}, {username: 'baz'}]
+        acctObj.selectedVotes = [{ username: 'foo' }, { username: 'bar' }, { username: 'baz' }, { username: 'baz' }]
         let delegateList = ctrl.getDelegateList(acctObj)
         expect(delegateList.length).to.equal(3)
       })

@@ -15,7 +15,7 @@ describe('accountService', () => {
         if (!transactions) {
           reject(new Error('Error'))
         } else {
-          resolve({success: true, transactions: transactions})
+          resolve({ success: true, transactions: transactions })
         }
       })
     }
@@ -28,7 +28,7 @@ describe('accountService', () => {
     }
 
     for (let i = 0; i < arraySize; i++) {
-      arr.push({type: 0, timestamp: timestamp})
+      arr.push({ type: 0, timestamp: timestamp })
     }
 
     return arr
@@ -40,7 +40,7 @@ describe('accountService', () => {
 
   beforeEach(() => {
     module('arkclient.accounts', $provide => {
-      gettextCatalogMock = {getString: sinon.stub().returnsArg(0)}
+      gettextCatalogMock = { getString: sinon.stub().returnsArg(0) }
       gettextMock = sinon.stub().returnsArg(0)
       networkServiceMock = { listenNetworkHeight: sinon.stub(),
         getPeer: sinon.stub().returns('127.0.0.1'),

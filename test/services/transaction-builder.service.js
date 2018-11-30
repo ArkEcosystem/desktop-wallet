@@ -41,7 +41,7 @@ describe('transactionBuilderService', () => {
   }
 
   function mockGetAccount (balance) {
-    getAccountStub = sinon.stub(accountService, 'getAccount').returns({balance: balance})
+    getAccountStub = sinon.stub(accountService, 'getAccount').returns({ balance: balance })
   }
 
   function restoreGetAccount () {
@@ -58,14 +58,14 @@ describe('transactionBuilderService', () => {
     module('arkclient.accounts', $provide => {
       configServiceMock = { notice: sinon.stub(), getByGroupAndKey: sinon.stub() }
       // return options / params, we don't care about the string
-      gettextCatalogMock = {getString: sinon.stub().returnsArg(1)}
+      gettextCatalogMock = { getString: sinon.stub().returnsArg(1) }
       gettextMock = sinon.stub().returnsArg(0)
       networkServiceMock = {
         listenNetworkHeight: sinon.stub(),
         getPeer: sinon.stub().returns('127.0.0.1'),
         getNetwork: sinon.stub().returns({ version: 0x17, token: tokenName })
       }
-      ledgerServiceMock = {signTransaction: sinon.stub().resolves({})}
+      ledgerServiceMock = { signTransaction: sinon.stub().resolves({}) }
 
       // inject the mock services
       $provide.value('configService', configServiceMock)

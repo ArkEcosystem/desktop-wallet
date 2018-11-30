@@ -764,11 +764,11 @@
 
       const accounts = self.getAllAccounts()
         .map(acc => {
-          return {name: acc.username, address: acc.address, type: gettext('Account'), icon: acc.icon}
+          return { name: acc.username, address: acc.address, type: gettext('Account'), icon: acc.icon }
         })
       let contacts = (storageService.get('contacts') || [])
         .map(c => {
-          return {name: c.name, address: c.address, type: gettext('Contact'), icon: 'account_circle'}
+          return { name: c.name, address: c.address, type: gettext('Contact'), icon: 'account_circle' }
         })
 
       contacts = contacts.concat(accounts).sort((a, b) => {
@@ -900,7 +900,7 @@
           cancel()
         } else {
           toastService.error(
-            gettextCatalog.getString('Address \'{{ address }}\' is not recognized', {address: address}),
+            gettextCatalog.getString('Address \'{{ address }}\' is not recognized', { address: address }),
             3000,
             true
           )
@@ -1322,7 +1322,7 @@
       function removeNetwork (network) {
         const isActive = network === networkService.getNetworkName()
         const confirm = $mdDialog.confirm()
-          .title(gettextCatalog.getString('Remove network \'{{ network }}\'', {network: network}))
+          .title(gettextCatalog.getString('Remove network \'{{ network }}\'', { network: network }))
           .theme(self.currentTheme)
           .textContent(gettextCatalog.getString('Are you sure you want to remove this network and all data (accounts and settings) associated with it from your computer. Your accounts are still safe on the blockchain.'))
           .ok(gettextCatalog.getString('Remove from my computer all cached data from this network'))
@@ -1461,7 +1461,7 @@
             accountService.createAccount($scope.createAccountDialog.data.repassphrase).then((account) => {
               self.accounts.push(account)
               toastService.success(
-                gettextCatalog.getString('Account \'{{ address }}\' successfully created!', {address: account.address}),
+                gettextCatalog.getString('Account \'{{ address }}\' successfully created!', { address: account.address }),
                 null,
                 true
               )
@@ -1515,7 +1515,7 @@
                 if (self.accounts[i].address === account.address) {
                   toastService.error(
                     gettextCatalog.getString('Account \'{{ address }}\' has already been imported!',
-                                             {address: account.address}),
+                                             { address: account.address }),
                     null,
                     true
                   )
@@ -1526,7 +1526,7 @@
               self.accounts.push(account)
               toastService.success(
                 gettextCatalog.getString('Account \'{{ address }}\' successfully imported!',
-                                         {address: account.address}),
+                                         { address: account.address }),
                 null,
                 true
               )
@@ -1567,7 +1567,7 @@
 
       if (selectedAccount.secondSignature) {
         return formatAndToastError(
-          gettextCatalog.getString('The account \'{{ address }}\' already has a second passphrase!', {address: selectedAccount.address})
+          gettextCatalog.getString('The account \'{{ address }}\' already has a second passphrase!', { address: selectedAccount.address })
         )
       }
 
@@ -1576,10 +1576,10 @@
           const secondPhraseArktoshiVal = fees['secondsignature']
           const secondPhraseArkVal = utilityService.arktoshiToArk(secondPhraseArktoshiVal, true)
           const confirm = $mdDialog.confirm({
-            title: gettextCatalog.getString('Second Passphrase fee ({{ currency }})', {currency: networkService.getNetwork().symbol}),
+            title: gettextCatalog.getString('Second Passphrase fee ({{ currency }})', { currency: networkService.getNetwork().symbol }),
             secondPhraseArkVal: secondPhraseArkVal,
             textContent: gettextCatalog.getString('WARNING! Second passphrase creation costs {{ cost }} {{ currency }}',
-                                                  {cost: secondPhraseArkVal, currency: networkService.getNetwork().token}),
+                                                  { cost: secondPhraseArkVal, currency: networkService.getNetwork().token }),
             ok: gettextCatalog.getString('Continue'),
             cancel: gettextCatalog.getString('Cancel')
           })
@@ -1650,7 +1650,7 @@
               )
             } else {
               toastService.success(
-                gettextCatalog.getString('Transaction file successfully saved in \'{{ fileName }}\'.', {fileName: fileName}),
+                gettextCatalog.getString('Transaction file successfully saved in \'{{ fileName }}\'.', { fileName: fileName }),
                 null,
                 true
               )
@@ -1671,7 +1671,7 @@
           (transaction) => {
             selectedAccount.transactions.unshift(transaction)
             toastService.success(
-              gettextCatalog.getString('Transaction \'{{ transactionId }}\' sent with success!', {transactionId: transaction.id}),
+              gettextCatalog.getString('Transaction \'{{ transactionId }}\' sent with success!', { transactionId: transaction.id }),
               null,
               true
             )
