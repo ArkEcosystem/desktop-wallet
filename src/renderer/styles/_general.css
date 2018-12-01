@@ -60,3 +60,7 @@ input:focus {
 .instructions-text {
   @apply .mt-16 .mx-16 .w-1/2 .p-4 .rounded-lg .text-theme-page-instructions-text .bg-theme-page-instructions-background
 }
+
+.word-break-all {
+  word-break: break-all;
+}

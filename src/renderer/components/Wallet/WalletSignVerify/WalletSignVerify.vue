@@ -54,12 +54,15 @@
           <div>{{ $t('SIGN_VERIFY.SIGNATURE') }}:</div>
         </div>
         <div>
-          <div class="font-semibold">{{ truncate(message.message, 50) }}</div>
-          <div>{{ truncate(message.signature, 50) }}</div>
+          <div class="font-semibold word-break-all">{{ message.message }}</div>
+          <div class="word-break-all">{{ message.signature }}</div>
         </div>
       </div>
 
-      <div v-show="showTimestamp === message.timestamp">
+      <div
+        :class="{ 'invisible' : showTimestamp !== message.timestamp }"
+        class="w-48 flex items-center ml-4"
+      >
         <ButtonClipboard
           :value="copyMessage(message)"
           class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
