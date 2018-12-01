@@ -13,8 +13,12 @@ export default {
   name: 'AppFooter',
 
   data: () => ({
-    text: 'Made with ♥ by Ark',
+    text: '',
     url: 'https://ark.io'
-  })
+  }),
+
+  created () {
+    this.text = this.$t('APP_FOOTER.TEXT')
+  }
 }
 </script>

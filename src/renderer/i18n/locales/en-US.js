@@ -171,6 +171,10 @@ export default {
     }
   },
 
+  APP_FOOTER: {
+    TEXT: 'Made with ♥ by Ark'
+  },
+
   APP_SIDEMENU: {
     ANNOUNCEMENTS: 'Announcements',
     CONTACTS: 'My contacts',
