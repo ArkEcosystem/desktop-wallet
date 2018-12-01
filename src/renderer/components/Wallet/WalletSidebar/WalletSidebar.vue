@@ -25,7 +25,7 @@
           class="WalletSidebar__wallet__identicon flex-no-shrink"
         />
         <div
-          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 text-theme-page-text-light"
+          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 text-theme-page-text-light overflow-hidden"
         >
           <span class="block truncate">{{ $t('PAGES.DASHBOARD.ADD_WALLET') }}</span>
           <span
@@ -82,7 +82,7 @@
             'text-theme-page-text': isActive,
             'text-theme-page-text-light': !isActive
           }"
-          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2"
+          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 overflow-hidden"
         >
           <span class="block truncate">{{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}</span>
           <span
