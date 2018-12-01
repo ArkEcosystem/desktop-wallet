@@ -5,7 +5,7 @@
   >
     <div
       :style="getBackgroundImage()"
-      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative"
+      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative animated fadeIn"
     >
       <div
         v-if="step == 1"

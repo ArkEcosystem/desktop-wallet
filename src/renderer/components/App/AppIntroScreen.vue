@@ -1,19 +1,26 @@
 <template>
   <div class="flex items-center">
-    <div class="w-1/2 flex items-center justify-center">
+    <div
+      :key="selection + 'image'"
+      class="w-1/2 flex items-center justify-center animated fadeIn"
+    >
       <img
         :src="getStepImage()"
         class="h-full"
       >
     </div>
     <div class="flex flex-col w-1/2 justify-center">
-      <div class="text-5xl">
+      <div
+        :key="selection + 'title'"
+        class="text-5xl animated fadeIn"
+      >
         <slot name="title" />
       </div>
 
       <div
         v-if="selection === 1"
-        class="w-3/4"
+        :key="1"
+        class="w-3/4 animated fadeIn"
       >
         <div class="mt-3">{{ $t('INTRODUCTION.POWER.FINANCE') }}</div>
         <div class="mt-2">{{ $t('INTRODUCTION.POWER.BANKS') }}</div>
@@ -23,7 +30,8 @@
 
       <div
         v-else-if="selection === 2"
-        class="w-3/4"
+        :key="2"
+        class="w-3/4 animated fadeIn"
       >
         <div class="mt-3">{{ $t('INTRODUCTION.DUTY.INTRO') }}</div>
         <div class="mt-3">{{ $t('INTRODUCTION.DUTY.OWNER') }}</div>
@@ -44,7 +52,8 @@
 
       <div
         v-else-if="selection === 3"
-        class="w-3/4"
+        :key="3"
+        class="w-3/4 animated fadeIn"
       >
         <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}</div>
         <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}</div>
@@ -53,7 +62,8 @@
 
       <div
         v-else
-        class="w-3/4"
+        :key="4"
+        class="w-3/4 animated fadeIn"
       >
         <div class="mt-3">{{ $t('INTRODUCTION.TURN.WALLET') }}</div>
         <div class="mt-2">{{ $t('INTRODUCTION.TURN.HARDWARE_WALLET') }}</div>
@@ -152,8 +162,6 @@ export default {
 
     getStepImage () {
       const stepImage = this.stepImages[this.selection]
-      console.log('stepImage', stepImage)
-
       return this.assets_loadImage(stepImage)
     }
   }
