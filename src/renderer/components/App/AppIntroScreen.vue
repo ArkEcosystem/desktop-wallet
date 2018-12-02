@@ -9,7 +9,7 @@
         class="h-full"
       >
     </div>
-    <div class="flex flex-col w-1/2 justify-center">
+    <div class="flex flex-col w-1/2 justify-center h-full relative">
       <div
         :key="selection + 'title'"
         class="text-5xl animated fadeIn"
@@ -69,8 +69,8 @@
         <div class="mt-2">{{ $t('INTRODUCTION.TURN.HARDWARE_WALLET') }}</div>
       </div>
 
-      <div class="flex items-center justify-start mt-8">
-        <div class="dotstyle dotstyle-stroke">
+      <div class="flex items-center justify-start">
+        <div class="dotstyle dotstyle-stroke absolute mb-10 pin-b pin-l">
           <ul>
             <li
               v-for="index in totalScreens"
@@ -81,24 +81,26 @@
             </li>
           </ul>
         </div>
-        <ButtonGeneric
-          :disabled="isFirst"
-          :label="$t('COMMON.BACK')"
-          class="ml-4 mr-0"
-          @click="emitBack"
-        />
-        <ButtonGeneric
-          v-if="!isLast"
-          :label="$t('COMMON.NEXT')"
-          class="ml-4"
-          @click="emitNext"
-        />
-        <ButtonGeneric
-          v-else
-          :label="$t('COMMON.FINISH')"
-          class="ml-4"
-          @click="emitDone"
-        />
+        <div class="absolute m-8 pin-b pin-r">
+          <ButtonGeneric
+            :disabled="isFirst"
+            :label="$t('COMMON.BACK')"
+            class="ml-4 mr-0"
+            @click="emitBack"
+          />
+          <ButtonGeneric
+            v-if="!isLast"
+            :label="$t('COMMON.NEXT')"
+            class="ml-4"
+            @click="emitNext"
+          />
+          <ButtonGeneric
+            v-else
+            :label="$t('COMMON.FINISH')"
+            class="ml-4"
+            @click="emitDone"
+          />
+        </div>
       </div>
     </div>
   </div>
