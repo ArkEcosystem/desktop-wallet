@@ -123,7 +123,7 @@ export default {
       for (const networkId in this.aggregatedBalances) {
         const network = this.$store.getters['network/byId'](networkId)
         const amount = this.currency_subToUnit(this.aggregatedBalances[networkId], network)
-        const balance = this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: 2 })
+        const balance = this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })
         balances.push(balance)
       }
       return balances
@@ -161,7 +161,7 @@ export default {
       const balance = this.$store.getters['profile/balance'](profile.id)
       const network = this.$store.getters['network/byId'](profile.networkId)
       const amount = this.currency_subToUnit(balance, network)
-      return this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: 2 })
+      return this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })
     },
 
     selectProfile (profileId) {

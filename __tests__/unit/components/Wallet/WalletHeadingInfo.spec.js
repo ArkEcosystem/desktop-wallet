@@ -82,7 +82,7 @@ describe('WalletHeadingInfo component', () => {
     expect(balance.text()).toContain(formattedBalance)
   })
 
-  describe('when the network has market enabled', () => {
+  describe('when the session network has the market enabled', () => {
     beforeEach(() => {
       network.market.enabled = true
     })

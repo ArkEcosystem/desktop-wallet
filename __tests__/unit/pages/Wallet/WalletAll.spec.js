@@ -35,7 +35,10 @@ describe('pages > WalletAll', () => {
           }
         },
         session_network: {
-          symbol: 'Ѧ'
+          symbol: 'Ѧ',
+          market: {
+            enabled: true
+          }
         },
         formatter_networkCurrency: jest.fn(),
         wallet_name: value => value

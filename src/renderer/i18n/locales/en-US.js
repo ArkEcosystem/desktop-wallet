@@ -485,9 +485,10 @@ export default {
       CREATE_WALLET: 'Create wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
-      LOADING_LEDGER: 'Loading Ledger Wallets...',
       IMPORT_WALLET: 'Import wallet',
-      SHOW_WALLET: 'Show wallet'
+      LOADING_LEDGER: 'Loading Ledger Wallets...',
+      SHOW_WALLET: 'Show wallet',
+      TOTAL_BALANCE: 'Total balance'
     },
 
     WALLET_IMPORT: {

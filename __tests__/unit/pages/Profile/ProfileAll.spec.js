@@ -106,9 +106,9 @@ describe('pages > ProfileAll', () => {
     it('should return the sum of balances per network, using their symbols', () => {
       wrapper = mountPage()
       expect(wrapper.vm.totalBalances).toEqual([
-        'm500.15',
-        'o0.12',
-        'd0.52'
+        'm500.150909',
+        'o0.1219',
+        'd0.5201'
       ])
     })
   })
@@ -116,7 +116,7 @@ describe('pages > ProfileAll', () => {
   describe('profileBalance', () => {
     it('should return the formatted balance of a profile, using the network symbol', () => {
       wrapper = mountPage()
-      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m0.14')
+      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m0.137')
     })
   })
 })
