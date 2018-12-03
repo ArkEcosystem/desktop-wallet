@@ -16,7 +16,7 @@
 #### Ubuntu
 In Ubuntu the development files of `libudev` are necessary:
 ```
-sudo apt-get install libudev-dev
+sudo apt-get install libudev-dev libusb-1.0-0-dev
 ```
 
 #### Node 9
