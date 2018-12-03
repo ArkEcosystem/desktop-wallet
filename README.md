@@ -25,10 +25,20 @@ In Ubuntu the development files of `libudev` are necessary:
 sudo apt-get install libudev-dev libusb-1.0-0-dev
 ```
 
+#### Windows
+- Python 2.7
+- Visual Studio 2017
+
 #### Node 9
 There are certain packages (such as the ledger HID packages) which do not work on Node 10.
 
 To download Node 9, head over to [here](https://nodejs.org/en/blog/release/v9.11.1/)
+
+#### Yarn
+Install the Yarn dependency manager
+```
+npm install -g yarn
+```
 
 ### Commands
 
