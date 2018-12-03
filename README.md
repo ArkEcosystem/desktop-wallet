@@ -2,6 +2,12 @@
 
 ![Ark Desktop Wallet](./banner.png)
 
+## :confetti_ball: Initial release of the all new ARK Desktop Wallet v2 :confetti_ball:
+
+**Note: This is a public beta release. Although the features that are present are expected to be functional and working, it’s still a work in progress and can result in unexpected behaviour. If you find any issues, please open a [GitHub issue](https://github.com/ArkEcosystem/desktop-wallet/issues/new)**
+
+------
+
 [![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/desktop-wallet)](https://circleci.com/gh/ArkEcosystem/desktop-wallet)
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet.svg)](https://github.com/ArkEcosystem/desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
