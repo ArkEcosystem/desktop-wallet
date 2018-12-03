@@ -13,9 +13,6 @@ export default new BaseModule(NetworkModel, {
   }),
 
   getters: {
-    all: (state, getters) => {
-      return [...state.all, ...getters.customNetworksArray]
-    },
     bySymbol: state => symbol => {
       return state.all.find(network => network.symbol === symbol)
     },
@@ -43,9 +40,7 @@ export default new BaseModule(NetworkModel, {
       return state.customNetworks[id]
     },
 
-    customNetworks: state => state.customNetworks,
-
-    customNetworksArray: state => Object.values(state.customNetworks)
+    customNetworks: state => state.customNetworks
   },
 
   mutations: {
