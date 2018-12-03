@@ -265,7 +265,7 @@ export default {
       delete customNetwork.epoch
       customNetwork.id = this.network ? this.network.id : this.form.name.toLowerCase().split(' ').join('_') // TODO: something else for id?
       customNetwork.title = this.form.name
-      customNetwork.slip44 = parseInt(this.form.slip44)
+      customNetwork.slip44 = this.form.slip44
       customNetwork.market = {
         enabled: this.form.ticker !== '',
         ticker: this.form.ticker !== '' ? this.form.ticker : null

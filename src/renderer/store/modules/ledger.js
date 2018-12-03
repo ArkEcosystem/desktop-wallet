@@ -29,10 +29,6 @@ export default {
 
   mutations: {
     SET_SLIP44 (state, slip44) {
-      if (!slip44 || !Number.isFinite(slip44)) {
-        throw new Error('Slip44 must be a number greater than 0')
-      }
-
       state.slip44 = slip44
     },
     SET_LOADING (state, isLoading) {

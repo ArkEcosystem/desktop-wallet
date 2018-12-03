@@ -12,7 +12,7 @@ export default new BaseModel({
     description: {},
     imagePath: {},
     slip44: {
-      type: 'number'
+      type: 'string'
     },
     apiVersion: {
       type: 'number'
