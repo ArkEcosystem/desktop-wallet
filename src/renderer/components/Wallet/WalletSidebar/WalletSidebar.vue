@@ -171,7 +171,11 @@ export default {
     ledgerDisconnected () {
       if (!this.activeWallet || !this.activeWallet.address || this.activeWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
-          this.$refs.MenuNavigation.switchToId(this.wallets[0].address)
+          if (this.wallets.length) {
+            this.$refs.MenuNavigation.switchToId(this.wallets[0].address)
+          } else {
+            this.$router.push({ name: 'wallets' })
+          }
         }
       }
       this.selectableWallets = this.wallets

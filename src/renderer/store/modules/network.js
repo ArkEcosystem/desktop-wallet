@@ -1,6 +1,7 @@
 import BaseModule from '../base'
 import { isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
+import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
 import Client from '@/services/client'
 import Vue from 'vue'
@@ -98,9 +99,16 @@ export default new BaseModule(NetworkModel, {
       dispatch('create', network)
     },
 
-    updateCustomNetwork ({ dispatch, commit }, network) {
+    async updateCustomNetwork ({ dispatch, commit, rootGetters }, network) {
       commit('UPDATE_CUSTOM_NETWORK', network)
       dispatch('update', network)
+
+      // Trigger a profile change/reload if updating current network
+      const currentNetwork = rootGetters['session/network']
+      if (currentNetwork.id === network.id) {
+        await dispatch('session/load', rootGetters['session/profileId'], { root: true })
+        eventBus.emit('client:changed')
+      }
     },
 
     removeCustomNetwork ({ dispatch, commit }, id) {

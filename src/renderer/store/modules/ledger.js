@@ -137,13 +137,17 @@ export default {
 
     /**
      * Reload wallets into store.
+     * @param  {Boolean} [clearFirst=false] Clear ledger wallets from store before reloading
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch, getters }) {
+    async reloadWallets ({ commit, dispatch, getters }, clearFirst = false) {
       if (!getters['isConnected']) {
         return []
       }
 
+      if (clearFirst) {
+        commit('SET_WALLETS', [])
+      }
       commit('SET_LOADING', true)
       let wallets = []
       try {
