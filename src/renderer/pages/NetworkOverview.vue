@@ -54,7 +54,6 @@
 </template>
 
 <script>
-import { NETWORKS } from '@config'
 import { NetworkModal } from '@/components/Network'
 
 export default {
@@ -90,15 +89,14 @@ export default {
 
   methods: {
     getNetworks () {
-      const networks = NETWORKS.map(network => {
+      const defaultNetworkIds = ['ark.mainnet', 'ark.devnet']
+
+      this.networks = Object.values(this.$store.getters['network/all']).map(network => {
         return {
           ...network,
-          isDefault: true
+          isDefault: defaultNetworkIds.indexOf(network.id) > -1
         }
       })
-      const customNetworks = Object.values(this.$store.getters['network/customNetworks'])
-
-      this.networks = networks.concat(customNetworks)
     },
     openNetwork (network) {
       this.selected = network
