@@ -107,6 +107,7 @@
                   }"
                   :items="networks"
                   :value="networkId"
+                  :position="['-50%', '0%']"
                   @select="selectNetwork"
                 />
               </ListDividedItem>
@@ -176,7 +177,7 @@
 
 <script>
 import { capitalize, isEmpty } from 'lodash'
-import { BIP39, I18N, NETWORKS } from '@config'
+import { BIP39, I18N } from '@config'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
@@ -233,7 +234,7 @@ export default {
       }, {})
     },
     networks () {
-      return NETWORKS.reduce((acc, network) => {
+      return this.$store.getters['network/all'].reduce((acc, network) => {
         acc[network.id] = network.name
         return acc
       }, {})
