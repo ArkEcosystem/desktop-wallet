@@ -74,6 +74,7 @@ import config from '@config'
 import URIHandler from '@/services/uri-handler'
 
 var { remote, ipcRenderer } = require('electron')
+const Menu = remote.Menu
 
 export default {
   name: 'DesktopWallet',
@@ -141,6 +142,7 @@ export default {
     })
 
     remote.getCurrentWindow().setContentProtection(this.hasProtection)
+    this.setContextMenu()
   },
 
   mounted () {
@@ -203,6 +205,32 @@ export default {
     setIntroDone () {
       this.$store.dispatch('app/setHasSeenIntroduction', true)
       this.$router.push({ name: 'profile-new' })
+    },
+
+    // Enable contextmenu (right click) on input / textarea fields
+    setContextMenu () {
+      const InputMenu = Menu.buildFromTemplate([
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+        { type: 'separator' },
+        { role: 'selectall' }
+      ])
+
+      document.body.addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+
+        let node = e.target
+
+        while (node) {
+          if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
+            InputMenu.popup(remote.getCurrentWindow())
+            break
+          }
+          node = node.parentNode
+        }
+      })
     }
   }
 }
