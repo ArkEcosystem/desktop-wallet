@@ -321,7 +321,7 @@ export default {
   },
 
   destroyed () {
-    this.$store.dispatch('session/load', this.session_profile.id)
+    this.$store.dispatch('session/setProfileId', this.session_profile.id)
   },
 
   beforeRouteEnter (to, from, next) {

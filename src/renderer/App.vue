@@ -131,7 +131,7 @@ export default {
     this.$store._vm.$on('vuex-persist:ready', async () => {
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
-      await this.$store.dispatch('session/load', currentProfileId)
+      await this.$store.dispatch('session/setProfileId', currentProfileId)
 
       this.isReady = true
 

@@ -106,7 +106,7 @@ export default new BaseModule(NetworkModel, {
       // Trigger a profile change/reload if updating current network
       const currentNetwork = rootGetters['session/network']
       if (currentNetwork.id === network.id) {
-        await dispatch('session/load', rootGetters['session/profileId'], { root: true })
+        await dispatch('session/setProfileId', rootGetters['session/profileId'], { root: true })
         eventBus.emit('client:changed')
       }
     },
