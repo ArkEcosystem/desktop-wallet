@@ -1,6 +1,5 @@
 <template>
   <div class="WalletDelegates">
-
     <div
       v-if="!walletVote.publicKey && isExplanationDisplayed"
       class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
@@ -76,7 +75,6 @@
       @cancel="onCancel"
       @sent="onSent"
     />
-
   </div>
 </template>
 

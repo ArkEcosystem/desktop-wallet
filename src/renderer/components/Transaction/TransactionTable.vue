@@ -112,7 +112,7 @@
       </template>
     </TableWrapper>
 
-    <portal
+    <Portal
       v-if="selected"
       to="modal"
     >
@@ -120,7 +120,7 @@
         :transaction="selected"
         @close="onCloseModal"
       />
-    </portal>
+    </Portal>
   </div>
 </template>
 

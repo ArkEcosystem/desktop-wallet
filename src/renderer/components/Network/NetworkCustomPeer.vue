@@ -4,7 +4,9 @@
     @close="emitClose"
   >
     <section class="flex flex-col">
-      <h2 class="mb-1">{{ $t('MODAL_PEER.TITLE') }}</h2>
+      <h2 class="mb-1">
+        {{ $t('MODAL_PEER.TITLE') }}
+      </h2>
 
       <InputText
         ref="input-host"

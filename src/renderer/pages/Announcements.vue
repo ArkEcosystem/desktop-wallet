@@ -3,9 +3,11 @@
     <div class="Announcements--gradient-top sticky pin-t h-12" />
 
     <main class="flex-col px-12">
-      <h1 class="text-lg mb-5">{{ $t('ANNOUNCEMENTS.LATEST_NEWS') }}</h1>
+      <h1 class="text-lg mb-5">
+        {{ $t('ANNOUNCEMENTS.LATEST_NEWS') }}
+      </h1>
 
-      <transition-group
+      <TransitionGroup
         tag="div"
         name="Announcements__posts"
       >
@@ -24,7 +26,7 @@
             class="Announcements__line-separator mt-6"
           />
         </div>
-      </transition-group>
+      </TransitionGroup>
     </main>
 
     <div class="Announcements--gradient-bottom sticky pin-b h-12" />

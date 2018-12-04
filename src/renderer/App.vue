@@ -38,24 +38,24 @@
             v-if="hasAnyProfile"
             class="hidden lg:flex"
           />
-          <router-view class="flex-1 overflow-y-auto" />
+          <RouterView class="flex-1 overflow-y-auto" />
         </div>
 
         <AppFooter />
       </section>
 
-      <portal-target
+      <PortalTarget
         name="modal"
         multiple
         @change="onPortalChange"
       />
 
-      <portal-target
+      <PortalTarget
         name="loading"
         @change="onPortalChange"
       />
 
-      <portal-target
+      <PortalTarget
         name="qr-scan"
         @change="onPortalChange"
       />

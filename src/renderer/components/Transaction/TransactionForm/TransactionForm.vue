@@ -1,5 +1,5 @@
 <template>
-  <component
+  <Component
     :is="activeComponent"
     v-bind="$attrs"
     @next="emitBuilt"

@@ -1,13 +1,14 @@
 <template>
   <div class="WalletNew relative bg-theme-feature rounded-lg m-r-4">
     <main class="flex flex-row h-full">
-
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="WalletNew__instructions flex-grow background-image w-3/5"
       >
         <div class="instructions-text">
-          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+          <h3 class="mb-2 text-theme-page-instructions-text">
+            {{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
+          </h3>
 
           <p v-if="step === 1">
             {{ $t('PAGES.WALLET_NEW.STEP1.INSTRUCTIONS.TEXT_BEFORE_BUTTON') }}
@@ -32,7 +33,6 @@
         <MenuStep
           :step="step"
         >
-
           <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
@@ -44,7 +44,9 @@
               slot-scope="{ title }"
               class="flex flex-row justify-between items-center"
             >
-              <div class="">{{ title }}</div>
+              <div class="">
+                {{ title }}
+              </div>
 
               <!-- Hide it when the step is collapse -->
               <ButtonReload
@@ -55,7 +57,7 @@
               />
             </div>
 
-            <transition-group
+            <TransitionGroup
               class="list-reset"
               name="WalletNew__wallets"
               tag="ul"
@@ -75,12 +77,12 @@
                   class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 cursor-pointer flex-no-shrink"
                   @click="selectWallet(address, passphrase)"
                 >
-
-                  <span class="font-semibold text-sm">{{ address }}</span>
+                  <span class="font-semibold text-sm">
+                    {{ address }}
+                  </span>
                 </a>
               </li>
-            </transition-group>
-
+            </TransitionGroup>
           </MenuStepItem>
 
           <MenuStepItem
@@ -91,13 +93,14 @@
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
-
             <div
               slot="header"
               slot-scope="{ title }"
               class="flex flex-row justify-between items-center"
             >
-              <div class="">{{ title }}</div>
+              <div class="">
+                {{ title }}
+              </div>
 
               <!-- Hide it when the step is collapse -->
               <ButtonClipboard
@@ -108,7 +111,6 @@
             </div>
 
             <PassphraseWords :passphrase-words="passphraseWords" />
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -119,7 +121,6 @@
             @back="moveTo(2)"
             @next="moveTo(4)"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
               <InputSwitch
                 v-model="ensureEntirePassphrase"
@@ -135,7 +136,6 @@
                 @verified="onVerification"
               />
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -146,9 +146,7 @@
             @back="moveTo(3)"
             @next="moveTo(5)"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputPassword
                 ref="password"
                 v-model="walletPassword"
@@ -174,12 +172,12 @@
               />
 
               <span class="text-orange-dark">
-                <span class="font-bold">{{ $t('COMMON.WARNING') }}:</span>
+                <span class="font-bold">
+                  {{ $t('COMMON.WARNING') }}:
+                </span>
                 <span>{{ $t('PAGES.WALLET_IMPORT.STEP2.PASSWORD_WARNING') }}</span>
               </span>
-
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -190,9 +188,7 @@
             @back="moveTo(4)"
             @next="create"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP5.NAME')"
@@ -229,9 +225,7 @@
                 </div>
               </InputField>
             </div>
-
           </MenuStepItem>
-
         </MenuStep>
       </div>
 

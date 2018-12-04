@@ -9,8 +9,12 @@
         :size="75"
       />
       <div class="flex flex-col justify-center ml-4 w-80 font-semibold">
-        <span class="text-theme-feature-item-text text-sm mb-1">{{ $t('SIGN_VERIFY.CONFIRMATION') }}</span>
-        <span class="text-white text-lg">{{ isVerified ? $t('SIGN_VERIFY.VERIFIED') : $t('SIGN_VERIFY.NOT_VERIFIED') }}</span>
+        <span class="text-theme-feature-item-text text-sm mb-1">
+          {{ $t('SIGN_VERIFY.CONFIRMATION') }}
+        </span>
+        <span class="text-white text-lg">
+          {{ isVerified ? $t('SIGN_VERIFY.VERIFIED') : $t('SIGN_VERIFY.NOT_VERIFIED') }}
+        </span>
       </div>
     </div>
   </div>

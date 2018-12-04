@@ -92,15 +92,15 @@
         :visible="showLedgerLoader"
       />
 
-      <portal
+      <Portal
         v-if="!isPassphraseStep"
         to="transaction-footer"
       >
         <footer class="ModalWindow__container__footer--warning flex flex-row">
-
-          <div class="flex w-80">{{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}</div>
+          <div class="flex w-80">
+            {{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}
+          </div>
           <div class="flex flex-row justify-around ml-8">
-
             <ButtonReload
               :is-refreshing="isGenerating"
               :title="$t('WALLET_SECOND_SIGNATURE.NEW')"
@@ -114,9 +114,8 @@
               class="flex py-2 px-4 rounded bg-theme-modal-footer-button text-theme-modal-footer-button-text"
             />
           </div>
-
         </footer>
-      </portal>
+      </Portal>
     </template>
     <template v-else>
       {{ $t('WALLET_SECOND_SIGNATURE.ALREADY_REGISTERED') }}

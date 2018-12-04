@@ -7,7 +7,9 @@
   >
     <span>
       <slot>
-        <span v-if="prefix.length">{{ prefix }}</span>
+        <span v-if="prefix.length">
+          {{ prefix }}
+        </span>
         <span>{{ value || placeholder }}</span>
       </slot>
     </span>
