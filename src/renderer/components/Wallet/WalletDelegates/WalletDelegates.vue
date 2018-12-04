@@ -104,7 +104,7 @@ export default {
     totalCount: 0,
     queryParams: {
       page: 1,
-      limit: 1,
+      limit: 51,
       sort: {
         field: 'rank',
         type: 'asc'
