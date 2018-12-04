@@ -32,6 +32,7 @@
       <InputSwitch
         :text="$t('TRANSACTION.SEND_ALL')"
         :is-active="isSendAllActive"
+        :is-disabled="!canSendAll()"
         @change="onSendAll"
       />
     </div>
@@ -226,8 +227,12 @@ export default {
       this.ensureAvailableAmount()
     },
 
+    canSendAll () {
+      return this.maximumAvailableAmount > 0
+    },
+
     ensureAvailableAmount () {
-      if (this.isSendAllActive) {
+      if (this.isSendAllActive && this.canSendAll()) {
         this.$set(this.form, 'amount', this.maximumAvailableAmount)
       }
     },
