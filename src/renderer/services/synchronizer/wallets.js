@@ -46,7 +46,10 @@ class Action {
     const profile = this.$scope.session_profile
 
     if (profile) {
-      const allWallets = this.$getters['wallet/byProfileId'](profile.id)
+      const allWallets = [
+        ...this.$getters['wallet/byProfileId'](profile.id),
+        ...this.$getters['wallet/contactsByProfileId'](profile.id)
+      ]
 
       // Retrieve the data of wallets that have not been checked yet
       const notChecked = difference(allWallets, this.checked)
