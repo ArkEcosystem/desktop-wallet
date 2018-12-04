@@ -238,8 +238,10 @@ export default {
     },
 
     onSortChange ({ columnIndex, sortType }) {
-      const columnName = this.columns[columnIndex].field
-      this.$emit('on-sort-change', { columnName, sortType })
+      if (this.columns[columnIndex]) {
+        const columnName = this.columns[columnIndex].field
+        this.$emit('on-sort-change', { columnName, sortType })
+      }
     },
 
     onRowClick ({ row }) {
