@@ -10,16 +10,14 @@ export default {
       }
 
       const address = params.address
-      let wallet = this.$store.getters['wallet/byAddress'](address)
-
-      if (this.$store.getters['ledger/isConnected'] && !wallet) {
+      if (this.$store.getters['ledger/isConnected']) {
         const ledgerWallet = this.$store.getters['ledger/wallet'](address)
         if (ledgerWallet) {
-          wallet = ledgerWallet
+          return ledgerWallet
         }
       }
 
-      return wallet
+      return this.$store.getters['wallet/byAddress'](address)
     }
   },
 
