@@ -3,6 +3,7 @@ import { Action } from '@/services/synchronizer/wallets'
 describe('Services > Synchronizer > Wallets', () => {
   let action
   let wallets
+  let contacts
   let walletUpdate
   let transactionDeleteBulk
 
@@ -20,7 +21,8 @@ describe('Services > Synchronizer > Wallets', () => {
       },
       $store: {
         getters: {
-          'wallet/byProfileId': jest.fn()
+          'wallet/byProfileId': jest.fn(),
+          'wallet/contactsByProfileId': jest.fn()
         },
         dispatch: (action, data) => {
           if (action === 'wallet/update') {
@@ -40,6 +42,10 @@ describe('Services > Synchronizer > Wallets', () => {
       { address: 'A3', transactions: {} },
       { address: 'A4', transactions: {} }
     ]
+    contacts = [
+      { address: 'Acon1', transactions: {} },
+      { address: 'Acon2', transactions: {} }
+    ]
   })
 
   describe('run', () => {
@@ -55,6 +61,7 @@ describe('Services > Synchronizer > Wallets', () => {
       it('should do nothing', async () => {
         await action.run()
         expect(action.$getters['wallet/byProfileId']).not.toHaveBeenCalled()
+        expect(action.$getters['wallet/contactsByProfileId']).not.toHaveBeenCalled()
       })
     })
 
@@ -66,6 +73,7 @@ describe('Services > Synchronizer > Wallets', () => {
       describe('when the the profile does not have wallets', () => {
         beforeEach(() => {
           action.$getters['wallet/byProfileId'].mockReturnValue([])
+          action.$getters['wallet/contactsByProfileId'].mockReturnValue([])
         })
 
         it('should not try to refresh them', async () => {
@@ -77,12 +85,16 @@ describe('Services > Synchronizer > Wallets', () => {
       describe('when the the profile has wallets', () => {
         beforeEach(() => {
           action.$getters['wallet/byProfileId'].mockReturnValue(wallets)
+          action.$getters['wallet/contactsByProfileId'].mockReturnValue(contacts)
         })
 
         describe('when none of them have been checked', () => {
           it('should refresh all', async () => {
             await action.run()
-            expect(action.refreshWallets).toHaveBeenCalledWith(wallets)
+            expect(action.refreshWallets).toHaveBeenCalledWith([
+              ...wallets,
+              ...contacts
+            ])
           })
         })
 
@@ -90,7 +102,8 @@ describe('Services > Synchronizer > Wallets', () => {
           beforeEach(() => {
             action.checked = [
               wallets[0],
-              wallets[2]
+              wallets[2],
+              contacts[0]
             ]
           })
 
@@ -98,7 +111,8 @@ describe('Services > Synchronizer > Wallets', () => {
             await action.run()
             expect(action.refreshWallets).toHaveBeenCalledWith([
               wallets[1],
-              wallets[3]
+              wallets[3],
+              contacts[1]
             ])
           })
         })
