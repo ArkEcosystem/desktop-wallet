@@ -27,6 +27,8 @@ describe('Services > Synchronizer > Wallets', () => {
             return walletUpdate(action, data)
           } else if (action === 'transaction/deleteBulk') {
             return transactionDeleteBulk(action, data)
+          } else if (action === 'transaction/clearExpired') {
+            return []
           }
         }
       }
