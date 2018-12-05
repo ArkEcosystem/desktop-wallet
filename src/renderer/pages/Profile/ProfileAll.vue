@@ -97,7 +97,8 @@ export default {
       return 'pages/new-profile-avatar.svg'
     },
     /**
-     * Returns the sum of balances of all profile of each network
+     * Returns the sum of balances of all profile of each network and the Ledger
+     * wallets
      * @return {Object}
      */
     aggregatedBalances () {
@@ -108,6 +109,15 @@ export default {
           [profile.networkId]: (all[profile.networkId] || []).concat(wallets)
         }
       }, {})
+
+      // Add the Ledger wallets of the current network only
+      if (!walletsByNetwork[this.session_network.id]) {
+        walletsByNetwork[this.session_network.id] = []
+      }
+      walletsByNetwork[this.session_network.id] = [
+        ...walletsByNetwork[this.session_network.id],
+        ...this.$store.getters['ledger/wallets']
+      ]
 
       return mapValues(walletsByNetwork, wallets => {
         return uniqBy(wallets, 'address').reduce((total, wallet) => total + wallet.balance, 0)
@@ -158,7 +168,7 @@ export default {
     },
 
     profileBalance (profile) {
-      const balance = this.$store.getters['profile/balance'](profile.id)
+      const balance = this.$store.getters['profile/balanceWithLedger'](profile.id)
       const network = this.$store.getters['network/byId'](profile.networkId)
       const amount = this.currency_subToUnit(balance, network)
       return this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })

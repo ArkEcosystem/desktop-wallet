@@ -166,7 +166,7 @@ export default {
       return this.session_network.market.enabled
     },
     totalBalance () {
-      return this.$store.getters['profile/balance'](this.session_profile.id)
+      return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
     price () {
       return this.$store.getters['market/lastPrice']
