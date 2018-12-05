@@ -41,6 +41,10 @@ export default class WalletService {
     return crypto.getAddress(publicKey, pubKeyHash)
   }
 
+  static getPublicKeyFromPassphrase (passphrase) {
+    return crypto.getKeys(passphrase).publicKey
+  }
+
   /**
    * Check if a specific address contain data in the NEO Blockchain
    * @param {String} address
