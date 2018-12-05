@@ -90,7 +90,9 @@ export default {
     schema: {
       name: {
         doesNotExists (value) {
-          return value === this.wallet.name || !this.$store.getters['wallet/byName'](value)
+          return value === '' ||
+            value === this.wallet.name ||
+            !this.$store.getters['wallet/byName'](value)
         }
       }
     }
