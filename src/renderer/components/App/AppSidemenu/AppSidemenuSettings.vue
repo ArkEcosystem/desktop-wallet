@@ -154,6 +154,9 @@ export default {
       },
       set (currency) {
         this.$store.dispatch('session/setCurrency', currency)
+        var profile = clone(this.session_profile)
+        profile.currency = currency
+        this.$store.dispatch('profile/update', profile)
       }
     },
     sessionTheme: {

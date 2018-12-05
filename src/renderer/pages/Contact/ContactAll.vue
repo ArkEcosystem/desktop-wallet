@@ -3,7 +3,7 @@
     <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
 
     <div class="ContactAll__grid mt-10 justify-center">
-      <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r">
+      <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
         <div class="flex flex-row items-center">
           <router-link :to="{ name: 'contact-new' }">
             <WalletIdenticonPlaceholder
@@ -25,7 +25,7 @@
       <div
         v-for="contact in contacts"
         :key="contact.id"
-        class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
+        class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
       >
         <div class="flex flex-row items-center">
           <router-link

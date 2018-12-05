@@ -85,7 +85,7 @@
           <div
             v-for="wallet in selectableWallets"
             :key="wallet.id"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
+            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
           >
             <div class="flex flex-row items-center">
               <router-link
