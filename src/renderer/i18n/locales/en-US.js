@@ -620,7 +620,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
-      SAVE_OFFLINE: 'Failed to save your transaction file'
+      SAVE_OFFLINE: 'Failed to save your transaction file',
+      EXPIRED: 'Transaction expired before it was processed: {transactionId}'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
