@@ -226,7 +226,15 @@ export default {
     },
 
     formatRow (row) {
-      return row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
+      const classes = [
+        row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
+      ]
+
+      if (row.expired) {
+        classes.push('expired')
+      }
+
+      return classes.join(' ')
     },
 
     isWellConfirmed (confirmations) {
@@ -259,5 +267,8 @@ export default {
 }
 .TransactionTable tr.unconfirmed .Transaction__confirmations {
   @apply text-theme-page-text bg-theme-page-instructions-background;
+}
+.TransactionTable tr.expired {
+  @apply line-through;
 }
 </style>

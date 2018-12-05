@@ -1,5 +1,6 @@
 import { difference, last, sortBy } from 'lodash'
 import config from '@config'
+import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
 
 class Action {
@@ -31,6 +32,10 @@ class Action {
 
   get $success () {
     return this.$scope.$success
+  }
+
+  get $info () {
+    return this.$scope.$info
   }
 
   get $t () {
@@ -77,6 +82,12 @@ class Action {
         await this.refreshWallets(notChecked)
         this.checked = this.checked.concat(notChecked)
       }
+    }
+
+    const expiredTransactions = await this.$dispatch('transaction/clearExpired')
+    for (const transactionId of expiredTransactions) {
+      eventBus.emit(`transaction:${transactionId}:expired`)
+      this.$info(this.$t('TRANSACTION.ERROR.EXPIRED', { transactionId: truncateMiddle(transactionId) }))
     }
   }
 
