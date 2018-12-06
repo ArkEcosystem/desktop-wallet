@@ -1,13 +1,14 @@
 <template>
   <div class="NetworkOverview relative bg-theme-feature rounded-lg m-r-4">
     <main class="flex flex-row h-full">
-
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
         class="NetworkOverview__instructions flex-grow background-image w-3/5"
       >
         <div class="instructions-text">
-          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER') }}</h3>
+          <h3 class="mb-2 text-theme-page-instructions-text">
+            {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER') }}
+          </h3>
           {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.TEXT') }}
         </div>
       </div>
@@ -36,8 +37,12 @@
         >
           <!-- TODO: image? -->
           <div class="flex flex-col">
-            <span class="text-theme-page-text font-bold text-lg">{{ network.title }}</span>
-            <span class="text-theme-page-text-light">{{ network.description }}</span>
+            <span class="text-theme-page-text font-bold text-lg">
+              {{ network.title }}
+            </span>
+            <span class="text-theme-page-text-light">
+              {{ network.description }}
+            </span>
           </div>
           <NetworkModal
             v-if="selected === network.id"

@@ -111,8 +111,12 @@
       />
 
       <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
-        <span v-if="!isWellConfirmed">{{ transaction.confirmations }}</span>
-        <span v-else>{{ $t('TRANSACTION.WELL_CONFIRMED') }}</span>
+        <span v-if="!isWellConfirmed">
+          {{ transaction.confirmations }}
+        </span>
+        <span v-else>
+          {{ $t('TRANSACTION.WELL_CONFIRMED') }}
+        </span>
 
         <span
           v-tooltip="{

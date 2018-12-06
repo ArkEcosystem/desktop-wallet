@@ -1,17 +1,16 @@
 <template>
-  <portal :to="portalTarget">
+  <Portal :to="portalTarget">
     <div
       class="modal-backdrop"
       @click="emitClose"
     >
-      <transition name="ModalWindow">
+      <Transition name="ModalWindow">
         <div class="flex items-center justify-center absolute pin">
           <div
             :class="containerClasses"
             class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
             @click.stop="void 0"
           >
-
             <div class="absolute pin-t pin-r mt-6 mr-6">
               <ButtonClose
                 v-if="allowClose"
@@ -22,7 +21,6 @@
             </div>
 
             <section class="px-16 py-16">
-
               <header
                 v-if="$slots.header || title"
               >
@@ -34,7 +32,6 @@
               <article class="content flex-1 mt-3">
                 <slot />
               </article>
-
             </section>
 
             <!-- eslint-disable vue/no-v-html -->
@@ -46,12 +43,11 @@
                 <p v-html="message" />
               </footer>
             </slot>
-
           </div>
         </div>
-      </transition>
+      </Transition>
     </div>
-  </portal>
+  </Portal>
 </template>
 
 <script>

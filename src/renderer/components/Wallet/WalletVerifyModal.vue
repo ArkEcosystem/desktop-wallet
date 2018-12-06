@@ -78,7 +78,9 @@
       slot="footer"
     >
       <div class="ModalWindow__container__footer--warning">
-        <div class="w-80">{{ $t('SIGN_VERIFY.FORMAT_FOOTER') }}</div>
+        <div class="w-80">
+          {{ $t('SIGN_VERIFY.FORMAT_FOOTER') }}
+        </div>
       </div>
     </template>
   </ModalWindow>

@@ -9,7 +9,9 @@
       :view-box="viewBox"
       class="mr-1"
     />
-    <span class="font-semibold">{{ label }}</span>
+    <span class="font-semibold">
+      {{ label }}
+    </span>
     <slot
       :toggle="toggle"
       :is-open="isOpen"

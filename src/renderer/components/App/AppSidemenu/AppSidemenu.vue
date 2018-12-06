@@ -4,10 +4,9 @@
     :class="isHorizontal ? 'h-18 flex-row' : 'w-22 mx-6 rounded-lg flex-col'"
     class="AppSidemenu justify-between relative"
   >
-
     <div :class="{'flex flex-row h-18' : isHorizontal}">
       <!-- ARK logo -->
-      <router-link
+      <RouterLink
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
         :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
@@ -17,7 +16,7 @@
           :class="isHorizontal ? 'h-12' : 'w-18'"
           src="@/assets/images/ark-logo.png"
         >
-      </router-link>
+      </RouterLink>
 
       <!-- Wallets -->
       <MenuNavigationItem
@@ -114,7 +113,7 @@
         :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
         class="cursor-pointer flex items-center"
       >
-        <router-link
+        <RouterLink
           :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
           :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
           :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
@@ -123,7 +122,6 @@
         />
       </div>
     </div>
-
   </MenuNavigation>
 </template>
 

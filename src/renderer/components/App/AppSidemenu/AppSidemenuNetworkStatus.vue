@@ -4,7 +4,6 @@
     :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
     class="absolute z-20"
   >
-
     <MenuOptions
       :is-horizontal="isHorizontal"
       class="AppSidemenuNetworkStatus__peer"
@@ -37,27 +36,41 @@
       </div>
       <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
         <div class="AppSidemenuNetworkStatus__status__height inline-block pr-6 border-r">
-          <div class="text-xs mb-2">{{ $t('PEER.HEIGHT') }}</div>
-          <div class="text-md text-white">{{ peer ? peer.height : '-' }}</div>
+          <div class="text-xs mb-2">
+            {{ $t('PEER.HEIGHT') }}
+          </div>
+          <div class="text-md text-white">
+            {{ peer ? peer.height : '-' }}
+          </div>
         </div>
         <div class="AppSidemenuNetworkStatus__status__last-checked inline-block ml-6 pr-6 border-r">
-          <div class="text-xs mb-2">{{ $t('PEER.LAST_CHECKED') }}</div>
-          <div class="text-md text-white">{{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}</div>
+          <div class="text-xs mb-2">
+            {{ $t('PEER.LAST_CHECKED') }}
+          </div>
+          <div class="text-md text-white">
+            {{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}
+          </div>
         </div>
         <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
-          <div class="text-xs mb-2">{{ $t('PEER.DELAY') }}</div>
+          <div class="text-xs mb-2">
+            {{ $t('PEER.DELAY') }}
+          </div>
           <div
             v-if="peer.delay"
             :class="peer && peer.delay < 500 ? 'text-green' : 'text-red'"
           >
-            <span class="text-md">{{ peer.delay }} ms</span>
+            <span class="text-md">
+              {{ peer.delay }} ms
+            </span>
             <div
               :class="peer && peer.delay < 500 ? 'bg-green' : 'bg-red'"
               class="inline-block h-2 w-2 ml-1 rounded-full"
             />
           </div>
           <div v-else>
-            <span class="text-white">-</span>
+            <span class="text-white">
+              -
+            </span>
           </div>
         </div>
       </div>
