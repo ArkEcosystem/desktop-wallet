@@ -119,7 +119,8 @@ describe('TransactionModal', () => {
         confirmations: 0,
         timestamp,
         sender: 'public key of Asender',
-        recipient: transaction.recipientId
+        recipient: transaction.recipientId,
+        raw: transaction
       }
       expect($store.dispatch).toHaveBeenCalledWith('transaction/create', expected)
     })
