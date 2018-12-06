@@ -41,6 +41,11 @@ export default class WalletService {
     return crypto.getAddress(publicKey, pubKeyHash)
   }
 
+  /**
+   * Generates the public key belonging to the given passphrase
+   * @param {String} passphrase
+   * @return {String}
+   */
   static getPublicKeyFromPassphrase (passphrase) {
     return crypto.getKeys(passphrase).publicKey
   }
