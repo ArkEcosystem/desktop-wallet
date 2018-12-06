@@ -1,13 +1,14 @@
 <template>
   <div class="ProfileNew relative bg-theme-feature rounded-lg">
     <main class="flex flex-row h-full">
-
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="ProfileNew__instructions w-2/3 background-image"
       >
         <div class="instructions-text">
-          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+          <h3 class="mb-2 text-theme-page-instructions-text">
+            {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
+          </h3>
           <p>
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>
@@ -18,17 +19,14 @@
         <MenuStep
           v-model="step"
         >
-
           <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
             title="Profile"
             @next="moveTo(2)"
           >
-
             <!-- NOTE wraps the content, but doesn't modify the stepper -->
             <div class="flex flex-col">
-
               <InputText
                 v-model="$v.schema.name.$model"
                 :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
@@ -67,7 +65,9 @@
               </div>
 
               <div>
-                <h5 class="mb-2">{{ $t('COMMON.AVATAR') }}</h5>
+                <h5 class="mb-2">
+                  {{ $t('COMMON.AVATAR') }}
+                </h5>
 
                 <SelectionAvatar
                   :max-visible-items="2"
@@ -75,9 +75,7 @@
                   @select="selectAvatar"
                 />
               </div>
-
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -89,7 +87,6 @@
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
-
             <div class="flex flex-row h-full w-full py-2">
               <!-- Show the two default networks, and a button to load more -->
               <div
@@ -114,7 +111,9 @@
                       :src="`${assets_loadImage(network.svg)}`"
                     >
                   </div>
-                  <span class="text-theme-page-text font-semibold">{{ network.textContent }}</span>
+                  <span class="text-theme-page-text font-semibold">
+                    {{ network.textContent }}
+                  </span>
                 </div>
               </div>
               <div
@@ -137,7 +136,6 @@
                 </ButtonModal>
               </div>
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -149,9 +147,10 @@
             @back="moveTo(2)"
             @next="create"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-              <h5 class="mb-2">{{ $t('COMMON.SELECT_THEME') }}</h5>
+              <h5 class="mb-2">
+                {{ $t('COMMON.SELECT_THEME') }}
+              </h5>
 
               <SelectionTheme
                 :max-visible-items="2"
@@ -160,7 +159,9 @@
                 @select="selectTheme"
               />
 
-              <h5 class="mb-2">{{ $t('COMMON.SELECT_BACKGROUND') }}</h5>
+              <h5 class="mb-2">
+                {{ $t('COMMON.SELECT_BACKGROUND') }}
+              </h5>
 
               <SelectionBackground
                 :max-visible-items="2"
@@ -168,9 +169,7 @@
                 @select="selectBackground"
               />
             </div>
-
           </MenuStepItem>
-
         </MenuStep>
       </div>
     </main>

@@ -73,11 +73,11 @@
         :visible="showLedgerLoader"
       />
 
-      <portal to="transaction-footer">
+      <Portal to="transaction-footer">
         <footer class="ModalWindow__container__footer--warning">
           {{ $t('TRANSACTION.FOOTER_TEXT.DELEGATE_REGISTRATION') }}
         </footer>
-      </portal>
+      </Portal>
     </template>
     <template v-else>
       {{ $t('WALLET_DELEGATES.ALREADY_REGISTERED') }}

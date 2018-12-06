@@ -20,23 +20,23 @@
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text">
-        <router-link
+        <RouterLink
           :to="{ name: 'wallet-new' }"
           class="Dashboard__wallets__create hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tl-lg"
         >
           <span>
             {{ $t('PAGES.DASHBOARD.CREATE_WALLET') }}
           </span>
-        </router-link>
+        </RouterLink>
 
-        <router-link
+        <RouterLink
           :to="{ name: 'wallet-import' }"
           class="Dashboard__wallets__import hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tr-lg"
         >
           <span>
             {{ $t('PAGES.DASHBOARD.IMPORT_WALLET') }}
           </span>
-        </router-link>
+        </RouterLink>
       </div>
 
       <WalletSidebar

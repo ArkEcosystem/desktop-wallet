@@ -33,7 +33,7 @@
         </span>
       </SearchFilterItem>
 
-      <component
+      <Component
         :is="currentFilter"
         v-else
       />

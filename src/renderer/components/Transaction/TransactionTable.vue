@@ -18,11 +18,13 @@
               classes: 'text-xs',
               trigger: 'hover'
             }"
-            class="whitespace-no-wrap"
+            class="flex items-center whitespace-no-wrap"
             href="#"
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
-            {{ data.formattedRow['id'] }}
+            <span class="mr-1">
+              {{ data.formattedRow['id'] }}
+            </span>
 
             <SvgIcon
               name="open-external"
@@ -112,7 +114,7 @@
       </template>
     </TableWrapper>
 
-    <portal
+    <Portal
       v-if="selected"
       to="modal"
     >
@@ -120,7 +122,7 @@
         :transaction="selected"
         @close="onCloseModal"
       />
-    </portal>
+    </Portal>
   </div>
 </template>
 
@@ -246,8 +248,10 @@ export default {
     },
 
     onSortChange ({ columnIndex, sortType }) {
-      const columnName = this.columns[columnIndex].field
-      this.$emit('on-sort-change', { columnName, sortType })
+      if (this.columns[columnIndex]) {
+        const columnName = this.columns[columnIndex].field
+        this.$emit('on-sort-change', { columnName, sortType })
+      }
     },
 
     onRowClick ({ row }) {

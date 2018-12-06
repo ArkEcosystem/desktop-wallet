@@ -82,7 +82,7 @@
     <div
       class="bg-theme-settings mt-2 rounded"
     >
-      <router-link
+      <RouterLink
         :title="$t('APP_SIDEMENU.NETWORK_OVERVIEW')"
         :to="{ name: 'networks' }"
         :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
@@ -95,7 +95,7 @@
           class="mr-4"
         />
         {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
-      </router-link>
+      </RouterLink>
     </div>
   </div>
 </template>

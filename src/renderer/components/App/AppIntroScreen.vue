@@ -22,10 +22,18 @@
         :key="1"
         class="w-3/4 animated fadeIn"
       >
-        <div class="mt-3">{{ $t('INTRODUCTION.POWER.FINANCE') }}</div>
-        <div class="mt-2">{{ $t('INTRODUCTION.POWER.BANKS') }}</div>
-        <div class="mt-2">{{ $t('INTRODUCTION.POWER.CRYPTO') }}</div>
-        <div class="mt-2">{{ $t('INTRODUCTION.POWER.RESPONSIBILITY') }}</div>
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.POWER.FINANCE') }}
+        </div>
+        <div class="mt-2">
+          {{ $t('INTRODUCTION.POWER.BANKS') }}
+        </div>
+        <div class="mt-2">
+          {{ $t('INTRODUCTION.POWER.CRYPTO') }}
+        </div>
+        <div class="mt-2">
+          {{ $t('INTRODUCTION.POWER.RESPONSIBILITY') }}
+        </div>
       </div>
 
       <div
@@ -33,9 +41,13 @@
         :key="2"
         class="w-3/4 animated fadeIn"
       >
-        <div class="mt-3">{{ $t('INTRODUCTION.DUTY.INTRO') }}</div>
-        <div class="mt-3">{{ $t('INTRODUCTION.DUTY.OWNER') }}</div>
-        <i18n
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.DUTY.INTRO') }}
+        </div>
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.DUTY.OWNER') }}
+        </div>
+        <I18n
           tag="div"
           class="mt-2"
           path="INTRODUCTION.DUTY.WARNING.INFO"
@@ -46,8 +58,10 @@
           >
             {{ $t('INTRODUCTION.DUTY.WARNING.WARN') }}
           </div>
-        </i18n>
-        <div class="font-bold mt-3">{{ $t('INTRODUCTION.DUTY.SECURITY') }}</div>
+        </I18n>
+        <div class="font-bold mt-3">
+          {{ $t('INTRODUCTION.DUTY.SECURITY') }}
+        </div>
       </div>
 
       <div
@@ -55,9 +69,15 @@
         :key="3"
         class="w-3/4 animated fadeIn"
       >
-        <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}</div>
-        <div class="mt-3">{{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}</div>
-        <div class="mt-2">{{ $t('INTRODUCTION.RESPONSIBILITY.PASSPHRASE') }}</div>
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}
+        </div>
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}
+        </div>
+        <div class="mt-2">
+          {{ $t('INTRODUCTION.RESPONSIBILITY.PASSPHRASE') }}
+        </div>
       </div>
 
       <div
@@ -65,8 +85,12 @@
         :key="4"
         class="w-3/4 animated fadeIn"
       >
-        <div class="mt-3">{{ $t('INTRODUCTION.TURN.WALLET') }}</div>
-        <div class="mt-2">{{ $t('INTRODUCTION.TURN.HARDWARE_WALLET') }}</div>
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.TURN.WALLET') }}
+        </div>
+        <div class="mt-2">
+          {{ $t('INTRODUCTION.TURN.HARDWARE_WALLET') }}
+        </div>
       </div>
 
       <div class="flex items-center justify-start">

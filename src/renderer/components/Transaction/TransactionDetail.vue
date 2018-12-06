@@ -6,8 +6,12 @@
         :size="75"
       />
       <div class="flex flex-col justify-center ml-2">
-        <span class="text-theme-feature-item-text">{{ $t('TRANSACTION_DETAIL.SEND_AMOUNT', { token: currency }) }}</span>
-        <span class="text-white font-bold">{{ amount }}</span>
+        <span class="text-theme-feature-item-text">
+          {{ $t('TRANSACTION_DETAIL.SEND_AMOUNT', { token: currency }) }}
+        </span>
+        <span class="text-white font-bold">
+          {{ amount }}
+        </span>
       </div>
     </div>
     <div
