@@ -18,11 +18,13 @@
               classes: 'text-xs',
               trigger: 'hover'
             }"
-            class="whitespace-no-wrap"
+            class="flex items-center whitespace-no-wrap"
             href="#"
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
-            {{ data.formattedRow['id'] }}
+            <span class="mr-1">
+              {{ data.formattedRow['id'] }}
+            </span>
 
             <SvgIcon
               name="open-external"
