@@ -28,7 +28,7 @@
         :class="{
           'blur': hasBlurFilter
         }"
-        class="App__main flex flex-col items-center px-4 lg:py-6 w-screen h-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-4 pb-6 lg:pt-6 w-screen h-screen overflow-hidden"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
