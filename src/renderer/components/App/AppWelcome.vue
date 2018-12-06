@@ -35,10 +35,10 @@
       >
         <div class="flex justify-center items-center mb-8">
           <div class="AppWelcome__Logo">
-            <img :src="assets_loadImage('ark-logo.png')">
+            <img :src="assets_loadImage('phantom-logo.svg')">
           </div>
         </div>
-        <i18n
+        <I18n
           path="INTRODUCTION.WELCOME.TITLE"
           tag="span"
           class="text-5xl"
@@ -68,7 +68,7 @@
       >
         <div class="absolute pin-t pin-l">
           <div class="AppWelcome__Logo__corner">
-            <img :src="assets_loadImage('ark-logo.png')">
+            <img :src="assets_loadImage('phantom-logo.svg')">
           </div>
         </div>
 

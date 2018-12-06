@@ -1,5 +1,5 @@
-import ApiClient from '@arkecosystem/client'
-import { transactionBuilder } from '@arkecosystem/crypto'
+import ApiClient from '@phantomchain/client'
+import { transactionBuilder } from '@phantomchain/crypto'
 import axios from 'axios'
 import { castArray } from 'lodash'
 import dayjs from 'dayjs'
@@ -383,7 +383,7 @@ export default class ClientService {
    * Build a vote transaction
    * @param {Object} data
    * @param {Array} data.votes
-   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.fee - dynamic fee, as phantomtoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
@@ -415,7 +415,7 @@ export default class ClientService {
    * Build a delegate registration transaction
    * @param {Object} data
    * @param {String} data.username
-   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.fee - dynamic fee, as phantomtoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif
@@ -446,8 +446,8 @@ export default class ClientService {
   /**
    * Build a transfer transaction.
    * @param {Object} data
-   * @param {Number} data.amount - amount to send, as arktoshi
-   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.amount - amount to send, as phantomtoshi
+   * @param {Number} data.fee - dynamic fee, as phantomtoshi
    * @param {String} data.recipientId
    * @param {String} data.vendorField
    * @param {String} data.passphrase
@@ -483,7 +483,7 @@ export default class ClientService {
   /**
    * Build a second signature registration transaction.
    * @param {Object} data
-   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.fee - dynamic fee, as phantomtoshi
    * @param {String} data.passphrase
    * @param {String} data.secondPassphrase
    * @param {String} data.wif

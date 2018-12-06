@@ -1,6 +1,5 @@
 exports.APP = {
-  website: 'https://ark.io',
-  transactionExpiryMinutes: 45
+  website: 'https://phantom.org'
 }
 
 exports.NETWORKS = [
@@ -9,7 +8,7 @@ exports.NETWORKS = [
 ]
 
 exports.ANNOUNCEMENTS = {
-  rssUrl: 'https://blog.ark.io/feed'
+  rssUrl: 'https://blog.phantom.org/feed'
 }
 
 exports.I18N = {

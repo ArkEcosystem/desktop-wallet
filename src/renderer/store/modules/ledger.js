@@ -1,7 +1,7 @@
 import { keyBy } from 'lodash'
 import ledgerService from '@/services/ledger-service'
 import eventBus from '@/plugins/event-bus'
-import { crypto } from '@arkecosystem/crypto'
+import { crypto } from '@phantomchain/crypto'
 import logger from 'electron-log'
 
 export default {

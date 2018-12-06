@@ -25,7 +25,7 @@ describe('the announcementStore mutations', () => {
     expect(firstAnnouncementFromFeed.isRead).toEqual(undefined)
   })
 
-  it('marks an announcement as read', () => {
+  it('mphantoms an announcement as read', () => {
     // create state
     let state = {
       announcements: []
@@ -33,12 +33,12 @@ describe('the announcementStore mutations', () => {
 
     announcementStore.mutations.SAVE_ANNOUNCEMENTS(state, [{
       guid: 'TESTGUID',
-      title: 'Testing the mark-as-read functionality'
+      title: 'Testing the mphantom-as-read functionality'
     }])
 
     expect(state.announcements[0].isRead).toBe(false)
 
-    announcementStore.mutations.MARK_ANNOUNCEMENT_AS_READ(state, state.announcements[0])
+    announcementStore.mutations.MPHANTOM_ANNOUNCEMENT_AS_READ(state, state.announcements[0])
 
     expect(state.announcements[0].isRead).toBe(true)
   })
@@ -53,26 +53,26 @@ describe('the announcementStore getters', () => {
           {
             guid: '1234ABCD',
             title: 'Ark Arrives At Moon',
-            summary: 'The value of ARK reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            summary: 'The value of PHANTOM reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           },
           {
             guid: '1FSAFEWA',
             title: 'Second News Article',
-            summary: 'The value of ARK reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            summary: 'The value of PHANTOM reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           },
           {
             guid: '3123321',
-            title: 'Moon arrives at ark',
-            summary: 'The value of ARK reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            title: 'Moon arrives at phantom',
+            summary: 'The value of PHANTOM reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           },
           {
             guid: 'LDKJASD',
             title: 'Fourth News Article',
-            summary: 'The value of ARK reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            summary: 'The value of PHANTOM reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           }
         ]
     }
@@ -91,26 +91,26 @@ describe('the announcementStore getters', () => {
           {
             guid: '1234ABCD',
             title: 'Ark Arrives At Moon',
-            summary: 'The value of ARK reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            summary: 'The value of PHANTOM reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           },
           {
             guid: '1FSAFEWA',
             title: 'Second News Article',
-            summary: 'The value of ARK reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            summary: 'The value of PHANTOM reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           },
           {
             guid: '3123321',
-            title: 'Moon arrives at ark',
-            summary: 'The value of ARK reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            title: 'Moon arrives at phantom',
+            summary: 'The value of PHANTOM reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           },
           {
             guid: 'LDKJASD',
             title: 'Fourth News Article',
-            summary: 'The value of ARK reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
+            summary: 'The value of PHANTOM reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
+            url: 'https://fakenews.com/phantom-lunar-trip'
           }
         ]
     }

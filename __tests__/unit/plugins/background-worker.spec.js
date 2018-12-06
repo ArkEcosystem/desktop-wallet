@@ -22,20 +22,20 @@ describe('Background Worker', () => {
     bip38Worker.send({
       passphrase: 'sample passphrase',
       password: 'testing',
-      wif: 170
+      wif: 187
     })
   })
 
   it('should decrypt a bip38 encrypted passphrase', (done) => {
     bip38Worker.on('message', message => {
       expect(message).toHaveProperty('decodedWif')
-      expect(message.decodedWif).toEqual('SHPmaLNivfNRW9yf5indKKKuUCabUvNQdvpkcLJEvnNB8Q45Ki4U')
+      expect(message.decodedWif).toEqual('UoFVJ5W1uGwm4xCiV1VorGwBhazgg2ymQSQy84BrGvBGv2QtWHxp')
       done()
     })
     bip38Worker.send({
       bip38key: '6PYRXLq9jrSmgsa9zxoTWWiCQsQt3urzCM4HPBwj1eR2WyH96qiRVggod7',
       password: 'testing',
-      wif: 170
+      wif: 187
     })
   })
 
@@ -48,7 +48,7 @@ describe('Background Worker', () => {
     })
     bip38Worker.send({
       passphrase: 'sample passphrase',
-      wif: 170
+      wif: 187
     })
   })
 
@@ -62,7 +62,7 @@ describe('Background Worker', () => {
     bip38Worker.send({
       bip38key: '6PYRXLq9jrSmgsa9zxoTWWiCQsQt3urzCM4HPBwj1eR2WyH96qiRVggod7',
       password: 'oops',
-      wif: 170
+      wif: 187
     })
   })
 })

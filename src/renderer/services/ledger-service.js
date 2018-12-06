@@ -1,5 +1,5 @@
 import LedgerTransport from '@ledgerhq/hw-transport-node-hid'
-import ArkLedger from '@arkecosystem/ledger-transport'
+import PhantomLedger from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
 import logger from 'electron-log'
 
@@ -36,7 +36,7 @@ class LedgerService {
         await this.disconnect()
       }
       this.transport = await LedgerTransport.create()
-      this.ledger = new ArkLedger(this.transport)
+      this.ledger = new PhantomLedger(this.transport)
 
       return this.isConnected()
     } catch (error) {

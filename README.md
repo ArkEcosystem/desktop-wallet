@@ -1,19 +1,19 @@
-# Ark Desktop Wallet
+# Phantom Desktop Wallet
 
-![Ark Desktop Wallet](./banner.png)
+![Phantom Desktop Wallet](./banner.png)
 
-## :confetti_ball: Initial release of the all new ARK Desktop Wallet v2 :confetti_ball:
+## :confetti_ball: Initial release of the all new PHANTOM Desktop Wallet v2 :confetti_ball:
 
-**Note: This is a public beta release. Although the features that are present are expected to be functional and working, it’s still a work in progress and can result in unexpected behaviour. If you find any issues, please open a [GitHub issue](https://github.com/ArkEcosystem/desktop-wallet/issues/new)**
+**Note: This is a public beta release. Although the features that are present are expected to be functional and working, it’s still a work in progress and can result in unexpected behaviour. If you find any issues, please open a [GitHub issue](https://github.com/PhantomChain/desktop-wallet/issues/new)**
 
 ------
 
-[![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/desktop-wallet)](https://circleci.com/gh/ArkEcosystem/desktop-wallet)
-[![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/releases)
+[![Build Status](https://badgen.now.sh/circleci/github/PhantomChain/desktop-wallet)](https://circleci.com/gh/PhantomChain/desktop-wallet)
+[![Latest Version](https://badgen.now.sh/github/release/PhantomChain/desktop-wallet.svg)](https://github.com/PhantomChain/desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
 ## Download
-[Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
+[Latest Release](https://github.com/PhantomChain/phantom-desktop/releases)
 
 ## Installing via Package Managers
 
@@ -114,7 +114,7 @@ yarn test:e2e:full
 
 ## Security
 
-If you discover a security vulnerability within this project, please send an e-mail to security@ark.io. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please send an e-mail to security@phantom.org. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -127,4 +127,4 @@ If you discover a security vulnerability within this project, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [ArkEcosystem](https://ark.io)
+[MIT](LICENSE) © [PhantomChain](https://phantom.org)

@@ -5,7 +5,7 @@ import { keys } from 'lodash'
 import cryptoCompare from '@/services/crypto-compare'
 
 describe('CryptoCompare', () => {
-  const token = 'ARK'
+  const token = 'PHANTOM'
   const currency = 'USD'
   const baseUrl = MARKET.source.baseUrl
 

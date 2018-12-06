@@ -26,7 +26,7 @@ describe('BaseModule', () => {
   })
 
   it('should update a item', () => {
-    item = modeler.deserialize({ id: 'test', name: 'ark' })
+    item = modeler.deserialize({ id: 'test', name: 'phantom' })
     module.mutations.UPDATE(module.state, item)
     expect(module.getters.byId(module.state)(item.id)).toBe(item)
   })

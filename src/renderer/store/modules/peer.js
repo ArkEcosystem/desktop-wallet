@@ -1,5 +1,5 @@
 import random from 'lodash/random'
-import apiClient from '@arkecosystem/client'
+import apiClient from '@phantomchain/client'
 import ClientService from '@/services/client'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
@@ -18,9 +18,9 @@ const getApiPort = async (peer) => {
   if (getVersion(peer) === 2 && peer.p2pPort) {
     try {
       const config = await apiClient.fetchPeerConfig(getBaseUrl(peer, true))
-      if (config && config.plugins && config.plugins['@arkecosystem/core-api']) {
-        if (config.plugins['@arkecosystem/core-api'].enabled) {
-          peer.port = config.plugins['@arkecosystem/core-api'].port
+      if (config && config.plugins && config.plugins['@phantomchain/core-api']) {
+        if (config.plugins['@phantomchain/core-api'].enabled) {
+          peer.port = config.plugins['@phantomchain/core-api'].port
         }
       }
     } catch (error) {
@@ -244,8 +244,8 @@ export default {
       }
 
       const networkLookup = {
-        'ark.mainnet': 'mainnet',
-        'ark.devnet': 'devnet'
+        'phantom.mainnet': 'mainnet',
+        'phantom.devnet': 'devnet'
       }
       let peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
       if (peers.length) {

@@ -1,5 +1,5 @@
 import bip39 from 'bip39'
-import { crypto, Message, validator } from '@arkecosystem/crypto'
+import { crypto, Message, validator } from '@phantomchain/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import axios from 'axios'
 

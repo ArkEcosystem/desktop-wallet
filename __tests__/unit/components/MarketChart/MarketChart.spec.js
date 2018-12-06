@@ -9,7 +9,8 @@ const mocks = {
   },
   $store: {
     getters: {
-      'session/currency': 'USD'
+      'session/currency': 'USD',
+      'session/network': { token: 'PHANTOM' }
     }
   }
 }

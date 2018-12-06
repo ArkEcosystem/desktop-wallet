@@ -2,7 +2,7 @@
 
 const bip38 = require('bip38')
 const wif = require('wif')
-const { crypto } = require('@arkecosystem/crypto')
+const { crypto } = require('@phantomchain/crypto')
 
 process.on('message', message => {
   if (message.passphrase) {

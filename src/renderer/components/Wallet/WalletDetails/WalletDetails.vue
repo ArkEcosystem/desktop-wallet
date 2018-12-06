@@ -29,7 +29,7 @@
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div class="flex flex-row">
-          <i18n
+          <I18n
             tag="span"
             :class="{
               'border-r border-theme-line-separator' : votedDelegate.rank

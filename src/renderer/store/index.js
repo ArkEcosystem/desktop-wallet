@@ -39,7 +39,7 @@ const vuexPersist = new VuexPersistence({
   // It is necessary to enable the strict mode to watch to mutations, such as `RESTORE_MUTATION`
   strictMode: true,
   asyncStorage: true,
-  key: 'ark-desktop',
+  key: 'phantom-desktop',
   storage: localforage,
   modules: pullAll(keys(modules), ignoreModules)
 })

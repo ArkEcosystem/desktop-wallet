@@ -12,19 +12,18 @@
   resolved "https://registry.yarnpkg.com/7zip/-/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
   integrity sha1-nK+xca+CMpSQNTtIFvAzR6oVCjA=
 
-"@arkecosystem/client@^0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.16.tgz#9011eb54cdeef8cfe95e1de7613239cfb43dcf4e"
-  integrity sha512-GndHBcNukhIze5+KAQOcmlPmgidOiIUvMOkJg9GRtjpTKnwd1kPCch0d0ZI+biQSMdTEG7yzlwx1OOfkTEjk9Q==
+"@phantomchain/client@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@phantomchain/client/-/client-0.1.13.tgz#aa44cf00b9cc7d0a2b31085ab52b937981df6434"
+  integrity sha512-aQGkpFiuGbVhwfMq51cPrOi36qnPdrU7k+q2E5GEwIvt1F+Rkl+yTKOoOMsUwAsv+uzM8KN+XuiT540KnNyPHA==
   dependencies:
     axios "^0.18.0"
     lodash.orderby "^4.6.0"
     lodash.shuffle "^4.2.0"
 
-"@arkecosystem/crypto@^0.2.5":
+"@phantomchain/crypto@^0.2.5":
   version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-0.2.5.tgz#694acdcb088c8334dbc923bb4498a7b75ef8715a"
-  integrity sha512-tZjssRp7dV051syJUaSm3cGxBh8CFSszY5S0uhnCBGKxF+9vm5769cpdE/d2I0vfApz3RdHIzht467VigQYpKQ==
+  resolved "https://registry.yarnpkg.com/@phantomchain/crypto/-/crypto-0.2.5.tgz#694acdcb088c8334dbc923bb4498a7b75ef8715a"
   dependencies:
     bignumber.js "^8.0.1"
     bip32 "^1.0.2"

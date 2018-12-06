@@ -168,7 +168,7 @@ describe('Mixins > Currency', () => {
     })
 
     describe('when not receiving a network', () => {
-      it('should use the session network to convert an amount from arktoshi to ARK', () => {
+      it('should use the session network to convert an amount from phantomtoshi to PHANTOM', () => {
         let amount = Math.pow(10, 9)
 
         expect(subToUnit(amount)).toEqual('10')

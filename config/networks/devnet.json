@@ -1,10 +1,10 @@
 {
-  "id": "ark.devnet",
-  "name": "ARK Devnet",
-  "title": "ARK Devnet",
-  "server": "https://dexplorer.ark.io:8443",
+  "id": "phantom.devnet",
+  "name": "XPH Devnet",
+  "title": "XPH Devnet",
+  "server": "http://localhost:4000",
   "description": "Devnet is an alternative blockchain used for testing.",
-  "imagePath": "networks/ark.devnet.svg",
+  "imagePath": "networks/phantom.devnet.svg",
   "apiVersion": 2,
   "slip44": "1",
   "market": {
@@ -15,13 +15,13 @@
     "activeDelegates": 51,
     "epoch": "2017-03-21T13:00:00.000Z"
   },
-  "nethash": "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
-  "explorer": "https://dexplorer.ark.io",
-  "token": "DARK",
-  "subunit": "darktoshi",
-  "symbol": "DѦ",
+  "nethash": "c1464efad94d7a3bd1d7f9ab6db0a1e1d042279a0c7c2a41a625928df7ceefec",
+  "explorer": "https://dexplorer.phantom.org",
+  "token": "DPHANTOM",
+  "subunit": "dphantomtoshi",
+  "symbol": "DẔ",
   "fractionDigits": 8,
-  "version": 30,
-  "wif": 170,
+  "version": 56,
+  "wif": 187,
   "knownWallets": {}
 }

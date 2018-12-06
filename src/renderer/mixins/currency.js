@@ -20,7 +20,7 @@ export default {
      * @param {String} [options.currencyDisplay = 'symbol']
      * @param {String} [options.locale = current locale]
      * @param {String} [options.maximumFractionDigits] - Maximum number of fraction digits
-     * @param {Boolean} [options.subunit = false] - To use the subunit (arktoshi) instead of the unit (ARK)
+     * @param {Boolean} [options.subunit = false] - To use the subunit (phantomtoshi) instead of the unit (ARK)
      */
     currency_format (value, options = {}) {
       if (!options.currency && !options.currencyFrom) {

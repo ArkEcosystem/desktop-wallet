@@ -1,4 +1,4 @@
-const schemaRegex = new RegExp(/^(?:ark:)([AaDd]{1}[0-9a-zA-Z]{33})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
+const schemaRegex = new RegExp(/^(?:phantom:)([AaDd]{1}[0-9a-zA-Z]{33})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
 
 export default class URIHandler {
   constructor (url) {
