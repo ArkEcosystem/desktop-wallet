@@ -1,13 +1,14 @@
 <template>
   <div class="WalletImport relative bg-theme-feature rounded-lg m-r-4">
     <main class="flex flex-row h-full">
-
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="WalletImport__instructions flex-grow background-image w-3/5"
       >
         <div class="instructions-text">
-          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+          <h3 class="mb-2 text-theme-page-instructions-text">
+            {{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`) }}
+          </h3>
 
           <p>
             {{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.TEXT`) }}
@@ -19,16 +20,13 @@
         <MenuStep
           :step="step"
         >
-
           <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
             :title="$t('PAGES.WALLET_IMPORT.STEP1.TITLE')"
             @next="!useOnlyAddress ? moveTo(2) : moveTo(3)"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputSwitch
                 :label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
                 :text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
@@ -63,9 +61,7 @@
                 :not-bip39-warning="true"
                 class="my-3"
               />
-
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -76,9 +72,7 @@
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputPassword
                 ref="password"
                 v-model="walletPassword"
@@ -104,12 +98,12 @@
               />
 
               <span class="text-orange-dark">
-                <span class="font-bold">{{ $t('COMMON.WARNING') }}:</span>
+                <span class="font-bold">
+                  {{ $t('COMMON.WARNING') }}:
+                </span>
                 <span>{{ $t('PAGES.WALLET_IMPORT.STEP2.PASSWORD_WARNING') }}</span>
               </span>
-
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -120,9 +114,7 @@
             @back="!useOnlyAddress ? moveTo(2) : moveTo(1)"
             @next="importWallet"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_IMPORT.STEP3.NAME')"
@@ -142,9 +134,7 @@
                 name="address-placeholder"
               />
             </div>
-
           </MenuStepItem>
-
         </MenuStep>
       </div>
 
@@ -262,6 +252,9 @@ export default {
       this.wallet = {
         ...this.schema,
         profileId: this.session_profile.id
+      }
+      if (!this.useOnlyAddress) {
+        this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase)
       }
 
       if (!this.useOnlyAddress && this.walletPassword && this.walletPassword.length) {

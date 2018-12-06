@@ -28,7 +28,7 @@
         :class="{
           'blur': hasBlurFilter
         }"
-        class="App__main flex flex-col items-center px-4 lg:py-6 w-screen h-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-4 pb-6 lg:pt-6 w-screen h-screen overflow-hidden"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
@@ -38,24 +38,24 @@
             v-if="hasAnyProfile"
             class="hidden lg:flex"
           />
-          <router-view class="flex-1 overflow-y-auto" />
+          <RouterView class="flex-1 overflow-y-auto" />
         </div>
 
         <AppFooter />
       </section>
 
-      <portal-target
+      <PortalTarget
         name="modal"
         multiple
         @change="onPortalChange"
       />
 
-      <portal-target
+      <PortalTarget
         name="loading"
         @change="onPortalChange"
       />
 
-      <portal-target
+      <PortalTarget
         name="qr-scan"
         @change="onPortalChange"
       />

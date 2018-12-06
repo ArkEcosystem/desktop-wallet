@@ -5,16 +5,16 @@
     <div class="ContactAll__grid mt-10 justify-center">
       <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
         <div class="flex flex-row items-center">
-          <router-link :to="{ name: 'contact-new' }">
+          <RouterLink :to="{ name: 'contact-new' }">
             <WalletIdenticonPlaceholder
               :size="60"
               class="identicon opacity-50"
             />
-          </router-link>
+          </RouterLink>
           <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
-            <router-link :to="{ name: 'contact-new' }">
+            <RouterLink :to="{ name: 'contact-new' }">
               {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-            </router-link>
+            </RouterLink>
             <span class="font-bold mt-2 opacity-50 text-lg">
               {{ formatter_networkCurrency(0, 2) }}
             </span>
@@ -28,7 +28,7 @@
         class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
       >
         <div class="flex flex-row items-center">
-          <router-link
+          <RouterLink
             :to="{ name: 'wallet-show', params: { address: contact.id } }"
             class="flex flex-row"
           >
@@ -37,12 +37,12 @@
               :size="60"
               class="identicon cursor-pointer"
             />
-          </router-link>
+          </RouterLink>
           <div class="flex flex-col justify-center overflow-hidden pl-4">
             <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
-              <router-link :to="{ name: 'wallet-show', params: { address: contact.id } }">
+              <RouterLink :to="{ name: 'wallet-show', params: { address: contact.id } }">
                 {{ wallet_nameOnContact(contact.address) || wallet_truncate(contact.address) }}
-              </router-link>
+              </RouterLink>
             </div>
             <span class="font-bold mt-2 text-lg">
               {{ formatter_networkCurrency(contact.balance, 2) }}

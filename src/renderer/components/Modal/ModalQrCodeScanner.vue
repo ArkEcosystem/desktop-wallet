@@ -18,7 +18,7 @@
       <span v-if="errorMessage">
         {{ errorMessage }}
       </span>
-      <qrcode-stream
+      <QrcodeStream
         :camera="getCameraConstraints"
         :track="false"
         @decode="onDecode"
