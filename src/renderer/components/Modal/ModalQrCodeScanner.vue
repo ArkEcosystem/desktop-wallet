@@ -1,6 +1,7 @@
 <template>
   <ModalWindow
     :title="title"
+    :allow-close="!isLoading"
     portal-target="qr-scan"
     @close="emitClose"
   >
@@ -62,7 +63,6 @@ export default {
         }
       }
     },
-
     title () {
       return this.$t('MODAL_QR_SCANNER.TITLE')
     }
@@ -88,7 +88,7 @@ export default {
           this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.STREAM')
         }
       } finally {
-        this.isLoading = false
+        setTimeout(() => { this.isLoading = false }, 1000)
       }
     },
 
