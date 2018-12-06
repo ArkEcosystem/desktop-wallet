@@ -230,7 +230,7 @@ export default {
         row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
       ]
 
-      if (row.expired) {
+      if (row.isExpired) {
         classes.push('expired')
       }
 

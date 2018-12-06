@@ -111,7 +111,10 @@
       />
 
       <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
-        <span v-if="!isWellConfirmed">
+        <span v-if="transaction.isExpired">
+          {{ $t('TRANSACTION.EXPIRED') }}
+        </span>
+        <span v-else-if="!isWellConfirmed">
           {{ transaction.confirmations }}
         </span>
         <span v-else>
@@ -119,6 +122,7 @@
         </span>
 
         <span
+          v-show="!transaction.isExpired"
           v-tooltip="{
             content: $t('TRANSACTION.CONFIRMATION_COUNT', [transaction.confirmations]),
             trigger: 'hover'

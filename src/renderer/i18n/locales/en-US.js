@@ -656,6 +656,7 @@ export default {
     CONFIRMATION_COUNT: '{0} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
+    EXPIRED: 'Expired',
     FEE: 'Transaction fee',
     ID: 'ID',
     LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
