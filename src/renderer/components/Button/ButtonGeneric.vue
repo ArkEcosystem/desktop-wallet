@@ -3,7 +3,9 @@
     class="ButtonGeneric blue-button"
     @click="emitClick"
   >
-    <span class="font-semibold">{{ label }}</span>
+    <span class="font-semibold">
+      {{ label }}
+    </span>
   </button>
 </template>
 

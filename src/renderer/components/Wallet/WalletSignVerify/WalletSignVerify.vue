@@ -7,7 +7,9 @@
       />
 
       <div class="flex flex-col justify-center ml-2">
-        <span class="font-bold">{{ $t('SIGN_VERIFY.VERIFY_WALLET') }}</span>
+        <span class="font-bold">
+          {{ $t('SIGN_VERIFY.VERIFY_WALLET') }}
+        </span>
         <span>{{ $t('SIGN_VERIFY.VERIFY_BY_SIGNING') }}</span>
       </div>
 
@@ -54,8 +56,12 @@
           <div>{{ $t('SIGN_VERIFY.SIGNATURE') }}:</div>
         </div>
         <div>
-          <div class="font-semibold word-break-all">{{ message.message }}</div>
-          <div class="word-break-all">{{ message.signature }}</div>
+          <div class="font-semibold word-break-all">
+            {{ message.message }}
+          </div>
+          <div class="word-break-all">
+            {{ message.signature }}
+          </div>
         </div>
       </div>
 
@@ -79,7 +85,6 @@
         </button>
       </div>
     </div>
-
   </div>
 </template>
 

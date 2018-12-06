@@ -1,13 +1,14 @@
 <template>
   <div class="ProfileEdition relative bg-theme-feature rounded-lg">
     <main class="flex flex-row h-full">
-
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
         class="ProfileEdition__instructions w-3/5 background-image"
       >
         <div class="instructions-text">
-          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}</h3>
+          <h3 class="mb-2 text-theme-page-instructions-text">
+            {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}
+          </h3>
           <p>
             {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.TEXT`) }}
           </p>
@@ -22,7 +23,6 @@
             class="p-5"
           >
             <ListDivided>
-
               <ListDividedItem
                 :label="$t('COMMON.PROFILE_NAME')"
                 class="ProfileEdition__name"
@@ -123,7 +123,6 @@
                   @select="selectAvatar"
                 />
               </ListDividedItem>
-
             </ListDivided>
           </MenuTabItem>
 
@@ -133,7 +132,6 @@
             class="p-5"
           >
             <ListDivided>
-
               <ListDividedItem
                 :label="$t('COMMON.SELECT_THEME')"
                 class="ProfileEdition__theme"
@@ -155,7 +153,6 @@
                   @select="selectBackground"
                 />
               </ListDividedItem>
-
             </ListDivided>
           </MenuTabItem>
         </MenuTab>

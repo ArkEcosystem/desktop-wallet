@@ -42,6 +42,15 @@ export default class WalletService {
   }
 
   /**
+   * Generates the public key belonging to the given passphrase
+   * @param {String} passphrase
+   * @return {String}
+   */
+  static getPublicKeyFromPassphrase (passphrase) {
+    return crypto.getKeys(passphrase).publicKey
+  }
+
+  /**
    * Check if a specific address contain data in the NEO Blockchain
    * @param {String} address
    * @returns {Boolean}

@@ -1,6 +1,5 @@
 <template>
   <div class="AnnouncementsPost relative">
-
     <button
       v-show="!isRead"
       class="AnnouncementsPost__close transition absolute pin-t pin-r cursor-pointer text-theme-page-text-light hover:text-theme-page-text p-2"

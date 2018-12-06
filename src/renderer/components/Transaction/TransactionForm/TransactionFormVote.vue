@@ -50,7 +50,6 @@
     <Collapse
       :is-open="isPassphraseStep"
     >
-
       <div class="mt-12">
         <InputFee
           v-if="session_network.apiVersion === 2"

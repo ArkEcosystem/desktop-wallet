@@ -12,7 +12,9 @@
         class="transition align-middle"
       />
     </span>
-    <span class="font-semibold">{{ value || placeholder }}</span>
+    <span class="font-semibold">
+      {{ value || placeholder }}
+    </span>
   </button>
 </template>
 

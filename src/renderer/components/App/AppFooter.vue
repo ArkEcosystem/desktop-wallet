@@ -4,7 +4,9 @@
       :title="text"
       class="cursor-pointer text-theme-footer-text"
       @click="electron_openExternal(url)"
-    >{{ text }}</a>
+    >
+      {{ text }}
+    </a>
   </footer>
 </template>
 
