@@ -34,7 +34,6 @@
       </div>
     </div>
   </InputField>
-
 </template>
 
 <script>

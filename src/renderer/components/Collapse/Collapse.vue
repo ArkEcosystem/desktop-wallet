@@ -12,8 +12,8 @@
       />
     </button>
 
-    <keep-alive>
-      <transition
+    <KeepAlive>
+      <Transition
         :duration="animationDuration"
         name="Collapse__transition"
         mode="out-in"
@@ -28,8 +28,8 @@
         >
           <slot />
         </div>
-      </transition>
-    </keep-alive>
+      </Transition>
+    </KeepAlive>
   </div>
 </template>
 

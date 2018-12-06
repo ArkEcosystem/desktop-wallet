@@ -1,13 +1,14 @@
 <template>
   <div class="ContactNew relative bg-theme-feature rounded-lg m-r-4">
     <main class="flex flex-row h-full">
-
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
         class="ContactNew__instructions flex-grow background-image w-3/5"
       >
         <div class="instructions-text">
-          <h3 class="mb-2 text-theme-page-instructions-text">{{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}</h3>
+          <h3 class="mb-2 text-theme-page-instructions-text">
+            {{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
+          </h3>
 
           <p>
             {{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
@@ -19,16 +20,13 @@
         <MenuStep
           :step="step"
         >
-
           <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
             :title="$t('PAGES.CONTACT_NEW.STEP1.TITLE')"
             @next="moveTo(2)"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputAddress
                 ref="addressInput"
                 v-model="schema.address"
@@ -36,7 +34,6 @@
                 class="my-3"
               />
             </div>
-
           </MenuStepItem>
 
           <MenuStepItem
@@ -47,9 +44,7 @@
             @back="moveTo(1)"
             @next="create"
           >
-
             <div class="flex flex-col h-full w-full justify-around">
-
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.CONTACT_NEW.STEP2.NAME')"
@@ -58,11 +53,8 @@
                 class="my-3"
                 name="name"
               />
-
             </div>
-
           </MenuStepItem>
-
         </MenuStep>
       </div>
     </main>

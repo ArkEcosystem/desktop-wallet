@@ -1,4 +1,6 @@
+import dayjs from 'dayjs'
 import { findIndex, unionBy } from 'lodash'
+import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
 import Vue from 'vue'
@@ -89,6 +91,19 @@ export default {
       commit('UPDATE', data)
 
       return data
+    },
+    clearExpired ({ commit, getters, rootGetters }) {
+      const expired = []
+      const profileId = rootGetters['session/profileId']
+      const threshold = dayjs().subtract(config.APP.transactionExpiryMinutes, 'minute')
+      for (const transaction of getters['byProfileId'](profileId)) {
+        if (dayjs(transaction.timestamp).isBefore(threshold)) {
+          expired.push(transaction.id)
+          commit('DELETE', transaction)
+        }
+      }
+
+      return expired
     },
     delete ({ commit }, transaction) {
       commit('DELETE', transaction)

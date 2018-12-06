@@ -3,8 +3,12 @@
     @close="emitClose"
   >
     <section class="flex flex-col items-center">
-      <h2 class="mb-1">{{ $t('MODAL_QR_CODE.TITLE') }}</h2>
-      <p class="mb-5">{{ $t('MODAL_QR_CODE.SUBTITLE') }}</p>
+      <h2 class="mb-1">
+        {{ $t('MODAL_QR_CODE.TITLE') }}
+      </h2>
+      <p class="mb-5">
+        {{ $t('MODAL_QR_CODE.SUBTITLE') }}
+      </p>
       <VueQrcode v-bind="$props" />
     </section>
   </ModalWindow>

@@ -34,8 +34,7 @@ const modules = {
 }
 
 const ignoreModules = [
-  'ledger',
-  'transaction'
+  'ledger'
 ]
 
 const vuexPersist = new VuexPersistence({

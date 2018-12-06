@@ -3,7 +3,7 @@
     <h3>{{ $t('PAGES.PROFILE_ALL.HEADER') }} ({{ totalBalances.join(', ') }})</h3>
 
     <div class="ProfileAll__grid mt-10">
-      <router-link
+      <RouterLink
         :to="{ name: 'profile-new' }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
@@ -15,7 +15,7 @@
         <div class="ProfileAll__grid__profile__name font-semibold flex items-center">
           {{ $t('PAGES.PROFILE_ALL.ADD_PROFILE') }}
         </div>
-      </router-link>
+      </RouterLink>
 
       <div
         v-for="profile in profiles"
@@ -41,12 +41,12 @@
             {{ profileBalance(profile) }}
           </span>
 
-          <router-link
+          <RouterLink
             :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
             class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
           >
             {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
-          </router-link>
+          </RouterLink>
 
           <button
             class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"

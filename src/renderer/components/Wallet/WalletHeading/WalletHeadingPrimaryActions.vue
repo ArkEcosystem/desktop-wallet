@@ -1,7 +1,7 @@
 <template>
   <div
     key="PrimaryActions"
-    class="WalletHeading__PrimaryActions flex"
+    class="WalletHeading__PrimaryActions flex items-center"
   >
     <button
       v-if="!walletVote.publicKey"
@@ -80,7 +80,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'mr-2 px-3 py-2 rounded-md option-button'
+      return 'option-button mr-2 px-3 py-2'
     },
 
     currentWallet () {

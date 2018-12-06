@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center relative overflow-hidden font-sans">
+  <div class="flex items-center relative overflow-hidden font-sans my-auto">
     <WalletHeadingPrimaryActions
       v-if="!secondaryButtonsVisible"
       class="-mr-2"
@@ -9,7 +9,7 @@
       class="-mr-2"
     />
     <button
-      class="option-button ml-2 p-2 rounded-md"
+      class="option-button flex items-center self-stretch ml-2 p-2"
       @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
     >
       <SvgIcon
