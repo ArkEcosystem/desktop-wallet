@@ -372,6 +372,7 @@ export default {
         ...this.schema,
         profileId: this.session_profile.id
       }
+      this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase)
 
       if (this.walletPassword && this.walletPassword.length) {
         this.showEncryptLoader = true
