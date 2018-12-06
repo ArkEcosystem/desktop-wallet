@@ -291,11 +291,11 @@ export default {
       this.loadTransactions()
     },
 
-    onSortChange ({ columnName, sortType }) {
+    onSortChange (sortOptions) {
       this.__updateParams({
         sort: {
-          type: sortType,
-          field: columnName
+          type: sortOptions[0].type,
+          field: sortOptions[0].field
         },
         page: 1
       })
