@@ -4,14 +4,14 @@
     :container-classes="`TransactionModal ${typeClass}`"
     @close="emitCancel"
   >
-    <keep-alive>
+    <KeepAlive>
       <TransactionForm
         v-if="!transaction"
         v-bind="$attrs"
         :type="type"
         @built="onBuilt"
       />
-    </keep-alive>
+    </KeepAlive>
 
     <TransactionConfirm
       v-if="transaction"
@@ -20,13 +20,12 @@
       @confirm="onConfirm"
     />
 
-    <portal-target
+    <PortalTarget
       v-if="step === 0"
       slot="footer"
       name="transaction-footer"
     />
   </ModalWindow>
-
 </template>
 
 <script>

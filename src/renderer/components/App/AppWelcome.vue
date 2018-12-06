@@ -17,15 +17,21 @@
             <img :src="assets_loadImage('ark-logo.png')">
           </div>
         </div>
-        <i18n
+        <I18n
           path="INTRODUCTION.WELCOME.TITLE"
           tag="span"
           class="text-5xl"
         >
-          <strong place="app">{{ $t('COMMON.APP_NAME') }}</strong>
-        </i18n>
-        <div class="mt-3">{{ $t('INTRODUCTION.WELCOME.SAFETY_MESSAGE') }}</div>
-        <div class="mt-2">{{ $t('INTRODUCTION.WELCOME.FUNDS_WARNING') }}</div>
+          <strong place="app">
+            {{ $t('COMMON.APP_NAME') }}
+          </strong>
+        </I18n>
+        <div class="mt-3">
+          {{ $t('INTRODUCTION.WELCOME.SAFETY_MESSAGE') }}
+        </div>
+        <div class="mt-2">
+          {{ $t('INTRODUCTION.WELCOME.FUNDS_WARNING') }}
+        </div>
         <button
           class="blue-button mt-8"
           @click="start"
@@ -39,7 +45,6 @@
         :key="2"
         class="flex w-full h-full"
       >
-
         <div class="absolute pin-t pin-l">
           <div class="AppWelcome__Logo__corner">
             <img :src="assets_loadImage('ark-logo.png')">
@@ -53,13 +58,15 @@
           @back="moveTo(1)"
           @next="moveTo(3)"
         >
-          <i18n
+          <I18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
           >
-            <strong place="page">{{ $t('INTRODUCTION.POWER.TITLE') }}</strong>
-          </i18n>
+            <strong place="page">
+              {{ $t('INTRODUCTION.POWER.TITLE') }}
+            </strong>
+          </I18n>
         </AppIntroScreen>
 
         <AppIntroScreen
@@ -68,13 +75,15 @@
           @back="moveTo(2)"
           @next="moveTo(4)"
         >
-          <i18n
+          <I18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
           >
-            <strong place="page">{{ $t('INTRODUCTION.DUTY.TITLE') }}</strong>
-          </i18n>
+            <strong place="page">
+              {{ $t('INTRODUCTION.DUTY.TITLE') }}
+            </strong>
+          </I18n>
         </AppIntroScreen>
 
         <AppIntroScreen
@@ -83,13 +92,15 @@
           @back="moveTo(3)"
           @next="moveTo(5)"
         >
-          <i18n
+          <I18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
           >
-            <strong place="page">{{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}</strong>
-          </i18n>
+            <strong place="page">
+              {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
+            </strong>
+          </I18n>
         </AppIntroScreen>
 
         <AppIntroScreen
@@ -99,13 +110,15 @@
           @back="moveTo(4)"
           @done="done"
         >
-          <i18n
+          <I18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
           >
-            <strong place="page">{{ $t('INTRODUCTION.TURN.TITLE') }}</strong>
-          </i18n>
+            <strong place="page">
+              {{ $t('INTRODUCTION.TURN.TITLE') }}
+            </strong>
+          </I18n>
         </AppIntroScreen>
       </div>
     </div>

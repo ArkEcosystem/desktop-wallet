@@ -15,7 +15,7 @@
         />
       </div>
     </button>
-    <portal
+    <Portal
       v-if="isNotificationVisible"
       to="modal"
     >
@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-    </portal>
+    </Portal>
   </div>
 </template>
 

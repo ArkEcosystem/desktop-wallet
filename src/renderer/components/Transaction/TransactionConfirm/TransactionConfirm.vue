@@ -7,7 +7,7 @@
       :type="transaction.type"
       class="mb-3"
     />
-    <component
+    <Component
       :is="activeComponent"
     />
 

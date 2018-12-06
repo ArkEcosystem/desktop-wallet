@@ -1,6 +1,6 @@
 <template>
-  <keep-alive>
-    <transition
+  <KeepAlive>
+    <Transition
       name="MenuTabItem__transition"
     >
       <div
@@ -9,8 +9,8 @@
       >
         <slot :is-active="isActive" />
       </div>
-    </transition>
-  </keep-alive>
+    </Transition>
+  </KeepAlive>
 </template>
 
 <script>
