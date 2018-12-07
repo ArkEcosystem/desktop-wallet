@@ -106,3 +106,7 @@ exports.V1 = {
     0 * Math.pow(10, 8) // Delegate resignation (not supported yet)
   ]
 }
+
+exports.EXCHANGES = {
+  changellyId: 'bab9de3731aa'
+}

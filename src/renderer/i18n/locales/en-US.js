@@ -478,7 +478,16 @@ export default {
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
       STATISTICS: 'Statistics',
-      SIGN_VERIFY: 'Sign'
+      SIGN_VERIFY: 'Sign',
+      PURCHASE: 'Purchase {ticker}'
+    },
+
+    WALLET_EXCHANGE: {
+      CHANGELLY_TERMS: {
+        TITLE: 'Purchase {ticker} directly within ARK Desktop Wallet with our Changelly integration.',
+        CONTENT: 'Changelly lets you exchange other cryptocurrencies into {ticker} and has an option to buy {ticker} directly with your credit or debit cards.',
+        CONFIRMATION: 'I have read an I agree with the terms of use and the privacy policy from Changelly'
+      }
     },
 
     WALLET_ALL: {
