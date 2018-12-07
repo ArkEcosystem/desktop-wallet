@@ -375,10 +375,11 @@ export default {
      * Validate custom peer, used to check it's acceptable to connect.
      * @param  {String} ip
      * @param  {Number} port
+     * @param  {Number} [ignoreNetwork=false]
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { host, ip, port, timeout = 3000 }) {
+    async validatePeer ({ rootGetters }, { host, ip, port, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
       let version = 2
       if (!host && ip) {
@@ -402,7 +403,7 @@ export default {
 
       if (!networkConfig) {
         return i18n.t('PEER.NO_CONNECT')
-      } else if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
+      } else if (!ignoreNetwork && networkConfig.nethash !== rootGetters['session/network'].nethash) {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
