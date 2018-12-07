@@ -1,4 +1,4 @@
-import { map } from 'lodash'
+import { map, uniqBy } from 'lodash'
 import crypto from 'crypto'
 import BaseModule from '../base'
 import ProfileModel from '@/models/profile'
@@ -14,6 +14,22 @@ export default new BaseModule(ProfileModel, {
     balance: (state, _, __, rootGetters) => id => {
       const wallets = rootGetters['wallet/byProfileId'](id)
       return wallets.reduce((total, wallet) => {
+        return total + wallet.balance
+      }, 0)
+    },
+    balanceWithLedger: (state, _, __, rootGetters) => id => {
+      let wallets = rootGetters['wallet/byProfileId'](id)
+
+      // Only include the wallets of the Ledger that are on the same network than the profile
+      const profile = rootGetters['profile/byId'](id)
+      if (profile.networkId === rootGetters['session/network'].id) {
+        wallets = [
+          ...wallets,
+          ...rootGetters['ledger/wallets']
+        ]
+      }
+
+      return uniqBy(wallets, 'address').reduce((total, wallet) => {
         return total + wallet.balance
       }, 0)
     }
