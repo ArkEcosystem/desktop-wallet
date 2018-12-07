@@ -29,21 +29,21 @@ input:focus {
   @apply .outline-none
 }
 
-.App.windows *::-webkit-scrollbar {
+.App:not(.mac) *::-webkit-scrollbar {
   @apply .w-2 .h-2 .rounded-full;
   background-color: rgba(0, 0, 0, 0);
 }
-.App.windows *::-webkit-scrollbar-track:hover {
+.App:not(.mac) *::-webkit-scrollbar-track:hover {
   background-color: rgba(0, 0, 0, 0.05)
 }
-.App.windows *::-webkit-scrollbar-thumb {
+.App:not(.mac) *::-webkit-scrollbar-thumb {
   @apply .rounded-full;
   background-color: rgba(0, 0, 0, 0.3)
 }
-.App.windows *::-webkit-scrollbar-thumb:hover {
+.App:not(.mac) *::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.4)
 }
-.App.windows *::-webkit-scrollbar-thumb:active {
+.App:not(.mac) *::-webkit-scrollbar-thumb:active {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
