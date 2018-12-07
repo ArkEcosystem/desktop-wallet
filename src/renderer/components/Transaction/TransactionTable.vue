@@ -205,7 +205,7 @@ export default {
 
   methods: {
     formatDate (value) {
-      return this.$d(value, 'short')
+      return this.$d(value, 'long')
     },
 
     formatAddress (value) {
