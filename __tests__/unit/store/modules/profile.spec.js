@@ -36,6 +36,72 @@ describe('ProfileModule', () => {
     })
   })
 
+  describe('getters > balanceWithLedger', () => {
+    const networks = [
+      { id: 'main', symbol: 'm', token: 'MAI', subunit: 'mainito', fractionDigits: 8 },
+      { id: 'other', symbol: 'o', token: 'OTH', subunit: 'another', fractionDigits: 8 }
+    ]
+    const profileId = 'balanceId'
+    const profile = { id: profileId, networkId: networks[0].id }
+
+    let wallets
+    let ledgerWallets
+
+    beforeEach(() => {
+      wallets = [
+        { id: 'A1', address: 'A1', profileId, balance: 1000 },
+        { id: 'A2', address: 'A2', profileId, balance: 173 },
+        { id: 'A3', address: 'A3', profileId, balance: 97 },
+        { id: 'A4', address: 'A4', profileId: 'other', balance: 50000 }
+      ]
+      ledgerWallets = [
+        { id: 'AxLedger1', address: 'AxLedger1', balance: 1330 },
+        { id: 'AxLedger2', address: 'AxLedger2', balance: 301 }
+      ]
+
+      store.commit('network/SET_ALL', networks)
+      store.commit('profile/CREATE', profile)
+      wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
+      store.commit('session/SET_PROFILE_ID', profileId)
+    })
+
+    afterEach(() => {
+      wallets.forEach(wallet => store.commit('wallet/DELETE', wallet))
+      store.commit('profile/DELETE', profile.id)
+    })
+
+    describe('when the Ledger does not have wallets', () => {
+      beforeEach(() => {
+        store.commit('ledger/SET_WALLETS', [])
+      })
+
+      it('should return the balance of the profile wallets only', () => {
+        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(1270)
+      })
+    })
+
+    describe('when the Ledger has wallets on the current network', () => {
+      beforeEach(() => {
+        store.commit('ledger/SET_WALLETS', ledgerWallets)
+      })
+
+      it('should return the balance of the profile wallets and the Ledger wallets', () => {
+        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(2901)
+      })
+
+      describe('when those wallets are already included in the profile', () => {
+        beforeEach(() => {
+          ledgerWallets[0] = wallets[0]
+          store.commit('ledger/SET_WALLETS', ledgerWallets)
+        })
+
+        it('should ignore them', () => {
+          expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(1571)
+        })
+      })
+    })
+  })
+
   describe('actions > delete', () => {
     const profileId = 'deleteId'
     const profile = { id: profileId }
