@@ -1,125 +1,130 @@
 <template>
   <MenuNavigation
     v-model="activeItem"
-    :class="isHorizontal ? 'h-18 flex-row' : 'w-22 mx-6 rounded-lg flex-col'"
-    class="AppSidemenu justify-between relative"
+    :class="{
+      'AppSidemenu--horizontal': isHorizontal,
+      'AppSidemenu--vertical': !isHorizontal
+    }"
+    class="AppSidemenu relative bg-transparent"
   >
-    <div :class="{'flex flex-row h-18' : isHorizontal}">
+    <div
+      class="AppSidemenu__container flexify w-full h-full justify-between"
+    >
       <!-- ARK logo -->
       <RouterLink
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
-        :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
         class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
       >
-        <img
-          :class="isHorizontal ? 'h-12' : 'w-18'"
-          src="@/assets/images/ark-logo.png"
-        >
+        <img src="@/assets/images/ark-logo.png">
       </RouterLink>
 
-      <!-- Wallets -->
-      <MenuNavigationItem
-        id="wallets"
-        :title="$t('APP_SIDEMENU.WALLETS')"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        icon="wallet"
-        @click="redirect($event)"
-      />
+      <div class="AppSidemenu__container__scrollable flex-1 overflow-y-auto flexify justify-between bg-theme-feature">
+        <div class="flexify">
+          <!-- Wallets -->
+          <MenuNavigationItem
+            id="wallets"
+            :title="$t('APP_SIDEMENU.WALLETS')"
+            :is-horizontal="isHorizontal"
+            class="AppSidemenu__item"
+            icon="wallet"
+            @click="redirect($event)"
+          />
 
-      <!-- Add contact -->
-      <MenuNavigationItem
-        id="contacts"
-        :title="$t('APP_SIDEMENU.CONTACTS')"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        icon="contact-add"
-        @click="redirect($event)"
-      />
+          <!-- Add contact -->
+          <MenuNavigationItem
+            id="contacts"
+            :title="$t('APP_SIDEMENU.CONTACTS')"
+            :is-horizontal="isHorizontal"
+            class="AppSidemenu__item"
+            icon="contact-add"
+            @click="redirect($event)"
+          />
 
-      <!-- Announcements -->
-      <MenuNavigationItem
-        id="announcements"
-        :title="$t('APP_SIDEMENU.ANNOUNCEMENTS')"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        :show-badge="showUnread"
-        icon="whitepaper"
-        @click="redirect($event)"
-      />
-    </div>
+          <!-- Announcements -->
+          <MenuNavigationItem
+            id="announcements"
+            :title="$t('APP_SIDEMENU.ANNOUNCEMENTS')"
+            class="AppSidemenu__item"
+            :is-horizontal="isHorizontal"
+            :show-badge="showUnread"
+            icon="whitepaper"
+            @click="redirect($event)"
+          />
+        </div>
 
-    <div :class="{'flex flex-row h-18' : isHorizontal}">
-      <!-- Important notification / new releases -->
-      <AppSidemenuImportantNotification
-        v-if="isImportantNotificationVisible && hasNewRelease"
-        :is-horizontal="isHorizontal"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        @close="hideImportantNotification"
-      />
-    </div>
+        <div class="flexify">
+          <!-- Important notification / new releases -->
+          <AppSidemenuImportantNotification
+            v-if="isImportantNotificationVisible && hasNewRelease"
+            :is-horizontal="isHorizontal"
+            class="AppSidemenu__item"
+            @close="hideImportantNotification"
+          />
+        </div>
 
-    <div :class="{'flex flex-row h-18' : isHorizontal}">
-      <!-- Search -->
-      <!-- <MenuNavigationItem
-        id="search"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        view-box="0 0 20 20"
-        icon="search"
-        @click="redirect($event)"
-      /> -->
-    </div>
+        <div class="flexify">
+          <!-- Search -->
+          <!-- <MenuNavigationItem
+            id="search"
+            :class="isHorizontal ? 'w-16' : 'h-16'"
+            :is-horizontal="isHorizontal"
+            view-box="0 0 20 20"
+            icon="search"
+            @click="redirect($event)"
+          /> -->
+        </div>
 
-    <div :class="{'flex flex-row h-18' : isHorizontal}">
-      <AppSidemenuSettings
-        v-if="isSettingsVisible"
-        :outside-click="true"
-        :is-horizontal="isHorizontal"
-        @close="closeShowSettings"
-      />
+        <div class="flexify">
+          <AppSidemenuSettings
+            v-if="isSettingsVisible"
+            :outside-click="true"
+            :is-horizontal="isHorizontal"
+            @close="closeShowSettings"
+          />
 
-      <!-- Settings -->
-      <MenuNavigationItem
-        id="settings"
-        :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        :can-activate="false"
-        icon="settings"
-        @click="toggleShowSettings"
-      />
+          <!-- Settings -->
+          <MenuNavigationItem
+            id="settings"
+            :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
+            :is-horizontal="isHorizontal"
+            :can-activate="false"
+            class="AppSidemenu__item"
+            icon="settings"
+            @click="toggleShowSettings"
+          />
 
-      <AppSidemenuNetworkStatus
-        v-if="isNetworkStatusVisible"
-        :is-horizontal="isHorizontal"
-        :outside-click="true"
-        @close="closeShowNetworkStatus"
-      />
-      <!-- Networks -->
-      <MenuNavigationItem
-        id="networks"
-        :title="$t('APP_SIDEMENU.NETWORK')"
-        :class="isHorizontal ? 'w-16' : 'h-16'"
-        :is-horizontal="isHorizontal"
-        :can-activate="false"
-        icon="cloud"
-        @click="toggleShowNetworkStatus"
-      />
+          <AppSidemenuNetworkStatus
+            v-if="isNetworkStatusVisible"
+            :is-horizontal="isHorizontal"
+            :outside-click="true"
+            @close="closeShowNetworkStatus"
+          />
+          <!-- Networks -->
+          <MenuNavigationItem
+            id="networks"
+            :title="$t('APP_SIDEMENU.NETWORK')"
+            :is-horizontal="isHorizontal"
+            :can-activate="false"
+            class="AppSidemenu__item"
+            icon="cloud"
+            @click="toggleShowNetworkStatus"
+          />
 
-      <!-- Profile settings -->
-      <div
-        :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-        class="cursor-pointer flex items-center"
-      >
-        <RouterLink
-          :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
-          :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
-          :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
-          :to="{ name: 'profiles' }"
-          class="AppSidemenu__avatar flex background-image"
-        />
+          <!-- Profile settings -->
+          <div
+            :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
+            class="cursor-pointer flex items-center"
+          >
+            <RouterLink
+              :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
+              :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
+              :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
+              :to="{ name: 'profiles' }"
+              class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none hover:opacity-50"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </MenuNavigation>
@@ -206,17 +211,24 @@ export default {
 }
 </script>
 
-<style scoped>
-.AppSidemenu__logo {
-  transition: opacity 0.5s;
-}
+<style lang="postcss" scoped>
+.AppSidemenu__container__scrollable .flexify { @apply flex-none }
+.AppSidemenu__logo { transition: opacity 0.5s; }
+
+.AppSidemenu--horizontal .AppSidemenu__item { @apply w-16 }
+.AppSidemenu--horizontal .AppSidemenu__logo { @apply p-4 }
+.AppSidemenu--horizontal .AppSidemenu__logo img { @apply h-12 }
+.AppSidemenu--horizontal .flexify { @apply flex flex-row }
+.AppSidemenu--horizontal { @apply h-18; }
+
+.AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
+.AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
+.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 px-4 py-5 }
+.AppSidemenu--vertical .AppSidemenu__logo img { @apply w-18 }
+.AppSidemenu--vertical .flexify { @apply flex flex-col }
+.AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
+
 .AppSidemenu__avatar {
   transition: opacity 0.5s;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-}
-.AppSidemenu__avatar:hover {
-  opacity: 0.5;
 }
 </style>
