@@ -33,7 +33,7 @@ input:focus {
   @apply .w-2 .h-2 .rounded-full;
   background-color: rgba(0, 0, 0, 0);
 }
-.App:not(.windows) *::-webkit-scrollbar-track:hover {
+.App:not(.mac) *::-webkit-scrollbar-track:hover {
   background-color: rgba(0, 0, 0, 0.05)
 }
 .App:not(.mac) *::-webkit-scrollbar-thumb {
