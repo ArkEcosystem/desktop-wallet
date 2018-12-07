@@ -414,7 +414,8 @@ export default {
 
       const response = await this.$store.dispatch('peer/validatePeer', {
         host,
-        port
+        port,
+        ignoreNetwork: true
       })
       let success = false
       if (response === false) {
