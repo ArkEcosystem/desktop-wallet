@@ -13,6 +13,7 @@ export default {
 
   state: {
     wallets: {},
+    ledgerNames: {},
     secondaryButtonsVisible: false,
     signedMessages: {}
   },
@@ -50,6 +51,15 @@ export default {
       }
 
       return state.wallets[profileId].filter(wallet => wallet.isContact)
+    },
+
+    ledgerNameByAddress: (state, _, __, rootGetters) => address => {
+      const profileId = rootGetters['session/profileId']
+      if (!state.ledgerNames[profileId]) {
+        return null
+      }
+
+      return state.ledgerNames[profileId][address]
     },
 
     secondaryButtonsVisible: state => state.secondaryButtonsVisible,
@@ -94,6 +104,13 @@ export default {
       }
       state.wallets[wallet.profileId].splice(index, 1)
     },
+    SET_LEDGER_NAME (state, { address, name, profileId }) {
+      if (!state.ledgerNames[profileId]) {
+        state.ledgerNames[profileId] = {}
+      }
+
+      state.ledgerNames[profileId][address] = name
+    },
     SET_SECONDARY_BUTTON (state, visibility) {
       state.secondaryButtonsVisible = visibility
     },
@@ -131,6 +148,17 @@ export default {
     },
     delete ({ commit }, wallet) {
       commit('DELETE', wallet)
+    },
+    setLedgerName ({ commit, rootGetters }, { address, name }) {
+      if (!address) {
+        throw new Error('No address specified')
+      }
+      if (!name || !name.replace(/\s/g, '').length) {
+        throw new Error('No name specified')
+      }
+
+      const profileId = rootGetters['session/profileId']
+      commit('SET_LEDGER_NAME', { address, name, profileId })
     },
     setSecondaryButtonsVisible ({ commit }, visibility) {
       commit('SET_SECONDARY_BUTTON', visibility)

@@ -772,7 +772,8 @@ export default {
     TITLE: 'Rename Wallet',
     NEW: 'New wallet name',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}'
+    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}',
+    ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
