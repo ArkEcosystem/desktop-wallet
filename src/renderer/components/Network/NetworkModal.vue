@@ -200,7 +200,7 @@
     </div>
 
     <ModalLoader
-      :message="$t('MODAL_PEER.VALIDATING')"
+      :message="$t('MODAL_NETWORK.VALIDATING_SEED')"
       :allow-close="true"
       :visible="showLoadingModal"
     />
@@ -418,9 +418,9 @@ export default {
       })
       let success = false
       if (response === false) {
-        this.$error(this.$t('PEER.CONNECT_FAILED'))
+        this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
       } else if (typeof response === 'string') {
-        this.$error(`${this.$t('PEER.CONNECT_FAILED')}: ${response}`)
+        this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
       } else {
         success = true
       }

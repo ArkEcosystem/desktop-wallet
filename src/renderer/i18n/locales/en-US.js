@@ -327,6 +327,8 @@ export default {
     FAILED_FETCH: 'Failed to fetch network information',
     NETWORK_IN_USE: 'This network is in use by one or more profiles and cannot be removed',
     DEFAULT_NETWORK_NO_DELETE: 'This is a default network and cannot be deleted',
+    VALIDATING_SEED: 'Validating Seed Server details...',
+    SEED_VALIDATE_FAILED: 'Failed to connect to seed server',
     PLACEHOLDER: {
       EXPLORER: 'http://explorer.io',
       SEED_SERVER: 'http://1.1.1.1:4002',
