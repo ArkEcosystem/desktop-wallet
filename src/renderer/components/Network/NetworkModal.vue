@@ -198,13 +198,19 @@
     >
       {{ $t('MODAL_NETWORK.DEFAULT_NETWORK_NO_DELETE') }}
     </div>
+
+    <ModalLoader
+      :message="$t('MODAL_PEER.VALIDATING')"
+      :allow-close="true"
+      :visible="showLoadingModal"
+    />
   </ModalWindow>
 </template>
 
 <script>
 import { numeric, required } from 'vuelidate/lib/validators'
 import { InputText, InputToggle } from '@/components/Input'
-import { ModalWindow } from '@/components/Modal'
+import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
 
 export default {
@@ -213,6 +219,7 @@ export default {
   components: {
     InputText,
     InputToggle,
+    ModalLoader,
     ModalWindow
   },
 
@@ -251,7 +258,8 @@ export default {
     configChoice: 'Basic',
     apiVersion: 2,
     hasFetched: false,
-    showFull: false
+    showFull: false,
+    showLoadingModal: false
   }),
 
   computed: {
@@ -397,7 +405,36 @@ export default {
       return null
     },
 
-    updateNetwork () {
+    async validateSeed () {
+      this.showLoadingModal = true
+
+      const matches = /(https?:\/\/[a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.form.server)
+      const host = matches[1]
+      const port = matches[2]
+
+      const response = await this.$store.dispatch('peer/validatePeer', {
+        host,
+        port
+      })
+      let success = false
+      if (response === false) {
+        this.$error(this.$t('PEER.CONNECT_FAILED'))
+      } else if (typeof response === 'string') {
+        this.$error(`${this.$t('PEER.CONNECT_FAILED')}: ${response}`)
+      } else {
+        success = true
+      }
+      this.showLoadingModal = false
+
+      return success
+    },
+
+    async updateNetwork () {
+      const isValid = await this.validateSeed()
+      if (!isValid) {
+        return
+      }
+
       var customNetwork = this.form
       customNetwork.constants = {
         activeDelegates: parseInt(this.form.activeDelegates),
