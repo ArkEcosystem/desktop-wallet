@@ -223,7 +223,7 @@ export default {
 
 .AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
 .AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
-.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-2 px-4 py-5 }
+.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 px-4 py-5 }
 .AppSidemenu--vertical .AppSidemenu__logo img { @apply w-18 }
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
