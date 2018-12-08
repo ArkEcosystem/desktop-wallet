@@ -27,6 +27,7 @@
         :required="true"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
+        @focus="onSendAll(false)"
       />
 
       <InputSwitch
