@@ -27,14 +27,14 @@
         :required="true"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
-        @focus="onSendAll(false)"
+        @focus="setSendAll(false)"
       />
 
       <InputSwitch
         :text="$t('TRANSACTION.SEND_ALL')"
         :is-active="isSendAllActive"
         :is-disabled="!canSendAll()"
-        @change="onSendAll"
+        @change="setSendAll"
       />
     </div>
 
@@ -229,7 +229,7 @@ export default {
       this.ensureAvailableAmount()
     },
 
-    onSendAll (isActive) {
+    setSendAll (isActive) {
       this.isSendAllActive = isActive
       this.ensureAvailableAmount()
     },
