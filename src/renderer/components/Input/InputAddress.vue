@@ -341,6 +341,9 @@ export default {
       async isNotNeoAddress (value) {
         const result = await WalletService.isNeoAddress(value)
         return !result
+      },
+      isKnownAddress (value) {
+        this.helperText = `This wallet is known as '${this.wallet_formatAddress(value, 10)}'`
       }
     }
   }
