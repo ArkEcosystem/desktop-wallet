@@ -249,6 +249,9 @@ export default {
   transition: 0.5s;
   opacity: 0.5;
 }
+.WalletAll__grid__wallet .identicon {
+  transition: 0.5s;
+}
 @screen lg {
   .WalletAll__grid__wallet {
     @apply .p-4
