@@ -18,6 +18,7 @@
         :currency="currency"
         :label="$t('TRANSACTION.FEE')"
         :value="fee"
+        :custom-error="insufficientFundsError"
         :not-valid-error="notValidError"
         :maximum-amount="feeChoiceMax"
         :maximum-error="maximumError"
@@ -85,6 +86,12 @@ export default {
     transactionType: {
       type: Number,
       required: true
+    },
+
+    showInsufficentFunds: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -107,6 +114,9 @@ export default {
   },
 
   computed: {
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
     hiddenGradientStyle () {
       return {
         width: `${100 - this.rangePercentage}%`
@@ -152,6 +162,17 @@ export default {
       const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
     },
+    insufficientFundsError () {
+      if (!this.showInsufficentFunds) {
+        return ''
+      }
+
+      if (this.currentWallet.balance < this.fee) {
+        const balance = this.formatter_networkCurrency(this.currentWallet.balance)
+        return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
+      }
+      return ''
+    },
     warningText () {
       if (this.isAdvancedFee) {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
@@ -173,6 +194,8 @@ export default {
 
   created () {
     this.prepareFeeStatistics()
+    console.log(this.fee)
+    console.log(this.currentWallet)
   },
 
   methods: {

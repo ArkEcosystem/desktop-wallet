@@ -102,6 +102,7 @@ export default {
       this.emitSent()
 
       const response = await this.$client.broadcastTransaction(this.transaction)
+      console.log(response)
 
       if (this.isSuccessfulResponse(response)) {
         this.storeTransaction(this.transaction)
