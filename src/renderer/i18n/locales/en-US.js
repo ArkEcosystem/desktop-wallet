@@ -263,7 +263,7 @@ export default {
     MAXIMUM: 'Maximum',
     INPUT: 'Input',
     ADVANCED: 'Advanced',
-    MINIMUM_NOTICE: 'Transaction may not ever confirm with minimum fees',
+    MINIMUM_NOTICE: 'Transaction may get rejected',
     ADVANCED_NOTICE: 'Be careful what fee you choose as it will cost more than necessary if too high',
     UNIQUE: 'The network fee has been set to the static value of {fee}',
     ERROR: {
