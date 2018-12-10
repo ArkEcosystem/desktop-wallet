@@ -285,7 +285,7 @@ export default {
     fee: {
       isValid (value) {
         if (this.$refs.input) {
-          return !this.$refs.input.$v.$invalid
+          return !this.$refs.input.$v.$invalid && !this.insufficientFundsError
         }
         return false
       }
