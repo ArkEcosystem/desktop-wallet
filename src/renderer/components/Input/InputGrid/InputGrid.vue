@@ -11,7 +11,6 @@
               v-bind="itemSlotAttrs(item)"
               name="item"
             >
-
               <InputGridItem
                 :image-path="item.imagePath"
                 :is-selected="selectedItem === item && !isModalOpen"

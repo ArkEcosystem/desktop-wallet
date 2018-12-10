@@ -1,7 +1,6 @@
 <template>
   <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
-
-    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-4">
+    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-3">
       <div class="flex-1 flex flex-row justify-between">
         <div class="flex flex-row items-end">
           <div
@@ -31,7 +30,7 @@
 
         <div class="flex flex-row items-end pb-4 pr-8">
           <div class="WalletAll__balance__create flex flex-col items-center pr-6">
-            <router-link :to="{ name: 'wallet-new' }">
+            <RouterLink :to="{ name: 'wallet-new' }">
               <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
                 <SvgIcon
                   name="plus"
@@ -39,16 +38,16 @@
                   view-box="0 0 9 9"
                 />
               </span>
-            </router-link>
-            <router-link
+            </RouterLink>
+            <RouterLink
               :to="{ name: 'wallet-new' }"
               class="font-bold"
             >
               {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
-            </router-link>
+            </RouterLink>
           </div>
           <div class="WalletAll__balance__import flex flex-col items-center pl-6">
-            <router-link :to="{ name: 'wallet-import' }">
+            <RouterLink :to="{ name: 'wallet-import' }">
               <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
                 <SvgIcon
                   name="arrow-import"
@@ -56,13 +55,13 @@
                   view-box="0 0 7 10"
                 />
               </span>
-            </router-link>
-            <router-link
+            </RouterLink>
+            <RouterLink
               :to="{ name: 'wallet-import' }"
               class="font-bold"
             >
               {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
-            </router-link>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -73,22 +72,23 @@
         <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
         <div class="WalletAll__grid mt-10 justify-center">
-
           <div
             v-show="isLedgerLoading"
             class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
           >
             <Loader />
-            <div class="text-center mt-4">{{ $t('PAGES.WALLET_ALL.LOADING_LEDGER') }}</div>
+            <div class="text-center mt-4">
+              {{ $t('PAGES.WALLET_ALL.LOADING_LEDGER') }}
+            </div>
           </div>
 
           <div
             v-for="wallet in selectableWallets"
             :key="wallet.id"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
+            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
           >
             <div class="flex flex-row items-center">
-              <router-link
+              <RouterLink
                 :to="{ name: 'wallet-show', params: { address: wallet.id } }"
                 class="flex flex-row"
               >
@@ -97,12 +97,12 @@
                   :size="60"
                   class="identicon cursor-pointer"
                 />
-              </router-link>
+              </RouterLink>
               <div class="flex flex-col justify-center overflow-hidden pl-4">
                 <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
-                  <router-link :to="{ name: 'wallet-show', params: { address: wallet.id } }">
+                  <RouterLink :to="{ name: 'wallet-show', params: { address: wallet.id } }">
                     {{ wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
-                  </router-link>
+                  </RouterLink>
                 </div>
                 <span class="font-bold mt-2 text-lg">
                   {{ formatter_networkCurrency(wallet.balance, 2) }}
@@ -166,7 +166,7 @@ export default {
       return this.session_network.market.enabled
     },
     totalBalance () {
-      return this.$store.getters['profile/balance'](this.session_profile.id)
+      return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
     price () {
       return this.$store.getters['market/lastPrice']

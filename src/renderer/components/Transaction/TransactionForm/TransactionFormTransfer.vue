@@ -32,6 +32,7 @@
       <InputSwitch
         :text="$t('TRANSACTION.SEND_ALL')"
         :is-active="isSendAllActive"
+        :is-disabled="!canSendAll()"
         @change="onSendAll"
       />
     </div>
@@ -140,12 +141,12 @@ export default {
 
   data: vm => ({
     form: {
-      amount: vm.schema.amount || '',
+      amount: '',
       fee: 0,
       passphrase: '',
       walletPassword: '',
-      recipientId: vm.schema.address || '',
-      vendorField: vm.schema.vendorField || ''
+      recipientId: '',
+      vendorField: ''
     },
     isSendAllActive: false,
     showEncryptLoader: false,
@@ -194,6 +195,12 @@ export default {
   },
 
   mounted () {
+    // Note: we set this here and not in the data property so validation is triggered properly when fields get pre-populated
+    if (this.schema) {
+      this.$set(this.form, 'amount', this.schema.amount || '')
+      this.$set(this.form, 'recipientId', this.schema.address || '')
+      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+    }
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
     }
@@ -226,8 +233,12 @@ export default {
       this.ensureAvailableAmount()
     },
 
+    canSendAll () {
+      return this.maximumAvailableAmount > 0
+    },
+
     ensureAvailableAmount () {
-      if (this.isSendAllActive) {
+      if (this.isSendAllActive && this.canSendAll()) {
         this.$set(this.form, 'amount', this.maximumAvailableAmount)
       }
     },

@@ -3,7 +3,7 @@
     <h3>{{ $t('PAGES.PROFILE_ALL.HEADER') }} ({{ totalBalances.join(', ') }})</h3>
 
     <div class="ProfileAll__grid mt-10">
-      <router-link
+      <RouterLink
         :to="{ name: 'profile-new' }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
@@ -15,7 +15,7 @@
         <div class="ProfileAll__grid__profile__name font-semibold flex items-center">
           {{ $t('PAGES.PROFILE_ALL.ADD_PROFILE') }}
         </div>
-      </router-link>
+      </RouterLink>
 
       <div
         v-for="profile in profiles"
@@ -41,12 +41,12 @@
             {{ profileBalance(profile) }}
           </span>
 
-          <router-link
+          <RouterLink
             :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
             class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
           >
             {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
-          </router-link>
+          </RouterLink>
 
           <button
             class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"
@@ -97,7 +97,8 @@ export default {
       return 'pages/new-profile-avatar.svg'
     },
     /**
-     * Returns the sum of balances of all profile of each network
+     * Returns the sum of balances of all profile of each network and the Ledger
+     * wallets
      * @return {Object}
      */
     aggregatedBalances () {
@@ -108,6 +109,15 @@ export default {
           [profile.networkId]: (all[profile.networkId] || []).concat(wallets)
         }
       }, {})
+
+      // Add the Ledger wallets of the current network only
+      if (!walletsByNetwork[this.session_network.id]) {
+        walletsByNetwork[this.session_network.id] = []
+      }
+      walletsByNetwork[this.session_network.id] = [
+        ...walletsByNetwork[this.session_network.id],
+        ...this.$store.getters['ledger/wallets']
+      ]
 
       return mapValues(walletsByNetwork, wallets => {
         return uniqBy(wallets, 'address').reduce((total, wallet) => total + wallet.balance, 0)
@@ -158,7 +168,7 @@ export default {
     },
 
     profileBalance (profile) {
-      const balance = this.$store.getters['profile/balance'](profile.id)
+      const balance = this.$store.getters['profile/balanceWithLedger'](profile.id)
       const network = this.$store.getters['network/byId'](profile.networkId)
       const amount = this.currency_subToUnit(balance, network)
       return this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })

@@ -30,7 +30,7 @@ describe('pages > WalletAll', () => {
           getters: {
             'ledger/isConnected': false,
             'ledger/wallets': ledgerWallets,
-            'profile/balance': jest.fn(),
+            'profile/balanceWithLedger': jest.fn(),
             'wallet/byProfileId': id => wallets
           }
         },

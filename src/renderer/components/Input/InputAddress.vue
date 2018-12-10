@@ -193,8 +193,9 @@ export default {
 
       return results.reduce((map, wallet, index) => {
         const value = wallet.name || wallet.address
+        const searchValue = value.toLowerCase()
 
-        if (_.includes(value, this.inputValue)) {
+        if (_.includes(searchValue, this.inputValue.toLowerCase())) {
           map[wallet.address] = value
         }
 

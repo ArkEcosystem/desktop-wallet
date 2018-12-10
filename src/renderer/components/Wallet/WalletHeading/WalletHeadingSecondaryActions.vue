@@ -4,7 +4,6 @@
     class="WalletHeading__SecondaryActions flex content-end"
   >
     <ButtonModal
-      v-show="!currentWallet.isLedger"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
       icon="name"
@@ -86,7 +85,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'option-button whitespace-no-wrap mr-2 px-3 py-2 rounded-md'
+      return 'option-button whitespace-no-wrap mr-2 px-3 py-2'
     },
 
     currentWallet () {

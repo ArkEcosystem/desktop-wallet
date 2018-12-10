@@ -21,14 +21,14 @@
       <AppSidemenu
         v-if="hasAnyProfile"
         :is-horizontal="true"
-        class="flex lg:hidden"
+        class="block lg:hidden"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
         :class="{
           'blur': hasBlurFilter
         }"
-        class="App__main flex flex-col items-center px-4 lg:py-6 w-screen h-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-4 pb-6 lg:pt-6 w-screen h-screen overflow-hidden"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
@@ -36,26 +36,26 @@
         >
           <AppSidemenu
             v-if="hasAnyProfile"
-            class="hidden lg:flex"
+            class="hidden lg:block"
           />
-          <router-view class="flex-1 overflow-y-auto" />
+          <RouterView class="flex-1 overflow-y-auto" />
         </div>
 
         <AppFooter />
       </section>
 
-      <portal-target
+      <PortalTarget
         name="modal"
         multiple
         @change="onPortalChange"
       />
 
-      <portal-target
+      <PortalTarget
         name="loading"
         @change="onPortalChange"
       />
 
-      <portal-target
+      <PortalTarget
         name="qr-scan"
         @change="onPortalChange"
       />

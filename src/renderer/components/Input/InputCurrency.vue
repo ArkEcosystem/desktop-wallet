@@ -34,7 +34,6 @@
       </div>
     </div>
   </InputField>
-
 </template>
 
 <script>
@@ -272,7 +271,10 @@ export default {
     updateInputValue (value) {
       // Ignore empty and not valid values
       if (value && this.checkAmount(value)) {
-        this.inputValue = value.toString().replace(',', '.')
+        let number = Number(value.toString().replace(',', '.'))
+        number.toString().includes('-')
+          ? this.inputValue = number.toFixed(number.toString().split('-')[1]) // Small numbers will be like 1e-7 so we use the number after '-' for toFixed()
+          : this.inputValue = value.toString().replace(',', '.')
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
         return true

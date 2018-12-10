@@ -18,11 +18,13 @@
               classes: 'text-xs',
               trigger: 'hover'
             }"
-            class="whitespace-no-wrap"
+            class="flex items-center whitespace-no-wrap"
             href="#"
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
-            {{ data.formattedRow['id'] }}
+            <span class="mr-1">
+              {{ data.formattedRow['id'] }}
+            </span>
 
             <SvgIcon
               name="open-external"
@@ -112,7 +114,7 @@
       </template>
     </TableWrapper>
 
-    <portal
+    <Portal
       v-if="selected"
       to="modal"
     >
@@ -120,7 +122,7 @@
         :transaction="selected"
         @close="onCloseModal"
       />
-    </portal>
+    </Portal>
   </div>
 </template>
 
@@ -203,7 +205,7 @@ export default {
 
   methods: {
     formatDate (value) {
-      return this.$d(value, 'short')
+      return this.$d(value, 'long')
     },
 
     formatAddress (value) {
@@ -226,7 +228,15 @@ export default {
     },
 
     formatRow (row) {
-      return row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
+      const classes = [
+        row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
+      ]
+
+      if (row.expired) {
+        classes.push('expired')
+      }
+
+      return classes.join(' ')
     },
 
     isWellConfirmed (confirmations) {
@@ -238,8 +248,10 @@ export default {
     },
 
     onSortChange ({ columnIndex, sortType }) {
-      const columnName = this.columns[columnIndex].field
-      this.$emit('on-sort-change', { columnName, sortType })
+      if (this.columns[columnIndex]) {
+        const columnName = this.columns[columnIndex].field
+        this.$emit('on-sort-change', { columnName, sortType })
+      }
     },
 
     onRowClick ({ row }) {
@@ -259,5 +271,8 @@ export default {
 }
 .TransactionTable tr.unconfirmed .Transaction__confirmations {
   @apply text-theme-page-text bg-theme-page-instructions-background;
+}
+.TransactionTable tr.expired {
+  @apply line-through;
 }
 </style>

@@ -11,7 +11,9 @@
           :key="category"
           class="InputGridModal__container__category"
         >
-          <h4 class="w-full mt-5 mb-2">{{ category }}</h4>
+          <h4 class="w-full mt-5 mb-2">
+            {{ category }}
+          </h4>
 
           <div class="InputGrid__container__category__items">
             <button
@@ -19,7 +21,6 @@
               :key="item[itemKey]"
               @click="click(item)"
             >
-
               <!--
                 Here we could reuse the `item` scope of the `InputGrid` component
                 or provide a new slot, but currently is not necessary at all.
@@ -31,7 +32,6 @@
                 :title="item.title"
               />
             </button>
-
           </div>
         </div>
       </div>

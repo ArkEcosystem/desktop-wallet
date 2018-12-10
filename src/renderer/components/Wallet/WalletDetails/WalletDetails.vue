@@ -13,7 +13,7 @@
         :label="tab.text"
         :tab="tab.component"
       >
-        <component
+        <Component
           :is="tab.component"
           slot-scope="{ isActive }"
           :is-active="isActive"
@@ -28,14 +28,16 @@
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div class="flex flex-row">
-          <i18n
+          <I18n
             tag="span"
             class="font-semibold pr-6 border-r border-theme-line-separator"
             path="WALLET_DELEGATES.VOTED_FOR"
           >
-            <strong place="delegate">{{ votedDelegate.username }}</strong>
-          </i18n>
-          <i18n
+            <strong place="delegate">
+              {{ votedDelegate.username }}
+            </strong>
+          </I18n>
+          <I18n
             tag="span"
             class="font-semibold pl-6 border-r border-theme-line-separator"
             path="WALLET_DELEGATES.RANK_BANNER"
@@ -47,8 +49,10 @@
             class="font-semibold pl-6"
             path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
           >
-            <strong place="productivity">{{ getProductivity() }}</strong>
-          </i18n>
+            <strong place="productivity">
+              {{ getProductivity() }}
+            </strong>
+          </I18n>
         </div>
       </div>
       <div
@@ -59,7 +63,7 @@
       </div>
 
       <!-- Unvote modal -->
-      <portal
+      <Portal
         v-if="isSelected"
         to="modal"
       >
@@ -71,7 +75,7 @@
           @cancel="onCancel"
           @sent="onSent"
         />
-      </portal>
+      </Portal>
     </div>
   </main>
 </template>

@@ -67,7 +67,7 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          @click="openAddress(transaction.recipient)"
+          @click="openAddress(transaction.sender)"
         >
           <SvgIcon
             name="open-external"
@@ -111,8 +111,12 @@
       />
 
       <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
-        <span v-if="!isWellConfirmed">{{ transaction.confirmations }}</span>
-        <span v-else>{{ $t('TRANSACTION.WELL_CONFIRMED') }}</span>
+        <span v-if="!isWellConfirmed">
+          {{ transaction.confirmations }}
+        </span>
+        <span v-else>
+          {{ $t('TRANSACTION.WELL_CONFIRMED') }}
+        </span>
 
         <span
           v-tooltip="{

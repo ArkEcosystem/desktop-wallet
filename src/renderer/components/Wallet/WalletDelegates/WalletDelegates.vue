@@ -1,6 +1,5 @@
 <template>
   <div class="WalletDelegates">
-
     <div
       v-if="!walletVote.publicKey && isExplanationDisplayed"
       class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
@@ -76,7 +75,6 @@
       @cancel="onCancel"
       @sent="onSent"
     />
-
   </div>
 </template>
 
@@ -106,7 +104,7 @@ export default {
     totalCount: 0,
     queryParams: {
       page: 1,
-      limit: 1,
+      limit: 51,
       sort: {
         field: 'rank',
         type: 'asc'
@@ -220,15 +218,17 @@ export default {
     },
 
     onSortChange ({ columnIndex, sortType }) {
-      const columnName = this.columns[columnIndex].field
-      this.__updateParams({
-        sort: {
-          type: sortType,
-          field: columnName
-        },
-        page: 1
-      })
-      this.fetchDelegates()
+      if (this.columns[columnIndex]) {
+        const columnName = this.columns[columnIndex].field
+        this.__updateParams({
+          sort: {
+            type: sortType,
+            field: columnName
+          },
+          page: 1
+        })
+        this.fetchDelegates()
+      }
     },
 
     reset () {

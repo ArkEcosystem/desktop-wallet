@@ -1,5 +1,6 @@
 exports.APP = {
-  website: 'https://ark.io'
+  website: 'https://ark.io',
+  transactionExpiryMinutes: 45
 }
 
 exports.NETWORKS = [
