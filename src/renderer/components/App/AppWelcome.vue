@@ -17,7 +17,7 @@
             <img :src="assets_loadImage('ark-logo.png')">
           </div>
         </div>
-        <I18n
+        <i18n
           path="INTRODUCTION.WELCOME.TITLE"
           tag="span"
           class="text-5xl"
@@ -25,7 +25,7 @@
           <strong place="app">
             {{ $t('COMMON.APP_NAME') }}
           </strong>
-        </I18n>
+        </i18n>
         <div class="mt-3">
           {{ $t('INTRODUCTION.WELCOME.SAFETY_MESSAGE') }}
         </div>
@@ -58,7 +58,7 @@
           @back="moveTo(1)"
           @next="moveTo(3)"
         >
-          <I18n
+          <i18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
@@ -66,7 +66,7 @@
             <strong place="page">
               {{ $t('INTRODUCTION.POWER.TITLE') }}
             </strong>
-          </I18n>
+          </i18n>
         </AppIntroScreen>
 
         <AppIntroScreen
@@ -75,7 +75,7 @@
           @back="moveTo(2)"
           @next="moveTo(4)"
         >
-          <I18n
+          <i18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
@@ -83,7 +83,7 @@
             <strong place="page">
               {{ $t('INTRODUCTION.DUTY.TITLE') }}
             </strong>
-          </I18n>
+          </i18n>
         </AppIntroScreen>
 
         <AppIntroScreen
@@ -92,7 +92,7 @@
           @back="moveTo(3)"
           @next="moveTo(5)"
         >
-          <I18n
+          <i18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
@@ -100,7 +100,7 @@
             <strong place="page">
               {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
             </strong>
-          </I18n>
+          </i18n>
         </AppIntroScreen>
 
         <AppIntroScreen
@@ -110,7 +110,7 @@
           @back="moveTo(4)"
           @done="done"
         >
-          <I18n
+          <i18n
             slot="title"
             path="INTRODUCTION.PAGE_TITLE"
             tag="span"
@@ -118,7 +118,7 @@
             <strong place="page">
               {{ $t('INTRODUCTION.TURN.TITLE') }}
             </strong>
-          </I18n>
+          </i18n>
         </AppIntroScreen>
       </div>
     </div>
