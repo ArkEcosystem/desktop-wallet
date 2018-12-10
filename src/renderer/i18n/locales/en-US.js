@@ -598,6 +598,10 @@ export default {
     MODAL_HEADER: 'Networks'
   },
 
+  NETWORK: {
+    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
+  },
+
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transfer',
@@ -658,6 +662,8 @@ export default {
     CONFIRMATION_COUNT: '{0} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
+    DISCARD: 'Discard',
+    EXPIRED: 'Expired',
     FEE: 'Transaction fee',
     ID: 'ID',
     LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
@@ -669,6 +675,8 @@ export default {
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',
     RECIPIENT: 'Recipient',
+    RESEND: 'Resend',
+    RESENT_NOTICE: 'Transaction {transactionId} has been resent',
     SAVE_OFFLINE: 'Save transaction offline',
     SECOND_PASSPHRASE: 'Second Passphrase',
     SEND: 'Send',
@@ -749,6 +757,7 @@ export default {
     RANK: 'Rank',
     USERNAME: 'Username',
     PRODUCTIVITY: 'Productivity',
+    RANK_BANNER: 'Rank: {rank}',
     PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Approval',
     FORGED: 'Forged',

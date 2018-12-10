@@ -88,10 +88,6 @@ export default {
       this.renderChart()
     },
 
-    period () {
-      this.renderChart()
-    },
-
     isActive (val) {
       if (!val) return // Render the chart when open the component
 
