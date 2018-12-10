@@ -30,7 +30,7 @@
           ref="passphraseVerification"
           :passphrase="passphraseWords"
           :word-positions="wordPositions"
-          class="mb-20"
+          class="mb-10"
           @verified="onVerification"
         />
 
