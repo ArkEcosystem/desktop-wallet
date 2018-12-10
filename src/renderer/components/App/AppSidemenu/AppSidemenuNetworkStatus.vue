@@ -74,25 +74,39 @@
           </div>
         </div>
       </div>
-    </MenuOptions>
-
-    <div
-      class="bg-theme-settings mt-2 rounded"
-    >
-      <ButtonModal
-        :label="$t('PEER.CONNECT_CUSTOM')"
-        icon="connect"
-        view-box="0 0 30 15"
-        class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:text-white"
+      <div
+        class="bg-theme-settings mt-2 rounded"
       >
-        <template slot-scope="{ toggle, isOpen }">
-          <NetworkCustomPeer
-            v-if="isOpen"
-            @close="toggle"
+        <ButtonModal
+          :label="$t('PEER.CONNECT_CUSTOM')"
+          icon="connect"
+          view-box="0 0 30 15"
+          class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:text-white"
+        >
+          <template slot-scope="{ toggle, isOpen }">
+            <NetworkCustomPeer
+              v-if="isOpen"
+              @close="toggle"
+            />
+          </template>
+        </ButtonModal>
+        <RouterLink
+          :to="{ name: 'networks' }"
+          :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
+          class="flex items-center cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:no-underline hover:text-white"
+          @click.native="goToNetworkOverview()"
+        >
+          <SvgIcon
+            name="network-management"
+            view-box="0 0 21 21"
+            class="mr-4"
           />
-        </template>
-      </ButtonModal>
-    </div>
+          <span class="font-semibold">
+            {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
+          </span>
+        </RouterLink>
+      </div>
+    </MenuOptions>
   </div>
 </template>
 
@@ -100,6 +114,7 @@
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
 import { NetworkCustomPeer } from '@/components/Network'
 import { ButtonModal, ButtonReload } from '@/components/Button'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'AppSidemenuNetworkStatus',
@@ -109,7 +124,8 @@ export default {
     ButtonReload,
     MenuDropdown,
     MenuOptions,
-    NetworkCustomPeer
+    NetworkCustomPeer,
+    SvgIcon
   },
 
   props: {
@@ -201,6 +217,11 @@ export default {
       if (this.outsideClick && !this.showCustomPeerModal) {
         this.$emit('close')
       }
+    },
+
+    goToNetworkOverview () {
+      this.$emit('close')
+      this.$router.push({ name: 'networks' })
     }
   }
 }

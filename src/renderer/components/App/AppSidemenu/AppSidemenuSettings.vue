@@ -78,25 +78,6 @@
         @continue="onResetData"
       />
     </MenuOptions>
-
-    <div
-      class="bg-theme-settings mt-2 rounded"
-    >
-      <RouterLink
-        :title="$t('APP_SIDEMENU.NETWORK_OVERVIEW')"
-        :to="{ name: 'networks' }"
-        :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
-        class="flex items-center cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:no-underline hover:text-white"
-        @click.native="goToNetworkOverview()"
-      >
-        <SvgIcon
-          name="network-management"
-          view-box="0 0 20 20"
-          class="mr-4"
-        />
-        {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
-      </RouterLink>
-    </div>
   </div>
 </template>
 
@@ -104,7 +85,6 @@
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
 import { clone } from 'lodash'
 const os = require('os')
 
@@ -116,8 +96,7 @@ export default {
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
-    ButtonSwitch,
-    SvgIcon
+    ButtonSwitch
   },
 
   props: {
