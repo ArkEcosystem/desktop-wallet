@@ -114,7 +114,7 @@
           <!-- Profile settings -->
           <div
             :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-            class="AppSidemenu__avatar__container cursor-pointer flex items-center hover:opacity-50"
+            class="AppSidemenu__avatar__container relative cursor-pointer flex items-center hover:opacity-50"
           >
             <RouterLink
               :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
@@ -242,7 +242,7 @@ export default {
 .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature;
   right: 1rem;
-  bottom: 1rem;
+  bottom: -0.5rem;
   width: 2rem;
   height: 2rem;
 }
