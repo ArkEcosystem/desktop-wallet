@@ -159,15 +159,6 @@ export default {
     }
   },
 
-  mounted () {
-    const status = process.env.ENABLE_SCREENSHOT_PROTECTION
-    // Environments variables are strings
-    // Prevent JSON.parse from throwing an error if the variable is not a boolean
-    if (status && (status === 'true' || status === 'false')) {
-      this.setProtection(JSON.parse(status))
-    }
-  },
-
   methods: {
     setCurrency (newCurrency) {
       this.sessionCurrency = newCurrency
