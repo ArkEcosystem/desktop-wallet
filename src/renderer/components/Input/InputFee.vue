@@ -1,5 +1,5 @@
 <template>
-  <div class="InputFee relative">
+  <div class="InputFee relative inline-block w-full">
     <div class="w-full">
       <div class="InputFee__gradient absolute w-full" />
       <div
@@ -54,7 +54,7 @@
 
     <div
       v-if="isStaticFee && !isAdvancedFee"
-      class="my-4"
+      class="mt-6"
     >
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
     </div>
