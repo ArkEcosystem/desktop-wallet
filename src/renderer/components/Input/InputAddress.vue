@@ -343,7 +343,8 @@ export default {
         return !result
       },
       isKnownAddress (value) {
-        this.helperText = `This wallet is known as '${this.wallet_formatAddress(value, 10)}'`
+        const address = this.wallet_formatAddress(value, 10)
+        this.helperText = this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', { address })
       }
     }
   }
