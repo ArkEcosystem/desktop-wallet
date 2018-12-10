@@ -1,6 +1,6 @@
 <template>
   <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
-    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-4">
+    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-3">
       <div class="flex-1 flex flex-row justify-between">
         <div class="flex flex-row items-end">
           <div
@@ -166,7 +166,7 @@ export default {
       return this.session_network.market.enabled
     },
     totalBalance () {
-      return this.$store.getters['profile/balance'](this.session_profile.id)
+      return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
     price () {
       return this.$store.getters['market/lastPrice']
