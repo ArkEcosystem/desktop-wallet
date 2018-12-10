@@ -28,7 +28,7 @@ jobs:
           command: yarn test:unit --ci --maxWorkers 4
       - run:
           name: e2e tests
-          command: yarn test:e2e
+          command: yarn test:e2e:full
       - run:
           name: Lint
           command: yarn lint

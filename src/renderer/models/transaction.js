@@ -45,6 +45,13 @@ export default new BaseModel({
     },
     vendorField: {
       type: 'string'
+    },
+    raw: {
+      type: 'object'
+    },
+    isExpired: {
+      type: 'boolean',
+      format: (data) => (data.isExpired || false)
     }
   }
 })
