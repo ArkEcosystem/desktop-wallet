@@ -54,7 +54,7 @@
 
     <div
       v-if="isStaticFee && !isAdvancedFee"
-      class="mt-6"
+      class="mt-6 mb-4"
     >
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
     </div>
@@ -194,8 +194,6 @@ export default {
 
   created () {
     this.prepareFeeStatistics()
-    console.log(this.fee)
-    console.log(this.currentWallet)
   },
 
   methods: {
