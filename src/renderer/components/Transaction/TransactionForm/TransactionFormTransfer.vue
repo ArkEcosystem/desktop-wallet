@@ -152,7 +152,8 @@ export default {
     isSendAllActive: false,
     showEncryptLoader: false,
     showLedgerLoader: false,
-    bip38Worker: null
+    bip38Worker: null,
+    previousAmount: null
   }),
 
   computed: {
@@ -230,6 +231,13 @@ export default {
     },
 
     setSendAll (isActive) {
+      if (isActive) {
+        this.previousAmount = this.form['amount']
+      }
+      if (!isActive) {
+        this.$set(this.form, 'amount', this.previousAmount)
+        this.previousAmount = null
+      }
       this.isSendAllActive = isActive
       this.ensureAvailableAmount()
     },
