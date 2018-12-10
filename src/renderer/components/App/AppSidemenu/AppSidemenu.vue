@@ -15,6 +15,7 @@
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
         class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
+        @click.native="redirect('dashboard')"
       >
         <img src="@/assets/images/ark-logo.png">
       </RouterLink>
