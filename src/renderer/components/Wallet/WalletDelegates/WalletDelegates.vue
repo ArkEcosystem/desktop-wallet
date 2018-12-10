@@ -217,18 +217,17 @@ export default {
       this.fetchDelegates()
     },
 
-    onSortChange ({ columnIndex, sortType }) {
-      if (this.columns[columnIndex]) {
-        const columnName = this.columns[columnIndex].field
-        this.__updateParams({
-          sort: {
-            type: sortType,
-            field: columnName
-          },
-          page: 1
-        })
-        this.fetchDelegates()
-      }
+    onSortChange (sortOptions) {
+      const columnName = sortOptions[0].field
+      const sortType = sortOptions[0].type
+      this.__updateParams({
+        sort: {
+          type: sortType,
+          field: columnName
+        },
+        page: 1
+      })
+      this.fetchDelegates()
     },
 
     reset () {
