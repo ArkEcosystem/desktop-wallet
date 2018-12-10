@@ -85,8 +85,11 @@ yarn test:unit:coverage
 # Run unit tests and watch for changes to re-run the tests
 yarn test:unit:watch
 
-# Run end-to-end tests
+# Run end-to-end tests, without building the application
 yarn test:e2e
+
+# Build the application and run end-to-end tests
+yarn test:e2e:full
 ```
 
 ## Security

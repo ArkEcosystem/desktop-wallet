@@ -38,8 +38,9 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "electron-builder install-app-deps",
-    "test": "npm run test:unit && npm run test:e2e",
-    "test:e2e": "npm run pack && jest --config __tests__/e2e.jest.conf.js",
+    "test": "npm run test:unit && npm run test:e2e:full",
+    "test:e2e": "jest --config __tests__/e2e.jest.conf.js",
+    "test:e2e:full": "npm run pack && npm run test:e2e",
     "test:unit": "jest --config __tests__/unit.jest.conf.js",
     "test:unit:coverage": "jest --config __tests__/unit.jest.conf.js --coverage",
     "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch"
