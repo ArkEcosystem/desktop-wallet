@@ -114,15 +114,21 @@
           <!-- Profile settings -->
           <div
             :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-            class="cursor-pointer flex items-center"
+            class="AppSidemenu__avatar__container cursor-pointer flex items-center hover:opacity-50"
           >
             <RouterLink
               :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
               :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
               :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
               :to="{ name: 'profiles' }"
-              class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none hover:opacity-50"
-            />
+              class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
+            >
+              <SvgIcon
+                class="AppSidemenu__avatar__dots"
+                name="point"
+                view-box="0 0 14 14"
+              />
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -137,6 +143,7 @@ import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'AppSidemenu',
@@ -146,7 +153,8 @@ export default {
     MenuNavigationItem,
     AppSidemenuSettings,
     AppSidemenuNetworkStatus,
-    AppSidemenuImportantNotification
+    AppSidemenuImportantNotification,
+    SvgIcon
   },
 
   props: {
@@ -228,7 +236,14 @@ export default {
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
 
-.AppSidemenu__avatar {
+.AppSidemenu__avatar__container {
   transition: opacity 0.5s;
+}
+.AppSidemenu__avatar__dots {
+  @apply absolute p-2 rounded-full bg-theme-feature;
+  right: 1rem;
+  bottom: 1rem;
+  width: 2rem;
+  height: 2rem;
 }
 </style>
