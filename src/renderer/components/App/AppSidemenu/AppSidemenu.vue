@@ -11,7 +11,6 @@
       class="AppSidemenu__container flexify w-full h-full justify-between"
     >
       <!-- ARK logo -->
-<<<<<<< HEAD
       <RouterLink
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
