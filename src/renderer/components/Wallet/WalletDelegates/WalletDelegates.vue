@@ -217,9 +217,9 @@ export default {
       this.fetchDelegates()
     },
 
-    onSortChange (ctx) {
-      const columnName = ctx[0].field
-      const sortType = ctx[0].type
+    onSortChange (sortOptions) {
+      const columnName = sortOptions[0].field
+      const sortType = sortOptions[0].type
       this.__updateParams({
         sort: {
           type: sortType,
