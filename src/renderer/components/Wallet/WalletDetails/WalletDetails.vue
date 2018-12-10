@@ -43,8 +43,8 @@
             path="WALLET_DELEGATES.RANK_BANNER"
           >
             <strong place="rank">{{ votedDelegate.rank }}</strong>
-          </i18n>
-          <i18n
+          </I18n>
+          <I18n
             tag="span"
             class="font-semibold pl-6"
             path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
