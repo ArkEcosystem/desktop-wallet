@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import { at, orderBy } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -154,7 +154,9 @@ export default {
           profileId: this.session_profile.profileId
         })
 
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        var transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+
+        transactions = this.__sortTransaction(transactions)
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
@@ -291,7 +293,9 @@ export default {
       this.loadTransactions()
     },
 
-    onSortChange ({ columnName, sortType }) {
+    onSortChange (ctx) {
+      const sortType = ctx[0].type
+      const columnName = ctx[0].field
       this.__updateParams({
         sort: {
           type: sortType,
@@ -307,6 +311,10 @@ export default {
       this.queryParams.page = 1
       this.totalCount = 0
       this.fetchedTransactions = []
+    },
+
+    __sortTransaction (transaction = this.fetchedTransactions) {
+      return orderBy(transaction, [this.queryParams.sort.field], [this.queryParams.sort.type])
     },
 
     __updateParams (newProps) {
