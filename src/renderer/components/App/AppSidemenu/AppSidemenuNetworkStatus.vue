@@ -75,13 +75,13 @@
         </div>
       </div>
       <div
-        class="bg-theme-settings mt-2 rounded"
+        class="bg-theme-settings mt-5 rounded"
       >
         <ButtonModal
           :label="$t('PEER.CONNECT_CUSTOM')"
           icon="connect"
           view-box="0 0 30 15"
-          class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:text-white"
+          class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-3 pl-10 text-grey-dark hover:text-white"
         >
           <template slot-scope="{ toggle, isOpen }">
             <NetworkCustomPeer
@@ -93,7 +93,7 @@
         <RouterLink
           :to="{ name: 'networks' }"
           :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
-          class="flex items-center cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:no-underline hover:text-white"
+          class="flex items-center cursor-pointer w-full text-left py-3 pl-10 text-grey-dark hover:no-underline hover:text-white"
           @click.native="goToNetworkOverview()"
         >
           <SvgIcon
