@@ -37,6 +37,13 @@
           </i18n>
           <i18n
             tag="span"
+            class="font-semibold pl-6 border-r border-theme-line-separator"
+            path="WALLET_DELEGATES.RANK_BANNER"
+          >
+            <strong place="rank">{{ votedDelegate.rank }}</strong>
+          </i18n>
+          <i18n
+            tag="span"
             class="font-semibold pl-6"
             path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
           >
