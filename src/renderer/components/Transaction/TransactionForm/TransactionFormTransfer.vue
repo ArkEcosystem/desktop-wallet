@@ -65,16 +65,16 @@
     <InputPassword
       v-else-if="currentWallet.passphrase"
       ref="password"
-      class="mt-4"
       v-model="$v.form.walletPassword.$model"
+      class="mt-4"
       :label="$t('TRANSACTION.PASSWORD')"
       :is-required="true"
     />
     <PassphraseInput
       v-else
       ref="passphrase"
-      class="mt-4"
       v-model="$v.form.passphrase.$model"
+      class="mt-4"
       :address="currentWallet.address"
       :pub-key-hash="session_network.version"
     />
