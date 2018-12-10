@@ -47,7 +47,7 @@
         <div class="mt-3">
           {{ $t('INTRODUCTION.DUTY.OWNER') }}
         </div>
-        <I18n
+        <i18n
           tag="div"
           class="mt-2"
           path="INTRODUCTION.DUTY.WARNING.INFO"
@@ -58,7 +58,7 @@
           >
             {{ $t('INTRODUCTION.DUTY.WARNING.WARN') }}
           </div>
-        </I18n>
+        </i18n>
         <div class="font-bold mt-3">
           {{ $t('INTRODUCTION.DUTY.SECURITY') }}
         </div>
