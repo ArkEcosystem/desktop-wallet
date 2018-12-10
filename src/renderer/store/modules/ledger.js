@@ -140,7 +140,7 @@ export default {
      * @param  {Boolean} [clearFirst=false] Clear ledger wallets from store before reloading
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch, getters }, clearFirst = false) {
+    async reloadWallets ({ commit, dispatch, getters, rootGetters }, clearFirst = false) {
       if (!getters['isConnected']) {
         return []
       }
@@ -172,11 +172,13 @@ export default {
             }
           }
 
+          const ledgerName = rootGetters['wallet/ledgerNameByAddress'](ledgerAddress)
+
           wallets[ledgerAddress] = Object.assign(wallet, {
             isLedger: true,
             ledgerIndex,
             isSendingEnabled: true,
-            name: `Ledger ${ledgerIndex + 1}`,
+            name: ledgerName || `Ledger ${ledgerIndex + 1}`,
             passphrase: null,
             profileId: null,
             id: ledgerAddress,

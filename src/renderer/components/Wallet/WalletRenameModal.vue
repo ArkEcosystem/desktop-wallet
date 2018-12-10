@@ -70,8 +70,20 @@ export default {
 
   methods: {
     renameWallet () {
-      this.wallet.name = this.schema.name
-      this.$store.dispatch('wallet/update', this.wallet)
+      if (this.wallet.isLedger) {
+        try {
+          this.$store.dispatch('wallet/setLedgerName', {
+            address: this.wallet.address,
+            name: this.wallet.name
+          })
+        } catch (error) {
+          this.$error(this.$t('WALLET_RENAME.ERROR_LEDGER', { error }))
+        }
+        this.wallet.name = this.schema.name
+      } else {
+        this.wallet.name = this.schema.name
+        this.$store.dispatch('wallet/update', this.wallet)
+      }
       this.emitRenamed()
     },
 
