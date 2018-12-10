@@ -89,7 +89,7 @@ yarn test:unit:watch
 yarn test:e2e
 
 # Build the application and run end-to-end tests
-yarn test:e2e:build
+yarn test:e2e:full
 ```
 
 ## Security
