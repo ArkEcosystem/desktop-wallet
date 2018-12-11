@@ -36,8 +36,8 @@
                   class="bg-transparent text-theme-page-text flex-1"
                   name="name"
                   @input="setName"
-                  @keyup.enter="toggleIsNameEditable"
-                  @keyup.esc="toggleIsNameEditable"
+                  @keyup.enter.native="toggleIsNameEditable"
+                  @keyup.esc.native="toggleIsNameEditable"
                 />
                 <div
                   v-else
