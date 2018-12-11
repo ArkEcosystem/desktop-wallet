@@ -96,7 +96,7 @@ export default {
   },
 
   data () {
-    const maxV1fee = V1.fees[this.transactionType] * Math.pow(10, -8)
+    const maxV1fee = V1.fees[this.transactionType] * 1e-8
     const data = {
       feeChoices: {
         MINIMUM: 1,
@@ -107,7 +107,7 @@ export default {
       },
       feeChoice: 'AVERAGE',
       maxV1fee,
-      step: Math.pow(10, -8)
+      step: 1e-8
     }
     data.fee = data.feeChoices[data.feeChoice]
     return data
