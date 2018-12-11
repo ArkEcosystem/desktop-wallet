@@ -107,6 +107,6 @@ exports.V1 = {
   ]
 }
 
-exports.EXCHANGES = {
+exports.EXCHANGE = {
   changellyId: 'bab9de3731aa'
 }
