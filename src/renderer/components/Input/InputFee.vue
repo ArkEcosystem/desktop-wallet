@@ -167,7 +167,7 @@ export default {
         return ''
       }
 
-      if (this.currency_subToUnit(this.currentWallet.balance) < this.fee) {
+      if (parseFloat(this.currency_subToUnit(this.currentWallet.balance)) < parseFloat(this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
