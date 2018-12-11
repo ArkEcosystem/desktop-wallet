@@ -88,7 +88,7 @@ export default {
       required: true
     },
 
-    showInsufficentFunds: {
+    showInsufficientFunds: {
       type: Boolean,
       required: false,
       default: false
@@ -163,7 +163,7 @@ export default {
       return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
     },
     insufficientFundsError () {
-      if (!this.showInsufficentFunds) {
+      if (!this.showInsufficientFunds) {
         return ''
       }
 
