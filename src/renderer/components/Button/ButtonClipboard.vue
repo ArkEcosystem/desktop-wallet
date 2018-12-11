@@ -46,7 +46,13 @@ export default {
   }),
 
   mounted () {
-    this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')
+    // When opening the `TransactionShow` modal the clipboard buttons have i18n,
+    // but, when closing, its value has been lost. This problem is produced only
+    // when using portals. Probably is this bug:
+    // https://github.com/LinusBorg/portal-vue/issues/159
+    if (this.$i18n) {
+      this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')
+    }
   },
 
   methods: {
