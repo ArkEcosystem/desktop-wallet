@@ -16,7 +16,7 @@
 
 <script>
 import ModalWindow from './ModalWindow'
-import VueQrcode from '@xkeshi/vue-qrcode'
+import VueQrcode from '@/components/utils/QRCode'
 
 export default {
   name: 'ModalQrCode',
