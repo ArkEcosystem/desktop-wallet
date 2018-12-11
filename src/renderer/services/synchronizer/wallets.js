@@ -142,6 +142,11 @@ class Action {
           transactions,
           profileId: wallet.profileId
         })
+
+        if (wallet.isLedger) {
+          return
+        }
+
         const latest = this.findLatestTransaction(transactions)
         const latestAt = latest.timestamp
         const checkedAt = wallet.transactions ? wallet.transactions.checkedAt : 0
