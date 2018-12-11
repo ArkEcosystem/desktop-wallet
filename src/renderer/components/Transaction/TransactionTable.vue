@@ -153,7 +153,6 @@ export default {
   },
 
   data: () => ({
-    showModal: false,
     selected: null
   }),
 
