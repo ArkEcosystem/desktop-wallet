@@ -67,6 +67,7 @@
       v-else-if="currentWallet.passphrase"
       ref="password"
       v-model="$v.form.walletPassword.$model"
+      class="mt-4"
       :label="$t('TRANSACTION.PASSWORD')"
       :is-required="true"
     />
@@ -74,6 +75,7 @@
       v-else
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
+      class="mt-4"
       :address="currentWallet.address"
       :pub-key-hash="session_network.version"
     />

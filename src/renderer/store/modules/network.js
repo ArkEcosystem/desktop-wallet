@@ -1,6 +1,8 @@
 import BaseModule from '../base'
 import { isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
+import i18n from '@/i18n'
+import alertEvents from '@/plugins/alert-events'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
 import Client from '@/services/client'
@@ -74,7 +76,18 @@ export default new BaseModule(NetworkModel, {
       if (!network) {
         network = rootGetters['network/customNetworkById'](networkId)
       }
-      const response = await Client.fetchNetworkConfig(network.server, network.apiVersion)
+
+      let response
+      try {
+        response = await Client.fetchNetworkConfig(network.server, network.apiVersion)
+      } catch (error) {
+        console.error(`Failed to update network config for ${network.server}`)
+        alertEvents.$error(i18n.t('NETWORK.FAILED_CONFIG_UPDATE', {
+          network: network.server
+        }))
+
+        return
+      }
 
       if (response) {
         try {

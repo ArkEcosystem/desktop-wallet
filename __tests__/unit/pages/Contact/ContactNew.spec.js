@@ -30,7 +30,8 @@ describe('pages > ContactNew', () => {
             address: {},
             name: {}
           }
-        }
+        },
+        wallet_name: value => value
       }
     })
   }

@@ -139,9 +139,18 @@ export default {
       this.$synchronizer.ready()
 
       await this.loadNotEssential()
+
+      // Environments variables are strings
+      const status = process.env.ENABLE_SCREENSHOT_PROTECTION
+      if (status) {
+        // We only set this if the env variable is 'false', since protection defaults to true
+        // Since it's not a boolean, we can't do status !== false, since that would disable protection with every env var that's not 'true'
+        this.$store.dispatch('session/setContentProtection', !(status === 'false'))
+      } else {
+        remote.getCurrentWindow().setContentProtection(true)
+      }
     })
 
-    remote.getCurrentWindow().setContentProtection(this.hasProtection)
     this.setContextMenu()
   },
 

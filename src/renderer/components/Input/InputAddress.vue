@@ -11,7 +11,7 @@
     <InputField
       slot="handler"
       :label="label"
-      :helper-text="helperText || error"
+      :helper-text="helperText || error || notice"
       :is-dirty="$v.model.$dirty"
       :is-disabled="isDisabled"
       :is-focused="isFocused"
@@ -205,6 +205,14 @@ export default {
 
     suggestionsKeys () {
       return new Cycled(Object.keys(this.suggestions))
+    },
+
+    notice () {
+      const knownAddress = this.wallet_name(this.inputValue)
+      if (knownAddress) {
+        return this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', { address: knownAddress })
+      }
+      return null
     }
   },
 
