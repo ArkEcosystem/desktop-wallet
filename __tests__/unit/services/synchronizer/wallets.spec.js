@@ -22,7 +22,8 @@ describe('Services > Synchronizer > Wallets', () => {
       $store: {
         getters: {
           'wallet/byProfileId': jest.fn(),
-          'wallet/contactsByProfileId': jest.fn()
+          'wallet/contactsByProfileId': jest.fn(),
+          'ledger/wallets': []
         },
         dispatch: (action, data) => {
           if (action === 'wallet/update') {
