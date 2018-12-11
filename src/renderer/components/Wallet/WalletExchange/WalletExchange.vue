@@ -2,7 +2,7 @@
   <section>
     <div
       v-if="!isPurchaseEnabled"
-      class="mx-auto w-1/2 flex flex-col items-center py-5"
+      class="mx-auto max-w-md flex flex-col items-center py-5"
     >
       <a
         href="#"
@@ -16,18 +16,50 @@
       </a>
 
       <div class="leading-normal mt-10 mb-5">
-        <p class="font-semibold text-lg mb-2">
+        <p class="font-semibold mb-2 text-center">
           {{ $t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.TITLE', { ticker: currentTicker }) }}
         </p>
-        <p>{{ $t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.CONTENT', { ticker: currentTicker }) }}</p>
+        <p class="text-justify">
+          {{ $t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.CONTENT', { ticker: currentTicker }) }}
+        </p>
       </div>
 
       <InputSwitch
         v-model="isChangellyEnabled"
         :is-reverse="true"
         :is-large="false"
-        :text="$t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.CONFIRMATION')"
-      />
+      >
+        <i18n
+          path="PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.CONFIRMATION"
+          tag="div"
+          class="ml-4 leading-normal"
+        >
+          <a
+            place="terms"
+            href="#"
+            @click.stop="openChangellyTerms"
+          >
+            {{ $t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.TERMS_OF_USE') }}
+          </a>
+          <a
+            place="privacy"
+            href="#"
+            @click.stop="openChangellyPrivacyPolicy"
+          >
+            {{ $t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.PRIVACY_POLICY') }}
+          </a>
+          <a
+            href="#"
+            place="kyc"
+            @click.stop="openChangellyKYC"
+          >
+            {{ $t('PAGES.WALLET_EXCHANGE.CHANGELLY_TERMS.KYC') }}
+          </a>
+          <span place="button">
+            "{{ $t('COMMON.CONFIRM') }}"
+          </span>
+        </i18n>
+      </InputSwitch>
 
       <div class="text-center mt-10">
         <button
@@ -121,6 +153,14 @@ export default {
 
     openChangellyTerms () {
       this.electron_openExternal('https://changelly.com/terms-of-use')
+    },
+
+    openChangellyPrivacyPolicy () {
+      this.electron_openExternal('https://changelly.com/privacy-policy')
+    },
+
+    openChangellyKYC () {
+      this.electron_openExternal('https://changelly.com/aml-kyc')
     },
 
     setConfirmed () {
