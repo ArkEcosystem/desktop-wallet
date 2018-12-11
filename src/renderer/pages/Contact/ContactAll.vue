@@ -126,6 +126,9 @@ export default {
   transition: 0.5s;
   opacity: 0.5;
 }
+.ContactAll__grid__contact .identicon {
+  transition: 0.5s;
+}
 @screen lg {
   .ContactAll__grid__contact {
     @apply .p-4

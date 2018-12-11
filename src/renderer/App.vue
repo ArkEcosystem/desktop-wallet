@@ -21,7 +21,7 @@
       <AppSidemenu
         v-if="hasAnyProfile"
         :is-horizontal="true"
-        class="flex lg:hidden"
+        class="block lg:hidden"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
@@ -36,7 +36,7 @@
         >
           <AppSidemenu
             v-if="hasAnyProfile"
-            class="hidden lg:flex"
+            class="hidden lg:block"
           />
           <RouterView class="flex-1 overflow-y-auto" />
         </div>
@@ -139,9 +139,18 @@ export default {
       this.$synchronizer.ready()
 
       await this.loadNotEssential()
+
+      // Environments variables are strings
+      const status = process.env.ENABLE_SCREENSHOT_PROTECTION
+      if (status) {
+        // We only set this if the env variable is 'false', since protection defaults to true
+        // Since it's not a boolean, we can't do status !== false, since that would disable protection with every env var that's not 'true'
+        this.$store.dispatch('session/setContentProtection', !(status === 'false'))
+      } else {
+        remote.getCurrentWindow().setContentProtection(true)
+      }
     })
 
-    remote.getCurrentWindow().setContentProtection(this.hasProtection)
     this.setContextMenu()
   },
 

@@ -14,6 +14,7 @@ describe('pages > ProfileAll', () => {
   let networks
   let profiles
   let wallets
+  let ledgerWallets
 
   const mountPage = () => {
     const networkBy = (attr, value) => networks.find(network => network[attr] === value)
@@ -26,15 +27,19 @@ describe('pages > ProfileAll', () => {
       mocks: {
         $store: {
           getters: {
+            'ledger/wallets': ledgerWallets,
             'network/byId': id => networkBy('id', id),
             'network/byToken': token => networkBy('token', token),
             'network/bySymbol': symbol => networkBy('symbol', symbol),
             'profile/all': profiles,
-            'profile/balance': _id => 13700000,
+            'profile/balanceWithLedger': _id => 13700000,
             'wallet/byProfileId': id => wallets[id]
           }
         },
-        formatter_networkCurrency: jest.fn()
+        formatter_networkCurrency: jest.fn(),
+        session_network: {
+          id: 'main'
+        }
       }
     })
   }
@@ -69,6 +74,7 @@ describe('pages > ProfileAll', () => {
         { address: 'D1', balance: 50900000 }
       ]
     }
+    ledgerWallets = []
   })
 
   it('should render component', () => {
@@ -100,6 +106,39 @@ describe('pages > ProfileAll', () => {
         })
       })
     })
+
+    describe('when the Ledger has wallets on the current network', () => {
+      beforeEach(() => {
+        ledgerWallets = [
+          { address: 'MxLedger0', balance: 9883102007 },
+          { address: 'MxLedger1', balance: 6723900701 }
+        ]
+      })
+
+      it('should include their balances', () => {
+        wrapper = mountPage()
+        expect(wrapper.vm.aggregatedBalances).toEqual({
+          main: 66622093608,
+          other: 12190000,
+          dev: 52010000
+        })
+      })
+
+      describe('when they are included as non-Ledger wallets', () => {
+        beforeEach(() => {
+          ledgerWallets[1] = wallets.p1[1]
+        })
+
+        it('should include those wallets only 1 time', () => {
+          wrapper = mountPage()
+          expect(wrapper.vm.aggregatedBalances).toEqual({
+            main: 59898192907,
+            other: 12190000,
+            dev: 52010000
+          })
+        })
+      })
+    })
   })
 
   describe('totalBalances', () => {
@@ -110,6 +149,24 @@ describe('pages > ProfileAll', () => {
         'o0.1219',
         'd0.5201'
       ])
+    })
+
+    describe('when the Ledger has wallets on the current network', () => {
+      beforeEach(() => {
+        ledgerWallets = [
+          { address: 'MxLedger0', balance: 9883102007 },
+          { address: 'MxLedger1', balance: 6723900701 }
+        ]
+      })
+
+      it('should include their balances', () => {
+        wrapper = mountPage()
+        expect(wrapper.vm.totalBalances).toEqual([
+          'm666.22093608',
+          'o0.1219',
+          'd0.5201'
+        ])
+      })
     })
   })
 

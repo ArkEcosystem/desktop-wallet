@@ -205,7 +205,7 @@ export default {
 
   methods: {
     formatDate (value) {
-      return this.$d(value, 'short')
+      return this.$d(value, 'long')
     },
 
     formatAddress (value) {
@@ -232,7 +232,7 @@ export default {
         row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
       ]
 
-      if (row.expired) {
+      if (row.isExpired) {
         classes.push('expired')
       }
 
