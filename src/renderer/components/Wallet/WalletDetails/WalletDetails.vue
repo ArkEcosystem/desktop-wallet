@@ -143,7 +143,7 @@ export default {
         })
       }
 
-      if (this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+      if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
         tabs.push({
           component: 'WalletExchange',
           text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })

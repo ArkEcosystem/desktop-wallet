@@ -134,7 +134,7 @@ export default {
       const refId = merchantId
       const color = 'ED2A2D'
 
-      const baseUrl = 'https://changelly.com/widget/v1?auth=email&'
+      const baseUrl = 'https://old.changelly.com/widget/v1?auth=email&'
       const params = `from=${from}&to=${to}&merchant_id=${merchantId}&address=${address}&amount=${amount}&ref_id=${refId}&color=${color}`
 
       return baseUrl + params
