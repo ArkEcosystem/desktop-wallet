@@ -1,5 +1,5 @@
 <template>
-  <div class="InputFee relative">
+  <div class="InputFee relative inline-block w-full">
     <div class="w-full">
       <div class="InputFee__gradient absolute w-full" />
       <div
@@ -18,6 +18,7 @@
         :currency="currency"
         :label="$t('TRANSACTION.FEE')"
         :value="fee"
+        :custom-error="insufficientFundsError"
         :not-valid-error="notValidError"
         :maximum-amount="feeChoiceMax"
         :maximum-error="maximumError"
@@ -53,7 +54,7 @@
 
     <div
       v-if="isStaticFee && !isAdvancedFee"
-      class="my-4"
+      class="mt-6 mb-4"
     >
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
     </div>
@@ -85,6 +86,12 @@ export default {
     transactionType: {
       type: Number,
       required: true
+    },
+
+    showInsufficentFunds: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -107,6 +114,9 @@ export default {
   },
 
   computed: {
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
     hiddenGradientStyle () {
       return {
         width: `${100 - this.rangePercentage}%`
@@ -151,6 +161,17 @@ export default {
       const max = this.feeChoices.MAXIMUM
       const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
+    },
+    insufficientFundsError () {
+      if (!this.showInsufficentFunds) {
+        return ''
+      }
+
+      if (this.currency_subToUnit(this.currentWallet.balance) < this.fee) {
+        const balance = this.formatter_networkCurrency(this.currentWallet.balance)
+        return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
+      }
+      return ''
     },
     warningText () {
       if (this.isAdvancedFee) {
@@ -266,7 +287,7 @@ export default {
     fee: {
       isValid (value) {
         if (this.$refs.input) {
-          return !this.$refs.input.$v.$invalid
+          return !this.$refs.input.$v.$invalid && !this.insufficientFundsError
         }
         return false
       }

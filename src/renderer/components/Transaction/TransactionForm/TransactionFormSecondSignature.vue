@@ -30,7 +30,7 @@
           ref="passphraseVerification"
           :passphrase="passphraseWords"
           :word-positions="wordPositions"
-          class="mb-20"
+          class="mb-10"
           @verified="onVerification"
         />
 
@@ -39,6 +39,7 @@
           ref="fee"
           :currency="session_network.token"
           :transaction-type="$options.transactionType"
+          :show-insufficent-funds="true"
           @input="onFee"
         />
 

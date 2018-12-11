@@ -244,7 +244,8 @@ export default {
       NEO_ADDRESS: 'This looks like a NEO address'
     },
     LABEL: 'Address',
-    QR: 'Scan the QR code'
+    QR: 'Scan the QR code',
+    KNOWN_ADDRESS: 'This wallet is known as "{address}"'
   },
 
   INPUT_CURRENCY: {

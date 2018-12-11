@@ -132,6 +132,11 @@ export default {
       required: false,
       default: null
     },
+    customError: {
+      type: String,
+      required: false,
+      default: null
+    },
     warningText: {
       type: String,
       required: false,
@@ -191,6 +196,8 @@ export default {
             const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
             error = this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
           }
+        } else if (this.customError) {
+          error = this.customError
         }
       }
 
