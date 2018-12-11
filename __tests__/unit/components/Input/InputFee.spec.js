@@ -268,7 +268,7 @@ describe('InputFee', () => {
 
       describe('when the balance is bigger than the fee', () => {
         it('should return an empty message', () => {
-          // NOTE: Balance is in arktoshi, while fee i in units
+          // NOTE: Balance is in arktoshi, while fee is in ARK
           wrapper.vm.wallet_fromRoute.balance = 20e8
           wrapper.vm.fee = 1
           expect(wrapper.vm.insufficientFundsError).toEqual('')
