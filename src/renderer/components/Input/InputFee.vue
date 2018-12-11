@@ -157,8 +157,8 @@ export default {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
       }
 
-      if (this.feeChoice === 'MINIMUM') {
-        return this.$t('INPUT_FEE.MINIMUM_NOTICE')
+      if (this.fee < this.feeChoices.AVERAGE) {
+        return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
 
       return null
