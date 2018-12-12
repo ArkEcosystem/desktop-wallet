@@ -145,6 +145,8 @@ export default {
         return []
       }
 
+      const profileId = rootGetters['session/profileId']
+
       if (clearFirst) {
         commit('SET_WALLETS', [])
       }
@@ -180,7 +182,7 @@ export default {
             isSendingEnabled: true,
             name: ledgerName || `Ledger ${ledgerIndex + 1}`,
             passphrase: null,
-            profileId: null,
+            profileId,
             id: ledgerAddress,
             publicKey: await dispatch('getPublicKey', ledgerIndex)
           })
