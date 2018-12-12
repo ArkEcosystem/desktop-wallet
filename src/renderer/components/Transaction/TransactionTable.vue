@@ -18,7 +18,7 @@
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
             <SvgIcon
-              v-show="hideVendorField"
+              v-show="isDashboard"
               v-tooltip="{
                 content: data.row.vendorField,
                 classes: 'text-xs',
@@ -106,14 +106,16 @@
 
         <div
           v-else-if="data.column.field === 'sender'"
-          class="overflow-hidden truncate max-w-xxs"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="overflow-hidden truncate"
         >
           <WalletAddress :address="data.row.sender" />
         </div>
 
         <div
           v-else-if="data.column.field === 'recipient'"
-          class="overflow-hidden truncate max-w-xxs"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="overflow-hidden truncate"
         >
           <WalletAddress
             :address="data.row.recipient"
@@ -164,7 +166,7 @@ export default {
       required: false,
       default: false
     },
-    hideVendorField: {
+    isDashboard: {
       type: Boolean,
       required: false,
       default: false
@@ -180,9 +182,9 @@ export default {
       const vendorFieldClass = [
         'hidden'
       ]
-      if (this.hasShortId && !this.hideVendorField) {
+      if (this.hasShortId && !this.isDashboard) {
         vendorFieldClass.push('xxl:table-cell')
-      } else if (!this.hideVendorField) {
+      } else if (!this.isDashboard) {
         vendorFieldClass.push('xl:table-cell')
       }
 
@@ -301,5 +303,8 @@ export default {
 }
 .TransactionTable tr.expired {
   @apply line-through;
+}
+.TransactionTable td .dashboard-address {
+  width: 100px;
 }
 </style>
