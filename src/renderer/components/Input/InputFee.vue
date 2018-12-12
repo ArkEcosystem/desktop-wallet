@@ -88,7 +88,7 @@ export default {
       required: true
     },
 
-    showInsufficentFunds: {
+    showInsufficientFunds: {
       type: Boolean,
       required: false,
       default: false
@@ -96,7 +96,7 @@ export default {
   },
 
   data () {
-    const maxV1fee = V1.fees[this.transactionType] * Math.pow(10, -8)
+    const maxV1fee = V1.fees[this.transactionType] * 1e-8
     const data = {
       feeChoices: {
         MINIMUM: 1,
@@ -107,7 +107,7 @@ export default {
       },
       feeChoice: 'AVERAGE',
       maxV1fee,
-      step: Math.pow(10, -8)
+      step: 1e-8
     }
     data.fee = data.feeChoices[data.feeChoice]
     return data
@@ -163,11 +163,11 @@ export default {
       return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
     },
     insufficientFundsError () {
-      if (!this.showInsufficentFunds) {
+      if (!this.showInsufficientFunds) {
         return ''
       }
 
-      if (this.currency_subToUnit(this.currentWallet.balance) < this.fee) {
+      if (parseFloat(this.currency_subToUnit(this.currentWallet.balance)) < parseFloat(this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
@@ -176,6 +176,9 @@ export default {
     warningText () {
       if (this.isAdvancedFee) {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
+      }
+      if (this.fee < this.feeChoices.AVERAGE) {
+        return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
 
       return null
