@@ -235,6 +235,8 @@ export default {
 
   methods: {
     formatDate (value) {
+      moment.locale(window.navigator.userLanguage || window.navigator.language)
+
       return moment(value).format('L HH:mm:ss')
     },
 
