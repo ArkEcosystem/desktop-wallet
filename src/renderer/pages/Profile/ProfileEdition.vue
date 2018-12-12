@@ -323,10 +323,12 @@ export default {
 
   methods: {
     toggleIsNameEditable () {
-      if (!this.isNameEditable && !this.modified.name) {
-        this.$set(this.modified, 'name', this.profile.name)
+      if (!this.nameError || !this.isNameEditable) {
+        if (!this.isNameEditable && !this.modified.name) {
+          this.$set(this.modified, 'name', this.profile.name)
+        }
+        this.isNameEditable = !this.isNameEditable
       }
-      this.isNameEditable = !this.isNameEditable
     },
 
     async save () {
