@@ -26,7 +26,7 @@
               }"
               :name="data.formattedRow['vendorField'] ? 'vendorfield' : 'vendorfield-empty'"
               view-box="0 0 18 18"
-              class=" mr-1"
+              class="mr-2"
             />
 
             <span
