@@ -30,17 +30,17 @@ export default {
     }
   },
 
-  created () {
-    if (!this.wallet) {
-      this.$router.push({ name: 'wallets' })
-    }
-  },
-
   watch: {
     wallet () {
       if (!this.wallet) {
         this.$router.push({ name: 'wallets' })
       }
+    }
+  },
+
+  created () {
+    if (!this.wallet) {
+      this.$router.push({ name: 'wallets' })
     }
   },
 
