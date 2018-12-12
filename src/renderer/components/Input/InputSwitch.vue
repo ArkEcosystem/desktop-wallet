@@ -8,7 +8,7 @@
     class="InputSwitch"
   >
     <div
-      :class="isReverse ? 'flex-row-reverse -mr-3' : 'flex-row -ml-3'"
+      :class="isReverse ? 'flex-row-reverse -mr-3' : 'flex-row'"
       class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex items-center justify-flex-start"
     >
       <slot>

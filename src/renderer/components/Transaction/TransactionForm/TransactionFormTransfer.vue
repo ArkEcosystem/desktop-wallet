@@ -382,3 +382,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.TransactionModalTransfer .InputSwitch .ButtonSwitch {
+  @apply .flex-1
+}
+</style>
