@@ -8,15 +8,22 @@
     class="InputSwitch"
   >
     <div
-      class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex flex-row justify-flex-start"
+      :class="isReverse ? 'flex-row-reverse -mr-3' : 'flex-row -ml-3'"
+      class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex items-center justify-flex-start"
     >
-      <div class="mr-3 mt-1 text-lg">
-        {{ text }}
-      </div>
+      <slot>
+        <div
+          :class="isLarge ? 'text-lg' : 'text-base'"
+          class="mx-3 mt-1"
+        >
+          {{ text }}
+        </div>
+      </slot>
       <ButtonSwitch
         :background-color="backgroundColor"
         :is-active="isActive"
         :is-disabled="isDisabled"
+        class="flex-none"
         @change="emitChange"
       />
     </div>
@@ -70,6 +77,16 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    isLarge: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    isReverse: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
