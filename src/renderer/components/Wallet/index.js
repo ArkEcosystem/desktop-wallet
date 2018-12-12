@@ -8,6 +8,7 @@ import WalletVerifyDetail from './WalletVerifyDetail'
 import WalletVerifyModal from './WalletVerifyModal'
 
 export * from './WalletDelegates'
+export * from './WalletExchange'
 export * from './WalletHeading'
 export * from './WalletStatistics'
 export * from './WalletTransactions'
