@@ -8,13 +8,16 @@
     class="InputSwitch"
   >
     <div
-      :class="isReverse ? 'flex-row-reverse -mr-3' : 'flex-row -ml-3'"
+      :class="isReverse ? 'flex-row-reverse' : 'flex-row'"
       class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex items-center justify-flex-start"
     >
       <slot>
         <div
-          :class="isLarge ? 'text-lg' : 'text-base'"
-          class="mx-3 mt-1"
+          :class="[
+            isLarge ? 'text-lg' : 'text-base',
+            isReverse ? 'ml-3' : 'mr-3'
+          ]"
+          class="mt-1"
         >
           {{ text }}
         </div>
