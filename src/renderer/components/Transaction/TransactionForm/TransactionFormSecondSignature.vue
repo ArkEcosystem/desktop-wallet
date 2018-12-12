@@ -219,6 +219,7 @@ export default {
     },
 
     generateNewPassphrase () {
+      this.reset()
       this.isGenerating = true
       setTimeout(() => {
         this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)

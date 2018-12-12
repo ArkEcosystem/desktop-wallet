@@ -264,6 +264,7 @@ export default {
     MAXIMUM: 'Maximum',
     INPUT: 'Input',
     ADVANCED: 'Advanced',
+    LOW_FEE_NOTICE: 'Transaction with low fees may get rejected',
     ADVANCED_NOTICE: 'Be careful what fee you choose as it will cost more than necessary if too high',
     UNIQUE: 'The network fee has been set to the static value of {fee}',
     ERROR: {
