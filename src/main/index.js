@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, screen } from 'electron'
-import WinState from 'win-state'
+import winState from 'electron-window-state'
 
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
@@ -24,15 +24,24 @@ const winURL = process.env.NODE_ENV === 'development'
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
-  const windowState = new WinState()
+  const windowState = winState({
+    defaultWidth: width,
+    defaultHeight: height
+  })
+
   mainWindow = new BrowserWindow({
-    width: width - 100,
-    height: height - 100,
+    width: windowState.width,
+    height: windowState.height,
+    x: windowState.x,
+    y: windowState.y,
+    center: true,
     show: false
   })
 
-  windowState.manage(mainWindow, {
-    load: winURL
+  windowState.manage(mainWindow)
+  mainWindow.loadURL(winURL)
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
   })
 
   mainWindow.on('closed', () => {
