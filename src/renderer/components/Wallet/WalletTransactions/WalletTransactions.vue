@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="WalletTransactions">
     <div
       v-if="newTransactionsNotice"
       class="bg-theme-feature flex flex-row"
