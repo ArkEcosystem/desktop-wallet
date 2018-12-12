@@ -13,16 +13,30 @@
       >
         <div v-if="data.column.field === 'id' && data.row.confirmations > 0">
           <a
-            v-tooltip="{
-              content: data.row.id,
-              classes: 'text-xs',
-              trigger: 'hover'
-            }"
             class="flex items-center whitespace-no-wrap"
             href="#"
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
-            <span class="mr-1">
+            <SvgIcon
+              v-tooltip="{
+                content: data.row.vendorField,
+                classes: 'text-xs',
+                trigger: 'hover'
+              }"
+              v-show="hideVendorField"
+              :name="data.formattedRow['vendorField'] ? 'vendorfield' : 'vendorfield-empty'"
+              view-box="0 0 18 18"
+              class=" mr-1"
+            />
+
+            <span
+              v-tooltip="{
+                content: data.row.id,
+                classes: 'text-xs',
+                trigger: 'hover'
+              }"
+              class="mr-1"
+            >
               {{ data.formattedRow['id'] }}
             </span>
 
@@ -149,6 +163,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    hideVendorField: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -158,6 +177,15 @@ export default {
 
   computed: {
     columns () {
+      const vendorFieldClass = [
+        'hidden'
+      ]
+      if (this.hasShortId && !this.hideVendorField) {
+        vendorFieldClass.push('xxl:table-cell')
+      } else if (!this.hideVendorField) {
+        vendorFieldClass.push('xl:table-cell')
+      }
+
       return [
         {
           label: this.$t('TRANSACTION.ID'),
@@ -184,8 +212,8 @@ export default {
           label: this.$t('TRANSACTION.VENDOR_FIELD'),
           field: 'vendorField',
           formatFn: this.formatSmartbridge,
-          tdClass: this.hasShortId ? 'hidden xxl:table-cell' : 'hidden xl:table-cell',
-          thClass: this.hasShortId ? 'hidden xxl:table-cell' : 'hidden xl:table-cell'
+          tdClass: vendorFieldClass.join(' '),
+          thClass: vendorFieldClass.join(' ')
         },
         {
           label: this.$t('TRANSACTION.AMOUNT'),
