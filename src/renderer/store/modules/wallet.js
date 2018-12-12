@@ -95,7 +95,7 @@ export default {
       if (!includes(state.wallets[wallet.profileId], wallet)) {
         throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
       }
-      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+      state.wallets[wallet.profileId] = unionBy([...state.wallets[wallet.profileId], wallet], 'id')
     },
     DELETE (state, wallet) {
       const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
@@ -103,6 +103,14 @@ export default {
         throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
       }
       state.wallets[wallet.profileId].splice(index, 1)
+    },
+    MOVE (state, wallet, newIndex) {
+      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
+      if (index === -1) {
+        throw new Error(`Cannot move wallet '${wallet.id}' - it does not exist on the state`)
+      }
+      state.wallets[wallet.profileId].splice(index, 1)
+      state.wallets[wallet.profileId].splice(newIndex, 0, wallet)
     },
     SET_LEDGER_NAME (state, { address, name, profileId }) {
       if (!state.ledgerNames[profileId]) {
