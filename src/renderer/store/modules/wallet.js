@@ -104,13 +104,17 @@ export default {
       }
       state.wallets[wallet.profileId].splice(index, 1)
     },
-    MOVE (state, wallet, newIndex) {
-      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
-      if (index === -1) {
-        throw new Error(`Cannot move wallet '${wallet.id}' - it does not exist on the state`)
-      }
-      state.wallets[wallet.profileId].splice(index, 1)
-      state.wallets[wallet.profileId].splice(newIndex, 0, wallet)
+    MOVE (state, wallet) {
+      const { oldIndex, newIndex } = wallet
+      wallet = wallet.wallet
+
+      let stateWalletsCopy = []
+      state.wallets[wallet.profileId].forEach(walletObject => {
+        stateWalletsCopy.push(walletObject)
+      })
+
+      stateWalletsCopy.splice(newIndex, 0, stateWalletsCopy.splice(oldIndex, 1)[0])
+      state.wallets[wallet.profileId] = stateWalletsCopy
     },
     SET_LEDGER_NAME (state, { address, name, profileId }) {
       if (!state.ledgerNames[profileId]) {
@@ -156,6 +160,11 @@ export default {
     },
     delete ({ commit }, wallet) {
       commit('DELETE', wallet)
+    },
+    move ({ commit }, { wallet, oldIndex, newIndex }) {
+      if (oldIndex !== newIndex) {
+        commit('MOVE', { wallet, oldIndex, newIndex })
+      }
     },
     setLedgerName ({ commit, rootGetters }, { address, name }) {
       if (!address) {

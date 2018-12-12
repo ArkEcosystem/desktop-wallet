@@ -63,49 +63,54 @@
     </MenuNavigationItem>
 
     <!-- List of actual wallets -->
-    <MenuNavigationItem
-      v-for="wallet in selectableWallets"
-      :id="wallet.id"
-      :key="wallet.id"
-      class="WalletSidebar__wallet"
+    <Draggable
+      :list="selectableWallets"
+      @end="onDrop"
     >
-      <div
-        slot-scope="{ isActive }"
-        :class="{ 'flex flex-row': !isSlim }"
-        class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
+      <MenuNavigationItem
+        v-for="wallet in selectableWallets"
+        :id="wallet.id"
+        :key="wallet.id"
+        class="WalletSidebar__wallet"
       >
-        <WalletIdenticon
-          :size="50"
-          :value="wallet.address"
-          class="WalletSidebar__wallet__identicon flex-no-shrink"
-        />
         <div
-          :class="{
-            'text-theme-page-text': isActive,
-            'text-theme-page-text-light': !isActive
-          }"
-          class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 overflow-hidden"
+          slot-scope="{ isActive }"
+          :class="{ 'flex flex-row': !isSlim }"
+          class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
         >
-          <span class="block truncate">
-            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
-          </span>
-          <span
-            v-if="!isSlim"
-            class="font-bold mt-2 text-xl"
+          <WalletIdenticon
+            :size="50"
+            :value="wallet.address"
+            class="WalletSidebar__wallet__identicon flex-no-shrink"
+          />
+          <div
+            :class="{
+              'text-theme-page-text': isActive,
+              'text-theme-page-text-light': !isActive
+            }"
+            class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 overflow-hidden"
           >
-            {{ formatter_networkCurrency(wallet.balance, 2) }}
-            <!-- TODO display a +/- n ARK on recent transactions -->
-          </span>
+            <span class="block truncate">
+              {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
+            </span>
+            <span
+              v-if="!isSlim"
+              class="font-bold mt-2 text-xl"
+            >
+              {{ formatter_networkCurrency(wallet.balance, 2) }}
+              <!-- TODO display a +/- n ARK on recent transactions -->
+            </span>
+          </div>
         </div>
-      </div>
-    </MenuNavigationItem>
+      </MenuNavigationItem>
+    </Draggable>
   </MenuNavigation>
 </template>
 
 <script>
 import Loader from '@/components/utils/Loader'
+import Draggable from '@/components/utils/Draggable'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
-import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
 
 export default {
@@ -113,6 +118,7 @@ export default {
 
   components: {
     Loader,
+    Draggable,
     MenuNavigation,
     MenuNavigationItem,
     WalletIdenticon,
@@ -175,6 +181,11 @@ export default {
     onSelect (address) {
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.$emit('select', address)
+    },
+
+    onDrop (wallet) {
+      const { oldIndex, newIndex } = wallet
+      this.$store.dispatch('wallet/move', { wallet: this.selectableWallets[oldIndex], oldIndex, newIndex })
     },
 
     refreshLedgerWallets () {
