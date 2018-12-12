@@ -150,7 +150,7 @@ export default {
 
         this.$store.dispatch('transaction/deleteBulk', {
           transactions: response.transactions,
-          profileId: this.session_profile.profileId
+          profileId: this.session_profile.id
         })
 
         const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))

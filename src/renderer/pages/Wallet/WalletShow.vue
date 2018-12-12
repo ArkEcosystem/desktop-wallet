@@ -36,6 +36,14 @@ export default {
     }
   },
 
+  watch: {
+    wallet () {
+      if (!this.wallet) {
+        this.$router.push({ name: 'wallets' })
+      }
+    }
+  },
+
   methods: {
     loadWalletData () {
       this.$refs.WalletDetails.fetchWalletVote()
