@@ -18,12 +18,12 @@
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
             <SvgIcon
+              v-show="hideVendorField"
               v-tooltip="{
                 content: data.row.vendorField,
                 classes: 'text-xs',
                 trigger: 'hover'
               }"
-              v-show="hideVendorField"
               :name="data.formattedRow['vendorField'] ? 'vendorfield' : 'vendorfield-empty'"
               view-box="0 0 18 18"
               class=" mr-1"
