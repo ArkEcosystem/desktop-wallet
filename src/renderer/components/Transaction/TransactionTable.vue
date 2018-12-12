@@ -144,6 +144,7 @@
 
 <script>
 import { at } from 'lodash'
+import moment from 'moment'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionShow from './TransactionShow'
@@ -234,7 +235,7 @@ export default {
 
   methods: {
     formatDate (value) {
-      return this.$d(value, 'long')
+      return moment(value).format('L HH:mm:ss')
     },
 
     formatAddress (value) {
