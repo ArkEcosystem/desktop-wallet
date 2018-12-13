@@ -128,7 +128,7 @@ export default {
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
-    WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
+    WALLET_NOT_ACTIVE: 'Go ahead and select a Wallet to continue',
     WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',
     WARNING_NOT_BIP39: 'The \'{0}\' is not a BIP39 Passphrase'
   },
