@@ -186,6 +186,7 @@ export default {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
+      BACKGROUND_UPDATE_LEDGER: 'Update Ledger in Background',
       TITLE: 'Current settings',
       RESET_DATA: {
         TITLE: 'Reset Data',
