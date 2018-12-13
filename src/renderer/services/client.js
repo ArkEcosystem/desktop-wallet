@@ -555,7 +555,7 @@ export default class ClientService {
   __watchProfile () {
     store.watch(
       (_, getters) => getters['session/profile'],
-      (profile) => {
+      (profile, oldProfile) => {
         if (!profile) return
 
         const currentPeer = store.getters['peer/current']()
@@ -569,7 +569,9 @@ export default class ClientService {
           this.version = apiVersion
         }
 
-        eventBus.emit('client:changed')
+        if (!oldProfile || profile.id !== oldProfile.id) {
+          eventBus.emit('client:changed')
+        }
       },
       { immediate: true }
     )
