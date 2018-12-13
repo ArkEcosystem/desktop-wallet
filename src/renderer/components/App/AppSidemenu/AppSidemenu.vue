@@ -63,17 +63,17 @@
           />
         </div>
 
-        <div class="flexify">
-          <!-- Search -->
-          <!-- <MenuNavigationItem
+        <!-- <div class="flexify">
+          <!- - Search - ->
+          <MenuNavigationItem
             id="search"
             :class="isHorizontal ? 'w-16' : 'h-16'"
             :is-horizontal="isHorizontal"
             view-box="0 0 20 20"
             icon="search"
             @click="redirect($event)"
-          /> -->
-        </div>
+          />
+        </div> -->
 
         <div class="flexify">
           <AppSidemenuSettings
