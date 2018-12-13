@@ -13,7 +13,7 @@ export default {
     profileId: null,
     theme: null,
     contentProtection: true,
-    backgroundUpdateLedger: false
+    backgroundUpdateLedger: null
   }),
 
   getters: {
@@ -101,7 +101,7 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
-      state.backgroundUpdateLedger = false
+      state.backgroundUpdateLedger = true
       state.contentProtection = true
     }
   },
