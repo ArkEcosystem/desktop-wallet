@@ -208,6 +208,8 @@ export default {
 
     toggleVisible () {
       this.passphraseIsVisible = !this.passphraseIsVisible
+      // Resume focus on the input field unless passphrase is valid
+      if (!this.$v.model.isValid) this.$refs.input.focus()
     }
   },
 
