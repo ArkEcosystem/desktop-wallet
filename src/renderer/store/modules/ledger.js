@@ -13,7 +13,7 @@ export default {
     isConnected: false,
     connectionTimer: null,
     wallets: [],
-    walletCache: []
+    walletCache: {}
   },
 
   getters: {
@@ -27,10 +27,18 @@ export default {
 
       return state.wallets[address]
     },
-    cachedWallets: state => firstAddress => {
-      for (const batchId in state.walletCache) {
-        if (state.walletCache[batchId][0].address === firstAddress) {
-          return state.walletCache[batchId]
+    cachedWallets: (state, _, __, rootGetters) => firstAddress => {
+      const profileId = rootGetters['session/profileId']
+      if (!state.walletCache[profileId]) {
+        return []
+      }
+
+      for (const batch of state.walletCache[profileId]) {
+        if (!batch.length) {
+          continue
+        }
+        if (batch[0].address === firstAddress) {
+          return batch
         }
       }
 
@@ -61,24 +69,36 @@ export default {
     SET_WALLETS (state, wallets) {
       state.wallets = wallets
     },
-    CACHE_WALLETS (state, wallets) {
+    CACHE_WALLETS (state, { wallets, profileId }) {
       if (!wallets.length) {
         return
       }
 
+      if (!state.walletCache[profileId]) {
+        state.walletCache[profileId] = [
+          wallets
+        ]
+
+        return
+      }
+
       const firstAddress = wallets[0].address
-      for (const batchId in state.walletCache) {
-        if (state.walletCache[batchId][0].address === firstAddress) {
-          state.walletCache[batchId] = wallets
+      for (const batchId in state.walletCache[profileId]) {
+        const batch = state.walletCache[profileId][batchId]
+        if (!batch.length) {
+          continue
+        }
+        if (batch[0].address === firstAddress) {
+          state.walletCache[profileId][batchId] = wallets
 
           return
         }
       }
 
-      state.walletCache.push(wallets)
+      state.walletCache[profileId].push(wallets)
     },
-    CLEAR_WALLET_CACHE (state, wallets) {
-      state.walletCache = []
+    CLEAR_WALLET_CACHE (state, profileId) {
+      state.walletCache[profileId] = []
     }
   },
 
@@ -255,7 +275,10 @@ export default {
      */
     async cacheWallets ({ commit, getters, rootGetters }) {
       if (rootGetters['session/ledgerCache']) {
-        commit('CACHE_WALLETS', getters['wallets'])
+        commit('CACHE_WALLETS', {
+          wallets: getters['wallets'],
+          profileId: rootGetters['session/profileId']
+        })
       }
     },
 
@@ -264,8 +287,8 @@ export default {
      * @param  {Number} accountIndex Index of wallet to get address for.
      * @return {(String|Boolean)}
      */
-    async clearWalletCache ({ commit, getters }) {
-      commit('CLEAR_WALLET_CACHE')
+    async clearWalletCache ({ commit, rootGetters }) {
+      commit('CLEAR_WALLET_CACHE', rootGetters['session/profileId'])
     },
 
     /**
