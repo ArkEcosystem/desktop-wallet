@@ -211,10 +211,19 @@ export default {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else if (!isWalletActive) {
           this.$error(this.$t('VALIDATION.WALLET_NOT_ACTIVE'))
+          this.waitForActiveWallet(uri)
         } else {
           this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
         }
       })
+    },
+
+    waitForActiveWallet (uri) {
+      setInterval((uri) => {
+        if (isWalletActive) {
+          this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
+        }
+      }, 1000)
     },
 
     setIntroDone () {
