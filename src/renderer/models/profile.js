@@ -38,6 +38,10 @@ export default new BaseModel({
     theme: {
       type: 'string',
       minLength: 1
+    },
+    backgroundUpdateLedger: {
+      type: 'boolean',
+      format: (data) => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
     }
   },
   required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']
