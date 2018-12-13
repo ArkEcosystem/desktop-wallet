@@ -135,6 +135,7 @@ export default {
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
+      await this.$store.dispatch('ledger/reset')
 
       this.isReady = true
 
