@@ -332,6 +332,9 @@ export default {
 
   methods: {
     async create () {
+      if (!this.$v.schema.name.doesNotExists) {
+        return
+      }
       const { id } = await this.$store.dispatch('profile/create', this.schema)
       await this.$store.dispatch('session/setProfileId', id)
       this.$router.push({ name: 'dashboard' })
