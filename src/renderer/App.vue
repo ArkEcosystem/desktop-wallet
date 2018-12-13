@@ -220,7 +220,7 @@ export default {
 
     waitForActiveWallet (uri) {
       setInterval((uri) => {
-        if (isWalletActive) {
+        if (this.wallet_fromRoute) {
           this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
         }
       }, 1000)
