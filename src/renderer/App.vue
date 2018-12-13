@@ -21,6 +21,9 @@
       <AppSidemenu
         v-if="hasAnyProfile"
         :is-horizontal="true"
+        :class="{
+          'blur': hasBlurFilter
+        }"
         class="block lg:hidden"
       />
       <section
