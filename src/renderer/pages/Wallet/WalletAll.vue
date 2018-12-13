@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="flex flex-1 lg:bg-theme-feature rounded-lg p-10 overflow-y-auto">
+    <div class="flex flex-1 bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
         <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
