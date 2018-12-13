@@ -18,7 +18,7 @@
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
             <SvgIcon
-              v-show="hideVendorField"
+              v-show="isDashboard"
               v-tooltip="{
                 content: data.row.vendorField,
                 classes: 'text-xs',
@@ -106,14 +106,16 @@
 
         <div
           v-else-if="data.column.field === 'sender'"
-          class="overflow-hidden truncate max-w-xxs"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="overflow-hidden truncate"
         >
           <WalletAddress :address="data.row.sender" />
         </div>
 
         <div
           v-else-if="data.column.field === 'recipient'"
-          class="overflow-hidden truncate max-w-xxs"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="overflow-hidden truncate"
         >
           <WalletAddress
             :address="data.row.recipient"
@@ -142,6 +144,7 @@
 
 <script>
 import { at } from 'lodash'
+import moment from 'moment'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionShow from './TransactionShow'
@@ -164,7 +167,7 @@ export default {
       required: false,
       default: false
     },
-    hideVendorField: {
+    isDashboard: {
       type: Boolean,
       required: false,
       default: false
@@ -180,9 +183,9 @@ export default {
       const vendorFieldClass = [
         'hidden'
       ]
-      if (this.hasShortId && !this.hideVendorField) {
+      if (this.hasShortId && !this.isDashboard) {
         vendorFieldClass.push('xxl:table-cell')
-      } else if (!this.hideVendorField) {
+      } else if (!this.isDashboard) {
         vendorFieldClass.push('xl:table-cell')
       }
 
@@ -232,7 +235,9 @@ export default {
 
   methods: {
     formatDate (value) {
-      return this.$d(value, 'long')
+      moment.locale(window.navigator.userLanguage || window.navigator.language)
+
+      return moment(value).format('L HH:mm:ss')
     },
 
     formatAddress (value) {
@@ -301,5 +306,8 @@ export default {
 }
 .TransactionTable tr.expired {
   @apply line-through;
+}
+.TransactionTable td .dashboard-address {
+  width: 100px;
 }
 </style>
