@@ -12,6 +12,7 @@
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
+        @keyup.enter.native="renameWallet"
       />
 
       <button

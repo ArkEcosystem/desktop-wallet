@@ -2,6 +2,7 @@
   <TransactionTable
     :has-short-id="true"
     :rows="lastTransactions"
+    :is-dashboard="true"
   />
 </template>
 
