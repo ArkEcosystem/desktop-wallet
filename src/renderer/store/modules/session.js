@@ -12,7 +12,8 @@ export default {
     name: null,
     profileId: null,
     theme: null,
-    contentProtection: true
+    contentProtection: true,
+    backgroundUpdateLedger: false
   }),
 
   getters: {
@@ -47,7 +48,8 @@ export default {
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
-    contentProtection: state => state.contentProtection
+    contentProtection: state => state.contentProtection,
+    backgroundUpdateLedger: state => state.backgroundUpdateLedger
   },
 
   mutations: {
@@ -87,6 +89,10 @@ export default {
       state.contentProtection = protection
     },
 
+    SET_BACKGROUND_UPDATE_LEDGER (state, update) {
+      state.backgroundUpdateLedger = update
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -95,6 +101,7 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.backgroundUpdateLedger = false
       state.contentProtection = true
     }
   },
@@ -111,6 +118,7 @@ export default {
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
+      dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
 
       return profile
     },
@@ -146,6 +154,10 @@ export default {
 
     setContentProtection ({ commit }, value) {
       commit('SET_CONTENT_PROTECTION', value)
+    },
+
+    setBackgroundUpdateLedger ({ commit }, value) {
+      commit('SET_BACKGROUND_UPDATE_LEDGER', value)
     },
 
     async setProfileId ({ commit, dispatch }, value) {
