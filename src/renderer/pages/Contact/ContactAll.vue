@@ -1,5 +1,5 @@
 <template>
-  <div class="ContactAll relative lg:bg-theme-feature rounded-lg m-r-4 p-10">
+  <div class="ContactAll relative bg-theme-feature rounded-lg m-r-4 p-10">
     <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
 
     <div class="ContactAll__grid mt-10 justify-center">
