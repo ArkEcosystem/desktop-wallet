@@ -107,7 +107,7 @@ export default {
     },
 
     emitNext (isLastItem) {
-      if (!this.lastItemClicked) {
+      if (!this.isLastItemClicked) {
         this.$emit('next')
       }
       if (isLastItem) {
