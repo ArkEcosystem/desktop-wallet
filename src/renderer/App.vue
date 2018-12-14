@@ -75,6 +75,7 @@ import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
+import { clearInterval } from 'timers'
 
 var { remote, ipcRenderer } = require('electron')
 const Menu = remote.Menu
@@ -219,9 +220,10 @@ export default {
     },
 
     waitForActiveWallet (uri) {
-      setInterval((uri) => {
+      var activeWalletInterval = setInterval((uri) => {
         if (this.wallet_fromRoute) {
           this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
+          clearInterval(activeWalletInterval)
         }
       }, 1000)
     },
