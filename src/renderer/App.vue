@@ -75,7 +75,6 @@ import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
-import { clearInterval } from 'timers'
 
 var { remote, ipcRenderer } = require('electron')
 const Menu = remote.Menu
