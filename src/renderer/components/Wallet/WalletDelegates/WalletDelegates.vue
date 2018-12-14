@@ -218,8 +218,8 @@ export default {
     },
 
     onSortChange (sortOptions) {
-      const columnName = sortOptions[0].field
       const sortType = sortOptions[0].type
+      const columnName = sortOptions[0].field
       this.__updateParams({
         sort: {
           type: sortType,
@@ -227,7 +227,7 @@ export default {
         },
         page: 1
       })
-      this.fetchDelegates()
+      this.delegates = this.__sortDelegates()
     },
 
     reset () {

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import { at, orderBy } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -254,14 +254,17 @@ export default {
     },
 
     onSortChange (sortOptions) {
+      console.log('hello')
+      const sortType = sortOptions[0].type
+      const columnName = sortOptions[0].field
       this.__updateParams({
         sort: {
-          type: sortOptions[0].type,
-          field: sortOptions[0].field
+          type: sortType,
+          field: columnName
         },
         page: 1
       })
-      this.loadTransactions()
+      this.fetchedTransactions = this.__sortTransactions()
     },
 
     reset () {
@@ -269,6 +272,10 @@ export default {
       this.queryParams.page = 1
       this.totalCount = 0
       this.fetchedTransactions = []
+    },
+
+    __sortTransactions (transactions = this.fetchedTransactions) {
+      return orderBy(transactions, [this.queryParams.sort.field], [this.queryParams.sort.type])
     },
 
     __updateParams (newProps) {
