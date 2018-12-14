@@ -82,6 +82,7 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        v-if="isMarketEnabled"
         :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
         @click="toggleSelect('show-market-chart')"
       >
@@ -156,6 +157,9 @@ export default {
     isLinux () {
       // You can find the possible options here: https://nodejs.org/api/os.html#os_os_platform
       return os.platform() !== 'darwin' && os.platform() !== 'win32'
+    },
+    isMarketEnabled () {
+      return this.session_network && this.session_network.market && this.session_network.market.enabled
     },
     currencies () {
       return this.$store.getters['market/currencies']
