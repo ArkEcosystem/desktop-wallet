@@ -30,7 +30,7 @@
         </button>
         <ButtonReload
           :is-refreshing="isRefreshing"
-          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b pt-3 pb-2 px-2"
+          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
           @click="refreshPeer"
         />
       </div>
