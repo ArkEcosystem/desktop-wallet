@@ -103,18 +103,20 @@ export default {
 <style lang="postcss" scoped>
 .Dashboard__wallets__create,
 .Dashboard__wallets__import {
-  @apply .w-1/2 .appearance-none .font-semibold .pt-8 .pb-4 .flex .justify-center .items-center
+  @apply .w-1/2 .appearance-none .font-semibold .pt-6 .pb-6 .flex
 }
 .Dashboard__wallets__create > span,
 .Dashboard__wallets__import > span {
-  @apply .pt-3 .pb-2 .w-full .text-center
+  @apply .w-full .text-center
 }
 
 .Dashboard__wallets__create > span {
   border-right: 0.04rem solid var(--theme-feature-item-alternative);
+  align-self: center;
 }
 .Dashboard__wallets__import > span {
   border-left: 0.04rem solid var(--theme-feature-item-alternative);
+  align-self: center;
 }
 .Dashboard__wallets__create:hover > span {
   border-right: 0px;

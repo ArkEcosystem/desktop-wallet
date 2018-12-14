@@ -6,7 +6,7 @@
       'WalletSidebar--slim': isSlim,
       'WalletSidebar--full': !isSlim
     }"
-    class="WalletSidebar justify-start overflow-y-auto"
+    class="WalletSidebar justify-start pt-0 overflow-y-auto"
     @input="onSelect"
   >
     <!-- Placeholder wallet -->
