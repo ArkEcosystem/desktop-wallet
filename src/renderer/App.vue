@@ -211,7 +211,7 @@ export default {
         if (!uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else if (!isWalletActive) {
-          this.$warn(this.$t('VALIDATION.WALLET_NOT_ACTIVE'))
+          this.$warn(this.$t('VALIDATION.WALLET_NOT_ACTIVE'), 10000)
           this.$store.dispatch('session/setUri', uri)
         } else {
           this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
