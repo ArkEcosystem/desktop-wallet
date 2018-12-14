@@ -128,7 +128,7 @@ export default {
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
-    WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
+    WALLET_NOT_ACTIVE: 'Ark Pay link detected. Please select a wallet to continue with your payment.',
     WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',
     WARNING_NOT_BIP39: 'The \'{0}\' is not a BIP39 Passphrase'
   },
