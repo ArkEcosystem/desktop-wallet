@@ -141,9 +141,11 @@ export default {
         }
       ]
     },
+
     isExplanationDisplayed () {
       return this.$store.getters['app/showVotingExplanation']
     },
+
     votingUrl () {
       return 'https://docs.ark.io/cookbook/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
     }
@@ -167,7 +169,9 @@ export default {
     },
 
     async fetchDelegates () {
-      if (this.isLoading) return
+      if (this.isLoading) {
+        return
+      }
 
       try {
         this.isLoading = true
@@ -222,8 +226,8 @@ export default {
       const sortType = sortOptions[0].type
       this.__updateParams({
         sort: {
-          type: sortType,
-          field: columnName
+          field: columnName,
+          type: sortType
         },
         page: 1
       })
