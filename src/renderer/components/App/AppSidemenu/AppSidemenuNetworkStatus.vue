@@ -236,7 +236,7 @@ export default {
 .AppSidemenuNetworkStatus--horizontal {
   width: 380px;
   right: 4.5rem;
-  top: 5.5rem;
+  top: 5.75rem;
 }
 
 .AppSidemenuNetworkStatus__status__height,
