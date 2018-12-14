@@ -506,7 +506,8 @@ export default {
       LOADING_LEDGER: 'Loading Ledger Wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
-      CACHE_LEDGER: 'Cache ledger wallets?'
+      CACHE_LEDGER: 'Cache ledger wallets?',
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
     },
 
     WALLET_IMPORT: {
