@@ -51,7 +51,8 @@ export default {
     hasDarkTheme: state => state.theme === 'dark',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
-    ledgerCache: state => state.ledgerCache
+    ledgerCache: state => state.ledgerCache,
+    uri: state => state.uri
   },
 
   mutations: {
@@ -99,6 +100,10 @@ export default {
       state.ledgerCache = enabled
     },
 
+    SET_URI (state, uri) {
+      state.uri = uri
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -110,6 +115,7 @@ export default {
       state.backgroundUpdateLedger = true
       state.contentProtection = true
       state.ledgerCache = false
+      state.uri = null
     }
   },
 
@@ -182,6 +188,10 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setUri ({ commit }, value) {
+      commit('SET_URI', value)
     }
   }
 }

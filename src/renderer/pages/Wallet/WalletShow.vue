@@ -44,9 +44,19 @@ export default {
     }
   },
 
+  mounted () {
+    this.checkURI()
+  },
+
   methods: {
     loadWalletData () {
       this.$refs.WalletDetails.fetchWalletVote()
+    },
+    checkURI () {
+      const uri = this.$store.getters['session/uri']
+      if (uri) {
+        this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
+      }
     }
   }
 }
