@@ -49,3 +49,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.MarketChartHeader__button {
+  transition: all 0.3s;
+}
+.MarketChartHeader__button:hover {
+  @apply bg-theme-button-special-choice text-white;
+  opacity: 0.5;
+}
+</style>
