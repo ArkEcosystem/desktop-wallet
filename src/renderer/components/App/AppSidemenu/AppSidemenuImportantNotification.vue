@@ -3,7 +3,8 @@
     <button
       v-tooltip="{
         content: tooltipText,
-        placement: isHorizontal ? 'bottom' : 'right'
+        placement: isHorizontal ? 'bottom' : 'right',
+        boundariesElement: 'body'
       }"
       class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center h-8 w-8"
       @click="openNotification"

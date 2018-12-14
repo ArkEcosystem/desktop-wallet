@@ -76,9 +76,16 @@ export default {
     },
 
     switchToTab (newTab) {
+      this.resetScroll()
       this.items.forEach(item => item.toggle(item.tab === newTab))
       this.activeTab = newTab
       this.$emit('input', this.activeTab)
+    },
+
+    resetScroll () {
+      if (this.$el.scrollTop > 0) {
+        this.$el.scrollTo(0, 0)
+      }
     }
   }
 }

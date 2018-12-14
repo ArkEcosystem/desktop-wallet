@@ -64,6 +64,24 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
+        @click="toggleSelect('ledger-background-switch')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="ledger-background-switch"
+            :is-active="backgroundUpdateLedger"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setBackgroundUpdateLedger"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -127,6 +145,9 @@ export default {
     contentProtection () {
       return this.$store.getters['session/contentProtection']
     },
+    backgroundUpdateLedger () {
+      return this.$store.getters['session/backgroundUpdateLedger']
+    },
     sessionCurrency: {
       get () {
         return this.$store.getters['session/currency']
@@ -156,6 +177,17 @@ export default {
       set (protection) {
         this.$store.dispatch('session/setContentProtection', protection)
       }
+    },
+    sessionBackgroundUpdateLedger: {
+      get () {
+        return this.$store.getters['session/backgroundUpdateLedger']
+      },
+      set (update) {
+        this.$store.dispatch('session/setBackgroundUpdateLedger', update)
+        var profile = clone(this.session_profile)
+        profile.backgroundUpdateLedger = update
+        this.$store.dispatch('profile/update', profile)
+      }
     }
   },
 
@@ -170,6 +202,10 @@ export default {
 
     setProtection (protection) {
       this.sessionProtection = protection
+    },
+
+    setBackgroundUpdateLedger (update) {
+      this.sessionBackgroundUpdateLedger = update
     },
 
     toggleSelect (name) {
@@ -201,7 +237,7 @@ export default {
 
 <style scoped>
 .AppSidemenuOptionsSettings {
-  width: 300px;
+  width: 360px;
   left: 6.5rem;
   bottom: -5rem;
   transform: translateY(-10%)

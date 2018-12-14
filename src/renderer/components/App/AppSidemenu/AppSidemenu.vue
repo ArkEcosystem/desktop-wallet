@@ -145,6 +145,7 @@ import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
 import SvgIcon from '@/components/SvgIcon'
+import semver from 'semver'
 
 export default {
   name: 'AppSidemenu',
@@ -175,11 +176,11 @@ export default {
 
   computed: {
     ...mapGetters({
-      releaseVersion: 'app/latestReleaseVersion',
+      latestReleaseVersion: 'app/latestReleaseVersion',
       unreadAnnouncements: 'announcements/unread'
     }),
     hasNewRelease () {
-      return releaseService.currentVersion !== this.releaseVersion
+      return semver.lt(releaseService.currentVersion, this.latestReleaseVersion)
     },
     showUnread () {
       return this.unreadAnnouncements.length > 0

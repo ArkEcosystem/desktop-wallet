@@ -208,6 +208,7 @@ export default {
 
     toggleVisible () {
       this.passphraseIsVisible = !this.passphraseIsVisible
+      this.$refs.input.focus()
     }
   },
 
