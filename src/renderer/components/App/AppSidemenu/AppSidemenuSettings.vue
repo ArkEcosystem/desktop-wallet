@@ -82,6 +82,24 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
+        @click="toggleSelect('show-market-chart')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="show-market-chart"
+            :is-active="sessionIsMarketChartEnabled"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setIsMarketChartEnabled"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -154,9 +172,21 @@ export default {
       },
       set (currency) {
         this.$store.dispatch('session/setCurrency', currency)
-        var profile = clone(this.session_profile)
+        const profile = clone(this.session_profile)
         profile.currency = currency
         this.$store.dispatch('profile/update', profile)
+      }
+    },
+    sessionIsMarketChartEnabled: {
+      get () {
+        return this.$store.getters['session/isMarketChartEnabled']
+      },
+      set (isMarketChartEnabled) {
+        this.$store.dispatch('session/setIsMarketChartEnabled', isMarketChartEnabled)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          isMarketChartEnabled
+        })
       }
     },
     sessionTheme: {
@@ -165,7 +195,7 @@ export default {
       },
       set (theme) {
         this.$store.dispatch('session/setTheme', theme)
-        var profile = clone(this.session_profile)
+        const profile = clone(this.session_profile)
         profile.theme = theme
         this.$store.dispatch('profile/update', profile)
       }
@@ -184,7 +214,7 @@ export default {
       },
       set (update) {
         this.$store.dispatch('session/setBackgroundUpdateLedger', update)
-        var profile = clone(this.session_profile)
+        const profile = clone(this.session_profile)
         profile.backgroundUpdateLedger = update
         this.$store.dispatch('profile/update', profile)
       }
@@ -206,6 +236,10 @@ export default {
 
     setBackgroundUpdateLedger (update) {
       this.sessionBackgroundUpdateLedger = update
+    },
+
+    setIsMarketChartEnabled (isEnabled) {
+      this.sessionIsMarketChartEnabled = isEnabled
     },
 
     toggleSelect (name) {
