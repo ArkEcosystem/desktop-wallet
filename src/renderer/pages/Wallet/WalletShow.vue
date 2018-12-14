@@ -55,6 +55,7 @@ export default {
     checkURI () {
       const uri = this.$store.getters['session/uri']
       if (uri) {
+        this.$store.dispatch('session/setUri', null)
         this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
       }
     }
