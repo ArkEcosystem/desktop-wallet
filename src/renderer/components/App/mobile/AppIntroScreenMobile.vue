@@ -2,22 +2,22 @@
   <div class="flex flex-col items-center">
     <div
       :key="selection + 'image'"
-      class="animated fadeIn px-12 pt-24 overflow-y-scroll"
+      class="animated fadeIn px-12 pt-24 overflow-y-scroll md:h-full"
     >
-      <div class="flex justify-center">
+      <div class="flex pt-16 md:pt-0 md:justify-center">
         <img
           :src="getStepImage()"
-          class="h-100 mr-6"
+          class="h-100 mr-6 hidden md:block"
         >
         <div
           :key="selection + 'title'"
-          class="text-5xl animated fadeIn self-end mb-16"
+          class="text-5xl animated fadeIn self-end mb-6 md:mb-16"
         >
           <slot name="title" />
         </div>
       </div>
 
-      <div class="flex flex-col justify-center h-full relative">
+      <div class="flex flex-col justify-center">
         <div
           v-if="selection === 1"
           :key="1"
@@ -94,8 +94,9 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-between h-full pt-6 self-end">
-        <div class="dotstyle dotstyle-stroke mb-10">
+    </div>
+    <div class="flex items-center justify-between pt-6 self-start md:self-end">
+        <div class="dotstyle dotstyle-stroke mb-10 hidden md:block">
           <ul>
             <li
               v-for="index in totalScreens"
@@ -127,7 +128,6 @@
           />
         </div>
       </div>
-    </div>
   </div>
 </template>
 

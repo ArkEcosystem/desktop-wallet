@@ -5,7 +5,7 @@
   >
     <div
       :style="getBackgroundImage()"
-      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative animated fadeIn overflow-y-scroll"
+      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative animated fadeIn lg:overflow-y-scroll"
     >
       <div
         v-if="step == 1"
@@ -236,14 +236,13 @@ export default {
 
   watch: {
     BrowserWindow () {
-      console.log('browserwindow')
       this.isMobile = BrowserWindow.getFocusedWindow().getSize()[0] <= 992
     }
   },
 
   created () {
     // [0] = width, [1] = height
-    console.log(BrowserWindow.getFocusedWindow())
+    console.log(BrowserWindow.getFocusedWindow().getSize())
     this.isMobile = BrowserWindow.getFocusedWindow().getSize()[0] <= 992
   },
 
