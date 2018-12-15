@@ -51,75 +51,153 @@
           </div>
         </div>
 
-        <AppIntroScreen
-          v-if="step == 2"
-          :is-first="true"
-          :selection="1"
-          @back="moveTo(1)"
-          @next="moveTo(3)"
+        <template
+          v-if="isMobile"
         >
-          <i18n
-            slot="title"
-            path="INTRODUCTION.PAGE_TITLE"
-            tag="span"
+          <AppIntroScreenMobile
+            v-if="step == 2"
+            :is-first="true"
+            :selection="1"
+            @back="moveTo(1)"
+            @next="moveTo(3)"
           >
-            <strong place="page">
-              {{ $t('INTRODUCTION.POWER.TITLE') }}
-            </strong>
-          </i18n>
-        </AppIntroScreen>
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.POWER.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreenMobile>
 
-        <AppIntroScreen
-          v-if="step == 3"
-          :selection="2"
-          @back="moveTo(2)"
-          @next="moveTo(4)"
-        >
-          <i18n
-            slot="title"
-            path="INTRODUCTION.PAGE_TITLE"
-            tag="span"
+          <AppIntroScreenMobile
+            v-if="step == 3"
+            :selection="2"
+            @back="moveTo(2)"
+            @next="moveTo(4)"
           >
-            <strong place="page">
-              {{ $t('INTRODUCTION.DUTY.TITLE') }}
-            </strong>
-          </i18n>
-        </AppIntroScreen>
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.DUTY.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreenMobile>
 
-        <AppIntroScreen
-          v-if="step == 4"
-          :selection="3"
-          @back="moveTo(3)"
-          @next="moveTo(5)"
-        >
-          <i18n
-            slot="title"
-            path="INTRODUCTION.PAGE_TITLE"
-            tag="span"
+          <AppIntroScreenMobile
+            v-if="step == 4"
+            :selection="3"
+            @back="moveTo(3)"
+            @next="moveTo(5)"
           >
-            <strong place="page">
-              {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
-            </strong>
-          </i18n>
-        </AppIntroScreen>
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreenMobile>
 
-        <AppIntroScreen
-          v-if="step == 5"
-          :is-last="true"
-          :selection="4"
-          @back="moveTo(4)"
-          @done="done"
-        >
-          <i18n
-            slot="title"
-            path="INTRODUCTION.PAGE_TITLE"
-            tag="span"
+          <AppIntroScreenMobile
+            v-if="step == 5"
+            :is-last="true"
+            :selection="4"
+            @back="moveTo(4)"
+            @done="done"
           >
-            <strong place="page">
-              {{ $t('INTRODUCTION.TURN.TITLE') }}
-            </strong>
-          </i18n>
-        </AppIntroScreen>
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.TURN.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreenMobile>
+        </template>
+
+        <template
+          v-else
+        >
+          <AppIntroScreen
+            v-if="step == 2"
+            :is-first="true"
+            :selection="1"
+            @back="moveTo(1)"
+            @next="moveTo(3)"
+          >
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.POWER.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreen>
+
+          <AppIntroScreen
+            v-if="step == 3"
+            :selection="2"
+            @back="moveTo(2)"
+            @next="moveTo(4)"
+          >
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.DUTY.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreen>
+
+          <AppIntroScreen
+            v-if="step == 4"
+            :selection="3"
+            @back="moveTo(3)"
+            @next="moveTo(5)"
+          >
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreen>
+
+          <AppIntroScreen
+            v-if="step == 5"
+            :is-last="true"
+            :selection="4"
+            @back="moveTo(4)"
+            @done="done"
+          >
+            <i18n
+              slot="title"
+              path="INTRODUCTION.PAGE_TITLE"
+              tag="span"
+            >
+              <strong place="page">
+                {{ $t('INTRODUCTION.TURN.TITLE') }}
+              </strong>
+            </i18n>
+          </AppIntroScreen>
+        </template>
       </div>
     </div>
     <AppFooter
@@ -130,26 +208,43 @@
 
 <script>
 import { AppFooter, AppIntroScreen } from '@/components/App'
+import { AppIntroScreenMobile } from '@/components/App/mobile'
+const { BrowserWindow } = require('electron').remote
 
 export default {
   name: 'AppWelcome',
 
   components: {
     AppFooter,
-    AppIntroScreen
+    AppIntroScreen,
+    AppIntroScreenMobile
   },
 
   props: {
   },
 
   data: () => ({
-    step: 1
+    step: 1,
+    isMobile: false
   }),
 
   computed: {
     defaultBackground () {
       return 'wallpapers/1Default.png'
     }
+  },
+
+  watch: {
+    BrowserWindow () {
+      console.log('browserwindow')
+      this.isMobile = BrowserWindow.getFocusedWindow().getSize()[0] <= 992
+    }
+  },
+
+  created () {
+    // [0] = width, [1] = height
+    console.log(BrowserWindow.getFocusedWindow())
+    this.isMobile = BrowserWindow.getFocusedWindow().getSize()[0] <= 992
   },
 
   methods: {
@@ -166,6 +261,13 @@ export default {
     },
 
     getBackgroundImage () {
+      // larger than lg = 992
+      if (this.isMobile) {
+        return this.step === 1
+          ? `background-image: url('${this.assets_loadImage('pages/background-welcome.png')}')`
+          : `background-image: url('${this.assets_loadImage('pages/background-intro-mobile.png')}')`
+      }
+
       return this.step === 1
         ? `background-image: url('${this.assets_loadImage('pages/background-welcome.png')}')`
         : `background-image: url('${this.assets_loadImage('pages/background-intro.png')}')`
