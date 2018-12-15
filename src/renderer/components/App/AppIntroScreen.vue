@@ -94,7 +94,7 @@
       </div>
 
       <div class="flex items-center justify-start">
-        <div class="dotstyle dotstyle-stroke absolute mb-10 pin-b pin-l">
+        <div class="dotstyle dotstyle-stroke absolute mb-10 pin-b pin-l pl-16 xl:pl-0">
           <ul>
             <li
               v-for="index in totalScreens"
