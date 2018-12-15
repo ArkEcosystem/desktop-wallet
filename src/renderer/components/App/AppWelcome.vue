@@ -1,11 +1,24 @@
 <template>
   <div
     :style="`backgroundImage: url('${assets_loadImage(defaultBackground)}')`"
-    class="px-20 py-16 w-screen h-screen"
+    class="px-20 py-16 w-screen h-screen relative"
   >
     <div
-      :style="getBackgroundImage()"
-      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative animated fadeIn lg:overflow-y-scroll"
+      class="bg-white w-full h-full animated fadeIn rounded-lg"
+    >
+      <div
+        v-if="step == 1"
+        :style="`background-image: url('${this.assets_loadImage('pages/background-welcome.png')}')`"
+        class="AppWelcome__background bg-no-repeat w-full h-full"
+      />
+      <div
+        v-else
+        :style="`background-image: url('${this.assets_loadImage('pages/background-intro.png')}')`"
+        class="AppWelcome__background bg-no-repeat opacity-25 md:opacity-100 w-full h-full"
+      />
+    </div>
+    <div
+      class="px-20 py-16 flex justify-center items-center rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
     >
       <div
         v-if="step == 1"
@@ -43,7 +56,7 @@
       <div
         v-else-if="step > 1"
         :key="2"
-        class="flex w-full h-full"
+        class="flex w-full h-full relative"
       >
         <div class="absolute pin-t pin-l">
           <div class="AppWelcome__Logo__corner">
@@ -244,19 +257,6 @@ export default {
 
     done () {
       this.$emit('done')
-    },
-
-    getBackgroundImage () {
-      // larger than lg = 992
-      if (this.isMobile) {
-        return this.step === 1
-          ? `background-image: url('${this.assets_loadImage('pages/background-welcome.png')}')`
-          : `background-image: url('${this.assets_loadImage('pages/background-intro-mobile.png')}')`
-      }
-
-      return this.step === 1
-        ? `background-image: url('${this.assets_loadImage('pages/background-welcome.png')}')`
-        : `background-image: url('${this.assets_loadImage('pages/background-intro.png')}')`
     }
   }
 }

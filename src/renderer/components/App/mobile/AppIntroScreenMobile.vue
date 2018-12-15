@@ -2,7 +2,7 @@
   <div class="flex flex-col items-center">
     <div
       :key="selection + 'image'"
-      class="animated fadeIn px-12 pt-24 overflow-y-scroll md:h-full"
+      class="animated fadeIn px-12 pt-24 overflow-y-scroll h-full"
     >
       <div class="flex pt-16 md:pt-0 md:justify-center">
         <img
