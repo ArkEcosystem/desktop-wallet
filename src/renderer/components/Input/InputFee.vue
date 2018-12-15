@@ -1,5 +1,5 @@
 <template>
-  <div class="InputFee relative">
+  <div class="InputFee relative inline-block w-full">
     <div class="w-full">
       <div class="InputFee__gradient absolute w-full" />
       <div
@@ -18,6 +18,7 @@
         :currency="currency"
         :label="$t('TRANSACTION.FEE')"
         :value="fee"
+        :custom-error="insufficientFundsError"
         :not-valid-error="notValidError"
         :maximum-amount="feeChoiceMax"
         :maximum-error="maximumError"
@@ -53,7 +54,7 @@
 
     <div
       v-if="isStaticFee && !isAdvancedFee"
-      class="my-4"
+      class="mt-6 mb-4"
     >
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
     </div>
@@ -85,11 +86,17 @@ export default {
     transactionType: {
       type: Number,
       required: true
+    },
+
+    showInsufficientFunds: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
   data () {
-    const maxV1fee = V1.fees[this.transactionType] * Math.pow(10, -8)
+    const maxV1fee = V1.fees[this.transactionType] * 1e-8
     const data = {
       feeChoices: {
         MINIMUM: 1,
@@ -100,13 +107,16 @@ export default {
       },
       feeChoice: 'AVERAGE',
       maxV1fee,
-      step: Math.pow(10, -8)
+      step: 1e-8
     }
     data.fee = data.feeChoices[data.feeChoice]
     return data
   },
 
   computed: {
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
     hiddenGradientStyle () {
       return {
         width: `${100 - this.rangePercentage}%`
@@ -152,9 +162,23 @@ export default {
       const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
     },
+    insufficientFundsError () {
+      if (!this.showInsufficientFunds) {
+        return ''
+      }
+
+      if (parseFloat(this.currency_subToUnit(this.currentWallet.balance)) < parseFloat(this.fee)) {
+        const balance = this.formatter_networkCurrency(this.currentWallet.balance)
+        return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
+      }
+      return ''
+    },
     warningText () {
       if (this.isAdvancedFee) {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
+      }
+      if (this.fee < this.feeChoices.AVERAGE) {
+        return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
 
       return null
@@ -262,7 +286,7 @@ export default {
     fee: {
       isValid (value) {
         if (this.$refs.input) {
-          return !this.$refs.input.$v.$invalid
+          return !this.$refs.input.$v.$invalid && !this.insufficientFundsError
         }
         return false
       }

@@ -9,10 +9,13 @@ export default {
     background: null,
     currency: null,
     language: null,
+    isMarketChartEnabled: true,
     name: null,
     profileId: null,
     theme: null,
-    contentProtection: true
+    contentProtection: true,
+    backgroundUpdateLedger: null,
+    ledgerCache: null
   }),
 
   getters: {
@@ -42,12 +45,15 @@ export default {
     avatar: state => state.avatar,
     background: state => state.background,
     currency: state => state.currency,
+    isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
-    contentProtection: state => state.contentProtection
+    contentProtection: state => state.contentProtection,
+    backgroundUpdateLedger: state => state.backgroundUpdateLedger,
+    ledgerCache: state => state.ledgerCache
   },
 
   mutations: {
@@ -61,6 +67,10 @@ export default {
 
     SET_CURRENCY (state, currency) {
       state.currency = currency
+    },
+
+    SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
+      state.isMarketChartEnabled = isEnabled
     },
 
     SET_LANGUAGE (state, language) {
@@ -87,15 +97,26 @@ export default {
       state.contentProtection = protection
     },
 
+    SET_BACKGROUND_UPDATE_LEDGER (state, update) {
+      state.backgroundUpdateLedger = update
+    },
+
+    SET_LEDGER_CACHE (state, enabled) {
+      state.ledgerCache = enabled
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
       state.currency = MARKET.defaultCurrency
+      state.isMarketChartEnabled = true
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.backgroundUpdateLedger = true
       state.contentProtection = true
+      state.ledgerCache = false
     }
   },
 
@@ -107,10 +128,13 @@ export default {
       dispatch('setAvatar', profile.avatar)
       dispatch('setBackground', profile.background)
       dispatch('setCurrency', profile.currency)
+      dispatch('setIsMarketChartEnabled', profile.isMarketChartEnabled)
       dispatch('setName', profile.name)
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
+      dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
+      dispatch('setLedgerCache', profile.ledgerCache)
 
       return profile
     },
@@ -131,6 +155,10 @@ export default {
       commit('SET_CURRENCY', value)
     },
 
+    setIsMarketChartEnabled ({ commit }, value) {
+      commit('SET_IS_MARKET_CHART_ENABLED', value)
+    },
+
     setLanguage ({ commit }, value) {
       commit('SET_LANGUAGE', value)
       i18n.locale = value
@@ -146,6 +174,14 @@ export default {
 
     setContentProtection ({ commit }, value) {
       commit('SET_CONTENT_PROTECTION', value)
+    },
+
+    setBackgroundUpdateLedger ({ commit }, value) {
+      commit('SET_BACKGROUND_UPDATE_LEDGER', value)
+    },
+
+    setLedgerCache ({ commit }, value) {
+      commit('SET_LEDGER_CACHE', value)
     },
 
     async setProfileId ({ commit, dispatch }, value) {

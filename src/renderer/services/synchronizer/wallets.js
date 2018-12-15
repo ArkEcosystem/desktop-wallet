@@ -56,6 +56,10 @@ class Action {
         ...this.$getters['wallet/contactsByProfileId'](profile.id)
       ]
 
+      if (this.$getters['session/backgroundUpdateLedger']) {
+        allWallets.push(...this.$getters['ledger/wallets'])
+      }
+
       // Retrieve the data of wallets that have not been checked yet
       const notChecked = difference(allWallets, this.checked)
 
@@ -102,6 +106,11 @@ class Action {
 
   async refreshWallet (wallet) {
     try {
+      if (wallet.isLedger) {
+        await this.fetchWalletTransactions(wallet)
+
+        return
+      }
       const walletData = await this.$client.fetchWallet(wallet.address)
 
       if (walletData) {
@@ -136,6 +145,11 @@ class Action {
           transactions,
           profileId: wallet.profileId
         })
+
+        if (wallet.isLedger) {
+          return
+        }
+
         const latest = this.findLatestTransaction(transactions)
         const latestAt = latest.timestamp
         const checkedAt = wallet.transactions ? wallet.transactions.checkedAt : 0

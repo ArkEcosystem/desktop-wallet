@@ -30,7 +30,7 @@
           ref="passphraseVerification"
           :passphrase="passphraseWords"
           :word-positions="wordPositions"
-          class="mb-20"
+          class="mb-10"
           @verified="onVerification"
         />
 
@@ -39,6 +39,7 @@
           ref="fee"
           :currency="session_network.token"
           :transaction-type="$options.transactionType"
+          :show-insufficient-funds="true"
           @input="onFee"
         />
 
@@ -218,6 +219,7 @@ export default {
     },
 
     generateNewPassphrase () {
+      this.reset()
       this.isGenerating = true
       setTimeout(() => {
         this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)

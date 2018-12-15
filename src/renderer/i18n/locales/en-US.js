@@ -181,14 +181,16 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
-    NETWORK_OVERVIEW: 'Network Overview',
+    NETWORK_OVERVIEW: 'Network overview',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
+      BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
+      IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
-        TITLE: 'Reset Data',
+        TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
         NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
       }
@@ -244,7 +246,8 @@ export default {
       NEO_ADDRESS: 'This looks like a NEO address'
     },
     LABEL: 'Address',
-    QR: 'Scan the QR code'
+    QR: 'Scan the QR code',
+    KNOWN_ADDRESS: 'This wallet is known as "{address}"'
   },
 
   INPUT_CURRENCY: {
@@ -263,6 +266,7 @@ export default {
     MAXIMUM: 'Maximum',
     INPUT: 'Input',
     ADVANCED: 'Advanced',
+    LOW_FEE_NOTICE: 'Transactions with low fees may never get confirmed',
     ADVANCED_NOTICE: 'Be careful what fee you choose as it will cost more than necessary if too high',
     UNIQUE: 'The network fee has been set to the static value of {fee}',
     ERROR: {
@@ -327,6 +331,8 @@ export default {
     FAILED_FETCH: 'Failed to fetch network information',
     NETWORK_IN_USE: 'This network is in use by one or more profiles and cannot be removed',
     DEFAULT_NETWORK_NO_DELETE: 'This is a default network and cannot be deleted',
+    VALIDATING_SEED: 'Validating Seed Server details...',
+    SEED_VALIDATE_FAILED: 'Failed to connect to seed server',
     PLACEHOLDER: {
       EXPLORER: 'http://explorer.io',
       SEED_SERVER: 'http://1.1.1.1:4002',
@@ -478,7 +484,19 @@ export default {
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
       STATISTICS: 'Statistics',
-      SIGN_VERIFY: 'Sign'
+      SIGN_VERIFY: 'Sign',
+      PURCHASE: 'Purchase {ticker}'
+    },
+
+    WALLET_EXCHANGE: {
+      CHANGELLY_TERMS: {
+        TITLE: 'Purchase {ticker} directly within ARK Desktop Wallet with our Changelly integration',
+        CONTENT: 'Changelly lets you exchange other cryptocurrencies into {ticker} and has an option to buy {ticker} directly with your credit or debit cards.',
+        CONFIRMATION: 'I have read and I agree with the {terms} and the {privacy} from Changelly. By clicking {button}, I acknowledge and understand that my transaction may trigger AML/KYC verification according to Changelly {kyc}.',
+        TERMS_OF_USE: 'terms of use',
+        PRIVACY_POLICY: 'privacy policy',
+        KYC: 'AML/KYC'
+      }
     },
 
     WALLET_ALL: {
@@ -488,7 +506,9 @@ export default {
       IMPORT_WALLET: 'Import wallet',
       LOADING_LEDGER: 'Loading Ledger Wallets...',
       SHOW_WALLET: 'Show wallet',
-      TOTAL_BALANCE: 'Total balance'
+      TOTAL_BALANCE: 'Total balance',
+      CACHE_LEDGER: 'Cache ledger wallets?',
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
     },
 
     WALLET_IMPORT: {
@@ -596,6 +616,10 @@ export default {
     MODAL_HEADER: 'Networks'
   },
 
+  NETWORK: {
+    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
+  },
+
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transfer',
@@ -656,6 +680,8 @@ export default {
     CONFIRMATION_COUNT: '{0} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
+    DISCARD: 'Discard',
+    EXPIRED: 'Expired',
     FEE: 'Transaction fee',
     ID: 'ID',
     LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
@@ -667,6 +693,8 @@ export default {
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',
     RECIPIENT: 'Recipient',
+    RESEND: 'Resend',
+    RESENT_NOTICE: 'Transaction {transactionId} has been resent',
     SAVE_OFFLINE: 'Save transaction offline',
     SECOND_PASSPHRASE: 'Second Passphrase',
     SEND: 'Send',
@@ -747,6 +775,7 @@ export default {
     RANK: 'Rank',
     USERNAME: 'Username',
     PRODUCTIVITY: 'Productivity',
+    RANK_BANNER: 'Rank: {rank}',
     PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Approval',
     FORGED: 'Forged',
@@ -770,7 +799,8 @@ export default {
     TITLE: 'Rename Wallet',
     NEW: 'New wallet name',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}'
+    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}',
+    ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 
   WALLET_REMOVAL_CONFIRMATION: {

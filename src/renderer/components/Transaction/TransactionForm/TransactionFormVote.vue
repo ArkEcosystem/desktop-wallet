@@ -56,6 +56,7 @@
           ref="fee"
           :currency="session_network.token"
           :transaction-type="$options.transactionType"
+          :show-insufficient-funds="true"
           @input="onFee"
         />
       </div>

@@ -64,6 +64,43 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
+        @click="toggleSelect('ledger-background-switch')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="ledger-background-switch"
+            :is-active="backgroundUpdateLedger"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setBackgroundUpdateLedger"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
+        v-if="isMarketEnabled"
+        :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
+        @click="toggleSelect('show-market-chart')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="show-market-chart"
+            :is-active="sessionIsMarketChartEnabled"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setIsMarketChartEnabled"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -78,25 +115,6 @@
         @continue="onResetData"
       />
     </MenuOptions>
-
-    <div
-      class="bg-theme-settings mt-2 rounded"
-    >
-      <RouterLink
-        :title="$t('APP_SIDEMENU.NETWORK_OVERVIEW')"
-        :to="{ name: 'networks' }"
-        :class="isHorizontal ? 'py-3 px-4 flex-row w-22' : 'px-3 py-4 rounded-t-lg'"
-        class="flex items-center cursor-pointer w-full text-left py-5 pl-10 text-grey-dark hover:no-underline hover:text-white"
-        @click.native="goToNetworkOverview()"
-      >
-        <SvgIcon
-          name="network-management"
-          view-box="0 0 20 20"
-          class="mr-4"
-        />
-        {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
-      </RouterLink>
-    </div>
   </div>
 </template>
 
@@ -104,7 +122,6 @@
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
 import { clone } from 'lodash'
 const os = require('os')
 
@@ -116,8 +133,7 @@ export default {
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
-    ButtonSwitch,
-    SvgIcon
+    ButtonSwitch
   },
 
   props: {
@@ -142,11 +158,17 @@ export default {
       // You can find the possible options here: https://nodejs.org/api/os.html#os_os_platform
       return os.platform() !== 'darwin' && os.platform() !== 'win32'
     },
+    isMarketEnabled () {
+      return this.session_network && this.session_network.market && this.session_network.market.enabled
+    },
     currencies () {
       return this.$store.getters['market/currencies']
     },
     contentProtection () {
       return this.$store.getters['session/contentProtection']
+    },
+    backgroundUpdateLedger () {
+      return this.$store.getters['session/backgroundUpdateLedger']
     },
     sessionCurrency: {
       get () {
@@ -154,9 +176,21 @@ export default {
       },
       set (currency) {
         this.$store.dispatch('session/setCurrency', currency)
-        var profile = clone(this.session_profile)
+        const profile = clone(this.session_profile)
         profile.currency = currency
         this.$store.dispatch('profile/update', profile)
+      }
+    },
+    sessionIsMarketChartEnabled: {
+      get () {
+        return this.$store.getters['session/isMarketChartEnabled']
+      },
+      set (isMarketChartEnabled) {
+        this.$store.dispatch('session/setIsMarketChartEnabled', isMarketChartEnabled)
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          isMarketChartEnabled
+        })
       }
     },
     sessionTheme: {
@@ -165,7 +199,7 @@ export default {
       },
       set (theme) {
         this.$store.dispatch('session/setTheme', theme)
-        var profile = clone(this.session_profile)
+        const profile = clone(this.session_profile)
         profile.theme = theme
         this.$store.dispatch('profile/update', profile)
       }
@@ -176,6 +210,17 @@ export default {
       },
       set (protection) {
         this.$store.dispatch('session/setContentProtection', protection)
+      }
+    },
+    sessionBackgroundUpdateLedger: {
+      get () {
+        return this.$store.getters['session/backgroundUpdateLedger']
+      },
+      set (update) {
+        this.$store.dispatch('session/setBackgroundUpdateLedger', update)
+        const profile = clone(this.session_profile)
+        profile.backgroundUpdateLedger = update
+        this.$store.dispatch('profile/update', profile)
       }
     }
   },
@@ -191,6 +236,14 @@ export default {
 
     setProtection (protection) {
       this.sessionProtection = protection
+    },
+
+    setBackgroundUpdateLedger (update) {
+      this.sessionBackgroundUpdateLedger = update
+    },
+
+    setIsMarketChartEnabled (isEnabled) {
+      this.sessionIsMarketChartEnabled = isEnabled
     },
 
     toggleSelect (name) {
@@ -222,7 +275,7 @@ export default {
 
 <style scoped>
 .AppSidemenuOptionsSettings {
-  width: 300px;
+  width: 360px;
   left: 6.5rem;
   bottom: -5rem;
   transform: translateY(-10%)

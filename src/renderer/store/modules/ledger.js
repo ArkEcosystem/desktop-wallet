@@ -1,3 +1,4 @@
+import { keyBy } from 'lodash'
 import ledgerService from '@/services/ledger-service'
 import eventBus from '@/plugins/event-bus'
 import { crypto } from '@arkecosystem/crypto'
@@ -11,7 +12,8 @@ export default {
     isLoading: false,
     isConnected: false,
     connectionTimer: null,
-    wallets: []
+    wallets: [],
+    walletCache: {}
   },
 
   getters: {
@@ -24,10 +26,34 @@ export default {
       }
 
       return state.wallets[address]
+    },
+    cachedWallets: (state, _, __, rootGetters) => firstAddress => {
+      const profileId = rootGetters['session/profileId']
+      if (!state.walletCache[profileId]) {
+        return []
+      }
+
+      for (const batch of state.walletCache[profileId]) {
+        if (!batch.length) {
+          continue
+        }
+        if (batch[0].address === firstAddress) {
+          return batch
+        }
+      }
+
+      return []
     }
   },
 
   mutations: {
+    RESET (state) {
+      state.slip44 = null
+      state.isLoading = false
+      state.isConnected = false
+      state.connectionTimer = null
+      state.wallets = []
+    },
     SET_SLIP44 (state, slip44) {
       state.slip44 = slip44
     },
@@ -42,10 +68,48 @@ export default {
     },
     SET_WALLETS (state, wallets) {
       state.wallets = wallets
+    },
+    CACHE_WALLETS (state, { wallets, profileId }) {
+      if (!wallets.length) {
+        return
+      }
+
+      if (!state.walletCache[profileId]) {
+        state.walletCache[profileId] = [
+          wallets
+        ]
+
+        return
+      }
+
+      const firstAddress = wallets[0].address
+      for (const batchId in state.walletCache[profileId]) {
+        const batch = state.walletCache[profileId][batchId]
+        if (!batch.length) {
+          continue
+        }
+        if (batch[0].address === firstAddress) {
+          state.walletCache[profileId][batchId] = wallets
+
+          return
+        }
+      }
+
+      state.walletCache[profileId].push(wallets)
+    },
+    CLEAR_WALLET_CACHE (state, profileId) {
+      state.walletCache[profileId] = []
     }
   },
 
   actions: {
+    /**
+     * Reset store for new session.
+     */
+    reset ({ commit }) {
+      commit('RESET')
+    },
+
     /**
      * Initialise ledger service with ark-ledger library.
      * @param {Number} slip44
@@ -140,20 +204,24 @@ export default {
      * @param  {Boolean} [clearFirst=false] Clear ledger wallets from store before reloading
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch, getters }, clearFirst = false) {
+    async reloadWallets ({ commit, dispatch, getters, rootGetters }, clearFirst = false) {
       if (!getters['isConnected']) {
         return []
       }
+
+      const profileId = rootGetters['session/profileId']
 
       if (clearFirst) {
         commit('SET_WALLETS', [])
       }
       commit('SET_LOADING', true)
-      let wallets = []
+      const firstAddress = await dispatch('getAddress', 0)
+      let wallets = keyBy(getters['cachedWallets'](firstAddress), 'address')
+      const startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : 0
       try {
-        for (let ledgerIndex = 0; ; ledgerIndex++) {
+        for (let ledgerIndex = startIndex; ; ledgerIndex++) {
           let isColdWallet = false
-          const ledgerAddress = await dispatch('getAddress', ledgerIndex)
+          const ledgerAddress = ledgerIndex === 0 ? firstAddress : await dispatch('getAddress', ledgerIndex)
           let wallet
           try {
             wallet = await this._vm.$client.fetchWallet(ledgerAddress)
@@ -172,13 +240,15 @@ export default {
             }
           }
 
+          const ledgerName = rootGetters['wallet/ledgerNameByAddress'](ledgerAddress)
+
           wallets[ledgerAddress] = Object.assign(wallet, {
             isLedger: true,
             ledgerIndex,
             isSendingEnabled: true,
-            name: `Ledger ${ledgerIndex + 1}`,
+            name: ledgerName || `Ledger ${ledgerIndex + 1}`,
             passphrase: null,
-            profileId: null,
+            profileId,
             id: ledgerAddress,
             publicKey: await dispatch('getPublicKey', ledgerIndex)
           })
@@ -193,8 +263,32 @@ export default {
       commit('SET_WALLETS', wallets)
       eventBus.emit('ledger:wallets-updated', wallets)
       commit('SET_LOADING', false)
+      dispatch('cacheWallets')
 
       return wallets
+    },
+
+    /**
+     * Store ledger wallets in the cache.
+     * @param  {Number} accountIndex Index of wallet to get address for.
+     * @return {(String|Boolean)}
+     */
+    async cacheWallets ({ commit, getters, rootGetters }) {
+      if (rootGetters['session/ledgerCache']) {
+        commit('CACHE_WALLETS', {
+          wallets: getters['wallets'],
+          profileId: rootGetters['session/profileId']
+        })
+      }
+    },
+
+    /**
+     * Clear all ledger wallets from cache.
+     * @param  {Number} accountIndex Index of wallet to get address for.
+     * @return {(String|Boolean)}
+     */
+    async clearWalletCache ({ commit, rootGetters }) {
+      commit('CLEAR_WALLET_CACHE', rootGetters['session/profileId'])
     },
 
     /**

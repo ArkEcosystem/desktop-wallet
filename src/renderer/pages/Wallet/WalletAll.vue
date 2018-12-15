@@ -1,6 +1,6 @@
 <template>
   <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
-    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-4">
+    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-3">
       <div class="flex-1 flex flex-row justify-between">
         <div class="flex flex-row items-end">
           <div
@@ -29,7 +29,21 @@
         </div>
 
         <div class="flex flex-row items-end pb-4 pr-8">
-          <div class="WalletAll__balance__create flex flex-col items-center pr-6">
+          <div
+            v-show="isLedgerConnected"
+            v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
+            class="WalletAll__ledger__cache flex flex-col items-center pr-6"
+          >
+            <span>{{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}</span>
+            <ButtonSwitch
+              ref="cache-ledger-switch"
+              :is-active="sessionLedgerCache"
+              class="theme-dark mt-3"
+              background-color="#414767"
+              @change="setLedgerCache"
+            />
+          </div>
+          <div class="WalletAll__balance__create flex flex-col items-center pl-6 pr-6">
             <RouterLink :to="{ name: 'wallet-new' }">
               <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
                 <SvgIcon
@@ -133,7 +147,8 @@
 </template>
 
 <script>
-import { without } from 'lodash'
+import { clone, without } from 'lodash'
+import { ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import SvgIcon from '@/components/SvgIcon'
 import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
@@ -143,6 +158,7 @@ export default {
   name: 'WalletAll',
 
   components: {
+    ButtonSwitch,
     Loader,
     SvgIcon,
     WalletIdenticon,
@@ -166,7 +182,7 @@ export default {
       return this.session_network.market.enabled
     },
     totalBalance () {
-      return this.$store.getters['profile/balance'](this.session_profile.id)
+      return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
     price () {
       return this.$store.getters['market/lastPrice']
@@ -179,6 +195,28 @@ export default {
 
     isLedgerLoading () {
       return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
+    },
+
+    isLedgerConnected () {
+      return this.$store.getters['ledger/isConnected']
+    },
+
+    sessionLedgerCache: {
+      get () {
+        return this.$store.getters['session/ledgerCache']
+      },
+      set (enabled) {
+        this.$store.dispatch('session/setLedgerCache', enabled)
+        const profile = clone(this.session_profile)
+        console.log(this.session_profile)
+        profile.ledgerCache = enabled
+        this.$store.dispatch('profile/update', profile)
+        if (enabled) {
+          this.$store.dispatch('ledger/cacheWallets')
+        } else {
+          this.$store.dispatch('ledger/clearWalletCache')
+        }
+      }
     }
   },
 
@@ -219,12 +257,17 @@ export default {
     removeWallet (wallet) {
       this.hideRemovalConfirmation()
       this.selectableWallets = without(this.selectableWallets, wallet)
+    },
+
+    setLedgerCache (enabled) {
+      this.sessionLedgerCache = enabled
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
+.WalletAll__ledger__cache,
 .WalletAll__balance__create {
   @apply .border-r .border-theme-feature-item-alternative
 }
@@ -248,6 +291,9 @@ export default {
 .WalletAll__grid__wallet:hover .identicon {
   transition: 0.5s;
   opacity: 0.5;
+}
+.WalletAll__grid__wallet .identicon {
+  transition: 0.5s;
 }
 @screen lg {
   .WalletAll__grid__wallet {

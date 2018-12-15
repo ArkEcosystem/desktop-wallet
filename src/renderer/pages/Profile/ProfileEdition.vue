@@ -37,8 +37,8 @@
                   class="bg-transparent text-theme-page-text flex-1"
                   name="name"
                   @input="setName"
-                  @keyup.enter="toggleIsNameEditable"
-                  @keyup.esc="toggleIsNameEditable"
+                  @keyup.enter.native="toggleIsNameEditable"
+                  @keyup.esc.native="toggleIsNameEditable"
                 />
                 <div
                   v-else
@@ -324,10 +324,12 @@ export default {
 
   methods: {
     toggleIsNameEditable () {
-      if (!this.isNameEditable && !this.modified.name) {
-        this.$set(this.modified, 'name', this.profile.name)
+      if (!this.nameError || !this.isNameEditable) {
+        if (!this.isNameEditable && !this.modified.name) {
+          this.$set(this.modified, 'name', this.profile.name)
+        }
+        this.isNameEditable = !this.isNameEditable
       }
-      this.isNameEditable = !this.isNameEditable
     },
 
     async save () {

@@ -12,6 +12,7 @@
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
+        @keyup.enter.native="renameWallet"
       />
 
       <button
@@ -70,8 +71,21 @@ export default {
 
   methods: {
     renameWallet () {
-      this.wallet.name = this.schema.name
-      this.$store.dispatch('wallet/update', this.wallet)
+      const newName = this.schema.name
+      if (this.wallet.isLedger) {
+        try {
+          this.$store.dispatch('wallet/setLedgerName', {
+            address: this.wallet.address,
+            name: newName
+          })
+          this.wallet.name = newName
+        } catch (error) {
+          this.$error(this.$t('WALLET_RENAME.ERROR_LEDGER', { error }))
+        }
+      } else {
+        this.wallet.name = newName
+        this.$store.dispatch('wallet/update', this.wallet)
+      }
       this.emitRenamed()
     },
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="WalletTransactions">
     <div
       v-if="newTransactionsNotice"
       class="bg-theme-feature flex flex-row"
@@ -86,7 +86,6 @@ export default {
     if (this.wallet_fromRoute) {
       this.disableNewTransactionEvent(this.wallet_fromRoute.address)
     }
-    this.unwatchExpired()
   },
 
   methods: {
@@ -116,7 +115,7 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address)
+      return this.$store.getters['transaction/byAddress'](address, true)
     },
 
     async getTransactions (address) {
@@ -151,7 +150,7 @@ export default {
 
         this.$store.dispatch('transaction/deleteBulk', {
           transactions: response.transactions,
-          profileId: this.session_profile.profileId
+          profileId: this.session_profile.id
         })
 
         const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
@@ -159,7 +158,6 @@ export default {
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
           this.totalCount = response.totalCount
-          this.watchExpired()
         }
       } catch (error) {
         // Ignore the 404 error of wallets that are not on the blockchain
@@ -176,42 +174,6 @@ export default {
       } finally {
         this.isFetching = false
         this.isLoading = false
-      }
-    },
-
-    unwatchExpired () {
-      for (const event of this.expiryEvents) {
-        this.$eventBus.off(event.id, event.method)
-      }
-      this.expiryEvents = []
-    },
-
-    watchExpired () {
-      this.unwatchExpired()
-
-      const expireTransaction = (transactionId) => {
-        this.fetchedTransactions = this.fetchedTransactions.map(transaction => {
-          if (transaction.id !== transactionId) {
-            return transaction
-          }
-
-          transaction.expired = true
-
-          return transaction
-        })
-      }
-
-      for (const transaction of this.fetchedTransactions) {
-        if (transaction.confirmations > 0) {
-          continue
-        }
-
-        const event = {
-          id: `transaction:${transaction.id}:expired`,
-          method: () => { expireTransaction(transaction.id) }
-        }
-        this.expiryEvents.push(event)
-        this.$eventBus.on(event.id, event.method)
       }
     },
 
@@ -291,11 +253,11 @@ export default {
       this.loadTransactions()
     },
 
-    onSortChange ({ columnName, sortType }) {
+    onSortChange (sortOptions) {
       this.__updateParams({
         sort: {
-          type: sortType,
-          field: columnName
+          type: sortOptions[0].type,
+          field: sortOptions[0].field
         },
         page: 1
       })

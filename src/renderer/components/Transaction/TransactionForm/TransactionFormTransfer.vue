@@ -66,6 +66,7 @@
       v-else-if="currentWallet.passphrase"
       ref="password"
       v-model="$v.form.walletPassword.$model"
+      class="mt-4"
       :label="$t('TRANSACTION.PASSWORD')"
       :is-required="true"
     />
@@ -73,6 +74,7 @@
       v-else
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
+      class="mt-4"
       :address="currentWallet.address"
       :pub-key-hash="session_network.version"
     />
@@ -141,12 +143,12 @@ export default {
 
   data: vm => ({
     form: {
-      amount: vm.schema.amount || '',
+      amount: '',
       fee: 0,
       passphrase: '',
       walletPassword: '',
-      recipientId: vm.schema.address || '',
-      vendorField: vm.schema.vendorField || ''
+      recipientId: '',
+      vendorField: ''
     },
     isSendAllActive: false,
     showEncryptLoader: false,
@@ -195,6 +197,12 @@ export default {
   },
 
   mounted () {
+    // Note: we set this here and not in the data property so validation is triggered properly when fields get pre-populated
+    if (this.schema) {
+      this.$set(this.form, 'amount', this.schema.amount || '')
+      this.$set(this.form, 'recipientId', this.schema.address || '')
+      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+    }
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
     }

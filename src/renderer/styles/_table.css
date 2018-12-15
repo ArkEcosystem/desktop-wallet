@@ -47,15 +47,11 @@
 }
 
 .vgt-table th {
-  @apply .py-2 .text-theme-page-text-light .relative .align-bottom .pr-1 .font-semibold .text-sm
+  @apply .py-2 .text-theme-page-text-light .relative .align-bottom .pr-1 .font-semibold .text-sm .cursor-pointer
 }
 
 .vgt-table th:hover {
   @apply .text-theme-page-text
-}
-
-.vgt-table th.sorting {
-  @apply .cursor-pointer
 }
 
 .vgt-table th.sorting-asc:after {

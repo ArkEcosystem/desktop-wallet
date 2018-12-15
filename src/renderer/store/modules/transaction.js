@@ -21,23 +21,33 @@ export default {
   },
 
   getters: {
-    byAddress: (state, _, __, rootGetters) => address => {
+    byAddress: (state, _, __, rootGetters) => (address, showExpired = false) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.transactions[profileId]) {
         return []
       }
 
-      return state.transactions[profileId].filter(transaction => {
+      const transactions = state.transactions[profileId].filter(transaction => {
         return transaction.recipient === address || transaction.sender === address
       })
+
+      if (showExpired) {
+        return transactions
+      }
+
+      return transactions.filter(transaction => !transaction.isExpired)
     },
 
-    byProfileId: (state, _, __, rootGetters) => profileId => {
+    byProfileId: (state, _, __, rootGetters) => (profileId, showExpired = false) => {
       if (!state.transactions[profileId]) {
         return []
       }
 
-      return state.transactions[profileId]
+      if (showExpired) {
+        return state.transactions[profileId]
+      }
+
+      return state.transactions[profileId].filter(transaction => !transaction.isExpired)
     }
   },
 
@@ -98,8 +108,9 @@ export default {
       const threshold = dayjs().subtract(config.APP.transactionExpiryMinutes, 'minute')
       for (const transaction of getters['byProfileId'](profileId)) {
         if (dayjs(transaction.timestamp).isBefore(threshold)) {
+          transaction.isExpired = true
           expired.push(transaction.id)
-          commit('DELETE', transaction)
+          commit('UPDATE', transaction)
         }
       }
 

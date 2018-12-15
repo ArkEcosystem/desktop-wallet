@@ -13,16 +13,30 @@
       >
         <div v-if="data.column.field === 'id' && data.row.confirmations > 0">
           <a
-            v-tooltip="{
-              content: data.row.id,
-              classes: 'text-xs',
-              trigger: 'hover'
-            }"
             class="flex items-center whitespace-no-wrap"
             href="#"
             @click.stop="network_openExplorer('transaction', data.row.id)"
           >
-            <span class="mr-1">
+            <SvgIcon
+              v-show="isDashboard"
+              v-tooltip="{
+                content: data.row.vendorField,
+                classes: 'text-xs',
+                trigger: 'hover'
+              }"
+              :name="data.formattedRow['vendorField'] ? 'vendorfield' : 'vendorfield-empty'"
+              view-box="0 0 18 18"
+              class="mr-2"
+            />
+
+            <span
+              v-tooltip="{
+                content: data.row.id,
+                classes: 'text-xs',
+                trigger: 'hover'
+              }"
+              class="mr-1"
+            >
               {{ data.formattedRow['id'] }}
             </span>
 
@@ -92,14 +106,16 @@
 
         <div
           v-else-if="data.column.field === 'sender'"
-          class="overflow-hidden truncate max-w-xxs"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="overflow-hidden truncate"
         >
           <WalletAddress :address="data.row.sender" />
         </div>
 
         <div
           v-else-if="data.column.field === 'recipient'"
-          class="overflow-hidden truncate max-w-xxs"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+          class="overflow-hidden truncate"
         >
           <WalletAddress
             :address="data.row.recipient"
@@ -128,6 +144,7 @@
 
 <script>
 import { at } from 'lodash'
+import moment from 'moment'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionShow from './TransactionShow'
@@ -149,16 +166,29 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isDashboard: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
   data: () => ({
-    showModal: false,
     selected: null
   }),
 
   computed: {
     columns () {
+      const vendorFieldClass = [
+        'hidden'
+      ]
+      if (this.hasShortId && !this.isDashboard) {
+        vendorFieldClass.push('xxl:table-cell')
+      } else if (!this.isDashboard) {
+        vendorFieldClass.push('xl:table-cell')
+      }
+
       return [
         {
           label: this.$t('TRANSACTION.ID'),
@@ -185,8 +215,8 @@ export default {
           label: this.$t('TRANSACTION.VENDOR_FIELD'),
           field: 'vendorField',
           formatFn: this.formatSmartbridge,
-          tdClass: this.hasShortId ? 'hidden xxl:table-cell' : 'hidden xl:table-cell',
-          thClass: this.hasShortId ? 'hidden xxl:table-cell' : 'hidden xl:table-cell'
+          tdClass: vendorFieldClass.join(' '),
+          thClass: vendorFieldClass.join(' ')
         },
         {
           label: this.$t('TRANSACTION.AMOUNT'),
@@ -205,7 +235,9 @@ export default {
 
   methods: {
     formatDate (value) {
-      return this.$d(value, 'short')
+      moment.locale(window.navigator.userLanguage || window.navigator.language)
+
+      return moment(value).format('L HH:mm:ss')
     },
 
     formatAddress (value) {
@@ -232,7 +264,7 @@ export default {
         row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
       ]
 
-      if (row.expired) {
+      if (row.isExpired) {
         classes.push('expired')
       }
 
@@ -274,5 +306,8 @@ export default {
 }
 .TransactionTable tr.expired {
   @apply line-through;
+}
+.TransactionTable td .dashboard-address {
+  width: 100px;
 }
 </style>

@@ -3,6 +3,8 @@ import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 import { V1 } from '@config'
 import { useI18n } from '../../__utils__/i18n'
+import CurrencyMixin from '@/mixins/currency'
+import FormatterMixin from '@/mixins/formatter'
 import { InputFee } from '@/components/Input'
 import store from '@/store'
 
@@ -26,7 +28,8 @@ describe('InputFee', () => {
       token: 'NET',
       market: {
         enabled: true
-      }
+      },
+      fractionDigits: 8
     }
 
     store.getters['session/network'] = mockNetwork
@@ -35,6 +38,7 @@ describe('InputFee', () => {
       maxFee: 0.012 * Math.pow(10, 8),
       minFee: 0.0006 * Math.pow(10, 8)
     })
+    store.getters['network/byToken'] = () => mockNetwork
   })
 
   const mountComponent = config => {
@@ -44,8 +48,10 @@ describe('InputFee', () => {
         currency: mockNetwork.token,
         transactionType: 0
       },
+      mixins: [CurrencyMixin, FormatterMixin],
       mocks: {
         session_network: mockNetwork,
+        wallet_fromRoute: { balance: 10 },
         $store: store,
         $v: {
           fee: {
@@ -236,6 +242,41 @@ describe('InputFee', () => {
         const wrapper = mountComponent()
 
         expect(wrapper.vm.feeChoices.MAXIMUM).toBeWithin(0.03, 0.03000001)
+      })
+    })
+  })
+
+  describe('insufficientFundsError', () => {
+    let wrapper
+
+    describe('when the message is enabled', () => {
+      beforeEach(() => {
+        wrapper = mountComponent({ propsData: { showInsufficientFunds: true } })
+      })
+
+      describe('when the balance is smaller than the fee', () => {
+        it('should return the message about funds', () => {
+          wrapper.vm.wallet_fromRoute.balance = 10000
+          wrapper.vm.fee = 20e8
+          expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
+
+          wrapper.vm.wallet_fromRoute.balance = '10000'
+          wrapper.vm.fee = '20e8'
+          expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
+        })
+      })
+
+      describe('when the balance is bigger than the fee', () => {
+        it('should return an empty message', () => {
+          // NOTE: Balance is in arktoshi, while fee is in ARK
+          wrapper.vm.wallet_fromRoute.balance = 20e8
+          wrapper.vm.fee = 1
+          expect(wrapper.vm.insufficientFundsError).toEqual('')
+
+          wrapper.vm.wallet_fromRoute.balance = '20e8'
+          wrapper.vm.fee = '1'
+          expect(wrapper.vm.insufficientFundsError).toEqual('')
+        })
       })
     })
   })

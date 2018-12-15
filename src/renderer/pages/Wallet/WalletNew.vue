@@ -404,6 +404,7 @@ export default {
     selectWallet (address, passphrase) {
       this.schema.address = address
       this.schema.passphrase = passphrase
+      this.isPassphraseVerified = false
     },
 
     refreshAddresses () {

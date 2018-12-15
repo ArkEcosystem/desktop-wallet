@@ -2,7 +2,7 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
-        v-if="isMarketEnabled"
+        v-if="isChartEnabled && isMarketEnabled"
         class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
       >
         <MarketChart :is-active="isMarketEnabled">
@@ -64,6 +64,9 @@ export default {
   },
 
   computed: {
+    isChartEnabled () {
+      return this.$store.getters['session/isMarketChartEnabled']
+    },
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
     }
@@ -103,18 +106,20 @@ export default {
 <style lang="postcss" scoped>
 .Dashboard__wallets__create,
 .Dashboard__wallets__import {
-  @apply .w-1/2 .appearance-none .font-semibold .pt-8 .pb-4 .flex .justify-center .items-center
+  @apply .w-1/2 .appearance-none .font-semibold .pt-6 .pb-6 .flex
 }
 .Dashboard__wallets__create > span,
 .Dashboard__wallets__import > span {
-  @apply .pt-3 .pb-2 .w-full .text-center
+  @apply .w-full .text-center
 }
 
 .Dashboard__wallets__create > span {
   border-right: 0.04rem solid var(--theme-feature-item-alternative);
+  align-self: center;
 }
 .Dashboard__wallets__import > span {
   border-left: 0.04rem solid var(--theme-feature-item-alternative);
+  align-self: center;
 }
 .Dashboard__wallets__create:hover > span {
   border-right: 0px;

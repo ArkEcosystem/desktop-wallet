@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { sortBy } from 'lodash'
+import { orderBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { AnnouncementsPost } from '@/components/Announcements'
 
@@ -51,8 +51,8 @@ export default {
       unreadAnnouncements: 'announcements/unread'
     }),
     announcements () {
-      const readSorted = sortBy(this.readAnnouncements, 'date').reverse()
-      const unreadSorted = sortBy(this.unreadAnnouncements, 'date').reverse()
+      const readSorted = orderBy(this.readAnnouncements, 'date', 'desc')
+      const unreadSorted = orderBy(this.unreadAnnouncements, 'date', 'desc')
       return unreadSorted.concat(readSorted)
     }
   },

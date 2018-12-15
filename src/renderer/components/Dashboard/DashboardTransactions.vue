@@ -2,6 +2,7 @@
   <TransactionTable
     :has-short-id="true"
     :rows="lastTransactions"
+    :is-dashboard="true"
   />
 </template>
 
@@ -34,10 +35,13 @@ export default {
       return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
     },
     storedTransactions () {
-      return this.$store.getters['transaction/byProfileId'](this.session_profile.id)
+      return this.$store.getters['transaction/byProfileId'](this.session_profile.id, true)
     },
     wallets () {
-      return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      return [
+        ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
+        ...this.$store.getters['ledger/wallets']
+      ]
     }
   },
 

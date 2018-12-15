@@ -28,24 +28,38 @@
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div class="flex flex-row">
-          <I18n
+          <i18n
             tag="span"
-            class="font-semibold pr-6 border-r border-theme-line-separator"
+            :class="{
+              'border-r border-theme-line-separator' : votedDelegate.rank
+            }"
+            class="font-semibold pr-6"
             path="WALLET_DELEGATES.VOTED_FOR"
           >
             <strong place="delegate">
               {{ votedDelegate.username }}
             </strong>
-          </I18n>
-          <I18n
-            tag="span"
-            class="font-semibold pl-6"
-            path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
-          >
-            <strong place="productivity">
-              {{ getProductivity() }}
-            </strong>
-          </I18n>
+          </i18n>
+          <template v-if="votedDelegate.rank">
+            <i18n
+              tag="span"
+              class="font-semibold px-6 border-r border-theme-line-separator"
+              path="WALLET_DELEGATES.RANK_BANNER"
+            >
+              <strong place="rank">
+                {{ votedDelegate.rank }}
+              </strong>
+            </i18n>
+            <i18n
+              tag="span"
+              class="font-semibold pl-6"
+              path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
+            >
+              <strong place="productivity">
+                {{ getProductivity() }}
+              </strong>
+            </i18n>
+          </template>
         </div>
       </div>
       <div
@@ -78,7 +92,7 @@ import { at } from 'lodash'
 /* eslint-disable vue/no-unused-components */
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
-import { WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
+import { WalletExchange, WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
 import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 
@@ -86,6 +100,7 @@ export default {
   components: {
     ButtonGeneric,
     TransactionModal,
+    WalletExchange,
     WalletHeading,
     WalletTransactions,
     WalletDelegates,
@@ -133,6 +148,13 @@ export default {
         })
       }
 
+      if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+        tabs.push({
+          component: 'WalletExchange',
+          text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
+        })
+      }
+
       // TODO enable when there is something to show
       // if (this.session_network.market && this.session_network.market.enabled) {
       //   tabs.push({
@@ -142,6 +164,10 @@ export default {
       // }
 
       return tabs
+    },
+
+    currentNetwork () {
+      return this.session_network
     },
 
     currentWallet () {
