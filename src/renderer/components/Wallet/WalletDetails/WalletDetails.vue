@@ -30,31 +30,36 @@
         <div class="flex flex-row">
           <i18n
             tag="span"
-            class="font-semibold pr-6 border-r border-theme-line-separator"
+            :class="{
+              'border-r border-theme-line-separator' : votedDelegate.rank
+            }"
+            class="font-semibold pr-6"
             path="WALLET_DELEGATES.VOTED_FOR"
           >
             <strong place="delegate">
               {{ votedDelegate.username }}
             </strong>
           </i18n>
-          <i18n
-            tag="span"
-            class="font-semibold pl-6 border-r border-theme-line-separator"
-            path="WALLET_DELEGATES.RANK_BANNER"
-          >
-            <strong place="rank">
-              {{ votedDelegate.rank }}
-            </strong>
-          </i18n>
-          <i18n
-            tag="span"
-            class="font-semibold pl-6"
-            path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
-          >
-            <strong place="productivity">
-              {{ getProductivity() }}
-            </strong>
-          </i18n>
+          <template v-if="votedDelegate.rank">
+            <i18n
+              tag="span"
+              class="font-semibold px-6 border-r border-theme-line-separator"
+              path="WALLET_DELEGATES.RANK_BANNER"
+            >
+              <strong place="rank">
+                {{ votedDelegate.rank }}
+              </strong>
+            </i18n>
+            <i18n
+              tag="span"
+              class="font-semibold pl-6"
+              path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
+            >
+              <strong place="productivity">
+                {{ getProductivity() }}
+              </strong>
+            </i18n>
+          </template>
         </div>
       </div>
       <div

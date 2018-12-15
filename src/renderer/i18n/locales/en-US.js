@@ -181,15 +181,16 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
-    NETWORK_OVERVIEW: 'Network Overview',
+    NETWORK_OVERVIEW: 'Network overview',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
-      BACKGROUND_UPDATE_LEDGER: 'Update Ledger in Background',
+      BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
+      IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
-        TITLE: 'Reset Data',
+        TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
         NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
       }
@@ -506,7 +507,8 @@ export default {
       LOADING_LEDGER: 'Loading Ledger Wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
-      CACHE_LEDGER: 'Cache ledger wallets?'
+      CACHE_LEDGER: 'Cache ledger wallets?',
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
     },
 
     WALLET_IMPORT: {
