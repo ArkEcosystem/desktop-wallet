@@ -5,7 +5,7 @@
   >
     <div
       :style="getBackgroundImage()"
-      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative animated fadeIn"
+      class="AppWelcome__background bg-no-repeat flex justify-center items-center rounded-lg bg-white w-full h-full relative animated fadeIn overflow-y-scroll"
     >
       <div
         v-if="step == 1"
@@ -182,7 +182,7 @@ export default {
 
 .AppWelcome__background {
   background-size: contain;
-  background-position: left center;
+  background-position: top left;
 }
 
 .AppWelcome__Logo__corner {

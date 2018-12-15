@@ -105,7 +105,7 @@ export default {
       return this.$store.getters['session/contentProtection']
     },
     hasSeenIntroduction () {
-      return this.$store.getters['app/hasSeenIntroduction']
+      return false // this.$store.getters['app/hasSeenIntroduction']
     },
     isWindows () {
       return process.platform === 'win32'
