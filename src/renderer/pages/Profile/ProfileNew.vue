@@ -1,21 +1,22 @@
 <template>
   <div class="ProfileNew relative bg-theme-feature rounded-lg">
-    <main class="flex flex-row h-full">
+    <main class="flex flex-col sm:flex-row h-full">
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="ProfileNew__instructions w-2/3 background-image"
+        class="ProfileNew__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
       >
-        <div class="instructions-text">
+        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
           <h3 class="mb-2 text-theme-page-instructions-text">
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
           </h3>
+
           <p>
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>
         </div>
       </div>
 
-      <div class="w-1/3 p-10">
+      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
         <MenuStep
           v-model="step"
         >
@@ -60,7 +61,7 @@
                   :items="bip39Languages"
                   :label="$t('COMMON.BIP39_LANGUAGE')"
                   name="bip39-language"
-                  class="flex-1 mr-2"
+                  class="flex-1"
                 />
               </div>
 
