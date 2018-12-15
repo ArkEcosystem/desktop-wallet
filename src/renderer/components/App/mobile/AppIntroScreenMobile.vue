@@ -95,39 +95,39 @@
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-between pt-6 self-start md:self-end">
-        <div class="dotstyle dotstyle-stroke mb-10 hidden md:block">
-          <ul>
-            <li
-              v-for="index in totalScreens"
-              :key="index"
-              :class="{ 'current' : index === selection }"
-            >
-              <span />
-            </li>
-          </ul>
-        </div>
-        <div class="m-8">
-          <ButtonGeneric
-            :disabled="isFirst"
-            :label="$t('COMMON.BACK')"
-            class="ml-4 mr-0"
-            @click="emitBack"
-          />
-          <ButtonGeneric
-            v-if="!isLast"
-            :label="$t('COMMON.NEXT')"
-            class="ml-4"
-            @click="emitNext"
-          />
-          <ButtonGeneric
-            v-else
-            :label="$t('COMMON.FINISH')"
-            class="ml-4"
-            @click="emitDone"
-          />
-        </div>
+    <div class="flex items-center justify-between pt-4 self-start md:self-end">
+      <div class="dotstyle dotstyle-stroke mb-10 hidden md:block">
+        <ul>
+          <li
+            v-for="index in totalScreens"
+            :key="index"
+            :class="{ 'current' : index === selection }"
+          >
+            <span />
+          </li>
+        </ul>
       </div>
+      <div class="m-8">
+        <ButtonGeneric
+          :disabled="isFirst"
+          :label="$t('COMMON.BACK')"
+          class="ml-4 mr-0"
+          @click="emitBack"
+        />
+        <ButtonGeneric
+          v-if="!isLast"
+          :label="$t('COMMON.NEXT')"
+          class="ml-4"
+          @click="emitNext"
+        />
+        <ButtonGeneric
+          v-else
+          :label="$t('COMMON.FINISH')"
+          class="ml-4"
+          @click="emitDone"
+        />
+      </div>
+    </div>
   </div>
 </template>
 

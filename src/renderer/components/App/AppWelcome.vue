@@ -51,8 +51,8 @@
           </div>
         </div>
 
-        <template
-          v-if="isMobile"
+        <div
+          class="flex w-full h-full block lg:hidden"
         >
           <AppIntroScreenMobile
             v-if="step == 2"
@@ -123,10 +123,10 @@
               </strong>
             </i18n>
           </AppIntroScreenMobile>
-        </template>
+        </div>
 
-        <template
-          v-else
+        <div
+          class="hidden lg:block lg:flex lg:w-full lg:h-full"
         >
           <AppIntroScreen
             v-if="step == 2"
@@ -197,7 +197,7 @@
               </strong>
             </i18n>
           </AppIntroScreen>
-        </template>
+        </div>
       </div>
     </div>
     <AppFooter
@@ -209,7 +209,6 @@
 <script>
 import { AppFooter, AppIntroScreen } from '@/components/App'
 import { AppIntroScreenMobile } from '@/components/App/mobile'
-const { BrowserWindow } = require('electron').remote
 
 export default {
   name: 'AppWelcome',
@@ -232,18 +231,6 @@ export default {
     defaultBackground () {
       return 'wallpapers/1Default.png'
     }
-  },
-
-  watch: {
-    BrowserWindow () {
-      this.isMobile = BrowserWindow.getFocusedWindow().getSize()[0] <= 992
-    }
-  },
-
-  created () {
-    // [0] = width, [1] = height
-    console.log(BrowserWindow.getFocusedWindow().getSize())
-    this.isMobile = BrowserWindow.getFocusedWindow().getSize()[0] <= 992
   },
 
   methods: {
