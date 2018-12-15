@@ -8,14 +8,22 @@
     >
       <div
         v-if="step == 1"
-        :style="`background-image: url('${this.assets_loadImage('pages/background-welcome.png')}')`"
-        class="AppWelcome__background bg-no-repeat w-full h-full"
+        :style="`backgroundImage: url('${assets_loadImage('pages/background-welcome.png')}')`"
+        class="AppWelcome__background "
       />
       <div
         v-else
-        :style="`background-image: url('${this.assets_loadImage('pages/background-intro.png')}')`"
-        class="AppWelcome__background bg-no-repeat opacity-25 md:opacity-100 w-full h-full"
-      />
+        class="w-full h-full"
+      >
+        <div
+          :style="`backgroundImage: url('${assets_loadImage('pages/background-intro-mobile.png')}')`"
+          class="block xl:hidden AppWelcome__background opacity-25 md:opacity-100"
+        />
+        <div
+          :style="`backgroundImage: url('${assets_loadImage('pages/background-intro.png')}')`"
+          class="hidden xl:block AppWelcome__background w-full h-full"
+        />
+      </div>
     </div>
     <div
       class="px-20 py-16 flex justify-center items-center rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
@@ -271,6 +279,7 @@ export default {
 .AppWelcome__background {
   background-size: contain;
   background-position: top left;
+  @apply .bg-no-repeat .w-full .h-full
 }
 
 .AppWelcome__Logo__corner {
