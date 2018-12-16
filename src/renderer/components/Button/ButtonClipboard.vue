@@ -7,7 +7,7 @@
   >
     <div
       :class="{ 'animated wobble': isCopying }"
-      class="fill-current block"
+      class="fill-current flex items-center"
     >
       <SvgIcon
         :view-box="viewBox"
