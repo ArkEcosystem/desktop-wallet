@@ -350,7 +350,7 @@ export default {
 
   methods: {
     requiredFieldError (fieldValidator, inputRef) {
-      if (fieldValidator.$dirty) {
+      if (fieldValidator.$dirty && inputRef && inputRef.model.length === 0) {
         if (!fieldValidator.required) {
           return this.$t('VALIDATION.REQUIRED', [inputRef.label])
         }
