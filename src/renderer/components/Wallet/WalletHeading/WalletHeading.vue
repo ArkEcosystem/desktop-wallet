@@ -21,6 +21,10 @@ export default {
     WalletHeadingActions
   },
 
+  data: () => ({
+    activeWallet: null
+  }),
+
   computed: {
     ...mapGetters('wallet', ['secondaryButtonsVisible']),
 
@@ -35,7 +39,9 @@ export default {
 
   watch: {
     currentWallet () {
-      this.resetHeading()
+      if (this.activeWallet && this.activeWallet.id !== this.currentWallet.id) {
+        this.resetHeading()
+      }
     }
   },
 
@@ -45,6 +51,7 @@ export default {
 
   methods: {
     resetHeading () {
+      this.activeWallet = this.currentWallet
       this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
     }
   }
