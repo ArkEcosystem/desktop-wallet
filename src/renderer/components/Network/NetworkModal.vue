@@ -208,10 +208,11 @@
 </template>
 
 <script>
-import { numeric, required } from 'vuelidate/lib/validators'
+import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
+const requiredIfFull = requiredIf(function () { return this.showFull })
 
 export default {
   name: 'NetworkModal',
@@ -349,7 +350,7 @@ export default {
 
   methods: {
     requiredFieldError (fieldValidator, inputRef) {
-      if (fieldValidator.$dirty) {
+      if (fieldValidator.$dirty && inputRef && inputRef.model.length === 0) {
         if (!fieldValidator.required) {
           return this.$t('VALIDATION.REQUIRED', [inputRef.label])
         }
@@ -558,45 +559,45 @@ export default {
         }
       },
       nethash: {
-        required,
+        requiredIfFull,
         isValid (value) {
-          return /^[a-z0-9]{64}$/.test(value)
+          return !this.showFull || /^[a-z0-9]{64}$/.test(value)
         }
       },
       token: {
-        required
+        requiredIfFull
       },
       symbol: {
-        required
+        requiredIfFull
       },
       version: {
-        required,
+        requiredIfFull,
         numeric
       },
       explorer: {
-        required,
+        requiredIfFull,
         isValid (value) {
-          return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return !this.showFull || /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
         },
         hasScheme (value) {
-          return /^https?:\/\//.test(value)
+          return !this.showFull || /^https?:\/\//.test(value)
         }
       },
       epoch: {
-        required,
+        requiredIfFull,
         isValid (value) {
-          return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
+          return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
         }
       },
       wif: {
-        required,
+        requiredIfFull,
         numeric
       },
       slip44: {
-        required
+        requiredIfFull
       },
       activeDelegates: {
-        required,
+        requiredIfFull,
         numeric
       },
       ticker: {
