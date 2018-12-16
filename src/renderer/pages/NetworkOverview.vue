@@ -1,19 +1,22 @@
 <template>
   <div class="NetworkOverview relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-row h-full">
+    <main class="flex flex-col sm:flex-row h-full">
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
-        class="NetworkOverview__instructions flex-grow background-image w-3/5"
+        class="NetworkOverview__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
       >
-        <div class="instructions-text">
+        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
           <h3 class="mb-2 text-theme-page-instructions-text">
             {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER') }}
           </h3>
-          {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.TEXT') }}
+
+          <p>
+            {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.TEXT') }}
+          </p>
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 w-2/5 overflow-y-scroll">
+      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5 overflow-y-scroll">
         <div
           class="NetworkOverview__network"
           @click="openAddNetwork()"

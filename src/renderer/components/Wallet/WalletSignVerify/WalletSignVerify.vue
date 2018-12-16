@@ -6,7 +6,7 @@
         :size="75"
       />
 
-      <div class="flex flex-col justify-center ml-2">
+      <div class="flex flex-col justify-center pl-4">
         <span class="font-bold">
           {{ $t('SIGN_VERIFY.VERIFY_WALLET') }}
         </span>
