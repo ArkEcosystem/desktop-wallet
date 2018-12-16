@@ -14,7 +14,7 @@ export default {
       }
 
       const { explorer } = network
-      const uri = `${explorer}/${path}/${param}`
+      const uri = `${explorer}/#/${path}/${param}`
 
       this.electron_openExternal(uri)
     }

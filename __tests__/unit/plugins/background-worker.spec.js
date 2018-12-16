@@ -22,7 +22,7 @@ describe('Background Worker', () => {
     bip38Worker.send({
       passphrase: 'sample passphrase',
       password: 'testing',
-      wif: 187
+      wif: 188
     })
   })
 
@@ -35,7 +35,7 @@ describe('Background Worker', () => {
     bip38Worker.send({
       bip38key: '6PYRXLq9jrSmgsa9zxoTWWiCQsQt3urzCM4HPBwj1eR2WyH96qiRVggod7',
       password: 'testing',
-      wif: 187
+      wif: 188
     })
   })
 
@@ -48,7 +48,7 @@ describe('Background Worker', () => {
     })
     bip38Worker.send({
       passphrase: 'sample passphrase',
-      wif: 187
+      wif: 188
     })
   })
 
@@ -62,7 +62,7 @@ describe('Background Worker', () => {
     bip38Worker.send({
       bip38key: '6PYRXLq9jrSmgsa9zxoTWWiCQsQt3urzCM4HPBwj1eR2WyH96qiRVggod7',
       password: 'oops',
-      wif: 187
+      wif: 188
     })
   })
 })
