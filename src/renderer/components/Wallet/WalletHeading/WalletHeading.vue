@@ -24,13 +24,29 @@ export default {
   computed: {
     ...mapGetters('wallet', ['secondaryButtonsVisible']),
 
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
+
     justifyClass () {
       return this.secondaryButtonsVisible ? 'justify-end' : 'justify-between'
     }
   },
 
+  watch: {
+    currentWallet () {
+      this.resetHeading()
+    }
+  },
+
   mounted () {
-    this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+    this.resetHeading()
+  },
+
+  methods: {
+    resetHeading () {
+      this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+    }
   }
 }
 </script>
