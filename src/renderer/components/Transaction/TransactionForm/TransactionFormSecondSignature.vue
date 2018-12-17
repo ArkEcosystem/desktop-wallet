@@ -106,7 +106,7 @@
               :is-refreshing="isGenerating"
               :title="$t('WALLET_SECOND_SIGNATURE.NEW')"
               class="bg-theme-modal-footer-button mr-2"
-              text-class="text-theme-modal-footer-button-text mt-1"
+              text-class="text-theme-modal-footer-button-text"
               @click="generateNewPassphrase"
             />
 

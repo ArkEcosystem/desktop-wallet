@@ -284,6 +284,6 @@ export default {
 .AppSidemenuOptionsSettings--horizontal {
   width: 300px;
   right: 8.5rem;
-  top: 5.5rem;
+  top: 5.75rem;
 }
 </style>

@@ -206,10 +206,10 @@ export default {
     prepareFeeStatistics () {
       let { avgFee, maxFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
 
-      avgFee = avgFee * Math.pow(10, -8)
+      avgFee = avgFee * 1e-8
       this.$set(this.feeChoices, 'AVERAGE', avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
 
-      maxFee = maxFee * Math.pow(10, -8)
+      maxFee = maxFee * 1e-8
       this.$set(this.feeChoices, 'MAXIMUM', maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
       this.$set(this.feeChoices, 'MINIMUM', 1 / 1e8)
