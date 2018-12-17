@@ -110,7 +110,8 @@ export default {
   },
 
   data: () => ({
-    showPublicKey: false
+    showPublicKey: false,
+    activeWalletId: null
   }),
 
   computed: {
@@ -148,6 +149,12 @@ export default {
     },
     labelTooltip () {
       return this.showPublicKey ? this.$t('WALLET_HEADING.ACTIONS.SHOW_ADDRESS') : this.$t('WALLET_HEADING.ACTIONS.SHOW_PUBLIC_KEY')
+    }
+  },
+
+  watch: {
+    publicKey () {
+      if (!this.publicKey) this.showPublicKey = false
     }
   },
 
