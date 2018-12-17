@@ -110,8 +110,7 @@ export default {
   },
 
   data: () => ({
-    showPublicKey: false,
-    activeWalletId: null
+    showPublicKey: false
   }),
 
   computed: {
