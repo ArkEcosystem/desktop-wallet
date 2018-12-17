@@ -22,7 +22,7 @@ export default {
   },
 
   data: () => ({
-    activeWalletId: null
+    activeWallet: null
   }),
 
   computed: {
@@ -39,9 +39,8 @@ export default {
 
   watch: {
     currentWallet () {
-      if (this.activeWalletId !== this.currentWallet.id) {
+      if (this.activeWallet !== this.currentWallet.id) {
         this.resetHeading()
-        this.activeWalletId = this.currentWallet.id
       }
     }
   },
