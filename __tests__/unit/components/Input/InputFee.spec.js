@@ -34,9 +34,9 @@ describe('InputFee', () => {
 
     store.getters['session/network'] = mockNetwork
     store.getters['network/feeStatisticsByType'] = type => ({
-      avgFee: 0.0048 * Math.pow(10, 8),
-      maxFee: 0.012 * Math.pow(10, 8),
-      minFee: 0.0006 * Math.pow(10, 8)
+      avgFee: 0.0048 * 1e8,
+      maxFee: 0.012 * 1e8,
+      minFee: 0.0006 * 1e8
     })
     store.getters['network/byToken'] = () => mockNetwork
   })
@@ -75,13 +75,13 @@ describe('InputFee', () => {
   describe('maxV1fee', () => {
     it('should uses V1 configuration', () => {
       let wrapper = mountComponent()
-      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0] * Math.pow(10, -8))
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0] * 1e-8)
       expect(wrapper.vm.maxV1fee).toEqual(0.1)
 
       wrapper = mountComponent({
         propsData: { transactionType: 3 }
       })
-      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[3] * Math.pow(10, -8))
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[3] * 1e-8)
     })
   })
 
@@ -161,7 +161,7 @@ describe('InputFee', () => {
       it('should establish the fee, as String', () => {
         const wrapper = mountComponent()
 
-        wrapper.vm.setFee(Math.pow(10, -8))
+        wrapper.vm.setFee(1e-8)
         expect(wrapper.vm.fee).toEqual('0.00000001')
         wrapper.vm.setFee(Math.pow(10, -7))
         expect(wrapper.vm.fee).toEqual('0.0000001')
@@ -184,9 +184,9 @@ describe('InputFee', () => {
     describe('when the average fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 1000 * Math.pow(10, 8),
-          maxFee: 0.03 * Math.pow(10, 8),
-          minFee: 0.0006 * Math.pow(10, 8)
+          avgFee: 1000 * 1e8,
+          maxFee: 0.03 * 1e8,
+          minFee: 0.0006 * 1e8
         })
       })
 
@@ -200,9 +200,9 @@ describe('InputFee', () => {
     describe('when the average fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * Math.pow(10, 8),
-          maxFee: 0.03 * Math.pow(10, 8),
-          minFee: 0.0006 * Math.pow(10, 8)
+          avgFee: 0.0048 * 1e8,
+          maxFee: 0.03 * 1e8,
+          minFee: 0.0006 * 1e8
         })
       })
 
@@ -216,9 +216,9 @@ describe('InputFee', () => {
     describe('when the maximum fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * Math.pow(10, 8),
-          maxFee: 1000 * Math.pow(10, 8),
-          minFee: 0.0006 * Math.pow(10, 8)
+          avgFee: 0.0048 * 1e8,
+          maxFee: 1000 * 1e8,
+          minFee: 0.0006 * 1e8
         })
       })
 
@@ -232,9 +232,9 @@ describe('InputFee', () => {
     describe('when the maximum fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
         store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * Math.pow(10, 8),
-          maxFee: 0.03 * Math.pow(10, 8),
-          minFee: 0.0006 * Math.pow(10, 8)
+          avgFee: 0.0048 * 1e8,
+          maxFee: 0.03 * 1e8,
+          minFee: 0.0006 * 1e8
         })
       })
 

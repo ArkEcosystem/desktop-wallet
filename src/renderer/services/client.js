@@ -479,6 +479,7 @@ export default class ClientService {
     const transaction = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)
+      .fee(fee)
 
     return this.__signTransaction({
       transaction,

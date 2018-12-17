@@ -11,7 +11,7 @@
       :is="activeComponent"
     />
 
-    <footer class="mt-10 flex justify-between items-baseline">
+    <footer class="mt-10 flex justify-between items-center">
       <div>
         <button
           class="TransactionConfirm__back-button blue-button mr-2 px-5"
