@@ -31,6 +31,7 @@
         <div class="flex flex-row items-end pb-4 pr-8">
           <div
             v-show="isLedgerConnected"
+            v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
             class="WalletAll__ledger__cache flex flex-col items-center pr-6"
           >
             <span>{{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}</span>

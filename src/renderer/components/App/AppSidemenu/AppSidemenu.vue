@@ -8,13 +8,14 @@
     class="AppSidemenu relative bg-transparent"
   >
     <div
-      class="AppSidemenu__container flexify w-full h-full justify-between"
+      class="AppSidemenu__container flexify w-full lg:h-full justify-between"
     >
       <!-- ARK logo -->
       <RouterLink
         :title="$t('APP_SIDEMENU.DASHBOARD')"
         :to="{ name: 'dashboard' }"
         class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
+        @click.native="redirect('dashboard')"
       >
         <img src="@/assets/images/ark-logo.png">
       </RouterLink>
@@ -61,18 +62,6 @@
             class="AppSidemenu__item"
             @close="hideImportantNotification"
           />
-        </div>
-
-        <div class="flexify">
-          <!-- Search -->
-          <!-- <MenuNavigationItem
-            id="search"
-            :class="isHorizontal ? 'w-16' : 'h-16'"
-            :is-horizontal="isHorizontal"
-            view-box="0 0 20 20"
-            icon="search"
-            @click="redirect($event)"
-          /> -->
         </div>
 
         <div class="flexify">
@@ -224,23 +213,30 @@ export default {
 .AppSidemenu__container__scrollable .flexify { @apply flex-none }
 .AppSidemenu__logo { transition: opacity 0.5s; }
 
+.AppSidemenu__avatar__container {
+  transition: opacity 0.5s;
+}
+
 .AppSidemenu--horizontal .AppSidemenu__item { @apply w-16 }
 .AppSidemenu--horizontal .AppSidemenu__logo { @apply p-4 }
 .AppSidemenu--horizontal .AppSidemenu__logo img { @apply h-12 }
 .AppSidemenu--horizontal .flexify { @apply flex flex-row }
 .AppSidemenu--horizontal { @apply h-18; }
+.AppSidemenu--horizontal .AppSidemenu__avatar__dots {
+  @apply absolute p-2 rounded-full bg-theme-feature;
+  right: 0.1rem;
+  bottom: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
 
 .AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
 .AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
-.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 px-4 py-5 }
+.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 p-5 }
 .AppSidemenu--vertical .AppSidemenu__logo img { @apply w-18 }
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
-
-.AppSidemenu__avatar__container {
-  transition: opacity 0.5s;
-}
-.AppSidemenu__avatar__dots {
+.AppSidemenu--vertical .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature;
   right: 1rem;
   bottom: -0.5rem;
