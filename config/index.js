@@ -3,8 +3,7 @@ exports.APP = {
 }
 
 exports.NETWORKS = [
-  require('./networks/mainnet.json'),
-  require('./networks/devnet.json')
+  require('./networks/mainnet.json')
 ]
 
 exports.ANNOUNCEMENTS = {

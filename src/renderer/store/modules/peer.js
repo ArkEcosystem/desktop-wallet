@@ -244,8 +244,7 @@ export default {
       }
 
       const networkLookup = {
-        'phantom.mainnet': 'mainnet',
-        'phantom.devnet': 'devnet'
+        'phantom.mainnet': 'mainnet'
       }
       let peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
       if (peers.length) {

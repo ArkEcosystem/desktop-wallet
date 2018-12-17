@@ -97,7 +97,7 @@ export default {
 
   methods: {
     getNetworks () {
-      const defaultNetworkIds = ['phantom.mainnet', 'phantom.devnet']
+      const defaultNetworkIds = ['phantom.mainnet']
 
       this.networks = Object.values(this.$store.getters['network/all']).map(network => {
         return {
