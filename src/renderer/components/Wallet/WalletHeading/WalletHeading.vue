@@ -39,7 +39,7 @@ export default {
 
   watch: {
     currentWallet () {
-      if (this.activeWallet !== this.currentWallet.id) {
+      if (this.activeWallet && this.activeWallet.id !== this.currentWallet.id) {
         this.resetHeading()
       }
     }
