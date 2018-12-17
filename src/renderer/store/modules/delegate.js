@@ -25,6 +25,20 @@ export default {
       }
 
       return state.delegates[network.id][address]
+    },
+
+    byPublicKey: (state, _, __, rootGetters) => publicKey => {
+      const network = rootGetters['session/network']
+
+      if (!network || !state.delegates[network.id]) {
+        return false
+      }
+
+      const delegates = Object.values(state.delegates[network.id]).filter(delegate => {
+        return delegate.publicKey === publicKey
+      })
+
+      return delegates.length ? delegates[0] : false
     }
   },
 
