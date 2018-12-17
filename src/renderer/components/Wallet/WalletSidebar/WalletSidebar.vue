@@ -6,7 +6,7 @@
       'WalletSidebar--slim': isSlim,
       'WalletSidebar--full': !isSlim
     }"
-    class="WalletSidebar justify-start overflow-y-auto"
+    class="WalletSidebar justify-start pt-0 overflow-y-auto"
     @input="onSelect"
   >
     <!-- Placeholder wallet -->
@@ -133,12 +133,22 @@ export default {
 
   computed: {
     wallets () {
+      if (this.currentWallet && this.currentWallet.isContact) {
+        const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+        const prop = 'name'
+        return contacts.slice().sort(sortByProp(prop))
+      }
+
       const prop = 'name'
       return this.$store.getters['wallet/byProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
     },
 
     activeWallet () {
       return this.wallet_fromRoute || {}
+    },
+
+    currentWallet () {
+      return this.wallet_fromRoute
     },
 
     isLoadingLedger () {

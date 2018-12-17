@@ -21,16 +21,39 @@ export default {
     WalletHeadingActions
   },
 
+  data: () => ({
+    activeWallet: null
+  }),
+
   computed: {
     ...mapGetters('wallet', ['secondaryButtonsVisible']),
+
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
 
     justifyClass () {
       return this.secondaryButtonsVisible ? 'justify-end' : 'justify-between'
     }
   },
 
+  watch: {
+    currentWallet () {
+      if (this.activeWallet && this.activeWallet.id !== this.currentWallet.id) {
+        this.resetHeading()
+      }
+    }
+  },
+
   mounted () {
-    this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+    this.resetHeading()
+  },
+
+  methods: {
+    resetHeading () {
+      this.activeWallet = this.currentWallet
+      this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+    }
   }
 }
 </script>

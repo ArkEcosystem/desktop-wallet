@@ -33,9 +33,7 @@ const modules = {
   wallet: WalletModule
 }
 
-const ignoreModules = [
-  'ledger'
-]
+const ignoreModules = []
 
 const vuexPersist = new VuexPersistence({
   // It is necessary to enable the strict mode to watch to mutations, such as `RESTORE_MUTATION`

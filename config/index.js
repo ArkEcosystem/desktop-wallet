@@ -95,15 +95,15 @@ exports.THEMES = [
 
 exports.V1 = {
   fees: [
-    0.1 * Math.pow(10, 8), // Transfer
-    5 * Math.pow(10, 8), // Second signautre
-    25 * Math.pow(10, 8), // Delegate registration
-    1 * Math.pow(10, 8), // Vote
-    5 * Math.pow(10, 8), // Multisignature
-    0 * Math.pow(10, 8), // IPFS (not supported yet)
-    0 * Math.pow(10, 8), // Timelock transfer (not supported yet)
-    0 * Math.pow(10, 8), // Multu-payment (not supported yet)
-    0 * Math.pow(10, 8) // Delegate resignation (not supported yet)
+    0.1 * 1e8, // Transfer
+    5 * 1e8, // Second signautre
+    25 * 1e8, // Delegate registration
+    1 * 1e8, // Vote
+    5 * 1e8, // Multisignature
+    0 * 1e8, // IPFS (not supported yet)
+    0 * 1e8, // Timelock transfer (not supported yet)
+    0 * 1e8, // Multu-payment (not supported yet)
+    0 * 1e8 // Delegate resignation (not supported yet)
   ]
 }
 

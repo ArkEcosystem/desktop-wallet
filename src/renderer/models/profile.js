@@ -21,13 +21,17 @@ export default new BaseModel({
       minLength: 3,
       maxLength: 3
     },
+    isMarketChartEnabled: {
+      type: 'boolean',
+      format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
+    },
     language: {
       type: 'string',
       minLength: 1
     },
     bip39Language: {
       type: ['string', 'null'],
-      format: (data) => data.bip39Language || null
+      format: data => data.bip39Language || null
     },
     name: {
       type: 'string',
@@ -41,7 +45,11 @@ export default new BaseModel({
     },
     backgroundUpdateLedger: {
       type: 'boolean',
-      format: (data) => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
+      format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
+    },
+    ledgerCache: {
+      type: 'boolean',
+      format: data => data.ledgerCache || false
     }
   },
   required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']
