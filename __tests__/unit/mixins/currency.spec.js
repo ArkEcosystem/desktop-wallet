@@ -70,7 +70,7 @@ describe('Mixins > Currency', () => {
       })
 
       it('should use the i18n locale', () => {
-        const amount = Math.pow(10, 4) + Math.pow(10, -8)
+        const amount = Math.pow(10, 4) + 1e-8
 
         expect(format(amount, { currencyFrom: 'network' })).toEqual('×10,000.00000001')
 

@@ -45,11 +45,11 @@ export default {
 }
 
 .MenuOptions__default--vertical:after {
-  top: 20px;
+  top: 86px;
 }
 
 .MenuOptions__settings--vertical:after {
-  top: 110px;
+  top: 104px;
 }
 
 .MenuOptions--vertical:after {
