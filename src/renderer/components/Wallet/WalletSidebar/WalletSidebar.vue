@@ -140,13 +140,10 @@ export default {
   computed: {
     wallets () {
       if (this.currentWallet && this.currentWallet.isContact) {
-        const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-        const prop = 'name'
-        return contacts.slice().sort(sortByProp(prop))
+        return this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
       }
 
-      const prop = 'name'
-      return this.$store.getters['wallet/byProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
+      return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
 
     activeWallet () {
