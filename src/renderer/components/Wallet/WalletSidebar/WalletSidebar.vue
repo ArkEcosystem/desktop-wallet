@@ -181,6 +181,7 @@ export default {
     },
 
     onDrop (wallet) {
+      console.log(wallet)
       const { oldIndex, newIndex } = wallet
       this.$store.dispatch('wallet/move', { wallet: this.selectableWallets[oldIndex], oldIndex, newIndex })
     },
@@ -236,4 +237,7 @@ export default {
   transform: scaleY(-1) scaleX(-1)
 }
 
+.WalletSidebar__wallet {
+  -webkit-user-drag: element;
+}
 </style>

@@ -85,7 +85,11 @@
       <div class="block w-full">
         <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
-        <div class="WalletAll__grid mt-10 justify-center">
+        <div
+          :list="selectableWallets"
+          class="mt-10 justify-center"
+
+        >
           <div
             v-show="isLedgerLoading"
             class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
@@ -95,44 +99,50 @@
               {{ $t('PAGES.WALLET_ALL.LOADING_LEDGER') }}
             </div>
           </div>
-
-          <div
-            v-for="wallet in selectableWallets"
-            :key="wallet.id"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+          <Draggable
+            class="WalletAll__grid"
+            :list="selectableWallets"
+            @end="onDrop"
           >
-            <div class="flex flex-row items-center">
-              <RouterLink
-                :to="{ name: 'wallet-show', params: { address: wallet.id } }"
-                class="flex flex-row"
-              >
-                <WalletIdenticon
-                  :value="wallet.address"
-                  :size="60"
-                  class="identicon cursor-pointer"
-                />
-              </RouterLink>
-              <div class="flex flex-col justify-center overflow-hidden pl-4">
-                <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
-                  <RouterLink :to="{ name: 'wallet-show', params: { address: wallet.id } }">
-                    {{ wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
-                  </RouterLink>
+            <div
+              v-for="wallet in selectableWallets"
+              :id="wallet.id"
+              :key="wallet.id"
+              class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+            >
+              <div class="flex flex-row items-center">
+                <RouterLink
+                  :to="{ name: 'wallet-show', params: { address: wallet.id } }"
+                  class="flex flex-row"
+                >
+                  <WalletIdenticon
+                    :value="wallet.address"
+                    :size="60"
+                    class="identicon cursor-pointer"
+                  />
+                </RouterLink>
+                <div class="flex flex-col justify-center overflow-hidden pl-4">
+                  <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
+                    <RouterLink :to="{ name: 'wallet-show', params: { address: wallet.id } }">
+                      {{ wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                    </RouterLink>
+                  </div>
+                  <span class="font-bold mt-2 text-lg">
+                    {{ formatter_networkCurrency(wallet.balance, 2) }}
+                  </span>
                 </div>
-                <span class="font-bold mt-2 text-lg">
-                  {{ formatter_networkCurrency(wallet.balance, 2) }}
-                </span>
+              </div>
+              <div class="flex flex-row w-full justify-end">
+                <button
+                  v-if="!wallet.isLedger"
+                  class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
+                  @click="openRemovalConfirmation(wallet)"
+                >
+                  {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
+                </button>
               </div>
             </div>
-            <div class="flex flex-row w-full justify-end">
-              <button
-                v-if="!wallet.isLedger"
-                class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
-                @click="openRemovalConfirmation(wallet)"
-              >
-                {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
-              </button>
-            </div>
-          </div>
+          </Draggable>
         </div>
       </div>
     </div>
@@ -150,9 +160,9 @@
 import { clone, without } from 'lodash'
 import { ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
+import Draggable from '@/components/utils/Draggable'
 import SvgIcon from '@/components/SvgIcon'
 import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
-import { sortByProp } from '@/components/utils/Sorting'
 
 export default {
   name: 'WalletAll',
@@ -160,6 +170,7 @@ export default {
   components: {
     ButtonSwitch,
     Loader,
+    Draggable,
     SvgIcon,
     WalletIdenticon,
     WalletRemovalConfirmation
@@ -188,9 +199,7 @@ export default {
       return this.$store.getters['market/lastPrice']
     },
     wallets () {
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      const prop = 'name'
-      return wallets.slice().sort(sortByProp(prop))
+      return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
 
     isLedgerLoading () {
@@ -250,6 +259,11 @@ export default {
       this.selectableWallets = this.wallets
     },
 
+    onDrop (wallet) {
+      const { oldIndex, newIndex } = wallet
+      this.$store.dispatch('wallet/move', { wallet: this.selectableWallets[oldIndex], oldIndex, newIndex })
+    },
+
     openRemovalConfirmation (wallet) {
       this.walletToRemove = wallet
     },
@@ -286,7 +300,8 @@ export default {
   grid-gap: 1rem;
 }
 .WalletAll__grid__wallet {
-  @apply .p-6
+  @apply .p-6;
+  -webkit-user-drag: element
 }
 .WalletAll__grid__wallet:hover .identicon {
   transition: 0.5s;
