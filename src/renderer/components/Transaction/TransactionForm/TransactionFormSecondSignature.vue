@@ -281,6 +281,9 @@ export default {
       if (success) {
         this.emitNext(transaction)
         this.reset()
+
+        // The current passphrase has been already verified
+        this.isPassphraseVerified = true
       }
     },
 
