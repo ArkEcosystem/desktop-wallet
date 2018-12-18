@@ -88,7 +88,6 @@
         <div
           :list="selectableWallets"
           class="mt-10 justify-center"
-
         >
           <div
             v-show="isLedgerLoading"
