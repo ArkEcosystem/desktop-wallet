@@ -1,9 +1,7 @@
 import WalletService from '../../../src/renderer/services/wallet'
 
 describe('Services > Wallet', () => {
-
   describe('generating a passphrase and address', () => {
-
     it('should work in English', () => {
       const passphrase = 'one video jaguar gap soldier ill hobby motor bundle couple trophy smoke'
       const address = 'DAy2xDNZLRQsgiJCnF3x4WDxGsBrmsKCsV'
@@ -93,6 +91,5 @@ describe('Services > Wallet', () => {
       const address = 'DNZSrNt7SQ1VBrzx7C17gbPv9FDAxnaor3'
       expect(WalletService.getAddress(passphrase, 30)).toEqual(address)
     })
-
   })
 })
