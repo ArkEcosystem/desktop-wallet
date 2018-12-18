@@ -39,10 +39,10 @@ export default class BaseModel {
 
   validate (input) {
     const validation = jsonValidate(input, this.schema)
-
+    console.log(this.schema)
     if (!validation.valid) {
       const errors = validation.errors.map(error => error.stack).join(', ')
-      throw new Error(`Cannot be instantiated due to errors: ${errors}`)
+      throw new Error(`JSON: ${JSON.stringify(this.schema, null, 2)} Cannot be instantiated due to errors: ${errors}`)
     }
   }
 }
