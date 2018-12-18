@@ -164,7 +164,18 @@ export default {
                 callback: (value, index) => {
                   if (index % 2 === 0) return
 
-                  return this.currency_format(value / scaleCorrection, { currency: this.currency })
+                  const formatConfig = { currency: this.currency }
+                  const price = value / scaleCorrection
+
+                  if (price < 1e-4) {
+                    formatConfig.maximumFractionDigits = 8
+                  } else if (price < 1e-2) {
+                    formatConfig.maximumFractionDigits = 5
+                  } else {
+                    formatConfig.maximumFractionDigits = 3
+                  }
+
+                  return this.currency_format(price, formatConfig)
                 }
               }
             }

@@ -14,7 +14,7 @@
       </slot>
     </span>
 
-    <span class="pl-2 pr-1">
+    <span class="flex pl-2 pr-1">
       <SvgIcon
         :class="{ 'opacity-25': iconDisabled }"
         name="arrow-dropdown"

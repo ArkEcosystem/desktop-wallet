@@ -125,7 +125,7 @@ export default {
     minimumAmount: {
       type: Number,
       required: false,
-      default: Math.pow(10, -8)
+      default: 1e-8
     },
     minimumError: {
       type: String,
