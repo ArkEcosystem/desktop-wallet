@@ -20,7 +20,8 @@ export default {
 
     byAddress: (state, _, __, rootGetters) => address => {
       const network = rootGetters['session/network']
-      if (!network || !state.delegates[network.id]) {
+
+      if (!address || !network || !state.delegates[network.id]) {
         return false
       }
 
@@ -30,15 +31,13 @@ export default {
     byPublicKey: (state, _, __, rootGetters) => publicKey => {
       const network = rootGetters['session/network']
 
-      if (!network || !state.delegates[network.id]) {
+      if (!publicKey || !network || !state.delegates[network.id]) {
         return false
       }
 
-      const delegates = Object.values(state.delegates[network.id]).filter(delegate => {
+      return Object.values(state.delegates[network.id]).find(delegate => {
         return delegate.publicKey === publicKey
-      })
-
-      return delegates.length ? delegates[0] : false
+      }) || false
     }
   },
 
