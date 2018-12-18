@@ -101,6 +101,10 @@
           <Draggable
             class="WalletAll__grid"
             :list="selectableWallets"
+            :options="{
+              ghostClass: 'Sortable__ghost',
+              chosenClass: 'Sortable__chosen'
+            }"
             @end="onDrop"
           >
             <div
@@ -117,7 +121,7 @@
                   <WalletIdenticon
                     :value="wallet.address"
                     :size="60"
-                    class="identicon cursor-pointer"
+                    class="identicon cursor-pointer sortable-item"
                   />
                 </RouterLink>
                 <div class="flex flex-col justify-center overflow-hidden pl-4">
@@ -308,6 +312,11 @@ export default {
 .WalletAll__grid__wallet .identicon {
   transition: 0.5s;
 }
+
+.Sortable__chosen {
+  border: 2px solid grey;
+}
+
 @screen lg {
   .WalletAll__grid__wallet {
     @apply .p-4

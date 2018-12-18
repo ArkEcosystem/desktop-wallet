@@ -36,6 +36,10 @@ img {
   -webkit-user-drag: none;
 }
 
+.Sortable__ghost {
+  opacity: 0;
+}
+
 .App:not(.mac) *::-webkit-scrollbar {
   @apply .w-2 .h-2 .rounded-full;
   background-color: rgba(0, 0, 0, 0);

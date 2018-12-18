@@ -65,6 +65,9 @@
     <!-- List of actual wallets -->
     <Draggable
       :list="selectableWallets"
+      :options="{
+        ghostClass: 'Sortable__ghost',
+      }"
       @end="onDrop"
     >
       <MenuNavigationItem
