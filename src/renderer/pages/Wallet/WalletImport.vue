@@ -217,7 +217,7 @@ export default {
      */
     step () {
       if (this.step === 2 && !this.useOnlyAddress) {
-        this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
+        this.schema.address = WalletService.getAddress(this.schema.passphrase.normalize('NFD'), this.session_network.version)
       }
     }
   },
