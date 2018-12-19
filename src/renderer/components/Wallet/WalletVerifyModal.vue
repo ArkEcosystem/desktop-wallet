@@ -197,7 +197,7 @@ export default {
           if (this.verifyChoice !== 'Verify') {
             return true
           }
-          return value.length >= 1
+          return value.length === 140 // Signature length
         }
       },
       json: {
@@ -208,7 +208,7 @@ export default {
           // Check for valid json
           try {
             const json = JSON.parse(value)
-            return json['message'] && json['publicKey'] && json['signature']
+            return json['message'] && json['publicKey'] && json['signature'] && json['message'].length >= 1 && json['publicKey'].length === 66 && json['signature'].length === 140
           } catch (err) {
             return false
           }
