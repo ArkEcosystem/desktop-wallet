@@ -15,6 +15,26 @@
 ## Download
 [Latest Release](https://github.com/ArkEcosystem/ark-desktop/releases)
 
+## Installing via Package Managers
+
+### Arch Linux
+
+Install via [AUR](https://aur.archlinux.org/packages/ark-desktop):
+
+> Manjaro
+
+```shell
+pamac build ark-desktop
+```
+
+### Mac OS X
+
+Install via [Homebrew](https://brew.sh/):
+
+```shell
+brew cask install ark-desktop-wallet
+```
+
 ## Development
 
 ### Requirements
