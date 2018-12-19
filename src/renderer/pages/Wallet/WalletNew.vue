@@ -126,6 +126,7 @@
                 v-model="ensureEntirePassphrase"
                 :label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
                 :text="$t('PAGES.WALLET_NEW.STEP3.VERIFY_ALL_WORDS')"
+                @change="isPassphraseVerified = false"
                 class="my-3"
               />
 
