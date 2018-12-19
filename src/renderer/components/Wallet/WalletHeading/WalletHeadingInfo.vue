@@ -110,7 +110,8 @@ export default {
   },
 
   data: () => ({
-    showPublicKey: false
+    showPublicKey: false,
+    lazyWallet: {}
   }),
 
   computed: {
@@ -121,15 +122,18 @@ export default {
       return this.currentWallet ? this.currentWallet.publicKey : ''
     },
     alternativeBalance () {
-      const balance = this.currentWallet ? this.currency_subToUnit(this.currentWallet.balance) : 0
-      return this.currency_format(balance * this.price, { currency: this.alternativeCurrency })
+      const balance = this.currentWallet ? this.currentWallet.balance : 0
+      const lazyBalance = this.lazyWallet.balance
+      const unitBalance = this.currency_subToUnit(balance || lazyBalance)
+      return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
       const balance = this.currentWallet ? this.currentWallet.balance : 0
-      return this.formatter_networkCurrency(balance)
+      const lazyBalance = this.lazyWallet.balance
+      return this.formatter_networkCurrency(balance || lazyBalance)
     },
     name () {
       return this.wallet_name(this.currentWallet.address)
@@ -160,6 +164,14 @@ export default {
   methods: {
     togglePublicKey () {
       this.showPublicKey = !this.showPublicKey
+    },
+
+    async refreshWallet () {
+      if (!this.currentWallet) {
+        return
+      }
+
+      this.lazyWallet = await this.$client.fetchWallet(this.currentWallet.address)
     }
   }
 }
