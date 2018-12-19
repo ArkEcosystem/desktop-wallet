@@ -151,6 +151,12 @@ export default {
     }
   },
 
+  watch: {
+    publicKey () {
+      if (!this.publicKey) this.showPublicKey = false
+    }
+  },
+
   methods: {
     togglePublicKey () {
       this.showPublicKey = !this.showPublicKey
