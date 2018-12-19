@@ -17,8 +17,8 @@ require('electron-log')
 require('electron').app.on('ready', () => {
   let installExtension = require('electron-devtools-installer')
   installExtension.default(installExtension.VUEJS_DEVTOOLS)
-    .then(() => {
-   	console.log('Successfully built vue-devtools!')
+    .then((successMessage) => {
+   	console.log(`${successMessage} has been successfully installed!`)
     }).catch(err => {
       console.log('Unable to install `vue-devtools`: \n', err)
     })
