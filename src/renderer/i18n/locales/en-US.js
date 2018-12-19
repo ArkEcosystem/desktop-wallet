@@ -126,6 +126,9 @@ export default {
       SPECIAL_CHARACTERS: 'Your password must contain at least 1 special character',
       NO_MATCH: 'Your passwords do not match'
     },
+    ADDRESS: {
+      DUPLICATED: 'The wallet address \'{0}\' already exists'
+    },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
