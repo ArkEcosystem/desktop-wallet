@@ -14,8 +14,13 @@
     </span>
     <span v-else-if="type === 3">
       {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
+      <span
+        v-if="votedDelegate"
+        class="italic"
+      >
+        ({{ votedDelegateUsername }})
+      </span>
     </span>
-    <!-- TODO: extend vote with vote / unvote information -->
     <span v-else-if="type === 4">
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
     </span>
@@ -35,6 +40,7 @@
 </template>
 
 <script>
+import store from '@/store'
 
 export default {
   name: 'WalletAddress',
@@ -57,6 +63,10 @@ export default {
     }
   },
 
+  data: () => ({
+    votedDelegate: null
+  }),
+
   computed: {
     isUnvote () {
       if (this.asset && this.asset.votes) {
@@ -64,8 +74,31 @@ export default {
         return vote.charAt(0) === '-'
       }
       return false
+    },
+
+    votePublicKey () {
+      if (this.asset && this.asset.votes) {
+        const vote = this.asset.votes[0]
+        return vote.substr(1)
+      }
+      return ''
+    },
+
+    votedDelegateUsername () {
+      return this.votedDelegate ? this.votedDelegate.username : ''
+    }
+  },
+
+  mounted () {
+    if (this.votePublicKey) {
+      this.determineVote()
+    }
+  },
+
+  methods: {
+    determineVote () {
+      this.votedDelegate = store.getters['delegate/byPublicKey'](this.votePublicKey)
     }
   }
 }
-
 </script>
