@@ -42,7 +42,9 @@ export default class BaseModel {
 
     if (!validation.valid) {
       const errors = validation.errors.map(error => error.stack).join(', ')
-      throw new Error(`Cannot be instantiated due errors: ${errors}`)
+      throw new Error(`JSON: ${JSON.stringify(this.schema, null, 2)} Cannot be instantiated due to errors: ${errors}
+        input: ${input}
+      `)
     }
   }
 }
