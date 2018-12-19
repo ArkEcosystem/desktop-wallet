@@ -33,7 +33,7 @@
 
         <div class="flex flex-col justify-center">
           <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
-            {{ profile.name }}
+            {{ profile.name | truncate(12) }}
           </div>
 
           <span class="font-bold my-2 text-lg pl-4">
