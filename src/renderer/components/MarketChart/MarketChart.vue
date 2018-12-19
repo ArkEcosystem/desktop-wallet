@@ -9,12 +9,16 @@
       :height="315"
       @ready="show"
     />
+    <div class="mt-16">
+      <Loader v-if="!isReady"/>
+    </div>
   </section>
 </template>
 
 <script>
 import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
+import Loader from '@/components/utils/Loader'
 import cryptoCompare from '@/services/crypto-compare'
 
 export default {
@@ -28,7 +32,8 @@ export default {
   },
 
   components: {
-    LineChart
+    LineChart,
+    Loader
   },
 
   props: {
@@ -107,7 +112,6 @@ export default {
       this.isReady = true
     },
     async renderChart () {
-      // TODO: Add loading
       await this.renderGradient()
 
       const response = await cryptoCompare.historicByType(this.period, this.token, this.currency)
