@@ -1,5 +1,6 @@
 import truncateMiddle from '@/filters/truncate-middle'
 import WalletService from '@/services/wallet'
+import WalletModel from '@/models/wallet'
 
 export default {
   computed: {
@@ -17,7 +18,15 @@ export default {
         }
       }
 
-      return this.$store.getters['wallet/byAddress'](address)
+      const freshWallet = () => {
+        return WalletModel.deserialize({
+          address,
+          name: '',
+          profileId: ''
+        })
+      }
+
+      return this.$store.getters['wallet/byAddress'](address) || freshWallet()
     }
   },
 
