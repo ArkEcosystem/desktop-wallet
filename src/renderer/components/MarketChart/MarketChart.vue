@@ -10,7 +10,7 @@
       @ready="show"
     />
     <div class="mt-16">
-      <Loader v-if="!isReady"/>
+      <Loader v-if="!isReady" />
     </div>
   </section>
 </template>
