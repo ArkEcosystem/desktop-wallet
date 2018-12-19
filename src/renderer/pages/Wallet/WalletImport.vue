@@ -217,6 +217,8 @@ export default {
      */
     step () {
       if (this.step === 2 && !this.useOnlyAddress) {
+        // Important: .normalize('NFD') is needed to properly work with Korean bip39 words
+        // It alters the passphrase string, so no need to normalize again in the importWallet function
         this.schema.address = WalletService.getAddress(this.schema.passphrase.normalize('NFD'), this.session_network.version)
       }
     }
