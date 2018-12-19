@@ -10,7 +10,7 @@
           <div class="flex-col">
             <div>
               <h1 class="mb-2">
-                {{ session_profile.name }}
+                {{ session_profile.name || truncate(30) }}
               </h1>
               <h4>{{ $t('PAGES.WALLET_ALL.TOTAL_BALANCE') }}</h4>
             </div>
