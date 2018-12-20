@@ -173,7 +173,7 @@ export default {
     error () {
       let error = null
 
-      if (this.$v.model.$dirty) {
+      if (!this.isDisabled && this.$v.model.$dirty) {
         if (this.required && !this.$v.model.isRequired) {
           error = this.$t('INPUT_CURRENCY.ERROR.REQUIRED')
         } else if (!this.$v.model.isNumber) {
