@@ -194,8 +194,7 @@ export default {
           break
       }
     },
-
-    'tabs' () {
+    tabs () {
       this.$nextTick(() => {
         this.$refs.menutab.collectItems()
       })
