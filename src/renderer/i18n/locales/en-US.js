@@ -284,6 +284,11 @@ export default {
     TITLE: 'Select'
   },
 
+  WALLET_SELECTION: {
+    PROFILE: 'Sender Profile',
+    WALLET: 'Sender Wallet'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
