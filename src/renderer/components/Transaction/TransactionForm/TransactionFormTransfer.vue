@@ -36,6 +36,7 @@
         :maximum-error="notEnoughBalanceError"
         :required="true"
         :is-disabled="!currentWallet"
+        :wallet-network="walletNetwork"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
       />
@@ -66,6 +67,7 @@
       :currency="walletNetwork.token"
       :transaction-type="$options.transactionType"
       :is-disabled="!currentWallet"
+      :wallet-network="walletNetwork"
       @input="onFee"
     />
 

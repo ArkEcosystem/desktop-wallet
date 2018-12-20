@@ -26,6 +26,7 @@
         :minimum-error="minimumError"
         :warning-text="warningText"
         :is-disabled="isDisabled"
+        :wallet-network="walletNetwork"
         class="w-full InputField--dirty"
         @raw="onRawInput"
       />
@@ -101,6 +102,18 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    wallet: {
+      type: Object,
+      required: false,
+      default: null
+    },
+
+    walletNetwork: {
+      type: Object,
+      required: false,
+      default: null
     }
   },
 
@@ -124,7 +137,7 @@ export default {
 
   computed: {
     currentWallet () {
-      return this.wallet_fromRoute
+      return this.wallet || this.wallet_fromRoute
     },
     hiddenGradientStyle () {
       return {
