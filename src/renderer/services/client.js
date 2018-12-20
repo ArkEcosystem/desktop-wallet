@@ -8,6 +8,16 @@ import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
 export default class ClientService {
+  /*
+   * Normalizes the passphrase by decomposing any characters (if applicable)
+   * This is mainly used for the korean language where characters are combined while the passphrase was based on the decomposed consonants
+  */
+  normalizePassphrase (passphrase) {
+    if (passphrase) {
+      return passphrase.normalize('NFD')
+    }
+  }
+
   /**
    * Fetch the network configuration according to the version.
    * Create a new client to isolate the main client.
@@ -390,6 +400,9 @@ export default class ClientService {
       .votesAsset(votes)
       .fee(fee)
 
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -418,6 +431,9 @@ export default class ClientService {
       .delegateRegistration()
       .usernameAsset(username)
       .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
 
     return this.__signTransaction({
       transaction,
@@ -453,6 +469,9 @@ export default class ClientService {
       .recipientId(recipientId)
       .vendorField(vendorField)
 
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -481,6 +500,8 @@ export default class ClientService {
       .signatureAsset(secondPassphrase)
       .fee(fee)
 
+    passphrase = this.normalizePassphrase(passphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -504,13 +525,13 @@ export default class ClientService {
     })
 
     if (passphrase) {
-      transaction = transaction.sign(passphrase)
+      transaction = transaction.sign(this.normalizePassphrase(passphrase))
     } else if (wif) {
       transaction = transaction.signWithWif(wif)
     }
 
     if (secondPassphrase) {
-      transaction = transaction.secondSign(secondPassphrase)
+      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
     }
 
     return returnObject ? transaction : transaction.getStruct()
