@@ -87,7 +87,7 @@
           class="WalletSidebar__wallet__info flex flex-col font-semibold pt-2 overflow-hidden"
         >
           <span class="block truncate">
-            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
+            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 8 : 24) }}
           </span>
           <span
             v-if="!isSlim"
