@@ -111,12 +111,21 @@ export default {
 
   data: () => ({
     signedMessages: [],
-    showTimestamp: null
+    showTimestamp: null,
+    activeWalletId: null
   }),
 
   computed: {
     currentWallet () {
       return this.wallet_fromRoute
+    }
+  },
+
+  watch: {
+    currentWallet () {
+      if (this.activeWalletId !== this.currentWallet.id) {
+        this.updateSignedMessages()
+      }
     }
   },
 
@@ -131,22 +140,29 @@ export default {
       }
       return value
     },
+
     copyMessage (value) {
       var message = clone(value, false)
       delete message['timestamp']
       delete message['address']
       return JSON.stringify(message)
     },
+
     deleteMessage (value) {
       var message = clone(value, false)
       this.$store.dispatch('wallet/deleteSignedMessage', message)
     },
-    updateSignedMessages () {
+
+    updateSignedMessages (setWalletId = true) {
+      if (setWalletId) {
+        this.activeWalletId = this.currentWallet.id
+      }
       this.signedMessages = this.$store.getters['wallet/signedMessages'](this.currentWallet.address)
     },
+
     onSigned (toggle) {
       toggle()
-      this.updateSignedMessages()
+      this.updateSignedMessages(false)
     }
   }
 }

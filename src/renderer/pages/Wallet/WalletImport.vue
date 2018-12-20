@@ -48,6 +48,8 @@
                 v-show="!useOnlyPassphrase"
                 ref="addressInput"
                 v-model="schema.address"
+                :is-invalid="$v.schema.address.$invalid"
+                :helper-text="addressError"
                 :pub-key-hash="session_network.version"
                 class="my-3"
               />
@@ -208,6 +210,14 @@ export default {
         }
       }
       return null
+    },
+    addressError () {
+      if (this.$v.schema.address.$invalid) {
+        if (!this.$v.schema.address.doesNotExists) {
+          return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
+        }
+      }
+      return null
     }
   },
 
@@ -217,6 +227,8 @@ export default {
      */
     step () {
       if (this.step === 2 && !this.useOnlyAddress) {
+        // Important: .normalize('NFD') is needed to properly work with Korean bip39 words
+        // It alters the passphrase string, so no need to normalize again in the importWallet function
         this.schema.address = WalletService.getAddress(this.schema.passphrase.normalize('NFD'), this.session_network.version)
       }
     }
@@ -340,6 +352,9 @@ export default {
           }
 
           return false
+        },
+        doesNotExists (value) {
+          return value === '' || !this.$store.getters['wallet/byAddress'](value)
         }
       },
       name: {
