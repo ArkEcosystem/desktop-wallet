@@ -242,6 +242,7 @@ export default {
   watch: {
     wallet () {
       this.ensureAvailableAmount()
+      this.$v.form.recipientId.$touch()
     }
   },
 
