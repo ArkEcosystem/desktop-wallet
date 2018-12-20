@@ -20,23 +20,40 @@
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text">
-        <RouterLink
-          :to="{ name: 'wallet-new' }"
-          class="Dashboard__wallets__create hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tl-lg"
-        >
-          <span>
-            {{ $t('PAGES.DASHBOARD.CREATE_WALLET') }}
-          </span>
-        </RouterLink>
-
-        <RouterLink
-          :to="{ name: 'wallet-import' }"
-          class="Dashboard__wallets__import hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tr-lg"
-        >
-          <span>
-            {{ $t('PAGES.DASHBOARD.IMPORT_WALLET') }}
-          </span>
-        </RouterLink>
+        <div class="Dashboard__wallets__create flex flex-col items-center">
+          <RouterLink :to="{ name: 'wallet-new' }">
+            <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
+              <SvgIcon
+                name="plus"
+                class="text-center"
+                view-box="0 0 9 9"
+              />
+            </span>
+          </RouterLink>
+          <RouterLink
+            :to="{ name: 'wallet-new' }"
+            class="font-bold"
+          >
+            {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
+          </RouterLink>
+        </div>
+        <div class="Dashboard__wallets__import flex flex-col items-center">
+          <RouterLink :to="{ name: 'wallet-import' }">
+            <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
+              <SvgIcon
+                name="arrow-import"
+                class="text-center"
+                view-box="0 0 7 10"
+              />
+            </span>
+          </RouterLink>
+          <RouterLink
+            :to="{ name: 'wallet-import' }"
+            class="font-bold"
+          >
+            {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
+          </RouterLink>
+        </div>
       </div>
 
       <WalletSidebar
@@ -51,6 +68,7 @@
 import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
 import { WalletSidebar } from '@/components/Wallet'
+import SvgIcon from '@/components/SvgIcon'
 import store from '@/store'
 
 export default {
@@ -60,7 +78,8 @@ export default {
     DashboardTransactions,
     MarketChart,
     MarketChartHeader,
-    WalletSidebar
+    WalletSidebar,
+    SvgIcon
   },
 
   computed: {
@@ -104,9 +123,12 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
+.Dashboard__wallets__create {
+  @apply .border-r .border-theme-feature-item-alternative
+}
 .Dashboard__wallets__create,
 .Dashboard__wallets__import {
-  @apply .w-1/2 .appearance-none .font-semibold .pt-6 .pb-6 .flex
+  @apply .w-1/2 .appearance-none .font-semibold .mt-6 .mb-6 .flex
 }
 .Dashboard__wallets__create > span,
 .Dashboard__wallets__import > span {
