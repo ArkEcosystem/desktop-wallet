@@ -15,6 +15,7 @@ export * from './WalletTransactions'
 export * from './WalletDetails'
 export * from './WalletSignVerify'
 export * from './WalletSidebar'
+export * from './WalletButtons'
 
 export {
   WalletAddress,

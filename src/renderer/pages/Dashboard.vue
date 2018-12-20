@@ -19,43 +19,10 @@
     </main>
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
-      <div class="flex flex-row text-theme-feature-item-alternative-text">
-        <div class="Dashboard__wallets__create flex flex-col items-center">
-          <RouterLink :to="{ name: 'wallet-new' }">
-            <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
-              <SvgIcon
-                name="plus"
-                class="text-center"
-                view-box="0 0 9 9"
-              />
-            </span>
-          </RouterLink>
-          <RouterLink
-            :to="{ name: 'wallet-new' }"
-            class="font-bold"
-          >
-            {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
-          </RouterLink>
-        </div>
-        <div class="Dashboard__wallets__import flex flex-col items-center">
-          <RouterLink :to="{ name: 'wallet-import' }">
-            <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
-              <SvgIcon
-                name="arrow-import"
-                class="text-center"
-                view-box="0 0 7 10"
-              />
-            </span>
-          </RouterLink>
-          <RouterLink
-            :to="{ name: 'wallet-import' }"
-            class="font-bold"
-          >
-            {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
-          </RouterLink>
-        </div>
+      <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
+        <WalletButtonCreate class="mt-6 mb-6 w-1/2" />
+        <WalletButtonImport class="mt-6 mb-6 w-1/2" />
       </div>
-
       <WalletSidebar
         :is-slim="false"
         class="Dashboard__wallets__list flex flex-col"
@@ -67,8 +34,7 @@
 <script>
 import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
-import { WalletSidebar } from '@/components/Wallet'
-import SvgIcon from '@/components/SvgIcon'
+import { WalletSidebar, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import store from '@/store'
 
 export default {
@@ -79,7 +45,8 @@ export default {
     MarketChart,
     MarketChartHeader,
     WalletSidebar,
-    SvgIcon
+    WalletButtonCreate,
+    WalletButtonImport
   },
 
   computed: {
@@ -123,42 +90,6 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
-.Dashboard__wallets__create {
-  @apply .border-r .border-theme-feature-item-alternative
-}
-.Dashboard__wallets__create,
-.Dashboard__wallets__import {
-  @apply .w-1/2 .appearance-none .font-semibold .mt-6 .mb-6 .flex
-}
-.Dashboard__wallets__create > span,
-.Dashboard__wallets__import > span {
-  @apply .w-full .text-center
-}
-.Dashboard__wallets__create > a > .rounded-full,
-.Dashboard__wallets__import > a > .rounded-full {
-  @apply .cursor-pointer .fill-current .text-theme-option-button-text;
-  transition: opacity 0.4s;
-}
-.Dashboard__wallets__create > a > .rounded-full:hover,
-.Dashboard__wallets__import > a > .rounded-full:hover {
-  opacity: 0.5;
-}
-
-.Dashboard__wallets__create > span {
-  border-right: 0.04rem solid var(--theme-feature-item-alternative);
-  align-self: center;
-}
-.Dashboard__wallets__import > span {
-  border-left: 0.04rem solid var(--theme-feature-item-alternative);
-  align-self: center;
-}
-.Dashboard__wallets__create:hover > span {
-  border-right: 0px;
-}
-.Dashboard__wallets__import:hover > span {
-  border-left: 0px;
-}
-
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }
