@@ -279,7 +279,10 @@ export default {
 
   methods: {
     emitNext (transaction) {
-      this.$emit('next', transaction)
+      this.$emit('next', {
+        transaction,
+        wallet: this.senderWallet
+      })
     },
 
     onFee (fee) {

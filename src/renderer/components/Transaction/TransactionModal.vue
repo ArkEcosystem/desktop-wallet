@@ -16,6 +16,7 @@
     <TransactionConfirm
       v-if="transaction"
       :transaction="transaction"
+      :wallet="alternativeWallet"
       @back="onBack"
       @confirm="onConfirm"
     />
@@ -60,7 +61,8 @@ export default {
 
   data: () => ({
     step: 0,
-    transaction: null
+    transaction: null,
+    alternativeWallet: null
   }),
 
   computed: {
@@ -84,9 +86,10 @@ export default {
   },
 
   methods: {
-    onBuilt (transaction) {
+    onBuilt ({ transaction, wallet }) {
       this.step = 1
       this.transaction = transaction
+      this.alternativeWallet = wallet
     },
 
     onBack () {
