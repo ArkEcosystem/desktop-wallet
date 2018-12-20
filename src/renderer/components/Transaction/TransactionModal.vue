@@ -82,6 +82,20 @@ export default {
     },
     typeName () {
       return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)
+    },
+    walletNetwork () {
+      const sessionNetwork = this.session_network
+      if (!this.alternativeWallet || !this.alternativeWallet.id) {
+        return sessionNetwork
+      }
+
+      const profile = this.$store.getters['profile/byId'](this.alternativeWallet.profileId)
+
+      if (!profile.id) {
+        return sessionNetwork
+      }
+
+      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     }
   },
 
@@ -150,8 +164,8 @@ export default {
     storeTransaction (transaction) {
       const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
 
-      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.session_network.version)
-      const epoch = new Date(this.session_network.constants.epoch)
+      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
+      const epoch = new Date(this.walletNetwork.constants.epoch)
       const timestamp = epoch.getTime() + transaction.timestamp * 1000
 
       this.$store.dispatch('transaction/create', {
