@@ -49,7 +49,7 @@ function createWindow () {
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
-    if (deeplinkingUrl) broadcastURL(deeplinkingUrl)
+    broadcastURL(deeplinkingUrl)
   })
 
   require('./menu')
@@ -76,12 +76,13 @@ if (!gotTheLock) {
     // Someone tried to run a second instance, we should focus our window.
     // argv: An array of the second instance’s (command line / deep linked) arguments
     if (process.platform !== 'darwin') {
-      deeplinkingUrl = argv[2]
-      broadcastURL(deeplinkingUrl)
+      broadcastURL(argv[2])
     }
 
     if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore()
+      if (mainWindow.isMinimized()) {
+        mainWindow.restore()
+      }
       mainWindow.focus()
     }
   })
