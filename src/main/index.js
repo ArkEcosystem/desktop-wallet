@@ -56,8 +56,14 @@ function createWindow () {
 }
 
 function broadcastURL (url) {
-  if (!url || typeof url !== 'string') return
-  if (mainWindow && mainWindow.webContents) mainWindow.webContents.send('process-url', url)
+  if (!url || typeof url !== 'string') {
+    return
+  }
+
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.send('process-url', url)
+  }
+  deeplinkingUrl = null
 }
 
 // Force Single Instance Application
