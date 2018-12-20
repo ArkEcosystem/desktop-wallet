@@ -22,7 +22,7 @@ export default {
   },
 
   data: () => ({
-    activeWallet: null
+    activeWalletId: null
   }),
 
   computed: {
@@ -39,7 +39,7 @@ export default {
 
   watch: {
     currentWallet () {
-      if (this.activeWallet && this.activeWallet.id !== this.currentWallet.id) {
+      if (this.activeWalletId !== this.currentWallet.id) {
         this.resetHeading()
       }
     }
@@ -51,7 +51,7 @@ export default {
 
   methods: {
     resetHeading () {
-      this.activeWallet = this.currentWallet
+      this.activeWalletId = this.currentWallet.id
       this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
     }
   }
