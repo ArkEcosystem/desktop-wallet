@@ -35,7 +35,7 @@ describe('pages > WalletAll', () => {
           }
         },
         session_network: {
-          symbol: 'Ẕ',
+          symbol: 'ⓟ',
           market: {
             enabled: true
           }
