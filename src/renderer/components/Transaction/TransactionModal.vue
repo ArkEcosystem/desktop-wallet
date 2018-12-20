@@ -107,7 +107,9 @@ export default {
         this.storeTransaction(this.transaction)
         this.$success(success)
       } else {
-        this.$error(error)
+        const { errors } = response.data
+        const keys = Object.keys(errors)
+        this.$error(errors[keys[0]][0].message || error)
       }
     },
 
@@ -134,12 +136,11 @@ export default {
       if (this.$client.version === 1) {
         return response.data.success
       } else {
-        const { data, errors } = response.data
+        const { data } = response.data
         if (data && data.invalid.length === 0) {
           return true
         } else {
-          const keys = Object.keys(errors)
-          return errors[keys[0]][0].type === 'ERR_LOW_FEE'
+          return false
         }
       }
     },
