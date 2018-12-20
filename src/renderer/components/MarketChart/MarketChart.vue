@@ -1,5 +1,5 @@
 <template>
-  <section class="MarketChart w-full">
+  <section class="MarketChart w-full flex-column">
     <slot />
     <LineChart
       v-show="isReady"
@@ -9,8 +9,11 @@
       :height="315"
       @ready="show"
     />
-    <div class="mt-16">
-      <Loader v-if="!isReady" />
+    <div
+      v-if="!isReady"
+      class="MarketChart__Loader__Container"
+    >
+      <Loader />
     </div>
   </section>
 </template>
@@ -288,8 +291,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .MarketChart {
   min-height: 315px
+}
+
+.MarketChart__Loader__Container {
+  @apply .flex;
+  min-height: 315px;
+  align-items: center;
+  justify-content: center;
+
 }
 </style>
