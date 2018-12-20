@@ -188,7 +188,7 @@ export default {
         vendorField,
         confirmations: 0,
         recipient: transaction.recipientId,
-        profileId: this.session_profile.id,
+        profileId: this.alternativeWallet ? this.alternativeWallet.profileId : this.session_profile.id,
         raw: transaction
       })
     }
