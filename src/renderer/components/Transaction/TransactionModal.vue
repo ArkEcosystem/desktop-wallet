@@ -97,7 +97,6 @@ export default {
     async onConfirm () {
       // Produce the messages before closing the modal to avoid `$t` scope errors
       const success = this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`)
-      let error = this.$t(`TRANSACTION.ERROR.${this.transactionKey}`)
       const errorLowFee = this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
         fee: this.formatter_networkCurrency(this.transaction.fee)
       })
@@ -110,14 +109,7 @@ export default {
         this.storeTransaction(this.transaction)
         this.$success(success)
       } else {
-        const { errors } = response.data
-        const type = errors[Object.keys(errors)[0]][0].type
-
-        if (type === 'ERR_LOW_FEE') {
-          error = errorLowFee
-        }
-
-        this.$error(error)
+        this.$error(errorLowFee)
       }
     },
 
@@ -148,7 +140,10 @@ export default {
         if (data && data.invalid.length === 0) {
           return true
         } else {
-          return false
+          if (data && data.accept.length === 0 && data.broadcast.length === 0) {
+            return false
+          }
+          return true
         }
       }
     },
