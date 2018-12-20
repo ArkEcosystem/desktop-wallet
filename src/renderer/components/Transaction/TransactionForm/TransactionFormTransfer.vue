@@ -325,7 +325,7 @@ export default {
       // v1 compatibility
       // TODO: Get static fee from the network, or allow better UI
       if (this.walletNetwork.apiVersion === 1) {
-        this.form.fee = 0.1
+        this.form.fee = 1
       }
       // Ensure that fee has value, even when the user has not interacted
       if (!this.form.fee) {

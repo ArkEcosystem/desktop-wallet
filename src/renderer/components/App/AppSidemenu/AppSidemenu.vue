@@ -17,7 +17,7 @@
         class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
         @click.native="redirect('dashboard')"
       >
-        <img src="@/assets/images/phantom-logo.png">
+        <img src="@/assets/images/phantom-logo.svg">
       </RouterLink>
 
       <div class="AppSidemenu__container__scrollable flex-1 overflow-y-auto flexify justify-between bg-theme-feature">
