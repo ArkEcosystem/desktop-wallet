@@ -118,7 +118,17 @@ export default {
 
       this.emitSent()
 
-      const response = await this.$client.broadcastTransaction(this.transaction)
+      let response
+      if (this.alternativeWallet) {
+        const peer = await this.$store.dispatch('peer/findBest', {
+          refresh: true,
+          network: this.walletNetwork
+        })
+        const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
+        response = await apiClient.broadcastTransaction(this.transaction)
+      } else {
+        response = await this.$client.broadcastTransaction(this.transaction)
+      }
 
       if (this.isSuccessfulResponse(response)) {
         this.storeTransaction(this.transaction)
