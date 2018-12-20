@@ -27,7 +27,6 @@
       >
         <button
           :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-          :title="profile.name"
           class="profile-avatar-xl background-image flex cursor-pointer"
           @click="selectProfile(profile.id)"
         />
