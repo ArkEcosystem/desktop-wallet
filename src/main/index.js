@@ -62,8 +62,8 @@ function broadcastURL (url) {
 
   if (mainWindow && mainWindow.webContents) {
     mainWindow.webContents.send('process-url', url)
+    deeplinkingUrl = null
   }
-  deeplinkingUrl = null
 }
 
 // Force Single Instance Application
