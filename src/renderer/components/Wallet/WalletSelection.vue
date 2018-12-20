@@ -28,7 +28,9 @@
 </template>
 
 <script>
+import { map, orderBy } from 'lodash'
 import { InputSelect } from '@/components/Input'
+import truncate from '@/filters/truncate'
 
 export default {
   name: 'WalletSelection',
@@ -130,6 +132,10 @@ export default {
       }, {})
     },
 
+    profile () {
+      return this.$store.getters['profile/byId'](this.profileId)
+    },
+
     wallets () {
       if (!this.profileId) {
         return []
@@ -139,8 +145,32 @@ export default {
     },
 
     walletList () {
-      return this.wallets.reduce((map, wallet, index) => {
-        map[wallet.id] = wallet.name
+      const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+
+      const wallets = this.wallets
+      if (ledgerWallets.length && this.profile.networkId === this.session_network.id) {
+        wallets.push(...ledgerWallets)
+      }
+
+      const addresses = map(wallets, (wallet) => {
+        const address = {
+          name: null,
+          address: wallet.address
+        }
+        if (wallet.name && wallet.name !== wallet.address) {
+          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(wallet.address)})`
+        }
+
+        return address
+      })
+
+      const results = orderBy(addresses, (object) => {
+        return object.name || object.address.toLowerCase()
+      })
+
+      return results.reduce((map, wallet, index) => {
+        const value = wallet.name || wallet.address
+        map[wallet.address] = value
 
         return map
       }, {})
