@@ -75,16 +75,13 @@ export default {
 
   computed: {
     inputClass () {
-      return 'InputField__input w-full pt-3 pin-l bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10 border-theme-line-separator'
+      return 'InputField__input w-full pt-3 pin-l bg-transparent transition border-b border-theme-input-field-border text-theme-page-text hover:border-theme-page-text focus:border-blue h-10'
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
-.InputField {
-  @apply .border-theme-line-separator;
-}
 .InputField--disabled {
   pointer-events: none;
 }
