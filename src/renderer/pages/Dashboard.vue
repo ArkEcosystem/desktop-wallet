@@ -134,6 +134,15 @@ export default {
 .Dashboard__wallets__import > span {
   @apply .w-full .text-center
 }
+.Dashboard__wallets__create > a > .rounded-full,
+.Dashboard__wallets__import > a > .rounded-full {
+  @apply .cursor-pointer .fill-current .text-theme-option-button-text;
+  transition: opacity 0.4s;
+}
+.Dashboard__wallets__create > a > .rounded-full:hover,
+.Dashboard__wallets__import > a > .rounded-full:hover {
+  opacity: 0.5;
+}
 
 .Dashboard__wallets__create > span {
   border-right: 0.04rem solid var(--theme-feature-item-alternative);
