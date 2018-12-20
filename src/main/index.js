@@ -76,7 +76,8 @@ if (!gotTheLock) {
     // Someone tried to run a second instance, we should focus our window.
     // argv: An array of the second instance’s (command line / deep linked) arguments
     if (process.platform !== 'darwin') {
-      broadcastURL(argv[2])
+      deeplinkingUrl = argv[2]
+      broadcastURL(deeplinkingUrl)
     }
 
     if (mainWindow) {
@@ -86,6 +87,11 @@ if (!gotTheLock) {
       mainWindow.focus()
     }
   })
+
+  if (process.platform !== 'darwin') {
+    deeplinkingUrl = process.argv[2]
+    broadcastURL(deeplinkingUrl)
+  }
 }
 
 app.on('ready', createWindow)
