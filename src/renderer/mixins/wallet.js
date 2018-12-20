@@ -22,7 +22,9 @@ export default {
         return WalletModel.deserialize({
           address,
           name: '',
-          profileId: ''
+          profileId: '',
+          isContact: true,
+          isWatchOnly: true
         })
       }
 

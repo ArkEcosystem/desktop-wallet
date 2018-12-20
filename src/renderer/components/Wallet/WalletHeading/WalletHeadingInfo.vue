@@ -53,7 +53,7 @@
         </span>
 
         <SvgIcon
-          v-if="currentWallet.secondPublicKey"
+          v-if="secondPublicKey"
           v-tooltip="$t('WALLET_HEADING.SECOND_PASSPHRASE_ENABLED')"
           name="2nd-passphrase"
           view-box="0 0 18 18"
@@ -67,7 +67,7 @@
         />
 
         <button
-          v-if="currentWallet.publicKey"
+          v-if="publicKey"
           v-tooltip="{
             content: labelTooltip,
             trigger:'hover'
@@ -119,21 +119,30 @@ export default {
       return this.currentWallet ? this.currentWallet.address : ''
     },
     publicKey () {
-      return this.currentWallet ? this.currentWallet.publicKey : ''
+      const publicKey = this.currentWallet ? this.currentWallet.publicKey : ''
+      const lazyPublicKey = this.lazyWallet.publicKey
+
+      return publicKey || lazyPublicKey
+    },
+    secondPublicKey () {
+      const secondPublicKey = this.currentWallet ? this.currentWallet.secondPublicKey : ''
+      const lazySecondPublicKey = this.lazyWallet.secondPublicKey
+
+      return secondPublicKey || lazySecondPublicKey
     },
     alternativeBalance () {
-      const balance = this.currentWallet ? this.currentWallet.balance : 0
+      const balance = this.currentWallet ? this.currentWallet.balance : null
       const lazyBalance = this.lazyWallet.balance
-      const unitBalance = this.currency_subToUnit(balance || lazyBalance)
+      const unitBalance = this.currency_subToUnit(balance || lazyBalance || 0)
       return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
-      const balance = this.currentWallet ? this.currentWallet.balance : 0
+      const balance = this.currentWallet ? this.currentWallet.balance : null
       const lazyBalance = this.lazyWallet.balance
-      return this.formatter_networkCurrency(balance || lazyBalance)
+      return this.formatter_networkCurrency(balance || lazyBalance || 0)
     },
     name () {
       return this.wallet_name(this.currentWallet.address)
@@ -166,6 +175,8 @@ export default {
       this.showPublicKey = !this.showPublicKey
     },
 
+    // Called by the parent when the address changed
+    // Fetch watch-only address, since the wallet is not stored on vuex
     async refreshWallet () {
       if (!this.currentWallet) {
         return
