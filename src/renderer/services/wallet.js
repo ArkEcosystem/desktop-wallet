@@ -5,6 +5,14 @@ import axios from 'axios'
 
 export default class WalletService {
   /*
+   * Normalizes the passphrase by decomposing any characters (if applicable)
+   * This is mainly used for the korean language where characters are combined while the passphrase was based on the decomposed consonants
+  */
+  static normalizePassphrase (passphrase) {
+    return passphrase.normalize('NFD')
+  }
+
+  /*
    * Generate a wallet.
    * It does not check if the wallet is new (no transactions on the blockchain)
    * @param {Number} pubKeyHash - also known as address or network version
@@ -12,7 +20,7 @@ export default class WalletService {
    */
   static generate (pubKeyHash, language) {
     const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language])
-    const publicKey = crypto.getKeys(passphrase).publicKey
+    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
     return {
       address: crypto.getAddress(publicKey, pubKeyHash),
       passphrase
@@ -33,7 +41,7 @@ export default class WalletService {
    * @return {String}
    */
   static getAddress (passphrase, pubKeyHash) {
-    const publicKey = crypto.getKeys(passphrase).publicKey
+    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
     return crypto.getAddress(publicKey, pubKeyHash)
   }
 
@@ -47,7 +55,7 @@ export default class WalletService {
    * @return {String}
    */
   static getPublicKeyFromPassphrase (passphrase) {
-    return crypto.getKeys(passphrase).publicKey
+    return crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
   }
 
   /**
@@ -72,7 +80,7 @@ export default class WalletService {
    * @return {String}
    */
   static signMessage (message, passphrase) {
-    return Message.sign(message, passphrase)
+    return Message.sign(message, this.normalizePassphrase(passphrase))
   }
 
   /**
@@ -113,7 +121,7 @@ export default class WalletService {
    * @return {Boolean}
    */
   static validatePassphrase (passphrase, pubKeyHash) {
-    const publicKey = crypto.getKeys(passphrase).publicKey
+    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
     return crypto.validatePublicKey(publicKey, pubKeyHash)
   }
 
@@ -124,7 +132,7 @@ export default class WalletService {
    * @return {Boolean}
    */
   static isBip39Passphrase (passphrase, language) {
-    return bip39.validateMnemonic(passphrase, bip39.wordlists[language])
+    return bip39.validateMnemonic(this.normalizePassphrase(passphrase), bip39.wordlists[language])
   }
 
   /**
@@ -146,6 +154,6 @@ export default class WalletService {
    * @return {Boolean}
    */
   static verifyPassphrase (address, passphrase, pubKeyHash) {
-    return address === WalletService.getAddress(passphrase, pubKeyHash)
+    return address === WalletService.getAddress(this.normalizePassphrase(passphrase), pubKeyHash)
   }
 }
