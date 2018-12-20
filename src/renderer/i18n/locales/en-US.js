@@ -648,7 +648,8 @@ export default {
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
-      EXPIRED: 'Transaction expired before it was processed: {transactionId}'
+      EXPIRED: 'Transaction expired before it was processed: {transactionId}',
+      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
