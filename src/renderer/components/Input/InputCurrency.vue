@@ -282,7 +282,6 @@ export default {
      * @return {Boolean}
      */
     currencyValidator (currency) {
-      console.log('walletNetwork', this.walletNetwork.token, currency)
       const currentNetwork = this.walletNetwork || store.getters['session/network']
       const currencies = [
         currentNetwork.token,
