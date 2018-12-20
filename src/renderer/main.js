@@ -31,7 +31,8 @@ Vue.use(Vuelidate)
 Vue.use(VueGoodTablePlugin)
 Vue.use(VTooltip, {
   defaultHtml: false,
-  defaultContainer: '#app'
+  defaultContainer: '#app',
+  defaultDisposeTime: 0
 })
 Vue.use(alertEvents)
 Vue.use(apiClient)
