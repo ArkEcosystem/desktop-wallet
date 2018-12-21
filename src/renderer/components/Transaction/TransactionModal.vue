@@ -113,48 +113,55 @@ export default {
 
     async onConfirm () {
       // Produce the messages before closing the modal to avoid `$t` scope errors
-      const success = this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`)
-      const error = this.$t(`TRANSACTION.ERROR.${this.transactionKey}`)
-      const errorLowFee = this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
-        fee: this.formatter_networkCurrency(this.transaction.fee)
-      })
-      const warningBroadcast = this.$t('TRANSACTION.WARNING.BROADCAST')
+      const messages = {
+        succcess: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
+        error: this.$t(`TRANSACTION.ERROR.${this.transactionKey}`),
+        errorLowFee: this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
+          fee: this.formatter_networkCurrency(this.transaction.fee)
+        }),
+        warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST')
+      }
 
       this.emitSent()
 
       let response
-      if (this.alternativeWallet) {
-        const peer = await this.$store.dispatch('peer/findBest', {
-          refresh: true,
-          network: this.walletNetwork
-        })
-        const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
-        response = await apiClient.broadcastTransaction(this.transaction)
-      } else {
-        response = await this.$client.broadcastTransaction(this.transaction)
-      }
-
-      const { data, errors } = response.data
-
-      if (this.isSuccessfulResponse(response)) {
-        this.storeTransaction(this.transaction)
-
-        if (data && data.accept.length === 0 && data.broadcast.length > 0) {
-          this.$warn(warningBroadcast)
+      try {
+        if (this.alternativeWallet) {
+          const peer = await this.$store.dispatch('peer/findBest', {
+            refresh: true,
+            network: this.walletNetwork
+          })
+          const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
+          response = await apiClient.broadcastTransaction(this.transaction)
         } else {
-          this.$success(success)
+          response = await this.$client.broadcastTransaction(this.transaction)
         }
-      } else {
-        const anyLowFee = Object.keys(errors).some(transactionId => {
-          return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
-        })
 
-        // Be clear with the user about the error cause
-        if (anyLowFee) {
-          this.$error(errorLowFee)
+        const { data, errors } = response.data
+
+        if (this.isSuccessfulResponse(response)) {
+          this.storeTransaction(this.transaction)
+
+          if (data && data.accept.length === 0 && data.broadcast.length > 0) {
+            this.$warn(messages.warningBroadcast)
+          } else {
+            this.$success(messages.success)
+          }
         } else {
-          this.$error(error)
+          const anyLowFee = Object.keys(errors).some(transactionId => {
+            return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
+          })
+
+          // Be clear with the user about the error cause
+          if (anyLowFee) {
+            this.$error(messages.errorLowFee)
+          } else {
+            this.$error(messages.error)
+          }
         }
+      } catch (error) {
+        this.$logger.error(error)
+        this.$error(messages.error)
       }
     },
 
