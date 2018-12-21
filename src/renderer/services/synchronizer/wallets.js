@@ -1,4 +1,4 @@
-import { difference, last, sortBy } from 'lodash'
+import { difference } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -172,7 +172,13 @@ class Action {
   }
 
   findLatestTransaction (transactions) {
-    return last(sortBy(transactions, 'timestamp'))
+    var latestTransaction = transactions[0]
+
+    for (const i in transactions) {
+      if (transactions[i].timestamp > latestTransaction.timestamp) latestTransaction = transactions[i]
+    }
+
+    return latestTransaction
   }
 
   displayNewTransaction (transaction, wallet) {
