@@ -134,7 +134,7 @@ export default {
         response = await this.$client.broadcastTransaction(this.transaction)
       }
 
-      const { data } = response.data
+      const { data, errors } = response.data
 
       if (this.isSuccessfulResponse(response)) {
         this.storeTransaction(this.transaction)
@@ -145,8 +145,12 @@ export default {
           this.$success(success)
         }
       } else {
+        const anyLowFee = Object.keys(errors).some(transactionId => {
+          return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
+        })
+
         // Be clear with the user about the error cause
-        if (data && data.accept.length === 0 && data.broadcast.length === 0) {
+        if (anyLowFee) {
           this.$error(errorLowFee)
         } else {
           this.$error(error)
