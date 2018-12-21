@@ -4,6 +4,7 @@
       value ? '' : 'text-theme-page-text-light hover:text-theme-page-text',
       'MenuDropdownHandler cursor-pointer transition flex justify-between items-center text-inherit']"
     @click="emitClick"
+    @blur="onBlur"
   >
     <span>
       <slot>
@@ -57,6 +58,12 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+
+    onBlur: {
+      type: Function,
+      required: false,
+      default: () => {}
     }
   },
 

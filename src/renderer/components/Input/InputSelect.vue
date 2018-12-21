@@ -1,5 +1,6 @@
 <template>
   <MenuDropdown
+    ref="dropdown"
     :items="options"
     :is-disabled="isDisabled"
     :value="optionText"
@@ -22,6 +23,7 @@
         :value="scopeHandler.value"
         :placeholder="label"
         :class="inputClass"
+        :on-blur="onBlur"
         class="InputSelect__input"
         @click="onHandlerClick"
       />
@@ -148,6 +150,16 @@ export default {
       }
 
       this.emitInput()
+    },
+
+    onBlur (ev) {
+      this.$nextTick(() => {
+        if (Object.values(document.activeElement.classList).includes('MenuDropdownItem__button')) {
+          ev.preventDefault()
+        } else {
+          this.$refs.dropdown.close()
+        }
+      })
     },
 
     emitInput () {
