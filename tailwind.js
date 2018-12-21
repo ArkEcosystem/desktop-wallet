@@ -106,6 +106,7 @@ let colors = {
   'theme-option-button': 'var(--theme-option-button)',
   'theme-option-button-hover': 'var(--theme-option-button-hover)',
   'theme-option-button-text': 'var(--theme-option-button-text)',
+  'theme-input-field-border': 'var(--theme-input-field-border)',
   'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
   'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
   'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
