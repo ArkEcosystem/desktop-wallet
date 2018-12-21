@@ -43,40 +43,8 @@
               @change="setLedgerCache"
             />
           </div>
-          <div class="WalletAll__balance__create flex flex-col items-center pl-6 pr-6">
-            <RouterLink :to="{ name: 'wallet-new' }">
-              <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
-                <SvgIcon
-                  name="plus"
-                  class="text-center"
-                  view-box="0 0 9 9"
-                />
-              </span>
-            </RouterLink>
-            <RouterLink
-              :to="{ name: 'wallet-new' }"
-              class="font-bold"
-            >
-              {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
-            </RouterLink>
-          </div>
-          <div class="WalletAll__balance__import flex flex-col items-center pl-6">
-            <RouterLink :to="{ name: 'wallet-import' }">
-              <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
-                <SvgIcon
-                  name="arrow-import"
-                  class="text-center"
-                  view-box="0 0 7 10"
-                />
-              </span>
-            </RouterLink>
-            <RouterLink
-              :to="{ name: 'wallet-import' }"
-              class="font-bold"
-            >
-              {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
-            </RouterLink>
-          </div>
+          <WalletButtonCreate class="pl-6 pr-6" />
+          <WalletButtonImport class="pl-6" />
         </div>
       </div>
     </div>
@@ -150,8 +118,7 @@
 import { clone, without } from 'lodash'
 import { ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
-import SvgIcon from '@/components/SvgIcon'
-import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
+import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 
 export default {
@@ -160,9 +127,10 @@ export default {
   components: {
     ButtonSwitch,
     Loader,
-    SvgIcon,
     WalletIdenticon,
-    WalletRemovalConfirmation
+    WalletRemovalConfirmation,
+    WalletButtonCreate,
+    WalletButtonImport
   },
 
   data: () => ({
@@ -267,18 +235,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.WalletAll__ledger__cache,
-.WalletAll__balance__create {
+.WalletAll__ledger__cache {
   @apply .border-r .border-theme-feature-item-alternative
-}
-.WalletAll__balance__create > a > .rounded-full,
-.WalletAll__balance__import > a > .rounded-full {
-  @apply .cursor-pointer .fill-current .text-theme-option-button-text;
-  transition: opacity 0.4s;
-}
-.WalletAll__balance__create > a > .rounded-full:hover,
-.WalletAll__balance__import > a > .rounded-full:hover {
-  opacity: 0.5;
 }
 .WalletAll__grid {
   display: grid;
