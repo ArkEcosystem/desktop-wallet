@@ -35,7 +35,6 @@
 
     <ButtonModal
       v-show="!currentWallet.isContact"
-      ref="button-send"
       :class="buttonStyle"
       :label="$t('TRANSACTION.SEND')"
       icon="send"
@@ -44,7 +43,6 @@
       <template slot-scope="{ toggle, isOpen }">
         <TransactionModal
           v-if="isOpen"
-          :schema="uriSchema"
           :type="0"
           @cancel="toggle"
           @sent="toggle"
@@ -73,8 +71,7 @@ export default {
 
   data () {
     return {
-      isRefreshing: false,
-      uriSchema: {}
+      isRefreshing: false
     }
   },
 
@@ -86,13 +83,6 @@ export default {
     currentWallet () {
       return this.wallet_fromRoute
     }
-  },
-
-  mounted () {
-    this.$eventBus.on('wallet:open-send-transfer', schema => {
-      this.uriSchema = schema
-      this.$refs['button-send'].toggle()
-    })
   },
 
   methods: {

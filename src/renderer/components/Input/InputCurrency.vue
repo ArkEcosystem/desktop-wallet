@@ -44,23 +44,6 @@ import store from '@/store'
 import InputField from './InputField'
 
 /**
- * Checks if a currency is valid, either as a symbol (€) or code (EUR)
- * @param {String} currency
- * @return {Boolean}
- */
-const currencyValidator = currency => {
-  const currentNetwork = store.getters['session/network']
-  const currencies = [
-    currentNetwork.token,
-    currentNetwork.subunit,
-    currentNetwork.symbol,
-    ...Object.keys(MARKET.currencies),
-    ...Object.values(MARKET.currencies).map(currency => currency.symbol)
-  ]
-  return includes(currencies, currency)
-}
-
-/**
  * This component uses a String value internally to avoid several problems, such
  * as showing the exponential notation, although it emits a Number always.
  * It also support a `raw` event, that can be used by other components to receive
@@ -82,13 +65,11 @@ export default {
     alternativeCurrency: {
       type: String,
       required: false,
-      default: null,
-      validator: currencyValidator
+      default: null
     },
     currency: {
       type: String,
-      required: true,
-      validator: currencyValidator
+      required: true
     },
     helperText: {
       type: String,
@@ -155,6 +136,11 @@ export default {
     value: {
       type: [Number, String],
       required: true
+    },
+    walletNetwork: {
+      type: Object,
+      required: false,
+      default: null
     }
   },
 
@@ -171,37 +157,39 @@ export default {
     },
 
     error () {
-      let error = null
-
-      if (this.$v.model.$dirty) {
-        if (this.required && !this.$v.model.isRequired) {
-          error = this.$t('INPUT_CURRENCY.ERROR.REQUIRED')
+      if (!this.isDisabled && this.$v.model.$dirty) {
+        if (!this.currencyValidator(this.currency)) {
+          return 'INVALID CURRENCY'
+        } else if (this.alternativeCurrency && !this.currencyValidator(this.alternativeCurrency)) {
+          return 'INVALID CURRENCY'
+        } else if (this.required && !this.$v.model.isRequired) {
+          return this.$t('INPUT_CURRENCY.ERROR.REQUIRED')
         } else if (!this.$v.model.isNumber) {
           if (this.notValidError) {
-            error = this.notValidError
+            return this.notValidError
           } else {
-            error = this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
+            return this.$t('INPUT_CURRENCY.ERROR.NOT_VALID')
           }
         } else if (!this.$v.model.isLessThanMaximum) {
           if (this.maximumError) {
-            error = this.maximumError
+            return this.maximumError
           } else {
             const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
-            error = this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
+            return this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
           }
         } else if (!this.$v.model.isMoreThanMinimum) {
           if (this.minimumError) {
-            error = this.minimumError || error
+            return this.minimumError
           } else {
             const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
-            error = this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
+            return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
           }
         } else if (this.customError) {
-          error = this.customError
+          return this.customError
         }
       }
 
-      return error
+      return null
     },
 
     formattedValue () {
@@ -287,6 +275,22 @@ export default {
         return true
       }
       return false
+    },
+    /**
+     * Checks if a currency is valid, either as a symbol (€) or code (EUR)
+     * @param {String} currency
+     * @return {Boolean}
+     */
+    currencyValidator (currency) {
+      const currentNetwork = this.walletNetwork || store.getters['session/network']
+      const currencies = [
+        currentNetwork.token,
+        currentNetwork.subunit,
+        currentNetwork.symbol,
+        ...Object.keys(MARKET.currencies),
+        ...Object.values(MARKET.currencies).map(currency => currency.symbol)
+      ]
+      return includes(currencies, currency)
     }
   },
 

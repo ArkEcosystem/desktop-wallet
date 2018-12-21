@@ -47,6 +47,14 @@
         <AppFooter />
       </section>
 
+      <TransactionModal
+        v-if="isUriTransactionOpen"
+        :schema="uriTransactionSchema"
+        :type="0"
+        @cancel="closeUriTransaction"
+        @sent="closeUriTransaction"
+      />
+
       <PortalTarget
         name="modal"
         multiple
@@ -73,6 +81,7 @@ import '@/styles/style.css'
 import { isEmpty } from 'lodash'
 import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
+import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
 
@@ -86,12 +95,15 @@ export default {
     AppFooter,
     AppSidemenu,
     AppWelcome,
-    AlertMessage
+    AlertMessage,
+    TransactionModal
   },
 
   data: () => ({
     isReady: false,
-    hasBlurFilter: false
+    hasBlurFilter: false,
+    isUriTransactionOpen: false,
+    uriTransactionSchema: {}
   }),
 
   computed: {
@@ -204,18 +216,24 @@ export default {
 
     __watchProcessURL () {
       ipcRenderer.on('process-url', (_, url) => {
-        const currentWallet = this.wallet_fromRoute
-        const isWalletActive = !!currentWallet
         const uri = new URIHandler(url)
 
         if (!uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
-        } else if (!isWalletActive) {
-          this.$error(this.$t('VALIDATION.WALLET_NOT_ACTIVE'))
         } else {
-          this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
+          this.openUriTransaction(uri.deserialize())
         }
       })
+    },
+
+    openUriTransaction (schema) {
+      this.isUriTransactionOpen = true
+      this.uriTransactionSchema = schema
+    },
+
+    closeUriTransaction () {
+      this.isUriTransactionOpen = false
+      this.uriTransactionSchema = {}
     },
 
     setIntroDone () {
