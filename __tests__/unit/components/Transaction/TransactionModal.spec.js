@@ -58,8 +58,39 @@ describe('TransactionModal', () => {
         response.status = 200
       })
 
+      describe('when the response does not include errors', () => {
+        beforeEach(() => {
+          response.data.errors = null
+          response.data.data = {
+            invalid: [],
+            accept: []
+          }
+        })
+
+        it('should return `true`', () => {
+          expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
+        })
+      })
+
+      describe('when the response includes errors', () => {
+        beforeEach(() => {
+          response.data.errors = {
+            tx1: [{ type: 'ERR_LOW_FEE' }]
+          }
+          response.data.data = {
+            invalid: [],
+            accept: []
+          }
+        })
+
+        it('should return `false`', () => {
+          expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
+        })
+      })
+
       describe('when the response does not include invalid transactions', () => {
         beforeEach(() => {
+          response.data.errors = null
           response.data.data.invalid = []
         })
 
@@ -75,24 +106,8 @@ describe('TransactionModal', () => {
           }
         })
 
-        describe('when the response does not include accepted and broadcasted transactions', () => {
-          beforeEach(() => {
-            response.data.data = {
-              invalid: ['tx1'],
-              accept: [],
-              broadcast: []
-            }
-          })
-
-          it('should return `false`', () => {
-            expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
-          })
-        })
-
-        xdescribe('when the response includes accepted or broadcasted transactions', () => {
-          it('should return `true`', () => {
-            expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
-          })
+        it('should return `false`', () => {
+          expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
         })
       })
     })
