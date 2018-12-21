@@ -3,7 +3,10 @@
   <span>
     <span v-if="!type">
       <a
-        v-tooltip="address"
+        v-tooltip="{
+          content: address,
+          container: tooltipContainer
+        }"
         href="#"
         @click.stop="openAddress"
       >
@@ -64,6 +67,11 @@ export default {
       type: Number,
       required: false,
       default: () => 0
+    },
+    tooltipContainer: {
+      type: String,
+      required: false,
+      default: () => '#app'
     }
   },
 
