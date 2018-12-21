@@ -35,6 +35,10 @@ Install via [Homebrew](https://brew.sh/):
 brew cask install ark-desktop-wallet
 ```
 
+## Translations
+
+To translate this application, you need to do it on [Transifex](https://www.transifex.com/ark-ecosystem/ark-desktop-wallet/) and ask for an invitation to join the team. After that, when we accept your application, you could have access to their intuitive user interface to translate from English to your language. You could even suggest more languages.
+
 ## Development
 
 ### Requirements
