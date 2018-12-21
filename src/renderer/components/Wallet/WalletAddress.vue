@@ -2,9 +2,13 @@
 <template>
   <span>
     <span v-if="!type">
-      <span v-tooltip="address">
+      <a
+        v-tooltip="address"
+        href="#"
+        @click.stop="openAddress"
+      >
         {{ wallet_formatAddress(address, 10) }}
-      </span>
+      </a>
     </span>
     <span v-else-if="type === 1">
       {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
@@ -98,6 +102,10 @@ export default {
   methods: {
     determineVote () {
       this.votedDelegate = store.getters['delegate/byPublicKey'](this.votePublicKey)
+    },
+
+    openAddress () {
+      this.$router.push({ name: 'wallet-show', params: { address: this.address } })
     }
   }
 }

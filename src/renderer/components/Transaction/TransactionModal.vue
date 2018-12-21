@@ -164,7 +164,7 @@ export default {
         timestamp,
         vendorField,
         confirmations: 0,
-        recipient: transaction.recipientId,
+        recipient: transaction.recipientId || transaction.sender,
         profileId: this.session_profile.id,
         raw: transaction
       })

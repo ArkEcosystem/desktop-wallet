@@ -57,7 +57,12 @@
       </ListDividedItem>
 
       <ListDividedItem :label="$t('TRANSACTION.SENDER')">
-        {{ wallet_formatAddress(transaction.sender, 10) }}
+        <a
+          href="#"
+          @click.stop="openAddressInWallet(transaction.sender)"
+        >
+          {{ wallet_formatAddress(transaction.sender, 10) }}
+        </a>
         <ButtonClipboard
           :value="transaction.sender"
           class="text-theme-page-text-light mx-1"
@@ -81,7 +86,12 @@
         v-if="transaction.recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
       >
-        {{ wallet_formatAddress(transaction.recipient, 10) }}
+        <a
+          href="#"
+          @click.stop="openAddressInWallet(transaction.recipient)"
+        >
+          {{ wallet_formatAddress(transaction.recipient, 10) }}
+        </a>
         <ButtonClipboard
           :value="transaction.recipient"
           class="text-theme-page-text-light mx-1"
@@ -228,6 +238,11 @@ export default {
       this.$store.dispatch('transaction/delete', this.transaction)
       this.$emit('close')
       this.$eventBus.emit('wallet:reload')
+    },
+
+    openAddressInWallet (address) {
+      this.$router.push({ name: 'wallet-show', params: { address } })
+      this.emitClose()
     }
   }
 }

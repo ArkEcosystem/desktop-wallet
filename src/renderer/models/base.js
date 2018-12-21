@@ -25,6 +25,8 @@ export default class BaseModel {
 
       if (item.format && isFunction(item.format)) {
         value = item.format(input)
+      } else if (input[key] === undefined) {
+        value = item.default
       } else {
         value = input[key]
       }
