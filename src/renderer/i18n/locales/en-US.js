@@ -40,7 +40,7 @@ export default {
     WELCOME: {
       TITLE: 'Welcome to the {app}',
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
-      FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay attention to these warnings.'
+      FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay close attention to these warnings.'
     },
     POWER: {
       TITLE: 'Power',
@@ -184,7 +184,7 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
-    NETWORK_OVERVIEW: 'Network overview',
+    NETWORKS: 'My networks',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -285,6 +285,11 @@ export default {
 
   INPUT_GRID_MODAL: {
     TITLE: 'Select'
+  },
+
+  WALLET_SELECTION: {
+    PROFILE: 'Sender Profile',
+    WALLET: 'Sender Wallet'
   },
 
   MODAL_CONFIRMATION: {

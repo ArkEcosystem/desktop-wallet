@@ -3,6 +3,7 @@ import WalletIdenticon from './WalletIdenticon'
 import WalletIdenticonPlaceholder from './WalletIdenticonPlaceholder'
 import WalletRenameModal from './WalletRenameModal'
 import WalletRemovalConfirmation from './WalletRemovalConfirmation'
+import WalletSelection from './WalletSelection'
 import WalletSignModal from './WalletSignModal'
 import WalletVerifyDetail from './WalletVerifyDetail'
 import WalletVerifyModal from './WalletVerifyModal'
@@ -22,6 +23,7 @@ export {
   WalletIdenticonPlaceholder,
   WalletRenameModal,
   WalletRemovalConfirmation,
+  WalletSelection,
   WalletSignModal,
   WalletVerifyDetail,
   WalletVerifyModal

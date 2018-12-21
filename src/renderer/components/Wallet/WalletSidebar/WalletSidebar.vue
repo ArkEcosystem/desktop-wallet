@@ -133,7 +133,7 @@ export default {
 
   computed: {
     wallets () {
-      if (this.currentWallet && this.currentWallet.isContact) {
+      if (this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly) {
         const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
         const prop = 'name'
         return contacts.slice().sort(sortByProp(prop))
@@ -153,6 +153,12 @@ export default {
 
     isLoadingLedger () {
       return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
+    }
+  },
+
+  watch: {
+    wallets () {
+      this.$refs.MenuNavigation.collectItems()
     }
   },
 
