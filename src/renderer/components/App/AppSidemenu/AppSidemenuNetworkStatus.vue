@@ -76,7 +76,7 @@
       </div>
     </MenuOptions>
     <div
-      class="bg-theme-settings pt-1 px-10 rounded border-t border-theme-settings-sub"
+      class="bg-theme-settings mt-2 pt-1 px-10 rounded"
     >
       <ButtonModal
         :label="$t('PEER.CONNECT_CUSTOM')"
