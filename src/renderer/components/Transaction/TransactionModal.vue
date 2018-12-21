@@ -114,7 +114,7 @@ export default {
     async onConfirm () {
       // Produce the messages before closing the modal to avoid `$t` scope errors
       const messages = {
-        succcess: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
+        success: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
         error: this.$t(`TRANSACTION.ERROR.${this.transactionKey}`),
         errorLowFee: this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
           fee: this.formatter_networkCurrency(this.transaction.fee)
