@@ -684,6 +684,9 @@ export default {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
+    WARNING: {
+      BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
+    },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
     CONFIRMATION_COUNT: '{0} Confirmations',
