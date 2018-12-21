@@ -1,5 +1,5 @@
 <template>
-  <section class="MarketChart w-full">
+  <section class="MarketChart w-full flex-column">
     <slot />
     <LineChart
       v-show="isReady"
@@ -9,12 +9,19 @@
       :height="315"
       @ready="show"
     />
+    <div
+      v-if="!isReady"
+      class="MarketChart__Loader__Container"
+    >
+      <Loader />
+    </div>
   </section>
 </template>
 
 <script>
 import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
+import Loader from '@/components/utils/Loader'
 import cryptoCompare from '@/services/crypto-compare'
 
 export default {
@@ -28,7 +35,8 @@ export default {
   },
 
   components: {
-    LineChart
+    LineChart,
+    Loader
   },
 
   props: {
@@ -107,7 +115,6 @@ export default {
       this.isReady = true
     },
     async renderChart () {
-      // TODO: Add loading
       await this.renderGradient()
 
       const response = await cryptoCompare.historicByType(this.period, this.token, this.currency)
@@ -284,8 +291,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .MarketChart {
   min-height: 315px
+}
+
+.MarketChart__Loader__Container {
+  @apply .flex .items-center .justify-center;
+  min-height: 315px;
 }
 </style>
