@@ -5,7 +5,7 @@ const mocks = {
   $store: {
     getters: {
       'session/currency': 'USD',
-      'session/network': { token: 'ARK' }
+      'session/network': { market: { ticker: 'ARK' }}
     }
   }
 }
