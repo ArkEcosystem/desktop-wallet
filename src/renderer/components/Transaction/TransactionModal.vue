@@ -114,9 +114,11 @@ export default {
     async onConfirm () {
       // Produce the messages before closing the modal to avoid `$t` scope errors
       const success = this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`)
+      const error = this.$t(`TRANSACTION.ERROR.${this.transactionKey}`)
       const errorLowFee = this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
         fee: this.formatter_networkCurrency(this.transaction.fee)
       })
+      const warningBroadcast = this.$t('TRANSACTION.WARNING.BROADCAST')
 
       this.emitSent()
 
@@ -132,11 +134,23 @@ export default {
         response = await this.$client.broadcastTransaction(this.transaction)
       }
 
+      const { data } = response.data
+
       if (this.isSuccessfulResponse(response)) {
         this.storeTransaction(this.transaction)
-        this.$success(success)
+
+        if (data && data.accept.length === 0 && data.broadcast.length > 0) {
+          this.$warn(warningBroadcast)
+        } else {
+          this.$success(success)
+        }
       } else {
-        this.$error(errorLowFee)
+        // Be clear with the user about the error cause
+        if (data && data.accept.length === 0 && data.broadcast.length === 0) {
+          this.$error(errorLowFee)
+        } else {
+          this.$error(error)
+        }
       }
     },
 
@@ -150,7 +164,7 @@ export default {
 
     /**
      * Checks if the response is successful: in case the transaction is rejected
-     * due a low fee, it is broadcasted too, so it cannot be declared as invalid yet
+     * due a low fee, but it is broadcasted too, it cannot be declared as invalid yet
      * @param {Object} response
      * @return {Boolean}
      */
@@ -163,15 +177,8 @@ export default {
       if (this.$client.version === 1) {
         return response.data.success
       } else {
-        const { data } = response.data
-        if (data && data.invalid.length === 0) {
-          return true
-        } else {
-          if (data && data.accept.length === 0 && data.broadcast.length === 0) {
-            return false
-          }
-          return true
-        }
+        const { data, errors } = response.data
+        return data && data.invalid.length === 0 && errors === null
       }
     },
 
