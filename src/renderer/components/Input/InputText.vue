@@ -1,6 +1,7 @@
 <template>
   <InputField
     :label="label"
+    :maxlength="maxlength"
     :helper-text="helperText"
     :is-dirty="isDirty"
     :is-disabled="isDisabled"
@@ -101,6 +102,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    maxlength: {
+      type: Number,
+      required: false,
+      default: undefined
     },
     value: {
       type: String,
