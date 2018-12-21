@@ -297,10 +297,7 @@ export default {
 }
 
 .MarketChart__Loader__Container {
-  @apply .flex;
+  @apply .flex .items-center .justify-center;
   min-height: 315px;
-  align-items: center;
-  justify-content: center;
-
 }
 </style>
