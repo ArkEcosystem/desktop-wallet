@@ -16,6 +16,7 @@
     <TransactionConfirm
       v-if="transaction"
       :transaction="transaction"
+      :wallet="alternativeWallet"
       @back="onBack"
       @confirm="onConfirm"
     />
@@ -60,7 +61,8 @@ export default {
 
   data: () => ({
     step: 0,
-    transaction: null
+    transaction: null,
+    alternativeWallet: null
   }),
 
   computed: {
@@ -80,13 +82,28 @@ export default {
     },
     typeName () {
       return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)
+    },
+    walletNetwork () {
+      const sessionNetwork = this.session_network
+      if (!this.alternativeWallet || !this.alternativeWallet.id) {
+        return sessionNetwork
+      }
+
+      const profile = this.$store.getters['profile/byId'](this.alternativeWallet.profileId)
+
+      if (!profile.id) {
+        return sessionNetwork
+      }
+
+      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     }
   },
 
   methods: {
-    onBuilt (transaction) {
+    onBuilt ({ transaction, wallet }) {
       this.step = 1
       this.transaction = transaction
+      this.alternativeWallet = wallet
     },
 
     onBack () {
@@ -101,7 +118,17 @@ export default {
 
       this.emitSent()
 
-      const response = await this.$client.broadcastTransaction(this.transaction)
+      let response
+      if (this.alternativeWallet) {
+        const peer = await this.$store.dispatch('peer/findBest', {
+          refresh: true,
+          network: this.walletNetwork
+        })
+        const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
+        response = await apiClient.broadcastTransaction(this.transaction)
+      } else {
+        response = await this.$client.broadcastTransaction(this.transaction)
+      }
 
       if (this.isSuccessfulResponse(response)) {
         this.storeTransaction(this.transaction)
@@ -147,8 +174,8 @@ export default {
     storeTransaction (transaction) {
       const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
 
-      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.session_network.version)
-      const epoch = new Date(this.session_network.constants.epoch)
+      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
+      const epoch = new Date(this.walletNetwork.constants.epoch)
       const timestamp = epoch.getTime() + transaction.timestamp * 1000
 
       this.$store.dispatch('transaction/create', {
@@ -160,8 +187,8 @@ export default {
         timestamp,
         vendorField,
         confirmations: 0,
-        recipient: transaction.recipientId,
-        profileId: this.session_profile.id,
+        recipient: transaction.recipientId || transaction.sender,
+        profileId: this.alternativeWallet ? this.alternativeWallet.profileId : this.session_profile.id,
         raw: transaction
       })
     }

@@ -83,6 +83,11 @@ export default {
       type: Object,
       required: true,
       default: () => {}
+    },
+    wallet: {
+      type: Object,
+      required: false,
+      default: null
     }
   },
 
@@ -95,8 +100,11 @@ export default {
     totalAmount () {
       return this.transaction.amount + this.transaction.fee
     },
+    currentWallet () {
+      return this.wallet || this.wallet_fromRoute
+    },
     address () {
-      return this.wallet_fromRoute.address
+      return this.currentWallet.address
     }
   },
 

@@ -2,9 +2,23 @@ import { map, uniqBy } from 'lodash'
 import crypto from 'crypto'
 import BaseModule from '../base'
 import ProfileModel from '@/models/profile'
+import * as base58 from 'bs58check'
 
 export default new BaseModule(ProfileModel, {
   getters: {
+    byCompatibleAddress: (state, _, __, rootGetters) => address => {
+      const publicKeyHash = base58.decode(address)[0]
+      const profiles = []
+      for (const profile of state.all) {
+        const network = rootGetters['network/byId'](profile.networkId)
+        if (network.version === publicKeyHash) {
+          profiles.push(profile)
+        }
+      }
+
+      return profiles
+    },
+
     doesExist: state => checkName => {
       const normalize = (name) => name.toLowerCase().replace(/^\s+|\s+$/g, '')
       checkName = normalize(checkName)
