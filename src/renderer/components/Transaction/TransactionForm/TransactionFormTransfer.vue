@@ -57,6 +57,7 @@
       :label="vendorFieldLabel"
       :bip39-warning="true"
       :is-disabled="!currentWallet"
+      :maxlength="64"
       name="vendorField"
       class="mb-5"
     />
