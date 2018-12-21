@@ -35,7 +35,7 @@
           r="20%"
         />
         <text
-          :style="{ fill: 'var(--theme-transaction-sent-arrow)' }"
+          :style="{ fill: 'var(--theme-caption-text)' }"
           x="62%"
           y="88%"
           font-size="28"

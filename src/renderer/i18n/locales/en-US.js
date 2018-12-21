@@ -1,6 +1,6 @@
 export default {
   COMMON: {
-    APP_NAME: 'ARK Desktop Wallet',
+    APP_NAME: 'PHANTOM Wallet',
     ALL: 'All',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
@@ -42,12 +42,12 @@ export default {
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
       FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay close attention to these warnings.'
     },
-    POWER: {
-      TITLE: 'Power',
-      FINANCE: 'The most important thing for users to know about cryptocurrencies is that they completely reverse the commonly-accepted model of how finance works.',
-      BANKS: 'In traditional finance, you give up direct control of your money to a bank. Because banks have control over your money, they can take actions on your behalf, such as refunding transactions and resetting your login info.',
-      CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your private key, you can control exactly when, where and how your money is kept and spent.',
-      RESPONSIBILITY: 'However, in the words of Uncle Ben Parker, with great power comes great responsibility.'
+    PRIVACY: {
+      TITLE: 'Privacy',
+      FINANCE: 'The most important item in PHANTOM’s view is your privacy. Users should have the ability to use a payment model and decentralized application capabilities without compromising privacy.',
+      BANKS: 'In today’s world we either transact with a bank or typically a open ledger cryptocurrency such as Bitcoin. This exposes a users privacy to the open world. ',
+      CRYPTO: 'Cryptocurrencies were originally designed as a peer to peer cash system for users to have the power back in their hands to transact with each other instead of relying on intermediaries such as banks.',
+      RESPONSIBILITY: 'With PHANTOM we aim to bring a higher level of privacy to your transactions.'
     },
     DUTY: {
       TITLE: 'Duty',
@@ -55,7 +55,7 @@ export default {
       OWNER: 'It also brings greater responsibility for you, the account owner.',
       WARNING: {
         INFO: 'Unlike your traditional bank account, {warn}',
-        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the ARK team, the Delegates or anyone else.'
+        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the PHANTOM team, the Delegates or anyone else.'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
@@ -67,8 +67,8 @@ export default {
     },
     TURN: {
       TITLE: 'Turn',
-      WALLET: 'Armed with knowledge about the importance of keeping your passphrase safe, you\'re ready to claim your financial autonomy with ARK Desktop Wallet.',
-      HARDWARE_WALLET: 'Alternatively, for an extra layer of security and convenience, consider a hardware wallet. These dedicated storage products manage your private keys within the device. Additionally, the Ledger Nano S hardware wallet integrates directly with ARK Desktop Wallet, meaning you can plug your Ledger Nano into your computer and access the ARK blockchain without needing to enter your passphrase.'
+      WALLET: 'Armed with knowledge about the importance of keeping your passphrase safe, you\'re ready to claim your financial autonomy with PHANTOM Desktop Wallet.',
+      HARDWARE_WALLET: 'Alternatively, for an extra layer of security and convenience, consider a hardware wallet. These dedicated storage products manage your private keys within the device. Additionally, the Ledger Nano S hardware wallet integrates directly with PHANTOM Desktop Wallet, meaning you can plug your Ledger Nano into your computer and access the PHANTOM blockchain without needing to enter your passphrase.'
     }
   },
 
@@ -175,7 +175,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Made with ♥ by Phantom'
+    TEXT: 'Made with ♥ by ARK & PHANTOM'
   },
 
   APP_SIDEMENU: {

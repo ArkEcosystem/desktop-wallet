@@ -24,16 +24,16 @@
           class="animated fadeIn"
         >
           <div class="mt-3">
-            {{ $t('INTRODUCTION.POWER.FINANCE') }}
+            {{ $t('INTRODUCTION.PRIVACY.FINANCE') }}
           </div>
           <div class="AppIntroScreen__text_spacing">
-            {{ $t('INTRODUCTION.POWER.BANKS') }}
+            {{ $t('INTRODUCTION.PRIVACY.BANKS') }}
           </div>
           <div class="AppIntroScreen__text_spacing">
-            {{ $t('INTRODUCTION.POWER.CRYPTO') }}
+            {{ $t('INTRODUCTION.PRIVACY.CRYPTO') }}
           </div>
           <div class="AppIntroScreen__text_spacing">
-            {{ $t('INTRODUCTION.POWER.RESPONSIBILITY') }}
+            {{ $t('INTRODUCTION.PRIVACY.RESPONSIBILITY') }}
           </div>
         </div>
 
