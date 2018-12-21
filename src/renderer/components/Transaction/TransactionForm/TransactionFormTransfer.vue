@@ -127,7 +127,7 @@
 </template>
 
 <script>
-import { maxLength, required } from 'vuelidate/lib/validators'
+import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalLoader } from '@/components/Modal'
