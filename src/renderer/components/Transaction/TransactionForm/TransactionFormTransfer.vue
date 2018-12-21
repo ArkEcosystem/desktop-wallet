@@ -229,16 +229,6 @@ export default {
     },
     vendorFieldLabel () {
       return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
-    },
-    vendorFieldError () {
-      if (this.vendorFieldIsInvalid) {
-        return this.$t('VALIDATION.TOO_LONG', [this.$refs.vendorField.label])
-      }
-
-      return null
-    },
-    vendorFieldIsInvalid () {
-      return this.$v.form.vendorField.$dirty && this.$v.form.vendorField.$invalid
     }
   },
 
@@ -397,9 +387,6 @@ export default {
           }
           return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
-      },
-      vendorField: {
-        maxLength: maxLength(64)
       },
       passphrase: {
         isValid (value) {
