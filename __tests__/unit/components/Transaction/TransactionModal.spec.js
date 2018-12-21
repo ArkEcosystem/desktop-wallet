@@ -70,22 +70,28 @@ describe('TransactionModal', () => {
 
       describe('when the response includes invalid transactions', () => {
         beforeEach(() => {
-          response.data.data.invalid = ['tx1']
+          response.data.data = {
+            invalid: ['tx1']
+          }
         })
 
         describe('when the response does not include accepted and broadcasted transactions', () => {
           beforeEach(() => {
-            response.data.data = { tx1: [{ accept: [], broadcast: [] }] }
+            response.data.data = {
+              invalid: ['tx1'],
+              accept: [],
+              broadcast: []
+            }
           })
 
           it('should return `false`', () => {
-            expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
+            expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
           })
         })
 
         xdescribe('when the response includes accepted or broadcasted transactions', () => {
           it('should return `true`', () => {
-            expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
+            expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
           })
         })
       })
