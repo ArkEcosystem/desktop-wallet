@@ -16,6 +16,7 @@
     <TransactionConfirm
       v-if="transaction"
       :transaction="transaction"
+      :wallet="alternativeWallet"
       @back="onBack"
       @confirm="onConfirm"
     />
@@ -60,7 +61,8 @@ export default {
 
   data: () => ({
     step: 0,
-    transaction: null
+    transaction: null,
+    alternativeWallet: null
   }),
 
   computed: {
@@ -80,13 +82,28 @@ export default {
     },
     typeName () {
       return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)
+    },
+    walletNetwork () {
+      const sessionNetwork = this.session_network
+      if (!this.alternativeWallet || !this.alternativeWallet.id) {
+        return sessionNetwork
+      }
+
+      const profile = this.$store.getters['profile/byId'](this.alternativeWallet.profileId)
+
+      if (!profile.id) {
+        return sessionNetwork
+      }
+
+      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     }
   },
 
   methods: {
-    onBuilt (transaction) {
+    onBuilt ({ transaction, wallet }) {
       this.step = 1
       this.transaction = transaction
+      this.alternativeWallet = wallet
     },
 
     onBack () {
@@ -97,17 +114,29 @@ export default {
     async onConfirm () {
       // Produce the messages before closing the modal to avoid `$t` scope errors
       const success = this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`)
-      const error = this.$t(`TRANSACTION.ERROR.${this.transactionKey}`)
+      const errorLowFee = this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
+        fee: this.formatter_networkCurrency(this.transaction.fee)
+      })
 
       this.emitSent()
 
-      const response = await this.$client.broadcastTransaction(this.transaction)
+      let response
+      if (this.alternativeWallet) {
+        const peer = await this.$store.dispatch('peer/findBest', {
+          refresh: true,
+          network: this.walletNetwork
+        })
+        const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
+        response = await apiClient.broadcastTransaction(this.transaction)
+      } else {
+        response = await this.$client.broadcastTransaction(this.transaction)
+      }
 
       if (this.isSuccessfulResponse(response)) {
         this.storeTransaction(this.transaction)
         this.$success(success)
       } else {
-        this.$error(error)
+        this.$error(errorLowFee)
       }
     },
 
@@ -134,12 +163,14 @@ export default {
       if (this.$client.version === 1) {
         return response.data.success
       } else {
-        const { data, errors } = response.data
+        const { data } = response.data
         if (data && data.invalid.length === 0) {
           return true
         } else {
-          const keys = Object.keys(errors)
-          return errors[keys[0]][0].type === 'ERR_LOW_FEE'
+          if (data && data.accept.length === 0 && data.broadcast.length === 0) {
+            return false
+          }
+          return true
         }
       }
     },
@@ -147,8 +178,8 @@ export default {
     storeTransaction (transaction) {
       const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
 
-      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.session_network.version)
-      const epoch = new Date(this.session_network.constants.epoch)
+      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
+      const epoch = new Date(this.walletNetwork.constants.epoch)
       const timestamp = epoch.getTime() + transaction.timestamp * 1000
 
       this.$store.dispatch('transaction/create', {
@@ -161,7 +192,7 @@ export default {
         vendorField,
         confirmations: 0,
         recipient: transaction.recipientId || transaction.sender,
-        profileId: this.session_profile.id,
+        profileId: this.alternativeWallet ? this.alternativeWallet.profileId : this.session_profile.id,
         raw: transaction
       })
     }
