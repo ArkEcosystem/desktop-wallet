@@ -60,7 +60,8 @@ describe('TransactionModal', () => {
 
       describe('when the response includes accepted transactions', () => {
         response.data.data = {
-          accept: ['tx1']
+          accept: ['tx1'],
+          broadcast: []
         }
 
         it('should return `true`', () => {
@@ -70,6 +71,7 @@ describe('TransactionModal', () => {
 
       describe('when the response includes broadcasted transactions', () => {
         response.data.data = {
+          accept: [],
           broadcast: ['tx1']
         }
 
