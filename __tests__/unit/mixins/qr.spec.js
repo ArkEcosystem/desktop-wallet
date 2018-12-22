@@ -49,5 +49,4 @@ describe('Mixins > Qr', () => {
       expect(wrapper.vm.qr_getPassphrase('asdf')).toEqual('asdf')
     })
   })
-
 })
