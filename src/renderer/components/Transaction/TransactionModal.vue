@@ -188,8 +188,8 @@ export default {
       if (this.$client.version === 1) {
         return response.data.success
       } else {
-        const { data, errors } = response.data
-        return data && data.invalid.length === 0 && errors === null
+        const { data } = response.data
+        return data && data.accept.length === 0 && data.broadcast.length
       }
     },
 
