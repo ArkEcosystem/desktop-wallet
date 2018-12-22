@@ -1,4 +1,2 @@
-module.exports = {
-  type: 'object',
-  properties: {}
-}
+export const type = 'object'
+export const properties = {}
