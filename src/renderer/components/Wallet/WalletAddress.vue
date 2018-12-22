@@ -16,7 +16,10 @@
     <span v-else-if="type === 2">
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
-    <span v-else-if="type === 3">
+    <span
+      v-else-if="type === 3"
+      :class="[isUnvote ? 'text-red' : 'text-green']"
+    >
       {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
       <span
         v-if="votedDelegate"
