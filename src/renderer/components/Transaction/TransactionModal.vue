@@ -103,7 +103,7 @@ export default {
     onBuilt ({ transaction, wallet }) {
       this.step = 1
       this.transaction = transaction
-      this.alternativeWallet = wallet
+      // this.alternativeWallet = wallet
     },
 
     onBack () {
@@ -119,7 +119,9 @@ export default {
         errorLowFee: this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
-        warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST')
+        warningLowFee: this.$t('TRANSACTION.WARNING.LOW_FEE', {
+          fee: this.formatter_networkCurrency(this.transaction.fee)
+        })
       }
 
       this.emitSent()
@@ -142,8 +144,8 @@ export default {
         if (this.isSuccessfulResponse(response)) {
           this.storeTransaction(this.transaction)
 
-          if (data && data.accept.length === 0 && data.broadcast.length > 0) {
-            this.$warn(messages.warningBroadcast)
+          if (data && (data.accept.length === 0 || data.broadcast.length === 0)) {
+            this.$warn(messages.warningLowFee, 10000)
           } else {
             this.$success(messages.success)
           }
