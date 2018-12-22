@@ -90,7 +90,6 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      const prop = 'name'
       return orderBy(contacts, ['name', 'address'], ['asc', 'asc'])
     }
   },
