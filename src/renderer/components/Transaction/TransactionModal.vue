@@ -189,7 +189,7 @@ export default {
         return response.data.success
       } else {
         const { data } = response.data
-        return data && data.accept.length === 0 && data.broadcast.length
+        return data && data.accept.length === 0 && data.broadcast.length === 0
       }
     },
 
