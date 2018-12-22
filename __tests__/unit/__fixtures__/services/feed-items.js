@@ -1,4 +1,4 @@
-module.exports = [{
+export default [{
   creator: 'BoldNinja',
   title:
     'Say Hello to ARKs Newest Full-Time Core Developer — Joshua Noack',
