@@ -685,7 +685,7 @@ export default {
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
     WARNING: {
-      LOW_FEE: 'Transaction was successfully sent but it may not be confirmed because the fee ({fee}) is too low'
+      LOW_FEE: 'Transaction was successfully sent but it may not get confirmed because the fee ({fee}) is too low'
     },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
