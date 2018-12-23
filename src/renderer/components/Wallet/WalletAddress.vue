@@ -21,7 +21,10 @@
     </span>
     <span v-else-if="type === 3">
       <a
-        v-tooltip="votedDelegateAddress"
+        v-tooltip="{
+          content: votedDelegateAddress,
+          container: tooltipContainer
+        }"
         :class="[isUnvote ? 'text-red' : 'text-green']"
         href="#"
         @click.stop="openAddress"
