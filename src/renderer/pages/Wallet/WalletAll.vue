@@ -55,8 +55,8 @@
 
         <div class="WalletAll__grid mt-10 justify-center">
           <div
-            v-show="isLedgerLoading"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
+            v-show="!isLedgerLoading"
+            class="WalletAll__grid__wallet flex flex-col justify-center w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
           >
             <Loader />
             <div class="text-center mt-4">
