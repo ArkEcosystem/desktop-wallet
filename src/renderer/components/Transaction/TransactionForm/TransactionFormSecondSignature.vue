@@ -173,6 +173,10 @@ export default {
     },
 
     passphraseWords () {
+      // Check for Japanese "space"
+      if (/\u3000/.test(this.secondPassphrase)) {
+        return this.secondPassphrase.split('\u3000')
+      }
       return this.secondPassphrase.split(' ')
     },
 

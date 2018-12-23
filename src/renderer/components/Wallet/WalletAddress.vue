@@ -3,7 +3,10 @@
   <span>
     <span v-if="!type">
       <a
-        v-tooltip="address"
+        v-tooltip="{
+          content: address,
+          container: tooltipContainer
+        }"
         href="#"
         @click.stop="openAddress"
       >
@@ -17,13 +20,19 @@
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
     <span v-else-if="type === 3">
-      {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
-      <span
-        v-if="votedDelegate"
-        class="italic"
+      <a
+        v-tooltip="votedDelegateAddress"
+        href="#"
+        @click.stop="openAddress"
       >
-        ({{ votedDelegateUsername }})
-      </span>
+        {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
+        <span
+          v-if="votedDelegate"
+          class="italic"
+        >
+          ({{ votedDelegateUsername }})
+        </span>
+      </a>
     </span>
     <span v-else-if="type === 4">
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
@@ -64,6 +73,11 @@ export default {
       type: Number,
       required: false,
       default: () => 0
+    },
+    tooltipContainer: {
+      type: String,
+      required: false,
+      default: () => '#app'
     }
   },
 
@@ -90,6 +104,10 @@ export default {
 
     votedDelegateUsername () {
       return this.votedDelegate ? this.votedDelegate.username : ''
+    },
+
+    votedDelegateAddress () {
+      return this.votedDelegate ? this.votedDelegate.address : ''
     }
   },
 
@@ -105,7 +123,11 @@ export default {
     },
 
     openAddress () {
-      this.$router.push({ name: 'wallet-show', params: { address: this.address } })
+      if (this.votePublicKey) {
+        this.$router.push({ name: 'wallet-show', params: { address: this.votedDelegateAddress } })
+      } else {
+        this.$router.push({ name: 'wallet-show', params: { address: this.address } })
+      }
     }
   }
 }

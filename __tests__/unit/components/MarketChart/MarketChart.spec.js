@@ -2,10 +2,14 @@ import { shallowMount } from '@vue/test-utils'
 import { MarketChart } from '@/components/MarketChart'
 
 const mocks = {
+  session_network: {
+    market: {
+      ticker: 'ARK'
+    }
+  },
   $store: {
     getters: {
-      'session/currency': 'USD',
-      'session/network': { token: 'ARK' }
+      'session/currency': 'USD'
     }
   }
 }
