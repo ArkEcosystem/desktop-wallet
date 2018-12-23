@@ -10,7 +10,7 @@
         href="#"
         @click.stop="openAddress"
       >
-        {{ wallet_formatAddress(address, 10) }}
+        {{ wallet_formatAddress(address, addressLength) }}
       </a>
     </span>
     <span v-else-if="type === 1">
@@ -79,6 +79,11 @@ export default {
       type: String,
       required: false,
       default: () => '#app'
+    },
+    addressLength: {
+      type: Number,
+      required: false,
+      default: 10
     }
   },
 
