@@ -97,15 +97,14 @@
         :label="$t('TRANSACTION.RECIPIENT')"
         item-value-class="flex items-center"
       >
-        <a
-          href="#"
-          @click.stop="openAddressInWallet(transaction.recipient)"
-        >
-          {{ wallet_formatAddress(transaction.recipient, 10) }}
-        </a>
+        <WalletAddress
+          :address="transaction.recipient"
+          :type="transaction.type"
+          :asset="transaction.asset"
+        />
         <ButtonClipboard
-          :value="transaction.recipient"
           class="text-theme-page-text-light mx-2"
+          :value="votedDelegate ? votedDelegate.address : transaction.recipient"
         />
         <button
           v-tooltip="{
@@ -113,7 +112,7 @@
             trigger: 'hover'
           }"
           class="flex items-center"
-          @click="openAddress(transaction.recipient)"
+          @click="openAddress(votedDelegate ? votedDelegate.address : transaction.recipient)"
         >
           <SvgIcon
             name="open-external"
@@ -194,6 +193,7 @@ import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import TransactionAmount from './TransactionAmount'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import truncateMiddle from '@/filters/truncate-middle'
 
 export default {
@@ -206,7 +206,8 @@ export default {
     ModalWindow,
     ButtonClipboard,
     SvgIcon,
-    TransactionAmount
+    TransactionAmount,
+    WalletAddress
   },
 
   props: {
@@ -216,12 +217,29 @@ export default {
     }
   },
 
+  data: () => ({
+    votedDelegate: null
+  }),
+
   computed: {
     isWellConfirmed () {
       return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51)
     },
     numberOfActiveDelegates () {
       return at(this, 'session_network.constants.activeDelegates') || 51
+    },
+    votePublicKey () {
+      if (this.transaction && this.transaction.asset && this.transaction.asset.votes) {
+        const vote = this.transaction.asset.votes[0]
+        return vote.substr(1)
+      }
+      return ''
+    }
+  },
+
+  mounted () {
+    if (this.votePublicKey) {
+      this.determineVote()
     }
   },
 
@@ -258,6 +276,10 @@ export default {
     openAddressInWallet (address) {
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.emitClose()
+    },
+
+    determineVote () {
+      this.votedDelegate = this.$store.getters['delegate/byPublicKey'](this.votePublicKey)
     }
   }
 }
