@@ -32,7 +32,7 @@
         <span
           v-else-if="data.column.field === 'name'"
         >
-          {{ wallet_name(data.row.address) || wallet_truncate(data.row.address) }}
+          {{ wallet_name(data.row.address) }}
         </span>
 
         <span
@@ -113,7 +113,6 @@ export default {
 
   methods: {
     removeWallet (wallet) {
-      // this.$parent.openRemovalConfirmation(wallet)
       this.$emit('remove-wallet', wallet)
     }
   }

@@ -341,9 +341,10 @@ export default {
 }
 .WalletAll__header button {
   @apply text-theme-option-button-text;
-  transition: opacity 0.4s;
+  transition: all 0.4s;
 }
 .WalletAll__header button:hover {
+  @apply bg-theme-button;
   opacity: 0.5;
 }
 .WalletAll__header button:disabled {
