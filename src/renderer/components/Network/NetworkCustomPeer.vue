@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
+import { numeric, required } from 'vuelidate/lib/validators'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { ButtonGeneric } from '@/components/Button'
 import { InputText } from '@/components/Input'
@@ -164,7 +164,7 @@ export default {
       port: {
         required,
         isNumeric (value) {
-          return /^[0-9]+$/.test(value)
+          return numeric(value)
         },
         isValid (value) {
           return parseInt(value) < 65536
