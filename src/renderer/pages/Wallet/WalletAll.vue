@@ -32,7 +32,7 @@
           <div
             v-show="isLedgerConnected"
             v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
-            class="WalletAll__ledger__cache flex flex-col items-center pr-6"
+            class="WalletAll__ledger__cache flex flex-col items-center px-6"
           >
             <span>{{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}</span>
             <ButtonSwitch
@@ -55,7 +55,7 @@
 
         <div class="WalletAll__grid mt-10 justify-center">
           <div
-            v-show="!isLedgerLoading"
+            v-show="isLedgerLoading"
             class="WalletAll__grid__wallet flex flex-col justify-center w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
           >
             <Loader />
