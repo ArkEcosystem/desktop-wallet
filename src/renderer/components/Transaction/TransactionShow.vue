@@ -29,8 +29,8 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          @click="openTransaction"
           class="flex items-center"
+          @click="openTransaction"
         >
           <SvgIcon
             name="open-external"
@@ -51,8 +51,8 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          @click="openBlock"
           class="flex items-center ml-2"
+          @click="openBlock"
         >
           <SvgIcon
             name="open-external"
@@ -81,8 +81,8 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          @click="openAddress(transaction.sender)"
           class="flex items-center"
+          @click="openAddress(transaction.sender)"
         >
           <SvgIcon
             name="open-external"
@@ -112,8 +112,8 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          @click="openAddress(transaction.recipient)"
           class="flex items-center"
+          @click="openAddress(transaction.recipient)"
         >
           <SvgIcon
             name="open-external"
