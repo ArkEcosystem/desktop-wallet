@@ -689,7 +689,7 @@ export default {
     },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
-    CONFIRMATION_COUNT: '{0} Confirmations',
+    CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
     DISCARD: 'Discard',

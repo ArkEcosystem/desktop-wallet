@@ -134,7 +134,7 @@
         <span
           v-show="!transaction.isExpired"
           v-tooltip="{
-            content: $t('TRANSACTION.CONFIRMATION_COUNT', [transaction.confirmations]),
+            content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: transaction.confirmations }),
             trigger: 'hover'
           }"
           class="ml-1"
