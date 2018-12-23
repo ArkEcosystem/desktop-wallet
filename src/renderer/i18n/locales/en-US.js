@@ -516,7 +516,11 @@ export default {
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+      ADDRESS: 'Address',
+      NAME: 'Name',
+      BALANCE: 'Balance',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {

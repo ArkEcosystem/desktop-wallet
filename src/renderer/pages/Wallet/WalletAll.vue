@@ -51,9 +51,40 @@
 
     <div class="flex flex-1 lg:bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
-        <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
+        <div class="WalletAll__header flex justify-between">
+          <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
-        <div class="WalletAll__grid mt-10 justify-center">
+          <div class="flex items-center">
+            <button
+              class="flex border-none p-1 rounded mr-1"
+              :disabled="hasGridLayout"
+              @click="toggleLayout()"
+            >
+              <SvgIcon
+                class="fill-current"
+                name="grid"
+                view-box="0 0 16 16"
+              />
+            </button>
+
+            <button
+              class="flex border-none p-1 rounded"
+              :disabled="!hasGridLayout"
+              @click="toggleLayout()"
+            >
+              <SvgIcon
+                class="fill-current"
+                name="tabular"
+                view-box="0 0 16 16"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div
+          v-if="hasGridLayout"
+          class="WalletAll__grid mt-10 justify-center"
+        >
           <div
             v-show="isLedgerLoading"
             class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
@@ -102,6 +133,20 @@
             </div>
           </div>
         </div>
+
+        <div
+          v-else
+          class="WalletAll__tabular mt-10"
+        >
+          <WalletTable
+            :has-pagination="false"
+            :is-loading="false"
+            :rows="selectableWallets"
+            :total-rows="selectableWallets.length"
+            :sort-query="sortParams"
+            @remove-wallet="onRemoveWallet"
+          />
+        </div>
       </div>
     </div>
 
@@ -117,44 +162,57 @@
 <script>
 import { clone, without } from 'lodash'
 import { ButtonSwitch } from '@/components/Button'
+import SvgIcon from '@/components/SvgIcon'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
+import WalletTable from '@/components/Wallet/WalletTable'
 
 export default {
   name: 'WalletAll',
 
   components: {
     ButtonSwitch,
+    SvgIcon,
     Loader,
     WalletIdenticon,
     WalletRemovalConfirmation,
     WalletButtonCreate,
-    WalletButtonImport
+    WalletButtonImport,
+    WalletTable
   },
 
   data: () => ({
     selectableWallets: [],
-    walletToRemove: null
+    walletToRemove: null,
+    sortParams: {
+      field: 'balance',
+      type: 'desc'
+    }
   }),
 
   computed: {
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
+
     alternativeTotalBalance () {
       const balance = this.currency_subToUnit(this.totalBalance)
       return this.currency_format(balance * this.price, { currency: this.alternativeCurrency })
     },
+
     isMarketEnabled () {
       return this.session_network.market.enabled
     },
+
     totalBalance () {
       return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
+
     price () {
       return this.$store.getters['market/lastPrice']
     },
+
     wallets () {
       const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
       const prop = 'name'
@@ -167,6 +225,14 @@ export default {
 
     isLedgerConnected () {
       return this.$store.getters['ledger/isConnected']
+    },
+
+    layout () {
+      return this.$store.getters['session/layout']
+    },
+
+    hasGridLayout () {
+      return this.$store.getters['session/hasGridLayout']
     },
 
     sessionLedgerCache: {
@@ -184,6 +250,18 @@ export default {
         } else {
           this.$store.dispatch('ledger/clearWalletCache')
         }
+      }
+    },
+
+    sessionLayout: {
+      get () {
+        return this.$store.getters['session/layout']
+      },
+      set (layout) {
+        this.$store.dispatch('session/setLayout', layout)
+        const profile = clone(this.session_profile)
+        profile.layout = layout
+        this.$store.dispatch('profile/update', profile)
       }
     }
   },
@@ -227,8 +305,16 @@ export default {
       this.selectableWallets = without(this.selectableWallets, wallet)
     },
 
+    toggleLayout () {
+      this.sessionLayout = this.sessionLayout === 'grid' ? 'tabular' : 'grid'
+    },
+
     setLedgerCache (enabled) {
       this.sessionLedgerCache = enabled
+    },
+
+    onRemoveWallet (wallet) {
+      this.openRemovalConfirmation(wallet)
     }
   }
 }
@@ -252,6 +338,16 @@ export default {
 }
 .WalletAll__grid__wallet .identicon {
   transition: 0.5s;
+}
+.WalletAll__header button {
+  @apply text-theme-option-button-text;
+  transition: opacity 0.4s;
+}
+.WalletAll__header button:hover {
+  opacity: 0.5;
+}
+.WalletAll__header button:disabled {
+  @apply bg-theme-button
 }
 @screen lg {
   .WalletAll__grid__wallet {

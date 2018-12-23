@@ -13,6 +13,7 @@ export default {
     name: null,
     profileId: null,
     theme: null,
+    layout: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
     ledgerCache: null
@@ -47,10 +48,12 @@ export default {
     currency: state => state.currency,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
+    layout: state => state.layout,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
+    hasGridLayout: state => state.layout === 'grid',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
     ledgerCache: state => state.ledgerCache
@@ -93,6 +96,10 @@ export default {
       state.theme = theme
     },
 
+    SET_LAYOUT (state, layout) {
+      state.layout = layout
+    },
+
     SET_CONTENT_PROTECTION (state, protection) {
       state.contentProtection = protection
     },
@@ -114,6 +121,7 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.layout = 'grid'
       state.backgroundUpdateLedger = true
       state.contentProtection = true
       state.ledgerCache = false
@@ -133,6 +141,7 @@ export default {
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
+      dispatch('setLayout', profile.layout)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
       dispatch('setLedgerCache', profile.ledgerCache)
 
@@ -194,6 +203,10 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setLayout ({ commit }, value) {
+      commit('SET_LAYOUT', value)
     }
   }
 }
