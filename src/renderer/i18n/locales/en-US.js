@@ -789,7 +789,7 @@ export default {
     PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
     PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
-    APPROVAL: 'Approval',
+    APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
     MISSED: 'missed',
