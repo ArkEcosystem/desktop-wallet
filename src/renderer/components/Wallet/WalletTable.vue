@@ -92,7 +92,8 @@ export default {
         {
           label: this.$t('PAGES.WALLET_ALL.NAME'),
           field: 'name',
-          tdClass: 'w-2/3'
+          tdClass: 'w-2/3',
+          sortFn: this.sortByName
         },
         {
           label: this.$t('PAGES.WALLET_ALL.BALANCE'),
@@ -114,6 +115,13 @@ export default {
   methods: {
     removeWallet (wallet) {
       this.$emit('remove-wallet', wallet)
+    },
+
+    sortByName (a, b, col, rowX, rowY) {
+      const one = this.wallet_name(rowX.address) || ''
+      const two = this.wallet_name(rowY.address) || ''
+
+      return (one < two ? -1 : one > two ? 1 : 0)
     }
   }
 }
