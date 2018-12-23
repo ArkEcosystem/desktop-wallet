@@ -38,8 +38,7 @@
             <ButtonSwitch
               ref="cache-ledger-switch"
               :is-active="sessionLedgerCache"
-              class="theme-dark mt-3"
-              background-color="#414767"
+              class="mt-3"
               @change="setLedgerCache"
             />
           </div>
