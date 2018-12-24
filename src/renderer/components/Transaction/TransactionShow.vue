@@ -5,7 +5,10 @@
     @close="emitClose"
   >
     <ListDivided>
-      <ListDividedItem :label="$t('TRANSACTION.ID')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.ID')"
+        item-value-class="flex items-center"
+      >
         <span
           v-tooltip="{
             content: transaction.id,
@@ -18,7 +21,7 @@
         </span>
         <ButtonClipboard
           :value="transaction.id"
-          class="text-theme-page-text-light mx-1"
+          class="text-theme-page-text-light mx-2"
         />
         <button
           v-if="transaction.confirmations > 0"
@@ -26,6 +29,7 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center"
           @click="openTransaction"
         >
           <SvgIcon
@@ -39,6 +43,7 @@
       <ListDividedItem
         v-if="transaction.blockId"
         :label="$t('TRANSACTION.BLOCK_ID')"
+        item-value-class="flex items-center"
       >
         {{ transaction.blockId }}
         <button
@@ -46,6 +51,7 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center ml-2"
           @click="openBlock"
         >
           <SvgIcon
@@ -56,7 +62,10 @@
         </button>
       </ListDividedItem>
 
-      <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.SENDER')"
+        item-value-class="flex items-center"
+      >
         <a
           href="#"
           @click.stop="openAddressInWallet(transaction.sender)"
@@ -65,13 +74,14 @@
         </a>
         <ButtonClipboard
           :value="transaction.sender"
-          class="text-theme-page-text-light mx-1"
+          class="text-theme-page-text-light mx-2"
         />
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center"
           @click="openAddress(transaction.sender)"
         >
           <SvgIcon
@@ -85,6 +95,7 @@
       <ListDividedItem
         v-if="transaction.recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
+        item-value-class="flex items-center"
       >
         <WalletAddress
           :address="transaction.recipient"
@@ -92,14 +103,15 @@
           :asset="transaction.asset"
         />
         <ButtonClipboard
+          class="text-theme-page-text-light mx-2"
           :value="votedDelegate ? votedDelegate.address : transaction.recipient"
-          class="text-theme-page-text-light mx-1"
         />
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center"
           @click="openAddress(votedDelegate ? votedDelegate.address : transaction.recipient)"
         >
           <SvgIcon
@@ -119,7 +131,10 @@
         :value="formatter_networkCurrency(transaction.fee)"
       />
 
-      <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.CONFIRMATIONS')"
+        item-value-class="flex items-center"
+      >
         <span v-if="transaction.isExpired">
           {{ $t('TRANSACTION.EXPIRED') }}
         </span>
@@ -136,7 +151,7 @@
             content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: transaction.confirmations }),
             trigger: 'hover'
           }"
-          class="ml-1"
+          class="flex items-center ml-2"
         >
           <SvgIcon
             name="time"
