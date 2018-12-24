@@ -10,7 +10,7 @@
         href="#"
         @click.stop="openAddress"
       >
-        {{ wallet_formatAddress(address, 10) }}
+        {{ wallet_formatAddress(address, addressLength) }}
       </a>
     </span>
     <span v-else-if="type === 1">
@@ -21,7 +21,11 @@
     </span>
     <span v-else-if="type === 3">
       <a
-        v-tooltip="votedDelegateAddress"
+        v-tooltip="{
+          content: votedDelegateAddress,
+          container: tooltipContainer
+        }"
+        :class="[isUnvote ? 'text-red' : 'text-green']"
         href="#"
         @click.stop="openAddress"
       >
@@ -78,6 +82,11 @@ export default {
       type: String,
       required: false,
       default: () => '#app'
+    },
+    addressLength: {
+      type: Number,
+      required: false,
+      default: 10
     }
   },
 
