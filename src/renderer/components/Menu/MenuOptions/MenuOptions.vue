@@ -49,7 +49,7 @@ export default {
 }
 
 .MenuOptions__settings--vertical:after {
-  top: 170px;
+  bottom: 230px;
 }
 
 .MenuOptions--vertical:after {
