@@ -148,7 +148,7 @@ export default {
       const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
 
       const wallets = this.wallets
-      if (ledgerWallets.length && this.profile.networkId === this.session_network.id) {
+      if (ledgerWallets.length && this.profile && this.profile.networkId === this.session_network.id) {
         wallets.push(...ledgerWallets)
       }
 
