@@ -7,7 +7,7 @@ exports.NETWORKS = [
 ]
 
 exports.ANNOUNCEMENTS = {
-  rssUrl: 'https://blog.phantom.org/feed'
+  rssUrl: 'http://phantom.org/feed'
 }
 
 exports.I18N = {
