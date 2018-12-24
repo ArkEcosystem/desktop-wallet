@@ -14,7 +14,10 @@
       {{ label }}
     </span>
 
-    <div class="ListDividedItem__value">
+    <div
+      :class="itemValueClass"
+      class="ListDividedItem__value"
+    >
       <slot>
         <span
           v-if="value"
@@ -46,6 +49,11 @@ export default {
       type: [String, Number],
       required: false,
       default: null
+    },
+    itemValueClass: {
+      type: String,
+      required: false,
+      default: ''
     }
   }
 }
