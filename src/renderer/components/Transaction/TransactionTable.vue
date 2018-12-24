@@ -116,6 +116,7 @@
         >
           <WalletAddress
             :address="data.row.sender"
+            :address-length="8"
             tooltip-container=".TransactionTable"
           />
         </div>
@@ -127,6 +128,7 @@
         >
           <WalletAddress
             :address="data.row.recipient"
+            :address-length="8"
             :type="data.row.type"
             :asset="data.row.asset"
             tooltip-container=".TransactionTable"
