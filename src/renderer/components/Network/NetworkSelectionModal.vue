@@ -21,7 +21,9 @@
               class="w-18 h-18 p-2"
               :src="assets_loadImage('networks/default.svg')"
             >
-            <div class="NetworkSelectionModal__network--name">{{ network.name }}</div>
+            <div class="NetworkSelectionModal__network--name">
+              {{ network.name | truncate(20) }}
+            </div>
           </button>
         </div>
       </div>
