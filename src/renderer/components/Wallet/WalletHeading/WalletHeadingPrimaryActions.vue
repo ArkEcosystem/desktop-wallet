@@ -77,7 +77,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'option-button mr-2 px-3 py-2'
+      return 'option-heading-button mr-2 px-3 py-2'
     },
 
     currentWallet () {

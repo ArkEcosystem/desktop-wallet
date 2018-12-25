@@ -7,7 +7,7 @@
       'background-color': backgroundColor
     }"
     :disabled="isDisabled"
-    class="ButtonSwitch appearance-none rounded-full flex items-center relative cursor-pointer w-12 h-6 bg-theme-button"
+    class="ButtonSwitch appearance-none rounded-full flex items-center relative cursor-pointer w-12 h-6 bg-theme-switch-button"
     type="button"
     @click="toggle"
   >
