@@ -3,7 +3,10 @@
     :class="justifyClass"
     class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-tl-lg h-40"
   >
-    <WalletHeadingInfo v-if="!secondaryButtonsVisible" />
+    <WalletHeadingInfo
+      v-if="!secondaryButtonsVisible"
+      ref="heading"
+    />
     <WalletHeadingActions />
   </div>
 </template>
@@ -22,7 +25,7 @@ export default {
   },
 
   data: () => ({
-    activeWallet: null
+    activeWalletId: null
   }),
 
   computed: {
@@ -39,7 +42,7 @@ export default {
 
   watch: {
     currentWallet () {
-      if (this.activeWallet && this.activeWallet.id !== this.currentWallet.id) {
+      if (this.activeWalletId !== this.currentWallet.id) {
         this.resetHeading()
       }
     }
@@ -51,8 +54,11 @@ export default {
 
   methods: {
     resetHeading () {
-      this.activeWallet = this.currentWallet
+      this.activeWalletId = this.currentWallet.id
       this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+      this.$nextTick(() => {
+        this.$refs.heading.refreshWallet()
+      })
     }
   }
 }

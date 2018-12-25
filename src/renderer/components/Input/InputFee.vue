@@ -25,6 +25,8 @@
         :minimum-amount="feeChoiceMin"
         :minimum-error="minimumError"
         :warning-text="warningText"
+        :is-disabled="isDisabled"
+        :wallet-network="walletNetwork"
         class="w-full InputField--dirty"
         @raw="onRawInput"
       />
@@ -35,6 +37,7 @@
       :max="feeChoiceMax"
       :min="feeChoiceMin"
       :step="step"
+      :disabled="isDisabled"
       type="range"
       class="w-full m-0 py-2 z-10"
       name="fee"
@@ -45,6 +48,7 @@
         v-for="choice in Object.keys(feeChoices)"
         :key="choice"
         :class="{ 'InputFee__choice--active': choice === feeChoice }"
+        :disabled="isDisabled"
         class="InputFee__choice cursor-pointer font-semibold text-xs"
         @click="onChoice(choice)"
       >
@@ -92,6 +96,24 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    isDisabled: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+
+    wallet: {
+      type: Object,
+      required: false,
+      default: null
+    },
+
+    walletNetwork: {
+      type: Object,
+      required: false,
+      default: null
     }
   },
 
@@ -115,7 +137,7 @@ export default {
 
   computed: {
     currentWallet () {
-      return this.wallet_fromRoute
+      return this.wallet || this.wallet_fromRoute
     },
     hiddenGradientStyle () {
       return {
