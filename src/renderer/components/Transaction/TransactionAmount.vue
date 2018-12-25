@@ -1,7 +1,7 @@
 <template>
   <span
     :class="{
-      'text-red': transaction.isSender,
+      'text-red': transaction.isSender && transaction.amount,
       'text-green': transaction.isReceiver && isTransfer,
     }"
   >

@@ -1,18 +1,17 @@
 <template>
   <div class="WalletButton__import">
-    <RouterLink :to="{ name: 'wallet-import' }">
-      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
+    <RouterLink
+      :to="{ name: 'wallet-import' }"
+      class="font-bold"
+    >
+      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
         <SvgIcon
           name="arrow-import"
           class="text-center"
           view-box="0 0 7 10"
         />
       </span>
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'wallet-import' }"
-      class="font-bold"
-    >
+
       {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
     </RouterLink>
   </div>
@@ -41,7 +40,7 @@ export default {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text;
   transition: opacity 0.4s;
 }
-.WalletButton__import > a > .rounded-full:hover {
+.WalletButton__import > a:hover > .rounded-full {
   opacity: 0.5;
 }
 
