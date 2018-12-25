@@ -12,8 +12,9 @@
           :key="network.id"
         >
           <button
+            v-tooltip="network.name"
             :class="{ 'NetworkSelectionModal__network--selected' : selectedNetwork && selectedNetwork.id == network.id }"
-            class="NetworkSelectionModal__network text-theme-page-text"
+            class="NetworkSelectionModal__network text-theme-page-text w-full"
             @click="selectNetwork(network)"
           >
             <!-- TODO: make network.svg override the default placeholder when users can set their own icons -->
@@ -21,7 +22,9 @@
               class="w-18 h-18 p-2"
               :src="assets_loadImage('networks/default.svg')"
             >
-            <div>{{ network.name }}</div>
+            <div class="truncate">
+              {{ network.name }}
+            </div>
           </button>
         </div>
       </div>
