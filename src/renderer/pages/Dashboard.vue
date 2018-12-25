@@ -19,26 +19,10 @@
     </main>
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
-      <div class="flex flex-row text-theme-feature-item-alternative-text">
-        <RouterLink
-          :to="{ name: 'wallet-new' }"
-          class="Dashboard__wallets__create hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tl-lg"
-        >
-          <span>
-            {{ $t('PAGES.DASHBOARD.CREATE_WALLET') }}
-          </span>
-        </RouterLink>
-
-        <RouterLink
-          :to="{ name: 'wallet-import' }"
-          class="Dashboard__wallets__import hover:bg-theme-button-text hover:text-theme-feature hover:no-underline rounded-tr-lg"
-        >
-          <span>
-            {{ $t('PAGES.DASHBOARD.IMPORT_WALLET') }}
-          </span>
-        </RouterLink>
+      <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
+        <WalletButtonCreate class="mt-6 mb-6 w-1/2" />
+        <WalletButtonImport class="mt-6 mb-6 w-1/2" />
       </div>
-
       <WalletSidebar
         :is-slim="false"
         class="Dashboard__wallets__list flex flex-col"
@@ -50,7 +34,7 @@
 <script>
 import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
-import { WalletSidebar } from '@/components/Wallet'
+import { WalletSidebar, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import store from '@/store'
 
 export default {
@@ -60,7 +44,9 @@ export default {
     DashboardTransactions,
     MarketChart,
     MarketChartHeader,
-    WalletSidebar
+    WalletSidebar,
+    WalletButtonCreate,
+    WalletButtonImport
   },
 
   computed: {
@@ -104,30 +90,6 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
-.Dashboard__wallets__create,
-.Dashboard__wallets__import {
-  @apply .w-1/2 .appearance-none .font-semibold .pt-6 .pb-6 .flex
-}
-.Dashboard__wallets__create > span,
-.Dashboard__wallets__import > span {
-  @apply .w-full .text-center
-}
-
-.Dashboard__wallets__create > span {
-  border-right: 0.04rem solid var(--theme-feature-item-alternative);
-  align-self: center;
-}
-.Dashboard__wallets__import > span {
-  border-left: 0.04rem solid var(--theme-feature-item-alternative);
-  align-self: center;
-}
-.Dashboard__wallets__create:hover > span {
-  border-right: 0px;
-}
-.Dashboard__wallets__import:hover > span {
-  border-left: 0px;
-}
-
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }

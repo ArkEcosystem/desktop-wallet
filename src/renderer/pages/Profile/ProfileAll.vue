@@ -31,7 +31,7 @@
           @click="selectProfile(profile.id)"
         />
 
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col justify-start">
           <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
             {{ profile.name | truncate(12) }}
           </div>

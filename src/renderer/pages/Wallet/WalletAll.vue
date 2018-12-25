@@ -32,51 +32,18 @@
           <div
             v-show="isLedgerConnected"
             v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
-            class="WalletAll__ledger__cache flex flex-col items-center pr-6"
+            class="WalletAll__ledger__cache flex flex-col items-center px-6"
           >
             <span>{{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}</span>
             <ButtonSwitch
               ref="cache-ledger-switch"
               :is-active="sessionLedgerCache"
-              class="theme-dark mt-3"
-              background-color="#414767"
+              class="mt-3"
               @change="setLedgerCache"
             />
           </div>
-          <div class="WalletAll__balance__create flex flex-col items-center pl-6 pr-6">
-            <RouterLink :to="{ name: 'wallet-new' }">
-              <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
-                <SvgIcon
-                  name="plus"
-                  class="text-center"
-                  view-box="0 0 9 9"
-                />
-              </span>
-            </RouterLink>
-            <RouterLink
-              :to="{ name: 'wallet-new' }"
-              class="font-bold"
-            >
-              {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
-            </RouterLink>
-          </div>
-          <div class="WalletAll__balance__import flex flex-col items-center pl-6">
-            <RouterLink :to="{ name: 'wallet-import' }">
-              <span class="rounded-full bg-theme-button h-8 w-8 mb-3 flex items-center justify-center">
-                <SvgIcon
-                  name="arrow-import"
-                  class="text-center"
-                  view-box="0 0 7 10"
-                />
-              </span>
-            </RouterLink>
-            <RouterLink
-              :to="{ name: 'wallet-import' }"
-              class="font-bold"
-            >
-              {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
-            </RouterLink>
-          </div>
+          <WalletButtonCreate class="pl-6 pr-6" />
+          <WalletButtonImport class="pl-6" />
         </div>
       </div>
     </div>
@@ -88,7 +55,7 @@
         <div class="WalletAll__grid mt-10 justify-center">
           <div
             v-show="isLedgerLoading"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r"
+            class="WalletAll__grid__wallet flex flex-col justify-center w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
           >
             <Loader />
             <div class="text-center mt-4">
@@ -150,8 +117,7 @@
 import { clone, without } from 'lodash'
 import { ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
-import SvgIcon from '@/components/SvgIcon'
-import { WalletIdenticon, WalletRemovalConfirmation } from '@/components/Wallet'
+import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 
 export default {
@@ -160,9 +126,10 @@ export default {
   components: {
     ButtonSwitch,
     Loader,
-    SvgIcon,
     WalletIdenticon,
-    WalletRemovalConfirmation
+    WalletRemovalConfirmation,
+    WalletButtonCreate,
+    WalletButtonImport
   },
 
   data: () => ({
@@ -267,18 +234,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.WalletAll__ledger__cache,
-.WalletAll__balance__create {
+.WalletAll__ledger__cache {
   @apply .border-r .border-theme-feature-item-alternative
-}
-.WalletAll__balance__create > a > .rounded-full,
-.WalletAll__balance__import > a > .rounded-full {
-  @apply .cursor-pointer .fill-current .text-theme-option-button-text;
-  transition: opacity 0.4s;
-}
-.WalletAll__balance__create > a > .rounded-full:hover,
-.WalletAll__balance__import > a > .rounded-full:hover {
-  opacity: 0.5;
 }
 .WalletAll__grid {
   display: grid;

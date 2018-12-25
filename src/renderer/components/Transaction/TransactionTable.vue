@@ -22,7 +22,8 @@
               v-tooltip="{
                 content: data.row.vendorField,
                 classes: 'text-xs',
-                trigger: 'hover'
+                trigger: 'hover',
+                container: '.TransactionTable'
               }"
               :name="data.formattedRow['vendorField'] ? 'vendorfield' : 'vendorfield-empty'"
               view-box="0 0 18 18"
@@ -33,7 +34,8 @@
               v-tooltip="{
                 content: data.row.id,
                 classes: 'text-xs',
-                trigger: 'hover'
+                trigger: 'hover',
+                container: '.TransactionTable'
               }"
               class="mr-1"
             >
@@ -58,6 +60,7 @@
               html: true,
               classes: 'leading-loose',
               trigger: 'hover',
+              container: '.TransactionTable',
               placement: 'left'
             }"
             class="font-bold mr-2 whitespace-no-wrap"
@@ -68,9 +71,10 @@
           <span
             v-if="!isWellConfirmed(data.row.confirmations)"
             v-tooltip="{
-              content: $t('TRANSACTION.CONFIRMATION_COUNT', [data.row.confirmations]),
+              content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: data.row.confirmations }),
               classes: 'text-xs',
-              trigger: 'hover'
+              trigger: 'hover',
+              container: '.TransactionTable'
             }"
             :class="{
               'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender,
@@ -88,7 +92,8 @@
             v-tooltip="{
               content: $t('TRANSACTION.WELL_CONFIRMED_COUNT', { confirmations: data.row.confirmations }),
               classes: 'text-xs',
-              trigger: 'hover'
+              trigger: 'hover',
+              container: '.TransactionTable'
             }"
             :class="{
               'text-theme-transaction-sent-arrow bg-theme-transaction-sent': data.row.isSender,
@@ -109,7 +114,11 @@
           :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
           class="overflow-hidden truncate"
         >
-          <WalletAddress :address="data.row.sender" />
+          <WalletAddress
+            :address="data.row.sender"
+            :address-length="8"
+            tooltip-container=".TransactionTable"
+          />
         </div>
 
         <div
@@ -119,8 +128,10 @@
         >
           <WalletAddress
             :address="data.row.recipient"
+            :address-length="8"
             :type="data.row.type"
             :asset="data.row.asset"
+            tooltip-container=".TransactionTable"
           />
         </div>
 
