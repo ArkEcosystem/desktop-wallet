@@ -186,17 +186,6 @@ export default {
 .ContactAll__grid__contact .identicon {
   transition: 0.5s;
 }
-.ContactAll__header button {
-  @apply text-theme-option-button-text;
-  transition: all 0.4s;
-}
-.ContactAll__header button:hover {
-  @apply bg-theme-button;
-  opacity: 0.5;
-}
-.ContactAll__header button:disabled {
-  @apply bg-theme-button
-}
 @screen lg {
   .ContactAll__grid__contact {
     @apply .p-4

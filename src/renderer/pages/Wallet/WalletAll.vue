@@ -313,17 +313,6 @@ export default {
 .WalletAll__grid__wallet .identicon {
   transition: 0.5s;
 }
-.WalletAll__header button {
-  @apply text-theme-option-button-text;
-  transition: all 0.4s;
-}
-.WalletAll__header button:hover {
-  @apply bg-theme-button;
-  opacity: 0.5;
-}
-.WalletAll__header button:disabled {
-  @apply bg-theme-button
-}
 @screen lg {
   .WalletAll__grid__wallet {
     @apply .p-4
