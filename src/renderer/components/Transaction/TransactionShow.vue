@@ -5,7 +5,10 @@
     @close="emitClose"
   >
     <ListDivided>
-      <ListDividedItem :label="$t('TRANSACTION.ID')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.ID')"
+        item-value-class="flex items-center"
+      >
         <span
           v-tooltip="{
             content: transaction.id,
@@ -18,7 +21,7 @@
         </span>
         <ButtonClipboard
           :value="transaction.id"
-          class="text-theme-page-text-light mx-1"
+          class="text-theme-page-text-light mx-2"
         />
         <button
           v-if="transaction.confirmations > 0"
@@ -26,6 +29,7 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center"
           @click="openTransaction"
         >
           <SvgIcon
@@ -39,6 +43,7 @@
       <ListDividedItem
         v-if="transaction.blockId"
         :label="$t('TRANSACTION.BLOCK_ID')"
+        item-value-class="flex items-center"
       >
         {{ transaction.blockId }}
         <button
@@ -46,6 +51,7 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center ml-2"
           @click="openBlock"
         >
           <SvgIcon
@@ -56,7 +62,10 @@
         </button>
       </ListDividedItem>
 
-      <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.SENDER')"
+        item-value-class="flex items-center"
+      >
         <a
           href="#"
           @click.stop="openAddressInWallet(transaction.sender)"
@@ -65,13 +74,14 @@
         </a>
         <ButtonClipboard
           :value="transaction.sender"
-          class="text-theme-page-text-light mx-1"
+          class="text-theme-page-text-light mx-2"
         />
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
+          class="flex items-center"
           @click="openAddress(transaction.sender)"
         >
           <SvgIcon
@@ -85,23 +95,24 @@
       <ListDividedItem
         v-if="transaction.recipient"
         :label="$t('TRANSACTION.RECIPIENT')"
+        item-value-class="flex items-center"
       >
-        <a
-          href="#"
-          @click.stop="openAddressInWallet(transaction.recipient)"
-        >
-          {{ wallet_formatAddress(transaction.recipient, 10) }}
-        </a>
+        <WalletAddress
+          :address="transaction.recipient"
+          :type="transaction.type"
+          :asset="transaction.asset"
+        />
         <ButtonClipboard
-          :value="transaction.recipient"
-          class="text-theme-page-text-light mx-1"
+          class="text-theme-page-text-light mx-2"
+          :value="votedDelegate ? votedDelegate.address : transaction.recipient"
         />
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          @click="openAddress(transaction.recipient)"
+          class="flex items-center"
+          @click="openAddress(votedDelegate ? votedDelegate.address : transaction.recipient)"
         >
           <SvgIcon
             name="open-external"
@@ -120,7 +131,10 @@
         :value="formatter_networkCurrency(transaction.fee)"
       />
 
-      <ListDividedItem :label="$t('TRANSACTION.CONFIRMATIONS')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.CONFIRMATIONS')"
+        item-value-class="flex items-center"
+      >
         <span v-if="transaction.isExpired">
           {{ $t('TRANSACTION.EXPIRED') }}
         </span>
@@ -134,10 +148,10 @@
         <span
           v-show="!transaction.isExpired"
           v-tooltip="{
-            content: $t('TRANSACTION.CONFIRMATION_COUNT', [transaction.confirmations]),
+            content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: transaction.confirmations }),
             trigger: 'hover'
           }"
-          class="ml-1"
+          class="flex items-center ml-2"
         >
           <SvgIcon
             name="time"
@@ -179,6 +193,7 @@ import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import TransactionAmount from './TransactionAmount'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import truncateMiddle from '@/filters/truncate-middle'
 
 export default {
@@ -191,7 +206,8 @@ export default {
     ModalWindow,
     ButtonClipboard,
     SvgIcon,
-    TransactionAmount
+    TransactionAmount,
+    WalletAddress
   },
 
   props: {
@@ -201,12 +217,29 @@ export default {
     }
   },
 
+  data: () => ({
+    votedDelegate: null
+  }),
+
   computed: {
     isWellConfirmed () {
       return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51)
     },
     numberOfActiveDelegates () {
       return at(this, 'session_network.constants.activeDelegates') || 51
+    },
+    votePublicKey () {
+      if (this.transaction && this.transaction.asset && this.transaction.asset.votes) {
+        const vote = this.transaction.asset.votes[0]
+        return vote.substr(1)
+      }
+      return ''
+    }
+  },
+
+  mounted () {
+    if (this.votePublicKey) {
+      this.determineVote()
     }
   },
 
@@ -243,6 +276,10 @@ export default {
     openAddressInWallet (address) {
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.emitClose()
+    },
+
+    determineVote () {
+      this.votedDelegate = this.$store.getters['delegate/byPublicKey'](this.votePublicKey)
     }
   }
 }

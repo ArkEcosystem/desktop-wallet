@@ -195,10 +195,7 @@ export default {
 
     async setProfileId ({ commit, dispatch }, value) {
       commit('SET_PROFILE_ID', value)
-      const profile = await dispatch('load', value)
-      if (profile) {
-        await dispatch('network/updateNetworkConfig', profile.networkId, { root: true })
-      }
+      await dispatch('load', value)
     },
 
     setTheme ({ commit }, value) {

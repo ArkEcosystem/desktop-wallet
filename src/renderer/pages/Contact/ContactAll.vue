@@ -99,7 +99,7 @@
 import { clone } from 'lodash'
 import ButtonLayout from '@/components/Button/ButtonLayout'
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { sortByProp } from '@/components/utils/Sorting'
+import { orderBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 
@@ -125,8 +125,7 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      const prop = 'name'
-      return contacts.slice().sort(sortByProp(prop))
+      return orderBy(contacts, ['name', 'address'], ['asc', 'asc'])
     },
 
     hasGridLayout () {
