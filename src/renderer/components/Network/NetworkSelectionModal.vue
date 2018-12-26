@@ -22,8 +22,8 @@
               class="w-18 h-18 p-2"
               :src="assets_loadImage('networks/default.svg')"
             >
-            <div class="truncate">
-              {{ network.name }}
+            <div class="NetworkSelectionModal__network--name">
+              {{ network.name | truncate(20) }}
             </div>
           </button>
         </div>
@@ -98,5 +98,9 @@ export default {
 }
 .NetworkSelectionModal__network--selected {
   @apply .border-green
+}
+.NetworkSelectionModal__network--name {
+  max-width: 4.5rem;
+  @apply .break-words
 }
 </style>
