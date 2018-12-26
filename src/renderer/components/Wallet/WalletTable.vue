@@ -29,17 +29,21 @@
           </RouterLink>
         </div>
 
-        <span
+        <div
           v-else-if="data.column.field === 'name'"
         >
-          {{ wallet_name(data.row.address) }}
-        </span>
+          <span>
+            {{ wallet_name(data.row.address) | truncate(30) }}
+          </span>
+        </div>
 
-        <span
+        <div
           v-else-if="data.column.field === 'balance'"
         >
-          {{ formatter_networkCurrency(data.row.balance) }}
-        </span>
+          <span>
+            {{ formatter_networkCurrency(data.row.balance) }}
+          </span>
+        </div>
 
         <div
           v-else-if="data.column.field === 'delete'"
@@ -48,7 +52,7 @@
           <button
             :disabled="data.row.isLedger"
             class="font-semibold flex text-xs cursor-pointer hover:text-red text-theme-page-text-light p-1"
-            @click="removeWallet(data.row)"
+            @click="removeRow(data.row)"
           >
             <SvgIcon
               name="delete-wallet"
@@ -81,9 +85,16 @@ export default {
     WalletIdenticon
   },
 
+  props: {
+    isContactsTable: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   computed: {
     columns () {
-      return [
+      let columns = [
         {
           // label: this.$t('WALLET_DELEGATES.RANK'),
           label: this.$t('PAGES.WALLET_ALL.ADDRESS'),
@@ -92,7 +103,8 @@ export default {
         {
           label: this.$t('PAGES.WALLET_ALL.NAME'),
           field: 'name',
-          tdClass: 'w-2/3',
+          thClass: 'w-full',
+          tdClass: 'w-full',
           sortFn: this.sortByName
         },
         {
@@ -109,12 +121,21 @@ export default {
           thClass: 'text-center'
         }
       ]
+
+      if (this.isContactsTable) {
+        const index = columns.findIndex(el => {
+          return el.field === 'balance'
+        })
+        columns.splice(index, 1)
+      }
+
+      return columns
     }
   },
 
   methods: {
-    removeWallet (wallet) {
-      this.$emit('remove-wallet', wallet)
+    removeRow (row) {
+      this.$emit('remove-row', row)
     },
 
     sortByName (a, b, col, rowX, rowY) {

@@ -54,31 +54,10 @@
         <div class="WalletAll__header flex justify-between">
           <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
-          <div class="flex items-center">
-            <button
-              class="flex border-none p-1 rounded mr-1"
-              :disabled="hasGridLayout"
-              @click="toggleLayout()"
-            >
-              <SvgIcon
-                class="fill-current"
-                name="grid"
-                view-box="0 0 16 16"
-              />
-            </button>
-
-            <button
-              class="flex border-none p-1 rounded"
-              :disabled="!hasGridLayout"
-              @click="toggleLayout()"
-            >
-              <SvgIcon
-                class="fill-current"
-                name="tabular"
-                view-box="0 0 16 16"
-              />
-            </button>
-          </div>
+          <ButtonLayout
+            :grid-layout="hasGridLayout"
+            @click="toggleLayout()"
+          />
         </div>
 
         <div
@@ -162,7 +141,7 @@
 <script>
 import { clone, without } from 'lodash'
 import { ButtonSwitch } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
+import ButtonLayout from '@/components/Button/ButtonLayout'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
@@ -173,7 +152,7 @@ export default {
 
   components: {
     ButtonSwitch,
-    SvgIcon,
+    ButtonLayout,
     Loader,
     WalletIdenticon,
     WalletRemovalConfirmation,
@@ -225,10 +204,6 @@ export default {
 
     isLedgerConnected () {
       return this.$store.getters['ledger/isConnected']
-    },
-
-    layout () {
-      return this.$store.getters['session/layout']
     },
 
     hasGridLayout () {
