@@ -96,10 +96,9 @@
 </template>
 
 <script>
-import { clone } from 'lodash'
 import ButtonLayout from '@/components/Button/ButtonLayout'
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { orderBy } from 'lodash'
+import { clone, orderBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 
