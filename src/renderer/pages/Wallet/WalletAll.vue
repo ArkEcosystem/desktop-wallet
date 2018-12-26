@@ -122,7 +122,7 @@
             :rows="selectableWallets"
             :total-rows="selectableWallets.length"
             :sort-query="sortParams"
-            @remove-wallet="onRemoveWallet"
+            @remove-row="onRemoveWallet"
           />
         </div>
       </div>
