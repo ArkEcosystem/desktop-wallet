@@ -71,7 +71,7 @@ exports.MARKET = {
     CNY: { symbol: '¥', fractionDigits: 2 },
     EUR: { symbol: '€', fractionDigits: 2 },
     GBP: { symbol: '£', fractionDigits: 2 },
-    HKD: { symbol: '£', fractionDigits: 2 },
+    HKD: { symbol: 'HK$', fractionDigits: 2 },
     IDR: { symbol: 'IDR', fractionDigits: 2 },
     INR: { symbol: '₹', fractionDigits: 2 },
     JPY: { symbol: '¥', fractionDigits: 0 },
