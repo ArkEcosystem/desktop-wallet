@@ -2,7 +2,7 @@
   <button
     v-tooltip="{ content: title, trigger: 'hover' }"
     :class="[
-      withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
+      withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'} ${hoverClass ? hoverClass : 'hover:bg-theme-option-button-hover'}`
     ]"
     class="ButtonReload cursor-pointer inline-flex items-center self-stretch"
     :disabled="isRefreshing"
