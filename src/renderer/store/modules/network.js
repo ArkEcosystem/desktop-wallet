@@ -22,6 +22,9 @@ export default new BaseModule(NetworkModel, {
     byToken: state => token => {
       return state.all.find(network => network.token === token)
     },
+    byName: state => name => {
+      return state.all.find(network => network.name === name)
+    },
 
     feeStatisticsByType: (_, __, ___, rootGetters) => type => {
       const network = rootGetters['session/network']
