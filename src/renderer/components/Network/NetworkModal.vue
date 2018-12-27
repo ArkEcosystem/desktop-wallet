@@ -275,7 +275,16 @@ export default {
     },
 
     nameError () {
-      return this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      const isRequired = this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      if (isRequired) {
+        return isRequired
+      }
+      if (this.$v.form.name.$dirty) {
+        if (!this.$v.form.name.doesNotExists) {
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.form.name])
+        }
+      }
+      return null
     },
 
     descriptionError () {
@@ -544,7 +553,10 @@ export default {
   validations: {
     form: {
       name: {
-        required
+        required,
+        doesNotExists (value) {
+          return !this.$store.getters['network/byName'](value)
+        }
       },
       description: {
         required
