@@ -17,25 +17,28 @@
       @done="setIntroDone"
     />
 
-    <div v-else>
+    <div
+      v-else
+      class="overflow-hidden"
+    >
       <AppSidemenu
         v-if="hasAnyProfile"
         :is-horizontal="true"
         :class="{
           'blur': hasBlurFilter
         }"
-        class="block lg:hidden"
+        class="block lg:hidden z-1"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
         :class="{
           'blur': hasBlurFilter
         }"
-        class="App__main flex flex-col items-center px-4 pb-6 lg:pt-6 w-screen h-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-6 pb-6 pt-2 lg:pt-6 w-screen-adjusted h-screen-adjusted overflow-hidden -m-2"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
-          class="App__container w-full flex-1 flex mt-6 mb-4 lg:mr-6"
+          class="App__container w-full flex-1 flex mt-4 mb-4 lg:mr-6"
         >
           <AppSidemenu
             v-if="hasAnyProfile"
@@ -280,5 +283,11 @@ export default {
 }
 .App__container {
   max-width: 1400px;
+}
+.App__main.h-screen-adjusted {
+  height: calc(100vh + 1rem);
+}
+.App__main.w-screen-adjusted {
+  width: calc(100vw + 1rem);
 }
 </style>
