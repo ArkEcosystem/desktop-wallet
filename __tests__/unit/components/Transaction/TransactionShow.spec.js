@@ -31,7 +31,8 @@ describe('TransactionShow', () => {
         session_network: {
           constants: {
             activeDelegates: 51
-          }
+          },
+          knownWallets: []
         },
         wallet_formatAddress: address => address
       },
