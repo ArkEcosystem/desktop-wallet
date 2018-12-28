@@ -36,6 +36,13 @@
         <span class="hidden xl:block">
           {{ name | truncate(30) }}
         </span>
+        <span
+          v-if="isKnownWallet()"
+          v-tooltip="$t('COMMON.VERIFIED_ADDRESS')"
+          class="ml-2"
+        >
+          isKnown
+        </span>
       </div>
 
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
@@ -173,6 +180,10 @@ export default {
   methods: {
     togglePublicKey () {
       this.showPublicKey = !this.showPublicKey
+    },
+
+    isKnownWallet () {
+      return this.session_network.knownWallets[this.address]
     },
 
     // Called by the parent when the address changed
