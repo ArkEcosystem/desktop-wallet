@@ -56,7 +56,7 @@
 
     <span
       v-if="isKnownWallet()"
-      v-tooltip="$t('COMMON.VERIFIED_ADDRESS')"
+      v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
     >
       isKnown
     </span>
@@ -124,6 +124,16 @@ export default {
 
     votedDelegateAddress () {
       return this.votedDelegate ? this.votedDelegate.address : ''
+    },
+
+    verifiedAddressText () {
+      let verifiedText = ''
+      let knownWallet = this.isKnownWallet()
+      if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
+        verifiedText = `${knownWallet} - `
+      }
+
+      return verifiedText + this.$t('COMMON.VERIFIED_ADDRESS')
     }
   },
 

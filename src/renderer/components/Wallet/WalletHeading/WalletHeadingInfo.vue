@@ -38,7 +38,7 @@
         </span>
         <span
           v-if="isKnownWallet()"
-          v-tooltip="$t('COMMON.VERIFIED_ADDRESS')"
+          v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
           class="ml-2"
         >
           isKnown
@@ -168,6 +168,15 @@ export default {
     },
     labelTooltip () {
       return this.showPublicKey ? this.$t('WALLET_HEADING.ACTIONS.SHOW_ADDRESS') : this.$t('WALLET_HEADING.ACTIONS.SHOW_PUBLIC_KEY')
+    },
+    verifiedAddressText () {
+      let verifiedText = ''
+      let knownWallet = this.isKnownWallet()
+      if (knownWallet && knownWallet !== this.name) {
+        verifiedText = `${knownWallet} - `
+      }
+
+      return verifiedText + this.$t('COMMON.VERIFIED_ADDRESS')
     }
   },
 
