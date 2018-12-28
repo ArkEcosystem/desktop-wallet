@@ -23,7 +23,7 @@
           <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
-            title="Profile"
+            :title="$t('PAGES.PROFILE_NEW.STEP1.TITLE')"
             @next="moveTo(2)"
           >
             <!-- NOTE wraps the content, but doesn't modify the stepper -->
@@ -84,7 +84,7 @@
             :is-back-visible="true"
             :is-next-enabled="!$v.step2.$invalid"
             :is-disabled="step < 2"
-            :title="$t('COMMON.NETWORK')"
+            :title="$t('PAGES.PROFILE_NEW.STEP2.TITLE')"
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
@@ -144,7 +144,7 @@
             :is-back-visible="true"
             :is-next-enabled="!$v.schema.$invalid"
             :is-disabled="step < 3"
-            :title="$t('COMMON.APPEARANCE')"
+            :title="$t('PAGES.PROFILE_NEW.STEP3.TITLE')"
             @back="moveTo(2)"
             @next="create"
           >

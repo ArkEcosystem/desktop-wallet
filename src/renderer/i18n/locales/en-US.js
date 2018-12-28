@@ -453,21 +453,24 @@ export default {
           HEADER: 'Create a profile',
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '1. Profile details'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
           TEXT: 'Choose the network of this profile.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '2. Network'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
           TEXT: 'Customize this application selecting one of our themes and backgrounds.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '3. Appearance'
       }
     },
 
@@ -684,9 +687,12 @@ export default {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
+    WARNING: {
+      BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
+    },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
-    CONFIRMATION_COUNT: '{0} Confirmations',
+    CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
     DISCARD: 'Discard',
@@ -786,7 +792,7 @@ export default {
     PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
     PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
-    APPROVAL: 'Approval',
+    APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
     MISSED: 'missed',
