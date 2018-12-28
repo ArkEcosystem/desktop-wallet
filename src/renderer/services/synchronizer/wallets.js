@@ -175,7 +175,9 @@ class Action {
     var latestTransaction = transactions[0]
 
     for (const i in transactions) {
-      if (transactions[i].timestamp > latestTransaction.timestamp) latestTransaction = transactions[i]
+      if (transactions[i].timestamp > latestTransaction.timestamp) {
+        latestTransaction = transactions[i]
+      }
     }
 
     return latestTransaction
