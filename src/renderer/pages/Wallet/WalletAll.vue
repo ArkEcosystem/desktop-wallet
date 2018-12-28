@@ -122,6 +122,7 @@
             :rows="selectableWallets"
             :total-rows="selectableWallets.length"
             :sort-query="sortParams"
+            :no-data-message="$t('TABLE.NO_WALLETS')"
             @remove-row="onRemoveWallet"
           />
         </div>

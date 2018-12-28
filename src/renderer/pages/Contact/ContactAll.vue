@@ -82,6 +82,7 @@
         :rows="contacts"
         :total-rows="contacts.length"
         :sort-query="sortParams"
+        :no-data-message="$t('TABLE.NO_CONTACTS')"
         @remove-row="onRemoveContact"
       />
     </div>

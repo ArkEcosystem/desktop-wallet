@@ -165,7 +165,9 @@ export default {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
     NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
-    NO_DELEGATES: 'No delegates to be shown.'
+    NO_CONTACTS: 'No contacts to be shown.',
+    NO_DELEGATES: 'No delegates to be shown.',
+    NO_WALLETS: 'No wallets to be shown.'
   },
 
   APP: {
