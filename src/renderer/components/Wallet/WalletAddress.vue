@@ -53,6 +53,12 @@
     <span v-else-if="type === 8">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
+
+    <span
+      v-if="isKnownWallet()"
+    >
+      isKnown
+    </span>
   </span>
 </template>
 
@@ -129,6 +135,10 @@ export default {
   methods: {
     determineVote () {
       this.votedDelegate = store.getters['delegate/byPublicKey'](this.votePublicKey)
+    },
+
+    isKnownWallet () {
+      return this.session_network.knownWallets[this.address]
     },
 
     openAddress () {
