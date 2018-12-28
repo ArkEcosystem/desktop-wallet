@@ -167,7 +167,7 @@ export default {
           return numeric(value)
         },
         isValid (value) {
-          return parseInt(value) < 65535
+          return parseInt(value) < 65536
         }
       }
     }
