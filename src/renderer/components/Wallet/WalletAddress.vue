@@ -56,6 +56,7 @@
 
     <span
       v-if="isKnownWallet()"
+      v-tooltip="$t('COMMON.VERIFIED_ADDRESS')"
     >
       isKnown
     </span>
