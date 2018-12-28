@@ -121,7 +121,7 @@ export default {
     const maxV1fee = V1.fees[this.transactionType] * 1e-8
     const data = {
       feeChoices: {
-        MINIMUM: 1,
+        MINIMUM: 1000,
         AVERAGE: maxV1fee / 2,
         MAXIMUM: maxV1fee,
         INPUT: maxV1fee / 2,
@@ -234,7 +234,7 @@ export default {
       maxFee = maxFee * 1e-8
       this.$set(this.feeChoices, 'MAXIMUM', maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
-      this.$set(this.feeChoices, 'MINIMUM', 1 / 1e8)
+      this.$set(this.feeChoices, 'MINIMUM', 10000 / 1e8)
 
       this.$set(this.feeChoices, 'INPUT', this.feeChoices.AVERAGE)
       this.$set(this.feeChoices, 'ADVANCED', this.feeChoices.AVERAGE)

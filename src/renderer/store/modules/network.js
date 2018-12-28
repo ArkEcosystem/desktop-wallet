@@ -35,7 +35,11 @@ export default new BaseModule(NetworkModel, {
       }
 
       const { feeStatistics } = network
-      const data = feeStatistics.find(transactionType => transactionType.type === type)
+
+      let data
+      if (feeStatistics) {
+        data = feeStatistics.find(transactionType => transactionType.type === type)
+      }
       return data ? data.fees : []
     },
 
