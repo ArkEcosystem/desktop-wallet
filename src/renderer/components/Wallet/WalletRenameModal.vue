@@ -96,12 +96,13 @@ export default {
     async createWallet () {
       try {
         const newName = this.schema.name
-        await this.$store.dispatch('wallet/create', {
+        const { address } = await this.$store.dispatch('wallet/create', {
           address: this.wallet.address,
           name: newName,
           profileId: this.session_profile.id,
           isContact: true
         })
+        this.$router.push({ name: 'wallet-show', params: { address } })
       } catch (error) {
         this.$error(`${this.$t('PAGES.CONTACT_NEW.FAILED')}: ${error.message}`)
       }
