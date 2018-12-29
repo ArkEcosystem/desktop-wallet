@@ -1,6 +1,6 @@
 <template>
   <ModalWindow
-    :title="$t('WALLET_RENAME.TITLE')"
+    :title="isNewContact ? $t('WALLET_RENAME.TITLE_ADD') : $t('WALLET_RENAME.TITLE')"
     @close="emitCancel"
   >
     <div class="flex flex-col justify-center">
@@ -12,16 +12,16 @@
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
-        @keyup.enter.native="renameWallet"
+        @keyup.enter.native="isNewContact ? createWallet() : renameWallet()"
       />
 
       <button
         :disabled="$v.schema.name.$invalid"
         class="blue-button mt-5"
         type="button"
-        @click="renameWallet"
+        @click="isNewContact ? createWallet() : renameWallet()"
       >
-        {{ $t('WALLET_RENAME.RENAME') }}
+        {{ isNewContact ? $t('WALLET_RENAME.ADD') : $t('WALLET_RENAME.RENAME') }}
       </button>
     </div>
   </ModalWindow>
@@ -46,6 +46,10 @@ export default {
     wallet: {
       type: Object,
       required: true
+    },
+    isNewContact: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -89,12 +93,31 @@ export default {
       this.emitRenamed()
     },
 
+    async createWallet () {
+      try {
+        const newName = this.schema.name
+        await this.$store.dispatch('wallet/create', {
+          address: this.wallet.address,
+          name: newName,
+          profileId: this.session_profile.id,
+          isContact: true
+        })
+      } catch (error) {
+        this.$error(`${this.$t('PAGES.CONTACT_NEW.FAILED')}: ${error.message}`)
+      }
+      this.emitCreated()
+    },
+
     emitCancel () {
       this.$emit('cancel')
     },
 
     emitRenamed () {
       this.$emit('renamed')
+    },
+
+    emitCreated () {
+      this.$emit('created')
     }
   },
 
