@@ -52,8 +52,6 @@
     <InputText
       ref="vendorField"
       v-model="$v.form.vendorField.$model"
-      :helper-text="vendorFieldError"
-      :is-invalid="vendorFieldIsInvalid"
       :label="vendorFieldLabel"
       :bip39-warning="true"
       :is-disabled="!currentWallet"
