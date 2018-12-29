@@ -34,7 +34,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.name.length && currentWallet.isContact"
+      v-show="!currentWallet.name && currentWallet.isContact"
       :class="buttonStyle"
       :label="$t('PAGES.WALLET_SHOW.ADD_CONTACT')"
       icon="contact-add"
