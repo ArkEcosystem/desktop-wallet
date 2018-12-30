@@ -95,7 +95,7 @@ export default {
 
   PEER: {
     CONNECTED: 'Connected to peer',
-    CONNECT_CUSTOM: 'Connect your peer',
+    CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     DELAY: 'Delay',
     FAILED_REFRESH: 'Failed to refresh peers',
