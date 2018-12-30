@@ -5,7 +5,7 @@ export default {
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
-    BIP39_LANGUAGE: 'BIP39 Language',
+    BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
     DONE: 'Done',
     FINISH: 'Finish',
     CONFIRM: 'Confirm',
