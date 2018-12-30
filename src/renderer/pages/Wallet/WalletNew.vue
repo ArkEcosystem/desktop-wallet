@@ -126,6 +126,7 @@
                 v-model="ensureEntirePassphrase"
                 :label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
                 :text="$t('PAGES.WALLET_NEW.STEP3.VERIFY_ALL_WORDS')"
+                @change="onSwitch"
                 class="my-3"
               />
 
@@ -402,6 +403,10 @@ export default {
 
     moveTo (step) {
       this.step = step
+    },
+
+    onSwitch () {
+      this.isPassphraseVerified = false
     },
 
     onVerification () {
