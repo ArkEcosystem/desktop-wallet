@@ -237,7 +237,7 @@ export default {
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
 .AppSidemenu--vertical .AppSidemenu__avatar__dots {
-  @apply absolute p-2 rounded-full bg-theme-feature;
+  @apply absolute p-2 rounded-full bg-theme-feature text-grey-dark;
   right: 1rem;
   bottom: -0.5rem;
   width: 2rem;
