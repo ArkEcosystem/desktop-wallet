@@ -46,6 +46,21 @@ export default class ClientService {
     }
   }
 
+  static async fetchFeeStatistics (server, apiVersion, timeout) {
+    // This is only for v2 networks
+    if (apiVersion === 1) {
+      return
+    }
+    const client = new ApiClient(server, apiVersion)
+    if (timeout) {
+      client.http.timeout = timeout
+    }
+    const { data } = await client.resource('node').configuration()
+    if (data.data && data.data.feeStatistics) {
+      return data.data.feeStatistics
+    }
+  }
+
   constructor (watchProfile = true) {
     this.__host = null
     this.__version = null

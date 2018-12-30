@@ -1,5 +1,5 @@
 import BaseModule from '../base'
-import { isEmpty } from 'lodash'
+import { cloneDeep, isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
@@ -71,6 +71,27 @@ export default new BaseModule(NetworkModel, {
       if (!isEmpty(getters['network/all'])) return
 
       commit('SET_ALL', NETWORKS)
+    },
+
+    // Updates the feeStatistics for the available networks
+    async fetchFees ({ commit, getters }) {
+      let networks = getters['all']
+      let updatedNetworks = cloneDeep(networks)
+      if (networks) {
+        let i
+        for (i = 0; i < updatedNetworks.length; i++) {
+          let network = updatedNetworks[i]
+          try {
+            let feeStats = await Client.fetchFeeStatistics(network.server, network.apiVersion)
+            if (feeStats) {
+              network.feeStatistics = feeStats
+            }
+          } catch (error) {
+            //
+          }
+        }
+      }
+      commit('SET_ALL', updatedNetworks)
     },
 
     async updateNetworkConfig ({ dispatch, getters, _, rootGetters }, networkId) {

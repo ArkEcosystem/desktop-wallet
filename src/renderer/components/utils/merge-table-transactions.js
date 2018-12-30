@@ -1,4 +1,4 @@
-import { sortBy, uniqBy } from 'lodash'
+import { orderBy, uniqBy } from 'lodash'
 
 /**
  * This utility is used to merge the transactions that have been fetched using
@@ -16,5 +16,5 @@ export default (a, b, number) => {
     ...b
   ], 'id')
 
-  return sortBy(transactions, 'timestamp').reverse().slice(0, number)
+  return orderBy(transactions, 'timestamp', 'desc').slice(0, number)
 }
