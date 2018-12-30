@@ -453,21 +453,24 @@ export default {
           HEADER: 'Create a profile',
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '1. Profile details'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
           TEXT: 'Choose the network of this profile.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '2. Network'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
           TEXT: 'Customize this application selecting one of our themes and backgrounds.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '3. Appearance'
       }
     },
 
@@ -600,7 +603,8 @@ export default {
     },
 
     WALLET_SHOW: {
-      NO_VOTE: 'Wallet hasn\'t voted'
+      NO_VOTE: 'Wallet hasn\'t voted',
+      ADD_CONTACT: 'Add to contacts'
     }
   },
 
@@ -789,7 +793,7 @@ export default {
     PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
     PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
-    APPROVAL: 'Approval',
+    APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
     MISSED: 'missed',
@@ -809,9 +813,11 @@ export default {
 
   WALLET_RENAME: {
     TITLE: 'Rename Wallet',
+    TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
+    ADD: 'Add wallet',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}',
+    ADDRESS_INFO: 'Set a name for this wallet: {wallet}',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 
