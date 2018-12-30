@@ -103,7 +103,7 @@
           class="mr-4"
         />
         <span class="font-semibold">
-          {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
+          {{ $t('APP_SIDEMENU.NETWORKS') }}
         </span>
       </RouterLink>
     </div>

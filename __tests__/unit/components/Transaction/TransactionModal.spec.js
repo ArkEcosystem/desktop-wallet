@@ -58,8 +58,39 @@ describe('TransactionModal', () => {
         response.status = 200
       })
 
+      describe('when the response does not include errors', () => {
+        beforeEach(() => {
+          response.data.errors = null
+          response.data.data = {
+            invalid: [],
+            accept: []
+          }
+        })
+
+        it('should return `true`', () => {
+          expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
+        })
+      })
+
+      describe('when the response includes errors', () => {
+        beforeEach(() => {
+          response.data.errors = {
+            tx1: [{ type: 'ERR_LOW_FEE' }]
+          }
+          response.data.data = {
+            invalid: [],
+            accept: []
+          }
+        })
+
+        it('should return `false`', () => {
+          expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
+        })
+      })
+
       describe('when the response does not include invalid transactions', () => {
         beforeEach(() => {
+          response.data.errors = null
           response.data.data.invalid = []
         })
 
@@ -70,23 +101,13 @@ describe('TransactionModal', () => {
 
       describe('when the response includes invalid transactions', () => {
         beforeEach(() => {
-          response.data.data.invalid = ['tx1']
+          response.data.data = {
+            invalid: ['tx1']
+          }
         })
 
-        describe('when the error is `ERR_LOW_FEE`', () => {
-          beforeEach(() => {
-            response.data.errors = { tx1: [{ type: 'ERR_LOW_FEE' }] }
-          })
-
-          it('should return `true`', () => {
-            expect(wrapper.vm.isSuccessfulResponse(response)).toBeTrue()
-          })
-        })
-
-        xdescribe('when the error is not `ERR_LOW_FEE`', () => {
-          it('should return `false`', () => {
-            expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
-          })
+        it('should return `false`', () => {
+          expect(wrapper.vm.isSuccessfulResponse(response)).toBeFalse()
         })
       })
     })

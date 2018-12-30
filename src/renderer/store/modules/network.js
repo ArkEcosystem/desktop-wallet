@@ -22,6 +22,9 @@ export default new BaseModule(NetworkModel, {
     byToken: state => token => {
       return state.all.find(network => network.token === token)
     },
+    byName: state => name => {
+      return state.all.find(network => network.name === name)
+    },
 
     feeStatisticsByType: (_, __, ___, rootGetters) => type => {
       const network = rootGetters['session/network']
@@ -70,7 +73,6 @@ export default new BaseModule(NetworkModel, {
       commit('SET_ALL', NETWORKS)
     },
 
-    // TODO: look into where this is used, as it might need to be changed to getters[network/update] instead
     async updateNetworkConfig ({ dispatch, getters, _, rootGetters }, networkId) {
       var network = getters['byId'](networkId)
       if (!network) {

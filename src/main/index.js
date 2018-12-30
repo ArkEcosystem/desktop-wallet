@@ -49,15 +49,21 @@ function createWindow () {
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
-    if (deeplinkingUrl) broadcastURL(deeplinkingUrl)
+    broadcastURL(deeplinkingUrl)
   })
 
   require('./menu')
 }
 
 function broadcastURL (url) {
-  if (!url || typeof url !== 'string') return
-  if (mainWindow && mainWindow.webContents) mainWindow.webContents.send('process-url', url)
+  if (!url || typeof url !== 'string') {
+    return
+  }
+
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.send('process-url', url)
+    deeplinkingUrl = null
+  }
 }
 
 // Force Single Instance Application
@@ -69,16 +75,29 @@ if (!gotTheLock) {
   app.on('second-instance', (_, argv) => {
     // Someone tried to run a second instance, we should focus our window.
     // argv: An array of the second instance’s (command line / deep linked) arguments
-    if (process.platform !== 'darwin') {
+    if (process.platform === 'linux') {
+      deeplinkingUrl = argv[1]
+      broadcastURL(deeplinkingUrl)
+    } else if (process.platform !== 'darwin') {
       deeplinkingUrl = argv[2]
       broadcastURL(deeplinkingUrl)
     }
 
     if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore()
+      if (mainWindow.isMinimized()) {
+        mainWindow.restore()
+      }
       mainWindow.focus()
     }
   })
+
+  if (process.platform === 'linux') {
+    deeplinkingUrl = process.argv[1]
+    broadcastURL(deeplinkingUrl)
+  } else if (process.platform !== 'darwin') {
+    deeplinkingUrl = process.argv[2]
+    broadcastURL(deeplinkingUrl)
+  }
 }
 
 app.on('ready', createWindow)

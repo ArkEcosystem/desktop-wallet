@@ -306,11 +306,18 @@ export default {
     additionalSuggestions () {
       const passphrases = Object.values(this.wallets)
 
-      return flatten(passphrases.map(passphrase => passphrase.split(' ')))
+      // Check for Japanese "space"
+      return flatten(passphrases.map(passphrase =>
+        /\u3000/.test(passphrase) ? passphrase.split('\u3000') : passphrase.split(' ')
+      ))
     },
     passphraseWords () {
       const passphrase = this.schema.passphrase
       if (passphrase) {
+        // Check for Japanese "space"
+        if (/\u3000/.test(passphrase)) {
+          return this.schema.passphrase.split('\u3000')
+        }
         return this.schema.passphrase.split(' ')
       }
       return []

@@ -44,6 +44,14 @@ button:disabled {
 	@apply .bg-theme-button .text-theme-action-button-text-hover
 }
 
+.option-heading-button {
+	@apply default-button .bg-theme-option-heading-button .text-theme-option-heading-button-text .py-2 .px-4
+}
+
+.option-heading-button:enabled:hover {
+	@apply .bg-theme-option-heading-button-hover .text-white
+}
+
 .option-button {
 	@apply default-button .bg-theme-option-button .text-theme-option-button-text .py-2 .px-4
 }
