@@ -67,7 +67,7 @@
       <div
         v-else-if="selection === 3"
         :key="3"
-        class="w-3/4 animated fadeIn"
+        class="w-full animated fadeIn overflow-y-scroll pb-12 pr-4"
       >
         <div class="mt-3">
           {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}
