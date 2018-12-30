@@ -1,6 +1,6 @@
 
 <template>
-  <span>
+  <span class="flex items-center">
     <span v-if="!type">
       <a
         v-tooltip="{
@@ -54,20 +54,26 @@
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
 
-    <span
+    <SvgIcon
       v-if="isKnownWallet()"
       v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
-    >
-      isKnown
-    </span>
+      name="verified-address"
+      view-box="0 0 14 14"
+      class="ml-2 text-blue"
+    />
   </span>
 </template>
 
 <script>
 import store from '@/store'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletAddress',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     address: {

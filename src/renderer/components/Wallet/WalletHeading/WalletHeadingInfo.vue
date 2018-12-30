@@ -36,13 +36,13 @@
         <span class="hidden xl:block">
           {{ name | truncate(30) }}
         </span>
-        <span
+        <SvgIcon
           v-if="isKnownWallet()"
           v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
+          name="verified-address"
+          view-box="0 0 18 18"
           class="ml-2"
-        >
-          isKnown
-        </span>
+        />
       </div>
 
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
@@ -84,7 +84,7 @@
         >
           <SvgIcon
             :name="showPublicKey ? 'world' : 'key'"
-            view-box="0 0 18 18"
+            view-box="0 0 16 16"
           />
         </button>
       </p>
