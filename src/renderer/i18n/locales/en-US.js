@@ -177,7 +177,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Made with ♥ by Ark'
+    TEXT: 'Made with ♥ by ARK.io'
   },
 
   APP_SIDEMENU: {
