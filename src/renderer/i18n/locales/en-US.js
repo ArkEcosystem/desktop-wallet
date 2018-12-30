@@ -103,7 +103,7 @@ export default {
     LAST_CHECKED: 'Last checked',
     NONE: 'None',
     NO_CONNECT: 'Could not connect',
-    PEER: 'Peer:',
+    PEER: 'Peer',
     STATUS_CHECK_FAILED: 'Status check failed',
     WRONG_NETWORK: 'Wrong network'
   },
