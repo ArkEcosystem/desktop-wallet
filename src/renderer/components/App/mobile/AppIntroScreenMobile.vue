@@ -90,7 +90,10 @@
             {{ $t('INTRODUCTION.TURN.WALLET') }}
           </div>
           <div class="AppIntroScreen__text_spacing">
-            {{ $t('INTRODUCTION.TURN.HARDWARE_WALLET') }}
+            {{ $t('INTRODUCTION.TURN.SUPPORT') }}
+          </div>
+          <div class="AppIntroScreen__text_spacing">
+            {{ $t('INTRODUCTION.TURN.CONCLUSION') }}
           </div>
         </div>
       </div>
