@@ -51,11 +51,11 @@ export default {
     },
     DUTY: {
       TITLE: 'Duty',
-      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time.',
-      OWNER: 'It also brings greater responsibility for you, the account owner.',
+      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
+      OWNER: 'This also brings greater responsibility for you, the account owner.',
       WARNING: {
         INFO: 'Unlike your traditional bank account, {warn}',
-        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the ARK team, the Delegates or anyone else.'
+        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
