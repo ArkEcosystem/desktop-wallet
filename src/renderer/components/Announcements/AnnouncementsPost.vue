@@ -28,7 +28,7 @@
 
     <a
       :title="title"
-      class="block mt-4 cursor-pointer"
+      class="inline-block mt-4 cursor-pointer"
       @click="openInBrowser(url)"
     >
       {{ $t('ANNOUNCEMENTS.READ_MORE') }} &#8594;
