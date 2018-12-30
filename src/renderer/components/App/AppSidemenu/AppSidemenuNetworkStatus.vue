@@ -9,8 +9,12 @@
       class="AppSidemenuNetworkStatus__peer"
     >
       <div class="text-xs mx-6 mb-2 text-theme-settings-heading">
-        <span class="float-left">{{ $t('PEER.PEER') }}</span>
-        <span class="float-right">{{ $t('PEER.BEST') }}</span>
+        <span class="float-left">
+          {{ $t('PEER.PEER') }}
+        </span>
+        <span class="float-right">
+          {{ $t('PEER.BEST') }}
+        </span>
       </div>
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <button
