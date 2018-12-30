@@ -70,7 +70,14 @@ export default {
 
   methods: {
     async onInit (promise) {
+      let promiseSuccessfullyHandled = false
       try {
+        setTimeout(() => {
+          if (!promiseSuccessfullyHandled) {
+            this.isLoading = false
+            this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_READABLE')
+          }
+        }, 10000)
         await promise
         this.errorMessage = ''
       } catch (error) {
@@ -88,7 +95,10 @@ export default {
           this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.STREAM')
         }
       } finally {
-        setTimeout(() => { this.isLoading = false }, 1000)
+        setTimeout(() => {
+          promiseSuccessfullyHandled = true
+          this.isLoading = false
+        }, 1000)
       }
     },
 
