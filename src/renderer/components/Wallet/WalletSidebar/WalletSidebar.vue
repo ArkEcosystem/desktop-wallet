@@ -28,7 +28,7 @@
           class="WalletSidebar__wallet__info flex flex-col font-semibold text-theme-page-text-light overflow-hidden pl-2"
         >
           <span class="block truncate">
-            {{ $t('PAGES.DASHBOARD.ADD_WALLET') }}
+            {{ $t('PAGES.DASHBOARD.NO_WALLETS') }}
           </span>
           <span
             v-if="!isSlim"
@@ -37,11 +37,6 @@
             {{ formatter_networkCurrency(0, 2) }}
           </span>
         </div>
-        <img
-          title="arrow"
-          :src="assets_loadImage('arrows/arrow-confirmation.svg')"
-          class="WalletIdenticon__placeholder__arrow ml-4"
-        >
       </div>
     </MenuNavigationItem>
 

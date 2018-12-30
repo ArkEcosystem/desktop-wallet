@@ -426,7 +426,7 @@ export default {
 
     DASHBOARD: {
       ALL_WALLETS: 'All wallets',
-      ADD_WALLET: 'Add a wallet',
+      NO_WALLETS: 'No wallets yet',
       CREATE_WALLET: 'Create wallet',
       IMPORT_WALLET: 'Import wallet',
       LAST_TRANSACTIONS: 'Last transactions'
