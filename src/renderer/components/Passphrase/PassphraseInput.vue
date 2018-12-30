@@ -233,11 +233,12 @@ export default {
 .PassphraseInput__input::placeholder {
   @apply .text-transparent
 }
-
-.InputField--invalid .PassphraseInput__qr-button {
-  @apply .text-red-dark
-}
+.InputField--invalid .PassphraseInput__qr-button,
 .InputField--invalid .PassphraseInput__visibility-button {
   @apply .text-red-dark
+}
+.InputField--warning .PassphraseInput__qr-button,
+.InputField--warning .PassphraseInput__visibility-button {
+  @apply .text-orange-dark
 }
 </style>

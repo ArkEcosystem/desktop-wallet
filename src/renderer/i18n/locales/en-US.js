@@ -604,7 +604,8 @@ export default {
     },
 
     WALLET_SHOW: {
-      NO_VOTE: 'Wallet hasn\'t voted'
+      NO_VOTE: 'Wallet hasn\'t voted',
+      ADD_CONTACT: 'Add to contacts'
     }
   },
 
@@ -813,9 +814,11 @@ export default {
 
   WALLET_RENAME: {
     TITLE: 'Rename Wallet',
+    TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
+    ADD: 'Add wallet',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}',
+    ADDRESS_INFO: 'Set a name for this wallet: {wallet}',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 
