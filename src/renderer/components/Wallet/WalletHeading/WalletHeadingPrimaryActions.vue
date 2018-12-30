@@ -34,6 +34,24 @@
     </ButtonModal>
 
     <ButtonModal
+      v-show="!currentWallet.name && currentWallet.isContact"
+      :class="buttonStyle"
+      :label="$t('PAGES.WALLET_SHOW.ADD_CONTACT')"
+      icon="contact-add"
+      view-box="0 0 16 16"
+    >
+      <template slot-scope="{ toggle, isOpen }">
+        <WalletRenameModal
+          v-if="isOpen"
+          :wallet="currentWallet"
+          :is-new-contact="true"
+          @cancel="toggle"
+          @created="toggle"
+        />
+      </template>
+    </ButtonModal>
+
+    <ButtonModal
       v-show="!currentWallet.isContact"
       :class="buttonStyle"
       :label="$t('TRANSACTION.SEND')"
@@ -56,6 +74,7 @@
 import { ButtonModal, ButtonReload } from '@/components/Button'
 import { ModalQrCode } from '@/components/Modal'
 import { TransactionModal } from '@/components/Transaction'
+import { WalletRenameModal } from '@/components/Wallet'
 
 export default {
   name: 'WalletHeadingPrimaryActions',
@@ -66,7 +85,8 @@ export default {
     ButtonModal,
     ButtonReload,
     ModalQrCode,
-    TransactionModal
+    TransactionModal,
+    WalletRenameModal
   },
 
   data () {
