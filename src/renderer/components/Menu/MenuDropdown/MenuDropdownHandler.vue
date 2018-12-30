@@ -20,7 +20,6 @@
         :class="{ 'opacity-25': iconDisabled }"
         name="arrow-dropdown"
         view-box="0 0 20 20"
-        transform="rotate(180)"
       />
     </span>
   </button>
