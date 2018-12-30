@@ -94,6 +94,7 @@ export default {
   },
 
   PEER: {
+    BEST: 'Connect to best',
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
