@@ -166,7 +166,7 @@ export default {
   TABLE: {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
-    NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
+    NO_TRANSACTIONS: 'The latest transactions will be displayed here.',
     NO_DELEGATES: 'No delegates to be shown.'
   },
 
@@ -429,7 +429,7 @@ export default {
       NO_WALLETS: 'No wallets yet',
       CREATE_WALLET: 'Create wallet',
       IMPORT_WALLET: 'Import wallet',
-      LAST_TRANSACTIONS: 'Last transactions'
+      LAST_TRANSACTIONS: 'Latest transactions'
     },
 
     NETWORK_OVERVIEW: {
