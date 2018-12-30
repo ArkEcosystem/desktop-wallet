@@ -67,8 +67,9 @@ export default {
     },
     TURN: {
       TITLE: 'Turn',
-      WALLET: 'Armed with knowledge about the importance of keeping your passphrase safe, you\'re ready to claim your financial autonomy with ARK Desktop Wallet.',
-      HARDWARE_WALLET: 'Alternatively, for an extra layer of security and convenience, consider a hardware wallet. These dedicated storage products manage your private keys within the device. Additionally, the Ledger Nano S hardware wallet integrates directly with ARK Desktop Wallet, meaning you can plug your Ledger Nano into your computer and access the ARK blockchain without needing to enter your passphrase.'
+      WALLET: 'Now armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
+      SUPPORT: 'ARK is an open-source ecosystem and if you need assistance, the ARK community and team is here to help. Create a post on reddit.ark.io, or join the real-time chat system at slack.ark.io.',
+      CONCLUSION: 'Everyone here on the ARK.io team hopes you enjoy using the ARK Desktop Wallet to participate in the blockchain revolution!'
     }
   },
 
