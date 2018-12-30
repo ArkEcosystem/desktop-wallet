@@ -10,7 +10,7 @@ export default {
     FINISH: 'Finish',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
-    LANGUAGE: 'Language',
+    LANGUAGE: 'Application Language',
     NETWORK: 'Network',
     PREV: 'Prev',
     NEXT: 'Next',
