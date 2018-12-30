@@ -71,7 +71,7 @@
 
 <script>
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { orderBy } from 'lodash'
+import { sortBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 
 export default {
@@ -90,7 +90,7 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      return orderBy(contacts, ['name', 'address'], ['asc', 'asc'])
+      return sortBy(contacts, 'name')
     }
   },
 
