@@ -184,55 +184,57 @@ class Action {
   }
 
   displayNewTransaction (transaction, wallet) {
-    let message = {}
-    switch (transaction.type) {
-      case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
-        message = {
-          translation: 'SYNCHRONIZER.NEW_SECOND_SIGNATURE',
-          options: {
-            address: truncateMiddle(wallet.address)
+    if (!wallet.isContact) {
+      let message = {}
+      switch (transaction.type) {
+        case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
+          message = {
+            translation: 'SYNCHRONIZER.NEW_SECOND_SIGNATURE',
+            options: {
+              address: truncateMiddle(wallet.address)
+            }
           }
+          break
         }
-        break
-      }
-      case config.TRANSACTION_TYPES.DELEGATE_REGISTRATION: {
-        message = {
-          translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
-          options: {
-            address: truncateMiddle(wallet.address),
-            username: transaction.assets.delegate.username
+        case config.TRANSACTION_TYPES.DELEGATE_REGISTRATION: {
+          message = {
+            translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
+            options: {
+              address: truncateMiddle(wallet.address),
+              username: transaction.assets.delegate.username
+            }
           }
+          break
         }
-        break
-      }
-      case config.TRANSACTION_TYPES.VOTE: {
-        const type = transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
-        const voteUnvote = this.$t(`SYNCHRONIZER.${type}`)
-        message = {
-          translation: 'SYNCHRONIZER.NEW_VOTE',
-          options: {
-            address: truncateMiddle(wallet.address),
-            voteUnvote,
-            publicKey: truncateMiddle(transaction.asset.votes[0].substring(1))
+        case config.TRANSACTION_TYPES.VOTE: {
+          const type = transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
+          const voteUnvote = this.$t(`SYNCHRONIZER.${type}`)
+          message = {
+            translation: 'SYNCHRONIZER.NEW_VOTE',
+            options: {
+              address: truncateMiddle(wallet.address),
+              voteUnvote,
+              publicKey: truncateMiddle(transaction.asset.votes[0].substring(1))
+            }
           }
+          break
         }
-        break
-      }
-      default: {
-        const type = transaction.sender === wallet.address ? 'SENT' : 'RECEIVED'
-        message = {
-          translation: `SYNCHRONIZER.NEW_TRANSFER_${type}`,
-          options: {
-            address: truncateMiddle(wallet.address),
-            amount: `${this.$getters['session/network'].symbol}${(transaction.amount / 1e8)}`,
-            sender: truncateMiddle(transaction.sender),
-            recipient: truncateMiddle(transaction.recipient)
+        default: {
+          const type = transaction.sender === wallet.address ? 'SENT' : 'RECEIVED'
+          message = {
+            translation: `SYNCHRONIZER.NEW_TRANSFER_${type}`,
+            options: {
+              address: truncateMiddle(wallet.address),
+              amount: `${this.$getters['session/network'].symbol}${(transaction.amount / 1e8)}`,
+              sender: truncateMiddle(transaction.sender),
+              recipient: truncateMiddle(transaction.recipient)
+            }
           }
+          break
         }
-        break
       }
+      this.$success(this.$t(message.translation, message.options))
     }
-    this.$success(this.$t(message.translation, message.options))
   }
 }
 
