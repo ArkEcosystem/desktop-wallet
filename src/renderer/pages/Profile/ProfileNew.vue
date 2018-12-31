@@ -318,6 +318,7 @@ export default {
     this.schema.language = this.language
     this.schema.currency = this.currency
     this.schema.theme = this.theme
+    this.selectNetwork(this.defaultNetworks.find(network => network.id === 'ark.mainnet'))
   },
 
   destroyed () {

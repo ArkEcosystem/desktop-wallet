@@ -12,6 +12,9 @@ describe('WalletAddress', () => {
       i18n,
       localVue,
       mocks: {
+        session_network: {
+          knownWallets: []
+        },
         wallet_formatAddress: address => address
       }
     })
@@ -22,7 +25,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 1 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.SECOND_SIGNATURE'))
   })
@@ -31,7 +39,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 2 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.DELEGATE_REGISTRATION'))
   })
@@ -40,7 +53,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 3, asset: { votes: ['+dummyAddress'] } },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.VOTE'))
   })
@@ -49,7 +67,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 3, asset: { votes: ['-dummyAddress'] } },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.UNVOTE'))
   })
@@ -58,7 +81,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 4 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.MULTI_SIGNATURE'))
   })
@@ -67,7 +95,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 5 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.IPFS'))
   })
@@ -76,7 +109,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 6 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.TIMELOCK_TRANSFER'))
   })
@@ -85,7 +123,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 7 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.MULTI_PAYMENT'))
   })
@@ -94,7 +137,12 @@ describe('WalletAddress', () => {
     const wrapper = shallowMount(WalletAddress, {
       propsData: { address: 'dummyAddress', type: 8 },
       i18n,
-      localVue
+      localVue,
+      mocks: {
+        session_network: {
+          knownWallets: []
+        }
+      }
     })
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.DELEGATE_RESIGNATION'))
   })
