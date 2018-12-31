@@ -127,6 +127,7 @@
                 :label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
                 :text="$t('PAGES.WALLET_NEW.STEP3.VERIFY_ALL_WORDS')"
                 class="my-3"
+                @change="onSwitch"
               />
 
               <PassphraseVerification
@@ -402,6 +403,10 @@ export default {
 
     moveTo (step) {
       this.step = step
+    },
+
+    onSwitch () {
+      this.isPassphraseVerified = false
     },
 
     onVerification () {

@@ -16,7 +16,8 @@ export default {
     layout: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
-    ledgerCache: null
+    ledgerCache: null,
+    transactionTableRowCount: 10
   }),
 
   getters: {
@@ -56,7 +57,8 @@ export default {
     hasGridLayout: state => state.layout === 'grid',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
-    ledgerCache: state => state.ledgerCache
+    ledgerCache: state => state.ledgerCache,
+    transactionTableRowCount: state => state.transactionTableRowCount
   },
 
   mutations: {
@@ -112,6 +114,10 @@ export default {
       state.ledgerCache = enabled
     },
 
+    SET_TRANSACTION_TABLE_ROW_COUNT (state, count) {
+      state.transactionTableRowCount = count
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -125,6 +131,7 @@ export default {
       state.backgroundUpdateLedger = true
       state.contentProtection = true
       state.ledgerCache = false
+      state.transactionTableRowCount = 10
     }
   },
 
@@ -144,6 +151,7 @@ export default {
       dispatch('setLayout', profile.layout)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
       dispatch('setLedgerCache', profile.ledgerCache)
+      dispatch('setTransactionTableRowCount', profile.transactionTableRowCount)
 
       return profile
     },
@@ -204,6 +212,10 @@ export default {
 
     setLayout ({ commit }, value) {
       commit('SET_LAYOUT', value)
+    },
+
+    setTransactionTableRowCount ({ commit }, value) {
+      commit('SET_TRANSACTION_TABLE_ROW_COUNT', value)
     }
   }
 }

@@ -264,7 +264,7 @@ export default {
      * @param {(String|Number)} value
      */
     updateInputValue (value) {
-      // Ignore empty and not valid values
+      // Ignore invalid values
       if (value && this.checkAmount(value)) {
         let number = Number(value.toString().replace(',', '.'))
         number.toString().includes('-')
