@@ -184,6 +184,9 @@ class Action {
   }
 
   displayNewTransaction (transaction, wallet) {
+    if (wallet.isContact) {
+      return
+    }
     let message = {}
     switch (transaction.type) {
       case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
