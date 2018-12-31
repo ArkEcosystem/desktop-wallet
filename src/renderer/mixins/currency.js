@@ -90,6 +90,11 @@ export default {
         .replace(cryptoPlaceholder, cryptoCurrency)
     },
 
+    currency_simpleFormatCrypto (value, network) {
+      const { token } = network || this.session_network
+      return `${value} ${token}`
+    },
+
     currency_subToUnit (value, network) {
       const { fractionDigits } = network || this.session_network
       return new BigNumber(value.toString()).dividedBy(Math.pow(10, fractionDigits)).toString()
