@@ -21,6 +21,10 @@ export default new BaseModel({
       minLength: 3,
       maxLength: 3
     },
+    timeFormat: {
+      type: 'string',
+      default: 'Default'
+    },
     isMarketChartEnabled: {
       type: 'boolean',
       format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true

@@ -162,7 +162,7 @@
 
       <ListDividedItem
         :label="$t('TRANSACTION.TIMESTAMP')"
-        :value="$d(transaction.timestamp, 'long')"
+        :value="formatter_date(transaction.timestamp)"
       />
 
       <ListDividedItem
