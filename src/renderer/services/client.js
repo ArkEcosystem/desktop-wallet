@@ -148,6 +148,24 @@ export default class ClientService {
   }
 
   /**
+   * Fetches the voters of the given delegates and returns the number of total voters
+   *
+   * @return {Number}
+   */
+  async fetchDelegateVoters (delegate, { page, limit } = {}) {
+    if (this.__version === 1) {
+      const response = await this.client.resource('delegates').voters(delegate.publicKey)
+      if (response.success) {
+        return response.accounts.length
+      }
+      return 0
+    }
+    // v2
+    const { data } = await this.client.resource('delegates').voters(delegate.username, { page, limit })
+    return data.meta.totalCount
+  }
+
+  /**
    * Fetches a delegate based on the given id
    * id can be public key, username (or wallet address if v2)
    *
