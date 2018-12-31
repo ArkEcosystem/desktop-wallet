@@ -27,7 +27,8 @@ export default {
     WARNING: 'Warning',
     FETCH: 'Fetch',
     REMOVE: 'Remove',
-    OTHER: 'Other'
+    OTHER: 'Other',
+    VERIFIED_ADDRESS: 'This is a verified address'
   },
 
   ANNOUNCEMENTS: {
