@@ -16,7 +16,21 @@ export default {
 
     formatter_date (value, format) {
       moment.locale(window.navigator.userLanguage || window.navigator.language)
-      return format ? moment(value).format(format) : moment(value).format('L LTS')
+      // Simply return based on format if one is specified
+      if (format) {
+        return moment(value).format(format)
+      }
+
+      // Default = L LTS, 12h = L h:mm:ss, 24h = L HH:mm:ss
+      let defaultFormat = 'L LTS'
+      const timeFormat = this.session_profile.timeFormat
+      console.log(timeFormat)
+      if (timeFormat === '12h') {
+        defaultFormat = 'L h:mm:ss A'
+      } else if (timeFormat === '24h') {
+        defaultFormat = 'L HH:mm:ss'
+      }
+      return moment(value).format(defaultFormat)
     }
   }
 }
