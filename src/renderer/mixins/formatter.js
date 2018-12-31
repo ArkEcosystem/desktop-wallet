@@ -24,7 +24,6 @@ export default {
       // Default = L LTS, 12h = L h:mm:ss, 24h = L HH:mm:ss
       let defaultFormat = 'L LTS'
       const timeFormat = this.session_profile.timeFormat
-      console.log(timeFormat)
       if (timeFormat === '12h') {
         defaultFormat = 'L h:mm:ss A'
       } else if (timeFormat === '24h') {
