@@ -36,6 +36,13 @@
         <span class="hidden xl:block">
           {{ name | truncate(30) }}
         </span>
+        <SvgIcon
+          v-if="isKnownWallet()"
+          v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
+          name="verified-address"
+          view-box="0 0 18 18"
+          class="ml-2"
+        />
       </div>
 
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
@@ -77,7 +84,7 @@
         >
           <SvgIcon
             :name="showPublicKey ? 'world' : 'key'"
-            view-box="0 0 18 18"
+            view-box="0 0 16 16"
           />
         </button>
       </p>
@@ -161,6 +168,15 @@ export default {
     },
     labelTooltip () {
       return this.showPublicKey ? this.$t('WALLET_HEADING.ACTIONS.SHOW_ADDRESS') : this.$t('WALLET_HEADING.ACTIONS.SHOW_PUBLIC_KEY')
+    },
+    verifiedAddressText () {
+      let verifiedText = ''
+      let knownWallet = this.isKnownWallet()
+      if (knownWallet && knownWallet !== this.name) {
+        verifiedText = `${knownWallet} - `
+      }
+
+      return verifiedText + this.$t('COMMON.VERIFIED_ADDRESS')
     }
   },
 
@@ -173,6 +189,10 @@ export default {
   methods: {
     togglePublicKey () {
       this.showPublicKey = !this.showPublicKey
+    },
+
+    isKnownWallet () {
+      return this.session_network.knownWallets[this.address]
     },
 
     // Called by the parent when the address changed
