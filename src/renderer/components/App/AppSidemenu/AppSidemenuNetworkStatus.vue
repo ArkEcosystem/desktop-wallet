@@ -55,7 +55,7 @@
             {{ $t('PEER.LAST_CHECKED') }}
           </div>
           <div class="text-md text-white">
-            {{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}
+            {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
           </div>
         </div>
         <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
