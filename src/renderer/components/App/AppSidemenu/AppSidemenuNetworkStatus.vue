@@ -256,6 +256,10 @@ export default {
   @apply .text-white;
 }
 
+.AppSidemenuNetworkStatus__peer .MenuDropdownHandler span svg {
+  transform: rotate(-180deg);
+}
+
 .AppSidemenuNetworkStatus__ButtonModal {
   @apply block;
 }
