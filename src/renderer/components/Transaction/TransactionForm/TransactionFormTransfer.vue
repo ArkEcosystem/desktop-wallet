@@ -183,9 +183,9 @@ export default {
     },
     // Customize the message to display the minimum amount as subunit
     amountTooLowError () {
-      const { fractionDigits, token } = this.walletNetwork
+      const { fractionDigits } = this.walletNetwork
       const minimumAmount = Math.pow(10, -fractionDigits)
-      const amount = this.currency_format(minimumAmount, { currency: token, currencyDisplay: 'code', subunit: true })
+      const amount = this.currency_simpleFormatCrypto(minimumAmount.toFixed(fractionDigits))
       return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
     },
     notEnoughBalanceError () {

@@ -264,12 +264,14 @@ export default {
      * @param {(String|Number)} value
      */
     updateInputValue (value) {
-      // Ignore invalid values
-      if (!value || this.checkAmount(value)) {
+      if (value === '') {
+        this.inputValue = ''
+        return true
+      } else if (value && this.checkAmount(value)) {
         let number = Number(value.toString().replace(',', '.'))
         number.toString().includes('-')
           ? this.inputValue = number.toFixed(number.toString().split('-')[1]) // Small numbers will be like 1e-7 so we use the number after '-' for toFixed()
-          : this.inputValue = value ? value.toString().replace(',', '.') : ''
+          : this.inputValue = value.toString().replace(',', '.')
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
         return true

@@ -15,7 +15,7 @@
       </slot>
     </span>
 
-    <span class="flex pl-2 pr-1 rotate-vertical">
+    <span class="flex pl-2 pr-1">
       <SvgIcon
         :class="{ 'opacity-25': iconDisabled }"
         name="arrow-dropdown"
@@ -74,9 +74,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.rotate-vertical {
-  transform: rotate(-180deg);
-}
-</style>
