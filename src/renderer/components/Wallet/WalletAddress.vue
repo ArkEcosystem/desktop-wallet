@@ -1,6 +1,6 @@
 
 <template>
-  <span>
+  <span class="flex items-center">
     <span v-if="!type">
       <a
         v-tooltip="{
@@ -53,14 +53,27 @@
     <span v-else-if="type === 8">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
+
+    <SvgIcon
+      v-if="isKnownWallet()"
+      v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
+      name="verified-address"
+      view-box="0 0 14 14"
+      class="ml-2 text-blue"
+    />
   </span>
 </template>
 
 <script>
 import store from '@/store'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletAddress',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     address: {
@@ -117,6 +130,16 @@ export default {
 
     votedDelegateAddress () {
       return this.votedDelegate ? this.votedDelegate.address : ''
+    },
+
+    verifiedAddressText () {
+      let verifiedText = ''
+      let knownWallet = this.isKnownWallet()
+      if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
+        verifiedText = `${knownWallet} - `
+      }
+
+      return verifiedText + this.$t('COMMON.VERIFIED_ADDRESS')
     }
   },
 
@@ -129,6 +152,10 @@ export default {
   methods: {
     determineVote () {
       this.votedDelegate = store.getters['delegate/byPublicKey'](this.votePublicKey)
+    },
+
+    isKnownWallet () {
+      return this.session_network.knownWallets[this.address]
     },
 
     openAddress () {

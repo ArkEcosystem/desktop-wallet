@@ -5,12 +5,12 @@ export default {
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
-    BIP39_LANGUAGE: 'BIP39 Language',
+    BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
     DONE: 'Done',
     FINISH: 'Finish',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
-    LANGUAGE: 'Language',
+    LANGUAGE: 'Application Language',
     NETWORK: 'Network',
     PREV: 'Prev',
     NEXT: 'Next',
@@ -27,7 +27,9 @@ export default {
     WARNING: 'Warning',
     FETCH: 'Fetch',
     REMOVE: 'Remove',
-    OTHER: 'Other'
+    OTHER: 'Other',
+    VERIFIED_ADDRESS: 'This is a verified address',
+    TIME_FORMAT: 'Time format'
   },
 
   ANNOUNCEMENTS: {
@@ -93,16 +95,17 @@ export default {
   },
 
   PEER: {
+    BEST: 'Connect to best',
     CONNECTED: 'Connected to peer',
-    CONNECT_CUSTOM: 'Connect your peer',
+    CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
-    DELAY: 'Delay',
+    DELAY: 'Latency',
     FAILED_REFRESH: 'Failed to refresh peers',
-    HEIGHT: 'Height',
+    HEIGHT: 'Block height',
     LAST_CHECKED: 'Last checked',
     NONE: 'None',
     NO_CONNECT: 'Could not connect',
-    PEER: 'Peer:',
+    PEER: 'Peer',
     STATUS_CHECK_FAILED: 'Status check failed',
     WRONG_NETWORK: 'Wrong network'
   },
@@ -140,6 +143,12 @@ export default {
     'en-US': 'English',
     'es-ES': 'Spanish',
     'pt-BR': 'Portugues - Brazil'
+  },
+
+  TIME_FORMAT: {
+    'Default': 'Default',
+    '12h': '12h',
+    '24h': '24h'
   },
 
   BIP39_LANGUAGES: {
@@ -184,7 +193,7 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
-    NETWORKS: 'My networks',
+    NETWORKS: 'Manage networks',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
