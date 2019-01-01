@@ -39,7 +39,7 @@
         :wallet-network="walletNetwork"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
-        @focus="setSendAll(false)"
+        @focus="setSendAll(false,false)"
       />
 
       <InputSwitch
@@ -173,7 +173,7 @@ export default {
     showEncryptLoader: false,
     showLedgerLoader: false,
     bip38Worker: null,
-    previousAmount: null,
+    previousAmount: '',
     wallet: null
   }),
 
@@ -294,14 +294,15 @@ export default {
       this.$set(this.form, 'fee', fee)
       this.ensureAvailableAmount()
     },
-
-    setSendAll (isActive) {
+    setSendAll (isActive, setPreviousAmount = true) {
       if (isActive) {
         this.previousAmount = this.form['amount']
       }
       if (!isActive) {
-        this.$set(this.form, 'amount', this.previousAmount)
-        this.previousAmount = null
+        if (setPreviousAmount) {
+          this.$set(this.form, 'amount', this.previousAmount)
+        }
+        this.previousAmount = ''
       }
       this.isSendAllActive = isActive
       this.ensureAvailableAmount()
