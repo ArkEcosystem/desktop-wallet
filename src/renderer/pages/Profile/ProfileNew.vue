@@ -1,22 +1,26 @@
 <template>
-  <div class="ProfileNew relative bg-theme-feature rounded-lg">
-    <main class="flex flex-col sm:flex-row h-full">
+  <div class="ProfileNew relative">
+    <main class="flex h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="ProfileNew__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
+        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex lg:w-2/5 xl:w-1/2 mr-2 rounded-lg items-center justify-center"
       >
-        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
-          <h3 class="mb-2 text-theme-page-instructions-text">
+        <div class="w-2/3 text-center">
+          <h1 class="text-inherit">
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
-          </h3>
-
-          <p>
+          </h1>
+          <p class="text-center py-2 leading-normal">
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>
+
+          <img
+            :src="assets_loadImage(`pages/profile-new/step-${step}.svg`)"
+            :title="$t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
+            class="w-4/5 mt-10"
+          >
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
+      <div class="flex-1 p-10 bg-theme-feature rounded-lg">
         <MenuStep
           v-model="step"
         >
@@ -399,10 +403,6 @@ export default {
 
 <style scoped>
 /* To display the images scaled to the size of the button */
-.ProfileNew__instructions {
-  background-size: cover;
-  background-position: center center;
-}
 .ProfileNew .svg-button--selected > span, .svg-button--selected > img {
   color: #fff;
 }
