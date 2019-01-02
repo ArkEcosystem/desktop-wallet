@@ -5,12 +5,12 @@ export default {
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
-    BIP39_LANGUAGE: 'BIP39 Language',
+    BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
     DONE: 'Done',
     FINISH: 'Finish',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
-    LANGUAGE: 'Language',
+    LANGUAGE: 'Application Language',
     NETWORK: 'Network',
     PREV: 'Prev',
     NEXT: 'Next',
@@ -27,7 +27,9 @@ export default {
     WARNING: 'Warning',
     FETCH: 'Fetch',
     REMOVE: 'Remove',
-    OTHER: 'Other'
+    OTHER: 'Other',
+    VERIFIED_ADDRESS: 'This is a verified address',
+    TIME_FORMAT: 'Time format'
   },
 
   ANNOUNCEMENTS: {
@@ -40,7 +42,7 @@ export default {
     WELCOME: {
       TITLE: 'Welcome to the {app}',
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
-      FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay attention to these warnings.'
+      FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay close attention to these warnings.'
     },
     POWER: {
       TITLE: 'Power',
@@ -93,16 +95,17 @@ export default {
   },
 
   PEER: {
+    BEST: 'Connect to best',
     CONNECTED: 'Connected to peer',
-    CONNECT_CUSTOM: 'Connect your peer',
+    CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
-    DELAY: 'Delay',
+    DELAY: 'Latency',
     FAILED_REFRESH: 'Failed to refresh peers',
-    HEIGHT: 'Height',
+    HEIGHT: 'Block height',
     LAST_CHECKED: 'Last checked',
     NONE: 'None',
     NO_CONNECT: 'Could not connect',
-    PEER: 'Peer:',
+    PEER: 'Peer',
     STATUS_CHECK_FAILED: 'Status check failed',
     WRONG_NETWORK: 'Wrong network'
   },
@@ -140,6 +143,12 @@ export default {
     'en-US': 'English',
     'es-ES': 'Spanish',
     'pt-BR': 'Portugues - Brazil'
+  },
+
+  TIME_FORMAT: {
+    'Default': 'Default',
+    '12h': '12h',
+    '24h': '24h'
   },
 
   BIP39_LANGUAGES: {
@@ -184,7 +193,7 @@ export default {
     CURRENT_PROFILE: 'Your current profile is "{profileName}"',
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
-    NETWORK_OVERVIEW: 'Network overview',
+    NETWORKS: 'Manage networks',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -285,6 +294,11 @@ export default {
 
   INPUT_GRID_MODAL: {
     TITLE: 'Select'
+  },
+
+  WALLET_SELECTION: {
+    PROFILE: 'Sender Profile',
+    WALLET: 'Sender Wallet'
   },
 
   MODAL_CONFIRMATION: {
@@ -448,21 +462,24 @@ export default {
           HEADER: 'Create a profile',
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '1. Profile details'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
           TEXT: 'Choose the network of this profile.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '2. Network'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
           TEXT: 'Customize this application selecting one of our themes and backgrounds.'
         },
-        NAME: 'Profile name'
+        NAME: 'Profile name',
+        TITLE: '3. Appearance'
       }
     },
 
@@ -595,7 +612,8 @@ export default {
     },
 
     WALLET_SHOW: {
-      NO_VOTE: 'Wallet hasn\'t voted'
+      NO_VOTE: 'Wallet hasn\'t voted',
+      ADD_CONTACT: 'Add to contacts'
     }
   },
 
@@ -648,7 +666,8 @@ export default {
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
-      EXPIRED: 'Transaction expired before it was processed: {transactionId}'
+      EXPIRED: 'Transaction expired before it was processed: {transactionId}',
+      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
@@ -678,9 +697,12 @@ export default {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
     },
+    WARNING: {
+      BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
+    },
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
-    CONFIRMATION_COUNT: '{0} Confirmations',
+    CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
     DISCARD: 'Discard',
@@ -780,7 +802,7 @@ export default {
     PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
     PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
-    APPROVAL: 'Approval',
+    APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
     MISSED: 'missed',
@@ -800,9 +822,11 @@ export default {
 
   WALLET_RENAME: {
     TITLE: 'Rename Wallet',
+    TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
+    ADD: 'Add wallet',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Specify a name for you wallet: {wallet}',
+    ADDRESS_INFO: 'Set a name for this wallet: {wallet}',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 

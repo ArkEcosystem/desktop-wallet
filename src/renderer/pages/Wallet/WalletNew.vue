@@ -127,6 +127,7 @@
                 :label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
                 :text="$t('PAGES.WALLET_NEW.STEP3.VERIFY_ALL_WORDS')"
                 class="my-3"
+                @change="onSwitch"
               />
 
               <PassphraseVerification
@@ -305,11 +306,18 @@ export default {
     additionalSuggestions () {
       const passphrases = Object.values(this.wallets)
 
-      return flatten(passphrases.map(passphrase => passphrase.split(' ')))
+      // Check for Japanese "space"
+      return flatten(passphrases.map(passphrase =>
+        /\u3000/.test(passphrase) ? passphrase.split('\u3000') : passphrase.split(' ')
+      ))
     },
     passphraseWords () {
       const passphrase = this.schema.passphrase
       if (passphrase) {
+        // Check for Japanese "space"
+        if (/\u3000/.test(passphrase)) {
+          return this.schema.passphrase.split('\u3000')
+        }
         return this.schema.passphrase.split(' ')
       }
       return []
@@ -395,6 +403,10 @@ export default {
 
     moveTo (step) {
       this.step = step
+    },
+
+    onSwitch () {
+      this.isPassphraseVerified = false
     },
 
     onVerification () {

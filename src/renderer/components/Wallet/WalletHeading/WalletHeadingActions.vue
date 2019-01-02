@@ -9,7 +9,8 @@
       class="-mr-2"
     />
     <button
-      class="option-button flex items-center self-stretch ml-2 p-2"
+      v-if="!currentWallet.isWatchOnly"
+      class="option-heading-button flex items-center self-stretch ml-2 p-2"
       @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
     >
       <SvgIcon
@@ -43,7 +44,11 @@ export default {
   },
 
   computed: {
-    ...mapGetters('wallet', ['secondaryButtonsVisible'])
+    ...mapGetters('wallet', ['secondaryButtonsVisible']),
+
+    currentWallet () {
+      return this.wallet_fromRoute
+    }
   }
 }
 </script>

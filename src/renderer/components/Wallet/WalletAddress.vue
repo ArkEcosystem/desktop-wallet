@@ -1,10 +1,17 @@
 
 <template>
-  <span>
+  <span class="flex items-center">
     <span v-if="!type">
-      <span v-tooltip="address">
-        {{ wallet_formatAddress(address, 10) }}
-      </span>
+      <a
+        v-tooltip="{
+          content: address,
+          container: tooltipContainer
+        }"
+        href="#"
+        @click.stop="openAddress"
+      >
+        {{ wallet_formatAddress(address, addressLength) }}
+      </a>
     </span>
     <span v-else-if="type === 1">
       {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
@@ -13,13 +20,23 @@
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
     <span v-else-if="type === 3">
-      {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
-      <span
-        v-if="votedDelegate"
-        class="italic"
+      <a
+        v-tooltip="{
+          content: votedDelegateAddress,
+          container: tooltipContainer
+        }"
+        :class="[isUnvote ? 'text-red' : 'text-green']"
+        href="#"
+        @click.stop="openAddress"
       >
-        ({{ votedDelegateUsername }})
-      </span>
+        {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
+        <span
+          v-if="votedDelegate"
+          class="italic"
+        >
+          ({{ votedDelegateUsername }})
+        </span>
+      </a>
     </span>
     <span v-else-if="type === 4">
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
@@ -36,14 +53,27 @@
     <span v-else-if="type === 8">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
+
+    <SvgIcon
+      v-if="isKnownWallet()"
+      v-tooltip="{ content: verifiedAddressText, trigger: 'hover' }"
+      name="verified-address"
+      view-box="0 0 14 14"
+      class="ml-2 text-blue"
+    />
   </span>
 </template>
 
 <script>
 import store from '@/store'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletAddress',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     address: {
@@ -60,6 +90,16 @@ export default {
       type: Number,
       required: false,
       default: () => 0
+    },
+    tooltipContainer: {
+      type: String,
+      required: false,
+      default: () => '#app'
+    },
+    addressLength: {
+      type: Number,
+      required: false,
+      default: 10
     }
   },
 
@@ -86,6 +126,20 @@ export default {
 
     votedDelegateUsername () {
       return this.votedDelegate ? this.votedDelegate.username : ''
+    },
+
+    votedDelegateAddress () {
+      return this.votedDelegate ? this.votedDelegate.address : ''
+    },
+
+    verifiedAddressText () {
+      let verifiedText = ''
+      let knownWallet = this.isKnownWallet()
+      if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
+        verifiedText = `${knownWallet} - `
+      }
+
+      return verifiedText + this.$t('COMMON.VERIFIED_ADDRESS')
     }
   },
 
@@ -98,6 +152,18 @@ export default {
   methods: {
     determineVote () {
       this.votedDelegate = store.getters['delegate/byPublicKey'](this.votePublicKey)
+    },
+
+    isKnownWallet () {
+      return this.session_network.knownWallets[this.address]
+    },
+
+    openAddress () {
+      if (this.votePublicKey) {
+        this.$router.push({ name: 'wallet-show', params: { address: this.votedDelegateAddress } })
+      } else {
+        this.$router.push({ name: 'wallet-show', params: { address: this.address } })
+      }
     }
   }
 }

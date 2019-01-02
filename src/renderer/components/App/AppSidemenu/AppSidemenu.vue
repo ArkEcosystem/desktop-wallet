@@ -113,7 +113,7 @@
               class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
             >
               <SvgIcon
-                class="AppSidemenu__avatar__dots"
+                class="AppSidemenu__avatar__dots text-grey-dark"
                 name="point"
                 view-box="0 0 14 14"
               />

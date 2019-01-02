@@ -39,7 +39,7 @@ export default {
   },
 
   mounted () {
-    this.items = this.collectItems()
+    this.collectItems()
 
     if (this.activeId) {
       this.switchToId(this.activeId)
@@ -48,7 +48,7 @@ export default {
 
   methods: {
     collectItems () {
-      return this.collections_filterChilds('MenuNavigationItem') || []
+      this.items = this.collections_filterChilds('MenuNavigationItem') || []
     },
 
     switchToId (id) {

@@ -41,7 +41,7 @@
           <div class="flex flex-col justify-center overflow-hidden pl-4">
             <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
               <RouterLink :to="{ name: 'wallet-show', params: { address: contact.id } }">
-                {{ wallet_nameOnContact(contact.address) || wallet_truncate(contact.address) }}
+                {{ wallet_name(contact.address) || wallet_truncate(contact.address) }}
               </RouterLink>
             </div>
             <span class="font-bold mt-2 text-lg">
@@ -71,7 +71,7 @@
 
 <script>
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { sortByProp } from '@/components/utils/Sorting'
+import { sortBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 
 export default {
@@ -90,8 +90,7 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      const prop = 'name'
-      return contacts.slice().sort(sortByProp(prop))
+      return sortBy(contacts, 'name')
     }
   },
 

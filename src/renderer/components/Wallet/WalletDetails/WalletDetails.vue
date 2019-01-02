@@ -3,6 +3,7 @@
     <WalletHeading class="sticky pin-t z-10" />
 
     <MenuTab
+      ref="menutab"
       v-model="currentTab"
       :class="{ 'rounded-bl-lg' : !isDelegatesTab || !votedDelegate }"
       class="flex-1 overflow-y-auto"
@@ -192,6 +193,11 @@ export default {
           // TODO
           break
       }
+    },
+    tabs () {
+      this.$nextTick(() => {
+        this.$refs.menutab.collectItems()
+      })
     }
   },
 

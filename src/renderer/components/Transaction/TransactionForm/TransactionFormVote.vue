@@ -35,6 +35,10 @@
           :label="$t('WALLET_DELEGATES.VOTES')"
           :value="formatter_votes(delegate.votes)"
         />
+        <ListDividedItem
+          :label="$t('WALLET_DELEGATES.VOTERS')"
+          :value="voters"
+        />
       </ListDivided>
 
       <button
@@ -163,6 +167,7 @@ export default {
       walletPassword: ''
     },
     forged: 0,
+    voters: 0,
     showEncryptLoader: false,
     showLedgerLoader: false,
     bip38Worker: null
@@ -211,6 +216,7 @@ export default {
 
   mounted () {
     this.fetchForged()
+    this.fetchVoters()
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
     }
@@ -236,6 +242,10 @@ export default {
     async fetchForged () {
       const forged = await this.$client.fetchDelegateForged(this.delegate)
       this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
+    },
+
+    async fetchVoters () {
+      this.voters = await this.$client.fetchDelegateVoters(this.delegate)
     },
 
     onFee (fee) {
@@ -318,7 +328,7 @@ export default {
     },
 
     emitNext (transaction) {
-      this.$emit('next', transaction)
+      this.$emit('next', { transaction })
     }
   },
 

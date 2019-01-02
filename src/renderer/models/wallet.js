@@ -49,6 +49,10 @@ export default new BaseModel({
     isDelegate: {
       type: 'boolean',
       default: false
+    },
+    isWatchOnly: {
+      type: 'boolean',
+      default: false
     }
   },
   required: ['address', 'name', 'profileId']

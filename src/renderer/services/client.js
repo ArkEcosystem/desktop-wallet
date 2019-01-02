@@ -8,6 +8,16 @@ import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
 export default class ClientService {
+  /*
+   * Normalizes the passphrase by decomposing any characters (if applicable)
+   * This is mainly used for the korean language where characters are combined while the passphrase was based on the decomposed consonants
+  */
+  normalizePassphrase (passphrase) {
+    if (passphrase) {
+      return passphrase.normalize('NFD')
+    }
+  }
+
   /**
    * Fetch the network configuration according to the version.
    * Create a new client to isolate the main client.
@@ -33,6 +43,21 @@ export default class ClientService {
       const { data } = await client.resource('node').configuration()
 
       return data.data
+    }
+  }
+
+  static async fetchFeeStatistics (server, apiVersion, timeout) {
+    // This is only for v2 networks
+    if (apiVersion === 1) {
+      return
+    }
+    const client = new ApiClient(server, apiVersion)
+    if (timeout) {
+      client.http.timeout = timeout
+    }
+    const { data } = await client.resource('node').configuration()
+    if (data.data && data.data.feeStatistics) {
+      return data.data.feeStatistics
     }
   }
 
@@ -126,6 +151,24 @@ export default class ClientService {
     }
 
     return { delegates, totalCount }
+  }
+
+  /**
+   * Fetches the voters of the given delegates and returns the number of total voters
+   *
+   * @return {Number}
+   */
+  async fetchDelegateVoters (delegate, { page, limit } = {}) {
+    if (this.__version === 1) {
+      const response = await this.client.resource('delegates').voters(delegate.publicKey)
+      if (response.success) {
+        return response.accounts.length
+      }
+      return 0
+    }
+    // v2
+    const { data } = await this.client.resource('delegates').voters(delegate.username, { page, limit })
+    return data.meta.totalCount
   }
 
   /**
@@ -396,6 +439,9 @@ export default class ClientService {
       .votesAsset(votes)
       .fee(fee)
 
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -424,6 +470,9 @@ export default class ClientService {
       .delegateRegistration()
       .usernameAsset(username)
       .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
 
     return this.__signTransaction({
       transaction,
@@ -459,6 +508,9 @@ export default class ClientService {
       .recipientId(recipientId)
       .vendorField(vendorField)
 
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -487,6 +539,8 @@ export default class ClientService {
       .signatureAsset(secondPassphrase)
       .fee(fee)
 
+    passphrase = this.normalizePassphrase(passphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -510,13 +564,13 @@ export default class ClientService {
     })
 
     if (passphrase) {
-      transaction = transaction.sign(passphrase)
+      transaction = transaction.sign(this.normalizePassphrase(passphrase))
     } else if (wif) {
       transaction = transaction.signWithWif(wif)
     }
 
     if (secondPassphrase) {
-      transaction = transaction.secondSign(secondPassphrase)
+      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
     }
 
     return returnObject ? transaction : transaction.getStruct()

@@ -132,7 +132,7 @@ export default {
     error () {
       let error = null
 
-      if (this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+      if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
         if (!this.$v.model.required) {
           error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {

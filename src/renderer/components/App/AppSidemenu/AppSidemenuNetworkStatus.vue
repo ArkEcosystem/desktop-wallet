@@ -8,6 +8,14 @@
       :is-horizontal="isHorizontal"
       class="AppSidemenuNetworkStatus__peer"
     >
+      <div class="text-xs mx-6 mb-2 text-theme-settings-heading">
+        <span class="float-left">
+          {{ $t('PEER.PEER') }}
+        </span>
+        <span class="float-right">
+          {{ $t('PEER.BEST') }}
+        </span>
+      </div>
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <button
           @click="toggleSelect('peers-menu')"
@@ -22,7 +30,6 @@
               :value="currentPeerId"
               :placeholder="peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')"
               :pin-above="true"
-              :prefix="$t('PEER.PEER')"
               class="inline-block text-white fill-white width-inherit"
               @select="setPeer"
             />
@@ -48,7 +55,7 @@
             {{ $t('PEER.LAST_CHECKED') }}
           </div>
           <div class="text-md text-white">
-            {{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}
+            {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
           </div>
         </div>
         <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
@@ -103,7 +110,7 @@
           class="mr-4"
         />
         <span class="font-semibold">
-          {{ $t('APP_SIDEMENU.NETWORK_OVERVIEW') }}
+          {{ $t('APP_SIDEMENU.NETWORKS') }}
         </span>
       </RouterLink>
     </div>
@@ -247,6 +254,10 @@ export default {
 
 .AppSidemenuNetworkStatus__peer .MenuDropdownHandler.text-theme-page-text-light {
   @apply .text-white;
+}
+
+.AppSidemenuNetworkStatus__peer .MenuDropdownHandler span svg {
+  transform: rotate(-180deg);
 }
 
 .AppSidemenuNetworkStatus__ButtonModal {
