@@ -28,7 +28,8 @@ export default {
     FETCH: 'Fetch',
     REMOVE: 'Remove',
     OTHER: 'Other',
-    VERIFIED_ADDRESS: 'This is a verified address'
+    VERIFIED_ADDRESS: 'This is a verified address',
+    TIME_FORMAT: 'Time format'
   },
 
   ANNOUNCEMENTS: {
@@ -142,6 +143,12 @@ export default {
     'en-US': 'English',
     'es-ES': 'Spanish',
     'pt-BR': 'Portugues - Brazil'
+  },
+
+  TIME_FORMAT: {
+    'Default': 'Default',
+    '12h': '12h',
+    '24h': '24h'
   },
 
   BIP39_LANGUAGES: {

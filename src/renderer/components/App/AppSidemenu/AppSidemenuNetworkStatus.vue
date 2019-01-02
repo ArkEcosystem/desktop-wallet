@@ -55,7 +55,7 @@
             {{ $t('PEER.LAST_CHECKED') }}
           </div>
           <div class="text-md text-white">
-            {{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}
+            {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
           </div>
         </div>
         <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
@@ -254,6 +254,10 @@ export default {
 
 .AppSidemenuNetworkStatus__peer .MenuDropdownHandler.text-theme-page-text-light {
   @apply .text-white;
+}
+
+.AppSidemenuNetworkStatus__peer .MenuDropdownHandler span svg {
+  transform: rotate(-180deg);
 }
 
 .AppSidemenuNetworkStatus__ButtonModal {
