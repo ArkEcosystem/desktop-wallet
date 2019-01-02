@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="flex-1 p-10 bg-theme-feature rounded-lg">
+      <div class="flex-1 p-10 bg-theme-feature rounded-lg overflow-y-auto">
         <MenuStep
           v-model="step"
         >
