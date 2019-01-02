@@ -209,18 +209,6 @@ export default {
 
   data: () => ({
     step: 1,
-    backgroundImages: {
-      true: {
-        1: 'pages/profile-new/background-step-1-dark.png',
-        2: 'pages/profile-new/background-step-2-dark.png',
-        3: 'pages/profile-new/background-step-3-dark.png'
-      },
-      false: {
-        1: 'pages/profile-new/background-step-1.png',
-        2: 'pages/profile-new/background-step-2.png',
-        3: 'pages/profile-new/background-step-3.png'
-      }
-    },
     selectedNetwork: null
   }),
 
