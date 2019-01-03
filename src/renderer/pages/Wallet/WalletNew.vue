@@ -542,7 +542,8 @@ export default {
 }
 
 .WalletNew__ButtonReload-colorClass:hover {
-  @apply .bg-blue .text-grey-light;
-  transition: all 0.5s
+  @apply .bg-blue .text-white;
+  box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
+  transition: all .1s ease-in
 }
 </style>
