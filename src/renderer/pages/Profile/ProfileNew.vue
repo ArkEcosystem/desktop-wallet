@@ -2,9 +2,9 @@
   <div class="ProfileNew relative">
     <main class="flex h-full">
       <div
-        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex lg:w-2/5 xl:w-1/2 mr-2 rounded-lg items-center justify-center"
+        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex lg:w-2/5 xl:w-3/5 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="w-2/3 text-center">
+        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
           <h1 class="text-inherit">
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
           </h1>
@@ -15,7 +15,7 @@
           <img
             :src="assets_loadImage(`pages/profile-new/step-${step}.svg`)"
             :title="$t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
-            class="w-4/5 mt-10"
+            class="w-full xl:w-4/5 mt-10"
           >
         </div>
       </div>
@@ -92,53 +92,26 @@
             @back="moveTo(1)"
             @next="moveTo(3)"
           >
-            <div class="flex flex-row h-full w-full py-2">
+            <div class="flex flex-col">
               <!-- Show the two default networks, and a button to load more -->
-              <div
-                v-for="network in defaultNetworks"
-                :key="network.id"
-              >
-                <div
-                  :title="network.title"
-                  :class="{
-                    'svg-button--selected': selectedNetwork && selectedNetwork.id === network.id,
-                    'rounded-l-lg': first.id === network.id,
-                    'rounded-r-lg': last.id === network.id,
-                  }"
-                  class="svg-button w-30 h-30 text-center text-theme-page-text"
-                  @click="selectNetwork(network)"
-                >
-                  <div
-                    class="flex items-center justify-center"
-                  >
-                    <img
-                      class="w-22 h-22 p-4"
-                      :src="`${assets_loadImage(network.svg)}`"
-                    >
-                  </div>
-                  <span class="text-theme-page-text font-semibold">
-                    {{ network.textContent }}
-                  </span>
-                </div>
-              </div>
-              <div
-                v-if="networks.length > defaultNetworks.length"
-                class="flex items-center ml-3"
-              >
-                <ButtonModal
-                  class="rounded-lg w-18 h-18 border-2 cursor-pointer rounded-lg hover:shadow transition text-center text-4xl text-center p-1 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text border-transparent"
-                  icon="point"
-                  label=""
-                >
-                  <template slot-scope="{ toggle, isOpen }">
-                    <NetworkSelectionModal
-                      v-if="isOpen"
-                      :toggle="toggle"
-                      @cancel="toggle"
-                      @selected="selectNetworkFromModal"
-                    />
-                  </template>
-                </ButtonModal>
+              <SelectionNetwork
+                :selected="selectedNetwork"
+                :networks="defaultNetworks"
+                @select="selectNetwork"
+              />
+              <div>
+                <p class="mt-5 mb-1 text-theme-page-text font-semibold">
+                  {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK') }}
+                </p>
+                <p class="text-theme-page-text-light mb-5">
+                  {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK_EXPLAIN') }}
+                </p>
+                <SelectionNetwork
+                  :selected="selectedNetwork"
+                  :networks="customNetworks"
+                  :is-custom="true"
+                  @select="selectNetwork"
+                />
               </div>
             </div>
           </MenuStepItem>
@@ -182,22 +155,22 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { BIP39, I18N, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { ButtonModal } from '@/components/Button'
-import { NetworkSelectionModal } from '@/components/Network'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
-import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
+import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
 export default {
   name: 'ProfileNew',
 
   components: {
     ButtonModal,
-    NetworkSelectionModal,
     SelectionAvatar,
     SelectionBackground,
+    SelectionNetwork,
     SelectionTheme,
     MenuStep,
     MenuStepItem,
@@ -269,24 +242,12 @@ export default {
         return all
       }, {})
     },
-    networks () {
-      return this.$store.getters['network/all']
-    },
     defaultNetworks () {
-      return NETWORKS.map(network => {
-        return {
-          id: network.id,
-          title: network.description,
-          textContent: network.title,
-          svg: `networks/${network.id}.svg`
-        }
-      })
+      return NETWORKS
     },
-    first () {
-      return this.defaultNetworks[0]
-    },
-    last () {
-      return this.defaultNetworks[this.defaultNetworks.length - 1]
+    customNetworks () {
+      const networks = this.$store.getters['network/customNetworks']
+      return Object.values(networks)
     },
     nameError () {
       if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
@@ -388,10 +349,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* To display the images scaled to the size of the button */
-.ProfileNew .svg-button--selected > span, .svg-button--selected > img {
-  color: #fff;
-}
-</style>

@@ -468,7 +468,9 @@ export default {
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
-          TEXT: 'Choose the network of this profile.'
+          TEXT: 'Choose the network of this profile.',
+          CUSTOM_NETWORK: 'or you can choose a custom network',
+          CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.'
         },
         NAME: 'Profile name',
         TITLE: '2. Network'
