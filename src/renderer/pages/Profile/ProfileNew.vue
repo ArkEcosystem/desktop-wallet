@@ -155,10 +155,8 @@
 </template>
 
 <script>
-/* eslint-disable */
 import { BIP39, I18N, NETWORKS } from '@config'
 import Profile from '@/models/profile'
-import { ButtonModal } from '@/components/Button'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
@@ -167,7 +165,6 @@ export default {
   name: 'ProfileNew',
 
   components: {
-    ButtonModal,
     SelectionAvatar,
     SelectionBackground,
     SelectionNetwork,
