@@ -5,7 +5,13 @@
     @close="emitCancel"
   >
     <div class="flex flex-col justify-center">
-      <p>{{ $t('WALLET_RENAME.ADDRESS_INFO', { wallet: walletName }) }}</p>
+      <p>
+        {{ $t('WALLET_RENAME.ADDRESS_INFO') }}
+        <span class="font-bold">
+          {{ walletName }}
+        </span>
+      </p>
+
       <InputText
         v-model="schema.name"
         :is-invalid="$v.schema.name.$invalid"
