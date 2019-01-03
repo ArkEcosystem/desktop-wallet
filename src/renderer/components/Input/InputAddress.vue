@@ -112,6 +112,11 @@ export default {
       required: false,
       default: false
     },
+    errorNoValue: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     value: {
       type: String,
       required: true
@@ -132,7 +137,7 @@ export default {
     error () {
       let error = null
 
-      if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+      if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused) && this.errorNoValue) {
         if (!this.$v.model.required) {
           error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
@@ -150,7 +155,7 @@ export default {
     },
 
     isInvalid () {
-      return this.$v.model.$dirty && !!this.error
+      return this.$v.model.$dirty && !!this.error && this.errorNoValue
     },
 
     model: {

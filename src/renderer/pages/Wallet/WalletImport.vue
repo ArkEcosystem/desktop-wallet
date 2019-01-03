@@ -27,35 +27,20 @@
             @next="!useOnlyAddress ? moveTo(2) : moveTo(3)"
           >
             <div class="flex flex-col h-full w-full justify-around">
-              <InputSwitch
-                :label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
-                :text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_ADDRESS')"
-                :is-active="useOnlyAddress"
-                class="my-3"
-                @change="setOnlyAddress"
-              />
-
-              <InputSwitch
-                :label="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_PASSPHRASE')"
-                :text="$t('PAGES.WALLET_IMPORT.STEP1.ONLY_PASSPHRASE')"
-                :is-active="useOnlyPassphrase"
-                class="my-3"
-                @change="setOnlyPassphrase"
-              />
 
               <!-- TODO check duplicate here when db store is available -->
               <InputAddress
-                v-show="!useOnlyPassphrase"
                 ref="addressInput"
                 v-model="schema.address"
                 :is-invalid="$v.schema.address.$invalid"
                 :helper-text="addressError"
                 :pub-key-hash="session_network.version"
+                :required="false"
+                :error-no-value="false"
                 class="my-3"
               />
 
               <PassphraseInput
-                v-show="!useOnlyAddress"
                 ref="passphrase"
                 v-model="schema.passphrase"
                 :address="useOnlyPassphrase ? null : schema.address"
@@ -150,7 +135,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { InputAddress, InputPassword, InputSwitch, InputText } from '@/components/Input'
+import { InputAddress, InputPassword, InputText } from '@/components/Input'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -163,7 +148,6 @@ export default {
   components: {
     InputAddress,
     InputPassword,
-    InputSwitch,
     InputText,
     MenuStep,
     MenuStepItem,
@@ -176,7 +160,7 @@ export default {
   data: () => ({
     ensureEntirePassphrase: false,
     step: 1,
-    useOnlyAddress: false,
+    useOnlyAddress: true,
     useOnlyPassphrase: false,
     wallet: {},
     walletPassword: null,
@@ -304,6 +288,15 @@ export default {
     setOnlyPassphrase (useOnlyPassphrase) {
       this.useOnlyAddress = false
       this.useOnlyPassphrase = useOnlyPassphrase
+    },
+
+    checkOnlyAddress (e) {
+      console.log(this.schema.passphrase)
+      if (!this.schema.passphrase) {
+        this.setOnlyAddress(true)
+      } else {
+        console.log(this.schema.passphrase)
+      }
     }
   },
 
