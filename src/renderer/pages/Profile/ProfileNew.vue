@@ -130,12 +130,12 @@
                 {{ $t('COMMON.SELECT_THEME') }}
               </h5>
 
-              <SelectionTheme
-                :max-visible-items="2"
-                :selected="theme"
-                class="mb-5"
-                @select="selectTheme"
-              />
+              <div class="flex justify-between pb-5 mb-5 border-b border-dashed border-theme-line-separator">
+                <p class="text-theme-page-text-light">
+                  {{ $t('PAGES.PROFILE_NEW.STEP3.INSTRUCTIONS.THEME') }}
+                </p>
+                <SelectionTheme v-model="theme" />
+              </div>
 
               <h5 class="mb-2">
                 {{ $t('COMMON.SELECT_BACKGROUND') }}

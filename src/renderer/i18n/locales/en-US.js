@@ -478,7 +478,8 @@ export default {
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
-          TEXT: 'Customize this application selecting one of our themes and backgrounds.'
+          TEXT: 'Customize this application selecting one of our themes and backgrounds.',
+          THEME: 'You can choose light or dark mode'
         },
         NAME: 'Profile name',
         TITLE: '3. Appearance'
