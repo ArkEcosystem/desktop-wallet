@@ -126,7 +126,7 @@ export default {
 
       let response
       try {
-        if (this.walletOverride) {
+        if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
           const peer = await this.$store.dispatch('peer/findBest', {
             refresh: true,
             network: this.walletNetwork
