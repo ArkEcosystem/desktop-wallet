@@ -99,7 +99,7 @@
                 :networks="defaultNetworks"
                 @select="selectNetwork"
               />
-              <div>
+              <div v-if="customNetworks.length">
                 <p class="mt-5 mb-1 text-theme-page-text font-semibold">
                   {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK') }}
                 </p>
