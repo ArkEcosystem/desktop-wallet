@@ -2,8 +2,8 @@
   <div
     :style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
     :title="title"
-    :class="isSelected ? 'border-green' : 'border-transparent'"
-    class="InputGridItem background-image rounded-lg w-18 h-18 border-2 cursor-pointer rounded-lg hover:shadow transition text-center"
+    :class="isSelected ? 'InputGridItem--selected' : null"
+    class="InputGridItem background-image rounded-lg w-18 h-18 border-4 cursor-pointer rounded-xl hover:shadow transition text-center border-theme-feature"
   >
     {{ textContent }}
   </div>
@@ -44,5 +44,9 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.InputGridItem--selected {
+  box-shadow: 0 0 0 2px config('colors.green');
 }
 </style>

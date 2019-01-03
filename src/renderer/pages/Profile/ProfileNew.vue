@@ -130,7 +130,7 @@
                 {{ $t('COMMON.SELECT_THEME') }}
               </h5>
 
-              <div class="flex justify-between pb-5 mb-5 border-b border-dashed border-theme-line-separator">
+              <div class="flex items-center justify-between pb-5 mb-5 border-b border-dashed border-theme-line-separator">
                 <p class="text-theme-page-text-light">
                   {{ $t('PAGES.PROFILE_NEW.STEP3.INSTRUCTIONS.THEME') }}
                 </p>
@@ -243,7 +243,7 @@ export default {
       }, {})
     },
     defaultNetworks () {
-      return NETWORKS
+      return NETWORKS.map(network => network)
     },
     customNetworks () {
       const networks = this.$store.getters['network/customNetworks']
