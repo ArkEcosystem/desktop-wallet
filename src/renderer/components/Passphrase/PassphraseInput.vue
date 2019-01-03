@@ -117,6 +117,11 @@ export default {
       type: Number,
       required: true
     },
+    errorNoValue: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     value: {
       type: String,
       required: false,
@@ -133,7 +138,7 @@ export default {
   computed: {
     error () {
       if (this.$v.model.$dirty) {
-        if (!this.$v.model.required) {
+        if (!this.$v.model.required && this.errorNoValue) {
           return this.$t('VALIDATION.REQUIRED', [this.label])
         } else if (!this.$v.model.isValid) {
           return this.$t('VALIDATION.NOT_VALID', [this.label])

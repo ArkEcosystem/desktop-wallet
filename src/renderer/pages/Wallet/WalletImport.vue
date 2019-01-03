@@ -27,7 +27,6 @@
             @next="!useOnlyAddress ? moveTo(2) : moveTo(3)"
           >
             <div class="flex flex-col h-full w-full justify-around">
-
               <!-- TODO check duplicate here when db store is available -->
               <InputAddress
                 ref="addressInput"
@@ -46,6 +45,7 @@
                 :address="useOnlyPassphrase ? null : schema.address"
                 :pub-key-hash="session_network.version"
                 :not-bip39-warning="true"
+                :error-no-value="false"
                 class="my-3"
               />
             </div>
@@ -160,7 +160,7 @@ export default {
   data: () => ({
     ensureEntirePassphrase: false,
     step: 1,
-    useOnlyAddress: true,
+    useOnlyAddress: false,
     useOnlyPassphrase: false,
     wallet: {},
     walletPassword: null,
@@ -288,20 +288,11 @@ export default {
     setOnlyPassphrase (useOnlyPassphrase) {
       this.useOnlyAddress = false
       this.useOnlyPassphrase = useOnlyPassphrase
-    },
-
-    checkOnlyAddress (e) {
-      console.log(this.schema.passphrase)
-      if (!this.schema.passphrase) {
-        this.setOnlyAddress(true)
-      } else {
-        console.log(this.schema.passphrase)
-      }
     }
   },
 
   validations: {
-    step1: ['schema.address', 'schema.passphrase'],
+    step1: ['schema.passphrase', 'schema.address'],
     step2: ['walletPassword', 'walletConfirmPassword'],
     step3: ['schema.name'],
     walletPassword: {
@@ -341,6 +332,11 @@ export default {
           }
 
           if (this.$refs.addressInput) {
+            if (!this.schema.passphrase && !this.$refs.addressInput.$v.$invalid) {
+              this.setOnlyAddress(true)
+              return true
+            }
+
             return !this.$refs.addressInput.$v.$invalid
           }
 
@@ -365,9 +361,17 @@ export default {
           }
 
           if (this.$refs.passphrase) {
+            if (WalletService.isBip39Passphrase(this.schema.passphrase, this.session_profile.bip39Language)) {
+              this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
+              return true
+            } else if (!this.schema.address) {
+              this.setOnlyPassphrase(true)
+              return true
+            }
             return !this.$refs.passphrase.$v.$invalid
           }
 
+          console.log('passphrase invalid')
           return false
         }
       }
