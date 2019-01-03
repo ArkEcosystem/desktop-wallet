@@ -16,7 +16,7 @@
     <TransactionConfirm
       v-if="transaction"
       :transaction="transaction"
-      :wallet="alternativeWallet"
+      :wallet="walletOverride"
       @back="onBack"
       @confirm="onConfirm"
     />
@@ -62,7 +62,7 @@ export default {
   data: () => ({
     step: 0,
     transaction: null,
-    alternativeWallet: null
+    walletOverride: null
   }),
 
   computed: {
@@ -85,11 +85,11 @@ export default {
     },
     walletNetwork () {
       const sessionNetwork = this.session_network
-      if (!this.alternativeWallet || !this.alternativeWallet.id) {
+      if (!this.walletOverride || !this.walletOverride.id) {
         return sessionNetwork
       }
 
-      const profile = this.$store.getters['profile/byId'](this.alternativeWallet.profileId)
+      const profile = this.$store.getters['profile/byId'](this.walletOverride.profileId)
 
       if (!profile.id) {
         return sessionNetwork
@@ -103,7 +103,7 @@ export default {
     onBuilt ({ transaction, wallet }) {
       this.step = 1
       this.transaction = transaction
-      this.alternativeWallet = wallet
+      this.walletOverride = wallet
     },
 
     onBack () {
@@ -126,7 +126,7 @@ export default {
 
       let response
       try {
-        if (this.alternativeWallet) {
+        if (this.walletOverride) {
           const peer = await this.$store.dispatch('peer/findBest', {
             refresh: true,
             network: this.walletNetwork
@@ -210,7 +210,7 @@ export default {
         vendorField,
         confirmations: 0,
         recipient: transaction.recipientId || transaction.sender,
-        profileId: this.alternativeWallet ? this.alternativeWallet.profileId : this.session_profile.id,
+        profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
         raw: transaction
       })
     }
