@@ -149,12 +149,12 @@ export default {
         })
       }
 
-      if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
-        tabs.push({
-          component: 'WalletExchange',
-          text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
-        })
-      }
+      // if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+      //   tabs.push({
+      //     component: 'WalletExchange',
+      //     text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
+      //   })
+      // }
 
       // TODO enable when there is something to show
       // if (this.session_network.market && this.session_network.market.enabled) {

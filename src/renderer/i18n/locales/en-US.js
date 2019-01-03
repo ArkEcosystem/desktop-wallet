@@ -344,7 +344,7 @@ export default {
     PLACEHOLDER: {
       EXPLORER: 'http://explorer.io',
       SEED_SERVER: 'http://1.1.1.1:4002',
-      EPOCH: '2018-12-26T02:00:00.000Z'
+      EPOCH: '2019-01-03T12:00:00.000Z'
     }
   },
 
