@@ -574,9 +574,10 @@ export default class ClientService {
    * Broadcast transactions to the current peer.
    *
    * @param {Array|Object} transactions
+   * @param {Boolean} broadcast - whether the transaction should be broadcasted to multiple peers or not
    * @returns {Object}
    */
-  async broadcastTransaction (transactions) {
+  async broadcastTransaction (transactions, broadcast) {
     // Use p2p for v1
     if (this.__version === 1) {
       const currentPeer = store.getters['peer/current']()
@@ -596,14 +597,30 @@ export default class ClientService {
       })
       return response
     } else {
-      const transaction = await this
-        .client
-        .resource('transactions')
-        .create({
-          transactions: castArray(transactions)
-        })
+      if (broadcast) {
+        let txs = []
+        const peers = store.getters['peer/bestPeers'](10, false)
 
-      return transaction
+        let i
+        for (i = 0; i < peers.length; i++) {
+          try {
+            const client = new ApiClient('http://' + peers[i].ip + ':4003', 2)
+            const tx = await client.resource('transactions').create({ transactions: castArray(transactions) })
+            txs.push(tx)
+          } catch (err) {
+            //
+          }
+        }
+        return txs
+      } else {
+        const transaction = await this
+          .client
+          .resource('transactions')
+          .create({
+            transactions: castArray(transactions)
+          })
+        return transaction
+      }
     }
   }
 
