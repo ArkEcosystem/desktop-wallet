@@ -55,18 +55,31 @@ export default {
     inputIsActive: vm.isActive
   }),
 
+  computed: {
+    model: {
+      get () {
+        return this.inputIsActive
+      },
+      set (value) {
+        this.inputIsActive = value
+        this.$emit('change', value)
+      }
+    }
+  },
+
   watch: {
-    isActive (val) {
-      this.inputIsActive = val
+    isActive (isActive) {
+      this.inputIsActive = isActive
     }
   },
 
   methods: {
     toggle () {
-      if (this.isDisabled) return
+      if (this.isDisabled) {
+        return
+      }
 
-      this.inputIsActive = !this.inputIsActive
-      this.$emit('change', this.inputIsActive)
+      this.model = !this.model
     }
   }
 }
