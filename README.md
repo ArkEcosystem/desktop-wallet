@@ -13,27 +13,8 @@
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
 ## Download
-[Latest Release](https://github.com/PhantomChain/phantom-desktop/releases)
+[Latest Release](https://github.com/PhantomChain/desktop-wallet/releases)
 
-## Installing via Package Managers
-
-### Arch Linux
-
-Install via [AUR](https://aur.archlinux.org/packages/ark-desktop):
-
-> Manjaro
-
-```shell
-pamac build ark-desktop
-```
-
-### Mac OS X
-
-Install via [Homebrew](https://brew.sh/):
-
-```shell
-brew cask install ark-desktop-wallet
-```
 
 ## Development
 
