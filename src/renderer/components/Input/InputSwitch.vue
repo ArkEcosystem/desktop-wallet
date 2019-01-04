@@ -23,11 +23,10 @@
         </div>
       </slot>
       <ButtonSwitch
+        v-model="model"
         :background-color="backgroundColor"
-        :is-active="isActive"
         :is-disabled="isDisabled"
         class="flex-none"
-        @change="emitChange"
       />
     </div>
   </InputField>
@@ -93,9 +92,25 @@ export default {
     }
   },
 
-  methods: {
-    emitChange (isActive) {
-      this.$emit('change', isActive)
+  data: vm => ({
+    inputIsActive: vm.isActive
+  }),
+
+  computed: {
+    model: {
+      get () {
+        return this.inputIsActive
+      },
+      set (value) {
+        this.inputIsActive = value
+        this.$emit('change', value)
+      }
+    }
+  },
+
+  watch: {
+    isActive (isActive) {
+      this.inputIsActive = isActive
     }
   }
 }
