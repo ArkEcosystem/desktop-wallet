@@ -304,6 +304,10 @@ export default {
     },
 
     getPrefix (tx) {
+      if (!tx.amount) {
+        return
+      }
+
       if (tx.isSender && !tx.isReceiver) {
         return '-'
       } else if (!tx.isSender && tx.isReceiver) {

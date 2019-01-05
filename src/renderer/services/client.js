@@ -295,8 +295,12 @@ export default class ClientService {
 
     // Add some utilities for each transactions
     const result = transactions.map(tx => {
-      tx.isSender = checkCounterpart ? addresses.includes(tx.sender) : tx.sender === address
-      tx.isReceiver = checkCounterpart ? addresses.includes(tx.recipient) : tx.recipient === address
+      tx.isSender = tx.sender === address
+      tx.isReceiver = tx.recipient === address
+      if (checkCounterpart) {
+        tx.isSender = tx.isSender || addresses.includes(tx.sender)
+        tx.isReceiver = tx.isReceiver || addresses.includes(tx.recipient)
+      }
       tx.totalAmount = tx.amount + tx.fee
 
       return tx
