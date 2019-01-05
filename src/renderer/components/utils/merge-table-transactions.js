@@ -16,5 +16,5 @@ export default (a, b, number) => {
     ...b
   ], 'id')
 
-  return orderBy(transactions, 'timestamp', 'desc').slice(0, number)
+  return orderBy(transactions, ['timestamp', 'recipient'], ['desc', 'desc']).slice(0, number)
 }
