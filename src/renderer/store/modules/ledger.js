@@ -236,7 +236,7 @@ export default {
               throw error
             }
           }
-          if (!wallet) {
+          if (!wallet || (!wallet.publicKey && wallet.balance === 0)) {
             isColdWallet = true
             wallet = {
               address: ledgerAddress,
