@@ -75,11 +75,7 @@
               trigger: 'hover',
               container: '.TransactionTable'
             }"
-            :class="{
-              'text-theme-transaction-confirmations-sent-to-self bg-theme-transaction-sent-to-self': data.row.isSender && data.row.isReceiver,
-              'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender && !data.row.isReceiver,
-              'text-theme-transaction-confirmations-received bg-theme-transaction-received': !data.row.isSender && data.row.isReceiver
-            }"
+            :class="getClasses(data.row)"
             class="Transaction__confirmations rounded-full h-6 w-6 flex items-center justify-center"
           >
             <SvgIcon
@@ -95,15 +91,11 @@
               trigger: 'hover',
               container: '.TransactionTable'
             }"
-            :class="{
-              'text-theme-transaction-sent-to-self-arrow bg-theme-transaction-sent-to-self': data.row.isSender && data.row.isReceiver,
-              'text-theme-transaction-sent-arrow bg-theme-transaction-sent': data.row.isSender && !data.row.isReceiver,
-              'text-theme-transaction-received-arrow bg-theme-transaction-received': !data.row.isSender && data.row.isReceiver
-            }"
+            :class="getClasses(data.row)"
             class="rounded-full h-6 w-6 flex items-center justify-center"
           >
             <SvgIcon
-              :name="getIconName(data.row)"
+              :name="getIcon(data.row)"
               class="text-center"
               view-box="0 0 8 8"
             />
@@ -317,11 +309,20 @@ export default {
       }
     },
 
-    getIconName (tx) {
-      if (tx.isSender && tx.isReceiver) {
-        return 'arrow-sent-to-self'
+    getType (tx) {
+      if (!tx.amount || (tx.isSender && tx.isReceiver)) {
+        return 'sent-to-self'
       }
-      return tx.isSender ? 'arrow-sent' : 'arrow-received'
+      return tx.isSender ? 'sent' : 'received'
+    },
+
+    getIcon (tx) {
+      return `arrow-${this.getType(tx)}`
+    },
+
+    getClasses (tx) {
+      const type = this.getType(tx)
+      return `text-theme-transaction-confirmations-${type} bg-theme-transaction-${type}`
     }
   }
 }
