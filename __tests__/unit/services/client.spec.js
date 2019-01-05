@@ -19,7 +19,8 @@ jest.mock('@/store', () => ({
           publicKey: '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
         }
       }
-    }
+    },
+    'wallet/byProfileId': jest.fn().mockReturnValue([])
   },
   watch: jest.fn()
 }))
