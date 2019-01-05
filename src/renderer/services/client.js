@@ -241,7 +241,7 @@ export default class ClientService {
    * @param {Number} [query.limit=50]
    * @return {Object[]}
    */
-  async fetchWalletTransactions (address, { page, limit, orderBy } = {}) {
+  async fetchWalletTransactions (address, { page, limit, orderBy } = {}, checkCounterpart = false) {
     page || (page = 1)
     limit || (limit = 50)
     orderBy || (orderBy = 'timestamp:desc')
@@ -286,10 +286,13 @@ export default class ClientService {
       totalCount = data.meta.totalCount
     }
 
+    const profileId = store.getters['session/profileId']
+    const addresses = store.getters['wallet/byProfileId'](profileId).map(wallet => wallet.address)
+
     // Add some utilities for each transactions
     const result = transactions.map(tx => {
-      tx.isSender = tx.sender === address
-      tx.isReceiver = tx.recipient === address
+      tx.isSender = checkCounterpart ? addresses.includes(tx.sender) : tx.sender === address
+      tx.isReceiver = checkCounterpart ? addresses.includes(tx.recipient) : tx.recipient === address
       tx.totalAmount = tx.amount + tx.fee
 
       return tx

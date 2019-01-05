@@ -1,8 +1,8 @@
 <template>
   <span
     :class="{
-      'text-red': transaction.isSender && transaction.amount,
-      'text-green': transaction.isReceiver && isTransfer,
+      'text-red': transaction.isSender && !transaction.isReceiver && transaction.amount,
+      'text-green': !transaction.isSender && transaction.isReceiver && isTransfer,
     }"
   >
     {{ formatter_networkCurrency(transaction.amount) }}

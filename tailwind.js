@@ -57,6 +57,8 @@ let colors = {
   'theme-wallet-overview-border': 'var(--theme-wallet-overview-border)',
 
   'theme-table-row-hover': 'var(--theme-table-row-hover)',
+  'theme-transaction-sent-to-self': 'var(--theme-transaction-sent-to-self)',
+  'theme-transaction-sent-to-self-arrow': 'var(--theme-transaction-sent-to-self-arrow)',
   'theme-transaction-sent': 'var(--theme-transaction-sent)',
   'theme-transaction-sent-arrow': 'var(--theme-transaction-sent-arrow)',
   'theme-transaction-received': 'var(--theme-transaction-received)',
@@ -70,8 +72,9 @@ let colors = {
   'theme-transaction-detail-gradient1': 'var(--theme-transaction-detail-gradient1)',
   'theme-transaction-detail-gradient2': 'var(--theme-transaction-detail-gradient2)',
   'theme-transaction-detail-arrow': 'var(--theme-transaction-detail-arrow)',
-  'theme-transaction-confirmations-received': 'var(--theme-transaction-confirmations-received)',
+  'theme-transaction-confirmations-sent-to-self': 'var(--theme-transaction-confirmations-sent-to-self)',
   'theme-transaction-confirmations-sent': 'var(--theme-transaction-confirmations-sent)',
+  'theme-transaction-confirmations-received': 'var(--theme-transaction-confirmations-received)',
 
   'theme-wallet-new-selected': 'var(--theme-wallet-new-selected)',
   'theme-wallet-new-unselected': 'var(--theme-wallet-new-unselected)',

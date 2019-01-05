@@ -63,9 +63,11 @@ export default {
       try {
         // TODO if wallets.length > 20 do it in batches
         this.wallets.map(async wallet => {
-          const { transactions } = await this.$client.fetchWalletTransactions(wallet.address, {
-            limit: this.numberOfTransactions
-          })
+          const { transactions } = await this.$client.fetchWalletTransactions(
+            wallet.address,
+            { limit: this.numberOfTransactions },
+            true
+          )
 
           // Update the transactions of each wallet when they are received
           this.$set(this, 'fetchedTransactions', uniqBy([

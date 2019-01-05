@@ -19,6 +19,8 @@
   --theme-wallet-overview-border: #dae1e7;
 
   --theme-table-row-hover: #f8f9fd;
+  --theme-transaction-sent-to-self: #fcfcec;
+  --theme-transaction-sent-to-self-arrow: #b7b761;
   --theme-transaction-sent: #fef4f5;
   --theme-transaction-sent-arrow: #e51317;
   --theme-transaction-received: #e3fcec;
@@ -122,6 +124,8 @@
   --theme-wallet-overview-border: #232425;
 
   --theme-table-row-hover: #2a2b31;
+  --theme-transaction-sent-to-self: #3f3f3b;
+  --theme-transaction-sent-to-self-arrow: #afaf73;
   --theme-transaction-sent: #4b3944;
   --theme-transaction-sent-arrow: #e95c51;
   --theme-transaction-received: #2d3f3b;
@@ -205,6 +209,7 @@
 }
 
 #app {
-	--theme-transaction-confirmations-received: var(--theme-transaction-received-arrow);
-	--theme-transaction-confirmations-sent: var(--theme-transaction-sent-arrow);
+  --theme-transaction-confirmations-sent-to-self: var(--theme-transaction-sent-to-self-arrow);
+  --theme-transaction-confirmations-sent: var(--theme-transaction-sent-arrow);
+  --theme-transaction-confirmations-received: var(--theme-transaction-received-arrow);
 }

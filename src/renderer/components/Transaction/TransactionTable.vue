@@ -65,8 +65,7 @@
             }"
             class="font-bold mr-2 whitespace-no-wrap"
           >
-            {{ data.row.isSender ? '-' : '+' }}
-            {{ data.formattedRow['amount'] }}
+            {{ getPrefix(data.row) }} {{ data.formattedRow['amount'] }}
           </span>
           <span
             v-if="!isWellConfirmed(data.row.confirmations)"
@@ -77,8 +76,9 @@
               container: '.TransactionTable'
             }"
             :class="{
-              'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender,
-              'text-theme-transaction-confirmations-received bg-theme-transaction-received': !data.row.isSender
+              'text-theme-transaction-confirmations-sent-to-self bg-theme-transaction-sent-to-self': data.row.isSender && data.row.isReceiver,
+              'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender && !data.row.isReceiver,
+              'text-theme-transaction-confirmations-received bg-theme-transaction-received': !data.row.isSender && data.row.isReceiver
             }"
             class="Transaction__confirmations rounded-full h-6 w-6 flex items-center justify-center"
           >
@@ -96,13 +96,14 @@
               container: '.TransactionTable'
             }"
             :class="{
-              'text-theme-transaction-sent-arrow bg-theme-transaction-sent': data.row.isSender,
-              'text-theme-transaction-received-arrow bg-theme-transaction-received': !data.row.isSender
+              'text-theme-transaction-sent-to-self-arrow bg-theme-transaction-sent-to-self': data.row.isSender && data.row.isReceiver,
+              'text-theme-transaction-sent-arrow bg-theme-transaction-sent': data.row.isSender && !data.row.isReceiver,
+              'text-theme-transaction-received-arrow bg-theme-transaction-received': !data.row.isSender && data.row.isReceiver
             }"
             class="rounded-full h-6 w-6 flex items-center justify-center"
           >
             <SvgIcon
-              :name="data.row.isSender ? 'arrow-sent' : 'arrow-received'"
+              :name="getIconName(data.row)"
               class="text-center"
               view-box="0 0 8 8"
             />
@@ -300,6 +301,23 @@ export default {
 
     onCloseModal () {
       this.selected = null
+    },
+
+    getPrefix (tx) {
+      if (tx.isSender && !tx.isReceiver) {
+        return '-'
+      } else if (!tx.isSender && tx.isReceiver) {
+        return '+'
+      } else {
+        return '±'
+      }
+    },
+
+    getIconName (tx) {
+      if (tx.isSender && tx.isReceiver) {
+        return 'arrow-sent-to-self'
+      }
+      return tx.isSender ? 'arrow-sent' : 'arrow-received'
     }
   }
 }
