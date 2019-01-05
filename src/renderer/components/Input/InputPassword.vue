@@ -28,6 +28,7 @@
         :title="$t(passwordIsVisible ? 'PASSWORD_INPUT.HIDE' : 'PASSWORD_INPUT.SHOW')"
         class="InputPassword__visibility-button flex flex-no-shrink text-grey-dark hover:text-blue mr-2"
         type="button"
+        tabindex="-1"
         @click="toggleVisible"
       >
         <SvgIcon
