@@ -15,6 +15,7 @@ export default {
     theme: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
+    broadcastPeers: null,
     ledgerCache: null,
     transactionTableRowCount: 10
   }),
@@ -55,6 +56,7 @@ export default {
     hasDarkTheme: state => state.theme === 'dark',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
+    broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
     transactionTableRowCount: state => state.transactionTableRowCount
   },
@@ -108,6 +110,10 @@ export default {
       state.backgroundUpdateLedger = update
     },
 
+    SET_BROADCAST_PEERS (state, broadcast) {
+      state.broadcastPeers = broadcast
+    },
+
     SET_LEDGER_CACHE (state, enabled) {
       state.ledgerCache = enabled
     },
@@ -127,6 +133,7 @@ export default {
       state.name = null
       state.theme = 'light'
       state.backgroundUpdateLedger = true
+      state.broadcastPeers = false
       state.contentProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
@@ -148,6 +155,7 @@ export default {
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
+      dispatch('setBroadcastPeers', profile.broadcastPeers)
       dispatch('setLedgerCache', profile.ledgerCache)
       dispatch('setTransactionTableRowCount', profile.transactionTableRowCount)
 
@@ -197,6 +205,10 @@ export default {
 
     setBackgroundUpdateLedger ({ commit }, value) {
       commit('SET_BACKGROUND_UPDATE_LEDGER', value)
+    },
+
+    setBroadcastPeers ({ commit }, value) {
+      commit('SET_BROADCAST_PEERS', value)
     },
 
     setLedgerCache ({ commit }, value) {
