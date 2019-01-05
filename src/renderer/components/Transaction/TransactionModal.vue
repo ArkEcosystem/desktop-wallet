@@ -119,7 +119,8 @@ export default {
         errorLowFee: this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
-        warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST')
+        warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST'),
+        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
       }
 
       this.emitSent()
@@ -172,8 +173,7 @@ export default {
           }
         } else {
           // no tx was sent
-          // TODO: show error, might be network issue or bad peers?
-          this.$error('no transaction was sent')
+          this.$error(messages.nothingSent)
         }
       } catch (error) {
         this.$logger.error(error)

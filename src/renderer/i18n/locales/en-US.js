@@ -667,7 +667,8 @@ export default {
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
-      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low'
+      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
+      NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
