@@ -127,18 +127,17 @@ export default {
 
       let responseArray
       try {
+        const shouldBroadcast = this.$store.getters['session/broadcastPeers']
         if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
           const peer = await this.$store.dispatch('peer/findBest', {
             refresh: true,
             network: this.walletNetwork
           })
           const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
-          responseArray = await apiClient.broadcastTransaction(this.transaction)
+          responseArray = await apiClient.broadcastTransaction(this.transaction, shouldBroadcast)
         } else {
-          responseArray = await this.$client.broadcastTransaction(this.transaction)
+          responseArray = await this.$client.broadcastTransaction(this.transaction, shouldBroadcast)
         }
-
-        console.log(responseArray)
 
         if (responseArray.length > 0) {
           let i
