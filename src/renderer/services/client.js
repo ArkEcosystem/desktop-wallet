@@ -619,7 +619,7 @@ export default class ClientService {
           .create({
             transactions: castArray(transactions)
           })
-        return transaction
+        return [transaction]
       }
     }
   }

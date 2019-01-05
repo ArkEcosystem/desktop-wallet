@@ -124,7 +124,7 @@ export default {
 
       this.emitSent()
 
-      let response
+      let responseArray
       try {
         if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
           const peer = await this.$store.dispatch('peer/findBest', {
@@ -132,22 +132,34 @@ export default {
             network: this.walletNetwork
           })
           const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
-          response = await apiClient.broadcastTransaction(this.transaction)
+          responseArray = await apiClient.broadcastTransaction(this.transaction)
         } else {
-          response = await this.$client.broadcastTransaction(this.transaction)
+          responseArray = await this.$client.broadcastTransaction(this.transaction)
         }
 
-        const { data, errors } = response.data
+        console.log(responseArray)
 
-        if (this.isSuccessfulResponse(response)) {
-          this.storeTransaction(this.transaction)
+        if (responseArray.length > 0) {
+          let i
+          for (i = 0; i < responseArray.length; i++) {
+            const response = responseArray[i]
+            const { data } = response.data
 
-          if (data && data.accept.length === 0 && data.broadcast.length > 0) {
-            this.$warn(messages.warningBroadcast)
-          } else {
-            this.$success(messages.success)
+            if (this.isSuccessfulResponse(response)) {
+              this.storeTransaction(this.transaction)
+
+              if (data && data.accept.length === 0 && data.broadcast.length > 0) {
+                this.$warn(messages.warningBroadcast)
+              } else {
+                this.$success(messages.success)
+              }
+              return
+            }
           }
-        } else {
+          // If we get here, it means that none of the responses was successful, so pick one and show the error
+          const response = responseArray[0]
+          const { errors } = response.data
+
           const anyLowFee = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
           })
@@ -158,6 +170,10 @@ export default {
           } else {
             this.$error(messages.error)
           }
+        } else {
+          // no tx was sent
+          // TODO: show error, might be network issue or bad peers?
+          this.$error('no transaction was sent')
         }
       } catch (error) {
         this.$logger.error(error)
