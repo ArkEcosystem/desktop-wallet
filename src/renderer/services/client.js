@@ -287,7 +287,11 @@ export default class ClientService {
     }
 
     const profileId = store.getters['session/profileId']
-    const addresses = store.getters['wallet/byProfileId'](profileId).map(wallet => wallet.address)
+    const addresses = store.getters['wallet/byProfileId'](profileId).map(wallet => {
+      if (!wallet.isWatchOnly) {
+        return wallet.address
+      }
+    })
 
     // Add some utilities for each transactions
     const result = transactions.map(tx => {
