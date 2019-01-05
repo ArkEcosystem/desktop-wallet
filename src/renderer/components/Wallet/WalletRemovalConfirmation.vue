@@ -2,6 +2,7 @@
   <ModalConfirmation
     :question="$t('WALLET_REMOVAL_CONFIRMATION.QUESTION')"
     :note="$t('WALLET_REMOVAL_CONFIRMATION.NOTE')"
+    portal-target="modal"
     container-classes="WalletRemovalConfirmation"
     @cancel="emitCancel"
     @continue="removeWallet"
