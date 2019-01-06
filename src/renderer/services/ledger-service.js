@@ -79,11 +79,11 @@ class LedgerService {
   }
 
   /**
-   * Get address from ledger wallet.
+   * Get address and public key from ledger wallet.
    * @param  {Number} [path] Path for wallet location.
    * @return {(String|Boolean)}
    */
-  async getAddress (path) {
+  async getWallet (path) {
     return this.__performAction(async () => {
       return this.ledger.getAddress(path)
     })
