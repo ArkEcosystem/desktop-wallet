@@ -130,7 +130,7 @@ export default {
 
       commit('SET_CONNECTED', true)
       eventBus.emit('ledger:connected')
-      await dispatch('reloadWallets')
+      await dispatch('reloadWallets', {})
 
       return true
     },
@@ -204,7 +204,7 @@ export default {
      * @param  {Boolean} [clearFirst=false] Clear ledger wallets from store before reloading
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch, getters, rootGetters }, clearFirst = false) {
+    async reloadWallets ({ commit, dispatch, getters, rootGetters }, { clearFirst = false, useCachedWallets = true }) {
       if (!getters['isConnected']) {
         return []
       }
@@ -216,8 +216,12 @@ export default {
       }
       commit('SET_LOADING', true)
       const firstAddress = await dispatch('getAddress', 0)
-      let wallets = keyBy(getters['cachedWallets'](firstAddress), 'address')
-      const startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : 0
+      let wallets = []
+      let startIndex = 0
+      if (useCachedWallets) {
+        wallets = keyBy(getters['cachedWallets'](firstAddress), 'address')
+        startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : startIndex
+      }
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex++) {
           let isColdWallet = false

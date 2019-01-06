@@ -43,8 +43,8 @@
       />
 
       <InputSwitch
+        v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
-        :is-active="isSendAllActive"
         :is-disabled="!canSendAll() || !currentWallet"
         @change="setSendAll"
       />
@@ -115,6 +115,16 @@
       </button>
     </div>
 
+    <ModalConfirmation
+      v-if="showConfirmSendAll"
+      :question="$t('TRANSACTION.CONFIRM_SEND_ALL')"
+      :title="$t('TRANSACTION.CONFIRM_SEND_ALL_TITLE')"
+      :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
+      container-classes="SendAllConfirmation"
+      portal-target="loading"
+      @cancel="emitCancelSendAll"
+      @continue="enableSendAll"
+    />
     <ModalLoader
       :message="$t('ENCRYPTION.DECRYPTING')"
       :visible="showEncryptLoader"
@@ -130,7 +140,7 @@
 import { maxLength, required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
-import { ModalLoader } from '@/components/Modal'
+import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
@@ -147,6 +157,7 @@ export default {
     InputSwitch,
     InputText,
     InputFee,
+    ModalConfirmation,
     ModalLoader,
     PassphraseInput,
     WalletSelection
@@ -174,7 +185,8 @@ export default {
     showLedgerLoader: false,
     bip38Worker: null,
     previousAmount: '',
-    wallet: null
+    wallet: null,
+    showConfirmSendAll: false
   }),
 
   computed: {
@@ -280,6 +292,15 @@ export default {
         this.submit()
       }
     })
+
+    // Set default fees
+    // v1 compatibility
+    // TODO: Get static fee from the network, or allow better UI
+    if (this.walletNetwork.apiVersion === 1) {
+      this.form.fee = 0.1
+    } else {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -296,6 +317,7 @@ export default {
     },
     setSendAll (isActive, setPreviousAmount = true) {
       if (isActive) {
+        this.confirmSendAll()
         this.previousAmount = this.form['amount']
       }
       if (!isActive) {
@@ -303,9 +325,9 @@ export default {
           this.$set(this.form, 'amount', this.previousAmount)
         }
         this.previousAmount = ''
+        this.isSendAllActive = isActive
+        this.ensureAvailableAmount()
       }
-      this.isSendAllActive = isActive
-      this.ensureAvailableAmount()
     },
 
     canSendAll () {
@@ -332,16 +354,6 @@ export default {
     },
 
     async submit () {
-      // v1 compatibility
-      // TODO: Get static fee from the network, or allow better UI
-      if (this.walletNetwork.apiVersion === 1) {
-        this.form.fee = 0.1
-      }
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
       const transactionData = {
         amount: parseInt(this.currency_unitToSub(this.form.amount)),
         recipientId: this.form.recipientId,
@@ -374,6 +386,21 @@ export default {
       if (success) {
         this.emitNext(transaction)
       }
+    },
+
+    enableSendAll () {
+      this.isSendAllActive = true
+      this.ensureAvailableAmount()
+      this.showConfirmSendAll = false
+    },
+
+    confirmSendAll () {
+      this.showConfirmSendAll = true
+    },
+
+    emitCancelSendAll () {
+      this.showConfirmSendAll = false
+      this.isSendAllActive = false
     }
   },
 
@@ -456,3 +483,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.SendAllConfirmation .ModalConfirmation__container {
+  min-width: calc(var(--contact-identicon-xl) + 74px * 2);
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
+}
+</style>
