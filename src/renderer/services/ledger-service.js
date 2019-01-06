@@ -53,7 +53,9 @@ class LedgerService {
   async disconnect () {
     // Disconnect ledger in case this is called manually
     try {
-      await this.transport.close()
+      if (this.transport) {
+        await this.transport.close()
+      }
     } catch (error) {
       logger.error(error)
     }
