@@ -39,7 +39,7 @@
         :wallet-network="walletNetwork"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
-        @focus="setSendAll(false,false)"
+        @focus="setSendAll(false, false)"
       />
 
       <InputSwitch
