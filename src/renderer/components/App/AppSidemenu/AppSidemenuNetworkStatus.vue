@@ -12,8 +12,17 @@
         <span class="float-left">
           {{ $t('PEER.PEER') }}
         </span>
-        <span class="float-right">
+        <span
+          v-if="!peer.isCustom"
+          class="float-right"
+        >
           {{ $t('PEER.BEST') }}
+        </span>
+        <span
+          v-else
+          class="float-right"
+        >
+          {{ $t('PEER.DISCONNECT') }}
         </span>
       </div>
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
@@ -36,9 +45,26 @@
           </div>
         </button>
         <ButtonReload
+          v-if="!peer.isCustom"
           :is-refreshing="isRefreshing"
           class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
           @click="refreshPeer"
+        />
+        <button
+          v-else-if="!isRefreshing"
+          @click="refreshPeer"
+          class="bg-theme-settings-button w-12 absolute pin-t pin-r pin-b cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+        >
+          <SvgIcon
+            name="cross"
+            view-box="0 0 16 15"
+            class="AppSidemenuNetworkStatus__refresh-button"
+          />
+        </button>
+        <ButtonReload
+          v-else
+          :is-refreshing="true"
+          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
         />
       </div>
       <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
