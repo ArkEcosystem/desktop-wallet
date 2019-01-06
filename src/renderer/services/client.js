@@ -7,6 +7,8 @@ import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
+const FIX_OFFSET = 56415597
+
 export default class ClientService {
   /*
    * Normalizes the passphrase by decomposing any characters (if applicable)
@@ -181,6 +183,9 @@ export default class ClientService {
     })
 
     transactions = data.data.map(tx => {
+      if (tx.timestamp.epoch !== 0) {
+        tx.timestamp.unix -= FIX_OFFSET
+      }
       tx.timestamp = tx.timestamp.unix * 1000 // to milliseconds
       return tx
     })
@@ -247,6 +252,9 @@ export default class ClientService {
       })
 
       transactions = data.data.map(tx => {
+        if (tx.timestamp.epoch !== 0) {
+          tx.timestamp.unix -= FIX_OFFSET
+        }
         tx.timestamp = tx.timestamp.unix * 1000 // to milliseconds
         return tx
       })
