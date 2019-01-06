@@ -310,7 +310,7 @@ export default {
     },
 
     getType (tx) {
-      if (!tx.amount || (tx.isSender && tx.isReceiver)) {
+      if (tx.isSender && tx.isReceiver && tx.type === 0) {
         return 'sent-to-self'
       }
       return tx.isSender ? 'sent' : 'received'
