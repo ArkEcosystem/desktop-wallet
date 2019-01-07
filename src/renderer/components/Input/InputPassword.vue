@@ -240,9 +240,6 @@ export default {
   @apply .text-transparent
 }
 
-.InputField--invalid .InputPassword__qr-button {
-  @apply .text-red-dark
-}
 .InputField--invalid .InputPassword__visibility-button {
   @apply .text-red-dark
 }
