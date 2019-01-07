@@ -32,6 +32,9 @@ jobs:
       - run:
           name: Depcheck
           command: yarn depcheck
+      - run:
+          name: Codecov
+          command: ./node_modules/.bin/codecov
 
 workflows:
   version: 2
