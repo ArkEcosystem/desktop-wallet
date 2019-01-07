@@ -150,9 +150,8 @@
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
-                  :max-visible-items="4"
-                  :selected="theme"
-                  @select="selectTheme"
+                  :value="theme"
+                  @input="selectTheme"
                 />
               </ListDividedItem>
 
