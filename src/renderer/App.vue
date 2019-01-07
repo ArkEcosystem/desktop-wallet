@@ -17,35 +17,46 @@
       @done="setIntroDone"
     />
 
-    <div v-else>
+    <div
+      v-else
+      class="overflow-hidden"
+    >
       <AppSidemenu
         v-if="hasAnyProfile"
         :is-horizontal="true"
         :class="{
           'blur': hasBlurFilter
         }"
-        class="block lg:hidden"
+        class="block md:hidden z-1"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
         :class="{
           'blur': hasBlurFilter
         }"
-        class="App__main flex flex-col items-center px-4 pb-6 lg:pt-6 w-screen h-screen overflow-hidden"
+        class="App__main flex flex-col items-center px-6 pb-6 pt-2 lg:pt-6 w-screen-adjusted h-screen-adjusted overflow-hidden -m-2"
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
-          class="App__container w-full flex-1 flex mt-6 mb-4 lg:mr-6"
+          class="App__container w-full flex-1 flex mt-4 mb-4 lg:mr-6"
         >
           <AppSidemenu
             v-if="hasAnyProfile"
-            class="hidden lg:block"
+            class="hidden md:block"
           />
           <RouterView class="flex-1 overflow-y-auto" />
         </div>
 
         <AppFooter />
       </section>
+
+      <TransactionModal
+        v-if="isUriTransactionOpen"
+        :schema="uriTransactionSchema"
+        :type="0"
+        @cancel="closeUriTransaction"
+        @sent="closeUriTransaction"
+      />
 
       <PortalTarget
         name="modal"
@@ -73,6 +84,7 @@ import '@/styles/style.css'
 import { isEmpty } from 'lodash'
 import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
+import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
 
@@ -86,12 +98,15 @@ export default {
     AppFooter,
     AppSidemenu,
     AppWelcome,
-    AlertMessage
+    AlertMessage,
+    TransactionModal
   },
 
   data: () => ({
     isReady: false,
-    hasBlurFilter: false
+    hasBlurFilter: false,
+    isUriTransactionOpen: false,
+    uriTransactionSchema: {}
   }),
 
   computed: {
@@ -181,7 +196,7 @@ export default {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
         if (this.$store.getters['ledger/isConnected']) {
-          this.$store.dispatch('ledger/reloadWallets', true)
+          this.$store.dispatch('ledger/reloadWallets', { clearFirst: true })
         }
       })
       this.$eventBus.on('ledger:connected', async () => {
@@ -204,18 +219,24 @@ export default {
 
     __watchProcessURL () {
       ipcRenderer.on('process-url', (_, url) => {
-        const currentWallet = this.wallet_fromRoute
-        const isWalletActive = !!currentWallet
         const uri = new URIHandler(url)
 
         if (!uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
-        } else if (!isWalletActive) {
-          this.$error(this.$t('VALIDATION.WALLET_NOT_ACTIVE'))
         } else {
-          this.$eventBus.emit('wallet:open-send-transfer', uri.deserialize())
+          this.openUriTransaction(uri.deserialize())
         }
       })
+    },
+
+    openUriTransaction (schema) {
+      this.isUriTransactionOpen = true
+      this.uriTransactionSchema = schema
+    },
+
+    closeUriTransaction () {
+      this.isUriTransactionOpen = false
+      this.uriTransactionSchema = {}
     },
 
     setIntroDone () {
@@ -262,5 +283,11 @@ export default {
 }
 .App__container {
   max-width: 1400px;
+}
+.App__main.h-screen-adjusted {
+  height: calc(100vh + 1rem);
+}
+.App__main.w-screen-adjusted {
+  width: calc(100vw + 1rem);
 }
 </style>

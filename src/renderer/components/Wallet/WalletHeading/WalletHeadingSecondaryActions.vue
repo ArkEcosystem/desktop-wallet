@@ -85,7 +85,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'option-button whitespace-no-wrap mr-2 px-3 py-2'
+      return 'option-heading-button whitespace-no-wrap mr-2 px-3 py-2'
     },
 
     currentWallet () {

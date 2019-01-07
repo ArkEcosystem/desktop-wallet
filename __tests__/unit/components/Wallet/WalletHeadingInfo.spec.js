@@ -11,7 +11,8 @@ const network = {
   fractionDigits: 8,
   market: {
     enabled: false
-  }
+  },
+  knownWallets: []
 }
 
 const sampleWalletData = {

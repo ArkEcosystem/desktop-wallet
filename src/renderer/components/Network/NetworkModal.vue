@@ -178,7 +178,7 @@
 
       <button
         v-if="network && !network.isDefault"
-        :disabled="$v.form.$invalid || isNetworkInUse"
+        :disabled="isNetworkInUse"
         class="blue-button mt-5 ml-4"
         type="button"
         @click="removeNetwork"
@@ -256,6 +256,7 @@ export default {
       'Basic',
       'Advanced'
     ],
+    originalName: null,
     configChoice: 'Basic',
     apiVersion: 2,
     hasFetched: false,
@@ -275,7 +276,16 @@ export default {
     },
 
     nameError () {
-      return this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      const isRequired = this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      if (isRequired) {
+        return isRequired
+      }
+      if (this.$v.form.name.$dirty) {
+        if (!this.$v.form.name.doesNotExist) {
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.form.name])
+        }
+      }
+      return null
     },
 
     descriptionError () {
@@ -327,6 +337,7 @@ export default {
     // Set network values if one is passed along
     if (this.network) {
       this.form.name = this.network.title
+      this.originalName = this.network.title // To ensure that we allow the "duplicate" name as it's the same network
       this.form.description = this.network.description
       this.form.server = this.network.server
 
@@ -544,7 +555,10 @@ export default {
   validations: {
     form: {
       name: {
-        required
+        required,
+        doesNotExist (value) {
+          return (this.originalName && value === this.originalName) || !this.$store.getters['network/byName'](value)
+        }
       },
       description: {
         required

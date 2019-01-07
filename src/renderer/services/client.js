@@ -46,6 +46,21 @@ export default class ClientService {
     }
   }
 
+  static async fetchFeeStatistics (server, apiVersion, timeout) {
+    // This is only for v2 networks
+    if (apiVersion === 1) {
+      return
+    }
+    const client = new ApiClient(server, apiVersion)
+    if (timeout) {
+      client.http.timeout = timeout
+    }
+    const { data } = await client.resource('node').configuration()
+    if (data.data && data.data.feeStatistics) {
+      return data.data.feeStatistics
+    }
+  }
+
   constructor (watchProfile = true) {
     this.__host = null
     this.__version = null
@@ -130,6 +145,24 @@ export default class ClientService {
     }
 
     return { delegates, totalCount }
+  }
+
+  /**
+   * Fetches the voters of the given delegates and returns the number of total voters
+   *
+   * @return {Number}
+   */
+  async fetchDelegateVoters (delegate, { page, limit } = {}) {
+    if (this.__version === 1) {
+      const response = await this.client.resource('delegates').voters(delegate.publicKey)
+      if (response.success) {
+        return response.accounts.length
+      }
+      return 0
+    }
+    // v2
+    const { data } = await this.client.resource('delegates').voters(delegate.username, { page, limit })
+    return data.meta.totalCount
   }
 
   /**
