@@ -23,6 +23,7 @@
       icon="qr"
       label="QR"
       view-box="0 0 18 18"
+      tabindex="-1"
     >
       <template slot-scope="{ toggle, isOpen }">
         <ModalQrCode
