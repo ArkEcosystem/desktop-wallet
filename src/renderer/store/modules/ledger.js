@@ -308,9 +308,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get wallet: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -326,9 +325,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get address: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -344,9 +342,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get public key: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -365,9 +362,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not sign transaction: ${error}`)
       }
-
-      return false
     },
 
     /**
