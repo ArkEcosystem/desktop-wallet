@@ -196,7 +196,7 @@ export default {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
         if (this.$store.getters['ledger/isConnected']) {
-          this.$store.dispatch('ledger/reloadWallets', true)
+          this.$store.dispatch('ledger/reloadWallets', { clearFirst: true })
         }
       })
       this.$eventBus.on('ledger:connected', async () => {

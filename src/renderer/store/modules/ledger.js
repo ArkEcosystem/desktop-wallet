@@ -130,7 +130,7 @@ export default {
 
       commit('SET_CONNECTED', true)
       eventBus.emit('ledger:connected')
-      await dispatch('reloadWallets')
+      await dispatch('reloadWallets', {})
 
       return true
     },
@@ -204,7 +204,7 @@ export default {
      * @param  {Boolean} [clearFirst=false] Clear ledger wallets from store before reloading
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch, getters, rootGetters }, clearFirst = false) {
+    async reloadWallets ({ commit, dispatch, getters, rootGetters }, { clearFirst = false, useCachedWallets = true }) {
       if (!getters['isConnected']) {
         return []
       }
@@ -215,16 +215,20 @@ export default {
         commit('SET_WALLETS', [])
       }
       commit('SET_LOADING', true)
-      const firstAddress = await dispatch('getAddress', 0)
-      let wallets = keyBy(getters['cachedWallets'](firstAddress), 'address')
-      const startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : 0
+      const firstWallet = await dispatch('getWallet', 0)
+      let wallets = []
+      let startIndex = 0
+      if (useCachedWallets) {
+        wallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
+        startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : startIndex
+      }
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex++) {
           let isColdWallet = false
-          const ledgerAddress = ledgerIndex === 0 ? firstAddress : await dispatch('getAddress', ledgerIndex)
+          const ledgerWallet = ledgerIndex === 0 ? firstWallet : await dispatch('getWallet', ledgerIndex)
           let wallet
           try {
-            wallet = await this._vm.$client.fetchWallet(ledgerAddress)
+            wallet = await this._vm.$client.fetchWallet(ledgerWallet.address)
           } catch (error) {
             logger.error(error)
             const message = error.response ? error.response.data.message : error.message
@@ -235,22 +239,22 @@ export default {
           if (!wallet) {
             isColdWallet = true
             wallet = {
-              address: ledgerAddress,
+              address: ledgerWallet.address,
               balance: 0
             }
           }
 
-          const ledgerName = rootGetters['wallet/ledgerNameByAddress'](ledgerAddress)
+          const ledgerName = rootGetters['wallet/ledgerNameByAddress'](ledgerWallet.address)
 
-          wallets[ledgerAddress] = Object.assign(wallet, {
+          wallets[ledgerWallet.address] = Object.assign(wallet, {
             isLedger: true,
             ledgerIndex,
             isSendingEnabled: true,
             name: ledgerName || `Ledger ${ledgerIndex + 1}`,
             passphrase: null,
             profileId,
-            id: ledgerAddress,
-            publicKey: await dispatch('getPublicKey', ledgerIndex)
+            id: ledgerWallet.address,
+            publicKey: ledgerWallet.publicKey
           })
 
           if (isColdWallet) {
@@ -289,6 +293,24 @@ export default {
      */
     async clearWalletCache ({ commit, rootGetters }) {
       commit('CLEAR_WALLET_CACHE', rootGetters['session/profileId'])
+    },
+
+    /**
+     * Get address and public key from ledger wallet.
+     * @param  {Number} accountIndex Index of wallet to get data for.
+     * @return {(String|Boolean)}
+     */
+    async getWallet ({ dispatch }, accountIndex) {
+      try {
+        return await dispatch('action', {
+          action: 'getWallet',
+          accountIndex
+        })
+      } catch (error) {
+        logger.error(error)
+      }
+
+      return false
     },
 
     /**
@@ -370,15 +392,25 @@ export default {
 
       const path = `44'/${state.slip44}'/${accountIndex || 0}'/0/0`
       const actions = {
+        getWallet: async () => {
+          const response = await ledgerService.getWallet(path)
+          const publicKey = response.publicKey
+          const network = rootGetters['session/network']
+
+          return {
+            address: crypto.getAddress(publicKey, network.version),
+            publicKey
+          }
+        },
         getAddress: async () => {
-          const response = await ledgerService.getAddress(path)
+          const response = await ledgerService.getWallet(path)
           const publicKey = response.publicKey
           const network = rootGetters['session/network']
 
           return crypto.getAddress(publicKey, network.version)
         },
         getPublicKey: async () => {
-          const response = await ledgerService.getAddress(path)
+          const response = await ledgerService.getWallet(path)
 
           return response.publicKey
         },
