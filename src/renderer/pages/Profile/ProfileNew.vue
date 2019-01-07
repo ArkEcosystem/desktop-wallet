@@ -99,7 +99,7 @@
                 :networks="defaultNetworks"
                 @select="selectNetwork"
               />
-              <div v-if="customNetworks.length">
+              <div v-if="availableCustomNetworks.length">
                 <p class="mt-5 mb-1 text-theme-page-text font-semibold">
                   {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK') }}
                 </p>
@@ -108,7 +108,7 @@
                 </p>
                 <SelectionNetwork
                   :selected="selectedNetwork"
-                  :networks="customNetworks"
+                  :networks="availableCustomNetworks"
                   :is-custom="true"
                   @select="selectNetwork"
                 />
@@ -243,8 +243,13 @@ export default {
       return NETWORKS.map(network => network)
     },
     customNetworks () {
-      const networks = this.$store.getters['network/customNetworks']
-      return Object.values(networks)
+      return this.$store.getters['network/customNetworks']
+    },
+    availableCustomNetworks: {
+      get () {
+        return Object.values(this.customNetworks)
+      },
+      cache: false
     },
     nameError () {
       if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
