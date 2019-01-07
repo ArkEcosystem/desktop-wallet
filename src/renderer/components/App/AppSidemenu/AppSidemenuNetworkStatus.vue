@@ -47,7 +47,9 @@
         <ButtonReload
           v-if="!peer.isCustom"
           :is-refreshing="isRefreshing"
-          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
+          text-class="hover:text-white"
+          color-class="AppSidemenuNetworkStatus__ButtonReload-colorClass"
+          class="AppSidemenuNetworkStatus__refresh-button hover:text-white bg-theme-settings-button absolute pin-t pin-r pin-b px-2 text-grey-dark"
           @click="refreshPeer"
         />
         <button
@@ -222,6 +224,7 @@ export default {
 
   methods: {
     async refreshPeer () {
+      console.log('clicked')
       this.isRefreshing = true
       await this.$store.dispatch('peer/connectToBest', {
         skipIfCustom: false
@@ -288,5 +291,11 @@ export default {
 
 .AppSidemenuNetworkStatus__ButtonModal {
   @apply block;
+}
+
+.AppSidemenuNetworkStatus__ButtonReload-colorClass:hover {
+  @apply .bg-blue;
+  box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
+  transition: all .1s ease-in
 }
 </style>
