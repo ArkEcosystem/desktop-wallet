@@ -334,7 +334,7 @@ export default {
     },
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -454,7 +454,7 @@ export default {
     step5: ['schema.name'],
     schema: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       }

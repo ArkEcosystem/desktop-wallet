@@ -829,7 +829,7 @@ export default {
     NEW: 'New wallet name',
     ADD: 'Add wallet',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Set a name for this wallet: {wallet}',
+    ADDRESS_INFO: 'Set a name for this wallet: ',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 

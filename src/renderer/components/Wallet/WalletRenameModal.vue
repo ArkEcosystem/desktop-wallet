@@ -1,10 +1,17 @@
 <template>
   <ModalWindow
     :title="isNewContact ? $t('WALLET_RENAME.TITLE_ADD') : $t('WALLET_RENAME.TITLE')"
+    container-classes="WalletRenameModal"
     @close="emitCancel"
   >
     <div class="flex flex-col justify-center">
-      <p>{{ $t('WALLET_RENAME.ADDRESS_INFO', { wallet: wallet.address }) }}</p>
+      <p>
+        {{ $t('WALLET_RENAME.ADDRESS_INFO') }}
+        <span class="font-bold">
+          {{ walletName }}
+        </span>
+      </p>
+
       <InputText
         v-model="schema.name"
         :is-invalid="$v.schema.name.$invalid"
@@ -31,6 +38,7 @@
 import { InputText } from '@/components/Input'
 import { ModalWindow } from '@/components/Modal'
 import Wallet from '@/models/wallet'
+import truncate from '@/filters/truncate'
 
 export default {
   name: 'WalletRenameModal',
@@ -56,7 +64,7 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -66,6 +74,13 @@ export default {
         }
       }
       return null
+    },
+
+    walletName () {
+      if (this.wallet.name && this.wallet.name !== this.wallet.address) {
+        return `${truncate(this.wallet.name, 25)} (${this.wallet_truncate(this.wallet.address)})`
+      }
+      return this.wallet.address
     }
   },
 
@@ -127,7 +142,7 @@ export default {
     step3: ['isPassphraseVerified'],
     schema: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' ||
             value === this.wallet.name ||
             !this.$store.getters['wallet/byName'](value)
@@ -137,3 +152,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.WalletRenameModal {
+  min-width: 35rem;
+}
+</style>
