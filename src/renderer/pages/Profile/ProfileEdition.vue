@@ -313,7 +313,7 @@ export default {
     },
     nameError () {
       if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
-        if (!this.$v.modified.name.doesNotExists) {
+        if (!this.$v.modified.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.modified.name])
         } else if (!this.$v.modified.name.maxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
@@ -418,7 +418,7 @@ export default {
   validations: {
     modified: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           const otherProfile = this.$store.getters['profile/doesExist'](value)
           return !otherProfile || otherProfile.id === this.profile.id
         },
