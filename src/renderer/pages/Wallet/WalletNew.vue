@@ -52,7 +52,7 @@
               <ButtonReload
                 v-if="step === 1"
                 color-class="WalletNew__ButtonReload-colorClass"
-                text-class=""
+                text-class="hover:text-white"
                 :is-refreshing="isRefreshing"
                 class="WalletNew__refresh-button"
                 @click="refreshAddresses"
