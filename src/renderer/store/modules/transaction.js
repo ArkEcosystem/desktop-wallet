@@ -29,6 +29,12 @@ export default {
 
       const transactions = state.transactions[profileId].filter(transaction => {
         return transaction.recipient === address || transaction.sender === address
+      }).map(transaction => {
+        transaction.isSender = transaction.sender === address
+        transaction.isReceiver = transaction.recipient === address
+        transaction.totalAmount = transaction.amount + transaction.fee
+
+        return transaction
       })
 
       if (showExpired) {
@@ -43,11 +49,23 @@ export default {
         return []
       }
 
+      const addresses = rootGetters['wallet/byProfileId'](profileId).map(wallet => {
+        return wallet.address
+      })
+
+      const transactions = state.transactions[profileId].map(transaction => {
+        transaction.isSender = addresses.includes(transaction.sender)
+        transaction.isReceiver = addresses.includes(transaction.recipient)
+        transaction.totalAmount = transaction.amount + transaction.fee
+
+        return transaction
+      })
+
       if (showExpired) {
-        return state.transactions[profileId]
+        return transactions
       }
 
-      return state.transactions[profileId].filter(transaction => !transaction.isExpired)
+      return transactions.filter(transaction => !transaction.isExpired)
     }
   },
 
