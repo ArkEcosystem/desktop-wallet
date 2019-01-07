@@ -88,12 +88,9 @@
                   </a>
                 </li>
               </TransitionGroup>
-              <TransitionGroup
+              <ul
                 v-show="isRefreshing"
-                key="inactive"
                 class="list-reset"
-                name="WalletNew__wallets"
-                tag="ul"
               >
                 <li
                   v-for="(address, index) in emptyWallets"
@@ -106,7 +103,7 @@
                     class="WalletNew__wallets--unselected-identicon flex-no-shrink"
                   />
                 </li>
-              </TransitionGroup>
+              </ul>
             </div>
           </MenuStepItem>
 
