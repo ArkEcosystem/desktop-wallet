@@ -93,7 +93,7 @@ export default {
     portalTarget: {
       type: String,
       required: false,
-      default: null
+      default: 'modal'
     }
   },
 
