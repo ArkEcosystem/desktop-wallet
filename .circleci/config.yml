@@ -22,10 +22,10 @@ jobs:
             - ./node_modules
       - run:
           name: Unit tests
-          command: yarn test:unit --ci --maxWorkers 4
+          command: yarn test:unit --ci --coverage --maxWorkers 4
       - run:
           name: e2e tests
-          command: yarn test:e2e:full
+          command: yarn test:e2e:full --coverage
       - run:
           name: Lint
           command: yarn lint
