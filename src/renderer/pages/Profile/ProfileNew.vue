@@ -248,7 +248,7 @@ export default {
     },
     nameError () {
       if (this.$v.schema.name.$dirty && this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
@@ -338,7 +338,7 @@ export default {
     step2: ['schema.networkId'],
     schema: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return !this.$store.getters['profile/doesExist'](value)
         }
       }
