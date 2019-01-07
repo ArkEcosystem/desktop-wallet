@@ -379,7 +379,7 @@ export default {
      * @return {String}
      */
     async action ({ state, dispatch, rootGetters }, { action, accountIndex, data } = {}) {
-      if (accountIndex !== undefined && !Number.isFinite(accountIndex)) {
+      if (accountIndex === undefined || !Number.isFinite(accountIndex)) {
         throw new Error('accountIndex must be a Number')
       }
 
