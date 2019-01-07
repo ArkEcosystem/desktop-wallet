@@ -224,7 +224,6 @@ export default {
 
   methods: {
     async refreshPeer () {
-      console.log('clicked')
       this.isRefreshing = true
       await this.$store.dispatch('peer/connectToBest', {
         skipIfCustom: false
