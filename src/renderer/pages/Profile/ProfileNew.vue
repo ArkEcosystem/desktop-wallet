@@ -2,7 +2,7 @@
   <div class="ProfileNew relative">
     <main class="flex h-full">
       <div
-        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex lg:w-2/5 xl:w-3/5 mr-4 rounded-lg overflow-y-auto"
+        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
         <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
           <h1 class="text-inherit">
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="flex-1 p-10 bg-theme-feature rounded-lg overflow-y-auto">
+      <div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
         <MenuStep
           v-model="step"
         >

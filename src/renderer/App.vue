@@ -27,7 +27,7 @@
         :class="{
           'blur': hasBlurFilter
         }"
-        class="block lg:hidden z-1"
+        class="block md:hidden z-1"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
@@ -42,7 +42,7 @@
         >
           <AppSidemenu
             v-if="hasAnyProfile"
-            class="hidden lg:block"
+            class="hidden md:block"
           />
           <RouterView class="flex-1 overflow-y-auto" />
         </div>
