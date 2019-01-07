@@ -141,18 +141,17 @@ export default {
         return []
       }
 
-      return this.$store.getters['wallet/byProfileId'](this.profileId)
-    },
-
-    walletList () {
+      const wallets = this.$store.getters['wallet/byProfileId'](this.profileId)
       const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
-
-      const wallets = this.wallets
       if (ledgerWallets.length && this.profile && this.profile.networkId === this.session_network.id) {
         wallets.push(...ledgerWallets)
       }
 
-      const addresses = map(wallets, (wallet) => {
+      return wallets
+    },
+
+    walletList () {
+      const addresses = map(this.wallets, (wallet) => {
         const address = {
           name: null,
           address: wallet.address
