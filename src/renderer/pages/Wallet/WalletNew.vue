@@ -74,7 +74,8 @@
                 <WalletIdenticon
                   :value="address"
                   :size="35"
-                  class="flex-no-shrink"
+                  :class="{ 'WalletNew__wallets--selected-identicon': schema.address === address }"
+                  class="WalletNew__wallets--unselected-identicon flex-no-shrink"
                 />
                 <a
                   :class="{ 'WalletNew__wallets--selected': schema.address === address }"
@@ -102,7 +103,7 @@
                 <WalletIdenticon
                   :value="address"
                   :size="35"
-                  class="flex-no-shrink"
+                  class="WalletNew__wallets--unselected-identicon flex-no-shrink"
                 />
               </li>
             </TransitionGroup>
@@ -567,5 +568,20 @@ export default {
   @apply .bg-blue .text-white;
   box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
   transition: all .1s ease-in
+}
+
+.WalletNew__wallets--selected-identicon {
+  transition: all 0.5s;
+  opacity: 1!important
+}
+
+.WalletNew__wallets--unselected-identicon {
+  opacity: 0.3
+}
+
+.WalletNew__wallets--unselected-identicon:hover {
+  opacity: 1!important;
+  transition: all 0.5s;
+  @apply .text-theme-wallet-new-selected .no-underline
 }
 </style>
