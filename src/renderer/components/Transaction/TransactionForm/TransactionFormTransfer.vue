@@ -290,6 +290,15 @@ export default {
         this.submit()
       }
     })
+
+    // Set default fees
+    // v1 compatibility
+    // TODO: Get static fee from the network, or allow better UI
+    if (this.walletNetwork.apiVersion === 1) {
+      this.form.fee = 0.1
+    } else {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -338,16 +347,6 @@ export default {
     },
 
     async submit () {
-      // v1 compatibility
-      // TODO: Get static fee from the network, or allow better UI
-      if (this.walletNetwork.apiVersion === 1) {
-        this.form.fee = 0.1
-      }
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
       const transactionData = {
         amount: parseInt(this.currency_unitToSub(this.form.amount)),
         recipientId: this.form.recipientId,
