@@ -54,8 +54,8 @@
         />
         <button
           v-else-if="!isRefreshing"
-          @click="refreshPeer"
           class="bg-theme-settings-button w-12 absolute pin-t pin-r pin-b cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+          @click="refreshPeer"
         >
           <SvgIcon
             name="cross"
