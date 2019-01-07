@@ -93,7 +93,7 @@
                 class="list-reset"
               >
                 <li
-                  v-for="(address, index) in emptyWallets"
+                  v-for="(address, index) of emptyWallets"
                   :key="address + index"
                   class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
                 >
@@ -570,7 +570,7 @@ export default {
 
 .WalletNew__wallets--selected-identicon {
   transition: all 0.5s;
-  opacity: 1!important
+  opacity: 1 !important
 }
 
 .WalletNew__wallets--unselected-identicon {
@@ -578,7 +578,7 @@ export default {
 }
 
 .WalletNew__wallets--unselected-identicon:hover {
-  opacity: 1!important;
+  opacity: 1 !important;
   transition: all 0.5s;
   @apply .text-theme-wallet-new-selected .no-underline
 }
