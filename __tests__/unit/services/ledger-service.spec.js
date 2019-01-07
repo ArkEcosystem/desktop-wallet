@@ -33,8 +33,8 @@ describe('LedgerService', () => {
     expect(ledgerService.transport.close).toHaveBeenCalledTimes(1)
   })
 
-  it('should run getAddress', async () => {
-    const response = await ledgerService.getAddress(`44'/1'/0'/0/0`)
+  it('should run getWallet', async () => {
+    const response = await ledgerService.getWallet(`44'/1'/0'/0/0`)
 
     expect(response).toBeTruthy()
     expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
