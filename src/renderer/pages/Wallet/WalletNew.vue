@@ -51,6 +51,8 @@
               <!-- Hide it when the step is collapse -->
               <ButtonReload
                 v-if="step === 1"
+                color-class="WalletNew__ButtonReload-colorClass"
+                text-class=""
                 :is-refreshing="isRefreshing"
                 class="WalletNew__refresh-button"
                 @click="refreshAddresses"
@@ -533,5 +535,15 @@ export default {
 .WalletNew__wallets--address:hover {
   transition: all 0.5s;
   @apply .text-theme-wallet-new-selected .no-underline
+}
+
+.WalletNew__ButtonReload-colorClass {
+  @apply .text-grey-dark .bg-theme-button;
+}
+
+.WalletNew__ButtonReload-colorClass:hover {
+  @apply .bg-blue .text-white;
+  box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
+  transition: all .1s ease-in
 }
 </style>
