@@ -58,55 +58,56 @@
                 @click="refreshAddresses"
               />
             </div>
-
-            <TransitionGroup
-              v-show="!isRefreshing"
-              key="active"
-              class="list-reset"
-              name="WalletNew__wallets"
-              tag="ul"
-            >
-              <li
-                v-for="(passphrase, address) in wallets"
-                :key="address"
-                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
+            <div>
+              <TransitionGroup
+                v-show="!isRefreshing"
+                key="active"
+                class="list-reset"
+                name="WalletNew__wallets"
+                tag="ul"
               >
-                <WalletIdenticon
-                  :value="address"
-                  :size="35"
-                  :class="{ 'WalletNew__wallets--selected-identicon': schema.address === address }"
-                  class="WalletNew__wallets--unselected-identicon flex-no-shrink"
-                />
-                <a
-                  :class="{ 'WalletNew__wallets--selected': schema.address === address }"
-                  class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 cursor-pointer flex-no-shrink"
-                  @click="selectWallet(address, passphrase)"
+                <li
+                  v-for="(passphrase, address) in wallets"
+                  :key="address"
+                  class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
                 >
-                  <span class="font-semibold text-sm">
-                    {{ address }}
-                  </span>
-                </a>
-              </li>
-            </TransitionGroup>
-            <TransitionGroup
-              v-show="isRefreshing"
-              key="inactive"
-              class="list-reset"
-              name="WalletNew__wallets"
-              tag="ul"
-            >
-              <li
-                v-for="(address, index) in emptyWallets"
-                :key="address + index"
-                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
+                  <WalletIdenticon
+                    :value="address"
+                    :size="35"
+                    :class="{ 'WalletNew__wallets--selected-identicon': schema.address === address }"
+                    class="WalletNew__wallets--unselected-identicon flex-no-shrink"
+                  />
+                  <a
+                    :class="{ 'WalletNew__wallets--selected': schema.address === address }"
+                    class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 cursor-pointer flex-no-shrink"
+                    @click="selectWallet(address, passphrase)"
+                  >
+                    <span class="font-semibold text-sm">
+                      {{ address }}
+                    </span>
+                  </a>
+                </li>
+              </TransitionGroup>
+              <TransitionGroup
+                v-show="isRefreshing"
+                key="inactive"
+                class="list-reset"
+                name="WalletNew__wallets"
+                tag="ul"
               >
-                <WalletIdenticon
-                  :value="address"
-                  :size="35"
-                  class="WalletNew__wallets--unselected-identicon flex-no-shrink"
-                />
-              </li>
-            </TransitionGroup>
+                <li
+                  v-for="(address, index) in emptyWallets"
+                  :key="address + index"
+                  class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
+                >
+                  <WalletIdenticon
+                    :value="address"
+                    :size="35"
+                    class="WalletNew__wallets--unselected-identicon flex-no-shrink"
+                  />
+                </li>
+              </TransitionGroup>
+            </div>
           </MenuStepItem>
 
           <MenuStepItem
