@@ -308,9 +308,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get wallet: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -326,9 +325,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get address: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -344,9 +342,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get public key: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -365,9 +362,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not sign transaction: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -379,7 +375,7 @@ export default {
      * @return {String}
      */
     async action ({ state, dispatch, rootGetters }, { action, accountIndex, data } = {}) {
-      if (accountIndex !== undefined && !Number.isFinite(accountIndex)) {
+      if (accountIndex === undefined || !Number.isFinite(accountIndex)) {
         throw new Error('accountIndex must be a Number')
       }
 

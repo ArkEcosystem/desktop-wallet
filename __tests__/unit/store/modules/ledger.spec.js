@@ -60,57 +60,49 @@ describe('ledger store module', () => {
     })
 
     it('should fail with invalid accountIndex', async () => {
-      expect(await store.dispatch('ledger/getWallet')).toBe(false)
+      await store.dispatch('ledger/connect')
+      expect(store.dispatch('ledger/getWallet')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
 
     it('should fail when not connected', async () => {
       store.commit('ledger/SET_CONNECTED', false)
-      const response = await store.dispatch('ledger/getWallet', 1)
-
-      expect(store.getters['ledger/isConnected']).toBe(false)
-      expect(response).toBe(false)
+      expect(store.dispatch('ledger/getWallet', 1)).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
 
   describe('getAddress', () => {
     it('should fail with invalid accountIndex', async () => {
-      expect(await store.dispatch('ledger/getAddress')).toBe(false)
+      await store.dispatch('ledger/connect')
+      expect(store.dispatch('ledger/getAddress')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
 
     it('should fail when not connected', async () => {
       store.commit('ledger/SET_CONNECTED', false)
-      const response = await store.dispatch('ledger/getAddress', 1)
-
-      expect(store.getters['ledger/isConnected']).toBe(false)
-      expect(response).toBe(false)
+      expect(store.dispatch('ledger/getAddress', 1)).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
 
   describe('getPublicKey', () => {
     it('should fail with invalid accountIndex', async () => {
-      expect(await store.dispatch('ledger/getPublicKey')).toBe(false)
+      await store.dispatch('ledger/connect')
+      expect(store.dispatch('ledger/getPublicKey')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
 
     it('should fail when not connected', async () => {
       store.commit('ledger/SET_CONNECTED', false)
-      const response = await store.dispatch('ledger/getPublicKey', 1)
-
-      expect(store.getters['ledger/isConnected']).toBe(false)
-      expect(response).toBe(false)
+      expect(store.dispatch('ledger/getPublicKey', 1)).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
 
   describe('signTransaction', () => {
     it('should fail with invalid accountIndex', async () => {
-      expect(await store.dispatch('ledger/signTransaction')).toBe(false)
+      await store.dispatch('ledger/connect')
+      expect(store.dispatch('ledger/signTransaction')).rejects.toThrow(/.*accountIndex must be a Number$/)
     })
 
     it('should fail when not connected', async () => {
       store.commit('ledger/SET_CONNECTED', false)
-      const response = await store.dispatch('ledger/signTransaction', 1, 'abc')
-
-      expect(store.getters['ledger/isConnected']).toBe(false)
-      expect(response).toBe(false)
+      expect(store.dispatch('ledger/signTransaction', 1, 'abc')).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
 })
