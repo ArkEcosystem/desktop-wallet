@@ -60,6 +60,8 @@
             </div>
 
             <TransitionGroup
+              v-show="!isRefreshing"
+              key="active"
               class="list-reset"
               name="WalletNew__wallets"
               tag="ul"
@@ -83,6 +85,25 @@
                     {{ address }}
                   </span>
                 </a>
+              </li>
+            </TransitionGroup>
+            <TransitionGroup
+              v-show="isRefreshing"
+              key="inactive"
+              class="list-reset"
+              name="WalletNew__wallets"
+              tag="ul"
+            >
+              <li
+                v-for="(address, index) in emptyWallets"
+                :key="address + index"
+                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
+              >
+                <WalletIdenticon
+                  :value="address"
+                  :size="35"
+                  class="flex-no-shrink"
+                />
               </li>
             </TransitionGroup>
           </MenuStepItem>
@@ -277,6 +298,7 @@ export default {
     isPassphraseVerified: false,
     ensureEntirePassphrase: false,
     step: 1,
+    emptyWallets: ['...', '...', '...'],
     wallets: {},
     walletPassword: null,
     walletConfirmPassword: null,
@@ -514,7 +536,7 @@ export default {
 }
 
 .WalletNew__wallets-enter-active {
-  transition: opacity 1s
+  transition: opacity 0.75s
 }
 .WalletNew__wallets-leave-active {
   transition: opacity 0.2s
