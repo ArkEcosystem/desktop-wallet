@@ -47,6 +47,7 @@ export default {
     avatar: state => state.avatar,
     background: state => state.background,
     currency: state => state.currency,
+    timeFormat: state => state.timeFormat,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     layout: state => state.layout,
@@ -72,6 +73,10 @@ export default {
 
     SET_CURRENCY (state, currency) {
       state.currency = currency
+    },
+
+    SET_TIME_FORMAT (state, format) {
+      state.timeFormat = format
     },
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
@@ -122,6 +127,7 @@ export default {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
       state.currency = MARKET.defaultCurrency
+      state.timeFormat = 'Default'
       state.isMarketChartEnabled = true
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
@@ -143,6 +149,7 @@ export default {
       dispatch('setAvatar', profile.avatar)
       dispatch('setBackground', profile.background)
       dispatch('setCurrency', profile.currency)
+      dispatch('setTimeFormat', profile.timeFormat)
       dispatch('setIsMarketChartEnabled', profile.isMarketChartEnabled)
       dispatch('setName', profile.name)
       dispatch('setLanguage', profile.language)
@@ -170,6 +177,10 @@ export default {
 
     setCurrency ({ commit }, value) {
       commit('SET_CURRENCY', value)
+    },
+
+    setTimeFormat ({ commit }, value) {
+      commit('SET_TIME_FORMAT', value)
     },
 
     setIsMarketChartEnabled ({ commit }, value) {

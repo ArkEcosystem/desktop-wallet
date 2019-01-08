@@ -98,6 +98,18 @@
                 />
               </ListDividedItem>
 
+              <ListDividedItem :label="$t('COMMON.TIME_FORMAT')">
+                <MenuDropdown
+                  :class="{
+                    'ProfileEdition__field--modified': modified.timeFormat && modified.timeFormat !== profile.timeFormat
+                  }"
+                  :items="timeFormats"
+                  :value="timeFormat"
+                  :position="['-50%', '0%']"
+                  @select="selectTimeFormat"
+                />
+              </ListDividedItem>
+
               <ListDividedItem
                 v-if="!hasWallets"
                 :label="$t('COMMON.NETWORK')"
@@ -138,9 +150,8 @@
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
-                  :max-visible-items="4"
-                  :selected="theme"
-                  @select="selectTheme"
+                  :value="theme"
+                  @input="selectTheme"
                 />
               </ListDividedItem>
 
@@ -159,7 +170,7 @@
         </MenuTab>
 
         <!-- TODO at the bottom ? -->
-        <footer class="ProfileEdition__footer mt-3 p-10">
+        <footer class="ProfileEdition__footer mt-3 p-10 pt-0">
           <button
             :disabled="!isModified || isNameEditable"
             class="blue-button"
@@ -174,7 +185,7 @@
 </template>
 
 <script>
-import { capitalize, isEmpty } from 'lodash'
+import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -209,7 +220,8 @@ export default {
       name: '',
       language: '',
       bip39Language: '',
-      currency: ''
+      currency: '',
+      timeFormat: ''
     },
     tab: 'profile'
   }),
@@ -217,6 +229,12 @@ export default {
   computed: {
     currencies () {
       return this.$store.getters['market/currencies']
+    },
+    timeFormats () {
+      return ['Default', '12h', '24h'].reduce((all, format) => {
+        all[format] = this.$t(`TIME_FORMAT.${format}`)
+        return all
+      }, {})
     },
     languages () {
       return I18N.enabledLocales.reduce((all, locale) => {
@@ -270,6 +288,9 @@ export default {
     currency () {
       return this.modified.currency || this.profile.currency
     },
+    timeFormat () {
+      return this.modified.timeFormat || this.profile.timeFormat
+    },
     language () {
       return this.modified.language || this.profile.language
     },
@@ -291,7 +312,7 @@ export default {
     },
     nameError () {
       if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
-        if (!this.$v.modified.name.doesNotExists) {
+        if (!this.$v.modified.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.modified.name])
         } else if (!this.$v.modified.name.maxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
@@ -320,6 +341,7 @@ export default {
     this.modified.language = this.profile.language
     this.modified.bip39Language = this.profile.bip39Language
     this.modified.currency = this.profile.currency
+    this.modified.timeFormat = this.profile.timeFormat || 'Default'
   },
 
   methods: {
@@ -353,6 +375,10 @@ export default {
       this.__updateSession('currency', currency)
     },
 
+    selectTimeFormat (format) {
+      this.__updateSession('timeFormat', format)
+    },
+
     async selectLanguage (language) {
       this.__updateSession('language', language)
     },
@@ -378,16 +404,20 @@ export default {
       this.$set(this.modified, propertyName, value)
 
       if (this.isCurrentProfile) {
-        const action = `session/set${capitalize(propertyName)}`
+        const action = `session/set${this.capitalizeFirst(propertyName)}`
         await this.$store.dispatch(action, value)
       }
+    },
+
+    capitalizeFirst (value) {
+      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   },
 
   validations: {
     modified: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           const otherProfile = this.$store.getters['profile/doesExist'](value)
           return !otherProfile || otherProfile.id === this.profile.id
         },
@@ -414,6 +444,10 @@ export default {
 <style lang="postcss">
 .ProfileEdition .MenuTab .MenuTab__nav__item {
   @apply .px-10 .py-6
+}
+.ProfileEdition .MenuTab__content {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,

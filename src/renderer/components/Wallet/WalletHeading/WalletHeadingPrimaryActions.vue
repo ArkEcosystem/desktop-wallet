@@ -34,7 +34,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.name && currentWallet.isContact && doesNotExists"
+      v-show="!currentWallet.name && currentWallet.isContact && doesNotExist"
       :class="buttonStyle"
       :label="$t('PAGES.WALLET_SHOW.ADD_CONTACT')"
       icon="contact-add"
@@ -104,7 +104,7 @@ export default {
       return this.wallet_fromRoute
     },
 
-    doesNotExists () {
+    doesNotExist () {
       return !this.$store.getters['wallet/byAddress'](this.currentWallet.address)
     }
   },

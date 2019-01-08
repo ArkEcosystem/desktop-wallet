@@ -42,8 +42,8 @@
       />
 
       <InputSwitch
+        v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
-        :is-active="isSendAllActive"
         :is-disabled="!canSendAll() || !currentWallet"
         @change="onSendAll"
       />
@@ -114,6 +114,16 @@
       </button>
     </div>
 
+    <ModalConfirmation
+      v-if="showConfirmSendAll"
+      :question="$t('TRANSACTION.CONFIRM_SEND_ALL')"
+      :title="$t('TRANSACTION.CONFIRM_SEND_ALL_TITLE')"
+      :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
+      container-classes="SendAllConfirmation"
+      portal-target="loading"
+      @cancel="emitCancelSendAll"
+      @continue="enableSendAll"
+    />
     <ModalLoader
       :message="$t('ENCRYPTION.DECRYPTING')"
       :visible="showEncryptLoader"
@@ -129,7 +139,7 @@
 import { maxLength, required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
-import { ModalLoader } from '@/components/Modal'
+import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
@@ -146,6 +156,7 @@ export default {
     InputSwitch,
     InputText,
     InputFee,
+    ModalConfirmation,
     ModalLoader,
     PassphraseInput,
     WalletSelection
@@ -172,7 +183,8 @@ export default {
     showEncryptLoader: false,
     showLedgerLoader: false,
     bip38Worker: null,
-    wallet: null
+    wallet: null,
+    showConfirmSendAll: false
   }),
 
   computed: {
@@ -181,9 +193,9 @@ export default {
     },
     // Customize the message to display the minimum amount as subunit
     amountTooLowError () {
-      const { fractionDigits, token } = this.walletNetwork
+      const { fractionDigits } = this.walletNetwork
       const minimumAmount = Math.pow(10, -fractionDigits)
-      const amount = this.currency_format(minimumAmount, { currency: token, currencyDisplay: 'code', subunit: true })
+      const amount = this.currency_simpleFormatCrypto(minimumAmount.toFixed(fractionDigits))
       return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
     },
     notEnoughBalanceError () {
@@ -278,6 +290,15 @@ export default {
         this.submit()
       }
     })
+
+    // Set default fees
+    // v1 compatibility
+    // TODO: Get static fee from the network, or allow better UI
+    if (this.walletNetwork.apiVersion === 1) {
+      this.form.fee = 0.1
+    } else {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -293,9 +314,13 @@ export default {
       this.ensureAvailableAmount()
     },
 
-    onSendAll (isActive) {
-      this.isSendAllActive = isActive
-      this.ensureAvailableAmount()
+    onSendAll (setActive) {
+      if (!setActive) {
+        this.isSendAllActive = setActive
+        this.ensureAvailableAmount()
+      } else {
+        this.confirmSendAll()
+      }
     },
 
     canSendAll () {
@@ -322,16 +347,6 @@ export default {
     },
 
     async submit () {
-      // v1 compatibility
-      // TODO: Get static fee from the network, or allow better UI
-      if (this.walletNetwork.apiVersion === 1) {
-        this.form.fee = 0.1
-      }
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
       const transactionData = {
         amount: parseInt(this.currency_unitToSub(this.form.amount)),
         recipientId: this.form.recipientId,
@@ -364,6 +379,21 @@ export default {
       if (success) {
         this.emitNext(transaction)
       }
+    },
+
+    enableSendAll () {
+      this.isSendAllActive = true
+      this.ensureAvailableAmount()
+      this.showConfirmSendAll = false
+    },
+
+    confirmSendAll () {
+      this.showConfirmSendAll = true
+    },
+
+    emitCancelSendAll () {
+      this.showConfirmSendAll = false
+      this.isSendAllActive = false
     }
   },
 
@@ -446,3 +476,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.SendAllConfirmation .ModalConfirmation__container {
+  min-width: calc(var(--contact-identicon-xl) + 74px * 2);
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
+}
+</style>
