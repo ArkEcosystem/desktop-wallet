@@ -37,7 +37,16 @@ brew cask install ark-desktop-wallet
 
 ## Translations
 
-To translate this application, you need to do it on [Transifex](https://www.transifex.com/ark-ecosystem/ark-desktop-wallet/) and ask for an invitation to join the team. After that, when we accept your application, you could have access to their intuitive user interface to translate from English to your language. You could even suggest more languages.
+Translations are part of our [ARK Development and Security Bounty Program](https://blog.ark.io/ark-development-and-security-bounty-program-a95122d06879).
+
+Full translations are considered to be `Tier 3`, while grammar fixes, typos, etc. are considered to be `Tier 6`.
+
+Full translations should involve 5 tasks:
+ - Create a pull request for the language you are going to translate. If you have doubts about something, use English to explain them.
+ - Translate the textual content of the application, using the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) as the reference. To do that, a new file, with the language locale code should be created. The name of the file should be a valid [RFC 5646](https://tools.ietf.org/html/rfc5646).
+ - Add the language to the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) at the `LANGUAGES` key.
+ - Update the [date and time formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/date-time-formats.js) to include the short and long format that are used commonly by native speakers.
+ - Update the [number formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/number-formats.js) to include the preferred way of displaying currencies used commonly by native speakers.
 
 ## Development
 
