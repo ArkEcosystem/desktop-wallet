@@ -100,6 +100,7 @@ export default {
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     DELAY: 'Latency',
+    DISCONNECT: 'Disconnect from peer',
     FAILED_REFRESH: 'Failed to refresh peers',
     HEIGHT: 'Block height',
     LAST_CHECKED: 'Last checked',
@@ -468,7 +469,9 @@ export default {
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
-          TEXT: 'Choose the network of this profile.'
+          TEXT: 'Choose the network of this profile.',
+          CUSTOM_NETWORK: 'or you can choose a custom network',
+          CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.'
         },
         NAME: 'Profile name',
         TITLE: '2. Network'
@@ -476,7 +479,8 @@ export default {
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
-          TEXT: 'Customize this application selecting one of our themes and backgrounds.'
+          TEXT: 'Customize this application by selecting one of our themes and backgrounds.',
+          THEME: 'You can choose light or dark mode'
         },
         NAME: 'Profile name',
         TITLE: '3. Appearance'

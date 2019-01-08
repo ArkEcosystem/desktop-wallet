@@ -7,7 +7,7 @@
     />
     <WalletSidebar
       v-if="wallet"
-      class="sticky pin min-h-full w-32 border-l border-theme-line-separator py-10 rounded-r-lg hidden lg:block"
+      class="sticky pin min-h-full w-1/7 border-l border-theme-line-separator py-10 rounded-r-lg hidden lg:block"
       @select="loadWalletData"
     />
   </div>

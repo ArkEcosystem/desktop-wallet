@@ -150,9 +150,8 @@
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
-                  :max-visible-items="4"
-                  :selected="theme"
-                  @select="selectTheme"
+                  :value="theme"
+                  @input="selectTheme"
                 />
               </ListDividedItem>
 
@@ -171,7 +170,7 @@
         </MenuTab>
 
         <!-- TODO at the bottom ? -->
-        <footer class="ProfileEdition__footer mt-3 p-10">
+        <footer class="ProfileEdition__footer mt-3 p-10 pt-0">
           <button
             :disabled="!isModified || isNameEditable"
             class="blue-button"
@@ -445,6 +444,10 @@ export default {
 <style lang="postcss">
 .ProfileEdition .MenuTab .MenuTab__nav__item {
   @apply .px-10 .py-6
+}
+.ProfileEdition .MenuTab__content {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,

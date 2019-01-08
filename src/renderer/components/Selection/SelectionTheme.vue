@@ -1,49 +1,61 @@
 <template>
-  <InputGrid
-    :items="images"
-    :max-visible-items="maxVisibleItems"
-    :item-attrs="['id', 'title', 'svg']"
-    :selected="selectedItem"
-    item-key="id"
-    @input="select"
-  >
-    <template
-      slot="item"
-      slot-scope="{ id, title, svg }"
-    >
-      <!-- eslint-disable vue/no-v-html -->
-      <div
-        :title="title"
-        :class="{ 'svg-button--selected': selectedItem && selectedItem.id === id }"
-        class="svg-button w-18 h-18 p-4 rounded-lg text-center bg-theme-button"
-        v-html="assets_loadImage(svg)"
+  <div class="flex flex-no-grow items-center">
+    <SvgIcon
+      name="sun"
+      view-box="0 0 20 20"
+      class="transition text-yellow"
+    />
+    <div>
+      <ButtonSwitch
+        :is-active="status"
+        class="mx-2"
+        @change="emitInput"
       />
-    </template>
-  </InputGrid>
+    </div>
+    <SvgIcon
+      name="moon"
+      view-box="0 0 18 18"
+      class="transition text-blue-dark"
+    />
+  </div>
 </template>
 
 <script>
-import { THEMES } from '@config'
-import selectionMixin from './mixin-selection'
-import selectionSvgMixin from './mixin-selection-svg'
+import { ButtonSwitch } from '@/components/Button'
+import { SvgIcon } from '@/components/SvgIcon'
+import { findKey } from 'lodash'
 
 export default {
   name: 'SelectionTheme',
 
-  mixins: [selectionMixin, selectionSvgMixin],
+  themes: {
+    light: false,
+    dark: true
+  },
+
+  components: {
+    ButtonSwitch,
+    SvgIcon
+  },
+
+  props: {
+    value: {
+      type: String,
+      required: false,
+      default: null
+    }
+  },
 
   computed: {
-    /**
-     * Theme images
-     */
-    images () {
-      return THEMES.map(theme => {
-        return {
-          id: theme.id,
-          title: theme.title,
-          svg: `theme.${theme.id}`
-        }
-      })
+    status () {
+      return this.$options.themes[this.value]
+    }
+  },
+
+  methods: {
+    emitInput (status) {
+      const theme = findKey(this.$options.themes, item => item === status)
+      this.$emit('input', theme)
     }
   }
 }

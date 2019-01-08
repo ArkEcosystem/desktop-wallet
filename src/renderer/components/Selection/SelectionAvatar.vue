@@ -51,7 +51,7 @@ export default {
 }
 
  .SelectionAvatar .InputGridModal__container {
-  width: calc((var(--profile-avatar-xl)) * 3 + 2 * 10px) !important;
+  width: calc((var(--profile-avatar-xl)) * 3 + 2 * 15px) !important;
 }
 .SelectionAvatar .InputGridModal .InputGrid__container__category__items {
   display: grid;
