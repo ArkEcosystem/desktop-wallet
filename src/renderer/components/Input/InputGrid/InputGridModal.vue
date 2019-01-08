@@ -5,7 +5,7 @@
     @close="emitClose"
   >
     <section class="InputGridModal flex flex-col">
-      <div class="InputGridModal__container overflow-y-auto">
+      <div class="InputGridModal__container overflow-y-auto p-1">
         <div
           v-for="(categoryItems, category) in items"
           :key="category"

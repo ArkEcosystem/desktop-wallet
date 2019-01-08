@@ -8,6 +8,23 @@
       :is-horizontal="isHorizontal"
       class="AppSidemenuNetworkStatus__peer"
     >
+      <div class="text-xs mx-6 mb-2 text-theme-settings-heading">
+        <span class="float-left">
+          {{ $t('PEER.PEER') }}
+        </span>
+        <span
+          v-if="!peer.isCustom"
+          class="float-right"
+        >
+          {{ $t('PEER.BEST') }}
+        </span>
+        <span
+          v-else
+          class="float-right"
+        >
+          {{ $t('PEER.DISCONNECT') }}
+        </span>
+      </div>
       <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <button
           @click="toggleSelect('peers-menu')"
@@ -22,16 +39,34 @@
               :value="currentPeerId"
               :placeholder="peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')"
               :pin-above="true"
-              :prefix="$t('PEER.PEER')"
               class="inline-block text-white fill-white width-inherit"
               @select="setPeer"
             />
           </div>
         </button>
         <ButtonReload
+          v-if="!peer.isCustom"
           :is-refreshing="isRefreshing"
-          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
+          text-class="hover:text-white"
+          color-class="AppSidemenuNetworkStatus__ButtonReload-colorClass"
+          class="AppSidemenuNetworkStatus__refresh-button hover:text-white bg-theme-settings-button absolute pin-t pin-r pin-b px-2 text-grey-dark"
           @click="refreshPeer"
+        />
+        <button
+          v-else-if="!isRefreshing"
+          class="bg-theme-settings-button w-12 absolute pin-t pin-r pin-b cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+          @click="refreshPeer"
+        >
+          <SvgIcon
+            name="cross"
+            view-box="0 0 16 15"
+            class="AppSidemenuNetworkStatus__refresh-button"
+          />
+        </button>
+        <ButtonReload
+          v-else
+          :is-refreshing="true"
+          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
         />
       </div>
       <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
@@ -48,7 +83,7 @@
             {{ $t('PEER.LAST_CHECKED') }}
           </div>
           <div class="text-md text-white">
-            {{ $d(peer.lastUpdated || lastUpdated, 'shortTime') }}
+            {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
           </div>
         </div>
         <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
@@ -249,7 +284,17 @@ export default {
   @apply .text-white;
 }
 
+.AppSidemenuNetworkStatus__peer .MenuDropdownHandler span svg {
+  transform: rotate(-180deg);
+}
+
 .AppSidemenuNetworkStatus__ButtonModal {
   @apply block;
+}
+
+.AppSidemenuNetworkStatus__ButtonReload-colorClass:hover {
+  @apply .bg-blue;
+  box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
+  transition: all .1s ease-in
 }
 </style>

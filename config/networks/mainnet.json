@@ -1,9 +1,9 @@
 {
   "id": "ark.mainnet",
   "name": "ARK Mainnet",
-  "title": "ARK",
+  "title": "ARK Mainnet",
   "server": "https://explorer.ark.io:8443",
-  "description": "The ARK Mainnet.",
+  "description": "The ARK Mainnet should be chosen in most cases.",
   "imagePath": "networks/ark.png",
   "apiVersion": 2,
   "slip44": "111",
@@ -11,6 +11,40 @@
     "enabled": true,
     "ticker": "ARK"
   },
+  "feeStatistics": [
+    {
+      "type": 0,
+      "fees": {
+        "avgFee": 10000000,
+        "maxFee": 10000000,
+        "minFee": 10000000
+      }
+    },
+    {
+      "type": 1,
+      "fees": {
+        "avgFee": 500000000,
+        "maxFee": 500000000,
+        "minFee": 500000000
+      }
+    },
+    {
+      "type": 2,
+      "fees": {
+        "avgFee": 2500000000,
+        "maxFee": 2500000000,
+        "minFee": 2500000000
+      }
+    },
+    {
+      "type": 3,
+      "fees": {
+        "avgFee": 100000000,
+        "maxFee": 100000000,
+        "minFee": 100000000
+      }
+    }
+  ],
   "constants": {
     "activeDelegates": 51,
     "epoch": "2017-03-21T13:00:00.000Z"
@@ -33,6 +67,7 @@
     "AFrPtEmzu6wdVpa2CnRDEKGQQMWgq8nE9V": "Binance",
     "AQkyi31gUbLuFp7ArgH9hUCewg22TkxWpk": "Binance Cold Wallet",
     "AdS7WvzqusoP759qRo6HDmUz2L34u4fMHz": "Binance Cold Wallet II",
+    "Aakg29vVhQhJ5nrsAHysTUqkTBVfmgBSXU": "Binance Cold Wallet III",
     "AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK": "Bittrex",
     "AdA5THjiVFAWhcMo5QyTKF1Y6d39bnPR2F": "Changelly",
     "AJbmGnDAx9y91MQCDApyaqZhn6fBvYX9iJ": "Cryptopia",

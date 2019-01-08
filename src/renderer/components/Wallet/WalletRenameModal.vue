@@ -1,10 +1,17 @@
 <template>
   <ModalWindow
-    :title="$t('WALLET_RENAME.TITLE')"
+    :title="isNewContact ? $t('WALLET_RENAME.TITLE_ADD') : $t('WALLET_RENAME.TITLE')"
+    container-classes="WalletRenameModal"
     @close="emitCancel"
   >
     <div class="flex flex-col justify-center">
-      <p>{{ $t('WALLET_RENAME.ADDRESS_INFO', { wallet: wallet.address }) }}</p>
+      <p>
+        {{ $t('WALLET_RENAME.ADDRESS_INFO') }}
+        <span class="font-bold">
+          {{ walletName }}
+        </span>
+      </p>
+
       <InputText
         v-model="schema.name"
         :is-invalid="$v.schema.name.$invalid"
@@ -12,16 +19,16 @@
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
-        @keyup.enter.native="renameWallet"
+        @keyup.enter.native="isNewContact ? createWallet() : renameWallet()"
       />
 
       <button
         :disabled="$v.schema.name.$invalid"
         class="blue-button mt-5"
         type="button"
-        @click="renameWallet"
+        @click="isNewContact ? createWallet() : renameWallet()"
       >
-        {{ $t('WALLET_RENAME.RENAME') }}
+        {{ isNewContact ? $t('WALLET_RENAME.ADD') : $t('WALLET_RENAME.RENAME') }}
       </button>
     </div>
   </ModalWindow>
@@ -31,6 +38,7 @@
 import { InputText } from '@/components/Input'
 import { ModalWindow } from '@/components/Modal'
 import Wallet from '@/models/wallet'
+import truncate from '@/filters/truncate'
 
 export default {
   name: 'WalletRenameModal',
@@ -46,13 +54,17 @@ export default {
     wallet: {
       type: Object,
       required: true
+    },
+    isNewContact: {
+      type: Boolean,
+      default: false
     }
   },
 
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -62,6 +74,13 @@ export default {
         }
       }
       return null
+    },
+
+    walletName () {
+      if (this.wallet.name && this.wallet.name !== this.wallet.address) {
+        return `${truncate(this.wallet.name, 25)} (${this.wallet_truncate(this.wallet.address)})`
+      }
+      return this.wallet.address
     }
   },
 
@@ -89,12 +108,32 @@ export default {
       this.emitRenamed()
     },
 
+    async createWallet () {
+      try {
+        const newName = this.schema.name
+        const { address } = await this.$store.dispatch('wallet/create', {
+          address: this.wallet.address,
+          name: newName,
+          profileId: this.session_profile.id,
+          isContact: true
+        })
+        this.$router.push({ name: 'wallet-show', params: { address } })
+      } catch (error) {
+        this.$error(`${this.$t('PAGES.CONTACT_NEW.FAILED')}: ${error.message}`)
+      }
+      this.emitCreated()
+    },
+
     emitCancel () {
       this.$emit('cancel')
     },
 
     emitRenamed () {
       this.$emit('renamed')
+    },
+
+    emitCreated () {
+      this.$emit('created')
     }
   },
 
@@ -103,7 +142,7 @@ export default {
     step3: ['isPassphraseVerified'],
     schema: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' ||
             value === this.wallet.name ||
             !this.$store.getters['wallet/byName'](value)
@@ -113,3 +152,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.WalletRenameModal {
+  min-width: 35rem;
+}
+</style>

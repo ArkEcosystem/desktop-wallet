@@ -8,7 +8,7 @@
     class="AppSidemenu relative bg-transparent"
   >
     <div
-      class="AppSidemenu__container flexify w-full lg:h-full justify-between"
+      class="AppSidemenu__container flexify w-full md:h-full justify-between"
     >
       <!-- ARK logo -->
       <RouterLink
@@ -113,7 +113,7 @@
               class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
             >
               <SvgIcon
-                class="AppSidemenu__avatar__dots"
+                class="AppSidemenu__avatar__dots text-grey-dark"
                 name="point"
                 view-box="0 0 14 14"
               />

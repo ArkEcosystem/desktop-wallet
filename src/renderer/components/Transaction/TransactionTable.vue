@@ -116,6 +116,7 @@
         >
           <WalletAddress
             :address="data.row.sender"
+            :address-length="8"
             tooltip-container=".TransactionTable"
           />
         </div>
@@ -127,6 +128,7 @@
         >
           <WalletAddress
             :address="data.row.recipient"
+            :address-length="8"
             :type="data.row.type"
             :asset="data.row.asset"
             tooltip-container=".TransactionTable"
@@ -153,7 +155,6 @@
 
 <script>
 import { at } from 'lodash'
-import moment from 'moment'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionShow from './TransactionShow'
@@ -244,9 +245,7 @@ export default {
 
   methods: {
     formatDate (value) {
-      moment.locale(window.navigator.userLanguage || window.navigator.language)
-
-      return moment(value).format('L HH:mm:ss')
+      return this.formatter_date(value)
     },
 
     formatAddress (value) {

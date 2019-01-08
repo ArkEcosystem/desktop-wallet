@@ -264,8 +264,10 @@ export default {
      * @param {(String|Number)} value
      */
     updateInputValue (value) {
-      // Ignore empty and not valid values
-      if (value && this.checkAmount(value)) {
+      if (value === '') {
+        this.inputValue = ''
+        return true
+      } else if (value && this.checkAmount(value)) {
         let number = Number(value.toString().replace(',', '.'))
         number.toString().includes('-')
           ? this.inputValue = number.toFixed(number.toString().split('-')[1]) // Small numbers will be like 1e-7 so we use the number after '-' for toFixed()
