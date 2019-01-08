@@ -39,7 +39,7 @@ describe('MarketChartHeader', () => {
       },
       mocks
     })
-    const find = wrapper.find('.MarketChartHeader__button')
+    const find = wrapper.find('.MarketChartHeader__button:enabled')
     find.trigger('click')
   })
 })

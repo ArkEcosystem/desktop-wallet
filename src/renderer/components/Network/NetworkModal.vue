@@ -281,7 +281,7 @@ export default {
         return isRequired
       }
       if (this.$v.form.name.$dirty) {
-        if (!this.$v.form.name.doesNotExists) {
+        if (!this.$v.form.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.form.name])
         }
       }
@@ -556,7 +556,7 @@ export default {
     form: {
       name: {
         required,
-        doesNotExists (value) {
+        doesNotExist (value) {
           return (this.originalName && value === this.originalName) || !this.$store.getters['network/byName'](value)
         }
       },

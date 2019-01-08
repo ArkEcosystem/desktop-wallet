@@ -37,7 +37,7 @@ describe('TransactionModal', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 
-  describe('isSuccessfulRsponse', () => {
+  describe('isSuccessfulResponse', () => {
     // Only V2
     let response = {
       data: { data: {} }

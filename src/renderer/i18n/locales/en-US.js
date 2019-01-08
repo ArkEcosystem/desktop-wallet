@@ -100,6 +100,7 @@ export default {
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     DELAY: 'Latency',
+    DISCONNECT: 'Disconnect from peer',
     FAILED_REFRESH: 'Failed to refresh peers',
     HEIGHT: 'Block height',
     LAST_CHECKED: 'Last checked',
@@ -468,7 +469,9 @@ export default {
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
-          TEXT: 'Choose the network of this profile.'
+          TEXT: 'Choose the network of this profile.',
+          CUSTOM_NETWORK: 'or you can choose a custom network',
+          CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.'
         },
         NAME: 'Profile name',
         TITLE: '2. Network'
@@ -476,7 +479,8 @@ export default {
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
-          TEXT: 'Customize this application selecting one of our themes and backgrounds.'
+          TEXT: 'Customize this application by selecting one of our themes and backgrounds.',
+          THEME: 'You can choose light or dark mode'
         },
         NAME: 'Profile name',
         TITLE: '3. Appearance'
@@ -703,6 +707,9 @@ export default {
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
+    CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
+    CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
+    CONFIRM_SEND_ALL_NOTE: 'Note: once sent, this cannot be undone.',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
     DISCARD: 'Discard',
@@ -826,7 +833,7 @@ export default {
     NEW: 'New wallet name',
     ADD: 'Add wallet',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Set a name for this wallet: {wallet}',
+    ADDRESS_INFO: 'Set a name for this wallet: ',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
   },
 
