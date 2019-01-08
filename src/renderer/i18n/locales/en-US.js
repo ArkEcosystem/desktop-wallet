@@ -464,7 +464,8 @@ export default {
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
         NAME: 'Profile name',
-        TITLE: '1. Profile details'
+        TITLE: '1. Profile details',
+        AVATAR_FOR_PROFILE: 'Avatar for your profile'
       },
       STEP2: {
         INSTRUCTIONS: {

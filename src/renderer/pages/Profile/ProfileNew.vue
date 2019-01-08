@@ -70,11 +70,17 @@
               </div>
 
               <div>
-                <h5 class="mb-2">
-                  {{ $t('COMMON.AVATAR') }}
-                </h5>
+                <div class="flex items-center justify-between pt-5 mb-2">
+                  <div>
+                    <h5>
+                      {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR_FOR_PROFILE') }}
+                    </h5>
+                  </div>
+                  <ButtonSwitch v-model="isAvatarEnabled" />
+                </div>
 
                 <SelectionAvatar
+                  v-if="isAvatarEnabled"
                   :max-visible-items="2"
                   :selected="schema.avatar"
                   @select="selectAvatar"
@@ -159,12 +165,14 @@ import { BIP39, I18N, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
+import { ButtonSwitch } from '@/components/Button'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
 export default {
   name: 'ProfileNew',
 
   components: {
+    ButtonSwitch,
     SelectionAvatar,
     SelectionBackground,
     SelectionNetwork,
@@ -179,6 +187,7 @@ export default {
 
   data: () => ({
     step: 1,
+    isAvatarEnabled: true,
     selectedNetwork: null
   }),
 
