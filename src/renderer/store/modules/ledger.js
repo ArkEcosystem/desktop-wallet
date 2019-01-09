@@ -20,6 +20,7 @@ export default {
     isLoading: state => state.isLoading,
     isConnected: state => state.isConnected,
     wallets: state => Object.values(state.wallets),
+    walletsObject: state => state.wallets,
     wallet: state => (address) => {
       if (!state.wallets[address]) {
         return null
@@ -65,6 +66,13 @@ export default {
     },
     SET_CONNECTION_TIMER (state, connectionTimer) {
       state.connectionTimer = connectionTimer
+    },
+    SET_WALLET (state, wallet) {
+      if (!state.wallets[wallet.address]) {
+        throw new Error(`Wallet ${wallet.address} not found in ledger wallets`)
+      }
+
+      state.wallets[wallet.address] = wallet
     },
     SET_WALLETS (state, wallets) {
       state.wallets = wallets
@@ -270,6 +278,17 @@ export default {
       dispatch('cacheWallets')
 
       return wallets
+    },
+
+    /**
+     * Store ledger wallets in the cache.
+     * @param  {Number} accountIndex Index of wallet to get address for.
+     * @return {(String|Boolean)}
+     */
+    async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
+      commit('SET_WALLET', updatedWallet)
+      eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
+      dispatch('cacheWallets')
     },
 
     /**
