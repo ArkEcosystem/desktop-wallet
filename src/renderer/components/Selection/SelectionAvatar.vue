@@ -4,6 +4,7 @@
     :max-visible-items="maxVisibleItems"
     :modal-header-text="modalHeaderText"
     :selected="selectedItem"
+    :auto-select-first="true"
     class="SelectionAvatar"
     modal-container-classes="SelectionAvatar"
     item-key="imagePath"

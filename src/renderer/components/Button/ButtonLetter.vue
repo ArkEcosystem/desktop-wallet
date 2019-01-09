@@ -1,10 +1,15 @@
 <template>
-  <button
-    type="button"
-    class="ButtonLetter"
+  <Component
+    :is="tag"
+    v-bind="$attrs"
+    :class="{ [`ButtonLetter--${size}`]: size }"
+    class="ButtonLetter inline-block rounded-full"
+    v-on="$listeners"
   >
-    {{ letter }}
-  </button>
+    <span class="ButtonLetter__inner flex h-full w-full items-center justify-center uppercase font-bold">
+      {{ letter }}
+    </span>
+  </Component>
 </template>
 
 <script>
@@ -12,6 +17,18 @@ export default {
   name: 'ButtonLetter',
 
   props: {
+    tag: {
+      type: String,
+      required: false,
+      default: 'button',
+      validator: value => ['button', 'div'].includes(value)
+    },
+    size: {
+      type: String,
+      required: false,
+      default: null,
+      validator: value => value ? ['sm', 'base', 'lg', 'xl'].includes(value) : true
+    },
     value: {
       type: String,
       required: true
@@ -27,7 +44,19 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.ButtonLetter {
-  @apply rounded-full flex items-center justify-center uppercase font-semibold w-5 h-5
+.ButtonLetter--sm {
+  @apply w-6 h-6 text-base
+}
+.ButtonLetter--base {
+  @apply w-8 h-8 text-lg
+}
+.ButtonLetter--lg {
+  @apply w-10 h-10 text-xl
+}
+.ButtonLetter--xl {
+  @apply w-12 h-12 text-2xl
+}
+.ButtonLetter--2xl {
+  @apply w-16 h-16 text-3xl
 }
 </style>

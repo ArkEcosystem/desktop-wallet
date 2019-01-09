@@ -4,6 +4,7 @@
     :max-visible-items="maxVisibleItems"
     :modal-header-text="$t('SELECTION_BACKGROUND.MODAL_HEADER')"
     :selected="selectedItem"
+    :auto-select-first="true"
     container-classes="SelectionBackground"
     class="SelectionBackgroundGrid"
     item-key="imagePath"

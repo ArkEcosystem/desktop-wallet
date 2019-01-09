@@ -102,6 +102,11 @@ export default {
       type: Number,
       required: false,
       default: 10
+    },
+    autoSelectFirst: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -127,6 +132,12 @@ export default {
     },
     isSelectedFromModal () {
       return !!this.selectedItem && this.visibleItems.indexOf(this.selectedItem) === -1
+    }
+  },
+
+  mounted () {
+    if (this.autoSelectFirst) {
+      this.select(this.allItems[0])
     }
   },
 

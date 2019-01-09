@@ -76,7 +76,10 @@
                       {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR_FOR_PROFILE') }}
                     </h5>
                   </div>
-                  <ButtonSwitch v-model="isAvatarEnabled" />
+                  <ButtonSwitch
+                    :is-active="isAvatarEnabled"
+                    @change="toggleAvatar"
+                  />
                 </div>
 
                 <SelectionAvatar
@@ -84,6 +87,12 @@
                   :max-visible-items="2"
                   :selected="schema.avatar"
                   @select="selectAvatar"
+                />
+                <ButtonLetter
+                  v-if="!isAvatarEnabled && schema.name.length"
+                  :value="schema.name"
+                  size="xl"
+                  class="bg-theme-button w-18 h-18 border-4 border-theme-feature shadow-outline-green"
                 />
               </div>
             </div>
@@ -165,7 +174,7 @@ import { BIP39, I18N, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
-import { ButtonSwitch } from '@/components/Button'
+import { ButtonSwitch, ButtonLetter } from '@/components/Button'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
 export default {
@@ -173,6 +182,7 @@ export default {
 
   components: {
     ButtonSwitch,
+    ButtonLetter,
     SelectionAvatar,
     SelectionBackground,
     SelectionNetwork,
@@ -344,6 +354,14 @@ export default {
     async selectTheme (theme) {
       this.schema.theme = theme
       await this.$store.dispatch('session/setTheme', theme)
+    },
+
+    toggleAvatar () {
+      this.isAvatarEnabled = !this.isAvatarEnabled
+
+      if (!this.isAvatarEnabled) {
+        this.selectAvatar(undefined)
+      }
     }
   },
 

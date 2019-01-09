@@ -103,15 +103,31 @@
           <!-- Profile settings -->
           <div
             :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
-            class="AppSidemenu__avatar__container relative cursor-pointer flex items-center hover:opacity-50"
+            class="AppSidemenu__avatar__container relative cursor-pointer flex items-center justify-center hover:opacity-50"
           >
             <RouterLink
+              v-if="session_profile.avatar"
               :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
               :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
               :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
               :to="{ name: 'profiles' }"
               class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
             >
+              <SvgIcon
+                class="AppSidemenu__avatar__dots text-grey-dark"
+                name="point"
+                view-box="0 0 14 14"
+              />
+            </RouterLink>
+            <RouterLink
+              v-if="!session_profile.avatar"
+              :to="{ name: 'profiles' }"
+            >
+              <ButtonLetter
+                :value="session_profile.name"
+                size="xl"
+                class="bg-theme-feature-item-selected text-theme-feature-item-selected-text"
+              />
               <SvgIcon
                 class="AppSidemenu__avatar__dots text-grey-dark"
                 name="point"
@@ -128,6 +144,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import releaseService from '@/services/release'
+import { ButtonLetter } from '@/components/Button'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
@@ -139,6 +156,7 @@ export default {
   name: 'AppSidemenu',
 
   components: {
+    ButtonLetter,
     MenuNavigation,
     MenuNavigationItem,
     AppSidemenuSettings,
@@ -225,7 +243,7 @@ export default {
 .AppSidemenu--horizontal .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature;
   right: 0.1rem;
-  bottom: 0.5rem;
+  bottom: 0.7rem;
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -237,10 +255,10 @@ export default {
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
 .AppSidemenu--vertical .AppSidemenu__avatar__dots {
-  @apply absolute p-2 rounded-full bg-theme-feature;
+  @apply absolute p-2 rounded-full bg-theme-feature shadow;
   right: 1rem;
-  bottom: -0.5rem;
-  width: 2rem;
-  height: 2rem;
+  bottom: -0.7rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 </style>
