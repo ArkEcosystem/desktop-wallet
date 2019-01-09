@@ -12,7 +12,7 @@
             v-else
             :value="session_profile.name"
             size="2xl"
-            class="bg-theme-button text-theme-button-text mx-5"
+            class="mx-5"
           />
           <div class="flex-col">
             <div>

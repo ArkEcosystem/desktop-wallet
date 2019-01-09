@@ -129,12 +129,25 @@
                 :label="$t('COMMON.AVATAR')"
                 class="ProfileEdition__avatar"
               >
-                <SelectionAvatar
-                  :enable-modal="true"
-                  :max-visible-items="3"
-                  :selected="avatar"
-                  @select="selectAvatar"
+                <ButtonSwitch
+                  :is-active="isAvatarEnabled"
+                  @change="toggleAvatarSwitch"
                 />
+                <template slot="content">
+                  <SelectionAvatar
+                    v-if="isAvatarEnabled"
+                    :enable-modal="true"
+                    :max-visible-items="3"
+                    :selected="avatar"
+                    @select="selectAvatar"
+                  />
+                  <ButtonLetter
+                    v-else
+                    :value="name"
+                    size="xl"
+                    class="border-4 border-theme-feature shadow-outline-green"
+                  />
+                </template>
               </ListDividedItem>
             </ListDivided>
           </MenuTabItem>
@@ -159,11 +172,13 @@
                 :label="$t('COMMON.SELECT_BACKGROUND')"
                 class="ProfileEdition__background"
               >
-                <SelectionBackground
-                  :max-visible-items="5"
-                  :selected="background"
-                  @select="selectBackground"
-                />
+                <template slot="content">
+                  <SelectionBackground
+                    :max-visible-items="5"
+                    :selected="background"
+                    @select="selectBackground"
+                  />
+                </template>
               </ListDividedItem>
             </ListDivided>
           </MenuTabItem>
@@ -188,6 +203,7 @@
 import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
 import { InputText } from '@/components/Input'
+import { ButtonLetter, ButtonSwitch } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
@@ -202,6 +218,8 @@ export default {
   name: 'ProfileEdition',
 
   components: {
+    ButtonLetter,
+    ButtonSwitch,
     InputText,
     ListDivided,
     ListDividedItem,
@@ -216,6 +234,7 @@ export default {
 
   data: () => ({
     isNameEditable: false,
+    isAvatarEnabled: false,
     modified: {
       name: '',
       language: '',
@@ -263,7 +282,7 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (this.modified[property]) {
+        if (property === 'avatar' || this.modified[property]) {
           return this.modified[property] !== this.profile[property]
         }
         return false
@@ -342,6 +361,7 @@ export default {
     this.modified.bip39Language = this.profile.bip39Language
     this.modified.currency = this.profile.currency
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
+    this.isAvatarEnabled = !!this.profile.avatar
   },
 
   methods: {
@@ -365,6 +385,13 @@ export default {
 
     selectAvatar (avatar) {
       this.__updateSession('avatar', avatar)
+    },
+
+    toggleAvatarSwitch () {
+      this.isAvatarEnabled = !this.isAvatarEnabled
+      if (!this.isAvatarEnabled) {
+        this.selectAvatar(undefined)
+      }
     },
 
     async selectBackground (background) {
@@ -469,17 +496,6 @@ export default {
 }
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
   height: 0
-}
-
-.ProfileEdition__avatar.ListDividedItem,
-.ProfileEdition__background.ListDividedItem,
-.ProfileEdition__theme.ListDividedItem {
-  @apply .flex-col
-}
-.ProfileEdition__avatar .ListDividedItem__value,
-.ProfileEdition__background .ListDividedItem__value,
-.ProfileEdition__theme .ListDividedItem__value {
-  @apply .pt-4
 }
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;

@@ -136,7 +136,7 @@ export default {
   },
 
   mounted () {
-    if (this.autoSelectFirst) {
+    if (this.autoSelectFirst && !this.selected) {
       this.select(this.allItems[0])
     }
   },

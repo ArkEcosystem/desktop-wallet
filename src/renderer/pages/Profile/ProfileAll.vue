@@ -35,7 +35,7 @@
           v-else
           :value="profile.name"
           size="2xl"
-          class="profile-avatar-xl bg-theme-button text-theme-button-text mx-auto"
+          class="profile-avatar-xl mx-auto"
           @click="selectProfile(profile.id)"
         />
 

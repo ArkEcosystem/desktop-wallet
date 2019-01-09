@@ -2,7 +2,10 @@
   <Component
     :is="tag"
     v-bind="$attrs"
-    :class="{ [`ButtonLetter--${size}`]: size }"
+    :class="{
+      [`ButtonLetter--${size}`]: size,
+      'bg-theme-button text-theme-button-text': !hasCustomStyle
+    }"
     class="ButtonLetter inline-block rounded-full"
     v-on="$listeners"
   >
@@ -27,7 +30,12 @@ export default {
       type: String,
       required: false,
       default: null,
-      validator: value => value ? ['sm', 'base', 'lg', 'xl'].includes(value) : true
+      validator: value => value ? ['sm', 'base', 'lg', 'xl', '2xl'].includes(value) : true
+    },
+    hasCustomStyle: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     value: {
       type: String,

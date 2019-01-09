@@ -92,7 +92,7 @@
                   v-if="!isAvatarEnabled && schema.name.length"
                   :value="schema.name"
                   size="xl"
-                  class="bg-theme-button w-18 h-18 border-4 border-theme-feature shadow-outline-green"
+                  class="border-4 border-theme-feature shadow-outline-green"
                 />
               </div>
             </div>

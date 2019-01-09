@@ -125,6 +125,7 @@
             >
               <ButtonLetter
                 :value="session_profile.name"
+                :has-custom-style="true"
                 size="xl"
                 class="bg-theme-feature-item-selected text-theme-feature-item-selected-text"
               />
