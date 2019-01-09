@@ -1,11 +1,12 @@
 import ApiClient from '@arkecosystem/client'
 import { crypto, transactionBuilder } from '@arkecosystem/crypto'
 import axios from 'axios'
-import { castArray } from 'lodash'
+import { castArray, chunk, orderBy } from 'lodash'
 import dayjs from 'dayjs'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
+import logger from 'electron-log'
 
 export default class ClientService {
   /*
@@ -242,10 +243,10 @@ export default class ClientService {
    * @param {Number} [query.limit=50]
    * @return {Object[]}
    */
-  async fetchWalletTransactions (address, { page, limit, orderBy } = {}) {
-    page || (page = 1)
-    limit || (limit = 50)
-    orderBy || (orderBy = 'timestamp:desc')
+  async fetchWalletTransactions (address, options = {}) {
+    options.page || (options.page = 1)
+    options.limit || (options.limit = 50)
+    options.orderBy || (options.orderBy = 'timestamp:desc')
 
     let totalCount = 0
     let transactions = []
@@ -255,9 +256,9 @@ export default class ClientService {
       const { data } = await this.client.resource('transactions').all({
         recipientId: address,
         senderId: address,
-        orderBy,
-        offset: (page - 1) * limit,
-        limit
+        orderBy: options.orderBy,
+        offset: (options.page - 1) * options.limit,
+        limit: options.limit
       })
 
       if (data.success) {
@@ -275,9 +276,9 @@ export default class ClientService {
       }
     } else {
       const { data } = await this.client.resource('wallets').transactions(address, {
-        orderBy,
-        limit,
-        page
+        orderBy: options.orderBy,
+        limit: options.limit,
+        page: options.page
       })
 
       transactions = data.data.map(tx => {
@@ -300,6 +301,75 @@ export default class ClientService {
       transactions: result,
       totalCount
     }
+  }
+
+  /**
+   * Fetch transactions from a bulk list of addresses.
+   * @param  {String[]} addresses
+   * @param  {Object} options
+   * @return {Object}
+   */
+  async fetchTransactionsForWallets (addresses, options = {}) {
+    options = options || {}
+
+    let walletData = {}
+    if (this.version === 2 && this.hasMultiWalletSearch) {
+      let transactions = []
+      for (const addressChunk of chunk(addresses, 20)) {
+        try {
+          const { data } = await this.client.resource('transactions').search({
+            addresses: addressChunk
+          })
+          transactions.push(...data.data)
+        } catch (error) {
+          logger.error(error)
+        }
+      }
+
+      transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
+        transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+
+        return transaction
+      })
+
+      for (const transaction of transactions) {
+        if (addresses.includes(transaction.sender)) {
+          if (!walletData[transaction.sender]) {
+            walletData[transaction.sender] = {}
+          }
+          walletData[transaction.sender][transaction.id] = transaction
+        }
+
+        if (transaction.recipient && addresses.includes(transaction.recipient)) {
+          if (!walletData[transaction.recipient]) {
+            walletData[transaction.recipient] = {}
+          }
+          walletData[transaction.recipient][transaction.id] = transaction
+        }
+      }
+
+      for (const address of Object.keys(walletData)) {
+        if (walletData[address]) {
+          walletData[address] = Object.values(walletData[address])
+        }
+      }
+
+      return walletData
+    }
+
+    for (const address of addresses) {
+      try {
+        walletData[address] = (await this.fetchWalletTransactions(address, options)).transactions
+      } catch (error) {
+        logger.error(error)
+        const message = error.response ? error.response.data.message : error.message
+        if (message !== 'Wallet not found') {
+          throw error
+        }
+      }
+    }
+
+    return walletData
   }
 
   /**
@@ -342,6 +412,38 @@ export default class ClientService {
 
     if (walletData) {
       walletData.balance = parseInt(walletData.balance)
+    }
+
+    return walletData
+  }
+
+  /**
+   * Fetches wallet data from a bulk list of addresses.
+   * @param  {String[]} addresses
+   * @return {Object[]}
+   */
+  async fetchWallets (addresses) {
+    let walletData = []
+
+    if (this.version === 2 && this.hasMultiWalletSearch) {
+      for (const addressChunk of chunk(addresses, 20)) {
+        const { data } = await this.client.resource('wallets').search({
+          addresses: addressChunk
+        })
+        walletData.push(...data.data)
+      }
+    } else {
+      for (const address of addresses) {
+        try {
+          walletData.push(await this.fetchWallet(address))
+        } catch (error) {
+          logger.error(error)
+          const message = error.response ? error.response.data.message : error.message
+          if (message !== 'Wallet not found') {
+            throw error
+          }
+        }
+      }
     }
 
     return walletData
