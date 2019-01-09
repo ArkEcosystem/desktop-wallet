@@ -61,22 +61,18 @@ export default {
       if (!this.wallets.length) return
 
       try {
-        // TODO if wallets.length > 20 do it in batches
-        this.wallets.map(async wallet => {
-          const { transactions } = await this.$client.fetchWalletTransactions(wallet.address, {
-            limit: this.numberOfTransactions
-          })
-
-          // Update the transactions of each wallet when they are received
+        const addresses = this.wallets.map(wallet => wallet.address)
+        const walletTransactions = await this.$client.fetchTransactionsForWallets(addresses)
+        for (const transactions of Object.values(walletTransactions)) {
           this.$set(this, 'fetchedTransactions', uniqBy([
             /*
              * NOTE: The order of this 2 lines is VERY important:
              * recent transactions should override older to have the up-to-date number of confirmations
              */
-            ...transactions,
+            ...transactions.slice(0, this.numberOfTransactions),
             ...this.fetchedTransactions
           ], 'id'))
-        })
+        }
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
