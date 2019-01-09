@@ -1,5 +1,5 @@
 import ApiClient from '@arkecosystem/client'
-import { transactionBuilder } from '@arkecosystem/crypto'
+import { crypto, transactionBuilder } from '@arkecosystem/crypto'
 import axios from 'axios'
 import { castArray } from 'lodash'
 import dayjs from 'dayjs'
@@ -65,6 +65,7 @@ export default class ClientService {
     this.__host = null
     this.__version = null
     this.client = new ApiClient('http://')
+    this.hasMultiWalletSearch = false
 
     if (watchProfile) {
       this.__watchProfile()
@@ -611,17 +612,34 @@ export default class ClientService {
     store.watch(
       (_, getters) => getters['session/profile'],
       (profile, oldProfile) => {
-        if (!profile) return
+        if (!profile) {
+          return
+        }
 
+        const network = store.getters['network/byId'](profile.networkId)
         const currentPeer = store.getters['peer/current']()
         if (currentPeer && Object.keys(currentPeer).length > 0) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           this.version = currentPeer.version.match(/^2\./) ? 2 : 1
         } else {
-          const { server, apiVersion } = store.getters['network/byId'](profile.networkId)
+          const { server, apiVersion } = network
           this.host = server
           this.version = apiVersion
+        }
+
+        try {
+          this.hasMultiWalletSearch = false
+          if (network.apiVersion === 2) {
+            const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
+            this.client.resource('wallets').search({
+              addresses: [testAddress]
+            }).then(() => {
+              this.hasMultiWalletSearch = true
+            })
+          }
+        } catch (error) {
+          //
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {
