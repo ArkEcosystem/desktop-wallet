@@ -1,7 +1,10 @@
 
 <template>
   <span class="flex items-center">
-    <span v-if="!type">
+    <span
+      v-if="!type"
+      :class="{ 'truncate': truncate }"
+    >
       <a
         v-tooltip="{
           content: address,
@@ -13,13 +16,22 @@
         {{ wallet_formatAddress(address, addressLength) }}
       </a>
     </span>
-    <span v-else-if="type === 1">
+    <span
+      v-else-if="type === 1"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
     </span>
-    <span v-else-if="type === 2">
+    <span
+      v-else-if="type === 2"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
-    <span v-else-if="type === 3">
+    <span
+      v-else-if="type === 3"
+      :class="{ 'truncate': truncate }"
+    >
       <a
         v-tooltip="{
           content: votedDelegateAddress,
@@ -38,19 +50,34 @@
         </span>
       </a>
     </span>
-    <span v-else-if="type === 4">
+    <span
+      v-else-if="type === 4"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
     </span>
-    <span v-else-if="type === 5">
+    <span
+      v-else-if="type === 5"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.IPFS") }}
     </span>
-    <span v-else-if="type === 6">
+    <span
+      v-else-if="type === 6"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.TIMELOCK_TRANSFER") }}
     </span>
-    <span v-else-if="type === 7">
+    <span
+      v-else-if="type === 7"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
     </span>
-    <span v-else-if="type === 8">
+    <span
+      v-else-if="type === 8"
+      :class="{ 'truncate': truncate }"
+    >
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
 
@@ -100,6 +127,11 @@ export default {
       type: Number,
       required: false,
       default: 10
+    },
+    truncate: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
