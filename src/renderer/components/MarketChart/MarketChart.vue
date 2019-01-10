@@ -217,6 +217,8 @@ export default {
           },
           tooltips: {
             displayColors: false,
+            intersect: false,
+            mode: 'x',
             callbacks: {
               label: (item, data) => {
                 return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
