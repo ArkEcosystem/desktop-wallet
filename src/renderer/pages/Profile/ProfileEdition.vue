@@ -129,25 +129,17 @@
                 :label="$t('COMMON.AVATAR')"
                 class="ProfileEdition__avatar"
               >
-                <ButtonSwitch
-                  :is-active="isAvatarEnabled"
-                  @change="toggleAvatarSwitch"
+                <SelectionAvatar
+                  :extra-items="[{
+                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                    textContent: name,
+                    onlyLetter: true
+                  }]"
+                  :enable-modal="true"
+                  :max-visible-items="3"
+                  :selected="avatar"
+                  @select="selectAvatar"
                 />
-                <template slot="content">
-                  <SelectionAvatar
-                    v-if="isAvatarEnabled"
-                    :enable-modal="true"
-                    :max-visible-items="3"
-                    :selected="avatar"
-                    @select="selectAvatar"
-                  />
-                  <ButtonLetter
-                    v-else
-                    :value="name"
-                    size="xl"
-                    class="border-4 border-theme-feature shadow-outline-green"
-                  />
-                </template>
               </ListDividedItem>
             </ListDivided>
           </MenuTabItem>
@@ -159,7 +151,7 @@
           >
             <ListDivided>
               <ListDividedItem
-                :label="$t('COMMON.SELECT_THEME')"
+                :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
@@ -169,16 +161,14 @@
               </ListDividedItem>
 
               <ListDividedItem
-                :label="$t('COMMON.SELECT_BACKGROUND')"
+                :label="$t('COMMON.BACKGROUND')"
                 class="ProfileEdition__background"
               >
-                <template slot="content">
-                  <SelectionBackground
-                    :max-visible-items="5"
-                    :selected="background"
-                    @select="selectBackground"
-                  />
-                </template>
+                <SelectionBackground
+                  :max-visible-items="5"
+                  :selected="background"
+                  @select="selectBackground"
+                />
               </ListDividedItem>
             </ListDivided>
           </MenuTabItem>
@@ -203,7 +193,6 @@
 import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
 import { InputText } from '@/components/Input'
-import { ButtonLetter, ButtonSwitch } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
@@ -218,8 +207,6 @@ export default {
   name: 'ProfileEdition',
 
   components: {
-    ButtonLetter,
-    ButtonSwitch,
     InputText,
     ListDivided,
     ListDividedItem,
@@ -234,7 +221,6 @@ export default {
 
   data: () => ({
     isNameEditable: false,
-    isAvatarEnabled: false,
     modified: {
       name: '',
       language: '',
@@ -361,7 +347,6 @@ export default {
     this.modified.bip39Language = this.profile.bip39Language
     this.modified.currency = this.profile.currency
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
-    this.isAvatarEnabled = !!this.profile.avatar
   },
 
   methods: {
@@ -385,13 +370,6 @@ export default {
 
     selectAvatar (avatar) {
       this.__updateSession('avatar', avatar)
-    },
-
-    toggleAvatarSwitch () {
-      this.isAvatarEnabled = !this.isAvatarEnabled
-      if (!this.isAvatarEnabled) {
-        this.selectAvatar(undefined)
-      }
     },
 
     async selectBackground (background) {

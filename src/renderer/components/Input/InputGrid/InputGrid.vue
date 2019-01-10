@@ -2,12 +2,14 @@
   <div class="InputGrid">
     <slot>
       <div class="InputGrid__container">
-        <button class="mr-3">
+        <button
+          v-if="selectedItem"
+          class="mr-3"
+        >
           <InputGridItem
-            :image-path="selected.imagePath"
+            v-bind="activeItem"
             :is-selected="!isModalOpen"
-            :text-content="selected.textContent"
-            :title="selected.title"
+            :is-for-modal="false"
           />
         </button>
 
@@ -104,6 +106,10 @@ export default {
   computed: {
     allItems () {
       return flatten(Object.values(this.items))
+    },
+
+    activeItem () {
+      return this.allItems.find(i => i.title === this.selectedItem.title)
     }
   },
 
@@ -135,7 +141,7 @@ export default {
 
     select (item) {
       this.selectedItem = item
-      this.$emit('input', this.selectedItem)
+      this.$emit('input', this.activeItem)
     }
   }
 }

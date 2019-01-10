@@ -70,14 +70,21 @@
               </div>
 
               <div class="flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed">
-                <div>
-                  <h5>
-                    {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR_FOR_PROFILE') }}
+                <div class="mr-2">
+                  <h5 class="mb-2">
+                    {{ $t('COMMON.AVATAR') }}
                   </h5>
+                  <p class="text-theme-page-text-light">
+                    {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR') }}
+                  </p>
                 </div>
                 <SelectionAvatar
-                  :max-visible-items="0"
                   :selected="schema.avatar"
+                  :extra-items="[{
+                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                    textContent: schema.name,
+                    onlyLetter: true
+                  }]"
                   @select="selectAvatar"
                 />
               </div>
@@ -102,10 +109,10 @@
               />
               <div v-if="availableCustomNetworks.length">
                 <p class="mt-5 mb-1 text-theme-page-text font-semibold">
-                  {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK') }}
+                  {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK') }}
                 </p>
                 <p class="text-theme-page-text-light mb-5">
-                  {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK_EXPLAIN') }}
+                  {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK_EXPLAIN') }}
                 </p>
                 <SelectionNetwork
                   :selected="selectedNetwork"
@@ -127,28 +134,28 @@
             @next="create"
           >
             <div class="flex flex-col h-full w-full justify-around">
-              <h5 class="mb-2">
-                {{ $t('COMMON.SELECT_THEME') }}
-              </h5>
-
-              <div class="flex items-center justify-between pb-5 mb-5 border-b border-dashed border-theme-line-separator">
-                <p class="text-theme-page-text-light">
-                  {{ $t('PAGES.PROFILE_NEW.STEP3.INSTRUCTIONS.THEME') }}
-                </p>
+              <div class="flex items-center justify-between mb-5 mt-2">
+                <div>
+                  <h5 class="mb-2">
+                    {{ $t('COMMON.THEME') }}
+                  </h5>
+                  <p class="text-theme-page-text-light">
+                    {{ $t('PAGES.PROFILE_NEW.STEP3.THEME') }}
+                  </p>
+                </div>
                 <SelectionTheme v-model="theme" />
               </div>
 
               <div class="flex items-center justify-between">
                 <div>
                   <h5 class="mb-2">
-                    {{ $t('COMMON.SELECT_BACKGROUND') }}
+                    {{ $t('COMMON.BACKGROUND') }}
                   </h5>
                   <p class="text-theme-page-text-light">
-                    {{ $t('PAGES.PROFILE_NEW.STEP3.INSTRUCTIONS.THEME') }}
+                    {{ $t('PAGES.PROFILE_NEW.STEP3.BACKGROUND') }}
                   </p>
                 </div>
                 <SelectionBackground
-                  :max-visible-items="1"
                   :selected="background"
                   @select="selectBackground"
                 />

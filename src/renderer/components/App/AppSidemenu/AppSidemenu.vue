@@ -187,7 +187,7 @@ export default {
       unreadAnnouncements: 'announcements/unread'
     }),
     hasNewRelease () {
-      return semver.lt(releaseService.currentVersion, this.latestReleaseVersion)
+      return semver.lt(releaseService.currentVersion, this.latestReleaseVersion || releaseService.currentVersion)
     },
     showUnread () {
       return this.unreadAnnouncements.length > 0
