@@ -71,6 +71,7 @@
     "cycled": "^1.0.0",
     "dayjs": "^1.8.11",
     "electron-log": "^3.0.7",
+    "electron-updater": "^4.1.2",
     "electron-window-state": "^5.0.3",
     "emittery": "^0.4.1",
     "fs-extra": "^8.1.0",
@@ -175,7 +176,6 @@
   "build": {
     "productName": "Ark Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
-    "compression": "maximum",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
     "publish": {
       "provider": "github",
@@ -205,7 +205,6 @@
     },
     "linux": {
       "category": "Utility",
-      "executableName": "ark-desktop-wallet",
       "icon": "build/icons",
       "target": [
         "AppImage",
@@ -229,11 +228,6 @@
     },
     "dmg": {
       "icon": "build/icons/icon.icns"
-    },
-    "nsis": {
-      "perMachine": true,
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
     }
   },
   "husky": {

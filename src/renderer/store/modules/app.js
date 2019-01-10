@@ -1,5 +1,3 @@
-import releaseService from '@/services/release'
-
 export default {
   namespaced: true,
 
@@ -43,11 +41,6 @@ export default {
   },
 
   actions: {
-    async checkNewVersion ({ commit }) {
-      const latestRelease = await releaseService.fetchLatestRelease()
-      // eslint-disable-next-line camelcase
-      commit('SET_LATEST_RELEASE_VERSION', latestRelease.tag_name)
-    },
     setLatestAppliedMigration ({ commit }, value) {
       commit('SET_LATEST_APPLIED_MIGRATION', value)
     },

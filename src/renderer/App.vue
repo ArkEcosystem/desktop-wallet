@@ -312,12 +312,6 @@ export default {
       this.$eventBus.on('ledger:disconnected', async () => {
         this.$warn('Ledger Disconnected!')
       })
-
-      try {
-        await this.$store.dispatch('app/checkNewVersion')
-      } catch (error) {
-        this.$error(this.$t('APP.RELEASE.REQUEST_ERROR'))
-      }
     },
 
     onPortalChange (isActive) {
@@ -333,6 +327,10 @@ export default {
         } else {
           this.openUriTransaction(uri.deserialize())
         }
+      })
+
+      ipcRenderer.on('message', (_, txt) => {
+        this.$info(txt, 1000)
       })
     },
 
