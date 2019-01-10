@@ -604,8 +604,8 @@ export default class ClientService {
         let i
         for (i = 0; i < peers.length; i++) {
           try {
-            const client = new ApiClient('http://' + peers[i].ip + ':4003', 2)
-            const tx = await client.resource('transactions').create({ transactions: castArray(transactions) })
+            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+            const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
             txs.push(tx)
           } catch (err) {
             //

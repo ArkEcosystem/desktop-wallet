@@ -403,7 +403,8 @@ export default {
      * @param  {Object} peer
      * @return {ClientService}
      */
-    clientServiceFromPeer (_, peer) {
+    async clientServiceFromPeer (_, peer) {
+      await getApiPort(peer)
       const client = new ClientService(false)
       client.host = getBaseUrl(peer)
       client.version = getVersion(peer)
