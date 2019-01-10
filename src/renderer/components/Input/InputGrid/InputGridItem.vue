@@ -2,19 +2,33 @@
   <div
     :style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
     :title="title"
-    :class="{ 'shadow-outline-green': isSelected }"
-    class="InputGridItem background-image rounded-lg w-18 h-18 border-4 cursor-pointer rounded-xl hover:shadow transition text-center border-theme-feature"
+    :class="{ 'InputGridItem--selected': isSelected }"
+    class="InputGridItem relative bg-cover bg-no-repeat bg-center rounded-full w-16 h-16 cursor-pointer transition text-center hover:opacity-75"
   >
-    {{ textContent }}
+    <span class="InputGridItem__text">
+      {{ textContent }}
+    </span>
+    <span
+      v-if="isSelected"
+      class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute pin-b pin-r w-6 h-6 bg-green border-2 border-theme-feature text-white"
+    >
+      <SvgIcon
+        name="checkmark"
+        view-box="0 0 10 9"
+      />
+    </span>
   </div>
 </template>
 
 <script>
-/**
- * This component has the default style
- */
+import { SvgIcon } from '@/components/SvgIcon'
+
 export default {
   name: 'InputGridItem',
+
+  components: {
+    SvgIcon
+  },
 
   props: {
     imagePath: {
@@ -37,12 +51,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* To display the images scaled to the size of the button */
-.InputGridItem {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-</style>

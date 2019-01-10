@@ -32,22 +32,14 @@
           >
             <!-- NOTE wraps the content, but doesn't modify the stepper -->
             <div class="flex flex-col">
-              <InputText
-                v-model="$v.schema.name.$model"
-                :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
-                :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
-                :helper-text="nameError"
-                class="mb-5"
-                name="name"
-              />
-
               <div class="flex mb-5">
-                <InputSelect
-                  v-model="language"
-                  :items="languages"
-                  :label="$t('COMMON.LANGUAGE')"
-                  name="language"
-                  class="flex-1 mr-2"
+                <InputText
+                  v-model="$v.schema.name.$model"
+                  :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
+                  :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
+                  :helper-text="nameError"
+                  class="flex-1 mr-5"
+                  name="name"
                 />
 
                 <InputSelect
@@ -61,6 +53,14 @@
 
               <div class="flex mb-5">
                 <InputSelect
+                  v-model="language"
+                  :items="languages"
+                  :label="$t('COMMON.LANGUAGE')"
+                  name="language"
+                  class="flex-1 mr-5"
+                />
+
+                <InputSelect
                   v-model="bip39Language"
                   :items="bip39Languages"
                   :label="$t('COMMON.BIP39_LANGUAGE')"
@@ -69,30 +69,16 @@
                 />
               </div>
 
-              <div>
-                <div class="flex items-center justify-between pt-5 mb-2">
-                  <div>
-                    <h5>
-                      {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR_FOR_PROFILE') }}
-                    </h5>
-                  </div>
-                  <ButtonSwitch
-                    :is-active="isAvatarEnabled"
-                    @change="toggleAvatar"
-                  />
+              <div class="flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed">
+                <div>
+                  <h5>
+                    {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR_FOR_PROFILE') }}
+                  </h5>
                 </div>
-
                 <SelectionAvatar
-                  v-if="isAvatarEnabled"
-                  :max-visible-items="2"
+                  :max-visible-items="0"
                   :selected="schema.avatar"
                   @select="selectAvatar"
-                />
-                <ButtonLetter
-                  v-if="!isAvatarEnabled && schema.name.length"
-                  :value="schema.name"
-                  size="xl"
-                  class="border-4 border-theme-feature shadow-outline-green"
                 />
               </div>
             </div>
@@ -152,15 +138,21 @@
                 <SelectionTheme v-model="theme" />
               </div>
 
-              <h5 class="mb-2">
-                {{ $t('COMMON.SELECT_BACKGROUND') }}
-              </h5>
-
-              <SelectionBackground
-                :max-visible-items="2"
-                :selected="background"
-                @select="selectBackground"
-              />
+              <div class="flex items-center justify-between">
+                <div>
+                  <h5 class="mb-2">
+                    {{ $t('COMMON.SELECT_BACKGROUND') }}
+                  </h5>
+                  <p class="text-theme-page-text-light">
+                    {{ $t('PAGES.PROFILE_NEW.STEP3.INSTRUCTIONS.THEME') }}
+                  </p>
+                </div>
+                <SelectionBackground
+                  :max-visible-items="1"
+                  :selected="background"
+                  @select="selectBackground"
+                />
+              </div>
             </div>
           </MenuStepItem>
         </MenuStep>
@@ -174,15 +166,12 @@ import { BIP39, I18N, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputSelect, InputText } from '@/components/Input'
-import { ButtonSwitch, ButtonLetter } from '@/components/Button'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
 export default {
   name: 'ProfileNew',
 
   components: {
-    ButtonSwitch,
-    ButtonLetter,
     SelectionAvatar,
     SelectionBackground,
     SelectionNetwork,
@@ -197,7 +186,6 @@ export default {
 
   data: () => ({
     step: 1,
-    isAvatarEnabled: true,
     selectedNetwork: null
   }),
 
@@ -354,14 +342,6 @@ export default {
     async selectTheme (theme) {
       this.schema.theme = theme
       await this.$store.dispatch('session/setTheme', theme)
-    },
-
-    toggleAvatar () {
-      this.isAvatarEnabled = !this.isAvatarEnabled
-
-      if (!this.isAvatarEnabled) {
-        this.selectAvatar(undefined)
-      }
     }
   },
 

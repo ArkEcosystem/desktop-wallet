@@ -65,4 +65,8 @@ export default {
   width: var(--profile-avatar-xl);
   background-size: contain;
 }
+
+.SelectionAvatar .InputGridModal .InputGrid__container__category__items .InputGridItem__check {
+  right: 1.6rem;
+}
 </style>
