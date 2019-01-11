@@ -132,19 +132,10 @@ class Action {
       if (!wallet.isLedger) {
         this.$dispatch('wallet/update', refreshedWallet)
       } else {
-        try {
-          this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })
-        } catch (error) {
-          this.$logger.error(`Could not refresh ledger wallet: ${error}`)
-        }
+        this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })
       }
     } catch (error) {
       this.$logger.error(error.message)
-      // TODO the error could mean that the wallet isn't on the blockchain yet
-      // this.$error(this.$t('COMMON.FAILED_FETCH', {
-      //   name: 'wallet data',
-      //   msg: error.message
-      // }))
     }
   }
 
