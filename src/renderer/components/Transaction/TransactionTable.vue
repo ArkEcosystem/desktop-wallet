@@ -191,7 +191,7 @@ export default {
   computed: {
     columns () {
       const vendorFieldClass = [
-        'hidden'
+        'hidden', 'w-1/4'
       ]
       if (this.hasShortId && !this.isDashboard) {
         vendorFieldClass.push('xxl:table-cell')

@@ -124,9 +124,8 @@ export default {
         broadcasting: this.$t('TRANSACTION.INFO.BROADCASTING')
       }
 
-      this.emitSent()
-
       let responseArray
+      let success = false
       try {
         const shouldBroadcast = this.$store.getters['session/broadcastPeers']
 
@@ -159,9 +158,11 @@ export default {
               } else {
                 this.$success(messages.success)
               }
+              this.emitSent(true)
               return
             }
           }
+
           // If we get here, it means that none of the responses was successful, so pick one and show the error
           const response = responseArray[0]
           const { errors } = response.data
@@ -176,6 +177,7 @@ export default {
           } else {
             this.$error(messages.error)
           }
+
         } else {
           // no tx was sent
           this.$error(messages.nothingSent)
@@ -183,11 +185,13 @@ export default {
       } catch (error) {
         this.$logger.error(error)
         this.$error(messages.error)
+      } finally {
+        this.emitSent(success)
       }
     },
 
-    emitSent () {
-      this.$emit('sent')
+    emitSent (success) {
+      this.$emit('sent', success)
     },
 
     emitCancel () {
