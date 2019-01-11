@@ -58,7 +58,9 @@ export default {
 
   methods: {
     async fetchTransactions () {
-      if (!this.wallets.length) return
+      if (!this.wallets.length) {
+        return
+      }
 
       try {
         const addresses = this.wallets.map(wallet => wallet.address)

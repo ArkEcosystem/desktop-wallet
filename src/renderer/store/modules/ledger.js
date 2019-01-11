@@ -248,7 +248,6 @@ export default {
           const ledgerWallets = []
           for (let batchIndex = 0; batchIndex < batchIncrement; batchIndex++) {
             const index = ledgerIndex + batchIndex
-            console.log('load ledger', index)
             let wallet = firstWallet
             if (index > 0) {
               wallet = await dispatch('getWallet', index)
