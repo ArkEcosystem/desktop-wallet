@@ -606,9 +606,7 @@ export default class ClientService {
     if (this.__version === 1) {
       if (broadcast) {
         let responses = []
-        const bestPeers = store.getters['peer/bestPeers'](10, false)
-        const randomPeers = store.getters['peer/randomPeers'](5)
-        const peers = bestPeers.concat(randomPeers)
+        const peers = store.getters['peer/broadcastPeers']()
 
         let i
         for (i = 0; i < peers.length; i++) {
@@ -624,9 +622,7 @@ export default class ClientService {
     } else {
       if (broadcast) {
         let txs = []
-        const bestPeers = store.getters['peer/bestPeers'](10, false)
-        const randomPeers = store.getters['peer/randomPeers'](5)
-        const peers = bestPeers.concat(randomPeers)
+        const peers = store.getters['peer/broadcastPeers']()
 
         let i
         for (i = 0; i < peers.length; i++) {
