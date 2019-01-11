@@ -106,7 +106,7 @@ class Action {
   async refreshWallets (wallets) {
     const walletsData = await this.$client.fetchWallets(wallets.map(wallet => wallet.address))
     for (const wallet of wallets) {
-      const walletData = walletsData.find(data => data.address === wallet.address)
+      const walletData = walletsData.find(data => data && data.address === wallet.address)
       if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
         continue
       }
