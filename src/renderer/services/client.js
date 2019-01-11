@@ -609,7 +609,6 @@ export default class ClientService {
         const bestPeers = store.getters['peer/bestPeers'](10, false)
         const randomPeers = store.getters['peer/randomPeers'](5)
         const peers = bestPeers.concat(randomPeers)
-        console.log(peers)
 
         let i
         for (i = 0; i < peers.length; i++) {
