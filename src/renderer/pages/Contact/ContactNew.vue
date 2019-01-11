@@ -30,6 +30,8 @@
               <InputAddress
                 ref="addressInput"
                 v-model="schema.address"
+                :is-invalid="$v.schema.address.$invalid"
+                :helper-text="addressError"
                 :pub-key-hash="session_network.version"
                 class="my-3"
               />
@@ -105,6 +107,14 @@ export default {
         }
       }
       return null
+    },
+    addressError () {
+      if (this.$v.schema.address.$invalid) {
+        if (!this.$v.schema.address.doesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
+        }
+      }
+      return null
     }
   },
 
@@ -144,11 +154,20 @@ export default {
           }
 
           return false
+        },
+        doesNotExist (value) {
+          const contact = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id).find(contact => {
+            return contact.address === value
+          })
+          return value === '' || !contact
         }
       },
       name: {
         doesNotExist (value) {
-          return value === '' || !this.$store.getters['wallet/byName'](value)
+          const contact = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id).find(contact => {
+            return contact.name === value
+          })
+          return value === '' || !contact
         }
       }
     }
