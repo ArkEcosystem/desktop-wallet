@@ -197,8 +197,11 @@ export default {
       this.selected = row
     },
 
-    onSent () {
-      this.walletVote.publicKey = null
+    onSent (success) {
+      if (success) {
+        this.walletVote.publicKey = null
+      }
+
       this.selected = null
     },
 

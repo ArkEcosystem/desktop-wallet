@@ -263,10 +263,13 @@ export default {
       this.isSelected = false
     },
 
-    onSent () {
-      this.walletVote.publicKey = null
+    onSent (success) {
+      if (success) {
+        this.walletVote.publicKey = null
+        this.votedDelegate = null
+      }
+
       this.isSelected = false
-      this.votedDelegate = null
     }
   }
 }
