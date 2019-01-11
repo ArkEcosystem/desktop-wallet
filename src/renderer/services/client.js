@@ -315,6 +315,7 @@ export default class ClientService {
     let walletData = {}
     if (this.version === 2 && this.hasMultiWalletSearch) {
       let transactions = []
+      let hadFailure = false
       for (const addressChunk of chunk(addresses, 20)) {
         try {
           const { data } = await this.client.resource('transactions').search({
@@ -323,38 +324,41 @@ export default class ClientService {
           transactions.push(...data.data)
         } catch (error) {
           logger.error(error)
+          hadFailure = true
         }
       }
 
-      transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
-        transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+      if (!hadFailure) {
+        transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
+          transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
 
-        return transaction
-      })
+          return transaction
+        })
 
-      for (const transaction of transactions) {
-        if (addresses.includes(transaction.sender)) {
-          if (!walletData[transaction.sender]) {
-            walletData[transaction.sender] = {}
+        for (const transaction of transactions) {
+          if (addresses.includes(transaction.sender)) {
+            if (!walletData[transaction.sender]) {
+              walletData[transaction.sender] = {}
+            }
+            walletData[transaction.sender][transaction.id] = transaction
           }
-          walletData[transaction.sender][transaction.id] = transaction
-        }
 
-        if (transaction.recipient && addresses.includes(transaction.recipient)) {
-          if (!walletData[transaction.recipient]) {
-            walletData[transaction.recipient] = {}
+          if (transaction.recipient && addresses.includes(transaction.recipient)) {
+            if (!walletData[transaction.recipient]) {
+              walletData[transaction.recipient] = {}
+            }
+            walletData[transaction.recipient][transaction.id] = transaction
           }
-          walletData[transaction.recipient][transaction.id] = transaction
         }
-      }
 
-      for (const address of Object.keys(walletData)) {
-        if (walletData[address]) {
-          walletData[address] = Object.values(walletData[address])
+        for (const address of Object.keys(walletData)) {
+          if (walletData[address]) {
+            walletData[address] = Object.values(walletData[address])
+          }
         }
-      }
 
-      return walletData
+        return walletData
+      }
     }
 
     for (const address of addresses) {
