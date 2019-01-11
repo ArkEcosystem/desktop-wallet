@@ -63,6 +63,7 @@
           v-if="isOpen"
           :type="0"
           @cancel="toggle"
+          @close="toggle"
           @sent="toggle"
         />
       </template>

@@ -124,6 +124,8 @@ export default {
         broadcasting: this.$t('TRANSACTION.INFO.BROADCASTING')
       }
 
+      this.emitClose()
+
       let responseArray
       let success = false
       try {
@@ -158,7 +160,7 @@ export default {
               } else {
                 this.$success(messages.success)
               }
-              this.emitSent(true)
+              success = true
               return
             }
           }
@@ -195,6 +197,10 @@ export default {
 
     emitCancel () {
       this.$emit('cancel')
+    },
+
+    emitClose () {
+      this.$emit('close')
     },
 
     /**
