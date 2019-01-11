@@ -599,8 +599,9 @@ export default class ClientService {
     } else {
       if (broadcast) {
         let txs = []
-        const peers = store.getters['peer/bestPeers'](10, false)
-        // TODO: 5 random, 5 seed
+        const bestPeers = store.getters['peer/bestPeers'](10, false)
+        const randomPeers = store.getters['peer/randomPeers'](5)
+        const peers = bestPeers.concat(randomPeers)
 
         let i
         for (i = 0; i < peers.length; i++) {

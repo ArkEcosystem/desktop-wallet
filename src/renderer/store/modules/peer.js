@@ -1,4 +1,5 @@
 import random from 'lodash/random'
+import shuffle from 'lodash/shuffle'
 import apiClient from '@arkecosystem/client'
 import ClientService from '@/services/client'
 import i18n from '@/i18n'
@@ -103,6 +104,21 @@ export default {
       }
 
       return Object.values(peers)[random(peers.length - 1)]
+    },
+
+    /**
+     * Retrieves n random peers for the current network (excluding current peer)
+     * @param {Number} amount of peers to return
+     * @return {Array} containing peer objects
+     */
+    randomPeers: (_, getters) => (amount = 5, networkId = null) => {
+      const peers = getters['all'](true) // Ignore current peer
+      if (!peers.length) {
+        return null
+      }
+
+      const shuffledPeers = shuffle(peers)
+      return shuffledPeers.slice(0, amount)
     },
 
     /**
