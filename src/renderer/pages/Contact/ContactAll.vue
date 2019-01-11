@@ -1,90 +1,101 @@
 <template>
   <div class="ContactAll relative lg:bg-theme-feature rounded-lg m-r-4 p-10">
-    <div class="ContactAll__header flex justify-between">
-      <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
+    <div class="block h-full">
+      <div class="ContactAll__header flex justify-between">
+        <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
 
-      <ButtonLayout
-        :grid-layout="hasGridLayout"
-        @click="toggleLayout()"
-      />
-    </div>
+        <ButtonLayout
+          :grid-layout="hasGridLayout"
+          @click="toggleLayout()"
+        />
+      </div>
 
-    <div
-      v-if="hasGridLayout"
-    >
-      <div class="ContactAll__grid mt-10 justify-center">
-        <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
-          <div class="flex flex-row items-center">
-            <RouterLink :to="{ name: 'contact-new' }">
-              <WalletIdenticonPlaceholder
-                :size="60"
-                class="identicon opacity-50"
-              />
-            </RouterLink>
-            <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
-              <RouterLink :to="{ name: 'contact-new' }">
-                {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-              </RouterLink>
-              <span class="font-bold mt-2 opacity-50 text-lg">
-                {{ formatter_networkCurrency(0, 2) }}
-              </span>
-            </div>
-          </div>
+      <div
+        v-if="isLoading"
+        class="h-full flex items-center"
+      >
+        <div class="m-auto">
+          <Loader />
         </div>
+      </div>
 
-        <div
-          v-for="contact in contacts"
-          :key="contact.id"
-          class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
-        >
-          <div class="flex flex-row items-center">
-            <RouterLink
-              :to="{ name: 'wallet-show', params: { address: contact.id } }"
-              class="flex flex-row"
-            >
-              <WalletIdenticon
-                :value="contact.address"
-                :size="60"
-                class="identicon cursor-pointer"
-              />
-            </RouterLink>
-            <div class="flex flex-col justify-center overflow-hidden pl-4">
-              <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
-                <RouterLink :to="{ name: 'wallet-show', params: { address: contact.id } }">
-                  {{ wallet_nameOnContact(contact.address) || wallet_truncate(contact.address) }}
+      <div
+        v-if="hasGridLayout && !isLoading"
+      >
+        <div class="ContactAll__grid mt-10 justify-center">
+          <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
+            <div class="flex flex-row items-center">
+              <RouterLink :to="{ name: 'contact-new' }">
+                <WalletIdenticonPlaceholder
+                  :size="60"
+                  class="identicon opacity-50"
+                />
+              </RouterLink>
+              <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
+                <RouterLink :to="{ name: 'contact-new' }">
+                  {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
                 </RouterLink>
+                <span class="font-bold mt-2 opacity-50 text-lg">
+                  {{ formatter_networkCurrency(0, 2) }}
+                </span>
               </div>
-              <span class="font-bold mt-2 text-lg">
-                {{ formatter_networkCurrency(contact.balance, 2) }}
-              </span>
             </div>
           </div>
-          <div class="flex flex-row w-full justify-end">
-            <button
-              class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
-              @click="openRemovalConfirmation(contact)"
-            >
-              {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
-            </button>
+
+          <div
+            v-for="contact in selectableContacts"
+            :key="contact.id"
+            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+          >
+            <div class="flex flex-row items-center">
+              <RouterLink
+                :to="{ name: 'wallet-show', params: { address: contact.id } }"
+                class="flex flex-row"
+              >
+                <WalletIdenticon
+                  :value="contact.address"
+                  :size="60"
+                  class="identicon cursor-pointer"
+                />
+              </RouterLink>
+              <div class="flex flex-col justify-center overflow-hidden pl-4">
+                <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
+                  <RouterLink :to="{ name: 'wallet-show', params: { address: contact.id } }">
+                    {{ wallet_nameOnContact(contact.address) || wallet_truncate(contact.address) }}
+                  </RouterLink>
+                </div>
+                <span class="font-bold mt-2 text-lg">
+                  {{ formatter_networkCurrency(contact.balance, 2) }}
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-row w-full justify-end">
+              <button
+                class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
+                @click="openRemovalConfirmation(contact)"
+              >
+                {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div
-      v-else
-      class="ContactAll__tabular mt-10"
-    >
-      <WalletTable
-        :has-pagination="false"
-        :is-loading="isLoading"
-        :is-contacts-table="true"
-        :rows="selectableContacts"
-        :total-rows="selectableContacts.length"
-        :sort-query="sortParams"
-        :no-data-message="$t('TABLE.NO_CONTACTS')"
-        @remove-row="onRemoveContact"
-      />
+      <div
+        v-else-if="!hasGridLayout && !isLoading"
+        class="ContactAll__tabular mt-10"
+      >
+        <WalletTable
+          :has-pagination="false"
+          :is-loading="false"
+          :is-contacts-table="true"
+          :rows="selectableContacts"
+          :total-rows="selectableContacts.length"
+          :sort-query="sortParams"
+          :no-data-message="$t('TABLE.NO_CONTACTS')"
+          @remove-row="onRemoveContact"
+        />
+      </div>
     </div>
 
     <ContactRemovalConfirmation
@@ -98,6 +109,7 @@
 
 <script>
 import ButtonLayout from '@/components/Button/ButtonLayout'
+import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation } from '@/components/Contact'
 import { clone, sortBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
@@ -108,6 +120,7 @@ export default {
 
   components: {
     ButtonLayout,
+    Loader,
     ContactRemovalConfirmation,
     WalletIdenticon,
     WalletIdenticonPlaceholder,

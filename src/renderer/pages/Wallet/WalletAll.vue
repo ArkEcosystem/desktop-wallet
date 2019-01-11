@@ -60,7 +60,16 @@
         </div>
 
         <div
-          v-if="hasGridLayout"
+          v-if="isLoading"
+          class="h-full flex items-center"
+        >
+          <div class="m-auto">
+            <Loader />
+          </div>
+        </div>
+
+        <div
+          v-if="hasGridLayout && !isLoading"
           class="WalletAll__grid mt-10 justify-center"
         >
           <div
@@ -113,12 +122,12 @@
         </div>
 
         <div
-          v-else
+          v-else-if="!hasGridLayout && !isLoading"
           class="WalletAll__tabular mt-10"
         >
           <WalletTable
             :has-pagination="false"
-            :is-loading="isLoading"
+            :is-loading="false"
             :rows="selectableWallets"
             :total-rows="selectableWallets.length"
             :sort-query="sortParams"
