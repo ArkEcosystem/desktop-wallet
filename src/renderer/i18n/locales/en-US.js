@@ -682,6 +682,9 @@ export default {
         INSTRUCTIONS: 'for {address}.'
       }
     },
+    INFO: {
+      BROADCASTING: 'Your transaction is being broadcasted to the network'
+    },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
       SECOND_SIGNATURE: 'Second signature successfully registered',

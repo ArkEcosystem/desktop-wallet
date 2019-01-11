@@ -120,7 +120,8 @@ export default {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
         warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST'),
-        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
+        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT'),
+        broadcasting: this.$t('TRANSACTION.INFO.BROADCASTING')
       }
 
       this.emitSent()
@@ -128,6 +129,11 @@ export default {
       let responseArray
       try {
         const shouldBroadcast = this.$store.getters['session/broadcastPeers']
+
+        if (shouldBroadcast) {
+          this.$info(messages.broadcasting)
+        }
+
         if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
           const peer = await this.$store.dispatch('peer/findBest', {
             refresh: true,

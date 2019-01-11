@@ -600,6 +600,7 @@ export default class ClientService {
       if (broadcast) {
         let txs = []
         const peers = store.getters['peer/bestPeers'](10, false)
+        // TODO: 5 random, 5 seed
 
         let i
         for (i = 0; i < peers.length; i++) {
