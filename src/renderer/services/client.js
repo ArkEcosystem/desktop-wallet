@@ -571,6 +571,30 @@ export default class ClientService {
   }
 
   /**
+   * Helper function to send a transaction on a v1 network. Uses p2p
+   * @param {Object} transactions - the transactions to send
+   * @param {Object} currentPeer - the peer to use
+   * @returns {Object} the response of sending the transaction
+   */
+  async __sendV1Transaction (transactions, currentPeer) {
+    const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+    const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
+    const network = store.getters['session/network']
+    const response = await axios({
+      url: host,
+      data: { transactions: castArray(transactions) },
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        version: '1.6.1',
+        port: 1,
+        nethash: network.nethash
+      }
+    })
+    return response
+  }
+
+  /**
    * Broadcast transactions to the current peer.
    *
    * @param {Array|Object} transactions
@@ -580,22 +604,24 @@ export default class ClientService {
   async broadcastTransaction (transactions, broadcast) {
     // Use p2p for v1
     if (this.__version === 1) {
-      const currentPeer = store.getters['peer/current']()
-      const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-      const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
-      const network = store.getters['session/network']
-      const response = await axios({
-        url: host,
-        data: { transactions: castArray(transactions) },
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          version: '1.6.1',
-          port: 1,
-          nethash: network.nethash
+      if (broadcast) {
+        let responses = []
+        const bestPeers = store.getters['peer/bestPeers'](10, false)
+        const randomPeers = store.getters['peer/randomPeers'](5)
+        const peers = bestPeers.concat(randomPeers)
+        console.log(peers)
+
+        let i
+        for (i = 0; i < peers.length; i++) {
+          const response = await this.__sendV1Transaction(transactions, peers[i])
+          responses.push(response)
         }
-      })
-      return response
+        return responses
+      } else {
+        const currentPeer = store.getters['peer/current']()
+        const response = await this.__sendV1Transaction(transactions, currentPeer)
+        return [response]
+      }
     } else {
       if (broadcast) {
         let txs = []
