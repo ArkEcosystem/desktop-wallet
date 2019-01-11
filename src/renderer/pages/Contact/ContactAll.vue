@@ -77,10 +77,10 @@
     >
       <WalletTable
         :has-pagination="false"
-        :is-loading="false"
+        :is-loading="isLoading"
         :is-contacts-table="true"
-        :rows="contacts"
-        :total-rows="contacts.length"
+        :rows="selectableContacts"
+        :total-rows="selectableContacts.length"
         :sort-query="sortParams"
         :no-data-message="$t('TABLE.NO_CONTACTS')"
         @remove-row="onRemoveContact"
@@ -115,7 +115,9 @@ export default {
   },
 
   data: () => ({
+    selectableContacts: [],
     contactToRemove: null,
+    isLoading: false,
     sortParams: {
       field: 'name',
       type: 'asc'
@@ -149,6 +151,22 @@ export default {
     next(vm => {
       vm.$synchronizer.focus('contacts')
     })
+  },
+
+  async created () {
+    this.isLoading = true
+
+    for (const contact in this.contacts) {
+      const contactVote = await this.$client.fetchWalletVote(this.contacts[contact].address)
+
+      if (contactVote) {
+        this.contacts[contact].votedDelegate = await this.$client.fetchDelegate(contactVote)
+      }
+    }
+
+    this.selectableContacts = this.contacts
+
+    this.isLoading = false
   },
 
   methods: {

@@ -537,6 +537,7 @@ export default {
       CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
       ADDRESS: 'Address',
       NAME: 'Name',
+      VOTING_FOR: 'Voting for',
       BALANCE: 'Balance',
       DELETE: 'Delete'
     },

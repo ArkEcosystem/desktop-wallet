@@ -33,7 +33,7 @@
           v-else-if="data.column.field === 'name'"
         >
           <span>
-            {{ wallet_name(data.row.address) | truncate(30) }}
+            {{ (data.row.name || wallet_name(data.row.address)) | truncate(30) }}
           </span>
         </div>
 
@@ -43,6 +43,12 @@
           <span>
             {{ formatter_networkCurrency(data.row.balance) }}
           </span>
+        </div>
+
+        <div
+          v-else-if="data.column.field === 'votedDelegate'"
+        >
+          {{ data.row.votedDelegate ? data.row.votedDelegate.username : '' }}
         </div>
 
         <div
@@ -103,16 +109,19 @@ export default {
         {
           label: this.$t('PAGES.WALLET_ALL.NAME'),
           field: 'name',
-          thClass: 'w-full',
-          tdClass: 'w-full',
           sortFn: this.sortByName
+        },
+        {
+          label: this.$t('PAGES.WALLET_ALL.VOTING_FOR'),
+          field: this.delegateName,
+          thClass: 'w-full whitespace-no-wrap',
+          tdClass: 'w-full'
         },
         {
           label: this.$t('PAGES.WALLET_ALL.BALANCE'),
           field: 'balance',
           type: 'number',
-          thClass: 'text-right',
-          tdClass: 'text-right font-bold'
+          tdClass: 'font-bold whitespace-no-wrap'
         },
         {
           label: this.$t('PAGES.WALLET_ALL.DELETE'),
@@ -138,11 +147,15 @@ export default {
       this.$emit('remove-row', row)
     },
 
-    sortByName (a, b, col, rowX, rowY) {
+    sortByName (x, y, col, rowX, rowY) {
       const one = this.wallet_name(rowX.address) || ''
       const two = this.wallet_name(rowY.address) || ''
 
       return (one < two ? -1 : one > two ? 1 : 0)
+    },
+
+    delegateName (row) {
+      return row.votedDelegate ? row.votedDelegate.username : ''
     }
   }
 }

@@ -118,7 +118,7 @@
         >
           <WalletTable
             :has-pagination="false"
-            :is-loading="false"
+            :is-loading="isLoading"
             :rows="selectableWallets"
             :total-rows="selectableWallets.length"
             :sort-query="sortParams"
@@ -163,7 +163,9 @@ export default {
 
   data: () => ({
     selectableWallets: [],
+    ledgerWallets: [],
     walletToRemove: null,
+    isLoading: false,
     sortParams: {
       field: 'balance',
       type: 'desc'
@@ -248,6 +250,16 @@ export default {
   },
 
   async created () {
+    this.isLoading = true
+
+    for (const wallet in this.wallets) {
+      const walletVote = await this.$client.fetchWalletVote(this.wallets[wallet].address)
+
+      if (walletVote) {
+        this.wallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
+      }
+    }
+
     this.selectableWallets = this.wallets
 
     if (this.$store.getters['ledger/isConnected']) {
@@ -255,6 +267,8 @@ export default {
     }
     this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
+
+    this.isLoading = false
   },
 
   methods: {
@@ -262,13 +276,22 @@ export default {
       this.walletToRemove = null
     },
 
-    refreshLedgerWallets () {
-      const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+    async refreshLedgerWallets () {
+      this.ledgerWallets = this.$store.getters['ledger/wallets']
+
+      for (const wallet in this.ledgerWallets) {
+        const walletVote = await this.$client.fetchWalletVote(this.ledgerWallets[wallet].address)
+
+        if (walletVote) {
+          this.ledgerWallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
+        }
+      }
+
+      this.selectableWallets = [...this.ledgerWallets, ...this.selectableWallets]
     },
 
     ledgerDisconnected () {
-      this.selectableWallets = this.wallets
+      this.selectableWallets = without(this.selectableWallets, this.ledgerWallets)
     },
 
     openRemovalConfirmation (wallet) {
