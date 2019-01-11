@@ -53,7 +53,7 @@ export default new BaseModel({
     },
     broadcastPeers: {
       type: 'boolean',
-      format: data => data.broadcastPeers !== undefined ? data.broadcastPeers : false
+      format: data => data.broadcastPeers !== undefined ? data.broadcastPeers : true
     },
     ledgerCache: {
       type: 'boolean',

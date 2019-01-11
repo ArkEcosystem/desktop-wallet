@@ -133,7 +133,7 @@ export default {
       state.name = null
       state.theme = 'light'
       state.backgroundUpdateLedger = true
-      state.broadcastPeers = false
+      state.broadcastPeers = true
       state.contentProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
