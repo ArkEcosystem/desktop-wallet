@@ -102,7 +102,7 @@
       v-if="contactToRemove"
       :contact="contactToRemove"
       @cancel="hideRemovalConfirmation"
-      @removed="hideRemovalConfirmation"
+      @removed="removeContact(contactToRemove)"
     />
   </div>
 </template>
@@ -169,15 +169,15 @@ export default {
   async created () {
     this.isLoading = true
 
-    for (const contact in this.contacts) {
-      const contactVote = await this.$client.fetchWalletVote(this.contacts[contact].address)
+    this.selectableContacts = this.contacts
+
+    for (const contact in this.selectableContacts) {
+      const contactVote = await this.$client.fetchWalletVote(this.selectableContacts[contact].address)
 
       if (contactVote) {
-        this.contacts[contact].votedDelegate = await this.$client.fetchDelegate(contactVote)
+        this.selectableContacts[contact].votedDelegate = await this.$client.fetchDelegate(contactVote)
       }
     }
-
-    this.selectableContacts = this.contacts
 
     this.isLoading = false
   },
@@ -189,6 +189,13 @@ export default {
 
     openRemovalConfirmation (contact) {
       this.contactToRemove = contact
+    },
+
+    removeContact (contact) {
+      this.hideRemovalConfirmation()
+      this.selectableContacts = this.selectableContacts.filter(c => {
+        return c.id !== contact.id
+      })
     },
 
     toggleLayout () {
