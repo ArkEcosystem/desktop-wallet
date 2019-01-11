@@ -177,7 +177,6 @@ export default {
           } else {
             this.$error(messages.error)
           }
-
         } else {
           // no tx was sent
           this.$error(messages.nothingSent)
