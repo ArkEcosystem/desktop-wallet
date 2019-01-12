@@ -1,5 +1,6 @@
-import { cloneDeep } from 'lodash'
+import logger from 'electron-logger'
 import semver from 'semver'
+import { isFunction } from 'lodash'
 
 /*
  * - Decide when to apply migrations
@@ -9,7 +10,12 @@ import semver from 'semver'
  */
 
 export default class VuexMigrations {
-  constructor ({ untilVersion }) {
+  /**
+   * @param {(String|Function)} fromVersion - From this migration version
+   * @param {(String|Function)} untilVersion - Until this migration version
+   */
+  constructor ({ fromVersion, untilVersion }) {
+    this.fromVersion = fromVersion
     this.untilVersion = untilVersion
 
     this.collect()
@@ -25,34 +31,41 @@ export default class VuexMigrations {
     const migrationsContext = require.context('../migrations', true, /\.js$/)
 
     migrationsContext.keys().sort().forEach(key => {
-      const [filename, version, title] = key.match(/\.\/(.*) - (.*)\.js/)
+      const [filename, version, title] = key.match(/\.\/(.*) (.*)\.js/)
 
       if (!semver.valid(version)) {
         throw new Error(`The migration "${title}" does not use a valid semver version`)
       }
 
-      // Include only those versions that are lesser or equal
-      if (semver.lte(version, this.untilVersion)) {
-        const migration = migrationsContext(filename).default
-        this.migrations.push(migration)
+      const from = isFunction(this.fromVersion) ? this.fromVersion(this.store) : this.fromVersion
+      const until = isFunction(this.untilVersion) ? this.untilVersion(this.store) : this.untilVersion
+
+      // Include only those versions that are lesser or equal TODO between
+      if (semver.gte(version, from) && semver.lte(version, until)) {
+        const handler = migrationsContext(filename).default
+        this.migrations.push({ version, title, handler })
       }
     })
   }
 
   apply () {
     this.migrations.forEach(migration => {
-      migration(this.snapshot, this.snapshot)
+      logger.debug(`Appliying migration ${migration.version}: ${migration.title}`)
+      migration.handler(this.store)
     })
-    console.log('applied')
   }
 
+  /**
+   * Integrates with `vuex-persist`
+   */
   get plugin () {
     return store => {
+      this.store = store
+
       const unsubscribe = store.subscribe((mutation, state) => {
         if (mutation.type === 'RESTORE_MUTATION') {
           unsubscribe()
 
-          this.snapshot = cloneDeep(state)
           this.apply()
         }
       })

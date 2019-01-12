@@ -39,7 +39,10 @@ const modules = {
 const ignoreModules = []
 
 const vuexMigrations = new VuexMigrations({
-  untilVersion: packageJson.version
+  untilVersion: packageJson.version,
+  fromVersion (store) {
+    return store.getters['app/latestAppliedMigration']
+  }
 })
 
 const vuexPersist = new VuexPersistence({
