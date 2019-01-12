@@ -328,7 +328,7 @@ export default {
       STREAM: 'Sembra che tu stia utilizzando un browser non supportato. Questo è molto curioso ..'
     },
     LOADING: 'Loading videocamera',
-    INSTRUCTION: 'Pisiziona il codice QR davanti alla videocamera',
+    INSTRUCTION: 'Posiziona il codice QR davanti alla videocamera',
     TITLE: 'QR Scanner',
     DECODE_FAILED: 'Impossibile decodificare i dati: {data}'
   },
