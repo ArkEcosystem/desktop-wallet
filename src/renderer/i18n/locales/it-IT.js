@@ -41,7 +41,7 @@ export default {
     PAGE_TITLE: 'Your {page}',
     WELCOME: {
       TITLE: 'Benvenuto in {app}',
-      SAFETY_MESSAGE: 'Per favore prenditi qualche minuto per leggere le prossime schermate per la tua sicurezza.',
+      SAFETY_MESSAGE: 'Per favore, prenditi qualche minuto per leggere le prossime schermate per la tua sicurezza.',
       FUNDS_WARNING: 'I tuoi fondi potrebbero diventare irrecuperabili se non presti attenzione a questi avvertimenti.'
     },
     POWER: {
@@ -57,7 +57,7 @@ export default {
       OWNER: 'Questo porta anche a maggiori responsabilità nei tuoi confronti, il proprietario del conto',
       WARNING: {
         INFO: 'A differenza del tuo conto bancario tradizionale, {warn}',
-        WARN: 'password perdute, frasi d accesso o fondi rubati non potranno essere ripristinati dal team ARK , dai Delegati e da nessun altro.'
+        WARN: 'password perdute, frasi d\'accesso o fondi rubati non potranno essere ripristinati dal team ARK , dai Delegati e da nessun altro.'
       },
       SECURITY: 'La sicurezza del tuo conto spetta esclusivamente a te.'
     },
