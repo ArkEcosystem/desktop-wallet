@@ -7,7 +7,8 @@ export default {
   LANGUAGES: {
     'en-US': 'Inglés',
     'es-ES': 'Español',
-    'pt-BR': 'Portugués - Brasil'
+    'pt-BR': 'Portugués - Brasil',
+    'fr-FR': 'Francés'
   },
 
   ButtonClipboard: {
