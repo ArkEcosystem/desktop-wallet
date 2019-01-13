@@ -42,7 +42,7 @@ export default {
     WELCOME: {
       TITLE: 'Bienvenu sur le {app}',
       SAFETY_MESSAGE: 'S\'il vous plaît prendre quelques moments pour lire les prochaines pages pour votre propre sécurité',
-      FUNDS_WARNING: 'Vos fonds pourraient êtres irrécouvrables si vous ne portez pas attention à ces avertissements.',
+      FUNDS_WARNING: 'Vos fonds pourraient êtres irrécouvrables si vous ne portez pas attention à ces avertissements.'
     },
     POWER: {
       TITLE: 'Pouvoir',
@@ -395,15 +395,15 @@ export default {
   },
 
   PASSPHRASE_VERIFICATION: {
-    WORD_LABEL_1:  'Le 1er mot',
-    WORD_LABEL_2:  'Le 2e mot',
-    WORD_LABEL_3:  'Le 3e mot',
-    WORD_LABEL_4:  'Le 4e mot',
-    WORD_LABEL_5:  'Le 5e mot',
-    WORD_LABEL_6:  'Le 6e mot',
-    WORD_LABEL_7:  'Le 7e mot',
-    WORD_LABEL_8:  'Le 8e mot',
-    WORD_LABEL_9:  'Le 9e mot',
+    WORD_LABEL_1: 'Le 1er mot',
+    WORD_LABEL_2: 'Le 2e mot',
+    WORD_LABEL_3: 'Le 3e mot',
+    WORD_LABEL_4: 'Le 4e mot',
+    WORD_LABEL_5: 'Le 5e mot',
+    WORD_LABEL_6: 'Le 6e mot',
+    WORD_LABEL_7: 'Le 7e mot',
+    WORD_LABEL_8: 'Le 8e mot',
+    WORD_LABEL_9: 'Le 9e mot',
     WORD_LABEL_10: 'Le 10e mot',
     WORD_LABEL_11: 'Le 11e mot',
     WORD_LABEL_12: 'Le 12e mot'
