@@ -19,5 +19,12 @@ export default {
       currency: 'BRL',
       currencyDisplay: 'symbol'
     }
+  },
+  'fr-FR': {
+    currency: {
+      style: 'currency',
+      currency: 'EUR',
+      currencyDisplay: 'symbol'
+    }
   }
 }
