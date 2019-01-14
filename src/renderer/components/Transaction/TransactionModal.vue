@@ -122,9 +122,8 @@ export default {
         warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST')
       }
 
-      this.emitSent()
-
       let response
+      let success = false
       try {
         if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
           const peer = await this.$store.dispatch('peer/findBest', {
@@ -147,6 +146,8 @@ export default {
           } else {
             this.$success(messages.success)
           }
+
+          success = true
         } else {
           const anyLowFee = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
@@ -158,15 +159,21 @@ export default {
           } else {
             this.$error(messages.error)
           }
+
+          success = false
         }
       } catch (error) {
         this.$logger.error(error)
         this.$error(messages.error)
+
+        success = false
+      } finally {
+        this.emitSent(success)
       }
     },
 
-    emitSent () {
-      this.$emit('sent')
+    emitSent (success) {
+      this.$emit('sent', success)
     },
 
     emitCancel () {
