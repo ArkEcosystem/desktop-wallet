@@ -112,7 +112,7 @@ export default {
 
   watch: {
     // Never show the not-voting icon until knowing if the wallet is voting or not
-    'currentWallet.address': () => {
+    'currentWallet.address' () {
       this.showNotVoting = false
     },
     // To react to changes on the injected `walletVote` and changed not-voting icon immediately
