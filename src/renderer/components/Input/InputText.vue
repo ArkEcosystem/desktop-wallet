@@ -1,7 +1,6 @@
 <template>
   <InputField
     :label="label"
-    :maxlength="maxlength"
     :helper-text="helperText"
     :is-dirty="isDirty"
     :is-disabled="isDisabled"
@@ -28,6 +27,7 @@
         :disabled="isDisabled || isReadOnly"
         :type="type"
         :value="value"
+        :maxlength="maxlength"
         :placeholder="placeholder"
         class="InputText__input flex-1"
         @focus="onFocus"
