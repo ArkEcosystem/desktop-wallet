@@ -200,7 +200,7 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -213,7 +213,7 @@ export default {
     },
     addressError () {
       if (this.$v.schema.address.$invalid) {
-        if (!this.$v.schema.address.doesNotExists) {
+        if (!this.$v.schema.address.doesNotExist) {
           return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
         }
       }
@@ -355,12 +355,12 @@ export default {
 
           return false
         },
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byAddress'](value)
         }
       },
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       },
