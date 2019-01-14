@@ -110,10 +110,10 @@ export default new BaseModule(NetworkModel, {
       commit('SET_ALL', updatedNetworks)
     },
 
-    async updateNetworkConfig ({ dispatch, getters, _, rootGetters }, networkId) {
+    async updateNetworkConfig ({ dispatch, getters }, networkId) {
       var network = getters['byId'](networkId)
       if (!network) {
-        network = rootGetters['network/customNetworkById'](networkId)
+        network = getters['customNetworkById'](networkId)
       }
 
       let response
