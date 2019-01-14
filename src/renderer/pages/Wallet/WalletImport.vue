@@ -214,7 +214,7 @@ export default {
     addressError () {
       if (this.$v.schema.address.$invalid) {
         if (!this.$v.schema.address.doesNotExist) {
-          return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [this.schema.address])
         }
       }
       return null

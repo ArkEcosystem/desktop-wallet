@@ -111,7 +111,7 @@ export default {
     addressError () {
       if (this.$v.schema.address.$invalid) {
         if (!this.$v.schema.address.contactDoesNotExist) {
-          return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_CONTACT', [this.schema.address])
         } else if (!this.$v.schema.address.walletDoesNotExist) {
           return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [this.schema.address])
         }
@@ -167,9 +167,9 @@ export default {
         }
       },
       name: {
-        doesNotExist (value) {
+        contactDoesNotExist (value) {
           const contact = this.$store.getters['wallet/byName'](value)
-          return value === '' || !(contact && contact.name === value)
+          return value === '' || !(contact && contact.isContact)
         }
       }
     }
