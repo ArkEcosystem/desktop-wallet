@@ -150,9 +150,8 @@
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
-                  :max-visible-items="4"
-                  :selected="theme"
-                  @select="selectTheme"
+                  :value="theme"
+                  @input="selectTheme"
                 />
               </ListDividedItem>
 
@@ -171,7 +170,7 @@
         </MenuTab>
 
         <!-- TODO at the bottom ? -->
-        <footer class="ProfileEdition__footer mt-3 p-10">
+        <footer class="ProfileEdition__footer mt-3 p-10 pt-0">
           <button
             :disabled="!isModified || isNameEditable"
             class="blue-button"
@@ -313,7 +312,7 @@ export default {
     },
     nameError () {
       if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
-        if (!this.$v.modified.name.doesNotExists) {
+        if (!this.$v.modified.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.modified.name])
         } else if (!this.$v.modified.name.maxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
@@ -418,7 +417,7 @@ export default {
   validations: {
     modified: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           const otherProfile = this.$store.getters['profile/doesExist'](value)
           return !otherProfile || otherProfile.id === this.profile.id
         },
@@ -445,6 +444,10 @@ export default {
 <style lang="postcss">
 .ProfileEdition .MenuTab .MenuTab__nav__item {
   @apply .px-10 .py-6
+}
+.ProfileEdition .MenuTab__content {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,

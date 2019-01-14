@@ -8,7 +8,7 @@
     class="AppSidemenu relative bg-transparent"
   >
     <div
-      class="AppSidemenu__container flexify w-full lg:h-full justify-between"
+      class="AppSidemenu__container flexify w-full md:h-full justify-between"
     >
       <!-- ARK logo -->
       <RouterLink
