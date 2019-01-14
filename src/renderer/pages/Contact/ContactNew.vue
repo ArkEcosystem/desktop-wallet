@@ -110,8 +110,10 @@ export default {
     },
     addressError () {
       if (this.$v.schema.address.$invalid) {
-        if (!this.$v.schema.address.doesNotExist) {
+        if (!this.$v.schema.address.contactDoesNotExist) {
           return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
+        } else if (!this.$v.schema.address.walletDoesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [this.schema.address])
         }
       }
       return null
@@ -155,19 +157,19 @@ export default {
 
           return false
         },
-        doesNotExist (value) {
-          const contact = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id).find(contact => {
-            return contact.address === value
-          })
-          return value === '' || !contact
+        contactDoesNotExist (value) {
+          const contact = this.$store.getters['wallet/byAddress'](value)
+          return value === '' || !(contact && contact.isContact)
+        },
+        walletDoesNotExist (value) {
+          const wallet = this.$store.getters['wallet/byAddress'](value)
+          return value === '' || !(wallet && !wallet.isContact)
         }
       },
       name: {
         doesNotExist (value) {
-          const contact = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id).find(contact => {
-            return contact.name === value
-          })
-          return value === '' || !contact
+          const contact = this.$store.getters['wallet/byName'](value)
+          return value === '' || !(contact && contact.name === value)
         }
       }
     }

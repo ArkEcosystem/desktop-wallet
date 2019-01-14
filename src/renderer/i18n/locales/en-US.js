@@ -136,7 +136,8 @@ export default {
       NO_MATCH: 'Your passwords do not match'
     },
     ADDRESS: {
-      DUPLICATED: 'The wallet address \'{0}\' already exists'
+      DUPLICATED: 'The wallet address \'{0}\' already exists',
+      EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
