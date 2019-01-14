@@ -123,7 +123,7 @@ export default {
 
     /**
      * Retrieves n random seed peers for the current network (excluding current peer)
-     * Note that these peers are currently taken from a config file and will return null for
+     * Note that these peers are currently taken from a config file and will an empty array
      * custom networks without a corresponding peers file
      * @param {Number} amount of peers to return
      * @return {Array} containing peer objects
@@ -140,7 +140,7 @@ export default {
 
       const peers = config.PEERS[networkId]
       if (!peers || !peers.length) {
-        return null
+        return []
       }
 
       return shuffle(peers).slice(0, amount)
@@ -156,7 +156,7 @@ export default {
       const randomPeers = getters['randomPeers'](5, networkId)
       const seedPeers = getters['randomSeedPeers'](5, networkId)
       let peers = bestPeers.concat(randomPeers)
-      if (seedPeers && seedPeers.length) {
+      if (seedPeers.length) {
         peers = peers.concat(seedPeers)
       }
 

@@ -147,8 +147,7 @@ export default {
         }
 
         if (responseArray.length > 0) {
-          let i
-          for (i = 0; i < responseArray.length; i++) {
+          for (let i = 0; i < responseArray.length; i++) {
             const response = responseArray[i]
             const { data } = response.data
 
@@ -180,7 +179,6 @@ export default {
             this.$error(messages.error)
           }
         } else {
-          // no tx was sent
           this.$error(messages.nothingSent)
         }
       } catch (error) {

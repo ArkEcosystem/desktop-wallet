@@ -599,7 +599,7 @@ export default class ClientService {
    *
    * @param {Array|Object} transactions
    * @param {Boolean} broadcast - whether the transaction should be broadcasted to multiple peers or not
-   * @returns {Object}
+   * @returns {Object[]}
    */
   async broadcastTransaction (transactions, broadcast) {
     // Use p2p for v1
@@ -608,8 +608,7 @@ export default class ClientService {
         let responses = []
         const peers = store.getters['peer/broadcastPeers']()
 
-        let i
-        for (i = 0; i < peers.length; i++) {
+        for (let i = 0; i < peers.length; i++) {
           const response = await this.__sendV1Transaction(transactions, peers[i])
           responses.push(response)
         }
@@ -624,8 +623,7 @@ export default class ClientService {
         let txs = []
         const peers = store.getters['peer/broadcastPeers']()
 
-        let i
-        for (i = 0; i < peers.length; i++) {
+        for (let i = 0; i < peers.length; i++) {
           try {
             const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
             const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
