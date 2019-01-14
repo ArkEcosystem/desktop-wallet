@@ -48,29 +48,34 @@ export default {
       TITLE: 'Power',
       FINANCE: 'The most important thing for users to know about cryptocurrencies is that they completely reverse the commonly-accepted model of how finance works.',
       BANKS: 'In traditional finance, you give up direct control of your money to a bank. Because banks have control over your money, they can take actions on your behalf, such as refunding transactions and resetting your login info.',
-      CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your private key, you can control exactly when, where and how your money is kept and spent.',
+      CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your passphrase, you can control exactly when, where and how your money is kept and spent.',
       RESPONSIBILITY: 'However, in the words of Uncle Ben Parker, with great power comes great responsibility.'
     },
     DUTY: {
       TITLE: 'Duty',
-      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time.',
-      OWNER: 'It also brings greater responsibility for you, the account owner.',
+      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
+      OWNER: 'This also brings greater responsibility for you, the account owner.',
       WARNING: {
         INFO: 'Unlike your traditional bank account, {warn}',
-        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the ARK team, the Delegates or anyone else.'
+        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
     RESPONSIBILITY: {
       TITLE: 'Responsibility',
-      STORAGE: 'You have the option of storing an encrypted copy of your passphrase locally. Please remember, your passphrase IS your account. If you choose this option and your computer dies, your account is lost forever.',
-      BACKUP: 'Always backup your passphrase and keep it in a safe place. The best practice is to write it down on thick paper and store it in a fireproof safe or save it on an encrypted flash drive.',
-      PASSPHRASE: 'Remember, anyone who has your passphrase can access your money. Never share your account with anyone and avoid storing it in accounts that are susceptible to hacking, such as cloud services.'
+      STORAGE: {
+        INFO: 'The {passphrase} of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an {encrypted} as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. You will need the passphrase.',
+        PASSPHRASE: 'passphrase',
+        ENCRYPTED: 'encrypted password'
+      },
+      BACKUP: 'Always backup your passphrase and keep it in a safe place. You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.',
+      PASSPHRASE: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
     },
     TURN: {
       TITLE: 'Turn',
-      WALLET: 'Armed with knowledge about the importance of keeping your passphrase safe, you\'re ready to claim your financial autonomy with ARK Desktop Wallet.',
-      HARDWARE_WALLET: 'Alternatively, for an extra layer of security and convenience, consider a hardware wallet. These dedicated storage products manage your private keys within the device. Additionally, the Ledger Nano S hardware wallet integrates directly with ARK Desktop Wallet, meaning you can plug your Ledger Nano into your computer and access the ARK blockchain without needing to enter your passphrase.'
+      WALLET: 'Now armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
+      SUPPORT: 'ARK is an open-source ecosystem and if you need assistance, the ARK community and team is here to help. Create a post on reddit.ark.io, or join the real-time chat system at slack.ark.io.',
+      CONCLUSION: 'Everyone here on the ARK.io team hopes you enjoy using the ARK Desktop Wallet to participate in the blockchain revolution!'
     }
   },
 
@@ -644,10 +649,6 @@ export default {
     MODAL_HEADER: 'Networks'
   },
 
-  NETWORK: {
-    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
-  },
-
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transfer',
@@ -827,7 +828,8 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    VOTED_FOR: 'You voted for delegate {delegate}'
+    VOTED_FOR: 'You voted for delegate {delegate}',
+    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}'
   },
 
   WALLET_RENAME: {
