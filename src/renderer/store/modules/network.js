@@ -68,7 +68,21 @@ export default new BaseModule(NetworkModel, {
 
   actions: {
     load ({ commit, getters }) {
-      if (!isEmpty(getters['all'])) {
+      const all = cloneDeep(getters['all'])
+      if (!isEmpty(all)) {
+        // TODO: remove in future major version
+        // This is a "hack" to make sure all custom networks are in state.all
+        let missingCustom = false
+        for (const custom of Object.values(getters['customNetworks'])) {
+          if (!all.find(network => network.name === custom.name)) {
+            all.push(custom)
+            missingCustom = true
+          }
+        }
+        if (missingCustom) {
+          commit('SET_ALL', all)
+        }
+
         return
       }
 
