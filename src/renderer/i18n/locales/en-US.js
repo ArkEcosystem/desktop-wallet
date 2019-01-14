@@ -126,6 +126,7 @@ export default {
     NO_SCHEME: 'The \'{0}\' does not have \'http://\' or \'https://\'',
     NAME: {
       DUPLICATED: 'The name \'{0}\' already exists',
+      EXISTS_AS_CONTACT: 'The name \'{0}\' has already been assigned to a contact',
       MAX_LENGTH: 'The name should have less than {0} characters.',
       MIN_LENGTH: 'The name should have at least 1 character | The name should have at least {n} characters.'
     },

@@ -97,8 +97,8 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExist) {
-          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        if (!this.$v.schema.name.contactDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
         // NOTE: not used, unless the minimum length is changed
