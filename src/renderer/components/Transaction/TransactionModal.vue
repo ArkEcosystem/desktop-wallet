@@ -129,7 +129,13 @@ export default {
       let responseArray
       let success = false
       try {
-        const shouldBroadcast = this.$store.getters['session/broadcastPeers']
+        let shouldBroadcast = false
+        if (this.walletOverride) {
+          const walletProfile = this.$store.getters['profile/byId'](this.walletOverride.profileId)
+          shouldBroadcast = walletProfile.broadcastPeers
+        } else {
+          shouldBroadcast = this.$store.getters['session/broadcastPeers']
+        }
 
         if (shouldBroadcast) {
           this.$info(messages.broadcasting)
