@@ -1,6 +1,6 @@
 
 <template>
-  <span class="flex items-center">
+  <span class="WalletAddress flex items-center">
     <span v-if="!type">
       <a
         v-tooltip="{
@@ -168,3 +168,9 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.WalletAddress > span {
+  @apply truncate
+}
+</style>
