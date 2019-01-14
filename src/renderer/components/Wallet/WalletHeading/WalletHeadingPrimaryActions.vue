@@ -4,7 +4,7 @@
     class="WalletHeading__PrimaryActions flex items-center"
   >
     <button
-      v-if="!walletVote.publicKey"
+      v-if="showNotVoting"
       v-tooltip="{ content: $t('PAGES.WALLET_SHOW.NO_VOTE'), trigger:'hover' }"
       class="bg-theme-button-special-choice cursor-pointer rounded-full w-2 h-2 m-3"
       @click="goToDelegates"
@@ -92,7 +92,8 @@ export default {
 
   data () {
     return {
-      isRefreshing: false
+      isRefreshing: false,
+      showNotVoting: false
     }
   },
 
@@ -107,6 +108,17 @@ export default {
 
     doesNotExist () {
       return !this.$store.getters['wallet/byAddress'](this.currentWallet.address)
+    }
+  },
+
+  watch: {
+    // Never show the not-voting icon until knowing if the wallet is voting or not
+    'currentWallet.address' () {
+      this.showNotVoting = false
+    },
+    // To react to changes on the injected `walletVote` and changed not-voting icon immediately
+    'walletVote.publicKey' () {
+      this.showNotVoting = !this.walletVote.publicKey
     }
   },
 
