@@ -261,15 +261,7 @@ export default {
   async created () {
     this.isLoading = true
 
-    this.selectableWallets = this.wallets
-
-    for (const wallet in this.selectableWallets) {
-      const walletVote = await this.$client.fetchWalletVote(this.selectableWallets[wallet].address)
-
-      if (walletVote) {
-        this.selectableWallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
-      }
-    }
+    this.selectableWallets = await this.fetchVotedDelegates(this.wallets)
 
     if (this.$store.getters['ledger/isConnected']) {
       this.refreshLedgerWallets()
@@ -286,15 +278,7 @@ export default {
     },
 
     async refreshLedgerWallets () {
-      this.ledgerWallets = this.$store.getters['ledger/wallets']
-
-      for (const wallet in this.ledgerWallets) {
-        const walletVote = await this.$client.fetchWalletVote(this.ledgerWallets[wallet].address)
-
-        if (walletVote) {
-          this.ledgerWallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
-        }
-      }
+      this.ledgerWallets = await this.fetchVotedDelegates(this.$store.getters['ledger/wallets'])
 
       this.selectableWallets = [...this.ledgerWallets, ...this.selectableWallets]
     },
@@ -327,6 +311,18 @@ export default {
 
     onRemoveWallet (wallet) {
       this.openRemovalConfirmation(wallet)
+    },
+
+    async fetchVotedDelegates (wallets) {
+      for (const wallet in wallets) {
+        const walletVote = await this.$client.fetchWalletVote(wallets[wallet].address)
+
+        if (walletVote) {
+          wallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
+        }
+      }
+
+      return wallets
     }
   }
 }
