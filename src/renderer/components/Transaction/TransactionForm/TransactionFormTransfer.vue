@@ -321,7 +321,7 @@ export default {
         this.previousAmount = this.form['amount']
       }
       if (!isActive) {
-        if (setPreviousAmount) {
+        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
           this.$set(this.form, 'amount', this.previousAmount)
         }
         this.previousAmount = ''
