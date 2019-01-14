@@ -1,8 +1,6 @@
 import BaseModule from '../base'
 import { cloneDeep, isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
-import i18n from '@/i18n'
-import alertEvents from '@/plugins/alert-events'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
 import Client from '@/services/client'
@@ -68,7 +66,23 @@ export default new BaseModule(NetworkModel, {
 
   actions: {
     load ({ commit, getters }) {
-      if (!isEmpty(getters['network/all'])) return
+      const all = cloneDeep(getters['all'])
+      if (!isEmpty(all)) {
+        // TODO: remove in future major version
+        // This is a "hack" to make sure all custom networks are in state.all
+        let missingCustom = false
+        for (const custom of Object.values(getters['customNetworks'])) {
+          if (!all.find(network => network.name === custom.name)) {
+            all.push(custom)
+            missingCustom = true
+          }
+        }
+        if (missingCustom) {
+          commit('SET_ALL', all)
+        }
+
+        return
+      }
 
       commit('SET_ALL', NETWORKS)
     },
@@ -92,42 +106,6 @@ export default new BaseModule(NetworkModel, {
         }
       }
       commit('SET_ALL', updatedNetworks)
-    },
-
-    async updateNetworkConfig ({ dispatch, getters, _, rootGetters }, networkId) {
-      var network = getters['byId'](networkId)
-      if (!network) {
-        network = rootGetters['network/customNetworkById'](networkId)
-      }
-
-      let response
-      try {
-        response = await Client.fetchNetworkConfig(network.server, network.apiVersion)
-      } catch (error) {
-        console.error(`Failed to update network config for ${network.server}`)
-        alertEvents.$error(i18n.t('NETWORK.FAILED_CONFIG_UPDATE', {
-          network: network.server
-        }))
-
-        return
-      }
-
-      if (response) {
-        try {
-          const result = dispatch('update', {
-            ...network,
-            ...response
-          })
-          return result
-        } catch (error) {
-          // Network did not exist yet, so create it
-          const result = dispatch('create', {
-            ...network,
-            ...response
-          })
-          return result
-        }
-      }
     },
 
     addCustomNetwork ({ dispatch, commit }, network) {
