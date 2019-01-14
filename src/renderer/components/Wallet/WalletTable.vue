@@ -32,8 +32,15 @@
         <div
           v-else-if="data.column.field === 'name'"
         >
-          <span>
-            {{ (data.row.name || wallet_name(data.row.address)) | truncate(30) }}
+          <span class="flex items-center">
+            {{ walletName(data.row) | truncate(30) }}
+            <span
+              v-if="data.row.isLedger"
+              class="WalletTable__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none"
+              :class="{ 'ml-3': walletName(data.row) }"
+            >
+              {{ $t('WALLET_TABLE.LEDGER') }}
+            </span>
           </span>
         </div>
 
@@ -156,12 +163,16 @@ export default {
 
     delegateName (row) {
       return row.votedDelegate ? row.votedDelegate.username : ''
+    },
+
+    walletName (row) {
+      return row.name || this.wallet_name(row.address)
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .WalletTable tr:hover {
 
 }
@@ -171,5 +182,8 @@ export default {
 }
 .WalletTable .identicon {
   transition: 0.5s;
+}
+.WalletTable__ledger-badge {
+  opacity: 0.85
 }
 </style>
