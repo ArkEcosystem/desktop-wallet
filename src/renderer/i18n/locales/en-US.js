@@ -646,10 +646,6 @@ export default {
     MODAL_HEADER: 'Networks'
   },
 
-  NETWORK: {
-    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
-  },
-
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transfer',

@@ -145,8 +145,8 @@ export default {
    * retrieving the essential data (session and network) from the database
    */
   async created () {
-    await this.$store.dispatch('network/load', config.NETWORKS)
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
