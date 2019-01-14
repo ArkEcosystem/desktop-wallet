@@ -46,7 +46,7 @@ export default {
 
   computed: {
     letter () {
-      return this.value.charAt(0)
+      return (this.value || '').charAt(0)
     }
   }
 }
