@@ -44,6 +44,7 @@
         class="PassphraseInput__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
         icon="qr"
         view-box="0 0 20 20"
+        tabindex="-1"
       >
         <template slot-scope="{ toggle, isOpen }">
           <ModalQrCodeScanner
