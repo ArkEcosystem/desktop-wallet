@@ -82,6 +82,7 @@
           :delegate="votedDelegate"
           :is-voter="true"
           @cancel="onCancel"
+          @close="onCancel"
           @sent="onSent"
         />
       </Portal>
