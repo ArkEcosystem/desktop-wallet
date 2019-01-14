@@ -3,6 +3,7 @@
     <WalletHeading class="sticky pin-t z-10" />
 
     <MenuTab
+      ref="menutab"
       v-model="currentTab"
       :class="{ 'rounded-bl-lg' : !isDelegatesTab || !votedDelegate }"
       class="flex-1 overflow-y-auto"
@@ -34,7 +35,7 @@
               'border-r border-theme-line-separator' : votedDelegate.rank
             }"
             class="font-semibold pr-6"
-            path="WALLET_DELEGATES.VOTED_FOR"
+            :path="isOwned ? 'WALLET_DELEGATES.VOTED_FOR' : 'WALLET_DELEGATES.WALLET_VOTED_FOR'"
           >
             <strong place="delegate">
               {{ votedDelegate.username }}
@@ -63,6 +64,7 @@
         </div>
       </div>
       <div
+        v-if="isOwned"
         class="WalletDetails__unvote"
         @click="openUnvote"
       >
@@ -176,6 +178,13 @@ export default {
 
     isDelegatesTab () {
       return this.currentTab === 'WalletDelegates'
+    },
+
+    isOwned () {
+      const wallet = this.$store.getters['wallet/byAddress'](this.currentWallet.address)
+      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+
+      return wallets.includes(wallet)
     }
   },
 
@@ -192,6 +201,11 @@ export default {
           // TODO
           break
       }
+    },
+    tabs () {
+      this.$nextTick(() => {
+        this.$refs.menutab.collectItems()
+      })
     }
   },
 
@@ -257,10 +271,13 @@ export default {
       this.isSelected = false
     },
 
-    onSent () {
-      this.walletVote.publicKey = null
+    onSent (success) {
+      if (success) {
+        this.walletVote.publicKey = null
+        this.votedDelegate = null
+      }
+
       this.isSelected = false
-      this.votedDelegate = null
     }
   }
 }

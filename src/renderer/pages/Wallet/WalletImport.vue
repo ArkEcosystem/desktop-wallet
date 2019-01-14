@@ -200,7 +200,7 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -213,7 +213,7 @@ export default {
     },
     addressError () {
       if (this.$v.schema.address.$invalid) {
-        if (!this.$v.schema.address.doesNotExists) {
+        if (!this.$v.schema.address.doesNotExist) {
           return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
         }
       }
@@ -229,7 +229,7 @@ export default {
       if (this.step === 2 && !this.useOnlyAddress) {
         // Important: .normalize('NFD') is needed to properly work with Korean bip39 words
         // It alters the passphrase string, so no need to normalize again in the importWallet function
-        this.schema.address = WalletService.getAddress(this.schema.passphrase.normalize('NFD'), this.session_network.version)
+        this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
       }
     }
   },
@@ -353,12 +353,12 @@ export default {
 
           return false
         },
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byAddress'](value)
         }
       },
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       },

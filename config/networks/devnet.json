@@ -3,7 +3,7 @@
   "name": "ARK Devnet",
   "title": "ARK Devnet",
   "server": "https://dexplorer.ark.io:8443",
-  "description": "Devnet is an alternative blockchain used for testing.",
+  "description": "The ARK Devnet is only used for R&D by engineers.",
   "imagePath": "networks/ark.devnet.svg",
   "apiVersion": 2,
   "slip44": "1",
@@ -11,6 +11,40 @@
     "enabled": false,
     "ticker": null
   },
+  "feeStatistics": [
+    {
+      "type": 0,
+      "fees": {
+        "avgFee": 10000000,
+        "maxFee": 10000000,
+        "minFee": 10000000
+      }
+    },
+    {
+      "type": 1,
+      "fees": {
+        "avgFee": 500000000,
+        "maxFee": 500000000,
+        "minFee": 500000000
+      }
+    },
+    {
+      "type": 2,
+      "fees": {
+        "avgFee": 2500000000,
+        "maxFee": 2500000000,
+        "minFee": 2500000000
+      }
+    },
+    {
+      "type": 3,
+      "fees": {
+        "avgFee": 100000000,
+        "maxFee": 100000000,
+        "minFee": 100000000
+      }
+    }
+  ],
   "constants": {
     "activeDelegates": 51,
     "epoch": "2017-03-21T13:00:00.000Z"
