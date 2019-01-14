@@ -68,7 +68,9 @@ export default new BaseModule(NetworkModel, {
 
   actions: {
     load ({ commit, getters }) {
-      if (!isEmpty(getters['network/all'])) return
+      if (!isEmpty(getters['all'])) {
+        return
+      }
 
       commit('SET_ALL', NETWORKS)
     },
