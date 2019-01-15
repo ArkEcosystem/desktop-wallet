@@ -1,13 +1,33 @@
 <template>
   <div class="ContactAll relative lg:bg-theme-feature rounded-lg m-r-4 p-10">
     <div class="block h-full">
-      <div class="ContactAll__header flex justify-between">
+      <div class="ContactAll__header">
         <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
 
-        <ButtonLayout
-          :grid-layout="hasGridLayout"
-          @click="toggleLayout()"
-        />
+        <div class="flex items-center">
+          <button
+            v-if="!hasGridLayout"
+            class="ContactAll__CreateButton"
+            @click="createContact"
+          >
+            <span class="ContactAll__CreateButton__icon">
+              <SvgIcon
+                name="plus"
+                view-box="0 0 9 9"
+                class="text-center"
+              />
+            </span>
+
+            <span class="flex items-center h-10 px-4">
+              {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
+            </span>
+          </button>
+
+          <ButtonLayout
+            :grid-layout="hasGridLayout"
+            @click="toggleLayout()"
+          />
+        </div>
       </div>
 
       <div
@@ -114,6 +134,7 @@ import { ContactRemovalConfirmation } from '@/components/Contact'
 import { clone, sortBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'ContactAll',
@@ -124,7 +145,8 @@ export default {
     ContactRemovalConfirmation,
     WalletIdenticon,
     WalletIdenticonPlaceholder,
-    WalletTable
+    WalletTable,
+    SvgIcon
   },
 
   data: () => ({
@@ -210,12 +232,19 @@ export default {
 
     onRemoveContact (contact) {
       this.openRemovalConfirmation(contact)
+    },
+
+    createContact () {
+      this.$router.push({ name: 'contact-new' })
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
+.ContactAll__header {
+  @apply .flex .items-center .justify-between .h-8;
+}
 .ContactAll__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, calc(var(--contact-identicon-lg) * 3));
@@ -230,6 +259,21 @@ export default {
 }
 .ContactAll__grid__contact .identicon {
   transition: 0.5s;
+}
+.ContactAll__CreateButton {
+  transition: all .1s ease-in;
+  @apply .flex .items-center .mx-auto .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-option-button-text .mr-6;
+}
+.ContactAll__CreateButton:hover {
+  @apply .bg-blue .text-white;
+}
+.ContactAll__CreateButton__icon {
+  transition: all .1s ease-in;
+  @apply .flex .items-center .justify-center .h-10 .w-10 .rounded-l .bg-theme-button-inner-box;
+}
+.ContactAll__CreateButton:hover .ContactAll__CreateButton__icon {
+  background-color: #0169f4;
+  @apply .text-white;
 }
 @screen lg {
   .ContactAll__grid__contact {

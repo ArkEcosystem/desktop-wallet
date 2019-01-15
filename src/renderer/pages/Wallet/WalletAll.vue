@@ -50,7 +50,7 @@
 
     <div class="flex flex-1 lg:bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
-        <div class="WalletAll__header flex justify-between">
+        <div class="WalletAll__header">
           <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
 
           <ButtonLayout
@@ -336,6 +336,9 @@ export default {
 <style lang="postcss" scoped>
 .WalletAll__ledger__cache {
   @apply .border-r .border-theme-feature-item-alternative
+}
+.WalletAll__header {
+  @apply .flex .items-center .justify-between .h-8;
 }
 .WalletAll__grid {
   display: grid;
