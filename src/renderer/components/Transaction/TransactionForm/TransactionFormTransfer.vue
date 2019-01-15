@@ -54,7 +54,7 @@
       v-model="form.vendorField.$model"
       :label="vendorFieldLabel"
       :bip39-warning="true"
-      :helper-text="vendorFieldLimitReached"
+      :helper-text="vendorFieldHelperText"
       :is-disabled="!currentWallet"
       :maxlength="64"
       name="vendorField"
@@ -240,7 +240,12 @@ export default {
     },
     vendorFieldLabel () {
       return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
-    }
+    },
+    vendorFieldHelperText () {
+      if (this.form.vendorField.length == 64) {
+        return this.$t('VENDORFIELD.LIMIT_REACHED', [this.$refs.vendorField.label])
+      }
+      return null
   },
 
   watch: {
