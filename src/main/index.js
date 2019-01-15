@@ -49,6 +49,11 @@ function createWindow () {
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
+    const name = app.getName()
+    const version = app.getVersion()
+    const windowTitle = `${name} ${version}`
+    mainWindow.setTitle(windowTitle)
+
     broadcastURL(deeplinkingUrl)
   })
 
