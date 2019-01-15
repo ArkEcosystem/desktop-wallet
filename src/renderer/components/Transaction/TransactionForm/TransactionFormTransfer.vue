@@ -54,6 +54,7 @@
       v-model="form.vendorField.$model"
       :label="vendorFieldLabel"
       :bip39-warning="true"
+      :helper-text="vendorFieldLimitReached"
       :is-disabled="!currentWallet"
       :maxlength="64"
       name="vendorField"
