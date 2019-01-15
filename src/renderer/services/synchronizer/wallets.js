@@ -98,37 +98,58 @@ class Action {
     }
   }
 
+  /**
+   * Refresh wallet data.
+   * @param  {Object[]} wallets
+   * @return {void}
+   */
   async refreshWallets (wallets) {
-    await Promise.all(wallets.map(async wallet => {
-      await this.refreshWallet(wallet)
-    }))
+    const walletsData = await this.$client.fetchWallets(wallets.map(wallet => wallet.address))
+    for (const wallet of wallets) {
+      const walletData = walletsData.find(data => data && data.address === wallet.address)
+      if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
+        continue
+      }
+
+      await this.processWalletData(wallet, walletData)
+    }
+
+    await this.fetchTransactionsForWallets(wallets)
   }
 
-  async refreshWallet (wallet) {
+  /**
+   * Update cached wallet data.
+   * @param  {Object} wallet
+   * @param  {Object} walletData Wallet data fetched from API
+   * @return {void}
+   */
+  async processWalletData (wallet, walletData) {
     try {
-      if (wallet.isLedger) {
-        await this.fetchWalletTransactions(wallet)
-
-        return
+      const refreshedWallet = {
+        ...wallet,
+        ...walletData
       }
-      const walletData = await this.$client.fetchWallet(wallet.address)
-
-      if (walletData) {
-        const refreshedWallet = {
-          ...wallet,
-          ...walletData
-        }
+      if (!wallet.isLedger) {
         this.$dispatch('wallet/update', refreshedWallet)
-
-        await this.fetchWalletTransactions(refreshedWallet)
+      } else {
+        this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })
       }
     } catch (error) {
       this.$logger.error(error.message)
-      // TODO the error could mean that the wallet isn't on the blockchain yet
-      // this.$error(this.$t('COMMON.FAILED_FETCH', {
-      //   name: 'wallet data',
-      //   msg: error.message
-      // }))
+    }
+  }
+
+  /**
+   * Fetch transactions for all wallets.
+   * @param  {Object[]} wallets
+   * @return {void}
+   */
+  async fetchTransactionsForWallets (wallets) {
+    const walletTransactions = await this.$client.fetchTransactionsForWallets(wallets.map(wallet => wallet.address))
+    for (const wallet of wallets) {
+      if (walletTransactions[wallet.address]) {
+        this.processWalletTransactions(wallet, walletTransactions[wallet.address])
+      }
     }
   }
 
@@ -136,10 +157,8 @@ class Action {
    * Fetches the transactions of the wallet. In case there are new transactions,
    * it displays the latest one
    */
-  async fetchWalletTransactions (wallet) {
+  async processWalletTransactions (wallet, transactions) {
     try {
-      const { transactions } = await this.$client.fetchWalletTransactions(wallet.address)
-
       if (transactions && transactions.length) {
         this.$dispatch('transaction/deleteBulk', {
           transactions,
