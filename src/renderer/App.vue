@@ -155,9 +155,10 @@ export default {
       this.isReady = true
 
       this.$synchronizer.defineAll()
-      this.$synchronizer.ready()
 
       await this.loadNotEssential()
+
+      this.$synchronizer.ready()
 
       // Environments variables are strings
       const status = process.env.ENABLE_SCREENSHOT_PROTECTION
@@ -196,7 +197,7 @@ export default {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
         if (this.$store.getters['ledger/isConnected']) {
-          this.$store.dispatch('ledger/reloadWallets', { clearFirst: true })
+          this.$store.dispatch('ledger/reloadWallets', true)
         }
       })
       this.$eventBus.on('ledger:connected', async () => {
