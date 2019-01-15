@@ -243,7 +243,7 @@ export default {
     },
     vendorFieldHelperText () {
       if (this.form.vendorField.length == 64) {
-        return this.$t('VENDORFIELD.LIMIT_REACHED', [this.$refs.vendorField.label])
+        return this.$t('VENDORFIELD.LIMIT_REACHED', [64])
       }
       return null
   },
