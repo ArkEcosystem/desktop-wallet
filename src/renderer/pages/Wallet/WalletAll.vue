@@ -314,10 +314,16 @@ export default {
 
     async fetchVotedDelegates (wallets) {
       for (const wallet in wallets) {
-        const walletVote = await this.$client.fetchWalletVote(wallets[wallet].address)
+        try {
+          const walletVote = await this.$client.fetchWalletVote(wallets[wallet].address)
 
-        if (walletVote) {
-          wallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
+          if (walletVote) {
+            wallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
+          } else {
+            wallets[wallet].votedDelegate = null
+          }
+        } catch (error) {
+          wallets[wallet].votedDelegate = null
         }
       }
 

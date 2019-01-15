@@ -172,10 +172,16 @@ export default {
     this.selectableContacts = this.contacts
 
     for (const contact in this.selectableContacts) {
-      const contactVote = await this.$client.fetchWalletVote(this.selectableContacts[contact].address)
+      try {
+        const contactVote = await this.$client.fetchWalletVote(this.selectableContacts[contact].address)
 
-      if (contactVote) {
-        this.selectableContacts[contact].votedDelegate = await this.$client.fetchDelegate(contactVote)
+        if (contactVote) {
+          this.selectableContacts[contact].votedDelegate = await this.$client.fetchDelegate(contactVote)
+        } else {
+          this.selectableContacts[contact].votedDelegate = null
+        }
+      } catch (error) {
+        this.selectableContacts[contact].votedDelegate = null
       }
     }
 
