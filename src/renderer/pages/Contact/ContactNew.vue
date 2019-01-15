@@ -30,6 +30,8 @@
               <InputAddress
                 ref="addressInput"
                 v-model="schema.address"
+                :is-invalid="$v.schema.address.$invalid"
+                :helper-text="addressError"
                 :pub-key-hash="session_network.version"
                 class="my-3"
               />
@@ -95,13 +97,25 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExist) {
-          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        if (!this.$v.schema.name.contactDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [this.schema.name])
+        } else if (!this.$v.schema.name.walletDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_WALLET', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
         // NOTE: not used, unless the minimum length is changed
         } else if (!this.$v.schema.name.schemaMinLength) {
           return this.$tc('VALIDATION.NAME.MIN_LENGTH', Wallet.schema.properties.name.minLength)
+        }
+      }
+      return null
+    },
+    addressError () {
+      if (this.$v.schema.address.$invalid) {
+        if (!this.$v.schema.address.contactDoesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_CONTACT', [this.schema.address])
+        } else if (!this.$v.schema.address.walletDoesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [this.schema.address])
         }
       }
       return null
@@ -144,11 +158,24 @@ export default {
           }
 
           return false
+        },
+        contactDoesNotExist (value) {
+          const contact = this.$store.getters['wallet/byAddress'](value)
+          return value === '' || !(contact && contact.isContact)
+        },
+        walletDoesNotExist (value) {
+          const wallet = this.$store.getters['wallet/byAddress'](value)
+          return value === '' || !(wallet && !wallet.isContact)
         }
       },
       name: {
-        doesNotExist (value) {
-          return value === '' || !this.$store.getters['wallet/byName'](value)
+        contactDoesNotExist (value) {
+          const contact = this.$store.getters['wallet/byName'](value)
+          return value === '' || !(contact && contact.isContact)
+        },
+        walletDoesNotExist (value) {
+          const wallet = this.$store.getters['wallet/byName'](value)
+          return value === '' || !(wallet && !wallet.isContact)
         }
       }
     }

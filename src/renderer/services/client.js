@@ -678,39 +678,77 @@ export default class ClientService {
   }
 
   /**
+   * Helper function to send a transaction on a v1 network. Uses p2p
+   * @param {Object} transactions - the transactions to send
+   * @param {Object} currentPeer - the peer to use
+   * @returns {Object} the response of sending the transaction
+   */
+  async __sendV1Transaction (transactions, currentPeer) {
+    const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+    const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
+    const network = store.getters['session/network']
+    const response = await axios({
+      url: host,
+      data: { transactions: castArray(transactions) },
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        version: '1.6.1',
+        port: 1,
+        nethash: network.nethash
+      }
+    })
+    return response
+  }
+
+  /**
    * Broadcast transactions to the current peer.
    *
    * @param {Array|Object} transactions
-   * @returns {Object}
+   * @param {Boolean} broadcast - whether the transaction should be broadcasted to multiple peers or not
+   * @returns {Object[]}
    */
-  async broadcastTransaction (transactions) {
+  async broadcastTransaction (transactions, broadcast) {
     // Use p2p for v1
     if (this.__version === 1) {
-      const currentPeer = store.getters['peer/current']()
-      const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-      const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
-      const network = store.getters['session/network']
-      const response = await axios({
-        url: host,
-        data: { transactions: castArray(transactions) },
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          version: '1.6.1',
-          port: 1,
-          nethash: network.nethash
-        }
-      })
-      return response
-    } else {
-      const transaction = await this
-        .client
-        .resource('transactions')
-        .create({
-          transactions: castArray(transactions)
-        })
+      if (broadcast) {
+        let responses = []
+        const peers = store.getters['peer/broadcastPeers']()
 
-      return transaction
+        for (let i = 0; i < peers.length; i++) {
+          const response = await this.__sendV1Transaction(transactions, peers[i])
+          responses.push(response)
+        }
+        return responses
+      } else {
+        const currentPeer = store.getters['peer/current']()
+        const response = await this.__sendV1Transaction(transactions, currentPeer)
+        return [response]
+      }
+    } else {
+      if (broadcast) {
+        let txs = []
+        const peers = store.getters['peer/broadcastPeers']()
+
+        for (let i = 0; i < peers.length; i++) {
+          try {
+            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+            const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
+            txs.push(tx)
+          } catch (err) {
+            //
+          }
+        }
+        return txs
+      } else {
+        const transaction = await this
+          .client
+          .resource('transactions')
+          .create({
+            transactions: castArray(transactions)
+          })
+        return [transaction]
+      }
     }
   }
 

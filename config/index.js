@@ -8,6 +8,11 @@ exports.NETWORKS = [
   require('./networks/devnet.json')
 ]
 
+exports.PEERS = {
+  'ark.mainnet': require('./peers/mainnet.json'),
+  'ark.devnet': require('./peers/devnet.json')
+}
+
 exports.ANNOUNCEMENTS = {
   rssUrl: 'https://blog.ark.io/feed'
 }
@@ -105,8 +110,4 @@ exports.V1 = {
     0 * 1e8, // Multu-payment (not supported yet)
     0 * 1e8 // Delegate resignation (not supported yet)
   ]
-}
-
-exports.EXCHANGE = {
-  changellyId: 'bab9de3731aa'
 }
