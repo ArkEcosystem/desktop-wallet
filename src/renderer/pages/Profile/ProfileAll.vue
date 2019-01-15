@@ -26,41 +26,53 @@
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
         <button
+          v-if="profile.avatar"
           :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-          class="profile-avatar-xl background-image flex cursor-pointer"
+          class="profile-avatar-xl background-image flex cursor-pointer self-center"
+          @click="selectProfile(profile.id)"
+        />
+        <ButtonLetter
+          v-else
+          :value="profile.name"
+          size="2xl"
+          class="profile-avatar-xl mx-auto"
           @click="selectProfile(profile.id)"
         />
 
-        <div class="flex flex-col justify-start">
-          <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
-            {{ profile.name | truncate(12) }}
+        <div class="flex flex-col justify-between">
+          <div>
+            <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
+              {{ profile.name | truncate(12) }}
+            </div>
+
+            <span class="font-bold my-2 text-lg pl-4">
+              {{ profileBalance(profile) }}
+            </span>
           </div>
 
-          <span class="font-bold my-2 text-lg pl-4">
-            {{ profileBalance(profile) }}
-          </span>
+          <div>
+            <RouterLink
+              :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
+              class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
+            >
+              {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
+            </RouterLink>
 
-          <RouterLink
-            :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-            class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
-          >
-            {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
-          </RouterLink>
+            <button
+              class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"
+              @click="openRemovalConfirmation(profile)"
+            >
+              {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
+            </button>
 
-          <button
-            class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"
-            @click="openRemovalConfirmation(profile)"
-          >
-            {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
-          </button>
-
-          <a
-            v-show="profile.id !== session_profile.id"
-            class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline mt-4"
-            @click="selectProfile(profile.id)"
-          >
-            {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
-          </a>
+            <a
+              v-show="profile.id !== session_profile.id"
+              class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline mt-4"
+              @click="selectProfile(profile.id)"
+            >
+              {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -75,6 +87,7 @@
 </template>
 
 <script>
+import { ButtonLetter } from '@/components/Button'
 import { mapValues, uniqBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { ProfileRemovalConfirmation } from '@/components/Profile'
@@ -83,6 +96,7 @@ export default {
   name: 'ProfileAll',
 
   components: {
+    ButtonLetter,
     ProfileRemovalConfirmation
   },
 

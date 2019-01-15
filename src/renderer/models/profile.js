@@ -64,5 +64,5 @@ export default new BaseModel({
       format: data => data.transactionTableRowCount || 10
     }
   },
-  required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']
+  required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
 })
