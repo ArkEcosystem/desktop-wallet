@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-import { pullAll, keys } from 'lodash'
+import { isNull, pullAll, keys } from 'lodash'
 
 import packageJson from '@package.json'
 
 import vuexPersistReady from '@/store/plugins/vuex-persist-ready'
-import VuexMigrations from '@/store/plugins/vuex-migrations'
+import VuexPersistMigrations from '@/store/plugins/vuex-persist-migrations'
 import AnnouncementsModule from '@/store/modules/announcements'
 import AppModule from '@/store/modules/app'
 import DelegateModule from '@/store/modules/delegate'
@@ -38,10 +38,11 @@ const modules = {
 
 const ignoreModules = []
 
-const vuexMigrations = new VuexMigrations({
+const vuexMigrations = new VuexPersistMigrations({
   untilVersion: packageJson.version,
   fromVersion (store) {
-    return store.getters['app/latestAppliedMigration']
+    const version = store.getters['app/latestAppliedMigration']
+    return isNull(version) ? '0.0.0' : version
   }
 })
 
