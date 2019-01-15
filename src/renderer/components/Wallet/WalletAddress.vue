@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import store from '@/store'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
@@ -103,10 +102,6 @@ export default {
     }
   },
 
-  data: () => ({
-    votedDelegate: null
-  }),
-
   computed: {
     isUnvote () {
       if (this.asset && this.asset.votes) {
@@ -122,6 +117,14 @@ export default {
         return vote.substr(1)
       }
       return ''
+    },
+
+    votedDelegate () {
+      if (this.votePublicKey) {
+        return this.$store.getters['delegate/byPublicKey'](this.votePublicKey)
+      }
+
+      return null
     },
 
     votedDelegateUsername () {
@@ -143,17 +146,7 @@ export default {
     }
   },
 
-  mounted () {
-    if (this.votePublicKey) {
-      this.determineVote()
-    }
-  },
-
   methods: {
-    determineVote () {
-      this.votedDelegate = store.getters['delegate/byPublicKey'](this.votePublicKey)
-    },
-
     isKnownWallet () {
       return this.session_network.knownWallets[this.address]
     },

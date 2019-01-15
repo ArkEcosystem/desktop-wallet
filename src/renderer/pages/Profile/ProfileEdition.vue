@@ -130,6 +130,11 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
+                  :extra-items="[{
+                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                    textContent: name,
+                    onlyLetter: true
+                  }]"
                   :enable-modal="true"
                   :max-visible-items="3"
                   :selected="avatar"
@@ -146,7 +151,7 @@
           >
             <ListDivided>
               <ListDividedItem
-                :label="$t('COMMON.SELECT_THEME')"
+                :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
@@ -156,7 +161,7 @@
               </ListDividedItem>
 
               <ListDividedItem
-                :label="$t('COMMON.SELECT_BACKGROUND')"
+                :label="$t('COMMON.BACKGROUND')"
                 class="ProfileEdition__background"
               >
                 <SelectionBackground
@@ -263,7 +268,7 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (this.modified[property]) {
+        if (property === 'avatar' || this.modified[property]) {
           return this.modified[property] !== this.profile[property]
         }
         return false
@@ -469,17 +474,6 @@ export default {
 }
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
   height: 0
-}
-
-.ProfileEdition__avatar.ListDividedItem,
-.ProfileEdition__background.ListDividedItem,
-.ProfileEdition__theme.ListDividedItem {
-  @apply .flex-col
-}
-.ProfileEdition__avatar .ListDividedItem__value,
-.ProfileEdition__background .ListDividedItem__value,
-.ProfileEdition__theme .ListDividedItem__value {
-  @apply .pt-4
 }
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;
