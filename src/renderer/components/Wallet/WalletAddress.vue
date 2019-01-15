@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import store from '@/store'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
@@ -122,7 +121,7 @@ export default {
 
     votedDelegate () {
       if (this.votePublicKey) {
-        return store.getters['delegate/byPublicKey'](this.votePublicKey)
+        return this.$store.getters['delegate/byPublicKey'](this.votePublicKey)
       }
 
       return null
