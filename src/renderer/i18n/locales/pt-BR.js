@@ -79,7 +79,7 @@ export default {
     SELECT_OPTION: 'Selecione uma opção',
     DELEGATE: 'Delegados',
     WALLETS: 'Carteiras',
-    PERIOD: 'Period'
+    PERIOD: 'Periodo'
   },
 
   CONTACT_REMOVAL_CONFIRMATION: {
@@ -113,7 +113,7 @@ export default {
     MAX_LENGTH: 'Máximo {0}',
     NOT_MATCH: 'O \'{0}\' não corresponde ao \'{1}\'',
     NOT_VALID: 'O \'{0}\' não é valido',
-    NOT_NUMERIC: 'O \'{0}\' não é um númeor',
+    NOT_NUMERIC: 'O \'{0}\' não é um número',
     NO_SCHEME: 'O \'{0}\' não tem \'http://\' ou \'https://\'',
     NAME: {
       DUPLICATED: 'O nome \'{0}\' já está em uso',
@@ -186,6 +186,8 @@ export default {
       CURRENCY: 'Moeda',
       DARK_MODE: 'Modo Dark',
       SCREENSHOT_PROTECTION: 'Proteção de captura de tela',
+      BACKGROUND_UPDATE_LEDGER: 'Atualizar Ledger em segundo plano',
+      IS_MARKET_CHART_ENABLED: 'Gráfico na dashboard',
       TITLE: 'Configurações atual',
       RESET_DATA: {
         TITLE: 'Redefinir dados',
@@ -244,7 +246,8 @@ export default {
       NEO_ADDRESS: 'Isso parece um endereço NEO'
     },
     LABEL: 'Endereço',
-    QR: 'Escaniar o QR Code'
+    QR: 'Escaniar o QR Code',
+    KNOWN_ADDRESS: 'Esta carteira é conhecida como "{address}"'
   },
 
   INPUT_CURRENCY: {
@@ -263,6 +266,7 @@ export default {
     MAXIMUM: 'Máximo',
     INPUT: 'Entrada',
     ADVANCED: 'Avançado',
+    LOW_FEE_NOTICE: 'Transações com taxas baixas podem nunca ser confirmadas',
     ADVANCED_NOTICE: 'Tenha cuidado com a taxa que você escolhe, pois vai custar mais do que o necessário se for muito alto',
     UNIQUE: 'A taxa de rede foi definida para o valor estático de {fee}',
     ERROR: {
@@ -480,7 +484,19 @@ export default {
       TRANSACTIONS: 'Transações',
       DELEGATES: 'Delegados',
       STATISTICS: 'Estatisticas',
-      SIGN_VERIFY: 'Sign'
+      SIGN_VERIFY: 'Sign',
+      PURCHASE: 'Compra {ticker}'
+    },
+
+    WALLET_EXCHANGE: {
+      CHANGELLY_TERMS: {
+        TITLE: 'Adquira {ticker} diretamente na ARK Desktop Wallet com a nossa integração com o Changelly',
+        CONTENT: 'O Changelly permite que você troque outras moedas criptografadas para {ticker} e tenha a opção de comprar {ticker} diretamente com seus cartões de crédito ou débito.',
+        CONFIRMATION: 'Eu li e concordo com {terms} e {privacy} da Changelly. Ao clicar em {button}, eu reconheço e entendo que minha transação pode acionar a verificação AML / KYC de acordo com Changelly {kyc}.',
+        TERMS_OF_USE: 'Termos de uso',
+        PRIVACY_POLICY: 'Politica de  privacidade',
+        KYC: 'AML/KYC'
+      }
     },
 
     WALLET_ALL: {
@@ -490,7 +506,9 @@ export default {
       IMPORT_WALLET: 'Importar carteira',
       LOADING_LEDGER: 'Carregando carteiras do razão ...',
       SHOW_WALLET: 'Mostrar carteira',
-      TOTAL_BALANCE: 'Balanço total'
+      TOTAL_BALANCE: 'Balanço total',
+      CACHE_LEDGER: 'Cache ledger carteira?',
+      CACHE_LEDGER_INFO: 'Carteiras de cache do seu razão para acelerar o carregamento quando conectado pela primeira vez'
     },
 
     WALLET_IMPORT: {
@@ -598,6 +616,10 @@ export default {
     MODAL_HEADER: 'Rede'
   },
 
+  NETWORK: {
+    FAILED_CONFIG_UPDATE: 'Falha ao atualizar a configuração de rede para {network}'
+  },
+
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transferir',
@@ -658,6 +680,8 @@ export default {
     CONFIRMATION_COUNT: '{0} Confirmações',
     CONFIRMATIONS: 'Confirmações',
     CREATE_TRANSFER: 'Criar transfêrencia',
+    DISCARD: 'Discartado',
+    EXPIRED: 'Expirado',
     FEE: 'Taxa transfêrencia',
     ID: 'ID',
     LEDGER_SIGN_NOTICE: 'Em seguida, você confirmará a transação com seu Ledger',
@@ -669,6 +693,8 @@ export default {
     PASSPHRASE: 'Frase secreta',
     PASSWORD: 'Senha de Criptografia',
     RECIPIENT: 'Destinatário',
+    RESEND: 'Enviar novamente',
+    RESENT_NOTICE: 'Transação {transactionId} foi reenviada',
     SAVE_OFFLINE: 'Salvar transação off-line',
     SECOND_PASSPHRASE: 'Segunda frase secreta',
     SEND: 'Enviar',
@@ -749,6 +775,7 @@ export default {
     RANK: 'Classificação',
     USERNAME: 'Nome de usuário',
     PRODUCTIVITY: 'Produtividade',
+    RANK_BANNER: 'Classificação: {rank}',
     PRODUCTIVITY_BANNER: 'Produtividade: {productivity}',
     APPROVAL: 'Aprovação',
     FORGED: 'Forjado',
