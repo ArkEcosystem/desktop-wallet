@@ -228,7 +228,6 @@ export default {
       set (enabled) {
         this.$store.dispatch('session/setLedgerCache', enabled)
         const profile = clone(this.session_profile)
-        console.log(this.session_profile)
         profile.ledgerCache = enabled
         this.$store.dispatch('profile/update', profile)
         if (enabled) {

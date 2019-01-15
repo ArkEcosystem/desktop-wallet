@@ -32,7 +32,7 @@
         <div
           v-else-if="data.column.field === 'name'"
         >
-          <span class="flex items-center">
+          <span class="flex items-center whitespace-no-wrap">
             {{ walletName(data.row) | truncate(30) }}
             <span
               v-if="data.row.isLedger"
