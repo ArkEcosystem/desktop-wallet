@@ -8,6 +8,11 @@ exports.NETWORKS = [
   require('./networks/devnet.json')
 ]
 
+exports.PEERS = {
+  'ark.mainnet': require('./peers/mainnet.json'),
+  'ark.devnet': require('./peers/devnet.json')
+}
+
 exports.ANNOUNCEMENTS = {
   rssUrl: 'https://blog.ark.io/feed'
 }
