@@ -32,22 +32,14 @@
           >
             <!-- NOTE wraps the content, but doesn't modify the stepper -->
             <div class="flex flex-col">
-              <InputText
-                v-model="$v.schema.name.$model"
-                :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
-                :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
-                :helper-text="nameError"
-                class="mb-5"
-                name="name"
-              />
-
               <div class="flex mb-5">
-                <InputSelect
-                  v-model="language"
-                  :items="languages"
-                  :label="$t('COMMON.LANGUAGE')"
-                  name="language"
-                  class="flex-1 mr-2"
+                <InputText
+                  v-model="$v.schema.name.$model"
+                  :label="$t('PAGES.PROFILE_NEW.STEP1.NAME')"
+                  :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
+                  :helper-text="nameError"
+                  class="flex-1 mr-5"
+                  name="name"
                 />
 
                 <InputSelect
@@ -61,6 +53,14 @@
 
               <div class="flex mb-5">
                 <InputSelect
+                  v-model="language"
+                  :items="languages"
+                  :label="$t('COMMON.LANGUAGE')"
+                  name="language"
+                  class="flex-1 mr-5"
+                />
+
+                <InputSelect
                   v-model="bip39Language"
                   :items="bip39Languages"
                   :label="$t('COMMON.BIP39_LANGUAGE')"
@@ -69,14 +69,22 @@
                 />
               </div>
 
-              <div>
-                <h5 class="mb-2">
-                  {{ $t('COMMON.AVATAR') }}
-                </h5>
-
+              <div class="flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed">
+                <div class="mr-2">
+                  <h5 class="mb-2">
+                    {{ $t('COMMON.AVATAR') }}
+                  </h5>
+                  <p class="text-theme-page-text-light">
+                    {{ $t('PAGES.PROFILE_NEW.STEP1.AVATAR') }}
+                  </p>
+                </div>
                 <SelectionAvatar
-                  :max-visible-items="2"
                   :selected="schema.avatar"
+                  :extra-items="[{
+                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                    textContent: schema.name,
+                    onlyLetter: true
+                  }]"
                   @select="selectAvatar"
                 />
               </div>
@@ -101,10 +109,10 @@
               />
               <div v-if="availableCustomNetworks.length">
                 <p class="mt-5 mb-1 text-theme-page-text font-semibold">
-                  {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK') }}
+                  {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK') }}
                 </p>
                 <p class="text-theme-page-text-light mb-5">
-                  {{ $t('PAGES.PROFILE_NEW.STEP2.INSTRUCTIONS.CUSTOM_NETWORK_EXPLAIN') }}
+                  {{ $t('PAGES.PROFILE_NEW.STEP2.CUSTOM_NETWORK_EXPLAIN') }}
                 </p>
                 <SelectionNetwork
                   :selected="selectedNetwork"
@@ -126,26 +134,32 @@
             @next="create"
           >
             <div class="flex flex-col h-full w-full justify-around">
-              <h5 class="mb-2">
-                {{ $t('COMMON.SELECT_THEME') }}
-              </h5>
-
-              <div class="flex items-center justify-between pb-5 mb-5 border-b border-dashed border-theme-line-separator">
-                <p class="text-theme-page-text-light">
-                  {{ $t('PAGES.PROFILE_NEW.STEP3.INSTRUCTIONS.THEME') }}
-                </p>
+              <div class="flex items-center justify-between mb-5 mt-2">
+                <div>
+                  <h5 class="mb-2">
+                    {{ $t('COMMON.THEME') }}
+                  </h5>
+                  <p class="text-theme-page-text-light">
+                    {{ $t('PAGES.PROFILE_NEW.STEP3.THEME') }}
+                  </p>
+                </div>
                 <SelectionTheme v-model="theme" />
               </div>
 
-              <h5 class="mb-2">
-                {{ $t('COMMON.SELECT_BACKGROUND') }}
-              </h5>
-
-              <SelectionBackground
-                :max-visible-items="2"
-                :selected="background"
-                @select="selectBackground"
-              />
+              <div class="flex items-center justify-between">
+                <div>
+                  <h5 class="mb-2">
+                    {{ $t('COMMON.BACKGROUND') }}
+                  </h5>
+                  <p class="text-theme-page-text-light">
+                    {{ $t('PAGES.PROFILE_NEW.STEP3.BACKGROUND') }}
+                  </p>
+                </div>
+                <SelectionBackground
+                  :selected="background"
+                  @select="selectBackground"
+                />
+              </div>
             </div>
           </MenuStepItem>
         </MenuStep>

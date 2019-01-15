@@ -27,9 +27,8 @@
               -->
 
               <InputGridItem
-                :image-path="item.imagePath"
-                :is-selected="clicked === item"
-                :title="item.title"
+                v-bind="item"
+                :is-selected="clicked.title === item.title"
               />
             </button>
           </div>

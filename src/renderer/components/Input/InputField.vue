@@ -15,7 +15,7 @@
       <slot :inputClass="inputClass" />
       <label
         v-show="label"
-        class="InputField__label absolute pointer-events-none text-theme-page-text-light"
+        class="InputField__label absolute pointer-events-none text-theme-page-text-light truncate"
       >
         {{ label }}
       </label>

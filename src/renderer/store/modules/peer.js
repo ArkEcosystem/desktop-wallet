@@ -1,6 +1,8 @@
 import random from 'lodash/random'
+import shuffle from 'lodash/shuffle'
 import apiClient from '@arkecosystem/client'
 import ClientService from '@/services/client'
+import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
@@ -103,6 +105,62 @@ export default {
       }
 
       return Object.values(peers)[random(peers.length - 1)]
+    },
+
+    /**
+     * Retrieves n random peers for the current network (excluding current peer)
+     * @param {Number} amount of peers to return
+     * @return {Array} containing peer objects
+     */
+    randomPeers: (_, getters) => (amount = 5, networkId = null) => {
+      const peers = getters['all'](true) // Ignore current peer
+      if (!peers.length) {
+        return null
+      }
+
+      return shuffle(peers).slice(0, amount)
+    },
+
+    /**
+     * Retrieves n random seed peers for the current network (excluding current peer)
+     * Note that these peers are currently taken from a config file and will an empty array
+     * custom networks without a corresponding peers file
+     * @param {Number} amount of peers to return
+     * @return {Array} containing peer objects
+     */
+    randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
+      if (!networkId) {
+        const profile = rootGetters['session/profile']
+        if (!profile || !profile.networkId) {
+          return []
+        }
+
+        networkId = profile.networkId
+      }
+
+      const peers = config.PEERS[networkId]
+      if (!peers || !peers.length) {
+        return []
+      }
+
+      return shuffle(peers).slice(0, amount)
+    },
+
+    /**
+     * Returns an array of peers that can be used to broadcast a transaction to
+     * Currently this consists of top 10 peers + 5 random peers + 5 random seed peers
+     * @return {Array} containing peer objects
+     */
+    broadcastPeers: (_, getters) => (networkId = null) => {
+      const bestPeers = getters['bestPeers'](10, false, networkId)
+      const randomPeers = getters['randomPeers'](5, networkId)
+      const seedPeers = getters['randomSeedPeers'](5, networkId)
+      let peers = bestPeers.concat(randomPeers)
+      if (seedPeers.length) {
+        peers = peers.concat(seedPeers)
+      }
+
+      return peers
     },
 
     /**
@@ -403,7 +461,8 @@ export default {
      * @param  {Object} peer
      * @return {ClientService}
      */
-    clientServiceFromPeer (_, peer) {
+    async clientServiceFromPeer (_, peer) {
+      await getApiPort(peer)
       const client = new ClientService(false)
       client.host = getBaseUrl(peer)
       client.version = getVersion(peer)
