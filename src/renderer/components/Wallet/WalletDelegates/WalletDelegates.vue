@@ -73,6 +73,7 @@
       :is-voter="selected.publicKey === walletVote.publicKey"
       :has-voted="!!walletVote.publicKey"
       @cancel="onCancel"
+      @close="onCancel"
       @sent="onSent"
     />
   </div>
