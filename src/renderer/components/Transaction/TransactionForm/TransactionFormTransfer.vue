@@ -51,7 +51,7 @@
 
     <InputText
       ref="vendorField"
-      v-model="$v.form.vendorField.$model"
+      v-model="form.vendorField.$model"
       :label="vendorFieldLabel"
       :bip39-warning="true"
       :is-disabled="!currentWallet"
@@ -416,7 +416,6 @@ export default {
           return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
-      vendorField: {},
       passphrase: {
         isValid (value) {
           if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
