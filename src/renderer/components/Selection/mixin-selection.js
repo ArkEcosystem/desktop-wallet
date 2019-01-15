@@ -10,11 +10,6 @@ export default {
       type: String,
       required: false,
       default: null
-    },
-    maxVisibleItems: {
-      type: Number,
-      required: false,
-      default: 10
     }
   }
 }

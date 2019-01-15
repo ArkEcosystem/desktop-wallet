@@ -43,6 +43,9 @@ describe('pages > WalletAll', () => {
         },
         formatter_networkCurrency: jest.fn(),
         wallet_name: value => value
+      },
+      stubs: {
+        'ButtonLetter': true
       }
     })
   }

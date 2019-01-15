@@ -128,7 +128,7 @@
 </template>
 
 <script>
-import ButtonLayout from '@/components/Button/ButtonLayout'
+import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation } from '@/components/Contact'
 import { clone, sortBy } from 'lodash'

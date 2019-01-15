@@ -15,7 +15,7 @@
       :is-dirty="$v.model.$dirty"
       :is-disabled="isDisabled"
       :is-focused="isFocused"
-      :is-invalid="isInvalid"
+      :is-invalid="invalid"
       class="InputAddress text-left"
     >
       <div
@@ -115,6 +115,11 @@ export default {
     value: {
       type: String,
       required: true
+    },
+    isInvalid: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -149,8 +154,8 @@ export default {
       return !_.isEmpty(this.suggestions)
     },
 
-    isInvalid () {
-      return this.$v.model.$dirty && !!this.error
+    invalid () {
+      return this.$v.model.$dirty && (this.isInvalid || !!this.error)
     },
 
     model: {
