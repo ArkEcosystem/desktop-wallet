@@ -65,6 +65,60 @@ describe('WalletAddress', () => {
     expect(wrapper.text()).toEqual(expect.stringContaining('TRANSACTION.TYPE.UNVOTE'))
   })
 
+  it('should display delegate name for vote', () => {
+    const props = {
+      address: 'dummyAddress',
+      type: 3,
+      asset: {
+        votes: ['+dummyPublicKey1']
+      }
+    }
+    const wrapper = mount(props, {
+      $store: {
+        getters: {
+          'delegate/byPublicKey': (publicKey) => {
+            if (publicKey === 'dummyPublicKey1') {
+              return 'dummyDelegate1'
+            } else if (publicKey === 'dummyPublicKey2') {
+              return 'dummyDelegate2'
+            }
+          }
+        }
+      }
+    })
+
+    expect(wrapper.vm.votedDelegate).toEqual('dummyDelegate1')
+    wrapper.setProps({ ...props, asset: { votes: ['+dummyPublicKey2'] } })
+    expect(wrapper.vm.votedDelegate).toEqual('dummyDelegate2')
+  })
+
+  it('should display delegate name for unvote', () => {
+    const props = {
+      address: 'dummyAddress',
+      type: 3,
+      asset: {
+        votes: ['-dummyPublicKey1']
+      }
+    }
+    const wrapper = mount(props, {
+      $store: {
+        getters: {
+          'delegate/byPublicKey': (publicKey) => {
+            if (publicKey === 'dummyPublicKey1') {
+              return 'dummyDelegate1'
+            } else if (publicKey === 'dummyPublicKey2') {
+              return 'dummyDelegate2'
+            }
+          }
+        }
+      }
+    })
+
+    expect(wrapper.vm.votedDelegate).toEqual('dummyDelegate1')
+    wrapper.setProps({ ...props, asset: { votes: ['-dummyPublicKey2'] } })
+    expect(wrapper.vm.votedDelegate).toEqual('dummyDelegate2')
+  })
+
   it('Should display Multi Signature for type 4', () => {
     const wrapper = mount({ address: 'dummyAddress', type: 4 })
 
