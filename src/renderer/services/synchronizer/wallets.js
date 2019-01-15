@@ -53,9 +53,12 @@ class Action {
     if (profile) {
       const allWallets = [
         ...this.$getters['wallet/byProfileId'](profile.id),
-        ...this.$getters['wallet/contactsByProfileId'](profile.id),
-        ...this.$getters['ledger/wallets']
+        ...this.$getters['wallet/contactsByProfileId'](profile.id)
       ]
+
+      if (this.$getters['session/backgroundUpdateLedger']) {
+        allWallets.push(...this.$getters['ledger/wallets'])
+      }
 
       // Retrieve the data of wallets that have not been checked yet
       const notChecked = difference(allWallets, this.checked)
