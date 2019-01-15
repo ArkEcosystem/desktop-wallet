@@ -89,7 +89,7 @@
 
 <script>
 import { InputSwitch } from '@/components/Input'
-import { MARKET, EXCHANGE } from '@config'
+import { MARKET } from '@config'
 
 export default {
   name: 'WalletExchange',
@@ -129,13 +129,11 @@ export default {
       const to = this.currentNetwork.token
       const address = this.wallet_fromRoute.address
       const from = this.currentCurrency
-      const amount = MARKET.crypto.includes(from) ? 0.1 : 300
-      const merchantId = EXCHANGE.changellyId
-      const refId = merchantId
-      const color = 'ED2A2D'
+      const amount = MARKET.crypto.includes(from) ? 1 : 300
+      const theme = 'danger'
 
-      const baseUrl = 'https://old.changelly.com/widget/v1?auth=email&'
-      const params = `from=${from}&to=${to}&merchant_id=${merchantId}&address=${address}&amount=${amount}&ref_id=${refId}&color=${color}`
+      const baseUrl = 'https://widget.changelly.com?fiat=true&'
+      const params = `from=${from.toLowerCase()}&to=${to.toLowerCase()}&address=${address}&amount=${amount}&theme=${theme}`
 
       return baseUrl + params
     }
