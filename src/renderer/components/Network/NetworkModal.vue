@@ -178,7 +178,7 @@
 
       <button
         v-if="network && !network.isDefault"
-        :disabled="$v.form.$invalid || isNetworkInUse"
+        :disabled="isNetworkInUse"
         class="blue-button mt-5 ml-4"
         type="button"
         @click="removeNetwork"
@@ -208,10 +208,11 @@
 </template>
 
 <script>
-import { numeric, required } from 'vuelidate/lib/validators'
+import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
+const requiredIfFull = requiredIf(function () { return this.showFull })
 
 export default {
   name: 'NetworkModal',
@@ -255,6 +256,7 @@ export default {
       'Basic',
       'Advanced'
     ],
+    originalName: null,
     configChoice: 'Basic',
     apiVersion: 2,
     hasFetched: false,
@@ -274,7 +276,16 @@ export default {
     },
 
     nameError () {
-      return this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      const isRequired = this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      if (isRequired) {
+        return isRequired
+      }
+      if (this.$v.form.name.$dirty) {
+        if (!this.$v.form.name.doesNotExist) {
+          return this.$t('VALIDATION.NAME.DUPLICATED', [this.form.name])
+        }
+      }
+      return null
     },
 
     descriptionError () {
@@ -326,6 +337,7 @@ export default {
     // Set network values if one is passed along
     if (this.network) {
       this.form.name = this.network.title
+      this.originalName = this.network.title // To ensure that we allow the "duplicate" name as it's the same network
       this.form.description = this.network.description
       this.form.server = this.network.server
 
@@ -349,7 +361,7 @@ export default {
 
   methods: {
     requiredFieldError (fieldValidator, inputRef) {
-      if (fieldValidator.$dirty) {
+      if (fieldValidator.$dirty && inputRef && inputRef.model.length === 0) {
         if (!fieldValidator.required) {
           return this.$t('VALIDATION.REQUIRED', [inputRef.label])
         }
@@ -543,7 +555,10 @@ export default {
   validations: {
     form: {
       name: {
-        required
+        required,
+        doesNotExist (value) {
+          return (this.originalName && value === this.originalName) || !this.$store.getters['network/byName'](value)
+        }
       },
       description: {
         required
@@ -558,45 +573,45 @@ export default {
         }
       },
       nethash: {
-        required,
+        requiredIfFull,
         isValid (value) {
-          return /^[a-z0-9]{64}$/.test(value)
+          return !this.showFull || /^[a-z0-9]{64}$/.test(value)
         }
       },
       token: {
-        required
+        requiredIfFull
       },
       symbol: {
-        required
+        requiredIfFull
       },
       version: {
-        required,
+        requiredIfFull,
         numeric
       },
       explorer: {
-        required,
+        requiredIfFull,
         isValid (value) {
-          return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return !this.showFull || /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
         },
         hasScheme (value) {
-          return /^https?:\/\//.test(value)
+          return !this.showFull || /^https?:\/\//.test(value)
         }
       },
       epoch: {
-        required,
+        requiredIfFull,
         isValid (value) {
-          return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
+          return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
         }
       },
       wif: {
-        required,
+        requiredIfFull,
         numeric
       },
       slip44: {
-        required
+        requiredIfFull
       },
       activeDelegates: {
-        required,
+        requiredIfFull,
         numeric
       },
       ticker: {

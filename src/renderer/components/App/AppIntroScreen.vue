@@ -2,14 +2,14 @@
   <div class="flex items-center">
     <div
       :key="selection + 'image'"
-      class="w-1/2 flex items-center justify-center animated fadeIn"
+      class="w-1/3 xl:w-1/2 flex items-center justify-center animated fadeIn"
     >
       <img
         :src="getStepImage()"
         class="h-full"
       >
     </div>
-    <div class="flex flex-col w-1/2 justify-center h-full relative">
+    <div class="flex flex-col w-3/4 xl:w-1/2 justify-center h-full relative pl-16 xl:pl-0">
       <div
         :key="selection + 'title'"
         class="text-5xl animated fadeIn"
@@ -25,13 +25,13 @@
         <div class="mt-3">
           {{ $t('INTRODUCTION.POWER.FINANCE') }}
         </div>
-        <div class="mt-2">
+        <div class="AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.POWER.BANKS') }}
         </div>
-        <div class="mt-2">
+        <div class="AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.POWER.CRYPTO') }}
         </div>
-        <div class="mt-2">
+        <div class="AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.POWER.RESPONSIBILITY') }}
         </div>
       </div>
@@ -44,12 +44,12 @@
         <div class="mt-3">
           {{ $t('INTRODUCTION.DUTY.INTRO') }}
         </div>
-        <div class="mt-3">
+        <div class="AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.DUTY.OWNER') }}
         </div>
         <i18n
           tag="div"
-          class="mt-2"
+          class="AppIntroScreen__text_spacing"
           path="INTRODUCTION.DUTY.WARNING.INFO"
         >
           <div
@@ -59,7 +59,7 @@
             {{ $t('INTRODUCTION.DUTY.WARNING.WARN') }}
           </div>
         </i18n>
-        <div class="font-bold mt-3">
+        <div class="font-bold AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.DUTY.SECURITY') }}
         </div>
       </div>
@@ -67,15 +67,30 @@
       <div
         v-else-if="selection === 3"
         :key="3"
-        class="w-3/4 animated fadeIn"
+        class="w-full animated fadeIn overflow-y-scroll pb-12 pr-4"
       >
-        <div class="mt-3">
-          {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}
-        </div>
-        <div class="mt-3">
+        <i18n
+          tag="div"
+          class="AppIntroScreen__text_spacing"
+          path="INTRODUCTION.RESPONSIBILITY.STORAGE.INFO"
+        >
+          <div
+            class="inline font-bold"
+            place="passphrase"
+          >
+            {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE.PASSPHRASE') }}
+          </div>
+          <div
+            class="inline font-bold"
+            place="encrypted"
+          >
+            {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE.ENCRYPTED') }}
+          </div>
+        </i18n>
+        <div class="AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}
         </div>
-        <div class="mt-2">
+        <div class="AppIntroScreen__text_spacing">
           {{ $t('INTRODUCTION.RESPONSIBILITY.PASSPHRASE') }}
         </div>
       </div>
@@ -88,13 +103,16 @@
         <div class="mt-3">
           {{ $t('INTRODUCTION.TURN.WALLET') }}
         </div>
-        <div class="mt-2">
-          {{ $t('INTRODUCTION.TURN.HARDWARE_WALLET') }}
+        <div class="AppIntroScreen__text_spacing">
+          {{ $t('INTRODUCTION.TURN.SUPPORT') }}
+        </div>
+        <div class="AppIntroScreen__text_spacing">
+          {{ $t('INTRODUCTION.TURN.CONCLUSION') }}
         </div>
       </div>
 
       <div class="flex items-center justify-start">
-        <div class="dotstyle dotstyle-stroke absolute mb-10 pin-b pin-l">
+        <div class="dotstyle dotstyle-stroke absolute mb-10 pin-b pin-l pl-16 xl:pl-0">
           <ul>
             <li
               v-for="index in totalScreens"
@@ -198,6 +216,10 @@ export default {
 .AppIntroScreen__image {
   background-size: contain;
   background-position: center center;
+}
+
+.AppIntroScreen__text_spacing {
+  @apply .mt-6
 }
 
 .dotstyle ul {

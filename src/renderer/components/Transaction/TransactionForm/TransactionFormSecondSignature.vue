@@ -106,7 +106,7 @@
               :is-refreshing="isGenerating"
               :title="$t('WALLET_SECOND_SIGNATURE.NEW')"
               class="bg-theme-modal-footer-button mr-2"
-              text-class="text-theme-modal-footer-button-text mt-1"
+              text-class="text-theme-modal-footer-button-text"
               @click="generateNewPassphrase"
             />
 
@@ -173,6 +173,10 @@ export default {
     },
 
     passphraseWords () {
+      // Check for Japanese "space"
+      if (/\u3000/.test(this.secondPassphrase)) {
+        return this.secondPassphrase.split('\u3000')
+      }
       return this.secondPassphrase.split(' ')
     },
 
@@ -281,6 +285,9 @@ export default {
       if (success) {
         this.emitNext(transaction)
         this.reset()
+
+        // The current passphrase has been already verified
+        this.isPassphraseVerified = true
       }
     },
 
@@ -302,7 +309,7 @@ export default {
     },
 
     emitNext (transaction) {
-      this.$emit('next', transaction)
+      this.$emit('next', { transaction })
     }
   },
 

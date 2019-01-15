@@ -1,11 +1,11 @@
 <template>
   <div class="WalletImport relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-row h-full">
+    <main class="flex flex-col sm:flex-row h-full">
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="WalletImport__instructions flex-grow background-image w-3/5"
+        class="WalletImport__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
       >
-        <div class="instructions-text">
+        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
           <h3 class="mb-2 text-theme-page-instructions-text">
             {{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`) }}
           </h3>
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 w-2/5">
+      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
         <MenuStep
           :step="step"
         >
@@ -48,6 +48,8 @@
                 v-show="!useOnlyPassphrase"
                 ref="addressInput"
                 v-model="schema.address"
+                :is-invalid="$v.schema.address.$invalid"
+                :helper-text="addressError"
                 :pub-key-hash="session_network.version"
                 class="my-3"
               />
@@ -198,13 +200,21 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
         // NOTE: not used, unless the minimum length is changed
         } else if (!this.$v.schema.name.schemaMinLength) {
           return this.$tc('VALIDATION.NAME.MIN_LENGTH', Wallet.schema.properties.name.minLength)
+        }
+      }
+      return null
+    },
+    addressError () {
+      if (this.$v.schema.address.$invalid) {
+        if (!this.$v.schema.address.doesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.DUPLICATED', [this.schema.address])
         }
       }
       return null
@@ -217,6 +227,8 @@ export default {
      */
     step () {
       if (this.step === 2 && !this.useOnlyAddress) {
+        // Important: .normalize('NFD') is needed to properly work with Korean bip39 words
+        // It alters the passphrase string, so no need to normalize again in the importWallet function
         this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
       }
     }
@@ -340,10 +352,13 @@ export default {
           }
 
           return false
+        },
+        doesNotExist (value) {
+          return value === '' || !this.$store.getters['wallet/byAddress'](value)
         }
       },
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       },

@@ -1,8 +1,6 @@
 import BaseModule from '../base'
-import { isEmpty } from 'lodash'
+import { cloneDeep, isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
-import i18n from '@/i18n'
-import alertEvents from '@/plugins/alert-events'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'
 import Client from '@/services/client'
@@ -21,6 +19,9 @@ export default new BaseModule(NetworkModel, {
     },
     byToken: state => token => {
       return state.all.find(network => network.token === token)
+    },
+    byName: state => name => {
+      return state.all.find(network => network.name === name)
     },
 
     feeStatisticsByType: (_, __, ___, rootGetters) => type => {
@@ -65,46 +66,46 @@ export default new BaseModule(NetworkModel, {
 
   actions: {
     load ({ commit, getters }) {
-      if (!isEmpty(getters['network/all'])) return
-
-      commit('SET_ALL', NETWORKS)
-    },
-
-    // TODO: look into where this is used, as it might need to be changed to getters[network/update] instead
-    async updateNetworkConfig ({ dispatch, getters, _, rootGetters }, networkId) {
-      var network = getters['byId'](networkId)
-      if (!network) {
-        network = rootGetters['network/customNetworkById'](networkId)
-      }
-
-      let response
-      try {
-        response = await Client.fetchNetworkConfig(network.server, network.apiVersion)
-      } catch (error) {
-        console.error(`Failed to update network config for ${network.server}`)
-        alertEvents.$error(i18n.t('NETWORK.FAILED_CONFIG_UPDATE', {
-          network: network.server
-        }))
+      const all = cloneDeep(getters['all'])
+      if (!isEmpty(all)) {
+        // TODO: remove in future major version
+        // This is a "hack" to make sure all custom networks are in state.all
+        let missingCustom = false
+        for (const custom of Object.values(getters['customNetworks'])) {
+          if (!all.find(network => network.name === custom.name)) {
+            all.push(custom)
+            missingCustom = true
+          }
+        }
+        if (missingCustom) {
+          commit('SET_ALL', all)
+        }
 
         return
       }
 
-      if (response) {
-        try {
-          const result = dispatch('update', {
-            ...network,
-            ...response
-          })
-          return result
-        } catch (error) {
-          // Network did not exist yet, so create it
-          const result = dispatch('create', {
-            ...network,
-            ...response
-          })
-          return result
+      commit('SET_ALL', NETWORKS)
+    },
+
+    // Updates the feeStatistics for the available networks
+    async fetchFees ({ commit, getters }) {
+      let networks = getters['all']
+      let updatedNetworks = cloneDeep(networks)
+      if (networks) {
+        let i
+        for (i = 0; i < updatedNetworks.length; i++) {
+          let network = updatedNetworks[i]
+          try {
+            let feeStats = await Client.fetchFeeStatistics(network.server, network.apiVersion)
+            if (feeStats) {
+              network.feeStatistics = feeStats
+            }
+          } catch (error) {
+            //
+          }
         }
       }
+      commit('SET_ALL', updatedNetworks)
     },
 
     addCustomNetwork ({ dispatch, commit }, network) {

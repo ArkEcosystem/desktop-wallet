@@ -3,12 +3,22 @@
     class="flex flex-col"
     @submit.prevent
   >
+    <WalletSelection
+      v-if="schema && schema.address"
+      v-model="$v.wallet.$model"
+      :compatible-address="$v.form.recipientId.$model"
+      class="mb-5"
+      profile-class="mb-5"
+      @select="ensureAvailableAmount"
+    />
+
     <InputAddress
       ref="recipient"
       v-model="$v.form.recipientId.$model"
       :label="$t('TRANSACTION.RECIPIENT')"
-      :pub-key-hash="session_network.version"
+      :pub-key-hash="walletNetwork.version"
       :show-suggestions="true"
+      :is-disabled="!currentWallet"
       name="recipientId"
       class="mb-5"
     />
@@ -18,21 +28,23 @@
         ref="amount"
         v-model="$v.form.amount.$model"
         :alternative-currency="alternativeCurrency"
-        :currency="session_network.token"
+        :currency="walletNetwork.token"
         :is-invalid="$v.form.amount.$dirty && $v.form.amount.$invalid"
         :label="$t('TRANSACTION.AMOUNT')"
         :minimum-error="amountTooLowError"
         :maximum-amount="maximumAvailableAmount"
         :maximum-error="notEnoughBalanceError"
         :required="true"
+        :is-disabled="!currentWallet"
+        :wallet-network="walletNetwork"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
       />
 
       <InputSwitch
+        v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
-        :is-active="isSendAllActive"
-        :is-disabled="!canSendAll()"
+        :is-disabled="!canSendAll() || !currentWallet"
         @change="onSendAll"
       />
     </div>
@@ -44,26 +56,29 @@
       :is-invalid="vendorFieldIsInvalid"
       :label="vendorFieldLabel"
       :bip39-warning="true"
+      :is-disabled="!currentWallet"
       name="vendorField"
       class="mb-5"
     />
 
     <InputFee
-      v-if="session_network.apiVersion === 2"
+      v-if="walletNetwork.apiVersion === 2"
       ref="fee"
-      :currency="session_network.token"
+      :currency="walletNetwork.token"
       :transaction-type="$options.transactionType"
+      :is-disabled="!currentWallet"
+      :wallet-network="walletNetwork"
       @input="onFee"
     />
 
     <div
-      v-if="currentWallet.isLedger"
+      v-if="currentWallet && currentWallet.isLedger"
       class="mt-10"
     >
       {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
     </div>
     <InputPassword
-      v-else-if="currentWallet.passphrase"
+      v-else-if="currentWallet && currentWallet.passphrase"
       ref="password"
       v-model="$v.form.walletPassword.$model"
       class="mt-4"
@@ -75,16 +90,17 @@
       ref="passphrase"
       v-model="$v.form.passphrase.$model"
       class="mt-4"
-      :address="currentWallet.address"
-      :pub-key-hash="session_network.version"
+      :address="currentWallet && currentWallet.address"
+      :pub-key-hash="walletNetwork.version"
+      :is-disabled="!currentWallet"
     />
 
     <PassphraseInput
-      v-if="currentWallet.secondPublicKey"
+      v-if="currentWallet && currentWallet.secondPublicKey"
       ref="secondPassphrase"
       v-model="$v.form.secondPassphrase.$model"
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-      :pub-key-hash="session_network.version"
+      :pub-key-hash="walletNetwork.version"
       class="mt-5"
     />
 
@@ -98,6 +114,16 @@
       </button>
     </div>
 
+    <ModalConfirmation
+      v-if="showConfirmSendAll"
+      :question="$t('TRANSACTION.CONFIRM_SEND_ALL')"
+      :title="$t('TRANSACTION.CONFIRM_SEND_ALL_TITLE')"
+      :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
+      container-classes="SendAllConfirmation"
+      portal-target="loading"
+      @cancel="emitCancelSendAll"
+      @continue="enableSendAll"
+    />
     <ModalLoader
       :message="$t('ENCRYPTION.DECRYPTING')"
       :visible="showEncryptLoader"
@@ -113,8 +139,9 @@
 import { maxLength, required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
-import { ModalLoader } from '@/components/Modal'
+import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
 
 export default {
@@ -129,8 +156,10 @@ export default {
     InputSwitch,
     InputText,
     InputFee,
+    ModalConfirmation,
     ModalLoader,
-    PassphraseInput
+    PassphraseInput,
+    WalletSelection
   },
 
   props: {
@@ -153,7 +182,9 @@ export default {
     isSendAllActive: false,
     showEncryptLoader: false,
     showLedgerLoader: false,
-    bip38Worker: null
+    bip38Worker: null,
+    wallet: null,
+    showConfirmSendAll: false
   }),
 
   computed: {
@@ -162,20 +193,50 @@ export default {
     },
     // Customize the message to display the minimum amount as subunit
     amountTooLowError () {
-      const { fractionDigits, token } = this.session_network
+      const { fractionDigits } = this.walletNetwork
       const minimumAmount = Math.pow(10, -fractionDigits)
-      const amount = this.currency_format(minimumAmount, { currency: token, currencyDisplay: 'code', subunit: true })
+      const amount = this.currency_simpleFormatCrypto(minimumAmount.toFixed(fractionDigits))
       return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
     },
     notEnoughBalanceError () {
+      if (!this.currentWallet) {
+        return ''
+      }
+
       const balance = this.formatter_networkCurrency(this.currentWallet.balance)
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
     },
     maximumAvailableAmount () {
+      if (!this.currentWallet) {
+        return 0
+      }
+
       return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
     },
-    currentWallet () {
-      return this.wallet_fromRoute
+    senderWallet () {
+      return this.wallet
+    },
+    walletNetwork () {
+      const sessionNetwork = this.session_network
+      if (!this.currentWallet || !this.currentWallet.id) {
+        return sessionNetwork
+      }
+
+      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
+
+      if (!profile.id) {
+        return sessionNetwork
+      }
+
+      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+    },
+    currentWallet: {
+      get () {
+        return this.senderWallet || this.wallet_fromRoute
+      },
+      set (wallet) {
+        this.wallet = wallet
+      }
     },
     vendorFieldLabel () {
       return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
@@ -192,6 +253,13 @@ export default {
     }
   },
 
+  watch: {
+    wallet () {
+      this.ensureAvailableAmount()
+      this.$v.form.recipientId.$touch()
+    }
+  },
+
   beforeDestroy () {
     this.bip38Worker.send('quit')
   },
@@ -202,6 +270,10 @@ export default {
       this.$set(this.form, 'amount', this.schema.amount || '')
       this.$set(this.form, 'recipientId', this.schema.address || '')
       this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+    }
+    if (this.currentWallet && this.currentWallet.id) {
+      this.$set(this, 'wallet', this.currentWallet || null)
+      this.$v.wallet.$touch()
     }
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
@@ -218,11 +290,23 @@ export default {
         this.submit()
       }
     })
+
+    // Set default fees
+    // v1 compatibility
+    // TODO: Get static fee from the network, or allow better UI
+    if (this.walletNetwork.apiVersion === 1) {
+      this.form.fee = 0.1
+    } else {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
     emitNext (transaction) {
-      this.$emit('next', transaction)
+      this.$emit('next', {
+        transaction,
+        wallet: this.senderWallet
+      })
     },
 
     onFee (fee) {
@@ -230,9 +314,13 @@ export default {
       this.ensureAvailableAmount()
     },
 
-    onSendAll (isActive) {
-      this.isSendAllActive = isActive
-      this.ensureAvailableAmount()
+    onSendAll (setActive) {
+      if (!setActive) {
+        this.isSendAllActive = setActive
+        this.ensureAvailableAmount()
+      } else {
+        this.confirmSendAll()
+      }
     },
 
     canSendAll () {
@@ -251,7 +339,7 @@ export default {
         this.bip38Worker.send({
           bip38key: this.currentWallet.passphrase,
           password: this.form.walletPassword,
-          wif: this.session_network.wif
+          wif: this.walletNetwork.wif
         })
       } else {
         this.submit()
@@ -259,16 +347,6 @@ export default {
     },
 
     async submit () {
-      // v1 compatibility
-      // TODO: Get static fee from the network, or allow better UI
-      if (this.session_network.apiVersion === 1) {
-        this.form.fee = 0.1
-      }
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
       const transactionData = {
         amount: parseInt(this.currency_unitToSub(this.form.amount)),
         recipientId: this.form.recipientId,
@@ -283,7 +361,7 @@ export default {
 
       let success = true
       let transaction
-      if (!this.currentWallet.isLedger) {
+      if (!this.currentWallet || !this.currentWallet.isLedger) {
         transaction = await this.$client.buildTransfer(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
       } else {
         success = false
@@ -301,10 +379,26 @@ export default {
       if (success) {
         this.emitNext(transaction)
       }
+    },
+
+    enableSendAll () {
+      this.isSendAllActive = true
+      this.ensureAvailableAmount()
+      this.showConfirmSendAll = false
+    },
+
+    confirmSendAll () {
+      this.showConfirmSendAll = true
+    },
+
+    emitCancelSendAll () {
+      this.showConfirmSendAll = false
+      this.isSendAllActive = false
     }
   },
 
   validations: {
+    wallet: {},
     form: {
       recipientId: {
         required,
@@ -330,7 +424,7 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
       vendorField: {
@@ -382,3 +476,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.SendAllConfirmation .ModalConfirmation__container {
+  min-width: calc(var(--contact-identicon-xl) + 74px * 2);
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
+}
+</style>

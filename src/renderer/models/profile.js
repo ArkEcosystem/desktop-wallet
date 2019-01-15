@@ -21,6 +21,10 @@ export default new BaseModel({
       minLength: 3,
       maxLength: 3
     },
+    timeFormat: {
+      type: 'string',
+      default: 'Default'
+    },
     isMarketChartEnabled: {
       type: 'boolean',
       format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
@@ -47,9 +51,17 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
     },
+    broadcastPeers: {
+      type: 'boolean',
+      format: data => data.broadcastPeers !== undefined ? data.broadcastPeers : true
+    },
     ledgerCache: {
       type: 'boolean',
       format: data => data.ledgerCache || false
+    },
+    transactionTableRowCount: {
+      type: 'integer',
+      format: data => data.transactionTableRowCount || 10
     }
   },
   required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']

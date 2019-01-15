@@ -8,7 +8,7 @@
     class="AppSidemenu relative bg-transparent"
   >
     <div
-      class="AppSidemenu__container flexify w-full h-full justify-between"
+      class="AppSidemenu__container flexify w-full md:h-full justify-between"
     >
       <!-- ARK logo -->
       <RouterLink
@@ -113,7 +113,7 @@
               class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
             >
               <SvgIcon
-                class="AppSidemenu__avatar__dots"
+                class="AppSidemenu__avatar__dots text-grey-dark"
                 name="point"
                 view-box="0 0 14 14"
               />
@@ -232,7 +232,7 @@ export default {
 
 .AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
 .AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
-.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 px-4 py-5 }
+.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 p-5 }
 .AppSidemenu--vertical .AppSidemenu__logo img { @apply w-18 }
 .AppSidemenu--vertical .flexify { @apply flex flex-col }
 .AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }

@@ -1,11 +1,11 @@
 <template>
   <div class="ContactNew relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-row h-full">
+    <main class="flex flex-col sm:flex-row h-full">
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="ContactNew__instructions flex-grow background-image w-3/5"
+        class="ContactNew__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
       >
-        <div class="instructions-text">
+        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
           <h3 class="mb-2 text-theme-page-instructions-text">
             {{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
           </h3>
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 w-2/5">
+      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
         <MenuStep
           :step="step"
         >
@@ -95,7 +95,7 @@ export default {
   computed: {
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -147,7 +147,7 @@ export default {
         }
       },
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       }

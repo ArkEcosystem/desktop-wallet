@@ -3,7 +3,10 @@
     :class="justifyClass"
     class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-tl-lg h-40"
   >
-    <WalletHeadingInfo v-if="!secondaryButtonsVisible" />
+    <WalletHeadingInfo
+      v-if="!secondaryButtonsVisible"
+      ref="heading"
+    />
     <WalletHeadingActions />
   </div>
 </template>
@@ -21,16 +24,42 @@ export default {
     WalletHeadingActions
   },
 
+  data: () => ({
+    activeWalletId: null
+  }),
+
   computed: {
     ...mapGetters('wallet', ['secondaryButtonsVisible']),
+
+    currentWallet () {
+      return this.wallet_fromRoute
+    },
 
     justifyClass () {
       return this.secondaryButtonsVisible ? 'justify-end' : 'justify-between'
     }
   },
 
+  watch: {
+    currentWallet () {
+      if (this.activeWalletId !== this.currentWallet.id) {
+        this.resetHeading()
+      }
+    }
+  },
+
   mounted () {
-    this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+    this.resetHeading()
+  },
+
+  methods: {
+    resetHeading () {
+      this.activeWalletId = this.currentWallet.id
+      this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+      this.$nextTick(() => {
+        this.$refs.heading.refreshWallet()
+      })
+    }
   }
 }
 </script>

@@ -8,6 +8,16 @@ import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 
 export default class ClientService {
+  /*
+   * Normalizes the passphrase by decomposing any characters (if applicable)
+   * This is mainly used for the korean language where characters are combined while the passphrase was based on the decomposed consonants
+  */
+  normalizePassphrase (passphrase) {
+    if (passphrase) {
+      return passphrase.normalize('NFD')
+    }
+  }
+
   /**
    * Fetch the network configuration according to the version.
    * Create a new client to isolate the main client.
@@ -33,6 +43,21 @@ export default class ClientService {
       const { data } = await client.resource('node').configuration()
 
       return data.data
+    }
+  }
+
+  static async fetchFeeStatistics (server, apiVersion, timeout) {
+    // This is only for v2 networks
+    if (apiVersion === 1) {
+      return
+    }
+    const client = new ApiClient(server, apiVersion)
+    if (timeout) {
+      client.http.timeout = timeout
+    }
+    const { data } = await client.resource('node').configuration()
+    if (data.data && data.data.feeStatistics) {
+      return data.data.feeStatistics
     }
   }
 
@@ -120,6 +145,24 @@ export default class ClientService {
     }
 
     return { delegates, totalCount }
+  }
+
+  /**
+   * Fetches the voters of the given delegates and returns the number of total voters
+   *
+   * @return {Number}
+   */
+  async fetchDelegateVoters (delegate, { page, limit } = {}) {
+    if (this.__version === 1) {
+      const response = await this.client.resource('delegates').voters(delegate.publicKey)
+      if (response.success) {
+        return response.accounts.length
+      }
+      return 0
+    }
+    // v2
+    const { data } = await this.client.resource('delegates').voters(delegate.username, { page, limit })
+    return data.meta.totalCount
   }
 
   /**
@@ -390,6 +433,9 @@ export default class ClientService {
       .votesAsset(votes)
       .fee(fee)
 
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -418,6 +464,9 @@ export default class ClientService {
       .delegateRegistration()
       .usernameAsset(username)
       .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
 
     return this.__signTransaction({
       transaction,
@@ -453,6 +502,9 @@ export default class ClientService {
       .recipientId(recipientId)
       .vendorField(vendorField)
 
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
     return this.__signTransaction({
       transaction,
       passphrase,
@@ -479,6 +531,9 @@ export default class ClientService {
     const transaction = transactionBuilder
       .secondSignature()
       .signatureAsset(secondPassphrase)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
 
     return this.__signTransaction({
       transaction,
@@ -503,52 +558,90 @@ export default class ClientService {
     })
 
     if (passphrase) {
-      transaction = transaction.sign(passphrase)
+      transaction = transaction.sign(this.normalizePassphrase(passphrase))
     } else if (wif) {
       transaction = transaction.signWithWif(wif)
     }
 
     if (secondPassphrase) {
-      transaction = transaction.secondSign(secondPassphrase)
+      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
     }
 
     return returnObject ? transaction : transaction.getStruct()
   }
 
   /**
+   * Helper function to send a transaction on a v1 network. Uses p2p
+   * @param {Object} transactions - the transactions to send
+   * @param {Object} currentPeer - the peer to use
+   * @returns {Object} the response of sending the transaction
+   */
+  async __sendV1Transaction (transactions, currentPeer) {
+    const scheme = currentPeer.isHttps ? 'https://' : 'http://'
+    const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
+    const network = store.getters['session/network']
+    const response = await axios({
+      url: host,
+      data: { transactions: castArray(transactions) },
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        version: '1.6.1',
+        port: 1,
+        nethash: network.nethash
+      }
+    })
+    return response
+  }
+
+  /**
    * Broadcast transactions to the current peer.
    *
    * @param {Array|Object} transactions
-   * @returns {Object}
+   * @param {Boolean} broadcast - whether the transaction should be broadcasted to multiple peers or not
+   * @returns {Object[]}
    */
-  async broadcastTransaction (transactions) {
+  async broadcastTransaction (transactions, broadcast) {
     // Use p2p for v1
     if (this.__version === 1) {
-      const currentPeer = store.getters['peer/current']()
-      const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-      const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
-      const network = store.getters['session/network']
-      const response = await axios({
-        url: host,
-        data: { transactions: castArray(transactions) },
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          version: '1.6.1',
-          port: 1,
-          nethash: network.nethash
-        }
-      })
-      return response
-    } else {
-      const transaction = await this
-        .client
-        .resource('transactions')
-        .create({
-          transactions: castArray(transactions)
-        })
+      if (broadcast) {
+        let responses = []
+        const peers = store.getters['peer/broadcastPeers']()
 
-      return transaction
+        for (let i = 0; i < peers.length; i++) {
+          const response = await this.__sendV1Transaction(transactions, peers[i])
+          responses.push(response)
+        }
+        return responses
+      } else {
+        const currentPeer = store.getters['peer/current']()
+        const response = await this.__sendV1Transaction(transactions, currentPeer)
+        return [response]
+      }
+    } else {
+      if (broadcast) {
+        let txs = []
+        const peers = store.getters['peer/broadcastPeers']()
+
+        for (let i = 0; i < peers.length; i++) {
+          try {
+            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+            const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
+            txs.push(tx)
+          } catch (err) {
+            //
+          }
+        }
+        return txs
+      } else {
+        const transaction = await this
+          .client
+          .resource('transactions')
+          .create({
+            transactions: castArray(transactions)
+          })
+        return [transaction]
+      }
     }
   }
 

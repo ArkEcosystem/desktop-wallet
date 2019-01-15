@@ -82,6 +82,24 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.BROADCAST_PEERS')"
+        @click="toggleSelect('broadcast-peers')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="broadcast-peers"
+            :is-active="sessionBroadcastPeers"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setBroadcastPeers"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
         v-if="isMarketEnabled"
         :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
         @click="toggleSelect('show-market-chart')"
@@ -181,6 +199,17 @@ export default {
         this.$store.dispatch('profile/update', profile)
       }
     },
+    sessionBroadcastPeers: {
+      get () {
+        return this.$store.getters['session/broadcastPeers']
+      },
+      set (broadcast) {
+        this.$store.dispatch('session/setBroadcastPeers', broadcast)
+        const profile = clone(this.session_profile)
+        profile.broadcastPeers = broadcast
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
     sessionIsMarketChartEnabled: {
       get () {
         return this.$store.getters['session/isMarketChartEnabled']
@@ -242,6 +271,10 @@ export default {
       this.sessionBackgroundUpdateLedger = update
     },
 
+    setBroadcastPeers (broadcast) {
+      this.sessionBroadcastPeers = broadcast
+    },
+
     setIsMarketChartEnabled (isEnabled) {
       this.sessionIsMarketChartEnabled = isEnabled
     },
@@ -284,6 +317,6 @@ export default {
 .AppSidemenuOptionsSettings--horizontal {
   width: 300px;
   right: 8.5rem;
-  top: 5.5rem;
+  top: 5.75rem;
 }
 </style>

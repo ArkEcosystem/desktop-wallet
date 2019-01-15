@@ -19,7 +19,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.isContact"
+      v-show="!currentWallet.isContact && !currentWallet.isDelegate"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
       icon="register-delegate"
@@ -35,7 +35,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.isContact && !currentWallet.isLedger"
+      v-show="!currentWallet.isContact && !currentWallet.isLedger && !currentWallet.secondPublicKey"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
       icon="2nd-passphrase"
@@ -85,7 +85,7 @@ export default {
 
   computed: {
     buttonStyle () {
-      return 'option-button whitespace-no-wrap mr-2 px-3 py-2'
+      return 'option-heading-button whitespace-no-wrap mr-2 px-3 py-2'
     },
 
     currentWallet () {

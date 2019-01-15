@@ -1,11 +1,11 @@
 <template>
   <div class="WalletNew relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-row h-full">
+    <main class="flex flex-col sm:flex-row h-full">
       <div
         :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="WalletNew__instructions flex-grow background-image w-3/5"
+        class="WalletNew__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
       >
-        <div class="instructions-text">
+        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
           <h3 class="mb-2 text-theme-page-instructions-text">
             {{ $t(`PAGES.WALLET_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
           </h3>
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 w-2/5">
+      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
         <MenuStep
           :step="step"
         >
@@ -51,6 +51,8 @@
               <!-- Hide it when the step is collapse -->
               <ButtonReload
                 v-if="step === 1"
+                color-class="WalletNew__ButtonReload-colorClass"
+                text-class="hover:text-white"
                 :is-refreshing="isRefreshing"
                 class="WalletNew__refresh-button"
                 @click="refreshAddresses"
@@ -127,6 +129,7 @@
                 :label="$t('PAGES.WALLET_NEW.STEP3.CHECK_ENTIRE_PASSPHRASE')"
                 :text="$t('PAGES.WALLET_NEW.STEP3.VERIFY_ALL_WORDS')"
                 class="my-3"
+                @change="onSwitch"
               />
 
               <PassphraseVerification
@@ -305,11 +308,18 @@ export default {
     additionalSuggestions () {
       const passphrases = Object.values(this.wallets)
 
-      return flatten(passphrases.map(passphrase => passphrase.split(' ')))
+      // Check for Japanese "space"
+      return flatten(passphrases.map(passphrase =>
+        /\u3000/.test(passphrase) ? passphrase.split('\u3000') : passphrase.split(' ')
+      ))
     },
     passphraseWords () {
       const passphrase = this.schema.passphrase
       if (passphrase) {
+        // Check for Japanese "space"
+        if (/\u3000/.test(passphrase)) {
+          return this.schema.passphrase.split('\u3000')
+        }
         return this.schema.passphrase.split(' ')
       }
       return []
@@ -324,7 +334,7 @@ export default {
     },
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
+        if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
@@ -397,6 +407,10 @@ export default {
       this.step = step
     },
 
+    onSwitch () {
+      this.isPassphraseVerified = false
+    },
+
     onVerification () {
       this.isPassphraseVerified = true
     },
@@ -440,7 +454,7 @@ export default {
     step5: ['schema.name'],
     schema: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           return value === '' || !this.$store.getters['wallet/byName'](value)
         }
       }
@@ -521,5 +535,15 @@ export default {
 .WalletNew__wallets--address:hover {
   transition: all 0.5s;
   @apply .text-theme-wallet-new-selected .no-underline
+}
+
+.WalletNew__ButtonReload-colorClass {
+  @apply .text-grey-dark .bg-theme-button;
+}
+
+.WalletNew__ButtonReload-colorClass:hover {
+  @apply .bg-blue .text-white;
+  box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
+  transition: all .1s ease-in
 }
 </style>

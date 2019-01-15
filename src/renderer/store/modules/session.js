@@ -15,7 +15,9 @@ export default {
     theme: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
-    ledgerCache: null
+    broadcastPeers: null,
+    ledgerCache: null,
+    transactionTableRowCount: 10
   }),
 
   getters: {
@@ -45,6 +47,7 @@ export default {
     avatar: state => state.avatar,
     background: state => state.background,
     currency: state => state.currency,
+    timeFormat: state => state.timeFormat,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     language: state => state.language,
@@ -53,7 +56,9 @@ export default {
     hasDarkTheme: state => state.theme === 'dark',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
-    ledgerCache: state => state.ledgerCache
+    broadcastPeers: state => state.broadcastPeers,
+    ledgerCache: state => state.ledgerCache,
+    transactionTableRowCount: state => state.transactionTableRowCount
   },
 
   mutations: {
@@ -67,6 +72,10 @@ export default {
 
     SET_CURRENCY (state, currency) {
       state.currency = currency
+    },
+
+    SET_TIME_FORMAT (state, format) {
+      state.timeFormat = format
     },
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
@@ -101,22 +110,33 @@ export default {
       state.backgroundUpdateLedger = update
     },
 
+    SET_BROADCAST_PEERS (state, broadcast) {
+      state.broadcastPeers = broadcast
+    },
+
     SET_LEDGER_CACHE (state, enabled) {
       state.ledgerCache = enabled
+    },
+
+    SET_TRANSACTION_TABLE_ROW_COUNT (state, count) {
+      state.transactionTableRowCount = count
     },
 
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
       state.currency = MARKET.defaultCurrency
+      state.timeFormat = 'Default'
       state.isMarketChartEnabled = true
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
       state.backgroundUpdateLedger = true
+      state.broadcastPeers = true
       state.contentProtection = true
       state.ledgerCache = false
+      state.transactionTableRowCount = 10
     }
   },
 
@@ -128,13 +148,16 @@ export default {
       dispatch('setAvatar', profile.avatar)
       dispatch('setBackground', profile.background)
       dispatch('setCurrency', profile.currency)
+      dispatch('setTimeFormat', profile.timeFormat)
       dispatch('setIsMarketChartEnabled', profile.isMarketChartEnabled)
       dispatch('setName', profile.name)
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
+      dispatch('setBroadcastPeers', profile.broadcastPeers)
       dispatch('setLedgerCache', profile.ledgerCache)
+      dispatch('setTransactionTableRowCount', profile.transactionTableRowCount)
 
       return profile
     },
@@ -153,6 +176,10 @@ export default {
 
     setCurrency ({ commit }, value) {
       commit('SET_CURRENCY', value)
+    },
+
+    setTimeFormat ({ commit }, value) {
+      commit('SET_TIME_FORMAT', value)
     },
 
     setIsMarketChartEnabled ({ commit }, value) {
@@ -180,20 +207,25 @@ export default {
       commit('SET_BACKGROUND_UPDATE_LEDGER', value)
     },
 
+    setBroadcastPeers ({ commit }, value) {
+      commit('SET_BROADCAST_PEERS', value)
+    },
+
     setLedgerCache ({ commit }, value) {
       commit('SET_LEDGER_CACHE', value)
     },
 
     async setProfileId ({ commit, dispatch }, value) {
       commit('SET_PROFILE_ID', value)
-      const profile = await dispatch('load', value)
-      if (profile) {
-        await dispatch('network/updateNetworkConfig', profile.networkId, { root: true })
-      }
+      await dispatch('load', value)
     },
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setTransactionTableRowCount ({ commit }, value) {
+      commit('SET_TRANSACTION_TABLE_ROW_COUNT', value)
     }
   }
 }

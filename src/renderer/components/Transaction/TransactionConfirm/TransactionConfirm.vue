@@ -11,7 +11,7 @@
       :is="activeComponent"
     />
 
-    <footer class="mt-10 flex justify-between items-baseline">
+    <footer class="mt-10 flex justify-between items-center">
       <div>
         <button
           class="TransactionConfirm__back-button blue-button mr-2 px-5"
@@ -83,6 +83,11 @@ export default {
       type: Object,
       required: true,
       default: () => {}
+    },
+    wallet: {
+      type: Object,
+      required: false,
+      default: null
     }
   },
 
@@ -95,8 +100,11 @@ export default {
     totalAmount () {
       return this.transaction.amount + this.transaction.fee
     },
+    currentWallet () {
+      return this.wallet || this.wallet_fromRoute
+    },
     address () {
-      return this.wallet_fromRoute.address
+      return this.currentWallet.address
     }
   },
 

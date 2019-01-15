@@ -1,6 +1,8 @@
 import random from 'lodash/random'
+import shuffle from 'lodash/shuffle'
 import apiClient from '@arkecosystem/client'
 import ClientService from '@/services/client'
+import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
@@ -54,13 +56,17 @@ export default {
      * @param  {Boolean} [ignoreCurrent=false]
      * @return {Object[]}
      */
-    all: (state, getters, _, rootGetters) => (ignoreCurrent = false) => {
-      const profile = rootGetters['session/profile']
-      if (!profile || !profile.networkId) {
-        return []
+    all: (state, getters, _, rootGetters) => (ignoreCurrent = false, networkId = null) => {
+      if (!networkId) {
+        const profile = rootGetters['session/profile']
+        if (!profile || !profile.networkId) {
+          return []
+        }
+
+        networkId = profile.networkId
       }
 
-      const networkPeers = state.all[profile.networkId]
+      const networkPeers = state.all[networkId]
       let peers = []
       if (networkPeers) {
         peers = Object.values(networkPeers.peers)
@@ -92,7 +98,7 @@ export default {
      * @param  {Boolean} [ignoreCurrent=true]
      * @return {(Object|null)}
      */
-    best: (_, getters) => (ignoreCurrent = true) => {
+    best: (_, getters) => (ignoreCurrent = true, networkId = null) => {
       const peers = getters['bestPeers'](undefined, ignoreCurrent)
       if (!peers || !peers.length) {
         return null
@@ -102,11 +108,67 @@ export default {
     },
 
     /**
+     * Retrieves n random peers for the current network (excluding current peer)
+     * @param {Number} amount of peers to return
+     * @return {Array} containing peer objects
+     */
+    randomPeers: (_, getters) => (amount = 5, networkId = null) => {
+      const peers = getters['all'](true) // Ignore current peer
+      if (!peers.length) {
+        return null
+      }
+
+      return shuffle(peers).slice(0, amount)
+    },
+
+    /**
+     * Retrieves n random seed peers for the current network (excluding current peer)
+     * Note that these peers are currently taken from a config file and will an empty array
+     * custom networks without a corresponding peers file
+     * @param {Number} amount of peers to return
+     * @return {Array} containing peer objects
+     */
+    randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
+      if (!networkId) {
+        const profile = rootGetters['session/profile']
+        if (!profile || !profile.networkId) {
+          return []
+        }
+
+        networkId = profile.networkId
+      }
+
+      const peers = config.PEERS[networkId]
+      if (!peers || !peers.length) {
+        return []
+      }
+
+      return shuffle(peers).slice(0, amount)
+    },
+
+    /**
+     * Returns an array of peers that can be used to broadcast a transaction to
+     * Currently this consists of top 10 peers + 5 random peers + 5 random seed peers
+     * @return {Array} containing peer objects
+     */
+    broadcastPeers: (_, getters) => (networkId = null) => {
+      const bestPeers = getters['bestPeers'](10, false, networkId)
+      const randomPeers = getters['randomPeers'](5, networkId)
+      const seedPeers = getters['randomSeedPeers'](5, networkId)
+      let peers = bestPeers.concat(randomPeers)
+      if (seedPeers.length) {
+        peers = peers.concat(seedPeers)
+      }
+
+      return peers
+    },
+
+    /**
      * Determine best peer for current network (random from top 10).
      * @param  {Boolean} [ignoreCurrent=true]
      * @return {(Object|null)}
      */
-    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
+    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true, networkId = null) => {
       const peers = getters['all'](ignoreCurrent)
       if (!peers.length) {
         return null
@@ -129,13 +191,17 @@ export default {
      * Get current peer.
      * @return {(Object|boolean)} - false if no current peer
      */
-    current: (state, getters, __, rootGetters) => () => {
-      const profile = rootGetters['session/profile']
-      if (!profile || !profile.networkId) {
-        return false
+    current: (state, getters, __, rootGetters) => (networkId = null) => {
+      if (!networkId) {
+        const profile = rootGetters['session/profile']
+        if (!profile || !profile.networkId) {
+          return false
+        }
+
+        networkId = profile.networkId
       }
 
-      let currentPeer = state.current[profile.networkId]
+      let currentPeer = state.current[networkId]
       if (!currentPeer) {
         return false
       }
@@ -226,8 +292,11 @@ export default {
      * Refresh peer list.
      * @return {void}
      */
-    async refresh ({ dispatch, getters, rootGetters }) {
-      const network = rootGetters['session/network']
+    async refresh ({ dispatch, getters, rootGetters }, network = null) {
+      if (!network) {
+        network = rootGetters['session/network']
+      }
+
       if (!network) {
         return
       }
@@ -261,6 +330,46 @@ export default {
      * @param  {Boolean} [skipIfCustom=true]
      * @return {(Object|null)}
      */
+    async findBest ({ dispatch, getters }, { refresh = true, network = null }) {
+      if (refresh) {
+        try {
+          await dispatch('refresh', network)
+        } catch (error) {
+          this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
+        }
+      }
+
+      let peer = network ? getters['best'](true, network.id) : getters['best']()
+      if (!peer) {
+        return null
+      }
+
+      try {
+        await getApiPort(peer)
+      } catch (error) {
+        return dispatch('findBest', {
+          refresh: true,
+          network
+        })
+      }
+
+      peer = await dispatch('updateCurrentPeerStatus', peer)
+      if (!peer) {
+        return dispatch('findBest', {
+          refresh: true,
+          network
+        })
+      }
+
+      return peer
+    },
+
+    /**
+     * Update to the best peer for current network.
+     * @param  {Boolean} [refresh=true]
+     * @param  {Boolean} [skipIfCustom=true]
+     * @return {(Object|null)}
+     */
     async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
@@ -269,33 +378,9 @@ export default {
         }
       }
 
-      if (refresh) {
-        try {
-          await dispatch('refresh')
-        } catch (error) {
-          this._vm.$error(`${i18n.t('PEER.FAILED_REFRESH')}: ${error.message}`)
-        }
-      }
-
-      let peer = getters['best']()
-      if (!peer) {
-        return null
-      }
-
-      try {
-        await getApiPort(peer)
-      } catch (error) {
-        return dispatch('connectToBest', {
-          refresh: true
-        })
-      }
-
-      peer = await dispatch('updateCurrentPeerStatus', peer)
-      if (!peer) {
-        return dispatch('connectToBest', {
-          refresh: true
-        })
-      }
+      const peer = await dispatch('findBest', {
+        refresh
+      })
 
       await dispatch('setCurrentPeer', peer)
 
@@ -369,6 +454,20 @@ export default {
           await dispatch('fallbackToSeedPeer')
         }
       }
+    },
+
+    /**
+     * Create client service object for a peer.
+     * @param  {Object} peer
+     * @return {ClientService}
+     */
+    async clientServiceFromPeer (_, peer) {
+      await getApiPort(peer)
+      const client = new ClientService(false)
+      client.host = getBaseUrl(peer)
+      client.version = getVersion(peer)
+
+      return client
     },
 
     /**

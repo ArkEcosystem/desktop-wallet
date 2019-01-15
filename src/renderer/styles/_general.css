@@ -29,6 +29,13 @@ input:focus {
   @apply .outline-none
 }
 
+a,
+button,
+img {
+  @apply .select-none;
+  -webkit-user-drag: none;
+}
+
 .App:not(.mac) *::-webkit-scrollbar {
   @apply .w-2 .h-2 .rounded-full;
   background-color: rgba(0, 0, 0, 0);

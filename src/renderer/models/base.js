@@ -25,6 +25,8 @@ export default class BaseModel {
 
       if (item.format && isFunction(item.format)) {
         value = item.format(input)
+      } else if (input[key] === undefined) {
+        value = item.default
       } else {
         value = input[key]
       }
@@ -42,7 +44,9 @@ export default class BaseModel {
 
     if (!validation.valid) {
       const errors = validation.errors.map(error => error.stack).join(', ')
-      throw new Error(`Cannot be instantiated due errors: ${errors}`)
+      throw new Error(`JSON: ${JSON.stringify(this.schema, null, 2)} Cannot be instantiated due to errors: ${errors}
+        input: ${input}
+      `)
     }
   }
 }

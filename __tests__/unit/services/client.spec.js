@@ -421,8 +421,8 @@ describe('Services > Client', () => {
 
     describe('when the fee is smaller or equal to V1 fee (25)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 25 * Math.pow(10, 8) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 12.09 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 25 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 12.09 * 1e8 }))).not.toThrow(/fee/)
       })
     })
   })
@@ -437,8 +437,8 @@ describe('Services > Client', () => {
 
     describe('when the fee is smaller or equal to V1 fee (5)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 5 * Math.pow(10, 8) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 3.09 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 5 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 3.09 * 1e8 }))).not.toThrow(/fee/)
       })
     })
   })
@@ -453,8 +453,8 @@ describe('Services > Client', () => {
 
     describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * Math.pow(10, 8) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * 1e8 }))).not.toThrow(/fee/)
       })
     })
   })
@@ -469,8 +469,8 @@ describe('Services > Client', () => {
 
     describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildVote({ fee: 1 * Math.pow(10, 8) }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildVote({ fee: 0.9 * Math.pow(10, 8) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: 1 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: 0.9 * 1e8 }))).not.toThrow(/fee/)
       })
     })
   })
