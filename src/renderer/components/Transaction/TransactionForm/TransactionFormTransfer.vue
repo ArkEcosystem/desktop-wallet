@@ -416,7 +416,7 @@ export default {
           return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
-      vendorFielf: {},
+      vendorField: {},
       passphrase: {
         isValid (value) {
           if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
