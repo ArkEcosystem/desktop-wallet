@@ -1,9 +1,9 @@
 version: 2
 jobs:
-  test-node-9:
+  test-node-11:
     working_directory: ~/new-desktop-wallet
     docker:
-      - image: circleci/node:9.11-browsers
+      - image: circleci/node:11.6-browsers
     steps:
       - checkout
       - run:
@@ -40,4 +40,4 @@ workflows:
   version: 2
   test:
     jobs:
-      - test-node-9
+      - test-node-11
