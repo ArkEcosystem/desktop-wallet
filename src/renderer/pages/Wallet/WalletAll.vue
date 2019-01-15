@@ -2,10 +2,17 @@
   <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
     <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-3">
       <div class="flex-1 flex flex-row justify-between">
-        <div class="flex flex-row items-end">
+        <div class="flex flex-row items-center">
           <div
+            v-if="session_profile.avatar"
             :style="`backgroundImage: url('${assets_loadImage(session_profile.avatar)}')`"
             class="profile-avatar-xl background-image"
+          />
+          <ButtonLetter
+            v-else
+            :value="session_profile.name"
+            size="2xl"
+            class="mx-5"
           />
           <div class="flex-col">
             <div>
@@ -115,7 +122,7 @@
 
 <script>
 import { clone, without } from 'lodash'
-import { ButtonSwitch } from '@/components/Button'
+import { ButtonSwitch, ButtonLetter } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
@@ -124,6 +131,7 @@ export default {
   name: 'WalletAll',
 
   components: {
+    ButtonLetter,
     ButtonSwitch,
     Loader,
     WalletIdenticon,
