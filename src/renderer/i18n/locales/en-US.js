@@ -691,7 +691,7 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcasted to the network'
+      BROADCASTING: 'Your transaction is being broadcast to the network'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
