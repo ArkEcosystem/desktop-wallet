@@ -7,6 +7,7 @@ describe('Migrations plugin', () => {
 
   beforeAll(() => {
     plugin = new MigrationsPlugin({ fromVersion, untilVersion })
+    plugin.migrations = []
   })
 
   describe('checkVersion', () => {
@@ -16,9 +17,9 @@ describe('Migrations plugin', () => {
       })
     })
 
-    describe('when the version is between the `fromVersion` and `untilVersion`', () => {
+    describe('when the version is between the `fromVersion` (not included) and `untilVersion` (included)', () => {
       it('should return `true`', () => {
-        plugin = new MigrationsPlugin({ fromVersion: '2.0.0', untilVersion: '2.0.0' })
+        plugin = new MigrationsPlugin({ fromVersion: '1.9.9', untilVersion: '2.0.0' })
         expect(plugin.checkVersion('2.0.0')).toBeTrue()
 
         plugin = new MigrationsPlugin({ fromVersion: '1.0.0', untilVersion: '3.0.0' })
@@ -29,9 +30,12 @@ describe('Migrations plugin', () => {
       })
     })
 
-    describe('when the version is not between the `fromVersion` and `untilVersion`', () => {
+    describe('when the version is not between the `fromVersion` (not included) and `untilVersion` (included)', () => {
       it('should return `true`', () => {
-        plugin = new MigrationsPlugin({ fromVersion: '2.0.1', untilVersion: '2.0.2' })
+        plugin = new MigrationsPlugin({ fromVersion: '2.0.0', untilVersion: '2.0.0' })
+        expect(plugin.checkVersion('2.0.0')).toBeFalse()
+
+        plugin = new MigrationsPlugin({ fromVersion: '2.0.0', untilVersion: '2.0.1' })
         expect(plugin.checkVersion('2.0.0')).toBeFalse()
 
         plugin = new MigrationsPlugin({ fromVersion: '1.0.1', untilVersion: '1.9.3' })
