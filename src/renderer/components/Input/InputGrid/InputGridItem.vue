@@ -20,7 +20,7 @@
     >
       <span
         v-if="isForModal"
-        class="font-semibold text-theme-page-text"
+        class="font-semibold text-theme-button-text"
       >
         {{ title }}
       </span>
