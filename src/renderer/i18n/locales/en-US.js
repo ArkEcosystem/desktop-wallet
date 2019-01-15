@@ -205,6 +205,7 @@ export default {
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
+      BROADCAST_PEERS: 'Broadcast to multiple peers',
       IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
@@ -672,7 +673,8 @@ export default {
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
-      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low'
+      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
+      NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
@@ -684,6 +686,9 @@ export default {
       SECOND_SIGNATURE: {
         INSTRUCTIONS: 'for {address}.'
       }
+    },
+    INFO: {
+      BROADCASTING: 'Your transaction is being broadcasted to the network'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
