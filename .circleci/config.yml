@@ -10,7 +10,7 @@ jobs:
           name: Install required packages
           command: |
             sudo apt-get update
-            sudo apt-get -t jessie-backports install libudev-dev libusb-1.0-0-dev
+            sudo apt-get install libudev-dev libusb-1.0-0-dev
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
