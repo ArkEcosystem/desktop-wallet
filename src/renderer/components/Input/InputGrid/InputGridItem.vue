@@ -14,10 +14,16 @@
     <div
       v-if="onlyLetter"
       :class="{
-        'py-3': isForModal
+        'pt-5 pb-0': isForModal
       }"
       class="flex h-full flex-col items-center justify-between"
     >
+      <span
+        v-if="isForModal"
+        class="font-semibold text-theme-page-text"
+      >
+        {{ title }}
+      </span>
       <ButtonLetter
         :value="label"
         :size="!isForModal ? '2xl' : null"
@@ -26,12 +32,6 @@
         }"
         tag="div"
       />
-      <span
-        v-if="isForModal"
-        class="font-semibold text-theme-page-text"
-      >
-        {{ title }}
-      </span>
     </div>
     <span
       v-if="isSelected"
