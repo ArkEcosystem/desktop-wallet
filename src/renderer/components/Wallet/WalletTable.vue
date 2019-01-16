@@ -5,6 +5,7 @@
       class="WalletAll__table"
       :columns="columns"
       v-on="$listeners"
+      @on-cell-click="onCellClick"
     >
       <template
         slot-scope="data"
@@ -167,14 +168,20 @@ export default {
 
     walletName (row) {
       return row.name || this.wallet_name(row.address)
+    },
+
+    onCellClick ({ row, column }) {
+      if (column.field !== 'delete') {
+        this.$router.push({ name: 'wallet-show', params: { address: row.address } })
+      }
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .WalletTable tr:hover {
-
+  @apply .bg-theme-table-row-hover .cursor-pointer;
 }
 .WalletTable tr:hover .identicon {
   transition: 0.5s;
