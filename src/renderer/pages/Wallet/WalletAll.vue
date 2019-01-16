@@ -172,7 +172,7 @@
 </template>
 
 <script>
-import { clone, some, sortBy, without } from 'lodash'
+import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
@@ -318,7 +318,9 @@ export default {
 
     removeWallet (wallet) {
       this.hideRemovalConfirmation()
-      this.selectableWallets = without(this.selectableWallets, wallet)
+      this.selectableWallets = this.selectableWallets.filter(w => {
+        return w.id !== wallet.id
+      })
     },
 
     toggleLayout () {
