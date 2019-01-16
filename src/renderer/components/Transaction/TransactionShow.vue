@@ -261,7 +261,8 @@ export default {
     },
 
     async emitResend () {
-      await this.$client.broadcastTransaction(this.transaction.raw)
+      const shouldBroadcast = this.$store.getters['session/broadcastPeers']
+      await this.$client.broadcastTransaction(this.transaction.raw, shouldBroadcast)
 
       this.$success(this.$t('TRANSACTION.RESENT_NOTICE', { transactionId: truncateMiddle(this.transaction.id) }))
       this.$emit('close')
