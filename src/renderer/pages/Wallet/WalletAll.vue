@@ -171,7 +171,7 @@
 </template>
 
 <script>
-import { clone, sortBy } from 'lodash'
+import { clone, sortBy, without } from 'lodash'
 import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
@@ -196,8 +196,6 @@ export default {
 
   data: () => ({
     selectableWallets: [],
-    ledgerWallets: [],
-    walletsWithDelegates: [],
     walletToRemove: null,
     isLoading: false,
     sortParams: {
@@ -284,8 +282,7 @@ export default {
   async created () {
     this.isLoading = true
 
-    this.walletsWithDelegates = await this.fetchVotedDelegates(this.wallets)
-    this.selectableWallets = this.walletsWithDelegates
+    this.selectableWallets = this.wallets
 
     if (this.$store.getters['ledger/isConnected']) {
       this.refreshLedgerWallets()
@@ -302,18 +299,12 @@ export default {
     },
 
     async refreshLedgerWallets () {
-      this.ledgerWallets = this.$store.getters['ledger/wallets']
-
-      const ledgerWalletsWithDelegates = await this.fetchVotedDelegates(this.ledgerWallets)
-
-      this.selectableWallets = [...ledgerWalletsWithDelegates, ...this.walletsWithDelegates]
+      const ledgerWallets = this.$store.getters['ledger/wallets']
+      this.selectableWallets = [...ledgerWallets, ...this.wallets]
     },
 
     ledgerDisconnected () {
-      const ledgerWalletsIds = this.ledgerWallets.map(ledgerWallet => ledgerWallet.id)
-      this.selectableWallets = this.selectableWallets.filter(wallet => {
-        return !ledgerWalletsIds.includes(wallet.id)
-      })
+      this.selectableWallets = this.wallets
     },
 
     openRemovalConfirmation (wallet) {
@@ -322,9 +313,7 @@ export default {
 
     removeWallet (wallet) {
       this.hideRemovalConfirmation()
-      this.selectableWallets = this.selectableWallets.filter(w => {
-        return w.id !== wallet.id
-      })
+      this.selectableWallets = without(this.selectableWallets, wallet)
     },
 
     toggleLayout () {
@@ -337,24 +326,6 @@ export default {
 
     onRemoveWallet (wallet) {
       this.openRemovalConfirmation(wallet)
-    },
-
-    async fetchVotedDelegates (wallets) {
-      for (const wallet in wallets) {
-        try {
-          const walletVote = await this.$client.fetchWalletVote(wallets[wallet].address)
-
-          if (walletVote) {
-            wallets[wallet].votedDelegate = await this.$client.fetchDelegate(walletVote)
-          } else {
-            wallets[wallet].votedDelegate = null
-          }
-        } catch (error) {
-          wallets[wallet].votedDelegate = null
-        }
-      }
-
-      return wallets
     }
   }
 }
