@@ -266,6 +266,7 @@ export default {
 .AppSidemenuNetworkStatus {
   width: 380px;
   left: 6.5rem;
+  transform: translateY(-10%)
 }
 
 .AppSidemenuNetworkStatus--horizontal {
