@@ -145,8 +145,8 @@ export default {
    * retrieving the essential data (session and network) from the database
    */
   async created () {
-    await this.$store.dispatch('network/load', config.NETWORKS)
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
@@ -155,9 +155,10 @@ export default {
       this.isReady = true
 
       this.$synchronizer.defineAll()
-      this.$synchronizer.ready()
 
       await this.loadNotEssential()
+
+      this.$synchronizer.ready()
 
       // Environments variables are strings
       const status = process.env.ENABLE_SCREENSHOT_PROTECTION
@@ -196,7 +197,7 @@ export default {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
         if (this.$store.getters['ledger/isConnected']) {
-          this.$store.dispatch('ledger/reloadWallets', { clearFirst: true })
+          this.$store.dispatch('ledger/reloadWallets', true)
         }
       })
       this.$eventBus.on('ledger:connected', async () => {
