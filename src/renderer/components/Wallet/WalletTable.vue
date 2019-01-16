@@ -180,10 +180,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.WalletTable tr:hover {
+.WalletTable tbody tr:hover {
   @apply .bg-theme-table-row-hover .cursor-pointer;
 }
-.WalletTable tr:hover .identicon {
+.WalletTable tbody tr:hover .identicon {
   transition: 0.5s;
   opacity: 0.5;
 }
