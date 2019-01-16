@@ -58,7 +58,23 @@
     <div class="flex flex-1 lg:bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
         <div class="WalletAll__header">
-          <h3>{{ $t('PAGES.WALLET_ALL.HEADER') }}</h3>
+          <h3 class="flex items-center">
+            {{ $t('PAGES.WALLET_ALL.HEADER') }}
+            <span
+              v-if="isLedgerLoading"
+              v-tooltip="{
+                content: $t('PAGES.WALLET_ALL.LOADING_LEDGER'),
+                placement: 'right'
+              }"
+              class="inline-flex items-center self-stretch ml-3 pr-2"
+            >
+              <SvgIcon
+                class="rotate-360"
+                name="update"
+                view-box="0 0 16 14"
+              />
+            </span>
+          </h3>
 
           <ButtonLayout
             :grid-layout="hasGridLayout"
@@ -161,6 +177,7 @@ import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import { sortByProp } from '@/components/utils/Sorting'
 import WalletTable from '@/components/Wallet/WalletTable'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletAll',
@@ -174,7 +191,8 @@ export default {
     WalletRemovalConfirmation,
     WalletButtonCreate,
     WalletButtonImport,
-    WalletTable
+    WalletTable,
+    SvgIcon
   },
 
   data: () => ({
