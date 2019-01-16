@@ -103,6 +103,11 @@ export default {
     isContactsTable: {
       type: Boolean,
       default: false
+    },
+    showVotedDelegates: {
+      type: Boolean,
+      default: false,
+      required: false
     }
   },
 
@@ -117,7 +122,9 @@ export default {
         {
           label: this.$t('PAGES.WALLET_ALL.NAME'),
           field: 'name',
-          sortFn: this.sortByName
+          sortFn: this.sortByName,
+          thClass: !this.showVotedDelegates ? 'w-full' : '',
+          tdClass: !this.showVotedDelegates ? 'w-full' : ''
         },
         {
           label: this.$t('PAGES.WALLET_ALL.VOTING_FOR'),
@@ -142,6 +149,13 @@ export default {
       if (this.isContactsTable) {
         const index = columns.findIndex(el => {
           return el.field === 'balance'
+        })
+        columns.splice(index, 1)
+      }
+
+      if (!this.showVotedDelegates) {
+        const index = columns.findIndex(el => {
+          return el.field === this.delegateName
         })
         columns.splice(index, 1)
       }

@@ -152,6 +152,7 @@
             :has-pagination="false"
             :is-loading="false"
             :rows="selectableWallets"
+            :show-voted-delegates="showVotedDelegates"
             :total-rows="selectableWallets.length"
             :sort-query="sortParams"
             :no-data-message="$t('TABLE.NO_WALLETS')"
@@ -171,7 +172,7 @@
 </template>
 
 <script>
-import { clone, sortBy, without } from 'lodash'
+import { clone, some, sortBy, without } from 'lodash'
 import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
@@ -270,6 +271,10 @@ export default {
         profile.layout = layout
         this.$store.dispatch('profile/update', profile)
       }
+    },
+
+    showVotedDelegates () {
+      return some(this.selectableWallets, wallet => wallet.hasOwnProperty('votedDelegate'))
     }
   },
 

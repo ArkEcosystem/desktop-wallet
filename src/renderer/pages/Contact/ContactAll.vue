@@ -109,6 +109,7 @@
           :has-pagination="false"
           :is-loading="false"
           :is-contacts-table="true"
+          :show-voted-delegates="showVotedDelegates"
           :rows="selectableContacts"
           :total-rows="selectableContacts.length"
           :sort-query="sortParams"
@@ -128,10 +129,10 @@
 </template>
 
 <script>
+import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { clone, sortBy } from 'lodash'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
@@ -179,6 +180,10 @@ export default {
         profile.layout = layout
         this.$store.dispatch('profile/update', profile)
       }
+    },
+
+    showVotedDelegates () {
+      return some(this.selectableContacts, contact => contact.hasOwnProperty('votedDelegate'))
     }
   },
 
