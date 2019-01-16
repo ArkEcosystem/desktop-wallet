@@ -198,6 +198,7 @@ export default {
   data: () => ({
     selectableWallets: [],
     ledgerWallets: [],
+    walletsWithDelegates: [],
     walletToRemove: null,
     isLoading: false,
     sortParams: {
@@ -285,7 +286,8 @@ export default {
   async created () {
     this.isLoading = true
 
-    this.selectableWallets = await this.fetchVotedDelegates(this.wallets)
+    this.walletsWithDelegates = await this.fetchVotedDelegates(this.wallets)
+    this.selectableWallets = this.walletsWithDelegates
 
     if (this.$store.getters['ledger/isConnected']) {
       this.refreshLedgerWallets()
@@ -302,9 +304,11 @@ export default {
     },
 
     async refreshLedgerWallets () {
-      this.ledgerWallets = await this.fetchVotedDelegates(this.$store.getters['ledger/wallets'])
+      this.ledgerWallets = this.$store.getters['ledger/wallets']
 
-      this.selectableWallets = [...this.ledgerWallets, ...this.selectableWallets]
+      const ledgerWalletsWithDelegates = await this.fetchVotedDelegates(this.ledgerWallets)
+
+      this.selectableWallets = [...ledgerWalletsWithDelegates, ...this.walletsWithDelegates]
     },
 
     ledgerDisconnected () {
