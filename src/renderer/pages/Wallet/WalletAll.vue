@@ -171,11 +171,10 @@
 </template>
 
 <script>
-import { clone } from 'lodash'
+import { clone, sortBy } from 'lodash'
 import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
-import { sortByProp } from '@/components/utils/Sorting'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -231,8 +230,7 @@ export default {
 
     wallets () {
       const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      const prop = 'name'
-      return wallets.slice().sort(sortByProp(prop))
+      return sortBy(wallets, ['name', 'address'])
     },
 
     isLedgerLoading () {

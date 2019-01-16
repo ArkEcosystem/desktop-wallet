@@ -162,7 +162,7 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      return sortBy(contacts, 'name')
+      return sortBy(contacts, ['name', 'address'])
     },
 
     hasGridLayout () {
