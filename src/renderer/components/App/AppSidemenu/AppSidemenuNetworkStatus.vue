@@ -281,6 +281,10 @@ export default {
   @apply .text-theme-settings-heading .border-theme-settings-border
 }
 
+.AppSidemenuNetworkStatus .MenuOptions--vertical:after {
+  top: 7.1rem;
+}
+
 .AppSidemenuNetworkStatus__peer .MenuDropdownHandler.text-theme-page-text-light {
   @apply .text-white;
 }
