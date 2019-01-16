@@ -871,6 +871,7 @@ export default {
   },
 
   WALLET_TABLE: {
-    LEDGER: 'Ledger'
+    LEDGER: 'Ledger',
+    NO_DELETE: 'Ledger wallets cannot be deleted'
   }
 }

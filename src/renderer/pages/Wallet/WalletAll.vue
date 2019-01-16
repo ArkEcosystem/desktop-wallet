@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <div class="flex flex-1 lg:bg-theme-feature rounded-lg p-10 overflow-y-auto">
+    <div class="flex flex-1 bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
         <div class="WalletAll__header">
           <h3 class="flex items-center">

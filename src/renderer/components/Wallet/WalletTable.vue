@@ -63,16 +63,23 @@
           v-else-if="data.column.field === 'delete'"
           class="flex items-center justify-center"
         >
-          <button
-            :disabled="data.row.isLedger"
-            class="font-semibold flex text-xs cursor-pointer hover:text-red text-theme-page-text-light p-1"
-            @click="removeRow(data.row)"
+          <span
+            v-tooltip="{
+              content: data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : '',
+              placement: 'left'
+            }"
           >
-            <SvgIcon
-              name="delete-wallet"
-              view-box="0 0 16 16"
-            />
-          </button>
+            <button
+              class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
+              :disabled="data.row.isLedger"
+              @click="removeRow(data.row)"
+            >
+              <SvgIcon
+                name="delete-wallet"
+                view-box="0 0 16 16"
+              />
+            </button>
+          </span>
         </div>
 
         <span
@@ -142,7 +149,7 @@ export default {
           label: this.$t('PAGES.WALLET_ALL.DELETE'),
           field: 'delete',
           sortable: false,
-          thClass: 'text-center'
+          thClass: 'text-center not-sortable'
         }
       ]
 
