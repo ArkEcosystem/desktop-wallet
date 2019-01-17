@@ -62,6 +62,10 @@ export default new BaseModel({
     transactionTableRowCount: {
       type: 'integer',
       format: data => data.transactionTableRowCount || 10
+    },
+    layout: {
+      type: 'string',
+      format: data => data.walletLayout || 'grid'
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
