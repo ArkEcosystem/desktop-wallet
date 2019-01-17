@@ -6,7 +6,7 @@
 
         <div class="flex items-center">
           <button
-            v-if="!hasGridLayout"
+            v-if="!hasWalletGridLayout"
             class="ContactAll__CreateButton"
             @click="createContact"
           >
@@ -24,8 +24,8 @@
           </button>
 
           <ButtonLayout
-            :grid-layout="hasGridLayout"
-            @click="toggleLayout()"
+            :grid-layout="hasWalletGridLayout"
+            @click="toggleWalletLayout()"
           />
         </div>
       </div>
@@ -40,7 +40,7 @@
       </div>
 
       <div
-        v-if="hasGridLayout && !isLoading"
+        v-if="hasWalletGridLayout && !isLoading"
       >
         <div class="ContactAll__grid mt-10 justify-center">
           <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
@@ -102,7 +102,7 @@
       </div>
 
       <div
-        v-else-if="!hasGridLayout && !isLoading"
+        v-else-if="!hasWalletGridLayout && !isLoading"
         class="ContactAll__tabular mt-10"
       >
         <WalletTable
@@ -176,18 +176,18 @@ export default {
       return sortBy(contacts, ['name', 'address'])
     },
 
-    hasGridLayout () {
-      return this.$store.getters['session/hasGridLayout']
+    hasWalletGridLayout () {
+      return this.$store.getters['session/hasWalletGridLayout']
     },
 
-    sessionLayout: {
+    walletLayout: {
       get () {
-        return this.$store.getters['session/layout']
+        return this.$store.getters['session/walletLayout']
       },
       set (layout) {
-        this.$store.dispatch('session/setLayout', layout)
+        this.$store.dispatch('session/setWalletLayout', layout)
         const profile = clone(this.session_profile)
-        profile.layout = layout
+        profile.walletLayout = layout
         this.$store.dispatch('profile/update', profile)
       }
     },
@@ -235,8 +235,8 @@ export default {
       })
     },
 
-    toggleLayout () {
-      this.sessionLayout = this.sessionLayout === 'grid' ? 'tabular' : 'grid'
+    toggleWalletLayout () {
+      this.walletLayout = this.walletLayout === 'grid' ? 'tabular' : 'grid'
     },
 
     onRemoveContact (contact) {
