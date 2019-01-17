@@ -115,6 +115,7 @@
           :sort-query="sortParams"
           :no-data-message="$t('TABLE.NO_CONTACTS')"
           @remove-row="onRemoveContact"
+          @rename-row="onRenameContact"
         />
       </div>
     </div>
@@ -125,6 +126,13 @@
       @cancel="hideRemovalConfirmation"
       @removed="removeContact(contactToRemove)"
     />
+
+    <WalletRenameModal
+      v-if="contactToRename"
+      :wallet="contactToRename"
+      @cancel="hideRenameModal"
+      @renamed="hideRenameModal(contactToRename)"
+    />
   </div>
 </template>
 
@@ -133,7 +141,7 @@ import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
+import { WalletIdenticon, WalletIdenticonPlaceholder, WalletRenameModal } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -144,6 +152,7 @@ export default {
     ButtonLayout,
     Loader,
     ContactRemovalConfirmation,
+    WalletRenameModal,
     WalletIdenticon,
     WalletIdenticonPlaceholder,
     WalletTable,
@@ -153,6 +162,7 @@ export default {
   data: () => ({
     selectableContacts: [],
     contactToRemove: null,
+    contactToRename: null,
     isLoading: false,
     sortParams: {
       field: 'name',
@@ -206,8 +216,16 @@ export default {
       this.contactToRemove = null
     },
 
+    hideRenameModal () {
+      this.contactToRename = null
+    },
+
     openRemovalConfirmation (contact) {
       this.contactToRemove = contact
+    },
+
+    openRenameModal (contact) {
+      this.contactToRename = contact
     },
 
     removeContact (contact) {
@@ -223,6 +241,10 @@ export default {
 
     onRemoveContact (contact) {
       this.openRemovalConfirmation(contact)
+    },
+
+    onRenameContact (contact) {
+      this.openRenameModal(contact)
     },
 
     createContact () {
