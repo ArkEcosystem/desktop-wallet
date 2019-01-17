@@ -115,8 +115,7 @@ export default {
     STATUS_CHECK_FAILED: 'Status check failed',
     WRONG_NETWORK: 'Wrong network'
   },
-  
-  
+
   VENDORFIELD: {
     LIMIT_REACHED: 'You can enter maximum \'{0}\' charachters only'
   },
