@@ -244,7 +244,7 @@ export default {
       return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
     },
     vendorFieldHelperText () {
-      if (this.form.vendorField.length == 64) {
+      if (this.form.vendorField.length === 64) {
         return this.$t('VENDORFIELD.LIMIT_REACHED', [64])
       }
       return null
