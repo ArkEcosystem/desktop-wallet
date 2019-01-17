@@ -39,13 +39,14 @@
         :wallet-network="walletNetwork"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
+        @input="setSendAll(false, false)"
       />
 
       <InputSwitch
         v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
         :is-disabled="!canSendAll() || !currentWallet"
-        @change="onSendAll"
+        @change="setSendAll"
       />
     </div>
 
@@ -183,6 +184,7 @@ export default {
     showEncryptLoader: false,
     showLedgerLoader: false,
     bip38Worker: null,
+    previousAmount: '',
     wallet: null,
     showConfirmSendAll: false
   }),
@@ -313,13 +315,18 @@ export default {
       this.$set(this.form, 'fee', fee)
       this.ensureAvailableAmount()
     },
-
-    onSendAll (setActive) {
-      if (!setActive) {
-        this.isSendAllActive = setActive
-        this.ensureAvailableAmount()
-      } else {
+    setSendAll (isActive, setPreviousAmount = true) {
+      if (isActive) {
         this.confirmSendAll()
+        this.previousAmount = this.form['amount']
+      }
+      if (!isActive) {
+        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
+          this.$set(this.form, 'amount', this.previousAmount)
+        }
+        this.previousAmount = ''
+        this.isSendAllActive = isActive
+        this.ensureAvailableAmount()
       }
     },
 

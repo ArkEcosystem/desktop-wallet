@@ -31,6 +31,7 @@ describe('pages > WalletAll', () => {
             'ledger/isConnected': false,
             'ledger/wallets': ledgerWallets,
             'profile/balanceWithLedger': jest.fn(),
+            'session/hasGridLayout': true,
             'wallet/byProfileId': id => wallets
           }
         },

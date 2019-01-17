@@ -184,7 +184,9 @@ export default {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
     NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
-    NO_DELEGATES: 'No delegates to be shown.'
+    NO_CONTACTS: 'No contacts to be shown.',
+    NO_DELEGATES: 'No delegates to be shown.',
+    NO_WALLETS: 'No wallets to be shown.'
   },
 
   APP: {
@@ -545,7 +547,12 @@ export default {
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+      ADDRESS: 'Address',
+      NAME: 'Name',
+      VOTING_FOR: 'Voting for',
+      BALANCE: 'Balance',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {
@@ -862,5 +869,10 @@ export default {
     SENDER: 'Sender',
     AMOUNT: 'Amount',
     NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+  },
+
+  WALLET_TABLE: {
+    LEDGER: 'Ledger',
+    NO_DELETE: 'Ledger wallets cannot be deleted'
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <div
     :style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
-    :title="title"
     :class="{ 'InputGridItem--selected': isSelected }"
     class="InputGridItem relative bg-cover bg-no-repeat bg-center rounded-full w-16 h-16 cursor-pointer transition text-center hover:opacity-75"
   >

@@ -5,6 +5,7 @@ import ButtonLetter from './ButtonLetter'
 import ButtonModal from './ButtonModal'
 import ButtonReload from './ButtonReload'
 import ButtonSwitch from './ButtonSwitch'
+import ButtonLayout from './ButtonLayout'
 
 export {
   ButtonClipboard,
@@ -13,5 +14,6 @@ export {
   ButtonLetter,
   ButtonReload,
   ButtonSwitch,
-  ButtonModal
+  ButtonModal,
+  ButtonLayout
 }
