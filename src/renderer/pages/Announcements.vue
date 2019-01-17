@@ -10,7 +10,7 @@
 
         <button
           v-if="showReadAll"
-          class="Announcements__ReadAll semi-bold text-theme-feature-item-text hover:text-theme-page-text transition"
+          class="Announcements__ReadAll text-theme-feature-item-text hover:text-theme-page-text transition"
           @click="readAll"
         >
           <SvgIcon
@@ -106,7 +106,7 @@ export default {
   @apply .flex .items-center .justify-between;
 }
 .Announcements__header .Announcements__ReadAll {
-  @apply .flex .items-center;
+  @apply .flex .items-center .font-semibold;
 }
 .Announcements__line-separator {
   height: 1rem;
