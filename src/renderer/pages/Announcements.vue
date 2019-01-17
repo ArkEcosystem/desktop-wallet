@@ -1,15 +1,32 @@
 <template>
   <div class="Announcements relative overflow-y-auto bg-theme-feature rounded-lg">
-    <div class="Announcements--gradient-top sticky pin-t h-12" />
+    <div class="Announcements--gradient-top sticky pin-t h-10" />
 
-    <main class="flex-col px-12">
-      <h1 class="text-lg mb-5">
-        {{ $t('ANNOUNCEMENTS.LATEST_NEWS') }}
-      </h1>
+    <main class="flex-col px-10">
+      <div class="Announcements__header">
+        <h3 class>
+          {{ $t('ANNOUNCEMENTS.LATEST_NEWS') }}
+        </h3>
+
+        <button
+          v-if="showReadAll"
+          class="Announcements__ReadAll semi-bold text-theme-feature-item-text hover:text-theme-page-text transition"
+          @click="readAll"
+        >
+          <SvgIcon
+            name="mark-all"
+            view-box="0 0 15 15"
+            class="mr-2"
+          />
+
+          {{ $t('ANNOUNCEMENTS.ALL_READ') }}
+        </button>
+      </div>
 
       <TransitionGroup
         tag="div"
         name="Announcements__posts"
+        class="mt-10"
       >
         <div
           v-for="(announcement, index) in announcements"
@@ -22,14 +39,14 @@
           />
 
           <div
-            v-if="index <= announcements.length - 2"
+            v-if="index < announcements.length - 1"
             class="Announcements__line-separator mt-6"
           />
         </div>
       </TransitionGroup>
     </main>
 
-    <div class="Announcements--gradient-bottom sticky pin-b h-12" />
+    <div class="Announcements--gradient-bottom sticky pin-b h-10" />
   </div>
 </template>
 
@@ -37,12 +54,14 @@
 import { orderBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { AnnouncementsPost } from '@/components/Announcements'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'Announcements',
 
   components: {
-    AnnouncementsPost
+    AnnouncementsPost,
+    SvgIcon
   },
 
   computed: {
@@ -50,10 +69,14 @@ export default {
       readAnnouncements: 'announcements/read',
       unreadAnnouncements: 'announcements/unread'
     }),
+
     announcements () {
-      const readSorted = orderBy(this.readAnnouncements, 'date', 'desc')
-      const unreadSorted = orderBy(this.unreadAnnouncements, 'date', 'desc')
-      return unreadSorted.concat(readSorted)
+      const all = this.readAnnouncements.concat(this.unreadAnnouncements)
+      return orderBy(all, ['isRead', 'date'], ['desc', 'desc'])
+    },
+
+    showReadAll () {
+      return this.unreadAnnouncements && this.unreadAnnouncements.length
     }
   },
 
@@ -67,12 +90,24 @@ export default {
   methods: {
     read (announcement) {
       this.$store.dispatch('announcements/markAsRead', announcement)
+    },
+
+    readAll () {
+      this.unreadAnnouncements.forEach(announcement => {
+        this.read(announcement)
+      })
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+.Announcements__header {
+  @apply .flex .items-center .justify-between;
+}
+.Announcements__header .Announcements__ReadAll {
+  @apply .flex .items-center;
+}
 .Announcements__line-separator {
   height: 1rem;
   background: linear-gradient(to right, var(--theme-line-separator) 50%, transparent 50%);

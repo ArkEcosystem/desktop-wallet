@@ -34,7 +34,8 @@ export default {
 
   ANNOUNCEMENTS: {
     LATEST_NEWS: 'Latest News',
-    READ_MORE: 'Read more'
+    READ_MORE: 'Read more',
+    ALL_READ: 'Mark all as read'
   },
 
   INTRODUCTION: {
