@@ -266,6 +266,7 @@ export default {
 .AppSidemenuNetworkStatus {
   width: 380px;
   left: 6.5rem;
+  transform: translateY(-10%)
 }
 
 .AppSidemenuNetworkStatus--horizontal {
@@ -278,6 +279,10 @@ export default {
 .AppSidemenuNetworkStatus__status__last-checked,
 .AppSidemenuNetworkStatus__status__delay {
   @apply .text-theme-settings-heading .border-theme-settings-border
+}
+
+.AppSidemenuNetworkStatus .MenuOptions--vertical:after {
+  top: 7.1rem;
 }
 
 .AppSidemenuNetworkStatus__peer .MenuDropdownHandler.text-theme-page-text-light {
