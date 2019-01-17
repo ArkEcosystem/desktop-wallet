@@ -153,6 +153,16 @@
                 />
               </ListDividedItem>
             </ListDivided>
+
+            <footer class="ProfileEdition__footer pb-10">
+              <button
+                :disabled="!isModified || isNameEditable"
+                class="blue-button"
+                @click="save"
+              >
+                {{ $t('COMMON.SAVE') }}
+              </button>
+            </footer>
           </MenuTabItem>
 
           <MenuTabItem
@@ -182,19 +192,18 @@
                 />
               </ListDividedItem>
             </ListDivided>
+
+            <footer class="ProfileEdition__footer pb-10">
+              <button
+                :disabled="!isModified || isNameEditable"
+                class="blue-button"
+                @click="save"
+              >
+                {{ $t('COMMON.SAVE') }}
+              </button>
+            </footer>
           </MenuTabItem>
         </MenuTab>
-
-        <!-- TODO at the bottom ? -->
-        <footer class="ProfileEdition__footer mt-3 p-10 pt-0">
-          <button
-            :disabled="!isModified || isNameEditable"
-            class="blue-button"
-            @click="save"
-          >
-            {{ $t('COMMON.SAVE') }}
-          </button>
-        </footer>
       </div>
     </main>
   </div>
