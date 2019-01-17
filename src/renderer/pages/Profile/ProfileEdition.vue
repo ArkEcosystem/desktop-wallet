@@ -1,23 +1,34 @@
 <template>
-  <div class="ProfileEdition relative bg-theme-feature rounded-lg">
-    <main class="flex flex-col sm:flex-row h-full">
+  <div class="ProfileEdition relative">
+    <main class="flex h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
-        class="ProfileEdition__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
+        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
-          <h3 class="mb-2 text-theme-page-instructions-text">
+        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+          <h1 class="text-inherit">
             {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}
-          </h3>
-
-          <p>
+          </h1>
+          <p class="text-center py-2 leading-normal">
             {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.TEXT`) }}
           </p>
+
+          <div class="relative w-full xl:w-4/5 mt-10">
+            <img
+              :src="assets_loadImage(instructionsImage)"
+              :title="$t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
+            >
+            <h2
+              v-if="isProfileTab"
+              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block"
+            >
+              {{ name }}
+            </h2>
+          </div>
         </div>
       </div>
 
-      <div class="sm:w-1/2 md:w-2/5">
-        <MenuTab :tab="tab">
+      <div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto">
+        <MenuTab v-model="tab">
           <MenuTabItem
             :label="$t('PAGES.PROFILE_EDITION.TAB_PROFILE.TITLE')"
             tab="profile"
@@ -312,8 +323,12 @@ export default {
     theme () {
       return this.modified.theme || this.profile.theme
     },
-    backgroundImage () {
-      return `pages/profile-new/background-step-3${this.session_hasDarkTheme ? '-dark' : ''}.png`
+    isProfileTab () {
+      return this.tab === 'profile'
+    },
+    instructionsImage () {
+      const name = this.isProfileTab ? 'step-1' : 'step-3'
+      return `pages/profile-new/${name}.svg`
     },
     nameError () {
       if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
@@ -447,6 +462,9 @@ export default {
 </style>
 
 <style lang="postcss">
+.ProfileNew__instructions__name {
+  bottom: 3.3rem;
+}
 .ProfileEdition .MenuTab .MenuTab__nav__item {
   @apply .px-10 .py-6
 }
