@@ -15,7 +15,7 @@
           <div class="relative w-full xl:w-4/5 mt-10">
             <img
               :src="assets_loadImage(instructionsImage)"
-              :title="$t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
+              :title="$t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`)"
             >
             <h2
               v-if="isProfileTab"
