@@ -248,6 +248,7 @@ export default {
         return this.$t('VENDORFIELD.LIMIT_REACHED', [64])
       }
       return null
+    }
   },
 
   watch: {
