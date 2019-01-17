@@ -1,8 +1,8 @@
 <template>
   <div class="AnnouncementsPost flex flex-col md:flex-row items-top relative">
     <button
-      v-show="!isRead"
-      class="AnnouncementsPost__close transition absolute pin-t pin-r cursor-pointer text-theme-page-text-light hover:text-theme-page-text p-2"
+      class="AnnouncementsPost__close absolute pin-t pin-r transition"
+      :disabled="isRead"
       @click="emitRead"
     >
       <SvgIcon
@@ -35,10 +35,10 @@
       </a>
     </div>
 
-    <div>
+    <div class="pr-12">
       <h2
         :class="isRead ? 'text-theme-page-text-light' : 'text-theme-page-text'"
-        class="AnnouncementsPost__title text-2xl mt-4 md:mt-0 pr-8"
+        class="AnnouncementsPost__title text-2xl mt-4 md:mt-0"
       >
         {{ title }}
       </h2>
@@ -125,10 +125,15 @@ export default {
 <style scoped>
 .AnnouncementsPost__close {
   /* The close button is shown only on hover over the entire announcement */
-  display: none;
+  margin-top: -1px;
+  opacity: 0;
 }
 .AnnouncementsPost:hover > .AnnouncementsPost__close {
-  display: block;
+  opacity: 1;
+  @apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2;
+}
+.AnnouncementsPost:hover > .AnnouncementsPost__close:hover {
+  opacity: 0.5;
 }
 .AnnouncementsPost__date {
   line-height: 1.75rem;

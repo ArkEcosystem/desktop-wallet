@@ -71,8 +71,8 @@ export default {
     }),
 
     announcements () {
-      const all = this.readAnnouncements.concat(this.unreadAnnouncements)
-      return orderBy(all, ['isRead', 'date'], ['desc', 'desc'])
+      const all = this.unreadAnnouncements.concat(this.readAnnouncements)
+      return orderBy(all, ['isRead', 'date'], ['asc', 'desc'])
     },
 
     showReadAll () {
