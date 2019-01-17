@@ -13,6 +13,7 @@ export default {
     name: null,
     profileId: null,
     theme: null,
+    layout: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
     broadcastPeers: null,
@@ -50,10 +51,12 @@ export default {
     timeFormat: state => state.timeFormat,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
+    layout: state => state.layout,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
+    hasGridLayout: state => state.layout === 'grid',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
     broadcastPeers: state => state.broadcastPeers,
@@ -102,6 +105,10 @@ export default {
       state.theme = theme
     },
 
+    SET_LAYOUT (state, layout) {
+      state.layout = layout
+    },
+
     SET_CONTENT_PROTECTION (state, protection) {
       state.contentProtection = protection
     },
@@ -132,6 +139,7 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.layout = 'grid'
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.contentProtection = true
@@ -154,6 +162,7 @@ export default {
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
+      dispatch('setLayout', profile.layout)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
       dispatch('setBroadcastPeers', profile.broadcastPeers)
       dispatch('setLedgerCache', profile.ledgerCache)
@@ -222,6 +231,10 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setLayout ({ commit }, value) {
+      commit('SET_LAYOUT', value)
     },
 
     setTransactionTableRowCount ({ commit }, value) {
