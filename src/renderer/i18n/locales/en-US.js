@@ -1,35 +1,35 @@
 export default {
   COMMON: {
-    APP_NAME: 'ARK Desktop Wallet',
     ALL: 'All',
+    APP_NAME: 'ARK Desktop Wallet',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
+    BACKGROUND: 'Background',
     BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
-    DONE: 'Done',
-    FINISH: 'Finish',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
+    DATE: 'Date',
+    DONE: 'Done',
+    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
+    FETCH: 'Fetch',
+    FINISH: 'Finish',
     LANGUAGE: 'Application Language',
     NETWORK: 'Network',
-    PREV: 'Prev',
     NEXT: 'Next',
-    OF: 'of',
     NOT: 'not',
-    WILL: 'will',
-    PROFILE_NAME: 'Profile name',
-    SAVE: 'Save',
-    SELECT_BACKGROUND: 'Select background',
-    SELECT_THEME: 'Select wallet theme',
-    START: 'Start',
-    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
-    DATE: 'Date',
-    WARNING: 'Warning',
-    FETCH: 'Fetch',
-    REMOVE: 'Remove',
+    OF: 'of',
     OTHER: 'Other',
+    PREV: 'Prev',
+    PROFILE_NAME: 'Profile name',
+    REMOVE: 'Remove',
+    SAVE: 'Save',
+    START: 'Start',
+    THEME: 'Theme',
+    TIME_FORMAT: 'Time format',
     VERIFIED_ADDRESS: 'This is a verified address',
-    TIME_FORMAT: 'Time format'
+    WARNING: 'Warning',
+    WILL: 'will'
   },
 
   ANNOUNCEMENTS: {
@@ -131,6 +131,8 @@ export default {
     NO_SCHEME: 'The \'{0}\' does not have \'http://\' or \'https://\'',
     NAME: {
       DUPLICATED: 'The name \'{0}\' already exists',
+      EXISTS_AS_CONTACT: 'The name \'{0}\' has already been assigned to a contact',
+      EXISTS_AS_WALLET: 'The name \'{0}\' has already been assigned to a wallet',
       MAX_LENGTH: 'The name should have less than {0} characters.',
       MIN_LENGTH: 'The name should have at least 1 character | The name should have at least {n} characters.'
     },
@@ -141,7 +143,8 @@ export default {
       NO_MATCH: 'Your passwords do not match'
     },
     ADDRESS: {
-      DUPLICATED: 'The wallet address \'{0}\' already exists'
+      EXISTS_AS_CONTACT: 'The address \'{0}\' has already been added as a contact',
+      EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -185,7 +188,9 @@ export default {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
     NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
-    NO_DELEGATES: 'No delegates to be shown.'
+    NO_CONTACTS: 'No contacts to be shown.',
+    NO_DELEGATES: 'No delegates to be shown.',
+    NO_WALLETS: 'No wallets to be shown.'
   },
 
   APP: {
@@ -475,24 +480,27 @@ export default {
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
         NAME: 'Profile name',
-        TITLE: '1. Profile details'
+        TITLE: '1. Profile details',
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
+        NO_AVATAR: 'No Avatar'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
-          TEXT: 'Choose the network of this profile.',
-          CUSTOM_NETWORK: 'or you can choose a custom network',
-          CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.'
+          TEXT: 'Choose the network of this profile.'
         },
+        CUSTOM_NETWORK: 'or you can choose a custom network',
+        CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.',
         NAME: 'Profile name',
         TITLE: '2. Network'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
-          TEXT: 'Customize this application by selecting one of our themes and backgrounds.',
-          THEME: 'You can choose light or dark mode'
+          TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        THEME: 'Choose light or dark mode',
+        BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
         TITLE: '3. Appearance'
       }
@@ -543,7 +551,12 @@ export default {
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+      ADDRESS: 'Address',
+      NAME: 'Name',
+      VOTING_FOR: 'Voting for',
+      BALANCE: 'Balance',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {
@@ -693,7 +706,7 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcasted to the network'
+      BROADCASTING: 'Your transaction is being broadcast to the network'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
@@ -860,5 +873,10 @@ export default {
     SENDER: 'Sender',
     AMOUNT: 'Amount',
     NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+  },
+
+  WALLET_TABLE: {
+    LEDGER: 'Ledger',
+    NO_DELETE: 'Ledger wallets cannot be deleted'
   }
 }

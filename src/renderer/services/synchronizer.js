@@ -110,6 +110,10 @@ export default class Synchronizer {
    */
   async call (actionId) {
     const action = this.actions[actionId]
+    if (!action) {
+      return
+    }
+
     action.isCalling = true
     await action.fn()
     action.calledAt = (new Date()).getTime()

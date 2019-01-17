@@ -174,14 +174,14 @@ export default {
           if (this.maximumError) {
             return this.maximumError
           } else {
-            const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
+            const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
             return this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
           }
         } else if (!this.$v.model.isMoreThanMinimum) {
           if (this.minimumError) {
             return this.minimumError
           } else {
-            const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
+            const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
             return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
           }
         } else if (this.customError) {
