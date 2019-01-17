@@ -63,7 +63,7 @@ export default new BaseModel({
       type: 'integer',
       format: data => data.transactionTableRowCount || 10
     },
-    layout: {
+    walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'
     }

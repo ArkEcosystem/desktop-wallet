@@ -77,8 +77,8 @@
           </h3>
 
           <ButtonLayout
-            :grid-layout="hasGridLayout"
-            @click="toggleLayout()"
+            :grid-layout="hasWalletGridLayout"
+            @click="toggleWalletLayout()"
           />
         </div>
 
@@ -92,7 +92,7 @@
         </div>
 
         <div
-          v-if="hasGridLayout && !isLoading"
+          v-if="hasWalletGridLayout && !isLoading"
           class="WalletAll__grid mt-10 justify-center"
         >
           <div
@@ -145,7 +145,7 @@
         </div>
 
         <div
-          v-else-if="!hasGridLayout && !isLoading"
+          v-else-if="!hasWalletGridLayout && !isLoading"
           class="WalletAll__tabular mt-10"
         >
           <WalletTable
@@ -240,8 +240,8 @@ export default {
       return this.$store.getters['ledger/isConnected']
     },
 
-    hasGridLayout () {
-      return this.$store.getters['session/hasGridLayout']
+    hasWalletGridLayout () {
+      return this.$store.getters['session/hasWalletGridLayout']
     },
 
     sessionLedgerCache: {
@@ -261,14 +261,14 @@ export default {
       }
     },
 
-    sessionLayout: {
+    walletLayout: {
       get () {
-        return this.$store.getters['session/layout']
+        return this.$store.getters['session/walletLayout']
       },
       set (layout) {
-        this.$store.dispatch('session/setLayout', layout)
+        this.$store.dispatch('session/setWalletLayout', layout)
         const profile = clone(this.session_profile)
-        profile.layout = layout
+        profile.walletLayout = layout
         this.$store.dispatch('profile/update', profile)
       }
     },
@@ -323,8 +323,8 @@ export default {
       })
     },
 
-    toggleLayout () {
-      this.sessionLayout = this.sessionLayout === 'grid' ? 'tabular' : 'grid'
+    toggleWalletLayout () {
+      this.walletLayout = this.walletLayout === 'grid' ? 'tabular' : 'grid'
     },
 
     setLedgerCache (enabled) {
