@@ -1,12 +1,14 @@
 
 <template>
-  <span class="flex items-center">
-    <span v-if="!type">
+  <span class="WalletAddress flex items-center">
+    <span
+      v-if="!type"
+      v-tooltip="{
+        content: address,
+        container: tooltipContainer
+      }"
+    >
       <a
-        v-tooltip="{
-          content: address,
-          container: tooltipContainer
-        }"
         href="#"
         @click.stop="openAddress"
       >
@@ -19,12 +21,14 @@
     <span v-else-if="type === 2">
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
-    <span v-else-if="type === 3">
+    <span
+      v-else-if="type === 3"
+      v-tooltip="{
+        content: votedDelegateAddress,
+        container: tooltipContainer
+      }"
+    >
       <a
-        v-tooltip="{
-          content: votedDelegateAddress,
-          container: tooltipContainer
-        }"
         :class="[isUnvote ? 'text-red' : 'text-green']"
         href="#"
         @click.stop="openAddress"
@@ -161,3 +165,9 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.WalletAddress > span {
+  @apply truncate
+}
+</style>

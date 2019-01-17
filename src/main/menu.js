@@ -1,4 +1,4 @@
-const { app, Menu, shell } = require('electron')
+const { Menu, shell } = require('electron')
 const { APP } = require('../../config')
 const aboutWindow = require('about-window').default
 const path = require('path')
@@ -82,7 +82,7 @@ const template = [
 if (process.platform === 'darwin') {
   // File menu
   template[0] = {
-    label: app.getName(),
+    label: packageJson.build.productName,
     submenu: [
       about,
       { type: 'separator' },
