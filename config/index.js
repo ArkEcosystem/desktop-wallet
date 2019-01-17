@@ -112,7 +112,3 @@ exports.V1 = {
     0 * 1e8 // Delegate resignation (not supported yet)
   ]
 }
-
-exports.EXCHANGE = {
-  changellyId: 'bab9de3731aa'
-}
