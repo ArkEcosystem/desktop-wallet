@@ -54,6 +54,10 @@
   @apply .text-theme-page-text
 }
 
+.vgt-table th.not-sortable:hover {
+  @apply .text-theme-page-text-light .cursor-default;
+}
+
 .vgt-table th.sorting-asc:after {
   @apply .inline-block .ml-1;
   background: url('../assets/images/arrows/sort-asc.svg') no-repeat;
