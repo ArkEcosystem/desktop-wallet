@@ -1,7 +1,7 @@
 export default function truncate (value, limit = 10) {
-  if (value.length <= limit) {
+  if (value && value.length <= limit) {
     return value
   }
 
-  return `${value.slice(0, limit)}…`
+  return value ? `${value.slice(0, limit)}…` : value
 }
