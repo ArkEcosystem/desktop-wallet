@@ -60,9 +60,21 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'delete'"
+          v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
+          <span>
+            <button
+              class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
+              @click="renameRow(data.row)"
+            >
+              <SvgIcon
+                name="name"
+                view-box="0 0 16 16"
+              />
+            </button>
+          </span>
+
           <span
             v-tooltip="{
               content: data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : '',
@@ -146,10 +158,11 @@ export default {
           tdClass: 'font-bold whitespace-no-wrap'
         },
         {
-          label: this.$t('PAGES.WALLET_ALL.DELETE'),
-          field: 'delete',
+          label: this.$t('WALLET_TABLE.ACTIONS'),
+          field: 'actions',
           sortable: false,
-          thClass: 'text-center not-sortable'
+          thClass: 'text-center not-sortable',
+          tdClass: 'text-center'
         }
       ]
 
@@ -176,6 +189,10 @@ export default {
       this.$emit('remove-row', row)
     },
 
+    renameRow (row) {
+      this.$emit('rename-row', row)
+    },
+
     sortByName (x, y, col, rowX, rowY) {
       const one = this.wallet_name(rowX.address) || ''
       const two = this.wallet_name(rowY.address) || ''
@@ -192,7 +209,7 @@ export default {
     },
 
     onCellClick ({ row, column }) {
-      if (column.field !== 'delete') {
+      if (column.field !== 'actions') {
         this.$router.push({ name: 'wallet-show', params: { address: row.address } })
       }
     }

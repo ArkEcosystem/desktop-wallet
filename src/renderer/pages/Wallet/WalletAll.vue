@@ -157,6 +157,7 @@
             :sort-query="sortParams"
             :no-data-message="$t('TABLE.NO_WALLETS')"
             @remove-row="onRemoveWallet"
+            @rename-row="onRenameWallet"
           />
         </div>
       </div>
@@ -168,6 +169,13 @@
       @cancel="hideRemovalConfirmation"
       @removed="removeWallet(walletToRemove)"
     />
+
+    <WalletRenameModal
+      v-if="walletToRename"
+      :wallet="walletToRename"
+      @cancel="hideRenameModal"
+      @renamed="hideRenameModal(walletToRename)"
+    />
   </div>
 </template>
 
@@ -175,7 +183,7 @@
 import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
-import { WalletIdenticon, WalletRemovalConfirmation, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
+import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -189,6 +197,7 @@ export default {
     Loader,
     WalletIdenticon,
     WalletRemovalConfirmation,
+    WalletRenameModal,
     WalletButtonCreate,
     WalletButtonImport,
     WalletTable,
@@ -198,6 +207,7 @@ export default {
   data: () => ({
     selectableWallets: [],
     walletToRemove: null,
+    walletToRename: null,
     isLoading: false,
     sortParams: {
       field: 'balance',
@@ -303,6 +313,10 @@ export default {
       this.walletToRemove = null
     },
 
+    hideRenameModal () {
+      this.walletToRename = null
+    },
+
     async refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
       this.selectableWallets = [...ledgerWallets, ...this.wallets]
@@ -314,6 +328,10 @@ export default {
 
     openRemovalConfirmation (wallet) {
       this.walletToRemove = wallet
+    },
+
+    openRenameModal (wallet) {
+      this.walletToRename = wallet
     },
 
     removeWallet (wallet) {
@@ -333,6 +351,10 @@ export default {
 
     onRemoveWallet (wallet) {
       this.openRemovalConfirmation(wallet)
+    },
+
+    onRenameWallet (wallet) {
+      this.openRenameModal(wallet)
     }
   }
 }
