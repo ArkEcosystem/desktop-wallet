@@ -238,7 +238,7 @@ export default {
         const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
 
         if (walletVote) {
-          this.votedDelegate = await this.$client.fetchDelegate(walletVote)
+          this.votedDelegate = this.$store.getters['delegate/byPublicKey'](walletVote)
           this.walletVote.publicKey = walletVote
         } else {
           this.votedDelegate = null
