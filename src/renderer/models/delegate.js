@@ -11,6 +11,24 @@ export default new BaseModel({
     },
     publicKey: {
       type: 'string'
+    },
+    voteWeight: {
+      type: 'number'
+    },
+    producedBlocks: {
+      type: 'integer'
+    },
+    missedBlocks: {
+      type: 'integer'
+    },
+    rank: {
+      type: 'integer'
+    },
+    productivity: {
+      type: 'number'
+    },
+    approval: {
+      type: 'number'
     }
   }
 })

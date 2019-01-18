@@ -68,6 +68,37 @@ export default {
           page,
           limit
         })
+        delegateResponse.delegates = delegateResponse.delegates.map((delegate) => {
+          let delegateMapping = {
+            username: delegate.username,
+            address: delegate.address,
+            publicKey: delegate.publicKey
+          }
+
+          if (this._vm.$client.version === 2) {
+            delegateMapping = {
+              ...delegateMapping,
+              voteWeight: delegate.votes,
+              producedBlocks: delegate.blocks.produced,
+              missedBlocks: delegate.blocks.missed,
+              rank: delegate.rank,
+              approval: delegate.production.approval,
+              productivity: delegate.production.productivity
+            }
+          } else {
+            delegateMapping = {
+              ...delegateMapping,
+              voteWeight: delegate.vote,
+              producedBlocks: delegate.producedblocks,
+              missedBlocks: delegate.missedblocks,
+              rank: delegate.rate,
+              approval: delegate.approval,
+              productivity: delegate.productivity
+            }
+          }
+
+          return delegateMapping
+        })
         delegates.push(...delegateResponse.delegates)
         totalCount = delegateResponse.totalCount
         page++
