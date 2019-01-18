@@ -25,7 +25,7 @@ export default {
         return false
       }
 
-      return state.delegates[network.id][address]
+      return state.delegates[network.id][address] || false
     },
 
     byPublicKey: (state, _, __, rootGetters) => publicKey => {
