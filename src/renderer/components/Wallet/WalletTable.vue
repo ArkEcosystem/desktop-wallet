@@ -32,13 +32,25 @@
 
         <div
           v-else-if="data.column.field === 'name'"
+          class="flex"
         >
-          <span class="flex items-center whitespace-no-wrap">
-            {{ walletName(data.row) | truncate(30) }}
+          <span
+            class="flex items-center whitespace-no-wrap"
+            :class="{ 'text-theme-page-text-light': !data.row.name }"
+          >
+            <span
+              v-tooltip="{
+                content: !data.row.name ? $t('WALLET_TABLE.NETWORK_NAME') : '',
+                placement: 'right'
+              }"
+              class="pr-1"
+            >
+              {{ walletName(data.row) | truncate(30) }}
+            </span>
             <span
               v-if="data.row.isLedger"
               class="WalletTable__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none"
-              :class="{ 'ml-3': walletName(data.row) }"
+              :class="{ 'ml-2': walletName(data.row) }"
             >
               {{ $t('WALLET_TABLE.LEDGER') }}
             </span>

@@ -872,6 +872,7 @@ export default {
 
   WALLET_TABLE: {
     LEDGER: 'Ledger',
+    NETWORK_NAME: 'This name is provided by the network',
     NO_DELETE: 'Ledger wallets cannot be deleted',
     ACTIONS: 'Actions'
   }
