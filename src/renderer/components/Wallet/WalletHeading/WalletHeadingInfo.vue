@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center">
-    <div class="absolute pin-t pin-l h-40 w-48">
+    <div class="absolute pin-t pin-l h-40 w-40">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         :width="160"
