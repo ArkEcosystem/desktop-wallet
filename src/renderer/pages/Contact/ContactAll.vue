@@ -6,7 +6,7 @@
 
         <div class="flex items-center">
           <button
-            v-if="!hasGridLayout"
+            v-if="!hasWalletGridLayout"
             class="ContactAll__CreateButton"
             @click="createContact"
           >
@@ -24,8 +24,8 @@
           </button>
 
           <ButtonLayout
-            :grid-layout="hasGridLayout"
-            @click="toggleLayout()"
+            :grid-layout="hasWalletGridLayout"
+            @click="toggleWalletLayout()"
           />
         </div>
       </div>
@@ -40,7 +40,7 @@
       </div>
 
       <div
-        v-if="hasGridLayout && !isLoading"
+        v-if="hasWalletGridLayout && !isLoading"
       >
         <div class="ContactAll__grid mt-10 justify-center">
           <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
@@ -102,7 +102,7 @@
       </div>
 
       <div
-        v-else-if="!hasGridLayout && !isLoading"
+        v-else-if="!hasWalletGridLayout && !isLoading"
         class="ContactAll__tabular mt-10"
       >
         <WalletTable
@@ -115,6 +115,7 @@
           :sort-query="sortParams"
           :no-data-message="$t('TABLE.NO_CONTACTS')"
           @remove-row="onRemoveContact"
+          @rename-row="onRenameContact"
         />
       </div>
     </div>
@@ -125,6 +126,13 @@
       @cancel="hideRemovalConfirmation"
       @removed="removeContact(contactToRemove)"
     />
+
+    <WalletRenameModal
+      v-if="contactToRename"
+      :wallet="contactToRename"
+      @cancel="hideRenameModal"
+      @renamed="hideRenameModal(contactToRename)"
+    />
   </div>
 </template>
 
@@ -133,7 +141,7 @@ import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation } from '@/components/Contact'
-import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
+import { WalletIdenticon, WalletIdenticonPlaceholder, WalletRenameModal } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -144,6 +152,7 @@ export default {
     ButtonLayout,
     Loader,
     ContactRemovalConfirmation,
+    WalletRenameModal,
     WalletIdenticon,
     WalletIdenticonPlaceholder,
     WalletTable,
@@ -153,6 +162,7 @@ export default {
   data: () => ({
     selectableContacts: [],
     contactToRemove: null,
+    contactToRename: null,
     isLoading: false,
     sortParams: {
       field: 'name',
@@ -166,18 +176,18 @@ export default {
       return sortBy(contacts, ['name', 'address'])
     },
 
-    hasGridLayout () {
-      return this.$store.getters['session/hasGridLayout']
+    hasWalletGridLayout () {
+      return this.$store.getters['session/hasWalletGridLayout']
     },
 
-    sessionLayout: {
+    walletLayout: {
       get () {
-        return this.$store.getters['session/layout']
+        return this.$store.getters['session/walletLayout']
       },
       set (layout) {
-        this.$store.dispatch('session/setLayout', layout)
+        this.$store.dispatch('session/setWalletLayout', layout)
         const profile = clone(this.session_profile)
-        profile.layout = layout
+        profile.walletLayout = layout
         this.$store.dispatch('profile/update', profile)
       }
     },
@@ -206,8 +216,16 @@ export default {
       this.contactToRemove = null
     },
 
+    hideRenameModal () {
+      this.contactToRename = null
+    },
+
     openRemovalConfirmation (contact) {
       this.contactToRemove = contact
+    },
+
+    openRenameModal (contact) {
+      this.contactToRename = contact
     },
 
     removeContact (contact) {
@@ -217,12 +235,16 @@ export default {
       })
     },
 
-    toggleLayout () {
-      this.sessionLayout = this.sessionLayout === 'grid' ? 'tabular' : 'grid'
+    toggleWalletLayout () {
+      this.walletLayout = this.walletLayout === 'grid' ? 'tabular' : 'grid'
     },
 
     onRemoveContact (contact) {
       this.openRemovalConfirmation(contact)
+    },
+
+    onRenameContact (contact) {
+      this.openRenameModal(contact)
     },
 
     createContact () {
