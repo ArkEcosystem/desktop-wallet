@@ -37,8 +37,8 @@ describe('delegate store module', () => {
     expect(store.getters['delegate/byAddress']('AKdr5d9AMEnsKYxpDcoHdyyjSCKVx3r9Nj')).toEqual(delegate1)
   })
 
-  it('should return false when no address is given', () => {
-    expect(store.getters['delegate/byAddress']()).toBe(false)
+  it('should return false when delegate with address does not exist', () => {
+    expect(store.getters['delegate/byAddress']('wrong address')).toBe(false)
   })
 
   it('should get a single delegate by its public key', () => {
