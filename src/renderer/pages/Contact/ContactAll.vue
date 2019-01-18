@@ -127,7 +127,7 @@
       @removed="removeContact(contactToRemove)"
     />
 
-    <WalletRenameModal
+    <ContactRenameModal
       v-if="contactToRename"
       :wallet="contactToRename"
       @cancel="hideRenameModal"
@@ -140,8 +140,8 @@
 import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
-import { ContactRemovalConfirmation } from '@/components/Contact'
-import { WalletIdenticon, WalletIdenticonPlaceholder, WalletRenameModal } from '@/components/Wallet'
+import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
+import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -152,7 +152,7 @@ export default {
     ButtonLayout,
     Loader,
     ContactRemovalConfirmation,
-    WalletRenameModal,
+    ContactRenameModal,
     WalletIdenticon,
     WalletIdenticonPlaceholder,
     WalletTable,
