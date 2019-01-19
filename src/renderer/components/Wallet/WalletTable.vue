@@ -206,8 +206,16 @@ export default {
     },
 
     sortByName (x, y, col, rowX, rowY) {
-      const one = this.wallet_name(rowX.address) || ''
-      const two = this.wallet_name(rowY.address) || ''
+      let one = this.wallet_name(rowX.address) || ''
+      let two = this.wallet_name(rowY.address) || ''
+
+      if (!isNaN(one)) {
+        one = one.padStart(10, 0)
+      }
+
+      if (!isNaN(two)) {
+        two = two.padStart(10, 0)
+      }
 
       return (one < two ? -1 : one > two ? 1 : 0)
     },
