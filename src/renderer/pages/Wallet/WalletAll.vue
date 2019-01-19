@@ -180,7 +180,7 @@
 </template>
 
 <script>
-import { clone, some, sortBy } from 'lodash'
+import { clone, some, sortBy, uniqBy } from 'lodash'
 import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
@@ -319,7 +319,10 @@ export default {
 
     async refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+      this.selectableWallets = uniqBy([
+        ...ledgerWallets,
+        ...this.wallets
+      ], 'address')
     },
 
     ledgerDisconnected () {

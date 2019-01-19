@@ -105,6 +105,7 @@
 </template>
 
 <script>
+import { uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
@@ -187,7 +188,10 @@ export default {
 
     refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+      this.selectableWallets = uniqBy([
+        ...ledgerWallets,
+        ...this.wallets
+      ], 'address')
     },
 
     ledgerDisconnected () {
