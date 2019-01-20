@@ -124,7 +124,7 @@
               <div class="flex flex-col justify-center overflow-hidden pl-4">
                 <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
                   <RouterLink :to="{ name: 'wallet-show', params: { address: wallet.id } }">
-                    {{ wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                    {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
                   </RouterLink>
                 </div>
                 <span class="font-bold mt-2 text-lg">
