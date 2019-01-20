@@ -65,37 +65,39 @@
           <div
             v-for="contact in selectableContacts"
             :key="contact.id"
-            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3"
+            @click="showContact(contact.id)"
           >
-            <div class="flex flex-row items-center">
-              <RouterLink
-                :to="{ name: 'wallet-show', params: { address: contact.id } }"
-                class="flex flex-row"
-              >
-                <WalletIdenticon
-                  :value="contact.address"
-                  :size="60"
-                  class="identicon cursor-pointer"
-                />
-              </RouterLink>
-              <div class="flex flex-col justify-center overflow-hidden pl-4">
-                <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
-                  <RouterLink :to="{ name: 'wallet-show', params: { address: contact.id } }">
-                    {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
-                  </RouterLink>
+            <div class="ContactAll__grid__contact__wrapper">
+              <div class="flex flex-col">
+                <div class="flex items-center">
+                  <WalletIdenticon
+                    :value="contact.address"
+                    :size="60"
+                    class="identicon cursor-pointer"
+                  />
+
+                  <div class="flex flex-col justify-center overflow-hidden pl-4">
+                    <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
+                      <span>
+                        {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
+                      </span>
+                    </div>
+                    <span class="font-bold mt-2 text-lg">
+                      {{ formatter_networkCurrency(contact.balance, 2) }}
+                    </span>
+                  </div>
                 </div>
-                <span class="font-bold mt-2 text-lg">
-                  {{ formatter_networkCurrency(contact.balance, 2) }}
-                </span>
+
+                <div class="flex flex-row w-full justify-end">
+                  <button
+                    class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
+                    @click.stop="openRemovalConfirmation(contact)"
+                  >
+                    {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row w-full justify-end">
-              <button
-                class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
-                @click="openRemovalConfirmation(contact)"
-              >
-                {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
-              </button>
             </div>
           </div>
         </div>
@@ -249,6 +251,10 @@ export default {
 
     createContact () {
       this.$router.push({ name: 'contact-new' })
+    },
+
+    showContact (contactId) {
+      this.$router.push({ name: 'wallet-show', params: { address: contactId } })
     }
   }
 }
@@ -263,8 +269,8 @@ export default {
   grid-template-columns: repeat(auto-fill, calc(var(--contact-identicon-lg) * 3));
   grid-gap: 1rem;
 }
-.ContactAll__grid__contact {
-  @apply .p-6
+.ContactAll__grid__contact__wrapper {
+  @apply .m-6;
 }
 .ContactAll__grid__contact:hover .identicon {
   transition: 0.5s;
@@ -272,6 +278,9 @@ export default {
 }
 .ContactAll__grid__contact .identicon {
   transition: 0.5s;
+}
+.ContactAll__grid__contact__name {
+  color: #037cff;
 }
 .ContactAll__CreateButton {
   transition: all .1s ease-in;
@@ -289,8 +298,8 @@ export default {
   @apply .text-white;
 }
 @screen lg {
-  .ContactAll__grid__contact {
-    @apply .p-4
+  .ContactAll__grid__contact__wrapper {
+    @apply .m-4
   }
 }
 </style>
