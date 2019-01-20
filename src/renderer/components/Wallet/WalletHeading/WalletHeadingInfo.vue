@@ -28,7 +28,7 @@
     <div class="flex flex-col justify-center text-white antialiased pl-4">
       <div
         v-if="name"
-        class="flex flex-row text-lg font-semibold text-theme-feature-item-text"
+        class="flex flex-row text-lg font-semibold text-theme-heading-text"
       >
         <span class="block xl:hidden">
           {{ name | truncate(12) }}
@@ -93,7 +93,7 @@
         {{ balance }}
         <span
           v-if="isMarketEnabled"
-          class="WalletHeading__balance__alternative text-xs text-theme-feature-item-text"
+          class="WalletHeading__balance__alternative text-xs text-theme-heading-text"
         >
           {{ alternativeBalance }}
         </span>
