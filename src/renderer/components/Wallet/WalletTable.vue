@@ -40,7 +40,7 @@
           >
             <span
               v-tooltip="{
-                content: !data.row.name ? $t('WALLET_TABLE.NETWORK_NAME') : '',
+                content: !data.row.name ? $t('COMMON.NETWORK_NAME') : '',
                 placement: 'right'
               }"
               class="pr-1"
@@ -52,7 +52,7 @@
               class="WalletTable__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none"
               :class="{ 'ml-2': walletName(data.row) }"
             >
-              {{ $t('WALLET_TABLE.LEDGER') }}
+              {{ $t('COMMON.LEDGER') }}
             </span>
           </span>
         </div>

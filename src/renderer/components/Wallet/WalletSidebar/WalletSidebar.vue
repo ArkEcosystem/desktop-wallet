@@ -99,7 +99,7 @@
               v-if="wallet.isLedger"
               class="WalletSidebar__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none ml-2"
             >
-              {{ isSlim ? $t('WALLET_SIDEBAR.LEDGER').charAt(0) : $t('WALLET_SIDEBAR.LEDGER') }}
+              {{ isSlim ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
             </span>
           </span>
           <span

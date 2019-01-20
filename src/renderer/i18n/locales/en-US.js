@@ -15,7 +15,9 @@ export default {
     FETCH: 'Fetch',
     FINISH: 'Finish',
     LANGUAGE: 'Application Language',
+    LEDGER: 'Ledger',
     NETWORK: 'Network',
+    NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
     NOT: 'not',
     OF: 'of',
@@ -819,8 +821,7 @@ export default {
   },
 
   WALLET_SIDEBAR: {
-    LOADING_LEDGER: 'Loading Ledger...',
-    LEDGER: 'Ledger'
+    LOADING_LEDGER: 'Loading Ledger...'
   },
 
   WALLET_DELEGATES: {
@@ -872,8 +873,6 @@ export default {
   },
 
   WALLET_TABLE: {
-    LEDGER: 'Ledger',
-    NETWORK_NAME: 'This name is provided by the network',
     NO_DELETE: 'Ledger wallets cannot be deleted',
     ACTIONS: 'Actions'
   }

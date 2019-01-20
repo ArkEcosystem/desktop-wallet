@@ -122,7 +122,13 @@
 
                   <div class="flex flex-col justify-center overflow-hidden pl-4">
                     <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
-                      <span>
+                      <span
+                        v-tooltip="{
+                          content: !wallet.name ? $t('COMMON.NETWORK_NAME') : '',
+                          placement: 'right'
+                        }"
+                        class="pr-1"
+                      >
                         {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
                       </span>
                     </div>

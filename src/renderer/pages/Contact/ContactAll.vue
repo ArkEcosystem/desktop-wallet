@@ -79,7 +79,13 @@
 
                   <div class="flex flex-col justify-center overflow-hidden pl-4">
                     <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
-                      <span>
+                      <span
+                        v-tooltip="{
+                          content: !contact.name ? $t('COMMON.NETWORK_NAME') : '',
+                          placement: 'right'
+                        }"
+                        class="pr-1"
+                      >
                         {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
                       </span>
                     </div>
