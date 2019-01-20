@@ -819,7 +819,8 @@ export default {
   },
 
   WALLET_SIDEBAR: {
-    LOADING_LEDGER: 'Loading Ledger...'
+    LOADING_LEDGER: 'Loading Ledger...',
+    LEDGER: 'Ledger'
   },
 
   WALLET_DELEGATES: {

@@ -88,8 +88,19 @@
           }"
           class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
         >
-          <span class="block truncate">
-            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
+          <span
+            class="flex items-center"
+            :class="{ 'justify-center': isSlim }"
+          >
+            <span class="block truncate">
+              {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
+            </span>
+            <span
+              v-if="wallet.isLedger"
+              class="WalletSidebar__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none ml-2"
+            >
+              {{ isSlim ? $t('WALLET_SIDEBAR.LEDGER').charAt(0) : $t('WALLET_SIDEBAR.LEDGER') }}
+            </span>
           </span>
           <span
             v-if="!isSlim"
@@ -231,6 +242,9 @@ export default {
   @apply .mb-2
 }
 
+.WalletSidebar__ledger-badge {
+  opacity: 0.85
+}
 .WalletIdenticon__placeholder {
   filter: opacity(20%)
 }
