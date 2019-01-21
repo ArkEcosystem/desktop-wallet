@@ -306,12 +306,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .AppSidemenuOptionsSettings {
   width: 360px;
   left: 6.5rem;
   bottom: -5rem;
-  transform: translateY(-10%)
+  transform: translateY(-10%);
+}
+
+.AppSidemenuOptionsSettings .MenuOptions--vertical:after {
+  top: 7.8rem;
 }
 
 .AppSidemenuOptionsSettings--horizontal {

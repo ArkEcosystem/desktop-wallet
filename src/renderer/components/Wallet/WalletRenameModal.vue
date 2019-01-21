@@ -13,12 +13,13 @@
       </p>
 
       <InputText
-        v-model="schema.name"
-        :is-invalid="$v.schema.name.$invalid"
+        v-model="$v.schema.name.$model"
+        :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
         :helper-text="nameError"
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
+        @keyup.esc.native="emitCancel"
         @keyup.enter.native="isNewContact ? createWallet() : renameWallet()"
       />
 
@@ -61,9 +62,13 @@ export default {
     }
   },
 
+  data: () => ({
+    originalName: null
+  }),
+
   computed: {
     nameError () {
-      if (this.$v.schema.name.$invalid) {
+      if (this.$v.schema.name.$dirty) {
         if (!this.$v.schema.name.contactDoesNotExist) {
           return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [this.schema.name])
         } else if (!this.$v.schema.name.walletDoesNotExist) {
@@ -88,6 +93,7 @@ export default {
 
   mounted () {
     this.schema.name = this.wallet.name
+    this.originalName = this.wallet.name
   },
 
   methods: {
@@ -146,11 +152,11 @@ export default {
       name: {
         contactDoesNotExist (value) {
           const contact = this.$store.getters['wallet/byName'](value)
-          return value === '' || !(contact && contact.isContact)
+          return value === '' || (this.originalName && value === this.originalName) || !(contact && contact.isContact)
         },
         walletDoesNotExist (value) {
           const wallet = this.$store.getters['wallet/byName'](value)
-          return value === '' || !(wallet && !wallet.isContact)
+          return value === '' || (this.originalName && value === this.originalName) || !(wallet && !wallet.isContact)
         }
       }
     }

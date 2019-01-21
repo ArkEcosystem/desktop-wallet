@@ -27,7 +27,8 @@ export default {
   },
 
   data: () => ({
-    fetchedTransactions: []
+    fetchedTransactions: [],
+    previousWalletAddresses: []
   }),
 
   computed: {
@@ -48,7 +49,19 @@ export default {
   watch: {
     // This watcher would invoke the `fetch` after the `Synchronizer`
     wallets () {
-      this.fetchTransactions()
+      let hasNewWallet = false
+      for (const wallet of this.wallets) {
+        if (!this.previousWalletAddresses.includes(wallet.address)) {
+          hasNewWallet = true
+
+          break
+        }
+      }
+
+      if (hasNewWallet) {
+        this.updatePreviousWallets()
+        this.fetchTransactions(false)
+      }
     }
   },
 
@@ -57,9 +70,13 @@ export default {
   },
 
   methods: {
-    async fetchTransactions () {
+    async fetchTransactions (updatePreviousWallets = true) {
       if (!this.wallets.length) {
         return
+      }
+
+      if (updatePreviousWallets) {
+        this.updatePreviousWallets()
       }
 
       try {
@@ -82,6 +99,10 @@ export default {
           msg: error.message
         }))
       }
+    },
+
+    updatePreviousWallets () {
+      this.previousWalletAddresses = this.wallets.map(wallet => wallet.address)
     }
   }
 }
