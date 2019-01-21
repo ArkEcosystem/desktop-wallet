@@ -4,8 +4,8 @@
       v-bind="$attrs"
       class="WalletAll__table"
       :columns="columns"
-      v-on="$listeners"
       @on-cell-click="onCellClick"
+      @on-sort-change="onSortChange"
     >
       <template
         slot-scope="data"
@@ -212,6 +212,10 @@ export default {
       if (column.field !== 'actions') {
         this.$router.push({ name: 'wallet-show', params: { address: row.address } })
       }
+    },
+
+    onSortChange (sortOptions) {
+      this.$emit('on-sort-change', sortOptions[0])
     }
   }
 }
