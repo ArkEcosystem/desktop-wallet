@@ -397,6 +397,9 @@ export default {
 .WalletAll__grid__wallet__name {
   color: #037cff;
 }
+.WalletAll__grid__wallet__name:hover {
+  @apply .text-blue-dark .underline;
+}
 .WalletAll__grid__wallet .identicon {
   transition: 0.5s;
 }
