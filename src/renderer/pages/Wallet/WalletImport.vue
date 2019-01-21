@@ -13,7 +13,7 @@
           </p>
 
           <img
-            :src="assets_loadImage(`pages/wallet-new/step-${step}.svg`)"
+            :src="assets_loadImage(backgroundImages[step])"
             :title="$t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`)"
             class="w-full xl:w-4/5 mt-10"
           >
@@ -188,16 +188,9 @@ export default {
     showEncryptLoader: false,
     bip38Worker: null,
     backgroundImages: {
-      true: {
-        1: 'pages/wallet-new/background-step-1-dark.png',
-        2: 'pages/wallet-new/background-step-2-dark.png',
-        3: 'pages/wallet-new/background-step-5-dark.png'
-      },
-      false: {
-        1: 'pages/wallet-new/background-step-1.png',
-        2: 'pages/wallet-new/background-step-2.png',
-        3: 'pages/wallet-new/background-step-5.png'
-      }
+      1: 'pages/wallet-new/import-wallet.svg',
+      2: 'pages/wallet-new/encrypt-wallet.svg',
+      3: 'pages/wallet-new/protect-wallet.svg'
     }
   }),
 
