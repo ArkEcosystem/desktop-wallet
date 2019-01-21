@@ -119,10 +119,6 @@ export default {
   },
 
   props: {
-    isContactsTable: {
-      type: Boolean,
-      default: false
-    },
     showVotedDelegates: {
       type: Boolean,
       default: false,
@@ -165,13 +161,6 @@ export default {
           tdClass: 'text-center'
         }
       ]
-
-      if (this.isContactsTable) {
-        const index = columns.findIndex(el => {
-          return el.field === 'balance'
-        })
-        columns.splice(index, 1)
-      }
 
       if (!this.showVotedDelegates) {
         const index = columns.findIndex(el => {
