@@ -138,18 +138,26 @@ export default {
       return secondPublicKey || lazySecondPublicKey
     },
     alternativeBalance () {
-      const balance = this.currentWallet ? this.currentWallet.balance : null
-      const lazyBalance = this.lazyWallet.balance
-      const unitBalance = this.currency_subToUnit(balance || lazyBalance || 0)
+      let balance = this.currentWallet ? this.currentWallet.balance : null
+
+      if (balance === null) {
+        balance = this.lazyWallet.balance || 0
+      }
+
+      const unitBalance = this.currency_subToUnit(balance)
       return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
-      const balance = this.currentWallet ? this.currentWallet.balance : null
-      const lazyBalance = this.lazyWallet.balance
-      return this.formatter_networkCurrency(balance || lazyBalance || 0)
+      let balance = this.currentWallet ? this.currentWallet.balance : null
+
+      if (balance === null) {
+        balance = this.lazyWallet.balance || 0
+      }
+
+      return this.formatter_networkCurrency(balance)
     },
     name () {
       return this.wallet_name(this.currentWallet.address)
