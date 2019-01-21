@@ -20,7 +20,8 @@ exports.ANNOUNCEMENTS = {
 exports.I18N = {
   defaultLocale: 'en-US',
   enabledLocales: [
-    'en-US'
+    'en-US',
+    'it-IT'
   ]
 }
 

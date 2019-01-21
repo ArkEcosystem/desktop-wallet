@@ -151,6 +151,7 @@ export default {
   LANGUAGES: {
     'en-US': 'English',
     'es-ES': 'Spanish',
+    'it-IT': 'Italian',
     'pt-BR': 'Portugues - Brazil'
   },
 
