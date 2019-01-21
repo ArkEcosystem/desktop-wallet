@@ -1,22 +1,26 @@
 <template>
-  <div class="WalletImport relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-col sm:flex-row h-full">
+  <div class="WalletImport relative">
+    <main class="flex h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="WalletImport__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
+        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
-          <h3 class="mb-2 text-theme-page-instructions-text">
+        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+          <h1 class="text-inherit">
             {{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`) }}
-          </h3>
-
-          <p>
+          </h1>
+          <p class="text-center py-2 leading-normal">
             {{ $t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.TEXT`) }}
           </p>
+
+          <img
+            :src="assets_loadImage(`pages/wallet-new/step-${step}.svg`)"
+            :title="$t(`PAGES.WALLET_IMPORT.STEP${step}.INSTRUCTIONS.HEADER`)"
+            class="w-full xl:w-4/5 mt-10"
+          >
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
+      <div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto p-10">
         <MenuStep
           :step="step"
         >
