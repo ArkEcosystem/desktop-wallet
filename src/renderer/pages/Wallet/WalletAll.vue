@@ -124,7 +124,7 @@
                     <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
                       <span
                         v-tooltip="{
-                          content: !wallet.name ? $t('COMMON.NETWORK_NAME') : '',
+                          content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
                           placement: 'right'
                         }"
                         class="pr-1"

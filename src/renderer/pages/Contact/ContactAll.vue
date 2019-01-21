@@ -89,7 +89,7 @@
                     <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
                       <span
                         v-tooltip="{
-                          content: !contact.name ? $t('COMMON.NETWORK_NAME') : '',
+                          content: !contact.name && wallet_name(contact.address) ? $t('COMMON.NETWORK_NAME') : '',
                           placement: 'right'
                         }"
                         class="pr-1"
