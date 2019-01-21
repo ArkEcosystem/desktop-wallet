@@ -78,17 +78,28 @@
                 v-for="(passphrase, address, index) in wallets"
                 :key="address"
                 :class="[
-                  schema.address === address ? 'WalletNew__wallets--selected' : 'WalletNew__wallets--unselected',
+                  isSelected(address) ? 'WalletNew__wallets--selected' : 'WalletNew__wallets--unselected',
                   index !== Object.keys(wallets).length - 1 ? 'border-b border-dashed border-theme-line-separator' : ''
                 ]"
                 class="flex items-center py-4 w-full truncate cursor-pointer"
                 @click="selectWallet(address, passphrase)"
               >
-                <WalletIdenticon
-                  :value="address"
-                  :size="35"
-                  class="flex-no-shrink identicon"
-                />
+                <div class="relative">
+                  <WalletIdenticon
+                    :value="address"
+                    :size="35"
+                    class="flex-no-shrink identicon"
+                  />
+                  <span
+                    v-if="isSelected(address)"
+                    class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-5 h-5 bg-green border-2 border-theme-feature text-white"
+                  >
+                    <SvgIcon
+                      name="checkmark"
+                      view-box="0 0 10 9"
+                    />
+                  </span>
+                </div>
                 <span class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 flex-no-shrink font-semibold text-sm">
                   {{ address }}
                 </span>
@@ -257,6 +268,7 @@ import { InputField, InputPassword, InputSwitch, InputText } from '@/components/
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
+import { SvgIcon } from '@/components/SvgIcon'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
@@ -276,6 +288,7 @@ export default {
     ModalLoader,
     PassphraseVerification,
     PassphraseWords,
+    SvgIcon,
     WalletIdenticon
   },
 
@@ -446,6 +459,10 @@ export default {
 
         this.isRefreshing = false
       }, 300)
+    },
+
+    isSelected (address) {
+      return this.schema.address === address
     }
   },
 
@@ -563,5 +580,10 @@ export default {
   @apply .bg-blue .text-white;
   box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
   transition: all .1s ease-in
+}
+
+.WalletNew_wallets__check {
+  left: 42%;
+  top: 52%;
 }
 </style>
