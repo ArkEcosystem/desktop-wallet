@@ -43,21 +43,29 @@
         v-if="hasWalletGridLayout && !isLoading"
       >
         <div class="ContactAll__grid mt-10 justify-center">
-          <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
-            <div class="flex flex-row items-center">
-              <RouterLink :to="{ name: 'contact-new' }">
-                <WalletIdenticonPlaceholder
-                  :size="60"
-                  class="identicon opacity-50"
-                />
-              </RouterLink>
-              <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
-                <RouterLink :to="{ name: 'contact-new' }">
-                  {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-                </RouterLink>
-                <span class="font-bold mt-2 opacity-50 text-lg">
-                  {{ formatter_networkCurrency(0, 2) }}
-                </span>
+          <div
+            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3"
+            @click="createContact"
+          >
+            <div class="ContactAll__grid__contact__wrapper">
+              <div class="flex flex-col">
+                <div class="flex items-center">
+                  <WalletIdenticonPlaceholder
+                    :size="60"
+                    class="identicon identicon-placeholder cursor-pointer opacity-50"
+                  />
+
+                  <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
+                    <div class="ContactAll__grid__contact__name font-semibold text-base block">
+                      <span>
+                        {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
+                      </span>
+                    </div>
+                    <span class="font-bold mt-2 opacity-50 text-lg">
+                      {{ formatter_networkCurrency(0, 2) }}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -281,6 +289,9 @@ export default {
 .ContactAll__grid__contact:hover .identicon {
   transition: 0.5s;
   opacity: 0.5;
+}
+.ContactAll__grid__contact:hover .identicon-placeholder {
+  opacity: 0.25;
 }
 .ContactAll__grid__contact .identicon {
   transition: 0.5s;
