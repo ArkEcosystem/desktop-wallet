@@ -1,27 +1,46 @@
 <template>
-  <div class="ContactAll relative bg-theme-feature rounded-lg m-r-4 p-10">
-    <div class="block h-full">
-      <div class="ContactAll__header">
-        <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
+  <div class="ContactAll flex flex-col">
+    <div class="ContactAll__header flex flex-row space-between bg-theme-feature rounded-lg px-10 py-2 mb-3">
+      <div>
+        <WalletIdenticonPlaceholder
+          :size="60"
+          class="identicon opacity-50"
+        />
+        <span
+          class="rounded-full flex items-center justify-center absolute ml-8 -mt-8 w-8 h-8 bg-theme-feature text-theme-page-text-light"
+        >
+          i
+        </span>
+      </div>
 
-        <div class="flex items-center">
-          <button
-            v-if="!hasWalletGridLayout"
-            class="ContactAll__CreateButton"
-            @click="createContact"
-          >
-            <span class="ContactAll__CreateButton__icon">
-              <SvgIcon
-                name="plus"
-                view-box="0 0 9 9"
-                class="text-center"
-              />
-            </span>
+      <div class="ml-8 p-2 hidden md:flex">
+        {{ $t('PAGES.CONTACT_ALL.INSTRUCTIONS') }}
+      </div>
 
-            <span class="flex items-center h-10 px-4">
-              {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-            </span>
-          </button>
+      <button
+        class="ContactAll__CreateButton justify-end"
+        @click="createContact"
+      >
+        <span class="ContactAll__CreateButton__icon">
+          <SvgIcon
+            name="plus"
+            view-box="0 0 9 9"
+            class="text-center"
+          />
+        </span>
+
+        <span class="flex items-center h-10 px-4 whitespace-no-wrap">
+          {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
+        </span>
+      </button>
+    </div>
+
+    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10">
+      <div class="block w-full">
+        <div class="flex items-center justify-between h-8">
+          <h3 class=" items-center">
+            {{ $t('PAGES.CONTACT_ALL.HEADER') }}
+          </h3>
 
           <ButtonLayout
             :grid-layout="hasWalletGridLayout"
@@ -43,33 +62,6 @@
         v-if="hasWalletGridLayout && !isLoading"
       >
         <div class="ContactAll__grid mt-10 justify-center">
-          <div
-            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3"
-            @click="createContact"
-          >
-            <div class="ContactAll__grid__contact__wrapper">
-              <div class="flex flex-col">
-                <div class="flex items-center">
-                  <WalletIdenticonPlaceholder
-                    :size="60"
-                    class="identicon identicon-placeholder cursor-pointer opacity-50"
-                  />
-
-                  <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
-                    <div class="ContactAll__grid__contact__name font-semibold text-base block">
-                      <span>
-                        {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-                      </span>
-                    </div>
-                    <span class="font-bold mt-2 opacity-50 text-lg">
-                      {{ formatter_networkCurrency(0, 2) }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div
             v-for="contact in selectableContacts"
             :key="contact.id"
@@ -293,7 +285,7 @@ export default {
 
 <style lang="postcss" scoped>
 .ContactAll__header {
-  @apply .flex .items-center .justify-between .h-8;
+  @apply .flex .items-center .justify-between;
 }
 .ContactAll__grid {
   display: grid;
@@ -318,7 +310,7 @@ export default {
 }
 .ContactAll__CreateButton {
   transition: all .1s ease-in;
-  @apply .flex .items-center .mx-auto .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-option-button-text .mr-6;
+  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-12;
 }
 .ContactAll__CreateButton:hover {
   @apply .bg-blue .text-white;
