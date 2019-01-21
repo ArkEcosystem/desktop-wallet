@@ -75,10 +75,13 @@
               tag="ul"
             >
               <li
-                v-for="(passphrase, address) in wallets"
+                v-for="(passphrase, address, index) in wallets"
                 :key="address"
-                :class="schema.address === address ? 'WalletNew__wallets--selected' : 'WalletNew__wallets--unselected'"
-                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate cursor-pointer"
+                :class="[
+                  schema.address === address ? 'WalletNew__wallets--selected' : 'WalletNew__wallets--unselected',
+                  index !== Object.keys(wallets).length - 1 ? 'border-b border-dashed border-theme-line-separator' : ''
+                ]"
+                class="flex items-center py-4 w-full truncate cursor-pointer"
                 @click="selectWallet(address, passphrase)"
               >
                 <WalletIdenticon
