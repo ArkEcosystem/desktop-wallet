@@ -1,6 +1,7 @@
 <template>
   <div class="AnnouncementsPost flex flex-col md:flex-row items-top relative">
     <button
+      v-show="!isRead"
       class="AnnouncementsPost__close absolute pin-t pin-r transition"
       :disabled="isRead"
       @click="emitRead"
