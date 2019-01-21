@@ -70,29 +70,25 @@
             </div>
 
             <TransitionGroup
-              class="list-reset"
+              class="WalletNew__wallets list-reset"
               name="WalletNew__wallets"
               tag="ul"
             >
               <li
                 v-for="(passphrase, address) in wallets"
                 :key="address"
-                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate"
+                :class="schema.address === address ? 'WalletNew__wallets--selected' : 'WalletNew__wallets--unselected'"
+                class="flex items-center py-4 w-full border-b border-dashed border-theme-line-separator truncate cursor-pointer"
+                @click="selectWallet(address, passphrase)"
               >
                 <WalletIdenticon
                   :value="address"
                   :size="35"
-                  class="flex-no-shrink"
+                  class="flex-no-shrink identicon"
                 />
-                <a
-                  :class="{ 'WalletNew__wallets--selected': schema.address === address }"
-                  class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 cursor-pointer flex-no-shrink"
-                  @click="selectWallet(address, passphrase)"
-                >
-                  <span class="font-semibold text-sm">
-                    {{ address }}
-                  </span>
-                </a>
+                <span class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 flex-no-shrink font-semibold text-sm">
+                  {{ address }}
+                </span>
               </li>
             </TransitionGroup>
           </MenuStepItem>
@@ -533,16 +529,27 @@ export default {
   opacity: 0
 }
 
-.WalletNew__wallets--selected {
-  @apply .text-theme-wallet-new-selected .font-bold
-}
-
-.WalletNew__wallets--address {
+.WalletNew__wallets .identicon {
+  font-size: 0;
+  opacity: 0.5;
   transition: all 0.5s;
 }
-.WalletNew__wallets--address:hover {
+.WalletNew__wallets--unselected:hover .identicon {
+  opacity: 1;
+}
+.WalletNew__wallets--unselected:hover .WalletNew__wallets--address {
   transition: all 0.5s;
   @apply .text-theme-wallet-new-selected .no-underline
+}
+
+.WalletNew__wallets--selected .identicon {
+  opacity: 1;
+}
+.WalletNew__wallets--selected .WalletNew__wallets--address {
+  @apply .text-theme-wallet-new-selected;
+}
+.WalletNew__wallets--address {
+  transition: all 0.5s;
 }
 
 .WalletNew__ButtonReload-colorClass {
