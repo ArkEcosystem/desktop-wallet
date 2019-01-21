@@ -2,6 +2,7 @@
 
 import { app, BrowserWindow, screen } from 'electron'
 import winState from 'electron-window-state'
+import packageJson from '../../package.json'
 
 // It is necessary to require `electron-log` here to use it on the renderer process
 require('electron-log')
@@ -49,6 +50,11 @@ function createWindow () {
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
+    const name = packageJson.build.productName
+    const version = app.getVersion()
+    const windowTitle = `${name} ${version}`
+    mainWindow.setTitle(windowTitle)
+
     broadcastURL(deeplinkingUrl)
   })
 

@@ -1,35 +1,35 @@
 export default {
   COMMON: {
-    APP_NAME: 'ARK Desktop Wallet',
     ALL: 'All',
+    APP_NAME: 'ARK Desktop Wallet',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
+    BACKGROUND: 'Background',
     BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
-    DONE: 'Done',
-    FINISH: 'Finish',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
+    DATE: 'Date',
+    DONE: 'Done',
+    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
+    FETCH: 'Fetch',
+    FINISH: 'Finish',
     LANGUAGE: 'Application Language',
     NETWORK: 'Network',
-    PREV: 'Prev',
     NEXT: 'Next',
-    OF: 'of',
     NOT: 'not',
-    WILL: 'will',
-    PROFILE_NAME: 'Profile name',
-    SAVE: 'Save',
-    SELECT_BACKGROUND: 'Select background',
-    SELECT_THEME: 'Select wallet theme',
-    START: 'Start',
-    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
-    DATE: 'Date',
-    WARNING: 'Warning',
-    FETCH: 'Fetch',
-    REMOVE: 'Remove',
+    OF: 'of',
     OTHER: 'Other',
+    PREV: 'Prev',
+    PROFILE_NAME: 'Profile name',
+    REMOVE: 'Remove',
+    SAVE: 'Save',
+    START: 'Start',
+    THEME: 'Theme',
+    TIME_FORMAT: 'Time format',
     VERIFIED_ADDRESS: 'This is a verified address',
-    TIME_FORMAT: 'Time format'
+    WARNING: 'Warning',
+    WILL: 'will'
   },
 
   ANNOUNCEMENTS: {
@@ -126,6 +126,8 @@ export default {
     NO_SCHEME: 'The \'{0}\' does not have \'http://\' or \'https://\'',
     NAME: {
       DUPLICATED: 'The name \'{0}\' already exists',
+      EXISTS_AS_CONTACT: 'The name \'{0}\' has already been assigned to a contact',
+      EXISTS_AS_WALLET: 'The name \'{0}\' has already been assigned to a wallet',
       MAX_LENGTH: 'The name should have less than {0} characters.',
       MIN_LENGTH: 'The name should have at least 1 character | The name should have at least {n} characters.'
     },
@@ -136,7 +138,8 @@ export default {
       NO_MATCH: 'Your passwords do not match'
     },
     ADDRESS: {
-      DUPLICATED: 'The wallet address \'{0}\' already exists'
+      EXISTS_AS_CONTACT: 'The address \'{0}\' has already been added as a contact',
+      EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -180,7 +183,9 @@ export default {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
     NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
-    NO_DELEGATES: 'No delegates to be shown.'
+    NO_CONTACTS: 'No contacts to be shown.',
+    NO_DELEGATES: 'No delegates to be shown.',
+    NO_WALLETS: 'No wallets to be shown.'
   },
 
   APP: {
@@ -205,6 +210,7 @@ export default {
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
+      BROADCAST_PEERS: 'Broadcast to multiple peers',
       IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
@@ -469,24 +475,27 @@ export default {
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
         NAME: 'Profile name',
-        TITLE: '1. Profile details'
+        TITLE: '1. Profile details',
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
+        NO_AVATAR: 'No Avatar'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
-          TEXT: 'Choose the network of this profile.',
-          CUSTOM_NETWORK: 'or you can choose a custom network',
-          CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.'
+          TEXT: 'Choose the network of this profile.'
         },
+        CUSTOM_NETWORK: 'or you can choose a custom network',
+        CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.',
         NAME: 'Profile name',
         TITLE: '2. Network'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
-          TEXT: 'Customize this application by selecting one of our themes and backgrounds.',
-          THEME: 'You can choose light or dark mode'
+          TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        THEME: 'Choose light or dark mode',
+        BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
         TITLE: '3. Appearance'
       }
@@ -537,7 +546,12 @@ export default {
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+      ADDRESS: 'Address',
+      NAME: 'Name',
+      VOTING_FOR: 'Voting for',
+      BALANCE: 'Balance',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {
@@ -646,10 +660,6 @@ export default {
     MODAL_HEADER: 'Networks'
   },
 
-  NETWORK: {
-    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
-  },
-
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transfer',
@@ -676,7 +686,8 @@ export default {
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
-      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low'
+      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
+      NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
@@ -688,6 +699,9 @@ export default {
       SECOND_SIGNATURE: {
         INSTRUCTIONS: 'for {address}.'
       }
+    },
+    INFO: {
+      BROADCASTING: 'Your transaction is being broadcast to the network'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
@@ -829,7 +843,8 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    VOTED_FOR: 'You voted for delegate {delegate}'
+    VOTED_FOR: 'You voted for delegate {delegate}',
+    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}'
   },
 
   WALLET_RENAME: {
@@ -853,5 +868,11 @@ export default {
     SENDER: 'Sender',
     AMOUNT: 'Amount',
     NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+  },
+
+  WALLET_TABLE: {
+    LEDGER: 'Ledger',
+    NO_DELETE: 'Ledger wallets cannot be deleted',
+    ACTIONS: 'Actions'
   }
 }

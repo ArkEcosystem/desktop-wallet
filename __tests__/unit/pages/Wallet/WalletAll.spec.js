@@ -31,6 +31,7 @@ describe('pages > WalletAll', () => {
             'ledger/isConnected': false,
             'ledger/wallets': ledgerWallets,
             'profile/balanceWithLedger': jest.fn(),
+            'session/hasWalletGridLayout': true,
             'wallet/byProfileId': id => wallets
           }
         },
@@ -42,6 +43,9 @@ describe('pages > WalletAll', () => {
         },
         formatter_networkCurrency: jest.fn(),
         wallet_name: value => value
+      },
+      stubs: {
+        'ButtonLetter': true
       }
     })
   }

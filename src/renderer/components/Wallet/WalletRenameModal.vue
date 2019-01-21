@@ -13,12 +13,13 @@
       </p>
 
       <InputText
-        v-model="schema.name"
-        :is-invalid="$v.schema.name.$invalid"
+        v-model="$v.schema.name.$model"
+        :is-invalid="$v.schema.name.$dirty && $v.schema.name.$invalid"
         :helper-text="nameError"
         :label="$t('WALLET_RENAME.NEW')"
         class="mt-5"
         name="name"
+        @keyup.esc.native="emitCancel"
         @keyup.enter.native="isNewContact ? createWallet() : renameWallet()"
       />
 
@@ -61,11 +62,17 @@ export default {
     }
   },
 
+  data: () => ({
+    originalName: null
+  }),
+
   computed: {
     nameError () {
-      if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExist) {
-          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+      if (this.$v.schema.name.$dirty) {
+        if (!this.$v.schema.name.contactDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [this.schema.name])
+        } else if (!this.$v.schema.name.walletDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_WALLET', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
         // NOTE: not used, unless the minimum length is changed
@@ -86,6 +93,7 @@ export default {
 
   mounted () {
     this.schema.name = this.wallet.name
+    this.originalName = this.wallet.name
   },
 
   methods: {
@@ -142,10 +150,13 @@ export default {
     step3: ['isPassphraseVerified'],
     schema: {
       name: {
-        doesNotExist (value) {
-          return value === '' ||
-            value === this.wallet.name ||
-            !this.$store.getters['wallet/byName'](value)
+        contactDoesNotExist (value) {
+          const contact = this.$store.getters['wallet/byName'](value)
+          return value === '' || (this.originalName && value === this.originalName) || !(contact && contact.isContact)
+        },
+        walletDoesNotExist (value) {
+          const wallet = this.$store.getters['wallet/byName'](value)
+          return value === '' || (this.originalName && value === this.originalName) || !(wallet && !wallet.isContact)
         }
       }
     }

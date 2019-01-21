@@ -119,36 +119,61 @@ export default {
         errorLowFee: this.$t('TRANSACTION.ERROR.FEE_TOO_LOW', {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
-        warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST')
+        warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST'),
+        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT'),
+        broadcasting: this.$t('TRANSACTION.INFO.BROADCASTING')
       }
 
-      let response
+      this.emitClose()
+
+      let responseArray
       let success = false
       try {
+        let shouldBroadcast = false
+        if (this.walletOverride) {
+          const walletProfile = this.$store.getters['profile/byId'](this.walletOverride.profileId)
+          shouldBroadcast = walletProfile.broadcastPeers
+        } else {
+          shouldBroadcast = this.$store.getters['session/broadcastPeers']
+        }
+
+        if (shouldBroadcast) {
+          this.$info(messages.broadcasting)
+        }
+
         if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
           const peer = await this.$store.dispatch('peer/findBest', {
             refresh: true,
             network: this.walletNetwork
           })
           const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
-          response = await apiClient.broadcastTransaction(this.transaction)
+          responseArray = await apiClient.broadcastTransaction(this.transaction, shouldBroadcast)
         } else {
-          response = await this.$client.broadcastTransaction(this.transaction)
+          responseArray = await this.$client.broadcastTransaction(this.transaction, shouldBroadcast)
         }
 
-        const { data, errors } = response.data
+        if (responseArray.length > 0) {
+          for (let i = 0; i < responseArray.length; i++) {
+            const response = responseArray[i]
+            const { data } = response.data
 
-        if (this.isSuccessfulResponse(response)) {
-          this.storeTransaction(this.transaction)
+            if (this.isSuccessfulResponse(response)) {
+              this.storeTransaction(this.transaction)
 
-          if (data && data.accept.length === 0 && data.broadcast.length > 0) {
-            this.$warn(messages.warningBroadcast)
-          } else {
-            this.$success(messages.success)
+              if (data && data.accept.length === 0 && data.broadcast.length > 0) {
+                this.$warn(messages.warningBroadcast)
+              } else {
+                this.$success(messages.success)
+              }
+              success = true
+              return
+            }
           }
 
-          success = true
-        } else {
+          // If we get here, it means that none of the responses was successful, so pick one and show the error
+          const response = responseArray[0]
+          const { errors } = response.data
+
           const anyLowFee = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
           })
@@ -159,14 +184,12 @@ export default {
           } else {
             this.$error(messages.error)
           }
-
-          success = false
+        } else {
+          this.$error(messages.nothingSent)
         }
       } catch (error) {
         this.$logger.error(error)
         this.$error(messages.error)
-
-        success = false
       } finally {
         this.emitSent(success)
       }
@@ -178,6 +201,10 @@ export default {
 
     emitCancel () {
       this.$emit('cancel')
+    },
+
+    emitClose () {
+      this.$emit('close')
     },
 
     /**
