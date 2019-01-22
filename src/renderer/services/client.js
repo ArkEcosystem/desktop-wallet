@@ -711,11 +711,18 @@ export default class ClientService {
    * @returns {Object[]}
    */
   async broadcastTransaction (transactions, broadcast) {
+    let currentPeer = store.getters['peer/current']()
+    if (!currentPeer) {
+      currentPeer = this.__parseCurrentPeer()
+    }
     // Use p2p for v1
     if (this.__version === 1) {
       if (broadcast) {
         let responses = []
-        const peers = store.getters['peer/broadcastPeers']()
+        let peers = store.getters['peer/broadcastPeers']()
+        if ((!peers || !peers.length) || currentPeer) {
+          peers = [currentPeer]
+        }
 
         for (let i = 0; i < peers.length; i++) {
           const response = await this.__sendV1Transaction(transactions, peers[i])
@@ -723,26 +730,31 @@ export default class ClientService {
         }
         return responses
       } else {
-        const currentPeer = store.getters['peer/current']()
         const response = await this.__sendV1Transaction(transactions, currentPeer)
         return [response]
       }
     } else {
+      let failedBroadcast = false
       if (broadcast) {
         let txs = []
-        const peers = store.getters['peer/broadcastPeers']()
-
-        for (let i = 0; i < peers.length; i++) {
-          try {
-            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
-            const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
-            txs.push(tx)
-          } catch (err) {
-            //
+        let peers = store.getters['peer/broadcastPeers']()
+        if (peers && peers.length) {
+          for (let i = 0; i < peers.length; i++) {
+            try {
+              const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+              const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
+              txs.push(tx)
+            } catch (err) {
+              //
+            }
           }
+          return txs
+        } else {
+          failedBroadcast = true
         }
-        return txs
-      } else {
+      }
+
+      if (failedBroadcast) {
         const transaction = await this
           .client
           .resource('transactions')
