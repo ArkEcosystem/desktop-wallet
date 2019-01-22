@@ -101,7 +101,7 @@ export default {
      */
     best: (_, getters) => (ignoreCurrent = true, networkId = null) => {
       const peers = getters['bestPeers'](undefined, ignoreCurrent)
-      if (!peers || !peers.length) {
+      if (!peers) {
         return null
       }
 
@@ -111,12 +111,12 @@ export default {
     /**
      * Retrieves n random peers for the current network (excluding current peer)
      * @param {Number} amount of peers to return
-     * @return {Array} containing peer objects
+     * @return {Object[]} containing peer objects
      */
     randomPeers: (_, getters) => (amount = 5, networkId = null) => {
       const peers = getters['all'](true) // Ignore current peer
       if (!peers.length) {
-        return null
+        return []
       }
 
       return shuffle(peers).slice(0, amount)
@@ -127,7 +127,7 @@ export default {
      * Note that these peers are currently taken from a config file and will an empty array
      * custom networks without a corresponding peers file
      * @param {Number} amount of peers to return
-     * @return {Array} containing peer objects
+     * @return {Object[]} containing peer objects
      */
     randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
       if (!networkId) {
@@ -150,7 +150,7 @@ export default {
     /**
      * Returns an array of peers that can be used to broadcast a transaction to
      * Currently this consists of top 10 peers + 5 random peers + 5 random seed peers
-     * @return {Array} containing peer objects
+     * @return {Object[]} containing peer objects
      */
     broadcastPeers: (_, getters) => (networkId = null) => {
       const bestPeers = getters['bestPeers'](10, false, networkId)
@@ -167,12 +167,12 @@ export default {
     /**
      * Determine best peer for current network (random from top 10).
      * @param  {Boolean} [ignoreCurrent=true]
-     * @return {(Object|null)}
+     * @return {Object[]}
      */
     bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true, networkId = null) => {
       const peers = getters['all'](ignoreCurrent)
       if (!peers.length) {
-        return null
+        return []
       }
 
       const highestHeight = peers[0].height
