@@ -11,21 +11,19 @@
 }
 
 .tooltip.success .tooltip-inner {
-  background-color: #2db761;
-  color: white;
+  @apply .bg-green .text-white;
 }
 
 .tooltip.success .tooltip-arrow {
-  border-color: #2db761;
+  @apply .border-green;
 }
 
 .tooltip.error .tooltip-inner {
-  background-color: #cc1f1a;
-  color: white;
+  @apply .bg-red-dark .text-white;
 }
 
 .tooltip.error .tooltip-arrow {
-  border-color: #cc1f1a;
+  @apply .border-red-dark;
 }
 
 .tooltip .tooltip-arrow {
