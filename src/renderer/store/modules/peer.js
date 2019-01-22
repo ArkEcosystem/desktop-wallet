@@ -20,9 +20,10 @@ const getApiPort = async (peer) => {
   if (getApiVersion(peer) === 2 && peer.p2pPort) {
     try {
       const config = await apiClient.fetchPeerConfig(getBaseUrl(peer, true))
-      if (config && config.plugins && config.plugins['@arkecosystem/core-api']) {
-        if (config.plugins['@arkecosystem/core-api'].enabled) {
-          peer.port = config.plugins['@arkecosystem/core-api'].port
+      if (config && config.plugins) {
+        const plugin = Object.entries(config.plugins).find(value => value[0].split('/').reverse()[0] === 'core-api')
+        if (plugin && plugin[1].enabled) {
+          peer.port = plugin[1].port
         }
       }
     } catch (error) {
