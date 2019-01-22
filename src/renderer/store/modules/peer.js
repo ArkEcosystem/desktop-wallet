@@ -1,6 +1,5 @@
 import random from 'lodash/random'
 import shuffle from 'lodash/shuffle'
-import apiClient from '@arkecosystem/client'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
@@ -19,7 +18,7 @@ const getApiPort = async (peer) => {
 
   if (getApiVersion(peer) === 2 && peer.p2pPort) {
     try {
-      const config = await apiClient.fetchPeerConfig(getBaseUrl(peer, true))
+      const config = await ClientService.fetchPeerConfig(getBaseUrl(peer, true))
       if (config && config.plugins) {
         const plugin = Object.entries(config.plugins).find(value => value[0].split('/').reverse()[0] === 'core-api')
         if (plugin && plugin[1].enabled) {

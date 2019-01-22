@@ -47,6 +47,32 @@ export default class ClientService {
     }
   }
 
+  /**
+   * Only for V2
+   * Get the configuration of a peer
+   * @param {String} host - URL of the host (using `core-p2p` port)
+   * @return {(Object|null)}
+   */
+  static async fetchPeerConfig (host) {
+    try {
+      const { data } = await axios({
+        url: `${host}/config`,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      if (data) {
+        return data.data
+      }
+    } catch (error) {
+      // TODO only if a new feature to enable logging is added
+      // console.log(`Error on \`${host}\``)
+    }
+
+    return null
+  }
+
   static async fetchFeeStatistics (server, apiVersion, timeout) {
     // This is only for v2 networks
     if (apiVersion === 1) {
