@@ -245,7 +245,9 @@ export default {
      */
     emitInput (value) {
       this.$emit('raw', value)
-      this.$emit('input', parseFloat(value) || 0)
+
+      const numeric = value ? parseFloat(value.toString().replace(',', '.')) : 0
+      this.$emit('input', numeric || 0)
     },
     focus () {
       this.$refs.input.focus()
@@ -268,10 +270,13 @@ export default {
         this.inputValue = ''
         return true
       } else if (value && this.checkAmount(value)) {
-        let number = Number(value.toString().replace(',', '.'))
-        number.toString().includes('-')
-          ? this.inputValue = number.toFixed(number.toString().split('-')[1]) // Small numbers will be like 1e-7 so we use the number after '-' for toFixed()
+        const numeric = Number(value.toString().replace(',', '.'))
+
+        // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
+        numeric.toString().includes('e-')
+          ? this.inputValue = numeric.toFixed(numeric.toString().split('-')[1])
           : this.inputValue = value.toString().replace(',', '.')
+
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
         return true
