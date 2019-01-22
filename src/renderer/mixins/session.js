@@ -11,9 +11,6 @@ export default {
     },
     session_profile () {
       return this.$store.getters['session/profile']
-    },
-    session_theme () {
-      return this.$store.getters['session/theme']
     }
   }
 }
