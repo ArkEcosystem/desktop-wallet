@@ -310,15 +310,18 @@ export default {
       if (peers.length) {
         for (const peer of peers) {
           peer.height = +peer.height
-        }
-        if (this._vm.$client.version === 2) {
-          for (const peer of peers) {
-            peer.delay = peer.latency
-            peer.p2pPort = peer.port
-            peer.port = null
-            delete peer.latency
+          if (getApiVersion(peer) === 2) {
+            if (peer.latency) {
+              peer.delay = peer.latency
+              delete peer.latency
+            }
+            if (peer.port) {
+              peer.p2pPort = peer.port
+              peer.port = null
+            }
           }
         }
+
         dispatch('set', peers)
       } else {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
