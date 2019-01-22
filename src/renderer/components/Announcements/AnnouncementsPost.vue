@@ -1,8 +1,9 @@
 <template>
-  <div class="AnnouncementsPost relative">
+  <div class="AnnouncementsPost flex flex-col md:flex-row items-top relative">
     <button
       v-show="!isRead"
-      class="AnnouncementsPost__close transition absolute pin-t pin-r cursor-pointer text-theme-page-text-light hover:text-theme-page-text p-2"
+      class="AnnouncementsPost__close absolute pin-t pin-r transition"
+      :disabled="isRead"
       @click="emitRead"
     >
       <SvgIcon
@@ -12,27 +13,58 @@
       />
     </button>
 
-    <h2
-      :class="isRead ? 'text-theme-page-text-light' : 'text-theme-page-text'"
-      class="text-2xl pr-8"
-    >
-      {{ title }}
-    </h2>
+    <div class="flex flex-col flex-none justify-start w-48">
+      <span class="AnnouncementsPost__date font-semibold">
+        {{ formattedDate }}
+        <span class="text-theme-page-text-light">
+          {{ weekday }}
+        </span>
+      </span>
 
-    <p
-      v-if="!isRead"
-      class="AnnouncementsPost__summary mt-2"
-    >
-      {{ summary }}
-    </p>
+      <a
+        :title="title"
+        class="hidden md:flex items-center mt-2 cursor-pointer"
+        @click="openInBrowser(url)"
+      >
+        <SvgIcon
+          class="mr-2"
+          name="open-external"
+          view-box="0 0 12 12"
+        />
 
-    <a
-      :title="title"
-      class="inline-block mt-4 cursor-pointer"
-      @click="openInBrowser(url)"
-    >
-      {{ $t('ANNOUNCEMENTS.READ_MORE') }} &#8594;
-    </a>
+        {{ $t('ANNOUNCEMENTS.READ_MORE') }}
+      </a>
+    </div>
+
+    <div class="pr-12">
+      <h2
+        :class="isRead ? 'text-theme-page-text-light' : 'text-theme-page-text'"
+        class="AnnouncementsPost__title text-2xl mt-4 md:mt-0"
+      >
+        {{ title }}
+      </h2>
+
+      <p
+        v-if="!isRead"
+        class="AnnouncementsPost__summary mt-2"
+      >
+        {{ summary }}
+      </p>
+
+      <a
+        :title="title"
+        class="flex md:hidden items-center mt-4 cursor-pointer"
+        @click="openInBrowser(url)"
+      >
+        <SvgIcon
+          class="mr-2"
+          name="open-external"
+          view-box="0 0 12 12"
+        />
+
+        {{ $t('ANNOUNCEMENTS.READ_MORE') }}
+      </a>
+    </div>
   </div>
 </template>
 
@@ -47,6 +79,10 @@ export default {
   },
 
   props: {
+    date: {
+      type: String,
+      required: true
+    },
     title: {
       type: String,
       required: true
@@ -64,6 +100,17 @@ export default {
       required: true
     }
   },
+
+  computed: {
+    formattedDate () {
+      return this.formatter_date(this.date, 'D MMMM')
+    },
+
+    weekday () {
+      return this.formatter_date(this.date, 'dddd')
+    }
+  },
+
   methods: {
     emitRead () {
       this.$emit('read', this.announcement)
@@ -79,9 +126,20 @@ export default {
 <style scoped>
 .AnnouncementsPost__close {
   /* The close button is shown only on hover over the entire announcement */
-  display: none;
+  margin-top: -1px;
+  opacity: 0;
 }
 .AnnouncementsPost:hover > .AnnouncementsPost__close {
-  display: block;
+  opacity: 1;
+  @apply .flex .cursor-pointer .text-theme-option-button-text .bg-theme-button .rounded .p-2;
+}
+.AnnouncementsPost:hover > .AnnouncementsPost__close:hover {
+  opacity: 0.5;
+}
+.AnnouncementsPost__date {
+  line-height: 1.75rem;
+}
+.AnnouncementsPost__title {
+  line-height: 1.75rem;
 }
 </style>
