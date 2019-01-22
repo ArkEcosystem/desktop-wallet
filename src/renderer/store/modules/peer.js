@@ -314,7 +314,7 @@ export default {
               peer.delay = peer.latency
               delete peer.latency
             }
-            if (peer.port) {
+            if (peer.port && !peer.p2pPort) {
               peer.p2pPort = peer.port
               peer.port = null
             }
