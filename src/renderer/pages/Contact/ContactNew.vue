@@ -2,7 +2,7 @@
   <div class="ContactNew relative bg-theme-feature rounded-lg m-r-4">
     <main class="flex flex-col sm:flex-row h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
+        :style="`background-image: url('${assets_loadImage(backgroundImages[session_theme][step])}')`"
         class="ContactNew__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
       >
         <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
@@ -83,14 +83,14 @@ export default {
   data: () => ({
     step: 1,
     backgroundImages: {
-      true: {
-        1: 'pages/wallet-new/background-step-1-dark.png',
-        2: 'pages/wallet-new/background-step-5-dark.png'
-      },
-      false: {
-        1: 'pages/wallet-new/background-step-1.png',
-        2: 'pages/wallet-new/background-step-5.png'
-      }
+      dark: [
+        'pages/wallet-new/background-step-1-dark.png',
+        'pages/wallet-new/background-step-5-dark.png'
+      ],
+      light: [
+        'pages/wallet-new/background-step-1.png',
+        'pages/wallet-new/background-step-5.png'
+      ]
     }
   }),
 
