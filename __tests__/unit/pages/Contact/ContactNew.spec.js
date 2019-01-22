@@ -16,10 +16,10 @@ describe('pages > ContactNew', () => {
         session_network: {
           version: 30
         },
-        session_hasDarkTheme: false,
+        session_theme: 'light',
         $store: {
           getters: {
-            'session/hasDarkTheme': false
+            'session/theme': 'light'
           }
         },
         $v: {
