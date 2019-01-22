@@ -92,6 +92,31 @@ describe('InputCurrency', () => {
     })
   })
 
+  describe('emitInput', () => {
+    it('should emit 0 instead of invalid numbers', () => {
+      const wrapper = mountComponent()
+
+      wrapper.vm.emitInput('not')
+      expect(wrapper.emitted('input')[0][0]).toEqual(0)
+
+      wrapper.vm.emitInput(null)
+      expect(wrapper.emitted('input')[1][0]).toEqual(0)
+    })
+
+    it('should parse and emit numeric values as Numbers', () => {
+      const wrapper = mountComponent()
+
+      wrapper.vm.emitInput(12.022)
+      expect(wrapper.emitted('input')[0][0]).toEqual(12.022)
+
+      wrapper.vm.emitInput('22.22')
+      expect(wrapper.emitted('input')[1][0]).toEqual(22.22)
+
+      wrapper.vm.emitInput('122,0122')
+      expect(wrapper.emitted('input')[2][0]).toEqual(122.0122)
+    })
+  })
+
   describe('checkAmount', () => {
     it('should return `true`` on Numbers', () => {
       const wrapper = mountComponent()
@@ -119,6 +144,75 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.checkAmount('19a.99')).toBeFalse()
       expect(wrapper.vm.checkAmount('766..999')).toBeFalse()
       expect(wrapper.vm.checkAmount('as97')).toBeFalse()
+    })
+  })
+
+  describe('updateInputValue', () => {
+    describe('when receiving an empty value', () => {
+      it('should empty the input value', () => {
+        const wrapper = mountComponent()
+        wrapper.vm.inputValue = 10
+
+        wrapper.vm.updateInputValue('')
+        expect(wrapper.vm.inputValue).toEqual('')
+      })
+
+      it('should return `true`', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.updateInputValue('')).toBeTrue()
+      })
+    })
+
+    describe('when receiving values that look like numbers', () => {
+      it('should uses them on the input value', () => {
+        const wrapper = mountComponent()
+        wrapper.vm.inputValue = 1
+
+        wrapper.vm.updateInputValue('10')
+        expect(wrapper.vm.inputValue).toEqual('10')
+
+        wrapper.vm.updateInputValue('1.10')
+        expect(wrapper.vm.inputValue).toEqual('1.10')
+
+        wrapper.vm.updateInputValue(1.1)
+        expect(wrapper.vm.inputValue).toEqual('1.1')
+
+        wrapper.vm.updateInputValue(1e-8)
+        expect(wrapper.vm.inputValue).toEqual('0.00000001')
+
+        wrapper.vm.updateInputValue(1e-6)
+        expect(wrapper.vm.inputValue).toEqual('0.000001')
+
+        wrapper.vm.updateInputValue('1,1')
+        expect(wrapper.vm.inputValue).toEqual('1.1')
+      })
+
+      it('should return `true`', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.updateInputValue('10')).toBeTrue()
+      })
+    })
+
+    describe('when receiving values that do not look like numbers', () => {
+      it('should not change the input value', () => {
+        const wrapper = mountComponent()
+        wrapper.vm.inputValue = 10
+
+        wrapper.vm.updateInputValue('not')
+        expect(wrapper.vm.inputValue).toEqual(10)
+
+        wrapper.vm.updateInputValue(null)
+        expect(wrapper.vm.inputValue).toEqual(10)
+      })
+
+      it('should return `false`', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.updateInputValue('not')).toBeFalse()
+        expect(wrapper.vm.updateInputValue(null)).toBeFalse()
+      })
     })
   })
 })
