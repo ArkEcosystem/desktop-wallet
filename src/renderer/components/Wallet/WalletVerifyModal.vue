@@ -16,8 +16,11 @@
 
         <div v-if="verifyChoice === 'Verify'">
           <InputText
+            ref="message"
             v-model="$v.form.message.$model"
             :label="$t('SIGN_VERIFY.MESSAGE')"
+            :helper-text="messageError"
+            :is-invalid="$v.form.message.$error"
             class="mt-5"
             name="message"
           />
@@ -26,21 +29,29 @@
             v-model="$v.form.publicKey.$model"
             :label="$t('SIGN_VERIFY.PUBLIC_KEY')"
             :value="wallet.publicKey"
+            :helper-text="publicKeyError"
+            :is-invalid="$v.form.publicKey.$error"
             class="mt-5"
             name="publicKey"
           />
 
           <InputText
+            ref="signature"
             v-model="$v.form.signature.$model"
             :label="$t('SIGN_VERIFY.SIGNATURE')"
+            :helper-text="signatureError"
+            :is-invalid="$v.form.signature.$error"
             class="mt-5"
             name="signature"
           />
         </div>
         <div v-else>
           <InputText
+            ref="json"
             v-model="$v.form.json.$model"
             :label="$t('SIGN_VERIFY.JSON_MESSAGE')"
+            :helper-text="jsonError"
+            :is-invalid="$v.form.json.$error"
             class="mt-5"
             name="json"
           />
@@ -125,6 +136,46 @@ export default {
     isNotVerified: false
   }),
 
+  computed: {
+    messageError () {
+      if (this.$v.form.message.$error) {
+        if (!this.$v.form.message.isValid) {
+          return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
+        }
+      }
+      return null
+    },
+
+    publicKeyError () {
+      if (this.$v.form.publicKey.$error) {
+        if (!this.$v.form.publicKey.isValid) {
+          return this.$t('VALIDATION.PUBLIC_KEY.INVALID_LENGTH')
+        }
+      }
+      return null
+    },
+
+    signatureError () {
+      if (this.$v.form.signature.$error) {
+        if (!this.$v.form.signature.isValid) {
+          return this.$t('VALIDATION.REQUIRED', [this.$refs['signature'].label])
+        }
+      }
+      return null
+    },
+
+    jsonError () {
+      if (this.$v.form.json.$error) {
+        if (this.$v.form.json.isEmpty) {
+          return this.$t('VALIDATION.REQUIRED', [this.$refs['json'].label])
+        } else if (!this.$v.form.json.isValid) {
+          return this.$t('VALIDATION.INVALID_FORMAT')
+        }
+      }
+      return null
+    }
+  },
+
   mounted () {
     this.form.publicKey = this.wallet.publicKey
   },
@@ -201,6 +252,12 @@ export default {
         }
       },
       json: {
+        isEmpty (value) {
+          if (this.verifyChoice === 'Verify') {
+            return true
+          }
+          return value.length === 0
+        },
         isValid (value) {
           if (this.verifyChoice === 'Verify') {
             return true

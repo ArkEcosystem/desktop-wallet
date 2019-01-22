@@ -120,6 +120,7 @@ export default {
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
+    INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
@@ -141,6 +142,9 @@ export default {
     ADDRESS: {
       EXISTS_AS_CONTACT: 'The address \'{0}\' has already been added as a contact',
       EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
+    },
+    PUBLIC_KEY: {
+      INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -778,7 +782,9 @@ export default {
     CONFIRMATION: 'Confirmation',
     DELETE: 'Delete message',
     FAILED_SIGN: 'Could not sign message',
-    FAILED_VERIFY: 'Could not verify message'
+    FAILED_VERIFY: 'Could not verify message',
+    SUCCESSFULL_SIGN: 'Your message was signed',
+    SUCCESSFULL_VERIFY: 'The message was verified'
   },
 
   SYNCHRONIZER: {
