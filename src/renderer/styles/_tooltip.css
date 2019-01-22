@@ -10,6 +10,24 @@
   padding: 12px;
 }
 
+.tooltip.success .tooltip-inner {
+  background-color: #2db761;
+  color: white;
+}
+
+.tooltip.success .tooltip-arrow {
+  border-color: #2db761;
+}
+
+.tooltip.error .tooltip-inner {
+  background-color: #cc1f1a;
+  color: white;
+}
+
+.tooltip.error .tooltip-arrow {
+  border-color: #cc1f1a;
+}
+
 .tooltip .tooltip-arrow {
   width: 0;
   height: 0;
