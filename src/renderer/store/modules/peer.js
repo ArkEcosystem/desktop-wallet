@@ -17,7 +17,7 @@ const getApiPort = async (peer) => {
     return
   }
 
-  if (getVersion(peer) === 2 && peer.p2pPort) {
+  if (getApiVersion(peer) === 2 && peer.p2pPort) {
     try {
       const config = await apiClient.fetchPeerConfig(getBaseUrl(peer, true))
       if (config && config.plugins && config.plugins['@arkecosystem/core-api']) {
@@ -38,7 +38,7 @@ const getBaseUrl = (peer, p2pPort = false) => {
   return `${scheme}${peer.ip}:${p2pPort ? peer.p2pPort : peer.port}`
 }
 
-const getVersion = (peer) => {
+const getApiVersion = (peer) => {
   return /^2\./.test(peer.version) ? 2 : 1
 }
 
@@ -392,7 +392,7 @@ export default {
         throw new Error('Not connected to peer')
       }
 
-      let networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer), getVersion(peer))
+      let networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer), getApiVersion(peer))
       if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
         throw new Error('Wrong network')
       }
@@ -432,7 +432,7 @@ export default {
         } else {
           const client = new ClientService(false)
           client.host = getBaseUrl(currentPeer)
-          client.version = getVersion(currentPeer)
+          client.version = getApiVersion(currentPeer)
           client.client.http.timeout = 3000
           peerStatus = await client.fetchPeerStatus()
         }
@@ -465,7 +465,7 @@ export default {
       await getApiPort(peer)
       const client = new ClientService(false)
       client.host = getBaseUrl(peer)
-      client.version = getVersion(peer)
+      client.version = getApiVersion(peer)
 
       return client
     },
