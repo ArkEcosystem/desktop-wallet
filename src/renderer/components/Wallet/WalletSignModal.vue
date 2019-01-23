@@ -93,10 +93,8 @@ export default {
 
   computed: {
     messageError () {
-      if (this.$v.form.message.$error) {
-        if (this.$v.form.message.minLength) {
-          return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
-        }
+      if (this.$v.form.message.$error && this.$v.form.message.minLength) {
+        return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
       }
       return null
     }

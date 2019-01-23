@@ -138,28 +138,22 @@ export default {
 
   computed: {
     messageError () {
-      if (this.$v.form.message.$error) {
-        if (!this.$v.form.message.isValid) {
-          return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
-        }
+      if (this.$v.form.message.$error && !this.$v.form.message.isValid) {
+        return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
       }
       return null
     },
 
     publicKeyError () {
-      if (this.$v.form.publicKey.$error) {
-        if (!this.$v.form.publicKey.isValid) {
-          return this.$t('VALIDATION.PUBLIC_KEY.INVALID_LENGTH')
-        }
+      if (this.$v.form.publicKey.$error && !this.$v.form.publicKey.isValid) {
+        return this.$t('VALIDATION.PUBLIC_KEY.INVALID_LENGTH')
       }
       return null
     },
 
     signatureError () {
-      if (this.$v.form.signature.$error) {
-        if (!this.$v.form.signature.isValid) {
-          return this.$t('VALIDATION.REQUIRED', [this.$refs['signature'].label])
-        }
+      if (this.$v.form.signature.$error && !this.$v.form.signature.isValid) {
+        return this.$t('VALIDATION.REQUIRED', [this.$refs['signature'].label])
       }
       return null
     },
