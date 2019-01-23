@@ -87,8 +87,17 @@ export default {
       }
 
       if (this.isCopying) {
-        this.isCopySupported ? this.copyText = this.$t('BUTTON_CLIPBOARD.DONE') : this.copyText = this.$t('BUTTON_CLIPBOARD.NOT_SUPPORTED')
+        tooltip.delay = { show: 0, hide: 1000 }
+
+        if (this.isCopySupported) {
+          this.copyText = this.$t('BUTTON_CLIPBOARD.DONE')
+          tooltip.classes = 'success'
+        } else {
+          this.copyText = this.$t('BUTTON_CLIPBOARD.NOT_SUPPORTED')
+          tooltip.classes = 'error'
+        }
       }
+
       return tooltip
     }
   }

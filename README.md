@@ -47,6 +47,8 @@ Full translations should involve 5 tasks:
  - Add the language to the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) at the `LANGUAGES` key.
  - Update the [date and time formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/date-time-formats.js) to include the short and long format that are used commonly by native speakers.
  - Update the [number formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/number-formats.js) to include the preferred way of displaying currencies used commonly by native speakers.
+ - Add the language at the `I18N.enabledLocales` array at the [main configuration file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/config/index.js). This step is necessary to make the language would not be available.
+ - Execute the application. Go to the [ development section](https://github.com/ArkEcosystem/desktop-wallet#development) to learn how to install the requirements and execute it.
 
 ## Development
 
@@ -79,7 +81,7 @@ npm install -g yarn
 # Install dependencies
 yarn install
 
-# Serve the application with hot reload at localhost:9080
+# Execute the application. Making changes in the code, updates the application (hot reloading).
 yarn dev
 
 # Lint all JS/Vue files in the `src` and `__tests__`
