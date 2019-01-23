@@ -160,7 +160,7 @@ export default {
 
     jsonError () {
       if (this.$v.form.json.$error) {
-        if (this.$v.form.json.isEmpty) {
+        if (!this.$v.form.json.isNotEmpty) {
           return this.$t('VALIDATION.REQUIRED', [this.$refs['json'].label])
         } else if (!this.$v.form.json.isValid) {
           return this.$t('VALIDATION.INVALID_FORMAT')
@@ -246,20 +246,21 @@ export default {
         }
       },
       json: {
-        isEmpty (value) {
+        isNotEmpty (value) {
           if (this.verifyChoice === 'Verify') {
             return true
           }
-          return value.length === 0
+          return value.length !== 0
         },
         isValid (value) {
           if (this.verifyChoice === 'Verify') {
             return true
           }
+
           // Check for valid json
           try {
             const json = JSON.parse(value)
-            return json['message'] && json['publicKey'] && json['signature']
+            return !!(json['message'] && (json['publicKey'] || json['publickey']) && json['signature'])
           } catch (err) {
             return false
           }
