@@ -3,60 +3,63 @@
     :id="activeWallet.address"
     ref="MenuNavigation"
     :class="{
-      'WalletSidebar--slim': isSlim && !isExpanded,
-      'WalletSidebar--full': !isSlim && !isExpanded,
-      'WalletSidebar--expanded': isExpanded,
-      'w-1/7': !isExpanded
+      'WalletSidebar--collapsed': !isExpanded,
+      'WalletSidebar--expanded': isExpanded
     }"
     class="WalletSidebar justify-start pt-0 overflow-y-auto"
     @input="onSelect"
   >
-    <div
-      class="flex flex-row m-4"
-    >
-      <InputText
-        v-if="isExpanded"
-        label="Filter"
-        name="filter"
-      />
-      <SvgIcon
-        name="settings"
-        view-box="0 0 23 23"
-      />
-      <!-- TODO rename to sort -->
-      <SvgIcon
-        v-if="isExpanded"
-        name="filter"
-        view-box="0 0 23 23"
-      />
-    </div>
-
-    <div
-      v-if="isExpanded"
-      class="flex flex-col m-4"
-    >
-      <p>Filter by balance</p>
-      <p>Hide Ledger wallets</p>
-    </div>
-
-    <div
-      v-if="isExpanded"
-      class="flex flex-col m-4"
-    >
-      <div>Sort by address</div>
-      <p>Sort by name</p>
-      <p>Sort by balance</p>
-    </div>
+    <!-- <div -->
+    <!--   v-if="showMenu" -->
+    <!--   class="flex flex-row m-4" -->
+    <!-- > -->
+    <!--   <InputText -->
+    <!--     v-if="isExpanded" -->
+    <!--     label="Filter" -->
+    <!--     name="filter" -->
+    <!--   /> -->
+    <!--   <SvgIcon -->
+    <!--     name="filter" -->
+    <!--     view-box="0 0 13 20" -->
+    <!--   /> -->
+    <!--   <SvgIcon -->
+    <!--     v-if="!isExpanded" -->
+    <!--     name="expand" -->
+    <!--     view-box="0 0 18 14" -->
+    <!--   /> -->
+    <!--   <SvgIcon -->
+    <!--     v-if="isExpanded" -->
+    <!--     name="collapse" -->
+    <!--     view-box="0 0 18 14" -->
+    <!--   /> -->
+    <!-- </div> -->
+    <!--  -->
+    <!-- <div -->
+    <!--   v-if="showMenu" -->
+    <!--   class="flex flex-col m-4" -->
+    <!-- > -->
+    <!--   <p>Filter by balance</p> -->
+    <!--   <p>Hide Ledger wallets</p> -->
+    <!-- </div> -->
+    <!--  -->
+    <!-- <div -->
+    <!--   v-if="showMenu" -->
+    <!--   class="flex flex-col m-4" -->
+    <!-- > -->
+    <!--   <div>Sort by address</div> -->
+    <!--   <p>Sort by name</p> -->
+    <!--   <p>Sort by balance</p> -->
+    <!-- </div> -->
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
-      v-if="selectableWallets.length === 0 && !isSlim"
+      v-if="selectableWallets.length === 0 && isExpanded"
       id="placeholder"
       :is-disabled="true"
       class="WalletSidebar__wallet opacity-37.5 select-none"
     >
       <div
-        :class="{ 'flex flex-row': !isSlim || isExpanded }"
+        :class="{ 'flex flex-row': isExpanded }"
         class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticonPlaceholder
@@ -70,7 +73,7 @@
             {{ $t('PAGES.DASHBOARD.ADD_WALLET') }}
           </span>
           <span
-            v-if="!isSlim || isExpanded"
+            v-if="isExpanded"
             class="font-bold mt-2 text-xl"
           >
             {{ formatter_networkCurrency(0, 2) }}
@@ -110,7 +113,7 @@
     >
       <div
         slot-scope="{ isActive }"
-        :class="{ 'flex flex-row': !isSlim || isExpanded }"
+        :class="{ 'flex flex-row': isExpanded }"
         class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticon
@@ -122,17 +125,17 @@
           :class="{
             'text-theme-page-text': isActive,
             'text-theme-page-text-light': !isActive,
-            'pt-2': isSlim && !isExpanded,
-            'pl-2': !isSlim || isExpanded
+            'pt-2': !isExpanded,
+            'pl-2': isExpanded
           }"
           class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
         >
           <span class="block truncate">
             <!-- TODO show the entire address when expanded -->
-            {{ wallet_name(wallet.address) || isExpanded ? wallet.address : wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
+            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isExpanded ? 24 : 6) }}
           </span>
           <span
-            v-if="!isSlim || isExpanded"
+            v-if="isExpanded"
             class="font-bold mt-2 text-xl"
           >
             {{ formatter_networkCurrency(wallet.balance, 2) }}
@@ -149,24 +152,29 @@ import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
-import { InputText } from '@/components/Input'
-import SvgIcon from '@/components/SvgIcon'
+// import { InputText } from '@/components/Input'
+// import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletSidebar',
 
   components: {
-    InputText,
+    // InputText,
     Loader,
     MenuNavigation,
     MenuNavigationItem,
-    SvgIcon,
+    // SvgIcon,
     WalletIdenticon,
     WalletIdenticonPlaceholder
   },
 
   props: {
-    isSlim: {
+    isExpanded: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    showMenu: {
       type: Boolean,
       required: false,
       default: true
@@ -174,7 +182,7 @@ export default {
   },
 
   data: () => ({
-    isExpanded: false,
+    // isExpanded: false,
     selectableWallets: []
   }),
 
@@ -252,31 +260,24 @@ export default {
 </script>
 
 <style lang="postcss">
-.WalletSidebar--full .WalletSidebar__wallet .MenuNavigationItem__border {
+.WalletSidebar--expanded .WalletSidebar__wallet .MenuNavigationItem__border {
   @apply .hidden
 }
 </style>
 
 <style lang="postcss" scoped>
-.WalletSidebar--full .WalletSidebar__wallet__wrapper {
-  @apply .border-b .border-theme-feature-item-alternative .text-left
-}
-.WalletSidebar--full .WalletSidebar__wallet__identicon {
-  @apply .mr-2
-}
-
-.WalletSidebar--slim .WalletSidebar__wallet__wrapper {
-  @apply .flex-col .justify-center
-}
-.WalletSidebar--slim .WalletSidebar__wallet__identicon {
-  @apply .mb-2
-}
-
 .WalletSidebar--expanded .WalletSidebar__wallet__wrapper {
   @apply .border-b .border-theme-feature-item-alternative .text-left
 }
 .WalletSidebar--expanded .WalletSidebar__wallet__identicon {
   @apply .mr-2
+}
+
+.WalletSidebar--collapsed .WalletSidebar__wallet__wrapper {
+  @apply .flex-col .justify-center
+}
+.WalletSidebar--collapsed .WalletSidebar__wallet__identicon {
+  @apply .mb-2
 }
 
 .WalletIdenticon__placeholder {
