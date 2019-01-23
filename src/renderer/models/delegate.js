@@ -15,20 +15,30 @@ export default new BaseModel({
     voteWeight: {
       type: 'number'
     },
-    producedBlocks: {
-      type: 'integer'
+    blocks: {
+      type: 'object',
+      properties: {
+        missed: {
+          type: 'integer'
+        },
+        produced: {
+          type: 'integer'
+        }
+      }
     },
-    missedBlocks: {
-      type: 'integer'
+    production: {
+      type: 'object',
+      properties: {
+        productivity: {
+          type: 'number'
+        },
+        approval: {
+          type: 'number'
+        }
+      }
     },
     rank: {
       type: 'integer'
-    },
-    productivity: {
-      type: 'number'
-    },
-    approval: {
-      type: 'number'
     }
   }
 })

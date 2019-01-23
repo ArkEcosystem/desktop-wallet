@@ -260,7 +260,7 @@ export default {
     },
 
     getProductivity () {
-      const productivity = this.votedDelegate.productivity || this.votedDelegate.production.productivity
+      const productivity = this.votedDelegate.production.productivity
       return this.formatter_percentage(productivity)
     },
 
