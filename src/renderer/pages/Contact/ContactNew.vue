@@ -13,7 +13,7 @@
           </p>
 
           <img
-            :src="assets_loadImage('pages/contact-new/purse.svg')"
+            :src="assets_loadImage(backgroundImage)"
             :title="$t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`)"
             class="w-full xl:w-4/5 mt-10"
           >
@@ -82,7 +82,7 @@ export default {
 
   computed: {
     backgroundImage () {
-      return 'pages/contact-new/purse.svg'
+      return 'pages/contact-new/wallet.svg'
     },
     addressError () {
       if (this.$v.schema.address.$invalid) {
