@@ -93,7 +93,7 @@
             :class="{ 'justify-center': isSlim }"
           >
             <span class="block truncate">
-              {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : 24) }}
+              {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isSlim ? 6 : (wallet.isLedger ? 12 : 24)) }}
             </span>
             <span
               v-if="wallet.isLedger"
