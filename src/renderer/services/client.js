@@ -786,7 +786,7 @@ export default class ClientService {
         }
       }
 
-      if (failedBroadcast) {
+      if (!broadcast || failedBroadcast) {
         const transaction = await this
           .client
           .resource('transactions')
