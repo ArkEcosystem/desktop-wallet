@@ -428,22 +428,15 @@ export default {
     },
 
     CONTACT_NEW: {
-      STEP1: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Address',
-          TEXT: 'Enter the address of your contact.'
-        },
-        TITLE: '1. Enter address',
-        ADDRESS: 'Contact address'
+      INSTRUCTIONS: {
+        HEADER: 'New contact',
+        TEXT: 'Enter the address of your contact. You will be able to view its transactions'
       },
-      STEP2: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Name',
-          TEXT: 'Optionally, choose a name for you contact and you are done.'
-        },
-        TITLE: '2. Confirmation',
-        NAME: 'Contact name (optional)'
-      },
+      TITLE: 'Enter contact address',
+      ADDRESS: 'Address',
+      NAME: 'Contact name (optional)',
+      NAME_INFO: 'Info.:',
+      NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact'
     },
 
