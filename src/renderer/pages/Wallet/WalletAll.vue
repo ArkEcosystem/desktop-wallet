@@ -127,12 +127,16 @@
                           content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
                           placement: 'right'
                         }"
-                        class="pr-1"
+                        class="pr-1 cursor-default"
+                        @click.stop
                       >
                         {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
                       </span>
                     </div>
-                    <span class="font-bold mt-2 text-lg">
+                    <span
+                      class="font-bold mt-2 text-lg cursor-default"
+                      @click.stop
+                    >
                       {{ formatter_networkCurrency(wallet.balance, 2) }}
                     </span>
                   </div>

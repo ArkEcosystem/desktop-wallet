@@ -92,12 +92,16 @@
                           content: !contact.name && wallet_name(contact.address) ? $t('COMMON.NETWORK_NAME') : '',
                           placement: 'right'
                         }"
-                        class="pr-1"
+                        class="pr-1 cursor-default"
+                        @click.stop
                       >
                         {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
                       </span>
                     </div>
-                    <span class="font-bold mt-2 text-lg">
+                    <span
+                      class="font-bold mt-2 text-lg cursor-default"
+                      @click.stop
+                    >
                       {{ formatter_networkCurrency(contact.balance, 2) }}
                     </span>
                   </div>
