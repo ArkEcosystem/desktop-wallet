@@ -820,6 +820,8 @@ export default {
   },
 
   WALLET_SIDEBAR: {
+    FILTER: 'Filter',
+    HIDE: 'Hide',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 

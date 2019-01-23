@@ -14,10 +14,15 @@
       class="WalletSidebar__menu flex flex-row m-4 justify-around"
     >
       <div class="WalletSidebar__menu__button">
-        <SvgIcon
-          name="filter"
-          view-box="0 0 13 20"
-        />
+        <div class="flex items-center">
+          <SvgIcon
+            name="filter"
+            view-box="0 0 13 20"
+          />
+          <span v-if="isExpanded">
+            {{ $t('WALLET_SIDEBAR.FILTER') }}
+          </span>
+        </div>
       </div>
       <div class="WalletSidebar__menu__separator">
         <div class="WalletSidebar__menu__separator__line" />
@@ -25,6 +30,7 @@
       <div
         v-if="!isExpanded"
         class="WalletSidebar__menu__button"
+        @click="expand"
       >
         <SvgIcon
           name="expand"
@@ -34,30 +40,19 @@
       <div
         v-if="isExpanded"
         class="WalletSidebar__menu__button"
+        @click="collapse"
       >
-        <SvgIcon
-          name="collapse"
-          view-box="0 0 18 14"
-        />
+        <div class="flex items-center">
+          <SvgIcon
+            name="collapse"
+            view-box="0 0 18 14"
+          />
+          <span v-if="isExpanded">
+            {{ $t('WALLET_SIDEBAR.HIDE') }}
+          </span>
+        </div>
       </div>
     </div>
-    <!--  -->
-    <!-- <div -->
-    <!--   v-if="showMenu" -->
-    <!--   class="flex flex-col m-4" -->
-    <!-- > -->
-    <!--   <p>Filter by balance</p> -->
-    <!--   <p>Hide Ledger wallets</p> -->
-    <!-- </div> -->
-    <!--  -->
-    <!-- <div -->
-    <!--   v-if="showMenu" -->
-    <!--   class="flex flex-col m-4" -->
-    <!-- > -->
-    <!--   <div>Sort by address</div> -->
-    <!--   <p>Sort by name</p> -->
-    <!--   <p>Sort by balance</p> -->
-    <!-- </div> -->
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
@@ -139,7 +134,7 @@
           class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
         >
           <span class="block truncate">
-            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isExpanded ? 24 : 6) }}
+            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isExpanded ? 12 : 6) }}
           </span>
           <span
             v-if="isExpanded"
@@ -159,14 +154,12 @@ import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
-// import { InputText } from '@/components/Input'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletSidebar',
 
   components: {
-    // InputText,
     Loader,
     MenuNavigation,
     MenuNavigationItem,
@@ -176,7 +169,7 @@ export default {
   },
 
   props: {
-    isExpanded: {
+    showExpanded: {
       type: Boolean,
       required: false,
       default: false
@@ -189,6 +182,7 @@ export default {
   },
 
   data: () => ({
+    hasBeenExpanded: false,
     selectableWallets: []
   }),
 
@@ -208,6 +202,10 @@ export default {
 
     currentWallet () {
       return this.wallet_fromRoute
+    },
+
+    isExpanded () {
+      return this.showExpanded || this.hasBeenExpanded
     },
 
     isLoadingLedger () {
@@ -237,6 +235,15 @@ export default {
   },
 
   methods: {
+    collapse () {
+      this.hasBeenExpanded = false
+      this.$emit('collapsed')
+    },
+    expand () {
+      this.hasBeenExpanded = true
+      this.$emit('expanded')
+    },
+
     onSelect (address) {
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.$emit('select', address)
@@ -275,7 +282,14 @@ export default {
 }
 .WalletSidebar__menu__button {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text .py-2 .my-6;
-  transition: opacity 0.4s;
+  transition: color 0.4s;
+  align-self: center;
+}
+.WalletSidebar__menu__button:hover {
+  @apply .text-theme-button-text;
+}
+.WalletSidebar__menu__button span {
+  @apply .pl-3 .font-bold;
 }
 .WalletSidebar__menu__separator__line {
   border-right: 0.08rem solid var(--theme-feature-item-alternative);

@@ -7,7 +7,10 @@
     />
     <WalletSidebar
       v-if="wallet"
-      class="sticky pin min-h-full border-l border-theme-line-separator py-10 rounded-r-lg hidden lg:block w-1/7"
+      class="sticky pin min-h-full border-l border-theme-line-separator py-10 rounded-r-lg hidden lg:block"
+      :class="{ 'w-1/7': !isSidebarExpanded }"
+      @expanded="onExpand"
+      @collapsed="onCollapse"
       @select="loadWalletData"
     />
   </div>
@@ -23,6 +26,10 @@ export default {
     WalletSidebar,
     WalletDetails
   },
+
+  data: () => ({
+    isSidebarExpanded: false
+  }),
 
   computed: {
     wallet () {
@@ -47,6 +54,13 @@ export default {
   methods: {
     loadWalletData () {
       this.$refs.WalletDetails.fetchWalletVote()
+    },
+
+    onCollapse () {
+      this.isSidebarExpanded = false
+    },
+    onExpand () {
+      this.isSidebarExpanded = true
     }
   }
 }
