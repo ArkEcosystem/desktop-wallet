@@ -97,7 +97,9 @@
             </span>
             <span
               v-if="wallet.isLedger"
-              class="WalletSidebar__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none ml-2"
+              v-tooltip="isSlim ? $t('COMMON.LEDGER_WALLET') : ''"
+              :class="{ 'w-5': isSlim }"
+              class="ledger-badge"
             >
               {{ isSlim ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
             </span>
@@ -242,9 +244,6 @@ export default {
   @apply .mb-2
 }
 
-.WalletSidebar__ledger-badge {
-  opacity: 0.85
-}
 .WalletIdenticon__placeholder {
   filter: opacity(20%)
 }

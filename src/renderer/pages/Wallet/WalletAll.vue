@@ -121,16 +121,22 @@
                   />
 
                   <div class="flex flex-col justify-center overflow-hidden pl-4">
-                    <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
+                    <div class="flex items-center">
                       <span
                         v-tooltip="{
                           content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
                           placement: 'right'
                         }"
-                        class="pr-1 cursor-default"
+                        class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1 cursor-default"
                         @click.stop
                       >
                         {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                      </span>
+                      <span
+                        v-if="wallet.isLedger"
+                        class="ledger-badge"
+                      >
+                        {{ $t('COMMON.LEDGER') }}
                       </span>
                     </div>
                     <span

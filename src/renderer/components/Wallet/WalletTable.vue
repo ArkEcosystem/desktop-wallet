@@ -43,14 +43,14 @@
                 content: !data.row.name ? $t('COMMON.NETWORK_NAME') : '',
                 placement: 'right'
               }"
-              class="pr-1"
+              :class="{ 'pr-1': walletName(data.row) }"
             >
               {{ walletName(data.row) | truncate(30) }}
             </span>
             <span
               v-if="data.row.isLedger"
-              class="WalletTable__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none"
-              :class="{ 'ml-2': walletName(data.row) }"
+              class="ledger-badge"
+              :class="{ 'ml-0': !walletName(data.row) }"
             >
               {{ $t('COMMON.LEDGER') }}
             </span>
@@ -247,8 +247,5 @@ export default {
 }
 .WalletTable .identicon {
   transition: 0.5s;
-}
-.WalletTable__ledger-badge {
-  opacity: 0.85
 }
 </style>
