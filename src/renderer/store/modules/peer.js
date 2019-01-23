@@ -469,6 +469,7 @@ export default {
       const client = new ClientService(false)
       client.host = getBaseUrl(peer)
       client.version = getApiVersion(peer)
+      client.client.http.timeout = 3000
 
       return client
     },
