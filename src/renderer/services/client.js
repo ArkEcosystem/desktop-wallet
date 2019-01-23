@@ -7,6 +7,7 @@ import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import logger from 'electron-log'
+import moment from 'moment'
 
 export default class ClientService {
   /*
@@ -688,9 +689,14 @@ export default class ClientService {
    * @returns {Object}
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
+    const network = store.getters['session/network']
     transaction = transaction.network({
-      pubKeyHash: store.getters['session/network'].version
+      pubKeyHash: network.version
     })
+
+    const epochTime = moment(network.constants.epoch).utc().valueOf()
+    const now = moment().valueOf()
+    transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
     if (passphrase) {
       transaction = transaction.sign(this.normalizePassphrase(passphrase))
