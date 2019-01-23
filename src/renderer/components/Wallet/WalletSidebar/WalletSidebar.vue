@@ -9,30 +9,38 @@
     class="WalletSidebar justify-start pt-0 overflow-y-auto"
     @input="onSelect"
   >
-    <!-- <div -->
-    <!--   v-if="showMenu" -->
-    <!--   class="flex flex-row m-4" -->
-    <!-- > -->
-    <!--   <InputText -->
-    <!--     v-if="isExpanded" -->
-    <!--     label="Filter" -->
-    <!--     name="filter" -->
-    <!--   /> -->
-    <!--   <SvgIcon -->
-    <!--     name="filter" -->
-    <!--     view-box="0 0 13 20" -->
-    <!--   /> -->
-    <!--   <SvgIcon -->
-    <!--     v-if="!isExpanded" -->
-    <!--     name="expand" -->
-    <!--     view-box="0 0 18 14" -->
-    <!--   /> -->
-    <!--   <SvgIcon -->
-    <!--     v-if="isExpanded" -->
-    <!--     name="collapse" -->
-    <!--     view-box="0 0 18 14" -->
-    <!--   /> -->
-    <!-- </div> -->
+    <div
+      v-if="showMenu"
+      class="WalletSidebar__menu flex flex-row m-4 justify-around"
+    >
+      <div class="WalletSidebar__menu__button">
+        <SvgIcon
+          name="filter"
+          view-box="0 0 13 20"
+        />
+      </div>
+      <div class="WalletSidebar__menu__separator">
+        <div class="WalletSidebar__menu__separator__line" />
+      </div>
+      <div
+        v-if="!isExpanded"
+        class="WalletSidebar__menu__button"
+      >
+        <SvgIcon
+          name="expand"
+          view-box="0 0 18 14"
+        />
+      </div>
+      <div
+        v-if="isExpanded"
+        class="WalletSidebar__menu__button"
+      >
+        <SvgIcon
+          name="collapse"
+          view-box="0 0 18 14"
+        />
+      </div>
+    </div>
     <!--  -->
     <!-- <div -->
     <!--   v-if="showMenu" -->
@@ -53,7 +61,7 @@
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
-      v-if="selectableWallets.length === 0 && isExpanded"
+      v-if="isExpanded && selectableWallets.length === 0"
       id="placeholder"
       :is-disabled="true"
       class="WalletSidebar__wallet opacity-37.5 select-none"
@@ -131,7 +139,6 @@
           class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
         >
           <span class="block truncate">
-            <!-- TODO show the entire address when expanded -->
             {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isExpanded ? 24 : 6) }}
           </span>
           <span
@@ -153,7 +160,7 @@ import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
 // import { InputText } from '@/components/Input'
-// import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletSidebar',
@@ -163,7 +170,7 @@ export default {
     Loader,
     MenuNavigation,
     MenuNavigationItem,
-    // SvgIcon,
+    SvgIcon,
     WalletIdenticon,
     WalletIdenticonPlaceholder
   },
@@ -182,20 +189,17 @@ export default {
   },
 
   data: () => ({
-    // isExpanded: false,
     selectableWallets: []
   }),
 
   computed: {
     wallets () {
-      if (this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly) {
-        const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-        const prop = 'name'
-        return contacts.slice().sort(sortByProp(prop))
-      }
+      const wallets = this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
+        ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+        : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
 
       const prop = 'name'
-      return this.$store.getters['wallet/byProfileId'](this.session_profile.id).slice().sort(sortByProp(prop))
+      return wallets.slice().sort(sortByProp(prop))
     },
 
     activeWallet () {
@@ -266,6 +270,18 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
+.WalletSidebar__menu {
+  border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
+}
+.WalletSidebar__menu__button {
+  @apply .cursor-pointer .fill-current .text-theme-option-button-text .py-2 .my-6;
+  transition: opacity 0.4s;
+}
+.WalletSidebar__menu__separator__line {
+  border-right: 0.08rem solid var(--theme-feature-item-alternative);
+  @apply .h-12 .my-4
+}
+
 .WalletSidebar--expanded .WalletSidebar__wallet__wrapper {
   @apply .border-b .border-theme-feature-item-alternative .text-left
 }
