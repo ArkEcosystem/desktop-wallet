@@ -299,9 +299,6 @@ export default {
 .ContactAll__grid__contact__name {
   color: #037cff;
 }
-.ContactAll__grid__contact__name:hover {
-  @apply .text-blue-dark .underline;
-}
 .ContactAll__CreateButton {
   transition: all .1s ease-in;
   @apply .flex .items-center .mx-auto .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-option-button-text .mr-6;
