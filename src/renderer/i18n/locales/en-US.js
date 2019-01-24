@@ -15,7 +15,10 @@ export default {
     FETCH: 'Fetch',
     FINISH: 'Finish',
     LANGUAGE: 'Application Language',
+    LEDGER: 'Ledger',
+    LEDGER_WALLET: 'This is a Ledger wallet',
     NETWORK: 'Network',
+    NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
     NOT: 'not',
     OF: 'of',
@@ -540,7 +543,7 @@ export default {
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import wallet',
-      LOADING_LEDGER: 'Loading Ledger Wallets...',
+      LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
@@ -881,7 +884,6 @@ export default {
   },
 
   WALLET_TABLE: {
-    LEDGER: 'Ledger',
     NO_DELETE: 'Ledger wallets cannot be deleted',
     ACTIONS: 'Actions'
   }
