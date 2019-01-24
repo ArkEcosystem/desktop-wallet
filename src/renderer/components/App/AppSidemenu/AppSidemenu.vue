@@ -117,6 +117,7 @@
             >
               <ProfileAvatar
                 :profile="session_profile"
+                letter-size="xl"
                 :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
               >
                 <SvgIcon
