@@ -537,6 +537,10 @@ export default {
   background-position: center center;
 }
 
+.WalletNew__wallets {
+  /* To avoid shaking the area with the generated wallets */
+  min-height: 203px
+}
 .WalletNew__wallets-enter-active {
   transition: opacity 1s
 }
