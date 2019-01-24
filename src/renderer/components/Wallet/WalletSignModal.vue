@@ -16,6 +16,7 @@
         v-if="!wallet.passphrase"
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
+        :is-invalid="$v.form.passphrase.$error"
         :address="wallet.address"
         :pub-key-hash="session_network.version"
         class="my-3"
@@ -30,8 +31,11 @@
       />
 
       <InputText
+        ref="message"
         v-model="$v.form.message.$model"
         :label="$t('SIGN_VERIFY.MESSAGE')"
+        :helper-text="messageError"
+        :is-invalid="$v.form.message.$error"
         name="message"
       />
 
@@ -87,6 +91,15 @@ export default {
     bip38Worker: null
   }),
 
+  computed: {
+    messageError () {
+      if (this.$v.form.message.$error && this.$v.form.message.minLength) {
+        return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
+      }
+      return null
+    }
+  },
+
   mounted () {
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
@@ -130,6 +143,8 @@ export default {
         message['timestamp'] = new Date().getTime()
         message['address'] = this.wallet.address
         this.$store.dispatch('wallet/addSignedMessage', message)
+
+        this.$success(this.$t('SIGN_VERIFY.SUCCESSFULL_SIGN'))
 
         this.emitSigned()
       } catch (error) {
