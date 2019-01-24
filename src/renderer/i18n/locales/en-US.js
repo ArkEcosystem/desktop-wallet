@@ -803,6 +803,7 @@ export default {
   WALLET_HEADING: {
     ACTIONS: {
       WALLET_NAME: 'Wallet name',
+      CONTACT_NAME: 'Contact name',
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet',
@@ -848,13 +849,22 @@ export default {
   },
 
   WALLET_RENAME: {
-    TITLE: 'Rename Wallet',
+    TITLE: 'Rename wallet',
     TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
     ADD: 'Add wallet',
     RENAME: 'Rename wallet',
     ADDRESS_INFO: 'Set a name for this wallet: ',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
+  },
+
+  CONTACT_RENAME: {
+    TITLE: 'Rename contact',
+    TITLE_ADD: 'Add contact',
+    NEW: 'New contact name',
+    ADD: 'Add contact',
+    RENAME: 'Rename contact',
+    ADDRESS_INFO: 'Set a name for this contact: '
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
