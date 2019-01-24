@@ -769,7 +769,7 @@ export default {
     PUBLIC_KEY: 'Public key',
     SIGNATURE: 'Signature',
     JSON_MESSAGE: 'Signed message content',
-    FORMAT_FOOTER: 'Format (JSON): { "publickey": "...", "signature": "...", "message": "..." }',
+    FORMAT_FOOTER: 'Format (JSON): { "publicKey": "...", "signature": "...", "message": "..." }',
     VERIFIED: 'The message is verified successfully',
     NOT_VERIFIED: 'The message is NOT verified',
     CONFIRMATION: 'Confirmation',
