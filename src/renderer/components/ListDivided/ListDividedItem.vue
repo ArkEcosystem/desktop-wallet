@@ -3,10 +3,8 @@
     class="ListDividedItem flex flex-col py-4 w-full border-b border-dashed border-theme-line-separator"
   >
     <div
-      :class="{
-        'flex-col': isFloatingLabel,
-      }"
-      class="flex items-center justify-between"
+      :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'"
+      class="flex justify-between"
     >
       <span
         :class="{
