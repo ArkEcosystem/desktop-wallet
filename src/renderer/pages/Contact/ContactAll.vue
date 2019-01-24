@@ -1,6 +1,6 @@
 <template>
   <div class="ContactAll flex flex-col">
-    <div class="ContactAll__header flex flex-row space-between bg-theme-feature rounded-lg px-10 py-2 mb-3">
+    <div class="ContactAll__header flex flex-row space-between bg-theme-feature rounded-lg px-10 py-5 mb-3">
       <div>
         <WalletIdenticonPlaceholder
           :size="60"
