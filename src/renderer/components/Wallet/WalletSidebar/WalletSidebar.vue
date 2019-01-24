@@ -13,20 +13,6 @@
       v-if="showMenu"
       class="WalletSidebar__menu flex flex-row m-4 justify-around"
     >
-      <div class="WalletSidebar__menu__button">
-        <div class="flex items-center">
-          <SvgIcon
-            name="filter"
-            view-box="0 0 13 20"
-          />
-          <span v-if="isExpanded">
-            {{ $t('WALLET_SIDEBAR.FILTER') }}
-          </span>
-        </div>
-      </div>
-      <div class="WalletSidebar__menu__separator">
-        <div class="WalletSidebar__menu__separator__line" />
-      </div>
       <div
         v-if="!isExpanded"
         class="WalletSidebar__menu__button"
