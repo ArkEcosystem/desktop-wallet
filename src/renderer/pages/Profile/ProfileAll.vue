@@ -25,17 +25,9 @@
         }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
-        <button
-          v-if="profile.avatar"
-          :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-          class="profile-avatar-xl background-image flex cursor-pointer self-center"
-          @click="selectProfile(profile.id)"
-        />
-        <ButtonLetter
-          v-else
-          :value="profile.name"
-          size="2xl"
-          class="profile-avatar-xl mx-auto"
+        <ProfileAvatar
+          :profile="profile"
+          letter-size="2xl"
           @click="selectProfile(profile.id)"
         />
 
@@ -87,16 +79,15 @@
 </template>
 
 <script>
-import { ButtonLetter } from '@/components/Button'
 import { mapValues, uniqBy } from 'lodash'
 import { mapGetters } from 'vuex'
-import { ProfileRemovalConfirmation } from '@/components/Profile'
+import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
 
 export default {
   name: 'ProfileAll',
 
   components: {
-    ButtonLetter,
+    ProfileAvatar,
     ProfileRemovalConfirmation
   },
 
@@ -203,14 +194,30 @@ export default {
 .ProfileAll__grid__profile {
   @apply .p-4 .border-transparent .border-2 .rounded-lg;
 }
-.ProfileAll__grid__profile:hover .profile-avatar-xl {
+.ProfileAll__grid__profile:hover .profile-avatar-xl,
+.ProfileAll__grid__profile:hover .ProfileAvatar__image,
+.ProfileAll__grid__profile:hover .ProfileAvatar__letter {
   transition: 0.5s;
   opacity: 0.5;
 }
 .ProfileAll__grid__profile--selected {
-  @apply .border-green .border-2 .rounded-lg;
+  @apply .border-green;
 }
 .ProfileAll__grid__profile__name {
   width: var(--profile-avatar-xl);
 }
-</style>
+
+.ProfileAll .ProfileAvatar {
+  @apply .flex
+}
+.ProfileAll .ProfileAvatar,
+.ProfileAll .ProfileAvatar__image {
+  height: calc(var(--profile-avatar-xl) * 0.66);
+  width: calc(var(--profile-avatar-xl) * 0.66);
+}
+.ProfileAll .ProfileAvatar__image {
+  @apply .flex .cursor-pointer .self-center;
+}
+.ProfileAll .ProfileAvatar__letter {
+  @apply .mx-auto .self-center
+} </style>
