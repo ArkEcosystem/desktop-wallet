@@ -106,34 +106,25 @@
             class="AppSidemenu__avatar__container relative cursor-pointer flex items-center justify-center hover:opacity-50"
           >
             <RouterLink
-              v-if="session_profile.avatar"
-              :class="isHorizontal ? 'h-12 w-12 bg-no-repeat' : 'h-18 w-18'"
+              :class="{
+                'h-12 w-12': session_profile.avatar && isHorizontal,
+                'h-18 w-18': session_profile.avatar && !isHorizontal
+              }"
               :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
               :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
               :to="{ name: 'profiles' }"
               class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
             >
-              <SvgIcon
-                class="AppSidemenu__avatar__dots text-grey-dark"
-                name="point"
-                view-box="0 0 14 14"
-              />
-            </RouterLink>
-            <RouterLink
-              v-if="!session_profile.avatar"
-              :to="{ name: 'profiles' }"
-            >
-              <ButtonLetter
-                :value="session_profile.name"
-                :has-custom-style="true"
-                size="xl"
-                class="bg-theme-feature-item-selected text-theme-feature-item-selected-text"
-              />
-              <SvgIcon
-                class="AppSidemenu__avatar__dots text-grey-dark"
-                name="point"
-                view-box="0 0 14 14"
-              />
+              <ProfileAvatar
+                :profile="session_profile"
+                :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
+              >
+                <SvgIcon
+                  class="AppSidemenu__avatar__dots text-grey-dark"
+                  name="point"
+                  view-box="0 0 14 14"
+                />
+              </ProfileAvatar>
             </RouterLink>
           </div>
         </div>
@@ -143,26 +134,26 @@
 </template>
 
 <script>
+import semver from 'semver'
 import { mapGetters } from 'vuex'
 import releaseService from '@/services/release'
-import { ButtonLetter } from '@/components/Button'
-import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
+import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
+import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-import semver from 'semver'
 
 export default {
   name: 'AppSidemenu',
 
   components: {
-    ButtonLetter,
-    MenuNavigation,
-    MenuNavigationItem,
     AppSidemenuSettings,
     AppSidemenuNetworkStatus,
     AppSidemenuImportantNotification,
+    MenuNavigation,
+    MenuNavigationItem,
+    ProfileAvatar,
     SvgIcon
   },
 
