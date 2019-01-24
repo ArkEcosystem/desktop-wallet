@@ -32,39 +32,37 @@
         />
 
         <div class="flex flex-col justify-between">
-          <div>
-            <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
+          <div class="pl-1">
+            <div class="ProfileAll__grid__profile__name font-semibold flex text-lg">
               {{ profile.name | truncate(12) }}
             </div>
 
-            <span class="font-bold my-2 text-lg pl-4">
+            <span class="font-bold my-2 text-lg">
               {{ profileBalance(profile) }}
             </span>
-          </div>
 
-          <div>
             <RouterLink
               :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-              class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
+              class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs mt-2 mb-1"
             >
               {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
             </RouterLink>
 
             <button
-              class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"
+              class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer text-theme-page-text-light hover:underline hover:text-red"
               @click="openRemovalConfirmation(profile)"
             >
               {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
             </button>
-
-            <a
-              v-show="profile.id !== session_profile.id"
-              class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline mt-4"
-              @click="selectProfile(profile.id)"
-            >
-              {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
-            </a>
           </div>
+
+          <a
+            v-show="profile.id !== session_profile.id"
+            class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-1 hover:underline mt-4"
+            @click="selectProfile(profile.id)"
+          >
+            {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
+          </a>
         </div>
       </div>
     </div>
@@ -192,7 +190,7 @@ export default {
   grid-gap: 1rem;
 }
 .ProfileAll__grid__profile {
-  @apply .p-4 .border-transparent .border-2 .rounded-lg;
+  @apply .p-3 .border-transparent .border-2 .rounded-lg;
 }
 .ProfileAll__grid__profile:hover .profile-avatar-xl,
 .ProfileAll__grid__profile:hover .ProfileAvatar__image,
