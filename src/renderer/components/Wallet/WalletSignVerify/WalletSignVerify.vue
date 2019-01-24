@@ -50,16 +50,20 @@
       @mouseover="showTimestamp = message.timestamp"
       @mouseout="showTimestamp = null"
     >
-      <div class="flex flex-row">
-        <div class="font-semibold text-theme-wallet-sign-verify-message-text mr-6 pl-2">
-          <div>{{ $t('SIGN_VERIFY.MESSAGE') }}:</div>
-          <div>{{ $t('SIGN_VERIFY.SIGNATURE') }}:</div>
-        </div>
-        <div>
-          <div class="font-semibold word-break-all">
+      <div class="flex flex-col">
+        <div class="flex items-start">
+          <div class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text">
+            {{ $t('SIGN_VERIFY.MESSAGE') }}:
+          </div>
+          <div class="font-semibold w-full word-break-all">
             {{ message.message }}
           </div>
-          <div class="word-break-all">
+        </div>
+        <div class="flex items-start">
+          <div class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text">
+            {{ $t('SIGN_VERIFY.SIGNATURE') }}:
+          </div>
+          <div class="w-full word-break-all">
             {{ message.signature }}
           </div>
         </div>
