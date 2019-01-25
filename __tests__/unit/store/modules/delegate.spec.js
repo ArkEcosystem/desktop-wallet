@@ -75,11 +75,11 @@ describe('delegate store module', () => {
         address: delegate.address,
         publicKey: delegate.publicKey,
         vote: delegate.voteWeight,
-        producedblocks: delegate.producedBlocks,
-        missedblocks: delegate.missedBlocks,
+        producedblocks: delegate.blocks.produced,
+        missedblocks: delegate.blocks.missed,
         rate: delegate.rank,
-        approval: delegate.approval,
-        productivity: delegate.productivity
+        approval: delegate.production.approval,
+        productivity: delegate.production.productivity
       }
     })
     const v2DelegateData = delegates.map(delegate => {
@@ -88,14 +88,19 @@ describe('delegate store module', () => {
         address: delegate.address,
         publicKey: delegate.publicKey,
         votes: delegate.voteWeight,
-        blocks: {
-          produced: delegate.producedBlocks,
-          missed: delegate.missedBlocks
-        },
         rank: delegate.rank,
+        blocks: {
+          produced: delegate.blocks.produced,
+          missed: delegate.blocks.missed
+        },
         production: {
-          approval: delegate.approval,
-          productivity: delegate.productivity
+          approval: delegate.production.approval,
+          productivity: delegate.production.productivity
+        },
+        forged: {
+          fees: delegate.forged.fees,
+          reward: delegate.forged.rewards,
+          total: delegate.forged.total
         }
       }
     })
