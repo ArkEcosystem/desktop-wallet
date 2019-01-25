@@ -136,6 +136,7 @@
           :no-data-message="$t('TABLE.NO_CONTACTS')"
           @remove-row="onRemoveContact"
           @rename-row="onRenameContact"
+          @on-sort-change="onSortChange"
         />
       </div>
     </div>
@@ -183,11 +184,7 @@ export default {
     selectableContacts: [],
     contactToRemove: null,
     contactToRename: null,
-    isLoading: false,
-    sortParams: {
-      field: 'name',
-      type: 'asc'
-    }
+    isLoading: false
   }),
 
   computed: {
@@ -208,6 +205,18 @@ export default {
         this.$store.dispatch('session/setWalletLayout', layout)
         const profile = clone(this.session_profile)
         profile.walletLayout = layout
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
+    sortParams: {
+      get () {
+        return this.$store.getters['session/contactSortParams']
+      },
+      set (sortParams) {
+        this.$store.dispatch('session/setContactSortParams', sortParams)
+        const profile = clone(this.session_profile)
+        profile.contactSortParams = sortParams
         this.$store.dispatch('profile/update', profile)
       }
     },
@@ -269,6 +278,10 @@ export default {
 
     createContact () {
       this.$router.push({ name: 'contact-new' })
+    },
+
+    onSortChange (sortParams) {
+      this.sortParams = sortParams
     },
 
     showContact (contactId) {
