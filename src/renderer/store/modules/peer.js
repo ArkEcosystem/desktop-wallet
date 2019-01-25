@@ -383,6 +383,7 @@ export default {
       })
 
       await dispatch('setCurrentPeer', peer)
+      await dispatch('transaction/updateStaticFees', null, { root: true })
 
       return peer
     },
