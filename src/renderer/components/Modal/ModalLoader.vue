@@ -29,7 +29,7 @@ import Loader from '@/components/utils/Loader'
 import ModalWindow from './ModalWindow'
 
 export default {
-  name: 'ModalLoading',
+  name: 'ModalLoader',
 
   components: {
     Loader,
