@@ -26,6 +26,13 @@
       slot="footer"
       name="transaction-footer"
     />
+
+    <ModalLoader
+      :allow-close="true"
+      :message="$t('TRANSACTION.INFO.BROADCASTING')"
+      :visible="showBroadcastingTransactions"
+      @close="emitClose"
+    />
   </ModalWindow>
 </template>
 
@@ -33,7 +40,7 @@
 import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
 import WalletService from '@/services/wallet'
-import { ModalWindow } from '@/components/Modal'
+import { ModalLoader, ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
 
@@ -41,6 +48,7 @@ export default {
   name: 'TransactionModal',
 
   components: {
+    ModalLoader,
     ModalWindow,
     TransactionForm,
     TransactionConfirm
@@ -60,6 +68,7 @@ export default {
   },
 
   data: () => ({
+    showBroadcastingTransactions: false,
     step: 0,
     transaction: null,
     walletOverride: null
@@ -120,11 +129,8 @@ export default {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
         warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST'),
-        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT'),
-        broadcasting: this.$t('TRANSACTION.INFO.BROADCASTING')
+        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
       }
-
-      this.emitClose()
 
       let responseArray
       let success = false
@@ -138,7 +144,7 @@ export default {
         }
 
         if (shouldBroadcast) {
-          this.$info(messages.broadcasting)
+          this.showBroadcastingTransactions = true
         }
 
         if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
@@ -191,8 +197,11 @@ export default {
         this.$logger.error(error)
         this.$error(messages.error)
       } finally {
+        this.showBroadcastingTransactions = false
         this.emitSent(success)
       }
+
+      this.emitClose()
     },
 
     emitSent (success) {
