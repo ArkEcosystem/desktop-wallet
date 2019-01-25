@@ -11,6 +11,11 @@ const delegate1 = {
     productivity: 99.38,
     approval: 0.03
   },
+  forged: {
+    fees: 1173040419815,
+    rewards: 21788000000000,
+    total: 22961040419815
+  },
   rank: 59
 }
 const delegate2 = {
@@ -25,6 +30,11 @@ const delegate2 = {
   production: {
     productivity: 73.83,
     approval: 0.02
+  },
+  forged: {
+    fees: 3085620625,
+    rewards: 499400000000,
+    total: 502485620625
   },
   rank: 62
 }
