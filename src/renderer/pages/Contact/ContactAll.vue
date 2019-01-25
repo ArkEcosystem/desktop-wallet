@@ -7,7 +7,7 @@
           class="identicon opacity-50"
         />
         <span
-          class="rounded-full flex items-center justify-center absolute ml-8 -mt-8 w-8 h-8 bg-theme-feature text-theme-page-text-light"
+          class="rounded-full flex items-center justify-center absolute ml-8 -mt-8 w-8 h-8 bg-theme-feature text-theme-page-text-light font-black"
         >
           i
         </span>
