@@ -169,6 +169,7 @@
             :no-data-message="$t('TABLE.NO_WALLETS')"
             @remove-row="onRemoveWallet"
             @rename-row="onRenameWallet"
+            @on-sort-change="onSortChange"
           />
         </div>
       </div>
@@ -220,11 +221,7 @@ export default {
     selectableWallets: [],
     walletToRemove: null,
     walletToRename: null,
-    isLoading: false,
-    sortParams: {
-      field: 'balance',
-      type: 'desc'
-    }
+    isLoading: false
   }),
 
   computed: {
@@ -291,6 +288,18 @@ export default {
         this.$store.dispatch('session/setWalletLayout', layout)
         const profile = clone(this.session_profile)
         profile.walletLayout = layout
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
+    sortParams: {
+      get () {
+        return this.$store.getters['session/walletSortParams']
+      },
+      set (params) {
+        this.$store.dispatch('session/setWalletSortParams', params)
+        const profile = clone(this.session_profile)
+        profile.walletSortParams = params
         this.$store.dispatch('profile/update', profile)
       }
     },
@@ -370,6 +379,10 @@ export default {
 
     onRenameWallet (wallet) {
       this.openRenameModal(wallet)
+    },
+
+    onSortChange (sortParams) {
+      this.sortParams = sortParams
     },
 
     showWallet (walletId) {
