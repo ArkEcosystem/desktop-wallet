@@ -178,8 +178,12 @@ export default class ClientService {
     return 0
   }
 
+  /**
+   * Fetches the static fees for transaction types.
+   * @return {Number[]}
+   */
   async fetchStaticFees () {
-    let fees = {}
+    let fees = []
     if (this.version === 2) {
       fees = Object.values((await this.client.resource('transactions').fees()).data.data)
     } else {

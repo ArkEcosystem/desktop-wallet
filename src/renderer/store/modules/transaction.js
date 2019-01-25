@@ -165,6 +165,11 @@ export default {
         }
       }
     },
+
+    /**
+     * Update static fees from API and store against profile.
+     * @return {void}
+     */
     async updateStaticFees ({ commit, rootGetters }) {
       commit('SET_STATIC_FEES', {
         profileId: rootGetters['session/profileId'],
