@@ -12,7 +12,17 @@ jest.mock('@/store', () => {
   return {
     getters: {
       'session/network': jest.fn(),
-      'network/feeStatisticsByType': jest.fn()
+      'network/feeStatisticsByType': jest.fn(),
+      'transaction/staticFee': jest.fn(type => {
+        switch (type) {
+          case 0:
+            return 10000000
+          case 3:
+            return 100000000
+        }
+
+        return null
+      })
     }
   }
 })
@@ -74,7 +84,9 @@ describe('InputFee', () => {
 
   describe('maxV1fee', () => {
     it('should uses V1 configuration', () => {
-      let wrapper = mountComponent()
+      let wrapper = mountComponent({
+        propsData: { transactionType: 0 }
+      })
       expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0] * 1e-8)
       expect(wrapper.vm.maxV1fee).toEqual(0.1)
 
