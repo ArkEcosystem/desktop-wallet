@@ -24,7 +24,8 @@
         <WalletButtonImport class="mt-6 mb-6 w-1/2" />
       </div>
       <WalletSidebar
-        :is-slim="false"
+        :show-expanded="true"
+        :show-menu="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>
