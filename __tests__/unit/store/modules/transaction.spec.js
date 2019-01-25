@@ -15,6 +15,16 @@ const axiosMock = new AxiosMockAdapter(axios)
 const store = new Vuex.Store({
   modules: {
     transaction: TransactionModule,
+    profile: {
+      namespaced: true,
+      getters: {
+        byId: state => () => {
+          return {
+            networkId: 'network'
+          }
+        }
+      }
+    },
     session: SessionModule,
     wallet: WalletModule
   },
@@ -133,7 +143,7 @@ describe('TransactionModule', () => {
   describe('getters staticFee', () => {
     it('should return a single fee', () => {
       store.commit('transaction/SET_STATIC_FEES', {
-        profileId: 'exampleId',
+        networkId: 'network',
         staticFees: [ 1, 2, 3, 4, 5 ]
       })
 
@@ -146,7 +156,7 @@ describe('TransactionModule', () => {
 
     it('should return null if no fee', () => {
       store.commit('transaction/SET_STATIC_FEES', {
-        profileId: 'exampleId',
+        networkId: 'network',
         staticFees: []
       })
 
