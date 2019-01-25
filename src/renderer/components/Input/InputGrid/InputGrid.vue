@@ -2,24 +2,16 @@
   <div class="InputGrid">
     <slot>
       <div class="InputGrid__container">
-        <div
-          v-for="item in visibleItems"
-          :key="item[itemKey]"
+        <button
+          v-if="selectedItem"
+          class="mr-3"
         >
-          <button @click="select(item)">
-            <slot
-              v-bind="itemSlotAttrs(item)"
-              name="item"
-            >
-              <InputGridItem
-                :image-path="item.imagePath"
-                :is-selected="selectedItem === item && !isModalOpen"
-                :text-content="item.textContent"
-                :title="item.title"
-              />
-            </slot>
-          </button>
-        </div>
+          <InputGridItem
+            v-bind="activeItem"
+            :is-selected="!isModalOpen"
+            :is-for-modal="false"
+          />
+        </button>
 
         <slot name="more">
           <button
@@ -27,10 +19,9 @@
             @click="openModal"
           >
             <InputGridItem
-              :image-path="isSelectedFromModal ? selectedItem.imagePath : false"
-              :is-selected="isSelectedFromModal"
-              :title="isSelectedFromModal ? selectedItem.title : $t('INPUT_GRID.MORE')"
-              class="text-4xl text-center p-1 align-middle bg-theme-button text-theme-option-button-text hover:text-theme-button-text"
+              :title="$t('INPUT_GRID.MORE')"
+              :is-selected="false"
+              class="text-4xl text-center p-1 align-middle border-2 border-theme-line-separator text-theme-option-button-text hover:text-theme-button-text"
               text-content="..."
             />
           </button>
@@ -98,10 +89,10 @@ export default {
       required: false,
       default: null
     },
-    maxVisibleItems: {
-      type: Number,
+    autoSelectFirst: {
+      type: Boolean,
       required: false,
-      default: 10
+      default: false
     }
   },
 
@@ -116,17 +107,15 @@ export default {
     allItems () {
       return flatten(Object.values(this.items))
     },
-    firstVisible () {
-      return this.visibleItems[0]
-    },
-    lastVisible () {
-      return this.visibleItems[this.visibleItems.length - 1]
-    },
-    visibleItems () {
-      return this.allItems.slice(0, this.maxVisibleItems)
-    },
-    isSelectedFromModal () {
-      return !!this.selectedItem && this.visibleItems.indexOf(this.selectedItem) === -1
+
+    activeItem () {
+      return this.allItems.find(i => i.title === this.selectedItem.title)
+    }
+  },
+
+  mounted () {
+    if (this.autoSelectFirst && !this.selected) {
+      this.select(this.allItems[0])
     }
   },
 
@@ -152,17 +141,14 @@ export default {
 
     select (item) {
       this.selectedItem = item
-      this.$emit('input', this.selectedItem)
+      this.$emit('input', this.activeItem)
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .InputGrid__container {
-  display: grid;
-  /* Maximum 3 columns */
-  grid-template-columns: repeat(3, 4.5rem);
-  grid-gap: 1rem;
+  @apply flex items-center
 }
 </style>

@@ -89,6 +89,7 @@ let colors = {
 
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
+  'theme-heading-text': 'var(--theme-heading-text)',
 
   'theme-button-special-choice': 'var(--theme-button-special-choice)',
 
@@ -537,6 +538,7 @@ module.exports = {
     'sm': '.125rem',
     default: '.25rem',
     'lg': '.5rem',
+    'xl': '1rem',
     'full': '9999px',
     '1/2': '100%' // Added
   },

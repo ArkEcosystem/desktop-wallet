@@ -35,7 +35,7 @@
               'border-r border-theme-line-separator' : votedDelegate.rank
             }"
             class="font-semibold pr-6"
-            path="WALLET_DELEGATES.VOTED_FOR"
+            :path="isOwned ? 'WALLET_DELEGATES.VOTED_FOR' : 'WALLET_DELEGATES.WALLET_VOTED_FOR'"
           >
             <strong place="delegate">
               {{ votedDelegate.username }}
@@ -64,6 +64,7 @@
         </div>
       </div>
       <div
+        v-if="isOwned"
         class="WalletDetails__unvote"
         @click="openUnvote"
       >
@@ -81,6 +82,7 @@
           :delegate="votedDelegate"
           :is-voter="true"
           @cancel="onCancel"
+          @close="onCancel"
           @sent="onSent"
         />
       </Portal>
@@ -177,6 +179,13 @@ export default {
 
     isDelegatesTab () {
       return this.currentTab === 'WalletDelegates'
+    },
+
+    isOwned () {
+      const wallet = this.$store.getters['wallet/byAddress'](this.currentWallet.address)
+      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+
+      return wallets.includes(wallet)
     }
   },
 
@@ -229,7 +238,7 @@ export default {
         const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
 
         if (walletVote) {
-          this.votedDelegate = await this.$client.fetchDelegate(walletVote)
+          this.votedDelegate = this.$store.getters['delegate/byPublicKey'](walletVote)
           this.walletVote.publicKey = walletVote
         } else {
           this.votedDelegate = null
@@ -251,7 +260,7 @@ export default {
     },
 
     getProductivity () {
-      const productivity = this.votedDelegate.productivity || this.votedDelegate.production.productivity
+      const productivity = this.votedDelegate.production.productivity
       return this.formatter_percentage(productivity)
     },
 
@@ -263,10 +272,13 @@ export default {
       this.isSelected = false
     },
 
-    onSent () {
-      this.walletVote.publicKey = null
+    onSent (success) {
+      if (success) {
+        this.walletVote.publicKey = null
+        this.votedDelegate = null
+      }
+
       this.isSelected = false
-      this.votedDelegate = null
     }
   }
 }

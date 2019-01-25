@@ -20,6 +20,7 @@ export default {
     isLoading: state => state.isLoading,
     isConnected: state => state.isConnected,
     wallets: state => Object.values(state.wallets),
+    walletsObject: state => state.wallets,
     wallet: state => (address) => {
       if (!state.wallets[address]) {
         return null
@@ -65,6 +66,13 @@ export default {
     },
     SET_CONNECTION_TIMER (state, connectionTimer) {
       state.connectionTimer = connectionTimer
+    },
+    SET_WALLET (state, wallet) {
+      if (!state.wallets[wallet.address]) {
+        throw new Error(`Wallet ${wallet.address} not found in ledger wallets`)
+      }
+
+      state.wallets[wallet.address] = wallet
     },
     SET_WALLETS (state, wallets) {
       state.wallets = wallets
@@ -209,51 +217,86 @@ export default {
         return []
       }
 
+      if (getters['isLoading']) {
+        return []
+      }
+
       const profileId = rootGetters['session/profileId']
 
       if (clearFirst) {
         commit('SET_WALLETS', [])
       }
       commit('SET_LOADING', true)
-      const firstAddress = await dispatch('getAddress', 0)
-      let wallets = keyBy(getters['cachedWallets'](firstAddress), 'address')
+      const firstWallet = await dispatch('getWallet', 0)
+      const wallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
       const startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : 0
+
+      let batchIncrement = 1
+      if (this._vm.$client.hasMultiWalletSearch) {
+        batchIncrement = startIndex === 0 ? 10 : 2
+      }
+
       try {
-        for (let ledgerIndex = startIndex; ; ledgerIndex++) {
-          let isColdWallet = false
-          const ledgerAddress = ledgerIndex === 0 ? firstAddress : await dispatch('getAddress', ledgerIndex)
-          let wallet
-          try {
-            wallet = await this._vm.$client.fetchWallet(ledgerAddress)
-          } catch (error) {
-            logger.error(error)
-            const message = error.response ? error.response.data.message : error.message
-            if (message !== 'Wallet not found') {
-              throw error
-            }
-          }
-          if (!wallet) {
-            isColdWallet = true
-            wallet = {
-              address: ledgerAddress,
-              balance: 0
-            }
+        for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
+          // Make sure profile hasn't changed
+          if (rootGetters['session/profileId'] !== profileId) {
+            commit('SET_LOADING', false)
+
+            return []
           }
 
-          const ledgerName = rootGetters['wallet/ledgerNameByAddress'](ledgerAddress)
+          const ledgerWallets = []
+          for (let batchIndex = 0; batchIndex < batchIncrement; batchIndex++) {
+            const index = ledgerIndex + batchIndex
+            let wallet = firstWallet
+            if (index > 0) {
+              wallet = await dispatch('getWallet', index)
+            }
+            ledgerWallets.push({ ...wallet, ledgerIndex: index })
+          }
 
-          wallets[ledgerAddress] = Object.assign(wallet, {
-            isLedger: true,
-            ledgerIndex,
-            isSendingEnabled: true,
-            name: ledgerName || `Ledger ${ledgerIndex + 1}`,
-            passphrase: null,
-            profileId,
-            id: ledgerAddress,
-            publicKey: await dispatch('getPublicKey', ledgerIndex)
-          })
+          let walletData = []
+          if (batchIncrement > 1) {
+            walletData = await this._vm.$client.fetchWallets(ledgerWallets.map(wallet => wallet.address))
+          } else {
+            try {
+              walletData = [await this._vm.$client.fetchWallet(ledgerWallets[0].address)]
+            } catch (error) {
+              logger.error(error)
+              const message = error.response ? error.response.data.message : error.message
+              if (message !== 'Wallet not found') {
+                throw error
+              }
+            }
+          }
 
-          if (isColdWallet) {
+          let hasCold = false
+          const filteredWallets = []
+          for (const ledgerWallet of ledgerWallets) {
+            const wallet = walletData.find(wallet => wallet.address === ledgerWallet.address)
+            if (!wallet || (wallet.balance === 0 && !wallet.publicKey)) {
+              filteredWallets.push({ ...ledgerWallet, balance: 0, isCold: true })
+              hasCold = true
+
+              break
+            }
+
+            filteredWallets.push({ ...wallet, ...ledgerWallet })
+          }
+
+          for (const wallet of filteredWallets) {
+            const ledgerName = rootGetters['wallet/ledgerNameByAddress'](wallet.address)
+            wallets[wallet.address] = Object.assign(wallet, {
+              isLedger: true,
+              isSendingEnabled: true,
+              name: ledgerName || `Ledger ${wallet.ledgerIndex + 1}`,
+              passphrase: null,
+              profileId,
+              id: wallet.address
+            })
+          }
+
+          if (hasCold) {
             break
           }
         }
@@ -266,6 +309,17 @@ export default {
       dispatch('cacheWallets')
 
       return wallets
+    },
+
+    /**
+     * Store ledger wallets in the cache.
+     * @param  {Number} accountIndex Index of wallet to get address for.
+     * @return {(String|Boolean)}
+     */
+    async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
+      commit('SET_WALLET', updatedWallet)
+      eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
+      dispatch('cacheWallets')
     },
 
     /**
@@ -292,6 +346,23 @@ export default {
     },
 
     /**
+     * Get address and public key from ledger wallet.
+     * @param  {Number} accountIndex Index of wallet to get data for.
+     * @return {(String|Boolean)}
+     */
+    async getWallet ({ dispatch }, accountIndex) {
+      try {
+        return await dispatch('action', {
+          action: 'getWallet',
+          accountIndex
+        })
+      } catch (error) {
+        logger.error(error)
+        throw new Error(`Could not get wallet: ${error}`)
+      }
+    },
+
+    /**
      * Get address from ledger wallet.
      * @param  {Number} accountIndex Index of wallet to get address for.
      * @return {(String|Boolean)}
@@ -304,9 +375,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get address: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -322,9 +392,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not get public key: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -343,9 +412,8 @@ export default {
         })
       } catch (error) {
         logger.error(error)
+        throw new Error(`Could not sign transaction: ${error}`)
       }
-
-      return false
     },
 
     /**
@@ -357,7 +425,7 @@ export default {
      * @return {String}
      */
     async action ({ state, dispatch, rootGetters }, { action, accountIndex, data } = {}) {
-      if (accountIndex !== undefined && !Number.isFinite(accountIndex)) {
+      if (accountIndex === undefined || !Number.isFinite(accountIndex)) {
         throw new Error('accountIndex must be a Number')
       }
 
@@ -370,15 +438,25 @@ export default {
 
       const path = `44'/${state.slip44}'/${accountIndex || 0}'/0/0`
       const actions = {
+        getWallet: async () => {
+          const response = await ledgerService.getWallet(path)
+          const publicKey = response.publicKey
+          const network = rootGetters['session/network']
+
+          return {
+            address: crypto.getAddress(publicKey, network.version),
+            publicKey
+          }
+        },
         getAddress: async () => {
-          const response = await ledgerService.getAddress(path)
+          const response = await ledgerService.getWallet(path)
           const publicKey = response.publicKey
           const network = rootGetters['session/network']
 
           return crypto.getAddress(publicKey, network.version)
         },
         getPublicKey: async () => {
-          const response = await ledgerService.getAddress(path)
+          const response = await ledgerService.getWallet(path)
 
           return response.publicKey
         },

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client } from '@/plugins/api-client'
 import PeerModule from '@/store/modules/peer'
-import peers, { goodPeer1, goodPeer2, badPeer1 } from '../../__fixtures__/store/peer'
+import peers, { goodPeer1, goodPeer2, goodPeer4, goodPeer5, badPeer1 } from '../../__fixtures__/store/peer'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
@@ -56,11 +56,28 @@ describe('peer store module', () => {
     expect(bestPeer).not.toEqual(badPeer1)
   })
 
+  it('should get peers in random order', () => {
+    const randomPeers = store.getters['peer/randomPeers']()
+    expect(randomPeers[0]).toBeOneOf(peers)
+    const randomPeers2 = store.getters['peer/randomPeers']()
+    expect(randomPeers).not.toEqual(randomPeers2)
+  })
+
+  it('should get random seed server peer', () => {
+    const randomSeedPeers = store.getters['peer/randomSeedPeers'](5, 'ark.mainnet')
+    const randomSeedPeers2 = store.getters['peer/randomSeedPeers'](5, 'ark.mainnet')
+    expect(randomSeedPeers).not.toEqual(randomSeedPeers2)
+  })
+
   it('should get & set current peer', async () => {
     await store.dispatch('peer/setCurrentPeer', goodPeer1)
     expect(store.getters['peer/current']()).toEqual(goodPeer1)
     await store.dispatch('peer/setCurrentPeer', goodPeer2)
     expect(store.getters['peer/current']()).toEqual(goodPeer2)
+    await store.dispatch('peer/setCurrentPeer', goodPeer4)
+    expect(store.getters['peer/current']()).toEqual(goodPeer4)
+    await store.dispatch('peer/setCurrentPeer', goodPeer5)
+    expect(store.getters['peer/current']()).toEqual(goodPeer5)
   })
 
   it('should return false if no initial peer', () => {
@@ -128,8 +145,8 @@ describe('peer store module', () => {
   it('should refresh peer list for v2', async () => {
     jest.setTimeout(15000)
     client.version = 2
-    const goodV2Peer = { ...goodPeer1, status: 200 }
-    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale' }
+    const goodV2Peer = { ...goodPeer1, status: 200, version: '2.0.0' }
+    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale', version: '2.0.0' }
     const refreshPeers = [goodV2Peer, badV2Peer]
     store.dispatch('peer/set', refreshPeers)
 

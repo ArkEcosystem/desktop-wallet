@@ -5,7 +5,7 @@
     @close="emitClose"
   >
     <section class="InputGridModal flex flex-col">
-      <div class="InputGridModal__container overflow-y-auto">
+      <div class="InputGridModal__container overflow-y-auto p-1">
         <div
           v-for="(categoryItems, category) in items"
           :key="category"
@@ -27,9 +27,8 @@
               -->
 
               <InputGridItem
-                :image-path="item.imagePath"
-                :is-selected="clicked === item"
-                :title="item.title"
+                v-bind="item"
+                :is-selected="clicked.title === item.title"
               />
             </button>
           </div>

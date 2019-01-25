@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/7zip/-/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
   integrity sha1-nK+xca+CMpSQNTtIFvAzR6oVCjA=
 
-"@arkecosystem/client@^0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.16.tgz#9011eb54cdeef8cfe95e1de7613239cfb43dcf4e"
-  integrity sha512-GndHBcNukhIze5+KAQOcmlPmgidOiIUvMOkJg9GRtjpTKnwd1kPCch0d0ZI+biQSMdTEG7yzlwx1OOfkTEjk9Q==
+"@arkecosystem/client@^0.1.18":
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.18.tgz#49f3710397f22917fab4912a8b9105bcf053fe85"
+  integrity sha512-o2MK+UmYINU+H1Zno2SqaEgOo50+uxU9bJw10Psru6XDZekLnEbVGyNHtA18HKkP7jUJoKfQwPkPC3gubyl2ZQ==
   dependencies:
     axios "^0.18.0"
     lodash.orderby "^4.6.0"
@@ -1137,6 +1137,11 @@ argparse@^1.0.7:
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
+
+argv@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/argv/-/argv-0.0.2.tgz#ecbd16f8949b157183711b1bda334f37840185ab"
+  integrity sha1-7L0W+JSbFXGDcRsb2jNPN4QBhas=
 
 arr-diff@^2.0.0:
   version "2.0.0"
@@ -2615,6 +2620,17 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+
+codecov@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/codecov/-/codecov-3.1.0.tgz#340bd968d361f256976b5af782dd8ba9f82bc849"
+  integrity sha512-aWQc/rtHbcWEQLka6WmBAOpV58J2TwyXqlpAQGhQaSiEUoigTTUk6lLd2vB3kXkhnDyzyH74RXfmV4dq2txmdA==
+  dependencies:
+    argv "^0.0.2"
+    ignore-walk "^3.0.1"
+    js-yaml "^3.12.0"
+    request "^2.87.0"
+    urlgrey "^0.4.4"
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -10919,6 +10935,11 @@ url@^0.11.0, url@~0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+urlgrey@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/urlgrey/-/urlgrey-0.4.4.tgz#892fe95960805e85519f1cd4389f2cb4cbb7652f"
+  integrity sha1-iS/pWWCAXoVRnxzUOJ8stMu3ZS8=
 
 usb@^1.3.3:
   version "1.5.0"

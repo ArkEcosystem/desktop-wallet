@@ -1,61 +1,66 @@
 <template>
-  <div class="ContactNew relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-col sm:flex-row h-full">
+  <div class="ContactNew relative">
+    <main class="flex h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImages[session_hasDarkTheme][step])}')`"
-        class="ContactNew__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
+        class="ContactNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
-          <h3 class="mb-2 text-theme-page-instructions-text">
-            {{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
-          </h3>
-
-          <p>
-            {{ $t(`PAGES.CONTACT_NEW.STEP${step}.INSTRUCTIONS.TEXT`) }}
+        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+          <h1 class="text-inherit">
+            {{ $t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`) }}
+          </h1>
+          <p class="text-center py-2 leading-normal">
+            {{ $t(`PAGES.CONTACT_NEW.INSTRUCTIONS.TEXT`) }}
           </p>
+
+          <img
+            :src="assets_loadImage(backgroundImage)"
+            :title="$t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`)"
+            class="w-full xl:w-4/5 mt-10"
+          >
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5">
-        <MenuStep
-          :step="step"
-        >
-          <MenuStepItem
-            :step="1"
-            :is-next-enabled="!$v.step1.$invalid"
-            :title="$t('PAGES.CONTACT_NEW.STEP1.TITLE')"
-            @next="moveTo(2)"
-          >
-            <div class="flex flex-col h-full w-full justify-around">
-              <InputAddress
-                ref="addressInput"
-                v-model="schema.address"
-                :pub-key-hash="session_network.version"
-                class="my-3"
-              />
-            </div>
-          </MenuStepItem>
+      <div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
+        <h3>{{ $t('PAGES.CONTACT_NEW.TITLE') }}</h3>
 
-          <MenuStepItem
-            :step="2"
-            :is-back-visible="true"
-            :is-next-enabled="!$v.step2.$invalid"
-            :title="$t('PAGES.CONTACT_NEW.STEP2.TITLE')"
-            @back="moveTo(1)"
-            @next="create"
+        <div class="w-full mt-10">
+          <InputAddress
+            ref="addressInput"
+            v-model="schema.address"
+            :is-invalid="$v.schema.address.$invalid"
+            :helper-text="addressError"
+            :pub-key-hash="session_network.version"
+            class="my-3"
+          />
+        </div>
+
+        <div class="w-full mt-6">
+          <InputText
+            v-model="schema.name"
+            :label="$t('PAGES.CONTACT_NEW.NAME')"
+            :is-invalid="$v.schema.name.$invalid"
+            :helper-text="nameError"
+            class="my-3"
+            name="name"
+          />
+
+          <div class="mt-4 border-theme-button-text border-l-4 pl-2">
+            <span class="text-theme-button-text font-bold">
+              {{ $t('PAGES.CONTACT_NEW.NAME_INFO') }}
+            </span>
+            {{ $t('PAGES.CONTACT_NEW.NAME_DESCRIPTION') }}
+          </div>
+        </div>
+
+        <div class="w-full mt-10">
+          <button
+            :disabled="$v.schema.address.$invalid || $v.schema.name.$invalid"
+            class="blue-button"
+            @click="create"
           >
-            <div class="flex flex-col h-full w-full justify-around">
-              <InputText
-                v-model="schema.name"
-                :label="$t('PAGES.CONTACT_NEW.STEP2.NAME')"
-                :is-invalid="$v.schema.name.$invalid"
-                :helper-text="nameError"
-                class="my-3"
-                name="name"
-              />
-            </div>
-          </MenuStepItem>
-        </MenuStep>
+            {{ $t('COMMON.DONE') }}
+          </button>
+        </div>
       </div>
     </main>
   </div>
@@ -63,7 +68,6 @@
 
 <script>
 import { InputAddress, InputText } from '@/components/Input'
-import { MenuStep, MenuStepItem } from '@/components/Menu'
 import Wallet from '@/models/wallet'
 
 export default {
@@ -71,32 +75,31 @@ export default {
 
   components: {
     InputAddress,
-    InputText,
-    MenuStep,
-    MenuStepItem
+    InputText
   },
 
   schema: Wallet.schema,
 
-  data: () => ({
-    step: 1,
-    backgroundImages: {
-      true: {
-        1: 'pages/wallet-new/background-step-1-dark.png',
-        2: 'pages/wallet-new/background-step-5-dark.png'
-      },
-      false: {
-        1: 'pages/wallet-new/background-step-1.png',
-        2: 'pages/wallet-new/background-step-5.png'
-      }
-    }
-  }),
-
   computed: {
+    backgroundImage () {
+      return 'pages/contact-new/wallet.svg'
+    },
+    addressError () {
+      if (this.$v.schema.address.$invalid) {
+        if (!this.$v.schema.address.contactDoesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_CONTACT', [this.schema.address])
+        } else if (!this.$v.schema.address.walletDoesNotExist) {
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [this.schema.address])
+        }
+      }
+      return null
+    },
     nameError () {
       if (this.$v.schema.name.$invalid) {
-        if (!this.$v.schema.name.doesNotExists) {
-          return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
+        if (!this.$v.schema.name.contactDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [this.schema.name])
+        } else if (!this.$v.schema.name.walletDoesNotExist) {
+          return this.$t('VALIDATION.NAME.EXISTS_AS_WALLET', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
         // NOTE: not used, unless the minimum length is changed
@@ -127,15 +130,17 @@ export default {
         this.$error(`${this.$t('PAGES.CONTACT_NEW.FAILED')}: ${error.message}`)
       }
     },
-
-    moveTo (step) {
-      this.step = step
+    contactExists (byAttr, value) {
+      const contact = this.$store.getters[`wallet/${byAttr}`](value)
+      return contact && contact.isContact
+    },
+    walletExists (byAttr, value) {
+      const wallet = this.$store.getters[`wallet/${byAttr}`](value)
+      return wallet && !wallet.isContact
     }
   },
 
   validations: {
-    step1: ['schema.address'],
-    step2: ['schema.name'],
     schema: {
       address: {
         isValid (value) {
@@ -144,11 +149,20 @@ export default {
           }
 
           return false
+        },
+        contactDoesNotExist (value) {
+          return value === '' || !this.contactExists('byAddress', value)
+        },
+        walletDoesNotExist (value) {
+          return value === '' || !this.walletExists('byAddress', value)
         }
       },
       name: {
-        doesNotExists (value) {
-          return value === '' || !this.$store.getters['wallet/byName'](value)
+        contactDoesNotExist (value) {
+          return value === '' || !this.contactExists('byName', value)
+        },
+        walletDoesNotExist (value) {
+          return value === '' || !this.walletExists('byName', value)
         }
       }
     }

@@ -13,8 +13,10 @@ export default {
     name: null,
     profileId: null,
     theme: null,
+    walletLayout: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
+    broadcastPeers: null,
     ledgerCache: null,
     transactionTableRowCount: 10
   }),
@@ -49,12 +51,15 @@ export default {
     timeFormat: state => state.timeFormat,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
+    walletLayout: state => state.walletLayout,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
+    hasWalletGridLayout: state => state.walletLayout === 'grid',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
+    broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
     transactionTableRowCount: state => state.transactionTableRowCount
   },
@@ -100,12 +105,20 @@ export default {
       state.theme = theme
     },
 
+    SET_WALLET_LAYOUT (state, walletLayout) {
+      state.walletLayout = walletLayout
+    },
+
     SET_CONTENT_PROTECTION (state, protection) {
       state.contentProtection = protection
     },
 
     SET_BACKGROUND_UPDATE_LEDGER (state, update) {
       state.backgroundUpdateLedger = update
+    },
+
+    SET_BROADCAST_PEERS (state, broadcast) {
+      state.broadcastPeers = broadcast
     },
 
     SET_LEDGER_CACHE (state, enabled) {
@@ -126,7 +139,9 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.walletLayout = 'grid'
       state.backgroundUpdateLedger = true
+      state.broadcastPeers = true
       state.contentProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
@@ -147,7 +162,9 @@ export default {
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
+      dispatch('setWalletLayout', profile.walletLayout)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
+      dispatch('setBroadcastPeers', profile.broadcastPeers)
       dispatch('setLedgerCache', profile.ledgerCache)
       dispatch('setTransactionTableRowCount', profile.transactionTableRowCount)
 
@@ -199,6 +216,10 @@ export default {
       commit('SET_BACKGROUND_UPDATE_LEDGER', value)
     },
 
+    setBroadcastPeers ({ commit }, value) {
+      commit('SET_BROADCAST_PEERS', value)
+    },
+
     setLedgerCache ({ commit }, value) {
       commit('SET_LEDGER_CACHE', value)
     },
@@ -210,6 +231,10 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setWalletLayout ({ commit }, value) {
+      commit('SET_WALLET_LAYOUT', value)
     },
 
     setTransactionTableRowCount ({ commit }, value) {

@@ -121,6 +121,130 @@ describe('Services > Client', () => {
     })
   })
 
+  describe('fetchWallets', () => {
+    const wallets = [
+      {
+        address: 'address1',
+        balance: '1202',
+        publicKey: 'public key'
+      },
+      {
+        address: 'address2',
+        balance: '300',
+        publicKey: 'public key'
+      }
+    ]
+    let walletsResponse = {
+      data: {
+        data: [
+          {
+            ...wallets[0],
+            isDelegate: true,
+            username: 'test'
+          },
+          {
+            ...wallets[1],
+            isDelegate: false,
+            username: null
+          }
+        ]
+      }
+    }
+    const generateAccountResponse = (address) => {
+      return {
+        data: {
+          success: true,
+          account: {
+            ...wallets.find(wallet => wallet.address === address),
+            unconfirmedBalance: 'NO',
+            unconfirmedSignature: 'NO',
+            secondSignature: 'NO',
+            multisignatures: 'NO',
+            u_multisignatures: 'NO'
+          }
+        }
+      }
+    }
+    const generateWalletResponse = (address) => {
+      return {
+        data: {
+          data: {
+            ...wallets.find(wallet => wallet.address === address),
+            isDelegate: true,
+            username: 'test'
+          }
+        }
+      }
+    }
+
+    let getAccountEndpoint = jest.fn(generateAccountResponse)
+    let getWalletEndpoint = jest.fn(generateWalletResponse)
+    let searchWalletEndpoint = jest.fn(() => walletsResponse)
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'accounts') {
+          return {
+            get: getAccountEndpoint
+          }
+        } else if (resource === 'wallets') {
+          return {
+            get: getWalletEndpoint,
+            search: searchWalletEndpoint
+          }
+        }
+      }
+
+      client.client.resource = jest.fn(resource)
+    })
+
+    describe('when version is 1', () => {
+      beforeEach(() => {
+        client.version = 1
+      })
+
+      it('should call the accounts endpoint as a fallback', async () => {
+        const walletAddresses = ['address1', 'address2']
+        const fetchedWallets = await client.fetchWallets(walletAddresses)
+        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'accounts')
+        expect(client.client.resource).toHaveBeenNthCalledWith(2, 'accounts')
+        expect(getAccountEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
+        expect(getAccountEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
+        expect(fetchedWallets).toEqual([
+          { ...wallets[0], balance: +wallets[0].balance, isDelegate: false },
+          { ...wallets[1], balance: +wallets[1].balance, isDelegate: false }
+        ])
+      })
+    })
+
+    describe('when version is 2', () => {
+      beforeEach(() => {
+        client.version = 2
+      })
+
+      it('should call the wallets endpoint as a fallback if multi-wallets endpoint unavailable', async () => {
+        const walletAddresses = ['address1', 'address2']
+        const fetchedWallets = await client.fetchWallets(walletAddresses)
+        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
+        expect(client.client.resource).toHaveBeenNthCalledWith(2, 'wallets')
+        expect(getWalletEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
+        expect(getWalletEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
+        expect(fetchedWallets).toEqual([
+          generateWalletResponse('address1').data.data,
+          generateWalletResponse('address2').data.data
+        ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
+      })
+
+      it('should call the search endpoint if multi-wallets endpoint available', async () => {
+        client.hasMultiWalletSearch = true
+        const walletAddresses = ['address1', 'address2']
+        const fetchedWallets = await client.fetchWallets(walletAddresses)
+        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
+        expect(searchWalletEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+        expect(fetchedWallets).toEqual(walletsResponse.data.data)
+      })
+    })
+  })
+
   describe('fetchWalletVote', () => {
     const publicKey = 'public key'
 
@@ -407,6 +531,116 @@ describe('Services > Client', () => {
           expect(transaction).not.toHaveProperty('senderId')
           expect(transaction).not.toHaveProperty('recipientId')
         })
+      })
+    })
+  })
+
+  describe('fetchTransactionsForWallets', () => {
+    const { meta } = fixtures.transactions
+
+    describe('when version in v1', () => {
+      let getTransactionsEndpoint
+      let transactions
+      beforeEach(() => {
+        client.version = 1
+
+        transactions = cloneDeep(fixtures.transactions.v1)
+        getTransactionsEndpoint = jest.fn(() => {
+          return {
+            data: {
+              transactions, success: true, count: meta.count.toString()
+            }
+          }
+        })
+
+        const resource = resource => {
+          if (resource === 'transactions') {
+            return {
+              all: getTransactionsEndpoint
+            }
+          }
+        }
+
+        client.client.resource = jest.fn(resource)
+      })
+
+      it('should call the v1 endpoint as a fallback', async () => {
+        const walletAddresses = ['address1', 'address2']
+        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'transactions')
+        expect(client.client.resource).toHaveBeenNthCalledWith(2, 'transactions')
+        expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
+        expect(fetchedWallets).toEqual(
+          ['address1', 'address2'].reduce((map, address, index) => {
+            map[address] = transactions
+
+            return map
+          }, {})
+        )
+      })
+    })
+
+    describe('when version in v2', () => {
+      let getTransactionsEndpoint
+      let searchTransactionsEndpoint
+      let transactions
+      beforeEach(() => {
+        client.version = 2
+
+        transactions = cloneDeep(fixtures.transactions.v2)
+        searchTransactionsEndpoint = jest.fn(() => ({ data: { data: transactions } }))
+        getTransactionsEndpoint = jest.fn(() => {
+          return {
+            data: {
+              data: transactions,
+              meta: {
+                totalCount: meta.count
+              }
+            }
+          }
+        })
+
+        const resource = resource => {
+          if (resource === 'wallets') {
+            return {
+              transactions: getTransactionsEndpoint
+            }
+          } else if (resource === 'transactions') {
+            return {
+              search: searchTransactionsEndpoint
+            }
+          }
+        }
+
+        client.client.resource = jest.fn(resource)
+      })
+
+      it('should call the transactions endpoint as a fallback if multi-wallets endpoint unavailable', async () => {
+        const walletAddresses = ['address1', 'address2']
+        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
+        expect(client.client.resource).toHaveBeenNthCalledWith(2, 'wallets')
+        expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
+        expect(fetchedWallets).toEqual(['address1', 'address2'].reduce((map, address, index) => {
+          map[address] = transactions
+
+          return map
+        }, {}))
+      })
+
+      it('should call the search endpoint if multi-wallets endpoint available', async () => {
+        client.hasMultiWalletSearch = true
+        const walletAddresses = ['address1', 'address2']
+        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'transactions')
+        expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+        expect(fetchedWallets).toEqual(['address1', 'address2'].reduce((map, address, index) => {
+          map[address] = transactions.filter(transaction => {
+            return [transaction.sender, transaction.recipient].includes(address)
+          })
+
+          return map
+        }, {}))
       })
     })
   })

@@ -51,6 +51,10 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
     },
+    broadcastPeers: {
+      type: 'boolean',
+      format: data => data.broadcastPeers !== undefined ? data.broadcastPeers : true
+    },
     ledgerCache: {
       type: 'boolean',
       format: data => data.ledgerCache || false
@@ -58,7 +62,11 @@ export default new BaseModel({
     transactionTableRowCount: {
       type: 'integer',
       format: data => data.transactionTableRowCount || 10
+    },
+    walletLayout: {
+      type: 'string',
+      format: data => data.walletLayout || 'grid'
     }
   },
-  required: ['avatar', 'background', 'currency', 'language', 'name', 'networkId', 'theme']
+  required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
 })

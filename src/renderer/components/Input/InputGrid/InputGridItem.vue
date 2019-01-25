@@ -1,30 +1,80 @@
 <template>
   <div
     :style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
-    :title="title"
-    :class="isSelected ? 'border-green' : 'border-transparent'"
-    class="InputGridItem background-image rounded-lg w-18 h-18 border-2 cursor-pointer rounded-lg hover:shadow transition text-center"
+    :class="{ 'InputGridItem--selected': isSelected }"
+    class="InputGridItem relative bg-cover bg-no-repeat bg-center rounded-full w-16 h-16 cursor-pointer transition text-center hover:opacity-75"
   >
-    {{ textContent }}
+    <span
+      v-if="textContent && !onlyLetter"
+      class="InputGridItem__text"
+    >
+      {{ textContent }}
+    </span>
+    <div
+      v-if="onlyLetter"
+      :class="{
+        'pt-5 pb-0': isForModal
+      }"
+      class="flex h-full flex-col items-center justify-between"
+    >
+      <span
+        v-if="isForModal"
+        class="font-semibold text-theme-button-text"
+      >
+        {{ title }}
+      </span>
+      <ButtonLetter
+        :value="label"
+        :size="!isForModal ? '2xl' : null"
+        :class="{
+          'w-24 h-24 text-5xl': isForModal
+        }"
+        tag="div"
+      />
+    </div>
+    <span
+      v-if="isSelected"
+      class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute pin-b pin-r w-6 h-6 bg-green border-2 border-theme-feature text-white"
+    >
+      <SvgIcon
+        name="checkmark"
+        view-box="0 0 10 9"
+      />
+    </span>
   </div>
 </template>
 
 <script>
-/**
- * This component has the default style
- */
+import { ButtonLetter } from '@/components/Button'
+import { SvgIcon } from '@/components/SvgIcon'
+
 export default {
   name: 'InputGridItem',
 
+  components: {
+    ButtonLetter,
+    SvgIcon
+  },
+
   props: {
     imagePath: {
-      // TODO without boolean?
       type: [String, Boolean],
+      required: false,
       default: null
     },
     textContent: {
       type: String,
       default: null
+    },
+    onlyLetter: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    isForModal: {
+      type: Boolean,
+      required: false,
+      default: true
     },
     isSelected: {
       type: Boolean,
@@ -32,17 +82,20 @@ export default {
     },
     title: {
       type: String,
-      required: true
+      required: false,
+      default: null
+    }
+  },
+
+  computed: {
+    currentNetwork () {
+      return this.session_network
+    },
+
+    label () {
+      const symbol = this.currentNetwork ? this.currentNetwork.symbol : null
+      return this.textContent || symbol
     }
   }
 }
 </script>
-
-<style scoped>
-/* To display the images scaled to the size of the button */
-.InputGridItem {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-</style>

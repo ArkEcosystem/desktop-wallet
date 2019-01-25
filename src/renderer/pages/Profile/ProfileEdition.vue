@@ -1,23 +1,34 @@
 <template>
-  <div class="ProfileEdition relative bg-theme-feature rounded-lg">
-    <main class="flex flex-col sm:flex-row h-full">
+  <div class="ProfileEdition relative">
+    <main class="flex h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
-        class="ProfileEdition__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
+        class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
-          <h3 class="mb-2 text-theme-page-instructions-text">
+        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+          <h1 class="text-inherit">
             {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}
-          </h3>
-
-          <p>
+          </h1>
+          <p class="text-center py-2 leading-normal">
             {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.TEXT`) }}
           </p>
+
+          <div class="relative w-full xl:w-4/5 mt-10">
+            <img
+              :src="assets_loadImage(instructionsImage)"
+              :title="$t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`)"
+            >
+            <h2
+              v-if="isProfileTab"
+              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block"
+            >
+              {{ name }}
+            </h2>
+          </div>
         </div>
       </div>
 
-      <div class="sm:w-1/2 md:w-2/5">
-        <MenuTab :tab="tab">
+      <div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto">
+        <MenuTab v-model="tab">
           <MenuTabItem
             :label="$t('PAGES.PROFILE_EDITION.TAB_PROFILE.TITLE')"
             tab="profile"
@@ -52,7 +63,7 @@
 
                 <button
                   :disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
-                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue inline-flex"
+                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex"
                   @click="toggleIsNameEditable"
                 >
                   <SvgIcon
@@ -130,6 +141,11 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
+                  :extra-items="[{
+                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                    textContent: name,
+                    onlyLetter: true
+                  }]"
                   :enable-modal="true"
                   :max-visible-items="3"
                   :selected="avatar"
@@ -137,6 +153,16 @@
                 />
               </ListDividedItem>
             </ListDivided>
+
+            <footer class="ProfileEdition__footer pb-10">
+              <button
+                :disabled="!isModified || isNameEditable"
+                class="blue-button"
+                @click="save"
+              >
+                {{ $t('COMMON.SAVE') }}
+              </button>
+            </footer>
           </MenuTabItem>
 
           <MenuTabItem
@@ -146,18 +172,17 @@
           >
             <ListDivided>
               <ListDividedItem
-                :label="$t('COMMON.SELECT_THEME')"
+                :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
                 <SelectionTheme
-                  :max-visible-items="4"
-                  :selected="theme"
-                  @select="selectTheme"
+                  :value="theme"
+                  @input="selectTheme"
                 />
               </ListDividedItem>
 
               <ListDividedItem
-                :label="$t('COMMON.SELECT_BACKGROUND')"
+                :label="$t('COMMON.BACKGROUND')"
                 class="ProfileEdition__background"
               >
                 <SelectionBackground
@@ -167,19 +192,18 @@
                 />
               </ListDividedItem>
             </ListDivided>
+
+            <footer class="ProfileEdition__footer pb-10">
+              <button
+                :disabled="!isModified || isNameEditable"
+                class="blue-button"
+                @click="save"
+              >
+                {{ $t('COMMON.SAVE') }}
+              </button>
+            </footer>
           </MenuTabItem>
         </MenuTab>
-
-        <!-- TODO at the bottom ? -->
-        <footer class="ProfileEdition__footer mt-3 p-10">
-          <button
-            :disabled="!isModified || isNameEditable"
-            class="blue-button"
-            @click="save"
-          >
-            {{ $t('COMMON.SAVE') }}
-          </button>
-        </footer>
       </div>
     </main>
   </div>
@@ -264,7 +288,7 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (this.modified[property]) {
+        if (property === 'avatar' || this.modified[property]) {
           return this.modified[property] !== this.profile[property]
         }
         return false
@@ -308,12 +332,16 @@ export default {
     theme () {
       return this.modified.theme || this.profile.theme
     },
-    backgroundImage () {
-      return `pages/profile-new/background-step-3${this.session_hasDarkTheme ? '-dark' : ''}.png`
+    isProfileTab () {
+      return this.tab === 'profile'
+    },
+    instructionsImage () {
+      const name = this.isProfileTab ? 'step-1' : 'step-3'
+      return `pages/profile-new/${name}.svg`
     },
     nameError () {
       if (this.$v.modified.name.$dirty && this.$v.modified.name.$invalid) {
-        if (!this.$v.modified.name.doesNotExists) {
+        if (!this.$v.modified.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.modified.name])
         } else if (!this.$v.modified.name.maxLength) {
           return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
@@ -418,7 +446,7 @@ export default {
   validations: {
     modified: {
       name: {
-        doesNotExists (value) {
+        doesNotExist (value) {
           const otherProfile = this.$store.getters['profile/doesExist'](value)
           return !otherProfile || otherProfile.id === this.profile.id
         },
@@ -443,8 +471,15 @@ export default {
 </style>
 
 <style lang="postcss">
+.ProfileNew__instructions__name {
+  bottom: 3.3rem;
+}
 .ProfileEdition .MenuTab .MenuTab__nav__item {
   @apply .px-10 .py-6
+}
+.ProfileEdition .MenuTab__content {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,
@@ -466,17 +501,6 @@ export default {
 }
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
   height: 0
-}
-
-.ProfileEdition__avatar.ListDividedItem,
-.ProfileEdition__background.ListDividedItem,
-.ProfileEdition__theme.ListDividedItem {
-  @apply .flex-col
-}
-.ProfileEdition__avatar .ListDividedItem__value,
-.ProfileEdition__background .ListDividedItem__value,
-.ProfileEdition__theme .ListDividedItem__value {
-  @apply .pt-4
 }
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;

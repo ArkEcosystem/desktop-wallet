@@ -1,40 +1,44 @@
 export default {
   COMMON: {
-    APP_NAME: 'ARK Desktop Wallet',
     ALL: 'All',
+    APP_NAME: 'ARK Desktop Wallet',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
+    BACKGROUND: 'Background',
     BIP39_LANGUAGE: 'Passphrase Language (BIP39)',
-    DONE: 'Done',
-    FINISH: 'Finish',
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
-    LANGUAGE: 'Application Language',
-    NETWORK: 'Network',
-    PREV: 'Prev',
-    NEXT: 'Next',
-    OF: 'of',
-    NOT: 'not',
-    WILL: 'will',
-    PROFILE_NAME: 'Profile name',
-    SAVE: 'Save',
-    SELECT_BACKGROUND: 'Select background',
-    SELECT_THEME: 'Select wallet theme',
-    START: 'Start',
-    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     DATE: 'Date',
-    WARNING: 'Warning',
+    DONE: 'Done',
+    FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
-    REMOVE: 'Remove',
+    FINISH: 'Finish',
+    LANGUAGE: 'Application Language',
+    LEDGER: 'Ledger',
+    LEDGER_WALLET: 'This is a Ledger wallet',
+    NETWORK: 'Network',
+    NETWORK_NAME: 'This name is provided by the network',
+    NEXT: 'Next',
+    NOT: 'not',
+    OF: 'of',
     OTHER: 'Other',
+    PREV: 'Prev',
+    PROFILE_NAME: 'Profile name',
+    REMOVE: 'Remove',
+    SAVE: 'Save',
+    START: 'Start',
+    THEME: 'Theme',
+    TIME_FORMAT: 'Time format',
     VERIFIED_ADDRESS: 'This is a verified address',
-    TIME_FORMAT: 'Time format'
+    WARNING: 'Warning',
+    WILL: 'will'
   },
 
   ANNOUNCEMENTS: {
     LATEST_NEWS: 'Latest News',
-    READ_MORE: 'Read more'
+    READ_MORE: 'Read more',
+    ALL_READ: 'Mark all as read'
   },
 
   INTRODUCTION: {
@@ -48,29 +52,34 @@ export default {
       TITLE: 'Power',
       FINANCE: 'The most important thing for users to know about cryptocurrencies is that they completely reverse the commonly-accepted model of how finance works.',
       BANKS: 'In traditional finance, you give up direct control of your money to a bank. Because banks have control over your money, they can take actions on your behalf, such as refunding transactions and resetting your login info.',
-      CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your private key, you can control exactly when, where and how your money is kept and spent.',
+      CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your passphrase, you can control exactly when, where and how your money is kept and spent.',
       RESPONSIBILITY: 'However, in the words of Uncle Ben Parker, with great power comes great responsibility.'
     },
     DUTY: {
       TITLE: 'Duty',
-      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time.',
-      OWNER: 'It also brings greater responsibility for you, the account owner.',
+      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
+      OWNER: 'This also brings greater responsibility for you, the account owner.',
       WARNING: {
         INFO: 'Unlike your traditional bank account, {warn}',
-        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the ARK team, the Delegates or anyone else.'
+        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
     RESPONSIBILITY: {
       TITLE: 'Responsibility',
-      STORAGE: 'You have the option of storing an encrypted copy of your passphrase locally. Please remember, your passphrase IS your account. If you choose this option and your computer dies, your account is lost forever.',
-      BACKUP: 'Always backup your passphrase and keep it in a safe place. The best practice is to write it down on thick paper and store it in a fireproof safe or save it on an encrypted flash drive.',
-      PASSPHRASE: 'Remember, anyone who has your passphrase can access your money. Never share your account with anyone and avoid storing it in accounts that are susceptible to hacking, such as cloud services.'
+      STORAGE: {
+        INFO: 'The {passphrase} of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an {encrypted} as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. You will need the passphrase.',
+        PASSPHRASE: 'passphrase',
+        ENCRYPTED: 'encrypted password'
+      },
+      BACKUP: 'Always backup your passphrase and keep it in a safe place. You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.',
+      PASSPHRASE: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
     },
     TURN: {
       TITLE: 'Turn',
-      WALLET: 'Armed with knowledge about the importance of keeping your passphrase safe, you\'re ready to claim your financial autonomy with ARK Desktop Wallet.',
-      HARDWARE_WALLET: 'Alternatively, for an extra layer of security and convenience, consider a hardware wallet. These dedicated storage products manage your private keys within the device. Additionally, the Ledger Nano S hardware wallet integrates directly with ARK Desktop Wallet, meaning you can plug your Ledger Nano into your computer and access the ARK blockchain without needing to enter your passphrase.'
+      WALLET: 'Now armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
+      SUPPORT: 'ARK is an open-source ecosystem and if you need assistance, the ARK community and team is here to help. Create a post on reddit.ark.io, or join the real-time chat system at slack.ark.io.',
+      CONCLUSION: 'Everyone here on the ARK.io team hopes you enjoy using the ARK Desktop Wallet to participate in the blockchain revolution!'
     }
   },
 
@@ -100,6 +109,7 @@ export default {
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     DELAY: 'Latency',
+    DISCONNECT: 'Disconnect from peer',
     FAILED_REFRESH: 'Failed to refresh peers',
     HEIGHT: 'Block height',
     LAST_CHECKED: 'Last checked',
@@ -113,6 +123,7 @@ export default {
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
+    INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
@@ -120,6 +131,8 @@ export default {
     NO_SCHEME: 'The \'{0}\' does not have \'http://\' or \'https://\'',
     NAME: {
       DUPLICATED: 'The name \'{0}\' already exists',
+      EXISTS_AS_CONTACT: 'The name \'{0}\' has already been assigned to a contact',
+      EXISTS_AS_WALLET: 'The name \'{0}\' has already been assigned to a wallet',
       MAX_LENGTH: 'The name should have less than {0} characters.',
       MIN_LENGTH: 'The name should have at least 1 character | The name should have at least {n} characters.'
     },
@@ -130,7 +143,11 @@ export default {
       NO_MATCH: 'Your passwords do not match'
     },
     ADDRESS: {
-      DUPLICATED: 'The wallet address \'{0}\' already exists'
+      EXISTS_AS_CONTACT: 'The address \'{0}\' has already been added as a contact',
+      EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
+    },
+    PUBLIC_KEY: {
+      INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -174,7 +191,9 @@ export default {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
     NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
-    NO_DELEGATES: 'No delegates to be shown.'
+    NO_CONTACTS: 'No contacts to be shown.',
+    NO_DELEGATES: 'No delegates to be shown.',
+    NO_WALLETS: 'No wallets to be shown.'
   },
 
   APP: {
@@ -199,6 +218,7 @@ export default {
       DARK_MODE: 'Dark mode',
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
+      BROADCAST_PEERS: 'Broadcast to multiple peers',
       IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
@@ -412,22 +432,15 @@ export default {
     },
 
     CONTACT_NEW: {
-      STEP1: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Address',
-          TEXT: 'Enter the address of your contact.'
-        },
-        TITLE: '1. Enter address',
-        ADDRESS: 'Contact address'
+      INSTRUCTIONS: {
+        HEADER: 'New contact',
+        TEXT: 'Enter the address of your contact. You will be able to view its transactions'
       },
-      STEP2: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Name',
-          TEXT: 'Optionally, choose a name for you contact and you are done.'
-        },
-        TITLE: '2. Confirmation',
-        NAME: 'Contact name (optional)'
-      },
+      TITLE: 'Enter contact address',
+      ADDRESS: 'Address',
+      NAME: 'Contact name (optional)',
+      NAME_INFO: 'Info.:',
+      NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact'
     },
 
@@ -463,21 +476,27 @@ export default {
           TEXT: 'Enter your name or nickname and select your preferred language and default currency.'
         },
         NAME: 'Profile name',
-        TITLE: '1. Profile details'
+        TITLE: '1. Profile details',
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
+        NO_AVATAR: 'No Avatar'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Network selection',
           TEXT: 'Choose the network of this profile.'
         },
+        CUSTOM_NETWORK: 'or you can choose a custom network',
+        CUSTOM_NETWORK_EXPLAIN: 'You can select your custom network or choose any of the available networks.',
         NAME: 'Profile name',
         TITLE: '2. Network'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Appearance',
-          TEXT: 'Customize this application selecting one of our themes and backgrounds.'
+          TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        THEME: 'Choose light or dark mode',
+        BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
         TITLE: '3. Appearance'
       }
@@ -524,11 +543,16 @@ export default {
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import wallet',
-      LOADING_LEDGER: 'Loading Ledger Wallets...',
+      LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+      ADDRESS: 'Address',
+      NAME: 'Name',
+      VOTING_FOR: 'Voting for',
+      BALANCE: 'Balance',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {
@@ -637,10 +661,6 @@ export default {
     MODAL_HEADER: 'Networks'
   },
 
-  NETWORK: {
-    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
-  },
-
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Transfer',
@@ -667,7 +687,8 @@ export default {
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
-      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low'
+      FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
+      NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
@@ -679,6 +700,9 @@ export default {
       SECOND_SIGNATURE: {
         INSTRUCTIONS: 'for {address}.'
       }
+    },
+    INFO: {
+      BROADCASTING: 'Your transaction is being broadcast to the network'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
@@ -703,6 +727,9 @@ export default {
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
+    CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction.',
+    CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
+    CONFIRM_SEND_ALL_NOTE: 'Note: once sent, this cannot be undone.',
     CONFIRMATIONS: 'Confirmations',
     CREATE_TRANSFER: 'Create Transfer',
     DISCARD: 'Discard',
@@ -745,13 +772,15 @@ export default {
     PUBLIC_KEY: 'Public key',
     SIGNATURE: 'Signature',
     JSON_MESSAGE: 'Signed message content',
-    FORMAT_FOOTER: 'Format (JSON): { "publickey": "...", "signature": "...", "message": "..." }',
+    FORMAT_FOOTER: 'Format (JSON): { "publicKey": "...", "signature": "...", "message": "..." }',
     VERIFIED: 'The message is verified successfully',
     NOT_VERIFIED: 'The message is NOT verified',
     CONFIRMATION: 'Confirmation',
     DELETE: 'Delete message',
     FAILED_SIGN: 'Could not sign message',
-    FAILED_VERIFY: 'Could not verify message'
+    FAILED_VERIFY: 'Could not verify message',
+    SUCCESSFULL_SIGN: 'Your message was signed',
+    SUCCESSFULL_VERIFY: 'The message was verified'
   },
 
   SYNCHRONIZER: {
@@ -777,6 +806,7 @@ export default {
   WALLET_HEADING: {
     ACTIONS: {
       WALLET_NAME: 'Wallet name',
+      CONTACT_NAME: 'Contact name',
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet',
@@ -793,6 +823,8 @@ export default {
   },
 
   WALLET_SIDEBAR: {
+    FILTER: 'Filter',
+    HIDE: 'Hide',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 
@@ -817,17 +849,27 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    VOTED_FOR: 'You voted for delegate {delegate}'
+    VOTED_FOR: 'You voted for delegate {delegate}',
+    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}'
   },
 
   WALLET_RENAME: {
-    TITLE: 'Rename Wallet',
+    TITLE: 'Rename wallet',
     TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
     ADD: 'Add wallet',
     RENAME: 'Rename wallet',
-    ADDRESS_INFO: 'Set a name for this wallet: {wallet}',
+    ADDRESS_INFO: 'Set a name for this wallet: ',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
+  },
+
+  CONTACT_RENAME: {
+    TITLE: 'Rename contact',
+    TITLE_ADD: 'Add contact',
+    NEW: 'New contact name',
+    ADD: 'Add contact',
+    RENAME: 'Rename contact',
+    ADDRESS_INFO: 'Set a name for this contact: '
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
@@ -841,5 +883,10 @@ export default {
     SENDER: 'Sender',
     AMOUNT: 'Amount',
     NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+  },
+
+  WALLET_TABLE: {
+    NO_DELETE: 'Ledger wallets cannot be deleted',
+    ACTIONS: 'Actions'
   }
 }

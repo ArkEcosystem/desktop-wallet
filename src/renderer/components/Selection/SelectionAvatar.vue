@@ -1,9 +1,9 @@
 <template>
   <InputGrid
-    :items="images"
-    :max-visible-items="maxVisibleItems"
+    :items="availableAvatars"
     :modal-header-text="modalHeaderText"
     :selected="selectedItem"
+    :auto-select-first="true"
     class="SelectionAvatar"
     modal-container-classes="SelectionAvatar"
     item-key="imagePath"
@@ -21,6 +21,11 @@ export default {
   mixins: [selectionMixin, selectionImageMixin],
 
   props: {
+    extraItems: {
+      type: Array,
+      required: false,
+      default: () => ([])
+    },
     categories: {
       type: Array,
       required: false,
@@ -38,6 +43,14 @@ export default {
       return this.enableModal
         ? this.$t('SELECTION_AVATAR.MODAL_HEADER')
         : null
+    },
+
+    availableAvatars () {
+      const images = { ...this.images }
+      const key = Object.keys(images)[0]
+      images[key] = [...this.extraItems, ...images[key]]
+
+      return images
     }
   }
 }
@@ -51,7 +64,7 @@ export default {
 }
 
  .SelectionAvatar .InputGridModal__container {
-  width: calc((var(--profile-avatar-xl)) * 3 + 2 * 10px) !important;
+  width: calc((var(--profile-avatar-xl)) * 3 + 2 * 15px) !important;
 }
 .SelectionAvatar .InputGridModal .InputGrid__container__category__items {
   display: grid;
@@ -63,5 +76,9 @@ export default {
   height: var(--profile-avatar-xl);
   width: var(--profile-avatar-xl);
   background-size: contain;
+}
+
+.SelectionAvatar .InputGridModal .InputGrid__container__category__items .InputGridItem__check {
+  right: 1.6rem;
 }
 </style>

@@ -74,14 +74,14 @@
 
     <div
       v-else
-      class="rounded-lg overflow-hidden w-5/6 mx-auto mt-5"
+      class="WalletExchange__iframe mx-auto overflow-hidden mt-5"
     >
       <iframe
         :src="changellyWidgetURL"
         width="100%"
-        height="450"
-        class="changelly"
-        scrolling="WalletExchange__iframe"
+        height="550"
+        class="changelly overflow-y-hidden border-none"
+        scrolling="no"
       />
     </div>
   </section>
@@ -89,7 +89,7 @@
 
 <script>
 import { InputSwitch } from '@/components/Input'
-import { MARKET, EXCHANGE } from '@config'
+import { MARKET } from '@config'
 
 export default {
   name: 'WalletExchange',
@@ -129,13 +129,11 @@ export default {
       const to = this.currentNetwork.token
       const address = this.wallet_fromRoute.address
       const from = this.currentCurrency
-      const amount = MARKET.crypto.includes(from) ? 0.1 : 300
-      const merchantId = EXCHANGE.changellyId
-      const refId = merchantId
-      const color = 'ED2A2D'
+      const amount = MARKET.crypto.includes(from) ? 1 : 300
+      const theme = 'aqua'
 
-      const baseUrl = 'https://old.changelly.com/widget/v1?auth=email&'
-      const params = `from=${from}&to=${to}&merchant_id=${merchantId}&address=${address}&amount=${amount}&ref_id=${refId}&color=${color}`
+      const baseUrl = 'https://widget.changelly.com?fiat=true&'
+      const params = `from=${from.toLowerCase()}&to=${to.toLowerCase()}&address=${address}&amount=${amount}&theme=${theme}`
 
       return baseUrl + params
     }
@@ -170,6 +168,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.WalletExchange__iframe {
+  width: 550px;
+}
 </style>

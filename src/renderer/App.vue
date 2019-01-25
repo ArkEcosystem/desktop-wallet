@@ -27,7 +27,7 @@
         :class="{
           'blur': hasBlurFilter
         }"
-        class="block lg:hidden z-1"
+        class="block md:hidden z-1"
       />
       <section
         :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
@@ -42,7 +42,7 @@
         >
           <AppSidemenu
             v-if="hasAnyProfile"
-            class="hidden lg:block"
+            class="hidden md:block"
           />
           <RouterView class="flex-1 overflow-y-auto" />
         </div>
@@ -145,8 +145,8 @@ export default {
    * retrieving the essential data (session and network) from the database
    */
   async created () {
-    await this.$store.dispatch('network/load', config.NETWORKS)
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
@@ -155,9 +155,10 @@ export default {
       this.isReady = true
 
       this.$synchronizer.defineAll()
-      this.$synchronizer.ready()
 
       await this.loadNotEssential()
+
+      this.$synchronizer.ready()
 
       // Environments variables are strings
       const status = process.env.ENABLE_SCREENSHOT_PROTECTION
@@ -195,6 +196,7 @@ export default {
       this.$eventBus.on('client:changed', () => {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
+        this.$store.dispatch('delegate/load')
         if (this.$store.getters['ledger/isConnected']) {
           this.$store.dispatch('ledger/reloadWallets', true)
         }
