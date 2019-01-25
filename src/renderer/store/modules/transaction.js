@@ -17,7 +17,8 @@ export default {
   namespaced: true,
 
   state: {
-    transactions: {}
+    transactions: {},
+    staticFees: {}
   },
 
   getters: {
@@ -66,6 +67,20 @@ export default {
       }
 
       return transactions.filter(transaction => !transaction.isExpired)
+    },
+
+    /**
+     * Get a static fee based on type.
+     * @param  {Number} type
+     * @return {(Number|null)}
+     */
+    staticFee: (state, _, __, rootGetters) => (type) => {
+      const profileId = rootGetters['session/profileId']
+      if (!profileId || !state.staticFees[profileId]) {
+        return null
+      }
+
+      return state.staticFees[profileId][type]
     }
   },
 
@@ -99,6 +114,9 @@ export default {
         throw new Error(`Cannot delete transaction '${transaction.id}' - it does not exist on the state`)
       }
       state.transactions[transaction.profileId].splice(index, 1)
+    },
+    SET_STATIC_FEES (state, data) {
+      state.staticFees[data.profileId] = data.staticFees
     }
   },
 
@@ -146,6 +164,12 @@ export default {
           //
         }
       }
+    },
+    async updateStaticFees ({ commit, rootGetters }) {
+      commit('SET_STATIC_FEES', {
+        profileId: rootGetters['session/profileId'],
+        staticFees: await this._vm.$client.fetchStaticFees()
+      })
     }
   }
 }
