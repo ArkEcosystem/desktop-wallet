@@ -1,18 +1,11 @@
 <template>
   <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
-    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-3">
+    <div class="WalletAll__heading bg-theme-feature rounded-lg flex p-10 mb-3">
       <div class="flex-1 flex flex-row justify-between">
         <div class="flex flex-row items-center">
-          <div
-            v-if="session_profile.avatar"
-            :style="`backgroundImage: url('${assets_loadImage(session_profile.avatar)}')`"
-            class="profile-avatar-xl background-image"
-          />
-          <ButtonLetter
-            v-else
-            :value="session_profile.name"
-            size="2xl"
-            class="mx-5"
+          <ProfileAvatar
+            :profile="session_profile"
+            letter-size="2xl"
           />
           <div class="flex-col">
             <div>
@@ -199,27 +192,28 @@
 
 <script>
 import { clone, some, sortBy, uniqBy } from 'lodash'
-import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
+import { ButtonLayout, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
+import { ProfileAvatar } from '@/components/Profile'
+import SvgIcon from '@/components/SvgIcon'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
-import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletAll',
 
   components: {
     ButtonLayout,
-    ButtonLetter,
     ButtonSwitch,
     Loader,
+    ProfileAvatar,
+    SvgIcon,
+    WalletButtonCreate,
+    WalletButtonImport,
     WalletIdenticon,
     WalletRemovalConfirmation,
     WalletRenameModal,
-    WalletButtonCreate,
-    WalletButtonImport,
-    WalletTable,
-    SvgIcon
+    WalletTable
   },
 
   data: () => ({
@@ -386,6 +380,17 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.WalletAll__heading .ProfileAvatar {
+  width: var(--profile-avatar-xl);
+}
+.WalletAll__heading .ProfileAvatar__image {
+  height: calc(var(--profile-avatar-xl) * 0.66);
+  width: calc(var(--profile-avatar-xl) * 0.66);
+}
+.WalletAll__heading .ProfileAvatar__letter {
+  @apply .mx-5
+}
+
 .WalletAll__ledger__cache {
   @apply .border-r .border-theme-feature-item-alternative
 }
