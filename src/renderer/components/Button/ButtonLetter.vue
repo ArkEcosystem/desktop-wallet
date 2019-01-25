@@ -30,7 +30,7 @@ export default {
       type: String,
       required: false,
       default: null,
-      validator: value => value ? ['sm', 'base', 'lg', 'xl', '2xl'].includes(value) : true
+      validator: value => value ? ['sm', 'base', 'lg', 'xl', '2xl', '3xl'].includes(value) : true
     },
     hasCustomStyle: {
       type: Boolean,
@@ -67,5 +67,8 @@ export default {
 }
 .ButtonLetter--2xl {
   @apply w-16 h-16 text-3xl
+}
+.ButtonLetter--3xl {
+  @apply .w-20 .h-20 .text-4xl
 }
 </style>
