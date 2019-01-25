@@ -75,12 +75,12 @@ export default {
      * @return {(Number|null)}
      */
     staticFee: (state, _, __, rootGetters) => (type) => {
-      const profileId = rootGetters['session/profileId']
-      if (!profileId || !state.staticFees[profileId]) {
+      const networkId = rootGetters['session/profile'].networkId
+      if (!networkId || !state.staticFees[networkId]) {
         return null
       }
 
-      return state.staticFees[profileId][type]
+      return state.staticFees[networkId][type]
     }
   },
 
@@ -116,7 +116,7 @@ export default {
       state.transactions[transaction.profileId].splice(index, 1)
     },
     SET_STATIC_FEES (state, data) {
-      state.staticFees[data.profileId] = data.staticFees
+      state.staticFees[data.networkId] = data.staticFees
     }
   },
 
@@ -167,12 +167,12 @@ export default {
     },
 
     /**
-     * Update static fees from API and store against profile.
+     * Update static fees from API and store against a network.
      * @return {void}
      */
     async updateStaticFees ({ commit, rootGetters }) {
       commit('SET_STATIC_FEES', {
-        profileId: rootGetters['session/profileId'],
+        networkId: rootGetters['session/profile'].networkId,
         staticFees: await this._vm.$client.fetchStaticFees()
       })
     }
