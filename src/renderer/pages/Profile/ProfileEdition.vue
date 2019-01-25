@@ -63,7 +63,7 @@
 
                 <button
                   :disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
-                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue inline-flex"
+                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex"
                   @click="toggleIsNameEditable"
                 >
                   <SvgIcon
