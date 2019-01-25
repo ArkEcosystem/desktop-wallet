@@ -1,6 +1,6 @@
 <template>
   <ModalWindow
-    v-if="visible"
+    v-if="isVisible"
     :allow-close="showClose"
     container-classes="w-1/2"
     portal-target="loading"
@@ -58,15 +58,17 @@ export default {
     }
   },
 
-  data () {
+  data (vm) {
     return {
       showClose: false,
-      showCloseTimeout: null
+      showCloseTimeout: null,
+      isVisible: vm.visible
     }
   },
 
   watch: {
     visible: function (value) {
+      this.isVisible = value
       if (value) {
         this.triggerShowClose()
       }
@@ -79,7 +81,7 @@ export default {
 
   methods: {
     toggle () {
-      this.visible = !this.visible
+      this.isVisible = !this.isVisible
     },
 
     triggerShowClose () {
