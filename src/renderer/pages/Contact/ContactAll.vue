@@ -291,14 +291,18 @@ export default {
   @apply .m-6;
 }
 .ContactAll__grid__contact:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
 }
 .ContactAll__grid__contact:hover .identicon-placeholder {
-  opacity: 0.25;
+  opacity: 0.5;
 }
 .ContactAll__grid__contact .identicon {
   transition: 0.5s;
+  opacity: 0.5;
+}
+.ContactAll__grid__contact .identicon-placeholder {
+  transition: 0.5s;
+  opacity: 0.25;
 }
 .ContactAll__grid__contact__name {
   color: #037cff;

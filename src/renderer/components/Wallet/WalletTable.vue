@@ -242,10 +242,10 @@ export default {
   @apply .bg-theme-table-row-hover .cursor-pointer;
 }
 .WalletTable tbody tr:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
 }
 .WalletTable .identicon {
   transition: 0.5s;
+  opacity: 0.5;
 }
 </style>
