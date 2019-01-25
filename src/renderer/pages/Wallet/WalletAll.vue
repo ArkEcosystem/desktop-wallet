@@ -382,6 +382,7 @@ export default {
 <style lang="postcss" scoped>
 .WalletAll__heading .ProfileAvatar {
   width: var(--profile-avatar-xl);
+  @apply .flex .flex-row .justify-around
 }
 .WalletAll__heading .ProfileAvatar__image {
   height: calc(var(--profile-avatar-xl) * 0.66);
