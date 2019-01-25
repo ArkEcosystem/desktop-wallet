@@ -119,8 +119,21 @@
           }"
           class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
         >
-          <span class="block truncate">
-            {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, isExpanded ? 12 : 6) }}
+          <span
+            class="flex items-center"
+            :class="{ 'justify-center': !isExpanded }"
+          >
+            <span class="block truncate">
+              {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, !isExpanded ? 6 : (wallet.isLedger ? 12 : 24)) }}
+            </span>
+            <span
+              v-if="wallet.isLedger"
+              v-tooltip="!isExpanded ? $t('COMMON.LEDGER_WALLET') : ''"
+              :class="{ 'w-5': !isExpanded }"
+              class="ledger-badge"
+            >
+              {{ !isExpanded ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
+            </span>
           </span>
           <span
             v-if="isExpanded"
@@ -136,6 +149,7 @@
 </template>
 
 <script>
+import { uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { sortByProp } from '@/components/utils/Sorting'
@@ -237,7 +251,10 @@ export default {
 
     refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+      this.selectableWallets = uniqBy([
+        ...ledgerWallets,
+        ...this.wallets
+      ], 'address')
     },
 
     ledgerDisconnected () {

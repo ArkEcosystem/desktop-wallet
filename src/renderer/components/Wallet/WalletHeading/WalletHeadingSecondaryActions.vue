@@ -5,12 +5,19 @@
   >
     <ButtonModal
       :class="buttonStyle"
-      :label="$t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
+      :label="currentWallet.isContact ? $t('WALLET_HEADING.ACTIONS.CONTACT_NAME') : $t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
       icon="name"
     >
       <template slot-scope="{ toggle, isOpen }">
+        <ContactRenameModal
+          v-if="currentWallet.isContact && isOpen"
+          :wallet="currentWallet"
+          @cancel="toggle"
+          @renamed="toggle"
+        />
+
         <WalletRenameModal
-          v-if="isOpen"
+          v-if="!currentWallet.isContact && isOpen"
           :wallet="currentWallet"
           @cancel="toggle"
           @renamed="toggle"
@@ -70,6 +77,7 @@
 
 <script>
 import { ButtonModal } from '@/components/Button'
+import { ContactRenameModal } from '@/components/Contact'
 import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
 import { TransactionModal } from '@/components/Transaction'
 
@@ -78,6 +86,7 @@ export default {
 
   components: {
     ButtonModal,
+    ContactRenameModal,
     WalletRenameModal,
     WalletRemovalConfirmation,
     TransactionModal
