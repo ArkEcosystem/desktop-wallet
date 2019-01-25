@@ -82,6 +82,10 @@ export default {
   methods: {
     toggle () {
       this.isVisible = !this.isVisible
+
+      if (!this.isVisible) {
+        this.$emit('close')
+      }
     },
 
     triggerShowClose () {
