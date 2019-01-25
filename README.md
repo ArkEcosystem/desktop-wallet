@@ -2,12 +2,6 @@
 
 ![Ark Desktop Wallet](./banner.png)
 
-## :confetti_ball: Initial release of the all new ARK Desktop Wallet v2 :confetti_ball:
-
-**Note: This is a public beta release. Although the features that are present are expected to be functional and working, it’s still a work in progress and can result in unexpected behaviour. If you find any issues, please open a [GitHub issue](https://github.com/ArkEcosystem/desktop-wallet/issues/new)**
-
-------
-
 [![Build Status](https://badgen.now.sh/circleci/github/ArkEcosystem/desktop-wallet)](https://circleci.com/gh/ArkEcosystem/desktop-wallet)
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
@@ -41,7 +35,8 @@ Translations are part of our [ARK Development and Security Bounty Program](https
 
 Full translations are considered to be `Tier 3`, while grammar fixes, typos, etc. are considered to be `Tier 6`.
 
-Full translations should involve 5 tasks:
+<details><summary>Full translations should involve 5 tasks</summary>
+
  - Create a pull request for the language you are going to translate. If you have doubts about something, use English to explain them.
  - Translate the textual content of the application, using the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) as the reference. To do that, a new file, with the language locale code should be created. The name of the file should be a valid [RFC 5646](https://tools.ietf.org/html/rfc5646).
  - Add the language to the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) at the `LANGUAGES` key.
@@ -49,6 +44,8 @@ Full translations should involve 5 tasks:
  - Update the [number formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/number-formats.js) to include the preferred way of displaying currencies used commonly by native speakers.
  - Add the language at the `I18N.enabledLocales` array at the [main configuration file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/config/index.js). This step is necessary to make the language would not be available.
  - Execute the application. Go to the [ development section](https://github.com/ArkEcosystem/desktop-wallet#development) to learn how to install the requirements and execute it.
+
+</details>
 
 ## Development
 
@@ -76,6 +73,8 @@ npm install -g yarn
 ```
 
 ### Commands
+
+<details><summary>List of commands</summary>
 
 ``` bash
 # Install dependencies
@@ -126,6 +125,8 @@ yarn test:e2e
 # Build the application and run end-to-end tests
 yarn test:e2e:full
 ```
+
+</details>
 
 ## Security
 
