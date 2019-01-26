@@ -253,7 +253,7 @@ export default {
     },
 
     async fetchVoters () {
-      this.voters = await this.$client.fetchDelegateVoters(this.delegate)
+      this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
     },
 
     onFee (fee) {
