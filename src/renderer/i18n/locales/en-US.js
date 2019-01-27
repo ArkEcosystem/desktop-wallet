@@ -297,9 +297,10 @@ export default {
     ERROR: {
       REQUIRED: 'The delegate name or address is required',
       USERNAME_NOT_FOUND: 'The delegate \'{0}\' could not be found',
-      ADDRESS_NOT_FOUND: 'The delegate with the address \'{0}\' could not be found'
+      ADDRESS_NOT_FOUND: 'The delegate with the address \'{0}\' could not be found',
+      PUBLIC_KEY_NOT_FOUND: 'The delegate with the public key \'{0}\' could not be found'
     },
-    SEARCH_HINT: 'You can search by username or address'
+    SEARCH_HINT: 'You can search by username, address or public key'
   },
 
   INPUT_FEE: {

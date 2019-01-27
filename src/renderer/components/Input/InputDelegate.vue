@@ -131,19 +131,25 @@ export default {
     },
 
     error () {
-      let error = null
-
       if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
         if (!this.$v.model.required) {
-          error = this.$t('INPUT_DELEGATE.ERROR.REQUIRED')
-        } else if (!this.$v.model.isValidUsername && !this.$v.model.isValidAddress && this.inputValue.length <= 20) {
-          error = this.$t('INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND', [this.inputValue])
-        } else if (!this.$v.model.isValidAddress && !this.$v.model.isValidUsername) {
-          error = this.$t('INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+          return this.$t('INPUT_DELEGATE.ERROR.REQUIRED')
+        } else if (this.inputValue.length <= 20) {
+          if (!this.$v.model.isValidUsername) {
+            return this.$t('INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND', [this.inputValue])
+          }
+        } else if (this.inputValue.length <= 34) {
+          if (!this.$v.model.isValidAddress) {
+            return this.$t('INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+          }
+        } else {
+          if (!this.$v.model.isValidPublicKey) {
+            return this.$t('INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+          }
         }
       }
 
-      return error
+      return null
     },
 
     hasSuggestions () {
@@ -171,7 +177,8 @@ export default {
         const delegate = {
           name: null,
           username: object.username,
-          address: object.address
+          address: object.address,
+          publicKey: object.publicKey
         }
 
         delegate.name = `${truncate(object.username, 25)} (${this.wallet_truncate(object.address)})`
@@ -184,12 +191,11 @@ export default {
       })
 
       return results.reduce((map, delegate, index) => {
-        const value = delegate.name || delegate.address
-        const searchValue = value.toLowerCase()
-
-        if (_.includes(searchValue, this.inputValue.toLowerCase())) {
-          map[delegate.username] = value
-        }
+        Object.values(delegate).forEach(prop => {
+          if (_.includes(prop.toLowerCase(), this.inputValue.toLowerCase())) {
+            map[delegate.username] = delegate.name
+          }
+        })
 
         return map
       }, {})
@@ -341,6 +347,9 @@ export default {
       },
       isValidAddress (address) {
         return !!this.$store.getters['delegate/byAddress'](address)
+      },
+      isValidPublicKey (publicKey) {
+        return !!this.$store.getters['delegate/byPublicKey'](publicKey)
       }
     }
   }
