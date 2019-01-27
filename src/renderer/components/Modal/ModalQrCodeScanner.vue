@@ -5,25 +5,59 @@
     portal-target="qr-scan"
     @close="emitClose"
   >
-    <section class="overflow-hidden flex flex-col justify-center items-center">
-      <span v-if="isLoading">
-        {{ $t('MODAL_QR_SCANNER.LOADING') }}
-      </span>
-      <span
-        v-else
-        class="mb-2"
+    <section class="QrCode__container overflow-hidden flex flex-col justify-center items-center">
+      <div
+        v-if="isLoading"
+        class="flex flex-col items-center justify-center my-auto"
       >
-        {{ $t('MODAL_QR_SCANNER.INSTRUCTION') }}
-      </span>
-      <span v-if="errorMessage">
+        <Loader />
+
+        <span class="mt-4">
+          {{ $t('MODAL_QR_SCANNER.LOADING') }}
+        </span>
+      </div>
+
+      <div
+        v-show="!isLoading && !errorMessage"
+        class="relative"
+      >
+        <QrcodeStream
+          :camera="getCameraConstraints"
+          :track="false"
+          @decode="onDecode"
+          @init="onInit"
+        />
+
+        <div class="QrCode__crosshair__container">
+          <div class="m-auto relative">
+            <div class="QrCode__crosshair">
+              <div class="flex justify-between w-full">
+                <span class="block h-4 w-4 border-l-2 border-t-2 border-white-transparent" />
+                <span class="block h-4 w-4 border-r-2 border-t-2 border-white-transparent" />
+              </div>
+              <div class="flex justify-between w-full">
+                <span class="block h-4 w-4 border-l-2 border-b-2 border-white-transparent" />
+                <span class="block h-4 w-4 border-r-2 border-b-2 border-white-transparent" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <span
+          :class="{
+            'absolute pin-b pin-x text-center py-4 bg-black-transparent': !isLoading
+          }"
+        >
+          {{ $t('MODAL_QR_SCANNER.INSTRUCTION') }}
+        </span>
+      </div>
+
+      <span
+        v-if="errorMessage"
+        class="my-auto"
+      >
         {{ errorMessage }}
       </span>
-      <QrcodeStream
-        :camera="getCameraConstraints"
-        :track="false"
-        @decode="onDecode"
-        @init="onInit"
-      />
     </section>
   </ModalWindow>
 </template>
@@ -31,13 +65,15 @@
 <script>
 import ModalWindow from './ModalWindow'
 import { QrcodeStream } from 'vue-qrcode-reader'
+import Loader from '@/components/utils/Loader'
 
 export default {
   name: 'ModalQrCode',
 
   components: {
     ModalWindow,
-    QrcodeStream
+    QrcodeStream,
+    Loader
   },
 
   props: {
@@ -49,7 +85,7 @@ export default {
 
   data: () => ({
     isLoading: true,
-    errorMessage: ''
+    errorMessage: null
   }),
 
   computed: {
@@ -71,6 +107,8 @@ export default {
   methods: {
     async onInit (promise) {
       let promiseSuccessfullyHandled = false
+      let errorMessage
+
       try {
         setTimeout(() => {
           if (!promiseSuccessfullyHandled) {
@@ -79,25 +117,26 @@ export default {
           }
         }, 10000)
         await promise
-        this.errorMessage = ''
+        errorMessage = null
       } catch (error) {
         if (error.name === 'NotAllowedError') {
-          this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_ALLOWED')
+          errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_ALLOWED')
         } else if (error.name === 'NotFoundError') {
-          this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_FOUND')
+          errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_FOUND')
         } else if (error.name === 'NotSupportedError') {
-          this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_SUPPORTED')
+          errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_SUPPORTED')
         } else if (error.name === 'NotReadableError') {
-          this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_READABLE')
+          errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.NOT_READABLE')
         } else if (error.name === 'OverconstrainedError') {
-          this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.OVERCONSTRAINED')
+          errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.OVERCONSTRAINED')
         } else if (error.name === 'StreamApiNotSupportedError') {
-          this.errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.STREAM')
+          errorMessage = this.$t('MODAL_QR_SCANNER.ERROR.STREAM')
         }
       } finally {
         setTimeout(() => {
           promiseSuccessfullyHandled = true
           this.isLoading = false
+          this.errorMessage = errorMessage
         }, 1000)
       }
     },
@@ -114,11 +153,41 @@ export default {
 </script>
 
 <style>
+.QrCode__container {
+  min-height: 240px;
+  min-width: 360px;
+}
+
+.QrCode__crosshair__container {
+  @apply .absolute .flex .items-center .pin;
+}
+.QrCode__crosshair__container > div {
+  width: 40%;
+}
+.QrCode__crosshair__container > div:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.QrCode__crosshair {
+  @apply .absolute .flex .flex-col .w-full .h-full .items-center .justify-between;
+}
+
 .qrcode-stream__tracking-layer {
   display: none;
 }
 
+.qrcode-stream__inner-wrapper {
+  font-size: 0;
+}
 .qrcode-stream__inner-wrapper video {
   transform: scaleX(-1);
+}
+
+.bg-black-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.border-white-transparent {
+  border-color: rgba(255, 255, 255, 0.5);
 }
 </style>
