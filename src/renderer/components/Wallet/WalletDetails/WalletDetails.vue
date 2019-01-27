@@ -23,7 +23,7 @@
     </MenuTab>
     <div
       v-if="isDelegatesTab && votedDelegate"
-      class="bg-theme-feature px-5 flex flex-row"
+      class="bg-theme-feature px-5 flex flex-row rounded-bl-lg"
     >
       <div
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
