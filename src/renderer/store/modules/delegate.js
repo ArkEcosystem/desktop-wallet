@@ -18,6 +18,15 @@ export default {
       return state.delegates
     },
 
+    bySessionNetwork: (state, _, __, rootGetters) => {
+      const network = rootGetters['session/network']
+      if (!network || !state.delegates[network.id]) {
+        return false
+      }
+
+      return state.delegates[network.id]
+    },
+
     byAddress: (state, _, __, rootGetters) => address => {
       const network = rootGetters['session/network']
 
@@ -26,6 +35,18 @@ export default {
       }
 
       return state.delegates[network.id][address] || false
+    },
+
+    byUsername: (state, _, __, rootGetters) => username => {
+      const network = rootGetters['session/network']
+
+      if (!username || !network || !state.delegates[network.id]) {
+        return false
+      }
+
+      return Object.values(state.delegates[network.id]).find(delegate => {
+        return delegate.username === username
+      }) || false
     },
 
     byPublicKey: (state, _, __, rootGetters) => publicKey => {

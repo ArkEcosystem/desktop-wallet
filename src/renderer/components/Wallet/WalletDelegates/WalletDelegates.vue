@@ -161,10 +161,13 @@ export default {
     },
 
     getVoteTitle () {
-      if (this.selected.publicKey === this.walletVote.publicKey) {
+      if (!this.walletVote.publicKey) {
+        return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selected.username })
+      } else if (this.selected.publicKey === this.walletVote.publicKey) {
         return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.selected.username })
+      } else {
+        return `${this.$t('COMMON.DELEGATE')} ${this.selected.username}`
       }
-      return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selected.username })
     },
 
     async fetchDelegates () {

@@ -5,7 +5,7 @@
     <MenuTab
       ref="menutab"
       v-model="currentTab"
-      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !votedDelegate }"
+      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !isOwned }"
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
@@ -22,13 +22,16 @@
       </MenuTabItem>
     </MenuTab>
     <div
-      v-if="isDelegatesTab && votedDelegate"
+      v-if="isDelegatesTab && isOwned"
       class="bg-theme-feature px-5 flex flex-row rounded-bl-lg"
     >
       <div
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
-        <div class="flex flex-row">
+        <div
+          v-if="votedDelegate"
+          class="flex"
+        >
           <i18n
             tag="span"
             :class="{
@@ -62,28 +65,57 @@
             </i18n>
           </template>
         </div>
+        <div
+          v-else-if="!(isOwned && votedDelegate)"
+          class="flex"
+        >
+          {{ $t('WALLET_DELEGATES.NO_VOTE') }}
+        </div>
       </div>
       <div
-        v-if="isOwned"
-        class="WalletDetails__unvote"
+        v-if="votedDelegate"
+        class="WalletDetails__vote__button"
         @click="openUnvote"
       >
         {{ $t('WALLET_DELEGATES.UNVOTE') }}
       </div>
+      <div
+        v-else
+        class="WalletDetails__vote__button"
+        @click="openSelectDelegate"
+      >
+        {{ $t('WALLET_DELEGATES.SELECT_DELEGATE') }}
+      </div>
 
-      <!-- Unvote modal -->
+      <!-- Vote/unvote modal -->
       <Portal
-        v-if="isSelected"
+        v-if="isVoting || isUnvoting"
         to="modal"
       >
         <TransactionModal
-          :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
+          :title="isUnvoting ? (
+            $t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })
+          ) : (
+            $t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: selectedDelegate.username })
+          )"
           :type="3"
-          :delegate="votedDelegate"
-          :is-voter="true"
+          :delegate="votedDelegate || selectedDelegate"
+          :is-voter="isUnvoting"
           @cancel="onCancel"
           @close="onCancel"
           @sent="onSent"
+        />
+      </Portal>
+
+      <!-- Select delegate modal -->
+      <Portal
+        v-if="isSelecting"
+        to="modal"
+      >
+        <WalletSelectDelegate
+          @cancel="onCancelSelect"
+          @close="onCancelSelect"
+          @confirm="onConfirm"
         />
       </Portal>
     </div>
@@ -93,6 +125,7 @@
 <script>
 import { at } from 'lodash'
 /* eslint-disable vue/no-unused-components */
+import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
 import { WalletExchange, WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
@@ -102,15 +135,16 @@ import { MenuTab, MenuTabItem } from '@/components/Menu'
 export default {
   components: {
     ButtonGeneric,
+    MenuTab,
+    MenuTabItem,
     TransactionModal,
+    WalletDelegates,
     WalletExchange,
     WalletHeading,
-    WalletTransactions,
-    WalletDelegates,
+    WalletSelectDelegate,
     WalletSignVerify,
     WalletStatistics,
-    MenuTab,
-    MenuTabItem
+    WalletTransactions
   },
 
   provide () {
@@ -126,8 +160,11 @@ export default {
       walletVote: {
         publicKey: null
       },
-      isSelected: false,
-      votedDelegate: null
+      isVoting: false,
+      isUnvoting: false,
+      isSelecting: false,
+      votedDelegate: null,
+      selectedDelegate: null
     }
   },
 
@@ -265,20 +302,46 @@ export default {
     },
 
     openUnvote () {
-      this.isSelected = true
+      this.isUnvoting = true
+    },
+
+    openSelectDelegate () {
+      this.isSelecting = true
     },
 
     onCancel () {
-      this.isSelected = false
+      this.isUnvoting = this.isVoting = false
+      this.selectedDelegate = null
+    },
+
+    onCancelSelect () {
+      this.isSelecting = false
+    },
+
+    onConfirm (value) {
+      this.selectedDelegate = this.$store.getters['delegate/byUsername'](value)
+
+      if (this.selectedDelegate) {
+        this.isSelecting = false
+        this.isVoting = true
+      }
     },
 
     onSent (success) {
+      console.log('success: ' + success)
       if (success) {
-        this.walletVote.publicKey = null
-        this.votedDelegate = null
+        console.log('isUnvoting ' + this.isUnvoting)
+        console.log('isVoting ' + this.isVoting)
+        if (this.isUnvoting) {
+          this.walletVote.publicKey = null
+          this.votedDelegate = null
+        } else {
+          this.walletVote.publicKey = this.selectedDelegate.publicKey
+          this.selectedDelegate = null
+        }
       }
 
-      this.isSelected = false
+      this.isUnvoting = this.isVoting = false
     }
   }
 }
@@ -288,12 +351,12 @@ export default {
 .WalletDetails .MenuTab > .MenuTab__nav {
   @apply .sticky .pin-t .z-10;
 }
-.WalletDetails__unvote {
+.WalletDetails__vote__button {
   transition: 0.5s;
   cursor: pointer;
-  @apply .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .mt-4 .mb-4 .p-4 .rounded-r .font-semibold .w-22
+  @apply .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .whitespace-no-wrap .mt-4 .mb-4 .p-4 .rounded-r .font-semibold .w-auto .text-center
 }
-.WalletDetails__unvote:hover {
+.WalletDetails__vote__button:hover {
   transition: 0.5s;
   @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
 }

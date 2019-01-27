@@ -10,6 +10,7 @@ export default {
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
     DATE: 'Date',
+    DELEGATE: 'Delegate',
     DONE: 'Done',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
@@ -290,6 +291,15 @@ export default {
       REQUIRED: 'The amount is required'
     },
     LABEL: 'Amount'
+  },
+
+  INPUT_DELEGATE: {
+    ERROR: {
+      REQUIRED: 'The delegate name or address is required',
+      USERNAME_NOT_FOUND: 'The delegate \'{0}\' could not be found',
+      ADDRESS_NOT_FOUND: 'The delegate with the address \'{0}\' could not be found'
+    },
+    SEARCH_HINT: 'You can search by username or address'
   },
 
   INPUT_FEE: {
@@ -850,7 +860,9 @@ export default {
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
-    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}'
+    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
+    NO_VOTE: 'You haven\'t voted for a delegate yet, click on the button to the right if you wish to do so',
+    SELECT_DELEGATE: 'Select delegate'
   },
 
   WALLET_RENAME: {

@@ -1,8 +1,9 @@
 import WalletAddress from './WalletAddress'
 import WalletIdenticon from './WalletIdenticon'
 import WalletIdenticonPlaceholder from './WalletIdenticonPlaceholder'
-import WalletRenameModal from './WalletRenameModal'
 import WalletRemovalConfirmation from './WalletRemovalConfirmation'
+import WalletRenameModal from './WalletRenameModal'
+import WalletSelectDelegate from './WalletSelectDelegate'
 import WalletSelection from './WalletSelection'
 import WalletSignModal from './WalletSignModal'
 import WalletVerifyDetail from './WalletVerifyDetail'
@@ -22,8 +23,9 @@ export {
   WalletAddress,
   WalletIdenticon,
   WalletIdenticonPlaceholder,
-  WalletRenameModal,
   WalletRemovalConfirmation,
+  WalletRenameModal,
+  WalletSelectDelegate,
   WalletSelection,
   WalletSignModal,
   WalletVerifyDetail,
