@@ -4,8 +4,8 @@
       v-bind="$attrs"
       class="WalletAll__table"
       :columns="columns"
-      v-on="$listeners"
       @on-cell-click="onCellClick"
+      @on-sort-change="onSortChange"
     >
       <template
         slot-scope="data"
@@ -131,10 +131,6 @@ export default {
   },
 
   props: {
-    isContactsTable: {
-      type: Boolean,
-      default: false
-    },
     showVotedDelegates: {
       type: Boolean,
       default: false,
@@ -177,13 +173,6 @@ export default {
           tdClass: 'text-center'
         }
       ]
-
-      if (this.isContactsTable) {
-        const index = columns.findIndex(el => {
-          return el.field === 'balance'
-        })
-        columns.splice(index, 1)
-      }
 
       if (!this.showVotedDelegates) {
         const index = columns.findIndex(el => {
@@ -232,6 +221,10 @@ export default {
       if (column.field !== 'actions') {
         this.$router.push({ name: 'wallet-show', params: { address: row.address } })
       }
+    },
+
+    onSortChange (sortOptions) {
+      this.$emit('on-sort-change', sortOptions[0])
     }
   }
 }
@@ -242,10 +235,10 @@ export default {
   @apply .bg-theme-table-row-hover .cursor-pointer;
 }
 .WalletTable tbody tr:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
 }
 .WalletTable .identicon {
   transition: 0.5s;
+  opacity: 0.5;
 }
 </style>
