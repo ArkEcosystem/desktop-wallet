@@ -35,7 +35,7 @@ export default {
       return rootGetters['profile/byId'](state.profileId)
     },
     network (state, getters, __, rootGetters) {
-      if (!state.profileId) {
+      if (!getters['profile']) {
         return
       }
 
