@@ -11,7 +11,17 @@ localVue.use(Vuex)
 const i18n = useI18n(localVue)
 
 const store = new Vuex.Store({
-  state: {}
+  state: {},
+  modules: {
+    wallet: {
+      namespaced: true,
+      getters: {
+        byAddress: () => address => {
+          return sampleWalletData
+        }
+      }
+    }
+  }
 })
 
 const sampleWalletData = {
@@ -20,7 +30,7 @@ const sampleWalletData = {
 }
 
 describe('WalletHeading', () => {
-  it('should be instatiated', () => {
+  it('should be instantiated', () => {
     const wrapper = shallowMount(WalletHeading, {
       store,
       localVue,
@@ -34,7 +44,7 @@ describe('WalletHeading', () => {
 })
 
 describe('WalletHeadingActions', () => {
-  it('should be instatiated', () => {
+  it('should be instantiated', () => {
     const wrapper = shallowMount(WalletHeadingActions, {
       store,
       localVue,
@@ -48,7 +58,7 @@ describe('WalletHeadingActions', () => {
 })
 
 describe('WalletHeadingPrimaryActions', () => {
-  it('should be instatiated', () => {
+  it('should be instantiated', () => {
     const wrapper = shallowMount(WalletHeadingPrimaryActions, {
       i18n,
       provide: {
@@ -68,7 +78,7 @@ describe('WalletHeadingPrimaryActions', () => {
 })
 
 describe('WalletHeadingSecondaryActions', () => {
-  it('should be instatiated', () => {
+  it('should be instantiated', () => {
     const wrapper = shallowMount(WalletHeadingSecondaryActions, {
       i18n,
       mocks: {

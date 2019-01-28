@@ -23,7 +23,7 @@ export default {
           address,
           name: '',
           profileId: '',
-          isContact: true,
+          isContact: false,
           isWatchOnly: true
         })
       }

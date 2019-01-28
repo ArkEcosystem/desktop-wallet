@@ -17,7 +17,7 @@ describe('BaseModel', () => {
       item = { integer: 1, timestamp: new Date().getTime() }
     })
 
-    it('should be instatiated', () => {
+    it('should be instantiated', () => {
       expect(rigidModel).toBeInstanceOf(BaseModel)
     })
 

@@ -58,7 +58,7 @@ describe('WalletHeadingInfo component', () => {
     })
   })
 
-  it('should be instatiated', () => {
+  it('should be instantiated', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 

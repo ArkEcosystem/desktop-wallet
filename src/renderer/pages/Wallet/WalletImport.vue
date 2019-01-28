@@ -268,6 +268,8 @@ export default {
       }
       if (!this.useOnlyAddress) {
         this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase)
+      } else {
+        this.wallet.isWatchOnly = true
       }
 
       if (!this.useOnlyAddress && this.walletPassword && this.walletPassword.length) {

@@ -26,7 +26,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.isContact && !currentWallet.isDelegate"
+      v-show="!currentWallet.isContact && !currentWallet.isDelegate && !currentWallet.isWatchOnly"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
       icon="register-delegate"
@@ -42,7 +42,7 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.isContact && !currentWallet.isLedger && !currentWallet.secondPublicKey"
+      v-show="!currentWallet.isContact && !currentWallet.isLedger && !currentWallet.isWatchOnly && !currentWallet.secondPublicKey"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
       icon="2nd-passphrase"

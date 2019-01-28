@@ -9,7 +9,7 @@
       class="-mr-2"
     />
     <button
-      v-if="!currentWallet.isWatchOnly"
+      v-if="allowSecondaryActions()"
       class="option-heading-button flex items-center self-stretch ml-2 p-2"
       @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
     >
@@ -48,6 +48,12 @@ export default {
 
     currentWallet () {
       return this.wallet_fromRoute
+    }
+  },
+
+  methods: {
+    allowSecondaryActions () {
+      return this.currentWallet.isLedger || this.currentWallet.isContact || !!this.$store.getters['wallet/byAddress'](this.currentWallet.address)
     }
   }
 }
