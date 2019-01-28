@@ -303,7 +303,7 @@ export default class ClientService {
     // Add some utilities for each transactions
     const result = transactions.map(tx => {
       tx.isSender = tx.sender === address
-      tx.isReceiver = tx.recipient === address
+      tx.isRecipient = tx.recipient === address
       tx.totalAmount = tx.amount + tx.fee
 
       return tx
@@ -343,6 +343,8 @@ export default class ClientService {
       if (!hadFailure) {
         transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
           transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+          transaction.isSender = addresses.includes(transaction.sender)
+          transaction.isRecipient = addresses.includes(transaction.recipient)
 
           return transaction
         })

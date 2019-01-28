@@ -40,7 +40,7 @@ describe('TransactionModule', () => {
         transactions.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
           expect(transaction).toHaveProperty('isSender')
-          expect(transaction).toHaveProperty('isReceiver', true)
+          expect(transaction).toHaveProperty('isRecipient', true)
         })
       })
     })
@@ -56,7 +56,7 @@ describe('TransactionModule', () => {
         transactions.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
           expect(transaction).toHaveProperty('isSender', true)
-          expect(transaction).toHaveProperty('isReceiver')
+          expect(transaction).toHaveProperty('isRecipient')
         })
       })
     })
@@ -73,7 +73,7 @@ describe('TransactionModule', () => {
         transactions.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
           expect(transaction).toHaveProperty('isSender', transaction.sender === 'A3')
-          expect(transaction).toHaveProperty('isReceiver', transaction.recipient === 'A3')
+          expect(transaction).toHaveProperty('isRecipient', transaction.recipient === 'A3')
         })
       })
     })
@@ -100,7 +100,7 @@ describe('TransactionModule', () => {
         transactions.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
           expect(transaction).toHaveProperty('isSender')
-          expect(transaction).toHaveProperty('isReceiver')
+          expect(transaction).toHaveProperty('isRecipient')
         })
       })
     })
