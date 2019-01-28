@@ -32,12 +32,12 @@
           <div class="m-auto relative">
             <div class="QrCode__crosshair">
               <div class="flex justify-between w-full">
-                <span class="block h-4 w-4 border-l-2 border-t-2 border-white-transparent" />
-                <span class="block h-4 w-4 border-r-2 border-t-2 border-white-transparent" />
+                <span class="corner border-l-2 border-t-2 rounded-tl-lg" />
+                <span class="corner border-r-2 border-t-2 rounded-tr-lg" />
               </div>
               <div class="flex justify-between w-full">
-                <span class="block h-4 w-4 border-l-2 border-b-2 border-white-transparent" />
-                <span class="block h-4 w-4 border-r-2 border-b-2 border-white-transparent" />
+                <span class="corner border-l-2 border-b-2 rounded-bl-lg" />
+                <span class="corner border-r-2 border-b-2 rounded-br-lg" />
               </div>
             </div>
           </div>
@@ -184,6 +184,9 @@ export default {
   transform: scaleX(-1);
 }
 
+.corner {
+  @apply .block .h-4 .w-4 .border-white-transparent;
+}
 .bg-black-transparent {
   background-color: rgba(0, 0, 0, 0.5);
 }
