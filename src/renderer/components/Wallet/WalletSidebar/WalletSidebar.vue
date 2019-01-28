@@ -15,6 +15,9 @@
     >
       <div
         v-if="!isExpanded"
+        v-tooltip="{
+          content: $t('WALLET_SIDEBAR.EXPAND')
+        }"
         class="WalletSidebar__menu__button"
         @click="expand"
       >
@@ -94,57 +97,62 @@
     </MenuNavigationItem>
 
     <!-- List of actual wallets -->
-    <MenuNavigationItem
-      v-for="wallet in selectableWallets"
-      :id="wallet.id"
-      :key="wallet.id"
-      class="WalletSidebar__wallet"
+    <div
+      :class="{ 'opacity-0': isResizing }"
+      class="WalletSidebar__container"
     >
-      <div
-        slot-scope="{ isActive }"
-        :class="{ 'flex flex-row': isExpanded }"
-        class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
+      <MenuNavigationItem
+        v-for="wallet in selectableWallets"
+        :id="wallet.id"
+        :key="wallet.id"
+        class="WalletSidebar__wallet"
       >
-        <WalletIdenticon
-          :size="50"
-          :value="wallet.address"
-          class="WalletSidebar__wallet__identicon flex-no-shrink"
-        />
         <div
-          :class="{
-            'text-theme-page-text': isActive,
-            'text-theme-page-text-light': !isActive,
-            'pt-2': !isExpanded,
-            'pl-2': isExpanded
-          }"
-          class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
+          slot-scope="{ isActive }"
+          :class="{ 'flex flex-row': isExpanded }"
+          class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
         >
-          <span
-            class="flex items-center"
-            :class="{ 'justify-center': !isExpanded }"
+          <WalletIdenticon
+            :size="50"
+            :value="wallet.address"
+            class="WalletSidebar__wallet__identicon flex-no-shrink"
+          />
+          <div
+            :class="{
+              'text-theme-page-text': isActive,
+              'text-theme-page-text-light': !isActive,
+              'pt-2': !isExpanded,
+              'pl-2': isExpanded
+            }"
+            class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
           >
-            <span class="block truncate">
-              {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, !isExpanded ? 6 : (wallet.isLedger ? 12 : 24)) }}
+            <span
+              class="flex items-center"
+              :class="{ 'justify-center': !isExpanded }"
+            >
+              <span class="block truncate">
+                {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, !isExpanded ? 6 : (wallet.isLedger ? 12 : 24)) }}
+              </span>
+              <span
+                v-if="wallet.isLedger"
+                v-tooltip="!isExpanded ? $t('COMMON.LEDGER_WALLET') : ''"
+                :class="{ 'w-5': !isExpanded }"
+                class="ledger-badge"
+              >
+                {{ !isExpanded ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
+              </span>
             </span>
             <span
-              v-if="wallet.isLedger"
-              v-tooltip="!isExpanded ? $t('COMMON.LEDGER_WALLET') : ''"
-              :class="{ 'w-5': !isExpanded }"
-              class="ledger-badge"
+              v-if="isExpanded"
+              class="font-bold mt-2 text-xl"
             >
-              {{ !isExpanded ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
+              {{ formatter_networkCurrency(wallet.balance, 2) }}
+              <!-- TODO display a +/- n ARK on recent transactions -->
             </span>
-          </span>
-          <span
-            v-if="isExpanded"
-            class="font-bold mt-2 text-xl"
-          >
-            {{ formatter_networkCurrency(wallet.balance, 2) }}
-            <!-- TODO display a +/- n ARK on recent transactions -->
-          </span>
+          </div>
         </div>
-      </div>
-    </MenuNavigationItem>
+      </MenuNavigationItem>
+    </div>
   </MenuNavigation>
 </template>
 
@@ -183,6 +191,7 @@ export default {
 
   data: () => ({
     hasBeenExpanded: false,
+    isResizing: false,
     selectableWallets: []
   }),
 
@@ -236,12 +245,25 @@ export default {
 
   methods: {
     collapse () {
-      this.hasBeenExpanded = false
-      this.$emit('collapsed')
+      this.isResizing = true
+      setTimeout(() => {
+        setTimeout(() => {
+          this.isResizing = false
+        }, 125)
+        this.hasBeenExpanded = false
+        this.$emit('collapsed')
+      }, 75)
     },
+
     expand () {
-      this.hasBeenExpanded = true
-      this.$emit('expanded')
+      this.isResizing = true
+      setTimeout(() => {
+        setTimeout(() => {
+          this.isResizing = false
+        }, 125)
+        this.hasBeenExpanded = true
+        this.$emit('expanded')
+      }, 75)
     },
 
     onSelect (address) {
@@ -280,6 +302,12 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
+.WalletSidebar {
+  transition: width 0.1s ease-out;
+}
+.WalletSidebar__container {
+  transition: opacity 0.1s;
+}
 .WalletSidebar__menu {
   border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
 }
@@ -307,7 +335,7 @@ export default {
 }
 
 .WalletSidebar--collapsed .WalletSidebar__wallet__wrapper {
-  @apply .flex-col .justify-center
+  @apply .flex-col .justify-center .border-b .border-theme-feature
 }
 .WalletSidebar--collapsed .WalletSidebar__wallet__identicon {
   @apply .mb-2
@@ -321,5 +349,4 @@ export default {
   height: 40px;
   transform: scaleY(-1) scaleX(-1)
 }
-
 </style>
