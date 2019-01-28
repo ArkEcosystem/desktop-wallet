@@ -12,10 +12,9 @@
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ProfileRemovalConfirmation__container__arrow"
       >
-      <div
-        :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-        :title="profile.name"
-        class="profile-avatar-xl background-image bg-contain"
+      <ProfileAvatar
+        :profile="profile"
+        letter-size="3xl"
       />
       <img
         :title="profile.name"
@@ -28,12 +27,14 @@
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
+import { ProfileAvatar } from '@/components/Profile'
 
 export default {
   name: 'ProfileRemovalConfirmation',
 
   components: {
-    ModalConfirmation
+    ModalConfirmation,
+    ProfileAvatar
   },
 
   props: {
@@ -64,6 +65,18 @@ export default {
 .ProfileRemovalConfirmation .ModalConfirmation__container {
   min-width: calc(var(--profile-avatar-xl) + 74px * 2);
   max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 50px)
+}
+.ProfileRemovalConfirmation .ModalConfirmation__container > div:first-child {
+  @apply .mb-0
+}
+.ProfileRemovalConfirmation .ProfileAvatar {
+  @apply .flex .flex-col .justify-around
+}
+.ProfileRemovalConfirmation .ProfileAvatar__image {
+  height: calc(var(--profile-avatar-xl) * 0.66);
+  width: var(--profile-avatar-xl);
+}
+.ProfileRemovalConfirmation .ProfileAvatar__letter {
 }
 .ProfileRemovalConfirmation__container__arrow {
   width: 74px;
