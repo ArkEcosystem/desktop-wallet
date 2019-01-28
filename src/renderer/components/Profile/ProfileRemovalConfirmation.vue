@@ -46,8 +46,22 @@ export default {
 
   methods: {
     removeProfile () {
-      this.$store.dispatch('profile/delete', this.profile)
-      this.emitRemoved()
+      const removeCurrentProfile = () => {
+        this.$store.dispatch('profile/delete', this.profile)
+        this.emitRemoved()
+      }
+
+      const profiles = this.$store.getters['profile/all']
+
+      if (profiles.length <= 1) {
+        this.$store.dispatch('session/reset')
+        removeCurrentProfile()
+        this.$router.push({ name: 'profile-new' })
+      } else {
+        const nextProfile = profiles.find(profile => profile.id !== this.profile.id)
+        this.$store.dispatch('session/setProfileId', nextProfile.id)
+        removeCurrentProfile()
+      }
     },
 
     emitCancel () {
