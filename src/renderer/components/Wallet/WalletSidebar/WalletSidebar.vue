@@ -6,7 +6,7 @@
       'WalletSidebar--collapsed': !isExpanded,
       'WalletSidebar--expanded': isExpanded
     }"
-    class="WalletSidebar justify-start pt-0 overflow-y-auto menu-transition"
+    class="WalletSidebar justify-start pt-0 overflow-y-auto"
     @input="onSelect"
   >
     <div
@@ -99,13 +99,13 @@
     <!-- List of actual wallets -->
     <div
       :class="{ 'opacity-0': isResizing }"
-      class="menu-transition"
+      class="WalletSidebar__container"
     >
       <MenuNavigationItem
         v-for="wallet in selectableWallets"
         :id="wallet.id"
         :key="wallet.id"
-        class="WalletSidebar__wallet menu-transition"
+        class="WalletSidebar__wallet"
       >
         <div
           slot-scope="{ isActive }"
@@ -249,10 +249,10 @@ export default {
       setTimeout(() => {
         setTimeout(() => {
           this.isResizing = false
-        }, 350)
+        }, 125)
         this.hasBeenExpanded = false
         this.$emit('collapsed')
-      }, 100)
+      }, 75)
     },
 
     expand () {
@@ -260,10 +260,10 @@ export default {
       setTimeout(() => {
         setTimeout(() => {
           this.isResizing = false
-        }, 350)
+        }, 125)
         this.hasBeenExpanded = true
         this.$emit('expanded')
-      }, 100)
+      }, 75)
     },
 
     onSelect (address) {
@@ -302,6 +302,12 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
+.WalletSidebar {
+  transition: width 0.1s ease-out;
+}
+.WalletSidebar__container {
+  transition: opacity 0.1s;
+}
 .WalletSidebar__menu {
   border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
 }
@@ -342,9 +348,5 @@ export default {
   width: 40px;
   height: 40px;
   transform: scaleY(-1) scaleX(-1)
-}
-
-.menu-transition {
-  transition: width .4s ease-out, opacity 0.1s;
 }
 </style>
