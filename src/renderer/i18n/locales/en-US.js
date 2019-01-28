@@ -826,6 +826,7 @@ export default {
   WALLET_SIDEBAR: {
     FILTER: 'Filter',
     HIDE: 'Hide',
+    EXPAND: 'Expand',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 
