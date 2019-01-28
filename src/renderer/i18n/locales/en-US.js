@@ -703,7 +703,8 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcast to the network'
+      BROADCASTING: 'Your transaction is being broadcast to the network',
+      BROADCASTING_SLOW: 'It looks like it\'s taking a while to broadcast your transaction. You may close the window and it will continue to send in the background.'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',

@@ -29,6 +29,7 @@
 
     <ModalLoader
       :allow-close="true"
+      :close-warning-message="$t('TRANSACTION.INFO.BROADCASTING_SLOW')"
       :message="$t('TRANSACTION.INFO.BROADCASTING')"
       :visible="showBroadcastingTransactions"
       @close="emitClose"
