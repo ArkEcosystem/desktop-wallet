@@ -19,7 +19,7 @@
       v-if="showClose"
       class="text-center text-theme-warn-text border-theme-warn border-t-2 p-2"
     >
-      {{ $t('MODAL_LOADER.CLOSE_WARNING') }}
+      {{ closeWarningMessage || $t('MODAL_LOADER.CLOSE_WARNING') }}
     </div>
   </ModalWindow>
 </template>
@@ -55,6 +55,11 @@ export default {
       type: Number,
       required: false,
       default: 15000
+    },
+    closeWarningMessage: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
