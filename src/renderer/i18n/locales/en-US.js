@@ -117,7 +117,7 @@ export default {
   },
 
   VENDORFIELD: {
-    LIMIT_REACHED: 'You can enter maximum \'{0}\' charachters only'
+    LIMIT_REACHED: 'You can enter maximum \'{0}\' characters only'
   },
 
   VALIDATION: {
