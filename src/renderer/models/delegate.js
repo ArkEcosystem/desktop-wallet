@@ -37,6 +37,20 @@ export default new BaseModel({
         }
       }
     },
+    forged: {
+      type: 'object',
+      properties: {
+        fees: {
+          type: 'integer'
+        },
+        rewards: {
+          type: 'integer'
+        },
+        total: {
+          type: 'integer'
+        }
+      }
+    },
     rank: {
       type: 'integer'
     }

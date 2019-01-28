@@ -427,6 +427,7 @@ export default {
       CREATE_CONTACT: 'Create contact',
       IMPORT_CONTACT: 'Import contact',
       DELETE_CONTACT: 'Delete this contact',
+      INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
     },
@@ -825,6 +826,7 @@ export default {
   WALLET_SIDEBAR: {
     FILTER: 'Filter',
     HIDE: 'Hide',
+    EXPAND: 'Expand',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 
