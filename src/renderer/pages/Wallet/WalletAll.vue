@@ -420,13 +420,13 @@ export default {
   @apply .m-6
 }
 .WalletAll__grid__wallet:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
 }
 .WalletAll__grid__wallet__name {
   color: #037cff;
 }
 .WalletAll__grid__wallet .identicon {
+  opacity: 0.5;
   transition: 0.5s;
 }
 @screen lg {
