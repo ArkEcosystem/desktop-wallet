@@ -297,7 +297,7 @@ export default {
           numeric = numeric.replace(/,/g, '.')
         // If only includes 1 kind of ambiguous separator, convert it to '.'
         } if (dot || colon) {
-          numeric = numeric.replace(/[.,]/, '.')
+          numeric = numeric.replace(/[.,]+/, '.')
         }
 
         // These characters are always thousand separators
