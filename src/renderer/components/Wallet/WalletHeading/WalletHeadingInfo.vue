@@ -25,7 +25,7 @@
       :size="75"
       class="WalletHeading__identicon"
     />
-    <div class="flex flex-col justify-center text-white antialiased pl-4">
+    <div class="flex flex-col justify-center text-white antialiased pl-4 z-10">
       <div
         v-if="name"
         class="flex flex-row text-lg font-semibold text-theme-heading-text"
