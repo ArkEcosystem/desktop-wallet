@@ -56,6 +56,42 @@ describe('InputCurrency', () => {
     expect(wrapper.contains('.InputCurrency')).toBeTruthy()
   })
 
+  describe('decimalSeparator', () => {
+    it('should be obtained from the locale', () => {
+      let wrapper = mountComponent({
+        mocks: {
+          currency_format: () => 'NET 9.9'
+        }
+      })
+      expect(wrapper.vm.decimalSeparator).toBe('.')
+
+      wrapper = mountComponent({
+        mocks: {
+          currency_format: () => '9,9 NET'
+        }
+      })
+      expect(wrapper.vm.decimalSeparator).toBe(',')
+    })
+  })
+
+  describe('thousandSeparator', () => {
+    it('should be obtained from the locale', () => {
+      let wrapper = mountComponent({
+        mocks: {
+          currency_format: () => 'NET 9.9'
+        }
+      })
+      expect(wrapper.vm.thousandSeparator).toBe(',')
+
+      wrapper = mountComponent({
+        mocks: {
+          currency_format: () => '9,9 NET'
+        }
+      })
+      expect(wrapper.vm.thousandSeparator).toBe('.')
+    })
+  })
+
   describe('when receiving the `isDisabled` prop', () => {
     it('should be disabled', () => {
       const wrapper = mountComponent({

@@ -198,6 +198,18 @@ export default {
         : this.inputValue
     },
 
+    /**
+     * When in doubt, the separator of the current locale may be used.
+     * An example is "9,999": is it 9.999 or is it 9999?
+     */
+    decimalSeparator () {
+      const example = this.currency_format(9.9, { currency: this.currency })
+      return example.match(/9(.)9/)[1]
+    },
+    thousandSeparator () {
+      return this.decimalSeparator === '.' ? ',' : '.'
+    },
+
     isInvalid () {
       return this.$v.model.$dirty && !!this.error
     },
