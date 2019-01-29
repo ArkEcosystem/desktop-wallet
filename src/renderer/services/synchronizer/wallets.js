@@ -238,6 +238,7 @@ class Action {
             publicKey: truncateMiddle(transaction.asset.votes[0].substring(1))
           }
         }
+        eventBus.emit(`transaction:new:vote`)
         break
       }
       default: {

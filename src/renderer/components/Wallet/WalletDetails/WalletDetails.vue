@@ -18,6 +18,7 @@
           :is="tab.component"
           slot-scope="{ isActive }"
           :is-active="isActive"
+          @on-row-click="onRowClick"
         />
       </MenuTabItem>
     </MenuTab>
@@ -29,7 +30,19 @@
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div
-          v-if="votedDelegate"
+          v-if="isLoadingVote"
+          class="flex"
+        >
+          {{ $t('WALLET_DELEGATES.LOADING_VOTE') }}
+        </div>
+        <div
+          v-else-if="isProcessing"
+          class="flex"
+        >
+          {{ $t('WALLET_DELEGATES.PROCESSING_VOTE') }}
+        </div>
+        <div
+          v-else-if="votedDelegate"
           class="flex"
         >
           <i18n
@@ -73,14 +86,14 @@
         </div>
       </div>
       <div
-        v-if="votedDelegate"
+        v-if="votedDelegate && !isProcessing && !isLoadingVote"
         class="WalletDetails__vote__button"
         @click="openUnvote"
       >
         {{ $t('WALLET_DELEGATES.UNVOTE') }}
       </div>
       <div
-        v-else
+        v-else-if="!votedDelegate && !isProcessing && !isLoadingVote"
         class="WalletDetails__vote__button"
         @click="openSelectDelegate"
       >
@@ -88,24 +101,17 @@
       </div>
 
       <!-- Vote/unvote modal -->
-      <Portal
-        v-if="isVoting || isUnvoting"
-        to="modal"
-      >
-        <TransactionModal
-          :title="isUnvoting ? (
-            $t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })
-          ) : (
-            $t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: selectedDelegate.username })
-          )"
-          :type="3"
-          :delegate="votedDelegate || selectedDelegate"
-          :is-voter="isUnvoting"
-          @cancel="onCancel"
-          @close="onCancel"
-          @sent="onSent"
-        />
-      </Portal>
+      <TransactionModal
+        v-if="isUnvoting || selectedDelegate"
+        :title="getVoteTitle()"
+        :type="3"
+        :delegate="votedDelegate || selectedDelegate"
+        :is-voter="isUnvoting"
+        :has-voted="!!votedDelegate"
+        @cancel="onCancel"
+        @close="onCancel"
+        @sent="onSent"
+      />
 
       <!-- Select delegate modal -->
       <Portal
@@ -115,7 +121,7 @@
         <WalletSelectDelegate
           @cancel="onCancelSelect"
           @close="onCancelSelect"
-          @confirm="onConfirm"
+          @confirm="onConfirmSelect"
         />
       </Portal>
     </div>
@@ -163,6 +169,8 @@ export default {
       isVoting: false,
       isUnvoting: false,
       isSelecting: false,
+      isProcessing: false,
+      isLoadingVote: true,
       votedDelegate: null,
       selectedDelegate: null
     }
@@ -251,10 +259,12 @@ export default {
     await this.$synchronizer.call('wallets')
     await this.fetchWalletVote()
     this.$eventBus.on('wallet:reload', this.fetchWalletVote)
+    this.$eventBus.on('transaction:new:vote', this.fetchWalletVote)
   },
 
   beforeDestroy () {
     this.$eventBus.off('wallet:reload', this.fetchWalletVote)
+    this.$eventBus.off('wallet:new:vote', this.fetchWalletVote)
   },
 
   mounted () {
@@ -266,12 +276,25 @@ export default {
       this.currentTab = component
     },
 
+    getVoteTitle () {
+      if (this.isUnvoting) {
+        return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.votedDelegate.username })
+      } else if (this.isVoting) {
+        return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selectedDelegate.username })
+      } else {
+        return `${this.$t('COMMON.DELEGATE')} ${this.selectedDelegate.username}`
+      }
+    },
+
     async fetchWalletVote () {
+      this.isProcessing = false
+
       if (!this.currentWallet) {
         return
       }
 
       try {
+        this.isLoadingVote = true
         const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
 
         if (walletVote) {
@@ -293,6 +316,8 @@ export default {
             msg: error.message
           }))
         }
+      } finally {
+        this.isLoadingVote = false
       }
     },
 
@@ -310,7 +335,8 @@ export default {
     },
 
     onCancel () {
-      this.isUnvoting = this.isVoting = false
+      this.isUnvoting = false
+      this.isVoting = false
       this.selectedDelegate = null
     },
 
@@ -318,7 +344,7 @@ export default {
       this.isSelecting = false
     },
 
-    onConfirm (value) {
+    onConfirmSelect (value) {
       if (value.length <= 20) {
         this.selectedDelegate = this.$store.getters['delegate/byUsername'](value)
       } else if (value.length <= 34) {
@@ -333,21 +359,33 @@ export default {
       }
     },
 
-    onSent (success) {
-      console.log('success: ' + success)
+    async onSent (success) {
       if (success) {
-        console.log('isUnvoting ' + this.isUnvoting)
-        console.log('isVoting ' + this.isVoting)
+        this.isProcessing = true
+
         if (this.isUnvoting) {
           this.walletVote.publicKey = null
           this.votedDelegate = null
-        } else {
+        } else if (this.isVoting) {
           this.walletVote.publicKey = this.selectedDelegate.publicKey
-          this.selectedDelegate = null
+          this.votedDelegate = this.selectedDelegate
         }
       }
 
-      this.isUnvoting = this.isVoting = false
+      this.selectedDelegate = null
+      this.isUnvoting = false
+      this.isVoting = false
+    },
+
+    onRowClick (publicKey) {
+      if (this.walletVote.publicKey === publicKey) {
+        this.isUnvoting = true
+      } else {
+        this.selectedDelegate = this.$store.getters['delegate/byPublicKey'](publicKey)
+        if (!this.votedDelegate) {
+          this.isVoting = true
+        }
+      }
     }
   }
 }

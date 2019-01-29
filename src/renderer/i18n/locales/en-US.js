@@ -866,6 +866,8 @@ export default {
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
     NO_VOTE: 'You haven\'t voted for a delegate yet, click on the button to the right if you wish to do so',
+    PROCESSING_VOTE: 'Your vote is being processed...',
+    LOADING_VOTE: 'Loading vote details...',
     SELECT_DELEGATE: 'Select delegate'
   },
 
