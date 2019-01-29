@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import ModalWindow from '@/components/Modal'
+import ModalWindow from '@/components/Modal/ModalWindow'
 import InputGridItem from './InputGridItem'
 
 /**
