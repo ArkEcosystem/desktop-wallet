@@ -52,16 +52,18 @@ export default class ClientService {
    * Only for V2
    * Get the configuration of a peer
    * @param {String} host - URL of the host (using `core-p2p` port)
+   * @param {Number} [timeout=3000]
    * @return {(Object|null)}
    */
-  static async fetchPeerConfig (host) {
+  static async fetchPeerConfig (host, timeout = 3000) {
     try {
       const { data } = await axios({
         url: `${host}/config`,
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        timeout
       })
       if (data) {
         return data.data

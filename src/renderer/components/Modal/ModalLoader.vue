@@ -1,6 +1,6 @@
 <template>
   <ModalWindow
-    v-if="visible"
+    v-if="isVisible"
     :allow-close="showClose"
     container-classes="w-1/2"
     portal-target="loading"
@@ -19,7 +19,7 @@
       v-if="showClose"
       class="text-center text-theme-warn-text border-theme-warn border-t-2 p-2"
     >
-      {{ $t('MODAL_LOADER.CLOSE_WARNING') }}
+      {{ closeWarningMessage || $t('MODAL_LOADER.CLOSE_WARNING') }}
     </div>
   </ModalWindow>
 </template>
@@ -29,7 +29,7 @@ import Loader from '@/components/utils/Loader'
 import ModalWindow from './ModalWindow'
 
 export default {
-  name: 'ModalLoading',
+  name: 'ModalLoader',
 
   components: {
     Loader,
@@ -55,18 +55,25 @@ export default {
       type: Number,
       required: false,
       default: 15000
+    },
+    closeWarningMessage: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
-  data () {
+  data (vm) {
     return {
       showClose: false,
-      showCloseTimeout: null
+      showCloseTimeout: null,
+      isVisible: vm.visible
     }
   },
 
   watch: {
     visible: function (value) {
+      this.isVisible = value
       if (value) {
         this.triggerShowClose()
       }
@@ -79,7 +86,11 @@ export default {
 
   methods: {
     toggle () {
-      this.visible = !this.visible
+      this.isVisible = !this.isVisible
+
+      if (!this.isVisible) {
+        this.$emit('close')
+      }
     },
 
     triggerShowClose () {
