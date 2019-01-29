@@ -26,7 +26,8 @@ describe('InputCurrency', () => {
       token: 'NET',
       market: {
         enabled: true
-      }
+      },
+      fractionDigits: 8
     }
 
     store.getters['session/network'] = mockNetwork
@@ -103,32 +104,14 @@ describe('InputCurrency', () => {
       expect(wrapper.emitted('input')[1][0]).toEqual(0)
     })
 
-    it('should parse and emit numeric values as Numbers', () => {
+    it('should sanitize and emit numeric values as Numbers', () => {
       const wrapper = mountComponent()
-
-      wrapper.vm.emitInput(12.022)
-      expect(wrapper.emitted('input')[0][0]).toEqual(12.022)
-
-      wrapper.vm.emitInput('22.22')
-      expect(wrapper.emitted('input')[1][0]).toEqual(22.22)
+      jest.spyOn(wrapper.vm, 'sanitizeNumeric')
 
       wrapper.vm.emitInput('122,0122')
-      expect(wrapper.emitted('input')[2][0]).toEqual(122.0122)
 
-      wrapper.vm.emitInput('100_000')
-      expect(wrapper.emitted('input')[3][0]).toEqual(100000)
-
-      wrapper.vm.emitInput('200 200')
-      expect(wrapper.emitted('input')[4][0]).toEqual(200200)
-
-      wrapper.vm.emitInput('1,233,233')
-      expect(wrapper.emitted('input')[5][0]).toEqual(1233233)
-
-      wrapper.vm.emitInput('1.233.233,12')
-      expect(wrapper.emitted('input')[6][0]).toEqual(1233233.12)
-
-      wrapper.vm.emitInput('123,45')
-      expect(wrapper.emitted('input')[7][0]).toEqual(123.45)
+      expect(wrapper.vm.sanitizeNumeric).toHaveBeenCalledWith('122,0122')
+      expect(wrapper.emitted('input')[0][0]).toEqual(122.0122)
     })
   })
 
@@ -165,6 +148,27 @@ describe('InputCurrency', () => {
     })
   })
 
+  describe('sanitizeNumeric', () => {
+    it('should sanitize it', () => {
+      const wrapper = mountComponent()
+      wrapper.vm.inputValue = 1
+
+      expect(wrapper.vm.sanitizeNumeric('10')).toEqual('10')
+      expect(wrapper.vm.sanitizeNumeric('1.10')).toEqual('1.10')
+      expect(wrapper.vm.sanitizeNumeric(1.1)).toEqual('1.1')
+      expect(wrapper.vm.sanitizeNumeric(1e-8)).toEqual('0.00000001')
+      expect(wrapper.vm.sanitizeNumeric(1e-6)).toEqual('0.000001')
+      expect(wrapper.vm.sanitizeNumeric('1,1')).toEqual('1.1')
+      expect(wrapper.vm.sanitizeNumeric('100.200.300,40')).toEqual('100200300.40')
+      expect(wrapper.vm.sanitizeNumeric('9,999')).toEqual('9999')
+      expect(wrapper.vm.sanitizeNumeric('9,999,999.99')).toEqual('9999999.99')
+      expect(wrapper.vm.sanitizeNumeric('10 000 000.5')).toEqual('10000000.5')
+      expect(wrapper.vm.sanitizeNumeric('80 000,8')).toEqual('80000.8')
+      expect(wrapper.vm.sanitizeNumeric('11_111_111.11')).toEqual('11111111.11')
+      expect(wrapper.vm.sanitizeNumeric('33_333,33')).toEqual('33333.33')
+    })
+  })
+
   describe('updateInputValue', () => {
     describe('when receiving an empty value', () => {
       it('should empty the input value', () => {
@@ -183,45 +187,15 @@ describe('InputCurrency', () => {
     })
 
     describe('when receiving values that look like numbers', () => {
-      it('should uses them on the input value', () => {
+      it('should sanitize it', () => {
         const wrapper = mountComponent()
         wrapper.vm.inputValue = 1
+        jest.spyOn(wrapper.vm, 'sanitizeNumeric')
 
-        wrapper.vm.updateInputValue('10')
-        expect(wrapper.vm.inputValue).toEqual('10')
+        wrapper.vm.updateInputValue('33.333,33')
 
-        wrapper.vm.updateInputValue('1.10')
-        expect(wrapper.vm.inputValue).toEqual('1.10')
-
-        wrapper.vm.updateInputValue(1.1)
-        expect(wrapper.vm.inputValue).toEqual('1.1')
-
-        wrapper.vm.updateInputValue(1e-8)
-        expect(wrapper.vm.inputValue).toEqual('0.00000001')
-
-        wrapper.vm.updateInputValue(1e-6)
-        expect(wrapper.vm.inputValue).toEqual('0.000001')
-
-        wrapper.vm.updateInputValue('1,1')
-        expect(wrapper.vm.inputValue).toEqual('1.1')
-
-        wrapper.vm.updateInputValue('100.200.300,40')
-        expect(wrapper.vm.inputValue).toEqual('100200300.40')
-
-        wrapper.vm.updateInputValue('9,999,999.99')
-        expect(wrapper.vm.inputValue).toEqual('9999999.99')
-
-        wrapper.vm.updateInputValue('10 000 000.5')
-        expect(wrapper.vm.inputValue).toEqual('10000000.5')
-
-        wrapper.vm.updateInputValue('80 000,8')
-        expect(wrapper.vm.inputValue).toEqual('80000.8')
-
-        wrapper.vm.updateInputValue('11_111_111.11')
-        expect(wrapper.vm.inputValue).toEqual('11111111.11')
-
-        wrapper.vm.updateInputValue('33_333,33')
         expect(wrapper.vm.inputValue).toEqual('33333.33')
+        expect(wrapper.vm.sanitizeNumeric).toHaveBeenCalledWith('33.333,33')
       })
 
       it('should return `true`', () => {
