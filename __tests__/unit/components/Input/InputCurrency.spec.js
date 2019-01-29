@@ -41,6 +41,7 @@ describe('InputCurrency', () => {
         value: ''
       },
       mocks: {
+        currency_format: () => 'NET 9.9',
         session_network: mockNetwork
       }
     }, config))
@@ -185,9 +186,8 @@ describe('InputCurrency', () => {
   })
 
   describe('sanitizeNumeric', () => {
-    it('should sanitize it', () => {
+    it('should parse numeric values', () => {
       const wrapper = mountComponent()
-      wrapper.vm.inputValue = 1
 
       expect(wrapper.vm.sanitizeNumeric('10')).toEqual('10')
       expect(wrapper.vm.sanitizeNumeric('1.10')).toEqual('1.10')
@@ -199,7 +199,9 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.sanitizeNumeric('9,999')).toEqual('9999')
       expect(wrapper.vm.sanitizeNumeric('9,999,999.99')).toEqual('9999999.99')
       expect(wrapper.vm.sanitizeNumeric('10 000 000.5')).toEqual('10000000.5')
+      expect(wrapper.vm.sanitizeNumeric('30 000.555')).toEqual('30000.555')
       expect(wrapper.vm.sanitizeNumeric('80 000,8')).toEqual('80000.8')
+      expect(wrapper.vm.sanitizeNumeric('30 300,666')).toEqual('30300.666')
       expect(wrapper.vm.sanitizeNumeric('11_111_111.11')).toEqual('11111111.11')
       expect(wrapper.vm.sanitizeNumeric('33_333,33')).toEqual('33333.33')
     })
