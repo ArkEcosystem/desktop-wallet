@@ -138,7 +138,7 @@
 
 <script>
 import { maxLength, required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_TYPES, V1 } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -293,11 +293,9 @@ export default {
       }
     })
 
-    // Set default fees
-    // v1 compatibility
-    // TODO: Get static fee from the network, or allow better UI
+    // Set default fees with v1 compatibility
     if (this.walletNetwork.apiVersion === 1) {
-      this.form.fee = 0.1
+      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
     } else {
       this.form.fee = this.$refs.fee.fee
     }

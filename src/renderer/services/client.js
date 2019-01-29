@@ -7,6 +7,7 @@ import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import logger from 'electron-log'
+import moment from 'moment'
 
 export default class ClientService {
   /*
@@ -45,6 +46,32 @@ export default class ClientService {
 
       return data.data
     }
+  }
+
+  /**
+   * Only for V2
+   * Get the configuration of a peer
+   * @param {String} host - URL of the host (using `core-p2p` port)
+   * @return {(Object|null)}
+   */
+  static async fetchPeerConfig (host) {
+    try {
+      const { data } = await axios({
+        url: `${host}/config`,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      if (data) {
+        return data.data
+      }
+    } catch (error) {
+      // TODO only if a new feature to enable logging is added
+      // console.log(`Error on \`${host}\``)
+    }
+
+    return null
   }
 
   static async fetchFeeStatistics (server, apiVersion, timeout) {
@@ -165,21 +192,6 @@ export default class ClientService {
     // v2
     const { data } = await this.client.resource('delegates').voters(delegate.username, { page, limit })
     return data.meta.totalCount
-  }
-
-  /**
-   * Fetches a delegate based on the given id
-   * id can be public key, username (or wallet address if v2)
-   *
-   * @return {Object|null} Delegate object if one is found, otherwise null
-   */
-  async fetchDelegate (id) {
-    const { data } = await this.client.resource('delegates').get(id)
-
-    if (this.__version === 1 && data.success) {
-      return data
-    }
-    return data.data ? data.data : null
   }
 
   async fetchDelegateForged (delegate) {
@@ -508,14 +520,16 @@ export default class ClientService {
     const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.client.http.host)
     const scheme = matches[1]
     const ip = matches[2]
-    let port = scheme === 'https://' ? 443 : 80
+    const isHttps = scheme === 'https://'
+    let port = isHttps ? 443 : 80
     if (matches[3]) {
       port = matches[3]
     }
 
     return {
       ip,
-      port
+      port,
+      isHttps
     }
   }
 
@@ -660,9 +674,14 @@ export default class ClientService {
    * @returns {Object}
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
+    const network = store.getters['session/network']
     transaction = transaction.network({
-      pubKeyHash: store.getters['session/network'].version
+      pubKeyHash: network.version
     })
+
+    const epochTime = moment(network.constants.epoch).utc().valueOf()
+    const now = moment().valueOf()
+    transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
     if (passphrase) {
       transaction = transaction.sign(this.normalizePassphrase(passphrase))
@@ -709,11 +728,18 @@ export default class ClientService {
    * @returns {Object[]}
    */
   async broadcastTransaction (transactions, broadcast) {
+    let currentPeer = store.getters['peer/current']()
+    if (!currentPeer) {
+      currentPeer = this.__parseCurrentPeer()
+    }
     // Use p2p for v1
     if (this.__version === 1) {
       if (broadcast) {
         let responses = []
-        const peers = store.getters['peer/broadcastPeers']()
+        let peers = store.getters['peer/broadcastPeers']()
+        if ((!peers || !peers.length) || currentPeer) {
+          peers = [currentPeer]
+        }
 
         for (let i = 0; i < peers.length; i++) {
           const response = await this.__sendV1Transaction(transactions, peers[i])
@@ -721,26 +747,31 @@ export default class ClientService {
         }
         return responses
       } else {
-        const currentPeer = store.getters['peer/current']()
         const response = await this.__sendV1Transaction(transactions, currentPeer)
         return [response]
       }
     } else {
+      let failedBroadcast = false
       if (broadcast) {
         let txs = []
-        const peers = store.getters['peer/broadcastPeers']()
-
-        for (let i = 0; i < peers.length; i++) {
-          try {
-            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
-            const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
-            txs.push(tx)
-          } catch (err) {
-            //
+        let peers = store.getters['peer/broadcastPeers']()
+        if (peers && peers.length) {
+          for (let i = 0; i < peers.length; i++) {
+            try {
+              const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+              const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
+              txs.push(tx)
+            } catch (err) {
+              //
+            }
           }
+          return txs
+        } else {
+          failedBroadcast = true
         }
-        return txs
-      } else {
+      }
+
+      if (!broadcast || failedBroadcast) {
         const transaction = await this
           .client
           .resource('transactions')

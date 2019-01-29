@@ -15,7 +15,10 @@ export default {
     FETCH: 'Fetch',
     FINISH: 'Finish',
     LANGUAGE: 'Application Language',
+    LEDGER: 'Ledger',
+    LEDGER_WALLET: 'This is a Ledger wallet',
     NETWORK: 'Network',
+    NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
     NOT: 'not',
     OF: 'of',
@@ -34,7 +37,8 @@ export default {
 
   ANNOUNCEMENTS: {
     LATEST_NEWS: 'Latest News',
-    READ_MORE: 'Read more'
+    READ_MORE: 'Read more',
+    ALL_READ: 'Mark all as read'
   },
 
   INTRODUCTION: {
@@ -119,6 +123,7 @@ export default {
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
+    INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
@@ -140,6 +145,9 @@ export default {
     ADDRESS: {
       EXISTS_AS_CONTACT: 'The address \'{0}\' has already been added as a contact',
       EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
+    },
+    PUBLIC_KEY: {
+      INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -419,27 +427,21 @@ export default {
       CREATE_CONTACT: 'Create contact',
       IMPORT_CONTACT: 'Import contact',
       DELETE_CONTACT: 'Delete this contact',
+      INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
     },
 
     CONTACT_NEW: {
-      STEP1: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Address',
-          TEXT: 'Enter the address of your contact.'
-        },
-        TITLE: '1. Enter address',
-        ADDRESS: 'Contact address'
+      INSTRUCTIONS: {
+        HEADER: 'New contact',
+        TEXT: 'Enter the address of your contact. You will be able to view its transactions'
       },
-      STEP2: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Name',
-          TEXT: 'Optionally, choose a name for you contact and you are done.'
-        },
-        TITLE: '2. Confirmation',
-        NAME: 'Contact name (optional)'
-      },
+      TITLE: 'Enter contact address',
+      ADDRESS: 'Address',
+      NAME: 'Contact name (optional)',
+      NAME_INFO: 'Info.:',
+      NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact'
     },
 
@@ -542,7 +544,7 @@ export default {
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import wallet',
-      LOADING_LEDGER: 'Loading Ledger Wallets...',
+      LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
@@ -771,13 +773,15 @@ export default {
     PUBLIC_KEY: 'Public key',
     SIGNATURE: 'Signature',
     JSON_MESSAGE: 'Signed message content',
-    FORMAT_FOOTER: 'Format (JSON): { "publickey": "...", "signature": "...", "message": "..." }',
+    FORMAT_FOOTER: 'Format (JSON): { "publicKey": "...", "signature": "...", "message": "..." }',
     VERIFIED: 'The message is verified successfully',
     NOT_VERIFIED: 'The message is NOT verified',
     CONFIRMATION: 'Confirmation',
     DELETE: 'Delete message',
     FAILED_SIGN: 'Could not sign message',
-    FAILED_VERIFY: 'Could not verify message'
+    FAILED_VERIFY: 'Could not verify message',
+    SUCCESSFULL_SIGN: 'Your message was signed',
+    SUCCESSFULL_VERIFY: 'The message was verified'
   },
 
   SYNCHRONIZER: {
@@ -803,6 +807,7 @@ export default {
   WALLET_HEADING: {
     ACTIONS: {
       WALLET_NAME: 'Wallet name',
+      CONTACT_NAME: 'Contact name',
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet',
@@ -819,6 +824,9 @@ export default {
   },
 
   WALLET_SIDEBAR: {
+    FILTER: 'Filter',
+    HIDE: 'Hide',
+    EXPAND: 'Expand',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 
@@ -848,13 +856,22 @@ export default {
   },
 
   WALLET_RENAME: {
-    TITLE: 'Rename Wallet',
+    TITLE: 'Rename wallet',
     TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
     ADD: 'Add wallet',
     RENAME: 'Rename wallet',
     ADDRESS_INFO: 'Set a name for this wallet: ',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
+  },
+
+  CONTACT_RENAME: {
+    TITLE: 'Rename contact',
+    TITLE_ADD: 'Add contact',
+    NEW: 'New contact name',
+    ADD: 'Add contact',
+    RENAME: 'Rename contact',
+    ADDRESS_INFO: 'Set a name for this contact: '
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
@@ -871,7 +888,6 @@ export default {
   },
 
   WALLET_TABLE: {
-    LEDGER: 'Ledger',
     NO_DELETE: 'Ledger wallets cannot be deleted',
     ACTIONS: 'Actions'
   }
