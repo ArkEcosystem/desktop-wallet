@@ -114,6 +114,21 @@ describe('InputCurrency', () => {
 
       wrapper.vm.emitInput('122,0122')
       expect(wrapper.emitted('input')[2][0]).toEqual(122.0122)
+
+      wrapper.vm.emitInput('100_000')
+      expect(wrapper.emitted('input')[3][0]).toEqual(100000)
+
+      wrapper.vm.emitInput('200 200')
+      expect(wrapper.emitted('input')[4][0]).toEqual(200200)
+
+      wrapper.vm.emitInput('1,233,233')
+      expect(wrapper.emitted('input')[5][0]).toEqual(1233233)
+
+      wrapper.vm.emitInput('1.233.233,12')
+      expect(wrapper.emitted('input')[6][0]).toEqual(1233233.12)
+
+      wrapper.vm.emitInput('123,45')
+      expect(wrapper.emitted('input')[7][0]).toEqual(123.45)
     })
   })
 
