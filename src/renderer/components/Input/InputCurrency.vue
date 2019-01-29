@@ -288,7 +288,7 @@ export default {
       if (numeric.includes('e-')) {
         return Number(numeric)
           .toFixed(numeric.toString()
-          .split('-')[1])
+            .split('-')[1])
       } else {
         const dot = numeric.includes('.')
         const colon = numeric.includes(',')
