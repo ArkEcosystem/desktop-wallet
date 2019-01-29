@@ -134,6 +134,9 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.checkAmount('19.9999999999')).toBeTrue()
       expect(wrapper.vm.checkAmount('766619.9999999999')).toBeTrue()
       expect(wrapper.vm.checkAmount('19,9')).toBeTrue()
+      expect(wrapper.vm.checkAmount('19,999')).toBeTrue()
+      expect(wrapper.vm.checkAmount('19,999.00')).toBeTrue()
+      expect(wrapper.vm.checkAmount('19.999,00')).toBeTrue()
     })
 
     it('should return `false` on Strings that does not look like numbers', () => {
@@ -186,6 +189,24 @@ describe('InputCurrency', () => {
 
         wrapper.vm.updateInputValue('1,1')
         expect(wrapper.vm.inputValue).toEqual('1.1')
+
+        wrapper.vm.updateInputValue('100.200.300,40')
+        expect(wrapper.vm.inputValue).toEqual('100200300.40')
+
+        wrapper.vm.updateInputValue('9,999,999.99')
+        expect(wrapper.vm.inputValue).toEqual('9999999.99')
+
+        wrapper.vm.updateInputValue('10 000 000.5')
+        expect(wrapper.vm.inputValue).toEqual('10000000.5')
+
+        wrapper.vm.updateInputValue('80 000,8')
+        expect(wrapper.vm.inputValue).toEqual('80000.8')
+
+        wrapper.vm.updateInputValue('11_111_111.11')
+        expect(wrapper.vm.inputValue).toEqual('11111111.11')
+
+        wrapper.vm.updateInputValue('33_333,33')
+        expect(wrapper.vm.inputValue).toEqual('33333.33')
       })
 
       it('should return `true`', () => {
