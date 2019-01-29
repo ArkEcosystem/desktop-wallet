@@ -72,20 +72,16 @@
       </div>
 
       <!-- Unvote modal -->
-      <Portal
+      <TransactionModal
         v-if="isSelected"
-        to="modal"
-      >
-        <TransactionModal
-          :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
-          :type="3"
-          :delegate="votedDelegate"
-          :is-voter="true"
-          @cancel="onCancel"
-          @close="onCancel"
-          @sent="onSent"
-        />
-      </Portal>
+        :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
+        :type="3"
+        :delegate="votedDelegate"
+        :is-voter="true"
+        @cancel="onCancel"
+        @close="onCancel"
+        @sent="onSent"
+      />
     </div>
   </main>
 </template>
