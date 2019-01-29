@@ -190,6 +190,9 @@ describe('InputCurrency', () => {
       const wrapper = mountComponent()
 
       expect(wrapper.vm.checkAmount('.9')).toBeTrue()
+      expect(wrapper.vm.checkAmount('  .79  ')).toBeTrue()
+      expect(wrapper.vm.checkAmount('  33')).toBeTrue()
+      expect(wrapper.vm.checkAmount(' 323 3 3')).toBeTrue()
       expect(wrapper.vm.checkAmount('766..999')).toBeTrue()
       expect(wrapper.vm.checkAmount('16  4.99')).toBeTrue()
       expect(wrapper.vm.checkAmount('7,,36')).toBeTrue()
