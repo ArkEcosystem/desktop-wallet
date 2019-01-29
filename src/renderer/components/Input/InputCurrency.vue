@@ -251,7 +251,7 @@ export default {
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^\W*[0-9.]+([,. _]+[0-9]+)*\W*$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/)))
     },
     /**
      * Emits the raw input value (`raw`), as String, and the Number value (`input`)
@@ -282,8 +282,8 @@ export default {
      * @return String
      */
     sanitizeNumeric (value) {
-      const stringified = value.toString()
-      let numeric = stringified
+      let numeric = value.toString()
+      let includesThousandSeparator = numeric.includes(this.thousandSeparator)
 
       // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
       if (numeric.includes('e-')) {
@@ -291,12 +291,16 @@ export default {
           .toFixed(numeric.toString()
             .split('-')[1])
       } else {
+        if (numeric.startsWith('.')) {
+          numeric = `0${numeric}`
+        } else if (numeric.startsWith(',')) {
+          numeric = `0.${numeric.slice(1)}`
+          // The separator has been modified
+          includesThousandSeparator = true
+        }
+
         const dot = numeric.includes('.')
         const colon = numeric.includes(',')
-
-        if (dot && numeric.startsWith('.')) {
-          numeric = `0${numeric}`
-        }
 
         if (dot && colon) {
           numeric = numeric.replace(/,/g, '.')
@@ -325,7 +329,7 @@ export default {
           const last = digits.slice(-1)[0]
 
           // Cases like "1 000,001" should be treated like 1000.001 independently of the locale
-          if (last.length === 3 && stringified.includes(this.thousandSeparator) && !hasNonAmbiguosAndDecimalSeparators) {
+          if (last.length === 3 && includesThousandSeparator && !hasNonAmbiguosAndDecimalSeparators) {
             return `${digits.slice(0, -1).join('')}${last}`
           } else {
             return `${digits.slice(0, -1).join('')}.${last}`

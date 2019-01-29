@@ -190,6 +190,7 @@ describe('InputCurrency', () => {
       const wrapper = mountComponent()
 
       expect(wrapper.vm.checkAmount('.9')).toBeTrue()
+      expect(wrapper.vm.checkAmount(',95')).toBeTrue()
       expect(wrapper.vm.checkAmount('  .79  ')).toBeTrue()
       expect(wrapper.vm.checkAmount('  33')).toBeTrue()
       expect(wrapper.vm.checkAmount(' 323 3 3')).toBeTrue()
@@ -216,6 +217,9 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.sanitizeNumeric('10')).toEqual('10')
       expect(wrapper.vm.sanitizeNumeric('1.10')).toEqual('1.10')
       expect(wrapper.vm.sanitizeNumeric('.999')).toEqual('0.999')
+      expect(wrapper.vm.sanitizeNumeric('..87')).toEqual('0.87')
+      expect(wrapper.vm.sanitizeNumeric(',333')).toEqual('0.333')
+      expect(wrapper.vm.sanitizeNumeric(',,4')).toEqual('0.4')
       expect(wrapper.vm.sanitizeNumeric('  8')).toEqual('8')
       expect(wrapper.vm.sanitizeNumeric('73  ')).toEqual('73')
       expect(wrapper.vm.sanitizeNumeric('  59  ')).toEqual('59')
