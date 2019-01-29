@@ -250,7 +250,7 @@ export default {
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+([,. _][0-9]+)*$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9.]+([,. _]+[0-9]+)*$/)))
     },
     /**
      * Emits the raw input value (`raw`), as String, and the Number value (`input`)
