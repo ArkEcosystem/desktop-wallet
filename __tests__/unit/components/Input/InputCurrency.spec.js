@@ -205,6 +205,9 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.sanitizeNumeric('30 300,666')).toEqual('30300.666')
       expect(wrapper.vm.sanitizeNumeric('11_111_111.11')).toEqual('11111111.11')
       expect(wrapper.vm.sanitizeNumeric('33_333,33')).toEqual('33333.33')
+      expect(wrapper.vm.sanitizeNumeric('10  007')).toEqual('10007')
+      expect(wrapper.vm.sanitizeNumeric('49,,390.1')).toEqual('49390.1')
+      expect(wrapper.vm.sanitizeNumeric('1..23')).toEqual('1.23')
     })
   })
 
