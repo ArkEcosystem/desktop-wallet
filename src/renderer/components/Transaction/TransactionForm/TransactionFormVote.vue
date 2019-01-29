@@ -199,14 +199,16 @@ export default {
 
   watch: {
     isPassphraseStep () {
-      if (!this.currentWallet.isLedger) {
+      // Ignore Ledger wallets
+      if (this.currentWallet.isLedger) {
         return
       }
 
-      if (!this.currentWallet.passphrase) {
-        this.$refs.passphrase.focus()
-      } else {
+      // The passphrase is stored: focus on the custom password input
+      if (this.currentWallet.passphrase) {
         this.$refs.password.focus()
+      } else {
+        this.$refs.passphrase.focus()
       }
     }
   },
