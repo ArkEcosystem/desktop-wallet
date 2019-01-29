@@ -1,25 +1,17 @@
 <template>
   <div class="flex">
-    <button
+    <SelectionNetworkButton
       v-for="network in availableNetworks"
       :key="network.id"
+      :network="network"
+      :is-custom="isCustom"
+      :show-title="true"
       :class="[selected.id === network.id && !isOtherSelected ? 'SelectionNetworkButton--selected' : null]"
       class="SelectionNetworkButton"
       @click="select(network)"
-    >
-      <div class="flex flex-col items-center justify-center p-1">
-        <img
-          :src="getImage(network)"
-          :class="isCustom ? 'p-2' : null"
-          class="w-16 h-16"
-        >
-        <span class="w-full block text-theme-page-text font-semibold truncate">
-          {{ network.title }}
-        </span>
-      </div>
-    </button>
+    />
 
-    <button
+    <SelectionNetworkButton
       v-if="othersNetworks.length"
       :class="isOtherSelected ? 'SelectionNetworkButton--selected' : null"
       class="SelectionNetworkButton"
@@ -33,7 +25,7 @@
           {{ $t('COMMON.OTHER') }}
         </span>
       </div>
-    </button>
+    </SelectionNetworkButton>
 
     <NetworkSelectionModal
       v-if="isModalOpen"
@@ -46,6 +38,7 @@
 
 <script>
 import { NetworkSelectionModal } from '@/components/Network'
+import SelectionNetworkButton from './SelectionNetworkButton'
 import { pullAllBy } from 'lodash'
 
 export default {
@@ -55,7 +48,8 @@ export default {
   buttonClasses: '',
 
   components: {
-    NetworkSelectionModal
+    NetworkSelectionModal,
+    SelectionNetworkButton
   },
 
   model: {
@@ -104,14 +98,6 @@ export default {
       this.closeModal()
     },
 
-    getImage (network) {
-      if (this.isCustom) {
-        return this.assets_loadImage('networks/default.svg')
-      } else {
-        return this.assets_loadImage(`networks/${network.id}.svg`)
-      }
-    },
-
     openModal () {
       this.isModalOpen = true
     },
@@ -124,9 +110,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.SelectionNetworkButton {
-  @apply h-30 w-30 text-theme-page-text border-2 border-theme-line-separator mr-2 rounded-xl cursor-pointer overflow-hidden
-}
 .SelectionNetworkButton--selected {
   @apply border-green
 }
