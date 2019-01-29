@@ -438,6 +438,7 @@ export default {
       CREATE_CONTACT: 'Create contact',
       IMPORT_CONTACT: 'Import contact',
       DELETE_CONTACT: 'Delete this contact',
+      INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
     },
@@ -713,7 +714,8 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcast to the network'
+      BROADCASTING: 'Your transaction is being broadcast to the network',
+      BROADCASTING_SLOW: 'It looks like it\'s taking a while to broadcast your transaction. You may close the window and it will continue to send in the background.'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
@@ -836,6 +838,7 @@ export default {
   WALLET_SIDEBAR: {
     FILTER: 'Filter',
     HIDE: 'Hide',
+    EXPAND: 'Expand',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 
