@@ -141,14 +141,23 @@ describe('InputCurrency', () => {
       expect(wrapper.emitted('input')[1][0]).toEqual(0)
     })
 
-    it('should sanitize and emit numeric values as Numbers', () => {
+    it('should sanitize the values', () => {
       const wrapper = mountComponent()
       jest.spyOn(wrapper.vm, 'sanitizeNumeric')
 
       wrapper.vm.emitInput('122,0122')
 
       expect(wrapper.vm.sanitizeNumeric).toHaveBeenCalledWith('122,0122')
+    })
+
+    it('should emit numeric values as Numbers', () => {
+      const wrapper = mountComponent()
+
+      wrapper.vm.emitInput('122,0122')
       expect(wrapper.emitted('input')[0][0]).toEqual(122.0122)
+
+      wrapper.vm.emitInput('1,,23')
+      expect(wrapper.emitted('input')[1][0]).toEqual(1.23)
     })
   })
 
@@ -208,6 +217,8 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.sanitizeNumeric('10  007')).toEqual('10007')
       expect(wrapper.vm.sanitizeNumeric('49,,390.1')).toEqual('49390.1')
       expect(wrapper.vm.sanitizeNumeric('1..23')).toEqual('1.23')
+      expect(wrapper.vm.sanitizeNumeric('6,,19')).toEqual('6.19')
+      expect(wrapper.vm.sanitizeNumeric('9 8.34')).toEqual('98.34')
     })
   })
 
