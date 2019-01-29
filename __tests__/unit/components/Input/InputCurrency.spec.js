@@ -158,6 +158,9 @@ describe('InputCurrency', () => {
 
       wrapper.vm.emitInput('1,,23')
       expect(wrapper.emitted('input')[1][0]).toEqual(1.23)
+
+      wrapper.vm.emitInput('6,,97')
+      expect(wrapper.emitted('input')[2][0]).toEqual(6.97)
     })
   })
 
@@ -183,13 +186,22 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.checkAmount('19.999,00')).toBeTrue()
     })
 
+    it('should return `true` on Strings that could be sanitized as numbers', () => {
+      const wrapper = mountComponent()
+
+      expect(wrapper.vm.checkAmount('.9')).toBeTrue()
+      expect(wrapper.vm.checkAmount('766..999')).toBeTrue()
+      expect(wrapper.vm.checkAmount('16  4.99')).toBeTrue()
+      expect(wrapper.vm.checkAmount('7,,36')).toBeTrue()
+      expect(wrapper.vm.checkAmount('5,,44.3')).toBeTrue()
+    })
+
     it('should return `false` on Strings that does not look like numbers', () => {
       const wrapper = mountComponent()
 
       expect(wrapper.vm.checkAmount('')).toBeFalse()
-      expect(wrapper.vm.checkAmount('.9')).toBeFalse()
+      expect(wrapper.vm.checkAmount('a.9')).toBeFalse()
       expect(wrapper.vm.checkAmount('19a.99')).toBeFalse()
-      expect(wrapper.vm.checkAmount('766..999')).toBeFalse()
       expect(wrapper.vm.checkAmount('as97')).toBeFalse()
     })
   })
@@ -200,6 +212,7 @@ describe('InputCurrency', () => {
 
       expect(wrapper.vm.sanitizeNumeric('10')).toEqual('10')
       expect(wrapper.vm.sanitizeNumeric('1.10')).toEqual('1.10')
+      expect(wrapper.vm.sanitizeNumeric('0.999')).toEqual('0.999')
       expect(wrapper.vm.sanitizeNumeric(1.1)).toEqual('1.1')
       expect(wrapper.vm.sanitizeNumeric(1e-8)).toEqual('0.00000001')
       expect(wrapper.vm.sanitizeNumeric(1e-6)).toEqual('0.000001')
