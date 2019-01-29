@@ -296,7 +296,7 @@ export default {
         } else if (numeric.startsWith(',')) {
           numeric = `0.${numeric.slice(1)}`
           // The separator has been modified
-          includesThousandSeparator = true
+          includesThousandSeparator = false
         }
 
         const dot = numeric.includes('.')
