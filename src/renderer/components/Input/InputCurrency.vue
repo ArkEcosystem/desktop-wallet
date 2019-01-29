@@ -238,7 +238,7 @@ export default {
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+([,.][0-9]+)?$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+([,. _][0-9]+)*$/)))
     },
     /**
      * Emits the raw input value, as String, and the Number value
@@ -270,12 +270,22 @@ export default {
         this.inputValue = ''
         return true
       } else if (value && this.checkAmount(value)) {
-        const numeric = Number(value.toString().replace(',', '.'))
+        const numeric = value.toString()
 
         // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
-        numeric.toString().includes('e-')
-          ? this.inputValue = numeric.toFixed(numeric.toString().split('-')[1])
-          : this.inputValue = value.toString().replace(',', '.')
+        if (numeric.includes('e-')) {
+          this.inputValue = Number(numeric)
+            .toFixed(numeric.toString()
+              .split('-')[1])
+        } else {
+          const digits = numeric
+            .replace(/[, _]/g, '.')
+            .split('.')
+
+          this.inputValue = digits.length > 1
+            ? `${digits.slice(0, -1).join('')}.${digits.slice(-1)}`
+            : digits[0]
+        }
 
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
