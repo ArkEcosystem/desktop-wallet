@@ -245,12 +245,13 @@ export default {
 
   methods: {
     /**
-     * Checks that an amount, either a Number or String, is valid
+     * Checks that an amount, either a Number or String, is valid or it could
+     * be sanitized to a valid Number
      * @param {(Number|String)} amount
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9.]+([,. _]+[0-9]+)*$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^\W*[0-9.]+([,. _]+[0-9]+)*\W*$/)))
     },
     /**
      * Emits the raw input value (`raw`), as String, and the Number value (`input`)
