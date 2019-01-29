@@ -455,7 +455,7 @@ export default {
 
     NETWORK_OVERVIEW: {
       INSTRUCTIONS: {
-        HEADER: 'Network Selection',
+        HEADER: 'Manage networks',
         TEXT: 'Select and edit any of the available networks, or add new ones.'
       },
       CREATE_NEW: 'Add a new network',
@@ -560,7 +560,7 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Wallet recovery',
+          HEADER: 'Import wallet',
           TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
         TITLE: '1. Import wallet',
