@@ -1,27 +1,46 @@
 <template>
-  <div class="ContactAll relative bg-theme-feature rounded-lg m-r-4 p-10">
-    <div class="block h-full">
-      <div class="ContactAll__header">
-        <h3>{{ $t('PAGES.CONTACT_ALL.HEADER') }}</h3>
+  <div class="ContactAll flex flex-col">
+    <div class="ContactAll__header flex flex-row space-between bg-theme-feature rounded-lg px-10 py-5 mb-3">
+      <div>
+        <WalletIdenticonPlaceholder
+          :size="60"
+          class="identicon opacity-50"
+        />
+        <span
+          class="rounded-full flex items-center justify-center absolute ml-8 -mt-8 w-8 h-8 bg-theme-feature text-theme-page-text-light font-black select-none"
+        >
+          i
+        </span>
+      </div>
 
-        <div class="flex items-center">
-          <button
-            v-if="!hasWalletGridLayout"
-            class="ContactAll__CreateButton"
-            @click="createContact"
-          >
-            <span class="ContactAll__CreateButton__icon">
-              <SvgIcon
-                name="plus"
-                view-box="0 0 9 9"
-                class="text-center"
-              />
-            </span>
+      <div class="ml-8 p-2 hidden md:flex">
+        {{ $t('PAGES.CONTACT_ALL.INSTRUCTIONS') }}
+      </div>
 
-            <span class="flex items-center h-10 px-4">
-              {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-            </span>
-          </button>
+      <button
+        class="ContactAll__CreateButton justify-end"
+        @click="createContact"
+      >
+        <span class="ContactAll__CreateButton__icon">
+          <SvgIcon
+            name="plus"
+            view-box="0 0 9 9"
+            class="text-center"
+          />
+        </span>
+
+        <span class="flex items-center h-10 px-4 whitespace-no-wrap">
+          {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
+        </span>
+      </button>
+    </div>
+
+    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10">
+      <div class="block w-full">
+        <div class="flex items-center justify-between h-8">
+          <h3 class=" items-center">
+            {{ $t('PAGES.CONTACT_ALL.HEADER') }}
+          </h3>
 
           <ButtonLayout
             :grid-layout="hasWalletGridLayout"
@@ -43,59 +62,52 @@
         v-if="hasWalletGridLayout && !isLoading"
       >
         <div class="ContactAll__grid mt-10 justify-center">
-          <div class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3">
-            <div class="flex flex-row items-center">
-              <RouterLink :to="{ name: 'contact-new' }">
-                <WalletIdenticonPlaceholder
-                  :size="60"
-                  class="identicon opacity-50"
-                />
-              </RouterLink>
-              <div class="flex flex-col justify-center overflow-hidden pl-4 font-semibold">
-                <RouterLink :to="{ name: 'contact-new' }">
-                  {{ $t('PAGES.CONTACT_ALL.CREATE_CONTACT') }}
-                </RouterLink>
-                <span class="font-bold mt-2 opacity-50 text-lg">
-                  {{ formatter_networkCurrency(0, 2) }}
-                </span>
-              </div>
-            </div>
-          </div>
-
           <div
             v-for="contact in selectableContacts"
             :key="contact.id"
-            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3"
+            @click="showContact(contact.id)"
           >
-            <div class="flex flex-row items-center">
-              <RouterLink
-                :to="{ name: 'wallet-show', params: { address: contact.id } }"
-                class="flex flex-row"
-              >
-                <WalletIdenticon
-                  :value="contact.address"
-                  :size="60"
-                  class="identicon cursor-pointer"
-                />
-              </RouterLink>
-              <div class="flex flex-col justify-center overflow-hidden pl-4">
-                <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
-                  <RouterLink :to="{ name: 'wallet-show', params: { address: contact.id } }">
-                    {{ wallet_nameOnContact(contact.address) || wallet_truncate(contact.address) }}
-                  </RouterLink>
+            <div class="ContactAll__grid__contact__wrapper">
+              <div class="flex flex-col">
+                <div class="flex items-center">
+                  <WalletIdenticon
+                    :value="contact.address"
+                    :size="60"
+                    class="identicon cursor-pointer"
+                  />
+
+                  <div class="flex flex-col justify-center overflow-hidden pl-4">
+                    <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
+                      <span
+                        v-tooltip="{
+                          content: !contact.name && wallet_name(contact.address) ? $t('COMMON.NETWORK_NAME') : '',
+                          placement: 'right'
+                        }"
+                        class="pr-1 cursor-default"
+                        @click.stop
+                      >
+                        {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
+                      </span>
+                    </div>
+                    <span
+                      class="font-bold mt-2 text-lg cursor-default"
+                      @click.stop
+                    >
+                      {{ formatter_networkCurrency(contact.balance, 2) }}
+                    </span>
+                  </div>
                 </div>
-                <span class="font-bold mt-2 text-lg">
-                  {{ formatter_networkCurrency(contact.balance, 2) }}
-                </span>
+
+                <div class="flex flex-row w-full justify-end">
+                  <button
+                    class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
+                    @click.stop="openRemovalConfirmation(contact)"
+                  >
+                    {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row w-full justify-end">
-              <button
-                class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
-                @click="openRemovalConfirmation(contact)"
-              >
-                {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
-              </button>
             </div>
           </div>
         </div>
@@ -116,6 +128,7 @@
           :no-data-message="$t('TABLE.NO_CONTACTS')"
           @remove-row="onRemoveContact"
           @rename-row="onRenameContact"
+          @on-sort-change="onSortChange"
         />
       </div>
     </div>
@@ -127,7 +140,7 @@
       @removed="removeContact(contactToRemove)"
     />
 
-    <WalletRenameModal
+    <ContactRenameModal
       v-if="contactToRename"
       :wallet="contactToRename"
       @cancel="hideRenameModal"
@@ -140,8 +153,8 @@
 import { clone, some, sortBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
-import { ContactRemovalConfirmation } from '@/components/Contact'
-import { WalletIdenticon, WalletIdenticonPlaceholder, WalletRenameModal } from '@/components/Wallet'
+import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
+import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -152,7 +165,7 @@ export default {
     ButtonLayout,
     Loader,
     ContactRemovalConfirmation,
-    WalletRenameModal,
+    ContactRenameModal,
     WalletIdenticon,
     WalletIdenticonPlaceholder,
     WalletTable,
@@ -163,11 +176,7 @@ export default {
     selectableContacts: [],
     contactToRemove: null,
     contactToRename: null,
-    isLoading: false,
-    sortParams: {
-      field: 'name',
-      type: 'asc'
-    }
+    isLoading: false
   }),
 
   computed: {
@@ -188,6 +197,18 @@ export default {
         this.$store.dispatch('session/setWalletLayout', layout)
         const profile = clone(this.session_profile)
         profile.walletLayout = layout
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
+    sortParams: {
+      get () {
+        return this.$store.getters['session/contactSortParams']
+      },
+      set (sortParams) {
+        this.$store.dispatch('session/setContactSortParams', sortParams)
+        const profile = clone(this.session_profile)
+        profile.contactSortParams = sortParams
         this.$store.dispatch('profile/update', profile)
       }
     },
@@ -249,6 +270,14 @@ export default {
 
     createContact () {
       this.$router.push({ name: 'contact-new' })
+    },
+
+    onSortChange (sortParams) {
+      this.sortParams = sortParams
+    },
+
+    showContact (contactId) {
+      this.$router.push({ name: 'wallet-show', params: { address: contactId } })
     }
   }
 }
@@ -256,26 +285,36 @@ export default {
 
 <style lang="postcss" scoped>
 .ContactAll__header {
-  @apply .flex .items-center .justify-between .h-8;
+  @apply .flex .items-center .justify-between;
 }
 .ContactAll__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, calc(var(--contact-identicon-lg) * 3));
   grid-gap: 1rem;
 }
-.ContactAll__grid__contact {
-  @apply .p-6
+.ContactAll__grid__contact__wrapper {
+  @apply .m-6;
 }
 .ContactAll__grid__contact:hover .identicon {
-  transition: 0.5s;
+  opacity: 1;
+}
+.ContactAll__grid__contact:hover .identicon-placeholder {
   opacity: 0.5;
 }
 .ContactAll__grid__contact .identicon {
   transition: 0.5s;
+  opacity: 0.5;
+}
+.ContactAll__grid__contact .identicon-placeholder {
+  transition: 0.5s;
+  opacity: 0.25;
+}
+.ContactAll__grid__contact__name {
+  color: #037cff;
 }
 .ContactAll__CreateButton {
   transition: all .1s ease-in;
-  @apply .flex .items-center .mx-auto .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-option-button-text .mr-6;
+  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-12;
 }
 .ContactAll__CreateButton:hover {
   @apply .bg-blue .text-white;
@@ -289,8 +328,8 @@ export default {
   @apply .text-white;
 }
 @screen lg {
-  .ContactAll__grid__contact {
-    @apply .p-4
+  .ContactAll__grid__contact__wrapper {
+    @apply .m-4
   }
 }
 </style>
