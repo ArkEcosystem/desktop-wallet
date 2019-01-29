@@ -293,6 +293,10 @@ export default {
         const dot = numeric.includes('.')
         const colon = numeric.includes(',')
 
+        if (dot && numeric.startsWith('.')) {
+          numeric = `0${numeric}`
+        }
+
         if (dot && colon) {
           numeric = numeric.replace(/,/g, '.')
         // If only includes 1 kind of ambiguous separator, convert it to '.'
