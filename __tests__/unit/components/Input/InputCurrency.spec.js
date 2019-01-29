@@ -196,6 +196,7 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.sanitizeNumeric(1e-6)).toEqual('0.000001')
       expect(wrapper.vm.sanitizeNumeric('1,1')).toEqual('1.1')
       expect(wrapper.vm.sanitizeNumeric('100.200.300,40')).toEqual('100200300.40')
+      expect(wrapper.vm.sanitizeNumeric('7.777')).toEqual('7.777')
       expect(wrapper.vm.sanitizeNumeric('9,999')).toEqual('9999')
       expect(wrapper.vm.sanitizeNumeric('9,999,999.99')).toEqual('9999999.99')
       expect(wrapper.vm.sanitizeNumeric('10 000 000.5')).toEqual('10000000.5')

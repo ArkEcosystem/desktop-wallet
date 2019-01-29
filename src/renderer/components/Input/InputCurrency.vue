@@ -288,16 +288,16 @@ export default {
       if (numeric.includes('e-')) {
         return Number(numeric)
           .toFixed(numeric.toString()
-            .split('-')[1])
+          .split('-')[1])
       } else {
         const dot = numeric.includes('.')
         const colon = numeric.includes(',')
 
-        // If only includes 1 kind of ambiguous separator
-        if ((dot && !colon) || (!dot && colon)) {
-          numeric = numeric.replace(/[.,]/, '.')
-        } else {
+        if (dot && colon) {
           numeric = numeric.replace(/,/g, '.')
+        // If only includes 1 kind of ambiguous separator, convert it to '.'
+        } if (dot || colon) {
+          numeric = numeric.replace(/[.,]/, '.')
         }
 
         // These characters are always thousand separators
