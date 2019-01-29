@@ -227,10 +227,10 @@ export default {
     },
 
     isOwned () {
-      const wallet = this.$store.getters['wallet/byAddress'](this.currentWallet.address)
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-
-      return wallets.includes(wallet)
+      return [
+        ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
+        ...this.$store.getters['ledger/wallets']
+      ].some(wallet => wallet.address === this.currentWallet.address)
     }
   },
 

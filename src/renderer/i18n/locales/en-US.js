@@ -470,6 +470,7 @@ export default {
         TEXT: 'Select and edit any of the available networks, or add new ones.'
       },
       CREATE_NEW: 'Add a new network',
+      CREATE_NEW_DESCRIPTION: 'Individual settings for your network',
       NEW_NETWORK: 'New network'
     },
 
