@@ -208,6 +208,28 @@ export default class ClientService {
   }
 
   /**
+   * Fetches the static fees for transaction types.
+   * @return {Number[]}
+   */
+  async fetchStaticFees () {
+    let fees = []
+    if (this.version === 2) {
+      fees = Object.values((await this.client.resource('transactions').fees()).data.data)
+    } else {
+      const feeData = (await this.client.resource('blocks').fees()).data.fees
+      fees = [
+        feeData.send,
+        feeData.secondsignature,
+        feeData.delegate,
+        feeData.vote,
+        feeData.multisignature
+      ]
+    }
+
+    return fees
+  }
+
+  /**
    * Fetch the latest transactions
    *
    * NOTE: only v2
