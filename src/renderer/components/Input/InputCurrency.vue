@@ -293,27 +293,22 @@ export default {
         const dot = numeric.includes('.')
         const colon = numeric.includes(',')
 
-        // If only includes 1 kind of separator
+        // If only includes 1 kind of ambiguous separator
         if ((dot && !colon) || (!dot && colon)) {
-          const thousandRegexp = new RegExp(`\\${this.thousandSeparator}`, 'g')
-          const decimalRegexp = new RegExp(`\\${this.decimalSeparator}`, 'g')
-
-          numeric = numeric.replace(thousandRegexp, '.')
-          numeric = numeric.replace(decimalRegexp, '.')
+          numeric = numeric.replace(/[.,]/, '.')
         } else {
           numeric = numeric.replace(/,/g, '.')
         }
 
-        // Cases like "1 000,001" should be treated like 1000.001 independently of the locale
-        let hasThousandSeparators = false
+        // These characters are always thousand separators
+        const nonAmbiguousSeparators = /[ _]/g
+        let hasNonAmbiguosAndDecimalSeparators = false
 
-        const emptySeparators = /[ _]/g
-        if (numeric.match(emptySeparators)) {
-          // These characters are always thousand separators
-          numeric = numeric.replace(emptySeparators, '')
-
+        if (numeric.match(nonAmbiguousSeparators)) {
+          numeric = numeric.replace(nonAmbiguousSeparators, '')
+          // So, if there is other separator, it is for the decimals
           if (dot || colon) {
-            hasThousandSeparators = true
+            hasNonAmbiguosAndDecimalSeparators = true
           }
         }
 
@@ -324,7 +319,8 @@ export default {
         } else {
           const last = digits.slice(-1)[0]
 
-          if (last.length === 3 && stringified.includes(this.thousandSeparator) && !hasThousandSeparators) {
+          // Cases like "1 000,001" should be treated like 1000.001 independently of the locale
+          if (last.length === 3 && stringified.includes(this.thousandSeparator) && !hasNonAmbiguosAndDecimalSeparators) {
             return `${digits.slice(0, -1).join('')}${last}`
           } else {
             return `${digits.slice(0, -1).join('')}.${last}`
