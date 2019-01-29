@@ -241,12 +241,12 @@ export default {
       return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+([,. _][0-9]+)*$/)))
     },
     /**
-     * Emits the raw input value, as String, and the Number value
+     * Emits the raw input value (`raw`), as String, and the Number value (`input`)
      */
     emitInput (value) {
       this.$emit('raw', value)
 
-      const numeric = value ? parseFloat(value.toString().replace(',', '.')) : 0
+      const numeric = value ? parseFloat(this.sanitizeNumeric(value)) : 0
       this.$emit('input', numeric || 0)
     },
     focus () {
@@ -261,6 +261,29 @@ export default {
       this.$v.model.$touch()
       this.$emit('focus')
     },
+    /**
+     * Parses a numeric value (Number o String)
+     * @param {(Number|String)}
+     * @return String
+     */
+    sanitizeNumeric (value) {
+      const numeric = value.toString()
+
+      // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
+      if (numeric.includes('e-')) {
+        return Number(numeric)
+          .toFixed(numeric.toString()
+            .split('-')[1])
+      } else {
+        const digits = numeric
+          .replace(/[, _]/g, '.')
+          .split('.')
+
+        return digits.length > 1
+          ? `${digits.slice(0, -1).join('')}.${digits.slice(-1)}`
+          : digits[0]
+      }
+    },
     /*
      * Establishes the "internal" value (`inputValue`) of the component
      * @param {(String|Number)} value
@@ -270,22 +293,7 @@ export default {
         this.inputValue = ''
         return true
       } else if (value && this.checkAmount(value)) {
-        const numeric = value.toString()
-
-        // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
-        if (numeric.includes('e-')) {
-          this.inputValue = Number(numeric)
-            .toFixed(numeric.toString()
-              .split('-')[1])
-        } else {
-          const digits = numeric
-            .replace(/[, _]/g, '.')
-            .split('.')
-
-          this.inputValue = digits.length > 1
-            ? `${digits.slice(0, -1).join('')}.${digits.slice(-1)}`
-            : digits[0]
-        }
+        this.inputValue = this.sanitizeNumeric(value)
 
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
