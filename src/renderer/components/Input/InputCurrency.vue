@@ -274,12 +274,15 @@ export default {
       this.$emit('focus')
     },
     /**
-     * Parses a numeric value (Number o String)
+     * Parses a numeric value (Number o String) and returns it as a String, but
+     * keeping the same format that a float would use (e.g: 12.12 instead of 12,12).
+     * It is able to recognize that 9,999 is 9999, but 1,1 is 1.1.
      * @param {(Number|String)}
      * @return String
      */
     sanitizeNumeric (value) {
-      const numeric = value.toString()
+      const stringified = value.toString()
+      let numeric = stringified
 
       // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
       if (numeric.includes('e-')) {
@@ -287,18 +290,52 @@ export default {
           .toFixed(numeric.toString()
             .split('-')[1])
       } else {
-        const digits = numeric
-          .replace(/[, _]/g, '.')
-          .split('.')
+        const dot = numeric.includes('.')
+        const colon = numeric.includes(',')
 
-        return digits.length > 1
-          ? `${digits.slice(0, -1).join('')}.${digits.slice(-1)}`
-          : digits[0]
+        // If only includes 1 kind of separator
+        if ((dot && !colon) || (!dot && colon)) {
+          const thousandRegexp = new RegExp(`\\${this.thousandSeparator}`, 'g')
+          const decimalRegexp = new RegExp(`\\${this.decimalSeparator}`, 'g')
+
+          numeric = numeric.replace(thousandRegexp, '.')
+          numeric = numeric.replace(decimalRegexp, '.')
+        } else {
+          numeric = numeric.replace(/,/g, '.')
+        }
+
+        // Cases like "1 000,001" should be treated like 1000.001 independently of the locale
+        let hasThousandSeparators = false
+
+        const emptySeparators = /[ _]/g
+        if (numeric.match(emptySeparators)) {
+          // These characters are always thousand separators
+          numeric = numeric.replace(emptySeparators, '')
+
+          if (dot || colon) {
+            hasThousandSeparators = true
+          }
+        }
+
+        const digits = numeric.split('.')
+
+        if (digits.length === 1) {
+          return digits[0]
+        } else {
+          const last = digits.slice(-1)[0]
+
+          if (last.length === 3 && stringified.includes(this.thousandSeparator) && !hasThousandSeparators) {
+            return `${digits.slice(0, -1).join('')}${last}`
+          } else {
+            return `${digits.slice(0, -1).join('')}.${last}`
+          }
+        }
       }
     },
     /*
      * Establishes the "internal" value (`inputValue`) of the component
      * @param {(String|Number)} value
+     * @return Boolean
      */
     updateInputValue (value) {
       if (value === '') {
