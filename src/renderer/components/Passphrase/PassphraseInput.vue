@@ -145,7 +145,7 @@ export default {
         } else if (!this.$v.model.matchAddress) {
           return this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
         } else if (!this.$v.model.matchPublicKey) {
-          return this.$t('VALIDATION.SECOND_PASSPHRASE.NOT_MATCH', [this.label, 'address'])
+          return this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
         }
       }
 
