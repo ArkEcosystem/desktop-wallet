@@ -12,12 +12,13 @@
   resolved "https://registry.yarnpkg.com/7zip/-/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
   integrity sha1-nK+xca+CMpSQNTtIFvAzR6oVCjA=
 
-"@arkecosystem/client@^0.1.17":
-  version "0.1.17"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.17.tgz#c763651d6c48ecea630fec892645b32242ee88d7"
-  integrity sha512-fNy/MQ51feQdLyTurq/uvYLfn5QYDw8ObcSIVaOC/Nlx7m0xyBzkpfX/UTUpGoXOYZ5PWVIEOv3KP5Jg7NQcHA==
+"@arkecosystem/client@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.20.tgz#950d0e451521299f4f91d08b6e75de57ba8e5dfd"
+  integrity sha512-ka6y2pELzxcpn2dJf0+JXNBeOb7RY3gjxneIhcCGbUDQIsRzsxxDRGzDXs52h4xAS8V+mKOFDaU44bmHnnQLJA==
   dependencies:
     axios "^0.18.0"
+    lodash.clonedeep "^4.5.0"
     lodash.orderby "^4.6.0"
     lodash.shuffle "^4.2.0"
 

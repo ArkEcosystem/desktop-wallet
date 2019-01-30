@@ -4,8 +4,8 @@
       v-bind="$attrs"
       class="WalletAll__table"
       :columns="columns"
-      v-on="$listeners"
       @on-cell-click="onCellClick"
+      @on-sort-change="onSortChange"
     >
       <template
         slot-scope="data"
@@ -32,15 +32,27 @@
 
         <div
           v-else-if="data.column.field === 'name'"
+          class="flex"
         >
-          <span class="flex items-center whitespace-no-wrap">
-            {{ walletName(data.row) | truncate(30) }}
+          <span
+            class="flex items-center whitespace-no-wrap"
+            :class="{ 'text-theme-page-text-light': !data.row.name }"
+          >
+            <span
+              v-tooltip="{
+                content: !data.row.name ? $t('COMMON.NETWORK_NAME') : '',
+                placement: 'right'
+              }"
+              :class="{ 'pr-1': walletName(data.row) }"
+            >
+              {{ walletName(data.row) | truncate(30) }}
+            </span>
             <span
               v-if="data.row.isLedger"
-              class="WalletTable__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none"
-              :class="{ 'ml-3': walletName(data.row) }"
+              class="ledger-badge"
+              :class="{ 'ml-0': !walletName(data.row) }"
             >
-              {{ $t('WALLET_TABLE.LEDGER') }}
+              {{ $t('COMMON.LEDGER') }}
             </span>
           </span>
         </div>
@@ -119,10 +131,6 @@ export default {
   },
 
   props: {
-    isContactsTable: {
-      type: Boolean,
-      default: false
-    },
     showVotedDelegates: {
       type: Boolean,
       default: false,
@@ -166,13 +174,6 @@ export default {
         }
       ]
 
-      if (this.isContactsTable) {
-        const index = columns.findIndex(el => {
-          return el.field === 'balance'
-        })
-        columns.splice(index, 1)
-      }
-
       if (!this.showVotedDelegates) {
         const index = columns.findIndex(el => {
           return el.field === this.delegateName
@@ -194,8 +195,16 @@ export default {
     },
 
     sortByName (x, y, col, rowX, rowY) {
-      const one = this.wallet_name(rowX.address) || ''
-      const two = this.wallet_name(rowY.address) || ''
+      let one = this.wallet_name(rowX.address) || ''
+      let two = this.wallet_name(rowY.address) || ''
+
+      if (!isNaN(one)) {
+        one = one.padStart(10, 0)
+      }
+
+      if (!isNaN(two)) {
+        two = two.padStart(10, 0)
+      }
 
       return (one < two ? -1 : one > two ? 1 : 0)
     },
@@ -212,6 +221,10 @@ export default {
       if (column.field !== 'actions') {
         this.$router.push({ name: 'wallet-show', params: { address: row.address } })
       }
+    },
+
+    onSortChange (sortOptions) {
+      this.$emit('on-sort-change', sortOptions[0])
     }
   }
 }
@@ -222,13 +235,10 @@ export default {
   @apply .bg-theme-table-row-hover .cursor-pointer;
 }
 .WalletTable tbody tr:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
 }
 .WalletTable .identicon {
   transition: 0.5s;
-}
-.WalletTable__ledger-badge {
-  opacity: 0.85
+  opacity: 0.5;
 }
 </style>

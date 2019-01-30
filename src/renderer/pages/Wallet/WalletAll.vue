@@ -1,18 +1,11 @@
 <template>
   <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
-    <div class="WalletAll__balance bg-theme-feature rounded-lg flex p-10 mb-3">
+    <div class="WalletAll__heading bg-theme-feature rounded-lg flex p-10 mb-3">
       <div class="flex-1 flex flex-row justify-between">
         <div class="flex flex-row items-center">
-          <div
-            v-if="session_profile.avatar"
-            :style="`backgroundImage: url('${assets_loadImage(session_profile.avatar)}')`"
-            class="profile-avatar-xl background-image"
-          />
-          <ButtonLetter
-            v-else
-            :value="session_profile.name"
-            size="2xl"
-            class="mx-5"
+          <ProfileAvatar
+            :profile="session_profile"
+            letter-size="2xl"
           />
           <div class="flex-col">
             <div>
@@ -108,38 +101,56 @@
           <div
             v-for="wallet in selectableWallets"
             :key="wallet.id"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3 "
+            @click="showWallet(wallet.id)"
           >
-            <div class="flex flex-row items-center">
-              <RouterLink
-                :to="{ name: 'wallet-show', params: { address: wallet.id } }"
-                class="flex flex-row"
-              >
-                <WalletIdenticon
-                  :value="wallet.address"
-                  :size="60"
-                  class="identicon cursor-pointer"
-                />
-              </RouterLink>
-              <div class="flex flex-col justify-center overflow-hidden pl-4">
-                <div class="WalletAll__grid__wallet__name font-semibold text-base truncate block">
-                  <RouterLink :to="{ name: 'wallet-show', params: { address: wallet.id } }">
-                    {{ wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
-                  </RouterLink>
+            <div class="WalletAll__grid__wallet__wrapper">
+              <div class="flex flex-col">
+                <div class="flex items-center">
+                  <WalletIdenticon
+                    :value="wallet.address"
+                    :size="60"
+                    class="identicon cursor-pointer"
+                  />
+
+                  <div class="flex flex-col justify-center overflow-hidden pl-4">
+                    <div class="flex items-center">
+                      <span
+                        v-tooltip="{
+                          content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
+                          placement: 'right'
+                        }"
+                        class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1 cursor-default"
+                        @click.stop
+                      >
+                        {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                      </span>
+                      <span
+                        v-if="wallet.isLedger"
+                        class="ledger-badge"
+                      >
+                        {{ $t('COMMON.LEDGER') }}
+                      </span>
+                    </div>
+                    <span
+                      class="font-bold mt-2 text-lg cursor-default"
+                      @click.stop
+                    >
+                      {{ formatter_networkCurrency(wallet.balance, 2) }}
+                    </span>
+                  </div>
                 </div>
-                <span class="font-bold mt-2 text-lg">
-                  {{ formatter_networkCurrency(wallet.balance, 2) }}
-                </span>
+
+                <div class="flex flex-row w-full justify-end">
+                  <button
+                    v-if="!wallet.isLedger"
+                    class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
+                    @click.stop="openRemovalConfirmation(wallet)"
+                  >
+                    {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row w-full justify-end">
-              <button
-                v-if="!wallet.isLedger"
-                class="WalletAll__grid__wallet__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
-                @click="openRemovalConfirmation(wallet)"
-              >
-                {{ $t('PAGES.WALLET_ALL.DELETE_WALLET') }}
-              </button>
             </div>
           </div>
         </div>
@@ -158,6 +169,7 @@
             :no-data-message="$t('TABLE.NO_WALLETS')"
             @remove-row="onRemoveWallet"
             @rename-row="onRenameWallet"
+            @on-sort-change="onSortChange"
           />
         </div>
       </div>
@@ -180,39 +192,36 @@
 </template>
 
 <script>
-import { clone, some, sortBy } from 'lodash'
-import { ButtonLayout, ButtonLetter, ButtonSwitch } from '@/components/Button'
+import { clone, some, sortBy, uniqBy } from 'lodash'
+import { ButtonLayout, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
+import { ProfileAvatar } from '@/components/Profile'
+import SvgIcon from '@/components/SvgIcon'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
-import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'WalletAll',
 
   components: {
     ButtonLayout,
-    ButtonLetter,
     ButtonSwitch,
     Loader,
+    ProfileAvatar,
+    SvgIcon,
+    WalletButtonCreate,
+    WalletButtonImport,
     WalletIdenticon,
     WalletRemovalConfirmation,
     WalletRenameModal,
-    WalletButtonCreate,
-    WalletButtonImport,
-    WalletTable,
-    SvgIcon
+    WalletTable
   },
 
   data: () => ({
     selectableWallets: [],
     walletToRemove: null,
     walletToRename: null,
-    isLoading: false,
-    sortParams: {
-      field: 'balance',
-      type: 'desc'
-    }
+    isLoading: false
   }),
 
   computed: {
@@ -283,6 +292,18 @@ export default {
       }
     },
 
+    sortParams: {
+      get () {
+        return this.$store.getters['session/walletSortParams']
+      },
+      set (params) {
+        this.$store.dispatch('session/setWalletSortParams', params)
+        const profile = clone(this.session_profile)
+        profile.walletSortParams = params
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
     showVotedDelegates () {
       return some(this.selectableWallets, wallet => wallet.hasOwnProperty('votedDelegate'))
     }
@@ -319,7 +340,10 @@ export default {
 
     async refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = [...ledgerWallets, ...this.wallets]
+      this.selectableWallets = uniqBy([
+        ...ledgerWallets,
+        ...this.wallets
+      ], 'address')
     },
 
     ledgerDisconnected () {
@@ -355,12 +379,32 @@ export default {
 
     onRenameWallet (wallet) {
       this.openRenameModal(wallet)
+    },
+
+    onSortChange (sortParams) {
+      this.sortParams = sortParams
+    },
+
+    showWallet (walletId) {
+      this.$router.push({ name: 'wallet-show', params: { address: walletId } })
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
+.WalletAll__heading .ProfileAvatar {
+  width: var(--profile-avatar-xl);
+  @apply .flex .flex-row .justify-around
+}
+.WalletAll__heading .ProfileAvatar__image {
+  height: calc(var(--profile-avatar-xl) * 0.66);
+  width: calc(var(--profile-avatar-xl) * 0.66);
+}
+.WalletAll__heading .ProfileAvatar__letter {
+  @apply .mx-5
+}
+
 .WalletAll__ledger__cache {
   @apply .border-r .border-theme-feature-item-alternative
 }
@@ -372,19 +416,22 @@ export default {
   grid-template-columns: repeat(auto-fill, calc(var(--wallet-identicon-lg) * 3));
   grid-gap: 1rem;
 }
-.WalletAll__grid__wallet {
-  @apply .p-6
+.WalletAll__grid__wallet__wrapper {
+  @apply .m-6
 }
 .WalletAll__grid__wallet:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
+}
+.WalletAll__grid__wallet__name {
+  color: #037cff;
 }
 .WalletAll__grid__wallet .identicon {
+  opacity: 0.5;
   transition: 0.5s;
 }
 @screen lg {
-  .WalletAll__grid__wallet {
-    @apply .p-4
+  .WalletAll__grid__wallet__wrapper {
+    @apply .m-4
   }
 }
 </style>

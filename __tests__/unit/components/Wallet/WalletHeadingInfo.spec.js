@@ -65,7 +65,13 @@ describe('WalletHeadingInfo component', () => {
   it('should display the identicon', () => {
     const identicon = wrapper.find('.WalletHeading__identicon')
 
-    expect(identicon.html()).toContain('class="WalletIdenticon"')
+    expect(identicon.html()).toContain('class="WalletIdenticon')
+  })
+
+  it('should not allow selecting the identicon badge', () => {
+    const identicon = wrapper.find('.WalletHeading__identicon')
+
+    expect(identicon.html()).toContain('select-none')
   })
 
   it('should display the address', () => {

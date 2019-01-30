@@ -1,27 +1,45 @@
 <template>
-  <div class="NetworkOverview relative bg-theme-feature rounded-lg m-r-4">
-    <main class="flex flex-col sm:flex-row h-full">
+  <div class="NetworkOverview relative">
+    <main class="flex h-full">
       <div
-        :style="`background-image: url('${assets_loadImage(backgroundImage)}')`"
-        class="NetworkOverview__instructions sm:flex-grow background-image sm:w-1/2 lg:w-3/5"
+        class="NetworkOverview__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="instructions-text my-8 sm:mt-16 sm:mb-0 mx-8 sm:mx-16 w-auto md:w-1/2">
-          <h3 class="mb-2 text-theme-page-instructions-text">
+        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+          <h1 class="text-inherit">
             {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER') }}
-          </h3>
-
-          <p>
+          </h1>
+          <p class="text-center py-2 leading-normal">
             {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.TEXT') }}
           </p>
+
+          <img
+            :src="assets_loadImage('pages/network-selection/background.svg')"
+            :title="$t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER')"
+            class="w-full xl:w-4/5 mt-10"
+          >
         </div>
       </div>
 
-      <div class="flex-no-grow p-10 sm:w-1/2 lg:w-2/5 overflow-y-scroll">
-        <div
-          class="NetworkOverview__network"
-          @click="openAddNetwork()"
+      <div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto">
+        <button
+          class="NetworkOverview__network flex items-center w-full"
+          @click="openAddNetwork"
         >
-          <a>{{ $t('PAGES.NETWORK_OVERVIEW.CREATE_NEW') }}</a>
+          <SelectionNetworkButton
+            :show-title="false"
+            tag="div"
+            size="small"
+            class="flex-none"
+            network-image="networks/add.svg"
+          />
+          <div class="flex-1 flex flex-col text-left ml-3">
+            <span class="text-blue font-bold text-lg mb-1">
+              {{ $t('PAGES.NETWORK_OVERVIEW.CREATE_NEW') }}
+            </span>
+            <span class="text-theme-page-text-light font-semibold">
+              {{ $t('PAGES.NETWORK_OVERVIEW.CREATE_NEW_DESCRIPTION') }}
+            </span>
+          </div>
           <NetworkModal
             v-if="selected === 'openAddNetwork'"
             :title="$t('PAGES.NETWORK_OVERVIEW.NEW_NETWORK')"
@@ -29,24 +47,38 @@
             @saved="toggle"
             @removed="toggle"
           />
-        </div>
+        </button>
 
         <!-- List of available networks -->
-        <div
+        <button
           v-for="network in networks"
           :key="network.id"
-          class="NetworkOverview__network"
+          class="NetworkOverview__network flex items-center w-full"
           @click="openNetwork(network.id)"
         >
-          <!-- TODO: image? -->
-          <div class="flex flex-col">
-            <span class="text-theme-page-text font-bold text-lg">
+          <SelectionNetworkButton
+            :network="network"
+            :is-custom="!network.isDefault"
+            :show-title="false"
+            tag="div"
+            size="small"
+            class="flex-none"
+          />
+          <div class="flex-1 flex flex-col text-left ml-3">
+            <span class="text-theme-page-text font-bold text-lg mb-1">
               {{ network.title }}
             </span>
-            <span class="text-theme-page-text-light">
+            <span class="text-theme-page-text-light font-semibold">
               {{ network.description }}
             </span>
           </div>
+          <span class="p-2 hidden md:inline-block">
+            <SvgIcon
+              name="settings-filled"
+              view-box="0 0 23 23"
+              class="text-theme-feature-item-text"
+            />
+          </span>
           <NetworkModal
             v-if="selected === network.id"
             :network="network"
@@ -55,7 +87,7 @@
             @saved="toggle"
             @removed="toggle"
           />
-        </div>
+        </button>
       </div>
     </main>
   </div>
@@ -63,12 +95,16 @@
 
 <script>
 import { NetworkModal } from '@/components/Network'
+import { SvgIcon } from '@/components/SvgIcon'
+import SelectionNetworkButton from '@/components/Selection/SelectionNetworkButton'
 
 export default {
   name: 'NetworkOverview',
 
   components: {
-    NetworkModal
+    NetworkModal,
+    SelectionNetworkButton,
+    SvgIcon
   },
 
   props: {
@@ -78,18 +114,6 @@ export default {
     networks: [],
     selected: null
   }),
-
-  computed: {
-    backgroundImage () {
-      if (this.isDarkMode) {
-        return 'pages/network-selection/background-dark.png'
-      }
-      return 'pages/network-selection/background.png'
-    },
-    isDarkMode () {
-      return this.$store.getters['session/hasDarkTheme']
-    }
-  },
 
   mounted () {
     this.getNetworks()
@@ -120,7 +144,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss">
 .NetworkOverview .Collapse.MenuStepItem .Collapse__handler {
   width: 100%;
   text-align: left;
@@ -134,8 +158,7 @@ export default {
 }
 
 .NetworkOverview__network {
-  cursor: pointer;
-  @apply .p-4 .py-6 .border-b .border-dashed .border-theme-line-separator
+  @apply px-10 py-6 border-b border-dashed border-theme-line-separator cursor-pointer
 }
 
 .NetworkOverview__network:hover {
