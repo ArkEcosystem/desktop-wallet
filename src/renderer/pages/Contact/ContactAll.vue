@@ -144,13 +144,13 @@
       v-if="contactToRename"
       :wallet="contactToRename"
       @cancel="hideRenameModal"
-      @renamed="hideRenameModal(contactToRename)"
+      @renamed="onContactRenamed"
     />
   </div>
 </template>
 
 <script>
-import { clone, some, sortBy } from 'lodash'
+import { clone, some } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
@@ -182,7 +182,7 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      return sortBy(contacts, ['name', 'address'])
+      return this.wallet_sortByName(contacts)
     },
 
     hasWalletGridLayout () {
@@ -266,6 +266,11 @@ export default {
 
     onRenameContact (contact) {
       this.openRenameModal(contact)
+    },
+
+    onContactRenamed () {
+      this.hideRenameModal()
+      this.selectableContacts = this.contacts
     },
 
     createContact () {

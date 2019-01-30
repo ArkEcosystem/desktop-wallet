@@ -160,7 +160,6 @@
 import { uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
-import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -200,9 +199,7 @@ export default {
       const wallets = this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
         ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
         : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-
-      const prop = 'name'
-      return wallets.slice().sort(sortByProp(prop))
+      return this.wallet_sortByName(wallets)
     },
 
     activeWallet () {
@@ -273,10 +270,10 @@ export default {
 
     refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = uniqBy([
+      this.selectableWallets = this.wallet_sortByName(uniqBy([
         ...ledgerWallets,
         ...this.wallets
-      ], 'address')
+      ], 'address'))
     },
 
     ledgerDisconnected () {
