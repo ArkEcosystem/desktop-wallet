@@ -87,7 +87,8 @@ export default {
       try {
         const addresses = this.wallets.map(wallet => wallet.address)
         const transactions = await this.$client.fetchTransactionsForWallets(addresses)
-        this.fetchedTransactions = orderBy(uniqBy(flatten(Object.values(transactions)), 'id'), 'timestamp', 'desc').slice(0, this.numberOfTransactions)
+        const ordered = orderBy(uniqBy(flatten(Object.values(transactions)), 'id'), 'timestamp', 'desc')
+        this.fetchedTransactions = ordered.slice(0, this.numberOfTransactions)
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
