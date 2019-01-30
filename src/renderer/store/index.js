@@ -2,9 +2,12 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-import { pullAll, keys } from 'lodash'
+import { isNull, pullAll, keys } from 'lodash'
+
+import packageJson from '@package.json'
 
 import vuexPersistReady from '@/store/plugins/vuex-persist-ready'
+import VuexPersistMigrations from '@/store/plugins/vuex-persist-migrations'
 import AnnouncementsModule from '@/store/modules/announcements'
 import AppModule from '@/store/modules/app'
 import DelegateModule from '@/store/modules/delegate'
@@ -35,6 +38,14 @@ const modules = {
 
 const ignoreModules = []
 
+const vuexMigrations = new VuexPersistMigrations({
+  untilVersion: packageJson.version,
+  fromVersion (store) {
+    const version = store.getters['app/latestAppliedMigration']
+    return isNull(version) ? '0.0.0' : version
+  }
+})
+
 const vuexPersist = new VuexPersistence({
   // It is necessary to enable the strict mode to watch to mutations, such as `RESTORE_MUTATION`
   strictMode: true,
@@ -56,6 +67,7 @@ export default new Vuex.Store({
     }
   },
   plugins: [
+    vuexMigrations.plugin,
     vuexPersist.plugin,
     vuexPersistReady
   ]
