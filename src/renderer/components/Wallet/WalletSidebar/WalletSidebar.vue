@@ -233,11 +233,13 @@ export default {
     }
     this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
+    this.$eventBus.on('wallet:wallet-updated', this.refreshWallets)
   },
 
   beforeDestroy () {
     this.$eventBus.off('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.off('ledger:disconnected', this.ledgerDisconnected)
+    this.$eventBus.off('wallet:wallet-updated', this.refreshWallets)
   },
 
   methods: {
@@ -274,6 +276,14 @@ export default {
         ...ledgerWallets,
         ...this.wallets
       ], 'address'))
+    },
+
+    refreshWallets () {
+      if (this.$store.getters['ledger/isConnected']) {
+        this.refreshLedgerWallets()
+      } else {
+        this.selectableWallets = this.wallets
+      }
     },
 
     ledgerDisconnected () {
