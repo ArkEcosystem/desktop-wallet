@@ -272,7 +272,7 @@ export default {
      * @param  {Object} peer
      * @return {void}
      */
-    async setCurrentPeer ({ commit, rootGetters }, peer) {
+    async setCurrentPeer ({ commit, dispatch, rootGetters }, peer) {
       const profile = rootGetters['session/profile']
       if (!profile || !profile.networkId) {
         return
@@ -281,6 +281,7 @@ export default {
       if (peer) {
         await getApiPort(peer)
         this._vm.$client.host = getBaseUrl(peer)
+        await dispatch('transaction/updateStaticFees', null, { root: true })
       }
       commit('SET_CURRENT_PEER', {
         peer,
@@ -377,6 +378,8 @@ export default {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
         if (currentPeer && currentPeer.isCustom) {
+          await dispatch('transaction/updateStaticFees', null, { root: true })
+
           return null
         }
       }

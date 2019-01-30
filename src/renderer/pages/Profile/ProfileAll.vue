@@ -156,13 +156,6 @@ export default {
 
     onRemoval () {
       this.hideRemovalConfirmation()
-
-      if (this.profiles.length) {
-        this.$store.dispatch('session/setProfileId', this.profiles[0].id)
-      } else {
-        this.$store.dispatch('session/reset')
-        this.$router.push({ name: 'profile-new' })
-      }
     },
 
     openRemovalConfirmation (profile) {

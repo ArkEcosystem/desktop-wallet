@@ -371,6 +371,68 @@ describe('Services > Client', () => {
     })
   })
 
+  describe('fetchStaticFees', () => {
+    describe('when version is 1', () => {
+      const data = fixtures.staticFeeResponses.v1.fees
+
+      beforeEach(() => {
+        client.version = 1
+
+        const resource = resource => {
+          if (resource === 'blocks') {
+            return {
+              fees: () => ({ data: fixtures.staticFeeResponses.v1 })
+            }
+          }
+        }
+
+        client.client.resource = resource
+      })
+
+      it('should return and match fees to types', async () => {
+        const response = await client.fetchStaticFees()
+
+        expect(response[0]).toEqual(data.send)
+        expect(response[1]).toEqual(data.secondsignature)
+        expect(response[2]).toEqual(data.delegate)
+        expect(response[3]).toEqual(data.vote)
+        expect(response[4]).toEqual(data.multisignature)
+      })
+    })
+
+    describe('when version is 2', () => {
+      const data = fixtures.staticFeeResponses.v2.data
+
+      beforeEach(() => {
+        client.version = 2
+
+        const resource = resource => {
+          if (resource === 'transactions') {
+            return {
+              fees: () => ({ data: fixtures.staticFeeResponses.v2 })
+            }
+          }
+        }
+
+        client.client.resource = resource
+      })
+
+      it('should return and match fees to types', async () => {
+        const response = await client.fetchStaticFees()
+
+        expect(response[0]).toEqual(data.transfer)
+        expect(response[1]).toEqual(data.secondSignature)
+        expect(response[2]).toEqual(data.delegateRegistration)
+        expect(response[3]).toEqual(data.vote)
+        expect(response[4]).toEqual(data.multiSignature)
+        expect(response[5]).toEqual(data.ipfs)
+        expect(response[6]).toEqual(data.timelockTransfer)
+        expect(response[7]).toEqual(data.multiPayment)
+        expect(response[8]).toEqual(data.delegateResignation)
+      })
+    })
+  })
+
   describe('fetchDelegateForged', () => {
     const delegateV1 = {
       publicKey: 'dummyKey'

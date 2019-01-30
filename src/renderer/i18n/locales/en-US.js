@@ -455,10 +455,11 @@ export default {
 
     NETWORK_OVERVIEW: {
       INSTRUCTIONS: {
-        HEADER: 'Network Selection',
+        HEADER: 'Manage networks',
         TEXT: 'Select and edit any of the available networks, or add new ones.'
       },
       CREATE_NEW: 'Add a new network',
+      CREATE_NEW_DESCRIPTION: 'Individual settings for your network',
       NEW_NETWORK: 'New network'
     },
 
@@ -559,7 +560,7 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Wallet recovery',
+          HEADER: 'Import wallet',
           TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
         TITLE: '1. Import wallet',
@@ -703,7 +704,8 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcast to the network'
+      BROADCASTING: 'Your transaction is being broadcast to the network',
+      BROADCASTING_SLOW: 'It looks like it\'s taking a while to broadcast your transaction. You may close the window and it will continue to send in the background.'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
