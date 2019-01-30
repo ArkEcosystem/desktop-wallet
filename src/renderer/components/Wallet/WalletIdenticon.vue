@@ -2,7 +2,7 @@
   <div class="relative">
     <div
       :style="{ height: `${size}px`, width: `${size}px` }"
-      class="WalletIdenticon"
+      class="WalletIdenticon select-none"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -171,10 +171,10 @@ export default {
 
       return {
         id: i,
-        width: width,
-        height: height,
-        transform: transform,
-        fill: fill
+        width,
+        height,
+        transform,
+        fill
       }
     },
 
