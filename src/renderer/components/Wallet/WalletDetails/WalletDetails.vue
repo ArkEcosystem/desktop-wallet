@@ -110,6 +110,7 @@
         :has-voted="!!votedDelegate"
         @cancel="onCancel"
         @close="onCancel"
+        @sending="onSending"
         @sent="onSent"
       />
 
@@ -277,9 +278,9 @@ export default {
     },
 
     getVoteTitle () {
-      if (this.isUnvoting) {
+      if (this.isUnvoting && this.votedDelegate) {
         return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.votedDelegate.username })
-      } else if (this.isVoting) {
+      } else if (this.isVoting && this.selectedDelegate) {
         return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selectedDelegate.username })
       } else {
         return `${this.$t('COMMON.DELEGATE')} ${this.selectedDelegate.username}`
@@ -359,10 +360,12 @@ export default {
       }
     },
 
+    onSending () {
+      this.isProcessing = true
+    },
+
     async onSent (success) {
       if (success) {
-        this.isProcessing = true
-
         if (this.isUnvoting) {
           this.walletVote.publicKey = null
           this.votedDelegate = null

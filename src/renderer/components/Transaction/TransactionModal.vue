@@ -133,6 +133,8 @@ export default {
         nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
       }
 
+      this.emitSending()
+
       let responseArray
       let success = false
       try {
@@ -203,6 +205,10 @@ export default {
       }
 
       this.emitClose()
+    },
+
+    emitSending () {
+      this.$emit('sending')
     },
 
     emitSent (success) {
