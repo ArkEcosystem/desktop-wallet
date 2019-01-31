@@ -321,6 +321,14 @@ export default {
     WALLET: 'Sender Wallet'
   },
 
+  MODAL_ADDITIONAL_LEDGERS: {
+    CANCEL: 'Cancel',
+    INFO: 'Choose the max amount of Ledger wallets you would like to show. You are currently showing {quantity} wallets.',
+    LOAD: 'Load Wallets',
+    QUANTITY: 'Quantity',
+    TITLE: 'Load Additional Ledger Wallets'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
@@ -541,6 +549,11 @@ export default {
     },
 
     WALLET_ALL: {
+      LEDGER: {
+        CACHE: 'Cache ledger wallets?',
+        CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+        ADDITIONAL: 'Add Ledger Wallets'
+      },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
@@ -548,8 +561,6 @@ export default {
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
-      CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
       ADDRESS: 'Address',
       NAME: 'Name',
       VOTING_FOR: 'Voting for',
