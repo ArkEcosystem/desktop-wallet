@@ -155,7 +155,7 @@ describe('ledger store module', () => {
     let spyCryptoGetAddress
     let ledgerWallets
     let expectedWallets
-    beforeEach(() => {
+    beforeEach(async () => {
       if (spyGetWallet) {
         spyGetWallet.mockRestore()
       }
@@ -197,6 +197,8 @@ describe('ledger store module', () => {
         }
         expectedWallets[wallet.address] = newWallet
       }
+
+      await store.dispatch('ledger/connect')
     })
 
     it('should not start if not connected', async () => {
