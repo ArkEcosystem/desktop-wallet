@@ -64,7 +64,7 @@ export default {
     SET_LOADING (state, processId) {
       Vue.set(state.loadingProcesses, processId, false)
     },
-    STOP_ALL_LOADING_PROCESSES (state, processId) {
+    STOP_ALL_LOADING_PROCESSES (state) {
       for (let processId of Object.keys(state.loadingProcesses)) {
         Vue.set(state.loadingProcesses, processId, true)
       }
