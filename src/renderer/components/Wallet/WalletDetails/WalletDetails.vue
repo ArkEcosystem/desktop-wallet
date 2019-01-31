@@ -364,7 +364,7 @@ export default {
       this.isProcessing = true
     },
 
-    async onSent (success) {
+    onSent (success) {
       if (success) {
         if (this.isUnvoting) {
           this.walletVote.publicKey = null

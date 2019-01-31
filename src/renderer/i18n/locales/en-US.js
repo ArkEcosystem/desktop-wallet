@@ -295,7 +295,7 @@ export default {
 
   INPUT_DELEGATE: {
     ERROR: {
-      REQUIRED: 'The delegate name or address is required',
+      REQUIRED: 'The delegate name, address or public key is required',
       USERNAME_NOT_FOUND: 'The delegate \'{0}\' could not be found',
       ADDRESS_NOT_FOUND: 'The delegate with the address \'{0}\' could not be found',
       PUBLIC_KEY_NOT_FOUND: 'The delegate with the public key \'{0}\' could not be found'

@@ -1,21 +1,22 @@
 <template>
   <ModalWindow
-    title="Select delegate"
+    :title="$t('WALLET_DELEGATES.SELECT_DELEGATE')"
     container-classes="SelectDelegateModal"
     @close="emitCancel"
   >
     <div class="flex flex-col justify-center">
       <InputDelegate
         ref="delegate"
-        v-model="$v.model.delegate.$model"
+        v-model="$v.form.delegate.$model"
         class="mt-5"
         :helper-text="$t('INPUT_DELEGATE.SEARCH_HINT')"
+        @valid="onValid"
         @keyup.esc.native="emitCancel"
         @keyup.enter.native="emitConfirm"
       />
 
       <button
-        :disabled="$v.model.$invalid"
+        :disabled="$v.form.$invalid"
         class="blue-button mt-5"
         type="button"
         @click="emitConfirm"
@@ -27,7 +28,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import { InputDelegate } from '@/components/Input'
 import { ModalWindow } from '@/components/Modal'
 
@@ -40,18 +40,11 @@ export default {
   },
 
   data: () => ({
-    model: {
+    form: {
       delegate: ''
     },
-    delegate: null
+    isValid: false
   }),
-
-  computed: {
-  },
-
-  mounted () {
-
-  },
 
   methods: {
     emitCancel () {
@@ -59,20 +52,19 @@ export default {
     },
 
     emitConfirm () {
-      this.$emit('confirm', this.$v.model.delegate.$model)
+      this.$emit('confirm', this.$v.form.delegate.$model)
+    },
+
+    onValid (value) {
+      this.isValid = value
     }
   },
 
   validations: {
-    model: {
+    form: {
       delegate: {
-        required,
         isValid () {
-          if (this.$refs.delegate) {
-            return !this.$refs.delegate.$v.$invalid
-          }
-          // TODO: this.$refs is empty
-          return true
+          return this.isValid
         }
       }
     }

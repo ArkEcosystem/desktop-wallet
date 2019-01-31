@@ -134,19 +134,19 @@ export default {
       if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
         if (!this.$v.model.required) {
           return this.$t('INPUT_DELEGATE.ERROR.REQUIRED')
-        } else if (this.inputValue.length <= 20) {
-          if (!this.$v.model.isValidUsername) {
+        } else if (!this.$v.model.isValid) {
+          if (this.inputValue.length <= 20) {
             return this.$t('INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND', [this.inputValue])
-          }
-        } else if (this.inputValue.length <= 34) {
-          if (!this.$v.model.isValidAddress) {
+          } else if (this.inputValue.length <= 34) {
             return this.$t('INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
-          }
-        } else {
-          if (!this.$v.model.isValidPublicKey) {
+          } else {
             return this.$t('INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
           }
+        } else {
+          this.$emit('valid', true)
         }
+      } else {
+        this.$emit('valid', false)
       }
 
       return null
@@ -342,14 +342,10 @@ export default {
   validations: {
     model: {
       required,
-      isValidUsername (username) {
-        return !!this.$store.getters['delegate/byUsername'](username)
-      },
-      isValidAddress (address) {
-        return !!this.$store.getters['delegate/byAddress'](address)
-      },
-      isValidPublicKey (publicKey) {
-        return !!this.$store.getters['delegate/byPublicKey'](publicKey)
+      isValid (value) {
+        return !!this.$store.getters['delegate/byUsername'](value) ||
+          !!this.$store.getters['delegate/byAddress'](value) ||
+          !!this.$store.getters['delegate/byPublicKey'](value)
       }
     }
   }
