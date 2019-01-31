@@ -77,6 +77,7 @@ beforeEach(async () => {
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
   ClientService.hasMultiWalletSearch = false
   ledgerNameByAddress = () => null
+  axiosMock.reset()
 })
 describe('ledger store module', () => {
   it('should init ledger service', (done) => {
