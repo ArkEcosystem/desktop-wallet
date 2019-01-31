@@ -11,10 +11,13 @@
       </div>
 
       <div class="p-10">
-        <div class="text-lg font-semibold mb-4">
+        <h3 class="flex items-center">
           {{ $t('PAGES.DASHBOARD.LAST_TRANSACTIONS') }}
+        </h3>
+
+        <div class="Dashboard__transactions">
+          <DashboardTransactions />
         </div>
-        <DashboardTransactions />
       </div>
     </main>
 
@@ -91,6 +94,9 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
+.Dashboard__transactions {
+  @apply .mt-10;
+}
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }
