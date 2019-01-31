@@ -138,7 +138,7 @@ export default {
 
       commit('SET_CONNECTED', true)
       eventBus.emit('ledger:connected')
-      await dispatch('reloadWallets')
+      await dispatch('reloadWallets', {})
 
       return true
     },
@@ -209,10 +209,15 @@ export default {
 
     /**
      * Reload wallets into store.
-     * @param  {Boolean} [clearFirst=false] Clear ledger wallets from store before reloading
+     * @param {Object} [obj]
+     * @param  {Boolean} [obj.clearFirst=false] Clear ledger wallets from store before reloading
+     * @param  {(Number|null)} [obj.quantity=null] Force load a specific number of wallets
      * @return {Object[]}
      */
-    async reloadWallets ({ commit, dispatch, getters, rootGetters }, clearFirst = false) {
+    async reloadWallets (
+      { commit, dispatch, getters, rootGetters },
+      { clearFirst, quantity } = { clearFirst: false, quantity: null }
+    ) {
       if (!getters['isConnected']) {
         return []
       }
@@ -222,9 +227,13 @@ export default {
       }
 
       const profileId = rootGetters['session/profileId']
+      const currentWallets = getters['wallets']
 
       if (clearFirst) {
         commit('SET_WALLETS', [])
+        eventBus.emit('ledger:wallets-updated', [])
+      } else if (currentWallets.length) {
+        quantity = currentWallets.length
       }
       commit('SET_LOADING', true)
       const firstWallet = await dispatch('getWallet', 0)
@@ -253,6 +262,9 @@ export default {
               wallet = await dispatch('getWallet', index)
             }
             ledgerWallets.push({ ...wallet, ledgerIndex: index })
+            if (quantity && ledgerIndex + ledgerWallets.length >= quantity) {
+              break
+            }
           }
 
           let walletData = []
@@ -278,7 +290,11 @@ export default {
               filteredWallets.push({ ...ledgerWallet, balance: 0, isCold: true })
               hasCold = true
 
-              break
+              if (!quantity) {
+                break
+              } else {
+                continue
+              }
             }
 
             filteredWallets.push({ ...wallet, ...ledgerWallet })
@@ -296,7 +312,7 @@ export default {
             })
           }
 
-          if (hasCold) {
+          if ((hasCold && !quantity) || (quantity && Object.keys(wallets).length >= quantity)) {
             break
           }
         }
