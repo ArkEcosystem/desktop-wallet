@@ -211,6 +211,40 @@ describe('ledger store module', () => {
       expect(await store.dispatch('ledger/reloadWallets')).toEqual({})
     })
 
+    it('should mark all other processes to stop on force reload', async () => {
+      store.commit('ledger/SET_LOADING', 'test1')
+      store.commit('ledger/SET_LOADING', 'test2')
+      store.commit('ledger/SET_LOADING', 'test3')
+      expect(store.getters['ledger/isLoading']).toBeTruthy()
+      expect(store.getters['ledger/isConnected']).toBeTruthy()
+      await store.dispatch('ledger/reloadWallets', {
+        clearFirst: false,
+        forceLoad: true,
+        quantity: null
+      })
+      expect(store.getters['ledger/shouldStopLoading']('test1')).toEqual(true)
+      expect(store.getters['ledger/shouldStopLoading']('test2')).toEqual(true)
+      expect(store.getters['ledger/shouldStopLoading']('test3')).toEqual(true)
+    })
+
+    it('should load 10 wallets', async () => {
+      axiosMock
+        .onGet(new RegExp(`http://127.0.0.1/api/wallets/*`))
+        .reply(404, {
+          statusCode: 404,
+          error: 'Not Found',
+          message: 'Wallet not found'
+        })
+
+      expect(store.getters['ledger/isConnected']).toBeTruthy()
+      expect(await store.dispatch('ledger/reloadWallets', {
+        clearFirst: false,
+        forceLoad: false,
+        quantity: 10
+      })).not.toEqual({})
+      expect(store.getters['ledger/wallets'].length).toEqual(10)
+    })
+
     it('should load all wallets without multi-wallet search', async () => {
       for (const wallet of ledgerWallets) {
         if (wallet.address === 'address 10') {
