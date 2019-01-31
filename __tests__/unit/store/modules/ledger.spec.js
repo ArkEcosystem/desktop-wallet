@@ -87,7 +87,7 @@ describe('ledger store module', () => {
     setTimeout(() => {
       expect(store.state.ledger.connectionTimer).toBeTruthy()
       done()
-    }, 3000)
+    }, 1000)
   })
 
   it('should set slip44 value', () => {
