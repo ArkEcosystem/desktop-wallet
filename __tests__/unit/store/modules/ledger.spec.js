@@ -203,12 +203,12 @@ describe('ledger store module', () => {
 
     it('should not start if not connected', async () => {
       await disconnectLedger()
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual([])
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual({})
     })
 
     it('should not start if already loading', async () => {
-      store.commit('ledger/SET_LOADING', true)
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual([])
+      store.commit('ledger/SET_LOADING', 'test')
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual({})
     })
 
     it('should load all wallets without multi-wallet search', async () => {
