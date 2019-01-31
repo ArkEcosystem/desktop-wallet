@@ -13,7 +13,7 @@
           >
             <div class="absolute pin-t pin-r mt-6 mr-6">
               <ButtonClose
-                v-if="allowClose"
+                :disabled="!allowClose"
                 icon-class="text-grey"
                 class="p-6"
                 @click="emitClose"

@@ -52,16 +52,18 @@ export default class ClientService {
    * Only for V2
    * Get the configuration of a peer
    * @param {String} host - URL of the host (using `core-p2p` port)
+   * @param {Number} [timeout=3000]
    * @return {(Object|null)}
    */
-  static async fetchPeerConfig (host) {
+  static async fetchPeerConfig (host, timeout = 3000) {
     try {
       const { data } = await axios({
         url: `${host}/config`,
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        timeout
       })
       if (data) {
         return data.data
@@ -212,6 +214,28 @@ export default class ClientService {
   }
 
   /**
+   * Fetches the static fees for transaction types.
+   * @return {Number[]}
+   */
+  async fetchStaticFees () {
+    let fees = []
+    if (this.version === 2) {
+      fees = Object.values((await this.client.resource('transactions').fees()).data.data)
+    } else {
+      const feeData = (await this.client.resource('blocks').fees()).data.fees
+      fees = [
+        feeData.send,
+        feeData.secondsignature,
+        feeData.delegate,
+        feeData.vote,
+        feeData.multisignature
+      ]
+    }
+
+    return fees
+  }
+
+  /**
    * Fetch the latest transactions
    *
    * NOTE: only v2
@@ -309,7 +333,7 @@ export default class ClientService {
     // Add some utilities for each transactions
     const result = transactions.map(tx => {
       tx.isSender = tx.sender === address
-      tx.isReceiver = tx.recipient === address
+      tx.isRecipient = tx.recipient === address
       tx.totalAmount = tx.amount + tx.fee
 
       return tx
@@ -349,6 +373,8 @@ export default class ClientService {
       if (!hadFailure) {
         transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
           transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+          transaction.isSender = addresses.includes(transaction.sender)
+          transaction.isRecipient = addresses.includes(transaction.recipient)
 
           return transaction
         })

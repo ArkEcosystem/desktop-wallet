@@ -66,6 +66,14 @@ export default new BaseModel({
     walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'
+    },
+    walletSortParams: {
+      type: 'object',
+      format: data => data.walletSortParams || { field: 'balance', type: 'desc' }
+    },
+    contactSortParams: {
+      type: 'object',
+      format: data => data.contactSortParams || { field: 'name', type: 'asc' }
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

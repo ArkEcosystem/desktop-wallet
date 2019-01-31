@@ -72,20 +72,16 @@
       </div>
 
       <!-- Unvote modal -->
-      <Portal
+      <TransactionModal
         v-if="isSelected"
-        to="modal"
-      >
-        <TransactionModal
-          :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
-          :type="3"
-          :delegate="votedDelegate"
-          :is-voter="true"
-          @cancel="onCancel"
-          @close="onCancel"
-          @sent="onSent"
-        />
-      </Portal>
+        :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
+        :type="3"
+        :delegate="votedDelegate"
+        :is-voter="true"
+        @cancel="onCancel"
+        @close="onCancel"
+        @sent="onSent"
+      />
     </div>
   </main>
 </template>
@@ -182,10 +178,10 @@ export default {
     },
 
     isOwned () {
-      const wallet = this.$store.getters['wallet/byAddress'](this.currentWallet.address)
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-
-      return wallets.includes(wallet)
+      return [
+        ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
+        ...this.$store.getters['ledger/wallets']
+      ].some(wallet => wallet.address === this.currentWallet.address)
     }
   },
 
