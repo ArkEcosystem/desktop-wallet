@@ -424,8 +424,8 @@ export default {
 
   PAGES: {
     CONTACT_ALL: {
-      CREATE_CONTACT: 'Create contact',
-      IMPORT_CONTACT: 'Import contact',
+      CREATE_CONTACT: 'Create Contact',
+      IMPORT_CONTACT: 'Import Contact',
       DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
@@ -448,8 +448,8 @@ export default {
     DASHBOARD: {
       ALL_WALLETS: 'All wallets',
       ADD_WALLET: 'Add a wallet',
-      CREATE_WALLET: 'Create wallet',
-      IMPORT_WALLET: 'Import wallet',
+      CREATE_WALLET: 'Create Wallet',
+      IMPORT_WALLET: 'Import Wallet',
       LAST_TRANSACTIONS: 'Last transactions'
     },
 
@@ -541,10 +541,10 @@ export default {
     },
 
     WALLET_ALL: {
-      CREATE_WALLET: 'Create wallet',
+      CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
-      IMPORT_WALLET: 'Import wallet',
+      IMPORT_WALLET: 'Import Wallet',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
@@ -560,10 +560,10 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Import wallet',
+          HEADER: 'Import Wallet',
           TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
-        TITLE: '1. Import wallet',
+        TITLE: '1. Import Wallet',
         ONLY_ADDRESS: 'Use the address only',
         ONLY_PASSPHRASE: 'Use the passphrase only'
       },
