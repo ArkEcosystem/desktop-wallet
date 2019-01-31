@@ -13,7 +13,6 @@
       :label="label"
       :helper-text="error || getHelperText()"
       :is-dirty="$v.model.$dirty"
-      :is-disabled="isDisabled"
       :is-focused="isFocused"
       :is-invalid="invalid"
       class="InputDelegate text-left"
@@ -27,7 +26,6 @@
           ref="input"
           v-model="model"
           :name="name"
-          :disabled="isDisabled"
           type="text"
           class="InputDelegate__input flex flex-grow bg-transparent text-theme-page-text"
           @blur="onBlur"
@@ -81,11 +79,6 @@ export default {
   },
 
   props: {
-    isDisabled: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
     label: {
       type: String,
       required: false,
