@@ -224,19 +224,19 @@ export default {
      * @param  {Boolean} [obj.clearFirst=false] Clear ledger wallets from store before reloading
      * @param  {Boolean} [obj.forceLoad=false] Force ledger to load wallets, cancelling in-progress processes
      * @param  {(Number|null)} [obj.quantity=null] Force load a specific number of wallets
-     * @return {Object[]}
+     * @return {Object}
      */
     async reloadWallets (
       { commit, dispatch, getters, rootGetters },
       { clearFirst, forceLoad, quantity } = { clearFirst: false, forceLoad: false, quantity: null }
     ) {
       if (!getters['isConnected']) {
-        return []
+        return {}
       }
 
       if (getters['isLoading']) {
         if (!forceLoad) {
-          return []
+          return {}
         }
 
         await commit('STOP_ALL_LOADING_PROCESSES')
@@ -268,13 +268,13 @@ export default {
           if (rootGetters['session/profileId'] !== profileId) {
             commit('CLEAR_LOADING_PROCESS', processId)
 
-            return []
+            return {}
           }
 
           if (getters['shouldStopLoading'](processId)) {
             commit('CLEAR_LOADING_PROCESS', processId)
 
-            return []
+            return {}
           }
 
           const ledgerWallets = []
@@ -346,7 +346,7 @@ export default {
       if (getters['shouldStopLoading'](processId)) {
         commit('CLEAR_LOADING_PROCESS', processId)
 
-        return []
+        return {}
       }
 
       commit('SET_WALLETS', wallets)
