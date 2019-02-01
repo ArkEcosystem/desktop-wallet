@@ -9,10 +9,13 @@
       @click="buttonClick"
     >
       <slot
+        :active-value="activeValue"
         :value="activeValue"
         :item="entries[activeValue]"
         :is-open="isOpen"
         :placeholder="placeholder"
+        :prefix="prefix"
+        :icon-disabled="isOnlySelectedItem"
         name="handler"
       >
         <MenuDropdownHandler

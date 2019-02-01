@@ -73,7 +73,10 @@
                 </button>
               </ListDividedItem>
 
-              <ListDividedItem :label="$t('COMMON.LANGUAGE')">
+              <ListDividedItem
+                :label="$t('COMMON.LANGUAGE')"
+                class="ProfileEdition__language"
+              >
                 <MenuDropdown
                   :class="{
                     'ProfileEdition__field--modified': modified.language && modified.language !== profile.language
@@ -82,7 +85,40 @@
                   :value="language"
                   :position="['-50%', '0%']"
                   @select="selectLanguage"
-                />
+                >
+                  <div
+                    slot="item"
+                    slot-scope="itemScope"
+                    class="flex flex-row space-between"
+                  >
+                    <img
+                      :src="flagImage(itemScope.value)"
+                      :title="itemScope.item"
+                      class="ProfileEdition__language__item__flag mr-2"
+                    >
+                    {{ itemScope.item }}
+                  </div>
+
+                  <div
+                    slot="handler"
+                    slot-scope="handlerScope"
+                  >
+                    <MenuDropdownHandler
+                      :value="handlerScope.activeValue"
+                      :item="handlerScope.item"
+                      :placeholder="handlerScope.placeholder"
+                      :prefix="handlerScope.prefix"
+                      :icon-disabled="handlerScope.isOnlySelectedItem"
+                    >
+                      <img
+                        :src="flagImage(handlerScope.value)"
+                        :title="handlerScope.item"
+                        class="ProfileEdition__language__handler__flag mr-1"
+                      >
+                      {{ handlerScope.item }}
+                    </MenuDropdownHandler>
+                  </div>
+                </MenuDropdown>
               </ListDividedItem>
 
               <ListDividedItem :label="$t('COMMON.BIP39_LANGUAGE')">
@@ -214,7 +250,7 @@ import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
+import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
@@ -233,6 +269,7 @@ export default {
     MenuTab,
     MenuTabItem,
     MenuDropdown,
+    MenuDropdownHandler,
     SelectionAvatar,
     SelectionBackground,
     SelectionTheme,
@@ -374,6 +411,10 @@ export default {
   },
 
   methods: {
+    flagImage (language) {
+      return this.assets_loadImage(`flags/${language}.svg`)
+    },
+
     toggleIsNameEditable () {
       if (!this.nameError || !this.isNameEditable) {
         if (!this.isNameEditable && !this.modified.name) {
@@ -480,6 +521,22 @@ export default {
 .ProfileEdition .MenuTab__content {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.ProfileEdition__language .MenuDropdown__container {
+  min-width: 200px
+}
+.ProfileEdition__language .MenuDropdownItem__container {
+  @apply .mx-2 .px-2
+}
+.ProfileEdition__language .MenuDropdownItem__container {
+  @apply .break-normal
+}
+.ProfileEdition__language__item__flag {
+  height: 18px
+}
+.ProfileEdition__language__handler__flag {
+  height: 12px
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,

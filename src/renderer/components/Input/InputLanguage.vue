@@ -98,7 +98,6 @@ export default {
 
   watch: {
     value (value) {
-      console.log('changed')
       this.selected = value
     }
   },

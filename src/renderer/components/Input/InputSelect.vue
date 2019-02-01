@@ -172,9 +172,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.InputSelect .MenuDropdownItem__container {
-  @apply .mx-0 .px-4
-}
-</style>
