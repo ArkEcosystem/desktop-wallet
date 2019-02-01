@@ -444,7 +444,7 @@ export default {
       NAME_INFO: 'Info.:',
       NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact',
-      SUCCESS: 'Contact \'{0}\' was created successfully'
+      SUCCESS: '\'{0}\' has been added to your contacts'
     },
 
     DASHBOARD: {
