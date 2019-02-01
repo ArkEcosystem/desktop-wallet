@@ -7,9 +7,20 @@
     class="InputSelect"
     @select="onDropdownSelect"
   >
+    <div
+      v-if="hasItemSlot"
+      slot="item"
+      slot-scope="itemScope"
+    >
+      <slot
+        name="input-item"
+        v-bind="itemScope"
+      />
+    </div>
+
     <InputField
       slot="handler"
-      slot-scope="scopeHandler"
+      slot-scope="handlerScope"
       :name="name"
       :label="inputLabel"
       :value="optionText"
@@ -20,13 +31,19 @@
     >
       <MenuDropdownHandler
         slot-scope="{ inputClass }"
-        :value="scopeHandler.value"
+        :value="handlerScope.value"
         :placeholder="label"
         :class="inputClass"
         :on-blur="onBlur"
         class="InputSelect__input"
         @click="onHandlerClick"
-      />
+      >
+        <slot
+          v-if="hasHandlerSlot"
+          name="input-handler"
+          v-bind="handlerScope"
+        />
+      </MenuDropdownHandler>
     </InputField>
   </MenuDropdown>
 </template>
@@ -63,11 +80,6 @@ export default {
       type: String,
       required: true
     },
-    helperText: {
-      type: String,
-      required: false,
-      default: null
-    },
     isDisabled: {
       type: Boolean,
       required: false,
@@ -94,6 +106,14 @@ export default {
     // When the text of the option is empty the label/placeholder is shown instead by the MenuHandler
     inputLabel () {
       return this.optionText ? this.label : ''
+    },
+
+    hasHandlerSlot () {
+      return !!this.$scopedSlots['input-handler']
+    },
+
+    hasItemSlot () {
+      return !!this.$scopedSlots['input-item']
     },
 
     isDirty () {
@@ -132,6 +152,10 @@ export default {
   },
 
   methods: {
+    emitInput () {
+      this.$emit('input', this.optionValue)
+    },
+
     onHandlerClick () {
       this.isFocused = true
     },
@@ -143,6 +167,8 @@ export default {
       this.optionValue = this.isKeyValue
         ? Object.keys(this.items).find(item => this.items[item] === selectedText)
         : selectedText
+
+      this.emitInput()
     },
 
     onBlur (ev) {
