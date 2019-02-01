@@ -1,9 +1,9 @@
 <template>
   <MenuDropdown
     ref="dropdown"
-    :items="options"
+    :items="items"
     :is-disabled="isDisabled"
-    :value="optionText"
+    :value="optionValue"
     class="InputSelect"
     @select="onDropdownSelect"
   >
@@ -32,8 +32,9 @@
       <MenuDropdownHandler
         slot-scope="{ inputClass }"
         :value="handlerScope.value"
-        :placeholder="label"
+        :item="handlerScope.item"
         :class="inputClass"
+        :placeholder="label"
         :on-blur="onBlur"
         class="InputSelect__input"
         @click="onHandlerClick"
@@ -120,19 +121,11 @@ export default {
       return !!this.optionValue
     },
 
-    // The `items` are an Object or an Array
-    isKeyValue () {
-      return !Array.isArray(this.items)
-    },
-
-    // These are the options that are visible on the dropdown
-    options () {
-      return this.isKeyValue ? Object.values(this.items) : this.items
-    },
-
-    // This is the text that is visible on the InputField
+    /**
+     * This is the text that is visible on the InputField
+     */
     optionText () {
-      if (this.isKeyValue) {
+      if (!Array.isArray(this.items)) {
         return this.items[this.optionValue]
       }
 
@@ -146,8 +139,8 @@ export default {
   },
 
   watch: {
-    value (val) {
-      this.optionValue = val
+    value (value) {
+      this.optionValue = value
     }
   },
 
@@ -160,13 +153,9 @@ export default {
       this.isFocused = true
     },
 
-    onDropdownSelect (selectedText) {
+    onDropdownSelect (selectedValue) {
       this.isFocused = false
-
-      // When the items are an Object, get the key associated to `selectedText``
-      this.optionValue = this.isKeyValue
-        ? Object.keys(this.items).find(item => this.items[item] === selectedText)
-        : selectedText
+      this.optionValue = selectedValue
 
       this.emitInput()
     },

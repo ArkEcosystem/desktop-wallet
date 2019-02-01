@@ -11,7 +11,7 @@
         <span v-if="prefix.length">
           {{ prefix }}
         </span>
-        <span>{{ value || placeholder }}</span>
+        <span>{{ item || placeholder }}</span>
       </slot>
     </span>
 
@@ -36,7 +36,19 @@ export default {
   },
 
   props: {
+    /**
+     * The value of the selected option
+     */
     value: {
+      type: String,
+      required: false,
+      default: null
+    },
+
+    /**
+     * The visible text of the selected option
+     */
+    item: {
       type: String,
       required: false,
       default: null

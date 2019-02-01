@@ -58,14 +58,6 @@
                   class="flex-1 mr-5"
                 />
 
-                <!-- <InputSelect -->
-                <!--   v&#45;model="language" -->
-                <!--   :items="languages" -->
-                <!--   :label="$t('COMMON.LANGUAGE')" -->
-                <!--   name="language" -->
-                <!--   class="flex&#45;1 mr&#45;5" -->
-                <!-- /> -->
-
                 <InputSelect
                   v-model="bip39Language"
                   :items="bip39Languages"
