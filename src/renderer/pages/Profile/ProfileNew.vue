@@ -214,7 +214,7 @@ export default {
     },
     bip39Language: {
       get () {
-        return this.$store.getters['session/bip39Language'] || 'english'
+        return this.$store.getters['session/bip39Language'] || BIP39.defaultLanguage
       },
       set (bip39language) {
         this.selectBip39Language(bip39language)

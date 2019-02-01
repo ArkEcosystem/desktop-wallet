@@ -320,7 +320,7 @@ export default {
       return this.modified.language || this.profile.language
     },
     bip39Language () {
-      return this.modified.bip39Language || this.profile.bip39Language || 'english'
+      return this.modified.bip39Language || this.profile.bip39Language || BIP39.defaultLanguage
     },
     name () {
       return this.modified.name || this.profile.name
