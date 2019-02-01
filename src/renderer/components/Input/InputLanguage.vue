@@ -114,12 +114,10 @@ export default {
     },
 
     select (language) {
-      console.log('selected id ', language)
       this.selected = language
     },
 
     emitInput () {
-      console.log('input to emit', this.selected)
       this.$emit('input', this.selected)
     }
   }
