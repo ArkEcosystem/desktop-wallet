@@ -1,65 +1,50 @@
 <template>
-  <MenuDropdown
+  <InputSelect
     ref="dropdown"
     :items="options"
     :is-disabled="isDisabled"
+    :label="inputLabel"
+    :name="name"
+    :value="value"
     class="InputLanguage"
-    @select="onDropdownSelect"
+    @input="select"
   >
     <div
-      slot="item"
-      slot-scope="{ key, item }"
+      slot="input-item"
+      slot-scope="itemScope"
+      class="flex flex-row space-between"
     >
       <img
-        :src="flagImage(key)"
-        class="InputLanguage__flag"
-        title="TODO"
-      />
-      {{ item }}
+        :src="flagImage(itemScope.value)"
+        :title="itemScope.item"
+        class="InputLanguage__item__flag mr-2"
+      >
+      {{ itemScope.item }}
     </div>
 
-    <InputField
-      slot="handler"
-      slot-scope="{ value }"
-      :name="name"
-      :label="inputLabel"
-      :value="optionText"
-      :is-dirty="isDirty"
-      :is-disabled="isDisabled"
-      :is-focused="isFocused"
+    <div
+      slot="input-handler"
+      slot-scope="handlerScope"
     >
-      <MenuDropdownHandler
-        slot-scope="{ inputClass }"
-        :value="value"
-        :placeholder="label"
-        :class="inputClass"
-        :on-blur="onBlur"
-        class="InputSelect__input"
-        @click="onHandlerClick"
+      <img
+        :src="flagImage(selected)"
+        :title="handlerScope.value"
+        class="InputLanguage__handler__flag mr-1"
       >
-        <img
-          :src="flagImage(value)"
-          class="InputLanguage__flag"
-          :title="optionText"
-        />
-        {{ value }}
-      </MenuDropdownHandler>
-    </InputField>
-  </MenuDropdown>
+      {{ handlerScope.item }}
+    </div>
+  </InputSelect>
 </template>
 
 <script>
 import { I18N } from '@config'
-import InputField from './InputField'
-import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
+import InputSelect from './InputSelect'
 
 export default {
   name: 'InputLanguage',
 
   components: {
-    InputField,
-    MenuDropdown,
-    MenuDropdownHandler
+    InputSelect
   },
 
   model: {
@@ -73,20 +58,15 @@ export default {
       required: false,
       default: () => I18N.enabledLocales
     },
-    // TODO label="$t('COMMON.LANGUAGE')"
     label: {
       type: String,
       required: false,
-      default: null
+      default: ''
     },
     name: {
       type: String,
-      required: true
-    },
-    helperText: {
-      type: String,
       required: false,
-      default: null
+      default: 'language'
     },
     isDisabled: {
       type: Boolean,
@@ -101,43 +81,31 @@ export default {
   },
 
   data: vm => ({
+    inputLabel: vm.label,
     isFocused: false,
-    optionValue: vm.value
+    selected: vm.value
   }),
 
   computed: {
-    // When the text of the option is empty the label/placeholder is shown instead by the MenuHandler
-    inputLabel () {
-      return this.optionText ? this.label : ''
-    },
-
-    isDirty () {
-      return !!this.optionValue
-    },
-
     // These are the options that are visible on the dropdown
     options () {
       return (this.languages || I18N.enabledLocales).reduce((all, locale) => {
         all[locale] = this.$t(`LANGUAGES.${locale}`)
         return all
       }, {})
-    },
-
-    // This is the text that is visible on the InputField
-    optionText () {
-      // Ensure that the value could be valid
-      if (Object.keys(this.options).indexOf(this.optionValue) !== -1) {
-        return this.optionValue
-      }
-
-      return 'NOP' + this.optionValue
     }
   },
 
   watch: {
-    value (val) {
-      this.optionValue = val
-      this.emitInput()
+    value (value) {
+      console.log('changed')
+      this.selected = value
+    }
+  },
+
+  mounted () {
+    if (!this.inputLabel) {
+      this.inputLabel = this.$t('COMMON.LANGUAGE')
     }
   },
 
@@ -146,44 +114,30 @@ export default {
       return this.assets_loadImage(`flags/${language}.svg`)
     },
 
-    onHandlerClick () {
-      this.isFocused = true
-    },
-
-    onDropdownSelect (selectedText) {
-      this.isFocused = false
-
-      // When the items are an Object, get the key associated to `selectedText``
-      if (this.isKeyValue) {
-        this.optionValue = Object.keys(this.items).find(item => {
-          return this.items[item] === selectedText
-        })
-      } else {
-        this.optionValue = selectedText
-      }
-
-      this.emitInput()
-    },
-
-    onBlur (ev) {
-      this.$nextTick(() => {
-        if (Object.values(document.activeElement.classList).includes('MenuDropdownItem__button')) {
-          ev.preventDefault()
-        } else {
-          this.$refs.dropdown.close()
-        }
-      })
+    select (language) {
+      console.log('selected id ', language)
+      this.selected = language
     },
 
     emitInput () {
-      this.$emit('input', this.optionValue)
+      console.log('input to emit', this.selected)
+      this.$emit('input', this.selected)
     }
   }
 }
 </script>
 
 <style scoped>
-.InputLanguage__flag {
-  width: 30px
+.InputLanguage__item__flag {
+  height: 18px
+}
+.InputLanguage__handler__flag {
+  height: 12px
+}
+</style>
+
+<style>
+.InputLanguage .MenuDropdownItem__container {
+  @apply .mx-0 .px-2
 }
 </style>
