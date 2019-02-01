@@ -43,7 +43,12 @@
             :value="item.toString()"
             :is-active="key === activeKey"
             @click.self="select(key)"
-          />
+          >
+            <slot
+              name="item"
+              v-bind="{ item, key, activeKey }"
+            />
+          </MenuDropdownItem>
         </slot>
       </ul>
     </div>

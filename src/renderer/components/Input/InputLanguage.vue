@@ -1,15 +1,26 @@
 <template>
   <MenuDropdown
     ref="dropdown"
-    :items="languages"
+    :items="options"
     :is-disabled="isDisabled"
-    :value="optionText"
-    class="InputSelect"
-    @select="emitInput"
+    class="InputLanguage"
+    @select="onDropdownSelect"
   >
+    <div
+      slot="item"
+      slot-scope="{ key, item }"
+    >
+      <img
+        :src="flagImage(key)"
+        class="InputLanguage__flag"
+        title="TODO"
+      />
+      {{ item }}
+    </div>
+
     <InputField
       slot="handler"
-      slot-scope="scopeHandler"
+      slot-scope="{ value }"
       :name="name"
       :label="inputLabel"
       :value="optionText"
@@ -19,13 +30,20 @@
     >
       <MenuDropdownHandler
         slot-scope="{ inputClass }"
-        :value="scopeHandler.value"
+        :value="value"
         :placeholder="label"
         :class="inputClass"
         :on-blur="onBlur"
         class="InputSelect__input"
         @click="onHandlerClick"
-      />
+      >
+        <img
+          :src="flagImage(value)"
+          class="InputLanguage__flag"
+          :title="optionText"
+        />
+        {{ value }}
+      </MenuDropdownHandler>
     </InputField>
   </MenuDropdown>
 </template>
@@ -55,7 +73,7 @@ export default {
       required: false,
       default: () => I18N.enabledLocales
     },
-    // :label="$t('COMMON.LANGUAGE')"
+    // TODO label="$t('COMMON.LANGUAGE')"
     label: {
       type: String,
       required: false,
@@ -97,26 +115,22 @@ export default {
       return !!this.optionValue
     },
 
-    languageNames () {
-      return this.languages.enabledLocales.reduce((all, locale) => {
+    // These are the options that are visible on the dropdown
+    options () {
+      return (this.languages || I18N.enabledLocales).reduce((all, locale) => {
         all[locale] = this.$t(`LANGUAGES.${locale}`)
         return all
       }, {})
     },
 
-    // These are the options that are visible on the dropdown
-    options () {
-      return this.languages
-    },
-
     // This is the text that is visible on the InputField
     optionText () {
       // Ensure that the value could be valid
-      if (this.items.indexOf(this.optionValue) !== -1) {
+      if (Object.keys(this.options).indexOf(this.optionValue) !== -1) {
         return this.optionValue
       }
 
-      return ''
+      return 'NOP' + this.optionValue
     }
   },
 
@@ -128,8 +142,27 @@ export default {
   },
 
   methods: {
+    flagImage (language) {
+      return this.assets_loadImage(`flags/${language}.svg`)
+    },
+
     onHandlerClick () {
       this.isFocused = true
+    },
+
+    onDropdownSelect (selectedText) {
+      this.isFocused = false
+
+      // When the items are an Object, get the key associated to `selectedText``
+      if (this.isKeyValue) {
+        this.optionValue = Object.keys(this.items).find(item => {
+          return this.items[item] === selectedText
+        })
+      } else {
+        this.optionValue = selectedText
+      }
+
+      this.emitInput()
     },
 
     onBlur (ev) {
@@ -143,8 +176,14 @@ export default {
     },
 
     emitInput () {
-      this.$emit('input', this.selected)
+      this.$emit('input', this.optionValue)
     }
   }
 }
 </script>
+
+<style scoped>
+.InputLanguage__flag {
+  width: 30px
+}
+</style>
