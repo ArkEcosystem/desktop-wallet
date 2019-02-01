@@ -126,7 +126,8 @@ export default {
   data: vm => ({
     inputValue: vm.value,
     dropdownValue: null,
-    isFocused: false
+    isFocused: false,
+    notice: null
   }),
 
   computed: {
@@ -142,8 +143,6 @@ export default {
           error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
           error = this.$t('INPUT_ADDRESS.ERROR.NOT_VALID')
-        } else if (!this.$v.model.isNotNeoAddress && !this.$v.model.$pending) {
-          error = this.$t('INPUT_ADDRESS.ERROR.NEO_ADDRESS')
         }
       }
 
@@ -210,14 +209,6 @@ export default {
 
     suggestionsKeys () {
       return new Cycled(Object.keys(this.suggestions))
-    },
-
-    notice () {
-      const knownAddress = this.wallet_name(this.inputValue)
-      if (knownAddress) {
-        return this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', { address: knownAddress })
-      }
-      return null
     }
   },
 
@@ -232,10 +223,23 @@ export default {
       }
     },
 
-    inputValue () {
+    async inputValue () {
       this.dropdownValue = null
       if (this.isFocused && this.hasSuggestions) {
         this.openDropdown()
+      }
+
+      if (this.invalid) {
+        this.notice = null
+      } else {
+        const knownAddress = this.wallet_name(this.inputValue)
+        if (knownAddress) {
+          this.notice = this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', { address: knownAddress })
+        } else if (await WalletService.isNeoAddress(this.inputValue)) {
+          this.notice = this.$t('INPUT_ADDRESS.NEO_ADDRESS')
+        } else {
+          this.notice = null
+        }
       }
     }
   },
@@ -350,10 +354,6 @@ export default {
       required,
       isValid (value) {
         return WalletService.validateAddress(value, this.pubKeyHash)
-      },
-      async isNotNeoAddress (value) {
-        const result = await WalletService.isNeoAddress(value)
-        return !result
       }
     }
   }
