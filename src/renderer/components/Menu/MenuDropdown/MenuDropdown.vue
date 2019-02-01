@@ -42,8 +42,9 @@
           <MenuDropdownItem
             v-for="(item, entryValue) in entries"
             :key="entryValue"
-            :value="item.toString()"
-            :is-active="value === activeValue"
+            :value="entryValue"
+            :item="item.toString()"
+            :is-active="entryValue === activeValue"
             @click.self="select(entryValue)"
           >
             <slot
