@@ -128,7 +128,6 @@ export default {
   watch: {
     value (val) {
       this.optionValue = val
-      this.emitInput()
     }
   },
 
@@ -141,15 +140,9 @@ export default {
       this.isFocused = false
 
       // When the items are an Object, get the key associated to `selectedText``
-      if (this.isKeyValue) {
-        this.optionValue = Object.keys(this.items).find(item => {
-          return this.items[item] === selectedText
-        })
-      } else {
-        this.optionValue = selectedText
-      }
-
-      this.emitInput()
+      this.optionValue = this.isKeyValue
+        ? Object.keys(this.items).find(item => this.items[item] === selectedText)
+        : selectedText
     },
 
     onBlur (ev) {
@@ -160,10 +153,6 @@ export default {
           this.$refs.dropdown.close()
         }
       })
-    },
-
-    emitInput () {
-      this.$emit('input', this.optionValue)
     }
   }
 }
