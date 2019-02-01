@@ -35,7 +35,7 @@
       </button>
     </div>
 
-    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10">
+    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
         <div class="flex items-center justify-between h-8">
           <h3 class=" items-center">
