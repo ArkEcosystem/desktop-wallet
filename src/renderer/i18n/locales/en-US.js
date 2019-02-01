@@ -442,7 +442,8 @@ export default {
       NAME: 'Contact name (optional)',
       NAME_INFO: 'Info.:',
       NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
-      FAILED: 'Failed to create contact'
+      FAILED: 'Failed to create contact',
+      SUCCESS: 'Contact \'{0}\' was created successfully'
     },
 
     DASHBOARD: {
