@@ -1,50 +1,48 @@
 <template>
-  <div class="WalletAll rounded-lg flex flex-col overflow-y-hidden">
-    <div class="WalletAll__heading bg-theme-feature rounded-lg flex p-10 mb-3">
-      <div class="flex-1 flex flex-row justify-between">
-        <div class="flex flex-row items-center">
-          <ProfileAvatar
-            :profile="session_profile"
-            letter-size="2xl"
-          />
-          <div class="flex-col">
-            <div>
-              <h1 class="mb-2">
-                {{ session_profile.name | truncate(20) }}
-              </h1>
-              <h4>{{ $t('PAGES.WALLET_ALL.TOTAL_BALANCE') }}</h4>
-            </div>
-            <div>
-              <h2>
-                {{ formatter_networkCurrency(totalBalance) }}
-                <span
-                  v-if="isMarketEnabled"
-                  class="WalletAll__balance__alternative text-sm text-bold text-theme-page-text-light ml-2"
-                >
-                  {{ alternativeTotalBalance }}
-                </span>
-              </h2>
-            </div>
+  <div class="WalletAll">
+    <div class="WalletAll__heading p-10 mb-3">
+      <div class="flex flex-row items-center">
+        <ProfileAvatar
+          :profile="session_profile"
+          letter-size="2xl"
+        />
+        <div class="flex-col">
+          <div>
+            <h1 class="mb-2">
+              {{ session_profile.name | truncate(20) }}
+            </h1>
+            <h4>{{ $t('PAGES.WALLET_ALL.TOTAL_BALANCE') }}</h4>
+          </div>
+          <div>
+            <h2>
+              {{ formatter_networkCurrency(totalBalance) }}
+              <span
+                v-if="isMarketEnabled"
+                class="WalletAll__balance__alternative text-sm text-bold text-theme-page-text-light ml-2"
+              >
+                {{ alternativeTotalBalance }}
+              </span>
+            </h2>
           </div>
         </div>
+      </div>
 
-        <div class="flex flex-row items-end pb-4 pr-8">
-          <div
-            v-show="isLedgerConnected"
-            v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
-            class="WalletAll__ledger__cache flex flex-col items-center px-6"
-          >
-            <span>{{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}</span>
-            <ButtonSwitch
-              ref="cache-ledger-switch"
-              :is-active="sessionLedgerCache"
-              class="mt-3"
-              @change="setLedgerCache"
-            />
-          </div>
-          <WalletButtonCreate class="pl-6 pr-6" />
-          <WalletButtonImport class="pl-6" />
+      <div class="flex flex-row items-end pb-4 pr-8">
+        <div
+          v-show="isLedgerConnected"
+          v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
+          class="WalletAll__ledger__cache flex flex-col items-center px-6"
+        >
+          <span>{{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}</span>
+          <ButtonSwitch
+            ref="cache-ledger-switch"
+            :is-active="sessionLedgerCache"
+            class="mt-3"
+            @change="setLedgerCache"
+          />
         </div>
+        <WalletButtonCreate class="pl-6 pr-6" />
+        <WalletButtonImport class="pl-6" />
       </div>
     </div>
 
@@ -398,6 +396,12 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.WalletAll {
+  @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
+}
+.WalletAll__heading {
+  @apply .flex .justify-between .bg-theme-feature .rounded-lg;
+}
 .WalletAll__heading .ProfileAvatar {
   width: var(--profile-avatar-xl);
   @apply .flex .flex-row .justify-around
