@@ -195,7 +195,7 @@ export default {
     },
 
     sortByName (x, y, col, rowX, rowY) {
-      const a = rowY.name || this.wallet_name(rowX.address) || ''
+      const a = rowX.name || this.wallet_name(rowX.address) || ''
       const b = rowY.name || this.wallet_name(rowY.address) || ''
 
       return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
