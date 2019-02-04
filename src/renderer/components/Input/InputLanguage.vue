@@ -19,7 +19,9 @@
         :title="itemScope.item"
         class="InputLanguage__item__flag mr-2"
       >
-      {{ itemScope.item }}
+      <span class="font-semibold">
+        {{ itemScope.item }}
+      </span>
     </div>
 
     <div
