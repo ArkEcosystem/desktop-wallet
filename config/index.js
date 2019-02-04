@@ -25,6 +25,7 @@ exports.I18N = {
 }
 
 exports.BIP39 = {
+  defaultLanguage: 'english',
   languages: [
     'chinese_simplified',
     'chinese_traditional',
