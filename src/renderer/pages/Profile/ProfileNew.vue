@@ -52,10 +52,8 @@
               </div>
 
               <div class="flex mb-5">
-                <InputSelect
+                <InputLanguage
                   v-model="language"
-                  :items="languages"
-                  :label="$t('COMMON.LANGUAGE')"
                   name="language"
                   class="flex-1 mr-5"
                 />
@@ -169,24 +167,25 @@
 </template>
 
 <script>
-import { BIP39, I18N, NETWORKS } from '@config'
+import { BIP39, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
-import { InputSelect, InputText } from '@/components/Input'
+import { InputLanguage, InputSelect, InputText } from '@/components/Input'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
 export default {
   name: 'ProfileNew',
 
   components: {
+    InputLanguage,
+    InputSelect,
+    InputText,
+    MenuStep,
+    MenuStepItem,
     SelectionAvatar,
     SelectionBackground,
     SelectionNetwork,
-    SelectionTheme,
-    MenuStep,
-    MenuStepItem,
-    InputSelect,
-    InputText
+    SelectionTheme
   },
 
   schema: Profile.schema,
@@ -215,7 +214,7 @@ export default {
     },
     bip39Language: {
       get () {
-        return this.$store.getters['session/bip39Language'] || 'english'
+        return this.$store.getters['session/bip39Language'] || BIP39.defaultLanguage
       },
       set (bip39language) {
         this.selectBip39Language(bip39language)
@@ -239,12 +238,6 @@ export default {
     },
     currencies () {
       return this.$store.getters['market/currencies']
-    },
-    languages () {
-      return I18N.enabledLocales.reduce((all, locale) => {
-        all[locale] = this.$t(`LANGUAGES.${locale}`)
-        return all
-      }, {})
     },
     bip39Languages () {
       return BIP39.languages.reduce((all, language) => {
