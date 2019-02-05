@@ -11,7 +11,7 @@
     />
     <WalletSidebar
       v-if="wallet"
-      class="sticky pin min-h-full border-l border-theme-line-separator py-10 rounded-r-lg hidden lg:block"
+      class="border-l border-theme-line-separator rounded-r-lg hidden lg:block"
       :class="{
         'w-1/3': isSidebarExpanded,
         'w-1/7': !isSidebarExpanded
