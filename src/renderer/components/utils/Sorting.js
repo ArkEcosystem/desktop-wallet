@@ -10,7 +10,7 @@ export function sortByProps (props, locale = undefined, options = null) {
 
   return (a, b) => {
     for (let i = 0; i < props.length; i++) {
-      const order = a[props[i]].localeCompare(b[props[i]], locale, options)
+      const order = a[props[i]].toString().localeCompare(b[props[i]].toString(), locale, options)
 
       if (order !== 0) {
         return order
