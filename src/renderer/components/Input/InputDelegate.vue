@@ -183,14 +183,14 @@ export default {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((map, delegate, index) => {
+      return results.reduce((delegates, delegate, index) => {
         Object.values(delegate).forEach(prop => {
           if (_.includes(prop.toLowerCase(), this.inputValue.toLowerCase())) {
-            map[delegate.username] = delegate.name
+            delegates[delegate.username] = delegate.name
           }
         })
 
-        return map
+        return delegates
       }, {})
     },
 
