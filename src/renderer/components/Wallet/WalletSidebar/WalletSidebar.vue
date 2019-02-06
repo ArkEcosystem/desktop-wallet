@@ -6,12 +6,12 @@
       'WalletSidebar--collapsed': !isExpanded,
       'WalletSidebar--expanded': isExpanded
     }"
-    class="WalletSidebar justify-start pt-0 overflow-y-auto"
+    class="WalletSidebar justify-start pt-0"
     @input="onSelect"
   >
     <div
       v-if="showMenu"
-      class="WalletSidebar__menu flex flex-row m-4 justify-around"
+      class="WalletSidebar__menu flex flex-row px-4 pt-4 justify-around"
     >
       <div
         v-if="!isExpanded"
@@ -314,12 +314,14 @@ export default {
 <style lang="postcss" scoped>
 .WalletSidebar {
   transition: width 0.1s ease-out;
+  @apply .overflow-y-auto
 }
 .WalletSidebar__container {
   transition: opacity 0.1s;
 }
 .WalletSidebar__menu {
   border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
+  @apply .sticky .z-10 .bg-theme-feature .pin-t
 }
 .WalletSidebar__menu__button {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text .py-2 .my-6;
