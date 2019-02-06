@@ -275,12 +275,12 @@ export default {
   INPUT_ADDRESS: {
     ERROR: {
       NOT_VALID: 'The address is not valid',
-      REQUIRED: 'The address is required',
-      NEO_ADDRESS: 'This looks like a NEO address'
+      REQUIRED: 'The address is required'
     },
+    KNOWN_ADDRESS: 'This wallet is known as "{address}"',
     LABEL: 'Address',
-    QR: 'Scan the QR code',
-    KNOWN_ADDRESS: 'This wallet is known as "{address}"'
+    NEO_ADDRESS: 'There is a NEO address like this',
+    QR: 'Scan the QR code'
   },
 
   INPUT_CURRENCY: {
