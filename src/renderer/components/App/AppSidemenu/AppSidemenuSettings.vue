@@ -119,6 +119,12 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.PLUGINS')"
+        class="text-grey-light"
+        @click="goToPlugins"
+      />
+
+      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -292,9 +298,9 @@ export default {
       this.electron_reload()
     },
 
-    goToNetworkOverview () {
+    goToPlugins () {
       this.$emit('close')
-      this.$router.push({ name: 'networks' })
+      this.$router.push({ name: 'plugins' })
     },
 
     emitClose () {

@@ -213,6 +213,7 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
+    PLUGINS: 'Plugins',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -221,6 +222,7 @@ export default {
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
+      PLUGINS: 'Plugins',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
@@ -463,6 +465,10 @@ export default {
       NEW_NETWORK: 'New network'
     },
 
+    PLUGINS: {
+      HEADER: 'Plugins'
+    },
+
     PROFILE_ALL: {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
@@ -641,6 +647,21 @@ export default {
       NO_VOTE: 'Wallet hasn\'t voted',
       ADD_CONTACT: 'Add to contacts'
     }
+  },
+
+  PLUGIN_TABLE: {
+    ACTIONS: 'Actions',
+    ENABLE: 'Enable',
+    ENABLED: 'Enabled',
+    DESCRIPTION: 'Description',
+    DISABLE: 'Disable',
+    DISABLED: 'Disabled',
+    ID: 'ID',
+    NAME: 'Name',
+    NO_PERMISSIONS: 'No permissions',
+    NO_PLUGINS: 'No plugins available',
+    PERMISSIONS: 'Permissions',
+    STATUS: 'Status'
   },
 
   PROFILE_REMOVAL_CONFIRMATION: {

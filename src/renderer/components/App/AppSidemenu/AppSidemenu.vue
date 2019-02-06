@@ -52,6 +52,25 @@
             icon="whitepaper"
             @click="redirect($event)"
           />
+
+          <!-- Plugins -->
+          <AppSidemenuPlugins
+            v-if="hasPluginMenuItems && isPluginsVisible"
+            :outside-click="true"
+            :is-horizontal="isHorizontal"
+            @close="closeShowPlugins"
+          />
+
+          <MenuNavigationItem
+            v-if="hasPluginMenuItems"
+            id="plugins"
+            :title="$t('APP_SIDEMENU.PLUGINS')"
+            :is-horizontal="isHorizontal"
+            :can-activate="false"
+            class="AppSidemenu__item"
+            icon="point"
+            @click="toggleShowPlugins"
+          />
         </div>
 
         <div class="flexify">
@@ -138,6 +157,7 @@
 import semver from 'semver'
 import { mapGetters } from 'vuex'
 import releaseService from '@/services/release'
+import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
@@ -149,6 +169,7 @@ export default {
   name: 'AppSidemenu',
 
   components: {
+    AppSidemenuPlugins,
     AppSidemenuSettings,
     AppSidemenuNetworkStatus,
     AppSidemenuImportantNotification,
@@ -169,6 +190,7 @@ export default {
   data: vm => ({
     isNetworkStatusVisible: false,
     isImportantNotificationVisible: true,
+    isPluginsVisible: false,
     isSettingsVisible: false,
     activeItem: vm.$route.name
   }),
@@ -183,6 +205,9 @@ export default {
     },
     showUnread () {
       return this.unreadAnnouncements.length > 0
+    },
+    hasPluginMenuItems () {
+      return this.$store.getters['plugin/menuItems'].length
     }
   },
 
@@ -201,12 +226,20 @@ export default {
       this.isImportantNotificationVisible = false
     },
 
+    toggleShowPlugins () {
+      this.isPluginsVisible = !this.isPluginsVisible
+    },
+
     toggleShowSettings () {
       this.isSettingsVisible = !this.isSettingsVisible
     },
 
     toggleShowNetworkStatus () {
       this.isNetworkStatusVisible = !this.isNetworkStatusVisible
+    },
+
+    closeShowPlugins () {
+      this.isPluginsVisible = false
     },
 
     closeShowSettings () {
