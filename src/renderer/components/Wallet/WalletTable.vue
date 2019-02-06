@@ -103,6 +103,7 @@
           >
             <button
               class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
+              :class="disabled"
               :disabled="data.row.isLedger"
               @click="removeRow(data.row)"
             >
@@ -253,5 +254,8 @@ export default {
 }
 .WalletTable button {
   transition: color 0.2s;
+}
+.WalletTable button.disabled {
+  opacity: 0.5;
 }
 </style>
