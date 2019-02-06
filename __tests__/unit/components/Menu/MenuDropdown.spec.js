@@ -43,12 +43,13 @@ describe('MenuDropdown', () => {
     it('should render component with props', () => {
       const wrapper = mount(MenuDropdownHandler, {
         propsData: {
-          value: 'Value',
+          value: 'value',
+          item: 'Item text',
           placeholder: 'Placeholder'
         }
       })
       const handler = wrapper.find('.MenuDropdownHandler')
-      expect(handler.text()).toBe('Value')
+      expect(handler.text()).toBe('Item text')
     })
 
     it('should render component with slots', () => {
