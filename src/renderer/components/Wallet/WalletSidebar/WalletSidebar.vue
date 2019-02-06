@@ -195,11 +195,14 @@ export default {
   }),
 
   computed: {
+    fetchContactsOnly () {
+      return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
+    },
+
     wallets () {
-      const wallets = this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
+      return this.fetchContactsOnly
         ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
         : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      return this.wallet_sortByName(wallets)
     },
 
     activeWallet () {
@@ -226,11 +229,8 @@ export default {
   },
 
   async created () {
-    this.selectableWallets = this.wallets
+    this.refreshWallets()
 
-    if (this.$store.getters['ledger/isConnected']) {
-      this.refreshLedgerWallets()
-    }
     this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
     this.$eventBus.on('wallet:wallet-updated', this.refreshWallets)
@@ -271,7 +271,10 @@ export default {
     },
 
     refreshLedgerWallets () {
-      const ledgerWallets = this.$store.getters['ledger/wallets']
+      const ledgerWallets = !this.fetchContactsOnly
+        ? this.$store.getters['ledger/wallets']
+        : []
+
       this.selectableWallets = this.wallet_sortByName(uniqBy([
         ...ledgerWallets,
         ...this.wallets
@@ -282,21 +285,21 @@ export default {
       if (this.$store.getters['ledger/isConnected']) {
         this.refreshLedgerWallets()
       } else {
-        this.selectableWallets = this.wallets
+        this.selectableWallets = this.wallet_sortByName(this.wallets)
       }
     },
 
     ledgerDisconnected () {
+      this.refreshWallets()
       if (!this.activeWallet || !this.activeWallet.address || this.activeWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
-          if (this.wallets.length) {
-            this.$refs.MenuNavigation.switchToId(this.wallets[0].address)
+          if (this.selectableWallets.length) {
+            this.$refs.MenuNavigation.switchToId(this.selectableWallets[0].address)
           } else {
             this.$router.push({ name: 'wallets' })
           }
         }
       }
-      this.selectableWallets = this.wallets
     }
   }
 }
