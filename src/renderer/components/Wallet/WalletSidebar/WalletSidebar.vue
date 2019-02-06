@@ -195,12 +195,12 @@ export default {
   }),
 
   computed: {
-    fetchContactsOnly () {
+    hasContactsOnly () {
       return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
     },
 
     wallets () {
-      return this.fetchContactsOnly
+      return this.hasContactsOnly
         ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
         : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
@@ -271,7 +271,7 @@ export default {
     },
 
     refreshLedgerWallets () {
-      const ledgerWallets = !this.fetchContactsOnly
+      const ledgerWallets = !this.hasContactsOnly
         ? this.$store.getters['ledger/wallets']
         : []
 
