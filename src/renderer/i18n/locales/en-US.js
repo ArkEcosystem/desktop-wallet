@@ -1,5 +1,6 @@
 export default {
   COMMON: {
+    ADDRESS: 'Address',
     ALL: 'All',
     APP_NAME: 'ARK Desktop Wallet',
     APPEARANCE: 'Appearance',
@@ -267,7 +268,7 @@ export default {
 
   BUTTON_CLIPBOARD: {
     DONE: 'Copied!',
-    COPY_TO_CLIPBOARD: 'Copy to clipboard',
+    COPY_TO_CLIPBOARD: 'Copy {0} to clipboard',
     NOT_SUPPORTED: 'Copying to clipboard is not supported'
   },
 
@@ -442,7 +443,8 @@ export default {
       NAME: 'Contact name (optional)',
       NAME_INFO: 'Info.:',
       NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
-      FAILED: 'Failed to create contact'
+      FAILED: 'Failed to create contact',
+      SUCCESS: '\'{0}\' has been added to your contacts'
     },
 
     DASHBOARD: {
@@ -890,7 +892,9 @@ export default {
   },
 
   WALLET_TABLE: {
+    ACTIONS: 'Actions',
+    DELETE: 'Delete',
     NO_DELETE: 'Ledger wallets cannot be deleted',
-    ACTIONS: 'Actions'
+    RENAME: 'Rename'
   }
 }
