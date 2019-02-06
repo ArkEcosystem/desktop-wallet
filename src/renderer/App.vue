@@ -150,6 +150,7 @@ export default {
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
       await this.$store.dispatch('session/setProfileId', currentProfileId)
+      this.$plugins.init(this)
       await this.$store.dispatch('ledger/reset')
 
       this.isReady = true
@@ -197,6 +198,7 @@ export default {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
         this.$store.dispatch('delegate/load')
+        this.$store.dispatch('plugin/loadPlugins')
         if (this.$store.getters['ledger/isConnected']) {
           this.$store.dispatch('ledger/reloadWallets', true)
         }
