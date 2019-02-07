@@ -184,13 +184,13 @@
       v-if="walletToRename"
       :wallet="walletToRename"
       @cancel="hideRenameModal"
-      @renamed="hideRenameModal(walletToRename)"
+      @renamed="onWalletRenamed"
     />
   </div>
 </template>
 
 <script>
-import { clone, some, sortBy, uniqBy } from 'lodash'
+import { clone, some, uniqBy } from 'lodash'
 import { ButtonLayout, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
@@ -246,7 +246,7 @@ export default {
 
     wallets () {
       const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      return sortBy(wallets, ['name', 'address'])
+      return this.wallet_sortByName(wallets)
     },
 
     isLedgerLoading () {
@@ -338,10 +338,10 @@ export default {
 
     async refreshLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = uniqBy([
+      this.selectableWallets = this.wallet_sortByName(uniqBy([
         ...ledgerWallets,
         ...this.wallets
-      ], 'address')
+      ], 'address'))
     },
 
     ledgerDisconnected () {
@@ -377,6 +377,11 @@ export default {
 
     onRenameWallet (wallet) {
       this.openRenameModal(wallet)
+    },
+
+    onWalletRenamed () {
+      this.hideRenameModal()
+      this.selectableWallets = this.wallets
     },
 
     onSortChange (sortParams) {

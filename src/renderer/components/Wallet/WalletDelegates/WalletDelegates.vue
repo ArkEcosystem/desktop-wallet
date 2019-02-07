@@ -131,7 +131,7 @@ export default {
       return this.$store.getters['app/showVotingExplanation']
     },
     votingUrl () {
-      return 'https://docs.ark.io/cookbook/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
+      return 'https://docs.ark.io/tutorials/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
     }
   },
 

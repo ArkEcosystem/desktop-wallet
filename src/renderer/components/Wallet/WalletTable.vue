@@ -75,8 +75,18 @@
           v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
+          <span class="ml-1">
+            <ButtonClipboard
+              :value="data.row.address"
+              view-box="0 0 16 16"
+              :subject="$t('COMMON.ADDRESS').toLowerCase()"
+              class="hover:text-red text-theme-page-text-light p-1"
+            />
+          </span>
+
           <span>
             <button
+              v-tooltip="$t('WALLET_TABLE.RENAME')"
               class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
               @click="renameRow(data.row)"
             >
@@ -88,10 +98,8 @@
           </span>
 
           <span
-            v-tooltip="{
-              content: data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : '',
-              placement: 'left'
-            }"
+            v-tooltip="data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : $t('WALLET_TABLE.DELETE')"
+            class="mr-1"
           >
             <button
               class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
@@ -117,6 +125,7 @@
 </template>
 
 <script>
+import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
 import { WalletIdenticon } from '@/components/Wallet'
@@ -125,6 +134,7 @@ export default {
   name: 'WalletTable',
 
   components: {
+    ButtonClipboard,
     SvgIcon,
     TableWrapper,
     WalletIdenticon
@@ -195,18 +205,10 @@ export default {
     },
 
     sortByName (x, y, col, rowX, rowY) {
-      let one = this.wallet_name(rowX.address) || ''
-      let two = this.wallet_name(rowY.address) || ''
+      const a = rowX.name || this.wallet_name(rowX.address) || ''
+      const b = rowY.name || this.wallet_name(rowY.address) || ''
 
-      if (!isNaN(one)) {
-        one = one.padStart(10, 0)
-      }
-
-      if (!isNaN(two)) {
-        two = two.padStart(10, 0)
-      }
-
-      return (one < two ? -1 : one > two ? 1 : 0)
+      return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
     delegateName (row) {
@@ -239,6 +241,12 @@ export default {
 }
 .WalletTable .identicon {
   transition: 0.5s;
+  opacity: 0.5;
+}
+.WalletTable button {
+  transition: color 0.2s;
+}
+.WalletTable button:disabled, .WalletTable button[disabled] {
   opacity: 0.5;
 }
 </style>
