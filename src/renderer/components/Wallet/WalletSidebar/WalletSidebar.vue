@@ -45,7 +45,7 @@
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
-      v-if="isExpanded && selectableWallets.length === 0"
+      v-if="isExpanded && !isLoadingLedger && selectableWallets.length === 0"
       id="placeholder"
       :is-disabled="true"
       class="WalletSidebar__wallet opacity-37.5 select-none"
