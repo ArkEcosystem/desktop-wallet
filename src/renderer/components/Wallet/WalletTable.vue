@@ -205,18 +205,10 @@ export default {
     },
 
     sortByName (x, y, col, rowX, rowY) {
-      let one = this.wallet_name(rowX.address) || ''
-      let two = this.wallet_name(rowY.address) || ''
+      const a = rowX.name || this.wallet_name(rowX.address) || ''
+      const b = rowY.name || this.wallet_name(rowY.address) || ''
 
-      if (!isNaN(one)) {
-        one = one.padStart(10, 0)
-      }
-
-      if (!isNaN(two)) {
-        two = two.padStart(10, 0)
-      }
-
-      return (one < two ? -1 : one > two ? 1 : 0)
+      return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
     delegateName (row) {

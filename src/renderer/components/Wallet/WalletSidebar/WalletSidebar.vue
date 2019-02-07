@@ -160,7 +160,6 @@
 import { uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
-import { sortByProp } from '@/components/utils/Sorting'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -196,13 +195,14 @@ export default {
   }),
 
   computed: {
+    hasContactsOnly () {
+      return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
+    },
+
     wallets () {
-      const wallets = this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
+      return this.hasContactsOnly
         ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
         : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-
-      const prop = 'name'
-      return wallets.slice().sort(sortByProp(prop))
     },
 
     activeWallet () {
@@ -229,18 +229,17 @@ export default {
   },
 
   async created () {
-    this.selectableWallets = this.wallets
+    this.refreshWallets()
 
-    if (this.$store.getters['ledger/isConnected']) {
-      this.refreshLedgerWallets()
-    }
     this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
+    this.$eventBus.on('wallet:wallet-updated', this.refreshWallets)
   },
 
   beforeDestroy () {
     this.$eventBus.off('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.off('ledger:disconnected', this.ledgerDisconnected)
+    this.$eventBus.off('wallet:wallet-updated', this.refreshWallets)
   },
 
   methods: {
@@ -272,24 +271,35 @@ export default {
     },
 
     refreshLedgerWallets () {
-      const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = uniqBy([
+      const ledgerWallets = !this.hasContactsOnly
+        ? this.$store.getters['ledger/wallets']
+        : []
+
+      this.selectableWallets = this.wallet_sortByName(uniqBy([
         ...ledgerWallets,
         ...this.wallets
-      ], 'address')
+      ], 'address'))
+    },
+
+    refreshWallets () {
+      if (this.$store.getters['ledger/isConnected']) {
+        this.refreshLedgerWallets()
+      } else {
+        this.selectableWallets = this.wallet_sortByName(this.wallets)
+      }
     },
 
     ledgerDisconnected () {
+      this.refreshWallets()
       if (!this.activeWallet || !this.activeWallet.address || this.activeWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
-          if (this.wallets.length) {
-            this.$refs.MenuNavigation.switchToId(this.wallets[0].address)
+          if (this.selectableWallets.length) {
+            this.$refs.MenuNavigation.switchToId(this.selectableWallets[0].address)
           } else {
             this.$router.push({ name: 'wallets' })
           }
         }
       }
-      this.selectableWallets = this.wallets
     }
   }
 }
