@@ -30,16 +30,30 @@ export default {
       return state.enabled[profileId]
     },
 
-    isAvailable: state => pluginId => state.available[pluginId],
+    isAvailable: state => pluginId => !!state.available[pluginId],
 
-    isEnabled: (_, getters) => pluginId => getters['enabled'][pluginId],
+    isEnabled: (state, getters) => (pluginId, profileId) => {
+      if (!profileId) {
+        return getters['enabled'][pluginId]
+      }
+
+      return state.enabled[profileId] ? state.enabled[profileId][pluginId] : null
+    },
+
+    isLoaded: (state, getters) => (pluginId, profileId) => {
+      if (!profileId) {
+        return getters['loaded'][pluginId]
+      }
+
+      return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
+    },
+
 
     menuItems: (_, getters) => {
       const loadedPlugins = getters['loaded']
       const menuItems = []
 
       for (const plugin of Object.values(loadedPlugins)) {
-        console.log('plugin.menuItems', plugin.menuItems)
         menuItems.push(...plugin.menuItems)
       }
 
@@ -62,7 +76,10 @@ export default {
         Vue.set(state.loaded, data.profileId, {})
       }
 
-      Vue.set(state.loaded[data.profileId], data.config.id, { ...data, menuItems: [] })
+      Vue.set(state.loaded[data.profileId], data.config.id, {
+        ...data,
+        menuItems: []
+      })
     },
 
     DELETE_LOADED_PLUGIN (state, data) {
@@ -87,13 +104,37 @@ export default {
   },
 
   actions: {
-    init ({ commit, dispatch }) {
+    async init ({ commit, dispatch }) {
       commit('RESET_PLUGINS')
     },
 
-    async loadPlugins ({ dispatch, getters }) {
-      for (const pluginId of Object.keys(getters['enabled'])) {
-        await this._vm.$plugins.enablePlugin(pluginId)
+    async loadPluginsForProfiles ({ dispatch, rootGetters }) {
+      for (const profile of rootGetters['profile/all']) {
+        dispatch('loadPluginsForProfile', profile)
+      }
+    },
+
+    async loadPluginsForProfile ({ getters, rootGetters, state }, profile) {
+      if (!state.enabled[profile.id]) {
+        return
+      }
+
+      for (const pluginId of Object.keys(state.enabled[profile.id])) {
+        if (!getters['isAvailable'](pluginId)) {
+          continue
+        }
+
+        if (getters['isLoaded'](pluginId, profile.id)) {
+          continue
+        }
+
+        try {
+          await this._vm.$plugins.enablePlugin(pluginId, profile.id)
+        } catch (error) {
+          this._vm.$logger.error(
+            `Could not enable '${pluginId}' plugin for profile '${profile.name}': ${error.message}`
+          )
+        }
       }
     },
 
@@ -119,14 +160,14 @@ export default {
       commit('SET_AVAILABLE_PLUGIN', plugin)
     },
 
-    setLoaded ({ commit, getters, rootGetters }, plugin) {
-      if (!getters['isEnabled'](plugin.config.id)) {
+    setLoaded ({ commit, getters, rootGetters }, data) {
+      if (!getters['isEnabled'](data.config.id, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
       commit('SET_LOADED_PLUGIN', {
-        ...plugin,
-        profileId: rootGetters['session/profileId']
+        ...data,
+        profileId: data.profileId || rootGetters['session/profileId']
       })
     },
 
@@ -138,13 +179,13 @@ export default {
     },
 
     setMenuItems ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.pluginId)) {
+      if (!getters['isEnabled'](data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
       commit('SET_PLUGIN_MENU_ITEMS', {
         ...data,
-        profileId: rootGetters['session/profileId']
+        profileId: data.profileId || rootGetters['session/profileId']
       })
     }
   }
