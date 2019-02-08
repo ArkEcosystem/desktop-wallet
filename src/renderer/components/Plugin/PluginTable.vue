@@ -10,7 +10,15 @@
         slot-scope="data"
       >
         <div
-          v-if="data.column.field === 'name'"
+          v-if="data.column.field === 'id'"
+          class="flex"
+        >
+          <span class="flex items-center whitespace-no-wrap">
+            {{ data.row.id | truncate(30) }} ({{ data.row.version }})
+          </span>
+        </div>
+        <div
+          v-else-if="data.column.field === 'name'"
           class="flex"
         >
           <span class="flex items-center whitespace-no-wrap">

@@ -42,6 +42,7 @@ export default {
       for (const pluginData of Object.values(availablePlugins)) {
         plugins.push({
           id: pluginData.config.id,
+          version: pluginData.config.version,
           name: pluginData.config.name,
           description: pluginData.config.description,
           permissions: pluginData.config.permissions,
