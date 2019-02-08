@@ -37,7 +37,7 @@
           v-else-if="data.column.field === 'permissions'"
           class="flex"
         >
-          {{ data.row.permissions.length ? data.row.permissions.join(', ') : $t('PLUGIN_TABLE.NO_PERMISSIONS') }}
+          {{ data.row.permissions && data.row.permissions.length ? data.row.permissions.join(', ') : $t('PLUGIN_TABLE.NO_PERMISSIONS') }}
         </div>
 
         <div
