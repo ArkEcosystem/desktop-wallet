@@ -7,10 +7,12 @@
     <div
       class="bg-theme-settings mt-2 pt-1 px-10 rounded"
     >
-      <!-- TODO wallets or contacts -->
       <WalletSidebarFiltersSearchInput
         v-model="filters_searchQuery"
-        :placeholder="$t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_WALLET')"
+        :placeholder="hasContacts
+          ? $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_CONTACT')
+          : $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_WALLETS')
+        "
       />
     </div>
 
@@ -37,9 +39,11 @@
     </MenuOptions>
 
     <MenuOptions class="WalletSidebarFilters__settings mt-2">
-      <!-- TODO wallets or contacts -->
       <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_WALLETS')"
+        :title="hasContacts
+          ? $t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_CONTACTS')
+          : $t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_WALLETS')
+        "
         @click="toggleSelect('hide-empty')"
       >
         <div
@@ -56,6 +60,7 @@
         </div>
       </MenuOptionsItem>
       <MenuOptionsItem
+        v-if="hasLedger && !hasContacts"
         :title="$t('WALLET_SIDEBAR.FILTERS.HIDE_LEDGER')"
         @click="toggleSelect('hide-ledger')"
       >
@@ -92,13 +97,23 @@ export default {
   },
 
   props: {
-    // TODO
-    outsideClick: {
+    hasContacts: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    hasLedger: {
       type: Boolean,
       required: false,
       default: false
     },
     isSidebarExpanded: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    // TODO
+    outsideClick: {
       type: Boolean,
       required: false,
       default: false

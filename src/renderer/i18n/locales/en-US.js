@@ -833,7 +833,7 @@ export default {
     EXPAND: 'Expand',
     LOADING_LEDGER: 'Loading Ledger...',
     FILTERS: {
-      HIDE_EMPTY_CONTACTS: 'Hide empty wallets',
+      HIDE_EMPTY_CONTACTS: 'Hide empty contacts',
       HIDE_EMPTY_WALLETS: 'Hide empty wallets',
       HIDE_LEDGER: 'Hide Ledger wallets'
     },

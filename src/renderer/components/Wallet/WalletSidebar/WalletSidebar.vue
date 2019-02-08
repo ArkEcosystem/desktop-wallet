@@ -73,6 +73,8 @@
 
     <WalletSidebarFilters
       v-if="isFiltersVisible"
+      :has-contacts="hasContactsOnly"
+      :has-ledger="isLedgerConnected"
       :is-sidebar-expanded="isExpanded"
       :outside-click="true"
     />
@@ -250,6 +252,10 @@ export default {
       return this.showExpanded || this.hasBeenExpanded
     },
 
+    isLedgerConnected () {
+      return this.$store.getters['ledger/isConnected']
+    },
+
     isLoadingLedger () {
       return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
     }
@@ -319,7 +325,7 @@ export default {
     },
 
     refreshWallets () {
-      if (this.$store.getters['ledger/isConnected']) {
+      if (this.isLedgerConnected) {
         this.refreshLedgerWallets()
       } else {
         this.selectableWallets = this.wallet_sortByName(this.wallets)
