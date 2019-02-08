@@ -7,6 +7,7 @@
     <MenuOptions
       :is-horizontal="isHorizontal"
       :is-settings="true"
+      class="whitespace-no-wrap"
     >
       <MenuOptionsItem
         v-for="(menuItem, menuId) in pluginMenuItems"
@@ -67,7 +68,6 @@ export default {
 
 <style lang="postcss" scoped>
 .AppSidemenuPlugins {
-  width: 360px;
   left: 6.5rem;
   top: 19rem;
   transform: translateY(-10%);

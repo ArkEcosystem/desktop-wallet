@@ -129,7 +129,7 @@
                 'h-12 w-12': session_profile.avatar && isHorizontal,
                 'h-18 w-18': session_profile.avatar && !isHorizontal
               }"
-              :style="session_profile.avatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
+              :style="hasStandardAvatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
               :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
               :to="{ name: 'profiles' }"
               class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
@@ -208,6 +208,16 @@ export default {
     },
     hasPluginMenuItems () {
       return this.$store.getters['plugin/menuItems'].length
+    },
+    hasStandardAvatar () {
+      return this.session_profile.avatar && typeof this.session_profile.avatar === 'string'
+    },
+    pluginAvatar () {
+      if (this.session_profile.avatar && this.session_profile.avatar.pluginId) {
+        return this.$store.getters['plugin/avatar'](this.session_profile.avatar)
+      }
+
+      return null
     }
   },
 
@@ -286,5 +296,9 @@ export default {
   bottom: -0.7rem;
   width: 1.8rem;
   height: 1.8rem;
+}
+
+.AppSidemenu__avatar__container .ProfileAvatar__image__component {
+  @apply .h-18 .w-18;
 }
 </style>

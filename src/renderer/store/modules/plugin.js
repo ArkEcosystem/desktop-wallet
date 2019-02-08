@@ -48,6 +48,37 @@ export default {
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
     },
 
+    avatar: state => profile => {
+      const loaded = state.loaded[profile.id]
+      const plugin = loaded ? loaded[profile.avatar.pluginId] : null
+      if (!plugin) {
+        return null
+      }
+
+      const avatar = plugin.avatars.find(avatar => avatar.name === profile.avatar.avatarName)
+
+      return avatar ? { ...avatar } : null
+    },
+
+    avatars: (state, getters) => profileId => {
+      let loadedPlugins
+      if (!profileId) {
+        loadedPlugins = getters['loaded']
+      } else {
+        loadedPlugins = state.loaded[profileId]
+      }
+
+      if (!loadedPlugins || !Object.keys(loadedPlugins)) {
+        return []
+      }
+
+      const avatars = []
+      for (const plugin of Object.values(loadedPlugins)) {
+        avatars.push(...plugin.avatars.map(avatar => ({ ...avatar, pluginId: plugin.config.id })))
+      }
+
+      return avatars
+    },
 
     menuItems: (_, getters) => {
       const loadedPlugins = getters['loaded']
@@ -78,6 +109,7 @@ export default {
 
       Vue.set(state.loaded[data.profileId], data.config.id, {
         ...data,
+        avatars: [],
         menuItems: []
       })
     },
@@ -88,6 +120,10 @@ export default {
       }
 
       Vue.delete(state.loaded[data.profileId], data.pluginId)
+    },
+
+    SET_PLUGIN_AVATARS (state, data) {
+      Vue.set(state.loaded[data.profileId][data.pluginId], 'avatars', data.avatars)
     },
 
     SET_PLUGIN_MENU_ITEMS (state, data) {
@@ -175,6 +211,17 @@ export default {
       commit('DELETE_LOADED_PLUGIN', {
         pluginId,
         profileId: rootGetters['session/profileId']
+      })
+    },
+
+    setAvatars ({ commit, getters, rootGetters }, data) {
+      if (!getters['isEnabled'](data.pluginId, data.profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      commit('SET_PLUGIN_AVATARS', {
+        ...data,
+        profileId: data.profileId || rootGetters['session/profileId']
       })
     },
 

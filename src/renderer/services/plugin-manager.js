@@ -51,6 +51,7 @@ class PluginManager {
     })
 
     this.loadRoutes(pluginObject)
+    await this.loadAvatars(plugin.config.id, pluginObject, profileId)
     await this.loadMenuItems(plugin.config.id, pluginObject, profileId)
   }
 
@@ -75,6 +76,40 @@ class PluginManager {
     const pluginRoutes = this.normalize(pluginObject.getRoutes())
     if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
       this.app.$router.addRoutes(pluginRoutes)
+    }
+  }
+
+  async loadAvatars (pluginId, pluginObject, profileId) {
+    if (!pluginObject.hasOwnProperty('getAvatars')) {
+      return
+    }
+
+    let avatars = this.normalize(pluginObject.getAvatars())
+    if (avatars && Array.isArray(avatars) && avatars.length) {
+      avatars = avatars.filter((avatar) => {
+        if (!avatar.hasOwnProperty('name') || !avatar.hasOwnProperty('template')) {
+          this.app.$logger.error('Plugin avatar components must contain a name and a template')
+
+          return false
+        }
+
+        if (!/^[a-zA-Z][a-zA-Z0-9-]+$/.test(avatar.name)) {
+          this.app.$logger.error(
+            'Plugin avatar component names must contain only alphanumeric or hyphens and start with a letter'
+          )
+
+          return false
+        }
+
+        return true
+      })
+      if (avatars.length) {
+        await this.app.$store.dispatch('plugin/setAvatars', {
+          pluginId: pluginId,
+          avatars,
+          profileId
+        })
+      }
     }
   }
 

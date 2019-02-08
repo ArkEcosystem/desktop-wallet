@@ -670,6 +670,7 @@ export default {
   },
 
   SELECTION_AVATAR: {
+    ADDITIONAL_AVATARS: 'Additional Avatars',
     AVATARS: 'Avatars',
     MODAL_HEADER: 'Select avatar'
   },
