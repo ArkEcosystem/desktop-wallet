@@ -283,24 +283,20 @@ export default {
 
   methods: {
     collapse () {
-      this.isResizing = true
-      setTimeout(() => {
-        setTimeout(() => {
-          this.isResizing = false
-        }, 125)
-        this.hasBeenExpanded = false
-        this.$emit('collapsed')
-      }, 75)
+      this.toggleExpanded(false)
     },
 
     expand () {
+      this.toggleExpanded(true)
+    },
+
+    toggleExpanded (toExpand) {
       this.isResizing = true
       setTimeout(() => {
-        setTimeout(() => {
-          this.isResizing = false
-        }, 125)
-        this.hasBeenExpanded = true
-        this.$emit('expanded')
+        setTimeout(() => (this.isResizing = false), 125)
+
+        this.hasBeenExpanded = toExpand
+        this.$emit(toExpand ? 'expanded' : 'collapsed')
       }, 75)
     },
 
@@ -334,6 +330,7 @@ export default {
 
     ledgerDisconnected () {
       this.refreshWallets()
+
       if (!this.activeWallet || !this.activeWallet.address || this.activeWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
           if (this.selectableWallets.length) {
