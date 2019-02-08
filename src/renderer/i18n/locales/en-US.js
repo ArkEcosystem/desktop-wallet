@@ -831,7 +831,23 @@ export default {
     FILTER: 'Filter',
     HIDE: 'Hide',
     EXPAND: 'Expand',
-    LOADING_LEDGER: 'Loading Ledger...'
+    LOADING_LEDGER: 'Loading Ledger...',
+    FILTERS: {
+      HIDE_EMPTY_CONTACTS: 'Hide empty wallets',
+      HIDE_EMPTY_WALLETS: 'Hide empty wallets',
+      HIDE_LEDGER: 'Hide Ledger wallets'
+    },
+    SEARCH: {
+      PLACEHOLDER_CONTACTS: 'Click to filter your contacts',
+      PLACEHOLDER_WALLETS: 'Click to filter your wallets'
+    },
+    SORT: {
+      BALANCE_ASC: 'Balance (min to max)',
+      BALANCE_DESC: 'Balance (max to min)',
+      BY: 'Sort by',
+      NAME_ASC: 'Name (A to Z)',
+      NAME_DESC: 'Name (Z to A)'
+    }
   },
 
   WALLET_DELEGATES: {

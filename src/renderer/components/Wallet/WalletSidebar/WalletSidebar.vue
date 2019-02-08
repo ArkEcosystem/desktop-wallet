@@ -16,6 +16,19 @@
       <div
         v-if="!isExpanded"
         v-tooltip="{
+          content: $t('WALLET_SIDEBAR.FILTER')
+        }"
+        class="WalletSidebar__menu__button"
+        @click="toggleFilters"
+      >
+        <SvgIcon
+          name="filter"
+          view-box="0 0 13 20"
+        />
+      </div>
+      <div
+        v-if="!isExpanded"
+        v-tooltip="{
           content: $t('WALLET_SIDEBAR.EXPAND')
         }"
         class="WalletSidebar__menu__button"
@@ -25,6 +38,21 @@
           name="expand"
           view-box="0 0 18 14"
         />
+      </div>
+      <div
+        v-if="isExpanded"
+        class="WalletSidebar__menu__button"
+        @click="toggleFilters"
+      >
+        <div class="flex items-center">
+          <SvgIcon
+            name="filter"
+            view-box="0 0 13 20"
+          />
+          <span v-if="isExpanded">
+            {{ $t('WALLET_SIDEBAR.FILTER') }}
+          </span>
+        </div>
       </div>
       <div
         v-if="isExpanded"
@@ -42,6 +70,12 @@
         </div>
       </div>
     </div>
+
+    <WalletSidebarFilters
+      v-if="isFiltersVisible"
+      :is-sidebar-expanded="isExpanded"
+      :outside-click="true"
+    />
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
@@ -158,6 +192,7 @@ import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
 import SvgIcon from '@/components/SvgIcon'
+import WalletSidebarFilters from './WalletSidebarFilters'
 
 export default {
   name: 'WalletSidebar',
@@ -168,7 +203,8 @@ export default {
     MenuNavigationItem,
     SvgIcon,
     WalletIdenticon,
-    WalletIdenticonPlaceholder
+    WalletIdenticonPlaceholder,
+    WalletSidebarFilters
   },
 
   props: {
@@ -186,6 +222,7 @@ export default {
 
   data: () => ({
     hasBeenExpanded: false,
+    isFiltersVisible: false,
     isResizing: false,
     selectableWallets: []
   }),
@@ -264,6 +301,10 @@ export default {
     onSelect (address) {
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.$emit('select', address)
+    },
+
+    toggleFilters () {
+      this.isFiltersVisible = !this.isFiltersVisible
     },
 
     refreshLedgerWallets () {
