@@ -226,22 +226,15 @@ export default {
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
-    selectableWallets: []
   }),
 
   computed: {
-    hasContactsOnly () {
-      return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
-    },
-
-    wallets () {
-      return this.hasContactsOnly
-        ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-        : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-    },
-
     currentWallet () {
       return this.wallet_fromRoute || {}
+    },
+
+    hasContactsOnly () {
+      return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
     },
 
     isExpanded () {
@@ -253,7 +246,30 @@ export default {
     },
 
     isLoadingLedger () {
-      return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
+      return this.$store.getters['ledger/isLoading'] && !this.ledgerWallets.length
+    },
+
+    ledgerWallets () {
+      return this.$store.getters['ledger/wallets']
+    },
+
+    selectableWallets () {
+      let wallets = this.wallets
+
+      if (this.isLedgerConnected && !this.hasContactsOnly) {
+        wallets = uniqBy([
+          ...wallets,
+          ...this.ledgerWallets
+        ], 'address')
+      }
+
+      return this.wallet_sortByName(wallets)
+    },
+
+    wallets () {
+      return this.hasContactsOnly
+        ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+        : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     }
   },
 
@@ -264,17 +280,11 @@ export default {
   },
 
   async created () {
-    this.refreshWallets()
-
-    this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
-    this.$eventBus.on('wallet:wallet-updated', this.refreshWallets)
   },
 
   beforeDestroy () {
-    this.$eventBus.off('ledger:wallets-updated', this.refreshLedgerWallets)
     this.$eventBus.off('ledger:disconnected', this.ledgerDisconnected)
-    this.$eventBus.off('wallet:wallet-updated', this.refreshWallets)
   },
 
   methods: {
@@ -305,29 +315,9 @@ export default {
       this.isFiltersVisible = !this.isFiltersVisible
     },
 
-    refreshLedgerWallets () {
-      const ledgerWallets = !this.hasContactsOnly
-        ? this.$store.getters['ledger/wallets']
-        : []
-
-      this.selectableWallets = this.wallet_sortByName(uniqBy([
-        ...ledgerWallets,
-        ...this.wallets
-      ], 'address'))
-    },
-
-    refreshWallets () {
-      if (this.isLedgerConnected) {
-        this.refreshLedgerWallets()
-      } else {
-        this.selectableWallets = this.wallet_sortByName(this.wallets)
-      }
-    },
-
     ledgerDisconnected () {
-      this.refreshWallets()
-
       const hasCurrentWallet = this.currentWallet && this.currentWallet.address
+
       if (!hasCurrentWallet || this.currentWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
           if (this.selectableWallets.length) {
