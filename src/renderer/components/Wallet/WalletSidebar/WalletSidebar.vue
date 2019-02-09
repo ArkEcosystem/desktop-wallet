@@ -1,6 +1,6 @@
 <template>
   <MenuNavigation
-    :id="activeWallet.address"
+    :id="currentWallet.address"
     ref="MenuNavigation"
     :class="{
       'WalletSidebar--collapsed': !isExpanded,
@@ -240,12 +240,8 @@ export default {
         : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
 
-    activeWallet () {
-      return this.wallet_fromRoute || {}
-    },
-
     currentWallet () {
-      return this.wallet_fromRoute
+      return this.wallet_fromRoute || {}
     },
 
     isExpanded () {
@@ -331,7 +327,8 @@ export default {
     ledgerDisconnected () {
       this.refreshWallets()
 
-      if (!this.activeWallet || !this.activeWallet.address || this.activeWallet.isLedger) {
+      const hasCurrentWallet = this.currentWallet && this.currentWallet.address
+      if (!hasCurrentWallet || this.currentWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
           if (this.selectableWallets.length) {
             this.$refs.MenuNavigation.switchToId(this.selectableWallets[0].address)
