@@ -1,21 +1,26 @@
 <template>
   <div
-    class="flex flex-row"
+    class="WalletSidebarFiltersSearchInput flex flex-row"
   >
+    <div
+      class="cursor-pointer mr-4 text-theme-settings-text"
+      @click="focus"
+    >
+      <SvgIcon
+        name="search"
+        view-box="0 0 17 16"
+      />
+    </div>
+
     <input
       ref="input"
-      v-model="value"
-      name="wallet-sidebar-filters-search"
       :placeholder="placeholder"
+      :value="inputValue"
+      class="WalletSidebarFiltersSearchInput____input flex flex-grow bg-transparent text-theme-settings-text font-semibold"
+      name="wallet-sidebar-filters-search"
       type="text"
-      class="WalletSidebarFiltersSearchInput____input flex flex-grow bg-transparent text-theme-page-text"
+      @input="updateInput"
     >
-
-    <SvgIcon
-      name="search"
-      view-box="0 0 17 16"
-      class="mr-4"
-    />
   </div>
 </template>
 
@@ -27,11 +32,6 @@ export default {
 
   components: {
     SvgIcon
-  },
-
-  model: {
-    prop: 'value',
-    event: 'input'
   },
 
   props: {
@@ -49,18 +49,29 @@ export default {
 
   data () {
     return {
+      inputValue: this.value
+    }
+  },
+
+  watch: {
+    value (value) {
+      this.inputValue = value
     }
   },
 
   methods: {
-    emitClose () {
-      this.$emit('close')
+    emitInput () {
+      this.$emit('input', this.inputValue)
+    },
+
+    updateInput (event) {
+      this.inputValue = event.target.value
+      this.emitInput()
+    },
+
+    focus () {
+      this.$refs.input.focus()
     }
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.WalletSidebarFiltersSearchInput {
-}
-</style>
