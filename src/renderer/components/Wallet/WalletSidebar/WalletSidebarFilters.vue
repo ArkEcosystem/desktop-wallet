@@ -117,7 +117,6 @@ export default {
       required: false,
       default: false
     },
-    // TODO
     outsideClick: {
       type: Boolean,
       required: false,
@@ -176,8 +175,8 @@ export default {
       })
     },
 
-    emitClose () {
-      this.$emit('close')
+    emitClose (context) {
+      this.$emit('close', context)
     }
   }
 }

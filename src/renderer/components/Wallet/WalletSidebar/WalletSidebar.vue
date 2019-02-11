@@ -323,8 +323,17 @@ export default {
       this.$emit('select', address)
     },
 
-    closeFilters () {
-      this.isFiltersVisible = false
+    closeFilters (context) {
+      // To not hide the filters when expanding or collapsing
+      const wasToggleExpand = context.path.some(path => {
+        if (path.className) {
+          return path.className.toString().includes('WalletSidebar__menu__button')
+        }
+      })
+
+      if (!wasToggleExpand) {
+        this.isFiltersVisible = false
+      }
     },
 
     toggleFilters () {
