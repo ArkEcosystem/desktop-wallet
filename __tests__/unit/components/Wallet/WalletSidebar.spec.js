@@ -178,4 +178,72 @@ describe('WalletSidebar', () => {
       })
     })
   })
+
+  describe('sortWallets', () => {
+    const wallets = [
+      { address: 'AA', name: 'example', balance: 132.23 },
+      { address: 'AD', name: '', balance: 0 },
+      { address: 'AB', name: 'name', balance: 13 },
+      { address: 'AC', name: 'other', balance: 937 }
+    ]
+
+    let wrapper
+
+    beforeEach(() => {
+      wrapper = mount({}, {
+      })
+    })
+
+    describe('when the order is `name-asc`', () => {
+      it('should sort the wallets by name ascendently', () => {
+        wrapper.vm.applyOrder('name-asc')
+
+        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+          wallets[1],
+          wallets[0],
+          wallets[2],
+          wallets[3]
+        ])
+      })
+    })
+
+    describe('when the order is `name-desc`', () => {
+      it('should sort the wallets by name descenntly', () => {
+        wrapper.vm.applyOrder('name-desc')
+
+        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+          wallets[3],
+          wallets[2],
+          wallets[0],
+          wallets[1]
+        ])
+      })
+    })
+
+    describe('when the order is `balance-asc`', () => {
+      it('should sort the wallets by balance ascendently', () => {
+        wrapper.vm.applyOrder('balance-asc')
+
+        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+          wallets[1],
+          wallets[2],
+          wallets[0],
+          wallets[3]
+        ])
+      })
+    })
+
+    describe('when the order is `balance-desc`', () => {
+      it('should sort the wallets by balance descenntly', () => {
+        wrapper.vm.applyOrder('balance-desc')
+
+        expect(wrapper.vm.sortWallets(wallets)).toEqual([
+          wallets[3],
+          wallets[0],
+          wallets[2],
+          wallets[1]
+        ])
+      })
+    })
+  })
 })
