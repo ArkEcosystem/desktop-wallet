@@ -1,5 +1,6 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 import installI18n from '../../__utils__/i18n'
+import WalletMixin from '@/mixins/wallet'
 import WalletSidebar from '@/components/Wallet/WalletSidebar'
 
 const localVue = createLocalVue()
@@ -12,13 +13,17 @@ const wallets = [
 
 const mount = (propsData = {}, mocks = {}) => {
   mocks = {
+    $route: {},
     $store: {
       getters: {
+        'delegate/byAddress': jest.fn(),
         'wallet/contactsByProfileId': () => contacts,
         'wallet/byProfileId': () => wallets
       }
     },
-    wallet_sortByName: jest.fn(),
+    session_network: {
+      knownWallets: {}
+    },
     ...mocks
   }
 
@@ -26,6 +31,7 @@ const mount = (propsData = {}, mocks = {}) => {
     propsData,
     i18n,
     localVue,
+    mixins: [WalletMixin],
     mocks
   })
 }
@@ -111,28 +117,9 @@ describe('WalletSidebar', () => {
       ]
 
       let wrapper
-      // eslint-disable-next-line camelcase
-      let wallet_name
 
       beforeEach(() => {
-        // eslint-disable-next-line camelcase
-        wallet_name = jest.fn().mockImplementation(address => {
-          return wallets.find(wallet => wallet.address === address).name
-        })
-        wrapper = mount({}, {
-          wallet_name
-        })
-      })
-
-      it('should use the `wallet_name` mixin method', () => {
-        wrapper.vm.applyFilters({
-          searchQuery: '.'
-        })
-        wrapper.vm.filterWallets(wallets)
-
-        wallets.forEach(wallet => {
-          expect(wallet_name).toHaveBeenCalledWith(wallet.address)
-        })
+        wrapper = mount()
       })
 
       describe('when wallet addresses match', () => {
@@ -170,6 +157,22 @@ describe('WalletSidebar', () => {
           expect(wrapper.vm.filterWallets(wallets)).toEqual([
             wallets[0],
             wallets[1]
+          ])
+        })
+      })
+
+      describe('when wallet alternative (delegate, network, etc.) names match', () => {
+        it('should return only those wallets', () => {
+          wrapper.vm.wallet_name = jest.fn().mockImplementation(address => {
+            const wallet = wallets.find(wallet => wallet.address === address)
+            return `${wallet.name}s`
+          })
+          wrapper.vm.applyFilters({
+            searchQuery: 'examples'
+          })
+
+          expect(wrapper.vm.filterWallets(wallets)).toEqual([
+            wallets[0]
           ])
         })
       })

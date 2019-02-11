@@ -354,11 +354,16 @@ export default {
         filtered = filter(filtered, wallet => wallet.balance > 0)
       }
       if (this.filters.searchQuery) {
-        filtered = filter(filtered, ({ address, balance }) => {
+        filtered = filter(filtered, ({ address, balance, name }) => {
+          const alternativeName = this.wallet_name(address)
+          const names = alternativeName
+            ? [name, alternativeName]
+            : [name]
+
           return [
+            ...names,
             address,
-            balance.toString(),
-            this.wallet_name(address)
+            balance.toString()
           ].some(text => text.includes(this.filters.searchQuery))
         })
       }
