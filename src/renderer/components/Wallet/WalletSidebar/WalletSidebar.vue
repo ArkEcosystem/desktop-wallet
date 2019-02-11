@@ -77,11 +77,14 @@
       :has-ledger="isLedgerConnected"
       :is-sidebar-expanded="isExpanded"
       :outside-click="true"
+      @filter="applyFilters"
+      @sort="applyOrder"
+      @close="closeFilters"
     />
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
-      v-if="isExpanded && !isLoadingLedger && selectableWallets.length === 0"
+      v-if="isExpanded && !isLoadingLedger && availableWallets.length === 0"
       id="placeholder"
       :is-disabled="true"
       class="WalletSidebar__wallet opacity-37.5 select-none"
@@ -189,7 +192,7 @@
 </template>
 
 <script>
-import { uniqBy } from 'lodash'
+import { filter, uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -226,6 +229,8 @@ export default {
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
+    filters: {},
+    order: 'name-asc'
   }),
 
   computed: {
@@ -249,11 +254,20 @@ export default {
       return this.$store.getters['ledger/isLoading'] && !this.ledgerWallets.length
     },
 
+    wallets () {
+      return this.hasContactsOnly
+        ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+        : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+    },
+
     ledgerWallets () {
       return this.$store.getters['ledger/wallets']
     },
 
-    selectableWallets () {
+    /**
+     * Wallets before filtering
+     */
+    availableWallets () {
       let wallets = this.wallets
 
       if (this.isLedgerConnected && !this.hasContactsOnly) {
@@ -263,13 +277,11 @@ export default {
         ], 'address')
       }
 
-      return this.wallet_sortByName(wallets)
+      return wallets
     },
 
-    wallets () {
-      return this.hasContactsOnly
-        ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-        : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+    selectableWallets () {
+      return this.sortWallets(this.filterWallets(this.availableWallets))
     }
   },
 
@@ -311,8 +323,46 @@ export default {
       this.$emit('select', address)
     },
 
+    closeFilters () {
+      this.isFiltersVisible = false
+    },
+
     toggleFilters () {
       this.isFiltersVisible = !this.isFiltersVisible
+    },
+
+    applyFilters (filters) {
+      this.$set(this, 'filters', filters)
+    },
+
+    filterWallets (wallets) {
+      let filtered = wallets
+
+      if (this.filters.hideLedger) {
+        filtered = filter(filtered, wallet => !wallet.isLedger)
+      }
+      if (this.filters.hideEmpty) {
+        filtered = filter(filtered, wallet => wallet.balance > 0)
+      }
+      if (this.filters.searchQuery) {
+        filtered = filter(filtered, ({ address, balance }) => {
+          return [
+            address,
+            balance.toString(),
+            this.wallet_name(address)
+          ].some(text => text.includes(this.filters.searchQuery))
+        })
+      }
+
+      return filtered
+    },
+
+    applyOrder (order) {
+      this.$set(this, 'order', order)
+    },
+
+    sortWallets (wallets) {
+      return this.wallet_sortByName(wallets)
     },
 
     ledgerDisconnected () {

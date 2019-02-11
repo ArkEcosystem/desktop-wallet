@@ -127,11 +127,10 @@ export default {
 
   data () {
     return {
-      // TODO persist the filters
-      filters_hideEmpty: false,
-      filters_hideLedger: false,
-      filters_searchQuery: '',
-      filters_sortOrder: 'name-asc'
+      hideEmpty: false,
+      hideLedger: false,
+      searchQuery: '',
+      sortOrder: 'name-asc'
     }
   },
 
@@ -139,23 +138,42 @@ export default {
   },
 
   methods: {
-    onSearch (query) {
+    setSearchQuery (query) {
+      this.searchQuery = query
+      this.emitFilter()
     },
 
     setHideEmpty (isHidden) {
-      this.filters_hideEmpty = isHidden
+      this.hideEmpty = isHidden
+      this.emitFilter()
     },
 
     setHideLedger (isHidden) {
-      this.filters_hideLedger = isHidden
+      this.hideLedger = isHidden
+      this.emitFilter()
     },
 
     setSort (order) {
-      this.filters_sortOrder = order
+      this.sortOrder = order
+      this.emitSort()
     },
 
     toggleSelect (name) {
       this.$refs[name].toggle()
+    },
+
+    emitFilter () {
+      this.$emit('filter', {
+        hideEmpty: this.hideEmpty,
+        hideLedger: this.hideaLedger,
+        searchQuery: this.searchQuery
+      })
+    },
+
+    emitSort () {
+      this.$emit('sort', {
+        sortOrder: this.sortOrder
+      })
     },
 
     emitClose () {
