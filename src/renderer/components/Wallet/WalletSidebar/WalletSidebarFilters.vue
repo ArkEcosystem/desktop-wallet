@@ -8,9 +8,9 @@
       class="bg-theme-feature p-10 rounded-lg shadow font-bold"
     >
       <WalletSidebarFiltersSearchInput
-        v-model="searchQuery"
+        v-model="filters.searchQuery"
         :placeholder="hasContacts
-          ? $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_CONTACT')
+          ? $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_CONTACTS')
           : $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_WALLETS')
         "
         @input="setSearchQuery"
@@ -107,6 +107,7 @@ export default {
       required: false,
       default: false
     },
+    // Show the Ledger options or not
     hasLedger: {
       type: Boolean,
       required: false,
@@ -121,39 +122,79 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    hideEmpty: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    // Hide Ledger wallets
+    hideLedger: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    searchQuery: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    sortOrder: {
+      type: String,
+      required: false,
+      default: 'name-asc'
     }
   },
 
   data () {
     return {
-      hideEmpty: false,
-      hideLedger: false,
-      searchQuery: '',
-      sortOrder: 'name-asc'
+      filters: {
+        hideEmpty: this.hideEmpty,
+        hideLedger: this.hideLedger,
+        searchQuery: this.searchQuery
+      },
+      sort: {
+        order: this.sortOrder
+      }
     }
   },
 
-  computed: {
+  watch: {
+    hideEmpty (value) {
+      this.filters.hideEmpty = value
+    },
+
+    hideLedger (value) {
+      this.filters.hideLedger = value
+    },
+
+    searchQuery (value) {
+      this.filters.searchQuery = value
+    },
+
+    order (value) {
+      this.sort.order = value
+    }
   },
 
   methods: {
     setSearchQuery (query) {
-      this.searchQuery = query
+      this.filters.searchQuery = query
       this.emitFilter()
     },
 
     setHideEmpty (isHidden) {
-      this.hideEmpty = isHidden
+      this.filters.hideEmpty = isHidden
       this.emitFilter()
     },
 
     setHideLedger (isHidden) {
-      this.hideLedger = isHidden
+      this.filters.hideLedger = isHidden
       this.emitFilter()
     },
 
     setSort (order) {
-      this.sortOrder = order
+      this.sort.order = order
       this.emitSort()
     },
 
@@ -162,17 +203,11 @@ export default {
     },
 
     emitFilter () {
-      this.$emit('filter', {
-        hideEmpty: this.hideEmpty,
-        hideLedger: this.hideaLedger,
-        searchQuery: this.searchQuery
-      })
+      this.$emit('filter', this.filters)
     },
 
     emitSort () {
-      this.$emit('sort', {
-        sortOrder: this.sortOrder
-      })
+      this.$emit('sort', this.sort.order)
     },
 
     emitClose (context) {

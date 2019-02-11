@@ -77,6 +77,10 @@
       :has-ledger="isLedgerConnected"
       :is-sidebar-expanded="isExpanded"
       :outside-click="true"
+      :hide-empty="filters.hideEmpty"
+      :hide-ledger="filters.hideLedger"
+      :search-query="filters.searchQuery"
+      :sort-order="sort.order"
       @filter="applyFilters"
       @sort="applyOrder"
       @close="closeFilters"
@@ -192,7 +196,7 @@
 </template>
 
 <script>
-import { filter, uniqBy } from 'lodash'
+import { filter, sortBy, uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -229,8 +233,14 @@ export default {
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
-    filters: {},
-    order: 'name-asc'
+    filters: {
+      hideEmpty: false,
+      hideLedger: false,
+      searchQuery: ''
+    },
+    sort: {
+      order: 'name-asc'
+    }
   }),
 
   computed: {
@@ -372,11 +382,21 @@ export default {
     },
 
     applyOrder (order) {
-      this.$set(this, 'order', order)
+      this.$set(this, 'sort', { order })
     },
 
     sortWallets (wallets) {
-      return this.wallet_sortByName(wallets)
+      const [attr, order] = this.sort.order.split('-')
+
+      if (attr === 'name') {
+        wallets = this.wallet_sortByName(wallets)
+      } else if (attr === 'balance') {
+        wallets = sortBy(wallets, ['balance', 'name', 'address'])
+      } else {
+        throw new Error(`Sorting by "${attr}" is not implemented`)
+      }
+
+      return order === 'asc' ? wallets : wallets.reverse()
     },
 
     ledgerDisconnected () {
