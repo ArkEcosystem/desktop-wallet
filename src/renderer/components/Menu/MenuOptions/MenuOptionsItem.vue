@@ -9,7 +9,7 @@
     >
       <div class="select-none">
         <slot name="title">
-          <span :class="hasControls ? 'text-grey-light' : ''">
+          <span :class="hasControls ? 'text-theme-settings-control-title' : ''">
             {{ title }}
           </span>
         </slot>

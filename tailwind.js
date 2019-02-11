@@ -133,6 +133,7 @@ let colors = {
   'theme-settings-heading': 'var(--theme-settings-heading)',
   'theme-settings-border': 'var(--theme-settings-border)',
   'theme-settings-text': 'var(--theme-settings-text)',
+  'theme-settings-control-title': 'var(--theme-settings-control-title)',
 
   'theme-error': 'var(--theme-error)',
   'theme-error-shadow': 'var(--theme-error-shadow)',
