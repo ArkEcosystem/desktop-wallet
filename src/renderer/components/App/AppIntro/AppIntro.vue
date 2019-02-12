@@ -1,6 +1,6 @@
 <template>
   <div
-    class="px-20 py-16 flex justify-center items-center rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
+    class="p-10 flex justify-center items-center rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
   >
     <AppIntroScreen
       v-if="step === 0"
@@ -9,6 +9,7 @@
       :show-skip="false"
       :show-logo="false"
       :image="stepImage"
+      class="AppIntro__1"
     >
       <div
         slot="content"
@@ -194,5 +195,9 @@ export default {
 
 .AppWelcome__Logo__corner {
   @apply .bg-red .w-18 .px-3 .py-4 .rounded-tl-lg .rounded-br-lg
+}
+
+.AppIntro__1 .AppIntroScreen__container__left {
+  background-color: #c9292c;
 }
 </style>
