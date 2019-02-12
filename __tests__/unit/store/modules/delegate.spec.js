@@ -3,44 +3,29 @@ import MockAdapter from 'axios-mock-adapter'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
-import DelegateModule from '@/store/modules/delegate'
+import store from '@/store'
 import delegates, { delegate1, delegate2 } from '../../__fixtures__/store/delegate'
+import { network1 } from '../../__fixtures__/store/network'
+import { profile1 } from '../../__fixtures__/store/profile'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
 
 const axiosMock = new MockAdapter(axios)
 
-const store = new Vuex.Store({
-  modules: {
-    delegate: DelegateModule,
-    session: {
-      namespaced: true,
-      getters: {
-        network () {
-          return {
-            id: 'abc',
-            constants: {
-              activeDelegates: 51
-            }
-          }
-        }
-      }
-    }
-  },
-  strict: true
-})
-
-beforeEach(() => {
+beforeAll(() => {
   ClientService.version = 1
   ClientService.host = 'http://127.0.0.1'
+
+  store.commit('network/SET_ALL', [network1])
+  store.commit('profile/CREATE', profile1)
+  store.commit('session/SET_PROFILE_ID', profile1.id)
   store.dispatch('delegate/set', delegates)
 })
 
 describe('delegate store module', () => {
   it('should get delegate list', () => {
     const networkId = store.getters['session/network'].id
-
     expect(Object.values(store.getters['delegate/all'][networkId])).toIncludeAllMembers(delegates)
   })
 
