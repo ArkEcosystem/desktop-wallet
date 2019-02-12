@@ -114,6 +114,13 @@
                 class="mt-5"
                 name="explorer"
               />
+
+              <InputText
+                v-model="$v.form.ticker.$model"
+                :label="$t('MODAL_NETWORK.MARKET_TICKER')"
+                class="mt-5"
+                name="ticker"
+              />
             </template>
           </div>
           <div v-else>
@@ -145,13 +152,6 @@
               :helper-text="activeDelegatesError"
               class="mt-5"
               name="activeDelegates"
-            />
-
-            <InputText
-              v-model="$v.form.ticker.$model"
-              :label="$t('MODAL_NETWORK.MARKET_TICKER')"
-              class="mt-5"
-              name="ticker"
             />
           </div>
         </div>
