@@ -20,10 +20,6 @@
       <AppIntro
         @done="setIntroDone"
       />
-      <!-- FIXME -->
-      <AppFooter
-        class="mt-4"
-      />
     </div>
 
     <div
