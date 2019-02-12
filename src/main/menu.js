@@ -1,4 +1,4 @@
-const { app, Menu, shell } = require('electron')
+const { Menu, shell } = require('electron')
 const { APP } = require('../../config')
 const aboutWindow = require('about-window').default
 const path = require('path')
@@ -7,14 +7,21 @@ const releaseService = require('../renderer/services/release').default
 
 const isProduction = process.env.NODE_ENV === 'production'
 
+const copyright = [
+  `<p style="text-align: center">Distributed under ${packageJson.license} license</p>`,
+  '<p>Flag icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/"  title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>'
+].join('')
+
 const about = {
   label: 'About',
   click: () => aboutWindow({
     icon_path: isProduction
       ? path.resolve(__dirname, './static/128x128.png')
       : path.resolve(__dirname, '../../build/icons/128x128.png'),
+    copyright,
     package_json_dir: path.resolve(__dirname, '../../'),
-    css_path: isProduction ? path.resolve(__dirname, 'styles.css') : null
+    css_path: isProduction ? path.resolve(__dirname, 'styles.css') : null,
+    use_inner_html: true
   })
 }
 
@@ -82,7 +89,7 @@ const template = [
 if (process.platform === 'darwin') {
   // File menu
   template[0] = {
-    label: app.getName(),
+    label: packageJson.build.productName,
     submenu: [
       about,
       { type: 'separator' },

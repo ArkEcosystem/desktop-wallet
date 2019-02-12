@@ -110,6 +110,7 @@ export default {
 
   data: () => ({
     form: {
+      fee: 0,
       username: '',
       passphrase: '',
       walletPassword: ''
@@ -146,6 +147,13 @@ export default {
         this.submit()
       }
     })
+
+    // Set default fees with v1 compatibility
+    if (this.session_network.apiVersion === 1) {
+      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
+    } else {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -167,10 +175,6 @@ export default {
     },
 
     async submit () {
-      // v1 compatibility
-      if (this.session_network.apiVersion === 1) {
-        this.$set(this.form, 'fee', V1.fees[this.$options.transactionType])
-      }
       // Ensure that fee has value, even when the user has not interacted
       if (!this.form.fee) {
         this.$set(this.form, 'fee', this.$refs.fee.fee)

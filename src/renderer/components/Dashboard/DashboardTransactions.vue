@@ -3,11 +3,12 @@
     :has-short-id="true"
     :rows="lastTransactions"
     :is-dashboard="true"
+    :is-loading="isLoading"
   />
 </template>
 
 <script>
-import { uniqBy } from 'lodash'
+import { uniqBy, orderBy, flatten } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
 
@@ -22,12 +23,14 @@ export default {
     numberOfTransactions: {
       type: Number,
       required: false,
-      default: 10
+      default: 50
     }
   },
 
   data: () => ({
-    fetchedTransactions: []
+    fetchedTransactions: [],
+    previousWalletAddresses: [],
+    isLoading: false
   }),
 
   computed: {
@@ -48,7 +51,19 @@ export default {
   watch: {
     // This watcher would invoke the `fetch` after the `Synchronizer`
     wallets () {
-      this.fetchTransactions()
+      let hasNewWallet = false
+      for (const wallet of this.wallets) {
+        if (!this.previousWalletAddresses.includes(wallet.address)) {
+          hasNewWallet = true
+
+          break
+        }
+      }
+
+      if (hasNewWallet) {
+        this.updatePreviousWallets()
+        this.fetchTransactions(false)
+      }
     }
   },
 
@@ -57,31 +72,37 @@ export default {
   },
 
   methods: {
-    async fetchTransactions () {
+    async fetchTransactions (updatePreviousWallets = true) {
       if (!this.wallets.length) {
         return
       }
 
+      if (!this.fetchedTransactions.length) {
+        this.isLoading = true
+      }
+
+      if (updatePreviousWallets) {
+        this.updatePreviousWallets()
+      }
+
       try {
         const addresses = this.wallets.map(wallet => wallet.address)
-        const walletTransactions = await this.$client.fetchTransactionsForWallets(addresses)
-        for (const transactions of Object.values(walletTransactions)) {
-          this.$set(this, 'fetchedTransactions', uniqBy([
-            /*
-             * NOTE: The order of this 2 lines is VERY important:
-             * recent transactions should override older to have the up-to-date number of confirmations
-             */
-            ...transactions.slice(0, this.numberOfTransactions),
-            ...this.fetchedTransactions
-          ], 'id'))
-        }
+        const transactions = await this.$client.fetchTransactionsForWallets(addresses)
+        const ordered = orderBy(uniqBy(flatten(Object.values(transactions)), 'id'), 'timestamp', 'desc')
+        this.fetchedTransactions = ordered.slice(0, this.numberOfTransactions)
       } catch (error) {
         this.$logger.error(error)
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'transactions',
           msg: error.message
         }))
+      } finally {
+        this.isLoading = false
       }
+    },
+
+    updatePreviousWallets () {
+      this.previousWalletAddresses = this.wallets.map(wallet => wallet.address)
     }
   }
 }

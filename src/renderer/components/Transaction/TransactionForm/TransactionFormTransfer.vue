@@ -39,13 +39,14 @@
         :wallet-network="walletNetwork"
         class="flex-1 mr-3"
         @blur="ensureAvailableAmount"
+        @input="setSendAll(false, false)"
       />
 
       <InputSwitch
         v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
         :is-disabled="!canSendAll() || !currentWallet"
-        @change="onSendAll"
+        @change="setSendAll"
       />
     </div>
 
@@ -137,7 +138,7 @@
 
 <script>
 import { maxLength, required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_TYPES, V1 } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -183,6 +184,7 @@ export default {
     showEncryptLoader: false,
     showLedgerLoader: false,
     bip38Worker: null,
+    previousAmount: '',
     wallet: null,
     showConfirmSendAll: false
   }),
@@ -291,11 +293,9 @@ export default {
       }
     })
 
-    // Set default fees
-    // v1 compatibility
-    // TODO: Get static fee from the network, or allow better UI
+    // Set default fees with v1 compatibility
     if (this.walletNetwork.apiVersion === 1) {
-      this.form.fee = 0.1
+      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
     } else {
       this.form.fee = this.$refs.fee.fee
     }
@@ -313,13 +313,18 @@ export default {
       this.$set(this.form, 'fee', fee)
       this.ensureAvailableAmount()
     },
-
-    onSendAll (setActive) {
-      if (!setActive) {
-        this.isSendAllActive = setActive
-        this.ensureAvailableAmount()
-      } else {
+    setSendAll (isActive, setPreviousAmount = true) {
+      if (isActive) {
         this.confirmSendAll()
+        this.previousAmount = this.form['amount']
+      }
+      if (!isActive) {
+        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
+          this.$set(this.form, 'amount', this.previousAmount)
+        }
+        this.previousAmount = ''
+        this.isSendAllActive = isActive
+        this.ensureAvailableAmount()
       }
     },
 

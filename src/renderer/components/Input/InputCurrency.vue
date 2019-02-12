@@ -174,14 +174,14 @@ export default {
           if (this.maximumError) {
             return this.maximumError
           } else {
-            const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
+            const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
             return this.$t('INPUT_CURRENCY.ERROR.NOT_ENOUGH_AMOUNT', { amount })
           }
         } else if (!this.$v.model.isMoreThanMinimum) {
           if (this.minimumError) {
             return this.minimumError
           } else {
-            const amount = this.currency_format(this.maximumAmount, { currency: this.currency })
+            const amount = this.currency_format(this.minimumAmount, { currency: this.currency })
             return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
           }
         } else if (this.customError) {
@@ -196,6 +196,18 @@ export default {
       return this.checkAmount(this.inputValue)
         ? this.currency_format(parseFloat(this.inputValue), { currency: this.currency })
         : this.inputValue
+    },
+
+    /**
+     * When in doubt, the separator of the current locale may be used.
+     * An example is "9,999": is it 9.999 or is it 9999?
+     */
+    decimalSeparator () {
+      const example = this.currency_format(9.9, { currency: this.currency })
+      return example.match(/9(.)9/)[1]
+    },
+    thousandSeparator () {
+      return this.decimalSeparator === '.' ? ',' : '.'
     },
 
     isInvalid () {
@@ -233,19 +245,22 @@ export default {
 
   methods: {
     /**
-     * Checks that an amount, either a Number or String, is valid
+     * Checks that an amount, either a Number or String, is valid or it could
+     * be sanitized to a valid Number
      * @param {(Number|String)} amount
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^[0-9]+([,.][0-9]+)?$/)))
+      return !!(isNumber(amount) || (isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/)))
     },
     /**
-     * Emits the raw input value, as String, and the Number value
+     * Emits the raw input value (`raw`), as String, and the Number value (`input`)
      */
     emitInput (value) {
       this.$emit('raw', value)
-      this.$emit('input', parseFloat(value) || 0)
+
+      const numeric = value ? parseFloat(this.sanitizeNumeric(value)) : 0
+      this.$emit('input', numeric || 0)
     },
     focus () {
       this.$refs.input.focus()
@@ -259,19 +274,81 @@ export default {
       this.$v.model.$touch()
       this.$emit('focus')
     },
+    /**
+     * Parses a numeric value (Number o String) and returns it as a String, but
+     * keeping the same format that a float would use (e.g: 12.12 instead of 12,12).
+     * It is able to recognize that 9,999 is 9999, but 1,1 is 1.1.
+     * @param {(Number|String)}
+     * @return String
+     */
+    sanitizeNumeric (value) {
+      let numeric = value.toString()
+      let includesThousandSeparator = numeric.includes(this.thousandSeparator)
+
+      // On tiny numbers with exponential notation (1e-8), use their exponent as the number of decimals
+      if (numeric.includes('e-')) {
+        return Number(numeric)
+          .toFixed(numeric.toString()
+            .split('-')[1])
+      } else {
+        if (numeric.startsWith('.')) {
+          numeric = `0${numeric}`
+        } else if (numeric.startsWith(',')) {
+          numeric = `0.${numeric.slice(1)}`
+          // The separator has been modified
+          includesThousandSeparator = false
+        }
+
+        const dot = numeric.includes('.')
+        const colon = numeric.includes(',')
+
+        if (dot && colon) {
+          numeric = numeric.replace(/,/g, '.')
+        // If only includes 1 kind of ambiguous separator, convert it to '.'
+        } if (dot || colon) {
+          numeric = numeric.replace(/[.,]+/, '.')
+        }
+
+        // These characters are always thousand separators
+        const nonAmbiguousSeparators = /[ _]/g
+        let hasNonAmbiguosAndDecimalSeparators = false
+
+        if (numeric.match(nonAmbiguousSeparators)) {
+          numeric = numeric.replace(nonAmbiguousSeparators, '')
+          // So, if there is other separator, it is for the decimals
+          if (dot || colon) {
+            hasNonAmbiguosAndDecimalSeparators = true
+          }
+        }
+
+        const digits = numeric.split('.')
+
+        if (digits.length === 1) {
+          return digits[0]
+        } else {
+          const last = digits.slice(-1)[0]
+
+          // Cases like "1 000,001" should be treated like 1000.001 independently of the locale
+          if (last.length === 3 && includesThousandSeparator && !hasNonAmbiguosAndDecimalSeparators) {
+            return `${digits.slice(0, -1).join('')}${last}`
+          } else {
+            return `${digits.slice(0, -1).join('')}.${last}`
+          }
+        }
+      }
+    },
     /*
      * Establishes the "internal" value (`inputValue`) of the component
      * @param {(String|Number)} value
+     * @return Boolean
      */
     updateInputValue (value) {
       if (value === '') {
         this.inputValue = ''
         return true
       } else if (value && this.checkAmount(value)) {
-        let number = Number(value.toString().replace(',', '.'))
-        number.toString().includes('-')
-          ? this.inputValue = number.toFixed(number.toString().split('-')[1]) // Small numbers will be like 1e-7 so we use the number after '-' for toFixed()
-          : this.inputValue = value.toString().replace(',', '.')
+        this.inputValue = this.sanitizeNumeric(value)
+
         // Inform Vuelidate that the value changed
         this.$v.model.$touch()
         return true

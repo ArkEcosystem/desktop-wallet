@@ -1,8 +1,7 @@
 {
   "private": true,
   "name": "ark-desktop-wallet",
-  "productName": "Ark Desktop Wallet",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
@@ -47,7 +46,7 @@
     "test:unit:watch": "jest --config __tests__/unit.jest.conf.js --watch"
   },
   "dependencies": {
-    "@arkecosystem/client": "^0.1.16",
+    "@arkecosystem/client": "^0.1.20",
     "@arkecosystem/crypto": "^0.2.5",
     "@arkecosystem/ledger-transport": "^0.1.0",
     "@babel/runtime": "^7.2.0",
@@ -159,6 +158,7 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "build": {
+    "productName": "Ark Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
     "compression": "maximum",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",

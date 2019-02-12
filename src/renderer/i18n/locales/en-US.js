@@ -1,5 +1,6 @@
 export default {
   COMMON: {
+    ADDRESS: 'Address',
     ALL: 'All',
     APP_NAME: 'ARK Desktop Wallet',
     APPEARANCE: 'Appearance',
@@ -15,7 +16,10 @@ export default {
     FETCH: 'Fetch',
     FINISH: 'Finish',
     LANGUAGE: 'Application Language',
+    LEDGER: 'Ledger',
+    LEDGER_WALLET: 'This is a Ledger wallet',
     NETWORK: 'Network',
+    NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
     NOT: 'not',
     OF: 'of',
@@ -34,7 +38,8 @@ export default {
 
   ANNOUNCEMENTS: {
     LATEST_NEWS: 'Latest News',
-    READ_MORE: 'Read more'
+    READ_MORE: 'Read more',
+    ALL_READ: 'Mark all as read'
   },
 
   INTRODUCTION: {
@@ -119,6 +124,7 @@ export default {
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
+    INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
@@ -140,6 +146,9 @@ export default {
     ADDRESS: {
       EXISTS_AS_CONTACT: 'The address \'{0}\' has already been added as a contact',
       EXISTS_AS_WALLET: 'The address \'{0}\' has already been imported as a wallet'
+    },
+    PUBLIC_KEY: {
+      INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -183,7 +192,9 @@ export default {
     PAGE: 'Page',
     ROWS_PER_PAGE: 'Rows per page',
     NO_TRANSACTIONS: 'No transactions have been found. The latest transactions will be displayed here.',
-    NO_DELEGATES: 'No delegates to be shown.'
+    NO_CONTACTS: 'No contacts to be shown.',
+    NO_DELEGATES: 'No delegates to be shown.',
+    NO_WALLETS: 'No wallets to be shown.'
   },
 
   APP: {
@@ -257,19 +268,19 @@ export default {
 
   BUTTON_CLIPBOARD: {
     DONE: 'Copied!',
-    COPY_TO_CLIPBOARD: 'Copy to clipboard',
+    COPY_TO_CLIPBOARD: 'Copy {0} to clipboard',
     NOT_SUPPORTED: 'Copying to clipboard is not supported'
   },
 
   INPUT_ADDRESS: {
     ERROR: {
       NOT_VALID: 'The address is not valid',
-      REQUIRED: 'The address is required',
-      NEO_ADDRESS: 'This looks like a NEO address'
+      REQUIRED: 'The address is required'
     },
+    KNOWN_ADDRESS: 'This wallet is known as "{address}"',
     LABEL: 'Address',
-    QR: 'Scan the QR code',
-    KNOWN_ADDRESS: 'This wallet is known as "{address}"'
+    NEO_ADDRESS: 'There is a NEO address like this',
+    QR: 'Scan the QR code'
   },
 
   INPUT_CURRENCY: {
@@ -417,28 +428,23 @@ export default {
       CREATE_CONTACT: 'Create contact',
       IMPORT_CONTACT: 'Import contact',
       DELETE_CONTACT: 'Delete this contact',
+      INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
     },
 
     CONTACT_NEW: {
-      STEP1: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Address',
-          TEXT: 'Enter the address of your contact.'
-        },
-        TITLE: '1. Enter address',
-        ADDRESS: 'Contact address'
+      INSTRUCTIONS: {
+        HEADER: 'New contact',
+        TEXT: 'Enter the address of your contact. You will be able to view its transactions'
       },
-      STEP2: {
-        INSTRUCTIONS: {
-          HEADER: 'New contact - Name',
-          TEXT: 'Optionally, choose a name for you contact and you are done.'
-        },
-        TITLE: '2. Confirmation',
-        NAME: 'Contact name (optional)'
-      },
-      FAILED: 'Failed to create contact'
+      TITLE: 'Enter contact address',
+      ADDRESS: 'Address',
+      NAME: 'Contact name (optional)',
+      NAME_INFO: 'Info.:',
+      NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
+      FAILED: 'Failed to create contact',
+      SUCCESS: '\'{0}\' has been added to your contacts'
     },
 
     DASHBOARD: {
@@ -451,10 +457,11 @@ export default {
 
     NETWORK_OVERVIEW: {
       INSTRUCTIONS: {
-        HEADER: 'Network Selection',
+        HEADER: 'Manage networks',
         TEXT: 'Select and edit any of the available networks, or add new ones.'
       },
       CREATE_NEW: 'Add a new network',
+      CREATE_NEW_DESCRIPTION: 'Individual settings for your network',
       NEW_NETWORK: 'New network'
     },
 
@@ -540,17 +547,22 @@ export default {
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import wallet',
-      LOADING_LEDGER: 'Loading Ledger Wallets...',
+      LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
       CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+      ADDRESS: 'Address',
+      NAME: 'Name',
+      VOTING_FOR: 'Voting for',
+      BALANCE: 'Balance',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Wallet recovery',
+          HEADER: 'Import wallet',
           TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
         TITLE: '1. Import wallet',
@@ -694,7 +706,8 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcast to the network'
+      BROADCASTING: 'Your transaction is being broadcast to the network',
+      BROADCASTING_SLOW: 'It looks like it\'s taking a while to broadcast your transaction. You may close the window and it will continue to send in the background.'
     },
     SUCCESS: {
       TRANSFER: 'Your transaction was sent successfully',
@@ -764,13 +777,15 @@ export default {
     PUBLIC_KEY: 'Public key',
     SIGNATURE: 'Signature',
     JSON_MESSAGE: 'Signed message content',
-    FORMAT_FOOTER: 'Format (JSON): { "publickey": "...", "signature": "...", "message": "..." }',
+    FORMAT_FOOTER: 'Format (JSON): { "publicKey": "...", "signature": "...", "message": "..." }',
     VERIFIED: 'The message is verified successfully',
     NOT_VERIFIED: 'The message is NOT verified',
     CONFIRMATION: 'Confirmation',
     DELETE: 'Delete message',
     FAILED_SIGN: 'Could not sign message',
-    FAILED_VERIFY: 'Could not verify message'
+    FAILED_VERIFY: 'Could not verify message',
+    SUCCESSFULL_SIGN: 'Your message was signed',
+    SUCCESSFULL_VERIFY: 'The message was verified'
   },
 
   SYNCHRONIZER: {
@@ -796,6 +811,7 @@ export default {
   WALLET_HEADING: {
     ACTIONS: {
       WALLET_NAME: 'Wallet name',
+      CONTACT_NAME: 'Contact name',
       REGISTER_DELEGATE: 'Register delegate',
       SECOND_PASSPHRASE: '2nd passphrase',
       DELETE_WALLET: 'Delete wallet',
@@ -812,6 +828,9 @@ export default {
   },
 
   WALLET_SIDEBAR: {
+    FILTER: 'Filter',
+    HIDE: 'Hide',
+    EXPAND: 'Expand',
     LOADING_LEDGER: 'Loading Ledger...'
   },
 
@@ -841,13 +860,22 @@ export default {
   },
 
   WALLET_RENAME: {
-    TITLE: 'Rename Wallet',
+    TITLE: 'Rename wallet',
     TITLE_ADD: 'Add wallet',
     NEW: 'New wallet name',
     ADD: 'Add wallet',
     RENAME: 'Rename wallet',
     ADDRESS_INFO: 'Set a name for this wallet: ',
     ERROR_LEDGER: 'Could not rename ledger wallet: {error}'
+  },
+
+  CONTACT_RENAME: {
+    TITLE: 'Rename contact',
+    TITLE_ADD: 'Add contact',
+    NEW: 'New contact name',
+    ADD: 'Add contact',
+    RENAME: 'Rename contact',
+    ADDRESS_INFO: 'Set a name for this contact: '
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
@@ -861,5 +889,12 @@ export default {
     SENDER: 'Sender',
     AMOUNT: 'Amount',
     NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+  },
+
+  WALLET_TABLE: {
+    ACTIONS: 'Actions',
+    DELETE: 'Delete',
+    NO_DELETE: 'Ledger wallets cannot be deleted',
+    RENAME: 'Rename'
   }
 }

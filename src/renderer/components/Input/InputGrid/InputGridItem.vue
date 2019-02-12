@@ -1,7 +1,6 @@
 <template>
   <div
     :style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
-    :title="title"
     :class="{ 'InputGridItem--selected': isSelected }"
     class="InputGridItem relative bg-cover bg-no-repeat bg-center rounded-full w-16 h-16 cursor-pointer transition text-center hover:opacity-75"
   >
@@ -90,7 +89,8 @@ export default {
 
   computed: {
     currentNetwork () {
-      return this.session_network
+      // To avoid failing after removing the current and last profile
+      return this.$store.getters['session/profile'] ? this.session_network : null
     },
 
     label () {

@@ -25,54 +25,44 @@
         }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
-        <button
-          v-if="profile.avatar"
-          :style="`backgroundImage: url('${assets_loadImage(profile.avatar)}')`"
-          class="profile-avatar-xl background-image flex cursor-pointer self-center"
-          @click="selectProfile(profile.id)"
-        />
-        <ButtonLetter
-          v-else
-          :value="profile.name"
-          size="2xl"
-          class="profile-avatar-xl mx-auto"
+        <ProfileAvatar
+          :profile="profile"
+          letter-size="2xl"
           @click="selectProfile(profile.id)"
         />
 
         <div class="flex flex-col justify-between">
-          <div>
-            <div class="ProfileAll__grid__profile__name font-semibold flex text-lg pl-4">
+          <div class="pl-1">
+            <div class="ProfileAll__grid__profile__name font-semibold flex text-lg">
               {{ profile.name | truncate(12) }}
             </div>
 
-            <span class="font-bold my-2 text-lg pl-4">
+            <span class="font-bold my-2 text-lg">
               {{ profileBalance(profile) }}
             </span>
-          </div>
 
-          <div>
             <RouterLink
               :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
-              class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs pl-4 mt-2 mb-1"
+              class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs mt-2 mb-1"
             >
               {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
             </RouterLink>
 
             <button
-              class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer pl-4 text-theme-page-text-light hover:underline hover:text-red"
+              class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer text-theme-page-text-light hover:underline hover:text-red"
               @click="openRemovalConfirmation(profile)"
             >
               {{ $t('PAGES.PROFILE_ALL.REMOVE_PROFILE') }}
             </button>
-
-            <a
-              v-show="profile.id !== session_profile.id"
-              class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-4 hover:underline mt-4"
-              @click="selectProfile(profile.id)"
-            >
-              {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
-            </a>
           </div>
+
+          <a
+            v-show="profile.id !== session_profile.id"
+            class="ProfileAll__grid__profile__select font-semibold flex text-xs cursor-pointer pl-1 hover:underline mt-4"
+            @click="selectProfile(profile.id)"
+          >
+            {{ $t('PAGES.PROFILE_ALL.SELECT_PROFILE') }}
+          </a>
         </div>
       </div>
     </div>
@@ -87,16 +77,15 @@
 </template>
 
 <script>
-import { ButtonLetter } from '@/components/Button'
 import { mapValues, uniqBy } from 'lodash'
 import { mapGetters } from 'vuex'
-import { ProfileRemovalConfirmation } from '@/components/Profile'
+import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
 
 export default {
   name: 'ProfileAll',
 
   components: {
-    ButtonLetter,
+    ProfileAvatar,
     ProfileRemovalConfirmation
   },
 
@@ -167,13 +156,6 @@ export default {
 
     onRemoval () {
       this.hideRemovalConfirmation()
-
-      if (this.profiles.length) {
-        this.$store.dispatch('session/setProfileId', this.profiles[0].id)
-      } else {
-        this.$store.dispatch('session/reset')
-        this.$router.push({ name: 'profile-new' })
-      }
     },
 
     openRemovalConfirmation (profile) {
@@ -201,16 +183,32 @@ export default {
   grid-gap: 1rem;
 }
 .ProfileAll__grid__profile {
-  @apply .p-4 .border-transparent .border-2 .rounded-lg;
+  @apply .p-3 .border-transparent .border-2 .rounded-lg;
 }
-.ProfileAll__grid__profile:hover .profile-avatar-xl {
+.ProfileAll__grid__profile:hover .profile-avatar-xl,
+.ProfileAll__grid__profile:hover .ProfileAvatar__image,
+.ProfileAll__grid__profile:hover .ProfileAvatar__letter {
   transition: 0.5s;
   opacity: 0.5;
 }
 .ProfileAll__grid__profile--selected {
-  @apply .border-green .border-2 .rounded-lg;
+  @apply .border-green;
 }
 .ProfileAll__grid__profile__name {
   width: var(--profile-avatar-xl);
 }
-</style>
+
+.ProfileAll .ProfileAvatar {
+  @apply .flex
+}
+.ProfileAll .ProfileAvatar,
+.ProfileAll .ProfileAvatar__image {
+  height: calc(var(--profile-avatar-xl) * 0.66);
+  width: calc(var(--profile-avatar-xl) * 0.66);
+}
+.ProfileAll .ProfileAvatar__image {
+  @apply .flex .cursor-pointer .self-center;
+}
+.ProfileAll .ProfileAvatar__letter {
+  @apply .mx-auto .self-center
+} </style>

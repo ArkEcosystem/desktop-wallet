@@ -2,7 +2,7 @@
   <div class="WalletButton__import">
     <RouterLink
       :to="{ name: 'wallet-import' }"
-      class="font-bold"
+      class="font-bold text-center"
     >
       <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
         <SvgIcon

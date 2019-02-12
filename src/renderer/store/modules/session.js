@@ -13,6 +13,9 @@ export default {
     name: null,
     profileId: null,
     theme: null,
+    walletLayout: null,
+    walletSortParams: null,
+    contactSortParams: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
     broadcastPeers: null,
@@ -32,7 +35,7 @@ export default {
       return rootGetters['profile/byId'](state.profileId)
     },
     network (state, getters, __, rootGetters) {
-      if (!state.profileId) {
+      if (!getters['profile']) {
         return
       }
 
@@ -50,10 +53,14 @@ export default {
     timeFormat: state => state.timeFormat,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
+    walletLayout: state => state.walletLayout,
+    walletSortParams: state => state.walletSortParams,
+    contactSortParams: state => state.contactSortParams,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasDarkTheme: state => state.theme === 'dark',
+    hasWalletGridLayout: state => state.walletLayout === 'grid',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
     broadcastPeers: state => state.broadcastPeers,
@@ -102,6 +109,18 @@ export default {
       state.theme = theme
     },
 
+    SET_WALLET_LAYOUT (state, walletLayout) {
+      state.walletLayout = walletLayout
+    },
+
+    SET_WALLET_TABLE_SORT_PARAMS (state, walletSortParams) {
+      state.walletSortParams = walletSortParams
+    },
+
+    SET_CONTACT_TABLE_SORT_PARAMS (state, contactSortParams) {
+      state.contactSortParams = contactSortParams
+    },
+
     SET_CONTENT_PROTECTION (state, protection) {
       state.contentProtection = protection
     },
@@ -132,6 +151,9 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.walletLayout = 'grid'
+      state.walletSortParams = { field: 'balance', type: 'desc' }
+      state.contactSortParams = { field: 'name', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.contentProtection = true
@@ -154,6 +176,9 @@ export default {
       dispatch('setLanguage', profile.language)
       dispatch('setBip39Language', profile.bip39Language)
       dispatch('setTheme', profile.theme)
+      dispatch('setWalletLayout', profile.walletLayout)
+      dispatch('setWalletSortParams', profile.walletSortParams)
+      dispatch('setContactSortParams', profile.contactSortParams)
       dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
       dispatch('setBroadcastPeers', profile.broadcastPeers)
       dispatch('setLedgerCache', profile.ledgerCache)
@@ -222,6 +247,18 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setWalletLayout ({ commit }, value) {
+      commit('SET_WALLET_LAYOUT', value)
+    },
+
+    setWalletSortParams ({ commit }, value) {
+      commit('SET_WALLET_TABLE_SORT_PARAMS', value)
+    },
+
+    setContactSortParams ({ commit }, value) {
+      commit('SET_CONTACT_TABLE_SORT_PARAMS', value)
     },
 
     setTransactionTableRowCount ({ commit }, value) {

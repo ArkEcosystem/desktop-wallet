@@ -89,6 +89,7 @@ let colors = {
 
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
+  'theme-heading-text': 'var(--theme-heading-text)',
 
   'theme-button-special-choice': 'var(--theme-button-special-choice)',
 
@@ -576,6 +577,7 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '18': '4.5rem', // Added
+    '20': '5.0rem', // Added
     '22': '5.5rem', // Added
     '24': '6rem',
     '30': '7rem', // Added
@@ -630,6 +632,7 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '18': '4.5rem', // Added
+    '20': '5.0rem', // Added
     '24': '6rem',
     '30': '7rem', // Added
     '32': '8rem',

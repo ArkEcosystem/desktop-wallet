@@ -1,4 +1,5 @@
 import { findIndex, unionBy } from 'lodash'
+import eventBus from '@/plugins/event-bus'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 
@@ -143,6 +144,7 @@ export default {
     update ({ commit }, wallet) {
       const data = WalletModel.deserialize(wallet)
       commit('UPDATE', data)
+      eventBus.emit('wallet:wallet-updated', wallet)
 
       return data
     },
