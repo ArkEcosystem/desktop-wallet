@@ -81,7 +81,7 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import { TransactionModal } from '@/components/Transaction'
+import TransactionModal from '@/components/Transaction/TransactionModal'
 import TableWrapper from '@/components/utils/TableWrapper'
 import { orderBy } from 'lodash'
 

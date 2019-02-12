@@ -2,6 +2,7 @@
   <Component
     :is="activeComponent"
     v-bind="$attrs"
+    @cancel="emitCancel"
     @next="emitBuilt"
   />
 </template>
@@ -49,6 +50,10 @@ export default {
   methods: {
     emitBuilt (transaction) {
       this.$emit('built', transaction)
+    },
+
+    emitCancel () {
+      this.$emit('cancel')
     }
   }
 }
