@@ -140,7 +140,7 @@ export default {
     alternativeBalance () {
       let balance = this.currentWallet ? this.currentWallet.balance : null
 
-      if (balance === null) {
+      if (!balance) {
         balance = this.lazyWallet.balance || 0
       }
 
@@ -153,7 +153,7 @@ export default {
     balance () {
       let balance = this.currentWallet ? this.currentWallet.balance : null
 
-      if (balance === null) {
+      if (!balance) {
         balance = this.lazyWallet.balance || 0
       }
 
