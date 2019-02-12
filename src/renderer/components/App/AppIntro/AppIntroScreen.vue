@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row w-full h-full">
-    <div class="AppIntroScreen__container__left w-1/2 flex-1 animated fadeIn rounded-lg">
+    <div class="AppIntroScreen__container__left flex-1 animated fadeIn rounded-lg">
       <div
         v-if="showLogo"
         class="AppIntroScreen__container__left__logo"
@@ -8,7 +8,7 @@
         <img
           :src="assets_loadImage('ark-logo.png')"
           class="h-full"
-        />
+        >
       </div>
       <div
         :class="showLogo ? 'h-3/5 w-3/5 flex ' : 'h-full w-full'"
@@ -17,16 +17,17 @@
         <img
           :class="showLogo ? 'h-3/5 w-3/5' : 'h-full w-full'"
           :src="assets_loadImage(image)"
-        />
+        >
       </div>
     </div>
 
-    <div class="AppIntroScreen__container__right w-1/2 flex-1 flex-col justify-center h-full w-full ml-4 bg-theme-feature rounded-lg">
-      <div class="animated fadeIn">
-        <slot name="content" />
-      </div>
+    <div class="AppIntroScreen__container__right flex-1 flex-col align-center justify-center h-full w-full ml-4 bg-theme-feature rounded-lg">
+      <slot name="content" />
 
-      <slot name="buttons">
+      <slot
+        v-if="showBack || showNext || showSkip"
+        name="buttons"
+      >
         <div class="flex items-center justify-start">
           <div class="absolute m-8 pin-b pin-r">
             <ButtonGeneric
