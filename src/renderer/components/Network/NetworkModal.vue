@@ -212,6 +212,8 @@ import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
+import cryptoCompare from '@/services/crypto-compare'
+
 const requiredIfFull = requiredIf(function () { return this.showFull })
 
 export default {
@@ -491,17 +493,19 @@ export default {
         // TODO: currently it's just default values
         wif: '170',
         slip44: '1',
-        activeDelegates: '51',
-        ticker: ''
+        activeDelegates: '51'
       }
 
       const fetchAndFill = async (version, callback = null) => {
         const network = await ClientService.fetchNetworkConfig(this.form.server, version)
 
         if (network) {
+          const tokenFound = await cryptoCompare.checkTradeable(network.token)
+
           this.form = {
             ...network,
             ...prefilled,
+            ticker: tokenFound ? network.token : '',
             version: network.version.toString()
           }
 
