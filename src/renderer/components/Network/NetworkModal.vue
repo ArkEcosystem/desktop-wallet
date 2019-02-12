@@ -494,37 +494,35 @@ export default {
         activeDelegates: '51',
         ticker: ''
       }
-      try {
-        // v2 network
-        const networkConfig = await ClientService.fetchNetworkConfig(this.form.server, 2)
-        if (networkConfig) {
+
+      const fetchAndFill = async (version, callback = null) => {
+        const network = await ClientService.fetchNetworkConfig(this.form.server, version)
+
+        if (network) {
           this.form = {
-            ...networkConfig,
+            ...network,
             ...prefilled,
-            version: networkConfig.version.toString(),
-            epoch: networkConfig.constants.epoch
+            version: network.version.toString()
           }
 
-          this.apiVersion = 2
+          this.apiVersion = version
           this.showFull = true
           this.hasFetched = true
+
+          if (callback) {
+            callback(network)
+          }
         }
+      }
+
+      // Try V2 first and fallback to V1
+      try {
+        await fetchAndFill(2, network => {
+          this.form.epoch = network.constants.epoch
+        })
       } catch (v2Error) {
         try {
-          // v1 network fallback
-          const networkConfig = await ClientService.fetchNetworkConfig(this.form.server, 1)
-          // Populate form with response data
-          if (networkConfig) {
-            this.form = {
-              ...networkConfig,
-              ...prefilled,
-              version: networkConfig.version.toString()
-            }
-
-            this.apiVersion = 1
-            this.showFull = true
-            this.hasFetched = true
-          }
+          await fetchAndFill(1)
         } catch (v1Error) {
           this.$error(this.$t('MODAL_NETWORK.FAILED_FETCH'))
         }
