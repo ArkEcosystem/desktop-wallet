@@ -120,7 +120,7 @@ export default {
 
   computed: {
     background () {
-      return this.$store.getters['session/background'] || 'wallpapers/1Default.png'
+      return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length
