@@ -1,7 +1,7 @@
 <template>
   <div
     :style="`backgroundImage: url('${assets_loadImage(defaultBackground)}')`"
-    class="px-20 py-16 w-screen h-screen relative"
+    class="AppWelcome px-20 py-16 w-screen h-screen relative"
   >
     <div
       class="bg-white w-full h-full animated fadeIn rounded-lg"

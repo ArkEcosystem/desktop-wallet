@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <div class="AppIntroScreen flex items-center">
     <div
       :key="selection + 'image'"
       class="w-1/3 xl:w-1/2 flex items-center justify-center animated fadeIn"
@@ -127,19 +127,19 @@
           <ButtonGeneric
             :disabled="isFirst"
             :label="$t('COMMON.BACK')"
-            class="ml-4 mr-0"
+            class="AppIntroScreen__back ml-4 mr-0"
             @click="emitBack"
           />
           <ButtonGeneric
             v-if="!isLast"
             :label="$t('COMMON.NEXT')"
-            class="ml-4"
+            class="AppIntroScreen__next ml-4"
             @click="emitNext"
           />
           <ButtonGeneric
             v-else
             :label="$t('COMMON.FINISH')"
-            class="ml-4"
+            class="AppIntroScreen__finish ml-4"
             @click="emitDone"
           />
         </div>

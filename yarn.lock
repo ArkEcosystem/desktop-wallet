@@ -10423,6 +10423,11 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
+temp-dir@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
+  integrity sha1-CnwOom06Oa+n4OvqnB/AvE2qAR0=
+
 temp-file@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/temp-file/-/temp-file-3.3.2.tgz#69b6daf1bbe23231d0a5d03844e3d96f3f531aaa"
@@ -10431,6 +10436,14 @@ temp-file@^3.3.2:
     async-exit-hook "^2.0.1"
     bluebird-lst "^1.0.6"
     fs-extra-p "^7.0.0"
+
+tempy@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tempy/-/tempy-0.2.1.tgz#9038e4dbd1c201b74472214179bc2c6f7776e54c"
+  integrity sha512-LB83o9bfZGrntdqPuRdanIVCPReam9SOZKW0fOy5I9X3A854GGWi0tjCqoXEk84XIEYBc/x9Hq3EFop/H5wJaw==
+  dependencies:
+    temp-dir "^1.0.0"
+    unique-string "^1.0.0"
 
 term-size@^1.2.0:
   version "1.2.0"
