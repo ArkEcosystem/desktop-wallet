@@ -210,6 +210,7 @@ export default {
         return
       }
 
+      this.lazyWallet = {}
       this.lazyWallet = await this.$client.fetchWallet(this.currentWallet.address)
     }
   }
