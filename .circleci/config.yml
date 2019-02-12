@@ -15,7 +15,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install packages
-          command: yarn global add node-gyp && yarn install
+          command: yarn global add node-gyp && yarn install && npm rebuild
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
