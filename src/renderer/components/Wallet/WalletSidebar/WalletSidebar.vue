@@ -136,62 +136,68 @@
     </MenuNavigationItem>
 
     <!-- List of actual wallets -->
-    <div
+    <TransitionGroup
       :class="{ 'opacity-0': isResizing }"
       class="WalletSidebar__container"
+      name="WalletSidebar__container"
+      tag="div"
     >
-      <MenuNavigationItem
+      <!-- This element is necessary for the transition group -->
+      <div
         v-for="wallet in selectableWallets"
-        :id="wallet.id"
         :key="wallet.id"
-        class="WalletSidebar__wallet"
       >
-        <div
-          slot-scope="{ isActive }"
-          :class="{ 'flex flex-row': isExpanded }"
-          class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
+        <MenuNavigationItem
+          :id="wallet.id"
+          class="WalletSidebar__wallet"
         >
-          <WalletIdenticon
-            :size="50"
-            :value="wallet.address"
-            class="WalletSidebar__wallet__identicon flex-no-shrink"
-          />
           <div
-            :class="{
-              'text-theme-page-text': isActive,
-              'text-theme-page-text-light': !isActive,
-              'pt-2': !isExpanded,
-              'pl-2': isExpanded
-            }"
-            class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
+            slot-scope="{ isActive }"
+            :class="{ 'flex flex-row': isExpanded }"
+            class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
           >
-            <span
-              class="flex items-center"
-              :class="{ 'justify-center': !isExpanded }"
+            <WalletIdenticon
+              :size="50"
+              :value="wallet.address"
+              class="WalletSidebar__wallet__identicon flex-no-shrink"
+            />
+            <div
+              :class="{
+                'text-theme-page-text': isActive,
+                'text-theme-page-text-light': !isActive,
+                'pt-2': !isExpanded,
+                'pl-2': isExpanded
+              }"
+              class="WalletSidebar__wallet__info flex flex-col font-semibold overflow-hidden"
             >
-              <span class="block truncate">
-                {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, !isExpanded ? 6 : (wallet.isLedger ? 12 : 24)) }}
+              <span
+                class="flex items-center"
+                :class="{ 'justify-center': !isExpanded }"
+              >
+                <span class="block truncate">
+                  {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, !isExpanded ? 6 : (wallet.isLedger ? 12 : 24)) }}
+                </span>
+                <span
+                  v-if="wallet.isLedger"
+                  v-tooltip="!isExpanded ? $t('COMMON.LEDGER_WALLET') : ''"
+                  :class="{ 'w-5': !isExpanded }"
+                  class="ledger-badge"
+                >
+                  {{ !isExpanded ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
+                </span>
               </span>
               <span
-                v-if="wallet.isLedger"
-                v-tooltip="!isExpanded ? $t('COMMON.LEDGER_WALLET') : ''"
-                :class="{ 'w-5': !isExpanded }"
-                class="ledger-badge"
+                v-if="isExpanded"
+                class="font-bold mt-2 text-xl"
               >
-                {{ !isExpanded ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
+                {{ formatter_networkCurrency(wallet.balance, 2) }}
+                <!-- TODO display a +/- n ARK on recent transactions -->
               </span>
-            </span>
-            <span
-              v-if="isExpanded"
-              class="font-bold mt-2 text-xl"
-            >
-              {{ formatter_networkCurrency(wallet.balance, 2) }}
-              <!-- TODO display a +/- n ARK on recent transactions -->
-            </span>
+            </div>
           </div>
-        </div>
-      </MenuNavigationItem>
-    </div>
+        </MenuNavigationItem>
+      </div>
+    </TransitionGroup>
   </MenuNavigation>
 </template>
 
@@ -427,9 +433,6 @@ export default {
   transition: width 0.1s ease-out;
   @apply .overflow-y-auto
 }
-.WalletSidebar__container {
-  transition: opacity 0.1s;
-}
 .WalletSidebar__menu {
   border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
   @apply .sticky .z-10 .bg-theme-feature .pin-t
@@ -471,5 +474,12 @@ export default {
   width: 40px;
   height: 40px;
   transform: scaleY(-1) scaleX(-1)
+}
+
+.WalletSidebar__container {
+  transition: opacity 0.5s;
+}
+.WalletSidebar__container-move {
+  transition: transform 0.3s;
 }
 </style>
