@@ -22,35 +22,42 @@
     </div>
 
     <div class="AppIntroScreen__container__right flex-1 flex-col align-center justify-center h-full w-full ml-4 bg-theme-feature rounded-lg">
-      <slot name="content" />
-
-      <slot
-        v-if="showBack || showNext || showSkip"
-        name="buttons"
+      <div
+        class="flex flex-col items-center h-full w-full animated fadeIn font-medium"
+        :class="showFooter ? 'justify-between' : 'justify-center'"
       >
-        <div class="flex items-center justify-start">
-          <div class="absolute m-8 pin-b pin-r">
-            <ButtonGeneric
-              v-if="showBack"
-              :label="$t('COMMON.BACK')"
-              class="ml-4 mr-0"
-              @click="emitBack"
-            />
-            <ButtonGeneric
-              v-if="showNext"
-              :label="$t('COMMON.NEXT')"
-              class="ml-4"
-              @click="emitNext"
-            />
-            <ButtonGeneric
-              v-if="showSkip"
-              :label="$t('COMMON.SKIP')"
-              class="ml-4"
-              @click="emitSkip"
-            />
+        <slot name="content" />
+
+        <slot
+          v-if="showFooter"
+          name="buttons"
+        >
+          <div class="flex flex-row w-full justify-between px-16 pb-16 sm:px-10 sm:pb-10" >
+            <div class="">
+              <ButtonGeneric
+                v-if="showBack"
+                :label="$t('COMMON.BACK')"
+                class="mr-0"
+                @click="emitBack"
+              />
+              <ButtonGeneric
+                v-if="showNext"
+                :label="$t('COMMON.NEXT')"
+                class="ml-2"
+                @click="emitNext"
+              />
+            </div>
+            <div class="">
+              <ButtonGeneric
+                v-if="showSkip"
+                :label="$t('COMMON.SKIP')"
+                class="AppIntroScreen__container__right__skip"
+                @click="emitSkip"
+              />
+            </div>
           </div>
-        </div>
-      </slot>
+        </slot>
+      </div>
     </div>
   </div>
 </template>
@@ -92,6 +99,12 @@ export default {
     }
   },
 
+  computed: {
+    showFooter () {
+      return this.showBack || this.showNext || this.showSkip
+    }
+  },
+
   methods: {
     emitBack () {
       this.$emit('back')
@@ -121,5 +134,9 @@ export default {
 .AppIntroScreen__container__left__logo {
   background-color: #c9292c;
   @apply .absolute .h-18 .w-18 .px-3 .py-4 .rounded-tl-lg .rounded-br-lg
+}
+
+.AppIntroScreen__container__right__skip {
+  @apply .bg-transparent
 }
 </style>

@@ -46,7 +46,7 @@ export default {
 
   INTRODUCTION: {
     WELCOME: {
-      TITLE: 'Welcome to {app}',
+      TITLE: 'Welcome to {APP}',
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
       FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay close attention to these warnings.'
     },
@@ -59,27 +59,23 @@ export default {
     },
     DUTY: {
       TITLE: 'Your Duty',
-      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
+      CONTROL: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
       OWNER: 'This also brings greater responsibility for you, the account owner.',
       WARNING: {
-        INFO: 'Unlike your traditional bank account, {warn}',
-        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
+        ACCOUNT: 'Unlike your traditional bank account, {CANNOT_RESTORE}',
+        CANNOT_RESTORE: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
     RESPONSIBILITY: {
       TITLE: 'Your Responsibility',
-      STORAGE: {
-        INFO: 'The {passphrase} of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an {encrypted} as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. You will need the passphrase.',
-        PASSPHRASE: 'passphrase',
-        ENCRYPTED: 'encrypted password'
-      },
+      STORAGE: 'The passphrase of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an encrypted password as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. You will need the passphrase.',
       BACKUP: 'Always backup your passphrase and keep it in a safe place. You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.',
-      PASSPHRASE: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
+      REMEMBER: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
     },
     TURN: {
       TITLE: 'Your Turn',
-      WALLET: 'Now armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
+      KNOWLEDGE: 'Now, armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
       SUPPORT: 'ARK is an open-source ecosystem and if you need assistance, the ARK community and team is here to help. Create a post on reddit.ark.io, or join the real-time chat system at slack.ark.io.',
       CONCLUSION: 'Everyone here on the ARK.io team hopes you enjoy using the ARK Desktop Wallet to participate in the blockchain revolution!'
     }

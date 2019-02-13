@@ -16,84 +16,78 @@
       >
         <div
           slot="content"
-          class="flex flex-col justify-center items-center h-full w-full animated fadeIn"
+          class="w-2/3 font-medium"
         >
-          <div
-            class="w-2/3 font-medium"
+          <i18n
+            path="INTRODUCTION.WELCOME.TITLE"
+            tag="div"
+            class="font-bold mb-4"
           >
-            <i18n
-              path="INTRODUCTION.WELCOME.TITLE"
-              tag="div"
-              class="font-bold font-xl mb-4"
+            <p
+              place="APP"
+              class="font-black text-3xl"
             >
-              <p
-                place="app"
-                class="font-black text-3xl"
-              >
-                {{ $t('COMMON.APP_NAME_SHORT') }}
-              </p>
-            </i18n>
-
-            <p>
-              {{ $t('INTRODUCTION.WELCOME.SAFETY_MESSAGE') }}
+              {{ $t('COMMON.APP_NAME_SHORT') }}
             </p>
+          </i18n>
+          <p>
+            {{ $t('INTRODUCTION.WELCOME.SAFETY_MESSAGE') }}
+          </p>
+          <p class="mt-2">
+            {{ $t('INTRODUCTION.WELCOME.FUNDS_WARNING') }}
+          </p>
 
-            <p class="mt-2">
-              {{ $t('INTRODUCTION.WELCOME.FUNDS_WARNING') }}
-            </p>
-
-            <div
-              class="flex flex-row align-center justify-center mt-8"
+          <div
+            class="flex flex-row align-center justify-center mt-8"
+          >
+            <MenuDropdown
+              :items="languages"
+              :value="language"
+              :position="['-50%', '0%']"
+              class="AppIntro__1__languages flex align-center justify-center p-2 text-grey-dark"
+              @select="selectLanguage"
             >
-              <MenuDropdown
-                :items="languages"
-                :value="language"
-                :position="['-50%', '0%']"
-                class="AppIntro__1__languages flex align-center justify-center p-2 text-grey-dark"
-                @select="selectLanguage"
+              <div
+                slot="item"
+                slot-scope="itemScope"
+                class="flex flex-row space-between"
               >
-                <div
-                  slot="item"
-                  slot-scope="itemScope"
-                  class="flex flex-row space-between"
+                <img
+                  :src="flagImage(itemScope.value)"
+                  :title="itemScope.item"
+                  class="AppIntro__1__languages__item__flag mr-2"
+                >
+                <span class="font-semibold">
+                  {{ itemScope.item }}
+                </span>
+              </div>
+
+              <div
+                slot="handler"
+                slot-scope="handlerScope"
+              >
+                <MenuDropdownHandler
+                  :value="handlerScope.activeValue"
+                  :item="handlerScope.item"
+                  :placeholder="handlerScope.placeholder"
+                  :prefix="handlerScope.prefix"
+                  :icon-disabled="handlerScope.isOnlySelectedItem"
                 >
                   <img
-                    :src="flagImage(itemScope.value)"
-                    :title="itemScope.item"
-                    class="AppIntro__1__languages__item__flag mr-2"
+                    :src="flagImage(handlerScope.value)"
+                    :title="handlerScope.item"
+                    class="AppIntro__1__languages__handler__flag mr-1"
                   >
-                  <span class="font-semibold">
-                    {{ itemScope.item }}
-                  </span>
-                </div>
+                  {{ handlerScope.item }}
+                </MenuDropdownHandler>
+              </div>
+            </MenuDropdown>
 
-                <div
-                  slot="handler"
-                  slot-scope="handlerScope"
-                >
-                  <MenuDropdownHandler
-                    :value="handlerScope.activeValue"
-                    :item="handlerScope.item"
-                    :placeholder="handlerScope.placeholder"
-                    :prefix="handlerScope.prefix"
-                    :icon-disabled="handlerScope.isOnlySelectedItem"
-                  >
-                    <img
-                      :src="flagImage(handlerScope.value)"
-                      :title="handlerScope.item"
-                      class="AppIntro__1__languages__handler__flag mr-1"
-                    >
-                    {{ handlerScope.item }}
-                  </MenuDropdownHandler>
-                </div>
-              </MenuDropdown>
-
-              <ButtonGeneric
-                :label="$t('COMMON.START')"
-                class="ml-4"
-                @click="moveTo(1)"
-              />
-            </div>
+            <ButtonGeneric
+              :label="$t('COMMON.START')"
+              class="ml-4"
+              @click="moveTo(1)"
+            />
           </div>
         </div>
       </AppIntroScreen>
@@ -105,15 +99,26 @@
         @next="moveTo(2)"
         @skip="done"
       >
-        <i18n
+        <div
           slot="content"
-          path="INTRODUCTION.PAGE_TITLE"
-          tag="span"
+          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
-          <strong place="page">
+          <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.POWER.TITLE') }}
-          </strong>
-        </i18n>
+          </div>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.POWER.FINANCE') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.POWER.BANKS') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.POWER.CRYPTO') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.POWER.RESPONSIBILITY') }}
+          </p>
+        </div>
       </AppIntroScreen>
 
       <AppIntroScreen
@@ -123,15 +128,32 @@
         @next="moveTo(3)"
         @skip="done"
       >
-        <i18n
+        <div
           slot="content"
-          path="INTRODUCTION.PAGE_TITLE"
-          tag="span"
+          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
-          <strong place="page">
+          <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.DUTY.TITLE') }}
-          </strong>
-        </i18n>
+          </div>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.DUTY.CONTROL') }}
+          </p>
+          <i18n
+            path="INTRODUCTION.DUTY.WARNING.ACCOUNT"
+            tag="p"
+            class="mb-5"
+          >
+            <span
+              place="CANNOT_RESTORE"
+              class="underline"
+            >
+              {{ $t('INTRODUCTION.DUTY.WARNING.CANNOT_RESTORE') }}
+            </span>
+          </i18n>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.DUTY.SECURITY') }}
+          </p>
+        </div>
       </AppIntroScreen>
 
       <AppIntroScreen
@@ -141,15 +163,23 @@
         @next="moveTo(4)"
         @skip="done"
       >
-        <i18n
+        <div
           slot="content"
-          path="INTRODUCTION.PAGE_TITLE"
-          tag="span"
+          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
-          <strong place="page">
+          <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
-          </strong>
-        </i18n>
+          </div>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.RESPONSIBILITY.REMEMBER') }}
+          </p>
+        </div>
       </AppIntroScreen>
 
       <AppIntroScreen
@@ -159,15 +189,23 @@
         @next="done"
         @skip="done"
       >
-        <i18n
+        <div
           slot="content"
-          path="INTRODUCTION.PAGE_TITLE"
-          tag="span"
+          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
-          <strong place="page">
+          <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.TURN.TITLE') }}
-          </strong>
-        </i18n>
+          </div>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.TURN.KNOWLEDGE') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.TURN.SUPPORT') }}
+          </p>
+          <p class="mb-5">
+            {{ $t('INTRODUCTION.TURN.CONCLUSION') }}
+          </p>
+        </div>
       </AppIntroScreen>
     </div>
 
