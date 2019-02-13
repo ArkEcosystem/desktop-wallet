@@ -66,13 +66,13 @@ describe('Mixins > Currency', () => {
       it('should display the symbol currency of the current network', () => {
         const amount = 1.00035
 
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('×\xA01.00035')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1.00035')
       })
 
       it('should use the i18n locale', () => {
         const amount = Math.pow(10, 4) + 1e-8
 
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('×\xA010,000.00000001')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
 
         // NOTE: this is not going to work when tested on Node (https://github.com/nodejs/node/issues/8818)
         // although this assertion would work on browsers
@@ -87,7 +87,7 @@ describe('Mixins > Currency', () => {
 
         wrapper.vm.$store.getters['session/currency'] = 'BTC'
 
-        expect(format(amount, { currencyFrom: 'session' })).toEqual('Ƀ\xA010,000.00001')
+        expect(format(amount, { currencyFrom: 'session' })).toEqual('Ƀ 10,000.00001')
 
         wrapper.vm.$store.getters['session/currency'] = 'EUR'
 
@@ -99,7 +99,7 @@ describe('Mixins > Currency', () => {
       it('should use the symbol of that currency', () => {
         const amount = Math.pow(10, 5) + Math.pow(10, -5)
 
-        expect(format(amount, { currency: 'BTC' })).toEqual('Ƀ\xA0100,000.00001')
+        expect(format(amount, { currency: 'BTC' })).toEqual('Ƀ 100,000.00001')
         expect(format(amount, { currency: 'EUR' })).toEqual('€100,000.00')
       })
 
@@ -113,13 +113,13 @@ describe('Mixins > Currency', () => {
         it('should admit it is the current network currency', () => {
           const amount = Math.pow(10, 5) + Math.pow(10, -5)
 
-          expect(format(amount, { currency: 'NET' })).toEqual('×\xA0100,000.00001')
+          expect(format(amount, { currency: 'NET' })).toEqual('× 100,000.00001')
         })
 
         it('should admit it is from any known network', () => {
           const amount = Math.pow(10, 5) + Math.pow(10, -5)
 
-          expect(format(amount, { currency: 'TOK' })).toEqual('t\xA0100,000.00001')
+          expect(format(amount, { currency: 'TOK' })).toEqual('t 100,000.00001')
         })
       })
     })
@@ -128,7 +128,7 @@ describe('Mixins > Currency', () => {
       it('should use it to display the currency', () => {
         const amount = 9835.387653
 
-        expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })).toEqual('NET\xA09,835.387653')
+        expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })).toEqual('NET 9,835.387653')
         expect(format(amount, { currency: 'EUR', currencyDisplay: 'symbol' })).toEqual('€9,835.39')
       })
     })
@@ -144,8 +144,8 @@ describe('Mixins > Currency', () => {
         it('should use it to display the currency, indepently of the `currencyDisplay` option', () => {
           const amount = 9835.387653
 
-          expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code', subunit: true })).toEqual('netoshi\xA0983,538,765,300.00')
-          expect(format(amount, { currency: 'NET', currencyDisplay: 'symbol', subunit: true })).toEqual('netoshi\xA0983,538,765,300.00')
+          expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code', subunit: true })).toEqual('netoshi 983,538,765,300.00')
+          expect(format(amount, { currency: 'NET', currencyDisplay: 'symbol', subunit: true })).toEqual('netoshi 983,538,765,300.00')
         })
       })
     })
@@ -153,11 +153,11 @@ describe('Mixins > Currency', () => {
     it('should work with big quantities', () => {
       let amount = Math.pow(10, 12) + 0.01
 
-      expect(format(amount, { currencyFrom: 'network' })).toEqual('×\xA01,000,000,000,000.01')
+      expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.00999424')
 
       amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
 
-      expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.00')
+      expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.44')
     })
   })
 

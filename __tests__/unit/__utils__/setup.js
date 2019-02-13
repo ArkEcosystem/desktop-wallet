@@ -6,6 +6,7 @@ import directives from '@/directives'
 import filters from '@/filters'
 
 require('babel-plugin-require-context-hook/register')()
+global.Intl = require('intl')
 
 HTMLCanvasElement.prototype.getContext = jest.fn()
 

@@ -87,7 +87,7 @@ export default {
       }
 
       return this.$n(value.toString(), config)
-        .replace(cryptoPlaceholder, cryptoCurrency)
+        .replace(cryptoPlaceholder, cryptoCurrency + ' ')
     },
 
     currency_simpleFormatCrypto (value, network) {
