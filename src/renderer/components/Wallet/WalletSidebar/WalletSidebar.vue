@@ -45,14 +45,13 @@
 
     <!-- Placeholder wallet -->
     <MenuNavigationItem
-      v-if="isExpanded && selectableWallets.length === 0"
+      v-if="isExpanded && !isLoadingLedger && selectableWallets.length === 0"
       id="placeholder"
       :is-disabled="true"
       class="WalletSidebar__wallet opacity-37.5 select-none"
     >
       <div
-        :class="{ 'flex flex-row': isExpanded }"
-        class="WalletSidebar__wallet__wrapper transition items-center w-full mx-6 py-6 truncate"
+        class="WalletSidebar__wallet__wrapper flex flex-row transition items-center w-full mx-6 py-6 truncate"
       >
         <WalletIdenticonPlaceholder
           :size="50"
@@ -64,10 +63,7 @@
           <span class="block truncate">
             {{ $t('PAGES.DASHBOARD.ADD_WALLET') }}
           </span>
-          <span
-            v-if="isExpanded"
-            class="font-bold mt-2 text-xl"
-          >
+          <span class="font-bold mt-2 text-xl">
             {{ formatter_networkCurrency(0, 2) }}
           </span>
         </div>

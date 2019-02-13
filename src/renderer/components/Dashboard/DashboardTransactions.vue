@@ -73,11 +73,12 @@ export default {
 
   methods: {
     async fetchTransactions (updatePreviousWallets = true) {
-      if (!this.fetchedTransactions.length) {
-        this.isLoading = true
-      }
       if (!this.wallets.length) {
         return
+      }
+
+      if (!this.fetchedTransactions.length) {
+        this.isLoading = true
       }
 
       if (updatePreviousWallets) {

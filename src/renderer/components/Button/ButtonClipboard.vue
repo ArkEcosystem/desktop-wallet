@@ -71,7 +71,7 @@ export default {
 
       this.isCopying = true
       setTimeout(() => (this.isCopying = false), 1000)
-      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')), 1500)
+      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])), 1500)
 
       try {
         document.execCommand('copy')
