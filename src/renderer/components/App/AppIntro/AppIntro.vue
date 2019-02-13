@@ -273,7 +273,7 @@ export default {
     },
     selectLanguage (language) {
       this.language = language
-      this.$store.dispatch('language', language)
+      this.$store.dispatch('session/setLanguage', language)
     }
   }
 }

@@ -32,7 +32,7 @@
           v-if="showFooter"
           name="buttons"
         >
-          <div class="flex flex-row w-full justify-between px-16 pb-16 sm:px-10 sm:pb-10" >
+          <div class="flex flex-row w-full justify-between px-16 pb-16 sm:px-10 sm:pb-10">
             <div class="">
               <ButtonGeneric
                 v-if="showBack"
