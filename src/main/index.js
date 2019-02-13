@@ -15,8 +15,7 @@ if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
 
-console.log(process.env.TEMP_USER_DATA)
-
+// To E2E tests
 if (process.env.TEMP_USER_DATA === 'true') {
   const tempy = require('tempy')
   const tempDirectory = tempy.directory()
