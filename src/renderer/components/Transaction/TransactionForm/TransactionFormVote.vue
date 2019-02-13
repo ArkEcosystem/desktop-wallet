@@ -6,10 +6,12 @@
       :is-open="!isPassphraseStep"
     >
       <ListDivided>
-        <ListDividedItem
-          :label="$t('INPUT_ADDRESS.LABEL')"
-          :value="delegate.address"
-        />
+        <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
+          <WalletAddress
+            :address="delegate.address"
+            @click="emitCancel"
+          />
+        </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
           :value="formatter_percentage(delegate.production.productivity)"
@@ -126,6 +128,7 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import TransactionService from '@/services/transaction'
 
 export default {
@@ -140,7 +143,8 @@ export default {
     ListDivided,
     ListDividedItem,
     ModalLoader,
-    PassphraseInput
+    PassphraseInput,
+    WalletAddress
   },
 
   props: {
@@ -331,6 +335,10 @@ export default {
         this.$refs.password.reset()
       }
       this.$v.$reset()
+    },
+
+    emitCancel () {
+      this.$emit('cancel')
     },
 
     emitNext (transaction) {
