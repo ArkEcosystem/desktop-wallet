@@ -38,7 +38,7 @@ Full translations are considered to be `Tier 3`, while grammar fixes, typos, etc
 <details><summary>Full translations should involve 5 tasks</summary>
 
  - Create a pull request for the language you are going to translate. If you have doubts about something, use English to explain them.
- - Translate the textual content of the application, using the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) as the reference. To do that, a new file, with the language locale code should be created. The name of the file should be a valid [RFC 5646](https://tools.ietf.org/html/rfc5646).
+ - Translate the textual content of the application, using the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) as the reference. To do that, a new file, with the language locale code should be created. The name of the file should be a valid [RFC 5646](https://tools.ietf.org/html/rfc5646) and should be located at `src/renderer/i18n/locales/LANGUAGE.js`. Thanks to [vue-i18n-extract](https://github.com/pixari/vue-i18n-extract), it is possible to execute `yarn i18n src/renderer/i18n/locales/LANGUAGE.js` to find suggestions of missing translations.
  - Add the language to the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) at the `LANGUAGES` key.
  - Update the [date and time formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/date-time-formats.js) to include the short and long format that are used commonly by native speakers.
  - Update the [number formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/number-formats.js) to include the preferred way of displaying currencies used commonly by native speakers.
@@ -124,6 +124,15 @@ yarn test:e2e
 
 # Build the application and run end-to-end tests
 yarn test:e2e:full
+
+# List what translations are missing or unused on a specific language. It could capture suggestions that are not accurate
+yarn i18n 'src/renderer/i18n/locales/LANGUAGE.js'
+
+# List what English messages are missing or unused (English is the default language)
+yarn i18n:en-US
+
+# List what translations are missing or unused on every language
+yarn i18n:all
 ```
 
 </details>
