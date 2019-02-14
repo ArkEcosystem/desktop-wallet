@@ -400,8 +400,11 @@ export default {
     })
   },
 
-  beforeDestroy () {
-    this.$store.dispatch('session/load')
+  beforeRouteLeave (to, from, next) {
+    if (this.isModified) {
+      this.$store.dispatch('session/load', this.profile.id)
+    }
+    next()
   },
 
   mounted () {
