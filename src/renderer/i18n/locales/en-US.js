@@ -645,6 +645,12 @@ export default {
     }
   },
 
+  PROFILE_LEAVING_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to ignore the changes done to this profile?',
+    NO: 'No, save them',
+    YES: 'Yes, ignore them'
+  },
+
   PROFILE_REMOVAL_CONFIRMATION: {
     NOTE: 'Although it would remove your wallets, it does not delete any data on the blockchain. You could recover the wallets as long as you have their passphrases',
     QUESTION: 'Are you sure you want to remove this profile?'
