@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { mapValues, sortBy, uniqBy } from 'lodash'
+import { map, mapValues, sortBy, uniqBy } from 'lodash'
 import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
 
 export default {
@@ -137,10 +137,14 @@ export default {
       for (const networkId in this.aggregatedBalances) {
         const network = this.$store.getters['network/byId'](networkId)
         const amount = this.currency_subToUnit(this.aggregatedBalances[networkId], network)
-        const balance = this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })
-        balances.push(balance)
+        const formatted = this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })
+        balances.push({
+          formatted,
+          amount: Number(amount)
+        })
       }
-      return balances
+      const sorted = sortBy(balances, ['amount', 'formatted'])
+      return map(sorted, 'formatted').reverse()
     }
   },
 
