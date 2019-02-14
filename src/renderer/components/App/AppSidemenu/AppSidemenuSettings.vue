@@ -129,6 +129,7 @@
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
         :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
         container-classes="max-w-md"
+        @close="toggleResetDataModal"
         @cancel="toggleResetDataModal"
         @continue="onResetData"
       />

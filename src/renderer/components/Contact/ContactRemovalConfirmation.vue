@@ -2,6 +2,7 @@
   <ModalConfirmation
     :question="$t('CONTACT_REMOVAL_CONFIRMATION.QUESTION')"
     container-classes="ContactRemovalConfirmation"
+    @close="emitCancel"
     @cancel="emitCancel"
     @continue="removeContact"
   >
