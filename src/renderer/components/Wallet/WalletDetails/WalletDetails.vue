@@ -30,16 +30,26 @@
         class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div
-          v-if="isLoadingVote"
+          v-if="!isAwaitingConfirmation && isLoadingVote"
           class="flex"
         >
-          {{ $t('WALLET_DELEGATES.LOADING_VOTE') }}
+          <span class="font-semibold">
+            {{ $t('WALLET_DELEGATES.LOADING_VOTE') }}
+          </span>
         </div>
         <div
-          v-else-if="isProcessing"
+          v-else-if="isAwaitingConfirmation"
           class="flex"
         >
-          {{ $t('WALLET_DELEGATES.PROCESSING_VOTE') }}
+          <i18n
+            tag="span"
+            class="font-semibold"
+            path="WALLET_DELEGATES.AWAITING_VOTE_CONFIRMATION"
+          >
+            <strong place="type">
+              {{ $t(`TRANSACTION.TYPE.${unconfirmedVote.publicKey.charAt(0) === '+' ? 'VOTE' : 'UNVOTE'}`) }}
+            </strong>
+          </i18n>
         </div>
         <div
           v-else-if="votedDelegate"
@@ -79,21 +89,23 @@
           </template>
         </div>
         <div
-          v-else-if="!(isOwned && votedDelegate)"
+          v-else-if="isOwned && !votedDelegate"
           class="flex"
         >
-          {{ $t('WALLET_DELEGATES.NO_VOTE') }}
+          <span class="font-semibold">
+            {{ $t('WALLET_DELEGATES.NO_VOTE') }}
+          </span>
         </div>
       </div>
       <div
-        v-if="votedDelegate && !isProcessing && !isLoadingVote"
+        v-if="votedDelegate && !isAwaitingConfirmation && !isLoadingVote"
         class="WalletDetails__vote__button"
         @click="openUnvote"
       >
         {{ $t('WALLET_DELEGATES.UNVOTE') }}
       </div>
       <div
-        v-else-if="!votedDelegate && !isProcessing && !isLoadingVote"
+        v-else-if="!votedDelegate && !isAwaitingConfirmation && !isLoadingVote"
         class="WalletDetails__vote__button"
         @click="openSelectDelegate"
       >
@@ -110,7 +122,6 @@
         :has-voted="!!votedDelegate"
         @cancel="onCancel"
         @close="onCancel"
-        @sending="onSending"
         @sent="onSent"
       />
 
@@ -170,7 +181,6 @@ export default {
       isVoting: false,
       isUnvoting: false,
       isSelecting: false,
-      isProcessing: false,
       isLoadingVote: true,
       votedDelegate: null,
       selectedDelegate: null
@@ -232,6 +242,16 @@ export default {
         ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
         ...this.$store.getters['ledger/wallets']
       ].some(wallet => wallet.address === this.currentWallet.address)
+    },
+
+    unconfirmedVote () {
+      return this.$store.getters['session/unconfirmedVotes'].find(vote => {
+        return vote.address === this.currentWallet.address
+      })
+    },
+
+    isAwaitingConfirmation () {
+      return !!this.unconfirmedVote
     }
   },
 
@@ -253,6 +273,9 @@ export default {
       this.$nextTick(() => {
         this.$refs.menutab.collectItems()
       })
+    },
+    async isAwaitingConfirmation () {
+      await this.fetchWalletVote()
     }
   },
 
@@ -260,12 +283,10 @@ export default {
     await this.$synchronizer.call('wallets')
     await this.fetchWalletVote()
     this.$eventBus.on('wallet:reload', this.fetchWalletVote)
-    this.$eventBus.on('transaction:new:vote', this.fetchWalletVote)
   },
 
   beforeDestroy () {
     this.$eventBus.off('wallet:reload', this.fetchWalletVote)
-    this.$eventBus.off('wallet:new:vote', this.fetchWalletVote)
   },
 
   mounted () {
@@ -288,8 +309,6 @@ export default {
     },
 
     async fetchWalletVote () {
-      this.isProcessing = false
-
       if (!this.currentWallet) {
         return
       }
@@ -360,19 +379,18 @@ export default {
       }
     },
 
-    onSending () {
-      this.isProcessing = true
-    },
-
-    onSent (success) {
+    onSent (success, transaction) {
       if (success) {
-        if (this.isUnvoting) {
-          this.walletVote.publicKey = null
-          this.votedDelegate = null
-        } else if (this.isVoting) {
-          this.walletVote.publicKey = this.selectedDelegate.publicKey
-          this.votedDelegate = this.selectedDelegate
-        }
+        const votes = [
+          ...this.$store.getters['session/unconfirmedVotes'],
+          {
+            id: transaction.id,
+            address: this.currentWallet.address,
+            publicKey: transaction.asset.votes[0]
+          }
+        ]
+
+        this.$store.dispatch('session/setUnconfirmedVotes', votes)
       }
 
       this.selectedDelegate = null

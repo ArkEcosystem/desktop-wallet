@@ -52,7 +52,7 @@
             <span>{{ data.formattedRow['username'] }}</span>
             <span
               v-if="data.row.publicKey === walletVote.publicKey"
-              class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none ml-3"
+              class="vote-badge"
             >
               {{ $t('WALLET_DELEGATES.VOTE') }}
             </span>
@@ -223,9 +223,6 @@ export default {
   top: 0;
   margin-bottom: auto;
   margin-top: 5px;
-}
-.WalletDelegates__vote-badge {
-  opacity: 0.85
 }
 </style>
 

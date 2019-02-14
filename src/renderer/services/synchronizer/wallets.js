@@ -184,6 +184,16 @@ class Action {
             this.displayNewTransaction(latest, wallet)
           }
         }
+
+        const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
+
+        if (votes.length) {
+          const ids = votes.map(vote => vote.id)
+
+          this.$dispatch('session/setUnconfirmedVotes',
+            this.$getters['session/unconfirmedVotes'].filter(vote => !ids.includes(vote.id))
+          )
+        }
       }
     } catch (error) {
       this.$logger.error(error)
@@ -238,7 +248,6 @@ class Action {
             publicKey: truncateMiddle(transaction.asset.votes[0].substring(1))
           }
         }
-        eventBus.emit(`transaction:new:vote`)
         break
       }
       default: {

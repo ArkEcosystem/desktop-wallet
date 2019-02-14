@@ -134,8 +134,6 @@ export default {
         nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
       }
 
-      this.emitSending()
-
       let responseArray
       let success = false
       try {
@@ -202,18 +200,14 @@ export default {
         this.$error(messages.error)
       } finally {
         this.showBroadcastingTransactions = false
-        this.emitSent(success)
+        this.emitSent(success, this.transaction)
       }
 
       this.emitClose()
     },
 
-    emitSending () {
-      this.$emit('sending')
-    },
-
-    emitSent (success) {
-      this.$emit('sent', success)
+    emitSent (success, transaction = null) {
+      this.$emit('sent', success, transaction)
     },
 
     emitCancel () {
