@@ -101,7 +101,7 @@
       >
         <div
           slot="content"
-          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
+          class="font-medium px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.POWER.TITLE') }}
@@ -130,7 +130,7 @@
       >
         <div
           slot="content"
-          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
+          class="font-medium px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.DUTY.TITLE') }}
@@ -164,7 +164,7 @@
       >
         <div
           slot="content"
-          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
+          class="font-medium px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
@@ -211,7 +211,7 @@
       >
         <div
           slot="content"
-          class="font-medium font-xl px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
+          class="font-medium px-16 pt-16 m4-8 sm:px-10 sm:pt-10"
         >
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.TURN.TITLE') }}
