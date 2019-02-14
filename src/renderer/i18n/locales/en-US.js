@@ -62,15 +62,23 @@ export default {
       CONTROL: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
       OWNER: 'This also brings greater responsibility for you, the account owner.',
       WARNING: {
-        ACCOUNT: 'Unlike your traditional bank account, {CANNOT_RESTORE}',
-        CANNOT_RESTORE: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
+        ACCOUNT: 'Unlike your traditional bank account, {CANNOT_RESTORE}.',
+        CANNOT_RESTORE: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
     RESPONSIBILITY: {
       TITLE: 'Your Responsibility',
-      STORAGE: 'The passphrase of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an encrypted password as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. You will need the passphrase.',
-      BACKUP: 'Always backup your passphrase and keep it in a safe place. You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.',
+      STORAGE: {
+        EXPLANATION: 'The {PASSPHRASE} of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an {ENCRYPTED} as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. {NEED}.',
+        PASSPHRASE: 'passphrase',
+        ENCRYPTED: 'encrypted password',
+        NEED: 'You will need the passphrase'
+      },
+      BACKUP: {
+        ALWAYS: 'Always backup your passphrase and keep it in a safe place.',
+        OPTIONS: 'You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.'
+      },
       REMEMBER: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
     },
     TURN: {

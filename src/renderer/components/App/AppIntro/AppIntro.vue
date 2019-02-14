@@ -144,13 +144,12 @@
             class="mb-5"
           >
             <span
+              v-t="'INTRODUCTION.DUTY.WARNING.CANNOT_RESTORE'"
               place="CANNOT_RESTORE"
               class="underline"
-            >
-              {{ $t('INTRODUCTION.DUTY.WARNING.CANNOT_RESTORE') }}
-            </span>
+            />
           </i18n>
-          <p class="mb-5">
+          <p class="mb-5 font-bold">
             {{ $t('INTRODUCTION.DUTY.SECURITY') }}
           </p>
         </div>
@@ -170,11 +169,32 @@
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
           </div>
-          <p class="mb-5">
-            {{ $t('INTRODUCTION.RESPONSIBILITY.STORAGE') }}
+          <i18n
+            path="INTRODUCTION.RESPONSIBILITY.STORAGE.EXPLANATION"
+            tag="p"
+            class="mb-5"
+          >
+            <span
+              v-t="'INTRODUCTION.RESPONSIBILITY.STORAGE.PASSPHRASE'"
+              place="PASSPHRASE"
+              class="font-bold"
+            />
+            <span
+              v-t="'INTRODUCTION.RESPONSIBILITY.STORAGE.ENCRYPTED'"
+              place="ENCRYPTED"
+              class="underline"
+            />
+            <span
+              v-t="'INTRODUCTION.RESPONSIBILITY.STORAGE.NEED'"
+              place="NEED"
+              class="font-bold"
+            />
+          </i18n>
+          <p class="mb-5 font-bold">
+            {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP.ALWAYS') }}
           </p>
           <p class="mb-5">
-            {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP') }}
+            {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP.OPTIONS') }}
           </p>
           <p class="mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.REMEMBER') }}
