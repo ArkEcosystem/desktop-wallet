@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row w-full h-full">
-    <div class="AppIntroScreen__container__left flex-1 animated fadeIn rounded-lg">
+    <div class="AppIntroScreen__container__left flex-1 animated fadeIn rounded-lg hidden lg:block">
       <div
         v-if="showLogo"
         class="AppIntroScreen__container__left__logo"
@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="AppIntroScreen__container__right flex-1 flex-col align-center justify-center h-full w-full ml-4 bg-theme-feature rounded-lg">
+    <div class="AppIntroScreen__container__right flex-1 flex-col align-center justify-center h-full w-full lg:ml-4 bg-theme-feature rounded-lg">
       <div
         class="flex flex-col items-center h-full w-full animated fadeIn font-medium"
         :class="showFooter ? 'justify-between' : 'justify-center'"
@@ -32,7 +32,7 @@
           v-if="showFooter"
           name="buttons"
         >
-          <div class="flex flex-row w-full justify-between px-16 pb-16 sm:px-10 sm:pb-10">
+          <div class="flex flex-row w-full justify-between px-16 pb-16">
             <div class="">
               <ButtonGeneric
                 v-if="showBack"
