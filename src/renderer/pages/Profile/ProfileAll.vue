@@ -77,8 +77,7 @@
 </template>
 
 <script>
-import { mapValues, uniqBy } from 'lodash'
-import { mapGetters } from 'vuex'
+import { mapValues, sortBy, uniqBy } from 'lodash'
 import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
 
 export default {
@@ -94,7 +93,10 @@ export default {
   }),
 
   computed: {
-    ...mapGetters({ profiles: 'profile/all' }),
+    profiles () {
+      return sortBy(this.$store.getters['profile/all'], ['name', 'networkId'])
+    },
+
     addProfileImagePath () {
       return 'pages/new-profile-avatar.svg'
     },
