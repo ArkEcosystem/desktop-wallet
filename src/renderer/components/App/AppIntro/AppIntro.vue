@@ -43,7 +43,7 @@
             <MenuDropdown
               :items="languages"
               :value="language"
-              :position="['-50%', '0%']"
+              :position="['-10%', '0%']"
               class="AppIntro__1__languages flex align-center justify-center p-2 text-grey-dark"
               @select="selectLanguage"
             >
@@ -305,6 +305,9 @@ export default {
 }
 .AppIntro__1__languages {
   @apply .border-2 .rounded
+}
+.AppIntro__1__languages .MenuDropdownItem__container {
+  @apply .pl-0
 }
 .AppIntro__1__languages__item__flag {
   height: 18px
