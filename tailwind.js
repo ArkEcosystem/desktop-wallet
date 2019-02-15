@@ -271,7 +271,9 @@ module.exports = {
   screens: {
     'sm': '576px',
     'md': '768px',
+    'max-md': { max: '991px' },
     'lg': '992px',
+    'minmax-lg': { min: '992px', max: '1199px' },
     'xl': '1200px',
     'xxl': '1375px'
   },
@@ -1007,7 +1009,7 @@ module.exports = {
     tracking: ['responsive'],
     userSelect: ['responsive'],
     verticalAlign: ['responsive'],
-    visibility: ['responsive'],
+    visibility: ['responsive', 'group-hover'],
     whitespace: ['responsive'],
     width: ['responsive'],
     zIndex: ['responsive']
