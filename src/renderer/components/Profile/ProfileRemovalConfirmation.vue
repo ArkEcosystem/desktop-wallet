@@ -3,6 +3,7 @@
     :question="$t('PROFILE_REMOVAL_CONFIRMATION.QUESTION')"
     :note="$t('PROFILE_REMOVAL_CONFIRMATION.NOTE')"
     container-classes="ProfileRemovalConfirmation"
+    @close="emitCancel"
     @cancel="emitCancel"
     @continue="removeProfile"
   >
@@ -89,8 +90,6 @@ export default {
 .ProfileRemovalConfirmation .ProfileAvatar__image {
   height: calc(var(--profile-avatar-xl) * 0.66);
   width: var(--profile-avatar-xl);
-}
-.ProfileRemovalConfirmation .ProfileAvatar__letter {
 }
 .ProfileRemovalConfirmation__container__arrow {
   width: 74px;
