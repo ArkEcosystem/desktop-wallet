@@ -180,7 +180,7 @@ export default {
         const { delegates, totalCount } = await this.$client.fetchDelegates({
           page,
           limit,
-          oderBy: `${sort.field.replace('production.', '')}:${sort.type}`
+          orderBy: `${sort.field.replace('production.', '')}:${sort.type}`
         })
 
         this.delegates = delegates
