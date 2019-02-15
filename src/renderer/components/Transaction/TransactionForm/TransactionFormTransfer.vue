@@ -122,6 +122,7 @@
       :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
       container-classes="SendAllConfirmation"
       portal-target="loading"
+      @close="emitCancelSendAll"
       @cancel="emitCancelSendAll"
       @continue="enableSendAll"
     />
