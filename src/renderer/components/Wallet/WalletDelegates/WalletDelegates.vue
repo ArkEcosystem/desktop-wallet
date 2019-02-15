@@ -81,7 +81,7 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import { TransactionModal } from '@/components/Transaction'
+import TransactionModal from '@/components/Transaction/TransactionModal'
 import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {
@@ -147,7 +147,7 @@ export default {
     },
 
     votingUrl () {
-      return 'https://docs.ark.io/cookbook/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
+      return 'https://docs.ark.io/tutorials/usage-guides/how-to-vote-in-the-ark-desktop-wallet.html'
     }
   },
 

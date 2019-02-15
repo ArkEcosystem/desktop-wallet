@@ -10,6 +10,7 @@
         v-bind="$attrs"
         :type="type"
         @built="onBuilt"
+        @cancel="emitCancel"
       />
     </KeepAlive>
 

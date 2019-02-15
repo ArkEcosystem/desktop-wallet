@@ -1,6 +1,6 @@
 <template>
-  <div class="ContactAll flex flex-col">
-    <div class="ContactAll__header flex flex-row space-between bg-theme-feature rounded-lg px-10 py-5 mb-3">
+  <div class="ContactAll">
+    <div class="ContactAll__heading px-10 py-5 mb-3">
       <div>
         <WalletIdenticonPlaceholder
           :size="60"
@@ -35,9 +35,9 @@
       </button>
     </div>
 
-    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10">
+    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
-        <div class="flex items-center justify-between h-8">
+        <div class="ContactAll__header">
           <h3 class=" items-center">
             {{ $t('PAGES.CONTACT_ALL.HEADER') }}
           </h3>
@@ -144,13 +144,13 @@
       v-if="contactToRename"
       :wallet="contactToRename"
       @cancel="hideRenameModal"
-      @renamed="hideRenameModal(contactToRename)"
+      @renamed="onContactRenamed"
     />
   </div>
 </template>
 
 <script>
-import { clone, some, sortBy } from 'lodash'
+import { clone, some } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
@@ -182,7 +182,7 @@ export default {
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      return sortBy(contacts, ['name', 'address'])
+      return this.wallet_sortByName(contacts)
     },
 
     hasWalletGridLayout () {
@@ -268,6 +268,11 @@ export default {
       this.openRenameModal(contact)
     },
 
+    onContactRenamed () {
+      this.hideRenameModal()
+      this.selectableContacts = this.contacts
+    },
+
     createContact () {
       this.$router.push({ name: 'contact-new' })
     },
@@ -284,8 +289,14 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.ContactAll {
+  @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
+}
+.ContactAll__heading {
+  @apply .flex .items-center .justify-between .bg-theme-feature .rounded-lg;
+}
 .ContactAll__header {
-  @apply .flex .items-center .justify-between;
+  @apply .flex .items-center .justify-between .h-8;
 }
 .ContactAll__grid {
   display: grid;

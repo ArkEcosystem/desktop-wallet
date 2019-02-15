@@ -9,13 +9,18 @@
       @click="buttonClick"
     >
       <slot
-        :value="entries[activeKey]"
+        :active-value="activeValue"
+        :value="activeValue"
+        :item="entries[activeValue]"
         :is-open="isOpen"
         :placeholder="placeholder"
+        :prefix="prefix"
+        :icon-disabled="isOnlySelectedItem"
         name="handler"
       >
         <MenuDropdownHandler
-          :value="entries[activeKey]"
+          :value="activeValue"
+          :item="entries[activeValue]"
           :placeholder="placeholder"
           :prefix="prefix"
           :icon-disabled="isOnlySelectedItem"
@@ -38,12 +43,18 @@
       >
         <slot>
           <MenuDropdownItem
-            v-for="(item, key) in entries"
-            :key="key"
-            :value="item.toString()"
-            :is-active="key === activeKey"
-            @click.self="select(key)"
-          />
+            v-for="(item, entryValue) in entries"
+            :key="entryValue"
+            :value="entryValue"
+            :item="item.toString()"
+            :is-active="entryValue === activeValue"
+            @click.self="select(entryValue)"
+          >
+            <slot
+              name="item"
+              v-bind="{ item, value: entryValue, activeValue }"
+            />
+          </MenuDropdownItem>
         </slot>
       </ul>
     </div>
@@ -113,7 +124,7 @@ export default {
 
   data: vm => ({
     isOpen: true,
-    activeKey: vm.value
+    activeValue: vm.value
   }),
 
   computed: {
@@ -130,7 +141,7 @@ export default {
       if (Object.keys(this.entries).length > 1) {
         return false
       }
-      if (Object.keys(this.entries).length === 1 && this.entries[this.activeKey] !== Object.values(this.entries)[0]) {
+      if (Object.keys(this.entries).length === 1 && this.entries[this.activeValue] !== Object.values(this.entries)[0]) {
         return false
       }
 
@@ -139,8 +150,8 @@ export default {
   },
 
   watch: {
-    value (val) {
-      this.activeKey = val
+    value (value) {
+      this.activeValue = value
     }
   },
 
@@ -150,7 +161,7 @@ export default {
 
   methods: {
     select (item) {
-      this.activeKey = item
+      this.activeValue = item
       this.isOpen = false
 
       this.$emit('select', item)
