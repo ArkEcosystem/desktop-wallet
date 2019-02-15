@@ -86,16 +86,6 @@
   --theme-voting-banner-button-text: #90a9c6;
   --theme-voting-banner-button-text-hover: #6785a9;
 
-  --theme-error: rgb(236, 27, 56);
-  --theme-error-shadow: rgba(236, 27, 56, 0.5);
-  --theme-success: rgb(59, 177, 92);
-  --theme-success-shadow: rgba(59, 177, 92, 0.5);
-  --theme-info: rgb(33, 153, 229);
-  --theme-info-shadow: rgba(33, 153, 229, 0.5);
-  --theme-warn: rgb(229, 167, 33);
-  --theme-warn-shadow: rgba(229, 167, 33, 0.5);
-  --theme-warn-text: rgb(176, 59, 18);
-
   --theme-fee-gradient-start: var(--theme-modal);
   --theme-fee-gradient-end: rgba(0,124,255,0.20);
   --theme-fee-handler-outside: var(--theme-button-text);
@@ -188,16 +178,6 @@
   --theme-voting-banner-button-text: #787fa3;
   --theme-voting-banner-button-text-hover: #787fa3;
 
-  --theme-error: rgb(236, 27, 56);
-  --theme-error-shadow: rgba(236, 27, 56, 0.5);
-  --theme-success: rgb(59, 177, 92);
-  --theme-success-shadow: rgba(59, 177, 92, 0.5);
-  --theme-info: rgb(33, 153, 229);
-  --theme-info-shadow: rgba(33, 153, 229, 0.5);
-  --theme-warn: rgb(229, 167, 33);
-  --theme-warn-shadow: rgba(229, 167, 33, 0.5);
-  --theme-warn-text: rgb(176, 59, 18);
-
   --theme-fee-gradient-start: var(--theme-modal);
   --theme-fee-gradient-end: rgba(0,124,255,0.20);
   --theme-fee-handler-outside: var(--theme-button-text);
@@ -209,4 +189,14 @@
 #app {
 	--theme-transaction-confirmations-received: var(--theme-transaction-received-arrow);
 	--theme-transaction-confirmations-sent: var(--theme-transaction-sent-arrow);
+
+  --theme-error: rgb(236, 27, 56);
+  --theme-error-shadow: rgba(236, 27, 56, 0.5);
+  --theme-success: rgb(59, 177, 92);
+  --theme-success-shadow: rgba(59, 177, 92, 0.5);
+  --theme-info: rgb(33, 153, 229);
+  --theme-info-shadow: rgba(33, 153, 229, 0.5);
+  --theme-warn: rgb(229, 167, 33);
+  --theme-warn-shadow: rgba(229, 167, 33, 0.5);
+  --theme-warn-text: rgb(176, 59, 18);
 }

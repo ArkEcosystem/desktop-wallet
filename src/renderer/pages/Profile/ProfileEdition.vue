@@ -244,6 +244,14 @@
         </MenuTab>
       </div>
     </main>
+
+    <ProfileLeavingConfirmation
+      v-if="routeLeaveCallback"
+      :profile="profile"
+      @close="onStopLeaving"
+      @ignore="onLeave(false)"
+      @save="onLeave(true)"
+    />
   </div>
 </template>
 
@@ -253,6 +261,7 @@ import { BIP39, I18N } from '@config'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
+import { ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
@@ -272,6 +281,7 @@ export default {
     MenuTabItem,
     MenuDropdown,
     MenuDropdownHandler,
+    ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
     SelectionTheme,
@@ -287,6 +297,7 @@ export default {
       currency: '',
       timeFormat: ''
     },
+    routeLeaveCallback: null,
     tab: 'profile'
   }),
 
@@ -400,8 +411,13 @@ export default {
     })
   },
 
-  beforeDestroy () {
-    this.$store.dispatch('session/load')
+  beforeRouteLeave (to, from, next) {
+    if (this.isModified) {
+      // Capture the callback to trigger it when user has decided to update or not the profile
+      this.routeLeaveCallback = next
+    } else {
+      next()
+    }
   },
 
   mounted () {
@@ -413,6 +429,20 @@ export default {
   },
 
   methods: {
+    onStopLeaving () {
+      this.routeLeaveCallback = null
+    },
+
+    async onLeave (hasToSave) {
+      if (hasToSave) {
+        await this.updateProfile()
+      } else {
+        this.$store.dispatch('session/load', this.session_profile.id)
+      }
+
+      this.routeLeaveCallback()
+    },
+
     flagImage (language) {
       return this.assets_loadImage(`flags/${language}.svg`)
     },
@@ -426,11 +456,15 @@ export default {
       }
     },
 
-    async save () {
+    async updateProfile () {
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
       })
+    },
+
+    async save () {
+      await this.updateProfile()
 
       this.$router.push({ name: 'profiles' })
     },
