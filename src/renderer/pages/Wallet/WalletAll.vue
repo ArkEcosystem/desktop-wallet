@@ -2,23 +2,25 @@
   <div class="WalletAll">
     <div class="WalletAll__heading px-8 py-6 mb-3">
       <div class="flex flex-row items-center">
-        <ProfileAvatar
-          :profile="session_profile"
-          letter-size="2xl"
-          class="relative"
-        >
-          <span
-            :class="{
-              'bg-theme-feature-item-selected text-theme-feature-item-selected-text ': session_profile.avatar,
-              'bg-theme-button text-theme-button-text': !session_profile.avatar
-            }"
-            class="WalletAll__avatar__sign"
-            name="point"
-            view-box="0 0 14 14"
+        <div class="hidden sm:block">
+          <ProfileAvatar
+            :profile="session_profile"
+            letter-size="2xl"
+            class="relative"
           >
-            {{ currentNetwork.symbol }}
-          </span>
-        </ProfileAvatar>
+            <span
+              :class="{
+                'bg-theme-feature-item-selected text-theme-feature-item-selected-text ': session_profile.avatar,
+                'bg-theme-button text-theme-button-text': !session_profile.avatar
+              }"
+              class="WalletAll__avatar__sign"
+              name="point"
+              view-box="0 0 14 14"
+            >
+              {{ currentNetwork.symbol }}
+            </span>
+          </ProfileAvatar>
+        </div>
         <div class="flex-col">
           <div>
             <h2 class="mb-2">
@@ -29,7 +31,7 @@
             </span>
           </div>
           <div>
-            <span class="text-2xl font-bold">
+            <span class="transition text-xl sm:text-2xl font-bold">
               {{ formatter_networkCurrency(totalBalance) }}
             </span>
             <span
@@ -101,11 +103,11 @@
 
         <div
           v-if="hasWalletGridLayout && !isLoading"
-          class="WalletAll__grid mt-10 justify-center"
+          class="WalletAll__grid mt-10"
         >
           <div
-            v-show="isLedgerLoading"
-            class="WalletAll__grid__wallet flex flex-col justify-center w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg border-theme-wallet-overview-border border-b border-r mb-3"
+            v-if="isLedgerLoading"
+            class="WalletAll__grid__wallet"
           >
             <Loader />
             <div class="text-center mt-4">
@@ -116,7 +118,7 @@
           <div
             v-for="wallet in selectableWallets"
             :key="wallet.id"
-            class="WalletAll__grid__wallet w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3 "
+            class="WalletAll__grid__wallet"
             @click="showWallet(wallet.id)"
           >
             <div class="WalletAll__grid__wallet__wrapper">
@@ -446,11 +448,30 @@ export default {
 }
 .WalletAll__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(var(--wallet-identicon-lg) * 3));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.WalletAll__grid__wallet {
+  @apply py-3 relative cursor-pointer;
+  transition: transform .2s ease-in-out;
+}
+.WalletAll__grid__wallet + .WalletAll__grid__wallet > .WalletAll__grid__wallet__wrapper  {
+  @apply border-l
+}
+.WalletAll__grid__wallet:hover {
+  @apply rounded-lg z-10;
+  transform: scale(1.02);
+  box-shadow: 0 5px 30px rgba(124,138,192,0.22);
+}
+.WalletAll__grid__wallet:not(:hover)::after {
+  @apply block absolute pin-x pin-b mx-auto border-b border-theme-line-separator;
+  content: " ";
+  width: 95%;
 }
 .WalletAll__grid__wallet__wrapper {
-  @apply .m-6
+  @apply px-5 py-2 border-theme-line-separator;
+}
+.WalletAll__grid__wallet__wrapper:hover {
+  @apply border-transparent
 }
 .WalletAll__grid__wallet:hover .identicon {
   opacity: 1;
@@ -461,10 +482,5 @@ export default {
 .WalletAll__grid__wallet .identicon {
   opacity: 0.5;
   transition: 0.5s;
-}
-@screen lg {
-  .WalletAll__grid__wallet__wrapper {
-    @apply .m-4
-  }
 }
 </style>
