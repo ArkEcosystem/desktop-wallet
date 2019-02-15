@@ -145,7 +145,7 @@ export default {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
       state.currency = MARKET.defaultCurrency
-      state.timeFormat = 'Default'
+      state.timeFormat = 'default'
       state.isMarketChartEnabled = true
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'

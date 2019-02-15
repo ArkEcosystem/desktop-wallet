@@ -248,7 +248,7 @@ export default {
     },
     timeFormat: {
       get () {
-        return this.$store.getters['session/timeFormat']
+        return this.$store.getters['session/timeFormat'] || 'Default'
       },
       set (timeFormat) {
         this.selectTimeFormat(timeFormat)
@@ -266,7 +266,7 @@ export default {
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
-        all[format] = this.$t(`TIME_FORMAT.${format}`)
+        all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`)
         return all
       }, {})
     },

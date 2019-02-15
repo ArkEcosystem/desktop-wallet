@@ -296,7 +296,7 @@ export default {
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
-        all[format] = this.$t(`TIME_FORMAT.${format}`)
+        all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`)
         return all
       }, {})
     },
