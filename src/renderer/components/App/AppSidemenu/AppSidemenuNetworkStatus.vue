@@ -2,7 +2,7 @@
   <div
     v-click-outside="emitClose"
     :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
-    class="absolute z-20"
+    class="absolute z-20 theme-dark"
   >
     <MenuOptions
       :is-horizontal="isHorizontal"
