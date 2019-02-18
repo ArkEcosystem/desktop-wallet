@@ -126,7 +126,22 @@ class PluginManager {
         }
 
         // Build component object inside vm2 to restrict access for methods
-        const renderedComponent = plugin.vm.run(
+        // TODO: Security checks against running from wallet root instead of plugin root.
+        //       Make sure additional files/packages aren't accessible.
+        const vm = new vm2.NodeVM({
+          sandbox: this.loadSandbox(plugin.config),
+          require: {
+            builtin: [],
+            context: 'sandbox',
+            external: [
+              path.resolve(plugin.fullPath, '/src/', componentPath),
+              'vue/dist/vue.common.js'
+            ],
+            root: path.resolve(__dirname, '../../../')
+          }
+        })
+
+        const renderedComponent = vm.run(
           `const Vue = require('vue/dist/vue.common.js')
           const component = require('./${componentPath}')
           const compiled = Vue.compile(component.template)
@@ -141,8 +156,7 @@ class PluginManager {
           }
           delete component.template
 
-          module.exports = component
-          `,
+          module.exports = component`,
           path.join(plugin.fullPath, 'src/vm-component.js')
         )
 
