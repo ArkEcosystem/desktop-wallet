@@ -21,6 +21,9 @@ import eventBus from '@/plugins/event-bus'
 import pluginManager from '@/plugins/plugin-manager'
 import synchronizer from '@/plugins/synchronizer'
 
+// Must be first to contain an empty Vue instance
+Vue.use(pluginManager)
+
 Vue.config.productionTip = false
 Vue.logger = Vue.prototype.$logger = logger
 Vue.prototype.$eventBus = eventBus
@@ -37,7 +40,6 @@ Vue.use(VTooltip, {
 Vue.use(alertEvents)
 Vue.use(apiClient)
 Vue.use(backgroundWorker)
-Vue.use(pluginManager)
 Vue.use(synchronizer)
 Vue.use(PortalVue)
 

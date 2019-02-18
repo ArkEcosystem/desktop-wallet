@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import pluginManager from '@/services/plugin-manager'
 
 export default {
   namespaced: true,
@@ -55,9 +56,7 @@ export default {
         return null
       }
 
-      const avatar = plugin.avatars.find(avatar => avatar.name === profile.avatar.avatarName)
-
-      return avatar ? { ...avatar } : null
+      return pluginManager.getAvatarComponents(profile.avatar.pluginId)[profile.avatar.avatarName]
     },
 
     avatars: (state, getters) => profileId => {
@@ -74,7 +73,13 @@ export default {
 
       const avatars = []
       for (const plugin of Object.values(loadedPlugins)) {
-        avatars.push(...plugin.avatars.map(avatar => ({ ...avatar, pluginId: plugin.config.id })))
+        for (const avatar of Object.entries(pluginManager.getAvatarComponents(plugin.config.id))) {
+          avatars.push({
+            component: avatar[1],
+            name: avatar[0],
+            pluginId: plugin.config.id
+          })
+        }
       }
 
       return avatars

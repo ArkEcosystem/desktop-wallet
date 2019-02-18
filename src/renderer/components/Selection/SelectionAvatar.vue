@@ -62,7 +62,7 @@ export default {
     },
 
     additional () {
-      return this.pluginAvatars.map(avatar => ({ ...avatar.component }))
+      return this.pluginAvatars
     },
 
     pluginAvatars () {
@@ -70,7 +70,7 @@ export default {
         return []
       }
 
-      return this.$store.getters['plugin/avatars'](this.profile.id).map(avatar => ({ component: avatar }))
+      return this.$store.getters['plugin/avatars'](this.profile.id)
     }
   }
 }
