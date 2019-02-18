@@ -46,7 +46,10 @@ class PluginManager {
       fs.readFileSync(path.join(plugin.fullPath, 'src/index.js')),
       path.join(plugin.fullPath, 'src/index.js')
     )
-    pluginObject.register()
+
+    if (pluginObject.hasOwnProperty('register')) {
+      await pluginObject.register()
+    }
 
     await this.app.$store.dispatch('plugin/setLoaded', {
       config: plugin.config,
