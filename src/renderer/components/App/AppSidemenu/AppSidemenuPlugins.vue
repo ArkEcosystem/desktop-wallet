@@ -7,20 +7,27 @@
     <MenuOptions
       :is-horizontal="isHorizontal"
       :is-settings="true"
+      :single-column="false"
       class="whitespace-no-wrap"
     >
-      <MenuOptionsItem
-        v-for="(menuItem, menuId) in pluginMenuItems"
-        :key="menuId"
-        :title="menuItem.title"
-        class="text-grey-light"
-        @click="navigateToRoute(menuItem.routeName)"
-      />
+      <div
+        v-for="(columnItems, columnId) in pluginMenuItems"
+        :key="columnId"
+      >
+        <MenuOptionsItem
+          v-for="(menuItem, menuId) in columnItems"
+          :key="menuId"
+          :title="menuItem.title"
+          class="text-grey-light"
+          @click="navigateToRoute(menuItem.routeName)"
+        />
+      </div>
     </MenuOptions>
   </div>
 </template>
 
 <script>
+import chunk from 'lodash/chunk'
 import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
 
 export default {
@@ -42,12 +49,18 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    itemsPerColumn: {
+      type: Number,
+      required: false,
+      default: 5
     }
   },
 
   computed: {
     pluginMenuItems () {
-      return this.$store.getters['plugin/menuItems']
+      return chunk(this.$store.getters['plugin/menuItems'], this.itemsPerColumn)
     }
   },
 
