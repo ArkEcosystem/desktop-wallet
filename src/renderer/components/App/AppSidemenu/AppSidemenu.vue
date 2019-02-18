@@ -126,8 +126,8 @@
           >
             <RouterLink
               :class="{
-                'h-12 w-12': session_profile.avatar && isHorizontal,
-                'h-18 w-18': session_profile.avatar && !isHorizontal
+                'h-12 w-12': hasStandardAvatar && isHorizontal,
+                'h-18 w-18': hasStandardAvatar && !isHorizontal
               }"
               :style="hasStandardAvatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
               :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
