@@ -21,9 +21,10 @@ export default {
         return moment(value).format(format)
       }
 
-      // Default = L LTS, 12h = L h:mm:ss, 24h = L HH:mm:ss
-      let defaultFormat = 'L LTS'
       const timeFormat = this.session_profile.timeFormat
+
+      // default = L LTS, 12h = L h:mm:ss, 24h = L HH:mm:ss
+      let defaultFormat = 'L LTS'
       if (timeFormat === '12h') {
         defaultFormat = 'L h:mm:ss A'
       } else if (timeFormat === '24h') {

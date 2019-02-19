@@ -3,6 +3,7 @@ export default {
     ADDRESS: 'Address',
     ALL: 'All',
     APP_NAME: 'ARK Desktop Wallet',
+    APP_NAME_SHORT: 'ARK Desktop',
     APPEARANCE: 'Appearance',
     AVATAR: 'Avatar',
     BACK: 'Back',
@@ -28,6 +29,7 @@ export default {
     PROFILE_NAME: 'Profile name',
     REMOVE: 'Remove',
     SAVE: 'Save',
+    SKIP: 'Skip',
     START: 'Start',
     THEME: 'Theme',
     TIME_FORMAT: 'Time format',
@@ -43,42 +45,45 @@ export default {
   },
 
   INTRODUCTION: {
-    PAGE_TITLE: 'Your {page}',
     WELCOME: {
-      TITLE: 'Welcome to the {app}',
+      TITLE: 'Welcome to {APP}',
       SAFETY_MESSAGE: 'Please take a few moments to read the next few screens for your own safety.',
       FUNDS_WARNING: 'Your funds could be unrecoverable if you do not pay close attention to these warnings.'
     },
     POWER: {
-      TITLE: 'Power',
+      TITLE: 'Your Power',
       FINANCE: 'The most important thing for users to know about cryptocurrencies is that they completely reverse the commonly-accepted model of how finance works.',
       BANKS: 'In traditional finance, you give up direct control of your money to a bank. Because banks have control over your money, they can take actions on your behalf, such as refunding transactions and resetting your login info.',
       CRYPTO: 'Cryptocurrencies take that power and give it to you directly. Using nothing more than your passphrase, you can control exactly when, where and how your money is kept and spent.',
       RESPONSIBILITY: 'However, in the words of Uncle Ben Parker, with great power comes great responsibility.'
     },
     DUTY: {
-      TITLE: 'Duty',
-      INTRO: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
+      TITLE: 'Your Duty',
+      CONTROL: 'The blockchain industry is built to be censorship resistant. That means no one controls your account but you. This design brings the peace of mind that no central authority can confiscate, freeze, or manipulate your funds at any time. There is also no central location for personal data or funds to be hacked.',
       OWNER: 'This also brings greater responsibility for you, the account owner.',
       WARNING: {
-        INFO: 'Unlike your traditional bank account, {warn}',
-        WARN: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else.'
+        ACCOUNT: 'Unlike your traditional bank account, {CANNOT_RESTORE}.',
+        CANNOT_RESTORE: 'lost passwords, passphrases or stolen funds cannot be restored by the delegates, ARK.io team, or anyone else'
       },
       SECURITY: 'The security of your account is solely up to you.'
     },
     RESPONSIBILITY: {
-      TITLE: 'Responsibility',
+      TITLE: 'Your Responsibility',
       STORAGE: {
-        INFO: 'The {passphrase} of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an {encrypted} as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. You will need the passphrase.',
+        EXPLANATION: 'The {PASSPHRASE} of each wallet address is able to sign transactions and move funds. This means if your computer dies but you have your passphrase, you can still access your funds. The ARK Desktop Wallet has an additional feature that lets you set an {ENCRYPTED} as well, for easier management. If your computer dies, you cannot use the encrypted password to access your funds from a different machine. {NEED}.',
         PASSPHRASE: 'passphrase',
-        ENCRYPTED: 'encrypted password'
+        ENCRYPTED: 'encrypted password',
+        NEED: 'You will need the passphrase'
       },
-      BACKUP: 'Always backup your passphrase and keep it in a safe place. You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.',
-      PASSPHRASE: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
+      BACKUP: {
+        ALWAYS: 'Always backup your passphrase and keep it in a safe place.',
+        OPTIONS: 'You can write it down on thick paper and store multiple copies in secure locations. You can also store it on an encrypted flash drive. Alternatively, you can use a Ledger Nano S USB hardware device, available at Ledger.com, to store and access your funds and the ARK Desktop Wallet. You can plug your Ledger Nano S into your computer and access the ARK blockchain without needing to enter your passphrase.'
+      },
+      REMEMBER: 'Remember, anyone who has your passphrase can access your funds. Never share your account with anyone and avoid storing it in locations that are susceptible to hacks, such as the Cloud.'
     },
     TURN: {
-      TITLE: 'Turn',
-      WALLET: 'Now armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
+      TITLE: 'Your Turn',
+      KNOWLEDGE: 'Now, armed with the knowledge of how important it is to keep your passphrases safe, you are ready to claim your financial autonomy with the ARK Desktop Wallet.',
       SUPPORT: 'ARK is an open-source ecosystem and if you need assistance, the ARK community and team is here to help. Create a post on reddit.ark.io, or join the real-time chat system at slack.ark.io.',
       CONCLUSION: 'Everyone here on the ARK.io team hopes you enjoy using the ARK Desktop Wallet to participate in the blockchain revolution!'
     }
@@ -164,9 +169,9 @@ export default {
   },
 
   TIME_FORMAT: {
-    'Default': 'Default',
-    '12h': '12h',
-    '24h': '24h'
+    'DEFAULT': 'Default',
+    '12H': '12h',
+    '24H': '24h'
   },
 
   BIP39_LANGUAGES: {
@@ -645,6 +650,12 @@ export default {
     }
   },
 
+  PROFILE_LEAVING_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to ignore the changes done to this profile?',
+    NO: 'No, save them',
+    YES: 'Yes, ignore them'
+  },
+
   PROFILE_REMOVAL_CONFIRMATION: {
     NOTE: 'Although it would remove your wallets, it does not delete any data on the blockchain. You could recover the wallets as long as you have their passphrases',
     QUESTION: 'Are you sure you want to remove this profile?'
@@ -831,7 +842,23 @@ export default {
     FILTER: 'Filter',
     HIDE: 'Hide',
     EXPAND: 'Expand',
-    LOADING_LEDGER: 'Loading Ledger...'
+    LOADING_LEDGER: 'Loading Ledger...',
+    FILTERS: {
+      HIDE_EMPTY_CONTACTS: 'Hide empty contacts',
+      HIDE_EMPTY_WALLETS: 'Hide empty wallets',
+      HIDE_LEDGER: 'Hide Ledger wallets'
+    },
+    SEARCH: {
+      PLACEHOLDER_CONTACTS: 'Click to filter your contacts',
+      PLACEHOLDER_WALLETS: 'Click to filter your wallets'
+    },
+    SORT: {
+      BALANCE_ASC: 'Balance (min to max)',
+      BALANCE_DESC: 'Balance (max to min)',
+      BY: 'Sort by',
+      NAME_ASC: 'Name (A to Z)',
+      NAME_DESC: 'Name (Z to A)'
+    }
   },
 
   WALLET_DELEGATES: {

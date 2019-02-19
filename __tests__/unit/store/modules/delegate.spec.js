@@ -91,7 +91,7 @@ describe('delegate store module', () => {
     })
 
     axiosMock
-      .onGet(`http://127.0.0.1/api/delegates`, { params: { offset: 0, limit: 51 } })
+      .onGet(`http://127.0.0.1/api/delegates`, { params: { offset: 0, limit: 51, orderBy: 'rank:asc' } })
       .reply(200, {
         totalCount: 2,
         delegates: v1DelegateData
@@ -103,7 +103,7 @@ describe('delegate store module', () => {
     ClientService.version = 2
 
     axiosMock
-      .onGet(`http://127.0.0.1/api/delegates`, { params: { page: 1, limit: 100 } })
+      .onGet(`http://127.0.0.1/api/delegates`, { params: { page: 1, limit: 100, orderBy: 'rank:asc' } })
       .reply(200, {
         data: v2DelegateData,
         meta: {
