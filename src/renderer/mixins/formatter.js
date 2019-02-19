@@ -14,23 +14,29 @@ export default {
       return this.$n(this.currency_subToUnit(value), { maximumFractionDigits: 2 })
     },
 
-    formatter_date (value, format) {
+    /**
+     * Formats a date:
+     *  - Default  => L LTS
+     *  - 12h      => L h:mm:ss
+     *  - 24h      => L HH:mm:ss
+     * @param {Date}
+     * @param {String} [format] - The specific format to use. If not provided, uses the session setting `timeFormat`
+     * @return {String}
+     */
+    formatter_date (value, format = null) {
       moment.locale(window.navigator.userLanguage || window.navigator.language)
-      // Simply return based on format if one is specified
-      if (format) {
-        return moment(value).format(format)
-      }
 
-      const timeFormat = this.session_profile.timeFormat
-
-      // default = L LTS, 12h = L h:mm:ss, 24h = L HH:mm:ss
-      let defaultFormat = 'L LTS'
-      if (timeFormat === '12h') {
-        defaultFormat = 'L h:mm:ss A'
-      } else if (timeFormat === '24h') {
-        defaultFormat = 'L HH:mm:ss'
+      if (!format) {
+        const sessionFormat = this.session_profile.timeFormat
+        if (sessionFormat === '12h') {
+          format = 'L h:mm:ss A'
+        } else if (sessionFormat === '24h') {
+          format = 'L HH:mm:ss'
+        } else {
+          format = 'L LTS'
+        }
       }
-      return moment(value).format(defaultFormat)
+      return moment(value).format(format)
     }
   }
 }
