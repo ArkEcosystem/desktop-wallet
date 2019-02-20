@@ -1,4 +1,4 @@
-import { difference } from 'lodash'
+import { clone, difference } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -189,10 +189,15 @@ class Action {
 
         if (votes.length) {
           const ids = votes.map(vote => vote.id)
+          const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
+            return !ids.includes(vote.id)
+          })
 
-          this.$dispatch('session/setUnconfirmedVotes',
-            this.$getters['session/unconfirmedVotes'].filter(vote => !ids.includes(vote.id))
-          )
+          this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
+
+          const profile = clone(this.$scope.session_profile)
+          profile.unconfirmedVotes = filteredVotes
+          this.$dispatch('profile/update', profile)
         }
       }
     } catch (error) {

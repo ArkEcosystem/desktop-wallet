@@ -141,7 +141,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import { at, clone } from 'lodash'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
@@ -245,9 +245,21 @@ export default {
     },
 
     unconfirmedVote () {
-      return this.$store.getters['session/unconfirmedVotes'].find(vote => {
+      return this.unconfirmedVotes.find(vote => {
         return vote.address === this.currentWallet.address
       })
+    },
+
+    unconfirmedVotes: {
+      get () {
+        return this.$store.getters['session/unconfirmedVotes']
+      },
+      set (votes) {
+        this.$store.dispatch('session/setUnconfirmedVotes', votes)
+        const profile = clone(this.session_profile)
+        profile.unconfirmedVotes = votes
+        this.$store.dispatch('profile/update', profile)
+      }
     },
 
     isAwaitingConfirmation () {
@@ -382,7 +394,7 @@ export default {
     onSent (success, transaction) {
       if (success) {
         const votes = [
-          ...this.$store.getters['session/unconfirmedVotes'],
+          ...this.unconfirmedVotes,
           {
             id: transaction.id,
             address: this.currentWallet.address,
@@ -390,7 +402,7 @@ export default {
           }
         ]
 
-        this.$store.dispatch('session/setUnconfirmedVotes', votes)
+        this.unconfirmedVotes = votes
       }
 
       this.selectedDelegate = null
