@@ -80,22 +80,23 @@
   --theme-explanation-background: #e2edf8;
   --theme-explanation-text: #7f95ab;
 
+  --theme-settings: white;
+  --theme-settings-hover: #f0f1f8;
+  --theme-settings-sub: #2d3747; /* NOTE: not used on light theme */
+  --theme-settings-button: #2d3747; /* NOTE: not used on light theme */
+  --theme-settings-heading: #2d3747;
+  --theme-settings-border: #f1f2f8;
+  --theme-settings-text: #8a91b8;
+  --theme-settings-text-hover: #8a91b8;
+  --theme-settings-switch: #f1f4f7;
+  --theme-settings-control-title: #2d3747;
+
   --theme-voting-banner-background: #e2edf8;
   --theme-voting-banner-text: #7f95ab;
   --theme-voting-banner-button: #cfddec;
   --theme-voting-banner-button-hover: #b1c9e2;
   --theme-voting-banner-button-text: #90a9c6;
   --theme-voting-banner-button-text-hover: #6785a9;
-
-  --theme-error: rgb(236, 27, 56);
-  --theme-error-shadow: rgba(236, 27, 56, 0.5);
-  --theme-success: rgb(59, 177, 92);
-  --theme-success-shadow: rgba(59, 177, 92, 0.5);
-  --theme-info: rgb(33, 153, 229);
-  --theme-info-shadow: rgba(33, 153, 229, 0.5);
-  --theme-warn: rgb(229, 167, 33);
-  --theme-warn-shadow: rgba(229, 167, 33, 0.5);
-  --theme-warn-text: rgb(176, 59, 18);
 
   --theme-fee-gradient-start: var(--theme-modal);
   --theme-fee-gradient-end: rgba(0,124,255,0.20);
@@ -183,22 +184,23 @@
   --theme-explanation-background: #363844;
   --theme-explanation-text: #707698;
 
+  --theme-settings: #343956;
+  --theme-settings-hover: #3a4060;
+  --theme-settings-sub: #3f4565;
+  --theme-settings-button: #4e5477;
+  --theme-settings-heading: #a8acbe;
+  --theme-settings-border: #444a6d;
+  --theme-settings-text: #a6add5;
+  --theme-settings-text-hover: #b3bbe8;
+  --theme-settings-switch: #414767;
+  --theme-settings-control-title: #dae1e7;
+
   --theme-voting-banner-background: #363844;
   --theme-voting-banner-text: #707698;
   --theme-voting-banner-button: #23252c;
   --theme-voting-banner-button-hover: #2a2b31;
   --theme-voting-banner-button-text: #787fa3;
   --theme-voting-banner-button-text-hover: #787fa3;
-
-  --theme-error: rgb(236, 27, 56);
-  --theme-error-shadow: rgba(236, 27, 56, 0.5);
-  --theme-success: rgb(59, 177, 92);
-  --theme-success-shadow: rgba(59, 177, 92, 0.5);
-  --theme-info: rgb(33, 153, 229);
-  --theme-info-shadow: rgba(33, 153, 229, 0.5);
-  --theme-warn: rgb(229, 167, 33);
-  --theme-warn-shadow: rgba(229, 167, 33, 0.5);
-  --theme-warn-text: rgb(176, 59, 18);
 
   --theme-fee-gradient-start: var(--theme-modal);
   --theme-fee-gradient-end: rgba(0,124,255,0.20);
@@ -211,4 +213,14 @@
 #app {
 	--theme-transaction-confirmations-received: var(--theme-transaction-received-arrow);
 	--theme-transaction-confirmations-sent: var(--theme-transaction-sent-arrow);
+
+  --theme-error: rgb(236, 27, 56);
+  --theme-error-shadow: rgba(236, 27, 56, 0.5);
+  --theme-success: rgb(59, 177, 92);
+  --theme-success-shadow: rgba(59, 177, 92, 0.5);
+  --theme-info: rgb(33, 153, 229);
+  --theme-info-shadow: rgba(33, 153, 229, 0.5);
+  --theme-warn: rgb(229, 167, 33);
+  --theme-warn-shadow: rgba(229, 167, 33, 0.5);
+  --theme-warn-text: rgb(176, 59, 18);
 }
