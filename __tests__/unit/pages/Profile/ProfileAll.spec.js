@@ -24,6 +24,9 @@ describe('pages > ProfileAll', () => {
       router,
       i18n,
       mixins: [CurrencyMixin],
+      stubs: {
+        'ProfileAvatar': true
+      },
       mocks: {
         $store: {
           getters: {

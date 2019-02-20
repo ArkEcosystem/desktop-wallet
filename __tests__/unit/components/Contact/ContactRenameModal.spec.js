@@ -6,6 +6,9 @@ const i18n = useI18nGlobally()
 let wrapper
 beforeEach(() => {
   wrapper = shallowMount(ContactRenameModal, {
+    propsData: {
+      wallet: {}
+    },
     i18n
   })
 })

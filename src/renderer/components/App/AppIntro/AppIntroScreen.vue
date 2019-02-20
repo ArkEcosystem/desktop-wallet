@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row w-full h-full">
+  <div class="AppIntroScreen flex flex-row w-full h-full">
     <div class="AppIntroScreen__container__left flex-1 animated fadeIn rounded-lg hidden lg:block">
       <div
         v-if="showLogo"
@@ -37,13 +37,13 @@
               <ButtonGeneric
                 v-if="showBack"
                 :label="$t('COMMON.BACK')"
-                class="mr-0"
+                class="AppIntroScreen__container__right__back mr-0"
                 @click="emitBack"
               />
               <ButtonGeneric
                 v-if="showNext"
                 :label="$t('COMMON.NEXT')"
-                class="ml-2"
+                class="AppIntroScreen__container__right__next ml-2"
                 @click="emitNext"
               />
             </div>

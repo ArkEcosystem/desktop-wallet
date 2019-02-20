@@ -153,11 +153,11 @@ describe('Mixins > Currency', () => {
     it('should work with big quantities', () => {
       let amount = Math.pow(10, 12) + 0.01
 
-      expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.01')
+      expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.00999424')
 
       amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
 
-      expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.00')
+      expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.44')
     })
   })
 

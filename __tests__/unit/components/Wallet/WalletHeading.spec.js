@@ -10,13 +10,42 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 const i18n = useI18n(localVue)
 
+const WalletHeadingInfoStub = {
+  render: () => {},
+  methods: {
+    refreshWallet: () => {}
+  }
+}
+
 const store = new Vuex.Store({
-  state: {}
+  modules: {
+    wallet: {
+      namespaced: true,
+      getters: {
+        secondaryButtonsVisible: () => false
+      },
+      actions: {
+        setSecondaryButtonsVisible: () => {}
+      }
+    }
+  }
 })
 
 const sampleWalletData = {
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
   balance: 797.8921
+}
+
+const mocks = {
+  wallet_fromRoute: sampleWalletData,
+  wallet_truncate: value => value,
+  walletVote: {
+    publicKey: null
+  }
+}
+
+const stubs = {
+  'WalletHeadingInfo': WalletHeadingInfoStub
 }
 
 describe('WalletHeading', () => {
@@ -25,9 +54,8 @@ describe('WalletHeading', () => {
       store,
       localVue,
       i18n,
-      mocks: {
-        wallet_truncate: value => value
-      }
+      mocks,
+      stubs
     })
     expect(wrapper.isVueInstance()).toBeTrue()
   })
@@ -39,9 +67,8 @@ describe('WalletHeadingActions', () => {
       store,
       localVue,
       i18n,
-      mocks: {
-        wallet_truncate: value => value
-      }
+      mocks,
+      stubs
     })
     expect(wrapper.isVueInstance()).toBeTrue()
   })
@@ -55,13 +82,8 @@ describe('WalletHeadingPrimaryActions', () => {
         'walletVote': {},
         'switchToTab': jest.fn()
       },
-      mocks: {
-        wallet_fromRoute: sampleWalletData,
-        wallet_truncate: value => value,
-        walletVote: {
-          publicKey: null
-        }
-      }
+      mocks,
+      stubs
     })
     expect(wrapper.isVueInstance()).toBeTrue()
   })
@@ -71,10 +93,8 @@ describe('WalletHeadingSecondaryActions', () => {
   it('should be instatiated', () => {
     const wrapper = shallowMount(WalletHeadingSecondaryActions, {
       i18n,
-      mocks: {
-        wallet_fromRoute: sampleWalletData,
-        wallet_truncate: value => value
-      }
+      mocks,
+      stubs
     })
     expect(wrapper.isVueInstance()).toBeTrue()
   })

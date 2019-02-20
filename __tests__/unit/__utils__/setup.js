@@ -3,8 +3,10 @@ import VueTestUtils from '@vue/test-utils'
 import VTooltip from 'v-tooltip'
 import eventBus from '@/plugins/event-bus'
 import directives from '@/directives'
+import filters from '@/filters'
 
 require('babel-plugin-require-context-hook/register')()
+global.Intl = require('intl')
 
 HTMLCanvasElement.prototype.getContext = jest.fn()
 
@@ -13,6 +15,7 @@ Vue.use(VTooltip, {
   defaultContainer: '#app'
 })
 Vue.use(directives)
+Vue.use(filters)
 
 VueTestUtils.config.mocks.$eventBus = eventBus
 VueTestUtils.config.mocks.$client = {
