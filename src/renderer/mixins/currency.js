@@ -86,8 +86,16 @@ export default {
         config.currency = cryptoPlaceholder
       }
 
-      return this.$n(value.toString(), config)
-        .replace(cryptoPlaceholder, cryptoCurrency + ' ')
+      const formatted = this.$n(value.toString(), config)
+
+      // When using cryptocurrencies, add a space between the symbol and the number
+      if (cryptoCurrency) {
+        return formatted
+          .replace(cryptoPlaceholder, `${cryptoCurrency} `)
+          .trim()
+      }
+
+      return formatted
     },
 
     currency_simpleFormatCrypto (value, network) {
