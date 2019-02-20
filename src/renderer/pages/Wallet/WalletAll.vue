@@ -164,17 +164,40 @@
                     </div>
                   </div>
 
-                  <button
-                    v-if="!wallet.isLedger"
-                    class="WalletAll__grid__wallet__select invisible group-hover:visible p-2 text-theme-page-text-light hover:text-theme-page-text opacity-75"
-                    @click.stop="openRemovalConfirmation(wallet)"
+                  <MenuDropdown
+                    v-if="!wallet.isPlaceholder"
+                    :items="getContextMenuOptions(wallet)"
+                    :is-highlighting="false"
+                    :position="['-100%', '-20%']"
+                    @select="onSelectDropdown(wallet, $event)"
                   >
-                    <SvgIcon
-                      name="more"
-                      view-box="0 0 5 15"
-                      class="text-inherit"
-                    />
-                  </button>
+                    <span
+                      slot="handler"
+                      class="WalletAll__grid__wallet__select p-2 text-theme-page-text-light hover:text-theme-page-text opacity-75"
+                    >
+                      <SvgIcon
+                        name="more"
+                        view-box="0 0 5 15"
+                        class="text-inherit"
+                      />
+                    </span>
+
+                    <template
+                      slot="item"
+                      slot-scope="itemScope"
+                    >
+                      <div class="flex items-center hidden">
+                        <SvgIcon
+                          :name="itemScope.item.icon"
+                          view-box="0 0 16 16"
+                          class="text-inherit flex-none mr-2"
+                        />
+                        <span class="font-semibold">
+                          {{ itemScope.item.value }}
+                        </span>
+                      </div>
+                    </template>
+                  </MenuDropdown>
                 </div>
               </div>
             </div>
@@ -225,6 +248,7 @@ import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
+import { MenuDropdown } from '@/components/Menu'
 
 export default {
   name: 'WalletAll',
@@ -240,7 +264,8 @@ export default {
     WalletIdenticon,
     WalletRemovalConfirmation,
     WalletRenameModal,
-    WalletTable
+    WalletTable,
+    MenuDropdown
   },
 
   data: () => ({
@@ -441,6 +466,32 @@ export default {
 
     showWallet (walletId) {
       this.$router.push({ name: 'wallet-show', params: { address: walletId } })
+    },
+
+    getContextMenuOptions (wallet) {
+      const options = {
+        rename: {
+          value: this.$t('WALLET_TABLE.RENAME'),
+          icon: 'edit'
+        }
+      }
+
+      if (!wallet.isLedger) {
+        options['delete'] = {
+          value: this.$t('WALLET_TABLE.DELETE'),
+          icon: 'delete-wallet'
+        }
+      }
+
+      return options
+    },
+
+    onSelectDropdown (wallet, item) {
+      if (item === 'delete') {
+        this.openRemovalConfirmation(wallet)
+      } else if (item === 'rename') {
+        this.openRenameModal(wallet)
+      }
     }
   }
 }

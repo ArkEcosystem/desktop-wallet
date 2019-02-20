@@ -6,7 +6,7 @@
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
       class="appearance-none text-inherit w-full"
-      @click="buttonClick"
+      @click.stop="buttonClick"
     >
       <slot
         :active-value="activeValue"
@@ -47,7 +47,7 @@
             :key="entryValue"
             :value="entryValue"
             :item="item.toString()"
-            :is-active="entryValue === activeValue"
+            :is-active="isHighlighting ? entryValue === activeValue : false"
             @click.self="select(entryValue)"
           >
             <slot
@@ -119,6 +119,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isHighlighting: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
