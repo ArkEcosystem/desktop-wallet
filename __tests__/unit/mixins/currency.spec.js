@@ -74,10 +74,8 @@ describe('Mixins > Currency', () => {
 
         expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
 
-        // NOTE: this is not going to work when tested on Node (https://github.com/nodejs/node/issues/8818)
-        // although this assertion would work on browsers
-        // wrapper.vm.$i18n.locale = 'es-ES'
-        // expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,001 ×')
+        wrapper.vm.$i18n.locale = 'es-ES'
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('10,000.00000001 ×')
       })
     })
 
@@ -86,11 +84,9 @@ describe('Mixins > Currency', () => {
         const amount = Math.pow(10, 4) + Math.pow(10, -5)
 
         wrapper.vm.$store.getters['session/currency'] = 'BTC'
-
         expect(format(amount, { currencyFrom: 'session' })).toEqual('Ƀ 10,000.00001')
 
         wrapper.vm.$store.getters['session/currency'] = 'EUR'
-
         expect(format(amount, { currencyFrom: 'session' })).toEqual('€10,000.00')
       })
     })
