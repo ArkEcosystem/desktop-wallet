@@ -46,7 +46,9 @@ export default class VuexMigrations {
 
   apply () {
     this.migrations.forEach(migration => {
-      logger.info(`Appliying migration ${migration.version}: ${migration.title}`)
+      if (process.env.NODE_ENV !== 'test') {
+        logger.info(`Appliying migration ${migration.version}: ${migration.title}`)
+      }
       migration.handler(this.store)
     })
   }

@@ -6,6 +6,9 @@ const i18n = useI18nGlobally()
 let wrapper
 beforeEach(() => {
   wrapper = mount(ModalRename, {
+    stubs: {
+      Portal: true
+    },
     i18n
   })
 })

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
+    class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
   >
     <div
       class="flex w-full h-full pin-t pin-l"
@@ -85,7 +85,7 @@
 
             <ButtonGeneric
               :label="$t('COMMON.START')"
-              class="ml-4"
+              class="AppIntro__1__start-button ml-4"
               @click="moveTo(1)"
             />
           </div>

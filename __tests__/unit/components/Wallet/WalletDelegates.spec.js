@@ -24,10 +24,14 @@ describe('WalletDelegates', () => {
           getters: {
             'app/showVotingExplanation': showExplanation
           }
-        }
+        },
+        $logger: {
+          error: () => {}
+        },
+        $error: () => {}
       },
       stubs: {
-        'Table': true
+        'TableWrapper': true
       }
     })
   }

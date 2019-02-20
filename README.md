@@ -61,10 +61,14 @@ sudo apt-get install libudev-dev libusb-1.0-0-dev
 - Python 2.7
 - Visual Studio 2017
 
-#### Node 9
-There are certain packages (such as the ledger HID packages) which do not work on Node 10.
+#### Node 11
+To download, head over to [here](https://nodejs.org/en/) and download Node 11.
 
-To download Node 9, head over to [here](https://nodejs.org/en/blog/release/v9.11.1/)
+If you already have npm installed, you can run
+```
+npm install -g n
+sudo n 11
+```
 
 #### Yarn
 Install the Yarn dependency manager
