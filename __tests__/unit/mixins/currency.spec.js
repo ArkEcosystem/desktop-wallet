@@ -122,6 +122,7 @@ describe('Mixins > Currency', () => {
         const amount = 9835.387653
 
         expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })).toEqual('NET 9,835.387653')
+        expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'symbol' })).toEqual('× 9,835.387653')
         expect(format(amount, { currency: 'EUR', currencyDisplay: 'symbol' })).toEqual('€9,835.39')
       })
     })

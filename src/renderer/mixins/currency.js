@@ -46,6 +46,7 @@ export default {
       // currencies. For that reason, we use the "no-currency" code instead and
       // replace it later with the cryptocurrency code or symbol
       const cryptoPlaceholder = 'XXX'
+      const cryptoPlaceholderSymbol = '¤'
       let cryptoCurrency = null
 
       const findNetworkByCurrency = currency => {
@@ -92,6 +93,7 @@ export default {
       if (cryptoCurrency) {
         return formatted
           .replace(cryptoPlaceholder, `${cryptoCurrency} `)
+          .replace(cryptoPlaceholderSymbol, `${cryptoCurrency} `)
           .trim()
       }
 
