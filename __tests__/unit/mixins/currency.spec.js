@@ -65,17 +65,17 @@ describe('Mixins > Currency', () => {
     describe('when the `currencyFrom` option with value "network" is provided', () => {
       it('should display the symbol currency of the current network', () => {
         const amount = 1.00035
-
         expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1.00035')
       })
 
       it('should use the i18n locale', () => {
         const amount = Math.pow(10, 4) + 1e-8
 
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
-
         wrapper.vm.$i18n.locale = 'es-ES'
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('10,000.00000001 ×')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,00000001 ×')
+
+        wrapper.vm.$i18n.locale = 'ja-JP'
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
       })
     })
 
@@ -146,14 +146,19 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    it('should work with big quantities', () => {
-      let amount = Math.pow(10, 12) + 0.01
+    describe('when using big quantities', () => {
+      // NOTE: restore the original implementation to avoid using the polyfill
+      let Intl
+      beforeEach(() => (global.Intl = global.__Intl__))
+      afterEach(() => (global.Intl = Intl))
 
-      expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.00999424')
+      it('should work precissely', () => {
+        let amount = Math.pow(10, 12) + 0.01
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.01')
 
-      amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
-
-      expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.44')
+        amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
+        expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.00')
+      })
     })
   })
 
