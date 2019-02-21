@@ -16,6 +16,7 @@ export default {
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
@@ -225,7 +226,6 @@ export default {
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
-      IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
         TITLE: 'Reset data',

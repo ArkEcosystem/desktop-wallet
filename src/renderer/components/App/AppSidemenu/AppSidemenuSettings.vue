@@ -100,25 +100,6 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
-        v-if="isMarketEnabled"
-        :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
-        @click="toggleSelect('show-market-chart')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
-          <ButtonSwitch
-            ref="show-market-chart"
-            :is-active="sessionIsMarketChartEnabled"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setIsMarketChartEnabled"
-          />
-        </div>
-      </MenuOptionsItem>
-
-      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -211,18 +192,6 @@ export default {
         this.$store.dispatch('profile/update', profile)
       }
     },
-    sessionIsMarketChartEnabled: {
-      get () {
-        return this.$store.getters['session/isMarketChartEnabled']
-      },
-      set (isMarketChartEnabled) {
-        this.$store.dispatch('session/setIsMarketChartEnabled', isMarketChartEnabled)
-        this.$store.dispatch('profile/update', {
-          ...this.session_profile,
-          isMarketChartEnabled
-        })
-      }
-    },
     sessionTheme: {
       get () {
         return this.$store.getters['session/theme']
@@ -274,10 +243,6 @@ export default {
 
     setBroadcastPeers (broadcast) {
       this.sessionBroadcastPeers = broadcast
-    },
-
-    setIsMarketChartEnabled (isEnabled) {
-      this.sessionIsMarketChartEnabled = isEnabled
     },
 
     toggleSelect (name) {

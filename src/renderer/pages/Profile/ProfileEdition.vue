@@ -210,6 +210,16 @@
           >
             <ListDivided>
               <ListDividedItem
+                :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
+                class="ProfileEdition__market-chart"
+              >
+                <ButtonSwitch
+                  :is-active="isMarketChartEnabled"
+                  @change="selectIsMarketChartEnabled"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
@@ -258,6 +268,7 @@
 <script>
 import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
+import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
@@ -274,6 +285,7 @@ export default {
   name: 'ProfileEdition',
 
   components: {
+    ButtonSwitch,
     InputText,
     ListDivided,
     ListDividedItem,
@@ -338,7 +350,7 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (property === 'avatar' || this.modified[property]) {
+        if (property === 'avatar' || this.modified.hasOwnProperty(property)) {
           return this.modified[property] !== this.profile[property]
         }
         return false
@@ -381,6 +393,9 @@ export default {
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
       return this.modified.theme || this.profile.theme
+    },
+    isMarketChartEnabled () {
+      return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
     },
     isProfileTab () {
       return this.tab === 'profile'
@@ -499,6 +514,10 @@ export default {
 
     async selectTheme (theme) {
       this.__updateSession('theme', theme)
+    },
+
+    async selectIsMarketChartEnabled (isMarketChartEnabled) {
+      this.__updateSession('isMarketChartEnabled', isMarketChartEnabled)
     },
 
     setName (event) {
