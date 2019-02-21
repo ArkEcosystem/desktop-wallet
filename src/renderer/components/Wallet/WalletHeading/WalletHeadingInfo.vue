@@ -138,26 +138,19 @@ export default {
       return secondPublicKey || lazySecondPublicKey
     },
     alternativeBalance () {
-      let balance = this.currentWallet ? this.currentWallet.balance : null
-
-      if (balance === null) {
-        balance = this.lazyWallet.balance || 0
-      }
-
-      const unitBalance = this.currency_subToUnit(balance)
+      const unitBalance = this.currency_subToUnit(this.rawBalance)
       return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
-      let balance = this.currentWallet ? this.currentWallet.balance : null
-
-      if (balance === null) {
-        balance = this.lazyWallet.balance || 0
-      }
-
-      return this.formatter_networkCurrency(balance)
+      return this.formatter_networkCurrency(this.rawBalance)
+    },
+    rawBalance () {
+      return this.currentWallet.profileId.length
+        ? this.currentWallet.balance
+        : (this.lazyWallet.balance || 0)
     },
     name () {
       return this.wallet_name(this.currentWallet.address)
@@ -206,7 +199,7 @@ export default {
     // Called by the parent when the address changed
     // Fetch watch-only address, since the wallet is not stored on vuex
     async refreshWallet () {
-      if (!this.currentWallet) {
+      if (this.currentWallet.profileId.length) {
         return
       }
 
