@@ -504,6 +504,7 @@ export default {
           HEADER: 'Appearance',
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
         THEME: 'Choose light or dark mode',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
