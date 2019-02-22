@@ -194,6 +194,11 @@ export default {
       const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
 
+      if (!profile.unconfirmedVotes) {
+        profile.unconfirmedVotes = []
+        dispatch('profile/update', profile)
+      }
+
       commit('REPLACE', profile)
 
       return profile
