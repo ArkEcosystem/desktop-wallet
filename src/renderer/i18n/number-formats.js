@@ -19,5 +19,12 @@ export default {
       currency: 'BRL',
       currencyDisplay: 'symbol'
     }
+  },
+  'id-ID': {
+    currency: {
+      style: 'currency',
+      currency: 'IDR',
+      currencyDisplay: 'symbol'
+    }
   }
 }

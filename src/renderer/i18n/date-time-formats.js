@@ -25,5 +25,13 @@ export default {
     long: {
       year: 'numeric', month: 'short', day: 'numeric', weekday: 'short', hour: 'numeric', minute: 'numeric'
     }
+  },
+  'id-ID': {
+    short: {
+      day: 'numeric', month: 'short', year: 'numeric'
+    },
+    long: {
+      day: 'numeric', month: 'short', year: 'numeric', weekday: 'short', hour: 'numeric', minute: 'numeric'
+    }
   }
 }
