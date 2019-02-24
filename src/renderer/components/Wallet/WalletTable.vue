@@ -212,7 +212,7 @@ export default {
     },
 
     delegateName (row) {
-      return row.votedDelegate ? row.votedDelegate.username : ''
+      return row.vote ? (this.$store.getters['delegate/byPublicKey'](row.vote)).username : ''
     },
 
     walletName (row) {

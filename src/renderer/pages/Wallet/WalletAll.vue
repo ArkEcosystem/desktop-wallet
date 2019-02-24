@@ -303,7 +303,7 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.selectableWallets, wallet => wallet.hasOwnProperty('votedDelegate'))
+      return some(this.selectableWallets, wallet => wallet.hasOwnProperty('vote'))
     }
   },
 
