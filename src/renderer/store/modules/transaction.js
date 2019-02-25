@@ -22,7 +22,7 @@ export default {
   },
 
   getters: {
-    byAddress: (state, _, __, rootGetters) => (address, showExpired = false) => {
+    byAddress: (state, _, __, rootGetters) => (address, { includeExpired } = {}) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.transactions[profileId]) {
         return []
@@ -38,14 +38,14 @@ export default {
         return transaction
       })
 
-      if (showExpired) {
+      if (includeExpired) {
         return transactions
       }
 
       return transactions.filter(transaction => !transaction.isExpired)
     },
 
-    byProfileId: (state, _, __, rootGetters) => (profileId, showExpired = false) => {
+    byProfileId: (state, _, __, rootGetters) => (profileId, { includeExpired } = {}) => {
       if (!state.transactions[profileId]) {
         return []
       }
@@ -62,7 +62,7 @@ export default {
         return transaction
       })
 
-      if (showExpired) {
+      if (includeExpired) {
         return transactions
       }
 
