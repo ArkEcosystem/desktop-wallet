@@ -73,7 +73,7 @@ export default {
         next()
       } else if (profiles.length > 0) {
         next(async vm => {
-          vm.$synchronizer.focus('wallets', 'contacts', 'market')
+          vm.$synchronizer.focus('wallets', 'market')
         })
       } else {
         next({ name: 'profile-new' })
