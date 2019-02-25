@@ -126,10 +126,6 @@ export default {
     WRONG_NETWORK: 'Wrong network'
   },
 
-  VENDORFIELD: {
-    LIMIT_REACHED: 'You can enter maximum \'{0}\' characters only'
-  },
-
   VALIDATION: {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
@@ -158,6 +154,9 @@ export default {
     },
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
+    },
+    VENDORFIELD: {
+      LIMIT_REACHED: 'You can enter maximum \'{0}\' characters only'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
