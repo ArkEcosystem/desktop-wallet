@@ -371,16 +371,22 @@ export default {
       }
       if (this.filters.searchQuery) {
         filtered = filter(filtered, ({ address, balance, name }) => {
-          const alternativeName = this.wallet_name(address)
-          const names = alternativeName
-            ? [name, alternativeName]
-            : [name]
-
-          return [
-            ...names,
+          let match = [
             address,
             balance.toString()
           ].some(text => text.includes(this.filters.searchQuery))
+
+          if (!match) {
+            const alternativeName = this.wallet_name(address)
+            const names = alternativeName
+              ? [name, alternativeName]
+              : [name]
+
+            const query = this.filters.searchQuery.toLowerCase()
+            match = names.some(name => name.toLowerCase().includes(query))
+          }
+
+          return match
         })
       }
 
