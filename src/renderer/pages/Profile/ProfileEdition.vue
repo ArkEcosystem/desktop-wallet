@@ -194,7 +194,7 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
-                :disabled="!isModified || isNameEditable"
+                :disabled="!isModified || nameError"
                 class="blue-button"
                 @click="save"
               >
@@ -233,7 +233,6 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
-                :disabled="!isModified || isNameEditable"
                 class="blue-button"
                 @click="save"
               >
@@ -434,7 +433,7 @@ export default {
     },
 
     async onLeave (hasToSave) {
-      if (hasToSave && !this.isNameEditable) {
+      if (hasToSave) {
         await this.updateProfile()
       } else {
         this.$store.dispatch('session/load', this.session_profile.id)
@@ -457,6 +456,9 @@ export default {
     },
 
     async updateProfile () {
+      if (this.nameError) {
+        this.modified.name = this.profile.name
+      }
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
@@ -464,6 +466,7 @@ export default {
     },
 
     async save () {
+      this.toggleIsNameEditable()
       await this.updateProfile()
 
       this.$router.push({ name: 'profiles' })
