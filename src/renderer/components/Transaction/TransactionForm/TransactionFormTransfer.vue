@@ -52,7 +52,7 @@
 
     <InputText
       ref="vendorField"
-      v-model="form.vendorField.$model"
+      v-model="$v.form.vendorField.$model"
       :label="vendorFieldLabel"
       :bip39-warning="true"
       :helper-text="vendorFieldHelperText"
@@ -442,6 +442,7 @@ export default {
           return false
         }
       },
+      vendorField: {},
       walletPassword: {
         isValid (value) {
           if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
