@@ -129,15 +129,18 @@ export default {
 
       return data
     },
+
     store ({ commit }, transactions) {
       commit('STORE', transactions)
     },
+
     update ({ commit }, transaction) {
       const data = TransactionModel.deserialize(transaction)
       commit('UPDATE', data)
 
       return data
     },
+
     clearExpired ({ commit, getters, rootGetters }) {
       const expired = []
       const profileId = rootGetters['session/profileId']
@@ -152,9 +155,11 @@ export default {
 
       return expired
     },
+
     delete ({ commit }, transaction) {
       commit('DELETE', transaction)
     },
+
     deleteBulk ({ commit }, { transactions = [], profileId = null }) {
       for (const transaction of transactions) {
         transaction.profileId = profileId

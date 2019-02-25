@@ -73,6 +73,7 @@ export default {
         next()
       } else if (profiles.length > 0) {
         next(async vm => {
+          vm.$synchronizer.trigger('wallets')
           vm.$synchronizer.focus('wallets', 'market')
         })
       } else {

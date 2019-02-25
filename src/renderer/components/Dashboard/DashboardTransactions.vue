@@ -48,62 +48,15 @@ export default {
     }
   },
 
-  watch: {
-    // This watcher would invoke the `fetch` after the `Synchronizer`
-    wallets () {
-      let hasNewWallet = false
-      for (const wallet of this.wallets) {
-        if (!this.previousWalletAddresses.includes(wallet.address)) {
-          hasNewWallet = true
-
-          break
-        }
-      }
-
-      if (hasNewWallet) {
-        this.updatePreviousWallets()
-        this.fetchTransactions(false)
-      }
-    }
-  },
-
   created () {
-    this.fetchTransactions()
-  },
+    this.isLoading = true
 
-  methods: {
-    async fetchTransactions (updatePreviousWallets = true) {
-      if (!this.wallets.length) {
-        return
-      }
-
-      if (!this.fetchedTransactions.length) {
-        this.isLoading = true
-      }
-
-      if (updatePreviousWallets) {
-        this.updatePreviousWallets()
-      }
-
-      try {
-        const addresses = this.wallets.map(wallet => wallet.address)
-        const transactions = await this.$client.fetchTransactionsForWallets(addresses)
-        const ordered = orderBy(uniqBy(flatten(Object.values(transactions)), 'id'), 'timestamp', 'desc')
-        this.fetchedTransactions = ordered.slice(0, this.numberOfTransactions)
-      } catch (error) {
-        this.$logger.error(error)
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'transactions',
-          msg: error.message
-        }))
-      } finally {
-        this.isLoading = false
-      }
-    },
-
-    updatePreviousWallets () {
-      this.previousWalletAddresses = this.wallets.map(wallet => wallet.address)
-    }
+    this.$eventBus.on('transactions:fetched', transactionsByWallet => {
+      const transactions = Object.values(transactionsByWallet)
+      const ordered = orderBy(uniqBy(flatten(transactions), 'id'), 'timestamp', 'desc')
+      this.fetchedTransactions = ordered.slice(0, this.numberOfTransactions)
+      this.isLoading = false
+    })
   }
 }
 </script>
