@@ -6,10 +6,12 @@
       :is-open="!isPassphraseStep"
     >
       <ListDivided>
-        <ListDividedItem
-          :label="$t('INPUT_ADDRESS.LABEL')"
-          :value="delegate.address"
-        />
+        <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
+          <WalletAddress
+            :address="delegate.address"
+            @click="emitCancel"
+          />
+        </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
           :value="formatter_percentage(delegate.production.productivity)"
@@ -126,6 +128,7 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import TransactionService from '@/services/transaction'
 
 export default {
@@ -140,7 +143,8 @@ export default {
     ListDivided,
     ListDividedItem,
     ModalLoader,
-    PassphraseInput
+    PassphraseInput,
+    WalletAddress
   },
 
   props: {
@@ -163,6 +167,7 @@ export default {
   data: () => ({
     isPassphraseStep: false,
     form: {
+      fee: 0,
       passphrase: '',
       walletPassword: ''
     },
@@ -198,14 +203,16 @@ export default {
 
   watch: {
     isPassphraseStep () {
-      if (!this.currentWallet.isLedger) {
+      // Ignore Ledger wallets
+      if (this.currentWallet.isLedger) {
         return
       }
 
-      if (!this.currentWallet.passphrase) {
-        this.$refs.passphrase.focus()
-      } else {
+      // The passphrase is stored: focus on the custom password input
+      if (this.currentWallet.passphrase) {
         this.$refs.password.focus()
+      } else {
+        this.$refs.passphrase.focus()
       }
     }
   },
@@ -232,6 +239,13 @@ export default {
         this.submit()
       }
     })
+
+    // Set default fees with v1 compatibility
+    if (this.session_network.apiVersion === 1) {
+      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
+    } else {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -266,10 +280,6 @@ export default {
     },
 
     async submit () {
-      // v1 compatibility
-      if (this.session_network.apiVersion === 1) {
-        this.form.fee = V1.fees[this.$options.transactionType]
-      }
       // Ensure that fee has value, even when the user has not interacted
       if (!this.form.fee) {
         this.form.fee = this.$refs.fee.fee
@@ -325,6 +335,10 @@ export default {
         this.$refs.password.reset()
       }
       this.$v.$reset()
+    },
+
+    emitCancel () {
+      this.$emit('cancel')
     },
 
     emitNext (transaction) {

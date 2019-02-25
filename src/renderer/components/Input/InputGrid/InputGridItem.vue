@@ -89,7 +89,8 @@ export default {
 
   computed: {
     currentNetwork () {
-      return this.session_network
+      // To avoid failing after removing the current and last profile
+      return this.$store.getters['session/profile'] ? this.session_network : null
     },
 
     label () {

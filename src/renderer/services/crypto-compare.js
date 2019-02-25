@@ -96,6 +96,26 @@ class CryptoCompare {
   }
 
   /**
+   * Checks if a token is tradeable
+   * @param {String} token
+   * @return {(Boolean|null)} Return true if the token is found
+   */
+  async checkTradeable (token) {
+    const params = {
+      fsym: token,
+      tsyms: 'BTC'
+    }
+
+    try {
+      const uri = `${MARKET.source.baseUrl}/data/price`
+      const response = await axios.get(uri, { params })
+      return !!response.data.BTC
+    } catch (error) {
+      return null
+    }
+  }
+
+  /**
  * Fetch historical data from API.
  * @param {String} token
  * @param {String} currency

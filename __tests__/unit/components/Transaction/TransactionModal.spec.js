@@ -29,6 +29,9 @@ describe('TransactionModal', () => {
           error: jest.fn()
         },
         $store
+      },
+      stubs: {
+        PortalTarget: true
       }
     })
   })

@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center">
-    <div class="absolute pin-t pin-l h-40 w-48">
+    <div class="absolute pin-t pin-l h-40 w-40">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         :width="160"
@@ -25,10 +25,10 @@
       :size="75"
       class="WalletHeading__identicon"
     />
-    <div class="flex flex-col justify-center text-white antialiased pl-4">
+    <div class="flex flex-col justify-center text-white antialiased pl-4 z-10">
       <div
         v-if="name"
-        class="flex flex-row text-lg font-semibold text-theme-feature-item-text"
+        class="flex flex-row text-lg font-semibold text-theme-heading-text"
       >
         <span class="block xl:hidden">
           {{ name | truncate(12) }}
@@ -93,7 +93,7 @@
         {{ balance }}
         <span
           v-if="isMarketEnabled"
-          class="WalletHeading__balance__alternative text-xs text-theme-feature-item-text"
+          class="WalletHeading__balance__alternative text-xs text-theme-heading-text"
         >
           {{ alternativeBalance }}
         </span>
@@ -138,18 +138,26 @@ export default {
       return secondPublicKey || lazySecondPublicKey
     },
     alternativeBalance () {
-      const balance = this.currentWallet ? this.currentWallet.balance : null
-      const lazyBalance = this.lazyWallet.balance
-      const unitBalance = this.currency_subToUnit(balance || lazyBalance || 0)
+      let balance = this.currentWallet ? this.currentWallet.balance : null
+
+      if (balance === null) {
+        balance = this.lazyWallet.balance || 0
+      }
+
+      const unitBalance = this.currency_subToUnit(balance)
       return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
-      const balance = this.currentWallet ? this.currentWallet.balance : null
-      const lazyBalance = this.lazyWallet.balance
-      return this.formatter_networkCurrency(balance || lazyBalance || 0)
+      let balance = this.currentWallet ? this.currentWallet.balance : null
+
+      if (balance === null) {
+        balance = this.lazyWallet.balance || 0
+      }
+
+      return this.formatter_networkCurrency(balance)
     },
     name () {
       return this.wallet_name(this.currentWallet.address)

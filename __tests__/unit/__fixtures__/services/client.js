@@ -46,7 +46,35 @@ transactions.v1 = [
 
 transactions.v2 = transactions.data
 
+const staticFeeResponses = {
+  v1: {
+    fees: {
+      send: 10000000,
+      vote: 100000000,
+      secondsignature: 500000000,
+      delegate: 2500000000,
+      multisignature: 500000000
+    },
+    success: true
+  },
+
+  v2: {
+    data: {
+      transfer: 10000000,
+      secondSignature: 500000000,
+      delegateRegistration: 2500000000,
+      vote: 100000000,
+      multiSignature: 500000000,
+      ipfs: 0,
+      timelockTransfer: 0,
+      multiPayment: 0,
+      delegateResignation: 0
+    }
+  }
+}
+
 export default {
   delegates,
-  transactions
+  transactions,
+  staticFeeResponses
 }

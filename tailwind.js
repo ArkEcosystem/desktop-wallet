@@ -89,6 +89,7 @@ let colors = {
 
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
+  'theme-heading-text': 'var(--theme-heading-text)',
 
   'theme-button-special-choice': 'var(--theme-button-special-choice)',
 
@@ -126,12 +127,13 @@ let colors = {
   'theme-voting-banner-button-text': 'var(--theme-voting-banner-text)',
   'theme-voting-banner-button-text-hover': 'var(--theme-voting-banner-text-hover)',
 
-  'theme-settings': '#343956',
-  'theme-settings-sub': '#3f4565',
-  'theme-settings-button': '#4e5477',
-  'theme-settings-heading': '#a8acbe',
-  'theme-settings-border': '#444a6d',
-  'theme-settings-text': '#a6add5',
+  'theme-settings': 'var(--theme-settings)',
+  'theme-settings-sub': 'var(--theme-settings-sub)',
+  'theme-settings-button': 'var(--theme-settings-button)',
+  'theme-settings-heading': 'var(--theme-settings-heading)',
+  'theme-settings-border': 'var(--theme-settings-border)',
+  'theme-settings-text': 'var(--theme-settings-text)',
+  'theme-settings-control-title': 'var(--theme-settings-control-title)',
 
   'theme-error': 'var(--theme-error)',
   'theme-error-shadow': 'var(--theme-error-shadow)',
@@ -576,6 +578,7 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '18': '4.5rem', // Added
+    '20': '5.0rem', // Added
     '22': '5.5rem', // Added
     '24': '6rem',
     '30': '7rem', // Added
@@ -630,6 +633,7 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '18': '4.5rem', // Added
+    '20': '5.0rem', // Added
     '24': '6rem',
     '30': '7rem', // Added
     '32': '8rem',

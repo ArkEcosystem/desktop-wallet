@@ -14,6 +14,8 @@ export default {
     profileId: null,
     theme: null,
     walletLayout: null,
+    walletSortParams: null,
+    contactSortParams: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
     broadcastPeers: null,
@@ -33,7 +35,7 @@ export default {
       return rootGetters['profile/byId'](state.profileId)
     },
     network (state, getters, __, rootGetters) {
-      if (!state.profileId) {
+      if (!getters['profile']) {
         return
       }
 
@@ -52,6 +54,8 @@ export default {
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
+    walletSortParams: state => state.walletSortParams,
+    contactSortParams: state => state.contactSortParams,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
@@ -109,6 +113,14 @@ export default {
       state.walletLayout = walletLayout
     },
 
+    SET_WALLET_TABLE_SORT_PARAMS (state, walletSortParams) {
+      state.walletSortParams = walletSortParams
+    },
+
+    SET_CONTACT_TABLE_SORT_PARAMS (state, contactSortParams) {
+      state.contactSortParams = contactSortParams
+    },
+
     SET_CONTENT_PROTECTION (state, protection) {
       state.contentProtection = protection
     },
@@ -140,33 +152,41 @@ export default {
       state.name = null
       state.theme = 'light'
       state.walletLayout = 'grid'
+      state.walletSortParams = { field: 'balance', type: 'desc' }
+      state.contactSortParams = { field: 'name', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.contentProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
+    },
+
+    REPLACE (state, value) {
+      state.avatar = value.avatar
+      state.background = value.background
+      state.currency = value.currency
+      state.timeFormat = value.timeFormat
+      state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.language = value.language
+      state.bip39Language = value.bip39Language
+      state.name = value.name
+      state.theme = value.theme
+      state.walletLayout = value.walletLayout
+      state.walletSortParams = value.walletSortParams
+      state.contactSortParams = value.contactSortParams
+      state.backgroundUpdateLedger = value.backgroundUpdateLedger
+      state.broadcastPeers = value.broadcastPeers
+      state.ledgerCache = value.ledgerCache
+      state.transactionTableRowCount = value.transactionTableRowCount
     }
   },
 
   actions: {
-    load ({ rootGetters, dispatch }, profileId) {
+    load ({ commit, rootGetters, dispatch }, profileId) {
       const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
 
-      dispatch('setAvatar', profile.avatar)
-      dispatch('setBackground', profile.background)
-      dispatch('setCurrency', profile.currency)
-      dispatch('setTimeFormat', profile.timeFormat)
-      dispatch('setIsMarketChartEnabled', profile.isMarketChartEnabled)
-      dispatch('setName', profile.name)
-      dispatch('setLanguage', profile.language)
-      dispatch('setBip39Language', profile.bip39Language)
-      dispatch('setTheme', profile.theme)
-      dispatch('setWalletLayout', profile.walletLayout)
-      dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
-      dispatch('setBroadcastPeers', profile.broadcastPeers)
-      dispatch('setLedgerCache', profile.ledgerCache)
-      dispatch('setTransactionTableRowCount', profile.transactionTableRowCount)
+      commit('REPLACE', profile)
 
       return profile
     },
@@ -235,6 +255,14 @@ export default {
 
     setWalletLayout ({ commit }, value) {
       commit('SET_WALLET_LAYOUT', value)
+    },
+
+    setWalletSortParams ({ commit }, value) {
+      commit('SET_WALLET_TABLE_SORT_PARAMS', value)
+    },
+
+    setContactSortParams ({ commit }, value) {
+      commit('SET_CONTACT_TABLE_SORT_PARAMS', value)
     },
 
     setTransactionTableRowCount ({ commit }, value) {

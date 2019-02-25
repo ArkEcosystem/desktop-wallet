@@ -118,7 +118,8 @@ export default {
   },
 
   data () {
-    const maxV1fee = V1.fees[this.transactionType] * 1e-8
+    const defaultMaxV1Fee = V1.fees[this.transactionType]
+    const maxV1fee = (this.$store.getters['transaction/staticFee'](this.transactionType) || defaultMaxV1Fee) * 1e-8
     const data = {
       feeChoices: {
         MINIMUM: 1,

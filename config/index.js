@@ -25,6 +25,7 @@ exports.I18N = {
 }
 
 exports.BIP39 = {
+  defaultLanguage: 'english',
   languages: [
     'chinese_simplified',
     'chinese_traditional',
@@ -59,7 +60,7 @@ exports.MARKET = {
   source: {
     baseUrl: 'https://min-api.cryptocompare.com'
   },
-  defaultCurrency: 'USD',
+  defaultCurrency: 'BTC',
   crypto: [
     'BTC',
     'ETH',

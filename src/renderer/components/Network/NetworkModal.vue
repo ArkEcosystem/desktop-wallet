@@ -114,6 +114,13 @@
                 class="mt-5"
                 name="explorer"
               />
+
+              <InputText
+                v-model="$v.form.ticker.$model"
+                :label="$t('MODAL_NETWORK.MARKET_TICKER')"
+                class="mt-5"
+                name="ticker"
+              />
             </template>
           </div>
           <div v-else>
@@ -145,13 +152,6 @@
               :helper-text="activeDelegatesError"
               class="mt-5"
               name="activeDelegates"
-            />
-
-            <InputText
-              v-model="$v.form.ticker.$model"
-              :label="$t('MODAL_NETWORK.MARKET_TICKER')"
-              class="mt-5"
-              name="ticker"
             />
           </div>
         </div>
@@ -212,6 +212,8 @@ import { numeric, required, requiredIf } from 'vuelidate/lib/validators'
 import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
+import cryptoCompare from '@/services/crypto-compare'
+
 const requiredIfFull = requiredIf(function () { return this.showFull })
 
 export default {
@@ -491,40 +493,40 @@ export default {
         // TODO: currently it's just default values
         wif: '170',
         slip44: '1',
-        activeDelegates: '51',
-        ticker: ''
+        activeDelegates: '51'
       }
-      try {
-        // v2 network
-        const networkConfig = await ClientService.fetchNetworkConfig(this.form.server, 2)
-        if (networkConfig) {
+
+      const fetchAndFill = async (version, callback = null) => {
+        const network = await ClientService.fetchNetworkConfig(this.form.server, version)
+
+        if (network) {
+          const tokenFound = await cryptoCompare.checkTradeable(network.token)
+
           this.form = {
-            ...networkConfig,
+            ...network,
             ...prefilled,
-            version: networkConfig.version.toString(),
-            epoch: networkConfig.constants.epoch
+            ticker: tokenFound ? network.token : '',
+            version: network.version.toString()
           }
 
-          this.apiVersion = 2
+          this.apiVersion = version
           this.showFull = true
           this.hasFetched = true
+
+          if (callback) {
+            callback(network)
+          }
         }
+      }
+
+      // Try V2 first and fallback to V1
+      try {
+        await fetchAndFill(2, network => {
+          this.form.epoch = network.constants.epoch
+        })
       } catch (v2Error) {
         try {
-          // v1 network fallback
-          const networkConfig = await ClientService.fetchNetworkConfig(this.form.server, 1)
-          // Populate form with response data
-          if (networkConfig) {
-            this.form = {
-              ...networkConfig,
-              ...prefilled,
-              version: networkConfig.version.toString()
-            }
-
-            this.apiVersion = 1
-            this.showFull = true
-            this.hasFetched = true
-          }
+          await fetchAndFill(1)
         } catch (v1Error) {
           this.$error(this.$t('MODAL_NETWORK.FAILED_FETCH'))
         }

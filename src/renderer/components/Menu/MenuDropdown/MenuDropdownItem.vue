@@ -14,7 +14,7 @@
       >
         <slot>
           <span class="font-semibold">
-            {{ value }}
+            {{ item }}
           </span>
         </slot>
       </div>
@@ -27,7 +27,17 @@ export default {
   name: 'MenuDropdownItem',
 
   props: {
+    /**
+     * The value of the item
+     */
     value: {
+      type: String,
+      required: true
+    },
+    /**
+     * The visible text of the item
+     */
+    item: {
       type: String,
       required: true
     },
