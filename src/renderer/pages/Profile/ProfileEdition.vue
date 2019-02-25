@@ -434,7 +434,7 @@ export default {
     },
 
     async onLeave (hasToSave) {
-      if (hasToSave) {
+      if (hasToSave && !this.isNameEditable) {
         await this.updateProfile()
       } else {
         this.$store.dispatch('session/load', this.session_profile.id)
