@@ -52,11 +52,17 @@ export default {
     this.isLoading = true
 
     this.$eventBus.on('transactions:fetched', transactionsByWallet => {
-      const transactions = Object.values(transactionsByWallet)
-      const ordered = orderBy(uniqBy(flatten(transactions), 'id'), 'timestamp', 'desc')
-      this.fetchedTransactions = ordered.slice(0, this.numberOfTransactions)
+      const transactions = flatten(Object.values(transactionsByWallet))
+      this.fetchedTransactions = this.processTransactions(transactions)
       this.isLoading = false
     })
+  },
+
+  methods: {
+    processTransactions (transactions) {
+      const ordered = orderBy(uniqBy(transactions, 'id'), 'timestamp', 'desc')
+      return ordered.slice(0, this.numberOfTransactions)
+    }
   }
 }
 </script>
