@@ -155,7 +155,7 @@ export default {
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
-    VENDORFIELD: {
+    VENDOR_FIELD: {
       LIMIT_REACHED: 'You can enter maximum \'{0}\' characters only'
     },
     REQUIRED: 'The \'{0}\' is required',
