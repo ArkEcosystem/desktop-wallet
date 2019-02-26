@@ -251,7 +251,7 @@ export default {
       return null
     },
     vendorFieldMaxLength () {
-      return this.session_network.vendorField.maxLength
+      return this.walletNetwork.vendorField.maxLength
     }
   },
 
