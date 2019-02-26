@@ -39,6 +39,7 @@
       </div>
       <div
         class="mt-4 mb-4 py-4 px-6 text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+        :class="{ 'rounded-r': isOwned && !votedDelegate }"
       >
         <div
           v-if="!isAwaitingConfirmation && isLoadingVote"
