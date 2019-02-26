@@ -1,6 +1,6 @@
 <template>
   <ModalWindow
-    :title="$t('WALLET_DELEGATES.SELECT_DELEGATE')"
+    :title="$t('WALLET_DELEGATES.SEARCH_DELEGATE')"
     container-classes="SelectDelegateModal"
     @close="emitCancel"
   >

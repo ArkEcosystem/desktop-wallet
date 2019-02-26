@@ -109,7 +109,7 @@
         class="WalletDetails__vote__button"
         @click="openSelectDelegate"
       >
-        {{ $t('WALLET_DELEGATES.SELECT_DELEGATE') }}
+        {{ $t('WALLET_DELEGATES.SEARCH_DELEGATE') }}
       </div>
 
       <!-- Vote/unvote modal -->
