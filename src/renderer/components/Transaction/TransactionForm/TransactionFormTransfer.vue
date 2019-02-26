@@ -242,11 +242,11 @@ export default {
       }
     },
     vendorFieldLabel () {
-      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [vendorFieldMaxLength])}`
+      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.vendorFieldMaxLength])}`
     },
     vendorFieldHelperText () {
-      if (this.form.vendorField.length === vendorFieldMaxLength) {
-        return this.$t('VENDORFIELD.VENDOR_FIELD.LIMIT_REACHED', [vendorFieldMaxLength])
+      if (this.form.vendorField.length === this.vendorFieldMaxLength) {
+        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [this.vendorFieldMaxLength])
       }
       return null
     },
