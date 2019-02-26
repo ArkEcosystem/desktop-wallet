@@ -319,9 +319,9 @@ export default {
     this.selectableWallets = this.wallets
 
     if (this.$store.getters['ledger/isConnected']) {
-      this.refreshLedgerWallets()
+      this.includeLedgerWallets()
     }
-    this.$eventBus.on('ledger:wallets-updated', this.refreshLedgerWallets)
+    this.$eventBus.on('ledger:wallets-updated', this.includeLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
 
     this.isLoading = false
@@ -336,7 +336,7 @@ export default {
       this.walletToRename = null
     },
 
-    async refreshLedgerWallets () {
+    async includeLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
       this.selectableWallets = this.wallet_sortByName(uniqBy([
         ...ledgerWallets,

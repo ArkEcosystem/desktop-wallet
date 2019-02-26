@@ -140,7 +140,8 @@ class Action {
   }
 
   /**
-   * Fetch transactions for all wallets.
+   * Fetch the transactions of the wallets.
+   *
    * @param  {Object[]} wallets
    * @return {void}
    */
@@ -151,11 +152,15 @@ class Action {
         this.processWalletTransactions(wallet, walletTransactions[wallet.address])
       }
     }
+
+    // TODO: this should be remove later, when the transactions are stored, to take advantage of the reactivity
+    eventBus.emit(`transactions:fetched`, walletTransactions)
   }
 
   /**
-   * Fetches the transactions of the wallet. In case there are new transactions,
-   * it displays the latest one
+   * Processes the transaction of a wallet:
+   *  - Updates the last time that the transactions of a wallet were checked
+   *  - If any of the transaction is new, display a toast
    */
   async processWalletTransactions (wallet, transactions) {
     try {
@@ -206,6 +211,7 @@ class Action {
     if (wallet.isContact) {
       return
     }
+
     let message = {}
     switch (transaction.type) {
       case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
