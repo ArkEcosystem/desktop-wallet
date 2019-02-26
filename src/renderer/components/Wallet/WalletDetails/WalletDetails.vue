@@ -27,7 +27,18 @@
       class="bg-theme-feature px-5 flex flex-row rounded-bl-lg"
     >
       <div
-        class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+        class="WalletDetails__button rounded-l"
+        @click="openSelectDelegate"
+      >
+        <SvgIcon
+          name="search"
+          view-box="0 0 17 16"
+          class="mr-2"
+        />
+        {{ $t('WALLET_DELEGATES.SEARCH_DELEGATE') }}
+      </div>
+      <div
+        class="mt-4 mb-4 py-4 px-6 text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
       >
         <div
           v-if="!isAwaitingConfirmation && isLoadingVote"
@@ -99,17 +110,10 @@
       </div>
       <div
         v-if="votedDelegate && !isAwaitingConfirmation && !isLoadingVote"
-        class="WalletDetails__vote__button"
+        class="WalletDetails__button rounded-r"
         @click="openUnvote"
       >
         {{ $t('WALLET_DELEGATES.UNVOTE') }}
-      </div>
-      <div
-        v-else-if="!votedDelegate && !isAwaitingConfirmation && !isLoadingVote"
-        class="WalletDetails__vote__button"
-        @click="openSelectDelegate"
-      >
-        {{ $t('WALLET_DELEGATES.SEARCH_DELEGATE') }}
       </div>
 
       <!-- Vote/unvote modal -->
@@ -149,6 +153,7 @@ import { TransactionModal } from '@/components/Transaction'
 import { WalletExchange, WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
 import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   components: {
@@ -162,7 +167,8 @@ export default {
     WalletSelectDelegate,
     WalletSignVerify,
     WalletStatistics,
-    WalletTransactions
+    WalletTransactions,
+    SvgIcon
   },
 
   provide () {
@@ -426,14 +432,14 @@ export default {
 
 <style lang="postcss">
 .WalletDetails .MenuTab > .MenuTab__nav {
-  @apply .sticky .pin-t .z-10;
+  @apply .sticky .pin-t .z-10
 }
-.WalletDetails__vote__button {
+.WalletDetails__button {
   transition: 0.5s;
   cursor: pointer;
-  @apply .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .whitespace-no-wrap .mt-4 .mb-4 .p-4 .rounded-r .font-semibold .w-auto .text-center
+  @apply .flex .items-center .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .whitespace-no-wrap .mt-4 .mb-4 .p-4 .font-semibold .w-auto .text-center
 }
-.WalletDetails__vote__button:hover {
+.WalletDetails__button:hover {
   transition: 0.5s;
   @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
 }
