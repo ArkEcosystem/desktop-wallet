@@ -895,7 +895,7 @@ export default {
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
-    NO_VOTE: 'This wallet is not voting - use the search or click on any delegate to cast your vote',
+    NO_VOTE: 'This wallet is not voting. To view more information and vote, use the search or click on any delegate',
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
