@@ -57,7 +57,7 @@
       :bip39-warning="true"
       :helper-text="vendorFieldHelperText"
       :is-disabled="!currentWallet"
-      :maxlength="session_network.vendorField.maxLength"
+      :maxlength="vendorFieldMaxLength"
       name="vendorField"
       class="mb-5"
     />
@@ -242,13 +242,16 @@ export default {
       }
     },
     vendorFieldLabel () {
-      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.session_network.vendorField.maxLength])}`
+      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [vendorFieldMaxLength])}`
     },
     vendorFieldHelperText () {
-      if (this.form.vendorField.length === this.session_network.vendorField.maxLength) {
-        return this.$t('VENDORFIELD.VENDOR_FIELD.LIMIT_REACHED', [this.session_network.vendorField.maxLength])
+      if (this.form.vendorField.length === vendorFieldMaxLength) {
+        return this.$t('VENDORFIELD.VENDOR_FIELD.LIMIT_REACHED', [vendorFieldMaxLength])
       }
       return null
+    },
+    vendorFieldMaxLength () {
+      return this.session_network.vendorField.maxLength
     }
   },
 
