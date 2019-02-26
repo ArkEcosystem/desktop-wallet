@@ -196,7 +196,7 @@ export default {
 
       if (!profile.unconfirmedVotes) {
         profile.unconfirmedVotes = []
-        dispatch('profile/update', profile)
+        dispatch('profile/update', profile, { root: true })
       }
 
       commit('REPLACE', profile)
