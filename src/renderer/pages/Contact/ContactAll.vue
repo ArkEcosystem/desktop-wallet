@@ -214,7 +214,7 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.selectableContacts, contact => contact.hasOwnProperty('votedDelegate'))
+      return some(this.selectableContacts, contact => contact.hasOwnProperty('vote'))
     }
   },
 
