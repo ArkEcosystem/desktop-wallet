@@ -87,25 +87,20 @@ export default new BaseModule(NetworkModel, {
       commit('SET_ALL', NETWORKS)
     },
 
-    // Updates the feeStatistics for the available networks
-    async fetchFees ({ commit, getters }) {
-      let networks = getters['all']
-      let updatedNetworks = cloneDeep(networks)
-      if (networks) {
-        let i
-        for (i = 0; i < updatedNetworks.length; i++) {
-          let network = updatedNetworks[i]
-          try {
-            let feeStats = await Client.fetchFeeStatistics(network.server, network.apiVersion)
-            if (feeStats) {
-              network.feeStatistics = feeStats
-            }
-          } catch (error) {
-            //
-          }
+    /*
+     * Update the fee statistics of the current network
+     */
+    async fetchFees ({ commit, rootGetters }) {
+      const network = rootGetters['session/network']
+      if (network.apiVersion === 2) {
+        try {
+          network.feeStatistics = await Client.fetchFeeStatistics(network.server, network.apiVersion)
+        } catch (error) {
+          // Fees couldn't be updated
         }
+
+        commit('UPDATE', network)
       }
-      commit('SET_ALL', updatedNetworks)
     },
 
     addCustomNetwork ({ dispatch, commit }, network) {

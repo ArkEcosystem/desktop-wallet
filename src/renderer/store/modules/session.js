@@ -40,7 +40,7 @@ export default {
       }
 
       const { networkId } = getters['profile']
-      var network = rootGetters['network/byId'](networkId)
+      let network = rootGetters['network/byId'](networkId)
 
       if (!network) {
         network = rootGetters['network/customNetworkById'](networkId)
