@@ -96,11 +96,20 @@ export default class Synchronizer {
   }
 
   /**
-   * Dispatch these paused actions again
+   * Enable these paused actions again
    * @params {(...String|Array)} actions - ID of the actions to unpause
    */
   unpause (...actions) {
     pullAll(this.paused, flatten(actions))
+  }
+
+  /**
+   * Trigger these actions 1 time.
+   * As a consequence the interval of those actions is updated.
+   * @params {(...String|Array)} actions - ID of the actions to unpause
+   */
+  trigger (...actions) {
+    flatten(actions).forEach(actionId => this.call(actionId))
   }
 
   /**

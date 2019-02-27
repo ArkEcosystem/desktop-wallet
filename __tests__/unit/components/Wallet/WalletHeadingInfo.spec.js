@@ -17,7 +17,8 @@ const network = {
 
 const sampleWalletData = {
   address: 'AJAAfMJj1w6U5A3t6BGA7NYZsaVve6isMm',
-  balance: 797.8921
+  balance: 797.8921,
+  profileId: 'abc'
 }
 
 const alternativeCurrency = 'EUR'

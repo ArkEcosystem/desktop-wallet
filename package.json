@@ -226,12 +226,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{js,vue}": [
-        "npm run lint:fix"
-      ]
-    }
   }
 }
