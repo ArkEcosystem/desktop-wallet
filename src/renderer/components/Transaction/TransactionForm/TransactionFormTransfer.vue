@@ -256,7 +256,7 @@ export default {
       if (vendorField) {
         return vendorField.maxLength
       }
-      return this.walletNetwork.vendorField.maxLength || VENDOR_FIELD.defaultMaxLength
+      return VENDOR_FIELD.defaultMaxLength
     }
   },
 
