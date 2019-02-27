@@ -209,7 +209,7 @@ export default {
                       }
                     }
 
-                    return value
+                    return this.formatHour(value)
                   }
                 }
               }
@@ -290,6 +290,29 @@ export default {
 
     getPeriod () {
       return this.period
+    },
+
+    /**
+     * Returns the hour in the configured format (24h or 12h)
+     * @param {String} HH:mm
+     * @return {String}
+     */
+    formatHour (time) {
+      if (this.session_profile.timeFormat !== '12h') {
+        return time
+      } else {
+        const [hours, minutes] = time.split(':')
+        let hour = parseInt(hours)
+        let am = false
+        if (hour === 0) {
+          hour = 12
+        } else if (hour > 12) {
+          hour -= 12
+        } else {
+          am = true
+        }
+        return `${hour}:${minutes} ${am ? 'AM' : 'PM'}`
+      }
     }
   }
 }
