@@ -106,21 +106,32 @@ class Action {
   async refresh (wallets) {
     const addresses = wallets.map(wallet => wallet.address)
 
-    await this.refreshWalletsData(wallets, addresses)
-    await this.refreshTransactions(wallets, addresses)
+    // TODO if 1 success and the other fails
+    const [walletsData, walletsTransactions] = await Promise.all([
+      this.fetchWalletsData(addresses),
+      this.fetchWalletsTransactions(addresses)
+    ])
+
+    await this.refreshWalletsData(wallets, walletsData)
+    await this.refreshTransactions(wallets, walletsTransactions)
+  }
+
+  async fetchWalletsData (addresses) {
+    return this.$client.fetchWallets(addresses)
+  }
+
+  async fetchWalletsTransactions (addresses) {
+    return this.$client.fetchTransactionsForWallets(addresses)
   }
 
   /**
    * Refresh wallet data.
-   * NOTE: the `addresses` argument is an optimization to not iterate 2 times the same Array
    *
    * @param  {Object[]} wallets
-   * @param  {Object[]} addresses - each address of the wallets
+   * @param  {Object[]} walletsData - fetched (incomplete) data of each wallet
    * @return {void}
    */
-  async refreshWalletsData (wallets, addresses) {
-    const walletsData = await this.$client.fetchWallets(addresses)
-
+  async refreshWalletsData (wallets, walletsData) {
     for (const wallet of wallets) {
       const walletData = walletsData.find(data => data && data.address === wallet.address)
       if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
@@ -133,27 +144,26 @@ class Action {
 
   /**
    * Fetch the transactions of the wallets and process them.
-   * NOTE: the `addresses` argument is an optimization to not iterate 2 times the same Array
    *
    * @param  {Object[]} wallets
-   * @param  {Object[]} addresses - each address of the wallets
+   * @param  {Object} walletsTransactions - transactions aggregated by wallet address
    * @return {void}
    */
-  async refreshTransactions (wallets, addresses) {
-    const walletTransactions = await this.$client.fetchTransactionsForWallets(addresses)
-
+  async refreshTransactions (wallets, walletsTransactions) {
     for (const wallet of wallets) {
-      if (walletTransactions[wallet.address]) {
-        this.processWalletTransactions(wallet, walletTransactions[wallet.address])
+      if (walletsTransactions[wallet.address]) {
+        this.processWalletTransactions(wallet, walletsTransactions[wallet.address])
       }
     }
 
     // TODO: this should be remove later, when the transactions are stored, to take advantage of the reactivity
-    eventBus.emit(`transactions:fetched`, walletTransactions)
+    eventBus.emit(`transactions:fetched`, walletsTransactions)
   }
 
   /**
    * Update cached wallet data.
+   * TODO dispatch only 1 wallet/update
+   *
    * @param  {Object} wallet
    * @param  {Object} walletData Wallet data fetched from API
    * @return {void}
@@ -176,6 +186,8 @@ class Action {
 
   /**
    * Processes the transaction of a wallet:
+   * TODO dispatch only 1 wallet/update
+   *
    *  - Updates the last time that the transactions of a wallet were checked
    *  - If any of the transaction is new, display a toast
    */
