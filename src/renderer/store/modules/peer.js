@@ -281,6 +281,7 @@ export default {
       if (peer) {
         await getApiPort(peer)
         this._vm.$client.host = getBaseUrl(peer)
+        this._vm.$client.capabilities = peer.version
         await dispatch('transaction/updateStaticFees', null, { root: true })
       }
       commit('SET_CURRENT_PEER', {

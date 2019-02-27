@@ -123,6 +123,14 @@ export default class ClientService {
     this.client.setVersion(apiVersion)
   }
 
+  get capabilities () {
+    return this.__capabilities
+  }
+
+  set capabilities (version) {
+    this.__capabilities = semver.coerce(version)
+  }
+
   /**
    * Fetch the peer status.
    * @returns {Object}
@@ -359,7 +367,7 @@ export default class ClientService {
     options = options || {}
 
     let walletData = {}
-    if (semver.gte(this.__capabilities, '2.1.0')) {
+    if (semver.gte(this.capabilities, '2.1.0')) {
       let transactions = []
       let hadFailure = false
 
@@ -478,7 +486,7 @@ export default class ClientService {
   async fetchWallets (addresses) {
     let walletData = []
 
-    if (semver.gte(this.__capabilities, '2.1.0')) {
+    if (semver.gte(this.capabilities, '2.1.0')) {
       for (const addressChunk of chunk(addresses, 20)) {
         const { data } = await this.client.resource('wallets').search({
           addresses: addressChunk
@@ -838,7 +846,7 @@ export default class ClientService {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           this.version = currentPeer.version.match(/^2\./) ? 2 : 1
-          this.__capabilities = currentPeer.version
+          this.capabilities = currentPeer.version
 
         // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
         } else {
@@ -860,7 +868,7 @@ export default class ClientService {
             }
           }
 
-          this.__capabilities = semver.coerce(apiVersion)
+          this.capabilities = apiVersion
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {
