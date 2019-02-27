@@ -129,7 +129,7 @@ class PluginManager {
         // TODO: Security checks against running from wallet root instead of plugin root.
         //       Make sure additional files/packages aren't accessible.
         const vm = new vm2.NodeVM({
-          sandbox: this.loadSandbox(plugin.config),
+          sandbox: { ...this.loadSandbox(plugin.config), document },
           require: {
             builtin: [],
             context: 'sandbox',
@@ -441,7 +441,6 @@ class PluginManager {
 
   loadSandbox (config) {
     const sandbox = {
-      document,
       walletApi: {}
     }
 
