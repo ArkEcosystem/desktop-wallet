@@ -107,7 +107,7 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m']
+          const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l']
           for (const key of keys) {
             context[key] = that[key]
           }
