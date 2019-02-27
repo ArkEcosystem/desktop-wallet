@@ -22,9 +22,9 @@ export default {
       if (!network) {
         return
       }
-      const token = network.token
+      const ticker = network.market.ticker
       const currency = rootGetters['session/currency']
-      const market = `${token}/${currency}`
+      const market = `${ticker}/${currency}`
 
       return state.tickers[market]
     }

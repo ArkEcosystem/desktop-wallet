@@ -53,6 +53,7 @@
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="session_network.version"
+        :public-key="currentWallet.secondPublicKey"
         class="mt-5"
       />
 
