@@ -79,14 +79,14 @@ class Action {
       //
       //     // As a fallback, retrieve all the wallets
       //     } else {
-      //       await this.refreshWallets(walletsToCheck)
+      //       await this.refresh(walletsToCheck)
       //     }
       //   }
       // }
 
       // Check the not checked wallets now
       if (notChecked.length) {
-        await this.refreshWallets(notChecked)
+        await this.refresh(notChecked)
         this.checked = this.checked.concat(notChecked)
       }
     }
@@ -103,7 +103,7 @@ class Action {
    * @param  {Object[]} wallets
    * @return {void}
    */
-  async refreshWallets (wallets) {
+  async refresh (wallets) {
     const walletsData = await this.$client.fetchWallets(wallets.map(wallet => wallet.address))
     for (const wallet of wallets) {
       const walletData = walletsData.find(data => data && data.address === wallet.address)
@@ -114,7 +114,25 @@ class Action {
       await this.processWalletData(wallet, walletData)
     }
 
-    await this.fetchTransactionsForWallets(wallets)
+    await this.refreshTransactions(wallets)
+  }
+
+  /**
+   * Fetch the transactions of the wallets.
+   *
+   * @param  {Object[]} wallets
+   * @return {void}
+   */
+  async refreshTransactions (wallets) {
+    const walletTransactions = await this.$client.fetchTransactionsForWallets(wallets.map(wallet => wallet.address))
+    for (const wallet of wallets) {
+      if (walletTransactions[wallet.address]) {
+        this.processWalletTransactions(wallet, walletTransactions[wallet.address])
+      }
+    }
+
+    // TODO: this should be remove later, when the transactions are stored, to take advantage of the reactivity
+    eventBus.emit(`transactions:fetched`, walletTransactions)
   }
 
   /**
@@ -137,24 +155,6 @@ class Action {
     } catch (error) {
       this.$logger.error(error.message)
     }
-  }
-
-  /**
-   * Fetch the transactions of the wallets.
-   *
-   * @param  {Object[]} wallets
-   * @return {void}
-   */
-  async fetchTransactionsForWallets (wallets) {
-    const walletTransactions = await this.$client.fetchTransactionsForWallets(wallets.map(wallet => wallet.address))
-    for (const wallet of wallets) {
-      if (walletTransactions[wallet.address]) {
-        this.processWalletTransactions(wallet, walletTransactions[wallet.address])
-      }
-    }
-
-    // TODO: this should be remove later, when the transactions are stored, to take advantage of the reactivity
-    eventBus.emit(`transactions:fetched`, walletTransactions)
   }
 
   /**
