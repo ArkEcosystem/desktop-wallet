@@ -112,6 +112,7 @@ class Action {
       this.fetchWalletsTransactions(addresses)
     ])
 
+    // NOTE: this has to be run in order to avoid race conditions when updating the wallet store
     await this.refreshWalletsData(wallets, walletsData)
     await this.refreshTransactions(wallets, walletsTransactions)
   }
@@ -151,18 +152,19 @@ class Action {
    */
   async refreshTransactions (wallets, walletsTransactions) {
     for (const wallet of wallets) {
-      if (walletsTransactions[wallet.address]) {
-        this.processWalletTransactions(wallet, walletsTransactions[wallet.address])
+      const transactions = walletsTransactions[wallet.address]
+      if (transactions && transactions.length) {
+        this.processWalletTransactions(wallet, transactions)
       }
     }
 
-    // TODO: this should be remove later, when the transactions are stored, to take advantage of the reactivity
+    // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
     eventBus.emit(`transactions:fetched`, walletsTransactions)
   }
 
   /**
    * Update cached wallet data.
-   * TODO dispatch only 1 wallet/update
+   * TODO dispatch only 1 wallet store update
    *
    * @param  {Object} wallet
    * @param  {Object} walletData Wallet data fetched from API
@@ -186,7 +188,7 @@ class Action {
 
   /**
    * Processes the transaction of a wallet:
-   * TODO dispatch only 1 wallet/update
+   * TODO dispatch only 1 wallet store update
    *
    *  - Updates the last time that the transactions of a wallet were checked
    *  - If any of the transaction is new, display a toast
