@@ -222,7 +222,7 @@ export default {
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
-      PLUGINS: 'Plugins',
+      PLUGINS: 'Plugin Manager',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
