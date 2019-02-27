@@ -141,6 +141,7 @@ class PluginManager {
           }
         })
 
+        // TODO: Test accessing 'document' "module.exports =" in the required component file.
         const renderedComponent = vm.run(
           `const Vue = require('vue/dist/vue.common.js')
           const component = require('./${componentPath}')
