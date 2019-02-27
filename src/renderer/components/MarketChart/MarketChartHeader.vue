@@ -2,7 +2,7 @@
   <nav class="MarketChartHeader flex flex-row justify-between">
     <div class="text-lg font-semibold mt-1 text-theme-chart-price">
       <span v-if="price">
-        {{ $t('MARKET_CHART_HEADER.PRICE') }}:
+        {{ $t('MARKET_CHART_HEADER.PRICE', { currency: ticker }) }}:
         <!-- TODO price in crypto and fiat instead of only in 1 currency -->
         {{ currency_format(price, { currency, currencyDisplay: 'code' }) }}
       </span>
@@ -46,6 +46,9 @@ export default {
     },
     price () {
       return this.$store.getters['market/lastPrice']
+    },
+    ticker () {
+      return this.session_network.market.ticker
     }
   }
 }
