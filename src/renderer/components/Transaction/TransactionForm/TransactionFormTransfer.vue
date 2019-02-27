@@ -102,6 +102,7 @@
       v-model="$v.form.secondPassphrase.$model"
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
       :pub-key-hash="walletNetwork.version"
+      :public-key="currentWallet.secondPublicKey"
       class="mt-5"
     />
 
@@ -139,7 +140,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { TRANSACTION_TYPES, V1, VENDOR_FIELD } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -251,7 +252,11 @@ export default {
       return null
     },
     vendorFieldMaxLength () {
-      return this.walletNetwork.vendorField.maxLength
+      const vendorField = this.walletNetwork.vendorField
+      if (vendorField) {
+        return vendorField.maxLength
+      }
+      return this.walletNetwork.vendorField.maxLength || VENDOR_FIELD.defaultMaxLength
     }
   },
 
