@@ -3,6 +3,7 @@ import { Action } from '@/services/synchronizer/wallets'
 describe('Services > Synchronizer > Wallets', () => {
   let action
   let wallets
+  let addresses
   let contacts
   let walletUpdate
   let transactionDeleteBulk
@@ -50,6 +51,7 @@ describe('Services > Synchronizer > Wallets', () => {
       { address: 'A3', transactions: {} },
       { address: 'A4', transactions: {} }
     ]
+    addresses = wallets.map(wallet => wallet.address)
     contacts = [
       { address: 'Acon1', transactions: {} },
       { address: 'Acon2', transactions: {} }
@@ -171,7 +173,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
       await action.refresh(wallets)
 
-      expect(action.refreshTransactions).toHaveBeenCalledWith(wallets)
+      expect(action.refreshTransactions).toHaveBeenCalledWith(wallets, addresses)
     })
   })
 
@@ -233,7 +235,7 @@ describe('Services > Synchronizer > Wallets', () => {
         return {}
       })
 
-      await action.refreshTransactions(wallets)
+      await action.refreshTransactions(wallets, addresses)
       expect(action.$client.fetchTransactionsForWallets).toHaveBeenCalledWith(wallets.map(wallet => wallet.address))
     })
 
@@ -252,7 +254,7 @@ describe('Services > Synchronizer > Wallets', () => {
       })
 
       it('should not call processWalletTransactions', async () => {
-        await action.refreshTransactions(wallets)
+        await action.refreshTransactions(wallets, addresses)
 
         wallets.forEach(walletCheck => {
           if (walletCheck.address === wallet.address) {
@@ -264,12 +266,12 @@ describe('Services > Synchronizer > Wallets', () => {
       })
 
       it('should not dispatch the `update/wallet` Vuex action', async () => {
-        await action.refreshTransactions(wallets)
+        await action.refreshTransactions(wallets, addresses)
         expect(walletUpdate).not.toHaveBeenCalled()
       })
 
       it('should not dispatch the `transaction/deleteBulk` Vuex action', async () => {
-        await action.refreshTransactions(wallets)
+        await action.refreshTransactions(wallets, addresses)
         expect(transactionDeleteBulk).not.toHaveBeenCalled()
       })
     })
@@ -289,7 +291,7 @@ describe('Services > Synchronizer > Wallets', () => {
       })
 
       it('should call processWalletTransactions', async () => {
-        await action.refreshTransactions(wallets)
+        await action.refreshTransactions(wallets, addresses)
 
         wallets.forEach(walletCheck => {
           if (walletCheck.address === wallet.address) {

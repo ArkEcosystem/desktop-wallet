@@ -99,12 +99,28 @@ class Action {
   }
 
   /**
-   * Refresh wallet data.
+   * Refresh the data and transactions of the wallets and process them.
    * @param  {Object[]} wallets
    * @return {void}
    */
   async refresh (wallets) {
-    const walletsData = await this.$client.fetchWallets(wallets.map(wallet => wallet.address))
+    const addresses = wallets.map(wallet => wallet.address)
+
+    await this.refreshWalletsData(wallets, addresses)
+    await this.refreshTransactions(wallets, addresses)
+  }
+
+  /**
+   * Refresh wallet data.
+   * NOTE: the `addresses` argument is an optimization to not iterate 2 times the same Array
+   *
+   * @param  {Object[]} wallets
+   * @param  {Object[]} addresses - each address of the wallets
+   * @return {void}
+   */
+  async refreshWalletsData (wallets, addresses) {
+    const walletsData = await this.$client.fetchWallets(addresses)
+
     for (const wallet of wallets) {
       const walletData = walletsData.find(data => data && data.address === wallet.address)
       if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
@@ -113,18 +129,19 @@ class Action {
 
       await this.processWalletData(wallet, walletData)
     }
-
-    await this.refreshTransactions(wallets)
   }
 
   /**
-   * Fetch the transactions of the wallets.
+   * Fetch the transactions of the wallets and process them.
+   * NOTE: the `addresses` argument is an optimization to not iterate 2 times the same Array
    *
    * @param  {Object[]} wallets
+   * @param  {Object[]} addresses - each address of the wallets
    * @return {void}
    */
-  async refreshTransactions (wallets) {
-    const walletTransactions = await this.$client.fetchTransactionsForWallets(wallets.map(wallet => wallet.address))
+  async refreshTransactions (wallets, addresses) {
+    const walletTransactions = await this.$client.fetchTransactionsForWallets(addresses)
+
     for (const wallet of wallets) {
       if (walletTransactions[wallet.address]) {
         this.processWalletTransactions(wallet, walletTransactions[wallet.address])
