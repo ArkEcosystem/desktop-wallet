@@ -117,10 +117,8 @@
           </button>
 
           <button
-            v-for="wallet in selectableWalletsWithPlaceholders"
+            v-for="wallet in selectableWallets"
             :key="wallet.id"
-            :disabled="wallet.isPlaceholder"
-            :class="{ 'WalletAll__grid__wallet--placeholder': wallet.isPlaceholder }"
             class="WalletAll__grid__wallet group"
             @click="showWallet(wallet.id)"
           >
@@ -165,7 +163,6 @@
                   </div>
 
                   <MenuDropdown
-                    v-if="!wallet.isPlaceholder"
                     :items="getContextMenuOptions(wallet)"
                     :is-highlighting="false"
                     :position="['-100%', '-20%']"
@@ -365,21 +362,6 @@ export default {
 
     showVotedDelegates () {
       return some(this.selectableWallets, wallet => wallet.hasOwnProperty('vote'))
-    },
-
-    selectableWalletsWithPlaceholders () {
-      const placeholder = {
-        address: this.$t('COMMON.WALLET'),
-        balance: 0,
-        isPlaceholder: true
-      }
-
-      // Add two placeholders
-      return [
-        ...this.selectableWallets,
-        placeholder,
-        placeholder
-      ]
     }
   },
 
@@ -534,9 +516,6 @@ export default {
   transition-property: transform, border, box-shadow;
   transition-duration: .2s;
   transition-timing-function: ease;
-}
-.WalletAll__grid__wallet--placeholder .WalletAll__grid__wallet__wrapper__mask {
-  filter: opacity(25%) grayscale(100%) drop-shadow(0 0 0 config('colors.theme-button'));
 }
 .WalletAll__grid__wallet:hover {
   @apply rounded-lg z-10;
