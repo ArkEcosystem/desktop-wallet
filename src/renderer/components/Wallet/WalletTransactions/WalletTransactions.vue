@@ -130,7 +130,7 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address, true)
+      return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
     },
 
     async getTransactions (address) {
