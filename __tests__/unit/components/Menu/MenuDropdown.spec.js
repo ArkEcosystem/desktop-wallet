@@ -176,5 +176,19 @@ describe('MenuDropdown', () => {
       })
       expect(wrapper.contains('.MenuDropdownItem')).toBeTruthy()
     })
+
+    it('should not activate items when clicked', () => {
+      const wrapper = mount(MenuDropdown, {
+        propsData: {
+          items: ['first', 'second'],
+          value: 'second',
+          isHighlighting: false
+        }
+      })
+      const handler = wrapper.find('.MenuDropdownHandler')
+      handler.trigger('click')
+      const isActive = wrapper.contains('.MenuDropdownItem--active')
+      expect(isActive).toBe(false)
+    })
   })
 })

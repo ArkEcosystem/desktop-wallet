@@ -36,7 +36,8 @@ export default {
     TIME_FORMAT: 'Time format',
     VERIFIED_ADDRESS: 'This is a verified address',
     WARNING: 'Warning',
-    WILL: 'will'
+    WILL: 'will',
+    WALLET: 'Wallet'
   },
 
   ANNOUNCEMENTS: {
