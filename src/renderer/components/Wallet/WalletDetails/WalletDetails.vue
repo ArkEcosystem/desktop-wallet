@@ -388,7 +388,14 @@ export default {
 
       if (this.selectedDelegate) {
         this.isSelecting = false
-        this.isVoting = true
+
+        if (this.votedDelegate) {
+          if (this.selectedDelegate.publicKey === this.votedDelegate.publicKey) {
+            this.isUnvoting = true
+          }
+        } else {
+          this.isVoting = true
+        }
       }
     },
 
@@ -412,15 +419,7 @@ export default {
     },
 
     onRowClick (publicKey) {
-      this.selectedDelegate = this.$store.getters['delegate/byPublicKey'](publicKey)
-
-      if (this.walletVote.publicKey === publicKey) {
-        this.isUnvoting = true
-      } else {
-        if (!this.votedDelegate) {
-          this.isVoting = true
-        }
-      }
+      this.onConfirmSelect(publicKey)
     }
   }
 }
