@@ -23,27 +23,9 @@ export default new BaseModule(NetworkModel, {
     byName: state => name => {
       return state.all.find(network => network.name === name)
     },
-
-    feeStatisticsByType: (_, __, ___, rootGetters) => type => {
-      const network = rootGetters['session/network']
-
-      if (!network) {
-        throw new Error('[network/feeStatisticsByType] No active network.')
-      }
-
-      if (network.apiVersion === 1) {
-        throw new Error('[network/feeStatisticsByType] Supported only by v2 networks.')
-      }
-
-      const { feeStatistics } = network
-      const data = feeStatistics.find(transactionType => transactionType.type === type)
-      return data ? data.fees : []
-    },
-
     customNetworkById: state => id => {
       return state.customNetworks[id]
     },
-
     customNetworks: state => state.customNetworks
   },
 

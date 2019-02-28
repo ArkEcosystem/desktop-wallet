@@ -215,6 +215,9 @@ export default {
     },
     isAdvancedFee () {
       return this.feeChoice === 'ADVANCED'
+    },
+    feeNetwork () {
+      return this.walletNetwork || this.session_network
     }
   },
 
@@ -223,22 +226,35 @@ export default {
   },
 
   methods: {
+    feeStatisticsByType (type) {
+      if (!this.feeNetwork) {
+        throw new Error('No active network to fetch fees')
+      }
+
+      if (this.feeNetwork.apiVersion === 1) {
+        throw new Error('Fee statistics are supported only by v2 networks')
+      }
+
+      const { feeStatistics } = this.feeNetwork
+      const data = feeStatistics.find(transactionType => transactionType.type === type)
+      return data ? data.fees : []
+    },
     /**
      * Even if the network provides a fees higher than V1, it will be corrected
      */
     prepareFeeStatistics () {
-      let { avgFee, maxFee } = this.$store.getters['network/feeStatisticsByType'](this.transactionType)
+      let { avgFee, maxFee } = this.feeStatisticsByType(this.transactionType)
 
       avgFee = avgFee * 1e-8
-      this.$set(this.feeChoices, 'AVERAGE', avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
-
       maxFee = maxFee * 1e-8
-      this.$set(this.feeChoices, 'MAXIMUM', maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
       this.$set(this.feeChoices, 'MINIMUM', 1 / 1e8)
+      this.$set(this.feeChoices, 'AVERAGE', avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
+      this.$set(this.feeChoices, 'MAXIMUM', maxFee < this.maxV1fee ? maxFee : this.maxV1fee)
 
       this.$set(this.feeChoices, 'INPUT', this.feeChoices.AVERAGE)
       this.$set(this.feeChoices, 'ADVANCED', this.feeChoices.AVERAGE)
+
       this.emitFee(this.feeChoices.AVERAGE)
     },
     focusInput () {

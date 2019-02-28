@@ -12,7 +12,6 @@ jest.mock('@/store', () => {
   return {
     getters: {
       'session/network': jest.fn(),
-      'network/feeStatisticsByType': jest.fn(),
       'transaction/staticFee': jest.fn(type => {
         switch (type) {
           case 0:
@@ -39,15 +38,11 @@ describe('InputFee', () => {
       market: {
         enabled: true
       },
+      feeStatistics: [],
       fractionDigits: 8
     }
 
     store.getters['session/network'] = mockNetwork
-    store.getters['network/feeStatisticsByType'] = type => ({
-      avgFee: 0.0048 * 1e8,
-      maxFee: 0.012 * 1e8,
-      minFee: 0.0006 * 1e8
-    })
     store.getters['network/byToken'] = () => mockNetwork
   })
 
@@ -195,11 +190,14 @@ describe('InputFee', () => {
   describe('prepareFeeStatistics', () => {
     describe('when the average fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 1000 * 1e8,
-          maxFee: 0.03 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 1000 * 1e8,
+            maxFee: 0.03 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use the V1 fee as average always', () => {
@@ -211,11 +209,14 @@ describe('InputFee', () => {
 
     describe('when the average fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * 1e8,
-          maxFee: 0.03 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 0.0048 * 1e8,
+            maxFee: 0.03 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use it as average', () => {
@@ -227,11 +228,14 @@ describe('InputFee', () => {
 
     describe('when the maximum fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * 1e8,
-          maxFee: 1000 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 0.0048 * 1e8,
+            maxFee: 1000 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use the V1 fee as maximum always', () => {
@@ -243,11 +247,14 @@ describe('InputFee', () => {
 
     describe('when the maximum fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * 1e8,
-          maxFee: 0.03 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 0.0048 * 1e8,
+            maxFee: 0.03 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use it as maximum', () => {
