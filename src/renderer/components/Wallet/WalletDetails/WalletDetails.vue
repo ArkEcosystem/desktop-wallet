@@ -366,6 +366,7 @@ export default {
     },
 
     openUnvote () {
+      this.selectedDelegate = this.votedDelegate
       this.isUnvoting = true
     },
 
