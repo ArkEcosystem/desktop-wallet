@@ -182,7 +182,7 @@ export default {
       avgFee = avgFee * 1e-8
       maxFee = maxFee * 1e-8
 
-      // Even if the network provides a fees higher than V1, it will be corrected
+      // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = avgFee < this.maxV1fee ? avgFee : this.maxV1fee
       return {
         MINIMUM: 1 / 1e8,
