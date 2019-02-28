@@ -166,6 +166,7 @@
                     :items="getContextMenuOptions(wallet)"
                     :is-highlighting="false"
                     :position="['-100%', '-20%']"
+                    :container-classes="'hidden group-hover:block'"
                     @select="onSelectDropdown(wallet, $event)"
                   >
                     <span
