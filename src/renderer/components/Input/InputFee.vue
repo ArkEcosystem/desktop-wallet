@@ -119,7 +119,8 @@ export default {
 
   data: () => ({
     chosenFee: 'AVERAGE',
-    step: 1e-8
+    step: 1e-8,
+    fee: 0
   }),
 
   computed: {
@@ -151,7 +152,6 @@ export default {
       if (this.feeChoices.MAXIMUM === this.feeChoices.AVERAGE) {
         return +this.fee === this.feeChoices.AVERAGE
       }
-
       return false
     },
     isAdvancedFee () {
@@ -179,7 +179,6 @@ export default {
     },
     feeChoices () {
       let { avgFee, maxFee } = this.feeStatistics
-
       avgFee = avgFee * 1e-8
       maxFee = maxFee * 1e-8
 
@@ -199,24 +198,24 @@ export default {
       return this.$t('INPUT_FEE.ERROR.LESS_THAN_MINIMUM', { fee })
     },
     maximumError () {
-      if (this.isAdvancedFee) {
-        return ''
+      if (!this.isAdvancedFee) {
+        const max = this.feeChoices.MAXIMUM
+        const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
+        return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
       }
-
-      const max = this.feeChoices.MAXIMUM
-      const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
-      return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
+      return null
     },
     insufficientFundsError () {
       if (!this.showInsufficientFunds) {
-        return ''
+        return null
       }
 
-      if (parseFloat(this.currency_subToUnit(this.currentWallet.balance)) < parseFloat(this.fee)) {
+      const funds = parseFloat(this.currency_subToUnit(this.currentWallet.balance))
+      if (funds < parseFloat(this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
-      return ''
+      return null
     },
     warningText () {
       if (this.isAdvancedFee) {
@@ -225,14 +224,19 @@ export default {
       if (this.fee < this.feeChoices.AVERAGE) {
         return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
-
       return null
     }
   },
 
   created () {
-    this.emitFee(this.feeChoices.AVERAGE)
+    // Fees should be synchronized only when this component is active
     this.$synchronizer.focus('fees')
+
+    this.emitFee(this.feeChoices.AVERAGE)
+  },
+
+  beforeDestroy () {
+    this.$synchronizer.pause('fees')
   },
 
   methods: {
