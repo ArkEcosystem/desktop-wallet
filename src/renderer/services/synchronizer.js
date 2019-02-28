@@ -99,8 +99,8 @@ export default class Synchronizer {
     }
     ;['default', 'focus'].forEach(mode => {
       const { interval } = config[mode]
-      if (!interval) {
-        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a number bigger than 0`)
+      if (!interval && interval !== null) {
+        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a Number bigger than 0 (or \`null\` to ignore it)`)
       }
     })
 
@@ -185,11 +185,15 @@ export default class Synchronizer {
             } else {
               const mode = includes(this.focused, actionId) ? 'focus' : 'default'
               const { interval } = action[mode]
-              const nextCall = action.calledAt + interval
-              const now = (new Date()).getTime()
 
-              if (nextCall <= now) {
-                this.call(actionId)
+              // `null` is used to not run the action
+              if (interval !== null) {
+                const nextCall = action.calledAt + interval
+                const now = (new Date()).getTime()
+
+                if (nextCall <= now) {
+                  this.call(actionId)
+                }
               }
             }
           }
@@ -216,6 +220,7 @@ export default class Synchronizer {
       await announcements(this)
     })
 
+    // TODO focus on contacts only (currently wallets and contacts are the same)
     // this.define('contacts', this.config.contacts, async () => {
     //   console.log('defined CONTACTS')
     // })
@@ -236,7 +241,7 @@ export default class Synchronizer {
       await peer(this)
     })
 
-    // TODO allow focusing on 1 wallet alone
+    // TODO allow focusing on 1 wallet alone, while using the normal mode for the rest
     this.define('wallets', this.config.wallets, async () => {
       await wallets(this)
     })
