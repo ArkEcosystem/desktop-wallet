@@ -16,6 +16,7 @@ export default {
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
@@ -225,7 +226,6 @@ export default {
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
-      IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
         TITLE: 'Reset data',
@@ -504,6 +504,7 @@ export default {
           HEADER: 'Appearance',
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
         THEME: 'Choose light or dark mode',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
