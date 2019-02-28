@@ -61,10 +61,11 @@
               <!-- Hide it when the step is collapse -->
               <ButtonReload
                 v-if="step === 1"
+                :is-refreshing="isRefreshing"
                 color-class="WalletNew__ButtonReload-colorClass"
                 text-class="hover:text-white"
-                :is-refreshing="isRefreshing"
-                class="WalletNew__refresh-button"
+                view-box="0 0 14 12"
+                class="WalletNew__refresh-button WalletNew__refresh-button--address"
                 @click="refreshAddresses"
               />
             </div>
@@ -553,7 +554,9 @@ export default {
 .WalletNew__wallets-leave-to {
   opacity: 0
 }
-
+.WalletNew__refresh-button--address {
+  padding: .6rem;
+}
 .WalletNew__wallets__address .identicon {
   font-size: 0;
 }
