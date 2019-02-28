@@ -122,7 +122,7 @@
         v-if="isUnvoting || selectedDelegate"
         :title="getVoteTitle()"
         :type="3"
-        :delegate="votedDelegate || selectedDelegate"
+        :delegate="selectedDelegate"
         :is-voter="isUnvoting"
         :has-voted="!!votedDelegate"
         @cancel="onCancel"
@@ -418,10 +418,11 @@ export default {
     },
 
     onRowClick (publicKey) {
+      this.selectedDelegate = this.$store.getters['delegate/byPublicKey'](publicKey)
+
       if (this.walletVote.publicKey === publicKey) {
         this.isUnvoting = true
       } else {
-        this.selectedDelegate = this.$store.getters['delegate/byPublicKey'](publicKey)
         if (!this.votedDelegate) {
           this.isVoting = true
         }
