@@ -65,19 +65,17 @@ describe('Mixins > Currency', () => {
     describe('when the `currencyFrom` option with value "network" is provided', () => {
       it('should display the symbol currency of the current network', () => {
         const amount = 1.00035
-
         expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1.00035')
       })
 
       it('should use the i18n locale', () => {
         const amount = Math.pow(10, 4) + 1e-8
 
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
+        wrapper.vm.$i18n.locale = 'es-ES'
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,00000001 ×')
 
-        // NOTE: this is not going to work when tested on Node (https://github.com/nodejs/node/issues/8818)
-        // although this assertion would work on browsers
-        // wrapper.vm.$i18n.locale = 'es-ES'
-        // expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,001 ×')
+        wrapper.vm.$i18n.locale = 'ja-JP'
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
       })
     })
 
@@ -86,11 +84,9 @@ describe('Mixins > Currency', () => {
         const amount = Math.pow(10, 4) + Math.pow(10, -5)
 
         wrapper.vm.$store.getters['session/currency'] = 'BTC'
-
         expect(format(amount, { currencyFrom: 'session' })).toEqual('Ƀ 10,000.00001')
 
         wrapper.vm.$store.getters['session/currency'] = 'EUR'
-
         expect(format(amount, { currencyFrom: 'session' })).toEqual('€10,000.00')
       })
     })
@@ -106,19 +102,16 @@ describe('Mixins > Currency', () => {
       describe('when the symbol is not configured', () => {
         it('should throw an Error', () => {
           const amount = Math.pow(10, 5) + Math.pow(10, -5)
-
           expect(() => format(amount, { currency: 'NO' })).toThrow()
         })
 
         it('should admit it is the current network currency', () => {
           const amount = Math.pow(10, 5) + Math.pow(10, -5)
-
           expect(format(amount, { currency: 'NET' })).toEqual('× 100,000.00001')
         })
 
         it('should admit it is from any known network', () => {
           const amount = Math.pow(10, 5) + Math.pow(10, -5)
-
           expect(format(amount, { currency: 'TOK' })).toEqual('t 100,000.00001')
         })
       })
@@ -129,6 +122,7 @@ describe('Mixins > Currency', () => {
         const amount = 9835.387653
 
         expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })).toEqual('NET 9,835.387653')
+        expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'symbol' })).toEqual('× 9,835.387653')
         expect(format(amount, { currency: 'EUR', currencyDisplay: 'symbol' })).toEqual('€9,835.39')
       })
     })
@@ -150,14 +144,32 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    it('should work with big quantities', () => {
-      let amount = Math.pow(10, 12) + 0.01
+    describe('when using the currency is not fiat', () => {
+      it('should add a space between the symbol and the number', () => {
+        const amount = Math.pow(10, 4) + 1e-2
 
-      expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.00999424')
+        expect(format(amount, { currency: 'EUR' })).toEqual('€10,000.01')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.01')
+        expect(format(amount, { currency: 'TOK' })).toEqual('t 10,000.01')
 
-      amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
+        wrapper.vm.$i18n.locale = 'es-ES'
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,01 ×')
+      })
+    })
 
-      expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.44')
+    describe('when using big quantities', () => {
+      // NOTE: restore the original implementation to avoid using the polyfill
+      let Intl
+      beforeEach(() => (global.Intl = global.__Intl__))
+      afterEach(() => (global.Intl = Intl))
+
+      it('should work precissely', () => {
+        let amount = Math.pow(10, 12) + 0.01
+        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.01')
+
+        amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
+        expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.00')
+      })
     })
   })
 
@@ -170,11 +182,9 @@ describe('Mixins > Currency', () => {
     describe('when not receiving a network', () => {
       it('should use the session network to convert an amount from arktoshi to ARK', () => {
         let amount = Math.pow(10, 9)
-
         expect(subToUnit(amount)).toEqual('10')
 
         amount = Math.pow(10, 12) + 9800 + 1
-
         expect(subToUnit(amount)).toEqual('10000.00009801')
       })
     })
@@ -182,12 +192,11 @@ describe('Mixins > Currency', () => {
     describe('when receiving a network', () => {
       it('should use it to convert an amount from its subunit to its unit', () => {
         const network = { fractionDigits: 3 }
-        let amount = Math.pow(10, 3)
 
+        let amount = Math.pow(10, 3)
         expect(subToUnit(amount, network)).toEqual('1')
 
         amount = Math.pow(10, 9) + 9800 + 1
-
         expect(subToUnit(amount, network)).toEqual('1000009.801')
       })
     })

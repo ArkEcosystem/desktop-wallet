@@ -46,6 +46,7 @@ export default {
       // currencies. For that reason, we use the "no-currency" code instead and
       // replace it later with the cryptocurrency code or symbol
       const cryptoPlaceholder = 'XXX'
+      const cryptoPlaceholderSymbol = '¤'
       let cryptoCurrency = null
 
       const findNetworkByCurrency = currency => {
@@ -86,8 +87,17 @@ export default {
         config.currency = cryptoPlaceholder
       }
 
-      return this.$n(value.toString(), config)
-        .replace(cryptoPlaceholder, cryptoCurrency + ' ')
+      const formatted = this.$n(value.toString(), config)
+
+      // When using cryptocurrencies, add a space between the symbol and the number
+      if (cryptoCurrency) {
+        return formatted
+          .replace(cryptoPlaceholder, `${cryptoCurrency} `)
+          .replace(cryptoPlaceholderSymbol, `${cryptoCurrency} `)
+          .trim()
+      }
+
+      return formatted
     },
 
     currency_simpleFormatCrypto (value, network) {

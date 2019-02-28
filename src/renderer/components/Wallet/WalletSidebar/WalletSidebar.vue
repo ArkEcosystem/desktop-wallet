@@ -19,6 +19,7 @@
           content: $t('WALLET_SIDEBAR.FILTER')
         }"
         class="WalletSidebar__menu__button"
+        :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
         @click="toggleFilters"
       >
         <SvgIcon
@@ -202,7 +203,7 @@
 </template>
 
 <script>
-import { filter, sortBy, uniqBy } from 'lodash'
+import { clone, filter, isEqual, sortBy, uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -235,21 +236,27 @@ export default {
     }
   },
 
-  data: () => ({
+  data: vm => ({
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
-    filters: {
-      hideEmpty: false,
-      hideLedger: false,
-      searchQuery: ''
-    },
+    filters: clone(vm.$options.defaultFilters),
     sort: {
       order: 'name-asc'
     }
   }),
 
+  defaultFilters: Object.freeze({
+    hideEmpty: false,
+    hideLedger: false,
+    searchQuery: ''
+  }),
+
   computed: {
+    areFiltersActive () {
+      return !isEqual(this.filters, this.$options.defaultFilters)
+    },
+
     currentWallet () {
       return this.wallet_fromRoute || {}
     },
@@ -371,16 +378,22 @@ export default {
       }
       if (this.filters.searchQuery) {
         filtered = filter(filtered, ({ address, balance, name }) => {
-          const alternativeName = this.wallet_name(address)
-          const names = alternativeName
-            ? [name, alternativeName]
-            : [name]
-
-          return [
-            ...names,
+          let match = [
             address,
             balance.toString()
           ].some(text => text.includes(this.filters.searchQuery))
+
+          if (!match) {
+            const alternativeName = this.wallet_name(address)
+            const names = alternativeName
+              ? [name, alternativeName]
+              : [name]
+
+            const query = this.filters.searchQuery.toLowerCase()
+            match = names.some(name => name.toLowerCase().includes(query))
+          }
+
+          return match
         })
       }
 
@@ -447,6 +460,9 @@ export default {
 }
 .WalletSidebar__menu__button span {
   @apply .pl-3 .font-bold;
+}
+.WalletSidebar__menu__button--active {
+  @apply .text-theme-feature-item-indicator;
 }
 .WalletSidebar__menu__separator__line {
   border-right: 0.08rem solid var(--theme-feature-item-alternative);

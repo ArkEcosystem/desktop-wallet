@@ -269,7 +269,7 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: 'Price'
+    PRICE: '{currency} price'
   },
 
   BUTTON_CLIPBOARD: {

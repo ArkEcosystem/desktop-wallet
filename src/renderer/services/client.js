@@ -3,11 +3,12 @@ import { crypto, transactionBuilder } from '@arkecosystem/crypto'
 import axios from 'axios'
 import { castArray, chunk, orderBy } from 'lodash'
 import dayjs from 'dayjs'
+import moment from 'moment'
+import logger from 'electron-log'
+import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import logger from 'electron-log'
-import moment from 'moment'
 
 export default class ClientService {
   /*
@@ -94,8 +95,10 @@ export default class ClientService {
   constructor (watchProfile = true) {
     this.__host = null
     this.__version = null
+    // The API version is imprecise, since new capabilities are being added continuously.
+    // So, this property uses the peer version to know which features are available
+    this.__capabilities = '1.0.0'
     this.client = new ApiClient('http://')
-    this.hasMultiWalletSearch = false
 
     if (watchProfile) {
       this.__watchProfile()
@@ -118,6 +121,14 @@ export default class ClientService {
   set version (apiVersion) {
     this.__version = apiVersion
     this.client.setVersion(apiVersion)
+  }
+
+  get capabilities () {
+    return this.__capabilities
+  }
+
+  set capabilities (version) {
+    this.__capabilities = semver.coerce(version)
   }
 
   /**
@@ -356,9 +367,10 @@ export default class ClientService {
     options = options || {}
 
     let walletData = {}
-    if (this.version === 2 && this.hasMultiWalletSearch) {
+    if (semver.gte(this.capabilities, '2.1.0')) {
       let transactions = []
       let hadFailure = false
+
       for (const addressChunk of chunk(addresses, 20)) {
         try {
           const { data } = await this.client.resource('transactions').search({
@@ -474,7 +486,7 @@ export default class ClientService {
   async fetchWallets (addresses) {
     let walletData = []
 
-    if (this.version === 2 && this.hasMultiWalletSearch) {
+    if (semver.gte(this.capabilities, '2.1.0')) {
       for (const addressChunk of chunk(addresses, 20)) {
         const { data } = await this.client.resource('wallets').search({
           addresses: addressChunk
@@ -712,6 +724,7 @@ export default class ClientService {
       pubKeyHash: network.version
     })
 
+    // TODO replace with dayjs
     const epochTime = moment(network.constants.epoch).utc().valueOf()
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
@@ -816,38 +829,46 @@ export default class ClientService {
     }
   }
 
+  // TODO this shouldn't be responsibility of the client
+  // TODO update client when peer changes
   __watchProfile () {
     store.watch(
       (_, getters) => getters['session/profile'],
-      (profile, oldProfile) => {
+      async (profile, oldProfile) => {
         if (!profile) {
           return
         }
 
         const network = store.getters['network/byId'](profile.networkId)
         const currentPeer = store.getters['peer/current']()
-        if (currentPeer && Object.keys(currentPeer).length > 0) {
+
+        if (currentPeer && currentPeer.ip) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           this.version = currentPeer.version.match(/^2\./) ? 2 : 1
+          this.capabilities = currentPeer.version
+
+        // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
         } else {
-          const { server, apiVersion } = network
+          let { server, apiVersion } = network
           this.host = server
           this.version = apiVersion
-        }
 
-        try {
-          this.hasMultiWalletSearch = false
-          if (network.apiVersion === 2) {
-            const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
-            this.client.resource('wallets').search({
-              addresses: [testAddress]
-            }).then(() => {
-              this.hasMultiWalletSearch = true
-            })
+          // Infer which are the real capabilities of the peer
+          if (apiVersion === 2) {
+            try {
+              const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
+              const { address } = this.client.resource('wallets').search({
+                addresses: [testAddress]
+              })
+
+              apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
+            } catch (_) {
+              // The peer does not have capability to search for multiple wallets or transactions at once
+            }
           }
-        } catch (error) {
-          //
+
+          this.capabilities = apiVersion
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {

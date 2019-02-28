@@ -79,14 +79,14 @@ class Action {
       //
       //     // As a fallback, retrieve all the wallets
       //     } else {
-      //       await this.refreshWallets(walletsToCheck)
+      //       await this.refresh(walletsToCheck)
       //     }
       //   }
       // }
 
       // Check the not checked wallets now
       if (notChecked.length) {
-        await this.refreshWallets(notChecked)
+        await this.refresh(notChecked)
         this.checked = this.checked.concat(notChecked)
       }
     }
@@ -99,12 +99,40 @@ class Action {
   }
 
   /**
-   * Refresh wallet data.
+   * Refresh the data and transactions of the wallets and process them.
    * @param  {Object[]} wallets
    * @return {void}
    */
-  async refreshWallets (wallets) {
-    const walletsData = await this.$client.fetchWallets(wallets.map(wallet => wallet.address))
+  async refresh (wallets) {
+    const addresses = wallets.map(wallet => wallet.address)
+
+    // TODO if 1 success and the other fails
+    const [walletsData, walletsTransactions] = await Promise.all([
+      this.fetchWalletsData(addresses),
+      this.fetchWalletsTransactions(addresses)
+    ])
+
+    // NOTE: this has to be run in order to avoid race conditions when updating the wallet store
+    await this.refreshWalletsData(wallets, walletsData)
+    await this.refreshTransactions(wallets, walletsTransactions)
+  }
+
+  async fetchWalletsData (addresses) {
+    return this.$client.fetchWallets(addresses)
+  }
+
+  async fetchWalletsTransactions (addresses) {
+    return this.$client.fetchTransactionsForWallets(addresses)
+  }
+
+  /**
+   * Refresh wallet data.
+   *
+   * @param  {Object[]} wallets
+   * @param  {Object[]} walletsData - fetched (incomplete) data of each wallet
+   * @return {void}
+   */
+  async refreshWalletsData (wallets, walletsData) {
     for (const wallet of wallets) {
       const walletData = walletsData.find(data => data && data.address === wallet.address)
       if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
@@ -113,12 +141,31 @@ class Action {
 
       await this.processWalletData(wallet, walletData)
     }
+  }
 
-    await this.fetchTransactionsForWallets(wallets)
+  /**
+   * Fetch the transactions of the wallets and process them.
+   *
+   * @param  {Object[]} wallets
+   * @param  {Object} walletsTransactions - transactions aggregated by wallet address
+   * @return {void}
+   */
+  async refreshTransactions (wallets, walletsTransactions) {
+    for (const wallet of wallets) {
+      const transactions = walletsTransactions[wallet.address]
+      if (transactions && transactions.length) {
+        this.processWalletTransactions(wallet, transactions)
+      }
+    }
+
+    // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
+    eventBus.emit(`transactions:fetched`, walletsTransactions)
   }
 
   /**
    * Update cached wallet data.
+   * TODO dispatch only 1 wallet store update
+   *
    * @param  {Object} wallet
    * @param  {Object} walletData Wallet data fetched from API
    * @return {void}
@@ -140,25 +187,9 @@ class Action {
   }
 
   /**
-   * Fetch the transactions of the wallets.
-   *
-   * @param  {Object[]} wallets
-   * @return {void}
-   */
-  async fetchTransactionsForWallets (wallets) {
-    const walletTransactions = await this.$client.fetchTransactionsForWallets(wallets.map(wallet => wallet.address))
-    for (const wallet of wallets) {
-      if (walletTransactions[wallet.address]) {
-        this.processWalletTransactions(wallet, walletTransactions[wallet.address])
-      }
-    }
-
-    // TODO: this should be remove later, when the transactions are stored, to take advantage of the reactivity
-    eventBus.emit(`transactions:fetched`, walletTransactions)
-  }
-
-  /**
    * Processes the transaction of a wallet:
+   * TODO dispatch only 1 wallet store update
+   *
    *  - Updates the last time that the transactions of a wallet were checked
    *  - If any of the transaction is new, display a toast
    */

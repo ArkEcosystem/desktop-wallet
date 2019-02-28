@@ -6,6 +6,10 @@ import directives from '@/directives'
 import filters from '@/filters'
 
 require('babel-plugin-require-context-hook/register')()
+
+// This Intl polyfill has some problems with number precision, so we store the original
+// implementation to use it instead when that lack of accuracy is an issue
+global.__Intl__ = global.Intl
 global.Intl = require('intl')
 
 HTMLCanvasElement.prototype.getContext = jest.fn()
