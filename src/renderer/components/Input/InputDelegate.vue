@@ -66,7 +66,7 @@ import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
 import InputField from './InputField'
 import truncate from '@/filters/truncate'
-import _ from 'lodash'
+import { includes, isEmpty, map, orderBy } from 'lodash'
 
 export default {
   name: 'InputDelegate',
@@ -146,7 +146,7 @@ export default {
     },
 
     hasSuggestions () {
-      return !_.isEmpty(this.suggestions)
+      return !isEmpty(this.suggestions)
     },
 
     invalid () {
@@ -164,9 +164,11 @@ export default {
     },
 
     suggestions () {
-      if (!this.currentProfile) return []
+      if (!this.currentProfile) {
+        return []
+      }
 
-      const delegates = _.map(this.delegates, (object) => {
+      const delegates = map(this.delegates, (object) => {
         const delegate = {
           name: null,
           username: object.username,
@@ -179,13 +181,13 @@ export default {
         return delegate
       })
 
-      const results = _.orderBy(delegates, (object) => {
+      const results = orderBy(delegates, (object) => {
         return object.name || object.address.toLowerCase()
       })
 
       return results.reduce((delegates, delegate, index) => {
         Object.values(delegate).forEach(prop => {
-          if (_.includes(prop.toLowerCase(), this.inputValue.toLowerCase())) {
+          if (includes(prop.toLowerCase(), this.inputValue.toLowerCase())) {
             delegates[delegate.username] = delegate.name
           }
         })
@@ -241,7 +243,7 @@ export default {
       // Verifies that the element that generated the blur was a dropdown item
       if (evt.relatedTarget) {
         const classList = evt.relatedTarget.classList || []
-        const isDropdownItem = _.includes(classList, 'MenuDropdownItem__button')
+        const isDropdownItem = includes(classList, 'MenuDropdownItem__button')
 
         if (!isDropdownItem) {
           this.closeDropdown()
@@ -269,7 +271,10 @@ export default {
     },
 
     onEnter () {
-      if (!this.dropdownValue) return
+      if (!this.dropdownValue) {
+        return
+      }
+
       this.model = this.dropdownValue
 
       this.$nextTick(() => {
@@ -323,7 +328,9 @@ export default {
     },
 
     __setSuggestion (value) {
-      if (!this.hasSuggestions) return
+      if (!this.hasSuggestions) {
+        return
+      }
 
       this.dropdownValue = value
       this.$nextTick(() => {
