@@ -343,9 +343,7 @@ export default {
     model: {
       required,
       isValid (value) {
-        return !!this.$store.getters['delegate/byUsername'](value) ||
-          !!this.$store.getters['delegate/byAddress'](value) ||
-          !!this.$store.getters['delegate/byPublicKey'](value)
+        return !!this.$store.getters['delegate/search'](value)
       }
     }
   }

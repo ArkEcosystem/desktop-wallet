@@ -59,6 +59,16 @@ export default {
       return Object.values(state.delegates[network.id]).find(delegate => {
         return delegate.publicKey === publicKey
       }) || false
+    },
+
+    search: (state, getters) => query => {
+      if (query.length <= 20) {
+        return getters['byUsername'](query)
+      } else if (query.length <= 34) {
+        return getters['byAddress'](query)
+      } else {
+        return getters['byPublicKey'](query)
+      }
     }
   },
 

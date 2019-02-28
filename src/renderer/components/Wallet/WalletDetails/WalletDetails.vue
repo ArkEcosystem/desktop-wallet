@@ -384,13 +384,7 @@ export default {
     },
 
     onConfirmSelect (value) {
-      if (value.length <= 20) {
-        this.selectedDelegate = this.$store.getters['delegate/byUsername'](value)
-      } else if (value.length <= 34) {
-        this.selectedDelegate = this.$store.getters['delegate/byAddress'](value)
-      } else {
-        this.selectedDelegate = this.$store.getters['delegate/byPublicKey'](value)
-      }
+      this.selectedDelegate = this.$store.getters['delegate/search'](value)
 
       if (this.selectedDelegate) {
         this.isSelecting = false
