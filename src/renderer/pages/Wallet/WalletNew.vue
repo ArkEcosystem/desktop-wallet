@@ -92,11 +92,11 @@
                     />
                     <span
                       v-if="isSelected(address)"
-                      class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-5 h-5 bg-green border-2 border-theme-feature text-white"
+                      class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-6 h-6 bg-green border-4 border-theme-feature text-white"
                     >
                       <SvgIcon
                         name="checkmark"
-                        view-box="0 0 10 9"
+                        view-box="0 0 8 7"
                       />
                     </span>
                   </div>
