@@ -157,6 +157,9 @@ export default {
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
+    VENDOR_FIELD: {
+      LIMIT_REACHED: 'You can enter maximum {0} characters only'
+    },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
