@@ -61,7 +61,7 @@
         </span>
         <i18n
           tag="span"
-          path="WALLET_DELEGATES.VOTED_FOR"
+          path="WALLET_DELEGATES.CURRENTLY_VOTED"
         >
           <strong place="delegate">
             {{ votedDelegate.username }}
