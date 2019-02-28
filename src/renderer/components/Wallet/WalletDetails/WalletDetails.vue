@@ -124,7 +124,7 @@
         :type="3"
         :delegate="selectedDelegate"
         :is-voter="isUnvoting"
-        :has-voted="!!votedDelegate"
+        :voted-delegate="votedDelegate"
         @cancel="onCancel"
         @close="onCancel"
         @sent="onSent"

@@ -457,7 +457,7 @@ export default {
       TITLE: 'Enter contact address',
       ADDRESS: 'Address',
       NAME: 'Contact name (optional)',
-      NAME_INFO: 'Info.:',
+      NAME_INFO: 'Info:',
       NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact',
       SUCCESS: '\'{0}\' has been added to your contacts'
@@ -895,6 +895,7 @@ export default {
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
+    VOTE_INFO: 'Info:',
     NO_VOTE: 'This wallet is not voting. To view more information and vote, use the search or click on any delegate',
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
