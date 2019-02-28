@@ -75,34 +75,35 @@
               tag="ul"
             >
               <li
-                v-for="(passphrase, address, index) in wallets"
+                v-for="(passphrase, address) in wallets"
                 :key="address"
                 :class="[
-                  isSelected(address) ? 'WalletNew__wallets--selected' : 'WalletNew__wallets--unselected',
-                  index !== Object.keys(wallets).length - 1 ? 'border-b border-dashed border-theme-line-separator' : ''
+                  isSelected(address) ? 'WalletNew__wallets__address--selected' : 'WalletNew__wallets__address--unselected',
                 ]"
-                class="flex items-center py-4 w-full truncate cursor-pointer"
+                class="WalletNew__wallets__address py-4 w-full truncate cursor-pointer"
                 @click="selectWallet(address, passphrase)"
               >
-                <div class="relative">
-                  <WalletIdenticon
-                    :value="address"
-                    :size="35"
-                    class="flex-no-shrink identicon"
-                  />
-                  <span
-                    v-if="isSelected(address)"
-                    class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-5 h-5 bg-green border-2 border-theme-feature text-white"
-                  >
-                    <SvgIcon
-                      name="checkmark"
-                      view-box="0 0 10 9"
+                <div class="WalletNew__wallets__address__mask flex items-center">
+                  <div class="relative">
+                    <WalletIdenticon
+                      :value="address"
+                      :size="35"
+                      class="flex-no-shrink identicon"
                     />
+                    <span
+                      v-if="isSelected(address)"
+                      class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-5 h-5 bg-green border-2 border-theme-feature text-white"
+                    >
+                      <SvgIcon
+                        name="checkmark"
+                        view-box="0 0 10 9"
+                      />
+                    </span>
+                  </div>
+                  <span class="WalletNew__wallets--address text-theme-page-text ml-2 flex-no-shrink font-semibold text-sm">
+                    {{ address }}
                   </span>
                 </div>
-                <span class="WalletNew__wallets--address text-theme-wallet-new-unselected ml-2 flex-no-shrink font-semibold text-sm">
-                  {{ address }}
-                </span>
               </li>
             </TransitionGroup>
           </MenuStepItem>
@@ -553,33 +554,36 @@ export default {
   opacity: 0
 }
 
-.WalletNew__wallets .identicon {
+.WalletNew__wallets__address .identicon {
   font-size: 0;
-  opacity: 0.5;
-  transition: all 0.5s;
 }
-.WalletNew__wallets--unselected:hover .identicon {
-  opacity: 1;
+.WalletNew__wallets__address__mask {
+  @apply opacity-75;
+  transition: opacity .2s ease;
 }
-.WalletNew__wallets--unselected:hover .WalletNew__wallets--address {
-  transition: all 0.5s;
-  @apply .text-theme-wallet-new-selected .no-underline
+.WalletNew__wallets__address {
+  transition-property: transform, box-shadow, padding;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+.WalletNew__wallets__address:hover {
+  @apply z-20 rounded-lg bg-theme-feature px-4;
+  border-top-width: 0!important;
+  transform: scale(1.05);
+  box-shadow: var(--theme-wallet-grid-shadow);
+}
+.WalletNew__wallets__address:hover > .WalletNew__wallets__address__mask,
+.WalletNew__wallets__address--selected > .WalletNew__wallets__address__mask {
+  @apply opacity-100;
 }
 
-.WalletNew__wallets--selected .identicon {
-  opacity: 1;
-}
-.WalletNew__wallets--selected .WalletNew__wallets--address {
-  @apply .text-theme-wallet-new-selected;
-}
-.WalletNew__wallets--address {
-  transition: all 0.5s;
+.WalletNew__wallets__address + .WalletNew__wallets__address {
+  @apply border-t border-dashed border-theme-line-separator
 }
 
 .WalletNew__ButtonReload-colorClass {
   @apply .text-grey-dark .bg-theme-button;
 }
-
 .WalletNew__ButtonReload-colorClass:hover {
   @apply .bg-blue .text-white;
   box-shadow: 0 5px 15px rgba(9, 100, 228, 0.34);
