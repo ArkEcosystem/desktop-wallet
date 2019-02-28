@@ -55,8 +55,8 @@ export default class Synchronizer {
         focus: { interval: longer }
       },
       fees: {
-        default: { interval: longer },
-        focus: { interval: longer }
+        default: { interval: null },
+        focus: { interval: shorter }
       },
       peer: {
         default: { interval: longer },
