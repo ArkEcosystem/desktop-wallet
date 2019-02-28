@@ -13,6 +13,9 @@ describe('InputDelegate', () => {
   const mountComponent = config => {
     return mount(InputDelegate, merge({
       i18n,
+      propsData: {
+        value: ''
+      },
       mocks: {
         wallet_name: value => value,
         wallet_truncate: value => value,
