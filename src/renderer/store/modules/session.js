@@ -20,7 +20,8 @@ export default {
     backgroundUpdateLedger: null,
     broadcastPeers: null,
     ledgerCache: null,
-    transactionTableRowCount: 10
+    transactionTableRowCount: 10,
+    unconfirmedVotes: []
   }),
 
   getters: {
@@ -65,7 +66,8 @@ export default {
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
     broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
-    transactionTableRowCount: state => state.transactionTableRowCount
+    transactionTableRowCount: state => state.transactionTableRowCount,
+    unconfirmedVotes: state => state.unconfirmedVotes
   },
 
   mutations: {
@@ -141,6 +143,10 @@ export default {
       state.transactionTableRowCount = count
     },
 
+    SET_UNCONFIRMED_VOTES (state, votes) {
+      state.unconfirmedVotes = votes
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -159,6 +165,7 @@ export default {
       state.contentProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
+      state.unconfirmedVotes = []
     },
 
     REPLACE (state, value) {
@@ -178,6 +185,7 @@ export default {
       state.broadcastPeers = value.broadcastPeers
       state.ledgerCache = value.ledgerCache
       state.transactionTableRowCount = value.transactionTableRowCount
+      state.unconfirmedVotes = value.unconfirmedVotes
     }
   },
 
@@ -185,6 +193,11 @@ export default {
     load ({ commit, rootGetters, dispatch }, profileId) {
       const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
+
+      if (!profile.unconfirmedVotes) {
+        profile.unconfirmedVotes = []
+        dispatch('profile/update', profile, { root: true })
+      }
 
       commit('REPLACE', profile)
 
@@ -267,6 +280,10 @@ export default {
 
     setTransactionTableRowCount ({ commit }, value) {
       commit('SET_TRANSACTION_TABLE_ROW_COUNT', value)
+    },
+
+    setUnconfirmedVotes ({ commit }, value) {
+      commit('SET_UNCONFIRMED_VOTES', value)
     }
   }
 }

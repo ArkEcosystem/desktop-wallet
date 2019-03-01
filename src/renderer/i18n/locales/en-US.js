@@ -12,6 +12,7 @@ export default {
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
     DATE: 'Date',
+    DELEGATE: 'Delegate',
     DONE: 'Done',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
@@ -302,6 +303,16 @@ export default {
     LABEL: 'Amount'
   },
 
+  INPUT_DELEGATE: {
+    ERROR: {
+      REQUIRED: 'The delegate name, address or public key is required',
+      USERNAME_NOT_FOUND: 'The delegate \'{0}\' could not be found',
+      ADDRESS_NOT_FOUND: 'The delegate with the address \'{0}\' could not be found',
+      PUBLIC_KEY_NOT_FOUND: 'The delegate with the public key \'{0}\' could not be found'
+    },
+    SEARCH_HINT: 'You can search by username, address or public key'
+  },
+
   INPUT_FEE: {
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
@@ -450,7 +461,7 @@ export default {
       TITLE: 'Enter contact address',
       ADDRESS: 'Address',
       NAME: 'Contact name (optional)',
-      NAME_INFO: 'Info.:',
+      NAME_INFO: 'Info:',
       NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact',
       SUCCESS: '\'{0}\' has been added to your contacts'
@@ -887,8 +898,14 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
+    CURRENTLY_VOTED: 'You are currently voted for {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
-    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}'
+    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
+    VOTE_INFO: 'Info:',
+    NO_VOTE: 'This wallet is not voting. To view more information and vote, use the search or click on any delegate',
+    AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
+    LOADING_VOTE: 'Loading vote details...',
+    SEARCH_DELEGATE: 'Search delegate'
   },
 
   WALLET_RENAME: {

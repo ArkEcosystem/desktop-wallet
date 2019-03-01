@@ -200,14 +200,14 @@ export default {
         this.$error(messages.error)
       } finally {
         this.showBroadcastingTransactions = false
-        this.emitSent(success)
+        this.emitSent(success, this.transaction)
       }
 
       this.emitClose()
     },
 
-    emitSent (success) {
-      this.$emit('sent', success)
+    emitSent (success, transaction = null) {
+      this.$emit('sent', success, transaction)
     },
 
     emitCancel () {

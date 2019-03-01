@@ -63,6 +63,10 @@ export default new BaseModel({
       type: 'integer',
       format: data => data.transactionTableRowCount || 10
     },
+    unconfirmedVotes: {
+      type: 'array',
+      format: data => data.unconfirmedVotes || []
+    },
     walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'

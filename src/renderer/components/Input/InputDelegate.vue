@@ -4,19 +4,18 @@
     :items="suggestions"
     :value="dropdownValue"
     :pin-to-input-width="true"
-    class="InputAddress__MenuDropdown"
+    class="InputDelegate__MenuDropdown"
     @select="onDropdownSelect"
     @click="focus"
   >
     <InputField
       slot="handler"
       :label="label"
-      :helper-text="helperText || error || notice"
+      :helper-text="error || getHelperText()"
       :is-dirty="$v.model.$dirty"
-      :is-disabled="isDisabled"
       :is-focused="isFocused"
       :is-invalid="invalid"
-      class="InputAddress text-left"
+      class="InputDelegate text-left"
     >
       <div
         slot-scope="{ inputClass }"
@@ -27,9 +26,8 @@
           ref="input"
           v-model="model"
           :name="name"
-          :disabled="isDisabled"
           type="text"
-          class="InputAddress__input flex flex-grow bg-transparent text-theme-page-text"
+          class="InputDelegate__input flex flex-grow bg-transparent text-theme-page-text"
           @blur="onBlur"
           @focus="onFocus"
           @click.self.stop
@@ -41,9 +39,10 @@
         <ButtonModal
           ref="button-qr"
           :label="''"
-          class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
+          class="InputDelegate__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
           icon="qr"
           view-box="0 0 20 20"
+          @click.stop
         >
           <template slot-scope="{ toggle, isOpen }">
             <ModalQrCodeScanner
@@ -66,12 +65,11 @@ import ModalQrCodeScanner from '@/components/Modal/ModalQrCodeScanner'
 import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
 import InputField from './InputField'
-import WalletService from '@/services/wallet'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, map, orderBy, unionBy } from 'lodash'
+import { includes, isEmpty, map, orderBy } from 'lodash'
 
 export default {
-  name: 'InputAddress',
+  name: 'InputDelegate',
 
   components: {
     ButtonModal,
@@ -81,40 +79,27 @@ export default {
   },
 
   props: {
-    helperText: {
-      type: String,
-      required: false,
-      default: null
-    },
-    isDisabled: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
     label: {
       type: String,
       required: false,
       default () {
-        return this.$t('INPUT_ADDRESS.LABEL')
+        return this.$t('SEARCH.DELEGATE')
       }
     },
     name: {
       type: String,
       required: false,
-      default: 'address'
+      default: 'delegate'
     },
-    pubKeyHash: {
-      type: Number,
-      required: true
-    },
-    showSuggestions: {
-      type: Boolean,
+    helperText: {
+      type: String,
       required: false,
-      default: false
+      default: () => ''
     },
     value: {
       type: String,
-      required: true
+      required: true,
+      default: () => ''
     },
     isInvalid: {
       type: Boolean,
@@ -126,9 +111,7 @@ export default {
   data: vm => ({
     inputValue: vm.value,
     dropdownValue: null,
-    isFocused: false,
-    neoCheckedAddressess: {},
-    notice: null
+    isFocused: false
   }),
 
   computed: {
@@ -136,18 +119,30 @@ export default {
       return this.session_profile
     },
 
-    error () {
-      let error = null
+    delegates () {
+      return this.$store.getters['delegate/bySessionNetwork']
+    },
 
-      if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+    error () {
+      if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
         if (!this.$v.model.required) {
-          error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
+          return this.$t('INPUT_DELEGATE.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
-          error = this.$t('INPUT_ADDRESS.ERROR.NOT_VALID')
+          if (this.inputValue.length <= 20) {
+            return this.$t('INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND', [this.inputValue])
+          } else if (this.inputValue.length <= 34) {
+            return this.$t('INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+          } else {
+            return this.$t('INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+          }
+        } else {
+          this.$emit('valid', true)
         }
+      } else {
+        this.$emit('valid', false)
       }
 
-      return error
+      return null
     },
 
     hasSuggestions () {
@@ -169,44 +164,35 @@ export default {
     },
 
     suggestions () {
-      if (!this.currentProfile || !this.showSuggestions) {
+      if (!this.currentProfile) {
         return []
       }
 
-      const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
-      const wallets = [
-        ...this.$store.getters['wallet/byProfileId'](this.currentProfile.id),
-        ...ledgerWallets
-      ]
-      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
-
-      const source = unionBy(wallets, contacts, 'address')
-
-      const addresses = map(source, (wallet) => {
-        const address = {
+      const delegates = map(this.delegates, (object) => {
+        const delegate = {
           name: null,
-          address: wallet.address
-        }
-        if (wallet.name && wallet.name !== wallet.address) {
-          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(wallet.address)})`
+          username: object.username,
+          address: object.address,
+          publicKey: object.publicKey
         }
 
-        return address
+        delegate.name = `${truncate(object.username, 25)} (${this.wallet_truncate(object.address)})`
+
+        return delegate
       })
 
-      const results = orderBy(addresses, (object) => {
+      const results = orderBy(delegates, (object) => {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((wallets, wallet, index) => {
-        const value = wallet.name || wallet.address
-        const searchValue = value.toLowerCase()
+      return results.reduce((delegates, delegate, index) => {
+        Object.values(delegate).forEach(prop => {
+          if (includes(prop.toLowerCase(), this.inputValue.toLowerCase())) {
+            delegates[delegate.username] = delegate.name
+          }
+        })
 
-        if (includes(searchValue, this.inputValue.toLowerCase())) {
-          wallets[wallet.address] = value
-        }
-
-        return wallets
+        return delegates
       }, {})
     },
 
@@ -226,24 +212,10 @@ export default {
       }
     },
 
-    async inputValue () {
+    inputValue () {
       this.dropdownValue = null
       if (this.isFocused && this.hasSuggestions) {
         this.openDropdown()
-      }
-
-      if (this.invalid) {
-        this.notice = null
-      } else {
-        const knownAddress = this.wallet_name(this.inputValue)
-
-        if (knownAddress) {
-          this.notice = this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', { address: knownAddress })
-        } else if (await this.checkNeoAddress(this.inputValue)) {
-          this.notice = this.$t('INPUT_ADDRESS.NEO_ADDRESS')
-        } else {
-          this.notice = null
-        }
       }
     }
   },
@@ -255,25 +227,16 @@ export default {
   },
 
   methods: {
+    getHelperText () {
+      return (!this.$refs.dropdown || !this.$refs.dropdown.isOpen) ? this.helperText : ''
+    },
+
     blur () {
       this.$refs.input.blur()
     },
 
     focus () {
       this.$refs.input.focus()
-    },
-
-    /**
-     * Checks if there is a NEO wallet with the same address and memoizes the result
-     * @param {String}
-     * @result {Boolean}
-     */
-    async checkNeoAddress (address) {
-      const wasChecked = this.neoCheckedAddressess.hasOwnProperty(address)
-      if (!wasChecked) {
-        this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address)
-      }
-      return this.neoCheckedAddressess[address]
     },
 
     onBlur (evt) {
@@ -336,13 +299,18 @@ export default {
     },
 
     onDecodeQR (value, toggle) {
-      this.model = this.qr_getAddress(value)
+      const address = this.qr_getAddress(value)
 
       // Check if we were unable to retrieve an address from the qr
-      if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
+      if ((address === '' || address === undefined) && address !== value) {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
       }
-      toggle()
+
+      this.model = this.$store.getters['delegate/byAddress'](address).username
+      this.$nextTick(() => {
+        this.closeDropdown()
+        toggle()
+      })
     },
 
     closeDropdown () {
@@ -375,7 +343,7 @@ export default {
     model: {
       required,
       isValid (value) {
-        return WalletService.validateAddress(value, this.pubKeyHash)
+        return !!this.$store.getters['delegate/search'](value)
       }
     }
   }
@@ -383,17 +351,17 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.InputAddress__MenuDropdown .MenuDropdown__container {
+.InputDelegate__MenuDropdown .MenuDropdown__container {
   @apply .z-30
 }
-.InputAddress__MenuDropdown .MenuDropdownItem__container {
+.InputDelegate__MenuDropdown .MenuDropdownItem__container {
   @apply .text-left
 }
-.InputAddress__input::placeholder {
+.InputDelegate__input::placeholder {
   @apply .text-transparent
 }
 
-.InputField--invalid .InputAddress__qr-button {
+.InputField--invalid .InputDelegate__qr-button {
   @apply .text-red-dark
 }
 </style>

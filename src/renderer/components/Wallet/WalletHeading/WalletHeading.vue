@@ -1,7 +1,7 @@
 <template>
   <div
     :class="justifyClass"
-    class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-tl-lg h-40"
+    class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-tl-lg h-40 overflow-hidden"
   >
     <WalletHeadingInfo
       v-if="!secondaryButtonsVisible"

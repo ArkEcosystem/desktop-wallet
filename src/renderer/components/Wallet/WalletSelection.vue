@@ -167,11 +167,11 @@ export default {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((map, wallet, index) => {
+      return results.reduce((wallets, wallet, index) => {
         const value = wallet.name || wallet.address
-        map[wallet.address] = value
+        wallets[wallet.address] = value
 
-        return map
+        return wallets
       }, {})
     }
   },
