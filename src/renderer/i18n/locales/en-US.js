@@ -17,6 +17,7 @@ export default {
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
@@ -36,7 +37,8 @@ export default {
     TIME_FORMAT: 'Time format',
     VERIFIED_ADDRESS: 'This is a verified address',
     WARNING: 'Warning',
-    WILL: 'will'
+    WILL: 'will',
+    WALLET: 'Wallet'
   },
 
   ANNOUNCEMENTS: {
@@ -156,6 +158,9 @@ export default {
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
+    VENDOR_FIELD: {
+      LIMIT_REACHED: 'You can enter maximum {0} characters only'
+    },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
@@ -226,7 +231,6 @@ export default {
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
-      IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
         TITLE: 'Reset data',
@@ -515,6 +519,7 @@ export default {
           HEADER: 'Appearance',
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
         THEME: 'Choose light or dark mode',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',

@@ -49,6 +49,9 @@ export default new BaseModel({
     constants: {
       type: 'object'
     },
+    vendorField: {
+      type: 'object'
+    },
     knownWallets: {
       type: 'object',
       default: {}

@@ -6,7 +6,7 @@
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
       class="appearance-none text-inherit w-full"
-      @click="buttonClick"
+      @click.stop="buttonClick"
     >
       <slot
         :active-value="activeValue"
@@ -31,14 +31,14 @@
     <div
       v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside="close"
-      :class="{
+      :class="[{
         'MenuDropdown--pin-above': pinAbove,
         'pin-x': pinToInputWidth
-      }"
+      }, containerClasses]"
+      :style="{ transform: `translate(${position.join(',')})` }"
       class="MenuDropdown__container absolute min-w-full z-20"
     >
       <ul
-        :style="{ transform: `translate(${position.join(',')})` }"
         class="MenuDropdown pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
       >
         <slot>
@@ -47,7 +47,7 @@
             :key="entryValue"
             :value="entryValue"
             :item="item.toString()"
-            :is-active="entryValue === activeValue"
+            :is-active="isHighlighting ? entryValue === activeValue : false"
             @click.self="select(entryValue)"
           >
             <slot
@@ -80,6 +80,11 @@ export default {
   },
 
   props: {
+    containerClasses: {
+      type: String,
+      required: false,
+      default: ''
+    },
     placeholder: {
       type: String,
       required: false,
@@ -119,6 +124,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isHighlighting: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
