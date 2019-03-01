@@ -13,6 +13,7 @@ export default {
     CURRENCY: 'Currency',
     DATE: 'Date',
     DONE: 'Done',
+    FAILED_UPDATE: 'Failed to update {name}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
