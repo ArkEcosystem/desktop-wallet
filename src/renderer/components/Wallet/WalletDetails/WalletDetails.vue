@@ -294,7 +294,9 @@ export default {
       })
     },
     async isAwaitingConfirmation () {
-      await this.fetchWalletVote()
+      if (!this.isAwaitingConfirmation) {
+        await this.fetchWalletVote()
+      }
     }
   },
 
