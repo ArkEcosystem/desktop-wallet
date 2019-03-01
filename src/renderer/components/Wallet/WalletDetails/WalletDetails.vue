@@ -293,8 +293,8 @@ export default {
         this.$refs.menutab.collectItems()
       })
     },
-    async isAwaitingConfirmation () {
-      if (!this.isAwaitingConfirmation) {
+    async isAwaitingConfirmation (newValue, oldValue) {
+      if (!newValue && oldValue) {
         await this.fetchWalletVote()
       }
     }
