@@ -458,6 +458,9 @@ export default {
     async updateProfile () {
       if (this.nameError) {
         this.modified.name = this.profile.name
+        this.$error(this.$t('COMMON.FAILED_UPDATE', {
+          name: 'profile name'
+        }))
       }
       await this.$store.dispatch('profile/update', {
         ...this.profile,
