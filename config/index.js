@@ -17,6 +17,10 @@ exports.ANNOUNCEMENTS = {
   rssUrl: 'https://blog.ark.io/feed'
 }
 
+exports.VENDOR_FIELD = {
+  defaultMaxLength: 64
+}
+
 exports.I18N = {
   defaultLocale: 'en-US',
   enabledLocales: [
@@ -60,7 +64,7 @@ exports.MARKET = {
   source: {
     baseUrl: 'https://min-api.cryptocompare.com'
   },
-  defaultCurrency: 'USD',
+  defaultCurrency: 'BTC',
   crypto: [
     'BTC',
     'ETH',

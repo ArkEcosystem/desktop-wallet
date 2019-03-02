@@ -20,7 +20,8 @@ export default {
     backgroundUpdateLedger: null,
     broadcastPeers: null,
     ledgerCache: null,
-    transactionTableRowCount: 10
+    transactionTableRowCount: 10,
+    unconfirmedVotes: []
   }),
 
   getters: {
@@ -65,7 +66,8 @@ export default {
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
     broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
-    transactionTableRowCount: state => state.transactionTableRowCount
+    transactionTableRowCount: state => state.transactionTableRowCount,
+    unconfirmedVotes: state => state.unconfirmedVotes
   },
 
   mutations: {
@@ -141,6 +143,10 @@ export default {
       state.transactionTableRowCount = count
     },
 
+    SET_UNCONFIRMED_VOTES (state, votes) {
+      state.unconfirmedVotes = votes
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -159,30 +165,41 @@ export default {
       state.contentProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
+      state.unconfirmedVotes = []
+    },
+
+    REPLACE (state, value) {
+      state.avatar = value.avatar
+      state.background = value.background
+      state.currency = value.currency
+      state.timeFormat = value.timeFormat
+      state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.language = value.language
+      state.bip39Language = value.bip39Language
+      state.name = value.name
+      state.theme = value.theme
+      state.walletLayout = value.walletLayout
+      state.walletSortParams = value.walletSortParams
+      state.contactSortParams = value.contactSortParams
+      state.backgroundUpdateLedger = value.backgroundUpdateLedger
+      state.broadcastPeers = value.broadcastPeers
+      state.ledgerCache = value.ledgerCache
+      state.transactionTableRowCount = value.transactionTableRowCount
+      state.unconfirmedVotes = value.unconfirmedVotes
     }
   },
 
   actions: {
-    load ({ rootGetters, dispatch }, profileId) {
+    load ({ commit, rootGetters, dispatch }, profileId) {
       const profile = rootGetters['profile/byId'](profileId)
       if (!profile) return
 
-      dispatch('setAvatar', profile.avatar)
-      dispatch('setBackground', profile.background)
-      dispatch('setCurrency', profile.currency)
-      dispatch('setTimeFormat', profile.timeFormat)
-      dispatch('setIsMarketChartEnabled', profile.isMarketChartEnabled)
-      dispatch('setName', profile.name)
-      dispatch('setLanguage', profile.language)
-      dispatch('setBip39Language', profile.bip39Language)
-      dispatch('setTheme', profile.theme)
-      dispatch('setWalletLayout', profile.walletLayout)
-      dispatch('setWalletSortParams', profile.walletSortParams)
-      dispatch('setContactSortParams', profile.contactSortParams)
-      dispatch('setBackgroundUpdateLedger', profile.backgroundUpdateLedger)
-      dispatch('setBroadcastPeers', profile.broadcastPeers)
-      dispatch('setLedgerCache', profile.ledgerCache)
-      dispatch('setTransactionTableRowCount', profile.transactionTableRowCount)
+      if (!profile.unconfirmedVotes) {
+        profile.unconfirmedVotes = []
+        dispatch('profile/update', profile, { root: true })
+      }
+
+      commit('REPLACE', profile)
 
       return profile
     },
@@ -263,6 +280,10 @@ export default {
 
     setTransactionTableRowCount ({ commit }, value) {
       commit('SET_TRANSACTION_TABLE_ROW_COUNT', value)
+    },
+
+    setUnconfirmedVotes ({ commit }, value) {
+      commit('SET_UNCONFIRMED_VOTES', value)
     }
   }
 }

@@ -6,7 +6,8 @@ describe('MenuDropdown', () => {
     it('should render component', () => {
       const wrapper = mount(MenuDropdownItem, {
         propsData: {
-          value: 'Test'
+          value: 'Test',
+          item: 'Item text'
         }
       })
       expect(wrapper.contains('.MenuDropdownItem')).toBeTruthy()
@@ -16,7 +17,8 @@ describe('MenuDropdown', () => {
       const wrapper = mount(MenuDropdownItem, {
         propsData: {
           value: 'Test',
-          isActive: true
+          isActive: true,
+          item: 'Item text'
         }
       })
       expect(wrapper.contains('.MenuDropdownItem--active')).toBeTruthy()
@@ -25,7 +27,8 @@ describe('MenuDropdown', () => {
     it('should emit click event', () => {
       const wrapper = mount(MenuDropdownItem, {
         propsData: {
-          value: 'Test'
+          value: 'Test',
+          item: 'Item text'
         }
       })
       const element = wrapper.find('.MenuDropdownItem__button')
@@ -80,6 +83,7 @@ describe('MenuDropdown', () => {
           items: [1, 2, 3]
         }
       })
+      wrapper.vm.open()
       expect(wrapper.contains('.MenuDropdown')).toBeTruthy()
     })
 
@@ -90,6 +94,7 @@ describe('MenuDropdown', () => {
             items: ['first', 'second']
           }
         })
+        wrapper.vm.open()
         expect(wrapper.findAll('.MenuDropdownItem').length).toBe(2)
       })
 
@@ -120,6 +125,7 @@ describe('MenuDropdown', () => {
             }
           }
         })
+        wrapper.vm.open()
         expect(wrapper.findAll('.MenuDropdownItem').length).toBe(2)
       })
 
@@ -159,7 +165,8 @@ describe('MenuDropdown', () => {
     it('should render component with slots', () => {
       const item = mount(MenuDropdownItem, {
         propsData: {
-          value: 'Test'
+          value: 'Test',
+          item: 'Item text'
         }
       })
       const wrapper = mount(MenuDropdown, {
@@ -168,6 +175,20 @@ describe('MenuDropdown', () => {
         }
       })
       expect(wrapper.contains('.MenuDropdownItem')).toBeTruthy()
+    })
+
+    it('should not activate items when clicked', () => {
+      const wrapper = mount(MenuDropdown, {
+        propsData: {
+          items: ['first', 'second'],
+          value: 'second',
+          isHighlighting: false
+        }
+      })
+      const handler = wrapper.find('.MenuDropdownHandler')
+      handler.trigger('click')
+      const isActive = wrapper.contains('.MenuDropdownItem--active')
+      expect(isActive).toBe(false)
     })
   })
 })

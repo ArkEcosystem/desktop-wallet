@@ -130,7 +130,7 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address, true)
+      return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
     },
 
     async getTransactions (address) {
@@ -270,10 +270,13 @@ export default {
     },
 
     onSortChange (sortOptions) {
+      const columnName = sortOptions[0].field
+      const sortType = sortOptions[0].type
+
       this.__updateParams({
         sort: {
-          type: sortOptions[0].type,
-          field: sortOptions[0].field
+          field: columnName,
+          type: sortType
         },
         page: 1
       })

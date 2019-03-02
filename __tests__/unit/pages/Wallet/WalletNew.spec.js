@@ -16,6 +16,9 @@ describe('pages > WalletNew', () => {
       mocks: {
         schema: {},
         session_hasDarkTheme: false,
+        session_network: {
+          symbol: {}
+        },
         $store: {
           getters: {
             'session/hasDarkTheme': false

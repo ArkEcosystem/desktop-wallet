@@ -8,7 +8,8 @@ module.exports = {
     'json'
   ],
   moduleNameMapper: {
-    '^@setup$': '<rootDir>/__tests__/e2e/__utils__/setup.js'
+    '^@setup$': '<rootDir>/__tests__/e2e/__utils__/setup.js',
+    '^@package.json$': '<rootDir>/package.json'
   },
   transform: {
     '^.+\\.js$': 'babel-jest'
@@ -16,6 +17,7 @@ module.exports = {
   testPathIgnorePatterns: [
     '<rootDir>/__tests__/e2e.jest.conf.js',
     '<rootDir>/__tests__/e2e/__utils__',
+    '<rootDir>/__tests__/e2e/pages',
     '<rootDir>/__tests__/unit'
   ],
   setupTestFrameworkScriptFile: 'jest-extended',

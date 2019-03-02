@@ -68,7 +68,7 @@ import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import truncate from '@/filters/truncate'
-import _ from 'lodash'
+import { includes, isEmpty, map, orderBy, unionBy } from 'lodash'
 
 export default {
   name: 'InputAddress',
@@ -151,7 +151,7 @@ export default {
     },
 
     hasSuggestions () {
-      return !_.isEmpty(this.suggestions)
+      return !isEmpty(this.suggestions)
     },
 
     invalid () {
@@ -169,7 +169,9 @@ export default {
     },
 
     suggestions () {
-      if (!this.currentProfile || !this.showSuggestions) return []
+      if (!this.currentProfile || !this.showSuggestions) {
+        return []
+      }
 
       const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
       const wallets = [
@@ -178,9 +180,9 @@ export default {
       ]
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
 
-      const source = _.unionBy(wallets, contacts, 'address')
+      const source = unionBy(wallets, contacts, 'address')
 
-      const addresses = _.map(source, (wallet) => {
+      const addresses = map(source, (wallet) => {
         const address = {
           name: null,
           address: wallet.address
@@ -192,19 +194,19 @@ export default {
         return address
       })
 
-      const results = _.orderBy(addresses, (object) => {
+      const results = orderBy(addresses, (object) => {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((map, wallet, index) => {
+      return results.reduce((wallets, wallet, index) => {
         const value = wallet.name || wallet.address
         const searchValue = value.toLowerCase()
 
-        if (_.includes(searchValue, this.inputValue.toLowerCase())) {
-          map[wallet.address] = value
+        if (includes(searchValue, this.inputValue.toLowerCase())) {
+          wallets[wallet.address] = value
         }
 
-        return map
+        return wallets
       }, {})
     },
 
@@ -278,7 +280,7 @@ export default {
       // Verifies that the element that generated the blur was a dropdown item
       if (evt.relatedTarget) {
         const classList = evt.relatedTarget.classList || []
-        const isDropdownItem = _.includes(classList, 'MenuDropdownItem__button')
+        const isDropdownItem = includes(classList, 'MenuDropdownItem__button')
 
         if (!isDropdownItem) {
           this.closeDropdown()
@@ -306,7 +308,10 @@ export default {
     },
 
     onEnter () {
-      if (!this.dropdownValue) return
+      if (!this.dropdownValue) {
+        return
+      }
+
       this.model = this.dropdownValue
 
       this.$nextTick(() => {
@@ -355,7 +360,9 @@ export default {
     },
 
     __setSuggestion (value) {
-      if (!this.hasSuggestions) return
+      if (!this.hasSuggestions) {
+        return
+      }
 
       this.dropdownValue = value
       this.$nextTick(() => {

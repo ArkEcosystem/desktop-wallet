@@ -10,7 +10,7 @@
     >
       <a
         href="#"
-        @click.stop="openAddress"
+        @click.stop="onClick"
       >
         {{ wallet_formatAddress(address, addressLength) }}
       </a>
@@ -31,7 +31,7 @@
       <a
         :class="[isUnvote ? 'text-red' : 'text-green']"
         href="#"
-        @click.stop="openAddress"
+        @click.stop="onClick"
       >
         {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
         <span
@@ -153,6 +153,11 @@ export default {
   methods: {
     isKnownWallet () {
       return this.session_network.knownWallets[this.address]
+    },
+
+    onClick () {
+      this.openAddress()
+      this.$emit('click')
     },
 
     openAddress () {

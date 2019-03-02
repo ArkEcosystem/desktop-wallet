@@ -3,6 +3,7 @@
     :question="$t('WALLET_REMOVAL_CONFIRMATION.QUESTION')"
     :note="$t('WALLET_REMOVAL_CONFIRMATION.NOTE')"
     container-classes="WalletRemovalConfirmation"
+    @close="emitCancel"
     @cancel="emitCancel"
     @continue="removeWallet"
   >

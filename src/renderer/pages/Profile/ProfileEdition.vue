@@ -210,6 +210,16 @@
           >
             <ListDivided>
               <ListDividedItem
+                :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
+                class="ProfileEdition__market-chart"
+              >
+                <ButtonSwitch
+                  :is-active="isMarketChartEnabled"
+                  @change="selectIsMarketChartEnabled"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
@@ -244,15 +254,25 @@
         </MenuTab>
       </div>
     </main>
+
+    <ProfileLeavingConfirmation
+      v-if="routeLeaveCallback"
+      :profile="profile"
+      @close="onStopLeaving"
+      @ignore="onLeave(false)"
+      @save="onLeave(true)"
+    />
   </div>
 </template>
 
 <script>
 import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
+import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
+import { ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
@@ -265,6 +285,7 @@ export default {
   name: 'ProfileEdition',
 
   components: {
+    ButtonSwitch,
     InputText,
     ListDivided,
     ListDividedItem,
@@ -272,6 +293,7 @@ export default {
     MenuTabItem,
     MenuDropdown,
     MenuDropdownHandler,
+    ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
     SelectionTheme,
@@ -287,6 +309,7 @@ export default {
       currency: '',
       timeFormat: ''
     },
+    routeLeaveCallback: null,
     tab: 'profile'
   }),
 
@@ -296,7 +319,7 @@ export default {
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
-        all[format] = this.$t(`TIME_FORMAT.${format}`)
+        all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`)
         return all
       }, {})
     },
@@ -327,7 +350,7 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (property === 'avatar' || this.modified[property]) {
+        if (property === 'avatar' || this.modified.hasOwnProperty(property)) {
           return this.modified[property] !== this.profile[property]
         }
         return false
@@ -371,6 +394,9 @@ export default {
     theme () {
       return this.modified.theme || this.profile.theme
     },
+    isMarketChartEnabled () {
+      return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
+    },
     isProfileTab () {
       return this.tab === 'profile'
     },
@@ -400,8 +426,13 @@ export default {
     })
   },
 
-  beforeDestroy () {
-    this.$store.dispatch('session/load')
+  beforeRouteLeave (to, from, next) {
+    if (this.isModified) {
+      // Capture the callback to trigger it when user has decided to update or not the profile
+      this.routeLeaveCallback = next
+    } else {
+      next()
+    }
   },
 
   mounted () {
@@ -413,6 +444,20 @@ export default {
   },
 
   methods: {
+    onStopLeaving () {
+      this.routeLeaveCallback = null
+    },
+
+    async onLeave (hasToSave) {
+      if (hasToSave) {
+        await this.updateProfile()
+      } else {
+        this.$store.dispatch('session/load', this.session_profile.id)
+      }
+
+      this.routeLeaveCallback()
+    },
+
     flagImage (language) {
       return this.assets_loadImage(`flags/${language}.svg`)
     },
@@ -426,11 +471,15 @@ export default {
       }
     },
 
-    async save () {
+    async updateProfile () {
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
       })
+    },
+
+    async save () {
+      await this.updateProfile()
 
       this.$router.push({ name: 'profiles' })
     },
@@ -465,6 +514,10 @@ export default {
 
     async selectTheme (theme) {
       this.__updateSession('theme', theme)
+    },
+
+    async selectIsMarketChartEnabled (isMarketChartEnabled) {
+      this.__updateSession('isMarketChartEnabled', isMarketChartEnabled)
     },
 
     setName (event) {
