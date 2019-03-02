@@ -231,6 +231,7 @@ export default {
         if (!uri.validateLegacy() && !uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else {
+          // TODO: handle AIP-13 and AIP-26 options differently
           this.openUriTransaction(uri.deserialize())
         }
       })

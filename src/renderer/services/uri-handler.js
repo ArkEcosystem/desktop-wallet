@@ -13,49 +13,53 @@ export default class URIHandler {
    */
   deserialize () {
     if (!this.validateLegacy()) {
-      console.log('not a legacy uri, trying new one')
       if (!this.validate()) return
 
       let schema = this.__formatSchema()
       const queryString = {}
       schema[2].replace(paramRegex, (_, $1, __, $2) => (queryString[$1] = $2))
 
-      // Handle AIP-26 options
-      switch (schema[1]) {
-        case 'add-network':
-          const scheme = {
-            type: schema[1],
-            name: null,
-            seedServer: null,
-            description: null
-          }
-
-          for (let prop in scheme) {
-            scheme[prop] = queryString[prop]
-          }
-
-          scheme.seedServer = this.__fullyDecode(scheme.seedServer)
-          scheme.description = scheme.description ? this.__fullyDecode(scheme.description) : null
-
-          return scheme
-        case 'transfer':
-        case 'vote':
-        case 'register-delegate':
-        case 'sign-message':
-          console.log(queryString)
-          break
+      // All AIP-26 options combined, as they have a lot of overlap
+      const scheme = {
+        type: schema[1],
+        name: null,
+        seedServer: null,
+        description: null,
+        recipient: null,
+        amount: null,
+        fee: null,
+        vendorField: null,
+        relay: null,
+        nethash: null,
+        label: null,
+        username: null,
+        message: null
       }
+
+      for (let prop in scheme) {
+        if (queryString[prop]) {
+          scheme[prop] = queryString[prop]
+        }
+      }
+
+      // Handle the props that should be decoded / numbers
+      scheme.seedServer = scheme.seedServer ? this.__fullyDecode(scheme.seedServer) : null
+      scheme.description = scheme.description ? this.__fullyDecode(scheme.description) : null
+      scheme.amount = scheme.amount ? Number(scheme.amount) : null
+      scheme.fee = scheme.fee ? Number(scheme.fee) : null
+      scheme.vendorField = scheme.vendorField ? this.__fullyDecode(scheme.vendorField) : null
+      scheme.relay = scheme.relay ? this.__fullyDecode(scheme.relay) : null
+      scheme.label = scheme.label ? this.__fullyDecode(scheme.label) : null
+      scheme.message = scheme.message ? this.__fullyDecode(scheme.message) : null
+
+      console.log(scheme)
+      return scheme
     } else {
       // Handle legacy (AIP-13)
       let legacySchema = this.__formatLegacySchema()
-      console.log('aip-13')
-      console.log(this.url)
 
       const queryString = {}
       legacySchema[2].replace(paramRegex, (_, $1, __, $3) => (queryString[$1] = $3))
-
-      console.log(legacySchema)
-      console.log(queryString)
 
       const legacyScheme = {
         type: 'legacy',
@@ -77,9 +81,6 @@ export default class URIHandler {
       return legacyScheme
     }
   }
-
-  // TODO: add deserialize for the new AIP-26 options
-  // TODO: handle AIP-26 option accordingly in the wallet
 
   /**
    * Check if it's a valid AIP-13 URI
