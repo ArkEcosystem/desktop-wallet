@@ -9,7 +9,7 @@ export default {
       // 1. uri
       const uri = new URIHandler(value)
 
-      if (uri.validate()) {
+      if (uri.validateLegacy()) {
         const schema = uri.deserialize()
         return schema.address
       }

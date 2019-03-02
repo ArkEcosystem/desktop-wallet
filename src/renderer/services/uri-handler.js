@@ -70,7 +70,9 @@ export default class URIHandler {
       }
 
       for (let prop in legacyScheme) {
-        legacyScheme[prop] = queryString[prop]
+        if (queryString[prop]) {
+          legacyScheme[prop] = queryString[prop]
+        }
       }
 
       legacyScheme.address = legacySchema[1]
