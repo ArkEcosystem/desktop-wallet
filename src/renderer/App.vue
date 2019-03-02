@@ -228,7 +228,7 @@ export default {
       ipcRenderer.on('process-url', (_, url) => {
         const uri = new URIHandler(url)
 
-        if (!uri.validate()) {
+        if (!uri.validateLegacy() && !uri.validate()) {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else {
           this.openUriTransaction(uri.deserialize())
