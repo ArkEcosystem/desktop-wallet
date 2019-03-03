@@ -52,7 +52,6 @@ export default class URIHandler {
       scheme.label = scheme.label ? this.__fullyDecode(scheme.label) : null
       scheme.message = scheme.message ? this.__fullyDecode(scheme.message) : null
 
-      console.log(scheme)
       return scheme
     } else {
       // Handle legacy (AIP-13)

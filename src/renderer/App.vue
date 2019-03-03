@@ -232,7 +232,19 @@ export default {
           this.$error(this.$t('VALIDATION.INVALID_URI'))
         } else {
           // TODO: handle AIP-13 and AIP-26 options differently
-          this.openUriTransaction(uri.deserialize())
+          const deserialized = uri.deserialize()
+          switch (deserialized.type) {
+            case 'legacy':
+              this.openUriTransaction(deserialized)
+              break
+            case 'add-network':
+            case 'transfer':
+            case 'vote':
+            case 'register-delegate':
+            case 'sign-message':
+              console.log(deserialized)
+              break
+          }
         }
       })
     },
