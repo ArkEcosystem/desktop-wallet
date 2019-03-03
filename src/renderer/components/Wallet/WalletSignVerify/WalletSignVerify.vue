@@ -21,7 +21,6 @@
           <template slot-scope="{ toggle, isOpen }">
             <WalletSignModal
               v-if="isOpen"
-              :wallet="currentWallet"
               @cancel="toggle"
               @signed="onSigned(toggle)"
             />

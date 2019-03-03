@@ -57,10 +57,17 @@
 
       <TransactionModal
         v-if="isUriTransactionOpen"
-        :schema="uriTransactionSchema"
+        :schema="uriSchema"
         :type="0"
         @cancel="closeUriTransaction"
         @sent="closeUriTransaction"
+      />
+
+      <WalletSignModal
+        v-if="isUriMessageSignOpen"
+        :schema="uriSchema"
+        @cancel="closeUriMessageSign"
+        @signed="closeUriMessageSign"
       />
 
       <PortalTarget
@@ -90,6 +97,7 @@ import { isEmpty } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
+import { WalletSignModal } from '@/components/Wallet'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
 
@@ -104,14 +112,16 @@ export default {
     AppIntro,
     AppSidemenu,
     AlertMessage,
-    TransactionModal
+    TransactionModal,
+    WalletSignModal
   },
 
   data: () => ({
     isReady: false,
     hasBlurFilter: false,
+    uriSchema: {},
     isUriTransactionOpen: false,
-    uriTransactionSchema: {}
+    isUriMessageSignOpen: false
   }),
 
   computed: {
@@ -135,6 +145,9 @@ export default {
     },
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
+    },
+    currentWallet () {
+      return this.wallet_fromRoute
     }
   },
 
@@ -242,6 +255,7 @@ export default {
             case 'vote':
             case 'register-delegate':
             case 'sign-message':
+              this.openUriMessageSign(deserialized)
               console.log(deserialized)
               break
           }
@@ -251,12 +265,22 @@ export default {
 
     openUriTransaction (schema) {
       this.isUriTransactionOpen = true
-      this.uriTransactionSchema = schema
+      this.uriSchema = schema
     },
 
     closeUriTransaction () {
       this.isUriTransactionOpen = false
-      this.uriTransactionSchema = {}
+      this.uriSchema = {}
+    },
+
+    openUriMessageSign (schema) {
+      this.isUriMessageSignOpen = true
+      this.uriSchema = schema
+    },
+
+    closeUriMessageSign () {
+      this.isUriMessageSignOpen = false
+      this.uriSchema = {}
     },
 
     setIntroDone () {

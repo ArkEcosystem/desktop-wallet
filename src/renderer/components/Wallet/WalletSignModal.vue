@@ -4,7 +4,14 @@
     @close="emitCancel"
   >
     <div class="flex flex-col justify-center w-80">
+      <WalletSelection
+        v-if="schema && schema.message"
+        v-model="$v.wallet.$model"
+        profile-class="mb-5"
+      />
+
       <InputText
+        v-else
         :is-read-only="true"
         :label="$t('SIGN_VERIFY.ADDRESS')"
         :value="wallet.address"
@@ -13,11 +20,11 @@
       />
 
       <PassphraseInput
-        v-if="!wallet.passphrase"
+        v-if="!wallet || !wallet.passphrase"
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :is-invalid="$v.form.passphrase.$error"
-        :address="wallet.address"
+        :address="wallet ? wallet.address : null"
         :pub-key-hash="session_network.version"
         class="my-3"
       />
@@ -61,6 +68,7 @@ import { required, minLength } from 'vuelidate/lib/validators'
 import { InputPassword, InputText } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletSelection from '@/components/Wallet/WalletSelection'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -71,13 +79,15 @@ export default {
     InputText,
     ModalLoader,
     ModalWindow,
-    PassphraseInput
+    PassphraseInput,
+    WalletSelection
   },
 
   props: {
-    wallet: {
+    schema: {
       type: Object,
-      required: true
+      required: false,
+      default: () => {}
     }
   },
 
@@ -88,7 +98,8 @@ export default {
       walletPassword: ''
     },
     showEncryptLoader: false,
-    bip38Worker: null
+    bip38Worker: null,
+    wallet: null
   }),
 
   computed: {
@@ -97,12 +108,31 @@ export default {
         return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
       }
       return null
+    },
+    currentWallet: {
+      get () {
+        return this.wallet || this.wallet_fromRoute
+      },
+      set (wallet) {
+        this.wallet = wallet
+      }
     }
   },
 
   mounted () {
     if (this.bip38Worker) {
       this.bip38Worker.send('quit')
+    }
+    console.log('mounted')
+    console.log(this.schema)
+
+    if (this.currentWallet && this.currentWallet.id) {
+      this.$set(this, 'wallet', this.currentWallet || null)
+      this.$v.wallet.$touch()
+    }
+
+    if (this.schema) {
+      this.$set(this.form, 'message', this.schema.message || '')
     }
     this.bip38Worker = this.$bgWorker.bip38()
     this.bip38Worker.on('message', message => {
@@ -162,6 +192,7 @@ export default {
   },
 
   validations: {
+    wallet: {},
     form: {
       message: {
         required,
