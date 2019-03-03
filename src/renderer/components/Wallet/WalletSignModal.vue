@@ -200,6 +200,7 @@ export default {
       },
       passphrase: {
         isValid (value) {
+          if (!this.wallet) return true
           if (this.wallet.passphrase) {
             return true
           }
@@ -213,6 +214,7 @@ export default {
       },
       walletPassword: {
         isValid (value) {
+          if (!this.wallet) return true
           if (!this.wallet.passphrase) {
             return true
           }

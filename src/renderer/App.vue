@@ -145,9 +145,6 @@ export default {
     },
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
-    },
-    currentWallet () {
-      return this.wallet_fromRoute
     }
   },
 
@@ -254,9 +251,11 @@ export default {
             case 'transfer':
             case 'vote':
             case 'register-delegate':
+              console.log(deserialized)
+              break
             case 'sign-message':
               this.openUriMessageSign(deserialized)
-              console.log(deserialized)
+              // TODO: after signing we should show the page with the signature on it too
               break
           }
         }
