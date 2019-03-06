@@ -15,7 +15,7 @@
       ]"
       class="mx-1"
       name="update"
-      view-box="0 0 16 14"
+      :view-box="viewBox"
     />
   </button>
 </template>
@@ -55,6 +55,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    viewBox: {
+      type: String,
+      required: false,
+      default: '0 0 16 14'
     }
   },
 
