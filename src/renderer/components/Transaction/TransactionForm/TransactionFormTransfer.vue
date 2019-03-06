@@ -146,7 +146,7 @@ import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
-import Bip38 from '@/services/bip38'
+import onSubmit from './mixin-on-submit'
 
 export default {
   name: 'TransactionFormTransfer',
@@ -165,6 +165,8 @@ export default {
     PassphraseInput,
     WalletSelection
   },
+
+  mixins: [onSubmit],
 
   props: {
     schema: {
@@ -186,7 +188,6 @@ export default {
     isSendAllActive: false,
     showEncryptLoader: false,
     showLedgerLoader: false,
-    bip38: null,
     previousAmount: '',
     wallet: null,
     showConfirmSendAll: false
@@ -323,33 +324,6 @@ export default {
       if (this.isSendAllActive && this.canSendAll()) {
         this.$set(this.form, 'amount', this.maximumAvailableAmount)
       }
-    },
-
-    async onSubmit () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
-        this.showEncryptLoader = true
-
-        const dataToDecrypt = {
-          bip38key: this.currentWallet.passphrase,
-          password: this.form.walletPassword,
-          wif: this.walletNetwork.wif
-        }
-
-        try {
-          this.bip38 = new Bip38()
-          const { decodedWif } = await this.bip38.decrypt(dataToDecrypt)
-          this.form.passphrase = null
-          this.form.wif = decodedWif
-        } catch (_error) {
-          this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        } finally {
-          this.bip38.quit()
-        }
-
-        this.showEncryptLoader = false
-      }
-
-      this.submit()
     },
 
     async submit () {

@@ -134,6 +134,7 @@ import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
+import onSubmit from './mixin-on-submit'
 
 export default {
   name: 'TransactionFormSecondSignature',
@@ -152,6 +153,8 @@ export default {
     PassphraseWords
   },
 
+  mixins: [onSubmit],
+
   data: () => ({
     isGenerating: false,
     isPassphraseStep: false,
@@ -163,8 +166,7 @@ export default {
       walletPassword: ''
     },
     showEncryptLoader: false,
-    showLedgerLoader: false,
-    bip38Worker: null
+    showLedgerLoader: false
   }),
 
   computed: {
@@ -195,27 +197,7 @@ export default {
     this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)
   },
 
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
-  },
-
   mounted () {
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.decodedWif === null) {
-        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        this.showEncryptLoader = false
-      } else if (message.decodedWif) {
-        this.form.passphrase = null
-        this.form.wif = message.decodedWif
-        this.showEncryptLoader = false
-        this.submit()
-      }
-    })
-
     // Set default fees with v1 compatibility
     if (this.session_network.apiVersion === 1) {
       this.form.fee = V1.fees[this.$options.transactionType] / 1e8
@@ -240,19 +222,6 @@ export default {
 
     onFee (fee) {
       this.$set(this.form, 'fee', fee)
-    },
-
-    onSubmit () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
-        this.showEncryptLoader = true
-        this.bip38Worker.send({
-          bip38key: this.currentWallet.passphrase,
-          password: this.form.walletPassword,
-          wif: this.session_network.wif
-        })
-      } else {
-        this.submit()
-      }
     },
 
     async submit () {
