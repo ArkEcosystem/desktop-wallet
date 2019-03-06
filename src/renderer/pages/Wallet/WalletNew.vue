@@ -72,7 +72,7 @@
 
             <TransitionGroup
               class="WalletNew__wallets list-reset"
-              name="WalletNew__wallets"
+              name="WalletNew__wallets--transition"
               tag="ul"
             >
               <li
@@ -543,15 +543,15 @@ export default {
   /* To avoid shaking the area with the generated wallets */
   min-height: 203px
 }
-.WalletNew__wallets-enter-active {
-  transition: opacity 1s
+.WalletNew__wallets--transition-enter-active {
+  transition: opacity 1s!important;
 }
-.WalletNew__wallets-leave-active {
-  transition: opacity 0.2s
+.WalletNew__wallets--transition-leave-active {
+  transition: opacity 0.2s!important;
 }
 
-.WalletNew__wallets-enter,
-.WalletNew__wallets-leave-to {
+.WalletNew__wallets--transition-enter,
+.WalletNew__wallets--transition-leave-to {
   opacity: 0
 }
 .WalletNew__refresh-button--address {
