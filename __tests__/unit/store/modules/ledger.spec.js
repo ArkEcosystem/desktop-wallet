@@ -75,7 +75,7 @@ beforeEach(async () => {
     spyConnect.mockRestore()
   }
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
-  ClientService.hasMultiWalletSearch = false
+  ClientService.capabilities = '2.0.0'
   ledgerNameByAddress = () => null
   axiosMock.reset()
 })
@@ -271,7 +271,7 @@ describe('ledger store module', () => {
     })
 
     it('should load all wallets with multi-wallet search', async () => {
-      ClientService.hasMultiWalletSearch = true
+      ClientService.capabilities = '2.1.0'
 
       axiosMock
         .onPost(`http://127.0.0.1/api/wallets/search`)
@@ -284,7 +284,7 @@ describe('ledger store module', () => {
     })
 
     it('should use ledger name', async () => {
-      ClientService.hasMultiWalletSearch = true
+      ClientService.capabilities = '2.1.0'
       ledgerNameByAddress = (address) => address
 
       axiosMock
