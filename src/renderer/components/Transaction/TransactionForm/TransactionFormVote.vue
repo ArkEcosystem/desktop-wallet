@@ -6,10 +6,12 @@
       :is-open="!isPassphraseStep"
     >
       <ListDivided>
-        <ListDividedItem
-          :label="$t('INPUT_ADDRESS.LABEL')"
-          :value="delegate.address"
-        />
+        <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
+          <WalletAddress
+            :address="delegate.address"
+            @click="emitCancel"
+          />
+        </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
           :value="formatter_percentage(delegate.production.productivity)"
@@ -49,6 +51,23 @@
       >
         {{ isVoter ? $t('WALLET_DELEGATES.UNVOTE') : $t('WALLET_DELEGATES.VOTE') }}
       </button>
+
+      <div
+        v-if="showCurrentlyVoting"
+        class="mt-4 border-theme-button-text border-l-4 pl-2"
+      >
+        <span class="text-theme-button-text font-bold">
+          {{ $t('WALLET_DELEGATES.VOTE_INFO') }}
+        </span>
+        <i18n
+          tag="span"
+          path="WALLET_DELEGATES.CURRENTLY_VOTED"
+        >
+          <strong place="delegate">
+            {{ votedDelegate.username }}
+          </strong>
+        </i18n>
+      </div>
     </Collapse>
 
     <Collapse
@@ -93,6 +112,7 @@
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
         :pub-key-hash="session_network.version"
+        :public-key="currentWallet.secondPublicKey"
         class="mt-5"
       />
 
@@ -126,6 +146,7 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import TransactionService from '@/services/transaction'
 
 export default {
@@ -140,7 +161,8 @@ export default {
     ListDivided,
     ListDividedItem,
     ModalLoader,
-    PassphraseInput
+    PassphraseInput,
+    WalletAddress
   },
 
   props: {
@@ -153,10 +175,10 @@ export default {
       required: false,
       default: false
     },
-    hasVoted: {
-      type: Boolean,
+    votedDelegate: {
+      type: Object,
       required: false,
-      default: false
+      default: null
     }
   },
 
@@ -189,11 +211,15 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (this.hasVoted && !this.isVoter)) {
+      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
         return false
       }
 
-      return !this.hasVoted || (this.hasVoted && this.isVoter)
+      return !this.votedDelegate || (!!this.votedDelegate && this.isVoter)
+    },
+
+    showCurrentlyVoting () {
+      return !!this.votedDelegate && !this.isVoter
     }
   },
 
@@ -255,7 +281,7 @@ export default {
     },
 
     async fetchVoters () {
-      this.voters = await this.$client.fetchDelegateVoters(this.delegate)
+      this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
     },
 
     onFee (fee) {
@@ -331,6 +357,10 @@ export default {
         this.$refs.password.reset()
       }
       this.$v.$reset()
+    },
+
+    emitCancel () {
+      this.$emit('cancel')
     },
 
     emitNext (transaction) {

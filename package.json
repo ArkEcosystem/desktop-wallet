@@ -30,8 +30,11 @@
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-    "depcheck": "depcheck ./ --ignores @babel/runtime,babel-core,babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-vue,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer,@vue/test-utils,babel-jest,jest-serializer-vue,jest-vue-preprocessor,jest-extended,@tests/unit,animate.css,lint-staged,purgecss,v-tooltip,@xkeshi/vue-qrcode,file-loader,webpack-cli,@config/networks,codecov",
+    "depcheck": "depcheck ./ --ignores @babel/runtime,babel-core,babel-eslint,babel-register,devtron,eslint-config-standard,eslint-plugin-vue,eslint-plugin-import,eslint-plugin-node,eslint-plugin-promise,eslint-plugin-standard,husky,vue-style-loader,autoprefixer,@vue/test-utils,babel-jest,jest-serializer-vue,jest-vue-preprocessor,jest-extended,@tests/unit,animate.css,lint-staged,purgecss,v-tooltip,@xkeshi/vue-qrcode,file-loader,webpack-cli,@config/networks,codecov,intl,tempy",
     "dev": "cross-env ENABLE_SCREENSHOT_PROTECTION=false node .electron-vue/dev-runner.js",
+    "i18n": "vue-i18n-extract -s 'src/**/*.?(js|vue)' -l",
+    "i18n:all": "vue-i18n-extract -s 'src/**/*.?(js|vue)' -l 'src/renderer/i18n/locales/*.js'",
+    "i18n:en-US": "vue-i18n-extract -s 'src/**/*.?(js|vue)' -l 'src/renderer/i18n/locales/en-US.js'",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src __tests__",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src __tests__",
     "pack": "npm run pack:main && npm run pack:renderer",
@@ -94,7 +97,7 @@
     "@babel/core": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
-    "@vue/test-utils": "^1.0.0-beta.27",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "autoprefixer": "^9.4.2",
     "axios-mock-adapter": "^1.15.0",
     "babel-core": "^7.0.0-0",
@@ -130,6 +133,7 @@
     "glob-all": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.2.0",
+    "intl": "^1.2.5",
     "jest": "^23.6.0",
     "jest-extended": "^0.11.0",
     "jest-serializer-vue": "^2.0.2",
@@ -147,8 +151,10 @@
     "svgo": "^1.1.1",
     "svgo-loader": "^2.2.0",
     "tailwindcss": "^0.7.2",
+    "tempy": "^0.2.1",
     "url-loader": "^1.1.2",
     "vue-html-loader": "^1.2.4",
+    "vue-i18n-extract": "^0.1.13",
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.20",
@@ -219,13 +225,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{js,vue}": [
-        "npm run lint:fix"
-      ]
     }
   }
 }

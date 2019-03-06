@@ -53,6 +53,9 @@ export default new BaseModel({
     isWatchOnly: {
       type: 'boolean',
       default: false
+    },
+    vote: {
+      type: ['string', 'null']
     }
   },
   required: ['address', 'name', 'profileId']

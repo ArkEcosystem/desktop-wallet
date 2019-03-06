@@ -53,11 +53,11 @@
     <InputText
       ref="vendorField"
       v-model="$v.form.vendorField.$model"
-      :helper-text="vendorFieldError"
-      :is-invalid="vendorFieldIsInvalid"
       :label="vendorFieldLabel"
       :bip39-warning="true"
+      :helper-text="vendorFieldHelperText"
       :is-disabled="!currentWallet"
+      :maxlength="vendorFieldMaxLength"
       name="vendorField"
       class="mb-5"
     />
@@ -102,6 +102,7 @@
       v-model="$v.form.secondPassphrase.$model"
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
       :pub-key-hash="walletNetwork.version"
+      :public-key="currentWallet.secondPublicKey"
       class="mt-5"
     />
 
@@ -122,6 +123,7 @@
       :note="$t('TRANSACTION.CONFIRM_SEND_ALL_NOTE')"
       container-classes="SendAllConfirmation"
       portal-target="loading"
+      @close="emitCancelSendAll"
       @cancel="emitCancelSendAll"
       @continue="enableSendAll"
     />
@@ -137,8 +139,8 @@
 </template>
 
 <script>
-import { maxLength, required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { required } from 'vuelidate/lib/validators'
+import { TRANSACTION_TYPES, V1, VENDOR_FIELD } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -241,17 +243,20 @@ export default {
       }
     },
     vendorFieldLabel () {
-      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
+      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.vendorFieldMaxLength])}`
     },
-    vendorFieldError () {
-      if (this.vendorFieldIsInvalid) {
-        return this.$t('VALIDATION.TOO_LONG', [this.$refs.vendorField.label])
+    vendorFieldHelperText () {
+      if (this.form.vendorField.length === this.vendorFieldMaxLength) {
+        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [this.vendorFieldMaxLength])
       }
-
       return null
     },
-    vendorFieldIsInvalid () {
-      return this.$v.form.vendorField.$dirty && this.$v.form.vendorField.$invalid
+    vendorFieldMaxLength () {
+      const vendorField = this.walletNetwork.vendorField
+      if (vendorField) {
+        return vendorField.maxLength
+      }
+      return VENDOR_FIELD.defaultMaxLength
     }
   },
 
@@ -432,9 +437,6 @@ export default {
           return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
-      vendorField: {
-        maxLength: maxLength(64)
-      },
       passphrase: {
         isValid (value) {
           if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
@@ -448,6 +450,7 @@ export default {
           return false
         }
       },
+      vendorField: {},
       walletPassword: {
         isValid (value) {
           if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {

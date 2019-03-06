@@ -1,7 +1,7 @@
 <template>
   <button
     :class="[classes, 'flex items-center justify-center']"
-    @click="toggle"
+    @click.stop="toggle"
   >
     <SvgIcon
       v-if="icon"

@@ -12,10 +12,15 @@
     }"
     class="App bg-theme-page text-theme-page-text font-sans"
   >
-    <AppWelcome
+    <div
       v-if="!hasSeenIntroduction"
-      @done="setIntroDone"
-    />
+      :style="`backgroundImage: url('${assets_loadImage(background)}')`"
+      class="px-20 py-16 w-screen h-screen relative"
+    >
+      <AppIntro
+        @done="setIntroDone"
+      />
+    </div>
 
     <div
       v-else
@@ -82,7 +87,7 @@
 <script>
 import '@/styles/style.css'
 import { isEmpty } from 'lodash'
-import { AppSidemenu, AppFooter, AppWelcome } from '@/components/App'
+import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
@@ -96,8 +101,8 @@ export default {
 
   components: {
     AppFooter,
+    AppIntro,
     AppSidemenu,
-    AppWelcome,
     AlertMessage,
     TransactionModal
   },
@@ -111,7 +116,7 @@ export default {
 
   computed: {
     background () {
-      return this.$store.getters['session/background'] || 'wallpapers/1Default.png'
+      return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
     },
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length

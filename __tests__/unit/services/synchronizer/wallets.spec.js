@@ -3,9 +3,11 @@ import { Action } from '@/services/synchronizer/wallets'
 describe('Services > Synchronizer > Wallets', () => {
   let action
   let wallets
+  let addresses
   let contacts
   let walletUpdate
   let transactionDeleteBulk
+  let transactions
   const throwError = jest.fn()
 
   beforeEach(() => {
@@ -50,15 +52,22 @@ describe('Services > Synchronizer > Wallets', () => {
       { address: 'A3', transactions: {} },
       { address: 'A4', transactions: {} }
     ]
+    addresses = wallets.map(wallet => wallet.address)
     contacts = [
       { address: 'Acon1', transactions: {} },
       { address: 'Acon2', transactions: {} }
+    ]
+    transactions = [
+      { id: 'tx1', timestamp: 300 * 1000 },
+      { id: 'tx2', timestamp: 400 * 1000 },
+      { id: 'tx3', timestamp: 200 * 1000 },
+      { id: 'tx4', timestamp: 110 * 1000 }
     ]
   })
 
   describe('run', () => {
     beforeEach(() => {
-      action.refreshWallets = jest.fn()
+      action.refresh = jest.fn()
     })
 
     describe('when there is not a session profile', () => {
@@ -86,7 +95,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
         it('should not try to refresh them', async () => {
           await action.run()
-          expect(action.refreshWallets).not.toHaveBeenCalled()
+          expect(action.refresh).not.toHaveBeenCalled()
         })
       })
 
@@ -99,7 +108,7 @@ describe('Services > Synchronizer > Wallets', () => {
         describe('when none of them have been checked', () => {
           it('should refresh all', async () => {
             await action.run()
-            expect(action.refreshWallets).toHaveBeenCalledWith([
+            expect(action.refresh).toHaveBeenCalledWith([
               ...wallets,
               ...contacts
             ])
@@ -117,7 +126,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
           it('should refresh those that have not been checked', async () => {
             await action.run()
-            expect(action.refreshWallets).toHaveBeenCalledWith([
+            expect(action.refresh).toHaveBeenCalledWith([
               wallets[1],
               wallets[3],
               contacts[1]
@@ -128,50 +137,144 @@ describe('Services > Synchronizer > Wallets', () => {
     })
   })
 
-  describe('refreshWallets', () => {
+  describe('refresh', () => {
+    let walletsData
+    let transactionsByWallet
+
     beforeEach(() => {
-      action.processWalletData = jest.fn()
-      action.fetchTransactionsForWallets = jest.fn()
+      walletsData = [
+        wallets[0],
+        wallets[2],
+        { address: wallets[1].address }
+      ]
+
+      transactionsByWallet = {}
+      wallets.forEach(wallet => {
+        transactionsByWallet[wallet.address] = []
+      })
+
+      action.refreshWalletsData = jest.fn()
+      action.refreshTransactions = jest.fn()
+      action.fetchWalletsData = jest.fn()
+      action.fetchWalletsTransactions = jest.fn()
+
+      action.fetchWalletsData.mockImplementation(addresses => {
+        return walletsData
+      })
+      action.fetchWalletsTransactions.mockImplementation(addresses => {
+        return transactionsByWallet
+      })
+    })
+
+    it('should fetch the data of all wallets', async () => {
+      await action.refresh(wallets)
+      expect(action.fetchWalletsData).toHaveBeenCalledWith(addresses)
+    })
+
+    it('should fetch the transactions of all wallets', async () => {
+      await action.refresh(wallets)
+      expect(action.fetchWalletsTransactions).toHaveBeenCalledWith(addresses)
+    })
+
+    it('should refresh the data of all wallets', async () => {
+      await action.refresh(wallets)
+
+      expect(action.refreshWalletsData).toHaveBeenCalledWith(wallets, walletsData)
+    })
+
+    it('should refresh all transactions of all wallets', async () => {
+      await action.refresh(wallets)
+
+      expect(action.refreshTransactions).toHaveBeenCalledWith(wallets, transactionsByWallet)
+    })
+  })
+
+  describe('fetchWalletsData', () => {
+    beforeEach(() => {
       action.$client.fetchWallets = jest.fn()
     })
 
-    it('should refresh each wallet', async () => {
-      action.$client.fetchWallets.mockImplementation(addresses => {
-        return wallets
-      })
+    it('should fetch the data of each wallet address', async () => {
+      await action.fetchWalletsData(addresses)
+      expect(action.$client.fetchWallets).toHaveBeenCalledWith(addresses)
+    })
+  })
 
-      await action.refreshWallets(wallets)
-
-      wallets.forEach(wallet => {
-        expect(action.processWalletData).toHaveBeenCalledWith(wallet, wallet)
-      })
+  describe('fetchWalletsTransactions', () => {
+    beforeEach(() => {
+      action.$client.fetchTransactionsForWallets = jest.fn()
     })
 
-    it('should not refresh wallet if empty or cold response', async () => {
-      const coldWallet = { ...wallets[0], balance: 0, publicKey: null }
-      action.$client.fetchWallets.mockImplementation(addresses => {
-        return [
-          coldWallet,
-          {},
-          null,
-          wallets[2]
-        ]
-      })
+    it('should fetch the transactions of each wallet address', async () => {
+      await action.fetchWalletsTransactions(addresses)
+      expect(action.$client.fetchTransactionsForWallets).toHaveBeenCalledWith(addresses)
+    })
+  })
 
-      await action.refreshWallets(wallets)
+  describe('refreshWalletsData', () => {
+    beforeEach(() => {
+      action.processWalletData = jest.fn()
+      action.fetchWalletsData = jest.fn()
+    })
+
+    it('should not process wallet if empty or cold', async () => {
+      const coldWallet = { ...wallets[0], balance: 0, publicKey: null }
+      const walletsData = [
+        coldWallet,
+        {},
+        null,
+        wallets[2]
+      ]
+      action.fetchWalletsData.mockImplementation(addresses => walletsData)
+
+      await action.refreshWalletsData(wallets, walletsData)
 
       expect(action.processWalletData).toHaveBeenCalledWith(wallets[2], wallets[2])
       expect(action.processWalletData).not.toHaveBeenCalledWith(wallets[0], coldWallet)
+      expect(action.processWalletData).not.toHaveBeenCalledWith(wallets[0], {})
+      expect(action.processWalletData).not.toHaveBeenCalledWith(wallets[0], null)
+    })
+  })
+
+  describe('refreshTransactions', () => {
+    let transactionsByWallet
+
+    beforeEach(() => {
+      action.processWalletTransactions = jest.fn()
     })
 
-    it('should update transactions when finished', async () => {
-      action.$client.fetchWallets.mockImplementation(addresses => {
-        return wallets
+    describe('when a wallet doest not have transactions', () => {
+      beforeEach(() => {
+        transactionsByWallet = {}
+        wallets.forEach(wallet => {
+          transactionsByWallet[wallet.address] = []
+        })
       })
 
-      await action.refreshWallets(wallets)
+      it('should not try to process them', async () => {
+        await action.refreshTransactions(wallets, transactionsByWallet)
 
-      expect(action.fetchTransactionsForWallets).toHaveBeenCalledWith(wallets)
+        wallets.forEach(wallet => {
+          expect(action.processWalletTransactions).not.toHaveBeenCalled()
+        })
+      })
+    })
+
+    describe('when wallets have transactions', () => {
+      beforeEach(() => {
+        transactionsByWallet = {}
+        wallets.forEach(wallet => {
+          transactionsByWallet[wallet.address] = transactions
+        })
+      })
+
+      it('should process them', async () => {
+        await action.refreshTransactions(wallets, transactionsByWallet)
+
+        wallets.forEach(wallet => {
+          expect(action.processWalletTransactions).toHaveBeenCalledWith(wallet, transactions)
+        })
+      })
     })
   })
 
@@ -180,9 +283,6 @@ describe('Services > Synchronizer > Wallets', () => {
 
     beforeEach(() => {
       wallet = wallets[2]
-
-      action.$client.fetchWallets = jest.fn()
-      action.fetchTransactionsForWallets = jest.fn()
     })
 
     describe('when there is wallet data', () => {
@@ -211,105 +311,8 @@ describe('Services > Synchronizer > Wallets', () => {
     })
   })
 
-  describe('fetchTransactionsForWallets', () => {
-    let wallet
-    const transactions = [
-      { id: 'tx1', timestamp: 300 * 1000 },
-      { id: 'tx2', timestamp: 400 * 1000 },
-      { id: 'tx3', timestamp: 200 * 1000 },
-      { id: 'tx4', timestamp: 110 * 1000 }
-    ]
-
-    beforeEach(() => {
-      wallet = wallets[2]
-
-      action.$client.fetchTransactionsForWallets = jest.fn()
-      action.processWalletTransactions = jest.fn()
-      action.displayNewTransaction = jest.fn()
-    })
-
-    it('should fetch the transactions of all wallets', async () => {
-      action.$client.fetchTransactionsForWallets.mockImplementation(addresses => {
-        return {}
-      })
-
-      await action.fetchTransactionsForWallets(wallets)
-      expect(action.$client.fetchTransactionsForWallets).toHaveBeenCalledWith(wallets.map(wallet => wallet.address))
-    })
-
-    describe('when there are no transactions', () => {
-      beforeEach(() => {
-        action.$client.fetchTransactionsForWallets.mockImplementation(addresses => {
-          if (addresses.includes(wallet.address)) {
-            const response = {}
-            response[wallet.address] = []
-
-            return response
-          }
-
-          return {}
-        })
-      })
-
-      it('should not call processWalletTransactions', async () => {
-        await action.fetchTransactionsForWallets(wallets)
-
-        wallets.forEach(walletCheck => {
-          if (walletCheck.address === wallet.address) {
-            expect(action.processWalletTransactions).toHaveBeenCalledWith(walletCheck, [])
-          } else {
-            expect(action.processWalletTransactions).not.toHaveBeenCalledWith(walletCheck, [])
-          }
-        })
-      })
-
-      it('should not dispatch the `update/wallet` Vuex action', async () => {
-        await action.fetchTransactionsForWallets(wallets)
-        expect(walletUpdate).not.toHaveBeenCalled()
-      })
-
-      it('should not dispatch the `transaction/deleteBulk` Vuex action', async () => {
-        await action.fetchTransactionsForWallets(wallets)
-        expect(transactionDeleteBulk).not.toHaveBeenCalled()
-      })
-    })
-
-    describe('when there are transactions', () => {
-      beforeEach(() => {
-        action.$client.fetchTransactionsForWallets.mockImplementation(addresses => {
-          if (addresses.includes(wallet.address)) {
-            const response = {}
-            response[wallet.address] = transactions
-
-            return response
-          }
-
-          return {}
-        })
-      })
-
-      it('should call processWalletTransactions', async () => {
-        await action.fetchTransactionsForWallets(wallets)
-
-        wallets.forEach(walletCheck => {
-          if (walletCheck.address === wallet.address) {
-            expect(action.processWalletTransactions).toHaveBeenCalledWith(walletCheck, transactions)
-          } else {
-            expect(action.processWalletTransactions).not.toHaveBeenCalledWith(walletCheck, transactions)
-          }
-        })
-      })
-    })
-  })
-
   describe('processWalletTransactions', () => {
     let wallet
-    const transactions = [
-      { id: 'tx1', timestamp: 300 * 1000 },
-      { id: 'tx2', timestamp: 400 * 1000 },
-      { id: 'tx3', timestamp: 200 * 1000 },
-      { id: 'tx4', timestamp: 110 * 1000 }
-    ]
 
     beforeEach(() => {
       wallet = wallets[2]
@@ -379,13 +382,6 @@ describe('Services > Synchronizer > Wallets', () => {
 
   describe('findLatestTransaction', () => {
     it('returns the transaction with bigger `timestamp`', () => {
-      const transactions = [
-        { id: 'tx1', timestamp: 300 * 1000 },
-        { id: 'tx2', timestamp: 400 * 1000 },
-        { id: 'tx3', timestamp: 200 * 1000 },
-        { id: 'tx4', timestamp: 110 * 1000 }
-      ]
-
       expect(action.findLatestTransaction(transactions)).toBe(transactions[1])
     })
   })

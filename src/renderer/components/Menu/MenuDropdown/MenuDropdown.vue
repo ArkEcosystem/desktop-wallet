@@ -6,16 +6,21 @@
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
       class="appearance-none text-inherit w-full"
-      @click="buttonClick"
+      @click.stop="buttonClick"
     >
       <slot
-        :value="entries[activeKey]"
+        :active-value="activeValue"
+        :value="activeValue"
+        :item="entries[activeValue]"
         :is-open="isOpen"
         :placeholder="placeholder"
+        :prefix="prefix"
+        :icon-disabled="isOnlySelectedItem"
         name="handler"
       >
         <MenuDropdownHandler
-          :value="entries[activeKey]"
+          :value="activeValue"
+          :item="entries[activeValue]"
           :placeholder="placeholder"
           :prefix="prefix"
           :icon-disabled="isOnlySelectedItem"
@@ -26,24 +31,30 @@
     <div
       v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside="close"
-      :class="{
+      :class="[{
         'MenuDropdown--pin-above': pinAbove,
         'pin-x': pinToInputWidth
-      }"
+      }, containerClasses]"
+      :style="{ transform: `translate(${position.join(',')})` }"
       class="MenuDropdown__container absolute min-w-full z-20"
     >
       <ul
-        :style="{ transform: `translate(${position.join(',')})` }"
         class="MenuDropdown pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
       >
         <slot>
           <MenuDropdownItem
-            v-for="(item, key) in entries"
-            :key="key"
-            :value="item.toString()"
-            :is-active="key === activeKey"
-            @click.self="select(key)"
-          />
+            v-for="(item, entryValue) in entries"
+            :key="entryValue"
+            :value="entryValue"
+            :item="item.toString()"
+            :is-active="isHighlighting ? entryValue === activeValue : false"
+            @click.self="select(entryValue)"
+          >
+            <slot
+              name="item"
+              v-bind="{ item, value: entryValue, activeValue }"
+            />
+          </MenuDropdownItem>
         </slot>
       </ul>
     </div>
@@ -69,6 +80,11 @@ export default {
   },
 
   props: {
+    containerClasses: {
+      type: String,
+      required: false,
+      default: ''
+    },
     placeholder: {
       type: String,
       required: false,
@@ -108,12 +124,17 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    isHighlighting: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
   data: vm => ({
     isOpen: true,
-    activeKey: vm.value
+    activeValue: vm.value
   }),
 
   computed: {
@@ -130,7 +151,7 @@ export default {
       if (Object.keys(this.entries).length > 1) {
         return false
       }
-      if (Object.keys(this.entries).length === 1 && this.entries[this.activeKey] !== Object.values(this.entries)[0]) {
+      if (Object.keys(this.entries).length === 1 && this.entries[this.activeValue] !== Object.values(this.entries)[0]) {
         return false
       }
 
@@ -139,8 +160,8 @@ export default {
   },
 
   watch: {
-    value (val) {
-      this.activeKey = val
+    value (value) {
+      this.activeValue = value
     }
   },
 
@@ -150,7 +171,7 @@ export default {
 
   methods: {
     select (item) {
-      this.activeKey = item
+      this.activeValue = item
       this.isOpen = false
 
       this.$emit('select', item)

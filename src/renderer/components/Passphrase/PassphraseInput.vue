@@ -117,6 +117,11 @@ export default {
       type: Number,
       required: true
     },
+    publicKey: {
+      type: String,
+      required: false,
+      default: null
+    },
     value: {
       type: String,
       required: false,
@@ -138,6 +143,8 @@ export default {
         } else if (!this.$v.model.isValid) {
           return this.$t('VALIDATION.NOT_VALID', [this.label])
         } else if (!this.$v.model.matchAddress) {
+          return this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
+        } else if (!this.$v.model.matchPublicKey) {
           return this.$t('VALIDATION.NOT_MATCH', [this.label, 'address'])
         }
       }
@@ -221,6 +228,13 @@ export default {
       matchAddress (value) {
         if (this.address) {
           return WalletService.verifyPassphrase(this.address, value, this.pubKeyHash)
+        }
+        return true
+      },
+      matchPublicKey (value) {
+        if (this.publicKey) {
+          const generatedPublicKey = WalletService.getPublicKeyFromPassphrase(value)
+          return generatedPublicKey === this.publicKey
         }
         return true
       }

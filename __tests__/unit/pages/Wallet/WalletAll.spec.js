@@ -41,6 +41,10 @@ describe('pages > WalletAll', () => {
             enabled: true
           }
         },
+        session_profile: {
+          name: 'jest'
+        },
+        wallet_sortByName: () => wallets,
         formatter_networkCurrency: jest.fn(),
         wallet_name: value => value
       },

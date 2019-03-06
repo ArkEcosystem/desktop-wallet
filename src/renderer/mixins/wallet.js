@@ -1,3 +1,4 @@
+import { sortByProps } from '@/components/utils/Sorting'
 import truncateMiddle from '@/filters/truncate-middle'
 import WalletService from '@/services/wallet'
 import WalletModel from '@/models/wallet'
@@ -128,6 +129,23 @@ export default {
      */
     wallet_truncate (value, truncateLength = 10) {
       return truncateMiddle(value, truncateLength)
+    },
+
+    /**
+     * @param {Object[]} wallets
+     */
+    wallet_sortByName (wallets) {
+      return wallets.slice()
+        .map(
+          wallet => {
+            wallet.sortName = wallet.name || this.wallet_name(wallet.address) || ''
+            return wallet
+          })
+        .sort(sortByProps(['sortName', 'address']))
+        .map(wallet => {
+          delete wallet.sortName
+          return wallet
+        })
     }
   }
 }
