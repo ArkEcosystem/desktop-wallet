@@ -113,9 +113,9 @@ export default {
 
         const bip38 = new Bip38()
         try {
-          const { decodedWif } = await bip38.decrypt(dataToDecrypt)
+          const { encodedWif } = await bip38.decrypt(dataToDecrypt)
           this.form.passphrase = null
-          this.form.wif = decodedWif
+          this.form.wif = encodedWif
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
         } finally {
