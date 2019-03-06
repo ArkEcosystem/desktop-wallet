@@ -23,6 +23,18 @@
         name="quantity"
       />
 
+      <div
+        v-if="quantityWarning"
+        class="mt-4 border-theme-button-text border-l-4 pl-2"
+      >
+        <span class="text-theme-button-text font-bold">
+          {{ $t('WALLET_DELEGATES.VOTE_INFO') }}
+        </span>
+        <strong>
+          {{ quantityWarning }}
+        </strong>
+      </div>
+
       <div class="flex mt-5">
         <ButtonGeneric
           :label="$t('MODAL_ADDITIONAL_LEDGERS.CANCEL')"
@@ -54,6 +66,14 @@ export default {
     ModalWindow
   },
 
+  props: {
+    largeQuantity: {
+      type: Number,
+      required: false,
+      default: 50
+    }
+  },
+
   data () {
     return {
       form: {
@@ -74,6 +94,14 @@ export default {
         } else if (!this.$v.form.quantity.numeric) {
           return this.$t('VALIDATION.NOT_NUMERIC', [this.$refs['input-quantity'].label])
         }
+      }
+
+      return null
+    },
+
+    quantityWarning () {
+      if (this.$v.form.quantity.$dirty && this.$v.form.quantity.$model > this.largeQuantity) {
+        return this.$t('MODAL_ADDITIONAL_LEDGERS.LARGE_QUANTITY')
       }
 
       return null

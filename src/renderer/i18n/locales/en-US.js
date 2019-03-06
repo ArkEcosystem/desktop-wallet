@@ -345,6 +345,7 @@ export default {
   MODAL_ADDITIONAL_LEDGERS: {
     CANCEL: 'Cancel',
     INFO: 'Choose the max amount of Ledger wallets you would like to show. You are currently showing {quantity} wallets.',
+    LARGE_QUANTITY: 'You are trying to load a large number of wallets. This could result in slow loading or the device could timeout.',
     LOAD: 'Load Wallets',
     QUANTITY: 'Quantity',
     TITLE: 'Load Additional Ledger Wallets'
