@@ -211,7 +211,7 @@
             :is-next-enabled="!$v.step5.$invalid"
             :title="$t('PAGES.WALLET_NEW.STEP5.TITLE')"
             @back="moveTo(4)"
-            @next="create"
+            @next="onCreate"
           >
             <div class="flex flex-col h-full w-full justify-around">
               <InputText
@@ -274,6 +274,7 @@ import { SvgIcon } from '@/components/SvgIcon'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
+import onCreate from './mixin-on-create'
 
 export default {
   name: 'WalletNew',
@@ -294,6 +295,8 @@ export default {
     WalletIdenticon
   },
 
+  mixins: [onCreate],
+
   schema: Wallet.schema,
 
   data: () => ({
@@ -305,7 +308,6 @@ export default {
     walletPassword: null,
     walletConfirmPassword: null,
     showEncryptLoader: false,
-    bip38Worker: null,
     backgroundImages: {
       1: 'pages/wallet-new/choose-wallet.svg',
       2: 'pages/wallet-new/backup-wallet.svg',
@@ -375,47 +377,8 @@ export default {
     this.refreshAddresses()
   },
 
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
-  },
-
-  mounted () {
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.bip38key) {
-        this.showEncryptLoader = false
-        this.wallet.passphrase = message.bip38key
-        this.finishCreate()
-      }
-    })
-  },
-
   methods: {
-    create () {
-      this.wallet = {
-        ...this.schema,
-        profileId: this.session_profile.id
-      }
-      this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase)
-
-      if (this.walletPassword && this.walletPassword.length) {
-        this.showEncryptLoader = true
-        this.bip38Worker.send({
-          passphrase: this.wallet.passphrase,
-          password: this.walletPassword,
-          wif: this.session_network.wif
-        })
-      } else {
-        this.wallet.passphrase = null
-
-        this.finishCreate()
-      }
-    },
-
-    async finishCreate () {
+    async createWallet () {
       const { address } = await this.$store.dispatch('wallet/create', this.wallet)
       this.$router.push({ name: 'wallet-show', params: { address } })
     },

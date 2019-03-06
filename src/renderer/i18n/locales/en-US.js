@@ -109,7 +109,8 @@ export default {
   ENCRYPTION: {
     DECRYPTING: 'Decrypting wallet with password...',
     ENCRYPTING: 'Encrypting wallet with password...',
-    FAILED_DECRYPT: 'Failed to decrypt passphrase'
+    FAILED_DECRYPT: 'Failed to decrypt passphrase',
+    FAILED_ENCRYPT: 'Failed to encrypt passphrase'
   },
 
   PEER: {
