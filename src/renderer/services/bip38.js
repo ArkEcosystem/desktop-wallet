@@ -8,13 +8,13 @@ export default class {
     this.worker = fork(resolve(__dirname, workersPath, 'bip38-worker.js'))
   }
 
-  decrypt ({ bip38key, password, wif }, callback) {
+  decrypt ({ bip38key, password, wif }) {
     const onMessage = this.onMessage()
     this.worker.send({ bip38key, password, wif })
     return onMessage
   }
 
-  encrypt ({ passphrase, password, wif }, callback) {
+  encrypt ({ passphrase, password, wif }) {
     const onMessage = this.onMessage()
     this.worker.send({ passphrase, password, wif })
     return onMessage
