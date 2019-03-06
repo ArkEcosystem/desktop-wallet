@@ -118,7 +118,7 @@
             :is-next-enabled="!$v.step3.$invalid"
             :title="$t('PAGES.WALLET_IMPORT.STEP3.TITLE')"
             @back="!useOnlyAddress ? moveTo(2) : moveTo(1)"
-            @next="importWallet"
+            @next="onCreate"
           >
             <div class="flex flex-col h-full w-full justify-around">
               <InputText
@@ -158,9 +158,9 @@ import { InputAddress, InputPassword, InputSwitch, InputText } from '@/component
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
-import Bip38 from '@/services/bip38'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
+import onCreate from './mixin-on-create'
 
 export default {
   name: 'WalletImport',
@@ -175,6 +175,8 @@ export default {
     ModalLoader,
     PassphraseInput
   },
+
+  mixins: [onCreate],
 
   schema: Wallet.schema,
 
@@ -229,7 +231,7 @@ export default {
     step () {
       if (this.step === 2 && !this.useOnlyAddress) {
         // Important: .normalize('NFD') is needed to properly work with Korean bip39 words
-        // It alters the passphrase string, so no need to normalize again in the importWallet function
+        // It alters the passphrase string, so no need to normalize again in the onCreate function
         this.schema.address = WalletService.getAddress(this.schema.passphrase, this.session_network.version)
       }
     }
@@ -243,42 +245,6 @@ export default {
   },
 
   methods: {
-    async importWallet () {
-      this.wallet = {
-        ...this.schema,
-        profileId: this.session_profile.id
-      }
-      if (!this.useOnlyAddress) {
-        this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase)
-      }
-
-      if (!this.useOnlyAddress && this.walletPassword && this.walletPassword.length) {
-        this.showEncryptLoader = true
-
-        const dataToEncrypt = {
-          passphrase: this.wallet.passphrase,
-          password: this.walletPassword,
-          wif: this.session_network.wif
-        }
-
-        const bip38 = new Bip38()
-        try {
-          const { bip38key } = await bip38.encrypt(dataToEncrypt)
-          this.wallet.passphrase = bip38key
-        } catch (_error) {
-          this.$error(this.$t('ENCRYPTION.FAILED_ENCRYPT'))
-        } finally {
-          bip38.quit()
-        }
-
-        this.showEncryptLoader = false
-      } else {
-        this.wallet.passphrase = null
-      }
-
-      this.createWallet()
-    },
-
     async createWallet () {
       try {
         const { address } = await this.$store.dispatch('wallet/create', this.wallet)

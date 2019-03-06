@@ -209,7 +209,7 @@
             :is-next-enabled="!$v.step5.$invalid"
             :title="$t('PAGES.WALLET_NEW.STEP5.TITLE')"
             @back="moveTo(4)"
-            @next="create"
+            @next="onCreate"
           >
             <div class="flex flex-col h-full w-full justify-around">
               <InputText
@@ -270,9 +270,9 @@ import { ModalLoader } from '@/components/Modal'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import { SvgIcon } from '@/components/SvgIcon'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
-import Bip38 from '@/services/bip38'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
+import onCreate from './mixin-on-create'
 
 export default {
   name: 'WalletNew',
@@ -292,6 +292,8 @@ export default {
     SvgIcon,
     WalletIdenticon
   },
+
+  mixins: [onCreate],
 
   schema: Wallet.schema,
 
@@ -374,40 +376,6 @@ export default {
   },
 
   methods: {
-    async create () {
-      this.wallet = {
-        ...this.schema,
-        publicKey: WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase),
-        profileId: this.session_profile.id
-      }
-
-      if (this.walletPassword && this.walletPassword.length) {
-        this.showEncryptLoader = true
-
-        const dataToEncrypt = {
-          passphrase: this.wallet.passphrase,
-          password: this.walletPassword,
-          wif: this.session_network.wif
-        }
-
-        const bip38 = new Bip38()
-        try {
-          const { bip38key } = await bip38.encrypt(dataToEncrypt)
-          this.wallet.passphrase = bip38key
-        } catch (_error) {
-          this.$error(this.$t('ENCRYPTION.FAILED_ENCRYPT'))
-        } finally {
-          bip38.quit()
-        }
-
-        this.showEncryptLoader = false
-      } else {
-        this.wallet.passphrase = null
-      }
-
-      this.createWallet()
-    },
-
     async createWallet () {
       const { address } = await this.$store.dispatch('wallet/create', this.wallet)
       this.$router.push({ name: 'wallet-show', params: { address } })
