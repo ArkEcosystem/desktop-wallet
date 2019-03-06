@@ -3,7 +3,10 @@
     v-show="isLedgerConnected"
     class="WalletButton__load-ledger-wallets"
   >
-    <a @click="toggle">
+    <a
+      class="text-center"
+      @click="toggle"
+    >
       <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
         <SvgIcon
           name="update"
