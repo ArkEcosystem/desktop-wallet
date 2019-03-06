@@ -254,8 +254,13 @@ export default {
       }
       commit('SET_LOADING', processId)
       const firstWallet = await dispatch('getWallet', 0)
-      const wallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
-      const startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : 0
+      const cachedWallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
+      let wallets = {}
+      let startIndex = 0
+      if (!quantity && Object.keys(cachedWallets).length) {
+        wallets = cachedWallets
+        startIndex = Object.keys(cachedWallets).length - 2
+      }
 
       // Note: We only batch if search endpoint available, otherwise we would
       //       be doing unnecessary API calls for potentially cold wallets.
