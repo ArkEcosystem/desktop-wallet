@@ -134,6 +134,7 @@ export default {
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
+    MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
     NOT_NUMERIC: 'The \'{0}\' is not numeric',

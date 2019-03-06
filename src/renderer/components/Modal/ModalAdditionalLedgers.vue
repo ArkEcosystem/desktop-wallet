@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { numeric, required } from 'vuelidate/lib/validators'
+import { minValue, numeric, required } from 'vuelidate/lib/validators'
 import ModalWindow from '@/components/Modal/ModalWindow'
 import { ButtonGeneric } from '@/components/Button'
 import { InputText } from '@/components/Input'
@@ -93,6 +93,8 @@ export default {
           return this.$t('VALIDATION.REQUIRED', [this.$refs['input-quantity'].label])
         } else if (!this.$v.form.quantity.numeric) {
           return this.$t('VALIDATION.NOT_NUMERIC', [this.$refs['input-quantity'].label])
+        } else if (!this.$v.form.quantity.minValue) {
+          return this.$t('VALIDATION.MUST_BE_GREATER_THAN', [0])
         }
       }
 
@@ -128,7 +130,8 @@ export default {
     form: {
       quantity: {
         numeric,
-        required
+        required,
+        minValue: minValue(1)
       }
     }
   }
