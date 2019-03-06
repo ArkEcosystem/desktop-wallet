@@ -172,7 +172,7 @@ export default {
       return feeStatistics.find(feeConfig => feeConfig.type === this.transactionType).fees
     },
     feeChoiceMin () {
-      return this.isAdvancedFee ? 1 / 1e8 : this.feeChoices.MINIMUM
+      return this.feeChoices.MINIMUM
     },
     feeChoiceMax () {
       return this.isAdvancedFee ? this.feeChoices.MAXIMUM * 10 : this.feeChoices.MAXIMUM
@@ -185,7 +185,7 @@ export default {
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = avgFee < this.maxV1fee ? avgFee : this.maxV1fee
       return {
-        MINIMUM: 1 / 1e8,
+        MINIMUM: 1e-8,
         AVERAGE: average,
         MAXIMUM: maxFee < this.maxV1fee ? maxFee : this.maxV1fee,
         INPUT: average,
@@ -193,7 +193,7 @@ export default {
       }
     },
     minimumError () {
-      const min = !this.isAdvancedFee ? this.feeChoices.MINIMUM : 1 / 1e8
+      const min = this.feeChoices.MINIMUM
       const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: 'code' })
       return this.$t('INPUT_FEE.ERROR.LESS_THAN_MINIMUM', { fee })
     },
