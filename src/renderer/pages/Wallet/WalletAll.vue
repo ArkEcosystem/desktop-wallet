@@ -47,11 +47,11 @@
       <div class="flex flex-row items-center">
         <div
           v-show="isLedgerConnected"
-          v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
+          v-tooltip="$t('PAGES.WALLET_ALL.LEDGER.CACHE_INFO')"
           class="WalletAll__ledger__cache flex flex-col items-center px-6"
         >
           <span>
-            {{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}
+            {{ $t('PAGES.WALLET_ALL.LEDGER.CACHE') }}
           </span>
           <ButtonSwitch
             ref="cache-ledger-switch"
