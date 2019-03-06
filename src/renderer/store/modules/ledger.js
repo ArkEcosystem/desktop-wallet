@@ -257,8 +257,10 @@ export default {
       const wallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
       const startIndex = Object.keys(wallets).length ? Object.keys(wallets).length - 1 : 0
 
+      // Note: We only batch if search endpoint available, otherwise we would
+      //       be doing unnecessary API calls for potentially cold wallets.
       let batchIncrement = 1
-      if (this._vm.$client.hasMultiWalletSearch) {
+      if (this._vm.$client.isCapable('2.1.0')) {
         batchIncrement = startIndex === 0 ? 10 : 2
       }
 
