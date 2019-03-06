@@ -75,9 +75,9 @@
     >
       <div class="mt-12">
         <InputFee
-          v-if="session_network.apiVersion === 2"
+          v-if="walletNetwork.apiVersion === 2"
           ref="fee"
-          :currency="session_network.token"
+          :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
           @input="onFee"
@@ -102,7 +102,7 @@
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
-        :pub-key-hash="session_network.version"
+        :pub-key-hash="walletNetwork.version"
         class="mt-5"
       />
 
@@ -111,7 +111,7 @@
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-        :pub-key-hash="session_network.version"
+        :pub-key-hash="walletNetwork.version"
         :public-key="currentWallet.secondPublicKey"
         class="mt-5"
       />
@@ -222,6 +222,10 @@ export default {
 
     showCurrentlyVoting () {
       return !!this.votedDelegate && !this.isVoter
+    },
+
+    walletNetwork () {
+      return this.session_network
     }
   },
 
@@ -246,7 +250,7 @@ export default {
     this.fetchVoters()
 
     // Set default fees with v1 compatibility
-    if (this.session_network.apiVersion === 1) {
+    if (this.walletNetwork.apiVersion === 1) {
       this.form.fee = V1.fees[this.$options.transactionType] / 1e8
     } else {
       this.form.fee = this.$refs.fee.fee
@@ -346,7 +350,7 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
       passphrase: {
