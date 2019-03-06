@@ -158,6 +158,7 @@ import { InputAddress, InputPassword, InputSwitch, InputText } from '@/component
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import Bip38 from '@/services/bip38'
 import WalletService from '@/services/wallet'
 import Wallet from '@/models/wallet'
 
@@ -186,7 +187,6 @@ export default {
     walletPassword: null,
     walletConfirmPassword: null,
     showEncryptLoader: false,
-    bip38Worker: null,
     backgroundImages: {
       1: 'pages/wallet-new/import-wallet.svg',
       2: 'pages/wallet-new/encrypt-wallet.svg',
@@ -235,24 +235,6 @@ export default {
     }
   },
 
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
-  },
-
-  mounted () {
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.bip38key) {
-        this.showEncryptLoader = false
-        this.wallet.passphrase = message.bip38key
-        this.finishCreate()
-      }
-    })
-  },
-
   beforeRouteEnter (to, from, next) {
     next(vm => {
       vm.$synchronizer.focus()
@@ -272,19 +254,32 @@ export default {
 
       if (!this.useOnlyAddress && this.walletPassword && this.walletPassword.length) {
         this.showEncryptLoader = true
-        this.bip38Worker.send({
+
+        const dataToEncrypt = {
           passphrase: this.wallet.passphrase,
           password: this.walletPassword,
           wif: this.session_network.wif
-        })
+        }
+
+        const bip38 = new Bip38()
+        try {
+          const { bip38key } = await bip38.encrypt(dataToEncrypt)
+          this.wallet.passphrase = bip38key
+        } catch (_error) {
+          this.$error(this.$t('ENCRYPTION.FAILED_ENCRYPT'))
+        } finally {
+          bip38.quit()
+        }
+
+        this.showEncryptLoader = false
       } else {
         this.wallet.passphrase = null
-
-        this.finishCreate()
       }
+
+      this.createWallet()
     },
 
-    async finishCreate () {
+    async createWallet () {
       try {
         const { address } = await this.$store.dispatch('wallet/create', this.wallet)
         this.$router.push({ name: 'wallet-show', params: { address } })
