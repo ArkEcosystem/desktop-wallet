@@ -656,7 +656,7 @@ export default {
           TEXT: 'Optionally, choose a name for you wallet and you are done.'
         },
         TITLE: '5. Confirmation',
-        ADDRESS: 'Wallet address',
+        ADDRESS: 'Your wallet address and identicon',
         NAME: 'Wallet name (optional)'
       }
     },
