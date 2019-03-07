@@ -135,6 +135,7 @@ export default {
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
+    MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
     NOT_NUMERIC: 'The \'{0}\' is not numeric',
@@ -343,6 +344,15 @@ export default {
     WALLET: 'Sender Wallet'
   },
 
+  MODAL_ADDITIONAL_LEDGERS: {
+    CANCEL: 'Cancel',
+    INFO: 'Choose the max amount of Ledger wallets you would like to show. You are currently showing {quantity} wallets.',
+    LARGE_QUANTITY: 'You are trying to load a large number of wallets. This could result in slow loading or the device could timeout.',
+    LOAD: 'Load Wallets',
+    QUANTITY: 'Quantity',
+    TITLE: 'Load Additional Ledger Wallets'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
@@ -446,8 +456,8 @@ export default {
 
   PAGES: {
     CONTACT_ALL: {
-      CREATE_CONTACT: 'Create contact',
-      IMPORT_CONTACT: 'Import contact',
+      CREATE_CONTACT: 'Create Contact',
+      IMPORT_CONTACT: 'Import Contact',
       DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
@@ -471,8 +481,8 @@ export default {
     DASHBOARD: {
       ALL_WALLETS: 'All wallets',
       ADD_WALLET: 'Add a wallet',
-      CREATE_WALLET: 'Create wallet',
-      IMPORT_WALLET: 'Import wallet',
+      CREATE_WALLET: 'Create Wallet',
+      IMPORT_WALLET: 'Import Wallet',
       LAST_TRANSACTIONS: 'Last transactions'
     },
 
@@ -565,15 +575,18 @@ export default {
     },
 
     WALLET_ALL: {
-      CREATE_WALLET: 'Create wallet',
+      LEDGER: {
+        CACHE: 'Cache ledger wallets?',
+        CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+        ADDITIONAL: '# of Ledger Wallets'
+      },
+      CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
-      IMPORT_WALLET: 'Import wallet',
+      IMPORT_WALLET: 'Import Wallet',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
-      CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
       ADDRESS: 'Address',
       NAME: 'Name',
       VOTING_FOR: 'Voting for',
@@ -584,10 +597,10 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Import wallet',
+          HEADER: 'Import Wallet',
           TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
-        TITLE: '1. Import wallet',
+        TITLE: '1. Import Wallet',
         ONLY_ADDRESS: 'Use the address only',
         ONLY_PASSPHRASE: 'Use the passphrase only'
       },

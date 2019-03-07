@@ -47,11 +47,11 @@
       <div class="flex flex-row items-center">
         <div
           v-show="isLedgerConnected"
-          v-tooltip="$t('PAGES.WALLET_ALL.CACHE_LEDGER_INFO')"
+          v-tooltip="$t('PAGES.WALLET_ALL.LEDGER.CACHE_INFO')"
           class="WalletAll__ledger__cache flex flex-col items-center px-6"
         >
           <span>
-            {{ $t('PAGES.WALLET_ALL.CACHE_LEDGER') }}
+            {{ $t('PAGES.WALLET_ALL.LEDGER.CACHE') }}
           </span>
           <ButtonSwitch
             ref="cache-ledger-switch"
@@ -60,6 +60,7 @@
             @change="setLedgerCache"
           />
         </div>
+        <WalletButtonAdditionalLedgers class="pl-6 pr-6" />
         <WalletButtonCreate class="pl-6 pr-6" />
         <WalletButtonImport class="pl-6" />
       </div>
@@ -244,7 +245,8 @@ import { ButtonLayout, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
+import { WalletButtonAdditionalLedgers, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet/WalletButtons'
+import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import { MenuDropdown } from '@/components/Menu'
 
@@ -257,6 +259,7 @@ export default {
     Loader,
     ProfileAvatar,
     SvgIcon,
+    WalletButtonAdditionalLedgers,
     WalletButtonCreate,
     WalletButtonImport,
     WalletIdenticon,
@@ -502,6 +505,7 @@ export default {
   @apply mr-4
 }
 
+.WalletAll__ledger__load-wallets,
 .WalletAll__ledger__cache {
   @apply .border-r .border-theme-feature-item-alternative
 }

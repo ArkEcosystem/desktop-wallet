@@ -131,6 +131,10 @@ export default class ClientService {
     this.__capabilities = semver.coerce(version)
   }
 
+  isCapable (version) {
+    return semver.gte(this.capabilities, version)
+  }
+
   /**
    * Fetch the peer status.
    * @returns {Object}
@@ -367,7 +371,7 @@ export default class ClientService {
     options = options || {}
 
     let walletData = {}
-    if (semver.gte(this.capabilities, '2.1.0')) {
+    if (this.isCapable('2.1.0')) {
       let transactions = []
       let hadFailure = false
 
@@ -486,7 +490,7 @@ export default class ClientService {
   async fetchWallets (addresses) {
     let walletData = []
 
-    if (semver.gte(this.capabilities, '2.1.0')) {
+    if (this.isCapable('2.1.0')) {
       for (const addressChunk of chunk(addresses, 20)) {
         const { data } = await this.client.resource('wallets').search({
           addresses: addressChunk
