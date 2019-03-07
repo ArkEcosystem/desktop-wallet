@@ -12,7 +12,6 @@ export default {
   state: {
     slip44: null,
     isConnected: false,
-    connectionTimer: null,
     wallets: [],
     walletCache: {},
     loadingProcesses: {}
@@ -54,7 +53,6 @@ export default {
     RESET (state) {
       state.slip44 = null
       state.isConnected = false
-      state.connectionTimer = null
       state.wallets = []
       state.loadingProcesses = {}
     },
@@ -74,9 +72,6 @@ export default {
     },
     SET_CONNECTED (state, isConnected) {
       state.isConnected = isConnected
-    },
-    SET_CONNECTION_TIMER (state, connectionTimer) {
-      state.connectionTimer = connectionTimer
     },
     SET_WALLET (state, wallet) {
       if (!state.wallets[wallet.address]) {
@@ -169,18 +164,13 @@ export default {
     /**
      * Start connect process.
      * @param {Object} [obj]
-     * @param  {Boolean} [obj.isTimer=false] Determines if method is called from within the timer.
      * @param  {Number} [obj.delay=2000] Delay in between connection attempts.
      * @return {void}
      */
-    async ensureConnection ({ commit, state, dispatch }, { isTimer, delay } = { isTimer: false, delay: 2000 }) {
+    async ensureConnection ({ commit, state, dispatch }, { delay } = { delay: 2000 }) {
       if (state.isConnected && !await dispatch('checkConnected')) {
         await dispatch('disconnect')
         delay = 2000
-      }
-
-      if (!isTimer && state.connectionTimer) {
-        return
       }
 
       if (!state.isConnected) {
@@ -189,12 +179,9 @@ export default {
         }
       }
 
-      commit('SET_CONNECTION_TIMER', setTimeout(() => {
-        dispatch('ensureConnection', {
-          delay,
-          isTimer: true
-        })
-      }, delay))
+      setTimeout(() => {
+        dispatch('ensureConnection', { delay })
+      }, delay)
     },
 
     /**
