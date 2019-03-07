@@ -12,14 +12,14 @@ class LedgerService {
     this.transport = null
     this.ledger = null
     this.actions = []
-    this.actionsQueue = queue(async (actionObject, callback) => {
+    this.actionsQueue = queue(async ({ action, resolve, reject }, callback) => {
       try {
-        actionObject.resolve(await actionObject.action())
+        resolve(await action())
       } catch (error) {
         if (error.statusText && error.statusText === 'CONDITIONS_OF_USE_NOT_SATISFIED') {
-          actionObject.resolve(false)
+          resolve(false)
         } else {
-          actionObject.reject(new Error(error.message))
+          reject(new Error(error.message))
         }
       }
       callback()
