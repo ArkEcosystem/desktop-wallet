@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+// This flag is used to launch request on a worker or not
 const USE_BACKGROUND = true
 
 export default class BackgroundHttpClient {
