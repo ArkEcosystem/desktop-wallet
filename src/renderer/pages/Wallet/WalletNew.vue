@@ -214,6 +214,29 @@
             @next="onCreate"
           >
             <div class="flex flex-col h-full w-full justify-around">
+              <div class="flex items-center justify-between mt-4">
+                <div class="flex flex-col">
+                  <div class="flex items-center">
+                    <span class="text-base font-semibold mr-1">
+                      {{ schema.address }}
+                    </span>
+                    <ButtonClipboard
+                      v-if="schema.address"
+                      :value="schema.address"
+                      class="text-theme-page-text hover:text-blue"
+                    />
+                  </div>
+                  <span class="text-sm text-theme-page-text-light font-semibold mt-1">
+                    {{ $t('PAGES.WALLET_NEW.STEP5.ADDRESS') }}
+                  </span>
+                </div>
+                <WalletIdenticon
+                  v-if="schema.address"
+                  :value="schema.address"
+                  :size="35"
+                  class="flex-no-shrink identicon"
+                />
+              </div>
               <InputText
                 v-model="schema.name"
                 :label="$t('PAGES.WALLET_NEW.STEP5.NAME')"
@@ -223,32 +246,6 @@
                 class="my-3"
                 name="name"
               />
-
-              <InputField
-                v-if="schema.address"
-                :label="$t('PAGES.WALLET_NEW.STEP5.ADDRESS')"
-                :is-dirty="true"
-                :is-read-only="true"
-                class="InputText my-3"
-              >
-                <div
-                  slot-scope="{ inputClass }"
-                  :class="inputClass"
-                  class="flex flex-row"
-                >
-                  <input
-                    v-model="schema.address"
-                    :disabled="true"
-                    name="address"
-                    type="text"
-                    class="flex flex-grow bg-transparent text-theme-page-text cursor-text"
-                  >
-                  <ButtonClipboard
-                    :value="schema.address"
-                    class="text-theme-button-light-text flex flex-no-shrink text-grey-dark hover:text-blue"
-                  />
-                </div>
-              </InputField>
             </div>
           </MenuStepItem>
         </MenuStep>
@@ -266,7 +263,7 @@
 import { flatten } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
-import { InputField, InputPassword, InputSwitch, InputText } from '@/components/Input'
+import { InputPassword, InputSwitch, InputText } from '@/components/Input'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
@@ -282,7 +279,6 @@ export default {
   components: {
     ButtonClipboard,
     ButtonReload,
-    InputField,
     InputPassword,
     InputSwitch,
     InputText,
