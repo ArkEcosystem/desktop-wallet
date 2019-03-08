@@ -42,6 +42,14 @@ const getApiVersion = (peer) => {
   return /^2\./.test(peer.version) ? 2 : 1
 }
 
+const clientService = ({ baseUrl, peer, timeout, version }) => {
+  const client = new ClientService(false)
+  client.host = baseUrl || getBaseUrl(peer)
+  client.version = version || getApiVersion(peer)
+  client.client.http.timeout = timeout || 3000
+  return client
+}
+
 export default {
   namespaced: true,
 
@@ -444,10 +452,7 @@ export default {
         if (updateCurrentPeer) {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
-          const client = new ClientService(false)
-          client.host = getBaseUrl(currentPeer)
-          client.version = getApiVersion(currentPeer)
-          client.client.http.timeout = 3000
+          const client = clientService({ peer: currentPeer })
           peerStatus = await client.fetchPeerStatus()
         }
         const delay = (performance.now() - delayStart).toFixed(0)
@@ -477,12 +482,7 @@ export default {
      */
     async clientServiceFromPeer (_, peer) {
       await getApiPort(peer)
-      const client = new ClientService(false)
-      client.host = getBaseUrl(peer)
-      client.version = getApiVersion(peer)
-      client.client.http.timeout = 3000
-
-      return client
+      return clientService({ peer })
     },
 
     /**
@@ -521,10 +521,7 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      const client = new ClientService(false)
-      client.host = baseUrl
-      client.version = version
-      client.client.http.timeout = timeout
+      const client = clientService({ baseUrl, timeout, version })
 
       let peerStatus
       try {
