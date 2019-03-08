@@ -1,10 +1,6 @@
 import Worker from './worker'
 
 export default class extends Worker {
-  constructor () {
-    super('http')
-  }
-
   get (url, config) {
     return this.request({
       url,
@@ -22,8 +18,13 @@ export default class extends Worker {
   }
 
   request (config) {
-    const onMessage = this.onMessage()
-    this.worker.send(config)
-    return onMessage.catch(({ message }) => new Error(message))
+    if (!config.url) {
+      throw new Error('No URL was provided')
+    }
+
+    // return axios(config)
+    return this.run('http')
+      .send(config)
+      .promise()
   }
 }

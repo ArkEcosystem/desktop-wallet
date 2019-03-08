@@ -121,8 +121,6 @@ export default {
           this.signMessage()
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        } finally {
-          bip38.quit()
         }
 
         this.showEncryptLoader = false

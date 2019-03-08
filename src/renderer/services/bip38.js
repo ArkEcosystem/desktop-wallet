@@ -1,19 +1,27 @@
 import Worker from './worker'
 
 export default class extends Worker {
-  constructor () {
-    super('bip38')
+  /**
+   * @param {Object} config
+   * @param {String} config.bip38key
+   * @param {String} config.password
+   * @param {String} config.wif
+   */
+  decrypt (config) {
+    return this.run('bip38')
+      .send(config)
+      .promise()
   }
 
-  decrypt ({ bip38key, password, wif }) {
-    const onMessage = this.onMessage()
-    this.worker.send({ bip38key, password, wif })
-    return onMessage
-  }
-
-  encrypt ({ passphrase, password, wif }) {
-    const onMessage = this.onMessage()
-    this.worker.send({ passphrase, password, wif })
-    return onMessage
+  /**
+   * @param {Object} config
+   * @param {String} config.passphrase
+   * @param {String} config.password
+   * @param {String} config.wif
+   */
+  encrypt (config) {
+    return this.run('bip38')
+      .send(config)
+      .promise()
   }
 }

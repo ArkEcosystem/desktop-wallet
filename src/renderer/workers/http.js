@@ -2,18 +2,19 @@
 
 const axios = require('axios')
 
-process.on('message', async message => {
-  if (message.method) {
-    try {
-      const { data } = await axios(message)
-      // Sending through processes involves serializing and parsing the data,
-      // so i is better to use only the useful parts of the response
-      process.send({ data })
-    } catch (error) {
-      console.error(error)
-      process.send({ message: error.message })
+module.exports = message => {
+  return new Promise(async (resolve, reject) => {
+    if (message.url) {
+      try {
+        const { data } = await axios(message)
+        // Sending through processes involves serializing and parsing the data,
+        // so it is better to use only the useful parts of the response
+        resolve({ data })
+      } catch (error) {
+        reject(error)
+      }
+    } else {
+      reject(new Error(`HTTP worker does not understand message \`${message}\``))
     }
-  } else if (message === 'quit') {
-    process.exit()
-  }
-})
+  })
+}
