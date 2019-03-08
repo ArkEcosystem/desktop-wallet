@@ -21,7 +21,8 @@ export default class Synchronizer {
       longest: block * 300,
       longer: block * 100,
       medium: block * 25,
-      shorter: block * 4,
+      shorter: block * 10,
+      shortest: block * 3,
       block,
       // Number of milliseconds to wait to evaluate which actions should be run
       loop: block
@@ -31,7 +32,7 @@ export default class Synchronizer {
   }
 
   get config () {
-    const { block, shorter, medium, longer, longest } = this.intervals
+    const { shortest, shorter, medium, longer, longest } = this.intervals
 
     const config = {
       announcements: {
@@ -39,16 +40,16 @@ export default class Synchronizer {
         focus: { interval: medium }
       },
       market: {
-        default: { interval: shorter },
-        focus: { interval: block }
+        default: { interval: medium },
+        focus: { interval: shorter }
       },
       wallets: {
         default: { interval: shorter },
-        focus: { interval: block }
+        focus: { interval: shortest }
       },
       ledgerWallets: {
         default: { interval: shorter },
-        focus: { interval: block }
+        focus: { interval: shortest }
       },
       delegates: {
         default: { interval: longer },
