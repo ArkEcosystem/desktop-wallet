@@ -11,17 +11,15 @@ import store from '@/store'
 jest.mock('@/store', () => {
   return {
     getters: {
-      'session/network': jest.fn(),
-      'network/feeStatisticsByType': jest.fn(),
       'transaction/staticFee': jest.fn(type => {
         switch (type) {
           case 0:
             return 10000000
           case 3:
             return 100000000
+          default:
+            return null
         }
-
-        return null
       })
     }
   }
@@ -39,15 +37,25 @@ describe('InputFee', () => {
       market: {
         enabled: true
       },
+      feeStatistics: [{
+        type: 0,
+        fees: {
+          avgFee: 0.1,
+          maxFee: 0.4,
+          minFee: 0.01
+        }
+      }, {
+        type: 3,
+        fees: {
+          avgFee: 0.1,
+          maxFee: 0.4,
+          minFee: 0.01
+        }
+      }],
       fractionDigits: 8
     }
 
     store.getters['session/network'] = mockNetwork
-    store.getters['network/feeStatisticsByType'] = type => ({
-      avgFee: 0.0048 * 1e8,
-      maxFee: 0.012 * 1e8,
-      minFee: 0.0006 * 1e8
-    })
     store.getters['network/byToken'] = () => mockNetwork
   })
 
@@ -63,6 +71,10 @@ describe('InputFee', () => {
         session_network: mockNetwork,
         wallet_fromRoute: { balance: 10 },
         $store: store,
+        $synchronizer: {
+          focus: jest.fn(),
+          pause: jest.fn()
+        },
         $v: {
           fee: {
             $touch: jest.fn()
@@ -98,26 +110,28 @@ describe('InputFee', () => {
   })
 
   describe('rangePercentage', () => {
-    it('should calculate the current fee percentage related to the minimum and maximum', () => {
-      const wrapper = mountComponent()
+    const mockedComponent = (min, max) => {
+      return mountComponent({
+        computed: {
+          feeChoiceMin: () => min,
+          feeChoiceMax: () => max
+        }
+      })
+    }
 
-      wrapper.vm.feeChoices.MINIMUM = 1
-      wrapper.vm.feeChoices.MAXIMUM = 11
+    it('should calculate the current fee percentage related to the minimum and maximum', () => {
+      let wrapper = mockedComponent(1, 11)
       wrapper.vm.fee = 6
       expect(wrapper.vm.rangePercentage).toEqual(50)
 
-      wrapper.vm.feeChoices.MINIMUM = 0.00000001
-      wrapper.vm.feeChoices.MAXIMUM = 25
+      wrapper = mockedComponent(0.00000001, 25)
       wrapper.vm.fee = 12.5
       expect(wrapper.vm.rangePercentage).toEqual(49.99999998)
     })
 
     describe('when the fee is smaller than the minimum', () => {
       it('should return 0%', () => {
-        const wrapper = mountComponent()
-
-        wrapper.vm.feeChoices.MINIMUM = 1
-        wrapper.vm.feeChoices.MAXIMUM = 10
+        const wrapper = mockedComponent(1, 10)
         wrapper.vm.fee = 0.3
         expect(wrapper.vm.rangePercentage).toEqual(0)
       })
@@ -125,10 +139,7 @@ describe('InputFee', () => {
 
     describe('when the fee is bigger than the maximum', () => {
       it('should return 100%', () => {
-        const wrapper = mountComponent()
-
-        wrapper.vm.feeChoices.MINIMUM = 0.1
-        wrapper.vm.feeChoices.MAXIMUM = 1
+        const wrapper = mockedComponent(0.1, 1)
         wrapper.vm.fee = 2
         expect(wrapper.vm.rangePercentage).toEqual(100)
       })
@@ -136,23 +147,48 @@ describe('InputFee', () => {
   })
 
   describe('isStaticFee', () => {
+    const mockedComponent = fees => {
+      return mountComponent({
+        computed: {
+          feeChoices: () => ({
+            MINIMUM: 1e-8,
+            INPUT: 1e-8,
+            ADVANCED: 1e-8,
+            ...fees
+          })
+        }
+      })
+    }
+
     it('should be `true` if the current fee matches, average and maximum fee are the same', () => {
-      let wrapper = mountComponent()
-
+      const wrapper = mockedComponent({
+        AVERAGE: 1,
+        MAXIMUM: 1
+      })
       wrapper.vm.fee = 1
-      wrapper.vm.feeChoices.AVERAGE = 1
-      wrapper.vm.feeChoices.MAXIMUM = 1
       expect(wrapper.vm.isStaticFee).toBeTrue()
+    })
 
-      wrapper.vm.feeChoices.AVERAGE = 2
+    it('should be `false` if the current fee matches, average and maximum fee are not the same', () => {
+      let wrapper = mockedComponent({
+        AVERAGE: 2,
+        MAXIMUM: 1
+      })
+      wrapper.vm.fee = 1
       expect(wrapper.vm.isStaticFee).toBeFalse()
 
+      wrapper = mockedComponent({
+        AVERAGE: 1,
+        MAXIMUM: 2
+      })
+      wrapper.vm.fee = 1
+
+      expect(wrapper.vm.isStaticFee).toBeFalse()
+      wrapper = mockedComponent({
+        AVERAGE: 1,
+        MAXIMUM: 1
+      })
       wrapper.vm.fee = 2
-      wrapper.vm.feeChoices.AVERAGE = 1
-      expect(wrapper.vm.isStaticFee).toBeFalse()
-
-      wrapper.vm.feeChoices.MINIMUM = 1
-      wrapper.vm.feeChoices.MAXIMUM = 2
       expect(wrapper.vm.isStaticFee).toBeFalse()
     })
   })
@@ -195,11 +231,14 @@ describe('InputFee', () => {
   describe('prepareFeeStatistics', () => {
     describe('when the average fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 1000 * 1e8,
-          maxFee: 0.03 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 1000 * 1e8,
+            maxFee: 0.03 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use the V1 fee as average always', () => {
@@ -211,11 +250,14 @@ describe('InputFee', () => {
 
     describe('when the average fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * 1e8,
-          maxFee: 0.03 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 0.0048 * 1e8,
+            maxFee: 0.03 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use it as average', () => {
@@ -227,11 +269,14 @@ describe('InputFee', () => {
 
     describe('when the maximum fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * 1e8,
-          maxFee: 1000 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 0.0048 * 1e8,
+            maxFee: 1000 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use the V1 fee as maximum always', () => {
@@ -243,11 +288,14 @@ describe('InputFee', () => {
 
     describe('when the maximum fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
-        store.getters['network/feeStatisticsByType'] = type => ({
-          avgFee: 0.0048 * 1e8,
-          maxFee: 0.03 * 1e8,
-          minFee: 0.0006 * 1e8
-        })
+        mockNetwork.feeStatistics = [{
+          type: 0,
+          fees: {
+            avgFee: 0.0048 * 1e8,
+            maxFee: 0.03 * 1e8,
+            minFee: 0.0006 * 1e8
+          }
+        }]
       })
 
       it('should use it as maximum', () => {
@@ -268,11 +316,11 @@ describe('InputFee', () => {
 
       describe('when the balance is smaller than the fee', () => {
         it('should return the message about funds', () => {
-          wrapper.vm.wallet_fromRoute.balance = 10000
+          wrapper.vm.wallet_fromRoute.balance = 50000
           wrapper.vm.fee = 20e8
           expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
 
-          wrapper.vm.wallet_fromRoute.balance = '10000'
+          wrapper.vm.wallet_fromRoute.balance = '50000'
           wrapper.vm.fee = '20e8'
           expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
         })
@@ -283,11 +331,11 @@ describe('InputFee', () => {
           // NOTE: Balance is in arktoshi, while fee is in ARK
           wrapper.vm.wallet_fromRoute.balance = 20e8
           wrapper.vm.fee = 1
-          expect(wrapper.vm.insufficientFundsError).toEqual('')
+          expect(wrapper.vm.insufficientFundsError).toBeNull()
 
           wrapper.vm.wallet_fromRoute.balance = '20e8'
           wrapper.vm.fee = '1'
-          expect(wrapper.vm.insufficientFundsError).toEqual('')
+          expect(wrapper.vm.insufficientFundsError).toBeNull()
         })
       })
     })

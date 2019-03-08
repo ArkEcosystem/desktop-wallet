@@ -18,6 +18,7 @@ export default {
 
   state: {
     transactions: {},
+    // TODO This should not be stored here: it depends on the network, not the transactions
     staticFees: {}
   },
 

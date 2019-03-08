@@ -282,6 +282,8 @@ export default {
         await getApiPort(peer)
         this._vm.$client.host = getBaseUrl(peer)
         this._vm.$client.capabilities = peer.version
+
+        // TODO only when necessary (when / before sending) (if no dynamic)
         await dispatch('transaction/updateStaticFees', null, { root: true })
       }
       commit('SET_CURRENT_PEER', {
@@ -307,10 +309,13 @@ export default {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
       }
-      let peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
+
+      const peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
+
       if (peers.length) {
         for (const peer of peers) {
           peer.height = +peer.height
+
           if (getApiVersion(peer) === 2) {
             if (peer.latency) {
               peer.delay = peer.latency
@@ -318,6 +323,7 @@ export default {
             }
             if (peer.port && !peer.p2pPort) {
               peer.p2pPort = peer.port
+              // TODO why?
               peer.port = null
             }
           }
@@ -379,6 +385,7 @@ export default {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
         if (currentPeer && currentPeer.isCustom) {
+          // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
 
           return null
@@ -534,7 +541,7 @@ export default {
         host: baseUrl,
         port: +port,
         height: peerStatus.height,
-        version: `${version}.0.0`,
+        version: `${version}.0.0`, // TODO why does it ignore the exact version?
         status: 'OK',
         delay: 0,
         isHttps: schemeUrl && schemeUrl[1] === 'https://'
