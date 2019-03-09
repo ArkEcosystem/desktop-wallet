@@ -1,6 +1,6 @@
 export default {
   COMMON: {
-    ADDRESS: 'Address',
+    ADDRESS: 'Indirizzo',
     ALL: 'Tutto',
     APP_NAME: 'ARK Desktop Wallet',
     APP_NAME_SHORT: 'ARK Desktop',
