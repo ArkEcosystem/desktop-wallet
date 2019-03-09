@@ -6,10 +6,12 @@
       :is-open="!isPassphraseStep"
     >
       <ListDivided>
-        <ListDividedItem
-          :label="$t('INPUT_ADDRESS.LABEL')"
-          :value="delegate.address"
-        />
+        <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
+          <WalletAddress
+            :address="delegate.address"
+            @click="emitCancel"
+          />
+        </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
           :value="formatter_percentage(delegate.production.productivity)"
@@ -49,6 +51,23 @@
       >
         {{ isVoter ? $t('WALLET_DELEGATES.UNVOTE') : $t('WALLET_DELEGATES.VOTE') }}
       </button>
+
+      <div
+        v-if="showCurrentlyVoting"
+        class="mt-4 border-theme-button-text border-l-4 pl-2"
+      >
+        <span class="text-theme-button-text font-bold">
+          {{ $t('WALLET_DELEGATES.VOTE_INFO') }}
+        </span>
+        <i18n
+          tag="span"
+          path="WALLET_DELEGATES.CURRENTLY_VOTED"
+        >
+          <strong place="delegate">
+            {{ votedDelegate.username }}
+          </strong>
+        </i18n>
+      </div>
     </Collapse>
 
     <Collapse
@@ -56,9 +75,9 @@
     >
       <div class="mt-12">
         <InputFee
-          v-if="session_network.apiVersion === 2"
+          v-if="walletNetwork.apiVersion === 2"
           ref="fee"
-          :currency="session_network.token"
+          :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
           :show-insufficient-funds="true"
           @input="onFee"
@@ -83,7 +102,7 @@
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
-        :pub-key-hash="session_network.version"
+        :pub-key-hash="walletNetwork.version"
         class="mt-5"
       />
 
@@ -92,7 +111,8 @@
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-        :pub-key-hash="session_network.version"
+        :pub-key-hash="walletNetwork.version"
+        :public-key="currentWallet.secondPublicKey"
         class="mt-5"
       />
 
@@ -126,7 +146,9 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import WalletAddress from '@/components/Wallet/WalletAddress'
 import TransactionService from '@/services/transaction'
+import onSubmit from './mixin-on-submit'
 
 export default {
   name: 'TransactionFormVote',
@@ -140,8 +162,11 @@ export default {
     ListDivided,
     ListDividedItem,
     ModalLoader,
-    PassphraseInput
+    PassphraseInput,
+    WalletAddress
   },
+
+  mixins: [onSubmit],
 
   props: {
     delegate: {
@@ -153,24 +178,24 @@ export default {
       required: false,
       default: false
     },
-    hasVoted: {
-      type: Boolean,
+    votedDelegate: {
+      type: Object,
       required: false,
-      default: false
+      default: null
     }
   },
 
   data: () => ({
     isPassphraseStep: false,
     form: {
+      fee: 0,
       passphrase: '',
       walletPassword: ''
     },
     forged: 0,
     voters: 0,
     showEncryptLoader: false,
-    showLedgerLoader: false,
-    bip38Worker: null
+    showLedgerLoader: false
   }),
 
   computed: {
@@ -188,50 +213,48 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (this.hasVoted && !this.isVoter)) {
+      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
         return false
       }
 
-      return !this.hasVoted || (this.hasVoted && this.isVoter)
+      return !this.votedDelegate || (!!this.votedDelegate && this.isVoter)
+    },
+
+    showCurrentlyVoting () {
+      return !!this.votedDelegate && !this.isVoter
+    },
+
+    walletNetwork () {
+      return this.session_network
     }
   },
 
   watch: {
     isPassphraseStep () {
-      if (!this.currentWallet.isLedger) {
+      // Ignore Ledger wallets
+      if (this.currentWallet.isLedger) {
         return
       }
 
-      if (!this.currentWallet.passphrase) {
-        this.$refs.passphrase.focus()
-      } else {
+      // The passphrase is stored: focus on the custom password input
+      if (this.currentWallet.passphrase) {
         this.$refs.password.focus()
+      } else {
+        this.$refs.passphrase.focus()
       }
     }
-  },
-
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
   },
 
   mounted () {
     this.fetchForged()
     this.fetchVoters()
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
+
+    // Set default fees with v1 compatibility
+    if (this.walletNetwork.apiVersion === 1) {
+      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
+    } else {
+      this.form.fee = this.$refs.fee.fee
     }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.decodedWif === null) {
-        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        this.showEncryptLoader = false
-      } else if (message.decodedWif) {
-        this.form.passphrase = null
-        this.form.wif = message.decodedWif
-        this.showEncryptLoader = false
-        this.submit()
-      }
-    })
   },
 
   methods: {
@@ -245,31 +268,14 @@ export default {
     },
 
     async fetchVoters () {
-      this.voters = await this.$client.fetchDelegateVoters(this.delegate)
+      this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
     },
 
     onFee (fee) {
       this.$set(this.form, 'fee', fee)
     },
 
-    onSubmit () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
-        this.showEncryptLoader = true
-        this.bip38Worker.send({
-          bip38key: this.currentWallet.passphrase,
-          password: this.form.walletPassword,
-          wif: this.session_network.wif
-        })
-      } else {
-        this.submit()
-      }
-    },
-
     async submit () {
-      // v1 compatibility
-      if (this.session_network.apiVersion === 1) {
-        this.form.fee = V1.fees[this.$options.transactionType]
-      }
       // Ensure that fee has value, even when the user has not interacted
       if (!this.form.fee) {
         this.form.fee = this.$refs.fee.fee
@@ -327,6 +333,10 @@ export default {
       this.$v.$reset()
     },
 
+    emitCancel () {
+      this.$emit('cancel')
+    },
+
     emitNext (transaction) {
       this.$emit('next', { transaction })
     }
@@ -340,7 +350,7 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
       passphrase: {

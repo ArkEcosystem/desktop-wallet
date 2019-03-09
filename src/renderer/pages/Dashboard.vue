@@ -2,6 +2,17 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
+        v-if="!isChartEnabled && isMarketEnabled"
+        class="pt-10 px-10 rounded-t-lg text-lg font-semibold mt-1 text-theme-chart-price"
+      >
+        <span v-if="price">
+          {{ $t('MARKET_CHART_HEADER.PRICE', { currency: ticker }) }}:
+          <!-- TODO price in crypto and fiat instead of only in 1 currency -->
+          {{ currency_format(price, { currency, currencyDisplay: 'code' }) }}
+        </span>
+      </div>
+
+      <div
         v-if="isChartEnabled && isMarketEnabled"
         class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
       >
@@ -11,10 +22,13 @@
       </div>
 
       <div class="p-10">
-        <div class="text-lg font-semibold mb-4">
+        <h3 class="flex items-center">
           {{ $t('PAGES.DASHBOARD.LAST_TRANSACTIONS') }}
+        </h3>
+
+        <div class="Dashboard__transactions">
+          <DashboardTransactions />
         </div>
-        <DashboardTransactions />
       </div>
     </main>
 
@@ -24,7 +38,8 @@
         <WalletButtonImport class="mt-6 mb-6 w-1/2" />
       </div>
       <WalletSidebar
-        :is-slim="false"
+        :show-expanded="true"
+        :show-menu="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>
@@ -55,6 +70,15 @@ export default {
     },
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
+    },
+    currency () {
+      return this.$store.getters['session/currency']
+    },
+    price () {
+      return this.$store.getters['market/lastPrice']
+    },
+    ticker () {
+      return this.session_network.market.ticker
     }
   },
 
@@ -69,7 +93,8 @@ export default {
         next()
       } else if (profiles.length > 0) {
         next(async vm => {
-          vm.$synchronizer.focus('wallets', 'contacts', 'market')
+          vm.$synchronizer.trigger('wallets')
+          vm.$synchronizer.focus('wallets', 'market')
         })
       } else {
         next({ name: 'profile-new' })
@@ -90,6 +115,9 @@ export default {
 </style>
 
 <style lang="postcss" scoped>
+.Dashboard__transactions {
+  @apply .mt-10;
+}
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }

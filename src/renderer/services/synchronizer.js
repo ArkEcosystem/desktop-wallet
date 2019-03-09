@@ -30,6 +30,44 @@ export default class Synchronizer {
     return intervals
   }
 
+  get config () {
+    const { block, shorter, medium, longer, longest } = this.intervals
+
+    const config = {
+      announcements: {
+        default: { interval: longest },
+        focus: { interval: medium }
+      },
+      market: {
+        default: { interval: shorter },
+        focus: { interval: block }
+      },
+      wallets: {
+        default: { interval: shorter },
+        focus: { interval: block }
+      },
+      ledgerWallets: {
+        default: { interval: shorter },
+        focus: { interval: block }
+      },
+      delegates: {
+        default: { interval: longer },
+        focus: { interval: longer }
+      },
+      fees: {
+        default: { interval: null },
+        focus: { interval: shorter }
+      },
+      peer: {
+        default: { interval: longer },
+        focus: { interval: shorter }
+      }
+    }
+    config.contacts = config.wallets
+
+    return config
+  }
+
   get $client () {
     return this.scope.$client
   }
@@ -42,8 +80,8 @@ export default class Synchronizer {
    * @param {Object} config
    * @param {Vue} config.scope - Vue instance that would be synchronized
    */
-  constructor (config) {
-    this.scope = config.scope
+  constructor ({ scope }) {
+    this.scope = scope
     this.actions = {}
     this.focused = []
     this.paused = []
@@ -61,8 +99,8 @@ export default class Synchronizer {
     }
     ;['default', 'focus'].forEach(mode => {
       const { interval } = config[mode]
-      if (!interval) {
-        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a number bigger than 0`)
+      if (!interval && interval !== null) {
+        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a Number bigger than 0 (or \`null\` to ignore it)`)
       }
     })
 
@@ -96,11 +134,20 @@ export default class Synchronizer {
   }
 
   /**
-   * Dispatch these paused actions again
+   * Enable these paused actions again
    * @params {(...String|Array)} actions - ID of the actions to unpause
    */
   unpause (...actions) {
     pullAll(this.paused, flatten(actions))
+  }
+
+  /**
+   * Trigger these actions 1 time.
+   * As a consequence the interval of those actions is updated.
+   * @params {(...String|Array)} actions - ID of the actions to unpause
+   */
+  trigger (...actions) {
+    flatten(actions).forEach(actionId => this.call(actionId))
   }
 
   /**
@@ -138,11 +185,15 @@ export default class Synchronizer {
             } else {
               const mode = includes(this.focused, actionId) ? 'focus' : 'default'
               const { interval } = action[mode]
-              const nextCall = action.calledAt + interval
-              const now = (new Date()).getTime()
 
-              if (nextCall <= now) {
-                this.call(actionId)
+              // `null` is used to not run the action
+              if (interval !== null) {
+                const nextCall = action.calledAt + interval
+                const now = (new Date()).getTime()
+
+                if (nextCall <= now) {
+                  this.call(actionId)
+                }
               }
             }
           }
@@ -165,70 +216,37 @@ export default class Synchronizer {
   }
 
   defineAll () {
-    const { block, shorter, medium, longer, longest } = this.intervals
-
-    const config = {
-      announcements: {
-        default: { interval: longest },
-        focus: { interval: medium }
-      },
-      market: {
-        default: { interval: shorter },
-        focus: { interval: block }
-      },
-      wallets: {
-        default: { interval: shorter },
-        focus: { interval: block }
-      },
-      ledgerWallets: {
-        default: { interval: shorter },
-        focus: { interval: block }
-      },
-      delegates: {
-        default: { interval: longer },
-        focus: { interval: longer }
-      },
-      fees: {
-        default: { interval: longer },
-        focus: { interval: longer }
-      },
-      peer: {
-        default: { interval: medium },
-        focus: { interval: shorter }
-      }
-    }
-    config.contacts = config.wallets
-
-    this.define('announcements', config.announcements, async () => {
+    this.define('announcements', this.config.announcements, async () => {
       await announcements(this)
     })
 
-    // this.define('contacts', config.contacts, async () => {
+    // TODO focus on contacts only (currently wallets and contacts are the same)
+    // this.define('contacts', this.config.contacts, async () => {
     //   console.log('defined CONTACTS')
     // })
 
-    this.define('delegates', config.delegates, async () => {
+    this.define('delegates', this.config.delegates, async () => {
       await delegates(this)
     })
 
-    this.define('fees', config.fees, async () => {
+    this.define('fees', this.config.fees, async () => {
       await fees(this)
     })
 
-    this.define('market', config.market, async () => {
+    this.define('market', this.config.market, async () => {
       await market(this)
     })
 
-    this.define('peer', config.peer, async () => {
+    this.define('peer', this.config.peer, async () => {
       await peer(this)
     })
 
-    // TODO allow focusing on 1 wallet alone
-    this.define('wallets', config.wallets, async () => {
+    // TODO allow focusing on 1 wallet alone, while using the normal mode for the rest
+    this.define('wallets', this.config.wallets, async () => {
       await wallets(this)
     })
 
-    this.define('wallets:ledger', config.ledgerWallets, async () => {
+    this.define('wallets:ledger', this.config.ledgerWallets, async () => {
       await ledger(this)
     })
   }

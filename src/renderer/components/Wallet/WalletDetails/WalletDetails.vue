@@ -5,7 +5,7 @@
     <MenuTab
       ref="menutab"
       v-model="currentTab"
-      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !votedDelegate }"
+      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !isOwned }"
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
@@ -18,17 +18,55 @@
           :is="tab.component"
           slot-scope="{ isActive }"
           :is-active="isActive"
+          @on-row-click="onRowClick"
         />
       </MenuTabItem>
     </MenuTab>
     <div
-      v-if="isDelegatesTab && votedDelegate"
-      class="bg-theme-feature px-5 flex flex-row"
+      v-if="isDelegatesTab && isOwned"
+      class="bg-theme-feature px-5 flex flex-row rounded-bl-lg"
     >
       <div
-        class="mt-4 mb-4 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+        class="WalletDetails__button rounded-l"
+        @click="openSelectDelegate"
       >
-        <div class="flex flex-row">
+        <SvgIcon
+          name="search"
+          view-box="0 0 17 16"
+          class="mr-2"
+        />
+        {{ $t('WALLET_DELEGATES.SEARCH_DELEGATE') }}
+      </div>
+      <div
+        class="mt-4 mb-4 py-4 px-6 text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
+        :class="{ 'rounded-r': isOwned && !votedDelegate }"
+      >
+        <div
+          v-if="!isAwaitingConfirmation && isLoadingVote"
+          class="flex"
+        >
+          <span class="font-semibold">
+            {{ $t('WALLET_DELEGATES.LOADING_VOTE') }}
+          </span>
+        </div>
+        <div
+          v-else-if="isAwaitingConfirmation"
+          class="flex"
+        >
+          <i18n
+            tag="span"
+            class="font-semibold"
+            path="WALLET_DELEGATES.AWAITING_VOTE_CONFIRMATION"
+          >
+            <strong place="type">
+              {{ $t(`TRANSACTION.TYPE.${unconfirmedVote.publicKey.charAt(0) === '+' ? 'VOTE' : 'UNVOTE'}`) }}
+            </strong>
+          </i18n>
+        </div>
+        <div
+          v-else-if="votedDelegate"
+          class="flex"
+        >
           <i18n
             tag="span"
             :class="{
@@ -62,28 +100,45 @@
             </i18n>
           </template>
         </div>
+        <div
+          v-else-if="isOwned && !votedDelegate"
+          class="flex"
+        >
+          <span class="font-semibold">
+            {{ $t('WALLET_DELEGATES.NO_VOTE') }}
+          </span>
+        </div>
       </div>
       <div
-        v-if="isOwned"
-        class="WalletDetails__unvote"
+        v-if="votedDelegate && !isAwaitingConfirmation && !isLoadingVote"
+        class="WalletDetails__button rounded-r"
         @click="openUnvote"
       >
         {{ $t('WALLET_DELEGATES.UNVOTE') }}
       </div>
 
-      <!-- Unvote modal -->
+      <!-- Vote/unvote modal -->
+      <TransactionModal
+        v-if="isUnvoting || selectedDelegate"
+        :title="getVoteTitle()"
+        :type="3"
+        :delegate="selectedDelegate"
+        :is-voter="isUnvoting"
+        :voted-delegate="votedDelegate"
+        @cancel="onCancel"
+        @close="onCancel"
+        @sent="onSent"
+      />
+
+      <!-- Select delegate modal -->
       <Portal
-        v-if="isSelected"
+        v-if="isSelecting"
         to="modal"
       >
-        <TransactionModal
-          :title="$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: votedDelegate.username })"
-          :type="3"
-          :delegate="votedDelegate"
-          :is-voter="true"
-          @cancel="onCancel"
-          @close="onCancel"
-          @sent="onSent"
+        <WalletSelectDelegate
+          @cancel="onCancelSelect"
+          @close="onCancelSelect"
+          @confirm="onConfirmSelect"
         />
       </Portal>
     </div>
@@ -91,26 +146,30 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import { at, clone } from 'lodash'
 /* eslint-disable vue/no-unused-components */
+import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
 import { WalletExchange, WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
 import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   components: {
     ButtonGeneric,
+    MenuTab,
+    MenuTabItem,
     TransactionModal,
+    WalletDelegates,
     WalletExchange,
     WalletHeading,
-    WalletTransactions,
-    WalletDelegates,
+    WalletSelectDelegate,
     WalletSignVerify,
     WalletStatistics,
-    MenuTab,
-    MenuTabItem
+    WalletTransactions,
+    SvgIcon
   },
 
   provide () {
@@ -126,8 +185,12 @@ export default {
       walletVote: {
         publicKey: null
       },
-      isSelected: false,
-      votedDelegate: null
+      isVoting: false,
+      isUnvoting: false,
+      isSelecting: false,
+      isLoadingVote: true,
+      votedDelegate: null,
+      selectedDelegate: null
     }
   },
 
@@ -182,10 +245,32 @@ export default {
     },
 
     isOwned () {
-      const wallet = this.$store.getters['wallet/byAddress'](this.currentWallet.address)
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      return [
+        ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
+        ...this.$store.getters['ledger/wallets']
+      ].some(wallet => wallet.address === this.currentWallet.address)
+    },
 
-      return wallets.includes(wallet)
+    unconfirmedVote () {
+      return this.unconfirmedVotes.find(vote => {
+        return vote.address === this.currentWallet.address
+      })
+    },
+
+    unconfirmedVotes: {
+      get () {
+        return this.$store.getters['session/unconfirmedVotes']
+      },
+      set (votes) {
+        this.$store.dispatch('session/setUnconfirmedVotes', votes)
+        const profile = clone(this.session_profile)
+        profile.unconfirmedVotes = votes
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
+    isAwaitingConfirmation () {
+      return !!this.unconfirmedVote
     }
   },
 
@@ -207,6 +292,11 @@ export default {
       this.$nextTick(() => {
         this.$refs.menutab.collectItems()
       })
+    },
+    async isAwaitingConfirmation (newValue, oldValue) {
+      if (!newValue && oldValue) {
+        await this.fetchWalletVote()
+      }
     }
   },
 
@@ -229,16 +319,27 @@ export default {
       this.currentTab = component
     },
 
+    getVoteTitle () {
+      if (this.isUnvoting && this.votedDelegate) {
+        return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.votedDelegate.username })
+      } else if (this.isVoting && this.selectedDelegate) {
+        return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selectedDelegate.username })
+      } else {
+        return `${this.$t('COMMON.DELEGATE')} ${this.selectedDelegate.username}`
+      }
+    },
+
     async fetchWalletVote () {
       if (!this.currentWallet) {
         return
       }
 
       try {
+        this.isLoadingVote = true
         const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
 
         if (walletVote) {
-          this.votedDelegate = await this.$client.fetchDelegate(walletVote)
+          this.votedDelegate = this.$store.getters['delegate/byPublicKey'](walletVote)
           this.walletVote.publicKey = walletVote
         } else {
           this.votedDelegate = null
@@ -256,29 +357,72 @@ export default {
             msg: error.message
           }))
         }
+      } finally {
+        this.isLoadingVote = false
       }
     },
 
     getProductivity () {
-      const productivity = this.votedDelegate.productivity || this.votedDelegate.production.productivity
+      const productivity = this.votedDelegate.production.productivity
       return this.formatter_percentage(productivity)
     },
 
     openUnvote () {
-      this.isSelected = true
+      this.selectedDelegate = this.votedDelegate
+      this.isUnvoting = true
+    },
+
+    openSelectDelegate () {
+      this.isSelecting = true
     },
 
     onCancel () {
-      this.isSelected = false
+      this.isUnvoting = false
+      this.isVoting = false
+      this.selectedDelegate = null
     },
 
-    onSent (success) {
+    onCancelSelect () {
+      this.isSelecting = false
+    },
+
+    onConfirmSelect (value) {
+      this.selectedDelegate = this.$store.getters['delegate/search'](value)
+
+      if (this.selectedDelegate) {
+        this.isSelecting = false
+
+        if (this.votedDelegate) {
+          if (this.selectedDelegate.publicKey === this.votedDelegate.publicKey) {
+            this.isUnvoting = true
+          }
+        } else {
+          this.isVoting = true
+        }
+      }
+    },
+
+    onSent (success, transaction) {
       if (success) {
-        this.walletVote.publicKey = null
-        this.votedDelegate = null
+        const votes = [
+          ...this.unconfirmedVotes,
+          {
+            id: transaction.id,
+            address: this.currentWallet.address,
+            publicKey: transaction.asset.votes[0]
+          }
+        ]
+
+        this.unconfirmedVotes = votes
       }
 
-      this.isSelected = false
+      this.selectedDelegate = null
+      this.isUnvoting = false
+      this.isVoting = false
+    },
+
+    onRowClick (publicKey) {
+      this.onConfirmSelect(publicKey)
     }
   }
 }
@@ -286,14 +430,14 @@ export default {
 
 <style lang="postcss">
 .WalletDetails .MenuTab > .MenuTab__nav {
-  @apply .sticky .pin-t .z-10;
+  @apply .sticky .pin-t .z-10
 }
-.WalletDetails__unvote {
+.WalletDetails__button {
   transition: 0.5s;
   cursor: pointer;
-  @apply .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .mt-4 .mb-4 .p-4 .rounded-r .font-semibold .w-22
+  @apply .flex .items-center .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .whitespace-no-wrap .mt-4 .mb-4 .p-4 .font-semibold .w-auto .text-center
 }
-.WalletDetails__unvote:hover {
+.WalletDetails__button:hover {
   transition: 0.5s;
   @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
 }

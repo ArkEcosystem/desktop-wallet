@@ -27,6 +27,7 @@
         :disabled="isDisabled || isReadOnly"
         :type="type"
         :value="value"
+        :maxlength="maxlength"
         :placeholder="placeholder"
         class="InputText__input flex-1"
         @focus="onFocus"
@@ -101,6 +102,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    maxlength: {
+      type: Number,
+      required: false,
+      default: undefined
     },
     value: {
       type: String,

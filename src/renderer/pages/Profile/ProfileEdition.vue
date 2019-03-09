@@ -63,7 +63,7 @@
 
                 <button
                   :disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
-                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue inline-flex"
+                  class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex"
                   @click="toggleIsNameEditable"
                 >
                   <SvgIcon
@@ -73,7 +73,10 @@
                 </button>
               </ListDividedItem>
 
-              <ListDividedItem :label="$t('COMMON.LANGUAGE')">
+              <ListDividedItem
+                :label="$t('COMMON.LANGUAGE')"
+                class="ProfileEdition__language"
+              >
                 <MenuDropdown
                   :class="{
                     'ProfileEdition__field--modified': modified.language && modified.language !== profile.language
@@ -82,7 +85,42 @@
                   :value="language"
                   :position="['-50%', '0%']"
                   @select="selectLanguage"
-                />
+                >
+                  <div
+                    slot="item"
+                    slot-scope="itemScope"
+                    class="flex flex-row space-between"
+                  >
+                    <img
+                      :src="flagImage(itemScope.value)"
+                      :title="itemScope.item"
+                      class="ProfileEdition__language__item__flag mr-2"
+                    >
+                    <span class="font-semibold">
+                      {{ itemScope.item }}
+                    </span>
+                  </div>
+
+                  <div
+                    slot="handler"
+                    slot-scope="handlerScope"
+                  >
+                    <MenuDropdownHandler
+                      :value="handlerScope.activeValue"
+                      :item="handlerScope.item"
+                      :placeholder="handlerScope.placeholder"
+                      :prefix="handlerScope.prefix"
+                      :icon-disabled="handlerScope.isOnlySelectedItem"
+                    >
+                      <img
+                        :src="flagImage(handlerScope.value)"
+                        :title="handlerScope.item"
+                        class="ProfileEdition__language__handler__flag mr-1"
+                      >
+                      {{ handlerScope.item }}
+                    </MenuDropdownHandler>
+                  </div>
+                </MenuDropdown>
               </ListDividedItem>
 
               <ListDividedItem :label="$t('COMMON.BIP39_LANGUAGE')">
@@ -172,6 +210,16 @@
           >
             <ListDivided>
               <ListDividedItem
+                :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
+                class="ProfileEdition__market-chart"
+              >
+                <ButtonSwitch
+                  :is-active="isMarketChartEnabled"
+                  @change="selectIsMarketChartEnabled"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
@@ -206,15 +254,25 @@
         </MenuTab>
       </div>
     </main>
+
+    <ProfileLeavingConfirmation
+      v-if="routeLeaveCallback"
+      :profile="profile"
+      @close="onStopLeaving"
+      @ignore="onLeave(false)"
+      @save="onLeave(true)"
+    />
   </div>
 </template>
 
 <script>
 import { isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
+import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { MenuDropdown, MenuTab, MenuTabItem } from '@/components/Menu'
+import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
+import { ProfileLeavingConfirmation } from '@/components/Profile'
 import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
@@ -227,12 +285,15 @@ export default {
   name: 'ProfileEdition',
 
   components: {
+    ButtonSwitch,
     InputText,
     ListDivided,
     ListDividedItem,
     MenuTab,
     MenuTabItem,
     MenuDropdown,
+    MenuDropdownHandler,
+    ProfileLeavingConfirmation,
     SelectionAvatar,
     SelectionBackground,
     SelectionTheme,
@@ -248,6 +309,7 @@ export default {
       currency: '',
       timeFormat: ''
     },
+    routeLeaveCallback: null,
     tab: 'profile'
   }),
 
@@ -257,7 +319,7 @@ export default {
     },
     timeFormats () {
       return ['Default', '12h', '24h'].reduce((all, format) => {
-        all[format] = this.$t(`TIME_FORMAT.${format}`)
+        all[format] = this.$t(`TIME_FORMAT.${format.toUpperCase()}`)
         return all
       }, {})
     },
@@ -288,7 +350,7 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (property === 'avatar' || this.modified[property]) {
+        if (property === 'avatar' || this.modified.hasOwnProperty(property)) {
           return this.modified[property] !== this.profile[property]
         }
         return false
@@ -320,7 +382,7 @@ export default {
       return this.modified.language || this.profile.language
     },
     bip39Language () {
-      return this.modified.bip39Language || this.profile.bip39Language || 'english'
+      return this.modified.bip39Language || this.profile.bip39Language || BIP39.defaultLanguage
     },
     name () {
       return this.modified.name || this.profile.name
@@ -331,6 +393,9 @@ export default {
     // TODO update it when modified, but it's changed on the sidemenu
     theme () {
       return this.modified.theme || this.profile.theme
+    },
+    isMarketChartEnabled () {
+      return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
     },
     isProfileTab () {
       return this.tab === 'profile'
@@ -361,8 +426,13 @@ export default {
     })
   },
 
-  beforeDestroy () {
-    this.$store.dispatch('session/load')
+  beforeRouteLeave (to, from, next) {
+    if (this.isModified) {
+      // Capture the callback to trigger it when user has decided to update or not the profile
+      this.routeLeaveCallback = next
+    } else {
+      next()
+    }
   },
 
   mounted () {
@@ -374,6 +444,24 @@ export default {
   },
 
   methods: {
+    onStopLeaving () {
+      this.routeLeaveCallback = null
+    },
+
+    async onLeave (hasToSave) {
+      if (hasToSave) {
+        await this.updateProfile()
+      } else {
+        this.$store.dispatch('session/load', this.session_profile.id)
+      }
+
+      this.routeLeaveCallback()
+    },
+
+    flagImage (language) {
+      return this.assets_loadImage(`flags/${language}.svg`)
+    },
+
     toggleIsNameEditable () {
       if (!this.nameError || !this.isNameEditable) {
         if (!this.isNameEditable && !this.modified.name) {
@@ -383,11 +471,15 @@ export default {
       }
     },
 
-    async save () {
+    async updateProfile () {
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
       })
+    },
+
+    async save () {
+      await this.updateProfile()
 
       this.$router.push({ name: 'profiles' })
     },
@@ -422,6 +514,10 @@ export default {
 
     async selectTheme (theme) {
       this.__updateSession('theme', theme)
+    },
+
+    async selectIsMarketChartEnabled (isMarketChartEnabled) {
+      this.__updateSession('isMarketChartEnabled', isMarketChartEnabled)
     },
 
     setName (event) {
@@ -480,6 +576,22 @@ export default {
 .ProfileEdition .MenuTab__content {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.ProfileEdition__language .MenuDropdown__container {
+  min-width: 200px
+}
+.ProfileEdition__language .MenuDropdownItem__container {
+  @apply .mx-2 .px-2
+}
+.ProfileEdition__language .MenuDropdownItem__container {
+  @apply .break-normal
+}
+.ProfileEdition__language__item__flag {
+  height: 18px
+}
+.ProfileEdition__language__handler__flag {
+  height: 12px
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,

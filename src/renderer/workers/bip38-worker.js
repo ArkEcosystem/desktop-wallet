@@ -15,7 +15,6 @@ process.on('message', message => {
       })
     } catch (error) {
       process.send({
-        bip38key: null,
         error: `Failed to encrypt passphrase: ${error.message}`
       })
     }
@@ -23,11 +22,10 @@ process.on('message', message => {
     try {
       const decryptedKey = bip38.decrypt(message.bip38key, message.password)
       process.send({
-        decodedWif: wif.encode(message.wif, decryptedKey.privateKey, decryptedKey.compressed)
+        encodedWif: wif.encode(message.wif, decryptedKey.privateKey, decryptedKey.compressed)
       })
     } catch (error) {
       process.send({
-        decodedWif: null,
         error: `Failed to decrypt passphrase: ${error.message}`
       })
     }

@@ -3,10 +3,12 @@ import { crypto, transactionBuilder } from '@arkecosystem/crypto'
 import axios from 'axios'
 import { castArray, chunk, orderBy } from 'lodash'
 import dayjs from 'dayjs'
+import moment from 'moment'
+import logger from 'electron-log'
+import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import logger from 'electron-log'
 
 export default class ClientService {
   /*
@@ -47,26 +49,49 @@ export default class ClientService {
     }
   }
 
+  /**
+   * Only for V2
+   * Get the configuration of a peer
+   * @param {String} host - URL of the host (using `core-p2p` port)
+   * @param {Number} [timeout=3000]
+   * @return {(Object|null)}
+   */
+  static async fetchPeerConfig (host, timeout = 3000) {
+    try {
+      const { data } = await axios({
+        url: `${host}/config`,
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        timeout
+      })
+      if (data) {
+        return data.data
+      }
+    } catch (error) {
+      // TODO only if a new feature to enable logging is added
+      // console.log(`Error on \`${host}\``)
+    }
+
+    return null
+  }
+
   static async fetchFeeStatistics (server, apiVersion, timeout) {
-    // This is only for v2 networks
     if (apiVersion === 1) {
-      return
+      throw new Error('Fee statistics are only available on V2 networks')
     }
-    const client = new ApiClient(server, apiVersion)
-    if (timeout) {
-      client.http.timeout = timeout
-    }
-    const { data } = await client.resource('node').configuration()
-    if (data.data && data.data.feeStatistics) {
-      return data.data.feeStatistics
-    }
+    const { feeStatistics } = await ClientService.fetchNetworkConfig(server, apiVersion, timeout)
+    return feeStatistics
   }
 
   constructor (watchProfile = true) {
     this.__host = null
     this.__version = null
+    // The API version is imprecise, since new capabilities are being added continuously.
+    // So, this property uses the peer version to know which features are available
+    this.__capabilities = '1.0.0'
     this.client = new ApiClient('http://')
-    this.hasMultiWalletSearch = false
 
     if (watchProfile) {
       this.__watchProfile()
@@ -91,6 +116,18 @@ export default class ClientService {
     this.client.setVersion(apiVersion)
   }
 
+  get capabilities () {
+    return this.__capabilities
+  }
+
+  set capabilities (version) {
+    this.__capabilities = semver.coerce(version)
+  }
+
+  isCapable (version) {
+    return semver.gte(this.capabilities, version)
+  }
+
   /**
    * Fetch the peer status.
    * @returns {Object}
@@ -108,20 +145,23 @@ export default class ClientService {
    * @param {Object} [query]
    * @param {Number} [query.page=1]
    * @param {Number} [query.limit=51]
+   * @param {String} [query.orderBy='rank:asc']
    * @return {Object[]}
    */
-  async fetchDelegates ({ page, limit } = {}) {
+  async fetchDelegates (options = {}) {
     const network = store.getters['session/network']
-    page || (page = 1)
-    limit || (limit = network.constants.activeDelegates)
+    options.page || (options.page = 1)
+    options.limit || (options.limit = network.constants.activeDelegates)
+    options.orderBy || (options.orderBy = 'rank:asc')
 
     let totalCount = 0
     let delegates = []
 
     if (this.__version === 1) {
       const { data } = await this.client.resource('delegates').all({
-        offset: (page - 1) * limit,
-        limit
+        offset: (options.page - 1) * options.limit,
+        limit: options.limit,
+        orderBy: options.orderBy
       })
 
       delegates = data.delegates.map(delegate => {
@@ -141,7 +181,11 @@ export default class ClientService {
 
       totalCount = parseInt(data.totalCount)
     } else {
-      const { data } = await this.client.resource('delegates').all({ page, limit })
+      const { data } = await this.client.resource('delegates').all({
+        page: options.page,
+        limit: options.limit,
+        orderBy: options.orderBy
+      })
       delegates = data.data
       totalCount = data.meta.totalCount
     }
@@ -167,21 +211,6 @@ export default class ClientService {
     return data.meta.totalCount
   }
 
-  /**
-   * Fetches a delegate based on the given id
-   * id can be public key, username (or wallet address if v2)
-   *
-   * @return {Object|null} Delegate object if one is found, otherwise null
-   */
-  async fetchDelegate (id) {
-    const { data } = await this.client.resource('delegates').get(id)
-
-    if (this.__version === 1 && data.success) {
-      return data
-    }
-    return data.data ? data.data : null
-  }
-
   async fetchDelegateForged (delegate) {
     if (delegate.forged) {
       return delegate.forged.total
@@ -191,6 +220,28 @@ export default class ClientService {
       return data.forged
     }
     return 0
+  }
+
+  /**
+   * Fetches the static fees for transaction types.
+   * @return {Number[]}
+   */
+  async fetchStaticFees () {
+    let fees = []
+    if (this.version === 2) {
+      fees = Object.values((await this.client.resource('transactions').fees()).data.data)
+    } else {
+      const feeData = (await this.client.resource('blocks').fees()).data.fees
+      fees = [
+        feeData.send,
+        feeData.secondsignature,
+        feeData.delegate,
+        feeData.vote,
+        feeData.multisignature
+      ]
+    }
+
+    return fees
   }
 
   /**
@@ -291,7 +342,7 @@ export default class ClientService {
     // Add some utilities for each transactions
     const result = transactions.map(tx => {
       tx.isSender = tx.sender === address
-      tx.isReceiver = tx.recipient === address
+      tx.isRecipient = tx.recipient === address
       tx.totalAmount = tx.amount + tx.fee
 
       return tx
@@ -313,9 +364,10 @@ export default class ClientService {
     options = options || {}
 
     let walletData = {}
-    if (this.version === 2 && this.hasMultiWalletSearch) {
+    if (this.isCapable('2.1.0')) {
       let transactions = []
       let hadFailure = false
+
       for (const addressChunk of chunk(addresses, 20)) {
         try {
           const { data } = await this.client.resource('transactions').search({
@@ -331,6 +383,8 @@ export default class ClientService {
       if (!hadFailure) {
         transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
           transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+          transaction.isSender = addresses.includes(transaction.sender)
+          transaction.isRecipient = addresses.includes(transaction.recipient)
 
           return transaction
         })
@@ -429,7 +483,7 @@ export default class ClientService {
   async fetchWallets (addresses) {
     let walletData = []
 
-    if (this.version === 2 && this.hasMultiWalletSearch) {
+    if (this.isCapable('2.1.0')) {
       for (const addressChunk of chunk(addresses, 20)) {
         const { data } = await this.client.resource('wallets').search({
           addresses: addressChunk
@@ -508,14 +562,16 @@ export default class ClientService {
     const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.client.http.host)
     const scheme = matches[1]
     const ip = matches[2]
-    let port = scheme === 'https://' ? 443 : 80
+    const isHttps = scheme === 'https://'
+    let port = isHttps ? 443 : 80
     if (matches[3]) {
       port = matches[3]
     }
 
     return {
       ip,
-      port
+      port,
+      isHttps
     }
   }
 
@@ -660,9 +716,15 @@ export default class ClientService {
    * @returns {Object}
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
+    const network = store.getters['session/network']
     transaction = transaction.network({
-      pubKeyHash: store.getters['session/network'].version
+      pubKeyHash: network.version
     })
+
+    // TODO replace with dayjs
+    const epochTime = moment(network.constants.epoch).utc().valueOf()
+    const now = moment().valueOf()
+    transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
     if (passphrase) {
       transaction = transaction.sign(this.normalizePassphrase(passphrase))
@@ -709,11 +771,18 @@ export default class ClientService {
    * @returns {Object[]}
    */
   async broadcastTransaction (transactions, broadcast) {
+    let currentPeer = store.getters['peer/current']()
+    if (!currentPeer) {
+      currentPeer = this.__parseCurrentPeer()
+    }
     // Use p2p for v1
     if (this.__version === 1) {
       if (broadcast) {
         let responses = []
-        const peers = store.getters['peer/broadcastPeers']()
+        let peers = store.getters['peer/broadcastPeers']()
+        if ((!peers || !peers.length) || currentPeer) {
+          peers = [currentPeer]
+        }
 
         for (let i = 0; i < peers.length; i++) {
           const response = await this.__sendV1Transaction(transactions, peers[i])
@@ -721,26 +790,31 @@ export default class ClientService {
         }
         return responses
       } else {
-        const currentPeer = store.getters['peer/current']()
         const response = await this.__sendV1Transaction(transactions, currentPeer)
         return [response]
       }
     } else {
+      let failedBroadcast = false
       if (broadcast) {
         let txs = []
-        const peers = store.getters['peer/broadcastPeers']()
-
-        for (let i = 0; i < peers.length; i++) {
-          try {
-            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
-            const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
-            txs.push(tx)
-          } catch (err) {
-            //
+        let peers = store.getters['peer/broadcastPeers']()
+        if (peers && peers.length) {
+          for (let i = 0; i < peers.length; i++) {
+            try {
+              const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+              const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
+              txs.push(tx)
+            } catch (err) {
+              //
+            }
           }
+          return txs
+        } else {
+          failedBroadcast = true
         }
-        return txs
-      } else {
+      }
+
+      if (!broadcast || failedBroadcast) {
         const transaction = await this
           .client
           .resource('transactions')
@@ -752,38 +826,46 @@ export default class ClientService {
     }
   }
 
+  // TODO this shouldn't be responsibility of the client
+  // TODO update client when peer changes
   __watchProfile () {
     store.watch(
       (_, getters) => getters['session/profile'],
-      (profile, oldProfile) => {
+      async (profile, oldProfile) => {
         if (!profile) {
           return
         }
 
         const network = store.getters['network/byId'](profile.networkId)
         const currentPeer = store.getters['peer/current']()
-        if (currentPeer && Object.keys(currentPeer).length > 0) {
+
+        if (currentPeer && currentPeer.ip) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           this.version = currentPeer.version.match(/^2\./) ? 2 : 1
+          this.capabilities = currentPeer.version
+
+        // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
         } else {
-          const { server, apiVersion } = network
+          let { server, apiVersion } = network
           this.host = server
           this.version = apiVersion
-        }
 
-        try {
-          this.hasMultiWalletSearch = false
-          if (network.apiVersion === 2) {
-            const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
-            this.client.resource('wallets').search({
-              addresses: [testAddress]
-            }).then(() => {
-              this.hasMultiWalletSearch = true
-            })
+          // Infer which are the real capabilities of the peer
+          if (apiVersion === 2) {
+            try {
+              const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
+              const { address } = this.client.resource('wallets').search({
+                addresses: [testAddress]
+              })
+
+              apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
+            } catch (_) {
+              // The peer does not have capability to search for multiple wallets or transactions at once
+            }
           }
-        } catch (error) {
-          //
+
+          this.capabilities = apiVersion
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {

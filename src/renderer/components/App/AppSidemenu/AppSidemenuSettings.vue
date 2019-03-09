@@ -2,7 +2,7 @@
   <div
     v-click-outside="emitClose"
     :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
-    class="absolute z-20"
+    class="absolute z-20 theme-dark"
   >
     <MenuOptions
       :is-horizontal="isHorizontal"
@@ -38,7 +38,7 @@
             ref="dark-switch"
             :is-active="session_hasDarkTheme"
             class="theme-dark"
-            background-color="#414767"
+            background-color="var(--theme-settings-switch)"
             @change="setTheme"
           />
         </div>
@@ -57,7 +57,7 @@
             ref="protection-switch"
             :is-active="contentProtection"
             class="theme-dark"
-            background-color="#414767"
+            background-color="var(--theme-settings-switch)"
             @change="setProtection"
           />
         </div>
@@ -75,7 +75,7 @@
             ref="ledger-background-switch"
             :is-active="backgroundUpdateLedger"
             class="theme-dark"
-            background-color="#414767"
+            background-color="var(--theme-settings-switch)"
             @change="setBackgroundUpdateLedger"
           />
         </div>
@@ -93,27 +93,8 @@
             ref="broadcast-peers"
             :is-active="sessionBroadcastPeers"
             class="theme-dark"
-            background-color="#414767"
+            background-color="var(--theme-settings-switch)"
             @change="setBroadcastPeers"
-          />
-        </div>
-      </MenuOptionsItem>
-
-      <MenuOptionsItem
-        v-if="isMarketEnabled"
-        :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
-        @click="toggleSelect('show-market-chart')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
-          <ButtonSwitch
-            ref="show-market-chart"
-            :is-active="sessionIsMarketChartEnabled"
-            class="theme-dark"
-            background-color="#414767"
-            @change="setIsMarketChartEnabled"
           />
         </div>
       </MenuOptionsItem>
@@ -129,6 +110,7 @@
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
         :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
         container-classes="max-w-md"
+        @close="toggleResetDataModal"
         @cancel="toggleResetDataModal"
         @continue="onResetData"
       />
@@ -210,18 +192,6 @@ export default {
         this.$store.dispatch('profile/update', profile)
       }
     },
-    sessionIsMarketChartEnabled: {
-      get () {
-        return this.$store.getters['session/isMarketChartEnabled']
-      },
-      set (isMarketChartEnabled) {
-        this.$store.dispatch('session/setIsMarketChartEnabled', isMarketChartEnabled)
-        this.$store.dispatch('profile/update', {
-          ...this.session_profile,
-          isMarketChartEnabled
-        })
-      }
-    },
     sessionTheme: {
       get () {
         return this.$store.getters['session/theme']
@@ -273,10 +243,6 @@ export default {
 
     setBroadcastPeers (broadcast) {
       this.sessionBroadcastPeers = broadcast
-    },
-
-    setIsMarketChartEnabled (isEnabled) {
-      this.sessionIsMarketChartEnabled = isEnabled
     },
 
     toggleSelect (name) {

@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center">
-    <div class="absolute pin-t pin-l h-40 w-48">
+    <div class="absolute pin-t pin-l h-40 w-40">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         :width="160"
@@ -25,7 +25,7 @@
       :size="75"
       class="WalletHeading__identicon"
     />
-    <div class="flex flex-col justify-center text-white antialiased pl-4">
+    <div class="flex flex-col justify-center text-white antialiased pl-4 z-10">
       <div
         v-if="name"
         class="flex flex-row text-lg font-semibold text-theme-heading-text"
@@ -138,26 +138,19 @@ export default {
       return secondPublicKey || lazySecondPublicKey
     },
     alternativeBalance () {
-      let balance = this.currentWallet ? this.currentWallet.balance : null
-
-      if (balance === null) {
-        balance = this.lazyWallet.balance || 0
-      }
-
-      const unitBalance = this.currency_subToUnit(balance)
+      const unitBalance = this.currency_subToUnit(this.rawBalance)
       return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
     balance () {
-      let balance = this.currentWallet ? this.currentWallet.balance : null
-
-      if (balance === null) {
-        balance = this.lazyWallet.balance || 0
-      }
-
-      return this.formatter_networkCurrency(balance)
+      return this.formatter_networkCurrency(this.rawBalance)
+    },
+    rawBalance () {
+      return this.currentWallet.profileId.length
+        ? this.currentWallet.balance
+        : (this.lazyWallet.balance || 0)
     },
     name () {
       return this.wallet_name(this.currentWallet.address)
@@ -206,7 +199,7 @@ export default {
     // Called by the parent when the address changed
     // Fetch watch-only address, since the wallet is not stored on vuex
     async refreshWallet () {
-      if (!this.currentWallet) {
+      if (this.currentWallet.profileId.length) {
         return
       }
 

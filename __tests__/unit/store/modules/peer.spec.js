@@ -3,42 +3,28 @@ import AxiosMockAdapter from 'axios-mock-adapter'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client } from '@/plugins/api-client'
-import PeerModule from '@/store/modules/peer'
+import store from '@/store'
 import peers, { goodPeer1, goodPeer2, goodPeer4, goodPeer5, badPeer1 } from '../../__fixtures__/store/peer'
+import { network1 } from '../../__fixtures__/store/network'
+import { profile1 } from '../../__fixtures__/store/profile'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
 
+const axiosMock = new AxiosMockAdapter(axios)
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-const store = new Vuex.Store({
-  modules: {
-    peer: PeerModule,
-    session: {
-      namespaced: true,
-      getters: {
-        profile () {
-          return {
-            networkId: 'abc'
-          }
-        },
-        network () {
-          return {
-            id: 'abc',
-            nethash
-          }
-        }
-      }
-    }
-  },
-  strict: true
+
+beforeAll(() => {
+  network1.nethash = nethash
+  store.commit('network/SET_ALL', [network1])
+  store.commit('profile/CREATE', profile1)
+  store.commit('session/SET_PROFILE_ID', profile1.id)
+  store.dispatch('peer/set', peers)
 })
 
-const axiosMock = new AxiosMockAdapter(axios)
-
 beforeEach(() => {
-  store.dispatch('peer/set', peers)
-  client.version = 1
   axiosMock.reset()
+  client.version = 1
 })
 
 describe('peer store module', () => {
@@ -70,6 +56,20 @@ describe('peer store module', () => {
   })
 
   it('should get & set current peer', async () => {
+    for (const peer of peers) {
+      axiosMock
+        .onGet(`http://${peer.ip}:${peer.port}/api/transactions/fees`)
+        .reply(200, {})
+        .onGet(`http://${peer.ip}:${peer.port}/api/blocks/getFees`)
+        .reply(200, {
+          fees: {
+            send: 1,
+            secondsignature: 1,
+            delegate: 1,
+            vote: 1
+          }
+        })
+    }
     await store.dispatch('peer/setCurrentPeer', goodPeer1)
     expect(store.getters['peer/current']()).toEqual(goodPeer1)
     await store.dispatch('peer/setCurrentPeer', goodPeer2)
@@ -81,7 +81,7 @@ describe('peer store module', () => {
   })
 
   it('should return false if no initial peer', () => {
-    store.commit('peer/SET_CURRENT_PEER', { peer: null, networkId: 'abc' })
+    store.commit('peer/SET_CURRENT_PEER', { peer: null, networkId: network1.id })
     expect(store.getters['peer/current']()).toEqual(false)
   })
 
@@ -115,6 +115,19 @@ describe('peer store module', () => {
         .reply(200, {
           epoch: new Date()
         })
+
+      axiosMock
+        .onGet(`http://${peer.ip}:${peer.port}/api/transactions/fees`)
+        .reply(200, {})
+        .onGet(`http://${peer.ip}:${peer.port}/api/blocks/getFees`)
+        .reply(200, {
+          fees: {
+            send: 1,
+            secondsignature: 1,
+            delegate: 1,
+            vote: 1
+          }
+        })
     }
 
     const bestPeer = await store.dispatch('peer/connectToBest', { refresh: false })
@@ -145,8 +158,8 @@ describe('peer store module', () => {
   it('should refresh peer list for v2', async () => {
     jest.setTimeout(15000)
     client.version = 2
-    const goodV2Peer = { ...goodPeer1, status: 200 }
-    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale' }
+    const goodV2Peer = { ...goodPeer1, status: 200, version: '2.0.0' }
+    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale', version: '2.0.0' }
     const refreshPeers = [goodV2Peer, badV2Peer]
     store.dispatch('peer/set', refreshPeers)
 
@@ -229,17 +242,6 @@ describe('peer store module', () => {
   })
 
   it('should update current peer status', async () => {
-    await store.dispatch('peer/setCurrentPeer', goodPeer1)
-
-    client.version = 1
-    client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
-
-    axiosMock
-      .onGet(`${client.host}/api/loader/status/sync`)
-      .reply(200, {
-        height: 10000
-      })
-
     axiosMock
       .onGet(`${client.host}/api/loader/autoconfigure`)
       .reply(200, {
@@ -247,12 +249,23 @@ describe('peer store module', () => {
           nethash
         }
       })
-
-    axiosMock
+      .onGet(`${client.host}/api/loader/status/sync`)
+      .reply(200, {
+        height: 10000
+      })
       .onGet(`${client.host}/api/blocks/getEpoch`)
       .reply(200, {
         epoch: new Date()
       })
+      .onGet(`${client.host}/api/transactions/fees`)
+      .reply(200, { data: {} })
+      .onGet(`${client.host}/api/blocks/getFees`)
+      .reply(200, { fees: {} })
+      .onAny().reply(config => console.log(config.url))
+    await store.dispatch('peer/setCurrentPeer', goodPeer1)
+
+    client.version = 1
+    client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
 
     await store.dispatch('peer/updateCurrentPeerStatus')
     const currentPeer = store.getters['peer/current']()

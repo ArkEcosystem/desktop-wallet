@@ -17,11 +17,13 @@ export default {
   namespaced: true,
 
   state: {
-    transactions: {}
+    transactions: {},
+    // TODO This should not be stored here: it depends on the network, not the transactions
+    staticFees: {}
   },
 
   getters: {
-    byAddress: (state, _, __, rootGetters) => (address, showExpired = false) => {
+    byAddress: (state, _, __, rootGetters) => (address, { includeExpired } = {}) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.transactions[profileId]) {
         return []
@@ -31,20 +33,20 @@ export default {
         return transaction.recipient === address || transaction.sender === address
       }).map(transaction => {
         transaction.isSender = transaction.sender === address
-        transaction.isReceiver = transaction.recipient === address
+        transaction.isRecipient = transaction.recipient === address
         transaction.totalAmount = transaction.amount + transaction.fee
 
         return transaction
       })
 
-      if (showExpired) {
+      if (includeExpired) {
         return transactions
       }
 
       return transactions.filter(transaction => !transaction.isExpired)
     },
 
-    byProfileId: (state, _, __, rootGetters) => (profileId, showExpired = false) => {
+    byProfileId: (state, _, __, rootGetters) => (profileId, { includeExpired } = {}) => {
       if (!state.transactions[profileId]) {
         return []
       }
@@ -55,17 +57,31 @@ export default {
 
       const transactions = state.transactions[profileId].map(transaction => {
         transaction.isSender = addresses.includes(transaction.sender)
-        transaction.isReceiver = addresses.includes(transaction.recipient)
+        transaction.isRecipient = addresses.includes(transaction.recipient)
         transaction.totalAmount = transaction.amount + transaction.fee
 
         return transaction
       })
 
-      if (showExpired) {
+      if (includeExpired) {
         return transactions
       }
 
       return transactions.filter(transaction => !transaction.isExpired)
+    },
+
+    /**
+     * Get a static fee based on type.
+     * @param  {Number} type
+     * @return {(Number|null)}
+     */
+    staticFee: (state, _, __, rootGetters) => (type) => {
+      const networkId = rootGetters['session/profile'].networkId
+      if (!networkId || !state.staticFees[networkId]) {
+        return null
+      }
+
+      return state.staticFees[networkId][type]
     }
   },
 
@@ -99,6 +115,9 @@ export default {
         throw new Error(`Cannot delete transaction '${transaction.id}' - it does not exist on the state`)
       }
       state.transactions[transaction.profileId].splice(index, 1)
+    },
+    SET_STATIC_FEES (state, data) {
+      state.staticFees[data.networkId] = data.staticFees
     }
   },
 
@@ -111,15 +130,18 @@ export default {
 
       return data
     },
+
     store ({ commit }, transactions) {
       commit('STORE', transactions)
     },
+
     update ({ commit }, transaction) {
       const data = TransactionModel.deserialize(transaction)
       commit('UPDATE', data)
 
       return data
     },
+
     clearExpired ({ commit, getters, rootGetters }) {
       const expired = []
       const profileId = rootGetters['session/profileId']
@@ -134,9 +156,11 @@ export default {
 
       return expired
     },
+
     delete ({ commit }, transaction) {
       commit('DELETE', transaction)
     },
+
     deleteBulk ({ commit }, { transactions = [], profileId = null }) {
       for (const transaction of transactions) {
         transaction.profileId = profileId
@@ -146,6 +170,17 @@ export default {
           //
         }
       }
+    },
+
+    /**
+     * Update static fees from API and store against a network.
+     * @return {void}
+     */
+    async updateStaticFees ({ commit, rootGetters }) {
+      commit('SET_STATIC_FEES', {
+        networkId: rootGetters['session/profile'].networkId,
+        staticFees: await this._vm.$client.fetchStaticFees()
+      })
     }
   }
 }

@@ -16,6 +16,7 @@
         v-if="!wallet.passphrase"
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
+        :is-invalid="$v.form.passphrase.$error"
         :address="wallet.address"
         :pub-key-hash="session_network.version"
         class="my-3"
@@ -30,8 +31,11 @@
       />
 
       <InputText
+        ref="message"
         v-model="$v.form.message.$model"
         :label="$t('SIGN_VERIFY.MESSAGE')"
+        :helper-text="messageError"
+        :is-invalid="$v.form.message.$error"
         name="message"
       />
 
@@ -57,6 +61,7 @@ import { required, minLength } from 'vuelidate/lib/validators'
 import { InputPassword, InputText } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import Bip38 from '@/services/bip38'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -83,40 +88,44 @@ export default {
       passphrase: '',
       walletPassword: ''
     },
-    showEncryptLoader: false,
-    bip38Worker: null
+    showEncryptLoader: false
   }),
 
-  mounted () {
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.decodedWif === null) {
-        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        this.showEncryptLoader = false
-      } else if (message.decodedWif) {
-        this.form.passphrase = null
-        this.form.wif = message.decodedWif
-        this.showEncryptLoader = false
-        this.signMessage()
+  computed: {
+    messageError () {
+      if (this.$v.form.message.$error && this.$v.form.message.minLength) {
+        return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
       }
-    })
+      return null
+    }
   },
 
   methods: {
-    onSignMessage () {
+    async onSignMessage () {
       if (this.form.walletPassword && this.form.walletPassword.length) {
         this.showEncryptLoader = true
-        this.bip38Worker.send({
+
+        const dataToDecrypt = {
           bip38key: this.wallet.passphrase,
           password: this.form.walletPassword,
           wif: this.session_network.wif
-        })
-      } else {
-        this.signMessage()
+        }
+
+        const bip38 = new Bip38()
+        try {
+          const { encodedWif } = await bip38.decrypt(dataToDecrypt)
+          this.form.passphrase = null
+          this.form.wif = encodedWif
+        } catch (_error) {
+          this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        } finally {
+          bip38.quit()
+        }
+
+        this.showEncryptLoader = false
       }
+
+      this.signMessage()
     },
 
     signMessage () {
@@ -130,6 +139,8 @@ export default {
         message['timestamp'] = new Date().getTime()
         message['address'] = this.wallet.address
         this.$store.dispatch('wallet/addSignedMessage', message)
+
+        this.$success(this.$t('SIGN_VERIFY.SUCCESSFULL_SIGN'))
 
         this.emitSigned()
       } catch (error) {

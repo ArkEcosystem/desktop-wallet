@@ -4,8 +4,8 @@
       v-bind="$attrs"
       class="WalletAll__table"
       :columns="columns"
-      v-on="$listeners"
       @on-cell-click="onCellClick"
+      @on-sort-change="onSortChange"
     >
       <template
         slot-scope="data"
@@ -32,15 +32,27 @@
 
         <div
           v-else-if="data.column.field === 'name'"
+          class="flex"
         >
-          <span class="flex items-center whitespace-no-wrap">
-            {{ walletName(data.row) | truncate(30) }}
+          <span
+            class="flex items-center whitespace-no-wrap"
+            :class="{ 'text-theme-page-text-light': !data.row.name }"
+          >
+            <span
+              v-tooltip="{
+                content: !data.row.name ? $t('COMMON.NETWORK_NAME') : '',
+                placement: 'right'
+              }"
+              :class="{ 'pr-1': walletName(data.row) }"
+            >
+              {{ walletName(data.row) | truncate(30) }}
+            </span>
             <span
               v-if="data.row.isLedger"
-              class="WalletTable__ledger-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none"
-              :class="{ 'ml-3': walletName(data.row) }"
+              class="ledger-badge"
+              :class="{ 'ml-0': !walletName(data.row) }"
             >
-              {{ $t('WALLET_TABLE.LEDGER') }}
+              {{ $t('COMMON.LEDGER') }}
             </span>
           </span>
         </div>
@@ -63,8 +75,18 @@
           v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
+          <span class="ml-1">
+            <ButtonClipboard
+              :value="data.row.address"
+              view-box="0 0 16 16"
+              :subject="$t('COMMON.ADDRESS').toLowerCase()"
+              class="hover:text-red text-theme-page-text-light p-1"
+            />
+          </span>
+
           <span>
             <button
+              v-tooltip="$t('WALLET_TABLE.RENAME')"
               class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
               @click="renameRow(data.row)"
             >
@@ -76,10 +98,8 @@
           </span>
 
           <span
-            v-tooltip="{
-              content: data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : '',
-              placement: 'left'
-            }"
+            v-tooltip="data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : $t('WALLET_TABLE.DELETE')"
+            class="mr-1"
           >
             <button
               class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
@@ -105,6 +125,7 @@
 </template>
 
 <script>
+import { ButtonClipboard } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
 import { WalletIdenticon } from '@/components/Wallet'
@@ -113,16 +134,13 @@ export default {
   name: 'WalletTable',
 
   components: {
+    ButtonClipboard,
     SvgIcon,
     TableWrapper,
     WalletIdenticon
   },
 
   props: {
-    isContactsTable: {
-      type: Boolean,
-      default: false
-    },
     showVotedDelegates: {
       type: Boolean,
       default: false,
@@ -166,13 +184,6 @@ export default {
         }
       ]
 
-      if (this.isContactsTable) {
-        const index = columns.findIndex(el => {
-          return el.field === 'balance'
-        })
-        columns.splice(index, 1)
-      }
-
       if (!this.showVotedDelegates) {
         const index = columns.findIndex(el => {
           return el.field === this.delegateName
@@ -194,14 +205,18 @@ export default {
     },
 
     sortByName (x, y, col, rowX, rowY) {
-      const one = this.wallet_name(rowX.address) || ''
-      const two = this.wallet_name(rowY.address) || ''
+      const a = rowX.name || this.wallet_name(rowX.address) || ''
+      const b = rowY.name || this.wallet_name(rowY.address) || ''
 
-      return (one < two ? -1 : one > two ? 1 : 0)
+      return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
     delegateName (row) {
-      return row.votedDelegate ? row.votedDelegate.username : ''
+      if (row.vote) {
+        const delegate = this.$store.getters['delegate/byPublicKey'](row.vote)
+        return delegate.username
+      }
+      return ''
     },
 
     walletName (row) {
@@ -212,6 +227,10 @@ export default {
       if (column.field !== 'actions') {
         this.$router.push({ name: 'wallet-show', params: { address: row.address } })
       }
+    },
+
+    onSortChange (sortOptions) {
+      this.$emit('on-sort-change', sortOptions[0])
     }
   }
 }
@@ -222,13 +241,16 @@ export default {
   @apply .bg-theme-table-row-hover .cursor-pointer;
 }
 .WalletTable tbody tr:hover .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
+  opacity: 1;
 }
 .WalletTable .identicon {
   transition: 0.5s;
+  opacity: 0.5;
 }
-.WalletTable__ledger-badge {
-  opacity: 0.85
+.WalletTable button {
+  transition: color 0.2s;
+}
+.WalletTable button:disabled, .WalletTable button[disabled] {
+  opacity: 0.5;
 }
 </style>
