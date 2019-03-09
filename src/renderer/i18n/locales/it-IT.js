@@ -1,91 +1,104 @@
 export default {
   COMMON: {
-    APP_NAME: 'ARK Desktop Wallet',
+    ADDRESS: 'Address',
     ALL: 'Tutto',
+    APP_NAME: 'ARK Desktop Wallet',
+    APP_NAME_SHORT: 'ARK Desktop',
     APPEARANCE: 'Aspetto',
     AVATAR: 'Avatar',
     BACK: 'Indietro',
-    BIP39_LANGUAGE: 'Lingua Passphrase BIP39',
-    DONE: 'Fatto',
-    FINISH: 'Fine',
+    BACKGROUND: 'Background',
+    BIP39_LANGUAGE: 'Lingua Frase Segreta (BIP39)',
     CONFIRM: 'Conferma',
     CURRENCY: 'Valuta',
-    LANGUAGE: 'Lingua Applicazione',
-    NETWORK: 'Rete',
-    PREV: 'Indietro',
-    NEXT: 'Avanti',
-    OF: 'di',
-    NOT: 'non',
-    WILL: 'will',
-    PROFILE_NAME: 'Nome profilo',
-    SAVE: 'Salva',
-    SELECT_BACKGROUND: 'Seleziona lo sfondo',
-    SELECT_THEME: 'Seleziona il tema del wallet',
-    START: 'Start',
-    FAILED_FETCH: 'Impossibile recuperare {name}. Motivo: "{msg}".',
     DATE: 'Data',
-    WARNING: 'Attenzione',
+    DELEGATE: 'Delegato',
+    DONE: 'Fatto',
+    FAILED_FETCH: 'Impossibile recuperare {name}. Motivo: "{msg}".',
     FETCH: 'Recupera',
-    REMOVE: 'Rimuovi',
+    FINISH: 'Fine',
+    IS_MARKET_CHART_ENABLED: 'Grafico prezzo in dashboard',
+    LANGUAGE: 'Lingua Applicazione',
+    LEDGER: 'Ledger',
+    LEDGER_WALLET: 'Questo è un portafoglio Ledger',
+    NETWORK: 'Rete',
+    NETWORK_NAME: 'Questo nome è fornito dalla rete',
+    NEXT: 'Avanti',
+    NOT: 'non',
+    OF: 'di',
     OTHER: 'Altro',
+    PREV: 'Indietro',
+    PROFILE_NAME: 'Nome Profilo',
+    REMOVE: 'Rimuovi',
+    SAVE: 'Salva',
+    SKIP: 'Salta',
+    START: 'Inizia',
+    THEME: 'Tema',
+    TIME_FORMAT: 'Formato orario',
     VERIFIED_ADDRESS: 'Questo è un indirizzo verificato',
-    TIME_FORMAT: 'Formato orario'
+    WARNING: 'Attenzione',
+    WILL: 'sarà',
+    WALLET: 'Portafoglio'
   },
 
   ANNOUNCEMENTS: {
     LATEST_NEWS: 'Ultime News',
-    READ_MORE: 'Leggi di più'
+    READ_MORE: 'Leggi di più',
+    ALL_READ: 'Segna come già letto'
   },
 
   INTRODUCTION: {
-    PAGE_TITLE: 'Your {page}',
     WELCOME: {
-      TITLE: 'Benvenuto in {app}',
-      SAFETY_MESSAGE: 'Per favore, prenditi qualche minuto per leggere le prossime schermate per la tua sicurezza.',
-      FUNDS_WARNING: 'I tuoi fondi potrebbero diventare irrecuperabili se non presti attenzione a questi avvertimenti.'
+      TITLE: 'Benvenuto in {APP}',
+      SAFETY_MESSAGE: 'Per favore prenditi qualche minuto per leggere le prossime schermate per la tua sicurezza.',
+      FUNDS_WARNING: 'I tuoi fondi potrebbero diventare irrecuperabili se non presti molta attenzione a questi avvertimenti.'
     },
     POWER: {
-      TITLE: 'Power',
+      TITLE: 'La tua Forza',
       FINANCE: 'La cosa più importante da sapere per gli utenti riguardo le criptovalute è che rovesciano completamente il comunemente accettato modello di come funziona la finanza.',
       BANKS: 'Nella finanza tradizionale, rimetti il controllo del tuo denaro ad una banca. Poiché le banche hanno il controllo sui tuoi soldi, possono intraprendere azioni per tuo conto, come il rimborso delle transazioni e il ripristino delle informazioni di accesso.',
       CRYPTO: 'Le criptovalute prendono quel potere e te lo forniscono direttamente. Usando nient\'altro che la tua chiave privata, puoi controllare esattamente quando, dove e come viene conservato e speso il tuo denaro.',
       RESPONSIBILITY: 'Tuttavia, dalle parole di Uncle Ben Parker, da un grande potere derivano grandi responsabilità.'
     },
     DUTY: {
-      TITLE: 'Duty',
-      INTRO: 'L\'industria blockchain è progettata per resistere alla censura. Ciò significa che nessuno controlla il tuo account, se non tu. Questo comporta che nessuna autorità centrale può confiscare, congelare o manipolare i tuoi fondi in nessun momento.',
+      TITLE: 'Il tuo Dovere',
+      CONTROL: 'L\'industria blockchain è progettata per resistere alla censura. Ciò significa che nessuno controlla il tuo account, se non tu. Questo comporta che nessuna autorità centrale può confiscare, congelare o manipolare i tuoi fondi in nessun momento.',
       OWNER: 'Questo porta anche a maggiori responsabilità nei tuoi confronti, il proprietario del conto',
       WARNING: {
-        INFO: 'A differenza del tuo conto bancario tradizionale, {warn}',
-        WARN: 'password perdute, frasi d\'accesso o fondi rubati non potranno essere ripristinati dal team ARK , dai Delegati e da nessun altro.'
+        ACCOUNT: 'A differenza del tuo conto bancario tradizionale, {CANNOT_RESTORE}',
+        CANNOT_RESTORE: 'password perdute, frasi segrete o fondi rubati non potranno essere ripristinati dal team ARK , dai Delegati e da nessun altro.'
       },
       SECURITY: 'La sicurezza del tuo conto spetta esclusivamente a te.'
     },
     RESPONSIBILITY: {
-      TITLE: 'Responsibility',
+      TITLE: 'La tua Responsabilità',
       STORAGE: {
-        INFO: 'La {passphrase} di ogni indirizzo wallet può firmare transazioni e muovere i fondi. Questo significa che se il tuo computer "muore", ma tu possiedi la tua passphrase, puoi ancora accedere ai tuoi fondi. L\'ARK Desktop Wallet ha un\'ulteriore funzionalità che ti permette di settare anche un {encrypted}, per agevolare la gestione. Se il tuo computer "muore", non sarà possibile utilizzare la password cifrata per accedere ai fondi da una macchina differente. Avrai bisogno della passphrase.',
-        PASSPHRASE: 'passphrase',
-        ENCRYPTED: 'password cifrata'
+        EXPLANATION: 'La {PASSPHRASE} di ogni indirizzo portafoglio può firmare transazioni e muovere i fondi. Questo significa che se il tuo computer "muore", ma tu possiedi la tua frase segreta, potrai ancora accedere ai tuoi fondi. L\'ARK Desktop Wallet ha un\'ulteriore funzionalità che ti permette di settare anche un {ENCRYPTED}, per agevolare la gestione. Se il tuo computer "muore", non sarà possibile utilizzare la password cifrata per accedere ai fondi da una macchina differente. {NEED}.',
+        PASSPHRASE: 'frase segreta',
+        ENCRYPTED: 'password cifrata',
+        NEED: 'Avrai bisogno della frase segreta'
       },
-      BACKUP: 'Esegui sempre il backup della passphrase e conservala in un luogo sicuro. Puoi scriverla su carta spessa e archiviare più copie in posizioni sicure. È anche possibile memorizzarlo su un\'unità flash crittografata. In alternativa, puoi utilizzare un dispositivo hardware USB Ledger Nano S, disponibile su Ledger.com, per archiviare e accedere ai tuoi fondi e al ARK Desktop Wallet. Puoi collegare il tuo Ledger Nano S al tuo computer e accedere alla blockchain ARK senza dover inserire la tua passphrase. ',
-      PASSPHRASE: 'Ricorda, chiunque abbia la tua passphrase può accedere ai tuoi fondi. Non condividere mai il tuo conto con nessuno ed evita di archiviarlo in posizioni che sono suscettibili di pirateria informatica, come ad esempio i servizi Cloud.'
+      BACKUP: {
+        ALWAYS: 'Effettua sempre il backup della frase segreta e conservala in un luogo sicuro.',
+        OPTIONS: 'È possibile scriverla su carta spessa e archiviarne più copie in posti sicuri. È inoltre possibile memorizzarla su un\'unità flash crittografata. In alternativa, è possibile utilizzare un dispositivo hardware USB Ledger Nano S, disponibile su Ledger.com, per archiviare e accedere ai fondi e all\'ARK Desktop Wallet. Puoi collegare il tuo Ledger Nano S al tuo computer e accedere alla blockchain ARK senza dover inserire la tua frase segreta.'
+      },
+      REMEMBER: 'Ricorda, chiunque abbia la frase segreta può accedere ai tuoi fondi. Non condividere mai il tuo account con nessuno ed evitare di memorizzarlo in luoghi che sono suscettibili di hack, come il Cloud.'
     },
     TURN: {
-      TITLE: 'Turn',
-      WALLET: 'Con la consapevolezza dell\'importanza di mantenere la tua passphrase al sicuro, sei pronto a rivendicare la tua autonomia finanziaria con ARK Desktop Wallet.',
+      TITLE: 'Il tuo Turno',
+      KNOWLEDGE: 'Ora, armato della consapevolezza di quanto sia importante mantenere al sicuro le tue frasi segrete, sei pronto a rivendicare la tua autonomia finanziaria con ARK Desktop Wallet.',
       SUPPORT: 'ARK è un ecosistema open source e se hai bisogno di assistenza, la community e il team ARK sono qui per aiutarti. Crea un post su reddit.ark.io o unisciti al sistema di chat in tempo reale su slack.ark.io.',
       CONCLUSION: 'Tutti qui, al team di ARK.io, speraiamo ti piacerà utilizzare l\'ARK Desktop Wallet e partecipare nella rivoluzione blockchain!'
     }
   },
 
   SEARCH: {
-    DEFAULT_PLACEHOLDER: 'Trova transazioni, indirizzi o delegati',
+    DEFAULT_PLACEHOLDER: 'Trova transazione, indirizzo o delegato',
     FILTER: 'Filtro',
     SEARCH_BY: 'Cerca per',
     SELECT_OPTION: 'Seleziona un\'opzione',
     DELEGATE: 'Delegato',
-    WALLETS: 'Wallets',
+    WALLETS: 'Portafogli',
     PERIOD: 'Periodo'
   },
 
@@ -94,9 +107,10 @@ export default {
   },
 
   ENCRYPTION: {
-    DECRYPTING: 'Decifrando il wallet con password...',
-    ENCRYPTING: 'Cifrando il wallet con password...',
-    FAILED_DECRYPT: 'Fallito nel decifrare la passphrase'
+    DECRYPTING: 'Decifrando il portafoglio con password...',
+    ENCRYPTING: 'Cifrando il portafoglio con password...',
+    FAILED_DECRYPT: 'Fallito nel decifrare la frase segreta',
+    FAILED_ENCRYPT: 'Fallito nel cifrare la frase segreta'
   },
 
   PEER: {
@@ -105,6 +119,7 @@ export default {
     CONNECT_CUSTOM: 'Connetti peer personalizzato',
     CONNECT_FAILED: 'Impossibile connettersi al peer',
     DELAY: 'Ritardo',
+    DISCONNECT: 'Disconnesso dal peer',
     FAILED_REFRESH: 'Impossibile aggiornare i peers',
     HEIGHT: 'Altezza Blocco',
     LAST_CHECKED: 'Ultimo controllo',
@@ -118,15 +133,19 @@ export default {
   VALIDATION: {
     TOO_LONG: '\'{0}\' è troppo lungo',
     INVALID_URI: 'URI non valido',
+    INVALID_FORMAT: 'Formato non valido',
     MAX_LENGTH: 'Max {0}',
+    MUST_BE_GREATER_THAN: 'Deve essere maggiore di {0}',
     NOT_MATCH: '\'{0}\' non coincide con \'{1}\'',
     NOT_VALID: '\'{0}\' non è valido',
     NOT_NUMERIC: '\'{0}\' non è numerico',
     NO_SCHEME: '\'{0}\' non contiene \'http://\' o \'https://\'',
     NAME: {
       DUPLICATED: 'Il nome \'{0}\' esiste già',
+      EXISTS_AS_CONTACT: 'Il nome \'{0}\' è già stato assegnato a un contatto',
+      EXISTS_AS_WALLET: 'Il nome \'{0}\'è già stato assegnato a un portafoglio',
       MAX_LENGTH: 'Il nome deve avere meno di {0} caratteri.',
-      MIN_LENGTH: 'Il nome dovrebbe avere almeno 1 carattere | Il nome dovrebbe avere almeno {n} caratteri.'
+      MIN_LENGTH: 'Il nome deve avere almeno 1 carattere | Il nome deve avere almeno {n} caratteri.'
     },
     PASSWORD: {
       TOO_SHORT: 'La tua password deve essere lunga lameno {0} caratteri',
@@ -135,13 +154,20 @@ export default {
       NO_MATCH: 'La tua password non coincide'
     },
     ADDRESS: {
-      DUPLICATED: 'L\'indirizzo del wallet \'{0}\' esiste già'
+      EXISTS_AS_CONTACT: 'L\'indirizzo \'{0}\' è già stato aggiunto come contatto',
+      EXISTS_AS_WALLET: 'L\'indirizzo \'{0}\'è già stato importato come portafoglio'
+    },
+    PUBLIC_KEY: {
+      INVALID_LENGTH: 'La chiave pubblica deve avere una lunghezza di 66 caratteri'
+    },
+    VENDOR_FIELD: {
+      LIMIT_REACHED: 'È possibile inserire un massimo di {0} caratteri'
     },
     REQUIRED: 'The \'{0}\' is required',
-    SEND_NOT_ENABLED: 'L\'invio non è abilitato per il wallet selezionato',
-    WALLET_NOT_ACTIVE: 'Seleziona un wallet a apri l\'URI nuovamente',
-    WARNING_BIP39: '\'{0}\' è una Passphrase BIP39',
-    WARNING_NOT_BIP39: '\'{0}\' non è una Passphrase BIP39'
+    SEND_NOT_ENABLED: 'L\'invio non è abilitato per il portafoglio selezionato',
+    WALLET_NOT_ACTIVE: 'Seleziona un portafoglio a apri l\'URI nuovamente',
+    WARNING_BIP39: '\'{0}\' è una frase segreta BIP39',
+    WARNING_NOT_BIP39: '\'{0}\' non è una frase segreta BIP39'
   },
 
   LANGUAGES: {
@@ -160,12 +186,12 @@ export default {
   BIP39_LANGUAGES: {
     chinese_simplified: 'Chinese Simplified',
     chinese_traditional: 'Chinese Traditional',
-    english: 'English',
-    french: 'French',
-    italian: 'Italian',
-    japanese: 'Japanese',
-    korean: 'Korean',
-    spanish: 'Spanish'
+    english: 'Inglese',
+    french: 'Francese',
+    italian: 'Italiano',
+    japanese: 'Giapponese',
+    korean: 'Coreano',
+    spanish: 'Spagnolo'
   },
 
   MARKET: {
@@ -180,7 +206,9 @@ export default {
     PAGE: 'Pagina',
     ROWS_PER_PAGE: 'Righe per pagina',
     NO_TRANSACTIONS: 'Nessuna transazione è stata trovata. Le ultime transazioni verranno visualizzate qui.',
-    NO_DELEGATES: 'Nessun delegato da mostrare'
+    NO_CONTACTS: 'Nessun contatto da mostrare.',
+    NO_DELEGATES: 'Nessun delegato da mostrare',
+    NO_WALLETS: 'Nessun portafoglio da mostrare.'
   },
 
   APP: {
@@ -205,15 +233,15 @@ export default {
       DARK_MODE: 'Modalità scura',
       SCREENSHOT_PROTECTION: 'Protezione da screenshot',
       BACKGROUND_UPDATE_LEDGER: 'Aggiorna Ledger in background',
-      IS_MARKET_CHART_ENABLED: 'Grafico sulla dashboard',
+      BROADCAST_PEERS: 'Trasmetti a peer multipli',
       TITLE: 'Settaggi attuali',
       RESET_DATA: {
         TITLE: 'Resetta i dati',
         QUESTION: 'Sei sicuro di voler eliminare i tuoi dati?',
-        NOTE: 'Tutti i tuoi dati, inclusi profili, wallet, reti e contatti verranno rimossi dall\'app e ripristinati sui valori predefiniti. I dati, come le transazioni, che sono sulla blockchain non possono essere rimossi.'
+        NOTE: 'Tutti i tuoi dati, inclusi profili, portafogli, reti e contatti verranno rimossi dall\'app e ripristinati sui valori predefiniti. I dati, come le transazioni, che sono sulla blockchain non possono essere rimossi.'
       }
     },
-    WALLETS: 'I miei wallets'
+    WALLETS: 'I miei portafogli'
   },
 
   APP_SIDEMENU_NOTIFICATION: {
@@ -260,12 +288,12 @@ export default {
   INPUT_ADDRESS: {
     ERROR: {
       NOT_VALID: 'L\'indirizzo non è valido',
-      REQUIRED: 'L\'indirizzo è necessario',
-      NEO_ADDRESS: 'Questo sembra un indirizzo NEO'
+      REQUIRED: 'L\'indirizzo è necessario'
     },
+    KNOWN_ADDRESS: 'Questo portafoglio è conosciuto come "{address}"',
     LABEL: 'Indirzzo',
-    QR: 'Scannerizza il codice QR',
-    KNOWN_ADDRESS: 'Questo wallet è conosciuto come "{address}"'
+    NEO_ADDRESS: 'Esiste un indirizzo NEO come questo',
+    QR: 'Scannerizza il codice QR'
   },
 
   INPUT_CURRENCY: {
@@ -276,6 +304,16 @@ export default {
       REQUIRED: 'L\'importo è necessario'
     },
     LABEL: 'Importo'
+  },
+
+  INPUT_DELEGATE: {
+    ERROR: {
+      REQUIRED: 'Il nome del delegato, l\'indirizzo o la chiave pubblica sono obbligatori',
+      USERNAME_NOT_FOUND: 'Non è stato possibile trovare il delegato \'{0}\'',
+      ADDRESS_NOT_FOUND: 'Non è stato possibile trovare il delegato con l\'indirizzo \'{0}\'',
+      PUBLIC_KEY_NOT_FOUND: 'Non è stato possibile trovare il delegato con la chiave pubblica \'{0}\''
+    },
+    SEARCH_HINT: 'Puoi cercare per nome utente, indirizzo o chiave pubblica'
   },
 
   INPUT_FEE: {
@@ -304,7 +342,16 @@ export default {
 
   WALLET_SELECTION: {
     PROFILE: 'Profilo Mittente',
-    WALLET: 'Wallet Mittente'
+    WALLET: 'Portafoglio Mittente'
+  },
+
+  MODAL_ADDITIONAL_LEDGERS: {
+    CANCEL: 'Annulla',
+    INFO: 'Scegli la quantità massima di portafogli Ledger che desideri mostrare. Attualmente stai mostrando {quantity} portafogli.',
+    LARGE_QUANTITY: 'Stai provando a caricare un numero elevato di portafogli. Ciò potrebbe causare un caricamento lento o il timeout del dispositivo.',
+    LOAD: 'Carica Portafogli',
+    QUANTITY: 'Quantità',
+    TITLE: 'Carica portafogli Ledger aggiuntivi'
   },
 
   MODAL_CONFIRMATION: {
@@ -315,20 +362,20 @@ export default {
 
   MODAL_QR_CODE: {
     TITLE: 'Codice QR',
-    SUBTITLE: 'Scannerizza per L\'indirizzo'
+    SUBTITLE: 'Scannerizza per l\'Indirizzo'
   },
 
   MODAL_QR_SCANNER: {
     ERROR: {
-      NOT_ALLOWED: 'Dobbiamo accedere alla videocamera per scannerizzare il codice QR',
-      NOT_FOUND: 'Non siamo riusciti a trovare una videocamera',
+      NOT_ALLOWED: 'Dobbiamo accedere alla webcam per scannerizzare il codice QR',
+      NOT_FOUND: 'Non siamo riusciti a trovare una webcam',
       NOT_SUPPORTED: 'La pagina non viene servita su una connessione sicura (https)',
-      NOT_READABLE: 'Non siamo in grado di leggere lo stream della videocamera, forse è già in uso?',
-      OVERCONSTRAINED: 'Sembra che non siamo riusciti a trovare una videocamera corretta.',
+      NOT_READABLE: 'Non siamo in grado di leggere lo stream della webcam, forse è già in uso?',
+      OVERCONSTRAINED: 'Sembra che non siamo riusciti a trovare una webcam corretta.',
       STREAM: 'Sembra che tu stia utilizzando un browser non supportato. Questo è molto curioso ..'
     },
-    LOADING: 'Loading videocamera',
-    INSTRUCTION: 'Posiziona il codice QR davanti alla videocamera',
+    LOADING: 'Loading webcam',
+    INSTRUCTION: 'Pisiziona il codice QR davanti alla webcam',
     TITLE: 'QR Scanner',
     DECODE_FAILED: 'Impossibile decodificare i dati: {data}'
   },
@@ -381,10 +428,10 @@ export default {
   },
 
   PASSPHRASE_INPUT: {
-    HIDE: 'Nascondi la Passphrase',
-    LABEL: 'Passphrase',
+    HIDE: 'Nascondi la frase segreta',
+    LABEL: 'Frase segreta',
     QR: 'Scannerizza il codice QR',
-    SHOW: 'Mostra la Passphrase'
+    SHOW: 'Mostra la frase segreta'
   },
 
   PASSWORD_INPUT: {
@@ -413,35 +460,30 @@ export default {
       CREATE_CONTACT: 'Crea un contatto',
       IMPORT_CONTACT: 'Importa contatto',
       DELETE_CONTACT: 'Elimina questo contatto',
+      INSTRUCTIONS: 'Questa pagina ti consente di creare contatti, facilitando la gestione degli indirizzi dando loro un nome identificativo',
       HEADER: 'I miei contatti',
       SHOW_CONTACT: 'Mostra contatti'
     },
 
     CONTACT_NEW: {
-      STEP1: {
-        INSTRUCTIONS: {
-          HEADER: 'Nuovo contatto - Indirizzo',
-          TEXT: 'Inserisci L\'indirizzo del tuo contatto.'
-        },
-        TITLE: '1. Inserisci indirizzo',
-        ADDRESS: 'Indirizzo del contatto'
+      INSTRUCTIONS: {
+        HEADER: 'Nuovo contatto',
+        TEXT: 'Inserisci l\'indirizzo del tuo contatto. Sarai in grado di visualizzare le sue transazioni'
       },
-      STEP2: {
-        INSTRUCTIONS: {
-          HEADER: 'Nuovo contatto - Nome',
-          TEXT: 'Opzionalmente, scegli un nome per il tuo contatto ed hai finito.'
-        },
-        TITLE: '2. Conferma',
-        NAME: 'Nome contatto (opzionale)'
-      },
-      FAILED: 'Impossibile creare il contatto'
+      TITLE: 'Inserisci l\'indirizzo del contatto',
+      ADDRESS: 'Indirizzo',
+      NAME: 'Nome contatto (opzionala)',
+      NAME_INFO: 'Info:',
+      NAME_DESCRIPTION: 'Il nome del contatto non è richiesto, ma può essere utilizzato per comodità dell\'utente',
+      FAILED: 'Fallito nel creare il contatto',
+      SUCCESS: '\'{0}\' è stato aggiunto ai tuoi contatti'
     },
 
     DASHBOARD: {
-      ALL_WALLETS: 'Tutti i wallets',
-      ADD_WALLET: 'Aggiungi wallet',
-      CREATE_WALLET: 'Crea wallet',
-      IMPORT_WALLET: 'Importa wallet',
+      ALL_WALLETS: 'Tutti i portafogli',
+      ADD_WALLET: 'Aggiungi portafoglio',
+      CREATE_WALLET: 'Crea portafoglio',
+      IMPORT_WALLET: 'Importa portafoglio',
       LAST_TRANSACTIONS: 'Ultime transazioni'
     },
 
@@ -451,6 +493,7 @@ export default {
         TEXT: 'Seleziona e modifica una qualsiasi delle reti disponibili, o aggiungine di nuove.'
       },
       CREATE_NEW: 'Aggiungi nuova rete',
+      CREATE_NEW_DESCRIPTION: 'Impostazioni individuali per la tua rete',
       NEW_NETWORK: 'Nuova rete'
     },
 
@@ -469,24 +512,28 @@ export default {
           TEXT: 'Inserisci il tuo nome o nickname e seleziona la lingua preferita e la valuta predefinita.'
         },
         NAME: 'Nome profilo',
-        TITLE: '1. Dettagli profilo'
+        TITLE: '1. Dettagli profilo',
+        AVATAR: 'Seleziona il tuo avatar preferito o la prima lettera del nome del tuo profilo',
+        NO_AVATAR: 'Nessun Avatar'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'Selezione rete',
-          TEXT: 'Seleziona la rete di questo profilo',
-          CUSTOM_NETWORK: 'oppure scegli una rete personalizzata',
-          CUSTOM_NETWORK_EXPLAIN: 'Puoi selezionare la tua rete personalizzata o scegliere una delle reti disponibili.'
+          TEXT: 'Seleziona la rete di questo profilo'
         },
+        CUSTOM_NETWORK: 'oppure scegli una rete personalizzata',
+        CUSTOM_NETWORK_EXPLAIN: 'Puoi selezionare la tua rete personalizzata o scegliere una delle reti disponibili.',
         NAME: 'Nome profilo',
         TITLE: '2. Rete'
       },
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Aspetto',
-          TEXT: 'Personalizza questa applicazione scegliendo uno dei nostri temi e sfondi',
-          THEME: 'Puoi scegliere tra modalità chiara e modalità scura'
+          TEXT: 'Personalizza questa applicazione scegliendo uno dei nostri temi e sfondi'
         },
+        MARKET_CHART: 'Scegliere di visualizzare il grafico dei prezzi sulla dashboard',
+        THEME: 'Puoi scegliere tra modalità chiara e modalità scura',
+        BACKGROUND: 'Scegli il tuo sfondo preferito',
         NAME: 'Nome profilo',
         TITLE: '3. Aspetto'
       }
@@ -502,10 +549,10 @@ export default {
       },
       TAB_DESIGN: {
         INSTRUCTIONS: {
-          HEADER: 'Personalizza questo wallet',
+          HEADER: 'Personalizza questo portafoglio',
           TEXT: 'Qui puoi scegliere il tema di default (chiaro o scuro) e lo sfondo.'
         },
-        TITLE: 'Wallet design'
+        TITLE: 'Design portafoglio'
       }
     },
 
@@ -529,105 +576,119 @@ export default {
     },
 
     WALLET_ALL: {
-      CREATE_WALLET: 'Crea wallet',
-      DELETE_WALLET: 'Elimina questo wallet',
-      HEADER: 'I miei wallets',
-      IMPORT_WALLET: 'Importa wallet',
-      LOADING_LEDGER: 'Loading Ledger Wallets...',
-      SHOW_WALLET: 'Mostra wallet',
+      LEDGER: {
+        CACHE: 'Metti in cache portafoglio Ledger?',
+        CACHE_INFO: 'Metti in cache i portafogli dal tuo Ledger per accelerare il caricamento quando si è connessi per la prima volta',
+        ADDITIONAL: '# di Portafogli Ledger'
+      },
+      CREATE_WALLET: 'Crea portafoglio',
+      DELETE_WALLET: 'Elimina questo portafoglio',
+      HEADER: 'I miei portafogli',
+      IMPORT_WALLET: 'Importa portafoglio',
+      LOADING_LEDGER: 'Caricamento portafogli Ledger...',
+      SHOW_WALLET: 'Mostra portafoglio',
       TOTAL_BALANCE: 'Saldo totale',
-      CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected'
+      ADDRESS: 'Indirizzo',
+      NAME: 'Name',
+      VOTING_FOR: 'Vota per',
+      BALANCE: 'Bilancio',
+      DELETE: 'Delete'
     },
 
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Recupera wallet',
-          TEXT: 'Inserisci la passphrase del tuo wallet. Puoi inserire prima l\'indirizzo, per assicurarsi che corrisponda alla passphrase specificata.'
+          HEADER: 'Recupera portafoglio',
+          TEXT: 'Inserisci la frase segreta del tuo portafoglio. Puoi inserire prima l\'indirizzo, per assicurarsi che corrisponda alla frase segreta specificata.'
         },
-        TITLE: '1. Importa wallet',
+        TITLE: '1. Importa portafoglio',
         ONLY_ADDRESS: 'Usa solo l\'indirizzo',
-        ONLY_PASSPHRASE: 'Usa solo la passphrase'
+        ONLY_PASSPHRASE: 'Usa solo la frase segreta'
       },
       STEP2: {
         INSTRUCTIONS: {
-          HEADER: 'Cifratura wallet',
-          TEXT: 'Inserisci una password che desideri utilizzare per cifrare la passphrase.'
+          HEADER: 'Cifratura portafoglio',
+          TEXT: 'Inserisci una password che desideri utilizzare per cifrare la frase segreta.'
         },
         TITLE: '2. Cifratura',
-        PASSWORD: 'Password wallet (opzionale)',
+        PASSWORD: 'Password portafoglio (opzionale)',
         PASSWORD_CONFIRM: 'Conferma password',
         PASSWORD_WARNING: 'Memorizzare la tua password può essere rischioso.'
       },
       STEP3: {
         INSTRUCTIONS: {
-          HEADER: 'Configurazione wallet',
-          TEXT: 'Opzionalmente, scegli un nome per il tuo wallet ed hai finito'
+          HEADER: 'Configurazione portafoglio',
+          TEXT: 'Opzionalmente, scegli un nome per il tuo portafoglio ed hai finito'
         },
         TITLE: '3. Conferma',
-        ADDRESS: 'Indirizzo wallet',
-        NAME: 'Nome wallet (opzionale)'
+        ADDRESS: 'Indirizzo portafoglio',
+        NAME: 'Nome portafoglio (opzionale)'
       },
-      FAILED: 'Impossibile importare il wallet'
+      FAILED: 'Impossibile importare il portafoglio'
     },
 
     WALLET_NEW: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Nuovo wallet',
-          TEXT_BEFORE_BUTTON: 'Seleziona uno di questi wallet appena generati. Se non ti piacciono, clicca sul',
+          HEADER: 'Nuovo portafoglio',
+          TEXT_BEFORE_BUTTON: 'Seleziona uno di questi portafogli appena generati. Se non ti piacciono, clicca sul',
           TEXT_AFTER_BUTTON: 'pulsante per generarne altri.'
         },
-        TITLE: '1. Scegli wallet'
+        TITLE: '1. Scegli portafoglio'
       },
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'La tua chiave personale',
-          TEXT: 'Assicurati di salvare la tua passphrase in maniera sicura. Non mostrare la passphrase a nessuno.'
+          TEXT: 'Assicurati di salvare la tua frase segreta in maniera sicura. Non mostrare la passphrase a nessuno.'
         },
         TITLE: '2. Backup'
       },
       STEP3: {
         INSTRUCTIONS: {
-          HEADER: 'Conferma Passphrase',
-          TEXT: 'Scrivi {words} dalla tua passphrase per verificare il nuovo conto.',
+          HEADER: 'Conferma frase segreta',
+          TEXT: 'Scrivi {words} dalla tua frase segreta per verificare il nuovo conto.',
           ALL_WORDS: 'tutte le parole',
           WORDS: 'le parole {words}'
         },
         TITLE: '3. Verifica',
-        CHECK_ENTIRE_PASSPHRASE: 'Controlla l\'intera passphrase',
-        VERIFY_ALL_WORDS: 'Verifica ogni parola della passphrase'
+        CHECK_ENTIRE_PASSPHRASE: 'Controlla l\'intera frase segreta',
+        VERIFY_ALL_WORDS: 'Verifica ogni parola della frase segreta'
       },
       STEP4: {
         INSTRUCTIONS: {
-          HEADER: 'Cifratura wallet',
+          HEADER: 'Cifratura portafoglio',
           TEXT: 'Inserisci una password che desideri utilizzare per cifrare la passphrase.'
         },
         TITLE: '4. Cifratura',
-        PASSWORD: 'Wallet password (opzionale)',
+        PASSWORD: 'Password portafoglio (opzionale)',
         PASSWORD_CONFIRM: 'Conferma password',
-        PASSWORD_WARNING: 'Memorizzare la tua passphrase può essere rischioso.'
+        PASSWORD_WARNING: 'Memorizzare la tua frase segreta può essere rischioso.'
       },
       STEP5: {
         INSTRUCTIONS: {
-          HEADER: 'Configurazione wallet',
-          TEXT: 'Opzionalmente, scegli un nome per il tuo wallet ed hai finito.'
+          HEADER: 'Configurazione portafoglio',
+          TEXT: 'Opzionalmente, scegli un nome per il tuo portafoglio ed hai finito.'
         },
         TITLE: '5. Conferma',
-        ADDRESS: 'Indirizzo wallet',
-        NAME: 'Nome wallet (opzionale)'
+        ADDRESS: 'Indirizzo portafoglio',
+        NAME: 'Nome portafoglio (opzionale)'
       }
     },
 
     WALLET_SHOW: {
-      NO_VOTE: 'Il wallet non ha votato',
+      NO_VOTE: 'Il portafoglio non ha votato',
       ADD_CONTACT: 'Aggiungi ai contatti'
     }
   },
 
+  PROFILE_LEAVING_CONFIRMATION: {
+    QUESTION: 'Sei sicuro di voler ignorare le modifiche apportate a questo profilo?',
+    NO: 'No, salvale',
+    YES: 'Si, ignorale'
+  },
+
   PROFILE_REMOVAL_CONFIRMATION: {
-    NOTE: 'Anche se i tuoi wallet verranno rimossi, non verrà cancellato alcun dato dalla blockchain. Potrai recuperare i wallet finché possiedi le corrispettive passphrase',
+    NOTE: 'Anche se i tuoi portafogli verranno rimossi, non verrà cancellato alcun dato dalla blockchain. Potrai recuperare i portafogli finché possiedi le corrispettive passphrase',
     QUESTION: 'Sei sicuro di voler rimuovere il profilo?'
   },
 
@@ -639,45 +700,41 @@ export default {
   SELECTION_BACKGROUND: {
     MODAL_HEADER: 'Seleziona sfondo',
     TEXTURES: 'Textures',
-    WALLPAPERS: 'Wallpapers'
+    WALLPAPERS: 'Sfondi'
   },
 
   SELECTION_NETWORK: {
     MODAL_HEADER: 'Reti'
   },
 
-  NETWORK: {
-    FAILED_CONFIG_UPDATE: 'Failed to update network configuration for {network}'
-  },
-
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Trasferimento',
-      SECOND_SIGNATURE: 'Second Signature',
+      SECOND_SIGNATURE: 'Seconda firma',
       DELEGATE_REGISTRATION: 'Registrazione Delegato',
       VOTE: 'Vota',
       UNVOTE: 'Rimuovi voto',
       MULTI_SIGNATURE: 'Multi Signature',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock Transfer',
-      MULTI_PAYMENT: 'Multi Payment',
+      TIMELOCK_TRANSFER: 'trasferimneto Timelock',
+      MULTI_PAYMENT: 'Pagamento multiplo',
       DELEGATE_RESIGNATION: 'Dimissioni Delegato'
     },
     ERROR: {
       TRANSFER: 'La tua transazione non può essere inviata',
-      SECOND_SIGNATURE: 'Impossibile registrare Second Signature',
+      SECOND_SIGNATURE: 'Impossibile registrare Seconda firma',
       DELEGATE_REGISTRATION: 'Impossibile registrare come Delegato',
       VOTE: 'Impossibile registrare il voto',
       UNVOTE: 'Impossibile registrare la rimozione del voto',
-      MULTI_SIGNATURE: 'Impossibile creare Multi Signature',
+      MULTI_SIGNATURE: 'Impossibile creare firma multipla',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Impossibile creare Timelock transfer',
-      MULTI_PAYMENT: 'Impossibile creare Multi Payment',
+      TIMELOCK_TRANSFER: 'Impossibile creare trasferimento Timelock',
+      MULTI_PAYMENT: 'Impossibile creare pagamento multiplo',
       DELEGATE_RESIGNATION: 'La dimissione del Delegato non è andata a buon fine',
       SAVE_OFFLINE: 'Impossibile salvare il tuo file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
-      FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa'
-
+      FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
+      NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'
@@ -690,16 +747,20 @@ export default {
         INSTRUCTIONS: 'per {address}.'
       }
     },
+    INFO: {
+      BROADCASTING: 'Your transaction is being broadcast to the network',
+      BROADCASTING_SLOW: 'It looks like it\'s taking a while to broadcast your transaction. You may close the window and it will continue to send in the background.'
+    },
     SUCCESS: {
       TRANSFER: 'La tua transazione è stata inviata con successo',
-      SECOND_SIGNATURE: 'Second Signature registrata con successo',
+      SECOND_SIGNATURE: 'Seconda firma registrata con successo',
       DELEGATE_REGISTRATION: 'Registrato con successo come Delegato',
       VOTE: 'Votato con successo',
       UNVOTE: 'Voto rimosso con successo',
-      MULTI_SIGNATURE: 'Multi Signature creata con successo',
+      MULTI_SIGNATURE: 'Firma multipla creata con successo',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock Transfer creato con successo',
-      MULTI_PAYMENT: 'Multi Payment creato con successo',
+      TIMELOCK_TRANSFER: 'Trasferimento Timelock creato con successo',
+      MULTI_PAYMENT: 'Pagamento multiplo creato con successo',
       DELEGATE_RESIGNATION: 'Dimissioni Delegato date con successo',
       SAVE_OFFLINE: 'File transazione creato con successo in: {path}'
     },
@@ -728,13 +789,13 @@ export default {
     LEDGER_USER_DECLINED: 'L\'utente ha rifiutato',
     MULTIPLE: 'Multiplo',
     OPEN_IN_EXPLORER: 'Apri in Explorer',
-    PASSPHRASE: 'Passphrase',
+    PASSPHRASE: 'Frase segreta',
     PASSWORD: 'Password di cifratura',
     RECIPIENT: 'Destinatario',
     RESEND: 'Invia di nuovo',
     RESENT_NOTICE: 'La transazione {transactionId} è stata inviata di nuovo',
     SAVE_OFFLINE: 'Salva transazione offline',
-    SECOND_PASSPHRASE: 'Seconda Passphrase',
+    SECOND_PASSPHRASE: 'Seconda frase segreta',
     SEND: 'Invia',
     SEND_ALL: 'Invia Tutto',
     SENDER: 'Mittente',
@@ -747,16 +808,16 @@ export default {
   },
 
   SIGN_VERIFY: {
-    VERIFY_WALLET: 'Verifica il tuo wallet',
-    VERIFY_BY_SIGNING: 'Firma un messaggio per verificare di essere il proprietario del wallet',
+    VERIFY_WALLET: 'Verifica il tuo portafoglio',
+    VERIFY_BY_SIGNING: 'Firma un messaggio per verificare di essere il proprietario del portafoglio',
     SIGN: 'Firma',
     VERIFY: 'Verifica',
     TITLE_SIGN: 'Firma un messaggio',
     TITLE_VERIFY: 'Verifica un messaggio',
-    MESSAGE: 'Message',
-    ADDRESS: 'Address',
-    PUBLIC_KEY: 'Public key',
-    SIGNATURE: 'Signature',
+    MESSAGE: 'Messaggio',
+    ADDRESS: 'Indirizzo',
+    PUBLIC_KEY: 'Chiave pubblica',
+    SIGNATURE: 'Firma',
     JSON_MESSAGE: 'Contenuto messaggio firmato',
     FORMAT_FOOTER: 'Formato (JSON): { "publickey": "...", "signature": "...", "message": "..." }',
     VERIFIED: 'Il messaggio è stato verificato con successo',
@@ -764,13 +825,15 @@ export default {
     CONFIRMATION: 'Conferma',
     DELETE: 'Elimina messaggio',
     FAILED_SIGN: 'Impossibile firmare messaggio',
-    FAILED_VERIFY: 'Impossibile verificare messaggio'
+    FAILED_VERIFY: 'Impossibile verificare messaggio',
+    SUCCESSFULL_SIGN: 'Il tuo messaggio è stato firmato',
+    SUCCESSFULL_VERIFY: 'Il tuo messaggio è stato verificato'
   },
 
   SYNCHRONIZER: {
     VOTE: 'votato per',
     UNVOTE: 'voto rimosso',
-    NEW_SECOND_SIGNATURE: 'Nuova second signature: {address}',
+    NEW_SECOND_SIGNATURE: 'Nuova Seconda firma: {address}',
     NEW_DELEGATE_REGISTRATION: 'Nuovo delegato: {address} registrato come {username}',
     NEW_VOTE: 'Nuovo voto: {address} {voteUnvote} {publicKey}',
     NEW_TRANSFER_SENT: 'Nuovo trasferimento: {amount} inviato da {sender} verso {recipient}',
@@ -789,24 +852,44 @@ export default {
 
   WALLET_HEADING: {
     ACTIONS: {
-      WALLET_NAME: 'Nome wallet',
+      WALLET_NAME: 'Nome portafoglio',
+      CONTACT_NAME: 'Nome contatto',
       REGISTER_DELEGATE: 'Registra Delegato',
-      SECOND_PASSPHRASE: '2ª passphrase',
-      DELETE_WALLET: 'Elimina wallet',
-      SHOW_PUBLIC_KEY: 'Mostra Public Key',
+      SECOND_PASSPHRASE: '2ª frase segreta',
+      DELETE_WALLET: 'Elimina portafoglio',
+      SHOW_PUBLIC_KEY: 'Mostra chiave pubblica',
       SHOW_ADDRESS: 'Mostra indirizzo'
     },
-    SECOND_PASSPHRASE_ENABLED: 'Second Signature abilitata'
+    SECOND_PASSPHRASE_ENABLED: 'Seconda firma abilitata'
   },
 
   WALLET_SECOND_SIGNATURE: {
-    NEW: 'Genera nuova seconda passphrase',
-    ALREADY_REGISTERED: 'Esiste già una seconda passphrase registrata per questo indirizzo',
-    INSTRUCTIONS: 'Questa è la tua seconda passphrase. Assicurati di fare un backup e di tenerla al sicuro!'
+    NEW: 'Genera nuova seconda frase segreta',
+    ALREADY_REGISTERED: 'Esiste già una seconda frase segreta registrata per questo indirizzo',
+    INSTRUCTIONS: 'Questa è la tua seconda frase segreta. Assicurati di fare un backup e di tenerla al sicuro!'
   },
 
   WALLET_SIDEBAR: {
-    LOADING_LEDGER: 'Loading Ledger...'
+    FILTER: 'Filtro',
+    HIDE: 'Nascondi',
+    EXPAND: 'Espandi',
+    LOADING_LEDGER: 'Loading Ledger...',
+    FILTERS: {
+      HIDE_EMPTY_CONTACTS: 'Nascondi contatti vuoti',
+      HIDE_EMPTY_WALLETS: 'Nascondi portafogli vuoti',
+      HIDE_LEDGER: 'Nascondi portafogli Ledger'
+    },
+    SEARCH: {
+      PLACEHOLDER_CONTACTS: 'Clicca per filtrare i tuoi contatti',
+      PLACEHOLDER_WALLETS: 'Clicca per filtrare i tuoi portafogli'
+    },
+    SORT: {
+      BALANCE_ASC: 'Bilancio (min to max)',
+      BALANCE_DESC: 'Bilancio (max to min)',
+      BY: 'Ordina per',
+      NAME_ASC: 'Nome (A to Z)',
+      NAME_DESC: 'Nome (Z to A)'
+    }
   },
 
   WALLET_DELEGATES: {
@@ -825,27 +908,43 @@ export default {
     VOTE: 'Voto',
     USERNAME_ERROR: 'Nessun carattere speciale o maiuscolo consentito',
     USERNAME_MAX_LENGTH_ERROR: 'Il nome utente deve essere inferiore o uguale a 20 caratteri',
-    ALREADY_REGISTERED: 'Questo wallet è già registrato come Delegato',
+    ALREADY_REGISTERED: 'Questo portafoglio è già registrato come Delegato',
     BLOG: 'Guida al voto',
     EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete Ark sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
     VOTE_DELEGATE: 'Vota Delegato {delegate}',
     UNVOTE_DELEGATE: 'Rimuovi voto a Delegato {delegate}',
-    VOTED_FOR: 'Hai votato per il Delegato {delegate}'
+    CURRENTLY_VOTED: 'Al momento hai votato per {delegato}',
+    VOTED_FOR: 'Hai votato per il Delegato {delegate}',
+    WALLET_VOTED_FOR: 'Questo portafoglio ha votato per il delegato {delegate}',
+    VOTE_INFO: 'Info:',
+    NO_VOTE: 'Questo portafoglio non sta votando. Per visualizzare più informazioni e votare, utilizzare la ricerca o fai clic su qualsiasi delegato',
+    AWAITING_VOTE_CONFIRMATION: 'Il tuo {type} è in attesa di conferma',
+    LOADING_VOTE: 'Caricamento dei dettagli del voto ...',
+    SEARCH_DELEGATE: 'Cerca delegato'
   },
 
   WALLET_RENAME: {
-    TITLE: 'Rinomina Wallet',
-    TITLE_ADD: 'Aggiungi wallet',
-    NEW: 'Nuovo nome wallet',
-    ADD: 'Aggiungi wallet',
-    RENAME: 'Rinomina wallet',
-    ADDRESS_INFO: 'Scegli un nome per questo wallet: ',
-    ERROR_LEDGER: 'Impossibile rinominare il ledger wallet: {error}'
+    TITLE: 'Rinomina portafoglio',
+    TITLE_ADD: 'Aggiungi portafoglio',
+    NEW: 'Nuovo nome portafoglio',
+    ADD: 'Aggiungi portafoglio',
+    RENAME: 'Rinomina portafoglio',
+    ADDRESS_INFO: 'Scegli un nome per questo portafoglio: ',
+    ERROR_LEDGER: 'Impossibile rinominare il portafoglio Ledger: {error}'
+  },
+
+  CONTACT_RENAME: {
+    TITLE: 'Rinomina contatto',
+    TITLE_ADD: 'Aggiungi contatto',
+    NEW: 'Nuovo nome contatto',
+    ADD: 'Aggiungi contatto',
+    RENAME: 'Rinomina contatto',
+    ADDRESS_INFO: 'Scegli un nom per questo contatto: '
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
-    NOTE: 'Non verrà cancellato alcun dato sulla blockchain. Potrai recuperare il wallet finché possiedi la passphrase',
-    QUESTION: 'Sei sicuro di voler rimuovere questo wallet?'
+    NOTE: 'Non verrà cancellato alcun dato sulla blockchain. Potrai recuperare il portafoglio finché possiedi la passphrase',
+    QUESTION: 'Sei sicuro di voler rimuovere questo portafoglio?'
   },
 
   WALLET_TRANSACTIONS: {
@@ -853,6 +952,13 @@ export default {
     RECIPIENT: 'Destinatario',
     SENDER: 'Mittente',
     AMOUNT: 'Importo',
-    NEW_TRANSACTIONS: 'Questo wallet ha {count} nuova/e transazione/i. Premi il pulsante ricarica per aggiornare.'
+    NEW_TRANSACTIONS: 'Questo portafoglio ha {count} nuova/e transazione/i. Premi il pulsante ricarica per aggiornare.'
+  },
+
+  WALLET_TABLE: {
+    ACTIONS: 'Azioni',
+    DELETE: 'Elimina',
+    NO_DELETE: 'I portafogli Ledger non possono essere eliminati',
+    RENAME: 'Rinomina'
   }
 }
