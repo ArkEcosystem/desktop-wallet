@@ -710,14 +710,14 @@ export default {
   TRANSACTION: {
     TYPE: {
       TRANSFER: 'Trasferimento',
-      SECOND_SIGNATURE: 'Seconda firma',
+      SECOND_SIGNATURE: 'Seconda Firma',
       DELEGATE_REGISTRATION: 'Registrazione Delegato',
-      VOTE: 'Vota',
-      UNVOTE: 'Rimuovi voto',
+      VOTE: 'Voto',
+      UNVOTE: 'Voto Rimosso',
       MULTI_SIGNATURE: 'Multi Signature',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'trasferimneto Timelock',
-      MULTI_PAYMENT: 'Pagamento multiplo',
+      TIMELOCK_TRANSFER: 'Trasferimneto Timelock',
+      MULTI_PAYMENT: 'Pagamento Multiplo',
       DELEGATE_RESIGNATION: 'Dimissioni Delegato'
     },
     ERROR: {
