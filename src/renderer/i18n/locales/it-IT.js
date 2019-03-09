@@ -57,7 +57,7 @@ export default {
       TITLE: 'La tua Forza',
       FINANCE: 'La cosa più importante da sapere per gli utenti riguardo le criptovalute è che rovesciano completamente il comunemente accettato modello di come funziona la finanza.',
       BANKS: 'Nella finanza tradizionale, rimetti il controllo del tuo denaro ad una banca. Poiché le banche hanno il controllo sui tuoi soldi, possono intraprendere azioni per tuo conto, come il rimborso delle transazioni e il ripristino delle informazioni di accesso.',
-      CRYPTO: 'Le criptovalute prendono quel potere e te lo forniscono direttamente. Usando nient\'altro che la tua chiave privata, puoi controllare esattamente quando, dove e come viene conservato e speso il tuo denaro.',
+      CRYPTO: 'Le criptovalute prendono quel potere e te lo forniscono direttamente. Usando nient\'altro che la tua frase segreta, puoi controllare esattamente quando, dove e come viene conservato e speso il tuo denaro.',
       RESPONSIBILITY: 'Tuttavia, dalle parole di Uncle Ben Parker, da un grande potere derivano grandi responsabilità.'
     },
     DUTY: {
@@ -748,8 +748,8 @@ export default {
       }
     },
     INFO: {
-      BROADCASTING: 'Your transaction is being broadcast to the network',
-      BROADCASTING_SLOW: 'It looks like it\'s taking a while to broadcast your transaction. You may close the window and it will continue to send in the background.'
+      BROADCASTING: 'La tua transazione viene trasmessa alla rete',
+      BROADCASTING_SLOW: 'Sembra che ci voglia un po\'per trasmettere la tua transazione. È possibile chiudere la finestra e continuerà a trasmettere in background.'
     },
     SUCCESS: {
       TRANSFER: 'La tua transazione è stata inviata con successo',
