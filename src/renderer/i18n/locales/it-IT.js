@@ -639,7 +639,7 @@ export default {
       STEP2: {
         INSTRUCTIONS: {
           HEADER: 'La tua chiave personale',
-          TEXT: 'Assicurati di salvare la tua frase segreta in maniera sicura. Non mostrare la passphrase a nessuno.'
+          TEXT: 'Assicurati di salvare la tua frase segreta in maniera sicura. Non mostrare la frase segreta a nessuno.'
         },
         TITLE: '2. Backup'
       },
@@ -657,7 +657,7 @@ export default {
       STEP4: {
         INSTRUCTIONS: {
           HEADER: 'Cifratura portafoglio',
-          TEXT: 'Inserisci una password che desideri utilizzare per cifrare la passphrase.'
+          TEXT: 'Inserisci una password che desideri utilizzare per cifrare la frase segreta.'
         },
         TITLE: '4. Cifratura',
         PASSWORD: 'Password portafoglio (opzionale)',
@@ -688,7 +688,7 @@ export default {
   },
 
   PROFILE_REMOVAL_CONFIRMATION: {
-    NOTE: 'Anche se i tuoi portafogli verranno rimossi, non verrà cancellato alcun dato dalla blockchain. Potrai recuperare i portafogli finché possiedi le corrispettive passphrase',
+    NOTE: 'Anche se i tuoi portafogli verranno rimossi, non verrà cancellato alcun dato dalla blockchain. Potrai recuperare i portafogli finché possiedi le corrispettive frasi segrete',
     QUESTION: 'Sei sicuro di voler rimuovere il profilo?'
   },
 
@@ -943,7 +943,7 @@ export default {
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
-    NOTE: 'Non verrà cancellato alcun dato sulla blockchain. Potrai recuperare il portafoglio finché possiedi la passphrase',
+    NOTE: 'Non verrà cancellato alcun dato sulla blockchain. Potrai recuperare il portafoglio finché possiedi la frase segreta',
     QUESTION: 'Sei sicuro di voler rimuovere questo portafoglio?'
   },
 
