@@ -905,7 +905,7 @@ export default {
     VOTERS: 'Votanti',
     UNVOTE: 'Rimuovi voto',
     VOTES: 'Voti',
-    VOTE: 'Voto',
+    VOTE: 'Vota',
     USERNAME_ERROR: 'Nessun carattere speciale o maiuscolo consentito',
     USERNAME_MAX_LENGTH_ERROR: 'Il nome utente deve essere inferiore o uguale a 20 caratteri',
     ALREADY_REGISTERED: 'Questo portafoglio è già registrato come Delegato',
