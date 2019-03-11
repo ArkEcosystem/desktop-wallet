@@ -1,8 +1,14 @@
+import logger from 'electron-log'
 import { resolve } from 'path'
+import { cpus } from 'os'
 import { Pool } from 'threads'
 
-// TODO use CPU cores - 1 threads
-const pool = new Pool()
+// Use (number of logical CPUs - 1) threads
+const pool = new Pool(cpus().length - 1)
+
+pool.on('error', (job, error) => {
+  logger.error(error)
+})
 
 export default class {
   constructor () {
