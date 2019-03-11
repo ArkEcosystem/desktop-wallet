@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+/**
+ * This class mimics the JavaScript API client, but it can be used to send
+ * request on the background
+ */
 export default class BackgroundHttpClient {
   /**
    * @constructor
@@ -82,17 +86,23 @@ export default class BackgroundHttpClient {
    * @return {Promise}
    * @throws Will throw an error if the HTTP request fails.
    */
-  sendRequest (method, url, data) {
+  sendRequest (method, url, payload) {
     this.headers['API-Version'] = this.version
 
     const config = {
       baseURL: this.host,
-      data,
       headers: this.headers,
       method,
       timeout: this.timeout,
       url
     }
+
+    if (payload.params) {
+      config.params = payload.params
+      delete payload.params
+    }
+
+    config.data = payload
 
     return this.backgroundClient ? this.backgroundClient.request(config) : axios(config)
   }
