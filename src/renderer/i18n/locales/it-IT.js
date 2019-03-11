@@ -589,10 +589,10 @@ export default {
       SHOW_WALLET: 'Mostra portafoglio',
       TOTAL_BALANCE: 'Saldo totale',
       ADDRESS: 'Indirizzo',
-      NAME: 'Name',
+      NAME: 'Nome',
       VOTING_FOR: 'Vota per',
-      BALANCE: 'Bilancio',
-      DELETE: 'Delete'
+      BALANCE: 'Saldo',
+      DELETE: 'Rimuovi'
     },
 
     WALLET_IMPORT: {
