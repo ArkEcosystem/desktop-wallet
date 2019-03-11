@@ -1,8 +1,5 @@
 import axios from 'axios'
 
-// This flag is used to launch request on a worker or not
-const USE_BACKGROUND = true
-
 export default class BackgroundHttpClient {
   /**
    * @constructor
@@ -97,6 +94,6 @@ export default class BackgroundHttpClient {
       url
     }
 
-    return USE_BACKGROUND ? this.backgroundClient.request(config) : axios(config)
+    return this.backgroundClient ? this.backgroundClient.request(config) : axios(config)
   }
 }
