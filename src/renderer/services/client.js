@@ -15,6 +15,7 @@ const httpClient = new Http()
 
 /**
  * This proxy has the mission of providing
+ * TODO override static `findPeers` to make its request on background too
  */
 class ApiClient extends OriginalClient {
   setConnection (host) {

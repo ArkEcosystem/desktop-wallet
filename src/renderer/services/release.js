@@ -1,6 +1,6 @@
-import Http from '@/services/http'
 // NOTE: uses a relative path because it is used on the `main` process too
 import packageJson from '../../../package.json'
+import Http from '@/services/http'
 
 export default {
   get currentVersion () {
