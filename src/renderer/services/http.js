@@ -2,7 +2,7 @@ import axios from 'axios'
 import Worker from './worker'
 
 // This flag is used to launch request on a worker or not
-const USE_BACKGROUND = process.env.NODE_ENV !== 'test'
+const USE_BACKGROUND = false
 
 export default class extends Worker {
   get (url, config) {
