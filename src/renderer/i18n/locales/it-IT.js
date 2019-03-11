@@ -178,9 +178,9 @@ export default {
   },
 
   TIME_FORMAT: {
-    'Default': 'Default',
-    '12h': '12h',
-    '24h': '24h'
+    'Default': 'Predefinito',
+    '12H': '12h',
+    '24H': '24h'
   },
 
   BIP39_LANGUAGES: {
