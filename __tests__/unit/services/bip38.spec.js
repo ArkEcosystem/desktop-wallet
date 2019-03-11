@@ -11,10 +11,6 @@ beforeEach(() => {
   bip38 = new Bip38()
 })
 
-afterAll(() => {
-  Bip38.pool.killAll()
-})
-
 describe('BIP38 service', () => {
   describe('decrypt', () => {
     describe('when there is a successful message', () => {

@@ -5,6 +5,10 @@ import Worker from './worker'
 const USE_BACKGROUND = false
 
 export default class extends Worker {
+  constructor () {
+    super('http')
+  }
+
   get (url, config) {
     return this.request({
       url,
@@ -27,7 +31,7 @@ export default class extends Worker {
     }
 
     if (USE_BACKGROUND) {
-      return this.run('http')
+      return this.run()
         .send(config)
         .promise()
     }

@@ -1,6 +1,10 @@
 import Worker from './worker'
 
 export default class extends Worker {
+  constructor () {
+    super('bip38')
+  }
+
   /**
    * @param {Object} config
    * @param {String} config.bip38key
@@ -8,9 +12,17 @@ export default class extends Worker {
    * @param {String} config.wif
    */
   decrypt (config) {
-    return this.run('bip38')
+    return this.run()
       .send(config)
       .promise()
+      .then(result => {
+        this.stop()
+        return result
+      })
+      .catch(error => {
+        this.stop()
+        throw error
+      })
   }
 
   /**
@@ -20,8 +32,7 @@ export default class extends Worker {
    * @param {String} config.wif
    */
   encrypt (config) {
-    return this.run('bip38')
-      .send(config)
-      .promise()
+    // The receiver worker decides if decrypt or encrypt based on `config` properties
+    return this.decrypt(config)
   }
 }
