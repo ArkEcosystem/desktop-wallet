@@ -1,4 +1,4 @@
-import { clone, difference } from 'lodash'
+import { clone, difference, find } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -145,11 +145,12 @@ class Action {
   async refreshWalletsData (wallets, walletsData) {
     const refreshedWallets = []
 
-    for (const wallet of wallets) {
-      const walletData = walletsData.find(data => data && data.address === wallet.address)
-      if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
+    for (const walletData of walletsData) {
+      if (!walletData || !walletData.publicKey) {
         continue
       }
+
+      const wallet = find(wallets, { address: walletData.address })
 
       const refreshedWallet = await this.processWalletData(wallet, walletData)
       if (refreshedWallet) {
@@ -164,24 +165,26 @@ class Action {
    * Fetch the transactions of the wallets and process them.
    *
    * @param  {Object[]} wallets
-   * @param  {Object} walletsTransactions - transactions aggregated by wallet address
+   * @param  {Object} transactionsByWallet - transactions aggregated by wallet address
    * @return {Object[]} wallets that should be updated
    */
-  async refreshTransactions (wallets, walletsTransactions) {
+  async refreshTransactions (wallets, transactionsByWallet) {
     const walletsToTouch = []
 
-    for (const wallet of wallets) {
-      const transactions = walletsTransactions[wallet.address]
-      if (transactions && transactions.length) {
-        const walletToTouch = await this.processWalletTransactions(wallet, transactions)
-        if (walletToTouch) {
-          walletsToTouch.push(walletToTouch)
-        }
+    const walletsWithTransactions = Object.keys(transactionsByWallet)
+      .filter(address => transactionsByWallet[address] && transactionsByWallet[address].length)
+      .map(address => find(wallets, { address }))
+
+    for (const wallet of walletsWithTransactions) {
+      const transactions = walletsWithTransactions[wallet.address]
+      const walletToTouch = await this.processWalletTransactions(wallet, transactions)
+      if (walletToTouch) {
+        walletsToTouch.push(walletToTouch)
       }
     }
 
     // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
-    eventBus.emit(`transactions:fetched`, walletsTransactions)
+    eventBus.emit(`transactions:fetched`, transactionsByWallet)
 
     return walletsToTouch
   }
@@ -196,12 +199,11 @@ class Action {
    */
   async processWalletData (wallet, walletData) {
     try {
-      const refreshedWallet = {
-        ...wallet,
-        ...walletData
-      }
       if (!wallet.isLedger) {
-        return refreshedWallet
+        return {
+          ...wallet,
+          ...walletData
+        }
       }
 
       this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })

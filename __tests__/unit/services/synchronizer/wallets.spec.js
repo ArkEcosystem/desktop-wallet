@@ -217,8 +217,8 @@ describe('Services > Synchronizer > Wallets', () => {
       action.fetchWalletsData = jest.fn()
     })
 
-    it('should not process wallet if empty or cold', async () => {
-      const coldWallet = { ...wallets[0], balance: 0, publicKey: null }
+    it('should not process wallet if cold', async () => {
+      const coldWallet = { ...wallets[0], publicKey: null }
       const walletsData = [
         coldWallet,
         {},
