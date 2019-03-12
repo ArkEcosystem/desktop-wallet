@@ -112,9 +112,19 @@ class Action {
       this.fetchWalletsTransactions(addresses)
     ])
 
-    // NOTE: this has to be run in order to avoid race conditions when updating the wallet store
-    await this.refreshWalletsData(wallets, walletsData)
-    await this.refreshTransactions(wallets, walletsTransactions)
+    // NOTE: this has to be run in order to avoid race conditions when updating the wallet store TODO change it
+    const refreshedWallets = await this.refreshWalletsData(wallets, walletsData)
+    const walletsToTouch = await this.refreshTransactions(wallets, walletsTransactions)
+
+    // TODO uniq and update d by id
+    const walletsToUpdate = [
+      ...refreshedWallets,
+      ...walletsToTouch
+    ]
+
+    if (walletsToUpdate.length) {
+      this.$dispatch('wallet/updateBulk', walletsToUpdate)
+    }
   }
 
   async fetchWalletsData (addresses) {
@@ -130,7 +140,7 @@ class Action {
    *
    * @param  {Object[]} wallets
    * @param  {Object[]} walletsData - fetched (incomplete) data of each wallet
-   * @return {void}
+   * @return {Object[]} wallets that should be updated
    */
   async refreshWalletsData (wallets, walletsData) {
     const refreshedWallets = []
@@ -147,9 +157,7 @@ class Action {
       }
     }
 
-    if (refreshedWallets.length) {
-      this.$dispatch('wallet/updateBulk', refreshedWallets)
-    }
+    return refreshedWallets
   }
 
   /**
@@ -157,18 +165,25 @@ class Action {
    *
    * @param  {Object[]} wallets
    * @param  {Object} walletsTransactions - transactions aggregated by wallet address
-   * @return {void}
+   * @return {Object[]} wallets that should be updated
    */
   async refreshTransactions (wallets, walletsTransactions) {
+    const walletsToTouch = []
+
     for (const wallet of wallets) {
       const transactions = walletsTransactions[wallet.address]
       if (transactions && transactions.length) {
-        this.processWalletTransactions(wallet, transactions)
+        const walletToTouch = await this.processWalletTransactions(wallet, transactions)
+        if (walletToTouch) {
+          walletsToTouch.push(walletToTouch)
+        }
       }
     }
 
     // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
     eventBus.emit(`transactions:fetched`, walletsTransactions)
+
+    return walletsToTouch
   }
 
   /**
@@ -177,7 +192,7 @@ class Action {
    *
    * @param  {Object} wallet
    * @param  {Object} walletData Wallet data fetched from API
-   * @return {void}
+   * @return {Object|void} wallet to update
    */
   async processWalletData (wallet, walletData) {
     try {
@@ -201,6 +216,7 @@ class Action {
    *
    *  - Updates the last time that the transactions of a wallet were checked
    *  - If any of the transaction is new, display a toast
+   * @return {Object|void} wallet to update
    */
   async processWalletTransactions (wallet, transactions) {
     try {
@@ -212,22 +228,6 @@ class Action {
 
         if (wallet.isLedger) {
           return
-        }
-
-        const latest = this.findLatestTransaction(transactions)
-        const latestAt = latest.timestamp
-        const checkedAt = wallet.transactions ? wallet.transactions.checkedAt : 0
-
-        if (latestAt > checkedAt) {
-          this.$dispatch('wallet/update', {
-            ...wallet,
-            transactions: { checkedAt: latestAt }
-          })
-
-          // Disable notification on first check
-          if (checkedAt > 0) {
-            this.displayNewTransaction(latest, wallet)
-          }
         }
 
         const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
@@ -243,6 +243,22 @@ class Action {
           const profile = clone(this.$scope.session_profile)
           profile.unconfirmedVotes = filteredVotes
           this.$dispatch('profile/update', profile)
+        }
+
+        const latest = this.findLatestTransaction(transactions)
+        const latestAt = latest.timestamp
+        const checkedAt = wallet.transactions ? wallet.transactions.checkedAt : 0
+
+        if (latestAt > checkedAt) {
+          // Disable notification on first check
+          if (checkedAt > 0) {
+            this.displayNewTransaction(latest, wallet)
+          }
+
+          return {
+            ...wallet,
+            transactions: { checkedAt: latestAt }
+          }
         }
       }
     } catch (error) {
