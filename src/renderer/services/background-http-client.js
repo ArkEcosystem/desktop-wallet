@@ -23,6 +23,14 @@ export default class BackgroundHttpClient {
   }
 
   /**
+   * The HTTP client that performs all the requests.
+   * By default axios is used, but it can be overwritten by setting the property `__httpClient`.
+   */
+  get httpClient () {
+    return this.__httpClient || axios
+  }
+
+  /**
    * Used to specify the API Version.
    * @param {Number} version
    */
@@ -104,6 +112,6 @@ export default class BackgroundHttpClient {
 
     config.data = payload
 
-    return this.backgroundClient ? this.backgroundClient.request(config) : axios(config)
+    return this.httpClient(config)
   }
 }

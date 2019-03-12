@@ -14,13 +14,15 @@ import BackgroundHttpClient from '@/services/background-http-client'
 const httpClient = new Http()
 
 /**
- * This proxy has the mission of providing
+ * This class has the mission of monkey-patching the API client to establish
+ * its inner HTTP client.
+ * It can be used to run requests in workers.
  * TODO override static `findPeers` to make its request on background too
  */
 class ApiClient extends OriginalClient {
   setConnection (host) {
     this.http = new BackgroundHttpClient(host, this.version)
-    this.http.backgroundClient = httpClient
+    this.http.__httpClient = httpClient.request
   }
 }
 
