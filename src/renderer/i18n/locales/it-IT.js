@@ -7,7 +7,7 @@ export default {
     APPEARANCE: 'Aspetto',
     AVATAR: 'Avatar',
     BACK: 'Indietro',
-    BACKGROUND: 'Background',
+    BACKGROUND: 'Sfondo',
     BIP39_LANGUAGE: 'Lingua Frase Segreta (BIP39)',
     CONFIRM: 'Conferma',
     CURRENCY: 'Valuta',
@@ -172,8 +172,8 @@ export default {
 
   LANGUAGES: {
     'en-US': 'English',
-    'es-ES': 'Spanish',
-    'it-IT': 'Italian',
+    'es-ES': 'Español',
+    'it-IT': 'Italiano',
     'pt-BR': 'Portugues - Brazil'
   },
 
@@ -218,7 +218,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Made with ♥ by Ark'
+    TEXT: 'Fatto con ♥ da Ark'
   },
 
   APP_SIDEMENU: {
@@ -374,7 +374,7 @@ export default {
       OVERCONSTRAINED: 'Sembra che non siamo riusciti a trovare una webcam corretta.',
       STREAM: 'Sembra che tu stia utilizzando un browser non supportato. Questo è molto curioso ..'
     },
-    LOADING: 'Loading webcam',
+    LOADING: 'Caricamento webcam in corso',
     INSTRUCTION: 'Pisiziona il codice QR davanti alla webcam',
     TITLE: 'QR Scanner',
     DECODE_FAILED: 'Impossibile decodificare i dati: {data}'
@@ -418,7 +418,7 @@ export default {
     CANCEL: 'Annulla',
     CONNECT: 'Connetti',
     HOST: 'IP / Host',
-    PORT: 'Port',
+    PORT: 'Porta',
     TITLE: 'Connetti ad un peer personalizzato',
     VALIDATING: 'Validazione dettagli peer...',
     PLACEHOLDER: {
@@ -570,7 +570,7 @@ export default {
         CONTENT: 'Changelly ti permette di scambiare altre criptovalute in {ticker} ed ha un\'opzione per acquistare {ticker} direttamente tramite le tue carte di credito o di debito.',
         CONFIRMATION: 'Ho letto e sono d\'accordo con i termini {terms} e {privacy} di Changelly. Facendo clic su {button}, riconosco e comprendo che la mia transazione potrebbe attivare la verifica AML/KYC in conformità con Changelly {kyc}.',
         TERMS_OF_USE: 'termini d\'uso',
-        PRIVACY_POLICY: 'privacy policy',
+        PRIVACY_POLICY: 'politica sulla riservatezza',
         KYC: 'AML/KYC'
       }
     },
@@ -873,7 +873,7 @@ export default {
     FILTER: 'Filtro',
     HIDE: 'Nascondi',
     EXPAND: 'Espandi',
-    LOADING_LEDGER: 'Loading Ledger...',
+    LOADING_LEDGER: 'Caricamento Ledger in corso...',
     FILTERS: {
       HIDE_EMPTY_CONTACTS: 'Nascondi contatti vuoti',
       HIDE_EMPTY_WALLETS: 'Nascondi portafogli vuoti',
@@ -896,7 +896,7 @@ export default {
     RANK: 'Rango',
     USERNAME: 'Username',
     PRODUCTIVITY: 'Produttività',
-    RANK_BANNER: 'Rank: {rank}',
+    RANK_BANNER: 'Rango: {rank}',
     PRODUCTIVITY_BANNER: 'Produttività: {productivity}',
     APPROVAL: 'Voto %',
     FORGED: 'Forgiati',
