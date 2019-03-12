@@ -375,8 +375,8 @@ export default {
       STREAM: 'Sembra che tu stia utilizzando un browser non supportato. Questo è molto curioso ..'
     },
     LOADING: 'Caricamento webcam in corso',
-    INSTRUCTION: 'Pisiziona il codice QR davanti alla webcam',
-    TITLE: 'QR Scanner',
+    INSTRUCTION: 'Posiziona il codice QR davanti alla webcam',
+    TITLE: 'Scanner QR',
     DECODE_FAILED: 'Impossibile decodificare i dati: {data}'
   },
 
@@ -387,7 +387,7 @@ export default {
   MODAL_NETWORK: {
     NAME: 'Nome',
     DESCRIPTION: 'Descrizione',
-    SEED_SERVER: 'Seed Server',
+    SEED_SERVER: 'Server seed',
     NETHASH: 'Nethash',
     TOKEN: 'Token',
     SYMBOL: 'Simbolo',
