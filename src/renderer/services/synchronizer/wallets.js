@@ -133,13 +133,22 @@ class Action {
    * @return {void}
    */
   async refreshWalletsData (wallets, walletsData) {
+    const refreshedWallets = []
+
     for (const wallet of wallets) {
       const walletData = walletsData.find(data => data && data.address === wallet.address)
       if (!walletData || (walletData.balance === 0 && !walletData.publicKey)) {
         continue
       }
 
-      await this.processWalletData(wallet, walletData)
+      const refreshedWallet = await this.processWalletData(wallet, walletData)
+      if (refreshedWallet) {
+        refreshedWallets.push(refreshedWallet)
+      }
+    }
+
+    if (refreshedWallets.length) {
+      this.$dispatch('wallet/updateBulk', refreshedWallets)
     }
   }
 
@@ -177,10 +186,10 @@ class Action {
         ...walletData
       }
       if (!wallet.isLedger) {
-        this.$dispatch('wallet/update', refreshedWallet)
-      } else {
-        this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })
+        return refreshedWallet
       }
+
+      this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })
     } catch (error) {
       this.$logger.error(error.message)
     }
