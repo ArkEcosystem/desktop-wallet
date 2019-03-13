@@ -1,4 +1,4 @@
-import { clone, difference, find } from 'lodash'
+import { clone, find } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -60,35 +60,7 @@ class Action {
         allWallets.push(...this.$getters['ledger/wallets'])
       }
 
-      // Retrieve the data of wallets that have not been checked yet
-      const notChecked = difference(allWallets, this.checked)
-
-      // Only if all wallets have been checked previously
-      // if (this.includesSameWallets(allWallets, notChecked)) {
-      //   // To be sure that removed wallets are not used anymore
-      //   this.checked = allWallets
-      //
-      //   if (walletsToCheck.length) {
-      //     const since = this.findOldestCheckedAt(walletsToCheck)
-      //
-      //     const transactions = await this.fetchTransactionsSince(since)
-      //     if (transactions) {
-      //       transactions.forEach(transaction => {
-      //         this.processTransaction(walletsToCheck, transaction)
-      //       })
-      //
-      //     // As a fallback, retrieve all the wallets
-      //     } else {
-      //       await this.refresh(walletsToCheck)
-      //     }
-      //   }
-      // }
-
-      // Check the not checked wallets now
-      if (notChecked.length) {
-        await this.refresh(notChecked)
-        this.checked = this.checked.concat(notChecked)
-      }
+      await this.refresh(allWallets)
     }
 
     const expiredTransactions = await this.$dispatch('transaction/clearExpired')
