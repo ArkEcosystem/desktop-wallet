@@ -544,7 +544,8 @@ describe('Services > Synchronizer > Wallets', () => {
 
       it('should return the timestamp of new transactions', async () => {
         expect(await action.processTransactions(transactionsByAddress)).toEqual({
-          [profileWallets[0].address]: transactions[0].timestamp
+          [profileWallets[0].address]: transactions[0].timestamp,
+          [profileWallets[1].address]: transactions[0].timestamp
         })
       })
     })

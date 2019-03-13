@@ -241,21 +241,21 @@ class Action {
    * @return {Object} timestamp of new transactions aggregated by address
    */
   async processTransactions (transactionsByAddress) {
-    return Object.keys(transactionsByAddress)
-      .reduce(async (walletsTransactionsAt, address) => {
-        const transactions = transactionsByAddress[address]
+    const walletsTransactionsAt = {}
 
-        if (transactions && transactions.length) {
-          const wallet = find(this.wallets, { address })
+    for (const address of Object.keys(transactionsByAddress)) {
+      const transactions = transactionsByAddress[address]
 
-          const lastestAt = await this.processWalletTransactions(wallet, transactions)
-          if (lastestAt) {
-            walletsTransactionsAt[address] = lastestAt
-          }
+      if (transactions && transactions.length) {
+        const wallet = find(this.wallets, { address })
+        const latestAt = await this.processWalletTransactions(wallet, transactions)
+        if (latestAt) {
+          walletsTransactionsAt[address] = latestAt
         }
+      }
+    }
 
-        return walletsTransactionsAt
-      }, {})
+    return walletsTransactionsAt
   }
 
   /**
