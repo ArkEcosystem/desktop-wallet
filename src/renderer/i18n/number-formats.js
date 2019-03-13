@@ -13,6 +13,13 @@ export default {
       currencyDisplay: 'symbol'
     }
   },
+  'it-IT': {
+    currency: {
+      style: 'currency',
+      currency: 'EUR',
+      currencyDisplay: 'symbol'
+    }
+  },
   'pt-BR': {
     currency: {
       style: 'currency',
