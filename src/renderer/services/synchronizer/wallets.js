@@ -377,9 +377,8 @@ class Action {
       if (wallets.length) {
         this.$dispatch('wallet/updateBulk', wallets)
       }
-      // TODO update only 1 time
-      for (const ledgerWallet of ledgerWallets) {
-        this.$dispatch('ledger/updateWallet', ledgerWallet)
+      if (ledgerWallets.length) {
+        this.$dispatch('ledger/updateWallets', ledgerWallets)
       }
     } catch (error) {
       this.$logger.error(error.message)

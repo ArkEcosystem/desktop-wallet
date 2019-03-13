@@ -625,12 +625,10 @@ describe('Services > Synchronizer > Wallets', () => {
       expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('wallet/updateBulk', profileWallets)
     })
 
-    it('should update Ledger wallets, 1 by 1', async () => {
+    it('should update all Ledger wallets at once', async () => {
       await action.update(ledgerWallets)
 
-      ledgerWallets.forEach((wallet, i) => {
-        expect(action.synchronizer.$store.dispatch).toHaveBeenNthCalledWith(i + 1, 'ledger/updateWallet', wallet)
-      })
+      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('ledger/updateWallets', ledgerWallets)
     })
 
     it('should log errors', async () => {
