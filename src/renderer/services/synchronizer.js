@@ -1,5 +1,5 @@
 import { flatten, includes, isFunction, pullAll } from 'lodash'
-import { announcements, delegates, fees, ledger, market, peer, wallets } from './synchronizer/'
+import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
@@ -21,37 +21,38 @@ export default class Synchronizer {
       longest: block * 300,
       longer: block * 100,
       medium: block * 25,
-      shorter: block * 4,
+      shorter: block * 10,
+      shortest: block * 3,
       block,
       // Number of milliseconds to wait to evaluate which actions should be run
-      loop: block
+      loop: 2000
     }
 
     return intervals
   }
 
   get config () {
-    const { block, shorter, medium, longer, longest } = this.intervals
+    const { loop, shortest, shorter, medium, longer, longest } = this.intervals
 
     const config = {
       announcements: {
-        default: { interval: longest },
+        default: { interval: longest, delay: loop * 6 },
         focus: { interval: medium }
       },
       market: {
-        default: { interval: shorter },
-        focus: { interval: block }
+        default: { interval: medium },
+        focus: { interval: shorter }
       },
       wallets: {
         default: { interval: shorter },
-        focus: { interval: block }
+        focus: { interval: shortest }
       },
       ledgerWallets: {
         default: { interval: shorter },
-        focus: { interval: block }
+        focus: { interval: shortest }
       },
       delegates: {
-        default: { interval: longer },
+        default: { interval: longer, delay: loop * 3 },
         focus: { interval: longer }
       },
       fees: {
@@ -186,12 +187,17 @@ export default class Synchronizer {
               const mode = includes(this.focused, actionId) ? 'focus' : 'default'
               const { interval } = action[mode]
 
-              // `null` is used to not run the action
+              // A `null` interval means no interval, so the action does not run
               if (interval !== null) {
-                const nextCall = action.calledAt + interval
+                // Delay the beginning of the periodic action run
+                if (!action.calledAt && action[mode].delay) {
+                  action.calledAt += action.delay
+                }
+
+                const nextCallAt = action.calledAt + interval
                 const now = (new Date()).getTime()
 
-                if (nextCall <= now) {
+                if (nextCallAt <= now) {
                   this.call(actionId)
                 }
               }
@@ -225,9 +231,10 @@ export default class Synchronizer {
     //   console.log('defined CONTACTS')
     // })
 
-    this.define('delegates', this.config.delegates, async () => {
-      await delegates(this)
-    })
+    // NOTE: not used currently
+    // this.define('delegates', this.config.delegates, async () => {
+    //   await delegates(this)
+    // })
 
     this.define('fees', this.config.fees, async () => {
       await fees(this)

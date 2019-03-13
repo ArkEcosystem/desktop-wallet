@@ -151,12 +151,7 @@ export default {
    */
   async created () {
     this.$store._vm.$on('vuex-persist:ready', async () => {
-      await this.$store.dispatch('network/load', config.NETWORKS)
-      const currentProfileId = this.$store.getters['session/profileId']
-      await this.$store.dispatch('session/reset')
-      await this.$store.dispatch('session/setProfileId', currentProfileId)
-      await this.$store.dispatch('ledger/reset')
-
+      await this.loadEssential()
       this.isReady = true
 
       this.$synchronizer.defineAll()
@@ -184,9 +179,18 @@ export default {
   },
 
   methods: {
+    async loadEssential () {
+      await this.$store.dispatch('network/load', config.NETWORKS)
+      const currentProfileId = this.$store.getters['session/profileId']
+      await this.$store.dispatch('session/reset')
+      await this.$store.dispatch('session/setProfileId', currentProfileId)
+      await this.$store.dispatch('ledger/reset')
+    },
     /**
      * These data are used in different parts, but loading them should not
      * delay the application
+     * TODO move some parts to the synchronizer and make it aware of when the
+     * network has changed
      * @return {void}
      */
     async loadNotEssential () {
