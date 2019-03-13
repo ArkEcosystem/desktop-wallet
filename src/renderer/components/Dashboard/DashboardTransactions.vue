@@ -49,7 +49,9 @@ export default {
   },
 
   created () {
-    this.isLoading = true
+    if (this.wallets.length) {
+      this.isLoading = true
+    }
 
     this.$eventBus.on('transactions:fetched', transactionsByWallet => {
       const transactions = flatten(Object.values(transactionsByWallet))
