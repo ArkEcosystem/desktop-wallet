@@ -1,9 +1,20 @@
-import { clone, find } from 'lodash'
+import { clone, find, groupBy, map, maxBy, partition, uniqBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
 
 class Action {
+  /**
+   * Check if the data of a wallet is the same than some data
+   *
+   * a@param {Object} wallet - wallet with the attributes of a `Wallet` model
+   * a@param {Object} walletData - the data that is retrieved from the API
+   * @return {Boolean} true if the data is equal
+   */
+  static compareWalletData (wallet, walletData) {
+    return Object.keys(walletData).every(property => wallet[property] === walletData[property])
+  }
+
   constructor (synchronizer) {
     this.synchronizer = synchronizer
 
@@ -42,61 +53,115 @@ class Action {
     return this.$scope.$t.bind(this.$scope)
   }
 
+  get profile () {
+    return this.$scope.session_profile
+  }
+
+  /**
+   * Regular wallets
+   */
+  get profileWallets () {
+    return this.profile
+      ? this.$getters['wallet/byProfileId'](this.profile.id)
+      : []
+  }
+
+  /**
+   * NOTE: Ledger wallets should not have its own store, but, since the current
+   * implementation does it, it is important to have that in mind and never
+   * try to save them as normal wallets
+   */
+  get ledgerWallets () {
+    return this.$getters['session/backgroundUpdateLedger']
+      ? this.$getters['ledger/wallets']
+      : []
+  }
+
+  get wallets () {
+    return [
+      ...this.profileWallets,
+      ...this.ledgerWallets
+    ]
+  }
+
+  // TODO contacts should be moved to a new Synchronizer action
+  get contacts () {
+    return this.profile
+      ? this.$getters['wallet/contactsByProfileId'](this.profile.id)
+      : []
+  }
+
+  get allWallets () {
+    return [
+      ...this.contacts,
+      ...this.wallets
+    ]
+  }
+
+  /**
+   * An `Object` with an address as key and an Array of wallets as value.
+   *
+   * NOTE: regular wallets and contacts should not be duplicated, but, currently,
+   * Ledger wallets could be, so, the same address could belong to 1 wallet
+   * on the `wallet` store and 1 wallet on the `ledger` store
+   */
+  get allWalletsByAddress () {
+    return groupBy(this.allWallets, 'address')
+  }
+
   /**
    * TODO when adding a new wallet do not display the success toast with the last
    * transaction: is not necessary
    * TODO do not display 2 success toast when sending txs from 1 wallet to other
    */
   async run () {
-    const profile = this.$scope.session_profile
-
-    if (profile) {
-      const allWallets = [
-        ...this.$getters['wallet/byProfileId'](profile.id),
-        ...this.$getters['wallet/contactsByProfileId'](profile.id)
-      ]
-
-      if (this.$getters['session/backgroundUpdateLedger']) {
-        allWallets.push(...this.$getters['ledger/wallets'])
-      }
-
-      await this.refresh(allWallets)
+    if (this.allWallets.length) {
+      await this.sync()
     }
 
     const expiredTransactions = await this.$dispatch('transaction/clearExpired')
     for (const transactionId of expiredTransactions) {
-      eventBus.emit(`transaction:${transactionId}:expired`)
+      this.emit(`transaction:${transactionId}:expired`)
       this.$info(this.$t('TRANSACTION.ERROR.EXPIRED', { transactionId: truncateMiddle(transactionId) }))
     }
   }
 
   /**
-   * Refresh the data and transactions of the wallets and process them.
-   * @param  {Object[]} wallets
+   * Synchronize the wallets and contacts
+   *
    * @return {void}
    */
-  async refresh (wallets) {
-    const addresses = wallets.map(wallet => wallet.address)
-
-    // TODO if 1 success and the other fails
-    const [walletsData, walletsTransactions] = await Promise.all([
-      this.fetchWalletsData(addresses),
-      this.fetchWalletsTransactions(addresses)
-    ])
-
-    // NOTE: this has to be run in order to avoid race conditions when updating the wallet store TODO change it
-    const refreshedWallets = await this.refreshWalletsData(wallets, walletsData)
-    const walletsToTouch = await this.refreshTransactions(wallets, walletsTransactions)
-
-    // TODO uniq and update d by id
-    const walletsToUpdate = [
-      ...refreshedWallets,
-      ...walletsToTouch
-    ]
+  async sync () {
+    const { walletsData, transactionsByAddress } = await this.fetch()
+    const walletsToUpdate = await this.process(walletsData, transactionsByAddress)
 
     if (walletsToUpdate.length) {
-      this.$dispatch('wallet/updateBulk', walletsToUpdate)
+      await this.update(walletsToUpdate)
     }
+  }
+
+  /**
+   * Fetch, in parallel, the wallet data to every wallet and contact and the transactions
+   * of regular and Ledger wallets.
+   * Contact transactions are not fetched because they are not processed
+   * (i.e. display a toast when a new transaction is received).
+   *
+   * @return {Object}
+   */
+  async fetch () {
+    const allAddresses = map(uniqBy(this.allWallets, 'address'), 'address')
+    const walletAddresses = map(uniqBy(this.wallets, 'address'), 'address')
+
+    // Fetch in parallel TODO if 1 success and the other fails
+    const [walletsData, transactionsByAddress] = await Promise.all([
+      this.fetchWalletsData(allAddresses),
+      this.fetchWalletsTransactions(walletAddresses)
+    ])
+
+    // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
+    this.emit(`transactions:fetched`, transactionsByAddress)
+
+    return { walletsData, transactionsByAddress }
   }
 
   async fetchWalletsData (addresses) {
@@ -108,156 +173,149 @@ class Action {
   }
 
   /**
-   * Refresh wallet data.
+   * Process, in parallel, the wallets and their transactions and, after that,
+   * return the wallets that need to be stored with the updated information.
    *
-   * @param  {Object[]} wallets
-   * @param  {Object[]} walletsData - fetched (incomplete) data of each wallet
-   * @return {Object[]} wallets that should be updated
+   * @param {Array} walletsData - the fetched data of the wallets
+   * @param {Array} transactionsByAddress - the fetched transactions of each wallet
+   * @return {Array} wallets that need update (with their updated data)
    */
-  async refreshWalletsData (wallets, walletsData) {
-    const refreshedWallets = []
+  async process (walletsData, transactionsByAddress) {
+    // Process in parallel TODO if 1 success and the other fails
+    const [dataByWallet, walletsTransactionsAt] = await Promise.all([
+      this.processWalletsData(walletsData),
+      this.processTransactions(transactionsByAddress)
+    ])
 
-    for (const walletData of walletsData) {
-      if (!walletData || !walletData.publicKey) {
-        continue
+    // An address would be updated if it has new data or it has received a new transaction
+    const addressesToUpdate = [
+      ...Object.keys(dataByWallet),
+      ...Object.keys(walletsTransactionsAt)
+    ]
+
+    return addressesToUpdate.reduce((walletsToUpdate, address) => {
+      // 1 address could have 1 wallet on the `wallet` store and 1 wallet on the `ledger` store
+      for (const originalWallet of this.allWalletsByAddress[address]) {
+        const wallet = {
+          ...originalWallet,
+          ...dataByWallet[address]
+        }
+
+        const checkedAt = walletsTransactionsAt[address]
+        if (checkedAt) {
+          wallet.transactions.checkedAt = checkedAt
+        }
+
+        walletsToUpdate.push(wallet)
       }
 
-      const wallet = find(wallets, { address: walletData.address })
+      return walletsToUpdate
+    }, [])
+  }
 
-      const refreshedWallet = await this.processWalletData(wallet, walletData)
-      if (refreshedWallet) {
-        refreshedWallets.push(refreshedWallet)
+  /**
+   * For every wallet data, check which wallets should be updated and return
+   * that data aggregated by address
+   *
+   * @param {Array} walletsData - fetched (incomplete) data of each wallet
+   * @return {Object} data of the wallets that should be updated aggregated by address
+   */
+  processWalletsData (walletsData) {
+    return walletsData.reduce((dataByAddress, data) => {
+      // 1 address could have 1 wallet on the `wallet` store and 1 wallet on the `ledger` store
+      for (const wallet of this.allWalletsByAddress[data.address]) {
+        const isEqual = Action.compareWalletData(wallet, data)
+        if (!isEqual) {
+          dataByAddress[data.address] = data
+        }
       }
-    }
 
-    return refreshedWallets
+      return dataByAddress
+    }, {})
   }
 
   /**
    * Fetch the transactions of the wallets and process them.
    *
-   * @param  {Object[]} wallets
-   * @param  {Object} transactionsByWallet - transactions aggregated by wallet address
-   * @return {Object[]} wallets that should be updated
+   * @param  {Object} transactionsByAddress - transactions aggregated by wallet address
+   * @return {Object} timestamp of new transactions aggregated by address
    */
-  async refreshTransactions (wallets, transactionsByWallet) {
-    const walletsToTouch = []
+  async processTransactions (transactionsByAddress) {
+    return Object.keys(transactionsByAddress)
+      .reduce(async (walletsTransactionsAt, address) => {
+        const transactions = transactionsByAddress[address]
 
-    const walletsWithTransactions = Object.keys(transactionsByWallet)
-      .filter(address => transactionsByWallet[address] && transactionsByWallet[address].length)
-      .map(address => find(wallets, { address }))
+        if (transactions && transactions.length) {
+          const wallet = find(this.wallets, { address })
 
-    for (const wallet of walletsWithTransactions) {
-      const transactions = walletsWithTransactions[wallet.address]
-      const walletToTouch = await this.processWalletTransactions(wallet, transactions)
-      if (walletToTouch) {
-        walletsToTouch.push(walletToTouch)
-      }
-    }
-
-    // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
-    eventBus.emit(`transactions:fetched`, transactionsByWallet)
-
-    return walletsToTouch
-  }
-
-  /**
-   * Update cached wallet data.
-   * TODO dispatch only 1 wallet store update
-   *
-   * @param  {Object} wallet
-   * @param  {Object} walletData Wallet data fetched from API
-   * @return {Object|void} wallet to update
-   */
-  async processWalletData (wallet, walletData) {
-    try {
-      if (!wallet.isLedger) {
-        return {
-          ...wallet,
-          ...walletData
+          const lastestAt = await this.processWalletTransactions(wallet, transactions)
+          if (lastestAt) {
+            walletsTransactionsAt[address] = lastestAt
+          }
         }
-      }
 
-      this.$dispatch('ledger/updateWallet', { ...wallet, balance: walletData.balance })
-    } catch (error) {
-      this.$logger.error(error.message)
-    }
+        return walletsTransactionsAt
+      }, {})
   }
 
   /**
-   * Processes the transaction of a wallet:
-   * TODO dispatch only 1 wallet store update
-   *
-   *  - Updates the last time that the transactions of a wallet were checked
+   * Process the transaction of a wallet:
    *  - If any of the transaction is new, display a toast
-   * @return {Object|void} wallet to update
+   *  - Store the votes of vote transactions
+   *  - Return the last time that a new transaction was received
+   *
+   * @params {Object} wallet
+   * @params {Array} transactions - non-empty Array of transactions
+   * @return {Number|void} timestamp of the new transaction
    */
   async processWalletTransactions (wallet, transactions) {
     try {
-      if (transactions && transactions.length) {
-        this.$dispatch('transaction/deleteBulk', {
-          transactions,
-          profileId: wallet.profileId
-        })
+      // TODO delete only 1 time
+      this.$dispatch('transaction/deleteBulk', {
+        transactions,
+        profileId: wallet.profileId
+      })
 
-        if (wallet.isLedger) {
-          return
+      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
+      if (votes.length) {
+        this.processVotes(votes)
+      }
+
+      const latestTransaction = maxBy(transactions, 'timestamp')
+      const latestAt = latestTransaction.timestamp
+      const checkedAt = wallet.transactions ? wallet.transactions.checkedAt : 0
+
+      if (latestAt > checkedAt) {
+        // Disable notification on first check
+        if (checkedAt > 0) {
+          this.displayNewTransaction(latestTransaction, wallet)
         }
 
-        const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
-
-        if (votes.length) {
-          const ids = votes.map(vote => vote.id)
-          const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
-            return !ids.includes(vote.id)
-          })
-
-          this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
-
-          const profile = clone(this.$scope.session_profile)
-          profile.unconfirmedVotes = filteredVotes
-          this.$dispatch('profile/update', profile)
-        }
-
-        const latest = this.findLatestTransaction(transactions)
-        const latestAt = latest.timestamp
-        const checkedAt = wallet.transactions ? wallet.transactions.checkedAt : 0
-
-        if (latestAt > checkedAt) {
-          // Disable notification on first check
-          if (checkedAt > 0) {
-            this.displayNewTransaction(latest, wallet)
-          }
-
-          return {
-            ...wallet,
-            transactions: { checkedAt: latestAt }
-          }
-        }
+        return latestAt
       }
     } catch (error) {
       this.$logger.error(error)
     }
   }
 
-  findLatestTransaction (transactions) {
-    var latestTransaction = transactions[0]
+  // TODO update only 1 time
+  processVotes (votes) {
+    const ids = votes.map(vote => vote.id)
+    const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
+      return !ids.includes(vote.id)
+    })
 
-    for (const i in transactions) {
-      if (transactions[i].timestamp > latestTransaction.timestamp) {
-        latestTransaction = transactions[i]
-      }
-    }
+    this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
 
-    return latestTransaction
+    const profile = clone(this.profile)
+    profile.unconfirmedVotes = filteredVotes
+    this.$dispatch('profile/update', profile)
   }
 
+  // TODO use the eventBus to display transactions
   displayNewTransaction (transaction, wallet) {
-    if (wallet.isContact) {
-      return
-    }
-
     let message = {}
+
     switch (transaction.type) {
       case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
         message = {
@@ -305,7 +363,31 @@ class Action {
         break
       }
     }
+
     this.$success(this.$t(message.translation, message.options))
+  }
+
+  /**
+   * @param {Array} walletsToUpdate - regular or Ledger wallets that should be updated
+   */
+  async update (walletsToUpdate) {
+    const [ledgerWallets, wallets] = partition(walletsToUpdate, 'isLedger')
+
+    try {
+      if (wallets.length) {
+        this.$dispatch('wallet/updateBulk', wallets)
+      }
+      // TODO update only 1 time
+      for (const ledgerWallet of ledgerWallets) {
+        this.$dispatch('ledger/updateWallet', ledgerWallet)
+      }
+    } catch (error) {
+      this.$logger.error(error.message)
+    }
+  }
+
+  emit (event, data) {
+    eventBus.emit(event, data)
   }
 }
 
