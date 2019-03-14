@@ -203,7 +203,7 @@ class Action {
 
         const checkedAt = walletsTransactionsAt[address]
         if (checkedAt) {
-          wallet.transactions.checkedAt = checkedAt
+          wallet.transactions = { checkedAt }
         }
 
         walletsToUpdate.push(wallet)
