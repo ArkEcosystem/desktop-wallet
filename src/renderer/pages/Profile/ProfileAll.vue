@@ -213,8 +213,8 @@ export default {
   width: calc(var(--profile-avatar-xl) * 0.66);
 }
 .ProfileAll .ProfileAvatar__image {
-  @apply .flex .cursor-pointer .self-center;
+  @apply .flex .self-center .cursor-pointer;
 }
 .ProfileAll .ProfileAvatar__letter {
-  @apply .mx-auto .self-center
+  @apply .mx-auto .self-center .cursor-pointer
 } </style>
