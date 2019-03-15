@@ -173,6 +173,7 @@ export default {
   LANGUAGES: {
     'en-US': 'English',
     'es-ES': 'Español',
+    'fr-FR': 'Francese',
     'it-IT': 'Italiano',
     'pt-BR': 'Portugues - Brazil'
   },
