@@ -49,7 +49,9 @@
             v-if="hasAnyProfile"
             class="hidden md:block"
           />
-          <RouterView class="flex-1 overflow-y-auto" />
+          <KeepAlive :include="keepAliveRoutes">
+            <RouterView class="flex-1 overflow-y-auto" />
+          </KeepAlive>
         </div>
 
         <AppFooter />
@@ -126,6 +128,9 @@ export default {
     },
     hasSeenIntroduction () {
       return this.$store.getters['app/hasSeenIntroduction']
+    },
+    keepAliveRoutes () {
+      return ['Announcements', 'NetworkOverview', 'ProfileAll']
     },
     isWindows () {
       return process.platform === 'win32'
