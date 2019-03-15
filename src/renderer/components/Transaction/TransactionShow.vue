@@ -17,7 +17,7 @@
           }"
           class="cursor-default"
         >
-          {{ transaction.id | truncateMiddle }}
+          {{ transaction.id | truncateMiddle(30) }}
         </span>
         <ButtonClipboard
           :value="transaction.id"
