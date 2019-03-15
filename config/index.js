@@ -25,6 +25,7 @@ exports.I18N = {
   defaultLocale: 'en-US',
   enabledLocales: [
     'en-US',
+    'fr-FR',
     'it-IT'
   ]
 }
