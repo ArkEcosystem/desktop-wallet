@@ -4,6 +4,7 @@
       v-bind="$attrs"
       :columns="columns"
       :row-style-class="formatRow"
+      :no-data-message="$t('TABLE.NO_TRANSACTIONS')"
       v-on="$listeners"
       @on-row-click="onRowClick"
       @on-sort-change="onSortChange"
