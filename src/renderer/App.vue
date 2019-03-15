@@ -49,7 +49,10 @@
             v-if="hasAnyProfile"
             class="hidden md:block"
           />
-          <KeepAlive :include="keepAliveRoutes">
+          <KeepAlive
+            :include="keepAliveRoutes"
+            :max="maxAliveRoutes"
+          >
             <RouterView class="flex-1 overflow-y-auto" />
           </KeepAlive>
         </div>
@@ -88,7 +91,7 @@
 
 <script>
 import '@/styles/style.css'
-import { isEmpty } from 'lodash'
+import { isEmpty, pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
@@ -109,11 +112,18 @@ export default {
     TransactionModal
   },
 
-  data: () => ({
+  data: vm => ({
     isReady: false,
     hasBlurFilter: false,
     isUriTransactionOpen: false,
-    uriTransactionSchema: {}
+    uriTransactionSchema: {},
+    maxAliveRoutes: vm.$options.keepableRoutes.profileAgnostic.length,
+    aliveRouteComponents: []
+  }),
+
+  keepableRoutes: Object.freeze({
+    profileAgnostic: ['Announcements', 'NetworkOverview', 'ProfileAll'],
+    profileDependent: ['Dashboard', 'ContactAll', 'ContactNew', 'ProfileNew', 'WalletAll', 'WalletImport', 'WalletNew', 'WalletShow']
   }),
 
   computed: {
@@ -129,9 +139,6 @@ export default {
     hasSeenIntroduction () {
       return this.$store.getters['app/hasSeenIntroduction']
     },
-    keepAliveRoutes () {
-      return ['Announcements', 'NetworkOverview', 'ProfileAll']
-    },
     isWindows () {
       return process.platform === 'win32'
     },
@@ -140,12 +147,69 @@ export default {
     },
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
+    },
+    currentProfileId () {
+      return this.session_profile
+        ? this.session_profile.id
+        : null
+    },
+    keepAliveRoutes () {
+      return uniq([
+        ...this.$options.keepableRoutes.profileAgnostic,
+        ...this.aliveRouteComponents
+      ])
+    },
+    routeComponent () {
+      return this.$route.matched.length
+        ? this.$route.matched[0].components.default.name
+        : null
     }
   },
 
   watch: {
     hasProtection (value) {
       remote.getCurrentWindow().setContentProtection(value)
+    },
+    // TODO include initial route
+    // TODO before navigating to route?
+    routeComponent (value) {
+      if (this.aliveRouteComponents.includes(value)) {
+        pull(this.aliveRouteComponents, value)
+      } else {
+        this.maxAliveRoutes += 1
+      }
+      // Not all routes can be cached flawlessly
+      const keepable = [
+        ...this.$options.keepableRoutes.profileAgnostic,
+        ...this.$options.keepableRoutes.profileDependent
+      ]
+      if (keepable.includes(value)) {
+        this.aliveRouteComponents.push(value)
+      }
+    },
+    currentProfileId (value, oldValue) {
+      if (value && oldValue) {
+        // If the profile changes, remove all the cached routes, except the last
+        // if they are profile independent
+        if (value !== oldValue) {
+          const profileAgnostic = this.$options.keepableRoutes.profileAgnostic
+
+          const aliveRouteComponents = []
+          for (let i = profileAgnostic.length; i >= 0; i--) {
+            const length = this.aliveRouteComponents.length
+            const route = this.aliveRouteComponents[length - i]
+
+            if (profileAgnostic.includes(route)) {
+              aliveRouteComponents.push(route)
+            }
+          }
+          this.aliveRouteComponents = aliveRouteComponents
+        }
+
+        // Updating the maximum number of routes to keep alive means that
+        // Vue will delete the rest of cached route components
+        this.maxAliveRoutes = this.aliveRouteComponents.length
+      }
     }
   },
 
