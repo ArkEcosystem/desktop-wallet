@@ -163,10 +163,11 @@ export default {
   },
 
   LANGUAGES: {
-    'en-US': 'English',
-    'es-ES': 'Spanish',
-    'fr-FR': 'French',
-    'pt-BR': 'Portugues - Brazil'
+    'en-US': 'Anglais',
+    'es-ES': 'Espagnol',
+    'fr-FR': 'Français',
+    'it-IT': 'Italien',
+    'pt-BR': 'Portugais - Brésilien'
   },
 
   TIME_FORMAT: {
