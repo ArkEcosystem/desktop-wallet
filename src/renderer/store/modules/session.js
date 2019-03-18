@@ -41,7 +41,7 @@ export default {
       }
 
       const { networkId } = getters['profile']
-      var network = rootGetters['network/byId'](networkId)
+      let network = rootGetters['network/byId'](networkId)
 
       if (!network) {
         network = rootGetters['network/customNetworkById'](networkId)
@@ -166,6 +166,8 @@ export default {
       state.ledgerCache = false
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
+
+      i18n.locale = state.language
     },
 
     REPLACE (state, value) {
@@ -186,6 +188,8 @@ export default {
       state.ledgerCache = value.ledgerCache
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
+
+      i18n.locale = state.language
     }
   },
 

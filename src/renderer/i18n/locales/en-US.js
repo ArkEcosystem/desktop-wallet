@@ -172,7 +172,8 @@ export default {
 
   LANGUAGES: {
     'en-US': 'English',
-    'es-ES': 'Spanish',
+    'es-ES': 'Español',
+    'it-IT': 'Italiano',
     'pt-BR': 'Portugues - Brazil'
   },
 
@@ -669,7 +670,7 @@ export default {
           TEXT: 'Optionally, choose a name for you wallet and you are done.'
         },
         TITLE: '5. Confirmation',
-        ADDRESS: 'Wallet address',
+        ADDRESS: 'Your wallet address and identicon',
         NAME: 'Wallet name (optional)'
       }
     },

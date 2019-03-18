@@ -49,7 +49,9 @@
             v-if="hasAnyProfile"
             class="hidden md:block"
           />
-          <RouterView class="flex-1 overflow-y-auto" />
+          <KeepAlive :include="keepAliveRoutes">
+            <RouterView class="flex-1 overflow-y-auto" />
+          </KeepAlive>
         </div>
 
         <AppFooter />
@@ -127,6 +129,9 @@ export default {
     hasSeenIntroduction () {
       return this.$store.getters['app/hasSeenIntroduction']
     },
+    keepAliveRoutes () {
+      return ['Announcements', 'NetworkOverview', 'ProfileAll']
+    },
     isWindows () {
       return process.platform === 'win32'
     },
@@ -151,12 +156,7 @@ export default {
    */
   async created () {
     this.$store._vm.$on('vuex-persist:ready', async () => {
-      await this.$store.dispatch('network/load', config.NETWORKS)
-      const currentProfileId = this.$store.getters['session/profileId']
-      await this.$store.dispatch('session/reset')
-      await this.$store.dispatch('session/setProfileId', currentProfileId)
-      await this.$store.dispatch('ledger/reset')
-
+      await this.loadEssential()
       this.isReady = true
 
       this.$synchronizer.defineAll()
@@ -184,9 +184,18 @@ export default {
   },
 
   methods: {
+    async loadEssential () {
+      await this.$store.dispatch('network/load', config.NETWORKS)
+      const currentProfileId = this.$store.getters['session/profileId']
+      await this.$store.dispatch('session/reset')
+      await this.$store.dispatch('session/setProfileId', currentProfileId)
+      await this.$store.dispatch('ledger/reset')
+    },
     /**
      * These data are used in different parts, but loading them should not
      * delay the application
+     * TODO move some parts to the synchronizer and make it aware of when the
+     * network has changed
      * @return {void}
      */
     async loadNotEssential () {

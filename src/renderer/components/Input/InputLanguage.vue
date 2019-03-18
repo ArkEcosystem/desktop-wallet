@@ -117,6 +117,7 @@ export default {
 
     select (language) {
       this.selected = language
+      this.emitInput()
     },
 
     emitInput () {

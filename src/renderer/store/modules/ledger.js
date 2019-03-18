@@ -353,11 +353,18 @@ export default {
 
     /**
      * Store ledger wallets in the cache.
-     * @param  {Number} accountIndex Index of wallet to get address for.
-     * @return {(String|Boolean)}
      */
     async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
       commit('SET_WALLET', updatedWallet)
+      eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
+      dispatch('cacheWallets')
+    },
+
+    /**
+     * Store several Ledger wallets at once and cache them.
+     */
+    async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
+      commit('SET_WALLETS', walletsToUpdate)
       eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
       dispatch('cacheWallets')
     },
