@@ -214,6 +214,7 @@
                 class="ProfileEdition__market-chart"
               >
                 <ButtonSwitch
+                  :is-disabled="!isMarketEnabled"
                   :is-active="isMarketChartEnabled"
                   @change="selectIsMarketChartEnabled"
                 />
@@ -396,6 +397,9 @@ export default {
     },
     isMarketChartEnabled () {
       return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
+    },
+    isMarketEnabled () {
+      return this.session_network && this.session_network.market && this.session_network.market.enabled
     },
     isProfileTab () {
       return this.tab === 'profile'
