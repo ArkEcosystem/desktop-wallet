@@ -4,6 +4,7 @@
     :rows="lastTransactions"
     :is-dashboard="true"
     :is-loading="isLoading"
+    :no-data-message="$t('TABLE.NO_TRANSACTIONS')"
   />
 </template>
 
