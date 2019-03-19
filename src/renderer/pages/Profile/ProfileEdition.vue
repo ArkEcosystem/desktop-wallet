@@ -211,6 +211,8 @@
             <ListDivided>
               <ListDividedItem
                 :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
+                :item-label-class="{ 'opacity-50': !isMarketEnabled }"
+                :item-value-class="{ 'opacity-50 cursor-not-allowed': !isMarketEnabled }"
                 class="ProfileEdition__market-chart"
               >
                 <ButtonSwitch
