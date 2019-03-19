@@ -169,7 +169,15 @@ export default {
       }
 
       const { feeStatistics } = this.feeNetwork
-      return feeStatistics.find(feeConfig => feeConfig.type === this.transactionType).fees
+      const transactionStatistics = feeStatistics.find(feeConfig => feeConfig.type === this.transactionType)
+      if (transactionStatistics) {
+        return transactionStatistics.fees
+      }
+
+      return {
+        avgFee: this.maxV1fee * 1e8,
+        maxFee: this.maxV1fee * 1e8
+      }
     },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
