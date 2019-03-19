@@ -304,6 +304,18 @@ describe('InputFee', () => {
         expect(wrapper.vm.feeChoices.MAXIMUM).toBeWithin(0.03, 0.03000001)
       })
     })
+
+    describe('when the network returns no statistics', () => {
+      beforeEach(() => {
+        mockNetwork.feeStatistics = []
+      })
+
+      it('should use it as maximum', () => {
+        const wrapper = mountComponent()
+
+        expect(wrapper.vm.feeChoices.MAXIMUM).toBe(0.1)
+      })
+    })
   })
 
   describe('insufficientFundsError', () => {
