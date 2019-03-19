@@ -165,7 +165,7 @@ export default {
         },
         {
           label: this.$t('PAGES.WALLET_ALL.VOTING_FOR'),
-          field: this.delegateName,
+          field: this.votingFor,
           thClass: 'w-full whitespace-no-wrap',
           tdClass: 'w-full'
         },
@@ -186,7 +186,7 @@ export default {
 
       if (!this.showVotedDelegates) {
         const index = columns.findIndex(el => {
-          return el.field === this.delegateName
+          return el.field === this.votingFor
         })
         columns.splice(index, 1)
       }
@@ -211,10 +211,10 @@ export default {
       return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
-    delegateName (row) {
+    votingFor (row) {
       if (row.vote) {
         const delegate = this.$store.getters['delegate/byPublicKey'](row.vote)
-        return delegate.username
+        return `${delegate.username} (${delegate.rank})`
       }
       return ''
     },
