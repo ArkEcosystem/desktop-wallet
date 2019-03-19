@@ -322,14 +322,18 @@ export default {
     }
   },
 
-  // Reuse the settings of the current profile
-  // Or get defaults
   created () {
+    this.selectNetwork(this.defaultNetworks.find(network => network.id === 'ark.mainnet'))
+  },
+
+  /**
+   * Reuse the settings of the current profile every time the page is entered
+   */
+  activated () {
     this.schema.background = this.background
     this.schema.language = this.language
     this.schema.currency = this.currency
     this.schema.theme = this.theme
-    this.selectNetwork(this.defaultNetworks.find(network => network.id === 'ark.mainnet'))
   },
 
   destroyed () {
