@@ -66,12 +66,10 @@
         :label="$t('TRANSACTION.SENDER')"
         item-value-class="flex items-center"
       >
-        <a
-          href="#"
-          @click.stop="openAddressInWallet(transaction.sender)"
-        >
-          {{ wallet_formatAddress(transaction.sender, 10) }}
-        </a>
+        <WalletAddress
+          :address="transaction.sender"
+          @click="emitClose"
+        />
         <ButtonClipboard
           :value="transaction.sender"
           class="text-theme-page-text-light mx-2"
@@ -99,8 +97,7 @@
       >
         <WalletAddress
           :address="transaction.recipient"
-          :type="transaction.type"
-          :asset="transaction.asset"
+          @click="emitClose"
         />
         <ButtonClipboard
           class="text-theme-page-text-light mx-2"
@@ -257,7 +254,7 @@ export default {
     },
 
     emitClose () {
-      this.$emit('close')
+      this.$emit('close', 'navigateToTransactions')
     },
 
     async emitResend () {

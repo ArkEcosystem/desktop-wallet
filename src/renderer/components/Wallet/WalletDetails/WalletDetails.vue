@@ -376,10 +376,16 @@ export default {
       this.isSelecting = true
     },
 
-    onCancel () {
+    onCancel (reason) {
       this.isUnvoting = false
       this.isVoting = false
       this.selectedDelegate = null
+
+      // To navigate to the transaction tab instead of the delegate tab when the
+      // user clicks on a link of the transaction show modal
+      if (reason && reason === 'navigateToTransactions') {
+        this.switchToTab('WalletTransactions')
+      }
     },
 
     onCancelSelect () {

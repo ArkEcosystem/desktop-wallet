@@ -1,4 +1,3 @@
-
 <template>
   <span class="WalletAddress flex items-center">
     <span
