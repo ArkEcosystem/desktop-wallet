@@ -189,7 +189,7 @@ export default {
     },
     currentProfileId (value, oldValue) {
       if (value && oldValue) {
-        // If the profile changes, remove all the cached routes, except the last
+        // If the profile changes, remove all the cached routes, except the latest
         // if they are profile independent
         if (value !== oldValue) {
           const profileAgnostic = this.$options.keepableRoutes.profileAgnostic

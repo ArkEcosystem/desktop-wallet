@@ -369,7 +369,8 @@ export default {
     })
   },
 
-  created () {
+  // TODO created ?
+  activated () {
     this.refreshAddresses()
   },
 

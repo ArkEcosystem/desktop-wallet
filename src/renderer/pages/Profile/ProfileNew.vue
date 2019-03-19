@@ -218,6 +218,8 @@ export default {
   schema: Profile.schema,
 
   data: () => ({
+    hasStarted: false,
+    isCreating: false,
     step: 1,
     selectedNetwork: null
   }),
@@ -328,16 +330,21 @@ export default {
 
   /**
    * Reuse the settings of the current profile every time the page is entered
+   * unless a new profile was already started.
+   * TODO If the user switches profile, this component would be destroyed, so
+   * the form would be reset
    */
   activated () {
-    this.schema.background = this.background
-    this.schema.language = this.language
-    this.schema.currency = this.currency
-    this.schema.theme = this.theme
-  },
-
-  destroyed () {
-    this.$store.dispatch('session/setProfileId', this.session_profile.id)
+    if (!this.hasStarted) {
+      this.schema.background = this.background
+      this.schema.bip39Language = this.bip39Language
+      this.schema.currency = this.currency
+      this.schema.isMarketChartEnabled = this.isMarketChartEnabled
+      this.schema.language = this.language
+      this.schema.theme = this.theme
+      this.schema.timeFormat = this.timeFormat
+    }
+    this.hasStarted = true
   },
 
   beforeRouteEnter (to, from, next) {
@@ -347,8 +354,21 @@ export default {
     })
   },
 
+  beforeRouteLeave (to, from, next) {
+    // Do not waste resources re-establishing the session and avoid race conditions
+    if (this.isCreating) {
+      this.isCreating = false
+    } else {
+      this.$store.dispatch('session/setProfileId', this.session_profile.id)
+    }
+
+    next()
+  },
+
   methods: {
     async create () {
+      this.isCreating = true
+      this.hasStarted = false
       const { id } = await this.$store.dispatch('profile/create', this.schema)
       await this.$store.dispatch('session/setProfileId', id)
       this.$router.push({ name: 'dashboard' })

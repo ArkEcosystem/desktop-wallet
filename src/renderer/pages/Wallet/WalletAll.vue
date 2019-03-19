@@ -380,6 +380,11 @@ export default {
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
   },
 
+  beforeDestroy () {
+    this.$eventBus.off('ledger:wallets-updated', this.includeLedgerWallets)
+    this.$eventBus.off('ledger:disconnected', this.ledgerDisconnected)
+  },
+
   /**
    * On `create` the event listeners are bound, but, every time this page is accessed
    * should include the Ledger wallets, if they are available, to the list of wallets
