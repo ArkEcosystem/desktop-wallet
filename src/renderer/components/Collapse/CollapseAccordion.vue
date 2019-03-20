@@ -30,7 +30,7 @@ export default {
     items: {
       type: Array,
       required: false,
-      default: () => this.collections_filterChilds('Collapse') || []
+      default: () => this.collections_filterChildren('Collapse') || []
     }
   },
 
