@@ -1,7 +1,9 @@
 import electron from 'electron'
 import { Application } from 'spectron'
 
+// Use a temporary directory for user data
 process.env.TEMP_USER_DATA = 'true'
+
 const timeout = 30000
 const shortcuts = ['element', 'getAttribute', 'getSource', 'getText', 'isExisting', 'isVisible', 'url', 'click']
 
@@ -12,7 +14,7 @@ export default {
     scope.app = new Application({
       path: electron,
       args: ['dist/electron/main.js'],
-      startTimeout: 30000,
+      startTimeout: 10000,
       waitTimeout: timeout
     })
 
@@ -21,6 +23,8 @@ export default {
     shortcuts.forEach(shortcut => {
       scope[shortcut] = app.client[shortcut]
     })
+
+    scope.emitToRenderer = app.rendererProcess.emit
 
     return app
   },

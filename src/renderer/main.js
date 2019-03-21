@@ -19,6 +19,10 @@ import apiClient from '@/plugins/api-client'
 import synchronizer from '@/plugins/synchronizer'
 import eventBus from '@/plugins/event-bus'
 
+process.on('e2e', (...args) => {
+  console.log('MESSAGE RECEIVED', args)
+})
+
 Vue.config.productionTip = false
 Vue.logger = Vue.prototype.$logger = logger
 Vue.prototype.$eventBus = eventBus
