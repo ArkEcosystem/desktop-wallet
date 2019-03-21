@@ -66,10 +66,7 @@
         </div>
         <WalletButtonAdditionalLedgers class="pl-6 pr-6" />
         <WalletButtonCreate class="pl-6 pr-6" />
-        <WalletButtonImport
-          :class="{ 'pr-6': selectableWallets.length }"
-          class="pl-6"
-        />
+        <WalletButtonImport class="pl-6" />
       </div>
     </div>
 
