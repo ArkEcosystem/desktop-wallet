@@ -80,14 +80,10 @@ beforeEach(async () => {
   axiosMock.reset()
 })
 describe('ledger store module', () => {
-  it('should init ledger service', (done) => {
+  it('should init ledger service', () => {
     store.dispatch('ledger/init', 1234)
 
     expect(store.state.ledger.slip44).toBe(1234)
-    setTimeout(() => {
-      expect(store.state.ledger.connectionTimer).toBeTruthy()
-      done()
-    }, 1000)
   })
 
   it('should set slip44 value', () => {

@@ -97,6 +97,18 @@ export default {
       }
       state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
     },
+    UPDATE_BULK (state, wallets) {
+      const profileId = wallets[0].profileId
+      wallets.forEach(wallet => {
+        if (profileId !== wallet.profileId) {
+          throw new Error(`Updating wallets of different profile is not supported ('${profileId}' != '${wallet.profileId}')`)
+        }
+        if (!includes(state.wallets[profileId], wallet)) {
+          throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
+        }
+      })
+      state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], 'id')
+    },
     DELETE (state, wallet) {
       const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
       if (index === -1) {
@@ -143,6 +155,12 @@ export default {
     update ({ commit }, wallet) {
       const data = WalletModel.deserialize(wallet)
       commit('UPDATE', data)
+
+      return data
+    },
+    updateBulk ({ commit }, wallets) {
+      const data = wallets.map(wallet => WalletModel.deserialize(wallet))
+      commit('UPDATE_BULK', data)
 
       return data
     },
