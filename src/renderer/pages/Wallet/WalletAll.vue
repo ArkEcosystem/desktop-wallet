@@ -47,8 +47,12 @@
       <div class="flex flex-row items-center">
         <div
           v-show="isLedgerConnected"
-          v-tooltip="$t('PAGES.WALLET_ALL.LEDGER.CACHE_INFO')"
-          class="WalletAll__ledger__cache flex flex-col items-center px-6"
+          v-tooltip="{
+            content: $t('PAGES.WALLET_ALL.LEDGER.CACHE_INFO'),
+            placement: 'bottom'
+          }"
+          :class="{ 'flex-col': !hideText }"
+          class="WalletAll__ledger__cache flex items-center px-6"
         >
           <span>
             {{ $t('PAGES.WALLET_ALL.LEDGER.CACHE') }}
@@ -56,13 +60,16 @@
           <ButtonSwitch
             ref="cache-ledger-switch"
             :is-active="sessionLedgerCache"
-            class="mt-3"
+            :class="hideText ? 'ml-3' : 'mt-3'"
             @change="setLedgerCache"
           />
         </div>
         <WalletButtonAdditionalLedgers class="pl-6 pr-6" />
         <WalletButtonCreate class="pl-6 pr-6" />
-        <WalletButtonImport class="pl-6" />
+        <WalletButtonImport
+          :class="{ 'pr-6': selectableWallets.length }"
+          class="pl-6"
+        />
       </div>
     </div>
 
@@ -296,6 +303,10 @@ export default {
 
     currentNetwork () {
       return this.session_network
+    },
+
+    hideText () {
+      return this.$store.getters['session/hideWalletButtonText']
     },
 
     totalBalance () {

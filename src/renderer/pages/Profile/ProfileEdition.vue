@@ -210,6 +210,16 @@
           >
             <ListDivided>
               <ListDividedItem
+                :label="$t('COMMON.HIDE_WALLET_BUTTON_TEXT')"
+                class="ProfileEdition__wallet-button-text"
+              >
+                <ButtonSwitch
+                  :is-active="hideWalletButtonText"
+                  @change="selectHideWalletButtonText"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem
                 :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
                 class="ProfileEdition__market-chart"
               >
@@ -394,6 +404,9 @@ export default {
     theme () {
       return this.modified.theme || this.profile.theme
     },
+    hideWalletButtonText () {
+      return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText
+    },
     isMarketChartEnabled () {
       return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
     },
@@ -514,6 +527,10 @@ export default {
 
     async selectTheme (theme) {
       this.__updateSession('theme', theme)
+    },
+
+    async selectHideWalletButtonText (hideWalletButtonText) {
+      this.__updateSession('hideWalletButtonText', hideWalletButtonText)
     },
 
     async selectIsMarketChartEnabled (isMarketChartEnabled) {

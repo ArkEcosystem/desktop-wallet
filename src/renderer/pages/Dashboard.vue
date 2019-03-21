@@ -34,8 +34,14 @@
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
-        <WalletButtonCreate class="mt-6 mb-6 w-1/2" />
-        <WalletButtonImport class="mt-6 mb-6 w-1/2" />
+        <WalletButtonCreate
+          :force-text="true"
+          class="mt-6 mb-6 w-1/2"
+        />
+        <WalletButtonImport
+          :force-text="true"
+          class="mt-6 mb-6 w-1/2"
+        />
       </div>
       <WalletSidebar
         :show-expanded="true"

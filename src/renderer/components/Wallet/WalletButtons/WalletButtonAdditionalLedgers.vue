@@ -7,15 +7,21 @@
       class="text-center"
       @click="toggle"
     >
-      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
+      <span
+        v-tooltip="hideText ? $t('PAGES.WALLET_ALL.LEDGER.ADDITIONAL') : ''"
+        :class="{ 'mb-3': !hideText }"
+        class="rounded-full bg-theme-button h-8 w-8 mx-auto flex items-center justify-center"
+      >
         <SvgIcon
-          name="update"
+          name="ledger"
           class="text-center"
-          view-box="0 0 9 9"
+          view-box="0 0 12 12"
         />
       </span>
 
-      {{ $t('PAGES.WALLET_ALL.LEDGER.ADDITIONAL') }}
+      <span v-if="!hideText">
+        {{ $t('PAGES.WALLET_ALL.LEDGER.ADDITIONAL') }}
+      </span>
     </a>
     <ModalAdditionalLedgers
       v-if="showModal"
@@ -45,6 +51,10 @@ export default {
   computed: {
     isLedgerConnected () {
       return this.$store.getters['ledger/isConnected']
+    },
+
+    hideText () {
+      return this.$store.getters['session/hideWalletButtonText']
     }
   },
 

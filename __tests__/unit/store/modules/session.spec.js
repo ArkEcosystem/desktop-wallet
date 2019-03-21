@@ -17,6 +17,12 @@ describe('SessionModule', () => {
     })
   })
 
+  describe('getters > contactSortParams', () => {
+    it('should get value of hideWalletButtonText', () => {
+      expect(store.getters['session/hideWalletButtonText']).toEqual(false)
+    })
+  })
+
   it('actions > should reset session', () => {
     expect(store.getters['session/theme']).toEqual('light')
     store.dispatch('session/setTheme', 'dark')
@@ -38,6 +44,13 @@ describe('SessionModule', () => {
       const params = { foo: 'bar' }
       store.dispatch('session/setContactSortParams', params)
       expect(store.getters['session/contactSortParams']).toEqual({ foo: 'bar' })
+    })
+  })
+
+  describe('actions > setHideWalletButtonText', () => {
+    it('should set the value for hideWalletButtonText', () => {
+      store.dispatch('session/setHideWalletButtonText', true)
+      expect(store.getters['session/hideWalletButtonText']).toEqual(true)
     })
   })
 })
