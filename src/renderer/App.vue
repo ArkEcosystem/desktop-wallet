@@ -49,9 +49,10 @@
             v-if="hasAnyProfile"
             class="hidden md:block"
           />
+          <!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
           <KeepAlive
             :include="keepAliveRoutes"
-            :max="maxAliveRoutes"
+            :max="keepAliveRoutes.length"
           >
             <RouterView class="flex-1 overflow-y-auto" />
           </KeepAlive>
@@ -117,7 +118,6 @@ export default {
     hasBlurFilter: false,
     isUriTransactionOpen: false,
     uriTransactionSchema: {},
-    maxAliveRoutes: vm.$options.keepableRoutes.profileAgnostic.length,
     aliveRouteComponents: []
   }),
 
@@ -173,13 +173,9 @@ export default {
     hasProtection (value) {
       remote.getCurrentWindow().setContentProtection(value)
     },
-    // TODO include initial route
-    // TODO before navigating to route?
     routeComponent (value) {
       if (this.aliveRouteComponents.includes(value)) {
         pull(this.aliveRouteComponents, value)
-      } else {
-        this.maxAliveRoutes += 1
       }
       // Not all routes can be cached flawlessly
       const keepable = [
@@ -208,10 +204,6 @@ export default {
           }
           this.aliveRouteComponents = aliveRouteComponents
         }
-
-        // Updating the maximum number of routes to keep alive means that
-        // Vue will delete the rest of cached route components
-        this.maxAliveRoutes = this.aliveRouteComponents.length
       }
     }
   },
