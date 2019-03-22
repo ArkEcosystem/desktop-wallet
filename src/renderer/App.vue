@@ -123,7 +123,10 @@ export default {
 
   keepableRoutes: Object.freeze({
     profileAgnostic: ['Announcements', 'NetworkOverview', 'ProfileAll'],
-    profileDependent: ['Dashboard', 'ContactAll', 'ContactNew', 'ProfileNew', 'WalletAll', 'WalletImport', 'WalletNew', 'WalletShow']
+    profileDependent: ['Dashboard', 'ContactAll', 'WalletAll'],
+    // This pages could be cached to not delete the current form data, but they
+    // would not support switching profiles, which would be confusing for some users
+    dataDependent: ['ContactNew', 'ProfileNew', 'WalletImport', 'WalletNew']
   }),
 
   computed: {
