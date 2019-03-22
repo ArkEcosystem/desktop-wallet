@@ -22,24 +22,11 @@
         {{ $t('WALLET_SIDEBAR.SORT.BY') }}
       </div>
       <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.NAME_ASC')"
-        :class="sortOrder === 'name-asc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('name-asc')"
-      />
-      <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.NAME_DESC')"
-        :class="sortOrder === 'name-desc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('name-desc')"
-      />
-      <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.BALANCE_ASC')"
-        :class="sortOrder === 'balance-asc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('balance-asc')"
-      />
-      <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.BALANCE_DESC')"
-        :class="sortOrder === 'balance-desc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('balance-desc')"
+        v-for="option in sortOptions"
+        :key="option"
+        :title="`${$t('WALLET_SIDEBAR.SORT.' + option.toUpperCase().replace('-', '_'))}`"
+        :class="stringifiedSortOrder === option ? 'WalletSidebarFilters__sorting__order--selected' : ''"
+        @click="setSort(option)"
       />
     </MenuOptions>
 
@@ -140,9 +127,9 @@ export default {
       default: ''
     },
     sortOrder: {
-      type: String,
+      type: Object,
       required: false,
-      default: 'name-asc'
+      default: () => ({ field: 'name', type: 'asc' })
     }
   },
 
@@ -155,7 +142,19 @@ export default {
       },
       sort: {
         order: this.sortOrder
-      }
+      },
+      sortOptions: [
+        'name-asc',
+        'name-desc',
+        'balance-asc',
+        'balance-desc'
+      ]
+    }
+  },
+
+  computed: {
+    stringifiedSortOrder () {
+      return Object.values(this.sortOrder).join('-')
     }
   },
 
@@ -170,10 +169,6 @@ export default {
 
     searchQuery (value) {
       this.filters.searchQuery = value
-    },
-
-    order (value) {
-      this.sort.order = value
     }
   },
 
@@ -193,8 +188,10 @@ export default {
       this.emitFilter()
     },
 
-    setSort (order) {
-      this.sort.order = order
+    setSort (value) {
+      const [field, type] = value.split('-')
+      this.sort = { field, type }
+
       this.emitSort()
     },
 
@@ -207,7 +204,7 @@ export default {
     },
 
     emitSort () {
-      this.$emit('sort', this.sort.order)
+      this.$emit('sort', this.sort)
     },
 
     emitClose (context) {

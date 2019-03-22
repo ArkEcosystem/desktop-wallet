@@ -17,7 +17,7 @@
           }"
           class="cursor-default"
         >
-          {{ transaction.id | truncateMiddle }}
+          {{ transaction.id | truncateMiddle(30) }}
         </span>
         <ButtonClipboard
           :value="transaction.id"
@@ -45,7 +45,16 @@
         :label="$t('TRANSACTION.BLOCK_ID')"
         item-value-class="flex items-center"
       >
-        {{ transaction.blockId }}
+        <span
+          v-tooltip="{
+            content: transaction.blockId,
+            trigger: 'hover',
+            classes: 'text-xs'
+          }"
+          class="cursor-default"
+        >
+          {{ transaction.blockId | truncateMiddle(30) }}
+        </span>
         <button
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,

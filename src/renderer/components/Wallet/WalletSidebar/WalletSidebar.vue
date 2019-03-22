@@ -81,7 +81,7 @@
       :hide-empty="filters.hideEmpty"
       :hide-ledger="filters.hideLedger"
       :search-query="filters.searchQuery"
-      :sort-order="sort.order"
+      :sort-order="sort"
       @filter="applyFilters"
       @sort="applyOrder"
       @close="closeFilters"
@@ -240,10 +240,7 @@ export default {
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
-    filters: clone(vm.$options.defaultFilters),
-    sort: {
-      order: 'name-asc'
-    }
+    filters: clone(vm.$options.defaultFilters)
   }),
 
   defaultFilters: Object.freeze({
@@ -305,6 +302,18 @@ export default {
 
     selectableWallets () {
       return this.sortWallets(this.filterWallets(this.availableWallets))
+    },
+
+    sort: {
+      get () {
+        return this.$store.getters['session/walletSidebarSortParams']
+      },
+      set (params) {
+        this.$store.dispatch('session/setWalletSidebarSortParams', params)
+        const profile = clone(this.session_profile)
+        profile.walletSidebarSortParams = params
+        this.$store.dispatch('profile/update', profile)
+      }
     }
   },
 
@@ -400,22 +409,22 @@ export default {
       return filtered
     },
 
-    applyOrder (order) {
-      this.$set(this, 'sort', { order })
+    applyOrder (params) {
+      this.sort = params
     },
 
     sortWallets (wallets) {
-      const [attr, order] = this.sort.order.split('-')
+      const { field, type } = this.sort
 
-      if (attr === 'name') {
+      if (field === 'name') {
         wallets = this.wallet_sortByName(wallets)
-      } else if (attr === 'balance') {
+      } else if (field === 'balance') {
         wallets = sortBy(wallets, ['balance', 'name', 'address'])
       } else {
-        throw new Error(`Sorting by "${attr}" is not implemented`)
+        throw new Error(`Sorting by "${field}" is not implemented`)
       }
 
-      return order === 'asc' ? wallets : wallets.reverse()
+      return type === 'asc' ? wallets : wallets.reverse()
     },
 
     ledgerDisconnected () {

@@ -71,6 +71,10 @@ export default new BaseModel({
       type: 'string',
       format: data => data.walletLayout || 'grid'
     },
+    walletSidebarSortParams: {
+      type: 'object',
+      format: data => data.walletSidebarSortParams || { field: 'name', type: 'asc' }
+    },
     walletSortParams: {
       type: 'object',
       format: data => data.walletSortParams || { field: 'balance', type: 'desc' }

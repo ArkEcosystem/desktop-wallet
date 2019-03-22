@@ -18,8 +18,10 @@ const mount = (propsData = {}, mocks = {}) => {
       getters: {
         'delegate/byAddress': jest.fn(),
         'wallet/contactsByProfileId': () => contacts,
-        'wallet/byProfileId': () => wallets
-      }
+        'wallet/byProfileId': () => wallets,
+        'session/walletSidebarSortParams': { field: 'name', type: 'asc' }
+      },
+      dispatch: jest.fn()
     },
     session_network: {
       knownWallets: {}
@@ -61,7 +63,7 @@ describe('WalletSidebar', () => {
       ...emptyWallets
     ]
 
-    describe('when no filter is passedd', () => {
+    describe('when no filter is passed', () => {
       it('should return all wallets', () => {
         const wrapper = mount()
 
@@ -69,7 +71,7 @@ describe('WalletSidebar', () => {
       })
     })
 
-    describe('when several filters are passedd', () => {
+    describe('when several filters are passed', () => {
       it('should return the wallets that pass them all', () => {
         const wrapper = mount()
         wrapper.vm.applyFilters({
@@ -228,8 +230,12 @@ describe('WalletSidebar', () => {
     })
 
     describe('when the order is `name-asc`', () => {
+      beforeEach(() => {
+        wrapper.vm.$store.getters['session/walletSidebarSortParams'] = { field: 'name', type: 'asc' }
+      })
+
       it('should sort the wallets by name ascendently', () => {
-        wrapper.vm.applyOrder('name-asc')
+        wrapper.vm.applyOrder({ field: 'name', type: 'asc' })
 
         expect(wrapper.vm.sortWallets(wallets)).toEqual([
           wallets[1],
@@ -241,8 +247,12 @@ describe('WalletSidebar', () => {
     })
 
     describe('when the order is `name-desc`', () => {
-      it('should sort the wallets by name descenntly', () => {
-        wrapper.vm.applyOrder('name-desc')
+      beforeEach(() => {
+        wrapper.vm.$store.getters['session/walletSidebarSortParams'] = { field: 'name', type: 'desc' }
+      })
+
+      it('should sort the wallets by name descendently', () => {
+        wrapper.vm.applyOrder({ field: 'name', type: 'desc' })
 
         expect(wrapper.vm.sortWallets(wallets)).toEqual([
           wallets[3],
@@ -254,8 +264,12 @@ describe('WalletSidebar', () => {
     })
 
     describe('when the order is `balance-asc`', () => {
+      beforeEach(() => {
+        wrapper.vm.$store.getters['session/walletSidebarSortParams'] = { field: 'balance', type: 'asc' }
+      })
+
       it('should sort the wallets by balance ascendently', () => {
-        wrapper.vm.applyOrder('balance-asc')
+        wrapper.vm.applyOrder({ field: 'balance', type: 'asc' })
 
         expect(wrapper.vm.sortWallets(wallets)).toEqual([
           wallets[1],
@@ -267,8 +281,12 @@ describe('WalletSidebar', () => {
     })
 
     describe('when the order is `balance-desc`', () => {
-      it('should sort the wallets by balance descenntly', () => {
-        wrapper.vm.applyOrder('balance-desc')
+      beforeEach(() => {
+        wrapper.vm.$store.getters['session/walletSidebarSortParams'] = { field: 'balance', type: 'desc' }
+      })
+
+      it('should sort the wallets by balance descendently', () => {
+        wrapper.vm.applyOrder({ field: 'balance', type: 'desc' })
 
         expect(wrapper.vm.sortWallets(wallets)).toEqual([
           wallets[3],
