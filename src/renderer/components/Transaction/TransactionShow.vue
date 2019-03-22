@@ -21,11 +21,11 @@
         </span>
         <ButtonClipboard
           :value="transaction.id"
-          :class="{ 'mx-2': transaction.confirmations }"
-          class="text-theme-page-text-light"
+          :class="{ 'mr-2': transaction.confirmations }"
+          class="text-theme-page-text-light ml-2"
         />
         <button
-          v-if="transaction.confirmations > 0"
+          v-if="transaction.confirmations"
           v-tooltip="{
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
@@ -65,7 +65,7 @@
             content: `${$t('TRANSACTION.OPEN_IN_EXPLORER')}`,
             trigger: 'hover'
           }"
-          class="flex items-center ml-2"
+          class="flex items-center"
           @click="openBlock"
         >
           <SvgIcon
