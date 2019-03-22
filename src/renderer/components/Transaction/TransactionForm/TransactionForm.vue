@@ -52,8 +52,8 @@ export default {
       this.$emit('built', transaction)
     },
 
-    emitCancel () {
-      this.$emit('cancel')
+    emitCancel (reason) {
+      this.$emit('cancel', reason)
     }
   }
 }
