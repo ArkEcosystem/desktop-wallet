@@ -106,7 +106,7 @@ class Action {
    * on the `wallet` store and 1 wallet on the `ledger` store
    */
   get allWalletsByAddress () {
-    return groupBy(this.allWallets, 'address')
+    return groupBy(this.allWallets, 'address') || []
   }
 
   /**
