@@ -494,10 +494,10 @@ export default {
           return crypto.getAddress(publicKey, network.version)
         },
         async getPublicKey () {
-          return ledgerService.getWallet(path).publicKey
+          return (await ledgerService.getWallet(path)).publicKey
         },
         async signTransaction () {
-          return ledgerService.signTransaction(path, data).signature
+          return (await ledgerService.signTransaction(path, data)).signature
         }
       }
 
