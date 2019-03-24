@@ -258,13 +258,6 @@ export default {
 
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
-          // Make sure profile hasn't changed
-          if (rootGetters['session/profileId'] !== profileId) {
-            commit('CLEAR_LOADING_PROCESS', processId)
-
-            return {}
-          }
-
           if (getters['shouldStopLoading'](processId)) {
             commit('CLEAR_LOADING_PROCESS', processId)
 
