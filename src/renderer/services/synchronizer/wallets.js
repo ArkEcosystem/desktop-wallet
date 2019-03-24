@@ -74,13 +74,13 @@ class Action {
   get ledgerWallets () {
     return this.$getters['session/backgroundUpdateLedger']
       ? this.$getters['ledger/wallets']
-      : []
+      : {}
   }
 
   get wallets () {
     return [
       ...this.profileWallets,
-      ...this.ledgerWallets
+      ...Object.values(this.ledgerWallets)
     ]
   }
 
