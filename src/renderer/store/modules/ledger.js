@@ -12,7 +12,7 @@ export default {
   state: {
     slip44: null,
     isConnected: false,
-    wallets: [],
+    wallets: {},
     walletCache: {},
     loadingProcesses: {}
   },
