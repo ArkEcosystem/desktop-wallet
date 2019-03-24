@@ -1,4 +1,4 @@
-import { clone, find, groupBy, map, maxBy, partition, uniqBy } from 'lodash'
+import { clone, find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -378,7 +378,7 @@ class Action {
         this.$dispatch('wallet/updateBulk', wallets)
       }
       if (ledgerWallets.length) {
-        this.$dispatch('ledger/updateWallets', ledgerWallets)
+        this.$dispatch('ledger/updateWallets', keyBy(ledgerWallets, 'address'))
       }
     } catch (error) {
       this.$logger.error(error.message)
