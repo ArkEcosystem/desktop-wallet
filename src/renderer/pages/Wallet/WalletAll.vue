@@ -376,6 +376,7 @@ export default {
   },
 
   created () {
+    this.loadWallets()
     this.$eventBus.on('ledger:wallets-updated', this.includeLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
   },
@@ -390,18 +391,22 @@ export default {
    * should include the Ledger wallets, if they are available, to the list of wallets
    */
   activated () {
-    this.isLoading = true
-
-    if (this.$store.getters['ledger/isConnected']) {
-      this.includeLedgerWallets()
-    } else {
-      this.selectableWallets = this.wallets
-    }
-
-    this.isLoading = false
+    this.loadWallets()
   },
 
   methods: {
+    loadWallets () {
+      this.isLoading = true
+
+      if (this.$store.getters['ledger/isConnected']) {
+        this.includeLedgerWallets()
+      } else {
+        this.selectableWallets = this.wallets
+      }
+
+      this.isLoading = false
+    },
+
     hideRemovalConfirmation () {
       this.walletToRemove = null
     },
