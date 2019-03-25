@@ -350,4 +350,25 @@ describe('ledger store module', () => {
       expect(store.getters['ledger/cachedWallets']('A1')).toEqual([])
     })
   })
+
+  describe('updateWallets', () => {
+    it('should set wallets when the state is empty', async () => {
+      expect(store.getters['ledger/wallets']).toBeArrayOfSize(0)
+      const wallets = { A1: { address: 'A1' } }
+      await store.dispatch('ledger/updateWallets', wallets)
+      expect(store.getters['ledger/walletsObject']).toMatchObject(wallets)
+    })
+
+    it('should not remove existing wallets in the state', async () => {
+      expect(store.getters['ledger/wallets']).toBeArrayOfSize(0)
+      const wallets = { A1: { address: 'A1', balance: 0 }, A2: { address: 'A2', balance: 1 } }
+      await store.dispatch('ledger/updateWallets', wallets)
+      expect(store.getters['ledger/wallet']('A2').balance).toBe(1)
+
+      const walletsToUpdate = { A2: { address: 'A2', balance: 0 } }
+      await store.dispatch('ledger/updateWallets', walletsToUpdate)
+      expect(store.getters['ledger/wallet']('A2').balance).toBe(0)
+      expect(store.getters['ledger/wallet']('A1')).toBeObject()
+    })
+  })
 })

@@ -357,7 +357,10 @@ export default {
      * Store several Ledger wallets at once and cache them.
      */
     async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
-      commit('SET_WALLETS', walletsToUpdate)
+      commit('SET_WALLETS', {
+        ...getters['walletsObject'],
+        ...walletsToUpdate
+      })
       eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
       dispatch('cacheWallets')
     },
