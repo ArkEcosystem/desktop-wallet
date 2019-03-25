@@ -12,7 +12,7 @@ export default {
   state: {
     slip44: null,
     isConnected: false,
-    wallets: [],
+    wallets: {},
     walletCache: {},
     loadingProcesses: {}
   },
@@ -258,13 +258,6 @@ export default {
 
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
-          // Make sure profile hasn't changed
-          if (rootGetters['session/profileId'] !== profileId) {
-            commit('CLEAR_LOADING_PROCESS', processId)
-
-            return {}
-          }
-
           if (getters['shouldStopLoading'](processId)) {
             commit('CLEAR_LOADING_PROCESS', processId)
 
@@ -364,7 +357,10 @@ export default {
      * Store several Ledger wallets at once and cache them.
      */
     async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
-      commit('SET_WALLETS', walletsToUpdate)
+      commit('SET_WALLETS', {
+        ...getters['walletsObject'],
+        ...walletsToUpdate
+      })
       eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
       dispatch('cacheWallets')
     },
@@ -501,10 +497,10 @@ export default {
           return crypto.getAddress(publicKey, network.version)
         },
         async getPublicKey () {
-          return ledgerService.getWallet(path).publicKey
+          return (await ledgerService.getWallet(path)).publicKey
         },
         async signTransaction () {
-          return ledgerService.signTransaction(path, data).signature
+          return (await ledgerService.signTransaction(path, data)).signature
         }
       }
 
