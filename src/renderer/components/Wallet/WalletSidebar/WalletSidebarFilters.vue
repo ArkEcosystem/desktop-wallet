@@ -22,7 +22,7 @@
         {{ $t('WALLET_SIDEBAR.SORT.BY') }}
       </div>
       <MenuOptionsItem
-        v-for="option in sortOptions"
+        v-for="option in $options.sortOptions"
         :key="option"
         :title="`${$t('WALLET_SIDEBAR.SORT.' + option.toUpperCase().replace('-', '_'))}`"
         :class="stringifiedSortOrder === option ? 'WalletSidebarFilters__sorting__order--selected' : ''"
@@ -88,6 +88,13 @@ export default {
     WalletSidebarFiltersSearchInput
   },
 
+  sortOptions: [
+    'name-asc',
+    'name-desc',
+    'balance-asc',
+    'balance-desc'
+  ],
+
   props: {
     hasContacts: {
       type: Boolean,
@@ -142,13 +149,7 @@ export default {
       },
       sort: {
         order: this.sortOrder
-      },
-      sortOptions: [
-        'name-asc',
-        'name-desc',
-        'balance-asc',
-        'balance-desc'
-      ]
+      }
     }
   },
 
