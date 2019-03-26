@@ -66,12 +66,6 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'votedDelegate'"
-        >
-          {{ data.row.votedDelegate ? data.row.votedDelegate.username : '' }}
-        </div>
-
-        <div
           v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
