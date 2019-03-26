@@ -306,7 +306,8 @@ export default {
 
     sort: {
       get () {
-        return this.$store.getters['session/walletSidebarSortParams']
+        return this.$store.getters['session/walletSidebarSortParams'] ||
+          { field: 'name', type: 'asc' }
       },
       set (params) {
         this.$store.dispatch('session/setWalletSidebarSortParams', params)
