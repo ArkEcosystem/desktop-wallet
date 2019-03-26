@@ -717,9 +717,7 @@ export default class ClientService {
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
     const network = store.getters['session/network']
-    transaction = transaction.network({
-      pubKeyHash: network.version
-    })
+    transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
     const epochTime = moment(network.constants.epoch).utc().valueOf()
