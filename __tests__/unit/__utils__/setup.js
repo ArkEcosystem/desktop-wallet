@@ -27,7 +27,7 @@ VueTestUtils.config.mocks.$client = {
 }
 
 VueTestUtils.config.mocks.assets_loadImage = jest.fn()
-VueTestUtils.config.mocks.collections_filterChilds = jest.fn()
+VueTestUtils.config.mocks.collections_filterChildren = jest.fn()
 VueTestUtils.config.mocks.currency_subToUnit = jest.fn()
 VueTestUtils.config.mocks.currency_format = jest.fn()
 VueTestUtils.config.mocks.session_network = jest.fn()
