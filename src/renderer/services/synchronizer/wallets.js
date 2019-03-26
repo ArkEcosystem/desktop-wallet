@@ -1,4 +1,4 @@
-import { clone, find, groupBy, map, maxBy, partition, uniqBy } from 'lodash'
+import { clone, find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -74,13 +74,13 @@ class Action {
   get ledgerWallets () {
     return this.$getters['session/backgroundUpdateLedger']
       ? this.$getters['ledger/wallets']
-      : []
+      : {}
   }
 
   get wallets () {
     return [
       ...this.profileWallets,
-      ...this.ledgerWallets
+      ...Object.values(this.ledgerWallets)
     ]
   }
 
@@ -106,7 +106,7 @@ class Action {
    * on the `wallet` store and 1 wallet on the `ledger` store
    */
   get allWalletsByAddress () {
-    return groupBy(this.allWallets, 'address')
+    return groupBy(this.allWallets, 'address') || []
   }
 
   /**
@@ -378,7 +378,7 @@ class Action {
         this.$dispatch('wallet/updateBulk', wallets)
       }
       if (ledgerWallets.length) {
-        this.$dispatch('ledger/updateWallets', ledgerWallets)
+        this.$dispatch('ledger/updateWallets', keyBy(ledgerWallets, 'address'))
       }
     } catch (error) {
       this.$logger.error(error.message)
