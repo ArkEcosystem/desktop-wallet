@@ -18,14 +18,14 @@ class PluginManager {
   async init (app) {
     this.app = app
 
-    this.app.$store.dispatch('plugin/init')
+    await this.app.$store.dispatch('plugin/init')
 
     await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(path.resolve(os.homedir(), '.ark-desktop/plugins'))
 
     this.hasInit = true
 
-    this.app.$store.dispatch('plugin/loadPluginsForProfiles')
+    await this.app.$store.dispatch('plugin/loadPluginsForProfiles')
   }
 
   async enablePlugin (pluginId, profileId) {
