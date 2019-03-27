@@ -93,6 +93,9 @@ yarn lint
 # Lint, and fix, all JS/Vue files in `src` and `__tests__`
 yarn lint:fix
 
+# Apply `prettier-standard` to format code
+yarn format
+
 # Check that all dependencies are used
 yarn depcheck
 
