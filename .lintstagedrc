@@ -1,3 +1,3 @@
 {
-    "*.{js,vue}": ["npm run lint:fix", "git add"]
+    "*.{js,vue}": ["npm run lint:fix", "prettier-standard", "git add"]
 }
