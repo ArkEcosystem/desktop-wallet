@@ -7,9 +7,7 @@
       :type="transaction.type"
       class="mb-3"
     />
-    <Component
-      :is="activeComponent"
-    />
+    <Component :is="activeComponent" />
 
     <footer class="mt-10 flex justify-between items-center">
       <div>
@@ -34,15 +32,14 @@
 
       <div>
         <button
-          v-tooltip="{ content: $t('TRANSACTION.SAVE_OFFLINE'), toggle: 'hover' }"
+          v-tooltip="{
+            content: $t('TRANSACTION.SAVE_OFFLINE'),
+            toggle: 'hover'
+          }"
           class="TransactionConfirm__save-tx action-button pull-right flex items-center"
           @click="saveTransaction"
         >
-          <SvgIcon
-            name="save"
-            view-box="0 0 15 15"
-            class="mr-1"
-          />
+          <SvgIcon name="save" view-box="0 0 15 15" class="mr-1" />
           {{ $t('COMMON.SAVE') }}
         </button>
       </div>
@@ -109,10 +106,15 @@ export default {
   },
 
   mounted () {
-    const component = find(this.$options.components, item => item.transactionType === this.transaction.type)
+    const component = find(
+      this.$options.components,
+      item => item.transactionType === this.transaction.type
+    )
 
     if (!component) {
-      throw new Error(`[TransactionConfirm] - Confirm for type ${this.type} not found.`)
+      throw new Error(
+        `[TransactionConfirm] - Confirm for type ${this.type} not found.`
+      )
     }
 
     this.activeComponent = component.name
@@ -148,7 +150,7 @@ export default {
 
 <style scoped>
 .TransactionConfirm__send-button:hover > span {
-  @apply .bg-blue
+  @apply .bg-blue;
 }
 .TransactionConfirm__send-button,
 .TransactionConfirm__send-button > span {

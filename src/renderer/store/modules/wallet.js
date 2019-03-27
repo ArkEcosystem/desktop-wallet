@@ -3,7 +3,8 @@ import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
-const includesMessage = (objects, find) => objects.map(a => a.timestamp).includes(find.timestamp)
+const includesMessage = (objects, find) =>
+  objects.map(a => a.timestamp).includes(find.timestamp)
 
 /**
  * Internally the wallets are stored aggregated by `profileId``
@@ -80,7 +81,9 @@ export default {
       }
 
       if (includes(state.wallets[wallet.profileId], wallet)) {
-        throw new Error(`Cannot create wallet '${wallet.id}' - it already exists`)
+        throw new Error(
+          `Cannot create wallet '${wallet.id}' - it already exists`
+        )
       }
 
       state.wallets[wallet.profileId].push(wallet)
@@ -89,30 +92,53 @@ export default {
       if (!state.wallets[wallet.profileId]) {
         Vue.set(state.wallets, wallet.profileId, [])
       }
-      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+      state.wallets[wallet.profileId] = unionBy(
+        [wallet, ...state.wallets[wallet.profileId]],
+        'id'
+      )
     },
     UPDATE (state, wallet) {
       if (!includes(state.wallets[wallet.profileId], wallet)) {
-        throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
+        throw new Error(
+          `Cannot update wallet '${wallet.id}' - it does not exist on the state`
+        )
       }
-      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+      state.wallets[wallet.profileId] = unionBy(
+        [wallet, ...state.wallets[wallet.profileId]],
+        'id'
+      )
     },
     UPDATE_BULK (state, wallets) {
       const profileId = wallets[0].profileId
       wallets.forEach(wallet => {
         if (profileId !== wallet.profileId) {
-          throw new Error(`Updating wallets of different profile is not supported ('${profileId}' != '${wallet.profileId}')`)
+          throw new Error(
+            `Updating wallets of different profile is not supported ('${profileId}' != '${
+              wallet.profileId
+            }')`
+          )
         }
         if (!includes(state.wallets[profileId], wallet)) {
-          throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
+          throw new Error(
+            `Cannot update wallet '${
+              wallet.id
+            }' - it does not exist on the state`
+          )
         }
       })
-      state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], 'id')
+      state.wallets[profileId] = unionBy(
+        [...wallets, ...state.wallets[profileId]],
+        'id'
+      )
     },
     DELETE (state, wallet) {
-      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
+      const index = findIndex(state.wallets[wallet.profileId], {
+        id: wallet.id
+      })
       if (index === -1) {
-        throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
+        throw new Error(
+          `Cannot delete wallet '${wallet.id}' - it does not exist on the state`
+        )
       }
       state.wallets[wallet.profileId].splice(index, 1)
     },
@@ -135,7 +161,9 @@ export default {
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      const index = findIndex(state.signedMessages[message.address], { timestamp: message.timestamp })
+      const index = findIndex(state.signedMessages[message.address], {
+        timestamp: message.timestamp
+      })
       if (index !== -1) {
         state.signedMessages[message.address].splice(index, 1)
       }

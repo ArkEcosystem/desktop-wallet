@@ -1,5 +1,7 @@
 <template>
-  <div class="PassphraseVerification flex flex-col h-full w-full justify-around">
+  <div
+    class="PassphraseVerification flex flex-col h-full w-full justify-around"
+  >
     <div class="PassphraseVerification__inputs">
       <InputText
         v-for="(input, position) in inputs"
@@ -20,9 +22,10 @@
       <button
         v-for="suggestion in suggestions"
         :key="suggestion"
-        :class="acceptedWords[currentPosition] === suggestion
-          ? 'bg-green rounded p4 text-white font-semibold'
-          : 'hover:text-theme-button-text'
+        :class="
+          acceptedWords[currentPosition] === suggestion
+            ? 'bg-green rounded p4 text-white font-semibold'
+            : 'hover:text-theme-button-text'
         "
         :title="suggestion"
         class="PassphraseVerification__suggestions__input cursor-pointer py-2 px-1 text-center text-theme-page-text"
@@ -82,7 +85,7 @@ export default {
     },
 
     availableSuggestions () {
-      return this.additionalSuggestions.length >= (this.suggestionsPerWord - 1)
+      return this.additionalSuggestions.length >= this.suggestionsPerWord - 1
         ? this.additionalSuggestions
         : this.additionalSuggestions.concat(this.passphraseWords)
     },
@@ -94,8 +97,12 @@ export default {
       return this.positions.reduce((acc, position) => {
         const passphraseWord = this.words[position]
 
-        let suggestions = [passphraseWord].concat(shuffle(this.availableSuggestions))
-        suggestions = shuffle(uniq(suggestions).slice(0, this.suggestionsPerWord))
+        let suggestions = [passphraseWord].concat(
+          shuffle(this.availableSuggestions)
+        )
+        suggestions = shuffle(
+          uniq(suggestions).slice(0, this.suggestionsPerWord)
+        )
 
         acc[position] = suggestions
         return acc
@@ -106,7 +113,9 @@ export default {
      * @return {Array}
      */
     passphraseWords () {
-      return Array.isArray(this.passphrase) ? this.passphrase : this.passphrase.split(' ')
+      return Array.isArray(this.passphrase)
+        ? this.passphrase
+        : this.passphrase.split(' ')
     },
     positions () {
       return this.wordPositions.map(p => p.toString())
@@ -158,7 +167,11 @@ export default {
      * @param {String} word
      */
     isAccepted (position, word) {
-      return isString(word) && word !== '' && isEqual(this.acceptedWords[position], word)
+      return (
+        isString(word) &&
+        word !== '' &&
+        isEqual(this.acceptedWords[position], word)
+      )
     },
 
     resetData (data) {
@@ -240,12 +253,15 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.PassphraseVerification__inputs, .PassphraseVerification__suggestions {
-  @apply flex flex-wrap
-},
+.PassphraseVerification__inputs,
+.PassphraseVerification__suggestions {
+  @apply flex flex-wrap;
+}
 
-.PassphraseVerification__inputs__input, .PassphraseVerification__suggestions__input {
+,
+.PassphraseVerification__inputs__input,
+.PassphraseVerification__suggestions__input {
   width: calc(config('width.1/3') - config('margin.2'));
-  @apply mr-2
+  @apply mr-2;
 }
 </style>

@@ -6,7 +6,16 @@ import { PassphraseWords } from '@/components/Passphrase'
 Vue.use(Vuelidate)
 
 describe('PassphraseWords', () => {
-  const passphraseWords = ['test', 'check', 'verify', 'true', 'false', 'validate', 'ignore', 'shoulder']
+  const passphraseWords = [
+    'test',
+    'check',
+    'verify',
+    'true',
+    'false',
+    'validate',
+    'ignore',
+    'shoulder'
+  ]
   let wrapper
 
   beforeEach(() => {

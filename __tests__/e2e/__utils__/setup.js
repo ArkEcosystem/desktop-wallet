@@ -3,7 +3,16 @@ import { Application } from 'spectron'
 
 process.env.TEMP_USER_DATA = 'true'
 const timeout = 30000
-const shortcuts = ['element', 'getAttribute', 'getSource', 'getText', 'isExisting', 'isVisible', 'url', 'click']
+const shortcuts = [
+  'element',
+  'getAttribute',
+  'getSource',
+  'getText',
+  'isExisting',
+  'isVisible',
+  'url',
+  'click'
+]
 
 jest.setTimeout(timeout)
 

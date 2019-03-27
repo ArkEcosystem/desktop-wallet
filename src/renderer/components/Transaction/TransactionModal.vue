@@ -22,11 +22,7 @@
       @confirm="onConfirm"
     />
 
-    <PortalTarget
-      v-if="step === 0"
-      slot="footer"
-      name="transaction-footer"
-    />
+    <PortalTarget v-if="step === 0" slot="footer" name="transaction-footer" />
 
     <ModalLoader
       :allow-close="true"
@@ -100,13 +96,17 @@ export default {
         return sessionNetwork
       }
 
-      const profile = this.$store.getters['profile/byId'](this.walletOverride.profileId)
+      const profile = this.$store.getters['profile/byId'](
+        this.walletOverride.profileId
+      )
 
       if (!profile.id) {
         return sessionNetwork
       }
 
-      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+      return (
+        this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+      )
     }
   },
 
@@ -139,7 +139,9 @@ export default {
       try {
         let shouldBroadcast = false
         if (this.walletOverride) {
-          const walletProfile = this.$store.getters['profile/byId'](this.walletOverride.profileId)
+          const walletProfile = this.$store.getters['profile/byId'](
+            this.walletOverride.profileId
+          )
           shouldBroadcast = walletProfile.broadcastPeers
         } else {
           shouldBroadcast = this.$store.getters['session/broadcastPeers']
@@ -149,15 +151,27 @@ export default {
           this.showBroadcastingTransactions = true
         }
 
-        if (this.walletOverride && this.session_network.id !== this.walletNetwork.id) {
+        if (
+          this.walletOverride &&
+          this.session_network.id !== this.walletNetwork.id
+        ) {
           const peer = await this.$store.dispatch('peer/findBest', {
             refresh: true,
             network: this.walletNetwork
           })
-          const apiClient = await this.$store.dispatch('peer/clientServiceFromPeer', peer)
-          responseArray = await apiClient.broadcastTransaction(this.transaction, shouldBroadcast)
+          const apiClient = await this.$store.dispatch(
+            'peer/clientServiceFromPeer',
+            peer
+          )
+          responseArray = await apiClient.broadcastTransaction(
+            this.transaction,
+            shouldBroadcast
+          )
         } else {
-          responseArray = await this.$client.broadcastTransaction(this.transaction, shouldBroadcast)
+          responseArray = await this.$client.broadcastTransaction(
+            this.transaction,
+            shouldBroadcast
+          )
         }
 
         if (responseArray.length > 0) {
@@ -168,7 +182,11 @@ export default {
             if (this.isSuccessfulResponse(response)) {
               this.storeTransaction(this.transaction)
 
-              if (data && data.accept.length === 0 && data.broadcast.length > 0) {
+              if (
+                data &&
+                data.accept.length === 0 &&
+                data.broadcast.length > 0
+              ) {
                 this.$warn(messages.warningBroadcast)
               } else {
                 this.$success(messages.success)
@@ -183,7 +201,9 @@ export default {
           const { errors } = response.data
 
           const anyLowFee = Object.keys(errors).some(transactionId => {
-            return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
+            return errors[transactionId].some(
+              error => error.type === 'ERR_LOW_FEE'
+            )
           })
 
           // Be clear with the user about the error cause
@@ -239,9 +259,19 @@ export default {
     },
 
     storeTransaction (transaction) {
-      const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
+      const {
+        id,
+        type,
+        amount,
+        fee,
+        senderPublicKey,
+        vendorField
+      } = transaction
 
-      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
+      const sender = WalletService.getAddressFromPublicKey(
+        senderPublicKey,
+        this.walletNetwork.version
+      )
       const epoch = new Date(this.walletNetwork.constants.epoch)
       const timestamp = epoch.getTime() + transaction.timestamp * 1000
 
@@ -255,7 +285,9 @@ export default {
         vendorField,
         confirmations: 0,
         recipient: transaction.recipientId || transaction.sender,
-        profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
+        profileId: this.walletOverride
+          ? this.walletOverride.profileId
+          : this.session_profile.id,
         raw: transaction
       })
     }
@@ -265,7 +297,7 @@ export default {
 
 <style>
 .TransactionModal {
-  max-width: 45rem
+  max-width: 45rem;
 }
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */

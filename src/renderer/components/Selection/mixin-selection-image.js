@@ -18,7 +18,9 @@ export default {
 
       return this.categories.reduce((all, category) => {
         if (groups[category]) {
-          const translatedCategory = this.$t(`${componentName}.${category.toUpperCase()}`)
+          const translatedCategory = this.$t(
+            `${componentName}.${category.toUpperCase()}`
+          )
 
           const images = groups[category].map(imagePath => {
             const { name } = path.parse(imagePath)

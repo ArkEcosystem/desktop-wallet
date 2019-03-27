@@ -24,7 +24,9 @@ export default {
      */
     currency_format (value, options = {}) {
       if (!options.currency && !options.currencyFrom) {
-        throw new Error('Either the `currency` or the `currencyFrom` option is mandatory')
+        throw new Error(
+          'Either the `currency` or the `currencyFrom` option is mandatory'
+        )
       }
 
       const defaultOptions = {
@@ -50,13 +52,17 @@ export default {
       let cryptoCurrency = null
 
       const findNetworkByCurrency = currency => {
-        return this.$store.getters['network/byToken'](currency) || this.$store.getters['network/bySymbol'](currency)
+        return (
+          this.$store.getters['network/byToken'](currency) ||
+          this.$store.getters['network/bySymbol'](currency)
+        )
       }
 
       // Network of the token/symbol
-      const network = config.currencyFrom === 'network'
-        ? this.session_network
-        : findNetworkByCurrency(config.currency)
+      const network =
+        config.currencyFrom === 'network'
+          ? this.session_network
+          : findNetworkByCurrency(config.currency)
 
       if (network) {
         if (options.subunit) {
@@ -66,20 +72,27 @@ export default {
           // TODO workaround this limitation for any language
           config.maximumFractionDigits = 2
         } else {
-          cryptoCurrency = config.currencyDisplay === 'symbol' ? network.symbol : network.token
-          config.maximumFractionDigits || (config.maximumFractionDigits = network.fractionDigits)
+          cryptoCurrency =
+            config.currencyDisplay === 'symbol' ? network.symbol : network.token
+          config.maximumFractionDigits ||
+            (config.maximumFractionDigits = network.fractionDigits)
         }
       } else {
         if (options.subunit) {
-          throw new Error('The `subunit` option is only supported for the network currencies')
+          throw new Error(
+            'The `subunit` option is only supported for the network currencies'
+          )
         }
 
         if (MARKET.crypto.indexOf(config.currency) !== -1) {
-          cryptoCurrency = config.currencyDisplay === 'symbol'
-            ? MARKET.currencies[config.currency].symbol
-            : config.currency
+          cryptoCurrency =
+            config.currencyDisplay === 'symbol'
+              ? MARKET.currencies[config.currency].symbol
+              : config.currency
 
-          config.maximumFractionDigits || (config.maximumFractionDigits = MARKET.currencies[config.currency].fractionDigits)
+          config.maximumFractionDigits ||
+            (config.maximumFractionDigits =
+              MARKET.currencies[config.currency].fractionDigits)
         }
       }
 
@@ -107,12 +120,16 @@ export default {
 
     currency_subToUnit (value, network) {
       const { fractionDigits } = network || this.session_network
-      return new BigNumber(value.toString()).dividedBy(Math.pow(10, fractionDigits)).toString()
+      return new BigNumber(value.toString())
+        .dividedBy(Math.pow(10, fractionDigits))
+        .toString()
     },
 
     currency_unitToSub (value, network) {
       const { fractionDigits } = network || this.session_network
-      return new BigNumber(value.toString()).multipliedBy(Math.pow(10, fractionDigits)).toString()
+      return new BigNumber(value.toString())
+        .multipliedBy(Math.pow(10, fractionDigits))
+        .toString()
     }
   }
 }

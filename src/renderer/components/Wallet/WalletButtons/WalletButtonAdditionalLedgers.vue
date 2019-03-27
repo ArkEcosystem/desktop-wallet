@@ -1,26 +1,15 @@
 <template>
-  <div
-    v-show="isLedgerConnected"
-    class="WalletButton__load-ledger-wallets"
-  >
-    <a
-      class="text-center"
-      @click="toggle"
-    >
-      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
-        <SvgIcon
-          name="update"
-          class="text-center"
-          view-box="0 0 9 9"
-        />
+  <div v-show="isLedgerConnected" class="WalletButton__load-ledger-wallets">
+    <a class="text-center" @click="toggle">
+      <span
+        class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center"
+      >
+        <SvgIcon name="update" class="text-center" view-box="0 0 9 9" />
       </span>
 
       {{ $t('PAGES.WALLET_ALL.LEDGER.ADDITIONAL') }}
     </a>
-    <ModalAdditionalLedgers
-      v-if="showModal"
-      @close="toggle"
-    />
+    <ModalAdditionalLedgers v-if="showModal" @close="toggle" />
   </div>
 </template>
 
@@ -58,10 +47,10 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletButton__load-ledger-wallets {
-  @apply .appearance-none .font-semibold .flex .flex-col .items-center .border-r .border-theme-feature-item-alternative
+  @apply .appearance-none .font-semibold .flex .flex-col .items-center .border-r .border-theme-feature-item-alternative;
 }
 .WalletButton__load-ledger-wallets > span {
-  @apply .w-full .text-center
+  @apply .w-full .text-center;
 }
 .WalletButton__load-ledger-wallets > a {
   @apply .cursor-pointer;

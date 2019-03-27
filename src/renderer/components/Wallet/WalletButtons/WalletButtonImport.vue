@@ -1,15 +1,10 @@
 <template>
   <div class="WalletButton__import">
-    <RouterLink
-      :to="{ name: 'wallet-import' }"
-      class="font-bold text-center"
-    >
-      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
-        <SvgIcon
-          name="arrow-import"
-          class="text-center"
-          view-box="0 0 7 10"
-        />
+    <RouterLink :to="{ name: 'wallet-import' }" class="font-bold text-center">
+      <span
+        class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center"
+      >
+        <SvgIcon name="arrow-import" class="text-center" view-box="0 0 7 10" />
       </span>
 
       {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
@@ -31,10 +26,10 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletButton__import {
-  @apply .appearance-none .font-semibold .flex .flex-col .items-center
+  @apply .appearance-none .font-semibold .flex .flex-col .items-center;
 }
 .WalletButton__import > span {
-  @apply .w-full .text-center
+  @apply .w-full .text-center;
 }
 .WalletButton__import > a > .rounded-full {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text;

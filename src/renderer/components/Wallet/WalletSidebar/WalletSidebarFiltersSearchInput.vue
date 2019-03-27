@@ -1,15 +1,7 @@
 <template>
-  <div
-    class="WalletSidebarFiltersSearchInput flex flex-row"
-  >
-    <div
-      class="cursor-pointer mr-4 text-theme-settings-text"
-      @click="focus"
-    >
-      <SvgIcon
-        name="search"
-        view-box="0 0 17 16"
-      />
+  <div class="WalletSidebarFiltersSearchInput flex flex-row">
+    <div class="cursor-pointer mr-4 text-theme-settings-text" @click="focus">
+      <SvgIcon name="search" view-box="0 0 17 16" />
     </div>
 
     <input
@@ -20,7 +12,7 @@
       name="wallet-sidebar-filters-search"
       type="text"
       @input="updateInput"
-    >
+    />
   </div>
 </template>
 

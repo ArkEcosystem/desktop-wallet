@@ -18,21 +18,18 @@
         :src="flagImage(itemScope.value)"
         :title="itemScope.item"
         class="InputLanguage__item__flag mr-2"
-      >
+      />
       <span class="font-semibold">
         {{ itemScope.item }}
       </span>
     </div>
 
-    <div
-      slot="input-handler"
-      slot-scope="handlerScope"
-    >
+    <div slot="input-handler" slot-scope="handlerScope">
       <img
         :src="flagImage(selected)"
         :title="handlerScope.value"
         class="InputLanguage__handler__flag mr-1"
-      >
+      />
       {{ handlerScope.item }}
     </div>
   </InputSelect>
@@ -129,15 +126,15 @@ export default {
 
 <style scoped>
 .InputLanguage__item__flag {
-  height: 18px
+  height: 18px;
 }
 .InputLanguage__handler__flag {
-  height: 12px
+  height: 12px;
 }
 </style>
 
 <style>
 .InputLanguage .MenuDropdownItem__container {
-  @apply .mx-0 .px-2
+  @apply .mx-0 .px-2;
 }
 </style>

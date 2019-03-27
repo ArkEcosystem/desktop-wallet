@@ -4,7 +4,7 @@ export default new BaseModel({
   type: 'object',
   properties: {
     id: {
-      format: (data) => data.id || data.name
+      format: data => data.id || data.name
     },
     name: {},
     title: {},

@@ -7,17 +7,11 @@
   >
     <section class="ModalConfirmation__container flex flex-col">
       <div class="mb-6">
-        <h3
-          v-if="question"
-          class="font-semibold"
-        >
+        <h3 v-if="question" class="font-semibold">
           {{ question }}
         </h3>
 
-        <div
-          v-if="note"
-          class="mt-3 text-grey-darker text-lg"
-        >
+        <div v-if="note" class="mt-3 text-grey-darker text-lg">
           {{ note }}
         </div>
       </div>
@@ -25,17 +19,11 @@
       <slot />
 
       <div class="mt-4 flex flex-row">
-        <button
-          class="blue-button"
-          @click="emitCancel"
-        >
+        <button class="blue-button" @click="emitCancel">
           {{ cancelButton }}
         </button>
 
-        <button
-          class="action-button px-8"
-          @click="emitContinue"
-        >
+        <button class="action-button px-8" @click="emitContinue">
           {{ continueButton }}
         </button>
       </div>

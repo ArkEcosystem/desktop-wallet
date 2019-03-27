@@ -22,10 +22,7 @@
         :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
         @click="toggleFilters"
       >
-        <SvgIcon
-          name="filter"
-          view-box="0 0 13 20"
-        />
+        <SvgIcon name="filter" view-box="0 0 13 20" />
       </div>
       <div
         v-if="!isExpanded"
@@ -35,10 +32,7 @@
         class="WalletSidebar__menu__button"
         @click="expand"
       >
-        <SvgIcon
-          name="expand"
-          view-box="0 0 18 14"
-        />
+        <SvgIcon name="expand" view-box="0 0 18 14" />
       </div>
       <div
         v-if="isExpanded"
@@ -46,10 +40,7 @@
         @click="toggleFilters"
       >
         <div class="flex items-center">
-          <SvgIcon
-            name="filter"
-            view-box="0 0 13 20"
-          />
+          <SvgIcon name="filter" view-box="0 0 13 20" />
           <span v-if="isExpanded">
             {{ $t('WALLET_SIDEBAR.FILTER') }}
           </span>
@@ -61,10 +52,7 @@
         @click="collapse"
       >
         <div class="flex items-center">
-          <SvgIcon
-            name="collapse"
-            view-box="0 0 18 14"
-          />
+          <SvgIcon name="collapse" view-box="0 0 18 14" />
           <span v-if="isExpanded">
             {{ $t('WALLET_SIDEBAR.HIDE') }}
           </span>
@@ -115,7 +103,7 @@
           title="arrow"
           :src="assets_loadImage('arrows/arrow-confirmation.svg')"
           class="WalletIdenticon__placeholder__arrow ml-4"
-        >
+        />
       </div>
     </MenuNavigationItem>
 
@@ -144,14 +132,8 @@
       tag="div"
     >
       <!-- This element is necessary for the transition group -->
-      <div
-        v-for="wallet in selectableWallets"
-        :key="wallet.id"
-      >
-        <MenuNavigationItem
-          :id="wallet.id"
-          class="WalletSidebar__wallet"
-        >
+      <div v-for="wallet in selectableWallets" :key="wallet.id">
+        <MenuNavigationItem :id="wallet.id" class="WalletSidebar__wallet">
           <div
             slot-scope="{ isActive }"
             :class="{ 'flex flex-row': isExpanded }"
@@ -176,7 +158,13 @@
                 :class="{ 'justify-center': !isExpanded }"
               >
                 <span class="block truncate">
-                  {{ wallet_name(wallet.address) || wallet_truncate(wallet.address, !isExpanded ? 6 : (wallet.isLedger ? 12 : 24)) }}
+                  {{
+                    wallet_name(wallet.address) ||
+                      wallet_truncate(
+                        wallet.address,
+                        !isExpanded ? 6 : wallet.isLedger ? 12 : 24
+                      )
+                  }}
                 </span>
                 <span
                   v-if="wallet.isLedger"
@@ -184,13 +172,14 @@
                   :class="{ 'w-5': !isExpanded }"
                   class="ledger-badge"
                 >
-                  {{ !isExpanded ? $t('COMMON.LEDGER').charAt(0) : $t('COMMON.LEDGER') }}
+                  {{
+                    !isExpanded
+                      ? $t('COMMON.LEDGER').charAt(0)
+                      : $t('COMMON.LEDGER')
+                  }}
                 </span>
               </span>
-              <span
-                v-if="isExpanded"
-                class="font-bold mt-2 text-xl"
-              >
+              <span v-if="isExpanded" class="font-bold mt-2 text-xl">
                 {{ formatter_networkCurrency(wallet.balance, 2) }}
                 <!-- TODO display a +/- n ARK on recent transactions -->
               </span>
@@ -262,7 +251,11 @@ export default {
     },
 
     hasContactsOnly () {
-      return this.currentWallet && this.currentWallet.isContact && !this.currentWallet.isWatchOnly
+      return (
+        this.currentWallet &&
+        this.currentWallet.isContact &&
+        !this.currentWallet.isWatchOnly
+      )
     },
 
     isExpanded () {
@@ -274,12 +267,16 @@ export default {
     },
 
     isLoadingLedger () {
-      return this.$store.getters['ledger/isLoading'] && !this.ledgerWallets.length
+      return (
+        this.$store.getters['ledger/isLoading'] && !this.ledgerWallets.length
+      )
     },
 
     wallets () {
       return this.hasContactsOnly
-        ? this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+        ? this.$store.getters['wallet/contactsByProfileId'](
+            this.session_profile.id
+          )
         : this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
 
@@ -294,10 +291,7 @@ export default {
       let wallets = this.wallets
 
       if (this.isLedgerConnected && !this.hasContactsOnly) {
-        wallets = uniqBy([
-          ...wallets,
-          ...this.ledgerWallets
-        ], 'address')
+        wallets = uniqBy([...wallets, ...this.ledgerWallets], 'address')
       }
 
       return wallets
@@ -350,7 +344,9 @@ export default {
       // To not hide the filters when expanding or collapsing
       const wasToggleExpand = context.path.some(path => {
         if (path.className) {
-          return path.className.toString().includes('WalletSidebar__menu__button')
+          return path.className
+            .toString()
+            .includes('WalletSidebar__menu__button')
         }
       })
 
@@ -378,16 +374,13 @@ export default {
       }
       if (this.filters.searchQuery) {
         filtered = filter(filtered, ({ address, balance, name }) => {
-          let match = [
-            address,
-            balance.toString()
-          ].some(text => text.includes(this.filters.searchQuery))
+          let match = [address, balance.toString()].some(text =>
+            text.includes(this.filters.searchQuery)
+          )
 
           if (!match) {
             const alternativeName = this.wallet_name(address)
-            const names = alternativeName
-              ? [name, alternativeName]
-              : [name]
+            const names = alternativeName ? [name, alternativeName] : [name]
 
             const query = this.filters.searchQuery.toLowerCase()
             match = names.some(name => name.toLowerCase().includes(query))
@@ -424,7 +417,9 @@ export default {
       if (!hasCurrentWallet || this.currentWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
           if (this.selectableWallets.length) {
-            this.$refs.MenuNavigation.switchToId(this.selectableWallets[0].address)
+            this.$refs.MenuNavigation.switchToId(
+              this.selectableWallets[0].address
+            )
           } else {
             this.$router.push({ name: 'wallets' })
           }
@@ -437,18 +432,18 @@ export default {
 
 <style lang="postcss">
 .WalletSidebar--expanded .WalletSidebar__wallet .MenuNavigationItem__border {
-  @apply .hidden
+  @apply .hidden;
 }
 </style>
 
 <style lang="postcss" scoped>
 .WalletSidebar {
   transition: width 0.1s ease-out;
-  @apply .overflow-y-auto
+  @apply .overflow-y-auto;
 }
 .WalletSidebar__menu {
   border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
-  @apply .sticky .z-10 .bg-theme-feature .pin-t
+  @apply .sticky .z-10 .bg-theme-feature .pin-t;
 }
 .WalletSidebar__menu__button {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text .py-2 .my-6;
@@ -466,30 +461,30 @@ export default {
 }
 .WalletSidebar__menu__separator__line {
   border-right: 0.08rem solid var(--theme-feature-item-alternative);
-  @apply .h-12 .my-4
+  @apply .h-12 .my-4;
 }
 
 .WalletSidebar--expanded .WalletSidebar__wallet__wrapper {
-  @apply .border-b .border-theme-feature-item-alternative .text-left
+  @apply .border-b .border-theme-feature-item-alternative .text-left;
 }
 .WalletSidebar--expanded .WalletSidebar__wallet__identicon {
-  @apply .mr-2
+  @apply .mr-2;
 }
 
 .WalletSidebar--collapsed .WalletSidebar__wallet__wrapper {
-  @apply .flex-col .justify-center .border-b .border-theme-feature
+  @apply .flex-col .justify-center .border-b .border-theme-feature;
 }
 .WalletSidebar--collapsed .WalletSidebar__wallet__identicon {
-  @apply .mb-2
+  @apply .mb-2;
 }
 
 .WalletIdenticon__placeholder {
-  filter: opacity(20%)
+  filter: opacity(20%);
 }
 .WalletIdenticon__placeholder__arrow {
   width: 40px;
   height: 40px;
-  transform: scaleY(-1) scaleX(-1)
+  transform: scaleY(-1) scaleX(-1);
 }
 
 .WalletSidebar__container {

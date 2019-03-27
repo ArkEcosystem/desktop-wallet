@@ -11,16 +11,22 @@ const i18n = useI18n(Vue)
 
 describe('InputAddress', () => {
   const mountComponent = config => {
-    return mount(InputAddress, merge({
-      i18n,
-      propsData: {
-        value: '',
-        pubKeyHash: 23
-      },
-      mocks: {
-        wallet_name: value => value
-      }
-    }, config))
+    return mount(
+      InputAddress,
+      merge(
+        {
+          i18n,
+          propsData: {
+            value: '',
+            pubKeyHash: 23
+          },
+          mocks: {
+            wallet_name: value => value
+          }
+        },
+        config
+      )
+    )
   }
 
   it('has the right name', () => {

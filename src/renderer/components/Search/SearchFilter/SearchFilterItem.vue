@@ -1,9 +1,6 @@
 <template>
   <li class="SearchFilterItem flex flex-col">
-    <span
-      v-if="label"
-      class="text-grey-dark text-sm display-block mb-1"
-    >
+    <span v-if="label" class="text-grey-dark text-sm display-block mb-1">
       {{ label }}
     </span>
     <slot />
@@ -26,6 +23,6 @@ export default {
 
 <style lang="postcss" scoped>
 .SearchFilterItem {
-  @apply .px-5 .border-l .border-theme-settings-border
+  @apply .px-5 .border-l .border-theme-settings-border;
 }
 </style>

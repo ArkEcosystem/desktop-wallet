@@ -80,10 +80,7 @@
         :label="$t('TRANSACTION.SENDER')"
         item-value-class="flex items-center"
       >
-        <a
-          href="#"
-          @click.stop="openAddressInWallet(transaction.sender)"
-        >
+        <a href="#" @click.stop="openAddressInWallet(transaction.sender)">
           {{ wallet_formatAddress(transaction.sender, 10) }}
         </a>
         <ButtonClipboard
@@ -126,7 +123,11 @@
             trigger: 'hover'
           }"
           class="flex items-center"
-          @click="openAddress(votedDelegate ? votedDelegate.address : transaction.recipient)"
+          @click="
+            openAddress(
+              votedDelegate ? votedDelegate.address : transaction.recipient
+            )
+          "
         >
           <SvgIcon
             name="open-external"
@@ -162,15 +163,14 @@
         <span
           v-show="!transaction.isExpired"
           v-tooltip="{
-            content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: transaction.confirmations }),
+            content: $t('TRANSACTION.CONFIRMATION_COUNT', {
+              confirmations: transaction.confirmations
+            }),
             trigger: 'hover'
           }"
           class="flex items-center ml-2"
         >
-          <SvgIcon
-            name="time"
-            view-box="0 0 12 13"
-          />
+          <SvgIcon name="time" view-box="0 0 12 13" />
         </span>
       </ListDividedItem>
 
@@ -187,10 +187,7 @@
     </ListDivided>
 
     <div v-show="transaction.isExpired">
-      <ButtonGeneric
-        :label="$t('TRANSACTION.RESEND')"
-        @click="emitResend"
-      />
+      <ButtonGeneric :label="$t('TRANSACTION.RESEND')" @click="emitResend" />
       <ButtonGeneric
         :label="$t('TRANSACTION.DISCARD')"
         class="ml-4"
@@ -237,13 +234,19 @@ export default {
 
   computed: {
     isWellConfirmed () {
-      return this.transaction.confirmations >= (this.numberOfActiveDelegates || 51)
+      return (
+        this.transaction.confirmations >= (this.numberOfActiveDelegates || 51)
+      )
     },
     numberOfActiveDelegates () {
       return at(this, 'session_network.constants.activeDelegates') || 51
     },
     votePublicKey () {
-      if (this.transaction && this.transaction.asset && this.transaction.asset.votes) {
+      if (
+        this.transaction &&
+        this.transaction.asset &&
+        this.transaction.asset.votes
+      ) {
         const vote = this.transaction.asset.votes[0]
         return vote.substr(1)
       }
@@ -276,9 +279,16 @@ export default {
 
     async emitResend () {
       const shouldBroadcast = this.$store.getters['session/broadcastPeers']
-      await this.$client.broadcastTransaction(this.transaction.raw, shouldBroadcast)
+      await this.$client.broadcastTransaction(
+        this.transaction.raw,
+        shouldBroadcast
+      )
 
-      this.$success(this.$t('TRANSACTION.RESENT_NOTICE', { transactionId: truncateMiddle(this.transaction.id) }))
+      this.$success(
+        this.$t('TRANSACTION.RESENT_NOTICE', {
+          transactionId: truncateMiddle(this.transaction.id)
+        })
+      )
       this.$emit('close')
     },
 
@@ -294,7 +304,9 @@ export default {
     },
 
     determineVote () {
-      this.votedDelegate = this.$store.getters['delegate/byPublicKey'](this.votePublicKey)
+      this.votedDelegate = this.$store.getters['delegate/byPublicKey'](
+        this.votePublicKey
+      )
     }
   }
 }
@@ -302,6 +314,6 @@ export default {
 
 <style>
 .TransactionShow {
-  min-width: 35rem
+  min-width: 35rem;
 }
 </style>

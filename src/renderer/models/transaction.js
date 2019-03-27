@@ -51,7 +51,7 @@ export default new BaseModel({
     },
     isExpired: {
       type: 'boolean',
-      format: (data) => (data.isExpired || false)
+      format: data => data.isExpired || false
     }
   }
 })

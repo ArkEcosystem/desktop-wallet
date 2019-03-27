@@ -26,7 +26,9 @@ export default class BaseModule {
       mutations: {
         CREATE (state, model) {
           if (includes(state.all, model)) {
-            throw new Error(`Cannot create \`${model.id}\`. It already exists on the state`)
+            throw new Error(
+              `Cannot create \`${model.id}\`. It already exists on the state`
+            )
           }
           state.all.push(model)
         },
@@ -37,7 +39,9 @@ export default class BaseModule {
 
         UPDATE (state, model) {
           if (!includes(state.all, model)) {
-            throw new Error(`Cannot update \`${model.id}\`. It does not exist on the state`)
+            throw new Error(
+              `Cannot update \`${model.id}\`. It does not exist on the state`
+            )
           }
           state.all = unionBy([model, ...state.all], 'id')
         },
@@ -45,7 +49,9 @@ export default class BaseModule {
         DELETE (state, id) {
           const index = findIndex(state.all, { id })
           if (index === -1) {
-            throw new Error(`Cannot delete \`${id}\`. It does not exist on the state`)
+            throw new Error(
+              `Cannot delete \`${id}\`. It does not exist on the state`
+            )
           }
           state.all.splice(index, 1)
         }

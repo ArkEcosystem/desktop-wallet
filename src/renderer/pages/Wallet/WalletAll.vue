@@ -10,7 +10,8 @@
           >
             <span
               :class="{
-                'bg-theme-feature-item-selected text-theme-feature-item-selected-text ': session_profile.avatar,
+                'bg-theme-feature-item-selected text-theme-feature-item-selected-text ':
+                  session_profile.avatar,
                 'bg-theme-button text-theme-button-text': !session_profile.avatar
               }"
               class="WalletAll__avatar__sign"
@@ -31,7 +32,9 @@
             </span>
           </div>
           <div>
-            <span class="transition text-xl sm:text-2xl font-bold whitespace-no-wrap">
+            <span
+              class="transition text-xl sm:text-2xl font-bold whitespace-no-wrap"
+            >
               {{ formatter_networkCurrency(totalBalance) }}
             </span>
             <span
@@ -79,11 +82,7 @@
               }"
               class="inline-flex items-center self-stretch ml-3 pr-2"
             >
-              <SvgIcon
-                class="rotate-360"
-                name="update"
-                view-box="0 0 16 14"
-              />
+              <SvgIcon class="rotate-360" name="update" view-box="0 0 16 14" />
             </span>
           </h3>
 
@@ -93,10 +92,7 @@
           />
         </div>
 
-        <div
-          v-if="isLoading"
-          class="h-full flex items-center"
-        >
+        <div v-if="isLoading" class="h-full flex items-center">
           <div class="m-auto">
             <Loader />
           </div>
@@ -139,18 +135,22 @@
                       <div class="flex items-center">
                         <span
                           v-tooltip="{
-                            content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
+                            content:
+                              !wallet.name && wallet_name(wallet.address)
+                                ? $t('COMMON.NETWORK_NAME')
+                                : '',
                             placement: 'right'
                           }"
                           class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1 cursor-default"
                           @click.stop
                         >
-                          {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                          {{
+                            wallet.name ||
+                              wallet_name(wallet.address) ||
+                              wallet_truncate(wallet.address)
+                          }}
                         </span>
-                        <span
-                          v-if="wallet.isLedger"
-                          class="ledger-badge"
-                        >
+                        <span v-if="wallet.isLedger" class="ledger-badge">
                           {{ $t('COMMON.LEDGER') }}
                         </span>
                       </div>
@@ -181,10 +181,7 @@
                       />
                     </span>
 
-                    <template
-                      slot="item"
-                      slot-scope="itemScope"
-                    >
+                    <template slot="item" slot-scope="itemScope">
                       <div class="flex items-center hidden">
                         <SvgIcon
                           :name="itemScope.item.icon"
@@ -245,8 +242,16 @@ import { ButtonLayout, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-import { WalletButtonAdditionalLedgers, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet/WalletButtons'
-import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
+import {
+  WalletButtonAdditionalLedgers,
+  WalletButtonCreate,
+  WalletButtonImport
+} from '@/components/Wallet/WalletButtons'
+import {
+  WalletIdenticon,
+  WalletRemovalConfirmation,
+  WalletRenameModal
+} from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import { MenuDropdown } from '@/components/Menu'
 
@@ -283,7 +288,9 @@ export default {
 
     alternativeTotalBalance () {
       const balance = this.currency_subToUnit(this.totalBalance)
-      return this.currency_format(balance * this.price, { currency: this.alternativeCurrency })
+      return this.currency_format(balance * this.price, {
+        currency: this.alternativeCurrency
+      })
     },
 
     isMarketEnabled () {
@@ -299,7 +306,9 @@ export default {
     },
 
     totalBalance () {
-      return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
+      return this.$store.getters['profile/balanceWithLedger'](
+        this.session_profile.id
+      )
     },
 
     price () {
@@ -307,12 +316,17 @@ export default {
     },
 
     wallets () {
-      const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      const wallets = this.$store.getters['wallet/byProfileId'](
+        this.session_profile.id
+      )
       return this.wallet_sortByName(wallets)
     },
 
     isLedgerLoading () {
-      return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
+      return (
+        this.$store.getters['ledger/isLoading'] &&
+        !this.$store.getters['ledger/wallets'].length
+      )
     },
 
     isLedgerConnected () {
@@ -365,7 +379,9 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.selectableWallets, wallet => wallet.hasOwnProperty('vote'))
+      return some(this.selectableWallets, wallet =>
+        wallet.hasOwnProperty('vote')
+      )
     }
   },
 
@@ -417,10 +433,9 @@ export default {
 
     async includeLedgerWallets () {
       const ledgerWallets = this.$store.getters['ledger/wallets']
-      this.selectableWallets = this.wallet_sortByName(uniqBy([
-        ...ledgerWallets,
-        ...this.wallets
-      ], 'address'))
+      this.selectableWallets = this.wallet_sortByName(
+        uniqBy([...ledgerWallets, ...this.wallets], 'address')
+      )
     },
 
     ledgerDisconnected () {
@@ -505,26 +520,26 @@ export default {
   @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
 }
 .WalletAll__avatar__sign {
-  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute pin-b pin-r mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap
+  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute pin-b pin-r mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap;
 }
 .WalletAll__heading {
   @apply .flex .justify-between .items-center .bg-theme-feature .rounded-lg;
 }
 .WalletAll__heading .ProfileAvatar {
-  @apply .flex .flex-row .justify-around
+  @apply .flex .flex-row .justify-around;
 }
 .WalletAll__heading .ProfileAvatar__image {
-  height: calc(var(--profile-avatar-xl) * 0.60);
+  height: calc(var(--profile-avatar-xl) * 0.6);
   width: calc(var(--profile-avatar-xl) * 0.66);
   @apply mr-2;
 }
 .WalletAll__heading .ProfileAvatar__letter {
-  @apply mr-4
+  @apply mr-4;
 }
 
 .WalletAll__ledger__load-wallets,
 .WalletAll__ledger__cache {
-  @apply .border-r .border-theme-feature-item-alternative
+  @apply .border-r .border-theme-feature-item-alternative;
 }
 .WalletAll__header {
   @apply .flex .items-center .justify-between .h-8;
@@ -536,7 +551,7 @@ export default {
 .WalletAll__grid__wallet {
   @apply py-3 relative cursor-pointer bg-theme-feature;
   transition-property: transform, border, box-shadow;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: ease;
 }
 .WalletAll__grid__wallet:hover {
@@ -546,14 +561,14 @@ export default {
 }
 .WalletAll__grid__wallet:not(:hover)::after {
   @apply block absolute pin-x pin-b mx-auto border-b border-theme-wallet-overview-border;
-  content: " ";
+  content: ' ';
   width: 95%;
 }
 .WalletAll__grid__wallet__wrapper {
   @apply px-5 py-2 border-l border-theme-wallet-overview-border;
 }
 .WalletAll__grid__wallet:hover .WalletAll__grid__wallet__wrapper {
-  @apply border-transparent
+  @apply border-transparent;
 }
 .WalletAll__grid__wallet:hover .identicon {
   opacity: 1;
@@ -567,23 +582,25 @@ export default {
 }
 @screen max-md {
   .WalletAll__grid__wallet__wrapper {
-    @apply border-transparent
+    @apply border-transparent;
   }
 }
 @screen minmax-lg {
   .WalletAll__grid {
     grid-template-columns: 1fr 1fr;
   }
-  .WalletAll__grid__wallet:nth-child(2n+1) > .WalletAll__grid__wallet__wrapper {
-    @apply border-transparent
+  .WalletAll__grid__wallet:nth-child(2n + 1)
+    > .WalletAll__grid__wallet__wrapper {
+    @apply border-transparent;
   }
 }
 @screen xl {
   .WalletAll__grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .WalletAll__grid__wallet:nth-child(3n+1) > .WalletAll__grid__wallet__wrapper {
-    @apply border-transparent
+  .WalletAll__grid__wallet:nth-child(3n + 1)
+    > .WalletAll__grid__wallet__wrapper {
+    @apply border-transparent;
   }
 }
 </style>

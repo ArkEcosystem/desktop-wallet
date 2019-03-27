@@ -37,21 +37,24 @@ describe('InputFee', () => {
       market: {
         enabled: true
       },
-      feeStatistics: [{
-        type: 0,
-        fees: {
-          avgFee: 0.1,
-          maxFee: 0.4,
-          minFee: 0.01
+      feeStatistics: [
+        {
+          type: 0,
+          fees: {
+            avgFee: 0.1,
+            maxFee: 0.4,
+            minFee: 0.01
+          }
+        },
+        {
+          type: 3,
+          fees: {
+            avgFee: 0.1,
+            maxFee: 0.4,
+            minFee: 0.01
+          }
         }
-      }, {
-        type: 3,
-        fees: {
-          avgFee: 0.1,
-          maxFee: 0.4,
-          minFee: 0.01
-        }
-      }],
+      ],
       fractionDigits: 8
     }
 
@@ -60,28 +63,34 @@ describe('InputFee', () => {
   })
 
   const mountComponent = config => {
-    return shallowMount(InputFee, merge({
-      i18n,
-      propsData: {
-        currency: mockNetwork.token,
-        transactionType: 0
-      },
-      mixins: [CurrencyMixin, FormatterMixin],
-      mocks: {
-        session_network: mockNetwork,
-        wallet_fromRoute: { balance: 10 },
-        $store: store,
-        $synchronizer: {
-          focus: jest.fn(),
-          pause: jest.fn()
-        },
-        $v: {
-          fee: {
-            $touch: jest.fn()
+    return shallowMount(
+      InputFee,
+      merge(
+        {
+          i18n,
+          propsData: {
+            currency: mockNetwork.token,
+            transactionType: 0
+          },
+          mixins: [CurrencyMixin, FormatterMixin],
+          mocks: {
+            session_network: mockNetwork,
+            wallet_fromRoute: { balance: 10 },
+            $store: store,
+            $synchronizer: {
+              focus: jest.fn(),
+              pause: jest.fn()
+            },
+            $v: {
+              fee: {
+                $touch: jest.fn()
+              }
+            }
           }
-        }
-      }
-    }, config))
+        },
+        config
+      )
+    )
   }
 
   it('has the right name', () => {
@@ -231,14 +240,16 @@ describe('InputFee', () => {
   describe('prepareFeeStatistics', () => {
     describe('when the average fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
-        mockNetwork.feeStatistics = [{
-          type: 0,
-          fees: {
-            avgFee: 1000 * 1e8,
-            maxFee: 0.03 * 1e8,
-            minFee: 0.0006 * 1e8
+        mockNetwork.feeStatistics = [
+          {
+            type: 0,
+            fees: {
+              avgFee: 1000 * 1e8,
+              maxFee: 0.03 * 1e8,
+              minFee: 0.0006 * 1e8
+            }
           }
-        }]
+        ]
       })
 
       it('should use the V1 fee as average always', () => {
@@ -250,14 +261,16 @@ describe('InputFee', () => {
 
     describe('when the average fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
-        mockNetwork.feeStatistics = [{
-          type: 0,
-          fees: {
-            avgFee: 0.0048 * 1e8,
-            maxFee: 0.03 * 1e8,
-            minFee: 0.0006 * 1e8
+        mockNetwork.feeStatistics = [
+          {
+            type: 0,
+            fees: {
+              avgFee: 0.0048 * 1e8,
+              maxFee: 0.03 * 1e8,
+              minFee: 0.0006 * 1e8
+            }
           }
-        }]
+        ]
       })
 
       it('should use it as average', () => {
@@ -269,14 +282,16 @@ describe('InputFee', () => {
 
     describe('when the maximum fee of the network is more than the V1 fee', () => {
       beforeEach(() => {
-        mockNetwork.feeStatistics = [{
-          type: 0,
-          fees: {
-            avgFee: 0.0048 * 1e8,
-            maxFee: 1000 * 1e8,
-            minFee: 0.0006 * 1e8
+        mockNetwork.feeStatistics = [
+          {
+            type: 0,
+            fees: {
+              avgFee: 0.0048 * 1e8,
+              maxFee: 1000 * 1e8,
+              minFee: 0.0006 * 1e8
+            }
           }
-        }]
+        ]
       })
 
       it('should use the V1 fee as maximum always', () => {
@@ -288,14 +303,16 @@ describe('InputFee', () => {
 
     describe('when the maximum fee of the network is less than the V1 fee', () => {
       beforeEach(() => {
-        mockNetwork.feeStatistics = [{
-          type: 0,
-          fees: {
-            avgFee: 0.0048 * 1e8,
-            maxFee: 0.03 * 1e8,
-            minFee: 0.0006 * 1e8
+        mockNetwork.feeStatistics = [
+          {
+            type: 0,
+            fees: {
+              avgFee: 0.0048 * 1e8,
+              maxFee: 0.03 * 1e8,
+              minFee: 0.0006 * 1e8
+            }
           }
-        }]
+        ]
       })
 
       it('should use it as maximum', () => {
@@ -330,11 +347,15 @@ describe('InputFee', () => {
         it('should return the message about funds', () => {
           wrapper.vm.wallet_fromRoute.balance = 50000
           wrapper.vm.fee = 20e8
-          expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
+          expect(wrapper.vm.insufficientFundsError).toEqual(
+            'TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE'
+          )
 
           wrapper.vm.wallet_fromRoute.balance = '50000'
           wrapper.vm.fee = '20e8'
-          expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
+          expect(wrapper.vm.insufficientFundsError).toEqual(
+            'TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE'
+          )
         })
       })
 

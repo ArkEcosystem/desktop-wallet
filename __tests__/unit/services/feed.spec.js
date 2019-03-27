@@ -9,15 +9,14 @@ import errorCapturer from '../__utils__/error-capturer'
 describe('Services > Feed', () => {
   const feed = {
     feedUrl: 'http://exampl.net/feed.rss',
-    items: [
-      { title: 'example 1' },
-      { title: 'example 2' }
-    ]
+    items: [{ title: 'example 1' }, { title: 'example 2' }]
   }
 
   describe('fetchAndParse', () => {
     it('should retrieve the feed and parse it', async () => {
-      parseURLMock.mockImplementation(url => url === feed.feedUrl ? feed : null)
+      parseURLMock.mockImplementation(url =>
+        url === feed.feedUrl ? feed : null
+      )
 
       expect(await feedService.fetchAndParse(feed.feedUrl)).toEqual(feed)
     })
@@ -36,14 +35,18 @@ describe('Services > Feed', () => {
           throw new Error('failed')
         })
 
-        expect(await errorCapturer(feedService.fetchAndParse(feed.feedUrl))).toThrow('failed')
+        expect(
+          await errorCapturer(feedService.fetchAndParse(feed.feedUrl))
+        ).toThrow('failed')
       })
     })
   })
 
   describe('fetchItems', () => {
     it('should retrieve the items of the feed', async () => {
-      parseURLMock.mockImplementation(url => url === feed.feedUrl ? feed : null)
+      parseURLMock.mockImplementation(url =>
+        url === feed.feedUrl ? feed : null
+      )
 
       expect(await feedService.fetchItems(feed.feedUrl)).toEqual(feed.items)
     })
@@ -54,7 +57,9 @@ describe('Services > Feed', () => {
           throw new Error('failed items')
         })
 
-        expect(await errorCapturer(feedService.fetchItems(feed.feedUrl))).toThrow('failed items')
+        expect(
+          await errorCapturer(feedService.fetchItems(feed.feedUrl))
+        ).toThrow('failed items')
       })
     })
   })

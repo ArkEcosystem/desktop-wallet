@@ -7,7 +7,6 @@ import Client from '@/services/client'
 import Vue from 'vue'
 
 export default new BaseModule(NetworkModel, {
-
   state: () => ({
     all: [],
     customNetworks: {}
@@ -77,7 +76,10 @@ export default new BaseModule(NetworkModel, {
 
       if (network.apiVersion === 2) {
         try {
-          const feeStatistics = await Client.fetchFeeStatistics(network.server, network.apiVersion)
+          const feeStatistics = await Client.fetchFeeStatistics(
+            network.server,
+            network.apiVersion
+          )
           commit('UPDATE', {
             ...network,
             feeStatistics
@@ -100,7 +102,11 @@ export default new BaseModule(NetworkModel, {
       // Trigger a profile change/reload if updating current network
       const currentNetwork = rootGetters['session/network']
       if (currentNetwork.id === network.id) {
-        await dispatch('session/setProfileId', rootGetters['session/profileId'], { root: true })
+        await dispatch(
+          'session/setProfileId',
+          rootGetters['session/profileId'],
+          { root: true }
+        )
         eventBus.emit('client:changed')
       }
     },

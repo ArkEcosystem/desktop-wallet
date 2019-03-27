@@ -11,12 +11,13 @@ jest.mock('@/store', () => ({
         epoch: '2017-03-21T13:00:00.000Z'
       }
     },
-    'delegate/byAddress': (address) => {
+    'delegate/byAddress': address => {
       if (address === 'DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh') {
         return {
           username: 'test',
           address,
-          publicKey: '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
+          publicKey:
+            '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
         }
       }
     }
@@ -44,8 +45,7 @@ describe('Services > Client', () => {
       expect(client.version).toEqual(2)
     })
 
-    xit('should establish `API-Version` HTTP header of the API client', () => {
-    })
+    xit('should establish `API-Version` HTTP header of the API client', () => {})
   })
 
   describe('fetchWallet', () => {
@@ -157,7 +157,7 @@ describe('Services > Client', () => {
         ]
       }
     }
-    const generateAccountResponse = (address) => {
+    const generateAccountResponse = address => {
       return {
         data: {
           success: true,
@@ -172,7 +172,7 @@ describe('Services > Client', () => {
         }
       }
     }
-    const generateWalletResponse = (address) => {
+    const generateWalletResponse = address => {
       return {
         data: {
           data: {
@@ -213,7 +213,9 @@ describe('Services > Client', () => {
         const fetchedWallets = await client.fetchWallets(walletAddresses)
 
         expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
-        expect(searchWalletEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+        expect(searchWalletEndpoint).toHaveBeenNthCalledWith(1, {
+          addresses: walletAddresses
+        })
         expect(fetchedWallets).toEqual(walletsResponse.data.data)
       })
     })
@@ -233,12 +235,20 @@ describe('Services > Client', () => {
 
           expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
           expect(client.client.resource).toHaveBeenNthCalledWith(2, 'wallets')
-          expect(getWalletEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
-          expect(getWalletEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
-          expect(fetchedWallets).toEqual([
-            generateWalletResponse('address1').data.data,
-            generateWalletResponse('address2').data.data
-          ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
+          expect(getWalletEndpoint).toHaveBeenNthCalledWith(
+            1,
+            walletAddresses[0]
+          )
+          expect(getWalletEndpoint).toHaveBeenNthCalledWith(
+            2,
+            walletAddresses[1]
+          )
+          expect(fetchedWallets).toEqual(
+            [
+              generateWalletResponse('address1').data.data,
+              generateWalletResponse('address2').data.data
+            ].map(wallet => ({ ...wallet, balance: +wallet.balance }))
+          )
         })
       })
 
@@ -252,8 +262,14 @@ describe('Services > Client', () => {
 
           expect(client.client.resource).toHaveBeenNthCalledWith(1, 'accounts')
           expect(client.client.resource).toHaveBeenNthCalledWith(2, 'accounts')
-          expect(getAccountEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
-          expect(getAccountEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
+          expect(getAccountEndpoint).toHaveBeenNthCalledWith(
+            1,
+            walletAddresses[0]
+          )
+          expect(getAccountEndpoint).toHaveBeenNthCalledWith(
+            2,
+            walletAddresses[1]
+          )
           expect(fetchedWallets).toEqual([
             { ...wallets[0], balance: +wallets[0].balance, isDelegate: false },
             { ...wallets[1], balance: +wallets[1].balance, isDelegate: false }
@@ -267,9 +283,11 @@ describe('Services > Client', () => {
     const publicKey = 'public key'
 
     describe('when version is 1', () => {
-      const delegates = [{
-        publicKey
-      }]
+      const delegates = [
+        {
+          publicKey
+        }
+      ]
 
       beforeEach(() => {
         client.version = 1
@@ -292,11 +310,13 @@ describe('Services > Client', () => {
     })
 
     describe('when version is 2', () => {
-      const transactions = [{
-        asset: {
-          votes: ['+' + publicKey]
+      const transactions = [
+        {
+          asset: {
+            votes: ['+' + publicKey]
+          }
         }
-      }]
+      ]
 
       beforeEach(() => {
         client.version = 2
@@ -331,7 +351,9 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'delegates') {
             return {
-              all: () => ({ data: { delegates, success: true, totalCount: meta.totalCount } })
+              all: () => ({
+                data: { delegates, success: true, totalCount: meta.totalCount }
+              })
             }
           }
         }
@@ -349,8 +371,14 @@ describe('Services > Client', () => {
         delegates.forEach((delegate, i) => {
           expect(delegate).toHaveProperty('rank', data[i].rank)
           expect(delegate).toHaveProperty('username', data[i].username)
-          expect(delegate).toHaveProperty('production.approval', data[i].approval)
-          expect(delegate).toHaveProperty('production.productivity', data[i].productivity)
+          expect(delegate).toHaveProperty(
+            'production.approval',
+            data[i].approval
+          )
+          expect(delegate).toHaveProperty(
+            'production.productivity',
+            data[i].productivity
+          )
         })
       })
     })
@@ -382,8 +410,14 @@ describe('Services > Client', () => {
         delegates.forEach((delegate, i) => {
           expect(delegate).toHaveProperty('rank', data[i].rank)
           expect(delegate).toHaveProperty('username', data[i].username)
-          expect(delegate).toHaveProperty('production.approval', data[i].approval)
-          expect(delegate).toHaveProperty('production.productivity', data[i].productivity)
+          expect(delegate).toHaveProperty(
+            'production.approval',
+            data[i].approval
+          )
+          expect(delegate).toHaveProperty(
+            'production.productivity',
+            data[i].productivity
+          )
         })
       })
     })
@@ -508,7 +542,9 @@ describe('Services > Client', () => {
       const resource = resource => {
         if (resource === 'transactions') {
           return {
-            all: () => ({ data: { data: transactions, meta: { totalCount: meta.count } } })
+            all: () => ({
+              data: { data: transactions, meta: { totalCount: meta.count } }
+            })
           }
         }
       }
@@ -525,7 +561,10 @@ describe('Services > Client', () => {
       expect(transactions).toHaveLength(data.length)
 
       transactions.forEach((transaction, i) => {
-        expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
+        expect(transaction).toHaveProperty(
+          'timestamp',
+          data[i].timestamp.unix * 1000
+        )
         expect(transaction).toHaveProperty('sender')
         expect(transaction).toHaveProperty('recipient')
         expect(transaction).not.toHaveProperty('totalAmount')
@@ -548,7 +587,13 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'transactions') {
             return {
-              all: () => ({ data: { transactions, success: true, count: meta.count.toString() } })
+              all: () => ({
+                data: {
+                  transactions,
+                  success: true,
+                  count: meta.count.toString()
+                }
+              })
             }
           }
         }
@@ -565,8 +610,14 @@ describe('Services > Client', () => {
         expect(transactions).toHaveLength(data.length)
 
         transactions.forEach((transaction, i) => {
-          expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
-          expect(transaction).toHaveProperty('timestamp', new Date(data[i].timestamp.human).getTime())
+          expect(transaction).toHaveProperty(
+            'totalAmount',
+            data[i].amount + data[i].fee
+          )
+          expect(transaction).toHaveProperty(
+            'timestamp',
+            new Date(data[i].timestamp.human).getTime()
+          )
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isRecipient')
           expect(transaction).toHaveProperty('sender')
@@ -585,7 +636,9 @@ describe('Services > Client', () => {
         const resource = resource => {
           if (resource === 'wallets') {
             return {
-              transactions: () => ({ data: { data: transactions, meta: { totalCount: meta.count } } })
+              transactions: () => ({
+                data: { data: transactions, meta: { totalCount: meta.count } }
+              })
             }
           }
         }
@@ -602,8 +655,14 @@ describe('Services > Client', () => {
         expect(transactions).toHaveLength(data.length)
 
         transactions.forEach((transaction, i) => {
-          expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
-          expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
+          expect(transaction).toHaveProperty(
+            'totalAmount',
+            data[i].amount + data[i].fee
+          )
+          expect(transaction).toHaveProperty(
+            'timestamp',
+            data[i].timestamp.unix * 1000
+          )
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isRecipient')
           expect(transaction).toHaveProperty('sender')
@@ -628,7 +687,9 @@ describe('Services > Client', () => {
         client.__capabilities = '2.1.0'
 
         transactions = cloneDeep(fixtures.transactions.v2)
-        searchTransactionsEndpoint = jest.fn(() => ({ data: { data: transactions } }))
+        searchTransactionsEndpoint = jest.fn(() => ({
+          data: { data: transactions }
+        }))
 
         const resource = resource => {
           if (resource === 'transactions') {
@@ -649,10 +710,17 @@ describe('Services > Client', () => {
           return all
         }, {})
 
-        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+        const fetchedWallets = await client.fetchTransactionsForWallets(
+          walletAddresses
+        )
 
-        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'transactions')
-        expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
+        expect(client.client.resource).toHaveBeenNthCalledWith(
+          1,
+          'transactions'
+        )
+        expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, {
+          addresses: walletAddresses
+        })
         expect(fetchedWallets).toEqual(walletTransactions)
       })
     })
@@ -695,7 +763,9 @@ describe('Services > Client', () => {
         })
 
         it('should call the wallet transactions endpoint for each wallet', async () => {
-          const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+          const fetchedWallets = await client.fetchTransactionsForWallets(
+            walletAddresses
+          )
 
           expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
           expect(client.client.resource).toHaveBeenNthCalledWith(2, 'wallets')
@@ -712,7 +782,9 @@ describe('Services > Client', () => {
           getTransactionsEndpoint = jest.fn(() => {
             return {
               data: {
-                transactions, success: true, count: meta.count.toString()
+                transactions,
+                success: true,
+                count: meta.count.toString()
               }
             }
           })
@@ -734,10 +806,18 @@ describe('Services > Client', () => {
         })
 
         it('should call the v1 transactions endpoint', async () => {
-          const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+          const fetchedWallets = await client.fetchTransactionsForWallets(
+            walletAddresses
+          )
 
-          expect(client.client.resource).toHaveBeenNthCalledWith(1, 'transactions')
-          expect(client.client.resource).toHaveBeenNthCalledWith(2, 'transactions')
+          expect(client.client.resource).toHaveBeenNthCalledWith(
+            1,
+            'transactions'
+          )
+          expect(client.client.resource).toHaveBeenNthCalledWith(
+            2,
+            'transactions'
+          )
           expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
           expect(fetchedWallets).toEqual(walletTransactions)
         })
@@ -749,14 +829,24 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than V1 fee', () => {
       it('should throw an Error', async () => {
         const fee = V1.fees[2] + 0.1
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
+        expect(
+          await errorCapturer(client.buildDelegateRegistration({ fee }))
+        ).toThrow(/fee/)
       })
     })
 
     describe('when the fee is smaller or equal to V1 fee (25)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 25 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 12.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(
+            client.buildDelegateRegistration({ fee: 25 * 1e8 })
+          )
+        ).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(
+            client.buildDelegateRegistration({ fee: 12.09 * 1e8 })
+          )
+        ).not.toThrow(/fee/)
       })
     })
   })
@@ -765,14 +855,24 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than V1 fee', () => {
       it('should throw an Error', async () => {
         const fee = V1.fees[2] + 0.01
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
+        expect(
+          await errorCapturer(client.buildSecondSignatureRegistration({ fee }))
+        ).toThrow(/fee/)
       })
     })
 
     describe('when the fee is smaller or equal to V1 fee (5)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 5 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 3.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(
+            client.buildSecondSignatureRegistration({ fee: 5 * 1e8 })
+          )
+        ).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(
+            client.buildSecondSignatureRegistration({ fee: 3.09 * 1e8 })
+          )
+        ).not.toThrow(/fee/)
       })
     })
   })
@@ -781,14 +881,20 @@ describe('Services > Client', () => {
     describe('when the fee is bigger than V1 fee', () => {
       it('should throw an Error', async () => {
         const fee = V1.fees[0] + 0.00001
-        expect(await errorCapturer(client.buildTransfer({ fee }))).toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee }))).toThrow(
+          /fee/
+        )
       })
     })
 
     describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(client.buildTransfer({ fee: 0.1 * 1e8 }))
+        ).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(client.buildTransfer({ fee: 0.09 * 1e8 }))
+        ).not.toThrow(/fee/)
       })
     })
   })
@@ -803,8 +909,12 @@ describe('Services > Client', () => {
 
     describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildVote({ fee: 1 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildVote({ fee: 0.9 * 1e8 }))).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(client.buildVote({ fee: 1 * 1e8 }))
+        ).not.toThrow(/fee/)
+        expect(
+          await errorCapturer(client.buildVote({ fee: 0.9 * 1e8 }))
+        ).not.toThrow(/fee/)
       })
     })
   })

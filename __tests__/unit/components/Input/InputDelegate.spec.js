@@ -11,24 +11,30 @@ const i18n = useI18n(Vue)
 
 describe('InputDelegate', () => {
   const mountComponent = config => {
-    return mount(InputDelegate, merge({
-      i18n,
-      propsData: {
-        value: ''
-      },
-      mocks: {
-        wallet_name: value => value,
-        wallet_truncate: value => value,
-        $store: {
-          getters: {
-            'delegate/byUsername': value => value,
-            'delegate/byAddress': value => value,
-            'delegate/byPublicKey': value => value,
-            'delegate/bySessionNetwork': delegates
+    return mount(
+      InputDelegate,
+      merge(
+        {
+          i18n,
+          propsData: {
+            value: ''
+          },
+          mocks: {
+            wallet_name: value => value,
+            wallet_truncate: value => value,
+            $store: {
+              getters: {
+                'delegate/byUsername': value => value,
+                'delegate/byAddress': value => value,
+                'delegate/byPublicKey': value => value,
+                'delegate/bySessionNetwork': delegates
+              }
+            }
           }
-        }
-      }
-    }, config))
+        },
+        config
+      )
+    )
   }
 
   it('has the right name', () => {

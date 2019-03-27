@@ -1,7 +1,5 @@
 <template>
-  <div
-    :class="[{ open: isOpen }, 'relative']"
-  >
+  <div :class="[{ open: isOpen }, 'relative']">
     <button
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
@@ -31,10 +29,13 @@
     <div
       v-if="isOpen && (hasDefaultSlot || hasItems)"
       v-click-outside="close"
-      :class="[{
-        'MenuDropdown--pin-above': pinAbove,
-        'pin-x': pinToInputWidth
-      }, containerClasses]"
+      :class="[
+        {
+          'MenuDropdown--pin-above': pinAbove,
+          'pin-x': pinToInputWidth
+        },
+        containerClasses
+      ]"
       :style="{ transform: `translate(${position.join(',')})` }"
       class="MenuDropdown__container absolute min-w-full z-20"
     >
@@ -139,7 +140,9 @@ export default {
 
   computed: {
     entries () {
-      return Array.isArray(this.items) ? zipObject(this.items, this.items) : this.items
+      return Array.isArray(this.items)
+        ? zipObject(this.items, this.items)
+        : this.items
     },
     hasDefaultSlot () {
       return !!this.$slots.default
@@ -151,7 +154,10 @@ export default {
       if (Object.keys(this.entries).length > 1) {
         return false
       }
-      if (Object.keys(this.entries).length === 1 && this.entries[this.activeValue] !== Object.values(this.entries)[0]) {
+      if (
+        Object.keys(this.entries).length === 1 &&
+        this.entries[this.activeValue] !== Object.values(this.entries)[0]
+      ) {
         return false
       }
 

@@ -9,10 +9,7 @@
       :class="{ 'animated wobble': isCopying }"
       class="fill-current flex items-center"
     >
-      <SvgIcon
-        :view-box="viewBox"
-        name="copy"
-      />
+      <SvgIcon :view-box="viewBox" name="copy" />
     </div>
   </button>
 </template>
@@ -56,7 +53,9 @@ export default {
     // when using portals. Probably is this bug:
     // https://github.com/LinusBorg/portal-vue/issues/159
     if (this.$i18n) {
-      this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])
+      this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [
+        this.subject
+      ])
     }
   },
 
@@ -64,14 +63,21 @@ export default {
     copy () {
       const textArea = document.createElement('textarea')
       textArea.value = this.value
-      textArea.style.cssText = 'position:absolute;top:0;left:0;z-index:-9999;opacity:0;'
+      textArea.style.cssText =
+        'position:absolute;top:0;left:0;z-index:-9999;opacity:0;'
 
       document.body.appendChild(textArea)
       textArea.select()
 
       this.isCopying = true
       setTimeout(() => (this.isCopying = false), 1000)
-      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])), 1500)
+      setTimeout(
+        () =>
+          (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [
+            this.subject
+          ])),
+        1500
+      )
 
       try {
         document.execCommand('copy')

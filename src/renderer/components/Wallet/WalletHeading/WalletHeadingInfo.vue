@@ -45,17 +45,13 @@
         />
       </div>
 
-      <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
-        <span
-          v-tooltip="label"
-          class="block xl:hidden"
-        >
+      <p
+        class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold"
+      >
+        <span v-tooltip="label" class="block xl:hidden">
           {{ wallet_truncate(label, 12) }}
         </span>
-        <span
-          v-tooltip="label"
-          class="hidden xl:block"
-        >
+        <span v-tooltip="label" class="hidden xl:block">
           {{ showPublicKey ? wallet_truncate(label, 40) : label }}
         </span>
 
@@ -77,7 +73,7 @@
           v-if="publicKey"
           v-tooltip="{
             content: labelTooltip,
-            trigger:'hover'
+            trigger: 'hover'
           }"
           class="text-inherit opacity-50"
           @click="togglePublicKey"
@@ -89,7 +85,9 @@
         </button>
       </p>
 
-      <p class="WalletHeading__balance font-semibold tracking-extrawide text-xg">
+      <p
+        class="WalletHeading__balance font-semibold tracking-extrawide text-xg"
+      >
         {{ balance }}
         <span
           v-if="isMarketEnabled"
@@ -132,14 +130,18 @@ export default {
       return publicKey || lazyPublicKey
     },
     secondPublicKey () {
-      const secondPublicKey = this.currentWallet ? this.currentWallet.secondPublicKey : ''
+      const secondPublicKey = this.currentWallet
+        ? this.currentWallet.secondPublicKey
+        : ''
       const lazySecondPublicKey = this.lazyWallet.secondPublicKey
 
       return secondPublicKey || lazySecondPublicKey
     },
     alternativeBalance () {
       const unitBalance = this.currency_subToUnit(this.rawBalance)
-      return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
+      return this.currency_format(unitBalance * this.price, {
+        currency: this.alternativeCurrency
+      })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
@@ -150,7 +152,7 @@ export default {
     rawBalance () {
       return this.currentWallet.profileId.length
         ? this.currentWallet.balance
-        : (this.lazyWallet.balance || 0)
+        : this.lazyWallet.balance || 0
     },
     name () {
       return this.wallet_name(this.currentWallet.address)
@@ -168,7 +170,9 @@ export default {
       return this.showPublicKey ? this.publicKey : this.address
     },
     labelTooltip () {
-      return this.showPublicKey ? this.$t('WALLET_HEADING.ACTIONS.SHOW_ADDRESS') : this.$t('WALLET_HEADING.ACTIONS.SHOW_PUBLIC_KEY')
+      return this.showPublicKey
+        ? this.$t('WALLET_HEADING.ACTIONS.SHOW_ADDRESS')
+        : this.$t('WALLET_HEADING.ACTIONS.SHOW_PUBLIC_KEY')
     },
     verifiedAddressText () {
       let verifiedText = ''
@@ -203,7 +207,9 @@ export default {
         return
       }
 
-      this.lazyWallet = await this.$client.fetchWallet(this.currentWallet.address)
+      this.lazyWallet = await this.$client.fetchWallet(
+        this.currentWallet.address
+      )
     }
   }
 }

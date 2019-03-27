@@ -4,7 +4,9 @@
       <div
         class="ContactNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+        <div
+          class="m-auto w-3/5 text-center flex flex-col items-center justify-center"
+        >
           <h1 class="text-inherit">
             {{ $t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`) }}
           </h1>
@@ -16,11 +18,13 @@
             :src="assets_loadImage(backgroundImage)"
             :title="$t(`PAGES.CONTACT_NEW.INSTRUCTIONS.HEADER`)"
             class="w-full xl:w-4/5 mt-10"
-          >
+          />
         </div>
       </div>
 
-      <div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
+      <div
+        class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto"
+      >
         <h3>{{ $t('PAGES.CONTACT_NEW.TITLE') }}</h3>
 
         <div class="w-full mt-10">
@@ -87,9 +91,13 @@ export default {
     addressError () {
       if (this.$v.schema.address.$invalid) {
         if (!this.$v.schema.address.contactDoesNotExist) {
-          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_CONTACT', [this.schema.address])
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_CONTACT', [
+            this.schema.address
+          ])
         } else if (!this.$v.schema.address.walletDoesNotExist) {
-          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [this.schema.address])
+          return this.$t('VALIDATION.ADDRESS.EXISTS_AS_WALLET', [
+            this.schema.address
+          ])
         }
       }
       return null
@@ -97,14 +105,21 @@ export default {
     nameError () {
       if (this.$v.schema.name.$invalid) {
         if (!this.$v.schema.name.contactDoesNotExist) {
-          return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [this.schema.name])
+          return this.$t('VALIDATION.NAME.EXISTS_AS_CONTACT', [
+            this.schema.name
+          ])
         } else if (!this.$v.schema.name.walletDoesNotExist) {
           return this.$t('VALIDATION.NAME.EXISTS_AS_WALLET', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
-          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Wallet.schema.properties.name.maxLength])
-        // NOTE: not used, unless the minimum length is changed
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [
+            Wallet.schema.properties.name.maxLength
+          ])
+          // NOTE: not used, unless the minimum length is changed
         } else if (!this.$v.schema.name.schemaMinLength) {
-          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Wallet.schema.properties.name.minLength)
+          return this.$tc(
+            'VALIDATION.NAME.MIN_LENGTH',
+            Wallet.schema.properties.name.minLength
+          )
         }
       }
       return null
@@ -183,7 +198,10 @@ export default {
   vertical-align: middle;
   pointer-events: none;
 }
-.ContactNew .Collapse.MenuStepItem .Collapse__handler .ContactNew__refresh-button,
+.ContactNew
+  .Collapse.MenuStepItem
+  .Collapse__handler
+  .ContactNew__refresh-button,
 .ContactNew .Collapse.MenuStepItem .Collapse__handler .ButtonClipboard {
   pointer-events: visible;
 }
@@ -196,7 +214,7 @@ export default {
   background-position: center center;
 }
 .ContactNew__contacts--selected {
-  @apply .font-bold
+  @apply .font-bold;
 }
 
 .ContactNew__contacts-leave-active {

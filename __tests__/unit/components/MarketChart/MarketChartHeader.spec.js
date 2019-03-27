@@ -31,7 +31,7 @@ describe('MarketChartHeader', () => {
     const wrapper = shallowMount(MarketChartHeader, {
       i18n,
       provide: {
-        changePeriod: (period) => {
+        changePeriod: period => {
           expect(period).toBeTruthy()
           done()
         },

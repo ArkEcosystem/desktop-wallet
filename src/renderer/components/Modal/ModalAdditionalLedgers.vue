@@ -1,15 +1,17 @@
 <template>
-  <ModalWindow
-    :allow-close="true"
-    container-classes="w-2/5"
-    @close="emitClose"
-  >
+  <ModalWindow :allow-close="true" container-classes="w-2/5" @close="emitClose">
     <section class="flex flex-col">
       <h2 class="mb-1">
         {{ $t('MODAL_ADDITIONAL_LEDGERS.TITLE') }}
       </h2>
 
-      <p>{{ $t('MODAL_ADDITIONAL_LEDGERS.INFO', { quantity: currentLedgerQuantity }) }}</p>
+      <p>
+        {{
+          $t('MODAL_ADDITIONAL_LEDGERS.INFO', {
+            quantity: currentLedgerQuantity
+          })
+        }}
+      </p>
 
       <InputText
         ref="input-quantity"
@@ -90,9 +92,13 @@ export default {
     quantityError () {
       if (this.$v.form.quantity.$dirty) {
         if (!this.$v.form.quantity.required) {
-          return this.$t('VALIDATION.REQUIRED', [this.$refs['input-quantity'].label])
+          return this.$t('VALIDATION.REQUIRED', [
+            this.$refs['input-quantity'].label
+          ])
         } else if (!this.$v.form.quantity.numeric) {
-          return this.$t('VALIDATION.NOT_NUMERIC', [this.$refs['input-quantity'].label])
+          return this.$t('VALIDATION.NOT_NUMERIC', [
+            this.$refs['input-quantity'].label
+          ])
         } else if (!this.$v.form.quantity.minValue) {
           return this.$t('VALIDATION.MUST_BE_GREATER_THAN', [0])
         }
@@ -102,7 +108,10 @@ export default {
     },
 
     quantityWarning () {
-      if (this.$v.form.quantity.$dirty && this.$v.form.quantity.$model > this.largeQuantity) {
+      if (
+        this.$v.form.quantity.$dirty &&
+        this.$v.form.quantity.$model > this.largeQuantity
+      ) {
         return this.$t('MODAL_ADDITIONAL_LEDGERS.LARGE_QUANTITY')
       }
 

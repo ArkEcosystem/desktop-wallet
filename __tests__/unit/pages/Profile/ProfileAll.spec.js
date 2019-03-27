@@ -17,7 +17,8 @@ describe('pages > ProfileAll', () => {
   let ledgerWallets
 
   const mountPage = () => {
-    const networkBy = (attr, value) => networks.find(network => network[attr] === value)
+    const networkBy = (attr, value) =>
+      networks.find(network => network[attr] === value)
 
     return mount(ProfileAll, {
       localVue,
@@ -25,7 +26,7 @@ describe('pages > ProfileAll', () => {
       i18n,
       mixins: [CurrencyMixin],
       stubs: {
-        'ProfileAvatar': true
+        ProfileAvatar: true
       },
       mocks: {
         $store: {
@@ -49,9 +50,27 @@ describe('pages > ProfileAll', () => {
 
   beforeEach(() => {
     networks = [
-      { id: 'main', symbol: 'm', token: 'MAI', subunit: 'mainito', fractionDigits: 8 },
-      { id: 'other', symbol: 'o', token: 'OTH', subunit: 'another', fractionDigits: 8 },
-      { id: 'dev', symbol: 'd', token: 'DEV', subunit: 'devin', fractionDigits: 8 }
+      {
+        id: 'main',
+        symbol: 'm',
+        token: 'MAI',
+        subunit: 'mainito',
+        fractionDigits: 8
+      },
+      {
+        id: 'other',
+        symbol: 'o',
+        token: 'OTH',
+        subunit: 'another',
+        fractionDigits: 8
+      },
+      {
+        id: 'dev',
+        symbol: 'd',
+        token: 'DEV',
+        subunit: 'devin',
+        fractionDigits: 8
+      }
     ]
     profiles = [
       { id: 'p1', networkId: 'main' },

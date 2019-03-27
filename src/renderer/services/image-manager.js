@@ -10,7 +10,11 @@ class ImageManager {
   }
 
   constructor () {
-    this.context = require.context('../assets/images', true, /\.(png|jpe?g|svg)$/)
+    this.context = require.context(
+      '../assets/images',
+      true,
+      /\.(png|jpe?g|svg)$/
+    )
   }
 
   get images () {
@@ -27,10 +31,7 @@ class ImageManager {
       if (category && filename) {
         const previous = acc[category] || []
 
-        acc[category] = [
-          ...previous,
-          `${category}/${filename}`
-        ]
+        acc[category] = [...previous, `${category}/${filename}`]
       }
 
       return acc

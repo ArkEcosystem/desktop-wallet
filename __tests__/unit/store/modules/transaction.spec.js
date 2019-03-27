@@ -21,8 +21,20 @@ describe('TransactionModule', () => {
     { id: 5, recipient: 'A4', sender: 'A3', profileId: profile1.id },
     { id: 6, recipient: 'A5', sender: 'A1', profileId: profile1.id },
     { id: 7, recipient: 'A5', sender: 'A1', profileId: profile1.id },
-    { id: 8, recipient: 'A5', sender: 'Aex', profileId: profile1.id, isExpired: true },
-    { id: 9, recipient: 'A5', sender: 'Aex', profileId: profile1.id, isExpired: true }
+    {
+      id: 8,
+      recipient: 'A5',
+      sender: 'Aex',
+      profileId: profile1.id,
+      isExpired: true
+    },
+    {
+      id: 9,
+      recipient: 'A5',
+      sender: 'Aex',
+      profileId: profile1.id,
+      isExpired: true
+    }
   ]
 
   const wallets = [
@@ -40,7 +52,9 @@ describe('TransactionModule', () => {
   })
 
   beforeEach(() => {
-    transactions.forEach(transaction => store.commit('transaction/STORE', transaction))
+    transactions.forEach(transaction =>
+      store.commit('transaction/STORE', transaction)
+    )
     wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
     ClientService.version = 1
     ClientService.host = `http://127.0.0.1:4003`
@@ -58,9 +72,7 @@ describe('TransactionModule', () => {
       it('should find and return the transactions of the current profile', () => {
         const found = store.getters['transaction/byAddress']('A4')
 
-        expect(found).toEqual([
-          transactions[4]
-        ])
+        expect(found).toEqual([transactions[4]])
 
         found.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
@@ -74,9 +86,7 @@ describe('TransactionModule', () => {
       it('should find and return the transactions of the current profile', () => {
         const found = store.getters['transaction/byAddress']('A2')
 
-        expect(found).toIncludeSameMembers([
-          transactions[1]
-        ])
+        expect(found).toIncludeSameMembers([transactions[1]])
 
         found.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
@@ -90,15 +100,18 @@ describe('TransactionModule', () => {
       it('should find and return the transactions of the current profile', () => {
         const found = store.getters['transaction/byAddress']('A3')
 
-        expect(found).toIncludeSameMembers([
-          transactions[3],
-          transactions[4]
-        ])
+        expect(found).toIncludeSameMembers([transactions[3], transactions[4]])
 
         found.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
-          expect(transaction).toHaveProperty('isSender', transaction.sender === 'A3')
-          expect(transaction).toHaveProperty('isRecipient', transaction.recipient === 'A3')
+          expect(transaction).toHaveProperty(
+            'isSender',
+            transaction.sender === 'A3'
+          )
+          expect(transaction).toHaveProperty(
+            'isRecipient',
+            transaction.recipient === 'A3'
+          )
         })
       })
     })
@@ -107,37 +120,41 @@ describe('TransactionModule', () => {
       it('should find and return the transactions of the current profile that have not expired', () => {
         const found = store.getters['transaction/byAddress']('A5')
 
-        expect(found).toIncludeSameMembers([
-          transactions[5],
-          transactions[6]
-        ])
+        expect(found).toIncludeSameMembers([transactions[5], transactions[6]])
 
         found.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
-          expect(transaction).toHaveProperty('isSender', transaction.sender === 'A5')
+          expect(transaction).toHaveProperty(
+            'isSender',
+            transaction.sender === 'A5'
+          )
         })
       })
     })
 
     describe('when passing `includeExpired` as `false`', () => {
       it('should find and return the transactions of the current profile that have not expired', () => {
-        const found = store.getters['transaction/byAddress']('A5', { includeExpired: false })
+        const found = store.getters['transaction/byAddress']('A5', {
+          includeExpired: false
+        })
 
-        expect(found).toIncludeSameMembers([
-          transactions[5],
-          transactions[6]
-        ])
+        expect(found).toIncludeSameMembers([transactions[5], transactions[6]])
 
         found.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
-          expect(transaction).toHaveProperty('isSender', transaction.sender === 'A5')
+          expect(transaction).toHaveProperty(
+            'isSender',
+            transaction.sender === 'A5'
+          )
         })
       })
     })
 
     describe('when passing `includeExpired` as `true`', () => {
       it('should find and return all the transactions of the current profile, even those that have expired', () => {
-        const found = store.getters['transaction/byAddress']('A5', { includeExpired: true })
+        const found = store.getters['transaction/byAddress']('A5', {
+          includeExpired: true
+        })
 
         expect(found).toIncludeSameMembers([
           transactions[5],
@@ -148,7 +165,10 @@ describe('TransactionModule', () => {
 
         found.forEach(transaction => {
           expect(transaction).toHaveProperty('totalAmount')
-          expect(transaction).toHaveProperty('isSender', transaction.sender === 'A5')
+          expect(transaction).toHaveProperty(
+            'isSender',
+            transaction.sender === 'A5'
+          )
         })
       })
     })
@@ -157,13 +177,17 @@ describe('TransactionModule', () => {
   describe.skip('getters byProfileId', () => {
     describe('when the profile does not have any transaction', () => {
       it('should return an empty `Array`', () => {
-        expect(store.getters['transaction/byProfileId']('unknownId')).toBeEmpty()
+        expect(
+          store.getters['transaction/byProfileId']('unknownId')
+        ).toBeEmpty()
       })
     })
 
     describe('when the profile has transactions', () => {
       it('should return them, without transactions from other profiles', () => {
-        const transactions = store.getters['transaction/byProfileId'](profile1.id)
+        const transactions = store.getters['transaction/byProfileId'](
+          profile1.id
+        )
 
         expect(transactions).toIncludeSameMembers([
           transactions[1],
@@ -185,7 +209,7 @@ describe('TransactionModule', () => {
     it('should return a single fee', () => {
       store.commit('transaction/SET_STATIC_FEES', {
         networkId: network1.id,
-        staticFees: [ 1, 2, 3, 4, 5 ]
+        staticFees: [1, 2, 3, 4, 5]
       })
 
       expect(store.getters['transaction/staticFee'](0)).toEqual(1)
@@ -201,23 +225,23 @@ describe('TransactionModule', () => {
         staticFees: []
       })
 
-      expect(store.getters['transaction/staticFee'](0)).not.toBe(expect.anything())
+      expect(store.getters['transaction/staticFee'](0)).not.toBe(
+        expect.anything()
+      )
     })
   })
 
   describe('dispatch updateStaticFees', () => {
     it('should return update all fees on v1', async () => {
-      axiosMock
-        .onGet(`http://127.0.0.1:4003/api/blocks/getFees`)
-        .reply(200, {
-          fees: {
-            send: 1,
-            secondsignature: 2,
-            delegate: 3,
-            vote: 4,
-            multisignature: 5
-          }
-        })
+      axiosMock.onGet(`http://127.0.0.1:4003/api/blocks/getFees`).reply(200, {
+        fees: {
+          send: 1,
+          secondsignature: 2,
+          delegate: 3,
+          vote: 4,
+          multisignature: 5
+        }
+      })
 
       await store.dispatch('transaction/updateStaticFees')
 

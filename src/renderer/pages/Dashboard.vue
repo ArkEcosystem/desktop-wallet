@@ -1,6 +1,8 @@
 <template>
   <div class="Dashboard relative flex flex-row h-full w-full">
-    <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
+    <main
+      class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto"
+    >
       <div
         v-if="!isChartEnabled && isMarketEnabled"
         class="pt-10 px-10 rounded-t-lg text-lg font-semibold mt-1 text-theme-chart-price"
@@ -32,7 +34,9 @@
       </div>
     </main>
 
-    <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
+    <div
+      class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block"
+    >
       <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
         <WalletButtonCreate class="mt-6 mb-6 w-1/2" />
         <WalletButtonImport class="mt-6 mb-6 w-1/2" />
@@ -49,7 +53,11 @@
 <script>
 import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
-import { WalletSidebar, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
+import {
+  WalletSidebar,
+  WalletButtonCreate,
+  WalletButtonImport
+} from '@/components/Wallet'
 import store from '@/store'
 
 export default {
@@ -69,7 +77,11 @@ export default {
       return this.$store.getters['session/isMarketChartEnabled']
     },
     isMarketEnabled () {
-      return this.session_network && this.session_network.market && this.session_network.market.enabled
+      return (
+        this.session_network &&
+        this.session_network.market &&
+        this.session_network.market.enabled
+      )
     },
     currency () {
       return this.$store.getters['session/currency']
@@ -110,7 +122,7 @@ export default {
 
 <style lang="postcss">
 .Dashboard__wallets__list .WalletSidebar__wallet__info {
-  @apply .text-theme-page-text
+  @apply .text-theme-page-text;
 }
 </style>
 
@@ -121,7 +133,9 @@ export default {
 .Dashboard__wallets__list {
   border-top: 0.08rem solid var(--theme-feature-item-alternative);
 }
-.Dashboard__wallets__list .WalletSidebar__wallet__ledger-loader .WalletSidebar__wallet__wrapper {
+.Dashboard__wallets__list
+  .WalletSidebar__wallet__ledger-loader
+  .WalletSidebar__wallet__wrapper {
   @apply mx-6 text-base text-center;
 }
 .Dashboard__wallets__list .WalletSidebar__wallet__ledger-loader .v-spinner {

@@ -6,9 +6,7 @@ describe('ProfileModule', () => {
   })
 
   it('should fail to create a new profile', () => {
-    expect(
-      () => store.dispatch('profile/create', { id: 'test' })
-    ).toThrow()
+    expect(() => store.dispatch('profile/create', { id: 'test' })).toThrow()
   })
 
   describe('getters > balance', () => {
@@ -38,8 +36,20 @@ describe('ProfileModule', () => {
 
   describe('getters > balanceWithLedger', () => {
     const networks = [
-      { id: 'main', symbol: 'm', token: 'MAI', subunit: 'mainito', fractionDigits: 8 },
-      { id: 'other', symbol: 'o', token: 'OTH', subunit: 'another', fractionDigits: 8 }
+      {
+        id: 'main',
+        symbol: 'm',
+        token: 'MAI',
+        subunit: 'mainito',
+        fractionDigits: 8
+      },
+      {
+        id: 'other',
+        symbol: 'o',
+        token: 'OTH',
+        subunit: 'another',
+        fractionDigits: 8
+      }
     ]
     const profileId = 'balanceId'
     const profile = { id: profileId, networkId: networks[0].id }
@@ -76,7 +86,9 @@ describe('ProfileModule', () => {
       })
 
       it('should return the balance of the profile wallets only', () => {
-        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(1270)
+        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(
+          1270
+        )
       })
     })
 
@@ -86,7 +98,9 @@ describe('ProfileModule', () => {
       })
 
       it('should return the balance of the profile wallets and the Ledger wallets', () => {
-        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(2901)
+        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(
+          2901
+        )
       })
 
       describe('when those wallets are already included in the profile', () => {
@@ -96,7 +110,9 @@ describe('ProfileModule', () => {
         })
 
         it('should ignore them', () => {
-          expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(1571)
+          expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(
+            1571
+          )
         })
       })
     })
@@ -119,7 +135,9 @@ describe('ProfileModule', () => {
     beforeEach(() => {
       store.commit('profile/CREATE', profile)
       wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
-      transactions.forEach(transaction => store.commit('transaction/STORE', transaction))
+      transactions.forEach(transaction =>
+        store.commit('transaction/STORE', transaction)
+      )
     })
 
     it('should delete the profile', async () => {
@@ -129,13 +147,17 @@ describe('ProfileModule', () => {
     })
 
     it('should delete the wallets of the profile', async () => {
-      expect(store.getters['wallet/byProfileId'](profileId)).toIncludeSameMembers(wallets)
+      expect(
+        store.getters['wallet/byProfileId'](profileId)
+      ).toIncludeSameMembers(wallets)
       await store.dispatch('profile/delete', { id: profileId })
       expect(store.getters['wallet/byProfileId'](profileId)).toBeEmpty()
     })
 
     it('should delete the transactions of the profile', async () => {
-      expect(store.getters['transaction/byProfileId'](profileId)).toIncludeSameMembers(transactions)
+      expect(
+        store.getters['transaction/byProfileId'](profileId)
+      ).toIncludeSameMembers(transactions)
       await store.dispatch('profile/delete', { id: profileId })
       expect(store.getters['transaction/byProfileId'](profileId)).toBeEmpty()
     })

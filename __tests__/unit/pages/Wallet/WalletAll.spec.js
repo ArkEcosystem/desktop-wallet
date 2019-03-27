@@ -49,7 +49,7 @@ describe('pages > WalletAll', () => {
         wallet_name: value => value
       },
       stubs: {
-        'ButtonLetter': true
+        ButtonLetter: true
       }
     })
   }
@@ -76,11 +76,7 @@ describe('pages > WalletAll', () => {
       ]
       wrapper.vm.removeWallet(wallets[1])
 
-      const selectableWallets = [
-        wallets[0],
-        wallets[2],
-        ledgerWallets[0]
-      ]
+      const selectableWallets = [wallets[0], wallets[2], ledgerWallets[0]]
       expect(wrapper.vm.selectableWallets).toEqual(selectableWallets)
     })
   })

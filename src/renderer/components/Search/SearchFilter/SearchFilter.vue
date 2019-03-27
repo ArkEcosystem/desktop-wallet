@@ -10,10 +10,7 @@
           :items="filterComponents"
           :placeholder="$t('SEARCH.SELECT_OPTION')"
         >
-          <template
-            slot="handler"
-            slot-scope="handlerProps"
-          >
+          <template slot="handler" slot-scope="handlerProps">
             <MenuDropdownAlternativeHandler
               v-bind="handlerProps"
               class="text-theme-settings-text"
@@ -33,17 +30,18 @@
         </span>
       </SearchFilterItem>
 
-      <Component
-        :is="currentFilter"
-        v-else
-      />
+      <Component :is="currentFilter" v-else />
     </ul>
   </MenuOptions>
 </template>
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import { MenuOptions, MenuDropdown, MenuDropdownAlternativeHandler } from '@/components/Menu'
+import {
+  MenuOptions,
+  MenuDropdown,
+  MenuDropdownAlternativeHandler
+} from '@/components/Menu'
 import SearchFilterItem from './SearchFilterItem'
 import SvgIcon from '@/components/SvgIcon'
 import SearchFilterTransaction from './SearchFilterTransaction'
@@ -77,8 +75,8 @@ export default {
   computed: {
     filterComponents () {
       return {
-        'SearchFilterTransaction': this.$t('TRANSACTION.TRANSACTION'),
-        'SearchFilterDelegate': this.$t('SEARCH.DELEGATE')
+        SearchFilterTransaction: this.$t('TRANSACTION.TRANSACTION'),
+        SearchFilterDelegate: this.$t('SEARCH.DELEGATE')
       }
     }
   },
@@ -95,6 +93,6 @@ export default {
 
 <style lang="postcss" scoped>
 .SearchFilter__list > .SearchFilterItem:first-child {
-  @apply .border-none
+  @apply .border-none;
 }
 </style>

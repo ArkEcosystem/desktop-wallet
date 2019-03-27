@@ -76,7 +76,7 @@ export default {
 
 <style scoped>
 .AlertMessage {
-  transition: opacity, hidden .2s ease-in, background-color .1s ease-in;
+  transition: opacity, hidden 0.2s ease-in, background-color 0.1s ease-in;
 }
 .AlertMessage--error {
   @apply bg-theme-error;

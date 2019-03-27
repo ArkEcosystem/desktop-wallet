@@ -17,27 +17,26 @@
       :style="`backgroundImage: url('${assets_loadImage(background)}')`"
       class="px-20 py-16 w-screen h-screen relative"
     >
-      <AppIntro
-        @done="setIntroDone"
-      />
+      <AppIntro @done="setIntroDone" />
     </div>
 
-    <div
-      v-else
-      class="overflow-hidden"
-    >
+    <div v-else class="overflow-hidden">
       <AppSidemenu
         v-if="hasAnyProfile"
         :is-horizontal="true"
         :class="{
-          'blur': hasBlurFilter
+          blur: hasBlurFilter
         }"
         class="block md:hidden z-1"
       />
       <section
-        :style="background ? `backgroundImage: url('${assets_loadImage(background)}')` : ''"
+        :style="
+          background
+            ? `backgroundImage: url('${assets_loadImage(background)}')`
+            : ''
+        "
         :class="{
-          'blur': hasBlurFilter
+          blur: hasBlurFilter
         }"
         class="App__main flex flex-col items-center px-6 pb-6 pt-2 lg:pt-6 w-screen-adjusted h-screen-adjusted overflow-hidden -m-2"
       >
@@ -45,15 +44,9 @@
           :class="{ 'ml-6': !hasAnyProfile }"
           class="App__container w-full flex-1 flex mt-4 mb-4 lg:mr-6"
         >
-          <AppSidemenu
-            v-if="hasAnyProfile"
-            class="hidden md:block"
-          />
+          <AppSidemenu v-if="hasAnyProfile" class="hidden md:block" />
           <!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
-          <KeepAlive
-            :include="keepAliveRoutes"
-            :max="keepAliveRoutes.length"
-          >
+          <KeepAlive :include="keepAliveRoutes" :max="keepAliveRoutes.length">
             <RouterView class="flex-1 overflow-y-auto" />
           </KeepAlive>
         </div>
@@ -69,21 +62,11 @@
         @sent="closeUriTransaction"
       />
 
-      <PortalTarget
-        name="modal"
-        multiple
-        @change="onPortalChange"
-      />
+      <PortalTarget name="modal" multiple @change="onPortalChange" />
 
-      <PortalTarget
-        name="loading"
-        @change="onPortalChange"
-      />
+      <PortalTarget name="loading" @change="onPortalChange" />
 
-      <PortalTarget
-        name="qr-scan"
-        @change="onPortalChange"
-      />
+      <PortalTarget name="qr-scan" @change="onPortalChange" />
 
       <AlertMessage />
     </div>
@@ -131,7 +114,10 @@ export default {
 
   computed: {
     background () {
-      return this.$store.getters['session/background'] || `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
+      return (
+        this.$store.getters['session/background'] ||
+        `wallpapers/${this.hasSeenIntroduction ? 1 : 2}Default.png`
+      )
     },
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length
@@ -152,9 +138,7 @@ export default {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
     },
     currentProfileId () {
-      return this.session_profile
-        ? this.session_profile.id
-        : null
+      return this.session_profile ? this.session_profile.id : null
     },
     keepAliveRoutes () {
       return uniq([
@@ -229,7 +213,10 @@ export default {
       if (status) {
         // We only set this if the env variable is 'false', since protection defaults to true
         // Since it's not a boolean, we can't do status !== false, since that would disable protection with every env var that's not 'true'
-        this.$store.dispatch('session/setContentProtection', !(status === 'false'))
+        this.$store.dispatch(
+          'session/setContentProtection',
+          !(status === 'false')
+        )
       } else {
         remote.getCurrentWindow().setContentProtection(true)
       }
@@ -271,7 +258,10 @@ export default {
         this.$store.dispatch('peer/connectToBest', {})
         this.$store.dispatch('delegate/load')
         if (this.$store.getters['ledger/isConnected']) {
-          this.$store.dispatch('ledger/reloadWallets', { clearFirst: true, forceLoad: true })
+          this.$store.dispatch('ledger/reloadWallets', {
+            clearFirst: true,
+            forceLoad: true
+          })
         }
       })
       this.$eventBus.on('ledger:connected', async () => {
@@ -329,14 +319,17 @@ export default {
         { role: 'selectall' }
       ])
 
-      document.body.addEventListener('contextmenu', (e) => {
+      document.body.addEventListener('contextmenu', e => {
         e.preventDefault()
         e.stopPropagation()
 
         let node = e.target
 
         while (node) {
-          if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
+          if (
+            node.nodeName.match(/^(input|textarea)$/i) ||
+            node.isContentEditable
+          ) {
             InputMenu.popup(remote.getCurrentWindow())
             break
           }
@@ -350,11 +343,11 @@ export default {
 
 <style scoped>
 .blur {
-  filter: blur(4px)
+  filter: blur(4px);
 }
 
 .App__main {
-  transition: .1s filter linear;
+  transition: 0.1s filter linear;
 }
 .App__container {
   max-width: 1400px;

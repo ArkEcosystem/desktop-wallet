@@ -3,7 +3,4 @@ import MenuNavigationItem from './MenuNavigationItem'
 
 export default MenuNavigation
 
-export {
-  MenuNavigation,
-  MenuNavigationItem
-}
+export { MenuNavigation, MenuNavigationItem }

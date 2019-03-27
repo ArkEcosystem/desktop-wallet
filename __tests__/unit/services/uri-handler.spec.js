@@ -8,7 +8,9 @@ describe('URI Handler', () => {
     })
 
     it('should validate with params', () => {
-      const uri = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&')
+      const uri = new URIHandler(
+        'ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&'
+      )
       expect(uri.validate()).toBeTrue()
     })
 
@@ -25,12 +27,21 @@ describe('URI Handler', () => {
 
   describe('deserialize', () => {
     it('should contain keys', () => {
-      const schema = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9').deserialize()
-      expect(schema).toContainAllKeys(['address', 'amount', 'label', 'vendorField'])
+      const schema = new URIHandler(
+        'ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9'
+      ).deserialize()
+      expect(schema).toContainAllKeys([
+        'address',
+        'amount',
+        'label',
+        'vendorField'
+      ])
     })
 
     it('should fill params', () => {
-      const schema = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&label=Hello&vendorField=ARK').deserialize()
+      const schema = new URIHandler(
+        'ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&label=Hello&vendorField=ARK'
+      ).deserialize()
       expect(schema.address).toBe('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
       expect(schema.amount).toBe(1.2)
       expect(schema.label).toBe('Hello')

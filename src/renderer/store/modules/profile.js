@@ -20,7 +20,7 @@ export default new BaseModule(ProfileModel, {
     },
 
     doesExist: state => checkName => {
-      const normalize = (name) => name.toLowerCase().replace(/^\s+|\s+$/g, '')
+      const normalize = name => name.toLowerCase().replace(/^\s+|\s+$/g, '')
       checkName = normalize(checkName)
 
       return state.all.find(profile => normalize(profile.name) === checkName)
@@ -37,10 +37,7 @@ export default new BaseModule(ProfileModel, {
       // Only include the wallets of the Ledger that are on the same network than the profile
       const profile = rootGetters['profile/byId'](id)
       if (profile.networkId === rootGetters['session/network'].id) {
-        wallets = [
-          ...wallets,
-          ...rootGetters['ledger/wallets']
-        ]
+        wallets = [...wallets, ...rootGetters['ledger/wallets']]
       }
 
       return uniqBy(wallets, 'address').reduce((total, wallet) => {
@@ -66,15 +63,26 @@ export default new BaseModule(ProfileModel, {
      */
     async delete ({ commit, dispatch, rootGetters }, { id }) {
       // This getter returns a reference that is modified on each deletion
-      const transactionIds = map(rootGetters['transaction/byProfileId'](id), 'id')
+      const transactionIds = map(
+        rootGetters['transaction/byProfileId'](id),
+        'id'
+      )
       for (const transactionId of transactionIds) {
-        await dispatch('transaction/delete', { id: transactionId, profileId: id }, { root: true })
+        await dispatch(
+          'transaction/delete',
+          { id: transactionId, profileId: id },
+          { root: true }
+        )
       }
 
       // This getter returns a reference that is modified on each deletion
       const walletIds = map(rootGetters['wallet/byProfileId'](id), 'id')
       for (const walletId of walletIds) {
-        await dispatch('wallet/delete', { id: walletId, profileId: id }, { root: true })
+        await dispatch(
+          'wallet/delete',
+          { id: walletId, profileId: id },
+          { root: true }
+        )
       }
 
       commit('DELETE', id)

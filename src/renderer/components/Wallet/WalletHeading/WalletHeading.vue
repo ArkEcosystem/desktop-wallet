@@ -3,10 +3,7 @@
     :class="justifyClass"
     class="WalletHeading flex px-10 py-8 w-full bg-theme-heading-background rounded-tl-lg h-40 overflow-hidden"
   >
-    <WalletHeadingInfo
-      v-if="!secondaryButtonsVisible"
-      ref="heading"
-    />
+    <WalletHeadingInfo v-if="!secondaryButtonsVisible" ref="heading" />
     <WalletHeadingActions />
   </div>
 </template>
@@ -66,6 +63,10 @@ export default {
 
 <style>
 .WalletHeading {
-  background-image: -webkit-linear-gradient(30deg, var(--theme-transaction-detail-gradient1) 130px, var(--theme-transaction-detail-gradient2) 130px);
+  background-image: -webkit-linear-gradient(
+    30deg,
+    var(--theme-transaction-detail-gradient1) 130px,
+    var(--theme-transaction-detail-gradient2) 130px
+  );
 }
 </style>

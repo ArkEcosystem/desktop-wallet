@@ -9,9 +9,7 @@
     <h2>
       {{ message }}
     </h2>
-    <div
-      class="flex justify-center p-5"
-    >
+    <div class="flex justify-center p-5">
       <Loader />
     </div>
 

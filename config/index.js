@@ -23,10 +23,7 @@ exports.VENDOR_FIELD = {
 
 exports.I18N = {
   defaultLocale: 'en-US',
-  enabledLocales: [
-    'en-US',
-    'it-IT'
-  ]
+  enabledLocales: ['en-US', 'it-IT']
 }
 
 exports.BIP39 = {
@@ -56,9 +53,9 @@ exports.TRANSACTION_TYPES = {
 }
 
 exports.INTERVALS = {
-  'short': 30000, // 30 seconds
-  'medium': 60000, // 1 minute
-  'long': 180000 // 3 minute
+  short: 30000, // 30 seconds
+  medium: 60000, // 1 minute
+  long: 180000 // 3 minute
 }
 
 exports.MARKET = {
@@ -66,11 +63,7 @@ exports.MARKET = {
     baseUrl: 'https://min-api.cryptocompare.com'
   },
   defaultCurrency: 'BTC',
-  crypto: [
-    'BTC',
-    'ETH',
-    'LTC'
-  ],
+  crypto: ['BTC', 'ETH', 'LTC'],
   currencies: {
     BTC: { symbol: 'Ƀ', fractionDigits: 8 },
     ETH: { symbol: 'Ξ', fractionDigits: 8 },

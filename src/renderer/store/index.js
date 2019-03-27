@@ -67,9 +67,5 @@ export default new Vuex.Store({
       return localforage.clear()
     }
   },
-  plugins: [
-    vuexMigrations.plugin,
-    vuexPersist.plugin,
-    vuexPersistReady
-  ]
+  plugins: [vuexMigrations.plugin, vuexPersist.plugin, vuexPersistReady]
 })

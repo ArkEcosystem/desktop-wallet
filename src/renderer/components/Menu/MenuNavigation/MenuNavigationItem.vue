@@ -2,7 +2,7 @@
   <button
     :class="{
       'MenuNavigationItem--active': isActive,
-      'w-full' : !isHorizontal
+      'w-full': !isHorizontal
     }"
     :disabled="isDisabled"
     class="MenuNavigationItem relative cursor-pointer flex items-center justify-center text-theme-feature-item-text hover:bg-theme-feature-item-hover hover:text-theme-feature-item-hover-text"
@@ -12,18 +12,13 @@
       v-if="!isHorizontal"
       class="MenuNavigationItem__border absolute w-full"
     />
-    <slot
-      :is-active="isActive"
-    >
+    <slot :is-active="isActive">
       <div
         v-if="icon"
-        :class="{ 'w-full' : !isHorizontal }"
+        :class="{ 'w-full': !isHorizontal }"
         class="flex items-center justify-center"
       >
-        <SvgIcon
-          :name="icon"
-          :view-box="viewBox"
-        />
+        <SvgIcon :name="icon" :view-box="viewBox" />
         <div
           v-if="showBadge"
           class="MenuNavigationItem__badge rounded-full animated bounce"

@@ -2,10 +2,7 @@
   <div class="InputGrid">
     <slot>
       <div class="InputGrid__container">
-        <button
-          v-if="selectedItem"
-          class="mr-3"
-        >
+        <button v-if="selectedItem" class="mr-3">
           <InputGridItem
             v-bind="activeItem"
             :is-selected="!isModalOpen"
@@ -14,10 +11,7 @@
         </button>
 
         <slot name="more">
-          <button
-            v-if="modalHeaderText"
-            @click="openModal"
-          >
+          <button v-if="modalHeaderText" @click="openModal">
             <InputGridItem
               :title="$t('INPUT_GRID.MORE')"
               :is-selected="false"
@@ -149,6 +143,6 @@ export default {
 
 <style lang="postcss" scoped>
 .InputGrid__container {
-  @apply flex items-center
+  @apply flex items-center;
 }
 </style>

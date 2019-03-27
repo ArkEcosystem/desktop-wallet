@@ -5,7 +5,7 @@
   >
     <button
       v-if="showNotVoting"
-      v-tooltip="{ content: $t('PAGES.WALLET_SHOW.NO_VOTE'), trigger:'hover' }"
+      v-tooltip="{ content: $t('PAGES.WALLET_SHOW.NO_VOTE'), trigger: 'hover' }"
       class="bg-theme-button-special-choice cursor-pointer rounded-full w-2 h-2 m-3"
       @click="goToDelegates"
     />
@@ -18,12 +18,7 @@
       @click="refreshWallet"
     />
 
-    <ButtonModal
-      :class="buttonStyle"
-      icon="qr"
-      label="QR"
-      view-box="0 0 18 18"
-    >
+    <ButtonModal :class="buttonStyle" icon="qr" label="QR" view-box="0 0 18 18">
       <template slot-scope="{ toggle, isOpen }">
         <ModalQrCode
           v-if="isOpen"
@@ -107,7 +102,9 @@ export default {
     },
 
     doesNotExist () {
-      return !this.$store.getters['wallet/byAddress'](this.currentWallet.address)
+      return !this.$store.getters['wallet/byAddress'](
+        this.currentWallet.address
+      )
     }
   },
 

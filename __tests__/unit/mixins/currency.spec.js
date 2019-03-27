@@ -30,7 +30,8 @@ describe('Mixins > Currency', () => {
       template: '<div/>'
     }
 
-    const networkBy = (attr, value) => networks.find(network => network[attr] === value)
+    const networkBy = (attr, value) =>
+      networks.find(network => network[attr] === value)
 
     wrapper = shallowMount(TestComponent, {
       localVue,
@@ -58,7 +59,10 @@ describe('Mixins > Currency', () => {
     describe('when no `currency` or `currencyFrom` option is provided', () => {
       it('should throw an Error', () => {
         expect(() => format(1)).toThrow(Error, /currency/)
-        expect(() => format(1, { currencyDisplay: 'code' })).toThrow(Error, /currency/)
+        expect(() => format(1, { currencyDisplay: 'code' })).toThrow(
+          Error,
+          /currency/
+        )
       })
     })
 
@@ -72,10 +76,14 @@ describe('Mixins > Currency', () => {
         const amount = Math.pow(10, 4) + 1e-8
 
         wrapper.vm.$i18n.locale = 'es-ES'
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,00000001 ×')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual(
+          '10.000,00000001 ×'
+        )
 
         wrapper.vm.$i18n.locale = 'ja-JP'
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.00000001')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual(
+          '× 10,000.00000001'
+        )
       })
     })
 
@@ -84,10 +92,14 @@ describe('Mixins > Currency', () => {
         const amount = Math.pow(10, 4) + Math.pow(10, -5)
 
         wrapper.vm.$store.getters['session/currency'] = 'BTC'
-        expect(format(amount, { currencyFrom: 'session' })).toEqual('Ƀ 10,000.00001')
+        expect(format(amount, { currencyFrom: 'session' })).toEqual(
+          'Ƀ 10,000.00001'
+        )
 
         wrapper.vm.$store.getters['session/currency'] = 'EUR'
-        expect(format(amount, { currencyFrom: 'session' })).toEqual('€10,000.00')
+        expect(format(amount, { currencyFrom: 'session' })).toEqual(
+          '€10,000.00'
+        )
       })
     })
 
@@ -121,16 +133,24 @@ describe('Mixins > Currency', () => {
       it('should use it to display the currency', () => {
         const amount = 9835.387653
 
-        expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })).toEqual('NET 9,835.387653')
-        expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'symbol' })).toEqual('× 9,835.387653')
-        expect(format(amount, { currency: 'EUR', currencyDisplay: 'symbol' })).toEqual('€9,835.39')
+        expect(
+          format(amount, { currencyFrom: 'network', currencyDisplay: 'code' })
+        ).toEqual('NET 9,835.387653')
+        expect(
+          format(amount, { currencyFrom: 'network', currencyDisplay: 'symbol' })
+        ).toEqual('× 9,835.387653')
+        expect(
+          format(amount, { currency: 'EUR', currencyDisplay: 'symbol' })
+        ).toEqual('€9,835.39')
       })
     })
 
     describe('when the `subunit` option is provided', () => {
       describe('when the curreny is not the network currency', () => {
         it('should throw an Error', () => {
-          expect(() => format(10, { currency: 'EUR', subunit: true })).toThrow(/subunit/)
+          expect(() => format(10, { currency: 'EUR', subunit: true })).toThrow(
+            /subunit/
+          )
         })
       })
 
@@ -138,8 +158,20 @@ describe('Mixins > Currency', () => {
         it('should use it to display the currency, indepently of the `currencyDisplay` option', () => {
           const amount = 9835.387653
 
-          expect(format(amount, { currencyFrom: 'network', currencyDisplay: 'code', subunit: true })).toEqual('netoshi 983,538,765,300.00')
-          expect(format(amount, { currency: 'NET', currencyDisplay: 'symbol', subunit: true })).toEqual('netoshi 983,538,765,300.00')
+          expect(
+            format(amount, {
+              currencyFrom: 'network',
+              currencyDisplay: 'code',
+              subunit: true
+            })
+          ).toEqual('netoshi 983,538,765,300.00')
+          expect(
+            format(amount, {
+              currency: 'NET',
+              currencyDisplay: 'symbol',
+              subunit: true
+            })
+          ).toEqual('netoshi 983,538,765,300.00')
         })
       })
     })
@@ -149,11 +181,15 @@ describe('Mixins > Currency', () => {
         const amount = Math.pow(10, 4) + 1e-2
 
         expect(format(amount, { currency: 'EUR' })).toEqual('€10,000.01')
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 10,000.01')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual(
+          '× 10,000.01'
+        )
         expect(format(amount, { currency: 'TOK' })).toEqual('t 10,000.01')
 
         wrapper.vm.$i18n.locale = 'es-ES'
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('10.000,01 ×')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual(
+          '10.000,01 ×'
+        )
       })
     })
 
@@ -165,10 +201,14 @@ describe('Mixins > Currency', () => {
 
       it('should work precissely', () => {
         let amount = Math.pow(10, 12) + 0.01
-        expect(format(amount, { currencyFrom: 'network' })).toEqual('× 1,000,000,000,000.01')
+        expect(format(amount, { currencyFrom: 'network' })).toEqual(
+          '× 1,000,000,000,000.01'
+        )
 
-        amount = Number.MAX_SAFE_INTEGER - 2// 9007199254740989
-        expect(format(amount, { currency: 'EUR' })).toEqual('€9,007,199,254,740,989.00')
+        amount = Number.MAX_SAFE_INTEGER - 2 // 9007199254740989
+        expect(format(amount, { currency: 'EUR' })).toEqual(
+          '€9,007,199,254,740,989.00'
+        )
       })
     })
   })

@@ -1,12 +1,7 @@
 <template>
   <KeepAlive>
-    <Transition
-      name="MenuTabItem__transition"
-    >
-      <div
-        v-show="isActive"
-        class="MenuTabItem"
-      >
+    <Transition name="MenuTabItem__transition">
+      <div v-show="isActive" class="MenuTabItem">
         <slot :is-active="isActive" />
       </div>
     </Transition>

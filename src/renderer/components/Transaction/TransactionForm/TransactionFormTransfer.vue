@@ -1,8 +1,5 @@
 <template>
-  <form
-    class="flex flex-col"
-    @submit.prevent
-  >
+  <form class="flex flex-col" @submit.prevent>
     <WalletSelection
       v-if="schema && schema.address"
       v-model="$v.wallet.$model"
@@ -72,10 +69,7 @@
       @input="onFee"
     />
 
-    <div
-      v-if="currentWallet && currentWallet.isLedger"
-      class="mt-10"
-    >
+    <div v-if="currentWallet && currentWallet.isLedger" class="mt-10">
       {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
     </div>
     <InputPassword
@@ -141,7 +135,14 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES, V1, VENDOR_FIELD } from '@config'
-import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
+import {
+  InputAddress,
+  InputCurrency,
+  InputPassword,
+  InputSwitch,
+  InputText,
+  InputFee
+} from '@/components/Input'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
@@ -201,7 +202,9 @@ export default {
     amountTooLowError () {
       const { fractionDigits } = this.walletNetwork
       const minimumAmount = Math.pow(10, -fractionDigits)
-      const amount = this.currency_simpleFormatCrypto(minimumAmount.toFixed(fractionDigits))
+      const amount = this.currency_simpleFormatCrypto(
+        minimumAmount.toFixed(fractionDigits)
+      )
       return this.$t('INPUT_CURRENCY.ERROR.LESS_THAN_MINIMUM', { amount })
     },
     notEnoughBalanceError () {
@@ -217,7 +220,9 @@ export default {
         return 0
       }
 
-      return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
+      return parseFloat(
+        this.currency_subToUnit(this.currentWallet.balance) - this.form.fee
+      )
     },
     senderWallet () {
       return this.wallet
@@ -228,13 +233,17 @@ export default {
         return sessionNetwork
       }
 
-      const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
+      const profile = this.$store.getters['profile/byId'](
+        this.currentWallet.profileId
+      )
 
       if (!profile.id) {
         return sessionNetwork
       }
 
-      return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+      return (
+        this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
+      )
     },
     currentWallet: {
       get () {
@@ -245,11 +254,16 @@ export default {
       }
     },
     vendorFieldLabel () {
-      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.vendorFieldMaxLength])}`
+      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t(
+        'VALIDATION.MAX_LENGTH',
+        [this.vendorFieldMaxLength]
+      )}`
     },
     vendorFieldHelperText () {
       if (this.form.vendorField.length === this.vendorFieldMaxLength) {
-        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [this.vendorFieldMaxLength])
+        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [
+          this.vendorFieldMaxLength
+        ])
       }
       return null
     },
@@ -307,7 +321,11 @@ export default {
         this.previousAmount = this.form['amount']
       }
       if (!isActive) {
-        if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {
+        if (
+          setPreviousAmount &&
+          !this.previousAmount &&
+          this.previousAmount.length
+        ) {
           this.$set(this.form, 'amount', this.previousAmount)
         }
         this.previousAmount = ''
@@ -342,16 +360,29 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet || !this.currentWallet.isLedger) {
-        transaction = await this.$client.buildTransfer(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        transaction = await this.$client.buildTransfer(
+          transactionData,
+          this.$refs.fee && this.$refs.fee.isAdvancedFee
+        )
       } else {
         success = false
         this.showLedgerLoader = true
         try {
-          const transactionObject = await this.$client.buildTransfer(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          const transactionObject = await this.$client.buildTransfer(
+            transactionData,
+            this.$refs.fee && this.$refs.fee.isAdvancedFee,
+            true
+          )
+          transaction = await TransactionService.ledgerSign(
+            this.currentWallet,
+            transactionObject,
+            this
+          )
           success = true
         } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
+          this.$error(
+            `${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`
+          )
         }
         this.showLedgerLoader = false
       }
@@ -458,6 +489,6 @@ export default {
 <style>
 .SendAllConfirmation .ModalConfirmation__container {
   min-width: calc(var(--contact-identicon-xl) + 74px * 2);
-  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px);
 }
 </style>

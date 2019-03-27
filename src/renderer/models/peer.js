@@ -8,14 +8,14 @@ export default new BaseModel({
     },
     host: {
       type: ['string', 'null'],
-      format: (value) => value.host || null
+      format: value => value.host || null
     },
     port: {
       type: ['integer', 'null']
     },
     p2pPort: {
       type: ['integer', 'null'],
-      format: (value) => value.p2pPort || null
+      format: value => value.p2pPort || null
     },
     version: {
       type: 'string'
@@ -34,15 +34,15 @@ export default new BaseModel({
     },
     isCustom: {
       type: 'boolean',
-      format: (value) => value.isCustom || false
+      format: value => value.isCustom || false
     },
     lastUpdated: {
       type: ['date', 'null'],
-      format: (value) => value.lastUpdated || null
+      format: value => value.lastUpdated || null
     },
     isHttps: {
       type: 'boolean',
-      format: (value) => value.isHttps || false
+      format: value => value.isHttps || false
     }
   },
   required: ['ip', 'port', 'version', 'height', 'status', 'delay']

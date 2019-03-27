@@ -15,10 +15,16 @@ describe('CryptoCompare', () => {
 
     mock
       .onGet(`${baseUrl}/data/pricemultifull`)
-      .reply(200, require('../__fixtures__/services/crypto-compare-market.json'))
+      .reply(
+        200,
+        require('../__fixtures__/services/crypto-compare-market.json')
+      )
     mock
       .onGet(historicalRegex)
-      .reply(200, require('../__fixtures__/services/crypto-compare-historical.json'))
+      .reply(
+        200,
+        require('../__fixtures__/services/crypto-compare-historical.json')
+      )
   })
 
   it('should return ticker values', async () => {

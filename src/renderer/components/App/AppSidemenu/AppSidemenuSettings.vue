@@ -1,21 +1,19 @@
 <template>
   <div
     v-click-outside="emitClose"
-    :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
+    :class="
+      isHorizontal
+        ? 'AppSidemenuOptionsSettings--horizontal'
+        : 'AppSidemenuOptionsSettings'
+    "
     class="absolute z-20 theme-dark"
   >
-    <MenuOptions
-      :is-horizontal="isHorizontal"
-      :is-settings="true"
-    >
+    <MenuOptions :is-horizontal="isHorizontal" :is-settings="true">
       <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
         @click="toggleSelect('currency-menu')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <MenuDropdown
             ref="currency-menu"
             :items="currencies"
@@ -30,10 +28,7 @@
         :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
         @click="toggleSelect('dark-switch')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <ButtonSwitch
             ref="dark-switch"
             :is-active="session_hasDarkTheme"
@@ -49,10 +44,7 @@
         :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
         @click="toggleSelect('protection-switch')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <ButtonSwitch
             ref="protection-switch"
             :is-active="contentProtection"
@@ -67,10 +59,7 @@
         :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
         @click="toggleSelect('ledger-background-switch')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <ButtonSwitch
             ref="ledger-background-switch"
             :is-active="backgroundUpdateLedger"
@@ -85,10 +74,7 @@
         :title="$t('APP_SIDEMENU.SETTINGS.BROADCAST_PEERS')"
         @click="toggleSelect('broadcast-peers')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <ButtonSwitch
             ref="broadcast-peers"
             :is-active="sessionBroadcastPeers"
@@ -159,7 +145,11 @@ export default {
       return os.platform() !== 'darwin' && os.platform() !== 'win32'
     },
     isMarketEnabled () {
-      return this.session_network && this.session_network.market && this.session_network.market.enabled
+      return (
+        this.session_network &&
+        this.session_network.market &&
+        this.session_network.market.enabled
+      )
     },
     currencies () {
       return this.$store.getters['market/currencies']

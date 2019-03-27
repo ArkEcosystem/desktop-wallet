@@ -1,8 +1,5 @@
 <template>
-  <button
-    class="ButtonGeneric blue-button"
-    @click="emitClick"
-  >
+  <button class="ButtonGeneric blue-button" @click="emitClick">
     <span class="font-semibold">
       {{ label }}
     </span>
@@ -10,7 +7,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'ButtonGeneric',
 

@@ -44,14 +44,22 @@ export default {
     },
 
     wallet_nameOnContact (address) {
-      const contactWallets = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      const contact = contactWallets.find(contact => contact.address === address)
+      const contactWallets = this.$store.getters['wallet/contactsByProfileId'](
+        this.session_profile.id
+      )
+      const contact = contactWallets.find(
+        contact => contact.address === address
+      )
       return contact ? contact.name : null
     },
 
     wallet_nameOnProfile (address) {
-      const profileWallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      const profileWallet = profileWallets.find(wallet => wallet.address === address)
+      const profileWallets = this.$store.getters['wallet/byProfileId'](
+        this.session_profile.id
+      )
+      const profileWallet = profileWallets.find(
+        wallet => wallet.address === address
+      )
       return profileWallet ? profileWallet.name : null
     },
 
@@ -91,21 +99,30 @@ export default {
     wallet_formatAddress (address, truncateLength) {
       const ledgerWallet = this.wallet_nameOnLedger(address)
       if (ledgerWallet) {
-        return WalletService.validateAddress(ledgerWallet, this.session_network.version)
+        return WalletService.validateAddress(
+          ledgerWallet,
+          this.session_network.version
+        )
           ? truncateMiddle(ledgerWallet, truncateLength)
           : ledgerWallet
       }
 
       const profileWallet = this.wallet_nameOnProfile(address)
       if (profileWallet) {
-        return WalletService.validateAddress(profileWallet, this.session_network.version)
+        return WalletService.validateAddress(
+          profileWallet,
+          this.session_network.version
+        )
           ? truncateMiddle(profileWallet, truncateLength)
           : profileWallet
       }
 
       const contactWallet = this.wallet_nameOnContact(address)
       if (contactWallet) {
-        return WalletService.validateAddress(contactWallet, this.session_network.version)
+        return WalletService.validateAddress(
+          contactWallet,
+          this.session_network.version
+        )
           ? truncateMiddle(contactWallet, truncateLength)
           : contactWallet
       }
@@ -120,7 +137,9 @@ export default {
         return delegate.username
       }
 
-      return Number.isFinite(truncateLength) ? truncateMiddle(address, truncateLength) : address
+      return Number.isFinite(truncateLength)
+        ? truncateMiddle(address, truncateLength)
+        : address
     },
 
     /**
@@ -135,12 +154,13 @@ export default {
      * @param {Object[]} wallets
      */
     wallet_sortByName (wallets) {
-      return wallets.slice()
-        .map(
-          wallet => {
-            wallet.sortName = wallet.name || this.wallet_name(wallet.address) || ''
-            return wallet
-          })
+      return wallets
+        .slice()
+        .map(wallet => {
+          wallet.sortName =
+            wallet.name || this.wallet_name(wallet.address) || ''
+          return wallet
+        })
         .sort(sortByProps(['sortName', 'address']))
         .map(wallet => {
           delete wallet.sortName

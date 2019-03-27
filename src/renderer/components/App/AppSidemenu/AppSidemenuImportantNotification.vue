@@ -9,20 +9,20 @@
       class="AppSidemenuImportantNotification relative cursor-pointer flex items-center justify-center h-8 w-8"
       @click="openNotification"
     >
-      <div class="AppSidemenuImportantNotification__circle flex items-center justify-center h-8 w-8 rounded-full text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature">
-        <SvgIcon
-          name="notification"
-          view-box="0 0 15 15"
-        />
+      <div
+        class="AppSidemenuImportantNotification__circle flex items-center justify-center h-8 w-8 rounded-full text-theme-feature bg-theme-feature-item-indicator hover:text-theme-feature-item-indicator hover:bg-theme-feature"
+      >
+        <SvgIcon name="notification" view-box="0 0 15 15" />
       </div>
     </button>
-    <Portal
-      v-if="isNotificationVisible"
-      to="modal"
-    >
+    <Portal v-if="isNotificationVisible" to="modal">
       <div class="modal-backdrop">
-        <div class="AppSidemenuImportantNotification__notification absolute pin flex justify-center items-center">
-          <div class="max-w-2/3 min-w-1/4 rounded-lg inline p-4 bg-theme-button-text text-theme-feature hover-button-blue-shadow-definition">
+        <div
+          class="AppSidemenuImportantNotification__notification absolute pin flex justify-center items-center"
+        >
+          <div
+            class="max-w-2/3 min-w-1/4 rounded-lg inline p-4 bg-theme-button-text text-theme-feature hover-button-blue-shadow-definition"
+          >
             <!-- The real viewBox of `notification` and `download` is 0 0 15 15, but it is adjusted -->
             <SvgIcon
               class="fill-current text-theme-feature mr-1"
@@ -94,13 +94,17 @@ export default {
       releaseVersion: 'app/latestReleaseVersion'
     }),
     notificationText () {
-      return this.$t('APP_SIDEMENU_NOTIFICATION.NOTIFICATION', { version: this.releaseVersion })
+      return this.$t('APP_SIDEMENU_NOTIFICATION.NOTIFICATION', {
+        version: this.releaseVersion
+      })
     },
     releaseUrl () {
       return releaseService.latestReleaseUrl
     },
     tooltipText () {
-      return this.$t('APP_SIDEMENU_NOTIFICATION.TOOLTIP', { version: this.releaseVersion })
+      return this.$t('APP_SIDEMENU_NOTIFICATION.TOOLTIP', {
+        version: this.releaseVersion
+      })
     }
   },
 
@@ -140,7 +144,7 @@ export default {
   width: 35px;
   padding: 10px;
   background: transparent;
-    transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 .AppSidemenuImportantNotification__notification button:hover {
   transition: background-color 0.3s;

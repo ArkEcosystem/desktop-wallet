@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="WalletSelection"
-  >
+  <div class="WalletSelection">
     <InputSelect
       ref="input-profile"
       v-model="profileId"
@@ -118,7 +116,9 @@ export default {
 
     profiles () {
       if (this.compatibleAddress) {
-        return this.$store.getters['profile/byCompatibleAddress'](this.compatibleAddress)
+        return this.$store.getters['profile/byCompatibleAddress'](
+          this.compatibleAddress
+        )
       } else {
         return this.$store.getters['profile/all']
       }
@@ -142,8 +142,14 @@ export default {
       }
 
       const wallets = this.$store.getters['wallet/byProfileId'](this.profileId)
-      const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
-      if (ledgerWallets.length && this.profile && this.profile.networkId === this.session_network.id) {
+      const ledgerWallets = this.$store.getters['ledger/isConnected']
+        ? this.$store.getters['ledger/wallets']
+        : []
+      if (
+        ledgerWallets.length &&
+        this.profile &&
+        this.profile.networkId === this.session_network.id
+      ) {
         wallets.push(...ledgerWallets)
       }
 
@@ -151,19 +157,21 @@ export default {
     },
 
     walletList () {
-      const addresses = map(this.wallets, (wallet) => {
+      const addresses = map(this.wallets, wallet => {
         const address = {
           name: null,
           address: wallet.address
         }
         if (wallet.name && wallet.name !== wallet.address) {
-          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(wallet.address)})`
+          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(
+            wallet.address
+          )})`
         }
 
         return address
       })
 
-      const results = orderBy(addresses, (object) => {
+      const results = orderBy(addresses, object => {
         return object.name || object.address.toLowerCase()
       })
 

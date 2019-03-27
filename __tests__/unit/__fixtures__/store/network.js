@@ -25,7 +25,4 @@ export default {
   network2
 }
 
-export {
-  network1,
-  network2
-}
+export { network1, network2 }

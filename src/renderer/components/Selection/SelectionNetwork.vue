@@ -6,7 +6,11 @@
       :network="network"
       :is-custom="isCustom"
       :show-title="true"
-      :class="[selected.id === network.id && !isOtherSelected ? 'SelectionNetworkButton--selected' : null]"
+      :class="[
+        selected.id === network.id && !isOtherSelected
+          ? 'SelectionNetworkButton--selected'
+          : null
+      ]"
       class="SelectionNetworkButton"
       @click="select(network)"
     />
@@ -18,10 +22,14 @@
       @click="openModal"
     >
       <div class="flex flex-col justify-between p-1">
-        <span class="text-3xl tracking-wide w-16 h-16 flex mx-auto justify-center items-center text-theme-page-text-light">
+        <span
+          class="text-3xl tracking-wide w-16 h-16 flex mx-auto justify-center items-center text-theme-page-text-light"
+        >
           ...
         </span>
-        <span class="w-full block text-theme-page-text font-semibold truncate text-theme-page-text-light">
+        <span
+          class="w-full block text-theme-page-text font-semibold truncate text-theme-page-text-light"
+        >
           {{ $t('COMMON.OTHER') }}
         </span>
       </div>
@@ -111,12 +119,12 @@ export default {
 
 <style lang="postcss" scoped>
 .SelectionNetworkButton--selected {
-  @apply border-green
+  @apply border-green;
 }
 .SelectionNetworkButton:not(.SelectionNetworkButton--selected):hover {
-  @apply border-grey
+  @apply border-grey;
 }
 .SelectionNetworkButton:focus {
-  @apply border-green
+  @apply border-green;
 }
 </style>

@@ -7,7 +7,7 @@ describe('ButtonGeneric', () => {
   beforeEach(() => {
     wrapper = mount(ButtonGeneric, {
       propsData: {
-        'label': 'Test'
+        label: 'Test'
       }
     })
   })

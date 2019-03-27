@@ -6,14 +6,14 @@ export default new BaseModel({
   properties: {
     guid: {},
     date: {
-      format: (data) => data.isoDate
+      format: data => data.isoDate
     },
     title: {},
     summary: {
-      format: (data) => trunc(data['content:encoded'], 300).text
+      format: data => trunc(data['content:encoded'], 300).text
     },
     url: {
-      format: (data) => data.link
+      format: data => data.link
     },
     isRead: {
       format: () => false

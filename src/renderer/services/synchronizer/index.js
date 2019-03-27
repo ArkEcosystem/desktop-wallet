@@ -6,12 +6,4 @@ import market from './market'
 import peer from './peer'
 import wallets from './wallets'
 
-export {
-  announcements,
-  delegates,
-  fees,
-  ledger,
-  market,
-  peer,
-  wallets
-}
+export { announcements, delegates, fees, ledger, market, peer, wallets }

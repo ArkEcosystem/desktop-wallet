@@ -3,7 +3,4 @@ import WalletHeadingInfo from './WalletHeadingInfo'
 
 export default WalletHeading
 
-export {
-  WalletHeading,
-  WalletHeadingInfo
-}
+export { WalletHeading, WalletHeadingInfo }

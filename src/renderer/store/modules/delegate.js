@@ -44,9 +44,11 @@ export default {
         return false
       }
 
-      return Object.values(state.delegates[network.id]).find(delegate => {
-        return delegate.username === username
-      }) || false
+      return (
+        Object.values(state.delegates[network.id]).find(delegate => {
+          return delegate.username === username
+        }) || false
+      )
     },
 
     byPublicKey: (state, _, __, rootGetters) => publicKey => {
@@ -56,9 +58,11 @@ export default {
         return false
       }
 
-      return Object.values(state.delegates[network.id]).find(delegate => {
-        return delegate.publicKey === publicKey
-      }) || false
+      return (
+        Object.values(state.delegates[network.id]).find(delegate => {
+          return delegate.publicKey === publicKey
+        }) || false
+      )
     },
 
     search: (state, getters) => query => {
@@ -91,7 +95,10 @@ export default {
     async load ({ dispatch, rootGetters }) {
       const network = rootGetters['session/network']
       const delegates = []
-      const limit = this._vm.$client.version === 1 ? (network.constants.activeDelegates || 51) : 100
+      const limit =
+        this._vm.$client.version === 1
+          ? network.constants.activeDelegates || 51
+          : 100
       let page = 1
       let totalCount = null
       while (!totalCount || delegates.length < totalCount) {
@@ -99,27 +106,29 @@ export default {
           page,
           limit
         })
-        delegateResponse.delegates = delegateResponse.delegates.map((delegate) => {
-          if (this._vm.$client.version === 2) {
-            return { ...delegate, voteWeight: delegate.votes }
-          }
+        delegateResponse.delegates = delegateResponse.delegates.map(
+          delegate => {
+            if (this._vm.$client.version === 2) {
+              return { ...delegate, voteWeight: delegate.votes }
+            }
 
-          return {
-            username: delegate.username,
-            address: delegate.address,
-            publicKey: delegate.publicKey,
-            voteWeight: delegate.vote,
-            blocks: {
-              produced: delegate.producedblocks,
-              missed: delegate.missedblocks
-            },
-            production: {
-              approval: delegate.approval,
-              productivity: delegate.productivity
-            },
-            rank: delegate.rate
+            return {
+              username: delegate.username,
+              address: delegate.address,
+              publicKey: delegate.publicKey,
+              voteWeight: delegate.vote,
+              blocks: {
+                produced: delegate.producedblocks,
+                missed: delegate.missedblocks
+              },
+              production: {
+                approval: delegate.approval,
+                productivity: delegate.productivity
+              },
+              rank: delegate.rate
+            }
           }
-        })
+        )
         delegates.push(...delegateResponse.delegates)
         totalCount = delegateResponse.totalCount
         page++
@@ -131,7 +140,9 @@ export default {
     set ({ commit, rootGetters }, delegates) {
       const network = rootGetters['session/network']
       commit('SET_DELEGATES', {
-        delegates: delegates.map(delegate => DelegateModel.deserialize(delegate)),
+        delegates: delegates.map(delegate =>
+          DelegateModel.deserialize(delegate)
+        ),
         networkId: network.id
       })
     },

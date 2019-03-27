@@ -31,10 +31,15 @@ export default {
 
   methods: {
     generate () {
-      const qr = new QRious(Object.assign({
-        element: this.$el,
-        value: this.value
-      }, this.options))
+      const qr = new QRious(
+        Object.assign(
+          {
+            element: this.$el,
+            value: this.value
+          },
+          this.options
+        )
+      )
 
       return qr
     }

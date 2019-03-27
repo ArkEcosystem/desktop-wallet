@@ -34,17 +34,23 @@ describe('InputCurrency', () => {
   })
 
   const mountComponent = config => {
-    return mount(InputCurrency, merge({
-      i18n,
-      propsData: {
-        currency: mockNetwork.token,
-        value: ''
-      },
-      mocks: {
-        currency_format: () => 'NET 9.9',
-        session_network: mockNetwork
-      }
-    }, config))
+    return mount(
+      InputCurrency,
+      merge(
+        {
+          i18n,
+          propsData: {
+            currency: mockNetwork.token,
+            value: ''
+          },
+          mocks: {
+            currency_format: () => 'NET 9.9',
+            session_network: mockNetwork
+          }
+        },
+        config
+      )
+    )
   }
 
   it('has the right name', () => {
@@ -227,7 +233,9 @@ describe('InputCurrency', () => {
       expect(wrapper.vm.sanitizeNumeric(1e-8)).toEqual('0.00000001')
       expect(wrapper.vm.sanitizeNumeric(1e-6)).toEqual('0.000001')
       expect(wrapper.vm.sanitizeNumeric('1,1')).toEqual('1.1')
-      expect(wrapper.vm.sanitizeNumeric('100.200.300,40')).toEqual('100200300.40')
+      expect(wrapper.vm.sanitizeNumeric('100.200.300,40')).toEqual(
+        '100200300.40'
+      )
       expect(wrapper.vm.sanitizeNumeric('7.777')).toEqual('7.777')
       expect(wrapper.vm.sanitizeNumeric('9,999')).toEqual('9999')
       expect(wrapper.vm.sanitizeNumeric('9,999,999.99')).toEqual('9999999.99')

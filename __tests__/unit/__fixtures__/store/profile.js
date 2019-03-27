@@ -7,6 +7,4 @@ export default {
   profile1
 }
 
-export {
-  profile1
-}
+export { profile1 }

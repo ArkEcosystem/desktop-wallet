@@ -39,12 +39,13 @@ describe('Mixins > Wallet', () => {
           getters: {
             'wallet/byProfileId': id => walletsByProfile,
             'wallet/contactsByProfileId': id => contactsByProfile,
-            'delegate/byAddress': (address) => {
+            'delegate/byAddress': address => {
               if (address === 'DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh') {
                 return {
                   username: 'test',
                   address,
-                  publicKey: '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
+                  publicKey:
+                    '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
                 }
               }
             }
@@ -58,16 +59,18 @@ describe('Mixins > Wallet', () => {
     describe('when the contacts includes the wallet address', () => {
       it('should return the its name', () => {
         const address = 'AeXAmpleWiThLongName'
-        contactsByProfile = [
-          { address, name: 'example' }
-        ]
-        expect(wrapper.vm.wallet_nameOnContact(address)).toEqual(contactsByProfile[0].name)
+        contactsByProfile = [{ address, name: 'example' }]
+        expect(wrapper.vm.wallet_nameOnContact(address)).toEqual(
+          contactsByProfile[0].name
+        )
       })
     })
 
     describe('when the profile does not include the wallet address', () => {
       it('should return `undefined`', () => {
-        expect(wrapper.vm.wallet_nameOnContact('AeXAmpleWiThLongName', 5)).toBeNull()
+        expect(
+          wrapper.vm.wallet_nameOnContact('AeXAmpleWiThLongName', 5)
+        ).toBeNull()
       })
     })
   })
@@ -76,16 +79,18 @@ describe('Mixins > Wallet', () => {
     describe('when the profile includes the wallet address', () => {
       it('should return the its name', () => {
         const address = 'AeXAmpleWiThLongName'
-        walletsByProfile = [
-          { address, name: 'example' }
-        ]
-        expect(wrapper.vm.wallet_nameOnProfile(address)).toEqual(walletsByProfile[0].name)
+        walletsByProfile = [{ address, name: 'example' }]
+        expect(wrapper.vm.wallet_nameOnProfile(address)).toEqual(
+          walletsByProfile[0].name
+        )
       })
     })
 
     describe('when the profile does not include the wallet address', () => {
       it('should return `undefined`', () => {
-        expect(wrapper.vm.wallet_nameOnContact('AeXAmpleWiThLongName', 5)).toBeNull()
+        expect(
+          wrapper.vm.wallet_nameOnContact('AeXAmpleWiThLongName', 5)
+        ).toBeNull()
       })
     })
   })
@@ -93,12 +98,16 @@ describe('Mixins > Wallet', () => {
   describe('wallet_formatAddress', () => {
     describe('when receiving an address that is not known wallet, included on the profile or is a contact', () => {
       it('should return the entire address', () => {
-        expect(wrapper.vm.wallet_formatAddress('AeXAmpleWiThLongName')).toEqual('AeXAmpleWiThLongName')
+        expect(wrapper.vm.wallet_formatAddress('AeXAmpleWiThLongName')).toEqual(
+          'AeXAmpleWiThLongName'
+        )
       })
 
       describe('whent the `truncateLength` is passed', () => {
         it('should return the address, but truncated', () => {
-          expect(wrapper.vm.wallet_formatAddress('AeXAmpleWiThLongName', 5)).toEqual('Ae…me')
+          expect(
+            wrapper.vm.wallet_formatAddress('AeXAmpleWiThLongName', 5)
+          ).toEqual('Ae…me')
         })
       })
     })

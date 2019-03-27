@@ -23,21 +23,28 @@ export default {
   },
 
   getters: {
-    byAddress: (state, _, __, rootGetters) => (address, { includeExpired } = {}) => {
+    byAddress: (state, _, __, rootGetters) => (
+      address,
+      { includeExpired } = {}
+    ) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.transactions[profileId]) {
         return []
       }
 
-      const transactions = state.transactions[profileId].filter(transaction => {
-        return transaction.recipient === address || transaction.sender === address
-      }).map(transaction => {
-        transaction.isSender = transaction.sender === address
-        transaction.isRecipient = transaction.recipient === address
-        transaction.totalAmount = transaction.amount + transaction.fee
+      const transactions = state.transactions[profileId]
+        .filter(transaction => {
+          return (
+            transaction.recipient === address || transaction.sender === address
+          )
+        })
+        .map(transaction => {
+          transaction.isSender = transaction.sender === address
+          transaction.isRecipient = transaction.recipient === address
+          transaction.totalAmount = transaction.amount + transaction.fee
 
-        return transaction
-      })
+          return transaction
+        })
 
       if (includeExpired) {
         return transactions
@@ -46,14 +53,19 @@ export default {
       return transactions.filter(transaction => !transaction.isExpired)
     },
 
-    byProfileId: (state, _, __, rootGetters) => (profileId, { includeExpired } = {}) => {
+    byProfileId: (state, _, __, rootGetters) => (
+      profileId,
+      { includeExpired } = {}
+    ) => {
       if (!state.transactions[profileId]) {
         return []
       }
 
-      const addresses = rootGetters['wallet/byProfileId'](profileId).map(wallet => {
-        return wallet.address
-      })
+      const addresses = rootGetters['wallet/byProfileId'](profileId).map(
+        wallet => {
+          return wallet.address
+        }
+      )
 
       const transactions = state.transactions[profileId].map(transaction => {
         transaction.isSender = addresses.includes(transaction.sender)
@@ -75,7 +87,7 @@ export default {
      * @param  {Number} type
      * @return {(Number|null)}
      */
-    staticFee: (state, _, __, rootGetters) => (type) => {
+    staticFee: (state, _, __, rootGetters) => type => {
       const networkId = rootGetters['session/profile'].networkId
       if (!networkId || !state.staticFees[networkId]) {
         return null
@@ -92,7 +104,9 @@ export default {
       }
 
       if (includes(state.transactions[transaction.profileId], transaction)) {
-        throw new Error(`Cannot create transaction '${transaction.id}' - it already exists`)
+        throw new Error(
+          `Cannot create transaction '${transaction.id}' - it already exists`
+        )
       }
 
       state.transactions[transaction.profileId].push(transaction)
@@ -101,18 +115,34 @@ export default {
       if (!state.transactions[transaction.profileId]) {
         Vue.set(state.transactions, transaction.profileId, [])
       }
-      state.transactions[transaction.profileId] = unionBy([transaction, ...state.transactions[transaction.profileId]], 'id')
+      state.transactions[transaction.profileId] = unionBy(
+        [transaction, ...state.transactions[transaction.profileId]],
+        'id'
+      )
     },
     UPDATE (state, transaction) {
       if (!includes(state.transactions[transaction.profileId], transaction)) {
-        throw new Error(`Cannot update transaction '${transaction.id}' - it does not exist on the state`)
+        throw new Error(
+          `Cannot update transaction '${
+            transaction.id
+          }' - it does not exist on the state`
+        )
       }
-      state.transactions[transaction.profileId] = unionBy([transaction, ...state.transactions[transaction.profileId]], 'id')
+      state.transactions[transaction.profileId] = unionBy(
+        [transaction, ...state.transactions[transaction.profileId]],
+        'id'
+      )
     },
     DELETE (state, transaction) {
-      const index = findIndex(state.transactions[transaction.profileId], { id: transaction.id })
+      const index = findIndex(state.transactions[transaction.profileId], {
+        id: transaction.id
+      })
       if (index === -1) {
-        throw new Error(`Cannot delete transaction '${transaction.id}' - it does not exist on the state`)
+        throw new Error(
+          `Cannot delete transaction '${
+            transaction.id
+          }' - it does not exist on the state`
+        )
       }
       state.transactions[transaction.profileId].splice(index, 1)
     },
@@ -145,7 +175,10 @@ export default {
     clearExpired ({ commit, getters, rootGetters }) {
       const expired = []
       const profileId = rootGetters['session/profileId']
-      const threshold = dayjs().subtract(config.APP.transactionExpiryMinutes, 'minute')
+      const threshold = dayjs().subtract(
+        config.APP.transactionExpiryMinutes,
+        'minute'
+      )
       for (const transaction of getters['byProfileId'](profileId)) {
         if (dayjs(transaction.timestamp).isBefore(threshold)) {
           transaction.isExpired = true

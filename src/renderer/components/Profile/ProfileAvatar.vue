@@ -1,11 +1,12 @@
 <template>
-  <div
-    class="ProfileAvatar"
-    v-on="$listeners"
-  >
+  <div class="ProfileAvatar" v-on="$listeners">
     <div
       v-if="profile.avatar"
-      :style="profile.avatar ? `backgroundImage: url('${assets_loadImage(profile.avatar)}')` : ''"
+      :style="
+        profile.avatar
+          ? `backgroundImage: url('${assets_loadImage(profile.avatar)}')`
+          : ''
+      "
       class="ProfileAvatar__image w-full h-full background-image bg-center bg-no-repeat border-none"
     >
       <slot />

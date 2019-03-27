@@ -8,10 +8,8 @@
 export default {
   name: 'WalletStatistics',
 
-  components: {
-  },
+  components: {},
 
-  props: {
-  }
+  props: {}
 }
 </script>

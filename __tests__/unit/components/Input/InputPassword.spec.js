@@ -71,7 +71,9 @@ describe('InputPassword', () => {
       mountData.propsData.minLength = value.length + 1
       const wrapper = mount(InputPassword, mountData)
 
-      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.TOO_SHORT')
+      expect(wrapper.vm.passwordFeedback()).toEqual(
+        'VALIDATION.PASSWORD.TOO_SHORT'
+      )
     })
   })
 
@@ -81,7 +83,9 @@ describe('InputPassword', () => {
       mountData.propsData.minLength = 2
       const wrapper = mount(InputPassword, mountData)
 
-      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.NUMBERS')
+      expect(wrapper.vm.passwordFeedback()).toEqual(
+        'VALIDATION.PASSWORD.NUMBERS'
+      )
     })
   })
 
@@ -91,7 +95,9 @@ describe('InputPassword', () => {
       mountData.propsData.minLength = 2
       const wrapper = mount(InputPassword, mountData)
 
-      expect(wrapper.vm.passwordFeedback()).toEqual('VALIDATION.PASSWORD.SPECIAL_CHARACTERS')
+      expect(wrapper.vm.passwordFeedback()).toEqual(
+        'VALIDATION.PASSWORD.SPECIAL_CHARACTERS'
+      )
     })
   })
 

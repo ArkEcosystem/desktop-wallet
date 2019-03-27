@@ -50,13 +50,19 @@ describe('ProfileRemovalConfirmation', () => {
       it('should set other profile before removal', () => {
         wrapper.vm.removeProfile()
 
-        expect($store.dispatch.mock.calls[0]).toEqual(['session/setProfileId', profile2.id])
+        expect($store.dispatch.mock.calls[0]).toEqual([
+          'session/setProfileId',
+          profile2.id
+        ])
       })
 
       it('should delete the profile', () => {
         wrapper.vm.removeProfile()
 
-        expect($store.dispatch.mock.calls[1]).toEqual(['profile/delete', profile])
+        expect($store.dispatch.mock.calls[1]).toEqual([
+          'profile/delete',
+          profile
+        ])
       })
 
       it('should emit the `removed` event', () => {
@@ -82,7 +88,10 @@ describe('ProfileRemovalConfirmation', () => {
       it('should delete the profile', () => {
         wrapper.vm.removeProfile()
 
-        expect($store.dispatch.mock.calls[1]).toEqual(['profile/delete', profile])
+        expect($store.dispatch.mock.calls[1]).toEqual([
+          'profile/delete',
+          profile
+        ])
       })
 
       it('should redirect to the profile creation page', () => {

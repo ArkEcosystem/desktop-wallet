@@ -1,60 +1,81 @@
 <template>
   <div
     v-click-outside="emitClose"
-    :class="isSidebarExpanded ? 'WalletSidebarFilters--expanded' : 'WalletSidebarFilters--collapsed'"
+    :class="
+      isSidebarExpanded
+        ? 'WalletSidebarFilters--expanded'
+        : 'WalletSidebarFilters--collapsed'
+    "
     class="WalletSidebarFilters absolute z-20 rounded-lg theme-light"
   >
-    <div
-      class="bg-theme-feature p-10 rounded-lg shadow font-bold"
-    >
+    <div class="bg-theme-feature p-10 rounded-lg shadow font-bold">
       <WalletSidebarFiltersSearchInput
         v-model="filters.searchQuery"
-        :placeholder="hasContacts
-          ? $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_CONTACTS')
-          : $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_WALLETS')
+        :placeholder="
+          hasContacts
+            ? $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_CONTACTS')
+            : $t('WALLET_SIDEBAR.SEARCH.PLACEHOLDER_WALLETS')
         "
         @input="setSearchQuery"
       />
     </div>
 
-    <MenuOptions class="WalletSidebarFilters__sorting mt-2 theme-light rounded-lg shadow font-bold">
+    <MenuOptions
+      class="WalletSidebarFilters__sorting mt-2 theme-light rounded-lg shadow font-bold"
+    >
       <div class="mx-10 py-5 mb-2 text-theme-settings-heading select-none">
         {{ $t('WALLET_SIDEBAR.SORT.BY') }}
       </div>
       <MenuOptionsItem
         :title="$t('WALLET_SIDEBAR.SORT.NAME_ASC')"
-        :class="sortOrder === 'name-asc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
+        :class="
+          sortOrder === 'name-asc'
+            ? 'WalletSidebarFilters__sorting__order--selected'
+            : ''
+        "
         @click="setSort('name-asc')"
       />
       <MenuOptionsItem
         :title="$t('WALLET_SIDEBAR.SORT.NAME_DESC')"
-        :class="sortOrder === 'name-desc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
+        :class="
+          sortOrder === 'name-desc'
+            ? 'WalletSidebarFilters__sorting__order--selected'
+            : ''
+        "
         @click="setSort('name-desc')"
       />
       <MenuOptionsItem
         :title="$t('WALLET_SIDEBAR.SORT.BALANCE_ASC')"
-        :class="sortOrder === 'balance-asc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
+        :class="
+          sortOrder === 'balance-asc'
+            ? 'WalletSidebarFilters__sorting__order--selected'
+            : ''
+        "
         @click="setSort('balance-asc')"
       />
       <MenuOptionsItem
         :title="$t('WALLET_SIDEBAR.SORT.BALANCE_DESC')"
-        :class="sortOrder === 'balance-desc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
+        :class="
+          sortOrder === 'balance-desc'
+            ? 'WalletSidebarFilters__sorting__order--selected'
+            : ''
+        "
         @click="setSort('balance-desc')"
       />
     </MenuOptions>
 
-    <MenuOptions class="WalletSidebarFilters__settings mt-2 rounded-lg shadow font-medium">
+    <MenuOptions
+      class="WalletSidebarFilters__settings mt-2 rounded-lg shadow font-medium"
+    >
       <MenuOptionsItem
-        :title="hasContacts
-          ? $t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_CONTACTS')
-          : $t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_WALLETS')
+        :title="
+          hasContacts
+            ? $t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_CONTACTS')
+            : $t('WALLET_SIDEBAR.FILTERS.HIDE_EMPTY_WALLETS')
         "
         @click="toggleSelect('hide-empty')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <ButtonSwitch
             ref="hide-empty"
             :is-active="hideEmpty"
@@ -69,10 +90,7 @@
         :title="$t('WALLET_SIDEBAR.FILTERS.HIDE_LEDGER')"
         @click="toggleSelect('hide-ledger')"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
+        <div slot="controls" class="pointer-events-none">
           <ButtonSwitch
             ref="hide-ledger"
             :is-active="hideLedger"
@@ -240,10 +258,10 @@ export default {
 }
 
 .WalletSidebarFilters .MenuOptions {
-  @apply .rounded-lg
+  @apply .rounded-lg;
 }
 /* To not render the bubble arrow */
 .WalletSidebarFilters .MenuOptions:after {
-  border-width: 0px
+  border-width: 0px;
 }
 </style>

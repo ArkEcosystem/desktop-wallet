@@ -1,5 +1,12 @@
 import { flatten, includes, isFunction, pullAll } from 'lodash'
-import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
+import {
+  announcements,
+  fees,
+  ledger,
+  market,
+  peer,
+  wallets
+} from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
@@ -101,7 +108,9 @@ export default class Synchronizer {
     ;['default', 'focus'].forEach(mode => {
       const { interval } = config[mode]
       if (!interval && interval !== null) {
-        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a Number bigger than 0 (or \`null\` to ignore it)`)
+        throw new Error(
+          `[$synchronizer] \`interval\` for \`${mode}\` mode should be a Number bigger than 0 (or \`null\` to ignore it)`
+        )
       }
     })
 
@@ -164,7 +173,7 @@ export default class Synchronizer {
 
     action.isCalling = true
     await action.fn()
-    action.calledAt = (new Date()).getTime()
+    action.calledAt = new Date().getTime()
     action.isCalling = false
   }
 
@@ -184,7 +193,9 @@ export default class Synchronizer {
             if (options.immediate) {
               this.call(actionId)
             } else {
-              const mode = includes(this.focused, actionId) ? 'focus' : 'default'
+              const mode = includes(this.focused, actionId)
+                ? 'focus'
+                : 'default'
               const { interval } = action[mode]
 
               // A `null` interval means no interval, so the action does not run
@@ -195,7 +206,7 @@ export default class Synchronizer {
                 }
 
                 const nextCallAt = action.calledAt + interval
-                const now = (new Date()).getTime()
+                const now = new Date().getTime()
 
                 if (nextCallAt <= now) {
                   this.call(actionId)

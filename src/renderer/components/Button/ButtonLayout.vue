@@ -5,11 +5,7 @@
       :disabled="gridLayout"
       @click="emitClick()"
     >
-      <SvgIcon
-        class="fill-current"
-        name="grid"
-        view-box="0 0 16 16"
-      />
+      <SvgIcon class="fill-current" name="grid" view-box="0 0 16 16" />
     </button>
 
     <button
@@ -17,11 +13,7 @@
       :disabled="!gridLayout"
       @click="emitClick()"
     >
-      <SvgIcon
-        class="fill-current"
-        name="tabular"
-        view-box="0 0 16 16"
-      />
+      <SvgIcon class="fill-current" name="tabular" view-box="0 0 16 16" />
     </button>
   </div>
 </template>
@@ -61,6 +53,6 @@ export default {
   opacity: 0.5;
 }
 .ButtonLayout:disabled {
-  @apply bg-theme-button
+  @apply bg-theme-button;
 }
 </style>

@@ -4,11 +4,7 @@
       class="SearchFilter__button action-button flex items-center"
       @click="emitClick"
     >
-      <SvgIcon
-        name="filter"
-        view-box="0 0 14 13"
-        class="mr-2"
-      />
+      <SvgIcon name="filter" view-box="0 0 14 13" class="mr-2" />
       {{ $t('SEARCH.FILTER') }}
     </button>
     <slot />

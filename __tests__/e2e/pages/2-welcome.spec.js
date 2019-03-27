@@ -1,4 +1,4 @@
-export default (scope) => {
+export default scope => {
   it('should render', async () => {
     const welcomeElement = await scope.isExisting('.AppIntro')
     expect(welcomeElement).toBeTrue()

@@ -11,21 +11,9 @@
         :viewBox="`0 0 100 100`"
       >
         <defs>
-          <mask
-            :id="maskId"
-          >
-            <circle
-              fill="white"
-              cx="50%"
-              cy="50%"
-              r="50%"
-            />
-            <circle
-              fill="black"
-              cx="70%"
-              cy="78%"
-              r="25%"
-            />
+          <mask :id="maskId">
+            <circle fill="white" cx="50%" cy="50%" r="50%" />
+            <circle fill="black" cx="70%" cy="78%" r="25%" />
           </mask>
         </defs>
         <circle
@@ -112,10 +100,14 @@ export default {
 
   computed: {
     networkSymbol () {
-      return this.session_network && this.session_network.symbol.length ? this.session_network.symbol[0] : ''
+      return this.session_network && this.session_network.symbol.length
+        ? this.session_network.symbol[0]
+        : ''
     },
     maskId () {
-      return Math.random().toString(36).substring(9)
+      return Math.random()
+        .toString(36)
+        .substring(9)
     }
   },
 
@@ -134,17 +126,32 @@ export default {
       this.rectangles = []
 
       // Change string to a hash
-      const hash = crypto.createHash('sha1').update(Buffer.from(value, 'utf8')).digest('binary')
+      const hash = crypto
+        .createHash('sha1')
+        .update(Buffer.from(value, 'utf8'))
+        .digest('binary')
       // Change hash into a 32 bit int for our seed
-      const seed = (hash.charCodeAt(0) << 24) | (hash.charCodeAt(1) << 16) | (hash.charCodeAt(2) << 8) | hash.charCodeAt(3)
+      const seed =
+        (hash.charCodeAt(0) << 24) |
+        (hash.charCodeAt(1) << 16) |
+        (hash.charCodeAt(2) << 8) |
+        hash.charCodeAt(3)
       const generator = new MersenneTwister(seed)
       const remainingColors = this.hueShift(colors.slice(), generator)
       this.backgroundColor = this.genColor(remainingColors, generator)
 
       for (var i = 0; i < this.shapeCount; i++) {
-        this.rectangles.push(this.genShape(generator, remainingColors, 100, i, this.shapeCount))
+        this.rectangles.push(
+          this.genShape(generator, remainingColors, 100, i, this.shapeCount)
+        )
       }
-      this.logo = this.genShape(generator, remainingColors, 100, i, this.shapeCount)
+      this.logo = this.genShape(
+        generator,
+        remainingColors,
+        100,
+        i,
+        this.shapeCount
+      )
     },
 
     genShape (generator, remainingColors, diameter, i, total) {
@@ -154,17 +161,19 @@ export default {
 
       var firstRot = generator.random()
       var angle = Math.PI * 2 * firstRot
-      var velocity = diameter / total * generator.random() + (i * diameter / total)
+      var velocity =
+        (diameter / total) * generator.random() + (i * diameter) / total
 
-      const tx = (Math.cos(angle) * velocity)
-      const ty = (Math.sin(angle) * velocity)
+      const tx = Math.cos(angle) * velocity
+      const ty = Math.sin(angle) * velocity
 
       const translate = 'translate(' + tx + ' ' + ty + ')'
 
       // Third random is a shape rotation on top of all of that.
       const secondRot = generator.random()
-      const rot = (firstRot * 360) + secondRot * 180
-      const rotate = 'rotate(' + rot.toFixed(1) + ' ' + center + ' ' + center + ')'
+      const rot = firstRot * 360 + secondRot * 180
+      const rotate =
+        'rotate(' + rot.toFixed(1) + ' ' + center + ' ' + center + ')'
       const transform = translate + ' ' + rotate
 
       const fill = this.genColor(remainingColors, generator)
@@ -186,7 +195,7 @@ export default {
 
     hueShift (colors, generator) {
       const wobble = 30
-      const amount = (generator.random() * 30) - (wobble / 2)
+      const amount = generator.random() * 30 - wobble / 2
       return colors.map(function (hex) {
         var color = Color(hex)
         color.rotate(amount)
@@ -195,7 +204,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style>

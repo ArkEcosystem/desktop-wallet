@@ -1,8 +1,5 @@
 <template>
-  <ModalWindow
-    :title="$t('SIGN_VERIFY.TITLE_SIGN')"
-    @close="emitCancel"
-  >
+  <ModalWindow :title="$t('SIGN_VERIFY.TITLE_SIGN')" @close="emitCancel">
     <div class="flex flex-col justify-center w-80">
       <InputText
         :is-read-only="true"
@@ -132,9 +129,15 @@ export default {
       try {
         let message
         if (this.form.wif) {
-          message = WalletService.signMessageWithWif(this.form.message, this.form.wif)
+          message = WalletService.signMessageWithWif(
+            this.form.message,
+            this.form.wif
+          )
         } else {
-          message = WalletService.signMessage(this.form.message, this.form.passphrase)
+          message = WalletService.signMessage(
+            this.form.message,
+            this.form.passphrase
+          )
         }
         message['timestamp'] = new Date().getTime()
         message['address'] = this.wallet.address

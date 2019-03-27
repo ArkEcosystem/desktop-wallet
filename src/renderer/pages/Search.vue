@@ -1,10 +1,10 @@
 <template>
-  <div class="Search flex relative w-full h-full overflow-none bg-theme-feature rounded-lg p-10">
+  <div
+    class="Search flex relative w-full h-full overflow-none bg-theme-feature rounded-lg p-10"
+  >
     <header class="Search__header flex relative items-baseline w-full">
       <SearchInput class="mr-5" />
-      <SearchFilterButton
-        @click="toggleFilter"
-      >
+      <SearchFilterButton @click="toggleFilter">
         <SearchFilter
           v-show="showFilter"
           :outside-click="showFilter"
@@ -17,7 +17,11 @@
 </template>
 
 <script>
-import { SearchInput, SearchFilter, SearchFilterButton } from '@/components/Search'
+import {
+  SearchInput,
+  SearchFilter,
+  SearchFilterButton
+} from '@/components/Search'
 
 export default {
   name: 'SearchPage',

@@ -14,17 +14,20 @@ export default {
 
     electron_writeFile (raw, defaultPath, extensions = ['.json']) {
       return new Promise((resolve, reject) => {
-        electron.remote.dialog.showSaveDialog({
-          defaultPath,
-          filters: [{ extensions }]
-        }, fileName => {
-          if (!fileName) return
+        electron.remote.dialog.showSaveDialog(
+          {
+            defaultPath,
+            filters: [{ extensions }]
+          },
+          fileName => {
+            if (!fileName) return
 
-          writeFile(fileName, raw, 'utf8', err => {
-            if (err) reject(err)
-            resolve(fileName)
-          })
-        })
+            writeFile(fileName, raw, 'utf8', err => {
+              if (err) reject(err)
+              resolve(fileName)
+            })
+          }
+        )
       })
     }
   }

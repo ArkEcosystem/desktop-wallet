@@ -31,7 +31,7 @@ describe('WalletDelegates', () => {
         $error: () => {}
       },
       stubs: {
-        'TableWrapper': true
+        TableWrapper: true
       }
     })
   }
@@ -65,7 +65,9 @@ describe('WalletDelegates', () => {
 
       it('should display it', () => {
         const wrapper = mountWrapper()
-        expect(wrapper.find('.WalletDelegates__explanation').exists()).toBeTrue()
+        expect(
+          wrapper.find('.WalletDelegates__explanation').exists()
+        ).toBeTrue()
       })
     })
 
@@ -76,7 +78,9 @@ describe('WalletDelegates', () => {
 
       it('should not display it', () => {
         const wrapper = mountWrapper()
-        expect(wrapper.find('.WalletDelegates__explanation').exists()).toBeFalse()
+        expect(
+          wrapper.find('.WalletDelegates__explanation').exists()
+        ).toBeFalse()
       })
     })
   })

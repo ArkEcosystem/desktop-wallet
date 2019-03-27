@@ -11,13 +11,19 @@ const i18n = useI18n(Vue)
 
 describe('PassphraseInput', () => {
   const mountComponent = config => {
-    return mount(PassphraseInput, merge({
-      i18n,
-      propsData: {
-        value: '',
-        pubKeyHash: 23
-      }
-    }, config))
+    return mount(
+      PassphraseInput,
+      merge(
+        {
+          i18n,
+          propsData: {
+            value: '',
+            pubKeyHash: 23
+          }
+        },
+        config
+      )
+    )
   }
 
   it('has the right name', () => {

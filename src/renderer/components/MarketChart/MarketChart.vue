@@ -9,10 +9,7 @@
       :height="315"
       @ready="show"
     />
-    <div
-      v-if="!isReady"
-      class="MarketChart__Loader__Container"
-    >
+    <div v-if="!isReady" class="MarketChart__Loader__Container">
       <Loader />
     </div>
   </section>
@@ -117,7 +114,11 @@ export default {
     async renderChart () {
       await this.renderGradient()
 
-      const response = await cryptoCompare.historicByType(this.period, this.ticker, this.currency)
+      const response = await cryptoCompare.historicByType(
+        this.period,
+        this.ticker,
+        this.currency
+      )
 
       if (response && response.datasets) {
         // Since BTC price could be very low :(, the linear scale could produce
@@ -203,9 +204,13 @@ export default {
                     } else if (this.period === 'week') {
                       const width = this.$el.clientWidth
                       if (width > 1200) {
-                        return this.$t(`MARKET_CHART.WEEK.LONG.${value.toUpperCase()}`)
+                        return this.$t(
+                          `MARKET_CHART.WEEK.LONG.${value.toUpperCase()}`
+                        )
                       } else {
-                        return this.$t(`MARKET_CHART.WEEK.SHORT.${value.toUpperCase()}`)
+                        return this.$t(
+                          `MARKET_CHART.WEEK.SHORT.${value.toUpperCase()}`
+                        )
                       }
                     }
 
@@ -221,7 +226,9 @@ export default {
             mode: 'x',
             callbacks: {
               label: (item, data) => {
-                return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
+                return this.currency_format(item.yLabel / scaleCorrection, {
+                  currency: this.currency
+                })
               },
               title: (items, data) => {
                 const { index } = items[0]
@@ -237,7 +244,9 @@ export default {
                 } else if (index === values.length - 1) {
                   return this.$t('MARKET_CHART.TODAY')
                 } else if (this.period === 'week') {
-                  return this.$t(`MARKET_CHART.WEEK.LONG.${title.toUpperCase()}`)
+                  return this.$t(
+                    `MARKET_CHART.WEEK.LONG.${title.toUpperCase()}`
+                  )
                 } else {
                   const days = values.length
                   const today = dayjs()
@@ -252,16 +261,18 @@ export default {
 
         this.chartData = {
           labels: response.labels,
-          datasets: [{
-            // Do not show the points, but enable a big target for the tooltip
-            pointHitRadius: 12,
-            pointRadius: 0,
-            borderWidth: 3,
-            type: 'line',
-            fill: false,
-            borderColor: this.gradient || this.colours.gradient[0],
-            data
-          }]
+          datasets: [
+            {
+              // Do not show the points, but enable a big target for the tooltip
+              pointHitRadius: 12,
+              pointRadius: 0,
+              borderWidth: 3,
+              type: 'line',
+              fill: false,
+              borderColor: this.gradient || this.colours.gradient[0],
+              data
+            }
+          ]
         }
       }
     },
@@ -276,7 +287,9 @@ export default {
 
       if (width === 0) return
 
-      this.gradient = canvas.getContext('2d').createLinearGradient(0, 0, width, 0)
+      this.gradient = canvas
+        .getContext('2d')
+        .createLinearGradient(0, 0, width, 0)
       this.gradient.addColorStop(0, this.colours.gradient[1])
       this.gradient.addColorStop(0.5, this.colours.gradient[2])
       this.gradient.addColorStop(1, this.colours.gradient[3])
@@ -320,7 +333,7 @@ export default {
 
 <style lang="postcss" scoped>
 .MarketChart {
-  min-height: 315px
+  min-height: 315px;
 }
 
 .MarketChart__Loader__Container {

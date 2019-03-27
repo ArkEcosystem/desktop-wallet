@@ -4,14 +4,16 @@
       v-if="!secondaryButtonsVisible"
       class="-mr-2"
     />
-    <WalletHeadingSecondaryActions
-      v-else
-      class="-mr-2"
-    />
+    <WalletHeadingSecondaryActions v-else class="-mr-2" />
     <button
       v-if="!currentWallet.isWatchOnly"
       class="option-heading-button flex items-center self-stretch ml-2 p-2"
-      @click="$store.dispatch('wallet/setSecondaryButtonsVisible', !secondaryButtonsVisible)"
+      @click="
+        $store.dispatch(
+          'wallet/setSecondaryButtonsVisible',
+          !secondaryButtonsVisible
+        )
+      "
     >
       <SvgIcon
         v-if="!secondaryButtonsVisible"
@@ -19,11 +21,7 @@
         name="point"
         view-box="0 0 14 14"
       />
-      <SvgIcon
-        v-else
-        name="step-back"
-        view-box="0 0 14 14"
-      />
+      <SvgIcon v-else name="step-back" view-box="0 0 14 14" />
     </button>
   </div>
 </template>

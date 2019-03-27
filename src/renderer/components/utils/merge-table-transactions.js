@@ -11,10 +11,7 @@ import { orderBy, uniqBy } from 'lodash'
  */
 export default (a, b, number) => {
   // The order is important: the fetched transactions should override the stored
-  const transactions = uniqBy([
-    ...a,
-    ...b
-  ], 'id')
+  const transactions = uniqBy([...a, ...b], 'id')
 
   return orderBy(transactions, 'timestamp', 'desc').slice(0, number)
 }

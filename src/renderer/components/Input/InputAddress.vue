@@ -37,7 +37,7 @@
           @keyup.down="onKeyDown"
           @keyup.esc="onEsc"
           @keyup.enter="onEnter"
-        >
+        />
         <ButtonModal
           ref="button-qr"
           :label="''"
@@ -139,7 +139,11 @@ export default {
     error () {
       let error = null
 
-      if (!this.isDisabled && this.$v.model.$dirty && !(this.hasSuggestions && this.isFocused)) {
+      if (
+        !this.isDisabled &&
+        this.$v.model.$dirty &&
+        !(this.hasSuggestions && this.isFocused)
+      ) {
         if (!this.$v.model.required) {
           error = this.$t('INPUT_ADDRESS.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
@@ -173,28 +177,34 @@ export default {
         return []
       }
 
-      const ledgerWallets = this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+      const ledgerWallets = this.$store.getters['ledger/isConnected']
+        ? this.$store.getters['ledger/wallets']
+        : []
       const wallets = [
         ...this.$store.getters['wallet/byProfileId'](this.currentProfile.id),
         ...ledgerWallets
       ]
-      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
+      const contacts = this.$store.getters['wallet/contactsByProfileId'](
+        this.currentProfile.id
+      )
 
       const source = unionBy(wallets, contacts, 'address')
 
-      const addresses = map(source, (wallet) => {
+      const addresses = map(source, wallet => {
         const address = {
           name: null,
           address: wallet.address
         }
         if (wallet.name && wallet.name !== wallet.address) {
-          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(wallet.address)})`
+          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(
+            wallet.address
+          )})`
         }
 
         return address
       })
 
-      const results = orderBy(addresses, (object) => {
+      const results = orderBy(addresses, object => {
         return object.name || object.address.toLowerCase()
       })
 
@@ -238,7 +248,9 @@ export default {
         const knownAddress = this.wallet_name(this.inputValue)
 
         if (knownAddress) {
-          this.notice = this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', { address: knownAddress })
+          this.notice = this.$t('INPUT_ADDRESS.KNOWN_ADDRESS', {
+            address: knownAddress
+          })
         } else if (await this.checkNeoAddress(this.inputValue)) {
           this.notice = this.$t('INPUT_ADDRESS.NEO_ADDRESS')
         } else {
@@ -271,7 +283,9 @@ export default {
     async checkNeoAddress (address) {
       const wasChecked = this.neoCheckedAddressess.hasOwnProperty(address)
       if (!wasChecked) {
-        this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address)
+        this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(
+          address
+        )
       }
       return this.neoCheckedAddressess[address]
     },
@@ -316,7 +330,10 @@ export default {
 
       this.$nextTick(() => {
         this.closeDropdown()
-        this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length)
+        this.$refs.input.setSelectionRange(
+          this.inputValue.length,
+          this.inputValue.length
+        )
       })
     },
 
@@ -326,12 +343,16 @@ export default {
     },
 
     onKeyUp () {
-      const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current()
+      const next = this.dropdownValue
+        ? this.suggestionsKeys.previous()
+        : this.suggestionsKeys.current()
       this.__setSuggestion(next)
     },
 
     onKeyDown () {
-      const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current()
+      const next = this.dropdownValue
+        ? this.suggestionsKeys.next()
+        : this.suggestionsKeys.current()
       this.__setSuggestion(next)
     },
 
@@ -339,7 +360,10 @@ export default {
       this.model = this.qr_getAddress(value)
 
       // Check if we were unable to retrieve an address from the qr
-      if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
+      if (
+        (this.inputValue === '' || this.inputValue === undefined) &&
+        this.inputValue !== value
+      ) {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
       }
       toggle()
@@ -366,7 +390,10 @@ export default {
 
       this.dropdownValue = value
       this.$nextTick(() => {
-        this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length)
+        this.$refs.input.setSelectionRange(
+          this.inputValue.length,
+          this.dropdownValue.length
+        )
       })
     }
   },
@@ -384,16 +411,16 @@ export default {
 
 <style lang="postcss" scoped>
 .InputAddress__MenuDropdown .MenuDropdown__container {
-  @apply .z-30
+  @apply .z-30;
 }
 .InputAddress__MenuDropdown .MenuDropdownItem__container {
-  @apply .text-left
+  @apply .text-left;
 }
 .InputAddress__input::placeholder {
-  @apply .text-transparent
+  @apply .text-transparent;
 }
 
 .InputField--invalid .InputAddress__qr-button {
-  @apply .text-red-dark
+  @apply .text-red-dark;
 }
 </style>

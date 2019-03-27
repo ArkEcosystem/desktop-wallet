@@ -1,4 +1,3 @@
-
 <template>
   <span class="WalletAddress flex items-center">
     <span
@@ -8,18 +7,15 @@
         container: tooltipContainer
       }"
     >
-      <a
-        href="#"
-        @click.stop="onClick"
-      >
+      <a href="#" @click.stop="onClick">
         {{ wallet_formatAddress(address, addressLength) }}
       </a>
     </span>
     <span v-else-if="type === 1">
-      {{ $t("TRANSACTION.TYPE.SECOND_SIGNATURE") }}
+      {{ $t('TRANSACTION.TYPE.SECOND_SIGNATURE') }}
     </span>
     <span v-else-if="type === 2">
-      {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
+      {{ $t('TRANSACTION.TYPE.DELEGATE_REGISTRATION') }}
     </span>
     <span
       v-else-if="type === 3"
@@ -33,29 +29,28 @@
         href="#"
         @click.stop="onClick"
       >
-        {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
-        <span
-          v-if="votedDelegate"
-          class="italic"
-        >
+        {{
+          isUnvote ? $t('TRANSACTION.TYPE.UNVOTE') : $t('TRANSACTION.TYPE.VOTE')
+        }}
+        <span v-if="votedDelegate" class="italic">
           ({{ votedDelegateUsername }})
         </span>
       </a>
     </span>
     <span v-else-if="type === 4">
-      {{ $t("TRANSACTION.TYPE.MULTI_SIGNATURE") }}
+      {{ $t('TRANSACTION.TYPE.MULTI_SIGNATURE') }}
     </span>
     <span v-else-if="type === 5">
-      {{ $t("TRANSACTION.TYPE.IPFS") }}
+      {{ $t('TRANSACTION.TYPE.IPFS') }}
     </span>
     <span v-else-if="type === 6">
-      {{ $t("TRANSACTION.TYPE.TIMELOCK_TRANSFER") }}
+      {{ $t('TRANSACTION.TYPE.TIMELOCK_TRANSFER') }}
     </span>
     <span v-else-if="type === 7">
-      {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
+      {{ $t('TRANSACTION.TYPE.MULTI_PAYMENT') }}
     </span>
     <span v-else-if="type === 8">
-      {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
+      {{ $t('TRANSACTION.TYPE.DELEGATE_RESIGNATION') }}
     </span>
 
     <SvgIcon
@@ -142,7 +137,11 @@ export default {
     verifiedAddressText () {
       let verifiedText = ''
       let knownWallet = this.isKnownWallet()
-      if (knownWallet && knownWallet !== this.wallet_formatAddress(this.address, this.addressLength)) {
+      if (
+        knownWallet &&
+        knownWallet !==
+          this.wallet_formatAddress(this.address, this.addressLength)
+      ) {
         verifiedText = `${knownWallet} - `
       }
 
@@ -162,9 +161,15 @@ export default {
 
     openAddress () {
       if (this.votePublicKey) {
-        this.$router.push({ name: 'wallet-show', params: { address: this.votedDelegateAddress } })
+        this.$router.push({
+          name: 'wallet-show',
+          params: { address: this.votedDelegateAddress }
+        })
       } else {
-        this.$router.push({ name: 'wallet-show', params: { address: this.address } })
+        this.$router.push({
+          name: 'wallet-show',
+          params: { address: this.address }
+        })
       }
     }
   }
@@ -173,6 +178,6 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletAddress > span {
-  @apply truncate
+  @apply truncate;
 }
 </style>

@@ -4,7 +4,9 @@
       <div
         class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+        <div
+          class="m-auto w-3/5 text-center flex flex-col items-center justify-center"
+        >
           <h1 class="text-inherit">
             {{ $t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`) }}
           </h1>
@@ -16,14 +18,14 @@
             :src="assets_loadImage(`pages/profile-new/step-${step}.svg`)"
             :title="$t(`PAGES.PROFILE_NEW.STEP${step}.INSTRUCTIONS.HEADER`)"
             class="w-full xl:w-4/5 mt-10"
-          >
+          />
         </div>
       </div>
 
-      <div class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto">
-        <MenuStep
-          v-model="step"
-        >
+      <div
+        class="flex-none w-full lg:max-w-sm p-10 bg-theme-feature rounded-lg overflow-y-auto"
+      >
+        <MenuStep v-model="step">
           <MenuStepItem
             :step="1"
             :is-next-enabled="!$v.step1.$invalid"
@@ -77,7 +79,9 @@
                 />
               </div>
 
-              <div class="flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed">
+              <div
+                class="flex items-center justify-between mt-5 pt-5 mb-2 border-t border-theme-line-separator border-dashed"
+              >
                 <div class="mr-2">
                   <h5 class="mb-2">
                     {{ $t('COMMON.AVATAR') }}
@@ -88,11 +92,13 @@
                 </div>
                 <SelectionAvatar
                   :selected="schema.avatar"
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: schema.name,
-                    onlyLetter: true
-                  }]"
+                  :extra-items="[
+                    {
+                      title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                      textContent: schema.name,
+                      onlyLetter: true
+                    }
+                  ]"
                   @select="selectAvatar"
                 />
               </div>
@@ -197,7 +203,12 @@ import Profile from '@/models/profile'
 import { ButtonSwitch } from '@/components/Button'
 import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputLanguage, InputSelect, InputText } from '@/components/Input'
-import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
+import {
+  SelectionAvatar,
+  SelectionBackground,
+  SelectionNetwork,
+  SelectionTheme
+} from '@/components/Selection'
 
 export default {
   name: 'ProfileNew',
@@ -241,7 +252,9 @@ export default {
     },
     bip39Language: {
       get () {
-        return this.$store.getters['session/bip39Language'] || BIP39.defaultLanguage
+        return (
+          this.$store.getters['session/bip39Language'] || BIP39.defaultLanguage
+        )
       },
       set (bip39language) {
         this.selectBip39Language(bip39language)
@@ -312,9 +325,14 @@ export default {
         if (!this.$v.schema.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.schema.name])
         } else if (!this.$v.schema.name.schemaMaxLength) {
-          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [
+            Profile.schema.properties.name.maxLength
+          ])
         } else if (!this.$v.schema.name.schemaMinLength) {
-          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Profile.schema.properties.name.minLength)
+          return this.$tc(
+            'VALIDATION.NAME.MIN_LENGTH',
+            Profile.schema.properties.name.minLength
+          )
         }
       }
 
@@ -326,7 +344,9 @@ export default {
    * Reuse the settings of the current profile every time the page is created
    */
   created () {
-    this.selectNetwork(this.defaultNetworks.find(network => network.id === 'ark.mainnet'))
+    this.selectNetwork(
+      this.defaultNetworks.find(network => network.id === 'ark.mainnet')
+    )
     this.schema.background = this.background
     this.schema.bip39Language = this.bip39Language
     this.schema.currency = this.currency
@@ -394,7 +414,10 @@ export default {
 
     async selectIsMarketChartEnabled (isMarketChartEnabled) {
       this.schema.isMarketChartEnabled = isMarketChartEnabled
-      await this.$store.dispatch('session/setIsMarketChartEnabled', isMarketChartEnabled)
+      await this.$store.dispatch(
+        'session/setIsMarketChartEnabled',
+        isMarketChartEnabled
+      )
     },
 
     async selectTheme (theme) {
@@ -409,7 +432,12 @@ export default {
   },
 
   validations: {
-    step1: ['schema.avatar', 'schema.currency', 'schema.language', 'schema.name'],
+    step1: [
+      'schema.avatar',
+      'schema.currency',
+      'schema.language',
+      'schema.name'
+    ],
     step2: ['schema.networkId'],
     schema: {
       name: {
@@ -425,6 +453,6 @@ export default {
 <style scoped>
 .ProfileNew__time-format-container {
   /* To produce the exact same width  (.pr-5 class / 2) */
-  padding-right: 0.625rem
+  padding-right: 0.625rem;
 }
 </style>

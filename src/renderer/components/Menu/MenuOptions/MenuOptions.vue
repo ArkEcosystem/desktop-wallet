@@ -28,10 +28,14 @@ export default {
 
   computed: {
     classes () {
-      var classes = this.isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical'
+      var classes = this.isHorizontal
+        ? 'MenuOptions--horizontal'
+        : 'MenuOptions--vertical'
       if (!this.isHorizontal) {
         classes += ' '
-        classes += this.isSettings ? 'MenuOptions__settings--vertical' : 'MenuOptions__default--vertical'
+        classes += this.isSettings
+          ? 'MenuOptions__settings--vertical'
+          : 'MenuOptions__default--vertical'
       }
       return classes
     }
@@ -58,7 +62,7 @@ export default {
   border-right-color: config('colors.theme-settings');
   border-width: 10px;
   position: absolute;
-  content: "";
+  content: '';
   left: -20px;
   width: 20px;
   height: 0;
@@ -71,7 +75,7 @@ export default {
   border-bottom-color: config('colors.theme-settings');
   border-width: 10px;
   position: absolute;
-  content: "";
+  content: '';
   top: -20px;
   right: 20px;
   width: 20px;

@@ -1,5 +1,7 @@
 <template>
-  <div class="Announcements relative overflow-y-auto bg-theme-feature rounded-lg">
+  <div
+    class="Announcements relative overflow-y-auto bg-theme-feature rounded-lg"
+  >
     <div class="Announcements--gradient-top sticky pin-t h-10" />
 
     <main class="flex-col px-10">
@@ -13,30 +15,19 @@
           class="Announcements__ReadAll text-theme-feature-item-text hover:text-theme-page-text transition"
           @click="readAll"
         >
-          <SvgIcon
-            name="mark-all"
-            view-box="0 0 15 15"
-            class="mr-2"
-          />
+          <SvgIcon name="mark-all" view-box="0 0 15 15" class="mr-2" />
 
           {{ $t('ANNOUNCEMENTS.ALL_READ') }}
         </button>
       </div>
 
-      <TransitionGroup
-        tag="div"
-        name="Announcements__posts"
-        class="mt-10"
-      >
+      <TransitionGroup tag="div" name="Announcements__posts" class="mt-10">
         <div
           v-for="(announcement, index) in announcements"
           :key="announcement.guid"
           class="mb-6"
         >
-          <AnnouncementsPost
-            v-bind="announcement"
-            @read="read(announcement)"
-          />
+          <AnnouncementsPost v-bind="announcement" @read="read(announcement)" />
 
           <div
             v-if="index < announcements.length - 1"
@@ -110,7 +101,11 @@ export default {
 }
 .Announcements__line-separator {
   height: 1rem;
-  background: linear-gradient(to right, var(--theme-line-separator) 50%, transparent 50%);
+  background: linear-gradient(
+    to right,
+    var(--theme-line-separator) 50%,
+    transparent 50%
+  );
   background-repeat: repeat-x;
   background-size: 0.5rem;
 }

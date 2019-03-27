@@ -3,7 +3,8 @@ import { resolve } from 'path'
 
 export default class {
   constructor () {
-    const workersPath = process.env.NODE_ENV === 'production' ? 'workers/' : '../workers/'
+    const workersPath =
+      process.env.NODE_ENV === 'production' ? 'workers/' : '../workers/'
 
     this.worker = fork(resolve(__dirname, workersPath, 'bip38-worker.js'))
   }

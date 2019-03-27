@@ -9,11 +9,7 @@
     :warning-text="warning"
     class="PassphraseInput"
   >
-    <div
-      slot-scope="{ inputClass }"
-      :class="inputClass"
-      class="flex flex-row"
-    >
+    <div slot-scope="{ inputClass }" :class="inputClass" class="flex flex-row">
       <input
         ref="input"
         v-model="model"
@@ -23,10 +19,16 @@
         class="PassphraseInput__input flex flex-grow bg-transparent text-theme-page-text"
         @blur="onBlur"
         @focus="onFocus"
-      >
+      />
 
       <button
-        :title="$t(passphraseIsVisible ? 'PASSPHRASE_INPUT.HIDE' : 'PASSPHRASE_INPUT.SHOW')"
+        :title="
+          $t(
+            passphraseIsVisible
+              ? 'PASSPHRASE_INPUT.HIDE'
+              : 'PASSPHRASE_INPUT.SHOW'
+          )
+        "
         class="PassphraseInput__visibility-button flex flex-no-shrink text-grey-dark hover:text-blue focus:text-blue mr-2"
         type="button"
         @click="toggleVisible"
@@ -164,7 +166,13 @@ export default {
       return this.$v.model.$dirty && !!this.error
     },
     isBip39 () {
-      return this.notBip39Warning && WalletService.isBip39Passphrase(this.inputValue, this.session_profile.bip39Language)
+      return (
+        this.notBip39Warning &&
+        WalletService.isBip39Passphrase(
+          this.inputValue,
+          this.session_profile.bip39Language
+        )
+      )
     },
     model: {
       get () {
@@ -207,7 +215,10 @@ export default {
       this.$v.model.$touch()
       this.inputValue = this.qr_getPassphrase(value)
       // Check if we were unable to retrieve a passphrase from the qr
-      if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
+      if (
+        (this.inputValue === '' || this.inputValue === undefined) &&
+        this.inputValue !== value
+      ) {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
       }
       toggle()
@@ -227,13 +238,19 @@ export default {
       },
       matchAddress (value) {
         if (this.address) {
-          return WalletService.verifyPassphrase(this.address, value, this.pubKeyHash)
+          return WalletService.verifyPassphrase(
+            this.address,
+            value,
+            this.pubKeyHash
+          )
         }
         return true
       },
       matchPublicKey (value) {
         if (this.publicKey) {
-          const generatedPublicKey = WalletService.getPublicKeyFromPassphrase(value)
+          const generatedPublicKey = WalletService.getPublicKeyFromPassphrase(
+            value
+          )
           return generatedPublicKey === this.publicKey
         }
         return true
@@ -245,14 +262,14 @@ export default {
 
 <style lang="postcss" scoped>
 .PassphraseInput__input::placeholder {
-  @apply .text-transparent
+  @apply .text-transparent;
 }
 .InputField--invalid .PassphraseInput__qr-button,
 .InputField--invalid .PassphraseInput__visibility-button {
-  @apply .text-red-dark
+  @apply .text-red-dark;
 }
 .InputField--warning .PassphraseInput__qr-button,
 .InputField--warning .PassphraseInput__visibility-button {
-  @apply .text-orange-dark
+  @apply .text-orange-dark;
 }
 </style>

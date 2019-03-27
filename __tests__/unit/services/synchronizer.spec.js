@@ -16,7 +16,9 @@ describe('Services > Synchronizer', () => {
         focus: { interval: 1000 }
       }
 
-      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(/default.*mode/)
+      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(
+        /default.*mode/
+      )
     })
 
     it('should require the `focus` mode configuration', () => {
@@ -24,7 +26,9 @@ describe('Services > Synchronizer', () => {
         default: { interval: 10000 }
       }
 
-      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(/focus.*mode/)
+      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(
+        /focus.*mode/
+      )
     })
 
     it('should not allow using 0 as interval', () => {
@@ -33,7 +37,9 @@ describe('Services > Synchronizer', () => {
         focus: { interval: 0 }
       }
 
-      expect(() => synchronizer.define(actionId, config, actionFn)).toThrow(/interval/)
+      expect(() => synchronizer.define(actionId, config, actionFn)).toThrow(
+        /interval/
+      )
     })
 
     it('should allow using `null` as interval', () => {
@@ -42,7 +48,9 @@ describe('Services > Synchronizer', () => {
         focus: { interval: null }
       }
 
-      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow()
+      expect(() =>
+        synchronizer.define(actionId, config, actionFn)
+      ).not.toThrow()
     })
 
     it('should store the action by ID', () => {

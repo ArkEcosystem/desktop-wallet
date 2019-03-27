@@ -1,15 +1,10 @@
 <template>
   <div class="WalletButton__create">
-    <RouterLink
-      :to="{ name: 'wallet-new' }"
-      class="font-bold text-center"
-    >
-      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
-        <SvgIcon
-          name="plus"
-          class="text-center"
-          view-box="0 0 9 9"
-        />
+    <RouterLink :to="{ name: 'wallet-new' }" class="font-bold text-center">
+      <span
+        class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center"
+      >
+        <SvgIcon name="plus" class="text-center" view-box="0 0 9 9" />
       </span>
 
       {{ $t('PAGES.WALLET_ALL.CREATE_WALLET') }}
@@ -31,10 +26,10 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletButton__create {
-  @apply .appearance-none .font-semibold .flex .flex-col .items-center .border-r .border-theme-feature-item-alternative
+  @apply .appearance-none .font-semibold .flex .flex-col .items-center .border-r .border-theme-feature-item-alternative;
 }
 .WalletButton__create > span {
-  @apply .w-full .text-center
+  @apply .w-full .text-center;
 }
 .WalletButton__create > a > .rounded-full {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text;

@@ -1,13 +1,12 @@
 <template>
   <div
-    :style="imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''"
+    :style="
+      imagePath ? `backgroundImage: url('${assets_loadImage(imagePath)}')` : ''
+    "
     :class="{ 'InputGridItem--selected': isSelected }"
     class="InputGridItem relative bg-cover bg-no-repeat bg-center rounded-full w-16 h-16 cursor-pointer transition text-center hover:opacity-75"
   >
-    <span
-      v-if="textContent && !onlyLetter"
-      class="InputGridItem__text"
-    >
+    <span v-if="textContent && !onlyLetter" class="InputGridItem__text">
       {{ textContent }}
     </span>
     <div
@@ -17,10 +16,7 @@
       }"
       class="flex h-full flex-col items-center justify-between"
     >
-      <span
-        v-if="isForModal"
-        class="font-semibold text-theme-button-text"
-      >
+      <span v-if="isForModal" class="font-semibold text-theme-button-text">
         {{ title }}
       </span>
       <ButtonLetter
@@ -36,10 +32,7 @@
       v-if="isSelected"
       class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute pin-b pin-r w-6 h-6 bg-green border-2 border-theme-feature text-white"
     >
-      <SvgIcon
-        name="checkmark"
-        view-box="0 0 10 9"
-      />
+      <SvgIcon name="checkmark" view-box="0 0 10 9" />
     </span>
   </div>
 </template>
@@ -90,7 +83,9 @@ export default {
   computed: {
     currentNetwork () {
       // To avoid failing after removing the current and last profile
-      return this.$store.getters['session/profile'] ? this.session_network : null
+      return this.$store.getters['session/profile']
+        ? this.session_network
+        : null
     },
 
     label () {

@@ -7,13 +7,8 @@
       @on-cell-click="onCellClick"
       @on-sort-change="onSortChange"
     >
-      <template
-        slot-scope="data"
-      >
-        <div
-          v-if="data.column.field === 'address'"
-          class="flex items-center"
-        >
+      <template slot-scope="data">
+        <div v-if="data.column.field === 'address'" class="flex items-center">
           <RouterLink
             :to="{ name: 'wallet-show', params: { address: data.row.address } }"
             class="flex flex-row mr-4"
@@ -25,15 +20,14 @@
             />
           </RouterLink>
 
-          <RouterLink :to="{ name: 'wallet-show', params: { address: data.row.address } }">
+          <RouterLink
+            :to="{ name: 'wallet-show', params: { address: data.row.address } }"
+          >
             {{ data.formattedRow['address'] }}
           </RouterLink>
         </div>
 
-        <div
-          v-else-if="data.column.field === 'name'"
-          class="flex"
-        >
+        <div v-else-if="data.column.field === 'name'" class="flex">
           <span
             class="flex items-center whitespace-no-wrap"
             :class="{ 'text-theme-page-text-light': !data.row.name }"
@@ -57,9 +51,7 @@
           </span>
         </div>
 
-        <div
-          v-else-if="data.column.field === 'balance'"
-        >
+        <div v-else-if="data.column.field === 'balance'">
           <span>
             {{ formatter_networkCurrency(data.row.balance) }}
           </span>
@@ -84,15 +76,16 @@
               class="font-semibold flex text-xs hover:text-red text-theme-page-text-light p-1"
               @click="renameRow(data.row)"
             >
-              <SvgIcon
-                name="name"
-                view-box="0 0 16 16"
-              />
+              <SvgIcon name="name" view-box="0 0 16 16" />
             </button>
           </span>
 
           <span
-            v-tooltip="data.row.isLedger ? $t('WALLET_TABLE.NO_DELETE') : $t('WALLET_TABLE.DELETE')"
+            v-tooltip="
+              data.row.isLedger
+                ? $t('WALLET_TABLE.NO_DELETE')
+                : $t('WALLET_TABLE.DELETE')
+            "
             class="mr-1"
           >
             <button
@@ -100,17 +93,12 @@
               :disabled="data.row.isLedger"
               @click="removeRow(data.row)"
             >
-              <SvgIcon
-                name="delete-wallet"
-                view-box="0 0 16 16"
-              />
+              <SvgIcon name="delete-wallet" view-box="0 0 16 16" />
             </button>
           </span>
         </div>
 
-        <span
-          v-else
-        >
+        <span v-else>
           {{ data.formattedRow[data.column.field] }}
         </span>
       </template>
@@ -202,7 +190,10 @@ export default {
       const a = rowX.name || this.wallet_name(rowX.address) || ''
       const b = rowY.name || this.wallet_name(rowY.address) || ''
 
-      return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
+      return a.localeCompare(b, undefined, {
+        sensitivity: 'base',
+        numeric: true
+      })
     },
 
     delegateName (row) {
@@ -219,7 +210,10 @@ export default {
 
     onCellClick ({ row, column }) {
       if (column.field !== 'actions') {
-        this.$router.push({ name: 'wallet-show', params: { address: row.address } })
+        this.$router.push({
+          name: 'wallet-show',
+          params: { address: row.address }
+        })
       }
     },
 
@@ -244,7 +238,8 @@ export default {
 .WalletTable button {
   transition: color 0.2s;
 }
-.WalletTable button:disabled, .WalletTable button[disabled] {
+.WalletTable button:disabled,
+.WalletTable button[disabled] {
   opacity: 0.5;
 }
 </style>

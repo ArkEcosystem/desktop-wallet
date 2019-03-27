@@ -4,7 +4,9 @@
       <div
         class="NetworkOverview__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+        <div
+          class="m-auto w-3/5 text-center flex flex-col items-center justify-center"
+        >
           <h1 class="text-inherit">
             {{ $t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER') }}
           </h1>
@@ -16,11 +18,13 @@
             :src="assets_loadImage('pages/network-selection/background.svg')"
             :title="$t('PAGES.NETWORK_OVERVIEW.INSTRUCTIONS.HEADER')"
             class="w-full xl:w-4/5 mt-10"
-          >
+          />
         </div>
       </div>
 
-      <div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto">
+      <div
+        class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto"
+      >
         <button
           class="NetworkOverview__network flex items-center w-full"
           @click="openAddNetwork"
@@ -107,8 +111,7 @@ export default {
     SvgIcon
   },
 
-  props: {
-  },
+  props: {},
 
   data: () => ({
     networks: [],
@@ -123,12 +126,14 @@ export default {
     getNetworks () {
       const defaultNetworkIds = ['ark.mainnet', 'ark.devnet']
 
-      this.networks = Object.values(this.$store.getters['network/all']).map(network => {
-        return {
-          ...network,
-          isDefault: defaultNetworkIds.indexOf(network.id) > -1
+      this.networks = Object.values(this.$store.getters['network/all']).map(
+        network => {
+          return {
+            ...network,
+            isDefault: defaultNetworkIds.indexOf(network.id) > -1
+          }
         }
-      })
+      )
     },
     openNetwork (network) {
       this.selected = network
@@ -158,10 +163,10 @@ export default {
 }
 
 .NetworkOverview__network {
-  @apply px-10 py-6 border-b border-dashed border-theme-line-separator cursor-pointer
+  @apply px-10 py-6 border-b border-dashed border-theme-line-separator cursor-pointer;
 }
 
 .NetworkOverview__network:hover {
-  @apply bg-theme-table-row-hover
+  @apply bg-theme-table-row-hover;
 }
 </style>

@@ -2,17 +2,20 @@
   <button
     v-tooltip="{ content: title, trigger: 'hover' }"
     :class="[
-      withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
+      withoutBackground
+        ? 'hover:bg-transparent'
+        : `py-2 px-4 rounded ${
+            colorClass
+              ? colorClass
+              : 'bg-theme-button-light text-theme-button-light-text'
+          }`
     ]"
     class="ButtonReload cursor-pointer inline-flex items-center self-stretch"
     :disabled="isRefreshing"
     @click="emitClick"
   >
     <SvgIcon
-      :class="[
-        isRefreshing ? 'rotate-360' : '',
-        textClass
-      ]"
+      :class="[isRefreshing ? 'rotate-360' : '', textClass]"
       class="mx-1"
       name="update"
       :view-box="viewBox"

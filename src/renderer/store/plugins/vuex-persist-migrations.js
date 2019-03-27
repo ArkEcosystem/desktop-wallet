@@ -25,8 +25,12 @@ export default class VuexMigrations {
       throw new Error(`The version "${version}" does not comply with semver`)
     }
 
-    const from = isFunction(this.fromVersion) ? this.fromVersion(this.store) : this.fromVersion
-    const until = isFunction(this.untilVersion) ? this.untilVersion(this.store) : this.untilVersion
+    const from = isFunction(this.fromVersion)
+      ? this.fromVersion(this.store)
+      : this.fromVersion
+    const until = isFunction(this.untilVersion)
+      ? this.untilVersion(this.store)
+      : this.untilVersion
 
     return semver.gt(version, from) && semver.lte(version, until)
   }
@@ -34,20 +38,25 @@ export default class VuexMigrations {
   collect () {
     this.migrations = []
 
-    this.migrationsContext.keys().sort().forEach(key => {
-      const [filename, version, title] = key.match(/\.\/(.*) - (.*)\.js/)
+    this.migrationsContext
+      .keys()
+      .sort()
+      .forEach(key => {
+        const [filename, version, title] = key.match(/\.\/(.*) - (.*)\.js/)
 
-      if (this.checkVersion(version)) {
-        const handler = this.migrationsContext(filename).default
-        this.migrations.push({ version, title, handler })
-      }
-    })
+        if (this.checkVersion(version)) {
+          const handler = this.migrationsContext(filename).default
+          this.migrations.push({ version, title, handler })
+        }
+      })
   }
 
   apply () {
     this.migrations.forEach(migration => {
       if (process.env.NODE_ENV !== 'test') {
-        logger.info(`Appliying migration ${migration.version}: ${migration.title}`)
+        logger.info(
+          `Appliying migration ${migration.version}: ${migration.title}`
+        )
       }
       migration.handler(this.store)
     })

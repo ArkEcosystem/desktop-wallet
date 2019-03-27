@@ -104,7 +104,9 @@ describe('Services > Synchronizer > Wallets', () => {
 
       it('should return its wallet', () => {
         expect(action.profileWallets).toBe(profileWallets)
-        expect(action.$getters['wallet/byProfileId']).toHaveBeenCalledWith(profile.id)
+        expect(action.$getters['wallet/byProfileId']).toHaveBeenCalledWith(
+          profile.id
+        )
       })
     })
   })
@@ -167,7 +169,9 @@ describe('Services > Synchronizer > Wallets', () => {
 
       it('should return its contacts', () => {
         expect(action.contacts).toBe(contacts)
-        expect(action.$getters['wallet/contactsByProfileId']).toHaveBeenCalledWith(profile.id)
+        expect(
+          action.$getters['wallet/contactsByProfileId']
+        ).toHaveBeenCalledWith(profile.id)
       })
     })
   })
@@ -200,12 +204,18 @@ describe('Services > Synchronizer > Wallets', () => {
       action.$getters['ledger/wallets'] = {
         ...ledgerWallets
       }
-      action.$getters['ledger/wallets'][profileWallets[0].address] = { ...profileWallets[0], isLedger: true }
+      action.$getters['ledger/wallets'][profileWallets[0].address] = {
+        ...profileWallets[0],
+        isLedger: true
+      }
     })
 
     it('should return the regular wallets, contacts and Ledger wallets', () => {
       expect(action.allWalletsByAddress).toEqual({
-        A1: [{ address: 'A1', transactions: {} }, { address: 'A1', isLedger: true, transactions: {} }],
+        A1: [
+          { address: 'A1', transactions: {} },
+          { address: 'A1', isLedger: true, transactions: {} }
+        ],
         A2: [{ address: 'A2', transactions: {} }],
         Acon1: [{ address: 'Acon1', transactions: {} }],
         Acon2: [{ address: 'Acon2', transactions: {} }],
@@ -274,7 +284,10 @@ describe('Services > Synchronizer > Wallets', () => {
     it('should process the fetched data', async () => {
       await action.sync()
 
-      expect(action.process).toHaveBeenCalledWith(walletsData, transactionsByAddress)
+      expect(action.process).toHaveBeenCalledWith(
+        walletsData,
+        transactionsByAddress
+      )
     })
 
     describe('when there are not wallets to update', () => {
@@ -307,15 +320,16 @@ describe('Services > Synchronizer > Wallets', () => {
     let transactionsByAddress
 
     beforeEach(() => {
-      jest.spyOn(action, 'wallets', 'get').mockReturnValue([
-        ...profileWallets,
-        ...Object.values(ledgerWallets)
-      ])
-      jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
-        ...profileWallets,
-        ...Object.values(ledgerWallets),
-        ...contacts
-      ])
+      jest
+        .spyOn(action, 'wallets', 'get')
+        .mockReturnValue([...profileWallets, ...Object.values(ledgerWallets)])
+      jest
+        .spyOn(action, 'allWallets', 'get')
+        .mockReturnValue([
+          ...profileWallets,
+          ...Object.values(ledgerWallets),
+          ...contacts
+        ])
       action.emit = jest.fn()
 
       addresses = action.wallets.map(wallet => wallet.address)
@@ -353,30 +367,40 @@ describe('Services > Synchronizer > Wallets', () => {
     })
 
     it('should return the fetched data and transactions', async () => {
-      expect(await action.fetch()).toEqual({ walletsData, transactionsByAddress })
+      expect(await action.fetch()).toEqual({
+        walletsData,
+        transactionsByAddress
+      })
     })
 
     it('should emit `transactions:fetched` with the transactions grouped by address', async () => {
       await action.fetch()
-      expect(action.emit).toHaveBeenCalledWith('transactions:fetched', transactionsByAddress)
+      expect(action.emit).toHaveBeenCalledWith(
+        'transactions:fetched',
+        transactionsByAddress
+      )
     })
 
     describe('when there are duplicated addresses', () => {
       it('should ignore duplicates', async () => {
-        jest.spyOn(action, 'wallets', 'get').mockReturnValue([
-          ...profileWallets,
-          ...Object.values(ledgerWallets),
-          profileWallets[1],
-          Object.values(ledgerWallets)[0]
-        ])
-        jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
-          ...profileWallets,
-          ...Object.values(ledgerWallets),
-          ...contacts,
-          contacts[1],
-          Object.values(ledgerWallets)[1],
-          profileWallets[3]
-        ])
+        jest
+          .spyOn(action, 'wallets', 'get')
+          .mockReturnValue([
+            ...profileWallets,
+            ...Object.values(ledgerWallets),
+            profileWallets[1],
+            Object.values(ledgerWallets)[0]
+          ])
+        jest
+          .spyOn(action, 'allWallets', 'get')
+          .mockReturnValue([
+            ...profileWallets,
+            ...Object.values(ledgerWallets),
+            ...contacts,
+            contacts[1],
+            Object.values(ledgerWallets)[1],
+            profileWallets[3]
+          ])
 
         await action.fetch()
 
@@ -410,7 +434,9 @@ describe('Services > Synchronizer > Wallets', () => {
 
     it('should fetch the transactions of each wallet address', async () => {
       await action.fetchWalletsTransactions(addresses)
-      expect(action.$client.fetchTransactionsForWallets).toHaveBeenCalledWith(addresses)
+      expect(action.$client.fetchTransactionsForWallets).toHaveBeenCalledWith(
+        addresses
+      )
     })
   })
 
@@ -419,9 +445,7 @@ describe('Services > Synchronizer > Wallets', () => {
     let transactionsByAddress
 
     beforeEach(() => {
-      walletsData = [
-        { address: profileWallets[0].address, balance: 1 }
-      ]
+      walletsData = [{ address: profileWallets[0].address, balance: 1 }]
 
       transactionsByAddress = {
         [profileWallets[0].address]: transactions,
@@ -431,20 +455,21 @@ describe('Services > Synchronizer > Wallets', () => {
       action.processWalletsData = jest.fn()
       action.processTransactions = jest.fn()
 
-      jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
-        profileWallets[0],
-        profileWallets[1]
-      ])
+      jest
+        .spyOn(action, 'allWallets', 'get')
+        .mockReturnValue([profileWallets[0], profileWallets[1]])
 
       action.processWalletsData = jest.fn().mockImplementation(() => {
         return { [walletsData[0].address]: walletsData[0] }
       })
-      action.processTransactions = jest.fn().mockImplementation(transactionsByAddress => {
-        return Object.keys(transactionsByAddress).reduce((all, address) => {
-          all[address] = transactionsByAddress[address][0].timestamp
-          return all
-        }, {})
-      })
+      action.processTransactions = jest
+        .fn()
+        .mockImplementation(transactionsByAddress => {
+          return Object.keys(transactionsByAddress).reduce((all, address) => {
+            all[address] = transactionsByAddress[address][0].timestamp
+            return all
+          }, {})
+        })
     })
 
     it('should process the wallet data', async () => {
@@ -456,17 +481,21 @@ describe('Services > Synchronizer > Wallets', () => {
     it('should process the transactions', async () => {
       await action.process(walletsData, transactionsByAddress)
 
-      expect(action.processTransactions).toHaveBeenCalledWith(transactionsByAddress)
+      expect(action.processTransactions).toHaveBeenCalledWith(
+        transactionsByAddress
+      )
     })
   })
 
   describe('processWalletsData', () => {
     beforeEach(() => {
-      jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
-        profileWallets[0],
-        Object.values(ledgerWallets)[0],
-        contacts[0]
-      ])
+      jest
+        .spyOn(action, 'allWallets', 'get')
+        .mockReturnValue([
+          profileWallets[0],
+          Object.values(ledgerWallets)[0],
+          contacts[0]
+        ])
     })
 
     describe('when no data is passed', () => {
@@ -513,9 +542,11 @@ describe('Services > Synchronizer > Wallets', () => {
         [profileWallets[1].address]: transactions
       }
 
-      action.processWalletTransactions = jest.fn().mockImplementation((_, transactions) => {
-        return transactions[0].timestamp
-      })
+      action.processWalletTransactions = jest
+        .fn()
+        .mockImplementation((_, transactions) => {
+          return transactions[0].timestamp
+        })
       jest.spyOn(action, 'wallets', 'get').mockReturnValue(profileWallets)
     })
 
@@ -538,15 +569,20 @@ describe('Services > Synchronizer > Wallets', () => {
         await action.processTransactions(transactionsByAddress)
 
         profileWallets.slice(0, 2).forEach(wallet => {
-          expect(action.processWalletTransactions).toHaveBeenCalledWith(wallet, transactions)
+          expect(action.processWalletTransactions).toHaveBeenCalledWith(
+            wallet,
+            transactions
+          )
         })
       })
 
       it('should return the timestamp of new transactions', async () => {
-        expect(await action.processTransactions(transactionsByAddress)).toEqual({
-          [profileWallets[0].address]: transactions[0].timestamp,
-          [profileWallets[1].address]: transactions[0].timestamp
-        })
+        expect(await action.processTransactions(transactionsByAddress)).toEqual(
+          {
+            [profileWallets[0].address]: transactions[0].timestamp,
+            [profileWallets[1].address]: transactions[0].timestamp
+          }
+        )
       })
     })
   })
@@ -567,7 +603,9 @@ describe('Services > Synchronizer > Wallets', () => {
       })
 
       it('should not return the timestamp', async () => {
-        expect(await action.processWalletTransactions(wallet, transactions)).toBeUndefined()
+        expect(
+          await action.processWalletTransactions(wallet, transactions)
+        ).toBeUndefined()
       })
 
       it('should dispatch the `transaction/deleteBulk` Vuex action', async () => {
@@ -604,13 +642,17 @@ describe('Services > Synchronizer > Wallets', () => {
       })
 
       it('should return the timestamp', async () => {
-        expect(await action.processWalletTransactions(wallet, transactions))
-          .toEqual(latestTransaction.timestamp)
+        expect(
+          await action.processWalletTransactions(wallet, transactions)
+        ).toEqual(latestTransaction.timestamp)
       })
 
       it('should display the new transaction', async () => {
         await action.processWalletTransactions(wallet, transactions)
-        expect(action.displayNewTransaction).toHaveBeenCalledWith(latestTransaction, wallet)
+        expect(action.displayNewTransaction).toHaveBeenCalledWith(
+          latestTransaction,
+          wallet
+        )
       })
     })
   })
@@ -623,19 +665,27 @@ describe('Services > Synchronizer > Wallets', () => {
     it('should update in bulk regular wallets', async () => {
       await action.update(profileWallets)
 
-      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('wallet/updateBulk', profileWallets)
+      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith(
+        'wallet/updateBulk',
+        profileWallets
+      )
     })
 
     it('should update all Ledger wallets at once', async () => {
       await action.update(ledgerWallets)
 
-      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('ledger/updateWallets', ledgerWallets)
+      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith(
+        'ledger/updateWallets',
+        ledgerWallets
+      )
     })
 
     it('should log errors', async () => {
-      jest.spyOn(action.synchronizer.$store, 'dispatch').mockImplementation(() => {
-        throw new Error('Example error')
-      })
+      jest
+        .spyOn(action.synchronizer.$store, 'dispatch')
+        .mockImplementation(() => {
+          throw new Error('Example error')
+        })
       await action.update(profileWallets)
 
       expect(action.$scope.$logger.error).toHaveBeenCalledWith('Example error')

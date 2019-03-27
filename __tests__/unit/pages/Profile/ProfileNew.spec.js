@@ -20,6 +20,5 @@ describe('pages > ProfileNew', () => {
     expect(wrapper.contains('.ProfileNew')).toBeTruthy()
   })
 
-  describe('Step 1', () => {
-  })
+  describe('Step 1', () => {})
 })

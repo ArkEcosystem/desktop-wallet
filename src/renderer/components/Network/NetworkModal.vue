@@ -4,19 +4,14 @@
     container-classes="NetworkModal"
     @close="emitCancel"
   >
-    <div
-      class="w-100"
-    >
+    <div class="w-100">
       <InputToggle
         v-if="showFull"
         v-model="configChoice"
         :choices="configChoices"
         @select="onChoiceSelect"
       />
-      <div
-        :class="{ 'h-120' : showFull }"
-        class="overflow-y-auto"
-      >
+      <div :class="{ 'h-120': showFull }" class="overflow-y-auto">
         <div class="flex flex-col justify-center">
           <div v-if="configChoice === 'Basic'">
             <InputText
@@ -33,7 +28,9 @@
               ref="input-description"
               v-model="$v.form.description.$model"
               :label="$t('MODAL_NETWORK.DESCRIPTION')"
-              :is-invalid="$v.form.description.$dirty && $v.form.description.$invalid"
+              :is-invalid="
+                $v.form.description.$dirty && $v.form.description.$invalid
+              "
               :helper-text="descriptionError"
               class="mt-5"
               name="description"
@@ -50,9 +47,7 @@
               name="server"
             />
 
-            <template
-              v-if="showFull"
-            >
+            <template v-if="showFull">
               <InputText
                 ref="input-nethash"
                 v-model="$v.form.nethash.$model"
@@ -109,7 +104,9 @@
                 v-model="$v.form.explorer.$model"
                 :label="$t('MODAL_NETWORK.EXPLORER')"
                 :placeholder="$t('MODAL_NETWORK.PLACEHOLDER.EXPLORER')"
-                :is-invalid="$v.form.explorer.$dirty && $v.form.explorer.$invalid"
+                :is-invalid="
+                  $v.form.explorer.$dirty && $v.form.explorer.$invalid
+                "
                 :helper-text="explorerError"
                 class="mt-5"
                 name="explorer"
@@ -148,7 +145,10 @@
               ref="input-activeDelegates"
               v-model="$v.form.activeDelegates.$model"
               :label="$t('MODAL_NETWORK.ACTIVE_DELEGATES')"
-              :is-invalid="$v.form.activeDelegates.$dirty && $v.form.activeDelegates.$invalid"
+              :is-invalid="
+                $v.form.activeDelegates.$dirty &&
+                  $v.form.activeDelegates.$invalid
+              "
               :helper-text="activeDelegatesError"
               class="mt-5"
               name="activeDelegates"
@@ -214,7 +214,9 @@ import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
 import cryptoCompare from '@/services/crypto-compare'
 
-const requiredIfFull = requiredIf(function () { return this.showFull })
+const requiredIfFull = requiredIf(function () {
+  return this.showFull
+})
 
 export default {
   name: 'NetworkModal',
@@ -254,10 +256,7 @@ export default {
       activeDelegates: '',
       ticker: ''
     },
-    configChoices: [
-      'Basic',
-      'Advanced'
-    ],
+    configChoices: ['Basic', 'Advanced'],
     originalName: null,
     configChoice: 'Basic',
     apiVersion: 2,
@@ -278,7 +277,10 @@ export default {
     },
 
     nameError () {
-      const isRequired = this.requiredFieldError(this.$v.form.name, this.$refs['input-name'])
+      const isRequired = this.requiredFieldError(
+        this.$v.form.name,
+        this.$refs['input-name']
+      )
       if (isRequired) {
         return isRequired
       }
@@ -291,47 +293,80 @@ export default {
     },
 
     descriptionError () {
-      return this.requiredFieldError(this.$v.form.description, this.$refs['input-description'])
+      return this.requiredFieldError(
+        this.$v.form.description,
+        this.$refs['input-description']
+      )
     },
 
     tokenError () {
-      return this.requiredFieldError(this.$v.form.token, this.$refs['input-token'])
+      return this.requiredFieldError(
+        this.$v.form.token,
+        this.$refs['input-token']
+      )
     },
 
     symbolError () {
-      return this.requiredFieldError(this.$v.form.symbol, this.$refs['input-symbol'])
+      return this.requiredFieldError(
+        this.$v.form.symbol,
+        this.$refs['input-symbol']
+      )
     },
 
     slip44Error () {
-      return this.requiredFieldError(this.$v.form.slip44, this.$refs['input-slip44'])
+      return this.requiredFieldError(
+        this.$v.form.slip44,
+        this.$refs['input-slip44']
+      )
     },
 
     versionError () {
-      return this.requiredNumericFieldError(this.$v.form.version, this.$refs['input-version'])
+      return this.requiredNumericFieldError(
+        this.$v.form.version,
+        this.$refs['input-version']
+      )
     },
 
     wifError () {
-      return this.requiredNumericFieldError(this.$v.form.wif, this.$refs['input-wif'])
+      return this.requiredNumericFieldError(
+        this.$v.form.wif,
+        this.$refs['input-wif']
+      )
     },
 
     activeDelegatesError () {
-      return this.requiredNumericFieldError(this.$v.form.activeDelegates, this.$refs['input-activeDelegates'])
+      return this.requiredNumericFieldError(
+        this.$v.form.activeDelegates,
+        this.$refs['input-activeDelegates']
+      )
     },
 
     serverError () {
-      return this.requiredUrlFieldError(this.$v.form.server, this.$refs['input-server'])
+      return this.requiredUrlFieldError(
+        this.$v.form.server,
+        this.$refs['input-server']
+      )
     },
 
     explorerError () {
-      return this.requiredUrlFieldError(this.$v.form.explorer, this.$refs['input-explorer'])
+      return this.requiredUrlFieldError(
+        this.$v.form.explorer,
+        this.$refs['input-explorer']
+      )
     },
 
     nethashError () {
-      return this.requiredValidFieldError(this.$v.form.nethash, this.$refs['input-nethash'])
+      return this.requiredValidFieldError(
+        this.$v.form.nethash,
+        this.$refs['input-nethash']
+      )
     },
 
     epochError () {
-      return this.requiredValidFieldError(this.$v.form.epoch, this.$refs['input-epoch'])
+      return this.requiredValidFieldError(
+        this.$v.form.epoch,
+        this.$refs['input-epoch']
+      )
     }
   },
 
@@ -354,7 +389,10 @@ export default {
       // Default advanced values: ?
       this.form.wif = this.getStringOrDefault(this.network.wif, '170')
       this.form.slip44 = this.getStringOrDefault(this.network.slip44, '1')
-      this.form.activeDelegates = this.getStringOrDefault(this.network.activeDelegates, '51')
+      this.form.activeDelegates = this.getStringOrDefault(
+        this.network.activeDelegates,
+        '51'
+      )
       this.form.ticker = this.network.market.ticker || ''
 
       this.showFull = true
@@ -422,7 +460,9 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      const matches = /(https?:\/\/[a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.form.server)
+      const matches = /(https?:\/\/[a-zA-Z0-9.-_]+):([0-9]+)/.exec(
+        this.form.server
+      )
       const host = matches[1]
       const port = matches[2]
 
@@ -435,7 +475,9 @@ export default {
       if (response === false) {
         this.$error(this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED'))
       } else if (typeof response === 'string') {
-        this.$error(`${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`)
+        this.$error(
+          `${this.$t('MODAL_NETWORK.SEED_VALIDATE_FAILED')}: ${response}`
+        )
       } else {
         success = true
       }
@@ -456,7 +498,12 @@ export default {
         epoch: this.form.epoch
       }
       delete customNetwork.epoch
-      customNetwork.id = this.network ? this.network.id : this.form.name.toLowerCase().split(' ').join('_') // TODO: something else for id?
+      customNetwork.id = this.network
+        ? this.network.id
+        : this.form.name
+            .toLowerCase()
+            .split(' ')
+            .join('_') // TODO: something else for id?
       customNetwork.title = this.form.name
       customNetwork.slip44 = this.form.slip44
       customNetwork.market = {
@@ -468,7 +515,9 @@ export default {
       customNetwork.fractionDigits = 8
       customNetwork.wif = parseInt(this.form.wif)
       customNetwork.knownWallets = {}
-      customNetwork.apiVersion = this.network ? this.network.apiVersion : this.apiVersion
+      customNetwork.apiVersion = this.network
+        ? this.network.apiVersion
+        : this.apiVersion
 
       if (this.showFull && this.hasFetched) {
         this.$store.dispatch('network/addCustomNetwork', customNetwork)
@@ -497,7 +546,10 @@ export default {
       }
 
       const fetchAndFill = async (version, callback = null) => {
-        const network = await ClientService.fetchNetworkConfig(this.form.server, version)
+        const network = await ClientService.fetchNetworkConfig(
+          this.form.server,
+          version
+        )
 
         if (network) {
           const tokenFound = await cryptoCompare.checkTradeable(network.token)
@@ -559,7 +611,10 @@ export default {
       name: {
         required,
         doesNotExist (value) {
-          return (this.originalName && value === this.originalName) || !this.$store.getters['network/byName'](value)
+          return (
+            (this.originalName && value === this.originalName) ||
+            !this.$store.getters['network/byName'](value)
+          )
         }
       },
       description: {
@@ -593,7 +648,10 @@ export default {
       explorer: {
         requiredIfFull,
         isValid (value) {
-          return !this.showFull || /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return (
+            !this.showFull ||
+            /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          )
         },
         hasScheme (value) {
           return !this.showFull || /^https?:\/\//.test(value)
@@ -602,7 +660,10 @@ export default {
       epoch: {
         requiredIfFull,
         isValid (value) {
-          return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
+          return (
+            !this.showFull ||
+            /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
+          )
         }
       },
       wif: {
@@ -616,8 +677,7 @@ export default {
         requiredIfFull,
         numeric
       },
-      ticker: {
-      }
+      ticker: {}
     }
   }
 }
@@ -625,6 +685,6 @@ export default {
 
 <style>
 .NetworkModal {
-  min-width: 35rem
+  min-width: 35rem;
 }
 </style>

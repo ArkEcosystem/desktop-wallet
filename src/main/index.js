@@ -12,7 +12,9 @@ require('electron-log')
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+  global.__static = require('path')
+    .join(__dirname, '/static')
+    .replace(/\\/g, '\\\\')
 }
 
 // To E2E tests
@@ -25,9 +27,10 @@ if (process.env.TEMP_USER_DATA === 'true') {
 let mainWindow = null
 let deeplinkingUrl = null
 
-const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
-  : `file://${__dirname}/index.html`
+const winURL =
+  process.env.NODE_ENV === 'development'
+    ? `http://localhost:9080`
+    : `file://${__dirname}/index.html`
 
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize

@@ -6,10 +6,8 @@ import WalletSidebar from '@/components/Wallet/WalletSidebar'
 const localVue = createLocalVue()
 const i18n = installI18n(localVue)
 
-const contacts = [
-]
-const wallets = [
-]
+const contacts = []
+const wallets = []
 
 const mount = (propsData = {}, mocks = {}) => {
   mocks = {
@@ -55,11 +53,7 @@ describe('WalletSidebar', () => {
       { address: 'A3', isLedger: false, balance: 0 },
       { address: 'Aledger3', isLedger: true, balance: 0 }
     ]
-    const allWallets = [
-      ...wallets,
-      ...ledgerWallets,
-      ...emptyWallets
-    ]
+    const allWallets = [...wallets, ...ledgerWallets, ...emptyWallets]
 
     describe('when no filter is passedd', () => {
       it('should return all wallets', () => {
@@ -190,9 +184,7 @@ describe('WalletSidebar', () => {
             searchQuery: 'examples'
           })
 
-          expect(wrapper.vm.filterWallets(wallets)).toEqual([
-            wallets[0]
-          ])
+          expect(wrapper.vm.filterWallets(wallets)).toEqual([wallets[0]])
         })
 
         it('should ignore the case', () => {
@@ -204,9 +196,7 @@ describe('WalletSidebar', () => {
             searchQuery: 'eXaMples'
           })
 
-          expect(wrapper.vm.filterWallets(wallets)).toEqual([
-            wallets[0]
-          ])
+          expect(wrapper.vm.filterWallets(wallets)).toEqual([wallets[0]])
         })
       })
     })
@@ -223,8 +213,7 @@ describe('WalletSidebar', () => {
     let wrapper
 
     beforeEach(() => {
-      wrapper = mount({}, {
-      })
+      wrapper = mount({}, {})
     })
 
     describe('when the order is `name-asc`', () => {

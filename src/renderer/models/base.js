@@ -20,23 +20,27 @@ export default class BaseModel {
   }
 
   formatProperties (input) {
-    return transform(this.schema.properties, (result, item, key) => {
-      let value
+    return transform(
+      this.schema.properties,
+      (result, item, key) => {
+        let value
 
-      if (item.format && isFunction(item.format)) {
-        value = item.format(input)
-      } else if (input[key] === undefined) {
-        value = item.default
-      } else {
-        value = input[key]
-      }
+        if (item.format && isFunction(item.format)) {
+          value = item.format(input)
+        } else if (input[key] === undefined) {
+          value = item.default
+        } else {
+          value = input[key]
+        }
 
-      result[key] = {
-        enumerable: true,
-        writable: true,
-        value
-      }
-    }, {})
+        result[key] = {
+          enumerable: true,
+          writable: true,
+          value
+        }
+      },
+      {}
+    )
   }
 
   validate (input) {
@@ -44,7 +48,11 @@ export default class BaseModel {
 
     if (!validation.valid) {
       const errors = validation.errors.map(error => error.stack).join(', ')
-      throw new Error(`JSON: ${JSON.stringify(this.schema, null, 2)} Cannot be instantiated due to errors: ${errors}
+      throw new Error(`JSON: ${JSON.stringify(
+        this.schema,
+        null,
+        2
+      )} Cannot be instantiated due to errors: ${errors}
         input: ${input}
       `)
     }

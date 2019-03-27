@@ -4,7 +4,9 @@
       v-if="!walletVote.publicKey && isExplanationDisplayed"
       class="WalletDelegates__explanation relative rounded-lg mt-2 mb-6 bg-theme-explanation-background text-theme-explanation-text flex flex-row items-center justify-between"
     >
-      <div class="WalletDelegates__explanation__text flex text-left text-inherit py-4 pl-6">
+      <div
+        class="WalletDelegates__explanation__text flex text-left text-inherit py-4 pl-6"
+      >
         <span>
           {{ $t('WALLET_DELEGATES.EXPLANATION') }}
           <a
@@ -42,12 +44,8 @@
       @on-page-change="onPageChange"
       @on-sort-change="onSortChange"
     >
-      <template
-        slot-scope="data"
-      >
-        <div
-          v-if="data.column.field === 'username'"
-        >
+      <template slot-scope="data">
+        <div v-if="data.column.field === 'username'">
           <div class="flex items-center">
             <span>{{ data.formattedRow['username'] }}</span>
             <span
@@ -137,7 +135,8 @@ export default {
   },
 
   mounted () {
-    this.queryParams.limit = this.session_network.constants.activeDelegates || 51 // Set default limit to amount of active delegates
+    this.queryParams.limit =
+      this.session_network.constants.activeDelegates || 51 // Set default limit to amount of active delegates
     this.fetchDelegates()
   },
 
@@ -165,10 +164,12 @@ export default {
         this.totalCount = totalCount
       } catch (error) {
         this.$logger.error(error)
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'delegates',
-          msg: error.message
-        }))
+        this.$error(
+          this.$t('COMMON.FAILED_FETCH', {
+            name: 'delegates',
+            msg: error.message
+          })
+        )
         this.delegates = []
       } finally {
         this.isLoading = false
@@ -231,6 +232,6 @@ export default {
 
 <style>
 .WalletDelegates .ButtonClose__cross {
-  color: var(--theme-explanation-text)
+  color: var(--theme-explanation-text);
 }
 </style>

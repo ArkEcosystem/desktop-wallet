@@ -7,13 +7,19 @@ describe('SessionModule', () => {
 
   describe('getters > walletSortParams', () => {
     it('should get the wallet sort params', () => {
-      expect(store.getters['session/walletSortParams']).toEqual({ field: 'balance', type: 'desc' })
+      expect(store.getters['session/walletSortParams']).toEqual({
+        field: 'balance',
+        type: 'desc'
+      })
     })
   })
 
   describe('getters > contactSortParams', () => {
     it('should get the contact sort params', () => {
-      expect(store.getters['session/contactSortParams']).toEqual({ field: 'name', type: 'asc' })
+      expect(store.getters['session/contactSortParams']).toEqual({
+        field: 'name',
+        type: 'asc'
+      })
     })
   })
 

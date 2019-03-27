@@ -1,8 +1,6 @@
 <template>
   <!-- TODO do not show last separator line -->
-  <ul
-    class="ListDivided list-reset w-full"
-  >
+  <ul class="ListDivided list-reset w-full">
     <template v-if="items">
       <ListDividedItem
         v-for="(value, key) in items"
@@ -50,6 +48,6 @@ export default {
 
 <style>
 .ListDivided > .ListDividedItem:last-child {
-  border-bottom-color: transparent
+  border-bottom-color: transparent;
 }
 </style>

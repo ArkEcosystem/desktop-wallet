@@ -7,15 +7,8 @@
     class="InputSelect"
     @select="onDropdownSelect"
   >
-    <div
-      v-if="hasItemSlot"
-      slot="item"
-      slot-scope="itemScope"
-    >
-      <slot
-        name="input-item"
-        v-bind="itemScope"
-      />
+    <div v-if="hasItemSlot" slot="item" slot-scope="itemScope">
+      <slot name="input-item" v-bind="itemScope" />
     </div>
 
     <InputField
@@ -162,7 +155,11 @@ export default {
 
     onBlur (ev) {
       this.$nextTick(() => {
-        if (Object.values(document.activeElement.classList).includes('MenuDropdownItem__button')) {
+        if (
+          Object.values(document.activeElement.classList).includes(
+            'MenuDropdownItem__button'
+          )
+        ) {
           ev.preventDefault()
         } else {
           this.$refs.dropdown.close()

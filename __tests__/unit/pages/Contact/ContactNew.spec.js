@@ -16,8 +16,7 @@ describe('pages > ContactNew', () => {
         session_network: {
           version: 30
         },
-        $store: {
-        },
+        $store: {},
         $v: {
           model: {},
           schema: {

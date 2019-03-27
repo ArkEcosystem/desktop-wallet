@@ -29,17 +29,9 @@ beforeEach(() => {
     { address: 'A4', transactions: {} }
   ]
   walletTransactions = {
-    A1: [
-      transactions[0],
-      transactions[1]
-    ],
-    A2: [
-      transactions[2]
-    ],
-    A4: [
-      transactions[3],
-      transactions[4]
-    ]
+    A1: [transactions[0], transactions[1]],
+    A2: [transactions[2]],
+    A4: [transactions[3], transactions[4]]
   }
   fetchTransactionsForWallets = jest.fn(() => walletTransactions)
   // walletByProfileId = jest.fn(() => wallets)
@@ -72,12 +64,10 @@ describe('DashboardTransactions', () => {
 
   describe('processTransactions', () => {
     it('should remove duplicate transactions', () => {
-      const toProcess = [
-        ...transactions,
-        transactions[0],
-        transactions[2]
-      ]
-      expect(wrapper.vm.processTransactions(toProcess)).toIncludeSameMembers(transactions)
+      const toProcess = [...transactions, transactions[0], transactions[2]]
+      expect(wrapper.vm.processTransactions(toProcess)).toIncludeSameMembers(
+        transactions
+      )
     })
 
     it('should sort transactions by `timestamp` descently', () => {

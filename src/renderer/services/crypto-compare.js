@@ -21,15 +21,20 @@ class CryptoCompare {
     try {
       const uri = `${MARKET.source.baseUrl}/data/pricemultifull`
       const response = await axios.get(uri, { params })
-      const data = response.data.RAW && response.data.RAW[token] ? response.data.RAW[token] : {}
+      const data =
+        response.data.RAW && response.data.RAW[token]
+          ? response.data.RAW[token]
+          : {}
 
       return this.__transformMarketResponse(data)
     } catch (error) {
       logger.error(error)
-      alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
-        name: i18n.t('MARKET.MARKET'),
-        msg: error.message
-      }))
+      alertEvents.$error(
+        i18n.t('COMMON.FAILED_FETCH', {
+          name: i18n.t('MARKET.MARKET'),
+          msg: error.message
+        })
+      )
     }
   }
 
@@ -116,15 +121,21 @@ class CryptoCompare {
   }
 
   /**
- * Fetch historical data from API.
- * @param {String} token
- * @param {String} currency
- * @param {Number} limit
- * @param {String} type
- * @param {String} dateFormat
- * @return {(Object|null)} Return API response data or null on failure
- */
-  async __fetchHistoricalData (token, currency, limit, type = 'day', dateFormat = 'DD.MM') {
+   * Fetch historical data from API.
+   * @param {String} token
+   * @param {String} currency
+   * @param {Number} limit
+   * @param {String} type
+   * @param {String} dateFormat
+   * @return {(Object|null)} Return API response data or null on failure
+   */
+  async __fetchHistoricalData (
+    token,
+    currency,
+    limit,
+    type = 'day',
+    dateFormat = 'DD.MM'
+  ) {
     const date = Math.round(new Date().getTime() / 1000)
     const uri = `${MARKET.source.baseUrl}/data/histo${type}`
     const params = {
@@ -139,10 +150,12 @@ class CryptoCompare {
       return this.__transformHistoricalResponse(response.data.Data, dateFormat)
     } catch (error) {
       logger.error(error)
-      alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
-        name: i18n.t('MARKET.HISTORICAL_DATA'),
-        msg: error.message
-      }))
+      alertEvents.$error(
+        i18n.t('COMMON.FAILED_FETCH', {
+          name: i18n.t('MARKET.HISTORICAL_DATA'),
+          msg: error.message
+        })
+      )
     }
   }
 
@@ -175,7 +188,9 @@ class CryptoCompare {
    * @return {Object}
    */
   __transformHistoricalResponse (response, dateFormat) {
-    const labels = response.map(value => dayjs(value.time * 1000).format(dateFormat))
+    const labels = response.map(value =>
+      dayjs(value.time * 1000).format(dateFormat)
+    )
     const datasets = response.map(value => value.close)
 
     return {

@@ -51,8 +51,12 @@ describe('Mixins > Formatter', () => {
     describe('when a number is provided', () => {
       it('should return it as percentage', () => {
         expect(wrapper.vm.formatter_networkCurrency(10000000)).toEqual('× 0.10')
-        expect(wrapper.vm.formatter_networkCurrency(100000000)).toEqual('× 1.00')
-        expect(wrapper.vm.formatter_networkCurrency(1000000000)).toEqual('× 10.00')
+        expect(wrapper.vm.formatter_networkCurrency(100000000)).toEqual(
+          '× 1.00'
+        )
+        expect(wrapper.vm.formatter_networkCurrency(1000000000)).toEqual(
+          '× 10.00'
+        )
         expect(wrapper.vm.formatter_networkCurrency(0)).toEqual('× 0.00')
       })
     })

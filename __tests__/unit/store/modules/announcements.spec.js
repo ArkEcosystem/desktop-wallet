@@ -31,14 +31,19 @@ describe('the announcementStore mutations', () => {
       announcements: []
     }
 
-    announcementStore.mutations.SAVE_ANNOUNCEMENTS(state, [{
-      guid: 'TESTGUID',
-      title: 'Testing the mark-as-read functionality'
-    }])
+    announcementStore.mutations.SAVE_ANNOUNCEMENTS(state, [
+      {
+        guid: 'TESTGUID',
+        title: 'Testing the mark-as-read functionality'
+      }
+    ])
 
     expect(state.announcements[0].isRead).toBe(false)
 
-    announcementStore.mutations.MARK_ANNOUNCEMENT_AS_READ(state, state.announcements[0])
+    announcementStore.mutations.MARK_ANNOUNCEMENT_AS_READ(
+      state,
+      state.announcements[0]
+    )
 
     expect(state.announcements[0].isRead).toBe(true)
   })
@@ -48,74 +53,82 @@ describe('the announcementStore getters', () => {
   it('fetches announcements from state', () => {
     // create state with items
     let state = {
-      announcements:
-        [
-          {
-            guid: '1234ABCD',
-            title: 'Ark Arrives At Moon',
-            summary: 'The value of ARK reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          },
-          {
-            guid: '1FSAFEWA',
-            title: 'Second News Article',
-            summary: 'The value of ARK reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          },
-          {
-            guid: '3123321',
-            title: 'Moon arrives at ark',
-            summary: 'The value of ARK reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          },
-          {
-            guid: 'LDKJASD',
-            title: 'Fourth News Article',
-            summary: 'The value of ARK reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          }
-        ]
+      announcements: [
+        {
+          guid: '1234ABCD',
+          title: 'Ark Arrives At Moon',
+          summary:
+            'The value of ARK reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        },
+        {
+          guid: '1FSAFEWA',
+          title: 'Second News Article',
+          summary:
+            'The value of ARK reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        },
+        {
+          guid: '3123321',
+          title: 'Moon arrives at ark',
+          summary:
+            'The value of ARK reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        },
+        {
+          guid: 'LDKJASD',
+          title: 'Fourth News Article',
+          summary:
+            'The value of ARK reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        }
+      ]
     }
 
     const fetchedAnnouncements = announcementStore.getters.all(state)
 
-    fetchedAnnouncements.forEach((announcement) => {
+    fetchedAnnouncements.forEach(announcement => {
       expect(state.announcements).toContainEqual(announcement)
     })
   })
 
   it('fetches a single announcement from state', () => {
     let state = {
-      announcements:
-        [
-          {
-            guid: '1234ABCD',
-            title: 'Ark Arrives At Moon',
-            summary: 'The value of ARK reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          },
-          {
-            guid: '1FSAFEWA',
-            title: 'Second News Article',
-            summary: 'The value of ARK reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          },
-          {
-            guid: '3123321',
-            title: 'Moon arrives at ark',
-            summary: 'The value of ARK reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          },
-          {
-            guid: 'LDKJASD',
-            title: 'Fourth News Article',
-            summary: 'The value of ARK reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
-            url: 'https://fakenews.com/ark-lunar-trip'
-          }
-        ]
+      announcements: [
+        {
+          guid: '1234ABCD',
+          title: 'Ark Arrives At Moon',
+          summary:
+            'The value of ARK reached 3 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        },
+        {
+          guid: '1FSAFEWA',
+          title: 'Second News Article',
+          summary:
+            'The value of ARK reached 6 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        },
+        {
+          guid: '3123321',
+          title: 'Moon arrives at ark',
+          summary:
+            'The value of ARK reached 213 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        },
+        {
+          guid: 'LDKJASD',
+          title: 'Fourth News Article',
+          summary:
+            'The value of ARK reached 431 Bitcoin today as all hodlers bought lambos for their pets.',
+          url: 'https://fakenews.com/ark-lunar-trip'
+        }
+      ]
     }
 
-    const response = announcementStore.getters.findById(state, { guid: 'LDKJASD' }) // guid from sample state
+    const response = announcementStore.getters.findById(state, {
+      guid: 'LDKJASD'
+    }) // guid from sample state
 
     expect(state.announcements).toContainEqual(response)
   })

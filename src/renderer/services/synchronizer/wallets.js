@@ -1,4 +1,13 @@
-import { clone, find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
+import {
+  clone,
+  find,
+  groupBy,
+  keyBy,
+  map,
+  maxBy,
+  partition,
+  uniqBy
+} from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -12,7 +21,9 @@ class Action {
    * @return {Boolean} true if the data is equal
    */
   static compareWalletData (wallet, walletData) {
-    return Object.keys(walletData).every(property => wallet[property] === walletData[property])
+    return Object.keys(walletData).every(
+      property => wallet[property] === walletData[property]
+    )
   }
 
   constructor (synchronizer) {
@@ -78,10 +89,7 @@ class Action {
   }
 
   get wallets () {
-    return [
-      ...this.profileWallets,
-      ...Object.values(this.ledgerWallets)
-    ]
+    return [...this.profileWallets, ...Object.values(this.ledgerWallets)]
   }
 
   // TODO contacts should be moved to a new Synchronizer action
@@ -92,10 +100,7 @@ class Action {
   }
 
   get allWallets () {
-    return [
-      ...this.contacts,
-      ...this.wallets
-    ]
+    return [...this.contacts, ...this.wallets]
   }
 
   /**
@@ -122,7 +127,11 @@ class Action {
     const expiredTransactions = await this.$dispatch('transaction/clearExpired')
     for (const transactionId of expiredTransactions) {
       this.emit(`transaction:${transactionId}:expired`)
-      this.$info(this.$t('TRANSACTION.ERROR.EXPIRED', { transactionId: truncateMiddle(transactionId) }))
+      this.$info(
+        this.$t('TRANSACTION.ERROR.EXPIRED', {
+          transactionId: truncateMiddle(transactionId)
+        })
+      )
     }
   }
 
@@ -133,7 +142,10 @@ class Action {
    */
   async sync () {
     const { walletsData, transactionsByAddress } = await this.fetch()
-    const walletsToUpdate = await this.process(walletsData, transactionsByAddress)
+    const walletsToUpdate = await this.process(
+      walletsData,
+      transactionsByAddress
+    )
 
     if (walletsToUpdate.length) {
       await this.update(walletsToUpdate)
@@ -248,7 +260,10 @@ class Action {
 
       if (transactions && transactions.length) {
         const wallet = find(this.wallets, { address })
-        const latestAt = await this.processWalletTransactions(wallet, transactions)
+        const latestAt = await this.processWalletTransactions(
+          wallet,
+          transactions
+        )
         if (latestAt) {
           walletsTransactionsAt[address] = latestAt
         }
@@ -276,7 +291,9 @@ class Action {
         profileId: wallet.profileId
       })
 
-      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
+      const votes = transactions.filter(
+        tx => tx.type === config.TRANSACTION_TYPES.VOTE
+      )
       if (votes.length) {
         this.processVotes(votes)
       }
@@ -301,9 +318,11 @@ class Action {
   // TODO update only 1 time
   processVotes (votes) {
     const ids = votes.map(vote => vote.id)
-    const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
-      return !ids.includes(vote.id)
-    })
+    const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(
+      vote => {
+        return !ids.includes(vote.id)
+      }
+    )
 
     this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
 
@@ -337,7 +356,8 @@ class Action {
         break
       }
       case config.TRANSACTION_TYPES.VOTE: {
-        const type = transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
+        const type =
+          transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
         const voteUnvote = this.$t(`SYNCHRONIZER.${type}`)
         message = {
           translation: 'SYNCHRONIZER.NEW_VOTE',
@@ -355,7 +375,9 @@ class Action {
           translation: `SYNCHRONIZER.NEW_TRANSFER_${type}`,
           options: {
             address: truncateMiddle(wallet.address),
-            amount: `${this.$getters['session/network'].symbol}${(transaction.amount / 1e8)}`,
+            amount: `${
+              this.$getters['session/network'].symbol
+            }${transaction.amount / 1e8}`,
             sender: truncateMiddle(transaction.sender),
             recipient: truncateMiddle(transaction.recipient)
           }
@@ -404,8 +426,5 @@ const action = async synchronizer => {
   await action.run()
 }
 
-export {
-  Action,
-  action
-}
+export { Action, action }
 export default action

@@ -27,7 +27,10 @@ export default new BaseModel({
     },
     isMarketChartEnabled: {
       type: 'boolean',
-      format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
+      format: data =>
+        data.isMarketChartEnabled !== undefined
+          ? data.isMarketChartEnabled
+          : true
     },
     language: {
       type: 'string',
@@ -49,11 +52,15 @@ export default new BaseModel({
     },
     backgroundUpdateLedger: {
       type: 'boolean',
-      format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
+      format: data =>
+        data.backgroundUpdateLedger !== undefined
+          ? data.backgroundUpdateLedger
+          : true
     },
     broadcastPeers: {
       type: 'boolean',
-      format: data => data.broadcastPeers !== undefined ? data.broadcastPeers : true
+      format: data =>
+        data.broadcastPeers !== undefined ? data.broadcastPeers : true
     },
     ledgerCache: {
       type: 'boolean',
@@ -73,7 +80,8 @@ export default new BaseModel({
     },
     walletSortParams: {
       type: 'object',
-      format: data => data.walletSortParams || { field: 'balance', type: 'desc' }
+      format: data =>
+        data.walletSortParams || { field: 'balance', type: 'desc' }
     },
     contactSortParams: {
       type: 'object',

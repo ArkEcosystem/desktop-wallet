@@ -35,7 +35,7 @@
           @keyup.down="onKeyDown"
           @keyup.esc="onEsc"
           @keyup.enter="onEnter"
-        >
+        />
         <ButtonModal
           ref="button-qr"
           :label="''"
@@ -124,16 +124,25 @@ export default {
     },
 
     error () {
-      if (this.$v.model.$dirty && (!this.hasSuggestions || !this.$refs.dropdown.isOpen)) {
+      if (
+        this.$v.model.$dirty &&
+        (!this.hasSuggestions || !this.$refs.dropdown.isOpen)
+      ) {
         if (!this.$v.model.required) {
           return this.$t('INPUT_DELEGATE.ERROR.REQUIRED')
         } else if (!this.$v.model.isValid) {
           if (this.inputValue.length <= 20) {
-            return this.$t('INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND', [this.inputValue])
+            return this.$t('INPUT_DELEGATE.ERROR.USERNAME_NOT_FOUND', [
+              this.inputValue
+            ])
           } else if (this.inputValue.length <= 34) {
-            return this.$t('INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+            return this.$t('INPUT_DELEGATE.ERROR.ADDRESS_NOT_FOUND', [
+              this.wallet_truncate(this.inputValue)
+            ])
           } else {
-            return this.$t('INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND', [this.wallet_truncate(this.inputValue)])
+            return this.$t('INPUT_DELEGATE.ERROR.PUBLIC_KEY_NOT_FOUND', [
+              this.wallet_truncate(this.inputValue)
+            ])
           }
         } else {
           this.$emit('valid', true)
@@ -168,7 +177,7 @@ export default {
         return []
       }
 
-      const delegates = map(this.delegates, (object) => {
+      const delegates = map(this.delegates, object => {
         const delegate = {
           name: null,
           username: object.username,
@@ -176,12 +185,15 @@ export default {
           publicKey: object.publicKey
         }
 
-        delegate.name = `${truncate(object.username, 25)} (${this.wallet_truncate(object.address)})`
+        delegate.name = `${truncate(
+          object.username,
+          25
+        )} (${this.wallet_truncate(object.address)})`
 
         return delegate
       })
 
-      const results = orderBy(delegates, (object) => {
+      const results = orderBy(delegates, object => {
         return object.name || object.address.toLowerCase()
       })
 
@@ -228,7 +240,9 @@ export default {
 
   methods: {
     getHelperText () {
-      return (!this.$refs.dropdown || !this.$refs.dropdown.isOpen) ? this.helperText : ''
+      return !this.$refs.dropdown || !this.$refs.dropdown.isOpen
+        ? this.helperText
+        : ''
     },
 
     blur () {
@@ -279,7 +293,10 @@ export default {
 
       this.$nextTick(() => {
         this.closeDropdown()
-        this.$refs.input.setSelectionRange(this.inputValue.length, this.inputValue.length)
+        this.$refs.input.setSelectionRange(
+          this.inputValue.length,
+          this.inputValue.length
+        )
       })
     },
 
@@ -289,12 +306,16 @@ export default {
     },
 
     onKeyUp () {
-      const next = this.dropdownValue ? this.suggestionsKeys.previous() : this.suggestionsKeys.current()
+      const next = this.dropdownValue
+        ? this.suggestionsKeys.previous()
+        : this.suggestionsKeys.current()
       this.__setSuggestion(next)
     },
 
     onKeyDown () {
-      const next = this.dropdownValue ? this.suggestionsKeys.next() : this.suggestionsKeys.current()
+      const next = this.dropdownValue
+        ? this.suggestionsKeys.next()
+        : this.suggestionsKeys.current()
       this.__setSuggestion(next)
     },
 
@@ -334,7 +355,10 @@ export default {
 
       this.dropdownValue = value
       this.$nextTick(() => {
-        this.$refs.input.setSelectionRange(this.inputValue.length, this.dropdownValue.length)
+        this.$refs.input.setSelectionRange(
+          this.inputValue.length,
+          this.dropdownValue.length
+        )
       })
     }
   },
@@ -352,16 +376,16 @@ export default {
 
 <style lang="postcss" scoped>
 .InputDelegate__MenuDropdown .MenuDropdown__container {
-  @apply .z-30
+  @apply .z-30;
 }
 .InputDelegate__MenuDropdown .MenuDropdownItem__container {
-  @apply .text-left
+  @apply .text-left;
 }
 .InputDelegate__input::placeholder {
-  @apply .text-transparent
+  @apply .text-transparent;
 }
 
 .InputField--invalid .InputDelegate__qr-button {
-  @apply .text-red-dark
+  @apply .text-red-dark;
 }
 </style>

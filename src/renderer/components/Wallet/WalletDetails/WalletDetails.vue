@@ -5,7 +5,7 @@
     <MenuTab
       ref="menutab"
       v-model="currentTab"
-      :class="{ 'rounded-bl-lg' : !isDelegatesTab || !isOwned }"
+      :class="{ 'rounded-bl-lg': !isDelegatesTab || !isOwned }"
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
@@ -26,54 +26,50 @@
       v-if="isDelegatesTab && isOwned"
       class="bg-theme-feature px-5 flex flex-row rounded-bl-lg"
     >
-      <div
-        class="WalletDetails__button rounded-l"
-        @click="openSelectDelegate"
-      >
-        <SvgIcon
-          name="search"
-          view-box="0 0 17 16"
-          class="mr-2"
-        />
+      <div class="WalletDetails__button rounded-l" @click="openSelectDelegate">
+        <SvgIcon name="search" view-box="0 0 17 16" class="mr-2" />
         {{ $t('WALLET_DELEGATES.SEARCH_DELEGATE') }}
       </div>
       <div
         class="mt-4 mb-4 py-4 px-6 text-theme-voting-banner-text bg-theme-voting-banner-background w-full flex"
         :class="{ 'rounded-r': isOwned && !votedDelegate }"
       >
-        <div
-          v-if="!isAwaitingConfirmation && isLoadingVote"
-          class="flex"
-        >
+        <div v-if="!isAwaitingConfirmation && isLoadingVote" class="flex">
           <span class="font-semibold">
             {{ $t('WALLET_DELEGATES.LOADING_VOTE') }}
           </span>
         </div>
-        <div
-          v-else-if="isAwaitingConfirmation"
-          class="flex"
-        >
+        <div v-else-if="isAwaitingConfirmation" class="flex">
           <i18n
             tag="span"
             class="font-semibold"
             path="WALLET_DELEGATES.AWAITING_VOTE_CONFIRMATION"
           >
             <strong place="type">
-              {{ $t(`TRANSACTION.TYPE.${unconfirmedVote.publicKey.charAt(0) === '+' ? 'VOTE' : 'UNVOTE'}`) }}
+              {{
+                $t(
+                  `TRANSACTION.TYPE.${
+                    unconfirmedVote.publicKey.charAt(0) === '+'
+                      ? 'VOTE'
+                      : 'UNVOTE'
+                  }`
+                )
+              }}
             </strong>
           </i18n>
         </div>
-        <div
-          v-else-if="votedDelegate"
-          class="flex"
-        >
+        <div v-else-if="votedDelegate" class="flex">
           <i18n
             tag="span"
             :class="{
-              'border-r border-theme-line-separator' : votedDelegate.rank
+              'border-r border-theme-line-separator': votedDelegate.rank
             }"
             class="font-semibold pr-6"
-            :path="isOwned ? 'WALLET_DELEGATES.VOTED_FOR' : 'WALLET_DELEGATES.WALLET_VOTED_FOR'"
+            :path="
+              isOwned
+                ? 'WALLET_DELEGATES.VOTED_FOR'
+                : 'WALLET_DELEGATES.WALLET_VOTED_FOR'
+            "
           >
             <strong place="delegate">
               {{ votedDelegate.username }}
@@ -100,10 +96,7 @@
             </i18n>
           </template>
         </div>
-        <div
-          v-else-if="isOwned && !votedDelegate"
-          class="flex"
-        >
+        <div v-else-if="isOwned && !votedDelegate" class="flex">
           <span class="font-semibold">
             {{ $t('WALLET_DELEGATES.NO_VOTE') }}
           </span>
@@ -131,10 +124,7 @@
       />
 
       <!-- Select delegate modal -->
-      <Portal
-        v-if="isSelecting"
-        to="modal"
-      >
+      <Portal v-if="isSelecting" to="modal">
         <WalletSelectDelegate
           @cancel="onCancelSelect"
           @close="onCancelSelect"
@@ -151,7 +141,13 @@ import { at, clone } from 'lodash'
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
-import { WalletExchange, WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
+import {
+  WalletExchange,
+  WalletHeading,
+  WalletTransactions,
+  WalletDelegates,
+  WalletStatistics
+} from '../'
 import WalletSignVerify from '../WalletSignVerify'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 import SvgIcon from '@/components/SvgIcon'
@@ -207,17 +203,28 @@ export default {
         }
       ]
 
-      if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
+      if (
+        this.currentWallet &&
+        !this.currentWallet.isContact &&
+        !this.currentWallet.isLedger
+      ) {
         tabs.push({
           component: 'WalletSignVerify',
           text: this.$t('PAGES.WALLET.SIGN_VERIFY')
         })
       }
 
-      if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+      if (
+        this.currentNetwork &&
+        !this.currentWallet.isContact &&
+        this.currentNetwork.market &&
+        this.currentNetwork.market.enabled
+      ) {
         tabs.push({
           component: 'WalletExchange',
-          text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
+          text: this.$t('PAGES.WALLET.PURCHASE', {
+            ticker: this.currentNetwork.market.ticker
+          })
         })
       }
 
@@ -321,9 +328,13 @@ export default {
 
     getVoteTitle () {
       if (this.isUnvoting && this.votedDelegate) {
-        return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.votedDelegate.username })
+        return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', {
+          delegate: this.votedDelegate.username
+        })
       } else if (this.isVoting && this.selectedDelegate) {
-        return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selectedDelegate.username })
+        return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', {
+          delegate: this.selectedDelegate.username
+        })
       } else {
         return `${this.$t('COMMON.DELEGATE')} ${this.selectedDelegate.username}`
       }
@@ -336,10 +347,14 @@ export default {
 
       try {
         this.isLoadingVote = true
-        const walletVote = await this.$client.fetchWalletVote(this.currentWallet.address)
+        const walletVote = await this.$client.fetchWalletVote(
+          this.currentWallet.address
+        )
 
         if (walletVote) {
-          this.votedDelegate = this.$store.getters['delegate/byPublicKey'](walletVote)
+          this.votedDelegate = this.$store.getters['delegate/byPublicKey'](
+            walletVote
+          )
           this.walletVote.publicKey = walletVote
         } else {
           this.votedDelegate = null
@@ -352,10 +367,12 @@ export default {
         const messages = at(error, 'response.data.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
-          this.$error(this.$t('COMMON.FAILED_FETCH', {
-            name: 'fetch vote',
-            msg: error.message
-          }))
+          this.$error(
+            this.$t('COMMON.FAILED_FETCH', {
+              name: 'fetch vote',
+              msg: error.message
+            })
+          )
         }
       } finally {
         this.isLoadingVote = false
@@ -393,7 +410,9 @@ export default {
         this.isSelecting = false
 
         if (this.votedDelegate) {
-          if (this.selectedDelegate.publicKey === this.votedDelegate.publicKey) {
+          if (
+            this.selectedDelegate.publicKey === this.votedDelegate.publicKey
+          ) {
             this.isUnvoting = true
           }
         } else {
@@ -430,15 +449,15 @@ export default {
 
 <style lang="postcss">
 .WalletDetails .MenuTab > .MenuTab__nav {
-  @apply .sticky .pin-t .z-10
+  @apply .sticky .pin-t .z-10;
 }
 .WalletDetails__button {
   transition: 0.5s;
   cursor: pointer;
-  @apply .flex .items-center .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .whitespace-no-wrap .mt-4 .mb-4 .p-4 .font-semibold .w-auto .text-center
+  @apply .flex .items-center .text-theme-voting-banner-button-text .bg-theme-voting-banner-button .whitespace-no-wrap .mt-4 .mb-4 .p-4 .font-semibold .w-auto .text-center;
 }
 .WalletDetails__button:hover {
   transition: 0.5s;
-  @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
+  @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover;
 }
 </style>

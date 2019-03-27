@@ -1,19 +1,14 @@
 <template>
-  <ModalWindow
-    :title="$t('MODAL_NETWORK_SELECTION.TITLE')"
-    @close="emitCancel"
-  >
-    <div
-      class="w-80 flex flex-col justify-center "
-    >
+  <ModalWindow :title="$t('MODAL_NETWORK_SELECTION.TITLE')" @close="emitCancel">
+    <div class="w-80 flex flex-col justify-center ">
       <div class="NetworkSelectionModal__grid">
-        <div
-          v-for="network in getCustomNetworks()"
-          :key="network.id"
-        >
+        <div v-for="network in getCustomNetworks()" :key="network.id">
           <button
             v-tooltip="network.name"
-            :class="{ 'NetworkSelectionModal__network--selected' : selectedNetwork && selectedNetwork.id == network.id }"
+            :class="{
+              'NetworkSelectionModal__network--selected':
+                selectedNetwork && selectedNetwork.id == network.id
+            }"
             class="NetworkSelectionModal__network text-theme-page-text w-full"
             @click="selectNetwork(network)"
           >
@@ -21,7 +16,7 @@
             <img
               class="w-18 h-18 p-2"
               :src="assets_loadImage('networks/default.svg')"
-            >
+            />
             <div class="NetworkSelectionModal__network--name">
               {{ network.name | truncate(20) }}
             </div>
@@ -63,8 +58,7 @@ export default {
     }
   },
 
-  mounted () {
-  },
+  mounted () {},
 
   methods: {
     getCustomNetworks () {
@@ -94,13 +88,13 @@ export default {
 }
 
 .NetworkSelectionModal__network {
-  @apply .rounded-lg .border-2 .border-transparent
+  @apply .rounded-lg .border-2 .border-transparent;
 }
 .NetworkSelectionModal__network--selected {
-  @apply .border-green
+  @apply .border-green;
 }
 .NetworkSelectionModal__network--name {
   max-width: 4.5rem;
-  @apply .break-words
+  @apply .break-words;
 }
 </style>

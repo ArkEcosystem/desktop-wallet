@@ -13,10 +13,16 @@ export default {
       }
       // NOTE: this property is only used on `WalletImport`
       if (!this.useOnlyAddress) {
-        this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(this.wallet.passphrase)
+        this.wallet.publicKey = WalletService.getPublicKeyFromPassphrase(
+          this.wallet.passphrase
+        )
       }
 
-      if (!this.useOnlyAddress && this.walletPassword && this.walletPassword.length) {
+      if (
+        !this.useOnlyAddress &&
+        this.walletPassword &&
+        this.walletPassword.length
+      ) {
         this.showEncryptLoader = true
 
         const dataToEncrypt = {

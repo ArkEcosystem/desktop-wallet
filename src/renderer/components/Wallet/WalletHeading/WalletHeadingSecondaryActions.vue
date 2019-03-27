@@ -5,7 +5,11 @@
   >
     <ButtonModal
       :class="buttonStyle"
-      :label="currentWallet.isContact ? $t('WALLET_HEADING.ACTIONS.CONTACT_NAME') : $t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
+      :label="
+        currentWallet.isContact
+          ? $t('WALLET_HEADING.ACTIONS.CONTACT_NAME')
+          : $t('WALLET_HEADING.ACTIONS.WALLET_NAME')
+      "
       icon="name"
     >
       <template slot-scope="{ toggle, isOpen }">
@@ -42,7 +46,11 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.isContact && !currentWallet.isLedger && !currentWallet.secondPublicKey"
+      v-show="
+        !currentWallet.isContact &&
+          !currentWallet.isLedger &&
+          !currentWallet.secondPublicKey
+      "
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
       icon="2nd-passphrase"
@@ -78,7 +86,10 @@
 <script>
 import { ButtonModal } from '@/components/Button'
 import { ContactRenameModal } from '@/components/Contact'
-import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
+import {
+  WalletRenameModal,
+  WalletRemovalConfirmation
+} from '@/components/Wallet'
 import { TransactionModal } from '@/components/Transaction'
 
 export default {

@@ -12,9 +12,10 @@ export default {
     }
   },
 
-  render: (h, ctx) => h(PulseLoader, {
-    props: {
-      color: ctx.props.color
-    }
-  })
+  render: (h, ctx) =>
+    h(PulseLoader, {
+      props: {
+        color: ctx.props.color
+      }
+    })
 }

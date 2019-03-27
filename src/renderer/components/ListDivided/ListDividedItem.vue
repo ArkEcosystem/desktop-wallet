@@ -16,24 +16,15 @@
         {{ label }}
       </span>
 
-      <div
-        :class="itemValueClass"
-        class="ListDividedItem__value"
-      >
+      <div :class="itemValueClass" class="ListDividedItem__value">
         <slot>
-          <span
-            v-if="value"
-            class="text-theme-page-text"
-          >
+          <span v-if="value" class="text-theme-page-text">
             {{ value }}
           </span>
         </slot>
       </div>
     </div>
-    <div
-      v-if="$slots.content"
-      class="mt-4"
-    >
+    <div v-if="$slots.content" class="mt-4">
       <slot name="content" />
     </div>
   </li>

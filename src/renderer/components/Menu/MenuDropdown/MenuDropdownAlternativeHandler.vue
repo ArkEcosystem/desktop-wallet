@@ -1,7 +1,5 @@
 <template>
-  <button
-    class="flex items-center"
-  >
+  <button class="flex items-center">
     <span class="rounded border border-theme-settings-border mr-2">
       <SvgIcon
         :class="{

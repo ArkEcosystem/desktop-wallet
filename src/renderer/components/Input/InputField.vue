@@ -1,12 +1,14 @@
 <template>
   <section
-    :class="[{
-      'InputField--dirty': isDirty,
-      'InputField--disabled': isDisabled,
-      'InputField--focused': isFocused,
-      'InputField--invalid': isInvalid,
-      'InputField--warning': !isInvalid && !!warningText
-    }]"
+    :class="[
+      {
+        'InputField--dirty': isDirty,
+        'InputField--disabled': isDisabled,
+        'InputField--focused': isFocused,
+        'InputField--invalid': isInvalid,
+        'InputField--warning': !isInvalid && !!warningText
+      }
+    ]"
     class="InputField"
   >
     <div
@@ -89,7 +91,8 @@ export default {
 .InputField__label {
   bottom: 0.5em;
   transform-origin: left top;
-  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .InputField--focused .InputField__label,
@@ -100,26 +103,26 @@ export default {
 }
 
 .InputField--focused .InputField__label {
-  @apply .text-blue
+  @apply .text-blue;
 }
 
 .InputField--disabled .InputField__input {
-  @apply .text-theme-page-text-light .border-dotted
+  @apply .text-theme-page-text-light .border-dotted;
 }
 
 .InputField--invalid .InputField__label,
 .InputField--invalid .InputField__helper {
-  @apply .text-red-dark
+  @apply .text-red-dark;
 }
 .InputField--invalid .InputField__input {
-  @apply .border-red-dark
+  @apply .border-red-dark;
 }
 
 .InputField--warning .InputField__label,
 .InputField--warning .InputField__helper {
-  @apply .text-orange-dark
+  @apply .text-orange-dark;
 }
 .InputField--warning .InputField__input {
-  @apply .border-orange-dark
+  @apply .border-orange-dark;
 }
 </style>

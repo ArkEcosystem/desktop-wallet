@@ -16,7 +16,10 @@ class LedgerService {
       try {
         resolve(await action())
       } catch (error) {
-        if (error.statusText && error.statusText === 'CONDITIONS_OF_USE_NOT_SATISFIED') {
+        if (
+          error.statusText &&
+          error.statusText === 'CONDITIONS_OF_USE_NOT_SATISFIED'
+        ) {
           resolve(false)
         } else {
           reject(new Error(error.message))

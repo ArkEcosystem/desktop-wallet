@@ -38,10 +38,15 @@ export default {
 
   // TODO: Fetch fees remotely
   mounted () {
-    const component = find(this.$options.components, item => item.transactionType === this.type)
+    const component = find(
+      this.$options.components,
+      item => item.transactionType === this.type
+    )
 
     if (!component) {
-      throw new Error(`[TransactionForm] - Form for type ${this.type} not found.`)
+      throw new Error(
+        `[TransactionForm] - Form for type ${this.type} not found.`
+      )
     }
 
     this.activeComponent = component.name

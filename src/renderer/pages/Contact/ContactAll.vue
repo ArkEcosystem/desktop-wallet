@@ -2,10 +2,7 @@
   <div class="ContactAll">
     <div class="ContactAll__heading px-10 py-5 mb-3">
       <div>
-        <WalletIdenticonPlaceholder
-          :size="60"
-          class="identicon opacity-50"
-        />
+        <WalletIdenticonPlaceholder :size="60" class="identicon opacity-50" />
         <span
           class="rounded-full flex items-center justify-center absolute ml-8 -mt-8 w-8 h-8 bg-theme-feature text-theme-page-text-light font-black select-none"
         >
@@ -22,11 +19,7 @@
         @click="createContact"
       >
         <span class="ContactAll__CreateButton__icon">
-          <SvgIcon
-            name="plus"
-            view-box="0 0 9 9"
-            class="text-center"
-          />
+          <SvgIcon name="plus" view-box="0 0 9 9" class="text-center" />
         </span>
 
         <span class="flex items-center h-10 px-4 whitespace-no-wrap">
@@ -35,7 +28,9 @@
       </button>
     </div>
 
-    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto">
+    <div
+      class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto"
+    >
       <div class="block w-full">
         <div class="ContactAll__header">
           <h3 class=" items-center">
@@ -49,9 +44,7 @@
         </div>
       </div>
 
-      <div
-        v-if="hasWalletGridLayout"
-      >
+      <div v-if="hasWalletGridLayout">
         <div class="ContactAll__grid mt-10 justify-center">
           <div
             v-for="contact in contacts"
@@ -68,17 +61,28 @@
                     class="identicon cursor-pointer"
                   />
 
-                  <div class="flex flex-col justify-center overflow-hidden pl-4">
-                    <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
+                  <div
+                    class="flex flex-col justify-center overflow-hidden pl-4"
+                  >
+                    <div
+                      class="ContactAll__grid__contact__name font-semibold text-base truncate block"
+                    >
                       <span
                         v-tooltip="{
-                          content: !contact.name && wallet_name(contact.address) ? $t('COMMON.NETWORK_NAME') : '',
+                          content:
+                            !contact.name && wallet_name(contact.address)
+                              ? $t('COMMON.NETWORK_NAME')
+                              : '',
                           placement: 'right'
                         }"
                         class="pr-1 cursor-default"
                         @click.stop
                       >
-                        {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
+                        {{
+                          contact.name ||
+                            wallet_name(contact.address) ||
+                            wallet_truncate(contact.address)
+                        }}
                       </span>
                     </div>
                     <span
@@ -104,10 +108,7 @@
         </div>
       </div>
 
-      <div
-        v-else-if="!hasWalletGridLayout"
-        class="ContactAll__tabular mt-10"
-      >
+      <div v-else-if="!hasWalletGridLayout" class="ContactAll__tabular mt-10">
         <WalletTable
           :has-pagination="false"
           :is-loading="false"
@@ -143,8 +144,14 @@
 <script>
 import { clone, some } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
-import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
-import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
+import {
+  ContactRemovalConfirmation,
+  ContactRenameModal
+} from '@/components/Contact'
+import {
+  WalletIdenticon,
+  WalletIdenticonPlaceholder
+} from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -168,7 +175,9 @@ export default {
 
   computed: {
     contacts () {
-      const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
+      const contacts = this.$store.getters['wallet/contactsByProfileId'](
+        this.session_profile.id
+      )
       return this.wallet_sortByName(contacts)
     },
 
@@ -275,7 +284,10 @@ export default {
 }
 .ContactAll__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(var(--contact-identicon-lg) * 3));
+  grid-template-columns: repeat(
+    auto-fill,
+    calc(var(--contact-identicon-lg) * 3)
+  );
   grid-gap: 1rem;
 }
 .ContactAll__grid__contact__wrapper {
@@ -299,14 +311,14 @@ export default {
   color: #037cff;
 }
 .ContactAll__CreateButton {
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
   @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-12;
 }
 .ContactAll__CreateButton:hover {
   @apply .bg-blue .text-white;
 }
 .ContactAll__CreateButton__icon {
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
   @apply .flex .items-center .justify-center .h-10 .w-10 .rounded-l .bg-theme-button-inner-box;
 }
 .ContactAll__CreateButton:hover .ContactAll__CreateButton__icon {
@@ -315,7 +327,7 @@ export default {
 }
 @screen lg {
   .ContactAll__grid__contact__wrapper {
-    @apply .m-4
+    @apply .m-4;
   }
 }
 </style>

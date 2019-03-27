@@ -36,10 +36,16 @@ export default {
 
   computed: {
     lastTransactions () {
-      return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
+      return mergeTableTransactions(
+        this.fetchedTransactions,
+        this.storedTransactions
+      )
     },
     storedTransactions () {
-      return this.$store.getters['transaction/byProfileId'](this.session_profile.id, { includeExpired: true })
+      return this.$store.getters['transaction/byProfileId'](
+        this.session_profile.id,
+        { includeExpired: true }
+      )
     },
     wallets () {
       return [

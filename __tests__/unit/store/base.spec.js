@@ -6,7 +6,7 @@ describe('BaseModule', () => {
   let item
 
   beforeAll(() => {
-    modeler = { deserialize: (data) => data }
+    modeler = { deserialize: data => data }
     module = new BaseModule(modeler)
     item = modeler.deserialize({ id: 'test' })
   })
@@ -16,7 +16,12 @@ describe('BaseModule', () => {
   })
 
   it('should contains crud methods', () => {
-    expect(module.actions).toContainKeys(['create', 'update', 'delete', 'store'])
+    expect(module.actions).toContainKeys([
+      'create',
+      'update',
+      'delete',
+      'store'
+    ])
   })
 
   it('should create a item', () => {

@@ -1,8 +1,5 @@
 <template>
-  <ModalWindow
-    :allow-close="!showLoadingModal"
-    @close="emitClose"
-  >
+  <ModalWindow :allow-close="!showLoadingModal" @close="emitClose">
     <section class="flex flex-col">
       <h2 class="mb-1">
         {{ $t('MODAL_PEER.TITLE') }}
@@ -85,11 +82,17 @@ export default {
       let error
       if (this.$v.form.host.$dirty) {
         if (!this.$v.form.host.required) {
-          error = this.$t('VALIDATION.REQUIRED', [this.$refs['input-host'].label])
+          error = this.$t('VALIDATION.REQUIRED', [
+            this.$refs['input-host'].label
+          ])
         } else if (!this.$v.form.host.hasScheme) {
-          error = this.$t('VALIDATION.NO_SCHEME', [this.$refs['input-host'].label])
+          error = this.$t('VALIDATION.NO_SCHEME', [
+            this.$refs['input-host'].label
+          ])
         } else if (!this.$v.form.host.isValid) {
-          error = this.$t('VALIDATION.NOT_VALID', [this.$refs['input-host'].label])
+          error = this.$t('VALIDATION.NOT_VALID', [
+            this.$refs['input-host'].label
+          ])
         }
       }
       return error
@@ -99,11 +102,17 @@ export default {
       let error
       if (this.$v.form.port.$dirty) {
         if (!this.$v.form.port.required) {
-          error = this.$t('VALIDATION.REQUIRED', [this.$refs['input-port'].label])
+          error = this.$t('VALIDATION.REQUIRED', [
+            this.$refs['input-port'].label
+          ])
         } else if (!this.$v.form.port.isNumeric) {
-          error = this.$t('VALIDATION.NOT_NUMERIC', [this.$refs['input-port'].label])
+          error = this.$t('VALIDATION.NOT_NUMERIC', [
+            this.$refs['input-port'].label
+          ])
         } else if (!this.$v.form.port.isValid) {
-          error = this.$t('VALIDATION.NOT_VALID', [this.$refs['input-port'].label])
+          error = this.$t('VALIDATION.NOT_VALID', [
+            this.$refs['input-port'].label
+          ])
         }
       }
       return error
@@ -134,7 +143,9 @@ export default {
         response.isCustom = true
         await this.$store.dispatch('peer/setCurrentPeer', response)
         await this.$store.dispatch('peer/updateCurrentPeerStatus')
-        this.$success(`${this.$t('PEER.CONNECTED')}: ${this.form.host}:${this.form.port}`)
+        this.$success(
+          `${this.$t('PEER.CONNECTED')}: ${this.form.host}:${this.form.port}`
+        )
         this.emitClose(true)
       }
       this.showLoadingModal = false

@@ -76,11 +76,16 @@ describe('NetworkModule', () => {
 
     it('should load missing custom networks', () => {
       store.commit('network/STORE', networks[0])
-      customNetworks.forEach(network => store.commit('network/ADD_CUSTOM_NETWORK', network))
+      customNetworks.forEach(network =>
+        store.commit('network/ADD_CUSTOM_NETWORK', network)
+      )
       expect(store.getters['network/all']).toEqual([networks[0]])
       store.dispatch('network/load')
 
-      expect(store.getters['network/all']).toEqual([networks[0], ...customNetworks])
+      expect(store.getters['network/all']).toEqual([
+        networks[0],
+        ...customNetworks
+      ])
     })
   })
 })

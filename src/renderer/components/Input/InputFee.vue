@@ -42,7 +42,7 @@
       class="w-full m-0 py-2 z-10"
       name="fee"
       @input="onSlider($event.target.value)"
-    >
+    />
     <p class="InputFee__choices absolute z-30">
       <button
         v-for="choice in Object.keys(feeChoices)"
@@ -56,10 +56,7 @@
       </button>
     </p>
 
-    <div
-      v-if="isStaticFee && !isAdvancedFee"
-      class="mt-6 mb-4"
-    >
+    <div v-if="isStaticFee && !isAdvancedFee" class="mt-6 mb-4">
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
     </div>
   </div>
@@ -138,15 +135,21 @@ export default {
       }
     },
     rangePercentage () {
-      const percent = (this.fee - this.feeChoiceMin) / (this.feeChoiceMax - this.feeChoiceMin) * 100
-      return percent > 100 ? 100 : (percent < 0 ? 0 : percent)
+      const percent =
+        ((this.fee - this.feeChoiceMin) /
+          (this.feeChoiceMax - this.feeChoiceMin)) *
+        100
+      return percent > 100 ? 100 : percent < 0 ? 0 : percent
     },
     notValidError () {
       return this.$t('INPUT_FEE.ERROR.NOT_VALID')
     },
     maxV1fee () {
       const defaultMaxV1Fee = V1.fees[this.transactionType]
-      return (this.$store.getters['transaction/staticFee'](this.transactionType) || defaultMaxV1Fee) * 1e-8
+      return (
+        (this.$store.getters['transaction/staticFee'](this.transactionType) ||
+          defaultMaxV1Fee) * 1e-8
+      )
     },
     isStaticFee () {
       if (this.feeChoices.MAXIMUM === this.feeChoices.AVERAGE) {
@@ -169,7 +172,9 @@ export default {
       }
 
       const { feeStatistics } = this.feeNetwork
-      const transactionStatistics = feeStatistics.find(feeConfig => feeConfig.type === this.transactionType)
+      const transactionStatistics = feeStatistics.find(
+        feeConfig => feeConfig.type === this.transactionType
+      )
       if (transactionStatistics) {
         return transactionStatistics.fees
       }
@@ -183,7 +188,9 @@ export default {
       return this.feeChoices.MINIMUM
     },
     feeChoiceMax () {
-      return this.isAdvancedFee ? this.feeChoices.MAXIMUM * 10 : this.feeChoices.MAXIMUM
+      return this.isAdvancedFee
+        ? this.feeChoices.MAXIMUM * 10
+        : this.feeChoices.MAXIMUM
     },
     feeChoices () {
       let { avgFee, maxFee } = this.feeStatistics
@@ -202,13 +209,19 @@ export default {
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM
-      const fee = this.currency_format(min, { currency: this.currency, currencyDisplay: 'code' })
+      const fee = this.currency_format(min, {
+        currency: this.currency,
+        currencyDisplay: 'code'
+      })
       return this.$t('INPUT_FEE.ERROR.LESS_THAN_MINIMUM', { fee })
     },
     maximumError () {
       if (!this.isAdvancedFee) {
         const max = this.feeChoices.MAXIMUM
-        const fee = this.currency_format(max, { currency: this.currency, currencyDisplay: 'code' })
+        const fee = this.currency_format(max, {
+          currency: this.currency,
+          currencyDisplay: 'code'
+        })
         return this.$t('INPUT_FEE.ERROR.MORE_THAN_MAXIMUM', { fee })
       }
       return null
@@ -218,9 +231,13 @@ export default {
         return null
       }
 
-      const funds = parseFloat(this.currency_subToUnit(this.currentWallet.balance))
+      const funds = parseFloat(
+        this.currency_subToUnit(this.currentWallet.balance)
+      )
       if (funds < parseFloat(this.fee)) {
-        const balance = this.formatter_networkCurrency(this.currentWallet.balance)
+        const balance = this.formatter_networkCurrency(
+          this.currentWallet.balance
+        )
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
       return null
@@ -327,11 +344,11 @@ export default {
 
 <style>
 .InputFee .InputField__input {
-  border-bottom-width: 0px !important
+  border-bottom-width: 0px !important;
 }
 .InputFee .InputCurrency input {
   /* This width is necessary to display error messages in 1 line */
-  width: 15rem
+  width: 15rem;
 }
 .InputFee .InputField__helper {
   margin-top: 1.2rem;
@@ -344,7 +361,7 @@ export default {
   --height: 3rem;
   --bg-colour: var(--theme-modal);
   --total-height: calc(var(--margin-top) + var(--height));
-  --range-handler-height: 1.0rem;
+  --range-handler-height: 1rem;
   --range-handler-border: 0.35rem;
   --range-track-hidden-height: 0.6rem;
   --range-track-height: 0.4rem;
@@ -363,7 +380,11 @@ export default {
 }
 .InputFee__gradient {
   left: 0;
-  background: linear-gradient(115deg, var(--theme-fee-gradient-start) 5%, var(--theme-fee-gradient-end));
+  background: linear-gradient(
+    115deg,
+    var(--theme-fee-gradient-start) 5%,
+    var(--theme-fee-gradient-end)
+  );
 }
 .InputFee__hidden-gradient {
   right: 0;
@@ -378,21 +399,21 @@ export default {
   box-shadow: 0 2px 8px var(--theme-fee-range-shadow);
 }
 
-input[type=range] {
+input[type='range'] {
   /* Hides the slider so that custom slider can be made */
   -webkit-appearance: none;
   margin-top: calc(var(--range-handler-height));
   background: transparent;
   cursor: pointer;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track {
   /* This height increases the area that can be clicked and dragged, although only the border is visible */
   height: var(--range-track-hidden-height);
   background-color: var(--bg-colour);
   margin-bottom: calc((var(--total-height) - var(--gradient-height)) * -1);
   border-top: var(--theme-fee-range-track) solid var(--range-track-border);
 }
-input[type=range]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: calc(var(--range-handler-height) / -2);
   bottom: 0px;
@@ -420,12 +441,12 @@ input[type=range]::-webkit-slider-thumb {
   margin-left: 0.3rem;
   margin-right: 0.2rem;
   transition: opacity 0.3s;
-  @apply .text-theme-page-text-light
+  @apply .text-theme-page-text-light;
 }
 .InputFee__choice:hover {
   opacity: 0.5;
 }
 .InputFee__choice--active {
-  @apply .rounded .bg-theme-button-special-choice .text-white .p-1
+  @apply .rounded .bg-theme-button-special-choice .text-white .p-1;
 }
 </style>

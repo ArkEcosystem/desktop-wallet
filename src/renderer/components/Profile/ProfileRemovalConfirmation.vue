@@ -12,16 +12,13 @@
         :title="profile.name"
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ProfileRemovalConfirmation__container__arrow"
-      >
-      <ProfileAvatar
-        :profile="profile"
-        letter-size="3xl"
       />
+      <ProfileAvatar :profile="profile" letter-size="3xl" />
       <img
         :title="profile.name"
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ProfileRemovalConfirmation__container__arrow ProfileRemovalConfirmation__container__arrow--reverse"
-      >
+      />
     </div>
   </ModalConfirmation>
 </template>
@@ -59,7 +56,9 @@ export default {
         removeCurrentProfile()
         this.$router.push({ name: 'profile-new' })
       } else {
-        const nextProfile = profiles.find(profile => profile.id !== this.profile.id)
+        const nextProfile = profiles.find(
+          profile => profile.id !== this.profile.id
+        )
         this.$store.dispatch('session/setProfileId', nextProfile.id)
         removeCurrentProfile()
       }
@@ -79,13 +78,13 @@ export default {
 <style>
 .ProfileRemovalConfirmation .ModalConfirmation__container {
   min-width: calc(var(--profile-avatar-xl) + 74px * 2);
-  max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 50px)
+  max-width: calc(var(--profile-avatar-xl) + 74px * 2 + 50px);
 }
 .ProfileRemovalConfirmation .ModalConfirmation__container > div:first-child {
-  @apply .mb-0
+  @apply .mb-0;
 }
 .ProfileRemovalConfirmation .ProfileAvatar {
-  @apply .flex .flex-col .justify-around
+  @apply .flex .flex-col .justify-around;
 }
 .ProfileRemovalConfirmation .ProfileAvatar__image {
   height: calc(var(--profile-avatar-xl) * 0.66);
@@ -94,9 +93,9 @@ export default {
 .ProfileRemovalConfirmation__container__arrow {
   width: 74px;
   height: 75px;
-  margin-top: calc(var(--profile-avatar-xl) - 75px + 2rem)
+  margin-top: calc(var(--profile-avatar-xl) - 75px + 2rem);
 }
 .ProfileRemovalConfirmation__container__arrow--reverse {
-  transform: scaleX(-1)
+  transform: scaleX(-1);
 }
 </style>

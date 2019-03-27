@@ -17,10 +17,12 @@
         class="AppSidemenu__logo bg-red hover:opacity-85 flex justify-center items-center"
         @click.native="redirect('dashboard')"
       >
-        <img src="@/assets/images/ark-logo.png">
+        <img src="@/assets/images/ark-logo.png" />
       </RouterLink>
 
-      <div class="AppSidemenu__container__scrollable flex-1 overflow-y-auto flexify justify-between bg-theme-feature">
+      <div
+        class="AppSidemenu__container__scrollable flex-1 overflow-y-auto flexify justify-between bg-theme-feature"
+      >
         <div class="flexify">
           <!-- Wallets -->
           <MenuNavigationItem
@@ -105,17 +107,18 @@
             :class="isHorizontal ? 'ml-2 mr-4 py-3' : 'mt-2 mb-4 px-3'"
             class="AppSidemenu__avatar__container relative cursor-pointer flex items-center justify-center hover:opacity-50"
           >
-            <RouterLink
-              :to="{ name: 'profiles' }"
-              class="AppSidemenu__avatar"
-            >
+            <RouterLink :to="{ name: 'profiles' }" class="AppSidemenu__avatar">
               <ProfileAvatar
                 :profile="session_profile"
                 :class="{
                   'h-12 w-12': session_profile.avatar && isHorizontal,
                   'h-18 w-18': session_profile.avatar && !isHorizontal
                 }"
-                :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
+                :title="
+                  $t('APP_SIDEMENU.CURRENT_PROFILE', {
+                    profileName: session_profile.name
+                  })
+                "
                 letter-size="xl"
               >
                 <SvgIcon
@@ -177,7 +180,10 @@ export default {
       unreadAnnouncements: 'announcements/unread'
     }),
     hasNewRelease () {
-      return semver.lt(releaseService.currentVersion, this.latestReleaseVersion || releaseService.currentVersion)
+      return semver.lt(
+        releaseService.currentVersion,
+        this.latestReleaseVersion || releaseService.currentVersion
+      )
     },
     showUnread () {
       return this.unreadAnnouncements.length > 0
@@ -219,18 +225,32 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.AppSidemenu__container__scrollable .flexify { @apply flex-none }
-.AppSidemenu__logo { transition: opacity 0.5s; }
+.AppSidemenu__container__scrollable .flexify {
+  @apply flex-none;
+}
+.AppSidemenu__logo {
+  transition: opacity 0.5s;
+}
 
 .AppSidemenu__avatar__container {
   transition: opacity 0.5s;
 }
 
-.AppSidemenu--horizontal .AppSidemenu__item { @apply w-16 }
-.AppSidemenu--horizontal .AppSidemenu__logo { @apply p-4 }
-.AppSidemenu--horizontal .AppSidemenu__logo img { @apply h-12 }
-.AppSidemenu--horizontal .flexify { @apply flex flex-row }
-.AppSidemenu--horizontal { @apply h-18; }
+.AppSidemenu--horizontal .AppSidemenu__item {
+  @apply w-16;
+}
+.AppSidemenu--horizontal .AppSidemenu__logo {
+  @apply p-4;
+}
+.AppSidemenu--horizontal .AppSidemenu__logo img {
+  @apply h-12;
+}
+.AppSidemenu--horizontal .flexify {
+  @apply flex flex-row;
+}
+.AppSidemenu--horizontal {
+  @apply h-18;
+}
 .AppSidemenu--horizontal .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature;
   right: 0.1rem;
@@ -239,12 +259,24 @@ export default {
   height: 1.5rem;
 }
 
-.AppSidemenu--vertical .AppSidemenu__container__scrollable { @apply rounded-lg py-2 }
-.AppSidemenu--vertical .AppSidemenu__item { @apply h-16 }
-.AppSidemenu--vertical .AppSidemenu__logo { @apply rounded-lg mb-3 p-5 }
-.AppSidemenu--vertical .AppSidemenu__logo img { @apply w-18 }
-.AppSidemenu--vertical .flexify { @apply flex flex-col }
-.AppSidemenu--vertical { @apply w-22 mx-6 rounded-lg }
+.AppSidemenu--vertical .AppSidemenu__container__scrollable {
+  @apply rounded-lg py-2;
+}
+.AppSidemenu--vertical .AppSidemenu__item {
+  @apply h-16;
+}
+.AppSidemenu--vertical .AppSidemenu__logo {
+  @apply rounded-lg mb-3 p-5;
+}
+.AppSidemenu--vertical .AppSidemenu__logo img {
+  @apply w-18;
+}
+.AppSidemenu--vertical .flexify {
+  @apply flex flex-col;
+}
+.AppSidemenu--vertical {
+  @apply w-22 mx-6 rounded-lg;
+}
 .AppSidemenu--vertical .AppSidemenu__avatar__dots {
   @apply absolute p-2 rounded-full bg-theme-feature shadow;
   right: 1rem;

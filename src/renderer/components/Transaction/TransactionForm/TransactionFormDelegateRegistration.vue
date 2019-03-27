@@ -5,7 +5,11 @@
   >
     <template v-if="!currentWallet.isDelegate">
       <div class="mb-5">
-        {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
+        {{
+          $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', {
+            address: currentWallet.address
+          })
+        }}
       </div>
 
       <InputText
@@ -26,10 +30,7 @@
         @input="onFee"
       />
 
-      <div
-        v-if="currentWallet.isLedger"
-        class="mt-10"
-      >
+      <div v-if="currentWallet.isLedger" class="mt-10">
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
       <InputPassword
@@ -167,16 +168,29 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildDelegateRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        transaction = await this.$client.buildDelegateRegistration(
+          transactionData,
+          this.$refs.fee && this.$refs.fee.isAdvancedFee
+        )
       } else {
         success = false
         this.showLedgerLoader = true
         try {
-          const transactionObject = await this.$client.buildDelegateRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          const transactionObject = await this.$client.buildDelegateRegistration(
+            transactionData,
+            this.$refs.fee && this.$refs.fee.isAdvancedFee,
+            true
+          )
+          transaction = await TransactionService.ledgerSign(
+            this.currentWallet,
+            transactionObject,
+            this
+          )
           success = true
         } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
+          this.$error(
+            `${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`
+          )
         }
         this.showLedgerLoader = false
       }

@@ -24,7 +24,7 @@ export default {
     extraItems: {
       type: Array,
       required: false,
-      default: () => ([])
+      default: () => []
     },
     categories: {
       type: Array,
@@ -40,9 +40,7 @@ export default {
 
   computed: {
     modalHeaderText () {
-      return this.enableModal
-        ? this.$t('SELECTION_AVATAR.MODAL_HEADER')
-        : null
+      return this.enableModal ? this.$t('SELECTION_AVATAR.MODAL_HEADER') : null
     },
 
     availableAvatars () {
@@ -63,7 +61,7 @@ export default {
   background-size: contain;
 }
 
- .SelectionAvatar .InputGridModal__container {
+.SelectionAvatar .InputGridModal__container {
   width: calc((var(--profile-avatar-xl)) * 3 + 2 * 15px) !important;
 }
 .SelectionAvatar .InputGridModal .InputGrid__container__category__items {
@@ -72,13 +70,19 @@ export default {
   grid-gap: 10px;
 }
 
-.SelectionAvatar .InputGridModal .InputGrid__container__category__items .InputGridItem {
+.SelectionAvatar
+  .InputGridModal
+  .InputGrid__container__category__items
+  .InputGridItem {
   height: var(--profile-avatar-xl);
   width: var(--profile-avatar-xl);
   background-size: contain;
 }
 
-.SelectionAvatar .InputGridModal .InputGrid__container__category__items .InputGridItem__check {
+.SelectionAvatar
+  .InputGridModal
+  .InputGrid__container__category__items
+  .InputGridItem__check {
   right: 1.6rem;
 }
 </style>

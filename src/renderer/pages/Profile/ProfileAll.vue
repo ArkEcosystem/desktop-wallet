@@ -1,6 +1,8 @@
 <template>
   <div class="ProfileAll relative bg-theme-feature rounded-lg m-r-4 p-10">
-    <h3>{{ $t('PAGES.PROFILE_ALL.HEADER') }} ({{ totalBalances.join(', ') }})</h3>
+    <h3>
+      {{ $t('PAGES.PROFILE_ALL.HEADER') }} ({{ totalBalances.join(', ') }})
+    </h3>
 
     <div class="ProfileAll__grid mt-10">
       <RouterLink
@@ -8,11 +10,15 @@
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
         <div
-          :style="`backgroundImage: url('${assets_loadImage(addProfileImagePath)}')`"
+          :style="
+            `backgroundImage: url('${assets_loadImage(addProfileImagePath)}')`
+          "
           :title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
           class="profile-avatar-xl background-image flex"
         />
-        <div class="ProfileAll__grid__profile__name font-semibold flex items-center">
+        <div
+          class="ProfileAll__grid__profile__name font-semibold flex items-center"
+        >
           {{ $t('PAGES.PROFILE_ALL.ADD_PROFILE') }}
         </div>
       </RouterLink>
@@ -21,7 +27,8 @@
         v-for="profile in profiles"
         :key="profile.id"
         :class="{
-          'ProfileAll__grid__profile--selected': profile.id === session_profile.id
+          'ProfileAll__grid__profile--selected':
+            profile.id === session_profile.id
         }"
         class="ProfileAll__grid__profile flex flex-row w-full"
       >
@@ -33,7 +40,9 @@
 
         <div class="flex flex-col justify-between">
           <div class="pl-1">
-            <div class="ProfileAll__grid__profile__name font-semibold flex text-lg">
+            <div
+              class="ProfileAll__grid__profile__name font-semibold flex text-lg"
+            >
               {{ profile.name | truncate(12) }}
             </div>
 
@@ -42,7 +51,10 @@
             </span>
 
             <RouterLink
-              :to="{ name: 'profile-edition', params: { profileId: profile.id } }"
+              :to="{
+                name: 'profile-edition',
+                params: { profileId: profile.id }
+              }"
               class="ProfileAll__grid__profile__edition-link font-semibold flex text-xs mt-2 mb-1"
             >
               {{ $t('PAGES.PROFILE_ALL.EDIT_PROFILE') }}
@@ -124,7 +136,10 @@ export default {
       ]
 
       return mapValues(walletsByNetwork, wallets => {
-        return uniqBy(wallets, 'address').reduce((total, wallet) => total + wallet.balance, 0)
+        return uniqBy(wallets, 'address').reduce(
+          (total, wallet) => total + wallet.balance,
+          0
+        )
       })
     },
     /**
@@ -136,8 +151,14 @@ export default {
       const balances = []
       for (const networkId in this.aggregatedBalances) {
         const network = this.$store.getters['network/byId'](networkId)
-        const amount = this.currency_subToUnit(this.aggregatedBalances[networkId], network)
-        const formatted = this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })
+        const amount = this.currency_subToUnit(
+          this.aggregatedBalances[networkId],
+          network
+        )
+        const formatted = this.currency_format(amount, {
+          currency: network.symbol,
+          maximumFractionDigits: network.fractionDigits
+        })
         balances.push({
           formatted,
           amount: Number(amount)
@@ -169,10 +190,15 @@ export default {
     },
 
     profileBalance (profile) {
-      const balance = this.$store.getters['profile/balanceWithLedger'](profile.id)
+      const balance = this.$store.getters['profile/balanceWithLedger'](
+        profile.id
+      )
       const network = this.$store.getters['network/byId'](profile.networkId)
       const amount = this.currency_subToUnit(balance, network)
-      return this.currency_format(amount, { currency: network.symbol, maximumFractionDigits: network.fractionDigits })
+      return this.currency_format(amount, {
+        currency: network.symbol,
+        maximumFractionDigits: network.fractionDigits
+      })
     },
 
     selectProfile (profileId) {
@@ -205,7 +231,7 @@ export default {
 }
 
 .ProfileAll .ProfileAvatar {
-  @apply .flex
+  @apply .flex;
 }
 .ProfileAll .ProfileAvatar,
 .ProfileAll .ProfileAvatar__image {
@@ -216,5 +242,6 @@ export default {
   @apply .flex .self-center .cursor-pointer;
 }
 .ProfileAll .ProfileAvatar__letter {
-  @apply .mx-auto .self-center .cursor-pointer
-} </style>
+  @apply .mx-auto .self-center .cursor-pointer;
+}
+</style>

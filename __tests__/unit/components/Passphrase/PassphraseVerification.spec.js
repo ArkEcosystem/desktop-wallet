@@ -10,7 +10,8 @@ const i18n = useI18nGlobally()
 Vue.use(Vuelidate)
 
 describe('PassphraseVerification', () => {
-  const passphrase = 'one two three four five six seven eight nine ten eleven twelve'
+  const passphrase =
+    'one two three four five six seven eight nine ten eleven twelve'
   const wordArray = passphrase.split(' ')
   const words = wordArray.reduce((acc, word, index) => {
     acc[(index + 1).toString()] = word
@@ -83,7 +84,6 @@ describe('PassphraseVerification', () => {
         wordPositions: [3, 2, 1]
       })
       suggested = wrapper.vm.suggestedPerPosition
-
       ;[3, 2, 1].forEach(position => {
         expect(suggested).toBeInstanceOf(Object)
         expect(suggested[position.toString()]).toBeArray()
@@ -134,14 +134,22 @@ describe('PassphraseVerification', () => {
 
       it('should include several passphrase words and additional suggestions', () => {
         ;[3, 6, 9].forEach(position => {
-          expect(suggested[position.toString()]).toIncludeAnyMembers(additionalSuggestions)
+          expect(suggested[position.toString()]).toIncludeAnyMembers(
+            additionalSuggestions
+          )
           expect(suggested[position.toString()]).toIncludeAnyMembers(wordArray)
         })
       })
     })
 
     describe('when there are less `additionalSuggestions` than `suggestionPerWord`', () => {
-      const additionalSuggestions = ['word A', 'word B', 'word C', 'word D', 'word E']
+      const additionalSuggestions = [
+        'word A',
+        'word B',
+        'word C',
+        'word D',
+        'word E'
+      ]
       let suggested
 
       beforeEach(() => {
@@ -164,9 +172,14 @@ describe('PassphraseVerification', () => {
       it('should include the passphrase word with the additional suggestions only', () => {
         ;[3, 6, 9].forEach(position => {
           const passphraseWord = words[position.toString()]
-          const withoutPassphraseWord = pull(suggested[position.toString()], passphraseWord)
+          const withoutPassphraseWord = pull(
+            suggested[position.toString()],
+            passphraseWord
+          )
 
-          expect(suggested[position.toString()]).toIncludeAnyMembers(additionalSuggestions)
+          expect(suggested[position.toString()]).toIncludeAnyMembers(
+            additionalSuggestions
+          )
           expect(withoutPassphraseWord).not.toIncludeAnyMembers(wordArray)
         })
       })
@@ -245,7 +258,9 @@ describe('PassphraseVerification', () => {
         })
         wrapper.vm.toNextWord()
 
-        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition)
+        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(
+          subsequentPosition
+        )
 
         subsequentPosition = '2'
         wrapper.setProps({
@@ -264,7 +279,9 @@ describe('PassphraseVerification', () => {
         })
         wrapper.vm.toNextWord()
 
-        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(subsequentPosition)
+        expect(wrapper.vm.showSuggestions).toHaveBeenCalledWith(
+          subsequentPosition
+        )
       })
     })
   })

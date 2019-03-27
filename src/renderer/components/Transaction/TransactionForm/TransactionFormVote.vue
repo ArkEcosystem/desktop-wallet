@@ -1,16 +1,9 @@
 <template>
-  <div
-    class="TransactionFormVote"
-  >
-    <Collapse
-      :is-open="!isPassphraseStep"
-    >
+  <div class="TransactionFormVote">
+    <Collapse :is-open="!isPassphraseStep">
       <ListDivided>
         <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
-          <WalletAddress
-            :address="delegate.address"
-            @click="emitCancel"
-          />
+          <WalletAddress :address="delegate.address" @click="emitCancel" />
         </ListDividedItem>
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
@@ -49,7 +42,9 @@
         class="blue-button mt-5"
         @click="toggleStep"
       >
-        {{ isVoter ? $t('WALLET_DELEGATES.UNVOTE') : $t('WALLET_DELEGATES.VOTE') }}
+        {{
+          isVoter ? $t('WALLET_DELEGATES.UNVOTE') : $t('WALLET_DELEGATES.VOTE')
+        }}
       </button>
 
       <div
@@ -59,10 +54,7 @@
         <span class="text-theme-button-text font-bold">
           {{ $t('WALLET_DELEGATES.VOTE_INFO') }}
         </span>
-        <i18n
-          tag="span"
-          path="WALLET_DELEGATES.CURRENTLY_VOTED"
-        >
+        <i18n tag="span" path="WALLET_DELEGATES.CURRENTLY_VOTED">
           <strong place="delegate">
             {{ votedDelegate.username }}
           </strong>
@@ -70,9 +62,7 @@
       </div>
     </Collapse>
 
-    <Collapse
-      :is-open="isPassphraseStep"
-    >
+    <Collapse :is-open="isPassphraseStep">
       <div class="mt-12">
         <InputFee
           v-if="walletNetwork.apiVersion === 2"
@@ -84,10 +74,7 @@
         />
       </div>
 
-      <div
-        v-if="currentWallet.isLedger"
-        class="mt-10"
-      >
+      <div v-if="currentWallet.isLedger" class="mt-10">
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
       <InputPassword
@@ -213,7 +200,10 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
+      if (
+        this.currentWallet.isContact ||
+        (!!this.votedDelegate && !this.isVoter)
+      ) {
         return false
       }
 
@@ -264,11 +254,14 @@ export default {
 
     async fetchForged () {
       const forged = await this.$client.fetchDelegateForged(this.delegate)
-      this.forged = this.currency_format(this.currency_subToUnit(forged), { currencyFrom: 'network' })
+      this.forged = this.currency_format(this.currency_subToUnit(forged), {
+        currencyFrom: 'network'
+      })
     },
 
     async fetchVoters () {
-      this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
+      this.voters =
+        (await this.$client.fetchDelegateVoters(this.delegate)) || '0'
     },
 
     onFee (fee) {
@@ -284,9 +277,7 @@ export default {
       const { publicKey } = this.delegate
       const prefix = this.isVoter ? '-' : '+'
 
-      const votes = [
-        `${prefix}${publicKey}`
-      ]
+      const votes = [`${prefix}${publicKey}`]
       const transactionData = {
         passphrase: this.form.passphrase,
         votes,
@@ -301,16 +292,29 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        transaction = await this.$client.buildVote(
+          transactionData,
+          this.$refs.fee && this.$refs.fee.isAdvancedFee
+        )
       } else {
         success = false
         this.showLedgerLoader = true
         try {
-          const transactionObject = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          const transactionObject = await this.$client.buildVote(
+            transactionData,
+            this.$refs.fee && this.$refs.fee.isAdvancedFee,
+            true
+          )
+          transaction = await TransactionService.ledgerSign(
+            this.currentWallet,
+            transactionObject,
+            this
+          )
           success = true
         } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
+          this.$error(
+            `${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`
+          )
         }
         this.showLedgerLoader = false
       }
@@ -405,6 +409,6 @@ export default {
 }
 
 .TransactionFormVote /deep/ .Collapse__handler {
-  display: none
+  display: none;
 }
 </style>

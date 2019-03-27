@@ -9,7 +9,6 @@ const { spawn } = require('child_process')
 const webpack = require('webpack')
 const Multispinner = require('multispinner')
 
-
 const mainConfig = require('./webpack.main.config')
 const rendererConfig = require('./webpack.renderer.config')
 const webConfig = require('./webpack.web.config')
@@ -45,29 +44,35 @@ function build () {
   m.on('success', () => {
     process.stdout.write('\x1B[2J\x1B[0f')
     console.log(`\n\n${results}`)
-    console.log(`${okayLog}take it away ${chalk.yellow('`electron-builder`')}\n`)
+    console.log(
+      `${okayLog}take it away ${chalk.yellow('`electron-builder`')}\n`
+    )
     process.exit()
   })
 
-  pack(mainConfig).then(result => {
-    results += result + '\n\n'
-    m.success('main')
-  }).catch(err => {
-    m.error('main')
-    console.log(`\n  ${errorLog}failed to build main process`)
-    console.error(`\n${err}\n`)
-    process.exit(1)
-  })
+  pack(mainConfig)
+    .then(result => {
+      results += result + '\n\n'
+      m.success('main')
+    })
+    .catch(err => {
+      m.error('main')
+      console.log(`\n  ${errorLog}failed to build main process`)
+      console.error(`\n${err}\n`)
+      process.exit(1)
+    })
 
-  pack(rendererConfig).then(result => {
-    results += result + '\n\n'
-    m.success('renderer')
-  }).catch(err => {
-    m.error('renderer')
-    console.log(`\n  ${errorLog}failed to build renderer process`)
-    console.error(`\n${err}\n`)
-    process.exit(1)
-  })
+  pack(rendererConfig)
+    .then(result => {
+      results += result + '\n\n'
+      m.success('renderer')
+    })
+    .catch(err => {
+      m.error('renderer')
+      console.log(`\n  ${errorLog}failed to build renderer process`)
+      console.error(`\n${err}\n`)
+      process.exit(1)
+    })
 }
 
 function pack (config) {
@@ -78,21 +83,24 @@ function pack (config) {
       else if (stats.hasErrors()) {
         let err = ''
 
-        stats.toString({
-          chunks: false,
-          colors: true
-        })
-        .split(/\r?\n/)
-        .forEach(line => {
-          err += `    ${line}\n`
-        })
+        stats
+          .toString({
+            chunks: false,
+            colors: true
+          })
+          .split(/\r?\n/)
+          .forEach(line => {
+            err += `    ${line}\n`
+          })
 
         reject(err)
       } else {
-        resolve(stats.toString({
-          chunks: false,
-          colors: true
-        }))
+        resolve(
+          stats.toString({
+            chunks: false,
+            colors: true
+          })
+        )
       }
     })
   })
@@ -104,10 +112,12 @@ function web () {
   webpack(webConfig, (err, stats) => {
     if (err || stats.hasErrors()) console.log(err)
 
-    console.log(stats.toString({
-      chunks: false,
-      colors: true
-    }))
+    console.log(
+      stats.toString({
+        chunks: false,
+        colors: true
+      })
+    )
 
     process.exit()
   })

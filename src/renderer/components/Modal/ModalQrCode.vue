@@ -1,7 +1,5 @@
 <template>
-  <ModalWindow
-    @close="emitClose"
-  >
+  <ModalWindow @close="emitClose">
     <section class="flex flex-col items-center">
       <h2 class="mb-1">
         {{ $t('MODAL_QR_CODE.TITLE') }}

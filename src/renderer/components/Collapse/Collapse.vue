@@ -5,11 +5,7 @@
       class="Collapse__handler"
       @click="clickHandler"
     >
-      <slot
-        :isOpen="inputIsOpen"
-        :isDisabled="isDisabled"
-        name="handler"
-      />
+      <slot :isOpen="inputIsOpen" :isDisabled="isDisabled" name="handler" />
     </button>
 
     <KeepAlive>
@@ -21,11 +17,7 @@
         @afterEnter="afterEnter"
         @leave="leave"
       >
-        <div
-          v-show="inputIsOpen"
-          :style="{ height }"
-          class="Collapse__content"
-        >
+        <div v-show="inputIsOpen" :style="{ height }" class="Collapse__content">
           <slot />
         </div>
       </Transition>
@@ -137,7 +129,7 @@ export default {
 .Collapse__content,
 .Collapse__handler > * {
   transition-property: height, color, font-size;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 

@@ -1,5 +1,3 @@
 import DashboardTransactions from './DashboardTransactions'
 
-export {
-  DashboardTransactions
-}
+export { DashboardTransactions }

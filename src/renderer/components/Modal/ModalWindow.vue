@@ -1,9 +1,6 @@
 <template>
   <Portal :to="portalTarget">
-    <div
-      class="modal-backdrop"
-      @click="emitClose"
-    >
+    <div class="modal-backdrop" @click="emitClose">
       <Transition name="ModalWindow">
         <div class="flex items-center justify-center absolute pin">
           <div
@@ -21,9 +18,7 @@
             </div>
 
             <section class="px-16 py-16">
-              <header
-                v-if="$slots.header || title"
-              >
+              <header v-if="$slots.header || title">
                 <slot name="header">
                   <h2>{{ title }}</h2>
                 </slot>
@@ -122,6 +117,6 @@ export default {
 
 <style>
 .ModalWindow__container__footer--warning {
-  @apply .px-10 .py-8 .bg-yellow-lighter .text-grey-darkest
+  @apply .px-10 .py-8 .bg-yellow-lighter .text-grey-darkest;
 }
 </style>

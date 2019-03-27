@@ -3,10 +3,14 @@
     :wallet="wallet"
     :is-contact="true"
     :is-new-contact="isNewContact"
-    :title="isNewContact ? $t('CONTACT_RENAME.TITLE_ADD') : $t('CONTACT_RENAME.TITLE')"
+    :title="
+      isNewContact ? $t('CONTACT_RENAME.TITLE_ADD') : $t('CONTACT_RENAME.TITLE')
+    "
     :address-info="$t('CONTACT_RENAME.ADDRESS_INFO')"
     :label="$t('CONTACT_RENAME.NEW')"
-    :button-text="isNewContact ? $t('CONTACT_RENAME.ADD') : $t('CONTACT_RENAME.RENAME')"
+    :button-text="
+      isNewContact ? $t('CONTACT_RENAME.ADD') : $t('CONTACT_RENAME.RENAME')
+    "
     @cancel="emitCancel"
     @renamed="emitRenamed"
     @created="emitCreated"

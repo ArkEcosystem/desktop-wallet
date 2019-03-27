@@ -11,7 +11,7 @@
         :title="contact.name"
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ContactRemovalConfirmation__container__arrow"
-      >
+      />
       <WalletIdenticon
         :value="contact.address"
         :size="150"
@@ -21,7 +21,7 @@
         :title="contact.name"
         :src="assets_loadImage('arrows/arrow-confirmation.svg')"
         class="ContactRemovalConfirmation__container__arrow ContactRemovalConfirmation__container__arrow--reverse"
-      >
+      />
     </div>
   </ModalConfirmation>
 </template>
@@ -65,14 +65,14 @@ export default {
 <style>
 .ContactRemovalConfirmation .ModalConfirmation__container {
   min-width: calc(var(--contact-identicon-xl) + 74px * 2);
-  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px)
+  max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px);
 }
 .ContactRemovalConfirmation__container__arrow {
   width: 74px;
   height: 75px;
-  margin-top: calc(var(--contact-identicon-xl) - 75px + 2rem)
+  margin-top: calc(var(--contact-identicon-xl) - 75px + 2rem);
 }
 .ContactRemovalConfirmation__container__arrow--reverse {
-  transform: scaleX(-1)
+  transform: scaleX(-1);
 }
 </style>

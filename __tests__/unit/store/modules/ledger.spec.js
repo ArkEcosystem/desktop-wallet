@@ -20,7 +20,8 @@ ClientService.version = 2
 
 let ledgerNameByAddress = () => null
 let ledgerCache = false
-const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+const nethash =
+  '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 let store = new Vuex.Store({
   modules: {
     ledger: LedgerModule,
@@ -60,10 +61,7 @@ let store = new Vuex.Store({
 
 let spyConnect
 const disconnectLedger = async () => {
-  spyConnect = jest.spyOn(
-    ledgerService,
-    'connect'
-  ).mockImplementation(() => {
+  spyConnect = jest.spyOn(ledgerService, 'connect').mockImplementation(() => {
     return false
   })
   await store.dispatch('ledger/disconnect')
@@ -96,53 +94,70 @@ describe('ledger store module', () => {
     it('should return address and publicKey', async () => {
       expect(await store.dispatch('ledger/getWallet', 1)).toEqual({
         address: 'DLWeBuwSBFYtUFj8kFB8CFswfvN2ht3yKn',
-        publicKey: '0278a28d0eac9916ef46613d9dbac706acc218e64864d4b4c1fcb0c759b6205b2b'
+        publicKey:
+          '0278a28d0eac9916ef46613d9dbac706acc218e64864d4b4c1fcb0c759b6205b2b'
       })
     })
 
     it('should fail with invalid accountIndex', async () => {
-      await expect(store.dispatch('ledger/getWallet')).rejects.toThrow(/.*accountIndex must be a Number$/)
+      await expect(store.dispatch('ledger/getWallet')).rejects.toThrow(
+        /.*accountIndex must be a Number$/
+      )
     })
 
     it('should fail when not connected', async () => {
       await disconnectLedger()
-      await expect(store.dispatch('ledger/getWallet', 1)).rejects.toThrow(/.*Ledger not connected$/)
+      await expect(store.dispatch('ledger/getWallet', 1)).rejects.toThrow(
+        /.*Ledger not connected$/
+      )
     })
   })
 
   describe('getAddress', () => {
     it('should fail with invalid accountIndex', async () => {
-      await expect(store.dispatch('ledger/getAddress')).rejects.toThrow(/.*accountIndex must be a Number$/)
+      await expect(store.dispatch('ledger/getAddress')).rejects.toThrow(
+        /.*accountIndex must be a Number$/
+      )
     })
 
     it('should fail when not connected', async () => {
       await disconnectLedger()
-      await expect(store.dispatch('ledger/getAddress', 1)).rejects.toThrow(/.*Ledger not connected$/)
+      await expect(store.dispatch('ledger/getAddress', 1)).rejects.toThrow(
+        /.*Ledger not connected$/
+      )
     })
   })
 
   describe('getPublicKey', () => {
     it('should fail with invalid accountIndex', async () => {
-      await expect(store.dispatch('ledger/getPublicKey')).rejects.toThrow(/.*accountIndex must be a Number$/)
+      await expect(store.dispatch('ledger/getPublicKey')).rejects.toThrow(
+        /.*accountIndex must be a Number$/
+      )
     })
 
     it('should fail when not connected', async () => {
       await disconnectLedger()
-      await expect(store.dispatch('ledger/getPublicKey', 1)).rejects.toThrow(/.*Ledger not connected$/)
+      await expect(store.dispatch('ledger/getPublicKey', 1)).rejects.toThrow(
+        /.*Ledger not connected$/
+      )
     })
   })
 
   describe('signTransaction', () => {
     it('should fail with invalid accountIndex', async () => {
-      await expect(store.dispatch('ledger/signTransaction')).rejects.toThrow(/.*accountIndex must be a Number$/)
+      await expect(store.dispatch('ledger/signTransaction')).rejects.toThrow(
+        /.*accountIndex must be a Number$/
+      )
     })
 
     it('should fail when not connected', async () => {
       await disconnectLedger()
-      await expect(store.dispatch('ledger/signTransaction', {
-        accountIndex: 1,
-        transactionHex: 'abc'
-      })).rejects.toThrow(/.*Ledger not connected$/)
+      await expect(
+        store.dispatch('ledger/signTransaction', {
+          accountIndex: 1,
+          transactionHex: 'abc'
+        })
+      ).rejects.toThrow(/.*Ledger not connected$/)
     })
   })
 
@@ -158,22 +173,23 @@ describe('ledger store module', () => {
       if (spyCryptoGetAddress) {
         spyCryptoGetAddress.mockRestore()
       }
-      spyGetWallet = jest.spyOn(
-        ledgerService,
-        'getWallet'
-      ).mockImplementation((path) => {
-        const matches = path.match(/^44'+\/.+'\/([0-9]+)'\/0\/0/)
+      spyGetWallet = jest
+        .spyOn(ledgerService, 'getWallet')
+        .mockImplementation(path => {
+          const matches = path.match(/^44'+\/.+'\/([0-9]+)'\/0\/0/)
 
-        return testWallets[matches[1]]
-      })
-      spyCryptoGetAddress = jest.spyOn(
-        crypto,
-        'getAddress'
-      ).mockImplementation((publicKey) => {
-        return testWallets.find(wallet => wallet.publicKey === publicKey).address
-      })
+          return testWallets[matches[1]]
+        })
+      spyCryptoGetAddress = jest
+        .spyOn(crypto, 'getAddress')
+        .mockImplementation(publicKey => {
+          return testWallets.find(wallet => wallet.publicKey === publicKey)
+            .address
+        })
 
-      ledgerWallets = testWallets.slice(0, 10).map(wallet => ({ ...wallet, balance: 10 }))
+      ledgerWallets = testWallets
+        .slice(0, 10)
+        .map(wallet => ({ ...wallet, balance: 10 }))
       expectedWallets = {}
       for (const walletId in ledgerWallets) {
         const wallet = ledgerWallets[walletId]
@@ -224,20 +240,20 @@ describe('ledger store module', () => {
     })
 
     it('should load 10 wallets', async () => {
-      axiosMock
-        .onGet(new RegExp(`http://127.0.0.1/api/wallets/*`))
-        .reply(404, {
-          statusCode: 404,
-          error: 'Not Found',
-          message: 'Wallet not found'
-        })
+      axiosMock.onGet(new RegExp(`http://127.0.0.1/api/wallets/*`)).reply(404, {
+        statusCode: 404,
+        error: 'Not Found',
+        message: 'Wallet not found'
+      })
 
       expect(store.getters['ledger/isConnected']).toBeTruthy()
-      expect(await store.dispatch('ledger/reloadWallets', {
-        clearFirst: false,
-        forceLoad: false,
-        quantity: 10
-      })).not.toEqual({})
+      expect(
+        await store.dispatch('ledger/reloadWallets', {
+          clearFirst: false,
+          forceLoad: false,
+          quantity: 10
+        })
+      ).not.toEqual({})
       expect(store.getters['ledger/wallets'].length).toEqual(10)
     })
 
@@ -254,47 +270,47 @@ describe('ledger store module', () => {
           })
       }
 
-      axiosMock
-        .onGet(`http://127.0.0.1/api/wallets/address 10`)
-        .reply(404, {
-          statusCode: 404,
-          error: 'Not Found',
-          message: 'Wallet not found'
-        })
+      axiosMock.onGet(`http://127.0.0.1/api/wallets/address 10`).reply(404, {
+        statusCode: 404,
+        error: 'Not Found',
+        message: 'Wallet not found'
+      })
 
       await store.dispatch('ledger/connect')
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual(
+        expectedWallets
+      )
     })
 
     it('should load all wallets with multi-wallet search', async () => {
       ClientService.capabilities = '2.1.0'
 
-      axiosMock
-        .onPost(`http://127.0.0.1/api/wallets/search`)
-        .reply(200, {
-          data: ledgerWallets.slice(0, 9)
-        })
+      axiosMock.onPost(`http://127.0.0.1/api/wallets/search`).reply(200, {
+        data: ledgerWallets.slice(0, 9)
+      })
 
       await store.dispatch('ledger/connect')
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual(
+        expectedWallets
+      )
     })
 
     it('should use ledger name', async () => {
       ClientService.capabilities = '2.1.0'
-      ledgerNameByAddress = (address) => address
+      ledgerNameByAddress = address => address
 
-      axiosMock
-        .onPost(`http://127.0.0.1/api/wallets/search`)
-        .reply(200, {
-          data: ledgerWallets.slice(0, 9)
-        })
+      axiosMock.onPost(`http://127.0.0.1/api/wallets/search`).reply(200, {
+        data: ledgerWallets.slice(0, 9)
+      })
 
       for (const walletId in expectedWallets) {
         expectedWallets[walletId].name = expectedWallets[walletId].address
       }
 
       await store.dispatch('ledger/connect')
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual(
+        expectedWallets
+      )
     })
 
     xit('should stop if profile changes', () => {
@@ -307,14 +323,19 @@ describe('ledger store module', () => {
       store.commit('ledger/SET_WALLETS', {
         A1: { address: 'A1', balance: 0 }
       })
-      await store.dispatch('ledger/updateWallet', { address: 'A1', balance: 10 })
+      await store.dispatch('ledger/updateWallet', {
+        address: 'A1',
+        balance: 10
+      })
       expect(store.getters['ledger/wallets']).toEqual([
         { address: 'A1', balance: 10 }
       ])
     })
 
     it('should throw an error if wallet does not exist', async () => {
-      expect(store.dispatch('ledger/updateWallet', { address: 'nope' })).rejects.toThrow(/.*not found in ledger wallets$/)
+      expect(
+        store.dispatch('ledger/updateWallet', { address: 'nope' })
+      ).rejects.toThrow(/.*not found in ledger wallets$/)
     })
   })
 
@@ -325,7 +346,9 @@ describe('ledger store module', () => {
         A1: { address: 'A1', balance: 0 }
       })
       await store.dispatch('ledger/cacheWallets')
-      expect(store.getters['ledger/cachedWallets']('A1')).toEqual([{ address: 'A1', balance: 0 }])
+      expect(store.getters['ledger/cachedWallets']('A1')).toEqual([
+        { address: 'A1', balance: 0 }
+      ])
     })
 
     it('should not cache if disabled in session', async () => {
@@ -361,7 +384,10 @@ describe('ledger store module', () => {
 
     it('should not remove existing wallets in the state', async () => {
       expect(store.getters['ledger/wallets']).toBeArrayOfSize(0)
-      const wallets = { A1: { address: 'A1', balance: 0 }, A2: { address: 'A2', balance: 1 } }
+      const wallets = {
+        A1: { address: 'A1', balance: 0 },
+        A2: { address: 'A2', balance: 1 }
+      }
       await store.dispatch('ledger/updateWallets', wallets)
       expect(store.getters['ledger/wallet']('A2').balance).toBe(1)
 

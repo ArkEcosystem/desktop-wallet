@@ -1,10 +1,9 @@
 <template>
   <div class="mx-4 overflow-hidden">
-    <div class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator">
-      <WalletIdenticon
-        :value="currentWallet.address"
-        :size="75"
-      />
+    <div
+      class="flex flex-row pb-5 border-b border-dashed border-theme-line-separator"
+    >
+      <WalletIdenticon :value="currentWallet.address" :size="75" />
 
       <div class="flex flex-col justify-center pl-4">
         <span class="font-bold">
@@ -52,7 +51,9 @@
     >
       <div class="flex flex-col">
         <div class="flex items-start">
-          <div class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text">
+          <div
+            class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text"
+          >
             {{ $t('SIGN_VERIFY.MESSAGE') }}:
           </div>
           <div class="font-semibold w-full word-break-all">
@@ -60,7 +61,9 @@
           </div>
         </div>
         <div class="flex items-start">
-          <div class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text">
+          <div
+            class="font-semibold w-30 flex-shrink-none pl-2 text-theme-wallet-sign-verify-message-text"
+          >
             {{ $t('SIGN_VERIFY.SIGNATURE') }}:
           </div>
           <div class="w-full word-break-all">
@@ -70,7 +73,7 @@
       </div>
 
       <div
-        :class="{ 'invisible' : showTimestamp !== message.timestamp }"
+        :class="{ invisible: showTimestamp !== message.timestamp }"
         class="w-48 flex items-center ml-4"
       >
         <ButtonClipboard
@@ -78,14 +81,11 @@
           class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
         />
         <button
-          v-tooltip="{ content: $t('SIGN_VERIFY.DELETE'), trigger:'hover' }"
+          v-tooltip="{ content: $t('SIGN_VERIFY.DELETE'), trigger: 'hover' }"
           class="text-theme-button-light-text py-2 px-4 rounded bg-theme-button-light mr-2"
           @click="deleteMessage(message)"
         >
-          <SvgIcon
-            name="delete-wallet"
-            view-box="0 0 13 13"
-          />
+          <SvgIcon name="delete-wallet" view-box="0 0 13 13" />
         </button>
       </div>
     </div>
@@ -110,8 +110,7 @@ export default {
     WalletVerifyModal
   },
 
-  props: {
-  },
+  props: {},
 
   data: () => ({
     signedMessages: [],
@@ -139,7 +138,7 @@ export default {
 
   methods: {
     truncate (value, length) {
-      if (value.length > (length + 3)) {
+      if (value.length > length + 3) {
         return `${value.slice(0, length)}...`
       }
       return value
@@ -161,7 +160,9 @@ export default {
       if (setWalletId) {
         this.activeWalletId = this.currentWallet.id
       }
-      this.signedMessages = this.$store.getters['wallet/signedMessages'](this.currentWallet.address)
+      this.signedMessages = this.$store.getters['wallet/signedMessages'](
+        this.currentWallet.address
+      )
     },
 
     onSigned (toggle) {
@@ -174,6 +175,6 @@ export default {
 
 <style>
 .WalletSignVerify__message:hover {
-  @apply bg-theme-table-row-hover
+  @apply bg-theme-table-row-hover;
 }
 </style>

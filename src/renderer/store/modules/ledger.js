@@ -23,7 +23,7 @@ export default {
     isConnected: state => state.isConnected,
     wallets: state => Object.values(state.wallets),
     walletsObject: state => state.wallets,
-    wallet: state => (address) => {
+    wallet: state => address => {
       if (!state.wallets[address]) {
         return null
       }
@@ -89,9 +89,7 @@ export default {
       }
 
       if (!state.walletCache[profileId]) {
-        state.walletCache[profileId] = [
-          wallets
-        ]
+        state.walletCache[profileId] = [wallets]
 
         return
       }
@@ -138,7 +136,7 @@ export default {
      * @return {Boolean} true if connected, false if failed
      */
     async connect ({ commit, dispatch }) {
-      if (!await ledgerService.connect()) {
+      if (!(await ledgerService.connect())) {
         return false
       }
 
@@ -167,8 +165,11 @@ export default {
      * @param  {Number} [obj.delay=2000] Delay in between connection attempts.
      * @return {void}
      */
-    async ensureConnection ({ commit, state, dispatch }, { delay } = { delay: 2000 }) {
-      if (state.isConnected && !await dispatch('checkConnected')) {
+    async ensureConnection (
+      { commit, state, dispatch },
+      { delay } = { delay: 2000 }
+    ) {
+      if (state.isConnected && !(await dispatch('checkConnected'))) {
         await dispatch('disconnect')
         delay = 2000
       }
@@ -215,7 +216,11 @@ export default {
      */
     async reloadWallets (
       { commit, dispatch, getters, rootGetters },
-      { clearFirst, forceLoad, quantity } = { clearFirst: false, forceLoad: false, quantity: null }
+      { clearFirst, forceLoad, quantity } = {
+        clearFirst: false,
+        forceLoad: false,
+        quantity: null
+      }
     ) {
       if (!getters['isConnected']) {
         return {}
@@ -241,7 +246,10 @@ export default {
       }
       commit('SET_LOADING', processId)
       const firstWallet = await dispatch('getWallet', 0)
-      const cachedWallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
+      const cachedWallets = keyBy(
+        getters['cachedWallets'](firstWallet.address),
+        'address'
+      )
       let wallets = {}
       let startIndex = 0
       if (!quantity && Object.keys(cachedWallets).length) {
@@ -279,13 +287,19 @@ export default {
 
           let walletData = []
           if (batchIncrement > 1) {
-            walletData = await this._vm.$client.fetchWallets(ledgerWallets.map(wallet => wallet.address))
+            walletData = await this._vm.$client.fetchWallets(
+              ledgerWallets.map(wallet => wallet.address)
+            )
           } else {
             try {
-              walletData = [await this._vm.$client.fetchWallet(ledgerWallets[0].address)]
+              walletData = [
+                await this._vm.$client.fetchWallet(ledgerWallets[0].address)
+              ]
             } catch (error) {
               logger.error(error)
-              const message = error.response ? error.response.data.message : error.message
+              const message = error.response
+                ? error.response.data.message
+                : error.message
               if (message !== 'Wallet not found') {
                 throw error
               }
@@ -295,9 +309,15 @@ export default {
           let hasCold = false
           const filteredWallets = []
           for (const ledgerWallet of ledgerWallets) {
-            const wallet = walletData.find(wallet => wallet.address === ledgerWallet.address)
+            const wallet = walletData.find(
+              wallet => wallet.address === ledgerWallet.address
+            )
             if (!wallet || (wallet.balance === 0 && !wallet.publicKey)) {
-              filteredWallets.push({ ...ledgerWallet, balance: 0, isCold: true })
+              filteredWallets.push({
+                ...ledgerWallet,
+                balance: 0,
+                isCold: true
+              })
               hasCold = true
 
               if (!quantity) {
@@ -311,7 +331,9 @@ export default {
           }
 
           for (const wallet of filteredWallets) {
-            const ledgerName = rootGetters['wallet/ledgerNameByAddress'](wallet.address)
+            const ledgerName = rootGetters['wallet/ledgerNameByAddress'](
+              wallet.address
+            )
             wallets[wallet.address] = Object.assign(wallet, {
               isLedger: true,
               isSendingEnabled: true,
@@ -322,7 +344,10 @@ export default {
             })
           }
 
-          if ((hasCold && !quantity) || (quantity && Object.keys(wallets).length >= quantity)) {
+          if (
+            (hasCold && !quantity) ||
+            (quantity && Object.keys(wallets).length >= quantity)
+          ) {
             break
           }
         }
@@ -347,7 +372,10 @@ export default {
     /**
      * Store ledger wallets in the cache.
      */
-    async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
+    async updateWallet (
+      { commit, dispatch, getters, rootGetters },
+      updatedWallet
+    ) {
       commit('SET_WALLET', updatedWallet)
       eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
       dispatch('cacheWallets')
@@ -356,7 +384,10 @@ export default {
     /**
      * Store several Ledger wallets at once and cache them.
      */
-    async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
+    async updateWallets (
+      { commit, dispatch, getters, rootGetters },
+      walletsToUpdate
+    ) {
       commit('SET_WALLETS', {
         ...getters['walletsObject'],
         ...walletsToUpdate
@@ -446,7 +477,10 @@ export default {
      * @param  {Number} obj.accountIndex Index of wallet to sign transaction for.
      * @return {(String|Boolean)}
      */
-    async signTransaction ({ dispatch }, { transactionHex, accountIndex } = {}) {
+    async signTransaction (
+      { dispatch },
+      { transactionHex, accountIndex } = {}
+    ) {
       try {
         return await dispatch('action', {
           action: 'signTransaction',
@@ -467,7 +501,10 @@ export default {
      * @param  {*}      obj.data         Data used for any actions that need it.
      * @return {String}
      */
-    async action ({ state, dispatch, rootGetters }, { action, accountIndex, data } = {}) {
+    async action (
+      { state, dispatch, rootGetters },
+      { action, accountIndex, data } = {}
+    ) {
       if (accountIndex === undefined || !Number.isFinite(accountIndex)) {
         throw new Error('accountIndex must be a Number')
       }

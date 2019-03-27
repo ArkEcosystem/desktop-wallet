@@ -20,10 +20,7 @@
       }"
       class="MenuStepItem__header capitalize py-2 flex-no-shrink"
     >
-      <slot
-        :title="title"
-        name="header"
-      >
+      <slot :title="title" name="header">
         {{ title }}
       </slot>
     </header>

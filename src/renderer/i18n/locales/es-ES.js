@@ -1,5 +1,4 @@
 export default {
-
   COMMON: {
     DONE: 'Hecho'
   },
@@ -36,7 +35,8 @@ export default {
       STEP1: {
         INSTRUCTIONS: {
           HEADER: 'Crear perfil',
-          TEXT: 'Introduce tu nombre o nick y selecciona tu idioma y moneda por defecto.'
+          TEXT:
+            'Introduce tu nombre o nick y selecciona tu idioma y moneda por defecto.'
         },
         NAME: 'Nombre del perfil'
       },
@@ -49,10 +49,10 @@ export default {
       STEP3: {
         INSTRUCTIONS: {
           HEADER: 'Apariencia',
-          TEXT: 'Personaliza esta aplicación seleccionando uno de nuestro temas y fondos.'
+          TEXT:
+            'Personaliza esta aplicación seleccionando uno de nuestro temas y fondos.'
         }
       }
     }
   }
-
 }

@@ -5,7 +5,9 @@
     portal-target="qr-scan"
     @close="emitClose"
   >
-    <section class="QrCode__container overflow-hidden flex flex-col justify-center items-center">
+    <section
+      class="QrCode__container overflow-hidden flex flex-col justify-center items-center"
+    >
       <div
         v-if="isLoading"
         class="flex flex-col items-center justify-center my-auto"
@@ -17,10 +19,7 @@
         </span>
       </div>
 
-      <div
-        v-show="!isLoading && !errorMessage"
-        class="relative"
-      >
+      <div v-show="!isLoading && !errorMessage" class="relative">
         <QrcodeStream
           :camera="getCameraConstraints"
           :track="false"
@@ -52,10 +51,7 @@
         </span>
       </div>
 
-      <span
-        v-if="errorMessage"
-        class="my-auto"
-      >
+      <span v-if="errorMessage" class="my-auto">
         {{ errorMessage }}
       </span>
     </section>

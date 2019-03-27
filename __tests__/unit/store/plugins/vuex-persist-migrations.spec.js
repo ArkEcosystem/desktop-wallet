@@ -19,29 +19,50 @@ describe('Migrations plugin', () => {
 
     describe('when the version is between the `fromVersion` (not included) and `untilVersion` (included)', () => {
       it('should return `true`', () => {
-        plugin = new MigrationsPlugin({ fromVersion: '1.9.9', untilVersion: '2.0.0' })
+        plugin = new MigrationsPlugin({
+          fromVersion: '1.9.9',
+          untilVersion: '2.0.0'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeTrue()
 
-        plugin = new MigrationsPlugin({ fromVersion: '1.0.0', untilVersion: '3.0.0' })
+        plugin = new MigrationsPlugin({
+          fromVersion: '1.0.0',
+          untilVersion: '3.0.0'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeTrue()
 
-        plugin = new MigrationsPlugin({ fromVersion: () => '1.0.0', untilVersion: () => '3.0.0' })
+        plugin = new MigrationsPlugin({
+          fromVersion: () => '1.0.0',
+          untilVersion: () => '3.0.0'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeTrue()
       })
     })
 
     describe('when the version is not between the `fromVersion` (not included) and `untilVersion` (included)', () => {
       it('should return `true`', () => {
-        plugin = new MigrationsPlugin({ fromVersion: '2.0.0', untilVersion: '2.0.0' })
+        plugin = new MigrationsPlugin({
+          fromVersion: '2.0.0',
+          untilVersion: '2.0.0'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeFalse()
 
-        plugin = new MigrationsPlugin({ fromVersion: '2.0.0', untilVersion: '2.0.1' })
+        plugin = new MigrationsPlugin({
+          fromVersion: '2.0.0',
+          untilVersion: '2.0.1'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeFalse()
 
-        plugin = new MigrationsPlugin({ fromVersion: '1.0.1', untilVersion: '1.9.3' })
+        plugin = new MigrationsPlugin({
+          fromVersion: '1.0.1',
+          untilVersion: '1.9.3'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeFalse()
 
-        plugin = new MigrationsPlugin({ fromVersion: () => '1.0.0', untilVersion: () => '1.0.0' })
+        plugin = new MigrationsPlugin({
+          fromVersion: () => '1.0.0',
+          untilVersion: () => '1.0.0'
+        })
         expect(plugin.checkVersion('2.0.0')).toBeFalse()
       })
     })
@@ -50,11 +71,13 @@ describe('Migrations plugin', () => {
   describe('apply', () => {
     it('should call the migration handler', () => {
       plugin.store = 'store'
-      plugin.migrations = [{
-        version: '1.8.4',
-        title: 'example',
-        handler: jest.fn()
-      }]
+      plugin.migrations = [
+        {
+          version: '1.8.4',
+          title: 'example',
+          handler: jest.fn()
+        }
+      ]
 
       plugin.apply()
 

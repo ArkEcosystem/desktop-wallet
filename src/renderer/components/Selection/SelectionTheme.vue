@@ -1,16 +1,8 @@
 <template>
   <div class="flex flex-no-grow items-center">
-    <SvgIcon
-      name="sun"
-      view-box="0 0 20 20"
-      class="transition text-yellow"
-    />
+    <SvgIcon name="sun" view-box="0 0 20 20" class="transition text-yellow" />
     <div>
-      <ButtonSwitch
-        :is-active="status"
-        class="mx-2"
-        @change="emitInput"
-      />
+      <ButtonSwitch :is-active="status" class="mx-2" @change="emitInput" />
     </div>
     <SvgIcon
       name="moon"

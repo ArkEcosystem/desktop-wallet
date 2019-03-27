@@ -8,11 +8,7 @@
     :is-invalid="isInvalid"
     class="InputPassword"
   >
-    <div
-      slot-scope="{ inputClass }"
-      :class="inputClass"
-      class="flex flex-row"
-    >
+    <div slot-scope="{ inputClass }" :class="inputClass" class="flex flex-row">
       <input
         ref="input"
         v-model="model"
@@ -22,10 +18,12 @@
         class="InputPassword__input flex flex-grow bg-transparent text-theme-page-text"
         @blur="onBlur"
         @focus="onFocus"
-      >
+      />
 
       <button
-        :title="$t(passwordIsVisible ? 'PASSWORD_INPUT.HIDE' : 'PASSWORD_INPUT.SHOW')"
+        :title="
+          $t(passwordIsVisible ? 'PASSWORD_INPUT.HIDE' : 'PASSWORD_INPUT.SHOW')
+        "
         class="InputPassword__visibility-button flex flex-no-shrink text-grey-dark hover:text-blue focus:text-blue mr-2"
         type="button"
         @click="toggleVisible"
@@ -236,13 +234,13 @@ export default {
 
 <style lang="postcss" scoped>
 .InputPassword__input::placeholder {
-  @apply .text-transparent
+  @apply .text-transparent;
 }
 
 .InputField--invalid .InputPassword__qr-button {
-  @apply .text-red-dark
+  @apply .text-red-dark;
 }
 .InputField--invalid .InputPassword__visibility-button {
-  @apply .text-red-dark
+  @apply .text-red-dark;
 }
 </style>

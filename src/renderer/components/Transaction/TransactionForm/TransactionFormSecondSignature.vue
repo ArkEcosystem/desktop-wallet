@@ -1,11 +1,12 @@
 <template>
-  <form
-    class="TransactionFormSecondSignature"
-    @submit.prevent
-  >
+  <form class="TransactionFormSecondSignature" @submit.prevent>
     <template v-if="!currentWallet.secondPublicKey">
       <div class="mb-5">
-        {{ $t('TRANSACTION.FORM.SECOND_SIGNATURE.INSTRUCTIONS', { address: currentWallet.address }) }}
+        {{
+          $t('TRANSACTION.FORM.SECOND_SIGNATURE.INSTRUCTIONS', {
+            address: currentWallet.address
+          })
+        }}
       </div>
 
       <Collapse
@@ -14,18 +15,12 @@
       >
         <PassphraseWords :passphrase-words="passphraseWords" />
 
-        <button
-          type="button"
-          class="blue-button mt-5"
-          @click="toggleStep"
-        >
+        <button type="button" class="blue-button mt-5" @click="toggleStep">
           {{ $t('COMMON.NEXT') }}
         </button>
       </Collapse>
 
-      <Collapse
-        :is-open="isPassphraseStep"
-      >
+      <Collapse :is-open="isPassphraseStep">
         <PassphraseVerification
           ref="passphraseVerification"
           :passphrase="passphraseWords"
@@ -43,10 +38,7 @@
           @input="onFee"
         />
 
-        <div
-          v-if="currentWallet.isLedger"
-          class="mt-10"
-        >
+        <div v-if="currentWallet.isLedger" class="mt-10">
           {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
         </div>
         <InputPassword
@@ -65,11 +57,7 @@
           class="mt-5"
         />
 
-        <button
-          type="button"
-          class="blue-button mt-5 mr-4"
-          @click="toggleStep"
-        >
+        <button type="button" class="blue-button mt-5 mr-4" @click="toggleStep">
           {{ $t('COMMON.BACK') }}
         </button>
 
@@ -93,10 +81,7 @@
         :visible="showLedgerLoader"
       />
 
-      <Portal
-        v-if="!isPassphraseStep"
-        to="transaction-footer"
-      >
+      <Portal v-if="!isPassphraseStep" to="transaction-footer">
         <footer class="ModalWindow__container__footer--warning flex flex-row">
           <div class="flex w-80">
             {{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}
@@ -131,7 +116,11 @@ import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
 import { InputFee, InputPassword } from '@/components/Input'
 import { ModalLoader } from '@/components/Modal'
-import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
+import {
+  PassphraseInput,
+  PassphraseVerification,
+  PassphraseWords
+} from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
 import onSubmit from './mixin-on-submit'
@@ -198,7 +187,9 @@ export default {
   },
 
   created () {
-    this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)
+    this.secondPassphrase = WalletService.generateSecondPassphrase(
+      this.session_profile.bip39Language
+    )
   },
 
   mounted () {
@@ -219,7 +210,9 @@ export default {
       this.reset()
       this.isGenerating = true
       setTimeout(() => {
-        this.secondPassphrase = WalletService.generateSecondPassphrase(this.session_profile.bip39Language)
+        this.secondPassphrase = WalletService.generateSecondPassphrase(
+          this.session_profile.bip39Language
+        )
         this.isGenerating = false
       }, 300)
     },
@@ -244,16 +237,29 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildSecondSignatureRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        transaction = await this.$client.buildSecondSignatureRegistration(
+          transactionData,
+          this.$refs.fee && this.$refs.fee.isAdvancedFee
+        )
       } else {
         success = false
         this.showLedgerLoader = true
         try {
-          const transactionObject = await this.$client.buildSecondSignatureRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
+          const transactionObject = await this.$client.buildSecondSignatureRegistration(
+            transactionData,
+            this.$refs.fee && this.$refs.fee.isAdvancedFee,
+            true
+          )
+          transaction = await TransactionService.ledgerSign(
+            this.currentWallet,
+            transactionObject,
+            this
+          )
           success = true
         } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
+          this.$error(
+            `${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`
+          )
         }
         this.showLedgerLoader = false
       }
@@ -341,6 +347,6 @@ export default {
 }
 
 .TransactionFormSecondSignature /deep/ .Collapse__handler {
-  display: none
+  display: none;
 }
 </style>

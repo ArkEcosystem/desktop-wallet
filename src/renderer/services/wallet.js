@@ -7,7 +7,7 @@ export default class WalletService {
   /*
    * Normalizes the passphrase by decomposing any characters (if applicable)
    * This is mainly used for the korean language where characters are combined while the passphrase was based on the decomposed consonants
-  */
+   */
   static normalizePassphrase (passphrase) {
     return passphrase.normalize('NFD')
   }
@@ -19,8 +19,13 @@ export default class WalletService {
    * @return {Object}
    */
   static generate (pubKeyHash, language) {
-    const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language])
-    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
+    const passphrase = bip39.generateMnemonic(
+      null,
+      null,
+      bip39.wordlists[language]
+    )
+    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase))
+      .publicKey
     return {
       address: crypto.getAddress(publicKey, pubKeyHash),
       passphrase
@@ -41,7 +46,8 @@ export default class WalletService {
    * @return {String}
    */
   static getAddress (passphrase, pubKeyHash) {
-    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
+    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase))
+      .publicKey
     return crypto.getAddress(publicKey, pubKeyHash)
   }
 
@@ -68,7 +74,8 @@ export default class WalletService {
       return false
     }
 
-    const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
+    const neoUrl =
+      'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
     const response = await axios.get(neoUrl + address)
     return response.status === 200 && response.data && response.data.length > 0
   }
@@ -121,7 +128,8 @@ export default class WalletService {
    * @return {Boolean}
    */
   static validatePassphrase (passphrase, pubKeyHash) {
-    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
+    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase))
+      .publicKey
     return crypto.validatePublicKey(publicKey, pubKeyHash)
   }
 
@@ -132,7 +140,10 @@ export default class WalletService {
    * @return {Boolean}
    */
   static isBip39Passphrase (passphrase, language) {
-    return bip39.validateMnemonic(this.normalizePassphrase(passphrase), bip39.wordlists[language])
+    return bip39.validateMnemonic(
+      this.normalizePassphrase(passphrase),
+      bip39.wordlists[language]
+    )
   }
 
   /**
@@ -154,6 +165,9 @@ export default class WalletService {
    * @return {Boolean}
    */
   static verifyPassphrase (address, passphrase, pubKeyHash) {
-    return address === WalletService.getAddress(this.normalizePassphrase(passphrase), pubKeyHash)
+    return (
+      address ===
+      WalletService.getAddress(this.normalizePassphrase(passphrase), pubKeyHash)
+    )
   }
 }

@@ -1,4 +1,6 @@
-const schemaRegex = new RegExp(/^(?:ark:)([AaDd]{1}[0-9a-zA-Z]{33})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
+const schemaRegex = new RegExp(
+  /^(?:ark:)([AaDd]{1}[0-9a-zA-Z]{33})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/
+)
 
 export default class URIHandler {
   constructor (url) {
@@ -32,7 +34,9 @@ export default class URIHandler {
     scheme.address = schema[1]
     scheme.amount = scheme.amount ? Number(scheme.amount) : null
     scheme.label = scheme.label ? this.__fullyDecode(scheme.label) : null
-    scheme.vendorField = scheme.vendorField ? this.__fullyDecode(scheme.vendorField) : null
+    scheme.vendorField = scheme.vendorField
+      ? this.__fullyDecode(scheme.vendorField)
+      : null
 
     return scheme
   }
@@ -51,7 +55,7 @@ export default class URIHandler {
    * @returns {String}
    */
   __fullyDecode (param) {
-    const isEncoded = (str) => str !== decodeURIComponent(str)
+    const isEncoded = str => str !== decodeURIComponent(str)
 
     while (isEncoded(param)) param = decodeURIComponent(param)
 

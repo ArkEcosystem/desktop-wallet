@@ -1,9 +1,6 @@
 <template>
   <div class="WalletTransactions">
-    <div
-      v-if="newTransactionsNotice"
-      class="bg-theme-feature flex flex-row"
-    >
+    <div v-if="newTransactionsNotice" class="bg-theme-feature flex flex-row">
       <div
         class="mb-2 py-4 px-6 rounded-l text-theme-voting-banner-text bg-theme-voting-banner-background w-full text-center"
       >
@@ -74,7 +71,7 @@ export default {
   watch: {
     // This watcher would invoke the `fetch` after the `Synchronizer`
     wallet_fromRoute (newValue, oldValue) {
-      const currentTimestamp = Math.round((new Date()).getTime() / 1000)
+      const currentTimestamp = Math.round(new Date().getTime() / 1000)
       if (newValue.address !== oldValue.address) {
         this.lastStatusRefresh = null
         this.newTransactionsNotice = null
@@ -110,7 +107,10 @@ export default {
       }
 
       this.disableNewTransactionEvent(address)
-      this.$eventBus.on(`wallet:${address}:transaction:new`, this.refreshStatusEvent)
+      this.$eventBus.on(
+        `wallet:${address}:transaction:new`,
+        this.refreshStatusEvent
+      )
     },
 
     disableNewTransactionEvent (address) {
@@ -119,7 +119,10 @@ export default {
       }
 
       try {
-        this.$eventBus.off(`wallet:${address}:transaction:new`, this.refreshStatusEvent)
+        this.$eventBus.off(
+          `wallet:${address}:transaction:new`,
+          this.refreshStatusEvent
+        )
       } catch (error) {
         //
       }
@@ -130,7 +133,9 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
+      return this.$store.getters['transaction/byAddress'](address, {
+        includeExpired: true
+      })
     },
 
     async getTransactions (address) {
@@ -168,9 +173,15 @@ export default {
           profileId: this.session_profile.id
         })
 
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        const transactions = mergeTableTransactions(
+          response.transactions,
+          this.getStoredTransactions(address)
+        )
 
-        if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
+        if (
+          this.wallet_fromRoute &&
+          address === this.wallet_fromRoute.address
+        ) {
           this.$set(this, 'fetchedTransactions', transactions)
           this.totalCount = response.totalCount
         }
@@ -180,10 +191,12 @@ export default {
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
 
-          this.$error(this.$t('COMMON.FAILED_FETCH', {
-            name: 'transactions',
-            msg: error.message
-          }))
+          this.$error(
+            this.$t('COMMON.FAILED_FETCH', {
+              name: 'transactions',
+              msg: error.message
+            })
+          )
         }
         this.fetchedTransactions = []
       } finally {
@@ -223,7 +236,10 @@ export default {
       try {
         let newTransactions = 0
         const response = await this.getTransactions(address)
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        const transactions = mergeTableTransactions(
+          response.transactions,
+          this.getStoredTransactions(address)
+        )
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {
             if (existingTransaction.id === transaction.id) {
@@ -247,10 +263,13 @@ export default {
         }
 
         if (address === this.wallet_fromRoute.address && newTransactions > 0) {
-          this.newTransactionsNotice = this.$t('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
-            count: newTransactions,
-            plural: newTransactions > 1 ? 's' : ''
-          })
+          this.newTransactionsNotice = this.$t(
+            'WALLET_TRANSACTIONS.NEW_TRANSACTIONS',
+            {
+              count: newTransactions,
+              plural: newTransactions > 1 ? 's' : ''
+            }
+          )
         }
       } catch (error) {
         this.$logger.error('Failed to update confirmations: ', error)

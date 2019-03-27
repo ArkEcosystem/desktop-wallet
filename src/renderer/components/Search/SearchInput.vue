@@ -29,6 +29,6 @@ export default {
 
 <style lang="postcss">
 .SearchInput .InputField__label {
-  left: calc(20px + config('margin.2'))
+  left: calc(20px + config('margin.2'));
 }
 </style>

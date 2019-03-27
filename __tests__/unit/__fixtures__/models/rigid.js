@@ -6,7 +6,7 @@ module.exports = {
     },
     date: {
       type: 'date',
-      format: (data) => new Date(data.timestamp)
+      format: data => new Date(data.timestamp)
     },
     timestamp: {
       type: 'number'

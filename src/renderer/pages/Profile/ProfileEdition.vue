@@ -4,19 +4,33 @@
       <div
         class="ProfileNew__instructions theme-dark bg-theme-feature text-theme-page-instructions-text hidden lg:flex flex-1 mr-4 rounded-lg overflow-y-auto"
       >
-        <div class="m-auto w-3/5 text-center flex flex-col items-center justify-center">
+        <div
+          class="m-auto w-3/5 text-center flex flex-col items-center justify-center"
+        >
           <h1 class="text-inherit">
-            {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`) }}
+            {{
+              $t(
+                `PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`
+              )
+            }}
           </h1>
           <p class="text-center py-2 leading-normal">
-            {{ $t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.TEXT`) }}
+            {{
+              $t(
+                `PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.TEXT`
+              )
+            }}
           </p>
 
           <div class="relative w-full xl:w-4/5 mt-10">
             <img
               :src="assets_loadImage(instructionsImage)"
-              :title="$t(`PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`)"
-            >
+              :title="
+                $t(
+                  `PAGES.PROFILE_EDITION.TAB_${tab.toUpperCase()}.INSTRUCTIONS.HEADER`
+                )
+              "
+            />
             <h2
               v-if="isProfileTab"
               class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block"
@@ -27,7 +41,9 @@
         </div>
       </div>
 
-      <div class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto">
+      <div
+        class="flex-none w-full lg:max-w-sm bg-theme-feature rounded-lg overflow-y-auto"
+      >
         <MenuTab v-model="tab">
           <MenuTabItem
             :label="$t('PAGES.PROFILE_EDITION.TAB_PROFILE.TITLE')"
@@ -43,7 +59,9 @@
                   v-if="isNameEditable"
                   v-model="$v.modified.name.$model"
                   label=""
-                  :is-invalid="$v.modified.name.$dirty && $v.modified.name.$invalid"
+                  :is-invalid="
+                    $v.modified.name.$dirty && $v.modified.name.$invalid
+                  "
                   :helper-text="nameError"
                   class="bg-transparent text-theme-page-text flex-1"
                   name="name"
@@ -54,7 +72,8 @@
                 <div
                   v-else
                   :class="{
-                    'ProfileEdition__field--modified': modified.name && modified.name !== profile.name
+                    'ProfileEdition__field--modified':
+                      modified.name && modified.name !== profile.name
                   }"
                   class="leading-tight border-b border-transparent flex-1"
                 >
@@ -62,14 +81,13 @@
                 </div>
 
                 <button
-                  :disabled="$v.modified.name.$dirty && $v.modified.name.$invalid"
+                  :disabled="
+                    $v.modified.name.$dirty && $v.modified.name.$invalid
+                  "
                   class="ProfileEdition__name__toggle ml-2 cursor-pointer text-grey hover:text-blue focus:text-blue inline-flex"
                   @click="toggleIsNameEditable"
                 >
-                  <SvgIcon
-                    name="edit"
-                    view-box="0 0 11 14"
-                  />
+                  <SvgIcon name="edit" view-box="0 0 11 14" />
                 </button>
               </ListDividedItem>
 
@@ -79,7 +97,9 @@
               >
                 <MenuDropdown
                   :class="{
-                    'ProfileEdition__field--modified': modified.language && modified.language !== profile.language
+                    'ProfileEdition__field--modified':
+                      modified.language &&
+                      modified.language !== profile.language
                   }"
                   :items="languages"
                   :value="language"
@@ -95,16 +115,13 @@
                       :src="flagImage(itemScope.value)"
                       :title="itemScope.item"
                       class="ProfileEdition__language__item__flag mr-2"
-                    >
+                    />
                     <span class="font-semibold">
                       {{ itemScope.item }}
                     </span>
                   </div>
 
-                  <div
-                    slot="handler"
-                    slot-scope="handlerScope"
-                  >
+                  <div slot="handler" slot-scope="handlerScope">
                     <MenuDropdownHandler
                       :value="handlerScope.activeValue"
                       :item="handlerScope.item"
@@ -116,7 +133,7 @@
                         :src="flagImage(handlerScope.value)"
                         :title="handlerScope.item"
                         class="ProfileEdition__language__handler__flag mr-1"
-                      >
+                      />
                       {{ handlerScope.item }}
                     </MenuDropdownHandler>
                   </div>
@@ -126,7 +143,9 @@
               <ListDividedItem :label="$t('COMMON.BIP39_LANGUAGE')">
                 <MenuDropdown
                   :class="{
-                    'ProfileEdition__field--modified': modified.bip39Language && modified.bip39Language !== profile.bip39Language
+                    'ProfileEdition__field--modified':
+                      modified.bip39Language &&
+                      modified.bip39Language !== profile.bip39Language
                   }"
                   :items="bip39Languages"
                   :value="bip39Language"
@@ -138,7 +157,9 @@
               <ListDividedItem :label="$t('COMMON.CURRENCY')">
                 <MenuDropdown
                   :class="{
-                    'ProfileEdition__field--modified': modified.currency && modified.currency !== profile.currency
+                    'ProfileEdition__field--modified':
+                      modified.currency &&
+                      modified.currency !== profile.currency
                   }"
                   :items="currencies"
                   :value="currency"
@@ -150,7 +171,9 @@
               <ListDividedItem :label="$t('COMMON.TIME_FORMAT')">
                 <MenuDropdown
                   :class="{
-                    'ProfileEdition__field--modified': modified.timeFormat && modified.timeFormat !== profile.timeFormat
+                    'ProfileEdition__field--modified':
+                      modified.timeFormat &&
+                      modified.timeFormat !== profile.timeFormat
                   }"
                   :items="timeFormats"
                   :value="timeFormat"
@@ -159,13 +182,12 @@
                 />
               </ListDividedItem>
 
-              <ListDividedItem
-                v-if="!hasWallets"
-                :label="$t('COMMON.NETWORK')"
-              >
+              <ListDividedItem v-if="!hasWallets" :label="$t('COMMON.NETWORK')">
                 <MenuDropdown
                   :class="{
-                    'ProfileEdition__field--modified': modified.networkId && modified.networkId !== profile.networkId
+                    'ProfileEdition__field--modified':
+                      modified.networkId &&
+                      modified.networkId !== profile.networkId
                   }"
                   :items="networks"
                   :value="networkId"
@@ -179,11 +201,13 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: name,
-                    onlyLetter: true
-                  }]"
+                  :extra-items="[
+                    {
+                      title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
+                      textContent: name,
+                      onlyLetter: true
+                    }
+                  ]"
                   :enable-modal="true"
                   :max-visible-items="3"
                   :selected="avatar"
@@ -212,7 +236,9 @@
               <ListDividedItem
                 :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
                 :item-label-class="!isMarketEnabled ? 'opacity-50' : ''"
-                :item-value-class="!isMarketEnabled ? 'opacity-50 cursor-not-allowed' : ''"
+                :item-value-class="
+                  !isMarketEnabled ? 'opacity-50 cursor-not-allowed' : ''
+                "
                 class="ProfileEdition__market-chart"
               >
                 <ButtonSwitch
@@ -226,10 +252,7 @@
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
-                <SelectionTheme
-                  :value="theme"
-                  @input="selectTheme"
-                />
+                <SelectionTheme :value="theme" @input="selectTheme" />
               </ListDividedItem>
 
               <ListDividedItem
@@ -274,9 +297,18 @@ import { BIP39, I18N } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import { MenuDropdown, MenuDropdownHandler, MenuTab, MenuTabItem } from '@/components/Menu'
+import {
+  MenuDropdown,
+  MenuDropdownHandler,
+  MenuTab,
+  MenuTabItem
+} from '@/components/Menu'
 import { ProfileLeavingConfirmation } from '@/components/Profile'
-import { SelectionAvatar, SelectionBackground, SelectionTheme } from '@/components/Selection'
+import {
+  SelectionAvatar,
+  SelectionBackground,
+  SelectionTheme
+} from '@/components/Selection'
 import SvgIcon from '@/components/SvgIcon'
 import Profile from '@/models/profile'
 
@@ -385,7 +417,11 @@ export default {
       return this.modified.language || this.profile.language
     },
     bip39Language () {
-      return this.modified.bip39Language || this.profile.bip39Language || BIP39.defaultLanguage
+      return (
+        this.modified.bip39Language ||
+        this.profile.bip39Language ||
+        BIP39.defaultLanguage
+      )
     },
     name () {
       return this.modified.name || this.profile.name
@@ -398,10 +434,16 @@ export default {
       return this.modified.theme || this.profile.theme
     },
     isMarketChartEnabled () {
-      return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
+      return (
+        this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
+      )
     },
     isMarketEnabled () {
-      return this.session_network && this.session_network.market && this.session_network.market.enabled
+      return (
+        this.session_network &&
+        this.session_network.market &&
+        this.session_network.market.enabled
+      )
     },
     isProfileTab () {
       return this.tab === 'profile'
@@ -415,9 +457,14 @@ export default {
         if (!this.$v.modified.name.doesNotExist) {
           return this.$t('VALIDATION.NAME.DUPLICATED', [this.modified.name])
         } else if (!this.$v.modified.name.maxLength) {
-          return this.$t('VALIDATION.NAME.MAX_LENGTH', [Profile.schema.properties.name.maxLength])
+          return this.$t('VALIDATION.NAME.MAX_LENGTH', [
+            Profile.schema.properties.name.maxLength
+          ])
         } else if (!this.$v.modified.name.minLength) {
-          return this.$tc('VALIDATION.NAME.MIN_LENGTH', Profile.schema.properties.name.minLength)
+          return this.$tc(
+            'VALIDATION.NAME.MIN_LENGTH',
+            Profile.schema.properties.name.minLength
+          )
         }
       }
 
@@ -577,7 +624,7 @@ export default {
   bottom: 3.3rem;
 }
 .ProfileEdition .MenuTab .MenuTab__nav__item {
-  @apply .px-10 .py-6
+  @apply .px-10 .py-6;
 }
 .ProfileEdition .MenuTab__content {
   padding-top: 0;
@@ -585,43 +632,43 @@ export default {
 }
 
 .ProfileEdition__language .MenuDropdown__container {
-  min-width: 200px
+  min-width: 200px;
 }
 .ProfileEdition__language .MenuDropdownItem__container {
-  @apply .mx-2 .px-2
+  @apply .mx-2 .px-2;
 }
 .ProfileEdition__language .MenuDropdownItem__container {
-  @apply .break-normal
+  @apply .break-normal;
 }
 .ProfileEdition__language__item__flag {
-  height: 18px
+  height: 18px;
 }
 .ProfileEdition__language__handler__flag {
-  height: 12px
+  height: 12px;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,
 .ProfileEdition__field--modified .MenuDropdownHandler {
-  @apply .text-blue .font-bold
+  @apply .text-blue .font-bold;
 }
 
 .ProfileEdition__name .ListDividedItem__label {
-  @apply .flex-no-shrink
+  @apply .flex-no-shrink;
 }
 .ProfileEdition__name .ListDividedItem__value {
-  @apply .flex w-full text-right
+  @apply .flex w-full text-right;
 }
 .ProfileEdition__name .ListDividedItem__value .InputText {
-  @apply .w-full .ml-4
+  @apply .w-full .ml-4;
 }
 .ProfileEdition__name__toggle {
-  height: 21px
+  height: 21px;
 }
 .ProfileEdition__name .ListDividedItem__value .InputText .InputField__wrapper {
-  height: 0
+  height: 0;
 }
 .ProfileEdition__avatar .InputGrid__container {
   grid-template-columns: repeat(4, 4rem) !important;
-  grid-gap: 1rem !important
+  grid-gap: 1rem !important;
 }
 </style>

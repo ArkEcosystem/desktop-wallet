@@ -1,12 +1,6 @@
 <template>
-  <ModalWindow
-    :title="$t('SIGN_VERIFY.TITLE_VERIFY')"
-    @close="emitCancel"
-  >
-    <div
-      v-if="!isVerified && !isNotVerified"
-      class="w-80"
-    >
+  <ModalWindow :title="$t('SIGN_VERIFY.TITLE_VERIFY')" @close="emitCancel">
+    <div v-if="!isVerified && !isNotVerified" class="w-80">
       <div class="flex flex-col justify-center">
         <InputToggle
           v-model="verifyChoice"
@@ -67,22 +61,11 @@
         </button>
       </div>
     </div>
-    <div
-      v-else-if="isVerified"
-    >
-      <WalletVerifyDetail
-        :address="getAddress()"
-        :is-verified="true"
-      />
+    <div v-else-if="isVerified">
+      <WalletVerifyDetail :address="getAddress()" :is-verified="true" />
     </div>
-    <div
-      v-else
-      class="flex"
-    >
-      <WalletVerifyDetail
-        :address="getAddress()"
-        :is-verified="false"
-      />
+    <div v-else class="flex">
+      <WalletVerifyDetail :address="getAddress()" :is-verified="false" />
     </div>
     <template
       v-if="!isVerified && !isNotVerified && verifyChoice !== 'Verify'"
@@ -127,10 +110,7 @@ export default {
       signature: '',
       json: ''
     },
-    verifyChoices: [
-      'Verify',
-      'Verify text'
-    ],
+    verifyChoices: ['Verify', 'Verify text'],
     verifyChoice: 'Verify',
     isVerified: false,
     isNotVerified: false
@@ -179,10 +159,18 @@ export default {
       try {
         let verified
         if (this.verifyChoice === 'Verify') {
-          verified = WalletService.verifyMessage(this.form.message, this.form.publicKey, this.form.signature)
+          verified = WalletService.verifyMessage(
+            this.form.message,
+            this.form.publicKey,
+            this.form.signature
+          )
         } else {
           const json = JSON.parse(this.form.json)
-          verified = WalletService.verifyMessage(json['message'], json['publicKey'], json['signature'])
+          verified = WalletService.verifyMessage(
+            json['message'],
+            json['publicKey'],
+            json['signature']
+          )
         }
 
         if (verified) {
@@ -197,9 +185,15 @@ export default {
 
     getAddress () {
       if (this.verifyChoice === 'Verify') {
-        return WalletService.getAddressFromPublicKey(this.form.publicKey, this.session_network.version)
+        return WalletService.getAddressFromPublicKey(
+          this.form.publicKey,
+          this.session_network.version
+        )
       }
-      return WalletService.getAddressFromPublicKey(JSON.parse(this.form.json)['publicKey'], this.session_network.version)
+      return WalletService.getAddressFromPublicKey(
+        JSON.parse(this.form.json)['publicKey'],
+        this.session_network.version
+      )
     },
 
     onChoiceSelect (choice) {
@@ -260,7 +254,11 @@ export default {
           // Check for valid json
           try {
             const json = JSON.parse(value)
-            return !!(json['message'] && (json['publicKey'] || json['publickey']) && json['signature'])
+            return !!(
+              json['message'] &&
+              (json['publicKey'] || json['publickey']) &&
+              json['signature']
+            )
           } catch (err) {
             return false
           }

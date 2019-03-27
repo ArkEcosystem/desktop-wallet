@@ -131,7 +131,9 @@ describe('TransactionModal', () => {
       wrapper.vm.storeTransaction(transaction)
 
       const { id, type, amount, fee, vendorField } = transaction
-      const timestamp = (new Date(wrapper.vm.session_network.constants.epoch)).getTime() + transaction.timestamp * 1000
+      const timestamp =
+        new Date(wrapper.vm.session_network.constants.epoch).getTime() +
+        transaction.timestamp * 1000
 
       const expected = {
         profileId,
@@ -146,7 +148,10 @@ describe('TransactionModal', () => {
         recipient: transaction.recipientId,
         raw: transaction
       }
-      expect($store.dispatch).toHaveBeenCalledWith('transaction/create', expected)
+      expect($store.dispatch).toHaveBeenCalledWith(
+        'transaction/create',
+        expected
+      )
     })
   })
 })

@@ -5,13 +5,13 @@ process.env.BABEL_ENV = 'renderer'
 const path = require('path')
 const { dependencies } = require('../package.json')
 const webpack = require('webpack')
-const glob = require("glob-all")
+const glob = require('glob-all')
 
 const BabiliWebpackPlugin = require('babili-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const PurgecssPlugin = require("purgecss-webpack-plugin")
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
@@ -30,7 +30,9 @@ let rendererConfig = {
     renderer: path.join(__dirname, '../src/renderer/main.js')
   },
   externals: [
-    ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
+    ...Object.keys(dependencies || {}).filter(
+      d => !whiteListedModules.includes(d)
+    )
   ],
   module: {
     rules: [
@@ -47,11 +49,7 @@ let rendererConfig = {
       },
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.html$/,
@@ -68,10 +66,7 @@ let rendererConfig = {
       },
       {
         test: /\.postcss$/,
-        use: [
-          'vue-style-loader',
-          'postcss-loader'
-        ]
+        use: ['vue-style-loader', 'postcss-loader']
       },
       {
         test: /\.vue$/,
@@ -124,7 +119,7 @@ let rendererConfig = {
                 { removeXMLNS: true },
                 { cleanupIDs: true },
                 { removeUnknownsAndDefaults: true },
-                { collapseGroups: true },
+                { collapseGroups: true }
               ]
             }
           }
@@ -138,7 +133,7 @@ let rendererConfig = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({filename: 'styles.css'}),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new SpriteLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -148,9 +143,10 @@ let rendererConfig = {
         removeAttributeQuotes: true,
         removeComments: true
       },
-      nodeModules: process.env.NODE_ENV !== 'production'
-        ? path.resolve(__dirname, '../node_modules')
-        : false
+      nodeModules:
+        process.env.NODE_ENV !== 'production'
+          ? path.resolve(__dirname, '../node_modules')
+          : false
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
@@ -167,7 +163,7 @@ let rendererConfig = {
       '@package.json': path.join(__dirname, '../package.json'),
       '@config': path.join(__dirname, '../config'),
       '@tests': path.join(__dirname, '../__tests__'),
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js'
     },
     extensions: ['.js', '.vue', '.json', '.css', '.node']
   },
@@ -180,7 +176,7 @@ let rendererConfig = {
 if (process.env.NODE_ENV !== 'production') {
   rendererConfig.plugins.push(
     new webpack.DefinePlugin({
-      '__static': `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`
+      __static: `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`
     })
   )
 }
@@ -219,7 +215,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new PurgecssPlugin({
       paths: glob.sync(`${sourcePath}/**/*`, { nodir: true })
-    }),
+    })
   )
 }
 

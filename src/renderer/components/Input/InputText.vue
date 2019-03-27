@@ -19,10 +19,12 @@
       <input
         ref="input"
         v-model="model"
-        :class="[{
-          'InputText__input--read-only': isReadOnly,
-          'InputText__input--large': isLarge
-        }]"
+        :class="[
+          {
+            'InputText__input--read-only': isReadOnly,
+            'InputText__input--large': isLarge
+          }
+        ]"
         :name="name"
         :disabled="isDisabled || isReadOnly"
         :type="type"
@@ -32,7 +34,7 @@
         class="InputText__input flex-1"
         @focus="onFocus"
         @blur="onBlur"
-      >
+      />
       <slot name="right" />
     </div>
   </InputField>
@@ -181,7 +183,10 @@ export default {
           return false
         }
 
-        return WalletService.isBip39Passphrase(value, this.session_profile.bip39Language)
+        return WalletService.isBip39Passphrase(
+          value,
+          this.session_profile.bip39Language
+        )
       }
     }
   }
@@ -190,7 +195,7 @@ export default {
 
 <style lang="postcss" scoped>
 .InputText__input {
-  @apply bg-transparent text-theme-page-text
+  @apply bg-transparent text-theme-page-text;
 }
 
 .InputText__input::placeholder {
@@ -204,7 +209,7 @@ export default {
 }
 
 .InputText__input--large {
-  @apply .text-xl
+  @apply .text-xl;
 }
 
 .InputText__input--read-only {

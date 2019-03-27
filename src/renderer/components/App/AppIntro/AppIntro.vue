@@ -2,9 +2,7 @@
   <div
     class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
   >
-    <div
-      class="flex w-full h-full pin-t pin-l"
-    >
+    <div class="flex w-full h-full pin-t pin-l">
       <AppIntroScreen
         v-if="step === 0"
         :show-back="false"
@@ -14,19 +12,13 @@
         :image="stepImage"
         class="AppIntro__1"
       >
-        <div
-          slot="content"
-          class="w-2/3 font-medium"
-        >
+        <div slot="content" class="w-2/3 font-medium">
           <i18n
             path="INTRODUCTION.WELCOME.TITLE"
             tag="div"
             class="font-bold mb-4"
           >
-            <p
-              place="APP"
-              class="font-black text-3xl"
-            >
+            <p place="APP" class="font-black text-3xl">
               {{ $t('COMMON.APP_NAME_SHORT') }}
             </p>
           </i18n>
@@ -37,9 +29,7 @@
             {{ $t('INTRODUCTION.WELCOME.FUNDS_WARNING') }}
           </p>
 
-          <div
-            class="flex flex-row align-center justify-center mt-8"
-          >
+          <div class="flex flex-row align-center justify-center mt-8">
             <MenuDropdown
               :items="languages"
               :value="language"
@@ -56,16 +46,13 @@
                   :src="flagImage(itemScope.value)"
                   :title="itemScope.item"
                   class="AppIntro__1__languages__item__flag mr-2"
-                >
+                />
                 <span class="font-semibold">
                   {{ itemScope.item }}
                 </span>
               </div>
 
-              <div
-                slot="handler"
-                slot-scope="handlerScope"
-              >
+              <div slot="handler" slot-scope="handlerScope">
                 <MenuDropdownHandler
                   :value="handlerScope.activeValue"
                   :item="handlerScope.item"
@@ -77,7 +64,7 @@
                     :src="flagImage(handlerScope.value)"
                     :title="handlerScope.item"
                     class="AppIntro__1__languages__handler__flag mr-1"
-                  >
+                  />
                   {{ handlerScope.item }}
                 </MenuDropdownHandler>
               </div>
@@ -99,10 +86,7 @@
         @next="moveTo(2)"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content" class="font-medium px-16 pt-16 m4-8">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.POWER.TITLE') }}
           </div>
@@ -128,21 +112,14 @@
         @next="moveTo(3)"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content" class="font-medium px-16 pt-16 m4-8">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.DUTY.TITLE') }}
           </div>
           <p class="mb-5">
             {{ $t('INTRODUCTION.DUTY.CONTROL') }}
           </p>
-          <i18n
-            path="INTRODUCTION.DUTY.WARNING.ACCOUNT"
-            tag="p"
-            class="mb-5"
-          >
+          <i18n path="INTRODUCTION.DUTY.WARNING.ACCOUNT" tag="p" class="mb-5">
             <span
               v-t="'INTRODUCTION.DUTY.WARNING.CANNOT_RESTORE'"
               place="CANNOT_RESTORE"
@@ -162,10 +139,7 @@
         @next="moveTo(4)"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content" class="font-medium px-16 pt-16 m4-8">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
           </div>
@@ -209,10 +183,7 @@
         @next="done"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content" class="font-medium px-16 pt-16 m4-8">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.TURN.TITLE') }}
           </div>
@@ -229,9 +200,7 @@
       </AppIntroScreen>
     </div>
 
-    <AppFooter
-      class="mt-4"
-    />
+    <AppFooter class="mt-4" />
   </div>
 </template>
 
@@ -304,13 +273,13 @@ export default {
   background-color: #c9292c;
 }
 .AppIntro__1__languages {
-  @apply .border-2 .rounded
+  @apply .border-2 .rounded;
 }
 .AppIntro__1__languages .MenuDropdownItem__container {
-  @apply .pl-0
+  @apply .pl-0;
 }
 .AppIntro__1__languages__item__flag {
-  height: 18px
+  height: 18px;
 }
 .AppIntro__1__languages__handler__flag {
   height: 18px;

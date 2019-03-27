@@ -48,7 +48,7 @@ export default {
       const data = await cryptoCompare.fetchMarketData(ticker)
       if (!data) return
 
-      forEach(data, (value) => {
+      forEach(data, value => {
         value.token = ticker
         commit('UPDATE_TICKER', value)
       })

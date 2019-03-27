@@ -33,10 +33,10 @@ export default {
 <style lang="postcss">
 .PassphraseWords .InputText {
   width: calc(config('width.1/4') - config('margin.2'));
-  @apply mr-2
+  @apply mr-2;
 }
 
 .PassphraseWords .InputText__input[disabled] {
-  @apply .bg-transparent
+  @apply .bg-transparent;
 }
 </style>

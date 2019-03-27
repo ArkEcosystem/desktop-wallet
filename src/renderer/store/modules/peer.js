@@ -11,7 +11,7 @@ import Vue from 'vue'
  * @param  {Object} peer
  * @return {void}
  */
-const getApiPort = async (peer) => {
+const getApiPort = async peer => {
   if (peer.port) {
     return
   }
@@ -20,13 +20,17 @@ const getApiPort = async (peer) => {
     try {
       const config = await ClientService.fetchPeerConfig(getBaseUrl(peer, true))
       if (config && config.plugins) {
-        const plugin = Object.entries(config.plugins).find(value => value[0].split('/').reverse()[0] === 'core-api')
+        const plugin = Object.entries(config.plugins).find(
+          value => value[0].split('/').reverse()[0] === 'core-api'
+        )
         if (plugin && plugin[1].enabled) {
           peer.port = plugin[1].port
         }
       }
     } catch (error) {
-      const message = error.response ? error.response.data.message : error.message
+      const message = error.response
+        ? error.response.data.message
+        : error.message
       throw new Error('Could not determine peer API port: ', message)
     }
   }
@@ -38,7 +42,7 @@ const getBaseUrl = (peer, p2pPort = false) => {
   return `${scheme}${peer.ip}:${p2pPort ? peer.p2pPort : peer.port}`
 }
 
-const getApiVersion = (peer) => {
+const getApiVersion = peer => {
   return /^2\./.test(peer.version) ? 2 : 1
 }
 
@@ -56,7 +60,10 @@ export default {
      * @param  {Boolean} [ignoreCurrent=false]
      * @return {Object[]}
      */
-    all: (state, getters, _, rootGetters) => (ignoreCurrent = false, networkId = null) => {
+    all: (state, getters, _, rootGetters) => (
+      ignoreCurrent = false,
+      networkId = null
+    ) => {
       if (!networkId) {
         const profile = rootGetters['session/profile']
         if (!profile || !profile.networkId) {
@@ -128,7 +135,10 @@ export default {
      * @param {Number} amount of peers to return
      * @return {Object[]} containing peer objects
      */
-    randomSeedPeers: (_, __, ___, rootGetters) => (amount = 5, networkId = null) => {
+    randomSeedPeers: (_, __, ___, rootGetters) => (
+      amount = 5,
+      networkId = null
+    ) => {
       if (!networkId) {
         const profile = rootGetters['session/profile']
         if (!profile || !profile.networkId) {
@@ -168,7 +178,11 @@ export default {
      * @param  {Boolean} [ignoreCurrent=true]
      * @return {Object[]}
      */
-    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true, networkId = null) => {
+    bestPeers: (_, getters) => (
+      maxRandom = 10,
+      ignoreCurrent = true,
+      networkId = null
+    ) => {
       const peers = getters['all'](ignoreCurrent)
       if (!peers.length) {
         return []
@@ -254,15 +268,17 @@ export default {
       }
 
       commit('SET_PEERS', {
-        peers: peers.map(peer => {
-          try {
-            return PeerModel.deserialize(peer)
-          } catch (error) {
-            //
-          }
+        peers: peers
+          .map(peer => {
+            try {
+              return PeerModel.deserialize(peer)
+            } catch (error) {
+              //
+            }
 
-          return null
-        }).filter(peer => peer !== null),
+            return null
+          })
+          .filter(peer => peer !== null),
         networkId: profile.networkId
       })
     },
@@ -310,7 +326,10 @@ export default {
         'ark.devnet': 'devnet'
       }
 
-      const peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
+      const peers = await this._vm.$client.fetchPeers(
+        networkLookup[network.id],
+        getters['all']()
+      )
 
       if (peers.length) {
         for (const peer of peers) {
@@ -381,7 +400,10 @@ export default {
      * @param  {Boolean} [skipIfCustom=true]
      * @return {(Object|null)}
      */
-    async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
+    async connectToBest (
+      { dispatch, getters },
+      { refresh = true, skipIfCustom = true }
+    ) {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
         if (currentPeer && currentPeer.isCustom) {
@@ -406,7 +428,10 @@ export default {
         throw new Error('Not connected to peer')
       }
 
-      let networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer), getApiVersion(peer))
+      let networkConfig = await ClientService.fetchNetworkConfig(
+        getBaseUrl(peer),
+        getApiVersion(peer)
+      )
       if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
         throw new Error('Wrong network')
       }
@@ -493,7 +518,10 @@ export default {
      * @param  {Number} [timeout=3000]
      * @return {(Object|String)}
      */
-    async validatePeer ({ rootGetters }, { host, ip, port, ignoreNetwork = false, timeout = 3000 }) {
+    async validatePeer (
+      { rootGetters },
+      { host, ip, port, ignoreNetwork = false, timeout = 3000 }
+    ) {
       let networkConfig
       let version = 2
       if (!host && ip) {
@@ -505,11 +533,19 @@ export default {
         baseUrl = `http://${baseUrl}`
       }
       try {
-        networkConfig = await ClientService.fetchNetworkConfig(baseUrl, version, timeout)
+        networkConfig = await ClientService.fetchNetworkConfig(
+          baseUrl,
+          version,
+          timeout
+        )
       } catch (errorV2) {
         try {
           version = 1
-          networkConfig = await ClientService.fetchNetworkConfig(baseUrl, version, timeout)
+          networkConfig = await ClientService.fetchNetworkConfig(
+            baseUrl,
+            version,
+            timeout
+          )
         } catch (errorV1) {
           //
         }
@@ -517,7 +553,10 @@ export default {
 
       if (!networkConfig) {
         return i18n.t('PEER.NO_CONNECT')
-      } else if (!ignoreNetwork && networkConfig.nethash !== rootGetters['session/network'].nethash) {
+      } else if (
+        !ignoreNetwork &&
+        networkConfig.nethash !== rootGetters['session/network'].nethash
+      ) {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 

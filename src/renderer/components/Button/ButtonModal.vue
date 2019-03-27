@@ -3,19 +3,11 @@
     :class="[classes, 'flex items-center justify-center']"
     @click.stop="toggle"
   >
-    <SvgIcon
-      v-if="icon"
-      :name="icon"
-      :view-box="viewBox"
-      class="mr-1"
-    />
+    <SvgIcon v-if="icon" :name="icon" :view-box="viewBox" class="mr-1" />
     <span class="font-semibold">
       {{ label }}
     </span>
-    <slot
-      :toggle="toggle"
-      :is-open="isOpen"
-    />
+    <slot :toggle="toggle" :is-open="isOpen" />
   </button>
 </template>
 

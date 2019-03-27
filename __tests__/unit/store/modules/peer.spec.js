@@ -4,7 +4,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client } from '@/plugins/api-client'
 import store from '@/store'
-import peers, { goodPeer1, goodPeer2, goodPeer4, goodPeer5, badPeer1 } from '../../__fixtures__/store/peer'
+import peers, {
+  goodPeer1,
+  goodPeer2,
+  goodPeer4,
+  goodPeer5,
+  badPeer1
+} from '../../__fixtures__/store/peer'
 import { network1 } from '../../__fixtures__/store/network'
 import { profile1 } from '../../__fixtures__/store/profile'
 
@@ -12,7 +18,8 @@ Vue.use(Vuex)
 Vue.use(apiClient)
 
 const axiosMock = new AxiosMockAdapter(axios)
-const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
+const nethash =
+  '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 
 beforeAll(() => {
   network1.nethash = nethash
@@ -50,8 +57,14 @@ describe('peer store module', () => {
   })
 
   it('should get random seed server peer', () => {
-    const randomSeedPeers = store.getters['peer/randomSeedPeers'](5, 'ark.mainnet')
-    const randomSeedPeers2 = store.getters['peer/randomSeedPeers'](5, 'ark.mainnet')
+    const randomSeedPeers = store.getters['peer/randomSeedPeers'](
+      5,
+      'ark.mainnet'
+    )
+    const randomSeedPeers2 = store.getters['peer/randomSeedPeers'](
+      5,
+      'ark.mainnet'
+    )
     expect(randomSeedPeers).not.toEqual(randomSeedPeers2)
   })
 
@@ -81,7 +94,10 @@ describe('peer store module', () => {
   })
 
   it('should return false if no initial peer', () => {
-    store.commit('peer/SET_CURRENT_PEER', { peer: null, networkId: network1.id })
+    store.commit('peer/SET_CURRENT_PEER', {
+      peer: null,
+      networkId: network1.id
+    })
     expect(store.getters['peer/current']()).toEqual(false)
   })
 
@@ -91,7 +107,10 @@ describe('peer store module', () => {
 
   it('should reset peer list', () => {
     store.dispatch('peer/set', [goodPeer1, goodPeer2])
-    expect(store.getters['peer/all']()).toIncludeAllMembers([goodPeer1, goodPeer2])
+    expect(store.getters['peer/all']()).toIncludeAllMembers([
+      goodPeer1,
+      goodPeer2
+    ])
   })
 
   it('should connect to best peer', async () => {
@@ -130,7 +149,9 @@ describe('peer store module', () => {
         })
     }
 
-    const bestPeer = await store.dispatch('peer/connectToBest', { refresh: false })
+    const bestPeer = await store.dispatch('peer/connectToBest', {
+      refresh: false
+    })
     expect(bestPeer).toEqual(store.getters['peer/current']())
     expect(bestPeer.ip).toBeOneOf(peers.map(peer => peer.ip))
     expect(bestPeer.ip).not.toEqual(badPeer1.ip)
@@ -142,12 +163,10 @@ describe('peer store module', () => {
     const refreshPeers = [goodPeer1, badPeer2]
 
     for (const peer of refreshPeers) {
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/peers`)
-        .reply(200, {
-          success: true,
-          peers: refreshPeers
-        })
+      axiosMock.onGet(`http://${peer.ip}:${peer.port}/api/peers`).reply(200, {
+        success: true,
+        peers: refreshPeers
+      })
     }
 
     store.dispatch('peer/set', refreshPeers)
@@ -159,7 +178,12 @@ describe('peer store module', () => {
     jest.setTimeout(15000)
     client.version = 2
     const goodV2Peer = { ...goodPeer1, status: 200, version: '2.0.0' }
-    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale', version: '2.0.0' }
+    const badV2Peer = {
+      ...badPeer1,
+      ip: '5.5.5.5',
+      status: 'stale',
+      version: '2.0.0'
+    }
     const refreshPeers = [goodV2Peer, badV2Peer]
     store.dispatch('peer/set', refreshPeers)
 
@@ -169,44 +193,41 @@ describe('peer store module', () => {
     }
 
     for (const peer of refreshPeers) {
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/peers`)
-        .reply(200, {
-          data: refreshPeers
-        })
+      axiosMock.onGet(`http://${peer.ip}:${peer.port}/api/peers`).reply(200, {
+        data: refreshPeers
+      })
     }
 
     await store.dispatch('peer/refresh')
     goodV2Peer.delay = goodV2Peer.latency
     delete goodV2Peer.latency
-    expect(store.getters['peer/all']()).toEqual([{ ...goodV2Peer, p2pPort: goodV2Peer.port, port: null }])
+    expect(store.getters['peer/all']()).toEqual([
+      { ...goodV2Peer, p2pPort: goodV2Peer.port, port: null }
+    ])
   })
 
   it('should update v1 peer status on the fly', async () => {
     client.version = 1
     client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
 
-    axiosMock
-      .onGet(`${client.host}/api/loader/status/sync`)
-      .reply(200, {
-        height: 11000
-      })
+    axiosMock.onGet(`${client.host}/api/loader/status/sync`).reply(200, {
+      height: 11000
+    })
 
-    axiosMock
-      .onGet(`${client.host}/api/loader/autoconfigure`)
-      .reply(200, {
-        network: {
-          nethash
-        }
-      })
+    axiosMock.onGet(`${client.host}/api/loader/autoconfigure`).reply(200, {
+      network: {
+        nethash
+      }
+    })
 
-    axiosMock
-      .onGet(`${client.host}/api/blocks/getEpoch`)
-      .reply(200, {
-        epoch: new Date()
-      })
+    axiosMock.onGet(`${client.host}/api/blocks/getEpoch`).reply(200, {
+      epoch: new Date()
+    })
 
-    const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodPeer1)
+    const updatedPeer = await store.dispatch(
+      'peer/updateCurrentPeerStatus',
+      goodPeer1
+    )
 
     expect(updatedPeer.height).toBe(11000)
     expect(updatedPeer.delay).not.toBe(123)
@@ -218,23 +239,22 @@ describe('peer store module', () => {
     const goodV2Peer = { ...goodPeer1, version: '2.0.0' }
     client.host = `http://${goodV2Peer.ip}:${goodV2Peer.port}`
 
-    axiosMock
-      .onGet(`${client.host}/api/node/syncing`)
-      .reply(200, {
-        data: {
-          height: 21000
-        }
-      })
+    axiosMock.onGet(`${client.host}/api/node/syncing`).reply(200, {
+      data: {
+        height: 21000
+      }
+    })
 
-    axiosMock
-      .onGet(`${client.host}/api/node/configuration`)
-      .reply(200, {
-        data: {
-          nethash
-        }
-      })
+    axiosMock.onGet(`${client.host}/api/node/configuration`).reply(200, {
+      data: {
+        nethash
+      }
+    })
 
-    const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodV2Peer)
+    const updatedPeer = await store.dispatch(
+      'peer/updateCurrentPeerStatus',
+      goodV2Peer
+    )
 
     expect(updatedPeer.height).toBe(21000)
     expect(updatedPeer.delay).not.toBe(123)
@@ -261,7 +281,8 @@ describe('peer store module', () => {
       .reply(200, { data: {} })
       .onGet(`${client.host}/api/blocks/getFees`)
       .reply(200, { fees: {} })
-      .onAny().reply(config => console.log(config.url))
+      .onAny()
+      .reply(config => console.log(config.url))
     await store.dispatch('peer/setCurrentPeer', goodPeer1)
 
     client.version = 1
@@ -277,7 +298,9 @@ describe('peer store module', () => {
 
   it('should validate a v1 peer successfully', async () => {
     axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(200, {
         network: {
           nethash
@@ -296,7 +319,10 @@ describe('peer store module', () => {
         epoch: 'dummyEpoch'
       })
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
 
     expect(response).toBeObject()
     expect(response).toContainEntries([
@@ -308,7 +334,9 @@ describe('peer store module', () => {
 
   it('should validate a v1 https peer successfully', async () => {
     axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(200, {
         network: {
           nethash
@@ -344,7 +372,9 @@ describe('peer store module', () => {
   it('should validate a v2 peer successfully', async () => {
     // Mock v1 endpoints also since they are available on core v2
     axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(200, {
         network: {
           nethash
@@ -382,7 +412,10 @@ describe('peer store module', () => {
         }
       })
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
 
     expect(response).toBeObject()
     expect(response).toContainEntries([
@@ -395,7 +428,9 @@ describe('peer store module', () => {
   it('should validate a v2 https peer successfully', async () => {
     // Mock v1 endpoints also since they are available on core v2
     axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(200, {
         network: {
           nethash
@@ -443,10 +478,15 @@ describe('peer store module', () => {
 
   it('should fail validating a v1 peer due to bad network url', async () => {
     axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(400)
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
     expect(response).toEqual(expect.stringMatching(/^Could not connect$/))
   })
 
@@ -455,13 +495,18 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(400)
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
     expect(response).toEqual(expect.stringMatching(/^Could not connect$/))
   })
 
   it('should fail validating a v1 peer due to bad sync status url', async () => {
     axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(200, {
         network: {
           nethash
@@ -474,11 +519,12 @@ describe('peer store module', () => {
         epoch: 'dummyEpoch'
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/loader/syncing`)
-      .reply(400)
+    axiosMock.onGet(`${client.host}/api/loader/syncing`).reply(400)
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
   })
 
@@ -491,17 +537,20 @@ describe('peer store module', () => {
         }
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/node/syncing`)
-      .reply(400)
+    axiosMock.onGet(`${client.host}/api/node/syncing`).reply(400)
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
   })
 
   it('should fail validating a v1 peer because of wrong nethash', async () => {
     axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+      .onGet(
+        `http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`
+      )
       .reply(200, {
         network: {
           nethash: 'wrong nethash'
@@ -514,7 +563,10 @@ describe('peer store module', () => {
         epoch: 'dummyEpoch'
       })
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
     expect(response).toEqual(expect.stringMatching(/^Wrong network$/))
   })
 
@@ -533,7 +585,10 @@ describe('peer store module', () => {
         epoch: 'dummyEpoch'
       })
 
-    const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
+    const response = await store.dispatch('peer/validatePeer', {
+      ...goodPeer1,
+      timeout: 100
+    })
     expect(response).toEqual(expect.stringMatching(/^Wrong network$/))
   })
 })

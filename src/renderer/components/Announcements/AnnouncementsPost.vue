@@ -6,11 +6,7 @@
       :disabled="isRead"
       @click="emitRead"
     >
-      <SvgIcon
-        class="fill-current"
-        name="cross"
-        view-box="0 0 15 15"
-      />
+      <SvgIcon class="fill-current" name="cross" view-box="0 0 15 15" />
     </button>
 
     <div class="flex flex-col flex-none justify-start w-48">
@@ -26,11 +22,7 @@
         class="hidden md:flex items-center mt-2 cursor-pointer"
         @click="openInBrowser(url)"
       >
-        <SvgIcon
-          class="mr-2"
-          name="open-external"
-          view-box="0 0 12 12"
-        />
+        <SvgIcon class="mr-2" name="open-external" view-box="0 0 12 12" />
 
         {{ $t('ANNOUNCEMENTS.READ_MORE') }}
       </a>
@@ -44,10 +36,7 @@
         {{ title }}
       </h2>
 
-      <p
-        v-if="!isRead"
-        class="AnnouncementsPost__summary mt-2"
-      >
+      <p v-if="!isRead" class="AnnouncementsPost__summary mt-2">
         {{ summary }}
       </p>
 
@@ -56,11 +45,7 @@
         class="flex md:hidden items-center mt-4 cursor-pointer"
         @click="openInBrowser(url)"
       >
-        <SvgIcon
-          class="mr-2"
-          name="open-external"
-          view-box="0 0 12 12"
-        />
+        <SvgIcon class="mr-2" name="open-external" view-box="0 0 12 12" />
 
         {{ $t('ANNOUNCEMENTS.READ_MORE') }}
       </a>
