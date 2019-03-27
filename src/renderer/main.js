@@ -19,8 +19,17 @@ import apiClient from '@/plugins/api-client'
 import synchronizer from '@/plugins/synchronizer'
 import eventBus from '@/plugins/event-bus'
 
-process.on('e2e', (...args) => {
-  console.log('MESSAGE RECEIVED', args)
+// TODO only during tests
+/**
+ * Call an e2e action on each event, deserializing the data, which is passed
+ * as JSON always because the process communication only supports basic types.
+ */
+process.on('e2e', async (actionName, args) => {
+  console.log('{e2e}', actionName, args)
+
+  const action = require(`@tests/e2e/__actions__/${actionName}.js`)
+
+  await action(JSON.parse(args))
 })
 
 Vue.config.productionTip = false
