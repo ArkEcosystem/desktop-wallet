@@ -125,7 +125,13 @@ export default {
           profileId: this.session_profile.id,
           isContact: true
         })
-        this.$router.push({ name: 'wallet-show', params: { address } })
+
+        const name = this.schema.name.length
+          ? this.wallet_name(address)
+          : this.wallet_truncate(address)
+
+        this.$success(this.$t('PAGES.CONTACT_NEW.SUCCESS', [name]))
+        this.$router.push({ name: 'contacts' })
       } catch (error) {
         this.$error(`${this.$t('PAGES.CONTACT_NEW.FAILED')}: ${error.message}`)
       }

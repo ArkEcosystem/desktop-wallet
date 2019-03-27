@@ -16,7 +16,7 @@
     <div
       v-else-if="hasStandardAvatar"
       :style="profile.avatar ? `backgroundImage: url('${assets_loadImage(profile.avatar)}')` : ''"
-      class="ProfileAvatar__image background-image bg-center bg-no-repeat border-none"
+      class="ProfileAvatar__image w-full h-full background-image bg-center bg-no-repeat border-none"
     >
       <slot />
     </div>
@@ -26,10 +26,11 @@
       :value="profile.name"
       :has-custom-style="true"
       :size="letterSize"
-      class="ProfileAvatar__letter bg-theme-feature-item-selected text-theme-feature-item-selected-text"
-    />
-
-    <slot />
+      tag="div"
+      class="ProfileAvatar__letter bg-theme-feature-item-selected text-theme-feature-item-selected-text select-none"
+    >
+      <slot />
+    </ButtonLetter>
   </div>
 </template>
 

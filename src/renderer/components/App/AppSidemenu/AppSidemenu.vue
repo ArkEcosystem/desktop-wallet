@@ -125,19 +125,17 @@
             class="AppSidemenu__avatar__container relative cursor-pointer flex items-center justify-center hover:opacity-50"
           >
             <RouterLink
-              :class="{
-                'h-12 w-12': hasStandardAvatar && isHorizontal,
-                'h-18 w-18': hasStandardAvatar && !isHorizontal
-              }"
-              :style="hasStandardAvatar ? `backgroundImage: url('${assets_loadImage(session_profile.avatar)}')` : ''"
-              :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
               :to="{ name: 'profiles' }"
-              class="AppSidemenu__avatar flex background-image bg-center bg-no-repeat border-none"
+              class="AppSidemenu__avatar"
             >
               <ProfileAvatar
                 :profile="session_profile"
-                letter-size="xl"
+                :class="{
+                  'h-12 w-12': session_profile.avatar && isHorizontal,
+                  'h-18 w-18': session_profile.avatar && !isHorizontal
+                }"
                 :title="$t('APP_SIDEMENU.CURRENT_PROFILE', { profileName: session_profile.name })"
+                letter-size="xl"
               >
                 <SvgIcon
                   class="AppSidemenu__avatar__dots text-grey-dark"

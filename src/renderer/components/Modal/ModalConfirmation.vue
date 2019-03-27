@@ -3,7 +3,7 @@
     :container-classes="containerClasses"
     :title="title"
     :portal-target="portalTarget"
-    @close="emitCancel"
+    @close="emitClose"
   >
     <section class="ModalConfirmation__container flex flex-col">
       <div class="mb-6">
@@ -100,6 +100,10 @@ export default {
   methods: {
     emitCancel () {
       this.$emit('cancel')
+    },
+
+    emitClose () {
+      this.$emit('close')
     },
 
     emitContinue () {

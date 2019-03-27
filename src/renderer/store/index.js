@@ -38,6 +38,7 @@ const modules = {
   wallet: WalletModule
 }
 
+// Modules that should not be persisted
 const ignoreModules = []
 
 const vuexMigrations = new VuexPersistMigrations({

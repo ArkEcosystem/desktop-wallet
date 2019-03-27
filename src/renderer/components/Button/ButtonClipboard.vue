@@ -36,6 +36,11 @@ export default {
       type: String,
       required: false,
       default: '0 0 12 16'
+    },
+    subject: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
 
@@ -51,7 +56,7 @@ export default {
     // when using portals. Probably is this bug:
     // https://github.com/LinusBorg/portal-vue/issues/159
     if (this.$i18n) {
-      this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')
+      this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])
     }
   },
 
@@ -66,7 +71,7 @@ export default {
 
       this.isCopying = true
       setTimeout(() => (this.isCopying = false), 1000)
-      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD')), 1500)
+      setTimeout(() => (this.copyText = this.$t('BUTTON_CLIPBOARD.COPY_TO_CLIPBOARD', [this.subject])), 1500)
 
       try {
         document.execCommand('copy')

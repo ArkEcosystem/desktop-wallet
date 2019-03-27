@@ -1,5 +1,5 @@
 import { flatten, includes, isFunction, pullAll } from 'lodash'
-import { announcements, delegates, fees, ledger, market, peer, wallets } from './synchronizer/'
+import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
  * that could be dispatched using 2 modes: `default` and `focus`.
@@ -21,13 +21,52 @@ export default class Synchronizer {
       longest: block * 300,
       longer: block * 100,
       medium: block * 25,
-      shorter: block * 4,
+      shorter: block * 10,
+      shortest: block * 3,
       block,
       // Number of milliseconds to wait to evaluate which actions should be run
-      loop: block
+      loop: 2000
     }
 
     return intervals
+  }
+
+  get config () {
+    const { loop, shortest, shorter, medium, longer, longest } = this.intervals
+
+    const config = {
+      announcements: {
+        default: { interval: longest, delay: loop * 6 },
+        focus: { interval: medium }
+      },
+      market: {
+        default: { interval: medium },
+        focus: { interval: shorter }
+      },
+      wallets: {
+        default: { interval: shorter },
+        focus: { interval: shortest }
+      },
+      ledgerWallets: {
+        default: { interval: shorter },
+        focus: { interval: shortest }
+      },
+      delegates: {
+        default: { interval: longer, delay: loop * 3 },
+        focus: { interval: longer }
+      },
+      fees: {
+        default: { interval: null },
+        focus: { interval: shorter }
+      },
+      peer: {
+        default: { interval: longer },
+        focus: { interval: shorter }
+      }
+    }
+    config.contacts = config.wallets
+
+    return config
   }
 
   get $client () {
@@ -42,8 +81,8 @@ export default class Synchronizer {
    * @param {Object} config
    * @param {Vue} config.scope - Vue instance that would be synchronized
    */
-  constructor (config) {
-    this.scope = config.scope
+  constructor ({ scope }) {
+    this.scope = scope
     this.actions = {}
     this.focused = []
     this.paused = []
@@ -61,8 +100,8 @@ export default class Synchronizer {
     }
     ;['default', 'focus'].forEach(mode => {
       const { interval } = config[mode]
-      if (!interval) {
-        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a number bigger than 0`)
+      if (!interval && interval !== null) {
+        throw new Error(`[$synchronizer] \`interval\` for \`${mode}\` mode should be a Number bigger than 0 (or \`null\` to ignore it)`)
       }
     })
 
@@ -96,11 +135,20 @@ export default class Synchronizer {
   }
 
   /**
-   * Dispatch these paused actions again
+   * Enable these paused actions again
    * @params {(...String|Array)} actions - ID of the actions to unpause
    */
   unpause (...actions) {
     pullAll(this.paused, flatten(actions))
+  }
+
+  /**
+   * Trigger these actions 1 time.
+   * As a consequence the interval of those actions is updated.
+   * @params {(...String|Array)} actions - ID of the actions to unpause
+   */
+  trigger (...actions) {
+    flatten(actions).forEach(actionId => this.call(actionId))
   }
 
   /**
@@ -138,11 +186,20 @@ export default class Synchronizer {
             } else {
               const mode = includes(this.focused, actionId) ? 'focus' : 'default'
               const { interval } = action[mode]
-              const nextCall = action.calledAt + interval
-              const now = (new Date()).getTime()
 
-              if (nextCall <= now) {
-                this.call(actionId)
+              // A `null` interval means no interval, so the action does not run
+              if (interval !== null) {
+                // Delay the beginning of the periodic action run
+                if (!action.calledAt && action[mode].delay) {
+                  action.calledAt += action.delay
+                }
+
+                const nextCallAt = action.calledAt + interval
+                const now = (new Date()).getTime()
+
+                if (nextCallAt <= now) {
+                  this.call(actionId)
+                }
               }
             }
           }
@@ -165,70 +222,38 @@ export default class Synchronizer {
   }
 
   defineAll () {
-    const { block, shorter, medium, longer, longest } = this.intervals
-
-    const config = {
-      announcements: {
-        default: { interval: longest },
-        focus: { interval: medium }
-      },
-      market: {
-        default: { interval: shorter },
-        focus: { interval: block }
-      },
-      wallets: {
-        default: { interval: shorter },
-        focus: { interval: block }
-      },
-      ledgerWallets: {
-        default: { interval: shorter },
-        focus: { interval: block }
-      },
-      delegates: {
-        default: { interval: longer },
-        focus: { interval: longer }
-      },
-      fees: {
-        default: { interval: longer },
-        focus: { interval: longer }
-      },
-      peer: {
-        default: { interval: medium },
-        focus: { interval: shorter }
-      }
-    }
-    config.contacts = config.wallets
-
-    this.define('announcements', config.announcements, async () => {
+    this.define('announcements', this.config.announcements, async () => {
       await announcements(this)
     })
 
-    // this.define('contacts', config.contacts, async () => {
+    // TODO focus on contacts only (currently wallets and contacts are the same)
+    // this.define('contacts', this.config.contacts, async () => {
     //   console.log('defined CONTACTS')
     // })
 
-    this.define('delegates', config.delegates, async () => {
-      await delegates(this)
-    })
+    // NOTE: not used currently
+    // this.define('delegates', this.config.delegates, async () => {
+    //   await delegates(this)
+    // })
 
-    this.define('fees', config.fees, async () => {
+    this.define('fees', this.config.fees, async () => {
       await fees(this)
     })
 
-    this.define('market', config.market, async () => {
+    this.define('market', this.config.market, async () => {
       await market(this)
     })
 
-    this.define('peer', config.peer, async () => {
+    this.define('peer', this.config.peer, async () => {
       await peer(this)
     })
 
-    // TODO allow focusing on 1 wallet alone
-    this.define('wallets', config.wallets, async () => {
+    // TODO allow focusing on 1 wallet alone, while using the normal mode for the rest
+    this.define('wallets', this.config.wallets, async () => {
       await wallets(this)
     })
 
-    this.define('wallets:ledger', config.ledgerWallets, async () => {
+    this.define('wallets:ledger', this.config.ledgerWallets, async () => {
       await ledger(this)
     })
   }

@@ -18,9 +18,9 @@
       />
 
       <InputFee
-        v-if="session_network.apiVersion === 2"
+        v-if="walletNetwork.apiVersion === 2"
         ref="fee"
-        :currency="session_network.token"
+        :currency="walletNetwork.token"
         :transaction-type="$options.transactionType"
         :show-insufficient-funds="true"
         @input="onFee"
@@ -44,7 +44,7 @@
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
-        :pub-key-hash="session_network.version"
+        :pub-key-hash="walletNetwork.version"
       />
 
       <PassphraseInput
@@ -52,7 +52,8 @@
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-        :pub-key-hash="session_network.version"
+        :pub-key-hash="walletNetwork.version"
+        :public-key="currentWallet.secondPublicKey"
         class="mt-5"
       />
 
@@ -94,6 +95,7 @@ import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
+import onSubmit from './mixin-on-submit'
 
 export default {
   name: 'TransactionFormDelegateRegistration',
@@ -108,6 +110,8 @@ export default {
     PassphraseInput
   },
 
+  mixins: [onSubmit],
+
   data: () => ({
     form: {
       fee: 0,
@@ -117,39 +121,22 @@ export default {
     },
     error: null,
     showEncryptLoader: false,
-    showLedgerLoader: false,
-    bip38Worker: null
+    showLedgerLoader: false
   }),
 
   computed: {
     currentWallet () {
       return this.wallet_fromRoute
-    }
-  },
+    },
 
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
+    walletNetwork () {
+      return this.session_network
+    }
   },
 
   mounted () {
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.decodedWif === null) {
-        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        this.showEncryptLoader = false
-      } else if (message.decodedWif) {
-        this.form.passphrase = null
-        this.form.wif = message.decodedWif
-        this.showEncryptLoader = false
-        this.submit()
-      }
-    })
-
     // Set default fees with v1 compatibility
-    if (this.session_network.apiVersion === 1) {
+    if (this.walletNetwork.apiVersion === 1) {
       this.form.fee = V1.fees[this.$options.transactionType] / 1e8
     } else {
       this.form.fee = this.$refs.fee.fee
@@ -159,19 +146,6 @@ export default {
   methods: {
     onFee (fee) {
       this.$set(this.form, 'fee', fee)
-    },
-
-    onSubmit () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
-        this.showEncryptLoader = true
-        this.bip38Worker.send({
-          bip38key: this.currentWallet.passphrase,
-          password: this.form.walletPassword,
-          wif: this.session_network.wif
-        })
-      } else {
-        this.submit()
-      }
     },
 
     async submit () {
@@ -225,7 +199,7 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.session_network.apiVersion === 1 // Return true if it's v1, since it has a static fee
+          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
       username: {

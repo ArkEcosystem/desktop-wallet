@@ -1,6 +1,6 @@
 <template>
-  <div class="ContactAll flex flex-col">
-    <div class="ContactAll__header flex flex-row space-between bg-theme-feature rounded-lg px-10 py-5 mb-3">
+  <div class="ContactAll">
+    <div class="ContactAll__heading px-10 py-5 mb-3">
       <div>
         <WalletIdenticonPlaceholder
           :size="60"
@@ -35,9 +35,9 @@
       </button>
     </div>
 
-    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10">
+    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10 overflow-y-auto">
       <div class="block w-full">
-        <div class="flex items-center justify-between h-8">
+        <div class="ContactAll__header">
           <h3 class=" items-center">
             {{ $t('PAGES.CONTACT_ALL.HEADER') }}
           </h3>
@@ -50,20 +50,11 @@
       </div>
 
       <div
-        v-if="isLoading"
-        class="h-full flex items-center"
-      >
-        <div class="m-auto">
-          <Loader />
-        </div>
-      </div>
-
-      <div
-        v-if="hasWalletGridLayout && !isLoading"
+        v-if="hasWalletGridLayout"
       >
         <div class="ContactAll__grid mt-10 justify-center">
           <div
-            v-for="contact in selectableContacts"
+            v-for="contact in contacts"
             :key="contact.id"
             class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3"
             @click="showContact(contact.id)"
@@ -114,7 +105,7 @@
       </div>
 
       <div
-        v-else-if="!hasWalletGridLayout && !isLoading"
+        v-else-if="!hasWalletGridLayout"
         class="ContactAll__tabular mt-10"
       >
         <WalletTable
@@ -122,8 +113,8 @@
           :is-loading="false"
           :is-contacts-table="true"
           :show-voted-delegates="showVotedDelegates"
-          :rows="selectableContacts"
-          :total-rows="selectableContacts.length"
+          :rows="contacts"
+          :total-rows="contacts.length"
           :sort-query="sortParams"
           :no-data-message="$t('TABLE.NO_CONTACTS')"
           @remove-row="onRemoveContact"
@@ -144,15 +135,14 @@
       v-if="contactToRename"
       :wallet="contactToRename"
       @cancel="hideRenameModal"
-      @renamed="hideRenameModal(contactToRename)"
+      @renamed="onContactRenamed"
     />
   </div>
 </template>
 
 <script>
-import { clone, some, sortBy } from 'lodash'
+import { clone, some } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
-import Loader from '@/components/utils/Loader'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
@@ -163,7 +153,6 @@ export default {
 
   components: {
     ButtonLayout,
-    Loader,
     ContactRemovalConfirmation,
     ContactRenameModal,
     WalletIdenticon,
@@ -173,16 +162,14 @@ export default {
   },
 
   data: () => ({
-    selectableContacts: [],
     contactToRemove: null,
-    contactToRename: null,
-    isLoading: false
+    contactToRename: null
   }),
 
   computed: {
     contacts () {
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.session_profile.id)
-      return sortBy(contacts, ['name', 'address'])
+      return this.wallet_sortByName(contacts)
     },
 
     hasWalletGridLayout () {
@@ -214,7 +201,7 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.selectableContacts, contact => contact.hasOwnProperty('votedDelegate'))
+      return some(this.contacts, contact => contact.hasOwnProperty('vote'))
     }
   },
 
@@ -222,14 +209,6 @@ export default {
     next(vm => {
       vm.$synchronizer.focus('contacts')
     })
-  },
-
-  async created () {
-    this.isLoading = true
-
-    this.selectableContacts = this.contacts
-
-    this.isLoading = false
   },
 
   methods: {
@@ -251,9 +230,6 @@ export default {
 
     removeContact (contact) {
       this.hideRemovalConfirmation()
-      this.selectableContacts = this.selectableContacts.filter(c => {
-        return c.id !== contact.id
-      })
     },
 
     toggleWalletLayout () {
@@ -266,6 +242,10 @@ export default {
 
     onRenameContact (contact) {
       this.openRenameModal(contact)
+    },
+
+    onContactRenamed () {
+      this.hideRenameModal()
     },
 
     createContact () {
@@ -284,8 +264,14 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.ContactAll {
+  @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
+}
+.ContactAll__heading {
+  @apply .flex .items-center .justify-between .bg-theme-feature .rounded-lg;
+}
 .ContactAll__header {
-  @apply .flex .items-center .justify-between;
+  @apply .flex .items-center .justify-between .h-8;
 }
 .ContactAll__grid {
   display: grid;

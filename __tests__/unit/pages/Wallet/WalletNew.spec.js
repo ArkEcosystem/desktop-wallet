@@ -1,11 +1,9 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import { useI18n } from '../../__utils__/i18n'
-import backgroundWorker from '@/plugins/background-worker'
 import WalletNew from '@/pages/Wallet/WalletNew'
 import WalletService from '@/services/wallet'
 
 const localVue = createLocalVue()
-localVue.use(backgroundWorker)
 const i18n = useI18n(localVue)
 
 describe('pages > WalletNew', () => {
@@ -16,6 +14,9 @@ describe('pages > WalletNew', () => {
       mocks: {
         schema: {},
         session_hasDarkTheme: false,
+        session_network: {
+          symbol: {}
+        },
         $store: {
           getters: {
             'session/hasDarkTheme': false
