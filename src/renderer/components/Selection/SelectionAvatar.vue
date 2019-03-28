@@ -35,6 +35,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    profile: {
+      type: Object,
+      required: false,
+      default: () => null
     }
   },
 
@@ -49,8 +54,23 @@ export default {
       const images = { ...this.images }
       const key = Object.keys(images)[0]
       images[key] = [...this.extraItems, ...images[key]]
+      if (this.pluginAvatars && this.pluginAvatars.length) {
+        images[this.$t('SELECTION_AVATAR.ADDITIONAL_AVATARS')] = this.pluginAvatars
+      }
 
       return images
+    },
+
+    additional () {
+      return this.pluginAvatars
+    },
+
+    pluginAvatars () {
+      if (!this.profile || !this.profile.id) {
+        return []
+      }
+
+      return this.$store.getters['plugin/avatars'](this.profile.id)
     }
   }
 }

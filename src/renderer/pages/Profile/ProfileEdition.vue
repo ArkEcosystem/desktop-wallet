@@ -187,6 +187,7 @@
                   :enable-modal="true"
                   :max-visible-items="3"
                   :selected="avatar"
+                  :profile="profile"
                   @select="selectAvatar"
                 />
               </ListDividedItem>
@@ -491,7 +492,17 @@ export default {
     },
 
     selectAvatar (avatar) {
-      this.__updateSession('avatar', avatar)
+      let newAvatar = null
+      if (typeof avatar === 'string') {
+        newAvatar = avatar
+      } else if (avatar.name) {
+        newAvatar = {
+          avatarName: avatar.name,
+          pluginId: avatar.pluginId
+        }
+      }
+
+      this.__updateSession('avatar', newAvatar)
     },
 
     async selectBackground (background) {

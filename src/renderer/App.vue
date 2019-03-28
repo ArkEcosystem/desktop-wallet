@@ -244,6 +244,7 @@ export default {
 
   methods: {
     async loadEssential () {
+      this.$plugins.init(this)
       await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')

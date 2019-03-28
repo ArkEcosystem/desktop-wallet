@@ -100,6 +100,31 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
+        v-if="isMarketEnabled"
+        :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
+        @click="toggleSelect('show-market-chart')"
+      >
+        <div
+          slot="controls"
+          class="pointer-events-none"
+        >
+          <ButtonSwitch
+            ref="show-market-chart"
+            :is-active="sessionIsMarketChartEnabled"
+            class="theme-dark"
+            background-color="#414767"
+            @change="setIsMarketChartEnabled"
+          />
+        </div>
+      </MenuOptionsItem>
+
+      <MenuOptionsItem
+        :title="$t('APP_SIDEMENU.SETTINGS.PLUGINS')"
+        class="text-grey-light"
+        @click="goToPlugins"
+      />
+
+      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -258,9 +283,9 @@ export default {
       this.electron_reload()
     },
 
-    goToNetworkOverview () {
+    goToPlugins () {
       this.$emit('close')
-      this.$router.push({ name: 'networks' })
+      this.$router.push({ name: 'plugins' })
     },
 
     emitClose () {

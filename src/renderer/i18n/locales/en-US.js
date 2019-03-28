@@ -228,6 +228,7 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
+    PLUGINS: 'Plugins',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -235,6 +236,7 @@ export default {
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
+      PLUGINS: 'Plugin Manager',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
@@ -497,6 +499,10 @@ export default {
       NEW_NETWORK: 'New network'
     },
 
+    PLUGINS: {
+      HEADER: 'Plugins'
+    },
+
     PROFILE_ALL: {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
@@ -681,6 +687,21 @@ export default {
     }
   },
 
+  PLUGIN_TABLE: {
+    ACTIONS: 'Actions',
+    ENABLE: 'Enable',
+    ENABLED: 'Enabled',
+    DESCRIPTION: 'Description',
+    DISABLE: 'Disable',
+    DISABLED: 'Disabled',
+    ID: 'ID',
+    NAME: 'Name',
+    NO_PERMISSIONS: 'No permissions',
+    NO_PLUGINS: 'No plugins available',
+    PERMISSIONS: 'Permissions',
+    STATUS: 'Status'
+  },
+
   PROFILE_LEAVING_CONFIRMATION: {
     QUESTION: 'Are you sure you want to ignore the changes done to this profile?',
     NO: 'No, save them',
@@ -693,6 +714,7 @@ export default {
   },
 
   SELECTION_AVATAR: {
+    ADDITIONAL_AVATARS: 'Additional Avatars',
     AVATARS: 'Avatars',
     MODAL_HEADER: 'Select avatar'
   },

@@ -359,7 +359,16 @@ export default {
     },
 
     selectAvatar (avatar) {
-      this.schema.avatar = avatar
+      if (typeof avatar === 'string') {
+        this.schema.avatar = avatar
+      } else if (avatar.name) {
+        this.schema.avatar = {
+          avatarName: avatar.name,
+          pluginId: avatar.pluginId
+        }
+      } else {
+        this.schema.avatar = null
+      }
     },
 
     async selectBackground (background) {
