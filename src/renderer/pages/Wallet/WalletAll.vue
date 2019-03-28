@@ -375,21 +375,38 @@ export default {
     })
   },
 
-  async created () {
-    this.isLoading = true
-
-    this.selectableWallets = this.wallets
-
-    if (this.$store.getters['ledger/isConnected']) {
-      this.includeLedgerWallets()
-    }
+  created () {
+    this.loadWallets()
     this.$eventBus.on('ledger:wallets-updated', this.includeLedgerWallets)
     this.$eventBus.on('ledger:disconnected', this.ledgerDisconnected)
+  },
 
-    this.isLoading = false
+  beforeDestroy () {
+    this.$eventBus.off('ledger:wallets-updated', this.includeLedgerWallets)
+    this.$eventBus.off('ledger:disconnected', this.ledgerDisconnected)
+  },
+
+  /**
+   * On `create` the event listeners are bound, but, every time this page is accessed
+   * should include the Ledger wallets, if they are available, to the list of wallets
+   */
+  activated () {
+    this.loadWallets()
   },
 
   methods: {
+    loadWallets () {
+      this.isLoading = true
+
+      if (this.$store.getters['ledger/isConnected']) {
+        this.includeLedgerWallets()
+      } else {
+        this.selectableWallets = this.wallets
+      }
+
+      this.isLoading = false
+    },
+
     hideRemovalConfirmation () {
       this.walletToRemove = null
     },

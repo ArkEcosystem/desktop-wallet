@@ -49,10 +49,10 @@ describe('Services > Synchronizer > Wallets', () => {
       { address: 'A3', transactions: {} },
       { address: 'A4', transactions: {} }
     ]
-    ledgerWallets = [
-      { address: 'A1ledger', transactions: {}, isLedger: true },
-      { address: 'A2ledger', transactions: {}, isLedger: true }
-    ]
+    ledgerWallets = {
+      A1ledger: { address: 'A1ledger', transactions: {}, isLedger: true },
+      A2ledger: { address: 'A2ledger', transactions: {}, isLedger: true }
+    }
     contacts = [
       { address: 'Acon1', transactions: {} },
       { address: 'Acon2', transactions: {} }
@@ -145,7 +145,7 @@ describe('Services > Synchronizer > Wallets', () => {
     it('should return the regular wallets and Ledger wallets', () => {
       expect(action.wallets).toIncludeSameMembers([
         ...profileWallets,
-        ...ledgerWallets
+        ...Object.values(ledgerWallets)
       ])
     })
   })
@@ -184,7 +184,7 @@ describe('Services > Synchronizer > Wallets', () => {
       expect(action.allWallets).toIncludeSameMembers([
         ...profileWallets,
         ...contacts,
-        ...ledgerWallets
+        ...Object.values(ledgerWallets)
       ])
     })
   })
@@ -197,10 +197,10 @@ describe('Services > Synchronizer > Wallets', () => {
         profileWallets[1]
       ])
       action.$getters['wallet/contactsByProfileId'].mockReturnValue(contacts)
-      action.$getters['ledger/wallets'] = [
-        ...ledgerWallets,
-        { ...profileWallets[0], isLedger: true }
-      ]
+      action.$getters['ledger/wallets'] = {
+        ...ledgerWallets
+      }
+      action.$getters['ledger/wallets'][profileWallets[0].address] = { ...profileWallets[0], isLedger: true }
     })
 
     it('should return the regular wallets, contacts and Ledger wallets', () => {
@@ -251,7 +251,7 @@ describe('Services > Synchronizer > Wallets', () => {
       profileWallets.forEach(wallet => {
         transactionsByAddress[wallet.address] = []
       })
-      walletsToUpdate = ledgerWallets
+      walletsToUpdate = Object.values(ledgerWallets)
 
       action.fetch = jest.fn()
       action.process = jest.fn()
@@ -309,11 +309,11 @@ describe('Services > Synchronizer > Wallets', () => {
     beforeEach(() => {
       jest.spyOn(action, 'wallets', 'get').mockReturnValue([
         ...profileWallets,
-        ...ledgerWallets
+        ...Object.values(ledgerWallets)
       ])
       jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
         ...profileWallets,
-        ...ledgerWallets,
+        ...Object.values(ledgerWallets),
         ...contacts
       ])
       action.emit = jest.fn()
@@ -326,7 +326,7 @@ describe('Services > Synchronizer > Wallets', () => {
 
       walletsData = [
         profileWallets[0],
-        { address: ledgerWallets[1].address }
+        { address: Object.values(ledgerWallets)[1].address }
       ]
 
       transactionsByAddress = {}
@@ -365,16 +365,16 @@ describe('Services > Synchronizer > Wallets', () => {
       it('should ignore duplicates', async () => {
         jest.spyOn(action, 'wallets', 'get').mockReturnValue([
           ...profileWallets,
-          ...ledgerWallets,
+          ...Object.values(ledgerWallets),
           profileWallets[1],
-          ledgerWallets[0]
+          Object.values(ledgerWallets)[0]
         ])
         jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
           ...profileWallets,
-          ...ledgerWallets,
+          ...Object.values(ledgerWallets),
           ...contacts,
           contacts[1],
-          ledgerWallets[1],
+          Object.values(ledgerWallets)[1],
           profileWallets[3]
         ])
 
@@ -464,7 +464,7 @@ describe('Services > Synchronizer > Wallets', () => {
     beforeEach(() => {
       jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
         profileWallets[0],
-        ledgerWallets[0],
+        Object.values(ledgerWallets)[0],
         contacts[0]
       ])
     })
@@ -479,7 +479,7 @@ describe('Services > Synchronizer > Wallets', () => {
       it('should return them aggregated by address', () => {
         const data = [
           { ...profileWallets[0], balance: 10 },
-          { ...ledgerWallets[0], balance: 11 },
+          { ...Object.values(ledgerWallets)[0], balance: 11 },
           { ...contacts[0], balance: 12 }
         ]
 
@@ -495,7 +495,7 @@ describe('Services > Synchronizer > Wallets', () => {
       it('should not return them', () => {
         const data = [
           { ...profileWallets[0] },
-          { ...ledgerWallets[0] },
+          { ...Object.values(ledgerWallets)[0] },
           { ...contacts[0] }
         ]
 

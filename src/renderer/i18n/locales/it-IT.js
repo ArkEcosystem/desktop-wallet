@@ -56,13 +56,13 @@ export default {
     POWER: {
       TITLE: 'La tua Forza',
       FINANCE: 'La cosa più importante da sapere per gli utenti riguardo le criptovalute è che rovesciano completamente il comunemente accettato modello di come funziona la finanza.',
-      BANKS: 'Nella finanza tradizionale, rimetti il controllo del tuo denaro ad una banca. Poiché le banche hanno il controllo sui tuoi soldi, possono intraprendere azioni per tuo conto, come il rimborso delle transazioni e il ripristino delle informazioni di accesso.',
+      BANKS: 'Nella finanza tradizionale, rimetti il controllo del tuo denaro ad una banca. Poiché le banche hanno il controllo sui tuoi fondi, possono intraprendere azioni per tuo conto, come il rimborso delle transazioni e il ripristino delle informazioni di accesso.',
       CRYPTO: 'Le criptovalute prendono quel potere e te lo forniscono direttamente. Usando nient\'altro che la tua frase segreta, puoi controllare esattamente quando, dove e come viene conservato e speso il tuo denaro.',
       RESPONSIBILITY: 'Tuttavia, dalle parole di Uncle Ben Parker, da un grande potere derivano grandi responsabilità.'
     },
     DUTY: {
       TITLE: 'Il tuo Dovere',
-      CONTROL: 'L\'industria blockchain è progettata per resistere alla censura. Ciò significa che nessuno controlla il tuo account, se non tu. Questo comporta che nessuna autorità centrale può confiscare, congelare o manipolare i tuoi fondi in nessun momento.',
+      CONTROL: 'L\'industria blockchain è progettata per resistere alla censura. Ciò significa che nessuno controlla il tuo conto, se non tu. Nessuna autorità centrale potrà confiscare, congelare o manipolare i tuoi fondi in nessun momento.',
       OWNER: 'Questo porta anche a maggiori responsabilità nei tuoi confronti, il proprietario del conto',
       WARNING: {
         ACCOUNT: 'A differenza del tuo conto bancario tradizionale, {CANNOT_RESTORE}',
@@ -82,7 +82,7 @@ export default {
         ALWAYS: 'Effettua sempre il backup della frase segreta e conservala in un luogo sicuro.',
         OPTIONS: 'È possibile scriverla su carta spessa e archiviarne più copie in posti sicuri. È inoltre possibile memorizzarla su un\'unità flash crittografata. In alternativa, è possibile utilizzare un dispositivo hardware USB Ledger Nano S, disponibile su Ledger.com, per archiviare e accedere ai fondi e all\'ARK Desktop Wallet. Puoi collegare il tuo Ledger Nano S al tuo computer e accedere alla blockchain ARK senza dover inserire la tua frase segreta.'
       },
-      REMEMBER: 'Ricorda, chiunque abbia la frase segreta può accedere ai tuoi fondi. Non condividere mai il tuo account con nessuno ed evitare di memorizzarlo in luoghi che sono suscettibili di hack, come il Cloud.'
+      REMEMBER: 'Ricorda, chiunque abbia la frase segreta può accedere ai tuoi fondi. Non condividere mai il tuo conto con nessuno ed evita di memorizzarlo in luoghi che sono suscettibili di hack, come il Cloud.'
     },
     TURN: {
       TITLE: 'Il tuo Turno',
@@ -163,7 +163,7 @@ export default {
     VENDOR_FIELD: {
       LIMIT_REACHED: 'È possibile inserire un massimo di {0} caratteri'
     },
-    REQUIRED: 'The \'{0}\' is required',
+    REQUIRED: '\'{0}\' indispensabile',
     SEND_NOT_ENABLED: 'L\'invio non è abilitato per il portafoglio selezionato',
     WALLET_NOT_ACTIVE: 'Seleziona un portafoglio a apri l\'URI nuovamente',
     WARNING_BIP39: '\'{0}\' è una frase segreta BIP39',
@@ -184,8 +184,8 @@ export default {
   },
 
   BIP39_LANGUAGES: {
-    chinese_simplified: 'Chinese Simplified',
-    chinese_traditional: 'Chinese Traditional',
+    chinese_simplified: 'Cinese Semplificato',
+    chinese_traditional: 'Cinese Tradizionale',
     english: 'Inglese',
     french: 'Francese',
     italian: 'Italiano',
@@ -281,8 +281,8 @@ export default {
 
   BUTTON_CLIPBOARD: {
     DONE: 'Copiato!',
-    COPY_TO_CLIPBOARD: 'Copia nella clipboard',
-    NOT_SUPPORTED: 'Copiare nella clipboard non è supportato'
+    COPY_TO_CLIPBOARD: 'Copia negli appunti',
+    NOT_SUPPORTED: 'Copiare negli appunti non è supportato'
   },
 
   INPUT_ADDRESS: {
@@ -531,8 +531,8 @@ export default {
           HEADER: 'Aspetto',
           TEXT: 'Personalizza questa applicazione scegliendo uno dei nostri temi e sfondi'
         },
-        MARKET_CHART: 'Scegliere di visualizzare il grafico dei prezzi sulla dashboard',
-        THEME: 'Puoi scegliere tra modalità chiara e modalità scura',
+        MARKET_CHART: 'Visualizza il grafico dei prezzi sulla dashboard',
+        THEME: 'Scegli modalità chiara o modalità scura',
         BACKGROUND: 'Scegli il tuo sfondo preferito',
         NAME: 'Nome profilo',
         TITLE: '3. Aspetto'
@@ -599,7 +599,7 @@ export default {
       STEP1: {
         INSTRUCTIONS: {
           HEADER: 'Recupera portafoglio',
-          TEXT: 'Inserisci la frase segreta del tuo portafoglio. Puoi inserire prima l\'indirizzo, per assicurarsi che corrisponda alla frase segreta specificata.'
+          TEXT: 'Inserisci la frase segreta del tuo portafoglio. Puoi inserire prima l\'indirizzo, per assicurarti che corrisponda alla frase segreta specificata.'
         },
         TITLE: '1. Importa portafoglio',
         ONLY_ADDRESS: 'Usa solo l\'indirizzo',
@@ -631,7 +631,7 @@ export default {
       STEP1: {
         INSTRUCTIONS: {
           HEADER: 'Nuovo portafoglio',
-          TEXT_BEFORE_BUTTON: 'Seleziona uno di questi portafogli appena generati. Se non ti piacciono, clicca sul',
+          TEXT_BEFORE_BUTTON: 'Seleziona uno di questi portafogli appena generati. Se preferisci, clicca sul',
           TEXT_AFTER_BUTTON: 'pulsante per generarne altri.'
         },
         TITLE: '1. Scegli portafoglio'
@@ -917,7 +917,7 @@ export default {
     VOTED_FOR: 'Hai votato per il Delegato {delegate}',
     WALLET_VOTED_FOR: 'Questo portafoglio ha votato per il delegato {delegate}',
     VOTE_INFO: 'Info:',
-    NO_VOTE: 'Questo portafoglio non sta votando. Per visualizzare più informazioni e votare, utilizzare la ricerca o fai clic su qualsiasi delegato',
+    NO_VOTE: 'Questo portafoglio non sta votando. Per visualizzare più informazioni e votare, utilizza la ricerca o fai clic su un qualsiasi delegato',
     AWAITING_VOTE_CONFIRMATION: 'Il tuo {type} è in attesa di conferma',
     LOADING_VOTE: 'Caricamento dei dettagli del voto ...',
     SEARCH_DELEGATE: 'Cerca delegato'
@@ -939,7 +939,7 @@ export default {
     NEW: 'Nuovo nome contatto',
     ADD: 'Aggiungi contatto',
     RENAME: 'Rinomina contatto',
-    ADDRESS_INFO: 'Scegli un nom per questo contatto: '
+    ADDRESS_INFO: 'Scegli un nome per questo contatto: '
   },
 
   WALLET_REMOVAL_CONFIRMATION: {
