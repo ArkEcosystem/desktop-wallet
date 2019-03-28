@@ -397,7 +397,7 @@ export default {
           let match = [
             address,
             balance.toString()
-          ].some(text => text.includes(this.filters.searchQuery))
+          ].some(text => text.includes(this.searchQuery))
 
           if (!match) {
             const alternativeName = this.wallet_name(address)
@@ -405,7 +405,7 @@ export default {
               ? [name, alternativeName]
               : [name]
 
-            const query = this.filters.searchQuery.toLowerCase()
+            const query = this.searchQuery.toLowerCase()
             match = names.some(name => name.toLowerCase().includes(query))
           }
 
