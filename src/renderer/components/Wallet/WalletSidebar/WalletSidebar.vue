@@ -78,12 +78,12 @@
       :has-ledger="isLedgerConnected"
       :is-sidebar-expanded="isExpanded"
       :outside-click="true"
-      :hide-empty="filters.hideEmpty"
-      :hide-ledger="filters.hideLedger"
-      :search-query="filters.searchQuery"
-      :sort-order="sort"
+      :filters="filters"
+      :search-query="searchQuery"
+      :sort-order="sortOrder"
       @filter="applyFilters"
-      @sort="applyOrder"
+      @sort="applySortOrder"
+      @search="applySearch"
       @close="closeFilters"
     />
 
@@ -203,7 +203,7 @@
 </template>
 
 <script>
-import { clone, filter, isEqual, sortBy, uniqBy } from 'lodash'
+import { clone, filter, sortBy, uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -240,18 +240,12 @@ export default {
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
-    filters: clone(vm.$options.defaultFilters)
-  }),
-
-  defaultFilters: Object.freeze({
-    hideEmpty: false,
-    hideLedger: false,
     searchQuery: ''
   }),
 
   computed: {
     areFiltersActive () {
-      return !isEqual(this.filters, this.$options.defaultFilters)
+      return !!this.searchQuery.length || Object.values(this.filters).some(value => !!value)
     },
 
     currentWallet () {
@@ -304,7 +298,19 @@ export default {
       return this.sortWallets(this.filterWallets(this.availableWallets))
     },
 
-    sort: {
+    filters: {
+      get () {
+        return this.$store.getters['session/walletSidebarFilters'] || {}
+      },
+      set (filters) {
+        this.$store.dispatch('session/setWalletSidebarFilters', filters)
+        const profile = clone(this.session_profile)
+        profile.walletSidebarFilters = filters
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
+    sortOrder: {
       get () {
         return this.$store.getters['session/walletSidebarSortParams'] ||
           { field: 'name', type: 'asc' }
@@ -374,7 +380,7 @@ export default {
     },
 
     applyFilters (filters) {
-      this.$set(this, 'filters', filters)
+      this.filters = filters
     },
 
     filterWallets (wallets) {
@@ -386,7 +392,7 @@ export default {
       if (this.filters.hideEmpty) {
         filtered = filter(filtered, wallet => wallet.balance > 0)
       }
-      if (this.filters.searchQuery) {
+      if (this.searchQuery) {
         filtered = filter(filtered, ({ address, balance, name }) => {
           let match = [
             address,
@@ -410,12 +416,16 @@ export default {
       return filtered
     },
 
-    applyOrder (params) {
-      this.sort = params
+    applySearch (query) {
+      this.searchQuery = query
+    },
+
+    applySortOrder (params) {
+      this.sortOrder = params
     },
 
     sortWallets (wallets) {
-      const { field, type } = this.sort
+      const { field, type } = this.sortOrder
 
       if (field === 'name') {
         wallets = this.wallet_sortByName(wallets)
@@ -461,7 +471,7 @@ export default {
   @apply .sticky .z-10 .bg-theme-feature .pin-t
 }
 .WalletSidebar__menu__button {
-  @apply .cursor-pointer .fill-current .text-theme-option-button-text .py-2 .my-6;
+  @apply .cursor-pointer .fill-current .text-theme-option-button-text .p-2 .my-6;
   transition: color 0.4s;
   align-self: center;
 }

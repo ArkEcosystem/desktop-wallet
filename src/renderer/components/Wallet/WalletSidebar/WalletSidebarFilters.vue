@@ -44,7 +44,7 @@
         >
           <ButtonSwitch
             ref="hide-empty"
-            :is-active="hideEmpty"
+            :is-active="currentFilters.hideEmpty"
             class="theme-light"
             background-color="var(--theme-settings-switch)"
             @change="setHideEmpty"
@@ -62,7 +62,7 @@
         >
           <ButtonSwitch
             ref="hide-ledger"
-            :is-active="hideLedger"
+            :is-active="currentFilters.hideLedger"
             class="theme-light"
             background-color="var(--theme-settings-switch)"
             @change="setHideLedger"
@@ -117,16 +117,9 @@ export default {
       required: false,
       default: false
     },
-    hideEmpty: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    // Hide Ledger wallets
-    hideLedger: {
-      type: Boolean,
-      required: false,
-      default: false
+    filters: {
+      type: Object,
+      required: true
     },
     searchQuery: {
       type: String,
@@ -142,41 +135,32 @@ export default {
 
   data () {
     return {
-      filters: {
-        hideEmpty: this.hideEmpty,
-        hideLedger: this.hideLedger,
-        searchQuery: this.searchQuery
-      },
-      sort: {
-        order: this.sortOrder
-      }
+      currentSearchQuery: this.searchQuery,
+      currentFilters: this.filters,
+      currentSortOrder: this.sortOrder
     }
   },
 
   computed: {
     stringifiedSortOrder () {
-      return Object.values(this.sortOrder).join('-')
+      return Object.values(this.currentSortOrder).join('-')
     }
   },
 
   watch: {
-    hideEmpty (value) {
-      this.filters.hideEmpty = value
+    filters (filters) {
+      this.currentFilters = filters
     },
 
-    hideLedger (value) {
-      this.filters.hideLedger = value
-    },
-
-    searchQuery (value) {
-      this.filters.searchQuery = value
+    searchQuery (query) {
+      this.currentSearchQuery = query
     }
   },
 
   methods: {
     setSearchQuery (query) {
-      this.filters.searchQuery = query
-      this.emitFilter()
+      this.currentSearchQuery = query
+      this.emitSearch()
     },
 
     setHideEmpty (isHidden) {
@@ -185,14 +169,18 @@ export default {
     },
 
     setHideLedger (isHidden) {
-      this.filters.hideLedger = isHidden
+      this.filters.hideEmpty = isHidden
+      this.emitFilter()
+    },
+
+    setFilter (filter, value) {
+      this.currentFilters[filter] = value
       this.emitFilter()
     },
 
     setSort (value) {
       const [field, type] = value.split('-')
-      this.sort = { field, type }
-
+      this.currentSortOrder = { field, type }
       this.emitSort()
     },
 
@@ -201,11 +189,15 @@ export default {
     },
 
     emitFilter () {
-      this.$emit('filter', this.filters)
+      this.$emit('filter', this.currentFilters)
+    },
+
+    emitSearch () {
+      this.$emit('search', this.currentSearchQuery)
     },
 
     emitSort () {
-      this.$emit('sort', this.sort)
+      this.$emit('sort', this.currentSortOrder)
     },
 
     emitClose (context) {
