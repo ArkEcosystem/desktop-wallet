@@ -58,6 +58,7 @@
           <!-- Important notification / new releases -->
           <AppSidemenuImportantNotification
             v-if="isImportantNotificationVisible && hasNewRelease"
+            id="importantNotifications"
             :is-horizontal="isHorizontal"
             class="AppSidemenu__item"
             @close="hideImportantNotification"

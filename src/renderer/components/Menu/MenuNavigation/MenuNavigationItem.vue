@@ -1,5 +1,6 @@
 <template>
   <button
+    :id="id"
     :class="{
       'MenuNavigationItem--active': isActive,
       'w-full' : !isHorizontal

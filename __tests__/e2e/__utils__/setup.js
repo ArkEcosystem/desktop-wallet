@@ -38,9 +38,9 @@ export default {
     return app
   },
   async stopApp (scope) {
+    delete scope.actions
     delete scope.browser
     delete scope.emitToRenderer
-    delete scope.actions
 
     if (scope.app && scope.app.isRunning()) {
       return scope.app.stop()
