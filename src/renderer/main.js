@@ -19,19 +19,6 @@ import apiClient from '@/plugins/api-client'
 import synchronizer from '@/plugins/synchronizer'
 import eventBus from '@/plugins/event-bus'
 
-// TODO only during tests
-/**
- * Call an e2e action on each event, deserializing the data, which is passed
- * as JSON always because the process communication only supports basic types.
- */
-process.on('e2e', async (actionName, args) => {
-  console.log('{e2e}', actionName, args)
-
-  const action = require(`@tests/e2e/__actions__/${actionName}.js`)
-
-  await action(JSON.parse(args))
-})
-
 Vue.config.productionTip = false
 Vue.logger = Vue.prototype.$logger = logger
 Vue.prototype.$eventBus = eventBus
@@ -52,11 +39,23 @@ Vue.use(PortalVue)
 
 Vue.mixin(mixins)
 
-/* eslint-disable no-new */
-new Vue({
+const vue = new Vue({
   components: { App },
   i18n,
   router,
   store,
   template: '<App/>'
 }).$mount('#app')
+
+if (process.env.E2E_TESTS) {
+  /**
+   * Call an e2e action on each event, deserialising the data, which is passed
+   * as JSON always because the process communication only supports basic types.
+   */
+  process.on('e2e', async (actionName, args) => {
+    console.log('{e2e}', actionName, args)
+
+    const action = require(`@tests/e2e/__actions__/${actionName}.js`)
+    await action(vue, JSON.parse(args))
+  })
+}

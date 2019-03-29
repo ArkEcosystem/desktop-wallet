@@ -9,6 +9,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@setup$': '<rootDir>/__tests__/e2e/__utils__/setup.js',
+    '^@pages/(.+)$': '<rootDir>/__tests__/e2e/__pages__/$1',
     '^@package.json$': '<rootDir>/package.json'
   },
   transform: {
@@ -16,6 +17,8 @@ module.exports = {
   },
   testPathIgnorePatterns: [
     '<rootDir>/__tests__/e2e.jest.conf.js',
+    '<rootDir>/__tests__/e2e/__actions__',
+    '<rootDir>/__tests__/e2e/__pages__',
     '<rootDir>/__tests__/e2e/__utils__',
     '<rootDir>/__tests__/unit'
   ],
