@@ -54,7 +54,10 @@ export default new BaseModule(ProfileModel, {
      * This default action is overridden to generate a random unique ID
      */
     create ({ commit }, model) {
-      model.id = crypto.randomBytes(12).toString('base64')
+      // Unless e2e tests, profiles are created without ID
+      if (!model.id) {
+        model.id = crypto.randomBytes(12).toString('base64')
+      }
 
       const data = ProfileModel.deserialize(model)
 
