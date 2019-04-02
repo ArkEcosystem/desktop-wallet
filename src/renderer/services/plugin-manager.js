@@ -453,6 +453,10 @@ class PluginManager {
       sandbox.walletApi.eventBus = this.app.$eventBus
     }
 
+    if (config.permissions.includes('AUDIO')) {
+      sandbox.AudioContext = AudioContext
+    }
+
     if (config.permissions.includes('ALERTS')) {
       sandbox.walletApi.alert = {
         error: this.app.$error,
