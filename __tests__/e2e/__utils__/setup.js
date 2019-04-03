@@ -24,6 +24,13 @@ export default {
     // http://v4.webdriver.io/api.html
     scope.browser = app.client
 
+    // For those cases that `browser.click` doesn't work
+    scope.browser.addCommand('specialClick', async function (selector) {
+      this.execute(selector => {
+        document.querySelector(selector).click()
+      }, selector)
+    })
+
     // To send data to the application renderer process
     scope.emitToRenderer = app.rendererProcess.emit
 
