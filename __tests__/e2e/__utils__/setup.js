@@ -35,15 +35,23 @@ export default {
       }
     })
 
+    scope.navigateTo = async (uri) => {
+      const current = await scope.browser.getUrl()
+      const url = current.split('#')[0] + '#' + uri
+      await scope.browser.url(url)
+    }
+
     return app
   },
   async stopApp (scope) {
     delete scope.actions
     delete scope.browser
     delete scope.emitToRenderer
+    delete scope.navigateTo
 
     if (scope.app && scope.app.isRunning()) {
       return scope.app.stop()
     }
+    return Promise.resolve()
   }
 }
