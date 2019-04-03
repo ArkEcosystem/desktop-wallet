@@ -602,7 +602,7 @@ export default {
       epoch: {
         requiredIfFull,
         isValid (value) {
-          return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.000Z$/.test(value)
+          return !this.showFull || /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/.test(value)
         }
       },
       wif: {
