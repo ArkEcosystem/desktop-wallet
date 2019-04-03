@@ -17,68 +17,113 @@ describe('Navbar > navigation', () => {
     await actions.createProfile()
     await actions.setSessionProfile('e2e-fake-profile')
     await actions.skipIntroductionScreens()
+
+    await scope.navigateTo('/')
   })
 
   afterEach(() => setup.stopApp(scope))
 
-  it('should show the Ark logo', async () => {
-    const $logo = navbar.$logo
+  describe('Ark logo', () => {
+    it('should be displayed', async () => {
+      const $logo = navbar.$logo
 
-    await expect(browser.isExisting($logo)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($logo, 1)).resolves.toBeTrue()
+      await expect(browser.isExisting($logo)).resolves.toBeTrue()
+      await expect(browser.waitForVisible($logo, 1)).resolves.toBeTrue()
+    })
+
+    describe('clicking on it', () => {
+      it('should navigate to the wallets section', async () => {
+        await scope.navigateTo('/announcements')
+
+        // Using `browser.click` doesn't work in this case
+        await browser.specialClick(navbar.$logo)
+
+        await expect(browser.getUrl()).resolves.toMatch(/index\.html#\/$/)
+      })
+    })
   })
 
-  it('should show the wallets button', async () => {
-    const $wallets = navbar.$wallets
+  describe('wallets button', () => {
+    it('should be displayed', async () => {
+      const $wallets = navbar.$wallets
 
-    await expect(browser.isExisting($wallets)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($wallets, 1)).resolves.toBeTrue()
+      await expect(browser.isExisting($wallets)).resolves.toBeTrue()
+      await expect(browser.waitForVisible($wallets, 1)).resolves.toBeTrue()
+    })
+
+    describe('clicking on it', () => {
+      it('should navigate to the wallets section', async () => {
+        // Using `browser.click` doesn't work in this case
+        await browser.specialClick(navbar.$wallets)
+
+        await expect(browser.getUrl()).resolves.toMatch('#/wallet/all')
+      })
+    })
   })
 
-  it('should show the contacts button', async () => {
-    const $contacts = navbar.$contacts
+  describe('contacts button', () => {
+    it('should be displayed', async () => {
+      const $contacts = navbar.$contacts
 
-    await expect(browser.isExisting($contacts)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($contacts, 1)).resolves.toBeTrue()
+      await expect(browser.isExisting($contacts)).resolves.toBeTrue()
+      await expect(browser.waitForVisible($contacts, 1)).resolves.toBeTrue()
+    })
+
+    describe('clicking on it', () => {
+      it('should navigate to the contacts section', async () => {
+        // Using `browser.click` doesn't work in this case
+        await browser.specialClick(navbar.$contacts)
+
+        await expect(browser.getUrl()).resolves.toMatch('#/contacts/all')
+      })
+    })
   })
 
-  it('should show the announcements button', async () => {
-    const $announcements = navbar.$announcements
+  describe('announcements button', () => {
+    it('should be displayed', async () => {
+      const $announcements = navbar.$announcements
 
-    await expect(browser.isExisting($announcements)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($announcements, 1)).resolves.toBeTrue()
+      await expect(browser.isExisting($announcements)).resolves.toBeTrue()
+      await expect(browser.waitForVisible($announcements, 1)).resolves.toBeTrue()
+    })
+
+    describe('clicking on it', () => {
+      it('should navigate to the announcements section', async () => {
+        // Using `browser.click` doesn't work in this case
+        await browser.specialClick(navbar.$announcements)
+
+        await expect(browser.getUrl()).resolves.toMatch('#/announcements')
+      })
+    })
   })
 
   xdescribe('when there is not a new version of the app', () => {
-    it('should not show the important notification button', async () => {
+    it('should not display the important notification button', async () => {
       expect(scope.isDisplayed(navbar.$importantNotifications)).toBeFalse()
     })
   })
 
   xdescribe('when there is a new version of the app', () => {
-    it('should show the important notification button', async () => {
+    it('should display the important notification button', async () => {
       expect(scope.isDisplayed(navbar.$importantNotifications)).toTrue()
     })
   })
 
-  it('should show the settings button', async () => {
-    const $settings = navbar.$settings
+  describe('profile avatar', () => {
+    it('should be displayed', async () => {
+      const $profile = navbar.$profile
 
-    await expect(browser.isExisting($settings)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($settings, 1)).resolves.toBeTrue()
-  })
+      await expect(browser.isExisting($profile)).resolves.toBeTrue()
+      await expect(browser.waitForVisible($profile, 1)).resolves.toBeTrue()
+    })
 
-  it('should show the networks button', async () => {
-    const $networks = navbar.$networks
+    describe('clicking on it', () => {
+      it('should navigate to the profiles section', async () => {
+        // Using `browser.click` doesn't work in this case
+        await browser.specialClick(navbar.$profile)
 
-    await expect(browser.isExisting($networks)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($networks, 1)).resolves.toBeTrue()
-  })
-
-  it('should show the profile avatar', async () => {
-    const $profile = navbar.$profile
-
-    await expect(browser.isExisting($profile)).resolves.toBeTrue()
-    await expect(browser.waitForVisible($profile, 1)).resolves.toBeTrue()
+        await expect(browser.getUrl()).resolves.toMatch('#/profiles')
+      })
+    })
   })
 })

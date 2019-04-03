@@ -16,7 +16,7 @@ export default class Navbar extends PageObject {
   get $wallets () {
     return '#wallets.AppSidemenu__item'
   }
-  /**
+  /*
    * The contacts button
    */
   get $contacts () {
@@ -39,6 +39,12 @@ export default class Navbar extends PageObject {
    */
   get $settings () {
     return '#settings.AppSidemenu__item'
+  }
+  /**
+   * The settings menu
+   */
+  get $settingsMenu () {
+    return '.AppSidemenuOptionsSettings'
   }
   /**
    * The networks button
