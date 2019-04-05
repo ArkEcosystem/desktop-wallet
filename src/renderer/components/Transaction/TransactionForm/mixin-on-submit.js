@@ -22,8 +22,6 @@ export default {
           this.form.wif = encodedWif
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        } finally {
-          bip38.quit()
         }
 
         this.showEncryptLoader = false
