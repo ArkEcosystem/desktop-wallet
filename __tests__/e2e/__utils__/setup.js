@@ -7,7 +7,7 @@ process.env.TEMP_USER_DATA = 'true'
 
 const actions = fs.readdirSync(`${__dirname}/../__actions__/`).map(action => action.slice(0, -3))
 
-const timeout = 30000
+const timeout = 40000
 jest.setTimeout(timeout)
 
 export default {
@@ -15,7 +15,7 @@ export default {
     scope.app = new Application({
       path: electron,
       args: ['dist/electron/main.js'],
-      startTimeout: 10000,
+      startTimeout: 20000,
       waitTimeout: timeout
     })
 
