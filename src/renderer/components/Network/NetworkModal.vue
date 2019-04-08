@@ -529,6 +529,7 @@ export default {
       try {
         await fetchAndFill(2, network => {
           this.form.epoch = network.constants.epoch
+          this.form.activeDelegates = network.constants.activeDelegates.toString()
         })
       } catch (v2Error) {
         try {
