@@ -502,12 +502,18 @@ export default {
         if (network) {
           const tokenFound = await cryptoCompare.checkTradeable(network.token)
 
-          this.form = {
-            ...network,
-            ...prefilled,
-            ticker: tokenFound ? network.token : '',
-            version: network.version.toString()
+          for (const key of Object.keys(this.form)) {
+            if (network.hasOwnProperty(key)) {
+              this.form[key] = network[key]
+            }
           }
+          for (const key of Object.keys(this.form)) {
+            if (prefilled.hasOwnProperty(key)) {
+              this.form[key] = prefilled[key]
+            }
+          }
+          this.form.ticker = tokenFound ? network.token : ''
+          this.form.version = network.version.toString()
 
           this.apiVersion = version
           this.showFull = true
