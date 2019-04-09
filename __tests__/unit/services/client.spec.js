@@ -19,6 +19,16 @@ jest.mock('@/store', () => ({
           publicKey: '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
         }
       }
+    },
+    'transaction/staticFee': (type) => {
+      const fees = [
+        0.1 * 1e8,
+        5 * 1e8,
+        25 * 1e8,
+        1 * 1e8
+      ]
+
+      return fees[type]
     }
   },
   watch: jest.fn()
