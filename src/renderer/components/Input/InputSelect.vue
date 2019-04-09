@@ -34,6 +34,7 @@
           :class="inputClass"
           :placeholder="label"
           class="InputSelect__input"
+          @blur="onBlur"
           @click="onHandlerClick"
         >
           <slot
@@ -145,6 +146,17 @@ export default {
   methods: {
     emitInput () {
       this.$emit('input', this.optionValue)
+    },
+
+    onBlur (event) {
+      // To ensure that the code is evaluated after other tasks
+      setTimeout(() => {
+        if (Object.values(document.activeElement.classList).includes('MenuDropdownItem__button')) {
+          event.preventDefault()
+        } else {
+          this.$refs.dropdown.close()
+        }
+      }, 0)
     },
 
     onHandlerClick () {

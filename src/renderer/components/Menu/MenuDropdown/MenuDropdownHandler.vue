@@ -3,6 +3,7 @@
     :class="[
       value ? '' : 'text-theme-page-text-light hover:text-theme-page-text',
       'MenuDropdownHandler cursor-pointer transition flex justify-between items-center text-inherit']"
+    @blur="emitBlur"
     @click="emitClick"
   >
     <span>
@@ -73,6 +74,10 @@ export default {
   },
 
   methods: {
+    emitBlur (event) {
+      this.$emit('blur', event)
+    },
+
     emitClick () {
       this.$emit('click')
     }
