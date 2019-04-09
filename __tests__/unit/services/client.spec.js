@@ -774,7 +774,7 @@ describe('Services > Client', () => {
   describe('buildSecondSignatureRegistration', () => {
     describe('when the fee is bigger than V1 fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[2] + 0.01
+        const fee = V1.fees[1] + 0.01
         expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
       })
     })
