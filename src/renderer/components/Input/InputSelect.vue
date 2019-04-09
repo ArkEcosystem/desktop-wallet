@@ -7,45 +7,43 @@
     class="InputSelect"
     @select="onDropdownSelect"
   >
-    <div
+    <template
       v-if="hasItemSlot"
-      slot="item"
-      slot-scope="itemScope"
+      v-slot:item="itemScope"
     >
       <slot
         name="input-item"
         v-bind="itemScope"
       />
-    </div>
+    </template>
 
-    <InputField
-      slot="handler"
-      slot-scope="handlerScope"
-      :name="name"
-      :label="inputLabel"
-      :value="optionText"
-      :is-dirty="isDirty"
-      :is-disabled="isDisabled"
-      :is-focused="isFocused"
-      :is-invalid="isInvalid"
-    >
-      <MenuDropdownHandler
-        slot-scope="{ inputClass }"
-        :value="handlerScope.value"
-        :item="handlerScope.item"
-        :class="inputClass"
-        :placeholder="label"
-        :on-blur="onBlur"
-        class="InputSelect__input"
-        @click="onHandlerClick"
+    <template v-slot:handler="handlerScope">
+      <InputField
+        :name="name"
+        :label="inputLabel"
+        :value="optionText"
+        :is-dirty="isDirty"
+        :is-disabled="isDisabled"
+        :is-focused="isFocused"
+        :is-invalid="isInvalid"
       >
-        <slot
-          v-if="hasHandlerSlot"
-          name="input-handler"
-          v-bind="handlerScope"
-        />
-      </MenuDropdownHandler>
-    </InputField>
+        <MenuDropdownHandler
+          slot-scope="{ inputClass }"
+          :value="handlerScope.value"
+          :item="handlerScope.item"
+          :class="inputClass"
+          :placeholder="label"
+          class="InputSelect__input"
+          @click="onHandlerClick"
+        >
+          <slot
+            v-if="hasHandlerSlot"
+            name="input-handler"
+            v-bind="handlerScope"
+          />
+        </MenuDropdownHandler>
+      </InputField>
+    </template>
   </MenuDropdown>
 </template>
 
