@@ -577,7 +577,7 @@ export default {
       server: {
         required,
         isValid (value) {
-          return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value)
         },
         hasScheme (value) {
           return /^https?:\/\//.test(value)
@@ -602,7 +602,7 @@ export default {
       explorer: {
         requiredIfFull,
         isValid (value) {
-          return !this.showFull || /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value)
         },
         hasScheme (value) {
           return !this.showFull || /^https?:\/\//.test(value)
