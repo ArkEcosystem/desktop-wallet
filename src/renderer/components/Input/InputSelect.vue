@@ -158,16 +158,6 @@ export default {
       this.optionValue = selectedValue
 
       this.emitInput()
-    },
-
-    onBlur (ev) {
-      this.$nextTick(() => {
-        if (Object.values(document.activeElement.classList).includes('MenuDropdownItem__button')) {
-          ev.preventDefault()
-        } else {
-          this.$refs.dropdown.close()
-        }
-      })
     }
   }
 }
