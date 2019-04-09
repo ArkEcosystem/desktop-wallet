@@ -672,7 +672,6 @@ export default class ClientService {
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
-    // To ensure that transfers cannot be build with a bigger fee than V1
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
