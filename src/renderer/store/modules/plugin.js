@@ -94,6 +94,24 @@ export default {
       }
 
       return menuItems
+    },
+
+    walletTabs: (_, getters) => {
+      return Object.keys(getters.loaded).reduce((walletTabs, pluginId) => {
+        const plugin = getters.loaded[pluginId]
+
+        if (plugin.walletTabs) {
+          const pluginWalletTabs = plugin.walletTabs.map(walletTab => {
+            return {
+              ...walletTab,
+              component: pluginManager.getWalletTabComponent(pluginId, walletTab)
+            }
+          })
+          walletTabs.push(...pluginWalletTabs)
+        }
+
+        return walletTabs
+      }, [])
     }
   },
 
@@ -133,6 +151,10 @@ export default {
 
     SET_PLUGIN_MENU_ITEMS (state, data) {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'menuItems', data.menuItems)
+    },
+
+    SET_PLUGIN_WALLET_TABS (state, data) {
+      Vue.set(state.loaded[data.profileId][data.pluginId], 'walletTabs', data.walletTabs)
     },
 
     SET_IS_PLUGIN_ENABLED (state, data) {
@@ -236,6 +258,17 @@ export default {
       }
 
       commit('SET_PLUGIN_MENU_ITEMS', {
+        ...data,
+        profileId: data.profileId || rootGetters['session/profileId']
+      })
+    },
+
+    setWalletTabs ({ commit, getters, rootGetters }, data) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      commit('SET_PLUGIN_WALLET_TABS', {
         ...data,
         profileId: data.profileId || rootGetters['session/profileId']
       })

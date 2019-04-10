@@ -61,6 +61,7 @@ class PluginManager {
     await this.loadRoutes(pluginObject, plugin)
     await this.loadMenuItems(pluginObject, plugin, profileId)
     await this.loadAvatars(pluginObject, plugin, profileId)
+    await this.loadWalletTabs(pluginObject, plugin, profileId)
   }
 
   async disablePlugin (pluginId) {
@@ -319,6 +320,39 @@ class PluginManager {
     }
 
     return components
+  }
+
+  async loadWalletTabs (pluginObject, plugin, profileId) {
+    if (!pluginObject.hasOwnProperty('getWalletTabs')) {
+      return
+    }
+
+    const pluginWalletTabs = this.normalize(pluginObject.getWalletTabs())
+    if (pluginWalletTabs && Array.isArray(pluginWalletTabs) && pluginWalletTabs.length) {
+      // Validate the configuration of each tab
+      const walletTabs = pluginWalletTabs.reduce((valid, walletTab) => {
+        if (typeof walletTab.tabTitle === 'string' && plugin.components[walletTab.componentName]) {
+          valid.push(walletTab)
+        }
+        return valid
+      }, [])
+
+      if (walletTabs.length) {
+        await this.app.$store.dispatch('plugin/setWalletTabs', {
+          pluginId: plugin.config.id,
+          walletTabs,
+          profileId
+        })
+      }
+    }
+  }
+
+  getWalletTabComponent (pluginId, walletTab) {
+    const component = this.plugins[pluginId].components[walletTab.componentName]
+    if (!component) {
+      throw new Error(`The wallet tab component \`${walletTab.componentName}\` has not be found`)
+    }
+    return component
   }
 
   validateComponent (component, name) {
