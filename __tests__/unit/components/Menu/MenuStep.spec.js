@@ -11,7 +11,7 @@ describe('MenuStep', () => {
         step: 1
       },
       mocks: {
-        collections_filterChilds: jest.fn()
+        collections_filterChildren: jest.fn()
       }
     })
     expect(wrapper.contains('.MenuStep')).toBeTruthy()

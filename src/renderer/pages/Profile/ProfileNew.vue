@@ -322,14 +322,18 @@ export default {
     }
   },
 
-  // Reuse the settings of the current profile
-  // Or get defaults
+  /**
+   * Reuse the settings of the current profile every time the page is created
+   */
   created () {
-    this.schema.background = this.background
-    this.schema.language = this.language
-    this.schema.currency = this.currency
-    this.schema.theme = this.theme
     this.selectNetwork(this.defaultNetworks.find(network => network.id === 'ark.mainnet'))
+    this.schema.background = this.background
+    this.schema.bip39Language = this.bip39Language
+    this.schema.currency = this.currency
+    this.schema.isMarketChartEnabled = this.isMarketChartEnabled
+    this.schema.language = this.language
+    this.schema.theme = this.theme
+    this.schema.timeFormat = this.timeFormat
   },
 
   destroyed () {
