@@ -96,11 +96,11 @@ export default {
       return menuItems
     },
 
+    // For each plugin that supports wallet tabs, get the component and configuration of each tab
     walletTabs: (_, getters) => {
       return Object.keys(getters.loaded).reduce((walletTabs, pluginId) => {
         const plugin = getters.loaded[pluginId]
 
-        // If the plugin supports wallet tabs, get the component of each tab
         if (plugin.walletTabs) {
           const pluginWalletTabs = plugin.walletTabs.map(walletTab => {
             return {
