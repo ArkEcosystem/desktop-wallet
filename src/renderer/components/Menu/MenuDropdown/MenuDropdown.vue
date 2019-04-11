@@ -6,7 +6,7 @@
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
       class="appearance-none text-inherit w-full"
-      @click.stop="buttonClick"
+      @click.stop="handlerWrapperClick"
     >
       <slot
         :active-value="activeValue"
@@ -177,7 +177,7 @@ export default {
       this.$emit('select', item)
     },
 
-    buttonClick () {
+    handlerWrapperClick () {
       this.toggle()
       this.$emit('click')
     },
