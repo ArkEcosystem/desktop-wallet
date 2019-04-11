@@ -8,9 +8,9 @@ export default {
       }
     }
 
-    document.documentElement.addEventListener('click', element.clickOutsideEvent, false)
+    document.documentElement.addEventListener('click', element.clickOutsideEvent, true)
   },
   unbind (element) {
-    document.documentElement.removeEventListener('click', element.clickOutsideEvent, false)
+    document.documentElement.removeEventListener('click', element.clickOutsideEvent, true)
   }
 }
