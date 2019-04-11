@@ -587,8 +587,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[3]) {
-      throw new Error(`Vote fee should be smaller than ${V1.fees[3]}`)
+    const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -619,8 +620,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[2]) {
-      throw new Error(`Delegate registration fee should be smaller than ${V1.fees[2]}`)
+    const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -653,9 +655,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    // To ensure that transfers cannot be build with a bigger fee than V1
-    if (!isAdvancedFee && fee > V1.fees[0]) {
-      throw new Error(`Transfer fee should be smaller than ${V1.fees[0]}`)
+    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -687,8 +689,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[1]) {
-      throw new Error(`Second signature fee should be smaller than ${V1.fees[1]}`)
+    const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
