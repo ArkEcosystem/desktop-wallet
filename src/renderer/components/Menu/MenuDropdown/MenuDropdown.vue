@@ -30,7 +30,7 @@
 
     <div
       v-if="isOpen && (hasDefaultSlot || hasItems)"
-      v-click-outside="close"
+      v-click-outside.stop="close"
       :class="[{
         'MenuDropdown--pin-above': pinAbove,
         'pin-x': pinToInputWidth
@@ -48,7 +48,7 @@
             :value="entryValue"
             :item="item.toString()"
             :is-active="isHighlighting ? entryValue === activeValue : false"
-            @click.self="select(entryValue)"
+            @click="select"
           >
             <slot
               name="item"
