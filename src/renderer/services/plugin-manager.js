@@ -9,6 +9,16 @@ class PluginManager {
     this.pluginRoutes = []
     this.hasInit = false
     this.vue = null
+    this.hooks = [
+      'beforeCreate',
+      'created',
+      'beforeMount',
+      'mounted',
+      'beforeUpdate',
+      'updated',
+      'beforeDestroy',
+      'destroyed'
+    ]
   }
 
   setVue (vue) {
@@ -205,13 +215,6 @@ class PluginManager {
           }
         }]
 
-        // Fix context of "mounted" method
-        if (component.mounted) {
-          vmComponent.options.mounted[0] = function () { return component.mounted.apply(componentContext(this)) }
-        }
-
-        // TODO: Fix context of other method types allowed (see `this.validateComponent`)
-
         // Fix context of all standard methods
         vmComponent.options.methods = {}
         for (const methodName of Object.keys(component.methods || {})) {
@@ -219,6 +222,13 @@ class PluginManager {
             return component.methods[methodName].apply(componentContext(this), [ ...arguments ])
           }
         }
+
+        // Fix context of hooks
+        this.hooks
+          .filter(hook => component.hasOwnProperty(hook))
+          .forEach(prop => {
+            vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+          })
 
         components[componentName] = vmComponent
       }
@@ -327,14 +337,7 @@ class PluginManager {
       'data',
       'methods',
       'computed',
-      'beforeCreate',
-      'created',
-      'beforeMount',
-      'mounted',
-      'beforeUpdate',
-      'updated',
-      'beforeDestroy',
-      'destroyed'
+      ...this.hooks
     ]
 
     const missingKeys = []
