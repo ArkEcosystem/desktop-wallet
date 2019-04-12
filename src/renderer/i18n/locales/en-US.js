@@ -236,7 +236,6 @@ export default {
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
-      PLUGINS: 'Plugin Manager',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
