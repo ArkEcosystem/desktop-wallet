@@ -129,14 +129,11 @@ export default {
 
   methods: {
     onSortChange (sortOptions) {
-      this.$emit('on-sort-change', sortOptions[0])
+      this.$emit('reorder', sortOptions[0])
     },
 
     toggleStatus (plugin) {
-      this.$store.dispatch('plugin/setEnabled', {
-        enabled: !plugin.isEnabled,
-        pluginId: plugin.id
-      })
+      this.$emit('toggle', plugin)
     }
   }
 }
