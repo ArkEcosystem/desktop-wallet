@@ -29,7 +29,7 @@ export default class TransactionService {
    */
   static async ledgerSign (wallet, transactionObject, vm) {
     transactionObject.senderPublicKey(wallet.publicKey)
-    const transaction = transactionObject.getStruct()
+    const transaction = transactionObject.data
 
     if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
       transaction.recipientId = wallet.address
