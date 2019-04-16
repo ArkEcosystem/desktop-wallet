@@ -490,7 +490,7 @@ export default {
         name: this.form.name,
         description: this.form.description,
         server: this.form.server,
-        // TODO: currently it's just default values
+        // Default values during the core API transition stage
         wif: '170',
         slip44: '1',
         activeDelegates: '51'
