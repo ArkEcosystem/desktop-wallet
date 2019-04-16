@@ -96,6 +96,25 @@ export default {
       return menuItems
     },
 
+    themes: (_, getters) => {
+      return Object.keys(getters.loaded).reduce((themes, pluginId) => {
+        const plugin = getters.loaded[pluginId]
+
+        console.log(plugin.themes)
+
+        if (plugin.themes) {
+          themes = {
+            ...themes,
+            ...plugin.themes
+          }
+        }
+
+        console.log(themes)
+
+        return themes
+      }, {})
+    },
+
     // For each plugin that supports wallet tabs, get the component and configuration of each tab
     walletTabs: (_, getters) => {
       return Object.keys(getters.loaded).reduce((walletTabs, pluginId) => {
@@ -152,6 +171,10 @@ export default {
 
     SET_PLUGIN_MENU_ITEMS (state, data) {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'menuItems', data.menuItems)
+    },
+
+    SET_PLUGIN_THEMES (state, data) {
+      Vue.set(state.loaded[data.profileId][data.pluginId], 'themes', data.themes)
     },
 
     SET_PLUGIN_WALLET_TABS (state, data) {
@@ -259,6 +282,17 @@ export default {
       }
 
       commit('SET_PLUGIN_MENU_ITEMS', {
+        ...data,
+        profileId: data.profileId || rootGetters['session/profileId']
+      })
+    },
+
+    setThemes ({ commit, getters, rootGetters }, data) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      commit('SET_PLUGIN_THEMES', {
         ...data,
         profileId: data.profileId || rootGetters['session/profileId']
       })

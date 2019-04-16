@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
-import { fill, zipObject } from 'lodash'
+import { fill, isEmpty, isObject, isString, zipObject } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -84,6 +84,9 @@ class PluginManager {
     }
     if (permissions.WALLET_TABS) {
       await this.loadWalletTabs(pluginObject, plugin, profileId)
+    }
+    if (permissions.THEMES) {
+      await this.loadThemes(pluginObject, plugin, profileId)
     }
   }
 
@@ -354,7 +357,7 @@ class PluginManager {
     if (pluginWalletTabs && Array.isArray(pluginWalletTabs) && pluginWalletTabs.length) {
       // Validate the configuration of each tab
       const walletTabs = pluginWalletTabs.reduce((valid, walletTab) => {
-        if (typeof walletTab.tabTitle === 'string' && plugin.components[walletTab.componentName]) {
+        if (isString(walletTab.tabTitle) && plugin.components[walletTab.componentName]) {
           valid.push(walletTab)
         }
         return valid
@@ -364,6 +367,31 @@ class PluginManager {
         await this.app.$store.dispatch('plugin/setWalletTabs', {
           pluginId: plugin.config.id,
           walletTabs,
+          profileId
+        })
+      }
+    }
+  }
+
+  async loadThemes (pluginObject, plugin, profileId) {
+    if (!pluginObject.hasOwnProperty('getThemes')) {
+      return
+    }
+
+    const pluginThemes = this.normalize(pluginObject.getThemes())
+    if (pluginThemes && isObject(pluginThemes)) {
+      // Validate the configuration of each theme
+      const themes = Object.keys(pluginThemes).reduce((valid, themeName) => {
+        if (isString(pluginThemes[themeName])) {
+          valid[themeName] = pluginThemes[themeName]
+        }
+        return valid
+      }, {})
+
+      if (!isEmpty(themes)) {
+        await this.app.$store.dispatch('plugin/setThemes', {
+          pluginId: plugin.config.id,
+          themes,
           profileId
         })
       }
