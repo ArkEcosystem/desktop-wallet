@@ -227,7 +227,18 @@
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
+                <MenuDropdown
+                  v-if="pluginThemes"
+                  :class="{
+                    'ProfileEdition__field--modified': modified.theme && modified.theme !== profile.theme
+                  }"
+                  :items="themes"
+                  :value="theme"
+                  :position="['-50%', '0%']"
+                  @select="selectTheme"
+                />
                 <SelectionTheme
+                  v-else
                   :value="theme"
                   @input="selectTheme"
                 />
@@ -423,6 +434,14 @@ export default {
       }
 
       return null
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
