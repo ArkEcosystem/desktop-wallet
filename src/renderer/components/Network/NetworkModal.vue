@@ -505,10 +505,7 @@ export default {
           for (const key of Object.keys(this.form)) {
             if (network.hasOwnProperty(key)) {
               this.form[key] = network[key]
-            }
-          }
-          for (const key of Object.keys(this.form)) {
-            if (prefilled.hasOwnProperty(key)) {
+            } else if (prefilled.hasOwnProperty(key)) {
               this.form[key] = prefilled[key]
             }
           }
