@@ -241,7 +241,8 @@ export default {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
         NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
-      }
+      },
+      THEME: 'Theme'
     },
     WALLETS: 'My wallets'
   },
