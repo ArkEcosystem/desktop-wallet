@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
-import { fill, isEmpty, isObject, isString, zipObject } from 'lodash'
+import { fill, isBoolean, isEmpty, isObject, isString, zipObject } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -90,6 +90,7 @@ class PluginManager {
     }
   }
 
+  // TODO hook to clean up and restore or reset values
   async disablePlugin (pluginId) {
     if (!this.hasInit) {
       throw new Error('Plugin Manager not initiated')
@@ -380,10 +381,17 @@ class PluginManager {
 
     const pluginThemes = this.normalize(pluginObject.getThemes())
     if (pluginThemes && isObject(pluginThemes)) {
-      // Validate the configuration of each theme
+      // Validate the configuration of each theme and ensure that their CSS exist
       const themes = Object.keys(pluginThemes).reduce((valid, themeName) => {
-        if (isString(pluginThemes[themeName])) {
-          valid[themeName] = pluginThemes[themeName]
+        const config = pluginThemes[themeName]
+
+        if (isBoolean(config.darkMode) && isString(config.cssPath)) {
+          const cssPath = path.join(plugin.fullPath, 'src', config.cssPath)
+          if (!fs.existsSync(cssPath)) {
+            throw new Error(`No file found on \`${config.cssPath}\` for theme "${themeName}"`)
+          }
+
+          valid[themeName] = { ...config, cssPath }
         }
         return valid
       }, {})

@@ -105,7 +105,7 @@ export default {
 
   computed: {
     hasDarkTheme () {
-      return this.$store.getters['session/hasDarkTheme']
+      return this.session_hasDarkTheme
     },
 
     currentNetwork () {

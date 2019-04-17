@@ -100,16 +100,12 @@ export default {
       return Object.keys(getters.loaded).reduce((themes, pluginId) => {
         const plugin = getters.loaded[pluginId]
 
-        console.log(plugin.themes)
-
         if (plugin.themes) {
           themes = {
             ...themes,
             ...plugin.themes
           }
         }
-
-        console.log(themes)
 
         return themes
       }, {})
