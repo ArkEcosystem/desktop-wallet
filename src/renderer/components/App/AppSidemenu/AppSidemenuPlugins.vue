@@ -18,7 +18,6 @@
           v-for="(menuItem, menuId) in columnItems"
           :key="menuId"
           :title="menuItem.title"
-          class="text-grey-light"
           @click="navigateToRoute(menuItem.routeName)"
         />
       </div>
