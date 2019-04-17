@@ -29,6 +29,7 @@ export default class TransactionService {
    */
   static async ledgerSign (wallet, transactionObject, vm) {
     transactionObject.senderPublicKey(wallet.publicKey)
+    transactionObject.sign('passphrase') // Sign with a "fake" passphrase to get the transaction structure
     const transaction = transactionObject.getStruct()
 
     if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
