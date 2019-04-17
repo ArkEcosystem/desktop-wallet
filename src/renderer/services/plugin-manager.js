@@ -2,6 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
+import { ipcRenderer } from 'electron'
 
 class PluginManager {
   constructor () {
@@ -72,6 +73,14 @@ class PluginManager {
     await this.loadMenuItems(pluginObject, plugin, profileId)
     await this.loadAvatars(pluginObject, plugin, profileId)
     await this.loadWalletTabs(pluginObject, plugin, profileId)
+
+    // TODO permissions
+    if (pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
+      const urls = pluginObject.getUnprotectedIframeUrls()
+      if (urls) {
+        ipcRenderer.send('disable-iframe-protection', urls)
+      }
+    }
   }
 
   async disablePlugin (pluginId) {
