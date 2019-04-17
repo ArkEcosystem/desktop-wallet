@@ -244,22 +244,26 @@ class PluginManager {
     }
 
     const pluginRoutes = this.normalize(await pluginObject.getRoutes())
-
     if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
-      let routes = []
-      for (const route of pluginRoutes) {
-        if (typeof route.component !== 'string' || !plugin.components[route.component]) {
-          continue
+      const allRoutes = this.getAllRoutes()
+
+      const routes = pluginRoutes.reduce((valid, route) => {
+        console.log(route, plugin.components)
+        if (typeof route.component === 'string' && plugin.components[route.component]) {
+          if (allRoutes.every(loadedRoute => loadedRoute.name !== route.name)) {
+            valid.push({
+              ...route,
+              component: plugin.components[route.component]
+            })
+          }
         }
+        return valid
+      }, [])
 
-        route.component = plugin.components[route.component]
-        routes.push(route)
-      }
+      console.log(routes)
 
-      this.app.$router.addRoutes(routes.filter(route => {
-        return !this.getAllRoutes().some(loadedRoute => loadedRoute.name === route.name)
-      }))
       this.pluginRoutes.push(...routes)
+      this.app.$router.addRoutes(routes)
     }
   }
 
@@ -273,7 +277,8 @@ class PluginManager {
       const allRoutes = this.getAllRoutes()
 
       const menuItems = pluginMenuItems.reduce((valid, menuItem) => {
-        if (allRoutes.every(route => route.name !== menuItem.routeName)) {
+        // Check that the related route exists
+        if (allRoutes.some(route => route.name === menuItem.routeName)) {
           valid.push(menuItem)
         }
         return valid
