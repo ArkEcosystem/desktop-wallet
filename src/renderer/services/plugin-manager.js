@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
-import { fill, zipObject } from 'lodash'
+import { camelCase, uniq, upperFirst } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -68,22 +68,10 @@ class PluginManager {
       profileId
     })
 
-    const permissions = zipObject(plugin.config.permissions, fill(new Array(plugin.config.permissions.length), true))
-
-    if (permissions.COMPONENTS) {
-      await this.loadComponents(pluginObject, plugin)
-    }
-    if (permissions.ROUTES) {
-      await this.loadRoutes(pluginObject, plugin)
-    }
-    if (permissions.MENU_ITEMS) {
-      await this.loadMenuItems(pluginObject, plugin, profileId)
-    }
-    if (permissions.AVATARS) {
-      await this.loadAvatars(pluginObject, plugin, profileId)
-    }
-    if (permissions.WALLET_TABS) {
-      await this.loadWalletTabs(pluginObject, plugin, profileId)
+    // COMPONENTS, ROUTES, MENU_ITEMS, AVATARS, WALLET_TABS
+    for (const permission of uniq(plugin.config.permissions)) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
     }
   }
 
