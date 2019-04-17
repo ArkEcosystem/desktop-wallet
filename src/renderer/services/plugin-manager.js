@@ -244,6 +244,7 @@ class PluginManager {
     }
 
     const pluginRoutes = this.normalize(await pluginObject.getRoutes())
+
     if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
       let routes = []
       for (const route of pluginRoutes) {
@@ -269,14 +270,14 @@ class PluginManager {
 
     const pluginMenuItems = this.normalize(pluginObject.getMenuItems())
     if (pluginMenuItems && Array.isArray(pluginMenuItems) && pluginMenuItems.length) {
-      const menuItems = []
-      for (const menuItem of pluginMenuItems) {
-        if (!this.getAllRoutes().some(route => route.name === menuItem.routeName)) {
-          continue
-        }
+      const allRoutes = this.getAllRoutes()
 
-        menuItems.push(menuItem)
-      }
+      const menuItems = pluginMenuItems.reduce((valid, menuItem) => {
+        if (allRoutes.every(route => route.name !== menuItem.routeName)) {
+          valid.push(menuItem)
+        }
+        return valid
+      }, [])
 
       await this.app.$store.dispatch('plugin/setMenuItems', {
         pluginId: plugin.config.id,
