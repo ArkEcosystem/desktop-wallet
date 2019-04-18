@@ -359,7 +359,7 @@ export default {
     },
 
     selectAvatar (avatar) {
-      if (typeof avatar === 'string') {
+      if (typeof avatar === 'string' || avatar.onlyLetter) {
         this.schema.avatar = avatar
       } else if (avatar.name) {
         this.schema.avatar = {
