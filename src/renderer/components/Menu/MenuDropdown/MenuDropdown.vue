@@ -6,7 +6,7 @@
       v-if="!hasDefaultSlot"
       :disabled="isDisabled"
       class="appearance-none text-inherit w-full"
-      @click.stop="buttonClick"
+      @click.stop="handlerWrapperClick"
     >
       <slot
         :active-value="activeValue"
@@ -30,7 +30,7 @@
 
     <div
       v-if="isOpen && (hasDefaultSlot || hasItems)"
-      v-click-outside="close"
+      v-click-outside.stop="close"
       :class="[{
         'MenuDropdown--pin-above': pinAbove,
         'pin-x': pinToInputWidth
@@ -48,7 +48,7 @@
             :value="entryValue"
             :item="item.toString()"
             :is-active="isHighlighting ? entryValue === activeValue : false"
-            @click.self="select(entryValue)"
+            @click="select"
           >
             <slot
               name="item"
@@ -177,7 +177,7 @@ export default {
       this.$emit('select', item)
     },
 
-    buttonClick () {
+    handlerWrapperClick () {
       this.toggle()
       this.$emit('click')
     },

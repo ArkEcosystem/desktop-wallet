@@ -1,6 +1,6 @@
 <template>
   <div
-    v-click-outside="emitClose"
+    v-click-outside.capture="emitClose"
     :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
     class="absolute z-20 theme-dark"
   >
@@ -95,25 +95,6 @@
             class="theme-dark"
             background-color="var(--theme-settings-switch)"
             @change="setBroadcastPeers"
-          />
-        </div>
-      </MenuOptionsItem>
-
-      <MenuOptionsItem
-        v-if="isMarketEnabled"
-        :title="$t('APP_SIDEMENU.SETTINGS.IS_MARKET_CHART_ENABLED')"
-        @click="toggleSelect('show-market-chart')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
-        >
-          <ButtonSwitch
-            ref="show-market-chart"
-            :is-active="sessionIsMarketChartEnabled"
-            class="theme-dark"
-            background-color="#414767"
-            @change="setIsMarketChartEnabled"
           />
         </div>
       </MenuOptionsItem>
