@@ -105,6 +105,8 @@ export default new BaseModule(NetworkModel, {
         await dispatch('session/setProfileId', rootGetters['session/profileId'], { root: true })
         eventBus.emit('client:changed')
       }
+
+      await dispatch('network/fetchFees', network)
     },
 
     removeCustomNetwork ({ dispatch, commit }, id) {
