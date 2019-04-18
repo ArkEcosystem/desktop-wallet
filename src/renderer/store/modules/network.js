@@ -72,8 +72,10 @@ export default new BaseModule(NetworkModel, {
     /*
      * Update the fee statistics of the current network
      */
-    async fetchFees ({ commit, rootGetters }) {
-      const network = rootGetters['session/network']
+    async fetchFees ({ commit, rootGetters }, network = null) {
+      if (!network) {
+        network = rootGetters['session/network']
+      }
 
       if (network.apiVersion === 2) {
         try {
