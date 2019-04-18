@@ -471,10 +471,10 @@ export default {
       customNetwork.apiVersion = this.network ? this.network.apiVersion : this.apiVersion
 
       if (this.showFull && this.hasFetched) {
-        this.$store.dispatch('network/addCustomNetwork', customNetwork)
+        await this.$store.dispatch('network/addCustomNetwork', customNetwork)
       } else {
         // Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
-        this.$store.dispatch('network/updateCustomNetwork', customNetwork)
+        await this.$store.dispatch('network/updateCustomNetwork', customNetwork)
       }
       this.emitSaved()
     },
@@ -490,7 +490,7 @@ export default {
         name: this.form.name,
         description: this.form.description,
         server: this.form.server,
-        // TODO: currently it's just default values
+        // Default values during the core API transition stage
         wif: '170',
         slip44: '1',
         activeDelegates: '51'
@@ -502,12 +502,15 @@ export default {
         if (network) {
           const tokenFound = await cryptoCompare.checkTradeable(network.token)
 
-          this.form = {
-            ...network,
-            ...prefilled,
-            ticker: tokenFound ? network.token : '',
-            version: network.version.toString()
+          for (const key of Object.keys(this.form)) {
+            if (network.hasOwnProperty(key)) {
+              this.form[key] = network[key]
+            } else if (prefilled.hasOwnProperty(key)) {
+              this.form[key] = prefilled[key]
+            }
           }
+          this.form.ticker = tokenFound ? network.token : ''
+          this.form.version = network.version.toString()
 
           this.apiVersion = version
           this.showFull = true
@@ -523,6 +526,9 @@ export default {
       try {
         await fetchAndFill(2, network => {
           this.form.epoch = network.constants.epoch
+          if (network.constants.activeDelegates) {
+            this.form.activeDelegates = network.constants.activeDelegates.toString()
+          }
         })
       } catch (v2Error) {
         try {
@@ -568,7 +574,7 @@ export default {
       server: {
         required,
         isValid (value) {
-          return /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value)
         },
         hasScheme (value) {
           return /^https?:\/\//.test(value)
@@ -593,7 +599,7 @@ export default {
       explorer: {
         requiredIfFull,
         isValid (value) {
-          return !this.showFull || /(:\/\/){1}[^\-.]+[a-zA-Z0-9\-_.]*[^\-.]+$/.test(value)
+          return !this.showFull || /(:\/\/){1}[a-zA-Z0-9][a-zA-Z0-9\-_.]*[a-zA-Z0-9](:[0-9]+)?$/.test(value)
         },
         hasScheme (value) {
           return !this.showFull || /^https?:\/\//.test(value)
