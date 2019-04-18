@@ -90,9 +90,11 @@ export default new BaseModule(NetworkModel, {
       }
     },
 
-    addCustomNetwork ({ dispatch, commit }, network) {
+    async addCustomNetwork ({ dispatch, commit }, network) {
       commit('ADD_CUSTOM_NETWORK', network)
       dispatch('create', network)
+
+      await dispatch('fetchFees', network)
     },
 
     async updateCustomNetwork ({ dispatch, commit, rootGetters }, network) {
@@ -106,7 +108,7 @@ export default new BaseModule(NetworkModel, {
         eventBus.emit('client:changed')
       }
 
-      await dispatch('network/fetchFees', network)
+      await dispatch('fetchFees', network)
     },
 
     removeCustomNetwork ({ dispatch, commit }, id) {

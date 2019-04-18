@@ -471,10 +471,10 @@ export default {
       customNetwork.apiVersion = this.network ? this.network.apiVersion : this.apiVersion
 
       if (this.showFull && this.hasFetched) {
-        this.$store.dispatch('network/addCustomNetwork', customNetwork)
+        await this.$store.dispatch('network/addCustomNetwork', customNetwork)
       } else {
         // Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
-        this.$store.dispatch('network/updateCustomNetwork', customNetwork)
+        await this.$store.dispatch('network/updateCustomNetwork', customNetwork)
       }
       this.emitSaved()
     },
