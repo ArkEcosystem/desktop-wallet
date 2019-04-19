@@ -30,7 +30,7 @@ class PluginManager {
 
     await this.app.$store.dispatch('plugin/init')
 
-    await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
+    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(path.resolve(os.homedir(), '.ark-desktop/plugins'))
 
     this.hasInit = true
