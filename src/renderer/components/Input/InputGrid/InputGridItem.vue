@@ -81,7 +81,7 @@ export default {
       default: false
     },
     component: {
-      type: Object,
+      type: [Object, Function],
       required: false,
       default: () => {}
     },
