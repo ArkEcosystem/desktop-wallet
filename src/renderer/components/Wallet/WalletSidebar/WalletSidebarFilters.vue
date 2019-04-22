@@ -1,6 +1,6 @@
 <template>
   <div
-    v-click-outside="emitClose"
+    v-click-outside.capture="emitClose"
     :class="isSidebarExpanded ? 'WalletSidebarFilters--expanded' : 'WalletSidebarFilters--collapsed'"
     class="WalletSidebarFilters absolute z-20 rounded-lg theme-light"
   >

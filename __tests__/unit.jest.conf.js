@@ -37,6 +37,6 @@ module.exports = {
   collectCoverageFrom: [
     'src/renderer/**/*.{js,vue}'
   ],
-  setupTestFrameworkScriptFile: 'jest-extended',
+  setupFilesAfterEnv: ['jest-extended'],
   watchman: false
 }

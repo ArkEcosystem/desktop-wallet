@@ -1,7 +1,7 @@
 <template>
   <li
     class="MenuOptionsItem text-theme-settings-text cursor-pointer"
-    @click="emitClick"
+    @click.stop="emitClick"
   >
     <div
       :class="hasControls ? 'border-dashed' : 'border-solid'"

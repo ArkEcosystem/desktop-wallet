@@ -1,6 +1,4 @@
-import ApiClient from '@arkecosystem/client'
 import { crypto, transactionBuilder } from '@arkecosystem/crypto'
-import axios from 'axios'
 import { castArray, chunk, orderBy } from 'lodash'
 import dayjs from 'dayjs'
 import moment from 'moment'
@@ -9,6 +7,24 @@ import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
+import OriginalClient from '@arkecosystem/client'
+import Http from '@/services/http'
+import BackgroundHttpClient from '@/services/background-http-client'
+
+const httpClient = new Http()
+
+/**
+ * This class has the mission of monkey-patching the API client to establish
+ * its inner HTTP client.
+ * It can be used to run requests in workers.
+ * TODO override static `findPeers` to make its request on background too
+ */
+class ApiClient extends OriginalClient {
+  setConnection (host) {
+    this.http = new BackgroundHttpClient(host, this.version)
+    this.http.__httpClient = httpClient.request
+  }
+}
 
 export default class ClientService {
   /*
@@ -58,7 +74,7 @@ export default class ClientService {
    */
   static async fetchPeerConfig (host, timeout = 3000) {
     try {
-      const { data } = await axios({
+      const { data } = await httpClient.request({
         url: `${host}/config`,
         method: 'GET',
         headers: {
@@ -587,8 +603,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[3]) {
-      throw new Error(`Vote fee should be smaller than ${V1.fees[3]}`)
+    const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -619,8 +636,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[2]) {
-      throw new Error(`Delegate registration fee should be smaller than ${V1.fees[2]}`)
+    const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -653,9 +671,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    // To ensure that transfers cannot be build with a bigger fee than V1
-    if (!isAdvancedFee && fee > V1.fees[0]) {
-      throw new Error(`Transfer fee should be smaller than ${V1.fees[0]}`)
+    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -687,8 +705,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[1]) {
-      throw new Error(`Second signature fee should be smaller than ${V1.fees[1]}`)
+    const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -717,9 +736,7 @@ export default class ClientService {
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
     const network = store.getters['session/network']
-    transaction = transaction.network({
-      pubKeyHash: network.version
-    })
+    transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
     const epochTime = moment(network.constants.epoch).utc().valueOf()
@@ -749,7 +766,7 @@ export default class ClientService {
     const scheme = currentPeer.isHttps ? 'https://' : 'http://'
     const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
     const network = store.getters['session/network']
-    const response = await axios({
+    const response = await httpClient.request({
       url: host,
       data: { transactions: castArray(transactions) },
       method: 'POST',

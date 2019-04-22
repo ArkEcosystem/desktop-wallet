@@ -31,8 +31,6 @@ export default {
           this.wallet.passphrase = bip38key
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_ENCRYPT'))
-        } finally {
-          bip38.quit()
         }
 
         this.showEncryptLoader = false
