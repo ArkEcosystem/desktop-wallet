@@ -48,7 +48,7 @@ export default {
 
   methods: {
     collectItems () {
-      this.items = this.collections_filterChilds('MenuNavigationItem') || []
+      this.items = this.collections_filterChildren('MenuNavigationItem') || []
     },
 
     switchToId (id) {

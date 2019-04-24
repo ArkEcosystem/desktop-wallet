@@ -49,7 +49,13 @@
             v-if="hasAnyProfile"
             class="hidden md:block"
           />
-          <RouterView class="flex-1 overflow-y-auto" />
+          <!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
+          <KeepAlive
+            :include="keepAliveRoutes"
+            :max="keepAliveRoutes.length"
+          >
+            <RouterView class="flex-1 overflow-y-auto" />
+          </KeepAlive>
         </div>
 
         <AppFooter />
@@ -93,7 +99,7 @@
 
 <script>
 import '@/styles/style.css'
-import { isEmpty } from 'lodash'
+import { isEmpty, pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
@@ -116,12 +122,22 @@ export default {
     WalletSignModal
   },
 
-  data: () => ({
+  data: vm => ({
     isReady: false,
     hasBlurFilter: false,
     uriSchema: {},
     isUriTransactionOpen: false,
-    isUriMessageSignOpen: false
+    isUriMessageSignOpen: false,
+    uriTransactionSchema: {},
+    aliveRouteComponents: []
+  }),
+
+  keepableRoutes: Object.freeze({
+    profileAgnostic: ['Announcements', 'NetworkOverview', 'ProfileAll'],
+    profileDependent: ['Dashboard', 'ContactAll', 'WalletAll'],
+    // This pages could be cached to not delete the current form data, but they
+    // would not support switching profiles, which would be confusing for some users
+    dataDependent: ['ContactNew', 'ProfileNew', 'WalletImport', 'WalletNew']
   }),
 
   computed: {
@@ -145,12 +161,61 @@ export default {
     },
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
+    },
+    currentProfileId () {
+      return this.session_profile
+        ? this.session_profile.id
+        : null
+    },
+    keepAliveRoutes () {
+      return uniq([
+        ...this.$options.keepableRoutes.profileAgnostic,
+        ...this.aliveRouteComponents
+      ])
+    },
+    routeComponent () {
+      return this.$route.matched.length
+        ? this.$route.matched[0].components.default.name
+        : null
     }
   },
 
   watch: {
     hasProtection (value) {
       remote.getCurrentWindow().setContentProtection(value)
+    },
+    routeComponent (value) {
+      if (this.aliveRouteComponents.includes(value)) {
+        pull(this.aliveRouteComponents, value)
+      }
+      // Not all routes can be cached flawlessly
+      const keepable = [
+        ...this.$options.keepableRoutes.profileAgnostic,
+        ...this.$options.keepableRoutes.profileDependent
+      ]
+      if (keepable.includes(value)) {
+        this.aliveRouteComponents.push(value)
+      }
+    },
+    currentProfileId (value, oldValue) {
+      if (value && oldValue) {
+        // If the profile changes, remove all the cached routes, except the latest
+        // if they are profile independent
+        if (value !== oldValue) {
+          const profileAgnostic = this.$options.keepableRoutes.profileAgnostic
+
+          const aliveRouteComponents = []
+          for (let i = profileAgnostic.length; i >= 0; i--) {
+            const length = this.aliveRouteComponents.length
+            const route = this.aliveRouteComponents[length - i]
+
+            if (profileAgnostic.includes(route)) {
+              aliveRouteComponents.push(route)
+            }
+          }
+          this.aliveRouteComponents = aliveRouteComponents
+        }
+      }
     }
   },
 
@@ -161,12 +226,7 @@ export default {
    */
   async created () {
     this.$store._vm.$on('vuex-persist:ready', async () => {
-      await this.$store.dispatch('network/load', config.NETWORKS)
-      const currentProfileId = this.$store.getters['session/profileId']
-      await this.$store.dispatch('session/reset')
-      await this.$store.dispatch('session/setProfileId', currentProfileId)
-      await this.$store.dispatch('ledger/reset')
-
+      await this.loadEssential()
       this.isReady = true
 
       this.$synchronizer.defineAll()
@@ -194,9 +254,18 @@ export default {
   },
 
   methods: {
+    async loadEssential () {
+      await this.$store.dispatch('network/load', config.NETWORKS)
+      const currentProfileId = this.$store.getters['session/profileId']
+      await this.$store.dispatch('session/reset')
+      await this.$store.dispatch('session/setProfileId', currentProfileId)
+      await this.$store.dispatch('ledger/reset')
+    },
     /**
      * These data are used in different parts, but loading them should not
      * delay the application
+     * TODO move some parts to the synchronizer and make it aware of when the
+     * network has changed
      * @return {void}
      */
     async loadNotEssential () {
@@ -213,7 +282,7 @@ export default {
         this.$store.dispatch('peer/connectToBest', {})
         this.$store.dispatch('delegate/load')
         if (this.$store.getters['ledger/isConnected']) {
-          this.$store.dispatch('ledger/reloadWallets', true)
+          this.$store.dispatch('ledger/reloadWallets', { clearFirst: true, forceLoad: true })
         }
       })
       this.$eventBus.on('ledger:connected', async () => {

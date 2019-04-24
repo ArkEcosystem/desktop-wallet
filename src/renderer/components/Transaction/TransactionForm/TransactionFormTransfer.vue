@@ -146,6 +146,7 @@ import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
+import onSubmit from './mixin-on-submit'
 
 export default {
   name: 'TransactionFormTransfer',
@@ -164,6 +165,8 @@ export default {
     PassphraseInput,
     WalletSelection
   },
+
+  mixins: [onSubmit],
 
   props: {
     schema: {
@@ -185,7 +188,6 @@ export default {
     isSendAllActive: false,
     showEncryptLoader: false,
     showLedgerLoader: false,
-    bip38Worker: null,
     previousAmount: '',
     wallet: null,
     showConfirmSendAll: false
@@ -267,10 +269,6 @@ export default {
     }
   },
 
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
-  },
-
   mounted () {
     // Note: we set this here and not in the data property so validation is triggered properly when fields get pre-populated
     if (this.schema) {
@@ -282,21 +280,6 @@ export default {
       this.$set(this, 'wallet', this.currentWallet || null)
       this.$v.wallet.$touch()
     }
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.decodedWif === null) {
-        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        this.showEncryptLoader = false
-      } else if (message.decodedWif) {
-        this.form.passphrase = null
-        this.form.wif = message.decodedWif
-        this.showEncryptLoader = false
-        this.submit()
-      }
-    })
 
     // Set default fees with v1 compatibility
     if (this.walletNetwork.apiVersion === 1) {
@@ -340,19 +323,6 @@ export default {
     ensureAvailableAmount () {
       if (this.isSendAllActive && this.canSendAll()) {
         this.$set(this.form, 'amount', this.maximumAvailableAmount)
-      }
-    },
-
-    onSubmit () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
-        this.showEncryptLoader = true
-        this.bip38Worker.send({
-          bip38key: this.currentWallet.passphrase,
-          password: this.form.walletPassword,
-          wif: this.walletNetwork.wif
-        })
-      } else {
-        this.submit()
       }
     },
 

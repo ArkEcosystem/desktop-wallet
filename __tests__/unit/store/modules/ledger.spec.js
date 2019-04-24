@@ -75,18 +75,15 @@ beforeEach(async () => {
     spyConnect.mockRestore()
   }
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
-  ClientService.hasMultiWalletSearch = false
+  ClientService.capabilities = '2.0.0'
   ledgerNameByAddress = () => null
+  axiosMock.reset()
 })
 describe('ledger store module', () => {
-  it('should init ledger service', (done) => {
+  it('should init ledger service', () => {
     store.dispatch('ledger/init', 1234)
 
     expect(store.state.ledger.slip44).toBe(1234)
-    setTimeout(() => {
-      expect(store.state.ledger.connectionTimer).toBeTruthy()
-      done()
-    }, 3000)
   })
 
   it('should set slip44 value', () => {
@@ -154,7 +151,7 @@ describe('ledger store module', () => {
     let spyCryptoGetAddress
     let ledgerWallets
     let expectedWallets
-    beforeEach(() => {
+    beforeEach(async () => {
       if (spyGetWallet) {
         spyGetWallet.mockRestore()
       }
@@ -196,16 +193,52 @@ describe('ledger store module', () => {
         }
         expectedWallets[wallet.address] = newWallet
       }
+
+      await store.dispatch('ledger/connect')
     })
 
     it('should not start if not connected', async () => {
       await disconnectLedger()
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual([])
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual({})
     })
 
     it('should not start if already loading', async () => {
-      store.commit('ledger/SET_LOADING', true)
-      expect(await store.dispatch('ledger/reloadWallets')).toEqual([])
+      store.commit('ledger/SET_LOADING', 'test')
+      expect(await store.dispatch('ledger/reloadWallets')).toEqual({})
+    })
+
+    it('should mark all other processes to stop on force reload', async () => {
+      store.commit('ledger/SET_LOADING', 'test1')
+      store.commit('ledger/SET_LOADING', 'test2')
+      store.commit('ledger/SET_LOADING', 'test3')
+      expect(store.getters['ledger/isLoading']).toBeTruthy()
+      expect(store.getters['ledger/isConnected']).toBeTruthy()
+      await store.dispatch('ledger/reloadWallets', {
+        clearFirst: false,
+        forceLoad: true,
+        quantity: null
+      })
+      expect(store.getters['ledger/shouldStopLoading']('test1')).toEqual(true)
+      expect(store.getters['ledger/shouldStopLoading']('test2')).toEqual(true)
+      expect(store.getters['ledger/shouldStopLoading']('test3')).toEqual(true)
+    })
+
+    it('should load 10 wallets', async () => {
+      axiosMock
+        .onGet(new RegExp(`http://127.0.0.1/api/wallets/*`))
+        .reply(404, {
+          statusCode: 404,
+          error: 'Not Found',
+          message: 'Wallet not found'
+        })
+
+      expect(store.getters['ledger/isConnected']).toBeTruthy()
+      expect(await store.dispatch('ledger/reloadWallets', {
+        clearFirst: false,
+        forceLoad: false,
+        quantity: 10
+      })).not.toEqual({})
+      expect(store.getters['ledger/wallets'].length).toEqual(10)
     })
 
     it('should load all wallets without multi-wallet search', async () => {
@@ -234,7 +267,7 @@ describe('ledger store module', () => {
     })
 
     it('should load all wallets with multi-wallet search', async () => {
-      ClientService.hasMultiWalletSearch = true
+      ClientService.capabilities = '2.1.0'
 
       axiosMock
         .onPost(`http://127.0.0.1/api/wallets/search`)
@@ -247,7 +280,7 @@ describe('ledger store module', () => {
     })
 
     it('should use ledger name', async () => {
-      ClientService.hasMultiWalletSearch = true
+      ClientService.capabilities = '2.1.0'
       ledgerNameByAddress = (address) => address
 
       axiosMock
@@ -315,6 +348,27 @@ describe('ledger store module', () => {
       await store.dispatch('ledger/clearWalletCache')
 
       expect(store.getters['ledger/cachedWallets']('A1')).toEqual([])
+    })
+  })
+
+  describe('updateWallets', () => {
+    it('should set wallets when the state is empty', async () => {
+      expect(store.getters['ledger/wallets']).toBeArrayOfSize(0)
+      const wallets = { A1: { address: 'A1' } }
+      await store.dispatch('ledger/updateWallets', wallets)
+      expect(store.getters['ledger/walletsObject']).toMatchObject(wallets)
+    })
+
+    it('should not remove existing wallets in the state', async () => {
+      expect(store.getters['ledger/wallets']).toBeArrayOfSize(0)
+      const wallets = { A1: { address: 'A1', balance: 0 }, A2: { address: 'A2', balance: 1 } }
+      await store.dispatch('ledger/updateWallets', wallets)
+      expect(store.getters['ledger/wallet']('A2').balance).toBe(1)
+
+      const walletsToUpdate = { A2: { address: 'A2', balance: 0 } }
+      await store.dispatch('ledger/updateWallets', walletsToUpdate)
+      expect(store.getters['ledger/wallet']('A2').balance).toBe(0)
+      expect(store.getters['ledger/wallet']('A1')).toBeObject()
     })
   })
 })

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="flex items-center justify-center"
+    :class="[classes, 'flex items-center justify-center']"
     @click.stop="toggle"
   >
     <SvgIcon
@@ -30,16 +30,24 @@ export default {
   },
 
   props: {
+    classes: {
+      type: String,
+      required: false,
+      default: null
+    },
+
     icon: {
       type: String,
       required: false,
       default: null
     },
+
     viewBox: {
       type: String,
       required: false,
       default: '0 0 20 20'
     },
+
     label: {
       type: String,
       required: true

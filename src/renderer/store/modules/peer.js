@@ -42,6 +42,14 @@ const getApiVersion = (peer) => {
   return /^2\./.test(peer.version) ? 2 : 1
 }
 
+const clientService = ({ baseUrl, peer, timeout, version }) => {
+  const client = new ClientService(false)
+  client.host = baseUrl || getBaseUrl(peer)
+  client.version = version || getApiVersion(peer)
+  client.client.http.timeout = timeout || 3000
+  return client
+}
+
 export default {
   namespaced: true,
 
@@ -282,6 +290,8 @@ export default {
         await getApiPort(peer)
         this._vm.$client.host = getBaseUrl(peer)
         this._vm.$client.capabilities = peer.version
+
+        // TODO only when necessary (when / before sending) (if no dynamic)
         await dispatch('transaction/updateStaticFees', null, { root: true })
       }
       commit('SET_CURRENT_PEER', {
@@ -307,10 +317,14 @@ export default {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
       }
-      let peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
+      const networkKey = networkLookup[network.id]
+
+      const peers = await this._vm.$client.fetchPeers(networkKey, getters['all']())
+
       if (peers.length) {
         for (const peer of peers) {
           peer.height = +peer.height
+
           if (getApiVersion(peer) === 2) {
             if (peer.latency) {
               peer.delay = peer.latency
@@ -318,6 +332,7 @@ export default {
             }
             if (peer.port && !peer.p2pPort) {
               peer.p2pPort = peer.port
+              // TODO why?
               peer.port = null
             }
           }
@@ -379,6 +394,7 @@ export default {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
         if (currentPeer && currentPeer.isCustom) {
+          // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
 
           return null
@@ -437,10 +453,7 @@ export default {
         if (updateCurrentPeer) {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
-          const client = new ClientService(false)
-          client.host = getBaseUrl(currentPeer)
-          client.version = getApiVersion(currentPeer)
-          client.client.http.timeout = 3000
+          const client = clientService({ peer: currentPeer })
           peerStatus = await client.fetchPeerStatus()
         }
         const delay = (performance.now() - delayStart).toFixed(0)
@@ -470,12 +483,7 @@ export default {
      */
     async clientServiceFromPeer (_, peer) {
       await getApiPort(peer)
-      const client = new ClientService(false)
-      client.host = getBaseUrl(peer)
-      client.version = getApiVersion(peer)
-      client.client.http.timeout = 3000
-
-      return client
+      return clientService({ peer })
     },
 
     /**
@@ -514,10 +522,7 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      const client = new ClientService(false)
-      client.host = baseUrl
-      client.version = version
-      client.client.http.timeout = timeout
+      const client = clientService({ baseUrl, timeout, version })
 
       let peerStatus
       try {
@@ -534,7 +539,7 @@ export default {
         host: baseUrl,
         port: +port,
         height: peerStatus.height,
-        version: `${version}.0.0`,
+        version: `${version}.0.0`, // TODO why does it ignore the exact version?
         status: 'OK',
         delay: 0,
         isHttps: schemeUrl && schemeUrl[1] === 'https://'

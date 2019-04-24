@@ -1,41 +1,37 @@
+import config from '@config'
 import { Action } from '@/services/synchronizer/wallets'
 
 describe('Services > Synchronizer > Wallets', () => {
   let action
-  let wallets
-  let addresses
+  let profile
+  let profileWallets
+  let ledgerWallets
   let contacts
-  let walletUpdate
-  let transactionDeleteBulk
   let transactions
-  const throwError = jest.fn()
+
+  let transactionDeleteBulk
 
   beforeEach(() => {
-    walletUpdate = jest.fn()
     transactionDeleteBulk = jest.fn()
+
     const synchronizer = {
       $client: {},
       scope: {
         $logger: {
-          error: throwError
+          error: jest.fn()
         },
         $error: jest.fn(),
         $success: jest.fn()
       },
       $store: {
         getters: {
+          'ledger/wallets': [],
+          'session/backgroundUpdateLedger': true,
           'wallet/byProfileId': jest.fn(),
-          'wallet/contactsByProfileId': jest.fn(),
-          'ledger/wallets': []
+          'wallet/contactsByProfileId': jest.fn()
         },
         dispatch: (action, data) => {
-          if (action === 'wallet/update' || action === 'ledger/updateWallet') {
-            if (data.throwError) {
-              throw new Error('throw error')
-            }
-
-            return walletUpdate(action, data)
-          } else if (action === 'transaction/deleteBulk') {
+          if (action === 'transaction/deleteBulk') {
             return transactionDeleteBulk(action, data)
           } else if (action === 'transaction/clearExpired') {
             return []
@@ -46,13 +42,17 @@ describe('Services > Synchronizer > Wallets', () => {
 
     action = new Action(synchronizer)
 
-    wallets = [
+    profile = { id: 'profile ID' }
+    profileWallets = [
       { address: 'A1', transactions: {} },
       { address: 'A2', transactions: {} },
       { address: 'A3', transactions: {} },
       { address: 'A4', transactions: {} }
     ]
-    addresses = wallets.map(wallet => wallet.address)
+    ledgerWallets = {
+      A1ledger: { address: 'A1ledger', transactions: {}, isLedger: true },
+      A2ledger: { address: 'A2ledger', transactions: {}, isLedger: true }
+    }
     contacts = [
       { address: 'Acon1', transactions: {} },
       { address: 'Acon2', transactions: {} }
@@ -65,132 +65,332 @@ describe('Services > Synchronizer > Wallets', () => {
     ]
   })
 
-  describe('run', () => {
-    beforeEach(() => {
-      action.refresh = jest.fn()
+  describe('static compareWalletData', () => {
+    // TODO more properties
+    const wallet = {
+      address: 'A',
+      isLedger: false
+    }
+
+    it('shoud return `true` if the data and the wallet data is the same', () => {
+      const data = {
+        address: wallet.address
+      }
+      expect(Action.compareWalletData(wallet, data)).toBeTrue()
     })
 
-    describe('when there is not a session profile', () => {
-      beforeEach(() => {
-        action.$scope.session_profile = undefined
-      })
+    it('shoud return `false` if the data and the wallet data is not the same', () => {
+      const data = {
+        address: 'Anot'
+      }
+      expect(Action.compareWalletData(wallet, data)).toBeFalse()
+    })
+  })
 
-      it('should do nothing', async () => {
-        await action.run()
-        expect(action.$getters['wallet/byProfileId']).not.toHaveBeenCalled()
-        expect(action.$getters['wallet/contactsByProfileId']).not.toHaveBeenCalled()
+  describe('get profileWallets', () => {
+    describe('when there is not a session profile', () => {
+      beforeEach(() => (action.$scope.session_profile = undefined))
+
+      it('should return an empty Array', () => {
+        expect(action.profileWallets).toBeEmpty()
       })
     })
 
     describe('when there is a session profile', () => {
       beforeEach(() => {
-        action.$scope.session_profile = { id: 'profile ID' }
+        action.$scope.session_profile = profile
+        action.$getters['wallet/byProfileId'].mockReturnValue(profileWallets)
       })
 
-      describe('when the the profile does not have wallets', () => {
-        beforeEach(() => {
-          action.$getters['wallet/byProfileId'].mockReturnValue([])
-          action.$getters['wallet/contactsByProfileId'].mockReturnValue([])
-        })
-
-        it('should not try to refresh them', async () => {
-          await action.run()
-          expect(action.refresh).not.toHaveBeenCalled()
-        })
-      })
-
-      describe('when the the profile has wallets', () => {
-        beforeEach(() => {
-          action.$getters['wallet/byProfileId'].mockReturnValue(wallets)
-          action.$getters['wallet/contactsByProfileId'].mockReturnValue(contacts)
-        })
-
-        describe('when none of them have been checked', () => {
-          it('should refresh all', async () => {
-            await action.run()
-            expect(action.refresh).toHaveBeenCalledWith([
-              ...wallets,
-              ...contacts
-            ])
-          })
-        })
-
-        describe('when some of them have been checked', () => {
-          beforeEach(() => {
-            action.checked = [
-              wallets[0],
-              wallets[2],
-              contacts[0]
-            ]
-          })
-
-          it('should refresh those that have not been checked', async () => {
-            await action.run()
-            expect(action.refresh).toHaveBeenCalledWith([
-              wallets[1],
-              wallets[3],
-              contacts[1]
-            ])
-          })
-        })
+      it('should return its wallet', () => {
+        expect(action.profileWallets).toBe(profileWallets)
+        expect(action.$getters['wallet/byProfileId']).toHaveBeenCalledWith(profile.id)
       })
     })
   })
 
-  describe('refresh', () => {
-    let walletsData
-    let transactionsByWallet
-
+  describe('get ledgerWallets', () => {
     beforeEach(() => {
-      walletsData = [
-        wallets[0],
-        wallets[2],
-        { address: wallets[1].address }
-      ]
+      action.$getters['ledger/wallets'] = ledgerWallets
+    })
 
-      transactionsByWallet = {}
-      wallets.forEach(wallet => {
-        transactionsByWallet[wallet.address] = []
+    describe('when the Ledger is set to be updated on the background', () => {
+      beforeEach(() => {
+        action.$getters['session/backgroundUpdateLedger'] = true
       })
 
-      action.refreshWalletsData = jest.fn()
-      action.refreshTransactions = jest.fn()
+      it('should return all the Ledger wallets', () => {
+        expect(action.ledgerWallets).toBe(ledgerWallets)
+      })
+    })
+
+    describe('when the Ledger is not set to be updated on the background', () => {
+      beforeEach(() => {
+        action.$getters['session/backgroundUpdateLedger'] = false
+      })
+
+      it('should return an empty Array', () => {
+        expect(action.ledgerWallets).toBeEmpty()
+      })
+    })
+  })
+
+  describe('get wallets', () => {
+    beforeEach(() => {
+      action.$scope.session_profile = profile
+      action.$getters['wallet/byProfileId'].mockReturnValue(profileWallets)
+      action.$getters['ledger/wallets'] = ledgerWallets
+    })
+
+    it('should return the regular wallets and Ledger wallets', () => {
+      expect(action.wallets).toIncludeSameMembers([
+        ...profileWallets,
+        ...Object.values(ledgerWallets)
+      ])
+    })
+  })
+
+  describe('get contacts', () => {
+    describe('when there is not a session profile', () => {
+      beforeEach(() => (action.$scope.session_profile = undefined))
+
+      it('should return an empty Array', () => {
+        expect(action.contacts).toBeEmpty()
+      })
+    })
+
+    describe('when there is a session profile', () => {
+      beforeEach(() => {
+        action.$scope.session_profile = profile
+        action.$getters['wallet/contactsByProfileId'].mockReturnValue(contacts)
+      })
+
+      it('should return its contacts', () => {
+        expect(action.contacts).toBe(contacts)
+        expect(action.$getters['wallet/contactsByProfileId']).toHaveBeenCalledWith(profile.id)
+      })
+    })
+  })
+
+  describe('get allWallets', () => {
+    beforeEach(() => {
+      action.$scope.session_profile = profile
+      action.$getters['wallet/byProfileId'].mockReturnValue(profileWallets)
+      action.$getters['wallet/contactsByProfileId'].mockReturnValue(contacts)
+      action.$getters['ledger/wallets'] = ledgerWallets
+    })
+
+    it('should return the regular wallets, contacts and Ledger wallets', () => {
+      expect(action.allWallets).toIncludeSameMembers([
+        ...profileWallets,
+        ...contacts,
+        ...Object.values(ledgerWallets)
+      ])
+    })
+  })
+
+  describe('get allWalletsByAdress', () => {
+    beforeEach(() => {
+      action.$scope.session_profile = profile
+      action.$getters['wallet/byProfileId'].mockReturnValue([
+        profileWallets[0],
+        profileWallets[1]
+      ])
+      action.$getters['wallet/contactsByProfileId'].mockReturnValue(contacts)
+      action.$getters['ledger/wallets'] = {
+        ...ledgerWallets
+      }
+      action.$getters['ledger/wallets'][profileWallets[0].address] = { ...profileWallets[0], isLedger: true }
+    })
+
+    it('should return the regular wallets, contacts and Ledger wallets', () => {
+      expect(action.allWalletsByAddress).toEqual({
+        A1: [{ address: 'A1', transactions: {} }, { address: 'A1', isLedger: true, transactions: {} }],
+        A2: [{ address: 'A2', transactions: {} }],
+        Acon1: [{ address: 'Acon1', transactions: {} }],
+        Acon2: [{ address: 'Acon2', transactions: {} }],
+        A1ledger: [{ address: 'A1ledger', isLedger: true, transactions: {} }],
+        A2ledger: [{ address: 'A2ledger', isLedger: true, transactions: {} }]
+      })
+    })
+  })
+
+  describe('run', () => {
+    beforeEach(() => (action.sync = jest.fn()))
+
+    describe('when there are wallets of any kind', () => {
+      beforeEach(() => {
+        jest.spyOn(action, 'allWallets', 'get').mockReturnValue(contacts)
+      })
+
+      it('should sync them', async () => {
+        await action.run()
+        expect(action.sync).toHaveBeenCalled()
+      })
+    })
+
+    describe('when there are not any wallet of any kind', () => {
+      beforeEach(() => {
+        jest.spyOn(action, 'allWallets', 'get').mockReturnValue([])
+      })
+
+      it('should not even try to sync them', async () => {
+        await action.run()
+        expect(action.sync).not.toHaveBeenCalled()
+      })
+    })
+  })
+
+  describe('sync', () => {
+    let walletsData
+    let transactionsByAddress
+    let walletsToUpdate
+
+    beforeEach(() => {
+      transactionsByAddress = {}
+      profileWallets.forEach(wallet => {
+        transactionsByAddress[wallet.address] = []
+      })
+      walletsToUpdate = Object.values(ledgerWallets)
+
+      action.fetch = jest.fn()
+      action.process = jest.fn()
+      action.update = jest.fn()
+
+      action.fetch.mockImplementation(addresses => {
+        return { walletsData, transactionsByAddress }
+      })
+      action.process.mockImplementation(addresses => {
+        return walletsToUpdate
+      })
+    })
+
+    it('should fetch the data', async () => {
+      await action.sync()
+
+      expect(action.fetch).toHaveBeenCalled()
+    })
+
+    it('should process the fetched data', async () => {
+      await action.sync()
+
+      expect(action.process).toHaveBeenCalledWith(walletsData, transactionsByAddress)
+    })
+
+    describe('when there are not wallets to update', () => {
+      beforeEach(() => {
+        action.process.mockImplementation(addresses => {
+          return []
+        })
+      })
+
+      it('should not update them', async () => {
+        await action.sync()
+
+        expect(action.update).not.toHaveBeenCalled()
+      })
+    })
+
+    describe('when there are wallets to update', () => {
+      it('should update them', async () => {
+        await action.sync()
+
+        expect(action.update).toHaveBeenCalledWith(walletsToUpdate)
+      })
+    })
+  })
+
+  describe('fetch', () => {
+    let addresses
+    let allAddresses
+    let walletsData
+    let transactionsByAddress
+
+    beforeEach(() => {
+      jest.spyOn(action, 'wallets', 'get').mockReturnValue([
+        ...profileWallets,
+        ...Object.values(ledgerWallets)
+      ])
+      jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
+        ...profileWallets,
+        ...Object.values(ledgerWallets),
+        ...contacts
+      ])
+      action.emit = jest.fn()
+
+      addresses = action.wallets.map(wallet => wallet.address)
+      allAddresses = action.allWallets.map(wallet => wallet.address)
+
       action.fetchWalletsData = jest.fn()
       action.fetchWalletsTransactions = jest.fn()
+
+      walletsData = [
+        profileWallets[0],
+        { address: Object.values(ledgerWallets)[1].address }
+      ]
+
+      transactionsByAddress = {}
+      profileWallets.forEach(wallet => {
+        transactionsByAddress[wallet.address] = wallet
+      })
 
       action.fetchWalletsData.mockImplementation(addresses => {
         return walletsData
       })
       action.fetchWalletsTransactions.mockImplementation(addresses => {
-        return transactionsByWallet
+        return transactionsByAddress
       })
     })
 
-    it('should fetch the data of all wallets', async () => {
-      await action.refresh(wallets)
-      expect(action.fetchWalletsData).toHaveBeenCalledWith(addresses)
+    it('should fetch the data of every regular wallet, Ledger wallet or contact', async () => {
+      await action.fetch()
+      expect(action.fetchWalletsData).toHaveBeenCalledWith(allAddresses)
     })
 
-    it('should fetch the transactions of all wallets', async () => {
-      await action.refresh(wallets)
+    it('should fetch the transactions of every regular or Ledger wallet', async () => {
+      await action.fetch()
       expect(action.fetchWalletsTransactions).toHaveBeenCalledWith(addresses)
     })
 
-    it('should refresh the data of all wallets', async () => {
-      await action.refresh(wallets)
-
-      expect(action.refreshWalletsData).toHaveBeenCalledWith(wallets, walletsData)
+    it('should return the fetched data and transactions', async () => {
+      expect(await action.fetch()).toEqual({ walletsData, transactionsByAddress })
     })
 
-    it('should refresh all transactions of all wallets', async () => {
-      await action.refresh(wallets)
+    it('should emit `transactions:fetched` with the transactions grouped by address', async () => {
+      await action.fetch()
+      expect(action.emit).toHaveBeenCalledWith('transactions:fetched', transactionsByAddress)
+    })
 
-      expect(action.refreshTransactions).toHaveBeenCalledWith(wallets, transactionsByWallet)
+    describe('when there are duplicated addresses', () => {
+      it('should ignore duplicates', async () => {
+        jest.spyOn(action, 'wallets', 'get').mockReturnValue([
+          ...profileWallets,
+          ...Object.values(ledgerWallets),
+          profileWallets[1],
+          Object.values(ledgerWallets)[0]
+        ])
+        jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
+          ...profileWallets,
+          ...Object.values(ledgerWallets),
+          ...contacts,
+          contacts[1],
+          Object.values(ledgerWallets)[1],
+          profileWallets[3]
+        ])
+
+        await action.fetch()
+
+        expect(action.fetchWalletsData).toHaveBeenCalledWith(allAddresses)
+        expect(action.fetchWalletsTransactions).toHaveBeenCalledWith(addresses)
+      })
     })
   })
 
   describe('fetchWalletsData', () => {
+    let addresses
+
     beforeEach(() => {
+      addresses = action.wallets.map(wallet => wallet.address)
       action.$client.fetchWallets = jest.fn()
     })
 
@@ -201,7 +401,10 @@ describe('Services > Synchronizer > Wallets', () => {
   })
 
   describe('fetchWalletsTransactions', () => {
+    let addresses
+
     beforeEach(() => {
+      addresses = action.wallets.map(wallet => wallet.address)
       action.$client.fetchTransactionsForWallets = jest.fn()
     })
 
@@ -211,102 +414,139 @@ describe('Services > Synchronizer > Wallets', () => {
     })
   })
 
-  describe('refreshWalletsData', () => {
+  describe('process', () => {
+    let walletsData
+    let transactionsByAddress
+
     beforeEach(() => {
-      action.processWalletData = jest.fn()
-      action.fetchWalletsData = jest.fn()
+      walletsData = [
+        { address: profileWallets[0].address, balance: 1 }
+      ]
+
+      transactionsByAddress = {
+        [profileWallets[0].address]: transactions,
+        [profileWallets[1].address]: transactions
+      }
+
+      action.processWalletsData = jest.fn()
+      action.processTransactions = jest.fn()
+
+      jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
+        profileWallets[0],
+        profileWallets[1]
+      ])
+
+      action.processWalletsData = jest.fn().mockImplementation(() => {
+        return { [walletsData[0].address]: walletsData[0] }
+      })
+      action.processTransactions = jest.fn().mockImplementation(transactionsByAddress => {
+        return Object.keys(transactionsByAddress).reduce((all, address) => {
+          all[address] = transactionsByAddress[address][0].timestamp
+          return all
+        }, {})
+      })
     })
 
-    it('should not process wallet if empty or cold', async () => {
-      const coldWallet = { ...wallets[0], balance: 0, publicKey: null }
-      const walletsData = [
-        coldWallet,
-        {},
-        null,
-        wallets[2]
-      ]
-      action.fetchWalletsData.mockImplementation(addresses => walletsData)
+    it('should process the wallet data', async () => {
+      await action.process(walletsData, transactionsByAddress)
 
-      await action.refreshWalletsData(wallets, walletsData)
+      expect(action.processWalletsData).toHaveBeenCalledWith(walletsData)
+    })
 
-      expect(action.processWalletData).toHaveBeenCalledWith(wallets[2], wallets[2])
-      expect(action.processWalletData).not.toHaveBeenCalledWith(wallets[0], coldWallet)
-      expect(action.processWalletData).not.toHaveBeenCalledWith(wallets[0], {})
-      expect(action.processWalletData).not.toHaveBeenCalledWith(wallets[0], null)
+    it('should process the transactions', async () => {
+      await action.process(walletsData, transactionsByAddress)
+
+      expect(action.processTransactions).toHaveBeenCalledWith(transactionsByAddress)
     })
   })
 
-  describe('refreshTransactions', () => {
-    let transactionsByWallet
+  describe('processWalletsData', () => {
+    beforeEach(() => {
+      jest.spyOn(action, 'allWallets', 'get').mockReturnValue([
+        profileWallets[0],
+        Object.values(ledgerWallets)[0],
+        contacts[0]
+      ])
+    })
+
+    describe('when no data is passed', () => {
+      it('should return an empty `Object`', () => {
+        expect(action.processWalletsData([])).toEqual({})
+      })
+    })
+
+    describe('when the data has changed', () => {
+      it('should return them aggregated by address', () => {
+        const data = [
+          { ...profileWallets[0], balance: 10 },
+          { ...Object.values(ledgerWallets)[0], balance: 11 },
+          { ...contacts[0], balance: 12 }
+        ]
+
+        expect(action.processWalletsData(data)).toEqual({
+          [data[0].address]: data[0],
+          [data[1].address]: data[1],
+          [data[2].address]: data[2]
+        })
+      })
+    })
+
+    describe('when the data has not changed', () => {
+      it('should not return them', () => {
+        const data = [
+          { ...profileWallets[0] },
+          { ...Object.values(ledgerWallets)[0] },
+          { ...contacts[0] }
+        ]
+
+        expect(action.processWalletsData(data)).toEqual({})
+      })
+    })
+  })
+
+  describe('processTransactions', () => {
+    let transactionsByAddress
 
     beforeEach(() => {
-      action.processWalletTransactions = jest.fn()
+      transactionsByAddress = {
+        [profileWallets[0].address]: transactions,
+        [profileWallets[1].address]: transactions
+      }
+
+      action.processWalletTransactions = jest.fn().mockImplementation((_, transactions) => {
+        return transactions[0].timestamp
+      })
+      jest.spyOn(action, 'wallets', 'get').mockReturnValue(profileWallets)
     })
 
     describe('when a wallet doest not have transactions', () => {
       beforeEach(() => {
-        transactionsByWallet = {}
-        wallets.forEach(wallet => {
-          transactionsByWallet[wallet.address] = []
+        profileWallets.forEach(wallet => {
+          transactionsByAddress[wallet.address] = []
         })
       })
 
       it('should not try to process them', async () => {
-        await action.refreshTransactions(wallets, transactionsByWallet)
+        await action.processTransactions(transactionsByAddress)
 
-        wallets.forEach(wallet => {
-          expect(action.processWalletTransactions).not.toHaveBeenCalled()
-        })
+        expect(action.processWalletTransactions).not.toHaveBeenCalled()
       })
     })
 
     describe('when wallets have transactions', () => {
-      beforeEach(() => {
-        transactionsByWallet = {}
-        wallets.forEach(wallet => {
-          transactionsByWallet[wallet.address] = transactions
-        })
-      })
-
       it('should process them', async () => {
-        await action.refreshTransactions(wallets, transactionsByWallet)
+        await action.processTransactions(transactionsByAddress)
 
-        wallets.forEach(wallet => {
+        profileWallets.slice(0, 2).forEach(wallet => {
           expect(action.processWalletTransactions).toHaveBeenCalledWith(wallet, transactions)
         })
       })
-    })
-  })
 
-  describe('processWalletData', () => {
-    let wallet
-
-    beforeEach(() => {
-      wallet = wallets[2]
-    })
-
-    describe('when there is wallet data', () => {
-      it('should dispatch the `wallet/update` Vuex action with the updated wallet', async () => {
-        await action.processWalletData(wallet, { balance: 10 })
-        expect(walletUpdate).toHaveBeenNthCalledWith(1, 'wallet/update', { ...wallet, balance: 10 })
-      })
-
-      it('should log if error in `wallet/update` Vuex action', async () => {
-        wallet = { ...wallet, throwError: true }
-        await action.processWalletData(wallet, { balance: 11 })
-        expect(throwError).toHaveBeenNthCalledWith(1, 'throw error')
-      })
-
-      it('should dispatch the `ledger/updateWallet` Vuex action with the updated wallet', async () => {
-        const ledgerWallet = { ...wallet, isLedger: true }
-        await action.processWalletData(ledgerWallet, { balance: 12 })
-        expect(walletUpdate).toHaveBeenNthCalledWith(1, 'ledger/updateWallet', { ...ledgerWallet, balance: 12 })
-      })
-
-      it('should log if error in `ledger/updateWallet` Vuex action', async () => {
-        const ledgerWallet = { ...wallet, isLedger: true, throwError: true }
-        await action.processWalletData(ledgerWallet, { balance: 13 })
-        expect(throwError).toHaveBeenNthCalledWith(1, 'throw error')
+      it('should return the timestamp of new transactions', async () => {
+        expect(await action.processTransactions(transactionsByAddress)).toEqual({
+          [profileWallets[0].address]: transactions[0].timestamp,
+          [profileWallets[1].address]: transactions[0].timestamp
+        })
       })
     })
   })
@@ -315,74 +555,90 @@ describe('Services > Synchronizer > Wallets', () => {
     let wallet
 
     beforeEach(() => {
-      wallet = wallets[2]
+      wallet = profileWallets[2]
 
       action.displayNewTransaction = jest.fn()
+      action.processVotes = jest.fn()
     })
 
-    describe('when there are no transactions', () => {
-      it('should not dispatch the `update/wallet` Vuex action', async () => {
-        await action.processWalletTransactions(wallet, [])
-        expect(walletUpdate).not.toHaveBeenCalled()
+    describe('when all of them are old', () => {
+      beforeEach(() => {
+        wallet.transactions.checkedAt = 50000 * 1000
       })
 
-      it('should not dispatch the `transaction/deleteBulk` Vuex action', async () => {
-        await action.processWalletTransactions(wallet, [])
-        expect(transactionDeleteBulk).not.toHaveBeenCalled()
+      it('should not return the timestamp', async () => {
+        expect(await action.processWalletTransactions(wallet, transactions)).toBeUndefined()
+      })
+
+      it('should dispatch the `transaction/deleteBulk` Vuex action', async () => {
+        await action.processWalletTransactions(wallet, transactions)
+        expect(transactionDeleteBulk).toHaveBeenCalledTimes(1)
+      })
+
+      it('should not display the new transaction', async () => {
+        await action.processWalletTransactions(wallet, transactions)
+        expect(action.displayNewTransaction).not.toHaveBeenCalled()
       })
     })
 
-    describe('when there are transactions', () => {
-      describe('when all of them are old', () => {
-        beforeEach(() => {
-          wallet.transactions.checkedAt = 50000 * 1000
-        })
+    describe('when transactions include votes', () => {
+      let votes
 
-        it('should not dispatch the `update/wallet` Vuex action', async () => {
-          await action.processWalletTransactions(wallet, transactions)
-          expect(walletUpdate).not.toHaveBeenCalled()
-        })
-
-        it('should dispatch the `transaction/deleteBulk` Vuex action', async () => {
-          await action.processWalletTransactions(wallet, transactions)
-          expect(transactionDeleteBulk).toHaveBeenCalledTimes(1)
-        })
-
-        it('should not display the new transaction', async () => {
-          await action.processWalletTransactions(wallet, transactions)
-          expect(action.displayNewTransaction).not.toHaveBeenCalled()
-        })
+      beforeEach(() => {
+        transactions[0].type = config.TRANSACTION_TYPES.VOTE
+        votes = [transactions[0]]
       })
 
-      describe('when at least 1 of them is new', () => {
-        let latestTransaction
+      it('should process the votes', async () => {
+        await action.processWalletTransactions(wallet, transactions)
+        expect(action.processVotes).toHaveBeenCalledWith(votes)
+      })
+    })
 
-        beforeEach(() => {
-          latestTransaction = transactions[1]
-          wallet.transactions.checkedAt = latestTransaction.timestamp - 10
-        })
+    describe('when at least 1 of them is new', () => {
+      let latestTransaction
 
-        it('should dispatch the `update/wallet` Vuex action with the new `transactions.checkedAt` numeric timestamp', async () => {
-          await action.processWalletTransactions(wallet, transactions)
-          expect(walletUpdate).toHaveBeenCalledWith('wallet/update', {
-            ...wallet,
-            transactions: {
-              checkedAt: latestTransaction.timestamp
-            }
-          })
-        })
+      beforeEach(() => {
+        latestTransaction = transactions[1]
+        wallet.transactions.checkedAt = latestTransaction.timestamp - 10
+      })
 
-        it('should display the new transaction', async () => {
-          await action.processWalletTransactions(wallet, transactions)
-          expect(action.displayNewTransaction).toHaveBeenCalledWith(latestTransaction, wallet)
-        })
+      it('should return the timestamp', async () => {
+        expect(await action.processWalletTransactions(wallet, transactions))
+          .toEqual(latestTransaction.timestamp)
+      })
+
+      it('should display the new transaction', async () => {
+        await action.processWalletTransactions(wallet, transactions)
+        expect(action.displayNewTransaction).toHaveBeenCalledWith(latestTransaction, wallet)
       })
     })
   })
 
-  describe('findLatestTransaction', () => {
-    it('returns the transaction with bigger `timestamp`', () => {
-      expect(action.findLatestTransaction(transactions)).toBe(transactions[1])
+  describe('update', () => {
+    beforeEach(() => {
+      jest.spyOn(action.synchronizer.$store, 'dispatch')
+    })
+
+    it('should update in bulk regular wallets', async () => {
+      await action.update(profileWallets)
+
+      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('wallet/updateBulk', profileWallets)
+    })
+
+    it('should update all Ledger wallets at once', async () => {
+      await action.update(ledgerWallets)
+
+      expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('ledger/updateWallets', ledgerWallets)
+    })
+
+    it('should log errors', async () => {
+      jest.spyOn(action.synchronizer.$store, 'dispatch').mockImplementation(() => {
+        throw new Error('Example error')
+      })
+      await action.update(profileWallets)
+
+      expect(action.$scope.$logger.error).toHaveBeenCalledWith('Example error')
     })
   })
 })
