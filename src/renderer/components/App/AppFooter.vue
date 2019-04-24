@@ -1,6 +1,6 @@
 <template>
   <footer class="AppFooter flex justify-center mt-1">
-    <portal-target name="footer">
+    <PortalTarget name="footer">
       <a
         :title="text"
         class="cursor-pointer text-theme-footer-text"
@@ -8,7 +8,7 @@
       >
         {{ text }}
       </a>
-    </portal-target>
+    </PortalTarget>
   </footer>
 </template>
 
