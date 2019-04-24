@@ -318,6 +318,8 @@ export default {
               break
             case 'add-network':
             case 'transfer':
+              this.openUriTransaction(deserialized)
+              break
             case 'vote':
             case 'register-delegate':
               console.log(deserialized)

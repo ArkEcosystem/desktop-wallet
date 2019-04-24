@@ -271,10 +271,22 @@ export default {
 
   mounted () {
     // Note: we set this here and not in the data property so validation is triggered properly when fields get pre-populated
-    if (this.schema) {
+    if (this.schema && this.schema.type === 'legacy') {
       this.$set(this.form, 'amount', this.schema.amount || '')
       this.$set(this.form, 'recipientId', this.schema.address || '')
       this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+    } else if (this.schema && this.schema.type !== 'legacy') {
+      this.$set(this.form, 'amount', parseFloat(this.currency_subToUnit(this.schema.amount))) // TODO: required
+      this.$set(this.form, 'recipientId', this.schema.recipient || '') // TODO: required
+      if (this.schema.fee) {
+        this.$set(this.form, 'fee', parseFloat(this.currency_subToUnit(this.schema.fee)))
+        this.$refs.fee.fee = parseFloat(this.currency_subToUnit(this.schema.fee))
+      }
+      this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+      // TODO: fancy stuf
+      // - set relay to send to
+      // - set network to send to (based on network hash)
+      // - use label to find address by name instead of address (so recipient or label is required)
     }
     if (this.currentWallet && this.currentWallet.id) {
       this.$set(this, 'wallet', this.currentWallet || null)
@@ -285,7 +297,10 @@ export default {
     if (this.walletNetwork.apiVersion === 1) {
       this.form.fee = V1.fees[this.$options.transactionType] / 1e8
     } else {
-      this.form.fee = this.$refs.fee.fee
+      // Only set it if we didn't have it in our URI schema
+      if (!this.schema && !this.schema.fee) {
+        this.form.fee = this.$refs.fee.fee
+      }
     }
   },
 
