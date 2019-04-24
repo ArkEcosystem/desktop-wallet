@@ -9,6 +9,16 @@ class PluginManager {
     this.pluginRoutes = []
     this.hasInit = false
     this.vue = null
+    this.hooks = [
+      'beforeCreate',
+      'created',
+      'beforeMount',
+      'mounted',
+      'beforeUpdate',
+      'updated',
+      'beforeDestroy',
+      'destroyed'
+    ]
   }
 
   setVue (vue) {
@@ -61,6 +71,7 @@ class PluginManager {
     await this.loadRoutes(pluginObject, plugin)
     await this.loadMenuItems(pluginObject, plugin, profileId)
     await this.loadAvatars(pluginObject, plugin, profileId)
+    await this.loadWalletTabs(pluginObject, plugin, profileId)
   }
 
   async disablePlugin (pluginId) {
@@ -205,13 +216,6 @@ class PluginManager {
           }
         }]
 
-        // Fix context of "mounted" method
-        if (component.mounted) {
-          vmComponent.options.mounted[0] = function () { return component.mounted.apply(componentContext(this)) }
-        }
-
-        // TODO: Fix context of other method types allowed (see `this.validateComponent`)
-
         // Fix context of all standard methods
         vmComponent.options.methods = {}
         for (const methodName of Object.keys(component.methods || {})) {
@@ -219,6 +223,13 @@ class PluginManager {
             return component.methods[methodName].apply(componentContext(this), [ ...arguments ])
           }
         }
+
+        // Fix context of hooks
+        this.hooks
+          .filter(hook => component.hasOwnProperty(hook))
+          .forEach(prop => {
+            vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+          })
 
         components[componentName] = vmComponent
       }
@@ -321,20 +332,46 @@ class PluginManager {
     return components
   }
 
+  async loadWalletTabs (pluginObject, plugin, profileId) {
+    if (!pluginObject.hasOwnProperty('getWalletTabs')) {
+      return
+    }
+
+    const pluginWalletTabs = this.normalize(pluginObject.getWalletTabs())
+    if (pluginWalletTabs && Array.isArray(pluginWalletTabs) && pluginWalletTabs.length) {
+      // Validate the configuration of each tab
+      const walletTabs = pluginWalletTabs.reduce((valid, walletTab) => {
+        if (typeof walletTab.tabTitle === 'string' && plugin.components[walletTab.componentName]) {
+          valid.push(walletTab)
+        }
+        return valid
+      }, [])
+
+      if (walletTabs.length) {
+        await this.app.$store.dispatch('plugin/setWalletTabs', {
+          pluginId: plugin.config.id,
+          walletTabs,
+          profileId
+        })
+      }
+    }
+  }
+
+  getWalletTabComponent (pluginId, walletTab) {
+    const component = this.plugins[pluginId].components[walletTab.componentName]
+    if (!component) {
+      throw new Error(`The wallet tab component \`${walletTab.componentName}\` has not be found`)
+    }
+    return component
+  }
+
   validateComponent (component, name) {
     const requiredKeys = ['template']
     const allowedKeys = [
       'data',
       'methods',
       'computed',
-      'beforeCreate',
-      'created',
-      'beforeMount',
-      'mounted',
-      'beforeUpdate',
-      'updated',
-      'beforeDestroy',
-      'destroyed'
+      ...this.hooks
     ]
 
     const missingKeys = []
@@ -375,9 +412,7 @@ class PluginManager {
   }
 
   async fetchPluginsFromPath (pluginsPath) {
-    if (!fs.existsSync(pluginsPath)) {
-      return
-    }
+    fs.ensureDirSync(pluginsPath)
 
     const entries = fs.readdirSync(pluginsPath).filter(entry => {
       if (fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()) {

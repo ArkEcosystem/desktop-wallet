@@ -17,23 +17,37 @@
           :total-rows="plugins.length"
           :sort-query="sortParams"
           :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
-          @on-sort-change="onSortChange"
+          @reorder="onReorder"
+          @toggle="onToggleStatus"
         />
       </div>
     </div>
+
+    <PluginEnableConfirmation
+      v-if="pluginToConfirm"
+      :plugin="pluginToConfirm"
+      @close="closeEnableConfirmation"
+      @ignore="closeEnableConfirmation"
+      @enable="enablePlugin"
+    />
   </div>
 </template>
 
 <script>
 import { clone, some, sortBy } from 'lodash'
-import PluginTable from '@/components/Plugin/PluginTable'
+import { PluginEnableConfirmation, PluginTable } from '@/components/Plugin'
 
 export default {
   name: 'Plugins',
 
   components: {
+    PluginEnableConfirmation,
     PluginTable
   },
+
+  data: () => ({
+    pluginToConfirm: null
+  }),
 
   computed: {
     plugins () {
@@ -77,8 +91,35 @@ export default {
   },
 
   methods: {
-    onSortChange (sortParams) {
+    onReorder (sortParams) {
       this.sortParams = sortParams
+    },
+
+    onToggleStatus (plugin) {
+      if (!plugin.isEnabled) {
+        this.pluginToConfirm = plugin
+      } else {
+        this.disablePlugin(plugin)
+      }
+    },
+
+    closeEnableConfirmation () {
+      this.pluginToConfirm = null
+    },
+
+    disablePlugin (plugin) {
+      this.updateStatus({ pluginId: plugin.id, enabled: false })
+    },
+    enablePlugin (plugin) {
+      this.updateStatus({ pluginId: plugin.id, enabled: true })
+      this.closeEnableConfirmation()
+    },
+
+    updateStatus ({ pluginId, enabled }) {
+      this.$store.dispatch('plugin/setEnabled', {
+        enabled,
+        pluginId
+      })
     }
   }
 }

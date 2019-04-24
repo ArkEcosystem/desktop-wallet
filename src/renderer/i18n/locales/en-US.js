@@ -687,6 +687,12 @@ export default {
     }
   },
 
+  PLUGIN_ENABLE_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to enable this plugin?',
+    NO: 'No, keep it disabled',
+    YES: 'Yes, enable it'
+  },
+
   PLUGIN_TABLE: {
     ACTIONS: 'Actions',
     ENABLE: 'Enable',

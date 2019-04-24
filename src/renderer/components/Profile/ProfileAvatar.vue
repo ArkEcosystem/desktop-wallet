@@ -57,7 +57,7 @@ export default {
 
   computed: {
     hasStandardAvatar () {
-      return this.profile.avatar && typeof this.profile.avatar === 'string'
+      return this.profile.avatar && (typeof this.profile.avatar === 'string' || this.profile.avatar.letterOnly)
     },
 
     pluginAvatar () {
