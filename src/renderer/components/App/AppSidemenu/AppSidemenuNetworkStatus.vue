@@ -118,6 +118,7 @@
         icon="connect"
         view-box="0 0 30 15"
         class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-4 text-grey-dark hover:text-white border-b border-theme-settings-sub"
+        @toggle="toggleCustomPeerModal"
       >
         <template slot-scope="{ toggle, isOpen }">
           <NetworkCustomPeerModal
