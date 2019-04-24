@@ -120,7 +120,7 @@
         class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-4 text-grey-dark hover:text-white border-b border-theme-settings-sub"
       >
         <template slot-scope="{ toggle, isOpen }">
-          <NetworkCustomPeer
+          <NetworkCustomPeerModal
             v-if="isOpen"
             @close="toggle"
           />
@@ -147,7 +147,7 @@
 
 <script>
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
-import { NetworkCustomPeer } from '@/components/Network'
+import { NetworkCustomPeerModal } from '@/components/Network'
 import { ButtonModal, ButtonReload } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -159,7 +159,7 @@ export default {
     ButtonReload,
     MenuDropdown,
     MenuOptions,
-    NetworkCustomPeer,
+    NetworkCustomPeerModal,
     SvgIcon
   },
 
