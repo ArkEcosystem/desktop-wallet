@@ -58,7 +58,7 @@
           @click="refreshPeer"
         >
           <SvgIcon
-            name="cross"
+            name="disconnect"
             view-box="0 0 16 15"
             class="AppSidemenuNetworkStatus__refresh-button"
           />
