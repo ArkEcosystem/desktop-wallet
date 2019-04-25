@@ -13,10 +13,6 @@
           />
         </ListDividedItem>
         <ListDividedItem
-          :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
-          :value="formatter_percentage(delegate.production.productivity)"
-        />
-        <ListDividedItem
           :label="$t('WALLET_DELEGATES.RANK')"
           :value="delegate.rank"
         />

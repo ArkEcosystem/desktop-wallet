@@ -8,7 +8,6 @@ const delegate1 = {
     missed: 676
   },
   production: {
-    productivity: 99.38,
     approval: 0.03
   },
   forged: {
@@ -28,7 +27,6 @@ const delegate2 = {
     missed: 885
   },
   production: {
-    productivity: 73.83,
     approval: 0.02
   },
   forged: {

@@ -114,8 +114,7 @@ export default {
               missed: delegate.missedblocks
             },
             production: {
-              approval: delegate.approval,
-              productivity: delegate.productivity
+              approval: delegate.approval
             },
             rank: delegate.rate
           }

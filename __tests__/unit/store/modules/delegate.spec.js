@@ -63,8 +63,7 @@ describe('delegate store module', () => {
         producedblocks: delegate.blocks.produced,
         missedblocks: delegate.blocks.missed,
         rate: delegate.rank,
-        approval: delegate.production.approval,
-        productivity: delegate.production.productivity
+        approval: delegate.production.approval
       }
     })
     const v2DelegateData = delegates.map(delegate => {
@@ -79,8 +78,7 @@ describe('delegate store module', () => {
           missed: delegate.blocks.missed
         },
         production: {
-          approval: delegate.production.approval,
-          productivity: delegate.production.productivity
+          approval: delegate.production.approval
         },
         forged: {
           fees: delegate.forged.fees,

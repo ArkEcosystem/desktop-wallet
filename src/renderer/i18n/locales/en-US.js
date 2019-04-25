@@ -923,9 +923,7 @@ export default {
   WALLET_DELEGATES: {
     RANK: 'Rank',
     USERNAME: 'Username',
-    PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
-    PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
