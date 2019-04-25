@@ -110,8 +110,7 @@ export default {
             publicKey: delegate.publicKey,
             voteWeight: delegate.vote,
             blocks: {
-              produced: delegate.producedblocks,
-              missed: delegate.missedblocks
+              produced: delegate.producedblocks
             },
             production: {
               approval: delegate.approval

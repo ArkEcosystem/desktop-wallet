@@ -18,9 +18,6 @@ export default new BaseModel({
     blocks: {
       type: 'object',
       properties: {
-        missed: {
-          type: 'integer'
-        },
         produced: {
           type: 'integer'
         }

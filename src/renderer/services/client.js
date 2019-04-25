@@ -171,8 +171,7 @@ export default class ClientService {
             approval: delegate.approval
           },
           blocks: {
-            produced: delegate.producedblocks,
-            missed: delegate.missedblocks
+            produced: delegate.producedblocks
           },
           rank: delegate.rate
         }

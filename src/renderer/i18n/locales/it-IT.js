@@ -899,7 +899,6 @@ export default {
     APPROVAL: 'Voto %',
     FORGED: 'Forgiati',
     BLOCKS: 'Blocchi',
-    MISSED: 'mancati',
     VOTERS: 'Votanti',
     UNVOTE: 'Rimuovi voto',
     VOTES: 'Voti',

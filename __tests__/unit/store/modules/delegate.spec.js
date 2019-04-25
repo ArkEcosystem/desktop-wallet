@@ -61,7 +61,6 @@ describe('delegate store module', () => {
         publicKey: delegate.publicKey,
         vote: delegate.voteWeight,
         producedblocks: delegate.blocks.produced,
-        missedblocks: delegate.blocks.missed,
         rate: delegate.rank,
         approval: delegate.production.approval
       }
@@ -74,8 +73,7 @@ describe('delegate store module', () => {
         votes: delegate.voteWeight,
         rank: delegate.rank,
         blocks: {
-          produced: delegate.blocks.produced,
-          missed: delegate.blocks.missed
+          produced: delegate.blocks.produced
         },
         production: {
           approval: delegate.production.approval
