@@ -13,10 +13,6 @@
           />
         </ListDividedItem>
         <ListDividedItem
-          :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
-          :value="formatter_percentage(delegate.production.productivity)"
-        />
-        <ListDividedItem
           :label="$t('WALLET_DELEGATES.RANK')"
           :value="delegate.rank"
         />
@@ -204,12 +200,7 @@ export default {
     },
 
     blocksProduced () {
-      const { produced, missed } = this.delegate.blocks
-
-      if (missed > 0) {
-        return `${produced} (${missed} ${this.$t('WALLET_DELEGATES.MISSED')})`
-      }
-      return produced || '0'
+      return this.delegate.blocks.produced || '0'
     },
 
     showVoteUnvoteButton () {

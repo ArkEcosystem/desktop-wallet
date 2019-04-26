@@ -113,12 +113,6 @@ export default {
           tdClass: 'w-2/3'
         },
         {
-          label: this.$t('WALLET_DELEGATES.PRODUCTIVITY'),
-          field: 'production.productivity',
-          type: 'percentage',
-          formatFn: this.formatPercentage
-        },
-        {
           label: this.$t('WALLET_DELEGATES.APPROVAL'),
           field: 'production.approval',
           type: 'percentage',
