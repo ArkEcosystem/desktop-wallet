@@ -1,11 +1,27 @@
 <template>
   <ListDivided :is-floating-label="true">
+    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+      {{ senderLabel }}
+      <span
+        v-if="senderLabel !== currentWallet.address"
+        class="text-sm text-theme-page-text-light"
+      >
+        {{ currentWallet.address }}
+      </span>
+    </ListDividedItem>
+
     <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
       {{ formatter_networkCurrency(transaction.amount) }}
     </ListDividedItem>
 
     <ListDividedItem :label="$t('TRANSACTION.RECIPIENT')">
-      {{ transaction.recipientId }}
+      {{ recipientLabel }}
+      <span
+        v-if="recipientLabel !== transaction.recipientId"
+        class="text-sm text-theme-page-text-light"
+      >
+        {{ transaction.recipientId }}
+      </span>
     </ListDividedItem>
 
     <ListDividedItem
@@ -30,11 +46,21 @@ export default {
 
   transactionType: TRANSACTION_TYPES.TRANSFER,
 
-  inject: ['transaction'],
+  inject: ['currentWallet', 'transaction'],
 
   components: {
     ListDivided,
     ListDividedItem
+  },
+
+  computed: {
+    recipientLabel () {
+      return this.wallet_formatAddress(this.transaction.recipientId)
+    },
+
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
+    }
   }
 }
 </script>
