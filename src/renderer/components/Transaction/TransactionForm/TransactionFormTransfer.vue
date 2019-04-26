@@ -3,6 +3,18 @@
     class="flex flex-col"
     @submit.prevent
   >
+    <ListDivided :is-floating-label="true">
+      <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+        {{ senderLabel }}
+        <span
+          v-if="senderLabel !== currentWallet.address"
+          class="text-sm text-theme-page-text-light"
+        >
+          {{ currentWallet.address }}
+        </span>
+      </ListDividedItem>
+    </ListDivided>
+
     <WalletSelection
       v-if="schema && schema.address"
       v-model="$v.wallet.$model"
@@ -142,6 +154,7 @@
 import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES, V1, VENDOR_FIELD } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
@@ -160,6 +173,8 @@ export default {
     InputSwitch,
     InputText,
     InputFee,
+    ListDivided,
+    ListDividedItem,
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
@@ -218,6 +233,9 @@ export default {
       }
 
       return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
+    },
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
     },
     senderWallet () {
       return this.wallet
