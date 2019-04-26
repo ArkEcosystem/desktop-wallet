@@ -739,14 +739,6 @@ export default {
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'
     },
-    FORM: {
-      DELEGATE_REGISTRATION: {
-        INSTRUCTIONS: 'per {address}.'
-      },
-      SECOND_SIGNATURE: {
-        INSTRUCTIONS: 'per {address}.'
-      }
-    },
     INFO: {
       BROADCASTING: 'La tua transazione viene trasmessa alla rete',
       BROADCASTING_SLOW: 'Sembra che ci voglia un po\'per trasmettere la tua transazione. È possibile chiudere la finestra e continuerà a trasmettere in background.'
