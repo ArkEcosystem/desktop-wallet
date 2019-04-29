@@ -77,7 +77,7 @@ export default new BaseModule(NetworkModel, {
         network = rootGetters['session/network']
       }
 
-      if (network.apiVersion === 2) {
+      if (network && network.apiVersion === 2) {
         try {
           const feeStatistics = await Client.fetchFeeStatistics(network.server, network.apiVersion)
           commit('UPDATE', {
