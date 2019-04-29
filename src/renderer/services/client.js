@@ -168,12 +168,10 @@ export default class ClientService {
         return {
           ...delegate,
           production: {
-            approval: delegate.approval,
-            productivity: delegate.productivity
+            approval: delegate.approval
           },
           blocks: {
-            produced: delegate.producedblocks,
-            missed: delegate.missedblocks
+            produced: delegate.producedblocks
           },
           rank: delegate.rate
         }

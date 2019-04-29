@@ -18,9 +18,6 @@ export default new BaseModel({
     blocks: {
       type: 'object',
       properties: {
-        missed: {
-          type: 'integer'
-        },
         produced: {
           type: 'integer'
         }
@@ -29,9 +26,6 @@ export default new BaseModel({
     production: {
       type: 'object',
       properties: {
-        productivity: {
-          type: 'number'
-        },
         approval: {
           type: 'number'
         }
