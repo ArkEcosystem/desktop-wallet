@@ -89,15 +89,6 @@
                 {{ votedDelegate.rank }}
               </strong>
             </i18n>
-            <i18n
-              tag="span"
-              class="font-semibold pl-6"
-              path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
-            >
-              <strong place="productivity">
-                {{ getProductivity() }}
-              </strong>
-            </i18n>
           </template>
         </div>
         <div
@@ -378,11 +369,6 @@ export default {
       } finally {
         this.isLoadingVote = false
       }
-    },
-
-    getProductivity () {
-      const productivity = this.votedDelegate.production.productivity
-      return this.formatter_percentage(productivity)
     },
 
     openUnvote () {
