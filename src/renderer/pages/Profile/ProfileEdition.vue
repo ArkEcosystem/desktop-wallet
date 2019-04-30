@@ -488,14 +488,19 @@ export default {
     },
 
     selectAvatar (avatar) {
-      let newAvatar = null
+      let newAvatar
+
       if (typeof avatar === 'string') {
         newAvatar = avatar
+      } else if (avatar.onlyLetter) {
+        newAvatar = null
       } else if (avatar.name) {
         newAvatar = {
           avatarName: avatar.name,
           pluginId: avatar.pluginId
         }
+      } else {
+        throw new Error(`Invalid value for avatar: ${avatar}`)
       }
 
       this.__updateSession('avatar', newAvatar)
