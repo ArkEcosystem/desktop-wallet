@@ -355,15 +355,17 @@ export default {
     },
 
     selectAvatar (avatar) {
-      if (typeof avatar === 'string' || avatar.onlyLetter) {
+      if (typeof avatar === 'string') {
         this.schema.avatar = avatar
+      } else if (avatar.onlyLetter) {
+        this.schema.avatar = null
       } else if (avatar.name) {
         this.schema.avatar = {
           avatarName: avatar.name,
           pluginId: avatar.pluginId
         }
       } else {
-        this.schema.avatar = null
+        throw new Error(`Invalid value for avatar: ${avatar}`)
       }
     },
 

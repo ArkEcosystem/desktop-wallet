@@ -10,10 +10,12 @@ export default new BaseModel({
     },
     avatar: {
       anyOf: [
+        // Images provided by the app
         {
           type: 'string',
           minLength: 1
         },
+        // Images provided by the plugins
         {
           type: 'object',
           properties: {
@@ -25,6 +27,7 @@ export default new BaseModel({
             }
           }
         },
+        // No avatar (use name first character)
         {
           type: 'null'
         }
