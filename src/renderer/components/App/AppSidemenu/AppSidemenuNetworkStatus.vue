@@ -54,7 +54,7 @@
         />
         <button
           v-else-if="!isRefreshing"
-          class="AppSidemenuNetworkStatus__refresh__button bg-theme-settings-button w-12 absolute cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+          class="AppSidemenuNetworkStatus__refresh__button AppSidemenuNetworkStatus__refresh__button--disconnect bg-theme-settings-button w-12 absolute cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
           @click="refreshPeer"
         >
           <SvgIcon
@@ -281,11 +281,15 @@ export default {
 }
 
 .AppSidemenuNetworkStatus__refresh__button {
-  padding-left: .75rem;
-  padding-right: .75rem;
   bottom: .25rem;
   right: .25rem;
   top: .25rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  padding-top: 7px;
+}
+.AppSidemenuNetworkStatus__refresh__button--disconnect {
+  padding-top: 0px !important;
 }
 
 .AppSidemenuNetworkStatus .MenuOptions--vertical:after {
