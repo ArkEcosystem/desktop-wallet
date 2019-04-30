@@ -12,6 +12,7 @@
     <span class="ButtonLetter__inner flex h-full w-full items-center justify-center uppercase font-bold">
       {{ letter }}
     </span>
+    <slot />
   </Component>
 </template>
 

@@ -11,7 +11,7 @@ describe('Services > Synchronizer', () => {
     const actionId = 'example'
     const actionFn = jest.fn()
 
-    it('requires the `default` mode configuration', () => {
+    it('should require the `default` mode configuration', () => {
       const config = {
         focus: { interval: 1000 }
       }
@@ -19,7 +19,7 @@ describe('Services > Synchronizer', () => {
       expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(/default.*mode/)
     })
 
-    it('requires the `focus` mode configuration', () => {
+    it('should require the `focus` mode configuration', () => {
       const config = {
         default: { interval: 10000 }
       }
@@ -27,7 +27,25 @@ describe('Services > Synchronizer', () => {
       expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow(/focus.*mode/)
     })
 
-    it('stores the action by ID', () => {
+    it('should not allow using 0 as interval', () => {
+      const config = {
+        default: { interval: 0 },
+        focus: { interval: 0 }
+      }
+
+      expect(() => synchronizer.define(actionId, config, actionFn)).toThrow(/interval/)
+    })
+
+    it('should allow using `null` as interval', () => {
+      const config = {
+        default: { interval: null },
+        focus: { interval: null }
+      }
+
+      expect(() => synchronizer.define(actionId, config, actionFn)).not.toThrow()
+    })
+
+    it('should store the action by ID', () => {
       const config = {
         default: { interval: 10000 },
         focus: { interval: 1000 }

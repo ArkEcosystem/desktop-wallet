@@ -12,11 +12,13 @@ export default {
     CONFIRM: 'Confirm',
     CURRENCY: 'Currency',
     DATE: 'Date',
+    DELEGATE: 'Delegate',
     DONE: 'Done',
     FAILED_UPDATE: 'Failed to update {name}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
@@ -36,7 +38,8 @@ export default {
     TIME_FORMAT: 'Time format',
     VERIFIED_ADDRESS: 'This is a verified address',
     WARNING: 'Warning',
-    WILL: 'will'
+    WILL: 'will',
+    WALLET: 'Wallet'
   },
 
   ANNOUNCEMENTS: {
@@ -107,7 +110,8 @@ export default {
   ENCRYPTION: {
     DECRYPTING: 'Decrypting wallet with password...',
     ENCRYPTING: 'Encrypting wallet with password...',
-    FAILED_DECRYPT: 'Failed to decrypt passphrase'
+    FAILED_DECRYPT: 'Failed to decrypt passphrase',
+    FAILED_ENCRYPT: 'Failed to encrypt passphrase'
   },
 
   PEER: {
@@ -132,6 +136,7 @@ export default {
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
     MAX_LENGTH: 'Max {0}',
+    MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
     NOT_VALID: 'The \'{0}\' is not valid',
     NOT_NUMERIC: 'The \'{0}\' is not numeric',
@@ -156,6 +161,9 @@ export default {
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
+    VENDOR_FIELD: {
+      LIMIT_REACHED: 'You can enter maximum {0} characters only'
+    },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
@@ -165,7 +173,8 @@ export default {
 
   LANGUAGES: {
     'en-US': 'English',
-    'es-ES': 'Spanish',
+    'es-ES': 'Español',
+    'it-IT': 'Italiano',
     'pt-BR': 'Portugues - Brazil'
   },
 
@@ -226,7 +235,6 @@ export default {
       SCREENSHOT_PROTECTION: 'Screenshot protection',
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
-      IS_MARKET_CHART_ENABLED: 'Chart on the dashboard',
       TITLE: 'Current settings',
       RESET_DATA: {
         TITLE: 'Reset data',
@@ -269,7 +277,7 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: 'Price'
+    PRICE: '{currency} price'
   },
 
   BUTTON_CLIPBOARD: {
@@ -299,6 +307,16 @@ export default {
     LABEL: 'Amount'
   },
 
+  INPUT_DELEGATE: {
+    ERROR: {
+      REQUIRED: 'The delegate name, address or public key is required',
+      USERNAME_NOT_FOUND: 'The delegate \'{0}\' could not be found',
+      ADDRESS_NOT_FOUND: 'The delegate with the address \'{0}\' could not be found',
+      PUBLIC_KEY_NOT_FOUND: 'The delegate with the public key \'{0}\' could not be found'
+    },
+    SEARCH_HINT: 'You can search by username, address or public key'
+  },
+
   INPUT_FEE: {
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
@@ -326,6 +344,15 @@ export default {
   WALLET_SELECTION: {
     PROFILE: 'Sender Profile',
     WALLET: 'Sender Wallet'
+  },
+
+  MODAL_ADDITIONAL_LEDGERS: {
+    CANCEL: 'Cancel',
+    INFO: 'Choose the max amount of Ledger wallets you would like to show. You are currently showing {quantity} wallets.',
+    LARGE_QUANTITY: 'You are trying to load a large number of wallets. This could result in slow loading or the device could timeout.',
+    LOAD: 'Load Wallets',
+    QUANTITY: 'Quantity',
+    TITLE: 'Load Additional Ledger Wallets'
   },
 
   MODAL_CONFIRMATION: {
@@ -431,8 +458,8 @@ export default {
 
   PAGES: {
     CONTACT_ALL: {
-      CREATE_CONTACT: 'Create contact',
-      IMPORT_CONTACT: 'Import contact',
+      CREATE_CONTACT: 'Create Contact',
+      IMPORT_CONTACT: 'Import Contact',
       DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
@@ -447,7 +474,7 @@ export default {
       TITLE: 'Enter contact address',
       ADDRESS: 'Address',
       NAME: 'Contact name (optional)',
-      NAME_INFO: 'Info.:',
+      NAME_INFO: 'Info:',
       NAME_DESCRIPTION: 'Contact name is not required, but it can be used for your convenience',
       FAILED: 'Failed to create contact',
       SUCCESS: '\'{0}\' has been added to your contacts'
@@ -456,8 +483,8 @@ export default {
     DASHBOARD: {
       ALL_WALLETS: 'All wallets',
       ADD_WALLET: 'Add a wallet',
-      CREATE_WALLET: 'Create wallet',
-      IMPORT_WALLET: 'Import wallet',
+      CREATE_WALLET: 'Create Wallet',
+      IMPORT_WALLET: 'Import Wallet',
       LAST_TRANSACTIONS: 'Last transactions'
     },
 
@@ -505,6 +532,7 @@ export default {
           HEADER: 'Appearance',
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
+        MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
         THEME: 'Choose light or dark mode',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
@@ -549,15 +577,18 @@ export default {
     },
 
     WALLET_ALL: {
-      CREATE_WALLET: 'Create wallet',
+      LEDGER: {
+        CACHE: 'Cache ledger wallets?',
+        CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
+        ADDITIONAL: '# of Ledger Wallets'
+      },
+      CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
-      IMPORT_WALLET: 'Import wallet',
+      IMPORT_WALLET: 'Import Wallet',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
-      CACHE_LEDGER: 'Cache ledger wallets?',
-      CACHE_LEDGER_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
       ADDRESS: 'Address',
       NAME: 'Name',
       VOTING_FOR: 'Voting for',
@@ -568,10 +599,10 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Import wallet',
+          HEADER: 'Import Wallet',
           TEXT: 'Fill in the passphrase of your wallet. You can fill in the address first, to ensure that it matches the given passphrase.'
         },
-        TITLE: '1. Import wallet',
+        TITLE: '1. Import Wallet',
         ONLY_ADDRESS: 'Use the address only',
         ONLY_PASSPHRASE: 'Use the passphrase only'
       },
@@ -640,7 +671,7 @@ export default {
           TEXT: 'Optionally, choose a name for you wallet and you are done.'
         },
         TITLE: '5. Confirmation',
-        ADDRESS: 'Wallet address',
+        ADDRESS: 'Your wallet address and identicon',
         NAME: 'Wallet name (optional)'
       }
     },
@@ -883,8 +914,14 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
+    CURRENTLY_VOTED: 'You are currently voted for {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
-    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}'
+    WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
+    VOTE_INFO: 'Info:',
+    NO_VOTE: 'This wallet is not voting. To view more information and vote, use the search or click on any delegate',
+    AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
+    LOADING_VOTE: 'Loading vote details...',
+    SEARCH_DELEGATE: 'Search delegate'
   },
 
   WALLET_RENAME: {

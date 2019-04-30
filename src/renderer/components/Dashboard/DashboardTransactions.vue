@@ -4,6 +4,7 @@
     :rows="lastTransactions"
     :is-dashboard="true"
     :is-loading="isLoading"
+    :no-data-message="$t('TABLE.NO_TRANSACTIONS')"
   />
 </template>
 
@@ -38,7 +39,7 @@ export default {
       return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
     },
     storedTransactions () {
-      return this.$store.getters['transaction/byProfileId'](this.session_profile.id, true)
+      return this.$store.getters['transaction/byProfileId'](this.session_profile.id, { includeExpired: true })
     },
     wallets () {
       return [
@@ -48,61 +49,22 @@ export default {
     }
   },
 
-  watch: {
-    // This watcher would invoke the `fetch` after the `Synchronizer`
-    wallets () {
-      let hasNewWallet = false
-      for (const wallet of this.wallets) {
-        if (!this.previousWalletAddresses.includes(wallet.address)) {
-          hasNewWallet = true
-
-          break
-        }
-      }
-
-      if (hasNewWallet) {
-        this.updatePreviousWallets()
-        this.fetchTransactions(false)
-      }
-    }
-  },
-
   created () {
-    this.fetchTransactions()
+    if (this.wallets.length) {
+      this.isLoading = true
+    }
+
+    this.$eventBus.on('transactions:fetched', transactionsByWallet => {
+      const transactions = flatten(Object.values(transactionsByWallet))
+      this.fetchedTransactions = this.processTransactions(transactions)
+      this.isLoading = false
+    })
   },
 
   methods: {
-    async fetchTransactions (updatePreviousWallets = true) {
-      if (!this.wallets.length) {
-        return
-      }
-
-      if (!this.fetchedTransactions.length) {
-        this.isLoading = true
-      }
-
-      if (updatePreviousWallets) {
-        this.updatePreviousWallets()
-      }
-
-      try {
-        const addresses = this.wallets.map(wallet => wallet.address)
-        const transactions = await this.$client.fetchTransactionsForWallets(addresses)
-        const ordered = orderBy(uniqBy(flatten(Object.values(transactions)), 'id'), 'timestamp', 'desc')
-        this.fetchedTransactions = ordered.slice(0, this.numberOfTransactions)
-      } catch (error) {
-        this.$logger.error(error)
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'transactions',
-          msg: error.message
-        }))
-      } finally {
-        this.isLoading = false
-      }
-    },
-
-    updatePreviousWallets () {
-      this.previousWalletAddresses = this.wallets.map(wallet => wallet.address)
+    processTransactions (transactions) {
+      const ordered = orderBy(uniqBy(transactions, 'id'), 'timestamp', 'desc')
+      return ordered.slice(0, this.numberOfTransactions)
     }
   }
 }

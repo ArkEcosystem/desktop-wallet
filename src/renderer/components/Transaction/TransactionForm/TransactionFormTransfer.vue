@@ -53,11 +53,11 @@
     <InputText
       ref="vendorField"
       v-model="$v.form.vendorField.$model"
-      :helper-text="vendorFieldError"
-      :is-invalid="vendorFieldIsInvalid"
       :label="vendorFieldLabel"
       :bip39-warning="true"
+      :helper-text="vendorFieldHelperText"
       :is-disabled="!currentWallet"
+      :maxlength="vendorFieldMaxLength"
       name="vendorField"
       class="mb-5"
     />
@@ -102,6 +102,7 @@
       v-model="$v.form.secondPassphrase.$model"
       :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
       :pub-key-hash="walletNetwork.version"
+      :public-key="currentWallet.secondPublicKey"
       class="mt-5"
     />
 
@@ -138,13 +139,14 @@
 </template>
 
 <script>
-import { maxLength, required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { required } from 'vuelidate/lib/validators'
+import { TRANSACTION_TYPES, V1, VENDOR_FIELD } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
+import onSubmit from './mixin-on-submit'
 
 export default {
   name: 'TransactionFormTransfer',
@@ -163,6 +165,8 @@ export default {
     PassphraseInput,
     WalletSelection
   },
+
+  mixins: [onSubmit],
 
   props: {
     schema: {
@@ -184,7 +188,6 @@ export default {
     isSendAllActive: false,
     showEncryptLoader: false,
     showLedgerLoader: false,
-    bip38Worker: null,
     previousAmount: '',
     wallet: null,
     showConfirmSendAll: false
@@ -242,17 +245,20 @@ export default {
       }
     },
     vendorFieldLabel () {
-      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [64])}`
+      return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.vendorFieldMaxLength])}`
     },
-    vendorFieldError () {
-      if (this.vendorFieldIsInvalid) {
-        return this.$t('VALIDATION.TOO_LONG', [this.$refs.vendorField.label])
+    vendorFieldHelperText () {
+      if (this.form.vendorField.length === this.vendorFieldMaxLength) {
+        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [this.vendorFieldMaxLength])
       }
-
       return null
     },
-    vendorFieldIsInvalid () {
-      return this.$v.form.vendorField.$dirty && this.$v.form.vendorField.$invalid
+    vendorFieldMaxLength () {
+      const vendorField = this.walletNetwork.vendorField
+      if (vendorField) {
+        return vendorField.maxLength
+      }
+      return VENDOR_FIELD.defaultMaxLength
     }
   },
 
@@ -261,10 +267,6 @@ export default {
       this.ensureAvailableAmount()
       this.$v.form.recipientId.$touch()
     }
-  },
-
-  beforeDestroy () {
-    this.bip38Worker.send('quit')
   },
 
   mounted () {
@@ -278,21 +280,6 @@ export default {
       this.$set(this, 'wallet', this.currentWallet || null)
       this.$v.wallet.$touch()
     }
-    if (this.bip38Worker) {
-      this.bip38Worker.send('quit')
-    }
-    this.bip38Worker = this.$bgWorker.bip38()
-    this.bip38Worker.on('message', message => {
-      if (message.decodedWif === null) {
-        this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        this.showEncryptLoader = false
-      } else if (message.decodedWif) {
-        this.form.passphrase = null
-        this.form.wif = message.decodedWif
-        this.showEncryptLoader = false
-        this.submit()
-      }
-    })
 
     // Set default fees with v1 compatibility
     if (this.walletNetwork.apiVersion === 1) {
@@ -336,19 +323,6 @@ export default {
     ensureAvailableAmount () {
       if (this.isSendAllActive && this.canSendAll()) {
         this.$set(this.form, 'amount', this.maximumAvailableAmount)
-      }
-    },
-
-    onSubmit () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
-        this.showEncryptLoader = true
-        this.bip38Worker.send({
-          bip38key: this.currentWallet.passphrase,
-          password: this.form.walletPassword,
-          wif: this.walletNetwork.wif
-        })
-      } else {
-        this.submit()
       }
     },
 
@@ -433,9 +407,6 @@ export default {
           return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
         }
       },
-      vendorField: {
-        maxLength: maxLength(64)
-      },
       passphrase: {
         isValid (value) {
           if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
@@ -449,6 +420,7 @@ export default {
           return false
         }
       },
+      vendorField: {},
       walletPassword: {
         isValid (value) {
           if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {

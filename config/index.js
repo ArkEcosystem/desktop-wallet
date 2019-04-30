@@ -17,10 +17,15 @@ exports.ANNOUNCEMENTS = {
   rssUrl: 'https://blog.ark.io/feed'
 }
 
+exports.VENDOR_FIELD = {
+  defaultMaxLength: 64
+}
+
 exports.I18N = {
   defaultLocale: 'en-US',
   enabledLocales: [
-    'en-US'
+    'en-US',
+    'it-IT'
   ]
 }
 

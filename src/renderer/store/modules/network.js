@@ -23,27 +23,9 @@ export default new BaseModule(NetworkModel, {
     byName: state => name => {
       return state.all.find(network => network.name === name)
     },
-
-    feeStatisticsByType: (_, __, ___, rootGetters) => type => {
-      const network = rootGetters['session/network']
-
-      if (!network) {
-        throw new Error('[network/feeStatisticsByType] No active network.')
-      }
-
-      if (network.apiVersion === 1) {
-        throw new Error('[network/feeStatisticsByType] Supported only by v2 networks.')
-      }
-
-      const { feeStatistics } = network
-      const data = feeStatistics.find(transactionType => transactionType.type === type)
-      return data ? data.fees : []
-    },
-
     customNetworkById: state => id => {
       return state.customNetworks[id]
     },
-
     customNetworks: state => state.customNetworks
   },
 
@@ -87,30 +69,32 @@ export default new BaseModule(NetworkModel, {
       commit('SET_ALL', NETWORKS)
     },
 
-    // Updates the feeStatistics for the available networks
-    async fetchFees ({ commit, getters }) {
-      let networks = getters['all']
-      let updatedNetworks = cloneDeep(networks)
-      if (networks) {
-        let i
-        for (i = 0; i < updatedNetworks.length; i++) {
-          let network = updatedNetworks[i]
-          try {
-            let feeStats = await Client.fetchFeeStatistics(network.server, network.apiVersion)
-            if (feeStats) {
-              network.feeStatistics = feeStats
-            }
-          } catch (error) {
-            //
-          }
+    /*
+     * Update the fee statistics of the current network
+     */
+    async fetchFees ({ commit, rootGetters }, network = null) {
+      if (!network) {
+        network = rootGetters['session/network']
+      }
+
+      if (network && network.apiVersion === 2) {
+        try {
+          const feeStatistics = await Client.fetchFeeStatistics(network.server, network.apiVersion)
+          commit('UPDATE', {
+            ...network,
+            feeStatistics
+          })
+        } catch (error) {
+          // Fees couldn't be updated
         }
       }
-      commit('SET_ALL', updatedNetworks)
     },
 
-    addCustomNetwork ({ dispatch, commit }, network) {
+    async addCustomNetwork ({ dispatch, commit }, network) {
       commit('ADD_CUSTOM_NETWORK', network)
       dispatch('create', network)
+
+      await dispatch('fetchFees', network)
     },
 
     async updateCustomNetwork ({ dispatch, commit, rootGetters }, network) {
@@ -123,6 +107,8 @@ export default new BaseModule(NetworkModel, {
         await dispatch('session/setProfileId', rootGetters['session/profileId'], { root: true })
         eventBus.emit('client:changed')
       }
+
+      await dispatch('fetchFees', network)
     },
 
     removeCustomNetwork ({ dispatch, commit }, id) {

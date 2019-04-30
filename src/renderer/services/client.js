@@ -1,13 +1,30 @@
-import ApiClient from '@arkecosystem/client'
 import { crypto, transactionBuilder } from '@arkecosystem/crypto'
-import axios from 'axios'
 import { castArray, chunk, orderBy } from 'lodash'
 import dayjs from 'dayjs'
+import moment from 'moment'
+import logger from 'electron-log'
+import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import logger from 'electron-log'
-import moment from 'moment'
+import OriginalClient from '@arkecosystem/client'
+import Http from '@/services/http'
+import BackgroundHttpClient from '@/services/background-http-client'
+
+const httpClient = new Http()
+
+/**
+ * This class has the mission of monkey-patching the API client to establish
+ * its inner HTTP client.
+ * It can be used to run requests in workers.
+ * TODO override static `findPeers` to make its request on background too
+ */
+class ApiClient extends OriginalClient {
+  setConnection (host) {
+    this.http = new BackgroundHttpClient(host, this.version)
+    this.http.__httpClient = httpClient.request
+  }
+}
 
 export default class ClientService {
   /*
@@ -57,7 +74,7 @@ export default class ClientService {
    */
   static async fetchPeerConfig (host, timeout = 3000) {
     try {
-      const { data } = await axios({
+      const { data } = await httpClient.request({
         url: `${host}/config`,
         method: 'GET',
         headers: {
@@ -77,25 +94,20 @@ export default class ClientService {
   }
 
   static async fetchFeeStatistics (server, apiVersion, timeout) {
-    // This is only for v2 networks
     if (apiVersion === 1) {
-      return
+      throw new Error('Fee statistics are only available on V2 networks')
     }
-    const client = new ApiClient(server, apiVersion)
-    if (timeout) {
-      client.http.timeout = timeout
-    }
-    const { data } = await client.resource('node').configuration()
-    if (data.data && data.data.feeStatistics) {
-      return data.data.feeStatistics
-    }
+    const { feeStatistics } = await ClientService.fetchNetworkConfig(server, apiVersion, timeout)
+    return feeStatistics
   }
 
   constructor (watchProfile = true) {
     this.__host = null
     this.__version = null
+    // The API version is imprecise, since new capabilities are being added continuously.
+    // So, this property uses the peer version to know which features are available
+    this.__capabilities = '1.0.0'
     this.client = new ApiClient('http://')
-    this.hasMultiWalletSearch = false
 
     if (watchProfile) {
       this.__watchProfile()
@@ -118,6 +130,18 @@ export default class ClientService {
   set version (apiVersion) {
     this.__version = apiVersion
     this.client.setVersion(apiVersion)
+  }
+
+  get capabilities () {
+    return this.__capabilities
+  }
+
+  set capabilities (version) {
+    this.__capabilities = semver.coerce(version)
+  }
+
+  isCapable (version) {
+    return semver.gte(this.capabilities, version)
   }
 
   /**
@@ -356,9 +380,10 @@ export default class ClientService {
     options = options || {}
 
     let walletData = {}
-    if (this.version === 2 && this.hasMultiWalletSearch) {
+    if (this.isCapable('2.1.0')) {
       let transactions = []
       let hadFailure = false
+
       for (const addressChunk of chunk(addresses, 20)) {
         try {
           const { data } = await this.client.resource('transactions').search({
@@ -474,7 +499,7 @@ export default class ClientService {
   async fetchWallets (addresses) {
     let walletData = []
 
-    if (this.version === 2 && this.hasMultiWalletSearch) {
+    if (this.isCapable('2.1.0')) {
       for (const addressChunk of chunk(addresses, 20)) {
         const { data } = await this.client.resource('wallets').search({
           addresses: addressChunk
@@ -578,8 +603,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[3]) {
-      throw new Error(`Vote fee should be smaller than ${V1.fees[3]}`)
+    const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -610,8 +636,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[2]) {
-      throw new Error(`Delegate registration fee should be smaller than ${V1.fees[2]}`)
+    const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -644,9 +671,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    // To ensure that transfers cannot be build with a bigger fee than V1
-    if (!isAdvancedFee && fee > V1.fees[0]) {
-      throw new Error(`Transfer fee should be smaller than ${V1.fees[0]}`)
+    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -678,8 +705,9 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
-    if (!isAdvancedFee && fee > V1.fees[1]) {
-      throw new Error(`Second signature fee should be smaller than ${V1.fees[1]}`)
+    const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
     const transaction = transactionBuilder
@@ -708,10 +736,9 @@ export default class ClientService {
    */
   __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
     const network = store.getters['session/network']
-    transaction = transaction.network({
-      pubKeyHash: network.version
-    })
+    transaction = transaction.network(network.version)
 
+    // TODO replace with dayjs
     const epochTime = moment(network.constants.epoch).utc().valueOf()
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
@@ -739,7 +766,7 @@ export default class ClientService {
     const scheme = currentPeer.isHttps ? 'https://' : 'http://'
     const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
     const network = store.getters['session/network']
-    const response = await axios({
+    const response = await httpClient.request({
       url: host,
       data: { transactions: castArray(transactions) },
       method: 'POST',
@@ -816,38 +843,46 @@ export default class ClientService {
     }
   }
 
+  // TODO this shouldn't be responsibility of the client
+  // TODO update client when peer changes
   __watchProfile () {
     store.watch(
       (_, getters) => getters['session/profile'],
-      (profile, oldProfile) => {
+      async (profile, oldProfile) => {
         if (!profile) {
           return
         }
 
         const network = store.getters['network/byId'](profile.networkId)
         const currentPeer = store.getters['peer/current']()
-        if (currentPeer && Object.keys(currentPeer).length > 0) {
+
+        if (currentPeer && currentPeer.ip) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
           this.version = currentPeer.version.match(/^2\./) ? 2 : 1
+          this.capabilities = currentPeer.version
+
+        // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
         } else {
-          const { server, apiVersion } = network
+          let { server, apiVersion } = network
           this.host = server
           this.version = apiVersion
-        }
 
-        try {
-          this.hasMultiWalletSearch = false
-          if (network.apiVersion === 2) {
-            const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
-            this.client.resource('wallets').search({
-              addresses: [testAddress]
-            }).then(() => {
-              this.hasMultiWalletSearch = true
-            })
+          // Infer which are the real capabilities of the peer
+          if (apiVersion === 2) {
+            try {
+              const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
+              const { address } = this.client.resource('wallets').search({
+                addresses: [testAddress]
+              })
+
+              apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
+            } catch (_) {
+              // The peer does not have capability to search for multiple wallets or transactions at once
+            }
           }
-        } catch (error) {
-          //
+
+          this.capabilities = apiVersion
         }
 
         if (!oldProfile || profile.id !== oldProfile.id) {

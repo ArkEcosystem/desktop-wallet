@@ -42,8 +42,8 @@ Full translations are considered to be `Tier 3`, while grammar fixes, typos, etc
  - Add the language to the [English language file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/locales/en-US.js) at the `LANGUAGES` key.
  - Update the [date and time formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/date-time-formats.js) to include the short and long format that are used commonly by native speakers.
  - Update the [number formats file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/src/renderer/i18n/number-formats.js) to include the preferred way of displaying currencies used commonly by native speakers.
- - Add the language at the `I18N.enabledLocales` array at the [main configuration file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/config/index.js). This step is necessary to make the language would not be available.
- - Execute the application. Go to the [ development section](https://github.com/ArkEcosystem/desktop-wallet#development) to learn how to install the requirements and execute it.
+ - Add the language at the `I18N.enabledLocales` array at the [main configuration file](https://github.com/ArkEcosystem/desktop-wallet/blob/develop/config/index.js). This step is necessary to make the language available.
+ - Execute the application. Go to the [development section](https://github.com/ArkEcosystem/desktop-wallet#development) to learn how to install the requirements and execute it.
 
 </details>
 
@@ -151,7 +151,6 @@ If you discover a security vulnerability within this project, please send an e-m
  - [ItsANameToo](https://github.com/ItsANameToo)
  - [Juan A. Martín](https://github.com/j-a-m-l)
  - [Lúcio Rubens](https://github.com/luciorubeens)
- - [Mario Vega](https://github.com/mvega3)
  - [All Contributors](../../contributors)
 
 ## License

@@ -6,6 +6,10 @@ import directives from '@/directives'
 import filters from '@/filters'
 
 require('babel-plugin-require-context-hook/register')()
+
+// This Intl polyfill has some problems with number precision, so we store the original
+// implementation to use it instead when that lack of accuracy is an issue
+global.__Intl__ = global.Intl
 global.Intl = require('intl')
 
 HTMLCanvasElement.prototype.getContext = jest.fn()
@@ -23,7 +27,7 @@ VueTestUtils.config.mocks.$client = {
 }
 
 VueTestUtils.config.mocks.assets_loadImage = jest.fn()
-VueTestUtils.config.mocks.collections_filterChilds = jest.fn()
+VueTestUtils.config.mocks.collections_filterChildren = jest.fn()
 VueTestUtils.config.mocks.currency_subToUnit = jest.fn()
 VueTestUtils.config.mocks.currency_format = jest.fn()
 VueTestUtils.config.mocks.session_network = jest.fn()

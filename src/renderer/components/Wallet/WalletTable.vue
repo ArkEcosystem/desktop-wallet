@@ -66,12 +66,6 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'votedDelegate'"
-        >
-          {{ data.row.votedDelegate ? data.row.votedDelegate.username : '' }}
-        </div>
-
-        <div
           v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
@@ -212,7 +206,11 @@ export default {
     },
 
     delegateName (row) {
-      return row.votedDelegate ? row.votedDelegate.username : ''
+      if (row.vote) {
+        const delegate = this.$store.getters['delegate/byPublicKey'](row.vote)
+        return delegate.username
+      }
+      return ''
     },
 
     walletName (row) {

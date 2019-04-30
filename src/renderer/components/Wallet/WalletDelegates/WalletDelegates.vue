@@ -52,7 +52,7 @@
             <span>{{ data.formattedRow['username'] }}</span>
             <span
               v-if="data.row.publicKey === walletVote.publicKey"
-              class="WalletDelegates__vote-badge bg-red-light text-white p-1 text-xs font-bold rounded pointer-events-none ml-3"
+              class="vote-badge"
             >
               {{ $t('WALLET_DELEGATES.VOTE') }}
             </span>
@@ -64,24 +64,11 @@
         </span>
       </template>
     </TableWrapper>
-
-    <TransactionModal
-      v-if="!!selected"
-      :title="getVoteTitle()"
-      :type="3"
-      :delegate="selected"
-      :is-voter="selected.publicKey === walletVote.publicKey"
-      :has-voted="!!walletVote.publicKey"
-      @cancel="onCancel"
-      @close="onCancel"
-      @sent="onSent"
-    />
   </div>
 </template>
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import TransactionModal from '@/components/Transaction/TransactionModal'
 import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {
@@ -91,8 +78,7 @@ export default {
 
   components: {
     ButtonClose,
-    TableWrapper,
-    TransactionModal
+    TableWrapper
   },
 
   data: () => ({
@@ -100,7 +86,6 @@ export default {
     delegates: [],
     isExplanationTruncated: true,
     isLoading: false,
-    selected: null,
     totalCount: 0,
     queryParams: {
       page: 1,
@@ -161,13 +146,6 @@ export default {
       this.$store.dispatch('app/setVotingExplanation', false)
     },
 
-    getVoteTitle () {
-      if (this.selected.publicKey === this.walletVote.publicKey) {
-        return this.$t('WALLET_DELEGATES.UNVOTE_DELEGATE', { delegate: this.selected.username })
-      }
-      return this.$t('WALLET_DELEGATES.VOTE_DELEGATE', { delegate: this.selected.username })
-    },
-
     async fetchDelegates () {
       if (this.isLoading) {
         return
@@ -202,19 +180,7 @@ export default {
     },
 
     onRowClick ({ row }) {
-      this.selected = row
-    },
-
-    onSent (success) {
-      if (success) {
-        this.walletVote.publicKey = null
-      }
-
-      this.selected = null
-    },
-
-    onCancel () {
-      this.selected = null
+      this.$emit('on-row-click', row.publicKey)
     },
 
     onPageChange ({ currentPage }) {
@@ -260,9 +226,6 @@ export default {
   top: 0;
   margin-bottom: auto;
   margin-top: 5px;
-}
-.WalletDelegates__vote-badge {
-  opacity: 0.85
 }
 </style>
 

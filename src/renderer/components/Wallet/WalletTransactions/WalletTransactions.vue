@@ -130,7 +130,7 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address, true)
+      return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
     },
 
     async getTransactions (address) {
@@ -246,11 +246,14 @@ export default {
           }
         }
 
-        if (address === this.wallet_fromRoute.address && newTransactions > 0) {
-          this.newTransactionsNotice = this.$t('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
-            count: newTransactions,
-            plural: newTransactions > 1 ? 's' : ''
-          })
+        // Avoid throwing an Error if the user changes to a different route
+        if (this.wallet_fromRoute) {
+          if (address === this.wallet_fromRoute.address && newTransactions > 0) {
+            this.newTransactionsNotice = this.$t('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
+              count: newTransactions,
+              plural: newTransactions > 1 ? 's' : ''
+            })
+          }
         }
       } catch (error) {
         this.$logger.error('Failed to update confirmations: ', error)

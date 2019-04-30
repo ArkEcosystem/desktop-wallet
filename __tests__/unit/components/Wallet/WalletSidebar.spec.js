@@ -133,12 +133,20 @@ describe('WalletSidebar', () => {
             wallets[1]
           ])
         })
+
+        it('should not ignore the case', () => {
+          wrapper.vm.applyFilters({
+            searchQuery: 'Xd'
+          })
+
+          expect(wrapper.vm.filterWallets(wallets)).toBeEmpty()
+        })
       })
 
       describe('when wallet balances match', () => {
         it('should return only those wallets', () => {
           wrapper.vm.applyFilters({
-            searchQuery: 13
+            searchQuery: '13'
           })
 
           expect(wrapper.vm.filterWallets(wallets)).toEqual([
@@ -159,6 +167,17 @@ describe('WalletSidebar', () => {
             wallets[1]
           ])
         })
+
+        it('should ignore the case', () => {
+          wrapper.vm.applyFilters({
+            searchQuery: 'Am'
+          })
+
+          expect(wrapper.vm.filterWallets(wallets)).toEqual([
+            wallets[0],
+            wallets[1]
+          ])
+        })
       })
 
       describe('when wallet alternative (delegate, network, etc.) names match', () => {
@@ -169,6 +188,20 @@ describe('WalletSidebar', () => {
           })
           wrapper.vm.applyFilters({
             searchQuery: 'examples'
+          })
+
+          expect(wrapper.vm.filterWallets(wallets)).toEqual([
+            wallets[0]
+          ])
+        })
+
+        it('should ignore the case', () => {
+          wrapper.vm.wallet_name = jest.fn().mockImplementation(address => {
+            const wallet = wallets.find(wallet => wallet.address === address)
+            return `${wallet.name}s`
+          })
+          wrapper.vm.applyFilters({
+            searchQuery: 'eXaMples'
           })
 
           expect(wrapper.vm.filterWallets(wallets)).toEqual([
