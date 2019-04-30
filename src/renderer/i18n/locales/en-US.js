@@ -519,8 +519,7 @@ export default {
         },
         NAME: 'Profile name',
         TITLE: '1. Profile details',
-        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
-        NO_AVATAR: 'No Avatar'
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -722,7 +721,8 @@ export default {
   SELECTION_AVATAR: {
     ADDITIONAL_AVATARS: 'Additional Avatars',
     AVATARS: 'Avatars',
-    MODAL_HEADER: 'Select avatar'
+    MODAL_HEADER: 'Select avatar',
+    NO_AVATAR: 'No Avatar'
   },
 
   SELECTION_BACKGROUND: {
