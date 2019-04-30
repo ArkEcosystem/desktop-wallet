@@ -207,6 +207,8 @@ export default {
                       } else {
                         return this.$t(`MARKET_CHART.WEEK.SHORT.${value.toUpperCase()}`)
                       }
+                    } else if (this.period === 'month') {
+                      return value
                     }
 
                     return this.formatHour(value)
