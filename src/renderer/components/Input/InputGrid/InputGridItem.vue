@@ -25,7 +25,7 @@
       </span>
       <ButtonLetter
         :value="label"
-        :size="!isForModal ? '2xl' : null"
+        :size="isForModal ? null : '2xl'"
         :class="{
           'w-24 h-24 text-5xl': isForModal
         }"
@@ -41,6 +41,7 @@
     >
       <Component :is="component" />
     </div>
+
     <span
       v-if="isSelected"
       class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute pin-b pin-r w-6 h-6 bg-green border-2 border-theme-feature text-white"
