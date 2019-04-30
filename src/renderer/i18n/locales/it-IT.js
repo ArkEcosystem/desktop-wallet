@@ -494,7 +494,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Crea un contatto',
       IMPORT_CONTACT: 'Importa contatto',
-      DELETE_CONTACT: 'Elimina questo contatto',
       INSTRUCTIONS: 'Questa pagina ti consente di creare contatti, facilitando la gestione degli indirizzi dando loro un nome identificativo',
       HEADER: 'I miei contatti',
       SHOW_CONTACT: 'Mostra contatti'
