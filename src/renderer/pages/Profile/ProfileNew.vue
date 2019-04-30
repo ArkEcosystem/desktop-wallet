@@ -88,11 +88,7 @@
                 </div>
                 <SelectionAvatar
                   :selected="schema.avatar"
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: schema.name,
-                    onlyLetter: true
-                  }]"
+                  :letter-value="schema.name"
                   @select="selectAvatar"
                 />
               </div>
