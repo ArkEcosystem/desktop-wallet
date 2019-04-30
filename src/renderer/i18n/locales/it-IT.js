@@ -981,6 +981,10 @@ export default {
     SEARCH_DELEGATE: 'Cerca delegato'
   },
 
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Caricamento portafogli Ledger...'
+  },
+
   WALLET_RENAME: {
     TITLE: 'Rinomina portafoglio',
     TITLE_ADD: 'Aggiungi portafoglio',
