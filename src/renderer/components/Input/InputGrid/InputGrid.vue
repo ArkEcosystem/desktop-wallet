@@ -109,7 +109,12 @@ export default {
     },
 
     activeItem () {
-      return this.allItems.find(i => i.title === this.selectedItem.title)
+      return this.allItems.find(item => {
+        return this.selectedItem.onlyLetter
+          ? item.onlyLetter
+          // Letter avatar title depends on language
+          : item.title === this.selectedItem.title
+      })
     }
   },
 
