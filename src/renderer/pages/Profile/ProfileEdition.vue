@@ -179,12 +179,8 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: name,
-                    onlyLetter: true
-                  }]"
                   :enable-modal="true"
+                  :letter-value="name"
                   :max-visible-items="3"
                   :selected="avatar"
                   :profile="profile"
@@ -492,14 +488,19 @@ export default {
     },
 
     selectAvatar (avatar) {
-      let newAvatar = null
+      let newAvatar
+
       if (typeof avatar === 'string') {
         newAvatar = avatar
+      } else if (avatar.onlyLetter) {
+        newAvatar = null
       } else if (avatar.name) {
         newAvatar = {
           avatarName: avatar.name,
           pluginId: avatar.pluginId
         }
+      } else {
+        throw new Error(`Invalid value for avatar: ${avatar}`)
       }
 
       this.__updateSession('avatar', newAvatar)
