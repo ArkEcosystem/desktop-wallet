@@ -2,15 +2,16 @@
   <section class="MarketChart w-full flex-column">
     <slot />
     <LineChart
+      v-if="isActive"
       v-show="isReady"
       ref="chart"
       :chart-data="chartData"
       :options="options"
       :height="315"
-      @ready="show"
+      @ready="setReady"
     />
     <div
-      v-if="!isReady"
+      v-if="isActive && !isReady"
       class="MarketChart__Loader__Container"
     >
       <Loader />
@@ -40,6 +41,7 @@ export default {
   },
 
   props: {
+    // Should the chart be rendered?
     isActive: {
       type: Boolean,
       required: false,
@@ -94,24 +96,18 @@ export default {
 
     ticker () {
       this.renderChart()
-    },
-
-    isActive (val) {
-      if (!val) return // Render the chart when open the component
-
-      this.renderChart()
     }
   },
 
-  mounted () {
-    // Avoid creating the gradient when the element is not built
-    if (this.isActive) {
+  activated () {
+    // Only if it's not already rendered
+    if (this.isActive && !this.isReady) {
       this.renderChart()
     }
   },
 
   methods: {
-    show () {
+    setReady () {
       this.isReady = true
     },
     async renderChart () {
@@ -303,17 +299,17 @@ export default {
       if (this.session_profile.timeFormat !== '12h') {
         return time
       } else {
+        let meridiem = 'PM'
         const [hours, minutes] = time.split(':')
         let hour = parseInt(hours)
-        let am = false
         if (hour === 0) {
           hour = 12
         } else if (hour > 12) {
           hour -= 12
         } else {
-          am = true
+          meridiem = 'AM'
         }
-        return `${hour}:${minutes} ${am ? 'AM' : 'PM'}`
+        return `${hour}:${minutes} ${meridiem}`
       }
     }
   }
