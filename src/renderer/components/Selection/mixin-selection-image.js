@@ -55,7 +55,7 @@ export default {
       if (selection.imagePath) {
         this.$emit('select', selection.imagePath)
       } else if (selection.component) {
-        this.$emit('select', selection.component)
+        this.$emit('select', selection)
       } else {
         this.$emit('select', selection)
       }

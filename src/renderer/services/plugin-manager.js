@@ -423,9 +423,7 @@ class PluginManager {
   }
 
   async fetchPluginsFromPath (pluginsPath) {
-    if (!fs.existsSync(pluginsPath)) {
-      return
-    }
+    fs.ensureDirSync(pluginsPath)
 
     const entries = fs.readdirSync(pluginsPath).filter(entry => {
       if (fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()) {
