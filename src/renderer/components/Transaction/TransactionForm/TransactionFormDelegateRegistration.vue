@@ -218,26 +218,25 @@ export default {
         }
       },
       username: {
-        required,
         isValid (value) {
           const validation = WalletService.validateUsername(value)
-          if (validation && validation.passes) {
+
+          if (validation.passes) {
             this.error = null
-            return validation.passes
-          }
-
-          if (validation.errors && validation.errors.length) {
-            const { type } = validation.errors[0]
-            if (type === 'string.max') {
-              this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
-            } else {
-              this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
-            }
           } else {
-            this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+            switch (validation.errors[0].type) {
+              case 'empty':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_EMPTY_ERROR')
+                break
+              case 'maxLength':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
+                break
+              default:
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+            }
           }
 
-          return false
+          return validation.passes
         }
       },
       passphrase: {

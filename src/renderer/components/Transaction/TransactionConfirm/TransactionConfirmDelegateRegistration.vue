@@ -32,16 +32,18 @@ export default {
     ListDividedItem
   },
 
+  computed: {
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
+    }
+  },
+
   methods: {
     getUsername (transaction) {
       if (transaction.asset && transaction.asset.delegate) {
         return transaction.asset.delegate.username
       }
       return ''
-    },
-
-    senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
     }
   }
 }
