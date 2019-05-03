@@ -8,7 +8,7 @@ export default {
     if (footerSlot) {
       this.$nextTick(() => {
         Wormhole.open({
-          to: 'footer',
+          to: 'plugin-footer',
           from: 'plugin-wrapper',
           passengers: footerSlot
         })
