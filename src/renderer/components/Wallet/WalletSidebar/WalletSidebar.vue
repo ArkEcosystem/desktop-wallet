@@ -43,6 +43,7 @@
       <div
         v-if="isExpanded"
         class="WalletSidebar__menu__button"
+        :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
         @click="toggleFilters"
       >
         <div class="flex items-center">
