@@ -10,9 +10,8 @@ export default {
         return theme === 'dark'
       }
 
-      const pluginThemes = this.$store.getters['session/theme']
-
-      if (pluginThemes.length && pluginThemes[theme]) {
+      const pluginThemes = this.$store.getters['plugin/themes']
+      if (pluginThemes[theme]) {
         return pluginThemes[theme].darkMode
       }
 
