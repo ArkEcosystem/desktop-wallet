@@ -73,14 +73,7 @@ class PluginManager {
     await this.loadMenuItems(pluginObject, plugin, profileId)
     await this.loadAvatars(pluginObject, plugin, profileId)
     await this.loadWalletTabs(pluginObject, plugin, profileId)
-
-    // TODO permissions
-    if (pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
-      const urls = pluginObject.getUnprotectedIframeUrls()
-      if (urls) {
-        ipcRenderer.send('disable-iframe-protection', urls)
-      }
-    }
+    await this.loadUnprotectedIframeUrls(pluginObject, plugin, profileId)
   }
 
   async disablePlugin (pluginId) {
@@ -369,6 +362,17 @@ class PluginManager {
           profileId
         })
       }
+    }
+  }
+
+  async loadUnprotectedIframeUrls (pluginObject) {
+    if (!pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
+      return
+    }
+
+    const urls = pluginObject.getUnprotectedIframeUrls()
+    if (urls) {
+      ipcRenderer.send('disable-iframe-protection', urls)
     }
   }
 
