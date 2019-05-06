@@ -91,6 +91,7 @@
 <script>
 import '@/styles/style.css'
 import fs from 'fs'
+import CleanCss from 'clean-css'
 import { isEmpty, pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
@@ -371,7 +372,9 @@ export default {
         const theme = this.pluginThemes[themeName]
         if (theme) {
           const $style = document.querySelector('style[name=plugins]')
-          $style.innerHTML = fs.readFileSync(theme.cssPath)
+          const input = fs.readFileSync(theme.cssPath)
+          const output = new CleanCss().minify(input)
+          $style.innerHTML = output.styles
         }
       }
     }
