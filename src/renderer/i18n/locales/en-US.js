@@ -518,8 +518,7 @@ export default {
         },
         NAME: 'Profile name',
         TITLE: '1. Profile details',
-        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
-        NO_AVATAR: 'No Avatar'
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -721,7 +720,8 @@ export default {
   SELECTION_AVATAR: {
     ADDITIONAL_AVATARS: 'Additional Avatars',
     AVATARS: 'Avatars',
-    MODAL_HEADER: 'Select avatar'
+    MODAL_HEADER: 'Select avatar',
+    NO_AVATAR: 'No Avatar'
   },
 
   SELECTION_BACKGROUND: {
@@ -765,14 +765,6 @@ export default {
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
-    },
-    FORM: {
-      DELEGATE_REGISTRATION: {
-        INSTRUCTIONS: 'for {address}.'
-      },
-      SECOND_SIGNATURE: {
-        INSTRUCTIONS: 'for {address}.'
-      }
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -922,17 +914,15 @@ export default {
   WALLET_DELEGATES: {
     RANK: 'Rank',
     USERNAME: 'Username',
-    PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
-    PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
-    MISSED: 'missed',
     VOTERS: 'Voters',
     UNVOTE: 'Unvote',
     VOTES: 'Votes',
     VOTE: 'Vote',
+    USERNAME_EMPTY_ERROR: 'The username must have at least 1 character',
     USERNAME_ERROR: 'No special characters or uppercase allowed',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',

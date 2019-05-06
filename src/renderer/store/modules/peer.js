@@ -174,15 +174,17 @@ export default {
         return []
       }
 
-      const highestHeight = peers[0].height
-      for (let i = 1; i < maxRandom; i++) {
-        if (!peers[i]) {
-          break
-        }
-        if (peers[i].height < highestHeight - 50) {
-          maxRandom = i - 1
-        }
-      }
+      // NOTE: Disabled because if a bad peer has a height 50 blocks above the rest it is not returning any peer
+
+      // const highestHeight = peers[0].height
+      // for (let i = 1; i < maxRandom; i++) {
+      //   if (!peers[i]) {
+      //     break
+      //   }
+      //   if (peers[i].height < highestHeight - 50) {
+      //     maxRandom = i - 1
+      //   }
+      // }
 
       return peers.slice(0, Math.min(maxRandom, peers.length))
     },

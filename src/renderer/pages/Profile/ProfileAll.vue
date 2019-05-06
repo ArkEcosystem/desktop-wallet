@@ -10,7 +10,7 @@
         <div
           :style="`backgroundImage: url('${assets_loadImage(addProfileImagePath)}')`"
           :title="$t('PAGES.PROFILE_ALL.ADD_PROFILE')"
-          class="profile-avatar-xl background-image flex"
+          class="ProfileAvatar__image profile-avatar-xl background-image flex"
         />
         <div class="ProfileAll__grid__profile__name font-semibold flex items-center">
           {{ $t('PAGES.PROFILE_ALL.ADD_PROFILE') }}
@@ -49,6 +49,7 @@
             </RouterLink>
 
             <button
+              v-if="profiles.length > 1"
               class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer text-theme-page-text-light hover:underline hover:text-red"
               @click="openRemovalConfirmation(profile)"
             >

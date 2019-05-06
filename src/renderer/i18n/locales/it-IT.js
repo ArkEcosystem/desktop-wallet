@@ -513,8 +513,7 @@ export default {
         },
         NAME: 'Nome profilo',
         TITLE: '1. Dettagli profilo',
-        AVATAR: 'Seleziona il tuo avatar preferito o la prima lettera del nome del tuo profilo',
-        NO_AVATAR: 'Nessun Avatar'
+        AVATAR: 'Seleziona il tuo avatar preferito o la prima lettera del nome del tuo profilo'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -694,7 +693,8 @@ export default {
 
   SELECTION_AVATAR: {
     AVATARS: 'Avatars',
-    MODAL_HEADER: 'Seleziona avatar'
+    MODAL_HEADER: 'Seleziona avatar',
+    NO_AVATAR: 'Nessun Avatar'
   },
 
   SELECTION_BACKGROUND: {
@@ -738,14 +738,6 @@ export default {
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'
-    },
-    FORM: {
-      DELEGATE_REGISTRATION: {
-        INSTRUCTIONS: 'per {address}.'
-      },
-      SECOND_SIGNATURE: {
-        INSTRUCTIONS: 'per {address}.'
-      }
     },
     INFO: {
       BROADCASTING: 'La tua transazione viene trasmessa alla rete',
@@ -895,13 +887,10 @@ export default {
   WALLET_DELEGATES: {
     RANK: 'Rango',
     USERNAME: 'Username',
-    PRODUCTIVITY: 'Produttività',
     RANK_BANNER: 'Rango: {rank}',
-    PRODUCTIVITY_BANNER: 'Produttività: {productivity}',
     APPROVAL: 'Voto %',
     FORGED: 'Forgiati',
     BLOCKS: 'Blocchi',
-    MISSED: 'mancati',
     VOTERS: 'Votanti',
     UNVOTE: 'Rimuovi voto',
     VOTES: 'Voti',

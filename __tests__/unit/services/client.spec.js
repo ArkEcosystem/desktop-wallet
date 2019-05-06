@@ -19,6 +19,16 @@ jest.mock('@/store', () => ({
           publicKey: '034da006f958beba78ec54443df4a3f52237253f7ae8cbdb17dccf3feaa57f3126'
         }
       }
+    },
+    'transaction/staticFee': (type) => {
+      const fees = [
+        0.1 * 1e8,
+        5 * 1e8,
+        25 * 1e8,
+        1 * 1e8
+      ]
+
+      return fees[type]
     }
   },
   watch: jest.fn()
@@ -350,7 +360,6 @@ describe('Services > Client', () => {
           expect(delegate).toHaveProperty('rank', data[i].rank)
           expect(delegate).toHaveProperty('username', data[i].username)
           expect(delegate).toHaveProperty('production.approval', data[i].approval)
-          expect(delegate).toHaveProperty('production.productivity', data[i].productivity)
         })
       })
     })
@@ -383,7 +392,6 @@ describe('Services > Client', () => {
           expect(delegate).toHaveProperty('rank', data[i].rank)
           expect(delegate).toHaveProperty('username', data[i].username)
           expect(delegate).toHaveProperty('production.approval', data[i].approval)
-          expect(delegate).toHaveProperty('production.productivity', data[i].productivity)
         })
       })
     })
@@ -764,7 +772,7 @@ describe('Services > Client', () => {
   describe('buildSecondSignatureRegistration', () => {
     describe('when the fee is bigger than V1 fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[2] + 0.01
+        const fee = V1.fees[1] + 0.01
         expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
       })
     })

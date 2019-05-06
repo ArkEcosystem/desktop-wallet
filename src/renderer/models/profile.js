@@ -9,16 +9,29 @@ export default new BaseModel({
       maxLength: 16
     },
     avatar: {
-      type: ['string', 'object'],
-      minLength: 1,
-      properties: {
-        avatarName: {
-          type: 'string'
+      anyOf: [
+        // Images provided by the app
+        {
+          type: 'string',
+          minLength: 1
         },
-        pluginId: {
-          type: 'string'
+        // Images provided by the plugins
+        {
+          type: 'object',
+          properties: {
+            avatarName: {
+              type: 'string'
+            },
+            pluginId: {
+              type: 'string'
+            }
+          }
+        },
+        // No avatar (use name first character)
+        {
+          type: 'null'
         }
-      }
+      ]
     },
     background: {
       type: 'string',
