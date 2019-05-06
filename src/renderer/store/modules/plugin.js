@@ -226,16 +226,18 @@ export default {
         return
       }
 
+      const profileId = rootGetters['session/profileId']
+
       commit('SET_IS_PLUGIN_ENABLED', {
         enabled,
         pluginId,
-        profileId: rootGetters['session/profileId']
+        profileId
       })
 
       if (enabled) {
-        await this._vm.$plugins.enablePlugin(pluginId)
+        await this._vm.$plugins.enablePlugin(pluginId, profileId)
       } else {
-        await this._vm.$plugins.disablePlugin(pluginId)
+        await this._vm.$plugins.disablePlugin(pluginId, profileId)
       }
     },
 

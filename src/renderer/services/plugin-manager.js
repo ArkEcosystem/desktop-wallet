@@ -86,7 +86,7 @@ class PluginManager {
   }
 
   // TODO hook to clean up and restore or reset values
-  async disablePlugin (pluginId) {
+  async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
       throw new Error('Plugin Manager not initiated')
     }
@@ -95,6 +95,8 @@ class PluginManager {
     if (!plugin) {
       throw new Error('Plugin not found')
     }
+
+    await this.unloadThemes(plugin, profileId)
 
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
   }
@@ -399,6 +401,17 @@ class PluginManager {
         })
       }
     }
+  }
+
+  async unloadThemes (plugin, profileId) {
+    const defaultTheme = 'light'
+    await this.app.$store.dispatch('session/setTheme', defaultTheme)
+
+    const profile = this.app.$store.getters['profile/byId'](profileId)
+    await this.app.$store.dispatch('profile/update', {
+      ...profile,
+      ...{ theme: defaultTheme }
+    })
   }
 
   getWalletTabComponent (pluginId, walletTab) {
