@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
-import { fill, isBoolean, isEmpty, isObject, isString, zipObject } from 'lodash'
+import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -31,7 +31,7 @@ class PluginManager {
 
     await this.app.$store.dispatch('plugin/init')
 
-    await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
+    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(path.resolve(os.homedir(), '.ark-desktop/plugins'))
 
     this.hasInit = true
@@ -68,25 +68,20 @@ class PluginManager {
       profileId
     })
 
-    const permissions = zipObject(plugin.config.permissions, fill(new Array(plugin.config.permissions.length), true))
+    const permissions = uniq(plugin.config.permissions)
+    const [first, rest] = partition(permissions, permission => {
+      // These permissions could be necessary first to load others
+      // The rest does not have dependencies: 'MENU_ITEMS', 'AVATARS', 'WALLET_TABS'
+      return ['COMPONENTS', 'ROUTES'].includes(permission)
+    })
 
-    if (permissions.COMPONENTS) {
-      await this.loadComponents(pluginObject, plugin)
+    for (const permission of first) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
     }
-    if (permissions.ROUTES) {
-      await this.loadRoutes(pluginObject, plugin)
-    }
-    if (permissions.MENU_ITEMS) {
-      await this.loadMenuItems(pluginObject, plugin, profileId)
-    }
-    if (permissions.AVATARS) {
-      await this.loadAvatars(pluginObject, plugin, profileId)
-    }
-    if (permissions.WALLET_TABS) {
-      await this.loadWalletTabs(pluginObject, plugin, profileId)
-    }
-    if (permissions.THEMES) {
-      await this.loadThemes(pluginObject, plugin, profileId)
+    for (const permission of rest) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
     }
   }
 
@@ -461,9 +456,7 @@ class PluginManager {
   }
 
   async fetchPluginsFromPath (pluginsPath) {
-    if (!fs.existsSync(pluginsPath)) {
-      return
-    }
+    fs.ensureDirSync(pluginsPath)
 
     const entries = fs.readdirSync(pluginsPath).filter(entry => {
       if (fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()) {

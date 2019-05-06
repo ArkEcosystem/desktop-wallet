@@ -258,7 +258,8 @@ export default {
 
   methods: {
     async loadEssential () {
-      this.$plugins.init(this)
+      // We need to await plugins in order for all plugins to load properly
+      await this.$plugins.init(this)
       await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
