@@ -3,6 +3,7 @@ import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
+import { camelCase, partition, uniq, upperFirst } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -31,7 +32,7 @@ class PluginManager {
 
     await this.app.$store.dispatch('plugin/init')
 
-    await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
+    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(path.resolve(os.homedir(), '.ark-desktop/plugins'))
 
     this.hasInit = true
@@ -68,12 +69,21 @@ class PluginManager {
       profileId
     })
 
-    await this.loadComponents(pluginObject, plugin)
-    await this.loadRoutes(pluginObject, plugin)
-    await this.loadMenuItems(pluginObject, plugin, profileId)
-    await this.loadAvatars(pluginObject, plugin, profileId)
-    await this.loadWalletTabs(pluginObject, plugin, profileId)
-    await this.loadUnprotectedIframeUrls(pluginObject, plugin, profileId)
+    const permissions = uniq(plugin.config.permissions)
+    const [first, rest] = partition(permissions, permission => {
+      // These permissions could be necessary first to load others
+      // The rest does not have dependencies: 'MENU_ITEMS', 'AVATARS', 'WALLET_TABS'
+      return ['COMPONENTS', 'ROUTES'].includes(permission)
+    })
+
+    for (const permission of first) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
+    }
+    for (const permission of rest) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
+    }
   }
 
   async disablePlugin (pluginId) {
@@ -431,9 +441,7 @@ class PluginManager {
   }
 
   async fetchPluginsFromPath (pluginsPath) {
-    if (!fs.existsSync(pluginsPath)) {
-      return
-    }
+    fs.ensureDirSync(pluginsPath)
 
     const entries = fs.readdirSync(pluginsPath).filter(entry => {
       if (fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()) {

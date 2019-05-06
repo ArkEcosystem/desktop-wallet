@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ark-desktop-wallet",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
@@ -11,8 +11,7 @@
     "Alex Barnsley <alex@ark.io>",
     "ItsANameToo <itsanametoo@protonmail.com>",
     "Juan A. Martín <juan@ark.io>",
-    "Lúcio Rubens <lucio@ark.io>",
-    "Mario Vega <mario@ark.io>"
+    "Lúcio Rubens <lucio@ark.io>"
   ],
   "description": "Ark Ecosystem Desktop Wallet",
   "license": "MIT",
@@ -69,6 +68,7 @@
     "electron-log": "^2.2.17",
     "electron-window-state": "^5.0.3",
     "emittery": "^0.4.1",
+    "fs-extra": "^7.0.1",
     "jsonschema": "^1.2.4",
     "localforage": "^1.7.3",
     "lodash": "^4.17.11",

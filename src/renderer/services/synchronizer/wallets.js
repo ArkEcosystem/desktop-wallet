@@ -201,6 +201,10 @@ class Action {
           ...dataByWallet[address]
         }
 
+        if (!wallet.publicKey && originalWallet.publicKey) {
+          wallet.publicKey = originalWallet.publicKey
+        }
+
         const checkedAt = walletsTransactionsAt[address]
         if (checkedAt) {
           wallet.transactions = { checkedAt }
