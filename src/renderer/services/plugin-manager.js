@@ -260,7 +260,6 @@ class PluginManager {
       const allRoutes = this.getAllRoutes()
 
       const routes = pluginRoutes.reduce((valid, route) => {
-        console.log(route, plugin.components)
         if (typeof route.component === 'string' && plugin.components[route.component]) {
           if (allRoutes.every(loadedRoute => loadedRoute.name !== route.name)) {
             valid.push({
@@ -271,8 +270,6 @@ class PluginManager {
         }
         return valid
       }, [])
-
-      console.log(routes)
 
       this.pluginRoutes.push(...routes)
       this.app.$router.addRoutes(routes)
