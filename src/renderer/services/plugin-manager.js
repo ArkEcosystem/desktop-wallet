@@ -2,6 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
+import { camelCase, partition, uniq, upperFirst } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -67,11 +68,21 @@ class PluginManager {
       profileId
     })
 
-    await this.loadComponents(pluginObject, plugin)
-    await this.loadRoutes(pluginObject, plugin)
-    await this.loadMenuItems(pluginObject, plugin, profileId)
-    await this.loadAvatars(pluginObject, plugin, profileId)
-    await this.loadWalletTabs(pluginObject, plugin, profileId)
+    const permissions = uniq(plugin.config.permissions)
+    const [first, rest] = partition(permissions, permission => {
+      // These permissions could be necessary first to load others
+      // The rest does not have dependencies: 'MENU_ITEMS', 'AVATARS', 'WALLET_TABS'
+      return ['COMPONENTS', 'ROUTES'].includes(permission)
+    })
+
+    for (const permission of first) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
+    }
+    for (const permission of rest) {
+      const method = `load${upperFirst(camelCase(permission))}`
+      await this[method](pluginObject, plugin, profileId)
+    }
   }
 
   async disablePlugin (pluginId) {
