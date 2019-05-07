@@ -2,6 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
+import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 
 class PluginManager {
@@ -93,10 +94,12 @@ class PluginManager {
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new Error('Plugin not found')
+      throw new Error(`Plugin \`${pluginId}\` not found`)
     }
 
-    await this.unloadThemes(plugin, profileId)
+    if (plugin.config.permissions.includes('THEMES')) {
+      await this.unloadThemes(plugin, profileId)
+    }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
   }
@@ -259,20 +262,22 @@ class PluginManager {
 
     const pluginRoutes = this.normalize(await pluginObject.getRoutes())
     if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
-      let routes = []
-      for (const route of pluginRoutes) {
-        if (typeof route.component !== 'string' || !plugin.components[route.component]) {
-          continue
+      const allRoutes = this.getAllRoutes()
+
+      const routes = pluginRoutes.reduce((valid, route) => {
+        if (typeof route.component === 'string' && plugin.components[route.component]) {
+          if (allRoutes.every(loadedRoute => loadedRoute.name !== route.name)) {
+            valid.push({
+              ...route,
+              component: plugin.components[route.component]
+            })
+          }
         }
+        return valid
+      }, [])
 
-        route.component = plugin.components[route.component]
-        routes.push(route)
-      }
-
-      this.app.$router.addRoutes(routes.filter(route => {
-        return !this.getAllRoutes().some(loadedRoute => loadedRoute.name === route.name)
-      }))
       this.pluginRoutes.push(...routes)
+      this.app.$router.addRoutes(routes)
     }
   }
 
@@ -283,14 +288,15 @@ class PluginManager {
 
     const pluginMenuItems = this.normalize(pluginObject.getMenuItems())
     if (pluginMenuItems && Array.isArray(pluginMenuItems) && pluginMenuItems.length) {
-      const menuItems = []
-      for (const menuItem of pluginMenuItems) {
-        if (!this.getAllRoutes().some(route => route.name === menuItem.routeName)) {
-          continue
-        }
+      const allRoutes = this.getAllRoutes()
 
-        menuItems.push(menuItem)
-      }
+      const menuItems = pluginMenuItems.reduce((valid, menuItem) => {
+        // Check that the related route exists
+        if (allRoutes.some(route => route.name === menuItem.routeName)) {
+          valid.push(menuItem)
+        }
+        return valid
+      }, [])
 
       await this.app.$store.dispatch('plugin/setMenuItems', {
         pluginId: plugin.config.id,
@@ -412,6 +418,17 @@ class PluginManager {
       ...profile,
       ...{ theme: defaultTheme }
     })
+  }
+
+  async loadUnprotectedIframeUrls (pluginObject) {
+    if (!pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
+      return
+    }
+
+    const urls = pluginObject.getUnprotectedIframeUrls()
+    if (urls) {
+      ipcRenderer.send('disable-iframe-protection', urls)
+    }
   }
 
   getWalletTabComponent (pluginId, walletTab) {

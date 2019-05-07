@@ -64,6 +64,17 @@
             @click="redirect($event)"
           />
 
+          <MenuNavigationItem
+            v-if="hasPluginMenuItems"
+            id="plugin-pages"
+            :title="$t('APP_SIDEMENU.PLUGINS_PAGES')"
+            :is-horizontal="isHorizontal"
+            :can-activate="false"
+            class="AppSidemenu__item"
+            icon="more"
+            @click="toggleShowPlugins"
+          />
+
           <AppSidemenuPlugins
             v-if="hasPluginMenuItems && isPluginsVisible"
             :outside-click="true"
