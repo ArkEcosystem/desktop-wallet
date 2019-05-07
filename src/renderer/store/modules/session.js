@@ -60,7 +60,6 @@ export default {
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
-    hasDarkTheme: state => state.theme === 'dark',
     hasWalletGridLayout: state => state.walletLayout === 'grid',
     contentProtection: state => state.contentProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,

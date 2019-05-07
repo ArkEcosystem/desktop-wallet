@@ -27,14 +27,26 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
-        @click="toggleSelect('dark-switch')"
+        :title="pluginThemes
+          ? $t('APP_SIDEMENU.SETTINGS.THEME')
+          : $t('APP_SIDEMENU.SETTINGS.DARK_MODE')
+        "
+        @click="toggleSelect(pluginThemes ? 'theme-menu' : 'dark-switch')"
       >
         <div
           slot="controls"
           class="pointer-events-none"
         >
+          <MenuDropdown
+            v-if="pluginThemes"
+            ref="theme-menu"
+            :items="themes"
+            :position="['-40%', '5%']"
+            :value="sessionTheme"
+            @select="setTheme"
+          />
           <ButtonSwitch
+            v-else
             ref="dark-switch"
             :is-active="session_hasDarkTheme"
             class="theme-dark"
@@ -128,7 +140,7 @@
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import { clone } from 'lodash'
+import { clone, isEmpty, isString } from 'lodash'
 const os = require('os')
 
 export default {
@@ -227,6 +239,14 @@ export default {
         profile.backgroundUpdateLedger = update
         this.$store.dispatch('profile/update', profile)
       }
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
@@ -235,8 +255,8 @@ export default {
       this.sessionCurrency = newCurrency
     },
 
-    setTheme (newTheme) {
-      this.sessionTheme = newTheme ? 'dark' : 'light'
+    setTheme (theme) {
+      this.sessionTheme = isString(theme) ? theme : (theme ? 'dark' : 'light')
     },
 
     setProtection (protection) {

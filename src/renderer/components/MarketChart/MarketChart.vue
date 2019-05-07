@@ -59,8 +59,7 @@ export default {
 
   computed: {
     colours () {
-      return {
-        gradient: ['#666', '#528fe3', '#9c6dd8', '#e15362'],
+      const coloursByTheme = {
         dark: {
           lines: '#787fa3',
           ticks: '#787fa3'
@@ -70,6 +69,21 @@ export default {
           ticks: '#9ea7bc'
         }
       }
+
+      let themeColour = coloursByTheme[this.theme]
+      if (!themeColour) {
+        const pluginTheme = this.pluginThemes[this.theme]
+        const mode = pluginTheme.darkMode ? 'dark' : 'light'
+        themeColour = coloursByTheme[mode]
+      }
+
+      return {
+        ...themeColour,
+        gradient: ['#666', '#528fe3', '#9c6dd8', '#e15362']
+      }
+    },
+    pluginThemes () {
+      return this.$store.getters['plugin/themes']
     },
 
     currency () {
@@ -122,8 +136,8 @@ export default {
         const scaleCorrection = 1000
         const data = response.datasets.map(datum => datum * scaleCorrection)
 
-        const themeGridLines = this.colours[this.theme].lines
-        const themeTicks = this.colours[this.theme].ticks
+        const themeGridLines = this.colours.lines
+        const themeTicks = this.colours.ticks
 
         const fontConfig = {
           fontColor: themeTicks,

@@ -4,7 +4,18 @@ export default {
       return this.$store.getters['session/currency']
     },
     session_hasDarkTheme () {
-      return this.$store.getters['session/hasDarkTheme']
+      const theme = this.$store.getters['session/theme']
+
+      if (['light', 'dark'].includes(theme)) {
+        return theme === 'dark'
+      }
+
+      const pluginThemes = this.$store.getters['plugin/themes']
+      if (pluginThemes[theme]) {
+        return pluginThemes[theme].darkMode
+      }
+
+      throw new Error(`Theme "${theme}" was not found`)
     },
     session_network () {
       return this.$store.getters['session/network']

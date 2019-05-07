@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
-import { camelCase, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 
 class PluginManager {
   constructor () {
@@ -85,7 +85,8 @@ class PluginManager {
     }
   }
 
-  async disablePlugin (pluginId) {
+  // TODO hook to clean up and restore or reset values
+  async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
       throw new Error('Plugin Manager not initiated')
     }
@@ -94,6 +95,8 @@ class PluginManager {
     if (!plugin) {
       throw new Error('Plugin not found')
     }
+
+    await this.unloadThemes(plugin, profileId)
 
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
   }
@@ -352,7 +355,7 @@ class PluginManager {
     if (pluginWalletTabs && Array.isArray(pluginWalletTabs) && pluginWalletTabs.length) {
       // Validate the configuration of each tab
       const walletTabs = pluginWalletTabs.reduce((valid, walletTab) => {
-        if (typeof walletTab.tabTitle === 'string' && plugin.components[walletTab.componentName]) {
+        if (isString(walletTab.tabTitle) && plugin.components[walletTab.componentName]) {
           valid.push(walletTab)
         }
         return valid
@@ -366,6 +369,49 @@ class PluginManager {
         })
       }
     }
+  }
+
+  async loadThemes (pluginObject, plugin, profileId) {
+    if (!pluginObject.hasOwnProperty('getThemes')) {
+      return
+    }
+
+    const pluginThemes = this.normalize(pluginObject.getThemes())
+    if (pluginThemes && isObject(pluginThemes)) {
+      // Validate the configuration of each theme and ensure that their CSS exist
+      const themes = Object.keys(pluginThemes).reduce((valid, themeName) => {
+        const config = pluginThemes[themeName]
+
+        if (isBoolean(config.darkMode) && isString(config.cssPath)) {
+          const cssPath = path.join(plugin.fullPath, 'src', config.cssPath)
+          if (!fs.existsSync(cssPath)) {
+            throw new Error(`No file found on \`${config.cssPath}\` for theme "${themeName}"`)
+          }
+
+          valid[themeName] = { ...config, cssPath }
+        }
+        return valid
+      }, {})
+
+      if (!isEmpty(themes)) {
+        await this.app.$store.dispatch('plugin/setThemes', {
+          pluginId: plugin.config.id,
+          themes,
+          profileId
+        })
+      }
+    }
+  }
+
+  async unloadThemes (plugin, profileId) {
+    const defaultTheme = 'light'
+    await this.app.$store.dispatch('session/setTheme', defaultTheme)
+
+    const profile = this.app.$store.getters['profile/byId'](profileId)
+    await this.app.$store.dispatch('profile/update', {
+      ...profile,
+      ...{ theme: defaultTheme }
+    })
   }
 
   getWalletTabComponent (pluginId, walletTab) {

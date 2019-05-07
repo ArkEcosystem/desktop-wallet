@@ -162,7 +162,17 @@
                     {{ $t('PAGES.PROFILE_NEW.STEP3.THEME') }}
                   </p>
                 </div>
-                <SelectionTheme v-model="theme" />
+                <MenuDropdown
+                  v-if="pluginThemes"
+                  :items="themes"
+                  :value="theme"
+                  :position="['-50%', '0%']"
+                  @select="selectTheme"
+                />
+                <SelectionTheme
+                  v-else
+                  v-model="theme"
+                />
               </div>
 
               <div class="flex items-center justify-between">
@@ -188,10 +198,11 @@
 </template>
 
 <script>
+import { isEmpty } from 'lodash'
 import { BIP39, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { ButtonSwitch } from '@/components/Button'
-import { MenuStep, MenuStepItem } from '@/components/Menu'
+import { MenuDropdown, MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputLanguage, InputSelect, InputText } from '@/components/Input'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
@@ -203,6 +214,7 @@ export default {
     InputLanguage,
     InputSelect,
     InputText,
+    MenuDropdown,
     MenuStep,
     MenuStepItem,
     SelectionAvatar,
@@ -315,6 +327,14 @@ export default {
       }
 
       return null
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
