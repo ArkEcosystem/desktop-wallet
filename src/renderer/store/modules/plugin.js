@@ -96,6 +96,21 @@ export default {
       return menuItems
     },
 
+    themes: (_, getters) => {
+      return Object.keys(getters.loaded).reduce((themes, pluginId) => {
+        const plugin = getters.loaded[pluginId]
+
+        if (plugin.themes) {
+          themes = {
+            ...themes,
+            ...plugin.themes
+          }
+        }
+
+        return themes
+      }, {})
+    },
+
     // For each plugin that supports wallet tabs, get the component and configuration of each tab
     walletTabs: (_, getters) => {
       return Object.keys(getters.loaded).reduce((walletTabs, pluginId) => {
@@ -154,6 +169,10 @@ export default {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'menuItems', data.menuItems)
     },
 
+    SET_PLUGIN_THEMES (state, data) {
+      Vue.set(state.loaded[data.profileId][data.pluginId], 'themes', data.themes)
+    },
+
     SET_PLUGIN_WALLET_TABS (state, data) {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'walletTabs', data.walletTabs)
     },
@@ -207,16 +226,18 @@ export default {
         return
       }
 
+      const profileId = rootGetters['session/profileId']
+
       commit('SET_IS_PLUGIN_ENABLED', {
         enabled,
         pluginId,
-        profileId: rootGetters['session/profileId']
+        profileId
       })
 
       if (enabled) {
-        await this._vm.$plugins.enablePlugin(pluginId)
+        await this._vm.$plugins.enablePlugin(pluginId, profileId)
       } else {
-        await this._vm.$plugins.disablePlugin(pluginId)
+        await this._vm.$plugins.disablePlugin(pluginId, profileId)
       }
     },
 
@@ -259,6 +280,17 @@ export default {
       }
 
       commit('SET_PLUGIN_MENU_ITEMS', {
+        ...data,
+        profileId: data.profileId || rootGetters['session/profileId']
+      })
+    },
+
+    setThemes ({ commit, getters, rootGetters }, data) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      commit('SET_PLUGIN_THEMES', {
         ...data,
         profileId: data.profileId || rootGetters['session/profileId']
       })

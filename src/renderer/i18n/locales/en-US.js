@@ -236,12 +236,12 @@ export default {
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
-      PLUGINS: 'Plugin Manager',
       RESET_DATA: {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
         NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
-      }
+      },
+      THEME: 'Theme'
     },
     WALLETS: 'My wallets'
   },
@@ -537,7 +537,7 @@ export default {
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
         MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
-        THEME: 'Choose light or dark mode',
+        THEME: 'Choose theme',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
         TITLE: '3. Appearance'
