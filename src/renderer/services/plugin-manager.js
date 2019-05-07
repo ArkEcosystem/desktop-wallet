@@ -94,10 +94,12 @@ class PluginManager {
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new Error('Plugin not found')
+      throw new Error(`Plugin \`${pluginId}\` not found`)
     }
 
-    await this.unloadThemes(plugin, profileId)
+    if (plugin.config.permissions.includes('THEMES')) {
+      await this.unloadThemes(plugin, profileId)
+    }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
   }
