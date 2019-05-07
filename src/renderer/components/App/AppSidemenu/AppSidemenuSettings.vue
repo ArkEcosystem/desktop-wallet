@@ -112,12 +112,6 @@
       </MenuOptionsItem>
 
       <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.PLUGINS')"
-        class="text-grey-light"
-        @click="goToPlugins"
-      />
-
-      <MenuOptionsItem
         :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
         class="text-grey-light"
         @click="toggleResetDataModal"
@@ -282,11 +276,6 @@ export default {
     async onResetData () {
       await this.$store.dispatch('resetData')
       this.electron_reload()
-    },
-
-    goToPlugins () {
-      this.$emit('close')
-      this.$router.push({ name: 'plugins' })
     },
 
     emitClose () {

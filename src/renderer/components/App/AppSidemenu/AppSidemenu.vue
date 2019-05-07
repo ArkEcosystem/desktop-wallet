@@ -54,22 +54,21 @@
           />
 
           <!-- Plugins -->
-          <AppSidemenuPlugins
-            v-if="hasPluginMenuItems && isPluginsVisible"
-            :outside-click="true"
-            :is-horizontal="isHorizontal"
-            @close="closeShowPlugins"
-          />
-
           <MenuNavigationItem
-            v-if="hasPluginMenuItems"
             id="plugins"
             :title="$t('APP_SIDEMENU.PLUGINS')"
             :is-horizontal="isHorizontal"
             :can-activate="false"
             class="AppSidemenu__item"
-            icon="point"
-            @click="toggleShowPlugins"
+            icon="plugins"
+            @click="redirect($event)"
+          />
+
+          <AppSidemenuPlugins
+            v-if="hasPluginMenuItems && isPluginsVisible"
+            :outside-click="true"
+            :is-horizontal="isHorizontal"
+            @close="closeShowPlugins"
           />
         </div>
 
