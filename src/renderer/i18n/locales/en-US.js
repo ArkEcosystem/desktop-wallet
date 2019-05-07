@@ -229,6 +229,7 @@ export default {
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
     PLUGINS: 'Plugins',
+    PLUGINS_PAGES: 'Plugins pages',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
