@@ -1,3 +1,5 @@
+import logger from 'electron-log'
+
 export default {
   computed: {
     session_currency () {
@@ -15,7 +17,10 @@ export default {
         return pluginThemes[theme].darkMode
       }
 
-      throw new Error(`Theme "${theme}" was not found`)
+      logger.error(`Theme "${theme}" was not found`)
+
+      // Fallback to the `light` theme
+      return false
     },
     session_network () {
       return this.$store.getters['session/network']
