@@ -158,8 +158,8 @@ describe('peer store module', () => {
   it('should refresh peer list for v2', async () => {
     jest.setTimeout(15000)
     client.version = 2
-    const goodV2Peer = { ...goodPeer1, status: 200, version: '2.0.0' }
-    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale', version: '2.0.0' }
+    const goodV2Peer = { ...goodPeer1, version: '2.0.0' }
+    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', version: '1.0.0' }
     const refreshPeers = [goodV2Peer, badV2Peer]
     store.dispatch('peer/set', refreshPeers)
 
