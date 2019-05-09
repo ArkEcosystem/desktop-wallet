@@ -110,10 +110,11 @@ export default {
 
     activeItem () {
       return this.allItems.find(item => {
-        return this.selectedItem.onlyLetter
-          ? item.onlyLetter
-          // Letter avatar title depends on language
-          : item.title === this.selectedItem.title
+        if (!this.selectedItem || this.selectedItem.onlyLetter) {
+          return item.onlyLetter
+        }
+
+        return this.selectedItem.pluginId ? item.name === this.selectedItem.name : item.title === this.selectedItem.title
       })
     }
   },
