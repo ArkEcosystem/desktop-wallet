@@ -1,5 +1,6 @@
 import random from 'lodash/random'
 import shuffle from 'lodash/shuffle'
+import isEmpty from 'lodash/isempty'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
@@ -204,7 +205,7 @@ export default {
       }
 
       let currentPeer = state.current[networkId]
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         return false
       }
 
@@ -386,7 +387,7 @@ export default {
     async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
-        if (currentPeer && currentPeer.isCustom) {
+        if (!isEmpty(currentPeer) && currentPeer.isCustom) {
           // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
 
@@ -427,11 +428,11 @@ export default {
      */
     async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
       let updateCurrentPeer = false
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         currentPeer = { ...getters['current']() }
         updateCurrentPeer = true
       }
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         await dispatch('fallbackToSeedPeer')
 
         return
