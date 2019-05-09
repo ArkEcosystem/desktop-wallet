@@ -247,11 +247,9 @@ export default {
       }
 
       const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-
       if (!profile.id) {
         return sessionNetwork
       }
-
       return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     },
     currentWallet: {
