@@ -1,6 +1,4 @@
-import random from 'lodash/random'
-import shuffle from 'lodash/shuffle'
-import isEmpty from 'lodash/isempty'
+import { isEmpty, random, shuffle } from 'lodash'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
