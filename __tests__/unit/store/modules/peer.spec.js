@@ -230,6 +230,7 @@ describe('peer store module', () => {
       .onGet(`${client.host}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -347,6 +348,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
+          constants: {},
           nethash
         }
       })
@@ -370,6 +372,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -415,6 +418,7 @@ describe('peer store module', () => {
       .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -487,6 +491,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -523,6 +528,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash: 'wrong nethash'
         }
       })
