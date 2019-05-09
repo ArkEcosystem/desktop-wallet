@@ -50,6 +50,7 @@ export default class ClientService {
   }
 
   /**
+   * TODO: Remove unnecessary endpoints once core 2.4 is released (maybe wait until 2.5 so other chains have updated)
    * Only for V2
    * Get the configuration of a peer
    * @param {String} host - URL of the host (using `core-p2p` port)
@@ -57,21 +58,30 @@ export default class ClientService {
    * @return {(Object|null)}
    */
   static async fetchPeerConfig (host, timeout = 3000) {
-    try {
-      const { data } = await axios({
-        url: `${host}/config`,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        timeout
-      })
-      if (data) {
-        return data.data
+    const walletApiHost = host.replace(/:\d+/, ':4040')
+    const endpoints = [
+      `${host}/config`,
+      `${walletApiHost}/config`,
+      walletApiHost
+    ]
+
+    for (const endpoint of endpoints) {
+      try {
+        const { data } = await axios({
+          url: endpoint,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          timeout
+        })
+        if (data) {
+          return data.data
+        }
+      } catch (error) {
+        // TODO only if a new feature to enable logging is added
+        // console.log(`Error on \`${host}\``)
       }
-    } catch (error) {
-      // TODO only if a new feature to enable logging is added
-      // console.log(`Error on \`${host}\``)
     }
 
     return null
