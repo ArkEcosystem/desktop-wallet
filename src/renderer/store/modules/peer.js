@@ -261,7 +261,7 @@ export default {
           try {
             return PeerModel.deserialize(peer)
           } catch (error) {
-            //
+            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
           }
 
           return null
