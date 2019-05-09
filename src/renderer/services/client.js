@@ -81,8 +81,28 @@ export default class ClientService {
     if (apiVersion === 1) {
       throw new Error('Fee statistics are only available on V2 networks')
     }
-    const { feeStatistics } = await ClientService.fetchNetworkConfig(server, apiVersion, timeout)
-    return feeStatistics
+
+    try {
+      const client = new ApiClient(server, apiVersion)
+      if (timeout) {
+        client.http.timeout = timeout
+      }
+
+      const { data } = await client.resource('node').fees(30)
+
+      return data.data.map(fee => ({
+        type: Number(fee.type),
+        fees: {
+          minFee: Number(fee.min),
+          maxFee: Number(fee.max),
+          avgFee: Number(fee.avg)
+        }
+      }))
+    } catch (error) {
+      const { feeStatistics } = await ClientService.fetchNetworkConfig(server, apiVersion, timeout)
+
+      return feeStatistics
+    }
   }
 
   constructor (watchProfile = true) {
