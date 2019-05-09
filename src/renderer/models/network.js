@@ -50,7 +50,12 @@ export default new BaseModel({
       type: 'object'
     },
     vendorField: {
-      type: 'object'
+      type: 'object',
+      properties: {
+        maxLength: {
+          type: 'integer'
+        }
+      }
     },
     knownWallets: {
       type: 'object',
