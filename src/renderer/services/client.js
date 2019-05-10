@@ -51,8 +51,11 @@ export default class ClientService {
       if (currentNetwork.nethash === data.nethash) {
         const newLength = data.constants.vendorFieldLength
 
-        if (newLength && newLength !== currentNetwork.vendorField.maxLength) {
-          currentNetwork.vendorField.maxLength = newLength
+        if (newLength && (!currentNetwork.vendorField || newLength !== currentNetwork.vendorField.maxLength)) {
+          currentNetwork.vendorField = {
+            maxLength: newLength
+          }
+
           await store.dispatch('network/update', currentNetwork)
         }
       }
