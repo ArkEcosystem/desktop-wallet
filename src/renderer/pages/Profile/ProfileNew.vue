@@ -330,8 +330,16 @@ export default {
     this.schema.currency = this.currency
     this.schema.isMarketChartEnabled = this.isMarketChartEnabled
     this.schema.language = this.language
-    this.schema.theme = this.theme
     this.schema.timeFormat = this.timeFormat
+
+    // In case we came from a profile using a plugin theme, revert back to default
+    const defaultThemes = ['light', 'dark']
+    this.schema.theme = defaultThemes.includes(this.theme)
+      ? this.theme
+      : defaultThemes[0]
+    if (this.schema.theme !== this.$store.getters['session/theme']) {
+      this.$store.dispatch('session/setTheme', this.schema.theme)
+    }
   },
 
   destroyed () {
