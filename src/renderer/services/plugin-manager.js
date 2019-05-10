@@ -5,6 +5,8 @@ import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 
+const rootPath = path.resolve(__dirname, '../../../')
+
 class PluginManager {
   constructor () {
     this.plugins = {}
@@ -161,11 +163,20 @@ class PluginManager {
           require: {
             builtin: [],
             context: 'sandbox',
-            external: [
-              path.resolve(plugin.fullPath, '/src/', componentPath),
-              'vue/dist/vue.common.js'
-            ],
-            root: path.resolve(__dirname, '../../../')
+            resolve: function (source) {
+              return path.resolve(plugin.fullPath, 'src/', source)
+            },
+            external: {
+              modules: [
+                path.resolve(plugin.fullPath, 'src/'),
+                'vue/dist/vue.common.js'
+              ],
+              transitive: true
+            },
+            root: [
+              rootPath,
+              path.resolve(plugin.fullPath, 'src/')
+            ]
           }
         })
 
@@ -186,7 +197,7 @@ class PluginManager {
           delete component.template
 
           module.exports = component`,
-          path.join(plugin.fullPath, 'src/vm-component.js')
+          path.join(rootPath, 'src/vm-component.js')
         )
 
         // Build Vue component

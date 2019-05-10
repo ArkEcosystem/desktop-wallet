@@ -158,8 +158,8 @@ describe('peer store module', () => {
   it('should refresh peer list for v2', async () => {
     jest.setTimeout(15000)
     client.version = 2
-    const goodV2Peer = { ...goodPeer1, status: 200, version: '2.0.0' }
-    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', status: 'stale', version: '2.0.0' }
+    const goodV2Peer = { ...goodPeer1, version: '2.0.0' }
+    const badV2Peer = { ...badPeer1, ip: '5.5.5.5', version: '1.0.0' }
     const refreshPeers = [goodV2Peer, badV2Peer]
     store.dispatch('peer/set', refreshPeers)
 
@@ -230,6 +230,7 @@ describe('peer store module', () => {
       .onGet(`${client.host}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -347,6 +348,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
       .reply(200, {
         network: {
+          constants: {},
           nethash
         }
       })
@@ -370,6 +372,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -415,6 +418,7 @@ describe('peer store module', () => {
       .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -487,6 +491,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash
         }
       })
@@ -523,6 +528,7 @@ describe('peer store module', () => {
       .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
       .reply(200, {
         data: {
+          constants: {},
           nethash: 'wrong nethash'
         }
       })
