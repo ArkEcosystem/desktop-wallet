@@ -23,6 +23,7 @@ export default class ClientService {
 
   /**
    * Fetch the network configuration according to the version.
+   * In case the `vendorField` length has changed, updates the network data.
    * Create a new client to isolate the main client.
    *
    * @param {String} server
@@ -43,9 +44,23 @@ export default class ClientService {
 
       return data.network
     } else {
-      const { data } = await client.resource('node').configuration()
+      const response = await client.resource('node').configuration()
+      const data = response.data.data
 
-      return data.data
+      const currentNetwork = store.getters['session/network']
+      if (currentNetwork.nethash === data.nethash) {
+        const newLength = data.constants.vendorFieldLength
+
+        if (newLength && (!currentNetwork.vendorField || newLength !== currentNetwork.vendorField.maxLength)) {
+          currentNetwork.vendorField = {
+            maxLength: newLength
+          }
+
+          await store.dispatch('network/update', currentNetwork)
+        }
+      }
+
+      return data
     }
   }
 
