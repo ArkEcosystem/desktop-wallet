@@ -171,7 +171,13 @@ export default {
       return this.$store.getters['plugin/themes']
     },
     theme () {
-      return this.$store.getters['session/theme']
+      const theme = this.$store.getters['session/theme']
+      const defaultThemes = ['light', 'dark']
+
+      // Ensure that the plugin theme is available (not deleted from the file system)
+      return defaultThemes.includes(theme) || this.pluginThemes[theme]
+        ? theme
+        : defaultThemes[0]
     },
     themeClass () {
       return `theme-${this.theme}`

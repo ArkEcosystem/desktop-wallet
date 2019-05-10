@@ -72,8 +72,11 @@ export default {
 
       let themeColour = coloursByTheme[this.theme]
       if (!themeColour) {
+        let mode = 'light'
         const pluginTheme = this.pluginThemes[this.theme]
-        const mode = pluginTheme.darkMode ? 'dark' : 'light'
+        if (pluginTheme) {
+          mode = pluginTheme.darkMode ? 'dark' : 'light'
+        }
         themeColour = coloursByTheme[mode]
       }
 
