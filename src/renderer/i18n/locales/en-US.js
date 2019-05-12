@@ -580,7 +580,8 @@ export default {
       LEDGER: {
         CACHE: 'Cache ledger wallets?',
         CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
-        ADDITIONAL: '# of Ledger Wallets'
+        ADDITIONAL: 'Load Additional Ledger Wallets',
+        OPTIONS: 'Ledger Options'
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',

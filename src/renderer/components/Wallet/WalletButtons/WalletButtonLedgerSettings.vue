@@ -1,14 +1,14 @@
 <template>
   <div
     v-show="isLedgerConnected"
-    class="WalletButton__load-ledger-wallets"
+    class="WalletButton__ledger-settings"
   >
     <a
       class="text-center"
-      @click="toggle"
+      @click="toggleShowLedgerSettings"
     >
       <span
-        v-tooltip="hideText ? $t('PAGES.WALLET_ALL.LEDGER.ADDITIONAL') : ''"
+        v-tooltip="hideText ? $t('PAGES.WALLET_ALL.LEDGER.OPTIONS') : ''"
         :class="{ 'mb-3': !hideText }"
         class="rounded-full bg-theme-button h-8 w-8 mx-auto flex items-center justify-center"
       >
@@ -20,31 +20,33 @@
       </span>
 
       <span v-if="!hideText">
-        {{ $t('PAGES.WALLET_ALL.LEDGER.ADDITIONAL') }}
+        {{ $t('PAGES.WALLET_ALL.LEDGER.OPTIONS') }}
       </span>
     </a>
-    <ModalAdditionalLedgers
-      v-if="showModal"
-      @close="toggle"
+
+    <WalletHeadingMenuLedger
+      v-if="isLedgerSettingsVisible"
+      :outside-click="true"
+      @close="closeShowLedgerSettings"
     />
   </div>
 </template>
 
 <script>
-import ModalAdditionalLedgers from '@/components/Modal/ModalAdditionalLedgers'
 import SvgIcon from '@/components/SvgIcon'
+import { WalletHeadingMenuLedger } from '@/components/Wallet'
 
 export default {
-  name: 'WalletButtonAdditionalLedgers',
+  name: 'WalletButtonLedgerSettings',
 
   components: {
-    ModalAdditionalLedgers,
-    SvgIcon
+    SvgIcon,
+    WalletHeadingMenuLedger
   },
 
   data () {
     return {
-      showModal: false
+      isLedgerSettingsVisible: false
     }
   },
 
@@ -59,36 +61,40 @@ export default {
   },
 
   methods: {
-    toggle () {
-      this.showModal = !this.showModal
+    toggleShowLedgerSettings () {
+      this.isLedgerSettingsVisible = !this.isLedgerSettingsVisible
+    },
+
+    closeShowLedgerSettings () {
+      this.isLedgerSettingsVisible = false
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
-.WalletButton__load-ledger-wallets {
-  @apply .appearance-none .font-semibold .flex .flex-col .items-center .border-r .border-theme-feature-item-alternative
+.WalletButton__ledger-settings {
+  @apply .relative .appearance-none .font-semibold .flex .flex-col .items-center .border-r .border-theme-feature-item-alternative
 }
-.WalletButton__load-ledger-wallets > span {
+.WalletButton__ledger-settings > span {
   @apply .w-full .text-center
 }
-.WalletButton__load-ledger-wallets > a {
+.WalletButton__ledger-settings > a {
   @apply .cursor-pointer;
 }
-.WalletButton__load-ledger-wallets > a > .rounded-full {
+.WalletButton__ledger-settings > a > .rounded-full {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text;
   transition: opacity 0.4s;
 }
-.WalletButton__load-ledger-wallets > a:hover > .rounded-full {
+.WalletButton__ledger-settings > a:hover > .rounded-full {
   opacity: 0.5;
 }
 
-.WalletButton__load-ledger-wallets > span {
+.WalletButton__ledger-settings > span {
   border-right: 0.04rem solid var(--theme-feature-item-alternative);
   align-self: center;
 }
-.WalletButton__load-ledger-wallets:hover > span {
+.WalletButton__ledger-settings:hover > span {
   border-right: 0px;
 }
 </style>
