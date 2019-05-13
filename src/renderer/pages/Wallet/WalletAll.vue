@@ -62,7 +62,14 @@
         </div>
         <WalletButtonAdditionalLedgers class="pl-6 pr-6" />
         <WalletButtonCreate class="pl-6 pr-6" />
-        <WalletButtonImport class="pl-6" />
+        <WalletButtonImport
+          :class="{ 'pr-6': hasWallets }"
+          class="pl-6"
+        />
+        <WalletButtonExport
+          v-if="hasWallets"
+          class="pl-6"
+        />
       </div>
     </div>
 
@@ -245,7 +252,7 @@ import { ButtonLayout, ButtonSwitch } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-import { WalletButtonAdditionalLedgers, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet/WalletButtons'
+import { WalletButtonAdditionalLedgers, WalletButtonCreate, WalletButtonExport, WalletButtonImport } from '@/components/Wallet/WalletButtons'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import { MenuDropdown } from '@/components/Menu'
@@ -261,6 +268,7 @@ export default {
     SvgIcon,
     WalletButtonAdditionalLedgers,
     WalletButtonCreate,
+    WalletButtonExport,
     WalletButtonImport,
     WalletIdenticon,
     WalletRemovalConfirmation,
@@ -309,6 +317,10 @@ export default {
     wallets () {
       const wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
       return this.wallet_sortByName(wallets)
+    },
+
+    hasWallets () {
+      return this.selectableWallets.length
     },
 
     isLedgerLoading () {

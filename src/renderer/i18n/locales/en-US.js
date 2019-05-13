@@ -354,6 +354,23 @@ export default {
     TITLE: 'Load Additional Ledger Wallets'
   },
 
+  MODAL_EXPORT_WALLETS: {
+    CANCEL: 'Cancel',
+    COUNT: '{count} wallets will be exported',
+    EXPORT: 'Export {count} Wallets',
+    OPTIONS: {
+      EXCLUDE_UNNAMED: 'Exclude wallets without a name',
+      EXCLUDE_EMPTY: 'Exclude empty wallets'
+    },
+    TITLE: 'Export Wallets',
+    SUCCESS: {
+      EXPORT_WALLETS: 'Your wallets were successfully exported to: {path}'
+    },
+    ERROR: {
+      EXPORT_WALLETS: 'Failed to export your wallets'
+    }
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
@@ -585,6 +602,7 @@ export default {
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import Wallet',
+      EXPORT_WALLETS: 'Export Wallets',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
