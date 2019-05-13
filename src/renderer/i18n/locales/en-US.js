@@ -357,8 +357,11 @@ export default {
   MODAL_EXPORT_WALLETS: {
     CANCEL: 'Cancel',
     COUNT: '{count} wallets will be exported',
+    GENERAL: 'General',
+    WALLETS: 'Wallets',
     EXPORT: 'Export {count} Wallets',
     OPTIONS: {
+      APPEND_NETWORK: 'Append information about the network',
       EXCLUDE_UNNAMED: 'Exclude wallets without a name',
       EXCLUDE_EMPTY: 'Exclude empty wallets'
     },

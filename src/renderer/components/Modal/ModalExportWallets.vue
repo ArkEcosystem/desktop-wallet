@@ -9,17 +9,36 @@
         {{ $t('MODAL_EXPORT_WALLETS.TITLE') }}
       </h2>
 
+      <h3>{{ $t('MODAL_EXPORT_WALLETS.GENERAL') }}</h3>
+
       <ListDivided>
         <ListDividedItem
-          v-for="option in Object.keys(options)"
+          v-for="option in Object.keys(generalOptions)"
           :key="option"
           :label="`${$t('MODAL_EXPORT_WALLETS.OPTIONS.' + strings_snakeCase(option).toUpperCase())}`"
         >
           <ButtonSwitch
             ref="option"
-            :is-active="options[option].active"
+            :is-active="generalOptions[option].active"
             class="ml-3"
-            @change="toggleOption(option)"
+            @change="toggleOption('general', option)"
+          />
+        </ListDividedItem>
+      </ListDivided>
+
+      <h3>{{ $t('MODAL_EXPORT_WALLETS.WALLETS') }}</h3>
+
+      <ListDivided>
+        <ListDividedItem
+          v-for="option in Object.keys(walletOptions)"
+          :key="option"
+          :label="`${$t('MODAL_EXPORT_WALLETS.OPTIONS.' + strings_snakeCase(option).toUpperCase())}`"
+        >
+          <ButtonSwitch
+            ref="option"
+            :is-active="walletOptions[option].active"
+            class="ml-3"
+            @change="toggleOption('wallet', option)"
           />
         </ListDividedItem>
       </ListDivided>
@@ -59,7 +78,7 @@ export default {
   data () {
     return {
       isExporting: false,
-      options: {
+      walletOptions: {
         excludeUnnamed: {
           active: false,
           filter: el => el.name && el.name.length
@@ -68,13 +87,18 @@ export default {
           active: false,
           filter: el => el.balance
         }
+      },
+      generalOptions: {
+        appendNetwork: {
+          active: true
+        }
       }
     }
   },
 
   computed: {
-    activeOptions () {
-      return Object.values(this.options).filter(option => {
+    activeWalletOptions () {
+      return Object.values(this.walletOptions).filter(option => {
         return option.active
       })
     },
@@ -82,9 +106,9 @@ export default {
     wallets () {
       let wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
 
-      if (this.activeOptions.length) {
-        for (const option of this.activeOptions) {
-          wallets = wallets.filter(wallet => option.filter(wallet))
+      if (this.activeWalletOptions.length) {
+        for (const option of this.activeWalletOptions) {
+          wallets = wallets.filter(option.filter)
         }
       }
 
@@ -93,9 +117,11 @@ export default {
   },
 
   methods: {
-    toggleOption (option) {
-      if (this.options.hasOwnProperty(option)) {
-        this.options[option].active = !this.options[option].active
+    toggleOption (type, option) {
+      const options = type === 'general' ? this.generalOptions : this.walletOptions
+
+      if (options.hasOwnProperty(option)) {
+        options[option].active = !options[option].active
       }
     },
 
@@ -109,6 +135,8 @@ export default {
       const wallets = this.wallets.map(wallet => {
         return { [wallet.address]: wallet.name }
       })
+
+      // TODO: handle general options
 
       const raw = JSON.stringify(wallets)
       const defaultPath = `${this.session_profile.name}_wallets.json`
