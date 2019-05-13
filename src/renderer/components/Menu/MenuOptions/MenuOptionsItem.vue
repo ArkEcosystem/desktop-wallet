@@ -35,7 +35,7 @@ export default {
       required: true
     },
     tooltip: {
-      type: Object,
+      type: [String, Object],
       required: false,
       default: () => {}
     }
