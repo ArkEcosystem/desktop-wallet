@@ -45,7 +45,7 @@ describe('ModalExportWallets', () => {
   describe('toggleOption', () => {
     it('should exclude empty wallets', () => {
       const wrapper = mountComponent()
-      wrapper.vm.toggleOption('excludeEmpty')
+      wrapper.vm.toggleOption('wallet', 'excludeEmpty')
 
       const walletsWithBalance = [
         { address: 'A2', name: '', balance: 1 },
@@ -57,7 +57,7 @@ describe('ModalExportWallets', () => {
 
     it('should exclude wallets with no name', () => {
       const wrapper = mountComponent()
-      wrapper.vm.toggleOption('excludeUnnamed')
+      wrapper.vm.toggleOption('wallet', 'excludeUnnamed')
 
       const walletsWithName = [
         { address: 'A3', name: 'wallet_a3', balance: 0 },
