@@ -162,15 +162,7 @@
                     {{ $t('PAGES.PROFILE_NEW.STEP3.THEME') }}
                   </p>
                 </div>
-                <MenuDropdown
-                  v-if="pluginThemes"
-                  :items="themes"
-                  :value="theme"
-                  :position="['-50%', '0%']"
-                  @select="selectTheme"
-                />
                 <SelectionTheme
-                  v-else
                   v-model="theme"
                 />
               </div>
@@ -198,11 +190,10 @@
 </template>
 
 <script>
-import { isEmpty } from 'lodash'
 import { BIP39, NETWORKS } from '@config'
 import Profile from '@/models/profile'
 import { ButtonSwitch } from '@/components/Button'
-import { MenuDropdown, MenuStep, MenuStepItem } from '@/components/Menu'
+import { MenuStep, MenuStepItem } from '@/components/Menu'
 import { InputLanguage, InputSelect, InputText } from '@/components/Input'
 import { SelectionAvatar, SelectionBackground, SelectionNetwork, SelectionTheme } from '@/components/Selection'
 
@@ -214,7 +205,6 @@ export default {
     InputLanguage,
     InputSelect,
     InputText,
-    MenuDropdown,
     MenuStep,
     MenuStepItem,
     SelectionAvatar,
@@ -327,14 +317,6 @@ export default {
       }
 
       return null
-    },
-    pluginThemes () {
-      return isEmpty(this.$store.getters['plugin/themes'])
-        ? null
-        : this.$store.getters['plugin/themes']
-    },
-    themes () {
-      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
@@ -348,8 +330,16 @@ export default {
     this.schema.currency = this.currency
     this.schema.isMarketChartEnabled = this.isMarketChartEnabled
     this.schema.language = this.language
-    this.schema.theme = this.theme
     this.schema.timeFormat = this.timeFormat
+
+    // In case we came from a profile using a plugin theme, revert back to default
+    const defaultThemes = ['light', 'dark']
+    this.schema.theme = defaultThemes.includes(this.theme)
+      ? this.theme
+      : defaultThemes[0]
+    if (this.schema.theme !== this.$store.getters['session/theme']) {
+      this.$store.dispatch('session/setTheme', this.schema.theme)
+    }
   },
 
   destroyed () {
