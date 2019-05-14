@@ -93,6 +93,10 @@ exports.MARKET = {
   }
 }
 
+exports.PLUGINS = {
+  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins'
+}
+
 exports.THEMES = [
   {
     id: 'light',

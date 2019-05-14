@@ -501,7 +501,8 @@ export default {
     },
 
     PLUGINS: {
-      HEADER: 'Plugins'
+      HEADER: 'Plugins',
+      DISCOVER: 'Discover more plugins'
     },
 
     PROFILE_ALL: {
