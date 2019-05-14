@@ -1,26 +1,39 @@
 <template>
-  <div class="Plugins flex flex-col">
-    <div class="flex flex-1 flex-col bg-theme-feature rounded-lg p-10">
-      <div class="block w-full">
-        <div class="flex items-center justify-between h-8">
-          <h3 class=" items-center">
-            {{ $t('PAGES.PLUGINS.HEADER') }}
-          </h3>
-        </div>
+  <div class="Plugins">
+    <div class="Plugins__heading px-8 py-6 mb-3">
+      <div class="flex flex-row items-center">
+        <h2>{{ $t('PAGES.PLUGINS.HEADER') }}</h2>
       </div>
 
-      <div class="Plugins__tabular mt-10">
-        <PluginTable
-          :has-pagination="false"
-          :is-contacts-table="true"
-          :rows="plugins"
-          :total-rows="plugins.length"
-          :sort-query="sortParams"
-          :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
-          @reorder="onReorder"
-          @toggle="onToggleStatus"
-        />
+      <div class="flex flex-row items-center">
+        <a
+          class="font-bold text-center cursor-pointer"
+          @click="discover"
+        >
+          <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
+            <SvgIcon
+              name="search"
+              class="text-center"
+              view-box="0 0 9 9"
+            />
+          </span>
+
+          {{ $t('PAGES.PLUGINS.DISCOVER') }}
+        </a>
       </div>
+    </div>
+
+    <div class="Plugins__body">
+      <PluginTable
+        :has-pagination="false"
+        :is-contacts-table="true"
+        :rows="plugins"
+        :total-rows="plugins.length"
+        :sort-query="sortParams"
+        :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
+        @reorder="onReorder"
+        @toggle="onToggleStatus"
+      />
     </div>
 
     <PluginEnableConfirmation
@@ -35,14 +48,17 @@
 
 <script>
 import { clone, some, sortBy } from 'lodash'
+import { PLUGINS } from '@config'
 import { PluginEnableConfirmation, PluginTable } from '@/components/Plugin'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'Plugins',
 
   components: {
     PluginEnableConfirmation,
-    PluginTable
+    PluginTable,
+    SvgIcon
   },
 
   data: () => ({
@@ -107,6 +123,10 @@ export default {
       this.pluginToConfirm = null
     },
 
+    discover () {
+      this.electron_openExternal(PLUGINS.discoverUrl)
+    },
+
     disablePlugin (plugin) {
       this.updateStatus({ pluginId: plugin.id, enabled: false })
     },
@@ -126,52 +146,16 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.Plugins__header {
-  @apply .flex .items-center .justify-between;
+.Plugins {
+  @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
 }
-.Plugins__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, calc(var(--contact-identicon-lg) * 3));
-  grid-gap: 1rem;
+.Plugins__avatar__sign {
+  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute pin-b pin-r mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap
 }
-.Plugins__grid__contact__wrapper {
-  @apply .m-6;
+.Plugins__heading {
+  @apply .flex .justify-between .items-center .bg-theme-feature .rounded-lg;
 }
-.Plugins__grid__contact:hover .identicon {
-  opacity: 1;
-}
-.Plugins__grid__contact:hover .identicon-placeholder {
-  opacity: 0.5;
-}
-.Plugins__grid__contact .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
-}
-.Plugins__grid__contact .identicon-placeholder {
-  transition: 0.5s;
-  opacity: 0.25;
-}
-.Plugins__grid__contact__name {
-  color: #037cff;
-}
-.Plugins__CreateButton {
-  transition: all .1s ease-in;
-  @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-12;
-}
-.Plugins__CreateButton:hover {
-  @apply .bg-blue .text-white;
-}
-.Plugins__CreateButton__icon {
-  transition: all .1s ease-in;
-  @apply .flex .items-center .justify-center .h-10 .w-10 .rounded-l .bg-theme-button-inner-box;
-}
-.Plugins__CreateButton:hover .Plugins__CreateButton__icon {
-  background-color: #0169f4;
-  @apply .text-white;
-}
-@screen lg {
-  .Plugins__grid__contact__wrapper {
-    @apply .m-4
-  }
+.Plugins__body {
+  @apply flex flex-1 bg-theme-feature rounded-lg p-10 overflow-y-auto
 }
 </style>
