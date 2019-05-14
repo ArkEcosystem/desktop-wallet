@@ -9,36 +9,36 @@
         {{ $t('MODAL_EXPORT_WALLETS.TITLE') }}
       </h2>
 
-      <h3>{{ $t('MODAL_EXPORT_WALLETS.GENERAL') }}</h3>
-
       <ListDivided>
         <ListDividedItem
-          v-for="option in Object.keys(generalOptions)"
+          v-for="option in Object.keys(options)"
           :key="option"
           :label="`${$t('MODAL_EXPORT_WALLETS.OPTIONS.' + strings_snakeCase(option).toUpperCase())}`"
         >
           <ButtonSwitch
             ref="option"
-            :is-active="generalOptions[option].active"
+            :is-active="options[option].active"
             class="ml-3"
-            @change="toggleOption('general', option)"
+            @change="toggleOption(option)"
           />
         </ListDividedItem>
       </ListDivided>
 
-      <h3>{{ $t('MODAL_EXPORT_WALLETS.WALLETS') }}</h3>
+      <h4 class="mt-5">
+        {{ $t('MODAL_EXPORT_WALLETS.ADVANCED') }}
+      </h4>
 
       <ListDivided>
         <ListDividedItem
-          v-for="option in Object.keys(walletOptions)"
+          v-for="option in Object.keys(advancedOptions)"
           :key="option"
           :label="`${$t('MODAL_EXPORT_WALLETS.OPTIONS.' + strings_snakeCase(option).toUpperCase())}`"
         >
           <ButtonSwitch
             ref="option"
-            :is-active="walletOptions[option].active"
+            :is-active="advancedOptions[option]"
             class="ml-3"
-            @change="toggleOption('wallet', option)"
+            @change="toggleOption(option, true)"
           />
         </ListDividedItem>
       </ListDivided>
@@ -78,7 +78,7 @@ export default {
   data () {
     return {
       isExporting: false,
-      walletOptions: {
+      options: {
         excludeUnnamed: {
           active: false,
           filter: el => el.name && el.name.length
@@ -88,17 +88,15 @@ export default {
           filter: el => el.balance
         }
       },
-      generalOptions: {
-        appendNetwork: {
-          active: true
-        }
+      advancedOptions: {
+        addNetwork: true
       }
     }
   },
 
   computed: {
-    activeWalletOptions () {
-      return Object.values(this.walletOptions).filter(option => {
+    activeOptions () {
+      return Object.values(this.options).filter(option => {
         return option.active
       })
     },
@@ -106,19 +104,25 @@ export default {
     wallets () {
       let wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
 
-      if (this.activeWalletOptions.length) {
-        for (const option of this.activeWalletOptions) {
+      if (this.activeOptions.length) {
+        for (const option of this.activeOptions) {
           wallets = wallets.filter(option.filter)
         }
       }
 
       return this.wallet_sortByName(wallets)
+    },
+
+    mappedWallets () {
+      return this.wallets.map(wallet => {
+        return { [wallet.address]: wallet.name }
+      })
     }
   },
 
   methods: {
-    toggleOption (type, option) {
-      const options = type === 'general' ? this.generalOptions : this.walletOptions
+    toggleOption (option, isAdvanced = false) {
+      const options = isAdvanced ? this.advancedOptions : this.options
 
       if (options.hasOwnProperty(option)) {
         options[option].active = !options[option].active
@@ -132,13 +136,12 @@ export default {
     async exportWallets () {
       this.isExporting = true
 
-      const wallets = this.wallets.map(wallet => {
-        return { [wallet.address]: wallet.name }
-      })
+      const data = this.advancedOptions.addNetwork
+        ? { network: this.condenseNetwork() } : {}
 
-      // TODO: handle general options
+      data.wallets = this.mappedWallets
 
-      const raw = JSON.stringify(wallets)
+      const raw = JSON.stringify(data)
       const defaultPath = `${this.session_profile.name}_wallets.json`
 
       try {
@@ -150,6 +153,10 @@ export default {
         this.isExporting = false
         this.emitClose()
       }
+    },
+
+    condenseNetwork () {
+      return this.session_network
     }
   },
 
