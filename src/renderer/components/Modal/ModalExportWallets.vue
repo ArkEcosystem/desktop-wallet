@@ -117,6 +117,25 @@ export default {
       return this.wallets.map(wallet => {
         return { [wallet.address]: wallet.name }
       })
+    },
+
+    condensedNetwork () {
+      const network = this.session_network
+
+      if (network) {
+        return {
+          name: network.name,
+          nethash: network.nethash,
+          token: network.token,
+          symbol: network.symbol
+        }
+      }
+
+      return null
+    },
+
+    profileName () {
+      return this.session_profile ? this.session_profile.name : ''
     }
   },
 
@@ -137,12 +156,12 @@ export default {
       this.isExporting = true
 
       const data = this.advancedOptions.addNetwork
-        ? { network: this.condenseNetwork() } : {}
+        ? { network: this.condensedNetwork } : {}
 
       data.wallets = this.mappedWallets
 
       const raw = JSON.stringify(data)
-      const defaultPath = `${this.session_profile.name}_wallets.json`
+      const defaultPath = `${this.profileName}_wallets.json`
 
       try {
         const path = await this.electron_writeFile(raw, defaultPath)
@@ -153,10 +172,6 @@ export default {
         this.isExporting = false
         this.emitClose()
       }
-    },
-
-    condenseNetwork () {
-      return this.session_network
     }
   },
 
