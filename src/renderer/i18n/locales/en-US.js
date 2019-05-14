@@ -358,7 +358,7 @@ export default {
     CANCEL: 'Cancel',
     COUNT: '{count} wallets will be exported',
     ADVANCED: 'Advanced Options',
-    EXPORT: 'Export {count} Wallets',
+    EXPORT: 'Export 0 Wallets | Export 1 Wallet | Export {count} Wallets',
     OPTIONS: {
       ADD_NETWORK: 'Add information about the network',
       EXCLUDE_UNNAMED: 'Exclude wallets without a name',
