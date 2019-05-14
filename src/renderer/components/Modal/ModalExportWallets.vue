@@ -51,7 +51,7 @@
         />
         <ButtonGeneric
           :disabled="isExporting || $v.options.$invalid"
-          :label="$t('MODAL_EXPORT_WALLETS.EXPORT', { count: wallets.length })"
+          :label="$tc('MODAL_EXPORT_WALLETS.EXPORT', wallets.length, { count: wallets.length })"
           @click="exportWallets"
         />
       </div>
