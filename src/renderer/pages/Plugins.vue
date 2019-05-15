@@ -7,8 +7,22 @@
 
       <div class="flex flex-row items-center">
         <a
-          class="font-bold text-center cursor-pointer"
+          class="font-bold text-center cursor-pointer pr-6 border-r border-theme-feature-item-alternative"
           @click="discover"
+        >
+          <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
+            <SvgIcon
+              name="world"
+              class="text-center"
+              view-box="0 0 9 9"
+            />
+          </span>
+
+          {{ $t('PAGES.PLUGINS.DISCOVER') }}
+        </a>
+        <a
+          class="font-bold text-center cursor-pointer pl-6"
+          @click="open"
         >
           <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
             <SvgIcon
@@ -18,7 +32,7 @@
             />
           </span>
 
-          {{ $t('PAGES.PLUGINS.DISCOVER') }}
+          {{ $t('PAGES.PLUGINS.OPEN') }}
         </a>
       </div>
     </div>
@@ -47,6 +61,7 @@
 </template>
 
 <script>
+import electron from 'electron'
 import { clone, some, sortBy } from 'lodash'
 import { PLUGINS } from '@config'
 import { PluginEnableConfirmation, PluginTable } from '@/components/Plugin'
@@ -125,6 +140,9 @@ export default {
 
     discover () {
       this.electron_openExternal(PLUGINS.discoverUrl)
+    },
+    open () {
+      electron.shell.openItem(PLUGINS.path)
     },
 
     disablePlugin (plugin) {
