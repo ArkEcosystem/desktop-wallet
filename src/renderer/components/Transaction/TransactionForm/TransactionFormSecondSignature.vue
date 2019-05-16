@@ -253,7 +253,8 @@ export default {
         passphrase: this.form.passphrase,
         secondPassphrase: this.secondPassphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
 
       let success = true
