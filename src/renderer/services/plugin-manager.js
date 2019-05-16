@@ -134,7 +134,7 @@ class PluginManager {
         }
 
         // Inline method to format context based on "this"
-        const componentContext = function (that) {
+        const componentContext = function (that, componentData = component) {
           let context = that._data
           if (!context) {
             context = {}
@@ -145,13 +145,13 @@ class PluginManager {
             context[key] = that[key]
           }
 
-          for (const computedName of Object.keys(component.computed || {})) {
+          for (const computedName of Object.keys(componentData.computed || {})) {
             context[computedName] = that[computedName]
           }
 
-          for (const methodName of Object.keys(component.methods || {})) {
+          for (const methodName of Object.keys(componentData.methods || {})) {
             context[methodName] = function () {
-              return component.methods[methodName].apply(componentContext(that))
+              return componentData.methods[methodName].apply(componentContext(that, componentData))
             }
           }
 
@@ -194,7 +194,7 @@ class PluginManager {
             component.staticRenderFns = compiled.staticRenderFns
           } else {
             component.render = function () {
-              return compiled.render.apply(componentContext(this), [ ...arguments ])
+              return compiled.render.apply(componentContext(this, component), [ ...arguments ])
             }
           }
           delete component.template
