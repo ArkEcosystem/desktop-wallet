@@ -629,7 +629,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
@@ -647,7 +647,8 @@ export default class ClientService {
       transaction,
       passphrase,
       secondPassphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -662,7 +663,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
@@ -680,7 +681,8 @@ export default class ClientService {
       transaction,
       passphrase,
       secondPassphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -697,7 +699,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
@@ -717,7 +719,8 @@ export default class ClientService {
       transaction,
       passphrase,
       secondPassphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -731,7 +734,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
@@ -747,7 +750,8 @@ export default class ClientService {
     return this.__signTransaction({
       transaction,
       passphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -761,7 +765,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
+  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif }, returnObject = false) {
     const network = store.getters['session/network']
     transaction = transaction.network(network.version)
 
@@ -773,7 +777,7 @@ export default class ClientService {
     if (passphrase) {
       transaction = transaction.sign(this.normalizePassphrase(passphrase))
     } else if (wif) {
-      transaction = transaction.signWithWif(wif)
+      transaction = transaction.signWithWif(wif, networkWif)
     }
 
     if (secondPassphrase) {
