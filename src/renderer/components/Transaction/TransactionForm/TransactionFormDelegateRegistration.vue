@@ -173,7 +173,8 @@ export default {
         username: this.form.username,
         passphrase: this.form.passphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase

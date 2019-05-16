@@ -1,9 +1,9 @@
 import * as fs from 'fs-extra'
-import * as os from 'os'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { PLUGINS } from '@config'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -38,7 +38,7 @@ class PluginManager {
     await this.app.$store.dispatch('plugin/init')
 
     // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
-    await this.fetchPluginsFromPath(path.resolve(os.homedir(), '.ark-desktop/plugins'))
+    await this.fetchPluginsFromPath(PLUGINS.path)
 
     this.hasInit = true
 
