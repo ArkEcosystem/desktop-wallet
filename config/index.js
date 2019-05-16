@@ -1,3 +1,6 @@
+const os = require('os')
+const path = require('path')
+
 exports.APP = {
   website: 'https://ark.io',
   transactionExpiryMinutes: 45
@@ -91,6 +94,11 @@ exports.MARKET = {
     RUB: { symbol: '₽', fractionDigits: 2 },
     USD: { symbol: '$', fractionDigits: 2 }
   }
+}
+
+exports.PLUGINS = {
+  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
+  path: path.resolve(os.homedir(), '.ark-desktop/plugins')
 }
 
 exports.THEMES = [
