@@ -5,7 +5,10 @@ import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 
-const rootPath = path.resolve(__dirname, '../../../')
+let rootPath = path.resolve(__dirname, '../../../')
+if (process.env.NODE_ENV === 'production') {
+  rootPath = path.resolve(__dirname, '../../')
+}
 
 class PluginManager {
   constructor () {
