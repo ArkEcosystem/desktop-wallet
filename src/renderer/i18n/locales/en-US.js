@@ -886,7 +886,7 @@ export default {
   WALLET_SECOND_SIGNATURE: {
     NEW: 'Generate new second passphrase',
     ALREADY_REGISTERED: 'There is already a second passphrase registered for this address',
-    INSTRUCTIONS: 'This is your second passphrase. Make sure to make a backup and keep it somewhere safe!'
+    INSTRUCTIONS: 'You will need both 12 word passphrases to interact with the network. Keep them safe!'
   },
 
   WALLET_SIDEBAR: {

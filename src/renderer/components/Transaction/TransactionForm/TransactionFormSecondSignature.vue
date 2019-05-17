@@ -8,13 +8,31 @@
         {{ $t('TRANSACTION.FORM.SECOND_SIGNATURE.INSTRUCTIONS', { address: currentWallet.address }) }}
       </div>
 
+      <div
+        v-if="!showPassphraseWords"
+        class="flex content-center"
+      >
+        <ButtonReload
+          :is-refreshing="isGenerating"
+          :text="$t('WALLET_SECOND_SIGNATURE.NEW')"
+          color-class="blue-button"
+          class="px-8 py-4 mx-auto mt-5"
+          @click="displayPassphraseWords"
+        />
+      </div>
+
       <Collapse
         :is-open="!isPassphraseStep"
         :animation-duration="{ enter: 0, leave: 0 }"
       >
-        <PassphraseWords :passphrase-words="passphraseWords" />
+        <PassphraseWords
+          v-show="showPassphraseWords"
+          :passphrase-words="passphraseWords"
+        />
 
         <button
+          :disabled="isGenerating || !showPassphraseWords"
+          :class="{ 'hidden': !showPassphraseWords }"
           type="button"
           class="blue-button mt-5"
           @click="toggleStep"
@@ -94,10 +112,10 @@
       />
 
       <Portal
-        v-if="!isPassphraseStep"
+        v-if="!isPassphraseStep && showPassphraseWords"
         to="transaction-footer"
       >
-        <footer class="ModalWindow__container__footer--warning flex flex-row">
+        <footer class="ModalWindow__container__footer--warning flex flex-row justify-between">
           <div class="flex w-80">
             {{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}
           </div>
@@ -166,7 +184,8 @@ export default {
       walletPassword: ''
     },
     showEncryptLoader: false,
-    showLedgerLoader: false
+    showLedgerLoader: false,
+    showPassphraseWords: false
   }),
 
   computed: {
@@ -213,6 +232,14 @@ export default {
   methods: {
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
+    },
+
+    displayPassphraseWords () {
+      this.isGenerating = true
+      setTimeout(() => {
+        this.isGenerating = false
+        this.showPassphraseWords = true
+      }, 300)
     },
 
     generateNewPassphrase () {
