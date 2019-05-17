@@ -14,6 +14,8 @@ export default {
     profileId: null,
     theme: null,
     walletLayout: null,
+    walletSidebarSortParams: null,
+    walletSidebarFilters: null,
     walletSortParams: null,
     contactSortParams: null,
     contentProtection: true,
@@ -55,6 +57,8 @@ export default {
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
+    walletSidebarSortParams: state => state.walletSidebarSortParams,
+    walletSidebarFilters: state => state.walletSidebarFilters,
     walletSortParams: state => state.walletSortParams,
     contactSortParams: state => state.contactSortParams,
     language: state => state.language,
@@ -115,6 +119,14 @@ export default {
       state.walletLayout = walletLayout
     },
 
+    SET_WALLET_SIDEBAR_SORT_PARAMS (state, params) {
+      state.walletSidebarSortParams = params
+    },
+
+    SET_WALLET_SIDEBAR_FILTERS (state, filters) {
+      state.walletSidebarFilters = filters
+    },
+
     SET_WALLET_TABLE_SORT_PARAMS (state, walletSortParams) {
       state.walletSortParams = walletSortParams
     },
@@ -158,6 +170,8 @@ export default {
       state.name = null
       state.theme = 'light'
       state.walletLayout = 'grid'
+      state.walletSidebarSortParams = { field: 'name', type: 'asc' }
+      state.walletSidebarFilters = {}
       state.walletSortParams = { field: 'balance', type: 'desc' }
       state.contactSortParams = { field: 'name', type: 'asc' }
       state.backgroundUpdateLedger = true
@@ -181,6 +195,8 @@ export default {
       state.name = value.name
       state.theme = value.theme
       state.walletLayout = value.walletLayout
+      state.walletSidebarSortParams = value.walletSidebarSortParams
+      state.walletSidebarFilters = value.walletSidebarFilters
       state.walletSortParams = value.walletSortParams
       state.contactSortParams = value.contactSortParams
       state.backgroundUpdateLedger = value.backgroundUpdateLedger
@@ -272,6 +288,14 @@ export default {
 
     setWalletLayout ({ commit }, value) {
       commit('SET_WALLET_LAYOUT', value)
+    },
+
+    setWalletSidebarSortParams ({ commit }, value) {
+      commit('SET_WALLET_SIDEBAR_SORT_PARAMS', value)
+    },
+
+    setWalletSidebarFilters ({ commit }, value) {
+      commit('SET_WALLET_SIDEBAR_FILTERS', value)
     },
 
     setWalletSortParams ({ commit }, value) {
