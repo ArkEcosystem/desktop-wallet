@@ -160,7 +160,7 @@ export default {
 
       data.wallets = this.mappedWallets
 
-      const raw = JSON.stringify(data)
+      const raw = JSON.stringify(data, null, 2)
       const defaultPath = `${this.profileName}_wallets.json`
 
       try {
