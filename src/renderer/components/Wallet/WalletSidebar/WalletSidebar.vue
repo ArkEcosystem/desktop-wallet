@@ -234,6 +234,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    showFilteredWallets: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
@@ -296,7 +301,8 @@ export default {
     },
 
     selectableWallets () {
-      return this.sortWallets(this.filterWallets(this.availableWallets))
+      const wallets = this.showFilteredWallets ? this.filterWallets(this.availableWallets) : this.availableWallets
+      return this.sortWallets(wallets)
     },
 
     filters: {
