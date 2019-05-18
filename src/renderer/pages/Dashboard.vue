@@ -46,6 +46,7 @@
       <WalletSidebar
         :show-expanded="true"
         :show-menu="false"
+        :show-filtered-wallets="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>
