@@ -111,8 +111,12 @@ export default {
       this.$refs[name].toggle()
     },
 
-    toggleAdditionalLedgersModal () {
+    toggleAdditionalLedgersModal (closeMenu) {
       this.isAdditionalLedgersModalOpen = !this.isAdditionalLedgersModalOpen
+
+      if (closeMenu) {
+        this.$emit('close')
+      }
     },
 
     emitClose () {
