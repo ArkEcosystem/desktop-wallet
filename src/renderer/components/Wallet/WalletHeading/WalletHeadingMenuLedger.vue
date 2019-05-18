@@ -132,12 +132,11 @@ export default {
 .WalletHeadingMenuLedger,
 .WalletHeadingMenuLedger__text-hidden {
   width: 360px;
-  top: 100px;
+  top: 75px;
   left: calc(50% - 330px);
-  transform: translateY(-10%);
 }
 
 .WalletHeadingMenuLedger__text-hidden {
-  top: 200%;
+  top: 50px;
 }
 </style>
