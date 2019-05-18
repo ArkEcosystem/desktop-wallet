@@ -8,7 +8,7 @@
       @click="toggleShowLedgerSettings"
     >
       <span
-        v-tooltip="hideText ? $t('PAGES.WALLET_ALL.LEDGER.OPTIONS') : ''"
+        v-tooltip="showTooltip ? $t('PAGES.WALLET_ALL.LEDGER.OPTIONS') : ''"
         :class="{ 'mb-3': !hideText }"
         class="rounded-full bg-theme-button h-8 w-8 mx-auto flex items-center justify-center"
       >
@@ -57,6 +57,10 @@ export default {
 
     hideText () {
       return this.$store.getters['session/hideWalletButtonText']
+    },
+
+    showTooltip () {
+      return this.hideText && !this.isLedgerSettingsVisible
     }
   },
 
