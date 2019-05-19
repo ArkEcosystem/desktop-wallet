@@ -355,22 +355,23 @@ export default {
   },
 
   MODAL_EXPORT_WALLETS: {
+    ADVANCED: 'Advanced Options',
     CANCEL: 'Cancel',
     COUNT: '{count} wallets will be exported',
-    ADVANCED: 'Advanced Options',
+    ERROR: {
+      EXPORT_WALLETS: 'Failed to export your wallets'
+    },
     EXPORT: 'Export 0 Wallets | Export 1 Wallet | Export {count} Wallets',
+    INSTRUCTIONS: 'Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
     OPTIONS: {
       ADD_NETWORK: 'Add information about the network',
-      EXCLUDE_UNNAMED: 'Exclude wallets without a name',
-      EXCLUDE_EMPTY: 'Exclude empty wallets'
+      EXCLUDE_EMPTY: 'Exclude empty wallets',
+      EXCLUDE_UNNAMED: 'Exclude wallets without a name'
     },
-    TITLE: 'Export Wallets',
     SUCCESS: {
       EXPORT_WALLETS: 'Your wallets were successfully exported to: {path}'
     },
-    ERROR: {
-      EXPORT_WALLETS: 'Failed to export your wallets'
-    }
+    TITLE: 'Export Wallets'
   },
 
   MODAL_CONFIRMATION: {
