@@ -1,9 +1,9 @@
-import WalletButtonAdditionalLedgers from './WalletButtonAdditionalLedgers'
+import WalletButtonLedgerSettings from './WalletButtonLedgerSettings'
 import WalletButtonCreate from './WalletButtonCreate'
 import WalletButtonImport from './WalletButtonImport'
 
 export {
-  WalletButtonAdditionalLedgers,
+  WalletButtonLedgerSettings,
   WalletButtonCreate,
   WalletButtonImport
 }

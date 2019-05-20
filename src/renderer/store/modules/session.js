@@ -9,6 +9,7 @@ export default {
     background: null,
     currency: null,
     language: null,
+    hideWalletButtonText: false,
     isMarketChartEnabled: true,
     name: null,
     profileId: null,
@@ -54,6 +55,7 @@ export default {
     background: state => state.background,
     currency: state => state.currency,
     timeFormat: state => state.timeFormat,
+    hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
@@ -89,6 +91,10 @@ export default {
 
     SET_TIME_FORMAT (state, format) {
       state.timeFormat = format
+    },
+
+    SET_HIDE_WALLET_BUTTON_TEXT (state, isHidden) {
+      state.hideWalletButtonText = isHidden
     },
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
@@ -164,6 +170,7 @@ export default {
       state.background = null
       state.currency = MARKET.defaultCurrency
       state.timeFormat = 'Default'
+      state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
@@ -189,6 +196,7 @@ export default {
       state.background = value.background
       state.currency = value.currency
       state.timeFormat = value.timeFormat
+      state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
       state.language = value.language
       state.bip39Language = value.bip39Language
@@ -242,6 +250,10 @@ export default {
 
     setTimeFormat ({ commit }, value) {
       commit('SET_TIME_FORMAT', value)
+    },
+
+    setHideWalletButtonText ({ commit }, value) {
+      commit('SET_HIDE_WALLET_BUTTON_TEXT', value)
     },
 
     setIsMarketChartEnabled ({ commit }, value) {

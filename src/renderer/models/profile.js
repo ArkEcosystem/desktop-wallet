@@ -25,6 +25,10 @@ export default new BaseModel({
       type: 'string',
       default: 'Default'
     },
+    hideWalletButtonText: {
+      type: 'boolean',
+      format: data => data.hideWalletButtonText !== undefined ? data.hideWalletButtonText : false
+    },
     isMarketChartEnabled: {
       type: 'boolean',
       format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
