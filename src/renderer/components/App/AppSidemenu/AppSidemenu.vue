@@ -64,6 +64,7 @@
             @click="redirect($event)"
           />
 
+          <!-- Plugin pages -->
           <MenuNavigationItem
             v-if="hasPluginMenuItems"
             id="plugin-pages"
@@ -72,11 +73,11 @@
             :can-activate="false"
             class="AppSidemenu__item"
             icon="more"
-            @click="toggleShowPlugins"
+            @click="toggleShowPluginMenu"
           />
 
           <AppSidemenuPlugins
-            v-if="hasPluginMenuItems && isPluginsVisible"
+            v-if="hasPluginMenuItems && isPluginMenuVisible"
             :outside-click="true"
             :is-horizontal="isHorizontal"
             @close="closeShowPlugins"
@@ -198,7 +199,7 @@ export default {
   data: vm => ({
     isNetworkStatusVisible: false,
     isImportantNotificationVisible: true,
-    isPluginsVisible: false,
+    isPluginMenuVisible: false,
     isSettingsVisible: false,
     activeItem: vm.$route.name
   }),
@@ -244,8 +245,8 @@ export default {
       this.isImportantNotificationVisible = false
     },
 
-    toggleShowPlugins () {
-      this.isPluginsVisible = !this.isPluginsVisible
+    toggleShowPluginMenu () {
+      this.isPluginMenuVisible = !this.isPluginMenuVisible
     },
 
     toggleShowSettings () {
@@ -257,7 +258,7 @@ export default {
     },
 
     closeShowPlugins () {
-      this.isPluginsVisible = false
+      this.isPluginMenuVisible = false
     },
 
     closeShowSettings () {
