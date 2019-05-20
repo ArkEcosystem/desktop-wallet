@@ -108,7 +108,8 @@ export default {
         },
         {
           label: this.$t('PLUGIN_TABLE.PERMISSIONS'),
-          field: 'permissions'
+          field: 'permissions',
+          sortFn: this.sortByPermissions
         },
         {
           label: this.$t('PLUGIN_TABLE.STATUS'),
@@ -130,6 +131,13 @@ export default {
   methods: {
     onSortChange (sortOptions) {
       this.$emit('on-sort-change', sortOptions[0])
+    },
+
+    sortByPermissions (x, y, col, rowX, rowY) {
+      const a = x && x.length ? x.join(', ') : ''
+      const b = y && y.length ? y.join(', ') : ''
+
+      return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
     toggleStatus (plugin) {
