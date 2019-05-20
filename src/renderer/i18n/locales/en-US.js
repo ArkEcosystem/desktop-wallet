@@ -17,6 +17,7 @@ export default {
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
@@ -599,7 +600,8 @@ export default {
       LEDGER: {
         CACHE: 'Cache ledger wallets?',
         CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
-        ADDITIONAL: '# of Ledger Wallets'
+        ADDITIONAL: 'Load Additional Ledger Wallets',
+        OPTIONS: 'Ledger Options'
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',

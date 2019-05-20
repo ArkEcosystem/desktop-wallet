@@ -264,7 +264,7 @@ export default {
     },
 
     emitClose () {
-      if (this.outsideClick) {
+      if (this.outsideClick && !this.isResetDataModalOpen) {
         this.$emit('close')
       }
     }
