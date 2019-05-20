@@ -80,6 +80,10 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.ledgerCache || false
     },
+    showPluginConfirmation: {
+      type: 'boolean',
+      format: data => data.showPluginConfirmation !== undefined ? data.showPluginConfirmation : true
+    },
     transactionTableRowCount: {
       type: 'integer',
       format: data => data.transactionTableRowCount || 10

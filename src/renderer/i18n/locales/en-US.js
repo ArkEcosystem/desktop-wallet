@@ -252,6 +252,14 @@ export default {
     TOOLTIP: 'New version ({version}) has been released!'
   },
 
+  APP_SIDEMENU_PLUGIN_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to enable the plugin system?',
+    NO: 'No, keep it disabled',
+    YES: 'Yes, enable it',
+    NOTICE: 'WARNING: This system is currently in BETA. All non-official plugins are used at your own risk. We cannot verify the safety or security of any 3rd party plugins at this time and all security testing and vulnerability discovery is the responsibility of the plugin author. By accepting this notice, you acknowledge that you are using 3rd party plugins at your own risk.',
+    WARNING: 'Please be careful and pay close attention when installing plugins!'
+  },
+
   MARKET_CHART: {
     TODAY: 'Today',
     TODAY_AT: 'Today at {hour}',

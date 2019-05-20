@@ -61,7 +61,7 @@
             :can-activate="false"
             class="AppSidemenu__item"
             icon="plugins"
-            @click="redirect($event)"
+            @click="showPlugins"
           />
 
           <!-- Plugin pages -->
@@ -159,6 +159,13 @@
         </div>
       </div>
     </div>
+
+    <AppSidemenuPluginConfirmation
+      v-if="isPluginConfirmationVisible"
+      @enable="enablePlugins"
+      @ignore="closePluginConfirmation"
+      @close="closePluginConfirmation"
+    />
   </MenuNavigation>
 </template>
 
@@ -170,6 +177,7 @@ import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
+import AppSidemenuPluginConfirmation from './AppSidemenuPluginConfirmation'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
@@ -182,6 +190,7 @@ export default {
     AppSidemenuSettings,
     AppSidemenuNetworkStatus,
     AppSidemenuImportantNotification,
+    AppSidemenuPluginConfirmation,
     MenuNavigation,
     MenuNavigationItem,
     ProfileAvatar,
@@ -200,6 +209,7 @@ export default {
     isNetworkStatusVisible: false,
     isImportantNotificationVisible: true,
     isPluginMenuVisible: false,
+    isPluginConfirmationVisible: false,
     isSettingsVisible: false,
     activeItem: vm.$route.name
   }),
@@ -267,6 +277,25 @@ export default {
 
     closeShowNetworkStatus () {
       this.isNetworkStatusVisible = false
+    },
+
+    closePluginConfirmation () {
+      this.isPluginConfirmationVisible = false
+    },
+    showPlugins ($event) {
+      if (this.session_profile.showPluginConfirmation) {
+        this.isPluginConfirmationVisible = true
+      } else {
+        this.redirect($event)
+      }
+    },
+    async enablePlugins () {
+      this.isPluginConfirmationVisible = false
+      await this.$store.dispatch('profile/update', {
+        ...this.session_profile,
+        showPluginConfirmation: false
+      })
+      this.redirect('plugins')
     }
   }
 }
