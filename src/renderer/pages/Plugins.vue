@@ -21,7 +21,7 @@
           {{ $t('PAGES.PLUGINS.DISCOVER') }}
         </a>
         <a
-          class="font-bold text-center cursor-pointer pl-6"
+          class="font-bold text-center cursor-pointer px-6 border-r border-theme-feature-item-alternative"
           @click="open"
         >
           <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
@@ -33,6 +33,20 @@
           </span>
 
           {{ $t('PAGES.PLUGINS.OPEN') }}
+        </a>
+        <a
+          class="font-bold text-center cursor-pointer pl-6"
+          @click="refresh"
+        >
+          <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
+            <SvgIcon
+              name="update"
+              class="text-center"
+              view-box="0 0 9 9"
+            />
+          </span>
+
+          {{ $t('PAGES.PLUGINS.RELOAD') }}
         </a>
       </div>
     </div>
@@ -132,6 +146,9 @@ export default {
     },
     open () {
       electron.shell.openItem(PLUGINS.path)
+    },
+    refresh () {
+      this.electron_reload()
     },
 
     disablePlugin (plugin) {
