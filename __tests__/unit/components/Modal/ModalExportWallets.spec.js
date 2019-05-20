@@ -19,6 +19,11 @@ describe('ModalExportWallets', () => {
       { address: 'A4', name: 'wallet_a4', balance: 1 }
     ]
 
+    const ledgerWallets = [
+      { address: 'A5', name: null, balance: 0 },
+      { address: 'A6', name: 'ledger_a6', balance: 1 }
+    ]
+
     return shallowMount(ModalExportWallets, {
       i18n,
       mixins: [StringMixin, WalletMixin],
@@ -30,7 +35,8 @@ describe('ModalExportWallets', () => {
           getters: {
             'delegate/byAddress': jest.fn(),
             'wallet/contactsByProfileId': () => [],
-            'wallet/byProfileId': () => wallets
+            'wallet/byProfileId': () => wallets,
+            'ledger/wallets': () => ledgerWallets
           }
         }
       }

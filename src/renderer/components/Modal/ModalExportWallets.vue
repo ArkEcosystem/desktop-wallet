@@ -106,7 +106,7 @@ export default {
     wallets () {
       let wallets = uniqBy([
         ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
-        ...this.$store.getters['ledger/wallets']
+        ...this.ledgerWallets
       ], 'address')
 
       if (this.activeOptions.length) {
@@ -116,6 +116,10 @@ export default {
       }
 
       return this.wallet_sortByName(wallets)
+    },
+
+    ledgerWallets () {
+      return this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
     },
 
     mappedWallets () {
