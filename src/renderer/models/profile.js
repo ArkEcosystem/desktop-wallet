@@ -99,6 +99,10 @@ export default new BaseModel({
     contactSortParams: {
       type: 'object',
       format: data => data.contactSortParams || { field: 'name', type: 'asc' }
+    },
+    pluginSortParams: {
+      type: 'object',
+      format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
