@@ -21,7 +21,7 @@
           {{ $t('PAGES.PLUGINS.DISCOVER') }}
         </a>
         <a
-          class="font-bold text-center cursor-pointer pl-6"
+          class="font-bold text-center cursor-pointer px-6 border-r border-theme-feature-item-alternative"
           @click="open"
         >
           <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
