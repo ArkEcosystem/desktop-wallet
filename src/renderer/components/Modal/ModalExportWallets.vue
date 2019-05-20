@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import { uniqBy } from 'lodash'
 import ModalWindow from '@/components/Modal/ModalWindow'
 import { ButtonGeneric, ButtonSwitch } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -103,7 +104,10 @@ export default {
     },
 
     wallets () {
-      let wallets = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      let wallets = uniqBy([
+        ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
+        ...this.$store.getters['ledger/wallets']
+      ], 'address')
 
       if (this.activeOptions.length) {
         for (const option of this.activeOptions) {
