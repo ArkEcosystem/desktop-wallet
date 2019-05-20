@@ -134,10 +134,13 @@ export default {
     },
 
     sortByPermissions (x, y, col, rowX, rowY) {
-      const a = x && x.length ? x.join(', ') : ''
-      const b = y && y.length ? y.join(', ') : ''
+      const values = []
 
-      return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
+      for (const perms of [x, y]) {
+        values.push(perms ? perms.join(', ') : '')
+      }
+
+      return values[0].localeCompare(values[1], undefined, { sensitivity: 'base', numeric: true })
     },
 
     toggleStatus (plugin) {
