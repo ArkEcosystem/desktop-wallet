@@ -41,7 +41,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'status'"
+          v-else-if="data.column.field === 'isEnabled'"
           class="flex"
         >
           {{ data.row.isEnabled ? $t('PLUGIN_TABLE.ENABLED') : $t('PLUGIN_TABLE.DISABLED') }}
@@ -113,7 +113,7 @@ export default {
         },
         {
           label: this.$t('PLUGIN_TABLE.STATUS'),
-          field: 'status'
+          field: 'isEnabled'
         },
         {
           label: this.$t('PLUGIN_TABLE.ACTIONS'),
