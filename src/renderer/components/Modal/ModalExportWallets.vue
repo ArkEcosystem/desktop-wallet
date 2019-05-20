@@ -88,6 +88,10 @@ export default {
         excludeEmpty: {
           active: false,
           filter: el => el.balance
+        },
+        excludeLedger: {
+          active: false,
+          filter: el => !el.isLedger
         }
       },
       advancedOptions: {

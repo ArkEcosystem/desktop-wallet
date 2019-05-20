@@ -367,6 +367,7 @@ export default {
     OPTIONS: {
       ADD_NETWORK: 'Add information about the network',
       EXCLUDE_EMPTY: 'Exclude empty wallets',
+      EXCLUDE_LEDGER: 'Exclude ledger wallets',
       EXCLUDE_UNNAMED: 'Exclude wallets without a name'
     },
     SUCCESS: {
