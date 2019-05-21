@@ -1,3 +1,4 @@
+import { isBoolean } from 'lodash'
 import BaseModel from './base'
 
 export default new BaseModel({
@@ -79,6 +80,10 @@ export default new BaseModel({
     ledgerCache: {
       type: 'boolean',
       format: data => data.ledgerCache || false
+    },
+    showPluginConfirmation: {
+      type: 'boolean',
+      format: data => isBoolean(data.showPluginConfirmation) ? data.showPluginConfirmation : true
     },
     transactionTableRowCount: {
       type: 'integer',

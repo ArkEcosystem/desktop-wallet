@@ -61,9 +61,10 @@
             :can-activate="false"
             class="AppSidemenu__item"
             icon="plugins"
-            @click="redirect($event)"
+            @click="showPlugins"
           />
 
+          <!-- Plugin pages -->
           <MenuNavigationItem
             v-if="hasPluginMenuItems"
             id="plugin-pages"
@@ -72,11 +73,11 @@
             :can-activate="false"
             class="AppSidemenu__item"
             icon="more"
-            @click="toggleShowPlugins"
+            @click="toggleShowPluginMenu"
           />
 
           <AppSidemenuPlugins
-            v-if="hasPluginMenuItems && isPluginsVisible"
+            v-if="hasPluginMenuItems && isPluginMenuVisible"
             :outside-click="true"
             :is-horizontal="isHorizontal"
             @close="closeShowPlugins"
@@ -158,17 +159,26 @@
         </div>
       </div>
     </div>
+
+    <AppSidemenuPluginConfirmation
+      v-if="isPluginConfirmationVisible"
+      @enable="enablePlugins"
+      @ignore="closePluginConfirmation"
+      @close="closePluginConfirmation"
+    />
   </MenuNavigation>
 </template>
 
 <script>
 import semver from 'semver'
+import { isUndefined } from 'lodash'
 import { mapGetters } from 'vuex'
 import releaseService from '@/services/release'
 import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
+import AppSidemenuPluginConfirmation from './AppSidemenuPluginConfirmation'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
@@ -181,6 +191,7 @@ export default {
     AppSidemenuSettings,
     AppSidemenuNetworkStatus,
     AppSidemenuImportantNotification,
+    AppSidemenuPluginConfirmation,
     MenuNavigation,
     MenuNavigationItem,
     ProfileAvatar,
@@ -198,7 +209,8 @@ export default {
   data: vm => ({
     isNetworkStatusVisible: false,
     isImportantNotificationVisible: true,
-    isPluginsVisible: false,
+    isPluginMenuVisible: false,
+    isPluginConfirmationVisible: false,
     isSettingsVisible: false,
     activeItem: vm.$route.name
   }),
@@ -244,8 +256,8 @@ export default {
       this.isImportantNotificationVisible = false
     },
 
-    toggleShowPlugins () {
-      this.isPluginsVisible = !this.isPluginsVisible
+    toggleShowPluginMenu () {
+      this.isPluginMenuVisible = !this.isPluginMenuVisible
     },
 
     toggleShowSettings () {
@@ -257,7 +269,7 @@ export default {
     },
 
     closeShowPlugins () {
-      this.isPluginsVisible = false
+      this.isPluginMenuVisible = false
     },
 
     closeShowSettings () {
@@ -266,6 +278,28 @@ export default {
 
     closeShowNetworkStatus () {
       this.isNetworkStatusVisible = false
+    },
+
+    closePluginConfirmation () {
+      this.isPluginConfirmationVisible = false
+    },
+    showPlugins ($event) {
+      const showConfirmation = isUndefined(this.session_profile.showPluginConfirmation) ||
+        this.session_profile.showPluginConfirmation
+
+      if (showConfirmation) {
+        this.isPluginConfirmationVisible = true
+      } else {
+        this.redirect($event)
+      }
+    },
+    async enablePlugins () {
+      this.isPluginConfirmationVisible = false
+      await this.$store.dispatch('profile/update', {
+        ...this.session_profile,
+        showPluginConfirmation: false
+      })
+      this.redirect('plugins')
     }
   }
 }
