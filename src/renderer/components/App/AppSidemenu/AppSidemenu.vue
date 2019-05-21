@@ -171,6 +171,7 @@
 
 <script>
 import semver from 'semver'
+import { isUndefined } from 'lodash'
 import { mapGetters } from 'vuex'
 import releaseService from '@/services/release'
 import AppSidemenuPlugins from './AppSidemenuPlugins'
@@ -283,7 +284,10 @@ export default {
       this.isPluginConfirmationVisible = false
     },
     showPlugins ($event) {
-      if (this.session_profile.showPluginConfirmation) {
+      const showConfirmation = isUndefined(this.session_profile.showPluginConfirmation) ||
+        this.session_profile.showPluginConfirmation
+
+      if (showConfirmation) {
         this.isPluginConfirmationVisible = true
       } else {
         this.redirect($event)
