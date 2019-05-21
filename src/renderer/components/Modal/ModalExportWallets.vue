@@ -136,7 +136,13 @@ export default {
 
     mappedWallets () {
       return this.wallets.map(wallet => {
-        return { [wallet.address]: wallet.name }
+        return {
+          [wallet.address]: {
+            name: wallet.name,
+            publicKey: wallet.publicKey,
+            balance: this.getBalances(wallet.balance)
+          }
+        }
       })
     },
 
@@ -171,6 +177,19 @@ export default {
 
     emitClose () {
       this.$emit('close')
+    },
+
+    getBalances (balance) {
+      const network = this.session_network
+      console.log(network)
+      const balances = { [network.token]: this.currency_subToUnit(balance) }
+
+      if (network.market.enabled) {
+        const currency = this.session_profile.currency
+        balances[currency] = this.currency_cryptoToCurrency(balance)
+      }
+
+      return balances
     },
 
     async exportWallets () {
