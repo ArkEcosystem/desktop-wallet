@@ -710,7 +710,8 @@ export default class ClientService {
       .amount(amount)
       .fee(fee)
       .recipientId(recipientId)
-      .vendorField(vendorField)
+
+    transaction.data.vendorField = vendorField
 
     passphrase = this.normalizePassphrase(passphrase)
     secondPassphrase = this.normalizePassphrase(secondPassphrase)
