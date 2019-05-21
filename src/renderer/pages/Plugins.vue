@@ -144,9 +144,11 @@ export default {
     discover () {
       this.electron_openExternal(PLUGINS.discoverUrl)
     },
+
     open () {
       electron.shell.openItem(PLUGINS.path)
     },
+
     refresh () {
       this.electron_reload()
     },

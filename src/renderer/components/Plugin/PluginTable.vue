@@ -113,7 +113,8 @@ export default {
         },
         {
           label: this.$t('PLUGIN_TABLE.STATUS'),
-          field: 'isEnabled'
+          field: 'isEnabled',
+          sortFn: this.sortByStatus
         },
         {
           label: this.$t('PLUGIN_TABLE.ACTIONS'),
@@ -141,6 +142,10 @@ export default {
       }
 
       return values[0].localeCompare(values[1], undefined, { sensitivity: 'base', numeric: true })
+    },
+
+    sortByStatus (x, y, col, rowX, rowY) {
+      return !!x < !!y ? -1 : (!!x > !!y ? 1 : 0)
     },
 
     toggleStatus (plugin) {
