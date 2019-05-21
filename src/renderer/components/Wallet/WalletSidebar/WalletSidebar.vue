@@ -462,12 +462,6 @@ export default {
 }
 </script>
 
-<style lang="postcss">
-.WalletSidebar--expanded .WalletSidebar__wallet .MenuNavigationItem__border {
-  @apply .hidden
-}
-</style>
-
 <style lang="postcss" scoped>
 .WalletSidebar {
   transition: width 0.1s ease-out;
