@@ -41,7 +41,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'status'"
+          v-else-if="data.column.field === 'isEnabled'"
           class="flex"
         >
           {{ data.row.isEnabled ? $t('PLUGIN_TABLE.ENABLED') : $t('PLUGIN_TABLE.DISABLED') }}
@@ -108,11 +108,15 @@ export default {
         },
         {
           label: this.$t('PLUGIN_TABLE.PERMISSIONS'),
-          field: 'permissions'
+          field: 'permissions',
+          sortFn: this.sortByPermissions
         },
         {
           label: this.$t('PLUGIN_TABLE.STATUS'),
-          field: 'status'
+          field: 'isEnabled',
+          type: 'boolean',
+          thClass: 'text-left',
+          tdClass: 'text-left'
         },
         {
           label: this.$t('PLUGIN_TABLE.ACTIONS'),
@@ -129,7 +133,17 @@ export default {
 
   methods: {
     onSortChange (sortOptions) {
-      this.$emit('reorder', sortOptions[0])
+      this.$emit('on-sort-change', sortOptions[0])
+    },
+
+    sortByPermissions (x, y, col, rowX, rowY) {
+      const values = []
+
+      for (const perms of [x, y]) {
+        values.push(perms ? perms.join(', ') : '')
+      }
+
+      return values[0].localeCompare(values[1], undefined, { sensitivity: 'base', numeric: true })
     },
 
     toggleStatus (plugin) {
