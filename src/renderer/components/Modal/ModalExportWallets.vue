@@ -12,13 +12,16 @@
 
       <ListDivided>
         <ListDividedItem
-          v-for="option in Object.keys(options)"
+          v-for="[option, values] in Object.entries(options)"
           :key="option"
+          :item-label-class="!!values.isDisabled ? 'opacity-50' : ''"
+          :item-value-class="!!values.isDisabled ? 'opacity-50 cursor-not-allowed' : ''"
           :label="`${$t('MODAL_EXPORT_WALLETS.OPTIONS.' + strings_snakeCase(option).toUpperCase())}`"
         >
           <ButtonSwitch
             ref="option"
-            :is-active="options[option].active"
+            :is-disabled="!!values.isDisabled"
+            :is-active="values.active"
             class="ml-3"
             @change="toggleOption(option)"
           />
@@ -91,6 +94,7 @@ export default {
         },
         excludeLedger: {
           active: false,
+          isDisabled: !this.isLedgerConnected,
           filter: el => !el.isLedger
         }
       },
@@ -101,6 +105,10 @@ export default {
   },
 
   computed: {
+    isLedgerConnected () {
+      return this.$store.getters['ledger/isConnected']
+    },
+
     activeOptions () {
       return Object.values(this.options).filter(option => {
         return option.active
@@ -123,7 +131,7 @@ export default {
     },
 
     ledgerWallets () {
-      return this.$store.getters['ledger/isConnected'] ? this.$store.getters['ledger/wallets'] : []
+      return this.isLedgerConnected ? this.$store.getters['ledger/wallets'] : []
     },
 
     mappedWallets () {
