@@ -86,7 +86,7 @@ export default {
 }
 
 .AppSidemenuPlugins .MenuOptions--vertical:after {
-  top: 2rem;
+  top: 6.5rem;
 }
 
 .AppSidemenuPlugins--horizontal {
