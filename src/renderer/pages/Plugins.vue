@@ -54,12 +54,11 @@
     <div class="Plugins__body">
       <PluginTable
         :has-pagination="false"
-        :is-contacts-table="true"
         :rows="plugins"
         :total-rows="plugins.length"
         :sort-query="sortParams"
         :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
-        @reorder="onReorder"
+        @on-sort-change="onSortChange"
         @toggle="onToggleStatus"
       />
     </div>
@@ -76,7 +75,7 @@
 
 <script>
 import electron from 'electron'
-import { clone, some, sortBy } from 'lodash'
+import { clone, sortBy } from 'lodash'
 import { PLUGINS } from '@config'
 import { PluginEnableConfirmation, PluginTable } from '@/components/Plugin'
 import SvgIcon from '@/components/SvgIcon'
@@ -114,29 +113,19 @@ export default {
 
     sortParams: {
       get () {
-        return this.$store.getters['session/contactSortParams']
+        return this.$store.getters['session/pluginSortParams']
       },
       set (sortParams) {
-        this.$store.dispatch('session/setContactSortParams', sortParams)
+        this.$store.dispatch('session/setPluginSortParams', sortParams)
         const profile = clone(this.session_profile)
-        profile.contactSortParams = sortParams
+        profile.pluginSortParams = sortParams
         this.$store.dispatch('profile/update', profile)
       }
-    },
-
-    showVotedDelegates () {
-      return some(this.plugins, contact => contact.hasOwnProperty('votedDelegate'))
     }
   },
 
-  beforeRouteEnter (to, from, next) {
-    next(vm => {
-      vm.$synchronizer.focus('contacts')
-    })
-  },
-
   methods: {
-    onReorder (sortParams) {
+    onSortChange (sortParams) {
       this.sortParams = sortParams
     },
 
@@ -155,9 +144,11 @@ export default {
     discover () {
       this.electron_openExternal(PLUGINS.discoverUrl)
     },
+
     open () {
       electron.shell.openItem(PLUGINS.path)
     },
+
     refresh () {
       this.electron_reload()
     },

@@ -74,8 +74,7 @@ class PluginManager {
       profileId
     })
 
-    const permissions = uniq(plugin.config.permissions)
-    const [first, rest] = partition(permissions, permission => {
+    const [first, rest] = partition(plugin.config.permissions, permission => {
       // These permissions could be necessary first to load others
       // The rest does not have dependencies: 'MENU_ITEMS', 'AVATARS', 'WALLET_TABS'
       return ['COMPONENTS', 'ROUTES'].includes(permission)
@@ -524,14 +523,8 @@ class PluginManager {
     this.validatePlugin(pluginPath)
 
     let config = JSON.parse(fs.readFileSync(`${pluginPath}/package.json`))
-    config = {
-      id: config.name,
-      name: config.title,
-      description: config.description,
-      version: config.version,
-      permissions: config.permissions,
-      urls: config.urls
-    }
+    config = this.sanitizeConfig(config)
+
     if (!config.id) {
       throw new Error('Plugin ID not found')
     } else if (!/^[a-z-0-9-]+$/.test(config.id)) {
@@ -603,6 +596,17 @@ class PluginManager {
       if (!fs.existsSync(path.resolve(pluginPath, pathCheck))) {
         throw new Error(`'${pathCheck}' does not exist`)
       }
+    }
+  }
+
+  sanitizeConfig (config) {
+    return {
+      id: config.name,
+      name: config.title,
+      description: config.description,
+      version: config.version,
+      permissions: uniq(config.permissions).sort(),
+      urls: config.urls
     }
   }
 }

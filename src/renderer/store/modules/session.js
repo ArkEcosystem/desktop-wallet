@@ -16,6 +16,7 @@ export default {
     walletLayout: null,
     walletSortParams: null,
     contactSortParams: null,
+    pluginSortParams: null,
     contentProtection: true,
     backgroundUpdateLedger: null,
     broadcastPeers: null,
@@ -57,6 +58,7 @@ export default {
     walletLayout: state => state.walletLayout,
     walletSortParams: state => state.walletSortParams,
     contactSortParams: state => state.contactSortParams,
+    pluginSortParams: state => state.pluginSortParams,
     language: state => state.language,
     bip39Language: state => state.bip39Language,
     name: state => state.name,
@@ -122,6 +124,10 @@ export default {
       state.contactSortParams = contactSortParams
     },
 
+    SET_PLUGIN_TABLE_SORT_PARAMS (state, pluginSortParams) {
+      state.pluginSortParams = pluginSortParams
+    },
+
     SET_CONTENT_PROTECTION (state, protection) {
       state.contentProtection = protection
     },
@@ -159,6 +165,7 @@ export default {
       state.walletLayout = 'grid'
       state.walletSortParams = { field: 'balance', type: 'desc' }
       state.contactSortParams = { field: 'name', type: 'asc' }
+      state.pluginSortParams = { field: 'id', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
       state.contentProtection = true
@@ -182,6 +189,7 @@ export default {
       state.walletLayout = value.walletLayout
       state.walletSortParams = value.walletSortParams
       state.contactSortParams = value.contactSortParams
+      state.pluginSortParams = value.pluginSortParams
       state.backgroundUpdateLedger = value.backgroundUpdateLedger
       state.broadcastPeers = value.broadcastPeers
       state.ledgerCache = value.ledgerCache
@@ -279,6 +287,10 @@ export default {
 
     setContactSortParams ({ commit }, value) {
       commit('SET_CONTACT_TABLE_SORT_PARAMS', value)
+    },
+
+    setPluginSortParams ({ commit }, value) {
+      commit('SET_PLUGIN_TABLE_SORT_PARAMS', value)
     },
 
     setTransactionTableRowCount ({ commit }, value) {
