@@ -134,33 +134,6 @@ export default {
       return this.isLedgerConnected ? this.$store.getters['ledger/wallets'] : []
     },
 
-    mappedWallets () {
-      return this.wallets.map(wallet => {
-        return {
-          [wallet.address]: {
-            name: wallet.name,
-            publicKey: wallet.publicKey,
-            balance: this.getBalances(wallet.balance)
-          }
-        }
-      })
-    },
-
-    condensedNetwork () {
-      const network = this.session_network
-
-      if (network) {
-        return {
-          name: network.name,
-          nethash: network.nethash,
-          token: network.token,
-          symbol: network.symbol
-        }
-      }
-
-      return null
-    },
-
     profileName () {
       return this.session_profile ? this.session_profile.name : ''
     }
@@ -179,26 +152,70 @@ export default {
       this.$emit('close')
     },
 
-    getBalances (balance) {
-      const network = this.session_network
-      console.log(network)
-      const balances = { [network.token]: this.currency_subToUnit(balance) }
+    getVote (vote) {
+      const delegate = this.$store.getters['delegate/byPublicKey'](vote)
 
-      if (network.market.enabled) {
-        const currency = this.session_profile.currency
-        balances[currency] = this.currency_cryptoToCurrency(balance)
+      if (delegate) {
+        return {
+          username: delegate.username,
+          publicKey: delegate.publicKey
+        }
       }
 
-      return balances
+      return null
+    },
+
+    getBalances (balance) {
+      const network = this.session_network
+
+      if (network) {
+        const balances = { [network.token]: this.currency_subToUnit(balance) }
+
+        if (network.market.enabled) {
+          const currency = this.session_profile.currency
+          balances[currency] = this.currency_cryptoToCurrency(balance)
+        }
+
+        return balances
+      }
+
+      return null
+    },
+
+    transformWallets () {
+      return this.wallets.map(wallet => {
+        return {
+          name: wallet.name,
+          address: wallet.address,
+          publicKey: wallet.publicKey,
+          vote: this.getVote(wallet.vote),
+          balance: this.getBalances(wallet.balance)
+        }
+      })
+    },
+
+    transformNetwork () {
+      const network = this.session_network
+
+      if (network) {
+        return {
+          name: network.name,
+          nethash: network.nethash,
+          token: network.token,
+          symbol: network.symbol
+        }
+      }
+
+      return null
     },
 
     async exportWallets () {
       this.isExporting = true
 
       const data = this.advancedOptions.addNetwork
-        ? { network: this.condensedNetwork } : {}
+        ? { network: this.transformNetwork() } : {}
 
-      data.wallets = this.mappedWallets
+      data.wallets = this.transformWallets()
 
       const raw = JSON.stringify(data, null, 2)
       const defaultPath = `${this.profileName}_wallets.json`
