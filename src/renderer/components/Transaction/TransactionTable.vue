@@ -134,7 +134,10 @@
           />
         </div>
 
-        <span v-else>
+        <span
+          v-else
+          :class="{ 'word-break-all': data.column.field === 'vendorField' }"
+        >
           {{ data.formattedRow[data.column.field] }}
         </span>
       </template>

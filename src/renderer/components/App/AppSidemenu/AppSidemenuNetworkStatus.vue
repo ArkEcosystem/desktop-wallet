@@ -1,6 +1,6 @@
 <template>
   <div
-    v-click-outside="emitClose"
+    v-click-outside.capture="emitClose"
     :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
     class="absolute z-20 theme-dark"
   >
@@ -27,7 +27,7 @@
       </div>
       <div class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <button
-          @click="toggleSelect('peers-menu')"
+          @click.stop="toggleSelect('peers-menu')"
         >
           <div
             slot="controls"
