@@ -152,6 +152,16 @@ export default {
       this.$emit('close')
     },
 
+    getUsername (address) {
+      const delegate = this.$store.getters['delegate/byAddress'](address)
+
+      if (delegate) {
+        return delegate.username
+      }
+
+      return null
+    },
+
     getVote (vote) {
       const delegate = this.$store.getters['delegate/byPublicKey'](vote)
 
@@ -186,6 +196,7 @@ export default {
       return this.wallets.map(wallet => {
         return {
           name: wallet.name,
+          username: this.getUsername(wallet.address),
           address: wallet.address,
           publicKey: wallet.publicKey,
           vote: this.getVote(wallet.vote),
