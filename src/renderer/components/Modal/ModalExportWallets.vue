@@ -152,6 +152,10 @@ export default {
       this.$emit('close')
     },
 
+    getName (name) {
+      return name && name.length ? name : null
+    },
+
     getUsername (address) {
       const delegate = this.$store.getters['delegate/byAddress'](address)
 
@@ -195,7 +199,7 @@ export default {
     transformWallets () {
       return this.wallets.map(wallet => {
         return {
-          name: wallet.name,
+          name: this.getName(wallet.name),
           username: this.getUsername(wallet.address),
           address: wallet.address,
           publicKey: wallet.publicKey,
