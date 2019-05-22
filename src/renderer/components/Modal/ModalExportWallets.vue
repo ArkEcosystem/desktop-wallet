@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { uniqBy } from 'lodash'
+import { isNull, omitBy, uniqBy } from 'lodash'
 import ModalWindow from '@/components/Modal/ModalWindow'
 import { ButtonGeneric, ButtonSwitch } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -198,14 +198,14 @@ export default {
 
     transformWallets () {
       return this.wallets.map(wallet => {
-        return {
+        return omitBy({
           name: this.getName(wallet.name),
           username: this.getUsername(wallet.address),
           address: wallet.address,
           publicKey: wallet.publicKey,
           vote: this.getVote(wallet.vote),
           balance: this.getBalances(wallet.balance)
-        }
+        }, isNull)
       })
     },
 
