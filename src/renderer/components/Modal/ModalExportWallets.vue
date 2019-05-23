@@ -227,8 +227,15 @@ export default {
     async exportWallets () {
       this.isExporting = true
 
-      const data = this.advancedOptions.addNetwork
-        ? { network: this.transformNetwork() } : {}
+      const data = {
+        meta: {
+          count: this.wallets.length
+        }
+      }
+
+      if (this.advancedOptions.addNetwork) {
+        data.network = this.transformNetwork()
+      }
 
       data.wallets = this.transformWallets()
 
