@@ -12,7 +12,7 @@
 
       <ListDivided>
         <ListDividedItem
-          v-for="[option, values] in Object.entries(options)"
+          v-for="(values, option) of options"
           :key="option"
           :item-label-class="!!values.isDisabled ? 'opacity-50' : ''"
           :item-value-class="!!values.isDisabled ? 'opacity-50 cursor-not-allowed' : ''"
@@ -99,7 +99,9 @@ export default {
         }
       },
       advancedOptions: {
-        addNetwork: true
+        addNetwork: {
+          active: true
+        }
       }
     }
   },
@@ -233,7 +235,7 @@ export default {
         }
       }
 
-      if (this.advancedOptions.addNetwork) {
+      if (this.advancedOptions.addNetwork.active) {
         data.network = this.transformNetwork()
       }
 
