@@ -141,6 +141,15 @@ export default {
     }
   },
 
+  watch: {
+    isLedgerConnected: {
+      handler (value) {
+        this.options.excludeLedger.isDisabled = !value
+      },
+      immediate: true
+    }
+  },
+
   methods: {
     toggleOption (option, isAdvanced = false) {
       const options = isAdvanced ? this.advancedOptions : this.options
