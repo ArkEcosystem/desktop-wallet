@@ -40,7 +40,7 @@
         >
           <ButtonSwitch
             ref="option"
-            :is-active="advancedOptions[option]"
+            :is-active="advancedOptions[option].active"
             class="ml-3"
             @change="toggleOption(option, true)"
           />
