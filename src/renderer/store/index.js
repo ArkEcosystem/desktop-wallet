@@ -15,6 +15,7 @@ import LedgerModule from '@/store/modules/ledger'
 import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
 import PeerModule from '@/store/modules/peer'
+import PluginModule from '@/store/modules/plugin'
 import ProfileModule from '@/store/modules/profile'
 import SessionModule from '@/store/modules/session'
 import TransactionModule from '@/store/modules/transaction'
@@ -30,6 +31,7 @@ const modules = {
   market: MarketModule,
   network: NetworkModule,
   peer: PeerModule,
+  plugin: PluginModule,
   profile: ProfileModule,
   session: SessionModule,
   transaction: TransactionModule,

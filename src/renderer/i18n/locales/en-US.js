@@ -230,6 +230,8 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
+    PLUGINS: 'Plugins',
+    PLUGINS_PAGES: 'Plugins pages',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
@@ -241,7 +243,8 @@ export default {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
         NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
-      }
+      },
+      THEME: 'Theme'
     },
     WALLETS: 'My wallets'
   },
@@ -249,6 +252,14 @@ export default {
   APP_SIDEMENU_NOTIFICATION: {
     NOTIFICATION: 'A new version ({version}) has been released. Upgrade now!',
     TOOLTIP: 'New version ({version}) has been released!'
+  },
+
+  APP_SIDEMENU_PLUGIN_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to enable the plugin system?',
+    NO: 'No, keep it disabled',
+    YES: 'Yes, enable it',
+    NOTICE: 'WARNING: This system is currently in BETA. All non-official plugins are used at your own risk. We cannot verify the safety or security of any 3rd party plugins at this time and all security testing and vulnerability discovery is the responsibility of the plugin author. By accepting this notice, you acknowledge that you are using 3rd party plugins at your own risk.',
+    WARNING: 'Please be careful and pay close attention when installing plugins!'
   },
 
   MARKET_CHART: {
@@ -520,6 +531,13 @@ export default {
       NEW_NETWORK: 'New network'
     },
 
+    PLUGINS: {
+      HEADER: 'Plugins',
+      DISCOVER: 'Discover Plugins',
+      OPEN: 'Open Plugins',
+      RELOAD: 'Reload Plugins'
+    },
+
     PROFILE_ALL: {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
@@ -536,8 +554,7 @@ export default {
         },
         NAME: 'Profile name',
         TITLE: '1. Profile details',
-        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
-        NO_AVATAR: 'No Avatar'
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -555,7 +572,7 @@ export default {
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
         MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
-        THEME: 'Choose light or dark mode',
+        THEME: 'Choose theme',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
         TITLE: '3. Appearance'
@@ -706,6 +723,27 @@ export default {
     }
   },
 
+  PLUGIN_ENABLE_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to enable this plugin?',
+    NO: 'No, keep it disabled',
+    YES: 'Yes, enable it'
+  },
+
+  PLUGIN_TABLE: {
+    ACTIONS: 'Actions',
+    ENABLE: 'Enable',
+    ENABLED: 'Enabled',
+    DESCRIPTION: 'Description',
+    DISABLE: 'Disable',
+    DISABLED: 'Disabled',
+    ID: 'ID',
+    NAME: 'Name',
+    NO_PERMISSIONS: 'No permissions',
+    NO_PLUGINS: 'No plugins available',
+    PERMISSIONS: 'Permissions',
+    STATUS: 'Status'
+  },
+
   PROFILE_LEAVING_CONFIRMATION: {
     QUESTION: 'Are you sure you want to ignore the changes done to this profile?',
     NO: 'No, save them',
@@ -718,8 +756,10 @@ export default {
   },
 
   SELECTION_AVATAR: {
+    ADDITIONAL_AVATARS: 'Additional Avatars',
     AVATARS: 'Avatars',
-    MODAL_HEADER: 'Select avatar'
+    MODAL_HEADER: 'Select avatar',
+    NO_AVATAR: 'No Avatar'
   },
 
   SELECTION_BACKGROUND: {
@@ -763,14 +803,6 @@ export default {
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
-    },
-    FORM: {
-      DELEGATE_REGISTRATION: {
-        INSTRUCTIONS: 'for {address}.'
-      },
-      SECOND_SIGNATURE: {
-        INSTRUCTIONS: 'for {address}.'
-      }
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -920,17 +952,15 @@ export default {
   WALLET_DELEGATES: {
     RANK: 'Rank',
     USERNAME: 'Username',
-    PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
-    PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
-    MISSED: 'missed',
     VOTERS: 'Voters',
     UNVOTE: 'Unvote',
     VOTES: 'Votes',
     VOTE: 'Vote',
+    USERNAME_EMPTY_ERROR: 'The username must have at least 1 character',
     USERNAME_ERROR: 'No special characters or uppercase allowed',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',

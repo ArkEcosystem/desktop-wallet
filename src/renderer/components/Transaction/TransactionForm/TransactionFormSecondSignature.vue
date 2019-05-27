@@ -4,9 +4,17 @@
     @submit.prevent
   >
     <template v-if="!currentWallet.secondPublicKey">
-      <div class="mb-5">
-        {{ $t('TRANSACTION.FORM.SECOND_SIGNATURE.INSTRUCTIONS', { address: currentWallet.address }) }}
-      </div>
+      <ListDivided :is-floating-label="true">
+        <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+          {{ senderLabel }}
+          <span
+            v-if="senderLabel !== currentWallet.address"
+            class="text-sm text-theme-page-text-light"
+          >
+            {{ currentWallet.address }}
+          </span>
+        </ListDividedItem>
+      </ListDivided>
 
       <div
         v-if="!showPassphraseWords"
@@ -148,6 +156,7 @@ import { TRANSACTION_TYPES, V1 } from '@config'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
 import { InputFee, InputPassword } from '@/components/Input'
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
@@ -165,6 +174,8 @@ export default {
     Collapse,
     InputFee,
     InputPassword,
+    ListDivided,
+    ListDividedItem,
     ModalLoader,
     PassphraseInput,
     PassphraseVerification,
@@ -203,6 +214,10 @@ export default {
 
     currentWallet () {
       return this.wallet_fromRoute
+    },
+
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
     },
 
     walletNetwork () {
@@ -265,7 +280,8 @@ export default {
         passphrase: this.form.passphrase,
         secondPassphrase: this.secondPassphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
 
       let success = true

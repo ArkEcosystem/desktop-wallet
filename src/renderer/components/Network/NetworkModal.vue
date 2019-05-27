@@ -450,7 +450,7 @@ export default {
         return
       }
 
-      var customNetwork = this.form
+      const customNetwork = this.form
       customNetwork.constants = {
         activeDelegates: parseInt(this.form.activeDelegates),
         epoch: this.form.epoch
@@ -528,6 +528,7 @@ export default {
           this.form.epoch = network.constants.epoch
           if (network.constants.activeDelegates) {
             this.form.activeDelegates = network.constants.activeDelegates.toString()
+            this.form.vendorField = { maxLength: network.constants.vendorFieldLength }
           }
         })
       } catch (v2Error) {
