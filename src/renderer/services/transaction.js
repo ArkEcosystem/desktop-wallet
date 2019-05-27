@@ -31,6 +31,7 @@ export default class TransactionService {
     transactionObject.senderPublicKey(wallet.publicKey)
     transactionObject.sign('passphrase') // Sign with a "fake" passphrase to get the transaction structure
     const transaction = transactionObject.getStruct()
+    transaction.senderPublicKey = wallet.publicKey // Restore original sender public key
 
     if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
       transaction.recipientId = wallet.address

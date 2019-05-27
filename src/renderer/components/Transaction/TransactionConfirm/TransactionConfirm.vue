@@ -65,6 +65,7 @@ export default {
 
   provide () {
     return {
+      currentWallet: this.currentWallet,
       transaction: this.transaction
     }
   },
