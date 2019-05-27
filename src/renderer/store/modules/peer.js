@@ -1,5 +1,4 @@
-import random from 'lodash/random'
-import shuffle from 'lodash/shuffle'
+import { isEmpty, random, shuffle } from 'lodash'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
@@ -40,6 +39,14 @@ const getBaseUrl = (peer, p2pPort = false) => {
 
 const getApiVersion = (peer) => {
   return /^2\./.test(peer.version) ? 2 : 1
+}
+
+const clientService = ({ baseUrl, peer, timeout, version }) => {
+  const client = new ClientService(false)
+  client.host = baseUrl || getBaseUrl(peer)
+  client.version = version || getApiVersion(peer)
+  client.client.http.timeout = timeout || 3000
+  return client
 }
 
 export default {
@@ -174,15 +181,17 @@ export default {
         return []
       }
 
-      const highestHeight = peers[0].height
-      for (let i = 1; i < maxRandom; i++) {
-        if (!peers[i]) {
-          break
-        }
-        if (peers[i].height < highestHeight - 50) {
-          maxRandom = i - 1
-        }
-      }
+      // NOTE: Disabled because if a bad peer has a height 50 blocks above the rest it is not returning any peer
+
+      // const highestHeight = peers[0].height
+      // for (let i = 1; i < maxRandom; i++) {
+      //   if (!peers[i]) {
+      //     break
+      //   }
+      //   if (peers[i].height < highestHeight - 50) {
+      //     maxRandom = i - 1
+      //   }
+      // }
 
       return peers.slice(0, Math.min(maxRandom, peers.length))
     },
@@ -202,7 +211,7 @@ export default {
       }
 
       let currentPeer = state.current[networkId]
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         return false
       }
 
@@ -258,7 +267,7 @@ export default {
           try {
             return PeerModel.deserialize(peer)
           } catch (error) {
-            //
+            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
           }
 
           return null
@@ -309,8 +318,9 @@ export default {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
       }
+      const networkKey = networkLookup[network.id]
 
-      const peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
+      const peers = await this._vm.$client.fetchPeers(networkKey, getters['all']())
 
       if (peers.length) {
         for (const peer of peers) {
@@ -384,7 +394,7 @@ export default {
     async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
-        if (currentPeer && currentPeer.isCustom) {
+        if (!isEmpty(currentPeer) && currentPeer.isCustom) {
           // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
 
@@ -425,11 +435,11 @@ export default {
      */
     async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
       let updateCurrentPeer = false
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         currentPeer = { ...getters['current']() }
         updateCurrentPeer = true
       }
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         await dispatch('fallbackToSeedPeer')
 
         return
@@ -444,10 +454,7 @@ export default {
         if (updateCurrentPeer) {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
-          const client = new ClientService(false)
-          client.host = getBaseUrl(currentPeer)
-          client.version = getApiVersion(currentPeer)
-          client.client.http.timeout = 3000
+          const client = clientService({ peer: currentPeer })
           peerStatus = await client.fetchPeerStatus()
         }
         const delay = (performance.now() - delayStart).toFixed(0)
@@ -477,12 +484,7 @@ export default {
      */
     async clientServiceFromPeer (_, peer) {
       await getApiPort(peer)
-      const client = new ClientService(false)
-      client.host = getBaseUrl(peer)
-      client.version = getApiVersion(peer)
-      client.client.http.timeout = 3000
-
-      return client
+      return clientService({ peer })
     },
 
     /**
@@ -521,10 +523,7 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      const client = new ClientService(false)
-      client.host = baseUrl
-      client.version = version
-      client.client.http.timeout = timeout
+      const client = clientService({ baseUrl, timeout, version })
 
       let peerStatus
       try {

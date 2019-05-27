@@ -5,8 +5,11 @@ import imageManager from '@/services/image-manager'
 export default {
   computed: {
     allImages () {
-      return flatten(Object.values(this.images))
+      const additional = this.additional ? this.additional : []
+
+      return flatten([ ...Object.values(this.images), ...additional ])
     },
+
     /**
      * Images grouped by category.
      * Instead of using the image path only, each image Object is composed by
@@ -33,14 +36,29 @@ export default {
         return all
       }, {})
     },
+
     selectedItem () {
-      return this.allImages.find(image => image.imagePath === this.selected)
+      return this.allImages.find(image => {
+        if (image.name && this.selected) {
+          if (image.name === this.selected.avatarName) {
+            return true
+          }
+        }
+
+        return image.imagePath === this.selected
+      })
     }
   },
 
   methods: {
-    select ({ imagePath }) {
-      this.$emit('select', imagePath)
+    select (selection) {
+      if (selection.imagePath) {
+        this.$emit('select', selection.imagePath)
+      } else if (selection.component) {
+        this.$emit('select', selection)
+      } else {
+        this.$emit('select', selection)
+      }
     }
   }
 }

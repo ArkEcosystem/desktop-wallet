@@ -11,7 +11,7 @@
       {{ textContent }}
     </span>
     <div
-      v-if="onlyLetter"
+      v-else-if="onlyLetter"
       :class="{
         'pt-5 pb-0': isForModal
       }"
@@ -25,13 +25,23 @@
       </span>
       <ButtonLetter
         :value="label"
-        :size="!isForModal ? '2xl' : null"
+        :size="isForModal ? null : '2xl'"
         :class="{
           'w-24 h-24 text-5xl': isForModal
         }"
         tag="div"
       />
     </div>
+    <div
+      v-else-if="component"
+      :class="{
+        'pt-5 pb-0': isForModal
+      }"
+      class="flex h-full flex-col items-center justify-between"
+    >
+      <Component :is="component" />
+    </div>
+
     <span
       v-if="isSelected"
       class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute pin-b pin-r w-6 h-6 bg-green border-2 border-theme-feature text-white"
@@ -70,6 +80,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    component: {
+      type: [Object, Function],
+      required: false,
+      default: () => {}
     },
     isForModal: {
       type: Boolean,

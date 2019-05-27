@@ -8,7 +8,11 @@
     :disabled="isRefreshing"
     @click="emitClick"
   >
+    <span v-if="text.length && !isRefreshing">
+      {{ text }}
+    </span>
     <SvgIcon
+      v-else
       :class="[
         isRefreshing ? 'rotate-360' : '',
         textClass
@@ -37,6 +41,11 @@ export default {
       default: false
     },
     colorClass: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    text: {
       type: String,
       required: false,
       default: ''

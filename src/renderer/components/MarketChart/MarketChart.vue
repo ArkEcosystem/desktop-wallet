@@ -2,15 +2,16 @@
   <section class="MarketChart w-full flex-column">
     <slot />
     <LineChart
+      v-if="isActive"
       v-show="isReady"
       ref="chart"
       :chart-data="chartData"
       :options="options"
       :height="315"
-      @ready="show"
+      @ready="setReady"
     />
     <div
-      v-if="!isReady"
+      v-if="isActive && !isReady"
       class="MarketChart__Loader__Container"
     >
       <Loader />
@@ -40,6 +41,7 @@ export default {
   },
 
   props: {
+    // Should the chart be rendered?
     isActive: {
       type: Boolean,
       required: false,
@@ -57,8 +59,7 @@ export default {
 
   computed: {
     colours () {
-      return {
-        gradient: ['#666', '#528fe3', '#9c6dd8', '#e15362'],
+      const coloursByTheme = {
         dark: {
           lines: '#787fa3',
           ticks: '#787fa3'
@@ -68,6 +69,24 @@ export default {
           ticks: '#9ea7bc'
         }
       }
+
+      let themeColour = coloursByTheme[this.theme]
+      if (!themeColour) {
+        let mode = 'light'
+        const pluginTheme = this.pluginThemes[this.theme]
+        if (pluginTheme) {
+          mode = pluginTheme.darkMode ? 'dark' : 'light'
+        }
+        themeColour = coloursByTheme[mode]
+      }
+
+      return {
+        ...themeColour,
+        gradient: ['#666', '#528fe3', '#9c6dd8', '#e15362']
+      }
+    },
+    pluginThemes () {
+      return this.$store.getters['plugin/themes']
     },
 
     currency () {
@@ -94,24 +113,18 @@ export default {
 
     ticker () {
       this.renderChart()
-    },
-
-    isActive (val) {
-      if (!val) return // Render the chart when open the component
-
-      this.renderChart()
     }
   },
 
-  mounted () {
-    // Avoid creating the gradient when the element is not built
-    if (this.isActive) {
+  activated () {
+    // Only if it's not already rendered
+    if (this.isActive && !this.isReady) {
       this.renderChart()
     }
   },
 
   methods: {
-    show () {
+    setReady () {
       this.isReady = true
     },
     async renderChart () {
@@ -126,8 +139,8 @@ export default {
         const scaleCorrection = 1000
         const data = response.datasets.map(datum => datum * scaleCorrection)
 
-        const themeGridLines = this.colours[this.theme].lines
-        const themeTicks = this.colours[this.theme].ticks
+        const themeGridLines = this.colours.lines
+        const themeTicks = this.colours.ticks
 
         const fontConfig = {
           fontColor: themeTicks,
@@ -207,6 +220,8 @@ export default {
                       } else {
                         return this.$t(`MARKET_CHART.WEEK.SHORT.${value.toUpperCase()}`)
                       }
+                    } else if (this.period === 'month') {
+                      return value
                     }
 
                     return this.formatHour(value)
@@ -301,17 +316,17 @@ export default {
       if (this.session_profile.timeFormat !== '12h') {
         return time
       } else {
+        let meridiem = 'PM'
         const [hours, minutes] = time.split(':')
         let hour = parseInt(hours)
-        let am = false
         if (hour === 0) {
           hour = 12
         } else if (hour > 12) {
           hour -= 12
         } else {
-          am = true
+          meridiem = 'AM'
         }
-        return `${hour}:${minutes} ${am ? 'AM' : 'PM'}`
+        return `${hour}:${minutes} ${meridiem}`
       }
     }
   }

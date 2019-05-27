@@ -1,8 +1,8 @@
 const delegates = {
   data: [
-    { rank: 1, username: 'first', approval: '1', productivity: '99' },
-    { rank: 2, username: 'second', approval: '2', productivity: '98' },
-    { rank: 3, username: 'third', approval: '3', productivity: '97' }
+    { rank: 1, username: 'first', approval: '1' },
+    { rank: 2, username: 'second', approval: '2' },
+    { rank: 3, username: 'third', approval: '3' }
   ]
 }
 
@@ -13,15 +13,15 @@ delegates.meta = {
 }
 
 delegates.v1 = [
-  { rate: dd[0].rank, username: dd[0].username, approval: dd[0].approval, productivity: dd[0].productivity },
-  { rate: dd[1].rank, username: dd[1].username, approval: dd[1].approval, productivity: dd[1].productivity },
-  { rate: dd[2].rank, username: dd[2].username, approval: dd[2].approval, productivity: dd[2].productivity }
+  { rate: dd[0].rank, username: dd[0].username, approval: dd[0].approval },
+  { rate: dd[1].rank, username: dd[1].username, approval: dd[1].approval },
+  { rate: dd[2].rank, username: dd[2].username, approval: dd[2].approval }
 ]
 
 delegates.v2 = [
-  { rank: dd[0].rank, username: dd[0].username, production: { approval: dd[0].approval, productivity: dd[0].productivity } },
-  { rank: dd[1].rank, username: dd[1].username, production: { approval: dd[1].approval, productivity: dd[1].productivity } },
-  { rank: dd[2].rank, username: dd[2].username, production: { approval: dd[2].approval, productivity: dd[2].productivity } }
+  { rank: dd[0].rank, username: dd[0].username, production: { approval: dd[0].approval } },
+  { rank: dd[1].rank, username: dd[1].username, production: { approval: dd[1].approval } },
+  { rank: dd[2].rank, username: dd[2].username, production: { approval: dd[2].approval } }
 ]
 
 const transactions = {

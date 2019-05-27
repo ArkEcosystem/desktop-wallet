@@ -2,7 +2,7 @@ import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import apiClient, { client as ClientService } from '@/plugins/api-client'
+import apiClient, { client as clientService } from '@/plugins/api-client'
 import store from '@/store'
 import delegates, { delegate1, delegate2 } from '../../__fixtures__/store/delegate'
 import { network1 } from '../../__fixtures__/store/network'
@@ -14,8 +14,8 @@ Vue.use(apiClient)
 const axiosMock = new MockAdapter(axios)
 
 beforeAll(() => {
-  ClientService.version = 1
-  ClientService.host = 'http://127.0.0.1'
+  clientService.version = 1
+  clientService.host = 'http://127.0.0.1'
 
   store.commit('network/SET_ALL', [network1])
   store.commit('profile/CREATE', profile1)
@@ -61,10 +61,8 @@ describe('delegate store module', () => {
         publicKey: delegate.publicKey,
         vote: delegate.voteWeight,
         producedblocks: delegate.blocks.produced,
-        missedblocks: delegate.blocks.missed,
         rate: delegate.rank,
-        approval: delegate.production.approval,
-        productivity: delegate.production.productivity
+        approval: delegate.production.approval
       }
     })
     const v2DelegateData = delegates.map(delegate => {
@@ -75,12 +73,10 @@ describe('delegate store module', () => {
         votes: delegate.voteWeight,
         rank: delegate.rank,
         blocks: {
-          produced: delegate.blocks.produced,
-          missed: delegate.blocks.missed
+          produced: delegate.blocks.produced
         },
         production: {
-          approval: delegate.production.approval,
-          productivity: delegate.production.productivity
+          approval: delegate.production.approval
         },
         forged: {
           fees: delegate.forged.fees,
@@ -100,7 +96,7 @@ describe('delegate store module', () => {
     await store.dispatch('delegate/load')
     const v1Delegates = store.getters['delegate/all']
 
-    ClientService.version = 2
+    clientService.version = 2
 
     axiosMock
       .onGet(`http://127.0.0.1/api/delegates`, { params: { page: 1, limit: 100, orderBy: 'rank:asc' } })

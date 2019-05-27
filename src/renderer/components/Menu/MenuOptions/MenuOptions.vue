@@ -2,7 +2,7 @@
   <div>
     <ul
       :class="classes"
-      class="MenuOptions relative bg-theme-settings list-reset flex flex-col rounded py-5"
+      class="MenuOptions relative bg-theme-settings list-reset flex rounded py-5"
     >
       <slot />
     </ul>
@@ -19,21 +19,31 @@ export default {
       required: false,
       default: false
     },
+
     isSettings: {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    singleColumn: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
   computed: {
     classes () {
-      var classes = this.isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical'
+      let classes = [this.isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical']
       if (!this.isHorizontal) {
-        classes += ' '
-        classes += this.isSettings ? 'MenuOptions__settings--vertical' : 'MenuOptions__default--vertical'
+        classes.push(this.isSettings ? 'MenuOptions__settings--vertical' : 'MenuOptions__default--vertical')
       }
-      return classes
+      if (this.singleColumn) {
+        classes.push('flex-col')
+      }
+
+      return classes.join(' ')
     }
   }
 }

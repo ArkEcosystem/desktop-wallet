@@ -1,7 +1,7 @@
 import bip39 from 'bip39'
-import { crypto, Message, validator } from '@arkecosystem/crypto'
+import { crypto, Message } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
-import axios from 'axios'
+import Http from '@/services/http'
 
 export default class WalletService {
   /*
@@ -69,7 +69,8 @@ export default class WalletService {
     }
 
     const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
-    const response = await axios.get(neoUrl + address)
+    const httpClient = new Http()
+    const response = await httpClient.get(neoUrl + address)
     return response.status === 200 && response.data && response.data.length > 0
   }
 
@@ -139,11 +140,24 @@ export default class WalletService {
    * Check that a username is valid
    *
    * @param {String} username
-   * @return {Object} { data: String, errors: Array, passes: Boolean, fails: Error }
+   * @return {Object} { errors: Array, passes: Boolean }
    */
   static validateUsername (username) {
-    if (!username) return
-    return validator.rules.username(username)
+    let errors = []
+
+    if (username.length < 1) {
+      errors.push({ type: 'empty' })
+    } else if (username.length > 20) {
+      errors.push({ type: 'maxLength' })
+    // Regex from `@arkecosystem/crypto`
+    } else if (!username.match(/^[a-z0-9!@$&_.]+$/)) {
+      errors.push({ type: 'invalidFormat' })
+    }
+
+    return {
+      errors,
+      passes: errors.length === 0
+    }
   }
 
   /**

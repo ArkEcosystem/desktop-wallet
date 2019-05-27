@@ -20,6 +20,6 @@ module.exports = {
     '<rootDir>/__tests__/e2e/pages',
     '<rootDir>/__tests__/unit'
   ],
-  setupTestFrameworkScriptFile: 'jest-extended',
+  setupFilesAfterEnv: ['jest-extended'],
   watchman: false
 }

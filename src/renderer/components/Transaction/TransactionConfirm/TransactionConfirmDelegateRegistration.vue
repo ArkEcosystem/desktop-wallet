@@ -1,5 +1,15 @@
 <template>
   <ListDivided :is-floating-label="true">
+    <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+      {{ senderLabel }}
+      <span
+        v-if="senderLabel !== currentWallet.address"
+        class="text-sm text-theme-page-text-light"
+      >
+        {{ currentWallet.address }}
+      </span>
+    </ListDividedItem>
+
     <ListDividedItem :label="$t('WALLET_DELEGATES.USERNAME')">
       {{ getUsername(transaction) }}
     </ListDividedItem>
@@ -15,11 +25,17 @@ export default {
 
   transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
 
-  inject: ['transaction'],
+  inject: ['currentWallet', 'transaction'],
 
   components: {
     ListDivided,
     ListDividedItem
+  },
+
+  computed: {
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
+    }
   },
 
   methods: {

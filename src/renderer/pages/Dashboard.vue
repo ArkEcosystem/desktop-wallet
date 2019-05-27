@@ -2,7 +2,7 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
-        v-if="!isChartEnabled && isMarketEnabled"
+        v-if="!isChartEnabledOnProfile && isMarketEnabled"
         class="pt-10 px-10 rounded-t-lg text-lg font-semibold mt-1 text-theme-chart-price"
       >
         <span v-if="price">
@@ -13,10 +13,10 @@
       </div>
 
       <div
-        v-if="isChartEnabled && isMarketEnabled"
+        v-if="isChartEnabledOnProfile && isMarketEnabled"
         class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
       >
-        <MarketChart :is-active="isMarketEnabled">
+        <MarketChart :is-active="isActive">
           <MarketChartHeader class="mb-5" />
         </MarketChart>
       </div>
@@ -34,12 +34,19 @@
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
-        <WalletButtonCreate class="mt-6 mb-6 w-1/2" />
-        <WalletButtonImport class="mt-6 mb-6 w-1/2" />
+        <WalletButtonCreate
+          :force-text="true"
+          class="Dashboard__wallets__button"
+        />
+        <WalletButtonImport
+          :force-text="true"
+          class="Dashboard__wallets__button"
+        />
       </div>
       <WalletSidebar
         :show-expanded="true"
         :show-menu="false"
+        :show-filtered-wallets="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>
@@ -64,10 +71,11 @@ export default {
     WalletButtonImport
   },
 
+  data: () => ({
+    isActive: true
+  }),
+
   computed: {
-    isChartEnabled () {
-      return this.$store.getters['session/isMarketChartEnabled']
-    },
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
     },
@@ -79,6 +87,15 @@ export default {
     },
     ticker () {
       return this.session_network.market.ticker
+    },
+    isChartEnabledOnProfile () {
+      return this.session_profile.isMarketChartEnabled
+    }
+  },
+
+  watch: {
+    isChartEnabledOnProfile () {
+      this.isActive = this.isChartEnabledOnProfile
     }
   },
 
@@ -104,6 +121,10 @@ export default {
     store._IS_READY
       ? chooseNext()
       : store._vm.$root.$on('vuex-persist:ready', chooseNext)
+  },
+
+  activated () {
+    this.isActive = this.isChartEnabledOnProfile
   }
 }
 </script>
@@ -126,5 +147,8 @@ export default {
 }
 .Dashboard__wallets__list .WalletSidebar__wallet__ledger-loader .v-spinner {
   @apply mr-3;
+}
+.Dashboard__wallets__button {
+  @apply .mt-6 .mb-6 .w-1/2
 }
 </style>
