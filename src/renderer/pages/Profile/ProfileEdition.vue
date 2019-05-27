@@ -179,14 +179,11 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: name,
-                    onlyLetter: true
-                  }]"
                   :enable-modal="true"
+                  :letter-value="name"
                   :max-visible-items="3"
                   :selected="avatar"
+                  :profile="profile"
                   @select="selectAvatar"
                 />
               </ListDividedItem>
@@ -210,6 +207,16 @@
           >
             <ListDivided>
               <ListDividedItem
+                :label="$t('COMMON.HIDE_WALLET_BUTTON_TEXT')"
+                class="ProfileEdition__wallet-button-text"
+              >
+                <ButtonSwitch
+                  :is-active="hideWalletButtonText"
+                  @change="selectHideWalletButtonText"
+                />
+              </ListDividedItem>
+
+              <ListDividedItem
                 :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
                 :item-label-class="!isMarketEnabled ? 'opacity-50' : ''"
                 :item-value-class="!isMarketEnabled ? 'opacity-50 cursor-not-allowed' : ''"
@@ -226,7 +233,18 @@
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
+                <MenuDropdown
+                  v-if="pluginThemes"
+                  :class="{
+                    'ProfileEdition__field--modified': modified.theme && modified.theme !== profile.theme
+                  }"
+                  :items="themes"
+                  :value="theme"
+                  :position="['-50%', '0%']"
+                  @select="selectTheme"
+                />
                 <SelectionTheme
+                  v-else
                   :value="theme"
                   @input="selectTheme"
                 />
@@ -397,6 +415,9 @@ export default {
     theme () {
       return this.modified.theme || this.profile.theme
     },
+    hideWalletButtonText () {
+      return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText
+    },
     isMarketChartEnabled () {
       return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
     },
@@ -422,6 +443,14 @@ export default {
       }
 
       return null
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
@@ -491,7 +520,22 @@ export default {
     },
 
     selectAvatar (avatar) {
-      this.__updateSession('avatar', avatar)
+      let newAvatar
+
+      if (typeof avatar === 'string') {
+        newAvatar = avatar
+      } else if (avatar.onlyLetter) {
+        newAvatar = null
+      } else if (avatar.name) {
+        newAvatar = {
+          avatarName: avatar.name,
+          pluginId: avatar.pluginId
+        }
+      } else {
+        throw new Error(`Invalid value for avatar: ${avatar}`)
+      }
+
+      this.__updateSession('avatar', newAvatar)
     },
 
     async selectBackground (background) {
@@ -520,6 +564,10 @@ export default {
 
     async selectTheme (theme) {
       this.__updateSession('theme', theme)
+    },
+
+    async selectHideWalletButtonText (hideWalletButtonText) {
+      this.__updateSession('hideWalletButtonText', hideWalletButtonText)
     },
 
     async selectIsMarketChartEnabled (isMarketChartEnabled) {

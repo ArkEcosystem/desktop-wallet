@@ -7,7 +7,7 @@ export default {
 
   props: {
     selected: {
-      type: String,
+      type: [String, Object],
       required: false,
       default: null
     }

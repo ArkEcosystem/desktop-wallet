@@ -50,4 +50,85 @@ describe('Services > Wallet', () => {
       expect(WalletService.getAddress(passphrase, 30)).toEqual(address)
     })
   })
+
+  describe('validateUsername', () => {
+    it('should work OK', () => {
+      const username = 'example'
+      expect(WalletService.validateUsername(username)).toEqual({
+        passes: true,
+        errors: []
+      })
+    })
+
+    it('should not be empty', () => {
+      const username = ''
+      expect(WalletService.validateUsername(username)).toEqual({
+        passes: false,
+        errors: [{ type: 'empty' }]
+      })
+    })
+
+    it('should admit 20 characters at most', () => {
+      const username = 'asdf1234asdf1234asdf1234'
+      expect(WalletService.validateUsername(username)).toEqual({
+        passes: false,
+        errors: [{ type: 'maxLength' }]
+      })
+    })
+
+    it('should not admit uppercase characters', () => {
+      const username = 'eXamPLe'
+      expect(WalletService.validateUsername(username)).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+    })
+
+    it('should admit only alphanumeric characters and some symbols', () => {
+      expect(WalletService.validateUsername('a!5@$&_.')).toEqual({
+        passes: true,
+        errors: []
+      })
+
+      expect(WalletService.validateUsername('~ll')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('a#')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('a%0')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('(a)')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('a}a{')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('a[a]')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('a+a')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+
+      expect(WalletService.validateUsername('a-a')).toEqual({
+        passes: false,
+        errors: [{ type: 'invalidFormat' }]
+      })
+    })
+  })
 })

@@ -2,14 +2,12 @@
   <div
     v-if="isReady"
     id="app"
-    :class="{
-      'theme-dark': session_hasDarkTheme,
-      'theme-light': !session_hasDarkTheme,
+    :class="[themeClass, {
       'background-image': background,
       windows: isWindows,
       mac: isMac,
       linux: isLinux
-    }"
+    }]"
     class="App bg-theme-page text-theme-page-text font-sans"
   >
     <div
@@ -92,6 +90,8 @@
 
 <script>
 import '@/styles/style.css'
+import fs from 'fs'
+import CleanCss from 'clean-css'
 import { isEmpty, pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
@@ -166,6 +166,21 @@ export default {
       return this.$route.matched.length
         ? this.$route.matched[0].components.default.name
         : null
+    },
+    pluginThemes () {
+      return this.$store.getters['plugin/themes']
+    },
+    theme () {
+      const theme = this.$store.getters['session/theme']
+      const defaultThemes = ['light', 'dark']
+
+      // Ensure that the plugin theme is available (not deleted from the file system)
+      return defaultThemes.includes(theme) || this.pluginThemes[theme]
+        ? theme
+        : defaultThemes[0]
+    },
+    themeClass () {
+      return `theme-${this.theme}`
     }
   },
 
@@ -205,6 +220,12 @@ export default {
           this.aliveRouteComponents = aliveRouteComponents
         }
       }
+    },
+    pluginThemes (value, oldValue) {
+      this.applyPluginTheme(this.theme)
+    },
+    theme (value, oldValue) {
+      this.applyPluginTheme(value)
     }
   },
 
@@ -244,6 +265,8 @@ export default {
 
   methods: {
     async loadEssential () {
+      // We need to await plugins in order for all plugins to load properly
+      await this.$plugins.init(this)
       await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
@@ -343,6 +366,23 @@ export default {
           node = node.parentNode
         }
       })
+    },
+
+    /**
+     * Webpack cannot require assets without knowing the path or, at least, part of it
+     * (https://webpack.js.org/guides/dependency-management/#require-context), so,
+     * instead of that, those assets are loaded manually and then injected directly on the DOM.
+     */
+    applyPluginTheme (themeName) {
+      if (themeName && this.pluginThemes) {
+        const theme = this.pluginThemes[themeName]
+        if (theme) {
+          const $style = document.querySelector('style[name=plugins]')
+          const input = fs.readFileSync(theme.cssPath)
+          const output = new CleanCss().minify(input)
+          $style.innerHTML = output.styles
+        }
+      }
     }
   }
 }

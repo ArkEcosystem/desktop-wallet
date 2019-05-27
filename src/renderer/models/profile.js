@@ -1,3 +1,4 @@
+import { isBoolean } from 'lodash'
 import BaseModel from './base'
 
 export default new BaseModel({
@@ -9,8 +10,29 @@ export default new BaseModel({
       maxLength: 16
     },
     avatar: {
-      type: 'string',
-      minLength: 1
+      anyOf: [
+        // Images provided by the app
+        {
+          type: 'string',
+          minLength: 1
+        },
+        // Images provided by the plugins
+        {
+          type: 'object',
+          properties: {
+            avatarName: {
+              type: 'string'
+            },
+            pluginId: {
+              type: 'string'
+            }
+          }
+        },
+        // No avatar (use name first character)
+        {
+          type: 'null'
+        }
+      ]
     },
     background: {
       type: 'string',
@@ -24,6 +46,10 @@ export default new BaseModel({
     timeFormat: {
       type: 'string',
       default: 'Default'
+    },
+    hideWalletButtonText: {
+      type: 'boolean',
+      format: data => data.hideWalletButtonText !== undefined ? data.hideWalletButtonText : false
     },
     isMarketChartEnabled: {
       type: 'boolean',
@@ -59,6 +85,10 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.ledgerCache || false
     },
+    showPluginConfirmation: {
+      type: 'boolean',
+      format: data => isBoolean(data.showPluginConfirmation) ? data.showPluginConfirmation : true
+    },
     transactionTableRowCount: {
       type: 'integer',
       format: data => data.transactionTableRowCount || 10
@@ -71,6 +101,14 @@ export default new BaseModel({
       type: 'string',
       format: data => data.walletLayout || 'grid'
     },
+    walletSidebarSortParams: {
+      type: 'object',
+      format: data => data.walletSidebarSortParams || { field: 'name', type: 'asc' }
+    },
+    walletSidebarFilters: {
+      type: 'object',
+      format: data => data.walletSidebarFilters || {}
+    },
     walletSortParams: {
       type: 'object',
       format: data => data.walletSortParams || { field: 'balance', type: 'desc' }
@@ -78,6 +116,10 @@ export default new BaseModel({
     contactSortParams: {
       type: 'object',
       format: data => data.contactSortParams || { field: 'name', type: 'asc' }
+    },
+    pluginSortParams: {
+      type: 'object',
+      format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

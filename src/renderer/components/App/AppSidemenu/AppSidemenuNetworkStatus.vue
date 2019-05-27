@@ -25,7 +25,7 @@
           {{ $t('PEER.DISCONNECT') }}
         </span>
       </div>
-      <div class="bg-theme-settings-sub inline-block mx-6 rounded-l text-white relative px-3 py-2 inline-block select-none cursor-pointer">
+      <div class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <button
           @click.stop="toggleSelect('peers-menu')"
         >
@@ -49,24 +49,23 @@
           :is-refreshing="isRefreshing"
           text-class="hover:text-white"
           color-class="AppSidemenuNetworkStatus__ButtonReload-colorClass"
-          class="AppSidemenuNetworkStatus__refresh-button hover:text-white bg-theme-settings-button absolute pin-t pin-r pin-b px-2 text-grey-dark"
+          class="AppSidemenuNetworkStatus__refresh__button hover:text-white bg-theme-settings-button absolute text-grey-dark"
           @click="refreshPeer"
         />
         <button
           v-else-if="!isRefreshing"
-          class="bg-theme-settings-button w-12 absolute pin-t pin-r pin-b cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+          class="AppSidemenuNetworkStatus__refresh__button AppSidemenuNetworkStatus__refresh__button--disconnect bg-theme-settings-button w-12 absolute cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
           @click="refreshPeer"
         >
           <SvgIcon
-            name="cross"
+            name="disconnect"
             view-box="0 0 16 15"
-            class="AppSidemenuNetworkStatus__refresh-button"
           />
         </button>
         <ButtonReload
           v-else
           :is-refreshing="true"
-          class="AppSidemenuNetworkStatus__refresh-button bg-theme-settings-button absolute pin-t pin-r pin-b px-2"
+          class="AppSidemenuNetworkStatus__refresh__button bg-theme-settings-button absolute"
         />
       </div>
       <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
@@ -280,6 +279,18 @@ export default {
 .AppSidemenuNetworkStatus__status__last-checked,
 .AppSidemenuNetworkStatus__status__delay {
   @apply .text-theme-settings-heading .border-theme-settings-border
+}
+
+.AppSidemenuNetworkStatus__refresh__button {
+  bottom: .25rem;
+  right: .25rem;
+  top: .25rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  padding-top: 7px;
+}
+.AppSidemenuNetworkStatus__refresh__button--disconnect {
+  padding-top: 0px !important;
 }
 
 .AppSidemenuNetworkStatus .MenuOptions--vertical:after {

@@ -3,6 +3,18 @@
     class="flex flex-col"
     @submit.prevent
   >
+    <ListDivided :is-floating-label="true">
+      <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+        {{ senderLabel }}
+        <span
+          v-if="senderLabel !== currentWallet.address"
+          class="text-sm text-theme-page-text-light"
+        >
+          {{ currentWallet.address }}
+        </span>
+      </ListDividedItem>
+    </ListDivided>
+
     <WalletSelection
       v-if="schema && schema.address"
       v-model="$v.wallet.$model"
@@ -142,6 +154,7 @@
 import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES, V1, VENDOR_FIELD } from '@config'
 import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
@@ -160,6 +173,8 @@ export default {
     InputSwitch,
     InputText,
     InputFee,
+    ListDivided,
+    ListDividedItem,
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
@@ -219,6 +234,9 @@ export default {
 
       return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
     },
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
+    },
     senderWallet () {
       return this.wallet
     },
@@ -229,11 +247,9 @@ export default {
       }
 
       const profile = this.$store.getters['profile/byId'](this.currentWallet.profileId)
-
       if (!profile.id) {
         return sessionNetwork
       }
-
       return this.$store.getters['network/byId'](profile.networkId) || sessionNetwork
     },
     currentWallet: {
@@ -248,8 +264,15 @@ export default {
       return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.vendorFieldMaxLength])}`
     },
     vendorFieldHelperText () {
-      if (this.form.vendorField.length === this.vendorFieldMaxLength) {
+      const vendorFieldLength = this.form.vendorField.length
+
+      if (vendorFieldLength === this.vendorFieldMaxLength) {
         return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [this.vendorFieldMaxLength])
+      } else if (vendorFieldLength) {
+        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REMAINING', [
+          this.vendorFieldMaxLength - vendorFieldLength,
+          this.vendorFieldMaxLength
+        ])
       }
       return null
     },
@@ -333,7 +356,8 @@ export default {
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
