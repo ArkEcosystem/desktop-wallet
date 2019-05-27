@@ -38,6 +38,11 @@ const router = new Router({
       component: require('@/pages/NetworkOverview').default
     },
     {
+      path: '/plugins',
+      name: 'plugins',
+      component: require('@/pages/Plugins').default
+    },
+    {
       path: '/profiles/new',
       name: 'profile-new',
       component: require('@/pages/Profile/ProfileNew').default

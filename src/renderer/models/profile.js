@@ -1,3 +1,4 @@
+import { isBoolean } from 'lodash'
 import BaseModel from './base'
 
 export default new BaseModel({
@@ -9,8 +10,29 @@ export default new BaseModel({
       maxLength: 16
     },
     avatar: {
-      type: 'string',
-      minLength: 1
+      anyOf: [
+        // Images provided by the app
+        {
+          type: 'string',
+          minLength: 1
+        },
+        // Images provided by the plugins
+        {
+          type: 'object',
+          properties: {
+            avatarName: {
+              type: 'string'
+            },
+            pluginId: {
+              type: 'string'
+            }
+          }
+        },
+        // No avatar (use name first character)
+        {
+          type: 'null'
+        }
+      ]
     },
     background: {
       type: 'string',
@@ -63,6 +85,10 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.ledgerCache || false
     },
+    showPluginConfirmation: {
+      type: 'boolean',
+      format: data => isBoolean(data.showPluginConfirmation) ? data.showPluginConfirmation : true
+    },
     transactionTableRowCount: {
       type: 'integer',
       format: data => data.transactionTableRowCount || 10
@@ -90,6 +116,10 @@ export default new BaseModel({
     contactSortParams: {
       type: 'object',
       format: data => data.contactSortParams || { field: 'name', type: 'asc' }
+    },
+    pluginSortParams: {
+      type: 'object',
+      format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

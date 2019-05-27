@@ -88,11 +88,7 @@
                 </div>
                 <SelectionAvatar
                   :selected="schema.avatar"
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: schema.name,
-                    onlyLetter: true
-                  }]"
+                  :letter-value="schema.name"
                   @select="selectAvatar"
                 />
               </div>
@@ -166,7 +162,9 @@
                     {{ $t('PAGES.PROFILE_NEW.STEP3.THEME') }}
                   </p>
                 </div>
-                <SelectionTheme v-model="theme" />
+                <SelectionTheme
+                  v-model="theme"
+                />
               </div>
 
               <div class="flex items-center justify-between">
@@ -332,8 +330,16 @@ export default {
     this.schema.currency = this.currency
     this.schema.isMarketChartEnabled = this.isMarketChartEnabled
     this.schema.language = this.language
-    this.schema.theme = this.theme
     this.schema.timeFormat = this.timeFormat
+
+    // In case we came from a profile using a plugin theme, revert back to default
+    const defaultThemes = ['light', 'dark']
+    this.schema.theme = defaultThemes.includes(this.theme)
+      ? this.theme
+      : defaultThemes[0]
+    if (this.schema.theme !== this.$store.getters['session/theme']) {
+      this.$store.dispatch('session/setTheme', this.schema.theme)
+    }
   },
 
   destroyed () {
@@ -359,7 +365,18 @@ export default {
     },
 
     selectAvatar (avatar) {
-      this.schema.avatar = avatar
+      if (typeof avatar === 'string') {
+        this.schema.avatar = avatar
+      } else if (avatar.onlyLetter) {
+        this.schema.avatar = null
+      } else if (avatar.name) {
+        this.schema.avatar = {
+          avatarName: avatar.name,
+          pluginId: avatar.pluginId
+        }
+      } else {
+        throw new Error(`Invalid value for avatar: ${avatar}`)
+      }
     },
 
     async selectBackground (background) {

@@ -88,6 +88,7 @@
 </template>
 
 <script>
+import { format } from 'util'
 import { InputSwitch } from '@/components/Input'
 import { MARKET } from '@config'
 
@@ -105,7 +106,7 @@ export default {
 
   computed: {
     hasDarkTheme () {
-      return this.$store.getters['session/hasDarkTheme']
+      return this.session_hasDarkTheme
     },
 
     currentNetwork () {
@@ -126,16 +127,16 @@ export default {
     },
 
     changellyWidgetURL () {
-      const to = this.currentNetwork.token
-      const address = this.wallet_fromRoute.address
       const from = this.currentCurrency
-      const amount = MARKET.crypto.includes(from) ? 1 : 300
-      const theme = 'aqua'
+      const baseUrl = 'https://widget.changelly.com?fiat=true&currencies=*&fixedTo=true&merchant_id=bab9de3731aa&theme=aqua'
 
-      const baseUrl = 'https://widget.changelly.com?fiat=true&'
-      const params = `from=${from.toLowerCase()}&to=${to.toLowerCase()}&address=${address}&amount=${amount}&theme=${theme}`
-
-      return baseUrl + params
+      return format(
+        baseUrl + '&from=%s&to=%s&address=%s&amount=%d',
+        from,
+        this.currentNetwork.token,
+        this.wallet_fromRoute.address,
+        MARKET.crypto.includes(from) ? 1 : 300
+      )
     }
   },
 

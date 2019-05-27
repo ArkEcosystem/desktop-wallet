@@ -179,14 +179,11 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: name,
-                    onlyLetter: true
-                  }]"
                   :enable-modal="true"
+                  :letter-value="name"
                   :max-visible-items="3"
                   :selected="avatar"
+                  :profile="profile"
                   @select="selectAvatar"
                 />
               </ListDividedItem>
@@ -236,7 +233,18 @@
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
+                <MenuDropdown
+                  v-if="pluginThemes"
+                  :class="{
+                    'ProfileEdition__field--modified': modified.theme && modified.theme !== profile.theme
+                  }"
+                  :items="themes"
+                  :value="theme"
+                  :position="['-50%', '0%']"
+                  @select="selectTheme"
+                />
                 <SelectionTheme
+                  v-else
                   :value="theme"
                   @input="selectTheme"
                 />
@@ -434,6 +442,14 @@ export default {
       }
 
       return null
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
@@ -510,7 +526,22 @@ export default {
     },
 
     selectAvatar (avatar) {
-      this.__updateSession('avatar', avatar)
+      let newAvatar
+
+      if (typeof avatar === 'string') {
+        newAvatar = avatar
+      } else if (avatar.onlyLetter) {
+        newAvatar = null
+      } else if (avatar.name) {
+        newAvatar = {
+          avatarName: avatar.name,
+          pluginId: avatar.pluginId
+        }
+      } else {
+        throw new Error(`Invalid value for avatar: ${avatar}`)
+      }
+
+      this.__updateSession('avatar', newAvatar)
     },
 
     async selectBackground (background) {
