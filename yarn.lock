@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/7zip/-/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
   integrity sha1-nK+xca+CMpSQNTtIFvAzR6oVCjA=
 
-"@arkecosystem/client@^0.1.20":
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.20.tgz#950d0e451521299f4f91d08b6e75de57ba8e5dfd"
-  integrity sha512-ka6y2pELzxcpn2dJf0+JXNBeOb7RY3gjxneIhcCGbUDQIsRzsxxDRGzDXs52h4xAS8V+mKOFDaU44bmHnnQLJA==
+"@arkecosystem/client@^0.1.23":
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-0.1.23.tgz#0dfd29e8c01d668f3edfce471838ef0fd130adf6"
+  integrity sha512-Gz2e+A7nNzSpNM3d4sywxHZfISwP9Jwm1SVreUu66W2jgVl68rCPFTZWiMBuoaKJly5ZZR2t1q5i0Ymqy0/yqQ==
   dependencies:
     axios "^0.18.0"
     lodash.clonedeep "^4.5.0"
@@ -2889,7 +2889,7 @@ clean-css@3.4.x:
     commander "2.8.x"
     source-map "0.4.x"
 
-clean-css@4.2.x:
+clean-css@4.2.x, clean-css@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
   integrity sha512-4ZxI6dy4lrY6FHzfiy1aEOXgu4LIsW2MhwG0VBKdcoGoH/XLFgaHSdLTGr4O8Be6A8r3MOphEiI8Gc1n0ecf3g==
@@ -5261,7 +5261,7 @@ fs-extra@^4.0.1, fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^7.0.0:
+fs-extra@^7.0.0, fs-extra@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
   integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
@@ -11943,6 +11943,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vm2@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.8.1.tgz#82ac7845009aee79852429da49f0f4f114c644e5"
+  integrity sha512-ecR1+KFuP7KK2hpo8ItamW0F9pq4dJOd4o+r6OWvAsx2eXGPshP6uKE24qepGshT8v+TF0jpnzugFJak42LuZQ==
+
 vue-chartjs@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/vue-chartjs/-/vue-chartjs-3.4.2.tgz#0323e6a99a10a68f38d426899c3994f48596fd23"
@@ -11994,10 +11999,10 @@ vue-html-loader@^1.2.4:
     loader-utils "^1.0.2"
     object-assign "^4.1.0"
 
-vue-i18n-extract@^0.4.10:
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/vue-i18n-extract/-/vue-i18n-extract-0.4.10.tgz#598c325c9f12395d3dd1c95d0f77e67638d3de34"
-  integrity sha512-HJ9ORHreEZ5D081xw3+Oh4N1cHodNyvtTkwub+S37T/aoBvcP+cL6bBOjWw+bGHX0jJ7Pv3sxdLE3HaZrfgsGA==
+vue-i18n-extract@^0.4.14:
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/vue-i18n-extract/-/vue-i18n-extract-0.4.14.tgz#ed48137944b562fec67bca41a9dcaaee93909738"
+  integrity sha512-gfbhyOU+zo8/dg1kHudBGHTJx9cvS7bsO2G/3mvSjzb3jCIu/HSbBT/EFaJMbo3y82zODq9+ehZZyVj5UH2qNA==
   dependencies:
     cli-table3 "^0.5.1"
     dot-object "^1.7.1"

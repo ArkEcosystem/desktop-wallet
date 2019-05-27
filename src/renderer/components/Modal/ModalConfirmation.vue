@@ -2,6 +2,7 @@
   <ModalWindow
     :container-classes="containerClasses"
     :title="title"
+    :message="footer"
     :portal-target="portalTarget"
     @close="emitClose"
   >
@@ -17,6 +18,7 @@
         <div
           v-if="note"
           class="mt-3 text-grey-darker text-lg"
+          :class="note ? 'mb-8' : ''"
         >
           {{ note }}
         </div>
@@ -72,6 +74,11 @@ export default {
       default () {
         return this.$t('MODAL_CONFIRMATION.CONTINUE')
       }
+    },
+    footer: {
+      type: String,
+      required: false,
+      default: ''
     },
     note: {
       type: String,

@@ -21,11 +21,6 @@ export default {
   mixins: [selectionMixin, selectionImageMixin],
 
   props: {
-    extraItems: {
-      type: Array,
-      required: false,
-      default: () => ([])
-    },
     categories: {
       type: Array,
       required: false,
@@ -35,6 +30,16 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    letterValue: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    profile: {
+      type: Object,
+      required: false,
+      default: () => null
     }
   },
 
@@ -48,9 +53,32 @@ export default {
     availableAvatars () {
       const images = { ...this.images }
       const key = Object.keys(images)[0]
-      images[key] = [...this.extraItems, ...images[key]]
+      images[key] = [this.letterAvatar, ...images[key]]
+      if (this.pluginAvatars && this.pluginAvatars.length) {
+        images[this.$t('SELECTION_AVATAR.ADDITIONAL_AVATARS')] = this.pluginAvatars
+      }
 
       return images
+    },
+
+    letterAvatar () {
+      return {
+        title: this.$t('SELECTION_AVATAR.NO_AVATAR'),
+        textContent: this.letterValue,
+        onlyLetter: true
+      }
+    },
+
+    additional () {
+      return this.pluginAvatars
+    },
+
+    pluginAvatars () {
+      if (!this.profile || !this.profile.id) {
+        return []
+      }
+
+      return this.$store.getters['plugin/avatars'](this.profile.id)
     }
   }
 }

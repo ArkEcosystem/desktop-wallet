@@ -121,8 +121,8 @@ export default {
       this.emitClose(true)
     },
 
-    emitClose (force = false) {
-      this.$emit('close')
+    emitClose (closeMenu = false) {
+      this.$emit('close', closeMenu)
     }
   },
 

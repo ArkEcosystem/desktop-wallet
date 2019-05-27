@@ -10,9 +10,9 @@
     >
       <MenuTabItem
         v-for="tab in tabs"
-        :key="tab.component"
+        :key="tab.componentName"
         :label="tab.text"
-        :tab="tab.component"
+        :tab="tab.componentName"
       >
         <Component
           :is="tab.component"
@@ -87,15 +87,6 @@
             >
               <strong place="rank">
                 {{ votedDelegate.rank }}
-              </strong>
-            </i18n>
-            <i18n
-              tag="span"
-              class="font-semibold pl-6"
-              path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
-            >
-              <strong place="productivity">
-                {{ getProductivity() }}
               </strong>
             </i18n>
           </template>
@@ -195,14 +186,20 @@ export default {
   },
 
   computed: {
+    pluginTabs () {
+      return this.$store.getters['plugin/walletTabs']
+    },
+
     tabs () {
       let tabs = [
         {
           component: 'WalletTransactions',
+          componentName: 'WalletTransactions',
           text: this.$t('PAGES.WALLET.TRANSACTIONS')
         },
         {
           component: 'WalletDelegates',
+          componentName: 'WalletDelegates',
           text: this.$t('PAGES.WALLET.DELEGATES')
         }
       ]
@@ -210,6 +207,7 @@ export default {
       if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
         tabs.push({
           component: 'WalletSignVerify',
+          componentName: 'WalletSignVerify',
           text: this.$t('PAGES.WALLET.SIGN_VERIFY')
         })
       }
@@ -217,6 +215,7 @@ export default {
       if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
         tabs.push({
           component: 'WalletExchange',
+          componentName: 'WalletExchange',
           text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
         })
       }
@@ -228,6 +227,16 @@ export default {
       //     text: this.$t('PAGES.WALLET.STATISTICS')
       //   })
       // }
+
+      if (this.pluginTabs) {
+        this.pluginTabs.forEach(pluginTab => {
+          tabs.push({
+            component: pluginTab.component,
+            componentName: pluginTab.componentName,
+            text: pluginTab.tabTitle
+          })
+        })
+      }
 
       return tabs
     },
@@ -360,11 +369,6 @@ export default {
       } finally {
         this.isLoadingVote = false
       }
-    },
-
-    getProductivity () {
-      const productivity = this.votedDelegate.production.productivity
-      return this.formatter_percentage(productivity)
     },
 
     openUnvote () {

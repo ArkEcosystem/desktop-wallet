@@ -1,5 +1,5 @@
 import bip39 from 'bip39'
-import { crypto, Message, validator } from '@arkecosystem/crypto'
+import { crypto, Message } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import Http from '@/services/http'
 
@@ -140,11 +140,24 @@ export default class WalletService {
    * Check that a username is valid
    *
    * @param {String} username
-   * @return {Object} { data: String, errors: Array, passes: Boolean, fails: Error }
+   * @return {Object} { errors: Array, passes: Boolean }
    */
   static validateUsername (username) {
-    if (!username) return
-    return validator.rules.username(username)
+    let errors = []
+
+    if (username.length < 1) {
+      errors.push({ type: 'empty' })
+    } else if (username.length > 20) {
+      errors.push({ type: 'maxLength' })
+    // Regex from `@arkecosystem/crypto`
+    } else if (!username.match(/^[a-z0-9!@$&_.]+$/)) {
+      errors.push({ type: 'invalidFormat' })
+    }
+
+    return {
+      errors,
+      passes: errors.length === 0
+    }
   }
 
   /**
