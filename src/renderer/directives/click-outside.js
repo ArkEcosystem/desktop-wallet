@@ -1,16 +1,27 @@
 export default {
-  bind (element, binding, vnode) {
+  bind (element, { modifiers, value }, vnode) {
     element.clickOutsideEvent = event => {
       const path = event.path || (event.composedPath ? event.composedPath() : undefined)
 
-      if ((path ? path.indexOf(element) < 0 : !element.contains(event.target))) {
-        return binding.value.call(vnode.context, event)
+      if (path ? path.indexOf(element) < 0 : !element.contains(event.target)) {
+        value.call(vnode.context, event)
+      }
+
+      if (modifiers.stop) {
+        event.stopPropagation()
       }
     }
 
-    document.documentElement.addEventListener('click', element.clickOutsideEvent, false)
+    const options = {
+      capture: modifiers.capture || false
+    }
+    document.documentElement.addEventListener('click', element.clickOutsideEvent, options)
   },
-  unbind (element) {
-    document.documentElement.removeEventListener('click', element.clickOutsideEvent, false)
+
+  unbind (element, { modifiers }) {
+    const options = {
+      capture: modifiers.capture || false
+    }
+    document.documentElement.removeEventListener('click', element.clickOutsideEvent, options)
   }
 }

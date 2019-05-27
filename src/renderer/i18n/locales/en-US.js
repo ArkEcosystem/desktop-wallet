@@ -17,6 +17,7 @@ export default {
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
@@ -161,7 +162,8 @@ export default {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     VENDOR_FIELD: {
-      LIMIT_REACHED: 'You can enter maximum {0} characters only'
+      LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
+      LIMIT_REMAINING: '{0}/{1} Remaining'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -596,7 +598,8 @@ export default {
       LEDGER: {
         CACHE: 'Cache ledger wallets?',
         CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
-        ADDITIONAL: '# of Ledger Wallets'
+        ADDITIONAL: 'Load Additional Ledger Wallets',
+        OPTIONS: 'Ledger Options'
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
@@ -898,7 +901,7 @@ export default {
   WALLET_SECOND_SIGNATURE: {
     NEW: 'Generate new second passphrase',
     ALREADY_REGISTERED: 'There is already a second passphrase registered for this address',
-    INSTRUCTIONS: 'This is your second passphrase. Make sure to make a backup and keep it somewhere safe!'
+    INSTRUCTIONS: 'You will need both 12 word passphrases to interact with the network. Keep them safe!'
   },
 
   WALLET_SIDEBAR: {
