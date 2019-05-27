@@ -9,11 +9,14 @@ export default {
     background: null,
     currency: null,
     language: null,
+    hideWalletButtonText: false,
     isMarketChartEnabled: true,
     name: null,
     profileId: null,
     theme: null,
     walletLayout: null,
+    walletSidebarSortParams: null,
+    walletSidebarFilters: null,
     walletSortParams: null,
     contactSortParams: null,
     contentProtection: true,
@@ -52,9 +55,12 @@ export default {
     background: state => state.background,
     currency: state => state.currency,
     timeFormat: state => state.timeFormat,
+    hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
+    walletSidebarSortParams: state => state.walletSidebarSortParams,
+    walletSidebarFilters: state => state.walletSidebarFilters,
     walletSortParams: state => state.walletSortParams,
     contactSortParams: state => state.contactSortParams,
     language: state => state.language,
@@ -87,6 +93,10 @@ export default {
       state.timeFormat = format
     },
 
+    SET_HIDE_WALLET_BUTTON_TEXT (state, isHidden) {
+      state.hideWalletButtonText = isHidden
+    },
+
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
       state.isMarketChartEnabled = isEnabled
     },
@@ -113,6 +123,14 @@ export default {
 
     SET_WALLET_LAYOUT (state, walletLayout) {
       state.walletLayout = walletLayout
+    },
+
+    SET_WALLET_SIDEBAR_SORT_PARAMS (state, params) {
+      state.walletSidebarSortParams = params
+    },
+
+    SET_WALLET_SIDEBAR_FILTERS (state, filters) {
+      state.walletSidebarFilters = filters
     },
 
     SET_WALLET_TABLE_SORT_PARAMS (state, walletSortParams) {
@@ -152,12 +170,15 @@ export default {
       state.background = null
       state.currency = MARKET.defaultCurrency
       state.timeFormat = 'Default'
+      state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
       state.walletLayout = 'grid'
+      state.walletSidebarSortParams = { field: 'name', type: 'asc' }
+      state.walletSidebarFilters = {}
       state.walletSortParams = { field: 'balance', type: 'desc' }
       state.contactSortParams = { field: 'name', type: 'asc' }
       state.backgroundUpdateLedger = true
@@ -175,12 +196,15 @@ export default {
       state.background = value.background
       state.currency = value.currency
       state.timeFormat = value.timeFormat
+      state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
       state.language = value.language
       state.bip39Language = value.bip39Language
       state.name = value.name
       state.theme = value.theme
       state.walletLayout = value.walletLayout
+      state.walletSidebarSortParams = value.walletSidebarSortParams
+      state.walletSidebarFilters = value.walletSidebarFilters
       state.walletSortParams = value.walletSortParams
       state.contactSortParams = value.contactSortParams
       state.backgroundUpdateLedger = value.backgroundUpdateLedger
@@ -228,6 +252,10 @@ export default {
       commit('SET_TIME_FORMAT', value)
     },
 
+    setHideWalletButtonText ({ commit }, value) {
+      commit('SET_HIDE_WALLET_BUTTON_TEXT', value)
+    },
+
     setIsMarketChartEnabled ({ commit }, value) {
       commit('SET_IS_MARKET_CHART_ENABLED', value)
     },
@@ -272,6 +300,14 @@ export default {
 
     setWalletLayout ({ commit }, value) {
       commit('SET_WALLET_LAYOUT', value)
+    },
+
+    setWalletSidebarSortParams ({ commit }, value) {
+      commit('SET_WALLET_SIDEBAR_SORT_PARAMS', value)
+    },
+
+    setWalletSidebarFilters ({ commit }, value) {
+      commit('SET_WALLET_SIDEBAR_FILTERS', value)
     },
 
     setWalletSortParams ({ commit }, value) {

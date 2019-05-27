@@ -248,8 +248,15 @@ export default {
       return `${this.$t('TRANSACTION.VENDOR_FIELD')} - ${this.$t('VALIDATION.MAX_LENGTH', [this.vendorFieldMaxLength])}`
     },
     vendorFieldHelperText () {
-      if (this.form.vendorField.length === this.vendorFieldMaxLength) {
+      const vendorFieldLength = this.form.vendorField.length
+
+      if (vendorFieldLength === this.vendorFieldMaxLength) {
         return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REACHED', [this.vendorFieldMaxLength])
+      } else if (vendorFieldLength) {
+        return this.$t('VALIDATION.VENDOR_FIELD.LIMIT_REMAINING', [
+          this.vendorFieldMaxLength - vendorFieldLength,
+          this.vendorFieldMaxLength
+        ])
       }
       return null
     },

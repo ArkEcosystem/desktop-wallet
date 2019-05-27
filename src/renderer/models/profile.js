@@ -25,6 +25,10 @@ export default new BaseModel({
       type: 'string',
       default: 'Default'
     },
+    hideWalletButtonText: {
+      type: 'boolean',
+      format: data => data.hideWalletButtonText !== undefined ? data.hideWalletButtonText : false
+    },
     isMarketChartEnabled: {
       type: 'boolean',
       format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
@@ -70,6 +74,14 @@ export default new BaseModel({
     walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'
+    },
+    walletSidebarSortParams: {
+      type: 'object',
+      format: data => data.walletSidebarSortParams || { field: 'name', type: 'asc' }
+    },
+    walletSidebarFilters: {
+      type: 'object',
+      format: data => data.walletSidebarFilters || {}
     },
     walletSortParams: {
       type: 'object',
