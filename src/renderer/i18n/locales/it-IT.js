@@ -258,7 +258,7 @@ export default {
     QUESTION: 'Sei sicuro di voler abilitare il sistema di plugin?',
     NO: 'No, tienilo disabilitato',
     YES: 'Sì, abilitalo',
-    NOTICE: 'ATTENZIONE: questo sistema è attualmente in BETA. Tutti i plugin non ufficiali sono utilizzati a proprio rischio. Al momento non possiamo verificare la sicurezza di qualsiasi plug-in di terze parti e tutti i test sulla sicurezza e la scoperta delle vulnerabilità sono responsabilità dell\'autore del plug-in. Accettando questo avviso, l\'utente riconosce di utilizzare plugin di terze parti a proprio rischio.',
+    NOTICE: 'ATTENZIONE: questo sistema è attualmente in BETA. Tutti i plugin non ufficiali sono utilizzati a proprio rischio. Al momento non possiamo verificare la sicurezza di qualsiasi plugin di terze parti e tutti i test sulla sicurezza e la scoperta delle vulnerabilità sono responsabilità dell\'autore del plugin. Accettando questo avviso, l\'utente riconosce di utilizzare plugin di terze parti a proprio rischio.',
     WARNING: 'Si prega di prestare molta attenzione e di procedere con cautela nell\'installare i plugin'
   },
 
