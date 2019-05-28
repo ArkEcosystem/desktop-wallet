@@ -244,7 +244,7 @@ export default {
         QUESTION: 'Sei sicuro di voler eliminare i tuoi dati?',
         NOTE: 'Tutti i tuoi dati, inclusi profili, portafogli, reti e contatti verranno rimossi dall\'app e ripristinati sui valori predefiniti. I dati, come le transazioni, che sono sulla blockchain non possono essere rimossi.'
       },
-      THEME: 'Theme'
+      THEME: 'Tema'
     },
     WALLETS: 'I miei portafogli'
   },
