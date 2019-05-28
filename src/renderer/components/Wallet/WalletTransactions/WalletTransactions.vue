@@ -15,7 +15,7 @@
       :rows="fetchedTransactions"
       :total-rows="totalCount"
       :is-loading="isLoading"
-      :is-remote="true"
+      :is-remote="false"
       :has-pagination="totalCount > 0"
       :sort-query="queryParams.sort"
       :per-page="transactionTableRowCount"
@@ -58,6 +58,17 @@ export default {
   }),
 
   computed: {
+    cacheKey () {
+      const { limit, page, sort } = this.queryParams
+      const orderBy = `${sort.field}:${sort.type}`
+      return `${page}-${limit}-${orderBy}`
+    },
+
+    // TODO use it as the source instead of setting fetchedTransactions ?
+    cached () {
+      return this.$store.getters['transaction/cachedByAddress'](this.wallet_fromRoute.address, this.cacheKey)
+    },
+
     transactionTableRowCount: {
       get () {
         return this.$store.getters['session/transactionTableRowCount']
@@ -91,6 +102,9 @@ export default {
   },
 
   created () {
+    this.$set(this, 'fetchedTransactions', this.cached.transactions)
+    this.totalCount = this.cached.totalCount
+
     this.loadTransactions()
     this.$eventBus.on('wallet:reload', this.loadTransactions)
     this.enableNewTransactionEvent(this.wallet_fromRoute.address)
@@ -133,18 +147,22 @@ export default {
       return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
     },
 
-    async getTransactions (address) {
+    async requestTransactions (address) {
       if (!address) {
         return []
       }
 
       const { limit, page, sort } = this.queryParams
 
-      return this.$client.fetchWalletTransactions(address, {
+      const transactions = await this.$client.fetchWalletTransactions(address, {
         page,
         limit,
         orderBy: `${sort.field}:${sort.type}`
       })
+
+      this.$store.dispatch('transaction/cache', { address, key: this.cacheKey, transactions })
+
+      return transactions
     },
 
     async fetchTransactions () {
@@ -158,10 +176,10 @@ export default {
         address = this.wallet_fromRoute.address.slice()
       }
 
-      this.isFetching = true
+      // this.isFetching = true
 
       try {
-        const response = await this.getTransactions(address)
+        const response = await this.requestTransactions(address)
 
         this.$store.dispatch('transaction/deleteBulk', {
           transactions: response.transactions,
@@ -187,8 +205,8 @@ export default {
         }
         this.fetchedTransactions = []
       } finally {
-        this.isFetching = false
-        this.isLoading = false
+        // this.isFetching = false
+        // this.isLoading = false
       }
     },
 
@@ -202,7 +220,7 @@ export default {
       }
 
       this.newTransactionsNotice = null
-      this.isLoading = true
+      // this.isLoading = true
       this.fetchTransactions()
     },
 
@@ -222,7 +240,7 @@ export default {
 
       try {
         let newTransactions = 0
-        const response = await this.getTransactions(address)
+        const response = await this.requestTransactions(address)
         const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {

@@ -11,18 +11,26 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  * This module stores unconfirmed transactions, so it does not persist currently:
  * it is not required and avoids managing their lifecycle when they are confirmed.
  *
+ * It also stores cached transactions, so, those transactions could be displayed
+ * on the UI while a new request to update them is done on the background.
+ *
  * Internally the transactions are stored aggregated by `profileId``
  */
 export default {
   namespaced: true,
 
   state: {
+    // Confirmed transactions
+    cached: {},
+    // Unconfirmed transactions
     transactions: {},
     // TODO This should not be stored here: it depends on the network, not the transactions
     staticFees: {}
   },
 
   getters: {
+    cached: state => (address, key) => state.cached[address][key],
+
     byAddress: (state, _, __, rootGetters) => (address, { includeExpired } = {}) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.transactions[profileId]) {
@@ -86,6 +94,13 @@ export default {
   },
 
   mutations: {
+    CACHE (state, { address, key, transactions }) {
+      if (!state.cached[address]) {
+        state.cached[address] = {}
+      }
+
+      state.cached[address][key] = transactions
+    },
     CREATE (state, transaction) {
       if (!state.transactions[transaction.profileId]) {
         Vue.set(state.transactions, transaction.profileId, [])
@@ -140,6 +155,10 @@ export default {
       commit('UPDATE', data)
 
       return data
+    },
+
+    cache ({ commit }, data) {
+      commit('CACHE', data)
     },
 
     clearExpired ({ commit, getters, rootGetters }) {
