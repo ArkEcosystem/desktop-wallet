@@ -599,7 +599,7 @@ export default {
         CACHE: 'Metti in cache portafoglio Ledger?',
         CACHE_INFO: 'Metti in cache i portafogli dal tuo Ledger per accelerare il caricamento quando si è connessi per la prima volta',
         ADDITIONAL: '# di Portafogli Ledger',
-        OPTIONS: 'Optioni Ledger'
+        OPTIONS: 'Opzioni Ledger'
       },
       CREATE_WALLET: 'Crea portafoglio',
       DELETE_WALLET: 'Elimina questo portafoglio',
