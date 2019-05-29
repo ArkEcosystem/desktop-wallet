@@ -13,6 +13,7 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  *
  * It also stores cached transactions, so, those transactions could be displayed
  * on the UI while a new request to update them is done on the background.
+ * TODO flush periodically the cache
  *
  * Internally the transactions are stored aggregated by `profileId``
  */
@@ -29,7 +30,17 @@ export default {
   },
 
   getters: {
-    cached: state => (address, key) => state.cached[address][key],
+    cached: state => (address, key) => {
+      const defaultValue = {
+        transactions: [],
+        totalCount: 0
+      }
+
+      if (!state.cached[address]) {
+        return defaultValue
+      }
+      return state.cached[address][key] || defaultValue
+    },
 
     byAddress: (state, _, __, rootGetters) => (address, { includeExpired } = {}) => {
       const profileId = rootGetters['session/profileId']

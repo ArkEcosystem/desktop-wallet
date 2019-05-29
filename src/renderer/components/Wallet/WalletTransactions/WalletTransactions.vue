@@ -64,9 +64,8 @@ export default {
       return `${page}-${limit}-${orderBy}`
     },
 
-    // TODO use it as the source instead of setting fetchedTransactions ?
     cached () {
-      return this.$store.getters['transaction/cachedByAddress'](this.wallet_fromRoute.address, this.cacheKey)
+      return this.$store.getters['transaction/cached'](this.wallet_fromRoute.address, this.cacheKey)
     },
 
     transactionTableRowCount: {
@@ -102,12 +101,13 @@ export default {
   },
 
   created () {
-    this.$set(this, 'fetchedTransactions', this.cached.transactions)
-    this.totalCount = this.cached.totalCount
-
     this.loadTransactions()
     this.$eventBus.on('wallet:reload', this.loadTransactions)
     this.enableNewTransactionEvent(this.wallet_fromRoute.address)
+  },
+
+  mounted () {
+    this.reset()
   },
 
   beforeDestroy () {
@@ -176,7 +176,7 @@ export default {
         address = this.wallet_fromRoute.address.slice()
       }
 
-      // this.isFetching = true
+      this.isFetching = true
 
       try {
         const response = await this.requestTransactions(address)
@@ -205,8 +205,8 @@ export default {
         }
         this.fetchedTransactions = []
       } finally {
-        // this.isFetching = false
-        // this.isLoading = false
+        this.isFetching = false
+        this.isLoading = false
       }
     },
 
@@ -220,7 +220,9 @@ export default {
       }
 
       this.newTransactionsNotice = null
-      // this.isLoading = true
+      if (!this.cached.totalCount) {
+        this.isLoading = true
+      }
       this.fetchTransactions()
     },
 
@@ -307,8 +309,8 @@ export default {
     reset () {
       this.currentPage = 1
       this.queryParams.page = 1
-      this.totalCount = 0
-      this.fetchedTransactions = []
+      this.totalCount = this.cached.totalCount || 0
+      this.$set(this, 'fetchedTransactions', this.cached.transactions || [])
     },
 
     __updateParams (newProps) {
