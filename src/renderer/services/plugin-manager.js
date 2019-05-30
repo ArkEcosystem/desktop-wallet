@@ -81,12 +81,16 @@ class PluginManager {
     })
 
     for (const permission of first) {
-      const method = `load${upperFirst(camelCase(permission))}`
-      await this[method](pluginObject, plugin, profileId)
+      const method = `loadPlugin${upperFirst(camelCase(permission))}`
+      if (typeof this[method] === 'function') {
+        await this[method](pluginObject, plugin, profileId)
+      }
     }
     for (const permission of rest) {
-      const method = `load${upperFirst(camelCase(permission))}`
-      await this[method](pluginObject, plugin, profileId)
+      const method = `loadPlugin${upperFirst(camelCase(permission))}`
+      if (typeof this[method] === 'function') {
+        await this[method](pluginObject, plugin, profileId)
+      }
     }
   }
 
@@ -108,7 +112,7 @@ class PluginManager {
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
   }
 
-  async loadComponents (pluginObject, plugin) {
+  async loadPluginComponents (pluginObject, plugin) {
     if (!pluginObject.hasOwnProperty('getComponentPaths')) {
       return
     }
@@ -268,7 +272,7 @@ class PluginManager {
     plugin.components = components
   }
 
-  async loadRoutes (pluginObject, plugin) {
+  async loadPluginRoutes (pluginObject, plugin) {
     if (!pluginObject.hasOwnProperty('getRoutes')) {
       return
     }
@@ -294,7 +298,7 @@ class PluginManager {
     }
   }
 
-  async loadMenuItems (pluginObject, plugin, profileId) {
+  async loadPluginMenuItems (pluginObject, plugin, profileId) {
     if (!pluginObject.hasOwnProperty('getMenuItems')) {
       return
     }
@@ -319,7 +323,7 @@ class PluginManager {
     }
   }
 
-  async loadAvatars (pluginObject, plugin, profileId) {
+  async loadPluginAvatars (pluginObject, plugin, profileId) {
     if (!pluginObject.hasOwnProperty('getAvatars')) {
       return
     }
@@ -365,7 +369,7 @@ class PluginManager {
     return components
   }
 
-  async loadWalletTabs (pluginObject, plugin, profileId) {
+  async loadPluginWalletTabs (pluginObject, plugin, profileId) {
     if (!pluginObject.hasOwnProperty('getWalletTabs')) {
       return
     }
@@ -390,7 +394,7 @@ class PluginManager {
     }
   }
 
-  async loadThemes (pluginObject, plugin, profileId) {
+  async loadPluginThemes (pluginObject, plugin, profileId) {
     if (!pluginObject.hasOwnProperty('getThemes')) {
       return
     }
