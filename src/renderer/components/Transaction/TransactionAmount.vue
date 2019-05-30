@@ -5,6 +5,7 @@
       'text-green': transaction.isRecipient && isTransfer,
     }"
   >
+    {{ transaction.isSender ? '-' : '+' }}
     {{ formatter_networkCurrency(transaction.amount) }}
   </span>
 </template>
