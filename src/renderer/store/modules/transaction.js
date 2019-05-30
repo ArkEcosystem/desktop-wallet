@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { findIndex, unionBy } from 'lodash'
+import { difference, findIndex, sampleSize, unionBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
@@ -11,9 +11,9 @@ const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
  * This module stores unconfirmed transactions, so it does not persist currently:
  * it is not required and avoids managing their lifecycle when they are confirmed.
  *
- * It also stores cached transactions, so, those transactions could be displayed
- * on the UI while a new request to update them is done on the background.
- * TODO flush periodically the cache
+ * It also stores cached transactions (the data of the API response), so, those
+ * transactions could be displayed on the UI while a new request to update them
+ * is done on the background.
  *
  * Internally the transactions are stored aggregated by `profileId``
  */
@@ -105,12 +105,23 @@ export default {
   },
 
   mutations: {
-    CACHE (state, { address, key, transactions }) {
+    /**
+     * Add data to the cache, and flush the data if the limit is reached.
+     */
+    CACHE (state, { address, key, data }) {
       if (!state.cached[address]) {
         state.cached[address] = {}
       }
 
-      state.cached[address][key] = transactions
+      const { maxAddresses, addressesPerFlush } = config.CACHE.transactions
+
+      const addresses = Object.keys(state.cached)
+      if (addresses.length >= maxAddresses) {
+        const toFlush = sampleSize(difference(addresses, [address]), addressesPerFlush)
+        toFlush.forEach(toFlush => (delete state.cached[toFlush]))
+      }
+
+      state.cached[address][key] = data
     },
     CREATE (state, transaction) {
       if (!state.transactions[transaction.profileId]) {

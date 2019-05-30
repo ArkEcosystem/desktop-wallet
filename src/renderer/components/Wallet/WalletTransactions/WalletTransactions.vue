@@ -154,15 +154,16 @@ export default {
 
       const { limit, page, sort } = this.queryParams
 
-      const transactions = await this.$client.fetchWalletTransactions(address, {
+      // data == { totalCount, transactions }
+      const data = await this.$client.fetchWalletTransactions(address, {
         page,
         limit,
         orderBy: `${sort.field}:${sort.type}`
       })
 
-      this.$store.dispatch('transaction/cache', { address, key: this.cacheKey, transactions })
+      this.$store.dispatch('transaction/cache', { address, key: this.cacheKey, data })
 
-      return transactions
+      return data
     },
 
     async fetchTransactions () {

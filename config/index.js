@@ -20,6 +20,13 @@ exports.ANNOUNCEMENTS = {
   rssUrl: 'https://blog.ark.io/feed'
 }
 
+exports.CACHE = {
+  transactions: {
+    maxAddresses: 120,
+    addressesPerFlush: 24
+  }
+}
+
 exports.VENDOR_FIELD = {
   defaultMaxLength: 64
 }
