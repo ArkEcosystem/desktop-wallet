@@ -10,7 +10,8 @@ describe('WalletTransactions', () => {
       mocks: {
         $store: {
           getters: {
-            'transaction/byAddress': jest.fn(() => [])
+            'transaction/byAddress': jest.fn(() => []),
+            'transaction/cached': jest.fn(() => [])
           }
         }
       }
