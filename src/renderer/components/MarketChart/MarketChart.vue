@@ -103,6 +103,12 @@ export default {
   },
 
   watch: {
+    isActive (value) {
+      if (value && !this._inactive) {
+        this.renderChart()
+      }
+    },
+
     currency () {
       this.renderChart()
     },
