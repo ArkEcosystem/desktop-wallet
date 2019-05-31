@@ -2,10 +2,10 @@
   <div
     v-click-outside.capture="emitClose"
     :class="isSidebarExpanded ? 'WalletSidebarFilters--expanded' : 'WalletSidebarFilters--collapsed'"
-    class="WalletSidebarFilters absolute z-20 rounded-lg theme-light"
+    class="WalletSidebarFilters absolute z-20 rounded-lg"
   >
     <div
-      class="bg-theme-feature p-10 rounded-lg shadow font-bold"
+      class="bg-theme-settings p-10 rounded-lg shadow font-bold"
     >
       <WalletSidebarFiltersSearchInput
         v-model="filters.searchQuery"
@@ -17,7 +17,7 @@
       />
     </div>
 
-    <MenuOptions class="WalletSidebarFilters__sorting mt-2 theme-light rounded-lg shadow font-bold">
+    <MenuOptions class="WalletSidebarFilters__sorting mt-2 rounded-lg shadow font-bold">
       <div class="mx-10 py-5 mb-2 text-theme-settings-heading select-none">
         {{ $t('WALLET_SIDEBAR.SORT.BY') }}
       </div>
@@ -45,7 +45,6 @@
           <ButtonSwitch
             ref="hide-empty"
             :is-active="currentFilters.hideEmpty"
-            class="theme-light"
             background-color="var(--theme-settings-switch)"
             @change="setHideEmpty"
           />
@@ -63,7 +62,6 @@
           <ButtonSwitch
             ref="hide-ledger"
             :is-active="currentFilters.hideLedger"
-            class="theme-light"
             background-color="var(--theme-settings-switch)"
             @change="setHideLedger"
           />
