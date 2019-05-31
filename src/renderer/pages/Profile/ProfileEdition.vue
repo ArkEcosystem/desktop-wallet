@@ -517,7 +517,8 @@ export default {
 
       if (hasNameError) {
         this.$error(this.$t('COMMON.FAILED_UPDATE', {
-          name: this.$t('COMMON.PROFILE_NAME')
+          name: this.$t('COMMON.PROFILE_NAME'),
+          reason: this.$t('PAGES.PROFILE_EDITION.ERROR.DUPLICATE_PROFILE')
         }))
       }
     },

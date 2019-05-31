@@ -14,7 +14,7 @@ export default {
     DATE: 'Date',
     DELEGATE: 'Delegate',
     DONE: 'Done',
-    FAILED_UPDATE: 'Failed to update {name}',
+    FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
@@ -581,6 +581,9 @@ export default {
     },
 
     PROFILE_EDITION: {
+      ERROR: {
+        DUPLICATE_PROFILE: 'A profile already exists with that name'
+      },
       TAB_PROFILE: {
         INSTRUCTIONS: {
           HEADER: 'Edit this profile',
