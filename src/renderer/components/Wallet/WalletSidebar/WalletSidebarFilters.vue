@@ -207,7 +207,6 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletSidebarFilters {
-  position: fixed;
   width: 380px;
   /* The expanded sidebar uses `.w-1/7` */
   right: calc(12.5% - 0.5rem);
