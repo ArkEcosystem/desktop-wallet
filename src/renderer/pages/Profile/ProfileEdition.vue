@@ -506,16 +506,20 @@ export default {
     },
 
     async updateProfile () {
-      if (this.nameError) {
+      const hasNameError = this.nameError
+      if (hasNameError) {
         this.modified.name = this.profile.name
-        this.$error(this.$t('COMMON.FAILED_UPDATE', {
-          name: 'profile name'
-        }))
       }
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
       })
+
+      if (hasNameError) {
+        this.$error(this.$t('COMMON.FAILED_UPDATE', {
+          name: this.$t('COMMON.PROFILE_NAME')
+        }))
+      }
     },
 
     async save () {
