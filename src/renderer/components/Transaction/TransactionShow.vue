@@ -143,6 +143,7 @@
         <TransactionAmount :transaction="transaction" />
         <TransactionStatusIcon
           v-bind="transaction"
+          :show-waiting-confirmations="false"
           class="ml-2"
         />
       </ListDividedItem>

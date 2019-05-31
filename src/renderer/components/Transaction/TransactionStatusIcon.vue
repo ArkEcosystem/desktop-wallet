@@ -1,6 +1,6 @@
 <template>
   <span
-    v-if="!isWellConfirmed"
+    v-if="!isWellConfirmed && showWaitingConfirmations"
     v-tooltip="{
       content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: confirmations }),
       classes: 'text-xs',
@@ -62,6 +62,11 @@ export default {
       type: Number,
       required: false,
       default: 0
+    },
+    showWaitingConfirmations: {
+      type: Boolean,
+      required: false,
+      default: true
     },
     showTooltip: {
       type: Boolean,

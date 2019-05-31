@@ -2,7 +2,7 @@
   <span
     :class="{
       'text-red': transaction.isSender && transaction.amount,
-      'text-green': transaction.isRecipient && isTransfer,
+      'text-green': !transaction.isSender && isTransfer,
     }"
   >
     {{ transaction.isSender ? '-' : '+' }}
