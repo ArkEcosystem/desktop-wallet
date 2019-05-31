@@ -264,6 +264,7 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
+                :disabled="!isModified || nameError"
                 class="blue-button"
                 @click="save"
               >
