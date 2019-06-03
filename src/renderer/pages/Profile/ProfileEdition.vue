@@ -191,7 +191,7 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
-                :disabled="!isModified || isNameEditable"
+                :disabled="!isModified || nameError"
                 class="blue-button"
                 @click="save"
               >
@@ -264,7 +264,7 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
-                :disabled="!isModified || isNameEditable"
+                :disabled="!isModified || nameError"
                 class="blue-button"
                 @click="save"
               >
@@ -507,13 +507,25 @@ export default {
     },
 
     async updateProfile () {
+      const hasNameError = this.nameError
+      if (hasNameError) {
+        this.modified.name = this.profile.name
+      }
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
       })
+
+      if (hasNameError) {
+        this.$error(this.$t('COMMON.FAILED_UPDATE', {
+          name: this.$t('COMMON.PROFILE_NAME'),
+          reason: this.$t('PAGES.PROFILE_EDITION.ERROR.DUPLICATE_PROFILE')
+        }))
+      }
     },
 
     async save () {
+      this.toggleIsNameEditable()
       await this.updateProfile()
 
       this.$router.push({ name: 'profiles' })
