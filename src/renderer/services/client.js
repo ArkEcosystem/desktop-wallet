@@ -113,7 +113,7 @@ export default class ClientService {
         client.http.timeout = timeout
       }
 
-      const { data } = await client.resource('node').fees(30)
+      const { data } = await client.resource('node').fees(7)
 
       return data.data.map(fee => ({
         type: Number(fee.type),
