@@ -1,4 +1,4 @@
-import Http from '@/services/http'
+import axios from 'axios'
 import { MARKET } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
@@ -7,10 +7,6 @@ import { capitalize, keys, min, max } from 'lodash'
 import logger from 'electron-log'
 
 class CryptoCompare {
-  constructor () {
-    this.http = new Http()
-  }
-
   /**
    * Fetch market data from API.
    * @param {String} token
@@ -23,8 +19,8 @@ class CryptoCompare {
     }
 
     try {
-      const url = `${MARKET.source.baseUrl}/data/pricemultifull`
-      const response = await this.http.get(url, { params })
+      const uri = `${MARKET.source.baseUrl}/data/pricemultifull`
+      const response = await axios.get(uri, { params })
       const data = response.data.RAW && response.data.RAW[token] ? response.data.RAW[token] : {}
 
       return this.__transformMarketResponse(data)
@@ -111,8 +107,8 @@ class CryptoCompare {
     }
 
     try {
-      const url = `${MARKET.source.baseUrl}/data/price`
-      const response = await this.http.get(url, { params })
+      const uri = `${MARKET.source.baseUrl}/data/price`
+      const response = await axios.get(uri, { params })
       return !!response.data.BTC
     } catch (error) {
       return null
@@ -130,7 +126,7 @@ class CryptoCompare {
  */
   async __fetchHistoricalData (token, currency, limit, type = 'day', dateFormat = 'DD.MM') {
     const date = Math.round(new Date().getTime() / 1000)
-    const url = `${MARKET.source.baseUrl}/data/histo${type}`
+    const uri = `${MARKET.source.baseUrl}/data/histo${type}`
     const params = {
       fsym: token,
       tsym: currency,
@@ -139,7 +135,7 @@ class CryptoCompare {
     }
 
     try {
-      const response = await this.http.get(url, { params })
+      const response = await axios.get(uri, { params })
       return this.__transformHistoricalResponse(response.data.Data, dateFormat)
     } catch (error) {
       logger.error(error)
