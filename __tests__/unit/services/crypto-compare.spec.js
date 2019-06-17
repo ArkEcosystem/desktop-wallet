@@ -1,5 +1,4 @@
-import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+import nock from 'nock'
 import { MARKET } from '@config'
 import { keys } from 'lodash'
 import cryptoCompare from '@/services/crypto-compare'
@@ -10,14 +9,12 @@ describe('CryptoCompare', () => {
   const baseUrl = MARKET.source.baseUrl
 
   beforeEach(() => {
-    const historicalRegex = new RegExp(`^${baseUrl}/data/histo.*`)
-    const mock = new MockAdapter(axios)
-
-    mock
-      .onGet(`${baseUrl}/data/pricemultifull`)
+    nock(baseUrl)
+      .get('/data/pricemultifull')
+      .query(true)
       .reply(200, require('../__fixtures__/services/crypto-compare-market.json'))
-    mock
-      .onGet(historicalRegex)
+    nock(baseUrl)
+      .get(/\/data\/histo.+/)
       .reply(200, require('../__fixtures__/services/crypto-compare-historical.json'))
   })
 
