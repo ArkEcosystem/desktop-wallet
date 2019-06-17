@@ -84,6 +84,16 @@ describe('delegate store module', () => {
     })
 
     nock('http://127.0.0.1')
+      .persist()
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/delegates')
+      .query(true)
+      .reply(200)
+
+    nock('http://127.0.0.1')
       .get('/api/delegates')
       .query({ offset: 0, limit: 51, orderBy: 'rank:asc' })
       .reply(200, {
