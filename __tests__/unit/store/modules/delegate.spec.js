@@ -1,5 +1,4 @@
-import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
@@ -10,8 +9,6 @@ import { profile1 } from '../../__fixtures__/store/profile'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
-
-const axiosMock = new MockAdapter(axios)
 
 beforeAll(() => {
   ClientService.version = 1
@@ -86,8 +83,9 @@ describe('delegate store module', () => {
       }
     })
 
-    axiosMock
-      .onGet(`http://127.0.0.1/api/delegates`, { params: { offset: 0, limit: 51, orderBy: 'rank:asc' } })
+    nock('http://127.0.0.1')
+      .get('/api/delegates')
+      .query({ offset: 0, limit: 51, orderBy: 'rank:asc' })
       .reply(200, {
         totalCount: 2,
         delegates: v1DelegateData
@@ -98,8 +96,9 @@ describe('delegate store module', () => {
 
     ClientService.version = 2
 
-    axiosMock
-      .onGet(`http://127.0.0.1/api/delegates`, { params: { page: 1, limit: 100, orderBy: 'rank:asc' } })
+    nock('http://127.0.0.1')
+      .get('/api/delegates')
+      .query({ page: 1, limit: 100, orderBy: 'rank:asc' })
       .reply(200, {
         data: v2DelegateData,
         meta: {
