@@ -133,8 +133,16 @@
         </button>
       </ListDividedItem>
 
-      <ListDividedItem :label="$t('TRANSACTION.AMOUNT')">
+      <ListDividedItem
+        :label="$t('TRANSACTION.AMOUNT')"
+        item-value-class="flex items-center"
+      >
         <TransactionAmount :transaction="transaction" />
+        <TransactionStatusIcon
+          v-bind="transaction"
+          :show-waiting-confirmations="false"
+          class="ml-2"
+        />
       </ListDividedItem>
 
       <ListDividedItem
@@ -204,6 +212,7 @@ import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard, ButtonGeneric } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import TransactionAmount from './TransactionAmount'
+import TransactionStatusIcon from './TransactionStatusIcon'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import truncateMiddle from '@/filters/truncate-middle'
 
@@ -218,6 +227,7 @@ export default {
     ButtonClipboard,
     SvgIcon,
     TransactionAmount,
+    TransactionStatusIcon,
     WalletAddress
   },
 

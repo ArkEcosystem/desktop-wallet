@@ -113,6 +113,15 @@ export default {
     currency_unitToSub (value, network) {
       const { fractionDigits } = network || this.session_network
       return new BigNumber(value.toString()).multipliedBy(Math.pow(10, fractionDigits)).toString()
+    },
+
+    currency_cryptoToCurrency (value, fromSubUnit = true, fractionDigits = 2) {
+      if (fromSubUnit) {
+        value = this.currency_subToUnit(value)
+      }
+
+      const price = this.$store.getters['market/lastPrice']
+      return new BigNumber(value.toString()).multipliedBy(price).toFixed(fractionDigits)
     }
   }
 }
