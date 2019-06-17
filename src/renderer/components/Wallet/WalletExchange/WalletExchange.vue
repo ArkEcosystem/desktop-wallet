@@ -76,12 +76,11 @@
       v-else
       class="WalletExchange__iframe mx-auto overflow-hidden mt-5"
     >
-      <iframe
+      <webview
+        id="changelly"
         :src="changellyWidgetURL"
-        width="100%"
-        height="550"
         class="changelly overflow-y-hidden border-none"
-        scrolling="no"
+        style="width:100%; height:550px"
       />
     </div>
   </section>

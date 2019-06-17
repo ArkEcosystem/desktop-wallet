@@ -9,6 +9,7 @@ const mixins = [
   require('./network').default,
   require('./qr').default,
   require('./session').default,
+  require('./strings').default,
   require('./wallet').default
 ]
 
