@@ -176,7 +176,7 @@ describe('peer store module', () => {
 
     store.dispatch('peer/set', refreshPeers)
     await store.dispatch('peer/refresh')
-    expect(store.getters['peer/all']()).toEqual([goodPeer1, badPeer2])
+    expect(store.getters['peer/all']()).toEqual([goodPeer1])
   })
 
   it('should refresh peer list for v2', async () => {
@@ -213,7 +213,7 @@ describe('peer store module', () => {
     delete goodV2Peer.latency
     badV2Peer.delay = badV2Peer.latency
     delete badV2Peer.latency
-    expect(store.getters['peer/all']()).toEqual([{ ...goodV2Peer, p2pPort: goodV2Peer.port, port: null }, badV2Peer])
+    expect(store.getters['peer/all']()).toEqual([{ ...goodV2Peer, p2pPort: goodV2Peer.port, port: null }])
   })
 
   it('should update v1 peer status on the fly', async () => {
