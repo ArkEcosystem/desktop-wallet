@@ -1,4 +1,6 @@
+import ApiClient from '@arkecosystem/client'
 import { crypto, transactionBuilder } from '@arkecosystem/crypto'
+import axios from 'axios'
 import { castArray, chunk, orderBy } from 'lodash'
 import dayjs from 'dayjs'
 import moment from 'moment'
@@ -7,24 +9,6 @@ import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import OriginalClient from '@arkecosystem/client'
-import Http from '@/services/http'
-import BackgroundHttpClient from '@/services/background-http-client'
-
-const httpClient = new Http()
-
-/**
- * This class has the mission of monkey-patching the API client to establish
- * its inner HTTP client.
- * It can be used to run requests in workers.
- * TODO override static `findPeers` to make its request on background too
- */
-class ApiClient extends OriginalClient {
-  setConnection (host) {
-    this.http = new BackgroundHttpClient(host, this.version)
-    this.http.__httpClient = httpClient.request
-  }
-}
 
 export default class ClientService {
   /*
@@ -98,7 +82,7 @@ export default class ClientService {
 
     for (const endpoint of endpoints) {
       try {
-        const { data } = await httpClient.request({
+        const { data } = await axios({
           url: endpoint,
           method: 'GET',
           headers: {
@@ -814,7 +798,7 @@ export default class ClientService {
     const scheme = currentPeer.isHttps ? 'https://' : 'http://'
     const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
     const network = store.getters['session/network']
-    const response = await httpClient.request({
+    const response = await axios({
       url: host,
       data: { transactions: castArray(transactions) },
       method: 'POST',
