@@ -64,11 +64,11 @@ class LedgerService {
   async isConnected () {
     try {
       // Make a request to the ledger device to determine if it's accessible
-      await this.__performAction(async () => {
+      const isConnected = await this.__performAction(async () => {
         return this.ledger.getAddress(`44'/1'/0'/0/0`)
       }, 'getAddress')
 
-      return true
+      return !!isConnected
     } catch (error) {
       logger.error(error)
     }
