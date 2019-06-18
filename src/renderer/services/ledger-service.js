@@ -12,20 +12,11 @@ class LedgerService {
     this.transport = null
     this.ledger = null
     this.actions = []
-    this.actionsQueue = queue(async ({ action, resolve, reject }, callback) => {
+    this.actionsQueue = queue(async ({ action, resolve }, callback) => {
       try {
         resolve(await action())
       } catch (error) {
-        const allowedErrors = [
-          'UNKNOWN_ERROR',
-          'CONDITIONS_OF_USE_NOT_SATISFIED',
-          'Ledger device: Incorrect length'
-        ]
-        if (error.statusText && allowedErrors.includes(error.statusText)) {
-          resolve(false)
-        } else {
-          reject(new Error(error.message))
-        }
+        resolve(false)
       }
       callback()
     })
@@ -128,8 +119,7 @@ class LedgerService {
     return new Promise((resolve, reject) => {
       this.actionsQueue.push({
         action,
-        resolve,
-        reject
+        resolve
       })
     })
   }
