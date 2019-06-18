@@ -16,7 +16,12 @@ class LedgerService {
       try {
         resolve(await action())
       } catch (error) {
-        if (error.statusText && error.statusText === 'CONDITIONS_OF_USE_NOT_SATISFIED') {
+        const allowedErrors = [
+          'UNKNOWN_ERROR',
+          'CONDITIONS_OF_USE_NOT_SATISFIED',
+          'Ledger device: Incorrect length'
+        ]
+        if (error.statusText && allowedErrors.includes(error.statusText)) {
           resolve(false)
         } else {
           reject(new Error(error.message))
