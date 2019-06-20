@@ -1,4 +1,4 @@
-import LedgerTransport from '@ledgerhq/hw-transport-node-hid'
+import LedgerTransport from '@ledgerhq/hw-transport-node-hid-singleton'
 import ArkLedger from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
 import logger from 'electron-log'
@@ -11,6 +11,7 @@ class LedgerService {
   constructor () {
     this.transport = null
     this.ledger = null
+    this.listeningForLedger = false
     this.actions = []
     this.actionsQueue = queue(async ({ action, resolve }, callback) => {
       try {
@@ -20,6 +21,19 @@ class LedgerService {
       }
       callback()
     })
+
+    this.listenForLedger()
+  }
+
+  async listenForLedger () {
+    if (this.listeningForLedger) {
+      return
+    }
+
+    this.listeningForLedger = true
+    this.transport = await LedgerTransport.create()
+    this.ledger = new ArkLedger(this.transport)
+    this.listeningForLedger = false
   }
 
   /**
@@ -28,15 +42,13 @@ class LedgerService {
    */
   async connect () {
     try {
-      if (this.transport) {
-        await this.disconnect()
+      if (!this.transport || this.transport.disconnected) {
+        this.listenForLedger()
       }
-      this.transport = await LedgerTransport.create()
-      this.ledger = new ArkLedger(this.transport)
 
       return this.isConnected()
     } catch (error) {
-      logger.debug(error.message)
+      logger.debug(error)
     }
 
     return false
@@ -63,10 +75,14 @@ class LedgerService {
    */
   async isConnected () {
     try {
+      if (!this.transport || this.transport.disconnected) {
+        return false
+      }
+
       // Make a request to the ledger device to determine if it's accessible
       const isConnected = await this.__performAction(async () => {
         return this.ledger.getAddress(`44'/1'/0'/0/0`)
-      }, 'getAddress')
+      })
 
       return !!isConnected
     } catch (error) {
