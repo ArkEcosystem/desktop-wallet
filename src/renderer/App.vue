@@ -41,12 +41,22 @@
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
-          class="App__container w-full flex-1 flex mt-4 mb-4 lg:mr-6"
+          class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6"
         >
-          <AppSidemenu
-            v-if="hasAnyProfile"
-            class="hidden md:block"
-          />
+          <div
+            class="hidden md:flex flex-col"
+          >
+            <AppBackButton
+              v-if="hasAnyProfile && isWalletPage"
+              class="mb-4 block"
+            />
+
+            <AppSidemenu
+              v-if="hasAnyProfile"
+              class="flex flex-1"
+            />
+          </div>
+
           <!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
           <KeepAlive
             :include="keepAliveRoutes"
@@ -93,7 +103,7 @@ import '@/styles/style.css'
 import fs from 'fs'
 import CleanCss from 'clean-css'
 import { isEmpty, pull, uniq } from 'lodash'
-import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
+import { AppBackButton, AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
@@ -106,6 +116,7 @@ export default {
   name: 'DesktopWallet',
 
   components: {
+    AppBackButton,
     AppFooter,
     AppIntro,
     AppSidemenu,
@@ -150,6 +161,11 @@ export default {
     },
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
+    },
+    isWalletPage () {
+      return this.$route.matched.length
+        ? this.$route.matched[0].components.default.name === 'WalletShow'
+        : null
     },
     currentProfileId () {
       return this.session_profile

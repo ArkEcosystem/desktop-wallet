@@ -24,16 +24,6 @@
         <div class="flexify">
           <!-- Wallets -->
           <MenuNavigationItem
-            id="back"
-            :title="$t('APP_SIDEMENU.BACK')"
-            :is-horizontal="isHorizontal"
-            class="AppSidemenu__item"
-            icon="arrow-transaction"
-            @click="historyBack"
-          />
-
-          <!-- Wallets -->
-          <MenuNavigationItem
             id="wallets"
             :title="$t('APP_SIDEMENU.WALLETS')"
             :is-horizontal="isHorizontal"
@@ -180,7 +170,6 @@
 </template>
 
 <script>
-import electron from 'electron'
 import semver from 'semver'
 import { isUndefined } from 'lodash'
 import { mapGetters } from 'vuex'
@@ -253,11 +242,6 @@ export default {
   },
 
   methods: {
-    historyBack () {
-      const window = electron.remote.getCurrentWindow()
-      window.webContents.goBack()
-    },
-
     redirect (name) {
       this.isSettingsVisible = false
       this.setActive(name)
