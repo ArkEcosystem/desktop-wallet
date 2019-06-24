@@ -41,14 +41,6 @@ const getApiVersion = (peer) => {
   return /^2\./.test(peer.version) ? 2 : 1
 }
 
-const clientService = ({ baseUrl, peer, timeout, version }) => {
-  const client = new ClientService(false)
-  client.host = baseUrl || getBaseUrl(peer)
-  client.version = version || getApiVersion(peer)
-  client.client.http.timeout = timeout || 3000
-  return client
-}
-
 export default {
   namespaced: true,
 
@@ -318,9 +310,8 @@ export default {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
       }
-      const networkKey = networkLookup[network.id]
 
-      const peers = await this._vm.$client.fetchPeers(networkKey, getters['all']())
+      const peers = await this._vm.$client.fetchPeers(networkLookup[network.id], getters['all']())
 
       if (peers.length) {
         for (const peer of peers) {
@@ -454,7 +445,10 @@ export default {
         if (updateCurrentPeer) {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
-          const client = clientService({ peer: currentPeer })
+          const client = new ClientService(false)
+          client.host = getBaseUrl(currentPeer)
+          client.version = getApiVersion(currentPeer)
+          client.client.http.timeout = 3000
           peerStatus = await client.fetchPeerStatus()
         }
         const delay = (performance.now() - delayStart).toFixed(0)
@@ -484,7 +478,12 @@ export default {
      */
     async clientServiceFromPeer (_, peer) {
       await getApiPort(peer)
-      return clientService({ peer })
+      const client = new ClientService(false)
+      client.host = getBaseUrl(peer)
+      client.version = getApiVersion(peer)
+      client.client.http.timeout = 3000
+
+      return client
     },
 
     /**
@@ -523,7 +522,10 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      const client = clientService({ baseUrl, timeout, version })
+      const client = new ClientService(false)
+      client.host = baseUrl
+      client.version = version
+      client.client.http.timeout = timeout
 
       let peerStatus
       try {

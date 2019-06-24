@@ -216,6 +216,14 @@ describe('TransactionModule', () => {
           }
         })
 
+      nock('http://127.0.0.1:4003')
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/blocks/getFees')
+        .reply(200)
+
       await store.dispatch('transaction/updateStaticFees')
 
       expect(store.getters['transaction/staticFee'](0)).toEqual(1)
@@ -239,6 +247,15 @@ describe('TransactionModule', () => {
             multiSignature: 5
           }
         })
+
+      nock('http://127.0.0.1:4003')
+        .persist()
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/transactions/fees')
+        .reply(200)
 
       await store.dispatch('transaction/updateStaticFees')
 

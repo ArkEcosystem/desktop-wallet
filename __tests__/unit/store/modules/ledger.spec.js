@@ -231,6 +231,15 @@ describe('ledger store module', () => {
           message: 'Wallet not found'
         })
 
+      nock('http://127.0.0.1')
+        .persist()
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options(/\/api\/wallets\/.+/)
+        .reply(200)
+
       expect(store.getters['ledger/isConnected']).toBeTruthy()
       expect(await store.dispatch('ledger/reloadWallets', {
         clearFirst: false,
@@ -248,10 +257,19 @@ describe('ledger store module', () => {
 
         nock('http://127.0.0.1')
           .persist()
-          .get(`/api/wallets/${wallet.address.replace(' ', '%20')}`)
+          .get(`/api/wallets/${wallet.address.replace(/\s+/, '%20')}`)
           .reply(200, {
             data: wallet
           })
+
+        nock('http://127.0.0.1')
+          .persist()
+          .defaultReplyHeaders({
+            'access-control-allow-origin': '*',
+            'access-control-allow-headers': 'API-Version'
+          })
+          .options(`/api/wallets/${wallet.address.replace(/\s+/, '%20')}`)
+          .reply(200)
       }
 
       nock('http://127.0.0.1')
@@ -262,6 +280,15 @@ describe('ledger store module', () => {
           error: 'Not Found',
           message: 'Wallet not found'
         })
+
+      nock('http://127.0.0.1')
+        .persist()
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/wallets/address%2010')
+        .reply(200)
 
       await store.dispatch('ledger/connect')
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
@@ -277,6 +304,15 @@ describe('ledger store module', () => {
           data: ledgerWallets.slice(0, 9)
         })
 
+      nock('http://127.0.0.1')
+        .persist()
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/wallets/search')
+        .reply(200)
+
       await store.dispatch('ledger/connect')
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
     })
@@ -291,6 +327,15 @@ describe('ledger store module', () => {
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
+
+      nock('http://127.0.0.1')
+        .persist()
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/wallets/search')
+        .reply(200)
 
       for (const walletId in expectedWallets) {
         expectedWallets[walletId].name = expectedWallets[walletId].address
