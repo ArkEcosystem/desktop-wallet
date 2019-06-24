@@ -108,7 +108,7 @@
                 </li>
 
                 <div
-                  :key="address"
+                  :key="`separator-${address}`"
                   class="WalletNew__wallets__address__separator"
                 />
               </template>
