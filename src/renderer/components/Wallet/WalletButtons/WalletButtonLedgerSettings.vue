@@ -34,7 +34,7 @@
 
 <script>
 import SvgIcon from '@/components/SvgIcon'
-import { WalletHeadingMenuLedger } from '@/components/Wallet'
+import { WalletHeadingMenuLedger } from '@/components/Wallet/WalletHeading'
 
 export default {
   name: 'WalletButtonLedgerSettings',
