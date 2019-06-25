@@ -131,7 +131,7 @@
         class="WalletSidebar__wallet__wrapper transition text-sm w-full mx-2 py-6 truncate"
       >
         <Loader />
-        <div class="font-semibold text-theme-page-text">
+        <div class="font-semibold text-theme-page-text text-center">
           {{ $t('WALLET_SIDEBAR.LOADING_LEDGER') }}
         </div>
       </div>
@@ -292,8 +292,8 @@ export default {
 
       if (this.isLedgerConnected && !this.hasContactsOnly) {
         wallets = uniqBy([
-          ...wallets,
-          ...this.ledgerWallets
+          ...this.ledgerWallets,
+          ...wallets
         ], 'address')
       }
 

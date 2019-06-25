@@ -24,9 +24,6 @@ jobs:
           name: Unit tests
           command: yarn test:unit --ci --coverage --maxWorkers 4
       - run:
-          name: e2e tests
-          command: yarn test:e2e:full --coverage
-      - run:
           name: Lint
           command: yarn lint
       - run:
