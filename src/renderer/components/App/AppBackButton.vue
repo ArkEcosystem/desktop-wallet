@@ -32,8 +32,12 @@ export default {
 
   methods: {
     historyBack () {
-      const window = electron.remote.getCurrentWindow()
-      window.webContents.goBack()
+      const webContents = electron.remote.getCurrentWindow().webContents
+      if (!webContents.canGoBack()) {
+        throw new Error('It is not possible to go back in history')
+      }
+
+      webContents.goBack()
     }
   }
 }
@@ -41,7 +45,7 @@ export default {
 
 <style lang="postcss" scoped>
 .AppBackButton {
-  @apply .rounded-lg .py-2 .w-22 .mx-6
+  @apply .rounded-lg .py-4 .w-22 .mx-6
 }
 .AppBackButton button {
   transition: all .5s;
