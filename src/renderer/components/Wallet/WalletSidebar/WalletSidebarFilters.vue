@@ -167,7 +167,7 @@ export default {
     },
 
     setHideLedger (isHidden) {
-      this.filters.hideEmpty = isHidden
+      this.filters.hideLedger = isHidden
       this.emitFilter()
     },
 

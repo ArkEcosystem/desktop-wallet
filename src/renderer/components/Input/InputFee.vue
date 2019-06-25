@@ -218,6 +218,10 @@ export default {
         return null
       }
 
+      if (!this.currentWallet) {
+        return null
+      }
+
       const funds = parseFloat(this.currency_subToUnit(this.currentWallet.balance))
       if (funds < parseFloat(this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
