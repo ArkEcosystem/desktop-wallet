@@ -122,7 +122,7 @@
                     <WalletIdenticon
                       :value="wallet.address"
                       :size="60"
-                      class="identicon cursor-pointer"
+                      class="identicon"
                     />
 
                     <div
@@ -134,8 +134,7 @@
                             content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
                             placement: 'right'
                           }"
-                          class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1 cursor-default"
-                          @click.stop
+                          class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1"
                         >
                           {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
                         </span>
@@ -147,8 +146,7 @@
                         </span>
                       </div>
                       <span
-                        class="font-bold mt-2 text-lg cursor-default text-theme-page-text text-left whitespace-no-wrap"
-                        @click.stop
+                        class="font-bold mt-2 text-lg text-theme-page-text text-left whitespace-no-wrap"
                       >
                         {{ formatter_networkCurrency(wallet.balance, 2) }}
                       </span>
