@@ -1,4 +1,4 @@
-import LedgerTransport from '@ledgerhq/hw-transport-node-hid'
+import LedgerTransport from '@ledgerhq/hw-transport-node-hid-singleton'
 import ArkLedger from '@arkecosystem/ledger-transport'
 import queue from 'async/queue'
 import logger from 'electron-log'
@@ -11,19 +11,29 @@ class LedgerService {
   constructor () {
     this.transport = null
     this.ledger = null
+    this.listeningForLedger = false
     this.actions = []
-    this.actionsQueue = queue(async ({ action, resolve, reject }, callback) => {
+    this.actionsQueue = queue(async ({ action, resolve }, callback) => {
       try {
         resolve(await action())
       } catch (error) {
-        if (error.statusText && error.statusText === 'CONDITIONS_OF_USE_NOT_SATISFIED') {
-          resolve(false)
-        } else {
-          reject(new Error(error.message))
-        }
+        resolve(false)
       }
       callback()
     })
+
+    this.listenForLedger()
+  }
+
+  async listenForLedger () {
+    if (this.listeningForLedger) {
+      return
+    }
+
+    this.listeningForLedger = true
+    this.transport = await LedgerTransport.create()
+    this.ledger = new ArkLedger(this.transport)
+    this.listeningForLedger = false
   }
 
   /**
@@ -32,15 +42,13 @@ class LedgerService {
    */
   async connect () {
     try {
-      if (this.transport) {
-        await this.disconnect()
+      if (!this.transport || this.transport.disconnected) {
+        this.listenForLedger()
       }
-      this.transport = await LedgerTransport.create()
-      this.ledger = new ArkLedger(this.transport)
 
       return this.isConnected()
     } catch (error) {
-      logger.debug(error.message)
+      logger.debug(error)
     }
 
     return false
@@ -67,12 +75,16 @@ class LedgerService {
    */
   async isConnected () {
     try {
-      // Make a request to the ledger device to determine if it's accessible
-      await this.__performAction(async () => {
-        return this.ledger.getAddress(`44'/1'/0'/0/0`)
-      }, 'getAddress')
+      if (!this.transport || this.transport.disconnected) {
+        return false
+      }
 
-      return true
+      // Make a request to the ledger device to determine if it's accessible
+      const isConnected = await this.__performAction(async () => {
+        return this.ledger.getAddress(`44'/1'/0'/0/0`)
+      })
+
+      return !!isConnected
     } catch (error) {
       logger.error(error)
     }
@@ -123,8 +135,7 @@ class LedgerService {
     return new Promise((resolve, reject) => {
       this.actionsQueue.push({
         action,
-        resolve,
-        reject
+        resolve
       })
     })
   }

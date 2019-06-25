@@ -1,7 +1,7 @@
 import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import apiClient, { client as clientService } from '@/plugins/api-client'
+import apiClient, { client as ClientService } from '@/plugins/api-client'
 import store from '@/store'
 import delegates, { delegate1, delegate2 } from '../../__fixtures__/store/delegate'
 import { network1 } from '../../__fixtures__/store/network'
@@ -11,8 +11,8 @@ Vue.use(Vuex)
 Vue.use(apiClient)
 
 beforeAll(() => {
-  clientService.version = 1
-  clientService.host = 'http://127.0.0.1'
+  ClientService.version = 1
+  ClientService.host = 'http://127.0.0.1'
 
   store.commit('network/SET_ALL', [network1])
   store.commit('profile/CREATE', profile1)
@@ -84,6 +84,16 @@ describe('delegate store module', () => {
     })
 
     nock('http://127.0.0.1')
+      .persist()
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/delegates')
+      .query(true)
+      .reply(200)
+
+    nock('http://127.0.0.1')
       .get('/api/delegates')
       .query({ offset: 0, limit: 51, orderBy: 'rank:asc' })
       .reply(200, {
@@ -94,7 +104,7 @@ describe('delegate store module', () => {
     await store.dispatch('delegate/load')
     const v1Delegates = store.getters['delegate/all']
 
-    clientService.version = 2
+    ClientService.version = 2
 
     nock('http://127.0.0.1')
       .get('/api/delegates')
