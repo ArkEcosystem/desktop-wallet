@@ -3,7 +3,10 @@
     class="flex flex-col"
     @submit.prevent
   >
-    <ListDivided :is-floating-label="true">
+    <ListDivided
+      v-if="senderLabel"
+      :is-floating-label="true"
+    >
       <ListDividedItem :label="$t('TRANSACTION.SENDER')">
         {{ senderLabel }}
         <span
@@ -80,6 +83,7 @@
       :currency="walletNetwork.token"
       :transaction-type="$options.transactionType"
       :is-disabled="!currentWallet"
+      :wallet="currentWallet"
       :wallet-network="walletNetwork"
       @input="onFee"
     />
@@ -235,7 +239,7 @@ export default {
       return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
     },
     senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
+      return this.currentWallet ? this.wallet_formatAddress(this.currentWallet.address) : null
     },
     senderWallet () {
       return this.wallet

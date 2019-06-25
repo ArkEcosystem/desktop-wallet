@@ -7,6 +7,11 @@ describe('URI Handler', () => {
       expect(uri.validate()).toBeTrue()
     })
 
+    it('should validate custom network', () => {
+      const uri = new URIHandler('ark:LNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
+      expect(uri.validate()).toBeTrue()
+    })
+
     it('should validate with params', () => {
       const uri = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&')
       expect(uri.validate()).toBeTrue()
