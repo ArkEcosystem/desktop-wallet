@@ -1,138 +1,151 @@
 <template>
-  <div
-    v-click-outside.capture="emitClose"
-    :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
-    class="absolute z-20 theme-dark"
-  >
-    <MenuOptions
+  <div v-click-outside.capture="emitClose">
+    <MenuNavigationItem
+      id="settings"
+      :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
       :is-horizontal="isHorizontal"
-      :is-settings="true"
+      :can-activate="false"
+      class="AppSidemenu__item"
+      icon="settings"
+      @click="toggleShowSettings"
+    />
+
+    <div
+      v-if="isSettingsVisible"
+      :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
+      class="absolute z-20 theme-dark"
+      @close="closeShowSettings"
     >
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
-        @click="toggleSelect('currency-menu')"
+      <MenuOptions
+        :is-horizontal="isHorizontal"
+        :is-settings="true"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
+          @click="toggleSelect('currency-menu')"
         >
-          <MenuDropdown
-            ref="currency-menu"
-            :items="currencies"
-            :position="['-40%', '5%']"
-            :value="sessionCurrency"
-            @select="setCurrency"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <MenuDropdown
+              ref="currency-menu"
+              :items="currencies"
+              :position="['-40%', '5%']"
+              :value="sessionCurrency"
+              @select="setCurrency"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="pluginThemes
-          ? $t('APP_SIDEMENU.SETTINGS.THEME')
-          : $t('APP_SIDEMENU.SETTINGS.DARK_MODE')
-        "
-        @click="toggleSelect(pluginThemes ? 'theme-menu' : 'dark-switch')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="pluginThemes
+            ? $t('APP_SIDEMENU.SETTINGS.THEME')
+            : $t('APP_SIDEMENU.SETTINGS.DARK_MODE')
+          "
+          @click="toggleSelect(pluginThemes ? 'theme-menu' : 'dark-switch')"
         >
-          <MenuDropdown
-            v-if="pluginThemes"
-            ref="theme-menu"
-            :items="themes"
-            :position="['-40%', '5%']"
-            :value="sessionTheme"
-            @select="setTheme"
-          />
-          <ButtonSwitch
-            v-else
-            ref="dark-switch"
-            :is-active="session_hasDarkTheme"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setTheme"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <MenuDropdown
+              v-if="pluginThemes"
+              ref="theme-menu"
+              :items="themes"
+              :position="['-40%', '5%']"
+              :value="sessionTheme"
+              @select="setTheme"
+            />
+            <ButtonSwitch
+              v-else
+              ref="dark-switch"
+              :is-active="session_hasDarkTheme"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setTheme"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        v-if="!isLinux"
-        :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
-        @click="toggleSelect('protection-switch')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          v-if="!isLinux"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
+          @click="toggleSelect('protection-switch')"
         >
-          <ButtonSwitch
-            ref="protection-switch"
-            :is-active="contentProtection"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setProtection"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <ButtonSwitch
+              ref="protection-switch"
+              :is-active="contentProtection"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setProtection"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
-        @click="toggleSelect('ledger-background-switch')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
+          @click="toggleSelect('ledger-background-switch')"
         >
-          <ButtonSwitch
-            ref="ledger-background-switch"
-            :is-active="backgroundUpdateLedger"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setBackgroundUpdateLedger"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <ButtonSwitch
+              ref="ledger-background-switch"
+              :is-active="backgroundUpdateLedger"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setBackgroundUpdateLedger"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.BROADCAST_PEERS')"
-        @click="toggleSelect('broadcast-peers')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.BROADCAST_PEERS')"
+          @click="toggleSelect('broadcast-peers')"
         >
-          <ButtonSwitch
-            ref="broadcast-peers"
-            :is-active="sessionBroadcastPeers"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setBroadcastPeers"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <ButtonSwitch
+              ref="broadcast-peers"
+              :is-active="sessionBroadcastPeers"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setBroadcastPeers"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
-        class="text-grey-light"
-        @click="toggleResetDataModal"
-      />
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
+          class="text-grey-light"
+          @click="toggleResetDataModal"
+        />
 
-      <ModalConfirmation
-        v-if="isResetDataModalOpen"
-        :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
-        :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
-        container-classes="max-w-md"
-        @close="toggleResetDataModal"
-        @cancel="toggleResetDataModal"
-        @continue="onResetData"
-      />
-    </MenuOptions>
+        <ModalConfirmation
+          v-if="isResetDataModalOpen"
+          :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
+          :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
+          container-classes="max-w-md"
+          @close="toggleResetDataModal"
+          @cancel="toggleResetDataModal"
+          @continue="onResetData"
+        />
+      </MenuOptions>
+    </div>
   </div>
 </template>
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
-import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
+import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
 import { clone, isEmpty, isString } from 'lodash'
 const os = require('os')
@@ -142,6 +155,7 @@ export default {
 
   components: {
     ModalConfirmation,
+    MenuNavigationItem,
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
@@ -162,7 +176,8 @@ export default {
   },
 
   data: () => ({
-    isResetDataModalOpen: false
+    isResetDataModalOpen: false,
+    isSettingsVisible: false
   }),
 
   computed: {
@@ -245,6 +260,14 @@ export default {
   },
 
   methods: {
+    toggleShowSettings () {
+      this.isSettingsVisible = !this.isSettingsVisible
+    },
+
+    closeShowSettings () {
+      this.isSettingsVisible = false
+    },
+
     setCurrency (newCurrency) {
       this.sessionCurrency = newCurrency
     },
@@ -280,7 +303,7 @@ export default {
 
     emitClose () {
       if (this.outsideClick && !this.isResetDataModalOpen) {
-        this.$emit('close')
+        this.closeShowSettings()
       }
     }
   }
@@ -296,7 +319,7 @@ export default {
 }
 
 .AppSidemenuOptionsSettings .MenuOptions--vertical:after {
-  top: 7.8rem;
+  top: 10.8rem;
 }
 
 .AppSidemenuOptionsSettings--horizontal {
