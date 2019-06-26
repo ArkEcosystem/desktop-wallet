@@ -43,7 +43,7 @@ import SvgIcon from '@/components/SvgIcon'
 export default {
   name: 'MenuNavigationItem',
 
-  inject: ['switchToId'],
+  inject: ['switchToItem'],
 
   components: {
     SvgIcon
@@ -93,7 +93,7 @@ export default {
   methods: {
     onClick () {
       if (this.canActivate) {
-        this.switchToId(this.id)
+        this.switchToItem(this.id)
       }
 
       this.$emit('click', this.id)
