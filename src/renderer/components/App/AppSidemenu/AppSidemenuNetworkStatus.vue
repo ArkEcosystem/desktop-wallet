@@ -1,6 +1,6 @@
 <template>
   <div
-    v-click-outside="emitClose"
+    v-click-outside.capture="emitClose"
     :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
     class="absolute z-20 theme-dark"
   >
@@ -27,7 +27,7 @@
       </div>
       <div class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer">
         <button
-          @click="toggleSelect('peers-menu')"
+          @click.stop="toggleSelect('peers-menu')"
         >
           <div
             slot="controls"
@@ -117,9 +117,10 @@
         icon="connect"
         view-box="0 0 30 15"
         class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-4 text-grey-dark hover:text-white border-b border-theme-settings-sub"
+        @toggle="toggleCustomPeerModal"
       >
         <template slot-scope="{ toggle, isOpen }">
-          <NetworkCustomPeer
+          <NetworkCustomPeerModal
             v-if="isOpen"
             @close="toggle"
           />
@@ -146,7 +147,7 @@
 
 <script>
 import { MenuDropdown, MenuOptions } from '@/components/Menu'
-import { NetworkCustomPeer } from '@/components/Network'
+import { NetworkCustomPeerModal } from '@/components/Network'
 import { ButtonModal, ButtonReload } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -158,7 +159,7 @@ export default {
     ButtonReload,
     MenuDropdown,
     MenuOptions,
-    NetworkCustomPeer,
+    NetworkCustomPeerModal,
     SvgIcon
   },
 

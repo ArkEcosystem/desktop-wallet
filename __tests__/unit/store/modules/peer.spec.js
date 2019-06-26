@@ -1,5 +1,4 @@
-import axios from 'axios'
-import AxiosMockAdapter from 'axios-mock-adapter'
+import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client } from '@/plugins/api-client'
@@ -11,7 +10,6 @@ import { profile1 } from '../../__fixtures__/store/profile'
 Vue.use(Vuex)
 Vue.use(apiClient)
 
-const axiosMock = new AxiosMockAdapter(axios)
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 
 beforeAll(() => {
@@ -23,7 +21,7 @@ beforeAll(() => {
 })
 
 beforeEach(() => {
-  axiosMock.reset()
+  nock.cleanAll()
   client.version = 1
 })
 
@@ -57,10 +55,8 @@ describe('peer store module', () => {
 
   it('should get & set current peer', async () => {
     for (const peer of peers) {
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/transactions/fees`)
-        .reply(200, {})
-        .onGet(`http://${peer.ip}:${peer.port}/api/blocks/getFees`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/blocks/getFees')
         .reply(200, {
           fees: {
             send: 1,
@@ -69,6 +65,14 @@ describe('peer store module', () => {
             vote: 1
           }
         })
+
+      nock(`http://${peer.ip}:${peer.port}`)
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/blocks/getFees')
+        .reply(200)
     }
     await store.dispatch('peer/setCurrentPeer', goodPeer1)
     expect(store.getters['peer/current']()).toEqual(goodPeer1)
@@ -96,30 +100,28 @@ describe('peer store module', () => {
 
   it('should connect to best peer', async () => {
     for (const peer of peers) {
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/loader/status/sync`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/loader/status/sync')
         .reply(200, {
           height: 20000
         })
 
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/loader/autoconfigure`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/loader/autoconfigure')
         .reply(200, {
           network: {
             nethash
           }
         })
 
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/blocks/getEpoch`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/blocks/getEpoch')
         .reply(200, {
           epoch: new Date()
         })
 
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/transactions/fees`)
-        .reply(200, {})
-        .onGet(`http://${peer.ip}:${peer.port}/api/blocks/getFees`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/blocks/getFees')
         .reply(200, {
           fees: {
             send: 1,
@@ -128,6 +130,20 @@ describe('peer store module', () => {
             vote: 1
           }
         })
+
+      nock(`http://${peer.ip}:${peer.port}`)
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/loader/status/sync')
+        .reply(200)
+        .options('/api/loader/autoconfigure')
+        .reply(200)
+        .options('/api/blocks/getEpoch')
+        .reply(200)
+        .options('/api/blocks/getFees')
+        .reply(200)
     }
 
     const bestPeer = await store.dispatch('peer/connectToBest', { refresh: false })
@@ -142,12 +158,20 @@ describe('peer store module', () => {
     const refreshPeers = [goodPeer1, badPeer2]
 
     for (const peer of refreshPeers) {
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/peers`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/peers')
         .reply(200, {
           success: true,
           peers: refreshPeers
         })
+
+      nock(`http://${peer.ip}:${peer.port}`)
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/peers')
+        .reply(200)
     }
 
     store.dispatch('peer/set', refreshPeers)
@@ -169,16 +193,26 @@ describe('peer store module', () => {
     }
 
     for (const peer of refreshPeers) {
-      axiosMock
-        .onGet(`http://${peer.ip}:${peer.port}/api/peers`)
+      nock(`http://${peer.ip}:${peer.port}`)
+        .get('/api/peers')
         .reply(200, {
           data: refreshPeers
         })
+
+      nock(`http://${peer.ip}:${peer.port}`)
+        .defaultReplyHeaders({
+          'access-control-allow-origin': '*',
+          'access-control-allow-headers': 'API-Version'
+        })
+        .options('/api/peers')
+        .reply(200)
     }
 
     await store.dispatch('peer/refresh')
     goodV2Peer.delay = goodV2Peer.latency
     delete goodV2Peer.latency
+    badV2Peer.delay = badV2Peer.latency
+    delete badV2Peer.latency
     expect(store.getters['peer/all']()).toEqual([{ ...goodV2Peer, p2pPort: goodV2Peer.port, port: null }])
   })
 
@@ -186,25 +220,37 @@ describe('peer store module', () => {
     client.version = 1
     client.host = `http://${goodPeer1.ip}:${goodPeer1.port}`
 
-    axiosMock
-      .onGet(`${client.host}/api/loader/status/sync`)
+    nock(client.host)
+      .get('/api/loader/status/sync')
       .reply(200, {
         height: 11000
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/loader/autoconfigure`)
+    nock(client.host)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash
         }
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/blocks/getEpoch`)
+    nock(client.host)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: new Date()
       })
+
+    nock(client.host)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/status/sync')
+      .reply(200)
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
 
     const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodPeer1)
 
@@ -218,22 +264,32 @@ describe('peer store module', () => {
     const goodV2Peer = { ...goodPeer1, version: '2.0.0' }
     client.host = `http://${goodV2Peer.ip}:${goodV2Peer.port}`
 
-    axiosMock
-      .onGet(`${client.host}/api/node/syncing`)
+    nock(client.host)
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 21000
         }
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/node/configuration`)
+    nock(client.host)
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
           nethash
         }
       })
+
+    nock(client.host)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/node/syncing')
+      .reply(200)
+      .options('/api/node/configuration')
+      .reply(200)
 
     const updatedPeer = await store.dispatch('peer/updateCurrentPeerStatus', goodV2Peer)
 
@@ -243,26 +299,53 @@ describe('peer store module', () => {
   })
 
   it('should update current peer status', async () => {
-    axiosMock
-      .onGet(`${client.host}/api/loader/autoconfigure`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash
         }
       })
-      .onGet(`${client.host}/api/loader/status/sync`)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/status/sync')
       .reply(200, {
         height: 10000
       })
-      .onGet(`${client.host}/api/blocks/getEpoch`)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: new Date()
       })
-      .onGet(`${client.host}/api/transactions/fees`)
-      .reply(200, { data: {} })
-      .onGet(`${client.host}/api/blocks/getFees`)
-      .reply(200, { fees: {} })
-      .onAny().reply(config => console.log(config.url))
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .persist()
+      .get('/api/blocks/getFees')
+      .reply(200, {
+        fees: {
+          send: 1,
+          secondsignature: 1,
+          delegate: 1,
+          vote: 1
+        }
+      })
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .persist()
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/loader/status/sync')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
+      .options('/api/blocks/getFees')
+      .reply(200)
+
     await store.dispatch('peer/setCurrentPeer', goodPeer1)
 
     client.version = 1
@@ -277,25 +360,37 @@ describe('peer store module', () => {
   })
 
   it('should validate a v1 peer successfully', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/status/sync')
       .reply(200, {
         height: 10001
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: 'dummyEpoch'
       })
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
+      .options('/api/loader/status/sync')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
 
@@ -308,25 +403,37 @@ describe('peer store module', () => {
   })
 
   it('should validate a v1 https peer successfully', async () => {
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash
         }
       })
 
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/status/sync')
       .reply(200, {
         height: 10001
       })
 
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: 'dummyEpoch'
       })
+
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/loader/status/sync')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', {
       ...goodPeer1,
@@ -344,8 +451,8 @@ describe('peer store module', () => {
 
   it('should validate a v2 peer successfully', async () => {
     // Mock v1 endpoints also since they are available on core v2
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           constants: {},
@@ -353,23 +460,23 @@ describe('peer store module', () => {
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/status/sync')
       .reply(200, {
         data: {
           height: 10002
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: 'dummyEpoch'
       })
 
     // Mock v2 endpoints
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
@@ -377,13 +484,29 @@ describe('peer store module', () => {
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/syncing`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 10002
         }
       })
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/loader/status/sync')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
+      .options('/api/node/configuration')
+      .reply(200)
+      .options('/api/node/syncing')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
 
@@ -397,16 +520,16 @@ describe('peer store module', () => {
 
   it('should validate a v2 https peer successfully', async () => {
     // Mock v1 endpoints also since they are available on core v2
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash
         }
       })
 
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/loader/status/sync`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/status/sync')
       .reply(200, {
         data: {
           height: 10002
@@ -414,8 +537,8 @@ describe('peer store module', () => {
       })
 
     // Mock v2 endpoints
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
@@ -423,13 +546,27 @@ describe('peer store module', () => {
         }
       })
 
-    axiosMock
-      .onGet(`https://${goodPeer1.ip}:${goodPeer1.port}/api/node/syncing`)
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/syncing')
       .reply(200, {
         data: {
           height: 10002
         }
       })
+
+    nock(`https://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/loader/status/sync')
+      .reply(200)
+      .options('/api/node/configuration')
+      .reply(200)
+      .options('/api/node/syncing')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', {
       ...goodPeer1,
@@ -446,49 +583,83 @@ describe('peer store module', () => {
   })
 
   it('should fail validating a v1 peer due to bad network url', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(400)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Could not connect$/))
   })
 
   it('should fail validating a v2 peer due to bad network url', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/configuration')
       .reply(400)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/node/configuration')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Could not connect$/))
   })
 
   it('should fail validating a v1 peer due to bad sync status url', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/configuration')
+      .reply(404)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: 'dummyEpoch'
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/loader/syncing`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/syncing')
       .reply(400)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/node/configuration')
+      .reply(200)
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
+      .options('/api/node/syncing')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
   })
 
   it('should fail validating a v2 peer due to bad sync status url', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
@@ -496,36 +667,57 @@ describe('peer store module', () => {
         }
       })
 
-    axiosMock
-      .onGet(`${client.host}/api/node/syncing`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/node/syncing')
       .reply(400)
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/node/configuration')
+      .reply(200)
+      .options('/api/node/syncing')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Status check failed$/))
   })
 
   it('should fail validating a v1 peer because of wrong nethash', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/loader/autoconfigure`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/loader/autoconfigure')
       .reply(200, {
         network: {
           nethash: 'wrong nethash'
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .get('/api/blocks/getEpoch')
       .reply(200, {
         epoch: 'dummyEpoch'
       })
+
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
+      })
+      .options('/api/loader/autoconfigure')
+      .reply(200)
+      .options('/api/blocks/getEpoch')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Wrong network$/))
   })
 
   it('should fail validating a v2 peer because of wrong nethash', async () => {
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/node/configuration`)
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .persist()
+      .get('/api/node/configuration')
       .reply(200, {
         data: {
           constants: {},
@@ -533,11 +725,14 @@ describe('peer store module', () => {
         }
       })
 
-    axiosMock
-      .onGet(`http://${goodPeer1.ip}:${goodPeer1.port}/api/blocks/getEpoch`)
-      .reply(200, {
-        epoch: 'dummyEpoch'
+    nock(`http://${goodPeer1.ip}:${goodPeer1.port}`)
+      .persist()
+      .defaultReplyHeaders({
+        'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'API-Version'
       })
+      .options('/api/node/configuration')
+      .reply(200)
 
     const response = await store.dispatch('peer/validatePeer', { ...goodPeer1, timeout: 100 })
     expect(response).toEqual(expect.stringMatching(/^Wrong network$/))

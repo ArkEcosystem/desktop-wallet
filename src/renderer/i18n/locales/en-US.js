@@ -14,9 +14,11 @@ export default {
     DATE: 'Date',
     DELEGATE: 'Delegate',
     DONE: 'Done',
+    FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
@@ -161,7 +163,8 @@ export default {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     VENDOR_FIELD: {
-      LIMIT_REACHED: 'You can enter maximum {0} characters only'
+      LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
+      LIMIT_REMAINING: '{0}/{1} Remaining'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -365,6 +368,27 @@ export default {
     TITLE: 'Load Additional Ledger Wallets'
   },
 
+  MODAL_EXPORT_WALLETS: {
+    ADVANCED: 'Advanced Options',
+    CANCEL: 'Cancel',
+    COUNT: '{count} wallets will be exported',
+    ERROR: {
+      EXPORT_WALLETS: 'Failed to export your wallets'
+    },
+    EXPORT: 'Export 0 Wallets | Export 1 Wallet | Export {count} Wallets',
+    INSTRUCTIONS: 'Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
+    OPTIONS: {
+      ADD_NETWORK: 'Add information about the network',
+      EXCLUDE_EMPTY: 'Exclude empty wallets',
+      EXCLUDE_LEDGER: 'Exclude ledger wallets',
+      EXCLUDE_UNNAMED: 'Exclude wallets without a name'
+    },
+    SUCCESS: {
+      EXPORT_WALLETS: 'Your wallets were successfully exported to: {path}'
+    },
+    TITLE: 'Export Wallets'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, cancel',
     CONTINUE: 'Yes, I am sure',
@@ -557,6 +581,9 @@ export default {
     },
 
     PROFILE_EDITION: {
+      ERROR: {
+        DUPLICATE_PROFILE: 'A profile already exists with that name'
+      },
       TAB_PROFILE: {
         INSTRUCTIONS: {
           HEADER: 'Edit this profile',
@@ -596,12 +623,14 @@ export default {
       LEDGER: {
         CACHE: 'Cache ledger wallets?',
         CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
-        ADDITIONAL: '# of Ledger Wallets'
+        ADDITIONAL: 'Load Additional Ledger Wallets',
+        OPTIONS: 'Ledger Options'
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import Wallet',
+      EXPORT_WALLETS: 'Export Wallets',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
@@ -898,7 +927,7 @@ export default {
   WALLET_SECOND_SIGNATURE: {
     NEW: 'Generate new second passphrase',
     ALREADY_REGISTERED: 'There is already a second passphrase registered for this address',
-    INSTRUCTIONS: 'This is your second passphrase. Make sure to make a backup and keep it somewhere safe!'
+    INSTRUCTIONS: 'You will need both 12 word passphrases to interact with the network. Keep them safe!'
   },
 
   WALLET_SIDEBAR: {

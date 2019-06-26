@@ -45,24 +45,16 @@
       </div>
 
       <div class="flex flex-row items-center">
-        <div
-          v-show="isLedgerConnected"
-          v-tooltip="$t('PAGES.WALLET_ALL.LEDGER.CACHE_INFO')"
-          class="WalletAll__ledger__cache flex flex-col items-center px-6"
-        >
-          <span>
-            {{ $t('PAGES.WALLET_ALL.LEDGER.CACHE') }}
-          </span>
-          <ButtonSwitch
-            ref="cache-ledger-switch"
-            :is-active="sessionLedgerCache"
-            class="mt-3"
-            @change="setLedgerCache"
-          />
-        </div>
-        <WalletButtonAdditionalLedgers class="pl-6 pr-6" />
+        <WalletButtonLedgerSettings class="pl-6 pr-6" />
         <WalletButtonCreate class="pl-6 pr-6" />
-        <WalletButtonImport class="pl-6" />
+        <WalletButtonImport
+          :class="{ 'pr-6': hasWallets }"
+          class="pl-6"
+        />
+        <WalletButtonExport
+          v-if="hasWallets"
+          class="pl-6"
+        />
       </div>
     </div>
 
@@ -130,7 +122,7 @@
                     <WalletIdenticon
                       :value="wallet.address"
                       :size="60"
-                      class="identicon cursor-pointer"
+                      class="identicon"
                     />
 
                     <div
@@ -142,8 +134,7 @@
                             content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
                             placement: 'right'
                           }"
-                          class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1 cursor-default"
-                          @click.stop
+                          class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1"
                         >
                           {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
                         </span>
@@ -155,8 +146,7 @@
                         </span>
                       </div>
                       <span
-                        class="font-bold mt-2 text-lg cursor-default text-theme-page-text text-left whitespace-no-wrap"
-                        @click.stop
+                        class="font-bold mt-2 text-lg text-theme-page-text text-left whitespace-no-wrap"
                       >
                         {{ formatter_networkCurrency(wallet.balance, 2) }}
                       </span>
@@ -241,11 +231,11 @@
 
 <script>
 import { clone, some, uniqBy } from 'lodash'
-import { ButtonLayout, ButtonSwitch } from '@/components/Button'
+import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-import { WalletButtonAdditionalLedgers, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet/WalletButtons'
+import { WalletButtonCreate, WalletButtonExport, WalletButtonImport, WalletButtonLedgerSettings } from '@/components/Wallet/WalletButtons'
 import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import { MenuDropdown } from '@/components/Menu'
@@ -255,13 +245,13 @@ export default {
 
   components: {
     ButtonLayout,
-    ButtonSwitch,
     Loader,
     ProfileAvatar,
     SvgIcon,
-    WalletButtonAdditionalLedgers,
     WalletButtonCreate,
+    WalletButtonExport,
     WalletButtonImport,
+    WalletButtonLedgerSettings,
     WalletIdenticon,
     WalletRemovalConfirmation,
     WalletRenameModal,
@@ -298,6 +288,10 @@ export default {
       return this.session_network
     },
 
+    hideText () {
+      return this.$store.getters['session/hideWalletButtonText']
+    },
+
     totalBalance () {
       return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
@@ -311,6 +305,10 @@ export default {
       return this.wallet_sortByName(wallets)
     },
 
+    hasWallets () {
+      return this.selectableWallets.length
+    },
+
     isLedgerLoading () {
       return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
     },
@@ -321,23 +319,6 @@ export default {
 
     hasWalletGridLayout () {
       return this.$store.getters['session/hasWalletGridLayout']
-    },
-
-    sessionLedgerCache: {
-      get () {
-        return this.$store.getters['session/ledgerCache']
-      },
-      set (enabled) {
-        this.$store.dispatch('session/setLedgerCache', enabled)
-        const profile = clone(this.session_profile)
-        profile.ledgerCache = enabled
-        this.$store.dispatch('profile/update', profile)
-        if (enabled) {
-          this.$store.dispatch('ledger/cacheWallets')
-        } else {
-          this.$store.dispatch('ledger/clearWalletCache')
-        }
-      }
     },
 
     walletLayout: {
@@ -444,10 +425,6 @@ export default {
 
     toggleWalletLayout () {
       this.walletLayout = this.walletLayout === 'grid' ? 'tabular' : 'grid'
-    },
-
-    setLedgerCache (enabled) {
-      this.sessionLedgerCache = enabled
     },
 
     onRemoveWallet (wallet) {

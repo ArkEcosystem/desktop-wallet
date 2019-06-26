@@ -34,12 +34,19 @@
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
-        <WalletButtonCreate class="Dashboard__wallets__button" />
-        <WalletButtonImport class="Dashboard__wallets__button" />
+        <WalletButtonCreate
+          :force-text="true"
+          class="Dashboard__wallets__button"
+        />
+        <WalletButtonImport
+          :force-text="true"
+          class="Dashboard__wallets__button"
+        />
       </div>
       <WalletSidebar
         :show-expanded="true"
         :show-menu="false"
+        :show-filtered-wallets="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>

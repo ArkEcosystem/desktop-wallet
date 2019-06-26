@@ -1,11 +1,11 @@
 <template>
   <div
-    v-click-outside="emitClose"
+    v-click-outside.capture="emitClose"
     :class="isSidebarExpanded ? 'WalletSidebarFilters--expanded' : 'WalletSidebarFilters--collapsed'"
-    class="WalletSidebarFilters absolute z-20 rounded-lg theme-light"
+    class="WalletSidebarFilters absolute z-20 rounded-lg"
   >
     <div
-      class="bg-theme-feature p-10 rounded-lg shadow font-bold"
+      class="bg-theme-settings p-10 rounded-lg shadow font-bold"
     >
       <WalletSidebarFiltersSearchInput
         v-model="filters.searchQuery"
@@ -17,29 +17,16 @@
       />
     </div>
 
-    <MenuOptions class="WalletSidebarFilters__sorting mt-2 theme-light rounded-lg shadow font-bold">
+    <MenuOptions class="WalletSidebarFilters__sorting mt-2 rounded-lg shadow font-bold">
       <div class="mx-10 py-5 mb-2 text-theme-settings-heading select-none">
         {{ $t('WALLET_SIDEBAR.SORT.BY') }}
       </div>
       <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.NAME_ASC')"
-        :class="sortOrder === 'name-asc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('name-asc')"
-      />
-      <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.NAME_DESC')"
-        :class="sortOrder === 'name-desc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('name-desc')"
-      />
-      <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.BALANCE_ASC')"
-        :class="sortOrder === 'balance-asc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('balance-asc')"
-      />
-      <MenuOptionsItem
-        :title="$t('WALLET_SIDEBAR.SORT.BALANCE_DESC')"
-        :class="sortOrder === 'balance-desc' ? 'WalletSidebarFilters__sorting__order--selected' : ''"
-        @click="setSort('balance-desc')"
+        v-for="option in $options.sortOptions"
+        :key="option"
+        :title="`${$t('WALLET_SIDEBAR.SORT.' + option.toUpperCase().replace('-', '_'))}`"
+        :class="stringifiedSortOrder === option ? 'WalletSidebarFilters__sorting__order--selected' : ''"
+        @click="setSort(option)"
       />
     </MenuOptions>
 
@@ -57,8 +44,7 @@
         >
           <ButtonSwitch
             ref="hide-empty"
-            :is-active="hideEmpty"
-            class="theme-light"
+            :is-active="currentFilters.hideEmpty"
             background-color="var(--theme-settings-switch)"
             @change="setHideEmpty"
           />
@@ -75,8 +61,7 @@
         >
           <ButtonSwitch
             ref="hide-ledger"
-            :is-active="hideLedger"
-            class="theme-light"
+            :is-active="currentFilters.hideLedger"
             background-color="var(--theme-settings-switch)"
             @change="setHideLedger"
           />
@@ -101,6 +86,13 @@ export default {
     WalletSidebarFiltersSearchInput
   },
 
+  sortOptions: [
+    'name-asc',
+    'name-desc',
+    'balance-asc',
+    'balance-desc'
+  ],
+
   props: {
     hasContacts: {
       type: Boolean,
@@ -123,16 +115,9 @@ export default {
       required: false,
       default: false
     },
-    hideEmpty: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    // Hide Ledger wallets
-    hideLedger: {
-      type: Boolean,
-      required: false,
-      default: false
+    filters: {
+      type: Object,
+      required: true
     },
     searchQuery: {
       type: String,
@@ -140,47 +125,40 @@ export default {
       default: ''
     },
     sortOrder: {
-      type: String,
+      type: Object,
       required: false,
-      default: 'name-asc'
+      default: () => ({ field: 'name', type: 'asc' })
     }
   },
 
   data () {
     return {
-      filters: {
-        hideEmpty: this.hideEmpty,
-        hideLedger: this.hideLedger,
-        searchQuery: this.searchQuery
-      },
-      sort: {
-        order: this.sortOrder
-      }
+      currentSearchQuery: this.searchQuery,
+      currentFilters: this.filters,
+      currentSortOrder: this.sortOrder
+    }
+  },
+
+  computed: {
+    stringifiedSortOrder () {
+      return Object.values(this.currentSortOrder).join('-')
     }
   },
 
   watch: {
-    hideEmpty (value) {
-      this.filters.hideEmpty = value
+    filters (filters) {
+      this.currentFilters = filters
     },
 
-    hideLedger (value) {
-      this.filters.hideLedger = value
-    },
-
-    searchQuery (value) {
-      this.filters.searchQuery = value
-    },
-
-    order (value) {
-      this.sort.order = value
+    searchQuery (query) {
+      this.currentSearchQuery = query
     }
   },
 
   methods: {
     setSearchQuery (query) {
-      this.filters.searchQuery = query
-      this.emitFilter()
+      this.currentSearchQuery = query
+      this.emitSearch()
     },
 
     setHideEmpty (isHidden) {
@@ -193,8 +171,14 @@ export default {
       this.emitFilter()
     },
 
-    setSort (order) {
-      this.sort.order = order
+    setFilter (filter, value) {
+      this.currentFilters[filter] = value
+      this.emitFilter()
+    },
+
+    setSort (value) {
+      const [field, type] = value.split('-')
+      this.currentSortOrder = { field, type }
       this.emitSort()
     },
 
@@ -203,11 +187,15 @@ export default {
     },
 
     emitFilter () {
-      this.$emit('filter', this.filters)
+      this.$emit('filter', this.currentFilters)
+    },
+
+    emitSearch () {
+      this.$emit('search', this.currentSearchQuery)
     },
 
     emitSort () {
-      this.$emit('sort', this.sort.order)
+      this.$emit('sort', this.currentSortOrder)
     },
 
     emitClose (context) {
@@ -219,7 +207,6 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletSidebarFilters {
-  position: fixed;
   width: 380px;
   /* The expanded sidebar uses `.w-1/7` */
   right: calc(12.5% - 0.5rem);

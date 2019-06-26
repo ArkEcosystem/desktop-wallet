@@ -43,6 +43,7 @@
       <div
         v-if="isExpanded"
         class="WalletSidebar__menu__button"
+        :class="areFiltersActive ? 'WalletSidebar__menu__button--active' : ''"
         @click="toggleFilters"
       >
         <div class="flex items-center">
@@ -78,12 +79,12 @@
       :has-ledger="isLedgerConnected"
       :is-sidebar-expanded="isExpanded"
       :outside-click="true"
-      :hide-empty="filters.hideEmpty"
-      :hide-ledger="filters.hideLedger"
-      :search-query="filters.searchQuery"
-      :sort-order="sort.order"
+      :filters="filters"
+      :search-query="searchQuery"
+      :sort-order="sortOrder"
       @filter="applyFilters"
-      @sort="applyOrder"
+      @sort="applySortOrder"
+      @search="applySearch"
       @close="closeFilters"
     />
 
@@ -130,7 +131,7 @@
         class="WalletSidebar__wallet__wrapper transition text-sm w-full mx-2 py-6 truncate"
       >
         <Loader />
-        <div class="font-semibold text-theme-page-text">
+        <div class="font-semibold text-theme-page-text text-center">
           {{ $t('WALLET_SIDEBAR.LOADING_LEDGER') }}
         </div>
       </div>
@@ -203,7 +204,7 @@
 </template>
 
 <script>
-import { clone, filter, isEqual, sortBy, uniqBy } from 'lodash'
+import { clone, filter, sortBy, uniqBy } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
@@ -233,6 +234,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    showFilteredWallets: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
@@ -240,21 +246,12 @@ export default {
     hasBeenExpanded: false,
     isFiltersVisible: false,
     isResizing: false,
-    filters: clone(vm.$options.defaultFilters),
-    sort: {
-      order: 'name-asc'
-    }
-  }),
-
-  defaultFilters: Object.freeze({
-    hideEmpty: false,
-    hideLedger: false,
     searchQuery: ''
   }),
 
   computed: {
     areFiltersActive () {
-      return !isEqual(this.filters, this.$options.defaultFilters)
+      return !!this.searchQuery.length || Object.values(this.filters).some(value => !!value)
     },
 
     currentWallet () {
@@ -295,8 +292,8 @@ export default {
 
       if (this.isLedgerConnected && !this.hasContactsOnly) {
         wallets = uniqBy([
-          ...wallets,
-          ...this.ledgerWallets
+          ...this.ledgerWallets,
+          ...wallets
         ], 'address')
       }
 
@@ -304,7 +301,33 @@ export default {
     },
 
     selectableWallets () {
-      return this.sortWallets(this.filterWallets(this.availableWallets))
+      const wallets = this.showFilteredWallets ? this.filterWallets(this.availableWallets) : this.availableWallets
+      return this.sortWallets(wallets)
+    },
+
+    filters: {
+      get () {
+        return this.$store.getters['session/walletSidebarFilters'] || {}
+      },
+      set (filters) {
+        this.$store.dispatch('session/setWalletSidebarFilters', filters)
+        const profile = clone(this.session_profile)
+        profile.walletSidebarFilters = filters
+        this.$store.dispatch('profile/update', profile)
+      }
+    },
+
+    sortOrder: {
+      get () {
+        return this.$store.getters['session/walletSidebarSortParams'] ||
+          { field: 'name', type: 'asc' }
+      },
+      set (params) {
+        this.$store.dispatch('session/setWalletSidebarSortParams', params)
+        const profile = clone(this.session_profile)
+        profile.walletSidebarSortParams = params
+        this.$store.dispatch('profile/update', profile)
+      }
     }
   },
 
@@ -342,6 +365,10 @@ export default {
     },
 
     onSelect (address) {
+      if (!address) {
+        throw new Error('Selecting an address is required')
+      }
+
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.$emit('select', address)
     },
@@ -364,7 +391,7 @@ export default {
     },
 
     applyFilters (filters) {
-      this.$set(this, 'filters', filters)
+      this.filters = filters
     },
 
     filterWallets (wallets) {
@@ -376,12 +403,12 @@ export default {
       if (this.filters.hideEmpty) {
         filtered = filter(filtered, wallet => wallet.balance > 0)
       }
-      if (this.filters.searchQuery) {
+      if (this.searchQuery) {
         filtered = filter(filtered, ({ address, balance, name }) => {
           let match = [
             address,
             balance.toString()
-          ].some(text => text.includes(this.filters.searchQuery))
+          ].some(text => text.includes(this.searchQuery))
 
           if (!match) {
             const alternativeName = this.wallet_name(address)
@@ -389,7 +416,7 @@ export default {
               ? [name, alternativeName]
               : [name]
 
-            const query = this.filters.searchQuery.toLowerCase()
+            const query = this.searchQuery.toLowerCase()
             match = names.some(name => name.toLowerCase().includes(query))
           }
 
@@ -400,22 +427,26 @@ export default {
       return filtered
     },
 
-    applyOrder (order) {
-      this.$set(this, 'sort', { order })
+    applySearch (query) {
+      this.searchQuery = query
+    },
+
+    applySortOrder (params) {
+      this.sortOrder = params
     },
 
     sortWallets (wallets) {
-      const [attr, order] = this.sort.order.split('-')
+      const { field, type } = this.sortOrder
 
-      if (attr === 'name') {
+      if (field === 'name') {
         wallets = this.wallet_sortByName(wallets)
-      } else if (attr === 'balance') {
+      } else if (field === 'balance') {
         wallets = sortBy(wallets, ['balance', 'name', 'address'])
       } else {
-        throw new Error(`Sorting by "${attr}" is not implemented`)
+        throw new Error(`Sorting by "${field}" is not implemented`)
       }
 
-      return order === 'asc' ? wallets : wallets.reverse()
+      return type === 'asc' ? wallets : wallets.reverse()
     },
 
     ledgerDisconnected () {
@@ -424,7 +455,7 @@ export default {
       if (!hasCurrentWallet || this.currentWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
           if (this.selectableWallets.length) {
-            this.$refs.MenuNavigation.switchToId(this.selectableWallets[0].address)
+            this.$refs.MenuNavigation.switchToItem(this.selectableWallets[0].address)
           } else {
             this.$router.push({ name: 'wallets' })
           }
@@ -434,12 +465,6 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss">
-.WalletSidebar--expanded .WalletSidebar__wallet .MenuNavigationItem__border {
-  @apply .hidden
-}
-</style>
 
 <style lang="postcss" scoped>
 .WalletSidebar {
@@ -451,7 +476,7 @@ export default {
   @apply .sticky .z-10 .bg-theme-feature .pin-t
 }
 .WalletSidebar__menu__button {
-  @apply .cursor-pointer .fill-current .text-theme-option-button-text .py-2 .my-6;
+  @apply .cursor-pointer .fill-current .text-theme-option-button-text .p-2 .my-6;
   transition: color 0.4s;
   align-self: center;
 }

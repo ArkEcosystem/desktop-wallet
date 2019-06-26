@@ -1,6 +1,6 @@
 <template>
   <div
-    v-click-outside="emitClose"
+    v-click-outside.capture="emitClose"
     :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
     class="absolute z-20 theme-dark"
   >
@@ -279,7 +279,7 @@ export default {
     },
 
     emitClose () {
-      if (this.outsideClick) {
+      if (this.outsideClick && !this.isResetDataModalOpen) {
         this.$emit('close')
       }
     }
