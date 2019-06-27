@@ -96,38 +96,13 @@
 
         <div class="flexify">
           <AppSidemenuSettings
-            v-if="isSettingsVisible"
             :outside-click="true"
             :is-horizontal="isHorizontal"
-            @close="closeShowSettings"
-          />
-
-          <!-- Settings -->
-          <MenuNavigationItem
-            id="settings"
-            :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
-            :is-horizontal="isHorizontal"
-            :can-activate="false"
-            class="AppSidemenu__item"
-            icon="settings"
-            @click="toggleShowSettings"
           />
 
           <AppSidemenuNetworkStatus
-            v-if="isNetworkStatusVisible"
             :is-horizontal="isHorizontal"
             :outside-click="true"
-            @close="closeShowNetworkStatus"
-          />
-          <!-- Networks -->
-          <MenuNavigationItem
-            id="networks"
-            :title="$t('APP_SIDEMENU.NETWORK')"
-            :is-horizontal="isHorizontal"
-            :can-activate="false"
-            class="AppSidemenu__item"
-            icon="cloud"
-            @click="toggleShowNetworkStatus"
           />
 
           <!-- Profile settings -->
@@ -207,11 +182,9 @@ export default {
   },
 
   data: vm => ({
-    isNetworkStatusVisible: false,
     isImportantNotificationVisible: true,
     isPluginMenuVisible: false,
     isPluginConfirmationVisible: false,
-    isSettingsVisible: false,
     activeItem: vm.$route.name
   }),
 
@@ -243,7 +216,6 @@ export default {
 
   methods: {
     redirect (name) {
-      this.isSettingsVisible = false
       this.setActive(name)
       this.$router.push({ name })
     },
@@ -260,24 +232,8 @@ export default {
       this.isPluginMenuVisible = !this.isPluginMenuVisible
     },
 
-    toggleShowSettings () {
-      this.isSettingsVisible = !this.isSettingsVisible
-    },
-
-    toggleShowNetworkStatus () {
-      this.isNetworkStatusVisible = !this.isNetworkStatusVisible
-    },
-
     closeShowPlugins () {
       this.isPluginMenuVisible = false
-    },
-
-    closeShowSettings () {
-      this.isSettingsVisible = false
-    },
-
-    closeShowNetworkStatus () {
-      this.isNetworkStatusVisible = false
     },
 
     closePluginConfirmation () {
