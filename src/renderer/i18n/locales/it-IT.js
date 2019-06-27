@@ -14,6 +14,7 @@ export default {
     DATE: 'Data',
     DELEGATE: 'Delegato',
     DONE: 'Fatto',
+    FAILED_UPDATE: 'Impossibile aggiornare \'{name}\'. Motivo: {reason}',
     FAILED_FETCH: 'Impossibile recuperare {name}. Motivo: "{msg}".',
     FETCH: 'Recupera',
     FINISH: 'Fine',
@@ -367,6 +368,27 @@ export default {
     TITLE: 'Carica portafogli Ledger aggiuntivi'
   },
 
+  MODAL_EXPORT_WALLETS: {
+    ADVANCED: 'Opzioni avanzate',
+    CANCEL: 'Annulla',
+    COUNT: '{count} portafogli verranno esportati',
+    ERROR: {
+      EXPORT_WALLETS: 'Impossibile esportare i tuoi protafogli'
+    },
+    EXPORT: 'Esporta 0 Portafogli | Esporta 1 Portafoglio | Esporta {count} Portafogli',
+    INSTRUCTIONS: 'I tuoi portafogli esportati non conterranno le tue frasi segrete, verranno salvati solamente gli indirizzi e i rispettivi nomi!',
+    OPTIONS: {
+      ADD_NETWORK: 'Aggiungi informazioni sulla rete',
+      EXCLUDE_EMPTY: 'Escludi portafogli vuoti',
+      EXCLUDE_LEDGER: 'Escludi portafogli ledger',
+      EXCLUDE_UNNAMED: 'Escludi portafogli senza nome'
+    },
+    SUCCESS: {
+      EXPORT_WALLETS: 'I tuoi portafogli sono stati esportati con successo in: {path}'
+    },
+    TITLE: 'Esporta Portafogli'
+  },
+
   MODAL_CONFIRMATION: {
     CANCEL: 'No, annulla',
     CONTINUE: 'Sì, sono sicuro',
@@ -559,6 +581,9 @@ export default {
     },
 
     PROFILE_EDITION: {
+      ERROR: {
+        DUPLICATE_PROFILE: 'Esiste già un profilo con questo nome'
+      },
       TAB_PROFILE: {
         INSTRUCTIONS: {
           HEADER: 'Modifica questo profilo',
@@ -605,6 +630,7 @@ export default {
       DELETE_WALLET: 'Elimina questo portafoglio',
       HEADER: 'I miei portafogli',
       IMPORT_WALLET: 'Importa portafoglio',
+      EXPORT_WALLETS: 'Esporta Portafogli',
       LOADING_LEDGER: 'Caricamento portafogli Ledger...',
       SHOW_WALLET: 'Mostra portafoglio',
       TOTAL_BALANCE: 'Saldo totale',
@@ -618,7 +644,7 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Recupera portafoglio',
+          HEADER: 'Importa portafoglio',
           TEXT: 'Inserisci la frase segreta del tuo portafoglio. Puoi inserire prima l\'indirizzo, per assicurarti che corrisponda alla frase segreta specificata.'
         },
         TITLE: '1. Importa portafoglio',
@@ -946,7 +972,7 @@ export default {
     EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete Ark sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
     VOTE_DELEGATE: 'Vota Delegato {delegate}',
     UNVOTE_DELEGATE: 'Rimuovi voto a Delegato {delegate}',
-    CURRENTLY_VOTED: 'Al momento hai votato per {delegato}',
+    CURRENTLY_VOTED: 'Al momento hai votato per {delegate}',
     VOTED_FOR: 'Hai votato per il Delegato {delegate}',
     WALLET_VOTED_FOR: 'Questo portafoglio ha votato per il delegato {delegate}',
     VOTE_INFO: 'Info:',
