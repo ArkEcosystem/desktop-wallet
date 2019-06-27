@@ -75,8 +75,8 @@ export default class ClientService {
   static async fetchPeerConfig (host, timeout = 3000) {
     const walletApiHost = host.replace(/:\d+/, ':4040')
     const endpoints = [
-      `${host}/config`,
       `${walletApiHost}/config`,
+      `${host}/config`,
       walletApiHost
     ]
 
@@ -113,7 +113,7 @@ export default class ClientService {
         client.http.timeout = timeout
       }
 
-      const { data } = await client.resource('node').fees(30)
+      const { data } = await client.resource('node').fees(7)
 
       return data.data.map(fee => ({
         type: Number(fee.type),

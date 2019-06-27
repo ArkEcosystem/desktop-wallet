@@ -365,6 +365,10 @@ export default {
     },
 
     onSelect (address) {
+      if (!address) {
+        throw new Error('Selecting an address is required')
+      }
+
       this.$router.push({ name: 'wallet-show', params: { address } })
       this.$emit('select', address)
     },
@@ -451,7 +455,7 @@ export default {
       if (!hasCurrentWallet || this.currentWallet.isLedger) {
         if (this.$refs.MenuNavigation && this.$route.name === 'wallet-show') {
           if (this.selectableWallets.length) {
-            this.$refs.MenuNavigation.switchToId(this.selectableWallets[0].address)
+            this.$refs.MenuNavigation.switchToItem(this.selectableWallets[0].address)
           } else {
             this.$router.push({ name: 'wallets' })
           }
