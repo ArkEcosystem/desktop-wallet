@@ -7,10 +7,7 @@
         container: tooltipContainer
       }"
     >
-      <a
-        href="#"
-        @click.stop="onClick"
-      >
+      <a @click.stop="onClick">
         {{ wallet_formatAddress(address, addressLength) }}
       </a>
     </span>
@@ -29,7 +26,6 @@
     >
       <a
         :class="[isUnvote ? 'text-red' : 'text-green']"
-        href="#"
         @click.stop="onClick"
       >
         {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
