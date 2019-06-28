@@ -163,9 +163,7 @@ export default {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
     },
     isWalletPage () {
-      return this.$route.matched.length
-        ? this.$route.matched[0].components.default.name === 'WalletShow'
-        : null
+      return this.$route.name === 'wallet-show'
     },
     currentProfileId () {
       return this.session_profile
