@@ -89,7 +89,7 @@
         </button>
       </p>
 
-      <p class="WalletHeading__balance font-semibold tracking-extrawide text-xg">
+      <p class="WalletHeading__balance font-semibold tracking-extrawide text-lg">
         {{ balance }}
         <span
           v-if="isMarketEnabled"
