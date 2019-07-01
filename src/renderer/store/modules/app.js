@@ -45,7 +45,7 @@ export default {
   actions: {
     async checkNewVersion ({ commit }) {
       const latestRelease = await releaseService.fetchLatestRelease()
-      // eslint-enable-next-line camelcase
+      // eslint-disable-next-line camelcase
       commit('SET_LATEST_RELEASE_VERSION', latestRelease.tag_name)
     },
     setLatestAppliedMigration ({ commit }, value) {
