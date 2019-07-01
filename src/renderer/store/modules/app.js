@@ -7,7 +7,8 @@ export default {
     latestAppliedMigration: null,
     pinCode: null,
     hasSeenIntroduction: false,
-    showVotingExplanation: true
+    showVotingExplanation: true,
+    isScreenshotProtectionEnabled: null
   },
 
   getters: {
@@ -16,7 +17,8 @@ export default {
     pinCodeEnabled: state => !!state.pinCode,
     pinCode: state => state.pinCode,
     hasSeenIntroduction: state => state.hasSeenIntroduction,
-    showVotingExplanation: state => state.showVotingExplanation
+    showVotingExplanation: state => state.showVotingExplanation,
+    isScreenshotProtectionEnabled: state => state.isScreenshotProtectionEnabled
   },
 
   mutations: {
@@ -34,13 +36,16 @@ export default {
     },
     SET_SHOW_VOTING_EXPLANATION (state, showVotingExplanation) {
       state.showVotingExplanation = showVotingExplanation
+    },
+    SET_IS_SCREENSHOT_PROTECTION_ENABLED (state, enabled) {
+      state.isScreenshotProtectionEnabled = enabled
     }
   },
 
   actions: {
     async checkNewVersion ({ commit }) {
       const latestRelease = await releaseService.fetchLatestRelease()
-      // eslint-disable-next-line camelcase
+      // eslint-enable-next-line camelcase
       commit('SET_LATEST_RELEASE_VERSION', latestRelease.tag_name)
     },
     setLatestAppliedMigration ({ commit }, value) {
@@ -54,6 +59,9 @@ export default {
     },
     setVotingExplanation ({ commit }, value) {
       commit('SET_SHOW_VOTING_EXPLANATION', value)
+    },
+    setIsScreenshotProtectionEnabled ({ commit }, value) {
+      commit('SET_IS_SCREENSHOT_PROTECTION_ENABLED', value)
     }
   }
 }
