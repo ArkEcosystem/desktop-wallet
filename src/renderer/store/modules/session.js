@@ -216,6 +216,7 @@ export default {
       state.pluginSortParams = value.pluginSortParams
       state.backgroundUpdateLedger = value.backgroundUpdateLedger
       state.broadcastPeers = value.broadcastPeers
+      state.contentProtection = value.contentProtection
       state.ledgerCache = value.ledgerCache
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes

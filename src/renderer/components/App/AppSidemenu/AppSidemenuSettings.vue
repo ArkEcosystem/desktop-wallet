@@ -70,8 +70,8 @@
 
         <MenuOptionsItem
           v-if="!isLinux"
-          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
-          @click="toggleSelect('protection-switch')"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.TITLE')"
+          @click="toggleDisableContentProtectionModal"
         >
           <div
             slot="controls"
@@ -82,7 +82,6 @@
               :is-active="contentProtection"
               class="theme-dark"
               background-color="var(--theme-settings-switch)"
-              @change="setProtection"
             />
           </div>
         </MenuOptionsItem>
@@ -127,6 +126,18 @@
           :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
           class="text-grey-light"
           @click="toggleResetDataModal"
+        />
+
+        <ModalConfirmation
+          v-if="isToggleContentProtectionModalOpen"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.QUESTION')"
+          :note="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.NOTE')"
+          :cancel-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.SESSION_ONLY')"
+          :continue-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.PERMANENTLY')"
+          container-classes="max-w-md"
+          @close="toggleDisableContentProtectionModal"
+          @cancel="onToggleContentProtection"
+          @continue="onToggleContentProtection(true)"
         />
 
         <ModalConfirmation
@@ -177,7 +188,9 @@ export default {
 
   data: () => ({
     isResetDataModalOpen: false,
-    isSettingsVisible: false
+    isToggleContentProtectionModalOpen: false,
+    isSettingsVisible: false,
+    saveOnProfile: false
   }),
 
   computed: {
@@ -190,9 +203,6 @@ export default {
     },
     currencies () {
       return this.$store.getters['market/currencies']
-    },
-    contentProtection () {
-      return this.$store.getters['session/contentProtection']
     },
     backgroundUpdateLedger () {
       return this.$store.getters['session/backgroundUpdateLedger']
@@ -230,12 +240,17 @@ export default {
         this.$store.dispatch('profile/update', profile)
       }
     },
-    sessionProtection: {
+    contentProtection: {
       get () {
         return this.$store.getters['session/contentProtection']
       },
       set (protection) {
         this.$store.dispatch('session/setContentProtection', protection)
+        if (!this.contentProtection || this.saveOnProfile) {
+          const profile = clone(this.session_profile)
+          profile.contentProtection = protection
+          this.$store.dispatch('profile/update', profile)
+        }
       }
     },
     sessionBackgroundUpdateLedger: {
@@ -276,10 +291,6 @@ export default {
       this.sessionTheme = isString(theme) ? theme : (theme ? 'dark' : 'light')
     },
 
-    setProtection (protection) {
-      this.sessionProtection = protection
-    },
-
     setBackgroundUpdateLedger (update) {
       this.sessionBackgroundUpdateLedger = update
     },
@@ -292,6 +303,14 @@ export default {
       this.$refs[name].toggle()
     },
 
+    toggleDisableContentProtectionModal () {
+      if (this.contentProtection || this.isToggleContentProtectionModalOpen) {
+        this.isToggleContentProtectionModalOpen = !this.isToggleContentProtectionModalOpen
+      } else {
+        this.contentProtection = true
+      }
+    },
+
     toggleResetDataModal () {
       this.isResetDataModalOpen = !this.isResetDataModalOpen
     },
@@ -301,8 +320,14 @@ export default {
       this.electron_reload()
     },
 
+    onToggleContentProtection (saveOnProfile = false) {
+      this.saveOnProfile = saveOnProfile
+      this.contentProtection = false
+      this.toggleDisableContentProtectionModal()
+    },
+
     emitClose () {
-      if (this.outsideClick && !this.isResetDataModalOpen) {
+      if (this.outsideClick && !(this.isResetDataModalOpen || this.isToggleContentProtectionModalOpen)) {
         this.closeShowSettings()
       }
     }

@@ -236,7 +236,13 @@ export default {
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
-      SCREENSHOT_PROTECTION: 'Screenshot protection',
+      SCREENSHOT_PROTECTION: {
+        TITLE: 'Screenshot protection',
+        QUESTION: 'Are you sure you want to disable screenshot protection?',
+        NOTE: 'This feature enables applications to protect their own onscreen window content from being captured or copied though screenshot utilities.',
+        SESSION_ONLY: 'Disable for this session only',
+        PERMANENTLY: 'Disable permanently'
+      },
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',

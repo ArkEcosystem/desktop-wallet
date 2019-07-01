@@ -73,6 +73,10 @@ export default new BaseModel({
       type: 'string',
       minLength: 1
     },
+    contentProtection: {
+      type: 'boolean',
+      format: data => data.contentProtection !== undefined ? data.contentProtection : true
+    },
     backgroundUpdateLedger: {
       type: 'boolean',
       format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
