@@ -75,14 +75,6 @@ export default {
     WalletButtonImport
   },
 
-  provide () {
-    // The `MarketChartHeader` component would use these methods when wrapped by `MarketChart`
-    return {
-      changePeriod () {},
-      getPeriod () {}
-    }
-  },
-
   data: () => ({
     isChartActive: false,
     isChartShown: false

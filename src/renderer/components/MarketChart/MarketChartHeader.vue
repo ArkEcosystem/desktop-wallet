@@ -51,7 +51,10 @@ export default {
     month: 'MARKET.MONTH'
   },
 
-  inject: ['changePeriod', 'getPeriod'],
+  inject: {
+    changePeriod: { default: () => {} },
+    getPeriod: { default: () => {} }
+  },
 
   components: {
     ButtonSwitch
@@ -88,7 +91,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .MarketChartHeader__button {
   transition: all 0.3s;
 }
