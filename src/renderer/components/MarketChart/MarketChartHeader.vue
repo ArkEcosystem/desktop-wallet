@@ -8,7 +8,7 @@
       </span>
     </div>
 
-    <div>
+    <div v-if="isChartActive">
       <button
         v-for="(translation, period) in $options.periods"
         :key="period"
@@ -22,10 +22,26 @@
         {{ $t(translation) }}
       </button>
     </div>
+
+    <div class="mt-1">
+      <span class="text-lg font-semibold mr-4 mt-4">
+        {{ $t('MARKET_CHART_HEADER.SHOW_CHART') }}
+      </span>
+
+      <div class="MarketChartHeader__show-button float-right">
+        <ButtonSwitch
+          :is-active="isChartActive"
+          background-color="var(--theme-settings-switch)"
+          @change="emitToggle"
+        />
+      </div>
+    </div>
   </nav>
 </template>
 
 <script>
+import { ButtonSwitch } from '@/components/Button'
+
 export default {
   name: 'MarketChartHeader',
 
@@ -35,7 +51,22 @@ export default {
     month: 'MARKET.MONTH'
   },
 
-  inject: ['changePeriod', 'getPeriod'],
+  inject: {
+    changePeriod: { default: () => {} },
+    getPeriod: { default: () => {} }
+  },
+
+  components: {
+    ButtonSwitch
+  },
+
+  props: {
+    isChartActive: {
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  },
 
   computed: {
     activePeriod () {
@@ -50,11 +81,17 @@ export default {
     ticker () {
       return this.session_network.market.ticker
     }
+  },
+
+  methods: {
+    emitToggle (value) {
+      this.$emit('toggle', value)
+    }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .MarketChartHeader__button {
   transition: all 0.3s;
 }
@@ -64,5 +101,8 @@ export default {
 .MarketChartHeader__button:hover {
   @apply bg-theme-button-special-choice text-white;
   opacity: 0.5;
+}
+.MarketChartHeader__show-button {
+  margin-top: -0.125rem;
 }
 </style>
