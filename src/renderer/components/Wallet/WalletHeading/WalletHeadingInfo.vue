@@ -30,10 +30,16 @@
         v-if="name"
         class="flex flex-row text-lg font-semibold text-theme-heading-text"
       >
-        <span class="block xl:hidden">
+        <span
+          class="block xl:hidden"
+          v-tooltip="name"
+        >
           {{ name | truncate(12) }}
         </span>
-        <span class="hidden xl:block">
+        <span
+          class="hidden xl:block"
+          v-tooltip="name"
+        >
           {{ name | truncate(30) }}
         </span>
         <SvgIcon
