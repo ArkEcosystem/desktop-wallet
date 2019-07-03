@@ -260,6 +260,9 @@ export default {
    */
   async created () {
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      // Environments variables are strings
+      this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== 'false'
+
       await this.loadEssential()
       this.isReady = true
 
@@ -268,10 +271,6 @@ export default {
       await this.loadNotEssential()
 
       this.$synchronizer.ready()
-
-      // Environments variables are strings
-      this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== 'false'
-      remote.getCurrentWindow().setContentProtection(this.isScreenshotProtectionEnabled)
     })
 
     this.setContextMenu()
