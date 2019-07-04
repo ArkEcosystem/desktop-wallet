@@ -31,14 +31,14 @@
         class="flex flex-row text-lg font-semibold text-theme-heading-text"
       >
         <span
+          v-tooltip="name.length > 12 ? name : ''"
           class="block xl:hidden"
-          v-tooltip="name"
         >
           {{ name | truncate(12) }}
         </span>
         <span
+          v-tooltip="name.length > 30 ? name : ''"
           class="hidden xl:block"
-          v-tooltip="name"
         >
           {{ name | truncate(30) }}
         </span>
@@ -53,13 +53,13 @@
 
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
         <span
-          v-tooltip="label"
+          v-tooltip="label.length > 12 ? label : ''"
           class="block xl:hidden"
         >
           {{ wallet_truncate(label, 12) }}
         </span>
         <span
-          v-tooltip="label"
+          v-tooltip="label.length > 40 ? label : ''"
           class="hidden xl:block"
         >
           {{ showPublicKey ? wallet_truncate(label, 40) : label }}
