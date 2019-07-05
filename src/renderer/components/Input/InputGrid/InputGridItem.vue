@@ -44,7 +44,7 @@
 
     <span
       v-if="isSelected"
-      class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute bottom-0 pin-r w-6 h-6 bg-green border-2 border-theme-feature text-white"
+      class="InputGridItem__check rounded-full p-1 flex items-center justify-center absolute bottom-0 right-0 w-6 h-6 bg-green border-2 border-theme-feature text-white"
     >
       <SvgIcon
         name="checkmark"

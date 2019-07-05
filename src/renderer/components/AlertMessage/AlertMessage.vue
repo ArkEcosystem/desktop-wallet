@@ -1,7 +1,7 @@
 <template>
   <button
     :class="alert ? `AlertMessage--${alert.type}` : 'opacity-0 hidden'"
-    class="AlertMessage absolute z-50 max-w-1/2 min-w-1/4 rounded-lg inline bottom-0 pin-l m-4 p-4 text-white"
+    class="AlertMessage absolute z-50 max-w-1/2 min-w-1/4 rounded-lg inline bottom-0 left-0 m-4 p-4 text-white"
   >
     <div class="text-left message font-bold">
       <ButtonClose

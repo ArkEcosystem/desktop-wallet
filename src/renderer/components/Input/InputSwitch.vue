@@ -9,7 +9,7 @@
   >
     <div
       :class="isReverse ? 'flex-row-reverse' : 'flex-row'"
-      class="w-full pt-4 pin-l transition text-theme-page-text h-10 flex items-center justify-flex-start"
+      class="w-full pt-4 left-0 transition text-theme-page-text h-10 flex items-center justify-flex-start"
     >
       <slot>
         <div

@@ -176,7 +176,7 @@ export default {
   @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
 }
 .Plugins__avatar__sign {
-  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute bottom-0 pin-r mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap
+  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute bottom-0 right-0 mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap
 }
 .Plugins__heading {
   @apply .flex .justify-between .items-center .bg-theme-feature .rounded-lg;
