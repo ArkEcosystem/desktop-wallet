@@ -23,7 +23,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-// let defaultConfig = require('tailwindcss/defaultConfig')()
+// let defaultConfig = require('tailwindcss/defaultConfig')
 
 /*
 |-------------------------------------------------------------------------------
@@ -40,198 +40,6 @@ View the full documentation at https://tailwindcss.com.
 | "secondary", or even a numeric scale like "100" and "200", go for it.
 |
 */
-
-let colors = {
-  // Custom color variables
-  'theme-page': 'var(--theme-page)',
-  'theme-page-text': 'var(--theme-page-text)',
-  'theme-page-text-light': 'var(--theme-page-text-light)',
-  'theme-page-instructions-text': 'var(--theme-page-instructions-text)',
-  'theme-page-instructions-background': 'var(--theme-page-instructions-background)',
-  'theme-modal': 'var(--theme-modal)',
-
-  'theme-announcements-gradient-1': 'var(--theme-announcements-gradient-1)',
-  'theme-announcements-gradient-2': 'var(--theme-announcements-gradient-2)',
-
-  'theme-line-separator': 'var(--theme-line-separator)',
-  'theme-wallet-overview-border': 'var(--theme-wallet-overview-border)',
-
-  'theme-table-row-hover': 'var(--theme-table-row-hover)',
-  'theme-transaction-sent': 'var(--theme-transaction-sent)',
-  'theme-transaction-sent-arrow': 'var(--theme-transaction-sent-arrow)',
-  'theme-transaction-received': 'var(--theme-transaction-received)',
-  'theme-transaction-received-arrow': 'var(--theme-transaction-received-arrow)',
-  'theme-send-circle-second-signature': 'var(--theme-send-circle-second-signature)',
-  'theme-send-circle-second-signature-text': 'var(--theme-send-circle-second-signature-text)',
-  'theme-send-circle-register-delegate': 'var(--theme-send-circle-register-delegate)',
-  'theme-send-circle-register-delegate-text': 'var(--theme-send-circle-register-delegate-text)',
-  'theme-send-circle-vote': 'var(--theme-send-circle-vote)',
-  'theme-send-circle-vote-text': 'var(--theme-send-circle-vote-text)',
-  'theme-transaction-detail-gradient1': 'var(--theme-transaction-detail-gradient1)',
-  'theme-transaction-detail-gradient2': 'var(--theme-transaction-detail-gradient2)',
-  'theme-transaction-detail-arrow': 'var(--theme-transaction-detail-arrow)',
-  'theme-transaction-confirmations-received': 'var(--theme-transaction-confirmations-received)',
-  'theme-transaction-confirmations-sent': 'var(--theme-transaction-confirmations-sent)',
-
-  'theme-wallet-new-selected': 'var(--theme-wallet-new-selected)',
-  'theme-wallet-new-unselected': 'var(--theme-wallet-new-unselected)',
-  'theme-wallet-sign-verify-message-text': 'var(--theme-wallet-sign-verify-message-text)',
-
-  'theme-feature': 'var(--theme-feature)',
-  'theme-feature-item-text': 'var(--theme-feature-item-text)',
-  'theme-feature-item-hover': 'var(--theme-feature-item-hover)',
-  'theme-feature-item-alternative': 'var(--theme-feature-item-alternative)',
-  'theme-feature-item-alternative-text': 'var(--theme-feature-item-alternative-text)',
-  'theme-feature-item-hover-text': 'var(--theme-feature-item-hover-text)',
-  'theme-feature-item-selected': 'var(--theme-feature-item-selected)',
-  'theme-feature-item-selected-text': 'var(--theme-feature-item-selected-text)',
-  'theme-feature-item-indicator': 'var(--theme-feature-item-indicator)',
-
-  'theme-caption-text': 'var(--theme-caption-text)',
-  'theme-heading-background': 'var(--theme-heading-background)',
-  'theme-heading-text': 'var(--theme-heading-text)',
-
-  'theme-button-special-choice': 'var(--theme-button-special-choice)',
-
-  'theme-chart-background': 'var(--theme-chart-background)',
-  'theme-chart-price': 'var(--theme-chart-price)',
-
-  'theme-button': 'var(--theme-button)',
-  'theme-button-text': 'var(--theme-button-text)',
-  'theme-button-light': 'var(--theme-button-light)',
-  'theme-button-light-text': 'var(--theme-button-light-text)',
-  'theme-button-inner-box': 'var(--theme-button-inner-box)',
-  'theme-action-button': 'var(--theme-action-button)',
-  'theme-action-button-text': 'var(--theme-action-button-text)',
-  'theme-action-button-text-hover': 'var(--theme-action-button-text-hover)',
-  'theme-option-button': 'var(--theme-option-button)',
-  'theme-option-button-hover': 'var(--theme-option-button-hover)',
-  'theme-option-button-text': 'var(--theme-option-button-text)',
-  'theme-switch-button': 'var(--theme-switch-button)',
-  'theme-option-heading-button': 'var(--theme-option-heading-button)',
-  'theme-option-heading-button-hover': 'var(--theme-option-heading-button-hover)',
-  'theme-option-heading-button-text': 'var(--theme-option-heading-button-text)',
-  'theme-input-field-border': 'var(--theme-input-field-border)',
-  'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
-  'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
-  'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
-  'theme-modal-footer-button-text': 'var(--theme-modal-footer-button-text)',
-
-  'theme-explanation-background': 'var(--theme-explanation-background)',
-  'theme-explanation-text': 'var(--theme-explanation-text)',
-
-  'theme-voting-banner-background': 'var(--theme-voting-banner-background)',
-  'theme-voting-banner-text': 'var(--theme-voting-banner-text)',
-  'theme-voting-banner-button': 'var(--theme-voting-banner-button)',
-  'theme-voting-banner-button-hover': 'var(--theme-voting-banner-button-hover)',
-  'theme-voting-banner-button-text': 'var(--theme-voting-banner-text)',
-  'theme-voting-banner-button-text-hover': 'var(--theme-voting-banner-text-hover)',
-
-  'theme-settings': 'var(--theme-settings)',
-  'theme-settings-sub': 'var(--theme-settings-sub)',
-  'theme-settings-button': 'var(--theme-settings-button)',
-  'theme-settings-heading': 'var(--theme-settings-heading)',
-  'theme-settings-border': 'var(--theme-settings-border)',
-  'theme-settings-text': 'var(--theme-settings-text)',
-  'theme-settings-control-title': 'var(--theme-settings-control-title)',
-
-  'theme-error': 'var(--theme-error)',
-  'theme-error-shadow': 'var(--theme-error-shadow)',
-  'theme-success': 'var(--theme-success)',
-  'theme-success-shadow': 'var(--theme-success-shadow)',
-  'theme-info': 'var(--theme-info)',
-  'theme-info-shadow': 'var(--theme-info-shadow)',
-  'theme-warn': 'var(--theme-warn)',
-  'theme-warn-shadow': 'var(--theme-warn-shadow)',
-  'theme-warn-text': 'var(--theme-warn-text)',
-
-  'theme-footer-text': '#a4acb8',
-
-  'transparent': 'transparent',
-  'inherit': 'inherit',
-
-  'black': '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
-  'white': '#ffffff',
-
-  'red-darkest': '#3b0d0c',
-  'red-darker': '#621b18',
-  'red-dark': '#cc1f1a',
-  'red': '#e51317', // ARK logo
-  'red-light': '#F03643', // Sidemenu hover and selected border
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fef4f5', // Sidemenu hover background
-
-  'orange-darkest': '#462a16',
-  'orange-darker': '#613b1f',
-  'orange-dark': '#de751f',
-  'orange': '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
-
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  'yellow': '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#ffeaa5', // UPDATED
-  'yellow-lightest': '#fcfbeb',
-
-  'green-darkest': '#0f2f21',
-  'green-darker': '#1a4731',
-  'green-dark': '#1f9d55',
-  'green': '#2db761', // UPDATED
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
-
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#20504f',
-  'teal-dark': '#38a89d',
-  'teal': '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
-
-  'blue-darkest': '#202126', // UPDATED
-  'blue-darker': '#282a38', // UPDATED
-  'blue-dark': '#2779bd',
-  'blue': '#037CFF', // UPDATED
-  'blue-light': '#6f77a4', // UPDATED
-  'blue-lighter': '#C0CDDF', // Sidemenu icons
-  'blue-lightest': '#edf4f5', // Background
-
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  'indigo': '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#21183c',
-  'purple-darker': '#382b5f',
-  'purple-dark': '#794acf',
-  'purple': '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#451225',
-  'pink-darker': '#6f213f',
-  'pink-dark': '#eb5286',
-  'pink': '#f66d9b',
-  'pink-light': '#e28188', // Sidemenu active icon
-  'pink-lighter': '#e5b0b4', // Sidemenu hover icon
-  'pink-lightest': '#ffebef'
-}
 
 module.exports = {
 
@@ -274,7 +82,197 @@ module.exports = {
     |
     */
 
-    colors,
+    colors: {
+      // Custom color variables
+      'theme-page': 'var(--theme-page)',
+      'theme-page-text': 'var(--theme-page-text)',
+      'theme-page-text-light': 'var(--theme-page-text-light)',
+      'theme-page-instructions-text': 'var(--theme-page-instructions-text)',
+      'theme-page-instructions-background': 'var(--theme-page-instructions-background)',
+      'theme-modal': 'var(--theme-modal)',
+
+      'theme-announcements-gradient-1': 'var(--theme-announcements-gradient-1)',
+      'theme-announcements-gradient-2': 'var(--theme-announcements-gradient-2)',
+
+      'theme-line-separator': 'var(--theme-line-separator)',
+      'theme-wallet-overview-border': 'var(--theme-wallet-overview-border)',
+
+      'theme-table-row-hover': 'var(--theme-table-row-hover)',
+      'theme-transaction-sent': 'var(--theme-transaction-sent)',
+      'theme-transaction-sent-arrow': 'var(--theme-transaction-sent-arrow)',
+      'theme-transaction-received': 'var(--theme-transaction-received)',
+      'theme-transaction-received-arrow': 'var(--theme-transaction-received-arrow)',
+      'theme-send-circle-second-signature': 'var(--theme-send-circle-second-signature)',
+      'theme-send-circle-second-signature-text': 'var(--theme-send-circle-second-signature-text)',
+      'theme-send-circle-register-delegate': 'var(--theme-send-circle-register-delegate)',
+      'theme-send-circle-register-delegate-text': 'var(--theme-send-circle-register-delegate-text)',
+      'theme-send-circle-vote': 'var(--theme-send-circle-vote)',
+      'theme-send-circle-vote-text': 'var(--theme-send-circle-vote-text)',
+      'theme-transaction-detail-gradient1': 'var(--theme-transaction-detail-gradient1)',
+      'theme-transaction-detail-gradient2': 'var(--theme-transaction-detail-gradient2)',
+      'theme-transaction-detail-arrow': 'var(--theme-transaction-detail-arrow)',
+      'theme-transaction-confirmations-received': 'var(--theme-transaction-confirmations-received)',
+      'theme-transaction-confirmations-sent': 'var(--theme-transaction-confirmations-sent)',
+
+      'theme-wallet-new-selected': 'var(--theme-wallet-new-selected)',
+      'theme-wallet-new-unselected': 'var(--theme-wallet-new-unselected)',
+      'theme-wallet-sign-verify-message-text': 'var(--theme-wallet-sign-verify-message-text)',
+
+      'theme-feature': 'var(--theme-feature)',
+      'theme-feature-item-text': 'var(--theme-feature-item-text)',
+      'theme-feature-item-hover': 'var(--theme-feature-item-hover)',
+      'theme-feature-item-alternative': 'var(--theme-feature-item-alternative)',
+      'theme-feature-item-alternative-text': 'var(--theme-feature-item-alternative-text)',
+      'theme-feature-item-hover-text': 'var(--theme-feature-item-hover-text)',
+      'theme-feature-item-selected': 'var(--theme-feature-item-selected)',
+      'theme-feature-item-selected-text': 'var(--theme-feature-item-selected-text)',
+      'theme-feature-item-indicator': 'var(--theme-feature-item-indicator)',
+
+      'theme-caption-text': 'var(--theme-caption-text)',
+      'theme-heading-background': 'var(--theme-heading-background)',
+      'theme-heading-text': 'var(--theme-heading-text)',
+
+      'theme-button-special-choice': 'var(--theme-button-special-choice)',
+
+      'theme-chart-background': 'var(--theme-chart-background)',
+      'theme-chart-price': 'var(--theme-chart-price)',
+
+      'theme-button': 'var(--theme-button)',
+      'theme-button-text': 'var(--theme-button-text)',
+      'theme-button-light': 'var(--theme-button-light)',
+      'theme-button-light-text': 'var(--theme-button-light-text)',
+      'theme-button-inner-box': 'var(--theme-button-inner-box)',
+      'theme-action-button': 'var(--theme-action-button)',
+      'theme-action-button-text': 'var(--theme-action-button-text)',
+      'theme-action-button-text-hover': 'var(--theme-action-button-text-hover)',
+      'theme-option-button': 'var(--theme-option-button)',
+      'theme-option-button-hover': 'var(--theme-option-button-hover)',
+      'theme-option-button-text': 'var(--theme-option-button-text)',
+      'theme-switch-button': 'var(--theme-switch-button)',
+      'theme-option-heading-button': 'var(--theme-option-heading-button)',
+      'theme-option-heading-button-hover': 'var(--theme-option-heading-button-hover)',
+      'theme-option-heading-button-text': 'var(--theme-option-heading-button-text)',
+      'theme-input-field-border': 'var(--theme-input-field-border)',
+      'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
+      'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
+      'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
+      'theme-modal-footer-button-text': 'var(--theme-modal-footer-button-text)',
+
+      'theme-explanation-background': 'var(--theme-explanation-background)',
+      'theme-explanation-text': 'var(--theme-explanation-text)',
+
+      'theme-voting-banner-background': 'var(--theme-voting-banner-background)',
+      'theme-voting-banner-text': 'var(--theme-voting-banner-text)',
+      'theme-voting-banner-button': 'var(--theme-voting-banner-button)',
+      'theme-voting-banner-button-hover': 'var(--theme-voting-banner-button-hover)',
+      'theme-voting-banner-button-text': 'var(--theme-voting-banner-text)',
+      'theme-voting-banner-button-text-hover': 'var(--theme-voting-banner-text-hover)',
+
+      'theme-settings': 'var(--theme-settings)',
+      'theme-settings-sub': 'var(--theme-settings-sub)',
+      'theme-settings-button': 'var(--theme-settings-button)',
+      'theme-settings-heading': 'var(--theme-settings-heading)',
+      'theme-settings-border': 'var(--theme-settings-border)',
+      'theme-settings-text': 'var(--theme-settings-text)',
+      'theme-settings-control-title': 'var(--theme-settings-control-title)',
+
+      'theme-error': 'var(--theme-error)',
+      'theme-error-shadow': 'var(--theme-error-shadow)',
+      'theme-success': 'var(--theme-success)',
+      'theme-success-shadow': 'var(--theme-success-shadow)',
+      'theme-info': 'var(--theme-info)',
+      'theme-info-shadow': 'var(--theme-info-shadow)',
+      'theme-warn': 'var(--theme-warn)',
+      'theme-warn-shadow': 'var(--theme-warn-shadow)',
+      'theme-warn-text': 'var(--theme-warn-text)',
+
+      'theme-footer-text': '#a4acb8',
+
+      'transparent': 'transparent',
+      'inherit': 'inherit',
+
+      'black': '#22292f',
+      'grey-darkest': '#3d4852',
+      'grey-darker': '#606f7b',
+      'grey-dark': '#8795a1',
+      'grey': '#b8c2cc',
+      'grey-light': '#dae1e7',
+      'grey-lighter': '#f1f5f8',
+      'grey-lightest': '#f8fafc',
+      'white': '#ffffff',
+
+      'red-darkest': '#3b0d0c',
+      'red-darker': '#621b18',
+      'red-dark': '#cc1f1a',
+      'red': '#e51317', // ARK logo
+      'red-light': '#F03643', // Sidemenu hover and selected border
+      'red-lighter': '#f9acaa',
+      'red-lightest': '#fef4f5', // Sidemenu hover background
+
+      'orange-darkest': '#462a16',
+      'orange-darker': '#613b1f',
+      'orange-dark': '#de751f',
+      'orange': '#f6993f',
+      'orange-light': '#faad63',
+      'orange-lighter': '#fcd9b6',
+      'orange-lightest': '#fff5eb',
+
+      'yellow-darkest': '#453411',
+      'yellow-darker': '#684f1d',
+      'yellow-dark': '#f2d024',
+      'yellow': '#ffed4a',
+      'yellow-light': '#fff382',
+      'yellow-lighter': '#ffeaa5', // UPDATED
+      'yellow-lightest': '#fcfbeb',
+
+      'green-darkest': '#0f2f21',
+      'green-darker': '#1a4731',
+      'green-dark': '#1f9d55',
+      'green': '#2db761', // UPDATED
+      'green-light': '#51d88a',
+      'green-lighter': '#a2f5bf',
+      'green-lightest': '#e3fcec',
+
+      'teal-darkest': '#0d3331',
+      'teal-darker': '#20504f',
+      'teal-dark': '#38a89d',
+      'teal': '#4dc0b5',
+      'teal-light': '#64d5ca',
+      'teal-lighter': '#a0f0ed',
+      'teal-lightest': '#e8fffe',
+
+      'blue-darkest': '#202126', // UPDATED
+      'blue-darker': '#282a38', // UPDATED
+      'blue-dark': '#2779bd',
+      'blue': '#037CFF', // UPDATED
+      'blue-light': '#6f77a4', // UPDATED
+      'blue-lighter': '#C0CDDF', // Sidemenu icons
+      'blue-lightest': '#edf4f5', // Background
+
+      'indigo-darkest': '#191e38',
+      'indigo-darker': '#2f365f',
+      'indigo-dark': '#5661b3',
+      'indigo': '#6574cd',
+      'indigo-light': '#7886d7',
+      'indigo-lighter': '#b2b7ff',
+      'indigo-lightest': '#e6e8ff',
+
+      'purple-darkest': '#21183c',
+      'purple-darker': '#382b5f',
+      'purple-dark': '#794acf',
+      'purple': '#9561e2',
+      'purple-light': '#a779e9',
+      'purple-lighter': '#d6bbfc',
+      'purple-lightest': '#f3ebff',
+
+      'pink-darkest': '#451225',
+      'pink-darker': '#6f213f',
+      'pink-dark': '#eb5286',
+      'pink': '#f66d9b',
+      'pink-light': '#e28188', // Sidemenu active icon
+      'pink-lighter': '#e5b0b4', // Sidemenu hover icon
+      'pink-lightest': '#ffebef'
+    },
 
     /*
       |-----------------------------------------------------------------------------
@@ -469,7 +467,7 @@ module.exports = {
     |
     */
 
-    textColor: colors,
+    textColor: theme => theme('colors'),
 
     /*
     |-----------------------------------------------------------------------------
@@ -484,7 +482,7 @@ module.exports = {
     |
     */
 
-    backgroundColor: colors,
+    backgroundColor: theme => theme('colors'),
 
     /*
     |-----------------------------------------------------------------------------
@@ -543,7 +541,10 @@ module.exports = {
     |
     */
 
-    borderColor: global.Object.assign({ default: colors['grey-light'] }, colors),
+    borderColor: theme => ({
+      default: theme('colors.grey-light'),
+      ...theme('colors')
+    }),
 
     /*
     |-----------------------------------------------------------------------------
@@ -1050,10 +1051,5 @@ module.exports = {
   |
   */
 
-  plugins: [
-    require('tailwindcss/plugins/container')({
-      // center: true,
-      // padding: '1rem',
-    })
-  ]
+  plugins: []
 }
