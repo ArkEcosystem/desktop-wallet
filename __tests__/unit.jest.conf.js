@@ -9,7 +9,7 @@ module.exports = {
     'vue'
   ],
   moduleNameMapper: {
-    '^@tailwind': '<rootDir>/tailwind.js',
+    '^@tailwind': '<rootDir>/tailwind.config.js',
     '^@package.json$': '<rootDir>/package.json',
     '^@config': '<rootDir>/config/index.js',
     '^@config/(.*)$': '<rootDir>/config/$1',

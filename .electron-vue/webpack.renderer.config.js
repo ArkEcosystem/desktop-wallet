@@ -163,7 +163,7 @@ let rendererConfig = {
   resolve: {
     alias: {
       '@': path.join(__dirname, '../src/renderer'),
-      '@tailwind': path.join(__dirname, '../tailwind.js'),
+      '@tailwind': path.join(__dirname, '../tailwind.config.js'),
       '@package.json': path.join(__dirname, '../package.json'),
       '@config': path.join(__dirname, '../config'),
       '@tests': path.join(__dirname, '../__tests__'),
