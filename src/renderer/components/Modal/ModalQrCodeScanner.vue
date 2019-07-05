@@ -159,7 +159,7 @@ export default {
 }
 
 .QrCode__crosshair__container {
-  @apply .absolute .flex .items-center .pin;
+  @apply .absolute .flex .items-center .inset-0;
 }
 .QrCode__crosshair__container > div {
   width: 40%;
