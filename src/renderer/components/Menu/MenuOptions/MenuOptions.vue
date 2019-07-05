@@ -65,7 +65,7 @@ export default {
 .MenuOptions--vertical:after {
   border-color: transparent;
   border-style: solid;
-  border-right-color: config('colors.theme-settings');
+  border-right-color: theme('colors.theme-settings');
   border-width: 10px;
   position: absolute;
   content: "";
@@ -78,7 +78,7 @@ export default {
 .MenuOptions--horizontal:after {
   border-color: transparent;
   border-style: solid;
-  border-bottom-color: config('colors.theme-settings');
+  border-bottom-color: theme('colors.theme-settings');
   border-width: 10px;
   position: absolute;
   content: "";

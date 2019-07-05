@@ -32,7 +32,7 @@ export default {
 
 <style lang="postcss">
 .PassphraseWords .InputText {
-  width: calc(config('width.1/4') - config('margin.2'));
+  width: calc(theme('width.1/4') - theme('margin.2'));
   @apply mr-2
 }
 
