@@ -434,7 +434,7 @@ export default {
 
 <style lang="postcss">
 .WalletDetails .MenuTab > .MenuTab__nav {
-  @apply .sticky .pin-t .z-10
+  @apply .sticky .top-0 .z-10
 }
 .WalletDetails__button {
   transition: 0.5s;

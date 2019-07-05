@@ -59,7 +59,7 @@ img {
 }
 
 .modal-backdrop {
-  @apply .fixed .z-50 .pin-t .pin-l .table .w-full .h-full;
+  @apply .fixed .z-50 .top-0 .top-0 .table .w-full .h-full;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease;
 }

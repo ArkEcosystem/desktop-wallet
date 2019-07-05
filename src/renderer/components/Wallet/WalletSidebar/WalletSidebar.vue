@@ -473,7 +473,7 @@ export default {
 }
 .WalletSidebar__menu {
   border-bottom: 0.08rem solid var(--theme-feature-item-alternative);
-  @apply .sticky .z-10 .bg-theme-feature .pin-t
+  @apply .sticky .z-10 .bg-theme-feature .top-0
 }
 .WalletSidebar__menu__button {
   @apply .cursor-pointer .fill-current .text-theme-option-button-text .p-2 .my-6;
