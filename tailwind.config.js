@@ -78,7 +78,7 @@ module.exports = {
     | your Tailwind config. This makes it easy to access them in your CSS
     | using Tailwind's config helper. For example:
     |
-    | .error { color: config('colors.red') }
+    | .error { color: theme('colors.red') }
     |
     */
 
