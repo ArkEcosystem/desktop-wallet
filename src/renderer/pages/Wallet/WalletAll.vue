@@ -482,7 +482,7 @@ export default {
   @apply .flex .flex-col .overflow-y-hidden .rounded-lg;
 }
 .WalletAll__avatar__sign {
-  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute pin-b pin-r mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap
+  @apply rounded-full w-8 h-8 flex justify-center items-center text-base absolute bottom-0 pin-r mr-3 -mb-1 border-2 border-theme-feature font-semibold select-none whitespace-no-wrap
 }
 .WalletAll__heading {
   @apply .flex .justify-between .items-center .bg-theme-feature .rounded-lg;
@@ -522,7 +522,7 @@ export default {
   box-shadow: var(--theme-wallet-grid-shadow);
 }
 .WalletAll__grid__wallet:not(:hover)::after {
-  @apply block absolute pin-x pin-b mx-auto border-b border-theme-wallet-overview-border;
+  @apply block absolute inset-x-0 bottom-0 mx-auto border-b border-theme-wallet-overview-border;
   content: " ";
   width: 95%;
 }

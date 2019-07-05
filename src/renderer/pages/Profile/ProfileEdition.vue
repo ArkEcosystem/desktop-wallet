@@ -19,7 +19,7 @@
             >
             <h2
               v-if="isProfileTab"
-              class="ProfileNew__instructions__name opacity-75 absolute pin-x z-10 hidden xl:block"
+              class="ProfileNew__instructions__name opacity-75 absolute inset-x-0 z-10 hidden xl:block"
             >
               {{ name }}
             </h2>

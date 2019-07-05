@@ -1,9 +1,9 @@
 <template>
   <div
-    class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
+    class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full .top-0 .left-0 fixed animated fadeIn lg:overflow-y-scroll"
   >
     <div
-      class="flex w-full h-full pin-t pin-l"
+      class="flex w-full h-full top-0 left-0"
     >
       <AppIntroScreen
         v-if="step === 0"

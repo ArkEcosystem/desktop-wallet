@@ -11,7 +11,7 @@
             class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
             @click.stop="void 0"
           >
-            <div class="absolute pin-t pin-r mt-6 mr-6">
+            <div class="absolute top-0 right-0 mt-6 mr-6">
               <ButtonClose
                 :disabled="!allowClose"
                 icon-class="text-grey"

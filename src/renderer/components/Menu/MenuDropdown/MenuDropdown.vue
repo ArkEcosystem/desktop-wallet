@@ -33,7 +33,7 @@
       v-click-outside.stop="close"
       :class="[{
         'MenuDropdown--pin-above': pinAbove,
-        'pin-x': pinToInputWidth
+        'inset-x-0': pinToInputWidth
       }, containerClasses]"
       :style="{ transform: `translate(${position.join(',')})` }"
       class="MenuDropdown__container absolute min-w-full z-20"
@@ -203,6 +203,6 @@ export default {
 }
 
 .MenuDropdown--pin-above {
-  @apply pin-b pb-10;
+  @apply bottom-0 pb-10;
 }
 </style>

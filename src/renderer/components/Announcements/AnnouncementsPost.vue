@@ -2,7 +2,7 @@
   <div class="AnnouncementsPost flex flex-col md:flex-row items-top relative">
     <button
       v-show="!isRead"
-      class="AnnouncementsPost__close absolute pin-t pin-r transition"
+      class="AnnouncementsPost__close absolute top-0 right-0 transition"
       :disabled="isRead"
       @click="emitRead"
     >

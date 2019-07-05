@@ -1,6 +1,6 @@
 <template>
   <main class="WalletDetails flex flex-col">
-    <WalletHeading class="sticky pin-t z-10" />
+    <WalletHeading class="sticky top-0 z-10" />
 
     <MenuTab
       ref="menutab"
