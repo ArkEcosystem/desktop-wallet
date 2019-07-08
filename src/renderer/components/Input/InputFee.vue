@@ -164,9 +164,6 @@ export default {
       if (!this.feeNetwork) {
         throw new Error('No active network to fetch fees')
       }
-      if (this.feeNetwork.apiVersion === 1) {
-        throw new Error('Fee statistics are supported only by v2 networks')
-      }
 
       const { feeStatistics } = this.feeNetwork
       const transactionStatistics = feeStatistics.find(feeConfig => feeConfig.type === this.transactionType)

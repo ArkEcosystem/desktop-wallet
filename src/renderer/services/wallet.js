@@ -1,7 +1,7 @@
 import bip39 from 'bip39'
 import { crypto, Message } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
-import axios from 'axios'
+import got from 'got'
 
 export default class WalletService {
   /*
@@ -69,8 +69,8 @@ export default class WalletService {
     }
 
     const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
-    const response = await axios.get(neoUrl + address)
-    return response.status === 200 && response.data && response.data.length > 0
+    const response = await got(neoUrl + address)
+    return response.status === 200 && response.body && response.body.length > 0
   }
 
   /**
