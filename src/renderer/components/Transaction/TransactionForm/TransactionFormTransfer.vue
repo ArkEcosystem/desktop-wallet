@@ -47,6 +47,7 @@
         :is-invalid="$v.form.amount.$dirty && $v.form.amount.$invalid"
         :label="$t('TRANSACTION.AMOUNT')"
         :minimum-error="amountTooLowError"
+        :minimum-amount="minimumAmount"
         :maximum-amount="maximumAvailableAmount"
         :maximum-error="notEnoughBalanceError"
         :required="true"
@@ -231,12 +232,14 @@ export default {
       const balance = this.formatter_networkCurrency(this.currentWallet.balance)
       return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
     },
+    minimumAmount () {
+      return this.currency_subToUnit(1)
+    },
     maximumAvailableAmount () {
       if (!this.currentWallet) {
         return 0
       }
-
-      return parseFloat(this.currency_subToUnit(this.currentWallet.balance) - this.form.fee)
+      return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
     },
     senderLabel () {
       return this.currentWallet ? this.wallet_formatAddress(this.currentWallet.address) : null
@@ -355,11 +358,11 @@ export default {
 
     async submit () {
       const transactionData = {
-        amount: parseInt(this.currency_unitToSub(this.form.amount)),
+        amount: this.currency_unitToSub(this.form.amount),
         recipientId: this.form.recipientId,
         vendorField: this.form.vendorField,
         passphrase: this.form.passphrase,
-        fee: parseInt(this.currency_unitToSub(this.form.fee)),
+        fee: this.currency_unitToSub(this.form.fee),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif
       }

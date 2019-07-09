@@ -101,14 +101,14 @@ export default {
         })
         delegateResponse.delegates = delegateResponse.delegates.map((delegate) => {
           if (this._vm.$client.version === 2) {
-            return { ...delegate, voteWeight: delegate.votes }
+            return { ...delegate }
           }
 
           return {
             username: delegate.username,
             address: delegate.address,
             publicKey: delegate.publicKey,
-            voteWeight: delegate.vote,
+            votes: delegate.votes,
             blocks: {
               produced: delegate.producedblocks
             },
