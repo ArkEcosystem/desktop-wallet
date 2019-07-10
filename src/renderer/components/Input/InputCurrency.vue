@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { includes } from 'lodash'
+import { includes, isString } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
 import store from '@/store'
@@ -252,16 +252,19 @@ export default {
      */
     checkAmount (amount) {
       const bigNum = new BigNumber(amount)
-      return !bigNum.isNaN || bigNum.isPositive || bigNum.isFinite
+      if (!bigNum.isNaN()) {
+        return bigNum.isPositive() && bigNum.isFinite()
+      } else {
+        return !!(isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/))
+      }
     },
     /**
      * Emits the raw input value (`raw`), as String, and the Number value (`input`)
      */
     emitInput (value) {
       this.$emit('raw', value)
-
-      const numeric = value ? this.sanitizeNumeric(value) : 0
-      this.$emit('input', numeric || 0)
+      const numeric = value ? this.sanitizeNumeric(value) : '0'
+      this.$emit('input', isNaN(numeric) ? '0' : numeric)
     },
     focus () {
       this.$refs.input.focus()

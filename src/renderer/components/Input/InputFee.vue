@@ -150,8 +150,8 @@ export default {
       return staticFee || defaultMaxV1Fee
     },
     isStaticFee () {
-      if (this.feeChoices.MAXIMUM === this.feeChoices.AVERAGE) {
-        return +this.fee === this.feeChoices.AVERAGE
+      if (this.feeChoices.MAXIMUM.isEqualTo(this.feeChoices.AVERAGE)) {
+        return this.feeChoices.AVERAGE.isEqualTo(this.fee)
       }
       return false
     },
@@ -293,7 +293,7 @@ export default {
      * @param {(String|Number)} fee
      */
     setFee (fee) {
-      fee = fee.toString()
+      fee = this.currency_toBuilder(fee).value.toString()
 
       this.fee = fee
       this.$v.fee.$touch()
