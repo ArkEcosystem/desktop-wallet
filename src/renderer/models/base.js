@@ -1,4 +1,4 @@
-import { transform, isFunction, isObject, isNil } from 'lodash'
+import { transform, isFunction, isObject, isUndefined, isNil } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
 
 export default class BaseModel {
@@ -26,11 +26,11 @@ export default class BaseModel {
 
       if (item.format && isFunction(item.format)) {
         value = item.format(input)
-      } else if (!isNil(input[key])) {
+      } else if (!isUndefined(input[key])) {
         value = input[key]
       }
 
-      if (isNil(value)) {
+      if (isNil(value) && item.default) {
         value = item.default
       }
 

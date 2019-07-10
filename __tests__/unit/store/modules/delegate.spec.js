@@ -56,7 +56,7 @@ describe('delegate store module', () => {
         username: delegate.username,
         address: delegate.address,
         publicKey: delegate.publicKey,
-        vote: delegate.voteWeight,
+        vote: delegate.votes,
         producedblocks: delegate.blocks.produced,
         rate: delegate.rank,
         approval: delegate.production.approval
@@ -67,7 +67,7 @@ describe('delegate store module', () => {
         username: delegate.username,
         address: delegate.address,
         publicKey: delegate.publicKey,
-        votes: delegate.voteWeight,
+        votes: delegate.votes,
         rank: delegate.rank,
         blocks: {
           produced: delegate.blocks.produced
