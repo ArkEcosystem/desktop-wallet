@@ -13,7 +13,7 @@
       <span
         class="text-bold text-lg ml-2"
       >
-        Back
+        {{ $t('COMMON.BACK') }}
       </span>
     </button>
   </div>
@@ -45,9 +45,10 @@ export default {
 
 <style lang="postcss" scoped>
 .AppBackButton {
-  @apply .rounded-lg .py-4 .w-22 .mx-6
+  @apply .rounded-lg .w-22 .mx-6
 }
 .AppBackButton button {
+  @apply .py-4;
   transition: all .5s;
 }
 .AppBackButton:hover button {

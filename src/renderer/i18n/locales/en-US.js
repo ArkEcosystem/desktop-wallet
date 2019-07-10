@@ -296,7 +296,8 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: '{currency} price'
+    PRICE: '{currency} price',
+    SHOW_CHART: 'Show chart'
   },
 
   BUTTON_CLIPBOARD: {

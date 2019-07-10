@@ -30,10 +30,16 @@
         v-if="name"
         class="flex flex-row text-lg font-semibold text-theme-heading-text"
       >
-        <span class="block xl:hidden">
+        <span
+          v-tooltip="name.length > 12 ? name : ''"
+          class="block xl:hidden"
+        >
           {{ name | truncate(12) }}
         </span>
-        <span class="hidden xl:block">
+        <span
+          v-tooltip="name.length > 30 ? name : ''"
+          class="hidden xl:block"
+        >
           {{ name | truncate(30) }}
         </span>
         <SvgIcon
@@ -47,13 +53,13 @@
 
       <p class="WalletHeading__address tracking-wide mb-3 flex items-center text-sm font-semibold">
         <span
-          v-tooltip="label"
+          v-tooltip="label.length > 12 ? label : ''"
           class="block xl:hidden"
         >
           {{ wallet_truncate(label, 12) }}
         </span>
         <span
-          v-tooltip="label"
+          v-tooltip="label.length > 40 ? label : ''"
           class="hidden xl:block"
         >
           {{ showPublicKey ? wallet_truncate(label, 40) : label }}
