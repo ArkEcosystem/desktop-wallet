@@ -30,6 +30,7 @@ export default new BaseModel({
     },
     name: {
       type: 'string',
+      default: '',
       minLength: 0,
       maxLength: 120
     },
