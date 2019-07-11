@@ -4,6 +4,7 @@ import { useI18n } from '../../__utils__/i18n'
 import router from '@/router'
 import CurrencyMixin from '@/mixins/currency'
 import ProfileAll from '@/pages/Profile/ProfileAll'
+import BigNumber from '@/plugins/bignumber.js'
 
 const localVue = createLocalVue()
 const i18n = useI18n(localVue)
@@ -88,11 +89,9 @@ describe('pages > ProfileAll', () => {
   describe('aggregatedBalances', () => {
     it('should aggregate the sum of the balances of all profiles by network', () => {
       wrapper = mountPage()
-      expect(wrapper.vm.aggregatedBalances).toEqual({
-        main: 50015090900,
-        other: 12190000,
-        dev: 52010000
-      })
+      expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(50015090900))
+      expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+      expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
     })
 
     describe('when there are profiles with the same wallets', () => {
@@ -102,11 +101,9 @@ describe('pages > ProfileAll', () => {
 
       it('should include those wallets only 1 time', () => {
         wrapper = mountPage()
-        expect(wrapper.vm.aggregatedBalances).toEqual({
-          main: 15090900,
-          other: 12190000,
-          dev: 52010000
-        })
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(15090900))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
       })
     })
 
@@ -120,11 +117,9 @@ describe('pages > ProfileAll', () => {
 
       it('should include their balances', () => {
         wrapper = mountPage()
-        expect(wrapper.vm.aggregatedBalances).toEqual({
-          main: 66622093608,
-          other: 12190000,
-          dev: 52010000
-        })
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(66622093608))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
       })
 
       describe('when they are included as non-Ledger wallets', () => {
@@ -134,11 +129,9 @@ describe('pages > ProfileAll', () => {
 
         it('should include those wallets only 1 time', () => {
           wrapper = mountPage()
-          expect(wrapper.vm.aggregatedBalances).toEqual({
-            main: 59898192907,
-            other: 12190000,
-            dev: 52010000
-          })
+          expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(59898192907))
+          expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+          expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
         })
       })
     })
