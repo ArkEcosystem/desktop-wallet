@@ -3,6 +3,7 @@ import crypto from 'crypto'
 import BaseModule from '../base'
 import ProfileModel from '@/models/profile'
 import * as base58 from 'bs58check'
+import BigNumber from '@/plugins/bignumber'
 
 export default new BaseModule(ProfileModel, {
   getters: {
@@ -28,7 +29,7 @@ export default new BaseModule(ProfileModel, {
     balance: (state, _, __, rootGetters) => id => {
       const wallets = rootGetters['wallet/byProfileId'](id)
       return wallets.reduce((total, wallet) => {
-        return total + wallet.balance
+        return new BigNumber(wallet.balance).plus(total)
       }, 0)
     },
     balanceWithLedger: (state, _, __, rootGetters) => id => {
@@ -44,7 +45,7 @@ export default new BaseModule(ProfileModel, {
       }
 
       return uniqBy(wallets, 'address').reduce((total, wallet) => {
-        return total + wallet.balance
+        return new BigNumber(wallet.balance).plus(total)
       }, 0)
     }
   },
