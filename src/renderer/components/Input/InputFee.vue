@@ -138,7 +138,7 @@ export default {
       }
     },
     rangePercentage () {
-      const percent = (this.fee - this.feeChoiceMin) / (this.feeChoiceMax - this.feeChoiceMin) * 100
+      const percent = (this.currency_toBuilder(this.fee).subtract(this.feeChoiceMin)).value / (this.feeChoiceMax - this.feeChoiceMin) * 100
       return percent > 100 ? 100 : (percent < 0 ? 0 : percent)
     },
     notValidError () {
@@ -222,7 +222,7 @@ export default {
       }
 
       const funds = this.currency_subToUnit(this.currentWallet.balance)
-      if (funds < this.fee) {
+      if (funds.isLessThan(this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
@@ -232,7 +232,7 @@ export default {
       if (this.isAdvancedFee) {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
       }
-      if (this.fee < this.feeChoices.AVERAGE) {
+      if (this.feeChoices.AVERAGE.isGreaterThan(this.fee)) {
         return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
       return null
