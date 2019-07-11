@@ -10,7 +10,7 @@ export class NumberBuilder {
    */
   constructor (value) {
     this.value = new BigNumber(value)
-    this.decimalPlaces(8)
+    this.decimalPlaces()
   }
 
   /**
@@ -18,7 +18,7 @@ export class NumberBuilder {
    * @param {Number} digits
    * @returns NumberBuilder
    */
-  decimalPlaces (digits) {
+  decimalPlaces (digits = 8) {
     this.fractionDigits = Math.pow(10, digits)
     this.value = this.value.decimalPlaces(digits, null)
     return this
