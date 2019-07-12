@@ -41,12 +41,17 @@
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
-          class="App__container w-full flex-1 flex mt-4 mb-4 lg:mr-6"
+          class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6"
         >
-          <AppSidemenu
-            v-if="hasAnyProfile"
-            class="hidden md:block"
-          />
+          <div
+            class="hidden md:flex flex-col"
+          >
+            <AppSidemenu
+              v-if="hasAnyProfile"
+              class="flex flex-1"
+            />
+          </div>
+
           <!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
           <KeepAlive
             :include="keepAliveRoutes"

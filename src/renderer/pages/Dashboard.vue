@@ -2,22 +2,26 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
-        v-if="!isChartEnabledOnProfile && isMarketEnabled"
-        class="pt-10 px-10 rounded-t-lg text-lg font-semibold mt-1 text-theme-chart-price"
+        v-if="!isChartShown && isMarketEnabled"
+        class="pt-10 px-10 rounded-t-lg text-lg font-semibold text-theme-chart-price"
       >
-        <span v-if="price">
-          {{ $t('MARKET_CHART_HEADER.PRICE', { currency: ticker }) }}:
-          <!-- TODO price in crypto and fiat instead of only in 1 currency -->
-          {{ currency_format(price, { currency, currencyDisplay: 'code' }) }}
-        </span>
+        <MarketChartHeader
+          class="mb-5"
+          :is-chart-active="false"
+          @toggle="toggleChart"
+        />
       </div>
 
       <div
-        v-if="isChartEnabledOnProfile && isMarketEnabled"
+        v-if="isChartShown && isMarketEnabled"
         class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
       >
-        <MarketChart :is-active="isActive">
-          <MarketChartHeader class="mb-5" />
+        <MarketChart :is-active="isChartActive">
+          <MarketChartHeader
+            class="mb-5"
+            :is-chart-active="true"
+            @toggle="toggleChart"
+          />
         </MarketChart>
       </div>
 
@@ -72,7 +76,8 @@ export default {
   },
 
   data: () => ({
-    isActive: true
+    isChartActive: false,
+    isChartShown: false
   }),
 
   computed: {
@@ -94,8 +99,19 @@ export default {
   },
 
   watch: {
-    isChartEnabledOnProfile () {
-      this.isActive = this.isChartEnabledOnProfile
+    isChartEnabledOnProfile (value) {
+      if (!this._inactive) {
+        this.isChartShown = value
+      }
+    },
+    isChartShown (value) {
+      if (!this._inactive) {
+        // It's necessary to delay the rendering of the chart until updating the DOM
+        // If not, the loader would run indefinitely
+        this.$nextTick(() => {
+          this.isChartActive = value
+        })
+      }
     }
   },
 
@@ -124,7 +140,13 @@ export default {
   },
 
   activated () {
-    this.isActive = this.isChartEnabledOnProfile
+    this.isChartShown = this.isChartEnabledOnProfile
+  },
+
+  methods: {
+    toggleChart (value) {
+      this.isChartShown = value
+    }
   }
 }
 </script>

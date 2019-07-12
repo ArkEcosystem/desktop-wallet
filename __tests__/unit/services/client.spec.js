@@ -3,6 +3,7 @@ import errorCapturer from '../__utils__/error-capturer'
 import { V1 } from '@config'
 import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
+import BigNumber from '@/plugins/bignumber'
 
 jest.mock('@/store', () => ({
   getters: {
@@ -573,7 +574,9 @@ describe('Services > Client', () => {
         expect(transactions).toHaveLength(data.length)
 
         transactions.forEach((transaction, i) => {
-          expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
+          expect(transaction).toHaveProperty('totalAmount')
+          expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
+          expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
           expect(transaction).toHaveProperty('timestamp', new Date(data[i].timestamp.human).getTime())
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isRecipient')
@@ -610,7 +613,9 @@ describe('Services > Client', () => {
         expect(transactions).toHaveLength(data.length)
 
         transactions.forEach((transaction, i) => {
-          expect(transaction).toHaveProperty('totalAmount', data[i].amount + data[i].fee)
+          expect(transaction).toHaveProperty('totalAmount')
+          expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
+          expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
           expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
           expect(transaction).toHaveProperty('isSender')
           expect(transaction).toHaveProperty('isRecipient')

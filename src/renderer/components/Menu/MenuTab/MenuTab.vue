@@ -8,10 +8,11 @@
           :class="{
             'MenuTab__nav__item--active': item.isActive,
             'MenuTab__nav__item--disabled': item.isDisabled,
+            'MenuTab__nav__item--clickable': !!item.onClick,
           }"
           :disabled="item.isDisabled"
           class="MenuTab__nav__item text-inherit appearance-none cursor-pointer font-semibold px-5 py-4 flex justify-center items-center hover:bg-theme-feature-item-hover hover:text-theme-feature-item-selected-text"
-          @click="switchToTab(item.tab)"
+          @click="item.onClick ? item.onClick() : switchToTab(item.tab)"
         >
           <template v-if="item.$slots.header">
             <VNodes :vnodes="item.$slots.header" />
@@ -31,7 +32,6 @@
 
 <script>
 import VNodes from '@/components/utils/VNodes'
-
 export default {
   name: 'MenuTab',
 
@@ -94,6 +94,10 @@ export default {
 <style lang="postcss" scoped>
 .MenuTab__nav__item--active {
   @apply .bg-theme-feature .text-theme-page-text
+}
+
+.MenuTab__nav__item--clickable {
+  @apply bg-theme-voting-banner-background text-theme-page-text opacity-75;
 }
 
 .MenuTab__nav__item--disabled {

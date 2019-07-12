@@ -1,152 +1,165 @@
 <template>
-  <div
-    v-click-outside.capture="emitClose"
-    :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
-    class="absolute z-20 theme-dark"
-  >
-    <MenuOptions
+  <div v-click-outside.capture="emitClose">
+    <MenuNavigationItem
+      id="networks"
+      :title="$t('APP_SIDEMENU.NETWORK')"
       :is-horizontal="isHorizontal"
-      class="AppSidemenuNetworkStatus__peer"
+      :can-activate="false"
+      class="AppSidemenu__item"
+      icon="cloud"
+      @click="toggleShowNetworkStatus"
+    />
+
+    <div
+      v-if="isNetworkStatusVisible"
+      :class="isHorizontal ? 'AppSidemenuNetworkStatus--horizontal' : 'AppSidemenuNetworkStatus'"
+      class="absolute z-20 theme-dark"
+      @close="closeShowNetworkStatus"
     >
-      <div class="text-xs mx-6 mb-2 text-theme-settings-heading">
-        <span class="float-left">
-          {{ $t('PEER.PEER') }}
-        </span>
-        <span
-          v-if="!peer.isCustom"
-          class="float-right"
-        >
-          {{ $t('PEER.BEST') }}
-        </span>
-        <span
-          v-else
-          class="float-right"
-        >
-          {{ $t('PEER.DISCONNECT') }}
-        </span>
-      </div>
-      <div class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer">
-        <button
-          @click.stop="toggleSelect('peers-menu')"
-        >
-          <div
-            slot="controls"
-            class="pointer-events-none"
+      <MenuOptions
+        :is-horizontal="isHorizontal"
+        class="AppSidemenuNetworkStatus__peer"
+      >
+        <div class="text-xs mx-6 mb-2 text-theme-settings-heading">
+          <span class="float-left">
+            {{ $t('PEER.PEER') }}
+          </span>
+          <span
+            v-if="!peer.isCustom"
+            class="float-right"
           >
-            <MenuDropdown
-              ref="peers-menu"
-              :items="peerIps"
-              :value="currentPeerId"
-              :placeholder="peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')"
-              :pin-above="true"
-              class="inline-block text-white fill-white width-inherit"
-              @select="setPeer"
+            {{ $t('PEER.BEST') }}
+          </span>
+          <span
+            v-else
+            class="float-right"
+          >
+            {{ $t('PEER.DISCONNECT') }}
+          </span>
+        </div>
+        <div class="bg-theme-settings-sub inline-block mx-6 rounded text-white relative px-3 py-2 inline-block select-none cursor-pointer">
+          <button
+            @click.stop="toggleSelect('peers-menu')"
+          >
+            <div
+              slot="controls"
+              class="pointer-events-none"
+            >
+              <MenuDropdown
+                ref="peers-menu"
+                :items="peerIps"
+                :value="currentPeerId"
+                :placeholder="peer ? `${peer.isHttps ? 'https://' : 'http://'}${peer.ip}` : $t('PEER.NONE')"
+                :pin-above="true"
+                class="inline-block text-white fill-white width-inherit"
+                @select="setPeer"
+              />
+            </div>
+          </button>
+          <ButtonReload
+            v-if="!peer.isCustom"
+            :is-refreshing="isRefreshing"
+            text-class="hover:text-white"
+            color-class="AppSidemenuNetworkStatus__ButtonReload-colorClass"
+            class="AppSidemenuNetworkStatus__refresh__button hover:text-white bg-theme-settings-button absolute text-grey-dark"
+            @click="refreshPeer"
+          />
+          <button
+            v-else-if="!isRefreshing"
+            class="AppSidemenuNetworkStatus__refresh__button AppSidemenuNetworkStatus__refresh__button--disconnect bg-theme-settings-button w-12 absolute cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
+            @click="refreshPeer"
+          >
+            <SvgIcon
+              name="disconnect"
+              view-box="0 0 16 15"
             />
+          </button>
+          <ButtonReload
+            v-else
+            :is-refreshing="true"
+            class="AppSidemenuNetworkStatus__refresh__button bg-theme-settings-button absolute"
+          />
+        </div>
+        <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
+          <div class="AppSidemenuNetworkStatus__status__height inline-block pr-6 border-r">
+            <div class="text-xs mb-2">
+              {{ $t('PEER.HEIGHT') }}
+            </div>
+            <div class="text-md text-white">
+              {{ peer ? peer.height : '-' }}
+            </div>
           </div>
-        </button>
-        <ButtonReload
-          v-if="!peer.isCustom"
-          :is-refreshing="isRefreshing"
-          text-class="hover:text-white"
-          color-class="AppSidemenuNetworkStatus__ButtonReload-colorClass"
-          class="AppSidemenuNetworkStatus__refresh__button hover:text-white bg-theme-settings-button absolute text-grey-dark"
-          @click="refreshPeer"
-        />
-        <button
-          v-else-if="!isRefreshing"
-          class="AppSidemenuNetworkStatus__refresh__button AppSidemenuNetworkStatus__refresh__button--disconnect bg-theme-settings-button w-12 absolute cursor-pointer inline-flex items-center justify-center rounded text-theme-button-light-text hover:bg-theme-option-button-hover hover:text-grey-light"
-          @click="refreshPeer"
+          <div class="AppSidemenuNetworkStatus__status__last-checked inline-block ml-6 pr-6 border-r">
+            <div class="text-xs mb-2">
+              {{ $t('PEER.LAST_CHECKED') }}
+            </div>
+            <div class="text-md text-white">
+              {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
+            </div>
+          </div>
+          <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
+            <div class="text-xs mb-2">
+              {{ $t('PEER.DELAY') }}
+            </div>
+            <div
+              v-if="peer.delay"
+              :class="peer && peer.delay < 500 ? 'text-green' : 'text-red'"
+            >
+              <span class="text-md">
+                {{ peer.delay }} ms
+              </span>
+              <div
+                :class="peer && peer.delay < 500 ? 'bg-green' : 'bg-red'"
+                class="inline-block h-2 w-2 ml-1 rounded-full"
+              />
+            </div>
+            <div v-else>
+              <span class="text-white">
+                -
+              </span>
+            </div>
+          </div>
+        </div>
+      </MenuOptions>
+      <div
+        class="bg-theme-settings mt-2 pt-1 px-10 rounded"
+      >
+        <ButtonModal
+          :label="$t('PEER.CONNECT_CUSTOM')"
+          icon="connect"
+          view-box="0 0 30 15"
+          class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-4 text-grey-dark hover:text-white border-b border-theme-settings-sub"
+          @toggle="toggleCustomPeerModal"
+        >
+          <template slot-scope="{ toggle, isOpen }">
+            <NetworkCustomPeerModal
+              v-if="isOpen"
+              @close="toggle"
+            />
+          </template>
+        </ButtonModal>
+        <RouterLink
+          :to="{ name: 'networks' }"
+          :class="isHorizontal ? 'flex-row w-22' : 'rounded-t-lg'"
+          class="flex items-center cursor-pointer w-full py-4 text-left text-grey-dark hover:no-underline hover:text-white"
+          @click.native="goToNetworkOverview()"
         >
           <SvgIcon
-            name="disconnect"
-            view-box="0 0 16 15"
+            name="network-management"
+            view-box="0 0 21 21"
+            class="mr-4"
           />
-        </button>
-        <ButtonReload
-          v-else
-          :is-refreshing="true"
-          class="AppSidemenuNetworkStatus__refresh__button bg-theme-settings-button absolute"
-        />
+          <span class="font-semibold">
+            {{ $t('APP_SIDEMENU.NETWORKS') }}
+          </span>
+        </RouterLink>
       </div>
-      <div class="AppSidemenuNetworkStatus__status flex flex-wrap mt-6 mx-auto select-none">
-        <div class="AppSidemenuNetworkStatus__status__height inline-block pr-6 border-r">
-          <div class="text-xs mb-2">
-            {{ $t('PEER.HEIGHT') }}
-          </div>
-          <div class="text-md text-white">
-            {{ peer ? peer.height : '-' }}
-          </div>
-        </div>
-        <div class="AppSidemenuNetworkStatus__status__last-checked inline-block ml-6 pr-6 border-r">
-          <div class="text-xs mb-2">
-            {{ $t('PEER.LAST_CHECKED') }}
-          </div>
-          <div class="text-md text-white">
-            {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
-          </div>
-        </div>
-        <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
-          <div class="text-xs mb-2">
-            {{ $t('PEER.DELAY') }}
-          </div>
-          <div
-            v-if="peer.delay"
-            :class="peer && peer.delay < 500 ? 'text-green' : 'text-red'"
-          >
-            <span class="text-md">
-              {{ peer.delay }} ms
-            </span>
-            <div
-              :class="peer && peer.delay < 500 ? 'bg-green' : 'bg-red'"
-              class="inline-block h-2 w-2 ml-1 rounded-full"
-            />
-          </div>
-          <div v-else>
-            <span class="text-white">
-              -
-            </span>
-          </div>
-        </div>
-      </div>
-    </MenuOptions>
-    <div
-      class="bg-theme-settings mt-2 pt-1 px-10 rounded"
-    >
-      <ButtonModal
-        :label="$t('PEER.CONNECT_CUSTOM')"
-        icon="connect"
-        view-box="0 0 30 15"
-        class="AppSidemenuNetworkStatus__ButtonModal cursor-pointer w-full text-left py-4 text-grey-dark hover:text-white border-b border-theme-settings-sub"
-        @toggle="toggleCustomPeerModal"
-      >
-        <template slot-scope="{ toggle, isOpen }">
-          <NetworkCustomPeerModal
-            v-if="isOpen"
-            @close="toggle"
-          />
-        </template>
-      </ButtonModal>
-      <RouterLink
-        :to="{ name: 'networks' }"
-        :class="isHorizontal ? 'flex-row w-22' : 'rounded-t-lg'"
-        class="flex items-center cursor-pointer w-full py-4 text-left text-grey-dark hover:no-underline hover:text-white"
-        @click.native="goToNetworkOverview()"
-      >
-        <SvgIcon
-          name="network-management"
-          view-box="0 0 21 21"
-          class="mr-4"
-        />
-        <span class="font-semibold">
-          {{ $t('APP_SIDEMENU.NETWORKS') }}
-        </span>
-      </RouterLink>
     </div>
   </div>
 </template>
 
 <script>
-import { MenuDropdown, MenuOptions } from '@/components/Menu'
+import { MenuDropdown, MenuNavigationItem, MenuOptions } from '@/components/Menu'
 import { NetworkCustomPeerModal } from '@/components/Network'
 import { ButtonModal, ButtonReload } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
@@ -158,6 +171,7 @@ export default {
     ButtonModal,
     ButtonReload,
     MenuDropdown,
+    MenuNavigationItem,
     MenuOptions,
     NetworkCustomPeerModal,
     SvgIcon
@@ -178,6 +192,7 @@ export default {
 
   data () {
     return {
+      isNetworkStatusVisible: false,
       isRefreshing: false,
       showCustomPeerModal: false
     }
@@ -223,6 +238,14 @@ export default {
   },
 
   methods: {
+    toggleShowNetworkStatus () {
+      this.isNetworkStatusVisible = !this.isNetworkStatusVisible
+    },
+
+    closeShowNetworkStatus () {
+      this.isNetworkStatusVisible = false
+    },
+
     async refreshPeer () {
       this.isRefreshing = true
       await this.$store.dispatch('peer/connectToBest', {
@@ -250,12 +273,12 @@ export default {
 
     emitClose () {
       if (this.outsideClick && !this.showCustomPeerModal) {
-        this.$emit('close')
+        this.closeShowNetworkStatus()
       }
     },
 
     goToNetworkOverview () {
-      this.$emit('close')
+      this.closeShowNetworkStatus()
       this.$router.push({ name: 'networks' })
     }
   }
@@ -266,7 +289,7 @@ export default {
 .AppSidemenuNetworkStatus {
   width: 380px;
   left: 6.5rem;
-  transform: translateY(-10%)
+  bottom: -1rem;
 }
 
 .AppSidemenuNetworkStatus--horizontal {
