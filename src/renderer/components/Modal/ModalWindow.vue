@@ -1,6 +1,9 @@
 <template>
-  <Portal :to="portalTarget">
+  <Portal
+    :to="portalTarget"
+  >
     <div
+      slot-scope="{ setBlurFilter }"
       class="ModalWindow"
       :class="{
         'ModalWindow--maximized': isMaximized,
@@ -24,7 +27,7 @@
                   :icon-name="isMaximized ? 'minus' : 'resize'"
                   icon-class="text-grey"
                   class="p-6"
-                  @click="toggleMaximized"
+                  @click="toggleMaximized(setBlurFilter)"
                 />
               </span>
 
@@ -68,6 +71,7 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
+import { isFunction } from 'lodash'
 
 export default {
   name: 'ModalWindow',
@@ -122,8 +126,9 @@ export default {
   },
 
   methods: {
-    toggleMaximized () {
+    toggleMaximized (callback) {
       this.isMaximized = !this.isMaximized
+      isFunction(callback) && callback(this.isMaximized)
     },
 
     emitClose (force = false) {
@@ -169,7 +174,7 @@ export default {
 
 .ModalWindow__container__actions {@apply block text-right my-4 mr-4}
 
-.ModalWindow--maximized .ModalWindow__container__content {@apply overflow-hidden p-16}
+.ModalWindow--maximized .ModalWindow__container__content {@apply overflow-hidden px-16 pt-10 pb-16}
 .ModalWindow--minimized .ModalWindow__container__content {@apply overflow-y-auto px-10 pt-2 pb-5}
 .ModalWindow--minimized .ModalWindow__container {
   height: 200px;
