@@ -11,6 +11,7 @@ export default {
     language: null,
     hideWalletButtonText: false,
     isMarketChartEnabled: true,
+    marketChartOptions: { isEnabled: true, isExpanded: true, period: 'day' },
     name: null,
     profileId: null,
     theme: null,
@@ -58,6 +59,7 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
+    marketChartOptions: state => state.marketChartOptions,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
     walletSidebarSortParams: state => state.walletSidebarSortParams,
@@ -100,6 +102,10 @@ export default {
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
       state.isMarketChartEnabled = isEnabled
+    },
+
+    SET_MARKET_CHART_OPTIONS (state, marketChartOptions) {
+      state.marketChartOptions = marketChartOptions
     },
 
     SET_LANGUAGE (state, language) {
@@ -177,6 +183,7 @@ export default {
       state.timeFormat = 'Default'
       state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
+      state.marketChartOptions = { isEnabled: true, isExpanded: true, period: 'day' }
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
@@ -204,6 +211,7 @@ export default {
       state.timeFormat = value.timeFormat
       state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.marketChartOptions = value.marketChartOptions
       state.language = value.language
       state.bip39Language = value.bip39Language
       state.name = value.name
@@ -265,6 +273,10 @@ export default {
 
     setIsMarketChartEnabled ({ commit }, value) {
       commit('SET_IS_MARKET_CHART_ENABLED', value)
+    },
+
+    setMarketChartOptions ({ commit }, value) {
+      commit('SET_MARKET_CHART_OPTIONS', value)
     },
 
     setLanguage ({ commit }, value) {
