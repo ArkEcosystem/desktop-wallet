@@ -9,7 +9,7 @@
         'ModalWindow--maximized': isMaximized,
         'ModalWindow--minimized': !isMaximized
       }"
-      @click="emitClose"
+      @click="emitClose()"
     >
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
@@ -20,13 +20,13 @@
           >
             <div class="ModalWindow__container__actions">
               <span
-                v-if="canMinimize"
+                v-if="canResize"
                 class="mr-4"
               >
                 <ButtonClose
                   :icon-name="isMaximized ? 'minus' : 'resize'"
                   icon-class="text-grey"
-                  class="p-6"
+                  class="ModalWindow__resize-button p-6"
                   @click="toggleMaximized(setBlurFilter)"
                 />
               </span>
@@ -34,7 +34,7 @@
               <ButtonClose
                 :disabled="!allowClose"
                 icon-class="text-grey"
-                class="p-6"
+                class="ModalWindow__close-button p-6"
                 @click="emitClose(true)"
               />
             </div>
@@ -81,7 +81,7 @@ export default {
   },
 
   props: {
-    canMinimize: {
+    canResize: {
       type: Boolean,
       required: false,
       default: false
