@@ -7,6 +7,7 @@ import CurrencyMixin from '@/mixins/currency'
 import FormatterMixin from '@/mixins/formatter'
 import { InputFee } from '@/components/Input'
 import store from '@/store'
+import BigNumber from '@/plugins/bignumber'
 
 jest.mock('@/store', () => {
   return {
@@ -64,12 +65,14 @@ describe('InputFee', () => {
       i18n,
       propsData: {
         currency: mockNetwork.token,
-        transactionType: 0
+        transactionType: 0,
+        minimumAmount: new BigNumber(1e8),
+        maximumAmount: new BigNumber(1e8)
       },
       mixins: [CurrencyMixin, FormatterMixin],
       mocks: {
         session_network: mockNetwork,
-        wallet_fromRoute: { balance: 10 },
+        wallet_fromRoute: { balance: '10' },
         $store: store,
         $synchronizer: {
           focus: jest.fn(),
@@ -99,13 +102,12 @@ describe('InputFee', () => {
       let wrapper = mountComponent({
         propsData: { transactionType: 0 }
       })
-      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0] * 1e-8)
-      expect(wrapper.vm.maxV1fee).toEqual(0.1)
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[0])
 
       wrapper = mountComponent({
         propsData: { transactionType: 3 }
       })
-      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[3] * 1e-8)
+      expect(wrapper.vm.maxV1fee).toEqual(V1.fees[3])
     })
   })
 
@@ -113,8 +115,8 @@ describe('InputFee', () => {
     const mockedComponent = (min, max) => {
       return mountComponent({
         computed: {
-          feeChoiceMin: () => min,
-          feeChoiceMax: () => max
+          feeChoiceMin: () => new BigNumber(min),
+          feeChoiceMax: () => new BigNumber(max)
         }
       })
     }
@@ -151,9 +153,9 @@ describe('InputFee', () => {
       return mountComponent({
         computed: {
           feeChoices: () => ({
-            MINIMUM: 1e-8,
-            INPUT: 1e-8,
-            ADVANCED: 1e-8,
+            MINIMUM: new BigNumber(1e-8),
+            INPUT: new BigNumber(1e-8),
+            ADVANCED: new BigNumber(1e-8),
             ...fees
           })
         }
@@ -162,8 +164,8 @@ describe('InputFee', () => {
 
     it('should be `true` if the current fee matches, average and maximum fee are the same', () => {
       const wrapper = mockedComponent({
-        AVERAGE: 1,
-        MAXIMUM: 1
+        AVERAGE: new BigNumber(1),
+        MAXIMUM: new BigNumber(1)
       })
       wrapper.vm.fee = 1
       expect(wrapper.vm.isStaticFee).toBeTrue()
@@ -171,22 +173,22 @@ describe('InputFee', () => {
 
     it('should be `false` if the current fee matches, average and maximum fee are not the same', () => {
       let wrapper = mockedComponent({
-        AVERAGE: 2,
-        MAXIMUM: 1
+        AVERAGE: new BigNumber(2),
+        MAXIMUM: new BigNumber(1)
       })
       wrapper.vm.fee = 1
       expect(wrapper.vm.isStaticFee).toBeFalse()
 
       wrapper = mockedComponent({
-        AVERAGE: 1,
-        MAXIMUM: 2
+        AVERAGE: new BigNumber(1),
+        MAXIMUM: new BigNumber(2)
       })
       wrapper.vm.fee = 1
 
       expect(wrapper.vm.isStaticFee).toBeFalse()
       wrapper = mockedComponent({
-        AVERAGE: 1,
-        MAXIMUM: 1
+        AVERAGE: new BigNumber(1),
+        MAXIMUM: new BigNumber(1)
       })
       wrapper.vm.fee = 2
       expect(wrapper.vm.isStaticFee).toBeFalse()
@@ -224,7 +226,7 @@ describe('InputFee', () => {
       const wrapper = mountComponent()
 
       wrapper.vm.emitFee('97')
-      expect(wrapper.emitted('input')[0][0]).toBeNumber()
+      expect(wrapper.emitted('input')[0][0]).toBeString()
     })
   })
 
@@ -244,7 +246,8 @@ describe('InputFee', () => {
       it('should use the V1 fee as average always', () => {
         const wrapper = mountComponent()
 
-        expect(wrapper.vm.feeChoices.AVERAGE).toEqual(0.1)
+        expect(wrapper.vm.feeChoices.AVERAGE).toBeInstanceOf(BigNumber)
+        expect(wrapper.vm.feeChoices.AVERAGE.toString()).toEqual('0.1')
       })
     })
 
@@ -263,6 +266,7 @@ describe('InputFee', () => {
       it('should use it as average', () => {
         const wrapper = mountComponent()
 
+        expect(wrapper.vm.feeChoices.AVERAGE).toBeInstanceOf(BigNumber)
         expect(wrapper.vm.feeChoices.AVERAGE).toBeWithin(0.0048, 0.0048000001)
       })
     })
@@ -282,7 +286,8 @@ describe('InputFee', () => {
       it('should use the V1 fee as maximum always', () => {
         const wrapper = mountComponent()
 
-        expect(wrapper.vm.feeChoices.MAXIMUM).toEqual(0.1)
+        expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(BigNumber)
+        expect(wrapper.vm.feeChoices.MAXIMUM.toString()).toEqual('0.1')
       })
     })
 
@@ -301,6 +306,7 @@ describe('InputFee', () => {
       it('should use it as maximum', () => {
         const wrapper = mountComponent()
 
+        expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(BigNumber)
         expect(wrapper.vm.feeChoices.MAXIMUM).toBeWithin(0.03, 0.03000001)
       })
     })
@@ -313,7 +319,8 @@ describe('InputFee', () => {
       it('should use it as maximum', () => {
         const wrapper = mountComponent()
 
-        expect(wrapper.vm.feeChoices.MAXIMUM).toBe(0.1)
+        expect(wrapper.vm.feeChoices.MAXIMUM).toBeInstanceOf(BigNumber)
+        expect(wrapper.vm.feeChoices.MAXIMUM.toString()).toBe('0.1')
       })
     })
   })
@@ -328,7 +335,7 @@ describe('InputFee', () => {
 
       describe('when the balance is smaller than the fee', () => {
         it('should return the message about funds', () => {
-          wrapper.vm.wallet_fromRoute.balance = 50000
+          wrapper.vm.wallet_fromRoute.balance = '50000'
           wrapper.vm.fee = 20e8
           expect(wrapper.vm.insufficientFundsError).toEqual('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE')
 
@@ -341,7 +348,7 @@ describe('InputFee', () => {
       describe('when the balance is bigger than the fee', () => {
         it('should return an empty message', () => {
           // NOTE: Balance is in arktoshi, while fee is in ARK
-          wrapper.vm.wallet_fromRoute.balance = 20e8
+          wrapper.vm.wallet_fromRoute.balance = '20e8'
           wrapper.vm.fee = 1
           expect(wrapper.vm.insufficientFundsError).toBeNull()
 

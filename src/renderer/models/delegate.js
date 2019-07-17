@@ -1,4 +1,5 @@
 import BaseModel from './base'
+import { toString, get } from 'lodash'
 
 export default new BaseModel({
   type: 'object',
@@ -12,8 +13,9 @@ export default new BaseModel({
     publicKey: {
       type: 'string'
     },
-    voteWeight: {
-      type: 'number'
+    votes: {
+      type: 'string',
+      format: data => toString(data.votes || 0)
     },
     blocks: {
       type: 'object',
@@ -33,17 +35,11 @@ export default new BaseModel({
     },
     forged: {
       type: 'object',
-      properties: {
-        fees: {
-          type: 'integer'
-        },
-        rewards: {
-          type: 'integer'
-        },
-        total: {
-          type: 'integer'
-        }
-      }
+      format: (data) => ({
+        fees: toString(get(data, 'forged.fees', 0)),
+        rewards: toString(get(data, 'forged.rewards', 0)),
+        total: toString(get(data, 'forged.total', 0))
+      })
     },
     rank: {
       type: 'integer'

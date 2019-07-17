@@ -6,7 +6,7 @@ export default new BaseModel({
   properties: {
     id: {
       type: 'string',
-      minLength: 16,
+      minLength: 1,
       maxLength: 16
     },
     avatar: {

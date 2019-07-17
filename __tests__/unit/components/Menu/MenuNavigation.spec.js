@@ -32,7 +32,7 @@ describe('MenuNavigation', () => {
     const slot = 'My MenuNavigationItem component'
     const wrapper = mount(MenuNavigationItem, {
       provide: {
-        switchToId: jest.fn()
+        switchToItem: jest.fn()
       },
       slots: {
         default: slot

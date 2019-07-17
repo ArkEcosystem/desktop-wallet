@@ -46,11 +46,6 @@
           <div
             class="hidden md:flex flex-col"
           >
-            <AppBackButton
-              v-if="hasAnyProfile && isWalletPage"
-              class="mb-4 block"
-            />
-
             <AppSidemenu
               v-if="hasAnyProfile"
               class="flex flex-1"
@@ -103,7 +98,7 @@ import '@/styles/style.css'
 import fs from 'fs'
 import CleanCss from 'clean-css'
 import { isEmpty, pull, uniq } from 'lodash'
-import { AppBackButton, AppFooter, AppIntro, AppSidemenu } from '@/components/App'
+import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
@@ -116,7 +111,6 @@ export default {
   name: 'DesktopWallet',
 
   components: {
-    AppBackButton,
     AppFooter,
     AppIntro,
     AppSidemenu,
@@ -169,9 +163,6 @@ export default {
     },
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
-    },
-    isWalletPage () {
-      return this.$route.name === 'wallet-show'
     },
     currentProfileId () {
       return this.session_profile
