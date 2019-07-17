@@ -141,8 +141,16 @@ export default {
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length
     },
-    hasProtection () {
-      return this.$store.getters['session/contentProtection']
+    hasScreenshotProtection () {
+      return this.$store.getters['session/screenshotProtection']
+    },
+    isScreenshotProtectionEnabled: {
+      get () {
+        return this.$store.getters['app/isScreenshotProtectionEnabled']
+      },
+      set (protection) {
+        this.$store.dispatch('app/setIsScreenshotProtectionEnabled', protection)
+      }
     },
     hasSeenIntroduction () {
       return this.$store.getters['app/hasSeenIntroduction']
@@ -190,8 +198,10 @@ export default {
   },
 
   watch: {
-    hasProtection (value) {
-      remote.getCurrentWindow().setContentProtection(value)
+    hasScreenshotProtection (value) {
+      if (this.isScreenshotProtectionEnabled) {
+        remote.getCurrentWindow().setContentProtection(value)
+      }
     },
     routeComponent (value) {
       if (this.aliveRouteComponents.includes(value)) {
@@ -241,6 +251,9 @@ export default {
    */
   async created () {
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      // Environments variables are strings
+      this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== 'false'
+
       await this.loadEssential()
       this.isReady = true
 
@@ -249,16 +262,6 @@ export default {
       await this.loadNotEssential()
 
       this.$synchronizer.ready()
-
-      // Environments variables are strings
-      const status = process.env.ENABLE_SCREENSHOT_PROTECTION
-      if (status) {
-        // We only set this if the env variable is 'false', since protection defaults to true
-        // Since it's not a boolean, we can't do status !== false, since that would disable protection with every env var that's not 'true'
-        this.$store.dispatch('session/setContentProtection', !(status === 'false'))
-      } else {
-        remote.getCurrentWindow().setContentProtection(true)
-      }
     })
 
     this.setContextMenu()
