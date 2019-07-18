@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
+import moment from 'moment'
 import LineChart from '@/components/utils/LineChart'
 import Loader from '@/components/utils/Loader'
 import cryptoCompare from '@/services/crypto-compare'
@@ -251,6 +251,7 @@ export default {
 
                 if (this.period === 'day') {
                   const midnight = data.labels.indexOf('00:00')
+                  // title = this.formatHour(title)
                   if (index < midnight) {
                     return this.$t('MARKET_CHART.YESTERDAY_AT', { hour: title })
                   }
@@ -261,10 +262,7 @@ export default {
                   return this.$t(`MARKET_CHART.WEEK.LONG.${title.toUpperCase()}`)
                 } else {
                   const days = values.length
-                  const today = dayjs()
-                  today.date(values[days - 1])
-                  title = today.subtract(days - index - 1, 'day')
-                  return this.$d(title)
+                  return moment(new Date()).subtract(days - index - 1, 'days').format('L')
                 }
               }
             }
