@@ -480,7 +480,6 @@ export default {
       try {
         networkConfig = await ClientService.fetchNetworkConfig(baseUrl, timeout)
       } catch (error) {
-        console.error('validatePeer error', error)
         //
       }
 

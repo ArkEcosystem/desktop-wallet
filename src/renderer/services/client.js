@@ -126,7 +126,6 @@ export default class ClientService {
 
   set host (host) {
     host = `${host}/api/v2`
-    console.log('new host', host)
     this.__host = host
     this.client = (new Connection(host)).withOptions({ timeout: 5000 })
   }
@@ -660,8 +659,6 @@ export default class ClientService {
       currentPeer = this.__parseCurrentPeer()
     }
 
-    console.log('broadcastTransaction currentPeer', currentPeer)
-
     let failedBroadcast = false
     if (broadcast) {
       let txs = []
@@ -670,14 +667,11 @@ export default class ClientService {
         for (let i = 0; i < peers.length; i++) {
           try {
             const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
-            console.log(client)
             const transaction = await client.client.api('transactions').create({
               transactions: castArray(transactions)
             })
-            console.log('broadcastTransaction transaction', transaction)
             txs.push(transaction)
           } catch (err) {
-            console.log('broadcastTransaction error', err)
             //
           }
         }
