@@ -114,6 +114,7 @@
             :key="wallet.id"
             class="WalletAll__grid__wallet group"
             @click="showWallet(wallet.id)"
+            @contextmenu.prevent="toggleDropdown(`dropdown-${wallet.id}`)"
           >
             <div class="WalletAll__grid__wallet__wrapper">
               <div class="WalletAll__grid__wallet__wrapper__mask">
@@ -154,6 +155,7 @@
                   </div>
 
                   <MenuDropdown
+                    :ref="`dropdown-${wallet.id}`"
                     :items="getContextMenuOptions(wallet)"
                     :is-highlighting="false"
                     :position="['-100%', '-20%']"
@@ -425,6 +427,10 @@ export default {
 
     toggleWalletLayout () {
       this.walletLayout = this.walletLayout === 'grid' ? 'tabular' : 'grid'
+    },
+
+    toggleDropdown (dropdownId) {
+      this.$refs[dropdownId][0].toggle()
     },
 
     onRemoveWallet (wallet) {

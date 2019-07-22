@@ -69,9 +69,9 @@
         </MenuOptionsItem>
 
         <MenuOptionsItem
-          v-if="!isLinux"
-          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
-          @click="toggleSelect('protection-switch')"
+          v-if="!isLinux && isScreenshotProtectionEnabled"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.TITLE')"
+          @click="toggleScreenshotProtectionModal"
         >
           <div
             slot="controls"
@@ -79,10 +79,9 @@
           >
             <ButtonSwitch
               ref="protection-switch"
-              :is-active="contentProtection"
+              :is-active="hasScreenshotProtection"
               class="theme-dark"
               background-color="var(--theme-settings-switch)"
-              @change="setProtection"
             />
           </div>
         </MenuOptionsItem>
@@ -127,6 +126,18 @@
           :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
           class="text-grey-light"
           @click="toggleResetDataModal"
+        />
+
+        <ModalConfirmation
+          v-if="isScreenshotProtectionModalOpen"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.QUESTION')"
+          :note="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.NOTE')"
+          :cancel-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.SESSION_ONLY')"
+          :continue-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.PERMANENTLY')"
+          container-classes="max-w-md"
+          @close="toggleScreenshotProtectionModal"
+          @cancel="onToggleScreenshotProtection"
+          @continue="onToggleScreenshotProtection(true)"
         />
 
         <ModalConfirmation
@@ -177,7 +188,9 @@ export default {
 
   data: () => ({
     isResetDataModalOpen: false,
-    isSettingsVisible: false
+    isScreenshotProtectionModalOpen: false,
+    isSettingsVisible: false,
+    saveOnProfile: false
   }),
 
   computed: {
@@ -190,9 +203,6 @@ export default {
     },
     currencies () {
       return this.$store.getters['market/currencies']
-    },
-    contentProtection () {
-      return this.$store.getters['session/contentProtection']
     },
     backgroundUpdateLedger () {
       return this.$store.getters['session/backgroundUpdateLedger']
@@ -230,13 +240,21 @@ export default {
         this.$store.dispatch('profile/update', profile)
       }
     },
-    sessionProtection: {
+    hasScreenshotProtection: {
       get () {
-        return this.$store.getters['session/contentProtection']
+        return this.$store.getters['session/screenshotProtection']
       },
       set (protection) {
-        this.$store.dispatch('session/setContentProtection', protection)
+        this.$store.dispatch('session/setScreenshotProtection', protection)
+        if (!this.screenshotProtection || this.saveOnProfile) {
+          const profile = clone(this.session_profile)
+          profile.screenshotProtection = protection
+          this.$store.dispatch('profile/update', profile)
+        }
       }
+    },
+    isScreenshotProtectionEnabled () {
+      return this.$store.getters['app/isScreenshotProtectionEnabled']
     },
     sessionBackgroundUpdateLedger: {
       get () {
@@ -276,10 +294,6 @@ export default {
       this.sessionTheme = isString(theme) ? theme : (theme ? 'dark' : 'light')
     },
 
-    setProtection (protection) {
-      this.sessionProtection = protection
-    },
-
     setBackgroundUpdateLedger (update) {
       this.sessionBackgroundUpdateLedger = update
     },
@@ -292,6 +306,14 @@ export default {
       this.$refs[name].toggle()
     },
 
+    toggleScreenshotProtectionModal () {
+      if (this.hasScreenshotProtection || this.isScreenshotProtectionModalOpen) {
+        this.isScreenshotProtectionModalOpen = !this.isScreenshotProtectionModalOpen
+      } else {
+        this.hasScreenshotProtection = true
+      }
+    },
+
     toggleResetDataModal () {
       this.isResetDataModalOpen = !this.isResetDataModalOpen
     },
@@ -301,8 +323,14 @@ export default {
       this.electron_reload()
     },
 
+    onToggleScreenshotProtection (saveOnProfile = false) {
+      this.saveOnProfile = saveOnProfile
+      this.hasScreenshotProtection = false
+      this.toggleScreenshotProtectionModal()
+    },
+
     emitClose () {
-      if (this.outsideClick && !this.isResetDataModalOpen) {
+      if (this.outsideClick && !(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen)) {
         this.closeShowSettings()
       }
     }

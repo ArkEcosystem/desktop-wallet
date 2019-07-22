@@ -73,6 +73,10 @@ export default new BaseModel({
       type: 'string',
       minLength: 1
     },
+    screenshotProtection: {
+      type: 'boolean',
+      format: data => data.screenshotProtection !== undefined ? data.screenshotProtection : true
+    },
     backgroundUpdateLedger: {
       type: 'boolean',
       format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
