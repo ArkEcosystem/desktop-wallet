@@ -41,8 +41,7 @@ export default class WalletService {
    * @return {String}
    */
   static getAddress (passphrase, pubKeyHash) {
-    const publicKey = Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
-    return Identities.Address.fromPublicKey(publicKey, pubKeyHash)
+    return Identities.Address.fromPassphrase(this.normalizePassphrase(passphrase), pubKeyHash)
   }
 
   static getAddressFromPublicKey (publicKey, pubKeyHash) {
