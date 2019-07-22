@@ -24,7 +24,7 @@ export default {
    * @return {Object} the release data
    */
   async fetchLatestRelease (url) {
-    const response = await got(this.latestReleaseApiUrl)
+    const response = await got(this.latestReleaseApiUrl, { json: true })
     return response.body
   }
 }

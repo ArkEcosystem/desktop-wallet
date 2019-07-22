@@ -358,7 +358,7 @@ export default {
         this.votedDelegate = null
         this.walletVote.publicKey = null
 
-        const messages = at(error, 'response.data.message')
+        const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
           this.$error(this.$t('COMMON.FAILED_FETCH', {

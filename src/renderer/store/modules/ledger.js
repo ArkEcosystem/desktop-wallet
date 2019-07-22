@@ -285,7 +285,7 @@ export default {
               walletData = [await this._vm.$client.fetchWallet(ledgerWallets[0].address)]
             } catch (error) {
               logger.error(error)
-              const message = error.response ? error.response.data.message : error.message
+              const message = error.response ? error.response.body.message : error.message
               if (message !== 'Wallet not found') {
                 throw error
               }
