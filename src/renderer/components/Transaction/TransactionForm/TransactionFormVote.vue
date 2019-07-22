@@ -200,7 +200,7 @@ export default {
       walletPassword: ''
     },
     forged: 0,
-    voters: 0,
+    voters: '0',
     showEncryptLoader: false,
     showLedgerLoader: false
   }),

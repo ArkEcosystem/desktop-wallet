@@ -98,7 +98,7 @@ export default {
           limit: 100
         })
         delegateResponse.delegates = delegateResponse.delegates.map((delegate) => {
-          return { ...delegate, voteWeight: delegate.votes }
+          return { ...delegate }
         })
         delegates.push(...delegateResponse.delegates)
         totalCount = delegateResponse.totalCount

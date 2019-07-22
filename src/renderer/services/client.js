@@ -8,6 +8,7 @@ import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
+import BigNumber from '@/plugins/bignumber'
 
 export default class ClientService {
   /*
@@ -198,7 +199,11 @@ export default class ClientService {
 
     const { body } = await this.client.api('delegates').forged(delegate.publicKey)
 
-    return body.success ? body.forged : 0
+    if (body.success) {
+      return body.forged
+    }
+
+    return '0'
   }
 
   /**
@@ -283,7 +288,7 @@ export default class ClientService {
     const result = transactions.map(transaction => {
       transaction.isSender = transaction.sender === address
       transaction.isRecipient = transaction.recipient === address
-      transaction.totalAmount = transaction.amount + transaction.fee
+      transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee)
 
       return transaction
     })
