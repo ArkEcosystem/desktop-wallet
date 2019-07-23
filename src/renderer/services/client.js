@@ -1,5 +1,5 @@
 import { Connection } from '@arkecosystem/client'
-import { crypto, transactionBuilder } from '@arkecosystem/crypto'
+import { Identities, Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
 import got from 'got'
 import moment from 'moment'
@@ -493,7 +493,7 @@ export default class ClientService {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .vote()
       .votesAsset(votes)
       .fee(fee)
@@ -527,7 +527,7 @@ export default class ClientService {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .delegateRegistration()
       .usernameAsset(username)
       .fee(fee)
@@ -563,7 +563,7 @@ export default class ClientService {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .transfer()
       .amount(amount)
       .fee(fee)
@@ -599,7 +599,7 @@ export default class ClientService {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .secondSignature()
       .signatureAsset(secondPassphrase)
       .fee(fee)
@@ -717,7 +717,7 @@ export default class ClientService {
 
           // Infer which are the real capabilities of the peer
           try {
-            const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
+            const testAddress = Identities.Address.fromPassphrase('test', network.version)
             const { address } = this.client.api('wallets').search({
               addresses: [testAddress]
             })

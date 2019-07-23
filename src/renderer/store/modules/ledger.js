@@ -2,7 +2,7 @@ import cryptoLibrary from 'crypto'
 import { keyBy } from 'lodash'
 import logger from 'electron-log'
 import Vue from 'vue'
-import { crypto } from '@arkecosystem/crypto'
+import { Identities } from '@arkecosystem/crypto'
 import eventBus from '@/plugins/event-bus'
 import ledgerService from '@/services/ledger-service'
 
@@ -486,7 +486,7 @@ export default {
           const network = rootGetters['session/network']
 
           return {
-            address: crypto.getAddress(publicKey, network.version),
+            address: Identities.Address.fromPublicKey(publicKey, network.version),
             publicKey
           }
         },
@@ -494,7 +494,7 @@ export default {
           const { publicKey } = await ledgerService.getWallet(path)
           const network = rootGetters['session/network']
 
-          return crypto.getAddress(publicKey, network.version)
+          return Identities.Address.fromPublicKey(publicKey, network.version)
         },
         async getPublicKey () {
           return (await ledgerService.getWallet(path)).publicKey
