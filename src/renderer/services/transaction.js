@@ -1,5 +1,5 @@
 import { TRANSACTION_TYPES } from '@config'
-import { crypto } from '@arkecosystem/crypto'
+import { Transactions } from '@arkecosystem/crypto'
 
 export default class TransactionService {
   /*
@@ -8,7 +8,7 @@ export default class TransactionService {
    * @return {String}
    */
   static getId (transaction) {
-    return crypto.getId(transaction)
+    return Transactions.Utils.getId(transaction)
   }
 
   /*
@@ -17,7 +17,10 @@ export default class TransactionService {
    * @return {String}
    */
   static getBytes (transaction) {
-    return crypto.getBytes(transaction, true, true).toString('hex')
+    return Transactions.Serializer.getBytes(transaction, {
+      excludeSignature: true,
+      excludeSecondSignature: true
+    }).toString('hex')
   }
 
   /*
