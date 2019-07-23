@@ -1,7 +1,7 @@
 import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { crypto } from '@arkecosystem/crypto'
+import { Identities } from '@arkecosystem/crypto'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
 import LedgerModule from '@/store/modules/ledger'
 import ledgerService from '@/services/ledger-service'
@@ -165,8 +165,8 @@ describe('ledger store module', () => {
         return testWallets[matches[1]]
       })
       spyCryptoGetAddress = jest.spyOn(
-        crypto,
-        'getAddress'
+        Identities.Address,
+        'fromPublicKey'
       ).mockImplementation((publicKey) => {
         return testWallets.find(wallet => wallet.publicKey === publicKey).address
       })
