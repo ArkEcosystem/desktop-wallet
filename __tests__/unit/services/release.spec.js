@@ -38,6 +38,7 @@ describe('Services > Release', () => {
     describe('when the request or parsing fails', () => {
       it('should throw the Error', async () => {
         nock(githubApiBase)
+          .persist()
           .get(releaseApiUrl)
           .reply(500)
 

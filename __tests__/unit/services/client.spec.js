@@ -1,4 +1,5 @@
 import { cloneDeep } from 'lodash'
+import nock from 'nock'
 import errorCapturer from '../__utils__/error-capturer'
 import { V1 } from '@config'
 import fixtures from '../__fixtures__/services/client'
@@ -35,27 +36,25 @@ jest.mock('@/store', () => ({
   watch: jest.fn()
 }))
 
+beforeEach(() => {
+  nock.cleanAll()
+  nock('http://127.0.0.1')
+    .persist()
+    .post('/api/v2/wallets/search')
+    .reply(200, { data: [] })
+})
+
 describe('Services > Client', () => {
   let client
 
   beforeEach(() => {
     client = new ClientService()
+    client.host = `http://127.0.0.1:4003`
   })
 
   describe('constructor', () => {
-    it('should use version 1 the capabilities of the API', () => {
-      expect(client.__capabilities).toEqual('1.0.0')
-    })
-  })
-
-  describe('set version', () => {
-    it('should establish the API client version', () => {
-      expect(client.version).toEqual(null)
-      client.version = 2
-      expect(client.version).toEqual(2)
-    })
-
-    xit('should establish `API-Version` HTTP header of the API client', () => {
+    it('should use version 2 the capabilities of the API', () => {
+      expect(client.__capabilities).toEqual('2.0.0')
     })
   })
 
@@ -66,7 +65,7 @@ describe('Services > Client', () => {
       publicKey: 'public key'
     }
     let wallet = {
-      data: {
+      body: {
         data: {
           ...data,
           isDelegate: true,
@@ -101,33 +100,10 @@ describe('Services > Client', () => {
         }
       }
 
-      client.client.resource = resource
-    })
-
-    describe('when version is 1', () => {
-      beforeEach(() => {
-        client.version = 1
-      })
-
-      it('should return only some properties from the account endpoint', async () => {
-        const wallet = await client.fetchWallet('address')
-        expect(wallet).toHaveProperty('address', data.address)
-        expect(wallet).toHaveProperty('balance', parseInt(data.balance))
-        expect(wallet).toHaveProperty('publicKey', data.publicKey)
-        expect(wallet).toHaveProperty('isDelegate', false)
-        expect(wallet).not.toHaveProperty('unconfirmedBalance')
-        expect(wallet).not.toHaveProperty('unconfirmedSignature')
-        expect(wallet).not.toHaveProperty('secondSignature')
-        expect(wallet).not.toHaveProperty('multisignatures')
-        expect(wallet).not.toHaveProperty('u_multisignatures')
-      })
+      client.client.api = resource
     })
 
     describe('when version is 2', () => {
-      beforeEach(() => {
-        client.version = 2
-      })
-
       it('should return almost all properties from the wallet endpoint', async () => {
         const wallet = await client.fetchWallet('address')
         expect(wallet).toHaveProperty('address', data.address)
@@ -153,7 +129,7 @@ describe('Services > Client', () => {
     ]
     const walletAddresses = ['address1', 'address2']
     let walletsResponse = {
-      data: {
+      body: {
         data: [
           {
             ...wallets[0],
@@ -168,24 +144,9 @@ describe('Services > Client', () => {
         ]
       }
     }
-    const generateAccountResponse = (address) => {
-      return {
-        data: {
-          success: true,
-          account: {
-            ...wallets.find(wallet => wallet.address === address),
-            unconfirmedBalance: 'NO',
-            unconfirmedSignature: 'NO',
-            secondSignature: 'NO',
-            multisignatures: 'NO',
-            u_multisignatures: 'NO'
-          }
-        }
-      }
-    }
     const generateWalletResponse = (address) => {
       return {
-        data: {
+        body: {
           data: {
             ...wallets.find(wallet => wallet.address === address),
             isDelegate: true,
@@ -195,16 +156,11 @@ describe('Services > Client', () => {
       }
     }
 
-    let getAccountEndpoint = jest.fn(generateAccountResponse)
     let getWalletEndpoint = jest.fn(generateWalletResponse)
     let searchWalletEndpoint = jest.fn(() => walletsResponse)
     beforeEach(() => {
       const resource = resource => {
-        if (resource === 'accounts') {
-          return {
-            get: getAccountEndpoint
-          }
-        } else if (resource === 'wallets') {
+        if (resource === 'wallets') {
           return {
             get: getWalletEndpoint,
             search: searchWalletEndpoint
@@ -212,7 +168,7 @@ describe('Services > Client', () => {
         }
       }
 
-      client.client.resource = jest.fn(resource)
+      client.client.api = jest.fn(resource)
     })
 
     describe('when version capabilities are at least 2.1.0', () => {
@@ -223,9 +179,9 @@ describe('Services > Client', () => {
       it('should call the wallet search endpoint', async () => {
         const fetchedWallets = await client.fetchWallets(walletAddresses)
 
-        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
+        expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
         expect(searchWalletEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
-        expect(fetchedWallets).toEqual(walletsResponse.data.data)
+        expect(fetchedWallets).toEqual(walletsResponse.body.data)
       })
     })
 
@@ -234,42 +190,17 @@ describe('Services > Client', () => {
         client.__capabilities = '2.0.9'
       })
 
-      describe('when version is 2', () => {
-        beforeEach(() => {
-          client.version = 2
-        })
+      it('should call the wallet endpoint for each wallet', async () => {
+        const fetchedWallets = await client.fetchWallets(walletAddresses)
 
-        it('should call the wallet endpoint for each wallet', async () => {
-          const fetchedWallets = await client.fetchWallets(walletAddresses)
-
-          expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
-          expect(client.client.resource).toHaveBeenNthCalledWith(2, 'wallets')
-          expect(getWalletEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
-          expect(getWalletEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
-          expect(fetchedWallets).toEqual([
-            generateWalletResponse('address1').data.data,
-            generateWalletResponse('address2').data.data
-          ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
-        })
-      })
-
-      describe('when version is 1', () => {
-        beforeEach(() => {
-          client.version = 1
-        })
-
-        it('should call the account endpoint for each wallet', async () => {
-          const fetchedWallets = await client.fetchWallets(walletAddresses)
-
-          expect(client.client.resource).toHaveBeenNthCalledWith(1, 'accounts')
-          expect(client.client.resource).toHaveBeenNthCalledWith(2, 'accounts')
-          expect(getAccountEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
-          expect(getAccountEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
-          expect(fetchedWallets).toEqual([
-            { ...wallets[0], balance: +wallets[0].balance, isDelegate: false },
-            { ...wallets[1], balance: +wallets[1].balance, isDelegate: false }
-          ])
-        })
+        expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
+        expect(client.client.api).toHaveBeenNthCalledWith(2, 'wallets')
+        expect(getWalletEndpoint).toHaveBeenNthCalledWith(1, walletAddresses[0])
+        expect(getWalletEndpoint).toHaveBeenNthCalledWith(2, walletAddresses[1])
+        expect(fetchedWallets).toEqual([
+          generateWalletResponse('address1').body.data,
+          generateWalletResponse('address2').body.data
+        ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
       })
     })
   })
@@ -277,194 +208,93 @@ describe('Services > Client', () => {
   describe('fetchWalletVote', () => {
     const publicKey = 'public key'
 
-    describe('when version is 1', () => {
-      const delegates = [{
-        publicKey
-      }]
+    const transactions = [{
+      asset: {
+        votes: ['+' + publicKey]
+      }
+    }]
 
-      beforeEach(() => {
-        client.version = 1
-
-        const resource = resource => {
-          if (resource === 'accounts') {
-            return {
-              delegates: () => ({ data: { delegates, success: true } })
-            }
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'wallets') {
+          return {
+            votes: () => ({ body: { data: transactions } })
           }
         }
+      }
 
-        client.client.resource = resource
-      })
-
-      it('should return delegate public key', async () => {
-        const response = await client.fetchWalletVote()
-        expect(response).toBe(publicKey)
-      })
+      client.client.api = resource
     })
 
-    describe('when version is 2', () => {
-      const transactions = [{
-        asset: {
-          votes: ['+' + publicKey]
-        }
-      }]
-
-      beforeEach(() => {
-        client.version = 2
-
-        const resource = resource => {
-          if (resource === 'wallets') {
-            return {
-              votes: () => ({ data: { data: transactions } })
-            }
-          }
-        }
-
-        client.client.resource = resource
-      })
-
-      it('should return delegate public key', async () => {
-        const response = await client.fetchWalletVote()
-        expect(response).toBe(publicKey)
-      })
+    it('should return delegate public key', async () => {
+      const response = await client.fetchWalletVote()
+      expect(response).toBe(publicKey)
     })
   })
 
   describe('fetchDelegates', () => {
     const { data, meta } = fixtures.delegates
 
-    describe('when version is 1', () => {
-      const delegates = fixtures.delegates.v1
+    const delegates = fixtures.delegates.v2
 
-      beforeEach(() => {
-        client.version = 1
-
-        const resource = resource => {
-          if (resource === 'delegates') {
-            return {
-              all: () => ({ data: { delegates, success: true, totalCount: meta.totalCount } })
-            }
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'delegates') {
+          return {
+            all: () => ({ body: { data: delegates, meta } })
           }
         }
+      }
 
-        client.client.resource = resource
-      })
-
-      it('should return only some properties for each delegate', async () => {
-        const response = await client.fetchDelegates()
-        expect(response).toHaveProperty('delegates')
-        expect(response).toHaveProperty('totalCount', meta.totalCount)
-
-        const delegates = response.delegates
-        expect(delegates).toHaveLength(data.length)
-        delegates.forEach((delegate, i) => {
-          expect(delegate).toHaveProperty('rank', data[i].rank)
-          expect(delegate).toHaveProperty('username', data[i].username)
-          expect(delegate).toHaveProperty('production.approval', data[i].approval)
-        })
-      })
+      client.client.api = resource
     })
 
-    describe('when version is 2', () => {
-      const delegates = fixtures.delegates.v2
+    it('should return all properties for each delegate', async () => {
+      const response = await client.fetchDelegates()
+      expect(response).toHaveProperty('delegates')
+      expect(response).toHaveProperty('totalCount', meta.totalCount)
 
-      beforeEach(() => {
-        client.version = 2
-
-        const resource = resource => {
-          if (resource === 'delegates') {
-            return {
-              all: () => ({ data: { data: delegates, meta } })
-            }
-          }
-        }
-
-        client.client.resource = resource
-      })
-
-      it('should return all properties for each delegate', async () => {
-        const response = await client.fetchDelegates()
-        expect(response).toHaveProperty('delegates')
-        expect(response).toHaveProperty('totalCount', meta.totalCount)
-
-        const delegates = response.delegates
-        expect(delegates).toHaveLength(data.length)
-        delegates.forEach((delegate, i) => {
-          expect(delegate).toHaveProperty('rank', data[i].rank)
-          expect(delegate).toHaveProperty('username', data[i].username)
-          expect(delegate).toHaveProperty('production.approval', data[i].approval)
-        })
+      const delegates = response.delegates
+      expect(delegates).toHaveLength(data.length)
+      delegates.forEach((delegate, i) => {
+        expect(delegate).toHaveProperty('rank', data[i].rank)
+        expect(delegate).toHaveProperty('username', data[i].username)
+        expect(delegate).toHaveProperty('production.approval', data[i].approval)
       })
     })
   })
 
   describe('fetchStaticFees', () => {
-    describe('when version is 1', () => {
-      const data = fixtures.staticFeeResponses.v1.fees
+    const data = fixtures.staticFeeResponses.v2.data
 
-      beforeEach(() => {
-        client.version = 1
-
-        const resource = resource => {
-          if (resource === 'blocks') {
-            return {
-              fees: () => ({ data: fixtures.staticFeeResponses.v1 })
-            }
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'transactions') {
+          return {
+            fees: () => ({ body: fixtures.staticFeeResponses.v2 })
           }
         }
+      }
 
-        client.client.resource = resource
-      })
-
-      it('should return and match fees to types', async () => {
-        const response = await client.fetchStaticFees()
-
-        expect(response[0]).toEqual(data.send)
-        expect(response[1]).toEqual(data.secondsignature)
-        expect(response[2]).toEqual(data.delegate)
-        expect(response[3]).toEqual(data.vote)
-        expect(response[4]).toEqual(data.multisignature)
-      })
+      client.client.api = resource
     })
 
-    describe('when version is 2', () => {
-      const data = fixtures.staticFeeResponses.v2.data
+    it('should return and match fees to types', async () => {
+      const response = await client.fetchStaticFees()
 
-      beforeEach(() => {
-        client.version = 2
-
-        const resource = resource => {
-          if (resource === 'transactions') {
-            return {
-              fees: () => ({ data: fixtures.staticFeeResponses.v2 })
-            }
-          }
-        }
-
-        client.client.resource = resource
-      })
-
-      it('should return and match fees to types', async () => {
-        const response = await client.fetchStaticFees()
-
-        expect(response[0]).toEqual(data.transfer)
-        expect(response[1]).toEqual(data.secondSignature)
-        expect(response[2]).toEqual(data.delegateRegistration)
-        expect(response[3]).toEqual(data.vote)
-        expect(response[4]).toEqual(data.multiSignature)
-        expect(response[5]).toEqual(data.ipfs)
-        expect(response[6]).toEqual(data.timelockTransfer)
-        expect(response[7]).toEqual(data.multiPayment)
-        expect(response[8]).toEqual(data.delegateResignation)
-      })
+      expect(response[0]).toEqual(data.transfer)
+      expect(response[1]).toEqual(data.secondSignature)
+      expect(response[2]).toEqual(data.delegateRegistration)
+      expect(response[3]).toEqual(data.vote)
+      expect(response[4]).toEqual(data.multiSignature)
+      expect(response[5]).toEqual(data.ipfs)
+      expect(response[6]).toEqual(data.timelockTransfer)
+      expect(response[7]).toEqual(data.multiPayment)
+      expect(response[8]).toEqual(data.delegateResignation)
     })
   })
 
   describe('fetchDelegateForged', () => {
-    const delegateV1 = {
-      publicKey: 'dummyKey'
-    }
-
     const delegateV2 = {
       publicKey: 'dummyKey',
       forged: {
@@ -476,34 +306,17 @@ describe('Services > Client', () => {
       const resource = resource => {
         if (resource === 'delegates') {
           return {
-            forged: () => ({ data: { forged: 200, success: true } })
+            forged: () => ({ body: { forged: 200, success: true } })
           }
         }
       }
 
-      client.client.resource = resource
+      client.client.api = resource
     })
 
-    describe('when version is 1', () => {
-      beforeEach(() => {
-        client.version = 1
-      })
-
-      it('should perform a request to retrieve the forged amount', async () => {
-        const forged = await client.fetchDelegateForged(delegateV1)
-        expect(forged).toEqual(200)
-      })
-    })
-
-    describe('when version is 2', () => {
-      beforeEach(() => {
-        client.version = 2
-      })
-
-      it('should return the forged property from the given delegate', async () => {
-        const forged = await client.fetchDelegateForged(delegateV2)
-        expect(forged).toEqual(100)
-      })
+    it('should return the forged property from the given delegate', async () => {
+      const forged = await client.fetchDelegateForged(delegateV2)
+      expect(forged).toEqual(100)
     })
   })
 
@@ -511,18 +324,16 @@ describe('Services > Client', () => {
     const { data, meta } = fixtures.transactions
 
     beforeEach(() => {
-      client.version = 2
-
       const transactions = cloneDeep(fixtures.transactions.v2)
       const resource = resource => {
         if (resource === 'transactions') {
           return {
-            all: () => ({ data: { data: transactions, meta: { totalCount: meta.count } } })
+            all: () => ({ body: { data: transactions, meta: { totalCount: meta.count } } })
           }
         }
       }
 
-      client.client.resource = resource
+      client.client.api = resource
     })
 
     it('should return only some properties for each transaction', async () => {
@@ -549,81 +360,38 @@ describe('Services > Client', () => {
   describe('fetchWalletTransactions', () => {
     const { data, meta } = fixtures.transactions
 
-    describe('when version in v1', () => {
-      beforeEach(() => {
-        client.version = 1
-
-        const transactions = cloneDeep(fixtures.transactions.v1)
-        const resource = resource => {
-          if (resource === 'transactions') {
-            return {
-              all: () => ({ data: { transactions, success: true, count: meta.count.toString() } })
-            }
+    beforeEach(() => {
+      const transactions = cloneDeep(fixtures.transactions.v2)
+      const resource = resource => {
+        if (resource === 'wallets') {
+          return {
+            transactions: () => ({ body: { data: transactions, meta: { totalCount: meta.count } } })
           }
         }
+      }
 
-        client.client.resource = resource
-      })
-
-      it('should return only some properties for each transaction', async () => {
-        const response = await client.fetchWalletTransactions('address')
-        expect(response).toHaveProperty('transactions')
-        expect(response).toHaveProperty('totalCount', meta.count)
-
-        const transactions = response.transactions
-        expect(transactions).toHaveLength(data.length)
-
-        transactions.forEach((transaction, i) => {
-          expect(transaction).toHaveProperty('totalAmount')
-          expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
-          expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
-          expect(transaction).toHaveProperty('timestamp', new Date(data[i].timestamp.human).getTime())
-          expect(transaction).toHaveProperty('isSender')
-          expect(transaction).toHaveProperty('isRecipient')
-          expect(transaction).toHaveProperty('sender')
-          expect(transaction).toHaveProperty('recipient')
-          expect(transaction).not.toHaveProperty('senderId')
-          expect(transaction).not.toHaveProperty('recipientId')
-        })
-      })
+      client.client.api = resource
     })
 
-    describe('when version in v2', () => {
-      beforeEach(() => {
-        client.version = 2
+    it('should return only some properties for each transaction', async () => {
+      const response = await client.fetchWalletTransactions('address')
+      expect(response).toHaveProperty('transactions')
+      expect(response).toHaveProperty('totalCount', meta.count)
 
-        const transactions = cloneDeep(fixtures.transactions.v2)
-        const resource = resource => {
-          if (resource === 'wallets') {
-            return {
-              transactions: () => ({ data: { data: transactions, meta: { totalCount: meta.count } } })
-            }
-          }
-        }
+      const transactions = response.transactions
+      expect(transactions).toHaveLength(data.length)
 
-        client.client.resource = resource
-      })
-
-      it('should return only some properties for each transaction', async () => {
-        const response = await client.fetchWalletTransactions('address')
-        expect(response).toHaveProperty('transactions')
-        expect(response).toHaveProperty('totalCount', meta.count)
-
-        const transactions = response.transactions
-        expect(transactions).toHaveLength(data.length)
-
-        transactions.forEach((transaction, i) => {
-          expect(transaction).toHaveProperty('totalAmount')
-          expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
-          expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
-          expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
-          expect(transaction).toHaveProperty('isSender')
-          expect(transaction).toHaveProperty('isRecipient')
-          expect(transaction).toHaveProperty('sender')
-          expect(transaction).toHaveProperty('recipient')
-          expect(transaction).not.toHaveProperty('senderId')
-          expect(transaction).not.toHaveProperty('recipientId')
-        })
+      transactions.forEach((transaction, i) => {
+        expect(transaction).toHaveProperty('totalAmount')
+        expect(transaction.totalAmount).toBeInstanceOf(BigNumber)
+        expect(transaction.totalAmount.toString()).toBe((data[i].amount + data[i].fee).toString())
+        expect(transaction).toHaveProperty('timestamp', data[i].timestamp.unix * 1000)
+        expect(transaction).toHaveProperty('isSender')
+        expect(transaction).toHaveProperty('isRecipient')
+        expect(transaction).toHaveProperty('sender')
+        expect(transaction).toHaveProperty('recipient')
+        expect(transaction).not.toHaveProperty('senderId')
+        expect(transaction).not.toHaveProperty('recipientId')
       })
     })
   })
@@ -641,7 +409,7 @@ describe('Services > Client', () => {
         client.__capabilities = '2.1.0'
 
         transactions = cloneDeep(fixtures.transactions.v2)
-        searchTransactionsEndpoint = jest.fn(() => ({ data: { data: transactions } }))
+        searchTransactionsEndpoint = jest.fn(() => ({ body: { data: transactions } }))
 
         const resource = resource => {
           if (resource === 'transactions') {
@@ -651,7 +419,7 @@ describe('Services > Client', () => {
           }
         }
 
-        client.client.resource = jest.fn(resource)
+        client.client.api = jest.fn(resource)
       })
 
       it('should call the transaction search endpoint', async () => {
@@ -664,7 +432,7 @@ describe('Services > Client', () => {
 
         const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
 
-        expect(client.client.resource).toHaveBeenNthCalledWith(1, 'transactions')
+        expect(client.client.api).toHaveBeenNthCalledWith(1, 'transactions')
         expect(searchTransactionsEndpoint).toHaveBeenNthCalledWith(1, { addresses: walletAddresses })
         expect(fetchedWallets).toEqual(walletTransactions)
       })
@@ -673,87 +441,42 @@ describe('Services > Client', () => {
     describe('when version capabilities are not at least 2.1.0', () => {
       beforeEach(() => {
         client.__capabilities = '2.0.9'
-      })
 
-      describe('when version in v2', () => {
-        beforeEach(() => {
-          client.version = 2
-
-          transactions = cloneDeep(fixtures.transactions.v2)
-          getTransactionsEndpoint = jest.fn(() => {
-            return {
-              data: {
-                data: transactions,
-                meta: {
-                  totalCount: meta.count
-                }
-              }
-            }
-          })
-
-          walletTransactions = walletAddresses.reduce((all, address) => {
-            all[address] = transactions
-            return all
-          }, {})
-
-          const resource = resource => {
-            if (resource === 'wallets') {
-              return {
-                transactions: getTransactionsEndpoint
+        transactions = cloneDeep(fixtures.transactions.v2)
+        getTransactionsEndpoint = jest.fn(() => {
+          return {
+            body: {
+              data: transactions,
+              meta: {
+                totalCount: meta.count
               }
             }
           }
-
-          client.client.resource = jest.fn(resource)
         })
 
-        it('should call the wallet transactions endpoint for each wallet', async () => {
-          const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+        walletTransactions = walletAddresses.reduce((all, address) => {
+          all[address] = transactions
+          return all
+        }, {})
 
-          expect(client.client.resource).toHaveBeenNthCalledWith(1, 'wallets')
-          expect(client.client.resource).toHaveBeenNthCalledWith(2, 'wallets')
-          expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
-          expect(fetchedWallets).toEqual(walletTransactions)
-        })
-      })
-
-      describe('when version in v1', () => {
-        beforeEach(() => {
-          client.version = 1
-
-          transactions = cloneDeep(fixtures.transactions.v1)
-          getTransactionsEndpoint = jest.fn(() => {
+        const resource = resource => {
+          if (resource === 'wallets') {
             return {
-              data: {
-                transactions, success: true, count: meta.count.toString()
-              }
-            }
-          })
-
-          walletTransactions = walletAddresses.reduce((all, address) => {
-            all[address] = transactions
-            return all
-          }, {})
-
-          const resource = resource => {
-            if (resource === 'transactions') {
-              return {
-                all: getTransactionsEndpoint
-              }
+              transactions: getTransactionsEndpoint
             }
           }
+        }
 
-          client.client.resource = jest.fn(resource)
-        })
+        client.client.api = jest.fn(resource)
+      })
 
-        it('should call the v1 transactions endpoint', async () => {
-          const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
+      it('should call the wallet transactions endpoint for each wallet', async () => {
+        const fetchedWallets = await client.fetchTransactionsForWallets(walletAddresses)
 
-          expect(client.client.resource).toHaveBeenNthCalledWith(1, 'transactions')
-          expect(client.client.resource).toHaveBeenNthCalledWith(2, 'transactions')
-          expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
-          expect(fetchedWallets).toEqual(walletTransactions)
-        })
+        expect(client.client.api).toHaveBeenNthCalledWith(1, 'wallets')
+        expect(client.client.api).toHaveBeenNthCalledWith(2, 'wallets')
+        expect(getTransactionsEndpoint).toHaveBeenCalledTimes(2)
+        expect(fetchedWallets).toEqual(walletTransactions)
       })
     })
   })

@@ -120,7 +120,7 @@ export default {
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
-    DELAY: 'Latency',
+    LATENCY: 'Latency',
     DISCONNECT: 'Disconnect from peer',
     FAILED_REFRESH: 'Failed to refresh peers',
     HEIGHT: 'Block height',

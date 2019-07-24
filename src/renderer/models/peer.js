@@ -29,7 +29,7 @@ export default new BaseModel({
     os: {
       type: 'string'
     },
-    delay: {
+    latency: {
       type: 'integer'
     },
     isCustom: {
@@ -45,5 +45,5 @@ export default new BaseModel({
       format: (value) => value.isHttps || false
     }
   },
-  required: ['ip']
+  required: ['ip', 'port', 'version', 'height', 'latency']
 })
