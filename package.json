@@ -22,10 +22,10 @@
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
-    "build:win": "node .electron-vue/build.js && electron-builder --win",
+    "build:win": "node .electron-vue/build.js && electron-builder --win --x64 --ia32 --publish onTagOrDraft",
     "build:win32": "node .electron-vue/build.js && electron-builder --win --ia32",
-    "build:mac": "node .electron-vue/build.js && electron-builder --mac",
-    "build:linux": "node .electron-vue/build.js && electron-builder --linux",
+    "build:mac": "node .electron-vue/build.js && electron-builder --mac --publish onTagOrDraft",
+    "build:linux": "node .electron-vue/build.js && electron-builder --linux --publish onTagOrDraft",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
@@ -171,6 +171,10 @@
     "appId": "io.ark.desktop-wallet",
     "compression": "maximum",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+    "publish": {
+      "provider": "github",
+      "vPrefixedTagName": false
+    },
     "protocols": {
       "name": "Ark URI scheme",
       "schemes": [

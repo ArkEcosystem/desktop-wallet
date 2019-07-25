@@ -1,0 +1,44 @@
+language: node_js
+node_js:
+  - "12"
+
+matrix:
+  include:
+    - os: linux
+    - os: osx
+      osx_image: xcode10.2
+    - os: windows
+      env:
+        - YARN_GPG=no
+        - CSC_IDENTITY_AUTO_DISCOVERY=false
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+before_install:
+  - 'if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install libudev-dev libusb-1.0-0-dev; fi'
+  - yarn global add node-gyp
+
+before_script:
+  - 'if [ "$TRAVIS_OS_NAME" == "windows" ]; then unset CSC_LINK CSC_KEY_PASSWORD; fi'
+
+script:
+  - |
+    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      yarn build:mac
+    elif [ "$TRAVIS_OS_NAME" == "windows" ]; then
+      yarn build:win
+    else
+      yarn build:linux
+    fi
+
+after_script:
+  - shasum -a 256 build/target/ark-desktop-wallet*.{exe,deb,zip,tar.gz,AppImage,dmg}
+
+if: type = push
+
+branches:
+ only:
+   - master
