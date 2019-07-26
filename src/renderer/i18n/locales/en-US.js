@@ -501,7 +501,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Create Contact',
       IMPORT_CONTACT: 'Import Contact',
-      DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
@@ -635,9 +634,9 @@ export default {
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
+      EXPORT_WALLETS: 'Export Wallets',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import Wallet',
-      EXPORT_WALLETS: 'Export Wallets',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
@@ -987,6 +986,10 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
+  },
+
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Loading Ledger wallets...'
   },
 
   WALLET_RENAME: {
