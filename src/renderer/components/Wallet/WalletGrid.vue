@@ -16,6 +16,7 @@
       :key="wallet.id"
       class="WalletGrid__wallet group"
       @click="emitShow(wallet)"
+      @contextmenu.prevent="toggleDropdown(`dropdown-${wallet.id}`)"
     >
       <div class="WalletGrid__wallet__wrapper">
         <div class="WalletGrid__wallet__wrapper__mask">
@@ -56,6 +57,7 @@
             </div>
 
             <MenuDropdown
+              :ref="`dropdown-${wallet.id}`"
               :items="contextMenuOptions(wallet)"
               :is-highlighting="false"
               :position="['-100%', '-20%']"
@@ -142,6 +144,10 @@ export default {
       }
 
       return options
+    },
+
+    toggleDropdown (dropdownId) {
+      this.$refs[dropdownId][0].toggle()
     },
 
     emitShow (wallet) {
