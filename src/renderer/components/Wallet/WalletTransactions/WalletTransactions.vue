@@ -176,7 +176,7 @@ export default {
         }
       } catch (error) {
         // Ignore the 404 error of wallets that are not on the blockchain
-        const messages = at(error, 'response.data.message')
+        const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
 
