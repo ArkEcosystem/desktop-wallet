@@ -978,7 +978,7 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    CURRENTLY_VOTED: 'You are currently voted for {delegate}',
+    CURRENTLY_VOTED: 'You are currently voting for {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
     VOTE_INFO: 'Info:',
