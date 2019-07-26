@@ -160,8 +160,6 @@ describe('NetworkModal', () => {
 
         await wrapper.vm.fetchNetworkInfo()
 
-        console.log(JSON.stringify(wrapper.vm.$v.form, null, 2))
-
         expect(wrapper.vm.$v.form.$model.activeDelegates).toBe('48')
         expect(wrapper.vm.$v.form.$model.vendorField.maxLength).toBe(10)
       })
