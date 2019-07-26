@@ -43,7 +43,7 @@ describe('TransactionModal', () => {
   describe('isSuccessfulResponse', () => {
     // Only V2
     let response = {
-      data: { data: {} }
+      body: { data: {} }
     }
 
     describe('when the response status is not 200', () => {
@@ -63,8 +63,8 @@ describe('TransactionModal', () => {
 
       describe('when the response does not include errors', () => {
         beforeEach(() => {
-          response.data.errors = null
-          response.data.data = {
+          response.body.errors = null
+          response.body.data = {
             invalid: [],
             accept: []
           }
@@ -77,10 +77,10 @@ describe('TransactionModal', () => {
 
       describe('when the response includes errors', () => {
         beforeEach(() => {
-          response.data.errors = {
+          response.body.errors = {
             tx1: [{ type: 'ERR_LOW_FEE' }]
           }
-          response.data.data = {
+          response.body.data = {
             invalid: [],
             accept: []
           }
@@ -93,8 +93,8 @@ describe('TransactionModal', () => {
 
       describe('when the response does not include invalid transactions', () => {
         beforeEach(() => {
-          response.data.errors = null
-          response.data.data.invalid = []
+          response.body.errors = null
+          response.body.data.invalid = []
         })
 
         it('should return `true`', () => {
@@ -104,7 +104,7 @@ describe('TransactionModal', () => {
 
       describe('when the response includes invalid transactions', () => {
         beforeEach(() => {
-          response.data.data = {
+          response.body.data = {
             invalid: ['tx1']
           }
         })

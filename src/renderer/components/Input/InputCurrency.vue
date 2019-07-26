@@ -37,11 +37,12 @@
 </template>
 
 <script>
-import { includes, isNumber, isString } from 'lodash'
+import { includes, isString } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
 import store from '@/store'
 import InputField from './InputField'
+import BigNumber from '@/plugins/bignumber'
 
 /**
  * This component uses a String value internally to avoid several problems, such
@@ -94,9 +95,8 @@ export default {
       default: 'amount'
     },
     maximumAmount: {
-      type: Number,
-      required: false,
-      default: Math.pow(10, 7)
+      type: BigNumber,
+      required: true
     },
     maximumError: {
       type: String,
@@ -104,9 +104,8 @@ export default {
       default: null
     },
     minimumAmount: {
-      type: Number,
-      required: false,
-      default: 1e-8
+      type: BigNumber,
+      required: true
     },
     minimumError: {
       type: String,
@@ -134,7 +133,7 @@ export default {
       default: false
     },
     value: {
-      type: [Number, String],
+      type: [Number, String, BigNumber],
       required: true
     },
     walletNetwork: {
@@ -151,7 +150,7 @@ export default {
 
   computed: {
     alternativeAmount () {
-      const amount = this.checkAmount(this.inputValue) ? parseFloat(this.inputValue) : 0
+      const amount = this.checkAmount(this.inputValue) ? this.inputValue : 0
 
       return this.currency_format(amount * this.price, { currency: this.alternativeCurrency })
     },
@@ -194,7 +193,7 @@ export default {
 
     formattedValue () {
       return this.checkAmount(this.inputValue)
-        ? this.currency_format(parseFloat(this.inputValue), { currency: this.currency })
+        ? this.currency_format(this.inputValue, { currency: this.currency })
         : this.inputValue
     },
 
@@ -206,6 +205,7 @@ export default {
       const example = this.currency_format(9.9, { currency: this.currency })
       return example.match(/9(.)9/)[1]
     },
+
     thousandSeparator () {
       return this.decimalSeparator === '.' ? ',' : '.'
     },
@@ -251,16 +251,20 @@ export default {
      * @return {Boolean}
      */
     checkAmount (amount) {
-      return !!(isNumber(amount) || (isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/)))
+      const bigNum = new BigNumber(amount)
+      if (!bigNum.isNaN()) {
+        return bigNum.isPositive() && bigNum.isFinite()
+      } else {
+        return !!(isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/))
+      }
     },
     /**
      * Emits the raw input value (`raw`), as String, and the Number value (`input`)
      */
     emitInput (value) {
       this.$emit('raw', value)
-
-      const numeric = value ? parseFloat(this.sanitizeNumeric(value)) : 0
-      this.$emit('input', numeric || 0)
+      const numeric = value ? this.sanitizeNumeric(value) : '0'
+      this.$emit('input', isNaN(numeric) ? '0' : numeric)
     },
     focus () {
       this.$refs.input.focus()
@@ -379,10 +383,10 @@ export default {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
       isMoreThanMinimum (value) {
-        return parseFloat(this.inputValue) >= this.minimumAmount
+        return !this.minimumAmount.isGreaterThan(value)
       },
       isLessThanMaximum (value) {
-        return parseFloat(this.inputValue) <= this.maximumAmount
+        return !this.maximumAmount.isLessThan(value)
       },
       isRequired (value) {
         if (this.required) {

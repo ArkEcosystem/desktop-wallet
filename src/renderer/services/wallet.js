@@ -1,7 +1,7 @@
 import bip39 from 'bip39'
-import { crypto, Message } from '@arkecosystem/crypto'
+import { Crypto, Identities } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
-import axios from 'axios'
+import got from 'got'
 
 export default class WalletService {
   /*
@@ -20,9 +20,9 @@ export default class WalletService {
    */
   static generate (pubKeyHash, language) {
     const passphrase = bip39.generateMnemonic(null, null, bip39.wordlists[language])
-    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
+    const publicKey = Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
     return {
-      address: crypto.getAddress(publicKey, pubKeyHash),
+      address: Identities.Address.fromPublicKey(publicKey, pubKeyHash),
       passphrase
     }
   }
@@ -41,12 +41,11 @@ export default class WalletService {
    * @return {String}
    */
   static getAddress (passphrase, pubKeyHash) {
-    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
-    return crypto.getAddress(publicKey, pubKeyHash)
+    return Identities.Address.fromPassphrase(this.normalizePassphrase(passphrase), pubKeyHash)
   }
 
   static getAddressFromPublicKey (publicKey, pubKeyHash) {
-    return crypto.getAddress(publicKey, pubKeyHash)
+    return Identities.Address.fromPublicKey(publicKey, pubKeyHash)
   }
 
   /**
@@ -55,7 +54,7 @@ export default class WalletService {
    * @return {String}
    */
   static getPublicKeyFromPassphrase (passphrase) {
-    return crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
+    return Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
   }
 
   /**
@@ -69,8 +68,8 @@ export default class WalletService {
     }
 
     const neoUrl = 'https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/'
-    const response = await axios.get(neoUrl + address)
-    return response.status === 200 && response.data && response.data.length > 0
+    const response = await got(neoUrl + address)
+    return response.status === 200 && response.body && response.body.length > 0
   }
 
   /**
@@ -80,7 +79,7 @@ export default class WalletService {
    * @return {String}
    */
   static signMessage (message, passphrase) {
-    return Message.sign(message, this.normalizePassphrase(passphrase))
+    return Crypto.Message.sign(message, this.normalizePassphrase(passphrase))
   }
 
   /**
@@ -91,7 +90,7 @@ export default class WalletService {
    * @return {String}
    */
   static signMessageWithWif (message, wif, network) {
-    return Message.signWithWif(message, wif, network)
+    return Crypto.Message.signWithWif(message, wif, network)
   }
 
   /**
@@ -102,7 +101,7 @@ export default class WalletService {
    * @return {String}
    */
   static verifyMessage (message, publicKey, signature) {
-    return Message.verify({ message, publicKey, signature })
+    return Crypto.Message.verify({ message, publicKey, signature })
   }
 
   /**
@@ -111,7 +110,7 @@ export default class WalletService {
    * @return {Boolean}
    */
   static validateAddress (address, pubKeyHash) {
-    return crypto.validateAddress(address, pubKeyHash)
+    return Identities.Address.validate(address, pubKeyHash)
   }
 
   /**
@@ -121,8 +120,8 @@ export default class WalletService {
    * @return {Boolean}
    */
   static validatePassphrase (passphrase, pubKeyHash) {
-    const publicKey = crypto.getKeys(this.normalizePassphrase(passphrase)).publicKey
-    return crypto.validatePublicKey(publicKey, pubKeyHash)
+    const publicKey = Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
+    return Identities.PublicKey.validate(publicKey, pubKeyHash)
   }
 
   /**

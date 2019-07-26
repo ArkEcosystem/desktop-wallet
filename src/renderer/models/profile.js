@@ -6,7 +6,7 @@ export default new BaseModel({
   properties: {
     id: {
       type: 'string',
-      minLength: 16,
+      minLength: 1,
       maxLength: 16
     },
     avatar: {
@@ -72,6 +72,10 @@ export default new BaseModel({
     theme: {
       type: 'string',
       minLength: 1
+    },
+    screenshotProtection: {
+      type: 'boolean',
+      format: data => data.screenshotProtection !== undefined ? data.screenshotProtection : true
     },
     backgroundUpdateLedger: {
       type: 'boolean',

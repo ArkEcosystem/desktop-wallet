@@ -84,16 +84,6 @@
               />
 
               <InputText
-                ref="input-version"
-                v-model="$v.form.version.$model"
-                :label="$t('MODAL_NETWORK.VERSION')"
-                :is-invalid="$v.form.version.$dirty && $v.form.version.$invalid"
-                :helper-text="versionError"
-                class="mt-5"
-                name="version"
-              />
-
-              <InputText
                 ref="input-epoch"
                 v-model="$v.form.epoch.$model"
                 :label="$t('MODAL_NETWORK.EPOCH')"
@@ -246,7 +236,6 @@ export default {
       nethash: '',
       token: '',
       symbol: '',
-      version: '',
       explorer: '',
       epoch: '',
       wif: '',
@@ -260,7 +249,6 @@ export default {
     ],
     originalName: null,
     configChoice: 'Basic',
-    apiVersion: 2,
     hasFetched: false,
     showFull: false,
     showLoadingModal: false
@@ -306,10 +294,6 @@ export default {
       return this.requiredFieldError(this.$v.form.slip44, this.$refs['input-slip44'])
     },
 
-    versionError () {
-      return this.requiredNumericFieldError(this.$v.form.version, this.$refs['input-version'])
-    },
-
     wifError () {
       return this.requiredNumericFieldError(this.$v.form.wif, this.$refs['input-wif'])
     },
@@ -346,7 +330,6 @@ export default {
       this.form.nethash = this.network.nethash
       this.form.token = this.network.token
       this.form.symbol = this.network.symbol
-      this.form.version = this.network.version.toString()
       this.form.explorer = this.network.explorer || ''
 
       this.form.epoch = this.network.constants.epoch
@@ -463,12 +446,10 @@ export default {
         enabled: this.form.ticker !== '',
         ticker: this.form.ticker !== '' ? this.form.ticker : null
       }
-      customNetwork.version = parseInt(customNetwork.version) // Important: needs to be a Number
       customNetwork.subunit = this.form.token.toLowerCase() + 'toshi'
       customNetwork.fractionDigits = 8
       customNetwork.wif = parseInt(this.form.wif)
       customNetwork.knownWallets = {}
-      customNetwork.apiVersion = this.network ? this.network.apiVersion : this.apiVersion
 
       if (this.showFull && this.hasFetched) {
         await this.$store.dispatch('network/addCustomNetwork', customNetwork)
@@ -496,8 +477,8 @@ export default {
         activeDelegates: '51'
       }
 
-      const fetchAndFill = async (version, callback = null) => {
-        const network = await ClientService.fetchNetworkConfig(this.form.server, version)
+      const fetchAndFill = async (callback = null) => {
+        const network = await ClientService.fetchNetworkConfig(this.form.server)
 
         if (network) {
           const tokenFound = await cryptoCompare.checkTradeable(network.token)
@@ -510,9 +491,7 @@ export default {
             }
           }
           this.form.ticker = tokenFound ? network.token : ''
-          this.form.version = network.version.toString()
 
-          this.apiVersion = version
           this.showFull = true
           this.hasFetched = true
 
@@ -592,10 +571,6 @@ export default {
       },
       symbol: {
         requiredIfFull
-      },
-      version: {
-        requiredIfFull,
-        numeric
       },
       explorer: {
         requiredIfFull,
