@@ -620,6 +620,20 @@ class PluginManager {
       sandbox.walletApi.http = new PluginHttp(config.urls)
     }
 
+    if (config.permissions.includes('PROFILE_CURRENT')) {
+      sandbox.walletApi.profiles = {
+        current: this.app.$store.getters['profile/public']()
+      }
+    }
+
+    if (config.permissions.includes('PROFILE_ALL')) {
+      if (!sandbox.walletApi.profiles) {
+        sandbox.walletApi.profiles = {}
+      }
+
+      sandbox.walletApi.profiles.all = this.app.$store.getters['profile/public'](true)
+    }
+
     return sandbox
   }
 
