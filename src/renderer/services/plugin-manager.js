@@ -141,9 +141,19 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l']
+          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
           for (const key of keys) {
-            context[key] = that[key]
+            let thatObject = that[key]
+
+            if (key === '$refs' && thatObject) {
+              for (const elKey of Object.keys(thatObject)) {
+                if (Object.keys(thatObject[elKey]).includes('$root') || Object.keys(thatObject[elKey]).includes('__vue__')) {
+                  delete thatObject[elKey]
+                }
+              }
+            }
+
+            context[key] = thatObject
           }
 
           for (const computedName of Object.keys(componentData.computed || {})) {
