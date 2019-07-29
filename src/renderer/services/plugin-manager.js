@@ -5,6 +5,12 @@ import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 
+import * as ButtonComponents from '@/components/Button'
+import * as CollapseComponents from '@/components/Collapse'
+import * as InputComponents from '@/components/Input'
+import * as ListDividedComponents from '@/components/ListDivided'
+import * as MenuComponents from '@/components/Menu'
+
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
   rootPath = path.resolve(__dirname, '../../')
@@ -474,6 +480,7 @@ class PluginManager {
       'data',
       'methods',
       'computed',
+      'components',
       ...this.hooks
     ]
 
@@ -595,6 +602,16 @@ class PluginManager {
         success: this.app.$success,
         info: this.app.$info,
         warn: this.app.$warn
+      }
+    }
+
+    if (config.permissions.includes('UI_COMPONENTS')) {
+      sandbox.walletApi.components = {
+        Button: ButtonComponents,
+        Collapse: CollapseComponents,
+        Input: InputComponents,
+        ListDivided: ListDividedComponents,
+        Menu: MenuComponents
       }
     }
 
