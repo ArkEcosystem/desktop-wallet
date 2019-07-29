@@ -4,6 +4,7 @@ import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
+import PluginHttp from '@/services/plugin-manager/http'
 
 import * as ButtonComponents from '@/components/Button'
 import * as CollapseComponents from '@/components/Collapse'
@@ -615,6 +616,10 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('HTTP')) {
+      sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
     return sandbox
   }
 
@@ -639,7 +644,7 @@ class PluginManager {
       description: config.description,
       version: config.version,
       permissions: uniq(config.permissions).sort(),
-      urls: config.urls
+      urls: config.urls || []
     }
   }
 }
