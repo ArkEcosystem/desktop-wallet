@@ -8,20 +8,22 @@
       </span>
     </div>
 
-    <div v-if="isChartActive">
-      <button
-        v-for="(translation, period) in $options.periods"
-        :key="period"
-        :class="{
-          'bg-theme-button-special-choice text-white': activePeriod === period
-        }"
-        class="MarketChartHeader__button mr-2 font-semibold px-3 py-1 text-theme-page-text rounded"
-        :disabled="activePeriod === period"
-        @click="changePeriod(period)"
-      >
-        {{ $t(translation) }}
-      </button>
-    </div>
+    <Transition name="fade">
+      <div v-if="isExpanded">
+        <button
+          v-for="(translation, period) in $options.periods"
+          :key="period"
+          :class="{
+            'bg-theme-button-special-choice text-white': activePeriod === period
+          }"
+          class="MarketChartHeader__button mr-2 font-semibold px-3 py-1 text-theme-page-text rounded"
+          :disabled="activePeriod === period"
+          @click="emitPeriodChange(period)"
+        >
+          {{ $t(translation) }}
+        </button>
+      </div>
+    </Transition>
 
     <div class="mt-1">
       <span class="text-lg font-semibold mr-4 mt-4">
@@ -30,7 +32,7 @@
 
       <div class="MarketChartHeader__show-button float-right">
         <ButtonSwitch
-          :is-active="isChartActive"
+          :is-active="isExpanded"
           background-color="var(--theme-settings-switch)"
           @change="emitToggle"
         />
@@ -52,25 +54,20 @@ export default {
   },
 
   inject: {
-    changePeriod: { default: () => {} },
-    getPeriod: { default: () => {} }
+    getPeriod: { default: () => {} },
+    getIsExpanded: { default: () => {} }
   },
 
   components: {
     ButtonSwitch
   },
 
-  props: {
-    isChartActive: {
-      type: Boolean,
-      required: false,
-      default: true
-    }
-  },
-
   computed: {
     activePeriod () {
       return this.getPeriod()
+    },
+    isExpanded () {
+      return this.getIsExpanded()
     },
     currency () {
       return this.$store.getters['session/currency']
@@ -86,6 +83,10 @@ export default {
   methods: {
     emitToggle (value) {
       this.$emit('toggle', value)
+    },
+
+    emitPeriodChange (period) {
+      this.$emit('period-change', period)
     }
   }
 }
@@ -104,5 +105,12 @@ export default {
 }
 .MarketChartHeader__show-button {
   margin-top: -0.125rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
