@@ -270,7 +270,11 @@ class PluginManager {
         this.hooks
           .filter(hook => component.hasOwnProperty(hook))
           .forEach(prop => {
-            vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            if (Array.isArray(vmComponent.options[prop])) {
+              vmComponent.options[prop][0] = function () { return component[prop].apply(componentContext(this)) }
+            } else {
+              vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            }
           })
 
         components[componentName] = vmComponent
