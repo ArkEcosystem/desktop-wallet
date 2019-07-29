@@ -501,21 +501,17 @@ export default {
         }
       }
 
-      // Try V2 first and fallback to V1
       try {
-        await fetchAndFill(2, network => {
+        await fetchAndFill(network => {
           this.form.epoch = network.constants.epoch
           if (network.constants.activeDelegates) {
             this.form.activeDelegates = network.constants.activeDelegates.toString()
             this.form.vendorField = { maxLength: network.constants.vendorFieldLength }
           }
         })
-      } catch (v2Error) {
-        try {
-          await fetchAndFill(1)
-        } catch (v1Error) {
-          this.$error(this.$t('MODAL_NETWORK.FAILED_FETCH'))
-        }
+      } catch (error) {
+        this.$logger.error(error)
+        this.$error(this.$t('MODAL_NETWORK.FAILED_FETCH'))
       }
     },
 

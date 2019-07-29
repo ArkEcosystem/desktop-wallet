@@ -51,9 +51,9 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.hideWalletButtonText !== undefined ? data.hideWalletButtonText : false
     },
-    isMarketChartEnabled: {
-      type: 'boolean',
-      format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
+    marketChartOptions: {
+      type: 'object',
+      format: data => data.marketChartOptions || { isEnabled: true, isExpanded: true, period: 'day' }
     },
     language: {
       type: 'string',

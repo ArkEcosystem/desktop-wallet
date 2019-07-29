@@ -49,60 +49,13 @@
         </div>
       </div>
 
-      <div
+      <WalletGrid
         v-if="hasWalletGridLayout"
-      >
-        <div class="ContactAll__grid mt-10 justify-center">
-          <div
-            v-for="contact in contacts"
-            :key="contact.id"
-            class="ContactAll__grid__contact w-full overflow-hidden bg-theme-feature lg:bg-transparent rounded-lg cursor-pointer border-theme-wallet-overview-border border-b border-r mb-3"
-            @click="showContact(contact.id)"
-          >
-            <div class="ContactAll__grid__contact__wrapper">
-              <div class="flex flex-col">
-                <div class="flex items-center">
-                  <WalletIdenticon
-                    :value="contact.address"
-                    :size="60"
-                    class="identicon cursor-pointer"
-                  />
-
-                  <div class="flex flex-col justify-center overflow-hidden pl-4">
-                    <div class="ContactAll__grid__contact__name font-semibold text-base truncate block">
-                      <span
-                        v-tooltip="{
-                          content: !contact.name && wallet_name(contact.address) ? $t('COMMON.NETWORK_NAME') : '',
-                          placement: 'right'
-                        }"
-                        class="pr-1 cursor-default"
-                        @click.stop
-                      >
-                        {{ contact.name || wallet_name(contact.address) || wallet_truncate(contact.address) }}
-                      </span>
-                    </div>
-                    <span
-                      class="font-bold mt-2 text-lg cursor-default"
-                      @click.stop
-                    >
-                      {{ formatter_networkCurrency(contact.balance, 2) }}
-                    </span>
-                  </div>
-                </div>
-
-                <div class="flex flex-row w-full justify-end">
-                  <button
-                    class="ContactAll__grid__contact__select font-semibold flex text-xs cursor-pointer hover:underline hover:text-red text-theme-page-text-light mt-4"
-                    @click.stop="openRemovalConfirmation(contact)"
-                  >
-                    {{ $t('PAGES.CONTACT_ALL.DELETE_CONTACT') }}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        :wallets="contacts"
+        @show="showContact"
+        @rename="openRenameModal"
+        @remove="openRemovalConfirmation"
+      />
 
       <div
         v-else-if="!hasWalletGridLayout"
@@ -144,7 +97,7 @@
 import { clone, some } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
-import { WalletIdenticon, WalletIdenticonPlaceholder } from '@/components/Wallet'
+import { WalletGrid, WalletIdenticonPlaceholder } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -155,7 +108,7 @@ export default {
     ButtonLayout,
     ContactRemovalConfirmation,
     ContactRenameModal,
-    WalletIdenticon,
+    WalletGrid,
     WalletIdenticonPlaceholder,
     WalletTable,
     SvgIcon
@@ -273,31 +226,6 @@ export default {
 .ContactAll__header {
   @apply .flex .items-center .justify-between .h-8;
 }
-.ContactAll__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, calc(var(--contact-identicon-lg) * 3));
-  grid-gap: 1rem;
-}
-.ContactAll__grid__contact__wrapper {
-  @apply .m-6;
-}
-.ContactAll__grid__contact:hover .identicon {
-  opacity: 1;
-}
-.ContactAll__grid__contact:hover .identicon-placeholder {
-  opacity: 0.5;
-}
-.ContactAll__grid__contact .identicon {
-  transition: 0.5s;
-  opacity: 0.5;
-}
-.ContactAll__grid__contact .identicon-placeholder {
-  transition: 0.5s;
-  opacity: 0.25;
-}
-.ContactAll__grid__contact__name {
-  color: #037cff;
-}
 .ContactAll__CreateButton {
   transition: all .1s ease-in;
   @apply .flex .items-center .font-semibold .bg-theme-button .rounded .cursor-pointer .text-theme-button-text .ml-12;
@@ -312,10 +240,5 @@ export default {
 .ContactAll__CreateButton:hover .ContactAll__CreateButton__icon {
   background-color: #0169f4;
   @apply .text-white;
-}
-@screen lg {
-  .ContactAll__grid__contact__wrapper {
-    @apply .m-4
-  }
 }
 </style>
