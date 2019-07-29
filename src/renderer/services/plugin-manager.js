@@ -36,8 +36,6 @@ class PluginManager {
     this.app = app
 
     await this.app.$store.dispatch('plugin/init')
-
-    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(PLUGINS.path)
 
     this.hasInit = true
