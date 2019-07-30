@@ -55,7 +55,7 @@ export default new BaseModule(ProfileModel, {
         currency: profile.currency,
         language: profile.language,
         name: profile.name,
-        networkId: profile.networkId,
+        network: rootGetters['network/byId'](profile.networkId),
         wallets: rootGetters['wallet/publicByProfileId'](profile.id),
         contacts: rootGetters['wallet/publicByProfileId'](profile.id, true)
       })
