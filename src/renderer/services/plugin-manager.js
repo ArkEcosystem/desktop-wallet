@@ -622,7 +622,9 @@ class PluginManager {
 
     if (config.permissions.includes('PROFILE_CURRENT')) {
       sandbox.walletApi.profiles = {
-        current: this.app.$store.getters['profile/public']()
+        getCurrent: () => {
+          return this.app.$store.getters['profile/public']()
+        }
       }
     }
 
