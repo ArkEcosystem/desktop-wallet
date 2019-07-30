@@ -8,15 +8,12 @@ export default class PluginHttp {
       this.whitelist = whitelist.map(regex => {
         return new RegExp(regex)
       })
-
-      console.log('whitelist', this.whitelist)
     }
   }
 
   validateUrl (url) {
     let valid = false
     for (const regex of this.whitelist) {
-      console.log(regex, regex.test(url), url)
       if (regex.test(url)) {
         valid = true
 
