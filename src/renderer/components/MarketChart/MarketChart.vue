@@ -1,20 +1,27 @@
 <template>
-  <section class="MarketChart w-full flex-column">
+  <section
+    :class="isExpanded ? 'bg-theme-chart-background pb-4' : 'bg-theme-feature'"
+    class="MarketChartWrapper flex-column"
+  >
     <slot />
-    <LineChart
-      v-if="isActive"
-      v-show="isReady"
-      ref="chart"
-      :chart-data="chartData"
-      :options="options"
-      :height="315"
-      @ready="setReady"
-    />
     <div
-      v-if="isActive && !isReady"
-      class="MarketChart__Loader__Container"
+      class="MarketChart"
+      :class="{ 'collapsed': !isExpanded }"
     >
-      <Loader />
+      <LineChart
+        v-show="isReady"
+        ref="chart"
+        :chart-data="chartData"
+        :options="options"
+        :height="315"
+        @ready="setReady"
+      />
+      <div
+        v-if="!isReady"
+        class="MarketChart__Loader__Container"
+      >
+        <Loader />
+      </div>
     </div>
   </section>
 </template>
@@ -30,8 +37,8 @@ export default {
 
   provide () {
     return {
-      changePeriod: this.changePeriod,
-      getPeriod: this.getPeriod
+      getPeriod: this.getPeriod,
+      getIsExpanded: this.getIsExpanded
     }
   },
 
@@ -41,17 +48,20 @@ export default {
   },
 
   props: {
-    // Should the chart be rendered?
-    isActive: {
+    period: {
+      type: String,
+      required: true,
+      default: 'day'
+    },
+    isExpanded: {
       type: Boolean,
-      required: false,
+      required: true,
       default: true
     }
   },
 
   data: () => ({
     isReady: false,
-    period: 'day',
     chartData: {},
     options: {},
     gradient: null
@@ -85,6 +95,7 @@ export default {
         gradient: ['#666', '#528fe3', '#9c6dd8', '#e15362']
       }
     },
+
     pluginThemes () {
       return this.$store.getters['plugin/themes']
     },
@@ -103,12 +114,6 @@ export default {
   },
 
   watch: {
-    isActive (value) {
-      if (value && !this._inactive) {
-        this.renderChart()
-      }
-    },
-
     currency () {
       this.renderChart()
     },
@@ -119,12 +124,16 @@ export default {
 
     ticker () {
       this.renderChart()
+    },
+
+    period () {
+      this.renderChart()
     }
   },
 
   activated () {
     // Only if it's not already rendered
-    if (this.isActive && !this.isReady) {
+    if (this.isExpanded && !this.isReady) {
       this.renderChart()
     }
   },
@@ -133,6 +142,7 @@ export default {
     setReady () {
       this.isReady = true
     },
+
     async renderChart () {
       await this.renderGradient()
 
@@ -303,14 +313,12 @@ export default {
       this.gradient.addColorStop(1, this.colours.gradient[3])
     },
 
-    changePeriod (period) {
-      this.period = period
-
-      this.renderChart()
-    },
-
     getPeriod () {
       return this.period
+    },
+
+    getIsExpanded () {
+      return this.isExpanded
     },
 
     /**
@@ -340,8 +348,21 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.MarketChartWrapper {
+  @apply .w-full .pt-10 .px-10 .rounded-t-lg;
+  transition: background-color .3s ease-in-out;
+}
+
 .MarketChart {
-  min-height: 315px
+  height: auto;
+  max-height: 315px;
+  overflow: hidden;
+  transition: opacity .3s ease-in-out, max-height .3s ease-in-out;
+}
+
+.MarketChart.collapsed {
+  max-height: 0;
+  opacity: 0;
 }
 
 .MarketChart__Loader__Container {
