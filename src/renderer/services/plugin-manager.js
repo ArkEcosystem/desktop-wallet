@@ -4,6 +4,13 @@ import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
+import PluginHttp from '@/services/plugin-manager/http'
+
+import * as ButtonComponents from '@/components/Button'
+import * as CollapseComponents from '@/components/Collapse'
+import * as InputComponents from '@/components/Input'
+import * as ListDividedComponents from '@/components/ListDivided'
+import * as MenuComponents from '@/components/Menu'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -36,8 +43,6 @@ class PluginManager {
     this.app = app
 
     await this.app.$store.dispatch('plugin/init')
-
-    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(PLUGINS.path)
 
     this.hasInit = true
@@ -143,9 +148,19 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l']
+          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
           for (const key of keys) {
-            context[key] = that[key]
+            let thatObject = that[key]
+
+            if (key === '$refs' && thatObject) {
+              for (const elKey of Object.keys(thatObject)) {
+                if (Object.keys(thatObject[elKey]).includes('$root') || Object.keys(thatObject[elKey]).includes('__vue__')) {
+                  delete thatObject[elKey]
+                }
+              }
+            }
+
+            context[key] = thatObject
           }
 
           for (const computedName of Object.keys(componentData.computed || {})) {
@@ -262,7 +277,11 @@ class PluginManager {
         this.hooks
           .filter(hook => component.hasOwnProperty(hook))
           .forEach(prop => {
-            vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            if (Array.isArray(vmComponent.options[prop])) {
+              vmComponent.options[prop][0] = function () { return component[prop].apply(componentContext(this)) }
+            } else {
+              vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            }
           })
 
         components[componentName] = vmComponent
@@ -462,6 +481,7 @@ class PluginManager {
       'data',
       'methods',
       'computed',
+      'components',
       ...this.hooks
     ]
 
@@ -586,6 +606,36 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('UI_COMPONENTS')) {
+      sandbox.walletApi.components = {
+        Button: ButtonComponents,
+        Collapse: CollapseComponents,
+        Input: InputComponents,
+        ListDivided: ListDividedComponents,
+        Menu: MenuComponents
+      }
+    }
+
+    if (config.permissions.includes('HTTP')) {
+      sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
+    if (config.permissions.includes('PROFILE_CURRENT')) {
+      sandbox.walletApi.profiles = {
+        getCurrent: () => {
+          return this.app.$store.getters['profile/public']()
+        }
+      }
+    }
+
+    if (config.permissions.includes('PROFILE_ALL')) {
+      if (!sandbox.walletApi.profiles) {
+        sandbox.walletApi.profiles = {}
+      }
+
+      sandbox.walletApi.profiles.all = this.app.$store.getters['profile/public'](true)
+    }
+
     return sandbox
   }
 
@@ -610,7 +660,7 @@ class PluginManager {
       description: config.description,
       version: config.version,
       permissions: uniq(config.permissions).sort(),
-      urls: config.urls
+      urls: config.urls || []
     }
   }
 }
