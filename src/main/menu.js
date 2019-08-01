@@ -27,12 +27,17 @@ const about = {
 
 const preferences = {
   label: 'Preferences',
-  click: (_, focusedWindow) => {
-    if (focusedWindow && focusedWindow.webContents) {
-      focusedWindow.webContents.send('app:preferences')
+  submenu: [
+    {
+      label: 'Settings',
+      click: (_, focusedWindow) => {
+        if (focusedWindow && focusedWindow.webContents) {
+          focusedWindow.webContents.send('app:preferences')
+        }
+      },
+      accelerator: 'CommandOrControl+,'
     }
-  },
-  accelerator: 'CommandOrControl+,'
+  ]
 }
 
 const template = [
