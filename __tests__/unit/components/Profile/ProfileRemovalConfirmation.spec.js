@@ -6,8 +6,8 @@ const i18n = useI18nGlobally()
 let wrapper
 
 const profile = { id: 'my profile' }
-let $store = {}
-let $router = {}
+const $store = {}
+const $router = {}
 
 const mountComponent = ({ profiles } = {}) => {
   $router.push = jest.fn()

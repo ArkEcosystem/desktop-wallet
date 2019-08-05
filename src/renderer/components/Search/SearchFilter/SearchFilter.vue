@@ -77,8 +77,8 @@ export default {
   computed: {
     filterComponents () {
       return {
-        'SearchFilterTransaction': this.$t('TRANSACTION.TRANSACTION'),
-        'SearchFilterDelegate': this.$t('SEARCH.DELEGATE')
+        SearchFilterTransaction: this.$t('TRANSACTION.TRANSACTION'),
+        SearchFilterDelegate: this.$t('SEARCH.DELEGATE')
       }
     }
   },
