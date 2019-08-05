@@ -64,7 +64,7 @@ describe('Services > Client', () => {
       balance: '1202',
       publicKey: 'public key'
     }
-    let wallet = {
+    const wallet = {
       body: {
         data: {
           ...data,
@@ -73,7 +73,7 @@ describe('Services > Client', () => {
         }
       }
     }
-    let account = {
+    const account = {
       data: {
         success: true,
         account: {
@@ -128,7 +128,7 @@ describe('Services > Client', () => {
       }
     ]
     const walletAddresses = ['address1', 'address2']
-    let walletsResponse = {
+    const walletsResponse = {
       body: {
         data: [
           {
@@ -156,8 +156,8 @@ describe('Services > Client', () => {
       }
     }
 
-    let getWalletEndpoint = jest.fn(generateWalletResponse)
-    let searchWalletEndpoint = jest.fn(() => walletsResponse)
+    const getWalletEndpoint = jest.fn(generateWalletResponse)
+    const searchWalletEndpoint = jest.fn(() => walletsResponse)
     beforeEach(() => {
       const resource = resource => {
         if (resource === 'wallets') {

@@ -7,7 +7,7 @@ export default {
     allImages () {
       const additional = this.additional ? this.additional : []
 
-      return flatten([ ...Object.values(this.images), ...additional ])
+      return flatten([...Object.values(this.images), ...additional])
     },
 
     /**

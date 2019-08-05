@@ -141,7 +141,7 @@ export default class WalletService {
    * @return {Object} { errors: Array, passes: Boolean }
    */
   static validateUsername (username) {
-    let errors = []
+    const errors = []
 
     if (username.length < 1) {
       errors.push({ type: 'empty' })
