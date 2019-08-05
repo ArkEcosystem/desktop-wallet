@@ -181,7 +181,7 @@ export default {
   },
 
   TIME_FORMAT: {
-    'DEFAULT': 'Default',
+    DEFAULT: 'Default',
     '12H': '12h',
     '24H': '24h'
   },

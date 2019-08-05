@@ -185,7 +185,7 @@ describe('TransactionModule', () => {
     it('should return a single fee', () => {
       store.commit('transaction/SET_STATIC_FEES', {
         networkId: network1.id,
-        staticFees: [ 1, 2, 3, 4, 5 ]
+        staticFees: [1, 2, 3, 4, 5]
       })
 
       expect(store.getters['transaction/staticFee'](0)).toEqual(1)
