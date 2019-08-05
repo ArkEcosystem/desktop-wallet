@@ -5,7 +5,7 @@ describe('WalletTransactions', () => {
   it('should render', () => {
     const wrapper = shallowMount(WalletTransactions, {
       stubs: {
-        'TransactionTable': true
+        TransactionTable: true
       },
       mocks: {
         $store: {

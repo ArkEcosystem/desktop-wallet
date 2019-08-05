@@ -59,9 +59,9 @@ exports.TRANSACTION_TYPES = {
 }
 
 exports.INTERVALS = {
-  'short': 30000, // 30 seconds
-  'medium': 60000, // 1 minute
-  'long': 180000 // 3 minute
+  short: 30000, // 30 seconds
+  medium: 60000, // 1 minute
+  long: 180000 // 3 minute
 }
 
 exports.MARKET = {

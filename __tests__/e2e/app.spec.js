@@ -5,7 +5,7 @@ import welcomeSpecs from './pages/2-welcome.spec'
 import profileNewSpecs from './pages/3-profile-new.spec'
 
 describe('App', () => {
-  let scope = {}
+  const scope = {}
 
   beforeAll(async () => {
     await setup.startApp(scope)

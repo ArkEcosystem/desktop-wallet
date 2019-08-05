@@ -184,7 +184,7 @@ export default {
       return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM
     },
     feeChoices () {
-      let { avgFee, maxFee } = this.feeStatistics
+      const { avgFee, maxFee } = this.feeStatistics
 
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)

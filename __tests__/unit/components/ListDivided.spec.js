@@ -56,8 +56,8 @@ describe('ListDivided', () => {
 
   it('should render list with items', () => {
     const items = {
-      'address': 'example',
-      'fee': '0.01'
+      address: 'example',
+      fee: '0.01'
     }
     const wrapper = mount(ListDivided, {
       propsData: {
