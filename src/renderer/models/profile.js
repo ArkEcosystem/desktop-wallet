@@ -6,7 +6,7 @@ export default new BaseModel({
   properties: {
     id: {
       type: 'string',
-      minLength: 16,
+      minLength: 1,
       maxLength: 16
     },
     avatar: {
@@ -51,9 +51,9 @@ export default new BaseModel({
       type: 'boolean',
       format: data => data.hideWalletButtonText !== undefined ? data.hideWalletButtonText : false
     },
-    isMarketChartEnabled: {
-      type: 'boolean',
-      format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
+    marketChartOptions: {
+      type: 'object',
+      format: data => data.marketChartOptions || { isEnabled: true, isExpanded: true, period: 'day' }
     },
     language: {
       type: 'string',
@@ -72,6 +72,10 @@ export default new BaseModel({
     theme: {
       type: 'string',
       minLength: 1
+    },
+    screenshotProtection: {
+      type: 'boolean',
+      format: data => data.screenshotProtection !== undefined ? data.screenshotProtection : true
     },
     backgroundUpdateLedger: {
       type: 'boolean',

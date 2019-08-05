@@ -154,7 +154,7 @@ export default {
     toggleOption (option, isAdvanced = false) {
       const options = isAdvanced ? this.advancedOptions : this.options
 
-      if (options.hasOwnProperty(option)) {
+      if (Object.prototype.hasOwnProperty.call(options, option)) {
         options[option].active = !options[option].active
       }
     },

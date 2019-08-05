@@ -45,6 +45,19 @@ export default {
       return state.wallets[profileId].filter(wallet => !wallet.isContact)
     },
 
+    publicByProfileId: (state) => (profileId, getContacts = false) => {
+      if (!state.wallets[profileId]) {
+        return []
+      }
+
+      return state.wallets[profileId].filter(wallet => wallet.isContact === getContacts).map(wallet => ({
+        address: wallet.address,
+        balance: wallet.balance,
+        name: wallet.name,
+        publicKey: wallet.publicKey
+      }))
+    },
+
     contactsByProfileId: (state, _, __, rootGetters) => profileId => {
       if (!state.wallets[profileId]) {
         return []

@@ -2,6 +2,8 @@ import { shallowMount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
+import nock from 'nock'
+import { MARKET } from '@config'
 import { NetworkModal } from '@/components/Network'
 import { testIsValid, testNumeric, testRequired, testScheme, testUrl } from '../../__utils__/validation'
 
@@ -15,8 +17,22 @@ const mocks = {
         return name === 'exists'
       })
     }
+  },
+
+  $error: jest.fn(),
+
+  $logger: {
+    error: jest.fn()
   }
 }
+
+jest.mock('@/store', () => ({
+  getters: {
+    'session/network': {
+      nethash: '1234'
+    }
+  }
+}))
 
 Vue.use(Vuelidate)
 
@@ -29,6 +45,8 @@ describe('NetworkModal', () => {
         title: 'Network Modal'
       }
     })
+
+    nock.cleanAll()
   })
 
   it('should render modal', () => {
@@ -109,6 +127,44 @@ describe('NetworkModal', () => {
       })
     })
 
+    describe('fetchNetworkInfo', () => {
+      beforeEach(() => {
+        wrapper.vm.$v.form.name.$model = 'sample name'
+        wrapper.vm.$v.form.description.$model = 'sample description'
+        wrapper.vm.$v.form.server.$model = 'http://1.2.3.4'
+      })
+
+      it('should fetch data and populate', async () => {
+        nock('http://1.2.3.4')
+          .get('/api/v2/node/configuration')
+          .reply(200, {
+            data: {
+              nethash: 1234,
+              token: 'TEST',
+              constants: {
+                activeDelegates: 48,
+                vendorFieldLength: 10
+              }
+            }
+          })
+
+        nock(MARKET.source.baseUrl)
+          .get('/data/price')
+          .query({
+            fsym: 'TEST',
+            tsyms: 'BTC'
+          })
+          .reply(200, {
+            BTC: true
+          })
+
+        await wrapper.vm.fetchNetworkInfo()
+
+        expect(wrapper.vm.$v.form.$model.activeDelegates).toBe('48')
+        expect(wrapper.vm.$v.form.$model.vendorField.maxLength).toBe(10)
+      })
+    })
+
     describe('full form', () => {
       beforeEach(() => {
         wrapper.vm.configChoice = 'Basic'
@@ -147,16 +203,6 @@ describe('NetworkModal', () => {
       describe('symbol', () => {
         it('should switch from invalid to valid to invalid for required when changed', () => {
           testRequired(wrapper.vm.$v.form.symbol)
-        })
-      })
-
-      describe('version', () => {
-        it('should switch from invalid to valid to invalid for required when changed', () => {
-          testRequired(wrapper.vm.$v.form.version, 1)
-        })
-
-        it('should switch from invalid to valid to invalid for format', () => {
-          testNumeric(wrapper.vm.$v.form.version)
         })
       })
 
@@ -240,7 +286,6 @@ describe('NetworkModal', () => {
           wrapper.vm.$v.form.nethash.$model = '6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988'
           wrapper.vm.$v.form.token.$model = 'A'
           wrapper.vm.$v.form.symbol.$model = 'A'
-          wrapper.vm.$v.form.version.$model = '1'
           wrapper.vm.$v.form.explorer.$model = 'http://1.2.3.4'
           wrapper.vm.$v.form.epoch.$model = '2019-04-09T15:32:16.123Z'
           wrapper.vm.$v.form.wif.$model = '1'
@@ -284,12 +329,6 @@ describe('NetworkModal', () => {
 
         it('should disable if invalid symbol', () => {
           wrapper.vm.$v.form.symbol.$model = ''
-
-          expect(wrapper.vm.$v.form.$invalid).toBe(true)
-        })
-
-        it('should disable if invalid version', () => {
-          wrapper.vm.$v.form.version.$model = 'ten'
 
           expect(wrapper.vm.$v.form.$invalid).toBe(true)
         })

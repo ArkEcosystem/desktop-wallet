@@ -11,6 +11,7 @@ export default {
     language: null,
     hideWalletButtonText: false,
     isMarketChartEnabled: true,
+    marketChartOptions: { isEnabled: true, isExpanded: true, period: 'day' },
     name: null,
     profileId: null,
     theme: null,
@@ -20,7 +21,7 @@ export default {
     walletSortParams: null,
     contactSortParams: null,
     pluginSortParams: null,
-    contentProtection: true,
+    screenshotProtection: true,
     backgroundUpdateLedger: null,
     broadcastPeers: null,
     ledgerCache: null,
@@ -58,6 +59,7 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
+    marketChartOptions: state => state.marketChartOptions,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
     walletSidebarSortParams: state => state.walletSidebarSortParams,
@@ -69,7 +71,7 @@ export default {
     bip39Language: state => state.bip39Language,
     name: state => state.name,
     hasWalletGridLayout: state => state.walletLayout === 'grid',
-    contentProtection: state => state.contentProtection,
+    screenshotProtection: state => state.screenshotProtection,
     backgroundUpdateLedger: state => state.backgroundUpdateLedger,
     broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
@@ -100,6 +102,10 @@ export default {
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
       state.isMarketChartEnabled = isEnabled
+    },
+
+    SET_MARKET_CHART_OPTIONS (state, marketChartOptions) {
+      state.marketChartOptions = marketChartOptions
     },
 
     SET_LANGUAGE (state, language) {
@@ -146,8 +152,8 @@ export default {
       state.pluginSortParams = pluginSortParams
     },
 
-    SET_CONTENT_PROTECTION (state, protection) {
-      state.contentProtection = protection
+    SET_SCREENSHOT_PROTECTION (state, protection) {
+      state.screenshotProtection = protection
     },
 
     SET_BACKGROUND_UPDATE_LEDGER (state, update) {
@@ -177,6 +183,7 @@ export default {
       state.timeFormat = 'Default'
       state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
+      state.marketChartOptions = { isEnabled: true, isExpanded: true, period: 'day' }
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
@@ -189,7 +196,7 @@ export default {
       state.pluginSortParams = { field: 'id', type: 'asc' }
       state.backgroundUpdateLedger = true
       state.broadcastPeers = true
-      state.contentProtection = true
+      state.screenshotProtection = true
       state.ledgerCache = false
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
@@ -204,6 +211,7 @@ export default {
       state.timeFormat = value.timeFormat
       state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.marketChartOptions = value.marketChartOptions
       state.language = value.language
       state.bip39Language = value.bip39Language
       state.name = value.name
@@ -216,6 +224,7 @@ export default {
       state.pluginSortParams = value.pluginSortParams
       state.backgroundUpdateLedger = value.backgroundUpdateLedger
       state.broadcastPeers = value.broadcastPeers
+      state.screenshotProtection = value.screenshotProtection
       state.ledgerCache = value.ledgerCache
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
@@ -267,6 +276,10 @@ export default {
       commit('SET_IS_MARKET_CHART_ENABLED', value)
     },
 
+    setMarketChartOptions ({ commit }, value) {
+      commit('SET_MARKET_CHART_OPTIONS', value)
+    },
+
     setLanguage ({ commit }, value) {
       commit('SET_LANGUAGE', value)
       i18n.locale = value
@@ -280,8 +293,8 @@ export default {
       commit('SET_NAME', value)
     },
 
-    setContentProtection ({ commit }, value) {
-      commit('SET_CONTENT_PROTECTION', value)
+    setScreenshotProtection ({ commit }, value) {
+      commit('SET_SCREENSHOT_PROTECTION', value)
     },
 
     setBackgroundUpdateLedger ({ commit }, value) {

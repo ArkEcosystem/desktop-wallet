@@ -2,7 +2,7 @@ import cryptoLibrary from 'crypto'
 import { keyBy } from 'lodash'
 import logger from 'electron-log'
 import Vue from 'vue'
-import { crypto } from '@arkecosystem/crypto'
+import { Identities } from '@arkecosystem/crypto'
 import eventBus from '@/plugins/event-bus'
 import ledgerService from '@/services/ledger-service'
 
@@ -63,7 +63,7 @@ export default {
       Vue.set(state.loadingProcesses, processId, false)
     },
     STOP_ALL_LOADING_PROCESSES (state) {
-      for (let processId of Object.keys(state.loadingProcesses)) {
+      for (const processId of Object.keys(state.loadingProcesses)) {
         Vue.set(state.loadingProcesses, processId, true)
       }
     },
@@ -285,7 +285,7 @@ export default {
               walletData = [await this._vm.$client.fetchWallet(ledgerWallets[0].address)]
             } catch (error) {
               logger.error(error)
-              const message = error.response ? error.response.data.message : error.message
+              const message = error.response ? error.response.body.message : error.message
               if (message !== 'Wallet not found') {
                 throw error
               }
@@ -486,7 +486,7 @@ export default {
           const network = rootGetters['session/network']
 
           return {
-            address: crypto.getAddress(publicKey, network.version),
+            address: Identities.Address.fromPublicKey(publicKey, network.version),
             publicKey
           }
         },
@@ -494,7 +494,7 @@ export default {
           const { publicKey } = await ledgerService.getWallet(path)
           const network = rootGetters['session/network']
 
-          return crypto.getAddress(publicKey, network.version)
+          return Identities.Address.fromPublicKey(publicKey, network.version)
         },
         async getPublicKey () {
           return (await ledgerService.getWallet(path)).publicKey
@@ -504,7 +504,7 @@ export default {
         }
       }
 
-      if (!actions.hasOwnProperty(action)) {
+      if (!Object.prototype.hasOwnProperty.call(actions, action)) {
         throw new Error('Action does not exist')
       }
 

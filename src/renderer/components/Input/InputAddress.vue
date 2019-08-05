@@ -269,7 +269,7 @@ export default {
      * @result {Boolean}
      */
     async checkNeoAddress (address) {
-      const wasChecked = this.neoCheckedAddressess.hasOwnProperty(address)
+      const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address)
       if (!wasChecked) {
         this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address)
       }

@@ -4,6 +4,13 @@ import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
+import PluginHttp from '@/services/plugin-manager/http'
+
+import * as ButtonComponents from '@/components/Button'
+import * as CollapseComponents from '@/components/Collapse'
+import * as InputComponents from '@/components/Input'
+import * as ListDividedComponents from '@/components/ListDivided'
+import * as MenuComponents from '@/components/Menu'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -36,8 +43,6 @@ class PluginManager {
     this.app = app
 
     await this.app.$store.dispatch('plugin/init')
-
-    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
     await this.fetchPluginsFromPath(PLUGINS.path)
 
     this.hasInit = true
@@ -64,7 +69,7 @@ class PluginManager {
       path.join(plugin.fullPath, 'src/index.js')
     )
 
-    if (pluginObject.hasOwnProperty('register')) {
+    if (Object.prototype.hasOwnProperty.call(pluginObject, 'register')) {
       await pluginObject.register()
     }
 
@@ -113,7 +118,7 @@ class PluginManager {
   }
 
   async loadPluginComponents (pluginObject, plugin) {
-    if (!pluginObject.hasOwnProperty('getComponentPaths')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getComponentPaths')) {
       return
     }
 
@@ -143,9 +148,19 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l']
+          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
           for (const key of keys) {
-            context[key] = that[key]
+            const thatObject = that[key]
+
+            if (key === '$refs' && thatObject) {
+              for (const elKey of Object.keys(thatObject)) {
+                if (Object.keys(thatObject[elKey]).includes('$root') || Object.keys(thatObject[elKey]).includes('__vue__')) {
+                  delete thatObject[elKey]
+                }
+              }
+            }
+
+            context[key] = thatObject
           }
 
           for (const computedName of Object.keys(componentData.computed || {})) {
@@ -254,15 +269,19 @@ class PluginManager {
         vmComponent.options.methods = {}
         for (const methodName of Object.keys(component.methods || {})) {
           vmComponent.options.methods[methodName] = function () {
-            return component.methods[methodName].apply(componentContext(this), [ ...arguments ])
+            return component.methods[methodName].apply(componentContext(this), [...arguments])
           }
         }
 
         // Fix context of hooks
         this.hooks
-          .filter(hook => component.hasOwnProperty(hook))
+          .filter(hook => Object.prototype.hasOwnProperty.call(pluginObject, hook))
           .forEach(prop => {
-            vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            if (Array.isArray(vmComponent.options[prop])) {
+              vmComponent.options[prop][0] = function () { return component[prop].apply(componentContext(this)) }
+            } else {
+              vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            }
           })
 
         components[componentName] = vmComponent
@@ -273,7 +292,7 @@ class PluginManager {
   }
 
   async loadPluginRoutes (pluginObject, plugin) {
-    if (!pluginObject.hasOwnProperty('getRoutes')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getRoutes')) {
       return
     }
 
@@ -299,7 +318,7 @@ class PluginManager {
   }
 
   async loadPluginMenuItems (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getMenuItems')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getMenuItems')) {
       return
     }
 
@@ -324,11 +343,11 @@ class PluginManager {
   }
 
   async loadPluginAvatars (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getAvatars')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getAvatars')) {
       return
     }
 
-    let pluginAvatars = this.normalize(await pluginObject.getAvatars())
+    const pluginAvatars = this.normalize(await pluginObject.getAvatars())
     if (pluginAvatars && Array.isArray(pluginAvatars) && pluginAvatars.length) {
       const avatars = []
       for (const avatar of pluginAvatars) {
@@ -370,7 +389,7 @@ class PluginManager {
   }
 
   async loadPluginWalletTabs (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getWalletTabs')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getWalletTabs')) {
       return
     }
 
@@ -395,7 +414,7 @@ class PluginManager {
   }
 
   async loadPluginThemes (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getThemes')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getThemes')) {
       return
     }
 
@@ -438,7 +457,7 @@ class PluginManager {
   }
 
   async loadUnprotectedIframeUrls (pluginObject) {
-    if (!pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getUnprotectedIframeUrls')) {
       return
     }
 
@@ -462,12 +481,13 @@ class PluginManager {
       'data',
       'methods',
       'computed',
+      'components',
       ...this.hooks
     ]
 
     const missingKeys = []
     for (const key of requiredKeys) {
-      if (!component.hasOwnProperty(key)) {
+      if (!Object.prototype.hasOwnProperty.call(component, key)) {
         missingKeys.push(key)
       }
     }
@@ -480,7 +500,7 @@ class PluginManager {
 
     const bannedKeys = []
     for (const key of Object.keys(component)) {
-      if (![ ...requiredKeys, ...allowedKeys ].includes(key)) {
+      if (![...requiredKeys, ...allowedKeys].includes(key)) {
         bannedKeys.push(key)
       }
     }
@@ -586,6 +606,36 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('UI_COMPONENTS')) {
+      sandbox.walletApi.components = {
+        Button: ButtonComponents,
+        Collapse: CollapseComponents,
+        Input: InputComponents,
+        ListDivided: ListDividedComponents,
+        Menu: MenuComponents
+      }
+    }
+
+    if (config.permissions.includes('HTTP')) {
+      sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
+    if (config.permissions.includes('PROFILE_CURRENT')) {
+      sandbox.walletApi.profiles = {
+        getCurrent: () => {
+          return this.app.$store.getters['profile/public']()
+        }
+      }
+    }
+
+    if (config.permissions.includes('PROFILE_ALL')) {
+      if (!sandbox.walletApi.profiles) {
+        sandbox.walletApi.profiles = {}
+      }
+
+      sandbox.walletApi.profiles.all = this.app.$store.getters['profile/public'](true)
+    }
+
     return sandbox
   }
 
@@ -610,7 +660,7 @@ class PluginManager {
       description: config.description,
       version: config.version,
       permissions: uniq(config.permissions).sort(),
-      urls: config.urls
+      urls: config.urls || []
     }
   }
 }

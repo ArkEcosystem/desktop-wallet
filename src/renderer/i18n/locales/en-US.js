@@ -120,7 +120,7 @@ export default {
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
-    DELAY: 'Latency',
+    LATENCY: 'Latency',
     DISCONNECT: 'Disconnect from peer',
     FAILED_REFRESH: 'Failed to refresh peers',
     HEIGHT: 'Block height',
@@ -181,7 +181,7 @@ export default {
   },
 
   TIME_FORMAT: {
-    'DEFAULT': 'Default',
+    DEFAULT: 'Default',
     '12H': '12h',
     '24H': '24h'
   },
@@ -236,7 +236,13 @@ export default {
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
-      SCREENSHOT_PROTECTION: 'Screenshot protection',
+      SCREENSHOT_PROTECTION: {
+        TITLE: 'Screenshot protection',
+        QUESTION: 'Are you sure you want to disable screenshot protection?',
+        NOTE: 'This feature enables applications to protect their own onscreen window content from being captured or copied though screenshot utilities.',
+        SESSION_ONLY: 'Disable for this session only',
+        PERMANENTLY: 'Disable permanently'
+      },
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
@@ -495,7 +501,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Create Contact',
       IMPORT_CONTACT: 'Import Contact',
-      DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
@@ -629,9 +634,9 @@ export default {
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
+      EXPORT_WALLETS: 'Export Wallets',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import Wallet',
-      EXPORT_WALLETS: 'Export Wallets',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
@@ -973,7 +978,7 @@ export default {
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    CURRENTLY_VOTED: 'You are currently voted for {delegate}',
+    CURRENTLY_VOTED: 'You are currently voting for {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
     VOTE_INFO: 'Info:',
@@ -981,6 +986,10 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
+  },
+
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Loading Ledger wallets...'
   },
 
   WALLET_RENAME: {

@@ -145,7 +145,8 @@ export default {
     },
     alternativeBalance () {
       const unitBalance = this.currency_subToUnit(this.rawBalance)
-      return this.currency_format(unitBalance * this.price, { currency: this.alternativeCurrency })
+      const price = this.price || 0
+      return this.currency_format(unitBalance * price, { currency: this.alternativeCurrency })
     },
     alternativeCurrency () {
       return this.$store.getters['session/currency']
@@ -178,7 +179,7 @@ export default {
     },
     verifiedAddressText () {
       let verifiedText = ''
-      let knownWallet = this.isKnownWallet()
+      const knownWallet = this.isKnownWallet()
       if (knownWallet && knownWallet !== this.name) {
         verifiedText = `${knownWallet} - `
       }

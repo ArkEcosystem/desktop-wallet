@@ -26,7 +26,6 @@
       />
 
       <InputFee
-        v-if="walletNetwork.apiVersion === 2"
         ref="fee"
         :currency="walletNetwork.token"
         :transaction-type="$options.transactionType"
@@ -97,7 +96,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { TRANSACTION_TYPES } from '@config'
 import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
@@ -150,12 +149,7 @@ export default {
   },
 
   mounted () {
-    // Set default fees with v1 compatibility
-    if (this.walletNetwork.apiVersion === 1) {
-      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
-    } else {
-      this.form.fee = this.$refs.fee.fee
-    }
+    this.form.fee = this.$refs.fee.fee
   },
 
   methods: {
@@ -215,7 +209,8 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
+
+          return false
         }
       },
       username: {

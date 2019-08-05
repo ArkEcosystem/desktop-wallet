@@ -43,7 +43,11 @@ function createWindow () {
     x: windowState.x,
     y: windowState.y,
     center: true,
-    show: false
+    show: false,
+    webPreferences: {
+      nodeIntegration: true,
+      webviewTag: true
+    }
   })
 
   ipcMain.on('disable-iframe-protection', function (_event, urls) {

@@ -1,4 +1,5 @@
 import BaseModel from './base'
+import { toString } from 'lodash'
 
 export default new BaseModel({
   type: 'object',
@@ -22,15 +23,13 @@ export default new BaseModel({
     },
     // As arktoshi
     amount: {
-      type: 'integer',
-      minimum: 0,
-      default: 0
+      type: 'string',
+      format: (data) => toString(data.amount || 0)
     },
     // As arktoshi
     fee: {
-      type: 'integer',
-      minimum: 0,
-      default: 0
+      type: 'string',
+      format: (data) => toString(data.fee || 0)
     },
     confirmations: {
       type: 'integer',

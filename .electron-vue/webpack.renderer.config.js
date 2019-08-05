@@ -7,7 +7,6 @@ const { dependencies } = require('../package.json')
 const webpack = require('webpack')
 const glob = require("glob-all")
 
-const BabiliWebpackPlugin = require('babili-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -22,7 +21,7 @@ const { VueLoaderPlugin } = require('vue-loader')
  * that provide pure *.vue files that need compiling
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/webpack-configurations.html#white-listing-externals
  */
-let whiteListedModules = ['vue', 'portal-vue']
+let whiteListedModules = ['vue', '@arkecosystem/client', 'got']
 
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
@@ -167,7 +166,8 @@ let rendererConfig = {
       '@package.json': path.join(__dirname, '../package.json'),
       '@config': path.join(__dirname, '../config'),
       '@tests': path.join(__dirname, '../__tests__'),
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'got$': path.join(__dirname, '../src/renderer/plugins/got.js')
     },
     extensions: ['.js', '.vue', '.json', '.css', '.node']
   },
@@ -193,7 +193,6 @@ if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = ''
 
   rendererConfig.plugins.push(
-    new BabiliWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: path.join(__dirname, '../static'),

@@ -5,6 +5,7 @@ import { mount } from '@vue/test-utils'
 import { useI18n } from '../../__utils__/i18n'
 import { InputCurrency } from '@/components/Input'
 import store from '@/store'
+import BigNumber from '@/plugins/bignumber'
 
 jest.mock('@/store', () => {
   return {
@@ -38,7 +39,9 @@ describe('InputCurrency', () => {
       i18n,
       propsData: {
         currency: mockNetwork.token,
-        value: ''
+        value: '',
+        minimumAmount: new BigNumber(1e8),
+        maximumAmount: new BigNumber(1e8)
       },
       mocks: {
         currency_format: () => 'NET 9.9',
@@ -119,7 +122,7 @@ describe('InputCurrency', () => {
       const wrapper = mountComponent()
       wrapper.find('.InputCurrency input').setValue(99)
 
-      expect(wrapper.emitted('input')[0][0]).toEqual(99)
+      expect(wrapper.emitted('input')[0][0]).toEqual('99')
     })
 
     it('should emit the `raw` event', () => {
@@ -135,10 +138,10 @@ describe('InputCurrency', () => {
       const wrapper = mountComponent()
 
       wrapper.vm.emitInput('not')
-      expect(wrapper.emitted('input')[0][0]).toEqual(0)
+      expect(wrapper.emitted('input')[0][0]).toEqual('0')
 
       wrapper.vm.emitInput(null)
-      expect(wrapper.emitted('input')[1][0]).toEqual(0)
+      expect(wrapper.emitted('input')[1][0]).toEqual('0')
     })
 
     it('should sanitize the values', () => {
@@ -154,13 +157,13 @@ describe('InputCurrency', () => {
       const wrapper = mountComponent()
 
       wrapper.vm.emitInput('122,0122')
-      expect(wrapper.emitted('input')[0][0]).toEqual(122.0122)
+      expect(wrapper.emitted('input')[0][0]).toEqual('122.0122')
 
       wrapper.vm.emitInput('1,,23')
-      expect(wrapper.emitted('input')[1][0]).toEqual(1.23)
+      expect(wrapper.emitted('input')[1][0]).toEqual('1.23')
 
       wrapper.vm.emitInput('6,,97')
-      expect(wrapper.emitted('input')[2][0]).toEqual(6.97)
+      expect(wrapper.emitted('input')[2][0]).toEqual('6.97')
     })
   })
 

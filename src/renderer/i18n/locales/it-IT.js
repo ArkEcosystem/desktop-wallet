@@ -181,7 +181,7 @@ export default {
   },
 
   TIME_FORMAT: {
-    'DEFAULT': 'Predefinito',
+    DEFAULT: 'Predefinito',
     '12H': '12h',
     '24H': '24h'
   },
@@ -494,7 +494,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Crea un contatto',
       IMPORT_CONTACT: 'Importa contatto',
-      DELETE_CONTACT: 'Elimina questo contatto',
       INSTRUCTIONS: 'Questa pagina ti consente di creare contatti, facilitando la gestione degli indirizzi dando loro un nome identificativo',
       HEADER: 'I miei contatti',
       SHOW_CONTACT: 'Mostra contatti'
@@ -980,6 +979,10 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Il tuo {type} è in attesa di conferma',
     LOADING_VOTE: 'Caricamento dei dettagli del voto ...',
     SEARCH_DELEGATE: 'Cerca delegato'
+  },
+
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Caricamento portafogli Ledger...'
   },
 
   WALLET_RENAME: {

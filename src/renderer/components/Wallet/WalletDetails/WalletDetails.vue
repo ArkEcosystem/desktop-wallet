@@ -9,6 +9,26 @@
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
+        key="BackItem"
+        :label="$t('COMMON.BACK')"
+        :on-click="historyBack"
+      >
+        <div
+          slot="header"
+          class="WalletDetails__back-button flex items-center"
+        >
+          <SvgIcon
+            name="send"
+            view-box="0 0 8 8"
+          />
+          <span
+            class="text-bold ml-2 text-base"
+          >
+            {{ $t('COMMON.BACK') }}
+          </span>
+        </div>
+      </MenuTabItem>
+      <MenuTabItem
         v-for="tab in tabs"
         :key="tab.componentName"
         :label="tab.text"
@@ -137,6 +157,7 @@
 </template>
 
 <script>
+import electron from 'electron'
 import { at, clone } from 'lodash'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
@@ -191,7 +212,7 @@ export default {
     },
 
     tabs () {
-      let tabs = [
+      const tabs = [
         {
           component: 'WalletTransactions',
           componentName: 'WalletTransactions',
@@ -324,6 +345,15 @@ export default {
   },
 
   methods: {
+    historyBack () {
+      const webContents = electron.remote.getCurrentWindow().webContents
+      if (!webContents.canGoBack()) {
+        throw new Error('It is not possible to go back in history')
+      }
+
+      webContents.goBack()
+    },
+
     switchToTab (component) {
       this.currentTab = component
     },
@@ -358,7 +388,7 @@ export default {
         this.votedDelegate = null
         this.walletVote.publicKey = null
 
-        const messages = at(error, 'response.data.message')
+        const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
           this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -444,5 +474,8 @@ export default {
 .WalletDetails__button:hover {
   transition: 0.5s;
   @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
+}
+.WalletDetails__back-button > svg {
+  transform: rotate(-135deg)
 }
 </style>
