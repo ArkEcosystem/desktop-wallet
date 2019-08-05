@@ -484,9 +484,9 @@ export default {
           const tokenFound = await cryptoCompare.checkTradeable(network.token)
 
           for (const key of Object.keys(this.form)) {
-            if (network.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(network, key)) {
               this.form[key] = network[key]
-            } else if (prefilled.hasOwnProperty(key)) {
+            } else if (Object.prototype.hasOwnProperty.call(prefilled, key)) {
               this.form[key] = prefilled[key]
             }
           }

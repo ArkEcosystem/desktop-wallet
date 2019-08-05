@@ -235,12 +235,12 @@ describe('PassphraseVerification', () => {
         wrapper.setData({
           currentPosition: '3',
           acceptedWords: {
-            '1': 'former',
-            '3': '',
-            '5': 'other',
-            '7': '',
-            '9': 'example',
-            '11': 'random'
+            1: 'former',
+            3: '',
+            5: 'other',
+            7: '',
+            9: 'example',
+            11: 'random'
           }
         })
         wrapper.vm.toNextWord()
@@ -254,12 +254,12 @@ describe('PassphraseVerification', () => {
         wrapper.setData({
           currentPosition: '3',
           acceptedWords: {
-            '1': 'former',
-            '2': '',
-            '3': '',
-            '4': 'random',
-            '5': 'other',
-            '6': 'example'
+            1: 'former',
+            2: '',
+            3: '',
+            4: 'random',
+            5: 'other',
+            6: 'example'
           }
         })
         wrapper.vm.toNextWord()

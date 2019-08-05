@@ -49,7 +49,7 @@ describe('pages > WalletAll', () => {
         wallet_name: value => value
       },
       stubs: {
-        'ButtonLetter': true
+        ButtonLetter: true
       }
     })
   }
