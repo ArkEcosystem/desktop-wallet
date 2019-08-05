@@ -1,5 +1,4 @@
 import { PulseLoader } from 'vue-spinner/dist/vue-spinner.min'
-import tailwindConfig from '@tailwind'
 
 export default {
   functional: true,
@@ -7,8 +6,7 @@ export default {
   props: {
     color: {
       type: String,
-      required: false,
-      default: tailwindConfig.colors['blue-dark']
+      required: false
     }
   },
 
