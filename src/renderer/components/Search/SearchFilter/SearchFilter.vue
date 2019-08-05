@@ -3,7 +3,7 @@
     v-click-outside="emitClose"
     class="SearchFilter absolute pin-r text-theme-settings-text"
   >
-    <ul class="SearchFilter__list list-reset flex items-start py-3 px-5">
+    <ul class="SearchFilter__list flex items-start py-3 px-5">
       <SearchFilterItem :label="$t('SEARCH.SEARCH_BY')">
         <MenuDropdown
           v-model="currentFilter"

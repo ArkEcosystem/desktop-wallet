@@ -71,7 +71,7 @@
             </div>
 
             <TransitionGroup
-              class="WalletNew__wallets list-reset"
+              class="WalletNew__wallets"
               name="WalletNew__wallets--transition"
               tag="ul"
             >
@@ -89,7 +89,7 @@
                       <WalletIdenticon
                         :value="address"
                         :size="35"
-                        class="flex-no-shrink identicon"
+                        class="flex-shrink-0 identicon"
                       />
                       <span
                         v-if="isSelected(address)"
@@ -101,7 +101,7 @@
                         />
                       </span>
                     </div>
-                    <span class="WalletNew__wallets--address text-theme-page-text ml-2 flex-no-shrink font-semibold text-sm">
+                    <span class="WalletNew__wallets--address text-theme-page-text ml-2 flex-shrink-0 font-semibold text-sm">
                       {{ address }}
                     </span>
                   </div>
@@ -240,7 +240,7 @@
                   v-if="schema.address"
                   :value="schema.address"
                   :size="35"
-                  class="flex-no-shrink identicon"
+                  class="flex-shrink-0 identicon"
                 />
               </div>
               <InputText
