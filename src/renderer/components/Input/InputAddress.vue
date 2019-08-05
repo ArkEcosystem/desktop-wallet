@@ -41,7 +41,7 @@
         <ButtonModal
           ref="button-qr"
           :label="''"
-          class="InputAddress__qr-button flex flex-no-shrink text-grey-dark hover:text-blue"
+          class="InputAddress__qr-button flex flex-shrink-0 text-grey-dark hover:text-blue"
           icon="qr"
           view-box="0 0 20 20"
         >

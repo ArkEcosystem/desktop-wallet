@@ -666,7 +666,7 @@ export default {
 }
 
 .ProfileEdition__name .ListDividedItem__label {
-  @apply .flex-no-shrink
+  @apply .flex-shrink-0
 }
 .ProfileEdition__name .ListDividedItem__value {
   @apply .flex w-full text-right

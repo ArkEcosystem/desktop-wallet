@@ -100,7 +100,7 @@
       >
         <WalletIdenticonPlaceholder
           :size="50"
-          class="WalletSidebar__wallet__identicon flex-no-shrink"
+          class="WalletSidebar__wallet__identicon flex-shrink-0"
         />
         <div
           class="WalletSidebar__wallet__info flex flex-col font-semibold text-theme-page-text-light overflow-hidden pl-2"
@@ -161,7 +161,7 @@
             <WalletIdenticon
               :size="50"
               :value="wallet.address"
-              class="WalletSidebar__wallet__identicon flex-no-shrink"
+              class="WalletSidebar__wallet__identicon flex-shrink-0"
             />
             <div
               :class="{

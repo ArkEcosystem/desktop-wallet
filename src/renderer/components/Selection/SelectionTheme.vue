@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-no-grow items-center">
+  <div class="flex flex-grow-0 items-center">
     <SvgIcon
       name="sun"
       view-box="0 0 20 20"
