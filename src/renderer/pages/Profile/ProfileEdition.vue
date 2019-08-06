@@ -376,7 +376,7 @@ export default {
           return this.modified.marketChartOptions.isEnabled !== this.profile.marketChartOptions.isEnabled
         }
 
-        if (property === 'avatar' || this.modified.hasOwnProperty(property)) {
+        if (property === 'avatar' || Object.prototype.hasOwnProperty.call(this.modified, property)) {
           return this.modified[property] !== this.profile[property]
         }
 
