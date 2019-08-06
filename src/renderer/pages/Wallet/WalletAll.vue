@@ -254,7 +254,7 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.selectableWallets, wallet => wallet.hasOwnProperty('vote'))
+      return some(this.selectableWallets, wallet => Object.prototype.hasOwnProperty.call(wallet, 'vote'))
     }
   },
 

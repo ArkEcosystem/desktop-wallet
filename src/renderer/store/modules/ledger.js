@@ -63,7 +63,7 @@ export default {
       Vue.set(state.loadingProcesses, processId, false)
     },
     STOP_ALL_LOADING_PROCESSES (state) {
-      for (let processId of Object.keys(state.loadingProcesses)) {
+      for (const processId of Object.keys(state.loadingProcesses)) {
         Vue.set(state.loadingProcesses, processId, true)
       }
     },
@@ -504,7 +504,7 @@ export default {
         }
       }
 
-      if (!actions.hasOwnProperty(action)) {
+      if (!Object.prototype.hasOwnProperty.call(actions, action)) {
         throw new Error('Action does not exist')
       }
 

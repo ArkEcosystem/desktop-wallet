@@ -179,7 +179,7 @@ export default {
     },
     verifiedAddressText () {
       let verifiedText = ''
-      let knownWallet = this.isKnownWallet()
+      const knownWallet = this.isKnownWallet()
       if (knownWallet && knownWallet !== this.name) {
         verifiedText = `${knownWallet} - `
       }
