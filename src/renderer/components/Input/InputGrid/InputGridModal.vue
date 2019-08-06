@@ -122,7 +122,7 @@ export default {
 <style scoped>
 .InputGridModal__container {
   width: 28.5rem; /* 5 * 4.5rem (columns) + 4 * 1rem (gaps) + 2rem (gap from scrollbar) */
-  height: 50vh;
+  /* height: 50vh; */
 }
 .InputGrid__container__category__items {
   display: grid;
