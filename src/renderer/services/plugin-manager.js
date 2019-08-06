@@ -606,6 +606,35 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('STORAGE')) {
+      sandbox.walletApi.storage = {
+        get: (key) => {
+          const options = this.app.$store.getters['plugin/pluginOptions'](
+            config.id,
+            this.app.$store.getters['session/profileId']
+          )
+
+          return options[key]
+        },
+
+        set: (key, value) => {
+          this.app.$store.dispatch('plugin/setPluginOption', {
+            profileId: this.app.$store.getters['session/profileId'],
+            pluginId: config.id,
+            key,
+            value
+          })
+        },
+
+        getOptions: () => {
+          return this.app.$store.getters['plugin/pluginOptions'](
+            config.id,
+            this.app.$store.getters['session/profileId']
+          )
+        }
+      }
+    }
+
     if (config.permissions.includes('UI_COMPONENTS')) {
       sandbox.walletApi.components = {
         Button: ButtonComponents,
