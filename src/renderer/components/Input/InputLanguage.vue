@@ -132,7 +132,8 @@ export default {
   height: 18px
 }
 .InputLanguage__handler__flag {
-  height: 12px
+  height: 12px;
+  @apply inline-block;
 }
 </style>
 
