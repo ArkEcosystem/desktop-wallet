@@ -667,7 +667,8 @@ export default {
   height: 18px
 }
 .ProfileEdition__language__handler__flag {
-  height: 12px
+  height: 12px;
+  @apply inline-block;
 }
 
 .ProfileEdition__name .ProfileEdition__field--modified,
