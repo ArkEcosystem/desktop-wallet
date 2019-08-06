@@ -190,7 +190,7 @@ export default {
   box-shadow: var(--theme-wallet-grid-shadow);
 }
 .WalletGrid__wallet:not(:hover)::after {
-  @apply block absolute pin-x pin-b mx-auto border-b border-theme-wallet-overview-border;
+  @apply block absolute inset-x-0 bottom-0 mx-auto border-b border-theme-wallet-overview-border;
   content: " ";
   width: 95%;
 }
