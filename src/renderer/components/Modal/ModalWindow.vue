@@ -5,7 +5,7 @@
       @click="emitClose"
     >
       <Transition name="ModalWindow">
-        <div class="flex items-center justify-center absolute pin">
+        <div class="container mx-auto h-full flex justify-center items-center">
           <div
             :class="containerClasses"
             class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
