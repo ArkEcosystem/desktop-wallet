@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 
@@ -618,6 +618,14 @@ class PluginManager {
 
     if (config.permissions.includes('HTTP')) {
       sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
+    if (config.permissions.includes('PEER_CURRENT')) {
+      sandbox.walletApi.peers = {
+        getCurrent: () => {
+          return cloneDeep(this.app.$client.client)
+        }
+      }
     }
 
     if (config.permissions.includes('PROFILE_CURRENT')) {
