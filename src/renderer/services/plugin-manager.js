@@ -69,7 +69,7 @@ class PluginManager {
       path.join(plugin.fullPath, 'src/index.js')
     )
 
-    if (pluginObject.hasOwnProperty('register')) {
+    if (Object.prototype.hasOwnProperty.call(pluginObject, 'register')) {
       await pluginObject.register()
     }
 
@@ -118,7 +118,7 @@ class PluginManager {
   }
 
   async loadPluginComponents (pluginObject, plugin) {
-    if (!pluginObject.hasOwnProperty('getComponentPaths')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getComponentPaths')) {
       return
     }
 
@@ -150,7 +150,7 @@ class PluginManager {
 
           const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
           for (const key of keys) {
-            let thatObject = that[key]
+            const thatObject = that[key]
 
             if (key === '$refs' && thatObject) {
               for (const elKey of Object.keys(thatObject)) {
@@ -269,13 +269,13 @@ class PluginManager {
         vmComponent.options.methods = {}
         for (const methodName of Object.keys(component.methods || {})) {
           vmComponent.options.methods[methodName] = function () {
-            return component.methods[methodName].apply(componentContext(this), [ ...arguments ])
+            return component.methods[methodName].apply(componentContext(this), [...arguments])
           }
         }
 
         // Fix context of hooks
         this.hooks
-          .filter(hook => component.hasOwnProperty(hook))
+          .filter(hook => Object.prototype.hasOwnProperty.call(pluginObject, hook))
           .forEach(prop => {
             if (Array.isArray(vmComponent.options[prop])) {
               vmComponent.options[prop][0] = function () { return component[prop].apply(componentContext(this)) }
@@ -292,7 +292,7 @@ class PluginManager {
   }
 
   async loadPluginRoutes (pluginObject, plugin) {
-    if (!pluginObject.hasOwnProperty('getRoutes')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getRoutes')) {
       return
     }
 
@@ -318,7 +318,7 @@ class PluginManager {
   }
 
   async loadPluginMenuItems (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getMenuItems')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getMenuItems')) {
       return
     }
 
@@ -343,11 +343,11 @@ class PluginManager {
   }
 
   async loadPluginAvatars (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getAvatars')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getAvatars')) {
       return
     }
 
-    let pluginAvatars = this.normalize(await pluginObject.getAvatars())
+    const pluginAvatars = this.normalize(await pluginObject.getAvatars())
     if (pluginAvatars && Array.isArray(pluginAvatars) && pluginAvatars.length) {
       const avatars = []
       for (const avatar of pluginAvatars) {
@@ -389,7 +389,7 @@ class PluginManager {
   }
 
   async loadPluginWalletTabs (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getWalletTabs')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getWalletTabs')) {
       return
     }
 
@@ -414,7 +414,7 @@ class PluginManager {
   }
 
   async loadPluginThemes (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getThemes')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getThemes')) {
       return
     }
 
@@ -457,7 +457,7 @@ class PluginManager {
   }
 
   async loadUnprotectedIframeUrls (pluginObject) {
-    if (!pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getUnprotectedIframeUrls')) {
       return
     }
 
@@ -487,7 +487,7 @@ class PluginManager {
 
     const missingKeys = []
     for (const key of requiredKeys) {
-      if (!component.hasOwnProperty(key)) {
+      if (!Object.prototype.hasOwnProperty.call(component, key)) {
         missingKeys.push(key)
       }
     }
@@ -500,7 +500,7 @@ class PluginManager {
 
     const bannedKeys = []
     for (const key of Object.keys(component)) {
-      if (![ ...requiredKeys, ...allowedKeys ].includes(key)) {
+      if (![...requiredKeys, ...allowedKeys].includes(key)) {
         bannedKeys.push(key)
       }
     }

@@ -154,7 +154,7 @@ export default {
     },
 
     showVotedDelegates () {
-      return some(this.contacts, contact => contact.hasOwnProperty('vote'))
+      return some(this.contacts, contact => Object.prototype.hasOwnProperty.call(contact, 'vote'))
     }
   },
 

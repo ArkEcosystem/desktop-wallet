@@ -45,7 +45,7 @@ const mocks = {
 }
 
 const stubs = {
-  'WalletHeadingInfo': WalletHeadingInfoStub
+  WalletHeadingInfo: WalletHeadingInfoStub
 }
 
 describe('WalletHeading', () => {
@@ -79,8 +79,8 @@ describe('WalletHeadingPrimaryActions', () => {
     const wrapper = shallowMount(WalletHeadingPrimaryActions, {
       i18n,
       provide: {
-        'walletVote': {},
-        'switchToTab': jest.fn()
+        walletVote: {},
+        switchToTab: jest.fn()
       },
       mocks,
       stubs
