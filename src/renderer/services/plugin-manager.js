@@ -583,7 +583,9 @@ class PluginManager {
 
   loadSandbox (config) {
     const sandbox = {
-      walletApi: {}
+      walletApi: {
+        icons: SandboxFontAwesome
+      }
     }
 
     if (!config.permissions || !Array.isArray(config.permissions)) {
@@ -665,8 +667,6 @@ class PluginManager {
 
       sandbox.walletApi.profiles.all = this.app.$store.getters['profile/public'](true)
     }
-
-    sandbox.walletApi.icons = SandboxFontAwesome
 
     return sandbox
   }
