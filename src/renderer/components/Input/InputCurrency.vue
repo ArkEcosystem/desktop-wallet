@@ -383,10 +383,10 @@ export default {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
       isMoreThanMinimum (value) {
-        return !this.minimumAmount.isGreaterThan(value)
+        return !this.minimumAmount.isGreaterThan(this.inputValue)
       },
       isLessThanMaximum (value) {
-        return !this.maximumAmount.isLessThan(value)
+        return !this.maximumAmount.isLessThan(this.inputValue)
       },
       isRequired (value) {
         if (this.required) {
