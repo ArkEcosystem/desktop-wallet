@@ -25,7 +25,7 @@ export default {
   },
 
   data: () => ({
-    activeWalletId: null
+    activeWalletAddress: null
   }),
 
   computed: {
@@ -42,10 +42,18 @@ export default {
 
   watch: {
     currentWallet () {
-      if (this.activeWalletId !== this.currentWallet.id) {
+      if (this.activeWalletAddress !== this.currentWallet.address) {
         this.resetHeading()
       }
     }
+  },
+
+  async created () {
+    this.$eventBus.on('ledger:disconnected', this.refreshWallet)
+  },
+
+  beforeDestroy () {
+    this.$eventBus.off('ledger:disconnected', this.refreshWallet)
   },
 
   mounted () {
@@ -54,8 +62,12 @@ export default {
 
   methods: {
     resetHeading () {
-      this.activeWalletId = this.currentWallet.id
+      this.activeWalletAddress = this.currentWallet.address
       this.$store.dispatch('wallet/setSecondaryButtonsVisible', false)
+      this.refreshWallet()
+    },
+
+    refreshWallet () {
       this.$nextTick(() => {
         this.$refs.heading.refreshWallet()
       })
