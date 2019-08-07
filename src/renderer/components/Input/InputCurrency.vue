@@ -255,7 +255,7 @@ export default {
       if (!bigNum.isNaN()) {
         return bigNum.isPositive() && bigNum.isFinite()
       } else {
-        return !!(isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/))
+        return !!(isString(amount) && amount.match(/^\s*[0-9.,]+([,. _]+[0-9]+)*\s*$/))
       }
     },
     /**
