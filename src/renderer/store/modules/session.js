@@ -26,7 +26,8 @@ export default {
     broadcastPeers: null,
     ledgerCache: null,
     transactionTableRowCount: 10,
-    unconfirmedVotes: []
+    unconfirmedVotes: [],
+    lastFees: null
   }),
 
   getters: {
@@ -76,7 +77,11 @@ export default {
     broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
     transactionTableRowCount: state => state.transactionTableRowCount,
-    unconfirmedVotes: state => state.unconfirmedVotes
+    unconfirmedVotes: state => state.unconfirmedVotes,
+    lastFees: state => state.lastFees,
+    lastFeeOfType: state => type => {
+      return state.lastFees[type]
+    }
   },
 
   mutations: {
@@ -176,6 +181,10 @@ export default {
       state.unconfirmedVotes = votes
     },
 
+    SET_LAST_FEES (state, fees) {
+      state.lastFees = fees
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -200,6 +209,7 @@ export default {
       state.ledgerCache = false
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
+      state.lastFees = null
 
       i18n.locale = state.language
     },
@@ -228,6 +238,7 @@ export default {
       state.ledgerCache = value.ledgerCache
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
+      state.lastFees = value.lastFees
 
       i18n.locale = state.language
     }
@@ -348,6 +359,10 @@ export default {
 
     setUnconfirmedVotes ({ commit }, value) {
       commit('SET_UNCONFIRMED_VOTES', value)
+    },
+
+    setLastFees ({ commit }, value) {
+      commit('SET_LAST_FEES', value)
     }
   }
 }

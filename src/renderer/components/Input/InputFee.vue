@@ -20,6 +20,7 @@
         :value="fee"
         :custom-error="insufficientFundsError"
         :not-valid-error="notValidError"
+        :last-amount="feeChoiceLast"
         :maximum-amount="feeChoiceMax"
         :maximum-error="maximumError"
         :minimum-amount="feeChoiceMin"
@@ -177,6 +178,12 @@ export default {
         maxFee: this.maxV1fee
       }
     },
+    lastFee () {
+      return this.$store.getters['session/lastFeeOfType'](this.transactionType)
+    },
+    feeChoiceLast () {
+      return this.feeChoices.LAST
+    },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
     },
@@ -188,13 +195,20 @@ export default {
 
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
-      return {
+
+      const fees = {
         MINIMUM: this.currency_subToUnit(1),
         AVERAGE: average,
         MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
         INPUT: average,
         ADVANCED: average
       }
+
+      if (this.lastFee) {
+        fees['LAST'] = this.currency_subToUnit(this.lastFee)
+      }
+
+      return fees
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM

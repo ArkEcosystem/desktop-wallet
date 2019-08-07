@@ -94,6 +94,10 @@ export default {
       required: false,
       default: 'amount'
     },
+    lastAmount: {
+      type: BigNumber,
+      required: true
+    },
     maximumAmount: {
       type: BigNumber,
       required: true
