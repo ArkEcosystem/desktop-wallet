@@ -21,6 +21,16 @@ jest.mock('@/store', () => {
           default:
             return null
         }
+      }),
+      'session/lastFeeByType': jest.fn(type => {
+        switch (type) {
+          case 0:
+            return 10000000
+          case 3:
+            return 100000000
+          default:
+            return null
+        }
       })
     }
   }
