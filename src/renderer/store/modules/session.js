@@ -78,7 +78,7 @@ export default {
     ledgerCache: state => state.ledgerCache,
     transactionTableRowCount: state => state.transactionTableRowCount,
     unconfirmedVotes: state => state.unconfirmedVotes,
-    lastFees: state => state.lastFees,
+    lastFees: state => state.lastFees || {},
     lastFeeOfType: state => type => {
       return state.lastFees[type]
     }
@@ -363,6 +363,13 @@ export default {
 
     setLastFees ({ commit }, value) {
       commit('SET_LAST_FEES', value)
+    },
+
+    setLastFeeOfType ({ commit, getters }, { fee, type }) {
+      const fees = getters['lastFees']
+      fees[type] = fee
+
+      commit('SET_LAST_FEES', fees)
     }
   }
 }
