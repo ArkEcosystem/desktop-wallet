@@ -584,7 +584,11 @@ class PluginManager {
 
   loadSandbox (config) {
     const sandbox = {
-      walletApi: {}
+      walletApi: {
+        getRoute: () => {
+          return { ...this.app.$route, matched: [] }
+        }
+      }
     }
 
     if (!config.permissions || !Array.isArray(config.permissions)) {
