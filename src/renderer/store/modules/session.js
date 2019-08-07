@@ -78,7 +78,7 @@ export default {
     ledgerCache: state => state.ledgerCache,
     transactionTableRowCount: state => state.transactionTableRowCount,
     unconfirmedVotes: state => state.unconfirmedVotes,
-    lastFees: state => state.lastFees || {},
+    lastFees: state => state.lastFees,
     lastFeeByType: state => type => {
       return state.lastFees[type]
     }
