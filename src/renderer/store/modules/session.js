@@ -79,7 +79,7 @@ export default {
     transactionTableRowCount: state => state.transactionTableRowCount,
     unconfirmedVotes: state => state.unconfirmedVotes,
     lastFees: state => state.lastFees || {},
-    lastFeeOfType: state => type => {
+    lastFeeByType: state => type => {
       return state.lastFees[type]
     }
   },
@@ -365,7 +365,7 @@ export default {
       commit('SET_LAST_FEES', value)
     },
 
-    setLastFeeOfType ({ commit, getters }, { fee, type }) {
+    setLastFeeByType ({ commit, getters }, { fee, type }) {
       const fees = getters['lastFees']
       fees[type] = fee
 

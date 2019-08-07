@@ -166,7 +166,7 @@ export default {
 
             if (this.isSuccessfulResponse(response)) {
               this.storeTransaction(this.transaction)
-              this.updateLastFeeOfType({
+              this.updateLastFeeByType({
                 fee: this.transaction.fee,
                 type: this.transaction.type
               })
@@ -261,8 +261,8 @@ export default {
       })
     },
 
-    updateLastFeeOfType ({ fee, type }) {
-      this.$store.dispatch('session/setLastFeeOfType', { fee, type })
+    updateLastFeeByType ({ fee, type }) {
+      this.$store.dispatch('session/setLastFeeByType', { fee, type })
       const profile = clone(this.session_profile)
       profile.lastFees[type] = fee
       this.$store.dispatch('profile/update', profile)

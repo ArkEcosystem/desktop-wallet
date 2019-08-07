@@ -178,7 +178,7 @@ export default {
       }
     },
     lastFee () {
-      return this.$store.getters['session/lastFeeOfType'](this.transactionType)
+      return this.$store.getters['session/lastFeeByType'](this.transactionType)
     },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
