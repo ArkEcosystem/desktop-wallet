@@ -646,10 +646,6 @@ class PluginManager {
       }
     }
 
-    if (config.permissions.includes('ICONS')) {
-      sandbox.walletApi.icons = SandboxFontAwesome
-    }
-
     if (config.permissions.includes('HTTP')) {
       sandbox.walletApi.http = new PluginHttp(config.urls)
     }
@@ -669,6 +665,8 @@ class PluginManager {
 
       sandbox.walletApi.profiles.all = this.app.$store.getters['profile/public'](true)
     }
+
+    sandbox.walletApi.icons = SandboxFontAwesome
 
     return sandbox
   }
