@@ -20,7 +20,6 @@
         :value="fee"
         :custom-error="insufficientFundsError"
         :not-valid-error="notValidError"
-        :last-amount="feeChoiceLast"
         :maximum-amount="feeChoiceMax"
         :maximum-error="maximumError"
         :minimum-amount="feeChoiceMin"
@@ -180,9 +179,6 @@ export default {
     },
     lastFee () {
       return this.$store.getters['session/lastFeeOfType'](this.transactionType)
-    },
-    feeChoiceLast () {
-      return this.feeChoices.LAST
     },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
