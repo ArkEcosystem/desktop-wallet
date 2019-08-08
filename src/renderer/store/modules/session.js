@@ -209,7 +209,7 @@ export default {
       state.ledgerCache = false
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
-      state.lastFees = null
+      state.lastFees = {}
 
       i18n.locale = state.language
     },
