@@ -502,6 +502,29 @@ class PluginManager {
       return false
     }
 
+    const inlineErrors = []
+    if (/v-html/.test(component.template)) {
+      inlineErrors.push('uses v-html')
+    }
+    if (/javascript:/.test(component.template)) {
+      inlineErrors.push('"javascript:"')
+    }
+    const inlineEvents = []
+    for (const event of PLUGINS.events) {
+      if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
+        inlineEvents.push(event)
+      }
+    }
+    if (inlineEvents.length) {
+      inlineErrors.push('events: ' + inlineEvents.join(', '))
+    }
+
+    if (inlineErrors.length) {
+      componentError(inlineErrors.join('; '), 'has inline javascript')
+
+      return false
+    }
+
     const bannedKeys = []
     for (const key of Object.keys(component)) {
       if (![...requiredKeys, ...allowedKeys].includes(key)) {
