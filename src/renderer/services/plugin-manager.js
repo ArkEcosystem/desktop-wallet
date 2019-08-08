@@ -24,7 +24,6 @@ class PluginManager {
     this.hasInit = false
     this.vue = null
     this.hooks = [
-      'beforeCreate',
       'created',
       'beforeMount',
       'mounted',
@@ -234,7 +233,6 @@ class PluginManager {
           vmComponent.options.computed[computedName] = function () {}
         }
 
-        const createdMethod = vmComponent.options.created
         vmComponent.options.created = [function () {
           for (const computedName of Object.keys(this.$options.computed)) {
             if (component.computed && component.computed[computedName]) {
@@ -244,24 +242,41 @@ class PluginManager {
               this._computedWatchers[computedName].getter = component.computed[computedName].bind(
                 componentContext(this)
               )
-              this._computedWatchers[computedName].run()
+
+              try {
+                this._computedWatchers[computedName].run()
+              } catch (error) {
+                console.error(error)
+              }
             }
 
             if (!component.computed || !component.computed[computedName]) {
               delete this.$options.computed[computedName]
-              this._computedWatchers[computedName].teardown()
+
+              try {
+                this._computedWatchers[computedName].teardown()
+              } catch (error) {
+                console.error(error)
+              }
+
               delete this._computedWatchers[computedName]
 
               for (const watcherId in this._watchers) {
                 if (this._watchers[watcherId].getter.name === computedName) {
-                  this._watchers[watcherId].teardown()
+                  try {
+                    this._watchers[watcherId].teardown()
+                  } catch (error) {
+                    console.error(error)
+                  }
+
                   break
                 }
               }
             }
           }
-          if (createdMethod) {
-            return createdMethod[0].apply(componentContext(this))
+
+          if (component.created) {
+            return component.created.apply(componentContext(this))
           }
         }]
 
@@ -275,12 +290,14 @@ class PluginManager {
 
         // Fix context of hooks
         this.hooks
-          .filter(hook => Object.prototype.hasOwnProperty.call(pluginObject, hook))
+          .filter(hook => Object.prototype.hasOwnProperty.call(component, hook))
+          .filter(hook => hook !== 'created')
           .forEach(prop => {
+            const hookMethod = function () { return component[prop].apply(componentContext(this)) }
             if (Array.isArray(vmComponent.options[prop])) {
-              vmComponent.options[prop][0] = function () { return component[prop].apply(componentContext(this)) }
+              vmComponent.options[prop] = [hookMethod]
             } else {
-              vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+              vmComponent.options[prop] = hookMethod
             }
           })
 
