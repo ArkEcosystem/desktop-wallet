@@ -137,7 +137,7 @@ class PluginManager {
           fullPath
         )
 
-        if (!this.validateComponent(component, componentName)) {
+        if (!this.validateComponent(plugin, component, componentName)) {
           continue
         }
 
@@ -475,7 +475,7 @@ class PluginManager {
     return component
   }
 
-  validateComponent (component, name) {
+  validateComponent (plugin, component, name) {
     const requiredKeys = ['template']
     const allowedKeys = [
       'data',
@@ -492,8 +492,12 @@ class PluginManager {
       }
     }
 
+    const componentError = (error, errorType) => {
+      this.app.$logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`)
+    }
+
     if (missingKeys.length) {
-      this.app.$logger.error(`Plugin component '${name}' is missing: ${missingKeys.join(', ')}`)
+      componentError(missingKeys.join(', '), 'is missing')
 
       return false
     }
@@ -506,7 +510,7 @@ class PluginManager {
     }
 
     if (bannedKeys.length) {
-      this.app.$logger.error(`Plugin component '${name}' has unpermitted keys: ${bannedKeys.join(', ')}`)
+      componentError(bannedKeys.join(', '), 'has unpermitted keys')
 
       return false
     }
