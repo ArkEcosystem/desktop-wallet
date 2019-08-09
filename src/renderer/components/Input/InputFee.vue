@@ -200,11 +200,7 @@ export default {
         ADVANCED: average
       }
 
-      if (this.lastFee) {
-        fees['LAST'] = this.currency_subToUnit(this.lastFee)
-      }
-
-      return fees
+      return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM
