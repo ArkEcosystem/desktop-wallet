@@ -124,6 +124,10 @@ export default new BaseModel({
     pluginSortParams: {
       type: 'object',
       format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
+    },
+    lastFees: {
+      type: 'object',
+      format: data => data.lastFees || {}
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
