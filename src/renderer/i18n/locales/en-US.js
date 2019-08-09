@@ -338,6 +338,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Last',
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
     MAXIMUM: 'Maximum',

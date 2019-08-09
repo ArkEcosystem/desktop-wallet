@@ -177,6 +177,9 @@ export default {
         maxFee: this.maxV1fee
       }
     },
+    lastFee () {
+      return this.$store.getters['session/lastFeeByType'](this.transactionType)
+    },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
     },
@@ -188,13 +191,16 @@ export default {
 
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
-      return {
+
+      const fees = {
         MINIMUM: this.currency_subToUnit(1),
         AVERAGE: average,
         MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
         INPUT: average,
         ADVANCED: average
       }
+
+      return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM
