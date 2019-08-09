@@ -167,7 +167,7 @@ export default {
             if (this.isSuccessfulResponse(response)) {
               this.storeTransaction(this.transaction)
               this.updateLastFeeByType({
-                fee: this.transaction.fee,
+                fee: this.transaction.fee.toString(),
                 type: this.transaction.type
               })
 
