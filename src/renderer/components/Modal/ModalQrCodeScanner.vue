@@ -22,7 +22,6 @@
         class="relative"
       >
         <QrcodeStream
-          :camera="getCameraConstraints"
           :track="false"
           @decode="onDecode"
           @init="onInit"
@@ -89,16 +88,6 @@ export default {
   }),
 
   computed: {
-    getCameraConstraints () {
-      return {
-        audio: false, // don't request microphone access
-        video: {
-          facingMode: { ideal: 'environment' },
-          width: { min: 360, ideal: 640, max: 1920 },
-          height: { min: 240, ideal: 480, max: 1080 }
-        }
-      }
-    },
     title () {
       return this.$t('MODAL_QR_SCANNER.TITLE')
     }
@@ -173,14 +162,13 @@ export default {
   @apply .absolute .flex .flex-col .w-full .h-full .items-center .justify-between;
 }
 
-.qrcode-stream__tracking-layer {
+.QrCode__container .tracking-layer {
   display: none;
 }
-
-.qrcode-stream__inner-wrapper {
+.QrCode__container .wrapper {
   font-size: 0;
 }
-.qrcode-stream__inner-wrapper video {
+.QrCode__container video {
   transform: scaleX(-1);
 }
 
