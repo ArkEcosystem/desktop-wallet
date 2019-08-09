@@ -25,17 +25,23 @@ export default {
           wif: this.session_network.wif
         }
 
+        let failed = false
         const bip38 = new Bip38()
         try {
           const { bip38key } = await bip38.encrypt(dataToEncrypt)
           this.wallet.passphrase = bip38key
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_ENCRYPT'))
+          failed = true
         } finally {
           bip38.quit()
         }
 
         this.showEncryptLoader = false
+
+        if (failed) {
+          return
+        }
       } else {
         this.wallet.passphrase = null
       }
