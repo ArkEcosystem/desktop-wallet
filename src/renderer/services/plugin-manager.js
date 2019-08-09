@@ -5,6 +5,7 @@ import { ipcRenderer } from 'electron'
 import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
+import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 
 import * as ButtonComponents from '@/components/Button'
 import * as CollapseComponents from '@/components/Collapse'
@@ -587,7 +588,8 @@ class PluginManager {
       walletApi: {
         getRoute: () => {
           return { ...this.app.$route, matched: [] }
-        }
+        },
+        icons: SandboxFontAwesome
       }
     }
 
