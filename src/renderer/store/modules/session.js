@@ -80,7 +80,7 @@ export default {
     unconfirmedVotes: state => state.unconfirmedVotes,
     lastFees: state => state.lastFees,
     lastFeeByType: state => type => {
-      return state.lastFees[type]
+      return state.lastFees ? state.lastFees[type] : null
     }
   },
 
