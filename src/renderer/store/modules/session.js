@@ -27,7 +27,7 @@ export default {
     ledgerCache: null,
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
-    lastFees: null
+    lastFees: {}
   }),
 
   getters: {
