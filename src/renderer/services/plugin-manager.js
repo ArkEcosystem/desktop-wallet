@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
@@ -659,8 +659,14 @@ class PluginManager {
 
     if (config.permissions.includes('PEER_CURRENT')) {
       sandbox.walletApi.peers = {
-        getCurrent: () => {
-          return cloneDeep(this.app.$client.client)
+        current: {
+          get: async (url, timeout = 3000) => {
+            return (await this.app.$client.client.get(url, { timeout })).body
+          },
+
+          post: async (url, timeout = 3000) => {
+            return (await this.app.$client.client.post(url, { timeout })).body
+          }
         }
       }
     }
