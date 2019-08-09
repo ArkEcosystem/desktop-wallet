@@ -78,7 +78,7 @@ export default new BaseModule(NetworkModel, {
       }
 
       try {
-        const feeStatistics = await Client.fetchFeeStatistics(network.server, network.apiVersion)
+        const feeStatistics = await Client.fetchFeeStatistics(network.server)
         commit('UPDATE', {
           ...network,
           feeStatistics
