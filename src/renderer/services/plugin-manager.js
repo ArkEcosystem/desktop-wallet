@@ -44,7 +44,9 @@ class PluginManager {
     this.app = app
 
     await this.app.$store.dispatch('plugin/init')
-    await this.fetchPluginsFromPath(PLUGINS.path)
+    await this.fetchPluginsFromPath(
+      process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
+    )
 
     this.hasInit = true
 
@@ -584,6 +586,9 @@ class PluginManager {
   loadSandbox (config) {
     const sandbox = {
       walletApi: {
+        getRoute: () => {
+          return { ...this.app.$route, matched: [] }
+        },
         icons: SandboxFontAwesome
       }
     }
