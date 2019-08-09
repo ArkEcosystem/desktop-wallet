@@ -98,7 +98,8 @@ exports.MARKET = {
 
 exports.PLUGINS = {
   discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
-  path: path.resolve(os.homedir(), '.ark-desktop/plugins')
+  path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
+  devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev')
 }
 
 exports.THEMES = [
