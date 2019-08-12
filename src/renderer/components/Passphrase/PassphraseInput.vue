@@ -171,9 +171,7 @@ export default {
         return this.inputValue
       },
       set (value) {
-        this.inputValue = value
-        // Inform Vuelidate that the value changed
-        this.$v.model.$touch()
+        this.updateInputValue(value)
         this.$emit('input', value)
       }
     }
@@ -189,28 +187,39 @@ export default {
     blur () {
       this.$refs.input.blur()
     },
+
     async focus () {
       await this.$nextTick()
       this.$refs.input.focus()
     },
+
     onBlur () {
       this.isFocused = false
     },
+
     onFocus () {
       this.isFocused = true
       this.$emit('focus')
     },
+
     reset () {
       this.$v.$reset()
     },
+
     onDecode (value, toggle) {
-      this.$v.model.$touch()
-      this.inputValue = this.qr_getPassphrase(value)
+      this.model = this.qr_getPassphrase(value)
+
       // Check if we were unable to retrieve a passphrase from the qr
       if ((this.inputValue === '' || this.inputValue === undefined) && this.inputValue !== value) {
         this.$error(this.$t('MODAL_QR_SCANNER.DECODE_FAILED', { data: value }))
       }
       toggle()
+    },
+
+    updateInputValue (value) {
+      this.inputValue = value
+      // Inform Vuelidate that the value changed
+      this.$v.model.$touch()
     },
 
     toggleVisible () {
