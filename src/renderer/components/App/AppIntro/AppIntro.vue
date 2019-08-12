@@ -12,12 +12,11 @@
         :show-skip="false"
         :show-logo="false"
         :image="stepImage"
+        :show-gradient="false"
+        content-classes="w-2/3 font-medium"
         class="AppIntro__1"
       >
-        <div
-          slot="content"
-          class="w-2/3 font-medium"
-        >
+        <div slot="content">
           <i18n
             path="INTRODUCTION.WELCOME.TITLE"
             tag="div"
@@ -99,10 +98,7 @@
         @next="moveTo(2)"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.POWER.TITLE') }}
           </div>
@@ -115,7 +111,7 @@
           <p class="mb-5">
             {{ $t('INTRODUCTION.POWER.CRYPTO') }}
           </p>
-          <p class="mb-5">
+          <p>
             {{ $t('INTRODUCTION.POWER.RESPONSIBILITY') }}
           </p>
         </div>
@@ -128,10 +124,7 @@
         @next="moveTo(3)"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.DUTY.TITLE') }}
           </div>
@@ -162,10 +155,7 @@
         @next="moveTo(4)"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.TITLE') }}
           </div>
@@ -196,7 +186,7 @@
           <p class="mb-5">
             {{ $t('INTRODUCTION.RESPONSIBILITY.BACKUP.OPTIONS') }}
           </p>
-          <p class="mb-5">
+          <p>
             {{ $t('INTRODUCTION.RESPONSIBILITY.REMEMBER') }}
           </p>
         </div>
@@ -209,10 +199,7 @@
         @next="done"
         @skip="done"
       >
-        <div
-          slot="content"
-          class="font-medium px-16 pt-16 m4-8"
-        >
+        <div slot="content">
           <div class="font-black text-3xl mb-5">
             {{ $t('INTRODUCTION.TURN.TITLE') }}
           </div>
@@ -222,7 +209,7 @@
           <p class="mb-5">
             {{ $t('INTRODUCTION.TURN.SUPPORT') }}
           </p>
-          <p class="mb-5">
+          <p>
             {{ $t('INTRODUCTION.TURN.CONCLUSION') }}
           </p>
         </div>

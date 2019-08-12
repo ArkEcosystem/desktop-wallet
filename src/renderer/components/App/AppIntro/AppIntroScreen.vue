@@ -26,13 +26,28 @@
         class="flex flex-col items-center h-full w-full animated fadeIn font-medium"
         :class="showFooter ? 'justify-between' : 'justify-center'"
       >
-        <slot name="content" />
+        <div
+          :class="contentClasses"
+          class="relative"
+        >
+          <div
+            v-if="showGradient"
+            class="AppIntroScreen--gradient-top"
+          />
+
+          <slot name="content" />
+
+          <div
+            v-if="showGradient"
+            class="AppIntroScreen--gradient-bottom"
+          />
+        </div>
 
         <slot
           v-if="showFooter"
           name="buttons"
         >
-          <div class="flex flex-row w-full justify-between px-16 pb-16">
+          <div class="flex flex-row w-full justify-between px-16 pb-16 pt-8">
             <div class="">
               <ButtonGeneric
                 v-if="showBack"
@@ -96,6 +111,16 @@ export default {
     image: {
       type: String,
       required: true
+    },
+    showGradient: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    contentClasses: {
+      type: String,
+      required: false,
+      default: 'font-medium px-16 mt-10 overflow-y-auto'
     }
   },
 
@@ -138,5 +163,25 @@ export default {
 
 .AppIntroScreen__container__right__skip {
   @apply .bg-transparent
+}
+
+.AppIntroScreen--gradient-top {
+  background: linear-gradient(
+    to top,
+    var(--theme-intro-gradient-1),
+    var(--theme-intro-gradient-2) 100%
+  );
+  z-index: 1;
+  @apply .sticky .pin-t .pin-x .h-6;
+}
+
+.AppIntroScreen--gradient-bottom {
+  background: linear-gradient(
+    to bottom,
+    var(--theme-intro-gradient-1),
+    var(--theme-intro-gradient-2) 100%
+  );
+  z-index: 1;
+  @apply .sticky .pin-b .pin-x .h-6;
 }
 </style>
