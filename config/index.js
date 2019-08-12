@@ -97,6 +97,7 @@ exports.MARKET = {
 }
 
 exports.PLUGINS = {
+  devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev'),
   discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
   path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
   events: [
