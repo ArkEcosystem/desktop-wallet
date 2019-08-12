@@ -223,6 +223,10 @@ class PluginManager {
           path.join(rootPath, 'src/vm-component.js')
         )
 
+        for (const methodName of Object.keys(renderedComponent.methods || {})) {
+          renderedComponent.methods[methodName] = component.methods[methodName]
+        }
+
         // Build Vue component
         const vmComponent = this.vue.component(componentName, renderedComponent)
 
@@ -282,14 +286,6 @@ class PluginManager {
             return component.created.apply(componentContext(this))
           }
         }]
-
-        // Fix context of all standard methods
-        vmComponent.options.methods = {}
-        for (const methodName of Object.keys(component.methods || {})) {
-          vmComponent.options.methods[methodName] = function () {
-            return component.methods[methodName].apply(componentContext(this), [...arguments])
-          }
-        }
 
         // Fix context of hooks
         this.hooks
