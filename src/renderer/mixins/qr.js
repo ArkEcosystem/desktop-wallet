@@ -15,9 +15,9 @@ export default {
       }
 
       try {
-        // 2. Object { a: address }
+        // 2. Object { a: address } or { address: address }
         const addressObj = JSON.parse(value)
-        return addressObj.a
+        return addressObj.a || addressObj.address
       } catch (error) {
         // 3. Plain string, assume it's an address
         return value
