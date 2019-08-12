@@ -670,6 +670,20 @@ class PluginManager {
       sandbox.walletApi.http = new PluginHttp(config.urls)
     }
 
+    if (config.permissions.includes('PEER_CURRENT')) {
+      sandbox.walletApi.peers = {
+        current: {
+          get: async (url, timeout = 3000) => {
+            return (await this.app.$client.client.get(url, { timeout })).body
+          },
+
+          post: async (url, timeout = 3000) => {
+            return (await this.app.$client.client.post(url, { timeout })).body
+          }
+        }
+      }
+    }
+
     if (config.permissions.includes('PROFILE_CURRENT')) {
       sandbox.walletApi.profiles = {
         getCurrent: () => {
