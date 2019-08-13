@@ -549,7 +549,7 @@ class PluginManager {
 
     if (!config.id) {
       throw new Error('Plugin ID not found')
-    } else if (!/^[a-z-0-9-]+$/.test(config.id)) {
+    } else if (!/^[@/a-z-0-9-]+$/.test(config.id)) {
       throw new Error('Invalid Plugin ID')
     } else if (this.plugins[config.id]) {
       throw new Error(`Plugin '${config.id}' has already been loaded`)
