@@ -512,6 +512,9 @@ class PluginManager {
     if (/javascript:/.test(component.template)) {
       inlineErrors.push('"javascript:"')
     }
+    if (/<\s*webview/i.test(component.template)) {
+      inlineErrors.push('uses webview')
+    }
     const inlineEvents = []
     for (const event of PLUGINS.events) {
       if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
