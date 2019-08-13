@@ -4,6 +4,7 @@ import * as InputComponents from '@/components/Input'
 import * as ListDividedComponents from '@/components/ListDivided'
 import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
+import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {
   Button: ButtonComponents,
@@ -11,5 +12,6 @@ export default {
   Input: InputComponents,
   ListDivided: ListDividedComponents,
   Loader,
-  Menu: MenuComponents
+  Menu: MenuComponents,
+  TableWrapper
 }

@@ -146,7 +146,7 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
+          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
           for (const key of keys) {
             const thatObject = that[key]
 
