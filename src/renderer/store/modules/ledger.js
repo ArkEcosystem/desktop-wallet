@@ -511,7 +511,7 @@ export default {
       try {
         const response = await actions[action]()
 
-        if (!response) {
+        if (response === null) {
           await dispatch('disconnect')
           throw new Error('Ledger disconnected')
         }
