@@ -12,6 +12,7 @@ import * as CollapseComponents from '@/components/Collapse'
 import * as InputComponents from '@/components/Input'
 import * as ListDividedComponents from '@/components/ListDivided'
 import * as MenuComponents from '@/components/Menu'
+import Loader from '@/components/utils/Loader'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -649,6 +650,7 @@ class PluginManager {
         Collapse: CollapseComponents,
         Input: InputComponents,
         ListDivided: ListDividedComponents,
+        Loader,
         Menu: MenuComponents
       }
     }
