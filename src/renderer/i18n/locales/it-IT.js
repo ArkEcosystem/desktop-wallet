@@ -240,7 +240,7 @@ export default {
         TITLE: 'Protezion da screenshot',
         QUESTION: 'Sei sicuro di voler disattivare la protezione da screenshot?',
         NOTE: 'Questa opzione consente alle applicazioni di proteggere il contenuto della schermata, dall\'acquisizione o dalla copia tramite i programmi di cattura schermo',
-        SESSION_ONLY: 'Disabilita solo per questa seesione',
+        SESSION_ONLY: 'Disabilita solo per questa sessione',
         PERMANENTLY: 'Disabilita permanentemente'
       },
       BACKGROUND_UPDATE_LEDGER: 'Aggiorna Ledger in background',
