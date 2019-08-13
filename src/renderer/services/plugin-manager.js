@@ -151,15 +151,49 @@ class PluginManager {
           }
 
           const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
-          for (const key of keys) {
-            const thatObject = that[key]
+          for (let key of keys) {
+            let thatObject = that[key]
 
             if (key === '$refs' && thatObject) {
-              for (const elKey of Object.keys(thatObject)) {
-                if (Object.keys(thatObject[elKey]).includes('$root') || Object.keys(thatObject[elKey]).includes('__vue__')) {
-                  delete thatObject[elKey]
+              key = 'refs'
+              thatObject = {}
+              const badKeys = [
+                'attributes',
+                'children',
+                'childNodes',
+                'contentDocument',
+                'contentWindow',
+                'firstChild',
+                'firstElementChild',
+                'lastChild',
+                'lastElementChild',
+                'nextElementSibling',
+                'nextSibling',
+                'offsetParent',
+                'ownerDocument',
+                'parentElement',
+                'parentNode',
+                'shadowRoot',
+                'previousElementSibling',
+                'previousSibling',
+                '$root',
+                '__vue__'
+              ]
+              that.$nextTick(() => {
+                for (const elKey in that.$refs) {
+                  const element = that.$refs[elKey]
+
+                  if (element.tagName.toLowerCase() === 'iframe') {
+                    continue
+                  }
+
+                  for (const badKey of badKeys) {
+                    element.__defineGetter__(badKey, () => console.log('🚫'))
+                  }
+
+                  thatObject[elKey] = element
                 }
-              }
+              })
             }
 
             context[key] = thatObject
