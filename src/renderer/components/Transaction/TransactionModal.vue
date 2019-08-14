@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { camelCase, clone, includes, findKey, upperFirst } from 'lodash'
+import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
 import WalletService from '@/services/wallet'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
@@ -263,9 +263,14 @@ export default {
 
     updateLastFeeByType ({ fee, type }) {
       this.$store.dispatch('session/setLastFeeByType', { fee, type })
-      const profile = clone(this.session_profile)
-      profile.lastFees[type] = fee
-      this.$store.dispatch('profile/update', profile)
+
+      this.$store.dispatch('profile/update', {
+        ...this.session_profile,
+        lastFees: {
+          ...this.session_profile.lastFees,
+          [type]: fee
+        }
+      })
     }
   }
 }
