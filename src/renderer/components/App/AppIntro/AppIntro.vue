@@ -1,6 +1,6 @@
 <template>
   <div
-    class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-scroll"
+    class="AppIntro pt-10 pb-6 px-10 flex flex-col rounded-lg w-full h-full pin-t pin-l fixed animated fadeIn lg:overflow-y-auto"
   >
     <div
       class="flex w-full h-full pin-t pin-l"
