@@ -142,7 +142,7 @@
               class="underline"
             />
           </i18n>
-          <p class="mb-5 font-bold">
+          <p class="font-bold">
             {{ $t('INTRODUCTION.DUTY.SECURITY') }}
           </p>
         </div>
