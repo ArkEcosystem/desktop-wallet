@@ -23,6 +23,7 @@ export default {
     LANGUAGE: 'Lingua Applicazione',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'Questo è un portafoglio Ledger',
+    LOAD: 'Carica',
     NETWORK: 'Rete',
     NETWORK_NAME: 'Questo nome è fornito dalla rete',
     NEXT: 'Avanti',
@@ -800,6 +801,7 @@ export default {
       MULTI_PAYMENT: 'Impossibile creare pagamento multiplo',
       DELEGATE_RESIGNATION: 'La dimissione del Delegato non è andata a buon fine',
       SAVE_OFFLINE: 'Impossibile salvare il tuo file transazione',
+      LOAD_FROM_FILE: 'Impossibile caricare il tuo file transazione: {path}',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
       NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
@@ -822,7 +824,8 @@ export default {
       TIMELOCK_TRANSFER: 'Trasferimento Timelock creato con successo',
       MULTI_PAYMENT: 'Pagamento multiplo creato con successo',
       DELEGATE_RESIGNATION: 'Dimissioni Delegato date con successo',
-      SAVE_OFFLINE: 'File transazione creato con successo in: {path}'
+      SAVE_OFFLINE: 'File transazione creato con successo in: {path}',
+      LOAD_FROM_FILE: 'File transazione caricato con successo'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote per Delegato {delegate}',
@@ -847,6 +850,7 @@ export default {
     LEDGER_SIGN_WAIT: 'In attesa della firma dal Ledger. Si prega di controllare e firmare la transazione quando si è pronti.',
     LEDGER_SIGN_FAILED: 'Impossibile firmare la transazione con Ledger',
     LEDGER_USER_DECLINED: 'L\'utente ha rifiutato',
+    LOAD_FROM_FILE: 'Carica transazione da file',
     MULTIPLE: 'Multiplo',
     OPEN_IN_EXPLORER: 'Apri in Explorer',
     PASSPHRASE: 'Frase segreta',

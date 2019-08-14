@@ -122,15 +122,33 @@
       class="mt-5"
     />
 
-    <div class="self-start">
-      <button
-        :disabled="$v.form.$invalid"
-        class="blue-button mt-10"
-        @click="onSubmit"
-      >
-        {{ $t('COMMON.NEXT') }}
-      </button>
-    </div>
+    <footer class="mt-10 flex justify-between items-center">
+      <div class="self-start">
+        <button
+          :disabled="$v.form.$invalid"
+          class="blue-button"
+          @click="onSubmit"
+        >
+          {{ $t('COMMON.NEXT') }}
+        </button>
+      </div>
+
+      <div>
+        <button
+          v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
+          class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
+          @click="loadTransaction"
+        >
+          <!-- TODO: replace with actual icon -->
+          <SvgIcon
+            name="save"
+            view-box="0 0 15 15"
+            class="mr-1"
+          />
+          {{ $t('COMMON.LOAD') }}
+        </button>
+      </div>
+    </footer>
 
     <ModalConfirmation
       v-if="showConfirmSendAll"
@@ -161,6 +179,7 @@ import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, Inp
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import SvgIcon from '@/components/SvgIcon'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
 import onSubmit from './mixin-on-submit'
@@ -182,6 +201,7 @@ export default {
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
+    SvgIcon,
     WalletSelection
   },
 
@@ -399,6 +419,30 @@ export default {
     emitCancelSendAll () {
       this.showConfirmSendAll = false
       this.isSendAllActive = false
+    },
+
+    async loadTransaction () {
+      let raw, path
+
+      try {
+        [raw, path] = await this.electron_readFile()
+        this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
+
+        try {
+          const transaction = JSON.parse(raw)
+          console.log(transaction)
+        } finally {}
+
+        /** TODO
+         *
+         *  - check sender
+         *  - check balance > amount + fee
+         *  - populate form
+         *
+         */
+      } catch (e) {
+        this.$error(this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE', { path }))
+      }
     }
   },
 

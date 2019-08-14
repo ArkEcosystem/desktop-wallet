@@ -23,6 +23,7 @@ export default {
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
+    LOAD: 'Load',
     NETWORK: 'Network',
     NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
@@ -808,6 +809,7 @@ export default {
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
+      LOAD_FROM_FILE: 'Failed to load your transaction file: {path}',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
@@ -830,7 +832,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
-      SAVE_OFFLINE: 'The transaction file saved successfully in: {path}'
+      SAVE_OFFLINE: 'The transaction file saved successfully in: {path}',
+      LOAD_FROM_FILE: 'The transaction file loaded successfully'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
@@ -855,6 +858,7 @@ export default {
     LEDGER_SIGN_WAIT: 'Awaiting Ledger Signature. Please check and sign the transaction when you are ready.',
     LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
     LEDGER_USER_DECLINED: 'User declined',
+    LOAD_FROM_FILE: 'Load transaction from file',
     MULTIPLE: 'Multiple',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
