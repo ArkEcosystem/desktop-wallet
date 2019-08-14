@@ -61,7 +61,7 @@
             :can-activate="false"
             class="AppSidemenu__item"
             icon="plugins"
-            @click="showPlugins"
+            @click="redirect($event)"
           />
 
           <!-- Plugin pages -->
@@ -135,26 +135,17 @@
         </div>
       </div>
     </div>
-
-    <AppSidemenuPluginConfirmation
-      v-if="isPluginConfirmationVisible"
-      @enable="enablePlugins"
-      @ignore="closePluginConfirmation"
-      @close="closePluginConfirmation"
-    />
   </MenuNavigation>
 </template>
 
 <script>
 import semver from 'semver'
-import { isUndefined } from 'lodash'
 import { mapGetters } from 'vuex'
 import releaseService from '@/services/release'
 import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
 import AppSidemenuImportantNotification from './AppSidemenuImportantNotification'
-import AppSidemenuPluginConfirmation from './AppSidemenuPluginConfirmation'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
@@ -169,7 +160,6 @@ export default {
     AppSidemenuSettings,
     AppSidemenuNetworkStatus,
     AppSidemenuImportantNotification,
-    AppSidemenuPluginConfirmation,
     MenuNavigation,
     MenuNavigationItem,
     ProfileAvatar,
@@ -187,7 +177,6 @@ export default {
   data: vm => ({
     isImportantNotificationVisible: true,
     isPluginMenuVisible: false,
-    isPluginConfirmationVisible: false,
     activeItem: vm.$route.name
   }),
 
@@ -243,28 +232,6 @@ export default {
 
     closeShowPlugins () {
       this.isPluginMenuVisible = false
-    },
-
-    closePluginConfirmation () {
-      this.isPluginConfirmationVisible = false
-    },
-    showPlugins ($event) {
-      const showConfirmation = isUndefined(this.session_profile.showPluginConfirmation) ||
-        this.session_profile.showPluginConfirmation
-
-      if (showConfirmation) {
-        this.isPluginConfirmationVisible = true
-      } else {
-        this.redirect($event)
-      }
-    },
-    async enablePlugins () {
-      this.isPluginConfirmationVisible = false
-      await this.$store.dispatch('profile/update', {
-        ...this.session_profile,
-        showPluginConfirmation: false
-      })
-      this.redirect('plugins')
     }
   }
 }
