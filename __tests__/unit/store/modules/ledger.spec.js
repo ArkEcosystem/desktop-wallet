@@ -18,7 +18,7 @@ ClientService.host = 'http://127.0.0.1'
 let ledgerNameByAddress = () => null
 let ledgerCache = false
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-let store = new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     ledger: LedgerModule,
     session: {

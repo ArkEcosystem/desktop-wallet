@@ -2,24 +2,15 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
-        v-if="!isChartShown && isMarketEnabled"
-        class="pt-10 px-10 rounded-t-lg text-lg font-semibold text-theme-chart-price"
+        v-if="isMarketEnabled && isChartEnabled"
       >
-        <MarketChartHeader
-          class="mb-5"
-          :is-chart-active="false"
-          @toggle="toggleChart"
-        />
-      </div>
-
-      <div
-        v-if="isChartShown && isMarketEnabled"
-        class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
-      >
-        <MarketChart :is-active="isChartActive">
+        <MarketChart
+          :period="period"
+          :is-expanded="isChartExpanded"
+        >
           <MarketChartHeader
             class="mb-5"
-            :is-chart-active="true"
+            @period-change="onPeriodChange"
             @toggle="toggleChart"
           />
         </MarketChart>
@@ -61,6 +52,7 @@
 import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
 import { WalletSidebar, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
+import { clone } from 'lodash'
 import store from '@/store'
 
 export default {
@@ -75,11 +67,6 @@ export default {
     WalletButtonImport
   },
 
-  data: () => ({
-    isChartActive: false,
-    isChartShown: false
-  }),
-
   computed: {
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
@@ -93,24 +80,24 @@ export default {
     ticker () {
       return this.session_network.market.ticker
     },
-    isChartEnabledOnProfile () {
-      return this.session_profile.isMarketChartEnabled
-    }
-  },
-
-  watch: {
-    isChartEnabledOnProfile (value) {
-      if (!this._inactive) {
-        this.isChartShown = value
-      }
+    isChartEnabled () {
+      return this.marketChartOptions.isEnabled
     },
-    isChartShown (value) {
-      if (!this._inactive) {
-        // It's necessary to delay the rendering of the chart until updating the DOM
-        // If not, the loader would run indefinitely
-        this.$nextTick(() => {
-          this.isChartActive = value
-        })
+    isChartExpanded () {
+      return this.marketChartOptions.isExpanded
+    },
+    period () {
+      return this.marketChartOptions.period
+    },
+    marketChartOptions: {
+      get () {
+        return this.$store.getters['session/marketChartOptions']
+      },
+      set (options) {
+        this.$store.dispatch('session/setMarketChartOptions', options)
+        const profile = clone(this.session_profile)
+        profile.marketChartOptions = options
+        this.$store.dispatch('profile/update', profile)
       }
     }
   },
@@ -139,13 +126,13 @@ export default {
       : store._vm.$root.$on('vuex-persist:ready', chooseNext)
   },
 
-  activated () {
-    this.isChartShown = this.isChartEnabledOnProfile
-  },
-
   methods: {
     toggleChart (value) {
-      this.isChartShown = value
+      this.marketChartOptions.isExpanded = value
+    },
+
+    onPeriodChange (period) {
+      this.marketChartOptions.period = period
     }
   }
 }

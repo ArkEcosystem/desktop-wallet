@@ -96,6 +96,7 @@
 
         <div class="flexify">
           <AppSidemenuSettings
+            ref="settings"
             :outside-click="true"
             :is-horizontal="isHorizontal"
           />
@@ -158,6 +159,8 @@ import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
 
+var { ipcRenderer } = require('electron')
+
 export default {
   name: 'AppSidemenu',
 
@@ -212,6 +215,12 @@ export default {
 
       return null
     }
+  },
+
+  created () {
+    ipcRenderer.on('app:preferences', () => {
+      this.$refs.settings.showSettings()
+    })
   },
 
   methods: {

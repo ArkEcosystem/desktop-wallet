@@ -31,7 +31,7 @@ describe('WalletDelegates', () => {
         $error: () => {}
       },
       stubs: {
-        'TableWrapper': true
+        TableWrapper: true
       }
     })
   }

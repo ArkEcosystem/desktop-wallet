@@ -2,8 +2,8 @@ import MigrationsPlugin from '@/store/plugins/vuex-persist-migrations'
 
 describe('Migrations plugin', () => {
   let plugin
-  let fromVersion = '1.0.0'
-  let untilVersion = '2.0.2'
+  const fromVersion = '1.0.0'
+  const untilVersion = '2.0.2'
 
   beforeAll(() => {
     plugin = new MigrationsPlugin({ fromVersion, untilVersion })

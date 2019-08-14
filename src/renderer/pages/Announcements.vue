@@ -109,7 +109,7 @@ export default {
   @apply .flex .items-center .font-semibold;
 }
 .Announcements__line-separator {
-  height: 1rem;
+  height: 1px;
   background: linear-gradient(to right, var(--theme-line-separator) 50%, transparent 50%);
   background-repeat: repeat-x;
   background-size: 0.5rem;

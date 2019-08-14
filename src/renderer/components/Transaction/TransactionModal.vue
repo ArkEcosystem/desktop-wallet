@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { camelCase, includes, findKey, upperFirst } from 'lodash'
+import { camelCase, clone, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
 import WalletService from '@/services/wallet'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
@@ -166,6 +166,11 @@ export default {
 
             if (this.isSuccessfulResponse(response)) {
               this.storeTransaction(this.transaction)
+              this.updateLastFeeByType({
+                fee: this.transaction.fee.toString(),
+                type: this.transaction.type
+              })
+
               const { data } = response.body
 
               if (data && data.accept.length === 0 && data.broadcast.length > 0) {
@@ -254,6 +259,13 @@ export default {
         profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
         raw: transaction
       })
+    },
+
+    updateLastFeeByType ({ fee, type }) {
+      this.$store.dispatch('session/setLastFeeByType', { fee, type })
+      const profile = clone(this.session_profile)
+      profile.lastFees[type] = fee
+      this.$store.dispatch('profile/update', profile)
     }
   }
 }

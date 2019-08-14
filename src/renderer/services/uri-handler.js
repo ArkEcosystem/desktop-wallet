@@ -12,7 +12,7 @@ export default class URIHandler {
   deserialize () {
     if (!this.validate()) return
 
-    let schema = this.__formatSchema()
+    const schema = this.__formatSchema()
 
     const queryString = {}
     const regex = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
@@ -25,7 +25,7 @@ export default class URIHandler {
       vendorField: null
     }
 
-    for (let prop in scheme) {
+    for (const prop in scheme) {
       scheme[prop] = queryString[prop]
     }
 

@@ -282,6 +282,10 @@ export default {
       this.isSettingsVisible = !this.isSettingsVisible
     },
 
+    showSettings () {
+      this.isSettingsVisible = true
+    },
+
     closeShowSettings () {
       this.isSettingsVisible = false
     },

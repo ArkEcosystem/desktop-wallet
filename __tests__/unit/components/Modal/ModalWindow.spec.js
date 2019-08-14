@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils'
 import ModalWindow from '@/components/Modal'
 
 const stubs = {
-  'Portal': true
+  Portal: true
 }
 
 describe('ModalWindow', () => {

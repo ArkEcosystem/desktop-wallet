@@ -42,7 +42,7 @@ describe('TransactionModal', () => {
 
   describe('isSuccessfulResponse', () => {
     // Only V2
-    let response = {
+    const response = {
       body: { data: {} }
     }
 

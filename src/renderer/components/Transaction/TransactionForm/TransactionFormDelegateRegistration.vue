@@ -227,6 +227,9 @@ export default {
               case 'maxLength':
                 this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
                 break
+              case 'exists':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
+                break
               default:
                 this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
             }

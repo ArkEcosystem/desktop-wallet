@@ -2,6 +2,8 @@ import { shallowMount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
+import nock from 'nock'
+import { MARKET } from '@config'
 import { NetworkModal } from '@/components/Network'
 import { testIsValid, testNumeric, testRequired, testScheme, testUrl } from '../../__utils__/validation'
 
@@ -15,8 +17,22 @@ const mocks = {
         return name === 'exists'
       })
     }
+  },
+
+  $error: jest.fn(),
+
+  $logger: {
+    error: jest.fn()
   }
 }
+
+jest.mock('@/store', () => ({
+  getters: {
+    'session/network': {
+      nethash: '1234'
+    }
+  }
+}))
 
 Vue.use(Vuelidate)
 
@@ -29,6 +45,8 @@ describe('NetworkModal', () => {
         title: 'Network Modal'
       }
     })
+
+    nock.cleanAll()
   })
 
   it('should render modal', () => {
@@ -106,6 +124,44 @@ describe('NetworkModal', () => {
         wrapper.vm.$v.form.server.$model = 'http://test.com:abcd'
 
         expect(wrapper.vm.$v.form.$invalid).toBe(true)
+      })
+    })
+
+    describe('fetchNetworkInfo', () => {
+      beforeEach(() => {
+        wrapper.vm.$v.form.name.$model = 'sample name'
+        wrapper.vm.$v.form.description.$model = 'sample description'
+        wrapper.vm.$v.form.server.$model = 'http://1.2.3.4'
+      })
+
+      it('should fetch data and populate', async () => {
+        nock('http://1.2.3.4')
+          .get('/api/v2/node/configuration')
+          .reply(200, {
+            data: {
+              nethash: 1234,
+              token: 'TEST',
+              constants: {
+                activeDelegates: 48,
+                vendorFieldLength: 10
+              }
+            }
+          })
+
+        nock(MARKET.source.baseUrl)
+          .get('/data/price')
+          .query({
+            fsym: 'TEST',
+            tsyms: 'BTC'
+          })
+          .reply(200, {
+            BTC: true
+          })
+
+        await wrapper.vm.fetchNetworkInfo()
+
+        expect(wrapper.vm.$v.form.$model.activeDelegates).toBe('48')
+        expect(wrapper.vm.$v.form.$model.vendorField.maxLength).toBe(10)
       })
     })
 

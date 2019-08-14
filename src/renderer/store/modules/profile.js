@@ -47,6 +47,24 @@ export default new BaseModule(ProfileModel, {
       return uniqBy(wallets, 'address').reduce((total, wallet) => {
         return new BigNumber(wallet.balance).plus(total)
       }, 0)
+    },
+
+    public: (state, _, __, rootGetters) => (all = false) => {
+      const minimiseProfile = (profile) => ({
+        avatar: profile.avatar,
+        currency: profile.currency,
+        language: profile.language,
+        name: profile.name,
+        network: rootGetters['network/byId'](profile.networkId),
+        wallets: rootGetters['wallet/publicByProfileId'](profile.id),
+        contacts: rootGetters['wallet/publicByProfileId'](profile.id, true)
+      })
+
+      if (!all) {
+        return minimiseProfile(rootGetters['session/profile'])
+      }
+
+      return state.all.map(profile => minimiseProfile(profile))
     }
   },
 

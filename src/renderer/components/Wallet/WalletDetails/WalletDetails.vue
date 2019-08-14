@@ -212,7 +212,7 @@ export default {
     },
 
     tabs () {
-      let tabs = [
+      const tabs = [
         {
           component: 'WalletTransactions',
           componentName: 'WalletTransactions',

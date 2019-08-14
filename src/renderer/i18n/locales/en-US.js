@@ -181,7 +181,7 @@ export default {
   },
 
   TIME_FORMAT: {
-    'DEFAULT': 'Default',
+    DEFAULT: 'Default',
     '12H': '12h',
     '24H': '24h'
   },
@@ -221,7 +221,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Made with ♥ by Ark'
+    TEXT: 'Made with ♥ by ARK'
   },
 
   APP_SIDEMENU: {
@@ -338,6 +338,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Last',
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
     MAXIMUM: 'Maximum',
@@ -501,7 +502,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Create Contact',
       IMPORT_CONTACT: 'Import Contact',
-      DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
@@ -635,9 +635,9 @@ export default {
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
+      EXPORT_WALLETS: 'Export Wallets',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import Wallet',
-      EXPORT_WALLETS: 'Export Wallets',
       LOADING_LEDGER: 'Loading Ledger wallets...',
       SHOW_WALLET: 'Show wallet',
       TOTAL_BALANCE: 'Total balance',
@@ -973,13 +973,14 @@ export default {
     VOTE: 'Vote',
     USERNAME_EMPTY_ERROR: 'The username must have at least 1 character',
     USERNAME_ERROR: 'No special characters or uppercase allowed',
+    USERNAME_EXISTS: 'A delegate with this username already exists',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',
     BLOG: 'Voting Guide',
-    EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
+    EXPLANATION: 'Voting is an optional, but important mechanism that keeps the ARK network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    CURRENTLY_VOTED: 'You are currently voted for {delegate}',
+    CURRENTLY_VOTED: 'You are currently voting for {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
     VOTE_INFO: 'Info:',
@@ -987,6 +988,10 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
+  },
+
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Loading Ledger wallets...'
   },
 
   WALLET_RENAME: {

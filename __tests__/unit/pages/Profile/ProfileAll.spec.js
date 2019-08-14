@@ -26,7 +26,7 @@ describe('pages > ProfileAll', () => {
       i18n,
       mixins: [CurrencyMixin],
       stubs: {
-        'ProfileAvatar': true
+        ProfileAvatar: true
       },
       mocks: {
         $store: {

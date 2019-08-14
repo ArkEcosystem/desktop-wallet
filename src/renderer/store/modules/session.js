@@ -11,6 +11,7 @@ export default {
     language: null,
     hideWalletButtonText: false,
     isMarketChartEnabled: true,
+    marketChartOptions: { isEnabled: true, isExpanded: true, period: 'day' },
     name: null,
     profileId: null,
     theme: null,
@@ -25,7 +26,8 @@ export default {
     broadcastPeers: null,
     ledgerCache: null,
     transactionTableRowCount: 10,
-    unconfirmedVotes: []
+    unconfirmedVotes: [],
+    lastFees: {}
   }),
 
   getters: {
@@ -58,6 +60,7 @@ export default {
     timeFormat: state => state.timeFormat,
     hideWalletButtonText: state => state.hideWalletButtonText,
     isMarketChartEnabled: state => state.isMarketChartEnabled,
+    marketChartOptions: state => state.marketChartOptions,
     theme: state => state.theme,
     walletLayout: state => state.walletLayout,
     walletSidebarSortParams: state => state.walletSidebarSortParams,
@@ -74,7 +77,11 @@ export default {
     broadcastPeers: state => state.broadcastPeers,
     ledgerCache: state => state.ledgerCache,
     transactionTableRowCount: state => state.transactionTableRowCount,
-    unconfirmedVotes: state => state.unconfirmedVotes
+    unconfirmedVotes: state => state.unconfirmedVotes,
+    lastFees: state => state.lastFees,
+    lastFeeByType: state => type => {
+      return state.lastFees ? state.lastFees[type] : null
+    }
   },
 
   mutations: {
@@ -100,6 +107,10 @@ export default {
 
     SET_IS_MARKET_CHART_ENABLED (state, isEnabled) {
       state.isMarketChartEnabled = isEnabled
+    },
+
+    SET_MARKET_CHART_OPTIONS (state, marketChartOptions) {
+      state.marketChartOptions = marketChartOptions
     },
 
     SET_LANGUAGE (state, language) {
@@ -170,6 +181,10 @@ export default {
       state.unconfirmedVotes = votes
     },
 
+    SET_LAST_FEES (state, fees) {
+      state.lastFees = fees
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -177,6 +192,7 @@ export default {
       state.timeFormat = 'Default'
       state.hideWalletButtonText = false
       state.isMarketChartEnabled = true
+      state.marketChartOptions = { isEnabled: true, isExpanded: true, period: 'day' }
       state.language = I18N.defaultLocale
       state.bip39Language = 'english'
       state.name = null
@@ -193,6 +209,7 @@ export default {
       state.ledgerCache = false
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
+      state.lastFees = {}
 
       i18n.locale = state.language
     },
@@ -204,6 +221,7 @@ export default {
       state.timeFormat = value.timeFormat
       state.hideWalletButtonText = value.hideWalletButtonText
       state.isMarketChartEnabled = value.isMarketChartEnabled
+      state.marketChartOptions = value.marketChartOptions
       state.language = value.language
       state.bip39Language = value.bip39Language
       state.name = value.name
@@ -220,6 +238,7 @@ export default {
       state.ledgerCache = value.ledgerCache
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
+      state.lastFees = value.lastFees
 
       i18n.locale = state.language
     }
@@ -266,6 +285,10 @@ export default {
 
     setIsMarketChartEnabled ({ commit }, value) {
       commit('SET_IS_MARKET_CHART_ENABLED', value)
+    },
+
+    setMarketChartOptions ({ commit }, value) {
+      commit('SET_MARKET_CHART_OPTIONS', value)
     },
 
     setLanguage ({ commit }, value) {
@@ -336,6 +359,17 @@ export default {
 
     setUnconfirmedVotes ({ commit }, value) {
       commit('SET_UNCONFIRMED_VOTES', value)
+    },
+
+    setLastFees ({ commit }, value) {
+      commit('SET_LAST_FEES', value)
+    },
+
+    setLastFeeByType ({ commit, getters }, { fee, type }) {
+      const fees = getters['lastFees']
+      fees[type] = fee
+
+      commit('SET_LAST_FEES', fees)
     }
   }
 }
