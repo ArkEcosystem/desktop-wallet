@@ -247,12 +247,12 @@ export default {
       get () {
         return this.$store.getters['session/walletSortParams']
       },
-      set (params) {
-        this.$store.dispatch('session/setWalletSortParams', params)
+      set (sortParams) {
+        this.$store.dispatch('session/setWalletSortParams', sortParams)
 
         this.$store.dispatch('profile/update', {
           ...this.session_profile,
-          walletSortParams: params
+          walletSortParams: sortParams
         })
       }
     },

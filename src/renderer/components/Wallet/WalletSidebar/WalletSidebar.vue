@@ -324,12 +324,12 @@ export default {
         return this.$store.getters['session/walletSidebarSortParams'] ||
           { field: 'name', type: 'asc' }
       },
-      set (params) {
-        this.$store.dispatch('session/setWalletSidebarSortParams', params)
+      set (sortParams) {
+        this.$store.dispatch('session/setWalletSidebarSortParams', sortParams)
 
         this.$store.dispatch('profile/update', {
           ...this.session_profile,
-          walletSidebarSortParams: params
+          walletSidebarSortParams: sortParams
         })
       }
     }
