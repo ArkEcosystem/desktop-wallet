@@ -12,7 +12,7 @@ export default {
       win.reload()
     },
 
-    electron_writeFile (raw, defaultPath, extensions = ['.json']) {
+    electron_writeFile (raw, defaultPath, extensions = ['json']) {
       return new Promise((resolve, reject) => {
         electron.remote.dialog.showSaveDialog({
           defaultPath,
