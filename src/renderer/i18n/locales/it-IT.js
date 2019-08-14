@@ -221,7 +221,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Fatto con ♥ da Ark'
+    TEXT: 'Fatto con ♥ da ARK'
   },
 
   APP_SIDEMENU: {
@@ -968,7 +968,7 @@ export default {
     USERNAME_MAX_LENGTH_ERROR: 'Il nome utente deve essere inferiore o uguale a 20 caratteri',
     ALREADY_REGISTERED: 'Questo portafoglio è già registrato come Delegato',
     BLOG: 'Guida al voto',
-    EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete Ark sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
+    EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete ARK sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
     VOTE_DELEGATE: 'Vota Delegato {delegate}',
     UNVOTE_DELEGATE: 'Rimuovi voto a Delegato {delegate}',
     CURRENTLY_VOTED: 'Al momento hai votato per {delegate}',
