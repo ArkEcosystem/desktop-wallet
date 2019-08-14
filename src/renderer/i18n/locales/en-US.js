@@ -727,8 +727,9 @@ export default {
   },
 
   PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Are you sure you want to enable this plugin?',
+    QUESTION: 'Are you sure you want to enable the "{name}" plugin?',
     NO: 'No, keep it disabled',
+    NOTICE: 'WARNING: By accepting this disclaimer, you are confirming that you are adding an untested and unverified third-party plugin to the desktop wallet. ARK SCIC assumes no liability for any harm caused by this plug-in and has no responsibility to test them for security vulnerabilities. All security testing and vulnerability discovery is the sole responsibility of the plugin author. ARK SCIC makes no warranties, express or implied, regarding the conditions of merchantability or fitness for particular purpose of any third-party plugin. ARK SCIC makes no representations about the functionality, accuracy, availability, quality, completeness, security, validity or non-infringement of any third-party plugins. Any third-party plugin used is done so at your own risk.',
     YES: 'Yes, enable it'
   },
 
