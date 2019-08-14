@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import { clone, some, uniqBy } from 'lodash'
+import { some, uniqBy } from 'lodash'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
@@ -235,9 +235,11 @@ export default {
       },
       set (layout) {
         this.$store.dispatch('session/setWalletLayout', layout)
-        const profile = clone(this.session_profile)
-        profile.walletLayout = layout
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          walletLayout: layout
+        })
       }
     },
 
@@ -247,9 +249,11 @@ export default {
       },
       set (params) {
         this.$store.dispatch('session/setWalletSortParams', params)
-        const profile = clone(this.session_profile)
-        profile.walletSortParams = params
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          walletSortParams: params
+        })
       }
     },
 

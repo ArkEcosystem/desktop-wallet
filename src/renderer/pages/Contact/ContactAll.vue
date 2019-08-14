@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import { clone, some } from 'lodash'
+import some from 'lodash/some'
 import { ButtonLayout } from '@/components/Button'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
 import { WalletGrid, WalletIdenticonPlaceholder } from '@/components/Wallet'
@@ -135,9 +135,11 @@ export default {
       },
       set (layout) {
         this.$store.dispatch('session/setWalletLayout', layout)
-        const profile = clone(this.session_profile)
-        profile.walletLayout = layout
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          walletLayout: layout
+        })
       }
     },
 
@@ -147,9 +149,11 @@ export default {
       },
       set (sortParams) {
         this.$store.dispatch('session/setContactSortParams', sortParams)
-        const profile = clone(this.session_profile)
-        profile.contactSortParams = sortParams
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          contactSortParams: sortParams
+        })
       }
     },
 
