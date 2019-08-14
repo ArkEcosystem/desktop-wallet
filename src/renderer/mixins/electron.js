@@ -41,7 +41,7 @@ export default {
 
           readFile(filePaths[0], 'utf8', (err, data) => {
             if (err) reject(err)
-            resolve(data)
+            resolve([data, filePaths[0]])
           })
         })
       })
