@@ -422,26 +422,28 @@ export default {
     },
 
     async loadTransaction () {
-      let raw, path
-
       try {
-        [raw, path] = await this.electron_readFile()
-        this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
+        const raw = await this.electron_readFile()
 
         try {
           const transaction = JSON.parse(raw)
-          console.log(transaction)
-        } finally {}
 
-        /** TODO
-         *
-         *  - check sender
-         *  - check balance > amount + fee
-         *  - populate form
-         *
-         */
-      } catch (e) {
-        this.$error(this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE', { path }))
+          if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.TRANSFER) {
+            this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${this.$t('VALIDATION.INVALID_TYPE')}`)
+            return
+          }
+
+          this.$refs.recipient.model = transaction.recipientId
+          this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
+          this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+          this.$refs.vendorField.model = transaction.vendorField
+
+          this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
+        } catch (error) {
+          this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${this.$t('VALIDATION.INVALID_FORMAT')}`)
+        }
+      } catch (error) {
+        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error}`)
       }
     }
   },

@@ -12,11 +12,16 @@ export default {
       win.reload()
     },
 
-    electron_writeFile (raw, defaultPath, extensions = ['json']) {
+    electron_writeFile (raw, defaultPath, options = {}) {
+      const filters = options.filters || [
+        { name: 'JSON', extensions: ['json'] },
+        { name: 'All Files', extensions: ['*'] }
+      ]
+
       return new Promise((resolve, reject) => {
         electron.remote.dialog.showSaveDialog({
           defaultPath,
-          filters: [{ extensions }]
+          filters
         }, fileName => {
           if (!fileName) return
 
@@ -28,20 +33,22 @@ export default {
       })
     },
 
-    electron_readFile (extensions = ['json']) {
+    electron_readFile (options = {}) {
+      const filters = options.filters || [
+        { name: 'JSON', extensions: ['json'] },
+        { name: 'All Files', extensions: ['*'] }
+      ]
+
       return new Promise((resolve, reject) => {
         electron.remote.dialog.showOpenDialog({
           properties: ['openFile'],
-          filters: [
-            { extensions },
-            { name: 'All Files', extensions: ['*'] }
-          ]
+          filters
         }, filePaths => {
           if (!filePaths) return
 
           readFile(filePaths[0], 'utf8', (err, data) => {
             if (err) reject(err)
-            resolve([data, filePaths[0]])
+            resolve(data)
           })
         })
       })

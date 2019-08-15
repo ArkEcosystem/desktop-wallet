@@ -137,6 +137,7 @@ export default {
     TOO_LONG: '\'{0}\' è troppo lungo',
     INVALID_URI: 'URI non valido',
     INVALID_FORMAT: 'Formato non valido',
+    INVALID_TYPE: 'Tipo non valido',
     MAX_LENGTH: 'Max {0}',
     MUST_BE_GREATER_THAN: 'Deve essere maggiore di {0}',
     NOT_MATCH: '\'{0}\' non coincide con \'{1}\'',
@@ -801,7 +802,7 @@ export default {
       MULTI_PAYMENT: 'Impossibile creare pagamento multiplo',
       DELEGATE_RESIGNATION: 'La dimissione del Delegato non è andata a buon fine',
       SAVE_OFFLINE: 'Impossibile salvare il tuo file transazione',
-      LOAD_FROM_FILE: 'Impossibile caricare il tuo file transazione: {path}',
+      LOAD_FROM_FILE: 'Impossibile caricare il tuo file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
       NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'

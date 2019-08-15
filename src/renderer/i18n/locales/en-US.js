@@ -137,6 +137,7 @@ export default {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
+    INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
     MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
@@ -809,7 +810,7 @@ export default {
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save your transaction file',
-      LOAD_FROM_FILE: 'Failed to load your transaction file: {path}',
+      LOAD_FROM_FILE: 'Failed to load your transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
