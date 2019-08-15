@@ -353,7 +353,7 @@ export default {
       this.$refs.dropdown.open()
     },
 
-    async updateInputValue (value) {
+    updateInputValue (value) {
       this.inputValue = value
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()

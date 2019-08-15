@@ -6,12 +6,7 @@ import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upp
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
-
-import * as ButtonComponents from '@/components/Button'
-import * as CollapseComponents from '@/components/Collapse'
-import * as InputComponents from '@/components/Input'
-import * as ListDividedComponents from '@/components/ListDivided'
-import * as MenuComponents from '@/components/Menu'
+import WalletComponents from '@/services/plugin-manager/wallet-components'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -150,7 +145,7 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l']
+          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
           for (let key of keys) {
             let thatObject = that[key]
 
@@ -638,7 +633,7 @@ class PluginManager {
 
     if (!config.id) {
       throw new Error('Plugin ID not found')
-    } else if (!/^[a-z-0-9-]+$/.test(config.id)) {
+    } else if (!/^[@/a-z-0-9-]+$/.test(config.id)) {
       throw new Error('Invalid Plugin ID')
     } else if (this.plugins[config.id]) {
       throw new Error(`Plugin '${config.id}' has already been loaded`)
@@ -728,13 +723,7 @@ class PluginManager {
     }
 
     if (config.permissions.includes('UI_COMPONENTS')) {
-      sandbox.walletApi.components = {
-        Button: ButtonComponents,
-        Collapse: CollapseComponents,
-        Input: InputComponents,
-        ListDivided: ListDividedComponents,
-        Menu: MenuComponents
-      }
+      sandbox.walletApi.components = WalletComponents
     }
 
     if (config.permissions.includes('HTTP')) {

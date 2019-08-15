@@ -158,7 +158,7 @@
 
 <script>
 import electron from 'electron'
-import { at, clone } from 'lodash'
+import at from 'lodash/at'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
@@ -293,9 +293,11 @@ export default {
       },
       set (votes) {
         this.$store.dispatch('session/setUnconfirmedVotes', votes)
-        const profile = clone(this.session_profile)
-        profile.unconfirmedVotes = votes
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          unconfirmedVotes: votes
+        })
       }
     },
 

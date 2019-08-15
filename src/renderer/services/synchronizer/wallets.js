@@ -1,4 +1,4 @@
-import { clone, find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
+import { find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -311,9 +311,10 @@ class Action {
 
     this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
 
-    const profile = clone(this.profile)
-    profile.unconfirmedVotes = filteredVotes
-    this.$dispatch('profile/update', profile)
+    this.$dispatch('profile/update', {
+      ...this.profile,
+      unconfirmedVotes: filteredVotes
+    })
   }
 
   // TODO use the eventBus to display transactions
