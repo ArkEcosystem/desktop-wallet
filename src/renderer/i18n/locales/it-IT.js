@@ -238,7 +238,13 @@ export default {
     SETTINGS: {
       CURRENCY: 'Valuta',
       DARK_MODE: 'Modalità scura',
-      SCREENSHOT_PROTECTION: 'Protezione da screenshot',
+      SCREENSHOT_PROTECTION: {
+        TITLE: 'Protezione da screenshot',
+        QUESTION: 'Sei sicuro di voler disattivare la protezione da screenshot?',
+        NOTE: 'Questa opzione consente alle applicazioni di proteggere il contenuto della schermata, dall\'acquisizione o dalla copia tramite i programmi di cattura schermo',
+        SESSION_ONLY: 'Disabilita solo per questa sessione',
+        PERMANENTLY: 'Disabilita permanentemente'
+      },
       BACKGROUND_UPDATE_LEDGER: 'Aggiorna Ledger in background',
       BROADCAST_PEERS: 'Trasmetti a peer multipli',
       TITLE: 'Settaggi attuali',
@@ -292,12 +298,13 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: 'Prezzo'
+    PRICE: '{currency} Prezzo',
+    SHOW_CHART: 'Show chart'
   },
 
   BUTTON_CLIPBOARD: {
     DONE: 'Copiato!',
-    COPY_TO_CLIPBOARD: 'Copia negli appunti',
+    COPY_TO_CLIPBOARD: 'Copia {0} negli appunti',
     NOT_SUPPORTED: 'Copiare negli appunti non è supportato'
   },
 
@@ -333,6 +340,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Ultima',
     MINIMUM: 'Minimo',
     AVERAGE: 'Media',
     MAXIMUM: 'Massimo',
@@ -970,6 +978,7 @@ export default {
     VOTE: 'Vota',
     USERNAME_EMPTY_ERROR: 'Lo username deve avere almeno 1 carattere',
     USERNAME_ERROR: 'Nessun carattere speciale o maiuscolo consentito',
+    USERNAME_EXISTS: 'Esiste già un delegato con questo username',
     USERNAME_MAX_LENGTH_ERROR: 'Il nome utente deve essere inferiore o uguale a 20 caratteri',
     ALREADY_REGISTERED: 'Questo portafoglio è già registrato come Delegato',
     BLOG: 'Guida al voto',
