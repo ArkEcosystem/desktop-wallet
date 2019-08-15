@@ -157,7 +157,7 @@ class PluginManager {
             if (key === '$refs' && thatObject) {
               key = 'refs'
               thatObject = {}
-              const badKeys = [
+              const badGetters = [
                 'attributes',
                 'children',
                 'childNodes',
@@ -187,8 +187,8 @@ class PluginManager {
                     continue
                   }
 
-                  for (const badKey of badKeys) {
-                    element.__defineGetter__(badKey, () => console.log('🚫'))
+                  for (const badGetter of badGetters) {
+                    element.__defineGetter__(badGetter, () => console.log('🚫'))
                   }
 
                   thatObject[elKey] = element
