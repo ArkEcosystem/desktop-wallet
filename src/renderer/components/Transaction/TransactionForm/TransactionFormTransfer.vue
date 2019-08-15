@@ -433,10 +433,21 @@ export default {
             return
           }
 
-          this.$refs.recipient.model = transaction.recipientId
-          this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
-          this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
-          this.$refs.vendorField.model = transaction.vendorField
+          if (transaction.recipientId) {
+            this.$refs.recipient.model = transaction.recipientId
+          }
+
+          if (transaction.amount) {
+            this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
+          }
+
+          if (transaction.fee) {
+            this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+          }
+
+          if (transaction.vendorField) {
+            this.$refs.vendorField.model = transaction.vendorField
+          }
 
           this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
         } catch (error) {
