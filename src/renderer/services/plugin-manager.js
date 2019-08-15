@@ -179,6 +179,9 @@ class PluginManager {
                 '$root',
                 '__vue__'
               ]
+              const badSetters = [
+                'innerHTML'
+              ]
               that.$nextTick(() => {
                 for (const elKey in that.$refs) {
                   const element = that.$refs[elKey]
@@ -189,6 +192,10 @@ class PluginManager {
 
                   for (const badGetter of badGetters) {
                     element.__defineGetter__(badGetter, () => console.log('🚫'))
+                  }
+
+                  for (const badSetter of badSetters) {
+                    element.__defineSetter__(badSetter, () => console.log('🚫'))
                   }
 
                   thatObject[elKey] = element
