@@ -827,8 +827,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
-      SAVE_OFFLINE: 'The transaction file saved successfully in: {path}',
-      LOAD_FROM_FILE: 'The transaction file loaded successfully'
+      SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
+      LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
