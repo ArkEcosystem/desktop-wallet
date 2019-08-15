@@ -175,7 +175,8 @@ class PluginManager {
                 '__vue__'
               ]
               const badSetters = [
-                'innerHTML'
+                'innerHTML',
+                'outerHTML'
               ]
               that.$nextTick(() => {
                 for (const elKey in that.$refs) {
