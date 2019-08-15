@@ -168,6 +168,7 @@ export default {
       LIMIT_REACHED: 'È possibile inserire un massimo di {0} caratteri',
       LIMIT_REMAINING: '{0}/{1} Rimanente'
     },
+    RECIPIENT_DIFFERENT_NETWORK: 'Il destinatario {0} appartiene ad un\'altra rete',
     REQUIRED: '\'{0}\' indispensabile',
     SEND_NOT_ENABLED: 'L\'invio non è abilitato per il portafoglio selezionato',
     WALLET_NOT_ACTIVE: 'Seleziona un portafoglio a apri l\'URI nuovamente',

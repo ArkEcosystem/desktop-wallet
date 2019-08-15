@@ -168,6 +168,7 @@ export default {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
       LIMIT_REMAINING: '{0}/{1} Remaining'
     },
+    RECIPIENT_DIFFERENT_NETWORK: 'The recipient {0} belongs to a different network',
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',

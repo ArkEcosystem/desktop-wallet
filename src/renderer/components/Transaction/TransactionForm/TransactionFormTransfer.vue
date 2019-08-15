@@ -182,6 +182,7 @@ import { PassphraseInput } from '@/components/Passphrase'
 import SvgIcon from '@/components/SvgIcon'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
+import WalletService from '@/services/wallet'
 import onSubmit from './mixin-on-submit'
 
 export default {
@@ -429,12 +430,17 @@ export default {
           const transaction = JSON.parse(raw)
 
           if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.TRANSFER) {
-            this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${this.$t('VALIDATION.INVALID_TYPE')}`)
-            return
+            throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
           }
 
           if (transaction.recipientId) {
-            this.$refs.recipient.model = transaction.recipientId
+            if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
+              this.$refs.recipient.model = transaction.recipientId
+            } else {
+              throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+                this.wallet_truncate(transaction.recipientId)
+              ]))
+            }
           }
 
           if (transaction.amount) {
@@ -451,10 +457,14 @@ export default {
 
           this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
         } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${this.$t('VALIDATION.INVALID_FORMAT')}`)
+          if (error.name === 'SyntaxError') {
+            error.message = this.$t('VALIDATION.INVALID_FORMAT')
+          }
+
+          this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
         }
       } catch (error) {
-        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error}`)
+        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
       }
     }
   },
