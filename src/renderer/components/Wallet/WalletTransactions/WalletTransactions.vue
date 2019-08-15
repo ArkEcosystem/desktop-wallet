@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { at, clone } from 'lodash'
+import at from 'lodash/at'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -64,9 +64,11 @@ export default {
       },
       set (count) {
         this.$store.dispatch('session/setTransactionTableRowCount', count)
-        const profile = clone(this.session_profile)
-        profile.transactionTableRowCount = count
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          transactionTableRowCount: count
+        })
       }
     }
   },
