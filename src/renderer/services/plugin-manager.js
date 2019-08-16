@@ -565,6 +565,9 @@ class PluginManager {
     if (/<\s*webview/i.test(component.template)) {
       inlineErrors.push('uses webview')
     }
+    if (/<\s*script/i.test(component.template)) {
+      inlineErrors.push('uses script tag')
+    }
     if (!plugin.config.permissions.includes('IFRAME') && /<\s*iframe/i.test(component.template)) {
       inlineErrors.push('uses iframe tag')
     }
