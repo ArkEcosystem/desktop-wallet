@@ -20,7 +20,6 @@ class PluginManager {
     this.hasInit = false
     this.vue = null
     this.hooks = [
-      'beforeCreate',
       'created',
       'beforeMount',
       'mounted',
@@ -135,7 +134,7 @@ class PluginManager {
           fullPath
         )
 
-        if (!this.validateComponent(component, componentName)) {
+        if (!this.validateComponent(plugin, component, componentName)) {
           continue
         }
 
@@ -147,15 +146,57 @@ class PluginManager {
           }
 
           const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
-          for (const key of keys) {
-            const thatObject = that[key]
+          for (let key of keys) {
+            let thatObject = that[key]
 
             if (key === '$refs' && thatObject) {
-              for (const elKey of Object.keys(thatObject)) {
-                if (Object.keys(thatObject[elKey]).includes('$root') || Object.keys(thatObject[elKey]).includes('__vue__')) {
-                  delete thatObject[elKey]
+              key = 'refs'
+              thatObject = {}
+              const badGetters = [
+                'attributes',
+                'children',
+                'childNodes',
+                'contentDocument',
+                'contentWindow',
+                'firstChild',
+                'firstElementChild',
+                'lastChild',
+                'lastElementChild',
+                'nextElementSibling',
+                'nextSibling',
+                'offsetParent',
+                'ownerDocument',
+                'parentElement',
+                'parentNode',
+                'shadowRoot',
+                'previousElementSibling',
+                'previousSibling',
+                '$root',
+                '__vue__'
+              ]
+              const badSetters = [
+                'innerHTML',
+                'outerHTML'
+              ]
+              that.$nextTick(() => {
+                for (const elKey in that.$refs) {
+                  const element = that.$refs[elKey]
+
+                  if (element.tagName.toLowerCase() === 'iframe') {
+                    continue
+                  }
+
+                  for (const badGetter of badGetters) {
+                    element.__defineGetter__(badGetter, () => console.log('🚫'))
+                  }
+
+                  for (const badSetter of badSetters) {
+                    element.__defineSetter__(badSetter, () => console.log('🚫'))
+                  }
+
+                  thatObject[elKey] = element
                 }
-              }
+              })
             }
 
             context[key] = thatObject
@@ -219,6 +260,10 @@ class PluginManager {
           path.join(rootPath, 'src/vm-component.js')
         )
 
+        for (const methodName of Object.keys(renderedComponent.methods || {})) {
+          renderedComponent.methods[methodName] = component.methods[methodName]
+        }
+
         // Build Vue component
         const vmComponent = this.vue.component(componentName, renderedComponent)
 
@@ -232,7 +277,6 @@ class PluginManager {
           vmComponent.options.computed[computedName] = function () {}
         }
 
-        const createdMethod = vmComponent.options.created
         vmComponent.options.created = [function () {
           for (const computedName of Object.keys(this.$options.computed)) {
             if (component.computed && component.computed[computedName]) {
@@ -242,43 +286,54 @@ class PluginManager {
               this._computedWatchers[computedName].getter = component.computed[computedName].bind(
                 componentContext(this)
               )
-              this._computedWatchers[computedName].run()
+
+              try {
+                this._computedWatchers[computedName].run()
+              } catch (error) {
+                console.error(error)
+              }
             }
 
             if (!component.computed || !component.computed[computedName]) {
               delete this.$options.computed[computedName]
-              this._computedWatchers[computedName].teardown()
+
+              try {
+                this._computedWatchers[computedName].teardown()
+              } catch (error) {
+                console.error(error)
+              }
+
               delete this._computedWatchers[computedName]
 
               for (const watcherId in this._watchers) {
                 if (this._watchers[watcherId].getter.name === computedName) {
-                  this._watchers[watcherId].teardown()
+                  try {
+                    this._watchers[watcherId].teardown()
+                  } catch (error) {
+                    console.error(error)
+                  }
+
                   break
                 }
               }
             }
           }
-          if (createdMethod) {
-            return createdMethod[0].apply(componentContext(this))
+
+          if (component.created) {
+            return component.created.apply(componentContext(this))
           }
         }]
 
-        // Fix context of all standard methods
-        vmComponent.options.methods = {}
-        for (const methodName of Object.keys(component.methods || {})) {
-          vmComponent.options.methods[methodName] = function () {
-            return component.methods[methodName].apply(componentContext(this), [...arguments])
-          }
-        }
-
         // Fix context of hooks
         this.hooks
-          .filter(hook => Object.prototype.hasOwnProperty.call(pluginObject, hook))
+          .filter(hook => Object.prototype.hasOwnProperty.call(component, hook))
+          .filter(hook => hook !== 'created')
           .forEach(prop => {
+            const hookMethod = function () { return component[prop].apply(componentContext(this)) }
             if (Array.isArray(vmComponent.options[prop])) {
-              vmComponent.options[prop][0] = function () { return component[prop].apply(componentContext(this)) }
+              vmComponent.options[prop] = [hookMethod]
             } else {
-              vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+              vmComponent.options[prop] = hookMethod
             }
           })
 
@@ -473,7 +528,7 @@ class PluginManager {
     return component
   }
 
-  validateComponent (component, name) {
+  validateComponent (plugin, component, name) {
     const requiredKeys = ['template']
     const allowedKeys = [
       'data',
@@ -490,8 +545,38 @@ class PluginManager {
       }
     }
 
+    const componentError = (error, errorType) => {
+      this.app.$logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`)
+    }
+
     if (missingKeys.length) {
-      this.app.$logger.error(`Plugin component '${name}' is missing: ${missingKeys.join(', ')}`)
+      componentError(missingKeys.join(', '), 'is missing')
+
+      return false
+    }
+
+    const inlineErrors = []
+    if (/v-html/.test(component.template)) {
+      inlineErrors.push('uses v-html')
+    }
+    if (/javascript:/.test(component.template)) {
+      inlineErrors.push('"javascript:"')
+    }
+    if (/<\s*webview/i.test(component.template)) {
+      inlineErrors.push('uses webview')
+    }
+    const inlineEvents = []
+    for (const event of PLUGINS.events) {
+      if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
+        inlineEvents.push(event)
+      }
+    }
+    if (inlineEvents.length) {
+      inlineErrors.push('events: ' + inlineEvents.join(', '))
+    }
+
+    if (inlineErrors.length) {
+      componentError(inlineErrors.join('; '), 'has inline javascript')
 
       return false
     }
@@ -504,7 +589,7 @@ class PluginManager {
     }
 
     if (bannedKeys.length) {
-      this.app.$logger.error(`Plugin component '${name}' has unpermitted keys: ${bannedKeys.join(', ')}`)
+      componentError(bannedKeys.join(', '), 'has unpermitted keys')
 
       return false
     }
