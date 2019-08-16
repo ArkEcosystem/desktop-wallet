@@ -567,6 +567,8 @@ class PluginManager {
     }
     if (/<\s*script/i.test(component.template)) {
       inlineErrors.push('uses script tag')
+    } else if (/[^\w]+eval\(/i.test(component.template)) {
+      inlineErrors.push('uses eval')
     }
     if (!plugin.config.permissions.includes('IFRAME') && /<\s*iframe/i.test(component.template)) {
       inlineErrors.push('uses iframe tag')
