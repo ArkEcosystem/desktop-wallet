@@ -810,8 +810,8 @@ export default {
       TIMELOCK_TRANSFER: 'Impossibile creare trasferimento Timelock',
       MULTI_PAYMENT: 'Impossibile creare pagamento multiplo',
       DELEGATE_RESIGNATION: 'La dimissione del Delegato non è andata a buon fine',
-      SAVE_OFFLINE: 'Impossibile salvare il tuo file transazione',
-      LOAD_FROM_FILE: 'Impossibile caricare il tuo file transazione',
+      SAVE_OFFLINE: 'Impossibile salvare il file transazione',
+      LOAD_FROM_FILE: 'Impossibile caricare il file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
       NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
