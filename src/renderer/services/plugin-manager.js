@@ -565,6 +565,9 @@ class PluginManager {
     if (/<\s*webview/i.test(component.template)) {
       inlineErrors.push('uses webview')
     }
+    if (!plugin.config.permissions.includes('IFRAME') && /<\s*iframe/i.test(component.template)) {
+      inlineErrors.push('uses iframe tag')
+    }
     const inlineEvents = []
     for (const event of PLUGINS.events) {
       if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
