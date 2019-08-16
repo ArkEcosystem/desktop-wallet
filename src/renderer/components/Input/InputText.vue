@@ -181,7 +181,9 @@ export default {
           return false
         }
 
-        return WalletService.isBip39Passphrase(value, this.session_profile.bip39Language)
+        const trimmed = value.toLowerCase().split(' ').filter(word => !!word.length).join(' ')
+
+        return WalletService.isBip39Passphrase(trimmed, this.session_profile.bip39Language)
       }
     }
   }
