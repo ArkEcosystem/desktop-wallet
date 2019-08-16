@@ -584,7 +584,8 @@ class PluginManager {
         getRoute: () => {
           return { ...this.app.$route, matched: [] }
         },
-        icons: SandboxFontAwesome
+        icons: SandboxFontAwesome,
+        onMessage: null
       }
     }
 
@@ -607,6 +608,24 @@ class PluginManager {
         info: this.app.$info,
         warn: this.app.$warn
       }
+    }
+
+    if (config.permissions.includes('MESSAGING')) {
+      const messageEventListener = event => {
+        if (sandbox.walletApi.onMessage && event.data !== Object(event.data)) {
+          sandbox.walletApi.onMessage({
+            origin: event.origin,
+            data: event.data
+          })
+        }
+      }
+
+      window.addEventListener('message', messageEventListener)
+
+      this.app.$router.beforeEach((to, from, next) => {
+        sandbox.walletApi.onMessage = null
+        next()
+      })
     }
 
     if (config.permissions.includes('STORAGE')) {
