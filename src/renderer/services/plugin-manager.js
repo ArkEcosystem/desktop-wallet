@@ -556,14 +556,25 @@ class PluginManager {
     }
 
     const inlineErrors = []
-    if (/v-html/.test(component.template)) {
+    if (/v-html/i.test(component.template)) {
       inlineErrors.push('uses v-html')
     }
-    if (/javascript:/.test(component.template)) {
+    if (/javascript:/i.test(component.template)) {
       inlineErrors.push('"javascript:"')
     }
     if (/<\s*webview/i.test(component.template)) {
-      inlineErrors.push('uses webview')
+      inlineErrors.push('uses webview tag')
+    }
+    if (/<\s*script/i.test(component.template)) {
+      inlineErrors.push('uses script tag')
+    } else if (/[^\w]+eval\(/i.test(component.template)) {
+      inlineErrors.push('uses eval')
+    }
+    if (!plugin.config.permissions.includes('IFRAME') && /<\s*iframe/i.test(component.template)) {
+      inlineErrors.push('uses iframe tag')
+    }
+    if (/srcdoc/i.test(component.template)) {
+      inlineErrors.push('uses srcdoc property')
     }
     const inlineEvents = []
     for (const event of PLUGINS.events) {
