@@ -581,10 +581,18 @@ class PluginManager {
   loadSandbox (config) {
     const sandbox = {
       walletApi: {
-        getRoute: () => {
-          return { ...this.app.$route, matched: [] }
-        },
-        icons: SandboxFontAwesome
+        icons: SandboxFontAwesome,
+        route: {
+          get: () => {
+            return { ...this.app.$route, matched: [] }
+          },
+          goTo: routeName => {
+            const route = this.getAllRoutes().find(route => routeName === route.name)
+            if (route) {
+              this.app.$router.push(route)
+            }
+          }
+        }
       }
     }
 
