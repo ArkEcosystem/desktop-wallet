@@ -563,7 +563,7 @@ class PluginManager {
       inlineErrors.push('"javascript:"')
     }
     if (/<\s*webview/i.test(component.template)) {
-      inlineErrors.push('uses webview')
+      inlineErrors.push('uses webview tag')
     }
     if (/<\s*script/i.test(component.template)) {
       inlineErrors.push('uses script tag')
