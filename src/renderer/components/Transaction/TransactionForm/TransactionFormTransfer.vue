@@ -139,10 +139,9 @@
           class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
           @click="loadTransaction"
         >
-          <!-- TODO: replace with actual icon -->
           <SvgIcon
-            name="save"
-            view-box="0 0 15 15"
+            name="load"
+            view-box="0 0 21 15"
             class="mr-1"
           />
           {{ $t('COMMON.LOAD') }}
