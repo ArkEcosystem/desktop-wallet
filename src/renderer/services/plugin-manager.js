@@ -720,9 +720,6 @@ class PluginManager {
               return
             }
 
-            // Inform the user
-            console.info(`Event: "${action}" triggered`)
-
             eventCallback({
               origin: event.origin,
               data: cloneDeep(event.data)
