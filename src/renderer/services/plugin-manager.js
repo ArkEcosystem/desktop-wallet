@@ -556,10 +556,10 @@ class PluginManager {
     }
 
     const inlineErrors = []
-    if (/v-html/.test(component.template)) {
+    if (/v-html/i.test(component.template)) {
       inlineErrors.push('uses v-html')
     }
-    if (/javascript:/.test(component.template)) {
+    if (/javascript:/i.test(component.template)) {
       inlineErrors.push('"javascript:"')
     }
     if (/<\s*webview/i.test(component.template)) {
