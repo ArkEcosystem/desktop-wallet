@@ -65,7 +65,7 @@ export class NumberBuilder {
    * @returns NumberBuilder
    */
   multiply (value) {
-    this.value = this.multipliedBy(value)
+    this.value = this.value.multipliedBy(value)
     return this
   }
 
