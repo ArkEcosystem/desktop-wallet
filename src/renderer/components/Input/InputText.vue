@@ -141,7 +141,7 @@ export default {
     warning () {
       if (this.$v.model.$dirty) {
         if (this.$v.model.isBip39) {
-          return this.$t('VALIDATION.WARNING_BIP39', [this.label])
+          return this.$t('VALIDATION.WARNING_BIP39', [this.label.split(' - ')[0]])
         }
       }
 
