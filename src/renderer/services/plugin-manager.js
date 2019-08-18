@@ -573,6 +573,9 @@ class PluginManager {
     if (!plugin.config.permissions.includes('IFRAME') && /<\s*iframe/i.test(component.template)) {
       inlineErrors.push('uses iframe tag')
     }
+    if (/srcdoc/i.test(component.template)) {
+      inlineErrors.push('uses srcdoc property')
+    }
     const inlineEvents = []
     for (const event of PLUGINS.events) {
       if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
