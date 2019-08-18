@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
@@ -669,8 +669,7 @@ class PluginManager {
         getRoute: () => {
           return { ...this.app.$route, matched: [] }
         },
-        icons: SandboxFontAwesome,
-        onMessage: null
+        icons: SandboxFontAwesome
       }
     }
 
@@ -696,21 +695,43 @@ class PluginManager {
     }
 
     if (config.permissions.includes('MESSAGING')) {
-      const messageEventListener = event => {
-        if (sandbox.walletApi.onMessage && event.data !== Object(event.data)) {
-          sandbox.walletApi.onMessage({
-            origin: event.origin,
-            data: event.data
-          })
+      const messages = {
+        events: [],
+
+        clear () {
+          for (const eventId in this.events) {
+            window.removeEventListener('message', this.events[eventId])
+          }
+
+          this.events = []
+        },
+
+        on (action, eventCallback) {
+          const eventTrigger = event => {
+            if (event.data !== Object(event.data) || event.data.action !== action) {
+              return
+            }
+
+            // Inform the user
+            console.info(`Event: "${action}" triggered`)
+
+            eventCallback({
+              origin: event.origin,
+              data: cloneDeep(event.data)
+            })
+          }
+
+          window.addEventListener('message', eventTrigger)
+          this.events[action] = eventTrigger
         }
       }
 
-      window.addEventListener('message', messageEventListener)
-
-      this.app.$router.beforeEach((to, from, next) => {
-        sandbox.walletApi.onMessage = null
+      this.app.$router.beforeEach((_, __, next) => {
+        messages.clear()
         next()
       })
+
+      sandbox.walletApi.messages = messages
     }
 
     if (config.permissions.includes('STORAGE')) {
