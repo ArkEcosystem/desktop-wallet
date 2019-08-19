@@ -70,6 +70,14 @@ export class NumberBuilder {
   }
 
   /**
+   * @param {Number|String|BigNumber} value
+   * @returns Boolean
+   */
+  isGreaterThan (value) {
+    return this.value.gt(value)
+  }
+
+  /**
    * Returns the value as a string
    * @returns String
    */

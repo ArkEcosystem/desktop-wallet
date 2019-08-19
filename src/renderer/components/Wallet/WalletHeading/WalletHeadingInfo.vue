@@ -96,7 +96,9 @@
       </p>
 
       <p class="WalletHeading__balance font-semibold tracking-extrawide text-lg">
-        {{ balance }}
+        <span v-tooltip="pendingAmountTooltip">
+          {{ balance }}
+        </span>
         <span
           v-if="isMarketEnabled"
           class="WalletHeading__balance__alternative text-xs text-theme-heading-text"
@@ -131,52 +133,85 @@ export default {
     address () {
       return this.currentWallet ? this.currentWallet.address : ''
     },
+
     publicKey () {
       const publicKey = this.currentWallet ? this.currentWallet.publicKey : ''
       const lazyPublicKey = this.lazyWallet.publicKey
 
       return publicKey || lazyPublicKey
     },
+
     secondPublicKey () {
       const secondPublicKey = this.currentWallet ? this.currentWallet.secondPublicKey : ''
       const lazySecondPublicKey = this.lazyWallet.secondPublicKey
 
       return secondPublicKey || lazySecondPublicKey
     },
+
     alternativeBalance () {
       const unitBalance = this.currency_subToUnit(this.rawBalance)
       const price = this.price || 0
       return this.currency_format(unitBalance * price, { currency: this.alternativeCurrency })
     },
+
     alternativeCurrency () {
       return this.$store.getters['session/currency']
     },
+
     balance () {
       return this.formatter_networkCurrency(this.rawBalance)
     },
+
     rawBalance () {
       return this.currentWallet.profileId.length
         ? this.currentWallet.balance
         : (this.lazyWallet.balance || 0)
     },
+
+    pendingAmount () {
+      return this.formatter_networkCurrency(this.pendingRawAmount)
+    },
+
+    pendingRawAmount () {
+      return this.getStoredTransactions().reduce((balance, transaction) => {
+        return balance.add(transaction.amount).add(transaction.fee)
+      }, this.currency_toBuilder(0))
+    },
+
+    pendingTransactionCount () {
+      return this.getStoredTransactions().length
+    },
+
+    pendingAmountTooltip () {
+      return this.pendingRawAmount.isGreaterThan(0)
+        ? this.$tc('WALLET_HEADING.PENDING_AMOUNT', this.pendingTransactionCount, { amount: this.pendingAmount })
+        : ''
+    },
+
     name () {
       return this.wallet_name(this.currentWallet.address)
     },
+
     currentWallet () {
       return this.wallet_fromRoute
     },
+
     isMarketEnabled () {
       return this.session_network.market.enabled
     },
+
     price () {
       return this.$store.getters['market/lastPrice']
     },
+
     label () {
       return this.showPublicKey ? this.publicKey : this.address
     },
+
     labelTooltip () {
       return this.showPublicKey ? this.$t('WALLET_HEADING.ACTIONS.SHOW_ADDRESS') : this.$t('WALLET_HEADING.ACTIONS.SHOW_PUBLIC_KEY')
     },
+
     verifiedAddressText () {
       let verifiedText = ''
       const knownWallet = this.isKnownWallet()
@@ -211,6 +246,16 @@ export default {
       }
 
       this.lazyWallet = await this.$client.fetchWallet(this.currentWallet.address)
+    },
+
+    getStoredTransactions () {
+      if (!this.currentWallet.profileId.length) {
+        return []
+      }
+
+      return this.$store.getters['transaction/byAddress'](this.currentWallet.address, {
+        includeExpired: false
+      })
     }
   }
 }
