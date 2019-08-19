@@ -164,6 +164,7 @@ import { PassphraseInput } from '@/components/Passphrase'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
 import onSubmit from './mixin-on-submit'
+import BigNumber from '@/plugins/bignumber'
 
 export default {
   name: 'TransactionFormTransfer',
@@ -236,7 +237,7 @@ export default {
     },
     maximumAvailableAmount () {
       if (!this.currentWallet) {
-        return 0
+        return new BigNumber('0')
       }
       return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
     },
@@ -301,14 +302,15 @@ export default {
   mounted () {
     // Note: we set this here and not in the data property so validation is triggered properly when fields get pre-populated
     if (this.schema && this.schema.type === 'legacy') {
-      this.$set(this.form, 'amount', this.schema.amount || '')
+      console.log(this.schema.amount)
+      this.$set(this.form, 'amount', this.schema.amount ? new BigNumber(this.schema.amount) : '')
       this.$set(this.form, 'recipientId', this.schema.address || '')
       this.$set(this.form, 'vendorField', this.schema.vendorField || '')
     } else if (this.schema && this.schema.type !== 'legacy') {
-      this.$set(this.form, 'amount', parseFloat(this.currency_subToUnit(this.schema.amount))) // TODO: required
+      this.$set(this.form, 'amount', this.currency_subToUnit(this.schema.amount)) // TODO: required
       this.$set(this.form, 'recipientId', this.schema.recipient || '') // TODO: required
       if (this.schema.fee) {
-        this.$set(this.form, 'fee', parseFloat(this.currency_subToUnit(this.schema.fee)))
+        this.$set(this.form, 'fee', this.currency_subToUnit(this.schema.fee))
         this.$refs.fee.fee = parseFloat(this.currency_subToUnit(this.schema.fee))
       }
       this.$set(this.form, 'vendorField', this.schema.vendorField || '')

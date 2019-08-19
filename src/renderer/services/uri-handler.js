@@ -49,8 +49,8 @@ export default class URIHandler {
       // Handle the props that should be decoded / numbers
       scheme.seedServer = scheme.seedServer ? this.__fullyDecode(scheme.seedServer) : null
       scheme.description = scheme.description ? this.__fullyDecode(scheme.description) : null
-      scheme.amount = scheme.amount ? Number(scheme.amount) : null
-      scheme.fee = scheme.fee ? Number(scheme.fee) : null
+      scheme.amount = scheme.amount ? scheme.amount : null
+      scheme.fee = scheme.fee ? scheme.fee : null
       scheme.vendorField = scheme.vendorField ? this.__fullyDecode(scheme.vendorField) : null
       scheme.relay = scheme.relay ? this.__fullyDecode(scheme.relay) : null
       scheme.label = scheme.label ? this.__fullyDecode(scheme.label) : null
@@ -82,7 +82,7 @@ export default class URIHandler {
       }
 
       legacyScheme.address = legacySchema[1]
-      legacyScheme.amount = legacyScheme.amount ? Number(legacyScheme.amount) : null
+      legacyScheme.amount = legacyScheme.amount ? legacyScheme.amount : null
       legacyScheme.label = legacyScheme.label ? this.__fullyDecode(legacyScheme.label) : null
       legacyScheme.vendorField = legacyScheme.vendorField ? this.__fullyDecode(legacyScheme.vendorField) : null
 

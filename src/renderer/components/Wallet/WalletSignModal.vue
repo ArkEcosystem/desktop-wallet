@@ -3,7 +3,10 @@
     :title="$t('SIGN_VERIFY.TITLE_SIGN')"
     @close="emitCancel"
   >
-    <div class="flex flex-col justify-center w-80">
+    <div
+      class="flex flex-col justify-center w-80"
+      :class="[schema ? 'w-112' : 'w-80']"
+    >
       <WalletSelection
         v-if="schema && schema.message"
         v-model="$v.wallet.$model"
@@ -120,9 +123,6 @@ export default {
   },
 
   mounted () {
-    console.log('mounted')
-    console.log(this.schema)
-
     if (this.currentWallet && this.currentWallet.id) {
       this.$set(this, 'wallet', this.currentWallet || null)
       this.$v.wallet.$touch()
