@@ -14,9 +14,11 @@ export default {
     DATE: 'Date',
     DELEGATE: 'Delegate',
     DONE: 'Done',
+    FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
     FINISH: 'Finish',
+    HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
@@ -118,7 +120,7 @@ export default {
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
     CONNECT_FAILED: 'Failed to connect to peer',
-    DELAY: 'Latency',
+    LATENCY: 'Latency',
     DISCONNECT: 'Disconnect from peer',
     FAILED_REFRESH: 'Failed to refresh peers',
     HEIGHT: 'Block height',
@@ -161,7 +163,8 @@ export default {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
     VENDOR_FIELD: {
-      LIMIT_REACHED: 'You can enter maximum {0} characters only'
+      LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
+      LIMIT_REMAINING: '{0}/{1} Remaining'
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
@@ -178,7 +181,7 @@ export default {
   },
 
   TIME_FORMAT: {
-    'DEFAULT': 'Default',
+    DEFAULT: 'Default',
     '12H': '12h',
     '24H': '24h'
   },
@@ -218,7 +221,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Made with ♥ by Ark'
+    TEXT: 'Made with ♥ by ARK'
   },
 
   APP_SIDEMENU: {
@@ -228,10 +231,18 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
+    PLUGINS: 'Plugins',
+    PLUGINS_PAGES: 'Plugins pages',
     SETTINGS: {
       CURRENCY: 'Currency',
       DARK_MODE: 'Dark mode',
-      SCREENSHOT_PROTECTION: 'Screenshot protection',
+      SCREENSHOT_PROTECTION: {
+        TITLE: 'Screenshot protection',
+        QUESTION: 'Are you sure you want to disable screenshot protection?',
+        NOTE: 'This feature enables applications to protect their own onscreen window content from being captured or copied though screenshot utilities.',
+        SESSION_ONLY: 'Disable for this session only',
+        PERMANENTLY: 'Disable permanently'
+      },
       BACKGROUND_UPDATE_LEDGER: 'Update Ledger in background',
       BROADCAST_PEERS: 'Broadcast to multiple peers',
       TITLE: 'Current settings',
@@ -239,7 +250,8 @@ export default {
         TITLE: 'Reset data',
         QUESTION: 'Are you sure you want to wipe your data?',
         NOTE: 'All your data, including profiles, wallets, networks and contacts will be removed from the app and reset to default. The data, such as transactions, that are on the blockchain cannot be removed.'
-      }
+      },
+      THEME: 'Theme'
     },
     WALLETS: 'My wallets'
   },
@@ -276,7 +288,8 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: '{currency} price'
+    PRICE: '{currency} price',
+    SHOW_CHART: 'Show chart'
   },
 
   BUTTON_CLIPBOARD: {
@@ -317,6 +330,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Last',
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
     MAXIMUM: 'Maximum',
@@ -352,6 +366,27 @@ export default {
     LOAD: 'Load Wallets',
     QUANTITY: 'Quantity',
     TITLE: 'Load Additional Ledger Wallets'
+  },
+
+  MODAL_EXPORT_WALLETS: {
+    ADVANCED: 'Advanced Options',
+    CANCEL: 'Cancel',
+    COUNT: '{count} wallets will be exported',
+    ERROR: {
+      EXPORT_WALLETS: 'Failed to export your wallets'
+    },
+    EXPORT: 'Export 0 Wallets | Export 1 Wallet | Export {count} Wallets',
+    INSTRUCTIONS: 'Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
+    OPTIONS: {
+      ADD_NETWORK: 'Add information about the network',
+      EXCLUDE_EMPTY: 'Exclude empty wallets',
+      EXCLUDE_LEDGER: 'Exclude ledger wallets',
+      EXCLUDE_UNNAMED: 'Exclude wallets without a name'
+    },
+    SUCCESS: {
+      EXPORT_WALLETS: 'Your wallets were successfully exported to: {path}'
+    },
+    TITLE: 'Export Wallets'
   },
 
   MODAL_CONFIRMATION: {
@@ -459,7 +494,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Create Contact',
       IMPORT_CONTACT: 'Import Contact',
-      DELETE_CONTACT: 'Delete this contact',
       INSTRUCTIONS: 'This page allows you to create contacts, making it easier for you to work with addresses by giving them an identifiable name',
       HEADER: 'My contacts',
       SHOW_CONTACT: 'Show contact'
@@ -497,6 +531,13 @@ export default {
       NEW_NETWORK: 'New network'
     },
 
+    PLUGINS: {
+      HEADER: 'Plugins',
+      DISCOVER: 'Discover Plugins',
+      OPEN: 'Open Plugins',
+      RELOAD: 'Reload Plugins'
+    },
+
     PROFILE_ALL: {
       HEADER: 'My profiles',
       ADD_PROFILE: 'Add profile',
@@ -513,8 +554,7 @@ export default {
         },
         NAME: 'Profile name',
         TITLE: '1. Profile details',
-        AVATAR: 'Select your favorite avatar or the first letter of your profile name',
-        NO_AVATAR: 'No Avatar'
+        AVATAR: 'Select your favorite avatar or the first letter of your profile name'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -532,7 +572,7 @@ export default {
           TEXT: 'Customize this application by selecting one of our themes and backgrounds.'
         },
         MARKET_CHART: 'Choose to display the price chart on the dashboard or not',
-        THEME: 'Choose light or dark mode',
+        THEME: 'Choose theme',
         BACKGROUND: 'Select your favorite background',
         NAME: 'Profile name',
         TITLE: '3. Appearance'
@@ -540,6 +580,9 @@ export default {
     },
 
     PROFILE_EDITION: {
+      ERROR: {
+        DUPLICATE_PROFILE: 'A profile already exists with that name'
+      },
       TAB_PROFILE: {
         INSTRUCTIONS: {
           HEADER: 'Edit this profile',
@@ -579,10 +622,12 @@ export default {
       LEDGER: {
         CACHE: 'Cache ledger wallets?',
         CACHE_INFO: 'Cache wallets from your ledger to speed up loading when first connected',
-        ADDITIONAL: '# of Ledger Wallets'
+        ADDITIONAL: 'Load Additional Ledger Wallets',
+        OPTIONS: 'Ledger Options'
       },
       CREATE_WALLET: 'Create Wallet',
       DELETE_WALLET: 'Delete this wallet',
+      EXPORT_WALLETS: 'Export Wallets',
       HEADER: 'My wallets',
       IMPORT_WALLET: 'Import Wallet',
       LOADING_LEDGER: 'Loading Ledger wallets...',
@@ -681,6 +726,28 @@ export default {
     }
   },
 
+  PLUGIN_ENABLE_CONFIRMATION: {
+    QUESTION: 'Are you sure you want to enable the "{name}" plugin?',
+    NO: 'No, keep it disabled',
+    NOTICE: 'WARNING: By accepting this disclaimer, you are confirming that you are adding an untested and unverified third-party plugin to the desktop wallet. ARK SCIC assumes no liability for any harm caused by this plug-in and has no responsibility to test them for security vulnerabilities. All security testing and vulnerability discovery is the sole responsibility of the plugin author. ARK SCIC makes no warranties, express or implied, regarding the conditions of merchantability or fitness for particular purpose of any third-party plugin. ARK SCIC makes no representations about the functionality, accuracy, availability, quality, completeness, security, validity or non-infringement of any third-party plugins. Any third-party plugin used is done so at your own risk.',
+    YES: 'Yes, enable it'
+  },
+
+  PLUGIN_TABLE: {
+    ACTIONS: 'Actions',
+    ENABLE: 'Enable',
+    ENABLED: 'Enabled',
+    DESCRIPTION: 'Description',
+    DISABLE: 'Disable',
+    DISABLED: 'Disabled',
+    ID: 'ID',
+    NAME: 'Name',
+    NO_PERMISSIONS: 'No permissions',
+    NO_PLUGINS: 'No plugins available',
+    PERMISSIONS: 'Permissions',
+    STATUS: 'Status'
+  },
+
   PROFILE_LEAVING_CONFIRMATION: {
     QUESTION: 'Are you sure you want to ignore the changes done to this profile?',
     NO: 'No, save them',
@@ -693,8 +760,10 @@ export default {
   },
 
   SELECTION_AVATAR: {
+    ADDITIONAL_AVATARS: 'Additional Avatars',
     AVATARS: 'Avatars',
-    MODAL_HEADER: 'Select avatar'
+    MODAL_HEADER: 'Select avatar',
+    NO_AVATAR: 'No Avatar'
   },
 
   SELECTION_BACKGROUND: {
@@ -738,14 +807,6 @@ export default {
     },
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
-    },
-    FORM: {
-      DELEGATE_REGISTRATION: {
-        INSTRUCTIONS: 'for {address}.'
-      },
-      SECOND_SIGNATURE: {
-        INSTRUCTIONS: 'for {address}.'
-      }
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -866,7 +927,7 @@ export default {
   WALLET_SECOND_SIGNATURE: {
     NEW: 'Generate new second passphrase',
     ALREADY_REGISTERED: 'There is already a second passphrase registered for this address',
-    INSTRUCTIONS: 'This is your second passphrase. Make sure to make a backup and keep it somewhere safe!'
+    INSTRUCTIONS: 'You will need both 12 word passphrases to interact with the network. Keep them safe!'
   },
 
   WALLET_SIDEBAR: {
@@ -895,25 +956,24 @@ export default {
   WALLET_DELEGATES: {
     RANK: 'Rank',
     USERNAME: 'Username',
-    PRODUCTIVITY: 'Productivity',
     RANK_BANNER: 'Rank: {rank}',
-    PRODUCTIVITY_BANNER: 'Productivity: {productivity}',
     APPROVAL: 'Vote %',
     FORGED: 'Forged',
     BLOCKS: 'Blocks',
-    MISSED: 'missed',
     VOTERS: 'Voters',
     UNVOTE: 'Unvote',
     VOTES: 'Votes',
     VOTE: 'Vote',
+    USERNAME_EMPTY_ERROR: 'The username must have at least 1 character',
     USERNAME_ERROR: 'No special characters or uppercase allowed',
+    USERNAME_EXISTS: 'A delegate with this username already exists',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',
     BLOG: 'Voting Guide',
-    EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
+    EXPLANATION: 'Voting is an optional, but important mechanism that keeps the ARK network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
-    CURRENTLY_VOTED: 'You are currently voted for {delegate}',
+    CURRENTLY_VOTED: 'You are currently voting for {delegate}',
     VOTED_FOR: 'You voted for delegate {delegate}',
     WALLET_VOTED_FOR: 'This wallet voted for delegate {delegate}',
     VOTE_INFO: 'Info:',
@@ -921,6 +981,10 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
+  },
+
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Loading Ledger wallets...'
   },
 
   WALLET_RENAME: {

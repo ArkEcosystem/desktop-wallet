@@ -14,9 +14,11 @@ export default {
     DATE: 'Data',
     DELEGATE: 'Delegato',
     DONE: 'Fatto',
+    FAILED_UPDATE: 'Impossibile aggiornare \'{name}\'. Motivo: {reason}',
     FAILED_FETCH: 'Impossibile recuperare {name}. Motivo: "{msg}".',
     FETCH: 'Recupera',
     FINISH: 'Fine',
+    HIDE_WALLET_BUTTON_TEXT: 'Nascondi il testo dai pulsanti del portafoglio',
     IS_MARKET_CHART_ENABLED: 'Grafico prezzo in dashboard',
     LANGUAGE: 'Lingua Applicazione',
     LEDGER: 'Ledger',
@@ -44,7 +46,7 @@ export default {
   ANNOUNCEMENTS: {
     LATEST_NEWS: 'Ultime News',
     READ_MORE: 'Leggi di più',
-    ALL_READ: 'Segna come già letto'
+    ALL_READ: 'Segna tutto come già letto'
   },
 
   INTRODUCTION: {
@@ -88,7 +90,7 @@ export default {
       TITLE: 'Il tuo Turno',
       KNOWLEDGE: 'Ora, armato della consapevolezza di quanto sia importante mantenere al sicuro le tue frasi segrete, sei pronto a rivendicare la tua autonomia finanziaria con ARK Desktop Wallet.',
       SUPPORT: 'ARK è un ecosistema open source e se hai bisogno di assistenza, la community e il team ARK sono qui per aiutarti. Crea un post su reddit.ark.io o unisciti al sistema di chat in tempo reale su slack.ark.io.',
-      CONCLUSION: 'Tutti qui, al team di ARK.io, speraiamo ti piacerà utilizzare l\'ARK Desktop Wallet e partecipare nella rivoluzione blockchain!'
+      CONCLUSION: 'Tutti qui, al team di ARK.io, speriamo ti piacerà utilizzare l\'ARK Desktop Wallet e partecipare alla rivoluzione blockchain!'
     }
   },
 
@@ -161,7 +163,8 @@ export default {
       INVALID_LENGTH: 'La chiave pubblica deve avere una lunghezza di 66 caratteri'
     },
     VENDOR_FIELD: {
-      LIMIT_REACHED: 'È possibile inserire un massimo di {0} caratteri'
+      LIMIT_REACHED: 'È possibile inserire un massimo di {0} caratteri',
+      LIMIT_REMAINING: '{0}/{1} Rimanente'
     },
     REQUIRED: '\'{0}\' indispensabile',
     SEND_NOT_ENABLED: 'L\'invio non è abilitato per il portafoglio selezionato',
@@ -178,7 +181,7 @@ export default {
   },
 
   TIME_FORMAT: {
-    'DEFAULT': 'Predefinito',
+    DEFAULT: 'Predefinito',
     '12H': '12h',
     '24H': '24h'
   },
@@ -218,7 +221,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Fatto con ♥ da Ark'
+    TEXT: 'Fatto con ♥ da ARK'
   },
 
   APP_SIDEMENU: {
@@ -228,10 +231,18 @@ export default {
     DASHBOARD: 'Dashboard',
     NETWORK: 'Rete',
     NETWORKS: 'Gestisci reti',
+    PLUGINS: 'Plugin',
+    PLUGINS_PAGES: 'Pagine Plugin',
     SETTINGS: {
       CURRENCY: 'Valuta',
       DARK_MODE: 'Modalità scura',
-      SCREENSHOT_PROTECTION: 'Protezione da screenshot',
+      SCREENSHOT_PROTECTION: {
+        TITLE: 'Protezione da screenshot',
+        QUESTION: 'Sei sicuro di voler disattivare la protezione da screenshot?',
+        NOTE: 'Questa opzione consente alle applicazioni di proteggere il contenuto della schermata, dall\'acquisizione o dalla copia tramite i programmi di cattura schermo',
+        SESSION_ONLY: 'Disabilita solo per questa sessione',
+        PERMANENTLY: 'Disabilita permanentemente'
+      },
       BACKGROUND_UPDATE_LEDGER: 'Aggiorna Ledger in background',
       BROADCAST_PEERS: 'Trasmetti a peer multipli',
       TITLE: 'Settaggi attuali',
@@ -239,7 +250,8 @@ export default {
         TITLE: 'Resetta i dati',
         QUESTION: 'Sei sicuro di voler eliminare i tuoi dati?',
         NOTE: 'Tutti i tuoi dati, inclusi profili, portafogli, reti e contatti verranno rimossi dall\'app e ripristinati sui valori predefiniti. I dati, come le transazioni, che sono sulla blockchain non possono essere rimossi.'
-      }
+      },
+      THEME: 'Tema'
     },
     WALLETS: 'I miei portafogli'
   },
@@ -276,12 +288,13 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: 'Prezzo'
+    PRICE: '{currency} Prezzo',
+    SHOW_CHART: 'Show chart'
   },
 
   BUTTON_CLIPBOARD: {
     DONE: 'Copiato!',
-    COPY_TO_CLIPBOARD: 'Copia negli appunti',
+    COPY_TO_CLIPBOARD: 'Copia {0} negli appunti',
     NOT_SUPPORTED: 'Copiare negli appunti non è supportato'
   },
 
@@ -317,6 +330,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Ultima',
     MINIMUM: 'Minimo',
     AVERAGE: 'Media',
     MAXIMUM: 'Massimo',
@@ -352,6 +366,27 @@ export default {
     LOAD: 'Carica Portafogli',
     QUANTITY: 'Quantità',
     TITLE: 'Carica portafogli Ledger aggiuntivi'
+  },
+
+  MODAL_EXPORT_WALLETS: {
+    ADVANCED: 'Opzioni avanzate',
+    CANCEL: 'Annulla',
+    COUNT: '{count} portafogli verranno esportati',
+    ERROR: {
+      EXPORT_WALLETS: 'Impossibile esportare i tuoi protafogli'
+    },
+    EXPORT: 'Esporta 0 Portafogli | Esporta 1 Portafoglio | Esporta {count} Portafogli',
+    INSTRUCTIONS: 'I tuoi portafogli esportati non conterranno le tue frasi segrete, verranno salvati solamente gli indirizzi e i rispettivi nomi!',
+    OPTIONS: {
+      ADD_NETWORK: 'Aggiungi informazioni sulla rete',
+      EXCLUDE_EMPTY: 'Escludi portafogli vuoti',
+      EXCLUDE_LEDGER: 'Escludi portafogli ledger',
+      EXCLUDE_UNNAMED: 'Escludi portafogli senza nome'
+    },
+    SUCCESS: {
+      EXPORT_WALLETS: 'I tuoi portafogli sono stati esportati con successo in: {path}'
+    },
+    TITLE: 'Esporta Portafogli'
   },
 
   MODAL_CONFIRMATION: {
@@ -459,7 +494,6 @@ export default {
     CONTACT_ALL: {
       CREATE_CONTACT: 'Crea un contatto',
       IMPORT_CONTACT: 'Importa contatto',
-      DELETE_CONTACT: 'Elimina questo contatto',
       INSTRUCTIONS: 'Questa pagina ti consente di creare contatti, facilitando la gestione degli indirizzi dando loro un nome identificativo',
       HEADER: 'I miei contatti',
       SHOW_CONTACT: 'Mostra contatti'
@@ -497,6 +531,13 @@ export default {
       NEW_NETWORK: 'Nuova rete'
     },
 
+    PLUGINS: {
+      HEADER: 'Plugin',
+      DISCOVER: 'Esplora i Plugin',
+      OPEN: 'Apri i Plugin',
+      RELOAD: 'Ricarica i Plugin'
+    },
+
     PROFILE_ALL: {
       HEADER: 'I miei profili',
       ADD_PROFILE: 'Aggiungi profilo',
@@ -509,12 +550,11 @@ export default {
       STEP1: {
         INSTRUCTIONS: {
           HEADER: 'Crea un profilo',
-          TEXT: 'Inserisci il tuo nome o nickname e seleziona la lingua preferita e la valuta predefinita.'
+          TEXT: 'Inserisci il tuo nome o nickname, seleziona la lingua preferita e la valuta predefinita.'
         },
         NAME: 'Nome profilo',
         TITLE: '1. Dettagli profilo',
-        AVATAR: 'Seleziona il tuo avatar preferito o la prima lettera del nome del tuo profilo',
-        NO_AVATAR: 'Nessun Avatar'
+        AVATAR: 'Seleziona il tuo avatar preferito o la prima lettera del nome del tuo profilo'
       },
       STEP2: {
         INSTRUCTIONS: {
@@ -540,6 +580,9 @@ export default {
     },
 
     PROFILE_EDITION: {
+      ERROR: {
+        DUPLICATE_PROFILE: 'Esiste già un profilo con questo nome'
+      },
       TAB_PROFILE: {
         INSTRUCTIONS: {
           HEADER: 'Modifica questo profilo',
@@ -579,12 +622,14 @@ export default {
       LEDGER: {
         CACHE: 'Metti in cache portafoglio Ledger?',
         CACHE_INFO: 'Metti in cache i portafogli dal tuo Ledger per accelerare il caricamento quando si è connessi per la prima volta',
-        ADDITIONAL: '# di Portafogli Ledger'
+        ADDITIONAL: '# di Portafogli Ledger',
+        OPTIONS: 'Opzioni Ledger'
       },
       CREATE_WALLET: 'Crea portafoglio',
       DELETE_WALLET: 'Elimina questo portafoglio',
       HEADER: 'I miei portafogli',
       IMPORT_WALLET: 'Importa portafoglio',
+      EXPORT_WALLETS: 'Esporta Portafogli',
       LOADING_LEDGER: 'Caricamento portafogli Ledger...',
       SHOW_WALLET: 'Mostra portafoglio',
       TOTAL_BALANCE: 'Saldo totale',
@@ -598,7 +643,7 @@ export default {
     WALLET_IMPORT: {
       STEP1: {
         INSTRUCTIONS: {
-          HEADER: 'Recupera portafoglio',
+          HEADER: 'Importa portafoglio',
           TEXT: 'Inserisci la frase segreta del tuo portafoglio. Puoi inserire prima l\'indirizzo, per assicurarti che corrisponda alla frase segreta specificata.'
         },
         TITLE: '1. Importa portafoglio',
@@ -681,6 +726,28 @@ export default {
     }
   },
 
+  PLUGIN_ENABLE_CONFIRMATION: {
+    QUESTION: 'Sei sicuro di voler attivare il plugin "{name}"?',
+    NO: 'No, tenerlo disattivato',
+    NOTICE: 'ATTENZIONE: accettando questa dichiarazione di non responsabilità, confermi di aggiungere al portafoglio desktop un plugin di terze parti, non testato e non verificato. ARK SCIC non si assume alcuna responsabilità per eventuali danni causati da questo plug-in e non si assume alcuna responsabilità di testare i plugin per vulnerabilità di sicurezza. I test di sicurezza e l\'individuazione delle vulnerabilità sono di esclusiva responsabilità dell\'autore del plug-in. ARK SCIC non rilascia alcuna garanzia, espressa o implicita, in merito alle condizioni di commerciabilità o idoneità per scopi particolari di qualsiasi plugin di terze parti. ARK SCIC non rilascia dichiarazioni in merito a sicurezza, validità o non violazione di plug-in di terze parti. Qualsiasi plug-in di terze parti utilizzato viene eseguito a proprio rischio.',
+    YES: 'Si, attiva'
+  },
+
+  PLUGIN_TABLE: {
+    ACTIONS: 'Azioni',
+    ENABLE: 'Attiva',
+    ENABLED: 'Attivato',
+    DESCRIPTION: 'Descrizione',
+    DISABLE: 'Disattiva',
+    DISABLED: 'Disattivato',
+    ID: 'ID',
+    NAME: 'Nome',
+    NO_PERMISSIONS: 'Nessun permesso',
+    NO_PLUGINS: 'Nessun plugin disponibile',
+    PERMISSIONS: 'Permessi',
+    STATUS: 'Stato'
+  },
+
   PROFILE_LEAVING_CONFIRMATION: {
     QUESTION: 'Sei sicuro di voler ignorare le modifiche apportate a questo profilo?',
     NO: 'No, salvale',
@@ -693,8 +760,10 @@ export default {
   },
 
   SELECTION_AVATAR: {
-    AVATARS: 'Avatars',
-    MODAL_HEADER: 'Seleziona avatar'
+    ADDITIONAL_AVATARS: 'Avatar aggiuntivi',
+    AVATARS: 'Avatar',
+    MODAL_HEADER: 'Seleziona avatar',
+    NO_AVATAR: 'Nessun Avatar'
   },
 
   SELECTION_BACKGROUND: {
@@ -714,7 +783,7 @@ export default {
       DELEGATE_REGISTRATION: 'Registrazione Delegato',
       VOTE: 'Voto',
       UNVOTE: 'Voto Rimosso',
-      MULTI_SIGNATURE: 'Multi Signature',
+      MULTI_SIGNATURE: 'Firma-Multipla',
       IPFS: 'IPFS',
       TIMELOCK_TRANSFER: 'Trasferimneto Timelock',
       MULTI_PAYMENT: 'Pagamento Multiplo',
@@ -726,7 +795,7 @@ export default {
       DELEGATE_REGISTRATION: 'Impossibile registrare come Delegato',
       VOTE: 'Impossibile registrare il voto',
       UNVOTE: 'Impossibile registrare la rimozione del voto',
-      MULTI_SIGNATURE: 'Impossibile creare firma multipla',
+      MULTI_SIGNATURE: 'Impossibile creare firma-multipla',
       IPFS: 'IPFS',
       TIMELOCK_TRANSFER: 'Impossibile creare trasferimento Timelock',
       MULTI_PAYMENT: 'Impossibile creare pagamento multiplo',
@@ -739,14 +808,6 @@ export default {
     FOOTER_TEXT: {
       DELEGATE_REGISTRATION: 'Tieni presente che non è possibile modificare il nome del Delegato dopo che la registrazione è stata registrata sulla blockchain.'
     },
-    FORM: {
-      DELEGATE_REGISTRATION: {
-        INSTRUCTIONS: 'per {address}.'
-      },
-      SECOND_SIGNATURE: {
-        INSTRUCTIONS: 'per {address}.'
-      }
-    },
     INFO: {
       BROADCASTING: 'La tua transazione viene trasmessa alla rete',
       BROADCASTING_SLOW: 'Sembra che ci voglia un po\'per trasmettere la tua transazione. È possibile chiudere la finestra e continuerà a trasmettere in background.'
@@ -757,7 +818,7 @@ export default {
       DELEGATE_REGISTRATION: 'Registrato con successo come Delegato',
       VOTE: 'Votato con successo',
       UNVOTE: 'Voto rimosso con successo',
-      MULTI_SIGNATURE: 'Firma multipla creata con successo',
+      MULTI_SIGNATURE: 'Firma-multipla creata con successo',
       IPFS: 'IPFS',
       TIMELOCK_TRANSFER: 'Trasferimento Timelock creato con successo',
       MULTI_PAYMENT: 'Pagamento multiplo creato con successo',
@@ -895,25 +956,24 @@ export default {
   WALLET_DELEGATES: {
     RANK: 'Rango',
     USERNAME: 'Username',
-    PRODUCTIVITY: 'Produttività',
     RANK_BANNER: 'Rango: {rank}',
-    PRODUCTIVITY_BANNER: 'Produttività: {productivity}',
     APPROVAL: 'Voto %',
     FORGED: 'Forgiati',
     BLOCKS: 'Blocchi',
-    MISSED: 'mancati',
     VOTERS: 'Votanti',
     UNVOTE: 'Rimuovi voto',
     VOTES: 'Voti',
     VOTE: 'Vota',
+    USERNAME_EMPTY_ERROR: 'Lo username deve avere almeno 1 carattere',
     USERNAME_ERROR: 'Nessun carattere speciale o maiuscolo consentito',
+    USERNAME_EXISTS: 'Esiste già un delegato con questo username',
     USERNAME_MAX_LENGTH_ERROR: 'Il nome utente deve essere inferiore o uguale a 20 caratteri',
     ALREADY_REGISTERED: 'Questo portafoglio è già registrato come Delegato',
     BLOG: 'Guida al voto',
-    EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete Ark sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
+    EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete ARK sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
     VOTE_DELEGATE: 'Vota Delegato {delegate}',
     UNVOTE_DELEGATE: 'Rimuovi voto a Delegato {delegate}',
-    CURRENTLY_VOTED: 'Al momento hai votato per {delegato}',
+    CURRENTLY_VOTED: 'Al momento hai votato per {delegate}',
     VOTED_FOR: 'Hai votato per il Delegato {delegate}',
     WALLET_VOTED_FOR: 'Questo portafoglio ha votato per il delegato {delegate}',
     VOTE_INFO: 'Info:',
@@ -921,6 +981,10 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Il tuo {type} è in attesa di conferma',
     LOADING_VOTE: 'Caricamento dei dettagli del voto ...',
     SEARCH_DELEGATE: 'Cerca delegato'
+  },
+
+  WALLET_GRID: {
+    LOADING_LEDGER: 'Caricamento portafogli Ledger...'
   },
 
   WALLET_RENAME: {

@@ -1,3 +1,4 @@
+import { isBoolean } from 'lodash'
 import BaseModel from './base'
 
 export default new BaseModel({
@@ -5,12 +6,33 @@ export default new BaseModel({
   properties: {
     id: {
       type: 'string',
-      minLength: 16,
+      minLength: 1,
       maxLength: 16
     },
     avatar: {
-      type: 'string',
-      minLength: 1
+      anyOf: [
+        // Images provided by the app
+        {
+          type: 'string',
+          minLength: 1
+        },
+        // Images provided by the plugins
+        {
+          type: 'object',
+          properties: {
+            avatarName: {
+              type: 'string'
+            },
+            pluginId: {
+              type: 'string'
+            }
+          }
+        },
+        // No avatar (use name first character)
+        {
+          type: 'null'
+        }
+      ]
     },
     background: {
       type: 'string',
@@ -25,9 +47,13 @@ export default new BaseModel({
       type: 'string',
       default: 'Default'
     },
-    isMarketChartEnabled: {
+    hideWalletButtonText: {
       type: 'boolean',
-      format: data => data.isMarketChartEnabled !== undefined ? data.isMarketChartEnabled : true
+      format: data => data.hideWalletButtonText !== undefined ? data.hideWalletButtonText : false
+    },
+    marketChartOptions: {
+      type: 'object',
+      format: data => data.marketChartOptions || { isEnabled: true, isExpanded: true, period: 'day' }
     },
     language: {
       type: 'string',
@@ -47,6 +73,10 @@ export default new BaseModel({
       type: 'string',
       minLength: 1
     },
+    screenshotProtection: {
+      type: 'boolean',
+      format: data => data.screenshotProtection !== undefined ? data.screenshotProtection : true
+    },
     backgroundUpdateLedger: {
       type: 'boolean',
       format: data => data.backgroundUpdateLedger !== undefined ? data.backgroundUpdateLedger : true
@@ -58,6 +88,10 @@ export default new BaseModel({
     ledgerCache: {
       type: 'boolean',
       format: data => data.ledgerCache || false
+    },
+    showPluginConfirmation: {
+      type: 'boolean',
+      format: data => isBoolean(data.showPluginConfirmation) ? data.showPluginConfirmation : true
     },
     transactionTableRowCount: {
       type: 'integer',
@@ -71,6 +105,14 @@ export default new BaseModel({
       type: 'string',
       format: data => data.walletLayout || 'grid'
     },
+    walletSidebarSortParams: {
+      type: 'object',
+      format: data => data.walletSidebarSortParams || { field: 'name', type: 'asc' }
+    },
+    walletSidebarFilters: {
+      type: 'object',
+      format: data => data.walletSidebarFilters || {}
+    },
     walletSortParams: {
       type: 'object',
       format: data => data.walletSortParams || { field: 'balance', type: 'desc' }
@@ -78,6 +120,14 @@ export default new BaseModel({
     contactSortParams: {
       type: 'object',
       format: data => data.contactSortParams || { field: 'name', type: 'asc' }
+    },
+    pluginSortParams: {
+      type: 'object',
+      format: data => data.pluginSortParams || { field: 'id', type: 'asc' }
+    },
+    lastFees: {
+      type: 'object',
+      format: data => data.lastFees || {}
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

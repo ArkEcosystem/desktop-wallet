@@ -2,14 +2,12 @@
   <div
     v-if="isReady"
     id="app"
-    :class="{
-      'theme-dark': session_hasDarkTheme,
-      'theme-light': !session_hasDarkTheme,
+    :class="[themeClass, {
       'background-image': background,
       windows: isWindows,
       mac: isMac,
       linux: isLinux
-    }"
+    }]"
     class="App bg-theme-page text-theme-page-text font-sans"
   >
     <div
@@ -43,12 +41,17 @@
       >
         <div
           :class="{ 'ml-6': !hasAnyProfile }"
-          class="App__container w-full flex-1 flex mt-4 mb-4 lg:mr-6"
+          class="App__container w-full h-full flex mt-4 mb-4 lg:mr-6"
         >
-          <AppSidemenu
-            v-if="hasAnyProfile"
-            class="hidden md:block"
-          />
+          <div
+            class="hidden md:flex flex-col"
+          >
+            <AppSidemenu
+              v-if="hasAnyProfile"
+              class="flex flex-1"
+            />
+          </div>
+
           <!-- Updating the maximum number of routes to keep alive means that Vue will destroy the rest of cached route components -->
           <KeepAlive
             :include="keepAliveRoutes"
@@ -99,6 +102,8 @@
 
 <script>
 import '@/styles/style.css'
+import fs from 'fs'
+import CleanCss from 'clean-css'
 import { isEmpty, pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
@@ -147,8 +152,16 @@ export default {
     hasAnyProfile () {
       return !!this.$store.getters['profile/all'].length
     },
-    hasProtection () {
-      return this.$store.getters['session/contentProtection']
+    hasScreenshotProtection () {
+      return this.$store.getters['session/screenshotProtection']
+    },
+    isScreenshotProtectionEnabled: {
+      get () {
+        return this.$store.getters['app/isScreenshotProtectionEnabled']
+      },
+      set (protection) {
+        this.$store.dispatch('app/setIsScreenshotProtectionEnabled', protection)
+      }
     },
     hasSeenIntroduction () {
       return this.$store.getters['app/hasSeenIntroduction']
@@ -177,12 +190,29 @@ export default {
       return this.$route.matched.length
         ? this.$route.matched[0].components.default.name
         : null
+    },
+    pluginThemes () {
+      return this.$store.getters['plugin/themes']
+    },
+    theme () {
+      const theme = this.$store.getters['session/theme']
+      const defaultThemes = ['light', 'dark']
+
+      // Ensure that the plugin theme is available (not deleted from the file system)
+      return defaultThemes.includes(theme) || this.pluginThemes[theme]
+        ? theme
+        : defaultThemes[0]
+    },
+    themeClass () {
+      return `theme-${this.theme}`
     }
   },
 
   watch: {
-    hasProtection (value) {
-      remote.getCurrentWindow().setContentProtection(value)
+    hasScreenshotProtection (value) {
+      if (this.isScreenshotProtectionEnabled) {
+        remote.getCurrentWindow().setContentProtection(value)
+      }
     },
     routeComponent (value) {
       if (this.aliveRouteComponents.includes(value)) {
@@ -216,6 +246,12 @@ export default {
           this.aliveRouteComponents = aliveRouteComponents
         }
       }
+    },
+    pluginThemes (value, oldValue) {
+      this.applyPluginTheme(this.theme)
+    },
+    theme (value, oldValue) {
+      this.applyPluginTheme(value)
     }
   },
 
@@ -226,6 +262,9 @@ export default {
    */
   async created () {
     this.$store._vm.$on('vuex-persist:ready', async () => {
+      // Environments variables are strings
+      this.isScreenshotProtectionEnabled = process.env.ENABLE_SCREENSHOT_PROTECTION !== 'false'
+
       await this.loadEssential()
       this.isReady = true
 
@@ -234,16 +273,6 @@ export default {
       await this.loadNotEssential()
 
       this.$synchronizer.ready()
-
-      // Environments variables are strings
-      const status = process.env.ENABLE_SCREENSHOT_PROTECTION
-      if (status) {
-        // We only set this if the env variable is 'false', since protection defaults to true
-        // Since it's not a boolean, we can't do status !== false, since that would disable protection with every env var that's not 'true'
-        this.$store.dispatch('session/setContentProtection', !(status === 'false'))
-      } else {
-        remote.getCurrentWindow().setContentProtection(true)
-      }
     })
 
     this.setContextMenu()
@@ -255,6 +284,8 @@ export default {
 
   methods: {
     async loadEssential () {
+      // We need to await plugins in order for all plugins to load properly
+      await this.$plugins.init(this)
       await this.$store.dispatch('network/load', config.NETWORKS)
       const currentProfileId = this.$store.getters['session/profileId']
       await this.$store.dispatch('session/reset')
@@ -382,6 +413,23 @@ export default {
           node = node.parentNode
         }
       })
+    },
+
+    /**
+     * Webpack cannot require assets without knowing the path or, at least, part of it
+     * (https://webpack.js.org/guides/dependency-management/#require-context), so,
+     * instead of that, those assets are loaded manually and then injected directly on the DOM.
+     */
+    applyPluginTheme (themeName) {
+      if (themeName && this.pluginThemes) {
+        const theme = this.pluginThemes[themeName]
+        if (theme) {
+          const $style = document.querySelector('style[name=plugins]')
+          const input = fs.readFileSync(theme.cssPath)
+          const output = new CleanCss().minify(input)
+          $style.innerHTML = output.styles
+        }
+      }
     }
   }
 }

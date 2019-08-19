@@ -1,3 +1,6 @@
+const os = require('os')
+const path = require('path')
+
 exports.APP = {
   website: 'https://ark.io',
   transactionExpiryMinutes: 45
@@ -56,9 +59,9 @@ exports.TRANSACTION_TYPES = {
 }
 
 exports.INTERVALS = {
-  'short': 30000, // 30 seconds
-  'medium': 60000, // 1 minute
-  'long': 180000 // 3 minute
+  short: 30000, // 30 seconds
+  medium: 60000, // 1 minute
+  long: 180000 // 3 minute
 }
 
 exports.MARKET = {
@@ -91,6 +94,99 @@ exports.MARKET = {
     RUB: { symbol: '₽', fractionDigits: 2 },
     USD: { symbol: '$', fractionDigits: 2 }
   }
+}
+
+exports.PLUGINS = {
+  devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev'),
+  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
+  path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
+  events: [
+    'abort',
+    'afterprint',
+    'animationend',
+    'animationiteration',
+    'animationstart',
+    'beforeprint',
+    'beforeunload',
+    'blur',
+    'canplay',
+    'canplaythrough',
+    'change',
+    'click',
+    'contextmenu',
+    'copy',
+    'cut',
+    'dblclick',
+    'drag',
+    'dragend',
+    'dragenter',
+    'dragleave',
+    'dragover',
+    'dragstart',
+    'drop',
+    'durationchange',
+    'ended',
+    'error',
+    'focus',
+    'focusin',
+    'focusout',
+    'fullscreenchange',
+    'fullscreenerror',
+    'hashchange',
+    'input',
+    'invalid',
+    'keydown',
+    'keypress',
+    'keyup',
+    'load',
+    'loadeddata',
+    'loadedmetadata',
+    'loadstart',
+    'message',
+    'mousedown',
+    'mouseenter',
+    'mouseleave',
+    'mousemove',
+    'mouseover',
+    'mouseout',
+    'mouseup',
+    'mousewheel',
+    'offline',
+    'online',
+    'open',
+    'pagehide',
+    'pageshow',
+    'paste',
+    'pause',
+    'play',
+    'playing',
+    'popstate',
+    'progress',
+    'ratechange',
+    'resize',
+    'reset',
+    'scroll',
+    'search',
+    'seeked',
+    'seeking',
+    'select',
+    'show',
+    'stalled',
+    'storage',
+    'submit',
+    'suspend',
+    'timeupdate',
+    'toggle',
+    'touchcancel',
+    'touchend',
+    'touchmove',
+    'touchstart',
+    'transitionend',
+    'unload',
+    'volumechange',
+    'waiting',
+    'wheel'
+  ]
 }
 
 exports.THEMES = [

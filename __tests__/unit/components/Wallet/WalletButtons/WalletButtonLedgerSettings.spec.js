@@ -1,11 +1,11 @@
 import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
-import { WalletButtonAdditionalLedgers } from '@/components/Wallet/WalletButtons'
+import { WalletButtonLedgerSettings } from '@/components/Wallet/WalletButtons'
 
 const i18n = useI18nGlobally()
 let wrapper
 beforeEach(() => {
-  wrapper = shallowMount(WalletButtonAdditionalLedgers, {
+  wrapper = shallowMount(WalletButtonLedgerSettings, {
     i18n,
     mocks: {
       $store: {
@@ -19,8 +19,8 @@ beforeEach(() => {
   })
 })
 
-describe('WalletButtonAdditionalLedgers', () => {
-  it('should render modal', () => {
+describe('WalletButtonLedgerSettings', () => {
+  it('should render', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
   })
 })

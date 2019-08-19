@@ -1,8 +1,7 @@
-import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import apiClient, { client as clientService } from '@/plugins/api-client'
+import apiClient from '@/plugins/api-client'
 import store from '@/store'
 import delegates, { delegate1, delegate2 } from '../../__fixtures__/store/delegate'
 import { network1 } from '../../__fixtures__/store/network'
@@ -11,22 +10,24 @@ import { profile1 } from '../../__fixtures__/store/profile'
 Vue.use(Vuex)
 Vue.use(apiClient)
 
-const axiosMock = new MockAdapter(axios)
-
 beforeAll(() => {
-  clientService.version = 1
-  clientService.host = 'http://127.0.0.1'
-
   store.commit('network/SET_ALL', [network1])
   store.commit('profile/CREATE', profile1)
   store.commit('session/SET_PROFILE_ID', profile1.id)
   store.dispatch('delegate/set', delegates)
 })
 
+beforeEach(() => {
+  nock.cleanAll()
+  nock('http://127.0.0.1')
+    .persist()
+    .post('/api/v2/wallets/search')
+    .reply(200, { data: [] })
+})
+
 describe('delegate store module', () => {
   it('should get delegate list', () => {
-    const networkId = store.getters['session/network'].id
-    expect(Object.values(store.getters['delegate/all'][networkId])).toIncludeAllMembers(delegates)
+    expect(Object.values(store.getters['delegate/all'][profile1.networkId])).toEqual(delegates)
   })
 
   it('should get a single delegate by its address', () => {
@@ -54,56 +55,30 @@ describe('delegate store module', () => {
   })
 
   it('should fetch delegates from v1 api should store the same as v2 api', async () => {
-    const v1DelegateData = delegates.map(delegate => {
-      return {
-        username: delegate.username,
-        address: delegate.address,
-        publicKey: delegate.publicKey,
-        vote: delegate.voteWeight,
-        producedblocks: delegate.blocks.produced,
-        missedblocks: delegate.blocks.missed,
-        rate: delegate.rank,
-        approval: delegate.production.approval,
-        productivity: delegate.production.productivity
-      }
-    })
     const v2DelegateData = delegates.map(delegate => {
       return {
         username: delegate.username,
         address: delegate.address,
         publicKey: delegate.publicKey,
-        votes: delegate.voteWeight,
+        votes: delegate.votes,
         rank: delegate.rank,
         blocks: {
-          produced: delegate.blocks.produced,
-          missed: delegate.blocks.missed
+          produced: delegate.blocks.produced
         },
         production: {
-          approval: delegate.production.approval,
-          productivity: delegate.production.productivity
+          approval: delegate.production.approval
         },
         forged: {
           fees: delegate.forged.fees,
-          reward: delegate.forged.rewards,
+          rewards: delegate.forged.rewards,
           total: delegate.forged.total
         }
       }
     })
 
-    axiosMock
-      .onGet(`http://127.0.0.1/api/delegates`, { params: { offset: 0, limit: 51, orderBy: 'rank:asc' } })
-      .reply(200, {
-        totalCount: 2,
-        delegates: v1DelegateData
-      })
-
-    await store.dispatch('delegate/load')
-    const v1Delegates = store.getters['delegate/all']
-
-    clientService.version = 2
-
-    axiosMock
-      .onGet(`http://127.0.0.1/api/delegates`, { params: { page: 1, limit: 100, orderBy: 'rank:asc' } })
+    nock('http://127.0.0.1')
+      .get('/api/v2/delegates')
+      .query({ page: 1, limit: 100, orderBy: 'rank:asc' })
       .reply(200, {
         data: v2DelegateData,
         meta: {
@@ -112,8 +87,7 @@ describe('delegate store module', () => {
       })
 
     await store.dispatch('delegate/load')
-    const v2Delegates = store.getters['delegate/all']
 
-    expect(v1Delegates).toEqual(v2Delegates)
+    expect(Object.values(store.getters['delegate/all'][profile1.networkId])).toEqual(delegates)
   })
 })

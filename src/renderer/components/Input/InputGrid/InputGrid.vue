@@ -109,7 +109,13 @@ export default {
     },
 
     activeItem () {
-      return this.allItems.find(i => i.title === this.selectedItem.title)
+      return this.allItems.find(item => {
+        if (!this.selectedItem || this.selectedItem.onlyLetter) {
+          return item.onlyLetter
+        }
+
+        return this.selectedItem.pluginId ? item.name === this.selectedItem.name : item.title === this.selectedItem.title
+      })
     }
   },
 

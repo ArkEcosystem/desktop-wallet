@@ -269,7 +269,7 @@ export default {
      * @result {Boolean}
      */
     async checkNeoAddress (address) {
-      const wasChecked = this.neoCheckedAddressess.hasOwnProperty(address)
+      const wasChecked = Object.prototype.hasOwnProperty.call(this.neoCheckedAddressess, address)
       if (!wasChecked) {
         this.neoCheckedAddressess[address] = await WalletService.isNeoAddress(address)
       }
@@ -353,7 +353,7 @@ export default {
       this.$refs.dropdown.open()
     },
 
-    async updateInputValue (value) {
+    updateInputValue (value) {
       this.inputValue = value
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()

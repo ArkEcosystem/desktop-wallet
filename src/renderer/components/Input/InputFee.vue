@@ -138,7 +138,7 @@ export default {
       }
     },
     rangePercentage () {
-      const percent = (this.fee - this.feeChoiceMin) / (this.feeChoiceMax - this.feeChoiceMin) * 100
+      const percent = (this.currency_toBuilder(this.fee).subtract(this.feeChoiceMin)).value / (this.feeChoiceMax - this.feeChoiceMin) * 100
       return percent > 100 ? 100 : (percent < 0 ? 0 : percent)
     },
     notValidError () {
@@ -146,11 +146,12 @@ export default {
     },
     maxV1fee () {
       const defaultMaxV1Fee = V1.fees[this.transactionType]
-      return (this.$store.getters['transaction/staticFee'](this.transactionType) || defaultMaxV1Fee) * 1e-8
+      const staticFee = this.$store.getters['transaction/staticFee'](this.transactionType)
+      return staticFee || defaultMaxV1Fee
     },
     isStaticFee () {
-      if (this.feeChoices.MAXIMUM === this.feeChoices.AVERAGE) {
-        return +this.fee === this.feeChoices.AVERAGE
+      if (this.feeChoices.MAXIMUM.isEqualTo(this.feeChoices.AVERAGE)) {
+        return this.feeChoices.AVERAGE.isEqualTo(this.fee)
       }
       return false
     },
@@ -164,9 +165,6 @@ export default {
       if (!this.feeNetwork) {
         throw new Error('No active network to fetch fees')
       }
-      if (this.feeNetwork.apiVersion === 1) {
-        throw new Error('Fee statistics are supported only by v2 networks')
-      }
 
       const { feeStatistics } = this.feeNetwork
       const transactionStatistics = feeStatistics.find(feeConfig => feeConfig.type === this.transactionType)
@@ -175,30 +173,34 @@ export default {
       }
 
       return {
-        avgFee: this.maxV1fee * 1e8,
-        maxFee: this.maxV1fee * 1e8
+        avgFee: this.maxV1fee,
+        maxFee: this.maxV1fee
       }
+    },
+    lastFee () {
+      return this.$store.getters['session/lastFeeByType'](this.transactionType)
     },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
     },
     feeChoiceMax () {
-      return this.isAdvancedFee ? this.feeChoices.MAXIMUM * 10 : this.feeChoices.MAXIMUM
+      return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM
     },
     feeChoices () {
-      let { avgFee, maxFee } = this.feeStatistics
-      avgFee = avgFee * 1e-8
-      maxFee = maxFee * 1e-8
+      const { avgFee, maxFee } = this.feeStatistics
 
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
-      const average = avgFee < this.maxV1fee ? avgFee : this.maxV1fee
-      return {
-        MINIMUM: 1e-8,
+      const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
+
+      const fees = {
+        MINIMUM: this.currency_subToUnit(1),
         AVERAGE: average,
-        MAXIMUM: maxFee < this.maxV1fee ? maxFee : this.maxV1fee,
+        MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
         INPUT: average,
         ADVANCED: average
       }
+
+      return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM
@@ -218,8 +220,12 @@ export default {
         return null
       }
 
-      const funds = parseFloat(this.currency_subToUnit(this.currentWallet.balance))
-      if (funds < parseFloat(this.fee)) {
+      if (!this.currentWallet) {
+        return null
+      }
+
+      const funds = this.currency_subToUnit(this.currentWallet.balance)
+      if (funds.isLessThan(this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
@@ -229,7 +235,7 @@ export default {
       if (this.isAdvancedFee) {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
       }
-      if (this.fee < this.feeChoices.AVERAGE) {
+      if (this.feeChoices.AVERAGE.isGreaterThan(this.fee)) {
         return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
       return null
@@ -290,13 +296,7 @@ export default {
      * @param {(String|Number)} fee
      */
     setFee (fee) {
-      fee = fee.toString()
-
-      // Convert the fee to String to not use the exponential notation
-      const parts = fee.split('e-')
-      if (parts.length > 1) {
-        fee = parseFloat(fee).toFixed(parts[1])
-      }
+      fee = this.currency_toBuilder(fee).value.toString()
 
       this.fee = fee
       this.$v.fee.$touch()
@@ -308,7 +308,7 @@ export default {
      */
     emitFee (fee) {
       this.setFee(fee)
-      this.$emit('input', parseFloat(this.fee))
+      this.$emit('input', this.fee)
     }
   },
 
@@ -338,7 +338,7 @@ export default {
 }
 </style>
 
-<style scoped>
+<style lang="postcss" scoped>
 .InputFee {
   --margin-top: 2rem;
   --height: 3rem;

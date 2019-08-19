@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
-import { NetworkCustomPeer } from '@/components/Network'
+import { NetworkCustomPeerModal } from '@/components/Network'
 
 const i18n = useI18nGlobally()
 
@@ -16,9 +16,9 @@ const mocks = {
 
 Vue.use(Vuelidate)
 
-describe('NetworkCustomPeer', () => {
+describe('NetworkCustomPeerModal', () => {
   it('should render modal', () => {
-    const wrapper = shallowMount(NetworkCustomPeer, {
+    const wrapper = shallowMount(NetworkCustomPeerModal, {
       i18n,
       mocks
     })

@@ -135,9 +135,7 @@ export default {
 
   methods: {
     async onSignMessage () {
-      if (!this.form.walletPassword || !this.form.walletPassword.length) {
-        this.signMessage()
-      } else {
+      if (this.form.walletPassword && this.form.walletPassword.length) {
         this.showEncryptLoader = true
 
         const dataToDecrypt = {
@@ -151,13 +149,16 @@ export default {
           const { encodedWif } = await bip38.decrypt(dataToDecrypt)
           this.form.passphrase = null
           this.form.wif = encodedWif
-          this.signMessage()
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+        } finally {
+          bip38.quit()
         }
 
         this.showEncryptLoader = false
       }
+
+      this.signMessage()
     },
 
     signMessage () {

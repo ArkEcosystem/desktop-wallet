@@ -4,17 +4,43 @@
     @submit.prevent
   >
     <template v-if="!currentWallet.secondPublicKey">
-      <div class="mb-5">
-        {{ $t('TRANSACTION.FORM.SECOND_SIGNATURE.INSTRUCTIONS', { address: currentWallet.address }) }}
+      <ListDivided :is-floating-label="true">
+        <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+          {{ senderLabel }}
+          <span
+            v-if="senderLabel !== currentWallet.address"
+            class="text-sm text-theme-page-text-light"
+          >
+            {{ currentWallet.address }}
+          </span>
+        </ListDividedItem>
+      </ListDivided>
+
+      <div
+        v-if="!showPassphraseWords"
+        class="flex content-center"
+      >
+        <ButtonReload
+          :is-refreshing="isGenerating"
+          :text="$t('WALLET_SECOND_SIGNATURE.NEW')"
+          color-class="blue-button"
+          class="px-8 py-4 mx-auto mt-5"
+          @click="displayPassphraseWords"
+        />
       </div>
 
       <Collapse
         :is-open="!isPassphraseStep"
         :animation-duration="{ enter: 0, leave: 0 }"
       >
-        <PassphraseWords :passphrase-words="passphraseWords" />
+        <PassphraseWords
+          v-show="showPassphraseWords"
+          :passphrase-words="passphraseWords"
+        />
 
         <button
+          :disabled="isGenerating || !showPassphraseWords"
+          :class="{ 'hidden': !showPassphraseWords }"
           type="button"
           class="blue-button mt-5"
           @click="toggleStep"
@@ -35,7 +61,6 @@
         />
 
         <InputFee
-          v-if="walletNetwork.apiVersion === 2"
           ref="fee"
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
@@ -94,10 +119,10 @@
       />
 
       <Portal
-        v-if="!isPassphraseStep"
+        v-if="!isPassphraseStep && showPassphraseWords"
         to="transaction-footer"
       >
-        <footer class="ModalWindow__container__footer--warning flex flex-row">
+        <footer class="ModalWindow__container__footer--warning flex flex-row justify-between">
           <div class="flex w-80">
             {{ $t('WALLET_SECOND_SIGNATURE.INSTRUCTIONS') }}
           </div>
@@ -126,10 +151,11 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { TRANSACTION_TYPES } from '@config'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
 import { InputFee, InputPassword } from '@/components/Input'
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput, PassphraseVerification, PassphraseWords } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
@@ -147,6 +173,8 @@ export default {
     Collapse,
     InputFee,
     InputPassword,
+    ListDivided,
+    ListDividedItem,
     ModalLoader,
     PassphraseInput,
     PassphraseVerification,
@@ -166,7 +194,8 @@ export default {
       walletPassword: ''
     },
     showEncryptLoader: false,
-    showLedgerLoader: false
+    showLedgerLoader: false,
+    showPassphraseWords: false
   }),
 
   computed: {
@@ -186,6 +215,10 @@ export default {
       return this.wallet_fromRoute
     },
 
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
+    },
+
     walletNetwork () {
       return this.session_network
     }
@@ -202,17 +235,20 @@ export default {
   },
 
   mounted () {
-    // Set default fees with v1 compatibility
-    if (this.walletNetwork.apiVersion === 1) {
-      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
-    } else {
-      this.form.fee = this.$refs.fee.fee
-    }
+    this.form.fee = this.$refs.fee.fee
   },
 
   methods: {
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
+    },
+
+    displayPassphraseWords () {
+      this.isGenerating = true
+      setTimeout(() => {
+        this.isGenerating = false
+        this.showPassphraseWords = true
+      }, 300)
     },
 
     generateNewPassphrase () {
@@ -238,7 +274,8 @@ export default {
         passphrase: this.form.passphrase,
         secondPassphrase: this.secondPassphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
 
       let success = true
@@ -297,7 +334,8 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
+
+          return false
         }
       },
       passphrase: {

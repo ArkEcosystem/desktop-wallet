@@ -1,5 +1,4 @@
-import axios from 'axios'
-import AxiosMockAdapter from 'axios-mock-adapter'
+import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
@@ -9,8 +8,6 @@ import { profile1 } from '../../__fixtures__/store/profile'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
-
-const axiosMock = new AxiosMockAdapter(axios)
 
 describe('TransactionModule', () => {
   const transactions = [
@@ -42,9 +39,12 @@ describe('TransactionModule', () => {
   beforeEach(() => {
     transactions.forEach(transaction => store.commit('transaction/STORE', transaction))
     wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
-    ClientService.version = 1
     ClientService.host = `http://127.0.0.1:4003`
-    axiosMock.reset()
+    nock.cleanAll()
+    nock('http://127.0.0.1')
+      .persist()
+      .post('/api/v2/wallets/search')
+      .reply(200, { data: [] })
   })
 
   describe('getters byAddress', () => {
@@ -185,7 +185,7 @@ describe('TransactionModule', () => {
     it('should return a single fee', () => {
       store.commit('transaction/SET_STATIC_FEES', {
         networkId: network1.id,
-        staticFees: [ 1, 2, 3, 4, 5 ]
+        staticFees: [1, 2, 3, 4, 5]
       })
 
       expect(store.getters['transaction/staticFee'](0)).toEqual(1)
@@ -206,33 +206,9 @@ describe('TransactionModule', () => {
   })
 
   describe('dispatch updateStaticFees', () => {
-    it('should return update all fees on v1', async () => {
-      axiosMock
-        .onGet(`http://127.0.0.1:4003/api/blocks/getFees`)
-        .reply(200, {
-          fees: {
-            send: 1,
-            secondsignature: 2,
-            delegate: 3,
-            vote: 4,
-            multisignature: 5
-          }
-        })
-
-      await store.dispatch('transaction/updateStaticFees')
-
-      expect(store.getters['transaction/staticFee'](0)).toEqual(1)
-      expect(store.getters['transaction/staticFee'](1)).toEqual(2)
-      expect(store.getters['transaction/staticFee'](2)).toEqual(3)
-      expect(store.getters['transaction/staticFee'](3)).toEqual(4)
-      expect(store.getters['transaction/staticFee'](4)).toEqual(5)
-    })
-
     it('should return update all fees on v2', async () => {
-      ClientService.version = 2
-
-      axiosMock
-        .onGet(`http://127.0.0.1:4003/api/transactions/fees`)
+      nock('http://127.0.0.1:4003')
+        .get('/api/v2/transactions/fees')
         .reply(200, {
           data: {
             transfer: 1,

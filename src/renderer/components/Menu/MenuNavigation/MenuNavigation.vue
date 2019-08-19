@@ -10,7 +10,7 @@ export default {
 
   provide () {
     return {
-      switchToId: this.switchToId
+      switchToItem: this.switchToItem
     }
   },
 
@@ -33,8 +33,10 @@ export default {
   }),
 
   watch: {
-    id (val) {
-      this.switchToId(val)
+    id (value) {
+      if (this.activeId !== value) {
+        this.activateItem(value)
+      }
     }
   },
 
@@ -42,7 +44,7 @@ export default {
     this.collectItems()
 
     if (this.activeId) {
-      this.switchToId(this.activeId)
+      this.activateItem(this.activeId)
     }
   },
 
@@ -51,11 +53,14 @@ export default {
       this.items = this.collections_filterChildren('MenuNavigationItem') || []
     },
 
-    switchToId (id) {
-      this.items.forEach(item => item.toggle(item.id === id))
+    activateItem (itemId) {
+      this.items.forEach(item => item.toggle(item.id === itemId))
+      this.activeId = itemId
+    },
 
-      if (this.activeId !== id) {
-        this.activeId = id
+    switchToItem (itemId) {
+      if (this.activeId !== itemId) {
+        this.activateItem(itemId)
         this.$emit('input', this.activeId)
       }
     }

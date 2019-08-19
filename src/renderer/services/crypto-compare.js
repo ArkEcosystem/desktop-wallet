@@ -1,4 +1,4 @@
-import Http from '@/services/http'
+import got from 'got'
 import { MARKET } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
@@ -7,25 +7,21 @@ import { capitalize, keys, min, max } from 'lodash'
 import logger from 'electron-log'
 
 class CryptoCompare {
-  constructor () {
-    this.http = new Http()
-  }
-
   /**
    * Fetch market data from API.
    * @param {String} token
    * @return {(Object|null)} Return API response data or null on failure
    */
   async fetchMarketData (token) {
-    const params = {
+    const query = {
       fsyms: token,
       tsyms: keys(MARKET.currencies).join(',')
     }
 
     try {
-      const url = `${MARKET.source.baseUrl}/data/pricemultifull`
-      const response = await this.http.get(url, { params })
-      const data = response.data.RAW && response.data.RAW[token] ? response.data.RAW[token] : {}
+      const uri = `${MARKET.source.baseUrl}/data/pricemultifull`
+      const response = await got(uri, { query, json: true })
+      const data = response.body.RAW && response.body.RAW[token] ? response.body.RAW[token] : {}
 
       return this.__transformMarketResponse(data)
     } catch (error) {
@@ -105,15 +101,15 @@ class CryptoCompare {
    * @return {(Boolean|null)} Return true if the token is found
    */
   async checkTradeable (token) {
-    const params = {
+    const query = {
       fsym: token,
       tsyms: 'BTC'
     }
 
     try {
-      const url = `${MARKET.source.baseUrl}/data/price`
-      const response = await this.http.get(url, { params })
-      return !!response.data.BTC
+      const uri = `${MARKET.source.baseUrl}/data/price`
+      const response = await got(uri, { query, json: true })
+      return !!response.body.BTC
     } catch (error) {
       return null
     }
@@ -130,8 +126,8 @@ class CryptoCompare {
  */
   async __fetchHistoricalData (token, currency, limit, type = 'day', dateFormat = 'DD.MM') {
     const date = Math.round(new Date().getTime() / 1000)
-    const url = `${MARKET.source.baseUrl}/data/histo${type}`
-    const params = {
+    const uri = `${MARKET.source.baseUrl}/data/histo${type}`
+    const query = {
       fsym: token,
       tsym: currency,
       toTs: date,
@@ -139,8 +135,8 @@ class CryptoCompare {
     }
 
     try {
-      const response = await this.http.get(url, { params })
-      return this.__transformHistoricalResponse(response.data.Data, dateFormat)
+      const response = await got(uri, { query, json: true })
+      return this.__transformHistoricalResponse(response.body.Data, dateFormat)
     } catch (error) {
       logger.error(error)
       alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {

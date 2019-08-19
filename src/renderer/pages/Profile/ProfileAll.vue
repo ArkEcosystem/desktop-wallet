@@ -49,6 +49,7 @@
             </RouterLink>
 
             <button
+              v-if="profiles.length > 1"
               class="ProfileAll__grid__profile__delete font-semibold flex text-xs cursor-pointer text-theme-page-text-light hover:underline hover:text-red"
               @click="openRemovalConfirmation(profile)"
             >
@@ -124,7 +125,9 @@ export default {
       ]
 
       return mapValues(walletsByNetwork, wallets => {
-        return uniqBy(wallets, 'address').reduce((total, wallet) => total + wallet.balance, 0)
+        return uniqBy(wallets, 'address').reduce((total, wallet) => {
+          return this.currency_toBuilder(wallet.balance).add(total).value
+        }, 0)
       })
     },
     /**

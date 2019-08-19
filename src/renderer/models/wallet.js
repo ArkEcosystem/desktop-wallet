@@ -1,4 +1,5 @@
 import BaseModel from './base'
+import { toString } from 'lodash'
 
 export default new BaseModel({
   type: 'object',
@@ -10,9 +11,9 @@ export default new BaseModel({
       type: 'string'
     },
     balance: {
-      type: 'integer',
-      minimum: 0,
-      default: 0
+      type: 'string',
+      default: '0',
+      format: (data) => toString(data.balance)
     },
     transactions: {
       type: 'object',
@@ -29,6 +30,7 @@ export default new BaseModel({
     },
     name: {
       type: 'string',
+      default: '',
       minLength: 0,
       maxLength: 120
     },
@@ -58,5 +60,5 @@ export default new BaseModel({
       type: ['string', 'null']
     }
   },
-  required: ['address', 'name', 'profileId']
+  required: ['address', 'profileId']
 })

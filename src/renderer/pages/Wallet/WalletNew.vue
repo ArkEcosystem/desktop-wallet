@@ -75,37 +75,43 @@
               name="WalletNew__wallets--transition"
               tag="ul"
             >
-              <li
-                v-for="(passphrase, address) in wallets"
-                :key="address"
-                :class="[
-                  isSelected(address) ? 'WalletNew__wallets__address--selected' : 'WalletNew__wallets__address--unselected',
-                ]"
-                class="WalletNew__wallets__address py-4 w-full truncate cursor-pointer"
-                @click="selectWallet(address, passphrase)"
-              >
-                <div class="WalletNew__wallets__address__mask flex items-center">
-                  <div class="relative">
-                    <WalletIdenticon
-                      :value="address"
-                      :size="35"
-                      class="flex-no-shrink identicon"
-                    />
-                    <span
-                      v-if="isSelected(address)"
-                      class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-6 h-6 bg-green border-4 border-theme-feature text-white"
-                    >
-                      <SvgIcon
-                        name="checkmark"
-                        view-box="0 0 8 7"
+              <template v-for="(passphrase, address) in wallets">
+                <li
+                  :key="address"
+                  :class="[
+                    isSelected(address) ? 'WalletNew__wallets__address--selected' : 'WalletNew__wallets__address--unselected',
+                  ]"
+                  class="WalletNew__wallets__address py-4 w-full truncate cursor-pointer"
+                  @click="selectWallet(address, passphrase)"
+                >
+                  <div class="WalletNew__wallets__address__mask flex items-center">
+                    <div class="relative">
+                      <WalletIdenticon
+                        :value="address"
+                        :size="35"
+                        class="flex-no-shrink identicon"
                       />
+                      <span
+                        v-if="isSelected(address)"
+                        class="WalletNew_wallets__check absolute rounded-full flex items-center justify-center -mb-1 w-6 h-6 bg-green border-4 border-theme-feature text-white"
+                      >
+                        <SvgIcon
+                          name="checkmark"
+                          view-box="0 0 8 7"
+                        />
+                      </span>
+                    </div>
+                    <span class="WalletNew__wallets--address text-theme-page-text ml-2 flex-no-shrink font-semibold text-sm">
+                      {{ address }}
                     </span>
                   </div>
-                  <span class="WalletNew__wallets--address text-theme-page-text ml-2 flex-no-shrink font-semibold text-sm">
-                    {{ address }}
-                  </span>
-                </div>
-              </li>
+                </li>
+
+                <div
+                  :key="`separator-${address}`"
+                  class="WalletNew__wallets__address__separator"
+                />
+              </template>
             </TransitionGroup>
           </MenuStepItem>
 
@@ -539,8 +545,11 @@ export default {
   @apply opacity-100;
 }
 
-.WalletNew__wallets__address + .WalletNew__wallets__address {
-  @apply border-t border-dashed border-theme-line-separator
+.WalletNew__wallets__address__separator {
+  @apply block border-t border-dashed border-theme-line-separator
+}
+.WalletNew__wallets__address__separator:last-of-type {
+  @apply hidden
 }
 
 .WalletNew__ButtonReload-colorClass {

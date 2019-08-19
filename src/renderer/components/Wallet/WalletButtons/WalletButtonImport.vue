@@ -4,7 +4,11 @@
       :to="{ name: 'wallet-import' }"
       class="font-bold text-center"
     >
-      <span class="rounded-full bg-theme-button h-8 w-8 mb-3 mx-auto flex items-center justify-center">
+      <span
+        v-tooltip="hideText ? $t('PAGES.WALLET_ALL.IMPORT_WALLET') : ''"
+        :class="{ 'mb-3': !hideText }"
+        class="rounded-full bg-theme-button h-8 w-8 mx-auto flex items-center justify-center"
+      >
         <SvgIcon
           name="arrow-import"
           class="text-center"
@@ -12,7 +16,9 @@
         />
       </span>
 
-      {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
+      <span v-if="!hideText">
+        {{ $t('PAGES.WALLET_ALL.IMPORT_WALLET') }}
+      </span>
     </RouterLink>
   </div>
 </template>
@@ -25,6 +31,19 @@ export default {
 
   components: {
     SvgIcon
+  },
+
+  props: {
+    forceText: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    hideText () {
+      return !this.forceText && this.$store.getters['session/hideWalletButtonText']
+    }
   }
 }
 </script>

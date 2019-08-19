@@ -59,8 +59,12 @@ export default {
   }),
 
   methods: {
+    emitToggle () {
+      this.$emit('toggle', this.isOpen)
+    },
     toggle () {
       this.isOpen = !this.isOpen
+      this.emitToggle()
     }
   }
 }

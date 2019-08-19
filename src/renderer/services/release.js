@@ -1,6 +1,6 @@
+import got from 'got'
 // NOTE: uses a relative path because it is used on the `main` process too
 import packageJson from '../../../package.json'
-import Http from './http'
 
 export default {
   get currentVersion () {
@@ -24,8 +24,7 @@ export default {
    * @return {Object} the release data
    */
   async fetchLatestRelease (url) {
-    const httpClient = new Http()
-    const response = await httpClient.get(this.latestReleaseApiUrl)
-    return response.data
+    const response = await got(this.latestReleaseApiUrl, { json: true })
+    return response.body
   }
 }

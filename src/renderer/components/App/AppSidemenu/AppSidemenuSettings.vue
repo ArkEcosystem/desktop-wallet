@@ -1,128 +1,164 @@
 <template>
-  <div
-    v-click-outside.capture="emitClose"
-    :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
-    class="absolute z-20 theme-dark"
-  >
-    <MenuOptions
+  <div v-click-outside.capture="emitClose">
+    <MenuNavigationItem
+      id="settings"
+      :title="$t('APP_SIDEMENU.SETTINGS.TITLE')"
       :is-horizontal="isHorizontal"
-      :is-settings="true"
+      :can-activate="false"
+      class="AppSidemenu__item"
+      icon="settings"
+      @click="toggleShowSettings"
+    />
+
+    <div
+      v-if="isSettingsVisible"
+      :class="isHorizontal ? 'AppSidemenuOptionsSettings--horizontal' : 'AppSidemenuOptionsSettings'"
+      class="absolute z-20 theme-dark"
+      @close="closeShowSettings"
     >
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
-        @click="toggleSelect('currency-menu')"
+      <MenuOptions
+        :is-horizontal="isHorizontal"
+        :is-settings="true"
       >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.CURRENCY')"
+          @click="toggleSelect('currency-menu')"
         >
-          <MenuDropdown
-            ref="currency-menu"
-            :items="currencies"
-            :position="['-40%', '5%']"
-            :value="sessionCurrency"
-            @select="setCurrency"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <MenuDropdown
+              ref="currency-menu"
+              :items="currencies"
+              :position="['-40%', '5%']"
+              :value="sessionCurrency"
+              @select="setCurrency"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.DARK_MODE')"
-        @click="toggleSelect('dark-switch')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="pluginThemes
+            ? $t('APP_SIDEMENU.SETTINGS.THEME')
+            : $t('APP_SIDEMENU.SETTINGS.DARK_MODE')
+          "
+          @click="toggleSelect(pluginThemes ? 'theme-menu' : 'dark-switch')"
         >
-          <ButtonSwitch
-            ref="dark-switch"
-            :is-active="session_hasDarkTheme"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setTheme"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <MenuDropdown
+              v-if="pluginThemes"
+              ref="theme-menu"
+              :items="themes"
+              :position="['-40%', '5%']"
+              :value="sessionTheme"
+              @select="setTheme"
+            />
+            <ButtonSwitch
+              v-else
+              ref="dark-switch"
+              :is-active="session_hasDarkTheme"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setTheme"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        v-if="!isLinux"
-        :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION')"
-        @click="toggleSelect('protection-switch')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          v-if="!isLinux && isScreenshotProtectionEnabled"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.TITLE')"
+          @click="toggleScreenshotProtectionModal"
         >
-          <ButtonSwitch
-            ref="protection-switch"
-            :is-active="contentProtection"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setProtection"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <ButtonSwitch
+              ref="protection-switch"
+              :is-active="hasScreenshotProtection"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
-        @click="toggleSelect('ledger-background-switch')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.BACKGROUND_UPDATE_LEDGER')"
+          @click="toggleSelect('ledger-background-switch')"
         >
-          <ButtonSwitch
-            ref="ledger-background-switch"
-            :is-active="backgroundUpdateLedger"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setBackgroundUpdateLedger"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <ButtonSwitch
+              ref="ledger-background-switch"
+              :is-active="backgroundUpdateLedger"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setBackgroundUpdateLedger"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.BROADCAST_PEERS')"
-        @click="toggleSelect('broadcast-peers')"
-      >
-        <div
-          slot="controls"
-          class="pointer-events-none"
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.BROADCAST_PEERS')"
+          @click="toggleSelect('broadcast-peers')"
         >
-          <ButtonSwitch
-            ref="broadcast-peers"
-            :is-active="sessionBroadcastPeers"
-            class="theme-dark"
-            background-color="var(--theme-settings-switch)"
-            @change="setBroadcastPeers"
-          />
-        </div>
-      </MenuOptionsItem>
+          <div
+            slot="controls"
+            class="pointer-events-none"
+          >
+            <ButtonSwitch
+              ref="broadcast-peers"
+              :is-active="sessionBroadcastPeers"
+              class="theme-dark"
+              background-color="var(--theme-settings-switch)"
+              @change="setBroadcastPeers"
+            />
+          </div>
+        </MenuOptionsItem>
 
-      <MenuOptionsItem
-        :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
-        class="text-grey-light"
-        @click="toggleResetDataModal"
-      />
+        <MenuOptionsItem
+          :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.TITLE')"
+          class="text-grey-light"
+          @click="toggleResetDataModal"
+        />
 
-      <ModalConfirmation
-        v-if="isResetDataModalOpen"
-        :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
-        :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
-        container-classes="max-w-md"
-        @close="toggleResetDataModal"
-        @cancel="toggleResetDataModal"
-        @continue="onResetData"
-      />
-    </MenuOptions>
+        <ModalConfirmation
+          v-if="isScreenshotProtectionModalOpen"
+          :title="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.QUESTION')"
+          :note="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.NOTE')"
+          :cancel-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.SESSION_ONLY')"
+          :continue-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.PERMANENTLY')"
+          container-classes="max-w-md"
+          @close="toggleScreenshotProtectionModal"
+          @cancel="onToggleScreenshotProtection"
+          @continue="onToggleScreenshotProtection(true)"
+        />
+
+        <ModalConfirmation
+          v-if="isResetDataModalOpen"
+          :title="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.QUESTION')"
+          :note="$t('APP_SIDEMENU.SETTINGS.RESET_DATA.NOTE')"
+          container-classes="max-w-md"
+          @close="toggleResetDataModal"
+          @cancel="toggleResetDataModal"
+          @continue="onResetData"
+        />
+      </MenuOptions>
+    </div>
   </div>
 </template>
 
 <script>
 import { ModalConfirmation } from '@/components/Modal'
-import { MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
+import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import { clone } from 'lodash'
+import { isEmpty, isString } from 'lodash'
 const os = require('os')
 
 export default {
@@ -130,6 +166,7 @@ export default {
 
   components: {
     ModalConfirmation,
+    MenuNavigationItem,
     MenuOptions,
     MenuOptionsItem,
     MenuDropdown,
@@ -150,7 +187,10 @@ export default {
   },
 
   data: () => ({
-    isResetDataModalOpen: false
+    isResetDataModalOpen: false,
+    isScreenshotProtectionModalOpen: false,
+    isSettingsVisible: false,
+    saveOnProfile: false
   }),
 
   computed: {
@@ -164,9 +204,6 @@ export default {
     currencies () {
       return this.$store.getters['market/currencies']
     },
-    contentProtection () {
-      return this.$store.getters['session/contentProtection']
-    },
     backgroundUpdateLedger () {
       return this.$store.getters['session/backgroundUpdateLedger']
     },
@@ -176,9 +213,11 @@ export default {
       },
       set (currency) {
         this.$store.dispatch('session/setCurrency', currency)
-        const profile = clone(this.session_profile)
-        profile.currency = currency
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          currency
+        })
       }
     },
     sessionBroadcastPeers: {
@@ -187,9 +226,11 @@ export default {
       },
       set (broadcast) {
         this.$store.dispatch('session/setBroadcastPeers', broadcast)
-        const profile = clone(this.session_profile)
-        profile.broadcastPeers = broadcast
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          broadcastPeers: broadcast
+        })
       }
     },
     sessionTheme: {
@@ -198,18 +239,30 @@ export default {
       },
       set (theme) {
         this.$store.dispatch('session/setTheme', theme)
-        const profile = clone(this.session_profile)
-        profile.theme = theme
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          theme
+        })
       }
     },
-    sessionProtection: {
+    hasScreenshotProtection: {
       get () {
-        return this.$store.getters['session/contentProtection']
+        return this.$store.getters['session/screenshotProtection']
       },
       set (protection) {
-        this.$store.dispatch('session/setContentProtection', protection)
+        this.$store.dispatch('session/setScreenshotProtection', protection)
+
+        if (!this.screenshotProtection || this.saveOnProfile) {
+          this.$store.dispatch('profile/update', {
+            ...this.session_profile,
+            screenshotProtection: protection
+          })
+        }
       }
+    },
+    isScreenshotProtectionEnabled () {
+      return this.$store.getters['app/isScreenshotProtectionEnabled']
     },
     sessionBackgroundUpdateLedger: {
       get () {
@@ -217,24 +270,42 @@ export default {
       },
       set (update) {
         this.$store.dispatch('session/setBackgroundUpdateLedger', update)
-        const profile = clone(this.session_profile)
-        profile.backgroundUpdateLedger = update
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          backgroundUpdateLedger: update
+        })
       }
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
   methods: {
+    toggleShowSettings () {
+      this.isSettingsVisible = !this.isSettingsVisible
+    },
+
+    showSettings () {
+      this.isSettingsVisible = true
+    },
+
+    closeShowSettings () {
+      this.isSettingsVisible = false
+    },
+
     setCurrency (newCurrency) {
       this.sessionCurrency = newCurrency
     },
 
-    setTheme (newTheme) {
-      this.sessionTheme = newTheme ? 'dark' : 'light'
-    },
-
-    setProtection (protection) {
-      this.sessionProtection = protection
+    setTheme (theme) {
+      this.sessionTheme = isString(theme) ? theme : (theme ? 'dark' : 'light')
     },
 
     setBackgroundUpdateLedger (update) {
@@ -249,6 +320,14 @@ export default {
       this.$refs[name].toggle()
     },
 
+    toggleScreenshotProtectionModal () {
+      if (this.hasScreenshotProtection || this.isScreenshotProtectionModalOpen) {
+        this.isScreenshotProtectionModalOpen = !this.isScreenshotProtectionModalOpen
+      } else {
+        this.hasScreenshotProtection = true
+      }
+    },
+
     toggleResetDataModal () {
       this.isResetDataModalOpen = !this.isResetDataModalOpen
     },
@@ -258,14 +337,15 @@ export default {
       this.electron_reload()
     },
 
-    goToNetworkOverview () {
-      this.$emit('close')
-      this.$router.push({ name: 'networks' })
+    onToggleScreenshotProtection (saveOnProfile = false) {
+      this.saveOnProfile = saveOnProfile
+      this.hasScreenshotProtection = false
+      this.toggleScreenshotProtectionModal()
     },
 
     emitClose () {
-      if (this.outsideClick) {
-        this.$emit('close')
+      if (this.outsideClick && !(this.isResetDataModalOpen || this.isScreenshotProtectionModalOpen)) {
+        this.closeShowSettings()
       }
     }
   }
@@ -281,7 +361,7 @@ export default {
 }
 
 .AppSidemenuOptionsSettings .MenuOptions--vertical:after {
-  top: 7.8rem;
+  top: 10.8rem;
 }
 
 .AppSidemenuOptionsSettings--horizontal {

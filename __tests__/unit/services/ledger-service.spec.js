@@ -19,11 +19,14 @@ describe('LedgerService', () => {
   })
 
   it('should return false for isConnected', async () => {
+    const getAddress = ledgerService.ledger.getAddress
     ledgerService.ledger.getAddress = jest.fn(() => {
       throw new Error('Could not connect')
     })
 
     expect(await ledgerService.isConnected()).toBe(false)
+
+    ledgerService.ledger.getAddress = getAddress
   })
 
   it('should disconnect', async () => {

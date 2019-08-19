@@ -69,45 +69,11 @@
             {{ data.row.isSender ? '-' : '+' }}
             {{ data.formattedRow['amount'] }}
           </span>
-          <span
-            v-if="!isWellConfirmed(data.row.confirmations)"
-            v-tooltip="{
-              content: $t('TRANSACTION.CONFIRMATION_COUNT', { confirmations: data.row.confirmations }),
-              classes: 'text-xs',
-              trigger: 'hover',
-              container: '.TransactionTable'
-            }"
-            :class="{
-              'text-theme-transaction-confirmations-sent bg-theme-transaction-sent': data.row.isSender,
-              'text-theme-transaction-confirmations-received bg-theme-transaction-received': !data.row.isSender
-            }"
-            class="Transaction__confirmations rounded-full h-6 w-6 flex items-center justify-center"
-          >
-            <SvgIcon
-              name="time"
-              view-box="0 0 12 13"
-            />
-          </span>
-          <span
-            v-else
-            v-tooltip="{
-              content: $t('TRANSACTION.WELL_CONFIRMED_COUNT', { confirmations: data.row.confirmations }),
-              classes: 'text-xs',
-              trigger: 'hover',
-              container: '.TransactionTable'
-            }"
-            :class="{
-              'text-theme-transaction-sent-arrow bg-theme-transaction-sent': data.row.isSender,
-              'text-theme-transaction-received-arrow bg-theme-transaction-received': !data.row.isSender
-            }"
-            class="rounded-full h-6 w-6 flex items-center justify-center"
-          >
-            <SvgIcon
-              :name="data.row.isSender ? 'arrow-sent' : 'arrow-received'"
-              class="text-center"
-              view-box="0 0 8 8"
-            />
-          </span>
+          <TransactionStatusIcon
+            v-bind="data.row"
+            :show-tooltip="true"
+            tooltip-container=".TransactionTable"
+          />
         </div>
 
         <div
@@ -134,7 +100,10 @@
           />
         </div>
 
-        <span v-else>
+        <span
+          v-else
+          :class="{ 'word-break-all': data.column.field === 'vendorField' }"
+        >
           {{ data.formattedRow[data.column.field] }}
         </span>
       </template>
@@ -153,10 +122,10 @@
 </template>
 
 <script>
-import { at } from 'lodash'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionShow from './TransactionShow'
+import TransactionStatusIcon from './TransactionStatusIcon'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
 
@@ -167,6 +136,7 @@ export default {
     SvgIcon,
     TableWrapper,
     TransactionShow,
+    TransactionStatusIcon,
     WalletAddress
   },
 
@@ -236,9 +206,6 @@ export default {
           thClass: 'text-right'
         }
       ]
-    },
-    numberOfActiveDelegates () {
-      return at(this, 'session_network.constants.activeDelegates') || 51
     }
   },
 
@@ -278,10 +245,6 @@ export default {
       return classes.join(' ')
     },
 
-    isWellConfirmed (confirmations) {
-      return confirmations >= this.numberOfActiveDelegates
-    },
-
     openTransactions (id) {
       this.network_openExplorer('transaction', id)
     },
@@ -304,7 +267,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss">
 .TransactionTable tr.unconfirmed {
   @apply opacity-50 text-theme-page-text;
 }

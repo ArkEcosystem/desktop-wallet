@@ -4,9 +4,17 @@
     @submit.prevent
   >
     <template v-if="!currentWallet.isDelegate">
-      <div class="mb-5">
-        {{ $t('TRANSACTION.FORM.DELEGATE_REGISTRATION.INSTRUCTIONS', { address: currentWallet.address }) }}
-      </div>
+      <ListDivided :is-floating-label="true">
+        <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+          {{ senderLabel }}
+          <span
+            v-if="senderLabel !== currentWallet.address"
+            class="text-sm text-theme-page-text-light"
+          >
+            {{ currentWallet.address }}
+          </span>
+        </ListDividedItem>
+      </ListDivided>
 
       <InputText
         v-model="$v.form.username.$model"
@@ -18,7 +26,6 @@
       />
 
       <InputFee
-        v-if="walletNetwork.apiVersion === 2"
         ref="fee"
         :currency="walletNetwork.token"
         :transaction-type="$options.transactionType"
@@ -89,8 +96,9 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { TRANSACTION_TYPES } from '@config'
 import { InputFee, InputPassword, InputText } from '@/components/Input'
+import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import TransactionService from '@/services/transaction'
@@ -106,6 +114,8 @@ export default {
     InputFee,
     InputPassword,
     InputText,
+    ListDivided,
+    ListDividedItem,
     ModalLoader,
     PassphraseInput
   },
@@ -129,18 +139,17 @@ export default {
       return this.wallet_fromRoute
     },
 
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
+    },
+
     walletNetwork () {
       return this.session_network
     }
   },
 
   mounted () {
-    // Set default fees with v1 compatibility
-    if (this.walletNetwork.apiVersion === 1) {
-      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
-    } else {
-      this.form.fee = this.$refs.fee.fee
-    }
+    this.form.fee = this.$refs.fee.fee
   },
 
   methods: {
@@ -158,7 +167,8 @@ export default {
         username: this.form.username,
         passphrase: this.form.passphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
@@ -199,30 +209,33 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
+
+          return false
         }
       },
       username: {
-        required,
         isValid (value) {
           const validation = WalletService.validateUsername(value)
-          if (validation && validation.passes) {
+
+          if (validation.passes) {
             this.error = null
-            return validation.passes
-          }
-
-          if (validation.errors && validation.errors.length) {
-            const { type } = validation.errors[0]
-            if (type === 'string.max') {
-              this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
-            } else {
-              this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
-            }
           } else {
-            this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+            switch (validation.errors[0].type) {
+              case 'empty':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_EMPTY_ERROR')
+                break
+              case 'maxLength':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
+                break
+              case 'exists':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
+                break
+              default:
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+            }
           }
 
-          return false
+          return validation.passes
         }
       },
       passphrase: {

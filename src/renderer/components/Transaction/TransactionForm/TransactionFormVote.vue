@@ -5,6 +5,18 @@
     <Collapse
       :is-open="!isPassphraseStep"
     >
+      <ListDivided :is-floating-label="true">
+        <ListDividedItem :label="$t('TRANSACTION.SENDER')">
+          {{ senderLabel }}
+          <span
+            v-if="senderLabel !== currentWallet.address"
+            class="text-sm text-theme-page-text-light"
+          >
+            {{ currentWallet.address }}
+          </span>
+        </ListDividedItem>
+      </ListDivided>
+
       <ListDivided>
         <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
           <WalletAddress
@@ -12,10 +24,6 @@
             @click="emitCancel"
           />
         </ListDividedItem>
-        <ListDividedItem
-          :label="$t('WALLET_DELEGATES.PRODUCTIVITY')"
-          :value="formatter_percentage(delegate.production.productivity)"
-        />
         <ListDividedItem
           :label="$t('WALLET_DELEGATES.RANK')"
           :value="delegate.rank"
@@ -75,7 +83,6 @@
     >
       <div class="mt-12">
         <InputFee
-          v-if="walletNetwork.apiVersion === 2"
           ref="fee"
           :currency="walletNetwork.token"
           :transaction-type="$options.transactionType"
@@ -140,7 +147,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { TRANSACTION_TYPES, V1 } from '@config'
+import { TRANSACTION_TYPES } from '@config'
 import { Collapse } from '@/components/Collapse'
 import { InputFee, InputPassword } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -193,7 +200,7 @@ export default {
       walletPassword: ''
     },
     forged: 0,
-    voters: 0,
+    voters: '0',
     showEncryptLoader: false,
     showLedgerLoader: false
   }),
@@ -204,12 +211,11 @@ export default {
     },
 
     blocksProduced () {
-      const { produced, missed } = this.delegate.blocks
+      return this.delegate.blocks.produced || '0'
+    },
 
-      if (missed > 0) {
-        return `${produced} (${missed} ${this.$t('WALLET_DELEGATES.MISSED')})`
-      }
-      return produced || '0'
+    senderLabel () {
+      return this.wallet_formatAddress(this.currentWallet.address)
     },
 
     showVoteUnvoteButton () {
@@ -249,12 +255,7 @@ export default {
     this.fetchForged()
     this.fetchVoters()
 
-    // Set default fees with v1 compatibility
-    if (this.walletNetwork.apiVersion === 1) {
-      this.form.fee = V1.fees[this.$options.transactionType] / 1e8
-    } else {
-      this.form.fee = this.$refs.fee.fee
-    }
+    this.form.fee = this.$refs.fee.fee
   },
 
   methods: {
@@ -291,7 +292,8 @@ export default {
         passphrase: this.form.passphrase,
         votes,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
       }
 
       if (this.currentWallet.secondPublicKey) {
@@ -350,7 +352,8 @@ export default {
           if (this.$refs.fee) {
             return !this.$refs.fee.$v.$invalid
           }
-          return this.walletNetwork.apiVersion === 1 // Return true if it's v1, since it has a static fee
+
+          return false
         }
       },
       passphrase: {

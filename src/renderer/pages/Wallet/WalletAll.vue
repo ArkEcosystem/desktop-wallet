@@ -45,24 +45,16 @@
       </div>
 
       <div class="flex flex-row items-center">
-        <div
-          v-show="isLedgerConnected"
-          v-tooltip="$t('PAGES.WALLET_ALL.LEDGER.CACHE_INFO')"
-          class="WalletAll__ledger__cache flex flex-col items-center px-6"
-        >
-          <span>
-            {{ $t('PAGES.WALLET_ALL.LEDGER.CACHE') }}
-          </span>
-          <ButtonSwitch
-            ref="cache-ledger-switch"
-            :is-active="sessionLedgerCache"
-            class="mt-3"
-            @change="setLedgerCache"
-          />
-        </div>
-        <WalletButtonAdditionalLedgers class="pl-6 pr-6" />
+        <WalletButtonLedgerSettings class="pl-6 pr-6" />
         <WalletButtonCreate class="pl-6 pr-6" />
-        <WalletButtonImport class="pl-6" />
+        <WalletButtonImport
+          :class="{ 'pr-6': hasWallets }"
+          class="pl-6"
+        />
+        <WalletButtonExport
+          v-if="hasWallets"
+          class="pl-6"
+        />
       </div>
     </div>
 
@@ -74,7 +66,7 @@
             <span
               v-if="isLedgerLoading"
               v-tooltip="{
-                content: $t('PAGES.WALLET_ALL.LOADING_LEDGER'),
+                content: $t('WALLET_GRID.LOADING_LEDGER'),
                 placement: 'right'
               }"
               class="inline-flex items-center self-stretch ml-3 pr-2"
@@ -102,106 +94,14 @@
           </div>
         </div>
 
-        <div
+        <WalletGrid
           v-if="hasWalletGridLayout && !isLoading"
-          class="WalletAll__grid mt-10"
-        >
-          <button
-            v-if="isLedgerLoading"
-            :disabled="true"
-            class="WalletAll__grid__wallet"
-          >
-            <Loader />
-            <div class="text-center mt-4">
-              {{ $t('PAGES.WALLET_ALL.LOADING_LEDGER') }}
-            </div>
-          </button>
-
-          <button
-            v-for="wallet in selectableWallets"
-            :key="wallet.id"
-            class="WalletAll__grid__wallet group"
-            @click="showWallet(wallet.id)"
-          >
-            <div class="WalletAll__grid__wallet__wrapper">
-              <div class="WalletAll__grid__wallet__wrapper__mask">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <WalletIdenticon
-                      :value="wallet.address"
-                      :size="60"
-                      class="identicon cursor-pointer"
-                    />
-
-                    <div
-                      class="flex flex-col justify-center overflow-hidden pl-4"
-                    >
-                      <div class="flex items-center">
-                        <span
-                          v-tooltip="{
-                            content: !wallet.name && wallet_name(wallet.address) ? $t('COMMON.NETWORK_NAME') : '',
-                            placement: 'right'
-                          }"
-                          class="WalletAll__grid__wallet__name font-semibold text-base truncate block pr-1 cursor-default"
-                          @click.stop
-                        >
-                          {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
-                        </span>
-                        <span
-                          v-if="wallet.isLedger"
-                          class="ledger-badge"
-                        >
-                          {{ $t('COMMON.LEDGER') }}
-                        </span>
-                      </div>
-                      <span
-                        class="font-bold mt-2 text-lg cursor-default text-theme-page-text text-left whitespace-no-wrap"
-                        @click.stop
-                      >
-                        {{ formatter_networkCurrency(wallet.balance, 2) }}
-                      </span>
-                    </div>
-                  </div>
-
-                  <MenuDropdown
-                    :items="getContextMenuOptions(wallet)"
-                    :is-highlighting="false"
-                    :position="['-100%', '-20%']"
-                    :container-classes="'hidden group-hover:block'"
-                    @select="onSelectDropdown(wallet, $event)"
-                  >
-                    <span
-                      slot="handler"
-                      class="WalletAll__grid__wallet__select p-2 text-theme-page-text-light hover:text-theme-page-text opacity-75"
-                    >
-                      <SvgIcon
-                        name="more"
-                        view-box="0 0 5 15"
-                        class="text-inherit"
-                      />
-                    </span>
-
-                    <template
-                      slot="item"
-                      slot-scope="itemScope"
-                    >
-                      <div class="flex items-center hidden">
-                        <SvgIcon
-                          :name="itemScope.item.icon"
-                          view-box="0 0 16 16"
-                          class="text-inherit flex-none mr-2"
-                        />
-                        <span class="font-semibold">
-                          {{ itemScope.item.value }}
-                        </span>
-                      </div>
-                    </template>
-                  </MenuDropdown>
-                </div>
-              </div>
-            </div>
-          </button>
-        </div>
+          :is-ledger-loading="isLedgerLoading"
+          :wallets="selectableWallets"
+          @show="showWallet"
+          @rename="openRenameModal"
+          @remove="openRemovalConfirmation"
+        />
 
         <div
           v-else-if="!hasWalletGridLayout && !isLoading"
@@ -240,33 +140,31 @@
 </template>
 
 <script>
-import { clone, some, uniqBy } from 'lodash'
-import { ButtonLayout, ButtonSwitch } from '@/components/Button'
+import { some, uniqBy } from 'lodash'
+import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-import { WalletButtonAdditionalLedgers, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet/WalletButtons'
-import { WalletIdenticon, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
+import { WalletButtonCreate, WalletButtonExport, WalletButtonImport, WalletButtonLedgerSettings } from '@/components/Wallet/WalletButtons'
+import { WalletGrid, WalletRemovalConfirmation, WalletRenameModal } from '@/components/Wallet'
 import WalletTable from '@/components/Wallet/WalletTable'
-import { MenuDropdown } from '@/components/Menu'
 
 export default {
   name: 'WalletAll',
 
   components: {
     ButtonLayout,
-    ButtonSwitch,
     Loader,
     ProfileAvatar,
     SvgIcon,
-    WalletButtonAdditionalLedgers,
     WalletButtonCreate,
+    WalletButtonExport,
     WalletButtonImport,
-    WalletIdenticon,
+    WalletButtonLedgerSettings,
+    WalletGrid,
     WalletRemovalConfirmation,
     WalletRenameModal,
-    WalletTable,
-    MenuDropdown
+    WalletTable
   },
 
   data: () => ({
@@ -298,6 +196,10 @@ export default {
       return this.session_network
     },
 
+    hideText () {
+      return this.$store.getters['session/hideWalletButtonText']
+    },
+
     totalBalance () {
       return this.$store.getters['profile/balanceWithLedger'](this.session_profile.id)
     },
@@ -311,8 +213,12 @@ export default {
       return this.wallet_sortByName(wallets)
     },
 
+    hasWallets () {
+      return this.selectableWallets.length
+    },
+
     isLedgerLoading () {
-      return this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length
+      return !!(this.$store.getters['ledger/isLoading'] && !this.$store.getters['ledger/wallets'].length)
     },
 
     isLedgerConnected () {
@@ -323,32 +229,17 @@ export default {
       return this.$store.getters['session/hasWalletGridLayout']
     },
 
-    sessionLedgerCache: {
-      get () {
-        return this.$store.getters['session/ledgerCache']
-      },
-      set (enabled) {
-        this.$store.dispatch('session/setLedgerCache', enabled)
-        const profile = clone(this.session_profile)
-        profile.ledgerCache = enabled
-        this.$store.dispatch('profile/update', profile)
-        if (enabled) {
-          this.$store.dispatch('ledger/cacheWallets')
-        } else {
-          this.$store.dispatch('ledger/clearWalletCache')
-        }
-      }
-    },
-
     walletLayout: {
       get () {
         return this.$store.getters['session/walletLayout']
       },
       set (layout) {
         this.$store.dispatch('session/setWalletLayout', layout)
-        const profile = clone(this.session_profile)
-        profile.walletLayout = layout
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          walletLayout: layout
+        })
       }
     },
 
@@ -356,16 +247,18 @@ export default {
       get () {
         return this.$store.getters['session/walletSortParams']
       },
-      set (params) {
-        this.$store.dispatch('session/setWalletSortParams', params)
-        const profile = clone(this.session_profile)
-        profile.walletSortParams = params
-        this.$store.dispatch('profile/update', profile)
+      set (sortParams) {
+        this.$store.dispatch('session/setWalletSortParams', sortParams)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          walletSortParams: sortParams
+        })
       }
     },
 
     showVotedDelegates () {
-      return some(this.selectableWallets, wallet => wallet.hasOwnProperty('vote'))
+      return some(this.selectableWallets, wallet => Object.prototype.hasOwnProperty.call(wallet, 'vote'))
     }
   },
 
@@ -446,10 +339,6 @@ export default {
       this.walletLayout = this.walletLayout === 'grid' ? 'tabular' : 'grid'
     },
 
-    setLedgerCache (enabled) {
-      this.sessionLedgerCache = enabled
-    },
-
     onRemoveWallet (wallet) {
       this.openRemovalConfirmation(wallet)
     },
@@ -469,32 +358,6 @@ export default {
 
     showWallet (walletId) {
       this.$router.push({ name: 'wallet-show', params: { address: walletId } })
-    },
-
-    getContextMenuOptions (wallet) {
-      const options = {
-        rename: {
-          value: this.$t('WALLET_TABLE.RENAME'),
-          icon: 'edit'
-        }
-      }
-
-      if (!wallet.isLedger) {
-        options['delete'] = {
-          value: this.$t('WALLET_TABLE.DELETE'),
-          icon: 'delete-wallet'
-        }
-      }
-
-      return options
-    },
-
-    onSelectDropdown (wallet, item) {
-      if (item === 'delete') {
-        this.openRemovalConfirmation(wallet)
-      } else if (item === 'rename') {
-        this.openRenameModal(wallet)
-      }
     }
   }
 }
@@ -528,62 +391,5 @@ export default {
 }
 .WalletAll__header {
   @apply .flex .items-center .justify-between .h-8;
-}
-.WalletAll__grid {
-  display: grid;
-  grid-template-rows: 1fr;
-}
-.WalletAll__grid__wallet {
-  @apply py-3 relative cursor-pointer bg-theme-feature;
-  transition-property: transform, border, box-shadow;
-  transition-duration: .2s;
-  transition-timing-function: ease;
-}
-.WalletAll__grid__wallet:hover {
-  @apply rounded-lg z-10;
-  transform: scale(1.02);
-  box-shadow: var(--theme-wallet-grid-shadow);
-}
-.WalletAll__grid__wallet:not(:hover)::after {
-  @apply block absolute pin-x pin-b mx-auto border-b border-theme-wallet-overview-border;
-  content: " ";
-  width: 95%;
-}
-.WalletAll__grid__wallet__wrapper {
-  @apply px-5 py-2 border-l border-theme-wallet-overview-border;
-}
-.WalletAll__grid__wallet:hover .WalletAll__grid__wallet__wrapper {
-  @apply border-transparent
-}
-.WalletAll__grid__wallet:hover .identicon {
-  opacity: 1;
-}
-.WalletAll__grid__wallet__name {
-  color: #037cff;
-}
-.WalletAll__grid__wallet .identicon {
-  opacity: 0.5;
-  transition: 0.5s;
-}
-@screen max-md {
-  .WalletAll__grid__wallet__wrapper {
-    @apply border-transparent
-  }
-}
-@screen minmax-lg {
-  .WalletAll__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .WalletAll__grid__wallet:nth-child(2n+1) > .WalletAll__grid__wallet__wrapper {
-    @apply border-transparent
-  }
-}
-@screen xl {
-  .WalletAll__grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .WalletAll__grid__wallet:nth-child(3n+1) > .WalletAll__grid__wallet__wrapper {
-    @apply border-transparent
-  }
 }
 </style>

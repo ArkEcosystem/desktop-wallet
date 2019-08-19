@@ -9,7 +9,10 @@
     >
       <div class="select-none">
         <slot name="title">
-          <span :class="hasControls ? 'text-theme-settings-control-title' : ''">
+          <span
+            v-tooltip="tooltip"
+            :class="hasControls ? 'text-theme-settings-control-title' : ''"
+          >
             {{ title }}
           </span>
         </slot>
@@ -30,6 +33,11 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    tooltip: {
+      type: [String, Object],
+      required: false,
+      default: () => {}
     }
   },
 

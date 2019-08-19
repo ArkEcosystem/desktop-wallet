@@ -179,14 +179,11 @@
                 class="ProfileEdition__avatar"
               >
                 <SelectionAvatar
-                  :extra-items="[{
-                    title: $t('PAGES.PROFILE_NEW.STEP1.NO_AVATAR'),
-                    textContent: name,
-                    onlyLetter: true
-                  }]"
                   :enable-modal="true"
+                  :letter-value="name"
                   :max-visible-items="3"
                   :selected="avatar"
+                  :profile="profile"
                   @select="selectAvatar"
                 />
               </ListDividedItem>
@@ -194,7 +191,7 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
-                :disabled="!isModified || isNameEditable"
+                :disabled="!isModified || nameError"
                 class="blue-button"
                 @click="save"
               >
@@ -209,6 +206,16 @@
             class="p-5"
           >
             <ListDivided>
+              <ListDividedItem
+                :label="$t('COMMON.HIDE_WALLET_BUTTON_TEXT')"
+                class="ProfileEdition__wallet-button-text"
+              >
+                <ButtonSwitch
+                  :is-active="hideWalletButtonText"
+                  @change="selectHideWalletButtonText"
+                />
+              </ListDividedItem>
+
               <ListDividedItem
                 :label="$t('COMMON.IS_MARKET_CHART_ENABLED')"
                 :item-label-class="!isMarketEnabled ? 'opacity-50' : ''"
@@ -226,7 +233,18 @@
                 :label="$t('COMMON.THEME')"
                 class="ProfileEdition__theme"
               >
+                <MenuDropdown
+                  v-if="pluginThemes"
+                  :class="{
+                    'ProfileEdition__field--modified': modified.theme && modified.theme !== profile.theme
+                  }"
+                  :items="themes"
+                  :value="theme"
+                  :position="['-50%', '0%']"
+                  @select="selectTheme"
+                />
                 <SelectionTheme
+                  v-else
                   :value="theme"
                   @input="selectTheme"
                 />
@@ -246,7 +264,7 @@
 
             <footer class="ProfileEdition__footer pb-10">
               <button
-                :disabled="!isModified || isNameEditable"
+                :disabled="!isModified || nameError"
                 class="blue-button"
                 @click="save"
               >
@@ -269,7 +287,7 @@
 </template>
 
 <script>
-import { isEmpty } from 'lodash'
+import { clone, isEmpty } from 'lodash'
 import { BIP39, I18N } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'
@@ -310,7 +328,8 @@ export default {
       language: '',
       bip39Language: '',
       currency: '',
-      timeFormat: ''
+      timeFormat: '',
+      marketChartOptions: {}
     },
     routeLeaveCallback: null,
     tab: 'profile'
@@ -353,9 +372,14 @@ export default {
 
     isModified () {
       return Object.keys(this.modified).some(property => {
-        if (property === 'avatar' || this.modified.hasOwnProperty(property)) {
+        if (property === 'marketChartOptions') {
+          return this.modified.marketChartOptions.isEnabled !== this.profile.marketChartOptions.isEnabled
+        }
+
+        if (property === 'avatar' || Object.prototype.hasOwnProperty.call(this.modified, property)) {
           return this.modified[property] !== this.profile[property]
         }
+
         return false
       })
     },
@@ -397,8 +421,11 @@ export default {
     theme () {
       return this.modified.theme || this.profile.theme
     },
+    hideWalletButtonText () {
+      return this.modified.hideWalletButtonText || this.profile.hideWalletButtonText
+    },
     isMarketChartEnabled () {
-      return this.modified.isMarketChartEnabled || this.profile.isMarketChartEnabled
+      return this.modified.marketChartOptions.isEnabled || this.profile.marketChartOptions.isEnabled
     },
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
@@ -422,6 +449,14 @@ export default {
       }
 
       return null
+    },
+    pluginThemes () {
+      return isEmpty(this.$store.getters['plugin/themes'])
+        ? null
+        : this.$store.getters['plugin/themes']
+    },
+    themes () {
+      return ['light', 'dark', ...Object.keys(this.pluginThemes)]
     }
   },
 
@@ -447,6 +482,7 @@ export default {
     this.modified.bip39Language = this.profile.bip39Language
     this.modified.currency = this.profile.currency
     this.modified.timeFormat = this.profile.timeFormat || 'Default'
+    this.modified.marketChartOptions = this.profile.marketChartOptions
   },
 
   methods: {
@@ -478,20 +514,47 @@ export default {
     },
 
     async updateProfile () {
+      const hasNameError = this.nameError
+      if (hasNameError) {
+        this.modified.name = this.profile.name
+      }
       await this.$store.dispatch('profile/update', {
         ...this.profile,
         ...this.modified
       })
+
+      if (hasNameError) {
+        this.$error(this.$t('COMMON.FAILED_UPDATE', {
+          name: this.$t('COMMON.PROFILE_NAME'),
+          reason: this.$t('PAGES.PROFILE_EDITION.ERROR.DUPLICATE_PROFILE')
+        }))
+      }
     },
 
     async save () {
+      this.toggleIsNameEditable()
       await this.updateProfile()
 
       this.$router.push({ name: 'profiles' })
     },
 
     selectAvatar (avatar) {
-      this.__updateSession('avatar', avatar)
+      let newAvatar
+
+      if (typeof avatar === 'string') {
+        newAvatar = avatar
+      } else if (avatar.onlyLetter) {
+        newAvatar = null
+      } else if (avatar.name) {
+        newAvatar = {
+          avatarName: avatar.name,
+          pluginId: avatar.pluginId
+        }
+      } else {
+        throw new Error(`Invalid value for avatar: ${avatar}`)
+      }
+
+      this.__updateSession('avatar', newAvatar)
     },
 
     async selectBackground (background) {
@@ -522,8 +585,15 @@ export default {
       this.__updateSession('theme', theme)
     },
 
+    async selectHideWalletButtonText (hideWalletButtonText) {
+      this.__updateSession('hideWalletButtonText', hideWalletButtonText)
+    },
+
     async selectIsMarketChartEnabled (isMarketChartEnabled) {
-      this.__updateSession('isMarketChartEnabled', isMarketChartEnabled)
+      const marketChartOptions = clone(this.$store.getters['session/marketChartOptions'])
+      marketChartOptions.isEnabled = isMarketChartEnabled
+
+      this.__updateSession('marketChartOptions', marketChartOptions)
     },
 
     setName (event) {

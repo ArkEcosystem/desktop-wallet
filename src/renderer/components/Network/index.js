@@ -1,10 +1,10 @@
-import NetworkCustomPeer from './NetworkCustomPeer'
+import NetworkCustomPeerModal from './NetworkCustomPeerModal'
 import NetworkModal from './NetworkModal'
 import NetworkSelectionModal from './NetworkSelectionModal'
 
-export default NetworkCustomPeer
+export default NetworkCustomPeerModal
 export {
-  NetworkCustomPeer,
+  NetworkCustomPeerModal,
   NetworkModal,
   NetworkSelectionModal
 }

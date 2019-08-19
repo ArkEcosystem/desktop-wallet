@@ -28,7 +28,7 @@
 
               <InputGridItem
                 v-bind="item"
-                :is-selected="clicked.title === item.title"
+                :is-selected="isClicked(item)"
               />
             </button>
           </div>
@@ -101,6 +101,10 @@ export default {
   methods: {
     click (item) {
       this.clicked = item
+    },
+
+    isClicked (item) {
+      return this.clicked.pluginId ? this.clicked.name === item.name : this.clicked.title === item.title
     },
 
     emitClose () {

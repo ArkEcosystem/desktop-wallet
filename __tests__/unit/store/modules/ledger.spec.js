@@ -1,8 +1,7 @@
-import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { crypto } from '@arkecosystem/crypto'
+import { Identities } from '@arkecosystem/crypto'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
 import LedgerModule from '@/store/modules/ledger'
 import ledgerService from '@/services/ledger-service'
@@ -12,16 +11,14 @@ import logger from 'electron-log'
 Vue.use(Vuex)
 Vue.use(apiClient)
 
-const axiosMock = new MockAdapter(axios)
 logger.error = jest.fn()
 
 ClientService.host = 'http://127.0.0.1'
-ClientService.version = 2
 
 let ledgerNameByAddress = () => null
 let ledgerCache = false
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-let store = new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     ledger: LedgerModule,
     session: {
@@ -77,7 +74,7 @@ beforeEach(async () => {
   store.replaceState(JSON.parse(JSON.stringify(initialState)))
   ClientService.capabilities = '2.0.0'
   ledgerNameByAddress = () => null
-  axiosMock.reset()
+  nock.cleanAll()
 })
 describe('ledger store module', () => {
   it('should init ledger service', () => {
@@ -167,8 +164,8 @@ describe('ledger store module', () => {
         return testWallets[matches[1]]
       })
       spyCryptoGetAddress = jest.spyOn(
-        crypto,
-        'getAddress'
+        Identities.Address,
+        'fromPublicKey'
       ).mockImplementation((publicKey) => {
         return testWallets.find(wallet => wallet.publicKey === publicKey).address
       })
@@ -224,8 +221,9 @@ describe('ledger store module', () => {
     })
 
     it('should load 10 wallets', async () => {
-      axiosMock
-        .onGet(new RegExp(`http://127.0.0.1/api/wallets/*`))
+      nock('http://127.0.0.1')
+        .persist()
+        .get(/\/api\/v2\/wallets\/.+/)
         .reply(404, {
           statusCode: 404,
           error: 'Not Found',
@@ -247,15 +245,17 @@ describe('ledger store module', () => {
           continue
         }
 
-        axiosMock
-          .onGet(`http://127.0.0.1/api/wallets/${wallet.address}`)
+        nock('http://127.0.0.1')
+          .persist()
+          .get(`/api/v2/wallets/${wallet.address.replace(/\s+/, '%20')}`)
           .reply(200, {
             data: wallet
           })
       }
 
-      axiosMock
-        .onGet(`http://127.0.0.1/api/wallets/address 10`)
+      nock('http://127.0.0.1')
+        .persist()
+        .get('/api/v2/wallets/address%2010')
         .reply(404, {
           statusCode: 404,
           error: 'Not Found',
@@ -269,8 +269,9 @@ describe('ledger store module', () => {
     it('should load all wallets with multi-wallet search', async () => {
       ClientService.capabilities = '2.1.0'
 
-      axiosMock
-        .onPost(`http://127.0.0.1/api/wallets/search`)
+      nock('http://127.0.0.1')
+        .persist()
+        .post('/api/v2/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
@@ -283,8 +284,9 @@ describe('ledger store module', () => {
       ClientService.capabilities = '2.1.0'
       ledgerNameByAddress = (address) => address
 
-      axiosMock
-        .onPost(`http://127.0.0.1/api/wallets/search`)
+      nock('http://127.0.0.1')
+        .persist()
+        .post('/api/v2/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })

@@ -1,6 +1,7 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 import useI18n from '../__utils__/i18n'
 import CurrencyMixin from '@/mixins/currency'
+import BigNumber from '@/plugins/bignumber'
 
 describe('Mixins > Currency', () => {
   const network = {
@@ -182,10 +183,13 @@ describe('Mixins > Currency', () => {
     describe('when not receiving a network', () => {
       it('should use the session network to convert an amount from arktoshi to ARK', () => {
         let amount = Math.pow(10, 9)
-        expect(subToUnit(amount)).toEqual('10')
+        let unit = subToUnit(amount)
+        expect(unit).toBeInstanceOf(BigNumber)
+        expect(unit.toString()).toEqual('10')
 
         amount = Math.pow(10, 12) + 9800 + 1
-        expect(subToUnit(amount)).toEqual('10000.00009801')
+        unit = subToUnit(amount)
+        expect(unit.toString()).toEqual('10000.00009801')
       })
     })
 
@@ -194,10 +198,13 @@ describe('Mixins > Currency', () => {
         const network = { fractionDigits: 3 }
 
         let amount = Math.pow(10, 3)
-        expect(subToUnit(amount, network)).toEqual('1')
+        let unit = subToUnit(amount, network)
+        expect(unit).toBeInstanceOf(BigNumber)
+        expect(unit.toString()).toEqual('1')
 
         amount = Math.pow(10, 9) + 9800 + 1
-        expect(subToUnit(amount, network)).toEqual('1000009.801')
+        unit = subToUnit(amount, network)
+        expect(unit.toString()).toEqual('1000009.801')
       })
     })
   })

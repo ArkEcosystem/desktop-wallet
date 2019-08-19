@@ -18,6 +18,10 @@ import alertEvents from '@/plugins/alert-events'
 import apiClient from '@/plugins/api-client'
 import synchronizer from '@/plugins/synchronizer'
 import eventBus from '@/plugins/event-bus'
+import pluginManager from '@/plugins/plugin-manager'
+
+// Must be first to contain an empty Vue instance
+Vue.use(pluginManager)
 
 Vue.config.productionTip = false
 Vue.logger = Vue.prototype.$logger = logger

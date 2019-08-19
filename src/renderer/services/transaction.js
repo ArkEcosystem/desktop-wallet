@@ -1,5 +1,5 @@
 import { TRANSACTION_TYPES } from '@config'
-import { crypto } from '@arkecosystem/crypto'
+import { Transactions } from '@arkecosystem/crypto'
 
 export default class TransactionService {
   /*
@@ -8,7 +8,7 @@ export default class TransactionService {
    * @return {String}
    */
   static getId (transaction) {
-    return crypto.getId(transaction)
+    return Transactions.Utils.getId(transaction)
   }
 
   /*
@@ -17,7 +17,10 @@ export default class TransactionService {
    * @return {String}
    */
   static getBytes (transaction) {
-    return crypto.getBytes(transaction, true, true).toString('hex')
+    return Transactions.Serializer.getBytes(transaction, {
+      excludeSignature: true,
+      excludeSecondSignature: true
+    }).toString('hex')
   }
 
   /*
@@ -31,6 +34,7 @@ export default class TransactionService {
     transactionObject.senderPublicKey(wallet.publicKey)
     transactionObject.sign('passphrase') // Sign with a "fake" passphrase to get the transaction structure
     const transaction = transactionObject.getStruct()
+    transaction.senderPublicKey = wallet.publicKey // Restore original sender public key
 
     if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
       transaction.recipientId = wallet.address

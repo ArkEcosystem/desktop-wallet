@@ -1,53 +1,15 @@
-import random from 'lodash/random'
-import shuffle from 'lodash/shuffle'
+import { isEmpty, random, shuffle } from 'lodash'
+import { PeerDiscovery } from '@arkecosystem/peers'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
 
-/**
- * Get API port if version 2 peer.
- * @param  {Object} peer
- * @return {void}
- */
-const getApiPort = async (peer) => {
-  if (peer.port) {
-    return
-  }
-
-  if (getApiVersion(peer) === 2 && peer.p2pPort) {
-    try {
-      const config = await ClientService.fetchPeerConfig(getBaseUrl(peer, true))
-      if (config && config.plugins) {
-        const plugin = Object.entries(config.plugins).find(value => value[0].split('/').reverse()[0] === 'core-api')
-        if (plugin && plugin[1].enabled) {
-          peer.port = plugin[1].port
-        }
-      }
-    } catch (error) {
-      const message = error.response ? error.response.data.message : error.message
-      throw new Error('Could not determine peer API port: ', message)
-    }
-  }
-}
-
-const getBaseUrl = (peer, p2pPort = false) => {
+const getBaseUrl = (peer) => {
   const scheme = peer.isHttps ? 'https://' : 'http://'
 
-  return `${scheme}${peer.ip}:${p2pPort ? peer.p2pPort : peer.port}`
-}
-
-const getApiVersion = (peer) => {
-  return /^2\./.test(peer.version) ? 2 : 1
-}
-
-const clientService = ({ baseUrl, peer, timeout, version }) => {
-  const client = new ClientService(false)
-  client.host = baseUrl || getBaseUrl(peer)
-  client.version = version || getApiVersion(peer)
-  client.client.http.timeout = timeout || 3000
-  return client
+  return `${scheme}${peer.ip}:${peer.port}`
 }
 
 export default {
@@ -182,15 +144,17 @@ export default {
         return []
       }
 
-      const highestHeight = peers[0].height
-      for (let i = 1; i < maxRandom; i++) {
-        if (!peers[i]) {
-          break
-        }
-        if (peers[i].height < highestHeight - 50) {
-          maxRandom = i - 1
-        }
-      }
+      // NOTE: Disabled because if a bad peer has a height 50 blocks above the rest it is not returning any peer
+
+      // const highestHeight = peers[0].height
+      // for (let i = 1; i < maxRandom; i++) {
+      //   if (!peers[i]) {
+      //     break
+      //   }
+      //   if (peers[i].height < highestHeight - 50) {
+      //     maxRandom = i - 1
+      //   }
+      // }
 
       return peers.slice(0, Math.min(maxRandom, peers.length))
     },
@@ -209,8 +173,8 @@ export default {
         networkId = profile.networkId
       }
 
-      let currentPeer = state.current[networkId]
-      if (!currentPeer) {
+      const currentPeer = state.current[networkId]
+      if (isEmpty(currentPeer)) {
         return false
       }
 
@@ -266,7 +230,7 @@ export default {
           try {
             return PeerModel.deserialize(peer)
           } catch (error) {
-            //
+            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
           }
 
           return null
@@ -287,7 +251,6 @@ export default {
       }
 
       if (peer) {
-        await getApiPort(peer)
         this._vm.$client.host = getBaseUrl(peer)
         this._vm.$client.capabilities = peer.version
 
@@ -317,31 +280,45 @@ export default {
         'ark.mainnet': 'mainnet',
         'ark.devnet': 'devnet'
       }
-      const networkKey = networkLookup[network.id]
 
-      const peers = await this._vm.$client.fetchPeers(networkKey, getters['all']())
-
-      if (peers.length) {
-        for (const peer of peers) {
-          peer.height = +peer.height
-
-          if (getApiVersion(peer) === 2) {
-            if (peer.latency) {
-              peer.delay = peer.latency
-              delete peer.latency
-            }
-            if (peer.port && !peer.p2pPort) {
-              peer.p2pPort = peer.port
-              // TODO why?
-              peer.port = null
-            }
-          }
-        }
-
-        dispatch('set', peers)
+      let peerDiscovery = null
+      if (networkLookup[network.id]) {
+        peerDiscovery = await PeerDiscovery.new(networkLookup[network.id])
+      } else if (getters['current']()) {
+        const peerUrl = getBaseUrl(getters['current']())
+        peerDiscovery = await PeerDiscovery.new(`${peerUrl}/api/v2/peers`)
       } else {
+        peerDiscovery = await PeerDiscovery.new(`${network.server}/api/v2/peers`)
+      }
+
+      peerDiscovery.withLatency(300)
+        .sortBy('latency')
+
+      let peers = await peerDiscovery
+        .findPeersWithPlugin('core-api', {
+          additional: [
+            'height',
+            'latency',
+            'version'
+          ]
+        })
+
+      if (!peers.length) {
+        peers = await peerDiscovery
+          .findPeersWithPlugin('core-wallet-api', {
+            additional: [
+              'height',
+              'latency',
+              'version'
+            ]
+          })
+      }
+
+      if (!peers.length) {
         this._vm.$error(i18n.t('PEER.FAILED_REFRESH'))
       }
+
+      dispatch('set', peers)
     },
 
     /**
@@ -364,15 +341,6 @@ export default {
         return null
       }
 
-      try {
-        await getApiPort(peer)
-      } catch (error) {
-        return dispatch('findBest', {
-          refresh: true,
-          network
-        })
-      }
-
       peer = await dispatch('updateCurrentPeerStatus', peer)
       if (!peer) {
         return dispatch('findBest', {
@@ -393,7 +361,7 @@ export default {
     async connectToBest ({ dispatch, getters }, { refresh = true, skipIfCustom = true }) {
       if (skipIfCustom) {
         const currentPeer = getters['current']()
-        if (currentPeer && currentPeer.isCustom) {
+        if (!isEmpty(currentPeer) && currentPeer.isCustom) {
           // TODO only when necessary (when / before sending) (if no dynamic)
           await dispatch('transaction/updateStaticFees', null, { root: true })
 
@@ -415,7 +383,7 @@ export default {
         throw new Error('Not connected to peer')
       }
 
-      let networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer), getApiVersion(peer))
+      const networkConfig = await ClientService.fetchNetworkConfig(getBaseUrl(peer))
       if (networkConfig.nethash !== rootGetters['session/network'].nethash) {
         throw new Error('Wrong network')
       }
@@ -434,11 +402,11 @@ export default {
      */
     async updateCurrentPeerStatus ({ dispatch, getters }, currentPeer) {
       let updateCurrentPeer = false
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         currentPeer = { ...getters['current']() }
         updateCurrentPeer = true
       }
-      if (!currentPeer) {
+      if (isEmpty(currentPeer)) {
         await dispatch('fallbackToSeedPeer')
 
         return
@@ -453,14 +421,16 @@ export default {
         if (updateCurrentPeer) {
           peerStatus = await this._vm.$client.fetchPeerStatus()
         } else {
-          const client = clientService({ peer: currentPeer })
+          const client = new ClientService(false)
+          client.host = getBaseUrl(currentPeer)
+          client.client.withOptions({ timeout: 3000 })
           peerStatus = await client.fetchPeerStatus()
         }
-        const delay = (performance.now() - delayStart).toFixed(0)
+        const latency = (performance.now() - delayStart).toFixed(0)
 
         currentPeer = {
           ...currentPeer,
-          delay: +delay,
+          latency: +latency,
           height: +peerStatus.height,
           lastUpdated: new Date()
         }
@@ -482,8 +452,11 @@ export default {
      * @return {ClientService}
      */
     async clientServiceFromPeer (_, peer) {
-      await getApiPort(peer)
-      return clientService({ peer })
+      const client = new ClientService(false)
+      client.host = getBaseUrl(peer)
+      client.client.withOptions({ timeout: 3000 })
+
+      return client
     },
 
     /**
@@ -496,24 +469,18 @@ export default {
      */
     async validatePeer ({ rootGetters }, { host, ip, port, ignoreNetwork = false, timeout = 3000 }) {
       let networkConfig
-      let version = 2
       if (!host && ip) {
         host = ip
       }
       let baseUrl = `${host}:${port}`
-      let schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
+      const schemeUrl = host.match(/^(https?:\/\/)+(.+)$/)
       if (!schemeUrl) {
         baseUrl = `http://${baseUrl}`
       }
       try {
-        networkConfig = await ClientService.fetchNetworkConfig(baseUrl, version, timeout)
-      } catch (errorV2) {
-        try {
-          version = 1
-          networkConfig = await ClientService.fetchNetworkConfig(baseUrl, version, timeout)
-        } catch (errorV1) {
-          //
-        }
+        networkConfig = await ClientService.fetchNetworkConfig(baseUrl, timeout)
+      } catch (error) {
+        //
       }
 
       if (!networkConfig) {
@@ -522,7 +489,9 @@ export default {
         return i18n.t('PEER.WRONG_NETWORK')
       }
 
-      const client = clientService({ baseUrl, timeout, version })
+      const client = new ClientService(false)
+      client.host = baseUrl
+      client.client.withOptions({ timeout: 3000 })
 
       let peerStatus
       try {
@@ -539,9 +508,8 @@ export default {
         host: baseUrl,
         port: +port,
         height: peerStatus.height,
-        version: `${version}.0.0`, // TODO why does it ignore the exact version?
         status: 'OK',
-        delay: 0,
+        latency: 0,
         isHttps: schemeUrl && schemeUrl[1] === 'https://'
       }
     }

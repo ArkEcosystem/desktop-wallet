@@ -17,11 +17,6 @@ describe('pages > WalletNew', () => {
         session_network: {
           symbol: {}
         },
-        $store: {
-          getters: {
-            'session/hasDarkTheme': false
-          }
-        },
         $v: {
           step1: {},
           step3: {},

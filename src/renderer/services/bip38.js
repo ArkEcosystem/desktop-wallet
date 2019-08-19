@@ -1,38 +1,34 @@
-import Worker from './worker'
+import { fork } from 'child_process'
+import { resolve } from 'path'
 
-export default class extends Worker {
+export default class {
   constructor () {
-    super('bip38')
+    const workersPath = process.env.NODE_ENV === 'production' ? 'workers/' : '../workers/'
+
+    this.worker = fork(resolve(__dirname, workersPath, 'bip38-worker.js'))
   }
 
-  /**
-   * @param {Object} config
-   * @param {String} config.bip38key
-   * @param {String} config.password
-   * @param {String} config.wif
-   */
-  decrypt (config) {
-    return this.run()
-      .send(config)
-      .promise()
-      .then(result => {
-        this.stop()
-        return result
-      })
-      .catch(error => {
-        this.stop()
-        throw error
-      })
+  decrypt ({ bip38key, password, wif }) {
+    const onMessage = this.onMessage()
+    this.worker.send({ bip38key, password, wif })
+    return onMessage
   }
 
-  /**
-   * @param {Object} config
-   * @param {String} config.passphrase
-   * @param {String} config.password
-   * @param {String} config.wif
-   */
-  encrypt (config) {
-    // The receiver worker decides if decrypt or encrypt based on `config` properties
-    return this.decrypt(config)
+  encrypt ({ passphrase, password, wif }) {
+    const onMessage = this.onMessage()
+    this.worker.send({ passphrase, password, wif })
+    return onMessage
+  }
+
+  onMessage () {
+    return new Promise((resolve, reject) => {
+      this.worker.on('message', message => {
+        message.error ? reject(message.error) : resolve(message)
+      })
+    })
+  }
+
+  quit () {
+    this.worker.send('quit')
   }
 }

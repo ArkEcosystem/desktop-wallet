@@ -2,22 +2,17 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
-        v-if="!isChartEnabled && isMarketEnabled"
-        class="pt-10 px-10 rounded-t-lg text-lg font-semibold mt-1 text-theme-chart-price"
+        v-if="isMarketEnabled && isChartEnabled"
       >
-        <span v-if="price">
-          {{ $t('MARKET_CHART_HEADER.PRICE', { currency: ticker }) }}:
-          <!-- TODO price in crypto and fiat instead of only in 1 currency -->
-          {{ currency_format(price, { currency, currencyDisplay: 'code' }) }}
-        </span>
-      </div>
-
-      <div
-        v-if="isChartEnabled && isMarketEnabled"
-        class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
-      >
-        <MarketChart :is-active="isMarketEnabled">
-          <MarketChartHeader class="mb-5" />
+        <MarketChart
+          :period="period"
+          :is-expanded="isChartExpanded"
+        >
+          <MarketChartHeader
+            class="mb-5"
+            @period-change="onPeriodChange"
+            @toggle="toggleChart"
+          />
         </MarketChart>
       </div>
 
@@ -34,12 +29,19 @@
 
     <div class="Dashboard__wallets relative bg-theme-feature rounded-lg w-88 overflow-y-auto hidden lg:block">
       <div class="flex flex-row text-theme-feature-item-alternative-text mt-2">
-        <WalletButtonCreate class="mt-6 mb-6 w-1/2" />
-        <WalletButtonImport class="mt-6 mb-6 w-1/2" />
+        <WalletButtonCreate
+          :force-text="true"
+          class="Dashboard__wallets__button"
+        />
+        <WalletButtonImport
+          :force-text="true"
+          class="Dashboard__wallets__button"
+        />
       </div>
       <WalletSidebar
         :show-expanded="true"
         :show-menu="false"
+        :show-filtered-wallets="false"
         class="Dashboard__wallets__list flex flex-col"
       />
     </div>
@@ -65,9 +67,6 @@ export default {
   },
 
   computed: {
-    isChartEnabled () {
-      return this.$store.getters['session/isMarketChartEnabled']
-    },
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
     },
@@ -79,6 +78,28 @@ export default {
     },
     ticker () {
       return this.session_network.market.ticker
+    },
+    isChartEnabled () {
+      return this.marketChartOptions.isEnabled
+    },
+    isChartExpanded () {
+      return this.marketChartOptions.isExpanded
+    },
+    period () {
+      return this.marketChartOptions.period
+    },
+    marketChartOptions: {
+      get () {
+        return this.$store.getters['session/marketChartOptions']
+      },
+      set (options) {
+        this.$store.dispatch('session/setMarketChartOptions', options)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          marketChartOptions: options
+        })
+      }
     }
   },
 
@@ -104,6 +125,16 @@ export default {
     store._IS_READY
       ? chooseNext()
       : store._vm.$root.$on('vuex-persist:ready', chooseNext)
+  },
+
+  methods: {
+    toggleChart (value) {
+      this.marketChartOptions.isExpanded = value
+    },
+
+    onPeriodChange (period) {
+      this.marketChartOptions.period = period
+    }
   }
 }
 </script>
@@ -126,5 +157,8 @@ export default {
 }
 .Dashboard__wallets__list .WalletSidebar__wallet__ledger-loader .v-spinner {
   @apply mr-3;
+}
+.Dashboard__wallets__button {
+  @apply .mt-6 .mb-6 .w-1/2
 }
 </style>

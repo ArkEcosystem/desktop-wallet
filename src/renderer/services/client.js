@@ -1,30 +1,14 @@
-import { crypto, transactionBuilder } from '@arkecosystem/crypto'
+import { Connection } from '@arkecosystem/client'
+import { Identities, Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
-import dayjs from 'dayjs'
+import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
 import semver from 'semver'
 import { V1 } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
-import OriginalClient from '@arkecosystem/client'
-import Http from '@/services/http'
-import BackgroundHttpClient from '@/services/background-http-client'
-
-const httpClient = new Http()
-
-/**
- * This class has the mission of monkey-patching the API client to establish
- * its inner HTTP client.
- * It can be used to run requests in workers.
- * TODO override static `findPeers` to make its request on background too
- */
-class ApiClient extends OriginalClient {
-  setConnection (host) {
-    this.http = new BackgroundHttpClient(host, this.version)
-    this.http.__httpClient = httpClient.request
-  }
-}
+import BigNumber from '@/plugins/bignumber'
 
 export default class ClientService {
   /*
@@ -39,6 +23,7 @@ export default class ClientService {
 
   /**
    * Fetch the network configuration according to the version.
+   * In case the `vendorField` length has changed, updates the network data.
    * Create a new client to isolate the main client.
    *
    * @param {String} server
@@ -46,26 +31,30 @@ export default class ClientService {
    * @param {Number} timeout
    * @returns {Object}
    */
-  static async fetchNetworkConfig (server, apiVersion, timeout) {
-    const client = new ApiClient(server, apiVersion)
-    if (timeout) {
-      client.http.timeout = timeout
+  static async fetchNetworkConfig (server, timeout) {
+    const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+
+    const response = await client.api('node').configuration()
+    const data = response.body.data
+
+    const currentNetwork = store.getters['session/network']
+    if (currentNetwork.nethash === data.nethash) {
+      const newLength = data.constants.vendorFieldLength
+
+      if (newLength && (!currentNetwork.vendorField || newLength !== currentNetwork.vendorField.maxLength)) {
+        currentNetwork.vendorField = {
+          maxLength: newLength
+        }
+
+        await store.dispatch('network/update', currentNetwork)
+      }
     }
 
-    if (apiVersion === 1) {
-      const { data } = await client.resource('loader').configuration()
-      const epochData = await client.resource('blocks').epoch()
-      data.network.epoch = epochData.data.epoch // TODO: data.network.constants.epoch?
-
-      return data.network
-    } else {
-      const { data } = await client.resource('node').configuration()
-
-      return data.data
-    }
+    return data
   }
 
   /**
+   * TODO: Remove unnecessary endpoints once core 2.4 is released (maybe wait until 2.5 so other chains have updated)
    * Only for V2
    * Get the configuration of a peer
    * @param {String} host - URL of the host (using `core-p2p` port)
@@ -73,41 +62,58 @@ export default class ClientService {
    * @return {(Object|null)}
    */
   static async fetchPeerConfig (host, timeout = 3000) {
-    try {
-      const { data } = await httpClient.request({
-        url: `${host}/config`,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        timeout
-      })
-      if (data) {
-        return data.data
+    const walletApiHost = host.replace(/:\d+/, ':4040')
+    const endpoints = [
+      `${walletApiHost}/config`,
+      `${host}/config`,
+      walletApiHost
+    ]
+
+    for (const endpoint of endpoints) {
+      try {
+        const { body } = await got(endpoint, {
+          json: true,
+          timeout
+        })
+
+        if (body) {
+          return body.data
+        }
+      } catch (error) {
+        // TODO only if a new feature to enable logging is added
+        // console.log(`Error on \`${host}\``)
       }
-    } catch (error) {
-      // TODO only if a new feature to enable logging is added
-      // console.log(`Error on \`${host}\``)
     }
 
     return null
   }
 
-  static async fetchFeeStatistics (server, apiVersion, timeout) {
-    if (apiVersion === 1) {
-      throw new Error('Fee statistics are only available on V2 networks')
+  static async fetchFeeStatistics (server, timeout) {
+    try {
+      const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+      const { body } = await client.api('node').fees(7)
+
+      return body.data.map(fee => ({
+        type: Number(fee.type),
+        fees: {
+          minFee: Number(fee.min),
+          maxFee: Number(fee.max),
+          avgFee: Number(fee.avg)
+        }
+      }))
+    } catch (error) {
+      const { feeStatistics } = await ClientService.fetchNetworkConfig(server, timeout)
+
+      return feeStatistics
     }
-    const { feeStatistics } = await ClientService.fetchNetworkConfig(server, apiVersion, timeout)
-    return feeStatistics
   }
 
   constructor (watchProfile = true) {
     this.__host = null
-    this.__version = null
     // The API version is imprecise, since new capabilities are being added continuously.
     // So, this property uses the peer version to know which features are available
-    this.__capabilities = '1.0.0'
-    this.client = new ApiClient('http://')
+    this.__capabilities = '2.0.0'
+    this.client = new Connection('http://localhost')
 
     if (watchProfile) {
       this.__watchProfile()
@@ -119,17 +125,13 @@ export default class ClientService {
   }
 
   set host (host) {
+    host = `${host}/api/v2`
     this.__host = host
-    this.client.setConnection(host)
+    this.client = (new Connection(host)).withOptions({ timeout: 5000 })
   }
 
   get version () {
     return this.__version
-  }
-
-  set version (apiVersion) {
-    this.__version = apiVersion
-    this.client.setVersion(apiVersion)
   }
 
   get capabilities () {
@@ -149,11 +151,7 @@ export default class ClientService {
    * @returns {Object}
    */
   async fetchPeerStatus () {
-    if (this.__version === 1) {
-      return (await this.client.resource('loader').syncing()).data
-    } else {
-      return (await this.client.resource('node').syncing()).data.data
-    }
+    return (await this.client.api('node').syncing()).body.data
   }
 
   /** Request the delegates according to the current network version
@@ -170,43 +168,16 @@ export default class ClientService {
     options.limit || (options.limit = network.constants.activeDelegates)
     options.orderBy || (options.orderBy = 'rank:asc')
 
-    let totalCount = 0
-    let delegates = []
+    const { body } = await this.client.api('delegates').all({
+      page: options.page,
+      limit: options.limit,
+      orderBy: options.orderBy
+    })
 
-    if (this.__version === 1) {
-      const { data } = await this.client.resource('delegates').all({
-        offset: (options.page - 1) * options.limit,
-        limit: options.limit,
-        orderBy: options.orderBy
-      })
-
-      delegates = data.delegates.map(delegate => {
-        return {
-          ...delegate,
-          production: {
-            approval: delegate.approval,
-            productivity: delegate.productivity
-          },
-          blocks: {
-            produced: delegate.producedblocks,
-            missed: delegate.missedblocks
-          },
-          rank: delegate.rate
-        }
-      })
-
-      totalCount = parseInt(data.totalCount)
-    } else {
-      const { data } = await this.client.resource('delegates').all({
-        page: options.page,
-        limit: options.limit,
-        orderBy: options.orderBy
-      })
-      delegates = data.data
-      totalCount = data.meta.totalCount
+    return {
+      delegates: body.data,
+      totalCount: body.meta.totalCount
     }
-
-    return { delegates, totalCount }
   }
 
   /**
@@ -215,27 +186,23 @@ export default class ClientService {
    * @return {Number}
    */
   async fetchDelegateVoters (delegate, { page, limit } = {}) {
-    if (this.__version === 1) {
-      const response = await this.client.resource('delegates').voters(delegate.publicKey)
-      if (response.success) {
-        return response.accounts.length
-      }
-      return 0
-    }
-    // v2
-    const { data } = await this.client.resource('delegates').voters(delegate.username, { page, limit })
-    return data.meta.totalCount
+    const { body } = await this.client.api('delegates').voters(delegate.username, { page, limit })
+
+    return body.meta.totalCount
   }
 
   async fetchDelegateForged (delegate) {
     if (delegate.forged) {
       return delegate.forged.total
     }
-    const { data } = await this.client.resource('delegates').forged(delegate.publicKey)
-    if (data.success) {
-      return data.forged
+
+    const { body } = await this.client.api('delegates').forged(delegate.publicKey)
+
+    if (body.success) {
+      return body.forged
     }
-    return 0
+
+    return '0'
   }
 
   /**
@@ -243,27 +210,13 @@ export default class ClientService {
    * @return {Number[]}
    */
   async fetchStaticFees () {
-    let fees = []
-    if (this.version === 2) {
-      fees = Object.values((await this.client.resource('transactions').fees()).data.data)
-    } else {
-      const feeData = (await this.client.resource('blocks').fees()).data.fees
-      fees = [
-        feeData.send,
-        feeData.secondsignature,
-        feeData.delegate,
-        feeData.vote,
-        feeData.multisignature
-      ]
-    }
+    const fees = Object.values((await this.client.api('transactions').fees()).body.data)
 
     return fees
   }
 
   /**
    * Fetch the latest transactions
-   *
-   * NOTE: only v2
    *
    * @param {Object} [query]
    * @param {Number} [query.page=1]
@@ -277,16 +230,16 @@ export default class ClientService {
     let totalCount = 0
     let transactions = []
 
-    const { data } = await this.client.resource('transactions').all({
+    const { body } = await this.client.api('transactions').all({
       limit,
       page
     })
 
-    transactions = data.data.map(tx => {
-      tx.timestamp = tx.timestamp.unix * 1000 // to milliseconds
-      return tx
+    transactions = body.data.map(transaction => {
+      transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+      return transaction
     })
-    totalCount = data.meta.totalCount
+    totalCount = body.meta.totalCount
 
     return {
       transactions,
@@ -318,50 +271,25 @@ export default class ClientService {
     let totalCount = 0
     let transactions = []
 
-    if (this.version === 1) {
-      const network = store.getters['session/network']
-      const { data } = await this.client.resource('transactions').all({
-        recipientId: address,
-        senderId: address,
-        orderBy: options.orderBy,
-        offset: (options.page - 1) * options.limit,
-        limit: options.limit
-      })
+    const { body } = await this.client.api('wallets').transactions(address, {
+      orderBy: options.orderBy,
+      limit: options.limit,
+      page: options.page
+    })
 
-      if (data.success) {
-        transactions = data.transactions.map(tx => {
-          tx.timestamp = dayjs(network.constants.epoch).add(tx.timestamp * 1000).valueOf()
-          tx.sender = tx.senderId
-          tx.recipient = tx.recipientId
-
-          delete tx.senderId
-          delete tx.recipientId
-
-          return tx
-        })
-        totalCount = parseInt(data.count)
-      }
-    } else {
-      const { data } = await this.client.resource('wallets').transactions(address, {
-        orderBy: options.orderBy,
-        limit: options.limit,
-        page: options.page
-      })
-
-      transactions = data.data.map(tx => {
-        tx.timestamp = tx.timestamp.unix * 1000 // to milliseconds
-        return tx
-      })
-      totalCount = data.meta.totalCount
-    }
+    transactions = body.data.map(transaction => {
+      transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
+      return transaction
+    })
+    totalCount = body.meta.totalCount
 
     // Add some utilities for each transactions
-    const result = transactions.map(tx => {
-      tx.isSender = tx.sender === address
-      tx.isRecipient = tx.recipient === address
-      tx.totalAmount = tx.amount + tx.fee
+    const result = transactions.map(transaction => {
+      transaction.isSender = transaction.sender === address
+      transaction.isRecipient = transaction.recipient === address
+      transaction.totalAmount = new BigNumber(transaction.amount).plus(transaction.fee)
 
-      return tx
+      return transaction
     })
 
     return {
@@ -379,17 +307,17 @@ export default class ClientService {
   async fetchTransactionsForWallets (addresses, options = {}) {
     options = options || {}
 
-    let walletData = {}
+    const walletData = {}
     if (this.isCapable('2.1.0')) {
       let transactions = []
       let hadFailure = false
 
       for (const addressChunk of chunk(addresses, 20)) {
         try {
-          const { data } = await this.client.resource('transactions').search({
+          const { body } = await this.client.api('transactions').search({
             addresses: addressChunk
           })
-          transactions.push(...data.data)
+          transactions.push(...body.data)
         } catch (error) {
           logger.error(error)
           hadFailure = true
@@ -436,7 +364,7 @@ export default class ClientService {
         walletData[address] = (await this.fetchWalletTransactions(address, options)).transactions
       } catch (error) {
         logger.error(error)
-        const message = error.response ? error.response.data.message : error.message
+        const message = error.response ? error.response.body.message : error.message
         if (message !== 'Wallet not found') {
           throw error
         }
@@ -459,30 +387,8 @@ export default class ClientService {
    * @return {Object}
    */
   async fetchWallet (address) {
-    let walletData = null
-
-    if (this.version === 2) {
-      const { data } = await this.client.resource('wallets').get(address)
-      walletData = data.data
-    } else {
-      const { data } = await this.client.resource('accounts').get(address)
-      if (data.success) {
-        const { account } = data
-        walletData = account
-        delete walletData.unconfirmedBalance
-        delete walletData.unconfirmedSignature
-        delete walletData.secondSignature
-        delete walletData.multisignatures
-        delete walletData.u_multisignatures
-
-        const delegate = await store.getters['delegate/byAddress'](walletData.address)
-        walletData.isDelegate = false
-        if (delegate) {
-          walletData.isDelegate = true
-          walletData.username = delegate.username
-        }
-      }
-    }
+    const { body } = await this.client.api('wallets').get(address)
+    const walletData = body.data
 
     if (walletData) {
       walletData.balance = parseInt(walletData.balance)
@@ -497,14 +403,14 @@ export default class ClientService {
    * @return {Object[]}
    */
   async fetchWallets (addresses) {
-    let walletData = []
+    const walletData = []
 
     if (this.isCapable('2.1.0')) {
       for (const addressChunk of chunk(addresses, 20)) {
-        const { data } = await this.client.resource('wallets').search({
+        const { body } = await this.client.api('wallets').search({
           addresses: addressChunk
         })
-        walletData.push(...data.data)
+        walletData.push(...body.data)
       }
     } else {
       for (const address of addresses) {
@@ -512,7 +418,7 @@ export default class ClientService {
           walletData.push(await this.fetchWallet(address))
         } catch (error) {
           logger.error(error)
-          const message = error.response ? error.response.data.message : error.message
+          const message = error.response ? error.response.body.message : error.message
           if (message !== 'Wallet not found') {
             throw error
           }
@@ -532,42 +438,21 @@ export default class ClientService {
   async fetchWalletVote (address) {
     let delegatePublicKey = null
 
-    if (this.version === 2) {
-      const { data } = await this.client.resource('wallets').votes(address)
-      const response = data.data
+    const { body } = await this.client.api('wallets').votes(address)
+    const response = body.data
 
-      if (response.length) {
-        const lastVote = response[0].asset.votes[0]
+    if (response.length) {
+      const lastVote = response[0].asset.votes[0]
 
-        // If the last vote was a unvote leave the pubkey null
-        if (lastVote.charAt(0) === '-') return
-
-        delegatePublicKey = response[0].asset.votes[0].substring(1)
+      // If the last vote was a unvote leave the pubkey null
+      if (lastVote.charAt(0) === '-') {
+        return
       }
-    } else {
-      const { data } = await this.client.resource('accounts').delegates(address)
-      if (data.success && data.delegates.length) {
-        delegatePublicKey = data.delegates[0].publicKey
-      }
+
+      delegatePublicKey = response[0].asset.votes[0].substring(1)
     }
 
     return delegatePublicKey
-  }
-
-  /**
-   * Request peer list.
-   * @param {String} network
-   * @param {Object[]} [peers=[]]
-   * @returns {Object[]}
-   */
-  async fetchPeers (network, peers = []) {
-    if (network) {
-      peers = null
-    } else if (!network && !peers.length) {
-      peers = [this.__parseCurrentPeer()]
-    }
-
-    return ApiClient.findPeers(network, this.client.version, peers)
   }
 
   /**
@@ -575,7 +460,7 @@ export default class ClientService {
    * @return {Object}
    */
   __parseCurrentPeer () {
-    const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.client.http.host)
+    const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.host)
     const scheme = matches[1]
     const ip = matches[2]
     const isHttps = scheme === 'https://'
@@ -602,13 +487,13 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .vote()
       .votesAsset(votes)
       .fee(fee)
@@ -620,7 +505,8 @@ export default class ClientService {
       transaction,
       passphrase,
       secondPassphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -635,13 +521,13 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .delegateRegistration()
       .usernameAsset(username)
       .fee(fee)
@@ -653,7 +539,8 @@ export default class ClientService {
       transaction,
       passphrase,
       secondPassphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -670,18 +557,19 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .transfer()
       .amount(amount)
       .fee(fee)
       .recipientId(recipientId)
-      .vendorField(vendorField)
+
+    transaction.data.vendorField = vendorField
 
     passphrase = this.normalizePassphrase(passphrase)
     secondPassphrase = this.normalizePassphrase(secondPassphrase)
@@ -690,7 +578,8 @@ export default class ClientService {
       transaction,
       passphrase,
       secondPassphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -704,13 +593,13 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif }, isAdvancedFee = false, returnObject = false) {
+  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
     const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
-    const transaction = transactionBuilder
+    const transaction = Transactions.BuilderFactory
       .secondSignature()
       .signatureAsset(secondPassphrase)
       .fee(fee)
@@ -720,7 +609,8 @@ export default class ClientService {
     return this.__signTransaction({
       transaction,
       passphrase,
-      wif
+      wif,
+      networkWif
     }, returnObject)
   }
 
@@ -734,7 +624,7 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  __signTransaction ({ transaction, passphrase, secondPassphrase, wif }, returnObject = false) {
+  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif }, returnObject = false) {
     const network = store.getters['session/network']
     transaction = transaction.network(network.version)
 
@@ -746,7 +636,7 @@ export default class ClientService {
     if (passphrase) {
       transaction = transaction.sign(this.normalizePassphrase(passphrase))
     } else if (wif) {
-      transaction = transaction.signWithWif(wif)
+      transaction = transaction.signWithWif(wif, networkWif)
     }
 
     if (secondPassphrase) {
@@ -754,30 +644,6 @@ export default class ClientService {
     }
 
     return returnObject ? transaction : transaction.getStruct()
-  }
-
-  /**
-   * Helper function to send a transaction on a v1 network. Uses p2p
-   * @param {Object} transactions - the transactions to send
-   * @param {Object} currentPeer - the peer to use
-   * @returns {Object} the response of sending the transaction
-   */
-  async __sendV1Transaction (transactions, currentPeer) {
-    const scheme = currentPeer.isHttps ? 'https://' : 'http://'
-    const host = `${scheme}${currentPeer.ip}:${currentPeer.port}/peer/transactions`
-    const network = store.getters['session/network']
-    const response = await httpClient.request({
-      url: host,
-      data: { transactions: castArray(transactions) },
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        version: '1.6.1',
-        port: 1,
-        nethash: network.nethash
-      }
-    })
-    return response
   }
 
   /**
@@ -792,54 +658,37 @@ export default class ClientService {
     if (!currentPeer) {
       currentPeer = this.__parseCurrentPeer()
     }
-    // Use p2p for v1
-    if (this.__version === 1) {
-      if (broadcast) {
-        let responses = []
-        let peers = store.getters['peer/broadcastPeers']()
-        if ((!peers || !peers.length) || currentPeer) {
-          peers = [currentPeer]
-        }
 
+    let failedBroadcast = false
+    if (broadcast) {
+      const txs = []
+      const peers = store.getters['peer/broadcastPeers']()
+      if (peers && peers.length) {
         for (let i = 0; i < peers.length; i++) {
-          const response = await this.__sendV1Transaction(transactions, peers[i])
-          responses.push(response)
-        }
-        return responses
-      } else {
-        const response = await this.__sendV1Transaction(transactions, currentPeer)
-        return [response]
-      }
-    } else {
-      let failedBroadcast = false
-      if (broadcast) {
-        let txs = []
-        let peers = store.getters['peer/broadcastPeers']()
-        if (peers && peers.length) {
-          for (let i = 0; i < peers.length; i++) {
-            try {
-              const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
-              const tx = await client.client.resource('transactions').create({ transactions: castArray(transactions) })
-              txs.push(tx)
-            } catch (err) {
-              //
-            }
+          try {
+            const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
+            const transaction = await client.client.api('transactions').create({
+              transactions: castArray(transactions)
+            })
+            txs.push(transaction)
+          } catch (err) {
+            //
           }
-          return txs
-        } else {
-          failedBroadcast = true
         }
+        return txs
+      } else {
+        failedBroadcast = true
       }
+    }
 
-      if (!broadcast || failedBroadcast) {
-        const transaction = await this
-          .client
-          .resource('transactions')
-          .create({
-            transactions: castArray(transactions)
-          })
-        return [transaction]
-      }
+    if (!broadcast || failedBroadcast) {
+      const transaction = await this
+        .client
+        .api('transactions')
+        .create({
+          transactions: castArray(transactions)
+        })
+      return [transaction]
     }
   }
 
@@ -859,27 +708,23 @@ export default class ClientService {
         if (currentPeer && currentPeer.ip) {
           const scheme = currentPeer.isHttps ? 'https://' : 'http://'
           this.host = `${scheme}${currentPeer.ip}:${currentPeer.port}`
-          this.version = currentPeer.version.match(/^2\./) ? 2 : 1
           this.capabilities = currentPeer.version
 
         // TODO if we could use the server from network, then, it is a peer and this shouldn't be necessary
         } else {
           let { server, apiVersion } = network
           this.host = server
-          this.version = apiVersion
 
           // Infer which are the real capabilities of the peer
-          if (apiVersion === 2) {
-            try {
-              const testAddress = crypto.getAddress(crypto.getKeys('test').publicKey, network.version)
-              const { address } = this.client.resource('wallets').search({
-                addresses: [testAddress]
-              })
+          try {
+            const testAddress = Identities.Address.fromPassphrase('test', network.version)
+            const { address } = this.client.api('wallets').search({
+              addresses: [testAddress]
+            })
 
-              apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
-            } catch (_) {
-              // The peer does not have capability to search for multiple wallets or transactions at once
-            }
+            apiVersion = (address === testAddress) ? '2.1.0' : '2.0.0'
+          } catch (_) {
+            // The peer does not have capability to search for multiple wallets or transactions at once
           }
 
           this.capabilities = apiVersion

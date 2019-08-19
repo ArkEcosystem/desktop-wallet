@@ -8,38 +8,38 @@ const mocks = {
   $store: {
     getters: {
       'session/currency': 'USD',
-      'session/network': { token: 'ARK' }
+      'session/network': { token: 'ARK' },
+      'session/marketChartOptions': {
+        isEnabled: true,
+        isExpanded: true,
+        period: 'day'
+      }
     }
   }
 }
 
 describe('MarketChartHeader', () => {
-  it('should be instantiated', () => {
-    const wrapper = shallowMount(MarketChartHeader, {
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = shallowMount(MarketChartHeader, {
       i18n,
       provide: {
-        changePeriod: jest.fn(),
-        getPeriod: () => 'day'
+        getPeriod: () => 'day',
+        getIsExpanded: () => true
       },
       mocks
     })
+  })
+
+  it('should be instantiated', () => {
     expect(wrapper.isVueInstance()).toBeTrue()
     expect(wrapper.contains('.MarketChartHeader__button'))
   })
 
-  it('should trigger change', done => {
-    const wrapper = shallowMount(MarketChartHeader, {
-      i18n,
-      provide: {
-        changePeriod: (period) => {
-          expect(period).toBeTruthy()
-          done()
-        },
-        getPeriod: () => 'day'
-      },
-      mocks
-    })
+  it('should emit period-change event', () => {
     const find = wrapper.find('.MarketChartHeader__button:enabled')
     find.trigger('click')
+    expect(wrapper.emitted('period-change')).toBeTruthy()
   })
 })

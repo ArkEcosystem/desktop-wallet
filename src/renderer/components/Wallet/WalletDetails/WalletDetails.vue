@@ -9,10 +9,30 @@
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
+        key="BackItem"
+        :label="$t('COMMON.BACK')"
+        :on-click="historyBack"
+      >
+        <div
+          slot="header"
+          class="WalletDetails__back-button flex items-center"
+        >
+          <SvgIcon
+            name="send"
+            view-box="0 0 8 8"
+          />
+          <span
+            class="text-bold ml-2 text-base"
+          >
+            {{ $t('COMMON.BACK') }}
+          </span>
+        </div>
+      </MenuTabItem>
+      <MenuTabItem
         v-for="tab in tabs"
-        :key="tab.component"
+        :key="tab.componentName"
         :label="tab.text"
-        :tab="tab.component"
+        :tab="tab.componentName"
       >
         <Component
           :is="tab.component"
@@ -89,15 +109,6 @@
                 {{ votedDelegate.rank }}
               </strong>
             </i18n>
-            <i18n
-              tag="span"
-              class="font-semibold pl-6"
-              path="WALLET_DELEGATES.PRODUCTIVITY_BANNER"
-            >
-              <strong place="productivity">
-                {{ getProductivity() }}
-              </strong>
-            </i18n>
           </template>
         </div>
         <div
@@ -146,7 +157,8 @@
 </template>
 
 <script>
-import { at, clone } from 'lodash'
+import electron from 'electron'
+import at from 'lodash/at'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
@@ -195,14 +207,20 @@ export default {
   },
 
   computed: {
+    pluginTabs () {
+      return this.$store.getters['plugin/walletTabs']
+    },
+
     tabs () {
-      let tabs = [
+      const tabs = [
         {
           component: 'WalletTransactions',
+          componentName: 'WalletTransactions',
           text: this.$t('PAGES.WALLET.TRANSACTIONS')
         },
         {
           component: 'WalletDelegates',
+          componentName: 'WalletDelegates',
           text: this.$t('PAGES.WALLET.DELEGATES')
         }
       ]
@@ -210,6 +228,7 @@ export default {
       if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
         tabs.push({
           component: 'WalletSignVerify',
+          componentName: 'WalletSignVerify',
           text: this.$t('PAGES.WALLET.SIGN_VERIFY')
         })
       }
@@ -217,6 +236,7 @@ export default {
       if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
         tabs.push({
           component: 'WalletExchange',
+          componentName: 'WalletExchange',
           text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
         })
       }
@@ -228,6 +248,16 @@ export default {
       //     text: this.$t('PAGES.WALLET.STATISTICS')
       //   })
       // }
+
+      if (this.pluginTabs) {
+        this.pluginTabs.forEach(pluginTab => {
+          tabs.push({
+            component: pluginTab.component,
+            componentName: pluginTab.componentName,
+            text: pluginTab.tabTitle
+          })
+        })
+      }
 
       return tabs
     },
@@ -263,9 +293,11 @@ export default {
       },
       set (votes) {
         this.$store.dispatch('session/setUnconfirmedVotes', votes)
-        const profile = clone(this.session_profile)
-        profile.unconfirmedVotes = votes
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          unconfirmedVotes: votes
+        })
       }
     },
 
@@ -315,6 +347,15 @@ export default {
   },
 
   methods: {
+    historyBack () {
+      const webContents = electron.remote.getCurrentWindow().webContents
+      if (!webContents.canGoBack()) {
+        throw new Error('It is not possible to go back in history')
+      }
+
+      webContents.goBack()
+    },
+
     switchToTab (component) {
       this.currentTab = component
     },
@@ -349,7 +390,7 @@ export default {
         this.votedDelegate = null
         this.walletVote.publicKey = null
 
-        const messages = at(error, 'response.data.message')
+        const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
           this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -360,11 +401,6 @@ export default {
       } finally {
         this.isLoadingVote = false
       }
-    },
-
-    getProductivity () {
-      const productivity = this.votedDelegate.production.productivity
-      return this.formatter_percentage(productivity)
     },
 
     openUnvote () {
@@ -440,5 +476,8 @@ export default {
 .WalletDetails__button:hover {
   transition: 0.5s;
   @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
+}
+.WalletDetails__back-button > svg {
+  transform: rotate(-135deg)
 }
 </style>

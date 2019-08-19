@@ -1,4 +1,4 @@
-const legacySchemaRegex = new RegExp(/^(?:ark:)([AaDd]{1}[0-9a-zA-Z]{33})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
+const legacySchemaRegex = new RegExp(/^(?:ark:)([0-9a-zA-Z]{34})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
 const schemaRegex = new RegExp(/^(?:ark:)(add-network|transfer|vote|register-delegate|sign-message)([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
 const paramRegex = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
 
@@ -15,9 +15,13 @@ export default class URIHandler {
     if (!this.validateLegacy()) {
       if (!this.validate()) return
 
-      let schema = this.__formatSchema()
+      const schema = this.__formatSchema()
       const queryString = {}
       schema[2].replace(paramRegex, (_, $1, __, $2) => (queryString[$1] = $2))
+
+      console.log(schema)
+      console.log(queryString)
+      // const schema = this.__formatSchema()
 
       // All AIP-26 options combined, as they have a lot of overlap
       const scheme = {
@@ -36,7 +40,7 @@ export default class URIHandler {
         message: null
       }
 
-      for (let prop in scheme) {
+      for (const prop in scheme) {
         if (queryString[prop]) {
           scheme[prop] = queryString[prop]
         }
@@ -55,10 +59,13 @@ export default class URIHandler {
       return scheme
     } else {
       // Handle legacy (AIP-13)
-      let legacySchema = this.__formatLegacySchema()
+      const legacySchema = this.__formatLegacySchema()
 
       const queryString = {}
       legacySchema[2].replace(paramRegex, (_, $1, __, $3) => (queryString[$1] = $3))
+
+      console.log(legacySchema)
+      console.log(queryString)
 
       const legacyScheme = {
         type: 'legacy',
@@ -68,7 +75,7 @@ export default class URIHandler {
         vendorField: null
       }
 
-      for (let prop in legacyScheme) {
+      for (const prop in legacyScheme) {
         if (queryString[prop]) {
           legacyScheme[prop] = queryString[prop]
         }
