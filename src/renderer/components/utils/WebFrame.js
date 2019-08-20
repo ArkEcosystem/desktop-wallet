@@ -37,12 +37,12 @@ export default {
     width: {
       type: Number,
       required: false,
-      default: 300
+      default: null
     },
     height: {
       type: Number,
       required: false,
-      default: 150
+      default: null
     }
   },
 
