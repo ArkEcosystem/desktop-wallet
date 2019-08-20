@@ -141,7 +141,7 @@ export default {
     warning () {
       if (this.$v.model.$dirty) {
         if (this.$v.model.isBip39) {
-          return this.$t('VALIDATION.WARNING_BIP39', [this.label])
+          return this.$t('VALIDATION.WARNING_BIP39', [this.label.split(' - ')[0]])
         }
       }
 
@@ -181,7 +181,9 @@ export default {
           return false
         }
 
-        return WalletService.isBip39Passphrase(value, this.session_profile.bip39Language)
+        const trimmed = value.toLowerCase().split(' ').filter(word => !!word.length).join(' ')
+
+        return WalletService.isBip39Passphrase(trimmed, this.session_profile.bip39Language)
       }
     }
   }
