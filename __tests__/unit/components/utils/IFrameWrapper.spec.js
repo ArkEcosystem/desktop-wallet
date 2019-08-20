@@ -24,7 +24,6 @@ describe('IFrameWrapper', () => {
         src: 'http://google.com'
       }
     })
-    console.log(wrapper.html())
     const iframe = wrapper.find('iframe')
     expect(iframe.attributes('src')).toBe('http://google.com')
   })

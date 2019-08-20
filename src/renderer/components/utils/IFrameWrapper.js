@@ -1,7 +1,7 @@
-const { URL } = require('url')
+import { URL } from 'url'
+import logger from 'electron-log'
 
 const allowedProtocols = [
-  'ark:',
   'http:',
   'https:'
 ]
@@ -13,9 +13,13 @@ const isValidURL = (input) => {
 
   try {
     const uri = new URL(input)
-    return allowedProtocols.includes(uri.protocol)
+    const isAllowed = allowedProtocols.includes(uri.protocol)
+    if (!isAllowed) {
+      logger.error('[iframe]: Protocol not allowed.')
+    }
+    return isAllowed
   } catch {
-    console.error('[iframe]: Invalid protocol')
+    logger.error(`[iframe]: Invalid url. Make sure to set the protocol (${allowedProtocols.join(',')}).`)
     return false
   }
 }
@@ -46,13 +50,15 @@ export default {
     const src = ctx.props.src
     const url = isValidURL(src) ? src : 'about:blank'
 
-    return h('iframe', {
-      attrs: {
-        width: ctx.props.width,
-        height: ctx.props.height,
-        src: url,
-        sandbox: 'allow-forms allow-scripts'
-      }
-    })
+    return h('div', [
+      h('iframe', {
+        attrs: {
+          width: ctx.props.width,
+          height: ctx.props.height,
+          src: url,
+          sandbox: 'allow-forms allow-scripts'
+        }
+      })
+    ])
   }
 }

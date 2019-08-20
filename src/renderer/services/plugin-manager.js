@@ -570,7 +570,7 @@ class PluginManager {
     } else if (/[^\w]+eval\(/i.test(component.template)) {
       inlineErrors.push('uses eval')
     }
-    if (!plugin.config.permissions.includes('IFRAME') && /<\s*iframe/i.test(component.template)) {
+    if (/<\s*iframe/i.test(component.template)) {
       inlineErrors.push('uses iframe tag')
     }
     if (/srcdoc/i.test(component.template)) {
