@@ -19,7 +19,7 @@
     </ListDivided>
 
     <WalletSelection
-      v-if="schema && schema.address"
+      v-if="schema && (schema.address || schema.recipient)"
       v-model="$v.wallet.$model"
       :compatible-address="$v.form.recipientId.$model"
       class="mb-5"
