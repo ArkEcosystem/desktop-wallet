@@ -921,7 +921,7 @@ export default {
       SHOW_PUBLIC_KEY: 'Mostra chiave pubblica',
       SHOW_ADDRESS: 'Mostra indirizzo'
     },
-    PENDING_AMOUNT: '1 transazione con un totale di {amount} non é ancora confermata | {n} transazioni con un totale di {amount} non sono ancora confermate',
+    PENDING_BALANCE: '{amount} compreso 1 transazione non confermata | {amount} compreso {n} transazioni non confermate',
     SECOND_PASSPHRASE_ENABLED: 'Seconda firma abilitata'
   },
 

@@ -96,7 +96,7 @@
       </p>
 
       <p class="WalletHeading__balance font-semibold tracking-extrawide text-lg">
-        <span v-tooltip="pendingAmountTooltip">
+        <span v-tooltip="pendingBalanceTooltip">
           {{ balance }}
         </span>
         <span
@@ -168,23 +168,23 @@ export default {
         : (this.lazyWallet.balance || 0)
     },
 
-    pendingAmount () {
-      return this.formatter_networkCurrency(this.pendingRawAmount)
+    pendingBalance () {
+      return this.formatter_networkCurrency(this.rawBalance.subtract(this.pendingTransactionsRawAmount))
     },
 
-    pendingRawAmount () {
-      return this.getStoredTransactions().reduce((balance, transaction) => {
-        return balance.add(transaction.amount).add(transaction.fee)
+    pendingTransactionsRawAmount () {
+      return this.getStoredTransactions().reduce((sum, transaction) => {
+        return sum.add(transaction.amount).add(transaction.fee)
       }, this.currency_toBuilder(0))
     },
 
-    pendingTransactionCount () {
+    pendingTransactionsCount () {
       return this.getStoredTransactions().length
     },
 
-    pendingAmountTooltip () {
+    pendingBalanceTooltip () {
       return this.pendingRawAmount.isGreaterThan(0)
-        ? this.$tc('WALLET_HEADING.PENDING_AMOUNT', this.pendingTransactionCount, { amount: this.pendingAmount })
+        ? this.$tc('WALLET_HEADING.PENDING_BALANCE', this.pendingTransactionsCount, { amount: this.pendingBalance })
         : ''
     },
 
