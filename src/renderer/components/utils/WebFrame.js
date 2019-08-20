@@ -43,11 +43,6 @@ export default {
       type: Number,
       required: false,
       default: 150
-    },
-    classes: {
-      type: String,
-      required: false,
-      default: ''
     }
   },
 
@@ -55,20 +50,14 @@ export default {
     const src = ctx.props.src
     const url = isValidURL(src) ? src : 'about:blank'
 
-    return h('div', {
+    return h('iframe', {
       attrs: {
-        class: ctx.props.classes
+        width: ctx.props.width,
+        height: ctx.props.height,
+        class: ctx.data.staticClass,
+        src: url,
+        sandbox: 'allow-forms allow-scripts allow-same-origin'
       }
-    }, [
-      h('iframe', {
-        attrs: {
-          width: ctx.props.width,
-          height: ctx.props.height,
-          class: ctx.props.classes,
-          src: url,
-          sandbox: 'allow-forms allow-scripts allow-same-origin'
-        }
-      })
-    ])
+    })
   }
 }
