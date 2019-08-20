@@ -244,7 +244,10 @@ export default {
     },
 
     emitNext (transaction) {
-      this.$emit('next', { transaction })
+      this.$emit('next', {
+        transaction,
+        wallet: this.senderWallet
+      })
     }
   },
 
