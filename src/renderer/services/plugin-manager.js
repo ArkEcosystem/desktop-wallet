@@ -779,9 +779,7 @@ class PluginManager {
       }
     }
 
-    if (config.permissions.includes('UI_COMPONENTS')) {
-      sandbox.walletApi.components = WalletComponents
-    }
+    sandbox.walletApi.components = WalletComponents(config.permissions)
 
     if (config.permissions.includes('HTTP')) {
       sandbox.walletApi.http = new PluginHttp(config.urls)
