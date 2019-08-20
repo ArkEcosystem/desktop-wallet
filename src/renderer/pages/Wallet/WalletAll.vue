@@ -349,7 +349,7 @@ export default {
 
     onWalletRenamed () {
       this.hideRenameModal()
-      this.selectableWallets = this.wallets
+      this.loadWallets()
     },
 
     onSortChange (sortParams) {
