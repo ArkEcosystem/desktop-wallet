@@ -9,7 +9,7 @@ describe('URI Handler', () => {
 
     it('should validate custom network', () => {
       const uri = new URIHandler('ark:LNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
-      expect(uri.validate()).toBeTrue()
+      expect(uri.validateLegacy()).toBeTrue()
     })
 
     it('should validate with params', () => {
@@ -38,7 +38,7 @@ describe('URI Handler', () => {
       const schema = new URIHandler('ark:DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9?amount=1.2&label=Hello&vendorField=ARK').deserialize()
       expect(schema.type).toBe('legacy')
       expect(schema.address).toBe('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
-      expect(schema.amount).toBe(1.2)
+      expect(schema.amount).toBe('1.2')
       expect(schema.label).toBe('Hello')
       expect(schema.vendorField).toBe('ARK')
     })
