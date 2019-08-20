@@ -15,7 +15,7 @@ describe('WebFrame', () => {
   it('should contain the sandbox attribute', () => {
     const wrapper = mount(WebFrame)
     const iframe = wrapper.find('iframe')
-    expect(iframe.attributes('sandbox')).toBe('allow-forms allow-scripts')
+    expect(iframe.attributes('sandbox')).toBe('allow-forms allow-scripts allow-same-origin')
   })
 
   it('should render http url', () => {

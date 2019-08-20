@@ -37,12 +37,12 @@ export default {
     width: {
       type: Number,
       required: false,
-      default: 300
+      default: null
     },
     height: {
       type: Number,
       required: false,
-      default: 150
+      default: null
     }
   },
 
@@ -50,15 +50,14 @@ export default {
     const src = ctx.props.src
     const url = isValidURL(src) ? src : 'about:blank'
 
-    return h('div', [
-      h('iframe', {
-        attrs: {
-          width: ctx.props.width,
-          height: ctx.props.height,
-          src: url,
-          sandbox: 'allow-forms allow-scripts'
-        }
-      })
-    ])
+    return h('iframe', {
+      attrs: {
+        width: ctx.props.width,
+        height: ctx.props.height,
+        class: ctx.data.staticClass,
+        src: url,
+        sandbox: 'allow-forms allow-scripts allow-same-origin'
+      }
+    })
   }
 }
