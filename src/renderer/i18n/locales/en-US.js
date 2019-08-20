@@ -921,7 +921,7 @@ export default {
       SHOW_PUBLIC_KEY: 'Show public key',
       SHOW_ADDRESS: 'Show address'
     },
-    PENDING_AMOUNT: '1 transaction over {amount} is not yet confirmed | {n} transactions over {amount} are not yet confirmed',
+    PENDING_AMOUNT: '1 transaction with a total of {amount} is not yet confirmed | {n} transactions with a total of {amount} are not yet confirmed',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
   },
 
