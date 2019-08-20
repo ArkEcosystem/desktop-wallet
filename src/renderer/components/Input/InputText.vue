@@ -190,7 +190,7 @@ export default {
 
 <style lang="postcss" scoped>
 .InputText__input {
-  @apply bg-transparent text-theme-page-text
+  @apply .bg-transparent .text-theme-page-text .h-full
 }
 
 .InputText__input::placeholder {
