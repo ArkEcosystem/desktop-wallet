@@ -181,6 +181,16 @@ export default class ClientService {
   }
 
   /**
+   * Fetches a given delegate. Will thrown an error if delegate could not be found.
+   * @param {String} id
+   */
+  async fetchDelegate (id) {
+    const { body } = await this.client.api('delegates').get(id)
+
+    return body.data
+  }
+
+  /**
    * Fetches the voters of the given delegates and returns the number of total voters
    *
    * @return {Number}

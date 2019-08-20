@@ -36,7 +36,7 @@ export default class URIHandler {
         relay: null,
         nethash: null,
         label: null,
-        username: null,
+        delegate: null,
         message: null
       }
 

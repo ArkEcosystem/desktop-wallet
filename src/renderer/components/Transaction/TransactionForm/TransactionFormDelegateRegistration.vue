@@ -20,7 +20,7 @@
       </ListDivided>
 
       <WalletSelection
-        v-if="schema && schema.username"
+        v-if="schema && schema.delegate"
         v-model="$v.wallet.$model"
         compatible-address=""
         class="mb-5"
@@ -114,8 +114,8 @@ import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
-import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
+import WalletSelection from '@/components/Wallet/WalletSelection'
 import WalletService from '@/services/wallet'
 import onSubmit from './mixin-on-submit'
 import BigNumber from '@/plugins/bignumber'
@@ -184,7 +184,7 @@ export default {
 
   mounted () {
     if (this.schema) {
-      this.$set(this.form, 'username', this.schema.username) // TODO: required
+      this.$set(this.form, 'username', this.schema.delegate) // TODO: required
       if (this.schema.fee) {
         this.$set(this.form, 'fee', new BigNumber(this.schema.fee))
         this.$refs.fee.fee = new BigNumber(this.schema.fee)

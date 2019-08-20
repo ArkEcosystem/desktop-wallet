@@ -5,7 +5,10 @@
     <Collapse
       :is-open="!isPassphraseStep"
     >
-      <ListDivided :is-floating-label="true">
+      <ListDivided
+        v-if="senderWallet"
+        :is-floating-label="true"
+      >
         <ListDividedItem :label="$t('TRANSACTION.SENDER')">
           {{ senderLabel }}
           <span
@@ -16,6 +19,14 @@
           </span>
         </ListDividedItem>
       </ListDivided>
+
+      <WalletSelection
+        v-if="schema && schema.delegate"
+        v-model="$v.wallet.$model"
+        compatible-address=""
+        class="mb-5"
+        profile-class="mb-5"
+      />
 
       <ListDivided>
         <ListDividedItem :label="$t('INPUT_ADDRESS.LABEL')">
@@ -92,20 +103,20 @@
       </div>
 
       <div
-        v-if="currentWallet.isLedger"
+        v-if="currentWallet && currentWallet.isLedger"
         class="mt-10"
       >
         {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
       </div>
       <InputPassword
-        v-else-if="currentWallet.passphrase"
+        v-else-if="currentWallet && currentWallet.passphrase"
         ref="password"
         v-model="$v.form.walletPassword.$model"
         :label="$t('TRANSACTION.PASSWORD')"
         :is-required="true"
       />
       <PassphraseInput
-        v-else
+        v-else-if="currentWallet"
         ref="passphrase"
         v-model="$v.form.passphrase.$model"
         :address="currentWallet.address"
@@ -114,7 +125,7 @@
       />
 
       <PassphraseInput
-        v-if="currentWallet.secondPublicKey"
+        v-if="currentWallet && currentWallet.secondPublicKey"
         ref="secondPassphrase"
         v-model="$v.form.secondPassphrase.$model"
         :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
@@ -154,8 +165,10 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletAddress from '@/components/Wallet/WalletAddress'
+import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
 import onSubmit from './mixin-on-submit'
+import BigNumber from '@/plugins/bignumber'
 
 export default {
   name: 'TransactionFormVote',
@@ -170,7 +183,8 @@ export default {
     ListDividedItem,
     ModalLoader,
     PassphraseInput,
-    WalletAddress
+    WalletAddress,
+    WalletSelection
   },
 
   mixins: [onSubmit],
@@ -184,6 +198,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    schema: {
+      type: Object,
+      required: false,
+      default: () => {}
     },
     votedDelegate: {
       type: Object,
@@ -202,12 +221,18 @@ export default {
     forged: 0,
     voters: '0',
     showEncryptLoader: false,
-    showLedgerLoader: false
+    showLedgerLoader: false,
+    wallet: null
   }),
 
   computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
+    currentWallet: {
+      get () {
+        return this.senderWallet || this.wallet_fromRoute
+      },
+      set (wallet) {
+        this.wallet = wallet
+      }
     },
 
     blocksProduced () {
@@ -218,8 +243,12 @@ export default {
       return this.wallet_formatAddress(this.currentWallet.address)
     },
 
+    senderWallet () {
+      return this.wallet
+    },
+
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter)) {
+      if (this.currentWallet && (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter))) {
         return false
       }
 
@@ -254,6 +283,19 @@ export default {
   mounted () {
     this.fetchForged()
     this.fetchVoters()
+
+    if (this.schema) {
+      // Delegate information is already specified in the property
+      if (this.schema.fee) {
+        this.$set(this.form, 'fee', new BigNumber(this.schema.fee))
+        this.$refs.fee.fee = new BigNumber(this.schema.fee)
+      }
+    }
+
+    if (this.currentWallet && this.currentWallet.id) {
+      this.$set(this, 'wallet', this.currentWallet || null)
+      this.$v.wallet.$touch()
+    }
 
     this.form.fee = this.$refs.fee.fee
   },
@@ -302,7 +344,7 @@ export default {
 
       let success = true
       let transaction
-      if (!this.currentWallet.isLedger) {
+      if (!this.currentWallet || !this.currentWallet.isLedger) {
         transaction = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
       } else {
         success = false
@@ -340,11 +382,15 @@ export default {
     },
 
     emitNext (transaction) {
-      this.$emit('next', { transaction })
+      this.$emit('next', {
+        transaction,
+        wallet: this.senderWallet
+      })
     }
   },
 
   validations: {
+    wallet: {},
     form: {
       fee: {
         required,
@@ -358,7 +404,7 @@ export default {
       },
       passphrase: {
         isValid (value) {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
+          if (this.currentWallet && (this.currentWallet.isLedger || this.currentWallet.passphrase)) {
             return true
           }
 
@@ -370,7 +416,7 @@ export default {
       },
       walletPassword: {
         isValid (value) {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
+          if (this.currentWallet && (this.currentWallet.isLedger || !this.currentWallet.passphrase)) {
             return true
           }
 

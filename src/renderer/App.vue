@@ -68,6 +68,7 @@
         v-if="isUriTransactionOpen"
         :schema="uriSchema"
         :type="uriType"
+        :delegate="uriDelegate"
         @cancel="closeUriTransaction"
         @sent="closeUriTransaction"
       />
@@ -132,6 +133,7 @@ export default {
     hasBlurFilter: false,
     uriSchema: {},
     uriType: 0,
+    uriDelegate: null,
     isUriTransactionOpen: false,
     isUriMessageSignOpen: false,
     uriTransactionSchema: {},
@@ -336,7 +338,7 @@ export default {
     },
 
     __watchProcessURL () {
-      ipcRenderer.on('process-url', (_, url) => {
+      ipcRenderer.on('process-url', async (_, url) => {
         const uri = new URIHandler(url)
 
         if (!uri.validateLegacy() && !uri.validate()) {
@@ -356,7 +358,12 @@ export default {
               this.openUriTransaction(deserialized, 0)
               break
             case 'vote':
-              this.openUriTransaction(deserialized, 3)
+              try {
+                this.uriDelegate = await this.$client.fetchDelegate(deserialized.delegate)
+                this.openUriTransaction(deserialized, 3)
+              } catch {
+                this.$error(this.$t('VALIDATION.URI.INVALID_DELEGATE'))
+              }
               break
             case 'register-delegate':
               this.openUriTransaction(deserialized, 2)

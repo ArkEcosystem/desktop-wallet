@@ -79,7 +79,7 @@ export default {
   computed: {
     transactionKey () {
       const key = findKey(TRANSACTION_TYPES, type => this.type === type)
-      if (key === 'VOTE' && this.transaction.asset.votes.length) {
+      if (key === 'VOTE' && this.transaction && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
           return 'UNVOTE'
         }
