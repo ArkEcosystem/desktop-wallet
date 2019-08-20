@@ -5,7 +5,7 @@ import * as ListDividedComponents from '@/components/ListDivided'
 import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
 import TableWrapper from '@/components/utils/TableWrapper'
-import IFrameWrapper from '@/components/utils/IFrameWrapper'
+import WebFrame from '@/components/utils/WebFrame'
 
 export default {
   Button: ButtonComponents,
@@ -15,5 +15,5 @@ export default {
   Loader,
   Menu: MenuComponents,
   TableWrapper,
-  IFrameWrapper
+  WebFrame
 }

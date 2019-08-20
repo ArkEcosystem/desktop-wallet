@@ -1,25 +1,25 @@
 import { mount } from '@vue/test-utils'
-import IFrameWrapper from '@/components/utils/IFrameWrapper'
+import WebFrame from '@/components/utils/WebFrame'
 
-describe('IFrameWrapper', () => {
+describe('WebFrame', () => {
   it('should be instantiated', () => {
-    const wrapper = mount(IFrameWrapper)
+    const wrapper = mount(WebFrame)
     expect(wrapper.isVisible()).toBeTrue()
   })
 
   it('should render an iframe element', () => {
-    const wrapper = mount(IFrameWrapper)
+    const wrapper = mount(WebFrame)
     expect(wrapper.find('iframe').exists()).toBeTrue()
   })
 
   it('should contain the sandbox attribute', () => {
-    const wrapper = mount(IFrameWrapper)
+    const wrapper = mount(WebFrame)
     const iframe = wrapper.find('iframe')
     expect(iframe.attributes('sandbox')).toBe('allow-forms allow-scripts')
   })
 
   it('should render http url', () => {
-    const wrapper = mount(IFrameWrapper, {
+    const wrapper = mount(WebFrame, {
       propsData: {
         src: 'http://google.com'
       }
@@ -29,7 +29,7 @@ describe('IFrameWrapper', () => {
   })
 
   it('should not render file url', () => {
-    const wrapper = mount(IFrameWrapper, {
+    const wrapper = mount(WebFrame, {
       propsData: {
         src: 'file://index.html'
       }
@@ -39,7 +39,7 @@ describe('IFrameWrapper', () => {
   })
 
   it('should set custom size', () => {
-    const wrapper = mount(IFrameWrapper, {
+    const wrapper = mount(WebFrame, {
       propsData: {
         width: 500,
         height: 500

@@ -15,17 +15,17 @@ const isValidURL = (input) => {
     const uri = new URL(input)
     const isAllowed = allowedProtocols.includes(uri.protocol)
     if (!isAllowed) {
-      logger.error('[iframe]: Protocol not allowed.')
+      logger.error('[webframe]: Protocol not allowed.')
     }
     return isAllowed
   } catch {
-    logger.error(`[iframe]: Invalid url. Make sure to set the protocol (${allowedProtocols.join(',')}).`)
+    logger.error(`[webframe]: Invalid url. Make sure to set the protocol (${allowedProtocols.join(',')}).`)
     return false
   }
 }
 
 export default {
-  name: 'IFrameWrapper',
+  name: 'WebFrame',
   functional: true,
 
   props: {
