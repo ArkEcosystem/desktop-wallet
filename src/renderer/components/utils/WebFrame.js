@@ -66,7 +66,7 @@ export default {
           height: ctx.props.height,
           class: ctx.props.classes,
           src: url,
-          sandbox: 'allow-forms allow-scripts'
+          sandbox: 'allow-forms allow-scripts allow-same-origin'
         }
       })
     ])
