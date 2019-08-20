@@ -169,12 +169,20 @@ export default {
     },
 
     pendingBalance () {
-      return this.formatter_networkCurrency(this.rawBalance.subtract(this.pendingTransactionsRawAmount))
+      return this.formatter_networkCurrency(this.pendingTransactionsRawAmount.add(this.rawBalance))
     },
 
     pendingTransactionsRawAmount () {
       return this.getStoredTransactions().reduce((sum, transaction) => {
-        return sum.add(transaction.amount).add(transaction.fee)
+        if (transaction.recipient === this.currentWallet.address) {
+          sum = sum.add(transaction.amount)
+        }
+
+        if (transaction.sender === this.currentWallet.address) {
+          sum = sum.subtract(transaction.amount).subtract(transaction.fee)
+        }
+
+        return sum
       }, this.currency_toBuilder(0))
     },
 
@@ -183,7 +191,7 @@ export default {
     },
 
     pendingBalanceTooltip () {
-      return this.pendingTransactionsRawAmount.isGreaterThan(0)
+      return !this.pendingTransactionsRawAmount.isEqualTo(0)
         ? this.$tc('WALLET_HEADING.PENDING_BALANCE', this.pendingTransactionsCount, { amount: this.pendingBalance })
         : ''
     },

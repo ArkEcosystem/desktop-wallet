@@ -73,8 +73,8 @@ export class NumberBuilder {
    * @param {Number|String|BigNumber} value
    * @returns Boolean
    */
-  isGreaterThan (value) {
-    return this.value.gt(value)
+  isEqualTo (value) {
+    return this.value.eq(value)
   }
 
   /**
