@@ -182,7 +182,7 @@ class PluginManager {
                 for (const elKey in that.$refs) {
                   const element = that.$refs[elKey]
 
-                  if (element.tagName.toLowerCase() === 'iframe') {
+                  if (!element.tagName || element.tagName.toLowerCase() === 'iframe') {
                     continue
                   }
 
