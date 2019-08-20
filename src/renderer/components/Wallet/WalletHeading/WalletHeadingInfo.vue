@@ -183,7 +183,7 @@ export default {
     },
 
     pendingBalanceTooltip () {
-      return this.pendingRawAmount.isGreaterThan(0)
+      return this.pendingTransactionsRawAmount.isGreaterThan(0)
         ? this.$tc('WALLET_HEADING.PENDING_BALANCE', this.pendingTransactionsCount, { amount: this.pendingBalance })
         : ''
     },
