@@ -67,7 +67,7 @@
       <TransactionModal
         v-if="isUriTransactionOpen"
         :schema="uriSchema"
-        :type="0"
+        :type="uriType"
         @cancel="closeUriTransaction"
         @sent="closeUriTransaction"
       />
@@ -131,6 +131,7 @@ export default {
     isReady: false,
     hasBlurFilter: false,
     uriSchema: {},
+    uriType: 0,
     isUriTransactionOpen: false,
     isUriMessageSignOpen: false,
     uriTransactionSchema: {},
@@ -343,16 +344,22 @@ export default {
         } else {
           // TODO: handle AIP-13 and AIP-26 options differently
           const deserialized = uri.deserialize()
+          console.log(deserialized)
           switch (deserialized.type) {
             case 'legacy':
-              this.openUriTransaction(deserialized)
+              this.openUriTransaction(deserialized, 0)
               break
             case 'add-network':
+              console.log('TODO')
+              break
             case 'transfer':
-              this.openUriTransaction(deserialized)
+              this.openUriTransaction(deserialized, 0)
               break
             case 'vote':
+              this.openUriTransaction(deserialized, 3)
+              break
             case 'register-delegate':
+              this.openUriTransaction(deserialized, 2)
               console.log(deserialized)
               break
             case 'sign-message':
@@ -364,9 +371,10 @@ export default {
       })
     },
 
-    openUriTransaction (schema) {
+    openUriTransaction (schema, type) {
       this.isUriTransactionOpen = true
       this.uriSchema = schema
+      this.uriType = type
     },
 
     closeUriTransaction () {
