@@ -577,7 +577,7 @@ class PluginManager {
       inlineErrors.push('uses srcdoc property')
     }
     const inlineEvents = []
-    for (const event of PLUGINS.events) {
+    for (const event of PLUGINS.validation.events) {
       if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
         inlineEvents.push(event)
       }
