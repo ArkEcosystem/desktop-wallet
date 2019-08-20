@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
@@ -700,6 +700,43 @@ class PluginManager {
         info: this.app.$info,
         warn: this.app.$warn
       }
+    }
+
+    if (config.permissions.includes('MESSAGING')) {
+      const messages = {
+        events: [],
+
+        clear () {
+          for (const eventId in this.events) {
+            window.removeEventListener('message', this.events[eventId])
+          }
+
+          this.events = []
+        },
+
+        on (action, eventCallback) {
+          const eventTrigger = event => {
+            if (event.data !== Object(event.data) || event.data.action !== action) {
+              return
+            }
+
+            eventCallback({
+              origin: event.origin,
+              data: cloneDeep(event.data)
+            })
+          }
+
+          window.addEventListener('message', eventTrigger)
+          this.events[action] = eventTrigger
+        }
+      }
+
+      this.app.$router.beforeEach((_, __, next) => {
+        messages.clear()
+        next()
+      })
+
+      sandbox.walletApi.messages = messages
     }
 
     if (config.permissions.includes('STORAGE')) {
