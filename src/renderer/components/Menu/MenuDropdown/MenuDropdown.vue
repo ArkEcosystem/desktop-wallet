@@ -36,7 +36,7 @@
         'pin-x': pinToInputWidth
       }, containerClasses]"
       :style="{ transform: `translate(${position.join(',')})` }"
-      class="MenuDropdown__container absolute min-w-full z-20"
+      class="MenuDropdown__container absolute min-w-full z-40"
     >
       <ul
         class="MenuDropdown pointer-events-auto theme-light shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs"
