@@ -57,7 +57,7 @@
             :include="keepAliveRoutes"
             :max="keepAliveRoutes.length"
           >
-            <RouterView class="flex-1 overflow-y-auto" />
+            <RouterView class="App__page flex-1 overflow-y-auto" />
           </KeepAlive>
         </div>
 
@@ -412,5 +412,11 @@ export default {
 }
 .App__main.w-screen-adjusted {
   width: calc(100vw + 1rem);
+}
+@media (min-width: 768px) {
+  .App__page {
+    @apply .min-h-full;
+    max-height: calc(100vh - 5rem);
+  }
 }
 </style>
