@@ -11,7 +11,7 @@ export default store => {
         period: 'day'
       }
 
-      delete profile.isMarketChartEnabled
+      delete updatedProfile.isMarketChartEnabled
 
       store.dispatch('profile/update', updatedProfile)
     }
