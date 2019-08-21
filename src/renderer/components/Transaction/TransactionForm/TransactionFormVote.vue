@@ -83,7 +83,7 @@
           path="WALLET_DELEGATES.CURRENTLY_VOTED"
         >
           <strong place="delegate">
-            {{ votedDelegate.username }}
+            {{ votedDelegate ? votedDelegate.username : uriVotedDelegate.username }}
           </strong>
         </i18n>
       </div>
@@ -222,7 +222,8 @@ export default {
     voters: '0',
     showEncryptLoader: false,
     showLedgerLoader: false,
-    wallet: null
+    wallet: null,
+    uriVotedDelegate: null
   }),
 
   computed: {
@@ -248,15 +249,15 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet && (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter))) {
+      if (this.currentWallet && (this.currentWallet.isContact || ((!!this.votedDelegate && !this.isVoter)) || !!this.uriVotedDelegate)) {
         return false
       }
 
-      return !this.votedDelegate || (!!this.votedDelegate && this.isVoter)
+      return !this.votedDelegate || ((!!this.votedDelegate && this.isVoter) || !!this.uriVotedDelegate)
     },
 
     showCurrentlyVoting () {
-      return !!this.votedDelegate && !this.isVoter
+      return (!!this.votedDelegate && !this.isVoter) || !!this.uriVotedDelegate
     },
 
     walletNetwork () {
@@ -277,6 +278,10 @@ export default {
       } else {
         this.$refs.passphrase.focus()
       }
+    },
+
+    wallet () {
+      this.checkVotedDelegate()
     }
   },
 
@@ -312,6 +317,19 @@ export default {
 
     async fetchVoters () {
       this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
+    },
+
+    async checkVotedDelegate () {
+      try {
+        const delegatePublicKey = await this.$client.fetchWalletVote(this.wallet.address)
+        if (delegatePublicKey) {
+          this.uriVotedDelegate = await this.$client.fetchDelegate(delegatePublicKey)
+        } else {
+          this.uriVotedDelegate = null
+        }
+      } catch {
+        this.uriVotedDelegate = null
+      }
     },
 
     onFee (fee) {

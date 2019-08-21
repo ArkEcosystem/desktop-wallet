@@ -353,9 +353,6 @@ export default {
               if (!deserialized.amount) return this.$error(this.$t('VALIDATION.URI.MISSING_AMOUNT'))
               this.openUriTransaction(deserialized, 0)
               break
-            case 'add-network':
-              console.log('TODO')
-              break
             case 'transfer':
               if (!deserialized.address) return this.$error(this.$t('VALIDATION.URI.MISSING_ADDRESS'))
               if (!deserialized.amount) return this.$error(this.$t('VALIDATION.URI.MISSING_AMOUNT'))
