@@ -165,7 +165,7 @@ describe('Mixins > Currency', () => {
       beforeEach(() => (global.Intl = global.__Intl__))
       afterEach(() => (global.Intl = Intl))
 
-      it('should work precissely', () => {
+      it('should work precisely', () => {
         let amount = Math.pow(10, 12) + 0.01
         expect(format(amount, { currencyFrom: 'network' })).toEqual('×\xa01,000,000,000,000.01')
 
