@@ -27,7 +27,7 @@
         profile-class="mb-5"
       />
 
-      <template v-if="!currentWallet || !currentWallet.isDelegate">
+      <template v-if="(!currentWallet || !currentWallet.isDelegate) || schema">
         <InputText
           v-model="$v.form.username.$model"
           :helper-text="error"
@@ -45,44 +45,52 @@
           @input="onFee"
         />
 
-        <div
-          v-if="currentWallet && currentWallet.isLedger"
-          class="mt-10"
-        >
-          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
-        </div>
-        <InputPassword
-          v-else-if="currentWallet && currentWallet.passphrase"
-          ref="password"
-          v-model="$v.form.walletPassword.$model"
-          :label="$t('TRANSACTION.PASSWORD')"
-          :is-required="true"
-        />
-        <PassphraseInput
-          v-else-if="currentWallet"
-          ref="passphrase"
-          v-model="$v.form.passphrase.$model"
-          :address="currentWallet.address"
-          :pub-key-hash="walletNetwork.version"
-        />
+        <template v-if="!currentWallet || !currentWallet.isDelegate">
+          <div
+            v-if="currentWallet && currentWallet.isLedger"
+            class="mt-10"
+          >
+            {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+          </div>
+          <InputPassword
+            v-else-if="currentWallet && currentWallet.passphrase"
+            ref="password"
+            v-model="$v.form.walletPassword.$model"
+            :label="$t('TRANSACTION.PASSWORD')"
+            :is-required="true"
+          />
+          <PassphraseInput
+            v-else-if="currentWallet"
+            ref="passphrase"
+            v-model="$v.form.passphrase.$model"
+            :address="currentWallet.address"
+            :pub-key-hash="walletNetwork.version"
+          />
 
-        <PassphraseInput
-          v-if="currentWallet && currentWallet.secondPublicKey"
-          ref="secondPassphrase"
-          v-model="$v.form.secondPassphrase.$model"
-          :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
-          :pub-key-hash="walletNetwork.version"
-          :public-key="currentWallet.secondPublicKey"
-          class="mt-5"
-        />
+          <PassphraseInput
+            v-if="currentWallet && currentWallet.secondPublicKey"
+            ref="secondPassphrase"
+            v-model="$v.form.secondPassphrase.$model"
+            :label="$t('TRANSACTION.SECOND_PASSPHRASE')"
+            :pub-key-hash="walletNetwork.version"
+            :public-key="currentWallet.secondPublicKey"
+            class="mt-5"
+          />
+        </template>
 
         <button
-          :disabled="$v.form.$invalid"
+          :disabled="$v.form.$invalid || (currentWallet && currentWallet.isDelegate)"
           class="blue-button mt-10 ml-0"
           @click="onSubmit"
         >
           {{ $t('COMMON.NEXT') }}
         </button>
+
+        <template v-if="schema && currentWallet && currentWallet.isDelegate">
+          <div class="mt-5">
+            {{ $t('WALLET_DELEGATES.ALREADY_REGISTERED') }}
+          </div>
+        </template>
 
         <ModalLoader
           ref="modalLoader"
