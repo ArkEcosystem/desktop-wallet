@@ -13,7 +13,7 @@ export default store => {
 
       delete profile.isMarketChartEnabled
 
-      store.dispatch('profile/update, newProfile')
+      store.dispatch('profile/update', newProfile)
     }
   })
 
