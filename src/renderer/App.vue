@@ -362,7 +362,7 @@ export default {
               this.openUriTransaction(deserialized, 0)
               break
             case 'vote':
-              if (!deserialized.username) return this.$error(this.$t('VALIDATION.URI.MISSING_DELEGATE'))
+              if (!deserialized.delegate) return this.$error(this.$t('VALIDATION.URI.MISSING_DELEGATE'))
               try {
                 this.uriDelegate = await this.$client.fetchDelegate(deserialized.delegate)
                 this.openUriTransaction(deserialized, 3)
@@ -371,7 +371,7 @@ export default {
               }
               break
             case 'register-delegate':
-              if (!deserialized.username) return this.$error(this.$t('VALIDATION.URI.MISSING_USERNAME'))
+              if (!deserialized.delegate) return this.$error(this.$t('VALIDATION.URI.MISSING_USERNAME'))
               this.openUriTransaction(deserialized, 2)
               break
             case 'sign-message':
