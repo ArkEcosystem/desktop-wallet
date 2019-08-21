@@ -19,10 +19,6 @@ export default class URIHandler {
       const queryString = {}
       schema[2].replace(paramRegex, (_, $1, __, $2) => (queryString[$1] = $2))
 
-      console.log(schema)
-      console.log(queryString)
-      // const schema = this.__formatSchema()
-
       // All AIP-26 options combined, as they have a lot of overlap
       const scheme = {
         type: schema[1],
@@ -63,9 +59,6 @@ export default class URIHandler {
 
       const queryString = {}
       legacySchema[2].replace(paramRegex, (_, $1, __, $3) => (queryString[$1] = $3))
-
-      console.log(legacySchema)
-      console.log(queryString)
 
       const legacyScheme = {
         type: 'legacy',

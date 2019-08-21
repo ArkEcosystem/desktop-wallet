@@ -349,15 +349,20 @@ export default {
           console.log(deserialized)
           switch (deserialized.type) {
             case 'legacy':
+              if (!deserialized.address) return this.$error(this.$t('VALIDATION.URI.MISSING_ADDRESS'))
+              if (!deserialized.amount) return this.$error(this.$t('VALIDATION.URI.MISSING_AMOUNT'))
               this.openUriTransaction(deserialized, 0)
               break
             case 'add-network':
               console.log('TODO')
               break
             case 'transfer':
+              if (!deserialized.address) return this.$error(this.$t('VALIDATION.URI.MISSING_ADDRESS'))
+              if (!deserialized.amount) return this.$error(this.$t('VALIDATION.URI.MISSING_AMOUNT'))
               this.openUriTransaction(deserialized, 0)
               break
             case 'vote':
+              if (!deserialized.username) return this.$error(this.$t('VALIDATION.URI.MISSING_DELEGATE'))
               try {
                 this.uriDelegate = await this.$client.fetchDelegate(deserialized.delegate)
                 this.openUriTransaction(deserialized, 3)
@@ -366,10 +371,11 @@ export default {
               }
               break
             case 'register-delegate':
+              if (!deserialized.username) return this.$error(this.$t('VALIDATION.URI.MISSING_USERNAME'))
               this.openUriTransaction(deserialized, 2)
-              console.log(deserialized)
               break
             case 'sign-message':
+              if (!deserialized.message) return this.$error(this.$t('VALIDATION.URI.MISSING_MESSAGE'))
               this.openUriMessageSign(deserialized)
               // TODO: after signing we should show the page with the signature on it too
               break

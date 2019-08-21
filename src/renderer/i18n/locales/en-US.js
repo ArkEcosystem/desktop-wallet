@@ -168,6 +168,14 @@ export default {
     },
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
+    URI: {
+      INVALID_DELEGATE: 'The delegate could not be found',
+      MISSING_ADDRESS: 'No receiver address specified',
+      MISSING_AMOUNT: 'No amount specified',
+      MISSING_DELEGATE: 'No delegate specified',
+      MISSING_USERNAME: 'No delegate username specified',
+      MISSING_MESSAGE: 'No message to sign specified'
+    },
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
     WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',
     WARNING_NOT_BIP39: 'The \'{0}\' is not a BIP39 Passphrase'
