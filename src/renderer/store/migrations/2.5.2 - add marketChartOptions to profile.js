@@ -3,9 +3,9 @@ import { clone, isUndefined } from 'lodash'
 export default store => {
   store.getters['profile/all'].forEach(profile => {
     if (isUndefined(profile.marketChartOptions)) {
-      const newProfile = clone(profile)
+      const updatedProfile = clone(profile)
 
-      newProfile.marketChartOptions = {
+      updatedProfile.marketChartOptions = {
         isEnabled: profile.isMarketChartEnabled,
         isExpanded: true,
         period: 'day'
@@ -13,7 +13,7 @@ export default store => {
 
       delete profile.isMarketChartEnabled
 
-      store.dispatch('profile/update', newProfile)
+      store.dispatch('profile/update', updatedProfile)
     }
   })
 
