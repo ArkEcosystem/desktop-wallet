@@ -50,13 +50,13 @@ export default {
     const src = ctx.props.src
     const url = isValidURL(src) ? src : 'about:blank'
 
-    return h('iframe', {
+    return h('webview', {
       attrs: {
         width: ctx.props.width,
         height: ctx.props.height,
         class: ctx.data.staticClass,
         src: url,
-        sandbox: 'allow-forms allow-scripts allow-same-origin'
+        enableremotemodule: 'false'
       }
     })
   }
