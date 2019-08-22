@@ -38,7 +38,7 @@
           :is="tab.component"
           slot-scope="{ isActive }"
           :is-active="isActive"
-          @on-row-click="onRowClick"
+          @on-row-click-delegate="onRowClickDelegate"
         />
       </MenuTabItem>
     </MenuTab>
@@ -329,6 +329,19 @@ export default {
       if (!newValue && oldValue) {
         await this.fetchWalletVote()
       }
+    },
+    selectedDelegate (delegate) {
+      if (delegate) {
+        this.isSelecting = false
+
+        if (this.votedDelegate) {
+          if (delegate.publicKey === this.votedDelegate.publicKey) {
+            this.isUnvoting = true
+          }
+        } else {
+          this.isVoting = true
+        }
+      }
     }
   },
 
@@ -424,18 +437,6 @@ export default {
 
     onConfirmSelect (value) {
       this.selectedDelegate = this.$store.getters['delegate/search'](value)
-
-      if (this.selectedDelegate) {
-        this.isSelecting = false
-
-        if (this.votedDelegate) {
-          if (this.selectedDelegate.publicKey === this.votedDelegate.publicKey) {
-            this.isUnvoting = true
-          }
-        } else {
-          this.isVoting = true
-        }
-      }
     },
 
     onSent (success, transaction) {
@@ -457,8 +458,8 @@ export default {
       this.isVoting = false
     },
 
-    onRowClick (publicKey) {
-      this.onConfirmSelect(publicKey)
+    onRowClickDelegate (delegate) {
+      this.selectedDelegate = delegate
     }
   }
 }
