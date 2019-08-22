@@ -20,6 +20,7 @@ Vue.use(VTooltip, {
 })
 Vue.use(directives)
 Vue.use(filters)
+Vue.config.ignoredElements = ['webview']
 
 VueTestUtils.config.mocks.$eventBus = eventBus
 VueTestUtils.config.mocks.$client = {
