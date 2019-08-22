@@ -81,8 +81,24 @@ describe('URI Handler', () => {
       expect(() => { uri.deserialize() }).toThrowError('message')
     })
 
+    it('should deserialize when required parameters are given', () => {
+      let schema = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=100').deserialize()
+      expect(schema.recipient).toBe('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
+      expect(schema.amount).toBe('100')
+      schema = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=100&fee=0.1&vendorField=This%20is%20my%20vendorfield%20message').deserialize()
+      expect(schema.recipient).toBe('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
+      expect(schema.amount).toBe('100')
+      expect(schema.fee).toBe('0.1')
+      expect(schema.vendorField).toBe('This is my vendorfield message')
+      schema = new URIHandler('ark:vote?delegate=genesis_10').deserialize()
+      expect(schema.delegate).toBe('genesis_10')
+      schema = new URIHandler('ark:register-delegate?delegate=mynewdelegate').deserialize()
+      expect(schema.delegate).toBe('mynewdelegate')
+      schema = new URIHandler('ark:sign-message?message=This%20is%20my%20message').deserialize()
+      expect(schema.message).toBe('This is my message')
+    })
+
     // TODO:
-    // - correct schema deserialization
     // - invalid address (length != 34)
     // - too long smartbridge message
     // - limit sign-message message?
