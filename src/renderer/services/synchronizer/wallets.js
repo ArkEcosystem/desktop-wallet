@@ -299,21 +299,6 @@ class Action {
     }
   }
 
-  // TODO update only 1 time
-  processVotes (votes) {
-    const ids = votes.map(vote => vote.id)
-    const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
-      return !ids.includes(vote.id)
-    })
-
-    this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
-
-    this.$dispatch('profile/update', {
-      ...this.profile,
-      unconfirmedVotes: filteredVotes
-    })
-  }
-
   // TODO use the eventBus to display transactions
   displayNewTransaction (transaction, wallet) {
     let message = {}
