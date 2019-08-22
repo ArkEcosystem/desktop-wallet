@@ -174,7 +174,7 @@ export default {
     },
 
     onRowClick ({ row }) {
-      this.$emit('on-row-click', row.publicKey)
+      this.$emit('on-row-click-delegate', row)
     },
 
     onPageChange ({ currentPage }) {
