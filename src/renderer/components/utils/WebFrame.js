@@ -60,6 +60,15 @@ export default {
       },
 
       on: {
+        'console-message': event => {
+          const message = typeof event.message !== 'string' ? JSON.stringify(event.message) : event.message
+          if (event.level === 2) {
+            logger.error('[webframe log]:', message)
+          } else {
+            logger.log('[webframe log]:', message)
+          }
+        },
+
         'will-navigate': event => {
           if (!isValidURL(event.url)) {
             event.target.stop()
