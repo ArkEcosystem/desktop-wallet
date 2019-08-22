@@ -142,6 +142,32 @@ export default {
       return data
     },
 
+    processVotes ({ dispatch, rootGetters }, transactions = []) {
+      const unconfirmedVotes = rootGetters['session/unconfirmedVotes']
+      const profile = rootGetters['session/profile']
+
+      if (!unconfirmedVotes || !unconfirmedVotes.length || !profile) {
+        return
+      }
+
+      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
+      if (!votes.length) {
+        return
+      }
+
+      const ids = votes.map(vote => vote.id)
+      const pendingVotes = unconfirmedVotes.filter(vote => {
+        return !ids.includes(vote.id)
+      })
+
+      dispatch('session/setUnconfirmedVotes', pendingVotes, { root: true })
+
+      dispatch('profile/update', {
+        ...profile,
+        unconfirmedVotes: pendingVotes
+      }, { root: true })
+    },
+
     clearExpired ({ commit, getters, rootGetters }) {
       const expired = []
       const profileId = rootGetters['session/profileId']
