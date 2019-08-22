@@ -58,7 +58,7 @@ export default {
         class: ctx.data.staticClass,
         src: url,
         enableremotemodule: 'false',
-        preload: `file://${path.resolve(__dirname, 'WebFrame/preload.js')}`
+        preload: `file:${path.resolve(__static, './webview-preload.js')}`
       },
 
       on: {
