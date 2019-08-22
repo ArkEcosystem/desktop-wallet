@@ -1,5 +1,6 @@
 import { URL } from 'url'
 import logger from 'electron-log'
+import path from 'path'
 
 const allowedProtocols = [
   'http:',
@@ -56,7 +57,8 @@ export default {
         height: ctx.props.height,
         class: ctx.data.staticClass,
         src: url,
-        enableremotemodule: 'false'
+        enableremotemodule: 'false',
+        preload: `file://${path.resolve(__dirname, 'WebFrame/preload.js')}`
       },
 
       on: {
@@ -74,6 +76,13 @@ export default {
             event.target.stop()
             event.target.location = 'about:blank'
           }
+        },
+
+        'ipc-message': event => {
+          window.postMessage({
+            action: event.channel,
+            data: event.args.length ? event.args[0] : {}
+          })
         }
       }
     })
