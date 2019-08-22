@@ -175,7 +175,11 @@ export default {
       MISSING_DELEGATE: 'No delegate specified',
       MISSING_USERNAME: 'No delegate username specified',
       MISSING_MESSAGE: 'No message to sign specified',
-      MISSING_CASE: 'This URI format could not be validated'
+      MISSING_CASE: 'This URI format could not be validated',
+      FEE_ZERO: 'The fee cannot be zero',
+      FEE_NEGATIVE: 'The fee cannot be negative',
+      FEE_TOO_LOW: 'The fee cannot be below 1 arktoshi',
+      VENDORFIELD_TOO_LARGE: 'The smartbridge message is too long'
     },
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
     WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',

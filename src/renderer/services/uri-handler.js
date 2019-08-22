@@ -64,6 +64,20 @@ export default class URIHandler {
           throw new Error(i18n.t('VALIDATION.URI.MISSING_CASE'))
       }
 
+      // General validation
+      if (scheme.fee) {
+        if (Number(scheme.fee) === 0) {
+          throw new Error(i18n.t('VALIDATION.URI.FEE_ZERO'))
+        } else if (Number(scheme.fee) < 0) {
+          throw new Error(i18n.t('VALIDATION.URI.FEE_NEGATIVE'))
+        } else if (Number(scheme.fee) < 1e-8) {
+          throw new Error(i18n.t('VALIDATION.URI.FEE_TOO_LOW'))
+        }
+      }
+      if (scheme.vendorField && scheme.vendorField.length > 255) {
+        throw new Error(i18n.t('VALIDATION.URI.VENDORFIELD_TOO_LARGE'))
+      }
+
       // Handle the props that should be decoded / numbers
       scheme.seedServer = scheme.seedServer ? this.__fullyDecode(scheme.seedServer) : null
       scheme.description = scheme.description ? this.__fullyDecode(scheme.description) : null

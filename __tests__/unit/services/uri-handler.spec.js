@@ -98,13 +98,25 @@ describe('URI Handler', () => {
       expect(schema.message).toBe('This is my message')
     })
 
+    it('should not allow fees below 1e8, being 0 or negative', () => {
+      let uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=0')
+      expect(() => { uri.deserialize() }).toThrowError('zero')
+      uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=-123')
+      expect(() => { uri.deserialize() }).toThrowError('negative')
+      uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=0.00000000001')
+      expect(() => { uri.deserialize() }).toThrowError('below')
+    })
+
+    it('should not allow vendor field messages over 255', () => {
+      const uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1&vendorField=Message%20for%20Arkbutverylonganditgoesonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandon')
+      expect(() => { uri.deserialize() }).toThrowError('smartbridge')
+    })
+
     // TODO:
     // - invalid address (length != 34)
-    // - too long smartbridge message
     // - limit sign-message message?
     // - non-existent delegate to vote for
     // - already existing delegate name
-    // - too low fee (< 1e8)
     // - numeric values for string fields / strings for numeric fields
   })
 })
