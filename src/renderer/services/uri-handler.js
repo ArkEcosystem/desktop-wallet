@@ -26,14 +26,11 @@ export default class URIHandler {
       const scheme = {
         type: schema[1],
         name: null,
-        seedServer: null,
         description: null,
         recipient: null,
         amount: null,
         fee: null,
         vendorField: null,
-        relay: null,
-        nethash: null,
         label: null,
         delegate: null,
         message: null
@@ -79,12 +76,10 @@ export default class URIHandler {
       }
 
       // Handle the props that should be decoded / numbers
-      scheme.seedServer = scheme.seedServer ? this.__fullyDecode(scheme.seedServer) : null
       scheme.description = scheme.description ? this.__fullyDecode(scheme.description) : null
       scheme.amount = scheme.amount ? scheme.amount : null
       scheme.fee = scheme.fee ? scheme.fee : null
       scheme.vendorField = scheme.vendorField ? this.__fullyDecode(scheme.vendorField) : null
-      scheme.relay = scheme.relay ? this.__fullyDecode(scheme.relay) : null
       scheme.label = scheme.label ? this.__fullyDecode(scheme.label) : null
       scheme.message = scheme.message ? this.__fullyDecode(scheme.message) : null
 
