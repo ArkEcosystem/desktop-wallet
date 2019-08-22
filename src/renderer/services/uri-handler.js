@@ -5,8 +5,9 @@ const schemaRegex = new RegExp(/^(?:ark:)(transfer|vote|register-delegate|sign-m
 const paramRegex = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
 
 export default class URIHandler {
-  constructor (url) {
+  constructor (url, isQR = false) {
     this.url = url
+    this.isQR = isQR
   }
 
   /**
@@ -95,11 +96,12 @@ export default class URIHandler {
         }
       }
 
+      legacyScheme.address = legacySchema[1]
+
       // Validation
       if (!legacyScheme.address) throw new Error(i18n.t('VALIDATION.URI.MISSING_ADDRESS'))
-      if (!legacyScheme.amount) throw new Error(i18n.t('VALIDATION.URI.MISSING_AMOUNT'))
+      if (!this.isQR && !legacyScheme.amount) throw new Error(i18n.t('VALIDATION.URI.MISSING_AMOUNT'))
 
-      legacyScheme.address = legacySchema[1]
       legacyScheme.amount = legacyScheme.amount ? legacyScheme.amount : null
       legacyScheme.label = legacyScheme.label ? this.__fullyDecode(legacyScheme.label) : null
       legacyScheme.vendorField = legacyScheme.vendorField ? this.__fullyDecode(legacyScheme.vendorField) : null

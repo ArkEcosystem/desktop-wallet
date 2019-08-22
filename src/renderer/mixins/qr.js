@@ -7,7 +7,7 @@ export default {
     qr_getAddress (value) {
       // Possible options:
       // 1. uri
-      const uri = new URIHandler(value)
+      const uri = new URIHandler(value, true)
 
       if (uri.validateLegacy()) {
         const schema = uri.deserialize()
