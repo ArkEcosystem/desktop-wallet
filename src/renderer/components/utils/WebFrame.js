@@ -57,6 +57,15 @@ export default {
         class: ctx.data.staticClass,
         src: url,
         enableremotemodule: 'false'
+      },
+
+      on: {
+        'will-navigate': event => {
+          if (!isValidURL(event.url)) {
+            event.target.stop()
+            event.target.location = 'about:blank'
+          }
+        }
       }
     })
   }
