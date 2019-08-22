@@ -174,7 +174,8 @@ export default {
       MISSING_AMOUNT: 'No amount specified',
       MISSING_DELEGATE: 'No delegate specified',
       MISSING_USERNAME: 'No delegate username specified',
-      MISSING_MESSAGE: 'No message to sign specified'
+      MISSING_MESSAGE: 'No message to sign specified',
+      MISSING_CASE: 'This URI format could not be validated'
     },
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
     WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',

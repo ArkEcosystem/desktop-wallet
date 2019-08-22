@@ -1,5 +1,7 @@
+import i18n from '@/i18n'
+
 const legacySchemaRegex = new RegExp(/^(?:ark:)([0-9a-zA-Z]{34})([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
-const schemaRegex = new RegExp(/^(?:ark:)(add-network|transfer|vote|register-delegate|sign-message)([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
+const schemaRegex = new RegExp(/^(?:ark:)(transfer|vote|register-delegate|sign-message)([-a-zA-Z0-9+&@#/%=~_|$?!:,.]*)$/)
 const paramRegex = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
 
 export default class URIHandler {
@@ -13,7 +15,7 @@ export default class URIHandler {
    */
   deserialize () {
     if (!this.validateLegacy()) {
-      if (!this.validate()) return
+      if (!this.validate()) throw new Error(i18n.t('VALIDATION.INVALID_URI'))
 
       const schema = this.__formatSchema()
       const queryString = {}
@@ -40,6 +42,25 @@ export default class URIHandler {
         if (queryString[prop]) {
           scheme[prop] = queryString[prop]
         }
+      }
+
+      // Validate values we received
+      switch (scheme.type) {
+        case 'transfer':
+          if (!scheme.recipient) throw new Error(i18n.t('VALIDATION.URI.MISSING_ADDRESS'))
+          if (!scheme.amount) throw new Error(i18n.t('VALIDATION.URI.MISSING_AMOUNT'))
+          break
+        case 'vote':
+          if (!scheme.delegate) throw new Error(i18n.t('VALIDATION.URI.MISSING_DELEGATE'))
+          break
+        case 'register-delegate':
+          if (!scheme.delegate) throw new Error(i18n.t('VALIDATION.URI.MISSING_USERNAME'))
+          break
+        case 'sign-message':
+          if (!scheme.message) throw new Error(i18n.t('VALIDATION.URI.MISSING_MESSAGE'))
+          break
+        default:
+          throw new Error(i18n.t('VALIDATION.URI.MISSING_CASE'))
       }
 
       // Handle the props that should be decoded / numbers
@@ -73,6 +94,10 @@ export default class URIHandler {
           legacyScheme[prop] = queryString[prop]
         }
       }
+
+      // Validation
+      if (!legacyScheme.address) throw new Error(i18n.t('VALIDATION.URI.MISSING_ADDRESS'))
+      if (!legacyScheme.amount) throw new Error(i18n.t('VALIDATION.URI.MISSING_AMOUNT'))
 
       legacyScheme.address = legacySchema[1]
       legacyScheme.amount = legacyScheme.amount ? legacyScheme.amount : null

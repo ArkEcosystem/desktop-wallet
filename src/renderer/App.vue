@@ -341,25 +341,18 @@ export default {
       ipcRenderer.on('process-url', async (_, url) => {
         const uri = new URIHandler(url)
 
-        if (!uri.validateLegacy() && !uri.validate()) {
-          this.$error(this.$t('VALIDATION.INVALID_URI'))
-        } else {
-          // TODO: handle AIP-13 and AIP-26 options differently
+        try {
           const deserialized = uri.deserialize()
           console.log(deserialized)
           switch (deserialized.type) {
             case 'legacy':
-              if (!deserialized.address) return this.$error(this.$t('VALIDATION.URI.MISSING_ADDRESS'))
-              if (!deserialized.amount) return this.$error(this.$t('VALIDATION.URI.MISSING_AMOUNT'))
               this.openUriTransaction(deserialized, 0)
               break
             case 'transfer':
-              if (!deserialized.address) return this.$error(this.$t('VALIDATION.URI.MISSING_ADDRESS'))
-              if (!deserialized.amount) return this.$error(this.$t('VALIDATION.URI.MISSING_AMOUNT'))
               this.openUriTransaction(deserialized, 0)
               break
             case 'vote':
-              if (!deserialized.delegate) return this.$error(this.$t('VALIDATION.URI.MISSING_DELEGATE'))
+              // TODO: check up on fetching a delegate on multiple networks
               try {
                 this.uriDelegate = await this.$client.fetchDelegate(deserialized.delegate)
                 this.openUriTransaction(deserialized, 3)
@@ -368,15 +361,15 @@ export default {
               }
               break
             case 'register-delegate':
-              if (!deserialized.delegate) return this.$error(this.$t('VALIDATION.URI.MISSING_USERNAME'))
               this.openUriTransaction(deserialized, 2)
               break
             case 'sign-message':
-              if (!deserialized.message) return this.$error(this.$t('VALIDATION.URI.MISSING_MESSAGE'))
               this.openUriMessageSign(deserialized)
               // TODO: after signing we should show the page with the signature on it too
               break
           }
+        } catch (exception) {
+          this.$error(exception)
         }
       })
     },
