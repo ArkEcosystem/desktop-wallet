@@ -88,7 +88,9 @@ describe('InputFee', () => {
         $store: store,
         $synchronizer: {
           focus: jest.fn(),
-          pause: jest.fn()
+          pause: jest.fn(),
+          appendFocus: jest.fn(),
+          removeFocus: jest.fn()
         },
         $v: {
           fee: {
