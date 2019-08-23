@@ -253,7 +253,7 @@ export default {
       set (protection) {
         this.$store.dispatch('session/setScreenshotProtection', protection)
 
-        if (!this.screenshotProtection || this.saveOnProfile) {
+        if (protection || this.saveOnProfile) {
           this.$store.dispatch('profile/update', {
             ...this.session_profile,
             screenshotProtection: protection
