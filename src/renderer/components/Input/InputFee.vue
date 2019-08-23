@@ -244,13 +244,13 @@ export default {
 
   created () {
     // Fees should be synchronized only when this component is active
-    this.$synchronizer.focus('fees')
+    this.$synchronizer.appendFocus('fees')
 
     this.emitFee(this.feeChoices.AVERAGE)
   },
 
   beforeDestroy () {
-    this.$synchronizer.pause('fees')
+    this.$synchronizer.removeFocus('fees')
   },
 
   methods: {
