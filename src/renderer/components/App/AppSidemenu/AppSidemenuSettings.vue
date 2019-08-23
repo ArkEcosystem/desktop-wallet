@@ -136,8 +136,8 @@
           :continue-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.PERMANENTLY')"
           container-classes="max-w-md"
           @close="toggleScreenshotProtectionModal"
-          @cancel="onToggleScreenshotProtection"
-          @continue="onToggleScreenshotProtection(true)"
+          @cancel="onDisableScreenshotProtection"
+          @continue="onDisableScreenshotProtection(true)"
         />
 
         <ModalConfirmation
@@ -337,7 +337,7 @@ export default {
       this.electron_reload()
     },
 
-    onToggleScreenshotProtection (saveOnProfile = false) {
+    onDisableScreenshotProtection (saveOnProfile = false) {
       this.saveOnProfile = saveOnProfile
       this.hasScreenshotProtection = false
       this.toggleScreenshotProtectionModal()
