@@ -318,7 +318,7 @@ class Action {
           translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
           options: {
             address: truncateMiddle(wallet.address),
-            username: transaction.assets.delegate.username
+            username: transaction.asset.delegate.username
           }
         }
         break
