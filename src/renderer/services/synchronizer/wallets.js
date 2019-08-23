@@ -118,7 +118,7 @@ class Action {
     if (this.allWallets.length) {
       await this.sync()
     }
-
+    this.$dispatch('transaction/clearUnconfirmedVotes')
     const expiredTransactions = await this.$dispatch('transaction/clearExpired')
     for (const transactionId of expiredTransactions) {
       this.emit(`transaction:${transactionId}:expired`)
@@ -280,10 +280,7 @@ class Action {
         profileId: wallet.profileId
       })
 
-      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
-      if (votes.length) {
-        this.processVotes(votes)
-      }
+      this.synchronizer.$store.dispatch('transaction/processVotes', transactions)
 
       const latestTransaction = maxBy(transactions, 'timestamp')
       const latestAt = latestTransaction.timestamp
@@ -300,21 +297,6 @@ class Action {
     } catch (error) {
       this.$logger.error(error)
     }
-  }
-
-  // TODO update only 1 time
-  processVotes (votes) {
-    const ids = votes.map(vote => vote.id)
-    const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
-      return !ids.includes(vote.id)
-    })
-
-    this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
-
-    this.$dispatch('profile/update', {
-      ...this.profile,
-      unconfirmedVotes: filteredVotes
-    })
   }
 
   // TODO use the eventBus to display transactions
