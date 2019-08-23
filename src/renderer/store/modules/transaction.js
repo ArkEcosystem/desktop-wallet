@@ -168,6 +168,32 @@ export default {
       }, { root: true })
     },
 
+    clearUnconfirmed ({ dispatch, rootGetters }) {
+      const unconfirmedVotes = rootGetters['session/unconfirmedVotes']
+      const profile = rootGetters['session/profile']
+
+      if (!unconfirmedVotes || !unconfirmedVotes.length || !profile) {
+        return
+      }
+
+      const pendingVotes = unconfirmedVotes.filter(vote => {
+        if (!vote.timestamp) {
+          return true
+        }
+        const threshold = dayjs(vote.timestamp).add(6, 'hour')
+        if (dayjs(vote.timestamp).isBefore(threshold)) {
+          return false
+        }
+        return true
+      })
+
+      dispatch('session/setUnconfirmedVotes', pendingVotes, { root: true })
+      dispatch('profile/update', {
+        ...profile,
+        unconfirmedVotes: pendingVotes
+      }, { root: true })
+    },
+
     clearExpired ({ commit, getters, rootGetters }) {
       const expired = []
       const profileId = rootGetters['session/profileId']
