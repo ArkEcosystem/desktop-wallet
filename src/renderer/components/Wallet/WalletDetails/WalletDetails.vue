@@ -446,7 +446,8 @@ export default {
           {
             id: transaction.id,
             address: this.currentWallet.address,
-            publicKey: transaction.asset.votes[0]
+            publicKey: transaction.asset.votes[0],
+            timestamp: Date.now()
           }
         ]
 
