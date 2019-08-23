@@ -731,10 +731,7 @@ class PluginManager {
               return
             }
 
-            eventCallback({
-              origin: event.origin,
-              data: cloneDeep(event.data)
-            })
+            eventCallback(cloneDeep(event.data))
           }
 
           window.addEventListener('message', eventTrigger)

@@ -1,5 +1,6 @@
 import { URL } from 'url'
 import logger from 'electron-log'
+import path from 'path'
 
 const allowedProtocols = [
   'http:',
@@ -50,13 +51,39 @@ export default {
     const src = ctx.props.src
     const url = isValidURL(src) ? src : 'about:blank'
 
-    return h('iframe', {
+    return h('webview', {
       attrs: {
         width: ctx.props.width,
         height: ctx.props.height,
         class: ctx.data.staticClass,
         src: url,
-        sandbox: 'allow-forms allow-scripts allow-same-origin'
+        enableremotemodule: 'false',
+        preload: `file:${path.resolve(__static, './webview-preload.js')}`
+      },
+
+      on: {
+        'console-message': event => {
+          const message = typeof event.message !== 'string' ? JSON.stringify(event.message) : event.message
+          if (event.level === 2) {
+            logger.error('[webframe log]:', message)
+          } else {
+            logger.log('[webframe log]:', message)
+          }
+        },
+
+        'will-navigate': event => {
+          if (!isValidURL(event.url)) {
+            event.target.stop()
+            event.target.location = 'about:blank'
+          }
+        },
+
+        'ipc-message': event => {
+          window.postMessage({
+            action: event.channel,
+            data: event.args.length ? event.args[0] : {}
+          })
+        }
       }
     })
   }
