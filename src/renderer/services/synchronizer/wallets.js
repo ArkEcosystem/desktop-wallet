@@ -118,7 +118,7 @@ class Action {
     if (this.allWallets.length) {
       await this.sync()
     }
-
+    this.$dispatch('transaction/clearUnconfirmedVotes')
     const expiredTransactions = await this.$dispatch('transaction/clearExpired')
     for (const transactionId of expiredTransactions) {
       this.emit(`transaction:${transactionId}:expired`)

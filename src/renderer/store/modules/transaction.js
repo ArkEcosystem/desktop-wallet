@@ -168,7 +168,7 @@ export default {
       }, { root: true })
     },
 
-    clearUnconfirmed ({ dispatch, rootGetters }) {
+    async clearUnconfirmedVotes ({ dispatch, rootGetters }) {
       const unconfirmedVotes = rootGetters['session/unconfirmedVotes']
       const profile = rootGetters['session/profile']
 
@@ -181,14 +181,11 @@ export default {
           return true
         }
         const threshold = dayjs(vote.timestamp).add(6, 'hour')
-        if (dayjs(vote.timestamp).isBefore(threshold)) {
-          return false
-        }
-        return true
+        return !dayjs().isAfter(threshold)
       })
 
-      dispatch('session/setUnconfirmedVotes', pendingVotes, { root: true })
-      dispatch('profile/update', {
+      await dispatch('session/setUnconfirmedVotes', pendingVotes, { root: true })
+      await dispatch('profile/update', {
         ...profile,
         unconfirmedVotes: pendingVotes
       }, { root: true })
