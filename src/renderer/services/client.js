@@ -32,7 +32,10 @@ export default class ClientService {
    * @returns {Object}
    */
   static async fetchNetworkConfig (server, timeout) {
-    const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+    const client = (new Connection(`${server}/api/v2`)).withOptions({
+      timeout: timeout || 5000,
+      rejectUnauthorized: false
+    })
 
     const response = await client.api('node').configuration()
     const data = response.body.data
@@ -73,7 +76,8 @@ export default class ClientService {
       try {
         const { body } = await got(endpoint, {
           json: true,
-          timeout
+          timeout,
+          rejectUnauthorized: false
         })
 
         if (body) {
@@ -90,7 +94,10 @@ export default class ClientService {
 
   static async fetchFeeStatistics (server, timeout) {
     try {
-      const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+      const client = (new Connection(`${server}/api/v2`)).withOptions({
+        timeout: timeout || 5000,
+        rejectUnauthorized: false
+      })
       const { body } = await client.api('node').fees(7)
 
       return body.data.map(fee => ({
@@ -113,7 +120,9 @@ export default class ClientService {
     // The API version is imprecise, since new capabilities are being added continuously.
     // So, this property uses the peer version to know which features are available
     this.__capabilities = '2.0.0'
-    this.client = new Connection('http://localhost')
+    this.client = new Connection('http://localhost').withOptions({
+      rejectUnauthorized: false
+    })
 
     if (watchProfile) {
       this.__watchProfile()
@@ -127,7 +136,10 @@ export default class ClientService {
   set host (host) {
     host = `${host}/api/v2`
     this.__host = host
-    this.client = (new Connection(host)).withOptions({ timeout: 5000 })
+    this.client = (new Connection(host)).withOptions({
+      timeout: 5000,
+      rejectUnauthorized: false
+    })
   }
 
   get version () {
