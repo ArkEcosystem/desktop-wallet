@@ -8,6 +8,8 @@ module.exports = {
   rootDir: path.resolve(__dirname, '../'),
   moduleFileExtensions: [
     'js',
+    'ts',
+    'tsx',
     'json',
     'vue'
   ],
@@ -22,7 +24,8 @@ module.exports = {
   },
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'jest-vue-preprocessor'
+    '.*\\.(vue)$': 'jest-vue-preprocessor',
+    '^.+\\.tsx?$': 'ts-jest'
   },
   testPathIgnorePatterns: [
     '<rootDir>/__tests__/e2e',
@@ -32,15 +35,15 @@ module.exports = {
     '<rootDir>/__tests__/unit/__mocks__',
     '<rootDir>/__tests__/unit/__utils__'
   ],
-  setupFiles: [
-    '<rootDir>/__tests__/unit/__utils__/setup.js'
-  ],
   snapshotSerializers: ['jest-serializer-vue'],
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   coverageDirectory: '<rootDir>/__tests__/unit/.coverage',
   collectCoverageFrom: [
-    'src/renderer/**/*.{js,vue}'
+    'src/renderer/**/*.{js,ts,tsx,vue}'
   ],
-  setupFilesAfterEnv: ['jest-extended'],
+  setupFilesAfterEnv: [
+    'jest-extended',
+    '<rootDir>/__tests__/unit/__utils__/setup.js'
+  ],
   watchman: false
 }
