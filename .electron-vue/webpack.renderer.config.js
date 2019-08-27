@@ -45,6 +45,11 @@ let rendererConfig = {
         }
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.css$/,
         use: [
           'vue-style-loader',
@@ -169,7 +174,7 @@ let rendererConfig = {
       'vue$': 'vue/dist/vue.esm.js',
       'got$': path.join(__dirname, '../src/renderer/plugins/got.js')
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node']
+    extensions: ['.js', '.vue', '.json', '.css', '.node', '.ts', '.tsx']
   },
   target: 'electron-renderer'
 }
