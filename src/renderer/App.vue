@@ -110,8 +110,8 @@ import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
 import config from '@config'
 import URIHandler from '@/services/uri-handler'
+import { remote, ipcRenderer } from 'electron'
 
-var { remote, ipcRenderer } = require('electron')
 const Menu = remote.Menu
 
 export default {
@@ -125,7 +125,7 @@ export default {
     TransactionModal
   },
 
-  data: vm => ({
+  data: () => ({
     isReady: false,
     isUriTransactionOpen: false,
     forceBlurFilter: false,
@@ -252,10 +252,10 @@ export default {
         }
       }
     },
-    pluginThemes (value, oldValue) {
+    pluginThemes () {
       this.applyPluginTheme(this.theme)
     },
-    theme (value, oldValue) {
+    theme (value) {
       this.applyPluginTheme(value)
     }
   },

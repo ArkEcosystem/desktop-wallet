@@ -29,7 +29,7 @@ export default {
   },
 
   watch: {
-    options (newOptions) {
+    options () {
       this.destroy()
       this.render()
     }

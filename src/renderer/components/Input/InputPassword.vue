@@ -212,7 +212,7 @@ export default {
 
         return true
       },
-      isValid (value) {
+      isValid () {
         if (!this.isRequired && !this.model.length) {
           return true
         } else if (!this.isCreate) {

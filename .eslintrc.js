@@ -1,14 +1,17 @@
 module.exports = {
   root: true,
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
+
   env: {
     browser: true,
     node: true
   },
   extends: [
+    'plugin:@typescript-eslint/recommended',
     'plugin:vue/recommended',
     'standard',
   ],
@@ -24,6 +27,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'vue/component-name-in-template-casing': ['warn', 'PascalCase', {
       'ignores': ['i18n']
-    }]
+    }],
+    '@typescript-eslint/camelcase': 0,
+    '@typescript-eslint/explicit-function-return-type': 0
   }
 }

@@ -314,7 +314,7 @@ export default {
 
   validations: {
     fee: {
-      isValid (value) {
+      isValid () {
         if (this.$refs.input) {
           return !this.$refs.input.$v.$invalid && !this.insufficientFundsError
         }

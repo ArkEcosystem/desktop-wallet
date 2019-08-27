@@ -37,7 +37,7 @@ export default {
       return state.wallets[profileId].find(wallet => wallet.name === name)
     },
 
-    byProfileId: (state, _, __, rootGetters) => profileId => {
+    byProfileId: (state) => profileId => {
       if (!state.wallets[profileId]) {
         return []
       }
@@ -69,7 +69,7 @@ export default {
       }))
     },
 
-    contactsByProfileId: (state, _, __, rootGetters) => profileId => {
+    contactsByProfileId: (state) => profileId => {
       if (!state.wallets[profileId]) {
         return []
       }

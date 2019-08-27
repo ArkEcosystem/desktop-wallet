@@ -271,7 +271,7 @@ export default {
             mode: 'index',
             axis: 'x',
             callbacks: {
-              label: (item, data) => {
+              label: (item) => {
                 return this.currency_format(item.yLabel / scaleCorrection, { currency: this.currency })
               },
               title: (items, data) => {

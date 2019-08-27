@@ -147,8 +147,7 @@ import AppSidemenuImportantNotification from './AppSidemenuImportantNotification
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { ProfileAvatar } from '@/components/Profile'
 import SvgIcon from '@/components/SvgIcon'
-
-var { ipcRenderer } = require('electron')
+import { ipcRenderer } from 'electron'
 
 export default {
   name: 'AppSidemenu',

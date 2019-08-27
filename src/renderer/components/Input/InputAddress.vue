@@ -200,7 +200,7 @@ export default {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((wallets, wallet, index) => {
+      return results.reduce((wallets, wallet) => {
         const value = wallet.name || wallet.address
         const searchValue = value.toLowerCase()
 

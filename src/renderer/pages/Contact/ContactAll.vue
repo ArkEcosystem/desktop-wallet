@@ -188,7 +188,7 @@ export default {
       this.contactToRename = contact
     },
 
-    removeContact (contact) {
+    removeContact () {
       this.hideRemovalConfirmation()
     },
 

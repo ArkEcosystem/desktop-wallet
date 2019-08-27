@@ -125,7 +125,7 @@ export default {
     },
 
     profileList () {
-      return this.profiles.reduce((map, profile, index) => {
+      return this.profiles.reduce((map, profile) => {
         map[profile.id] = profile.name
 
         return map
@@ -169,7 +169,7 @@ export default {
         return object.name || object.address.toLowerCase()
       })
 
-      return results.reduce((wallets, wallet, index) => {
+      return results.reduce((wallets, wallet) => {
         const value = wallet.name || wallet.address
         wallets[wallet.address] = value
 

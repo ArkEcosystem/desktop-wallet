@@ -366,7 +366,7 @@ export default {
       }
     },
 
-    async loadPluginsForProfile ({ getters, rootGetters, state }, profile) {
+    async loadPluginsForProfile ({ getters, state }, profile) {
       if (!state.enabled[profile.id]) {
         return
       }

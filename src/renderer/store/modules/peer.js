@@ -68,7 +68,7 @@ export default {
      * @param  {Boolean} [ignoreCurrent=true]
      * @return {(Object|null)}
      */
-    best: (_, getters) => (ignoreCurrent = true, networkId = null) => {
+    best: (_, getters) => (ignoreCurrent = true) => {
       const peers = getters.bestPeers(undefined, ignoreCurrent)
       if (!peers) {
         return null
@@ -82,7 +82,7 @@ export default {
      * @param {Number} amount of peers to return
      * @return {Object[]} containing peer objects
      */
-    randomPeers: (_, getters) => (amount = 5, networkId = null) => {
+    randomPeers: (_, getters) => (amount = 5) => {
       const peers = getters.all(true) // Ignore current peer
       if (!peers.length) {
         return []
@@ -138,7 +138,7 @@ export default {
      * @param  {Boolean} [ignoreCurrent=true]
      * @return {Object[]}
      */
-    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true, networkId = null) => {
+    bestPeers: (_, getters) => (maxRandom = 10, ignoreCurrent = true) => {
       const peers = getters.all(ignoreCurrent)
       if (!peers.length) {
         return []

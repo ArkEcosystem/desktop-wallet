@@ -175,7 +175,7 @@ export default {
      * @param  {Number} [obj.delay=2000] Delay in between connection attempts.
      * @return {void}
      */
-    async ensureConnection ({ commit, state, dispatch }, { delay } = { delay: 2000 }) {
+    async ensureConnection ({ state, dispatch }, { delay } = { delay: 2000 }) {
       if (state.isConnected && !await dispatch('checkConnected')) {
         await dispatch('disconnect')
         delay = 2000
@@ -351,7 +351,7 @@ export default {
     /**
      * Store ledger wallets in the cache.
      */
-    async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
+    async updateWallet ({ commit, dispatch, getters }, updatedWallet) {
       commit('SET_WALLET', updatedWallet)
       eventBus.emit('ledger:wallets-updated', getters.walletsObject)
       dispatch('cacheWallets')
@@ -360,7 +360,7 @@ export default {
     /**
      * Store several Ledger wallets at once and cache them.
      */
-    async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
+    async updateWallets ({ commit, dispatch, getters }, walletsToUpdate) {
       commit('SET_WALLETS', {
         ...getters.walletsObject,
         ...walletsToUpdate

@@ -173,7 +173,7 @@ import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '
 import { ButtonSwitch } from '@/components/Button'
 import { PluginManageBlacklistModal } from '@/components/PluginManager/PluginManagerModals'
 import { isEmpty, isString } from 'lodash'
-const os = require('os')
+import os from 'os'
 
 export default {
   name: 'AppSidemenuOptionsSettings',

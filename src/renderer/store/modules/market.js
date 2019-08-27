@@ -17,7 +17,7 @@ export default {
       const lastTicker = getters.lastTicker
       return lastTicker ? lastTicker.price : null
     },
-    lastTicker: (state, getters, _, rootGetters) => {
+    lastTicker: (state, _, __, rootGetters) => {
       const network = rootGetters['session/network']
       if (!network) {
         return

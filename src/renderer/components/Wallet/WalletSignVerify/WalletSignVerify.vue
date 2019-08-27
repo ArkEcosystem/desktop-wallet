@@ -146,14 +146,14 @@ export default {
     },
 
     copyMessage (value) {
-      var message = clone(value, false)
+      const message = clone(value, false)
       delete message.timestamp
       delete message.address
       return JSON.stringify(message)
     },
 
     deleteMessage (value) {
-      var message = clone(value, false)
+      const message = clone(value, false)
       this.$store.dispatch('wallet/deleteSignedMessage', message)
     },
 

@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== 'development') {
 
 // To E2E tests
 if (process.env.TEMP_USER_DATA === 'true') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const tempy = require('tempy')
   const tempDirectory = tempy.directory()
   app.setPath('userData', tempDirectory)
@@ -30,6 +31,17 @@ let deeplinkingUrl = null
 const winURL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:9080'
   : `file://${__dirname}/index.html`
+
+function broadcastURL (url) {
+  if (!url || typeof url !== 'string') {
+    return
+  }
+
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.send('process-url', url)
+    deeplinkingUrl = null
+  }
+}
 
 function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
@@ -86,16 +98,6 @@ function createWindow () {
   })
 
   require('./menu')
-}
-
-function broadcastURL (url) {
-  if (!url || typeof url !== 'string') {
-    return
-  }
-
-  if (sendToWindow('process-url', url)) {
-    deeplinkingUrl = null
-  }
 }
 
 function sendToWindow (key, value) {
