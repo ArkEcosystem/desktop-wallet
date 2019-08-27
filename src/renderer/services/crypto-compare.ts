@@ -1,18 +1,54 @@
-import got from 'got'
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
+import * as got from 'got'
+import * as dayjs from 'dayjs'
 import { MARKET } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
-import dayjs from 'dayjs'
-import { capitalize, keys, min, max } from 'lodash'
+import { keys, min, max } from 'lodash'
 import logger from 'electron-log'
+
+interface MarketSymbol {
+  [symbol: string]: {
+    currency: string;
+    price: number;
+    marketCap: number;
+    volume: number;
+    date: Date;
+    change24h?: number;
+  };
+}
+
+interface MarketHistorical {
+  labels: string[];
+  datasets: number[];
+  min: number;
+  max: number;
+}
+
+interface SymbolTicker {
+  TOSYMBOL: string;
+  PRICE: number;
+  MKTCAP: number;
+  TOTALVOLUME24HTO: number;
+  LASTUPDATE: number;
+  CHANGEPCT24HOUR?: number;
+}
+
+interface PriceTicker {
+  time: number;
+  close: number;
+  high: number;
+  low: number;
+  open: number;
+  volumefrom: number;
+  volumeto: number;
+}
 
 class CryptoCompare {
   /**
    * Fetch market data from API.
-   * @param {String} token
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async fetchMarketData (token) {
+  async fetchMarketData (token: string): Promise<MarketSymbol | undefined> {
     const query = {
       fsyms: token,
       tsyms: keys(MARKET.currencies).join(',')
@@ -26,6 +62,7 @@ class CryptoCompare {
       return this.__transformMarketResponse(data)
     } catch (error) {
       logger.error(error)
+      // @ts-ignore
       alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
         name: i18n.t('MARKET.MARKET'),
         msg: error.message
@@ -35,72 +72,61 @@ class CryptoCompare {
 
   /**
    * Returns the price of the last 24h
-   * @param {String} token
-   * @param {String} currency
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async historicPerDay (token, currency) {
+  async historicPerDay (token: string, currency: string): Promise<MarketHistorical | undefined> {
     return this.__fetchHistoricalData(token, currency, 24, 'hour', 'HH:mm')
   }
 
   /**
    * Returns the price of the last week
-   * @param {String} token
-   * @param {String} currency
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async historicPerWeek (token, currency) {
+  async historicPerWeek (token: string, currency: string): Promise<MarketHistorical | undefined> {
     return this.__fetchHistoricalData(token, currency, 7, 'day', 'ddd')
   }
 
   /**
    * Returns the price of the last month
-   * @param {String} token
-   * @param {String} currency
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async historicPerMonth (token, currency) {
+  async historicPerMonth (token: string, currency: string): Promise<MarketHistorical | undefined> {
     return this.__fetchHistoricalData(token, currency, 30, 'day', 'DD')
   }
 
   /**
    * Returns the price of the last quarter
-   * @param {String} token
-   * @param {String} currency
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async historicPerQuarter (token, currency) {
+  async historicPerQuarter (token: string, currency: string): Promise<MarketHistorical | undefined> {
     return this.__fetchHistoricalData(token, currency, 120)
   }
 
   /**
    * Returns the price of the last year
-   * @param {String} token
-   * @param {String} currency
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async historicPerYear (token, currency) {
+  async historicPerYear (token: string, currency: string): Promise<MarketHistorical | undefined> {
     return this.__fetchHistoricalData(token, currency, 365)
   }
 
   /**
    * Returns the price according to the type
-   * @param {String} type
-   * @param {String} token
-   * @param {String} currency
-   * @return {(Object|null)} Return API response data or null on failure
    */
-  async historicByType (type, token, currency) {
-    const method = `historicPer${capitalize(type)}`
-    return this[method](token, currency)
+  async historicByType (type: 'day' | 'week' | 'month' | 'quarter' | 'year', token: string, currency: string): Promise<MarketHistorical | undefined> {
+    switch (type) {
+      case 'day':
+        return this.historicPerDay(token, currency)
+      case 'week':
+        return this.historicPerWeek(token, currency)
+      case 'month':
+        return this.historicPerMonth(token, currency)
+      case 'quarter':
+        return this.historicPerQuarter(token, currency)
+      case 'year':
+        return this.historicPerYear(token, currency)
+    }
   }
 
   /**
    * Checks if a token is tradeable
-   * @param {String} token
-   * @return {(Boolean|null)} Return true if the token is found
    */
-  async checkTradeable (token) {
+  async checkTradeable (token: string): Promise<boolean> {
     const query = {
       fsym: token,
       tsyms: 'BTC'
@@ -111,20 +137,14 @@ class CryptoCompare {
       const response = await got(uri, { query, json: true })
       return !!response.body.BTC
     } catch (error) {
-      return null
+      return false
     }
   }
 
   /**
  * Fetch historical data from API.
- * @param {String} token
- * @param {String} currency
- * @param {Number} limit
- * @param {String} type
- * @param {String} dateFormat
- * @return {(Object|null)} Return API response data or null on failure
  */
-  async __fetchHistoricalData (token, currency, limit, type = 'day', dateFormat = 'DD.MM') {
+  async __fetchHistoricalData (token: string, currency: string, limit: number, type = 'day', dateFormat = 'DD.MM'): Promise<MarketHistorical | undefined> {
     const date = Math.round(new Date().getTime() / 1000)
     const uri = `${MARKET.source.baseUrl}/data/histo${type}`
     const query = {
@@ -139,6 +159,7 @@ class CryptoCompare {
       return this.__transformHistoricalResponse(response.body.Data, dateFormat)
     } catch (error) {
       logger.error(error)
+      // @ts-ignore
       alertEvents.$error(i18n.t('COMMON.FAILED_FETCH', {
         name: i18n.t('MARKET.HISTORICAL_DATA'),
         msg: error.message
@@ -148,11 +169,9 @@ class CryptoCompare {
 
   /**
    * Normalize market data reponse to a object
-   * @param {Object} response
-   * @return {Object}
    */
-  __transformMarketResponse (response) {
-    const marketData = {}
+  __transformMarketResponse (response: { [tsym: string]: SymbolTicker }): MarketSymbol {
+    const marketData: MarketSymbol = {}
 
     for (const currencyData of Object.values(response)) {
       marketData[currencyData.TOSYMBOL] = {
@@ -161,7 +180,7 @@ class CryptoCompare {
         marketCap: currencyData.MKTCAP,
         volume: currencyData.TOTALVOLUME24HTO,
         date: new Date(currencyData.LASTUPDATE * 1000),
-        change24h: currencyData.CHANGEPCT24HOUR || null
+        change24h: currencyData.CHANGEPCT24HOUR
       }
     }
 
@@ -170,19 +189,16 @@ class CryptoCompare {
 
   /**
    * Prepare the historical data response to be used in charts
-   * @param {Object} response
-   * @param {String} dateFormat
-   * @return {Object}
    */
-  __transformHistoricalResponse (response, dateFormat) {
+  __transformHistoricalResponse (response: PriceTicker[], dateFormat: string): MarketHistorical {
     const labels = response.map(value => dayjs(value.time * 1000).format(dateFormat))
     const datasets = response.map(value => value.close)
 
     return {
       labels,
       datasets,
-      min: min(datasets),
-      max: max(datasets)
+      min: min(datasets) || 0,
+      max: max(datasets) || 0
     }
   }
 }
