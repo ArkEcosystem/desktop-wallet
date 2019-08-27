@@ -3,7 +3,10 @@ const path = require('path')
 module.exports = {
   verbose: false,
   globals: {
-    __static: __dirname
+    __static: __dirname,
+    'vue-jest': {
+      hideStyleWarn: true
+    }
   },
   rootDir: path.resolve(__dirname, '../'),
   moduleFileExtensions: [
@@ -22,9 +25,10 @@ module.exports = {
     '^@tests/(.*)$': '<rootDir>/__tests__/$1',
     vue$: '<rootDir>/node_modules/vue/dist/vue.common.js'
   },
+  preset: 'ts-jest/presets/js-with-ts',
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'jest-vue-preprocessor',
+    '.*\\.vue$': 'vue-jest',
     '^.+\\.tsx?$': 'ts-jest'
   },
   testPathIgnorePatterns: [

@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Model } from 'vue-property-decorator'
-import InputField from './InputField.vue'
+import { InputField } from '@/components/Input'
 import { ButtonSwitch } from '@/components/Button'
 
 @Component({
