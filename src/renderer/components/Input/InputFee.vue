@@ -165,9 +165,6 @@ export default {
       if (!this.feeNetwork) {
         throw new Error('No active network to fetch fees')
       }
-      if (this.feeNetwork.apiVersion === 1) {
-        throw new Error('Fee statistics are supported only by v2 networks')
-      }
 
       const { feeStatistics } = this.feeNetwork
       const transactionStatistics = feeStatistics.find(feeConfig => feeConfig.type === this.transactionType)
@@ -180,6 +177,9 @@ export default {
         maxFee: this.maxV1fee
       }
     },
+    lastFee () {
+      return this.$store.getters['session/lastFeeByType'](this.transactionType)
+    },
     feeChoiceMin () {
       return this.feeChoices.MINIMUM
     },
@@ -187,17 +187,20 @@ export default {
       return this.isAdvancedFee ? this.feeChoices.MAXIMUM.multipliedBy(10) : this.feeChoices.MAXIMUM
     },
     feeChoices () {
-      let { avgFee, maxFee } = this.feeStatistics
+      const { avgFee, maxFee } = this.feeStatistics
 
       // Even if the network provides average or maximum fees higher than V1, they will be corrected
       const average = this.currency_subToUnit(avgFee < this.maxV1fee ? avgFee : this.maxV1fee)
-      return {
+
+      const fees = {
         MINIMUM: this.currency_subToUnit(1),
         AVERAGE: average,
         MAXIMUM: this.currency_subToUnit(maxFee < this.maxV1fee ? maxFee : this.maxV1fee),
         INPUT: average,
         ADVANCED: average
       }
+
+      return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM
@@ -241,13 +244,13 @@ export default {
 
   created () {
     // Fees should be synchronized only when this component is active
-    this.$synchronizer.focus('fees')
+    this.$synchronizer.appendFocus('fees')
 
     this.emitFee(this.feeChoices.AVERAGE)
   },
 
   beforeDestroy () {
-    this.$synchronizer.pause('fees')
+    this.$synchronizer.removeFocus('fees')
   },
 
   methods: {
@@ -328,7 +331,8 @@ export default {
 }
 .InputFee .InputCurrency input {
   /* This width is necessary to display error messages in 1 line */
-  width: 15rem
+  width: 10rem;
+  flex-grow: 0;
 }
 .InputFee .InputField__helper {
   margin-top: 1.2rem;

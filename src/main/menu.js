@@ -25,6 +25,21 @@ const about = {
   })
 }
 
+const preferences = {
+  label: 'Preferences',
+  submenu: [
+    {
+      label: 'Settings',
+      click: (_, focusedWindow) => {
+        if (focusedWindow && focusedWindow.webContents) {
+          focusedWindow.webContents.send('app:preferences')
+        }
+      },
+      accelerator: 'CommandOrControl+,'
+    }
+  ]
+}
+
 const template = [
   {
     label: 'File',
@@ -89,9 +104,12 @@ const template = [
 if (process.platform === 'darwin') {
   // File menu
   template[0] = {
+    role: 'appMenu',
     label: packageJson.build.productName,
     submenu: [
       about,
+      { type: 'separator' },
+      preferences,
       { type: 'separator' },
       { role: 'services', submenu: [] },
       { type: 'separator' },
@@ -124,6 +142,10 @@ if (process.platform === 'darwin') {
     { role: 'front' }
   ]
 } else {
+  template[1].submenu.push(
+    { type: 'separator' },
+    preferences
+  )
   template[4].submenu.unshift(about, { type: 'separator' })
 }
 

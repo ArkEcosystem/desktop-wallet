@@ -76,7 +76,7 @@
       v-else
       class="WalletExchange__iframe mx-auto overflow-hidden mt-5"
     >
-      <webview
+      <Webview
         id="changelly"
         :src="changellyWidgetURL"
         class="changelly overflow-y-hidden border-none"

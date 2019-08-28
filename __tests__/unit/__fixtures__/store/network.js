@@ -1,5 +1,6 @@
 const network1 = {
   id: 'main',
+  name: 'main',
   symbol: 'm',
   token: 'MAI',
   subunit: 'mainito',
@@ -11,6 +12,7 @@ const network1 = {
 
 const network2 = {
   id: 'other',
+  name: 'other',
   symbol: 'o',
   token: 'OTH',
   subunit: 'another',

@@ -3,7 +3,7 @@ import announcementStore from '@/store/modules/announcements'
 describe('the announcementStore mutations', () => {
   it('saves announcements to state', () => {
     // vuex state -- will be modified by mutation
-    let state = {
+    const state = {
       announcements: []
     }
 
@@ -27,7 +27,7 @@ describe('the announcementStore mutations', () => {
 
   it('marks an announcement as read', () => {
     // create state
-    let state = {
+    const state = {
       announcements: []
     }
 
@@ -47,7 +47,7 @@ describe('the announcementStore mutations', () => {
 describe('the announcementStore getters', () => {
   it('fetches announcements from state', () => {
     // create state with items
-    let state = {
+    const state = {
       announcements:
         [
           {
@@ -85,7 +85,7 @@ describe('the announcementStore getters', () => {
   })
 
   it('fetches a single announcement from state', () => {
-    let state = {
+    const state = {
       announcements:
         [
           {
@@ -121,7 +121,7 @@ describe('the announcementStore getters', () => {
   })
 
   it('fetches all read and unread announcements from state', () => {
-    let state = {
+    const state = {
       announcements: [
         {
           guid: 1,

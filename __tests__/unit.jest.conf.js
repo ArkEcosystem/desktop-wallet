@@ -2,6 +2,9 @@ const path = require('path')
 
 module.exports = {
   verbose: false,
+  globals: {
+    __static: __dirname
+  },
   rootDir: path.resolve(__dirname, '../'),
   moduleFileExtensions: [
     'js',
@@ -15,7 +18,7 @@ module.exports = {
     '^@config/(.*)$': '<rootDir>/config/$1',
     '^@/(.*)$': '<rootDir>/src/renderer/$1',
     '^@tests/(.*)$': '<rootDir>/__tests__/$1',
-    'vue$': '<rootDir>/node_modules/vue/dist/vue.common.js'
+    vue$: '<rootDir>/node_modules/vue/dist/vue.common.js'
   },
   transform: {
     '^.+\\.js$': 'babel-jest',

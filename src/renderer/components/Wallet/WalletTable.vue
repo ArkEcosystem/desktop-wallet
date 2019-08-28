@@ -144,7 +144,7 @@ export default {
 
   computed: {
     columns () {
-      let columns = [
+      const columns = [
         {
           // label: this.$t('WALLET_DELEGATES.RANK'),
           label: this.$t('PAGES.WALLET_ALL.ADDRESS'),

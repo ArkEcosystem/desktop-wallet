@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { at, clone } from 'lodash'
+import at from 'lodash/at'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -64,9 +64,11 @@ export default {
       },
       set (count) {
         this.$store.dispatch('session/setTransactionTableRowCount', count)
-        const profile = clone(this.session_profile)
-        profile.transactionTableRowCount = count
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          transactionTableRowCount: count
+        })
       }
     }
   },
@@ -176,7 +178,7 @@ export default {
         }
       } catch (error) {
         // Ignore the 404 error of wallets that are not on the blockchain
-        const messages = at(error, 'response.data.message')
+        const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
 

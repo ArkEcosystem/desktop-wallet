@@ -89,34 +89,16 @@ export default {
 
   actions: {
     async load ({ dispatch, rootGetters }) {
-      const network = rootGetters['session/network']
       const delegates = []
-      const limit = this._vm.$client.version === 1 ? (network.constants.activeDelegates || 51) : 100
       let page = 1
       let totalCount = null
       while (!totalCount || delegates.length < totalCount) {
         const delegateResponse = await this._vm.$client.fetchDelegates({
           page,
-          limit
+          limit: 100
         })
         delegateResponse.delegates = delegateResponse.delegates.map((delegate) => {
-          if (this._vm.$client.version === 2) {
-            return { ...delegate }
-          }
-
-          return {
-            username: delegate.username,
-            address: delegate.address,
-            publicKey: delegate.publicKey,
-            votes: delegate.votes,
-            blocks: {
-              produced: delegate.producedblocks
-            },
-            production: {
-              approval: delegate.approval
-            },
-            rank: delegate.rate
-          }
+          return { ...delegate }
         })
         delegates.push(...delegateResponse.delegates)
         totalCount = delegateResponse.totalCount

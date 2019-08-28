@@ -35,7 +35,7 @@ export default {
 
   computed: {
     classes () {
-      let classes = [this.isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical']
+      const classes = [this.isHorizontal ? 'MenuOptions--horizontal' : 'MenuOptions--vertical']
       if (!this.isHorizontal) {
         classes.push(this.isSettings ? 'MenuOptions__settings--vertical' : 'MenuOptions__default--vertical')
       }

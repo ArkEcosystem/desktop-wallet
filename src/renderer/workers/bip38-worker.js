@@ -2,13 +2,13 @@
 
 const bip38 = require('bip38')
 const wif = require('wif')
-const { crypto } = require('@arkecosystem/crypto')
+const { Identities } = require('@arkecosystem/crypto')
 
 process.on('message', message => {
   if (message.passphrase) {
     try {
-      const keys = crypto.getKeys(message.passphrase)
-      const decoded = wif.decode(crypto.keysToWIF(keys, { wif: message.wif }))
+      const key = Identities.WIF.fromPassphrase(message.passphrase, { wif: message.wif })
+      const decoded = wif.decode(key)
 
       process.send({
         bip38key: bip38.encrypt(decoded.privateKey, decoded.compressed, message.password)

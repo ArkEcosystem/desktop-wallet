@@ -21,6 +21,18 @@ jest.mock('@/store', () => {
           default:
             return null
         }
+      }),
+      'session/lastFeeByType': jest.fn(type => {
+        switch (type) {
+          case 0:
+            return 10000000
+          case 1:
+            return undefined
+          case 3:
+            return 100000000
+          default:
+            return null
+        }
       })
     }
   }
@@ -76,7 +88,9 @@ describe('InputFee', () => {
         $store: store,
         $synchronizer: {
           focus: jest.fn(),
-          pause: jest.fn()
+          pause: jest.fn(),
+          appendFocus: jest.fn(),
+          removeFocus: jest.fn()
         },
         $v: {
           fee: {
@@ -95,6 +109,20 @@ describe('InputFee', () => {
   it('should render', () => {
     const wrapper = mountComponent()
     expect(wrapper.contains('.InputFee')).toBeTruthy()
+  })
+
+  it('should render the fee choice buttons', () => {
+    const wrapper = mountComponent()
+    const buttons = wrapper.findAll('.InputFee__choice')
+    expect(buttons).toHaveLength(6)
+  })
+
+  it("should not render the 'last' fee choice button when there is no last fee for a given type", () => {
+    const wrapper = mountComponent({
+      propsData: { transactionType: 1 }
+    })
+    const buttons = wrapper.findAll('.InputFee__choice')
+    expect(buttons).toHaveLength(5)
   })
 
   describe('maxV1fee', () => {
