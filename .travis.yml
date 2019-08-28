@@ -37,7 +37,7 @@ script:
 after_script:
   - shasum -a 256 build/target/ark-desktop-wallet*.{exe,deb,zip,tar.gz,AppImage,dmg}
 
-if: type = push
+if: type IN (push, api)
 
 branches:
  only:
