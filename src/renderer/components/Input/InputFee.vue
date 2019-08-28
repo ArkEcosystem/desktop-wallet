@@ -331,7 +331,8 @@ export default {
 }
 .InputFee .InputCurrency input {
   /* This width is necessary to display error messages in 1 line */
-  width: 15rem
+  width: 10rem;
+  flex-grow: 0;
 }
 .InputFee .InputField__helper {
   margin-top: 1.2rem;

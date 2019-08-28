@@ -282,6 +282,6 @@ export default {
 }
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
-  min-width: 35rem;
+  min-width: 38rem;
 }
 </style>
