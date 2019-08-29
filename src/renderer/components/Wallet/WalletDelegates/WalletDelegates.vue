@@ -6,7 +6,7 @@
     >
       <div class="WalletDelegates__explanation__text flex text-left text-inherit py-4 pl-6">
         <span>
-          {{ $t('WALLET_DELEGATES.EXPLANATION') }}
+          {{ $t('WALLET_DELEGATES.EXPLANATION', { delegates: activeDelegates }) }}
           <a
             :title="$t('WALLET_DELEGATES.BLOG')"
             class="cursor-pointer inline"
@@ -98,6 +98,10 @@ export default {
   }),
 
   computed: {
+    activeDelegates () {
+      return this.session_network.constants.activeDelegates || 51
+    },
+
     columns () {
       return [
         {
@@ -131,7 +135,7 @@ export default {
   },
 
   mounted () {
-    this.queryParams.limit = this.session_network.constants.activeDelegates || 51 // Set default limit to amount of active delegates
+    this.queryParams.limit = this.activeDelegates
     this.fetchDelegates()
   },
 
@@ -174,7 +178,7 @@ export default {
     },
 
     onRowClick ({ row }) {
-      this.$emit('on-row-click', row.publicKey)
+      this.$emit('on-row-click-delegate', row)
     },
 
     onPageChange ({ currentPage }) {
