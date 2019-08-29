@@ -7,15 +7,21 @@ describe('WebFrame', () => {
     expect(wrapper.isVisible()).toBeTrue()
   })
 
-  it('should render an iframe element', () => {
+  it('should render an webview element', () => {
     const wrapper = mount(WebFrame)
-    expect(wrapper.find('iframe').exists()).toBeTrue()
+    expect(wrapper.find('webview').exists()).toBeTrue()
   })
 
-  it('should contain the sandbox attribute', () => {
+  it('should contain the enableremotemodule attribute', () => {
     const wrapper = mount(WebFrame)
-    const iframe = wrapper.find('iframe')
-    expect(iframe.attributes('sandbox')).toBe('allow-forms allow-scripts allow-same-origin')
+    const webview = wrapper.find('webview')
+    expect(webview.attributes('enableremotemodule')).toBe('false')
+  })
+
+  it('should contain the preload attribute', () => {
+    const wrapper = mount(WebFrame)
+    const webview = wrapper.find('webview')
+    expect(webview.attributes('preload')).toBeTruthy()
   })
 
   it('should render http url', () => {
@@ -24,8 +30,8 @@ describe('WebFrame', () => {
         src: 'http://google.com'
       }
     })
-    const iframe = wrapper.find('iframe')
-    expect(iframe.attributes('src')).toBe('http://google.com')
+    const webview = wrapper.find('webview')
+    expect(webview.attributes('src')).toBe('http://google.com')
   })
 
   it('should not render file url', () => {
@@ -34,8 +40,8 @@ describe('WebFrame', () => {
         src: 'file://index.html'
       }
     })
-    const iframe = wrapper.find('iframe')
-    expect(iframe.attributes('src')).toBe('about:blank')
+    const webview = wrapper.find('webview')
+    expect(webview.attributes('src')).toBe('about:blank')
   })
 
   it('should set custom size', () => {
@@ -45,8 +51,8 @@ describe('WebFrame', () => {
         height: 500
       }
     })
-    const iframe = wrapper.find('iframe')
-    const { width, height } = iframe.attributes()
+    const webview = wrapper.find('webview')
+    const { width, height } = webview.attributes()
     expect(width).toBe('500')
     expect(height).toBe('500')
   })

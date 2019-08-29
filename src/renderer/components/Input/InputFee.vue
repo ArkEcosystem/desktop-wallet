@@ -244,13 +244,13 @@ export default {
 
   created () {
     // Fees should be synchronized only when this component is active
-    this.$synchronizer.focus('fees')
+    this.$synchronizer.appendFocus('fees')
 
     this.emitFee(this.feeChoices.AVERAGE)
   },
 
   beforeDestroy () {
-    this.$synchronizer.pause('fees')
+    this.$synchronizer.removeFocus('fees')
   },
 
   methods: {
@@ -331,7 +331,8 @@ export default {
 }
 .InputFee .InputCurrency input {
   /* This width is necessary to display error messages in 1 line */
-  width: 15rem
+  width: 10rem;
+  flex-grow: 0;
 }
 .InputFee .InputField__helper {
   margin-top: 1.2rem;
