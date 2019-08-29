@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
 import store from '@/store'
+import dayjs from 'dayjs'
 import { network1 } from '../../__fixtures__/store/network'
 import { profile1 } from '../../__fixtures__/store/profile'
 
@@ -226,6 +227,28 @@ describe('TransactionModule', () => {
       expect(store.getters['transaction/staticFee'](2)).toEqual(3)
       expect(store.getters['transaction/staticFee'](3)).toEqual(4)
       expect(store.getters['transaction/staticFee'](4)).toEqual(5)
+    })
+  })
+
+  describe('clear unconfirmed votes', () => {
+    beforeEach(() => {
+      store.commit('session/SET_UNCONFIRMED_VOTES', [
+        {
+          id: 1,
+          timestamp: dayjs().subtract(6, 'hour').valueOf()
+        },
+        {
+          id: 2,
+          timestamp: dayjs().subtract(5, 'hour').valueOf()
+        }
+      ])
+    })
+
+    it('should clear unconfirmed votes after 6h', async () => {
+      expect(store.getters['session/unconfirmedVotes'].length).toBe(2)
+      await store.dispatch('transaction/clearUnconfirmedVotes')
+      expect(store.getters['session/unconfirmedVotes'].length).toBe(1)
+      expect(store.getters['session/unconfirmedVotes'][0]['id']).toBe(2)
     })
   })
 })

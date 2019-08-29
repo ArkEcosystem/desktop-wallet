@@ -182,7 +182,7 @@ class PluginManager {
                 for (const elKey in that.$refs) {
                   const element = that.$refs[elKey]
 
-                  if (element.tagName.toLowerCase() === 'iframe') {
+                  if (!element.tagName || element.tagName.toLowerCase() === 'iframe') {
                     continue
                   }
 
@@ -577,7 +577,7 @@ class PluginManager {
       inlineErrors.push('uses srcdoc property')
     }
     const inlineEvents = []
-    for (const event of PLUGINS.events) {
+    for (const event of PLUGINS.validation.events) {
       if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
         inlineEvents.push(event)
       }
@@ -731,10 +731,7 @@ class PluginManager {
               return
             }
 
-            eventCallback({
-              origin: event.origin,
-              data: cloneDeep(event.data)
-            })
+            eventCallback(cloneDeep(event.data))
           }
 
           window.addEventListener('message', eventTrigger)
