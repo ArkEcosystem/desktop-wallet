@@ -241,7 +241,8 @@ export default {
       wif: '',
       slip44: '',
       activeDelegates: '',
-      ticker: ''
+      ticker: '',
+      version: ''
     },
     configChoices: [
       'Basic',
