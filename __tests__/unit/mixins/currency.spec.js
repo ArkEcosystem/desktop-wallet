@@ -63,7 +63,7 @@ describe('Mixins > Currency', () => {
       })
     })
 
-    describe.only('when the `currencyFrom` option with value "network" is provided', () => {
+    describe('when the `currencyFrom` option with value "network" is provided', () => {
       it('should display the symbol currency of the current network', () => {
         const amount = 1.00035
         console.log(format(amount, { currencyFrom: 'network' }))
