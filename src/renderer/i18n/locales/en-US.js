@@ -639,6 +639,7 @@ export default {
       ADDRESS: 'Address',
       NAME: 'Name',
       VOTING_FOR: 'Voting for',
+      DELEGATE_NOT_ACTIVE: '{delegate} ({rank}) is not an active delegate',
       BALANCE: 'Balance',
       DELETE: 'Delete'
     },
