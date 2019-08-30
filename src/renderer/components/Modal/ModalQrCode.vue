@@ -1,5 +1,6 @@
 <template>
   <ModalWindow
+    :can-resize="true"
     @close="emitClose"
   >
     <section class="flex flex-col items-center">
