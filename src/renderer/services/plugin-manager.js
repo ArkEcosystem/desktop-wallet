@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
@@ -182,7 +182,7 @@ class PluginManager {
                 for (const elKey in that.$refs) {
                   const element = that.$refs[elKey]
 
-                  if (element.tagName.toLowerCase() === 'iframe') {
+                  if (!element.tagName || element.tagName.toLowerCase() === 'iframe') {
                     continue
                   }
 
@@ -556,17 +556,28 @@ class PluginManager {
     }
 
     const inlineErrors = []
-    if (/v-html/.test(component.template)) {
+    if (/v-html/i.test(component.template)) {
       inlineErrors.push('uses v-html')
     }
-    if (/javascript:/.test(component.template)) {
+    if (/javascript:/i.test(component.template)) {
       inlineErrors.push('"javascript:"')
     }
     if (/<\s*webview/i.test(component.template)) {
-      inlineErrors.push('uses webview')
+      inlineErrors.push('uses webview tag')
+    }
+    if (/<\s*script/i.test(component.template)) {
+      inlineErrors.push('uses script tag')
+    } else if (/[^\w]+eval\(/i.test(component.template)) {
+      inlineErrors.push('uses eval')
+    }
+    if (/<\s*iframe/i.test(component.template)) {
+      inlineErrors.push('uses iframe tag')
+    }
+    if (/srcdoc/i.test(component.template)) {
+      inlineErrors.push('uses srcdoc property')
     }
     const inlineEvents = []
-    for (const event of PLUGINS.events) {
+    for (const event of PLUGINS.validation.events) {
       if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
         inlineEvents.push(event)
       }
@@ -702,6 +713,40 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('MESSAGING')) {
+      const messages = {
+        events: [],
+
+        clear () {
+          for (const eventId in this.events) {
+            window.removeEventListener('message', this.events[eventId])
+          }
+
+          this.events = []
+        },
+
+        on (action, eventCallback) {
+          const eventTrigger = event => {
+            if (event.data !== Object(event.data) || event.data.action !== action) {
+              return
+            }
+
+            eventCallback(cloneDeep(event.data))
+          }
+
+          window.addEventListener('message', eventTrigger)
+          this.events[action] = eventTrigger
+        }
+      }
+
+      this.app.$router.beforeEach((_, __, next) => {
+        messages.clear()
+        next()
+      })
+
+      sandbox.walletApi.messages = messages
+    }
+
     if (config.permissions.includes('STORAGE')) {
       sandbox.walletApi.storage = {
         get: (key) => {
@@ -731,9 +776,7 @@ class PluginManager {
       }
     }
 
-    if (config.permissions.includes('UI_COMPONENTS')) {
-      sandbox.walletApi.components = WalletComponents
-    }
+    sandbox.walletApi.components = WalletComponents(config.permissions)
 
     if (config.permissions.includes('HTTP')) {
       sandbox.walletApi.http = new PluginHttp(config.urls)

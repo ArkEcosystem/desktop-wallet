@@ -169,7 +169,7 @@ export default {
     REQUIRED: '\'{0}\' indispensabile',
     SEND_NOT_ENABLED: 'L\'invio non è abilitato per il portafoglio selezionato',
     WALLET_NOT_ACTIVE: 'Seleziona un portafoglio a apri l\'URI nuovamente',
-    WARNING_BIP39: '\'{0}\' è una frase segreta BIP39',
+    WARNING_BIP39: '\'{0}\' contiene una frase segreta BIP39',
     WARNING_NOT_BIP39: '\'{0}\' non è una frase segreta BIP39'
   },
 
@@ -636,6 +636,7 @@ export default {
       ADDRESS: 'Indirizzo',
       NAME: 'Nome',
       VOTING_FOR: 'Vota per',
+      DELEGATE_NOT_ACTIVE: '{delegate} ({rank}) non é un delegato attivo',
       BALANCE: 'Saldo',
       DELETE: 'Rimuovi'
     },

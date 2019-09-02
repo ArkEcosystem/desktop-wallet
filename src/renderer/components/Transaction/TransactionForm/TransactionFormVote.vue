@@ -396,7 +396,7 @@ export default {
     },
 
     emitCancel () {
-      this.$emit('cancel')
+      this.$emit('cancel', 'navigateToTransactions')
     },
 
     emitNext (transaction) {
@@ -468,7 +468,7 @@ export default {
 
 <style scoped>
 .TransactionFormVote {
-  min-width: 25em;
+  min-width: 29em;
 }
 
 .TransactionFormVote /deep/ .Collapse__handler {

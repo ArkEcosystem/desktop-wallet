@@ -126,6 +126,23 @@ export default class Synchronizer {
   }
 
   /**
+   * Add 1 or more actions to additionally focus
+   * @params {(...String|Array)} actions - ID of the actions to focus on
+   */
+  appendFocus (...actions) {
+    this.focused = flatten([actions, this.focused])
+    this.unpause(actions)
+  }
+
+  /**
+   * Remove action from focus
+   * @params {(...String|Array)} actions - ID of the actions to focus on
+   */
+  removeFocus (...actions) {
+    pullAll(this.focused, flatten(actions))
+  }
+
+  /**
    * Pause these actions. They would not be dispatched until they are unpaused
    * or focused
    * @params {(...String|Array)} actions - ID of the actions to pause
