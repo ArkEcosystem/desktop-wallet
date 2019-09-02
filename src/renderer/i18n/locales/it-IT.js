@@ -636,6 +636,7 @@ export default {
       ADDRESS: 'Indirizzo',
       NAME: 'Nome',
       VOTING_FOR: 'Vota per',
+      DELEGATE_NOT_ACTIVE: '{delegate} ({rank}) non é un delegato attivo',
       BALANCE: 'Saldo',
       DELETE: 'Rimuovi'
     },
