@@ -281,6 +281,8 @@ export default class ClientService {
       transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
       return transaction
     })
+
+    store.dispatch('transaction/processVotes', transactions)
     totalCount = body.meta.totalCount
 
     // Add some utilities for each transactions

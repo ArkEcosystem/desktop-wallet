@@ -58,6 +58,25 @@
         </div>
 
         <div
+          v-else-if="data.column.field === 'delegate'"
+        >
+          <span class="flex items-center">
+            {{ getDelegateProperty(data.row.vote, 'username') }}
+            <span
+              v-if="getDelegate(data.row.vote) && !isActiveDelegate(data.row.vote)"
+              v-tooltip="{
+                content: $t('PAGES.WALLET_ALL.DELEGATE_NOT_ACTIVE', {
+                  delegate: getDelegateProperty(data.row.vote, 'username'),
+                  rank: getDelegateProperty(data.row.vote, 'rank')
+                }),
+                trigger:'hover'
+              }"
+              class="bg-theme-button-special-choice cursor-pointer rounded-full w-2 h-2 ml-2"
+            />
+          </span>
+        </div>
+
+        <div
           v-else-if="data.column.field === 'balance'"
         >
           <span>
@@ -159,7 +178,7 @@ export default {
         },
         {
           label: this.$t('PAGES.WALLET_ALL.VOTING_FOR'),
-          field: this.delegateName,
+          field: 'delegate',
           thClass: 'w-full whitespace-no-wrap',
           tdClass: 'w-full'
         },
@@ -180,7 +199,7 @@ export default {
 
       if (!this.showVotedDelegates) {
         const index = columns.findIndex(el => {
-          return el.field === this.delegateName
+          return el.field === 'delegate'
         })
         columns.splice(index, 1)
       }
@@ -205,12 +224,23 @@ export default {
       return a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true })
     },
 
-    delegateName (row) {
-      if (row.vote) {
-        const delegate = this.$store.getters['delegate/byPublicKey'](row.vote)
-        return delegate.username
+    getDelegate (publicKey) {
+      return this.$store.getters['delegate/byPublicKey'](publicKey)
+    },
+
+    getDelegateProperty (publicKey, property) {
+      const delegate = this.getDelegate(publicKey)
+      return delegate && property ? delegate[property] : null
+    },
+
+    isActiveDelegate (publicKey) {
+      const rank = this.getDelegateProperty(publicKey, 'rank')
+
+      if (rank) {
+        return rank <= (this.session_network.constants.activeDelegates || 51)
       }
-      return ''
+
+      return false
     },
 
     walletName (row) {

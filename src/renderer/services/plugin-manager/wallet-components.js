@@ -5,13 +5,26 @@ import * as ListDividedComponents from '@/components/ListDivided'
 import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
 import TableWrapper from '@/components/utils/TableWrapper'
+import WebFrame from '@/components/utils/WebFrame'
 
-export default {
-  Button: ButtonComponents,
-  Collapse: CollapseComponents,
-  Input: InputComponents,
-  ListDivided: ListDividedComponents,
-  Loader,
-  Menu: MenuComponents,
-  TableWrapper
+export default (permissions) => {
+  let components = {}
+
+  if (permissions.includes('UI_COMPONENTS')) {
+    components = {
+      Button: ButtonComponents,
+      Collapse: CollapseComponents,
+      Input: InputComponents,
+      ListDivided: ListDividedComponents,
+      Loader,
+      Menu: MenuComponents,
+      TableWrapper
+    }
+  }
+
+  if (permissions.includes('WEBFRAME')) {
+    components = { ...components, WebFrame }
+  }
+
+  return components
 }
