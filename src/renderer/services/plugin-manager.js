@@ -2,8 +2,11 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
+import PluginHttp from '@/services/plugin-manager/http'
+import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
+import WalletComponents from '@/services/plugin-manager/wallet-components'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -17,7 +20,6 @@ class PluginManager {
     this.hasInit = false
     this.vue = null
     this.hooks = [
-      'beforeCreate',
       'created',
       'beforeMount',
       'mounted',
@@ -36,9 +38,9 @@ class PluginManager {
     this.app = app
 
     await this.app.$store.dispatch('plugin/init')
-
-    // await this.fetchPluginsFromPath(`${__dirname}/../../../plugins`)
-    await this.fetchPluginsFromPath(PLUGINS.path)
+    await this.fetchPluginsFromPath(
+      process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
+    )
 
     this.hasInit = true
 
@@ -64,7 +66,7 @@ class PluginManager {
       path.join(plugin.fullPath, 'src/index.js')
     )
 
-    if (pluginObject.hasOwnProperty('register')) {
+    if (Object.prototype.hasOwnProperty.call(pluginObject, 'register')) {
       await pluginObject.register()
     }
 
@@ -113,7 +115,7 @@ class PluginManager {
   }
 
   async loadPluginComponents (pluginObject, plugin) {
-    if (!pluginObject.hasOwnProperty('getComponentPaths')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getComponentPaths')) {
       return
     }
 
@@ -132,7 +134,7 @@ class PluginManager {
           fullPath
         )
 
-        if (!this.validateComponent(component, componentName)) {
+        if (!this.validateComponent(plugin, component, componentName)) {
           continue
         }
 
@@ -143,9 +145,61 @@ class PluginManager {
             context = {}
           }
 
-          const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l']
-          for (const key of keys) {
-            context[key] = that[key]
+          const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
+          for (let key of keys) {
+            let thatObject = that[key]
+
+            if (key === '$refs' && thatObject) {
+              key = 'refs'
+              thatObject = {}
+              const badGetters = [
+                'attributes',
+                'children',
+                'childNodes',
+                'contentDocument',
+                'contentWindow',
+                'firstChild',
+                'firstElementChild',
+                'lastChild',
+                'lastElementChild',
+                'nextElementSibling',
+                'nextSibling',
+                'offsetParent',
+                'ownerDocument',
+                'parentElement',
+                'parentNode',
+                'shadowRoot',
+                'previousElementSibling',
+                'previousSibling',
+                '$root',
+                '__vue__'
+              ]
+              const badSetters = [
+                'innerHTML',
+                'outerHTML'
+              ]
+              that.$nextTick(() => {
+                for (const elKey in that.$refs) {
+                  const element = that.$refs[elKey]
+
+                  if (!element.tagName || element.tagName.toLowerCase() === 'iframe') {
+                    continue
+                  }
+
+                  for (const badGetter of badGetters) {
+                    element.__defineGetter__(badGetter, () => console.log('🚫'))
+                  }
+
+                  for (const badSetter of badSetters) {
+                    element.__defineSetter__(badSetter, () => console.log('🚫'))
+                  }
+
+                  thatObject[elKey] = element
+                }
+              })
+            }
+
+            context[key] = thatObject
           }
 
           for (const computedName of Object.keys(componentData.computed || {})) {
@@ -206,6 +260,10 @@ class PluginManager {
           path.join(rootPath, 'src/vm-component.js')
         )
 
+        for (const methodName of Object.keys(renderedComponent.methods || {})) {
+          renderedComponent.methods[methodName] = component.methods[methodName]
+        }
+
         // Build Vue component
         const vmComponent = this.vue.component(componentName, renderedComponent)
 
@@ -219,7 +277,6 @@ class PluginManager {
           vmComponent.options.computed[computedName] = function () {}
         }
 
-        const createdMethod = vmComponent.options.created
         vmComponent.options.created = [function () {
           for (const computedName of Object.keys(this.$options.computed)) {
             if (component.computed && component.computed[computedName]) {
@@ -229,40 +286,55 @@ class PluginManager {
               this._computedWatchers[computedName].getter = component.computed[computedName].bind(
                 componentContext(this)
               )
-              this._computedWatchers[computedName].run()
+
+              try {
+                this._computedWatchers[computedName].run()
+              } catch (error) {
+                console.error(error)
+              }
             }
 
             if (!component.computed || !component.computed[computedName]) {
               delete this.$options.computed[computedName]
-              this._computedWatchers[computedName].teardown()
+
+              try {
+                this._computedWatchers[computedName].teardown()
+              } catch (error) {
+                console.error(error)
+              }
+
               delete this._computedWatchers[computedName]
 
               for (const watcherId in this._watchers) {
                 if (this._watchers[watcherId].getter.name === computedName) {
-                  this._watchers[watcherId].teardown()
+                  try {
+                    this._watchers[watcherId].teardown()
+                  } catch (error) {
+                    console.error(error)
+                  }
+
                   break
                 }
               }
             }
           }
-          if (createdMethod) {
-            return createdMethod[0].apply(componentContext(this))
+
+          if (component.created) {
+            return component.created.apply(componentContext(this))
           }
         }]
 
-        // Fix context of all standard methods
-        vmComponent.options.methods = {}
-        for (const methodName of Object.keys(component.methods || {})) {
-          vmComponent.options.methods[methodName] = function () {
-            return component.methods[methodName].apply(componentContext(this), [ ...arguments ])
-          }
-        }
-
         // Fix context of hooks
         this.hooks
-          .filter(hook => component.hasOwnProperty(hook))
+          .filter(hook => Object.prototype.hasOwnProperty.call(component, hook))
+          .filter(hook => hook !== 'created')
           .forEach(prop => {
-            vmComponent.options[prop] = function () { return component[prop].apply(componentContext(this)) }
+            const hookMethod = function () { return component[prop].apply(componentContext(this)) }
+            if (Array.isArray(vmComponent.options[prop])) {
+              vmComponent.options[prop] = [hookMethod]
+            } else {
+              vmComponent.options[prop] = hookMethod
+            }
           })
 
         components[componentName] = vmComponent
@@ -273,7 +345,7 @@ class PluginManager {
   }
 
   async loadPluginRoutes (pluginObject, plugin) {
-    if (!pluginObject.hasOwnProperty('getRoutes')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getRoutes')) {
       return
     }
 
@@ -299,7 +371,7 @@ class PluginManager {
   }
 
   async loadPluginMenuItems (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getMenuItems')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getMenuItems')) {
       return
     }
 
@@ -324,11 +396,11 @@ class PluginManager {
   }
 
   async loadPluginAvatars (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getAvatars')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getAvatars')) {
       return
     }
 
-    let pluginAvatars = this.normalize(await pluginObject.getAvatars())
+    const pluginAvatars = this.normalize(await pluginObject.getAvatars())
     if (pluginAvatars && Array.isArray(pluginAvatars) && pluginAvatars.length) {
       const avatars = []
       for (const avatar of pluginAvatars) {
@@ -370,7 +442,7 @@ class PluginManager {
   }
 
   async loadPluginWalletTabs (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getWalletTabs')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getWalletTabs')) {
       return
     }
 
@@ -395,7 +467,7 @@ class PluginManager {
   }
 
   async loadPluginThemes (pluginObject, plugin, profileId) {
-    if (!pluginObject.hasOwnProperty('getThemes')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getThemes')) {
       return
     }
 
@@ -438,7 +510,7 @@ class PluginManager {
   }
 
   async loadUnprotectedIframeUrls (pluginObject) {
-    if (!pluginObject.hasOwnProperty('getUnprotectedIframeUrls')) {
+    if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getUnprotectedIframeUrls')) {
       return
     }
 
@@ -456,37 +528,79 @@ class PluginManager {
     return component
   }
 
-  validateComponent (component, name) {
+  validateComponent (plugin, component, name) {
     const requiredKeys = ['template']
     const allowedKeys = [
       'data',
       'methods',
       'computed',
+      'components',
       ...this.hooks
     ]
 
     const missingKeys = []
     for (const key of requiredKeys) {
-      if (!component.hasOwnProperty(key)) {
+      if (!Object.prototype.hasOwnProperty.call(component, key)) {
         missingKeys.push(key)
       }
     }
 
+    const componentError = (error, errorType) => {
+      this.app.$logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`)
+    }
+
     if (missingKeys.length) {
-      this.app.$logger.error(`Plugin component '${name}' is missing: ${missingKeys.join(', ')}`)
+      componentError(missingKeys.join(', '), 'is missing')
+
+      return false
+    }
+
+    const inlineErrors = []
+    if (/v-html/i.test(component.template)) {
+      inlineErrors.push('uses v-html')
+    }
+    if (/javascript:/i.test(component.template)) {
+      inlineErrors.push('"javascript:"')
+    }
+    if (/<\s*webview/i.test(component.template)) {
+      inlineErrors.push('uses webview tag')
+    }
+    if (/<\s*script/i.test(component.template)) {
+      inlineErrors.push('uses script tag')
+    } else if (/[^\w]+eval\(/i.test(component.template)) {
+      inlineErrors.push('uses eval')
+    }
+    if (/<\s*iframe/i.test(component.template)) {
+      inlineErrors.push('uses iframe tag')
+    }
+    if (/srcdoc/i.test(component.template)) {
+      inlineErrors.push('uses srcdoc property')
+    }
+    const inlineEvents = []
+    for (const event of PLUGINS.validation.events) {
+      if ((new RegExp(`on${event}`, 'i')).test(component.template)) {
+        inlineEvents.push(event)
+      }
+    }
+    if (inlineEvents.length) {
+      inlineErrors.push('events: ' + inlineEvents.join(', '))
+    }
+
+    if (inlineErrors.length) {
+      componentError(inlineErrors.join('; '), 'has inline javascript')
 
       return false
     }
 
     const bannedKeys = []
     for (const key of Object.keys(component)) {
-      if (![ ...requiredKeys, ...allowedKeys ].includes(key)) {
+      if (![...requiredKeys, ...allowedKeys].includes(key)) {
         bannedKeys.push(key)
       }
     }
 
     if (bannedKeys.length) {
-      this.app.$logger.error(`Plugin component '${name}' has unpermitted keys: ${bannedKeys.join(', ')}`)
+      componentError(bannedKeys.join(', '), 'has unpermitted keys')
 
       return false
     }
@@ -531,7 +645,7 @@ class PluginManager {
 
     if (!config.id) {
       throw new Error('Plugin ID not found')
-    } else if (!/^[a-z-0-9-]+$/.test(config.id)) {
+    } else if (!/^[@/a-z-0-9-]+$/.test(config.id)) {
       throw new Error('Invalid Plugin ID')
     } else if (this.plugins[config.id]) {
       throw new Error(`Plugin '${config.id}' has already been loaded`)
@@ -562,7 +676,20 @@ class PluginManager {
 
   loadSandbox (config) {
     const sandbox = {
-      walletApi: {}
+      walletApi: {
+        icons: SandboxFontAwesome,
+        route: {
+          get: () => {
+            return { ...this.app.$route, matched: [] }
+          },
+          goTo: routeName => {
+            const route = this.getAllRoutes().find(route => routeName === route.name)
+            if (route) {
+              this.app.$router.push(route)
+            }
+          }
+        }
+      }
     }
 
     if (!config.permissions || !Array.isArray(config.permissions)) {
@@ -584,6 +711,105 @@ class PluginManager {
         info: this.app.$info,
         warn: this.app.$warn
       }
+    }
+
+    if (config.permissions.includes('MESSAGING')) {
+      const messages = {
+        events: [],
+
+        clear () {
+          for (const eventId in this.events) {
+            window.removeEventListener('message', this.events[eventId])
+          }
+
+          this.events = []
+        },
+
+        on (action, eventCallback) {
+          const eventTrigger = event => {
+            if (event.data !== Object(event.data) || event.data.action !== action) {
+              return
+            }
+
+            eventCallback(cloneDeep(event.data))
+          }
+
+          window.addEventListener('message', eventTrigger)
+          this.events[action] = eventTrigger
+        }
+      }
+
+      this.app.$router.beforeEach((_, __, next) => {
+        messages.clear()
+        next()
+      })
+
+      sandbox.walletApi.messages = messages
+    }
+
+    if (config.permissions.includes('STORAGE')) {
+      sandbox.walletApi.storage = {
+        get: (key) => {
+          const options = this.app.$store.getters['plugin/pluginOptions'](
+            config.id,
+            this.app.$store.getters['session/profileId']
+          )
+
+          return options[key]
+        },
+
+        set: (key, value) => {
+          this.app.$store.dispatch('plugin/setPluginOption', {
+            profileId: this.app.$store.getters['session/profileId'],
+            pluginId: config.id,
+            key,
+            value
+          })
+        },
+
+        getOptions: () => {
+          return this.app.$store.getters['plugin/pluginOptions'](
+            config.id,
+            this.app.$store.getters['session/profileId']
+          )
+        }
+      }
+    }
+
+    sandbox.walletApi.components = WalletComponents(config.permissions)
+
+    if (config.permissions.includes('HTTP')) {
+      sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
+    if (config.permissions.includes('PEER_CURRENT')) {
+      sandbox.walletApi.peers = {
+        current: {
+          get: async (url, timeout = 3000) => {
+            return (await this.app.$client.client.get(url, { timeout })).body
+          },
+
+          post: async (url, timeout = 3000) => {
+            return (await this.app.$client.client.post(url, { timeout })).body
+          }
+        }
+      }
+    }
+
+    if (config.permissions.includes('PROFILE_CURRENT')) {
+      sandbox.walletApi.profiles = {
+        getCurrent: () => {
+          return this.app.$store.getters['profile/public']()
+        }
+      }
+    }
+
+    if (config.permissions.includes('PROFILE_ALL')) {
+      if (!sandbox.walletApi.profiles) {
+        sandbox.walletApi.profiles = {}
+      }
+
+      sandbox.walletApi.profiles.all = this.app.$store.getters['profile/public'](true)
     }
 
     return sandbox
@@ -610,7 +836,7 @@ class PluginManager {
       description: config.description,
       version: config.version,
       permissions: uniq(config.permissions).sort(),
-      urls: config.urls
+      urls: config.urls || []
     }
   }
 }

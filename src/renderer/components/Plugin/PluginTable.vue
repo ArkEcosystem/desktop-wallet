@@ -93,7 +93,7 @@ export default {
 
   computed: {
     columns () {
-      let columns = [
+      const columns = [
         {
           label: this.$t('PLUGIN_TABLE.ID'),
           field: 'id'

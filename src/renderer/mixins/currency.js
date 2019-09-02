@@ -1,8 +1,6 @@
-import BigNumber from 'bignumber.js'
+import { NumberBuilder } from '@/plugins/bignumber.js'
 import { MARKET } from '@config'
 import { merge } from 'lodash'
-
-BigNumber.config({ DECIMAL_PLACES: 8 })
 
 export default {
   methods: {
@@ -92,8 +90,9 @@ export default {
       // When using cryptocurrencies, add a space between the symbol and the number
       if (cryptoCurrency) {
         return formatted
-          .replace(cryptoPlaceholder, `${cryptoCurrency} `)
-          .replace(cryptoPlaceholderSymbol, `${cryptoCurrency} `)
+          .replace(/\s/g, '')
+          .replace(cryptoPlaceholder, `\xa0${cryptoCurrency}\xa0`)
+          .replace(cryptoPlaceholderSymbol, `\xa0${cryptoCurrency}\xa0`)
           .trim()
       }
 
@@ -105,14 +104,19 @@ export default {
       return `${value} ${token}`
     },
 
+    currency_toBuilder (value, network) {
+      const { fractionDigits } = network || this.session_network
+      return new NumberBuilder(value).decimalPlaces(fractionDigits)
+    },
+
     currency_subToUnit (value, network) {
       const { fractionDigits } = network || this.session_network
-      return new BigNumber(value.toString()).dividedBy(Math.pow(10, fractionDigits)).toString()
+      return new NumberBuilder(value).decimalPlaces(fractionDigits).toHuman().value
     },
 
     currency_unitToSub (value, network) {
       const { fractionDigits } = network || this.session_network
-      return new BigNumber(value.toString()).multipliedBy(Math.pow(10, fractionDigits)).toString()
+      return new NumberBuilder(value).decimalPlaces(fractionDigits).toArktoshi().value
     },
 
     currency_cryptoToCurrency (value, fromSubUnit = true, fractionDigits = 2) {
@@ -121,7 +125,11 @@ export default {
       }
 
       const price = this.$store.getters['market/lastPrice']
-      return new BigNumber(value.toString()).multipliedBy(price).toFixed(fractionDigits)
+      return new NumberBuilder(value)
+        .decimalPlaces(fractionDigits)
+        .multiply(price)
+        .value
+        .toFixed()
     }
   }
 }

@@ -4,6 +4,7 @@ import { useI18n } from '../../__utils__/i18n'
 import router from '@/router'
 import CurrencyMixin from '@/mixins/currency'
 import ProfileAll from '@/pages/Profile/ProfileAll'
+import BigNumber from '@/plugins/bignumber.js'
 
 const localVue = createLocalVue()
 const i18n = useI18n(localVue)
@@ -25,7 +26,7 @@ describe('pages > ProfileAll', () => {
       i18n,
       mixins: [CurrencyMixin],
       stubs: {
-        'ProfileAvatar': true
+        ProfileAvatar: true
       },
       mocks: {
         $store: {
@@ -88,11 +89,9 @@ describe('pages > ProfileAll', () => {
   describe('aggregatedBalances', () => {
     it('should aggregate the sum of the balances of all profiles by network', () => {
       wrapper = mountPage()
-      expect(wrapper.vm.aggregatedBalances).toEqual({
-        main: 50015090900,
-        other: 12190000,
-        dev: 52010000
-      })
+      expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(50015090900))
+      expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+      expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
     })
 
     describe('when there are profiles with the same wallets', () => {
@@ -102,11 +101,9 @@ describe('pages > ProfileAll', () => {
 
       it('should include those wallets only 1 time', () => {
         wrapper = mountPage()
-        expect(wrapper.vm.aggregatedBalances).toEqual({
-          main: 15090900,
-          other: 12190000,
-          dev: 52010000
-        })
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(15090900))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
       })
     })
 
@@ -120,11 +117,9 @@ describe('pages > ProfileAll', () => {
 
       it('should include their balances', () => {
         wrapper = mountPage()
-        expect(wrapper.vm.aggregatedBalances).toEqual({
-          main: 66622093608,
-          other: 12190000,
-          dev: 52010000
-        })
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(66622093608))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+        expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
       })
 
       describe('when they are included as non-Ledger wallets', () => {
@@ -134,11 +129,9 @@ describe('pages > ProfileAll', () => {
 
         it('should include those wallets only 1 time', () => {
           wrapper = mountPage()
-          expect(wrapper.vm.aggregatedBalances).toEqual({
-            main: 59898192907,
-            other: 12190000,
-            dev: 52010000
-          })
+          expect(wrapper.vm.aggregatedBalances).toHaveProperty('main', new BigNumber(59898192907))
+          expect(wrapper.vm.aggregatedBalances).toHaveProperty('other', new BigNumber(12190000))
+          expect(wrapper.vm.aggregatedBalances).toHaveProperty('dev', new BigNumber(52010000))
         })
       })
     })
@@ -148,9 +141,9 @@ describe('pages > ProfileAll', () => {
     it('should return the sum of balances per network, using their symbols, sorted by quantity descently', () => {
       wrapper = mountPage()
       expect(wrapper.vm.totalBalances).toEqual([
-        'm 500.150909',
-        'd 0.5201',
-        'o 0.1219'
+        'm\xa0500.150909',
+        'd\xa00.5201',
+        'o\xa00.1219'
       ])
     })
 
@@ -165,9 +158,9 @@ describe('pages > ProfileAll', () => {
       it('should include their balances, sorted by quantity descently', () => {
         wrapper = mountPage()
         expect(wrapper.vm.totalBalances).toEqual([
-          'm 666.22093608',
-          'd 0.5201',
-          'o 0.1219'
+          'm\xa0666.22093608',
+          'd\xa00.5201',
+          'o\xa00.1219'
         ])
       })
     })
@@ -176,7 +169,7 @@ describe('pages > ProfileAll', () => {
   describe('profileBalance', () => {
     it('should return the formatted balance of a profile, using the network symbol', () => {
       wrapper = mountPage()
-      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m 0.137')
+      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m\xa00.137')
     })
   })
 })
