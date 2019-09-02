@@ -90,8 +90,9 @@ export default {
       // When using cryptocurrencies, add a space between the symbol and the number
       if (cryptoCurrency) {
         return formatted
-          .replace(cryptoPlaceholder, `${cryptoCurrency} `)
-          .replace(cryptoPlaceholderSymbol, `${cryptoCurrency} `)
+          .replace(/\s/g, '')
+          .replace(cryptoPlaceholder, `\xa0${cryptoCurrency}\xa0`)
+          .replace(cryptoPlaceholderSymbol, `\xa0${cryptoCurrency}\xa0`)
           .trim()
       }
 

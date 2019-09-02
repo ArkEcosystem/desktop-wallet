@@ -141,9 +141,9 @@ describe('pages > ProfileAll', () => {
     it('should return the sum of balances per network, using their symbols, sorted by quantity descently', () => {
       wrapper = mountPage()
       expect(wrapper.vm.totalBalances).toEqual([
-        'm 500.150909',
-        'd 0.5201',
-        'o 0.1219'
+        'm\xa0500.150909',
+        'd\xa00.5201',
+        'o\xa00.1219'
       ])
     })
 
@@ -158,9 +158,9 @@ describe('pages > ProfileAll', () => {
       it('should include their balances, sorted by quantity descently', () => {
         wrapper = mountPage()
         expect(wrapper.vm.totalBalances).toEqual([
-          'm 666.22093608',
-          'd 0.5201',
-          'o 0.1219'
+          'm\xa0666.22093608',
+          'd\xa00.5201',
+          'o\xa00.1219'
         ])
       })
     })
@@ -169,7 +169,7 @@ describe('pages > ProfileAll', () => {
   describe('profileBalance', () => {
     it('should return the formatted balance of a profile, using the network symbol', () => {
       wrapper = mountPage()
-      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m 0.137')
+      expect(wrapper.vm.profileBalance(profiles[0])).toEqual('m\xa00.137')
     })
   })
 })
