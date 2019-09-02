@@ -459,7 +459,7 @@ export default {
         const peer = {
           version: '0',
           height: 0,
-          delay: 0,
+          latency: 0,
           port: parseInt(port),
           ip,
           isHttps
