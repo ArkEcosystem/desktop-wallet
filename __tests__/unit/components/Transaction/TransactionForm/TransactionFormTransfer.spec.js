@@ -11,8 +11,6 @@ const i18n = useI18nGlobally()
 
 Vue.use(Vuelidate)
 
-debugger
-
 describe('TransactionFormTransfer', () => {
   const mountComponent = config => {
     return shallowMount(TransactionFormTransfer, merge({
