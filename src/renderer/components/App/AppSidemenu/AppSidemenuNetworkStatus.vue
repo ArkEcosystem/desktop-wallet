@@ -97,19 +97,19 @@
               {{ formatter_date(peer.lastUpdated || lastUpdated, 'LT') }}
             </div>
           </div>
-          <div class="AppSidemenuNetworkStatus__status__delay ml-6 inline-block">
+          <div class="AppSidemenuNetworkStatus__status__latency ml-6 inline-block">
             <div class="text-xs mb-2">
-              {{ $t('PEER.DELAY') }}
+              {{ $t('PEER.LATENCY') }}
             </div>
             <div
-              v-if="peer.delay"
-              :class="peer && peer.delay < 500 ? 'text-green' : 'text-red'"
+              v-if="peer.latency"
+              :class="peer && peer.latency < 500 ? 'text-green' : 'text-red'"
             >
               <span class="text-md">
-                {{ peer.delay }} ms
+                {{ peer.latency }} ms
               </span>
               <div
-                :class="peer && peer.delay < 500 ? 'bg-green' : 'bg-red'"
+                :class="peer && peer.latency < 500 ? 'bg-green' : 'bg-red'"
                 class="inline-block h-2 w-2 ml-1 rounded-full"
               />
             </div>
@@ -300,7 +300,7 @@ export default {
 
 .AppSidemenuNetworkStatus__status__height,
 .AppSidemenuNetworkStatus__status__last-checked,
-.AppSidemenuNetworkStatus__status__delay {
+.AppSidemenuNetworkStatus__status__latency {
   @apply .text-theme-settings-heading .border-theme-settings-border
 }
 

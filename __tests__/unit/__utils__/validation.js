@@ -1,19 +1,19 @@
 const testRequired = (model, validValue = 'not empty') => {
-  if (!model.hasOwnProperty('required') && !model.hasOwnProperty('requiredIfFull')) {
+  if (!Object.prototype.hasOwnProperty.call(model, 'required') && !Object.prototype.hasOwnProperty.call(model, 'requiredIfFull')) {
     throw new Error('missing required property')
   }
 
-  expect(model.hasOwnProperty('required') ? model.required : model.requiredIfFull).toBe(false)
+  expect(Object.prototype.hasOwnProperty.call(model, 'required') ? model.required : model.requiredIfFull).toBe(false)
   expect(model.$invalid).toBe(true)
 
   model.$model = validValue
 
-  expect(model.hasOwnProperty('required') ? model.required : model.requiredIfFull).toBe(true)
+  expect(Object.prototype.hasOwnProperty.call(model, 'required') ? model.required : model.requiredIfFull).toBe(true)
   expect(model.$invalid).toBe(false)
 
   model.$model = ''
 
-  expect(model.hasOwnProperty('required') ? model.required : model.requiredIfFull).toBe(false)
+  expect(Object.prototype.hasOwnProperty.call(model, 'required') ? model.required : model.requiredIfFull).toBe(false)
   expect(model.$invalid).toBe(true)
 }
 

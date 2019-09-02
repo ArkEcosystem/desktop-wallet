@@ -1,7 +1,7 @@
 import nock from 'nock'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { crypto } from '@arkecosystem/crypto'
+import { Identities } from '@arkecosystem/crypto'
 import apiClient, { client as ClientService } from '@/plugins/api-client'
 import LedgerModule from '@/store/modules/ledger'
 import ledgerService from '@/services/ledger-service'
@@ -14,12 +14,11 @@ Vue.use(apiClient)
 logger.error = jest.fn()
 
 ClientService.host = 'http://127.0.0.1'
-ClientService.version = 2
 
 let ledgerNameByAddress = () => null
 let ledgerCache = false
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
-let store = new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     ledger: LedgerModule,
     session: {
@@ -165,8 +164,8 @@ describe('ledger store module', () => {
         return testWallets[matches[1]]
       })
       spyCryptoGetAddress = jest.spyOn(
-        crypto,
-        'getAddress'
+        Identities.Address,
+        'fromPublicKey'
       ).mockImplementation((publicKey) => {
         return testWallets.find(wallet => wallet.publicKey === publicKey).address
       })
@@ -224,21 +223,12 @@ describe('ledger store module', () => {
     it('should load 10 wallets', async () => {
       nock('http://127.0.0.1')
         .persist()
-        .get(/\/api\/wallets\/.+/)
+        .get(/\/api\/v2\/wallets\/.+/)
         .reply(404, {
           statusCode: 404,
           error: 'Not Found',
           message: 'Wallet not found'
         })
-
-      nock('http://127.0.0.1')
-        .persist()
-        .defaultReplyHeaders({
-          'access-control-allow-origin': '*',
-          'access-control-allow-headers': 'API-Version'
-        })
-        .options(/\/api\/wallets\/.+/)
-        .reply(200)
 
       expect(store.getters['ledger/isConnected']).toBeTruthy()
       expect(await store.dispatch('ledger/reloadWallets', {
@@ -257,38 +247,20 @@ describe('ledger store module', () => {
 
         nock('http://127.0.0.1')
           .persist()
-          .get(`/api/wallets/${wallet.address.replace(/\s+/, '%20')}`)
+          .get(`/api/v2/wallets/${wallet.address.replace(/\s+/, '%20')}`)
           .reply(200, {
             data: wallet
           })
-
-        nock('http://127.0.0.1')
-          .persist()
-          .defaultReplyHeaders({
-            'access-control-allow-origin': '*',
-            'access-control-allow-headers': 'API-Version'
-          })
-          .options(`/api/wallets/${wallet.address.replace(/\s+/, '%20')}`)
-          .reply(200)
       }
 
       nock('http://127.0.0.1')
         .persist()
-        .get('/api/wallets/address%2010')
+        .get('/api/v2/wallets/address%2010')
         .reply(404, {
           statusCode: 404,
           error: 'Not Found',
           message: 'Wallet not found'
         })
-
-      nock('http://127.0.0.1')
-        .persist()
-        .defaultReplyHeaders({
-          'access-control-allow-origin': '*',
-          'access-control-allow-headers': 'API-Version'
-        })
-        .options('/api/wallets/address%2010')
-        .reply(200)
 
       await store.dispatch('ledger/connect')
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
@@ -299,19 +271,10 @@ describe('ledger store module', () => {
 
       nock('http://127.0.0.1')
         .persist()
-        .post('/api/wallets/search')
+        .post('/api/v2/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
-
-      nock('http://127.0.0.1')
-        .persist()
-        .defaultReplyHeaders({
-          'access-control-allow-origin': '*',
-          'access-control-allow-headers': 'API-Version'
-        })
-        .options('/api/wallets/search')
-        .reply(200)
 
       await store.dispatch('ledger/connect')
       expect(await store.dispatch('ledger/reloadWallets')).toEqual(expectedWallets)
@@ -323,19 +286,10 @@ describe('ledger store module', () => {
 
       nock('http://127.0.0.1')
         .persist()
-        .post('/api/wallets/search')
+        .post('/api/v2/wallets/search')
         .reply(200, {
           data: ledgerWallets.slice(0, 9)
         })
-
-      nock('http://127.0.0.1')
-        .persist()
-        .defaultReplyHeaders({
-          'access-control-allow-origin': '*',
-          'access-control-allow-headers': 'API-Version'
-        })
-        .options('/api/wallets/search')
-        .reply(200)
 
       for (const walletId in expectedWallets) {
         expectedWallets[walletId].name = expectedWallets[walletId].address

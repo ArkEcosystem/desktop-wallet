@@ -1,4 +1,5 @@
 import store from '@/store'
+import BigNumber from '@/plugins/bignumber'
 
 describe('ProfileModule', () => {
   it('should getter all profiles', () => {
@@ -32,7 +33,9 @@ describe('ProfileModule', () => {
     })
 
     it('should return the balance of the profile wallets', () => {
-      expect(store.getters['profile/balance'](profileId)).toEqual(1270)
+      const balance = store.getters['profile/balance'](profileId)
+      expect(balance).toBeInstanceOf(BigNumber)
+      expect(balance.toString()).toEqual('1270')
     })
   })
 
@@ -76,7 +79,9 @@ describe('ProfileModule', () => {
       })
 
       it('should return the balance of the profile wallets only', () => {
-        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(1270)
+        const balance = store.getters['profile/balanceWithLedger'](profileId)
+        expect(balance).toBeInstanceOf(BigNumber)
+        expect(balance.toString()).toEqual('1270')
       })
     })
 
@@ -86,7 +91,9 @@ describe('ProfileModule', () => {
       })
 
       it('should return the balance of the profile wallets and the Ledger wallets', () => {
-        expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(2901)
+        const balance = store.getters['profile/balanceWithLedger'](profileId)
+        expect(balance).toBeInstanceOf(BigNumber)
+        expect(balance.toString()).toEqual('2901')
       })
 
       describe('when those wallets are already included in the profile', () => {
@@ -96,7 +103,9 @@ describe('ProfileModule', () => {
         })
 
         it('should ignore them', () => {
-          expect(store.getters['profile/balanceWithLedger'](profileId)).toEqual(1571)
+          const balance = store.getters['profile/balanceWithLedger'](profileId)
+          expect(balance).toBeInstanceOf(BigNumber)
+          expect(balance.toString()).toEqual('1571')
         })
       })
     })

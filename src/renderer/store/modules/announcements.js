@@ -28,7 +28,7 @@ export default {
     },
 
     MARK_ANNOUNCEMENT_AS_READ (state, readAnnouncement) {
-      let readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
+      const readAnnouncementIndex = state.announcements.findIndex(announcement => announcement.guid === readAnnouncement.guid)
       Vue.set(state.announcements, readAnnouncementIndex, {
         ...readAnnouncement,
         isRead: true

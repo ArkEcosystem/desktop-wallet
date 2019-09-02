@@ -9,6 +9,26 @@
       class="flex-1 overflow-y-auto"
     >
       <MenuTabItem
+        key="BackItem"
+        :label="$t('COMMON.BACK')"
+        :on-click="historyBack"
+      >
+        <div
+          slot="header"
+          class="WalletDetails__back-button flex items-center"
+        >
+          <SvgIcon
+            name="send"
+            view-box="0 0 8 8"
+          />
+          <span
+            class="text-bold ml-2 text-base"
+          >
+            {{ $t('COMMON.BACK') }}
+          </span>
+        </div>
+      </MenuTabItem>
+      <MenuTabItem
         v-for="tab in tabs"
         :key="tab.componentName"
         :label="tab.text"
@@ -18,7 +38,7 @@
           :is="tab.component"
           slot-scope="{ isActive }"
           :is-active="isActive"
-          @on-row-click="onRowClick"
+          @on-row-click-delegate="onRowClickDelegate"
         />
       </MenuTabItem>
     </MenuTab>
@@ -137,7 +157,8 @@
 </template>
 
 <script>
-import { at, clone } from 'lodash'
+import electron from 'electron'
+import at from 'lodash/at'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
@@ -191,7 +212,7 @@ export default {
     },
 
     tabs () {
-      let tabs = [
+      const tabs = [
         {
           component: 'WalletTransactions',
           componentName: 'WalletTransactions',
@@ -272,9 +293,11 @@ export default {
       },
       set (votes) {
         this.$store.dispatch('session/setUnconfirmedVotes', votes)
-        const profile = clone(this.session_profile)
-        profile.unconfirmedVotes = votes
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          unconfirmedVotes: votes
+        })
       }
     },
 
@@ -306,6 +329,19 @@ export default {
       if (!newValue && oldValue) {
         await this.fetchWalletVote()
       }
+    },
+    selectedDelegate (delegate) {
+      if (delegate) {
+        this.isSelecting = false
+
+        if (this.votedDelegate) {
+          if (delegate.publicKey === this.votedDelegate.publicKey) {
+            this.isUnvoting = true
+          }
+        } else {
+          this.isVoting = true
+        }
+      }
     }
   },
 
@@ -324,6 +360,15 @@ export default {
   },
 
   methods: {
+    historyBack () {
+      const webContents = electron.remote.getCurrentWindow().webContents
+      if (!webContents.canGoBack()) {
+        throw new Error('It is not possible to go back in history')
+      }
+
+      webContents.goBack()
+    },
+
     switchToTab (component) {
       this.currentTab = component
     },
@@ -358,7 +403,7 @@ export default {
         this.votedDelegate = null
         this.walletVote.publicKey = null
 
-        const messages = at(error, 'response.data.message')
+        const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
           this.$logger.error(error)
           this.$error(this.$t('COMMON.FAILED_FETCH', {
@@ -398,18 +443,6 @@ export default {
 
     onConfirmSelect (value) {
       this.selectedDelegate = this.$store.getters['delegate/search'](value)
-
-      if (this.selectedDelegate) {
-        this.isSelecting = false
-
-        if (this.votedDelegate) {
-          if (this.selectedDelegate.publicKey === this.votedDelegate.publicKey) {
-            this.isUnvoting = true
-          }
-        } else {
-          this.isVoting = true
-        }
-      }
     },
 
     onSent (success, transaction) {
@@ -419,7 +452,8 @@ export default {
           {
             id: transaction.id,
             address: this.currentWallet.address,
-            publicKey: transaction.asset.votes[0]
+            publicKey: transaction.asset.votes[0],
+            timestamp: Date.now()
           }
         ]
 
@@ -431,8 +465,8 @@ export default {
       this.isVoting = false
     },
 
-    onRowClick (publicKey) {
-      this.onConfirmSelect(publicKey)
+    onRowClickDelegate (delegate) {
+      this.selectedDelegate = delegate
     }
   }
 }
@@ -450,5 +484,8 @@ export default {
 .WalletDetails__button:hover {
   transition: 0.5s;
   @apply .text-theme-voting-banner-button-text-hover .bg-theme-voting-banner-button-hover
+}
+.WalletDetails__back-button > svg {
+  transform: rotate(-135deg)
 }
 </style>

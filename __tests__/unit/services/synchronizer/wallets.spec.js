@@ -558,7 +558,7 @@ describe('Services > Synchronizer > Wallets', () => {
       wallet = profileWallets[2]
 
       action.displayNewTransaction = jest.fn()
-      action.processVotes = jest.fn()
+      jest.spyOn(action.synchronizer.$store, 'dispatch')
     })
 
     describe('when all of them are old', () => {
@@ -582,16 +582,13 @@ describe('Services > Synchronizer > Wallets', () => {
     })
 
     describe('when transactions include votes', () => {
-      let votes
-
       beforeEach(() => {
         transactions[0].type = config.TRANSACTION_TYPES.VOTE
-        votes = [transactions[0]]
       })
 
       it('should process the votes', async () => {
         await action.processWalletTransactions(wallet, transactions)
-        expect(action.processVotes).toHaveBeenCalledWith(votes)
+        expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('transaction/processVotes', transactions)
       })
     })
 

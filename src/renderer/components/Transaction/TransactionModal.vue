@@ -166,7 +166,12 @@ export default {
 
             if (this.isSuccessfulResponse(response)) {
               this.storeTransaction(this.transaction)
-              const { data } = response.data
+              this.updateLastFeeByType({
+                fee: this.transaction.fee.toString(),
+                type: this.transaction.type
+              })
+
+              const { data } = response.body
 
               if (data && data.accept.length === 0 && data.broadcast.length > 0) {
                 this.$warn(messages.warningBroadcast)
@@ -180,7 +185,7 @@ export default {
 
           // If we get here, it means that none of the responses was successful, so pick one and show the error
           const response = responseArray[0]
-          const { errors } = response.data
+          const { errors } = response.body
 
           const anyLowFee = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
@@ -230,12 +235,8 @@ export default {
         return false
       }
 
-      if (this.$client.version === 1) {
-        return response.data.success
-      } else {
-        const { data, errors } = response.data
-        return data && data.invalid.length === 0 && !errors
-      }
+      const { data, errors } = response.body
+      return data && data.invalid.length === 0 && !errors
     },
 
     storeTransaction (transaction) {
@@ -258,6 +259,18 @@ export default {
         profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
         raw: transaction
       })
+    },
+
+    updateLastFeeByType ({ fee, type }) {
+      this.$store.dispatch('session/setLastFeeByType', { fee, type })
+
+      this.$store.dispatch('profile/update', {
+        ...this.session_profile,
+        lastFees: {
+          ...this.session_profile.lastFees,
+          [type]: fee
+        }
+      })
     }
   }
 }
@@ -269,6 +282,6 @@ export default {
 }
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
-  min-width: 35rem;
+  min-width: 38rem;
 }
 </style>

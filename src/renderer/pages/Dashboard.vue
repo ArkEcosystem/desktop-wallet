@@ -2,22 +2,17 @@
   <div class="Dashboard relative flex flex-row h-full w-full">
     <main class="bg-theme-feature rounded-lg lg:mr-4 flex-1 w-full flex-col overflow-y-auto">
       <div
-        v-if="!isChartEnabledOnProfile && isMarketEnabled"
-        class="pt-10 px-10 rounded-t-lg text-lg font-semibold mt-1 text-theme-chart-price"
+        v-if="isMarketEnabled && isChartEnabled"
       >
-        <span v-if="price">
-          {{ $t('MARKET_CHART_HEADER.PRICE', { currency: ticker }) }}:
-          <!-- TODO price in crypto and fiat instead of only in 1 currency -->
-          {{ currency_format(price, { currency, currencyDisplay: 'code' }) }}
-        </span>
-      </div>
-
-      <div
-        v-if="isChartEnabledOnProfile && isMarketEnabled"
-        class="bg-theme-chart-background pt-10 px-10 pb-4 rounded-t-lg"
-      >
-        <MarketChart :is-active="isActive">
-          <MarketChartHeader class="mb-5" />
+        <MarketChart
+          :period="period"
+          :is-expanded="isChartExpanded"
+        >
+          <MarketChartHeader
+            class="mb-5"
+            @period-change="onPeriodChange"
+            @toggle="toggleChart"
+          />
         </MarketChart>
       </div>
 
@@ -71,10 +66,6 @@ export default {
     WalletButtonImport
   },
 
-  data: () => ({
-    isActive: true
-  }),
-
   computed: {
     isMarketEnabled () {
       return this.session_network && this.session_network.market && this.session_network.market.enabled
@@ -88,14 +79,27 @@ export default {
     ticker () {
       return this.session_network.market.ticker
     },
-    isChartEnabledOnProfile () {
-      return this.session_profile.isMarketChartEnabled
-    }
-  },
+    isChartEnabled () {
+      return this.marketChartOptions.isEnabled
+    },
+    isChartExpanded () {
+      return this.marketChartOptions.isExpanded
+    },
+    period () {
+      return this.marketChartOptions.period
+    },
+    marketChartOptions: {
+      get () {
+        return this.$store.getters['session/marketChartOptions']
+      },
+      set (options) {
+        this.$store.dispatch('session/setMarketChartOptions', options)
 
-  watch: {
-    isChartEnabledOnProfile () {
-      this.isActive = this.isChartEnabledOnProfile
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          marketChartOptions: options
+        })
+      }
     }
   },
 
@@ -123,8 +127,14 @@ export default {
       : store._vm.$root.$on('vuex-persist:ready', chooseNext)
   },
 
-  activated () {
-    this.isActive = this.isChartEnabledOnProfile
+  methods: {
+    toggleChart (value) {
+      this.marketChartOptions.isExpanded = value
+    },
+
+    onPeriodChange (period) {
+      this.marketChartOptions.period = period
+    }
   }
 }
 </script>

@@ -1,4 +1,4 @@
-import { transform, isFunction, isObject } from 'lodash'
+import { transform, isFunction, isObject, isUndefined, isNil } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
 
 export default class BaseModel {
@@ -12,10 +12,11 @@ export default class BaseModel {
     }
 
     const model = {}
-    this.validate(input)
 
     const properties = this.formatProperties(input)
     Object.defineProperties(model, properties)
+
+    this.validate(model)
     return model
   }
 
@@ -25,10 +26,12 @@ export default class BaseModel {
 
       if (item.format && isFunction(item.format)) {
         value = item.format(input)
-      } else if (input[key] === undefined) {
-        value = item.default
-      } else {
+      } else if (!isUndefined(input[key])) {
         value = input[key]
+      }
+
+      if (isNil(value) && item.default) {
+        value = item.default
       }
 
       result[key] = {
@@ -45,7 +48,7 @@ export default class BaseModel {
     if (!validation.valid) {
       const errors = validation.errors.map(error => error.stack).join(', ')
       throw new Error(`JSON: ${JSON.stringify(this.schema, null, 2)} Cannot be instantiated due to errors: ${errors}
-        input: ${input}
+        input: ${JSON.stringify(input)}
       `)
     }
   }

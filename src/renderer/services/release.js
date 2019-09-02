@@ -1,4 +1,4 @@
-import axios from 'axios'
+import got from 'got'
 // NOTE: uses a relative path because it is used on the `main` process too
 import packageJson from '../../../package.json'
 
@@ -24,7 +24,7 @@ export default {
    * @return {Object} the release data
    */
   async fetchLatestRelease (url) {
-    const response = await axios.get(this.latestReleaseApiUrl)
-    return response.data
+    const response = await got(this.latestReleaseApiUrl, { json: true })
+    return response.body
   }
 }

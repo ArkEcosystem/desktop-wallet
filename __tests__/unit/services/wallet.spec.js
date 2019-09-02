@@ -131,4 +131,14 @@ describe('Services > Wallet', () => {
       })
     })
   })
+
+  describe('isBip39Passphrase', () => {
+    it('should return true for a valid passphrase', () => {
+      expect(WalletService.isBip39Passphrase('one video jaguar gap soldier ill hobby motor bundle couple trophy smoke', 'english')).toBeTrue()
+    })
+
+    it('should return false for an invalid passphrase', () => {
+      expect(WalletService.isBip39Passphrase('one two three four five six seven eight nine ten eleven twelve', 'english')).toBeFalse()
+    })
+  })
 })

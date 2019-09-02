@@ -48,7 +48,6 @@
 import ModalAdditionalLedgers from '@/components/Modal/ModalAdditionalLedgers'
 import { MenuOptions, MenuOptionsItem } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import { clone } from 'lodash'
 
 export default {
   name: 'AppSidemenuOptionsSettings',
@@ -90,9 +89,12 @@ export default {
       },
       set (enabled) {
         this.$store.dispatch('session/setLedgerCache', enabled)
-        const profile = clone(this.session_profile)
-        profile.ledgerCache = enabled
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          ledgerCache: enabled
+        })
+
         if (enabled) {
           this.$store.dispatch('ledger/cacheWallets')
         } else {

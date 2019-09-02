@@ -25,12 +25,18 @@ export default {
     },
     tab: {
       type: [Number, String],
-      required: true
+      default: null,
+      required: false
     },
     isDisabled: {
       type: Boolean,
       required: false,
       default: false
+    },
+    onClick: {
+      type: Function,
+      default: null,
+      required: false
     }
   },
 
