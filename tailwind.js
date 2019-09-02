@@ -50,6 +50,9 @@ let colors = {
   'theme-page-instructions-background': 'var(--theme-page-instructions-background)',
   'theme-modal': 'var(--theme-modal)',
 
+  'theme-intro-gradient-1': 'var(--theme-intro-gradient-1)',
+  'theme-intro-gradient-2': 'var(--theme-intro-gradient-2)',
+
   'theme-announcements-gradient-1': 'var(--theme-announcements-gradient-1)',
   'theme-announcements-gradient-2': 'var(--theme-announcements-gradient-2)',
 

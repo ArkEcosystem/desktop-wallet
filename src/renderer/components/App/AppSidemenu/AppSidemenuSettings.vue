@@ -136,8 +136,8 @@
           :continue-button="$t('APP_SIDEMENU.SETTINGS.SCREENSHOT_PROTECTION.PERMANENTLY')"
           container-classes="max-w-md"
           @close="toggleScreenshotProtectionModal"
-          @cancel="onToggleScreenshotProtection"
-          @continue="onToggleScreenshotProtection(true)"
+          @cancel="onDisableScreenshotProtection"
+          @continue="onDisableScreenshotProtection(true)"
         />
 
         <ModalConfirmation
@@ -158,7 +158,7 @@
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import { clone, isEmpty, isString } from 'lodash'
+import { isEmpty, isString } from 'lodash'
 const os = require('os')
 
 export default {
@@ -213,9 +213,11 @@ export default {
       },
       set (currency) {
         this.$store.dispatch('session/setCurrency', currency)
-        const profile = clone(this.session_profile)
-        profile.currency = currency
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          currency
+        })
       }
     },
     sessionBroadcastPeers: {
@@ -224,9 +226,11 @@ export default {
       },
       set (broadcast) {
         this.$store.dispatch('session/setBroadcastPeers', broadcast)
-        const profile = clone(this.session_profile)
-        profile.broadcastPeers = broadcast
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          broadcastPeers: broadcast
+        })
       }
     },
     sessionTheme: {
@@ -235,9 +239,11 @@ export default {
       },
       set (theme) {
         this.$store.dispatch('session/setTheme', theme)
-        const profile = clone(this.session_profile)
-        profile.theme = theme
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          theme
+        })
       }
     },
     hasScreenshotProtection: {
@@ -246,10 +252,12 @@ export default {
       },
       set (protection) {
         this.$store.dispatch('session/setScreenshotProtection', protection)
-        if (!this.screenshotProtection || this.saveOnProfile) {
-          const profile = clone(this.session_profile)
-          profile.screenshotProtection = protection
-          this.$store.dispatch('profile/update', profile)
+
+        if (protection || this.saveOnProfile) {
+          this.$store.dispatch('profile/update', {
+            ...this.session_profile,
+            screenshotProtection: protection
+          })
         }
       }
     },
@@ -262,9 +270,11 @@ export default {
       },
       set (update) {
         this.$store.dispatch('session/setBackgroundUpdateLedger', update)
-        const profile = clone(this.session_profile)
-        profile.backgroundUpdateLedger = update
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          backgroundUpdateLedger: update
+        })
       }
     },
     pluginThemes () {
@@ -280,6 +290,10 @@ export default {
   methods: {
     toggleShowSettings () {
       this.isSettingsVisible = !this.isSettingsVisible
+    },
+
+    showSettings () {
+      this.isSettingsVisible = true
     },
 
     closeShowSettings () {
@@ -323,7 +337,7 @@ export default {
       this.electron_reload()
     },
 
-    onToggleScreenshotProtection (saveOnProfile = false) {
+    onDisableScreenshotProtection (saveOnProfile = false) {
       this.saveOnProfile = saveOnProfile
       this.hasScreenshotProtection = false
       this.toggleScreenshotProtectionModal()

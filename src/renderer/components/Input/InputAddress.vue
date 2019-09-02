@@ -187,8 +187,10 @@ export default {
           name: null,
           address: wallet.address
         }
-        if (wallet.name && wallet.name !== wallet.address) {
-          address.name = `${truncate(wallet.name, 25)} (${this.wallet_truncate(wallet.address)})`
+
+        const walletName = this.wallet_name(wallet.address)
+        if (walletName && walletName !== wallet.address) {
+          address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`
         }
 
         return address
@@ -353,7 +355,7 @@ export default {
       this.$refs.dropdown.open()
     },
 
-    async updateInputValue (value) {
+    updateInputValue (value) {
       this.inputValue = value
       // Inform Vuelidate that the value changed
       this.$v.model.$touch()

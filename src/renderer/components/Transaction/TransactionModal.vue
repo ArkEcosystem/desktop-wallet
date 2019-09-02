@@ -166,6 +166,11 @@ export default {
 
             if (this.isSuccessfulResponse(response)) {
               this.storeTransaction(this.transaction)
+              this.updateLastFeeByType({
+                fee: this.transaction.fee.toString(),
+                type: this.transaction.type
+              })
+
               const { data } = response.body
 
               if (data && data.accept.length === 0 && data.broadcast.length > 0) {
@@ -254,6 +259,18 @@ export default {
         profileId: this.walletOverride ? this.walletOverride.profileId : this.session_profile.id,
         raw: transaction
       })
+    },
+
+    updateLastFeeByType ({ fee, type }) {
+      this.$store.dispatch('session/setLastFeeByType', { fee, type })
+
+      this.$store.dispatch('profile/update', {
+        ...this.session_profile,
+        lastFees: {
+          ...this.session_profile.lastFees,
+          [type]: fee
+        }
+      })
     }
   }
 }
@@ -265,6 +282,6 @@ export default {
 }
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
-  min-width: 35rem;
+  min-width: 38rem;
 }
 </style>

@@ -33,6 +33,7 @@ jest.mock('@/store', () => ({
       return fees[type]
     }
   },
+  dispatch: jest.fn(),
   watch: jest.fn()
 }))
 
