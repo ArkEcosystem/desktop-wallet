@@ -94,7 +94,7 @@ export default {
   computed: {
     messageError () {
       if (this.$v.form.message.$error && this.$v.form.message.minLength) {
-        return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
+        return this.$t('VALIDATION.REQUIRED', [this.$refs.message.label])
       }
       return null
     }
@@ -136,8 +136,8 @@ export default {
         } else {
           message = WalletService.signMessage(this.form.message, this.form.passphrase)
         }
-        message['timestamp'] = new Date().getTime()
-        message['address'] = this.wallet.address
+        message.timestamp = new Date().getTime()
+        message.address = this.wallet.address
         this.$store.dispatch('wallet/addSignedMessage', message)
 
         this.$success(this.$t('SIGN_VERIFY.SUCCESSFULL_SIGN'))

@@ -195,7 +195,7 @@ export default {
       const expired = []
       const profileId = rootGetters['session/profileId']
       const threshold = dayjs().subtract(config.APP.transactionExpiryMinutes, 'minute')
-      for (const transaction of getters['byProfileId'](profileId)) {
+      for (const transaction of getters.byProfileId(profileId)) {
         if (dayjs(transaction.timestamp).isBefore(threshold)) {
           transaction.isExpired = true
           expired.push(transaction.id)
