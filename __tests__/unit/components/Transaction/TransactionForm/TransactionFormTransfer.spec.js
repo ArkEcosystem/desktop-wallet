@@ -1,7 +1,7 @@
 import merge from 'lodash/merge'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
-import shallowMount from '@vue/test-utils/shallow-mount'
+import { shallowMount } from '@vue/test-utils'
 import useI18nGlobally from '../../../__utils__/i18n'
 import TransactionFormTransfer from '@/components/Transaction/TransactionForm/TransactionFormTransfer'
 import BigNumber from '@/plugins/bignumber'
