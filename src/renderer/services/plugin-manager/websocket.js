@@ -41,13 +41,26 @@ export default class PluginWebsocket {
 
       on (action, eventCallback) {
         const eventTrigger = event => {
-          eventCallback({
-            ...(event.data && event.data !== Object(event.data) && { data: event.data }),
-            ...(event.origin && { origin: event.origin }),
-            ...(event.timeStamp && { timestamp: event.timeStamp }),
-            ...(event.wasClean && { clean: event.wasClean })
-          })
+          const result = {}
+          if (event.data && event.data !== Object(event.data)) {
+            result.data = event.data
+          }
+
+          if (event.origin) {
+            result.origin = event.origin
+          }
+
+          if (event.timeStamp) {
+            result.timestamp = event.timeStamp
+          }
+
+          if (event.wasClean) {
+            result.clean = event.wasClean
+          }
+
+          eventCallback(result)
         }
+
         websocket.addEventListener(action, eventTrigger)
         this.events[action] = eventTrigger
       },
