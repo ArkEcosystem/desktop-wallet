@@ -31,12 +31,14 @@ export default class PluginWebsocket {
 
     const websocketEvents = {
       events: [],
+
       clear () {
         for (const eventId in this.events) {
           websocket.removeEventListener(eventId, this.events[eventId])
         }
         this.events = []
       },
+
       on (action, eventCallback) {
         const eventTrigger = event => {
           eventCallback({
@@ -49,10 +51,14 @@ export default class PluginWebsocket {
         websocket.addEventListener(action, eventTrigger)
         this.events[action] = eventTrigger
       },
+
       send (data) {
         websocket.send(data)
       },
-      readyState: websocket.readyState
+
+      getReadyState () {
+        return websocket.readyState
+      }
     }
 
     this.router.beforeEach((_, __, next) => {
