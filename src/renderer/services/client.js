@@ -22,19 +22,27 @@ export default class ClientService {
   }
 
   /**
+   * Generate a new connection instance.
+   *
+   * @param  {String} server         Host URL to connect to server
+   * @param  {Number} [timeout=5000] Connection timeout
+   * @return {Connection}
+   */
+  static newConnection (server, timeout) {
+    return (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+  }
+
+  /**
    * Fetch the network configuration according to the version.
    * In case the `vendorField` length has changed, updates the network data.
    * Create a new client to isolate the main client.
    *
    * @param {String} server
-   * @param {Number} apiVersion
    * @param {Number} timeout
    * @returns {Object}
    */
   static async fetchNetworkConfig (server, timeout) {
-    const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
-
-    const response = await client.api('node').configuration()
+    const response = await ClientService.newConnection(server, timeout).api('node').configuration()
     const data = response.body.data
 
     const currentNetwork = store.getters['session/network']
@@ -90,8 +98,7 @@ export default class ClientService {
 
   static async fetchFeeStatistics (server, timeout) {
     try {
-      const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
-      const { body } = await client.api('node').fees(7)
+      const { body } = await ClientService.newConnection(server, timeout).api('node').fees(7)
 
       return body.data.map(fee => ({
         type: Number(fee.type),
@@ -125,9 +132,8 @@ export default class ClientService {
   }
 
   set host (host) {
-    host = `${host}/api/v2`
-    this.__host = host
-    this.client = (new Connection(host)).withOptions({ timeout: 5000 })
+    this.__host = `${host}/api/v2`
+    this.client = ClientService.newConnection(host)
   }
 
   get version () {
