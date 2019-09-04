@@ -283,12 +283,18 @@ export default {
 
       let peerDiscovery = null
       if (networkLookup[network.id]) {
-        peerDiscovery = await PeerDiscovery.new(networkLookup[network.id])
+        peerDiscovery = await PeerDiscovery.new({
+          networkOrHost: networkLookup[network.id]
+        })
       } else if (getters['current']()) {
         const peerUrl = getBaseUrl(getters['current']())
-        peerDiscovery = await PeerDiscovery.new(`${peerUrl}/api/v2/peers`)
+        peerDiscovery = await PeerDiscovery.new({
+          networkOrHost: `${peerUrl}/api/v2/peers`
+        })
       } else {
-        peerDiscovery = await PeerDiscovery.new(`${network.server}/api/v2/peers`)
+        peerDiscovery = await PeerDiscovery.new({
+          networkOrHost: `${network.server}/api/v2/peers`
+        })
       }
 
       peerDiscovery.withLatency(300)

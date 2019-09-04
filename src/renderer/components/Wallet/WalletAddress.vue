@@ -4,10 +4,17 @@
       v-if="!type"
       v-tooltip="{
         content: address,
-        container: tooltipContainer
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
       }"
     >
-      <a @click.stop="onClick">
+      <a
+        @click.stop="onClick"
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+      >
         {{ wallet_formatAddress(address, addressLength) }}
       </a>
     </span>
@@ -21,12 +28,17 @@
       v-else-if="type === 3"
       v-tooltip="{
         content: votedDelegateAddress,
-        container: tooltipContainer
+        container: tooltipContainer,
+        delay: { show: 300, hide: 0 },
+        show: showTooltip,
+        trigger: 'manual'
       }"
     >
       <a
         :class="[isUnvote ? 'text-red' : 'text-green']"
         @click.stop="onClick"
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
       >
         {{ isUnvote ? $t("TRANSACTION.TYPE.UNVOTE") : $t("TRANSACTION.TYPE.VOTE") }}
         <span
@@ -101,6 +113,10 @@ export default {
     }
   },
 
+  data: () => ({
+    showTooltip: false
+  }),
+
   computed: {
     isUnvote () {
       if (this.asset && this.asset.votes) {
@@ -151,8 +167,17 @@ export default {
     },
 
     onClick () {
-      this.openAddress()
+      this.showTooltip = false
       this.$emit('click')
+      this.openAddress()
+    },
+
+    onMouseOver () {
+      this.showTooltip = true
+    },
+
+    onMouseOut () {
+      this.showTooltip = false
     },
 
     openAddress () {
