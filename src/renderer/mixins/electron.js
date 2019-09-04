@@ -1,5 +1,5 @@
 import electron from 'electron'
-import { writeFile } from 'fs'
+import { readFile, writeFile } from 'fs'
 
 export default {
   methods: {
@@ -12,17 +12,43 @@ export default {
       win.reload()
     },
 
-    electron_writeFile (raw, defaultPath, extensions = ['.json']) {
+    electron_writeFile (raw, defaultPath, options = {}) {
+      const filters = options.filters || [
+        { name: 'JSON', extensions: ['json'] },
+        { name: 'All Files', extensions: ['*'] }
+      ]
+
       return new Promise((resolve, reject) => {
         electron.remote.dialog.showSaveDialog({
           defaultPath,
-          filters: [{ extensions }]
+          filters
         }, fileName => {
           if (!fileName) return
 
           writeFile(fileName, raw, 'utf8', err => {
             if (err) reject(err)
             resolve(fileName)
+          })
+        })
+      })
+    },
+
+    electron_readFile (options = {}) {
+      const filters = options.filters || [
+        { name: 'JSON', extensions: ['json'] },
+        { name: 'All Files', extensions: ['*'] }
+      ]
+
+      return new Promise((resolve, reject) => {
+        electron.remote.dialog.showOpenDialog({
+          properties: ['openFile'],
+          filters
+        }, filePaths => {
+          if (!filePaths) return
+
+          readFile(filePaths[0], 'utf8', (err, data) => {
+            if (err) reject(err)
+            resolve(data)
           })
         })
       })
