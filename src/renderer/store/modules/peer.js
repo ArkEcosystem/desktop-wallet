@@ -264,10 +264,10 @@ export default {
     },
 
     /**
-     * Refresh peer list.
-     * @return {void}
+     * Get Peer Discovery instance.
+     * @return {PeerDiscovery}
      */
-    async refresh ({ dispatch, getters, rootGetters }, network = null) {
+    async getPeerDiscovery ({ dispatch, getters, rootGetters }, network = null) {
       if (!network) {
         network = rootGetters['session/network']
       }
@@ -281,21 +281,54 @@ export default {
         'ark.devnet': 'devnet'
       }
 
-      let peerDiscovery = null
       if (networkLookup[network.id]) {
-        peerDiscovery = await PeerDiscovery.new({
+        return PeerDiscovery.new({
           networkOrHost: networkLookup[network.id]
         })
-      } else if (getters['current']()) {
+      }
+
+      if (getters['current']()) {
         const peerUrl = getBaseUrl(getters['current']())
-        peerDiscovery = await PeerDiscovery.new({
+        return PeerDiscovery.new({
           networkOrHost: `${peerUrl}/api/v2/peers`
         })
-      } else {
-        peerDiscovery = await PeerDiscovery.new({
-          networkOrHost: `${network.server}/api/v2/peers`
-        })
       }
+
+      return PeerDiscovery.new({
+        networkOrHost: `${network.server}/api/v2/peers`
+      })
+    },
+
+    /**
+     * Get average peer height.
+     * @return {Number}
+     */
+    async getAverageHeight ({ dispatch, getters, rootGetters }, network = null) {
+      const peerDiscovery = await dispatch('getPeerDiscovery', network)
+      const peers = await peerDiscovery.findPeersWithPlugin('core-api', {
+        additional: [
+          'height'
+        ]
+      })
+
+      if (!peers.length) {
+        return 1
+      }
+
+      let sum = 0
+      for (const peer of peers) {
+        sum += peer.height
+      }
+
+      return sum / peers.length
+    },
+
+    /**
+     * Refresh peer list.
+     * @return {void}
+     */
+    async refresh ({ dispatch, getters, rootGetters }, network = null) {
+      const peerDiscovery = await dispatch('getPeerDiscovery', network)
 
       peerDiscovery.withLatency(300)
         .sortBy('latency')
