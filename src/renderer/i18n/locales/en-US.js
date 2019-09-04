@@ -23,6 +23,7 @@ export default {
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
+    LOAD: 'Load',
     NETWORK: 'Network',
     NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
@@ -136,6 +137,7 @@ export default {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
+    INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
     MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
@@ -166,6 +168,7 @@ export default {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
       LIMIT_REMAINING: '{0}/{1} Remaining'
     },
+    RECIPIENT_DIFFERENT_NETWORK: 'The recipient {0} belongs to a different network',
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
@@ -636,6 +639,7 @@ export default {
       ADDRESS: 'Address',
       NAME: 'Name',
       VOTING_FOR: 'Voting for',
+      DELEGATE_NOT_ACTIVE: '{delegate} ({rank}) is not an active delegate',
       BALANCE: 'Balance',
       DELETE: 'Delete'
     },
@@ -800,7 +804,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
-      SAVE_OFFLINE: 'Failed to save your transaction file',
+      SAVE_OFFLINE: 'Failed to save transaction file',
+      LOAD_FROM_FILE: 'Failed to load transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
@@ -823,7 +828,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
-      SAVE_OFFLINE: 'The transaction file saved successfully in: {path}'
+      SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
+      LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
@@ -848,6 +854,7 @@ export default {
     LEDGER_SIGN_WAIT: 'Awaiting Ledger Signature. Please check and sign the transaction when you are ready.',
     LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
     LEDGER_USER_DECLINED: 'User declined',
+    LOAD_FROM_FILE: 'Load transaction from file',
     MULTIPLE: 'Multiple',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',

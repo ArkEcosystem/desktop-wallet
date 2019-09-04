@@ -81,6 +81,8 @@
         :src="changellyWidgetURL"
         class="changelly overflow-y-hidden border-none"
         style="width:100%; height:550px"
+        allowpopups
+        @new-window="openPopup"
       />
     </div>
   </section>
@@ -159,6 +161,10 @@ export default {
 
     openChangellyKYC () {
       this.electron_openExternal('https://changelly.com/aml-kyc')
+    },
+
+    openPopup (event) {
+      this.electron_openExternal(event.url)
     },
 
     setConfirmed () {

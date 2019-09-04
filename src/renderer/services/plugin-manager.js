@@ -5,6 +5,7 @@ import { ipcRenderer } from 'electron'
 import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
+import PluginWebsocket from '@/services/plugin-manager/websocket'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 import WalletComponents from '@/services/plugin-manager/wallet-components'
 
@@ -780,6 +781,10 @@ class PluginManager {
 
     if (config.permissions.includes('HTTP')) {
       sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
+    if (config.permissions.includes('WEBSOCKETS')) {
+      sandbox.walletApi.websocket = new PluginWebsocket(config.urls, this.app.$router)
     }
 
     if (config.permissions.includes('PEER_CURRENT')) {
