@@ -70,6 +70,27 @@ export default new BaseModule(NetworkModel, {
     },
 
     /*
+     * Update data of the network
+     */
+    async updateData ({ commit, rootGetters }, network = null) {
+      if (!network) {
+        network = rootGetters['session/network']
+      }
+
+      try {
+        const crypto = await Client.fetchNetworkCrypto(network.server)
+        const { constants } = await Client.fetchNetworkConfig(network.server)
+        commit('UPDATE', {
+          ...network,
+          crypto,
+          milestone: constants
+        })
+      } catch (error) {
+        // data could not be updated
+      }
+    },
+
+    /*
      * Update the fee statistics of the current network
      */
     async fetchFees ({ commit, rootGetters }, network = null) {

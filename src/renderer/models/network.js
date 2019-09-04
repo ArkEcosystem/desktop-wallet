@@ -49,6 +49,12 @@ export default new BaseModel({
     constants: {
       type: 'object'
     },
+    crypto: {
+      type: 'object'
+    },
+    milestone: {
+      type: 'object'
+    },
     vendorField: {
       type: 'object',
       properties: {

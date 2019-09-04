@@ -62,6 +62,17 @@ export default class ClientService {
   }
 
   /**
+   * Fetch the network crypto data, e.g. milestones
+   *
+   * @param {String} server
+   * @param {Number} timeout
+   * @returns {Object}
+   */
+  static async fetchNetworkCrypto (server, timeout) {
+    return (await ClientService.newConnection(server, timeout).api('node').crypto()).body.data
+  }
+
+  /**
    * TODO: Remove unnecessary endpoints once core 2.4 is released (maybe wait until 2.5 so other chains have updated)
    * Only for V2
    * Get the configuration of a peer
