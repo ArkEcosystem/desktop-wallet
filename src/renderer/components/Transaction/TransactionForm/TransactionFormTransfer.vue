@@ -122,15 +122,32 @@
       class="mt-5"
     />
 
-    <div class="self-start">
-      <button
-        :disabled="$v.form.$invalid"
-        class="blue-button mt-10"
-        @click="onSubmit"
-      >
-        {{ $t('COMMON.NEXT') }}
-      </button>
-    </div>
+    <footer class="mt-10 flex justify-between items-center">
+      <div class="self-start">
+        <button
+          :disabled="$v.form.$invalid"
+          class="blue-button"
+          @click="onSubmit"
+        >
+          {{ $t('COMMON.NEXT') }}
+        </button>
+      </div>
+
+      <div>
+        <button
+          v-tooltip="{ content: $t('TRANSACTION.LOAD_FROM_FILE'), toggle: 'hover' }"
+          class="TransactionFormTransfer__load-tx action-button pull-right flex items-center"
+          @click="loadTransaction"
+        >
+          <SvgIcon
+            name="load"
+            view-box="0 0 21 15"
+            class="mr-1"
+          />
+          {{ $t('COMMON.LOAD') }}
+        </button>
+      </div>
+    </footer>
 
     <ModalConfirmation
       v-if="showConfirmSendAll"
@@ -161,8 +178,10 @@ import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, Inp
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
+import SvgIcon from '@/components/SvgIcon'
 import WalletSelection from '@/components/Wallet/WalletSelection'
 import TransactionService from '@/services/transaction'
+import WalletService from '@/services/wallet'
 import onSubmit from './mixin-on-submit'
 
 export default {
@@ -182,6 +201,7 @@ export default {
     ModalConfirmation,
     ModalLoader,
     PassphraseInput,
+    SvgIcon,
     WalletSelection
   },
 
@@ -399,6 +419,52 @@ export default {
     emitCancelSendAll () {
       this.showConfirmSendAll = false
       this.isSendAllActive = false
+    },
+
+    async loadTransaction () {
+      try {
+        const raw = await this.electron_readFile()
+
+        try {
+          const transaction = JSON.parse(raw)
+
+          if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.TRANSFER) {
+            throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
+          }
+
+          if (transaction.recipientId) {
+            if (WalletService.validateAddress(transaction.recipientId, this.session_network.version)) {
+              this.$refs.recipient.model = transaction.recipientId
+            } else {
+              throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+                this.wallet_truncate(transaction.recipientId)
+              ]))
+            }
+          }
+
+          if (transaction.amount) {
+            this.$refs.amount.model = this.currency_subToUnit(transaction.amount, this.session_network)
+          }
+
+          if (transaction.fee) {
+            this.$refs.fee.$refs.input.model = this.currency_subToUnit(transaction.fee, this.session_network)
+          }
+
+          if (transaction.vendorField) {
+            this.$refs.vendorField.model = transaction.vendorField
+          }
+
+          this.$success(this.$t('TRANSACTION.SUCCESS.LOAD_FROM_FILE'))
+        } catch (error) {
+          if (error.name === 'SyntaxError') {
+            error.message = this.$t('VALIDATION.INVALID_FORMAT')
+          }
+
+          this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+        }
+      } catch (error) {
+        this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
+      }
     }
   },
 
