@@ -46,11 +46,8 @@ export default {
     },
 
     publicByProfileId: (state, _, __, rootGetters) => (profileId, getContacts = false) => {
-      const profile = rootGetters['profile/byId'](profileId)
-      const network = rootGetters['session/network']
-
       const profileWallets = state.wallets[profileId] || []
-      const ledgerWallets = profile.networkId === network.id ? rootGetters['ledger/wallets'] : []
+      const ledgerWallets = rootGetters['ledger/walletsByNetworkId'](rootGetters['session/network'].id)
 
       const wallets = uniqBy([
         ...ledgerWallets,

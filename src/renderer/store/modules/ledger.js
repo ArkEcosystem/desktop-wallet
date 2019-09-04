@@ -46,6 +46,9 @@ export default {
       }
 
       return []
+    },
+    walletsByNetworkId: (state, getters) => networkId => {
+      return getters['wallets'].filter(wallet => wallet.networkId === networkId)
     }
   },
 
