@@ -47,8 +47,13 @@ export default {
 
       return []
     },
-    walletsByNetworkId: (state, getters) => networkId => {
-      return getters['wallets'].filter(wallet => wallet.networkId === networkId)
+    byProfileId: (state, getters, __, rootGetters) => profileId => {
+      const profile = rootGetters['profile/byId']
+      const network = rootGetters['session/network']
+
+      return getters['wallets'].filter(wallet => {
+        return wallet.profileId === profileId && profile.networkId === network.id
+      })
     }
   },
 
