@@ -217,13 +217,16 @@ export default {
           component: 'WalletTransactions',
           componentName: 'WalletTransactions',
           text: this.$t('PAGES.WALLET.TRANSACTIONS')
-        },
-        {
+        }
+      ]
+
+      if (this.currentWallet && this.currentWallet.profileId.length) {
+        tabs.push({
           component: 'WalletDelegates',
           componentName: 'WalletDelegates',
           text: this.$t('PAGES.WALLET.DELEGATES')
-        }
-      ]
+        })
+      }
 
       if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
         tabs.push({
