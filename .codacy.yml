@@ -2,7 +2,9 @@
 exclude_paths:
   - '__mocks__/**/*'
   - '__tests__/**/*'
-  - 'src/renderer/styles'
-  - 'config'
+  - 'src/renderer/styles/**/*'
+  - 'build/**/*'
+  - 'config/**/*'
+  - 'static/**/*'
   - '*.sh'
   - '*.md'
