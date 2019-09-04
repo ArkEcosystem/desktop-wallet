@@ -78,7 +78,7 @@ export default {
     },
     allowClose: {
       type: Boolean,
-      requred: false,
+      required: false,
       default: true
     },
     portalTarget: {
