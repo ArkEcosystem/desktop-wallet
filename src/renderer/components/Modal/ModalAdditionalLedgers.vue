@@ -1,6 +1,5 @@
 <template>
   <ModalWindow
-    :allow-close="true"
     container-classes="w-2/5"
     @close="emitClose"
   >

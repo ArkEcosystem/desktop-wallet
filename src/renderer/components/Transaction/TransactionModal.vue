@@ -215,8 +215,8 @@ export default {
       this.$emit('sent', success, transaction)
     },
 
-    emitCancel () {
-      this.$emit('cancel')
+    emitCancel (reason) {
+      this.$emit('cancel', reason)
     },
 
     emitClose () {

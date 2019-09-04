@@ -337,7 +337,7 @@ export default {
     },
 
     emitCancel () {
-      this.$emit('cancel')
+      this.$emit('cancel', 'navigateToTransactions')
     },
 
     emitNext (transaction) {
