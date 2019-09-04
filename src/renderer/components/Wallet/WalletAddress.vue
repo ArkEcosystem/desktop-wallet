@@ -170,4 +170,8 @@ export default {
 .WalletAddress > span {
   @apply truncate
 }
+
+.WalletAddress a {
+  @apply cursor-pointer
+}
 </style>
