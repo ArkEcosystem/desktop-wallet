@@ -96,7 +96,10 @@
       </p>
 
       <p class="WalletHeading__balance font-semibold tracking-extrawide text-lg">
-        <span v-tooltip="pendingBalanceTooltip">
+        <span
+          v-tooltip="pendingBalanceTooltip"
+          :class="{ 'cursor-pointer': !pendingTransactionsRawAmount.isEqualTo(0) }"
+        >
           {{ balance }}
         </span>
         <span
