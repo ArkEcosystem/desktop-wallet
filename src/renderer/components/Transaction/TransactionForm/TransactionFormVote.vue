@@ -289,6 +289,7 @@ export default {
         `${prefix}${publicKey}`
       ]
       const transactionData = {
+        address: this.currentWallet.address,
         passphrase: this.form.passphrase,
         votes,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),

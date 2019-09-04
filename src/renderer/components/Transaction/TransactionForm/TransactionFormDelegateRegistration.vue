@@ -164,6 +164,7 @@ export default {
       }
 
       const transactionData = {
+        address: this.currentWallet.address,
         username: this.form.username,
         passphrase: this.form.passphrase,
         fee: parseInt(this.currency_unitToSub(this.form.fee)),

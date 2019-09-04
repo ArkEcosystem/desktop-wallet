@@ -352,6 +352,7 @@ export default {
 
     async submit () {
       const transactionData = {
+        address: this.currentWallet.address,
         amount: this.currency_unitToSub(this.form.amount),
         recipientId: this.form.recipientId,
         vendorField: this.form.vendorField,
