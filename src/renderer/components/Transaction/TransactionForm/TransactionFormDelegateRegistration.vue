@@ -101,9 +101,8 @@ import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
-import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
-import onSubmit from './mixin-on-submit'
+import mixin from './mixin'
 
 export default {
   name: 'TransactionFormDelegateRegistration',
@@ -120,7 +119,7 @@ export default {
     PassphraseInput
   },
 
-  mixins: [onSubmit],
+  mixins: [mixin],
 
   data: () => ({
     form: {
@@ -128,84 +127,38 @@ export default {
       username: '',
       passphrase: '',
       walletPassword: ''
-    },
-    error: null,
-    showEncryptLoader: false,
-    showLedgerLoader: false
+    }
   }),
 
   computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
-    },
-
-    senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
-    },
-
     usernameError () {
       if (this.$v.form.username.$dirty && !this.$v.form.username.isValid) {
         return this.$v.form.username.isValid
       }
 
       return null
-    },
-
-    walletNetwork () {
-      return this.session_network
     }
   },
 
-  mounted () {
-    this.form.fee = this.$refs.fee.fee
-  },
-
   methods: {
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-    },
-
-    async submit () {
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.$set(this.form, 'fee', this.$refs.fee.fee)
-      }
-
+    getTransactionData () {
       const transactionData = {
         username: this.form.username,
         passphrase: this.form.passphrase,
-        fee: parseInt(this.currency_unitToSub(this.form.fee)),
+        fee: this.getFee(),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif
       }
+
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
       }
 
-      let success = true
-      let transaction
-      if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildDelegateRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
-      } else {
-        success = false
-        this.showLedgerLoader = true
-        try {
-          const transactionObject = await this.$client.buildDelegateRegistration(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
-          success = true
-        } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
-        }
-        this.showLedgerLoader = false
-      }
-
-      if (success) {
-        this.emitNext(transaction)
-      }
+      return transactionData
     },
 
-    emitNext (transaction) {
-      this.$emit('next', { transaction })
+    async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
+      return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject)
     }
   },
 
