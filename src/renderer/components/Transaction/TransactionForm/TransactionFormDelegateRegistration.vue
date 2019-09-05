@@ -95,7 +95,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { InputFee, InputPassword, InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -164,80 +163,29 @@ export default {
 
   validations: {
     form: {
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
+      fee: mixin.validators.secondPassphrase,
+      passphrase: mixin.validators.secondPassphrase,
+      walletPassword: mixin.validators.secondPassphrase,
+      secondPassphrase: mixin.validators.secondPassphrase,
 
-          return false
-        }
-      },
       username: {
         isValid (value) {
           const validation = WalletService.validateUsername(value)
 
           if (validation.passes) {
-            this.error = null
-          } else {
-            switch (validation.errors[0].type) {
-              case 'empty':
-                this.error = this.$t('WALLET_DELEGATES.USERNAME_EMPTY_ERROR')
-                break
-              case 'maxLength':
-                this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
-                break
-              case 'exists':
-                this.error = this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
-                break
-              default:
-                this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')
-            }
-          }
-
-          return validation.passes
-        }
-      },
-      passphrase: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
             return true
           }
 
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-          return false
-        }
-      },
-      walletPassword: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
-            return true
+          switch (validation.errors[0].type) {
+            case 'empty':
+              return this.$t('WALLET_DELEGATES.USERNAME_EMPTY_ERROR')
+            case 'maxLength':
+              return this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
+            case 'exists':
+              return this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
           }
 
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      secondPassphrase: {
-        isValid (value) {
-          if (!this.currentWallet.secondPublicKey) {
-            return true
-          }
-
-          if (this.$refs.secondPassphrase) {
-            return !this.$refs.secondPassphrase.$v.$invalid
-          }
-          return false
+          return this.$t('WALLET_DELEGATES.USERNAME_ERROR')
         }
       }
     }

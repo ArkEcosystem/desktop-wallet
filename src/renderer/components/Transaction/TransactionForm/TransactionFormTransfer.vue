@@ -474,6 +474,12 @@ export default {
   validations: {
     wallet: {},
     form: {
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      secondPassphrase: mixin.validators.secondPassphrase,
+      vendorField: {},
+      walletPassword: mixin.validators.walletPassword,
+
       recipientId: {
         required,
         isValid (value) {
@@ -489,59 +495,6 @@ export default {
         isValid (value) {
           if (this.$refs.amount) {
             return !this.$refs.amount.$v.$invalid
-          }
-          return false
-        }
-      },
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      passphrase: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      vendorField: {},
-      walletPassword: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      secondPassphrase: {
-        isValid (value) {
-          if (!this.currentWallet.secondPublicKey) {
-            return true
-          }
-
-          if (this.$refs.secondPassphrase) {
-            return !this.$refs.secondPassphrase.$v.$invalid
           }
           return false
         }

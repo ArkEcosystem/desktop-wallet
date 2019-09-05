@@ -150,7 +150,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
@@ -282,46 +281,9 @@ export default {
 
   validations: {
     form: {
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      passphrase: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      walletPassword: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      }
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword
     }
   }
 }

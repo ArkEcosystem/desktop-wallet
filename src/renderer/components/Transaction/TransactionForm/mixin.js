@@ -1,7 +1,66 @@
+import { required } from 'vuelidate/lib/validators'
 import Bip38 from '@/services/bip38'
 import TransactionService from '@/services/transaction'
 
 export default {
+  validators: {
+    fee: {
+      required,
+      isValid () {
+        if (this.$refs.fee) {
+          return !this.$refs.fee.$v.$invalid
+        }
+
+        return false
+      }
+    },
+
+    passphrase: {
+      isValid (value) {
+        if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
+          return true
+        }
+
+        if (this.$refs.passphrase) {
+          return !this.$refs.passphrase.$v.$invalid
+        }
+
+        return false
+      }
+    },
+
+    walletPassword: {
+      isValid (value) {
+        if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
+          return true
+        }
+
+        if (!this.form.walletPassword || !this.form.walletPassword.length) {
+          return false
+        }
+
+        if (this.$refs.password) {
+          return !this.$refs.password.$v.$invalid
+        }
+
+        return false
+      }
+    },
+
+    secondPassphrase: {
+      isValid (value) {
+        if (!this.currentWallet.secondPublicKey) {
+          return true
+        }
+
+        if (this.$refs.secondPassphrase) {
+          return !this.$refs.secondPassphrase.$v.$invalid
+        }
+        return false
+      }
+    }
+  },
+
   data () {
     return {
       showEncryptLoader: false,
