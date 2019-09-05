@@ -18,9 +18,9 @@
 
       <InputText
         v-model="$v.form.username.$model"
-        :helper-text="error"
+        :helper-text="usernameError"
         :label="$t('WALLET_DELEGATES.USERNAME')"
-        :is-invalid="$v.form.username.$dirty && $v.form.username.$invalid"
+        :is-invalid="!!usernameError"
         class="mb-5"
         name="username"
       />
@@ -141,6 +141,14 @@ export default {
 
     senderLabel () {
       return this.wallet_formatAddress(this.currentWallet.address)
+    },
+
+    usernameError () {
+      if (this.$v.form.username.$dirty && !this.$v.form.username.isValid) {
+        return this.$v.form.username.isValid
+      }
+
+      return null
     },
 
     walletNetwork () {
