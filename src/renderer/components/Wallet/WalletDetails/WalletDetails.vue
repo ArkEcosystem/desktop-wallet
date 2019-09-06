@@ -220,7 +220,7 @@ export default {
         }
       ]
 
-      if (this.currentWallet && this.currentWallet.profileId.length) {
+      if (this.currentWallet && this.currentWallet.profileId.length && !this.currentWallet.isContact) {
         tabs.push({
           component: 'WalletDelegates',
           componentName: 'WalletDelegates',
