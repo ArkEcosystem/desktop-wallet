@@ -444,8 +444,6 @@ export default class ClientService {
     const transactions = body.data
 
     if (transactions.length) {
-      store.dispatch('transaction/processVotes', transactions)
-
       const lastVote = transactions[0].asset.votes[0]
 
       // If the last vote was a unvote leave the pubkey null
@@ -457,6 +455,16 @@ export default class ClientService {
     }
 
     return delegatePublicKey
+  }
+
+  /**
+   * Fetch votes for wallet.
+   *
+   * @param {String} address
+   * @returns {Object[]}
+   */
+  async fetchWalletVotes (address) {
+    return (await this.client.api('wallets').votes(address)).body.data
   }
 
   /**
