@@ -1,26 +1,45 @@
 <template>
-  <Portal :to="portalTarget">
+  <Portal
+    :to="portalTarget"
+  >
     <div
-      class="modal-backdrop"
-      @click="emitClose"
+      slot-scope="{ setBlurFilter }"
+      class="ModalWindow"
+      :class="{
+        'ModalWindow--maximized': isMaximized,
+        'ModalWindow--minimized': !isMaximized
+      }"
+      @click="emitClose()"
     >
       <Transition name="ModalWindow">
-        <div class="flex items-center justify-center absolute pin">
+        <div class="ModalWindow__wrapper flex items-center justify-center absolute">
           <div
             :class="containerClasses"
-            class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg overflow-hidden relative transition bg-theme-modal text-theme-text-content"
+            class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg relative transition bg-theme-modal text-theme-text-content"
             @click.stop="void 0"
           >
-            <div class="absolute pin-t pin-r mt-6 mr-6">
+            <div class="ModalWindow__container__actions">
+              <span
+                v-if="canResize"
+                class="mr-4"
+              >
+                <ButtonClose
+                  :icon-name="isMaximized ? 'minus' : 'resize'"
+                  icon-class="text-grey"
+                  class="ModalWindow__resize-button p-6"
+                  @click="toggleMaximized(setBlurFilter)"
+                />
+              </span>
+
               <ButtonClose
                 :disabled="!allowClose"
                 icon-class="text-grey"
-                class="p-6"
-                @click="emitClose"
+                class="ModalWindow__close-button p-6"
+                @click="emitClose(true)"
               />
             </div>
 
-            <section class="px-16 py-16">
+            <section class="ModalWindow__container__content">
               <header
                 v-if="$slots.header || title"
               >
@@ -52,6 +71,7 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
+import { isFunction } from 'lodash'
 
 export default {
   name: 'ModalWindow',
@@ -61,6 +81,11 @@ export default {
   },
 
   props: {
+    canResize: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     containerClasses: {
       type: String,
       required: false,
@@ -88,6 +113,10 @@ export default {
     }
   },
 
+  data: () => ({
+    isMaximized: true
+  }),
+
   mounted () {
     document.addEventListener('keyup', this.onEscKey, { once: true })
   },
@@ -97,8 +126,17 @@ export default {
   },
 
   methods: {
-    emitClose () {
-      if (this.allowClose) {
+    toggleMaximized (callback) {
+      this.isMaximized = !this.isMaximized
+      isFunction(callback) && callback(this.isMaximized)
+    },
+
+    emitClose (force = false) {
+      if (!this.allowClose) {
+        return
+      }
+
+      if (force || this.isMaximized) {
         this.$emit('close')
       }
     },
@@ -112,15 +150,39 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .ModalWindow-enter,
 .ModalWindow-leave-active {
   opacity: 0;
   transform: scale(1.1);
 }
+
+.ModalWindow--maximized {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  transition: opacity .3s ease;
+}
+
+.ModalWindow--maximized .ModalWindow__wrapper {@apply pin}
+.ModalWindow--minimized .ModalWindow__wrapper {@apply pin-r pin-b mr-5 mb-5}
+
+.ModalWindow__container__actions {@apply block text-right my-4 mr-4}
+
+.ModalWindow--maximized .ModalWindow__container__content {@apply overflow-hidden px-16 pt-10 pb-16}
+.ModalWindow--minimized .ModalWindow__container__content {@apply overflow-y-auto px-10 pt-2 pb-5}
+.ModalWindow--minimized .ModalWindow__container {
+  height: 200px;
+  @apply overflow-hidden
+}
 </style>
 
-<style>
+<style lang="postcss">
 .ModalWindow__container__footer--warning {
   @apply .px-10 .py-8 .bg-yellow-lighter .text-grey-darkest
 }
