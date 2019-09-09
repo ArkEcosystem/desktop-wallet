@@ -231,6 +231,13 @@ describe('Services > Client', () => {
       const response = await client.fetchWalletVote()
       expect(response).toBe(publicKey)
     })
+
+    it('should process wallet votes', async () => {
+      await client.fetchWalletVote()
+      const store = require('@/store')
+
+      expect(store.dispatch).toHaveBeenNthCalledWith(1, 'transaction/processVotes', transactions)
+    })
   })
 
   describe('fetchDelegates', () => {
