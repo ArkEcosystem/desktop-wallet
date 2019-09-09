@@ -220,28 +220,28 @@ export default {
         }
       ]
 
-      if (this.currentWallet && this.currentWallet.profileId.length && !this.currentWallet.isContact) {
+      if (this.currentWallet && this.isOwned) {
         tabs.push({
           component: 'WalletDelegates',
           componentName: 'WalletDelegates',
           text: this.$t('PAGES.WALLET.DELEGATES')
         })
-      }
 
-      if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
-        tabs.push({
-          component: 'WalletSignVerify',
-          componentName: 'WalletSignVerify',
-          text: this.$t('PAGES.WALLET.SIGN_VERIFY')
-        })
-      }
+        if (!this.currentWallet.isLedger) {
+          tabs.push({
+            component: 'WalletSignVerify',
+            componentName: 'WalletSignVerify',
+            text: this.$t('PAGES.WALLET.SIGN_VERIFY')
+          })
+        }
 
-      if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
-        tabs.push({
-          component: 'WalletExchange',
-          componentName: 'WalletExchange',
-          text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
-        })
+        if (this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+          tabs.push({
+            component: 'WalletExchange',
+            componentName: 'WalletExchange',
+            text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
+          })
+        }
       }
 
       // TODO enable when there is something to show
