@@ -282,7 +282,7 @@ class Action {
         profileId: wallet.profileId
       })
 
-      this.synchronizer.$store.dispatch('transaction/processVotes', transactions)
+      this.$dispatch('transaction/processVotes', transactions)
 
       const latestTransaction = maxBy(transactions, 'timestamp')
       const latestAt = latestTransaction.timestamp
