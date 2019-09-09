@@ -235,7 +235,7 @@ export default {
 
       if (clearFirst) {
         commit('SET_WALLETS', {})
-        eventBus.emit('ledger:wallets-updated', [])
+        eventBus.emit('ledger:wallets-updated', {})
       } else if (currentWallets.length) {
         quantity = currentWallets.length
       }
