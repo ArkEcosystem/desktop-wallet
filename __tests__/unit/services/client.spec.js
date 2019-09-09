@@ -1,7 +1,6 @@
 import { cloneDeep } from 'lodash'
 import nock from 'nock'
 import errorCapturer from '../__utils__/error-capturer'
-import { V1 } from '@config'
 import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
 import BigNumber from '@/plugins/bignumber'
@@ -47,6 +46,13 @@ beforeEach(() => {
 
 describe('Services > Client', () => {
   let client
+
+  const fees = [
+    0.1 * 1e8,
+    5 * 1e8,
+    25 * 1e8,
+    1 * 1e8
+  ]
 
   beforeEach(() => {
     client = new ClientService()
@@ -483,65 +489,65 @@ describe('Services > Client', () => {
   })
 
   describe('buildDelegateRegistration', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[2] + 0.1
+        const fee = new BigNumber(fees[2] + 1)
         expect(await errorCapturer(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (25)', () => {
+    describe('when the fee is smaller or equal to the static fee (25)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 25 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 12.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: new BigNumber(fees[2]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: new BigNumber(fees[2] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
 
   describe('buildSecondSignatureRegistration', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[1] + 0.01
+        const fee = new BigNumber(fees[1] + 1)
         expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (5)', () => {
+    describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 5 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 3.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
 
   describe('buildTransfer', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[0] + 0.00001
+        const fee = new BigNumber(fees[0] + 1)
         expect(await errorCapturer(client.buildTransfer({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
+    describe('when the fee is smaller or equal to the static fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: new BigNumber(fees[0]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: new BigNumber(fees[0] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
 
   describe('buildVote', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[3] + 0.0000001
+        const fee = new BigNumber(fees[3] + 1)
         expect(await errorCapturer(client.buildVote({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
+    describe('when the fee is smaller or equal to the static fee fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildVote({ fee: 1 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildVote({ fee: 0.9 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: new BigNumber(fees[3]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: new BigNumber(fees[3] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
