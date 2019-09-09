@@ -383,13 +383,7 @@ export default class ClientService {
    */
   async fetchWallet (address) {
     const { body } = await this.client.api('wallets').get(address)
-    const walletData = body.data
-
-    if (walletData) {
-      walletData.balance = new BigNumber(walletData.balance)
-    }
-
-    return walletData
+    return body.data
   }
 
   /**

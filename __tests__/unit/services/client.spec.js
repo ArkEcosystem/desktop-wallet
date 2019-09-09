@@ -136,7 +136,7 @@ describe('Services > Client', () => {
       it('should return almost all properties from the wallet endpoint', async () => {
         const wallet = await client.fetchWallet('address')
         expect(wallet).toHaveProperty('address', data.address)
-        expect(wallet).toHaveProperty('balance', parseInt(data.balance))
+        expect(wallet).toHaveProperty('balance', data.balance)
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
         expect(wallet).toHaveProperty('isDelegate', true)
       })
@@ -204,7 +204,7 @@ describe('Services > Client', () => {
         expect(fetchedWallets).toEqual([
           generateWalletResponse('address1').body.data,
           generateWalletResponse('address2').body.data
-        ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
+        ])
       })
     })
   })
