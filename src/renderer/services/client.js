@@ -5,7 +5,7 @@ import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
 import semver from 'semver'
-import { V1 } from '@config'
+import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import BigNumber from '@/plugins/bignumber'
@@ -490,8 +490,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildVote ({ votes, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.VOTE)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
@@ -524,8 +524,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.DELEGATE_REGISTRATION)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
@@ -560,8 +560,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.TRANSFER)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
@@ -596,8 +596,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.SECOND_SIGNATURE)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
