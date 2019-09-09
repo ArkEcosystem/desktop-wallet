@@ -377,7 +377,7 @@ export default class ClientService {
   }
 
   /**
-   * Fetches wallet data from an addresses.
+   * Fetches wallet data from an address.
    * @param {String} address
    * @return {Object}
    */
