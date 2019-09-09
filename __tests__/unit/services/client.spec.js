@@ -210,7 +210,7 @@ describe('Services > Client', () => {
   })
 
   describe('fetchWalletVote', () => {
-    const publicKey = 'public key'
+    const voteDelegate = 'voted delegate'
 
     beforeEach(() => {
       const resource = resource => {
@@ -226,7 +226,7 @@ describe('Services > Client', () => {
 
     it('should return delegate public key if wallet is voting', async () => {
       const response = await client.fetchWalletVote('address1')
-      expect(response).toBe(publicKey)
+      expect(response).toBe(voteDelegate)
     })
 
     it('should return null if wallet is not voting', async () => {
