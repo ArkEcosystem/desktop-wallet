@@ -437,7 +437,11 @@ export default class ClientService {
       }
     }
 
-    return walletData && walletData.vote || null
+    if (walletData) {
+      return walletData.vote || null
+    }
+
+    return null
   }
 
   /**
