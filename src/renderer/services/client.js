@@ -5,7 +5,7 @@ import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
 import semver from 'semver'
-import { V1 } from '@config'
+import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import BigNumber from '@/plugins/bignumber'
@@ -377,26 +377,13 @@ export default class ClientService {
   }
 
   /**
-   * Request the data to the wallet endpoint and unify the returned value
-   *
-   * V1:
-   * {"success":true,"account":{"address":"ANQYF8y8PBmg67hSGCA7e67d84sgm8zH3k","unconfirmedBalance":"243884095406","balance":"243884095406","publicKey":null,"unconfirmedSignature":0,"secondSignature":0,"secondPublicKey":null,"multisignatures":[],"u_multisignatures":[]}}
-   *
-   * V2:
-   * {"address":"DPFPtDfexMrSiZEB1o3TiJTUYBnnHrzFrD","publicKey":null,"secondPublicKey":null,"balance":1,"isDelegate":false}
-   *
+   * Fetches wallet data from an address.
    * @param {String} address
    * @return {Object}
    */
   async fetchWallet (address) {
     const { body } = await this.client.api('wallets').get(address)
-    const walletData = body.data
-
-    if (walletData) {
-      walletData.balance = parseInt(walletData.balance)
-    }
-
-    return walletData
+    return body.data
   }
 
   /**
@@ -433,28 +420,28 @@ export default class ClientService {
 
   /**
    * Request the vote of a wallet.
-   * Returns the delegate's public key if this wallet has voted.
+   * Returns the delegate's public key if this wallet has voted, null otherwise.
    * @param {String} address
    * @returns {String|null}
    */
   async fetchWalletVote (address) {
-    let delegatePublicKey = null
+    let walletData
 
-    const { body } = await this.client.api('wallets').votes(address)
-    const transactions = body.data
-
-    if (transactions.length) {
-      const lastVote = transactions[0].asset.votes[0]
-
-      // If the last vote was a unvote leave the pubkey null
-      if (lastVote.charAt(0) === '-') {
-        return
+    try {
+      walletData = await this.fetchWallet(address)
+    } catch (error) {
+      logger.error(error)
+      const message = error.response ? error.response.body.message : error.message
+      if (message !== 'Wallet not found') {
+        throw error
       }
-
-      delegatePublicKey = transactions[0].asset.votes[0].substring(1)
     }
 
-    return delegatePublicKey
+    if (walletData) {
+      return walletData.vote || null
+    }
+
+    return null
   }
 
   /**
@@ -500,8 +487,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildVote ({ votes, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.VOTE)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
 
@@ -534,8 +521,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.DELEGATE_REGISTRATION)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
 
@@ -570,8 +557,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.TRANSFER)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
 
@@ -606,8 +593,8 @@ export default class ClientService {
    * @returns {Object}
    */
   async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
-    const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.SECOND_SIGNATURE)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
 
