@@ -441,17 +441,19 @@ export default class ClientService {
     let delegatePublicKey = null
 
     const { body } = await this.client.api('wallets').votes(address)
-    const response = body.data
+    const transactions = body.data
 
-    if (response.length) {
-      const lastVote = response[0].asset.votes[0]
+    if (transactions.length) {
+      store.dispatch('transaction/processVotes', transactions)
+
+      const lastVote = transactions[0].asset.votes[0]
 
       // If the last vote was a unvote leave the pubkey null
       if (lastVote.charAt(0) === '-') {
         return
       }
 
-      delegatePublicKey = response[0].asset.votes[0].substring(1)
+      delegatePublicKey = transactions[0].asset.votes[0].substring(1)
     }
 
     return delegatePublicKey
