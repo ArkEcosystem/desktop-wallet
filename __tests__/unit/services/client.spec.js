@@ -231,12 +231,34 @@ describe('Services > Client', () => {
       const response = await client.fetchWalletVote()
       expect(response).toBe(publicKey)
     })
+  })
 
-    it('should process wallet votes', async () => {
-      await client.fetchWalletVote()
-      const store = require('@/store')
+  describe('fetchWalletVotes', () => {
+    const transactions = [{
+      asset: {
+        votes: ['+test']
+      }
+    }, {
+      asset: {
+        votes: ['+test2']
+      }
+    }]
 
-      expect(store.dispatch).toHaveBeenNthCalledWith(1, 'transaction/processVotes', transactions)
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'wallets') {
+          return {
+            votes: () => ({ body: { data: transactions } })
+          }
+        }
+      }
+
+      client.client.api = resource
+    })
+
+    it('should return vote transactions', async () => {
+      const response = await client.fetchWalletVotes()
+      expect(response).toBe(transactions)
     })
   })
 
