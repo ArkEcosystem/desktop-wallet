@@ -47,6 +47,34 @@ beforeEach(() => {
 describe('Services > Client', () => {
   let client
 
+  const wallets = [
+    {
+      address: 'address1',
+      balance: '1202',
+      publicKey: 'public key',
+      vote: 'voted delegate'
+    },
+    {
+      address: 'address2',
+      balance: '300',
+      publicKey: 'public key'
+    }
+  ]
+
+  const generateWalletResponse = (address) => {
+    return {
+      body: {
+        data: {
+          ...wallets.find(wallet => wallet.address === address),
+          isDelegate: true,
+          username: 'test'
+        }
+      }
+    }
+  }
+
+  const getWalletEndpoint = jest.fn(generateWalletResponse)
+
   const fees = [
     0.1 * 1e8,
     5 * 1e8,
@@ -114,7 +142,7 @@ describe('Services > Client', () => {
       it('should return almost all properties from the wallet endpoint', async () => {
         const wallet = await client.fetchWallet('address')
         expect(wallet).toHaveProperty('address', data.address)
-        expect(wallet).toHaveProperty('balance', parseInt(data.balance))
+        expect(wallet).toHaveProperty('balance', data.balance)
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
         expect(wallet).toHaveProperty('isDelegate', true)
       })
@@ -122,18 +150,6 @@ describe('Services > Client', () => {
   })
 
   describe('fetchWallets', () => {
-    const wallets = [
-      {
-        address: 'address1',
-        balance: '1202',
-        publicKey: 'public key'
-      },
-      {
-        address: 'address2',
-        balance: '300',
-        publicKey: 'public key'
-      }
-    ]
     const walletAddresses = ['address1', 'address2']
     const walletsResponse = {
       body: {
@@ -151,19 +167,6 @@ describe('Services > Client', () => {
         ]
       }
     }
-    const generateWalletResponse = (address) => {
-      return {
-        body: {
-          data: {
-            ...wallets.find(wallet => wallet.address === address),
-            isDelegate: true,
-            username: 'test'
-          }
-        }
-      }
-    }
-
-    const getWalletEndpoint = jest.fn(generateWalletResponse)
     const searchWalletEndpoint = jest.fn(() => walletsResponse)
     beforeEach(() => {
       const resource = resource => {
@@ -207,25 +210,19 @@ describe('Services > Client', () => {
         expect(fetchedWallets).toEqual([
           generateWalletResponse('address1').body.data,
           generateWalletResponse('address2').body.data
-        ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
+        ])
       })
     })
   })
 
   describe('fetchWalletVote', () => {
-    const publicKey = 'public key'
-
-    const transactions = [{
-      asset: {
-        votes: ['+' + publicKey]
-      }
-    }]
+    const voteDelegate = 'voted delegate'
 
     beforeEach(() => {
       const resource = resource => {
         if (resource === 'wallets') {
           return {
-            votes: () => ({ body: { data: transactions } })
+            get: generateWalletResponse
           }
         }
       }
@@ -233,9 +230,14 @@ describe('Services > Client', () => {
       client.client.api = resource
     })
 
-    it('should return delegate public key', async () => {
-      const response = await client.fetchWalletVote()
-      expect(response).toBe(publicKey)
+    it('should return delegate public key if wallet is voting', async () => {
+      const response = await client.fetchWalletVote('address1')
+      expect(response).toBe(voteDelegate)
+    })
+
+    it('should return null if wallet is not voting', async () => {
+      const response = await client.fetchWalletVote('address2')
+      expect(response).toBeNull()
     })
   })
 

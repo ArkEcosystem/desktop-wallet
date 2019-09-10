@@ -377,26 +377,13 @@ export default class ClientService {
   }
 
   /**
-   * Request the data to the wallet endpoint and unify the returned value
-   *
-   * V1:
-   * {"success":true,"account":{"address":"ANQYF8y8PBmg67hSGCA7e67d84sgm8zH3k","unconfirmedBalance":"243884095406","balance":"243884095406","publicKey":null,"unconfirmedSignature":0,"secondSignature":0,"secondPublicKey":null,"multisignatures":[],"u_multisignatures":[]}}
-   *
-   * V2:
-   * {"address":"DPFPtDfexMrSiZEB1o3TiJTUYBnnHrzFrD","publicKey":null,"secondPublicKey":null,"balance":1,"isDelegate":false}
-   *
+   * Fetches wallet data from an address.
    * @param {String} address
    * @return {Object}
    */
   async fetchWallet (address) {
     const { body } = await this.client.api('wallets').get(address)
-    const walletData = body.data
-
-    if (walletData) {
-      walletData.balance = parseInt(walletData.balance)
-    }
-
-    return walletData
+    return body.data
   }
 
   /**
@@ -433,28 +420,28 @@ export default class ClientService {
 
   /**
    * Request the vote of a wallet.
-   * Returns the delegate's public key if this wallet has voted.
+   * Returns the delegate's public key if this wallet has voted, null otherwise.
    * @param {String} address
    * @returns {String|null}
    */
   async fetchWalletVote (address) {
-    let delegatePublicKey = null
+    let walletData
 
-    const { body } = await this.client.api('wallets').votes(address)
-    const response = body.data
-
-    if (response.length) {
-      const lastVote = response[0].asset.votes[0]
-
-      // If the last vote was a unvote leave the pubkey null
-      if (lastVote.charAt(0) === '-') {
-        return
+    try {
+      walletData = await this.fetchWallet(address)
+    } catch (error) {
+      logger.error(error)
+      const message = error.response ? error.response.body.message : error.message
+      if (message !== 'Wallet not found') {
+        throw error
       }
-
-      delegatePublicKey = response[0].asset.votes[0].substring(1)
     }
 
-    return delegatePublicKey
+    if (walletData) {
+      return walletData.vote || null
+    }
+
+    return null
   }
 
   /**
