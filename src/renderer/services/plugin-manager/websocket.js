@@ -50,13 +50,11 @@ export default class PluginWebsocket {
             result.origin = event.origin
           }
 
-          if (event.timeStamp) {
-            result.timestamp = event.timeStamp
-          }
-
-          if (event.wasClean) {
+          if (event.wasClean !== undefined) {
             result.clean = event.wasClean
           }
+
+          result.timestamp = event.timeStamp
 
           eventCallback(result)
         }
@@ -65,12 +63,28 @@ export default class PluginWebsocket {
         this.events[action] = eventTrigger
       },
 
+      close () {
+        websocket.close()
+      },
+
       send (data) {
         websocket.send(data)
       },
 
-      getReadyState () {
-        return websocket.readyState
+      isConnecting () {
+        return websocket.readyState === 0
+      },
+
+      isOpen () {
+        return websocket.readyState === 1
+      },
+
+      isClosing () {
+        return websocket.readyState === 2
+      },
+
+      isClosed () {
+        return websocket.readyState === 3
       }
     }
 
