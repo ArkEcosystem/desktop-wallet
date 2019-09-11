@@ -72,19 +72,19 @@ export default class PluginWebsocket {
       },
 
       isConnecting () {
-        return websocket.readyState === 0
+        return websocket.readyState === WebSocket.CONNECTING
       },
 
       isOpen () {
-        return websocket.readyState === 1
+        return websocket.readyState === WebSocket.OPEN
       },
 
       isClosing () {
-        return websocket.readyState === 2
+        return websocket.readyState === WebSocket.CLOSING
       },
 
       isClosed () {
-        return websocket.readyState === 3
+        return websocket.readyState === WebSocket.CLOSED
       }
     }
 
