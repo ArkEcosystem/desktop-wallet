@@ -450,6 +450,16 @@ export default class ClientService {
   }
 
   /**
+   * Fetch votes for wallet.
+   *
+   * @param {String} address
+   * @returns {Object[]}
+   */
+  async fetchWalletVotes (address) {
+    return (await this.client.api('wallets').votes(address)).body.data
+  }
+
+  /**
    * Parse peer from current client host.
    * @return {Object}
    */
