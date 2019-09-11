@@ -260,7 +260,7 @@ export default {
     },
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
-      return this.$client.buildSecondSignatureRegistration(transactionData, isAdvancedFee, returnObject)
+      return this.$client.buildVote(transactionData, isAdvancedFee, returnObject)
     },
 
     postSubmit () {
