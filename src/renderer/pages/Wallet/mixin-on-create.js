@@ -1,4 +1,4 @@
-import Bip38 from '@/services/bip38'
+import Bip38 from '@/services/worker/bip38'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -33,8 +33,6 @@ export default {
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_ENCRYPT'))
           failed = true
-        } finally {
-          bip38.quit()
         }
 
         this.showEncryptLoader = false

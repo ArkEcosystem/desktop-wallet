@@ -1,4 +1,4 @@
-import Bip38 from '@/services/bip38'
+import Bip38 from '@/services/worker/bip38'
 
 const bip38key = '6PYRXLq9jrSmgsa9zxoTWWiCQsQt3urzCM4HPBwj1eR2WyH96qiRVggod7'
 const passphrase = 'sample passphrase'

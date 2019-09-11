@@ -1,4 +1,4 @@
-import Bip38 from '@/services/bip38'
+import Bip38 from '@/services/worker/bip38'
 
 export default {
   methods: {
@@ -22,8 +22,6 @@ export default {
           this.form.wif = encodedWif
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        } finally {
-          bip38.quit()
         }
 
         this.showEncryptLoader = false

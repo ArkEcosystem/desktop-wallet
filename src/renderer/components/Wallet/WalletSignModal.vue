@@ -61,7 +61,7 @@ import { required, minLength } from 'vuelidate/lib/validators'
 import { InputPassword, InputText } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
-import Bip38 from '@/services/bip38'
+import Bip38 from '@/services/worker/bip38'
 import WalletService from '@/services/wallet'
 
 export default {
@@ -102,7 +102,9 @@ export default {
 
   methods: {
     async onSignMessage () {
-      if (this.form.walletPassword && this.form.walletPassword.length) {
+      if (!this.form.walletPassword || !this.form.walletPassword.length) {
+        this.signMessage()
+      } else {
         this.showEncryptLoader = true
 
         const dataToDecrypt = {
@@ -116,16 +118,13 @@ export default {
           const { encodedWif } = await bip38.decrypt(dataToDecrypt)
           this.form.passphrase = null
           this.form.wif = encodedWif
+          this.signMessage()
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
-        } finally {
-          bip38.quit()
         }
 
         this.showEncryptLoader = false
       }
-
-      this.signMessage()
     },
 
     signMessage () {
