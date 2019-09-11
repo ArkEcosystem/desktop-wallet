@@ -429,8 +429,7 @@ export default {
         } else {
           const client = new ClientService(false)
           client.host = getBaseUrl(currentPeer)
-          client.client.withOptions({ timeout: 3000 })
-          peerStatus = await client.fetchPeerStatus()
+          peerStatus = await client.fetchPeerStatus({ timeout: 3000 })
         }
         const latency = (performance.now() - delayStart).toFixed(0)
 
@@ -459,8 +458,7 @@ export default {
      */
     async clientServiceFromPeer (_, peer) {
       const client = new ClientService(false)
-      client.host = getBaseUrl(peer)
-      client.client.withOptions({ timeout: 3000 })
+      client.host = getBaseUrl(peer, { timeout: 3000 })
 
       return client
     },

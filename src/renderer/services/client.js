@@ -1,4 +1,3 @@
-import { Connection } from '@arkecosystem/client'
 import { Identities, Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
 import got from 'got'
@@ -9,6 +8,7 @@ import { TRANSACTION_TYPES } from '@config'
 import store from '@/store'
 import eventBus from '@/plugins/event-bus'
 import BigNumber from '@/plugins/bignumber'
+import Client from '@/services/worker/client'
 
 export default class ClientService {
   /*
@@ -32,10 +32,9 @@ export default class ClientService {
    * @returns {Object}
    */
   static async fetchNetworkConfig (server, timeout) {
-    const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+    const client = new Client(`${server}/api/v2`, { timeout: timeout || 5000 })
 
-    const response = await client.api('node').configuration()
-    const data = response.body.data
+    const data = (await client.once('node', 'configuration')).body.data
 
     const currentNetwork = store.getters['session/network']
     if (currentNetwork.nethash === data.nethash) {
@@ -90,8 +89,8 @@ export default class ClientService {
 
   static async fetchFeeStatistics (server, timeout) {
     try {
-      const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
-      const { body } = await client.api('node').fees(7)
+      const client = new Client(`${server}/api/v2`, { timeout: timeout || 5000 })
+      const { body } = await client.once('node', 'fees', 7)
 
       return body.data.map(fee => ({
         type: Number(fee.type),
@@ -113,11 +112,15 @@ export default class ClientService {
     // The API version is imprecise, since new capabilities are being added continuously.
     // So, this property uses the peer version to know which features are available
     this.__capabilities = '2.0.0'
-    this.client = new Connection('http://localhost')
+    this.client = new Client('http://localhost')
 
     if (watchProfile) {
       this.__watchProfile()
     }
+  }
+
+  get api () {
+    return new Client(this.host, { timeout: 5000 })
   }
 
   get host () {
@@ -127,7 +130,7 @@ export default class ClientService {
   set host (host) {
     host = `${host}/api/v2`
     this.__host = host
-    this.client = (new Connection(host)).withOptions({ timeout: 5000 })
+    this.client = new Client(host, { timeout: 5000 })
   }
 
   get version () {
@@ -150,8 +153,8 @@ export default class ClientService {
    * Fetch the peer status.
    * @returns {Object}
    */
-  async fetchPeerStatus () {
-    return (await this.client.api('node').syncing()).body.data
+  async fetchPeerStatus (options = {}) {
+    return (await this.api.withOptions(options).once('node', 'syncing')).body.data
   }
 
   /** Request the delegates according to the current network version
@@ -168,7 +171,7 @@ export default class ClientService {
     options.limit || (options.limit = network.constants.activeDelegates)
     options.orderBy || (options.orderBy = 'rank:asc')
 
-    const { body } = await this.client.api('delegates').all({
+    const { body } = await this.api.once('delegates', 'all', {
       page: options.page,
       limit: options.limit,
       orderBy: options.orderBy
@@ -186,7 +189,7 @@ export default class ClientService {
    * @return {Number}
    */
   async fetchDelegateVoters (delegate, { page, limit } = {}) {
-    const { body } = await this.client.api('delegates').voters(delegate.username, { page, limit })
+    const { body } = await this.api.once('delegates', 'voters', delegate.username, { page, limit })
 
     return body.meta.totalCount
   }
@@ -196,7 +199,7 @@ export default class ClientService {
       return delegate.forged.total
     }
 
-    const { body } = await this.client.api('delegates').forged(delegate.publicKey)
+    const { body } = await this.api.once('delegates', 'forged', delegate.publicKey)
 
     if (body.success) {
       return body.forged
@@ -210,9 +213,7 @@ export default class ClientService {
    * @return {Number[]}
    */
   async fetchStaticFees () {
-    const fees = Object.values((await this.client.api('transactions').fees()).body.data)
-
-    return fees
+    return Object.values((await this.api.once('transactions', 'fees')).body.data)
   }
 
   /**
@@ -230,7 +231,7 @@ export default class ClientService {
     let totalCount = 0
     let transactions = []
 
-    const { body } = await this.client.api('transactions').all({
+    const { body } = await this.api.once('transactions', 'all', {
       limit,
       page
     })
@@ -271,7 +272,7 @@ export default class ClientService {
     let totalCount = 0
     let transactions = []
 
-    const { body } = await this.client.api('wallets').transactions(address, {
+    const { body } = await this.api.once('wallets', 'transactions', address, {
       orderBy: options.orderBy,
       limit: options.limit,
       page: options.page
@@ -314,9 +315,10 @@ export default class ClientService {
       let transactions = []
       let hadFailure = false
 
+      const api = this.api
       for (const addressChunk of chunk(addresses, 20)) {
         try {
-          const { body } = await this.client.api('transactions').search({
+          const { body } = await api.request('transactions', 'search', {
             addresses: addressChunk
           })
           transactions.push(...body.data)
@@ -325,6 +327,8 @@ export default class ClientService {
           hadFailure = true
         }
       }
+
+      api.stop()
 
       if (!hadFailure) {
         transactions = orderBy(transactions, 'timestamp', 'desc').map(transaction => {
@@ -382,8 +386,7 @@ export default class ClientService {
    * @return {Object}
    */
   async fetchWallet (address) {
-    const { body } = await this.client.api('wallets').get(address)
-    return body.data
+    return (await this.api.once('wallets', 'get', address)).body.data
   }
 
   /**
@@ -395,12 +398,14 @@ export default class ClientService {
     const walletData = []
 
     if (this.isCapable('2.1.0')) {
+      const api = this.api
       for (const addressChunk of chunk(addresses, 20)) {
-        const { body } = await this.client.api('wallets').search({
+        const { body } = await api.request('wallets', 'search', {
           addresses: addressChunk
         })
         walletData.push(...body.data)
       }
+      api.stop()
     } else {
       for (const address of addresses) {
         try {
@@ -656,7 +661,7 @@ export default class ClientService {
         for (let i = 0; i < peers.length; i++) {
           try {
             const client = await store.dispatch('peer/clientServiceFromPeer', peers[i])
-            const transaction = await client.client.api('transactions').create({
+            const transaction = await client.api.once('transactions', 'create', {
               transactions: castArray(transactions)
             })
             txs.push(transaction)
@@ -671,12 +676,10 @@ export default class ClientService {
     }
 
     if (!broadcast || failedBroadcast) {
-      const transaction = await this
-        .client
-        .api('transactions')
-        .create({
-          transactions: castArray(transactions)
-        })
+      const transaction = await this.api.once('transactions', 'create', {
+        transactions: castArray(transactions)
+      })
+
       return [transaction]
     }
   }
@@ -707,7 +710,7 @@ export default class ClientService {
           // Infer which are the real capabilities of the peer
           try {
             const testAddress = Identities.Address.fromPassphrase('test', network.version)
-            const { address } = this.client.api('wallets').search({
+            const { address } = this.api.once('wallets', 'search', {
               addresses: [testAddress]
             })
 
