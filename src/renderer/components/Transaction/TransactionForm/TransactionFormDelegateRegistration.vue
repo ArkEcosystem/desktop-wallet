@@ -131,8 +131,16 @@ export default {
 
   computed: {
     usernameError () {
-      if (this.$v.form.username.$dirty && !this.$v.form.username.isValid) {
-        return this.$v.form.username.isValid
+      if (this.$v.form.username.$dirty && this.$v.form.username.$error) {
+        if (!this.$v.form.username.isNotEmpty) {
+          return this.$t('WALLET_DELEGATES.USERNAME_EMPTY_ERROR')
+        } else if (!this.$v.form.username.isMaxLength) {
+          return this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
+        } else if (!this.$v.form.username.doesNotExist) {
+          return this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
+        }
+
+        return this.$t('WALLET_DELEGATES.USERNAME_ERROR')
       }
 
       return null
@@ -163,29 +171,34 @@ export default {
 
   validations: {
     form: {
-      fee: mixin.validators.secondPassphrase,
-      passphrase: mixin.validators.secondPassphrase,
-      walletPassword: mixin.validators.secondPassphrase,
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword,
       secondPassphrase: mixin.validators.secondPassphrase,
 
       username: {
         isValid (value) {
           const validation = WalletService.validateUsername(value)
 
-          if (validation.passes) {
-            return true
-          }
+          return validation.passes
+        },
 
-          switch (validation.errors[0].type) {
-            case 'empty':
-              return this.$t('WALLET_DELEGATES.USERNAME_EMPTY_ERROR')
-            case 'maxLength':
-              return this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
-            case 'exists':
-              return this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
-          }
+        isNotEmpty (value) {
+          const validation = WalletService.validateUsername(value)
 
-          return this.$t('WALLET_DELEGATES.USERNAME_ERROR')
+          return !validation.passes ? !validation.errors.find(error => error.type === 'empty') : true
+        },
+
+        isMaxLength (value) {
+          const validation = WalletService.validateUsername(value)
+
+          return !validation.passes ? !validation.errors.find(error => error.type === 'maxLength') : true
+        },
+
+        doesNotExist (value) {
+          const validation = WalletService.validateUsername(value)
+
+          return !validation.passes ? !validation.errors.find(error => error.type === 'exists') : true
         }
       }
     }
