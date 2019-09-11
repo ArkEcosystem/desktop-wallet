@@ -146,7 +146,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES } from '@config'
 import { Collapse } from '@/components/Collapse'
 import { InputFee, InputPassword } from '@/components/Input'
@@ -154,8 +153,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
 import WalletAddress from '@/components/Wallet/WalletAddress'
-import TransactionService from '@/services/transaction'
-import onSubmit from './mixin-on-submit'
+import mixin from './mixin'
 
 export default {
   name: 'TransactionFormVote',
@@ -173,7 +171,7 @@ export default {
     WalletAddress
   },
 
-  mixins: [onSubmit],
+  mixins: [mixin],
 
   props: {
     delegate: {
@@ -200,22 +198,12 @@ export default {
       walletPassword: ''
     },
     forged: 0,
-    voters: '0',
-    showEncryptLoader: false,
-    showLedgerLoader: false
+    voters: '0'
   }),
 
   computed: {
-    currentWallet () {
-      return this.wallet_fromRoute
-    },
-
     blocksProduced () {
       return this.delegate.blocks.produced || '0'
-    },
-
-    senderLabel () {
-      return this.wallet_formatAddress(this.currentWallet.address)
     },
 
     showVoteUnvoteButton () {
@@ -228,10 +216,6 @@ export default {
 
     showCurrentlyVoting () {
       return !!this.votedDelegate && !this.isVoter
-    },
-
-    walletNetwork () {
-      return this.session_network
     }
   },
 
@@ -254,11 +238,36 @@ export default {
   mounted () {
     this.fetchForged()
     this.fetchVoters()
-
-    this.form.fee = this.$refs.fee.fee
   },
 
   methods: {
+    getTransactionData () {
+      const transactionData = {
+        address: this.currentWallet.address,
+        passphrase: this.form.passphrase,
+        votes: [
+          `${this.isVoter ? '-' : '+'}${this.delegate.publicKey}`
+        ],
+        fee: this.getFee(),
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif
+      }
+
+      if (this.currentWallet.secondPublicKey) {
+        transactionData.secondPassphrase = this.form.secondPassphrase
+      }
+
+      return transactionData
+    },
+
+    async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
+      return this.$client.buildVote(transactionData, isAdvancedFee, returnObject)
+    },
+
+    postSubmit () {
+      this.reset()
+    },
+
     toggleStep () {
       this.isPassphraseStep = !this.isPassphraseStep
     },
@@ -270,58 +279,6 @@ export default {
 
     async fetchVoters () {
       this.voters = await this.$client.fetchDelegateVoters(this.delegate) || '0'
-    },
-
-    onFee (fee) {
-      this.$set(this.form, 'fee', fee)
-    },
-
-    async submit () {
-      // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
-        this.form.fee = this.$refs.fee.fee
-      }
-
-      const { publicKey } = this.delegate
-      const prefix = this.isVoter ? '-' : '+'
-
-      const votes = [
-        `${prefix}${publicKey}`
-      ]
-      const transactionData = {
-        address: this.currentWallet.address,
-        passphrase: this.form.passphrase,
-        votes,
-        fee: parseInt(this.currency_unitToSub(this.form.fee)),
-        wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
-      }
-
-      if (this.currentWallet.secondPublicKey) {
-        transactionData.secondPassphrase = this.form.secondPassphrase
-      }
-
-      let success = true
-      let transaction
-      if (!this.currentWallet.isLedger) {
-        transaction = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
-      } else {
-        success = false
-        this.showLedgerLoader = true
-        try {
-          const transactionObject = await this.$client.buildVote(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee, true)
-          transaction = await TransactionService.ledgerSign(this.currentWallet, transactionObject, this)
-          success = true
-        } catch (error) {
-          this.$error(`${this.$t('TRANSACTION.LEDGER_SIGN_FAILED')}: ${error.message}`)
-        }
-        this.showLedgerLoader = false
-      }
-
-      if (success) {
-        this.emitNext(transaction)
-        this.reset()
-      }
     },
 
     reset () {
@@ -338,66 +295,15 @@ export default {
 
     emitCancel () {
       this.$emit('cancel', 'navigateToTransactions')
-    },
-
-    emitNext (transaction) {
-      this.$emit('next', { transaction })
     }
   },
 
   validations: {
     form: {
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      passphrase: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-          return false
-        }
-      },
-      walletPassword: {
-        isValid (value) {
-          if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
-            return true
-          }
-
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      secondPassphrase: {
-        isValid (value) {
-          if (!this.currentWallet.secondPublicKey) {
-            return true
-          }
-
-          if (this.$refs.secondPassphrase) {
-            return !this.$refs.secondPassphrase.$v.$invalid
-          }
-          return false
-        }
-      }
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      walletPassword: mixin.validators.walletPassword,
+      secondPassphrase: mixin.validators.secondPassphrase
     }
   }
 }
