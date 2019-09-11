@@ -148,6 +148,10 @@ export default {
 
       if (success) {
         this.emitNext(transaction)
+
+        if (this.postSubmit) {
+          this.postSubmit()
+        }
       }
     },
 
@@ -157,10 +161,6 @@ export default {
 
     onFee (fee) {
       this.$set(this.form, 'fee', fee)
-
-      if (this.postSubmit) {
-        this.postSubmit()
-      }
     },
 
     emitNext (transaction) {
