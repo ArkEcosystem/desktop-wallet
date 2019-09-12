@@ -178,10 +178,10 @@ export default {
 
       const pendingVotes = unconfirmedVotes.filter(vote => {
         if (!vote.timestamp) {
-          return true
+          return false
         }
-        const threshold = dayjs(vote.timestamp).add(6, 'hour')
-        return !dayjs().isAfter(threshold)
+
+        return !dayjs().isAfter(dayjs(vote.timestamp).add(6, 'hour'))
       })
 
       await dispatch('session/setUnconfirmedVotes', pendingVotes, { root: true })
