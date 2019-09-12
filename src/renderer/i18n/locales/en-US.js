@@ -260,8 +260,14 @@ export default {
   },
 
   APP_SIDEMENU_NOTIFICATION: {
-    NOTIFICATION: 'A new version ({version}) has been released. Upgrade now!',
     TOOLTIP: 'New version ({version}) has been released!'
+  },
+
+  APP_UPDATER: {
+    RELEASE_NOTES: 'Release Notes',
+    DOWNLOAD_NOW: 'Yes, download now',
+    MAYBE_LATER: 'No, maybe later',
+    DOWNLOADING: 'Downloading {version}'
   },
 
   MARKET_CHART: {

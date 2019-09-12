@@ -80,6 +80,12 @@
       />
 
       <PortalTarget
+        :slot-props="{ setBlurFilter }"
+        name="updater"
+        @change="onPortalChange"
+      />
+
+      <PortalTarget
         name="loading"
         @change="onPortalChange"
       />
@@ -290,6 +296,7 @@ export default {
      * @return {void}
      */
     async loadNotEssential () {
+      ipcRenderer.send('updater:check-for-updates')
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
 
@@ -329,8 +336,12 @@ export default {
         }
       })
 
-      ipcRenderer.on('message', (_, txt) => {
-        this.$info(txt, 1000)
+      ipcRenderer.on('updater:cancellation-token', (_, token) => {
+        this.$store.dispatch('updater/setCancellationToken', token)
+      })
+
+      ipcRenderer.on('updater:update-available', (_, data) => {
+        this.$store.dispatch('updater/setAvailableRelease', data)
       })
     },
 

@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
-import updater from './updater'
+import { setupUpdater } from './updater/setup'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
 
@@ -142,7 +142,7 @@ if (!gotTheLock) {
 
 app.on('ready', () => {
   createWindow()
-  updater({ sendToWindow })
+  setupUpdater({ sendToWindow, ipcMain })
 })
 
 app.on('window-all-closed', () => {

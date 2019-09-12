@@ -13,7 +13,7 @@ if (isDev) {
   autoUpdater.currentVersion = version
 }
 
-export default ({ sendToWindow }) => {
+export const setupUpdater = ({ sendToWindow, ipcMain }) => {
   const notificationPrefix = 'updater:'
   const events = ['checking-for-update', 'update-available', 'update-not-available', 'error', 'download-progress']
 
@@ -27,5 +27,15 @@ export default ({ sendToWindow }) => {
     sendToWindow(notificationPrefix + 'update-downloaded', autoUpdater.quitAndInstall)
   })
 
-  autoUpdater.checkForUpdates()
+  ipcMain.on(notificationPrefix + 'check-for-updates', async () => {
+    const result = await autoUpdater.checkForUpdates()
+
+    if (result) {
+      sendToWindow(notificationPrefix + 'cancellation-token', result.cancellationToken)
+    }
+  })
+
+  ipcMain.on(notificationPrefix + 'download-update', () => {
+    autoUpdater.downloadUpdate()
+  })
 }

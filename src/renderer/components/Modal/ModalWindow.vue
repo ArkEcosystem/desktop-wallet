@@ -14,7 +14,10 @@
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
           <div
-            :class="containerClasses"
+            :class="[{
+              [containerClasses]: isMaximized,
+              [containerClassesMinimized]: !isMaximized,
+            }]"
             class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg relative transition bg-theme-modal text-theme-text-content"
             @click.stop="void 0"
           >
@@ -49,7 +52,7 @@
               </header>
 
               <article class="content flex-1 mt-3">
-                <slot />
+                <slot :isMaximized="isMaximized" />
               </article>
             </section>
 
@@ -87,6 +90,11 @@ export default {
       default: false
     },
     containerClasses: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    containerClassesMinimized: {
       type: String,
       required: false,
       default: ''
@@ -177,7 +185,7 @@ export default {
 .ModalWindow--maximized .ModalWindow__container__content {@apply overflow-hidden px-16 pt-10 pb-16}
 .ModalWindow--minimized .ModalWindow__container__content {@apply overflow-y-auto px-10 pt-2 pb-5}
 .ModalWindow--minimized .ModalWindow__container {
-  height: 200px;
+  height: 200px!default;
   @apply overflow-hidden
 }
 </style>
