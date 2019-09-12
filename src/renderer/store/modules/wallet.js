@@ -62,7 +62,8 @@ export default {
         address: wallet.address,
         balance: wallet.balance,
         name: wallet.name,
-        publicKey: wallet.publicKey
+        publicKey: wallet.publicKey,
+        ...(wallet.isLedger && { isLedger: wallet.isLedger })
       }))
     },
 
