@@ -714,6 +714,67 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('TIMERS')) {
+      const timerArrays = {
+        intervals: [],
+        timeouts: [],
+        timeoutWatchdog: {}
+      }
+
+      const timers = {
+        clearInterval (id) {
+          clearInterval(id)
+          timerArrays.intervals = timerArrays.intervals.filter(interval => interval !== id)
+        },
+
+        clearTimeout (id) {
+          clearTimeout(id)
+          clearTimeout(timerArrays.timeoutWatchdog[id])
+          delete timerArrays.timeoutWatchdog[id]
+          timerArrays.timeouts = timerArrays.timeouts.filter(timeout => timeout !== id)
+        },
+
+        get intervals () {
+          return timerArrays.intervals
+        },
+
+        get timeouts () {
+          return timerArrays.timeouts
+        },
+
+        setInterval (...args) {
+          const id = setInterval(...args)
+          timerArrays.intervals.push(id)
+          return id
+        },
+
+        setTimeout (...args) {
+          const id = setTimeout(...args)
+          timerArrays.timeouts.push(id)
+          timerArrays.timeoutWatchdog[id] = setTimeout(() => timers.clearTimeout(id), args[1])
+          return id
+        }
+      }
+
+      this.app.$router.beforeEach((_, __, next) => {
+        for (const id of timerArrays.intervals) {
+          clearInterval(id)
+        }
+
+        for (const id of timerArrays.timeouts) {
+          clearTimeout(id)
+          clearTimeout(timerArrays.timeoutWatchdog[id])
+        }
+
+        timerArrays.intervals = []
+        timerArrays.timeouts = []
+        timerArrays.timeoutWatchdog = {}
+        next()
+      })
+
+      sandbox.walletApi.timers = timers
+    }
+
     if (config.permissions.includes('MESSAGING')) {
       const messages = {
         events: [],
