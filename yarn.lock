@@ -20,10 +20,10 @@
     got "^9.6.0"
     is-url-superb "^3.0.0"
 
-"@arkecosystem/crypto@^2.5.7":
-  version "2.5.14"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.5.14.tgz#ce6b56575bdffc36fbfa4c9f236eddc4cc33995e"
-  integrity sha512-GsScCR0JulSY5Cw0rEQZjjiHm7fsDVkgtPWZSUJo6jRhdwW6J38bnJoWKIEPBN71nTIgqbjKY+YG/sjlPVbDtQ==
+"@arkecosystem/crypto@^2.6.0-alpha.0":
+  version "2.6.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-alpha.0.tgz#db22d5688c68d7dfad78f125625ba01557277bc6"
+  integrity sha512-Uq2PvV+YsvFtwB0VCaNwoAGsEBPRC4yspTcmIgRZ59SFcHTEYxsDkGJIDzSt3PGJ8nTIqCWhOt41LcZcIc59vQ==
   dependencies:
     "@hapi/joi" "^15.1.0"
     ajv "^6.10.2"
@@ -33,13 +33,11 @@
     bip32 "^2.0.3"
     bip39 "^3.0.2"
     browserify-aes "^1.2.0"
-    bs58 "^4.0.1"
-    bs58check "^2.1.2"
+    bstring "^0.3.9"
     buffer-xor "^2.0.2"
     bytebuffer "^5.0.1"
     dayjs "^1.8.15"
     deepmerge "^4.0.0"
-    lodash.camelcase "^4.3.0"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
     lodash.sumby "^4.6.0"
@@ -2330,7 +2328,7 @@ browserslist@^4.6.0, browserslist@^4.6.2, browserslist@^4.6.3:
     electron-to-chromium "^1.3.191"
     node-releases "^1.1.25"
 
-bs58@^4.0.0, bs58@^4.0.1:
+bs58@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/bs58/-/bs58-4.0.1.tgz#be161e76c354f6f788ae4071f63f34e8c4f0a42a"
   integrity sha1-vhYedsNU9veIrkBx9j806MTwpCo=
@@ -2357,6 +2355,15 @@ bsert@~0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/bsert/-/bsert-0.0.10.tgz#231ac82873a1418c6ade301ab5cd9ae385895597"
   integrity sha512-NHNwlac+WPy4t2LoNh8pXk8uaIGH3NSaIUbTTRXGpE2WEbq0te/tDykYHkFK57YKLPjv/aGHmbqvnGeVWDz57Q==
+
+bstring@^0.3.9:
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/bstring/-/bstring-0.3.9.tgz#dc50294b54e9e767c07ca5592795dcc59ef1bf2e"
+  integrity sha512-D95flI7SXL+UsQi9mW+hH+AK2AFfafIJi+3GbbyTAWMe2FqwR9keBxsjGiGd/JM+77Y9WsC+M4EhZVNVcym9jw==
+  dependencies:
+    bsert "~0.0.10"
+    loady "~0.0.1"
+    nan "^2.13.1"
 
 buffer-alloc-unsafe@^1.1.0:
   version "1.1.0"
@@ -7322,11 +7329,6 @@ lodash.assign@^4.2.0:
   resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
   integrity sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
 
-lodash.camelcase@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-  integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
-
 lodash.clonedeep@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-3.0.2.tgz#a0a1e40d82a5ea89ff5b147b8444ed63d92827db"
@@ -7976,7 +7978,7 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-nan@^2.12.1, nan@^2.13.2:
+nan@^2.12.1, nan@^2.13.1, nan@^2.13.2:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
