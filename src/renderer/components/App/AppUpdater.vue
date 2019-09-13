@@ -7,7 +7,7 @@
     portal-target="updater"
     @close="emitClose"
   >
-    <template>
+    <template #default="{ isMaximized }">
       <section v-if="!isDownloadAuthorized">
         <!-- eslint-disable vue/no-v-html -->
         <div
@@ -31,13 +31,19 @@
           <span class="AppUpdater__authorized__downloading__title">
             {{ $t('APP_UPDATER.DOWNLOADING', { version: availableRelease.version }) }}
           </span>
+          <div class="AppUpdater__progress-bar">
+            <ProgressBar
+              :size="isMaximized ? 'normal' : 'small'"
+              percent="60"
+            />
+          </div>
         </div>
       </section>
     </template>
 
     <template
       v-if="!isDownloadAuthorized"
-      slot="footer"
+      #footer
     >
       <div class="mb-5 px-10 flex flex-row justify-center">
         <button
@@ -60,6 +66,7 @@
 
 <script>
 import { ModalWindow } from '@/components/Modal'
+import { ProgressBar } from '@/components/ProgressBar'
 import { mapGetters } from 'vuex'
 import cheerio from 'cheerio'
 
@@ -67,7 +74,8 @@ export default {
   name: 'AppUpdater',
 
   components: {
-    ModalWindow
+    ModalWindow,
+    ProgressBar
   },
 
   data: () => ({
@@ -78,6 +86,7 @@ export default {
     ...mapGetters('updater', [
       'availableRelease'
     ]),
+
     title () {
       if (this.isDownloadAuthorized) {
         return
@@ -85,9 +94,11 @@ export default {
 
       return `${this.$t('APP_UPDATER.RELEASE_NOTES')} - ${this.availableRelease.version}`
     },
+
     releaseNotes () {
       return this.__formatReleaseNotes(this.availableRelease.releaseNotes)
     },
+
     descriptionImage () {
       return this.assets_loadImage('pages/updater/computer.svg')
     }
@@ -129,7 +140,10 @@ export default {
 }
 
 .AppUpdater__authorized {
-  @apply flex justify-center items-center
+  @apply flex
+}
+.AppUpdater__authorized__downloading {
+  @apply flex flex-col flex-1 justify-center
 }
 .AppUpdater__authorized__downloading__title {
   @apply font-semibold
@@ -140,11 +154,17 @@ export default {
   height: 180px;
 }
 
-.AppUpdater--maximized .AppUpdater__authorized__downloading__title {@apply text-xl mt-4;}
-.AppUpdater--minimized .AppUpdater__authorized__downloading__title {@apply ml-2;}
-.AppUpdater--maximized .AppUpdater__authorized {@apply flex-col}
-.AppUpdater--minimized .AppUpdater__authorized {@apply flex-row}
+.AppUpdater--maximized .AppUpdater__authorized {@apply flex-col justify-center;}
+.AppUpdater--minimized .AppUpdater__authorized {@apply flex-row;}
+
 .AppUpdater--maximized .AppUpdater__authorized__image {width: 400px;}
 .AppUpdater--minimized .AppUpdater__authorized__image {width: 180px;}
 
+.AppUpdater--maximized .AppUpdater__authorized__downloading {@apply items-center;}
+
+.AppUpdater--maximized .AppUpdater__authorized__downloading__title {@apply text-xl my-4;}
+.AppUpdater--minimized .AppUpdater__authorized__downloading__title {@apply text-sm;}
+
+.AppUpdater--maximized .AppUpdater__progress-bar {@apply w-4/5;}
+.AppUpdater--minimized .AppUpdater__progress-bar {@apply w-full;}
 </style>

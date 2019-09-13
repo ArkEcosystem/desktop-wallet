@@ -183,7 +183,7 @@ export default {
 .ModalWindow__container__actions {@apply block text-right my-4 mr-4}
 
 .ModalWindow--maximized .ModalWindow__container__content {@apply overflow-hidden px-16 pt-10 pb-16}
-.ModalWindow--minimized .ModalWindow__container__content {@apply overflow-y-auto px-10 pt-2 pb-5}
+.ModalWindow--minimized .ModalWindow__container__content {@apply overflow-y-auto px-8 pt-2 pb-5}
 .ModalWindow--minimized .ModalWindow__container {
   height: 200px!default;
   @apply overflow-hidden
