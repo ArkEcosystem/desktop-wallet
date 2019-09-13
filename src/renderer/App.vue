@@ -336,10 +336,6 @@ export default {
         }
       })
 
-      ipcRenderer.on('updater:cancellation-token', (_, token) => {
-        this.$store.dispatch('updater/setCancellationToken', token)
-      })
-
       ipcRenderer.on('updater:update-available', (_, data) => {
         this.$store.dispatch('updater/setAvailableRelease', data)
       })

@@ -1,9 +1,10 @@
 <template>
   <ModalWindow
     :can-resize="isDownloadAuthorized"
+    :allow-close="!isDownloadAuthorized || isDownloadFinished || isDownloadFailed"
     :title="title"
+    :container-classes-minimized="`AppUpdater--minimized ${hasFooter ? 'AppUpdater--minimized--with-footer' : ''}`"
     container-classes="AppUpdater--maximized"
-    container-classes-minimized="AppUpdater--minimized"
     portal-target="updater"
     @close="emitClose"
   >
@@ -29,37 +30,58 @@
           class="AppUpdater__authorized__downloading"
         >
           <span class="AppUpdater__authorized__downloading__title">
-            {{ $t('APP_UPDATER.DOWNLOADING', { version: availableRelease.version }) }}
+            {{ $t(isDownloadFinished
+                    ? 'APP_UPDATER.DOWNLOADED'
+                    : 'APP_UPDATER.DOWNLOADING',
+                  { version: availableRelease.version })
+            }}
           </span>
           <div class="AppUpdater__progress-bar">
             <ProgressBar
               :size="isMaximized ? 'normal' : 'small'"
-              percent="60"
+              :percent="progressUpdate.percent"
+              :status="isDownloadFailed ? 'exception' : 'active'"
             />
           </div>
         </div>
       </section>
     </template>
 
-    <template
-      v-if="!isDownloadAuthorized"
-      #footer
-    >
-      <div class="mb-5 px-10 flex flex-row justify-center">
-        <button
-          class="blue-button mx-1"
-          @click="startDownload"
-        >
-          {{ $t('APP_UPDATER.DOWNLOAD_NOW') }}
-        </button>
+    <template #footer>
+      <footer v-if="!isDownloadAuthorized">
+        <div class="AppUpdater__footer">
+          <button
+            class="blue-button mx-1"
+            @click="startDownload"
+          >
+            {{ $t('APP_UPDATER.DOWNLOAD_NOW') }}
+          </button>
 
-        <button
-          class="action-button px-8 mx-1"
-          @click="emitClose"
-        >
-          {{ $t('APP_UPDATER.MAYBE_LATER') }}
-        </button>
-      </div>
+          <button
+            class="action-button px-8 mx-1"
+            @click="emitClose"
+          >
+            {{ $t('APP_UPDATER.MAYBE_LATER') }}
+          </button>
+        </div>
+      </footer>
+
+      <footer v-if="isDownloadFinished && !isDownloadFailed">
+        <div class="AppUpdater__footer">
+          <button
+            class="blue-button mx-1"
+            @click="quitAndInstall"
+          >
+            {{ $t('APP_UPDATER.QUIT_AND_INSTALL') }}
+          </button>
+        </div>
+      </footer>
+
+      <footer v-if="isDownloadFailed">
+        <div class="AppUpdater__footer AppUpdater__footer--failed">
+          {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOW_ERROR') }}
+        </div>
+      </footer>
     </template>
   </ModalWindow>
 </template>
@@ -67,8 +89,10 @@
 <script>
 import { ModalWindow } from '@/components/Modal'
 import { ProgressBar } from '@/components/ProgressBar'
+import { ipcRenderer } from 'electron'
 import { mapGetters } from 'vuex'
 import cheerio from 'cheerio'
+import Vue from 'vue'
 
 export default {
   name: 'AppUpdater',
@@ -79,7 +103,19 @@ export default {
   },
 
   data: () => ({
-    isDownloadAuthorized: false
+    isDownloadAuthorized: false,
+    isDownloadFinished: false,
+    isDownloadFailed: false,
+    errorMessage: undefined,
+    progressUpdate: {
+      bytesPerSecond: 0,
+      delta: 0,
+      percent: 0,
+      total: 0,
+      transferred: 0,
+      timestamp: undefined
+    },
+    inactivityListener: undefined
   }),
 
   computed: {
@@ -101,7 +137,36 @@ export default {
 
     descriptionImage () {
       return this.assets_loadImage('pages/updater/computer.svg')
+    },
+
+    hasFooter () {
+      return !this.isDownloadAuthorized || this.isDownloadFinished || this.isDownloadFailed
     }
+  },
+
+  mounted () {
+    ipcRenderer.on('updater:download-progress', (_, data) => {
+      this.progressUpdate.timestamp = Date.now()
+      Object.assign(this.progressUpdate, data)
+    })
+
+    ipcRenderer.on('updater:update-downloaded', () => {
+      Vue.set(this.progressUpdate, 'percent', 100)
+      this.isDownloadFinished = true
+    })
+
+    ipcRenderer.on('updater:error', (error) => {
+      this.isDownloadFailed = true
+      this.errorMessage = error instanceof Error ? error.message : undefined
+    })
+
+    this.inactivityListener = setInterval(() => {
+      this.verifyInactivity()
+    }, 30000)
+  },
+
+  destroyed () {
+    clearInterval(this.inactivityListener)
   },
 
   methods: {
@@ -111,6 +176,23 @@ export default {
 
     startDownload () {
       this.isDownloadAuthorized = true
+      ipcRenderer.send('updater:download-update')
+    },
+
+    quitAndInstall () {
+      ipcRenderer.send('updater:quit-and-install')
+    },
+
+    verifyInactivity () {
+      if (!this.progressUpdate.timestamp || this.isDownloadFinished) {
+        return
+      }
+
+      const diff = Date.now() - this.progressUpdate.timestamp
+      if (diff >= 60000) {
+        this.isDownloadFailed = true
+        this.errorMessage = this.$t('APP_UPDATER.NETWORK_ERROR')
+      }
     },
 
     __formatReleaseNotes (notes) {
@@ -139,6 +221,13 @@ export default {
   @apply text-sm text-base leading-tight
 }
 
+.AppUpdater__footer {
+  @apply pb-4 px-10 flex flex-row justify-center
+}
+.AppUpdater__footer--failed {
+  @apply py-5 bg-theme-error text-white
+}
+
 .AppUpdater__authorized {
   @apply flex
 }
@@ -153,6 +242,14 @@ export default {
   width: 400px;
   height: 180px;
 }
+
+.AppUpdater--minimized--with-footer {
+  width: 400px;
+  height: 220px;
+}
+
+.AppUpdater--minimized .ModalWindow__container__content {@apply flex-1;}
+.AppUpdater--minimized .AppUpdater__footer {@apply text-sm;}
 
 .AppUpdater--maximized .AppUpdater__authorized {@apply flex-col justify-center;}
 .AppUpdater--minimized .AppUpdater__authorized {@apply flex-row;}

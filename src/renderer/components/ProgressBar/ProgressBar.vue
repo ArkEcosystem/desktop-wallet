@@ -47,7 +47,7 @@ export default {
     },
 
     getStatus () {
-      if (this.staus === 'active' && this.getCurrentPercent() >= 100) {
+      if (this.status === 'active' && this.getCurrentPercent >= 100) {
         return 'success'
       }
 
@@ -72,6 +72,7 @@ export default {
 
 .ProgressBar__bg {
   @apply rounded-full;
+  transition: width 1s;
 }
 
 .ProgressBar--size-large .ProgressBar__bg {@apply h-4;}

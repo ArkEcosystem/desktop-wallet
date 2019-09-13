@@ -267,7 +267,11 @@ export default {
     RELEASE_NOTES: 'Release Notes',
     DOWNLOAD_NOW: 'Yes, download now',
     MAYBE_LATER: 'No, maybe later',
-    DOWNLOADING: 'Downloading {version}'
+    DOWNLOADING: 'Downloading {version}',
+    DOWNLOADED: 'Downloaded {version}',
+    QUIT_AND_INSTALL: 'Quit and install',
+    UNKNOW_ERROR: 'Unknow error. Close this window and try again.',
+    NETWORK_ERROR: 'Looks like your file isn\'t downloading. Verify your connection.'
   },
 
   MARKET_CHART: {

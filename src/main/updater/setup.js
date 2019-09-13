@@ -15,7 +15,7 @@ if (isDev) {
 
 export const setupUpdater = ({ sendToWindow, ipcMain }) => {
   const notificationPrefix = 'updater:'
-  const events = ['checking-for-update', 'update-available', 'update-not-available', 'error', 'download-progress']
+  const events = ['checking-for-update', 'update-available', 'update-not-available', 'error', 'download-progress', 'update-downloaded']
 
   events.forEach(evt => {
     autoUpdater.on(evt, data => {
@@ -23,19 +23,19 @@ export const setupUpdater = ({ sendToWindow, ipcMain }) => {
     })
   })
 
-  autoUpdater.on('update-downloaded', () => {
-    sendToWindow(notificationPrefix + 'update-downloaded', autoUpdater.quitAndInstall)
+  ipcMain.on(notificationPrefix + 'quit-and-install', () => {
+    setImmediate(() => autoUpdater.quitAndInstall())
   })
 
   ipcMain.on(notificationPrefix + 'check-for-updates', async () => {
     const result = await autoUpdater.checkForUpdates()
 
     if (result) {
-      sendToWindow(notificationPrefix + 'cancellation-token', result.cancellationToken)
+      autoUpdater.cancellationToken = result.cancellationToken
     }
   })
 
   ipcMain.on(notificationPrefix + 'download-update', () => {
-    autoUpdater.downloadUpdate()
+    autoUpdater.downloadUpdate(autoUpdater.cancellationToken)
   })
 }
