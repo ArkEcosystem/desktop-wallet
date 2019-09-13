@@ -7,10 +7,15 @@ const isDev = process.env.NODE_ENV === 'development'
 autoUpdater.logger = require('electron-log')
 autoUpdater.logger.transports.file.level = 'info'
 autoUpdater.autoDownload = false
+autoUpdater.currentVersion = version
 
 if (isDev) {
   autoUpdater.updateConfigPath = join(__dirname, './dev-app-update.yml')
-  autoUpdater.currentVersion = version
+
+  const testVersion = process.env.AUTO_UPDATER_VERSION
+  if (testVersion) {
+    autoUpdater.currentVersion = testVersion
+  }
 }
 
 export const setupUpdater = ({ sendToWindow, ipcMain }) => {
