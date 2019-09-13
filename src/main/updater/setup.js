@@ -32,6 +32,12 @@ export const setupUpdater = ({ sendToWindow, ipcMain }) => {
     setImmediate(() => autoUpdater.quitAndInstall())
   })
 
+  ipcMain.on(notificationPrefix + 'cancel', () => {
+    if (autoUpdater.cancellationToken) {
+      autoUpdater.cancellationToken.cancel()
+    }
+  })
+
   ipcMain.on(notificationPrefix + 'check-for-updates', async () => {
     const result = await autoUpdater.checkForUpdates()
 

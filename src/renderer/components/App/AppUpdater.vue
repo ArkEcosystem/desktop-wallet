@@ -1,7 +1,6 @@
 <template>
   <ModalWindow
     :can-resize="isDownloadAuthorized"
-    :allow-close="!isDownloadAuthorized || isDownloadFinished || isDownloadFailed"
     :title="title"
     :container-classes-minimized="`AppUpdater--minimized ${hasFooter ? 'AppUpdater--minimized--with-footer' : ''}`"
     container-classes="AppUpdater--maximized"
@@ -106,6 +105,7 @@ export default {
     isDownloadAuthorized: false,
     isDownloadFinished: false,
     isDownloadFailed: false,
+    isDownloadCancelled: false,
     errorMessage: undefined,
     progressUpdate: {
       bytesPerSecond: 0,
@@ -167,11 +167,24 @@ export default {
 
   destroyed () {
     clearInterval(this.inactivityListener)
+    if (this.isDownloadCancelled) {
+      // Recreate the cancellation token
+      setTimeout(() => ipcRenderer.send('updater:check-for-updates'), 200)
+    }
   },
 
   methods: {
     emitClose () {
+      if (this.isDownloadAuthorized && !this.isDownloadFinished && !this.isDownloadFailed) {
+        // Cancel if file is being downloaded
+        this.cancel()
+      }
       this.$emit('close')
+    },
+
+    cancel () {
+      this.isDownloadCancelled = true
+      ipcRenderer.send('updater:cancel')
     },
 
     startDownload () {
@@ -187,11 +200,12 @@ export default {
       if (!this.progressUpdate.timestamp || this.isDownloadFinished) {
         return
       }
-
+      // Is the download idle for >1min?
       const diff = Date.now() - this.progressUpdate.timestamp
       if (diff >= 60000) {
         this.isDownloadFailed = true
         this.errorMessage = this.$t('APP_UPDATER.NETWORK_ERROR')
+        this.cancel()
       }
     },
 
