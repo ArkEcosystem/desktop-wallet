@@ -240,12 +240,15 @@ describe('TransactionModule', () => {
         {
           id: 2,
           timestamp: dayjs().subtract(5, 'hour').valueOf()
+        },
+        {
+          id: 3
         }
       ])
     })
 
-    it('should clear unconfirmed votes after 6h', async () => {
-      expect(store.getters['session/unconfirmedVotes'].length).toBe(2)
+    it('should clear unconfirmed votes after 6h or no timestamp', async () => {
+      expect(store.getters['session/unconfirmedVotes'].length).toBe(3)
       await store.dispatch('transaction/clearUnconfirmedVotes')
       expect(store.getters['session/unconfirmedVotes'].length).toBe(1)
       expect(store.getters['session/unconfirmedVotes'][0]['id']).toBe(2)

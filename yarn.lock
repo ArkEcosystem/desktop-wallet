@@ -953,37 +953,60 @@
     "@ledgerhq/logs" "^4.68.2"
     rxjs "^6.5.2"
 
+"@ledgerhq/devices@^4.68.4":
+  version "4.68.4"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/devices/-/devices-4.68.4.tgz#237f628442215e2d6fe803c4785d6e15a488b87b"
+  integrity sha512-eFfwn9g6wnPN0ajlVVqYDN5zVR3jX131SFNERFSjaoYEzqvZS2LronLP8LurLNhd06L0TEM2PADhv1r8gudjEQ==
+  dependencies:
+    "@ledgerhq/errors" "^4.68.4"
+    "@ledgerhq/logs" "^4.68.2"
+    rxjs "^6.5.2"
+
 "@ledgerhq/errors@^4.68.2":
   version "4.68.2"
   resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.68.2.tgz#634f132c9c95935668ac2af90991ce57ebc44d63"
   integrity sha512-JxMr4wj/9d7EQuTQ9khhJxQSzv5B6ZoLUm4spOY+FDfQo0ywx9qvD1NyBHHVzyn7uRtWvz/hOSfTSrlw2joM3w==
 
-"@ledgerhq/hw-transport-node-hid-noevents@^4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-4.68.2.tgz#6d2a6c1a5a86869f40e279c3a09d85be1a7e7a25"
-  integrity sha512-Oo8uJ8SPNnG3QMlNBiM1ZJ9GN2IKf/obbcYAO49a4IrYnvgXPmnBqlFBm5/dl7uf6zEAz1vozjQwG8l18rmUfg==
+"@ledgerhq/errors@^4.68.4":
+  version "4.68.4"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/errors/-/errors-4.68.4.tgz#4ad77f76a1065cacf45578073a24255af3332938"
+  integrity sha512-Iozs0kCGwxOFKX+lbSwrEv2JJ/Kaqg7nS+YHXvRNxA69dNZ+Tv652yfnVs1VWwY2snV4HVC/FM9aw+Drp+L9VA==
+
+"@ledgerhq/hw-transport-node-hid-noevents@^4.68.4":
+  version "4.68.4"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-4.68.4.tgz#2a34798f094b8467ca97cb5bd3844f918ccab93e"
+  integrity sha512-inMj1+fzPduDVZH/UTnJUH/RMr+VzYrN4tklzb2J34YEPemhQpJPz83JtgyXwZpB3einkawN+mWEJjnwGGfeMg==
   dependencies:
-    "@ledgerhq/devices" "^4.68.2"
-    "@ledgerhq/errors" "^4.68.2"
-    "@ledgerhq/hw-transport" "^4.68.2"
+    "@ledgerhq/devices" "^4.68.4"
+    "@ledgerhq/errors" "^4.68.4"
+    "@ledgerhq/hw-transport" "^4.68.4"
     "@ledgerhq/logs" "^4.68.2"
     node-hid "^0.7.9"
 
-"@ledgerhq/hw-transport-node-hid-singleton@^4.68.2":
-  version "4.68.2"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-singleton/-/hw-transport-node-hid-singleton-4.68.2.tgz#75d85f939ecb8e2f1bdf924c2354f5c264e5a3dc"
-  integrity sha512-Ufvw2Ml33GHOeXtSFM2L0p6GohTrqzzvVEG+vqFUNk23q597JG2PpBiemSpP5Tp3v8JfskH7saFzEf0boQQ+zA==
+"@ledgerhq/hw-transport-node-hid-singleton@^4.68.4":
+  version "4.68.4"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-singleton/-/hw-transport-node-hid-singleton-4.68.4.tgz#f5b8cdb1dcb7a5d3358f7eda63cecb41007d94a7"
+  integrity sha512-pcc6SsYv3SwFd07EFm3NNchtzAOO1h12mCrP88W3VDA6y0kUvCWhm/Ov7/MKjL1HjzEZMScPPcKb5bxIqmE2pA==
   dependencies:
-    "@ledgerhq/devices" "^4.68.2"
-    "@ledgerhq/errors" "^4.68.2"
-    "@ledgerhq/hw-transport" "^4.68.2"
-    "@ledgerhq/hw-transport-node-hid-noevents" "^4.68.2"
+    "@ledgerhq/devices" "^4.68.4"
+    "@ledgerhq/errors" "^4.68.4"
+    "@ledgerhq/hw-transport" "^4.68.4"
+    "@ledgerhq/hw-transport-node-hid-noevents" "^4.68.4"
     "@ledgerhq/logs" "^4.68.2"
     lodash "^4.17.15"
     node-hid "^0.7.9"
     usb-detection "^4.3.0"
 
-"@ledgerhq/hw-transport@^4.68.2", "@ledgerhq/hw-transport@^4.7.3":
+"@ledgerhq/hw-transport@^4.68.4":
+  version "4.68.4"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.68.4.tgz#af369849df332f8a5f0ecf725f848993024b6e77"
+  integrity sha512-M5HmWmwrqEf+kDFUnGkzdVt45MQu4E0YdhrzyVCO+YtU23j4tszMrMur/qLbyClK3K+dPe/yIaQfdiNN5JjvpQ==
+  dependencies:
+    "@ledgerhq/devices" "^4.68.4"
+    "@ledgerhq/errors" "^4.68.4"
+    events "^3.0.0"
+
+"@ledgerhq/hw-transport@^4.7.3":
   version "4.68.2"
   resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport/-/hw-transport-4.68.2.tgz#822f3f03e22372b7656451eb73e809d208cca119"
   integrity sha512-erGPXBXavw4V5CP2aG/04guPKJKJl50+Z3kl3PbI4RwUijVeWsCw3UwEyEor01AANJ480CwfGB8vhcRt4hkGeQ==
@@ -7907,6 +7930,13 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
+mock-socket@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/mock-socket/-/mock-socket-9.0.0.tgz#2ac6b652aff10bb82d41aed4a36165c017b7ebf1"
+  integrity sha512-8Q3y/chmcYRJ6oxhAO9QJwSr6ZWU2zuzD0A7tHa0HOyL83nInIqimFWuke7936IYjEuhBaOrruV+aemlB1f+aA==
+  dependencies:
+    url-parse "^1.4.4"
+
 moment@^2.10.2, moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
@@ -8063,7 +8093,14 @@ nock@^v11.0.0-beta.28:
     mkdirp "^0.5.0"
     propagate "^2.0.0"
 
-node-abi@^2.10.0, node-abi@^2.7.0:
+node-abi@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.11.0.tgz#b7dce18815057544a049be5ae75cd1fdc2e9ea59"
+  integrity sha512-kuy/aEg75u40v378WRllQ4ZexaXJiCvB68D2scDXclp/I4cRq6togpbOoKhmN07tns9Zldu51NNERo0wehfX9g==
+  dependencies:
+    semver "^5.4.1"
+
+node-abi@^2.7.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-2.10.0.tgz#894bc6625ee042627ed9b5e9270d80bb63ef5045"
   integrity sha512-OT0WepUvYHXdki6DU8LWhEkuo3M44i2paWBYtH9qXtPb9YiKlYEKa5WUII20XEcOv7UJPzfB0kZfPZdW46zdkw==
@@ -8724,7 +8761,7 @@ path-is-absolute@^1.0.0, path-is-absolute@^1.0.1:
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
 
-path-is-inside@^1.0.1:
+path-is-inside@^1.0.1, path-is-inside@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
   integrity sha1-NlQX3t5EQw0cEa9hAn+s8HS9/FM=
@@ -8901,10 +8938,10 @@ popper.js@^1.15.0:
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
 
-portal-vue@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/portal-vue/-/portal-vue-1.5.1.tgz#6bed79ef168d9676bb79f41d43c5cd4cedf54dbc"
-  integrity sha512-7T0K+qyY8bnjnEpQTiLbGsUaGlFcemK9gLurVSr6x1/qzr2HkHDNCOz5i+xhuTD1CrXckf/AGeCnLzvmAHMOHw==
+portal-vue@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/portal-vue/-/portal-vue-2.1.5.tgz#ecd0997cb32958205151cb72f40fd4f38d175e5c"
+  integrity sha512-vZmdMn0mOo7puvxoMQ5zju6S29aFD+9yygJxyWQtPaMXS9xunAeoYdnx6yzfL9J8HD8pMZYgSieEIbioAKhrSQ==
 
 portfinder@^1.0.20:
   version "1.0.21"
@@ -11441,7 +11478,7 @@ url-parse-lax@^3.0.0:
   dependencies:
     prepend-http "^2.0.0"
 
-url-parse@^1.4.3:
+url-parse@^1.4.3, url-parse@^1.4.4:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
   integrity sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==
