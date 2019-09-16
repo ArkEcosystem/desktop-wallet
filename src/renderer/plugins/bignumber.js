@@ -70,6 +70,14 @@ export class NumberBuilder {
   }
 
   /**
+   * @param {Number|String|BigNumber} value
+   * @returns Boolean
+   */
+  isEqualTo (value) {
+    return this.value.eq(value)
+  }
+
+  /**
    * Returns the value as a string
    * @returns String
    */
