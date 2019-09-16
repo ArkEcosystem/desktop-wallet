@@ -52,9 +52,10 @@ beforeEach(() => {
 describe('PluginWebsocket', () => {
   it('should connect to websocket', (done) => {
     const socket = pluginWebsocket.connect(host)
+    expect(socket.isConnecting()).toBeTrue()
 
     setTimeout(() => {
-      expect(socket.getReadyState()).toEqual(WebSocket.OPEN)
+      expect(socket.isOpen()).toBeTrue()
 
       done()
     }, 100)
@@ -85,6 +86,25 @@ describe('PluginWebsocket', () => {
     socket.send('ping')
   })
 
+  it('should close the websocket', (done) => {
+    const socket = pluginWebsocket.connect(host)
+
+    setTimeout(() => {
+      expect(socket.isOpen()).toBeTrue()
+      socket.close()
+      expect(socket.isClosing()).toBeTrue()
+      setTimeout(() => {
+        expect(socket.isClosed()).toBeTrue()
+      }, 500)
+    }, 500)
+
+    socket.on('close', (event) => {
+      expect(event.clean).toBeFalse()
+      expect(event.timestamp).toBeTruthy()
+      done()
+    })
+  })
+
   it('should reset websockets on route change', () => {
     const socket = pluginWebsocket.connect(host)
 
@@ -101,7 +121,7 @@ describe('PluginWebsocket', () => {
     const socket = pluginWebsocket.connect('ws://failure.test.com:8080')
 
     setTimeout(() => {
-      expect(socket.getReadyState()).toEqual(WebSocket.CLOSED)
+      expect(socket.isClosed()).toBeTrue()
 
       done()
     }, 500)
@@ -109,6 +129,13 @@ describe('PluginWebsocket', () => {
 
   it('should not connect to websocket due to whitelist', () => {
     expect(() => {
+      pluginWebsocket.connect('ws://my.test.com:8081')
+    }).toThrow('URL "ws://my.test.com:8081" not allowed')
+  })
+
+  it('should ignore an invalid whitelist', () => {
+    expect(() => {
+      pluginWebsocket = new PluginWebsocket('not a whitelist', router)
       pluginWebsocket.connect('ws://my.test.com:8081')
     }).toThrow('URL "ws://my.test.com:8081" not allowed')
   })
