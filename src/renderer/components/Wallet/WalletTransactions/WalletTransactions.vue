@@ -156,7 +156,6 @@ export default {
 
       const { limit, page, sort } = this.queryParams
 
-      // data == { totalCount, transactions }
       const data = await this.$client.fetchWalletTransactions(address, {
         page,
         limit,
