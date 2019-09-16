@@ -58,7 +58,9 @@ export default {
         return []
       }
 
-      return wallets.filter(wallet => wallet.isContact === getContacts).map(wallet => ({
+      return wallets.filter(wallet => {
+        return wallet.isContact === getContacts || wallet.isContact === undefined
+      }).map(wallet => ({
         address: wallet.address,
         balance: wallet.balance,
         name: wallet.name,
