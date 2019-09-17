@@ -28,13 +28,19 @@
         <div
           class="AppUpdater__authorized__downloading"
         >
-          <span class="AppUpdater__authorized__downloading__title">
-            {{ $t(isDownloadFinished
-                    ? 'APP_UPDATER.DOWNLOADED'
-                    : 'APP_UPDATER.DOWNLOADING',
-                  { version: availableRelease.version })
-            }}
-          </span>
+          <div class="AppUpdater__authorized__downloading__title">
+            <span>
+              {{ $t(isDownloadFinished
+                      ? 'APP_UPDATER.DOWNLOADED'
+                      : 'APP_UPDATER.DOWNLOADING',
+                    { version: availableRelease.version })
+              }}
+            </span>
+            <div class="AppUpdater__authorized__downloading__info">
+              <span>{{ formattedPercentage }}</span>
+              <span>{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
+            </div>
+          </div>
           <div class="AppUpdater__progress-bar">
             <ProgressBar
               :size="isMaximized ? 'normal' : 'small'"
@@ -90,6 +96,7 @@ import { ModalWindow } from '@/components/Modal'
 import { ProgressBar } from '@/components/ProgressBar'
 import { ipcRenderer } from 'electron'
 import { mapGetters } from 'vuex'
+import bytes from 'bytes'
 import cheerio from 'cheerio'
 import releaseService from '@/services/release'
 import Vue from 'vue'
@@ -121,6 +128,10 @@ export default {
 
   computed: {
     ...mapGetters('updater', ['availableRelease']),
+
+    formattedPercentage () {
+      return `${(this.progressUpdate.percent || 0).toFixed(2)}%`
+    },
 
     isLinux () {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
@@ -216,6 +227,10 @@ export default {
         this.errorMessage = this.$t('APP_UPDATER.NETWORK_ERROR')
         this.cancel()
       }
+    },
+
+    formatBytes (value) {
+      return bytes(value)
     },
 
     __formatReleaseNotes (notes) {
