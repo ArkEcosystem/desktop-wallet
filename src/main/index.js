@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
-import { setupUpdater } from './updater/setup'
+import { setupUpdater } from './updater'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
 

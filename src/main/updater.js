@@ -1,5 +1,4 @@
 import { autoUpdater } from 'electron-updater'
-import { join } from 'path'
 import { version } from '../../../package.json'
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -8,10 +7,9 @@ autoUpdater.logger = require('electron-log')
 autoUpdater.logger.transports.file.level = 'info'
 autoUpdater.autoDownload = false
 autoUpdater.currentVersion = version
+autoUpdater.updateConfigPath = 'app-update.yml'
 
 if (isDev) {
-  autoUpdater.updateConfigPath = join(__dirname, './dev-app-update.yml')
-
   const testVersion = process.env.AUTO_UPDATER_VERSION
   if (testVersion) {
     autoUpdater.currentVersion = testVersion
