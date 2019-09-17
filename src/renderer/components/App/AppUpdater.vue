@@ -91,6 +91,7 @@ import { ProgressBar } from '@/components/ProgressBar'
 import { ipcRenderer } from 'electron'
 import { mapGetters } from 'vuex'
 import cheerio from 'cheerio'
+import releaseService from '@/services/release'
 import Vue from 'vue'
 
 export default {
@@ -119,9 +120,11 @@ export default {
   }),
 
   computed: {
-    ...mapGetters('updater', [
-      'availableRelease'
-    ]),
+    ...mapGetters('updater', ['availableRelease']),
+
+    isLinux () {
+      return ['freebsd', 'linux', 'sunos'].includes(process.platform)
+    },
 
     title () {
       if (this.isDownloadAuthorized) {
@@ -188,6 +191,12 @@ export default {
     },
 
     startDownload () {
+      if (this.isLinux) {
+        this.electron_openExternal(releaseService.latestReleaseUrl)
+        this.emitClose()
+        return
+      }
+
       this.isDownloadAuthorized = true
       ipcRenderer.send('updater:download-update')
     },
