@@ -137,6 +137,10 @@ export default {
       return ['freebsd', 'linux', 'sunos'].includes(process.platform)
     },
 
+    isAppImage () {
+      return !!process.env.APPIMAGE
+    },
+
     title () {
       if (this.isDownloadAuthorized) {
         return
@@ -202,7 +206,8 @@ export default {
     },
 
     startDownload () {
-      if (this.isLinux) {
+      // Auto update is only supported for AppImage files on Linux
+      if (this.isLinux && !this.isAppImage) {
         this.electron_openExternal(releaseService.latestReleaseUrl)
         this.emitClose()
         return
