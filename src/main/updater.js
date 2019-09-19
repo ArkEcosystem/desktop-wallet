@@ -9,6 +9,7 @@ autoUpdater.autoDownload = false
 autoUpdater.currentVersion = version
 
 if (isDev) {
+  autoUpdater.updateConfigPath = 'app-update.yml'
   const testVersion = process.env.AUTO_UPDATER_VERSION
   if (testVersion) {
     autoUpdater.currentVersion = testVersion

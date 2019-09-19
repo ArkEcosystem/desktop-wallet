@@ -1,5 +1,6 @@
 <template>
   <ModalWindow
+    :allow-backdrop-click="false"
     :can-resize="isDownloadAuthorized"
     :title="title"
     :container-classes-minimized="`AppUpdater--minimized ${hasFooter ? 'AppUpdater--minimized--with-footer' : ''}`"
@@ -28,17 +29,20 @@
         <div
           class="AppUpdater__authorized__downloading"
         >
-          <div class="AppUpdater__authorized__downloading__title">
-            <span>
+          <div class="AppUpdater__authorized__downloading__header">
+            <span class="AppUpdater__authorized__downloading__header__title">
               {{ $t(isDownloadFinished
                       ? 'APP_UPDATER.DOWNLOADED'
                       : 'APP_UPDATER.DOWNLOADING',
                     { version: availableRelease.version })
               }}
             </span>
-            <div class="AppUpdater__authorized__downloading__info">
-              <span>{{ formattedPercentage }}</span>
-              <span>{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
+            <div
+              v-if="progressUpdate.total > 0"
+              class="AppUpdater__authorized__downloading__header__info"
+            >
+              <span class="font-semibold">{{ formattedPercentage }}</span>
+              <span class="ml-2 text-theme-page-text-light truncate">{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
             </div>
           </div>
           <div class="AppUpdater__progress-bar">
@@ -154,7 +158,8 @@ export default {
     },
 
     descriptionImage () {
-      return this.assets_loadImage('pages/updater/computer.svg')
+      const image = this.session_hasDarkTheme ? 'dark' : 'light'
+      return this.assets_loadImage(`pages/updater/computer-${image}.svg`)
     },
 
     hasFooter () {
@@ -222,7 +227,7 @@ export default {
     },
 
     verifyInactivity () {
-      if (!this.progressUpdate.timestamp || this.isDownloadFinished) {
+      if (!this.progressUpdate.timestamp || this.isDownloadFinished || this.isDownloadFailed) {
         return
       }
       // Is the download idle for >1min?
@@ -271,40 +276,41 @@ export default {
   @apply py-5 bg-theme-error text-white
 }
 
-.AppUpdater__authorized {
-  @apply flex
-}
-.AppUpdater__authorized__downloading {
-  @apply flex flex-col flex-1 justify-center
-}
-.AppUpdater__authorized__downloading__title {
-  @apply font-semibold
+.AppUpdater--maximized {
+  min-width: 45rem;
 }
 
 .AppUpdater--minimized {
-  width: 400px;
-  height: 180px;
+  width: 24rem;
+  height: 9rem;
 }
 
 .AppUpdater--minimized--with-footer {
-  width: 400px;
-  height: 220px;
+  width: 30rem;
+  height: 13rem;
 }
+
+.AppUpdater__progress-bar {@apply w-full;}
+
+.AppUpdater__authorized {@apply flex}
+.AppUpdater__authorized__downloading__header {@apply flex}
+.AppUpdater__authorized__downloading__header__title {@apply font-semibold}
+.AppUpdater__authorized__downloading__header__info {@apply flex}
+
+.AppUpdater--maximized .AppUpdater__authorized {@apply flex-col justify-center;}
+.AppUpdater--maximized .AppUpdater__authorized__downloading {@apply flex flex-col}
+.AppUpdater--maximized .AppUpdater__authorized__downloading__header {@apply flex-col}
+.AppUpdater--maximized .AppUpdater__authorized__downloading__header__title {@apply text-xl my-4 text-center}
+.AppUpdater--maximized .AppUpdater__authorized__downloading__header__info {@apply my-2 justify-center}
+
+.AppUpdater--minimized .AppUpdater__authorized {@apply flex-row items-center}
+.AppUpdater--minimized .AppUpdater__authorized__downloading {@apply flex-1}
+.AppUpdater--minimized .AppUpdater__authorized__downloading__header {@apply flex-row items-end justify-between}
+.AppUpdater--minimized .AppUpdater__authorized__downloading__header__info {@apply flex-col text-right text-sm}
 
 .AppUpdater--minimized .ModalWindow__container__content {@apply flex-1;}
 .AppUpdater--minimized .AppUpdater__footer {@apply text-sm;}
 
-.AppUpdater--maximized .AppUpdater__authorized {@apply flex-col justify-center;}
-.AppUpdater--minimized .AppUpdater__authorized {@apply flex-row;}
-
-.AppUpdater--maximized .AppUpdater__authorized__image {width: 400px;}
-.AppUpdater--minimized .AppUpdater__authorized__image {width: 180px;}
-
-.AppUpdater--maximized .AppUpdater__authorized__downloading {@apply items-center;}
-
-.AppUpdater--maximized .AppUpdater__authorized__downloading__title {@apply text-xl my-4;}
-.AppUpdater--minimized .AppUpdater__authorized__downloading__title {@apply text-sm;}
-
-.AppUpdater--maximized .AppUpdater__progress-bar {@apply w-4/5;}
-.AppUpdater--minimized .AppUpdater__progress-bar {@apply w-full;}
+.AppUpdater--maximized .AppUpdater__authorized__image {width: 30rem; @apply mx-auto}
+.AppUpdater--minimized .AppUpdater__authorized__image {@apply hidden}
 </style>

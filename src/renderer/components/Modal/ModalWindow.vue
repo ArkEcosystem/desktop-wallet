@@ -9,7 +9,7 @@
         'ModalWindow--maximized': isMaximized,
         'ModalWindow--minimized': !isMaximized
       }"
-      @click="emitClose()"
+      @click="onBackdropClick"
     >
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
@@ -109,6 +109,11 @@ export default {
       required: false,
       default: ''
     },
+    allowBackdropClick: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     allowClose: {
       type: Boolean,
       required: false,
@@ -137,6 +142,12 @@ export default {
     toggleMaximized (callback) {
       this.isMaximized = !this.isMaximized
       isFunction(callback) && callback(this.isMaximized)
+    },
+
+    onBackdropClick () {
+      if (this.allowBackdropClick) {
+        this.emitClose()
+      }
     },
 
     emitClose (force = false) {
