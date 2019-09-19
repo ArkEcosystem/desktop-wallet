@@ -285,7 +285,7 @@ export default {
 }
 
 .AppUpdater--minimized--with-footer {
-  width: 30rem;
+  width: 24rem;
   height: 13rem;
 }
 
