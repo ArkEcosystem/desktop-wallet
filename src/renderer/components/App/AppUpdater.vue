@@ -258,7 +258,6 @@ export default {
 
 <style lang="postcss">
 .AppUpdater__release-notes {
-  max-width: 400px;
   max-height: 400px;
   @apply overflow-y-auto;
 }
@@ -277,7 +276,7 @@ export default {
 }
 
 .AppUpdater--maximized {
-  min-width: 45rem;
+  min-width: 40rem;
 }
 
 .AppUpdater--minimized {
