@@ -11,8 +11,12 @@
           @search="onSearch"
         />
 
-        <PluginManagerButtonInstall source="url" />
-        <PluginManagerButtonInstall source="file" />
+        <PluginManagerButtonInstallSource
+          v-for="type of ['url', 'file']"
+          :key="type"
+          :source="type"
+          @install-from="onInstallFrom"
+        />
       </div>
     </div>
 
@@ -113,7 +117,7 @@ import {
   PluginManagerSideMenu,
   PluginManagerTable
 } from '@/components/PluginManager'
-import { PluginManagerButtonInstall, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
+import { PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
 
 export default {
   name: 'Plugins',
@@ -127,7 +131,7 @@ export default {
     PluginManagerSearchBar,
     PluginManagerSideMenu,
     PluginManagerTable,
-    PluginManagerButtonInstall,
+    PluginManagerButtonInstallSource,
     PluginManagerButtonMenu
   },
 
@@ -267,6 +271,11 @@ export default {
         enabled,
         pluginId
       })
+    },
+
+    // TODO
+    onInstallFrom (type) {
+      console.log(`install from ${type}`)
     }
   }
 }

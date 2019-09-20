@@ -1,7 +1,7 @@
-import PluginManagerButtonInstall from './PluginManagerButtonInstall'
+import PluginManagerButtonInstallSource from './PluginManagerButtonInstallSource'
 import PluginManagerButtonMenu from './PluginManagerButtonMenu'
 
 export {
-  PluginManagerButtonInstall,
+  PluginManagerButtonInstallSource,
   PluginManagerButtonMenu
 }
