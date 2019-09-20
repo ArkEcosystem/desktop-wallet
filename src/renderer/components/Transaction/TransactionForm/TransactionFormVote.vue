@@ -291,7 +291,7 @@ export default {
       const transactionData = {
         passphrase: this.form.passphrase,
         votes,
-        fee: parseInt(this.currency_unitToSub(this.form.fee)),
+        fee: this.currency_unitToSub(this.form.fee),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif
       }
@@ -336,7 +336,7 @@ export default {
     },
 
     emitCancel () {
-      this.$emit('cancel')
+      this.$emit('cancel', 'navigateToTransactions')
     },
 
     emitNext (transaction) {
@@ -404,7 +404,7 @@ export default {
 
 <style scoped>
 .TransactionFormVote {
-  min-width: 25em;
+  min-width: 29em;
 }
 
 .TransactionFormVote /deep/ .Collapse__handler {

@@ -23,6 +23,7 @@ export default {
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'This is a Ledger wallet',
+    LOAD: 'Load',
     NETWORK: 'Network',
     NETWORK_NAME: 'This name is provided by the network',
     NEXT: 'Next',
@@ -136,6 +137,7 @@ export default {
     TOO_LONG: 'The \'{0}\' is too long',
     INVALID_URI: 'Invalid URI',
     INVALID_FORMAT: 'Invalid format',
+    INVALID_TYPE: 'Invalid type',
     MAX_LENGTH: 'Max {0}',
     MUST_BE_GREATER_THAN: 'Must be greater than {0}',
     NOT_MATCH: 'The \'{0}\' does not match the \'{1}\'',
@@ -166,10 +168,11 @@ export default {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
       LIMIT_REMAINING: '{0}/{1} Remaining'
     },
+    RECIPIENT_DIFFERENT_NETWORK: 'The recipient {0} belongs to a different network',
     REQUIRED: 'The \'{0}\' is required',
     SEND_NOT_ENABLED: 'Sending is not enabled for the selected wallet',
     WALLET_NOT_ACTIVE: 'Select a wallet and open the URI again',
-    WARNING_BIP39: 'The \'{0}\' is a BIP39 Passphrase',
+    WARNING_BIP39: 'The \'{0}\' contains a BIP39 Passphrase',
     WARNING_NOT_BIP39: 'The \'{0}\' is not a BIP39 Passphrase'
   },
 
@@ -221,7 +224,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Made with ♥ by Ark'
+    TEXT: 'Made with ♥ by ARK'
   },
 
   APP_SIDEMENU: {
@@ -259,14 +262,6 @@ export default {
   APP_SIDEMENU_NOTIFICATION: {
     NOTIFICATION: 'A new version ({version}) has been released. Upgrade now!',
     TOOLTIP: 'New version ({version}) has been released!'
-  },
-
-  APP_SIDEMENU_PLUGIN_CONFIRMATION: {
-    QUESTION: 'Are you sure you want to enable the plugin system?',
-    NO: 'No, keep it disabled',
-    YES: 'Yes, enable it',
-    NOTICE: 'WARNING: This system is currently in BETA. All non-official plugins are used at your own risk. We cannot verify the safety or security of any 3rd party plugins at this time and all security testing and vulnerability discovery is the responsibility of the plugin author. By accepting this notice, you acknowledge that you are using 3rd party plugins at your own risk.',
-    WARNING: 'Please be careful and pay close attention when installing plugins!'
   },
 
   MARKET_CHART: {
@@ -338,6 +333,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Last',
     MINIMUM: 'Minimum',
     AVERAGE: 'Average',
     MAXIMUM: 'Maximum',
@@ -643,6 +639,7 @@ export default {
       ADDRESS: 'Address',
       NAME: 'Name',
       VOTING_FOR: 'Voting for',
+      DELEGATE_NOT_ACTIVE: '{delegate} ({rank}) is not an active delegate',
       BALANCE: 'Balance',
       DELETE: 'Delete'
     },
@@ -734,8 +731,9 @@ export default {
   },
 
   PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Are you sure you want to enable this plugin?',
+    QUESTION: 'Are you sure you want to enable the "{name}" plugin?',
     NO: 'No, keep it disabled',
+    NOTICE: 'WARNING: By accepting this disclaimer, you are confirming that you are adding an untested and unverified third-party plugin to the desktop wallet. ARK SCIC assumes no liability for any harm caused by this plug-in and has no responsibility to test them for security vulnerabilities. All security testing and vulnerability discovery is the sole responsibility of the plugin author. ARK SCIC makes no warranties, express or implied, regarding the conditions of merchantability or fitness for particular purpose of any third-party plugin. ARK SCIC makes no representations about the functionality, accuracy, availability, quality, completeness, security, validity or non-infringement of any third-party plugins. Any third-party plugin used is done so at your own risk.',
     YES: 'Yes, enable it'
   },
 
@@ -806,7 +804,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
-      SAVE_OFFLINE: 'Failed to save your transaction file',
+      SAVE_OFFLINE: 'Failed to save transaction file',
+      LOAD_FROM_FILE: 'Failed to load transaction file',
       EXPIRED: 'Transaction expired before it was processed: {transactionId}',
       FEE_TOO_LOW: 'Transaction could not be sent because the fee ({fee}) is too low',
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
@@ -829,7 +828,8 @@ export default {
       TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
-      SAVE_OFFLINE: 'The transaction file saved successfully in: {path}'
+      SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
+      LOAD_FROM_FILE: 'The transaction file was loaded successfully'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
@@ -854,6 +854,7 @@ export default {
     LEDGER_SIGN_WAIT: 'Awaiting Ledger Signature. Please check and sign the transaction when you are ready.',
     LEDGER_SIGN_FAILED: 'Could not sign transaction with Ledger',
     LEDGER_USER_DECLINED: 'User declined',
+    LOAD_FROM_FILE: 'Load transaction from file',
     MULTIPLE: 'Multiple',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
@@ -927,6 +928,7 @@ export default {
       SHOW_PUBLIC_KEY: 'Show public key',
       SHOW_ADDRESS: 'Show address'
     },
+    PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
   },
 
@@ -972,10 +974,11 @@ export default {
     VOTE: 'Vote',
     USERNAME_EMPTY_ERROR: 'The username must have at least 1 character',
     USERNAME_ERROR: 'No special characters or uppercase allowed',
+    USERNAME_EXISTS: 'A delegate with this username already exists',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',
     BLOG: 'Voting Guide',
-    EXPLANATION: 'Voting is an optional, but important mechanism that keeps the Ark network secure. The 51 delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
+    EXPLANATION: 'Voting is an optional, but important mechanism that keeps the ARK network secure. The {delegates} delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
     UNVOTE_DELEGATE: 'Unvote Delegate {delegate}',
     CURRENTLY_VOTED: 'You are currently voting for {delegate}',

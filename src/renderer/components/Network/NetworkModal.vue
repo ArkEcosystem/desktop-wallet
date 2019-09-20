@@ -203,6 +203,7 @@ import { InputText, InputToggle } from '@/components/Input'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import ClientService from '@/services/client'
 import cryptoCompare from '@/services/crypto-compare'
+import { URL } from 'url'
 
 const requiredIfFull = requiredIf(function () { return this.showFull })
 
@@ -241,7 +242,8 @@ export default {
       wif: '',
       slip44: '',
       activeDelegates: '',
-      ticker: ''
+      ticker: '',
+      version: ''
     },
     configChoices: [
       'Basic',
@@ -452,7 +454,18 @@ export default {
       customNetwork.knownWallets = {}
 
       if (this.showFull && this.hasFetched) {
+        const { hostname: ip, port, protocol } = new URL(this.form.server)
+        const isHttps = protocol === 'https:'
+        const peer = {
+          version: '0',
+          height: 0,
+          latency: 0,
+          port: parseInt(port),
+          ip,
+          isHttps
+        }
         await this.$store.dispatch('network/addCustomNetwork', customNetwork)
+        await this.$store.dispatch('peer/setToNetwork', { peers: [peer], networkId: customNetwork.id })
       } else {
         // Note: this is also used to update the 'default' networks, since the update checks if it exists as custom network
         await this.$store.dispatch('network/updateCustomNetwork', customNetwork)

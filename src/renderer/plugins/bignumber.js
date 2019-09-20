@@ -65,8 +65,16 @@ export class NumberBuilder {
    * @returns NumberBuilder
    */
   multiply (value) {
-    this.value = this.multipliedBy(value)
+    this.value = this.value.multipliedBy(value)
     return this
+  }
+
+  /**
+   * @param {Number|String|BigNumber} value
+   * @returns Boolean
+   */
+  isEqualTo (value) {
+    return this.value.eq(value)
   }
 
   /**

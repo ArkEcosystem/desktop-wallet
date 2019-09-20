@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
+import { cloneDeep } from 'lodash'
 
 export default {
   namespaced: true,
@@ -7,7 +8,8 @@ export default {
   state: {
     loaded: {},
     available: {},
-    enabled: {}
+    enabled: {},
+    pluginOptions: {}
   },
 
   getters: {
@@ -128,6 +130,16 @@ export default {
 
         return walletTabs
       }, [])
+    },
+
+    pluginOptions: (state) => (pluginId, profileId) => {
+      if (!state.pluginOptions[profileId]) {
+        return {}
+      } else if (!state.pluginOptions[profileId][pluginId]) {
+        return {}
+      }
+
+      return cloneDeep(state.pluginOptions[profileId][pluginId])
     }
   },
 
@@ -175,6 +187,17 @@ export default {
 
     SET_PLUGIN_WALLET_TABS (state, data) {
       Vue.set(state.loaded[data.profileId][data.pluginId], 'walletTabs', data.walletTabs)
+    },
+
+    SET_PLUGIN_OPTION (state, data) {
+      if (!state.pluginOptions[data.profileId]) {
+        Vue.set(state.pluginOptions, data.profileId, {})
+      }
+      if (!state.pluginOptions[data.profileId][data.pluginId]) {
+        Vue.set(state.pluginOptions[data.profileId], data.pluginId, {})
+      }
+
+      Vue.set(state.pluginOptions[data.profileId][data.pluginId], data.key, data.value)
     },
 
     SET_IS_PLUGIN_ENABLED (state, data) {
@@ -304,6 +327,19 @@ export default {
       commit('SET_PLUGIN_WALLET_TABS', {
         ...data,
         profileId: data.profileId || rootGetters['session/profileId']
+      })
+    },
+
+    async setPluginOption ({ commit, getters, rootGetters }, data) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
+        throw new Error('Plugin is not enabled')
+      }
+
+      commit('SET_PLUGIN_OPTION', {
+        pluginId: data.pluginId,
+        profileId: rootGetters['session/profileId'],
+        key: data.key,
+        value: data.value
       })
     }
   }

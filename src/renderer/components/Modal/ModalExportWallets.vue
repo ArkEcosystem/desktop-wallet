@@ -1,6 +1,5 @@
 <template>
   <ModalWindow
-    :allow-close="true"
     :message="$t('MODAL_EXPORT_WALLETS.INSTRUCTIONS')"
     container-classes="w-2/5"
     @close="emitClose"

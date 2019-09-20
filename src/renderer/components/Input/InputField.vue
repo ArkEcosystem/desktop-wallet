@@ -21,11 +21,11 @@
       </label>
     </div>
     <p
-      v-show="helperText || warningText"
+      v-show="warningText || helperText"
       class="InputField__helper text-theme-page-text-light text-xs mt-1"
     >
       <slot name="helper">
-        {{ helperText || warningText }}
+        {{ warningText || helperText }}
       </slot>
     </p>
   </section>

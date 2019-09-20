@@ -166,7 +166,7 @@ export default {
       const transactionData = {
         username: this.form.username,
         passphrase: this.form.passphrase,
-        fee: parseInt(this.currency_unitToSub(this.form.fee)),
+        fee: this.currency_unitToSub(this.form.fee),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif
       }
@@ -226,6 +226,9 @@ export default {
                 break
               case 'maxLength':
                 this.error = this.$t('WALLET_DELEGATES.USERNAME_MAX_LENGTH_ERROR')
+                break
+              case 'exists':
+                this.error = this.$t('WALLET_DELEGATES.USERNAME_EXISTS')
                 break
               default:
                 this.error = this.$t('WALLET_DELEGATES.USERNAME_ERROR')

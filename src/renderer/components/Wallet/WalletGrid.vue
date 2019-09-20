@@ -39,7 +39,12 @@
                     }"
                     class="WalletGrid__wallet__name font-semibold text-base truncate block pr-1"
                   >
-                    {{ wallet.name || wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                    <template v-if="wallet.name">
+                      {{ wallet.name | truncate(20) }}
+                    </template>
+                    <template v-else>
+                      {{ wallet_name(wallet.address) || wallet_truncate(wallet.address) }}
+                    </template>
                   </span>
                   <span
                     v-if="wallet.isLedger"

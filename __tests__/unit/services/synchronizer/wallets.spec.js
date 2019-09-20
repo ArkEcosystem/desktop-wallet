@@ -10,9 +10,11 @@ describe('Services > Synchronizer > Wallets', () => {
   let transactions
 
   let transactionDeleteBulk
+  let transactionProcessVotes
 
   beforeEach(() => {
     transactionDeleteBulk = jest.fn()
+    transactionProcessVotes = jest.fn()
 
     const synchronizer = {
       $client: {},
@@ -28,11 +30,14 @@ describe('Services > Synchronizer > Wallets', () => {
           'ledger/wallets': [],
           'session/backgroundUpdateLedger': true,
           'wallet/byProfileId': jest.fn(),
-          'wallet/contactsByProfileId': jest.fn()
+          'wallet/contactsByProfileId': jest.fn(),
+          'session/unconfirmedVotes': []
         },
         dispatch: (action, data) => {
           if (action === 'transaction/deleteBulk') {
             return transactionDeleteBulk(action, data)
+          } else if (action === 'transaction/processVotes') {
+            return transactionProcessVotes(action, data)
           } else if (action === 'transaction/clearExpired') {
             return []
           }
@@ -558,7 +563,7 @@ describe('Services > Synchronizer > Wallets', () => {
       wallet = profileWallets[2]
 
       action.displayNewTransaction = jest.fn()
-      action.processVotes = jest.fn()
+      jest.spyOn(action.synchronizer.$store, 'dispatch')
     })
 
     describe('when all of them are old', () => {
@@ -582,16 +587,38 @@ describe('Services > Synchronizer > Wallets', () => {
     })
 
     describe('when transactions include votes', () => {
-      let votes
-
       beforeEach(() => {
         transactions[0].type = config.TRANSACTION_TYPES.VOTE
-        votes = [transactions[0]]
       })
 
       it('should process the votes', async () => {
         await action.processWalletTransactions(wallet, transactions)
-        expect(action.processVotes).toHaveBeenCalledWith(votes)
+        expect(action.synchronizer.$store.dispatch).toHaveBeenCalledWith('transaction/processVotes', transactions)
+      })
+    })
+
+    describe('processUnconfirmedVotes', () => {
+      let votes
+      beforeEach(() => {
+        votes = [{
+          address: 'test'
+        }, {
+          address: 'test'
+        }]
+
+        action.$client.fetchWalletVotes = jest.fn(() => votes)
+        action.$getters['session/unconfirmedVotes'] = [{
+          address: 'test'
+        }, {
+          address: 'test-2'
+        }]
+      })
+
+      it('should fetch votes for wallets with unconfirmed vote transactions', async () => {
+        await action.processUnconfirmedVotes()
+        expect(action.$client.fetchWalletVotes).toHaveBeenNthCalledWith(1, 'test')
+        expect(action.$client.fetchWalletVotes).toHaveBeenNthCalledWith(2, 'test-2')
+        expect(transactionProcessVotes).toHaveBeenCalledWith('transaction/processVotes', votes)
       })
     })
 

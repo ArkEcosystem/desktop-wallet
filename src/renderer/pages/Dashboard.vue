@@ -52,7 +52,6 @@
 import { DashboardTransactions } from '@/components/Dashboard'
 import { MarketChart, MarketChartHeader } from '@/components/MarketChart'
 import { WalletSidebar, WalletButtonCreate, WalletButtonImport } from '@/components/Wallet'
-import { clone } from 'lodash'
 import store from '@/store'
 
 export default {
@@ -95,9 +94,11 @@ export default {
       },
       set (options) {
         this.$store.dispatch('session/setMarketChartOptions', options)
-        const profile = clone(this.session_profile)
-        profile.marketChartOptions = options
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          marketChartOptions: options
+        })
       }
     }
   },

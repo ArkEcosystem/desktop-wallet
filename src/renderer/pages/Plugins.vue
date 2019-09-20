@@ -75,7 +75,7 @@
 
 <script>
 import electron from 'electron'
-import { clone, sortBy } from 'lodash'
+import sortBy from 'lodash/sortBy'
 import { PLUGINS } from '@config'
 import { PluginEnableConfirmation, PluginTable } from '@/components/Plugin'
 import SvgIcon from '@/components/SvgIcon'
@@ -117,9 +117,11 @@ export default {
       },
       set (sortParams) {
         this.$store.dispatch('session/setPluginSortParams', sortParams)
-        const profile = clone(this.session_profile)
-        profile.pluginSortParams = sortParams
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          pluginSortParams: sortParams
+        })
       }
     }
   },

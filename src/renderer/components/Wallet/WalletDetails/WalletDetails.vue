@@ -38,7 +38,7 @@
           :is="tab.component"
           slot-scope="{ isActive }"
           :is-active="isActive"
-          @on-row-click="onRowClick"
+          @on-row-click-delegate="onRowClickDelegate"
         />
       </MenuTabItem>
     </MenuTab>
@@ -158,7 +158,7 @@
 
 <script>
 import electron from 'electron'
-import { at, clone } from 'lodash'
+import at from 'lodash/at'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
@@ -293,9 +293,11 @@ export default {
       },
       set (votes) {
         this.$store.dispatch('session/setUnconfirmedVotes', votes)
-        const profile = clone(this.session_profile)
-        profile.unconfirmedVotes = votes
-        this.$store.dispatch('profile/update', profile)
+
+        this.$store.dispatch('profile/update', {
+          ...this.session_profile,
+          unconfirmedVotes: votes
+        })
       }
     },
 
@@ -326,6 +328,19 @@ export default {
     async isAwaitingConfirmation (newValue, oldValue) {
       if (!newValue && oldValue) {
         await this.fetchWalletVote()
+      }
+    },
+    selectedDelegate (delegate) {
+      if (delegate) {
+        this.isSelecting = false
+
+        if (this.votedDelegate) {
+          if (delegate.publicKey === this.votedDelegate.publicKey) {
+            this.isUnvoting = true
+          }
+        } else {
+          this.isVoting = true
+        }
       }
     }
   },
@@ -410,10 +425,16 @@ export default {
       this.isSelecting = true
     },
 
-    onCancel () {
+    onCancel (reason) {
       this.isUnvoting = false
       this.isVoting = false
       this.selectedDelegate = null
+
+      // To navigate to the transaction tab instead of the delegate tab when the
+      // user clicks on a link of the transaction show modal
+      if (reason && reason === 'navigateToTransactions') {
+        this.switchToTab('WalletTransactions')
+      }
     },
 
     onCancelSelect () {
@@ -422,18 +443,6 @@ export default {
 
     onConfirmSelect (value) {
       this.selectedDelegate = this.$store.getters['delegate/search'](value)
-
-      if (this.selectedDelegate) {
-        this.isSelecting = false
-
-        if (this.votedDelegate) {
-          if (this.selectedDelegate.publicKey === this.votedDelegate.publicKey) {
-            this.isUnvoting = true
-          }
-        } else {
-          this.isVoting = true
-        }
-      }
     },
 
     onSent (success, transaction) {
@@ -443,7 +452,8 @@ export default {
           {
             id: transaction.id,
             address: this.currentWallet.address,
-            publicKey: transaction.asset.votes[0]
+            publicKey: transaction.asset.votes[0],
+            timestamp: Date.now()
           }
         ]
 
@@ -455,8 +465,8 @@ export default {
       this.isVoting = false
     },
 
-    onRowClick (publicKey) {
-      this.onConfirmSelect(publicKey)
+    onRowClickDelegate (delegate) {
+      this.selectedDelegate = delegate
     }
   }
 }

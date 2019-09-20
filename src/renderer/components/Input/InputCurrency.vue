@@ -255,7 +255,7 @@ export default {
       if (!bigNum.isNaN()) {
         return bigNum.isPositive() && bigNum.isFinite()
       } else {
-        return !!(isString(amount) && amount.match(/^\W*[0-9.,]+([,. _]+[0-9]+)*\W*$/))
+        return !!(isString(amount) && amount.match(/^\s*[0-9.,]+([,. _]+[0-9]+)*\s*$/))
       }
     },
     /**
@@ -383,10 +383,10 @@ export default {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
       isMoreThanMinimum (value) {
-        return !this.minimumAmount.isGreaterThan(value)
+        return !this.minimumAmount.isGreaterThan(this.inputValue)
       },
       isLessThanMaximum (value) {
-        return !this.maximumAmount.isLessThan(value)
+        return !this.maximumAmount.isLessThan(this.inputValue)
       },
       isRequired (value) {
         if (this.required) {

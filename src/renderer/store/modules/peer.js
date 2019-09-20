@@ -215,6 +215,27 @@ export default {
 
   actions: {
     /**
+     * Set peers for specific network.
+     * @param  {Object[]} peers
+     * @param  {Number} networkId
+     * @return {void}
+     */
+    setToNetwork ({ commit }, { peers, networkId }) {
+      commit('SET_PEERS', {
+        peers: peers.map(peer => {
+          try {
+            return PeerModel.deserialize(peer)
+          } catch (error) {
+            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
+          }
+
+          return null
+        }).filter(peer => peer !== null),
+        networkId
+      })
+    },
+
+    /**
      * Set peers for current network.
      * @param  {Object[]} peers
      * @return {void}
@@ -283,12 +304,18 @@ export default {
 
       let peerDiscovery = null
       if (networkLookup[network.id]) {
-        peerDiscovery = await PeerDiscovery.new(networkLookup[network.id])
+        peerDiscovery = await PeerDiscovery.new({
+          networkOrHost: networkLookup[network.id]
+        })
       } else if (getters['current']()) {
         const peerUrl = getBaseUrl(getters['current']())
-        peerDiscovery = await PeerDiscovery.new(`${peerUrl}/api/v2/peers`)
+        peerDiscovery = await PeerDiscovery.new({
+          networkOrHost: `${peerUrl}/api/v2/peers`
+        })
       } else {
-        peerDiscovery = await PeerDiscovery.new(`${network.server}/api/v2/peers`)
+        peerDiscovery = await PeerDiscovery.new({
+          networkOrHost: `${network.server}/api/v2/peers`
+        })
       }
 
       peerDiscovery.withLatency(300)

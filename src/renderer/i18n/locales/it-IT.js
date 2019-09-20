@@ -23,6 +23,7 @@ export default {
     LANGUAGE: 'Lingua Applicazione',
     LEDGER: 'Ledger',
     LEDGER_WALLET: 'Questo è un portafoglio Ledger',
+    LOAD: 'Carica',
     NETWORK: 'Rete',
     NETWORK_NAME: 'Questo nome è fornito dalla rete',
     NEXT: 'Avanti',
@@ -136,6 +137,7 @@ export default {
     TOO_LONG: '\'{0}\' è troppo lungo',
     INVALID_URI: 'URI non valido',
     INVALID_FORMAT: 'Formato non valido',
+    INVALID_TYPE: 'Tipo non valido',
     MAX_LENGTH: 'Max {0}',
     MUST_BE_GREATER_THAN: 'Deve essere maggiore di {0}',
     NOT_MATCH: '\'{0}\' non coincide con \'{1}\'',
@@ -166,10 +168,11 @@ export default {
       LIMIT_REACHED: 'È possibile inserire un massimo di {0} caratteri',
       LIMIT_REMAINING: '{0}/{1} Rimanente'
     },
+    RECIPIENT_DIFFERENT_NETWORK: 'Il destinatario {0} appartiene ad un\'altra rete',
     REQUIRED: '\'{0}\' indispensabile',
     SEND_NOT_ENABLED: 'L\'invio non è abilitato per il portafoglio selezionato',
     WALLET_NOT_ACTIVE: 'Seleziona un portafoglio a apri l\'URI nuovamente',
-    WARNING_BIP39: '\'{0}\' è una frase segreta BIP39',
+    WARNING_BIP39: '\'{0}\' contiene una frase segreta BIP39',
     WARNING_NOT_BIP39: '\'{0}\' non è una frase segreta BIP39'
   },
 
@@ -221,7 +224,7 @@ export default {
   },
 
   APP_FOOTER: {
-    TEXT: 'Fatto con ♥ da Ark'
+    TEXT: 'Fatto con ♥ da ARK'
   },
 
   APP_SIDEMENU: {
@@ -236,7 +239,13 @@ export default {
     SETTINGS: {
       CURRENCY: 'Valuta',
       DARK_MODE: 'Modalità scura',
-      SCREENSHOT_PROTECTION: 'Protezione da screenshot',
+      SCREENSHOT_PROTECTION: {
+        TITLE: 'Protezione da screenshot',
+        QUESTION: 'Sei sicuro di voler disattivare la protezione da screenshot?',
+        NOTE: 'Questa opzione consente alle applicazioni di proteggere il contenuto della schermata, dall\'acquisizione o dalla copia tramite i programmi di cattura schermo',
+        SESSION_ONLY: 'Disabilita solo per questa sessione',
+        PERMANENTLY: 'Disabilita permanentemente'
+      },
       BACKGROUND_UPDATE_LEDGER: 'Aggiorna Ledger in background',
       BROADCAST_PEERS: 'Trasmetti a peer multipli',
       TITLE: 'Settaggi attuali',
@@ -253,14 +262,6 @@ export default {
   APP_SIDEMENU_NOTIFICATION: {
     NOTIFICATION: 'Una nuova versione ({version}) è stata rilasciata. Aggiorna ora!',
     TOOLTIP: 'La nuova versione ({version}) è stata rilasciata!'
-  },
-
-  APP_SIDEMENU_PLUGIN_CONFIRMATION: {
-    QUESTION: 'Sei sicuro di voler abilitare il sistema di plugin?',
-    NO: 'No, tienilo disabilitato',
-    YES: 'Sì, abilitalo',
-    NOTICE: 'ATTENZIONE: questo sistema è attualmente in BETA. Tutti i plugin non ufficiali sono utilizzati a proprio rischio. Al momento non possiamo verificare la sicurezza di qualsiasi plugin di terze parti e tutti i test sulla sicurezza e la scoperta delle vulnerabilità sono responsabilità dell\'autore del plugin. Accettando questo avviso, l\'utente riconosce di utilizzare plugin di terze parti a proprio rischio.',
-    WARNING: 'Si prega di prestare molta attenzione e di procedere con cautela nell\'installare i plugin'
   },
 
   MARKET_CHART: {
@@ -290,12 +291,13 @@ export default {
   },
 
   MARKET_CHART_HEADER: {
-    PRICE: 'Prezzo'
+    PRICE: '{currency} Prezzo',
+    SHOW_CHART: 'Show chart'
   },
 
   BUTTON_CLIPBOARD: {
     DONE: 'Copiato!',
-    COPY_TO_CLIPBOARD: 'Copia negli appunti',
+    COPY_TO_CLIPBOARD: 'Copia {0} negli appunti',
     NOT_SUPPORTED: 'Copiare negli appunti non è supportato'
   },
 
@@ -331,6 +333,7 @@ export default {
   },
 
   INPUT_FEE: {
+    LAST: 'Ultima',
     MINIMUM: 'Minimo',
     AVERAGE: 'Media',
     MAXIMUM: 'Massimo',
@@ -636,6 +639,7 @@ export default {
       ADDRESS: 'Indirizzo',
       NAME: 'Nome',
       VOTING_FOR: 'Vota per',
+      DELEGATE_NOT_ACTIVE: '{delegate} ({rank}) non é un delegato attivo',
       BALANCE: 'Saldo',
       DELETE: 'Rimuovi'
     },
@@ -727,8 +731,9 @@ export default {
   },
 
   PLUGIN_ENABLE_CONFIRMATION: {
-    QUESTION: 'Sei sicuro di voler attivare questo plugin?',
+    QUESTION: 'Sei sicuro di voler attivare il plugin "{name}"?',
     NO: 'No, tenerlo disattivato',
+    NOTICE: 'ATTENZIONE: accettando questa dichiarazione di non responsabilità, confermi di aggiungere al portafoglio desktop un plugin di terze parti, non testato e non verificato. ARK SCIC non si assume alcuna responsabilità per eventuali danni causati da questo plug-in e non si assume alcuna responsabilità di testare i plugin per vulnerabilità di sicurezza. I test di sicurezza e l\'individuazione delle vulnerabilità sono di esclusiva responsabilità dell\'autore del plug-in. ARK SCIC non rilascia alcuna garanzia, espressa o implicita, in merito alle condizioni di commerciabilità o idoneità per scopi particolari di qualsiasi plugin di terze parti. ARK SCIC non rilascia dichiarazioni in merito a sicurezza, validità o non violazione di plug-in di terze parti. Qualsiasi plug-in di terze parti utilizzato viene eseguito a proprio rischio.',
     YES: 'Si, attiva'
   },
 
@@ -799,7 +804,8 @@ export default {
       TIMELOCK_TRANSFER: 'Impossibile creare trasferimento Timelock',
       MULTI_PAYMENT: 'Impossibile creare pagamento multiplo',
       DELEGATE_RESIGNATION: 'La dimissione del Delegato non è andata a buon fine',
-      SAVE_OFFLINE: 'Impossibile salvare il tuo file transazione',
+      SAVE_OFFLINE: 'Impossibile salvare il file transazione',
+      LOAD_FROM_FILE: 'Impossibile caricare il file transazione',
       EXPIRED: 'Transazione scaduta prima di essere proccessata: {transactionId}',
       FEE_TOO_LOW: 'La transazione non può essere inviata perchè la commissione ({fee}) è troppo bassa',
       NOTHING_SENT: 'La transazione non può essere inviata. Controlla la tua connessione di rete o cambia peer'
@@ -822,7 +828,8 @@ export default {
       TIMELOCK_TRANSFER: 'Trasferimento Timelock creato con successo',
       MULTI_PAYMENT: 'Pagamento multiplo creato con successo',
       DELEGATE_RESIGNATION: 'Dimissioni Delegato date con successo',
-      SAVE_OFFLINE: 'File transazione creato con successo in: {path}'
+      SAVE_OFFLINE: 'File transazione creato con successo in: {path}',
+      LOAD_FROM_FILE: 'File transazione caricato con successo'
     },
     VOTE: {
       VOTE_DELEGATE: 'Vote per Delegato {delegate}',
@@ -847,6 +854,7 @@ export default {
     LEDGER_SIGN_WAIT: 'In attesa della firma dal Ledger. Si prega di controllare e firmare la transazione quando si è pronti.',
     LEDGER_SIGN_FAILED: 'Impossibile firmare la transazione con Ledger',
     LEDGER_USER_DECLINED: 'L\'utente ha rifiutato',
+    LOAD_FROM_FILE: 'Carica transazione da file',
     MULTIPLE: 'Multiplo',
     OPEN_IN_EXPLORER: 'Apri in Explorer',
     PASSPHRASE: 'Frase segreta',
@@ -920,6 +928,7 @@ export default {
       SHOW_PUBLIC_KEY: 'Mostra chiave pubblica',
       SHOW_ADDRESS: 'Mostra indirizzo'
     },
+    PENDING_BALANCE: '{amount} compreso 1 transazione non confermata | {amount} compreso {n} transazioni non confermate',
     SECOND_PASSPHRASE_ENABLED: 'Seconda firma abilitata'
   },
 
@@ -965,10 +974,11 @@ export default {
     VOTE: 'Vota',
     USERNAME_EMPTY_ERROR: 'Lo username deve avere almeno 1 carattere',
     USERNAME_ERROR: 'Nessun carattere speciale o maiuscolo consentito',
+    USERNAME_EXISTS: 'Esiste già un delegato con questo username',
     USERNAME_MAX_LENGTH_ERROR: 'Il nome utente deve essere inferiore o uguale a 20 caratteri',
     ALREADY_REGISTERED: 'Questo portafoglio è già registrato come Delegato',
     BLOG: 'Guida al voto',
-    EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete Ark sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
+    EXPLANATION: 'Il voto è opzionale, ma importante, che mantiene la rete ARK sicura. I 51 delegati con il maggior numero di voti della rete sono responsabili della verifica e della forgiatura di transazioni in nuovi blocchi. Questa pagina può essere utilizzata per esprimere il tuo voto per un delegato che vuoi supportare. Ulteriori informazioni sul voto per un delegato sono disponibili al seguente link:',
     VOTE_DELEGATE: 'Vota Delegato {delegate}',
     UNVOTE_DELEGATE: 'Rimuovi voto a Delegato {delegate}',
     CURRENTLY_VOTED: 'Al momento hai votato per {delegate}',

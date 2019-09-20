@@ -57,7 +57,7 @@
             :include="keepAliveRoutes"
             :max="keepAliveRoutes.length"
           >
-            <RouterView class="flex-1 overflow-y-auto" />
+            <RouterView class="App__page flex-1 overflow-y-auto" />
           </KeepAlive>
         </div>
 
@@ -73,6 +73,7 @@
       />
 
       <PortalTarget
+        :slot-props="{ setBlurFilter }"
         name="modal"
         multiple
         @change="onPortalChange"
@@ -97,7 +98,7 @@
 import '@/styles/style.css'
 import fs from 'fs'
 import CleanCss from 'clean-css'
-import { isEmpty, pull, uniq } from 'lodash'
+import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
@@ -319,8 +320,8 @@ export default {
       }
     },
 
-    onPortalChange (options) {
-      this.hasBlurFilter = !isEmpty(options)
+    onPortalChange (isActive) {
+      this.hasBlurFilter = isActive
     },
 
     __watchProcessURL () {
@@ -343,6 +344,10 @@ export default {
     closeUriTransaction () {
       this.isUriTransactionOpen = false
       this.uriTransactionSchema = {}
+    },
+
+    setBlurFilter (isActive) {
+      this.hasBlurFilter = isActive
     },
 
     setIntroDone () {
@@ -412,5 +417,11 @@ export default {
 }
 .App__main.w-screen-adjusted {
   width: calc(100vw + 1rem);
+}
+@media (min-width: 768px) {
+  .App__page {
+    @apply .min-h-full;
+    max-height: calc(100vh - 5rem);
+  }
 }
 </style>

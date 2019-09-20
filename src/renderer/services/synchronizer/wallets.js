@@ -1,4 +1,4 @@
-import { clone, find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
+import { find, groupBy, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -118,12 +118,14 @@ class Action {
     if (this.allWallets.length) {
       await this.sync()
     }
-
+    this.$dispatch('transaction/clearUnconfirmedVotes')
     const expiredTransactions = await this.$dispatch('transaction/clearExpired')
     for (const transactionId of expiredTransactions) {
       this.emit(`transaction:${transactionId}:expired`)
       this.$info(this.$t('TRANSACTION.ERROR.EXPIRED', { transactionId: truncateMiddle(transactionId) }))
     }
+
+    await this.processUnconfirmedVotes()
   }
 
   /**
@@ -280,10 +282,7 @@ class Action {
         profileId: wallet.profileId
       })
 
-      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
-      if (votes.length) {
-        this.processVotes(votes)
-      }
+      this.$dispatch('transaction/processVotes', transactions)
 
       const latestTransaction = maxBy(transactions, 'timestamp')
       const latestAt = latestTransaction.timestamp
@@ -302,18 +301,19 @@ class Action {
     }
   }
 
-  // TODO update only 1 time
-  processVotes (votes) {
-    const ids = votes.map(vote => vote.id)
-    const filteredVotes = this.$getters['session/unconfirmedVotes'].filter(vote => {
-      return !ids.includes(vote.id)
-    })
+  /**
+   * Fetch all votes for wallets with unconfirmed vote transactions.
+   *
+   * @return {void}
+   */
+  async processUnconfirmedVotes () {
+    const unconfirmedVotes = this.$getters['session/unconfirmedVotes']
+    const addresses = map(uniqBy(unconfirmedVotes, 'address'), 'address')
 
-    this.$dispatch('session/setUnconfirmedVotes', filteredVotes)
-
-    const profile = clone(this.profile)
-    profile.unconfirmedVotes = filteredVotes
-    this.$dispatch('profile/update', profile)
+    for (const address of addresses) {
+      const votes = await this.$client.fetchWalletVotes(address)
+      await this.$dispatch('transaction/processVotes', votes)
+    }
   }
 
   // TODO use the eventBus to display transactions
@@ -335,7 +335,7 @@ class Action {
           translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
           options: {
             address: truncateMiddle(wallet.address),
-            username: transaction.assets.delegate.username
+            username: transaction.asset.delegate.username
           }
         }
         break
