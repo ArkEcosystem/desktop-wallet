@@ -15,6 +15,7 @@ export default {
     name: null,
     profileId: null,
     theme: null,
+    pluginManagerLayout: null,
     walletLayout: null,
     walletSidebarSortParams: null,
     walletSidebarFilters: null,
@@ -62,6 +63,7 @@ export default {
     isMarketChartEnabled: state => state.isMarketChartEnabled,
     marketChartOptions: state => state.marketChartOptions,
     theme: state => state.theme,
+    pluginManagerLayout: state => state.pluginManagerLayout,
     walletLayout: state => state.walletLayout,
     walletSidebarSortParams: state => state.walletSidebarSortParams,
     walletSidebarFilters: state => state.walletSidebarFilters,
@@ -133,6 +135,10 @@ export default {
       state.theme = theme
     },
 
+    SET_PLUGIN_MANAGER_LAYOUT (state, pluginManagerLayout) {
+      state.pluginManagerLayout = pluginManagerLayout
+    },
+
     SET_WALLET_LAYOUT (state, walletLayout) {
       state.walletLayout = walletLayout
     },
@@ -197,6 +203,7 @@ export default {
       state.bip39Language = 'english'
       state.name = null
       state.theme = 'light'
+      state.pluginManagerLayout = 'grid'
       state.walletLayout = 'grid'
       state.walletSidebarSortParams = { field: 'name', type: 'asc' }
       state.walletSidebarFilters = {}
@@ -226,6 +233,7 @@ export default {
       state.bip39Language = value.bip39Language
       state.name = value.name
       state.theme = value.theme
+      state.pluginManagerLayout = value.pluginManagerLayout
       state.walletLayout = value.walletLayout
       state.walletSidebarSortParams = value.walletSidebarSortParams
       state.walletSidebarFilters = value.walletSidebarFilters
@@ -327,6 +335,10 @@ export default {
 
     setTheme ({ commit }, value) {
       commit('SET_THEME', value)
+    },
+
+    setPluginManagerLayout ({ commit }, value) {
+      commit('SET_PLUGIN_MANAGER_LAYOUT', value)
     },
 
     setWalletLayout ({ commit }, value) {

@@ -605,13 +605,9 @@ export default {
       this.$set(this.modified, propertyName, value)
 
       if (this.isCurrentProfile) {
-        const action = `session/set${this.capitalizeFirst(propertyName)}`
+        const action = `session/set${this.strings_capitalizeFirst(propertyName)}`
         await this.$store.dispatch(action, value)
       }
-    },
-
-    capitalizeFirst (value) {
-      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   },
 

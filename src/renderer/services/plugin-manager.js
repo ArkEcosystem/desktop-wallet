@@ -1,13 +1,21 @@
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
+import dayjs from 'dayjs'
 import { ipcRenderer } from 'electron'
-import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import PluginWebsocket from '@/services/plugin-manager/websocket'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 import WalletComponents from '@/services/plugin-manager/wallet-components'
+
+import { NpmAdapter } from '@/services/plugin-manager/adapters'
+import sanitizeConfig from './plugin-manager/sanitize'
+
+const adapters = {
+  NpmAdapter
+}
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -31,6 +39,10 @@ class PluginManager {
     ]
   }
 
+  adapter (adapter = PLUGINS.defaultAdapter) {
+    return new adapters[upperFirst(adapter) + 'Adapter']()
+  }
+
   setVue (vue) {
     this.vue = vue
   }
@@ -38,10 +50,8 @@ class PluginManager {
   async init (app) {
     this.app = app
 
-    await this.app.$store.dispatch('plugin/init')
-    await this.fetchPluginsFromPath(
-      process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
-    )
+    await this.app.$store.dispatch('plugin/reset')
+    await this.fetchPlugins()
 
     this.hasInit = true
 
@@ -617,6 +627,35 @@ class PluginManager {
     return JSON.parse(JSON.stringify(data))
   }
 
+  async fetchPlugins (force = false) {
+    const lastFetched = this.app.$store.getters['plugin/lastFetched']
+
+    if (force || dayjs().isAfter(dayjs(lastFetched).add(
+      PLUGINS.updateInterval.value, PLUGINS.updateInterval.unit
+    ))) {
+      await this.fetchPluginsFromAdapter()
+    }
+
+    await this.fetchPluginsFromPath(
+      process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
+    )
+  }
+
+  async fetchPluginsFromAdapter () {
+    let plugins = await this.adapter().all()
+
+    plugins = await Promise.all(plugins.map(async config => {
+      return sanitizeConfig(config)
+    }))
+
+    plugins = plugins.reduce((acc, plugin) => {
+      acc[plugin.id] = plugin
+      return acc
+    }, {})
+
+    this.app.$store.dispatch('plugin/setAvailable', plugins)
+  }
+
   async fetchPluginsFromPath (pluginsPath) {
     fs.ensureDirSync(pluginsPath)
 
@@ -642,7 +681,7 @@ class PluginManager {
     this.validatePlugin(pluginPath)
 
     let config = JSON.parse(fs.readFileSync(`${pluginPath}/package.json`))
-    config = this.sanitizeConfig(config)
+    config = await sanitizeConfig(config, pluginPath)
 
     if (!config.id) {
       throw new Error('Plugin ID not found')
@@ -654,7 +693,7 @@ class PluginManager {
 
     const fullPath = pluginPath.substring(0, 1) === '/' ? pluginPath : path.resolve(pluginPath)
 
-    await this.app.$store.dispatch('plugin/setAvailable', {
+    await this.app.$store.dispatch('plugin/setInstalled', {
       config,
       fullPath
     })
@@ -831,17 +870,6 @@ class PluginManager {
       if (!fs.existsSync(path.resolve(pluginPath, pathCheck))) {
         throw new Error(`'${pathCheck}' does not exist`)
       }
-    }
-  }
-
-  sanitizeConfig (config) {
-    return {
-      id: config.name,
-      name: config.title,
-      description: config.description,
-      version: config.version,
-      permissions: uniq(config.permissions).sort(),
-      urls: config.urls || []
     }
   }
 }

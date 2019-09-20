@@ -1,6 +1,10 @@
 <template>
   <button
-    v-tooltip="{ content: title, trigger: 'hover' }"
+    v-tooltip="{
+      content: tooltipContent,
+      trigger: 'hover',
+      ...(tooltipPlacement && { placement: tooltipPlacement })
+    }"
     :class="[
       withoutBackground ? 'hover:bg-transparent' : `py-2 px-4 rounded ${colorClass ? colorClass : 'bg-theme-button-light text-theme-button-light-text'}`
     ]"
@@ -65,10 +69,30 @@ export default {
       required: false,
       default: ''
     },
+    alternativeTitle: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    tooltipPlacement: {
+      type: String,
+      required: false,
+      default: ''
+    },
     viewBox: {
       type: String,
       required: false,
-      default: '0 0 16 14'
+      default: '0 0 15 14'
+    }
+  },
+
+  computed: {
+    tooltipContent () {
+      if (this.isRefreshing) {
+        return this.alternativeTitle
+      }
+
+      return this.title
     }
   },
 

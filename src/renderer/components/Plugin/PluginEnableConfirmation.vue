@@ -1,6 +1,6 @@
 <template>
   <ModalConfirmation
-    :question="$t('PLUGIN_ENABLE_CONFIRMATION.QUESTION', { name: plugin.name })"
+    :question="$t('PLUGIN_ENABLE_CONFIRMATION.QUESTION', { title: plugin.title })"
     :note="$t('PLUGIN_ENABLE_CONFIRMATION.NOTICE')"
     :cancel-button="$t('PLUGIN_ENABLE_CONFIRMATION.NO')"
     :continue-button="$t('PLUGIN_ENABLE_CONFIRMATION.YES')"

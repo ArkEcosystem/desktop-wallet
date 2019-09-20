@@ -101,6 +101,10 @@ export default new BaseModel({
       type: 'array',
       format: data => data.unconfirmedVotes || []
     },
+    pluginManagerLayout: {
+      type: 'string',
+      format: data => data.pluginManagerLayout || 'grid'
+    },
     walletLayout: {
       type: 'string',
       format: data => data.walletLayout || 'grid'

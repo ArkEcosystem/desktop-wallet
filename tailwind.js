@@ -50,6 +50,8 @@ let colors = {
   'theme-page-instructions-background': 'var(--theme-page-instructions-background)',
   'theme-modal': 'var(--theme-modal)',
 
+  'theme-header-text': 'var(--theme-header-text)',
+
   'theme-intro-gradient-1': 'var(--theme-intro-gradient-1)',
   'theme-intro-gradient-2': 'var(--theme-intro-gradient-2)',
 
@@ -100,6 +102,7 @@ let colors = {
   'theme-chart-price': 'var(--theme-chart-price)',
 
   'theme-button': 'var(--theme-button)',
+  'theme-button-active': 'var(--theme-button-active)',
   'theme-button-text': 'var(--theme-button-text)',
   'theme-button-light': 'var(--theme-button-light)',
   'theme-button-light-text': 'var(--theme-button-light-text)',
@@ -276,10 +279,12 @@ module.exports = {
     'sm': '576px',
     'md': '768px',
     'max-md': { max: '991px' },
+    'min-lg': { min: '992px' },
     'lg': '992px',
     'minmax-lg': { min: '992px', max: '1199px' },
     'xl': '1200px',
-    'xxl': '1375px'
+    'xxl': '1375px',
+    'min-xxl': { min: '1375px' }
   },
 
   /*
@@ -500,6 +505,7 @@ module.exports = {
     default: '1px',
     '0': '0',
     '2': '2px',
+    '3': '3px', // Added
     '4': '4px',
     '8': '8px'
   },
@@ -668,6 +674,7 @@ module.exports = {
   minWidth: {
     '0': '0',
     '1/4': '25%', // Added
+    '48': '12rem', // Added
     'full': '100%'
   },
 

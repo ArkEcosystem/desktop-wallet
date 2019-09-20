@@ -1,19 +1,44 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
-import { cloneDeep } from 'lodash'
+import { cloneDeep, uniqBy } from 'lodash'
 
 export default {
   namespaced: true,
 
   state: {
-    loaded: {},
     available: {},
+    installed: {},
     enabled: {},
-    pluginOptions: {}
+    loaded: {},
+    pluginOptions: {},
+    lastFetched: null
   },
 
   getters: {
+    lastFetched: state => state.lastFetched,
+
+    all: (state, getters) => {
+      return uniqBy([
+        ...(Object.values(getters['installed']).map(plugin => plugin.config)),
+        ...Object.values(getters['available'])
+      ], 'id')
+    },
+
     available: state => state.available,
+
+    installed: state => state.installed,
+
+    byCategory: (state, getters) => category => {
+      return getters['available'].filter(plugin => {
+        return plugin.mainCategory === category
+      })
+    },
+
+    byName: (state, getters) => name => {
+      return getters['available'].find(plugin => {
+        return plugin.name === name
+      })
+    },
 
     loaded: (state, _, __, rootGetters) => {
       const profileId = rootGetters['session/profileId']
@@ -33,7 +58,7 @@ export default {
       return state.enabled[profileId]
     },
 
-    isAvailable: state => pluginId => !!state.available[pluginId],
+    isInstalled: state => pluginId => !!state.installed[pluginId],
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
@@ -146,11 +171,20 @@ export default {
   mutations: {
     RESET_PLUGINS (state, plugin) {
       state.loaded = {}
-      state.available = {}
+      state.installed = {}
     },
 
-    SET_AVAILABLE_PLUGIN (state, plugin) {
-      Vue.set(state.available, plugin.config.id, plugin)
+    SET_LAST_FETCHED (state, timestamp) {
+      state.lastFetched = timestamp
+    },
+
+    SET_AVAILABLE_PLUGINS (state, plugins) {
+      state.available = plugins
+      state.lastFetched = Date.now()
+    },
+
+    SET_INSTALLED_PLUGIN (state, plugin) {
+      Vue.set(state.installed, plugin.config.id, plugin)
     },
 
     SET_LOADED_PLUGIN (state, data) {
@@ -210,7 +244,7 @@ export default {
   },
 
   actions: {
-    async init ({ commit, dispatch }) {
+    async reset ({ commit, dispatch }) {
       commit('RESET_PLUGINS')
     },
 
@@ -226,7 +260,7 @@ export default {
       }
 
       for (const pluginId of Object.keys(state.enabled[profile.id])) {
-        if (!getters['isAvailable'](pluginId)) {
+        if (!getters['isInstalled'](pluginId)) {
           continue
         }
 
@@ -264,8 +298,17 @@ export default {
       }
     },
 
-    setAvailable ({ commit, rootGetters }, plugin) {
-      commit('SET_AVAILABLE_PLUGIN', plugin)
+    setAvailable ({ commit, getters }, plugins) {
+      commit('SET_AVAILABLE_PLUGINS', plugins)
+      // commit('SET_AVAILABLE_PLUGINS', uniqBy([
+      //   ...plugins,
+      //   ...getters['available']
+      // ], 'name'))
+      commit('SET_LAST_FETCHED', Date.now())
+    },
+
+    setInstalled ({ commit, rootGetters }, plugin) {
+      commit('SET_INSTALLED_PLUGIN', plugin)
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {

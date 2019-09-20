@@ -13,7 +13,7 @@
 import Identicon from '@/components/utils/Identicon'
 
 export default {
-  name: 'WalletIdenticon',
+  name: 'PluginIdenticon',
 
   components: {
     Identicon

@@ -1,7 +1,16 @@
 import moment from 'moment'
+import prettyBytes from 'pretty-bytes'
 
 export default {
   methods: {
+    formatter_bytes (value) {
+      if (!value) {
+        return
+      }
+
+      return prettyBytes(value)
+    },
+
     formatter_percentage (value) {
       return `${this.$n(value, { minimumFractionDigits: 2 })}%`
     },
