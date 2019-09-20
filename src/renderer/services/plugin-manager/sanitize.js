@@ -12,10 +12,19 @@ const sanitizeConfig = async (config, pluginPath = null) => {
     categories: sanitizeCategories(config),
     description: config.description,
     version: config.version,
+    minVersion: sanitizeMinVersion(config),
     permissions: sanitizePermissions(config),
     urls: sanitizeUrls(config),
     homepage: config.homepage,
     size: await sanitizeSize(config, pluginPath) || 0
+  }
+}
+
+const getWalletOption = (config, option) => {
+  try {
+    return config['desktop-wallet'][option]
+  } catch (error) {
+    return null
   }
 }
 
@@ -55,11 +64,9 @@ const sanitizeAuthor = config => {
 }
 
 const sanitizeCategories = config => {
-  let categories
+  let categories = getWalletOption(config, 'categories')
 
-  try {
-    categories = config['desktop-wallet'].categories
-  } catch (error) {
+  if (!categories) {
     if (config.categories && config.categories.length) {
       categories = config.categories
     } else {
@@ -71,28 +78,17 @@ const sanitizeCategories = config => {
   return categories.length ? categories : ['other']
 }
 
+const sanitizeMinVersion = config => {
+  return getWalletOption(config, 'minVersion') || config.minVersion || null
+}
+
 const sanitizePermissions = config => {
-  let permissions
-
-  try {
-    permissions = config['desktop-wallet'].permissions
-  } catch (error) {
-    permissions = config.permissions
-  }
-
+  const permissions = getWalletOption(config, 'permissions') || config.permissions || []
   return uniq(permissions).sort()
 }
 
 const sanitizeUrls = config => {
-  let urls
-
-  try {
-    urls = config['desktop-wallet'].urls
-  } catch (error) {
-    urls = config.urls
-  }
-
-  return urls || []
+  return getWalletOption(config, 'urls') || config.urls || []
 }
 
 const sanitizeSize = async (config, pluginPath) => {
