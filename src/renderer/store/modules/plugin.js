@@ -29,7 +29,8 @@ export default {
     installed: state => state.installed,
 
     byCategory: (state, getters) => category => {
-      return getters['all'].filter(plugin => {
+      const plugins = getters['all']
+      return category === 'all' ? plugins : plugins.filter(plugin => {
         return plugin.categories.includes(category)
       })
     },

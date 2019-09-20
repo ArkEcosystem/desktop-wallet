@@ -80,8 +80,8 @@
                   <span>Category</span>
                   <span
                     v-tooltip="categoryTooltip"
-                  />
-                    {{ $t('PAGES.PLUGIN_MANAGER.CATEGORIES.${category[0].toUpperCase()}') }}
+                  >
+                    {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${plugin.categories[0].toUpperCase()}`) }}
                   </span>
                 </div>
                 <div>
