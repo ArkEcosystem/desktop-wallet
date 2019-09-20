@@ -102,7 +102,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import {
   PaginationNavigationButton,
   PaginationPageInput,
@@ -258,7 +258,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .Pagination {
   @apply .flex .flex-col .flex-no-wrap .justify-center;
 }

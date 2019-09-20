@@ -28,7 +28,7 @@
   </button>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
   name: 'PaginationSearchButton',
 
@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .Pagination__Button--search {
   @apply .relative .text-theme-button-text .p-3 .cursor-pointer .flex .flex-no-wrap .items-center;;
 }

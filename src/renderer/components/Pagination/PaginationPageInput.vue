@@ -60,7 +60,7 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import { mapGetters } from 'vuex'
 
 export default {
@@ -141,7 +141,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .Pagination__Input {
   @apply .flex .items-center .absolute .pin .z-10 .bg-theme-button .px-3 .rounded;
 }
