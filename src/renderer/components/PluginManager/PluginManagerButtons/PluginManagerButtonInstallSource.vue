@@ -35,7 +35,7 @@ export default {
   },
 
   methods: {
-    emitClick () {
+    emitInstallSource () {
       this.$emit('install-source', this.source)
     }
   }
