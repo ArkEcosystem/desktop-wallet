@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
-import { cloneDeep, uniqBy } from 'lodash'
+import { cloneDeep, sortBy, uniqBy } from 'lodash'
 
 export default {
   namespaced: true,
@@ -18,10 +18,10 @@ export default {
     lastFetched: state => state.lastFetched,
 
     all: (state, getters) => {
-      return uniqBy([
+      return sortBy(uniqBy([
         ...(Object.values(getters['installed']).map(plugin => plugin.config)),
         ...Object.values(getters['available'])
-      ], 'id')
+      ], 'id'), 'title')
     },
 
     available: state => state.available,
@@ -29,8 +29,8 @@ export default {
     installed: state => state.installed,
 
     byCategory: (state, getters) => category => {
-      return getters['available'].filter(plugin => {
-        return plugin.mainCategory === category
+      return getters['all'].filter(plugin => {
+        return plugin.categories.includes(category)
       })
     },
 

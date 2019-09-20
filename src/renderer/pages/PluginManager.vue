@@ -168,12 +168,8 @@ export default {
       }
     },
 
-    allPlugins () {
-      return this.$store.getters['plugin/all']
-    },
-
     plugins () {
-      return this.$store.getters['plugin/all']
+      return this.$store.getters['plugin/byCategory'](this.activeCategory)
     },
 
     showPagination () {
@@ -193,25 +189,6 @@ export default {
         })
       }
     }
-
-    // OLD
-
-    // plugins () {
-    //   const plugins = []
-    //   const availablePlugins = this.$store.getters['plugin/available']
-    //   for (const pluginData of Object.values(availablePlugins)) {
-    //     plugins.push({
-    //       id: pluginData.config.id,
-    //       version: pluginData.config.version,
-    //       name: pluginData.config.name,
-    //       description: pluginData.config.description,
-    //       permissions: pluginData.config.permissions,
-    //       isEnabled: this.$store.getters['plugin/isEnabled'](pluginData.config.id)
-    //     })
-    //   }
-
-    //   return sortBy(plugins, ['id'])
-    // },
   },
 
   methods: {
