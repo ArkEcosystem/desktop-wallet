@@ -78,7 +78,11 @@
               <div class="PluginModal__container__content__stats">
                 <div>
                   <span>Category</span>
-                  {{ category }}
+                  <span
+                    v-tooltip="categoryTooltip"
+                  />
+                    {{ $t('PAGES.PLUGIN_MANAGER.CATEGORIES.${category[0].toUpperCase()}') }}
+                  </span>
                 </div>
                 <div>
                   <span>URL</span>
@@ -175,9 +179,17 @@ export default {
       return this.$store.getters['plugin/isInstalled'](this.plugin.id)
     },
 
-    category () {
-      const category = this.plugin.categories.length ? this.plugin.categories[0] : 'other'
-      return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`)
+    categoryTooltip () {
+      if (this.plugin.categories.length <= 1) {
+        return
+      }
+
+      return {
+        content: this.plugin.categories.map(category => {
+          return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${category.toUpperCase()}`)
+        }).join('\n'),
+        placement: 'right'
+      }
     },
 
     url () {
@@ -269,11 +281,11 @@ export default {
 .PluginModal .PluginModal__container__content__stats > div:not(:last-child) {
   @apply pr-6
 }
-.PluginModal .PluginModal__container__content__stats > div span {
-  @apply text-theme-page-text-light mb-1
-}
 .PluginModal .PluginModal__container__content__stats > div:last-child {
   @apply border-none
+}
+.PluginModal .PluginModal__container__content__stats > div span:first-child {
+  @apply text-theme-page-text-light mb-1
 }
 .PluginModal__container__footer--warning {
   @apply px-10 py-8 bg-yellow-lighter text-grey-darkest rounded-lg mt-2 text-sm;
