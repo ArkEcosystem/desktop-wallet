@@ -520,7 +520,9 @@ export default {
             }
           }
           this.form.ticker = tokenFound ? network.token : ''
-          this.form.version = network.version.toString()
+          if (tokenFound && network.version) {
+            this.form.version = network.version.toString()
+          }
 
           this.showFull = true
           this.hasFetched = true
