@@ -1,0 +1,33 @@
+name: Unit
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Update System
+        run: sudo apt-get update
+      - name: Ledger
+        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+      - name: Build
+        run: yarn build
+      - name: Test
+        run: yarn test:unit --ci --coverage --maxWorkers 4
+      - name: Codecov
+        run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+
+        env:
+          CI: true
