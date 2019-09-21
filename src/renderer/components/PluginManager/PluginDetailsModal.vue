@@ -53,12 +53,35 @@
                   </span>
                 </div>
 
-                <div>
+                <div class="PluginDetailsModal__header__actions">
                   <ButtonGeneric
                     v-if="!isInstalled"
                     label="Install"
+                    class="m-0"
                     @click="emitInstall"
                   />
+                  <template v-else>
+                    <span
+                      v-tooltip="{
+                        content: updateTooltipContent,
+                        placement: 'bottom'
+                      }"
+                    >
+                      <ButtonIconGeneric
+                        icon="update"
+                        view-box="0 0 14 15"
+                        class="m-0"
+                        :disabled="!isUpdateAvailable"
+                        @click="emitUpdate"
+                      />
+                    </span>
+                    <ButtonIconGeneric
+                      icon="trash"
+                      view-box="0 0 14 15"
+                      class="ml-2 mr-0"
+                      @click="emitRemove"
+                    />
+                  </template>
                 </div>
               </div>
             </section>
@@ -80,6 +103,7 @@
                   <span>Category</span>
                   <span
                     v-tooltip="categoryTooltip"
+                    class="mr-auto pr-1"
                   >
                     {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${plugin.categories[0].toUpperCase()}`) }}
                   </span>
@@ -88,10 +112,10 @@
                   <span>URL</span>
                   <button
                     class="flex items-center text-blue"
-                    :disabled="!url"
-                    @click="openUrl"
+                    :disabled="!homepageLink"
+                    @click="openExternal(plugin.homepage)"
                   >
-                    {{ url || 'n.a.' }}
+                    {{ homepageLink || 'n.a.' }}
                     <SvgIcon
                       name="open-external"
                       view-box="0 0 12 12"
@@ -127,8 +151,9 @@
 </template>
 
 <script>
+import semver from 'semver'
 import domain from 'getdomain'
-import { ButtonClose, ButtonGeneric } from '@/components/Button'
+import { ButtonClose, ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -138,6 +163,7 @@ export default {
   components: {
     ButtonClose,
     ButtonGeneric,
+    ButtonIconGeneric,
     PluginLogo,
     SvgIcon
   },
@@ -179,6 +205,23 @@ export default {
       return this.$store.getters['plugin/isInstalled'](this.plugin.id)
     },
 
+    isUpdateAvailable () {
+      return semver.lt(this.plugin.version, this.latestVersion)
+    },
+
+    latestVersion () {
+      const availablePlugin = this.$store.getters['plugin/availableById'](this.plugin.id)
+      return availablePlugin ? availablePlugin.version : this.plugin.version
+    },
+
+    updateTooltipContent () {
+      if (this.isUpdateAvailable) {
+        return this.$t('PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE', { version: this.latestVersion })
+      }
+
+      return this.$t('PAGES.PLUGIN_MANAGER.UPDATE.NOT_AVAILABLE')
+    },
+
     categoryTooltip () {
       if (this.plugin.categories.length <= 1) {
         return
@@ -192,16 +235,12 @@ export default {
       }
     },
 
-    url () {
-      let url
-
+    homepageLink () {
       try {
-        url = domain.get(this.plugin.homepage)
+        return domain.get(this.plugin.homepage)
       } catch (error) {
         return null
       }
-
-      return url
     }
   },
 
@@ -226,14 +265,22 @@ export default {
       this.$emit('install', this.plugin.id)
     },
 
+    emitUpdate () {
+      this.$emit('update', this.plugin.id)
+    },
+
+    emitRemove () {
+      this.$emit('remove', this.plugin.id)
+    },
+
     onEscKey (event) {
       if (event.keyCode === 27) {
         this.emitClose()
       }
     },
 
-    openUrl () {
-      this.electron_openExternal(this.plugin.url)
+    openExternal (target) {
+      this.electron_openExternal(target)
     }
   }
 }
@@ -264,6 +311,9 @@ export default {
 
 .PluginDetailsModal__header__details {
   @apply flex items-center mt-1 text-theme-page-text-light;
+}
+.PluginDetailsModal__header__actions {
+  @apply flex items-center
 }
 
 .PluginModal .PluginModal__container__content {

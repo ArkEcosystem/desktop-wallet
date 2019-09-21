@@ -26,6 +26,16 @@ export default {
 
     available: state => state.available,
 
+    availableById: (state, getters) => id => {
+      const plugins = Object.values(getters['available'])
+
+      if (!plugins) {
+        return null
+      }
+
+      return plugins.find(plugin => plugin.id)
+    },
+
     installed: state => state.installed,
 
     byCategory: (state, getters) => category => {

@@ -555,6 +555,10 @@ export default {
       RELOADING: 'The repository is being reloaded',
       CLICK_TO_RELOAD: 'Reload the plugin repository',
       ALREADY_INSTALLED: 'You\'ve already installed this plugin',
+      UPDATE: {
+        AVAILABLE: 'Update to latest version (v{version})',
+        NOT_AVAILABLE: 'No updates available'
+      },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.'
     },
 
