@@ -941,6 +941,7 @@ export default {
       SHOW_PUBLIC_KEY: 'Show public key',
       SHOW_ADDRESS: 'Show address'
     },
+    PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
   },
 

@@ -45,7 +45,8 @@ describe('WalletHeadingInfo component', () => {
             'network/byToken': jest.fn(),
             'network/bySymbol': jest.fn(),
             'session/network': network,
-            'session/currency': alternativeCurrency
+            'session/currency': alternativeCurrency,
+            'transaction/byAddress': jest.fn(() => [])
           }
         },
         session_network: network,
