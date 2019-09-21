@@ -22,8 +22,6 @@ jobs:
         run: sudo apt-get install libudev-dev libusb-1.0-0-dev
       - name: Install
         run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
-      - name: Build
-        run: yarn build
       - name: Test
         run: yarn test:unit --ci --coverage --maxWorkers 4
       - name: Codecov
