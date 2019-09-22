@@ -1,6 +1,11 @@
 name: Unit
 
-on: [push, pull_request]
+on:
+    push:
+        branches:
+            - '**'
+    pull_request:
+        types: [opened]
 
 jobs:
   build:
