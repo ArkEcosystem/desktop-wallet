@@ -86,13 +86,6 @@
           @on-sort-change="onSortChange"
           @show-details="toggleDetailsModal"
         />
-
-        <Pagination
-          v-if="showPagination"
-          :meta="meta"
-          :current-page="currentPage"
-          @page-change="onPageChange"
-        />
       </div>
     </div>
 
@@ -109,7 +102,6 @@
 <script>
 // import sortBy from 'lodash/sortBy'
 import { ButtonLayout, ButtonReload } from '@/components/Button'
-import { Pagination } from '@/components/Pagination'
 import {
   PluginDetailsModal,
   PluginManagerGrid,
@@ -125,7 +117,6 @@ export default {
   components: {
     ButtonLayout,
     ButtonReload,
-    Pagination,
     PluginDetailsModal,
     PluginManagerGrid,
     PluginManagerSearchBar,
@@ -170,10 +161,6 @@ export default {
 
     plugins () {
       return this.$store.getters['plugin/byCategory'](this.activeCategory)
-    },
-
-    showPagination () {
-      return false
     },
 
     sortParams: {
