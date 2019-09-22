@@ -46,6 +46,14 @@ export default {
       }
 
       return []
+    },
+    byProfileId: (state, getters, __, rootGetters) => profileId => {
+      const profile = rootGetters['profile/byId'](profileId)
+      const network = rootGetters['session/network']
+
+      return getters['wallets'].filter(wallet => {
+        return wallet.profileId === profileId && profile.networkId === network.id
+      })
     }
   },
 
@@ -53,7 +61,7 @@ export default {
     RESET (state) {
       state.slip44 = null
       state.isConnected = false
-      state.wallets = []
+      state.wallets = {}
       state.loadingProcesses = {}
     },
     SET_SLIP44 (state, slip44) {
@@ -157,7 +165,7 @@ export default {
       commit('SET_CONNECTED', false)
       await ledgerService.disconnect()
       eventBus.emit('ledger:disconnected')
-      commit('SET_WALLETS', [])
+      commit('SET_WALLETS', {})
       dispatch('ensureConnection')
     },
 
@@ -234,8 +242,8 @@ export default {
       const processId = cryptoLibrary.randomBytes(12).toString('base64')
 
       if (clearFirst) {
-        commit('SET_WALLETS', [])
-        eventBus.emit('ledger:wallets-updated', [])
+        commit('SET_WALLETS', {})
+        eventBus.emit('ledger:wallets-updated', {})
       } else if (currentWallets.length) {
         quantity = currentWallets.length
       }
