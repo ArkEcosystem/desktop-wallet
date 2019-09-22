@@ -742,22 +742,20 @@ class PluginManager {
           return timerArrays.timeouts
         },
 
-        setInterval (...args) {
-          const functionArgs = args.splice(2)
+        setInterval (method, interval, ...args) {
           const id = setInterval(function () {
-            args[0](...functionArgs)
-          }, args[1])
+            method(...args)
+          }, interval)
           timerArrays.intervals.push(id)
           return id
         },
 
-        setTimeout (...args) {
-          const functionArgs = args.splice(2)
+        setTimeout (method, interval, ...args) {
           const id = setTimeout(function () {
-            args[0](...functionArgs)
-          }, args[1])
+            method(...args)
+          }, interval)
           timerArrays.timeouts.push(id)
-          timerArrays.timeoutWatchdog[id] = setTimeout(() => timers.clearTimeout(id), args[1])
+          timerArrays.timeoutWatchdog[id] = setTimeout(() => timers.clearTimeout(id), interval)
           return id
         }
       }
