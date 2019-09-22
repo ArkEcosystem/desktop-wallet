@@ -40,8 +40,8 @@
             </div>
           </div>
 
-          <p>
-            {{ plugin.description }}
+          <p class="leading-tight">
+            {{ plugin.description | truncate(100) }}
           </p>
         </div>
       </div>

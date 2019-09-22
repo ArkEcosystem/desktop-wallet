@@ -87,7 +87,7 @@
             </section>
 
             <section class="PluginModal__container__content">
-              <p class="mb-4">
+              <p class="mb-4 leading-tight">
                 {{ plugin.description }}
               </p>
 
