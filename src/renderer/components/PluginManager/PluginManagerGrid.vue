@@ -106,16 +106,4 @@ export default {
     @apply pb-0 border-none;
   }
 }
-@screen min-xxl {
-  .PluginManagerGrid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .PluginManagerGrid__plugin:nth-child(2n+1):nth-last-child(-n+2) {
-    @apply pb-10 border-b border-dashed;
-  }
-  .PluginManagerGrid__plugin:nth-child(3n+1):nth-last-child(-n+3),
-  .PluginManagerGrid__plugin:nth-child(3n+1):nth-last-child(-n+3) ~ .PluginManagerGrid__plugin {
-    @apply pb-0 border-none;
-  }
-}
 </style>
