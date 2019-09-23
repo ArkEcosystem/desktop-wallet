@@ -126,7 +126,7 @@ class PluginManager {
       await this.unloadThemes(plugin, profileId)
     }
 
-    await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id)
+    await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id, profileId)
   }
 
   async loadPluginComponents (pluginObject, plugin) {

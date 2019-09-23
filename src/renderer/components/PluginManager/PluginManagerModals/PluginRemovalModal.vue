@@ -75,13 +75,14 @@ export default {
     async removePlugin () {
       const path = this.$store.getters['plugin/installedById'](this.plugin.id).path
 
-      // TODO: disable/unload plugin
       try {
-        await trash(path)
+        this.$store.dispatch('plugin/unloadPluginForProfiles', this.plugin.id)
 
         if (this.removeOptions) {
           this.$store.dispatch('plugin/deletePluginOptions', this.plugin.id)
         }
+
+        await trash(path)
 
         this.$success(this.$t('PLUGIN_REMOVAL_CONFIRMATION.SUCCESS', { plugin: this.plugin.id }))
       } catch (error) {

@@ -285,7 +285,7 @@ export default {
   },
 
   actions: {
-    async reset ({ commit, dispatch }) {
+    async reset ({ commit }) {
       commit('RESET_PLUGINS')
     },
 
@@ -316,6 +316,30 @@ export default {
             `Could not enable '${pluginId}' plugin for profile '${profile.name}': ${error.message}`
           )
         }
+      }
+    },
+
+    async unloadPluginForProfiles ({ dispatch, rootGetters }, pluginId) {
+      for (const profile of rootGetters['profile/all']) {
+        dispatch('unloadPluginForProfile', profile, pluginId)
+      }
+    },
+
+    async unloadPluginForProfile ({ getters, state }, profile, pluginId) {
+      if (!state.enabled[profile.id]) {
+        return
+      }
+
+      if (!getters.isLoaded(pluginId, profile.id)) {
+        return
+      }
+
+      try {
+        await this._vm.$plugins.disablePlugin(pluginId, profile.id)
+      } catch (error) {
+        this._vm.$logger.error(
+          `Could not disable '${pluginId}' plugin for profile '${profile.name}': ${error.message}`
+        )
       }
     },
 
@@ -363,10 +387,12 @@ export default {
       })
     },
 
-    deleteLoaded ({ commit, getters, rootGetters }, pluginId) {
+    deleteLoaded ({ commit, rootGetters }, pluginId, profileId = null) {
+      profileId = profileId || rootGetters['session/profileId']
+
       commit('DELETE_LOADED_PLUGIN', {
         pluginId,
-        profileId: rootGetters['session/profileId']
+        profileId
       })
     },
 
