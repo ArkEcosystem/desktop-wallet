@@ -69,13 +69,14 @@ const sanitizeCategories = config => {
   if (!categories) {
     if (config.categories && config.categories.length) {
       categories = config.categories
-    } else {
+    } else if (config.keywords && config.keywords.length) {
       categories = difference(config.keywords, PLUGINS.requiredKeywords)
     }
   }
 
-  categories = intersection(categories, PLUGINS.availableCategories)
-  return categories.length ? categories : ['other']
+  categories = categories || []
+
+  return categories.length ? intersection(categories, PLUGINS.availableCategories) : ['other']
 }
 
 const sanitizeMinVersion = config => {
