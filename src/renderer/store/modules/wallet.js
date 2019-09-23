@@ -1,4 +1,4 @@
-import { findIndex, unionBy } from 'lodash'
+import { findIndex, unionBy, uniqBy } from 'lodash'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 
@@ -45,16 +45,27 @@ export default {
       return state.wallets[profileId].filter(wallet => !wallet.isContact)
     },
 
-    publicByProfileId: (state) => (profileId, getContacts = false) => {
-      if (!state.wallets[profileId]) {
+    publicByProfileId: (state, _, __, rootGetters) => (profileId, getContacts = false) => {
+      const profileWallets = state.wallets[profileId] || []
+      const ledgerWallets = rootGetters['ledger/byProfileId'](profileId)
+
+      const wallets = uniqBy([
+        ...ledgerWallets,
+        ...profileWallets
+      ], 'address')
+
+      if (!wallets.length) {
         return []
       }
 
-      return state.wallets[profileId].filter(wallet => wallet.isContact === getContacts).map(wallet => ({
+      return wallets.filter(wallet => {
+        return wallet.isContact === getContacts || wallet.isContact === undefined
+      }).map(wallet => ({
         address: wallet.address,
         balance: wallet.balance,
         name: wallet.name,
-        publicKey: wallet.publicKey
+        publicKey: wallet.publicKey,
+        ...(wallet.isLedger && { isLedger: wallet.isLedger })
       }))
     },
 
