@@ -12,6 +12,7 @@ export default {
     installed: {},
     enabled: {},
     loaded: {},
+    blacklisted: [],
     pluginOptions: {},
     lastFetched: null
   },
@@ -72,6 +73,8 @@ export default {
       return state.loaded[profileId]
     },
 
+    blacklisted: state => state.blacklisted,
+
     enabled: (state, _, __, rootGetters) => {
       const profileId = rootGetters['session/profileId']
       if (!profileId || !state.enabled[profileId]) {
@@ -97,6 +100,14 @@ export default {
       }
 
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
+    },
+
+    isBlacklisted: (state, getters) => pluginId => {
+      if (!getters.blacklisted.length) {
+        return false
+      }
+
+      return getters.blacklisted.includes(pluginId)
     },
 
     isSupported: (state, getters) => pluginId => {

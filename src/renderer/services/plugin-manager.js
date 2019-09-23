@@ -3,7 +3,7 @@ import * as path from 'path'
 import * as vm2 from 'vm2'
 import dayjs from 'dayjs'
 import { ipcRenderer } from 'electron'
-import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, upperFirst } from 'lodash'
+import { camelCase, cloneDeep, difference, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
 import PluginWebsocket from '@/services/plugin-manager/websocket'
@@ -657,7 +657,8 @@ class PluginManager {
       return acc
     }, {})
 
-    this.app.$store.dispatch('plugin/setAvailable', plugins)
+    // TODO check for blacklist setting once implemented
+    this.app.$store.dispatch('plugin/setAvailable', this.applyBlacklists(plugins))
   }
 
   async fetchPluginsFromPath (pluginsPath) {
@@ -716,6 +717,14 @@ class PluginManager {
         }
       })
     }
+  }
+
+  // TODO fetch global blacklist from source once available
+  async applyBlacklists (plugins) {
+    const localBlacklist = this.app.$store.getters['plugin/blacklist']
+    const globalBlacklist = []
+
+    return difference(plugins, uniq([...localBlacklist, ...globalBlacklist]))
   }
 
   loadSandbox (config) {
