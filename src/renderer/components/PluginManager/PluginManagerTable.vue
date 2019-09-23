@@ -50,7 +50,7 @@
           v-else-if="data.column.field === 'categories'"
           class="flex"
         >
-          <span>{{ strings_capitalizeFirst(data.row.categories[0]) }}</span>
+          <span>{{ getCategory(data.row) }}</span>
         </div>
 
         <div
@@ -157,8 +157,15 @@ export default {
       this.$emit('show-details', plugin)
     },
 
+    getCategory (row) {
+      return this.$t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${row.categories[0].toUpperCase()}`)
+    },
+
     sortByCategories (x, y, col, rowX, rowY) {
-      return rowX.categories[0].localeCompare(rowY.categories[0], undefined, { sensitivity: 'base', numeric: true })
+      const a = this.getCategory(rowX)
+      const b = this.getCategory(rowY)
+
+      return a.localeCompare(b)
     }
   }
 }
