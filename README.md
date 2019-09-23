@@ -96,9 +96,6 @@ yarn lint
 # Lint, and fix, all JS/Vue files in `src` and `__tests__`
 yarn lint:fix
 
-# Check that all dependencies are used
-yarn depcheck
-
 # Collect the code and produce a compressed file
 yarn pack
 
