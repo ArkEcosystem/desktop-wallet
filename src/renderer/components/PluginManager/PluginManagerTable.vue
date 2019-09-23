@@ -19,7 +19,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'name'"
+          v-else-if="data.column.field === 'title'"
           class="flex"
         >
           <span class="flex items-center whitespace-no-wrap">
@@ -109,7 +109,7 @@ export default {
         },
         {
           label: this.$t('PLUGIN_TABLE.NAME'),
-          field: 'name',
+          field: 'title',
           thClass: 'w-full',
           tdClass: 'w-full'
         },
