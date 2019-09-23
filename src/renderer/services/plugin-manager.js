@@ -72,6 +72,10 @@ class PluginManager {
       throw new Error('Plugin is not enabled')
     }
 
+    if (!this.app.$store.getters['plugin/isSupported'](plugin.config.id)) {
+      throw new Error('Wallet version is not supported')
+    }
+
     const pluginObject = plugin.vm.run(
       fs.readFileSync(path.join(plugin.fullPath, 'src/index.js')),
       path.join(plugin.fullPath, 'src/index.js')

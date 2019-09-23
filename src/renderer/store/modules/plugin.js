@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
+import releaseService from '@/services/release'
 import { cloneDeep, sortBy, uniqBy } from 'lodash'
+import semver from 'semver'
 
 export default {
   namespaced: true,
@@ -29,11 +31,21 @@ export default {
     availableById: (state, getters) => id => {
       const plugins = Object.values(getters['available'])
 
-      if (!plugins) {
+      if (!plugins.length) {
         return null
       }
 
       return plugins.find(plugin => plugin.id)
+    },
+
+    installedById: (state, getters) => id => {
+      const plugins = Object.values(getters['installed'])
+
+      if (!plugins.length) {
+        return null
+      }
+
+      return plugins.find(plugin => plugin.config.id)
     },
 
     installed: state => state.installed,
@@ -85,6 +97,16 @@ export default {
       }
 
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
+    },
+
+    isSupported: (state, getters) => pluginId => {
+      const plugin = getters.installedById(pluginId)
+
+      if (!plugin.config.minVersion) {
+        return true
+      }
+
+      return semver.lte(releaseService.currentVersion, plugin.config.minVersion)
     },
 
     avatar: state => profile => {
