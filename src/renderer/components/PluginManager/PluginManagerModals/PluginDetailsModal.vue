@@ -95,12 +95,12 @@
                 v-if="plugin.permissions && plugin.permissions.length"
                 href="#"
               >
-                Show permissions
+                {{ PAGES.PLUGIN_MANAGER.SHOW_PERMISSIONS }}
               </a>
 
               <div class="PluginModal__container__content__stats">
                 <div>
-                  <span>Category</span>
+                  <span>{{ COMMON.CATEGORY }}</span>
                   <span
                     v-tooltip="categoryTooltip"
                     class="mr-auto pr-1"
@@ -109,7 +109,7 @@
                   </span>
                 </div>
                 <div>
-                  <span>URL</span>
+                  <span>{{ COMMON.URL }}</span>
                   <button
                     class="flex items-center text-blue"
                     :disabled="!homepageLink"
@@ -124,11 +124,11 @@
                   </button>
                 </div>
                 <div>
-                  <span>Size</span>
+                  <span>{{ COMMON.SIZE }}</span>
                   {{ formatter_bytes(plugin.size) }}
                 </div>
                 <div>
-                  <span>Version</span>
+                  <span>{{ COMMON.VERSION }}</span>
                   {{ plugin.version }}
                 </div>
               </div>
