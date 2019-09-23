@@ -79,7 +79,7 @@ export default {
         this.$store.dispatch('plugin/unloadPluginForProfiles', this.plugin.id)
 
         if (this.removeOptions) {
-          this.$store.dispatch('plugin/deletePluginOptions', this.plugin.id)
+          this.$store.dispatch('plugin/deletePluginOptionsForProfiles', this.plugin.id)
         }
 
         await trash(path)

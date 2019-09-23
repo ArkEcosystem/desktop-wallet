@@ -267,11 +267,9 @@ export default {
       Vue.set(state.pluginOptions[data.profileId][data.pluginId], data.key, data.value)
     },
 
-    DELETE_PLUGIN_OPTIONS (state, pluginId) {
-      for (const profileId of Object.keys(state.pluginOptions)) {
-        if (state.pluginOptions[profileId][pluginId]) {
-          Vue.delete(state.pluginOptions[profileId], pluginId)
-        }
+    DELETE_PLUGIN_OPTIONS (state, pluginId, profileId) {
+      if (state.pluginOptions[profileId][pluginId]) {
+        Vue.delete(state.pluginOptions[profileId], pluginId)
       }
     },
 
@@ -453,8 +451,16 @@ export default {
       })
     },
 
-    async deletePluginOptions ({ commit }, pluginId) {
-      commit('DELETE_PLUGIN_OPTIONS', pluginId)
+    async deletePluginOptionsForProfiles ({ dispatch, rootGetters }, pluginId) {
+      for (const profile of rootGetters['profile/all']) {
+        dispatch('deletePluginOptionsForProfile', pluginId, profile.id)
+      }
+    },
+
+    async deletePluginOptionsForProfile ({ commit, rootGetters }, pluginId, profileId = null) {
+      profileId = profileId || rootGetters['session/profileId']
+
+      commit('DELETE_PLUGIN_OPTIONS', pluginId, profileId)
     }
   }
 }
