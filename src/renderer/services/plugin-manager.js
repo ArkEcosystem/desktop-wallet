@@ -652,13 +652,15 @@ class PluginManager {
       return sanitizeConfig(config)
     }))
 
+    // TODO check for blacklist setting once implemented
+    plugins = await this.applyBlacklists(plugins)
+
     plugins = plugins.reduce((acc, plugin) => {
       acc[plugin.id] = plugin
       return acc
     }, {})
 
-    // TODO check for blacklist setting once implemented
-    this.app.$store.dispatch('plugin/setAvailable', this.applyBlacklists(plugins))
+    this.app.$store.dispatch('plugin/setAvailable', plugins)
   }
 
   async fetchPluginsFromPath (pluginsPath) {
@@ -721,10 +723,10 @@ class PluginManager {
 
   // TODO fetch global blacklist from source once available
   async applyBlacklists (plugins) {
-    const localBlacklist = this.app.$store.getters['plugin/blacklist']
+    const localBlacklist = this.app.$store.getters['plugin/blacklisted']
     const globalBlacklist = []
 
-    return difference(plugins, uniq([...localBlacklist, ...globalBlacklist]))
+    return difference(plugins, uniq(localBlacklist.concat(globalBlacklist)))
   }
 
   loadSandbox (config) {
