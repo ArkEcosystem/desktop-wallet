@@ -133,7 +133,13 @@ export default {
       try {
         let message
         if (this.form.wif) {
-          message = WalletService.signMessageWithWif(this.form.message, this.form.wif)
+          message = WalletService.signMessageWithWif(
+            this.form.message,
+            this.form.wif,
+            {
+              wif: this.session_network.wif
+            }
+          )
         } else {
           message = WalletService.signMessage(this.form.message, this.form.passphrase)
         }
