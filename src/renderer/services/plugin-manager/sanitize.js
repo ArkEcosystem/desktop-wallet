@@ -74,9 +74,13 @@ const sanitizeCategories = config => {
     }
   }
 
-  categories = categories || []
+  if (categories && categories.length) {
+    categories = intersection(categories, PLUGINS.availableCategories)
+  } else {
+    categories = []
+  }
 
-  return categories.length ? intersection(categories, PLUGINS.availableCategories) : ['other']
+  return categories.length ? categories : ['other']
 }
 
 const sanitizeMinVersion = config => {
