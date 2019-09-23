@@ -1,7 +1,6 @@
 import { cloneDeep } from 'lodash'
 import nock from 'nock'
 import errorCapturer from '../__utils__/error-capturer'
-import { V1 } from '@config'
 import fixtures from '../__fixtures__/services/client'
 import ClientService from '@/services/client'
 import BigNumber from '@/plugins/bignumber'
@@ -47,6 +46,41 @@ beforeEach(() => {
 
 describe('Services > Client', () => {
   let client
+
+  const wallets = [
+    {
+      address: 'address1',
+      balance: '1202',
+      publicKey: 'public key',
+      vote: 'voted delegate'
+    },
+    {
+      address: 'address2',
+      balance: '300',
+      publicKey: 'public key'
+    }
+  ]
+
+  const generateWalletResponse = (address) => {
+    return {
+      body: {
+        data: {
+          ...wallets.find(wallet => wallet.address === address),
+          isDelegate: true,
+          username: 'test'
+        }
+      }
+    }
+  }
+
+  const getWalletEndpoint = jest.fn(generateWalletResponse)
+
+  const fees = [
+    0.1 * 1e8,
+    5 * 1e8,
+    25 * 1e8,
+    1 * 1e8
+  ]
 
   beforeEach(() => {
     client = new ClientService()
@@ -108,7 +142,7 @@ describe('Services > Client', () => {
       it('should return almost all properties from the wallet endpoint', async () => {
         const wallet = await client.fetchWallet('address')
         expect(wallet).toHaveProperty('address', data.address)
-        expect(wallet).toHaveProperty('balance', parseInt(data.balance))
+        expect(wallet).toHaveProperty('balance', data.balance)
         expect(wallet).toHaveProperty('publicKey', data.publicKey)
         expect(wallet).toHaveProperty('isDelegate', true)
       })
@@ -116,18 +150,6 @@ describe('Services > Client', () => {
   })
 
   describe('fetchWallets', () => {
-    const wallets = [
-      {
-        address: 'address1',
-        balance: '1202',
-        publicKey: 'public key'
-      },
-      {
-        address: 'address2',
-        balance: '300',
-        publicKey: 'public key'
-      }
-    ]
     const walletAddresses = ['address1', 'address2']
     const walletsResponse = {
       body: {
@@ -145,19 +167,6 @@ describe('Services > Client', () => {
         ]
       }
     }
-    const generateWalletResponse = (address) => {
-      return {
-        body: {
-          data: {
-            ...wallets.find(wallet => wallet.address === address),
-            isDelegate: true,
-            username: 'test'
-          }
-        }
-      }
-    }
-
-    const getWalletEndpoint = jest.fn(generateWalletResponse)
     const searchWalletEndpoint = jest.fn(() => walletsResponse)
     beforeEach(() => {
       const resource = resource => {
@@ -201,17 +210,45 @@ describe('Services > Client', () => {
         expect(fetchedWallets).toEqual([
           generateWalletResponse('address1').body.data,
           generateWalletResponse('address2').body.data
-        ].map(wallet => ({ ...wallet, balance: +wallet.balance })))
+        ])
       })
     })
   })
 
   describe('fetchWalletVote', () => {
-    const publicKey = 'public key'
+    const voteDelegate = 'voted delegate'
 
+    beforeEach(() => {
+      const resource = resource => {
+        if (resource === 'wallets') {
+          return {
+            get: generateWalletResponse
+          }
+        }
+      }
+
+      client.client.api = resource
+    })
+
+    it('should return delegate public key if wallet is voting', async () => {
+      const response = await client.fetchWalletVote('address1')
+      expect(response).toBe(voteDelegate)
+    })
+
+    it('should return null if wallet is not voting', async () => {
+      const response = await client.fetchWalletVote('address2')
+      expect(response).toBeNull()
+    })
+  })
+
+  describe('fetchWalletVotes', () => {
     const transactions = [{
       asset: {
-        votes: ['+' + publicKey]
+        votes: ['+test']
+      }
+    }, {
+      asset: {
+        votes: ['+test2']
       }
     }]
 
@@ -227,9 +264,9 @@ describe('Services > Client', () => {
       client.client.api = resource
     })
 
-    it('should return delegate public key', async () => {
-      const response = await client.fetchWalletVote()
-      expect(response).toBe(publicKey)
+    it('should return vote transactions', async () => {
+      const response = await client.fetchWalletVotes()
+      expect(response).toBe(transactions)
     })
   })
 
@@ -483,65 +520,65 @@ describe('Services > Client', () => {
   })
 
   describe('buildDelegateRegistration', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[2] + 0.1
+        const fee = new BigNumber(fees[2] + 1)
         expect(await errorCapturer(client.buildDelegateRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (25)', () => {
+    describe('when the fee is smaller or equal to the static fee (25)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 25 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildDelegateRegistration({ fee: 12.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: new BigNumber(fees[2]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildDelegateRegistration({ fee: new BigNumber(fees[2] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
 
   describe('buildSecondSignatureRegistration', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[1] + 0.01
+        const fee = new BigNumber(fees[1] + 1)
         expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (5)', () => {
+    describe('when the fee is smaller or equal to the static fee (5)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 5 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: 3.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildSecondSignatureRegistration({ fee: new BigNumber(fees[1] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
 
   describe('buildTransfer', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[0] + 0.00001
+        const fee = new BigNumber(fees[0] + 1)
         expect(await errorCapturer(client.buildTransfer({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
+    describe('when the fee is smaller or equal to the static fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.1 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildTransfer({ fee: 0.09 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: new BigNumber(fees[0]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildTransfer({ fee: new BigNumber(fees[0] - 1) }))).not.toThrow(/fee/)
       })
     })
   })
 
   describe('buildVote', () => {
-    describe('when the fee is bigger than V1 fee', () => {
+    describe('when the fee is bigger than the static fee', () => {
       it('should throw an Error', async () => {
-        const fee = V1.fees[3] + 0.0000001
+        const fee = new BigNumber(fees[3] + 1)
         expect(await errorCapturer(client.buildVote({ fee }))).toThrow(/fee/)
       })
     })
 
-    describe('when the fee is smaller or equal to V1 fee (0.1)', () => {
+    describe('when the fee is smaller or equal to the static fee fee (0.1)', () => {
       it('should not throw an Error', async () => {
-        expect(await errorCapturer(client.buildVote({ fee: 1 * 1e8 }))).not.toThrow(/fee/)
-        expect(await errorCapturer(client.buildVote({ fee: 0.9 * 1e8 }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: new BigNumber(fees[3]) }))).not.toThrow(/fee/)
+        expect(await errorCapturer(client.buildVote({ fee: new BigNumber(fees[3] - 1) }))).not.toThrow(/fee/)
       })
     })
   })

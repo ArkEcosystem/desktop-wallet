@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ark-desktop-wallet",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
@@ -87,7 +87,7 @@
     "stream-http": "^3.1.0",
     "trunc-html": "^1.1.2",
     "v-tooltip": "^2.0.2",
-    "vm2": "^3.8.3",
+    "vm2": "^3.8.4",
     "vue": "^2.6.10",
     "vue-chartjs": "^3.4.2",
     "vue-good-table": "2.16.5",
@@ -196,7 +196,8 @@
     ],
     "mac": {
       "category": "public.app-category.finance",
-      "icon": "build/icons/icon.icns"
+      "icon": "build/icons/icon.icns",
+      "hardenedRuntime": false
     },
     "win": {
       "target": "nsis",

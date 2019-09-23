@@ -215,6 +215,27 @@ export default {
 
   actions: {
     /**
+     * Set peers for specific network.
+     * @param  {Object[]} peers
+     * @param  {Number} networkId
+     * @return {void}
+     */
+    setToNetwork ({ commit }, { peers, networkId }) {
+      commit('SET_PEERS', {
+        peers: peers.map(peer => {
+          try {
+            return PeerModel.deserialize(peer)
+          } catch (error) {
+            this._vm.$logger.error(`Could not deserialize peer: ${error.message}`)
+          }
+
+          return null
+        }).filter(peer => peer !== null),
+        networkId
+      })
+    },
+
+    /**
      * Set peers for current network.
      * @param  {Object[]} peers
      * @return {void}
