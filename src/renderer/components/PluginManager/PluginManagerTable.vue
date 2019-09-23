@@ -47,7 +47,7 @@
         </div>
 
         <div
-          v-else-if="data.column.field === 'category'"
+          v-else-if="data.column.field === 'categories'"
           class="flex"
         >
           <span>{{ strings_capitalizeFirst(data.row.categories[0]) }}</span>
@@ -119,7 +119,7 @@ export default {
         },
         {
           label: this.$t('PLUGIN_TABLE.CATEGORY'),
-          field: 'category',
+          field: 'categories',
           sortFn: this.sortByCategories
         },
         {
