@@ -259,7 +259,6 @@ export default {
 
     onRemoved (pluginId) {
       this.closeRemovalModal()
-      this.$success(this.$t('PLUGIN_REMOVAL_CONFIRMATION.SUCCESS', { plugin: this.plugin.id }))
     },
 
     // TODO
