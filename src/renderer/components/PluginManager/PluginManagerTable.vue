@@ -50,7 +50,7 @@
           v-else-if="data.column.field === 'category'"
           class="flex"
         >
-          <span>{{ strings_capitalizeFirst(getCategory(data.row.categories)) }}</span>
+          <span>{{ strings_capitalizeFirst(data.row.categories[0]) }}</span>
         </div>
 
         <div
@@ -145,13 +145,6 @@ export default {
   },
 
   methods: {
-    getCategory (categories) {
-      if (categories.length) {
-        return categories[0]
-      }
-      return 'other'
-    },
-
     onSortChange (sortOptions) {
       this.$emit('on-sort-change', sortOptions[0])
     },
