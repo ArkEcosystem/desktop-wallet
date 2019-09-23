@@ -262,15 +262,15 @@ export default {
     },
 
     emitInstall () {
-      this.$emit('install', this.plugin.id)
+      this.$emit('install', this.plugin)
     },
 
     emitUpdate () {
-      this.$emit('update', this.plugin.id)
+      this.$emit('update', this.plugin)
     },
 
     emitRemove () {
-      this.$emit('remove', this.plugin.id)
+      this.$emit('remove', this.plugin)
     },
 
     onEscKey (event) {

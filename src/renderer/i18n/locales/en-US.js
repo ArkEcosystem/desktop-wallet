@@ -1036,6 +1036,15 @@ export default {
     QUESTION: 'Are you sure you want to remove this wallet?'
   },
 
+  PLUGIN_REMOVAL_CONFIRMATION: {
+    NOTE: 'Uninstalling this plugin will remove it from all profiles on this system',
+    QUESTION: 'Are you sure you want to remove this plugin?',
+    OPTIONS: {
+      DATA: 'Also delete all plugin data and settings?'
+    },
+    SUCCESS: 'The plugin <b>{plugin}</b> has been uninstalled'
+  },
+
   WALLET_TRANSACTIONS: {
     TRANSACTION_ID: 'Transaction ID',
     RECIPIENT: 'Recipient',

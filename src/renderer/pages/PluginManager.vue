@@ -95,6 +95,14 @@
       :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
       container-classes="max-w-md"
       @close="closeDetailsModal"
+      @remove="toggleRemovalModal"
+    />
+
+    <PluginRemovalModal
+      v-if="showRemovalModal"
+      :plugin="selectedPlugin"
+      @cancel="closeRemovalModal"
+      @removed="onRemoved"
     />
   </div>
 </template>
@@ -107,7 +115,8 @@ import {
   PluginManagerGrid,
   PluginManagerSearchBar,
   PluginManagerSideMenu,
-  PluginManagerTable
+  PluginManagerTable,
+  PluginRemovalModal
 } from '@/components/PluginManager'
 import { PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
 
@@ -123,7 +132,8 @@ export default {
     PluginManagerSideMenu,
     PluginManagerTable,
     PluginManagerButtonInstallSource,
-    PluginManagerButtonMenu
+    PluginManagerButtonMenu,
+    PluginRemovalModal
   },
 
   data: () => ({
@@ -133,6 +143,7 @@ export default {
     isMenuOpen: false,
     activeCategory: 'all',
     showDetailsModal: false,
+    showRemovalModal: false,
     selectedPlugin: null
   }),
 
@@ -196,13 +207,25 @@ export default {
     },
 
     toggleDetailsModal (plugin) {
-      this.selectedPlugin = plugin
+      this.setSelectedPlugin(plugin)
       this.showDetailsModal = true
     },
 
     closeDetailsModal () {
-      this.selectedPlugin = null
       this.showDetailsModal = false
+    },
+
+    toggleRemovalModal () {
+      this.closeDetailsModal()
+      this.showRemovalModal = true
+    },
+
+    closeRemovalModal () {
+      this.showRemovalModal = false
+    },
+
+    setSelectedPlugin (plugin) {
+      this.selectedPlugin = plugin
     },
 
     onCategoryChange (category) {
@@ -235,6 +258,11 @@ export default {
         enabled,
         pluginId
       })
+    },
+
+    onRemoved (pluginId) {
+      this.closeRemovalModal()
+      this.$success(this.$t('PLUGIN_REMOVAL_CONFIRMATION.SUCCESS', { plugin: this.plugin.id }))
     },
 
     // TODO

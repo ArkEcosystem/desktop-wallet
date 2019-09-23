@@ -245,6 +245,14 @@ export default {
       Vue.set(state.pluginOptions[data.profileId][data.pluginId], data.key, data.value)
     },
 
+    DELETE_PLUGIN_OPTIONS (state, pluginId) {
+      for (const profileId of Object.keys(state.pluginOptions)) {
+        if (state.pluginOptions[profileId][pluginId]) {
+          Vue.delete(state.pluginOptions[profileId], pluginId)
+        }
+      }
+    },
+
     SET_IS_PLUGIN_ENABLED (state, data) {
       if (!state.enabled[data.profileId]) {
         Vue.set(state.enabled, data.profileId, {})
@@ -395,6 +403,10 @@ export default {
         key: data.key,
         value: data.value
       })
+    },
+
+    async deletePluginOptions ({ commit }, pluginId) {
+      commit('DELETE_PLUGIN_OPTIONS', pluginId)
     }
   }
 }
