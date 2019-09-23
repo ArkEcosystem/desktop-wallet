@@ -72,7 +72,7 @@
         <PluginManagerGrid
           v-if="hasGridLayout"
           :plugins="plugins"
-          @show-details="toggleDetailsModal"
+          @show-details="openDetailsModal"
         />
 
         <PluginManagerTable
@@ -84,23 +84,23 @@
           :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
           class="mt-10"
           @on-sort-change="onSortChange"
-          @show-details="toggleDetailsModal"
+          @show-details="openDetailsModal"
         />
       </div>
     </div>
 
     <PluginDetailsModal
-      v-if="showDetailsModal"
-      :plugin="selectedPlugin"
+      v-if="pluginToShow"
+      :plugin="pluginToShow"
       :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
       container-classes="max-w-md"
       @close="closeDetailsModal"
-      @remove="toggleRemovalModal"
+      @remove="openRemovalModal"
     />
 
     <PluginRemovalModal
-      v-if="showRemovalModal"
-      :plugin="selectedPlugin"
+      v-if="pluginToRemove"
+      :plugin="pluginToRemove"
       @cancel="closeRemovalModal"
       @removed="onRemoved"
     />
@@ -142,9 +142,8 @@ export default {
     pluginToConfirm: null,
     isMenuOpen: false,
     activeCategory: 'all',
-    showDetailsModal: false,
-    showRemovalModal: false,
-    selectedPlugin: null
+    pluginToShow: null,
+    pluginToRemove: null
   }),
 
   computed: {
@@ -206,26 +205,24 @@ export default {
       this.isMenuOpen = !this.isMenuOpen
     },
 
-    toggleDetailsModal (plugin) {
-      this.setSelectedPlugin(plugin)
-      this.showDetailsModal = true
+    openDetailsModal (plugin) {
+      this.pluginToShow = plugin
     },
 
     closeDetailsModal () {
-      this.showDetailsModal = false
+      this.pluginToShow = null
     },
 
-    toggleRemovalModal () {
-      this.closeDetailsModal()
-      this.showRemovalModal = true
+    openRemovalModal (plugin) {
+      if (this.pluginToShow) {
+        this.pluginToShow = null
+      }
+
+      this.pluginToRemove = plugin
     },
 
     closeRemovalModal () {
-      this.showRemovalModal = false
-    },
-
-    setSelectedPlugin (plugin) {
-      this.selectedPlugin = plugin
+      this.pluginToRemove = null
     },
 
     onCategoryChange (category) {
