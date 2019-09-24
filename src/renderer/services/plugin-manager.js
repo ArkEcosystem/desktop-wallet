@@ -9,6 +9,7 @@ import PluginHttp from '@/services/plugin-manager/http'
 import PluginWebsocket from '@/services/plugin-manager/websocket'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 import WalletComponents from '@/services/plugin-manager/wallet-components'
+import releaseService from '@/services/release'
 
 import trash from 'trash'
 import { NpmAdapter } from '@/services/plugin-manager/adapters'
@@ -74,7 +75,7 @@ class PluginManager {
       throw new PluginNotEnabledError(plugin.config.id)
     }
 
-    if (!this.app.$store.getters['plugin/isSupported'](plugin.config.id)) {
+    if (!this.app.$store.getters['plugin/isInstalledSupported'](plugin.config.id)) {
       throw new Error('Wallet version is not supported')
     }
 
@@ -673,6 +674,7 @@ class PluginManager {
 
     // TODO check for blacklist setting once implemented
     plugins = await this.applyBlacklists(plugins)
+    plugins = this.applyMinVersionCheck(plugins)
 
     plugins = plugins.reduce((acc, plugin) => {
       acc[plugin.id] = plugin
@@ -747,6 +749,12 @@ class PluginManager {
 
     return difference(plugins, uniq(localBlacklist.concat(globalBlacklist)))
   }
+
+  async applyMinVersionCheck (plugins) {
+    return plugins.filter(plugin => {
+      return !plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)
+    })
+  },
 
   loadSandbox (config) {
     const sandbox = {

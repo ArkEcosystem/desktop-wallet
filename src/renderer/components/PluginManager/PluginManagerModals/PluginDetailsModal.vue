@@ -56,7 +56,7 @@
                 <div class="PluginDetailsModal__header__actions">
                   <ButtonGeneric
                     v-if="!isInstalled"
-                    label="Install"
+                    label="{{ $t('COMMON.INSTALL') }}"
                     class="m-0"
                     @click="emitInstall"
                   />
@@ -151,7 +151,6 @@
 </template>
 
 <script>
-import semver from 'semver'
 import domain from 'getdomain'
 import { ButtonClose, ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
@@ -206,17 +205,13 @@ export default {
     },
 
     isUpdateAvailable () {
-      return semver.lt(this.plugin.version, this.latestVersion)
-    },
-
-    latestVersion () {
-      const availablePlugin = this.$store.getters['plugin/availableById'](this.plugin.id)
-      return availablePlugin ? availablePlugin.version : this.plugin.version
+      return this.$store.getters['plugin/isUpdateAvailable'](this.plugin.id)
     },
 
     updateTooltipContent () {
       if (this.isUpdateAvailable) {
-        return this.$t('PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE', { version: this.latestVersion })
+        const version = this.$store.getters['plugin/latestVersion'](this.plugin.id)
+        return this.$t('PAGES.PLUGIN_MANAGER.UPDATE.AVAILABLE', { version })
       }
 
       return this.$t('PAGES.PLUGIN_MANAGER.UPDATE.NOT_AVAILABLE')

@@ -87,6 +87,18 @@ export default {
 
     isInstalled: state => pluginId => !!state.installed[pluginId],
 
+    isUpdateAvailable: (state, getters) => pluginId => {
+      const plugin = getters.availableById(pluginId)
+
+      return plugin ? semver.lt(getters.installedById(pluginId), plugin.version) : false
+    },
+
+    latestVersion: (state, getters) => pluginId => {
+      const plugin = getters.availableById(pluginId)
+
+      return plugin ? plugin.version : null
+    },
+
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
         return getters['enabled'][pluginId]
@@ -111,7 +123,7 @@ export default {
       return getters.blacklisted.includes(pluginId)
     },
 
-    isSupported: (state, getters) => pluginId => {
+    isInstalledSupported: (state, getters) => pluginId => {
       const plugin = getters.installedById(pluginId)
 
       if (!plugin.config.minVersion) {

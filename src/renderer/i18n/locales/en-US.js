@@ -20,6 +20,7 @@ export default {
     FETCH: 'Fetch',
     FINISH: 'Finish',
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
+    INSTALL: 'Install',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
