@@ -1048,7 +1048,7 @@ export default {
       DATA: 'Also delete all plugin data and settings?'
     },
     SUCCESS: 'The plugin \'{plugin}\' has been uninstalled',
-    ERROR: 'Could not remove \'{plugin}\': {error}'
+    ERROR: 'Could not remove plugin: {error}'
   },
 
   WALLET_TRANSACTIONS: {

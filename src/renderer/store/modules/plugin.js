@@ -244,11 +244,11 @@ export default {
     },
 
     DELETE_LOADED_PLUGIN (state, { pluginId, profileId }) {
-      if (!state.loaded[profileId]) {
-        return
-      }
-
       Vue.delete(state.loaded[profileId], pluginId)
+    },
+
+    DELETE_INSTALLED_PLUGIN (state, pluginId) {
+      Vue.delete(state.installed, pluginId)
     },
 
     SET_PLUGIN_AVATARS (state, data) {
@@ -328,40 +328,12 @@ export default {
       }
     },
 
-    async unloadPluginForProfiles ({ dispatch, rootGetters }, pluginId) {
-      for (const profile of rootGetters['profile/all']) {
-        dispatch('unloadPluginForProfile', profile, pluginId)
-      }
-    },
-
-    async unloadPluginForProfile ({ commit, getters, state }, profile, pluginId) {
-      if (state.enabled[profile.id] && getters.isEnabled(pluginId, profile.id)) {
-        commit('SET_IS_PLUGIN_ENABLED', {
-          enabled: false,
-          pluginId,
-          profileId: profile.id
-        })
-      }
-
-      if (!getters.isLoaded(pluginId, profile.id)) {
-        return
-      }
-
-      try {
-        await this._vm.$plugins.disablePlugin(pluginId, profile.id)
-      } catch (error) {
-        this._vm.$logger.error(
-          `Could not disable '${pluginId}' plugin for profile '${profile.name}': ${error.message}`
-        )
-      }
-    },
-
-    async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId }) {
+    async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId, profileId = null }) {
       if (getters.isEnabled(pluginId) === enabled) {
         return
       }
 
-      const profileId = rootGetters['session/profileId']
+      profileId = profileId || rootGetters['session/profileId']
 
       commit('SET_IS_PLUGIN_ENABLED', {
         enabled,
@@ -396,13 +368,51 @@ export default {
       })
     },
 
-    deleteLoaded ({ commit, rootGetters }, pluginId, profileId = null) {
+    async deletePlugin ({ dispatch, getters, rootGetters }, pluginId, removeOptions = false) {
+      if (!getters.installedById(pluginId)) {
+        return
+      }
+
+      for (const profile of rootGetters['profile/all']) {
+        dispatch('setEnabled', {
+          enabled: false,
+          pluginId,
+          profileId: profile.id
+        })
+
+        if (removeOptions) {
+          dispatch('deletePluginOptionsForProfile', pluginId, profile.id)
+        }
+      }
+
+      try {
+        await this._vm.$plugins.deletePlugin(pluginId)
+      } catch (error) {
+        this._vm.$logger.error(
+          `Could not delete '${pluginId}' plugin': ${error.message}`
+        )
+      }
+    },
+
+    deleteLoaded ({ commit, getters, rootGetters }, pluginId, profileId = null) {
       profileId = profileId || rootGetters['session/profileId']
+
+      if (!getters.isLoaded(pluginId, profileId)) {
+        return
+      }
 
       commit('DELETE_LOADED_PLUGIN', {
         pluginId,
         profileId
       })
+    },
+
+    deleteInstalled ({ commit, getters }, pluginId) {
+      if (!getters.installedById(pluginId)) {
+        return
+      }
+
+      commit('DELETE_INSTALLED_PLUGIN', pluginId)
     },
 
     setAvatars ({ commit, getters, rootGetters }, data) {
@@ -462,13 +472,7 @@ export default {
       })
     },
 
-    async deletePluginOptionsForProfiles ({ dispatch, rootGetters }, pluginId) {
-      for (const profile of rootGetters['profile/all']) {
-        dispatch('deletePluginOptionsForProfile', pluginId, profile.id)
-      }
-    },
-
-    async deletePluginOptionsForProfile ({ commit, rootGetters }, pluginId, profileId = null) {
+    deletePluginOptionsForProfile ({ commit, rootGetters }, pluginId, profileId = null) {
       profileId = profileId || rootGetters['session/profileId']
 
       commit('DELETE_PLUGIN_OPTIONS', {

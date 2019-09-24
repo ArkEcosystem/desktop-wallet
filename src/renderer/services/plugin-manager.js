@@ -10,6 +10,7 @@ import PluginWebsocket from '@/services/plugin-manager/websocket'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 import WalletComponents from '@/services/plugin-manager/wallet-components'
 
+import trash from 'trash'
 import { NpmAdapter } from '@/services/plugin-manager/adapters'
 import sanitizeConfig from './plugin-manager/sanitize'
 import { NotInitiatedError, PluginNotEnabledError, PluginNotFoundError } from './plugin-manager/errors'
@@ -128,6 +129,23 @@ class PluginManager {
     }
 
     await this.app.$store.dispatch('plugin/deleteLoaded', plugin.config.id, profileId)
+  }
+
+  async deletePlugin (pluginId) {
+    if (!this.hasInit) {
+      throw new NotInitiatedError()
+    }
+
+    const plugin = this.plugins[pluginId]
+    if (!plugin) {
+      throw new PluginNotFoundError(pluginId)
+    }
+
+    await trash(plugin.fullPath)
+
+    this.app.$store.dispatch('plugin/deleteInstalled', plugin.config.id)
+
+    delete this.plugins[plugin.config.id]
   }
 
   async loadPluginComponents (pluginObject, plugin) {

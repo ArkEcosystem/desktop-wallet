@@ -30,7 +30,6 @@
 import { ButtonSwitch } from '@/components/Button'
 import { ModalConfirmation } from '@/components/Modal'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
-import trash from 'trash'
 
 export default {
   name: 'PluginRemovalConfirmation',
@@ -73,26 +72,8 @@ export default {
     },
 
     async removePlugin () {
-      const path = this.$store.getters['plugin/installedById'](this.plugin.id).fullPath
-
-      try {
-        this.$store.dispatch('plugin/unloadPluginForProfiles', this.plugin.id)
-
-        if (this.removeOptions) {
-          this.$store.dispatch('plugin/deletePluginOptionsForProfiles', this.plugin.id)
-        }
-
-        await trash(path)
-
-        this.$success(this.$t('PLUGIN_REMOVAL_CONFIRMATION.SUCCESS', { plugin: this.plugin.id }))
-      } catch (error) {
-        this.$error(this.$t('PLUGIN_REMOVAL_CONFIRMATION.ERROR', {
-          plugin: this.plugin.id,
-          error: error.message
-        }))
-      } finally {
-        this.emitRemoved()
-      }
+      await this.$store.dispatch('plugin/deletePlugin', this.plugin.id, this.removeOptions)
+      this.emitRemoved()
     }
   }
 }
