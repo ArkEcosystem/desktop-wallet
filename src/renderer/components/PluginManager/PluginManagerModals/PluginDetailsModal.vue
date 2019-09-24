@@ -300,8 +300,7 @@ export default {
   @apply absolute pin-r block text-right my-4 mr-4
 }
 .PluginModal .PluginModal__container__header {
-  @apply flex px-10 py-8 rounded-t-lg;
-  background-color: #f7f9fb;
+  @apply flex px-10 py-8 rounded-t-lg bg-theme-secondary-feature;
 }
 
 .PluginDetailsModal__header__details {
@@ -318,10 +317,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 0.75fr 0.75fr;
   grid-column-gap: 1.5rem;
-  @apply border-t pt-4 mt-8
+  @apply border-t pt-4 mt-8 border-theme-line-separator
 }
 .PluginModal .PluginModal__container__content__stats > div {
-  @apply flex flex-col border-r border-dashed py-2
+  @apply flex flex-col border-r border-dashed border-theme-line-separator py-2
 }
 .PluginModal .PluginModal__container__content__stats > div:not(:last-child) {
   @apply pr-6

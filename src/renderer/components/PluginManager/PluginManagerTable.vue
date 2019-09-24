@@ -20,9 +20,8 @@
 
         <div
           v-else-if="data.column.field === 'title'"
-          class="flex"
         >
-          <span class="flex items-center whitespace-no-wrap">
+          <span class="whitespace-no-wrap">
             {{ data.row.title | truncate(30) }}
           </span>
         </div>
@@ -48,14 +47,12 @@
 
         <div
           v-else-if="data.column.field === 'categories'"
-          class="flex"
         >
           <span>{{ getCategory(data.row) }}</span>
         </div>
 
         <div
           v-else-if="data.column.field === 'size'"
-          class="flex"
         >
           <span class="whitespace-no-wrap">
             {{ formatter_bytes(data.row.size) }}
@@ -123,13 +120,13 @@ export default {
           sortFn: this.sortByCategories
         },
         {
+          label: this.$t('PLUGIN_TABLE.VERSION'),
+          field: 'version'
+        },
+        {
           label: this.$t('PLUGIN_TABLE.SIZE'),
           field: 'size',
           type: 'number'
-        },
-        {
-          label: this.$t('PLUGIN_TABLE.VERSION'),
-          field: 'version'
         },
         {
           label: '',

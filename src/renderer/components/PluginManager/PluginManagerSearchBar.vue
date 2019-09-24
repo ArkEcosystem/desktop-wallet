@@ -1,14 +1,14 @@
 <template>
-  <div class="flex items-center w-full">
+  <div class="flex items-center w-full text-theme-page-text">
     <SvgIcon
       name="search"
       view-box="0 0 14 14"
-      class="mr-2 text-theme-page-text-light"
+      class="mr-2"
     />
 
     <input
       ref="search"
-      class="w-full"
+      class="w-full h-8 bg-transparent text-theme-page-text"
       :placeholder="$t('PAGES.PLUGIN_MANAGER.SEARCH')"
       @keyup.esc="onEscKey"
       @input="update"

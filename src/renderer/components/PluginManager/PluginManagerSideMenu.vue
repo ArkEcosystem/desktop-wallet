@@ -63,21 +63,16 @@ export default {
 
 <style lang="postcss" scoped>
 .PluginManagerSideMenu {
-  @apply flex flex-col min-w-48 px-10 my-10 border-r;
-  border-color: #d3e3f1;
+  @apply flex flex-col min-w-48 px-10 my-10 border-r border-theme-line-separator;
 }
 .PluginManagerSideMenu__categories {
-  @apply list-reset w-full;
-  color: #818fa9;
+  @apply list-reset w-full text-theme-page-text-light;
 }
 .PluginManagerSideMenu__categories li {
   @apply block font-semibold py-4 px-10 -mx-10 border-l-3 border-transparent cursor-pointer
 }
 .PluginManagerSideMenu__categories li:hover,
 .PluginManagerSideMenu__categories li.active {
-  /* TODO: colors */
-  color: #515762;
-  border-color: #007cff;
-  background-color: #f2f4f6;
+  @apply bg-theme-secondary-feature text-theme-page-text border-blue
 }
 </style>

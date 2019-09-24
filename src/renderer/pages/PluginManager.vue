@@ -2,7 +2,7 @@
   <div class="PluginManager">
     <div class="PluginManager__heading px-10 py-6 mb-3">
       <div class="flex flex-row w-full items-center">
-        <h2 class="pr-8 border-r">
+        <h2 class="pr-8 border-r border-theme-line-separator">
           {{ $t('PAGES.PLUGIN_MANAGER.HEADER') }}
         </h2>
 
@@ -22,9 +22,9 @@
 
     <div
       class="PluginManager__banner"
-      :style="`backgroundImage: url('${assets_loadImage(background)}')`"
+      :style="{ backgroundImage: `url('${bannerImage}')` }"
     >
-      <div class="w-3/5 flex flex-col">
+      <div class="w-full lg:w-3/5 flex flex-col">
         <h1 class="PluginManager__banner__title">
           {{ $t('PAGES.PLUGIN_MANAGER.BANNER.TITLE') }}
         </h1>
@@ -48,7 +48,7 @@
           <PluginManagerButtonMenu
             v-if="!isMenuOpen"
             :is-open="isMenuOpen"
-            class="pr-6 border-r"
+            class="pr-6 border-r border-theme-line-separator"
             @click="toggleMenu"
           />
 
@@ -147,8 +147,9 @@ export default {
   }),
 
   computed: {
-    background () {
-      return 'pages/plugin-manager/banner.svg'
+    bannerImage () {
+      const theme = this.session_hasDarkTheme ? 'dark' : 'light'
+      return this.assets_loadImage(`pages/plugin-manager/banner-${theme}.svg`)
     },
 
     hasGridLayout () {
@@ -280,12 +281,11 @@ export default {
   @apply .flex .justify-between .items-center .bg-theme-feature .rounded-lg;
 }
 .PluginManager__banner {
-  @apply flex items-center justify-end rounded-t-lg py-10 bg-left-bottom bg-no-repeat;
-  background-color: #e7f9fd
+  @apply flex items-center justify-end rounded-t-lg p-10 bg-left bg-no-repeat bg-theme-banner-background-color;
+  background-size: auto 100%;
 }
 .PluginManager__banner__title {
-  /* TODO: colors */
-  color: #1d6ddb;
+  @apply text-theme-banner-text
 }
 .PluginManager__wrapper {
   @apply flex flex-1 bg-theme-feature rounded-b-lg overflow-y-hidden
@@ -304,7 +304,6 @@ export default {
 
 <style lang="postcss">
 .PluginManager__checkmark {
-  @apply flex items-center justify-center text-white mr-1 rounded-full w-3 h-3;
-  background-color: #007cff;
+  @apply flex items-center justify-center text-white mr-1 rounded-full w-3 h-3 bg-blue
 }
 </style>

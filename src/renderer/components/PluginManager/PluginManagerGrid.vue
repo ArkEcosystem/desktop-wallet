@@ -86,7 +86,7 @@ export default {
   grid-row-gap: 2.5rem;
 }
 .PluginManagerGrid__plugin {
-  @apply pb-10 border-b border-dashed;
+  @apply pb-10 border-b border-dashed border-theme-line-separator;
 }
 .PluginManagerGrid__plugin:last-child {
   @apply pb-0 border-none;
@@ -95,9 +95,9 @@ export default {
   @apply flex items-center mt-1 text-theme-page-text-light;
 }
 .PluginManagerGrid__plugin__details span:not(:last-child) {
-  @apply border-r pr-2
+  @apply border-r pr-2 border-theme-line-separator;
 }
-@screen min-lg {
+@screen min-xl {
   .PluginManagerGrid {
     grid-template-columns: 1fr 1fr;
   }

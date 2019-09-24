@@ -92,6 +92,8 @@ let colors = {
   'theme-feature-item-selected-text': 'var(--theme-feature-item-selected-text)',
   'theme-feature-item-indicator': 'var(--theme-feature-item-indicator)',
 
+  'theme-secondary-feature': 'var(--theme-secondary-feature)',
+
   'theme-caption-text': 'var(--theme-caption-text)',
   'theme-heading-background': 'var(--theme-heading-background)',
   'theme-heading-text': 'var(--theme-heading-text)',
@@ -150,6 +152,9 @@ let colors = {
   'theme-warn': 'var(--theme-warn)',
   'theme-warn-shadow': 'var(--theme-warn-shadow)',
   'theme-warn-text': 'var(--theme-warn-text)',
+
+  'theme-banner-background-color': 'var(--theme-banner-background-color)',
+  'theme-banner-text': 'var(--theme-banner-text)',
 
   'theme-footer-text': '#a4acb8',
 
@@ -279,9 +284,9 @@ module.exports = {
     'sm': '576px',
     'md': '768px',
     'max-md': { max: '991px' },
-    'min-lg': { min: '992px' },
     'lg': '992px',
     'minmax-lg': { min: '992px', max: '1199px' },
+    'min-xl': { min: '1200px' },
     'xl': '1200px',
     'xxl': '1375px',
     'min-xxl': { min: '1375px' }
