@@ -11,6 +11,7 @@ import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 import WalletComponents from '@/services/plugin-manager/wallet-components'
 import releaseService from '@/services/release'
 
+import semver from 'semver'
 import trash from 'trash'
 import { NpmAdapter } from '@/services/plugin-manager/adapters'
 import sanitizeConfig from './plugin-manager/sanitize'
@@ -754,7 +755,7 @@ class PluginManager {
     return plugins.filter(plugin => {
       return !plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)
     })
-  },
+  }
 
   loadSandbox (config) {
     const sandbox = {

@@ -56,7 +56,7 @@
                 <div class="PluginDetailsModal__header__actions">
                   <ButtonGeneric
                     v-if="!isInstalled"
-                    label="{{ $t('COMMON.INSTALL') }}"
+                    :label="$t('COMMON.INSTALL')"
                     class="m-0"
                     @click="emitInstall"
                   />
