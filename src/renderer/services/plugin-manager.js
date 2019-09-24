@@ -12,6 +12,7 @@ import WalletComponents from '@/services/plugin-manager/wallet-components'
 
 import { NpmAdapter } from '@/services/plugin-manager/adapters'
 import sanitizeConfig from './plugin-manager/sanitize'
+import { NotInitiatedError, PluginNotEnabledError, PluginNotFoundError } from './plugin-manager/errors'
 
 const adapters = {
   NpmAdapter
@@ -60,16 +61,16 @@ class PluginManager {
 
   async enablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
-      throw new Error('Plugin Manager not initiated')
+      throw new NotInitiatedError()
     }
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new Error('Plugin not found')
+      throw new PluginNotFoundError(pluginId)
     }
 
     if (!this.app.$store.getters['plugin/isEnabled'](plugin.config.id, profileId)) {
-      throw new Error('Plugin is not enabled')
+      throw new PluginNotEnabledError(plugin.config.id)
     }
 
     if (!this.app.$store.getters['plugin/isSupported'](plugin.config.id)) {
@@ -114,12 +115,12 @@ class PluginManager {
   // TODO hook to clean up and restore or reset values
   async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
-      throw new Error('Plugin Manager not initiated')
+      throw new NotInitiatedError()
     }
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new Error(`Plugin \`${pluginId}\` not found`)
+      throw new PluginNotFoundError(pluginId)
     }
 
     if (plugin.config.permissions.includes('THEMES')) {
