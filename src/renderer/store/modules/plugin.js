@@ -225,7 +225,6 @@ export default {
 
     SET_AVAILABLE_PLUGINS (state, plugins) {
       state.available = plugins
-      state.lastFetched = Date.now()
     },
 
     SET_INSTALLED_PLUGIN (state, plugin) {
@@ -244,12 +243,12 @@ export default {
       })
     },
 
-    DELETE_LOADED_PLUGIN (state, data) {
-      if (!state.loaded[data.profileId]) {
+    DELETE_LOADED_PLUGIN (state, { pluginId, profileId }) {
+      if (!state.loaded[profileId]) {
         return
       }
 
-      Vue.delete(state.loaded[data.profileId], data.pluginId)
+      Vue.delete(state.loaded[profileId], pluginId)
     },
 
     SET_PLUGIN_AVATARS (state, data) {
@@ -279,7 +278,7 @@ export default {
       Vue.set(state.pluginOptions[data.profileId][data.pluginId], data.key, data.value)
     },
 
-    DELETE_PLUGIN_OPTIONS (state, pluginId, profileId) {
+    DELETE_PLUGIN_OPTIONS (state, { pluginId, profileId }) {
       if (state.pluginOptions[profileId][pluginId]) {
         Vue.delete(state.pluginOptions[profileId], pluginId)
       }
@@ -336,8 +335,16 @@ export default {
     },
 
     async unloadPluginForProfile ({ getters, state }, profile, pluginId) {
-      if (!state.enabled[profile.id]) {
+      if (state.enabled[profile.id]) {
         return
+      }
+
+      if (getters.isEnabled(pluginId, profile.id)) {
+        commit('SET_IS_PLUGIN_ENABLED', {
+          enabled: false,
+          pluginId,
+          profileId
+        })
       }
 
       if (!getters.isLoaded(pluginId, profile.id)) {
@@ -354,7 +361,7 @@ export default {
     },
 
     async setEnabled ({ commit, getters, rootGetters }, { enabled, pluginId }) {
-      if (getters['isEnabled'](pluginId) === enabled) {
+      if (getters.isEnabled(pluginId) === enabled) {
         return
       }
 
@@ -375,10 +382,6 @@ export default {
 
     setAvailable ({ commit, getters }, plugins) {
       commit('SET_AVAILABLE_PLUGINS', plugins)
-      // commit('SET_AVAILABLE_PLUGINS', uniqBy([
-      //   ...plugins,
-      //   ...getters['available']
-      // ], 'name'))
       commit('SET_LAST_FETCHED', Date.now())
     },
 
@@ -387,7 +390,7 @@ export default {
     },
 
     setLoaded ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.config.id, data.profileId)) {
+      if (!getters.isEnabled(data.config.id, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
@@ -407,7 +410,7 @@ export default {
     },
 
     setAvatars ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.pluginId, data.profileId)) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
@@ -418,7 +421,7 @@ export default {
     },
 
     setMenuItems ({ commit, getters, rootGetters }, data) {
-      if (!getters['isEnabled'](data.pluginId, data.profileId)) {
+      if (!getters.isEnabled(data.pluginId, data.profileId)) {
         throw new Error('Plugin is not enabled')
       }
 
@@ -472,7 +475,10 @@ export default {
     async deletePluginOptionsForProfile ({ commit, rootGetters }, pluginId, profileId = null) {
       profileId = profileId || rootGetters['session/profileId']
 
-      commit('DELETE_PLUGIN_OPTIONS', pluginId, profileId)
+      commit('DELETE_PLUGIN_OPTIONS', {
+        pluginId,
+        profileId
+      })
     }
   }
 }
