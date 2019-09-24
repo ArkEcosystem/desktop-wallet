@@ -90,7 +90,7 @@ export default {
     isUpdateAvailable: (state, getters) => pluginId => {
       const plugin = getters.availableById(pluginId)
 
-      return plugin ? semver.lt(getters.installedById(pluginId), plugin.version) : false
+      return plugin ? semver.lt(getters.installedById(pluginId).config.version, plugin.version) : false
     },
 
     latestVersion: (state, getters) => pluginId => {
