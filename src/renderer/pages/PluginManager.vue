@@ -69,23 +69,45 @@
           />
         </div>
 
-        <PluginManagerGrid
-          v-if="hasGridLayout"
-          :plugins="plugins"
-          @show-details="openDetailsModal"
-        />
+        <template v-if="plugins.length">
+          <PluginManagerGrid
+            v-if="hasGridLayout"
+            :plugins="plugins"
+            @show-details="openDetailsModal"
+          />
 
-        <PluginManagerTable
+          <PluginManagerTable
+            v-else
+            :has-pagination="false"
+            :rows="plugins"
+            :total-rows="plugins.length"
+            :sort-query="sortParams"
+            :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
+            class="mt-10"
+            @on-sort-change="onSortChange"
+            @show-details="openDetailsModal"
+          />
+        </template>
+
+        <div
           v-else
-          :has-pagination="false"
-          :rows="plugins"
-          :total-rows="plugins.length"
-          :sort-query="sortParams"
-          :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
-          class="mt-10"
-          @on-sort-change="onSortChange"
-          @show-details="openDetailsModal"
-        />
+          class="PluginManager__body__noresults"
+        >
+          <img
+            :src="noResultsImage"
+            class="PluginManager__body__noresults__image"
+          >
+
+          <i18n
+            tag="span"
+            class="text-center mt-4"
+            path="PAGES.PLUGIN_MANAGER.EMPTY_CATEGORY"
+          >
+            <strong place="category">
+              {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${activeCategory.toUpperCase()}`) }}
+            </strong>
+          </i18n>
+        </div>
       </div>
     </div>
 
@@ -147,9 +169,18 @@ export default {
   }),
 
   computed: {
+    hasDarkTheme () {
+      return this.session_hasDarkTheme
+    },
+
     bannerImage () {
-      const theme = this.session_hasDarkTheme ? 'dark' : 'light'
+      const theme = this.hasDarkTheme ? 'dark' : 'light'
       return this.assets_loadImage(`pages/plugin-manager/banner-${theme}.svg`)
+    },
+
+    noResultsImage () {
+      const theme = this.hasDarkTheme ? 'dark' : 'light'
+      return this.assets_loadImage(`pages/plugin-manager/noresults-${theme}.svg`)
     },
 
     hasGridLayout () {
@@ -293,7 +324,12 @@ export default {
 .PluginManager__body {
   @apply flex flex-1 flex-col p-10 overflow-y-auto
 }
-
+.PluginManager__body__noresults {
+  @apply flex flex-col justify-center items-center h-full
+}
+.PluginManager__body__noresults__image {
+  @apply h-1/2 max-w-xs min-w-48
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

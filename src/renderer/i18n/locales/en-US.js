@@ -556,6 +556,7 @@ export default {
         THEME: 'Theme',
         OTHER: 'Other'
       },
+      EMPTY_CATEGORY: 'There are no plugins under the category {category} yet',
       SEARCH: 'Search',
       SHOW_PERMISSIONS: 'Show permissions',
       RELOADING: 'The repository is being reloaded',
