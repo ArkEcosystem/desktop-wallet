@@ -334,16 +334,12 @@ export default {
       }
     },
 
-    async unloadPluginForProfile ({ getters, state }, profile, pluginId) {
-      if (state.enabled[profile.id]) {
-        return
-      }
-
-      if (getters.isEnabled(pluginId, profile.id)) {
+    async unloadPluginForProfile ({ commit, getters, state }, profile, pluginId) {
+      if (state.enabled[profile.id] && getters.isEnabled(pluginId, profile.id)) {
         commit('SET_IS_PLUGIN_ENABLED', {
           enabled: false,
           pluginId,
-          profileId
+          profileId: profile.id
         })
       }
 
