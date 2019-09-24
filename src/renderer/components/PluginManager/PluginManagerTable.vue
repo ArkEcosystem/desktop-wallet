@@ -96,6 +96,13 @@ export default {
     TableWrapper
   },
 
+  props: {
+    activeCategory: {
+      type: String,
+      required: true
+    }
+  },
+
   computed: {
     columns () {
       const columns = [
@@ -136,6 +143,13 @@ export default {
           tdClass: 'text-center'
         }
       ]
+
+      if (this.activeCategory !== 'all') {
+        const index = columns.findIndex(el => {
+          return el.field === 'categories'
+        })
+        columns.splice(index, 1)
+      }
 
       return columns
     }
