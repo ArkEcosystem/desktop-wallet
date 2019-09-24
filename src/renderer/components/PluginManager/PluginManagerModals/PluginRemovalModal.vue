@@ -73,7 +73,7 @@ export default {
     },
 
     async removePlugin () {
-      const path = this.$store.getters['plugin/installedById'](this.plugin.id).path
+      const path = this.$store.getters['plugin/installedById'](this.plugin.id).fullPath
 
       try {
         this.$store.dispatch('plugin/unloadPluginForProfiles', this.plugin.id)

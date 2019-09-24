@@ -40,19 +40,20 @@ export default {
     },
 
     installedById: (state, getters) => id => {
-      const plugins = Object.values(getters['installed'])
+      const plugins = Object.values(getters.installed)
 
       if (!plugins.length) {
         return null
       }
 
-      return plugins.find(plugin => plugin.config.id)
+      return plugins.find(plugin => id === plugin.config.id)
     },
 
     installed: state => state.installed,
 
     byCategory: (state, getters) => category => {
-      const plugins = getters['all']
+      const plugins = getters.all
+
       return category === 'all' ? plugins : plugins.filter(plugin => {
         return plugin.categories.includes(category)
       })
@@ -213,7 +214,7 @@ export default {
   },
 
   mutations: {
-    RESET_PLUGINS (state, plugin) {
+    RESET_PLUGINS (state) {
       state.loaded = {}
       state.installed = {}
     },
