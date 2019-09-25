@@ -748,7 +748,9 @@ class PluginManager {
     const localBlacklist = this.app.$store.getters['plugin/blacklisted']
     const globalBlacklist = []
 
-    return difference(plugins, uniq(localBlacklist.concat(globalBlacklist)))
+    return differenceWith(plugins, uniq(localBlacklist.concat(globalBlacklist)), (plugin, blacklisted) => {
+      return plugin.id === blacklisted
+    })
   }
 
   async applyMinVersionCheck (plugins) {
