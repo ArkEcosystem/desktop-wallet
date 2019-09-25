@@ -40,6 +40,7 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "postinstall": "electron-builder install-app-deps",
+    "preversion": "bash ./scripts/version-artifacts.sh",
     "test": "npm run test:unit && npm run test:e2e:full",
     "test:e2e": "jest --config __tests__/e2e.jest.conf.js",
     "test:e2e:full": "npm run pack && npm run test:e2e",
