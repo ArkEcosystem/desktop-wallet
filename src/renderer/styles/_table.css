@@ -58,6 +58,14 @@
   @apply .text-theme-page-text-light .cursor-default;
 }
 
+.vgt-table th.sorting {
+  @apply .flex .items-center .whitespace-no-wrap
+}
+
+.vgt-table th.vgt-right-align.sorting {
+  @apply .justify-end
+}
+
 .vgt-table th.sorting-asc:after {
   @apply .inline-block .ml-1;
   background: url('../assets/images/arrows/sort-asc.svg') no-repeat;
