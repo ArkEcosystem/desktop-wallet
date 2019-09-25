@@ -13,7 +13,6 @@ class NpmAdapter {
   async all () {
     let packageData = []
     const plugins = []
-    const requests = []
 
     let from = 0
     let totalCount = 0
@@ -32,6 +31,8 @@ class NpmAdapter {
     }
 
     for (const pluginChunk of chunk(plugins, CHUNKSIZE)) {
+      const requests = []
+
       for (const plugin of pluginChunk) {
         requests.push(packageJson(plugin.name, { fullMetadata: true }))
       }
