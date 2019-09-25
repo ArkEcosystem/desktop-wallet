@@ -28,7 +28,8 @@ export default {
     ledgerCache: null,
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
-    lastFees: {}
+    lastFees: {},
+    filterBlacklistedPlugins: true
   }),
 
   getters: {
@@ -83,7 +84,8 @@ export default {
     lastFees: state => state.lastFees,
     lastFeeByType: state => type => {
       return state.lastFees ? state.lastFees[type] : null
-    }
+    },
+    filterBlacklistedPlugins: state => state.filterBlacklistedPlugins
   },
 
   mutations: {
@@ -191,6 +193,10 @@ export default {
       state.lastFees = fees
     },
 
+    SET_FILTER_BLACKLISTED_PLUGINS (state, filterBlacklistedPlugins) {
+      state.filterBlacklistedPlugins = filterBlacklistedPlugins
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -217,6 +223,7 @@ export default {
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
       state.lastFees = {}
+      state.filterBlacklistedPlugins = true
 
       i18n.locale = state.language
     },
@@ -247,6 +254,7 @@ export default {
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
       state.lastFees = value.lastFees
+      state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
 
       i18n.locale = state.language
     }
@@ -382,6 +390,10 @@ export default {
       fees[type] = fee
 
       commit('SET_LAST_FEES', fees)
+    },
+
+    setFilterBlacklistedPlugins ({ commit }, value) {
+      commit('SET_FILTER_BLACKLISTED_PLUGINS', value)
     }
   }
 }

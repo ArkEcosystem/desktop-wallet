@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
-import { cloneDeep, sortBy, uniqBy } from 'lodash'
+import { cloneDeep, differenceWith, sortBy, uniqBy } from 'lodash'
 import semver from 'semver'
 
 export default {
@@ -20,11 +20,22 @@ export default {
   getters: {
     lastFetched: state => state.lastFetched,
 
-    all: (state, getters) => {
-      return sortBy(uniqBy([
+    all: (state, getters, rootGetters) => {
+      const filterPlugins = rootGetters['session/filterBlacklistedPlugins']
+
+      let plugins = uniqBy([
         ...(Object.values(getters['installed']).map(plugin => plugin.config)),
         ...Object.values(getters['available'])
-      ], 'id'), 'title')
+      ], 'id')
+
+      // TODO global blacklist
+      if (filterPlugins) {
+        plugins = differenceWith(plugins, getters.blacklisted, (plugin, blacklisted) => {
+          return plugin.id === blacklisted
+        })
+      }
+
+      return sortBy(plugins, 'title')
     },
 
     available: state => state.available,

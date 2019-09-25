@@ -132,6 +132,10 @@ export default new BaseModel({
     lastFees: {
       type: 'object',
       format: data => data.lastFees || {}
+    },
+    filterBlacklistedPlugins: {
+      type: 'boolean',
+      format: data => data.filterBlacklistedPlugins || true
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']
