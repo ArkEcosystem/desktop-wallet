@@ -14,7 +14,7 @@ export default {
     loaded: {},
     blacklisted: [],
     pluginOptions: {},
-    lastFetched: null
+    lastFetched: 0
   },
 
   getters: {
