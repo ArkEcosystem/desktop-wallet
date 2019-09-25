@@ -741,7 +741,7 @@ class PluginManager {
     }
   }
 
-  async applyMinVersionCheck (plugins) {
+  applyMinVersionCheck (plugins) {
     return plugins.filter(plugin => {
       return !plugin.minVersion || semver.gte(releaseService.currentVersion, plugin.minVersion)
     })
