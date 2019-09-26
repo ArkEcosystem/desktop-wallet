@@ -40,14 +40,14 @@ export default {
 
     available: state => state.available,
 
-    availableById: (state, getters) => id => {
-      const plugins = Object.values(getters['available'])
+    availableById: (state, getters) => pluginId => {
+      const plugins = getters.available
 
       if (!plugins.length) {
         return null
       }
 
-      return plugins.find(plugin => plugin.id)
+      return plugins[pluginId] || null
     },
 
     installedById: (state, getters) => id => {
@@ -345,7 +345,7 @@ export default {
           await this._vm.$plugins.enablePlugin(pluginId, profile.id)
         } catch (error) {
           this._vm.$logger.error(
-            `Could not enable '${pluginId}' plugin for profile '${profile.name}': ${error.message}`
+            `Could not enable '${pluginId}' for profile '${profile.name}': ${error.message}`
           )
         }
       }

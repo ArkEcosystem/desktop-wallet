@@ -121,6 +121,7 @@
       :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
       container-classes="max-w-md"
       @close="closeDetailsModal"
+      @install="onInstall"
       @remove="openRemovalModal"
     />
 
@@ -298,6 +299,14 @@ export default {
 
     onRemoved (pluginId) {
       this.closeRemovalModal()
+    },
+
+    async onInstall (pluginId) {
+      try {
+        await this.$plugins.installPlugin(pluginId)
+      } catch (error) {
+        this.$error(`Could not install '${pluginId}: ${error.message}`)
+      }
     },
 
     // TODO

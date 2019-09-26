@@ -15,7 +15,7 @@ import semver from 'semver'
 import trash from 'trash'
 import { NpmAdapter } from '@/services/plugin-manager/adapters'
 import sanitizeConfig from './plugin-manager/sanitize'
-import { NotInitiatedError, PluginNotEnabledError, PluginNotFoundError } from './plugin-manager/errors'
+import * as errors from './plugin-manager/errors'
 
 const adapters = {
   NpmAdapter
@@ -62,18 +62,42 @@ class PluginManager {
     await this.app.$store.dispatch('plugin/loadPluginsForProfiles')
   }
 
+  async installPlugin (pluginId) {
+    if (!this.hasInit) {
+      throw new errors.NotInitiatedError()
+    }
+
+    if (this.plugins[pluginId]) {
+      throw new errors.PluginAlreadyInstalledError(pluginId)
+    }
+
+    const pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
+    try {
+      await this.adapter().download(pluginId, pluginsPath)
+    } catch (error) {
+      throw new errors.PluginDownloadFailedError(pluginId)
+    }
+
+    const pluginPath = `${pluginsPath}/${pluginId}`
+    try {
+      await this.fetchPlugin(pluginPath)
+    } catch (error) {
+      console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
+    }
+  }
+
   async enablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
-      throw new NotInitiatedError()
+      throw new errors.NotInitiatedError()
     }
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new PluginNotFoundError(pluginId)
+      throw new errors.PluginNotFoundError(pluginId)
     }
 
     if (!this.app.$store.getters['plugin/isEnabled'](plugin.config.id, profileId)) {
-      throw new PluginNotEnabledError(plugin.config.id)
+      throw new errors.PluginNotEnabledError(plugin.config.id)
     }
 
     if (!this.app.$store.getters['plugin/isInstalledSupported'](plugin.config.id)) {
@@ -118,12 +142,12 @@ class PluginManager {
   // TODO hook to clean up and restore or reset values
   async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
-      throw new NotInitiatedError()
+      throw new errors.NotInitiatedError()
     }
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new PluginNotFoundError(pluginId)
+      throw new errors.PluginNotFoundError(pluginId)
     }
 
     if (plugin.config.permissions.includes('THEMES')) {
@@ -135,12 +159,12 @@ class PluginManager {
 
   async deletePlugin (pluginId) {
     if (!this.hasInit) {
-      throw new NotInitiatedError()
+      throw new errors.NotInitiatedError()
     }
 
     const plugin = this.plugins[pluginId]
     if (!plugin) {
-      throw new PluginNotFoundError(pluginId)
+      throw new errors.PluginNotFoundError(pluginId)
     }
 
     await trash(plugin.fullPath)
@@ -686,20 +710,35 @@ class PluginManager {
   async fetchPluginsFromPath (pluginsPath) {
     fs.ensureDirSync(pluginsPath)
 
-    const entries = fs.readdirSync(pluginsPath).filter(entry => {
-      if (fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()) {
-        return true
-      }
-
-      return false
+    const dirs = fs.readdirSync(pluginsPath).filter(entry => {
+      return fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()
     })
 
-    for (const entry of entries) {
-      const pluginPath = `${pluginsPath}/${entry}`
-      try {
-        await this.fetchPlugin(pluginPath)
-      } catch (error) {
-        console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
+    const [scoped, unscoped] = partition(dirs, entry => {
+      return entry.startsWith('@')
+    })
+
+    const plugins = { '.': unscoped }
+
+    for (const scope of scoped) {
+      const scopePath = `${pluginsPath}/${scope}`
+
+      const entries = fs.readdirSync(scopePath).filter(entry => {
+        return fs.lstatSync(`${scopePath}/${entry}`).isDirectory()
+      })
+
+      plugins[scope] = entries
+    }
+
+    for (const [scope, entries] of Object.entries(plugins)) {
+      for (const entry of entries) {
+        const pluginPath = `${pluginsPath}/${scope}/${entry}`
+
+        try {
+          await this.fetchPlugin(pluginPath)
+        } catch (error) {
+          console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
+        }
       }
     }
   }

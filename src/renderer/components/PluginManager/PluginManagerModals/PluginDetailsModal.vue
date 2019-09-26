@@ -257,7 +257,7 @@ export default {
     },
 
     emitInstall () {
-      this.$emit('install', this.plugin)
+      this.$emit('install', this.plugin.id)
     },
 
     emitUpdate () {
