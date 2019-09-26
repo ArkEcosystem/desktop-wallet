@@ -66,6 +66,10 @@
   @apply .justify-end
 }
 
+.vgt-table th.vgt-right-align.text-center {
+  @apply .justify-center
+}
+
 .vgt-table th.sorting-asc:after {
   @apply .inline-block .ml-1;
   background: url('../assets/images/arrows/sort-asc.svg') no-repeat;
