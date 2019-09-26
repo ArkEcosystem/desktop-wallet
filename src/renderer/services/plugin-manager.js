@@ -718,7 +718,7 @@ class PluginManager {
       return entry.startsWith('@')
     })
 
-    const plugins = { '.': unscoped }
+    const plugins = unscoped
 
     for (const scope of scoped) {
       const scopePath = `${pluginsPath}/${scope}`
@@ -727,18 +727,16 @@ class PluginManager {
         return fs.lstatSync(`${scopePath}/${entry}`).isDirectory()
       })
 
-      plugins[scope] = entries
+      plugins.push(entries.map(entry => `${scope}/${entry}`))
     }
 
-    for (const [scope, entries] of Object.entries(plugins)) {
-      for (const entry of entries) {
-        const pluginPath = `${pluginsPath}/${scope}/${entry}`
+    for (const plugin of plugins) {
+      const pluginPath = `${pluginsPath}/${plugin}`
 
-        try {
-          await this.fetchPlugin(pluginPath)
-        } catch (error) {
-          console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
-        }
+      try {
+        await this.fetchPlugin(pluginPath)
+      } catch (error) {
+        console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
       }
     }
   }
