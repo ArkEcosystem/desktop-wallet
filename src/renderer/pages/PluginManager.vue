@@ -81,7 +81,10 @@
             :has-pagination="false"
             :rows="plugins"
             :total-rows="plugins.length"
-            :sort-query="sortParams"
+            :sort-query="{
+              field: sortParams.field,
+              type: sortParams.type
+            }"
             :no-data-message="$t('PLUGIN_TABLE.NO_PLUGINS')"
             :active-category="activeCategory"
             class="mt-10"
@@ -132,6 +135,7 @@
 
 <script>
 // import sortBy from 'lodash/sortBy'
+import { isEqual } from 'lodash'
 import { ButtonLayout, ButtonReload } from '@/components/Button'
 import {
   PluginDetailsModal,
@@ -271,7 +275,9 @@ export default {
     },
 
     onSortChange (sortParams) {
-      this.sortParams = sortParams
+      if (!isEqual(sortParams, this.sortParams)) {
+        this.sortParams = sortParams
+      }
     },
 
     disablePlugin (plugin) {
