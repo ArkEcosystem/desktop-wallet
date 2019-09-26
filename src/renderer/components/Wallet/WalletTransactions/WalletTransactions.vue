@@ -254,9 +254,8 @@ export default {
         // Avoid throwing an Error if the user changes to a different route
         if (this.wallet_fromRoute) {
           if (address === this.wallet_fromRoute.address && newTransactions > 0) {
-            this.newTransactionsNotice = this.$t('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
-              count: newTransactions,
-              plural: newTransactions > 1 ? 's' : ''
+            this.newTransactionsNotice = this.$tc('WALLET_TRANSACTIONS.NEW_TRANSACTIONS', {
+              count: newTransactions
             })
           }
         }

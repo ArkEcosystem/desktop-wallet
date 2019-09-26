@@ -1058,7 +1058,7 @@ export default {
     RECIPIENT: 'Recipient',
     SENDER: 'Sender',
     AMOUNT: 'Amount',
-    NEW_TRANSACTIONS: 'This wallet has {count} new transaction{plural}. Press the refresh button to update.'
+    NEW_TRANSACTIONS: '0 | This wallet has 1 new transaction. Press the refresh button to update. | This wallet has {count} new transactions. Press the refresh button to update.'
   },
 
   WALLET_TABLE: {
