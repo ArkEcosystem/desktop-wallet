@@ -17,7 +17,10 @@
       :is-loading="isLoading"
       :is-remote="true"
       :has-pagination="totalCount > 0"
-      :sort-query="queryParams.sort"
+      :sort-query="{
+        field: queryParams.sort.field,
+        type: queryParams.sort.type
+      }"
       :per-page="transactionTableRowCount"
       @on-per-page-change="onPerPageChange"
       @on-page-change="onPageChange"
@@ -27,7 +30,7 @@
 </template>
 
 <script>
-import at from 'lodash/at'
+import { at, isEqual } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
 
@@ -274,18 +277,14 @@ export default {
       this.transactionTableRowCount = currentPerPage
     },
 
-    onSortChange (sortOptions) {
-      const columnName = sortOptions[0].field
-      const sortType = sortOptions[0].type
-
-      this.__updateParams({
-        sort: {
-          field: columnName,
-          type: sortType
-        },
-        page: 1
-      })
-      this.loadTransactions()
+    onSortChange (sortParams) {
+      if (!isEqual(sortParams, this.queryParams.sort)) {
+        this.__updateParams({
+          sort: sortParams,
+          page: 1
+        })
+        this.loadTransactions()
+      }
     },
 
     reset () {
