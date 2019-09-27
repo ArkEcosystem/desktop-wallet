@@ -72,6 +72,17 @@ class PluginManager {
     await setup.install()
   }
 
+  async unloadThemes (plugin, profileId) {
+    const defaultTheme = 'light'
+    await this.app.$store.dispatch('session/setTheme', defaultTheme)
+
+    const profile = this.app.$store.getters['profile/byId'](profileId)
+    await this.app.$store.dispatch('profile/update', {
+      ...profile,
+      ...{ theme: defaultTheme }
+    })
+  }
+
   // TODO hook to clean up and restore or reset values
   async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
