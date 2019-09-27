@@ -2,7 +2,7 @@
 import path from 'path'
 import { castArray } from 'lodash'
 import { NodeVM } from 'vm2'
-import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO, EVENTS } from './plugin-permission'
+import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO, EVENTS, ALERTS } from './plugin-permission'
 import { createUiComponentsPermission } from './sandbox/ui-components-sandbox'
 import { createHttpSandbox } from './sandbox/http-sandbox'
 import { createMessagingSandbox } from './sandbox/messaging-sandbox'
@@ -18,6 +18,7 @@ import { createPeerCurrentSandbox } from './sandbox/peer-current-sandbox'
 import { createStorageSandbox } from './sandbox/storage-sandbox'
 import { createAudioSandbox } from './sandbox/audio-sandbox'
 import { createEventsSandbox } from './sandbox/events-sandbox'
+import { createAlertsSandbox } from './sandbox/alerts-sandbox'
 
 export class PluginSandbox {
   constructor ({
@@ -83,23 +84,24 @@ export class PluginSandbox {
 
   __mapPermissionsToSandbox () {
     return {
-      [UI_COMPONENTS.name]: createUiComponentsPermission(this.walletApi),
-      [HTTP.name]: createHttpSandbox(this.walletApi, this.plugin),
-      [MESSAGING.name]: createMessagingSandbox(this.walletApi, this.app),
-      [THEMES.name]: createThemeSandbox(),
-      [WEBFRAME.name]: createWebFrameSandbox(this.walletApi),
-      [WEBSOCKET.name]: createWebsocketSandbox(this.walletApi, this.app, this.plugin),
-      [TIMERS.name]: createTimersSandbox(this.walletApi, this.app),
-      [PROFILE_ALL.name]: createProfileAllSandbox(this.walletApi, this.app),
-      [PROFILE_CURRENT.name]: createProfileCurrentSandbox(this.walletApi, this.app),
-      [PEER_CURRENT.name]: createPeerCurrentSandbox(this.walletApi, this.app),
-      [STORAGE.name]: createStorageSandbox(this.walletApi, this.app, this.plugin),
+      [ALERTS.name]: createAlertsSandbox(this.walletApi, this.app),
       [AUDIO.name]: createAudioSandbox(this.sandbox),
       [EVENTS.name]: createEventsSandbox(this.walletApi, this.app),
+      [HTTP.name]: createHttpSandbox(this.walletApi, this.plugin),
+      [MESSAGING.name]: createMessagingSandbox(this.walletApi, this.app),
+      [PEER_CURRENT.name]: createPeerCurrentSandbox(this.walletApi, this.app),
+      [PROFILE_ALL.name]: createProfileAllSandbox(this.walletApi, this.app),
+      [PROFILE_CURRENT.name]: createProfileCurrentSandbox(this.walletApi, this.app),
       [PUBLIC.name]: [
         createFontAwesomeSandbox(this.walletApi),
         createRouteSandbox(this.walletApi, this.plugin, this.app)
-      ]
+      ],
+      [STORAGE.name]: createStorageSandbox(this.walletApi, this.app, this.plugin),
+      [THEMES.name]: createThemeSandbox(),
+      [TIMERS.name]: createTimersSandbox(this.walletApi, this.app),
+      [UI_COMPONENTS.name]: createUiComponentsPermission(this.walletApi),
+      [WEBFRAME.name]: createWebFrameSandbox(this.walletApi),
+      [WEBSOCKET.name]: createWebsocketSandbox(this.walletApi, this.app, this.plugin)
     }
   }
 }
