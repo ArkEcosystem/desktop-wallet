@@ -22,7 +22,7 @@
 
     <div
       class="PluginManager__banner"
-      :style="{ backgroundImage: `url('${bannerImage}')` }"
+      :style="{ backgroundImage: `url(${bannerImage})` }"
     >
       <div class="w-full lg:w-3/5 flex flex-col">
         <h1 class="PluginManager__banner__title">
@@ -118,8 +118,6 @@
     <PluginDetailsModal
       v-if="pluginToShow"
       :plugin="pluginToShow"
-      :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
-      container-classes="max-w-md"
       @close="closeDetailsModal"
       @install="onInstall"
       @remove="openRemovalModal"
@@ -149,7 +147,7 @@ import {
 import { PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
 
 export default {
-  name: 'Plugins',
+  name: 'PluginManager',
 
   components: {
     ButtonLayout,

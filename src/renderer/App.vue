@@ -80,6 +80,11 @@
       />
 
       <PortalTarget
+        name="plugin"
+        @change="onPortalChange"
+      />
+
+      <PortalTarget
         name="loading"
         @change="onPortalChange"
       />
