@@ -5,13 +5,10 @@ import * as ListDividedComponents from '@/components/ListDivided'
 import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
 import TableWrapper from '@/components/utils/TableWrapper'
-import WebFrame from '@/components/utils/WebFrame'
 
-export default (permissions) => {
-  let components = {}
-
-  if (permissions.includes('UI_COMPONENTS')) {
-    components = {
+export function createUiComponentsPermission (walletApi) {
+  return () => {
+    const components = {
       Button: ButtonComponents,
       Collapse: CollapseComponents,
       Input: InputComponents,
@@ -20,11 +17,10 @@ export default (permissions) => {
       Menu: MenuComponents,
       TableWrapper
     }
-  }
 
-  if (permissions.includes('WEBFRAME')) {
-    components = { ...components, WebFrame }
+    walletApi.components = {
+      ...walletApi.components || {},
+      components
+    }
   }
-
-  return components
 }

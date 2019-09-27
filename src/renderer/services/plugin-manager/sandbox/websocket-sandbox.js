@@ -1,4 +1,4 @@
-export default class PluginWebsocket {
+class PluginWebsocket {
   constructor (whitelist, router) {
     this.whitelist = []
     this.router = router
@@ -95,5 +95,11 @@ export default class PluginWebsocket {
     })
 
     return websocketEvents
+  }
+}
+
+export function createWebsocketSandbox (walletApi, app, plugin) {
+  return () => {
+    walletApi.websocket = new PluginWebsocket(plugin.config.urls, app.$router)
   }
 }
