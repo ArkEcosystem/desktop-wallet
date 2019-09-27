@@ -6,7 +6,6 @@ import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TI
 import { createUiComponentsPermission } from './sandbox/ui-components-sandbox'
 import { createHttpSandbox } from './sandbox/http-sandbox'
 import { createMessagingSandbox } from './sandbox/messaging-sandbox'
-import { createThemeSandbox } from './sandbox/themes-sandbox'
 import { createWebFrameSandbox } from './sandbox/webframe-sandbox'
 import { createWebsocketSandbox } from './sandbox/websocket-sandbox'
 import { createFontAwesomeSandbox } from './sandbox/font-awesome-sandbox'
@@ -97,7 +96,6 @@ export class PluginSandbox {
         createRouteSandbox(this.walletApi, this.plugin, this.app)
       ],
       [STORAGE.name]: createStorageSandbox(this.walletApi, this.app, this.plugin),
-      [THEMES.name]: createThemeSandbox(),
       [TIMERS.name]: createTimersSandbox(this.walletApi, this.app),
       [UI_COMPONENTS.name]: createUiComponentsPermission(this.walletApi),
       [WEBFRAME.name]: createWebFrameSandbox(this.walletApi),
