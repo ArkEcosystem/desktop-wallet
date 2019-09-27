@@ -29,7 +29,8 @@ export default {
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
     lastFees: {},
-    filterBlacklistedPlugins: true
+    filterBlacklistedPlugins: true,
+    pluginAdapter: 'npm'
   }),
 
   getters: {
@@ -85,7 +86,8 @@ export default {
     lastFeeByType: state => type => {
       return state.lastFees ? state.lastFees[type] : null
     },
-    filterBlacklistedPlugins: state => state.filterBlacklistedPlugins
+    filterBlacklistedPlugins: state => state.filterBlacklistedPlugins,
+    pluginAdapter: state => state.pluginAdapter
   },
 
   mutations: {
@@ -197,6 +199,10 @@ export default {
       state.filterBlacklistedPlugins = filterBlacklistedPlugins
     },
 
+    SET_PLUGIN_ADAPTER (state, pluginAdapter) {
+      state.pluginAdapter = pluginAdapter
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -224,6 +230,7 @@ export default {
       state.unconfirmedVotes = []
       state.lastFees = {}
       state.filterBlacklistedPlugins = true
+      state.pluginAdapter = 'npm'
 
       i18n.locale = state.language
     },
@@ -255,6 +262,7 @@ export default {
       state.unconfirmedVotes = value.unconfirmedVotes
       state.lastFees = value.lastFees
       state.filterBlacklistedPlugins = value.filterBlacklistedPlugins
+      state.pluginAdapter = value.pluginAdapter
 
       i18n.locale = state.language
     }
@@ -394,6 +402,10 @@ export default {
 
     setFilterBlacklistedPlugins ({ commit }, value) {
       commit('SET_FILTER_BLACKLISTED_PLUGINS', value)
+    },
+
+    setPluginAdapter ({ commit }, value) {
+      commit('SET_PLUGIN_ADAPTER', value)
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <PluginManagerModalWindow
-    portal-target="plugin"
+  <ModalWindow
     :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
+    header-classes="flex px-10 py-8 -mx-16 -mt-16 bg-theme-secondary-feature rounded-t-lg"
     container-classes="max-w-md"
     @close="emitClose"
   >
@@ -75,8 +75,8 @@
       </div>
     </template>
 
-    <template #content>
-      <p class="mb-4 leading-tight">
+    <template #default>
+      <p class="mt-12 mb-4 leading-tight">
         {{ plugin.description }}
       </p>
 
@@ -114,7 +114,9 @@
         </div>
         <div>
           <span>{{ $t('COMMON.SIZE') }}</span>
-          {{ formatter_bytes(plugin.size) }}
+          <span class="whitespace-no-wrap">
+            {{ formatter_bytes(plugin.size) }}
+          </span>
         </div>
         <div>
           <span>{{ $t('COMMON.VERSION') }}</span>
@@ -122,14 +124,14 @@
         </div>
       </div>
     </template>
-  </PluginManagerModalWindow>
+  </ModalWindow>
 </template>
 
 <script>
 import domain from 'getdomain'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import { PluginLogo } from '@/components/PluginManager'
-import PluginManagerModalWindow from '@/components/PluginManager/PluginManagerModals/PluginManagerModalWindow'
+import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -140,7 +142,7 @@ export default {
     ButtonGeneric,
     ButtonIconGeneric,
     PluginManagerButtonSwitch,
-    PluginManagerModalWindow,
+    ModalWindow,
     PluginLogo,
     SvgIcon
   },
@@ -210,7 +212,7 @@ export default {
     },
 
     emitInstall () {
-      this.$emit('install', this.plugin.id)
+      this.$emit('install', this.plugin)
     },
 
     emitUpdate () {

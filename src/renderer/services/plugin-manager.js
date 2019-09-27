@@ -51,7 +51,7 @@ class PluginManager {
   async init (app) {
     this.app = app
 
-    this.setAdapter(this.app.$store.getters['session/profile'].pluginAdapter)
+    this.setAdapter(this.app.$store.getters['session/pluginAdapter'])
 
     await this.app.$store.dispatch('plugin/reset')
     await this.fetchPlugins()

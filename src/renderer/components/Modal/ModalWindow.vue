@@ -15,40 +15,41 @@
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
           <div
             :class="containerClasses"
-            class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg relative transition bg-theme-modal text-theme-text-content"
+            class="ModalWindow__container flex flex-col shadow mx-auto relative transition text-theme-text-content"
             @click.stop="void 0"
           >
-            <div class="ModalWindow__container__actions">
-              <span
-                v-if="canResize"
-                class="mr-4"
-              >
-                <ButtonClose
-                  :icon-name="isMaximized ? 'minus' : 'resize'"
-                  icon-class="text-grey"
-                  class="ModalWindow__resize-button p-6"
-                  @click="toggleMaximized(setBlurFilter)"
-                />
-              </span>
-
-              <ButtonClose
-                :disabled="!allowClose"
-                icon-class="text-grey"
-                class="ModalWindow__close-button p-6"
-                @click="emitClose(true)"
-              />
-            </div>
-
             <section class="ModalWindow__container__content">
+              <div class="ModalWindow__container__actions">
+                <span
+                  v-if="canResize"
+                  class="mr-6"
+                >
+                  <ButtonClose
+                    :icon-name="isMaximized ? 'minus' : 'resize'"
+                    icon-class="text-grey"
+                    class="ModalWindow__resize-button p-6"
+                    @click="toggleMaximized(setBlurFilter)"
+                  />
+                </span>
+
+                <ButtonClose
+                  :disabled="!allowClose"
+                  icon-class="text-grey"
+                  class="ModalWindow__close-button p-6"
+                  @click="emitClose(true)"
+                />
+              </div>
+
               <header
                 v-if="$slots.header || title"
+                :class="headerClasses"
               >
                 <slot name="header">
                   <h2>{{ title }}</h2>
                 </slot>
               </header>
 
-              <article class="content flex-1 mt-3">
+              <article class="content flex-1 mt-4">
                 <slot />
               </article>
             </section>
@@ -85,6 +86,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    headerClasses: {
+      type: String,
+      required: false,
+      default: ''
     },
     containerClasses: {
       type: String,
@@ -177,14 +183,14 @@ export default {
 }
 
 .ModalWindow__container__actions {
-  @apply absolute pin-x block text-right m-4
+  @apply absolute pin-x pin-t flex justify-end m-2 p-2
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
-  @apply overflow-hidden px-16 pt-10 pb-16
+  @apply overflow-hidden p-16 bg-theme-modal rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container__content {
-  @apply overflow-y-auto px-10 pt-2 pb-5
+  @apply overflow-y-auto px-10 pt-2 pb-5 bg-theme-modal rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container {
   height: 200px;
@@ -194,6 +200,9 @@ export default {
 
 <style lang="postcss">
 .ModalWindow__container__footer--warning {
-  @apply .px-10 .py-8 .bg-yellow-lighter .text-grey-darkest
+  @apply px-10 py-8 bg-yellow-lighter text-grey-darkest rounded-lg mt-2 text-sm;
+}
+.ModalWindow--minimized .ModalWindow__container__footer--warning {
+  @apply hidden
 }
 </style>

@@ -379,7 +379,7 @@ export default {
       EXPORT_WALLETS: 'Impossibile esportare i tuoi protafogli'
     },
     EXPORT: 'Esporta 0 Portafogli | Esporta 1 Portafoglio | Esporta {count} Portafogli',
-    INSTRUCTIONS: 'I tuoi portafogli esportati non conterranno le tue frasi segrete, verranno salvati solamente gli indirizzi e i rispettivi nomi!',
+    INSTRUCTIONS: '<b>Importante:</b> I tuoi portafogli esportati non conterranno le tue frasi segrete, verranno salvati solamente gli indirizzi e i rispettivi nomi!',
     OPTIONS: {
       ADD_NETWORK: 'Aggiungi informazioni sulla rete',
       EXCLUDE_EMPTY: 'Escludi portafogli vuoti',

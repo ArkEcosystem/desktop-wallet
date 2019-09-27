@@ -384,7 +384,7 @@ export default {
       EXPORT_WALLETS: 'Failed to export your wallets'
     },
     EXPORT: 'Export 0 Wallets | Export 1 Wallet | Export {count} Wallets',
-    INSTRUCTIONS: 'Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
+    INSTRUCTIONS: '<b>Important:</b> Your exported wallets will not contain your passphrases, only the addresses and respective names will be saved!',
     OPTIONS: {
       ADD_NETWORK: 'Add information about the network',
       EXCLUDE_EMPTY: 'Exclude empty wallets',
