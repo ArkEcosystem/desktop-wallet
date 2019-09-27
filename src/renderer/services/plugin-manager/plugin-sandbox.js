@@ -2,7 +2,7 @@
 import path from 'path'
 import { castArray } from 'lodash'
 import { NodeVM } from 'vm2'
-import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO } from './plugin-permission'
+import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO, EVENTS } from './plugin-permission'
 import { createUiComponentsPermission } from './sandbox/ui-components-sandbox'
 import { createHttpSandbox } from './sandbox/http-sandbox'
 import { createMessagingSandbox } from './sandbox/messaging-sandbox'
@@ -17,6 +17,7 @@ import { createProfileCurrentSandbox } from './sandbox/profile-current-sandbox'
 import { createPeerCurrentSandbox } from './sandbox/peer-current-sandbox'
 import { createStorageSandbox } from './sandbox/storage-sandbox'
 import { createAudioSandbox } from './sandbox/audio-sandbox'
+import { createEventsSandbox } from './sandbox/events-sandbox'
 
 export class PluginSandbox {
   constructor ({
@@ -94,6 +95,7 @@ export class PluginSandbox {
       [PEER_CURRENT.name]: createPeerCurrentSandbox(this.walletApi, this.app),
       [STORAGE.name]: createStorageSandbox(this.walletApi, this.app, this.plugin),
       [AUDIO.name]: createAudioSandbox(this.sandbox),
+      [EVENTS.name]: createEventsSandbox(this.walletApi, this.app),
       [PUBLIC.name]: [
         createFontAwesomeSandbox(this.walletApi),
         createRouteSandbox(this.walletApi, this.plugin, this.app)
