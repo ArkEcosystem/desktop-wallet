@@ -118,11 +118,12 @@ export default {
           this.form.wif = encodedWif
         } catch (_error) {
           this.$error(this.$t('ENCRYPTION.FAILED_DECRYPT'))
+
+          return
         } finally {
           bip38.quit()
+          this.showEncryptLoader = false
         }
-
-        this.showEncryptLoader = false
       }
 
       this.signMessage()
@@ -132,7 +133,13 @@ export default {
       try {
         let message
         if (this.form.wif) {
-          message = WalletService.signMessageWithWif(this.form.message, this.form.wif)
+          message = WalletService.signMessageWithWif(
+            this.form.message,
+            this.form.wif,
+            {
+              wif: this.session_network.wif
+            }
+          )
         } else {
           message = WalletService.signMessage(this.form.message, this.form.passphrase)
         }
