@@ -61,6 +61,12 @@
                     @click="emitInstall"
                   />
                   <template v-else>
+                    <PluginManagerButtonSwitch
+                      :is-active="isEnabled"
+                      :label="switchButtonLabel"
+                      class="mr-2"
+                      @change="toggleStatus"
+                    />
                     <span
                       v-tooltip="{
                         content: updateTooltipContent,
@@ -154,6 +160,7 @@
 import domain from 'getdomain'
 import { ButtonClose, ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
+import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {
@@ -163,6 +170,7 @@ export default {
     ButtonClose,
     ButtonGeneric,
     ButtonIconGeneric,
+    PluginManagerButtonSwitch,
     PluginLogo,
     SvgIcon
   },
@@ -200,8 +208,20 @@ export default {
   },
 
   computed: {
+    isEnabled () {
+      return this.$store.getters['plugin/isEnabled'](this.plugin.id)
+    },
+
     isInstalled () {
       return this.$store.getters['plugin/isInstalled'](this.plugin.id)
+    },
+
+    switchButtonLabel () {
+      if (this.isEnabled) {
+        return this.$t('PAGES.PLUGIN_MANAGER.ENABLED')
+      }
+
+      return this.$t('PAGES.PLUGIN_MANAGER.DISABLED')
     },
 
     isUpdateAvailable () {
@@ -276,6 +296,13 @@ export default {
 
     openExternal (target) {
       this.electron_openExternal(target)
+    },
+
+    toggleStatus (enabled) {
+      this.$store.dispatch('plugin/setEnabled', {
+        enabled,
+        pluginId: this.plugin.id
+      })
     }
   }
 }

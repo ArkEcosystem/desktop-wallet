@@ -542,6 +542,8 @@ export default {
     PLUGIN_MANAGER: {
       HEADER: 'Plugins',
       DETAILS: 'Details',
+      ENABLED: 'Enabled',
+      DISABLED: 'Disabled',
       INSTALL_URL: 'Install from URL',
       INSTALL_FILE: 'Install from file',
       MENU: 'Menu',
