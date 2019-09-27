@@ -97,27 +97,28 @@ exports.MARKET = {
 }
 
 exports.PLUGINS = {
-  defaultAdapter: 'npm',
-  devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev'),
-  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
-  path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
-  validation: require('./plugin-validation.json'),
-  officialScope: 'arkecosystem',
-  officialAuthor: 'ARK Ecosystem',
-  availableCategories: [
+  adapters: ['npm'],
+  categories: [
     'games',
     'theme',
-    'utility'
+    'utility',
+    'other'
   ],
-  requiredKeywords: [
+  devPath: path.resolve(os.homedir(), '.ark-desktop/plugins-dev'),
+  discoverUrl: 'https://github.com/ark-ecosystem-desktop-plugins',
+  keywords: [
     '@arkecosystem',
     'desktop-wallet',
     'plugin'
   ],
+  officialScope: 'arkecosystem',
+  officialAuthor: 'ARK Ecosystem',
+  path: path.resolve(os.homedir(), '.ark-desktop/plugins'),
   updateInterval: {
     value: 1,
     unit: 'day'
-  }
+  },
+  validation: require('./plugin-validation.json')
 }
 
 exports.THEMES = [

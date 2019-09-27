@@ -43,7 +43,7 @@ export default {
 
   computed: {
     categories () {
-      return concat(['all'], PLUGINS.availableCategories, ['other'])
+      return concat(['all'], PLUGINS.categories)
     }
   },
 

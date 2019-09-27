@@ -136,6 +136,10 @@ export default new BaseModel({
     filterBlacklistedPlugins: {
       type: 'boolean',
       format: data => data.filterBlacklistedPlugins || true
+    },
+    pluginAdapter: {
+      type: 'string',
+      format: data => data.pluginAdapter || 'npm'
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

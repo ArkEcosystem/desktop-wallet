@@ -46,7 +46,7 @@ class NpmAdapter {
   }
 
   async fetchPlugins (options = {}) {
-    const keywords = PLUGINS.requiredKeywords.join(' ')
+    const keywords = PLUGINS.keywords.join(' ')
 
     const { body } = await got('/-/v1/search', {
       query: {
@@ -77,4 +77,4 @@ class NpmAdapter {
   }
 }
 
-export default NpmAdapter
+export default new NpmAdapter()

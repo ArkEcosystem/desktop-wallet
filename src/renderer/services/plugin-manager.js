@@ -13,13 +13,9 @@ import releaseService from '@/services/release'
 
 import semver from 'semver'
 import trash from 'trash'
-import { NpmAdapter } from '@/services/plugin-manager/adapters'
-import sanitizeConfig from './plugin-manager/sanitize'
+import sanitize from './plugin-manager/sanitize'
+import * as adapters from '@/services/plugin-manager/adapters'
 import * as errors from './plugin-manager/errors'
-
-const adapters = {
-  NpmAdapter
-}
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -28,6 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 
 class PluginManager {
   constructor () {
+    this.adapter = null
     this.plugins = {}
     this.pluginRoutes = []
     this.hasInit = false
@@ -43,8 +40,8 @@ class PluginManager {
     ]
   }
 
-  adapter (adapter = PLUGINS.defaultAdapter) {
-    return new adapters[upperFirst(adapter) + 'Adapter']()
+  setAdapter (adapter) {
+    this.adapter = adapters[upperFirst(adapter) + 'Adapter']
   }
 
   setVue (vue) {
@@ -53,6 +50,8 @@ class PluginManager {
 
   async init (app) {
     this.app = app
+
+    this.setAdapter(this.app.$store.getters['session/profile'].pluginAdapter)
 
     await this.app.$store.dispatch('plugin/reset')
     await this.fetchPlugins()
@@ -73,7 +72,7 @@ class PluginManager {
 
     const pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
     try {
-      await this.adapter().download(pluginId, pluginsPath)
+      await this.adapter.download(pluginId, pluginsPath)
     } catch (error) {
       throw new errors.PluginDownloadFailedError(pluginId)
     }
@@ -691,10 +690,10 @@ class PluginManager {
   }
 
   async fetchPluginsFromAdapter () {
-    let plugins = await this.adapter().all()
+    let plugins = await this.adapter.all()
 
     plugins = await Promise.all(plugins.map(async config => {
-      return sanitizeConfig(config)
+      return sanitize(config)
     }))
 
     plugins = this.applyMinVersionCheck(plugins)
@@ -745,7 +744,7 @@ class PluginManager {
     this.validatePlugin(pluginPath)
 
     let config = JSON.parse(fs.readFileSync(`${pluginPath}/package.json`))
-    config = await sanitizeConfig(config, pluginPath)
+    config = await sanitize(config, pluginPath)
 
     if (!config.id) {
       throw new Error('Plugin ID not found')

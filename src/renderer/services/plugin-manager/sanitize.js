@@ -3,7 +3,7 @@ import { PLUGINS } from '@config'
 import du from 'du'
 import parse from 'parse-author'
 
-const sanitizeConfig = async (config, pluginPath = null) => {
+const sanitize = async (config, pluginPath = null) => {
   return {
     id: config.name,
     title: config.title || sanitizeName(config.name),
@@ -70,12 +70,12 @@ const sanitizeCategories = config => {
     if (config.categories && config.categories.length) {
       categories = config.categories
     } else if (config.keywords && config.keywords.length) {
-      categories = difference(config.keywords, PLUGINS.requiredKeywords)
+      categories = difference(config.keywords, PLUGINS.keywords)
     }
   }
 
   if (categories && categories.length) {
-    categories = intersection(categories, PLUGINS.availableCategories)
+    categories = intersection(categories, PLUGINS.categories)
   } else {
     categories = []
   }
@@ -104,4 +104,4 @@ const sanitizeSize = async (config, pluginPath) => {
   return du(pluginPath)
 }
 
-export default sanitizeConfig
+export default sanitize
