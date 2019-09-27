@@ -1,8 +1,7 @@
 import path from 'path'
-import { PLUGINS } from '@config'
 import { prepareContext } from './component/prepare-context'
 import { defineContext } from './component/define-context'
-import { hooks } from './component/hooks'
+import { validateComponent } from './component/validate'
 
 export class PluginComponentSandbox {
   constructor ({
@@ -12,7 +11,8 @@ export class PluginComponentSandbox {
     plugin,
     source,
     vm,
-    vue
+    vue,
+    logger
   }) {
     this.fullPath = fullPath
     this.name = name
@@ -21,11 +21,11 @@ export class PluginComponentSandbox {
     this.source = source
     this.vm = vm
     this.vue = vue
+    this.logger = logger
 
     this.compiled = undefined
 
     this.__compileSource()
-    this.validate()
   }
 
   get isFromFilesystem () {
@@ -46,6 +46,10 @@ export class PluginComponentSandbox {
   }
 
   render () {
+    if (!validateComponent(this.plugin, this.compiled, this.logger)) {
+      return
+    }
+
     const renderedTemplate = this.vm.run(
       `const Vue = require('vue/dist/vue.common.js')
       const compiled = Vue.compile(${JSON.stringify(this.compiled.template)})
@@ -72,86 +76,6 @@ export class PluginComponentSandbox {
     }
 
     return defineContext(this.name, renderedComponent, this.compiled, this.vue)
-  }
-
-  validate () {
-    const requiredKeys = ['template']
-    const allowedKeys = [
-      'data',
-      'methods',
-      'computed',
-      'components',
-      ...hooks
-    ]
-
-    const missingKeys = []
-    for (const key of requiredKeys) {
-      if (!Object.prototype.hasOwnProperty.call(this.compiled, key)) {
-        missingKeys.push(key)
-      }
-    }
-
-    const componentError = (error, errorType) => {
-      this.app.$logger.error(`Plugin '${this.plugin.config.id}' component '${name}' ${errorType}: ${error}`)
-    }
-
-    if (missingKeys.length) {
-      componentError(missingKeys.join(', '), 'is missing')
-
-      return false
-    }
-
-    const inlineErrors = []
-    if (/v-html/i.test(this.compiled.template)) {
-      inlineErrors.push('uses v-html')
-    }
-    if (/javascript:/i.test(this.compiled.template)) {
-      inlineErrors.push('"javascript:"')
-    }
-    if (/<\s*webview/i.test(this.compiled.template)) {
-      inlineErrors.push('uses webview tag')
-    }
-    if (/<\s*script/i.test(this.compiled.template)) {
-      inlineErrors.push('uses script tag')
-    } else if (/[^\w]+eval\(/i.test(this.compiled.template)) {
-      inlineErrors.push('uses eval')
-    }
-    if (/<\s*iframe/i.test(this.compiled.template)) {
-      inlineErrors.push('uses iframe tag')
-    }
-    if (/srcdoc/i.test(this.compiled.template)) {
-      inlineErrors.push('uses srcdoc property')
-    }
-    const inlineEvents = []
-    for (const event of PLUGINS.validation.events) {
-      if ((new RegExp(`on${event}`, 'i')).test(this.compiled.template)) {
-        inlineEvents.push(event)
-      }
-    }
-    if (inlineEvents.length) {
-      inlineErrors.push('events: ' + inlineEvents.join(', '))
-    }
-
-    if (inlineErrors.length) {
-      componentError(inlineErrors.join('; '), 'has inline javascript')
-
-      return false
-    }
-
-    const bannedKeys = []
-    for (const key of Object.keys(this.compiled)) {
-      if (![...requiredKeys, ...allowedKeys].includes(key)) {
-        bannedKeys.push(key)
-      }
-    }
-
-    if (bannedKeys.length) {
-      componentError(bannedKeys.join(', '), 'has unpermitted keys')
-
-      return false
-    }
-
-    return true
   }
 
   __compileSource () {

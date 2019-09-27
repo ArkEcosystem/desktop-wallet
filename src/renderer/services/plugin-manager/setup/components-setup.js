@@ -29,10 +29,15 @@ export function createComponentsSetup (plugin, pluginObject, sandbox, vue) {
         fullPath,
         path: componentPath,
         name: componentName,
-        vm: sandbox.getVM()
+        vm: sandbox.getVM(),
+        logger: sandbox.app.$logger
       })
 
-      components[componentName] = component.render()
+      const vmComponent = component.render()
+
+      if (vmComponent) {
+        components[componentName] = component.render()
+      }
     }
 
     plugin.components = components
