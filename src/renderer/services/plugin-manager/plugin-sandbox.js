@@ -2,7 +2,7 @@
 import path from 'path'
 import { castArray } from 'lodash'
 import { NodeVM } from 'vm2'
-import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL } from './plugin-permission'
+import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT } from './plugin-permission'
 import { createUiComponentsPermission } from './sandbox/ui-components-sandbox'
 import { createHttpSandbox } from './sandbox/http-sandbox'
 import { createMessagingSandbox } from './sandbox/messaging-sandbox'
@@ -13,6 +13,7 @@ import { createFontAwesomeSandbox } from './sandbox/font-awesome-sandbox'
 import { createRouteSandbox } from './sandbox/route-sandbox'
 import { createTimersSandbox } from './sandbox/timers-sandbox'
 import { createProfileAllSandbox } from './sandbox/profile-all-sandbox'
+import { createProfileCurrentSandbox } from './sandbox/profile-current-sandbox'
 
 export class PluginSandbox {
   constructor ({
@@ -86,6 +87,7 @@ export class PluginSandbox {
       [WEBSOCKET.name]: createWebsocketSandbox(this.walletApi, this.app, this.plugin),
       [TIMERS.name]: createTimersSandbox(this.walletApi, this.app),
       [PROFILE_ALL.name]: createProfileAllSandbox(this.walletApi, this.app),
+      [PROFILE_CURRENT.name]: createProfileCurrentSandbox(this.walletApi, this.app),
       [PUBLIC.name]: [
         createFontAwesomeSandbox(this.walletApi),
         createRouteSandbox(this.walletApi, this.plugin, this.app)
