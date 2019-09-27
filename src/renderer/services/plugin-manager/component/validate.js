@@ -1,7 +1,7 @@
 import { hooks } from './hooks'
 import { PLUGINS } from '@config'
 
-export function validateComponent (plugin, rawComponent, logger = {}) {
+export function validateComponent (plugin, rawComponent, logger) {
   const requiredKeys = ['template']
   const allowedKeys = [
     'data',
@@ -19,7 +19,9 @@ export function validateComponent (plugin, rawComponent, logger = {}) {
   }
 
   const componentError = (error, errorType) => {
-    logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`)
+    if (logger) {
+      logger.error(`Plugin '${plugin.config.id}' component '${name}' ${errorType}: ${error}`)
+    }
   }
 
   if (missingKeys.length) {

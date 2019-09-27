@@ -2,7 +2,7 @@
 import path from 'path'
 import { castArray } from 'lodash'
 import { NodeVM } from 'vm2'
-import { UI_COMPONENTS, HTTP, MESSAGING, THEMES, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO, EVENTS, ALERTS } from './plugin-permission'
+import { UI_COMPONENTS, HTTP, MESSAGING, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO, EVENTS, ALERTS } from './plugin-permission'
 import { createUiComponentsPermission } from './sandbox/ui-components-sandbox'
 import { createHttpSandbox } from './sandbox/http-sandbox'
 import { createMessagingSandbox } from './sandbox/messaging-sandbox'
