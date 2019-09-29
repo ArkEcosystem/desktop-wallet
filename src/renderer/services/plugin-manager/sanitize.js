@@ -89,7 +89,7 @@ const sanitizeMinVersion = config => {
 
 const sanitizePermissions = config => {
   const permissions = getWalletOption(config, 'permissions') || config.permissions || []
-  return uniq(permissions).sort()
+  return uniq(permissions).sort().map(permission => permission.toUpperCase())
 }
 
 const sanitizeUrls = config => {
