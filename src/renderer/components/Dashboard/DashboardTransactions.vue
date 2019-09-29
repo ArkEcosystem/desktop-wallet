@@ -36,7 +36,8 @@ export default {
 
   computed: {
     lastTransactions () {
-      return mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
+      const transactions = mergeTableTransactions(this.fetchedTransactions, this.storedTransactions)
+      return orderBy(transactions, 'timestamp', 'desc')
     },
     storedTransactions () {
       return this.$store.getters['transaction/byProfileId'](this.session_profile.id, { includeExpired: true })

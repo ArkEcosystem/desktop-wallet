@@ -1,7 +1,7 @@
 <template>
   <div class="WalletTransactions">
     <div
-      v-if="newTransactionsNotice"
+      v-if="newTransactionsNotice && newTransactionsNotice !== '0'"
       class="bg-theme-feature flex flex-row"
     >
       <div
@@ -271,15 +271,22 @@ export default {
     },
 
     onPerPageChange ({ currentPerPage }) {
+      this.transactionTableRowCount = currentPerPage
       this.__updateParams({ limit: currentPerPage, page: 1 })
       this.loadTransactions()
-      this.transactionTableRowCount = currentPerPage
     },
 
-    onSortChange (sortParams) {
-      if (!isEqual(sortParams, this.queryParams.sort)) {
+    onSortChange ({ source, field, type }) {
+      if (!source || source !== 'transactionsTab') {
+        return
+      }
+
+      if (!isEqual({ field, type }, this.queryParams.sort)) {
         this.__updateParams({
-          sort: sortParams,
+          sort: {
+            field,
+            type
+          },
           page: 1
         })
         this.loadTransactions()
