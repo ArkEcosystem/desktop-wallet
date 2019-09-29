@@ -250,7 +250,10 @@ export default {
     },
 
     onSortChange (sortOptions) {
-      this.$emit('on-sort-change', sortOptions[0])
+      this.$emit('on-sort-change', {
+        source: 'transactionsTab',
+        ...sortOptions[0]
+      })
     },
 
     onRowClick ({ row }) {
