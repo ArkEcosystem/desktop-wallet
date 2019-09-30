@@ -6,8 +6,12 @@ import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
 import TableWrapper from '@/components/utils/TableWrapper'
 
-export function createUiComponentsPermission (walletApi) {
+export function createUiComponentsSandbox (walletApi) {
   return () => {
+    if (!walletApi.components) {
+      walletApi.components = {}
+    }
+
     const components = {
       Button: ButtonComponents,
       Collapse: CollapseComponents,
@@ -19,7 +23,7 @@ export function createUiComponentsPermission (walletApi) {
     }
 
     walletApi.components = {
-      ...walletApi.components || {},
+      ...walletApi.components,
       components
     }
   }

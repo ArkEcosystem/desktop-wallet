@@ -7,12 +7,12 @@ export function createStorageSandbox (walletApi, app, plugin) {
           app.$store.getters['session/profileId']
         )
 
-        return options[key]
+        return options && options[key]
       },
 
       set: (key, value) => {
         app.$store.dispatch('plugin/setPluginOption', {
-          profileId: this.app.$store.getters['session/profileId'],
+          profileId: app.$store.getters['session/profileId'],
           pluginId: plugin.config.id,
           key,
           value

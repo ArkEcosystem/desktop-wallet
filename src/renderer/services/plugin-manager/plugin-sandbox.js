@@ -3,7 +3,7 @@ import path from 'path'
 import { castArray } from 'lodash'
 import { NodeVM } from 'vm2'
 import { UI_COMPONENTS, HTTP, MESSAGING, WEBFRAME, WEBSOCKET, PUBLIC, TIMERS, PROFILE_ALL, PROFILE_CURRENT, PEER_CURRENT, STORAGE, AUDIO, EVENTS, ALERTS } from './plugin-permission'
-import { createUiComponentsPermission } from './sandbox/ui-components-sandbox'
+import { createUiComponentsSandbox } from './sandbox/ui-components-sandbox'
 import { createHttpSandbox } from './sandbox/http-sandbox'
 import { createMessagingSandbox } from './sandbox/messaging-sandbox'
 import { createWebFrameSandbox } from './sandbox/webframe-sandbox'
@@ -97,7 +97,7 @@ export class PluginSandbox {
       ],
       [STORAGE.name]: createStorageSandbox(this.walletApi, this.app, this.plugin),
       [TIMERS.name]: createTimersSandbox(this.walletApi, this.app),
-      [UI_COMPONENTS.name]: createUiComponentsPermission(this.walletApi),
+      [UI_COMPONENTS.name]: createUiComponentsSandbox(this.walletApi),
       [WEBFRAME.name]: createWebFrameSandbox(this.walletApi),
       [WEBSOCKET.name]: createWebsocketSandbox(this.walletApi, this.app, this.plugin)
     }
