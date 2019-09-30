@@ -195,7 +195,7 @@ export default {
     return {
       currentTab: '',
       walletVote: {
-        publicKey: null
+        username: null
       },
       isVoting: false,
       isUnvoting: false,
@@ -373,7 +373,9 @@ export default {
     },
 
     switchToTab (component) {
-      this.currentTab = component
+      if (this.tabs.map(tab => tab.componentName).includes(component)) {
+        this.currentTab = component
+      }
     },
 
     getVoteTitle () {
@@ -397,14 +399,14 @@ export default {
 
         if (walletVote) {
           this.votedDelegate = this.$store.getters['delegate/byPublicKey'](walletVote)
-          this.walletVote.publicKey = walletVote
+          this.walletVote.username = this.votedDelegate.username
         } else {
           this.votedDelegate = null
-          this.walletVote.publicKey = null
+          this.walletVote.username = null
         }
       } catch (error) {
         this.votedDelegate = null
-        this.walletVote.publicKey = null
+        this.walletVote.username = null
 
         const messages = at(error, 'response.body.message')
         if (messages[0] !== 'Wallet not found') {
