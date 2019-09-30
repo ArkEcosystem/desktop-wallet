@@ -1,6 +1,10 @@
 import { createProfileAllSandbox } from '@/services/plugin-manager/sandbox/profile-all-sandbox'
 
-const mockGetter = jest.fn()
+const mockGetter = jest.fn(() => [
+  {
+    id: 1
+  }
+])
 
 let walletApi
 let app
@@ -23,5 +27,6 @@ describe('Profile All Sandbox', () => {
   it('should expose functions', () => {
     expect(mockGetter).toHaveBeenCalled()
     expect(walletApi.profiles.all).toBeTruthy()
+    expect(walletApi.profiles.all).toHaveLength(1)
   })
 })
