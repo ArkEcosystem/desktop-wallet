@@ -84,6 +84,16 @@ class PluginManager {
     })
   }
 
+  getWalletTabComponent (pluginId) {
+    const plugin = this.plugins[pluginId]
+
+    if (!plugin) {
+      return {}
+    }
+
+    return plugin.getWalletTabComponent()
+  }
+
   getAvatarComponents (pluginId) {
     const plugin = this.plugins[pluginId]
 

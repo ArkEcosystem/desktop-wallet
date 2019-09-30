@@ -1,7 +1,7 @@
 import { normalizeJson } from '../utils/normalize-json'
 import isString from 'lodash/isString'
 
-export function createWalletTabSetup (plugin, pluginObject, sandbox, profileId) {
+export function createWalletTabsSetup (plugin, pluginObject, sandbox, profileId) {
   return async () => {
     const pluginWalletTabs = normalizeJson(pluginObject.getWalletTabs())
 

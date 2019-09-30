@@ -5,7 +5,7 @@ import { COMPONENTS, AVATARS, WALLET_TABS, ROUTES, PUBLIC, MENU_ITEMS, THEMES } 
 import { createComponentsSetup } from './setup/components-setup'
 import { createAvatarsSetup } from './setup/avatars-setup'
 import { createRoutesSetup } from './setup/routes-setup'
-import { createWalletTabSetup } from './setup/wallet-tabs-setup'
+import { createWalletTabsSetup } from './setup/wallet-tabs-setup'
 import { registerSetup } from './setup/register-setup'
 import { createMenuItemsSetup } from './setup/menu-items-setup'
 import { createThemesSetup } from './setup/themes-setup'
@@ -57,7 +57,7 @@ export class PluginSetup {
   __mapPermissionsToSetup () {
     return {
       [AVATARS.name]: createAvatarsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
-      [WALLET_TABS.name]: createWalletTabSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
+      [WALLET_TABS.name]: createWalletTabsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [ROUTES.name]: createRoutesSetup(this.plugin, this.pluginObject, this.sandbox),
       [COMPONENTS.name]: createComponentsSetup(this.plugin, this.pluginObject, this.sandbox, this.vue),
       [MENU_ITEMS.name]: createMenuItemsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
