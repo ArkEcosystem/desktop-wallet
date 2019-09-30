@@ -173,7 +173,7 @@ export default {
           profileId: this.session_profile.id
         })
 
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address), this.queryParams.sort)
 
         if (this.wallet_fromRoute && address === this.wallet_fromRoute.address) {
           this.$set(this, 'fetchedTransactions', transactions)
@@ -228,7 +228,7 @@ export default {
       try {
         let newTransactions = 0
         const response = await this.getTransactions(address)
-        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address))
+        const transactions = mergeTableTransactions(response.transactions, this.getStoredTransactions(address), this.queryParams.sort)
         for (const existingTransaction of this.fetchedTransactions) {
           for (const transaction of transactions) {
             if (existingTransaction.id === transaction.id) {

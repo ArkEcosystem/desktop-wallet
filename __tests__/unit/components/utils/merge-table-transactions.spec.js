@@ -31,6 +31,23 @@ describe('Utils > mergeTableTransactions', () => {
     ])
   })
 
+  it('should return the transactions sorted by `timestamp` ascendently', () => {
+    const a = [
+      transactions[0],
+      transactions[2]
+    ]
+    const b = [
+      transactions[1],
+      transactions[5]
+    ]
+    expect(mergeTableTransactions(a, b, { field: 'timestamp', type: 'asc' })).toEqual([
+      transactions[0],
+      transactions[1],
+      transactions[5],
+      transactions[2]
+    ])
+  })
+
   describe('when there are duplicates', () => {
     it('should not return duplicates', () => {
       const a = [
