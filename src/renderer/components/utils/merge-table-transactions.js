@@ -1,4 +1,4 @@
-import { uniqBy } from 'lodash'
+import { orderBy, uniqBy } from 'lodash'
 
 /**
  * This utility is used to merge the transactions that have been fetched using
@@ -6,13 +6,15 @@ import { uniqBy } from 'lodash'
  *
  * @param {Array} a
  * @param {Array} b
- * @param {Number} number - of transactions to return
+ * @param {Object} order - of transactions to return
  * @return {Array}
  */
-export default (a, b, number) => {
+export default (a, b, order = { field: 'timestamp', type: 'desc' }) => {
   // The order is important: the fetched transactions should override the stored
-  return uniqBy([
+  const transactions = uniqBy([
     ...a,
     ...b
   ], 'id')
+
+  return orderBy(transactions, order.field, order.type)
 }
