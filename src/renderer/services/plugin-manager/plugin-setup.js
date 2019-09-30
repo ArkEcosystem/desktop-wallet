@@ -6,7 +6,7 @@ import { createComponentsSetup } from './setup/components-setup'
 import { createAvatarsSetup } from './setup/avatars-setup'
 import { createRoutesSetup } from './setup/routes-setup'
 import { createWalletTabsSetup } from './setup/wallet-tabs-setup'
-import { registerSetup } from './setup/register-setup'
+import { createRegisterSetup } from './setup/register-setup'
 import { createMenuItemsSetup } from './setup/menu-items-setup'
 import { createThemesSetup } from './setup/themes-setup'
 
@@ -63,7 +63,7 @@ export class PluginSetup {
       [MENU_ITEMS.name]: createMenuItemsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [THEMES.name]: createThemesSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [PUBLIC.name]: [
-        registerSetup(this.pluginObject)
+        createRegisterSetup(this.pluginObject)
       ]
     }
   }

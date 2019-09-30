@@ -34,7 +34,7 @@ const walletTabsSetup = createWalletTabsSetup(plugin, pluginObject, sandbox, pro
 walletTabsSetup()
 
 describe('Wallet Tabs Setup', () => {
-  it('should call the getAvatars method', () => {
+  it('should call the getWalletTabs method', () => {
     expect(pluginObject.getWalletTabs).toHaveBeenCalled()
   })
 
