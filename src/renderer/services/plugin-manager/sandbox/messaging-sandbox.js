@@ -3,14 +3,14 @@ import cloneDeep from 'lodash/cloneDeep'
 export function createMessagingSandbox (walletApi, app) {
   return () => {
     const messages = {
-      events: [],
+      events: {},
 
       clear () {
         for (const eventId in this.events) {
           window.removeEventListener('message', this.events[eventId])
         }
 
-        this.events = []
+        this.events = {}
       },
 
       on (action, eventCallback) {

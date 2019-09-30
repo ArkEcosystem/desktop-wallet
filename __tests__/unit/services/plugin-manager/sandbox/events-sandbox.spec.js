@@ -4,8 +4,8 @@ const walletApi = {}
 const app = {
   $eventBus: jest.fn()
 }
-const sandbox = createEventsSandbox(walletApi, app)
-sandbox()
+const eventsSandbox = createEventsSandbox(walletApi, app)
+eventsSandbox()
 
 describe('Events Sandbox', () => {
   it('should expose functions', () => {

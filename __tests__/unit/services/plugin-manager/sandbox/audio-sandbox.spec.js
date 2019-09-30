@@ -3,8 +3,8 @@ import { createAudioSandbox } from '@/services/plugin-manager/sandbox/audio-sand
 global.AudioContext = {}
 
 const api = {}
-const sandbox = createAudioSandbox(api)
-sandbox()
+const audioSandbox = createAudioSandbox(api)
+audioSandbox()
 
 describe('Audio Sandbox', () => {
   it('should expose the AudioContext object', () => {

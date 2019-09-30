@@ -7,8 +7,8 @@ const app = {
   $success: jest.fn(),
   $warn: jest.fn()
 }
-const sandbox = createAlertsSandbox(walletApi, app)
-sandbox()
+const alertsSandbox = createAlertsSandbox(walletApi, app)
+alertsSandbox()
 
 describe('Alerts Sandbox', () => {
   it('should expose functions', () => {
