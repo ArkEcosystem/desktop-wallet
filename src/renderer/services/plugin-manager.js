@@ -5,6 +5,7 @@ import { Plugin } from './plugin-manager/plugin'
 import { PluginConfiguration } from './plugin-manager/plugin-configuration'
 import { PluginSetup } from './plugin-manager/plugin-setup'
 import { PluginSandbox } from './plugin-manager/plugin-sandbox'
+import { validatePluginPath } from './plugin-manager/utils/validate-plugin-path'
 
 let rootPath = path.resolve(__dirname, '../../../')
 if (process.env.NODE_ENV === 'production') {
@@ -83,6 +84,16 @@ class PluginManager {
     })
   }
 
+  getAvatarComponents (pluginId) {
+    const plugin = this.plugins[pluginId]
+
+    if (!plugin) {
+      return {}
+    }
+
+    return plugin.getAvatarComponents()
+  }
+
   // TODO hook to clean up and restore or reset values
   async disablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
@@ -123,7 +134,7 @@ class PluginManager {
   }
 
   async fetchPlugin (pluginPath) {
-    Plugin.validate(pluginPath)
+    validatePluginPath(pluginPath)
 
     const packageJson = JSON.parse(fs.readFileSync(`${pluginPath}/package.json`))
     const pluginConfig = PluginConfiguration.sanitize(packageJson)

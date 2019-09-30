@@ -1,6 +1,3 @@
-import path from 'path'
-import fs from 'fs'
-
 export class Plugin {
   constructor ({
     config,
@@ -16,20 +13,6 @@ export class Plugin {
     this.components = {}
     this.avatars = []
     this.routes = []
-  }
-
-  static validate (pluginPath) {
-    const structureExists = [
-      'package.json',
-      'src',
-      'src/index.js'
-    ]
-
-    for (const pathCheck of structureExists) {
-      if (!fs.existsSync(path.resolve(pluginPath, pathCheck))) {
-        throw new Error(`'${pathCheck}' does not exist`)
-      }
-    }
   }
 
   getAvatarComponents () {
