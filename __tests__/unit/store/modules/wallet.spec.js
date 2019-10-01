@@ -132,8 +132,8 @@ describe('WalletModule', () => {
         const walletsOfExampleId = [
           models[0],
           models[3],
-          ledgerWallets['L1'],
-          ledgerWallets['L2']
+          ledgerWallets.L1,
+          ledgerWallets.L2
         ].map(wallet => wallet.address)
 
         const publicByProfileId = store.getters['wallet/publicByProfileId']('exampleId')
@@ -143,7 +143,7 @@ describe('WalletModule', () => {
 
     describe('when the session network is not the network of the requested profile', () => {
       it('should not include ledger wallets', () => {
-        const ledgerWalletsOfOtherId = [ledgerWallets['L3']]
+        const ledgerWalletsOfOtherId = [ledgerWallets.L3]
         expect(store.getters['wallet/publicByProfileId']('otherId')).not.toIncludeSameMembers(ledgerWalletsOfOtherId)
       })
     })

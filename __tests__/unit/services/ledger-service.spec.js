@@ -37,21 +37,21 @@ describe('LedgerService', () => {
   })
 
   it('should run getWallet', async () => {
-    const response = await ledgerService.getWallet(`44'/1'/0'/0/0`)
+    const response = await ledgerService.getWallet('44\'/1\'/0\'/0/0')
 
     expect(response).toBeTruthy()
     expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
   })
 
   it('should run getPublicKey', async () => {
-    const response = await ledgerService.getPublicKey(`44'/1'/0'/0/0`)
+    const response = await ledgerService.getPublicKey('44\'/1\'/0\'/0/0')
 
     expect(response).toBeTruthy()
     expect(ledgerService.ledger.getAddress).toHaveBeenCalledTimes(1)
   })
 
   it('should run signTransaction', async () => {
-    const response = await ledgerService.signTransaction(`44'/1'/0'/0/0`, '1234')
+    const response = await ledgerService.signTransaction('44\'/1\'/0\'/0/0', '1234')
 
     expect(response).toBeTruthy()
     expect(ledgerService.ledger.signTransaction).toHaveBeenCalledTimes(1)

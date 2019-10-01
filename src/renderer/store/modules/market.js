@@ -14,7 +14,7 @@ export default {
   getters: {
     currencies: () => keys(MARKET.currencies),
     lastPrice: (_, getters) => {
-      const lastTicker = getters['lastTicker']
+      const lastTicker = getters.lastTicker
       return lastTicker ? lastTicker.price : null
     },
     lastTicker: (state, getters, _, rootGetters) => {
