@@ -221,7 +221,7 @@ export default {
       const transactionData = {
         username: this.form.username,
         passphrase: this.form.passphrase,
-        fee: parseInt(this.currency_unitToSub(this.form.fee)),
+        fee: this.currency_unitToSub(this.form.fee),
         wif: this.form.wif,
         networkWif: this.walletNetwork.wif
       }

@@ -1,12 +1,12 @@
 <template>
   <button
-    class="ButtonClose float-right leading-none -m-2 ml-4 rounded-lg"
+    class="ButtonClose leading-none -m-2 ml-4 rounded-lg"
     @click="emitClick"
   >
     <SvgIcon
       :class="iconClass"
+      :name="iconName"
       class="ButtonClose__cross fill-current text-theme-feature"
-      name="cross"
       view-box="0 0 15 15"
     />
   </button>
@@ -27,6 +27,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    iconName: {
+      type: String,
+      required: false,
+      default: 'cross'
     }
   },
 

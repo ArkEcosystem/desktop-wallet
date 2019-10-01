@@ -81,6 +81,7 @@
       />
 
       <PortalTarget
+        :slot-props="{ setBlurFilter }"
         name="modal"
         multiple
         @change="onPortalChange"
@@ -105,7 +106,7 @@
 import '@/styles/style.css'
 import fs from 'fs'
 import CleanCss from 'clean-css'
-import { isEmpty, pull, uniq } from 'lodash'
+import { pull, uniq } from 'lodash'
 import { AppFooter, AppIntro, AppSidemenu } from '@/components/App'
 import AlertMessage from '@/components/AlertMessage'
 import { TransactionModal } from '@/components/Transaction'
@@ -333,8 +334,8 @@ export default {
       }
     },
 
-    onPortalChange (options) {
-      this.hasBlurFilter = !isEmpty(options)
+    onPortalChange (isActive) {
+      this.hasBlurFilter = isActive
     },
 
     __watchProcessURL () {
@@ -393,6 +394,10 @@ export default {
     closeUriMessageSign () {
       this.isUriMessageSignOpen = false
       this.uriSchema = {}
+    },
+
+    setBlurFilter (isActive) {
+      this.hasBlurFilter = isActive
     },
 
     setIntroDone () {

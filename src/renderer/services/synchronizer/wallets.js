@@ -124,6 +124,8 @@ class Action {
       this.emit(`transaction:${transactionId}:expired`)
       this.$info(this.$t('TRANSACTION.ERROR.EXPIRED', { transactionId: truncateMiddle(transactionId) }))
     }
+
+    await this.processUnconfirmedVotes()
   }
 
   /**
@@ -159,7 +161,7 @@ class Action {
     ])
 
     // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
-    this.emit(`transactions:fetched`, transactionsByAddress)
+    this.emit('transactions:fetched', transactionsByAddress)
 
     return { walletsData, transactionsByAddress }
   }
@@ -280,7 +282,7 @@ class Action {
         profileId: wallet.profileId
       })
 
-      this.synchronizer.$store.dispatch('transaction/processVotes', transactions)
+      this.$dispatch('transaction/processVotes', transactions)
 
       const latestTransaction = maxBy(transactions, 'timestamp')
       const latestAt = latestTransaction.timestamp
@@ -296,6 +298,21 @@ class Action {
       }
     } catch (error) {
       this.$logger.error(error)
+    }
+  }
+
+  /**
+   * Fetch all votes for wallets with unconfirmed vote transactions.
+   *
+   * @return {void}
+   */
+  async processUnconfirmedVotes () {
+    const unconfirmedVotes = this.$getters['session/unconfirmedVotes']
+    const addresses = map(uniqBy(unconfirmedVotes, 'address'), 'address')
+
+    for (const address of addresses) {
+      const votes = await this.$client.fetchWalletVotes(address)
+      await this.$dispatch('transaction/processVotes', votes)
     }
   }
 

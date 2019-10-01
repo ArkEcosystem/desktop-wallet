@@ -146,8 +146,8 @@ export default {
 
     copyMessage (value) {
       var message = clone(value, false)
-      delete message['timestamp']
-      delete message['address']
+      delete message.timestamp
+      delete message.address
       return JSON.stringify(message)
     },
 

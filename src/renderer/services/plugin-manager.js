@@ -5,6 +5,7 @@ import { ipcRenderer } from 'electron'
 import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
+import PluginWebsocket from '@/services/plugin-manager/websocket'
 import SandboxFontAwesome from '@/services/plugin-manager/font-awesome-sandbox'
 import WalletComponents from '@/services/plugin-manager/wallet-components'
 
@@ -713,6 +714,71 @@ class PluginManager {
       }
     }
 
+    if (config.permissions.includes('TIMERS')) {
+      const timerArrays = {
+        intervals: [],
+        timeouts: [],
+        timeoutWatchdog: {}
+      }
+
+      const timers = {
+        clearInterval (id) {
+          clearInterval(id)
+          timerArrays.intervals = timerArrays.intervals.filter(interval => interval !== id)
+        },
+
+        clearTimeout (id) {
+          clearTimeout(id)
+          clearTimeout(timerArrays.timeoutWatchdog[id])
+          delete timerArrays.timeoutWatchdog[id]
+          timerArrays.timeouts = timerArrays.timeouts.filter(timeout => timeout !== id)
+        },
+
+        get intervals () {
+          return timerArrays.intervals
+        },
+
+        get timeouts () {
+          return timerArrays.timeouts
+        },
+
+        setInterval (method, interval, ...args) {
+          const id = setInterval(function () {
+            method(...args)
+          }, interval)
+          timerArrays.intervals.push(id)
+          return id
+        },
+
+        setTimeout (method, interval, ...args) {
+          const id = setTimeout(function () {
+            method(...args)
+          }, interval)
+          timerArrays.timeouts.push(id)
+          timerArrays.timeoutWatchdog[id] = setTimeout(() => timers.clearTimeout(id), interval)
+          return id
+        }
+      }
+
+      this.app.$router.beforeEach((_, __, next) => {
+        for (const id of timerArrays.intervals) {
+          clearInterval(id)
+        }
+
+        for (const id of timerArrays.timeouts) {
+          clearTimeout(id)
+          clearTimeout(timerArrays.timeoutWatchdog[id])
+        }
+
+        timerArrays.intervals = []
+        timerArrays.timeouts = []
+        timerArrays.timeoutWatchdog = {}
+        next()
+      })
+
+      sandbox.walletApi.timers = timers
+    }
+
     if (config.permissions.includes('MESSAGING')) {
       const messages = {
         events: [],
@@ -780,6 +846,10 @@ class PluginManager {
 
     if (config.permissions.includes('HTTP')) {
       sandbox.walletApi.http = new PluginHttp(config.urls)
+    }
+
+    if (config.permissions.includes('WEBSOCKETS')) {
+      sandbox.walletApi.websocket = new PluginWebsocket(config.urls, this.app.$router)
     }
 
     if (config.permissions.includes('PEER_CURRENT')) {
