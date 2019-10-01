@@ -161,7 +161,7 @@ class Action {
     ])
 
     // TODO: this should be removed later, when the transactions are stored, to take advantage of the reactivity
-    this.emit(`transactions:fetched`, transactionsByAddress)
+    this.emit('transactions:fetched', transactionsByAddress)
 
     return { walletsData, transactionsByAddress }
   }

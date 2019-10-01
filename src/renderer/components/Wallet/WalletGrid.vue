@@ -142,7 +142,7 @@ export default {
       }
 
       if (!wallet.isLedger) {
-        options['delete'] = {
+        options.delete = {
           value: this.$t('WALLET_TABLE.DELETE'),
           icon: 'delete-wallet'
         }

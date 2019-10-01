@@ -84,7 +84,7 @@ describe('Services > Client', () => {
 
   beforeEach(() => {
     client = new ClientService()
-    client.host = `http://127.0.0.1:4003`
+    client.host = 'http://127.0.0.1:4003'
   })
 
   describe('constructor', () => {
