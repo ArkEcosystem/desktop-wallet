@@ -51,7 +51,7 @@ export default {
       const profile = rootGetters['profile/byId'](profileId)
       const network = rootGetters['session/network']
 
-      return getters['wallets'].filter(wallet => {
+      return getters.wallets.filter(wallet => {
         return wallet.profileId === profileId && profile.networkId === network.id
       })
     }
@@ -225,11 +225,11 @@ export default {
       { commit, dispatch, getters, rootGetters },
       { clearFirst, forceLoad, quantity } = { clearFirst: false, forceLoad: false, quantity: null }
     ) {
-      if (!getters['isConnected']) {
+      if (!getters.isConnected) {
         return {}
       }
 
-      if (getters['isLoading']) {
+      if (getters.isLoading) {
         if (!forceLoad) {
           return {}
         }
@@ -238,7 +238,7 @@ export default {
       }
 
       const profileId = rootGetters['session/profileId']
-      const currentWallets = getters['wallets']
+      const currentWallets = getters.wallets
       const processId = cryptoLibrary.randomBytes(12).toString('base64')
 
       if (clearFirst) {
@@ -249,7 +249,7 @@ export default {
       }
       commit('SET_LOADING', processId)
       const firstWallet = await dispatch('getWallet', 0)
-      const cachedWallets = keyBy(getters['cachedWallets'](firstWallet.address), 'address')
+      const cachedWallets = keyBy(getters.cachedWallets(firstWallet.address), 'address')
       let wallets = {}
       let startIndex = 0
       if (!quantity && Object.keys(cachedWallets).length) {
@@ -266,7 +266,7 @@ export default {
 
       try {
         for (let ledgerIndex = startIndex; ; ledgerIndex += batchIncrement) {
-          if (getters['shouldStopLoading'](processId)) {
+          if (getters.shouldStopLoading(processId)) {
             commit('CLEAR_LOADING_PROCESS', processId)
 
             return {}
@@ -338,7 +338,7 @@ export default {
         logger.error(error)
       }
 
-      if (getters['shouldStopLoading'](processId)) {
+      if (getters.shouldStopLoading(processId)) {
         commit('CLEAR_LOADING_PROCESS', processId)
 
         return {}
@@ -357,7 +357,7 @@ export default {
      */
     async updateWallet ({ commit, dispatch, getters, rootGetters }, updatedWallet) {
       commit('SET_WALLET', updatedWallet)
-      eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
+      eventBus.emit('ledger:wallets-updated', getters.walletsObject)
       dispatch('cacheWallets')
     },
 
@@ -366,10 +366,10 @@ export default {
      */
     async updateWallets ({ commit, dispatch, getters, rootGetters }, walletsToUpdate) {
       commit('SET_WALLETS', {
-        ...getters['walletsObject'],
+        ...getters.walletsObject,
         ...walletsToUpdate
       })
-      eventBus.emit('ledger:wallets-updated', getters['walletsObject'])
+      eventBus.emit('ledger:wallets-updated', getters.walletsObject)
       dispatch('cacheWallets')
     },
 
@@ -381,7 +381,7 @@ export default {
     async cacheWallets ({ commit, getters, rootGetters }) {
       if (rootGetters['session/ledgerCache']) {
         commit('CACHE_WALLETS', {
-          wallets: getters['wallets'],
+          wallets: getters.wallets,
           profileId: rootGetters['session/profileId']
         })
       }

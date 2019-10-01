@@ -42,11 +42,11 @@ export default {
       return rootGetters['profile/byId'](state.profileId)
     },
     network (state, getters, __, rootGetters) {
-      if (!getters['profile']) {
+      if (!getters.profile) {
         return
       }
 
-      const { networkId } = getters['profile']
+      const { networkId } = getters.profile
       let network = rootGetters['network/byId'](networkId)
 
       if (!network) {
@@ -366,7 +366,7 @@ export default {
     },
 
     setLastFeeByType ({ commit, getters }, { fee, type }) {
-      const fees = getters['lastFees']
+      const fees = getters.lastFees
       fees[type] = fee
 
       commit('SET_LAST_FEES', fees)

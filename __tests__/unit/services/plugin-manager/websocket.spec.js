@@ -110,7 +110,7 @@ describe('PluginWebsocket', () => {
 
     socket.on('pong', jest.fn())
 
-    expect(socket.events['pong']).toBeTruthy()
+    expect(socket.events.pong).toBeTruthy()
     expect(router.beforeEach).toHaveBeenCalledTimes(1)
     router.push()
     expect(routerNext).toHaveBeenCalledTimes(1)
