@@ -68,18 +68,7 @@ describe('URI Handler', () => {
   })
 
   describe('AIP26 URI deserialization', () => {
-    it('should not deserialize when required parameters are missing', () => {
-      let uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
-      expect(() => { uri.deserialize() }).toThrowError('amount')
-      uri = new URIHandler('ark:transfer?amount=1.2')
-      expect(() => { uri.deserialize() }).toThrowError('address')
-      uri = new URIHandler('ark:vote')
-      expect(() => { uri.deserialize() }).toThrowError('delegate')
-      uri = new URIHandler('ark:register-delegate')
-      expect(() => { uri.deserialize() }).toThrowError('username')
-      uri = new URIHandler('ark:sign-message')
-      expect(() => { uri.deserialize() }).toThrowError('message')
-    })
+    const expectError = (uri, field) => expect(() => { new URIHandler(uri).deserialize() }).toThrowError(field)
 
     it('should deserialize when required parameters are given', () => {
       let schema = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=100').deserialize()
@@ -98,22 +87,33 @@ describe('URI Handler', () => {
       expect(schema.message).toBe('This is my message')
     })
 
+    it('should not deserialize when required parameters are missing', () => {
+      expectError('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9', 'amount')
+      expectError('ark:transfer?amount=1.2', 'address')
+      expectError('ark:vote', 'delegate')
+      expectError('ark:register-delegate', 'username')
+      expectError('ark:sign-message', 'message')
+    })
+
     it('should not allow fees below 1e8, being 0 or negative', () => {
-      let uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=0')
-      expect(() => { uri.deserialize() }).toThrowError('zero')
-      uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=-123')
-      expect(() => { uri.deserialize() }).toThrowError('negative')
-      uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=0.00000000001')
-      expect(() => { uri.deserialize() }).toThrowError('below')
+      expectError('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=0', 'zero')
+      expectError('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=-123', 'negative')
+      expectError('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=10&fee=0.00000000001', 'below')
     })
 
     it('should not allow vendor field messages over 255', () => {
-      const uri = new URIHandler('ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1&vendorField=Message%20for%20Arkbutverylonganditgoesonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandon')
-      expect(() => { uri.deserialize() }).toThrowError('smartbridge')
+      expectError(
+        'ark:transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1&vendorField=Message%20for%20Arkbutverylonganditgoesonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandonandon',
+        'smartbridge'
+      )
+    })
+
+    it('should not allow addresses with a length other than 34', () => {
+      expectError(`ark:transfer?recipient=${'#'.repeat(33)}&amount=1&vendorField=This%20is%20my%20vendorfield%20message`, 'address')
+      expectError(`ark:transfer?recipient=${'#'.repeat(35)}&amount=1&vendorField=This%20is%20my%20vendorfield%20message`, 'address')
     })
 
     // TODO:
-    // - invalid address (length != 34)
     // - limit sign-message message?
     // - non-existent delegate to vote for
     // - already existing delegate name
