@@ -177,10 +177,7 @@ export default {
   },
 
   LANGUAGES: {
-    'en-US': 'English',
-    'es-ES': 'Español',
-    'it-IT': 'Italiano',
-    'pt-BR': 'Portugues - Brazil'
+    'en-US': 'English'
   },
 
   TIME_FORMAT: {
