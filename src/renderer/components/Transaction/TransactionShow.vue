@@ -206,7 +206,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import { at } from '@arkecosystem/utils'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalWindow } from '@/components/Modal'
 import { ButtonClipboard, ButtonGeneric } from '@/components/Button'

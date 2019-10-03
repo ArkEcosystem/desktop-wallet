@@ -158,7 +158,7 @@
 
 <script>
 import electron from 'electron'
-import at from 'lodash/at'
+import { at } from '@arkecosystem/utils'
 /* eslint-disable vue/no-unused-components */
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { at } from 'lodash'
+import { at } from '@arkecosystem/utils'
 import SvgIcon from '@/components/SvgIcon'
 
 export default {

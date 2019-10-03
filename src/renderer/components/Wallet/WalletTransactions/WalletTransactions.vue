@@ -27,10 +27,9 @@
 </template>
 
 <script>
-import at from 'lodash/at'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
-import { assign } from '@arkecosystem/utils'
+import { assign, at } from '@arkecosystem/utils'
 
 export default {
   name: 'WalletTransactions',
