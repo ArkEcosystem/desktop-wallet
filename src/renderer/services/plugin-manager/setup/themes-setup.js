@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import { normalizeJson } from '../utils/normalize-json'
-import { isString, isEmpty, isObject, isBoolean } from 'lodash'
+import { isEmpty, isString, isObject, isBoolean } from 'lodash'
 
 export function createThemesSetup (plugin, pluginObject, sandbox, profileId) {
   return async () => {
