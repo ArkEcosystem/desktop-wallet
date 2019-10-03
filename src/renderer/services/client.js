@@ -1,6 +1,7 @@
 import { Connection } from '@arkecosystem/client'
 import { Identities, Transactions } from '@arkecosystem/crypto'
-import { castArray, chunk, orderBy } from 'lodash'
+import { castArray } from '@arkecosystem/utils'
+import { chunk, orderBy } from 'lodash'
 import got from 'got'
 import moment from 'moment'
 import logger from 'electron-log'
