@@ -287,8 +287,7 @@
 </template>
 
 <script>
-import { clone } from '@arkecosystem/utils'
-import { isEmpty } from 'lodash'
+import { clone, isEmpty } from '@arkecosystem/utils'
 import { BIP39, I18N } from '@config'
 import { ButtonSwitch } from '@/components/Button'
 import { InputText } from '@/components/Input'

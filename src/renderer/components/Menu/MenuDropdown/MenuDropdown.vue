@@ -62,10 +62,10 @@
 </template>
 
 <script>
-import { zipObject, isEmpty } from 'lodash'
+import { zipObject } from 'lodash'
 import MenuDropdownItem from './MenuDropdownItem'
 import MenuDropdownHandler from './MenuDropdownHandler'
-import { isArray } from '@arkecosystem/utils'
+import { isArray, isEmpty } from '@arkecosystem/utils'
 
 export default {
   name: 'MenuDropdown',

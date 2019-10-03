@@ -68,7 +68,8 @@ import Cycled from 'cycled'
 import InputField from './InputField'
 import WalletService from '@/services/wallet'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, map, orderBy, unionBy } from 'lodash'
+import { isEmpty } from '@arkecosystem/utils'
+import { includes, map, orderBy, unionBy } from 'lodash'
 
 export default {
   name: 'InputAddress',

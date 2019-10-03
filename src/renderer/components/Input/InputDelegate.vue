@@ -66,7 +66,8 @@ import { MenuDropdown } from '@/components/Menu'
 import Cycled from 'cycled'
 import InputField from './InputField'
 import truncate from '@/filters/truncate'
-import { includes, isEmpty, map, orderBy } from 'lodash'
+import { isEmpty } from '@arkecosystem/utils'
+import { includes, map, orderBy } from 'lodash'
 
 export default {
   name: 'InputDelegate',

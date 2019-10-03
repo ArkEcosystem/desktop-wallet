@@ -158,7 +158,8 @@
 import { ModalConfirmation } from '@/components/Modal'
 import { MenuNavigationItem, MenuOptions, MenuOptionsItem, MenuDropdown } from '@/components/Menu'
 import { ButtonSwitch } from '@/components/Button'
-import { isEmpty, isString } from 'lodash'
+import { isString } from 'lodash'
+import { isEmpty } from '@arkecosystem/utils'
 const os = require('os')
 
 export default {
