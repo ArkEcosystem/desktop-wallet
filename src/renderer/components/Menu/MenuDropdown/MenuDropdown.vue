@@ -65,6 +65,7 @@
 import { zipObject, isEmpty } from 'lodash'
 import MenuDropdownItem from './MenuDropdownItem'
 import MenuDropdownHandler from './MenuDropdownHandler'
+import { isArray } from '@arkecosystem/utils'
 
 export default {
   name: 'MenuDropdown',
@@ -139,7 +140,7 @@ export default {
 
   computed: {
     entries () {
-      return Array.isArray(this.items) ? zipObject(this.items, this.items) : this.items
+      return isArray(this.items) ? zipObject(this.items, this.items) : this.items
     },
     hasDefaultSlot () {
       return !!this.$slots.default

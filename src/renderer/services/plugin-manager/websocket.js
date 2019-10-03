@@ -1,9 +1,11 @@
+import { isArray } from '@arkecosystem/utils'
+
 export default class PluginWebsocket {
   constructor (whitelist, router) {
     this.whitelist = []
     this.router = router
 
-    if (Array.isArray(whitelist)) {
+    if (isArray(whitelist)) {
       this.whitelist = whitelist.map(regex => {
         return new RegExp(regex)
       })

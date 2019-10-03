@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { isArray } from '@arkecosystem/utils'
+
 export default {
   name: 'SvgIcon',
 
@@ -29,7 +31,7 @@ export default {
 
   computed: {
     styles () {
-      const size = Array.isArray(this.viewBox) ? this.viewBox : this.viewBox.split(' ')
+      const size = isArray(this.viewBox) ? this.viewBox : this.viewBox.split(' ')
       const [x, y, width, height] = size.map(i => i + 'px')
 
       return { x, y, width, height }

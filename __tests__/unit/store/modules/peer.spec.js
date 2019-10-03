@@ -6,6 +6,7 @@ import store from '@/store'
 import peers, { goodPeer1, goodPeer2, goodPeer4, goodPeer5, badPeer1 } from '../../__fixtures__/store/peer'
 import { network1 } from '../../__fixtures__/store/network'
 import { profile1 } from '../../__fixtures__/store/profile'
+import { isArray } from '@arkecosystem/utils'
 
 Vue.use(Vuex)
 Vue.use(apiClient)
@@ -13,7 +14,7 @@ Vue.use(apiClient)
 const nethash = '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867'
 
 const stripPorts = (peers) => {
-  const single = !Array.isArray(peers)
+  const single = !isArray(peers)
   if (single) {
     peers = [peers]
   }

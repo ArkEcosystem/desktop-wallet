@@ -51,7 +51,7 @@
 <script>
 import InputField from './InputField'
 import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
-import { indexOf } from '@arkecosystem/utils'
+import { indexOf, isArray } from '@arkecosystem/utils'
 
 export default {
   name: 'InputSelect',
@@ -125,7 +125,7 @@ export default {
      * This is the text that is visible on the InputField
      */
     optionText () {
-      if (!Array.isArray(this.items)) {
+      if (!isArray(this.items)) {
         return this.items[this.optionValue]
       }
 

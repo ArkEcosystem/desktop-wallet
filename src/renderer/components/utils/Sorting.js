@@ -1,10 +1,11 @@
+import { isArray } from '@arkecosystem/utils'
 
 // Returns a sort function for the given prop
 export function sortByProps (props, locale = undefined, options = null) {
   locale = locale || undefined
   options = options || { sensitivity: 'base', numeric: 'true' }
 
-  if (!Array.isArray(props)) {
+  if (!isArray(props)) {
     props = [props]
   }
 

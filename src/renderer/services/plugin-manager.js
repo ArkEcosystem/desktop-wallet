@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, cloneDeep, indexOf } from '@arkecosystem/utils'
+import { camelCase, cloneDeep, indexOf, isArray } from '@arkecosystem/utils'
 import { isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
@@ -123,7 +123,7 @@ class PluginManager {
 
     const components = []
     const pluginComponents = await pluginObject.getComponentPaths()
-    if (pluginComponents && !Array.isArray(pluginComponents) && typeof pluginComponents === 'object') {
+    if (pluginComponents && !isArray(pluginComponents) && typeof pluginComponents === 'object') {
       for (const componentName of Object.keys(pluginComponents)) {
         let componentPath = pluginComponents[componentName]
         if (indexOf(componentPath, './') === 0) {
@@ -332,7 +332,7 @@ class PluginManager {
           .filter(hook => hook !== 'created')
           .forEach(prop => {
             const hookMethod = function () { return component[prop].apply(componentContext(this)) }
-            if (Array.isArray(vmComponent.options[prop])) {
+            if (isArray(vmComponent.options[prop])) {
               vmComponent.options[prop] = [hookMethod]
             } else {
               vmComponent.options[prop] = hookMethod
@@ -352,7 +352,7 @@ class PluginManager {
     }
 
     const pluginRoutes = this.normalize(await pluginObject.getRoutes())
-    if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
+    if (pluginRoutes && isArray(pluginRoutes) && pluginRoutes.length) {
       const allRoutes = this.getAllRoutes()
 
       const routes = pluginRoutes.reduce((valid, route) => {
@@ -378,7 +378,7 @@ class PluginManager {
     }
 
     const pluginMenuItems = this.normalize(pluginObject.getMenuItems())
-    if (pluginMenuItems && Array.isArray(pluginMenuItems) && pluginMenuItems.length) {
+    if (pluginMenuItems && isArray(pluginMenuItems) && pluginMenuItems.length) {
       const allRoutes = this.getAllRoutes()
 
       const menuItems = pluginMenuItems.reduce((valid, menuItem) => {
@@ -403,7 +403,7 @@ class PluginManager {
     }
 
     const pluginAvatars = this.normalize(await pluginObject.getAvatars())
-    if (pluginAvatars && Array.isArray(pluginAvatars) && pluginAvatars.length) {
+    if (pluginAvatars && isArray(pluginAvatars) && pluginAvatars.length) {
       const avatars = []
       for (const avatar of pluginAvatars) {
         if (typeof avatar !== 'string' || !plugin.components[avatar]) {
@@ -449,7 +449,7 @@ class PluginManager {
     }
 
     const pluginWalletTabs = this.normalize(pluginObject.getWalletTabs())
-    if (pluginWalletTabs && Array.isArray(pluginWalletTabs) && pluginWalletTabs.length) {
+    if (pluginWalletTabs && isArray(pluginWalletTabs) && pluginWalletTabs.length) {
       // Validate the configuration of each tab
       const walletTabs = pluginWalletTabs.reduce((valid, walletTab) => {
         if (isString(walletTab.tabTitle) && plugin.components[walletTab.componentName]) {
@@ -694,7 +694,7 @@ class PluginManager {
       }
     }
 
-    if (!config.permissions || !Array.isArray(config.permissions)) {
+    if (!config.permissions || !isArray(config.permissions)) {
       return sandbox
     }
 

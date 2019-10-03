@@ -37,7 +37,7 @@
 <script>
 import { isEqual, isString, shuffle, uniq } from 'lodash'
 import { InputText } from '@/components/Input'
-import { concat, indexOf } from '@arkecosystem/utils'
+import { concat, indexOf, isArray } from '@arkecosystem/utils'
 
 export default {
   name: 'PassphraseVerification',
@@ -107,7 +107,7 @@ export default {
      * @return {Array}
      */
     passphraseWords () {
-      return Array.isArray(this.passphrase) ? this.passphrase : this.passphrase.split(' ')
+      return isArray(this.passphrase) ? this.passphrase : this.passphrase.split(' ')
     },
     positions () {
       return this.wordPositions.map(p => p.toString())

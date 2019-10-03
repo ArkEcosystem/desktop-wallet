@@ -1,10 +1,11 @@
 import got from 'got'
+import { isArray } from '@arkecosystem/utils'
 
 export default class PluginHttp {
   constructor (whitelist) {
     this.whitelist = []
 
-    if (Array.isArray(whitelist)) {
+    if (isArray(whitelist)) {
       this.whitelist = whitelist.map(regex => {
         return new RegExp(regex)
       })
