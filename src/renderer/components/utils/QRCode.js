@@ -1,4 +1,5 @@
 import QRious from 'qrious'
+import { assign } from '@arkecosystem/utils'
 
 export default {
   props: {
@@ -31,7 +32,7 @@ export default {
 
   methods: {
     generate () {
-      const qr = new QRious(Object.assign({
+      const qr = new QRious(assign({
         element: this.$el,
         value: this.value
       }, this.options))

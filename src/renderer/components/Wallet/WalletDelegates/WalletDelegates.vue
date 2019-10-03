@@ -70,6 +70,7 @@
 <script>
 import { ButtonClose } from '@/components/Button'
 import TableWrapper from '@/components/utils/TableWrapper'
+import { assign } from '@arkecosystem/utils'
 
 export default {
   name: 'WalletDelegates',
@@ -213,7 +214,7 @@ export default {
     },
 
     __updateParams (newProps) {
-      this.queryParams = Object.assign({}, this.queryParams, newProps)
+      this.queryParams = assign({}, this.queryParams, newProps)
     }
   }
 }

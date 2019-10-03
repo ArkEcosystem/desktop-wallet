@@ -30,6 +30,7 @@
 import at from 'lodash/at'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import TransactionTable from '@/components/Transaction/TransactionTable'
+import { assign } from '@arkecosystem/utils'
 
 export default {
   name: 'WalletTransactions',
@@ -296,7 +297,7 @@ export default {
     },
 
     __updateParams (newProps) {
-      this.queryParams = Object.assign({}, this.queryParams, newProps)
+      this.queryParams = assign({}, this.queryParams, newProps)
     }
   }
 }

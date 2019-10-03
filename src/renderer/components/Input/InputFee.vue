@@ -68,6 +68,7 @@
 <script>
 import { V1 } from '@config'
 import InputCurrency from './InputCurrency'
+import { assign } from '@arkecosystem/utils'
 
 /**
  * This component, like \`InputCurrency\`, uses a String value internally to
@@ -200,7 +201,7 @@ export default {
         ADVANCED: average
       }
 
-      return this.lastFee ? Object.assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
+      return this.lastFee ? assign({}, { LAST: this.currency_subToUnit(this.lastFee) }, fees) : fees
     },
     minimumError () {
       const min = this.feeChoices.MINIMUM

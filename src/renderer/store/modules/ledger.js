@@ -5,6 +5,7 @@ import Vue from 'vue'
 import { Identities } from '@arkecosystem/crypto'
 import eventBus from '@/plugins/event-bus'
 import ledgerService from '@/services/ledger-service'
+import { assign } from '@arkecosystem/utils'
 
 export default {
   namespaced: true,
@@ -320,7 +321,7 @@ export default {
 
           for (const wallet of filteredWallets) {
             const ledgerName = rootGetters['wallet/ledgerNameByAddress'](wallet.address)
-            wallets[wallet.address] = Object.assign(wallet, {
+            wallets[wallet.address] = assign(wallet, {
               isLedger: true,
               isSendingEnabled: true,
               name: ledgerName || `Ledger ${wallet.ledgerIndex + 1}`,
