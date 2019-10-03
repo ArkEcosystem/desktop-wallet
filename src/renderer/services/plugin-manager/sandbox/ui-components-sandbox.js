@@ -24,7 +24,7 @@ export function createUiComponentsSandbox (walletApi) {
 
     walletApi.components = {
       ...walletApi.components,
-      components
+      ...components
     }
   }
 }
