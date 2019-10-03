@@ -37,6 +37,7 @@
 <script>
 import { isEqual, isString, shuffle, uniq } from 'lodash'
 import { InputText } from '@/components/Input'
+import { concat } from '@arkecosystem/utils'
 
 export default {
   name: 'PassphraseVerification',
@@ -84,7 +85,7 @@ export default {
     availableSuggestions () {
       return this.additionalSuggestions.length >= (this.suggestionsPerWord - 1)
         ? this.additionalSuggestions
-        : this.additionalSuggestions.concat(this.passphraseWords)
+        : concat(this.additionalSuggestions, this.passphraseWords)
     },
     /**
      * Return the suggested words per each position
@@ -94,7 +95,7 @@ export default {
       return this.positions.reduce((acc, position) => {
         const passphraseWord = this.words[position]
 
-        let suggestions = [passphraseWord].concat(shuffle(this.availableSuggestions))
+        let suggestions = concat([passphraseWord], shuffle(this.availableSuggestions))
         suggestions = shuffle(uniq(suggestions).slice(0, this.suggestionsPerWord))
 
         acc[position] = suggestions

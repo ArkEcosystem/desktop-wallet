@@ -55,6 +55,7 @@ import { orderBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { AnnouncementsPost } from '@/components/Announcements'
 import SvgIcon from '@/components/SvgIcon'
+import { concat } from '@arkecosystem/utils'
 
 export default {
   name: 'Announcements',
@@ -71,7 +72,7 @@ export default {
     }),
 
     announcements () {
-      const all = this.unreadAnnouncements.concat(this.readAnnouncements)
+      const all = concat(this.unreadAnnouncements, this.readAnnouncements)
       return orderBy(all, ['isRead', 'date'], ['asc', 'desc'])
     },
 

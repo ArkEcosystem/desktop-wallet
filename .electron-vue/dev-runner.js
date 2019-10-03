@@ -11,6 +11,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 
 const mainConfig = require('./webpack.main.config')
 const rendererConfig = require('./webpack.renderer.config')
+const { concat } = require('@arkecosystem/utils')
 
 let electronProcess = null
 let manualRestart = false
@@ -40,7 +41,7 @@ function logStats (proc, data) {
 
 function startRenderer () {
   return new Promise((resolve, reject) => {
-    rendererConfig.entry.renderer = [path.join(__dirname, 'dev-client')].concat(rendererConfig.entry.renderer)
+    rendererConfig.entry.renderer = concat([path.join(__dirname, 'dev-client')], rendererConfig.entry.renderer)
     rendererConfig.mode = 'development'
     const compiler = webpack(rendererConfig)
     hotMiddleware = webpackHotMiddleware(compiler, {
@@ -79,7 +80,7 @@ function startRenderer () {
 
 function startMain () {
   return new Promise((resolve, reject) => {
-    mainConfig.entry.main = [path.join(__dirname, '../src/main/index.dev.js')].concat(mainConfig.entry.main)
+    mainConfig.entry.main = concat([path.join(__dirname, '../src/main/index.dev.js')], mainConfig.entry.main)
     mainConfig.mode = 'development'
     const compiler = webpack(mainConfig)
 

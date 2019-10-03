@@ -1,4 +1,5 @@
 import announcementStore from '@/store/modules/announcements'
+import { concat } from '@arkecosystem/utils'
 
 describe('the announcementStore mutations', () => {
   it('saves announcements to state', () => {
@@ -155,7 +156,7 @@ describe('the announcementStore getters', () => {
       expect(readAnnouncements).not.toContainEqual(unreadAnnouncement)
     })
 
-    const allAnnouncements = readAnnouncements.concat(unreadAnnouncements)
+    const allAnnouncements = concat(readAnnouncements, unreadAnnouncements)
 
     expect(allAnnouncements).toHaveLength(state.announcements.length)
   })

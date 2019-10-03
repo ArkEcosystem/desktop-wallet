@@ -5,6 +5,7 @@ import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
+import { concat } from '@arkecosystem/utils'
 
 const getBaseUrl = (peer) => {
   const scheme = peer.isHttps ? 'https://' : 'http://'
@@ -125,9 +126,9 @@ export default {
       const bestPeers = getters.bestPeers(10, false, networkId)
       const randomPeers = getters.randomPeers(5, networkId)
       const seedPeers = getters.randomSeedPeers(5, networkId)
-      let peers = bestPeers.concat(randomPeers)
+      let peers = concat(bestPeers, randomPeers)
       if (seedPeers.length) {
-        peers = peers.concat(seedPeers)
+        peers = concat(peers, seedPeers)
       }
 
       return peers

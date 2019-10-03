@@ -1,3 +1,5 @@
+import { concat } from '@arkecosystem/utils'
+
 class ImageManager {
   /**
    * All the SVG images that are used in more than 1 place
@@ -42,7 +44,7 @@ class ImageManager {
     const tree = this.tree
 
     for (const item of filter) {
-      result = result.concat(tree[item] || [])
+      result = concat(result, tree[item] || [])
     }
 
     return result

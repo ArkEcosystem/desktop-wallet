@@ -80,6 +80,7 @@
 <script>
 import { map, mapValues, sortBy, uniqBy } from 'lodash'
 import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
+import { concat } from '@arkecosystem/utils'
 
 export default {
   name: 'ProfileAll',
@@ -111,7 +112,7 @@ export default {
         const wallets = this.$store.getters['wallet/byProfileId'](profile.id)
         return {
           ...all,
-          [profile.networkId]: (all[profile.networkId] || []).concat(wallets)
+          [profile.networkId]: concat((all[profile.networkId] || []), wallets)
         }
       }, {})
 
