@@ -10,7 +10,6 @@ export function createMenuItemsSetup (plugin, pluginObject, sandbox, profileId) 
     const pluginMenuItems = normalizeJson(pluginObject.getMenuItems())
     if (pluginMenuItems && Array.isArray(pluginMenuItems) && pluginMenuItems.length) {
       const allRoutes = getAllRoutes(sandbox.app, plugin)
-
       const menuItems = pluginMenuItems.reduce((valid, menuItem) => {
         // Check that the related route exists
         if (allRoutes.some(route => route.name === menuItem.routeName)) {
@@ -19,11 +18,13 @@ export function createMenuItemsSetup (plugin, pluginObject, sandbox, profileId) 
         return valid
       }, [])
 
-      await sandbox.app.$store.dispatch('plugin/setMenuItems', {
-        pluginId: plugin.config.id,
-        menuItems,
-        profileId
-      })
+      if (menuItems.length) {
+        await sandbox.app.$store.dispatch('plugin/setMenuItems', {
+          pluginId: plugin.config.id,
+          menuItems,
+          profileId
+        })
+      }
     }
   }
 }
