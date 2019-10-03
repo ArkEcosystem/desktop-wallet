@@ -41,7 +41,8 @@ export class PluginComponentSandbox {
       plugin: this.plugin,
       rootPath: this.path,
       vm: this.vm,
-      vue: this.vue
+      vue: this.vue,
+      logger: this.logger
     })
   }
 
