@@ -97,6 +97,7 @@
 import { NetworkModal } from '@/components/Network'
 import { SvgIcon } from '@/components/SvgIcon'
 import SelectionNetworkButton from '@/components/Selection/SelectionNetworkButton'
+import { indexOf } from '@arkecosystem/utils'
 
 export default {
   name: 'NetworkOverview',
@@ -126,7 +127,7 @@ export default {
       this.networks = Object.values(this.$store.getters['network/all']).map(network => {
         return {
           ...network,
-          isDefault: defaultNetworkIds.indexOf(network.id) > -1
+          isDefault: indexOf(defaultNetworkIds, network.id) > -1
         }
       })
     },

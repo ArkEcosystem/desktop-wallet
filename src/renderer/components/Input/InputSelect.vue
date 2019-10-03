@@ -51,6 +51,7 @@
 <script>
 import InputField from './InputField'
 import { MenuDropdown, MenuDropdownHandler } from '@/components/Menu'
+import { indexOf } from '@arkecosystem/utils'
 
 export default {
   name: 'InputSelect',
@@ -129,7 +130,7 @@ export default {
       }
 
       // Ensure that the value could be valid
-      if (this.items.indexOf(this.optionValue) !== -1) {
+      if (indexOf(this.items, this.optionValue) !== -1) {
         return this.optionValue
       }
 

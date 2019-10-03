@@ -37,7 +37,7 @@
 <script>
 import { isEqual, isString, shuffle, uniq } from 'lodash'
 import { InputText } from '@/components/Input'
-import { concat } from '@arkecosystem/utils'
+import { concat, indexOf } from '@arkecosystem/utils'
 
 export default {
   name: 'PassphraseVerification',
@@ -193,7 +193,7 @@ export default {
 
     toNextWord () {
       if (!this.allVerified) {
-        let index = this.positions.indexOf(this.currentPosition)
+        let index = indexOf(this.positions, this.currentPosition)
 
         let nextEmptyPosition = null
         while (!nextEmptyPosition) {

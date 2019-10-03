@@ -2,7 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import { ipcRenderer } from 'electron'
-import { camelCase, cloneDeep } from '@arkecosystem/utils'
+import { camelCase, cloneDeep, indexOf } from '@arkecosystem/utils'
 import { isBoolean, isEmpty, isObject, isString, partition, uniq, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
 import PluginHttp from '@/services/plugin-manager/http'
@@ -126,7 +126,7 @@ class PluginManager {
     if (pluginComponents && !Array.isArray(pluginComponents) && typeof pluginComponents === 'object') {
       for (const componentName of Object.keys(pluginComponents)) {
         let componentPath = pluginComponents[componentName]
-        if (componentPath.indexOf('./') === 0) {
+        if (indexOf(componentPath, './') === 0) {
           componentPath = `${componentPath.substring(2)}`
         }
         const fullPath = path.join(plugin.fullPath, 'src', pluginComponents[componentName])

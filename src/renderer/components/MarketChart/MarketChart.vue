@@ -31,6 +31,7 @@ import dayjs from 'dayjs'
 import LineChart from '@/components/utils/LineChart'
 import Loader from '@/components/utils/Loader'
 import cryptoCompare from '@/services/crypto-compare'
+import { indexOf } from '@arkecosystem/utils'
 
 export default {
   name: 'MarketChart',
@@ -260,7 +261,7 @@ export default {
                 let title = items[0].xLabel
 
                 if (this.period === 'day') {
-                  const midnight = data.labels.indexOf('00:00')
+                  const midnight = indexOf(data.labels, '00:00')
                   if (index < midnight) {
                     return this.$t('MARKET_CHART.YESTERDAY_AT', { hour: title })
                   }

@@ -1,9 +1,11 @@
+import { indexOf } from '@arkecosystem/utils'
+
 export default {
   bind (element, { modifiers, value }, vnode) {
     element.clickOutsideEvent = event => {
       const path = event.path || (event.composedPath ? event.composedPath() : undefined)
 
-      if (path ? path.indexOf(element) < 0 : !element.contains(event.target)) {
+      if (path ? indexOf(path, element) < 0 : !element.contains(event.target)) {
         value.call(vnode.context, event)
       }
 

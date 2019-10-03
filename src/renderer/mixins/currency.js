@@ -1,6 +1,7 @@
 import { NumberBuilder } from '@/plugins/bignumber.js'
 import { MARKET } from '@config'
 import { merge } from 'lodash'
+import { indexOf } from '@arkecosystem/utils'
 
 export default {
   methods: {
@@ -72,7 +73,7 @@ export default {
           throw new Error('The `subunit` option is only supported for the network currencies')
         }
 
-        if (MARKET.crypto.indexOf(config.currency) !== -1) {
+        if (indexOf(MARKET.crypto, config.currency) !== -1) {
           cryptoCurrency = config.currencyDisplay === 'symbol'
             ? MARKET.currencies[config.currency].symbol
             : config.currency
