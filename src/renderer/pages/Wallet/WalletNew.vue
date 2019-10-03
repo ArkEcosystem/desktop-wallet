@@ -266,7 +266,7 @@
 </template>
 
 <script>
-import { flatten } from 'lodash'
+import { flatten } from '@arkecosystem/utils'
 import { required } from 'vuelidate/lib/validators'
 import { ButtonClipboard, ButtonReload } from '@/components/Button'
 import { InputPassword, InputSwitch, InputText } from '@/components/Input'
