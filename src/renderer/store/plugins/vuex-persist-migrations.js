@@ -1,6 +1,6 @@
 import logger from 'electron-log'
 import semver from 'semver'
-import { isFunction } from 'lodash'
+import { isFunction } from '@arkecosystem/utils'
 
 export default class VuexMigrations {
   /**

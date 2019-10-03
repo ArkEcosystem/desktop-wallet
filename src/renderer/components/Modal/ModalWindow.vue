@@ -71,7 +71,7 @@
 
 <script>
 import { ButtonClose } from '@/components/Button'
-import { isFunction } from 'lodash'
+import { isFunction } from '@arkecosystem/utils'
 
 export default {
   name: 'ModalWindow',
