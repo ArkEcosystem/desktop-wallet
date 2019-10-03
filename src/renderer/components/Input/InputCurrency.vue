@@ -43,6 +43,7 @@ import { MARKET } from '@config'
 import store from '@/store'
 import InputField from './InputField'
 import BigNumber from '@/plugins/bignumber'
+import { isGreaterThan } from '@arkecosystem/utils'
 
 /**
  * This component uses a String value internally to avoid several problems, such
@@ -383,7 +384,7 @@ export default {
         return this.inputValue && this.checkAmount(this.inputValue)
       },
       isMoreThanMinimum (value) {
-        return !this.minimumAmount.isGreaterThan(this.inputValue)
+        return isGreaterThan(this.minimumAmount, this.inputValue)
       },
       isLessThanMaximum (value) {
         return !this.maximumAmount.isLessThan(this.inputValue)

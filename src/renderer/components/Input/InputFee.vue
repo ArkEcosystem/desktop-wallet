@@ -68,7 +68,7 @@
 <script>
 import { V1 } from '@config'
 import InputCurrency from './InputCurrency'
-import { assign } from '@arkecosystem/utils'
+import { assign, isGreaterThan } from '@arkecosystem/utils'
 
 /**
  * This component, like \`InputCurrency\`, uses a String value internally to
@@ -236,7 +236,7 @@ export default {
       if (this.isAdvancedFee) {
         return this.$t('INPUT_FEE.ADVANCED_NOTICE')
       }
-      if (this.feeChoices.AVERAGE.isGreaterThan(this.fee)) {
+      if (isGreaterThan(this.feeChoices.AVERAGE, this.fee)) {
         return this.$t('INPUT_FEE.LOW_FEE_NOTICE')
       }
       return null
