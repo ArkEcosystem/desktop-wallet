@@ -1,4 +1,5 @@
-import { clone, isUndefined } from 'lodash'
+import { isUndefined } from 'lodash'
+import { clone } from '@arkecosystem/utils'
 
 export default store => {
   store.getters['profile/all'].forEach(profile => {

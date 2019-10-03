@@ -96,7 +96,7 @@
 import { ButtonClipboard, ButtonModal } from '@/components/Button'
 import { WalletIdenticon, WalletSignModal, WalletVerifyModal } from '../'
 import SvgIcon from '@/components/SvgIcon'
-import { clone } from 'lodash'
+import { clone } from '@arkecosystem/utils'
 
 export default {
   name: 'WalletSignVerify',
