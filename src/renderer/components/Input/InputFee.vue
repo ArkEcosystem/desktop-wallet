@@ -68,7 +68,7 @@
 <script>
 import { V1 } from '@config'
 import InputCurrency from './InputCurrency'
-import { assign, isGreaterThan } from '@arkecosystem/utils'
+import { assign, isGreaterThan, isLessThan } from '@arkecosystem/utils'
 
 /**
  * This component, like \`InputCurrency\`, uses a String value internally to
@@ -226,7 +226,7 @@ export default {
       }
 
       const funds = this.currency_subToUnit(this.currentWallet.balance)
-      if (funds.isLessThan(this.fee)) {
+      if (isLessThan(funds, this.fee)) {
         const balance = this.formatter_networkCurrency(this.currentWallet.balance)
         return this.$t('TRANSACTION_FORM.ERROR.NOT_ENOUGH_BALANCE', { balance })
       }
