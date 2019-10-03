@@ -2,14 +2,14 @@ import { normalizeJson } from '../utils/normalize-json'
 import { getAllRoutes } from '../utils/get-all-routes'
 
 export function createRoutesSetup (plugin, pluginObject, sandbox) {
-  return async () => {
+  return () => {
     if (!Object.prototype.hasOwnProperty.call(pluginObject, 'getRoutes')) {
       return
     }
 
-    const pluginRoutes = normalizeJson(await pluginObject.getRoutes())
+    const pluginRoutes = normalizeJson(pluginObject.getRoutes())
     if (pluginRoutes && Array.isArray(pluginRoutes) && pluginRoutes.length) {
-      const allRoutes = getAllRoutes(sandbox.app, plugin)
+      const allRoutes = getAllRoutes(sandbox.app)
 
       const routes = pluginRoutes.reduce((valid, route) => {
         if (typeof route.component === 'string' && plugin.components[route.component]) {
@@ -22,8 +22,11 @@ export function createRoutesSetup (plugin, pluginObject, sandbox) {
         }
         return valid
       }, [])
-      plugin.routes.push(...routes)
-      sandbox.app.$router.addRoutes(routes)
+
+      if (routes.length) {
+        plugin.routes.push(...routes)
+        sandbox.app.$router.addRoutes(routes)
+      }
     }
   }
 }

@@ -1,3 +1,4 @@
 export function getAllRoutes (app, plugin) {
-  return [...app.$router.options.routes, ...plugin.routes]
+  const routes = plugin ? plugin.routes : []
+  return [...app.$router.options.routes, ...routes]
 }
