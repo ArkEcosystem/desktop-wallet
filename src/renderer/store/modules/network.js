@@ -1,5 +1,6 @@
 import BaseModule from '../base'
-import { cloneDeep, isEmpty } from 'lodash'
+import { cloneDeep } from '@arkecosystem/utils'
+import { isEmpty } from 'lodash'
 import { NETWORKS } from '@config'
 import eventBus from '@/plugins/event-bus'
 import NetworkModel from '@/models/network'

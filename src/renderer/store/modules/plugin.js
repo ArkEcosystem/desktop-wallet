@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from '@arkecosystem/utils'
 
 export default {
   namespaced: true,

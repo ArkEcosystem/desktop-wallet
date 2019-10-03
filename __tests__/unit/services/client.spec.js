@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from '@arkecosystem/utils'
 import nock from 'nock'
 import errorCapturer from '../__utils__/error-capturer'
 import fixtures from '../__fixtures__/services/client'
