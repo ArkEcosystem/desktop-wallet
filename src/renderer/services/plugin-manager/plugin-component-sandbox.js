@@ -76,7 +76,7 @@ export class PluginComponentSandbox {
       renderedComponent.components[childName] = childSandbox.render()
     }
 
-    return defineContext(this.name, renderedComponent, this.compiled, this.vue)
+    return defineContext(this.name, renderedComponent, this.vue)
   }
 
   __compileSource () {

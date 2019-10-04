@@ -1,70 +1,88 @@
+import isElement from 'lodash/isElement'
+
 export function prepareContext (vueContext, component) {
   const context = vueContext._data || {}
 
-  const keys = ['$nextTick', '$refs', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
-  for (let key of keys) {
-    let vueContextItem = vueContext[key]
+  const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
 
-    if (key === '$refs' && vueContextItem) {
-      key = 'refs'
-      vueContextItem = {}
-      const badGetters = [
-        'attributes',
-        'children',
-        'childNodes',
-        'contentDocument',
-        'contentWindow',
-        'firstChild',
-        'firstElementChild',
-        'lastChild',
-        'lastElementChild',
-        'nextElementSibling',
-        'nextSibling',
-        'offsetParent',
-        'ownerDocument',
-        'parentElement',
-        'parentNode',
-        'shadowRoot',
-        'previousElementSibling',
-        'previousSibling',
-        '$root',
-        '__vue__'
-      ]
-      const badSetters = [
-        'innerHTML',
-        'outerHTML'
-      ]
-      vueContext.$nextTick(() => {
-        for (const elKey in vueContext.$refs) {
-          const element = vueContext.$refs[elKey]
+  for (const key of keys) {
+    context[key] = vueContext[key]
+  }
 
-          if (!element.tagName || element.tagName.toLowerCase() === 'iframe') {
-            continue
-          }
+  if (vueContext.$refs) {
+    const badGetters = [
+      'attributes',
+      'children',
+      'childNodes',
+      'contentDocument',
+      'contentWindow',
+      'firstChild',
+      'firstElementChild',
+      'lastChild',
+      'lastElementChild',
+      'nextElementSibling',
+      'nextSibling',
+      'offsetParent',
+      'ownerDocument',
+      'parentElement',
+      'parentNode',
+      'shadowRoot',
+      'previousElementSibling',
+      'previousSibling',
+      '__vue__',
+      '$root'
+    ]
 
-          for (const badGetter of badGetters) {
-            element.__defineGetter__(badGetter, () => console.log('🚫'))
-          }
+    const badSetters = [
+      'innerHTML',
+      'outerHTML'
+    ]
 
-          for (const badSetter of badSetters) {
-            element.__defineSetter__(badSetter, () => console.log('🚫'))
-          }
+    const blockElementProperties = (element) => {
+      if (!isElement(element) || !element.tagName || element.tagName.toLowerCase() === 'iframe') {
+        return element
+      }
 
-          vueContextItem[elKey] = element
+      for (const badSetter of badSetters) {
+        try {
+          element.__defineSetter__(badSetter, () => console.error(`${badSetter} 🚫`))
+        } catch {
+          throw new Error(`Failed to apply ${badSetter} setter to the element. Try wrapping it with '$nextTick'.`)
         }
-      })
+      }
+
+      for (const badGetter of badGetters) {
+        try {
+          element.__defineGetter__(badGetter, () => console.error(`${badGetter} 🚫`))
+        } catch {
+          throw new Error(`Failed to apply ${badGetter} getter to the element. Try wrapping it with '$nextTick'.`)
+        }
+      }
+
+      return element
     }
 
-    context[key] = vueContextItem
+    context['refs'] = new Proxy(vueContext.$refs, {
+      get (target, prop) {
+        const element = target[prop]
+        if (element) {
+          return blockElementProperties(element)
+        }
+      }
+    })
   }
 
-  for (const computedName of Object.keys(component.computed || {})) {
-    context[computedName] = vueContext[computedName]
+  if (component.computed) {
+    for (const computedName of Object.keys(component.computed || {})) {
+      context[computedName] = vueContext[computedName]
+    }
   }
 
-  for (const methodName of Object.keys(component.methods || {})) {
-    context[methodName] = function () {
-      return component.methods[methodName].apply(prepareContext(vueContext, component))
+  if (component.methods) {
+    for (const methodName of Object.keys(component.methods || {})) {
+      context[methodName] = function () {
+        return component.methods[methodName].apply(prepareContext(vueContext, component))
+      }
     }
   }
 
