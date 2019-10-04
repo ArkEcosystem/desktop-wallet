@@ -83,7 +83,7 @@ export default new BaseModule(NetworkModel, {
         commit('UPDATE', {
           ...network,
           crypto,
-          milestone: constants
+          constants
         })
       } catch (error) {
         // data could not be updated

@@ -715,7 +715,7 @@ export default class ClientService {
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
-    if (network.milestone.aip11) {
+    if (network.constants.aip11) {
       Managers.configManager.setConfig(network.crypto)
       Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
 
