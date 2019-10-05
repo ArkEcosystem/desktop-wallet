@@ -32,7 +32,7 @@ button:disabled {
   @apply small-button .bg-theme-button .text-theme-button-text
 }
 
-.blue-button:enabled:hover {
+.blue-button:enabled:hover, .blue-small-button:enabled:hover {
 	@apply .bg-blue .text-white .hover-button-blue-shadow-definition
 }
 

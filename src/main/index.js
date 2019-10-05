@@ -1,6 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, ipcMain, screen } from 'electron'
+import { setupPluginManager } from './plugin-manager'
 import winState from 'electron-window-state'
 import packageJson from '../../package.json'
 
@@ -91,10 +92,18 @@ function broadcastURL (url) {
     return
   }
 
-  if (mainWindow && mainWindow.webContents) {
-    mainWindow.webContents.send('process-url', url)
+  if (sendToWindow('process-url', url)) {
     deeplinkingUrl = null
   }
+}
+
+function sendToWindow (key, value) {
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.send(key, value)
+    return true
+  }
+
+  return false
 }
 
 // Force Single Instance Application
@@ -131,7 +140,10 @@ if (!gotTheLock) {
   }
 }
 
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createWindow()
+  setupPluginManager({ sendToWindow, mainWindow, ipcMain })
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

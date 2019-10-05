@@ -1,8 +1,7 @@
+import { PLUGINS } from '@config'
 import chunk from 'lodash/chunk'
 import got from 'got'
 import packageJson from 'package-json'
-import pacote from 'pacote'
-import { PLUGINS } from '@config'
 
 const CHUNKSIZE = 50
 
@@ -61,18 +60,6 @@ class NpmAdapter {
     return {
       plugins: body.objects.map(plugin => plugin.package),
       totalCount: body.total
-    }
-  }
-
-  async download (packageName, destPath) {
-    const pluginPath = `${destPath}/${packageName}`
-
-    try {
-      await pacote.extract(packageName, pluginPath)
-    } catch (error) {
-      // TODO cleanup
-      console.log('needs cleanup')
-      throw error
     }
   }
 }

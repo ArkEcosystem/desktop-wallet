@@ -119,8 +119,17 @@
       v-if="pluginToShow"
       :plugin="pluginToShow"
       @close="closeDetailsModal"
-      @install="onInstall"
+      @install="openInstallModal"
       @remove="openRemovalModal"
+    />
+
+    <PluginInstallModal
+      v-if="pluginToInstall"
+      :plugin="pluginToInstall"
+      @download="onDownload"
+      @install="onInstall"
+      @installed="onInstalled"
+      @close="closeInstallModal"
     />
 
     <PluginRemovalModal
@@ -134,10 +143,12 @@
 
 <script>
 // import sortBy from 'lodash/sortBy'
+import { ipcRenderer } from 'electron'
 import { isEqual } from 'lodash'
 import { ButtonLayout, ButtonReload } from '@/components/Button'
 import {
   PluginDetailsModal,
+  PluginInstallModal,
   PluginManagerGrid,
   PluginManagerSearchBar,
   PluginManagerSideMenu,
@@ -153,6 +164,7 @@ export default {
     ButtonLayout,
     ButtonReload,
     PluginDetailsModal,
+    PluginInstallModal,
     PluginManagerGrid,
     PluginManagerSearchBar,
     PluginManagerSideMenu,
@@ -168,6 +180,7 @@ export default {
     pluginToConfirm: null,
     isMenuOpen: false,
     activeCategory: 'all',
+    pluginToInstall: null,
     pluginToShow: null,
     pluginToRemove: null
   }),
@@ -261,12 +274,41 @@ export default {
       this.pluginToRemove = null
     },
 
+    openInstallModal (plugin) {
+      if (this.pluginToShow) {
+        this.pluginToShow = null
+      }
+
+      this.pluginToInstall = plugin
+    },
+
+    closeInstallModal () {
+      this.pluginToInstall = null
+    },
+
     onCategoryChange (category) {
       this.activeCategory = category
     },
 
-    onPageChange (page) {
-      console.log('page-change: %s', page)
+    onDownload (source) {
+      ipcRenderer.send('plugin-manager:download', {
+        url: source
+      })
+    },
+
+    onInstall () {
+      ipcRenderer.send('plugin-manager:install', this.pluginToInstall.id)
+    },
+
+    async onInstalled (pluginPath) {
+      await this.$plugins.fetchPlugin(pluginPath)
+
+      this.pluginToShow = this.pluginToInstall
+      this.pluginToInstall = null
+    },
+
+    onRemoved (pluginId) {
+      this.closeRemovalModal()
     },
 
     onSearch (query) {
@@ -293,18 +335,6 @@ export default {
         enabled,
         pluginId
       })
-    },
-
-    onRemoved (pluginId) {
-      this.closeRemovalModal()
-    },
-
-    async onInstall (pluginId) {
-      try {
-        await this.$plugins.installPlugin(pluginId)
-      } catch (error) {
-        this.$error(`Could not install '${pluginId}: ${error.message}`)
-      }
     },
 
     // TODO

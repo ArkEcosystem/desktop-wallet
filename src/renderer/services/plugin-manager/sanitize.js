@@ -16,7 +16,8 @@ const sanitize = async (config, pluginPath = null) => {
     permissions: sanitizePermissions(config),
     urls: sanitizeUrls(config),
     homepage: config.homepage,
-    size: await sanitizeSize(config, pluginPath) || 0
+    size: await sanitizeSize(config, pluginPath) || 0,
+    source: sanitizeSource(config)
   }
 }
 
@@ -89,7 +90,10 @@ const sanitizeMinVersion = config => {
 
 const sanitizePermissions = config => {
   const permissions = getWalletOption(config, 'permissions') || config.permissions || []
-  return uniq(permissions).sort().map(permission => permission.toUpperCase())
+
+  return intersection(uniq(permissions).sort().map(permission => {
+    return permission.toUpperCase()
+  }), PLUGINS.validation.permissions)
 }
 
 const sanitizeUrls = config => {
@@ -102,6 +106,14 @@ const sanitizeSize = async (config, pluginPath) => {
   }
 
   return du(pluginPath)
+}
+
+const sanitizeSource = config => {
+  if (config.dist) {
+    return config.dist.tarball
+  }
+
+  return null
 }
 
 export default sanitize

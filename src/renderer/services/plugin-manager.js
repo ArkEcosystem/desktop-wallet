@@ -61,30 +61,6 @@ class PluginManager {
     await this.app.$store.dispatch('plugin/loadPluginsForProfiles')
   }
 
-  async installPlugin (pluginId) {
-    if (!this.hasInit) {
-      throw new errors.NotInitiatedError()
-    }
-
-    if (this.plugins[pluginId]) {
-      throw new errors.PluginAlreadyInstalledError(pluginId)
-    }
-
-    const pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
-    try {
-      await this.adapter.download(pluginId, pluginsPath)
-    } catch (error) {
-      throw new errors.PluginDownloadFailedError(pluginId)
-    }
-
-    const pluginPath = `${pluginsPath}/${pluginId}`
-    try {
-      await this.fetchPlugin(pluginPath)
-    } catch (error) {
-      console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
-    }
-  }
-
   async enablePlugin (pluginId, profileId) {
     if (!this.hasInit) {
       throw new errors.NotInitiatedError()
@@ -684,9 +660,7 @@ class PluginManager {
       await this.fetchPluginsFromAdapter()
     }
 
-    await this.fetchPluginsFromPath(
-      process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
-    )
+    await this.fetchPluginsFromPath()
   }
 
   async fetchPluginsFromAdapter () {
@@ -706,11 +680,13 @@ class PluginManager {
     this.app.$store.dispatch('plugin/setAvailable', plugins)
   }
 
-  async fetchPluginsFromPath (pluginsPath) {
+  async fetchPluginsFromPath () {
+    const pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
+
     fs.ensureDirSync(pluginsPath)
 
     const dirs = fs.readdirSync(pluginsPath).filter(entry => {
-      return fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()
+      return entry !== '.cache' && fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()
     })
 
     const [scoped, unscoped] = partition(dirs, entry => {

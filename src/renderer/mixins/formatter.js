@@ -11,8 +11,13 @@ export default {
       return prettyBytes(value)
     },
 
-    formatter_percentage (value) {
-      return `${this.$n(value, { minimumFractionDigits: 2 })}%`
+    formatter_percentage (value, minimumFractionDigits = 2, maximumFractionDigits = null) {
+      const options = {
+        minimumFractionDigits,
+        ...(maximumFractionDigits && { maximumFractionDigits })
+      }
+
+      return `${this.$n(value, options)}%`
     },
 
     formatter_networkCurrency (value, digits) {

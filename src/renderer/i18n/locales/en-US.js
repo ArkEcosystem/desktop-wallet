@@ -470,6 +470,15 @@ export default {
     }
   },
 
+  MODAL_PLUGIN_INSTALL: {
+    CANCEL: 'Cancel',
+    DOWNLOAD: 'Download now',
+    DOWNLOADED: 'Download complete',
+    DOWNLOADING: 'Downloading {plugin}',
+    INSTALL: 'Install now',
+    TITLE: 'This plugin needs the following permissions'
+  },
+
   PASSPHRASE_INPUT: {
     HIDE: 'Hide the passphrase',
     LABEL: 'Passphrase',
@@ -568,7 +577,26 @@ export default {
         AVAILABLE: 'Update to latest version (v{version})',
         NOT_AVAILABLE: 'No updates available'
       },
-      DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.'
+      DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
+      PERMISSIONS: {
+        COMPONENTS: 'Load in custom components',
+        ROUTES: 'Loads additional routes into the Desktop Wallet',
+        MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
+        AVATARS: 'Plugin contains custom components',
+        WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
+        THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
+        UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+        WEBFRAME: 'Allows showing remote URL pages within a frame',
+        EVENTS: 'Allows access to the Desktop Wallet events',
+        AUDIO: 'Allows access to play audio from within the Desktop Wallet',
+        ALERTS: 'Allows access to the Desktop Wallet alerts',
+        MESSAGING: 'Allows WebFrame to have access to a one-way messaging system',
+        STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
+        HTTP: 'Allows performing external web requests',
+        PEER_CURRENT: 'Allows access to the currently connected peer',
+        PROFILE_CURRENT: 'Allows access to the currently active profile',
+        PROFILE_ALL: 'Allows access to all available profiles'
+      }
     },
 
     PROFILE_ALL: {
