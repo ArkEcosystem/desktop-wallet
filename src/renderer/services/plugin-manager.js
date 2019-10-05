@@ -702,7 +702,7 @@ class PluginManager {
         return fs.lstatSync(`${scopePath}/${entry}`).isDirectory()
       })
 
-      plugins.push(entries.map(entry => `${scope}/${entry}`))
+      plugins.push(...entries.map(entry => `${scope}/${entry}`))
     }
 
     for (const plugin of plugins) {
