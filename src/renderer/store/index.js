@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import localforage from 'localforage'
-import { isNull, pullAll, keys } from 'lodash'
+import { pullAll, keys } from 'lodash'
+import { isNull } from '@arkecosystem/utils'
 
 import packageJson from '@package.json'
 
