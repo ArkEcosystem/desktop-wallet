@@ -1,7 +1,6 @@
 import { NumberBuilder } from '@/plugins/bignumber.js'
 import { MARKET } from '@config'
-import { merge } from 'lodash'
-import { indexOf } from '@arkecosystem/utils'
+import { indexOf, merge } from '@arkecosystem/utils'
 
 export default {
   methods: {

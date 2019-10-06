@@ -1,4 +1,4 @@
-import { merge } from 'lodash'
+import { merge } from '@arkecosystem/utils'
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import { mount } from '@vue/test-utils'
