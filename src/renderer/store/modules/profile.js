@@ -1,4 +1,5 @@
-import { map, uniqBy } from 'lodash'
+import { map } from 'lodash'
+import { uniqBy } from '@arkecosystem/utils'
 import crypto from 'crypto'
 import BaseModule from '../base'
 import ProfileModel from '@/models/profile'

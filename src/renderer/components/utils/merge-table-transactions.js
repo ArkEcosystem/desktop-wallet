@@ -1,5 +1,4 @@
-import { uniqBy } from 'lodash'
-import { orderBy } from '@arkecosystem/utils'
+import { orderBy, uniqBy } from '@arkecosystem/utils'
 
 /**
  * This utility is used to merge the transactions that have been fetched using

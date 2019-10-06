@@ -140,8 +140,7 @@
 </template>
 
 <script>
-import { some } from '@arkecosystem/utils'
-import { uniqBy } from 'lodash'
+import { some, uniqBy } from '@arkecosystem/utils'
 import { ButtonLayout } from '@/components/Button'
 import Loader from '@/components/utils/Loader'
 import { ProfileAvatar } from '@/components/Profile'

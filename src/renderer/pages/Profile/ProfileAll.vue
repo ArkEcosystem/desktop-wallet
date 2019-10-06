@@ -78,9 +78,9 @@
 </template>
 
 <script>
-import { map, uniqBy } from 'lodash'
+import { map } from 'lodash'
 import { ProfileAvatar, ProfileRemovalConfirmation } from '@/components/Profile'
-import { concat, mapValues, sortBy } from '@arkecosystem/utils'
+import { concat, mapValues, sortBy, uniqBy } from '@arkecosystem/utils'
 
 export default {
   name: 'ProfileAll',

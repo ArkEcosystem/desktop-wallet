@@ -1,5 +1,5 @@
-import { findIndex, uniqBy } from 'lodash'
-import { unionBy } from '@arkecosystem/utils'
+import { findIndex } from 'lodash'
+import { unionBy, uniqBy } from '@arkecosystem/utils'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 

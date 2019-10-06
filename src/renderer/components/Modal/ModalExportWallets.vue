@@ -63,8 +63,7 @@
 </template>
 
 <script>
-import { isNull, omitBy } from '@arkecosystem/utils'
-import { uniqBy } from 'lodash'
+import { isNull, omitBy, uniqBy } from '@arkecosystem/utils'
 import ModalWindow from '@/components/Modal/ModalWindow'
 import { ButtonGeneric, ButtonSwitch } from '@/components/Button'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'

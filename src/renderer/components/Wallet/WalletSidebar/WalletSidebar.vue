@@ -204,8 +204,8 @@
 </template>
 
 <script>
-import { sortBy } from '@arkecosystem/utils'
-import { filter, uniqBy } from 'lodash'
+import { sortBy, uniqBy } from '@arkecosystem/utils'
+import { filter } from 'lodash'
 import Loader from '@/components/utils/Loader'
 import { MenuNavigation, MenuNavigationItem } from '@/components/Menu'
 import { WalletIdenticon, WalletIdenticonPlaceholder } from '../'
