@@ -51,11 +51,10 @@
 </template>
 
 <script>
-import { orderBy } from 'lodash'
 import { mapGetters } from 'vuex'
 import { AnnouncementsPost } from '@/components/Announcements'
 import SvgIcon from '@/components/SvgIcon'
-import { concat } from '@arkecosystem/utils'
+import { concat, orderBy } from '@arkecosystem/utils'
 
 export default {
   name: 'Announcements',

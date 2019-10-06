@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import { flatten } from '@arkecosystem/utils'
-import { uniqBy, orderBy } from 'lodash'
+import { flatten, orderBy } from '@arkecosystem/utils'
+import { uniqBy } from 'lodash'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
 import { TransactionTable } from '@/components/Transaction'
 

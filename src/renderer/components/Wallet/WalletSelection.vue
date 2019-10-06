@@ -28,7 +28,8 @@
 </template>
 
 <script>
-import { map, orderBy } from 'lodash'
+import { map } from 'lodash'
+import { orderBy } from '@arkecosystem/utils'
 import { InputSelect } from '@/components/Input'
 import truncate from '@/filters/truncate'
 
