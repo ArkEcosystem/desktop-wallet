@@ -1,4 +1,4 @@
-import { isUndefined } from 'lodash'
+import { isUndefined } from '@arkecosystem/utils'
 
 // Update the schema of profile avatars to be consistent and use `null` instead
 // of `null` and `undefined` when to establish a "letter" avatar.
