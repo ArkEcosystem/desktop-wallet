@@ -37,13 +37,13 @@
 </template>
 
 <script>
-import { includes, isString } from 'lodash'
+import { includes } from 'lodash'
 import { required } from 'vuelidate/lib/validators'
 import { MARKET } from '@config'
 import store from '@/store'
 import InputField from './InputField'
 import BigNumber from '@/plugins/bignumber'
-import { isGreaterThan, isLessThan } from '@arkecosystem/utils'
+import { isGreaterThan, isLessThan, isString } from '@arkecosystem/utils'
 
 /**
  * This component uses a String value internally to avoid several problems, such
