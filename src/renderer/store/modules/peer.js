@@ -1,11 +1,11 @@
-import { random, shuffle } from 'lodash'
+import { shuffle } from 'lodash'
 import { PeerDiscovery } from '@arkecosystem/peers'
 import ClientService from '@/services/client'
 import config from '@config'
 import i18n from '@/i18n'
 import PeerModel from '@/models/peer'
 import Vue from 'vue'
-import { concat, isEmpty } from '@arkecosystem/utils'
+import { concat, isEmpty, random } from '@arkecosystem/utils'
 
 const getBaseUrl = (peer) => {
   const scheme = peer.isHttps ? 'https://' : 'http://'
