@@ -35,9 +35,9 @@
 </template>
 
 <script>
-import { shuffle, uniq } from 'lodash'
+import { uniq } from 'lodash'
 import { InputText } from '@/components/Input'
-import { concat, indexOf, isArray, isEqual, isString } from '@arkecosystem/utils'
+import { concat, indexOf, isArray, isEqual, isString, shuffle } from '@arkecosystem/utils'
 
 export default {
   name: 'PassphraseVerification',
