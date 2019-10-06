@@ -1,5 +1,5 @@
-import { isFunction } from '@arkecosystem/utils'
-import { transform, isObject, isUndefined, isNil } from 'lodash'
+import { isFunction, isNil } from '@arkecosystem/utils'
+import { transform, isObject, isUndefined } from 'lodash'
 import { validate as jsonValidate } from 'jsonschema'
 
 export default class BaseModel {
