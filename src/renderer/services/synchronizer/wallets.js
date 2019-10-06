@@ -1,5 +1,5 @@
-import { groupBy } from '@arkecosystem/utils'
-import { find, keyBy, map, maxBy, partition, uniqBy } from 'lodash'
+import { groupBy, keyBy } from '@arkecosystem/utils'
+import { find, map, maxBy, partition, uniqBy } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'

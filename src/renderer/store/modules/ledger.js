@@ -1,11 +1,10 @@
 import cryptoLibrary from 'crypto'
-import { keyBy } from 'lodash'
 import logger from 'electron-log'
 import Vue from 'vue'
 import { Identities } from '@arkecosystem/crypto'
 import eventBus from '@/plugins/event-bus'
 import ledgerService from '@/services/ledger-service'
-import { assign } from '@arkecosystem/utils'
+import { assign, keyBy } from '@arkecosystem/utils'
 
 export default {
   namespaced: true,
