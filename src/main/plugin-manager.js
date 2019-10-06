@@ -7,6 +7,7 @@ import { ensureDirSync } from 'fs-extra'
 export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
   let downloadItem
   let savePath
+  let totalBytes
 
   const pluginsPath = `${process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath}`
   const cachePath = `${pluginsPath}/.cache`
@@ -20,17 +21,21 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
       directory: cachePath,
       onStarted: item => {
         downloadItem = item
+        totalBytes = item.getTotalBytes()
         savePath = item.getSavePath()
-        sendToWindow(prefix + 'download-started', item)
       },
-      onProgress: progress => {
-        sendToWindow(prefix + 'download-progress', progress)
+      onProgress: percent => {
+        sendToWindow(prefix + 'download-progress', {
+          percent,
+          transferred: parseInt(percent * totalBytes, 10),
+          total: totalBytes
+        })
       }
     }
 
     try {
       await download(mainWindow, url, options)
-      sendToWindow(prefix + 'download-complete', savePath)
+      sendToWindow(prefix + 'plugin-downloaded', savePath)
     } catch (error) {
       sendToWindow(prefix + 'error', error)
     }
@@ -49,7 +54,7 @@ export const setupPluginManager = ({ sendToWindow, mainWindow, ipcMain }) => {
 
       await trash(savePath)
 
-      sendToWindow(prefix + 'install-complete', dest)
+      sendToWindow(prefix + 'plugin-installed', dest)
     } catch (error) {
       sendToWindow(prefix + 'error', error)
     }

@@ -41,14 +41,9 @@
               <strong place="plugin">{{ plugin.id }}</strong>
             </i18n>
 
-            <div
-              class="PluginInstallModal__authorized__downloading__header__info transition"
-            >
+            <div class="PluginInstallModal__authorized__downloading__header__info">
               <span class="font-semibold">{{ formatter_percentage(progressUpdate.percent, 2, 2) }}</span>
-              <span
-                v-if="progressUpdate.total"
-                class="ml-2 text-theme-page-text-light truncate"
-              >
+              <span class="ml-2 text-theme-page-text-light truncate">
                 {{ formatter_bytes(progressUpdate.transferred) }} / {{ formatter_bytes(progressUpdate.total) }}
               </span>
             </div>
@@ -143,20 +138,12 @@ export default {
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:download-started', (_, item) => {
-      console.log('download started')
-    })
-
     ipcRenderer.on('plugin-manager:download-progress', (_, data) => {
       Object.assign(this.progressUpdate, data)
     })
 
-    ipcRenderer.on('plugin-manager:download-complete', () => {
+    ipcRenderer.on('plugin-manager:plugin-downloaded', () => {
       this.isDownloadFinished = true
-    })
-
-    ipcRenderer.on('plugin-manager:install-complete', (_, pluginPath) => {
-      this.emitInstalled(pluginPath)
     })
 
     ipcRenderer.on('plugin-manager:error', (_, error) => {
@@ -182,10 +169,6 @@ export default {
 
     emitInstall () {
       this.$emit('install')
-    },
-
-    emitInstalled (pluginPath) {
-      this.$emit('installed', pluginPath)
     },
 
     emitClose () {
@@ -238,5 +221,8 @@ PluginInstallModal__permission__container {
 
 .PluginInstallModal__footer {
   @apply mt-10 flex justify-between items-center
+}
+.PluginInstallModal__footer--failed {
+  @apply py-5 bg-theme-error text-white
 }
 </style>

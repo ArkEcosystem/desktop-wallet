@@ -128,7 +128,6 @@
       :plugin="pluginToInstall"
       @download="onDownload"
       @install="onInstall"
-      @installed="onInstalled"
       @close="closeInstallModal"
     />
 
@@ -237,6 +236,15 @@ export default {
     }
   },
 
+  mounted () {
+    ipcRenderer.on('plugin-manager:plugin-installed', async (_, pluginPath) => {
+      await this.$plugins.fetchPlugin(pluginPath)
+
+      this.openDetailsModal(this.pluginToInstall)
+      this.closeInstallModal()
+    })
+  },
+
   methods: {
     async reloadPlugins () {
       this.isRefreshing = true
@@ -298,13 +306,6 @@ export default {
 
     onInstall () {
       ipcRenderer.send('plugin-manager:install', this.pluginToInstall.id)
-    },
-
-    async onInstalled (pluginPath) {
-      await this.$plugins.fetchPlugin(pluginPath)
-
-      this.pluginToShow = this.pluginToInstall
-      this.pluginToInstall = null
     },
 
     onRemoved (pluginId) {
