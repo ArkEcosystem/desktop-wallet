@@ -75,7 +75,7 @@
 
 <script>
 import electron from 'electron'
-import sortBy from 'lodash/sortBy'
+import { sortBy } from '@arkecosystem/utils'
 import { PLUGINS } from '@config'
 import { PluginEnableConfirmation, PluginTable } from '@/components/Plugin'
 import SvgIcon from '@/components/SvgIcon'

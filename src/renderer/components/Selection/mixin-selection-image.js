@@ -1,6 +1,6 @@
 import path from 'path'
-import { flatten } from '@arkecosystem/utils'
-import { upperCase, sortBy } from 'lodash'
+import { flatten, sortBy } from '@arkecosystem/utils'
+import { upperCase } from 'lodash'
 import imageManager from '@/services/image-manager'
 
 export default {
