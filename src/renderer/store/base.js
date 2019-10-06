@@ -1,4 +1,5 @@
-import { merge, unionBy, findIndex } from 'lodash'
+import { merge, findIndex } from 'lodash'
+import { unionBy } from '@arkecosystem/utils'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 

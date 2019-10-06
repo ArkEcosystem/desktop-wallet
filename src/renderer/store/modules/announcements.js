@@ -1,7 +1,7 @@
 import Announcement from '@/models/announcement'
 import feedService from '@/services/feed'
 import { ANNOUNCEMENTS as source } from '@config'
-import { unionBy } from 'lodash'
+import { unionBy } from '@arkecosystem/utils'
 import Vue from 'vue'
 
 export default {

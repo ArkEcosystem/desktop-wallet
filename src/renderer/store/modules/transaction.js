@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
-import { findIndex, unionBy } from 'lodash'
+import { findIndex } from 'lodash'
+import { unionBy } from '@arkecosystem/utils'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import TransactionModel from '@/models/transaction'
