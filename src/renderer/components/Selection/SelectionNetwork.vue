@@ -39,7 +39,7 @@
 <script>
 import { NetworkSelectionModal } from '@/components/Network'
 import SelectionNetworkButton from './SelectionNetworkButton'
-import { pullAllBy } from 'lodash'
+import { pullAllBy } from '@arkecosystem/utils'
 
 export default {
   name: 'SelectionNetwork',
