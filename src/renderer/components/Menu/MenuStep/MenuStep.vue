@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import { map, first, last } from 'lodash'
+import { last } from '@arkecosystem/utils'
+import { map, first } from 'lodash'
 import { CollapseAccordion } from '@/components/Collapse'
 
 export default {
