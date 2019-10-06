@@ -3,7 +3,8 @@ import { MARKET } from '@config'
 import i18n from '@/i18n'
 import alertEvents from '@/plugins/alert-events'
 import dayjs from 'dayjs'
-import { capitalize, keys, min, max } from 'lodash'
+import { capitalize, keys, min } from 'lodash'
+import { max } from '@arkecosystem/utils'
 import logger from 'electron-log'
 
 class CryptoCompare {
