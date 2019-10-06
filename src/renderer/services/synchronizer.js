@@ -1,5 +1,5 @@
-import { flatten, isFunction } from '@arkecosystem/utils'
-import { includes, pullAll } from 'lodash'
+import { flatten, isFunction, pullAll } from '@arkecosystem/utils'
+import { includes } from 'lodash'
 import { announcements, fees, ledger, market, peer, wallets } from './synchronizer/'
 /**
  * This class adds the possibility to define actions (not to confuse with Vuex actions)
