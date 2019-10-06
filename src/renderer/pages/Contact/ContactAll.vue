@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import some from 'lodash/some'
+import { some } from '@arkecosystem/utils'
 import { ButtonLayout } from '@/components/Button'
 import { ContactRemovalConfirmation, ContactRenameModal } from '@/components/Contact'
 import { WalletGrid, WalletIdenticonPlaceholder } from '@/components/Wallet'
