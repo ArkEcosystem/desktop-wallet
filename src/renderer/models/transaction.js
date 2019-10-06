@@ -1,5 +1,5 @@
 import BaseModel from './base'
-import { toString } from 'lodash'
+import { toString } from '@arkecosystem/utils'
 
 export default new BaseModel({
   type: 'object',
