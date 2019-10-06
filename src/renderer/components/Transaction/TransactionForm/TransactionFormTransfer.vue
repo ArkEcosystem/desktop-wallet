@@ -348,7 +348,7 @@ export default {
     setSendAll (isActive, setPreviousAmount = true) {
       if (isActive) {
         this.confirmSendAll()
-        this.previousAmount = this.form['amount']
+        this.previousAmount = this.form.amount
       }
       if (!isActive) {
         if (setPreviousAmount && !this.previousAmount && this.previousAmount.length) {

@@ -24,8 +24,8 @@ export default {
       const filterPlugins = rootGetters['session/filterBlacklistedPlugins']
 
       let plugins = uniqBy([
-        ...(Object.values(getters['installed']).map(plugin => plugin.config)),
-        ...Object.values(getters['available'])
+        ...(Object.values(getters.installed).map(plugin => plugin.config)),
+        ...Object.values(getters.available)
       ], 'id')
 
       // TODO global blacklist
@@ -71,7 +71,7 @@ export default {
     },
 
     byName: (state, getters) => name => {
-      return getters['available'].find(plugin => {
+      return getters.available.find(plugin => {
         return plugin.name === name
       })
     },
@@ -112,7 +112,7 @@ export default {
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters['enabled'][pluginId]
+        return getters.enabled[pluginId]
       }
 
       return state.enabled[profileId] ? state.enabled[profileId][pluginId] : null
@@ -120,7 +120,7 @@ export default {
 
     isLoaded: (state, getters) => (pluginId, profileId) => {
       if (!profileId) {
-        return getters['loaded'][pluginId]
+        return getters.loaded[pluginId]
       }
 
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
@@ -157,7 +157,7 @@ export default {
     avatars: (state, getters) => profileId => {
       let loadedPlugins
       if (!profileId) {
-        loadedPlugins = getters['loaded']
+        loadedPlugins = getters.loaded
       } else {
         loadedPlugins = state.loaded[profileId]
       }
@@ -181,7 +181,7 @@ export default {
     },
 
     menuItems: (_, getters) => {
-      const loadedPlugins = getters['loaded']
+      const loadedPlugins = getters.loaded
       const menuItems = []
 
       for (const plugin of Object.values(loadedPlugins)) {
@@ -333,11 +333,11 @@ export default {
       }
 
       for (const pluginId of Object.keys(state.enabled[profile.id])) {
-        if (!getters['isInstalled'](pluginId)) {
+        if (!getters.isInstalled(pluginId)) {
           continue
         }
 
-        if (getters['isLoaded'](pluginId, profile.id)) {
+        if (getters.isLoaded(pluginId, profile.id)) {
           continue
         }
 
