@@ -30,15 +30,7 @@
           v-else-if="data.column.field === 'author'"
           class="flex items-center"
         >
-          <div
-            v-if="data.row.isOfficial"
-            class="PluginManager__checkmark"
-          >
-            <SvgIcon
-              name="checkmark"
-              view-box="0 0 6 7"
-            />
-          </div>
+          <PluginManagerCheckmark v-if="data.row.isOfficial" />
 
           <span class="flex items-center whitespace-no-wrap">
             {{ data.row.author | truncate(30) }}
@@ -92,8 +84,8 @@
 
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
+import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
-import SvgIcon from '@/components/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
 
 export default {
@@ -102,8 +94,8 @@ export default {
   components: {
     ButtonGeneric,
     ButtonIconGeneric,
+    PluginManagerCheckmark,
     PluginLogo,
-    SvgIcon,
     TableWrapper
   },
 

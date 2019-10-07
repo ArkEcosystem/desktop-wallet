@@ -555,6 +555,7 @@ export default {
       DISABLED: 'Disabled',
       INSTALL_URL: 'Install from URL',
       INSTALL_FILE: 'Install from file',
+      OFFICIAL: 'Official {author} plugin',
       MENU: 'Menu',
       BANNER: {
         TITLE: 'Welcome to the Plugin Manager',

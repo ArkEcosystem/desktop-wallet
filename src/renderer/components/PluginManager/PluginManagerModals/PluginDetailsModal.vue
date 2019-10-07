@@ -20,15 +20,7 @@
           <span
             class="PluginDetailsModal__header__details"
           >
-            <div
-              v-if="plugin.isOfficial"
-              class="PluginManager__checkmark"
-            >
-              <SvgIcon
-                name="checkmark"
-                view-box="0 0 6 6"
-              />
-            </div>
+            <PluginManagerCheckmark v-if="plugin.isOfficial" />
 
             <span>
               {{ plugin.author }}
@@ -130,7 +122,7 @@
 <script>
 import domain from 'getdomain'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import { PluginLogo } from '@/components/PluginManager'
+import { PluginLogo, PluginManagerCheckmark } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
@@ -141,6 +133,7 @@ export default {
   components: {
     ButtonGeneric,
     ButtonIconGeneric,
+    PluginManagerCheckmark,
     PluginManagerButtonSwitch,
     ModalWindow,
     PluginLogo,

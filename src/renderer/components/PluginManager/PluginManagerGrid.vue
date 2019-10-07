@@ -34,15 +34,7 @@
             </span>
 
             <div class="PluginManagerGrid__plugin__details">
-              <div
-                v-if="plugin.isOfficial"
-                class="PluginManager__checkmark"
-              >
-                <SvgIcon
-                  name="checkmark"
-                  view-box="0 0 6 6"
-                />
-              </div>
+              <PluginManagerCheckmark v-if="plugin.isOfficial" />
 
               <span>{{ plugin.author }}</span>
               <span class="ml-2">v{{ plugin.version }}</span>
@@ -61,7 +53,7 @@
 
 <script>
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
-import SvgIcon from '@/components/SvgIcon'
+import PluginManagerCheckmark from '@/components/PluginManager/PluginManagerCheckmark'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 
 export default {
@@ -70,8 +62,8 @@ export default {
   components: {
     ButtonGeneric,
     ButtonIconGeneric,
-    PluginLogo,
-    SvgIcon
+    PluginManagerCheckmark,
+    PluginLogo
   },
 
   props: {

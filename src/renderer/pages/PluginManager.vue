@@ -382,9 +382,3 @@ export default {
   opacity: 0;
 }
 </style>
-
-<style lang="postcss">
-.PluginManager__checkmark {
-  @apply flex items-center justify-center text-white mr-1 rounded-full w-3 h-3 bg-blue
-}
-</style>
