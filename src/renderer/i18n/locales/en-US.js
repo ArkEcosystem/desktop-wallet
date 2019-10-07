@@ -568,6 +568,7 @@ export default {
         THEME: 'Theme',
         OTHER: 'Other'
       },
+      NO_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
       EMPTY_CATEGORY: 'There are no plugins under the category {category} yet',
       SEARCH: 'Search',
       SHOW_PERMISSIONS: 'Show permissions',

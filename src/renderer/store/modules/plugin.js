@@ -70,6 +70,12 @@ export default {
       })
     },
 
+    byQuery: (state, getters) => query => {
+      return getters.all.filter(plugin => {
+        return plugin.id.includes(query) || plugin.title.includes(query) || plugin.description.includes(query)
+      })
+    },
+
     byName: (state, getters) => name => {
       return getters.available.find(plugin => {
         return plugin.name === name

@@ -101,13 +101,31 @@
           >
 
           <i18n
+            v-if="query"
+            tag="span"
+            class="text-center mt-4"
+            path="PAGES.PLUGIN_MANAGER.NO_RESULTS"
+          >
+            <span
+              class="inline-block font-bold"
+              place="query"
+            >
+              {{ query }}
+            </span>
+          </i18n>
+
+          <i18n
+            v-else
             tag="span"
             class="text-center mt-4"
             path="PAGES.PLUGIN_MANAGER.EMPTY_CATEGORY"
           >
-            <strong place="category">
+            <span
+              class="inline-block font-bold"
+              place="category"
+            >
               {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${activeCategory.toUpperCase()}`) }}
-            </strong>
+            </span>
           </i18n>
         </div>
       </div>
@@ -179,7 +197,8 @@ export default {
     activeCategory: 'all',
     pluginToInstall: null,
     pluginToShow: null,
-    pluginToRemove: null
+    pluginToRemove: null,
+    query: null
   }),
 
   computed: {
@@ -216,6 +235,10 @@ export default {
     },
 
     plugins () {
+      if (this.query) {
+        return this.$store.getters['plugin/byQuery'](this.query)
+      }
+
       return this.$store.getters['plugin/byCategory'](this.activeCategory)
     },
 
@@ -293,6 +316,10 @@ export default {
     },
 
     onCategoryChange (category) {
+      if (this.query) {
+        this.resetQuery()
+      }
+
       this.activeCategory = category
     },
 
@@ -311,7 +338,11 @@ export default {
     },
 
     onSearch (query) {
-      // TODO: filter plugins, i.e. match query against name, author and description
+      if (this.activeCategory !== 'all') {
+        this.resetCategory()
+      }
+
+      this.query = query
     },
 
     onSortChange (sortParams) {
@@ -334,6 +365,14 @@ export default {
         enabled,
         pluginId
       })
+    },
+
+    resetQuery () {
+      this.query = null
+    },
+
+    resetCategory () {
+      this.activeCategory = 'all'
     },
 
     // TODO
