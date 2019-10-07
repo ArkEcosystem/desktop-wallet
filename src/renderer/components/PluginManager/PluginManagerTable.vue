@@ -63,7 +63,17 @@
           v-else-if="data.column.field === 'actions'"
           class="flex items-center justify-center"
         >
+          <ButtonIconGeneric
+            v-if="isUpdateAvailable(data.row.id)"
+            icon="update-available"
+            view-box="0 0 32 17"
+            :is-small="true"
+            class="w-full mt-2"
+            @click="emitShowDetails(data.row)"
+          />
+
           <ButtonGeneric
+            v-else
             :label="$t('PAGES.PLUGIN_MANAGER.DETAILS')"
             :is-small="true"
             @click="emitShowDetails(data.row)"
@@ -81,7 +91,7 @@
 </template>
 
 <script>
-import { ButtonGeneric } from '@/components/Button'
+import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 import SvgIcon from '@/components/SvgIcon'
 import TableWrapper from '@/components/utils/TableWrapper'
@@ -91,6 +101,7 @@ export default {
 
   components: {
     ButtonGeneric,
+    ButtonIconGeneric,
     PluginLogo,
     SvgIcon,
     TableWrapper
@@ -177,6 +188,10 @@ export default {
       const b = this.getCategory(rowY)
 
       return a.localeCompare(b)
+    },
+
+    isUpdateAvailable (pluginId) {
+      return this.$store.getters['plugin/isUpdateAvailable'](pluginId)
     }
   }
 }

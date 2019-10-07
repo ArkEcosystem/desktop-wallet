@@ -58,7 +58,7 @@
             >
               <ButtonIconGeneric
                 icon="update"
-                view-box="0 0 14 15"
+                view-box="0 0 14 20"
                 class="m-0"
                 :disabled="!isUpdateAvailable"
                 @click="emitUpdate"
@@ -66,7 +66,7 @@
             </span>
             <ButtonIconGeneric
               icon="trash"
-              view-box="0 0 14 15"
+              view-box="0 0 14 20"
               class="ml-2 mr-0"
               @click="emitRemove"
             />

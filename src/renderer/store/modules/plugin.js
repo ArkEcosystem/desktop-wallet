@@ -102,7 +102,7 @@ export default {
       const available = getters.availableById(pluginId)
       const installed = getters.installedById(pluginId)
 
-      return available ? semver.lt(installed.config.version, available.version) : false
+      return available && installed ? semver.lt(installed.config.version, available.version) : false
     },
 
     latestVersion: (state, getters) => pluginId => {

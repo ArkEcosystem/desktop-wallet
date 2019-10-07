@@ -9,7 +9,17 @@
         <div class="flex flex-col">
           <PluginLogo :plugin="plugin" />
 
+          <ButtonIconGeneric
+            v-if="isUpdateAvailable(plugin.id)"
+            icon="update-available"
+            view-box="0 0 32 17"
+            :is-small="true"
+            class="w-full mt-2"
+            @click="emitShowDetails(plugin)"
+          />
+
           <ButtonGeneric
+            v-else
             :label="$t('PAGES.PLUGIN_MANAGER.DETAILS')"
             :is-small="true"
             class="w-full mt-2"
@@ -50,7 +60,7 @@
 </template>
 
 <script>
-import { ButtonGeneric } from '@/components/Button'
+import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 import PluginLogo from '@/components/PluginManager/PluginLogo'
 
@@ -59,6 +69,7 @@ export default {
 
   components: {
     ButtonGeneric,
+    ButtonIconGeneric,
     PluginLogo,
     SvgIcon
   },
@@ -73,6 +84,10 @@ export default {
   methods: {
     emitShowDetails (plugin) {
       this.$emit('show-details', plugin)
+    },
+
+    isUpdateAvailable (pluginId) {
+      return this.$store.getters['plugin/isUpdateAvailable'](pluginId)
     }
   }
 }

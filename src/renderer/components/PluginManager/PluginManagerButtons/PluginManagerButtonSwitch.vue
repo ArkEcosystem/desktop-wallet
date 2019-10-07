@@ -89,7 +89,8 @@ export default {
 
 <style scoped>
 .PluginManagerButtonSwitch {
-  @apply flex items-center px-6 py-4 rounded appearance-none border border-theme-button cursor-pointer bg-transparent
+  min-width: 10rem;
+  @apply flex items-center justify-between px-6 py-4 rounded appearance-none border border-theme-button cursor-pointer bg-transparent
 }
 .PluginManagerButtonSwitch .PluginManagerButtonSwitch__line {
   @apply relative w-8 h-1 rounded-full relative bg-theme-switch-button

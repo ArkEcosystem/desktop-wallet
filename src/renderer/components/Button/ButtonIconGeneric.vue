@@ -53,6 +53,6 @@ export default {
 
 <style lang="postcss" scoped>
 .ButtonIconGeneric {
-  @apply px-6
+  @apply flex items-center px-6
 }
 </style>
