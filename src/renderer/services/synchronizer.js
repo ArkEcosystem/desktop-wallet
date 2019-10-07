@@ -55,10 +55,6 @@ export default class Synchronizer {
         default: { interval: medium },
         focus: { interval: shorter }
       },
-      network: {
-        default: { interval: shorter },
-        focus: { interval: shorter }
-      },
       peer: {
         default: { interval: longer },
         focus: { interval: shorter }
