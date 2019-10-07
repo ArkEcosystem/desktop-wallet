@@ -24,7 +24,7 @@ export default {
     SAVE_ANNOUNCEMENTS (state, items) {
       const announcementsFromFeedItems = items.map(item => Announcement.deserialize(item))
 
-      state.announcements = unionBy(state.announcements, announcementsFromFeedItems, 'guid')
+      state.announcements = unionBy(state.announcements, announcementsFromFeedItems, (announcement) => announcement.guid)
     },
 
     MARK_ANNOUNCEMENT_AS_READ (state, readAnnouncement) {

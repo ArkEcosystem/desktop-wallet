@@ -14,7 +14,7 @@ export default (a, b, number) => {
   const transactions = uniqBy([
     ...a,
     ...b
-  ], 'id')
+  ], (transaction) => transaction.id)
 
   return orderBy(transactions, 'timestamp', 'desc').slice(0, number)
 }

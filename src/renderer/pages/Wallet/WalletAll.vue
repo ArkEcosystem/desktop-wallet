@@ -313,7 +313,7 @@ export default {
       this.selectableWallets = this.wallet_sortByName(uniqBy([
         ...ledgerWallets,
         ...this.wallets
-      ], 'address'))
+      ], (wallet) => wallet.address))
     },
 
     ledgerDisconnected () {

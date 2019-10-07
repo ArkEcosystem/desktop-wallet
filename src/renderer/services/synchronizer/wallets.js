@@ -107,7 +107,7 @@ class Action {
    * on the `wallet` store and 1 wallet on the `ledger` store
    */
   get allWalletsByAddress () {
-    return groupBy(this.allWallets, 'address') || []
+    return groupBy(this.allWallets, (wallet) => wallet.address) || []
   }
 
   /**
@@ -152,8 +152,8 @@ class Action {
    * @return {Object}
    */
   async fetch () {
-    const allAddresses = map(uniqBy(this.allWallets, 'address'), 'address')
-    const walletAddresses = map(uniqBy(this.wallets, 'address'), 'address')
+    const allAddresses = map(uniqBy(this.allWallets, (wallet) => wallet.address), 'address')
+    const walletAddresses = map(uniqBy(this.wallets, (wallet) => wallet.address), 'address')
 
     // Fetch in parallel TODO if 1 success and the other fails
     const [walletsData, transactionsByAddress] = await Promise.all([
@@ -309,7 +309,7 @@ class Action {
    */
   async processUnconfirmedVotes () {
     const unconfirmedVotes = this.$getters['session/unconfirmedVotes']
-    const addresses = map(uniqBy(unconfirmedVotes, 'address'), 'address')
+    const addresses = map(uniqBy(unconfirmedVotes, (vote) => vote.address), 'address')
 
     for (const address of addresses) {
       const votes = await this.$client.fetchWalletVotes(address)
@@ -376,7 +376,7 @@ class Action {
    * @param {Array} walletsToUpdate - regular or Ledger wallets that should be updated
    */
   async update (walletsToUpdate) {
-    const [ledgerWallets, wallets] = partition(walletsToUpdate, 'isLedger')
+    const [ledgerWallets, wallets] = partition(walletsToUpdate, (wallet) => wallet.isLedger)
 
     try {
       if (wallets.length) {

@@ -45,7 +45,7 @@ export default new BaseModule(ProfileModel, {
         ]
       }
 
-      return uniqBy(wallets, 'address').reduce((total, wallet) => {
+      return uniqBy(wallets, (wallet) => wallet.address).reduce((total, wallet) => {
         return new BigNumber(wallet.balance).plus(total)
       }, 0)
     },

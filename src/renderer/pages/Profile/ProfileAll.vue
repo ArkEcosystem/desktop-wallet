@@ -126,7 +126,7 @@ export default {
       ]
 
       return mapValues(walletsByNetwork, wallets => {
-        return uniqBy(wallets, 'address').reduce((total, wallet) => {
+        return uniqBy(wallets, (wallet) => wallet.address).reduce((total, wallet) => {
           return this.currency_toBuilder(wallet.balance).add(total).value
         }, 0)
       })

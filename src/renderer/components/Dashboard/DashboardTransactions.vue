@@ -63,7 +63,7 @@ export default {
 
   methods: {
     processTransactions (transactions) {
-      const ordered = orderBy(uniqBy(transactions, 'id'), 'timestamp', 'desc')
+      const ordered = orderBy(uniqBy(transactions, (transaction) => transaction.id), 'timestamp', 'desc')
       return ordered.slice(0, this.numberOfTransactions)
     }
   }

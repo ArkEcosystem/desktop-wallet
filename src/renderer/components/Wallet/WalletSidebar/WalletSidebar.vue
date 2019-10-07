@@ -295,7 +295,7 @@ export default {
         wallets = uniqBy([
           ...this.ledgerWallets,
           ...wallets
-        ], 'address')
+        ], (wallet) => wallet.address)
       }
 
       return wallets

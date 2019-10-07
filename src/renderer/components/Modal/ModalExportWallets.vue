@@ -120,7 +120,7 @@ export default {
       let wallets = uniqBy([
         ...this.$store.getters['wallet/byProfileId'](this.session_profile.id),
         ...this.ledgerWallets
-      ], 'address')
+      ], (wallet) => wallet.address)
 
       if (this.activeOptions.length) {
         for (const option of this.activeOptions) {

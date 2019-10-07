@@ -53,7 +53,7 @@ export default {
       const wallets = uniqBy([
         ...ledgerWallets,
         ...profileWallets
-      ], 'address')
+      ], (wallet) => wallet.address)
 
       if (!wallets.length) {
         return []
