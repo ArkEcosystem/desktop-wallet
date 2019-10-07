@@ -12,10 +12,8 @@
         />
 
         <PluginManagerButtonInstallSource
-          v-for="type of ['url', 'file']"
-          :key="type"
-          :source="type"
-          @install-from="onInstallFrom"
+          source="url"
+          @click="onInstallFrom"
         />
       </div>
     </div>

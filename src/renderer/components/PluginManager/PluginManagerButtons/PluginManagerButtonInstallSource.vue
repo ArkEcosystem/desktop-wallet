@@ -1,7 +1,7 @@
 <template>
   <button
     class="PluginManagerButtonInstallSource justify-end"
-    @click="emitInstallSource"
+    @click="emitClick"
   >
     <span class="PluginManagerButtonInstallSource__icon">
       <SvgIcon
@@ -30,13 +30,14 @@ export default {
   props: {
     source: {
       type: String,
-      required: true
+      required: false,
+      default: 'url'
     }
   },
 
   methods: {
-    emitInstallSource () {
-      this.$emit('install-source', this.source)
+    emitClick () {
+      this.$emit('click', this.source)
     }
   }
 }
