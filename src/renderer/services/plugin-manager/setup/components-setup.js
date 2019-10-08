@@ -36,7 +36,7 @@ export function createComponentsSetup (plugin, pluginObject, sandbox, vue) {
       const vmComponent = component.render()
 
       if (vmComponent) {
-        components[componentName] = component.render()
+        components[componentName] = vmComponent
       }
     }
 

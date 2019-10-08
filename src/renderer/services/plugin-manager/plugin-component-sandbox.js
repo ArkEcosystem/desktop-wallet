@@ -71,10 +71,14 @@ export class PluginComponentSandbox {
     const renderedComponent = Object.assign(renderedTemplate, this.compiled)
     delete renderedComponent.template
 
+    const components = {}
+
     for (const childName of Object.keys(renderedComponent.components || {})) {
       const childSandbox = this.copyWith({ name: childName, source: renderedComponent.components[childName] })
-      renderedComponent.components[childName] = childSandbox.render()
+      components[childName] = childSandbox.render()
     }
+
+    renderedComponent.components = components
 
     return defineContext(this.name, renderedComponent, this.vue)
   }
@@ -83,7 +87,7 @@ export class PluginComponentSandbox {
     if (this.isFromFilesystem) {
       this.compiled = this.vm.run(
         this.source,
-        this.path
+        this.fullPath
       )
     } else {
       this.compiled = this.source

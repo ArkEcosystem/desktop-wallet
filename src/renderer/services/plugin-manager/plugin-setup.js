@@ -22,7 +22,7 @@ export class PluginSetup {
     this.vue = vue
     this.profileId = profileId
 
-    this.pluginObject = this.sandbox.getVM().run(
+    this.pluginObject = this.sandbox.getVM(false).run(
       fs.readFileSync(path.join(plugin.fullPath, 'src/index.js')),
       path.join(plugin.fullPath, 'src/index.js')
     )

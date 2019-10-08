@@ -41,11 +41,11 @@ export class PluginSandbox {
     }
   }
 
-  getVM () {
+  getVM (loadSandbox = true) {
     const fullPath = this.plugin.fullPath
 
     return new NodeVM({
-      sandbox: this.getSandbox(),
+      sandbox: loadSandbox ? this.getSandbox() : {},
       require: {
         builtin: [],
         context: 'sandbox',
