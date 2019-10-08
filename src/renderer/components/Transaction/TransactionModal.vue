@@ -39,8 +39,7 @@
 </template>
 
 <script>
-import { camelCase, findKey, upperFirst } from '@arkecosystem/utils'
-import { includes } from 'lodash'
+import { camelCase, findKey, includes, upperFirst } from '@arkecosystem/utils'
 import { TRANSACTION_TYPES } from '@config'
 import WalletService from '@/services/wallet'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
