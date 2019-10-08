@@ -44,7 +44,7 @@ export default class BaseModule {
         },
 
         DELETE (state, id) {
-          const index = findIndex(state.all, element => element.id)
+          const index = findIndex(state.all, element => element.id === id)
           if (index === -1) {
             throw new Error(`Cannot delete \`${id}\`. It does not exist on the state`)
           }
