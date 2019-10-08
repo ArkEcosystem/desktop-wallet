@@ -1,15 +1,32 @@
+import { getSafeContext } from './get-context'
+import { compileTemplate } from './compile-template'
 import { hooks } from './hooks'
-import { prepareContext } from './prepare-context'
 
-export function defineContext (componentName, baseComponent, vue) {
+export function createSafeComponent (componentName, baseComponent, vue) {
+  // Fix context of "render" method
+  const lazyComponent = Object.assign({}, baseComponent)
+  const compiled = compileTemplate(baseComponent.template)
+
+  if (compiled.staticRenderFns.length) {
+    lazyComponent.render = compiled.render
+    lazyComponent.staticRenderFns = compiled.staticRenderFns
+  } else {
+    lazyComponent.render = function safeRender () {
+      return compiled.render.apply(getSafeContext(this, baseComponent), [...arguments])
+    }
+  }
+
   // Build Vue component
   const vmComponent = vue.extend({
-    ...baseComponent,
+    ...lazyComponent,
     name: componentName
   })
+
   // Fix context of "data" method
   if (baseComponent.data) {
-    vmComponent.options.data = function () { return baseComponent.data.apply(prepareContext(this, baseComponent)) }
+    vmComponent.options.data = function safeData () {
+      return baseComponent.data.apply(getSafeContext(this, baseComponent))
+    }
   }
 
   // Fix context of "computed" methods - also removes global computed methods
@@ -19,15 +36,15 @@ export function defineContext (componentName, baseComponent, vue) {
     }
   }
 
-  vmComponent.options.created = [function () {
+  vmComponent.options.created = [function safeCreated () {
     if (this.$options.computed) {
       for (const computedName of Object.keys(this.$options.computed)) {
         if (baseComponent.computed && baseComponent.computed[computedName]) {
           this.$options.computed[computedName] = baseComponent.computed[computedName].bind(
-            prepareContext(this)
+            getSafeContext(this, baseComponent)
           )
           this._computedWatchers[computedName].getter = baseComponent.computed[computedName].bind(
-            prepareContext(this)
+            getSafeContext(this, baseComponent)
           )
 
           try {
@@ -64,7 +81,7 @@ export function defineContext (componentName, baseComponent, vue) {
     }
 
     if (baseComponent.created) {
-      return baseComponent.created.apply(prepareContext(this, baseComponent))
+      return baseComponent.created.apply(getSafeContext(this, baseComponent))
     }
   }]
 
@@ -74,7 +91,10 @@ export function defineContext (componentName, baseComponent, vue) {
     .filter(hook => hook !== 'created')
     .forEach(prop => {
       const componentMethod = baseComponent[prop]
-      const hookMethod = function () { return componentMethod.apply(prepareContext(this, baseComponent)) }
+      const hookMethod = function safeHook () {
+        return componentMethod.apply(getSafeContext(this, baseComponent))
+      }
+
       if (Array.isArray(vmComponent.options[prop])) {
         vmComponent.options[prop] = [hookMethod]
       } else {

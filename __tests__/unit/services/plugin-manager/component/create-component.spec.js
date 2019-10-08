@@ -1,36 +1,17 @@
 import { createLocalVue, mount } from '@vue/test-utils'
-import { defineContext } from '@/services/plugin-manager/component/define-context'
+import { createSafeComponent } from '@/services/plugin-manager/component/create-component'
 
 const localVue = createLocalVue()
 
-describe('Define Context', () => {
+describe('Create Component', () => {
   it('should return a valid component', () => {
     const plugin = {
       template: '<div>Test</div>'
     }
 
-    const component = createSafeComponent(plugin)
+    const component = wrapperPlugin(plugin)
     const wrapper = mount(component)
     expect(wrapper.isVueInstance()).toBe(true)
-  })
-
-  it('should work with props', () => {
-    const plugin = {
-      template: '<div>{{ name }}</div>',
-      props: {
-        name: {
-          type: String
-        }
-      }
-    }
-    const component = createSafeComponent(plugin)
-    const wrapper = mount(component, {
-      propsData: {
-        name: 'Test'
-      }
-    })
-    expect(wrapper.isVueInstance()).toBe(true)
-    expect(wrapper.html()).toBe('<div>Test</div>')
   })
 
   describe('Data', () => {
@@ -41,7 +22,7 @@ describe('Define Context', () => {
           name: 'Test'
         })
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       expect(wrapper.html()).toBe('<div>Test</div>')
     })
@@ -53,7 +34,7 @@ describe('Define Context', () => {
           name: this && this.$parent && this.$parent._uid
         })
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       expect(wrapper.vm.name).toBeUndefined()
     })
@@ -70,7 +51,7 @@ describe('Define Context', () => {
           this.name = 'Jest'
         }
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       expect(wrapper.vm.name).toBe('Jest')
     })
@@ -86,7 +67,7 @@ describe('Define Context', () => {
           this.uid = this.$parent && this.$parent._uid
         }
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       expect(wrapper.vm.uid).toBeUndefined()
     })
@@ -103,7 +84,7 @@ describe('Define Context', () => {
           this.name = 'Jest'
         }
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       expect(wrapper.vm.name).toBe('Jest')
     })
@@ -121,7 +102,7 @@ describe('Define Context', () => {
           })
         }
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       localVue.nextTick(() => {
         expect(wrapper.vm.id).toBe('t1')
@@ -144,7 +125,7 @@ describe('Define Context', () => {
           })
         }
       }
-      const component = createSafeComponent(plugin)
+      const component = wrapperPlugin(plugin)
       const wrapper = mount(component)
       expect(wrapper.html()).toBe('<div>Test</div>')
 
@@ -157,6 +138,6 @@ describe('Define Context', () => {
   })
 })
 
-const createSafeComponent = (plugin) => {
-  return defineContext('test', plugin, localVue)
+const wrapperPlugin = (plugin) => {
+  return createSafeComponent('test', plugin, localVue)
 }

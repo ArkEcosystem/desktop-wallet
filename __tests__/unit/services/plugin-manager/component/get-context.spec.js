@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from '@vue/test-utils'
-import { prepareContext } from '@/services/plugin-manager/component/prepare-context'
+import { getSafeContext } from '@/services/plugin-manager/component/get-context'
 
 let localVue
 
@@ -65,7 +65,7 @@ const createSafeRender = (plugin) => {
   return localVue.extend({
     ...plugin,
     render: function () {
-      return plugin.render.apply(prepareContext(this, plugin), [...arguments])
+      return plugin.render.apply(getSafeContext(this, plugin), [...arguments])
     }
   })
 }

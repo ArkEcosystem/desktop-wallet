@@ -1,13 +1,10 @@
-import path from 'path'
-import { prepareContext } from './component/prepare-context'
-import { defineContext } from './component/define-context'
+import { createSafeComponent } from './component/create-component'
 import { validateComponent } from './component/validate'
 
 export class PluginComponentSandbox {
   constructor ({
     fullPath,
     name,
-    path,
     plugin,
     source,
     vm,
@@ -16,7 +13,6 @@ export class PluginComponentSandbox {
   }) {
     this.fullPath = fullPath
     this.name = name
-    this.path = path
     this.plugin = plugin
     this.source = source
     this.vm = vm
@@ -32,14 +28,12 @@ export class PluginComponentSandbox {
     return Buffer.isBuffer(this.source)
   }
 
-  copyWith ({ name, source }) {
+  cloneSandbox ({ name, source }) {
     return new PluginComponentSandbox({
       source: source,
       name: name,
       fullPath: this.fullPath,
-      path: this.path,
       plugin: this.plugin,
-      rootPath: this.path,
       vm: this.vm,
       vue: this.vue,
       logger: this.logger
@@ -51,36 +45,17 @@ export class PluginComponentSandbox {
       return
     }
 
-    const renderedTemplate = this.vm.run(
-      `const Vue = require('vue/dist/vue.common.js')
-      const compiled = Vue.compile(${JSON.stringify(this.compiled.template)})
-      const prepareContext = ${prepareContext.toString()}
-      const component = {}
-      if (compiled.staticRenderFns.length) {
-        component.render = compiled.render
-        component.staticRenderFns = compiled.staticRenderFns
-      } else {
-        component.render = function () {
-          return compiled.render.apply(prepareContext(this, component), [ ...arguments ])
-        }
-      }
-      module.exports = component`,
-      path.join(this.plugin.rootPath, 'src/vm-component.js')
-    )
-
-    const renderedComponent = Object.assign(renderedTemplate, this.compiled)
-    delete renderedComponent.template
-
+    const lazyComponent = Object.assign({}, this.compiled)
     const components = {}
 
-    for (const childName of Object.keys(renderedComponent.components || {})) {
-      const childSandbox = this.copyWith({ name: childName, source: renderedComponent.components[childName] })
+    for (const childName of Object.keys(this.compiled.components || {})) {
+      const childSandbox = this.cloneSandbox({ name: childName, source: this.compiled.components[childName] })
       components[childName] = childSandbox.render()
     }
 
-    renderedComponent.components = components
+    lazyComponent.components = components
 
-    return defineContext(this.name, renderedComponent, this.vue)
+    return createSafeComponent(this.name, lazyComponent, this.vue)
   }
 
   __compileSource () {

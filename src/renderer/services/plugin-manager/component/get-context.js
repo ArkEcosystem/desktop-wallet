@@ -1,6 +1,6 @@
 import isElement from 'lodash/isElement'
 
-export function prepareContext (vueContext, component) {
+export function getSafeContext (vueContext, component) {
   const context = vueContext._data || {}
 
   const keys = ['$nextTick', '_c', '_v', '_s', '_e', '_m', '_l', '_u']
@@ -64,9 +64,8 @@ export function prepareContext (vueContext, component) {
 
     context['refs'] = new Proxy(vueContext.$refs, {
       get (target, prop) {
-        const element = target[prop]
-        if (element) {
-          return blockElementProperties(element)
+        if (prop in target) {
+          return blockElementProperties(target[prop])
         }
       }
     })
@@ -81,7 +80,7 @@ export function prepareContext (vueContext, component) {
   if (component.methods) {
     for (const methodName of Object.keys(component.methods || {})) {
       context[methodName] = function () {
-        return component.methods[methodName].apply(prepareContext(vueContext, component))
+        return component.methods[methodName].apply(getSafeContext(vueContext, component))
       }
     }
   }
