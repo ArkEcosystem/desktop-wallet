@@ -52,7 +52,7 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import { find } from 'lodash'
+import { find } from '@arkecosystem/utils'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'

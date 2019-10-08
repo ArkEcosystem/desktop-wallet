@@ -1,5 +1,5 @@
-import { groupBy, keyBy, maxBy, partition, uniqBy } from '@arkecosystem/utils'
-import { find, map } from 'lodash'
+import { find, groupBy, keyBy, maxBy, partition, uniqBy } from '@arkecosystem/utils'
+import { map } from 'lodash'
 import config from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
@@ -254,7 +254,7 @@ class Action {
       const transactions = transactionsByAddress[address]
 
       if (transactions && transactions.length) {
-        const wallet = find(this.wallets, { address })
+        const wallet = find(this.wallets, wallet => wallet.address === address)
         const latestAt = await this.processWalletTransactions(wallet, transactions)
         if (latestAt) {
           walletsTransactionsAt[address] = latestAt

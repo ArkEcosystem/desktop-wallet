@@ -13,7 +13,7 @@ import TransactionFormDelegateRegistration from './TransactionFormDelegateRegist
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
-import { find } from 'lodash'
+import { find } from '@arkecosystem/utils'
 
 export default {
   name: 'TransactionForm',
