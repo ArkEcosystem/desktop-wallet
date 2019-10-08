@@ -1,5 +1,4 @@
-import { findIndex } from 'lodash'
-import { unionBy, uniqBy } from '@arkecosystem/utils'
+import { unionBy, uniqBy, findIndex } from '@arkecosystem/utils'
 import WalletModel from '@/models/wallet'
 import Vue from 'vue'
 
@@ -114,13 +113,13 @@ export default {
       if (!state.wallets[wallet.profileId]) {
         Vue.set(state.wallets, wallet.profileId, [])
       }
-      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], wallet => wallet.id)
     },
     UPDATE (state, wallet) {
       if (!includes(state.wallets[wallet.profileId], wallet)) {
         throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
       }
-      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], 'id')
+      state.wallets[wallet.profileId] = unionBy([wallet, ...state.wallets[wallet.profileId]], wallet => wallet.id)
     },
     UPDATE_BULK (state, wallets) {
       const profileId = wallets[0].profileId
@@ -132,10 +131,10 @@ export default {
           throw new Error(`Cannot update wallet '${wallet.id}' - it does not exist on the state`)
         }
       })
-      state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], 'id')
+      state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], wallet => wallet.id)
     },
     DELETE (state, wallet) {
-      const index = findIndex(state.wallets[wallet.profileId], { id: wallet.id })
+      const index = findIndex(state.wallets[wallet.profileId], wallet => wallet.id)
       if (index === -1) {
         throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
       }
@@ -160,7 +159,7 @@ export default {
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      const index = findIndex(state.signedMessages[message.address], { timestamp: message.timestamp })
+      const index = findIndex(state.signedMessages[message.address], message => message.timestamp)
       if (index !== -1) {
         state.signedMessages[message.address].splice(index, 1)
       }

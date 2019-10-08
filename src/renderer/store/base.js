@@ -1,5 +1,5 @@
-import { merge, findIndex } from 'lodash'
-import { unionBy } from '@arkecosystem/utils'
+import { merge } from 'lodash'
+import { unionBy, findIndex } from '@arkecosystem/utils'
 
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 
@@ -33,18 +33,18 @@ export default class BaseModule {
         },
 
         STORE (state, model) {
-          state.all = unionBy([model, ...state.all], 'id')
+          state.all = unionBy([model, ...state.all], model => model.id)
         },
 
         UPDATE (state, model) {
           if (!includes(state.all, model)) {
             throw new Error(`Cannot update \`${model.id}\`. It does not exist on the state`)
           }
-          state.all = unionBy([model, ...state.all], 'id')
+          state.all = unionBy([model, ...state.all], model => model.id)
         },
 
         DELETE (state, id) {
-          const index = findIndex(state.all, { id })
+          const index = findIndex(state.all, element => element.id)
           if (index === -1) {
             throw new Error(`Cannot delete \`${id}\`. It does not exist on the state`)
           }

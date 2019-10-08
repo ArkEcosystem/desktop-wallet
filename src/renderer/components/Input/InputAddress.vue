@@ -181,7 +181,7 @@ export default {
       ]
       const contacts = this.$store.getters['wallet/contactsByProfileId'](this.currentProfile.id)
 
-      const source = unionBy(wallets, contacts, 'address')
+      const source = unionBy(wallets, contacts, item => item.address)
 
       const addresses = map(source, (wallet) => {
         const address = {
