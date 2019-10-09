@@ -1,29 +1,11 @@
 <template>
   <ModalWindow
-    :title="title"
     :message="$t('PAGES.PLUGIN_MANAGER.DISCLAIMER')"
     container-classes="max-w-md"
     @close="emitClose"
   >
     <template #default>
-      <section v-if="!isDownloadAuthorized">
-        <div class="PluginInstallModal__permission__container">
-          <div
-            v-for="permission of plugin.permissions"
-            :key="permission"
-            class="PluginInstallModal__permission"
-          >
-            <span class="text-theme-page-text-light">
-              {{ $t(`PAGES.PLUGIN_MANAGER.PERMISSIONS.${permission}`) }}
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <section
-        v-else
-        class="PluginInstallModal__authorized"
-      >
+      <section class="PluginInstallModal__authorized">
         <img
           :src="installImage"
           class="PluginInstallModal__authorized__image"
@@ -63,15 +45,7 @@
         </button>
 
         <button
-          v-if="!isDownloadAuthorized"
-          class="blue-button"
-          @click="emitDownload"
-        >
-          {{ $t('MODAL_PLUGIN_INSTALL.DOWNLOAD') }}
-        </button>
-
-        <button
-          v-else-if="isDownloadFinished && !isDownloadFailed"
+          v-if="isDownloadFinished && !isDownloadFailed"
           class="blue-button"
           @click="emitInstall"
         >
@@ -111,7 +85,6 @@ export default {
 
   data: () => ({
     errorMessage: undefined,
-    isDownloadAuthorized: false,
     isDownloadFinished: false,
     isDownloadFailed: false,
     isDownloadCancelled: false,
@@ -124,13 +97,6 @@ export default {
   }),
 
   computed: {
-    title () {
-      if (this.isDownloadAuthorized) {
-        return
-      }
-      return this.$t('MODAL_PLUGIN_INSTALL.TITLE')
-    },
-
     installImage () {
       const image = this.session_hasDarkTheme ? 'dark' : 'light'
       return this.assets_loadImage(`pages/updater/computer-${image}.svg`)
@@ -150,6 +116,8 @@ export default {
       this.isDownloadFailed = true
       this.errorMessage = error instanceof Error ? error.message : undefined
     })
+
+    this.emitDownload()
   },
 
   methods: {
@@ -163,7 +131,6 @@ export default {
     },
 
     emitDownload () {
-      this.isDownloadAuthorized = true
       this.$emit('download', this.plugin.source)
     },
 
@@ -172,12 +139,10 @@ export default {
     },
 
     emitClose () {
-      if (this.isDownloadAuthorized && !this.isDownloadFailed) {
-        if (!this.isDownloadFinished) {
-          this.cancel()
-        } else {
-          this.cleanup()
-        }
+      if (!this.isDownloadFailed && !this.isDownloadFinished) {
+        this.cancel()
+      } else {
+        this.cleanup()
       }
 
       this.$emit('close')
@@ -188,17 +153,6 @@ export default {
 
 <style lang="postcss" scoped>
 .PluginInstallModal {
-}
-
-PluginInstallModal__permission__container {
-  max-height: 400px;
-  @apply overflow-y-scroll
-}
-.PluginInstallModal__permission {
-  @apply flex flex-col py-4
-}
-.PluginInstallModal__permission:not(:last-child) {
-  @apply border-b border-dashed border-theme-line-separator
 }
 
 .PluginInstallModal__authorized {

@@ -31,10 +31,11 @@
         <div class="PluginDetailsModal__header__actions">
           <ButtonGeneric
             v-if="!isInstalled"
-            :label="$t('COMMON.INSTALL')"
+            :label="$t('MODAL_PLUGIN_DETAILS.INSTALL')"
             class="m-0"
-            @click="emitInstall"
+            @click="emitShowPermissions"
           />
+
           <template v-else>
             <PluginManagerButtonSwitch
               :is-active="isEnabled"
@@ -42,6 +43,7 @@
               class="mr-2"
               @change="toggleStatus"
             />
+
             <span
               v-tooltip="{
                 content: updateTooltipContent,
@@ -56,11 +58,22 @@
                 @click="emitUpdate"
               />
             </span>
+
             <ButtonIconGeneric
               icon="trash"
               view-box="0 0 14 20"
               class="ml-2 mr-0"
               @click="emitRemove"
+            />
+            <ButtonIconGeneric
+              v-tooltip="{
+                content: $t('PAGES.PLUGIN_MANAGER.REPORT'),
+                placement: 'bottom'
+              }"
+              icon="exclamation-mark"
+              view-box="0 0 16 20"
+              class="ml-2"
+              @click="reportPlugin"
             />
           </template>
         </div>
@@ -74,9 +87,10 @@
 
       <a
         v-if="plugin.permissions && plugin.permissions.length"
-        href="#"
+        class="cursor-pointer"
+        @click.stop="emitShowPermissions"
       >
-        {{ $t('PAGES.PLUGIN_MANAGER.SHOW_PERMISSIONS') }}
+        {{ $t('MODAL_PLUGIN_DETAILS.SHOW_PERMISSIONS') }}
       </a>
 
       <div class="PluginDetailsModal__stats">
@@ -92,12 +106,13 @@
         <div>
           <span>{{ $t('COMMON.URL') }}</span>
           <button
-            class="flex items-center text-blue"
+            class="flex items-center text-blue hover:underline"
             :disabled="!homepageLink"
-            @click="openExternal(plugin.homepage)"
+            @click.stop="openExternal(plugin.homepage)"
           >
             {{ homepageLink || 'n.a.' }}
             <SvgIcon
+              v-if="homepageLink"
               name="open-external"
               view-box="0 0 12 12"
               class="text-theme-page-text-light ml-1"
@@ -112,7 +127,9 @@
         </div>
         <div>
           <span>{{ $t('COMMON.VERSION') }}</span>
-          {{ plugin.version }}
+          <span class="whitespace-no-wrap">
+            {{ plugin.version }}
+          </span>
         </div>
       </div>
     </template>
@@ -204,16 +221,16 @@ export default {
       this.$emit('close')
     },
 
-    emitInstall () {
-      this.$emit('install', this.plugin)
-    },
-
     emitUpdate () {
       this.$emit('update', this.plugin)
     },
 
     emitRemove () {
       this.$emit('remove', this.plugin)
+    },
+
+    emitShowPermissions () {
+      this.$emit('show-permissions')
     },
 
     openExternal (target) {
@@ -225,6 +242,10 @@ export default {
         enabled,
         pluginId: this.plugin.id
       })
+    },
+
+    reportPlugin () {
+      console.log('report')
     }
   }
 }
@@ -255,5 +276,12 @@ export default {
 }
 .PluginDetailsModal__stats > div span:first-child {
   @apply text-theme-page-text-light mb-1
+}
+
+.PluginDetailsModal__permission {
+  @apply flex flex-col py-4 border-b border-dashed border-theme-line-separator
+}
+.PluginDetailsModal__permission:last-of-type {
+  @apply border-none pb-0
 }
 </style>

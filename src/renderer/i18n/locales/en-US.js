@@ -20,7 +20,6 @@ export default {
     FETCH: 'Fetch',
     FINISH: 'Finish',
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
-    INSTALL: 'Install',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     LANGUAGE: 'Application Language',
     LEDGER: 'Ledger',
@@ -470,13 +469,42 @@ export default {
     }
   },
 
+  MODAL_PLUGIN_DETAILS: {
+    INSTALL: 'Install',
+    SHOW_PERMISSIONS: 'Show permissions'
+  },
+
   MODAL_PLUGIN_INSTALL: {
     CANCEL: 'Cancel',
-    DOWNLOAD: 'Download now',
     DOWNLOADED: 'Download complete',
     DOWNLOADING: 'Downloading {plugin}',
-    INSTALL: 'Install now',
-    TITLE: 'This plugin needs the following permissions'
+    INSTALL: 'Install now'
+  },
+
+  MODAL_PLUGIN_PERMISSIONS: {
+    ALTERNATIVE_TITLE: 'This plugin needs the following permissions',
+    BACK: 'Back',
+    DOWNLOAD: 'Download now',
+    TITLE: 'Permissions',
+    PERMISSIONS: {
+      COMPONENTS: 'Load in custom components',
+      ROUTES: 'Loads additional routes into the Desktop Wallet',
+      MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
+      AVATARS: 'Plugin contains custom components',
+      WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
+      THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
+      UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
+      WEBFRAME: 'Allows showing remote URL pages within a frame',
+      EVENTS: 'Allows access to the Desktop Wallet events',
+      AUDIO: 'Allows access to play audio from within the Desktop Wallet',
+      ALERTS: 'Allows access to the Desktop Wallet alerts',
+      MESSAGING: 'Allows WebFrame to have access to a one-way messaging system',
+      STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
+      HTTP: 'Allows performing external web requests',
+      PEER_CURRENT: 'Allows access to the currently connected peer',
+      PROFILE_CURRENT: 'Allows access to the currently active profile',
+      PROFILE_ALL: 'Allows access to all available profiles'
+    }
   },
 
   PASSPHRASE_INPUT: {
@@ -554,7 +582,6 @@ export default {
       ENABLED: 'Enabled',
       DISABLED: 'Disabled',
       INSTALL_URL: 'Install from URL',
-      INSTALL_FILE: 'Install from file',
       OFFICIAL: 'Official {author} plugin',
       MENU: 'Menu',
       BANNER: {
@@ -571,7 +598,6 @@ export default {
       NO_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
       EMPTY_CATEGORY: 'There are no plugins under the category {category} yet',
       SEARCH: 'Search',
-      SHOW_PERMISSIONS: 'Show permissions',
       RELOADING: 'The repository is being reloaded',
       CLICK_TO_RELOAD: 'Reload the plugin repository',
       ALREADY_INSTALLED: 'You\'ve already installed this plugin',
@@ -580,25 +606,7 @@ export default {
         NOT_AVAILABLE: 'No updates available'
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
-      PERMISSIONS: {
-        COMPONENTS: 'Load in custom components',
-        ROUTES: 'Loads additional routes into the Desktop Wallet',
-        MENU_ITEMS: 'Allows adding custom menu items to the Desktop Wallet sidebar',
-        AVATARS: 'Plugin contains custom components',
-        WALLET_TABS: 'Allows showing an additional tab/page on the Wallet screen',
-        THEMES: 'Allows loading additional custom themes for the Desktop Wallet',
-        UI_COMPONENTS: 'Allows access to the standard Desktop Wallet components used throughout',
-        WEBFRAME: 'Allows showing remote URL pages within a frame',
-        EVENTS: 'Allows access to the Desktop Wallet events',
-        AUDIO: 'Allows access to play audio from within the Desktop Wallet',
-        ALERTS: 'Allows access to the Desktop Wallet alerts',
-        MESSAGING: 'Allows WebFrame to have access to a one-way messaging system',
-        STORAGE: 'Allows storing data within the Desktop Wallet, using key-value pairs',
-        HTTP: 'Allows performing external web requests',
-        PEER_CURRENT: 'Allows access to the currently connected peer',
-        PROFILE_CURRENT: 'Allows access to the currently active profile',
-        PROFILE_ALL: 'Allows access to all available profiles'
-      }
+      REPORT: 'Report this plugin'
     },
 
     PROFILE_ALL: {

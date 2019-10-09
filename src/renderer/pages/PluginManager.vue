@@ -132,11 +132,18 @@
     </div>
 
     <PluginDetailsModal
-      v-if="pluginToShow"
+      v-if="pluginToShow && !showPermissions"
       :plugin="pluginToShow"
       @close="closeDetailsModal"
-      @install="openInstallModal"
       @remove="openRemovalModal"
+      @show-permissions="toggleShowPermissions"
+    />
+
+    <PluginPermissionsModal
+      v-if="(pluginToShow || pluginToInstall) && showPermissions"
+      :plugin="pluginToShow || pluginToInstall"
+      @install="openInstallModal"
+      @close="toggleShowPermissions"
     />
 
     <PluginInstallModal
@@ -168,6 +175,7 @@ import {
   PluginManagerSearchBar,
   PluginManagerSideMenu,
   PluginManagerTable,
+  PluginPermissionsModal,
   PluginRemovalModal
 } from '@/components/PluginManager'
 import { PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
@@ -186,6 +194,7 @@ export default {
     PluginManagerTable,
     PluginManagerButtonInstallSource,
     PluginManagerButtonMenu,
+    PluginPermissionsModal,
     PluginRemovalModal
   },
 
@@ -198,7 +207,8 @@ export default {
     pluginToInstall: null,
     pluginToShow: null,
     pluginToRemove: null,
-    query: null
+    query: null,
+    showPermissions: false
   }),
 
   computed: {
@@ -308,11 +318,16 @@ export default {
         this.pluginToShow = null
       }
 
+      this.showPermissions = false
       this.pluginToInstall = plugin
     },
 
     closeInstallModal () {
       this.pluginToInstall = null
+    },
+
+    toggleShowPermissions () {
+      this.showPermissions = !this.showPermissions
     },
 
     onCategoryChange (category) {
