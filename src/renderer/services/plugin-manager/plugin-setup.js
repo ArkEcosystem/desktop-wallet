@@ -1,7 +1,15 @@
 import path from 'path'
 import fs from 'fs'
 import { castArray, partition } from 'lodash'
-import { COMPONENTS, AVATARS, WALLET_TABS, ROUTES, PUBLIC, MENU_ITEMS, THEMES } from './plugin-permission'
+import {
+  COMPONENTS,
+  AVATARS,
+  WALLET_TABS,
+  ROUTES,
+  PUBLIC,
+  MENU_ITEMS,
+  THEMES
+} from './plugin-permission'
 import { createComponentsSetup } from './setup/components-setup'
 import { createAvatarsSetup } from './setup/avatars-setup'
 import { createRoutesSetup } from './setup/routes-setup'

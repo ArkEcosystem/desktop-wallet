@@ -16,20 +16,22 @@ export function createComponentsSetup (plugin, pluginObject, sandbox, vue) {
       const fullPath = path.join(plugin.fullPath, 'src', pluginComponents[componentName])
       const source = fs.readFileSync(fullPath)
 
-      const component = new PluginComponentSandbox({
-        source,
-        plugin,
-        vue,
-        fullPath,
-        name: componentName,
-        vm: sandbox.getVM(),
-        logger: sandbox.app.$logger
-      })
+      if (source) {
+        const component = new PluginComponentSandbox({
+          source,
+          plugin,
+          vue,
+          fullPath,
+          name: componentName,
+          vm: sandbox.getVM(),
+          logger: sandbox.app.$logger
+        })
 
-      const vmComponent = component.render()
+        const vmComponent = component.render()
 
-      if (vmComponent) {
-        components[componentName] = vmComponent
+        if (vmComponent) {
+          components[componentName] = vmComponent
+        }
       }
     }
 

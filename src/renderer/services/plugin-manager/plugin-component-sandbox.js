@@ -24,6 +24,10 @@ export class PluginComponentSandbox {
     this.__compileSource()
   }
 
+  /**
+   * Child components have already been loaded
+   * by VM and their code is available.
+   */
   get isFromFilesystem () {
     return Buffer.isBuffer(this.source)
   }
@@ -40,6 +44,10 @@ export class PluginComponentSandbox {
     })
   }
 
+  /**
+   * The raw component is validated, parsed and generates
+   * a secure component to be mounted by Vue.
+   */
   render () {
     if (!validateComponent(this.plugin, this.compiled, this.logger)) {
       return
