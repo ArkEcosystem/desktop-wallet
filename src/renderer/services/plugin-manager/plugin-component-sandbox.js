@@ -54,7 +54,7 @@ export class PluginComponentSandbox {
     }
 
     const lazyComponent = Object.assign({}, this.compiled)
-    const components = {}
+    const components = this.plugin.globalComponents
 
     for (const childName of Object.keys(this.compiled.components || {})) {
       const childSandbox = this.cloneSandbox({ name: childName, source: this.compiled.components[childName] })

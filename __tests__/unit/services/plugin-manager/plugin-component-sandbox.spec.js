@@ -52,6 +52,25 @@ describe('Plugin Component Sandbox', () => {
     expect(vm.run).toHaveBeenCalled()
   })
 
+  it('should render with global components', () => {
+    plugin.globalComponents = {
+      Test: {
+        template: '<div>Global</div>'
+      }
+    }
+    const sandbox = new PluginComponentSandbox({
+      ...options,
+      fullPath: './',
+      source: {
+        template: '<Test />'
+      }
+    })
+    const component = sandbox.render()
+    const wrapper = mount(component)
+    expect(wrapper.isVueInstance()).toBe(true)
+    expect(wrapper.html()).toBe('<div>Global</div>')
+  })
+
   it('should parse child components', (done) => {
     const spy = jest.spyOn(console, 'error').mockImplementation()
 

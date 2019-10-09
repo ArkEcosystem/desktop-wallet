@@ -6,12 +6,8 @@ import * as MenuComponents from '@/components/Menu'
 import Loader from '@/components/utils/Loader'
 import TableWrapper from '@/components/utils/TableWrapper'
 
-export function createUiComponentsSandbox (walletApi) {
+export function createUiComponentsSetup (plugin) {
   return () => {
-    if (!walletApi.components) {
-      walletApi.components = {}
-    }
-
     const components = {
       Button: ButtonComponents,
       Collapse: CollapseComponents,
@@ -22,8 +18,8 @@ export function createUiComponentsSandbox (walletApi) {
       TableWrapper
     }
 
-    walletApi.components = {
-      ...walletApi.components,
+    plugin.globalComponents = {
+      ...plugin.globalComponents,
       ...components
     }
   }

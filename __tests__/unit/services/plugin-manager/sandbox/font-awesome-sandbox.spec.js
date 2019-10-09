@@ -6,8 +6,6 @@ fontAwesomeSandbox()
 
 describe('Font Awesome Sandbox', () => {
   it('should expose functions', () => {
-    expect(walletApi.icons).toBeTruthy()
-    expect(walletApi.icons.component).toBeTruthy()
-    expect(walletApi.icons.icons).toBeTruthy()
+    expect(walletApi.fontAwesomeIcons).toBeTruthy()
   })
 })

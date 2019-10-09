@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { castArray, partition } from 'lodash'
+import { castArray } from 'lodash'
 import {
   COMPONENTS,
   AVATARS,
@@ -8,7 +8,9 @@ import {
   ROUTES,
   PUBLIC,
   MENU_ITEMS,
-  THEMES
+  THEMES,
+  WEBFRAME,
+  UI_COMPONENTS
 } from './plugin-permission'
 import { createComponentsSetup } from './setup/components-setup'
 import { createAvatarsSetup } from './setup/avatars-setup'
@@ -17,6 +19,9 @@ import { createWalletTabsSetup } from './setup/wallet-tabs-setup'
 import { createRegisterSetup } from './setup/register-setup'
 import { createMenuItemsSetup } from './setup/menu-items-setup'
 import { createThemesSetup } from './setup/themes-setup'
+import { createWebFrameSetup } from './setup/webframe-setup'
+import { createUiComponentsSetup } from './setup/ui-components-setup'
+import { createFontAwesomeSetup } from './setup/font-awesome-setup'
 
 export class PluginSetup {
   constructor ({
@@ -27,8 +32,11 @@ export class PluginSetup {
   }) {
     this.plugin = plugin
     this.sandbox = sandbox
-    this.vue = vue
     this.profileId = profileId
+
+    const localVue = vue.extend()
+    localVue.options._base = localVue
+    this.vue = localVue
 
     this.pluginObject = this.sandbox.getVM(false).run(
       fs.readFileSync(path.join(plugin.fullPath, 'src/index.js')),
@@ -41,13 +49,13 @@ export class PluginSetup {
   async install () {
     await this.__run(this.setups[PUBLIC.name])
 
-    const [priorities, rest] = partition(this.plugin.config.permissions, permission => {
-      // These permissions could be necessary first to load others
-      // The rest does not have dependencies: 'MENU_ITEMS', 'AVATARS', 'WALLET_TABS'
-      return [COMPONENTS.name, ROUTES.name].includes(permission)
-    })
+    const permissions = this.plugin.config.permissions
+    const priorities = [WEBFRAME.name, UI_COMPONENTS.name, COMPONENTS.name, ROUTES.name]
 
-    for (const permissionName of priorities) {
+    const first = priorities.filter(p => permissions.includes(p))
+    const rest = permissions.filter(p => !priorities.includes(p))
+
+    for (const permissionName of first) {
       await this.__run(this.setups[permissionName])
     }
 
@@ -71,8 +79,11 @@ export class PluginSetup {
       [MENU_ITEMS.name]: createMenuItemsSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [THEMES.name]: createThemesSetup(this.plugin, this.pluginObject, this.sandbox, this.profileId),
       [PUBLIC.name]: [
-        createRegisterSetup(this.pluginObject)
-      ]
+        createRegisterSetup(this.pluginObject),
+        createFontAwesomeSetup(this.plugin)
+      ],
+      [WEBFRAME.name]: createWebFrameSetup(this.plugin),
+      [UI_COMPONENTS.name]: createUiComponentsSetup(this.plugin)
     }
   }
 }

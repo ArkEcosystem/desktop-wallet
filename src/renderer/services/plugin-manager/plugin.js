@@ -10,6 +10,7 @@ export class Plugin {
     this.fullPath = fullPath
     this.rootPath = rootPath
 
+    this.globalComponents = {}
     this.components = {}
     this.avatars = []
     this.routes = []
