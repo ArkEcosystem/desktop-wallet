@@ -1,5 +1,6 @@
 import { createSafeComponent } from './component/create-component'
 import { validateComponent } from './component/validate'
+import { compileTemplate } from './component/compile-template'
 
 export class PluginComponentSandbox {
   constructor ({
@@ -53,7 +54,11 @@ export class PluginComponentSandbox {
       return
     }
 
-    const lazyComponent = Object.assign({}, this.compiled)
+    const compiledTemplate = compileTemplate(this.vm, this.compiled.template)
+
+    const lazyComponent = Object.assign(compiledTemplate, this.compiled)
+    delete lazyComponent.template
+
     const components = this.plugin.globalComponents
 
     for (const childName of Object.keys(this.compiled.components || {})) {

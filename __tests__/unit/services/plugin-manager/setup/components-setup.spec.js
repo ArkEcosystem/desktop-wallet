@@ -8,6 +8,13 @@ jest.mock('fs', () => ({
   })
 }))
 
+jest.mock('@/services/plugin-manager/component/compile-template.js', () => ({
+  compileTemplate: jest.fn((vm, template) => {
+    const { compileToFunctions } = require('vue-template-compiler')
+    return compileToFunctions(template)
+  })
+}))
+
 const localVue = createLocalVue()
 
 const plugin = new Plugin({

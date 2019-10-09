@@ -1,24 +1,10 @@
 import { getSafeContext } from './get-context'
-import { compileTemplate } from './compile-template'
 import { hooks } from './hooks'
 
 export function createSafeComponent (componentName, baseComponent, vue) {
-  // Fix context of "render" method
-  const lazyComponent = Object.assign({}, baseComponent)
-  const compiled = compileTemplate(baseComponent.template)
-
-  if (compiled.staticRenderFns.length) {
-    lazyComponent.render = compiled.render
-    lazyComponent.staticRenderFns = compiled.staticRenderFns
-  } else {
-    lazyComponent.render = function safeRender () {
-      return compiled.render.apply(getSafeContext(this, baseComponent), [...arguments])
-    }
-  }
-
   // Build Vue component
   const vmComponent = vue.extend({
-    ...lazyComponent,
+    ...baseComponent,
     name: componentName
   })
 

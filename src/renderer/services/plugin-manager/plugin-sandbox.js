@@ -65,7 +65,8 @@ export class PluginSandbox {
         },
         external: {
           modules: [
-            path.resolve(fullPath, 'src/')
+            path.resolve(fullPath, 'src/'),
+            'vue/dist/vue.common.js'
           ],
           transitive: true
         },

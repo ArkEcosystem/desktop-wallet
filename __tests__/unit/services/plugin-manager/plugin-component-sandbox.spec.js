@@ -1,6 +1,13 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import { PluginComponentSandbox } from '@/services/plugin-manager/plugin-component-sandbox'
 
+jest.mock('@/services/plugin-manager/component/compile-template.js', () => ({
+  compileTemplate: jest.fn((vm, template) => {
+    const { compileToFunctions } = require('vue-template-compiler')
+    return compileToFunctions(template)
+  })
+}))
+
 const vue = createLocalVue()
 
 const plugin = {
@@ -10,16 +17,14 @@ const plugin = {
 }
 
 const vm = {
-  run: jest.fn(buffer => JSON.parse(buffer))
+  run: jest.fn(code => JSON.parse(code))
 }
-
-const name = 'test'
 
 const options = {
   vue,
   plugin,
   vm,
-  name
+  name: 'test'
 }
 
 describe('Plugin Component Sandbox', () => {
@@ -31,6 +36,7 @@ describe('Plugin Component Sandbox', () => {
         template: '<div>Test</div>'
       }
     })
+
     const component = sandbox.render()
     const wrapper = mount(component)
     expect(wrapper.isVueInstance()).toBe(true)
