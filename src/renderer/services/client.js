@@ -38,7 +38,7 @@ export default class ClientService {
     const data = response.body.data
 
     const currentNetwork = store.getters['session/network']
-    if (currentNetwork.nethash === data.nethash) {
+    if (currentNetwork && currentNetwork.nethash === data.nethash) {
       const newLength = data.constants.vendorFieldLength
 
       if (newLength && (!currentNetwork.vendorField || newLength !== currentNetwork.vendorField.maxLength)) {
