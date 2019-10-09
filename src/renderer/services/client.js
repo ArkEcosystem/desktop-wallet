@@ -1,5 +1,5 @@
 import { Connection } from '@arkecosystem/client'
-import { Identities, Transactions } from '@arkecosystem/crypto'
+import { Identities, Managers, Transactions } from '@arkecosystem/crypto'
 import { castArray, chunk, orderBy } from 'lodash'
 import got from 'got'
 import moment from 'moment'
@@ -22,19 +22,27 @@ export default class ClientService {
   }
 
   /**
+   * Generate a new connection instance.
+   *
+   * @param  {String} server         Host URL to connect to server
+   * @param  {Number} [timeout=5000] Connection timeout
+   * @return {Connection}
+   */
+  static newConnection (server, timeout) {
+    return (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
+  }
+
+  /**
    * Fetch the network configuration according to the version.
    * In case the `vendorField` length has changed, updates the network data.
    * Create a new client to isolate the main client.
    *
    * @param {String} server
-   * @param {Number} apiVersion
    * @param {Number} timeout
    * @returns {Object}
    */
   static async fetchNetworkConfig (server, timeout) {
-    const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
-
-    const response = await client.api('node').configuration()
+    const response = await ClientService.newConnection(server, timeout).api('node').configuration()
     const data = response.body.data
 
     const currentNetwork = store.getters['session/network']
@@ -51,6 +59,17 @@ export default class ClientService {
     }
 
     return data
+  }
+
+  /**
+   * Fetch the network crypto data, e.g. milestones
+   *
+   * @param {String} server
+   * @param {Number} timeout
+   * @returns {Object}
+   */
+  static async fetchNetworkCrypto (server, timeout) {
+    return (await ClientService.newConnection(server, timeout).api('node').crypto()).body.data
   }
 
   /**
@@ -90,8 +109,7 @@ export default class ClientService {
 
   static async fetchFeeStatistics (server, timeout) {
     try {
-      const client = (new Connection(`${server}/api/v2`)).withOptions({ timeout: timeout || 5000 })
-      const { body } = await client.api('node').fees(7)
+      const { body } = await ClientService.newConnection(server, timeout).api('node').fees(7)
 
       return body.data.map(fee => ({
         type: Number(fee.type),
@@ -125,9 +143,8 @@ export default class ClientService {
   }
 
   set host (host) {
-    host = `${host}/api/v2`
-    this.__host = host
-    this.client = (new Connection(host)).withOptions({ timeout: 5000 })
+    this.__host = `${host}/api/v2`
+    this.client = ClientService.newConnection(host)
   }
 
   get version () {
@@ -489,7 +506,19 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildVote ({ votes, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
+  async buildVote (
+    {
+      address,
+      votes,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
     const staticFee = store.getters['transaction/staticFee'](3) || V1.fees[3]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
@@ -504,6 +533,7 @@ export default class ClientService {
     secondPassphrase = this.normalizePassphrase(secondPassphrase)
 
     return this.__signTransaction({
+      address,
       transaction,
       passphrase,
       secondPassphrase,
@@ -523,7 +553,19 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildDelegateRegistration ({ username, fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
+  async buildDelegateRegistration (
+    {
+      address,
+      username,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
     const staticFee = store.getters['transaction/staticFee'](2) || V1.fees[2]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
@@ -538,6 +580,7 @@ export default class ClientService {
     secondPassphrase = this.normalizePassphrase(secondPassphrase)
 
     return this.__signTransaction({
+      address,
       transaction,
       passphrase,
       secondPassphrase,
@@ -559,7 +602,21 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildTransfer ({ amount, fee, recipientId, vendorField, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
+  async buildTransfer (
+    {
+      address,
+      amount,
+      fee,
+      recipientId,
+      vendorField,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
     const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
@@ -577,6 +634,7 @@ export default class ClientService {
     secondPassphrase = this.normalizePassphrase(secondPassphrase)
 
     return this.__signTransaction({
+      address,
       transaction,
       passphrase,
       secondPassphrase,
@@ -595,7 +653,18 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  async buildSecondSignatureRegistration ({ fee, passphrase, secondPassphrase, wif, networkWif }, isAdvancedFee = false, returnObject = false) {
+  async buildSecondSignatureRegistration (
+    {
+      address,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
     const staticFee = store.getters['transaction/staticFee'](1) || V1.fees[1]
     if (!isAdvancedFee && fee > staticFee) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
@@ -609,6 +678,7 @@ export default class ClientService {
     passphrase = this.normalizePassphrase(passphrase)
 
     return this.__signTransaction({
+      address,
       transaction,
       passphrase,
       wif,
@@ -626,7 +696,17 @@ export default class ClientService {
    * @param {Boolean} returnObject - to return the transaction of its internal struct
    * @returns {Object}
    */
-  __signTransaction ({ transaction, passphrase, secondPassphrase, wif, networkWif }, returnObject = false) {
+  async __signTransaction (
+    {
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    returnObject = false
+  ) {
     const network = store.getters['session/network']
     transaction = transaction.network(network.version)
 
@@ -634,6 +714,21 @@ export default class ClientService {
     const epochTime = moment(network.constants.epoch).utc().valueOf()
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
+
+    if (network.constants.aip11) {
+      Managers.configManager.setConfig(network.crypto)
+      Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
+
+      let nonce = '1'
+      try {
+        nonce = BigNumber((await this.fetchWallet(address)).nonce || 0).plus(1).toString()
+      } catch (error) {
+        //
+      }
+
+      transaction.version(2)
+        .nonce(nonce)
+    }
 
     if (passphrase) {
       transaction = transaction.sign(this.normalizePassphrase(passphrase))

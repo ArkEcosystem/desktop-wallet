@@ -243,6 +243,7 @@ export default {
   methods: {
     getTransactionData () {
       const transactionData = {
+        address: this.currentWallet.address,
         passphrase: this.form.passphrase,
         votes: [
           `${this.isVoter ? '-' : '+'}${this.delegate.publicKey}`

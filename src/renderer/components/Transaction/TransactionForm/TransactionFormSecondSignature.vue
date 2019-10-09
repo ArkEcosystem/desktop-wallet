@@ -221,6 +221,7 @@ export default {
   methods: {
     getTransactionData () {
       return {
+        address: this.currentWallet.address,
         passphrase: this.form.passphrase,
         secondPassphrase: this.secondPassphrase,
         fee: this.getFee(),

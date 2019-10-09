@@ -49,6 +49,9 @@ export default new BaseModel({
     constants: {
       type: 'object'
     },
+    crypto: {
+      type: 'object'
+    },
     vendorField: {
       type: 'object',
       properties: {

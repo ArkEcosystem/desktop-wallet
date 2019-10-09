@@ -150,6 +150,7 @@ export default {
   methods: {
     getTransactionData () {
       const transactionData = {
+        address: this.currentWallet.address,
         username: this.form.username,
         passphrase: this.form.passphrase,
         fee: this.getFee(),

@@ -291,6 +291,7 @@ export default {
     async loadNotEssential () {
       await this.$store.dispatch('peer/refresh')
       this.$store.dispatch('peer/connectToBest', {})
+      this.$store.dispatch('network/updateData')
 
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
@@ -300,6 +301,7 @@ export default {
       this.$eventBus.on('client:changed', () => {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('peer/connectToBest', {})
+        this.$store.dispatch('network/updateData')
         this.$store.dispatch('delegate/load')
         if (this.$store.getters['ledger/isConnected']) {
           this.$store.dispatch('ledger/reloadWallets', { clearFirst: true, forceLoad: true })
