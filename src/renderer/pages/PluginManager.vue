@@ -279,9 +279,16 @@ export default {
     async reloadPlugins () {
       this.isRefreshing = true
 
-      await this.$plugins.fetchPlugins(true)
-
-      this.isRefreshing = false
+      try {
+        await this.$plugins.fetchPlugins(true)
+      } catch (error) {
+        this.$error(this.$t('COMMON.FAILED_FETCH', {
+          name: 'plugins',
+          msg: error.message
+        }))
+      } finally {
+        this.isRefreshing = false
+      }
     },
 
     toggleLayout () {
