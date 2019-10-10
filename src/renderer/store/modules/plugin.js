@@ -62,23 +62,19 @@ export default {
 
     installed: state => state.installed,
 
-    byCategory: (state, getters) => category => {
-      const plugins = getters.all
+    byCategory: (state, getters) => (category, source) => {
+      const plugins = getters[source]
 
       return category === 'all' ? plugins : plugins.filter(plugin => {
         return plugin.categories.includes(category)
       })
     },
 
-    byQuery: (state, getters) => query => {
-      return getters.all.filter(plugin => {
-        return plugin.id.includes(query) || plugin.title.includes(query) || plugin.description.includes(query)
-      })
-    },
-
-    byName: (state, getters) => name => {
-      return getters.available.find(plugin => {
-        return plugin.name === name
+    byQuery: (state, getters) => (query, source) => {
+      return getters[source].filter(plugin => {
+        return ['id', 'title', 'description'].some(property => {
+          return plugin[property].includes(query)
+        })
       })
     },
 

@@ -595,6 +595,11 @@ export default {
         THEME: 'Theme',
         OTHER: 'Other'
       },
+      FILTERS: {
+        ALL: 'All',
+        AVAILABLE: 'Available',
+        INSTALLED: 'Installed'
+      },
       NO_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
       EMPTY_CATEGORY: 'There are no plugins under the category {category} yet',
       SEARCH: 'Search',

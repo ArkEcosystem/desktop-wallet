@@ -51,9 +51,15 @@
             @click="toggleMenu"
           />
 
+          <PluginManagerButtonFilter
+            :active-filter="activeFilter"
+            :class="{ 'ml-6': !isMenuOpen }"
+            @filter-change="onFilterChange"
+          />
+
           <ButtonLayout
             :grid-layout="hasGridLayout"
-            :class="{ 'pl-6': !isMenuOpen }"
+            class="ml-2"
             @click="toggleLayout"
           />
 
@@ -179,7 +185,7 @@ import {
   PluginPermissionsModal,
   PluginRemovalModal
 } from '@/components/PluginManager'
-import { PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
+import { PluginManagerButtonFilter, PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
 
 export default {
   name: 'PluginManager',
@@ -189,6 +195,7 @@ export default {
     ButtonReload,
     PluginDetailsModal,
     PluginInstallModal,
+    PluginManagerButtonFilter,
     PluginManagerButtonInstallSource,
     PluginManagerButtonMenu,
     PluginManagerGrid,
@@ -201,6 +208,7 @@ export default {
 
   data: () => ({
     activeCategory: 'all',
+    activeFilter: 'all',
     isMenuOpen: false,
     isRefreshing: false,
     pluginToInstall: null,
@@ -245,10 +253,10 @@ export default {
 
     plugins () {
       if (this.query) {
-        return this.$store.getters['plugin/byQuery'](this.query)
+        return this.$store.getters['plugin/byQuery'](this.query, this.activeFilter)
       }
 
-      return this.$store.getters['plugin/byCategory'](this.activeCategory)
+      return this.$store.getters['plugin/byCategory'](this.activeCategory, this.activeFilter)
     },
 
     sortParams: {
@@ -338,6 +346,10 @@ export default {
 
     onCategoryChange (category) {
       this.activeCategory = category
+    },
+
+    onFilterChange (filter) {
+      this.activeFilter = filter
     },
 
     onDownload (source) {
