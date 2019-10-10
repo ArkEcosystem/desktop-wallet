@@ -137,12 +137,13 @@
 </template>
 
 <script>
-import domain from 'getdomain'
+import { PLUGINS } from '@config'
 import { ButtonGeneric, ButtonIconGeneric } from '@/components/Button'
 import { PluginLogo, PluginManagerCheckmark } from '@/components/PluginManager'
 import { ModalWindow } from '@/components/Modal'
 import { PluginManagerButtonSwitch } from '@/components/PluginManager/PluginManagerButtons'
 import SvgIcon from '@/components/SvgIcon'
+import domain from 'getdomain'
 
 export default {
   name: 'PluginDetailsModal',
@@ -245,7 +246,13 @@ export default {
     },
 
     reportPlugin () {
-      console.log('report')
+      const params = URLSearchParams({
+        type: 'desktop-wallet-plugin-report',
+        id: this.plugin.id,
+        version: this.plugin.version
+      })
+
+      this.openExternal(`${PLUGINS.reportUrl}?${params.toString()}`)
     }
   }
 }
