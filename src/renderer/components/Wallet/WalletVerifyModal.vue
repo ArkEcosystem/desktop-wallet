@@ -139,7 +139,7 @@ export default {
   computed: {
     messageError () {
       if (this.$v.form.message.$error && !this.$v.form.message.isValid) {
-        return this.$t('VALIDATION.REQUIRED', [this.$refs['message'].label])
+        return this.$t('VALIDATION.REQUIRED', [this.$refs.message.label])
       }
       return null
     },
@@ -153,7 +153,7 @@ export default {
 
     signatureError () {
       if (this.$v.form.signature.$error && !this.$v.form.signature.isValid) {
-        return this.$t('VALIDATION.REQUIRED', [this.$refs['signature'].label])
+        return this.$t('VALIDATION.REQUIRED', [this.$refs.signature.label])
       }
       return null
     },
@@ -161,7 +161,7 @@ export default {
     jsonError () {
       if (this.$v.form.json.$error) {
         if (!this.$v.form.json.isNotEmpty) {
-          return this.$t('VALIDATION.REQUIRED', [this.$refs['json'].label])
+          return this.$t('VALIDATION.REQUIRED', [this.$refs.json.label])
         } else if (!this.$v.form.json.isValid) {
           return this.$t('VALIDATION.INVALID_FORMAT')
         }
@@ -182,7 +182,7 @@ export default {
           verified = WalletService.verifyMessage(this.form.message, this.form.publicKey, this.form.signature)
         } else {
           const json = JSON.parse(this.form.json)
-          verified = WalletService.verifyMessage(json['message'], json['publicKey'], json['signature'])
+          verified = WalletService.verifyMessage(json.message, json.publicKey, json.signature)
         }
 
         if (verified) {
@@ -199,7 +199,7 @@ export default {
       if (this.verifyChoice === 'Verify') {
         return WalletService.getAddressFromPublicKey(this.form.publicKey, this.session_network.version)
       }
-      return WalletService.getAddressFromPublicKey(JSON.parse(this.form.json)['publicKey'], this.session_network.version)
+      return WalletService.getAddressFromPublicKey(JSON.parse(this.form.json).publicKey, this.session_network.version)
     },
 
     onChoiceSelect (choice) {
@@ -260,7 +260,7 @@ export default {
           // Check for valid json
           try {
             const json = JSON.parse(value)
-            return !!(json['message'] && (json['publicKey'] || json['publickey']) && json['signature'])
+            return !!(json.message && (json.publicKey || json.publickey) && json.signature)
           } catch (err) {
             return false
           }

@@ -40,7 +40,7 @@ describe('TransactionModule', () => {
   beforeEach(() => {
     transactions.forEach(transaction => store.commit('transaction/STORE', transaction))
     wallets.forEach(wallet => store.commit('wallet/STORE', wallet))
-    ClientService.host = `http://127.0.0.1:4003`
+    ClientService.host = 'http://127.0.0.1:4003'
     nock.cleanAll()
     nock('http://127.0.0.1')
       .persist()
@@ -240,15 +240,18 @@ describe('TransactionModule', () => {
         {
           id: 2,
           timestamp: dayjs().subtract(5, 'hour').valueOf()
+        },
+        {
+          id: 3
         }
       ])
     })
 
-    it('should clear unconfirmed votes after 6h', async () => {
-      expect(store.getters['session/unconfirmedVotes'].length).toBe(2)
+    it('should clear unconfirmed votes after 6h or no timestamp', async () => {
+      expect(store.getters['session/unconfirmedVotes'].length).toBe(3)
       await store.dispatch('transaction/clearUnconfirmedVotes')
       expect(store.getters['session/unconfirmedVotes'].length).toBe(1)
-      expect(store.getters['session/unconfirmedVotes'][0]['id']).toBe(2)
+      expect(store.getters['session/unconfirmedVotes'][0].id).toBe(2)
     })
   })
 })

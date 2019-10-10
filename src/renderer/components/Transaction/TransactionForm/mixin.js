@@ -156,7 +156,7 @@ export default {
     },
 
     getFee () {
-      return parseInt(this.currency_unitToSub(this.form.fee))
+      return this.currency_unitToSub(this.form.fee)
     },
 
     onFee (fee) {

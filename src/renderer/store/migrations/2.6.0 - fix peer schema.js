@@ -1,7 +1,7 @@
 // Update the schema of peers to v2
 export default store => {
-  for (const networkId of Object.keys(store.state['peer']['all'])) {
-    const peerData = store.state['peer']['all'][networkId]
+  for (const networkId of Object.keys(store.state.peer.all)) {
+    const peerData = store.state.peer.all[networkId]
 
     let peers = peerData.peers
     if (!peers.length) {
