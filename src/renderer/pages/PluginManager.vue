@@ -46,6 +46,7 @@
           <PluginManagerButtonMenu
             v-if="!isMenuOpen"
             :is-open="isMenuOpen"
+            :disabled="!!query"
             class="pr-6 border-r border-theme-line-separator"
             @click="toggleMenu"
           />
@@ -188,25 +189,23 @@ export default {
     ButtonReload,
     PluginDetailsModal,
     PluginInstallModal,
+    PluginManagerButtonInstallSource,
+    PluginManagerButtonMenu,
     PluginManagerGrid,
     PluginManagerSearchBar,
     PluginManagerSideMenu,
     PluginManagerTable,
-    PluginManagerButtonInstallSource,
-    PluginManagerButtonMenu,
     PluginPermissionsModal,
     PluginRemovalModal
   },
 
   data: () => ({
-    isRefreshing: false,
-    currentPage: 1,
-    pluginToConfirm: null,
-    isMenuOpen: false,
     activeCategory: 'all',
+    isMenuOpen: false,
+    isRefreshing: false,
     pluginToInstall: null,
-    pluginToShow: null,
     pluginToRemove: null,
+    pluginToShow: null,
     query: null,
     showPermissions: false
   }),
@@ -331,10 +330,6 @@ export default {
     },
 
     onCategoryChange (category) {
-      if (this.query) {
-        this.resetQuery()
-      }
-
       this.activeCategory = category
     },
 
@@ -353,8 +348,8 @@ export default {
     },
 
     onSearch (query) {
-      if (this.activeCategory !== 'all') {
-        this.resetCategory()
+      if (this.isMenuOpen) {
+        this.toggleMenu()
       }
 
       this.query = query
@@ -380,14 +375,6 @@ export default {
         enabled,
         pluginId
       })
-    },
-
-    resetQuery () {
-      this.query = null
-    },
-
-    resetCategory () {
-      this.activeCategory = 'all'
     },
 
     // TODO
