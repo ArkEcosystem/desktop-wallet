@@ -110,7 +110,7 @@ export default {
       state.transactions[transaction.profileId] = unionBy([transaction, ...state.transactions[transaction.profileId]], transaction => transaction.id)
     },
     DELETE (state, transaction) {
-      const index = findIndex(state.transactions[transaction.profileId], transaction => transaction.id)
+      const index = findIndex(state.transactions[transaction.profileId], element => element.id === transaction.id)
       if (index === -1) {
         throw new Error(`Cannot delete transaction '${transaction.id}' - it does not exist on the state`)
       }

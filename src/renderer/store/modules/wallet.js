@@ -134,7 +134,7 @@ export default {
       state.wallets[profileId] = unionBy([...wallets, ...state.wallets[profileId]], wallet => wallet.id)
     },
     DELETE (state, wallet) {
-      const index = findIndex(state.wallets[wallet.profileId], wallet => wallet.id)
+      const index = findIndex(state.wallets[wallet.profileId], element => element.id === wallet.id)
       if (index === -1) {
         throw new Error(`Cannot delete wallet '${wallet.id}' - it does not exist on the state`)
       }
@@ -159,7 +159,7 @@ export default {
       }
     },
     DELETE_SIGNED_MESSAGE (state, message) {
-      const index = findIndex(state.signedMessages[message.address], message => message.timestamp)
+      const index = findIndex(state.signedMessages[message.address], element => element.timestamp === message.timestamp)
       if (index !== -1) {
         state.signedMessages[message.address].splice(index, 1)
       }
