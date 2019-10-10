@@ -1,5 +1,6 @@
-import * as fs from 'fs-extra'
+import * as fs from 'fs'
 import * as path from 'path'
+import * as fsExtra from 'fs-extra'
 import { PLUGINS } from '@config'
 import { Plugin } from './plugin-manager/plugin'
 import { PluginConfiguration } from './plugin-manager/plugin-configuration'
@@ -12,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
   rootPath = path.resolve(__dirname, '../../')
 }
 
-class PluginManager {
+export class PluginManager {
   constructor () {
     this.plugins = {}
     this.hasInit = false
@@ -123,14 +124,10 @@ class PluginManager {
   }
 
   async fetchPluginsFromPath (pluginsPath) {
-    fs.ensureDirSync(pluginsPath)
+    fsExtra.ensureDirSync(pluginsPath)
 
-    const entries = fs.readdirSync(pluginsPath).filter(entry => {
-      if (fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()) {
-        return true
-      }
-
-      return false
+    const entries = fsExtra.readdirSync(pluginsPath).filter(entry => {
+      return fsExtra.lstatSync(`${pluginsPath}/${entry}`).isDirectory()
     })
 
     for (const entry of entries) {
