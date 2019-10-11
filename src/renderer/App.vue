@@ -89,6 +89,12 @@
         @change="onPortalChange"
       />
 
+      <PortalTarget
+        name="button-dropdown"
+        multiple
+        :slot-props="{ hasBlurFilter }"
+      />
+
       <AlertMessage />
     </div>
   </div>
