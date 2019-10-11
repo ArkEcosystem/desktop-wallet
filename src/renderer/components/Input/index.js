@@ -1,6 +1,7 @@
 import InputAddress from './InputAddress'
 import InputCurrency from './InputCurrency'
 import InputDelegate from './InputDelegate'
+import InputEditableList from './InputEditableList'
 import InputFee from './InputFee'
 import InputField from './InputField'
 import InputLanguage from './InputLanguage'
@@ -16,6 +17,7 @@ export {
   InputAddress,
   InputCurrency,
   InputDelegate,
+  InputEditableList,
   InputFee,
   InputField,
   InputLanguage,
