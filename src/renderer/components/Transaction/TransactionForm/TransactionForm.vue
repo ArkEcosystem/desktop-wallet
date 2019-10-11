@@ -11,6 +11,7 @@
 /* eslint-disable vue/no-unused-components */
 import TransactionFormDelegateRegistration from './TransactionFormDelegateRegistration'
 import TransactionFormDelegateResignation from './TransactionFormDelegateResignation'
+import TransactionFormIpfs from './TransactionFormIpfs'
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'
 import TransactionFormSecondSignature from './TransactionFormSecondSignature'
@@ -22,6 +23,7 @@ export default {
   components: {
     TransactionFormDelegateRegistration,
     TransactionFormDelegateResignation,
+    TransactionFormIpfs,
     TransactionFormTransfer,
     TransactionFormVote,
     TransactionFormSecondSignature

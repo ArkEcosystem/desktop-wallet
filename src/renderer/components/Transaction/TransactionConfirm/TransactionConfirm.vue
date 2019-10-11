@@ -55,6 +55,7 @@
 import { find } from 'lodash'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
+import TransactionConfirmIpfs from './TransactionConfirmIpfs'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
@@ -75,6 +76,7 @@ export default {
   components: {
     TransactionConfirmDelegateRegistration,
     TransactionConfirmDelegateResignation,
+    TransactionConfirmIpfs,
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote,

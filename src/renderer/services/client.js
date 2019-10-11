@@ -684,6 +684,58 @@ export default class ClientService {
   }
 
   /**
+   * Build IPFS transaction.
+   * @param {Object} data
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.hash - ipfs hash
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildIpfs (
+    {
+      address,
+      fee,
+      hash,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].milestone.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](5) || V1.fees[5]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`IPFS fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .ipfs()
+      .ipfsAsset(hash)
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    }, returnObject)
+  }
+
+  /**
    * Build a delegate resignation transaction.
    * @param {Object} data
    * @param {Number} data.fee - dynamic fee, as arktoshi
