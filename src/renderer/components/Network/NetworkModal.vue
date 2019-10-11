@@ -422,7 +422,7 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      let { href: host, port, protocol } = new URL(this.form.server)
+      let { origin: host, port, protocol } = new URL(this.form.server)
 
       if (!port) {
         port = protocol === 'https:' ? 443 : 80
