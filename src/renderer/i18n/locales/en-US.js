@@ -41,7 +41,8 @@ export default {
     VERIFIED_ADDRESS: 'This is a verified address',
     WARNING: 'Warning',
     WILL: 'will',
-    WALLET: 'Wallet'
+    WALLET: 'Wallet',
+    X_OF_Y: '{0} of {1}'
   },
 
   ANNOUNCEMENTS: {
@@ -120,6 +121,8 @@ export default {
     BEST: 'Connect to best',
     CONNECTED: 'Connected to peer',
     CONNECT_CUSTOM: 'Connect custom peer',
+    CUSTOM_TITLE: 'Connect to custom peer',
+    MULTI_SIGNATURE_TITLE: 'Connect Multi-Signature peer',
     CONNECT_FAILED: 'Failed to connect to peer',
     LATENCY: 'Latency',
     DISCONNECT: 'Disconnect from peer',
@@ -357,6 +360,10 @@ export default {
     TITLE: 'Select'
   },
 
+  INPUT_PUBLIC_KEY: {
+    TITLE: 'Public Key'
+  },
+
   WALLET_SELECTION: {
     PROFILE: 'Sender Profile',
     WALLET: 'Sender Wallet'
@@ -457,7 +464,6 @@ export default {
     CONNECT: 'Connect',
     HOST: 'IP / Host',
     PORT: 'Port',
-    TITLE: 'Connect to custom peer',
     VALIDATING: 'Validating peer details...',
     PLACEHOLDER: {
       HOST: 'http://1.2.3.4',
@@ -605,6 +611,8 @@ export default {
     WALLET: {
       TRANSACTIONS: 'Transactions',
       DELEGATES: 'Delegates',
+      IPFS: 'IPFS',
+      MULTI_SIGNATURE: 'Multi-Signature',
       STATISTICS: 'Statistics',
       SIGN_VERIFY: 'Sign',
       PURCHASE: 'Purchase {ticker}'
@@ -787,21 +795,35 @@ export default {
       DELEGATE_REGISTRATION: 'Delegate Registration',
       VOTE: 'Vote',
       UNVOTE: 'Unvote',
-      MULTI_SIGNATURE: 'Multi Signature',
+      MULTI_SIGN: 'Multi-Signature Transaction',
+      MULTI_SIGNATURE: 'Multi-Signature',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock Transfer',
       MULTI_PAYMENT: 'Multi Payment',
-      DELEGATE_RESIGNATION: 'Delegate Resignation'
+      DELEGATE_RESIGNATION: 'Delegate Resignation',
+      TIMELOCK_LOCK: 'Timelock',
+      TIMELOCK_CLAIM: 'Timelock Claim',
+      TIMELOCK_REFUND: 'Timelock Refund'
     },
     ERROR: {
+      VALIDATION: {
+        TRANSFER: 'Transfer transaction could not be created',
+        SECOND_SIGNATURE: 'Second Signature transaction could not be created',
+        DELEGATE_REGISTRATION: 'Delegate Registration transaction could not be created',
+        VOTE: 'Vote transaction could not be created',
+        MULTI_SIGNATURE: 'Multi-Signature transaction could not be created',
+        IPFS: 'IPFS transaction could not be created',
+        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created'
+      },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
       DELEGATE_REGISTRATION: 'Could not register as delegate',
       VOTE: 'Vote could not be registered',
       UNVOTE: 'Unvote could not be registered',
+      MULTI_SIGN: 'Could not sign transaction',
       MULTI_SIGNATURE: 'Multi signature could not be created',
-      IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock transfer could not be created',
+      TIMELOCK_LOCK: 'Timelock could not be created',
+      TIMELOCK_CLAIM: 'Timelock Claim could not be created',
+      TIMELOCK_REFUND: 'Timelock Refund could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save transaction file',
@@ -811,7 +833,8 @@ export default {
       NOTHING_SENT: 'The transaction could not be sent. Please check your network connection or change peer'
     },
     FOOTER_TEXT: {
-      DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.'
+      DELEGATE_REGISTRATION: 'Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.',
+      DELEGATE_RESIGNATION: 'Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.'
     },
     INFO: {
       BROADCASTING: 'Your transaction is being broadcast to the network',
@@ -823,9 +846,12 @@ export default {
       DELEGATE_REGISTRATION: 'Successfully registered as delegate',
       VOTE: 'Voted successfully',
       UNVOTE: 'Unvoted successfully',
+      MULTI_SIGN: 'Transaction has been signed successfully',
       MULTI_SIGNATURE: 'Multi signature created successfully',
       IPFS: 'IPFS',
-      TIMELOCK_TRANSFER: 'Timelock transfer created successfully',
+      TIMELOCK_LOCK: 'Timelock created successfully',
+      TIMELOCK_CLAIM: 'Timelock Claim created successfully',
+      TIMELOCK_REFUND: 'Timelock Refund created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',
@@ -834,6 +860,29 @@ export default {
     VOTE: {
       VOTE_DELEGATE: 'Vote for delegate {delegate}',
       UNVOTE_DELEGATE: 'Unvote delegate {delegate}'
+    },
+    MULTI_PAYMENT: {
+      BUTTON_ADD: 'Add',
+      WARNING_DUPLICATE: 'The address is already a recipient',
+      RECIPIENTS: 'Recipients'
+    },
+    MULTI_SIGNATURE: {
+      ADDRESS: 'Multi-Signature Address',
+      BUTTON_ADD: 'Add',
+      ERROR_DUPLICATE: 'The public key has already been added',
+      ERROR_MIN_KEYS_TOO_HIGH: 'Minimum required signatures is too high',
+      ERROR_MIN_KEYS_TOO_LOW: 'Minimum required signatures is too low',
+      ERROR_PUBLIC_KEY_NOT_FOUND: 'Could not determine public key',
+      ERROR_PUBLIC_KEY_EXISTS: 'Public key already provided',
+      MIN_KEYS: 'Minimum Required Signatures',
+      PUBLIC_KEYS: 'Public Keys',
+      READY: 'Ready',
+      TOTAL_SIGNATURES: 'Total Signatures',
+      TAB: {
+        ADDRESS: 'Address',
+        PUBLIC_KEY: 'Public Key'
+      },
+      YOUR_SIGNATURE: 'Your Signature'
     },
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
@@ -849,6 +898,7 @@ export default {
     DISCARD: 'Discard',
     EXPIRED: 'Expired',
     FEE: 'Transaction fee',
+    HASH: 'Hash',
     ID: 'ID',
     LEDGER_SIGN_NOTICE: 'Next you will confirm the transaction with your Ledger',
     LEDGER_SIGN_WAIT: 'Awaiting Ledger Signature. Please check and sign the transaction when you are ready.',
@@ -860,6 +910,7 @@ export default {
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',
     RECIPIENT: 'Recipient',
+    RECIPIENTS: 'Recipients',
     RESEND: 'Resend',
     RESENT_NOTICE: 'Transaction {transactionId} has been resent',
     SAVE_OFFLINE: 'Save transaction offline',
@@ -867,9 +918,12 @@ export default {
     SEND: 'Send',
     SEND_ALL: 'Send All',
     SENDER: 'Sender',
+    SIGN: 'Sign',
     SINGLE: 'Single',
+    STATUS: 'Status',
     TIMESTAMP: 'Timestamp',
     TRANSACTION: 'Transaction',
+    USERNAME: 'Username',
     VENDOR_FIELD: 'Smartbridge',
     WELL_CONFIRMED: 'Well Confirmed',
     WELL_CONFIRMED_COUNT: 'Well Confirmed ({confirmations} confirmations)'
@@ -920,13 +974,15 @@ export default {
 
   WALLET_HEADING: {
     ACTIONS: {
-      WALLET_NAME: 'Wallet name',
-      CONTACT_NAME: 'Contact name',
-      REGISTER_DELEGATE: 'Register delegate',
-      SECOND_PASSPHRASE: '2nd passphrase',
-      DELETE_WALLET: 'Delete wallet',
-      SHOW_PUBLIC_KEY: 'Show public key',
-      SHOW_ADDRESS: 'Show address'
+      WALLET_NAME: 'Wallet Name',
+      CONTACT_NAME: 'Contact Name',
+      REGISTER_MULTISIGNATURE: 'Register Multi-Signature',
+      REGISTER_DELEGATE: 'Register Delegate',
+      RESIGN_DELEGATE: 'Resign Delegate',
+      SECOND_PASSPHRASE: 'Second Passphrase',
+      DELETE_WALLET: 'Delete Wallet',
+      SHOW_PUBLIC_KEY: 'Show Public Key',
+      SHOW_ADDRESS: 'Show Address'
     },
     PENDING_BALANCE: '{amount} including 1 unconfirmed transaction | {amount} including {n} unconfirmed transactions',
     SECOND_PASSPHRASE_ENABLED: 'Second Signature Enabled'
@@ -977,6 +1033,7 @@ export default {
     USERNAME_EXISTS: 'A delegate with this username already exists',
     USERNAME_MAX_LENGTH_ERROR: 'The username must be less than or equal to 20 characters long',
     ALREADY_REGISTERED: 'This wallet is already registered as a delegate',
+    NOT_REGISTERED: 'This wallet is not registered as a delegate',
     BLOG: 'Voting Guide',
     EXPLANATION: 'Voting is an optional, but important mechanism that keeps the ARK network secure. The {delegates} delegates with the most votes from the network are responsible for verifying and forging transactions into new blocks. This page can be used to cast your vote for a delegate that you support. Learn more about voting for a delegate by clicking on the following link:',
     VOTE_DELEGATE: 'Vote Delegate {delegate}',
@@ -989,6 +1046,22 @@ export default {
     AWAITING_VOTE_CONFIRMATION: 'Your {type} is awaiting confirmation',
     LOADING_VOTE: 'Loading vote details...',
     SEARCH_DELEGATE: 'Search delegate'
+  },
+
+  WALLET_IPFS: {
+    HEADER: 'IPFS Hash',
+    DESCRIPTION: 'Store an IPFS hash on the network',
+    BUTTON_STORE_HASH: 'Store Hash',
+    MESSAGE: 'IPFS Hash',
+    SIGNATURE: 'IPFS Hash',
+    HASH: 'Hash',
+    HASH_ERROR: 'The IPFS Hash is not a valid hash'
+  },
+
+  WALLET_MULTI_SIGNATURE: {
+    HEADER: 'Multi-Signature',
+    DESCRIPTION: 'Pending transactions requiring your signature',
+    BUTTON_SET_PEER: 'Set Peer'
   },
 
   WALLET_GRID: {
