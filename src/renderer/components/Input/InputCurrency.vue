@@ -374,6 +374,13 @@ export default {
         ...Object.values(MARKET.currencies).map(currency => currency.symbol)
       ]
       return includes(currencies, currency)
+    },
+
+    reset () {
+      this.inputValue = ''
+      this.$nextTick(() => {
+        this.$v.model.$reset()
+      })
     }
   },
 
