@@ -199,6 +199,7 @@ export default {
 
 <style lang="postcss" scoped>
 .WalletAddress > span {
-  @apply truncate
+  @apply .truncate;
+  padding-right: 1px;
 }
 </style>
