@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { useI18nGlobally } from '../../__utils__/i18n'
+import transaction from '../../__fixtures__/models/transaction'
 import TransactionModal from '@/components/Transaction/TransactionModal'
 
 const i18n = useI18nGlobally()
@@ -118,21 +119,9 @@ describe('TransactionModal', () => {
 
   describe('storeTransaction', () => {
     it('should dispatch `transaction/create` using the transaction, but replacing some attributes, and the current profile', () => {
-      const transaction = {
-        id: 'tx1',
-        type: 0,
-        amount: 10000,
-        fee: 1000,
-        timestamp: 120,
-        recipientId: 'Arecipient',
-        senderPublicKey: 'Asender',
-        vendorField: 'smartbridge'
-      }
       wrapper.vm.storeTransaction(transaction)
 
       const { id, type, amount, fee, vendorField } = transaction
-      const timestamp = (new Date(wrapper.vm.session_network.constants.epoch)).getTime() + transaction.timestamp * 1000
-
       const expected = {
         profileId,
         id,
@@ -141,11 +130,12 @@ describe('TransactionModal', () => {
         fee,
         vendorField,
         confirmations: 0,
-        timestamp,
-        sender: 'public key of Asender',
+        timestamp: transaction.timestamp * 1000,
+        sender: `public key of ${transaction.senderPublicKey}`,
         recipient: transaction.recipientId,
         raw: transaction
       }
+
       expect($store.dispatch).toHaveBeenCalledWith('transaction/create', expected)
     })
   })
