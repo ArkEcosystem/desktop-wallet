@@ -18,6 +18,7 @@ export default {
     FAILED_UPDATE: 'Failed to update \'{name}\'. Reason: {reason}',
     FAILED_FETCH: 'Failed to fetch {name}. Reason: "{msg}".',
     FETCH: 'Fetch',
+    FILTER_BLACKLISTED_PLUGINS: 'Apply blacklist',
     FINISH: 'Finish',
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
@@ -671,6 +672,13 @@ export default {
           TEXT: 'Here you can choose the default theme (light or dark) and the background.'
         },
         TITLE: 'Wallet design'
+      },
+      TAB_PLUGINS: {
+        INSTRUCTIONS: {
+          HEADER: 'Plugin settings',
+          TEXT: 'Here you can adjust the settings of the Plugin Manager.'
+        },
+        TITLE: 'Plugins'
       }
     },
 

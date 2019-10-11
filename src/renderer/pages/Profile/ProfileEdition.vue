@@ -272,6 +272,34 @@
               </button>
             </footer>
           </MenuTabItem>
+
+          <MenuTabItem
+            :label="$t('PAGES.PROFILE_EDITION.TAB_PLUGINS.TITLE')"
+            tab="plugins"
+            class="p-5"
+          >
+            <ListDivided>
+              <ListDividedItem
+                :label="$t('COMMON.FILTER_BLACKLISTED_PLUGINS')"
+                class="ProfileEdition__wallet-button-text"
+              >
+                <ButtonSwitch
+                  :is-active="filterBlacklistedPlugins"
+                  @change="selectFilterBlacklistedPlugins"
+                />
+              </ListDividedItem>
+            </ListDivided>
+
+            <footer class="ProfileEdition__footer pb-10">
+              <button
+                :disabled="!isModified || nameError"
+                class="blue-button"
+                @click="save"
+              >
+                {{ $t('COMMON.SAVE') }}
+              </button>
+            </footer>
+          </MenuTabItem>
         </MenuTab>
       </div>
     </main>
@@ -392,6 +420,9 @@ export default {
       return this.session_profile.id === this.profile.id
     },
 
+    filterBlacklistedPlugins () {
+      return this.modified.filterBlacklistedPlugins || this.profile.filterBlacklistedPlugins
+    },
     avatar () {
       return this.modified.avatar || this.profile.avatar
     },
@@ -587,6 +618,10 @@ export default {
 
     async selectHideWalletButtonText (hideWalletButtonText) {
       this.__updateSession('hideWalletButtonText', hideWalletButtonText)
+    },
+
+    async selectFilterBlacklistedPlugins (filterBlacklistedPlugins) {
+      this.__updateSession('filterBlacklistedPlugins', filterBlacklistedPlugins)
     },
 
     async selectIsMarketChartEnabled (isMarketChartEnabled) {
