@@ -32,7 +32,7 @@
         </button>
       </div>
 
-      <div>
+      <div v-if="showSave">
         <button
           v-tooltip="{ content: $t('TRANSACTION.SAVE_OFFLINE'), toggle: 'hover' }"
           class="TransactionConfirm__save-tx action-button pull-right flex items-center"
@@ -59,6 +59,7 @@ import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
 import TransactionDetail from '../TransactionDetail'
 import SvgIcon from '@/components/SvgIcon'
+import TransactionService from '@/services/transaction'
 
 export default {
   name: 'TransactionConfirm',
@@ -106,6 +107,9 @@ export default {
     },
     address () {
       return this.currentWallet.address
+    },
+    showSave () {
+      return !TransactionService.isMultiSignature(this.transaction)
     }
   },
 

@@ -17,7 +17,7 @@ export default {
 
     passphrase: {
       isValid (value) {
-        if (this.currentWallet.isLedger || this.currentWallet.passphrase) {
+        if (this.isMultiSignature || this.currentWallet.isLedger || this.currentWallet.passphrase) {
           return true
         }
 
@@ -31,7 +31,7 @@ export default {
 
     walletPassword: {
       isValid (value) {
-        if (this.currentWallet.isLedger || !this.currentWallet.passphrase) {
+        if (this.isMultiSignature || this.currentWallet.isLedger || !this.currentWallet.passphrase) {
           return true
         }
 
@@ -69,6 +69,10 @@ export default {
   },
 
   computed: {
+    isMultiSignature () {
+      return !!this.currentWallet.multiSignature
+    },
+
     currentWallet () {
       return this.wallet_fromRoute
     },

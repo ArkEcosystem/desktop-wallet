@@ -28,6 +28,10 @@ export default new BaseModel({
         }
       }
     },
+    multiSignature: {
+      type: ['object', 'null'],
+      default: null
+    },
     name: {
       type: 'string',
       default: '',

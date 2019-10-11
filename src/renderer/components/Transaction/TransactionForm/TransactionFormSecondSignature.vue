@@ -68,27 +68,31 @@
           @input="onFee"
         />
 
-        <div
-          v-if="currentWallet.isLedger"
-          class="mt-10"
-        >
-          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        <div v-if="!isMultiSignature">
+          <div
+            v-if="currentWallet.isLedger"
+            class="mt-10"
+          >
+            {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+          </div>
+
+          <InputPassword
+            v-else-if="currentWallet.passphrase"
+            ref="password"
+            v-model="$v.form.walletPassword.$model"
+            :label="$t('TRANSACTION.PASSWORD')"
+            :is-required="true"
+          />
+
+          <PassphraseInput
+            v-else
+            ref="passphrase"
+            v-model="$v.form.passphrase.$model"
+            :address="currentWallet.address"
+            :pub-key-hash="walletNetwork.version"
+            class="mt-5"
+          />
         </div>
-        <InputPassword
-          v-else-if="currentWallet.passphrase"
-          ref="password"
-          v-model="$v.form.walletPassword.$model"
-          :label="$t('TRANSACTION.PASSWORD')"
-          :is-required="true"
-        />
-        <PassphraseInput
-          v-else
-          ref="passphrase"
-          v-model="$v.form.passphrase.$model"
-          :address="currentWallet.address"
-          :pub-key-hash="walletNetwork.version"
-          class="mt-5"
-        />
 
         <button
           type="button"
@@ -226,7 +230,8 @@ export default {
         secondPassphrase: this.secondPassphrase,
         fee: this.getFee(),
         wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
       }
     },
 
@@ -273,12 +278,14 @@ export default {
     reset () {
       this.isPassphraseStep = false
       this.isPassphraseVerified = false
-      if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
-        this.$set(this.form, 'passphrase', '')
-        this.$refs.passphrase.reset()
-      } else if (!this.currentWallet.isLedger) {
-        this.$set(this.form, 'walletPassword', '')
-        this.$refs.password.reset()
+      if (!this.isMultiSignature) {
+        if (!this.currentWallet.passphrase && !this.currentWallet.isLedger) {
+          this.$set(this.form, 'passphrase', '')
+          this.$refs.passphrase.reset()
+        } else if (!this.currentWallet.isLedger) {
+          this.$set(this.form, 'walletPassword', '')
+          this.$refs.password.reset()
+        }
       }
       this.$v.$reset()
     }

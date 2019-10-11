@@ -33,26 +33,30 @@
         @input="onFee"
       />
 
-      <div
-        v-if="currentWallet.isLedger"
-        class="mt-10"
-      >
-        {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+      <div v-if="!isMultiSignature">
+        <div
+          v-if="currentWallet.isLedger"
+          class="mt-10"
+        >
+          {{ $t('TRANSACTION.LEDGER_SIGN_NOTICE') }}
+        </div>
+
+        <InputPassword
+          v-else-if="currentWallet.passphrase"
+          ref="password"
+          v-model="$v.form.walletPassword.$model"
+          :label="$t('TRANSACTION.PASSWORD')"
+          :is-required="true"
+        />
+
+        <PassphraseInput
+          v-else
+          ref="passphrase"
+          v-model="$v.form.passphrase.$model"
+          :address="currentWallet.address"
+          :pub-key-hash="walletNetwork.version"
+        />
       </div>
-      <InputPassword
-        v-else-if="currentWallet.passphrase"
-        ref="password"
-        v-model="$v.form.walletPassword.$model"
-        :label="$t('TRANSACTION.PASSWORD')"
-        :is-required="true"
-      />
-      <PassphraseInput
-        v-else
-        ref="passphrase"
-        v-model="$v.form.passphrase.$model"
-        :address="currentWallet.address"
-        :pub-key-hash="walletNetwork.version"
-      />
 
       <PassphraseInput
         v-if="currentWallet.secondPublicKey"
@@ -155,7 +159,8 @@ export default {
         passphrase: this.form.passphrase,
         fee: this.getFee(),
         wif: this.form.wif,
-        networkWif: this.walletNetwork.wif
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
       }
 
       if (this.currentWallet.secondPublicKey) {

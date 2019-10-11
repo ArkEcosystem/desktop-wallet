@@ -62,6 +62,19 @@ export default class WalletService {
   }
 
   /**
+   * Generates the public key belonging to a wallet
+   * @param {Object} wallet
+   * @return {String|null}
+   */
+  static getPublicKeyFromWallet (wallet) {
+    if (wallet.multiSignature) {
+      return this.getPublicKeyFromMultiSignatureAsset(wallet.multiSignature)
+    }
+
+    return wallet.publicKey || null
+  }
+
+  /**
    * Generates the public key belonging to the given passphrase
    * @param {String} passphrase
    * @return {String}
