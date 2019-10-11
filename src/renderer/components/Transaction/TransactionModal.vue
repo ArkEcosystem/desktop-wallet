@@ -45,6 +45,7 @@ import MultiSignature from '@/services/client-multisig'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
+import TransactionService from '@/services/transaction'
 import WalletService from '@/services/wallet'
 
 export default {
