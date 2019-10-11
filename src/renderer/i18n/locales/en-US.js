@@ -800,9 +800,9 @@ export default {
       IPFS: 'IPFS',
       MULTI_PAYMENT: 'Multi Payment',
       DELEGATE_RESIGNATION: 'Delegate Resignation',
-      TIMELOCK_LOCK: 'Timelock',
-      TIMELOCK_CLAIM: 'Timelock Claim',
-      TIMELOCK_REFUND: 'Timelock Refund'
+      HTLC_LOCK: 'Timelock',
+      HTLC_CLAIM: 'Timelock Claim',
+      HTLC_REFUND: 'Timelock Refund'
     },
     ERROR: {
       VALIDATION: {
@@ -821,9 +821,9 @@ export default {
       UNVOTE: 'Unvote could not be registered',
       MULTI_SIGN: 'Could not sign transaction',
       MULTI_SIGNATURE: 'Multi signature could not be created',
-      TIMELOCK_LOCK: 'Timelock could not be created',
-      TIMELOCK_CLAIM: 'Timelock Claim could not be created',
-      TIMELOCK_REFUND: 'Timelock Refund could not be created',
+      HTLC_LOCK: 'Timelock could not be created',
+      HTLC_CLAIM: 'Timelock Claim could not be created',
+      HTLC_REFUND: 'Timelock Refund could not be created',
       MULTI_PAYMENT: 'Multi payment could not be created',
       DELEGATE_RESIGNATION: 'Delegate resignation was unsuccessful',
       SAVE_OFFLINE: 'Failed to save transaction file',
@@ -849,9 +849,9 @@ export default {
       MULTI_SIGN: 'Transaction has been signed successfully',
       MULTI_SIGNATURE: 'Multi signature created successfully',
       IPFS: 'IPFS',
-      TIMELOCK_LOCK: 'Timelock created successfully',
-      TIMELOCK_CLAIM: 'Timelock Claim created successfully',
-      TIMELOCK_REFUND: 'Timelock Refund created successfully',
+      HTLC_LOCK: 'Timelock created successfully',
+      HTLC_CLAIM: 'Timelock Claim created successfully',
+      HTLC_REFUND: 'Timelock Refund created successfully',
       MULTI_PAYMENT: 'Multi payment created successfully',
       DELEGATE_RESIGNATION: 'Delegate resignation was successful',
       SAVE_OFFLINE: 'The transaction file was saved successfully in: {path}',

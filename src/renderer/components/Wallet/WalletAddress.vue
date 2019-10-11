@@ -62,13 +62,13 @@
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
     <span v-else-if="type === 8">
-      {{ $t("TRANSACTION.TYPE.TIMELOCK_LOCK") }}
+      {{ $t("TRANSACTION.TYPE.HTLC_LOCK") }}
     </span>
     <span v-else-if="type === 9">
-      {{ $t("TRANSACTION.TYPE.TIMELOCK_CLAIM") }}
+      {{ $t("TRANSACTION.TYPE.HTLC_CLAIM") }}
     </span>
     <span v-else-if="type === 10">
-      {{ $t("TRANSACTION.TYPE.TIMELOCK_REFUND") }}
+      {{ $t("TRANSACTION.TYPE.HTLC_REFUND") }}
     </span>
 
     <SvgIcon
