@@ -558,8 +558,14 @@ export default {
       } catch (error) {
         //
       }
+
       if (!peerStatus) {
         return i18n.t('PEER.STATUS_CHECK_FAILED')
+      }
+
+      let version = '2'
+      if (networkConfig.core && networkConfig.core.version) {
+        version = networkConfig.core.version
       }
 
       return {
@@ -569,7 +575,8 @@ export default {
         height: peerStatus.height,
         status: 'OK',
         latency: 0,
-        isHttps: schemeUrl && schemeUrl[1] === 'https://'
+        isHttps: schemeUrl && schemeUrl[1] === 'https://',
+        version
       }
     }
   }
