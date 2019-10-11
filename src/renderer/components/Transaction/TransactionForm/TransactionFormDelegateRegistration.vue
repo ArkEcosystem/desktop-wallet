@@ -167,6 +167,10 @@ export default {
 
     async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
       return this.$client.buildDelegateRegistration(transactionData, isAdvancedFee, returnObject)
+    },
+
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.DELEGATE_REGISTRATION'))
     }
   },
 

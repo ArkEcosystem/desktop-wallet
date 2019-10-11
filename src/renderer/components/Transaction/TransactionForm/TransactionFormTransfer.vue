@@ -373,6 +373,10 @@ export default {
       return this.$client.buildTransfer(transactionData, isAdvancedFee, returnObject)
     },
 
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.TRANSFER'))
+    },
+
     emitNext (transaction) {
       this.$emit('next', {
         transaction,

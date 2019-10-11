@@ -264,6 +264,10 @@ export default {
       return this.$client.buildVote(transactionData, isAdvancedFee, returnObject)
     },
 
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.VOTE'))
+    },
+
     postSubmit () {
       this.reset()
     },

@@ -128,7 +128,14 @@ export default {
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
-        transaction = await this.buildTransaction(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        try {
+          transaction = await this.buildTransaction(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
+        } catch (error) {
+          this.$logger.error('Could not build transaction: ', error)
+          if (this.transactionError) {
+            this.transactionError(error)
+          }
+        }
       } else {
         success = false
         this.showLedgerLoader = true

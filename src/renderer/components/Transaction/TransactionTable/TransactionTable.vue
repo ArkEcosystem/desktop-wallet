@@ -100,6 +100,27 @@
           />
         </div>
 
+        <div
+          v-else-if="data.column.field === 'asset.ipfs'"
+          :class="[ isDashboard ? 'dashboard-address' : 'max-w-xxs' ]"
+        >
+          <a
+            class="flex items-center whitespace-no-wrap"
+            href="#"
+            @click.stop="electron_openExternal(getIpfsUrl(data.row))"
+          >
+            <span class="mr-1">
+              {{ data.formattedRow[data.column.field] }}
+            </span>
+
+            <SvgIcon
+              name="open-external"
+              view-box="0 0 12 12"
+              class="text-theme-page-text-light"
+            />
+          </a>
+        </div>
+
         <span
           v-else
           :class="{ 'word-break-all': data.column.field === 'vendorField' }"
@@ -122,10 +143,10 @@
 </template>
 
 <script>
+import { TRANSACTION_TYPES } from '@config'
 import SvgIcon from '@/components/SvgIcon'
 import truncateMiddle from '@/filters/truncate-middle'
-import TransactionShow from './TransactionShow'
-import TransactionStatusIcon from './TransactionStatusIcon'
+import { TransactionShow, TransactionStatusIcon } from '@/components/Transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import TableWrapper from '@/components/utils/TableWrapper'
 
@@ -146,10 +167,17 @@ export default {
       required: false,
       default: false
     },
+
     isDashboard: {
       type: Boolean,
       required: false,
       default: false
+    },
+
+    transactionType: {
+      type: Number,
+      required: false,
+      default: null
     }
   },
 
@@ -168,7 +196,7 @@ export default {
         vendorFieldClass.push('xl:table-cell')
       }
 
-      return [
+      const columns = [
         {
           label: this.$t('TRANSACTION.ID'),
           field: 'id',
@@ -181,22 +209,36 @@ export default {
           formatFn: this.formatDate,
           tdClass: 'text-center',
           thClass: 'text-center'
-        },
-        {
-          label: this.$t('TRANSACTION.SENDER'),
-          field: 'sender'
-        },
-        {
-          label: this.$t('TRANSACTION.RECIPIENT'),
-          field: 'recipient'
-        },
-        {
-          label: this.$t('TRANSACTION.VENDOR_FIELD'),
-          field: 'vendorField',
-          formatFn: this.formatSmartbridge,
-          tdClass: vendorFieldClass.join(' '),
-          thClass: vendorFieldClass.join(' ')
-        },
+        }
+      ]
+
+      if (this.transactionType === TRANSACTION_TYPES.GROUP_1.IPFS) {
+        columns.push({
+          label: this.$t('TRANSACTION.HASH'),
+          field: 'asset.ipfs',
+          formatFn: this.formatHash
+        })
+      } else {
+        columns.push(...[
+          {
+            label: this.$t('TRANSACTION.SENDER'),
+            field: 'sender'
+          },
+          {
+            label: this.$t('TRANSACTION.RECIPIENT'),
+            field: 'recipient'
+          },
+          {
+            label: this.$t('TRANSACTION.VENDOR_FIELD'),
+            field: 'vendorField',
+            formatFn: this.formatSmartbridge,
+            tdClass: vendorFieldClass.join(' '),
+            thClass: vendorFieldClass.join(' ')
+          }
+        ])
+      }
+
+      columns.push(...[
         {
           label: this.$t('TRANSACTION.AMOUNT'),
           type: 'number',
@@ -205,7 +247,9 @@ export default {
           tdClass: 'text-right',
           thClass: 'text-right'
         }
-      ]
+      ])
+
+      return columns
     }
   },
 
@@ -233,6 +277,10 @@ export default {
       return value
     },
 
+    formatHash (value) {
+      return truncateMiddle(value, 10)
+    },
+
     formatRow (row) {
       const classes = [
         row.confirmations === 0 ? 'unconfirmed' : 'confirmed'
@@ -243,6 +291,10 @@ export default {
       }
 
       return classes.join(' ')
+    },
+
+    getIpfsUrl (row) {
+      return `https://cloudflare-ipfs.com/ipfs/${row.asset.ipfs}`
     },
 
     openTransactions (id) {

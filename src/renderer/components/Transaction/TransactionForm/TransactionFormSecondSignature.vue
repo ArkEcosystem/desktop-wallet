@@ -234,6 +234,10 @@ export default {
       return this.$client.buildSecondSignatureRegistration(transactionData, isAdvancedFee, returnObject)
     },
 
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.SECOND_SIGNATURE'))
+    },
+
     postSubmit () {
       this.reset()
 
