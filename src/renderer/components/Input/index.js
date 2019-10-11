@@ -6,6 +6,7 @@ import InputFee from './InputFee'
 import InputField from './InputField'
 import InputLanguage from './InputLanguage'
 import InputPassword from './InputPassword'
+import InputPublicKey from './InputPublicKey'
 import InputSelect from './InputSelect'
 import InputSwitch from './InputSwitch'
 import InputText from './InputText'
@@ -22,6 +23,7 @@ export {
   InputField,
   InputLanguage,
   InputPassword,
+  InputPublicKey,
   InputSelect,
   InputSwitch,
   InputText
