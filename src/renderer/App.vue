@@ -404,10 +404,6 @@ export default {
 </script>
 
 <style scoped>
-.blur {
-  filter: blur(4px)
-}
-
 .App__main {
   transition: .1s filter linear;
 }
