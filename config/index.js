@@ -131,9 +131,11 @@ exports.V1 = {
     25 * 1e8, // Delegate registration
     1 * 1e8, // Vote
     5 * 1e8, // Multisignature
-    0 * 1e8, // IPFS (not supported yet)
-    0 * 1e8, // Timelock transfer (not supported yet)
-    0 * 1e8, // Multu-payment (not supported yet)
-    0 * 1e8 // Delegate resignation (not supported yet)
+    5 * 1e8, // IPFS
+    1 * 1e8, // Multi-payment
+    25 * 1e8, // Delegate resignation
+    1 * 1e8, // HTLC Lock
+    0 * 1e8, // HTLC Claim
+    0 * 1e8 // HTLC Refund
   ]
 }
