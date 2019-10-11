@@ -246,7 +246,7 @@ export default {
     },
 
     reportPlugin () {
-      const params = URLSearchParams({
+      const params = new URLSearchParams({
         type: 'desktop-wallet-plugin-report',
         id: this.plugin.id,
         version: this.plugin.version
