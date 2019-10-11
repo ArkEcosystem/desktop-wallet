@@ -20,10 +20,10 @@
     got "^9.6.0"
     is-url-superb "^3.0.0"
 
-"@arkecosystem/crypto@^2.6.0-alpha.0":
-  version "2.6.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-alpha.0.tgz#db22d5688c68d7dfad78f125625ba01557277bc6"
-  integrity sha512-Uq2PvV+YsvFtwB0VCaNwoAGsEBPRC4yspTcmIgRZ59SFcHTEYxsDkGJIDzSt3PGJ8nTIqCWhOt41LcZcIc59vQ==
+"@arkecosystem/crypto@^2.6.0-alpha.1":
+  version "2.6.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-2.6.0-alpha.1.tgz#4a4b82107c0904059befa6fc5a78776666dcda1d"
+  integrity sha512-PT5yc77v8FhhJk+iJG5Npn4rRRqdZ8E6seAZrlHmblTah7shox/CY362HpljxDrjENDowcIcHyGvufE2PJedwQ==
   dependencies:
     "@hapi/joi" "^15.1.0"
     ajv "^6.10.2"
@@ -38,6 +38,7 @@
     bytebuffer "^5.0.1"
     dayjs "^1.8.15"
     deepmerge "^4.0.0"
+    ipaddr.js "^1.9.0"
     lodash.get "^4.4.2"
     lodash.set "^4.3.2"
     lodash.sumby "^4.6.0"
@@ -8127,9 +8128,9 @@ node-forge@0.8.2:
   integrity sha512-mXQ9GBq1N3uDCyV1pdSzgIguwgtVpM7f5/5J4ipz12PKWElmPpVWLDuWl8iXmhysr21+WmX/OJ5UKx82wjomgg==
 
 node-forge@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.0.tgz#d624050edbb44874adca12bb9a52ec63cb782579"
-  integrity sha512-7ASaDa3pD+lJ3WvXFsxekJQelBKRpne+GOVbLbtHYdd7pFspyeuJHnWfLplGf3SwKGbfs/aYl5V/JCIaHVUKKQ==
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.1.tgz#775368e6846558ab6676858a4d8c6e8d16c677b5"
+  integrity sha512-G6RlQt5Sb4GMBzXvhfkeFmbqR6MzhtnT7VTHuLadjkii3rdYHNdw0m8zA4BTxVIh68FicCQ2NSUANpsqkr9jvQ==
 
 node-hid@^0.7.9:
   version "0.7.9"
