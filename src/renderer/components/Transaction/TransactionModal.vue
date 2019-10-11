@@ -296,18 +296,23 @@ export default {
     },
 
     storeTransaction (transaction) {
-      const { id, type, amount, fee, senderPublicKey, vendorField } = transaction
+      const { type, amount, fee, senderPublicKey, vendorField } = transaction
+
+      if (!transaction.timestamp) {
+        transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
+      } else if (transaction.timestamp > Math.floor(new Date().getTime() / 1000)) {
+        transaction.timestamp = Math.floor(transaction.timestamp / 1000)
+      }
 
       if (!transaction.timestamp) {
         transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
       }
 
       const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
-      const epoch = new Date(this.walletNetwork.constants.epoch)
-      const timestamp = epoch.getTime() + transaction.timestamp * 1000
+      const timestamp = transaction.timestamp * 1000
 
       this.$store.dispatch('transaction/create', {
-        id,
+        id: TransactionService.getId(transaction),
         type,
         amount,
         fee,
