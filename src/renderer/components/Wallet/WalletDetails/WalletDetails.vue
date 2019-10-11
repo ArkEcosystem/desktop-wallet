@@ -177,6 +177,8 @@ export default {
     WalletDelegates,
     WalletExchange,
     WalletHeading,
+    WalletIpfs,
+    WalletMultiSignature,
     WalletSelectDelegate,
     WalletSignVerify,
     WalletStatistics,

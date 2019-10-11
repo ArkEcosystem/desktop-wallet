@@ -3,6 +3,30 @@
     key="SecondaryActions"
     class="WalletHeading__SecondaryActions flex content-end"
   >
+    <ButtonDropdown
+      v-if="registrationTypes.length"
+      :classes="buttonStyle"
+      :items="registrationTypes"
+      title="Registration"
+    >
+      <ButtonModal
+        slot="button"
+        slot-scope="{ item, triggerClose }"
+        :label="item.label"
+        class="option-heading-button whitespace-no-wrap w-full"
+        @toggle="triggerClose"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="item.type"
+            @cancel="toggle"
+            @sent="toggle"
+          />
+        </template>
+      </ButtonModal>
+    </ButtonDropdown>
+
     <ButtonModal
       :class="buttonStyle"
       :label="currentWallet.isContact ? $t('WALLET_HEADING.ACTIONS.CONTACT_NAME') : $t('WALLET_HEADING.ACTIONS.WALLET_NAME')"
@@ -26,38 +50,6 @@
     </ButtonModal>
 
     <ButtonModal
-      v-show="!currentWallet.isContact && !currentWallet.isDelegate"
-      :class="buttonStyle"
-      :label="$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE')"
-      icon="register-delegate"
-    >
-      <template slot-scope="{ toggle, isOpen }">
-        <TransactionModal
-          v-if="isOpen"
-          :type="2"
-          @cancel="toggle"
-          @sent="toggle"
-        />
-      </template>
-    </ButtonModal>
-
-    <ButtonModal
-      v-show="!currentWallet.isContact && !currentWallet.isLedger && !currentWallet.secondPublicKey"
-      :class="buttonStyle"
-      :label="$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE')"
-      icon="2nd-passphrase"
-    >
-      <template slot-scope="{ toggle, isOpen }">
-        <TransactionModal
-          v-if="isOpen"
-          :type="1"
-          @cancel="toggle"
-          @sent="toggle"
-        />
-      </template>
-    </ButtonModal>
-
-    <ButtonModal
       v-show="!currentWallet.isLedger"
       :class="buttonStyle"
       :label="$t('WALLET_HEADING.ACTIONS.DELETE_WALLET')"
@@ -76,7 +68,7 @@
 </template>
 
 <script>
-import { ButtonModal } from '@/components/Button'
+import { ButtonDropdown, ButtonModal } from '@/components/Button'
 import { ContactRenameModal } from '@/components/Contact'
 import { WalletRenameModal, WalletRemovalConfirmation } from '@/components/Wallet'
 import { TransactionModal } from '@/components/Transaction'
@@ -85,6 +77,7 @@ export default {
   name: 'WalletHeadingSecondaryActions',
 
   components: {
+    ButtonDropdown,
     ButtonModal,
     ContactRenameModal,
     WalletRenameModal,
@@ -97,8 +90,56 @@ export default {
       return 'option-heading-button whitespace-no-wrap mr-2 px-3 py-2'
     },
 
+    currentNetwork () {
+      return this.$store.getters['session/network']
+    },
+
     currentWallet () {
       return this.wallet_fromRoute
+    },
+
+    registrationTypes () {
+      const types = []
+
+      if (this.currentWallet.isContact) {
+        return []
+      }
+
+      if (!this.currentWallet.multiSignature) {
+        if (!this.currentWallet.isLedger && !this.currentWallet.secondPublicKey) {
+          types.push({
+            label: this.$t('WALLET_HEADING.ACTIONS.SECOND_PASSPHRASE'),
+            type: 1
+          })
+        }
+
+        if (!this.currentWallet.isDelegate) {
+          types.push({
+            label: this.$t('WALLET_HEADING.ACTIONS.REGISTER_DELEGATE'),
+            type: 2
+          })
+        }
+      }
+
+      if (!this.currentNetwork.milestone || !this.currentNetwork.milestone.aip11) {
+        return types
+      }
+
+      if (!this.currentWallet.multiSignature) {
+        types.push({
+          label: this.$t('WALLET_HEADING.ACTIONS.REGISTER_MULTISIGNATURE'),
+          type: 4
+        })
+      }
+
+      if (this.currentWallet.isDelegate) {
+        types.push({
+          label: this.$t('WALLET_HEADING.ACTIONS.RESIGN_DELEGATE'),
+          type: 7
+        })
+      }
+
+      return types
     }
   },
 
@@ -109,3 +150,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.ButtonDropdown__list {
+  background-color: var(--theme-option-heading-button);
+}
+</style>

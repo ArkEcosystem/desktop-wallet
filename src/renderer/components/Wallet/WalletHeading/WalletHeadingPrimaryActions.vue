@@ -51,28 +51,56 @@
       </template>
     </ButtonModal>
 
-    <ButtonModal
+    <ButtonDropdown
       v-show="!currentWallet.isContact"
-      :class="buttonStyle"
-      :label="$t('TRANSACTION.SEND')"
-      icon="send"
-      view-box="0 0 12 12"
+      :classes="buttonStyle"
+      :items="sendOptions"
     >
-      <template slot-scope="{ toggle, isOpen }">
-        <TransactionModal
-          v-if="isOpen"
-          :type="0"
-          @cancel="toggle"
-          @close="toggle"
-          @sent="toggle"
-        />
-      </template>
-    </ButtonModal>
+      <ButtonModal
+        slot="primaryButton"
+        class="option-heading-button px-3 py-2"
+        :class="{
+          'rounded-tr-none': hasAip11,
+          'rounded-br-none': hasAip11,
+          'mr-2': !hasAip11
+        }"
+        :label="$t('TRANSACTION.SEND')"
+        icon="send"
+        view-box="0 0 12 12"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="0"
+            @cancel="toggle"
+            @close="toggle"
+            @sent="toggle"
+          />
+        </template>
+      </ButtonModal>
+
+      <ButtonModal
+        slot="button"
+        slot-scope="{ item, triggerClose }"
+        :label="item.label"
+        class="option-heading-button whitespace-no-wrap w-full"
+        @toggle="triggerClose"
+      >
+        <template slot-scope="{ toggle, isOpen }">
+          <TransactionModal
+            v-if="isOpen"
+            :type="item.type"
+            @cancel="toggle"
+            @sent="toggle"
+          />
+        </template>
+      </ButtonModal>
+    </ButtonDropdown>
   </div>
 </template>
 
 <script>
-import { ButtonModal, ButtonReload } from '@/components/Button'
+import { ButtonDropdown, ButtonModal, ButtonReload } from '@/components/Button'
 import { ModalQrCode } from '@/components/Modal'
 import { TransactionModal } from '@/components/Transaction'
 import { ContactRenameModal } from '@/components/Contact'
@@ -83,6 +111,7 @@ export default {
   inject: ['switchToTab', 'walletVote'],
 
   components: {
+    ButtonDropdown,
     ButtonModal,
     ButtonReload,
     ModalQrCode,
@@ -106,8 +135,31 @@ export default {
       return this.wallet_fromRoute
     },
 
+    currentNetwork () {
+      return this.session_network
+    },
+
     doesNotExist () {
       return !this.$store.getters['wallet/byAddress'](this.currentWallet.address)
+    },
+
+    hasAip11 () {
+      return this.currentNetwork.milestone ? !!this.currentNetwork.milestone.aip11 : false
+    },
+
+    sendOptions () {
+      const options = []
+
+      if (!this.hasAip11) {
+        return options
+      }
+
+      options.push({
+        label: this.$t('TRANSACTION.TYPE.MULTI_PAYMENT'),
+        type: 6
+      })
+
+      return options
     }
   },
 
