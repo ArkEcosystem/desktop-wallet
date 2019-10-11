@@ -83,7 +83,9 @@ export default {
   },
 
   mounted () {
-    this.form.fee = this.$refs.fee.fee
+    if (this.$refs.fee) {
+      this.form.fee = this.$refs.fee.fee
+    }
   },
 
   methods: {
@@ -119,7 +121,7 @@ export default {
 
     async submit () {
       // Ensure that fee has value, even when the user has not interacted
-      if (!this.form.fee) {
+      if (!this.form.fee && this.$refs.fee) {
         this.$set(this.form, 'fee', this.$refs.fee.fee)
       }
 
