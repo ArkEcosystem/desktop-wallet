@@ -5,7 +5,8 @@ import gotWallet from 'got'
 export default class MultiSignature {
   static async performHandshake ({ host, port }) {
     try {
-      const response = (await got.get(`${host}:${port}/handshake`))
+      // this request should fail because the endpoint does not exist
+      await got.get(`${host}:${port}/handshake`)
 
       return false
     } catch (error) {
