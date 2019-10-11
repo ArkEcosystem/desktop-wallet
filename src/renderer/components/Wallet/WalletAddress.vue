@@ -56,7 +56,7 @@
       {{ $t("TRANSACTION.TYPE.IPFS") }}
     </span>
     <span v-else-if="type === 6">
-      {{ $t("TRANSACTION.TYPE.TIMELOCK_TRANSFER") }}
+      {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
     </span>
     <span v-else-if="type === 7">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}

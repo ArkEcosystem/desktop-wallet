@@ -287,8 +287,13 @@ export default {
 .TransactionModal {
   max-width: 45rem
 }
+
 .TransactionModalTransfer {
   /* To allow more space on the fee slider */
   min-width: 38rem;
+}
+
+.TransactionModalMultiPayment {
+  min-width: 35rem;
 }
 </style>

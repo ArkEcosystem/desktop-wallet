@@ -736,6 +736,63 @@ export default class ClientService {
   }
 
   /**
+   * Build a multi-payment transfer transaction.
+   * @param {Object} data
+   * @param {Number} data.amount - amount to send, as arktoshi
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.recipientId
+   * @param {String} data.vendorField
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildMultiPayment (
+    {
+      address,
+      recipients,
+      fee,
+      vendorField,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Transfer fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .multiPayment()
+      .recipientId(address)
+      .fee(fee)
+      .vendorField(vendorField)
+
+    for (const recipient of recipients) {
+      transaction.addPayment(recipient.address, recipient.amount)
+    }
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature
+    }, returnObject)
+  }
+
+  /**
    * Build a delegate resignation transaction.
    * @param {Object} data
    * @param {Number} data.fee - dynamic fee, as arktoshi
