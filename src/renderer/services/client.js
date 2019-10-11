@@ -519,7 +519,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
