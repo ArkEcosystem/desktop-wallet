@@ -672,7 +672,7 @@ class PluginManager {
 
     configs = this.applyMinVersionCheck(configs)
 
-    const plugins = configs.reduce((acc, config) => {
+    const plugins = configs.reduce((plugins, config) => {
       plugins[config.id] = { config }
       return plugins
     }, {})
