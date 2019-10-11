@@ -5,7 +5,7 @@
       @click="toggleDropdown"
     >
       <span class="mr-1 md:whitespace-no-wrap">
-        {{ $t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`) }}
+        {{ strings_capitalizeFirst($t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`)) }}
       </span>
 
       <SvgIcon
@@ -31,7 +31,7 @@
         @click="emitFilterChange(filter)"
       >
         <div class="mx-8 py-4 px-5 text-center">
-          {{ $t(`PAGES.PLUGIN_MANAGER.FILTERS.${filter.toUpperCase()}`) }}
+          {{ strings_capitalizeFirst($t(`PAGES.PLUGIN_MANAGER.FILTERS.${filter.toUpperCase()}`)) }}
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@ export default {
 }
 
 .PluginManagerButtonFilter__options {
-  @apply absolute shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs
+  @apply absolute shadow list-reset flex flex-col bg-theme-feature rounded py-2 overflow-y-auto max-h-2xs z-20
 }
 .PluginManagerButtonFilter__options__option {
   @apply cursor-pointer;

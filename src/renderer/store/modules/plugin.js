@@ -60,7 +60,7 @@ export default {
     },
 
     byCategory: (_, getters) => (category, source = 'all') => {
-      return category === 'all' ? getters.all : getters[source].filter(plugin => {
+      return category === 'all' ? getters[source] : getters[source].filter(plugin => {
         return plugin.config.categories.includes(category)
       })
     },

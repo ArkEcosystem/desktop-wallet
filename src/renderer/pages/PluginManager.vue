@@ -51,16 +51,16 @@
             @click="toggleMenu"
           />
 
-          <PluginManagerButtonFilter
-            :active-filter="activeFilter"
-            :class="{ 'ml-6': !isMenuOpen }"
-            @filter-change="onFilterChange"
-          />
-
           <ButtonLayout
             :grid-layout="hasGridLayout"
-            class="ml-2"
+            :class="{ 'ml-6': !isMenuOpen }"
             @click="toggleLayout"
+          />
+
+          <PluginManagerButtonFilter
+            :active-filter="activeFilter"
+            class="ml-2"
+            @filter-change="onFilterChange"
           />
 
           <ButtonReload
@@ -111,7 +111,7 @@
             v-if="query"
             tag="span"
             class="text-center mt-4"
-            path="PAGES.PLUGIN_MANAGER.NO_RESULTS"
+            path="PAGES.PLUGIN_MANAGER.NO_SEARCH_RESULTS"
           >
             <span
               class="inline-block font-bold"
@@ -125,8 +125,15 @@
             v-else
             tag="span"
             class="text-center mt-4"
-            path="PAGES.PLUGIN_MANAGER.EMPTY_CATEGORY"
+            path="PAGES.PLUGIN_MANAGER.NO_RESULTS"
           >
+            <span
+              v-if="this.activeFilter !== 'all'"
+              place="filter"
+            >
+              {{ $t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`) }}
+            </span>
+
             <span
               class="inline-block font-bold"
               place="category"

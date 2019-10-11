@@ -596,12 +596,11 @@ export default {
         OTHER: 'Other'
       },
       FILTERS: {
-        ALL: 'All',
-        AVAILABLE: 'Available',
-        INSTALLED: 'Installed'
+        ALL: 'all',
+        INSTALLED: 'installed'
       },
-      NO_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
-      EMPTY_CATEGORY: 'There are no plugins under the category {category} yet',
+      NO_SEARCH_RESULTS: 'Unfortunately, searching for "{query}" returned no results',
+      NO_RESULTS: 'There are no {filter} plugins under the category {category} yet',
       SEARCH: 'Search',
       RELOADING: 'The repository is being reloaded',
       CLICK_TO_RELOAD: 'Reload the plugin repository',
