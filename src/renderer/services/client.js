@@ -952,7 +952,7 @@ export default class ClientService {
     }
 
     if (network.constants.aip11) {
-      Managers.configManager.setConfig(network.crypto)
+      Managers.configManager.setConfig(cloneDeep(network.crypto))
       Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
 
       let nonce = '1'
