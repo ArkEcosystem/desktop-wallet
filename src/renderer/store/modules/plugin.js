@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import pluginManager from '@/services/plugin-manager'
 import releaseService from '@/services/release'
-import { cloneDeep, differenceWith, sortBy, uniqBy } from 'lodash'
+import { cloneDeep, differenceWith, uniqBy } from 'lodash'
 import semver from 'semver'
 
 export default {
@@ -20,27 +20,24 @@ export default {
   getters: {
     lastFetched: state => state.lastFetched,
 
-    all: (state, getters, rootGetters) => {
+    all: (_, getters, rootGetters) => {
       const filterPlugins = rootGetters['session/filterBlacklistedPlugins']
 
-      let plugins = uniqBy([
-        ...(Object.values(getters.installed).map(plugin => plugin.config)),
-        ...Object.values(getters.available)
-      ], 'id')
+      let plugins = uniqBy([...getters.installed, ...getters.available], 'config.id')
 
       // TODO global blacklist
       if (filterPlugins) {
         plugins = differenceWith(plugins, getters.blacklisted, (plugin, blacklisted) => {
-          return plugin.id === blacklisted
+          return plugin.config.id === blacklisted
         })
       }
 
-      return sortBy(plugins, 'title')
+      return plugins
     },
 
-    available: state => state.available,
+    available: state => Object.values(state.available),
 
-    availableById: (state, getters) => pluginId => {
+    availableById: (_, getters) => pluginId => {
       const plugins = getters.available
 
       if (!Object.keys(plugins).length) {
@@ -50,8 +47,10 @@ export default {
       return plugins[pluginId] || null
     },
 
-    installedById: (state, getters) => id => {
-      const plugins = Object.values(getters.installed)
+    installed: state => Object.values(state.installed),
+
+    installedById: (_, getters) => id => {
+      const plugins = getters.installed
 
       if (!plugins.length) {
         return null
@@ -60,20 +59,16 @@ export default {
       return plugins.find(plugin => id === plugin.config.id)
     },
 
-    installed: state => state.installed,
-
-    byCategory: (state, getters) => (category, source) => {
-      const plugins = getters[source]
-
-      return category === 'all' ? plugins : plugins.filter(plugin => {
-        return plugin.categories.includes(category)
+    byCategory: (_, getters) => (category, source = 'all') => {
+      return category === 'all' ? getters.all : getters[source].filter(plugin => {
+        return plugin.config.categories.includes(category)
       })
     },
 
-    byQuery: (state, getters) => (query, source) => {
+    byQuery: (_, getters) => (query, source = 'all') => {
       return getters[source].filter(plugin => {
         return ['id', 'title', 'description'].some(property => {
-          return plugin[property].includes(query)
+          return plugin.config[property].includes(query)
         })
       })
     },
@@ -98,19 +93,19 @@ export default {
       return state.enabled[profileId]
     },
 
-    isInstalled: state => pluginId => !!state.installed[pluginId],
+    isInstalled: (_, getters) => pluginId => !!getters.installedById(pluginId),
 
-    isUpdateAvailable: (state, getters) => pluginId => {
+    isUpdateAvailable: (_, getters) => pluginId => {
       const available = getters.availableById(pluginId)
       const installed = getters.installedById(pluginId)
 
-      return available && installed ? semver.lt(installed.config.version, available.version) : false
+      return available && installed ? semver.lt(installed.config.version, available.config.version) : false
     },
 
-    latestVersion: (state, getters) => pluginId => {
+    latestVersion: (_, getters) => pluginId => {
       const plugin = getters.availableById(pluginId)
 
-      return plugin ? plugin.version : null
+      return plugin ? plugin.config.version : null
     },
 
     isEnabled: (state, getters) => (pluginId, profileId) => {
@@ -129,7 +124,7 @@ export default {
       return state.loaded[profileId] ? !!state.loaded[profileId][pluginId] : null
     },
 
-    isBlacklisted: (state, getters) => pluginId => {
+    isBlacklisted: (_, getters) => pluginId => {
       if (!getters.blacklisted.length) {
         return false
       }
@@ -137,7 +132,7 @@ export default {
       return getters.blacklisted.includes(pluginId)
     },
 
-    isInstalledSupported: (state, getters) => pluginId => {
+    isInstalledSupported: (_, getters) => pluginId => {
       const plugin = getters.installedById(pluginId)
 
       if (!plugin.config.minVersion) {

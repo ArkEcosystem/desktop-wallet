@@ -171,9 +171,8 @@
 </template>
 
 <script>
-// import sortBy from 'lodash/sortBy'
 import { ipcRenderer } from 'electron'
-import { isEqual } from 'lodash'
+import { isEqual, sortBy } from 'lodash'
 import { ButtonLayout, ButtonReload } from '@/components/Button'
 import {
   PluginDetailsModal,
@@ -252,11 +251,15 @@ export default {
     },
 
     plugins () {
+      let plugins
+
       if (this.query) {
-        return this.$store.getters['plugin/byQuery'](this.query, this.activeFilter)
+        plugins = this.$store.getters['plugin/byQuery'](this.query, this.activeFilter)
+      } else {
+        plugins = this.$store.getters['plugin/byCategory'](this.activeCategory, this.activeFilter)
       }
 
-      return this.$store.getters['plugin/byCategory'](this.activeCategory, this.activeFilter)
+      return sortBy(plugins.map(plugin => plugin.config), 'title')
     },
 
     sortParams: {

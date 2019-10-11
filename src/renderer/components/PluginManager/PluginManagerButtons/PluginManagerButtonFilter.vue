@@ -59,7 +59,6 @@ export default {
     isOpen: false,
     filters: [
       'all',
-      'available',
       'installed'
     ]
   }),

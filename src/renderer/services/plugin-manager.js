@@ -664,17 +664,17 @@ class PluginManager {
   }
 
   async fetchPluginsFromAdapter () {
-    let plugins = await this.adapter.all()
+    let configs = await this.adapter.all()
 
-    plugins = await Promise.all(plugins.map(async config => {
+    configs = await Promise.all(configs.map(async config => {
       return sanitize(config)
     }))
 
-    plugins = this.applyMinVersionCheck(plugins)
+    configs = this.applyMinVersionCheck(configs)
 
-    plugins = plugins.reduce((acc, plugin) => {
-      acc[plugin.id] = plugin
-      return acc
+    const plugins = configs.reduce((acc, config) => {
+      plugins[config.id] = { config }
+      return plugins
     }, {})
 
     this.app.$store.dispatch('plugin/setAvailable', plugins)
