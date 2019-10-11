@@ -150,7 +150,7 @@ export default {
         return
       }
 
-      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.VOTE)
+      const votes = transactions.filter(tx => tx.type === config.TRANSACTION_TYPES.GROUP_1.VOTE)
       if (!votes.length) {
         return
       }

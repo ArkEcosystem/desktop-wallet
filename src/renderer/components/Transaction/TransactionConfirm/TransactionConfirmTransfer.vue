@@ -44,7 +44,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmTransfer',
 
-  transactionType: TRANSACTION_TYPES.TRANSFER,
+  transactionType: TRANSACTION_TYPES.GROUP_1.TRANSFER,
 
   inject: ['currentWallet', 'transaction'],
 

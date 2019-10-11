@@ -321,7 +321,7 @@ class Action {
     let message = {}
 
     switch (transaction.type) {
-      case config.TRANSACTION_TYPES.SECOND_SIGNATURE: {
+      case config.TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE: {
         message = {
           translation: 'SYNCHRONIZER.NEW_SECOND_SIGNATURE',
           options: {
@@ -330,7 +330,7 @@ class Action {
         }
         break
       }
-      case config.TRANSACTION_TYPES.DELEGATE_REGISTRATION: {
+      case config.TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION: {
         message = {
           translation: 'SYNCHRONIZER.NEW_DELEGATE_REGISTRATION',
           options: {
@@ -340,7 +340,7 @@ class Action {
         }
         break
       }
-      case config.TRANSACTION_TYPES.VOTE: {
+      case config.TRANSACTION_TYPES.GROUP_1.VOTE: {
         const type = transaction.asset.votes[0].substring(0, 1) === '+' ? 'VOTE' : 'UNVOTE'
         const voteUnvote = this.$t(`SYNCHRONIZER.${type}`)
         message = {

@@ -36,7 +36,7 @@ export default class TransactionService {
     const transaction = transactionObject.getStruct()
     transaction.senderPublicKey = wallet.publicKey // Restore original sender public key
 
-    if (transactionObject.data.type === TRANSACTION_TYPES.VOTE) {
+    if (transactionObject.data.type === TRANSACTION_TYPES.GROUP_1.VOTE) {
       transaction.recipientId = wallet.address
     }
 

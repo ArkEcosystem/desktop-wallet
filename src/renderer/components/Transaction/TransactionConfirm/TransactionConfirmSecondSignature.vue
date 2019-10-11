@@ -19,7 +19,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmSecondSignature',
 
-  transactionType: TRANSACTION_TYPES.SECOND_SIGNATURE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE,
 
   inject: ['currentWallet', 'transaction'],
 

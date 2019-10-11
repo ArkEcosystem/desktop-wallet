@@ -163,7 +163,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormSecondSignature',
 
-  transactionType: TRANSACTION_TYPES.SECOND_SIGNATURE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.SECOND_SIGNATURE,
 
   components: {
     ButtonClipboard,

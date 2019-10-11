@@ -186,7 +186,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormTransfer',
 
-  transactionType: TRANSACTION_TYPES.TRANSFER,
+  transactionType: TRANSACTION_TYPES.GROUP_1.TRANSFER,
 
   components: {
     InputAddress,
@@ -432,7 +432,7 @@ export default {
         try {
           const transaction = JSON.parse(raw)
 
-          if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.TRANSFER) {
+          if (parseInt(transaction.type, 10) !== TRANSACTION_TYPES.GROUP_1.TRANSFER) {
             throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
           }
 

@@ -158,7 +158,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormVote',
 
-  transactionType: TRANSACTION_TYPES.VOTE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
 
   components: {
     Collapse,

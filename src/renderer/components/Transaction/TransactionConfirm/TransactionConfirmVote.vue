@@ -19,7 +19,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmVote',
 
-  transactionType: TRANSACTION_TYPES.VOTE,
+  transactionType: TRANSACTION_TYPES.GROUP_1.VOTE,
 
   inject: ['currentWallet', 'transaction'],
 

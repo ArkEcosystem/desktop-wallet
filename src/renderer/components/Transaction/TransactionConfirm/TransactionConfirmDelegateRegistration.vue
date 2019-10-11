@@ -23,7 +23,7 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 export default {
   name: 'TransactionConfirmDelegateRegistration',
 
-  transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
+  transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
 
   inject: ['currentWallet', 'transaction'],
 

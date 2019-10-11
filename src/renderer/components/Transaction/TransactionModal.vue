@@ -60,7 +60,7 @@ export default {
     type: {
       type: Number,
       required: true,
-      validator: value => includes(TRANSACTION_TYPES, value)
+      validator: value => includes(TRANSACTION_TYPES.GROUP_1, value)
     },
     title: {
       type: String,
@@ -78,7 +78,7 @@ export default {
 
   computed: {
     transactionKey () {
-      const key = findKey(TRANSACTION_TYPES, type => this.type === type)
+      const key = findKey(TRANSACTION_TYPES.GROUP_1, type => this.type === type)
       if (key === 'VOTE' && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
           return 'UNVOTE'
@@ -88,7 +88,7 @@ export default {
       return key
     },
     typeClass () {
-      const type = findKey(TRANSACTION_TYPES, type => this.type === type)
+      const type = findKey(TRANSACTION_TYPES.GROUP_1, type => this.type === type)
       return `TransactionModal${upperFirst(camelCase(type))}`
     },
     typeName () {

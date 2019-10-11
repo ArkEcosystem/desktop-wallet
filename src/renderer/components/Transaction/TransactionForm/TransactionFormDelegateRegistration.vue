@@ -106,7 +106,7 @@ import mixin from './mixin'
 export default {
   name: 'TransactionFormDelegateRegistration',
 
-  transactionType: TRANSACTION_TYPES.DELEGATE_REGISTRATION,
+  transactionType: TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
 
   components: {
     InputFee,
