@@ -132,8 +132,13 @@
           @toggle="toggleCustomPeerModal"
         >
           <template slot-scope="{ toggle, isOpen }">
-            <NetworkCustomPeerModal
+            <ModalPeer
               v-if="isOpen"
+              :title="$t('PEER.CUSTOM_TITLE')"
+              :allow-close="!showLoadingModal"
+              :current-peer="peer"
+              :close-trigger="toggle"
+              @connect="connectPeer"
               @close="toggle"
             />
           </template>
@@ -155,12 +160,18 @@
         </RouterLink>
       </div>
     </div>
+
+    <ModalLoader
+      :message="$t('MODAL_PEER.VALIDATING')"
+      :allow-close="true"
+      :visible="showLoadingModal"
+    />
   </div>
 </template>
 
 <script>
 import { MenuDropdown, MenuNavigationItem, MenuOptions } from '@/components/Menu'
-import { NetworkCustomPeerModal } from '@/components/Network'
+import { ModalLoader, ModalPeer } from '@/components/Modal'
 import { ButtonModal, ButtonReload } from '@/components/Button'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -173,7 +184,8 @@ export default {
     MenuDropdown,
     MenuNavigationItem,
     MenuOptions,
-    NetworkCustomPeerModal,
+    ModalLoader,
+    ModalPeer,
     SvgIcon
   },
 
@@ -194,7 +206,8 @@ export default {
     return {
       isNetworkStatusVisible: false,
       isRefreshing: false,
-      showCustomPeerModal: false
+      showCustomPeerModal: false,
+      showLoadingModal: false
     }
   },
 
@@ -244,6 +257,33 @@ export default {
 
     closeShowNetworkStatus () {
       this.isNetworkStatusVisible = false
+    },
+
+    async connectPeer ({ peer, closeTrigger }) {
+      this.showLoadingModal = true
+
+      const response = await this.$store.dispatch('peer/validatePeer', {
+        host: peer.host,
+        port: peer.port
+      })
+
+      if (response === false) {
+        this.$error(this.$t('PEER.CONNECT_FAILED'))
+        this.showLoadingModal = false
+      } else if (typeof response === 'string') {
+        this.$error(`${this.$t('PEER.CONNECT_FAILED')}: ${response}`)
+        this.showLoadingModal = false
+      } else {
+        response.isCustom = true
+        await this.$store.dispatch('peer/setCurrentPeer', response)
+        await this.$store.dispatch('peer/updateCurrentPeerStatus')
+        this.$success(`${this.$t('PEER.CONNECTED')}: ${peer.host}:${peer.port}`)
+        if (closeTrigger) {
+          closeTrigger()
+        }
+      }
+
+      this.showLoadingModal = false
     },
 
     async refreshPeer () {
