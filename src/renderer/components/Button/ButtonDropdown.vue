@@ -106,7 +106,7 @@ export default {
 
   computed: {
     hasPrimaryButton () {
-      return !!this.$slots['primaryButton']
+      return !!this.$slots.primaryButton
     },
 
     dropdownClasses () {

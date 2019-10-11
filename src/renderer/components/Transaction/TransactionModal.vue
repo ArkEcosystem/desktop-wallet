@@ -233,6 +233,7 @@ export default {
 
               success = true
               this.$success(messages.success)
+
               return
             }
           }
