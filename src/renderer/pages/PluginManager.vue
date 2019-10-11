@@ -378,6 +378,7 @@ export default {
 
     onSearch (query) {
       if (this.isMenuOpen) {
+        this.resetCategory()
         this.toggleMenu()
       }
 
@@ -404,6 +405,10 @@ export default {
         enabled,
         pluginId
       })
+    },
+
+    resetCategory () {
+      this.activeCategory = 'all'
     },
 
     // TODO
