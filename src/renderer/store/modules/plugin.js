@@ -20,10 +20,14 @@ export default {
   getters: {
     lastFetched: state => state.lastFetched,
 
-    all: (_, getters, rootGetters) => {
-      const filterPlugins = rootGetters['session/filterBlacklistedPlugins']
+    all: (_, getters) => {
+      return uniqBy([...getters.installed, ...getters.available], 'config.id')
+    },
 
-      let plugins = uniqBy([...getters.installed, ...getters.available], 'config.id')
+    filtered: (_, getters, rootGetters) => (query, category, filter) => {
+      let plugins = getters[filter || 'all']
+
+      const filterPlugins = rootGetters['session/filterBlacklistedPlugins']
 
       // TODO global blacklist
       if (filterPlugins) {
@@ -31,6 +35,22 @@ export default {
           return plugin.config.id === blacklisted
         })
       }
+
+      plugins = plugins.filter(plugin => {
+        let match = true
+
+        if (category && category !== 'all') {
+          match = match && plugin.config.categories.includes(category)
+        }
+
+        if (query) {
+          match = match && ['id', 'title', 'description'].some(property => {
+            return plugin.config[property].includes(query)
+          })
+        }
+
+        return match
+      })
 
       return plugins
     },
@@ -57,20 +77,6 @@ export default {
       }
 
       return plugins.find(plugin => id === plugin.config.id)
-    },
-
-    byCategory: (_, getters) => (category, source = 'all') => {
-      return category === 'all' ? getters[source] : getters[source].filter(plugin => {
-        return plugin.config.categories.includes(category)
-      })
-    },
-
-    byQuery: (_, getters) => (query, source = 'all') => {
-      return getters[source].filter(plugin => {
-        return ['id', 'title', 'description'].some(property => {
-          return plugin.config[property].includes(query)
-        })
-      })
     },
 
     loaded: (state, _, __, rootGetters) => {

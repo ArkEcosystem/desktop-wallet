@@ -46,7 +46,6 @@
           <PluginManagerButtonMenu
             v-if="!isMenuOpen"
             :is-open="isMenuOpen"
-            :disabled="!!query"
             class="pr-6 border-r border-theme-line-separator"
             @click="toggleMenu"
           />
@@ -128,7 +127,7 @@
             path="PAGES.PLUGIN_MANAGER.NO_RESULTS"
           >
             <span
-              v-if="this.activeFilter !== 'all'"
+              v-if="activeFilter !== 'all'"
               place="filter"
             >
               {{ $t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`) }}
@@ -258,13 +257,7 @@ export default {
     },
 
     plugins () {
-      let plugins
-
-      if (this.query) {
-        plugins = this.$store.getters['plugin/byQuery'](this.query, this.activeFilter)
-      } else {
-        plugins = this.$store.getters['plugin/byCategory'](this.activeCategory, this.activeFilter)
-      }
+      const plugins = this.$store.getters['plugin/filtered'](this.query, this.activeCategory, this.activeFilter)
 
       return sortBy(plugins.map(plugin => plugin.config), 'title')
     },
@@ -377,11 +370,7 @@ export default {
     },
 
     onSearch (query) {
-      if (this.isMenuOpen) {
-        this.resetCategory()
-        this.toggleMenu()
-      }
-
+      this.activeCategory = 'all'
       this.query = query
     },
 
@@ -405,10 +394,6 @@ export default {
         enabled,
         pluginId
       })
-    },
-
-    resetCategory () {
-      this.activeCategory = 'all'
     },
 
     // TODO
