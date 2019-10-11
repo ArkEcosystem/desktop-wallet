@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import { map, uniqBy } from 'lodash'
 import crypto from 'crypto'
 import BaseModule from '../base'
