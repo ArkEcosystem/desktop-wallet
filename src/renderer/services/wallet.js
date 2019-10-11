@@ -1,8 +1,9 @@
 import * as bip39 from 'bip39'
-import { Crypto, Identities } from '@arkecosystem/crypto'
+import { Crypto, Identities, Managers } from '@arkecosystem/crypto'
 import { version as mainnetVersion } from '@config/networks/mainnet'
 import store from '@/store'
 import got from 'got'
+import cloneDeep from 'lodash.clonedeep'
 
 export default class WalletService {
   /*
@@ -50,12 +51,34 @@ export default class WalletService {
   }
 
   /**
+   * Returns the address generated from a multi-signature registration.
+   * @param {Object} multiSignatureAsset
+   * @return {String}
+   */
+  static getAddressFromMultiSignatureAsset (multiSignatureAsset) {
+    Managers.configManager.setConfig(cloneDeep(store.getters['session/network'].crypto))
+
+    return Identities.Address.fromMultiSignatureAsset(multiSignatureAsset)
+  }
+
+  /**
    * Generates the public key belonging to the given passphrase
    * @param {String} passphrase
    * @return {String}
    */
   static getPublicKeyFromPassphrase (passphrase) {
     return Identities.Keys.fromPassphrase(this.normalizePassphrase(passphrase)).publicKey
+  }
+
+  /**
+   * Returns the public key generated from a multi-signature registration.
+   * @param {Object} multiSignatureAsset
+   * @return {String}
+   */
+  static getPublicKeyFromMultiSignatureAsset (multiSignatureAsset) {
+    Managers.configManager.setConfig(cloneDeep(store.getters['session/network'].crypto))
+
+    return Identities.PublicKey.fromMultiSignatureAsset(multiSignatureAsset)
   }
 
   /**
