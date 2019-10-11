@@ -947,6 +947,10 @@ export default class ClientService {
     const now = moment().valueOf()
     transaction.data.timestamp = Math.floor((now - epochTime) / 1000)
 
+    if (passphrase) {
+      passphrase = this.normalizePassphrase(passphrase)
+    }
+
     if (network.constants.aip11) {
       Managers.configManager.setConfig(network.crypto)
       Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
@@ -1050,7 +1054,6 @@ export default class ClientService {
       ...transaction,
       multiSignature
     }
-
   }
 
   __transactionFromData (transaction) {
