@@ -290,11 +290,17 @@ export default class ClientService {
     let totalCount = 0
     let transactions = []
 
-    const { body } = await this.client.api('wallets').transactions(address, {
+    const queryOptions = {
       orderBy: options.orderBy,
       limit: options.limit,
       page: options.page
-    })
+    }
+
+    if (options.transactionType) {
+      queryOptions.type = options.transactionType
+    }
+
+    const { body } = await this.client.api('wallets').transactions(address, queryOptions)
 
     transactions = body.data.map(transaction => {
       transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
