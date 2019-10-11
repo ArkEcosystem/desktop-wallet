@@ -113,8 +113,8 @@
             path="PAGES.PLUGIN_MANAGER.NO_SEARCH_RESULTS"
           >
             <span
+              slot="query"
               class="inline-block font-bold"
-              place="query"
             >
               {{ query }}
             </span>
@@ -128,14 +128,14 @@
           >
             <span
               v-if="activeFilter !== 'all'"
-              place="filter"
+              slot="filter"
             >
               {{ $t(`PAGES.PLUGIN_MANAGER.FILTERS.${activeFilter.toUpperCase()}`) }}
             </span>
 
             <span
+              slot="category"
               class="inline-block font-bold"
-              place="category"
             >
               {{ $t(`PAGES.PLUGIN_MANAGER.CATEGORIES.${activeCategory.toUpperCase()}`) }}
             </span>
