@@ -54,4 +54,42 @@ export default class TransactionService {
 
     return transaction
   }
+
+  static isMultiSignature (transaction) {
+    return !!transaction.multiSignature
+  }
+
+  static needsSignatures (transaction) {
+    return !transaction.signatures || transaction.signatures.length < transaction.multiSignature.min
+  }
+
+  static needsWalletSignature (transaction, publicKey) {
+    if (transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE && this.isMultiSignatureReady(transaction, true)) {
+      return transaction.senderPublicKey === publicKey
+    }
+
+    const index = transaction.multiSignature.publicKeys.indexOf(publicKey)
+    if (index === -1) {
+      return false
+    }
+
+    return !transaction.signatures || !transaction.signatures.some(signature => parseInt(signature.substring(0, 2), 16) === index)
+  }
+
+  static needsAllSignatures (transaction) {
+    return !transaction.signatures || transaction.signatures.length < transaction.multiSignature.publicKeys.length
+  }
+
+  static isMultiSignatureReady (transaction, excludeFinal = false) {
+    const isMultiSigRegistration = transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE
+    if (isMultiSigRegistration && this.needsAllSignatures(transaction)) {
+      return false
+    } else if (this.needsSignatures(transaction)) {
+      return false
+    } else if (!excludeFinal && isMultiSigRegistration && !transaction.signature) {
+      return false
+    }
+
+    return true
+  }
 }
