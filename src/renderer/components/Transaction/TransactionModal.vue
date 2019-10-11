@@ -190,11 +190,14 @@ export default {
           const anyLowFee = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
           })
+          const anyNotDuplicate = Object.keys(errors).some(transactionId => {
+            return errors[transactionId].some(error => error.type !== 'ERR_DUPLICATE' && error.type !== 'ERR_LOW_FEE')
+          })
 
           // Be clear with the user about the error cause
           if (anyLowFee) {
             this.$error(messages.errorLowFee)
-          } else {
+          } else if (anyNotDuplicate) {
             this.$error(messages.error)
           }
         } else {
