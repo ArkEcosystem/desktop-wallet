@@ -525,7 +525,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.VOTE)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.VOTE)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Vote fee should be smaller than ${staticFee}`)
     }
@@ -574,7 +574,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.DELEGATE_REGISTRATION)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.DELEGATE_REGISTRATION)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Delegate registration fee should be smaller than ${staticFee}`)
     }
@@ -627,7 +627,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.TRANSFER)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.TRANSFER)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Transfer fee should be smaller than ${staticFee}`)
     }
@@ -676,7 +676,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.SECOND_SIGNATURE)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.SECOND_SIGNATURE)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Second signature fee should be smaller than ${staticFee}`)
     }
@@ -728,8 +728,8 @@ export default class ClientService {
       throw new Error('AIP-11 transaction not supported on network')
     }
 
-    const staticFee = store.getters['transaction/staticFee'](4) || V1.fees[4]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.MULTI_SIGNATURE)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Multi-Signature fee should be smaller than ${staticFee}`)
     }
 
@@ -786,8 +786,8 @@ export default class ClientService {
       throw new Error('AIP-11 transaction not supported on network')
     }
 
-    const staticFee = store.getters['transaction/staticFee'](5) || V1.fees[5]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.IPFS)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`IPFS fee should be smaller than ${staticFee}`)
     }
 
@@ -838,9 +838,9 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    const staticFee = store.getters['transaction/staticFee'](0) || V1.fees[0]
-    if (!isAdvancedFee && fee > staticFee) {
-      throw new Error(`Transfer fee should be smaller than ${staticFee}`)
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.MULTI_PAYMENT)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
+      throw new Error(`Multi-Payment fee should be smaller than ${staticFee}`)
     }
 
     const transaction = Transactions.BuilderFactory
@@ -894,8 +894,8 @@ export default class ClientService {
       throw new Error('AIP-11 transaction not supported on network')
     }
 
-    const staticFee = store.getters['transaction/staticFee'](7) || V1.fees[7]
-    if (!isAdvancedFee && fee > staticFee) {
+    const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUPS_1.DELEGATE_RESIGNATION)
+    if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Delegate resignation fee should be smaller than ${staticFee}`)
     }
 
