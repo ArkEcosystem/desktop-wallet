@@ -128,6 +128,10 @@ export default new BaseModel({
     lastFees: {
       type: 'object',
       format: data => data.lastFees || {}
+    },
+    multiSignaturePeer: {
+      type: ['object', 'null'],
+      format: data => data.multiSignaturePeer || null
     }
   },
   required: ['background', 'currency', 'language', 'name', 'networkId', 'theme']

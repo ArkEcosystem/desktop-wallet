@@ -19,6 +19,7 @@
       :has-pagination="totalCount > 0"
       :sort-query="queryParams.sort"
       :per-page="transactionTableRowCount"
+      :transaction-type="transactionType"
       @on-per-page-change="onPerPageChange"
       @on-page-change="onPageChange"
       @on-sort-change="onSortChange"
@@ -29,13 +30,21 @@
 <script>
 import at from 'lodash/at'
 import mergeTableTransactions from '@/components/utils/merge-table-transactions'
-import TransactionTable from '@/components/Transaction/TransactionTable'
+import { TransactionTable } from '@/components/Transaction'
 
 export default {
   name: 'WalletTransactions',
 
   components: {
     TransactionTable
+  },
+
+  props: {
+    transactionType: {
+      type: Number,
+      required: false,
+      default: null
+    }
   },
 
   data: () => ({
@@ -132,7 +141,13 @@ export default {
         return []
       }
 
-      return this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
+      const transactions = this.$store.getters['transaction/byAddress'](address, { includeExpired: true })
+
+      if (!this.transactionType) {
+        return transactions
+      }
+
+      return transactions.filter(transaction => transaction.type === this.transactionType) || []
     },
 
     async getTransactions (address) {
@@ -142,11 +157,14 @@ export default {
 
       const { limit, page, sort } = this.queryParams
 
-      return this.$client.fetchWalletTransactions(address, {
+      const response = await this.$client.fetchWalletTransactions(address, {
+        transactionType: this.transactionType,
         page,
         limit,
         orderBy: `${sort.field}:${sort.type}`
       })
+
+      return response
     },
 
     async fetchTransactions () {

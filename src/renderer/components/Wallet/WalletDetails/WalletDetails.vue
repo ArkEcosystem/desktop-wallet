@@ -163,8 +163,16 @@ import at from 'lodash/at'
 import { WalletSelectDelegate } from '@/components/Wallet'
 import { ButtonGeneric } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
-import { WalletExchange, WalletHeading, WalletTransactions, WalletDelegates, WalletStatistics } from '../'
-import WalletSignVerify from '../WalletSignVerify'
+import {
+  WalletDelegates,
+  WalletExchange,
+  WalletHeading,
+  WalletIpfs,
+  WalletMultiSignature,
+  WalletSignVerify,
+  WalletStatistics,
+  WalletTransactions
+} from '../'
 import { MenuTab, MenuTabItem } from '@/components/Menu'
 import SvgIcon from '@/components/SvgIcon'
 
@@ -227,7 +235,9 @@ export default {
         }
       ]
 
-      if (this.currentWallet && !this.currentWallet.isContact && !this.currentWallet.isLedger) {
+      const isOwnedWallet = this.currentWallet && !this.currentWallet.isContact
+
+      if (isOwnedWallet && !this.currentWallet.isLedger) {
         tabs.push({
           component: 'WalletSignVerify',
           componentName: 'WalletSignVerify',
@@ -235,12 +245,28 @@ export default {
         })
       }
 
-      if (this.currentNetwork && !this.currentWallet.isContact && this.currentNetwork.market && this.currentNetwork.market.enabled) {
+      if (isOwnedWallet && this.currentNetwork && this.currentNetwork.market && this.currentNetwork.market.enabled) {
         tabs.push({
           component: 'WalletExchange',
           componentName: 'WalletExchange',
           text: this.$t('PAGES.WALLET.PURCHASE', { ticker: this.currentNetwork.market.ticker })
         })
+      }
+
+      if (this.currentNetwork.milestone && this.currentNetwork.milestone.aip11) {
+        tabs.push({
+          component: 'WalletIpfs',
+          componentName: 'WalletIpfs',
+          text: this.$t('PAGES.WALLET.IPFS')
+        })
+
+        if (isOwnedWallet) {
+          tabs.push({
+            component: 'WalletMultiSignature',
+            componentName: 'WalletMultiSignature',
+            text: this.$t('PAGES.WALLET.MULTI_SIGNATURE')
+          })
+        }
       }
 
       // TODO enable when there is something to show
