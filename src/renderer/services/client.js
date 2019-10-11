@@ -684,6 +684,54 @@ export default class ClientService {
   }
 
   /**
+   * Build a delegate resignation transaction.
+   * @param {Object} data
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildDelegateResignation (
+    {
+      address,
+      fee,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].milestone.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](7) || V1.fees[7]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Delegate resignation fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .delegateResignation()
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    return this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    }, returnObject)
+  }
+
+  /**
    * Signs a transaction
    * @param {Object} data
    * @param {Object} data.transaction

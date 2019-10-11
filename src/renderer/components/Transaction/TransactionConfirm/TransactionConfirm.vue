@@ -54,6 +54,7 @@
 /* eslint-disable vue/no-unused-components */
 import { find } from 'lodash'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
+import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
@@ -73,6 +74,7 @@ export default {
 
   components: {
     TransactionConfirmDelegateRegistration,
+    TransactionConfirmDelegateResignation,
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote,

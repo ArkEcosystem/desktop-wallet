@@ -59,7 +59,7 @@
       {{ $t("TRANSACTION.TYPE.TIMELOCK_TRANSFER") }}
     </span>
     <span v-else-if="type === 7">
-      {{ $t("TRANSACTION.TYPE.MULTI_PAYMENT") }}
+      {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
     </span>
     <span v-else-if="type === 8">
       {{ $t("TRANSACTION.TYPE.DELEGATE_RESIGNATION") }}
