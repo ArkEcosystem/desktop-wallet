@@ -227,9 +227,6 @@ import TransactionService from '@/services/transaction'
 import WalletAddress from '@/components/Wallet/WalletAddress'
 import WalletService from '@/services/wallet'
 
-// import { Crypto, Managers, Transactions } from '@arkecosystem/crypto'
-// import { cloneDeep } from 'lodash'
-
 export default {
   name: 'TransactionShowMultiSignature',
 
@@ -267,40 +264,10 @@ export default {
 
     canSign () {
       return TransactionService.needsWalletSignature(this.transaction, WalletService.getPublicKeyFromWallet(this.wallet_fromRoute))
-
-      // const isWalletMultiSignature = this.wallet_fromRoute.multiSignature
-      // if (this.transaction.signature) {
-      //   return false
-      // } else if (!isWalletMultiSignature && (!this.transaction.signatures || !this.transaction.signatures.length)) {
-      //   return true
-      // } else if (!this.transaction.multiSignature) {
-      //   return false
-      // }
-
-      // const publicKey = WalletService.getPublicKeyFromWallet(this.wallet_fromRoute)
-      // const belowMin = this.transaction.signatures.length < this.transaction.multiSignature.min
-      // if (!belowMin && this.transaction.senderPublicKey === publicKey && !isWalletMultiSignature) {
-      //   return true
-      // }
-
-      // const keyIndex = this.transaction.multiSignature.publicKeys.indexOf(publicKey)
-      // if (keyIndex === -1) {
-      //   return false
-      // }
-
-      // return !this.transaction.signatures.some(signature => {
-      //   return parseInt(signature.substring(0, 2), 16) === keyIndex
-      // })
     },
 
     canBeSent () {
       return TransactionService.isMultiSignatureReady(this.transaction)
-      // console.log('canBeSent', this.transaction.signatures.length, this.transaction.multiSignature.min)
-      // if (!this.transaction.signature || !this.transaction.signatures.length || !this.transaction.multiSignature) {
-      //   return false
-      // }
-
-      // return this.transaction.signatures.length >= this.transaction.multiSignature.min
     },
 
     votePublicKey () {
@@ -324,54 +291,6 @@ export default {
     if (this.votePublicKey) {
       this.determineVote()
     }
-
-    // try {
-    //   Managers.configManager.setConfig(cloneDeep(this.session_network.crypto))
-    //   Managers.configManager.setHeight(await this.$store.dispatch('peer/getAverageHeight', this.session_network))
-
-    //   const tx = Transactions.TransactionFactory.fromData(this.transaction)
-    //   console.log('tx', tx)
-
-    //   const hashMain = Transactions.Utils.toHash(tx.data, {
-    //     excludeSignature: true,
-    //     excludeSecondSignature: true
-    //   })
-
-    //   if (Crypto.Hash.verifySchnorr(hashMain, tx.data.signature, tx.data.senderPublicKey)) {
-    //     console.log('main signature is valid')
-    //   }
-
-    //   const hash = Transactions.Utils.toHash(tx.data, {
-    //     excludeSignature: true,
-    //     excludeSecondSignature: true,
-    //     excludeMultiSignature: true
-    //   })
-
-    //   const publicKeyIndexes = []
-    //   for (let i = 0; i < tx.data.signatures.length; i++) {
-    //     const signature = tx.data.signatures[i]
-    //     const publicKeyIndex = parseInt(signature.slice(0, 2), 16)
-
-    //     if (!publicKeyIndexes[publicKeyIndex]) {
-    //       publicKeyIndexes[publicKeyIndex] = true
-    //     } else {
-    //       console.log('CryptoErrors.DuplicateParticipantInMultiSignatureError')
-    //     }
-
-    //     const partialSignature = signature.slice(2, 130)
-    //     const publicKey = tx.data.asset.multiSignature.publicKeys[publicKeyIndex]
-
-    //     if (Crypto.Hash.verifySchnorr(hash, partialSignature, publicKey)) {
-    //       console.log('signature ' + i + ' is valid')
-    //     }
-    //   }
-    // } catch (error) {
-    //   console.error('tx error', error)
-    // }
-
-    // console.log('canBeSent tx', this.transaction)
-    // console.log('canBeSent bool', this.transaction.signatures ? this.transaction.signatures.length > this.transaction.asset.multiSignature.min : false)
-    // this.canBeSent = this.transaction.signatures ? this.transaction.signatures.length >= this.transaction.asset.multiSignature.min : false
   },
 
   methods: {
@@ -388,8 +307,6 @@ export default {
     },
 
     emitClose (modalToggle) {
-      console.log('emitClose modalToggle', modalToggle)
-      console.log('emitClose typeof modalToggle', typeof modalToggle)
       if (typeof modalToggle === 'function') {
         modalToggle()
       }
