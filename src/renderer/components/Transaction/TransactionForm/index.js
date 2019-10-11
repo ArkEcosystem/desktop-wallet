@@ -3,6 +3,8 @@ import TransactionFormDelegateRegistration from './TransactionFormDelegateRegist
 import TransactionFormDelegateResignation from './TransactionFormDelegateResignation'
 import TransactionFormIpfs from './TransactionFormIpfs'
 import TransactionFormMultiPayment from './TransactionFormMultiPayment'
+import TransactionFormMultiSign from './TransactionFormMultiSign'
+import TransactionFormMultiSignature from './TransactionFormMultiSignature'
 import TransactionFormTransfer from './TransactionFormTransfer'
 import TransactionFormVote from './TransactionFormVote'
 
@@ -13,6 +15,8 @@ export {
   TransactionFormDelegateResignation,
   TransactionFormIpfs,
   TransactionFormMultiPayment,
+  TransactionFormMultiSign,
+  TransactionFormMultiSignature,
   TransactionFormTransfer,
   TransactionFormVote
 }

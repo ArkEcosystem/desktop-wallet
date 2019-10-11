@@ -535,7 +535,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -558,7 +559,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
@@ -582,7 +584,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -609,7 +612,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
@@ -636,7 +640,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -657,7 +662,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
@@ -679,8 +685,68 @@ export default class ClientService {
       transaction,
       passphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
+  }
+
+  /**
+   * Build Multi-Signature transaction.
+   * @param {Object} data
+   * @param {Number} data.fee - dynamic fee, as arktoshi
+   * @param {Number} data.hash - ipfs hash
+   * @param {String} data.passphrase
+   * @param {String} data.secondPassphrase
+   * @param {String} data.wif
+   * @param {Boolean} returnObject - to return the transaction of its internal struct
+   * @returns {Object}
+   */
+  async buildMultiSignature (
+    {
+      address,
+      publicKeys,
+      minKeys,
+      fee,
+      hash,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif
+    },
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    if (!store.getters['session/network'].milestone.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
+    const staticFee = store.getters['transaction/staticFee'](4) || V1.fees[4]
+    if (!isAdvancedFee && fee > staticFee) {
+      throw new Error(`Multi-Signature fee should be smaller than ${staticFee}`)
+    }
+
+    const transaction = Transactions.BuilderFactory
+      .multiSignature()
+      .multiSignatureAsset({
+        min: minKeys,
+        publicKeys
+      })
+      .fee(fee)
+
+    passphrase = this.normalizePassphrase(passphrase)
+    secondPassphrase = this.normalizePassphrase(secondPassphrase)
+
+    const transactionObject = await this.__signTransaction({
+      address,
+      transaction,
+      passphrase,
+      secondPassphrase,
+      wif,
+      networkWif,
+      multiSignature: transaction.data.asset.multiSignature
+    }, true)
+
+    return returnObject ? transactionObject : transactionObject.getStruct()
   }
 
   /**
@@ -731,7 +797,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -809,7 +876,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     isAdvancedFee = false,
     returnObject = false
@@ -836,7 +904,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     }, returnObject)
   }
 
@@ -857,7 +926,8 @@ export default class ClientService {
       passphrase,
       secondPassphrase,
       wif,
-      networkWif
+      networkWif,
+      multiSignature
     },
     returnObject = false
   ) {
@@ -884,17 +954,103 @@ export default class ClientService {
         .nonce(nonce)
     }
 
-    if (passphrase) {
-      transaction = transaction.sign(this.normalizePassphrase(passphrase))
-    } else if (wif) {
-      transaction = transaction.signWithWif(wif, networkWif)
+    if (multiSignature) {
+      let senderPublicKey = null
+      if (passphrase) {
+        senderPublicKey = WalletService.getPublicKeyFromPassphrase(passphrase)
+
+        const publicKeyIndex = multiSignature.publicKeys.indexOf(senderPublicKey)
+        transaction.senderPublicKey(senderPublicKey)
+        if (publicKeyIndex > -1) {
+          if (passphrase) {
+            transaction.multiSign(passphrase, publicKeyIndex)
+          } else if (wif) {
+            transaction.multiSignWithWif(publicKeyIndex, wif, networkWif)
+          }
+        }
+      } else {
+        senderPublicKey = WalletService.getPublicKeyFromMultiSignatureAsset(multiSignature)
+        transaction.senderPublicKey(senderPublicKey)
+      }
+    } else {
+      if (passphrase) {
+        transaction.sign(passphrase)
+      } else if (wif) {
+        transaction.signWithWif(wif, networkWif)
+      }
     }
 
     if (secondPassphrase) {
-      transaction = transaction.secondSign(this.normalizePassphrase(secondPassphrase))
+      transaction.secondSign(this.normalizePassphrase(secondPassphrase))
     }
 
-    return returnObject ? transaction : transaction.getStruct()
+    if (returnObject) {
+      return transaction
+    }
+
+    if (multiSignature) {
+      const transactionJson = transaction.build().toJson()
+      transactionJson.multiSignature = multiSignature
+      if (!transactionJson.signatures) {
+        transactionJson.signatures = []
+      }
+
+      return transactionJson
+    }
+
+    return transaction.build().toJson()
+  }
+
+  /**
+   * Sign a transaction that requires multi-signatures
+   * @return {Object}
+   */
+  async multiSign (transaction, { multiSignature, networkWif, passphrase, wif }) {
+    transaction = this.__transactionFromData(transaction)
+
+    const network = store.getters['session/network']
+    if (!network.milestone.aip11) {
+      throw new Error('Multi-Signature Transactions are not supported yet')
+    }
+
+    Managers.configManager.setConfig(cloneDeep(network.crypto))
+    Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
+
+    let keys
+    if (passphrase) {
+      keys = Identities.Keys.fromPassphrase(passphrase)
+    } else if (wif) {
+      keys = Identities.Keys.fromWIF(wif)
+    }
+
+    if (!transaction.signatures || transaction.signatures.length < multiSignature.min) {
+      const index = multiSignature.publicKeys.indexOf(keys.publicKey)
+      if (index !== false) {
+        Transactions.Signer.multiSign(transaction, keys, index)
+        transaction.signatures = transaction.signatures.filter((value, index, self) => {
+          return self.indexOf(value) === index
+        })
+      } else {
+        throw new Error('Passphrase is not used to sign this transaction')
+      }
+    } else {
+      Transactions.Signer.sign(transaction, keys)
+      transaction.id = TransactionService.getId(transaction)
+    }
+
+    return {
+      ...transaction,
+      multiSignature
+    }
+
+  }
+
+  __transactionFromData (transaction) {
+    transaction = cloneDeep(transaction)
+    transaction.multiSignature = undefined
+    transaction.timestamp = undefined
+
+    return transaction
   }
 
   /**

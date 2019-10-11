@@ -27,7 +27,8 @@ export default {
     ledgerCache: null,
     transactionTableRowCount: 10,
     unconfirmedVotes: [],
-    lastFees: {}
+    lastFees: {},
+    multiSignaturePeer: null
   }),
 
   getters: {
@@ -81,7 +82,8 @@ export default {
     lastFees: state => state.lastFees,
     lastFeeByType: state => type => {
       return state.lastFees ? state.lastFees[type] : null
-    }
+    },
+    multiSignaturePeer: state => state.multiSignaturePeer
   },
 
   mutations: {
@@ -185,6 +187,10 @@ export default {
       state.lastFees = fees
     },
 
+    SET_MULTI_SIGNATURE_PEER (state, peer) {
+      state.multiSignaturePeer = peer
+    },
+
     RESET (state) {
       state.avatar = 'pages/new-profile-avatar.svg'
       state.background = null
@@ -210,6 +216,7 @@ export default {
       state.transactionTableRowCount = 10
       state.unconfirmedVotes = []
       state.lastFees = {}
+      state.multiSignaturePeer = null
 
       i18n.locale = state.language
     },
@@ -239,6 +246,7 @@ export default {
       state.transactionTableRowCount = value.transactionTableRowCount
       state.unconfirmedVotes = value.unconfirmedVotes
       state.lastFees = value.lastFees
+      state.multiSignaturePeer = value.multiSignaturePeer
 
       i18n.locale = state.language
     }
@@ -370,6 +378,10 @@ export default {
       fees[type] = fee
 
       commit('SET_LAST_FEES', fees)
+    },
+
+    setMultiSignaturePeer ({ commit }, { host, port }) {
+      commit('SET_MULTI_SIGNATURE_PEER', { host, port })
     }
   }
 }

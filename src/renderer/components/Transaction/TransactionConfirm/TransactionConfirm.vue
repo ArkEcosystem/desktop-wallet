@@ -57,6 +57,7 @@ import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegate
 import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
 import TransactionConfirmIpfs from './TransactionConfirmIpfs'
 import TransactionConfirmMultiPayment from './TransactionConfirmMultiPayment'
+import TransactionConfirmMultiSignature from './TransactionConfirmMultiSignature'
 import TransactionConfirmSecondSignature from './TransactionConfirmSecondSignature'
 import TransactionConfirmTransfer from './TransactionConfirmTransfer'
 import TransactionConfirmVote from './TransactionConfirmVote'
@@ -79,6 +80,7 @@ export default {
     TransactionConfirmDelegateResignation,
     TransactionConfirmIpfs,
     TransactionConfirmMultiPayment,
+    TransactionConfirmMultiSignature,
     TransactionConfirmSecondSignature,
     TransactionConfirmTransfer,
     TransactionConfirmVote,

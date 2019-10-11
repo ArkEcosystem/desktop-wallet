@@ -41,10 +41,11 @@
 <script>
 import { camelCase, includes, findKey, upperFirst } from 'lodash'
 import { TRANSACTION_TYPES } from '@config'
-import WalletService from '@/services/wallet'
+import MultiSignature from '@/services/client-multisig'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
 import TransactionConfirm from './TransactionConfirm'
+import WalletService from '@/services/wallet'
 
 export default {
   name: 'TransactionModal',
@@ -57,11 +58,20 @@ export default {
   },
 
   props: {
+    transactionOverride: {
+      type: Object,
+      required: false,
+      default: null
+    },
+
     type: {
       type: Number,
       required: true,
-      validator: value => includes(TRANSACTION_TYPES.GROUP_1, value)
+      validator: value => {
+        return value === TRANSACTION_TYPES.MULTI_SIGN || includes(TRANSACTION_TYPES.GROUP_1, value)
+      }
     },
+
     title: {
       type: String,
       required: false,
@@ -69,15 +79,19 @@ export default {
     }
   },
 
-  data: () => ({
+  data: vm => ({
     showBroadcastingTransactions: false,
     step: 0,
-    transaction: null,
+    transaction: vm.transactionOverride,
     walletOverride: null
   }),
 
   computed: {
     transactionKey () {
+      if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
+        return 'MULTI_SIGN'
+      }
+
       const key = findKey(TRANSACTION_TYPES.GROUP_1, type => this.type === type)
       if (key === 'VOTE' && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
@@ -88,6 +102,10 @@ export default {
       return key
     },
     typeClass () {
+      if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
+        return 'TransactionModalMultiSign'
+      }
+
       const type = findKey(TRANSACTION_TYPES.GROUP_1, type => this.type === type)
       return `TransactionModal${upperFirst(camelCase(type))}`
     },
@@ -122,7 +140,42 @@ export default {
       this.transaction = null
     },
 
+    async pushMultiSignature (sendToNetwork) {
+      const peer = this.$store.getters['session/multiSignaturePeer']
+      if (!peer) {
+        return
+      }
+
+      const response = await MultiSignature.sendTransaction(peer, this.transaction)
+      if (response) {
+        this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
+        if (!sendToNetwork) {
+          this.emitSent(true, this.transaction)
+          this.emitClose()
+        }
+      } else {
+        this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
+      }
+
+      this.$eventBus.emit('wallet:reload:multi-signature')
+
+      this.showBroadcastingTransactions = false
+    },
+
     async onConfirm () {
+      if (TransactionService.isMultiSignature(this.transaction)) {
+        const isReady = TransactionService.isMultiSignatureReady(this.transaction)
+        await this.pushMultiSignature(isReady)
+
+        if (!isReady) {
+          return
+        }
+      }
+
+      if (TransactionService.isMultiSignature(this.transaction)) {
+        this.transaction.timestamp = undefined
+      }
+
       // Produce the messages before closing the modal to avoid `$t` scope errors
       const messages = {
         success: this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`),
@@ -294,6 +347,10 @@ export default {
 }
 
 .TransactionModalMultiPayment {
+  min-width: 35rem;
+}
+
+.TransactionModalMultiSignature {
   min-width: 35rem;
 }
 </style>
