@@ -95,8 +95,7 @@ export default {
 
   data () {
     return {
-      isRefreshing: false,
-      isVoting: false
+      isRefreshing: false
     }
   },
 
@@ -111,17 +110,10 @@ export default {
 
     doesNotExist () {
       return !this.$store.getters['wallet/byAddress'](this.currentWallet.address)
-    }
-  },
-
-  watch: {
-    // Never show the not-voting icon until knowing if the wallet is voting or not
-    'currentWallet.address' () {
-      this.isVoting = false
     },
-    // To react to changes on the injected `walletVote` and changed not-voting icon immediately
-    'walletVote.username' () {
-      this.isVoting = !!this.walletVote.username
+
+    isVoting () {
+      return !!this.walletVote.username
     }
   },
 
