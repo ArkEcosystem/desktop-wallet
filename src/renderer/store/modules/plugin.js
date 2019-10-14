@@ -57,14 +57,14 @@ export default {
 
     available: state => Object.values(state.available),
 
-    availableById: (_, getters) => pluginId => {
+    availableById: (_, getters) => id => {
       const plugins = getters.available
 
       if (!Object.keys(plugins).length) {
         return null
       }
 
-      return plugins[pluginId] || null
+      return plugins.find(plugin => id === plugin.config.id)
     },
 
     installed: state => Object.values(state.installed),
@@ -98,6 +98,8 @@ export default {
 
       return state.enabled[profileId]
     },
+
+    isAvailable: (_, getters) => pluginId => !!getters.availableById(pluginId),
 
     isInstalled: (_, getters) => pluginId => !!getters.installedById(pluginId),
 
