@@ -105,7 +105,7 @@
       </ListDividedItem>
 
       <ListDividedItem
-        v-if="transaction.recipient"
+        v-if="showRecipient"
         :label="$t('TRANSACTION.RECIPIENT')"
         item-value-class="flex items-center"
       >
@@ -288,6 +288,14 @@ export default {
       }
 
       return WalletService.getAddressFromMultiSignatureAsset(transaction.asset.multiSignature)
+    },
+
+    showRecipient () {
+      if (this.transaction.asset && this.transaction.asset.payments) {
+        return false
+      }
+
+      return this.transaction.recipient
     }
   },
 
