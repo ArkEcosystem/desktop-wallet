@@ -2,6 +2,7 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as vm2 from 'vm2'
 import dayjs from 'dayjs'
+import got from 'got'
 import { ipcRenderer } from 'electron'
 import { camelCase, cloneDeep, isBoolean, isEmpty, isObject, isString, partition, upperFirst } from 'lodash'
 import { PLUGINS } from '@config'
@@ -714,6 +715,22 @@ class PluginManager {
         console.error(`Could not fetch plugin '${pluginPath}': ${error}`)
       }
     }
+  }
+
+  async fetchPluginFromUrl (url) {
+    const matches = /https?:\/\/github.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\/archive\/([A-Za-z0-9/_.-]+)\./.exec(url)
+
+    if (!matches) {
+      throw new Error('invalid url')
+    }
+
+    const owner = matches[1]
+    const repository = matches[2]
+    const branch = matches[3]
+
+    const { body } = await got(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/package.json`, { json: true })
+
+    return sanitize(body)
   }
 
   async fetchPlugin (pluginPath) {

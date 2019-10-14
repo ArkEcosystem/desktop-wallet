@@ -13,7 +13,7 @@
 
         <PluginManagerButtonInstallSource
           source="url"
-          @click="onInstallFrom"
+          @click="setModal('url')"
         />
       </div>
     </div>
@@ -145,33 +145,45 @@
     </div>
 
     <PluginDetailsModal
-      v-if="pluginToShow && !showPermissions"
-      :plugin="pluginToShow"
-      @close="closeDetailsModal"
-      @remove="openRemovalModal"
-      @show-permissions="toggleShowPermissions"
+      v-if="showDetailsModal"
+      :plugin="selectedPlugin"
+      @close="reset"
+      @remove="setModal('remove')"
+      @show-permissions="openPermissionsModal('details')"
     />
 
     <PluginPermissionsModal
-      v-if="(pluginToShow || pluginToInstall) && showPermissions"
-      :plugin="pluginToShow || pluginToInstall"
-      @install="openInstallModal"
-      @close="toggleShowPermissions"
+      v-if="showPermissionsModal"
+      :modal-ref="modalRef"
+      :plugin="selectedPlugin"
+      @close="closePermissionsModal"
+      @confirm="setModal('install')"
+    />
+
+    <PluginUrlModal
+      v-if="showUrlModal"
+      @close="resetModal"
+      @fetch-plugin="fetchPluginData"
     />
 
     <PluginInstallModal
-      v-if="pluginToInstall"
-      :plugin="pluginToInstall"
+      v-if="showInstallModal"
+      :plugin="selectedPlugin"
+      @close="reset"
       @download="onDownload"
       @install="onInstall"
-      @close="closeInstallModal"
     />
 
     <PluginRemovalModal
-      v-if="pluginToRemove"
-      :plugin="pluginToRemove"
-      @cancel="closeRemovalModal"
+      v-if="showRemoveModal"
+      :plugin="selectedPlugin"
+      @cancel="reset"
       @removed="onRemoved"
+    />
+
+    <ModalLoader
+      :message="loadingModalText"
+      :visible="showLoadingModal"
     />
   </div>
 </template>
@@ -188,8 +200,10 @@ import {
   PluginManagerSideMenu,
   PluginManagerTable,
   PluginPermissionsModal,
-  PluginRemovalModal
+  PluginRemovalModal,
+  PluginUrlModal
 } from '@/components/PluginManager'
+import { ModalLoader } from '@/components/Modal'
 import { PluginManagerButtonFilter, PluginManagerButtonInstallSource, PluginManagerButtonMenu } from '@/components/PluginManager/PluginManagerButtons'
 
 export default {
@@ -198,6 +212,7 @@ export default {
   components: {
     ButtonLayout,
     ButtonReload,
+    ModalLoader,
     PluginDetailsModal,
     PluginInstallModal,
     PluginManagerButtonFilter,
@@ -208,7 +223,8 @@ export default {
     PluginManagerSideMenu,
     PluginManagerTable,
     PluginPermissionsModal,
-    PluginRemovalModal
+    PluginRemovalModal,
+    PluginUrlModal
   },
 
   data: () => ({
@@ -216,14 +232,37 @@ export default {
     activeFilter: 'all',
     isMenuOpen: false,
     isRefreshing: false,
-    pluginToInstall: null,
-    pluginToRemove: null,
-    pluginToShow: null,
-    query: null,
-    showPermissions: false
+    modalRef: null,
+    selectedPlugin: null,
+    modal: '',
+    query: null
   }),
 
   computed: {
+    showDetailsModal () {
+      return !!this.selectedPlugin && this.modal === 'details'
+    },
+
+    showInstallModal () {
+      return !!this.selectedPlugin && this.modal === 'install'
+    },
+
+    showUrlModal () {
+      return this.modal === 'url'
+    },
+
+    showRemoveModal () {
+      return !!this.selectedPlugin && this.modal === 'remove'
+    },
+
+    showLoadingModal () {
+      return this.modal === 'loading'
+    },
+
+    showPermissionsModal () {
+      return !!this.selectedPlugin && this.modal === 'permissions'
+    },
+
     hasDarkTheme () {
       return this.session_hasDarkTheme
     },
@@ -274,15 +313,27 @@ export default {
           pluginSortParams: sortParams
         })
       }
+    },
+
+    loadingModalText () {
+      if (!this.selectedPlugin) {
+        return ''
+      }
+
+      return this.$t('PAGES.PLUGIN_MANAGER.INSTALLING', {
+        plugin: this.selectedPlugin.id
+      })
     }
   },
 
   mounted () {
-    ipcRenderer.on('plugin-manager:plugin-installed', async (_, pluginPath) => {
-      await this.$plugins.fetchPlugin(pluginPath)
+    ipcRenderer.on('plugin-manager:plugin-installed', async (_, plugin) => {
+      await this.$plugins.fetchPlugin(plugin.pluginPath)
 
-      this.openDetailsModal(this.pluginToInstall)
-      this.closeInstallModal()
+      this.resetModal()
+      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.INSTALLATION', {
+        plugin: plugin.pluginId
+      }))
     })
   },
 
@@ -302,6 +353,22 @@ export default {
       }
     },
 
+    setModal (modal) {
+      this.modal = modal
+    },
+
+    resetModal () {
+      this.modal = null
+    },
+
+    setPlugin (plugin) {
+      this.selectedPlugin = plugin
+    },
+
+    resetPlugin () {
+      this.selectedPlugin = null
+    },
+
     toggleLayout () {
       this.layout = this.layout === 'grid' ? 'tabular' : 'grid'
     },
@@ -311,11 +378,26 @@ export default {
     },
 
     openDetailsModal (plugin) {
-      this.pluginToShow = plugin
+      this.setPlugin(plugin)
+      this.setModal('details')
     },
 
-    closeDetailsModal () {
-      this.pluginToShow = null
+    openPermissionsModal (ref = '') {
+      this.modalRef = ref
+      this.setModal('permissions')
+    },
+
+    closePermissionsModal (ref) {
+      if (ref) {
+        this.setModal(ref)
+      } else {
+        this.resetModal()
+      }
+    },
+
+    reset () {
+      this.resetPlugin()
+      this.resetModal()
     },
 
     openRemovalModal (plugin) {
@@ -326,25 +408,28 @@ export default {
       this.pluginToRemove = plugin
     },
 
-    closeRemovalModal () {
-      this.pluginToRemove = null
-    },
+    async fetchPluginData (url) {
+      try {
+        const plugin = await this.$plugins.fetchPluginFromUrl(url)
 
-    openInstallModal (plugin) {
-      if (this.pluginToShow) {
-        this.pluginToShow = null
+        if (this.$store.getters['plugin/isInstalled'](plugin.id)) {
+          this.$error(this.$t('PAGES.PLUGIN_MANAGER.ERRORS.ALREADY_INSTALLED', {
+            plugin: plugin.id
+          }))
+          this.resetModal()
+        } else {
+          plugin.source = url
+
+          this.selectedPlugin = plugin
+          this.openPermissionsModal('url')
+        }
+      } catch (error) {
+        this.$error(this.$t('COMMON.FAILED_FETCH', {
+          name: 'plugin',
+          msg: error.message
+        }))
+        this.resetModal()
       }
-
-      this.showPermissions = false
-      this.pluginToInstall = plugin
-    },
-
-    closeInstallModal () {
-      this.pluginToInstall = null
-    },
-
-    toggleShowPermissions () {
-      this.showPermissions = !this.showPermissions
     },
 
     onCategoryChange (category) {
@@ -362,11 +447,16 @@ export default {
     },
 
     onInstall () {
-      ipcRenderer.send('plugin-manager:install', this.pluginToInstall.id)
+      this.setModal('loading')
+
+      ipcRenderer.send('plugin-manager:install', this.selectedPlugin.id)
     },
 
-    onRemoved (pluginId) {
-      this.closeRemovalModal()
+    onRemoved () {
+      this.$success(this.$t('PAGES.PLUGIN_MANAGER.SUCCESS.REMOVAL', {
+        plugin: this.selectedPlugin.id
+      }))
+      this.reset()
     },
 
     onSearch (query) {
@@ -394,11 +484,6 @@ export default {
         enabled,
         pluginId
       })
-    },
-
-    // TODO
-    onInstallFrom (type) {
-      console.log(`install from ${type}`)
     }
   }
 }

@@ -24,8 +24,11 @@
             </i18n>
 
             <div class="PluginInstallModal__authorized__downloading__header__info">
-              <span class="font-semibold">{{ formatter_percentage(progressUpdate.percent, 2, 2) }}</span>
-              <span class="ml-2 text-theme-page-text-light truncate">
+              <span class="font-semibold">{{ formatter_percentage(normalizedPercentage, 2, 2) }}</span>
+              <span
+                v-if="progressUpdate.total"
+                class="ml-2 text-theme-page-text-light truncate"
+              >
                 {{ formatter_bytes(progressUpdate.transferred) }} / {{ formatter_bytes(progressUpdate.total) }}
               </span>
             </div>
@@ -88,7 +91,6 @@ export default {
     isDownloadFinished: false,
     isDownloadFailed: false,
     isDownloadCancelled: false,
-    percent: 0,
     progressUpdate: {
       percent: 0,
       total: 0,
@@ -100,6 +102,10 @@ export default {
     installImage () {
       const image = this.session_hasDarkTheme ? 'dark' : 'light'
       return this.assets_loadImage(`pages/updater/computer-${image}.svg`)
+    },
+
+    normalizedPercentage () {
+      return this.progressUpdate.percent * 1e2
     }
   },
 
@@ -110,6 +116,7 @@ export default {
 
     ipcRenderer.on('plugin-manager:plugin-downloaded', () => {
       this.isDownloadFinished = true
+      this.progressUpdate.percent = 1
     })
 
     ipcRenderer.on('plugin-manager:error', (_, error) => {

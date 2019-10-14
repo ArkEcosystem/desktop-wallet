@@ -29,7 +29,7 @@
         <button
           v-if="!isInstalled"
           class="blue-button"
-          @click="emitInstall"
+          @click="emitConfirm"
         >
           {{ $t('MODAL_PLUGIN_PERMISSIONS.DOWNLOAD') }}
         </button>
@@ -49,6 +49,11 @@ export default {
   },
 
   props: {
+    modalRef: {
+      type: String,
+      required: false,
+      default: ''
+    },
     plugin: {
       type: Object,
       required: true
@@ -70,11 +75,11 @@ export default {
 
   methods: {
     emitClose () {
-      this.$emit('close')
+      this.$emit('close', this.modalRef)
     },
 
-    emitInstall () {
-      this.$emit('install', this.plugin)
+    emitConfirm () {
+      this.$emit('confirm', this.plugin)
     }
   }
 }

@@ -169,6 +169,11 @@ export default {
     PUBLIC_KEY: {
       INVALID_LENGTH: 'The public key must be 66 characters long'
     },
+    URL: {
+      INVALID: 'Invalid \'URL\'',
+      NOT_ALLOWED: 'Only URLs containgin \'github.com\' are allowed',
+      NO_ARCHIVE: 'The \'URL\' must point to a ZIP archive'
+    },
     VENDOR_FIELD: {
       LIMIT_REACHED: 'You can enter a maximum of {0} characters only',
       LIMIT_REMAINING: '{0}/{1} Remaining'
@@ -508,6 +513,12 @@ export default {
     }
   },
 
+  MODAL_PLUGIN_URL: {
+    TITLE: 'Install from URL',
+    EXPLANATION: 'Install a plugin by pasting a GitHub URL pointing to the archive of the repository in the input field below.',
+    DISCLAIMER: '<b>Disclaimer:</b> Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.'
+  },
+
   PASSPHRASE_INPUT: {
     HIDE: 'Hide the passphrase',
     LABEL: 'Passphrase',
@@ -582,6 +593,7 @@ export default {
       DETAILS: 'Details',
       ENABLED: 'Enabled',
       DISABLED: 'Disabled',
+      INSTALLING: 'Installing \'{plugin}\'',
       INSTALL_URL: 'Install from URL',
       OFFICIAL: 'Official {author} plugin',
       MENU: 'Menu',
@@ -609,6 +621,13 @@ export default {
       UPDATE: {
         AVAILABLE: 'Update to latest version (v{version})',
         NOT_AVAILABLE: 'No updates available'
+      },
+      ERRORS: {
+        ALREADY_INSTALLED: 'The plugin \'{plugin}\' is already installed'
+      },
+      SUCCESS: {
+        INSTALLATION: 'The plugin \'{plugin}\' was installed successfully',
+        REMOVAL: 'The plugin \'{plugin}\' was removed successfully'
       },
       DISCLAIMER: '<b>Disclaimer:</b> The availability of this plugin in the ARK Desktop Wallet does not mean that ARK is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility.',
       REPORT: 'Report this plugin'

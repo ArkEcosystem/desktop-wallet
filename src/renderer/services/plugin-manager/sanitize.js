@@ -105,7 +105,17 @@ const sanitizeSize = async (config, pluginPath) => {
     return config.dist.unpackedSize
   }
 
-  return du(pluginPath)
+  let size = 0
+
+  if (pluginPath) {
+    try {
+      size = du(pluginPath)
+    } catch (error) {
+      //
+    }
+  }
+
+  return size
 }
 
 const sanitizeSource = config => {
