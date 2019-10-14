@@ -6,59 +6,63 @@
     :container-classes-minimized="`AppUpdater--minimized ${hasFooter ? 'AppUpdater--minimized--with-footer' : ''}`"
     container-classes="AppUpdater--maximized"
     portal-target="updater"
+    class="AppUpdater"
     @close="emitClose"
   >
     <template #default="{ isMaximized }">
-      <section v-if="!isDownloadAuthorized">
-        <!-- eslint-disable vue/no-v-html -->
-        <div
-          class="AppUpdater__release-notes"
-          v-html="releaseNotes"
-        />
+      <div class="AppUpdater__content">
+        <section v-if="!isDownloadAuthorized">
+          <!-- eslint-disable vue/no-v-html -->
+          <div
+            class="AppUpdater__release-notes"
+            v-html="releaseNotes"
+          />
         <!-- eslint-enable vue/no-v-html -->
-      </section>
+        </section>
 
-      <section
-        v-else
-        class="AppUpdater__authorized"
-      >
-        <img
-          :src="descriptionImage"
-          class="AppUpdater__authorized__image"
+        <section
+          v-else
+          class="AppUpdater__authorized"
         >
-        <div
-          class="AppUpdater__authorized__downloading"
-        >
-          <div class="AppUpdater__authorized__downloading__header">
-            <span class="AppUpdater__authorized__downloading__header__title">
-              {{ $t(isDownloadFinished
-                      ? 'APP_UPDATER.DOWNLOADED'
-                      : 'APP_UPDATER.DOWNLOADING',
-                    { version: availableRelease.version })
-              }}
-            </span>
-            <div
-              v-if="progressUpdate.total > 0"
-              class="AppUpdater__authorized__downloading__header__info"
-            >
-              <span class="font-semibold">{{ formattedPercentage }}</span>
-              <span class="ml-2 text-theme-page-text-light truncate">{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
+          <img
+            :src="descriptionImage"
+            class="AppUpdater__authorized__image"
+          >
+          <div
+            class="AppUpdater__authorized__downloading"
+          >
+            <div class="AppUpdater__authorized__downloading__header">
+              <span class="AppUpdater__authorized__downloading__header__title">
+                {{ $t(isDownloadFinished
+                        ? 'APP_UPDATER.DOWNLOADED'
+                        : 'APP_UPDATER.DOWNLOADING',
+                      { version: availableRelease.version })
+                }}
+              </span>
+              <div
+                v-if="progressUpdate.total > 0"
+                class="AppUpdater__authorized__downloading__header__info"
+              >
+                <span class="font-semibold">{{ formattedPercentage }}</span>
+                <span class="ml-2 text-theme-page-text-light truncate">{{ formatBytes(progressUpdate.transferred) }} / {{ formatBytes(progressUpdate.total) }}</span>
+              </div>
+            </div>
+            <div class="AppUpdater__progress-bar">
+              <ProgressBar
+                :size="isMaximized ? 'normal' : 'small'"
+                :percent="progressUpdate.percent"
+                :status="isDownloadFailed ? 'exception' : 'active'"
+              />
             </div>
           </div>
-          <div class="AppUpdater__progress-bar">
-            <ProgressBar
-              :size="isMaximized ? 'normal' : 'small'"
-              :percent="progressUpdate.percent"
-              :status="isDownloadFailed ? 'exception' : 'active'"
-            />
-          </div>
-        </div>
-      </section>
-    </template>
+        </section>
+      </div>
 
-    <template #footer>
-      <footer v-if="!isDownloadAuthorized">
-        <div class="AppUpdater__footer">
+      <footer>
+        <div
+          v-if="!isDownloadAuthorized"
+          class="AppUpdater__footer"
+        >
           <button
             class="blue-button mx-1"
             @click="startDownload"
@@ -73,10 +77,11 @@
             {{ $t('APP_UPDATER.MAYBE_LATER') }}
           </button>
         </div>
-      </footer>
 
-      <footer v-if="isDownloadFinished && !isDownloadFailed">
-        <div class="AppUpdater__footer">
+        <div
+          v-if="isDownloadFinished"
+          class="AppUpdater__footer"
+        >
           <button
             class="blue-button mx-1"
             @click="quitAndInstall"
@@ -85,7 +90,9 @@
           </button>
         </div>
       </footer>
+    </template>
 
+    <template #footer>
       <footer v-if="isDownloadFailed">
         <div class="AppUpdater__footer AppUpdater__footer--failed">
           {{ errorMessage ? errorMessage : $t('APP_UPDATER.UNKNOW_ERROR') }}
@@ -269,10 +276,13 @@ export default {
 }
 
 .AppUpdater__footer {
-  @apply pb-4 px-10 flex flex-row justify-center
+  @apply flex flex-row justify-center
 }
 .AppUpdater__footer--failed {
   @apply py-5 bg-theme-error text-white
+}
+.AppUpdater__content + footer {
+  @apply mt-5
 }
 
 .AppUpdater--maximized {
