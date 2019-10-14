@@ -108,7 +108,17 @@ export default {
 
   computed: {
     totalAmount () {
-      return this.currency_toBuilder(this.transaction.amount).add(this.transaction.fee).value
+      const amount = this.currency_toBuilder(this.transaction.fee)
+
+      if (this.transaction.asset && this.transaction.asset.payments) {
+        for (const payment of this.transaction.asset.payments) {
+          amount.add(payment.amount)
+        }
+      } else if (this.transaction.amount) {
+        amount.add(this.transaction.amount)
+      }
+
+      return amount.value
     },
     currentWallet () {
       return this.wallet || this.wallet_fromRoute
