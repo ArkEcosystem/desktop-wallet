@@ -65,7 +65,7 @@ export default class TransactionService {
 
   static needsWalletSignature (transaction, publicKey) {
     if (transaction.type === TRANSACTION_TYPES.GROUP_1.MULTI_SIGNATURE && this.isMultiSignatureReady(transaction, true)) {
-      return transaction.senderPublicKey === publicKey
+      return transaction.senderPublicKey === publicKey && !transaction.signature
     }
 
     const index = transaction.multiSignature.publicKeys.indexOf(publicKey)
