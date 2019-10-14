@@ -151,6 +151,12 @@
       />
 
       <ListDividedItem
+        v-if="transaction.nonce"
+        :label="$t('TRANSACTION.NONCE')"
+        :value="transaction.nonce"
+      />
+
+      <ListDividedItem
         :label="$t('TRANSACTION.CONFIRMATIONS')"
         item-value-class="flex items-center"
       >

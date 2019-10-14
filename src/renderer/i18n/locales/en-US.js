@@ -906,6 +906,7 @@ export default {
     LEDGER_USER_DECLINED: 'User declined',
     LOAD_FROM_FILE: 'Load transaction from file',
     MULTIPLE: 'Multiple',
+    NONCE: 'Nonce',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',
