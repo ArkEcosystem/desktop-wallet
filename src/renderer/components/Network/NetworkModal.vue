@@ -84,6 +84,16 @@
               />
 
               <InputText
+                ref="input-version"
+                v-model="$v.form.version.$model"
+                :label="$t('MODAL_NETWORK.VERSION')"
+                :is-invalid="$v.form.version.$dirty && $v.form.version.$invalid"
+                :helper-text="versionError"
+                class="mt-5"
+                name="version"
+              />
+
+              <InputText
                 ref="input-epoch"
                 v-model="$v.form.epoch.$model"
                 :label="$t('MODAL_NETWORK.EPOCH')"
@@ -237,13 +247,13 @@ export default {
       nethash: '',
       token: '',
       symbol: '',
+      version: '',
       explorer: '',
       epoch: '',
       wif: '',
       slip44: '',
       activeDelegates: '',
-      ticker: '',
-      version: ''
+      ticker: ''
     },
     configChoices: [
       'Basic',
@@ -296,6 +306,10 @@ export default {
       return this.requiredFieldError(this.$v.form.slip44, this.$refs['input-slip44'])
     },
 
+    versionError () {
+      return this.requiredNumericFieldError(this.$v.form.version, this.$refs['input-version'])
+    },
+
     wifError () {
       return this.requiredNumericFieldError(this.$v.form.wif, this.$refs['input-wif'])
     },
@@ -332,6 +346,7 @@ export default {
       this.form.nethash = this.network.nethash
       this.form.token = this.network.token
       this.form.symbol = this.network.symbol
+      this.form.version = this.network.version.toString()
       this.form.explorer = this.network.explorer || ''
 
       this.form.epoch = this.network.constants.epoch
@@ -407,9 +422,11 @@ export default {
     async validateSeed () {
       this.showLoadingModal = true
 
-      const matches = /(https?:\/\/[a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.form.server)
-      const host = matches[1]
-      const port = matches[2]
+      let { origin: host, port, protocol } = new URL(this.form.server)
+
+      if (!port) {
+        port = protocol === 'https:' ? 443 : 80
+      }
 
       const response = await this.$store.dispatch('peer/validatePeer', {
         host,
@@ -448,14 +465,21 @@ export default {
         enabled: this.form.ticker !== '',
         ticker: this.form.ticker !== '' ? this.form.ticker : null
       }
+      customNetwork.version = parseInt(customNetwork.version) // Important: needs to be a Number
       customNetwork.subunit = this.form.token.toLowerCase() + 'toshi'
       customNetwork.fractionDigits = 8
       customNetwork.wif = parseInt(this.form.wif)
       customNetwork.knownWallets = {}
 
       if (this.showFull && this.hasFetched) {
-        const { hostname: ip, port, protocol } = new URL(this.form.server)
+        let { hostname: ip, port, protocol } = new URL(this.form.server)
+
         const isHttps = protocol === 'https:'
+
+        if (!port) {
+          port = isHttps ? 443 : 80
+        }
+
         const peer = {
           version: '0',
           height: 0,
@@ -464,6 +488,7 @@ export default {
           ip,
           isHttps
         }
+
         await this.$store.dispatch('network/addCustomNetwork', customNetwork)
         await this.$store.dispatch('peer/setToNetwork', { peers: [peer], networkId: customNetwork.id })
       } else {
@@ -504,6 +529,9 @@ export default {
             }
           }
           this.form.ticker = tokenFound ? network.token : ''
+          if (tokenFound && network.version) {
+            this.form.version = network.version.toString()
+          }
 
           this.showFull = true
           this.hasFetched = true
@@ -580,6 +608,10 @@ export default {
       },
       symbol: {
         requiredIfFull
+      },
+      version: {
+        requiredIfFull,
+        numeric
       },
       explorer: {
         requiredIfFull,

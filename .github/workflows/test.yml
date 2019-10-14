@@ -1,0 +1,151 @@
+name: Test & Build
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'develop'
+  pull_request:
+    types: [ready_for_review, synchronize, opened]
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Update System
+        run: sudo apt-get update
+
+      - name: Ledger
+        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+
+      - name: Test
+        run: yarn test:unit --coverage
+
+      - name: Codecov
+        run: ./node_modules/.bin/codecov --token=${{ secrets.CODECOV_TOKEN }}
+
+  build-linux:
+    needs: unit
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Update System
+        run: sudo apt-get update
+
+      - name: Ledger
+        run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+
+      - name: Build
+        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --linux
+
+      # - name: Upload .AppImage
+      #   uses: actions/upload-artifact@master
+      #   with:
+      #     name: ark-desktop-wallet-linux-2.6.2.AppImage
+      #     path: build/target/ark-desktop-wallet-linux-x86_64-2.6.2.AppImage
+
+      # - name: Upload .tar.gz
+      #   uses: actions/upload-artifact@master
+      #   with:
+      #     name: ark-desktop-wallet-linux-2.6.2.tar.gz
+      #     path: build/target/ark-desktop-wallet-linux-x64-2.6.2.tar.gz
+
+      - name: Upload .deb
+        uses: actions/upload-artifact@master
+        with:
+          name: ark-desktop-wallet-linux-2.6.2.deb
+          path: build/target/ark-desktop-wallet-linux-amd64-2.6.2.deb
+
+  build-macOS:
+    needs: unit
+
+    runs-on: macOS-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+
+      - name: Build
+        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --mac
+
+      # - name: Upload .zip
+      #   uses: actions/upload-artifact@master
+      #   with:
+      #     name: ark-desktop-wallet-mac-2.6.2.zip
+      #     path: build/target/ark-desktop-wallet-mac-2.6.2.zip
+
+      - name: Upload .dmg
+        uses: actions/upload-artifact@master
+        with:
+          name: ark-desktop-wallet-mac-2.6.2.dmg
+          path: build/target/ark-desktop-wallet-mac-2.6.2.dmg
+
+  build-windows:
+    needs: unit
+
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: yarn global add node-gyp && yarn install --frozen-lockfile && npm rebuild
+
+      - name: Build
+        run: node .electron-vue/build.js && node ./node_modules/electron-builder/out/cli/cli.js --win --x64 --ia32
+
+      - name: Upload .exe
+        uses: actions/upload-artifact@master
+        with:
+          name: ark-desktop-wallet-win-2.6.2.exe
+          path: build/target/ark-desktop-wallet-win-2.6.2.exe
