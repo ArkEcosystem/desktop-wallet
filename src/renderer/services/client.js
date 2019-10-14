@@ -838,6 +838,10 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
+    if (!store.getters['session/network'].constants.aip11) {
+      throw new Error('AIP-11 transaction not supported on network')
+    }
+
     const staticFee = store.getters['transaction/staticFee'](TRANSACTION_TYPES.GROUP_1.MULTI_PAYMENT)
     if (!isAdvancedFee && fee.gt(staticFee)) {
       throw new Error(`Multi-Payment fee should be smaller than ${staticFee}`)
