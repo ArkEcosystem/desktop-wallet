@@ -183,7 +183,8 @@ export default {
           fee: this.formatter_networkCurrency(this.transaction.fee)
         }),
         warningBroadcast: this.$t('TRANSACTION.WARNING.BROADCAST'),
-        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT')
+        nothingSent: this.$t('TRANSACTION.ERROR.NOTHING_SENT'),
+        wrongNonce: this.$t('TRANSACTION.ERROR.WRONG_NONCE')
       }
 
       let responseArray
@@ -246,10 +247,17 @@ export default {
           const anyNotDuplicate = Object.keys(errors).some(transactionId => {
             return errors[transactionId].some(error => error.type !== 'ERR_DUPLICATE' && error.type !== 'ERR_LOW_FEE')
           })
+          const wrongNonce = Object.keys(errors).some(transactionId => {
+            return errors[transactionId].some(error => {
+              return error.type === 'ERR_APPLY' && error.message.includes('Cannot apply a transaction with nonce')
+            })
+          })
 
           // Be clear with the user about the error cause
           if (anyLowFee) {
             this.$error(messages.errorLowFee)
+          } else if (wrongNonce) {
+            this.$error(messages.wrongNonce)
           } else if (anyNotDuplicate) {
             this.$error(messages.error)
           }
