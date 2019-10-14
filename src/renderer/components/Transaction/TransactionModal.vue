@@ -359,10 +359,8 @@ export default {
   min-width: 38rem;
 }
 
-.TransactionModalMultiPayment {
-  min-width: 35rem;
-}
-
+.TransactionModalIpfs,
+.TransactionModalMultiPayment,
 .TransactionModalMultiSignature {
   min-width: 35rem;
 }
