@@ -247,9 +247,9 @@ export default {
 
     reportPlugin () {
       const params = new URLSearchParams({
-        type: 'desktop-wallet-plugin-report',
-        id: this.plugin.id,
-        version: this.plugin.version
+        subject: 'desktop_wallet_plugin_report',
+        plugin_id: this.plugin.id,
+        plugin_version: this.plugin.version
       })
 
       this.openExternal(`${PLUGINS.reportUrl}?${params.toString()}`)
