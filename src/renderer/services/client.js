@@ -724,7 +724,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    if (!store.getters['session/network'].milestone.aip11) {
+    if (!store.getters['session/network'].constants.aip11) {
       throw new Error('AIP-11 transaction not supported on network')
     }
 
@@ -782,7 +782,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    if (!store.getters['session/network'].milestone.aip11) {
+    if (!store.getters['session/network'].constants.aip11) {
       throw new Error('AIP-11 transaction not supported on network')
     }
 
@@ -890,7 +890,7 @@ export default class ClientService {
     isAdvancedFee = false,
     returnObject = false
   ) {
-    if (!store.getters['session/network'].milestone.aip11) {
+    if (!store.getters['session/network'].constants.aip11) {
       throw new Error('AIP-11 transaction not supported on network')
     }
 
@@ -1021,7 +1021,7 @@ export default class ClientService {
     transaction = this.__transactionFromData(transaction)
 
     const network = store.getters['session/network']
-    if (!network.milestone.aip11) {
+    if (!network.constants.aip11) {
       throw new Error('Multi-Signature Transactions are not supported yet')
     }
 

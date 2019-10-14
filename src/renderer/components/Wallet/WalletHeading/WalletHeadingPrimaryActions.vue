@@ -144,7 +144,7 @@ export default {
     },
 
     hasAip11 () {
-      return this.currentNetwork.milestone ? !!this.currentNetwork.milestone.aip11 : false
+      return this.currentNetwork.constants ? !!this.currentNetwork.constants.aip11 : false
     },
 
     sendOptions () {

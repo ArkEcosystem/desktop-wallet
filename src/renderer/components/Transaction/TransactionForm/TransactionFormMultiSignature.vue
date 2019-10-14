@@ -300,11 +300,11 @@ export default {
     },
 
     maximumPublicKeys () {
-      if (!this.session_network.milestone || !this.session_network.milestone.maxMultiSignatureParticipants) {
+      if (!this.session_network.constants || !this.session_network.constants.maxMultiSignatureParticipants) {
         return 16
       }
 
-      return this.session_network.milestone.maxMultiSignatureParticipants
+      return this.session_network.constants.maxMultiSignatureParticipants
     },
 
     minKeysError () {

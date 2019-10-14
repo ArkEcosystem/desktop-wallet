@@ -306,11 +306,11 @@ export default {
     },
 
     maximumRecipients () {
-      if (!this.session_network.milestone || !this.session_network.milestone.multiPaymentLimit) {
+      if (!this.session_network.constants || !this.session_network.constants.multiPaymentLimit) {
         return 500
       }
 
-      return this.session_network.milestone.multiPaymentLimit
+      return this.session_network.constants.multiPaymentLimit
     }
   },
 

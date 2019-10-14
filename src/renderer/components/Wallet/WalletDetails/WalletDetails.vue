@@ -253,7 +253,7 @@ export default {
         })
       }
 
-      if (this.currentNetwork.milestone && this.currentNetwork.milestone.aip11) {
+      if (this.currentNetwork.constants && this.currentNetwork.constants.aip11) {
         tabs.push({
           component: 'WalletIpfs',
           componentName: 'WalletIpfs',
