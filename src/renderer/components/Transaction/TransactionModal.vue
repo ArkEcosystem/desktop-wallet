@@ -148,13 +148,11 @@ export default {
       }
 
       const response = await MultiSignature.sendTransaction(peer, this.transaction)
-      if (response) {
+      if (response && !sendToNetwork) {
         this.$success(this.$t(`TRANSACTION.SUCCESS.${this.transactionKey}`))
-        if (!sendToNetwork) {
-          this.emitSent(true, this.transaction)
-          this.emitClose()
-        }
-      } else {
+        this.emitSent(true, this.transaction)
+        this.emitClose()
+      } else if (!response) {
         this.$error(this.$t(`TRANSACTION.ERROR.${this.transactionKey}`))
       }
 
