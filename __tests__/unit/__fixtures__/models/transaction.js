@@ -11,8 +11,6 @@ export default {
   recipientId: 'AdXbS4GKvV6TZVHrNzcYSQKfpenQnFGTxK',
   signature: '304402206db4ffcdff1c6eb19ecdf0f83cf528a34673eac57defbf25298a6f25f9791fd602206f12834a752c11d749c7450c63550e2c09ff01092c23f67941d6695faaa9e0a9',
   confirmations: 444027,
-  // timestamp: 1550061504,
   timestamp: 59960304,
-  // timestamp: 1570827710,
   nonce: '3'
 }

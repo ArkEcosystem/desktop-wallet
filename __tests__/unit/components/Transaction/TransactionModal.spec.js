@@ -122,6 +122,8 @@ describe('TransactionModal', () => {
       wrapper.vm.storeTransaction(transaction)
 
       const { id, type, amount, fee, vendorField } = transaction
+      const timestamp = (new Date(wrapper.vm.session_network.constants.epoch)).getTime() + transaction.timestamp * 1000
+
       const expected = {
         profileId,
         id,
@@ -130,7 +132,7 @@ describe('TransactionModal', () => {
         fee,
         vendorField,
         confirmations: 0,
-        timestamp: transaction.timestamp * 1000,
+        timestamp,
         sender: `public key of ${transaction.senderPublicKey}`,
         recipient: transaction.recipientId,
         raw: transaction
