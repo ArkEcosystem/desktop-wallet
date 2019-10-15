@@ -726,7 +726,8 @@ export default {
 
     WALLET_SHOW: {
       NO_VOTE: 'Wallet hasn\'t voted',
-      ADD_CONTACT: 'Add to contacts'
+      ADD_CONTACT: 'Add to contacts',
+      VOTING_FOR: 'Voting for {delegate}'
     }
   },
 

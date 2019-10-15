@@ -43,7 +43,7 @@ describe('WalletDelegates', () => {
 
   describe('when the wallet is voting', () => {
     beforeEach(() => {
-      walletVote = { publicKey: 'key' }
+      walletVote = { username: 'key' }
       showExplanation = true
     })
 
