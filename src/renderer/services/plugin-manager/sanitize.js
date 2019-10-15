@@ -5,19 +5,19 @@ import parse from 'parse-author'
 
 const sanitize = async (config, pluginPath = null) => {
   return {
-    id: config.name,
-    title: config.title || sanitizeName(config.name),
-    isOfficial: isOfficial(config.name),
     author: sanitizeAuthor(config),
     categories: sanitizeCategories(config),
     description: config.description,
-    version: config.version,
+    homepage: config.homepage,
+    id: config.name,
+    isOfficial: isOfficial(config.name),
     minVersion: sanitizeMinVersion(config),
     permissions: sanitizePermissions(config),
-    urls: sanitizeUrls(config),
-    homepage: config.homepage,
     size: await sanitizeSize(config, pluginPath) || 0,
-    source: sanitizeSource(config)
+    source: sanitizeSource(config),
+    title: config.title || sanitizeName(config.name),
+    urls: sanitizeUrls(config),
+    version: config.version
   }
 }
 
@@ -27,14 +27,6 @@ const getWalletOption = (config, option) => {
   } catch (error) {
     return null
   }
-}
-
-const sanitizeName = name => {
-  const parts = name.split('/')
-  return parts[parts.length ? 1 : 0]
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
 }
 
 const isOfficial = name => {
@@ -88,16 +80,20 @@ const sanitizeMinVersion = config => {
   return getWalletOption(config, 'minVersion') || config.minVersion || null
 }
 
+const sanitizeName = name => {
+  const parts = name.split('/')
+  return parts[parts.length ? 1 : 0]
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
 const sanitizePermissions = config => {
   const permissions = getWalletOption(config, 'permissions') || config.permissions || []
 
   return intersection(uniq(permissions).sort().map(permission => {
     return permission.toUpperCase()
   }), PLUGINS.validation.permissions)
-}
-
-const sanitizeUrls = config => {
-  return getWalletOption(config, 'urls') || config.urls || []
 }
 
 const sanitizeSize = async (config, pluginPath) => {
@@ -124,6 +120,10 @@ const sanitizeSource = config => {
   }
 
   return null
+}
+
+const sanitizeUrls = config => {
+  return getWalletOption(config, 'urls') || config.urls || []
 }
 
 export default sanitize
