@@ -60,7 +60,7 @@
             icon="update-available"
             view-box="0 0 32 17"
             :is-small="true"
-            class="w-full mt-2"
+            class="w-full"
             @click="emitShowDetails(data.row)"
           />
 
