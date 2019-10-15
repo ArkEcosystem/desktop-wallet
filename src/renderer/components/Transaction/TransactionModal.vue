@@ -322,7 +322,11 @@ export default {
       }
 
       const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
-      const timestamp = transaction.timestamp * 1000
+      let timestamp = transaction.timestamp * 1000
+      if (transaction.version === 1) {
+        const epoch = new Date(this.walletNetwork.constants.epoch)
+        timestamp = epoch.getTime() + (transaction.timestamp * 1000)
+      }
 
       this.$store.dispatch('transaction/create', {
         id,
