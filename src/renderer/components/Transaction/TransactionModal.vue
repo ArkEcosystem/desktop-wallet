@@ -321,7 +321,6 @@ export default {
         transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
       }
 
-      const sender = WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version)
       let timestamp = transaction.timestamp * 1000
       if (transaction.version === 1) {
         const epoch = new Date(this.walletNetwork.constants.epoch)
@@ -333,7 +332,7 @@ export default {
         type,
         amount,
         fee,
-        sender,
+        sender: WalletService.getAddressFromPublicKey(senderPublicKey, this.walletNetwork.version),
         timestamp,
         vendorField,
         confirmations: 0,
