@@ -374,7 +374,6 @@ export default {
       }
 
       this.$router.push({ name: 'wallet-show', params: { address } })
-      this.$emit('select', address)
     },
 
     closeFilters (context) {
