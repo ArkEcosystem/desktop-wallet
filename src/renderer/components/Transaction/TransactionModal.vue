@@ -306,6 +306,11 @@ export default {
     storeTransaction (transaction) {
       const { type, amount, fee, senderPublicKey, vendorField } = transaction
 
+      let id = transaction.id
+      if (transaction.signatures) {
+        id = TransactionService.getId(transaction)
+      }
+
       if (!transaction.timestamp) {
         transaction.timestamp = Math.floor((new Date()).getTime() / 1000)
       } else if (transaction.timestamp > Math.floor(new Date().getTime() / 1000)) {
@@ -320,7 +325,7 @@ export default {
       const timestamp = transaction.timestamp * 1000
 
       this.$store.dispatch('transaction/create', {
-        id: TransactionService.getId(transaction),
+        id,
         type,
         amount,
         fee,
