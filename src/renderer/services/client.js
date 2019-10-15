@@ -944,6 +944,10 @@ export default class ClientService {
     returnObject = false
   ) {
     const network = store.getters['session/network']
+
+    Managers.configManager.setConfig(cloneDeep(network.crypto))
+    Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
+
     transaction = transaction.network(network.version)
 
     // TODO replace with dayjs
@@ -956,9 +960,6 @@ export default class ClientService {
     }
 
     if (network.constants.aip11) {
-      Managers.configManager.setConfig(cloneDeep(network.crypto))
-      Managers.configManager.setHeight(await store.dispatch('peer/getAverageHeight', network))
-
       let nonce = '1'
       try {
         nonce = BigNumber((await this.fetchWallet(address)).nonce || 0).plus(1).toString()
