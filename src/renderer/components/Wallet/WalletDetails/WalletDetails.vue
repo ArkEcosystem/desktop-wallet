@@ -323,6 +323,9 @@ export default {
           break
       }
     },
+    async currentWallet () {
+      await this.fetchWalletVote()
+    },
     tabs () {
       this.$nextTick(() => {
         this.$refs.menutab.collectItems()

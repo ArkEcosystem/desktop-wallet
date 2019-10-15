@@ -18,7 +18,6 @@
       }"
       @expanded="onExpand"
       @collapsed="onCollapse"
-      @select="loadWalletData"
     />
   </div>
 </template>
@@ -59,10 +58,6 @@ export default {
   },
 
   methods: {
-    loadWalletData () {
-      this.$refs.WalletDetails.fetchWalletVote()
-    },
-
     onCollapse () {
       this.isSidebarExpanded = false
     },
