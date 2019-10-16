@@ -28,6 +28,7 @@ class PluginManager {
     this.adapter = null
     this.plugins = {}
     this.pluginRoutes = []
+    this.pluginsPath = null
     this.hasInit = false
     this.vue = null
     this.hooks = [
@@ -51,6 +52,8 @@ class PluginManager {
 
   async init (app) {
     this.app = app
+
+    this.pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
 
     await this.app.$store.dispatch('plugin/reset')
     await this.fetchPluginsFromPath()
@@ -141,7 +144,16 @@ class PluginManager {
       throw new errors.PluginNotFoundError(pluginId)
     }
 
-    await trash(plugin.fullPath)
+    const parentDir = path.dirname(plugin.fullPath)
+    const pluginCount = fs.readdirSync(parentDir).filter(entry => {
+      return entry !== '.DS_Store'
+    }).length
+
+    if (parentDir !== this.pluginsPath && pluginCount === 1) {
+      await trash(parentDir)
+    } else {
+      await trash(plugin.fullPath)
+    }
 
     this.app.$store.dispatch('plugin/deleteInstalled', plugin.config.id)
 
@@ -684,12 +696,10 @@ class PluginManager {
   }
 
   async fetchPluginsFromPath () {
-    const pluginsPath = process.env.NODE_ENV !== 'development' ? PLUGINS.path : PLUGINS.devPath
+    fs.ensureDirSync(this.pluginsPath)
 
-    fs.ensureDirSync(pluginsPath)
-
-    const dirs = fs.readdirSync(pluginsPath).filter(entry => {
-      return entry !== '.cache' && fs.lstatSync(`${pluginsPath}/${entry}`).isDirectory()
+    const dirs = fs.readdirSync(this.pluginsPath).filter(entry => {
+      return entry !== '.cache' && fs.lstatSync(`${this.pluginsPath}/${entry}`).isDirectory()
     })
 
     const [scoped, unscoped] = partition(dirs, entry => {
@@ -699,7 +709,7 @@ class PluginManager {
     const plugins = unscoped
 
     for (const scope of scoped) {
-      const scopePath = `${pluginsPath}/${scope}`
+      const scopePath = `${this.pluginsPath}/${scope}`
 
       const entries = fs.readdirSync(scopePath).filter(entry => {
         return fs.lstatSync(`${scopePath}/${entry}`).isDirectory()
@@ -709,7 +719,7 @@ class PluginManager {
     }
 
     for (const plugin of plugins) {
-      const pluginPath = `${pluginsPath}/${plugin}`
+      const pluginPath = `${this.pluginsPath}/${plugin}`
 
       try {
         await this.fetchPlugin(pluginPath)
