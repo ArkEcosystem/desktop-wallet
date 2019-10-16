@@ -726,7 +726,8 @@ export default {
 
     WALLET_SHOW: {
       NO_VOTE: 'Il portafoglio non ha votato',
-      ADD_CONTACT: 'Aggiungi ai contatti'
+      ADD_CONTACT: 'Aggiungi ai contatti',
+      VOTING_FOR: 'Votando per {delegate}'
     }
   },
 

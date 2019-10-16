@@ -38,7 +38,7 @@ export default class ClientService {
     const data = response.body.data
 
     const currentNetwork = store.getters['session/network']
-    if (currentNetwork.nethash === data.nethash) {
+    if (currentNetwork && currentNetwork.nethash === data.nethash) {
       const newLength = data.constants.vendorFieldLength
 
       if (newLength && (!currentNetwork.vendorField || newLength !== currentNetwork.vendorField.maxLength)) {
@@ -462,16 +462,12 @@ export default class ClientService {
     const matches = /(https?:\/\/)([a-zA-Z0-9.-_]+):([0-9]+)/.exec(this.host)
     const scheme = matches[1]
     const ip = matches[2]
-    const isHttps = scheme === 'https://'
-    let port = isHttps ? 443 : 80
-    if (matches[3]) {
-      port = matches[3]
-    }
+    const port = matches[3]
 
     return {
       ip,
       port,
-      isHttps
+      isHttps: scheme === 'https://'
     }
   }
 
