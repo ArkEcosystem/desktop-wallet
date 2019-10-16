@@ -87,7 +87,7 @@
         <div class="flexify">
           <!-- Important notification / new releases -->
           <AppSidemenuImportantNotification
-            v-if="isImportantNotificationVisible && hasNewRelease"
+            v-if="isImportantNotificationVisible && hasAvailableRelease"
             :is-horizontal="isHorizontal"
             class="AppSidemenu__item"
             @close="hideImportantNotification"
@@ -139,9 +139,7 @@
 </template>
 
 <script>
-import semver from 'semver'
 import { mapGetters } from 'vuex'
-import releaseService from '@/services/release'
 import AppSidemenuPlugins from './AppSidemenuPlugins'
 import AppSidemenuSettings from './AppSidemenuSettings'
 import AppSidemenuNetworkStatus from './AppSidemenuNetworkStatus'
@@ -182,12 +180,9 @@ export default {
 
   computed: {
     ...mapGetters({
-      latestReleaseVersion: 'app/latestReleaseVersion',
+      hasAvailableRelease: 'updater/hasAvailableRelease',
       unreadAnnouncements: 'announcements/unread'
     }),
-    hasNewRelease () {
-      return semver.lt(releaseService.currentVersion, this.latestReleaseVersion || releaseService.currentVersion)
-    },
     showUnread () {
       return this.unreadAnnouncements.length > 0
     },

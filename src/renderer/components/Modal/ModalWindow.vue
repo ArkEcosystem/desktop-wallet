@@ -9,13 +9,16 @@
         'ModalWindow--maximized': isMaximized,
         'ModalWindow--minimized': !isMaximized
       }"
-      @click="emitClose()"
+      @click="onBackdropClick"
     >
       <Transition name="ModalWindow">
         <div class="ModalWindow__wrapper flex items-center justify-center absolute">
           <div
-            :class="containerClasses"
-            class="ModalWindow__container flex flex-col shadow mx-auto relative transition text-theme-text-content"
+            :class="[{
+              [containerClasses]: isMaximized,
+              [containerClassesMinimized]: !isMaximized,
+            }]"
+            class="ModalWindow__container flex flex-col shadow mx-auto rounded-lg relative transition text-theme-text-content"
             @click.stop="void 0"
           >
             <section class="ModalWindow__container__content">
@@ -49,8 +52,8 @@
                 </slot>
               </header>
 
-              <article class="content flex-1 mt-4">
-                <slot />
+              <article class="content flex-1 mt-3">
+                <slot :isMaximized="isMaximized" />
               </article>
             </section>
 
@@ -97,6 +100,11 @@ export default {
       required: false,
       default: ''
     },
+    containerClassesMinimized: {
+      type: String,
+      required: false,
+      default: ''
+    },
     title: {
       type: String,
       required: false,
@@ -106,6 +114,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    allowBackdropClick: {
+      type: Boolean,
+      required: false,
+      default: true
     },
     allowClose: {
       type: Boolean,
@@ -135,6 +148,12 @@ export default {
     toggleMaximized (callback) {
       this.isMaximized = !this.isMaximized
       isFunction(callback) && callback(this.isMaximized)
+    },
+
+    onBackdropClick () {
+      if (this.allowBackdropClick) {
+        this.emitClose()
+      }
     },
 
     emitClose (force = false) {
@@ -187,13 +206,13 @@ export default {
 }
 
 .ModalWindow--maximized .ModalWindow__container__content {
-  @apply overflow-hidden p-16 bg-theme-modal rounded-lg
+  @apply overflow-hidden p-16 pt-16 bg-theme-modal rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container__content {
-  @apply overflow-y-auto px-10 pt-2 pb-5 bg-theme-modal rounded-lg
+  @apply overflow-y-auto px-8 pt-2 pb-5 bg-theme-modal rounded-lg
 }
 .ModalWindow--minimized .ModalWindow__container {
-  height: 200px;
+  height: 200px!default;
   @apply overflow-hidden
 }
 </style>

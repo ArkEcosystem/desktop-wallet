@@ -66,6 +66,7 @@
     "bip39": "^3.0.0",
     "bs58check": "^2.1.2",
     "chart.js": "^2.8.0",
+    "cheerio": "^1.0.0-rc.3",
     "clean-css": "^4.2.1",
     "color": "^3.1.0",
     "cycled": "^1.0.0",
@@ -74,6 +75,7 @@
     "du": "^1.0.0",
     "electron-dl": "^1.14.0",
     "electron-log": "^3.0.7",
+    "electron-updater": "^4.1.2",
     "electron-window-state": "^5.0.3",
     "emittery": "^0.5.0",
     "fs-extra": "^8.1.0",
@@ -182,12 +184,14 @@
   "build": {
     "productName": "Ark Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
-    "compression": "maximum",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
     "publish": {
       "provider": "github",
       "vPrefixedTagName": false
     },
+    "extraResources": [
+      "app-update.yml"
+    ],
     "protocols": {
       "name": "Ark URI scheme",
       "schemes": [
@@ -212,7 +216,6 @@
     },
     "linux": {
       "category": "Utility",
-      "executableName": "ark-desktop-wallet",
       "icon": "build/icons",
       "target": [
         "AppImage",
