@@ -10,8 +10,8 @@
           <PluginLogo :plugin="plugin" />
 
           <ButtonIconGeneric
-            v-if="isUpdateAvailable(plugin.id)"
-            icon="update-available"
+            v-if="isInstalled(plugin.id) || isUpdateAvailable(plugin.id)"
+            :icon="isUpdateAvailable(plugin.id) ? 'update-available' : 'details'"
             view-box="0 0 32 17"
             :is-small="true"
             class="w-full mt-2"
@@ -20,7 +20,7 @@
 
           <ButtonGeneric
             v-else
-            :label="$t('PAGES.PLUGIN_MANAGER.DETAILS')"
+            :label="$t('PAGES.PLUGIN_MANAGER.INSTALL')"
             :is-small="true"
             class="w-full mt-2"
             @click="emitShowDetails(plugin)"
@@ -76,6 +76,10 @@ export default {
   methods: {
     emitShowDetails (plugin) {
       this.$emit('show-details', plugin)
+    },
+
+    isInstalled (pluginId) {
+      return this.$store.getters['plugin/isInstalled'](pluginId)
     },
 
     isUpdateAvailable (pluginId) {

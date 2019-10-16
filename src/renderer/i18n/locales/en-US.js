@@ -590,9 +590,9 @@ export default {
 
     PLUGIN_MANAGER: {
       HEADER: 'Plugins',
-      DETAILS: 'Details',
       ENABLED: 'Enabled',
       DISABLED: 'Disabled',
+      INSTALL: 'Install',
       INSTALLING: 'Installing \'{plugin}\'',
       INSTALL_URL: 'Install from URL',
       OFFICIAL: 'Official {author} plugin',

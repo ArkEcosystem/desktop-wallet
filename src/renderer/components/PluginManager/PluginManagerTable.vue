@@ -56,8 +56,8 @@
           class="flex items-center justify-center"
         >
           <ButtonIconGeneric
-            v-if="isUpdateAvailable(data.row.id)"
-            icon="update-available"
+            v-if="isInstalled(data.row.id) || isUpdateAvailable(data.row.id)"
+            :icon="isUpdateAvailable(data.row.id) ? 'update-available' : 'details'"
             view-box="0 0 32 17"
             :is-small="true"
             class="w-full"
@@ -66,8 +66,9 @@
 
           <ButtonGeneric
             v-else
-            :label="$t('PAGES.PLUGIN_MANAGER.DETAILS')"
+            :label="$t('PAGES.PLUGIN_MANAGER.INSTALL')"
             :is-small="true"
+            class="w-full"
             @click="emitShowDetails(data.row)"
           />
         </div>
@@ -180,6 +181,10 @@ export default {
       const b = this.getCategory(rowY)
 
       return a.localeCompare(b)
+    },
+
+    isInstalled (pluginId) {
+      return this.$store.getters['plugin/isInstalled'](pluginId)
     },
 
     isUpdateAvailable (pluginId) {
