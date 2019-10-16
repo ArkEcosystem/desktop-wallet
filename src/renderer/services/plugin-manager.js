@@ -52,10 +52,8 @@ class PluginManager {
   async init (app) {
     this.app = app
 
-    this.setAdapter(this.app.$store.getters['session/pluginAdapter'])
-
     await this.app.$store.dispatch('plugin/reset')
-    await this.fetchPlugins()
+    await this.fetchPluginsFromPath()
 
     this.hasInit = true
 
@@ -665,6 +663,10 @@ class PluginManager {
   }
 
   async fetchPluginsFromAdapter () {
+    if (!this.adapter) {
+      this.setAdapter(this.app.$store.getters['session/pluginAdapter'])
+    }
+
     let configs = await this.adapter.all()
 
     configs = await Promise.all(configs.map(async config => {

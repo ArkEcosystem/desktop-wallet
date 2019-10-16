@@ -318,6 +318,8 @@ export default {
       } catch (error) {
         this.$error(this.$t('APP.RELEASE.REQUEST_ERROR'))
       }
+
+      await this.$plugins.fetchPluginsFromAdapter()
     },
 
     onPortalChange (isActive) {

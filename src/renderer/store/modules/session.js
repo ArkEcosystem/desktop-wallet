@@ -278,6 +278,14 @@ export default {
         dispatch('profile/update', profile, { root: true })
       }
 
+      if (!profile.pluginAdapter) {
+        profile.pluginAdapter = 'npm'
+      }
+
+      if (profile.filterBlacklistedPlugins === undefined) {
+        profile.filterBlacklistedPlugins = true
+      }
+
       commit('REPLACE', profile)
 
       return profile
