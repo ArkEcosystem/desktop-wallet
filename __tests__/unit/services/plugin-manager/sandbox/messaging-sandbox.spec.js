@@ -27,12 +27,12 @@ describe('Messaging Sandbox', () => {
   })
 
   it('should register listeners', () => {
-    walletApi.messages.on('transaction', () => `test`)
+    walletApi.messages.on('transaction', () => 'test')
     expect(Object.keys(walletApi.messages.events)).toHaveLength(1)
   })
 
   it('should clear listeners', () => {
-    walletApi.messages.on('transaction', () => `test`)
+    walletApi.messages.on('transaction', () => 'test')
     expect(Object.keys(walletApi.messages.events)).toHaveLength(1)
     walletApi.messages.clear()
     expect(Object.keys(walletApi.messages.events)).toHaveLength(0)

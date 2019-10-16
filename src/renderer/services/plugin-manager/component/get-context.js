@@ -62,7 +62,7 @@ export function getSafeContext (vueContext, component) {
       return element
     }
 
-    context['refs'] = new Proxy(vueContext.$refs, {
+    context.refs = new Proxy(vueContext.$refs, {
       get (target, prop) {
         if (prop in target) {
           return blockElementProperties(target[prop])

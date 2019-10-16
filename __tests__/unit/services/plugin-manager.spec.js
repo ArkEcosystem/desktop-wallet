@@ -105,11 +105,13 @@ describe('Plugin Manager', () => {
     it('should throw not enabled error', async () => {
       expect.assertions(2)
       await pluginManager.init(app)
-      pluginManager.plugins = { 'plugin-not-enabled': {
-        config: {
-          id: '1'
+      pluginManager.plugins = {
+        'plugin-not-enabled': {
+          config: {
+            id: '1'
+          }
         }
-      } }
+      }
       try {
         await pluginManager.enablePlugin('plugin-not-enabled', 'p-1')
       } catch (e) {
@@ -121,12 +123,14 @@ describe('Plugin Manager', () => {
     it('should enable', async () => {
       await pluginManager.init(app)
 
-      pluginManager.plugins = { [pkg.name]: {
-        config: {
-          id: pkg.name
-        },
-        fullPath: './test'
-      } }
+      pluginManager.plugins = {
+        [pkg.name]: {
+          config: {
+            id: pkg.name
+          },
+          fullPath: './test'
+        }
+      }
 
       await pluginManager.enablePlugin(pkg.name, 'p-1')
       expect(mockDispatch).toHaveBeenCalledWith('plugin/setLoaded', expect.any(Object))
@@ -157,12 +161,14 @@ describe('Plugin Manager', () => {
 
     it('should disable', async () => {
       await pluginManager.init(app)
-      pluginManager.plugins = { [pkg.name]: {
-        config: {
-          id: pkg.name,
-          permissions: []
+      pluginManager.plugins = {
+        [pkg.name]: {
+          config: {
+            id: pkg.name,
+            permissions: []
+          }
         }
-      } }
+      }
 
       await pluginManager.disablePlugin(pkg.name, 'p-1')
       expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name)
@@ -170,12 +176,14 @@ describe('Plugin Manager', () => {
 
     it('should unload theme', async () => {
       await pluginManager.init(app)
-      pluginManager.plugins = { [pkg.name]: {
-        config: {
-          id: pkg.name,
-          permissions: ['THEMES']
+      pluginManager.plugins = {
+        [pkg.name]: {
+          config: {
+            id: pkg.name,
+            permissions: ['THEMES']
+          }
         }
-      } }
+      }
 
       await pluginManager.disablePlugin(pkg.name, 'p-1')
       expect(mockDispatch).toHaveBeenCalledWith('plugin/deleteLoaded', pkg.name)

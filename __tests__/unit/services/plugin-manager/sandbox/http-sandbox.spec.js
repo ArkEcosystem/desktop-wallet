@@ -25,7 +25,7 @@ describe('Http Sandbox', () => {
 
   it('should fail when requesting an unauthorized url', () => {
     expect(() => walletApi.http.get('google.com'))
-      .toThrow(`URL "google.com" not allowed`)
+      .toThrow('URL "google.com" not allowed')
   })
 
   it('should get an authrorized url', () => {
